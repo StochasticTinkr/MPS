@@ -33,8 +33,8 @@ public class ModelValidationConfigurable implements SearchableConfigurable {
   private ModelValidationSettings myModelValidationSettings;
 
   private JPanel myJPanel = new JPanel(new BorderLayout());
-  private JCheckBox myCheckBoxOpenAPI = new JCheckBox("Disable nonpublic API usage check");
-  private JCheckBox myCheckBoxTypeWasNotCalculated = new JCheckBox("Disable 'type was not calculated' check");
+  private JCheckBox myCheckBoxOpenAPI = new JCheckBox("Enable nonpublic API usage check");
+  private JCheckBox myCheckBoxTypeWasNotCalculated = new JCheckBox("Enable 'type was not calculated' check");
 
   public ModelValidationConfigurable(@NotNull ModelValidationSettings modelValidationSettings) {
     myModelValidationSettings = modelValidationSettings;
@@ -64,18 +64,20 @@ public class ModelValidationConfigurable implements SearchableConfigurable {
 
   @Override
   public void apply() {
-    myModelValidationSettings.setDisableCheckOpenAPI(myCheckBoxOpenAPI.isSelected());
-    myModelValidationSettings.setDisableTypeWasNotCalculated(myCheckBoxTypeWasNotCalculated.isSelected());
+    myModelValidationSettings.setDisableCheckOpenAPI(!myCheckBoxOpenAPI.isSelected());
+    myModelValidationSettings.setDisableTypeWasNotCalculated(!myCheckBoxTypeWasNotCalculated.isSelected());
   }
 
   @Override
   public void reset() {
-    myCheckBoxOpenAPI.setSelected(myModelValidationSettings.isDisableCheckOpenAPI());
-    myCheckBoxTypeWasNotCalculated.setSelected(myModelValidationSettings.isDisableTypeWasNotCalculated());
+    myCheckBoxOpenAPI.setSelected(!myModelValidationSettings.isDisableCheckOpenAPI());
+    myCheckBoxTypeWasNotCalculated.setSelected(!myModelValidationSettings.isDisableTypeWasNotCalculated());
   }
 
   public boolean isModified() {
-    return myModelValidationSettings.isDisableCheckOpenAPI() != myCheckBoxOpenAPI.isSelected() || myModelValidationSettings.isDisableTypeWasNotCalculated() != myCheckBoxTypeWasNotCalculated.isSelected();
+    // Shown value is inverted, so check for equality to avoid double negation
+    return myModelValidationSettings.isDisableCheckOpenAPI() == myCheckBoxOpenAPI.isSelected() ||
+           myModelValidationSettings.isDisableTypeWasNotCalculated() == myCheckBoxTypeWasNotCalculated.isSelected();
   }
 
   @Override
