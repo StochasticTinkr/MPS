@@ -16,13 +16,18 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId;
+import jetbrains.mps.smodel.adapter.ids.SEnumerationId;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Base implementation generated code shall use to facilitate future changes in {@link jetbrains.mps.smodel.runtime.StructureAspectDescriptor}.
+ *
+ * FIXME RS Why we need here complex concurrent initialization logic here if all generated subclasses override it???
  */
 public abstract class BaseStructureAspectDescriptor implements StructureAspectDescriptor {
   private static final Object LOCK = new Object();
@@ -53,5 +58,25 @@ public abstract class BaseStructureAspectDescriptor implements StructureAspectDe
       }
       myDescriptors = descriptors;
     }
+  }
+
+  @Override
+  public ConstrainedStringDatatypeDescriptor getConstrainedStringDatatypeDescriptor(SConstrainedStringDatatypeId id) {
+    return getConstrainedStringDatatypeDescriptors().stream().filter(it -> it.getId().equals(id)).findFirst().orElse(null);
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Collections.emptyList();
+  }
+
+  @Override
+  public EnumerationDescriptor getEnumerationDescriptor(SEnumerationId id) {
+    return getEnumerationDescriptors().stream().filter(it -> it.getId().equals(id)).findFirst().orElse(null);
+  }
+
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Collections.emptyList();
   }
 }

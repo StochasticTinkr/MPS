@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,22 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.adapter.ids.STypeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId;
+import org.jetbrains.annotations.NotNull;
 
-public interface PropertyDescriptor {
-  SPropertyId getId();
+import java.util.regex.Pattern;
 
-  STypeId getDataTypeId();
+/**
+ * Descriptor of `constrained string datatype` entity.
+ *
+ * @author Radimir.Sorokin
+ * @since 2018.3
+ */
+public interface ConstrainedStringDatatypeDescriptor extends NamedElementDescriptor {
 
-  String getName();
+  @NotNull
+  Pattern getRegexPattern();
 
-  SNodeReference getSourceNode();
+  @NotNull
+  SConstrainedStringDatatypeId getId();
 }

@@ -17,7 +17,11 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId;
+import jetbrains.mps.smodel.adapter.ids.SEnumerationId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -85,6 +89,32 @@ public class StructureRegistry implements CoreAspectRegistry {
     } finally {
       myStorage.finishLoading(concept);
     }
+  }
+
+  @Nullable
+  public EnumerationDescriptor getEnumerationDescriptor(SEnumerationId id) {
+    final LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(id.getLanguageId());
+    if (languageRuntime == null) {
+      return null;
+    }
+    final StructureAspectDescriptor aspect = languageRuntime.getAspect(StructureAspectDescriptor.class);
+    if (aspect == null) {
+      return null;
+    }
+    return aspect.getEnumerationDescriptor(id);
+  }
+
+  @Nullable
+  public ConstrainedStringDatatypeDescriptor getConstrainedStringDatatypeDescriptor(SConstrainedStringDatatypeId id) {
+    final LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(id.getLanguageId());
+    if (languageRuntime == null) {
+      return null;
+    }
+    final StructureAspectDescriptor aspect = languageRuntime.getAspect(StructureAspectDescriptor.class);
+    if (aspect == null) {
+      return null;
+    }
+    return aspect.getConstrainedStringDatatypeDescriptor(id);
   }
 
   @Override

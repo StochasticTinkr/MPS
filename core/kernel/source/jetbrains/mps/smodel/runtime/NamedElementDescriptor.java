@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,21 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.adapter.ids.STypeId;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public interface PropertyDescriptor {
-  SPropertyId getId();
+/**
+ * Common data for all language features
+ *
+ * @author Radimir.Sorokin
+ * @version 2018.3
+ */
+public interface NamedElementDescriptor {
 
-  STypeId getDataTypeId();
-
+  @NotNull
   String getName();
 
+  @Nullable
   SNodeReference getSourceNode();
 }

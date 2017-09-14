@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.STypeId;
 import jetbrains.mps.smodel.runtime.BaseLinkDescriptor;
 import jetbrains.mps.smodel.runtime.BasePropertyDescriptor;
 import jetbrains.mps.smodel.runtime.BaseReferenceDescriptor;
@@ -29,6 +30,7 @@ import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -117,27 +119,45 @@ public class ConceptDescriptorBuilder2 {
    * invoked [0..n] times
    */
   public ConceptDescriptorBuilder2 prop(String name, long propertyId) {
-    addProperty(new BasePropertyDescriptor(MetaIdFactory.propId(myConceptId, propertyId), name, null));
+    addProperty(new BasePropertyDescriptor(MetaIdFactory.propId(myConceptId, propertyId), name, null,null));
     return this;
   }
 
-  /*
+  /**
    * invoked [0..n] times
+
    * @param sourceNodeId as long as PropertyDeclaration doesn't have sourceNode reference, we use model of declared concept as
    *        source model and PD's node id to identify its source node, hence the parameter that takes only relevant part (no reason
    *        to pass model reference again and again).
    *
+   * @deprecated use {@link #property(String, long)} instead.
    */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public ConceptDescriptorBuilder2 prop(String name, long propertyId, String sourceNodeId) {
     SNodeReference srcNode = myOrigin != null && sourceNodeId != null ? new SNodePointer(myOrigin.getModelReference(), PersistenceFacade.getInstance().createNodeId(sourceNodeId)) : null;
-    addProperty(new BasePropertyDescriptor(MetaIdFactory.propId(myConceptId, propertyId), name, srcNode));
+    addProperty(new BasePropertyDescriptor(MetaIdFactory.propId(myConceptId, propertyId), name, null, srcNode));
     return this;
   }
 
+  /**
+   * invoked [0..n] times
+   *
+   * @deprecated use {@link #property(String, long)} instead.
+   */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public ConceptDescriptorBuilder2 prop(String name, long propertyId, SNodeReference srcNode) {
-    myProperties.add(new BasePropertyDescriptor(MetaIdFactory.propId(myConceptId, propertyId), name, srcNode));
+    myProperties.add(new BasePropertyDescriptor(MetaIdFactory.propId(myConceptId, propertyId), name, null, srcNode));
     // perhaps, propertySourceNode(long,SNodeReference) instead of duplicated method? Same for optional(linkId) value?
     return this;
+  }
+
+  /**
+   * invoked [0..n] times
+   */
+  public PropertyBuilder property(String name, long propertyId) {
+    return new PropertyBuilder(this, name, propertyId);
   }
 
   /*
@@ -231,28 +251,36 @@ public class ConceptDescriptorBuilder2 {
     return MetaIdFactory.langId(langIdHigh, langIdLow);
   }
 
-  /*package*/ static class LinkBuilder {
-    /*package*/ ConceptDescriptorBuilder2 myBuilder;
-    /*package*/ final String myLinkName;
-    /*package*/ final long myLinkId;
-    /*package*/ boolean myIsOptional;
+  /*package*/ static abstract class ConceptEntityBuilder {
+    /*package*/ final ConceptDescriptorBuilder2 myBuilder;
+    /*package*/ final String myName;
+    /*package*/ final long myId;
     /*package*/ SNodeReference myOrigin;
+
+    /*package*/ ConceptEntityBuilder(ConceptDescriptorBuilder2 builder, String name, long id) {
+      myBuilder = builder;
+      myName = name;
+      myId = id;
+    }
+  }
+
+  /*package*/ static abstract class LinkBuilder extends ConceptEntityBuilder {
+    /*package*/ boolean myIsOptional;
     /*package*/ SConceptId myTargetConcept;
 
-    /*package*/ LinkBuilder(ConceptDescriptorBuilder2 builder, String linkName, long linkId) {
-      myBuilder = builder;
-      myLinkName = linkName;
-      myLinkId = linkId;
+    /*package*/ LinkBuilder(ConceptDescriptorBuilder2 builder, String entityName, long entityId) {
+      super(builder, entityName, entityId);
     }
   }
 
   public static final class AssociationLinkBuilder extends LinkBuilder {
+
     /*package*/ AssociationLinkBuilder(ConceptDescriptorBuilder2 builder, String name, long linkId) {
       super(builder, name, linkId);
     }
 
     public ConceptDescriptorBuilder2 done() {
-      myBuilder.addAssociation(new BaseReferenceDescriptor(MetaIdFactory.refId(myBuilder.myConceptId, myLinkId), myLinkName, myTargetConcept, myIsOptional, myOrigin));
+      myBuilder.addAssociation(new BaseReferenceDescriptor(MetaIdFactory.refId(myBuilder.myConceptId, myId), myName, myTargetConcept, myIsOptional, myOrigin));
       return myBuilder;
     }
 
@@ -272,7 +300,7 @@ public class ConceptDescriptorBuilder2 {
     }
 
     /**
-     * See {@link ConceptDescriptorBuilder2#prop(String, long, String)} for explanation of sourceNodeId:String
+     * @param srcNodeId see {@link ConceptDescriptorBuilder2#prop(String, long, String)} for explanation.
      */
     public AssociationLinkBuilder origin(String srcNodeId) {
       if (myBuilder.myOrigin != null && srcNodeId != null) {
@@ -285,13 +313,24 @@ public class ConceptDescriptorBuilder2 {
   public static final class AggregationLinkBuilder extends LinkBuilder {
     private boolean myIsMultiple = false;
     private boolean myIsOrdered = true;
+
     /*package*/ AggregationLinkBuilder(ConceptDescriptorBuilder2 builder, String linkName, long linkId) {
       super(builder, linkName, linkId);
     }
 
     public ConceptDescriptorBuilder2 done() {
-      myBuilder.addAggregation(new BaseLinkDescriptor(MetaIdFactory.linkId(myBuilder.myConceptId, myLinkId), myLinkName, myTargetConcept, myIsOptional, myIsMultiple, !myIsOrdered, myOrigin));
+      myBuilder.addAggregation(new BaseLinkDescriptor(MetaIdFactory.linkId(myBuilder.myConceptId, myId), myName, myTargetConcept, myIsOptional, myIsMultiple, !myIsOrdered, myOrigin));
       return myBuilder;
+    }
+
+    public AggregationLinkBuilder multiple(boolean isMultiple) {
+      myIsMultiple = isMultiple;
+      return this;
+    }
+
+    public AggregationLinkBuilder ordered(boolean isOrdered) {
+      myIsOrdered = isOrdered;
+      return this;
     }
 
     public AggregationLinkBuilder target(long langIdHigh, long langIdLow, long conceptId) {
@@ -305,27 +344,50 @@ public class ConceptDescriptorBuilder2 {
     }
 
     public AggregationLinkBuilder origin(SNodeReference srcNode) {
-      myOrigin = srcNode;
+      super.myOrigin = srcNode;
       return this;
     }
 
     /**
-     * See {@link ConceptDescriptorBuilder2#prop(String, long, String)} for explanation of sourceNodeId:String
+     * @param srcNodeId see {@link ConceptDescriptorBuilder2#prop(String, long, String)} for explanation.
      */
     public AggregationLinkBuilder origin(String srcNodeId) {
       if (myBuilder.myOrigin != null && srcNodeId != null) {
-        myOrigin = new SNodePointer(myBuilder.myOrigin.getModelReference(), PersistenceFacade.getInstance().createNodeId(srcNodeId));
+        super.myOrigin = new SNodePointer(myBuilder.myOrigin.getModelReference(), PersistenceFacade.getInstance().createNodeId(srcNodeId));
       }
       return this;
     }
+  }
 
-    public AggregationLinkBuilder multiple(boolean isMultiple) {
-      myIsMultiple = isMultiple;
+  public static final class PropertyBuilder extends ConceptEntityBuilder {
+    private STypeId myTypeId;
+
+    /*package*/ PropertyBuilder(ConceptDescriptorBuilder2 builder, String name, long id) {
+      super(builder, name, id);
+    }
+
+    public ConceptDescriptorBuilder2 done() {
+      myBuilder.addProperty(new BasePropertyDescriptor(MetaIdFactory.propId(myBuilder.myConceptId, myId), myName, myTypeId, super.myOrigin));
+      return myBuilder;
+    }
+
+    public PropertyBuilder type(STypeId typeId) {
+      myTypeId = typeId;
       return this;
     }
 
-    public AggregationLinkBuilder ordered(boolean isOrdered) {
-      myIsOrdered = isOrdered;
+    public PropertyBuilder origin(SNodeReference srcNode) {
+      super.myOrigin = srcNode;
+      return this;
+    }
+
+    /**
+     * @param srcNodeId see {@link ConceptDescriptorBuilder2#prop(String, long, String)} for explanation.
+     */
+    public PropertyBuilder origin(String srcNodeId) {
+      if (myBuilder.myOrigin != null && srcNodeId != null) {
+        super.myOrigin = new SNodePointer(myBuilder.myOrigin.getModelReference(), PersistenceFacade.getInstance().createNodeId(srcNodeId));
+      }
       return this;
     }
   }

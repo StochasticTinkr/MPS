@@ -16,6 +16,8 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId;
+import jetbrains.mps.smodel.adapter.ids.SEnumerationId;
 
 import java.util.Collection;
 
@@ -34,4 +36,12 @@ public interface StructureAspectDescriptor extends ILanguageAspect {
   ConceptDescriptor getDescriptor(SConceptId id);
 
   Collection<ConceptDescriptor> getDescriptors();
+
+  ConstrainedStringDatatypeDescriptor getConstrainedStringDatatypeDescriptor(SConstrainedStringDatatypeId id);
+
+  Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors();
+
+  EnumerationDescriptor getEnumerationDescriptor(SEnumerationId id);
+
+  Collection<EnumerationDescriptor> getEnumerationDescriptors();
 }
