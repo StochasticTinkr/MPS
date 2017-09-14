@@ -44,6 +44,12 @@ public interface SLanguage {
   Iterable<SAbstractConcept> getConcepts();
 
   /**
+   * All datatypes defined in the language, empty if the language is invalid (missing).
+   */
+  @NotNull
+  Iterable<SDataType> getDatatypes();
+
+  /**
    * Returns true if this language is fully-functional.
    * Typically, user code should not care about this
    * Can return false, for example, if the language is absent

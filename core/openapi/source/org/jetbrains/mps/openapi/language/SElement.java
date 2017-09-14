@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,28 +15,32 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Collection;
-import java.util.List;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
- * Enumerations define collections of related {@link SEnumerationLiteral options}.
+ * Common interface for all meta-entities.
+ *
+ *  @since 2018.3
+ *  @author Radimir.Sorokin
  */
-public interface SEnumeration extends SNamedElement, SDataType {
-  /**
-   * Resolves the enumeration literal with matching name
-   */
-  @Nullable
-  SEnumerationLiteral getLiteral(@Nullable String name);
-
-  @Nullable
-  SEnumerationLiteral getDefault();
+public interface SElement {
 
   /**
-   * @return ordered set of enumeration literals
+   * Language which the element belongs to.
    */
-  @NotNull
-  Collection<SEnumerationLiteral> getLiterals();
+  @Nullable
+  // At some point should become non-default and non-null
+  default SLanguage getLanguage() {
+    return null;
+  }
+
+  /**
+   * Returns reference to the node, which was generated to this element.
+   * Should be used to language debug and navigation purposes.
+   */
+  @Nullable
+  default SNodeReference getSourceNode() {
+    return null;
+  }
 }
