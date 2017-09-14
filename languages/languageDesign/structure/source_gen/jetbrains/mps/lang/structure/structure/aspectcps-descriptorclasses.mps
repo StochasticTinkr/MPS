@@ -233,7 +233,6 @@
       <concept id="6911370362349121511" name="jetbrains.mps.lang.smodel.structure.ConceptId" flags="nn" index="2x4n5u">
         <property id="6911370362349122519" name="conceptName" index="2x4mPI" />
         <property id="6911370362349121516" name="conceptId" index="2x4n5l" />
-        <property id="6911370362349133804" name="isInterface" index="2x4o5l" />
         <child id="6911370362349121514" name="languageIdentity" index="2x4n5j" />
       </concept>
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
@@ -8187,7 +8186,6 @@
             <property role="2$VJBR" value="1084197782722" />
             <node concept="2x4n5u" id="Lh" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
               <node concept="2V$Bhx" id="Li" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8208,7 +8206,6 @@
             <property role="2$VJBR" value="3220559764717766993" />
             <node concept="2x4n5u" id="Lm" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
               <node concept="2V$Bhx" id="Ln" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8229,7 +8226,6 @@
             <property role="2$VJBR" value="1197590884613" />
             <node concept="2x4n5u" id="Lr" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
               <node concept="2V$Bhx" id="Ls" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8250,7 +8246,6 @@
             <property role="2$VJBR" value="8087047305080774904" />
             <node concept="2x4n5u" id="Lw" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
               <node concept="2V$Bhx" id="Lx" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8271,7 +8266,6 @@
             <property role="2$VJBR" value="1084199179703" />
             <node concept="2x4n5u" id="L_" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
               <node concept="2V$Bhx" id="LA" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8292,7 +8286,6 @@
             <property role="2$VJBR" value="5404671619616246759" />
             <node concept="2x4n5u" id="LE" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
               <node concept="2V$Bhx" id="LF" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8316,7 +8309,6 @@
             <property role="2$VJBR" value="1084197782723" />
             <node concept="2x4n5u" id="M1" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="M2" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8337,7 +8329,6 @@
             <property role="2$VJBR" value="1084197782725" />
             <node concept="2x4n5u" id="M6" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="M7" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8358,7 +8349,6 @@
             <property role="2$VJBR" value="1084197782724" />
             <node concept="2x4n5u" id="Mb" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="Mc" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8379,7 +8369,6 @@
             <property role="2$VJBR" value="1084197782726" />
             <node concept="2x4n5u" id="Mg" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="Mh" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8400,7 +8389,6 @@
             <property role="2$VJBR" value="1084199179705" />
             <node concept="2x4n5u" id="Ml" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="Mm" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8421,7 +8409,6 @@
             <property role="2$VJBR" value="3220559764717766994" />
             <node concept="2x4n5u" id="Mq" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="Mr" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8442,7 +8429,6 @@
             <property role="2$VJBR" value="8087047305080775282" />
             <node concept="2x4n5u" id="Mv" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="Mw" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8463,7 +8449,6 @@
             <property role="2$VJBR" value="5404671619616246761" />
             <node concept="2x4n5u" id="M$" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="M_" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8484,7 +8469,6 @@
             <property role="2$VJBR" value="1197591075491" />
             <node concept="2x4n5u" id="MD" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="ME" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8505,7 +8489,6 @@
             <property role="2$VJBR" value="1197591048630" />
             <node concept="2x4n5u" id="MI" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="MJ" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8526,7 +8509,6 @@
             <property role="2$VJBR" value="1197590884614" />
             <node concept="2x4n5u" id="MN" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="MO" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8547,7 +8529,6 @@
             <property role="2$VJBR" value="3220559764717766998" />
             <node concept="2x4n5u" id="MS" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="MT" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8568,7 +8549,6 @@
             <property role="2$VJBR" value="3220559764717766995" />
             <node concept="2x4n5u" id="MX" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="MY" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8589,7 +8569,6 @@
             <property role="2$VJBR" value="8087047305080775416" />
             <node concept="2x4n5u" id="N2" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="N3" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8610,7 +8589,6 @@
             <property role="2$VJBR" value="5404671619616246760" />
             <node concept="2x4n5u" id="N7" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="N8" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8631,7 +8609,6 @@
             <property role="2$VJBR" value="5404671619616246764" />
             <node concept="2x4n5u" id="Nc" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="Nd" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8652,7 +8629,6 @@
             <property role="2$VJBR" value="1084199179704" />
             <node concept="2x4n5u" id="Nh" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="Ni" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8673,7 +8649,6 @@
             <property role="2$VJBR" value="8087047305080775412" />
             <node concept="2x4n5u" id="Nm" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
               <node concept="2V$Bhx" id="Nn" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8697,7 +8672,6 @@
             <property role="2$VJBR" value="1084197782722" />
             <node concept="2x4n5u" id="Ny" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
               <node concept="2V$Bhx" id="Nz" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8718,7 +8692,6 @@
             <property role="2$VJBR" value="3220559764717766993" />
             <node concept="2x4n5u" id="NB" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
               <node concept="2V$Bhx" id="NC" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8739,7 +8712,6 @@
             <property role="2$VJBR" value="1197590884613" />
             <node concept="2x4n5u" id="NG" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
               <node concept="2V$Bhx" id="NH" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8760,7 +8732,6 @@
             <property role="2$VJBR" value="4269842503726207818" />
             <node concept="2x4n5u" id="NL" role="3iCydw">
               <property role="2x4mPI" value="ConstrainedDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtihfpyv" />
               <node concept="2V$Bhx" id="NM" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8781,7 +8752,6 @@
             <property role="2$VJBR" value="8087047305080774904" />
             <node concept="2x4n5u" id="NQ" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
               <node concept="2V$Bhx" id="NR" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8802,7 +8772,6 @@
             <property role="2$VJBR" value="1084199179703" />
             <node concept="2x4n5u" id="NV" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
               <node concept="2V$Bhx" id="NW" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -8823,7 +8792,6 @@
             <property role="2$VJBR" value="5404671619616246759" />
             <node concept="2x4n5u" id="O0" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
               <node concept="2V$Bhx" id="O1" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
@@ -16011,15 +15979,11 @@
             </node>
             <node concept="liA8E" id="1wv" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="1ww" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1ww" role="37wK5m" />
               <node concept="3clFbT" id="1wx" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
-              <node concept="3clFbT" id="1wy" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1wy" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -16512,9 +16476,7 @@
                 </node>
                 <node concept="liA8E" id="1yV" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.multiple(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="multiple" />
-                  <node concept="3clFbT" id="1zb" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
+                  <node concept="3clFbT" id="1zb" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="1yT" role="2OqNvi">
@@ -16690,15 +16652,9 @@
             </node>
             <node concept="liA8E" id="1$c" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="1$d" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1$e" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1$f" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1$d" role="37wK5m" />
+              <node concept="3clFbT" id="1$e" role="37wK5m" />
+              <node concept="3clFbT" id="1$f" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -16819,9 +16775,7 @@
                 </node>
                 <node concept="liA8E" id="1$F" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.multiple(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="multiple" />
-                  <node concept="3clFbT" id="1$V" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
+                  <node concept="3clFbT" id="1$V" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="1$D" role="2OqNvi">
@@ -16973,15 +16927,9 @@
             </node>
             <node concept="liA8E" id="1_K" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="1_L" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1_M" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1_N" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1_L" role="37wK5m" />
+              <node concept="3clFbT" id="1_M" role="37wK5m" />
+              <node concept="3clFbT" id="1_N" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -17045,9 +16993,7 @@
                 </node>
                 <node concept="liA8E" id="1A2" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AssociationLinkBuilder.optional(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AssociationLinkBuilder" resolve="optional" />
-                  <node concept="3clFbT" id="1Ac" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
+                  <node concept="3clFbT" id="1Ac" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="1A0" role="2OqNvi">
@@ -17119,15 +17065,9 @@
             </node>
             <node concept="liA8E" id="1A_" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="1AA" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1AB" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1AC" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1AA" role="37wK5m" />
+              <node concept="3clFbT" id="1AB" role="37wK5m" />
+              <node concept="3clFbT" id="1AC" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -17236,9 +17176,7 @@
               <node concept="3clFbT" id="1Bo" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
-              <node concept="3clFbT" id="1Bp" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1Bp" role="37wK5m" />
               <node concept="3clFbT" id="1Bq" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
@@ -17537,9 +17475,7 @@
                 </node>
                 <node concept="liA8E" id="1CM" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.multiple(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="multiple" />
-                  <node concept="3clFbT" id="1D2" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
+                  <node concept="3clFbT" id="1D2" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="1CK" role="2OqNvi">
@@ -17642,12 +17578,8 @@
             </node>
             <node concept="liA8E" id="1DA" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="1DB" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1DC" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1DB" role="37wK5m" />
+              <node concept="3clFbT" id="1DC" role="37wK5m" />
               <node concept="3clFbT" id="1DD" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
@@ -17791,15 +17723,9 @@
             </node>
             <node concept="liA8E" id="1Er" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="1Es" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1Et" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1Eu" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1Es" role="37wK5m" />
+              <node concept="3clFbT" id="1Et" role="37wK5m" />
+              <node concept="3clFbT" id="1Eu" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -17924,15 +17850,9 @@
             </node>
             <node concept="liA8E" id="1Ff" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="1Fg" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1Fh" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1Fi" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1Fg" role="37wK5m" />
+              <node concept="3clFbT" id="1Fh" role="37wK5m" />
+              <node concept="3clFbT" id="1Fi" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -18221,15 +18141,9 @@
             </node>
             <node concept="liA8E" id="1GP" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="1GQ" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1GR" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1GS" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1GQ" role="37wK5m" />
+              <node concept="3clFbT" id="1GR" role="37wK5m" />
+              <node concept="3clFbT" id="1GS" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -18293,9 +18207,7 @@
                 </node>
                 <node concept="liA8E" id="1H7" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AssociationLinkBuilder.optional(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AssociationLinkBuilder" resolve="optional" />
-                  <node concept="3clFbT" id="1Hh" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
+                  <node concept="3clFbT" id="1Hh" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="1H5" role="2OqNvi">
@@ -18367,15 +18279,9 @@
             </node>
             <node concept="liA8E" id="1HG" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="1HH" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1HI" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1HJ" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1HH" role="37wK5m" />
+              <node concept="3clFbT" id="1HI" role="37wK5m" />
+              <node concept="3clFbT" id="1HJ" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -18570,12 +18476,8 @@
             </node>
             <node concept="liA8E" id="1IW" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="1IX" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1IY" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1IX" role="37wK5m" />
+              <node concept="3clFbT" id="1IY" role="37wK5m" />
               <node concept="3clFbT" id="1IZ" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
@@ -18740,9 +18642,7 @@
                 </node>
                 <node concept="liA8E" id="1JH" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AssociationLinkBuilder.optional(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AssociationLinkBuilder" resolve="optional" />
-                  <node concept="3clFbT" id="1JR" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
+                  <node concept="3clFbT" id="1JR" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="1JF" role="2OqNvi">
@@ -18844,9 +18744,7 @@
                     </node>
                     <node concept="liA8E" id="1Kl" role="2OqNvi">
                       <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.optional(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="optional" />
-                      <node concept="3clFbT" id="1Kv" role="37wK5m">
-                        <property role="3clFbU" value="false" />
-                      </node>
+                      <node concept="3clFbT" id="1Kv" role="37wK5m" />
                     </node>
                   </node>
                   <node concept="liA8E" id="1Kj" role="2OqNvi">
@@ -18945,15 +18843,9 @@
             </node>
             <node concept="liA8E" id="1L2" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="1L3" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1L4" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1L5" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1L3" role="37wK5m" />
+              <node concept="3clFbT" id="1L4" role="37wK5m" />
+              <node concept="3clFbT" id="1L5" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -19328,9 +19220,7 @@
               <node concept="3clFbT" id="1Nb" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
-              <node concept="3clFbT" id="1Nc" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1Nc" role="37wK5m" />
               <node concept="3clFbT" id="1Nd" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
@@ -19540,15 +19430,9 @@
             </node>
             <node concept="liA8E" id="1On" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="1Oo" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1Op" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1Oq" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1Oo" role="37wK5m" />
+              <node concept="3clFbT" id="1Op" role="37wK5m" />
+              <node concept="3clFbT" id="1Oq" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -19631,9 +19515,7 @@
                 </node>
                 <node concept="liA8E" id="1OJ" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AssociationLinkBuilder.optional(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AssociationLinkBuilder" resolve="optional" />
-                  <node concept="3clFbT" id="1OT" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
+                  <node concept="3clFbT" id="1OT" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="1OH" role="2OqNvi">
@@ -19726,12 +19608,8 @@
               <node concept="3clFbT" id="1Pz" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
-              <node concept="3clFbT" id="1P$" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1P_" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1P$" role="37wK5m" />
+              <node concept="3clFbT" id="1P_" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -20017,9 +19895,7 @@
                 </node>
                 <node concept="liA8E" id="1QW" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AssociationLinkBuilder.optional(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AssociationLinkBuilder" resolve="optional" />
-                  <node concept="3clFbT" id="1R6" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
+                  <node concept="3clFbT" id="1R6" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="1QU" role="2OqNvi">
@@ -20112,9 +19988,7 @@
               <node concept="3clFbT" id="1R_" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
-              <node concept="3clFbT" id="1RA" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1RA" role="37wK5m" />
               <node concept="3clFbT" id="1RB" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
@@ -20229,12 +20103,8 @@
               <node concept="3clFbT" id="1Sl" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
-              <node concept="3clFbT" id="1Sm" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1Sn" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1Sm" role="37wK5m" />
+              <node concept="3clFbT" id="1Sn" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -20393,9 +20263,7 @@
                 </node>
                 <node concept="liA8E" id="1T4" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AssociationLinkBuilder.optional(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AssociationLinkBuilder" resolve="optional" />
-                  <node concept="3clFbT" id="1Te" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
+                  <node concept="3clFbT" id="1Te" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="1T2" role="2OqNvi">
@@ -20485,15 +20353,9 @@
             </node>
             <node concept="liA8E" id="1TI" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="1TJ" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1TK" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1TL" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1TJ" role="37wK5m" />
+              <node concept="3clFbT" id="1TK" role="37wK5m" />
+              <node concept="3clFbT" id="1TL" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -20717,15 +20579,9 @@
             </node>
             <node concept="liA8E" id="1V3" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="1V4" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1V5" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="1V6" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+              <node concept="3clFbT" id="1V4" role="37wK5m" />
+              <node concept="3clFbT" id="1V5" role="37wK5m" />
+              <node concept="3clFbT" id="1V6" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -20811,9 +20667,7 @@
                 </node>
                 <node concept="liA8E" id="1Vs" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AssociationLinkBuilder.optional(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AssociationLinkBuilder" resolve="optional" />
-                  <node concept="3clFbT" id="1VA" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
+                  <node concept="3clFbT" id="1VA" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="1Vq" role="2OqNvi">
@@ -20878,9 +20732,7 @@
                 </node>
                 <node concept="liA8E" id="1VI" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.multiple(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="multiple" />
-                  <node concept="3clFbT" id="1VY" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
+                  <node concept="3clFbT" id="1VY" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="1VG" role="2OqNvi">
