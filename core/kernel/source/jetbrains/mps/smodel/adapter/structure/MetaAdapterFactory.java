@@ -21,10 +21,14 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId;
+import jetbrains.mps.smodel.adapter.ids.SEnumerationId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.types.SConstrainedStringDatatypeAdapter;
+import jetbrains.mps.smodel.adapter.structure.types.SEnumerationAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
@@ -38,6 +42,7 @@ import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SEnumeration;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -59,6 +64,8 @@ public abstract class MetaAdapterFactory {
   // there are 5 thousand concepts in MPS alone, don't need to be shy, rehash would be more expensive.
   private static final TLongObjectHashMap<List<ConceptBucket>> ourConcepts = new TLongObjectHashMap<>(5000);
   private static final TLongObjectHashMap<List<InterfaceBucket>> ourInterfaces = new TLongObjectHashMap<>(1000);
+  private static final TLongObjectHashMap<List<ConstrainedStringDataTypeBucket>> ourConstrainedStringDataTypes = new TLongObjectHashMap<>(1000);
+  private static final TLongObjectHashMap<List<EnumerationBucket>> ourEnumerations = new TLongObjectHashMap<>(1000);
   private static final TLongObjectHashMap<List<PropertyBucket>> ourProperties = new TLongObjectHashMap<>(5000);
   private static final TLongObjectHashMap<List<AssociationLinkBucket>> ourAssociations = new TLongObjectHashMap<>(1000);
   private static final TLongObjectHashMap<List<AggregationLinkBucket>> ourAggregations = new TLongObjectHashMap<>(1000);
@@ -143,6 +150,48 @@ public abstract class MetaAdapterFactory {
   public static SInterfaceConcept getInterfaceConcept(@NotNull SLanguage language, long concept, @NotNull String shortConceptName) {
     final SLanguageId langId = MetaIdHelper.getLanguage(language);
     return getInterfaceConcept(langId.getHighBits(), langId.getLowBits(), concept, NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
+  }
+
+  @NotNull
+  public static SConstrainedStringDatatypeAdapter getConstrainedStringDataType(SConstrainedStringDatatypeId id, String datatypeName) {
+    return getConstrainedStringDataType(id.getLanguageId().getHighBits(), id.getLanguageId().getLowBits(), id.getIdValue(), datatypeName);
+  }
+
+  @NotNull
+  public static SConstrainedStringDatatypeAdapter getConstrainedStringDataType(long uuidHigh, long uuidLow, long datatype, String datatypeName) {
+    List<ConstrainedStringDataTypeBucket> bucketList = getBucketList(ourConstrainedStringDataTypes, bucketKey(uuidHigh, uuidLow, datatype));
+    //noinspection SynchronizationOnLocalVariableOrMethodParameter
+    synchronized (bucketList) {
+      for (ConstrainedStringDataTypeBucket rv : bucketList) {
+        if (rv.isBucketFor(uuidHigh, uuidLow, datatype)) {
+          return rv.get();
+        }
+      }
+      ConstrainedStringDataTypeBucket b = new ConstrainedStringDataTypeBucket(uuidHigh, uuidLow, datatype, datatypeName);
+      bucketList.add(b);
+      return b.get();
+    }
+  }
+
+  @NotNull
+  public static SEnumeration getEnumeration(SEnumerationId id, String enumerationName) {
+    return getEnumeration(id.getLanguageId().getHighBits(), id.getLanguageId().getLowBits(), id.getIdValue(), enumerationName);
+  }
+
+  @NotNull
+  public static SEnumeration getEnumeration(long uuidHigh, long uuidLow, long datatype, String enumerationName) {
+    List<EnumerationBucket> bucketList = getBucketList(ourEnumerations, bucketKey(uuidHigh, uuidLow, datatype));
+    //noinspection SynchronizationOnLocalVariableOrMethodParameter
+    synchronized (bucketList) {
+      for (EnumerationBucket rv : bucketList) {
+        if (rv.isBucketFor(uuidHigh, uuidLow, datatype)) {
+          return rv.get();
+        }
+      }
+      EnumerationBucket b = new EnumerationBucket(uuidHigh, uuidLow, datatype, enumerationName);
+      bucketList.add(b);
+      return b.get();
+    }
   }
 
   @NotNull
@@ -340,6 +389,31 @@ public abstract class MetaAdapterFactory {
     }
   }
 
+  static final class ConstrainedStringDataTypeBucket extends AbstractConceptBucket {
+    private final SConstrainedStringDatatypeAdapter myConstrainedStringDataType;
+
+    public ConstrainedStringDataTypeBucket(long highBits, long lowBits, long datatype, String name) {
+      super(highBits, lowBits, datatype);
+      myConstrainedStringDataType = new SConstrainedStringDatatypeAdapter(MetaIdFactory.constrainedStringDataTypeId(highBits, lowBits, datatype), name);
+    }
+
+    public SConstrainedStringDatatypeAdapter get() {
+      return myConstrainedStringDataType;
+    }
+  }
+
+  static final class EnumerationBucket extends AbstractConceptBucket {
+    private final SEnumerationAdapter myEnumerationAdapter;
+
+    public EnumerationBucket(long highBits, long lowBits, long enumm, String name) {
+      super(highBits, lowBits, enumm);
+      myEnumerationAdapter = new SEnumerationAdapter(MetaIdFactory.enumerationId(highBits, lowBits, enumm), name);
+    }
+
+    public SEnumerationAdapter get() {
+      return myEnumerationAdapter;
+    }
+  }
 
   static abstract class StructuralFeatureBucket {
     private final long myLanguageHighBits;

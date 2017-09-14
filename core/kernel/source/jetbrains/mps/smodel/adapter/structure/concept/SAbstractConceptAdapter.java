@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.SNamedElementAdapter;
 import jetbrains.mps.smodel.adapter.structure.link.InvalidContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
@@ -30,10 +31,10 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
+import jetbrains.mps.smodel.runtime.NamedElementDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -43,7 +44,6 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -70,13 +70,11 @@ import java.util.Collections;
  * Also there is an editor issue when an instance of abstract concept (interface concept) might be created.
  * (E.g. the method {@link #isSubConceptOf(SAbstractConcept)} works not as expected for such concepts)
  */
-public abstract class SAbstractConceptAdapter implements SAbstractConcept, ConceptMetaInfoConverter {
+public abstract class SAbstractConceptAdapter extends SNamedElementAdapter implements SAbstractConcept, ConceptMetaInfoConverter {
   public static final String ID_DELIM = ":";
 
-  protected String myFqName;
-
   protected SAbstractConceptAdapter(String fqName) {
-    myFqName = fqName;
+    super(fqName);
   }
 
   /**
@@ -85,27 +83,15 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Nullable
   public abstract ConceptDescriptor getConceptDescriptor();
 
+  protected final NamedElementDescriptor getDescriptor() {
+    return getConceptDescriptor();
+  }
+
   /**
    * a helper method to get a declaration node for this concept
    * in the case of the legacy concept resolving (by string id)
    */
   protected abstract SNode findInModel(SModel structureModel);
-
-  @Nullable
-  @Override
-  public SNodeReference getSourceNode() {
-    ConceptDescriptor d = getConceptDescriptor();
-    if (d == null) {
-      return null;
-    }
-    return d.getSourceNode();
-  }
-
-  @NotNull
-  @Override
-  public String getName() {
-    return NameUtil.shortNameFromLongName(getQualifiedName());
-  }
 
   @Override
   public Collection<SReferenceLink> getReferenceLinks() {

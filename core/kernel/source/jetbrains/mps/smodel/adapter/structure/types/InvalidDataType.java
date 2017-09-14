@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,33 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.adapter.structure.concept;
+package jetbrains.mps.smodel.adapter.structure.types;
 
-import jetbrains.mps.smodel.adapter.structure.types.InvalidDataType;
-import jetbrains.mps.smodel.adapter.structure.types.SPrimitiveTypes;
-import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SType;
 
 /**
- * Fixme implementation of SAbstractType methods
- *
- * @deprecated Use another {@link SDataType} instance (e.g {@link SPrimitiveTypes#STRING} or {@link InvalidDataType)})
+ * @author Radimir.Sorokin
+ * @since 2018.3
  */
-@Deprecated
-@ToRemove(version = 2018.3)
-public class SDataTypeAdapter implements SDataType {
-  public SDataTypeAdapter() {
+public class InvalidDataType implements SDataType {
+
+  @NotNull
+  private final String myName;
+
+  public InvalidDataType(@NotNull String name) {
+    myName = name;
   }
 
+  @Nullable
   @Override
-  public Object fromString(String string) {
+  public Object fromString(@Nullable String string) {
     return SType.NOT_A_VALUE;
   }
 
+  @Nullable
   @Override
-  public String toString(Object object) {
+  public String toString(@Nullable Object value) {
     return null;
   }
 
@@ -52,5 +54,10 @@ public class SDataTypeAdapter implements SDataType {
   @Override
   public Object getDefault() {
     return SType.NOT_A_VALUE;
+  }
+
+  @Override
+  public String toString() {
+    return "InvalidDataType{" + myName + "}";
   }
 }

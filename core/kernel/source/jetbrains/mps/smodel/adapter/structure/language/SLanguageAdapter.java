@@ -17,14 +17,18 @@ package jetbrains.mps.smodel.adapter.structure.language;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
@@ -77,6 +81,28 @@ public abstract class SLanguageAdapter implements SLanguage {
       } else {
         result.add(new SConceptAdapterById(cd.getId(), cd.getConceptFqName()));
       }
+    }
+    return result;
+  }
+
+  @NotNull
+  @Override
+  public Iterable<SDataType> getDatatypes() {
+    LanguageRuntime runtime = getLanguageDescriptor();
+    if (runtime == null) {
+      return Collections.emptySet();
+    }
+
+    StructureAspectDescriptor structureAspect = getLanguageDescriptor().getAspect(StructureAspectDescriptor.class);
+    if (structureAspect == null) {
+      return Collections.emptyList();
+    }
+    ArrayList<SDataType> result = new ArrayList<>();
+    for (ConstrainedStringDatatypeDescriptor descriptor : structureAspect.getConstrainedStringDatatypeDescriptors()) {
+      result.add(MetaAdapterFactory.getConstrainedStringDataType(descriptor.getId(), descriptor.getName()));
+    }
+    for (EnumerationDescriptor descriptor : structureAspect.getEnumerationDescriptors()) {
+      result.add(MetaAdapterFactory.getEnumeration(descriptor.getId(), descriptor.getName()));
     }
     return result;
   }
