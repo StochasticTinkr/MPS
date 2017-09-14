@@ -51,6 +51,22 @@ public abstract class MetaIdFactory {
     return new SConceptId(langId, concept);
   }
 
+  public static SConstrainedStringDatatypeId constrainedStringDataTypeId(long uuidHigh, long uuidLow, long dataType) {
+    return constrainedStringDataTypeId(langId(uuidHigh, uuidLow), dataType);
+  }
+
+  public static SConstrainedStringDatatypeId constrainedStringDataTypeId(SLanguageId langId, long dataType) {
+    return new SConstrainedStringDatatypeId(langId, dataType);
+  }
+
+  public static SEnumerationId enumerationId(long uuidHigh, long uuidLow, long enumm) {
+    return enumerationId(langId(uuidHigh, uuidLow), enumm);
+  }
+
+  public static SEnumerationId enumerationId(SLanguageId langId, long enumm) {
+    return new SEnumerationId(langId, enumm);
+  }
+
   @Deprecated
   public static SPropertyId propId(UUID lang, long concept, long prop) {
     return new SPropertyId(conceptId(lang, concept), prop);
