@@ -38,7 +38,7 @@ public final class SPrimitiveTypes {
 
     @Override
     public boolean isInstanceOf(@Nullable Object value) {
-      return value instanceof String;
+      return value == null || value instanceof String;
     }
 
     @Override
@@ -70,13 +70,13 @@ public final class SPrimitiveTypes {
 
     @Override
     public boolean isInstanceOf(@Nullable Object value) {
-      return value instanceof Integer;
+      return value == null || value instanceof Integer;
     }
 
     @Override
     public Object fromString(String string) {
       if (StringUtil.isEmpty(string)) {
-        return 0;
+        return null;
       }
       if (string.startsWith("+")) {
         return SType.NOT_A_VALUE;
@@ -90,12 +90,12 @@ public final class SPrimitiveTypes {
 
     @Override
     public String toString(Object value) {
-      return value.toString();
+      return value == null ? null : value.toString();
     }
 
     @Override
     public Object getDefault() {
-      return 0;
+      return null;
     }
 
     @Override
@@ -128,7 +128,10 @@ public final class SPrimitiveTypes {
 
     @Override
     public String toString(Object value) {
-      return value.toString();
+      if (value instanceof Boolean) {
+        return ((Boolean) value) ? "true" : null;
+      }
+      return null;
     }
 
     @Override

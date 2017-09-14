@@ -60,6 +60,11 @@ public final class StringUtil {
     return s == null ? "" : s;
   }
 
+  @Nullable
+  public static String nullIfEmpty(@Nullable String s) {
+    return s != null && s.isEmpty() ? null : s;
+  }
+
   @NonNls
   private static final String[] REPLACES_REFS = {"&lt;", "&gt;", "&amp;", "&#39;", "&quot;"};
   @NonNls

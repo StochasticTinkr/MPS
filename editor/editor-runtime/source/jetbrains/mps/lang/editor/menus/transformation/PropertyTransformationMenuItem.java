@@ -20,7 +20,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
-import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.smodel.presentation.IPropertyPresentationProvider;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -33,16 +34,25 @@ public class PropertyTransformationMenuItem extends ActionItemBase implements Ba
 
   @NotNull
   private final SProperty myProperty;
-  private final PropertySupport myPropertySupport;
-  private final String myValue;
+  private final IPropertyPresentationProvider myPresentationProvider;
+  private final Object myValue;
   private final EditorContext myEditorContext;
   private final EditorMenuTraceInfo myTraceInfo;
 
-  public PropertyTransformationMenuItem(@NotNull SProperty property, String value, @NotNull TransformationMenuContext context) {
+  /**
+   * @deprecated Use another constructor that passes values as is
+   */
+  @Deprecated
+  @ToRemove(version = 2018.3)
+  public PropertyTransformationMenuItem(@NotNull SProperty property, String string, @NotNull TransformationMenuContext context) {
+    this(property, property.getType().fromString(string), context);
+  }
+
+  public PropertyTransformationMenuItem(@NotNull SProperty property, Object value, @NotNull TransformationMenuContext context) {
     myNode = context.getNode();
     myEditorContext = context.getEditorContext();
     myProperty = property;
-    myPropertySupport = PropertySupport.getPropertySupport(property);
+    myPresentationProvider = IPropertyPresentationProvider.getPresentationProviderFor(property);
     myValue = value;
     myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
   }
@@ -50,12 +60,12 @@ public class PropertyTransformationMenuItem extends ActionItemBase implements Ba
   @Nullable
   @Override
   public String getLabelText(String pattern) {
-    return myPropertySupport.fromInternalValue(myValue);
+    return myPresentationProvider.getPresentation(myValue);
   }
 
   @Override
   public void execute(@NotNull String pattern) {
-    SNodeAccessUtil.setProperty(myNode, myProperty, myValue);
+    SNodeAccessUtil.setPropertyValue(myNode, myProperty, myValue);
     myEditorContext.flushEvents();
     jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = myEditorContext.getSelectedCell();
     if (selectedCell instanceof jetbrains.mps.nodeEditor.cells.EditorCell_Label &&
@@ -65,7 +75,7 @@ public class PropertyTransformationMenuItem extends ActionItemBase implements Ba
     }
   }
 
-  String getValue() {
+  Object getValue() {
     return myValue;
   }
 

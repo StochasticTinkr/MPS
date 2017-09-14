@@ -32,6 +32,7 @@ import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.structure.types.SPrimitiveTypes;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -141,8 +142,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements
     SProperty nameProperty = null;
     int maxPriority = 0;
     for (SProperty property : getProperties()) {
-      SDataType dataType = property.getType();
-      if (!(dataType instanceof SPrimitiveDataType && ((SPrimitiveDataType) dataType).getType() == SPrimitiveDataType.STRING)) {
+      if (property.getType() != SPrimitiveTypes.STRING) {
         continue;
       }
       String propertyName = property.getName();

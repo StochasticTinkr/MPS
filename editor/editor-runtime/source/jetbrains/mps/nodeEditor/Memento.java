@@ -35,6 +35,7 @@ import jetbrains.mps.util.Pair;
 import org.jdom.Attribute;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -547,7 +548,8 @@ class Memento implements EditorComponentState {
     TransactionalPropertyState(EditorCell_Property propertyCell) {
       TransactionalPropertyAccessor accessor = (TransactionalPropertyAccessor) propertyCell.getModelAccessor();
       assert accessor.hasValueToCommit();
-      myUncommittedValue = accessor.doGetValue();
+      SDataType valueType = accessor.getProperty().getType();
+      myUncommittedValue = valueType.toString(accessor.doGetValue());
       myCellInfo = propertyCell.getCellInfo();
     }
 
@@ -564,7 +566,8 @@ class Memento implements EditorComponentState {
       EditorCell_Property propertyCell = (EditorCell_Property) cell;
       if (propertyCell.getModelAccessor() instanceof TransactionalPropertyAccessor) {
         TransactionalPropertyAccessor modelAccessor = (TransactionalPropertyAccessor) propertyCell.getModelAccessor();
-        modelAccessor.doSetValue(myUncommittedValue);
+        SDataType valueType = modelAccessor.getProperty().getType();
+        modelAccessor.doSetValue(valueType.fromString(myUncommittedValue));
         propertyCell.synchronize();
         return true;
       }

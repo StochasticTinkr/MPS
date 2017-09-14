@@ -64,10 +64,9 @@ public /*final*/ class SConstrainedStringDatatypeAdapter extends SNamedElementAd
 
   @Override
   public Object fromString(String rawValue) {
-    if (isInstanceOf(rawValue)) {
-      return rawValue;
-    }
-    return SType.NOT_A_VALUE;
+    // Actually we should check here that rawValue meets our pattern and return SType.NOT_A_VALUE
+    // but unfortunately there're lots of generator to BL's LongLiteral to rely on writing invalid values to constrained string properties
+    return rawValue;
   }
 
   @Override

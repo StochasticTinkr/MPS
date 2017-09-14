@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -27,6 +28,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SType;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -55,24 +57,40 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   }
 
   @Override
-  public String getPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, SProperty property) {
-    if (RuntimeFlags.isMergeDriverMode()) return node.getProperty(property);
+  public Object getPropertyValueImpl(org.jetbrains.mps.openapi.model.SNode node, SProperty property) {
+    if (RuntimeFlags.isMergeDriverMode()) {
+      return getPropertyDirectly(node, property);
+    }
 
     Set<Pair<SNode, SProperty>> getters = ourPropertyGettersInProgress.get();
     Pair<SNode, SProperty> current = new Pair<>(node, property);
-    if (getters.contains(current)) return node.getProperty(property);
+    if (getters.contains(current)) {
+      return getPropertyDirectly(node, property);
+    }
 
     getters.add(current);
     try {
-      PropertyConstraintsDescriptor descriptor = PropertySupport.getPropertyConstraintsDescriptor(node, property);
-      Object getterValue = descriptor != null ? descriptor.getValue(node) : node.getProperty(property);
-      return getterValue == null ? null : String.valueOf(getterValue);
+      PropertyConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(node.getConcept()).getProperty(property);
+      return descriptor != null ? descriptor.getValue(node) : getPropertyDirectly(node, property);
     } catch (Throwable t) {
       LOG.error(t);
-      return null;
+      return SType.NOT_A_VALUE;
     } finally {
       getters.remove(current);
     }
+  }
+
+  @Override
+  public String getPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, SProperty property) {
+    Object value = getPropertyValueImpl(node, property);
+    if (value == SType.NOT_A_VALUE) {
+      return null;
+    }
+    return property.getType().toString(value);
+  }
+
+  private static Object getPropertyDirectly(SNode node, SProperty property) {
+    return property.getType().fromString(node.getProperty(property));
   }
 
   private static ReferenceConstraintsDescriptor getReferenceConstraintsDescriptor(SNode node, SReferenceLink referenceLink) {
@@ -88,31 +106,49 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   }
 
   @Override
-  public void setPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, SProperty property, String propertyValue) {
+  public void setPropertyValueImpl(org.jetbrains.mps.openapi.model.SNode node, SProperty property, Object propertyValue) {
+    // FIXME Unfortunately there're some generators to LongLiteral that relies on committing invalid property values
+//    if (!property.getType().isInstanceOf(propertyValue)) {
+//      return;
+//    }
+    if (RuntimeFlags.isMergeDriverMode()) {
+      setPropertyDirectly(node, property, propertyValue);
+      return;
+    }
+
     Set<Pair<SNode, SProperty>> threadSet = ourPropertySettersInProgress.get();
     Pair<SNode, SProperty> pair = new Pair<>(node, property);
 
     //todo try to remove
     if (threadSet.contains(pair)) {
-      node.setProperty(property, propertyValue);
+      setPropertyDirectly(node, property, propertyValue);
       return;
     }
 
-    PropertyConstraintsDescriptor descriptor = PropertySupport.getPropertyConstraintsDescriptor(node, property);
+    PropertyConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(node.getConcept()).getProperty(property);
     threadSet.add(pair);
     try {
       if (descriptor != null) {
-        descriptor.setValue(node, propertyValue);
+        descriptor.setPropertyValue(node, propertyValue);
       } else {
         LOG.error(
             "Can't find property constraints for property `" + property.getName() + "`. Setting directly. Value: `" + propertyValue + "`.", node);
-        node.setProperty(property, propertyValue);
+        setPropertyDirectly(node, property, propertyValue);
       }
     } catch (Exception t) {
       LOG.error(t);
     } finally {
       threadSet.remove(pair);
     }
+  }
+
+  @Override
+  public void setPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, SProperty property, String propertyValue) {
+    setPropertyValueImpl(node, property, property.getType().fromString(propertyValue));
+  }
+
+  private static void setPropertyDirectly(SNode node, SProperty property, Object propertyValue) {
+    node.setProperty(property, property.getType().toString(propertyValue));
   }
 
   @Override
@@ -123,7 +159,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   public void setReferenceTargetImpl(org.jetbrains.mps.openapi.model.SNode node, SReferenceLink referenceLink,
-      @Nullable org.jetbrains.mps.openapi.model.SNode target) {
+                                     @Nullable org.jetbrains.mps.openapi.model.SNode target) {
     // invoke custom referent set event handler
     Set<Pair<SNode, SReferenceLink>> threadSet = ourSetReferentEventHandlersInProgress.get();
     Pair<SNode, SReferenceLink> pair = new Pair<>(node, referenceLink);
@@ -162,7 +198,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   public void setReferenceImpl(org.jetbrains.mps.openapi.model.SNode node, SReferenceLink referenceLink,
-      @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
+                               @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
     //todo for symmetry.Not yet used
     //RS: WHY there is no logic that invokes constraints like in SNodeAccessUtilImpl#setReferenceTargetImpl ???
     node.setReference(referenceLink, reference);

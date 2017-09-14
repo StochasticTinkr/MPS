@@ -5,6 +5,7 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.language.SType;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.EqualUtil;
 
@@ -23,8 +24,10 @@ public class SPropertyOperations {
   }
   public static String getString(SNode node, SProperty property) {
     if (node != null) {
-      String value = SNodeAccessUtil.getProperty(node, property);
-      return SPropertyOperations.getString(value);
+      Object value = SNodeAccessUtil.getPropertyValue(node, property);
+      if (value != SType.NOT_A_VALUE) {
+        return (String) value;
+      }
     }
     return null;
   }
@@ -37,8 +40,10 @@ public class SPropertyOperations {
   }
   public static int getInteger(SNode node, SProperty property) {
     if (node != null) {
-      String value = SNodeAccessUtil.getProperty(node, property);
-      return SPropertyOperations.getInteger(value);
+      Object value = SNodeAccessUtil.getPropertyValue(node, property);
+      if (value != null && value != SType.NOT_A_VALUE) {
+        return (int) value;
+      }
     }
     return 0;
   }
@@ -51,8 +56,10 @@ public class SPropertyOperations {
   }
   public static boolean getBoolean(SNode node, SProperty property) {
     if (node != null) {
-      String value = SNodeAccessUtil.getProperty(node, property);
-      return SPropertyOperations.getBoolean(value);
+      Object value = SNodeAccessUtil.getPropertyValue(node, property);
+      if (value != SType.NOT_A_VALUE) {
+        return (boolean) value;
+      }
     }
     return false;
   }

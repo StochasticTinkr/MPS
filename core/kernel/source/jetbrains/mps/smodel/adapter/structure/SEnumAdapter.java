@@ -120,6 +120,27 @@ public class SEnumAdapter implements SEnumeration {
     return false;
   }
 
+  @Override
+  public int hashCode() {
+    final SNodeReference sourceNode = getSourceNode();
+    if (sourceNode == null) {
+      return -1;
+    }
+    return sourceNode.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (obj instanceof SEnumAdapter) {
+      SEnumAdapter other = (SEnumAdapter) obj;
+      return Objects.equals(this.getSourceNode(), other.getSourceNode());
+    }
+    return false;
+  }
+
   @Nullable
   @Override
   public SLanguage getLanguage() {

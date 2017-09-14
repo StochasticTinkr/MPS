@@ -39,6 +39,15 @@ public abstract class SNodeAccessUtil {
     return myInstance.hasPropertyImpl(node, name);
   }
 
+  public static Object getPropertyValue(SNode node, SProperty property) {
+    return myInstance.getPropertyValueImpl(node, property);
+  }
+
+  /**
+   * @deprecated This method returns serialized property value.
+   * Consider use {@link SNodeAccessUtil#setPropertyValue(SNode, SProperty, Object)} that supplies values as is
+   */
+  @Deprecated
   public static String getProperty(SNode node, SProperty property) {
     return myInstance.getPropertyImpl(node, property);
   }
@@ -48,8 +57,17 @@ public abstract class SNodeAccessUtil {
     return myInstance.getPropertyImpl(node, name);
   }
 
+  /**
+   * @deprecated This method takes serialized property value.
+   * Consider use {@link SNodeAccessUtil#setPropertyValue(SNode, SProperty, Object)} that consumes values as is
+   */
+  @Deprecated
   public static void setProperty(SNode node, SProperty property, String propertyValue) {
     myInstance.setPropertyImpl(node, property, propertyValue);
+  }
+
+  public static void setPropertyValue(SNode node, SProperty property, Object propertyValue) {
+    myInstance.setPropertyValueImpl(node, property, propertyValue);
   }
 
   @Deprecated
@@ -93,9 +111,13 @@ public abstract class SNodeAccessUtil {
 
   protected abstract boolean hasPropertyImpl(SNode node, String name);
 
+  protected abstract Object getPropertyValueImpl(SNode node, SProperty property);
+
   protected abstract String getPropertyImpl(SNode node, SProperty property);
 
   protected abstract String getPropertyImpl(SNode node, String name);
+
+  protected abstract void setPropertyValueImpl(SNode node, SProperty property, Object propertyValue);
 
   protected abstract void setPropertyImpl(SNode node, SProperty property, String propertyValue);
 

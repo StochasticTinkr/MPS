@@ -33,9 +33,7 @@ import jetbrains.mps.vcs.diff.changes.NodeGroupStructChange;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.smodel.PropertySupport;
-import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.mps.openapi.language.SDataType;
 
 public class StructChangeSetBuilder {
   private StructChangeSetImpl myChangeSet;
@@ -239,13 +237,10 @@ outer:
   }
 
   private static boolean equalsProperty(SNode n1, SNode n2, SProperty property) {
-    PropertySupport propertySupport = new ChangeSetBuilder.DefaultPropertySupport();
-    if (!(RuntimeFlags.isMergeDriverMode())) {
-      propertySupport = PropertySupport.getPropertySupport(property);
-    }
-    String n1PresentableValue = propertySupport.fromInternalValue(n1.getProperty(property));
-    String n2PresentableValue = propertySupport.fromInternalValue(n2.getProperty(property));
-    return EqualUtil.equals(n1PresentableValue, n2PresentableValue);
+    SDataType type = property.getType();
+    Object value1 = type.fromString(n1.getProperty(property));
+    Object value2 = type.fromString(n2.getProperty(property));
+    return Objects.equals(value1, value2);
   }
 
   private static boolean equalsReference(SReference ref1, SReference ref2, final Map<SNode, SNode> oldToNewMap, boolean easy) {

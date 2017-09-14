@@ -40,8 +40,8 @@ public class BooleanSPropertySubstituteInfo extends AbstractNodeSubstituteInfo i
   @Override
   public List<SubstituteAction> createActions() {
     List<SubstituteAction> list = new ArrayList<>(2);
-    list.add(new SPropertySubstituteAction(myNode, myProperty, "true"));
-    list.add(new SPropertySubstituteAction(myNode, myProperty, null));
+    list.add(new SPropertySubstituteAction(myNode, myProperty, true));
+    list.add(new SPropertySubstituteAction(myNode, myProperty, false));
     return list;
   }
 }

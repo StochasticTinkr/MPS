@@ -172,7 +172,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     if (!isGetterDefault()) {
       return getterDescriptor.getValue(node);
     } else {
-      return node.getProperty(myProperty);
+      return myProperty.getType().fromString(node.getProperty(myProperty));
     }
   }
 
