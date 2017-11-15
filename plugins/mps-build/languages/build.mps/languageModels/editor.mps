@@ -2,9 +2,9 @@
 <model ref="r:589e3942-2f2d-42a2-9312-986a1d3e2f7f(jetbrains.mps.build.mps.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -116,6 +116,10 @@
       <concept id="1164914519156" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" flags="ng" index="UkePV">
         <reference id="1164914727930" name="replacementConcept" index="Ul1FP" />
       </concept>
+      <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
+        <property id="1186403713874" name="color" index="Vb096" />
+      </concept>
+      <concept id="1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" flags="ln" index="VechU" />
       <concept id="615427434521884870" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Subconcepts" flags="ng" index="2VfDsV" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
@@ -5757,6 +5761,95 @@
         <ref role="1NtTu8" to="kdzh:EpEP7hVcc7" resolve="files" />
       </node>
       <node concept="l2Vlx" id="EpEP7hVccS" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7cgc9gF36Yk">
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <ref role="1XX52x" to="kdzh:7cgc9gF36Yb" resolve="BuildMps_TipsFromDir" />
+    <node concept="3EZMnI" id="7cgc9gF36Ym" role="2wV5jI">
+      <node concept="3F0ifn" id="7cgc9gF36Yn" role="3EZMnx">
+        <property role="3F0ifm" value="Directory" />
+        <node concept="VechU" id="7cgc9gF36Yo" role="3F10Kt">
+          <property role="Vb096" value="DARK_GREEN" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="7cgc9gF36Yr" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7cgc9gF36YL">
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <ref role="1XX52x" to="kdzh:7cgc9gF36YC" resolve="BuildMps_TipsGenerated" />
+    <node concept="3EZMnI" id="7cgc9gF36YN" role="2wV5jI">
+      <node concept="3F0ifn" id="7cgc9gF36YO" role="3EZMnx">
+        <property role="3F0ifm" value="Generated solution" />
+        <node concept="VechU" id="7cgc9gF5lbJ" role="3F10Kt">
+          <property role="Vb096" value="DARK_GREEN" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="7cgc9gF36YS" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7cgc9gEQiVB">
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <ref role="1XX52x" to="kdzh:7cgc9gEPo3m" resolve="BuildMps_Tips" />
+    <node concept="3EZMnI" id="7cgc9gEQiVD" role="2wV5jI">
+      <node concept="3F0ifn" id="7cgc9gEQiVK" role="3EZMnx">
+        <property role="3F0ifm" value="Tips &amp; Tricks:" />
+      </node>
+      <node concept="3F0ifn" id="7cgc9gER362" role="3EZMnx">
+        <property role="3F0ifm" value="{" />
+      </node>
+      <node concept="3F2HdR" id="7cgc9gER36a" role="3EZMnx">
+        <ref role="1NtTu8" to="kdzh:7cgc9gEPwDT" resolve="import" />
+        <node concept="l2Vlx" id="7cgc9gER36c" role="2czzBx" />
+        <node concept="pj6Ft" id="7cgc9gER36u" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="pVoyu" id="7cgc9gER36w" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="7cgc9gER36z" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="7cgc9gER36n" role="3EZMnx">
+        <property role="3F0ifm" value="}" />
+      </node>
+      <node concept="3F0ifn" id="7cgc9gF1$Lz" role="3EZMnx">
+        <node concept="pVoyu" id="7cgc9gF1$LU" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="7cgc9gEQiVG" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7cgc9gF0EN7">
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <ref role="1XX52x" to="kdzh:7cgc9gEPwDS" resolve="BuildMps_TipsMPS" />
+    <node concept="3EZMnI" id="7cgc9gF0EN9" role="2wV5jI">
+      <node concept="3F0ifn" id="7cgc9gF0ENs" role="3EZMnx">
+        <property role="3F0ifm" value="MPS" />
+        <node concept="VechU" id="7cgc9gF0ENy" role="3F10Kt">
+          <property role="Vb096" value="DARK_GREEN" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="7cgc9gF0ENc" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7cgc9gF4MJp">
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <ref role="1XX52x" to="kdzh:7cgc9gF4MJg" resolve="BuildMps_TipsImportFrom" />
+    <node concept="3EZMnI" id="7cgc9gF4MJr" role="2wV5jI">
+      <node concept="3F0ifn" id="7cgc9gF4MJ_" role="3EZMnx">
+        <property role="3F0ifm" value="import from" />
+        <node concept="VechU" id="7cgc9gF4MJD" role="3F10Kt">
+          <property role="Vb096" value="DARK_BLUE" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="7cgc9gF4MJu" role="2iSdaV" />
+      <node concept="3F1sOY" id="7cgc9gF4MJQ" role="3EZMnx">
+        <ref role="1NtTu8" to="kdzh:7cgc9gF4MJG" resolve="source" />
+      </node>
     </node>
   </node>
 </model>

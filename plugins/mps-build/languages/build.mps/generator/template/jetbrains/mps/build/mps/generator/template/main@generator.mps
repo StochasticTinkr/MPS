@@ -2,14 +2,14 @@
 <model ref="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="5" />
-    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="0" />
-    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
+    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -678,6 +678,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
@@ -870,6 +871,12 @@
     <node concept="3aamgX" id="6Iq8148ha4Q" role="3acgRq">
       <ref role="30HIoZ" to="kdzh:6Iq8148eRud" resolve="BuildMps_Branding" />
       <node concept="b5Tf3" id="6Iq8148ha4S" role="1lVwrX" />
+    </node>
+    <node concept="3aamgX" id="7cgc9gERLBf" role="3acgRq">
+      <ref role="30HIoZ" to="kdzh:7cgc9gEPo3m" resolve="BuildMps_Tips" />
+      <node concept="j$656" id="7cgc9gFep_s" role="1lVwrX">
+        <ref role="v9R2y" node="7cgc9gFep_q" resolve="reduce_BuildMps_Tips" />
+      </node>
     </node>
     <node concept="3aamgX" id="1jjYQYSi0xS" role="3acgRq">
       <property role="36QftV" value="true" />
@@ -3344,6 +3351,12 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="7cgc9gF8HtY" role="3acgRq">
+      <ref role="30HIoZ" to="kdzh:7cgc9gF36YC" resolve="BuildMps_TipsGenerated" />
+      <node concept="j$656" id="7cgc9gF8HtZ" role="1lVwrX">
+        <ref role="v9R2y" node="7cgc9gF8HtW" resolve="reduce_BuildMps_TipsGenerated" />
       </node>
     </node>
   </node>
@@ -16188,6 +16201,57 @@
       <property role="2n97ot" value="just to indicate this switch is for BuildMps_ModuleSource, and we handle single subconcept only" />
       <ref role="30HIoZ" to="kdzh:4zCbl23d1OJ" resolve="BuildMps_ModuleSource" />
       <node concept="b5Tf3" id="EpEP7hkcqh" role="1lVwrX" />
+    </node>
+  </node>
+  <node concept="13MO4I" id="7cgc9gFep_q">
+    <property role="TrG5h" value="reduce_BuildMps_Tips" />
+    <ref role="3gUMe" to="kdzh:7cgc9gEPo3m" resolve="BuildMps_Tips" />
+    <node concept="2pNNFK" id="7cgc9gFeCkU" role="13RCb5">
+      <property role="2pNNFO" value="tip" />
+      <node concept="3o6iSG" id="7cgc9gFeCkX" role="3o6s8t" />
+      <node concept="3o6iSG" id="7cgc9gFeCl0" role="3o6s8t" />
+      <node concept="2pNNFK" id="7cgc9gFeClw" role="3o6s8t">
+        <property role="2pNNFO" value="tips" />
+        <node concept="3o6iSG" id="7cgc9gFeCCe" role="3o6s8t" />
+        <node concept="3o6iSG" id="7cgc9gFeCJz" role="3o6s8t" />
+        <node concept="3o6iSG" id="7cgc9gFeCQU" role="3o6s8t">
+          <property role="3o6i5n" value="//todo" />
+        </node>
+        <node concept="3o6iSG" id="7cgc9gFeD5I" role="3o6s8t" />
+        <node concept="3o6iSG" id="7cgc9gFeCYj" role="3o6s8t" />
+        <node concept="raruj" id="7cgc9gFeClF" role="lGtFl" />
+        <node concept="1WS0z7" id="7cgc9gFeClT" role="lGtFl">
+          <node concept="3JmXsc" id="7cgc9gFeClW" role="3Jn$fo">
+            <node concept="3clFbS" id="7cgc9gFeClX" role="2VODD2">
+              <node concept="3clFbF" id="7cgc9gFeCm3" role="3cqZAp">
+                <node concept="2OqwBi" id="7cgc9gFeClY" role="3clFbG">
+                  <node concept="3Tsc0h" id="7cgc9gFeCm1" role="2OqNvi">
+                    <ref role="3TtcxE" to="kdzh:7cgc9gEPwDT" resolve="import" />
+                  </node>
+                  <node concept="30H73N" id="7cgc9gFeCm2" role="2Oq$k0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3o6iSG" id="7cgc9gFeClc" role="3o6s8t" />
+    </node>
+  </node>
+  <node concept="13MO4I" id="7cgc9gF8HtW">
+    <property role="TrG5h" value="reduce_BuildMps_TipsGenerated" />
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <ref role="3gUMe" to="kdzh:7cgc9gF36YC" resolve="BuildMps_TipsGenerated" />
+    <node concept="2pNNFK" id="7cgc9gF8Isa" role="13RCb5">
+      <property role="2pNNFO" value="jar" />
+      <node concept="2pNUuL" id="7cgc9gF8Ybv" role="2pNNFR">
+        <property role="2pNUuO" value="destfile" />
+        <node concept="2pMdtt" id="7cgc9gF8Yb$" role="2pMdts">
+          <property role="2pMdty" value="Generated" />
+        </node>
+      </node>
+      <node concept="3o6iSG" id="7cgc9gF8Ybi" role="3o6s8t" />
+      <node concept="raruj" id="7cgc9gF8Ybf" role="lGtFl" />
     </node>
   </node>
 </model>
