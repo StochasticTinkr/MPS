@@ -25,6 +25,8 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
+    <import index="rzwt" ref="r:77dbf2f6-47ba-4e30-9724-6cb401a543ff(voicemenu.build)" />
+    <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
     <import index="zwni" ref="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" implicit="true" />
     <import index="2ogt" ref="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" implicit="true" />
     <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
@@ -16215,16 +16217,13 @@
     <property role="TrG5h" value="reduce_BuildMps_TipsGenerated" />
     <property role="3GE5qa" value="Project.TipsAndTricks" />
     <ref role="3gUMe" to="kdzh:7cgc9gF36YC" resolve="BuildMps_TipsGenerated" />
-    <node concept="2pNNFK" id="7cgc9gF8Isa" role="13RCb5">
-      <property role="2pNNFO" value="jar" />
-      <node concept="2pNUuL" id="7cgc9gF8Ybv" role="2pNNFR">
-        <property role="2pNUuO" value="destfile" />
-        <node concept="2pMdtt" id="7cgc9gF8Yb$" role="2pMdts">
-          <property role="2pMdty" value="GeneratedXXXXX" />
+    <node concept="3981dx" id="5E1nwh5nM7G" role="13RCb5">
+      <node concept="3_J27D" id="5E1nwh5nM7I" role="Nbhlr">
+        <node concept="3Mxwew" id="5E1nwh5nM7K" role="3MwsjC">
+          <property role="3MwjfP" value="GeneratedTips.jar" />
         </node>
       </node>
-      <node concept="3o6iSG" id="7cgc9gF8Ybi" role="3o6s8t" />
-      <node concept="raruj" id="7cgc9gF8Ybf" role="lGtFl" />
+      <node concept="raruj" id="5E1nwh5nM7Q" role="lGtFl" />
     </node>
   </node>
   <node concept="13MO4I" id="5E1nwh4kZTN">

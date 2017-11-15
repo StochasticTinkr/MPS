@@ -23,6 +23,8 @@
         <dependency reexport="false">698a8d22-a104-47a0-ba8d-10e3ec237f13(jetbrains.mps.build.workflow)</dependency>
         <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
         <dependency reexport="false" scope="design">39d44af6-f60e-499c-a201-583451e7fad0(jetbrains.mps.build.workflow#2769948622284786808)</dependency>
+        <dependency reexport="false">422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)</dependency>
+        <dependency reexport="false">ef5aef68-d5fd-4545-b9c5-0f09bfdf2146(voicemenu.build)</dependency>
       </dependencies>
       <languageVersions>
         <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="6" />
