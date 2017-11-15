@@ -6380,7 +6380,7 @@
             <node concept="2OqwBi" id="5E1nwh4uqhG" role="2Oq$k0">
               <node concept="13iPFW" id="5E1nwh4uq9a" role="2Oq$k0" />
               <node concept="3Tsc0h" id="5E1nwh4uqz3" role="2OqNvi">
-                <ref role="3TtcxE" to="kdzh:7cgc9gEPwDT" resolve="import" />
+                <ref role="3TtcxE" to="kdzh:7cgc9gEPwDT" resolve="imports" />
               </node>
             </node>
             <node concept="TSZUe" id="5E1nwh4uuhn" role="2OqNvi">

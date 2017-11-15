@@ -5767,11 +5767,6 @@
     <property role="3GE5qa" value="Project.TipsAndTricks" />
     <ref role="1XX52x" to="kdzh:7cgc9gEPo3m" resolve="BuildMps_Tips" />
     <node concept="3EZMnI" id="7cgc9gEQiVD" role="2wV5jI">
-      <node concept="3F0ifn" id="5E1nwh4sVlv" role="3EZMnx">
-        <node concept="ljvvj" id="5E1nwh4sVlG" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
       <node concept="3F0ifn" id="7cgc9gEQiVK" role="3EZMnx">
         <property role="3F0ifm" value="Tips &amp; Tricks:" />
       </node>
@@ -5779,7 +5774,7 @@
         <property role="3F0ifm" value="{" />
       </node>
       <node concept="3F2HdR" id="7cgc9gER36a" role="3EZMnx">
-        <ref role="1NtTu8" to="kdzh:7cgc9gEPwDT" resolve="import" />
+        <ref role="1NtTu8" to="kdzh:7cgc9gEPwDT" resolve="imports" />
         <node concept="l2Vlx" id="7cgc9gER36c" role="2czzBx" />
         <node concept="pj6Ft" id="7cgc9gER36u" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -5819,9 +5814,9 @@
     <property role="3GE5qa" value="Project.TipsAndTricks" />
     <ref role="1XX52x" to="kdzh:7cgc9gF36Yb" resolve="BuildMps_TipsFromDir" />
     <node concept="3EZMnI" id="7cgc9gF36Ym" role="2wV5jI">
-      <node concept="3F0ifn" id="7cgc9gF36Yn" role="3EZMnx">
-        <property role="3F0ifm" value="Directory" />
-        <node concept="VechU" id="7cgc9gF36Yo" role="3F10Kt">
+      <node concept="3F1sOY" id="5E1nwh4w9sH" role="3EZMnx">
+        <ref role="1NtTu8" to="kdzh:5E1nwh4w9ss" resolve="path" />
+        <node concept="VechU" id="5E1nwh4w9sO" role="3F10Kt">
           <property role="Vb096" value="DARK_GREEN" />
         </node>
       </node>

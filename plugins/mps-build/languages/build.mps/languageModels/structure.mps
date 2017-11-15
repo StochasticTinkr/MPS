@@ -1495,14 +1495,14 @@
   <node concept="1TIwiD" id="7cgc9gEPo3m">
     <property role="TrG5h" value="BuildMps_Tips" />
     <property role="3GE5qa" value="Project.TipsAndTricks" />
-    <property role="34LRSv" value="idea tips" />
+    <property role="34LRSv" value="tips &amp; tricks" />
     <property role="EcuMT" value="8291180326921011414" />
     <property role="R4oN_" value="tips and tricks for new Ide" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
     <node concept="1TJgyj" id="7cgc9gEPwDT" role="1TKVEi">
       <property role="IQ2ns" value="8291180326921046649" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="import" />
+      <property role="20kJfa" value="imports" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7cgc9gF4MJg" resolve="BuildMps_TipsImportFrom" />
     </node>
@@ -1528,6 +1528,13 @@
     <property role="TrG5h" value="BuildMps_TipsFromDir" />
     <property role="34LRSv" value="import from directory" />
     <ref role="1TJDcQ" node="7cgc9gF0EMY" resolve="BuildMps_TipsImport" />
+    <node concept="1TJgyj" id="5E1nwh4w9ss" role="1TKVEi">
+      <property role="IQ2ns" value="6521597107831346972" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="path" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7cgc9gF36YC">
     <property role="EcuMT" value="8291180326924611496" />

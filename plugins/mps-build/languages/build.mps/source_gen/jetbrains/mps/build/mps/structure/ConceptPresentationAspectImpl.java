@@ -446,7 +446,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildMps_Tips == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("tips and tricks for new Ide");
-          cpb.rawPresentation("idea tips");
+          cpb.rawPresentation("tips & tricks");
           props_BuildMps_Tips = cpb.create();
         }
         return props_BuildMps_Tips;
