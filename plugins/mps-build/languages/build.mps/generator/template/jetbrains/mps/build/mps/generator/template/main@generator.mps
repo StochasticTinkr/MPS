@@ -16222,7 +16222,7 @@
     <node concept="3981dx" id="5E1nwh5nM7G" role="13RCb5">
       <node concept="3_J27D" id="5E1nwh5nM7I" role="Nbhlr">
         <node concept="3Mxwew" id="5E1nwh5nM7K" role="3MwsjC">
-          <property role="3MwjfP" value="GeneratedTips.jar" />
+          <property role="3MwjfP" value="GeneratedTipsAndTricks.jar" />
         </node>
       </node>
       <node concept="raruj" id="5E1nwh5nM7Q" role="lGtFl" />
@@ -16281,9 +16281,34 @@
     <property role="3GE5qa" value="Project.TipsAndTricks" />
     <ref role="3gUMe" to="kdzh:7cgc9gF36Yb" resolve="BuildMps_TipsFromDir" />
     <node concept="3981dx" id="5E1nwh5fC5Q" role="13RCb5">
+      <node concept="398223" id="5E1nwh5EinB" role="39821P">
+        <node concept="2HvfSZ" id="5E1nwh5hlBt" role="39821P">
+          <node concept="55IIr" id="5E1nwh5hlBu" role="2HvfZ0">
+            <node concept="29HgVG" id="5E1nwh5hlOc" role="lGtFl">
+              <node concept="3NFfHV" id="5E1nwh5hlOf" role="3NFExx">
+                <node concept="3clFbS" id="5E1nwh5hlOg" role="2VODD2">
+                  <node concept="3clFbF" id="5E1nwh5hlR_" role="3cqZAp">
+                    <node concept="2OqwBi" id="5E1nwh5hm1O" role="3clFbG">
+                      <node concept="30H73N" id="5E1nwh5hlR$" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="5E1nwh5hmcE" role="2OqNvi">
+                        <ref role="3Tt5mk" to="kdzh:5E1nwh4w9ss" resolve="path" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3_J27D" id="5E1nwh5EinD" role="Nbhlr">
+          <node concept="3Mxwew" id="5E1nwh5Eiu3" role="3MwsjC">
+            <property role="3MwjfP" value="tips" />
+          </node>
+        </node>
+      </node>
       <node concept="3_J27D" id="5E1nwh5fC5S" role="Nbhlr">
         <node concept="3Mxwew" id="5E1nwh5fC5U" role="3MwsjC">
-          <property role="3MwjfP" value="TestTest.jar" />
+          <property role="3MwjfP" value="file.jar" />
           <node concept="17Uvod" id="5E1nwh5hfLY" role="lGtFl">
             <property role="P4ACc" value="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702019/4903714810883755350" />
             <property role="2qtEX9" value="text" />
@@ -16300,24 +16325,6 @@
         </node>
       </node>
       <node concept="raruj" id="5E1nwh5fC5Y" role="lGtFl" />
-      <node concept="2HvfSZ" id="5E1nwh5hlBt" role="39821P">
-        <node concept="55IIr" id="5E1nwh5hlBu" role="2HvfZ0">
-          <node concept="29HgVG" id="5E1nwh5hlOc" role="lGtFl">
-            <node concept="3NFfHV" id="5E1nwh5hlOf" role="3NFExx">
-              <node concept="3clFbS" id="5E1nwh5hlOg" role="2VODD2">
-                <node concept="3clFbF" id="5E1nwh5hlR_" role="3cqZAp">
-                  <node concept="2OqwBi" id="5E1nwh5hm1O" role="3clFbG">
-                    <node concept="30H73N" id="5E1nwh5hlR$" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="5E1nwh5hmcE" role="2OqNvi">
-                      <ref role="3Tt5mk" to="kdzh:5E1nwh4w9ss" resolve="path" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
 </model>

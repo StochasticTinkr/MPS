@@ -1497,7 +1497,7 @@
     <property role="3GE5qa" value="Project.TipsAndTricks" />
     <property role="34LRSv" value="tips &amp; tricks" />
     <property role="EcuMT" value="8291180326921011414" />
-    <property role="R4oN_" value="tips and tricks for new Ide" />
+    <property role="R4oN_" value="tips and tricks for new IDE" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
     <node concept="1TJgyj" id="7cgc9gEPwDT" role="1TKVEi">
       <property role="IQ2ns" value="8291180326921046649" />
