@@ -5852,5 +5852,13 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="5E1nwh5_ANT">
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <ref role="1XX52x" to="kdzh:7cgc9gF0EMY" resolve="BuildMps_TipsImport" />
+    <node concept="3F0ifn" id="5E1nwh5_ANY" role="2wV5jI">
+      <property role="ilYzB" value="&lt;source&gt;" />
+      <property role="1cu_pB" value="2" />
+    </node>
+  </node>
 </model>
 
