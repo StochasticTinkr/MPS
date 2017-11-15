@@ -5763,36 +5763,15 @@
       <node concept="l2Vlx" id="EpEP7hVccS" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="7cgc9gF36Yk">
-    <property role="3GE5qa" value="Project.TipsAndTricks" />
-    <ref role="1XX52x" to="kdzh:7cgc9gF36Yb" resolve="BuildMps_TipsFromDir" />
-    <node concept="3EZMnI" id="7cgc9gF36Ym" role="2wV5jI">
-      <node concept="3F0ifn" id="7cgc9gF36Yn" role="3EZMnx">
-        <property role="3F0ifm" value="Directory" />
-        <node concept="VechU" id="7cgc9gF36Yo" role="3F10Kt">
-          <property role="Vb096" value="DARK_GREEN" />
-        </node>
-      </node>
-      <node concept="l2Vlx" id="7cgc9gF36Yr" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="7cgc9gF36YL">
-    <property role="3GE5qa" value="Project.TipsAndTricks" />
-    <ref role="1XX52x" to="kdzh:7cgc9gF36YC" resolve="BuildMps_TipsGenerated" />
-    <node concept="3EZMnI" id="7cgc9gF36YN" role="2wV5jI">
-      <node concept="3F0ifn" id="7cgc9gF36YO" role="3EZMnx">
-        <property role="3F0ifm" value="Generated solution" />
-        <node concept="VechU" id="7cgc9gF5lbJ" role="3F10Kt">
-          <property role="Vb096" value="DARK_GREEN" />
-        </node>
-      </node>
-      <node concept="l2Vlx" id="7cgc9gF36YS" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="24kQdi" id="7cgc9gEQiVB">
     <property role="3GE5qa" value="Project.TipsAndTricks" />
     <ref role="1XX52x" to="kdzh:7cgc9gEPo3m" resolve="BuildMps_Tips" />
     <node concept="3EZMnI" id="7cgc9gEQiVD" role="2wV5jI">
+      <node concept="3F0ifn" id="5E1nwh4sVlv" role="3EZMnx">
+        <node concept="ljvvj" id="5E1nwh4sVlG" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
       <node concept="3F0ifn" id="7cgc9gEQiVK" role="3EZMnx">
         <property role="3F0ifm" value="Tips &amp; Tricks:" />
       </node>
@@ -5834,6 +5813,32 @@
         </node>
       </node>
       <node concept="l2Vlx" id="7cgc9gF0ENc" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7cgc9gF36Yk">
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <ref role="1XX52x" to="kdzh:7cgc9gF36Yb" resolve="BuildMps_TipsFromDir" />
+    <node concept="3EZMnI" id="7cgc9gF36Ym" role="2wV5jI">
+      <node concept="3F0ifn" id="7cgc9gF36Yn" role="3EZMnx">
+        <property role="3F0ifm" value="Directory" />
+        <node concept="VechU" id="7cgc9gF36Yo" role="3F10Kt">
+          <property role="Vb096" value="DARK_GREEN" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="7cgc9gF36Yr" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7cgc9gF36YL">
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <ref role="1XX52x" to="kdzh:7cgc9gF36YC" resolve="BuildMps_TipsGenerated" />
+    <node concept="3EZMnI" id="7cgc9gF36YN" role="2wV5jI">
+      <node concept="3F0ifn" id="7cgc9gF36YO" role="3EZMnx">
+        <property role="3F0ifm" value="Generated solution" />
+        <node concept="VechU" id="7cgc9gF5lbJ" role="3F10Kt">
+          <property role="Vb096" value="DARK_GREEN" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="7cgc9gF36YS" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="7cgc9gF4MJp">

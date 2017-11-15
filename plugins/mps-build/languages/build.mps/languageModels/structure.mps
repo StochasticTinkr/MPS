@@ -1492,20 +1492,13 @@
       <property role="t5JxN" value="Tells what files to treat as auxiliary module resources (e.g. icons, externalized messages, etc.)" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7cgc9gF36Yb">
-    <property role="EcuMT" value="8291180326924611467" />
-    <property role="3GE5qa" value="Project.TipsAndTricks" />
-    <property role="TrG5h" value="BuildMps_TipsFromDir" />
-    <property role="34LRSv" value="import from directory" />
-    <ref role="1TJDcQ" node="7cgc9gF0EMY" resolve="BuildMps_TipsImport" />
-  </node>
   <node concept="1TIwiD" id="7cgc9gEPo3m">
     <property role="TrG5h" value="BuildMps_Tips" />
     <property role="3GE5qa" value="Project.TipsAndTricks" />
     <property role="34LRSv" value="idea tips" />
     <property role="EcuMT" value="8291180326921011414" />
     <property role="R4oN_" value="tips and tricks for new Ide" />
-    <ref role="1TJDcQ" to="3ior:6qcrfIJFdK8" resolve="BuildProjectPart" />
+    <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
     <node concept="1TJgyj" id="7cgc9gEPwDT" role="1TKVEi">
       <property role="IQ2ns" value="8291180326921046649" />
       <property role="20lmBu" value="aggregation" />
@@ -1513,13 +1506,6 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7cgc9gF4MJg" resolve="BuildMps_TipsImportFrom" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="7cgc9gF36YC">
-    <property role="EcuMT" value="8291180326924611496" />
-    <property role="3GE5qa" value="Project.TipsAndTricks" />
-    <property role="TrG5h" value="BuildMps_TipsGenerated" />
-    <property role="34LRSv" value="import from TipAndTricks solution" />
-    <ref role="1TJDcQ" node="7cgc9gF0EMY" resolve="BuildMps_TipsImport" />
   </node>
   <node concept="1TIwiD" id="7cgc9gEPwDS">
     <property role="EcuMT" value="8291180326921046648" />
@@ -1535,6 +1521,20 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7cgc9gF36Yb">
+    <property role="EcuMT" value="8291180326924611467" />
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <property role="TrG5h" value="BuildMps_TipsFromDir" />
+    <property role="34LRSv" value="import from directory" />
+    <ref role="1TJDcQ" node="7cgc9gF0EMY" resolve="BuildMps_TipsImport" />
+  </node>
+  <node concept="1TIwiD" id="7cgc9gF36YC">
+    <property role="EcuMT" value="8291180326924611496" />
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <property role="TrG5h" value="BuildMps_TipsGenerated" />
+    <property role="34LRSv" value="import from TipAndTricks solution" />
+    <ref role="1TJDcQ" node="7cgc9gF0EMY" resolve="BuildMps_TipsImport" />
   </node>
   <node concept="1TIwiD" id="7cgc9gF4MJg">
     <property role="EcuMT" value="8291180326925052880" />
