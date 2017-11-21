@@ -6399,5 +6399,37 @@
       </node>
     </node>
   </node>
+  <node concept="13h7C7" id="4reBHdWlcuc">
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <ref role="13h7C2" to="kdzh:7cgc9gF4MJg" resolve="BuildMps_TipsImportFrom" />
+    <node concept="13hLZK" id="4reBHdWlcud" role="13h7CW">
+      <node concept="3clFbS" id="4reBHdWlcue" role="2VODD2">
+        <node concept="3clFbF" id="4reBHdWlcuo" role="3cqZAp">
+          <node concept="37vLTI" id="4reBHdWldx9" role="3clFbG">
+            <node concept="3clFbT" id="4reBHdWldxz" role="37vLTx">
+              <property role="3clFbU" value="false" />
+            </node>
+            <node concept="2OqwBi" id="4reBHdWlcHT" role="37vLTJ">
+              <node concept="13iPFW" id="4reBHdWlcun" role="2Oq$k0" />
+              <node concept="3TrcHB" id="4reBHdWlcUc" role="2OqNvi">
+                <ref role="3TsBF5" to="kdzh:4reBHdWlcu9" resolve="languageIsSpecified" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4reBHdWldA3" role="3cqZAp">
+          <node concept="37vLTI" id="4reBHdWlexX" role="3clFbG">
+            <node concept="Xl_RD" id="4reBHdWle$g" role="37vLTx" />
+            <node concept="2OqwBi" id="4reBHdWldHo" role="37vLTJ">
+              <node concept="13iPFW" id="4reBHdWldA1" role="2Oq$k0" />
+              <node concept="3TrcHB" id="4reBHdWldVs" role="2OqNvi">
+                <ref role="3TsBF5" to="kdzh:4reBHdWlcu7" resolve="language" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

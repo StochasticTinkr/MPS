@@ -47,7 +47,6 @@ public final class MacrosFactory {
         return new MacroHelperImpl(moduleFile, new ModuleMacros());
       }
     }
-
     return null;
   }
 

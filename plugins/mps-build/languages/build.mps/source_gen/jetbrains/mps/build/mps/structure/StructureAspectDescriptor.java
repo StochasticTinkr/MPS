@@ -791,6 +791,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.mps", "BuildMps_TipsImportFrom", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x731030942b132bd0L);
     b.class_(false, false, false);
     b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/8291180326925052880");
+    b.prop("languageIsSpecified", 0x46ce9ed37c54c789L, "5102190059018569609");
+    b.prop("language", 0x46ce9ed37c54c787L, "5102190059018569607");
     b.aggregate("source", 0x731030942b132becL).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x731030942b02acbeL).optional(false).ordered(true).multiple(false).origin("8291180326925052908").done();
     b.alias("import from");
     return b.create();

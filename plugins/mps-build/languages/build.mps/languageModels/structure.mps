@@ -1549,6 +1549,16 @@
     <property role="TrG5h" value="BuildMps_TipsImportFrom" />
     <property role="34LRSv" value="import from" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="4reBHdWlcu9" role="1TKVEl">
+      <property role="IQ2nx" value="5102190059018569609" />
+      <property role="TrG5h" value="languageIsSpecified" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="4reBHdWlcu7" role="1TKVEl">
+      <property role="IQ2nx" value="5102190059018569607" />
+      <property role="TrG5h" value="language" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="1TJgyj" id="7cgc9gF4MJG" role="1TKVEi">
       <property role="IQ2ns" value="8291180326925052908" />
       <property role="20lmBu" value="aggregation" />
