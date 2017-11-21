@@ -1549,22 +1549,31 @@
     <property role="TrG5h" value="BuildMps_TipsImportFrom" />
     <property role="34LRSv" value="import from" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="4reBHdWlcu9" role="1TKVEl">
-      <property role="IQ2nx" value="5102190059018569609" />
-      <property role="TrG5h" value="languageIsSpecified" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="1TJgyi" id="4reBHdWlcu7" role="1TKVEl">
-      <property role="IQ2nx" value="5102190059018569607" />
-      <property role="TrG5h" value="language" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
     <node concept="1TJgyj" id="7cgc9gF4MJG" role="1TKVEi">
       <property role="IQ2ns" value="8291180326925052908" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="source" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="7cgc9gF0EMY" resolve="BuildMps_TipsImport" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4reBHdWM01g">
+    <property role="EcuMT" value="5102190059026120784" />
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <property role="TrG5h" value="BuildMps_TipsFromDirTo" />
+    <property role="34LRSv" value="import language from directory" />
+    <ref role="1TJDcQ" node="7cgc9gF0EMY" resolve="BuildMps_TipsImport" />
+    <node concept="1TJgyj" id="4reBHdWN7OG" role="1TKVEi">
+      <property role="IQ2ns" value="5102190059026414892" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="path" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+    <node concept="1TJgyi" id="4reBHdWN7OI" role="1TKVEl">
+      <property role="IQ2nx" value="5102190059026414894" />
+      <property role="TrG5h" value="language" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>

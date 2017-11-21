@@ -63,6 +63,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BuildMps_Solution;
   private ConceptPresentation props_BuildMps_Tips;
   private ConceptPresentation props_BuildMps_TipsFromDir;
+  private ConceptPresentation props_BuildMps_TipsFromDirTo;
   private ConceptPresentation props_BuildMps_TipsGenerated;
   private ConceptPresentation props_BuildMps_TipsImport;
   private ConceptPresentation props_BuildMps_TipsImportFrom;
@@ -280,7 +281,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildMps_IdeaPlugin == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0kc);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0lc);
           props_BuildMps_IdeaPlugin = cpb.create();
         }
         return props_BuildMps_IdeaPlugin;
@@ -457,6 +458,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BuildMps_TipsFromDir = cpb.create();
         }
         return props_BuildMps_TipsFromDir;
+      case LanguageConceptSwitch.BuildMps_TipsFromDirTo:
+        if (props_BuildMps_TipsFromDirTo == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("import language from directory");
+          props_BuildMps_TipsFromDirTo = cpb.create();
+        }
+        return props_BuildMps_TipsFromDirTo;
       case LanguageConceptSwitch.BuildMps_TipsGenerated:
         if (props_BuildMps_TipsGenerated == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
