@@ -16409,6 +16409,9 @@
         <property role="28hIV_" value="generated tips" />
       </node>
       <node concept="3981dx" id="5E1nwh5M$ZU" role="39821P">
+        <node concept="28u9K_" id="7LBOED38yoJ" role="39821P">
+          <property role="28hIV_" value="todo" />
+        </node>
         <node concept="3_J27D" id="5E1nwh5M$ZV" role="Nbhlr">
           <node concept="3Mxwew" id="5E1nwh5M$ZW" role="3MwsjC">
             <property role="3MwjfP" value="name.jar" />
@@ -16494,6 +16497,25 @@
         <property role="28hIV_" value="fromDir tips in english" />
       </node>
       <node concept="3981dx" id="5E1nwh5O2F5" role="39821P">
+        <node concept="3_J27D" id="5E1nwh5O2F6" role="Nbhlr">
+          <node concept="3Mxwew" id="5E1nwh5O2F7" role="3MwsjC">
+            <property role="3MwjfP" value="file_en.jar" />
+            <node concept="17Uvod" id="5E1nwh5O2F8" role="lGtFl">
+              <property role="P4ACc" value="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702019/4903714810883755350" />
+              <property role="2qtEX9" value="text" />
+              <node concept="3zFVjK" id="5E1nwh5O2F9" role="3zH0cK">
+                <node concept="3clFbS" id="5E1nwh5O2Fa" role="2VODD2">
+                  <node concept="3clFbF" id="5E1nwh5O2Fb" role="3cqZAp">
+                    <node concept="Xl_RD" id="5E1nwh5O2Fc" role="3clFbG">
+                      <property role="Xl_RC" value="mps-resources_en.jar" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="raruj" id="5E1nwh5O2Fd" role="lGtFl" />
         <node concept="2HvfSZ" id="7LBOED32F4n" role="39821P">
           <node concept="3LWZYx" id="7LBOED32F4p" role="2HvfZ1">
             <property role="3LWZYw" value="**" />
@@ -16599,25 +16621,6 @@
             </node>
           </node>
         </node>
-        <node concept="3_J27D" id="5E1nwh5O2F6" role="Nbhlr">
-          <node concept="3Mxwew" id="5E1nwh5O2F7" role="3MwsjC">
-            <property role="3MwjfP" value="file_en.jar" />
-            <node concept="17Uvod" id="5E1nwh5O2F8" role="lGtFl">
-              <property role="P4ACc" value="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702019/4903714810883755350" />
-              <property role="2qtEX9" value="text" />
-              <node concept="3zFVjK" id="5E1nwh5O2F9" role="3zH0cK">
-                <node concept="3clFbS" id="5E1nwh5O2Fa" role="2VODD2">
-                  <node concept="3clFbF" id="5E1nwh5O2Fb" role="3cqZAp">
-                    <node concept="Xl_RD" id="5E1nwh5O2Fc" role="3clFbG">
-                      <property role="Xl_RC" value="mps-resources_en.jar" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="raruj" id="5E1nwh5O2Fd" role="lGtFl" />
         <node concept="398223" id="5E1nwh5O2Fe" role="39821P">
           <node concept="28u9K_" id="4reBHdXfK3C" role="39821P">
             <property role="28hIV_" value="single tips" />
@@ -16970,7 +16973,7 @@
         <property role="28hIV_" value="todo - loop names of files in dir" />
       </node>
       <node concept="28u9K_" id="4reBHdW0oWo" role="39821P">
-        <property role="28hIV_" value="fromDir IdeTipsAndTricks" />
+        <property role="28hIV_" value="fromDir IdeTipsAndTricks - merge it with future content" />
       </node>
       <node concept="3981dx" id="4reBHdVxGZ8" role="39821P">
         <node concept="3_J27D" id="4reBHdVxGZa" role="Nbhlr">

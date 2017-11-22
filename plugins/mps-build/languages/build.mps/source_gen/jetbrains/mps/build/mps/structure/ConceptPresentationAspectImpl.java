@@ -469,7 +469,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_TipsGenerated:
         if (props_BuildMps_TipsGenerated == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("import from TipAndTricks solution");
+          cpb.rawPresentation("import from Tip & Tricks solution");
           props_BuildMps_TipsGenerated = cpb.create();
         }
         return props_BuildMps_TipsGenerated;

@@ -794,7 +794,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.build.mps.structure.BuildMps_TipsImport", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x731030942b02acbeL);
     b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/8291180326924611496");
-    b.alias("import from TipAndTricks solution");
+    b.alias("import from Tip & Tricks solution");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBuildMps_TipsImport() {

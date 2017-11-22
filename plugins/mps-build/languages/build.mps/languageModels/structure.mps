@@ -1540,7 +1540,7 @@
     <property role="EcuMT" value="8291180326924611496" />
     <property role="3GE5qa" value="Project.TipsAndTricks" />
     <property role="TrG5h" value="BuildMps_TipsGenerated" />
-    <property role="34LRSv" value="import from TipAndTricks solution" />
+    <property role="34LRSv" value="import from Tip &amp; Tricks solution" />
     <ref role="1TJDcQ" node="7cgc9gF0EMY" resolve="BuildMps_TipsImport" />
   </node>
   <node concept="1TIwiD" id="7cgc9gF4MJg">
