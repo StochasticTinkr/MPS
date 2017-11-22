@@ -6390,12 +6390,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5E1nwh5nM9L" role="3cqZAp" />
-        <node concept="3clFbF" id="5E1nwh5nNe8" role="3cqZAp">
-          <node concept="BsUDl" id="5E1nwh5nNe6" role="3clFbG">
-            <ref role="37wK5l" node="4Q0JLeVv6N0" resolve="getChildrenOutputDir_WithMacro" />
-          </node>
-        </node>
       </node>
     </node>
   </node>

@@ -31,8 +31,6 @@ public final class BuildMps_Tips__BehaviorDescriptor extends BaseBHDescriptor {
     SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x731030942b132bd0L, "jetbrains.mps.build.mps.structure.BuildMps_TipsImportFrom"));
     SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x731030942b132bd0L, 0x731030942b132becL, "source"), tmp);
     ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x731030942ad580d6L, 0x731030942ad60a79L, "imports"))).addElement(node);
-
-    BuildMpsLayout_Plugin__BehaviorDescriptor.getChildrenOutputDir_WithMacro_id450ejGzh8bb.invoke(__thisNode__);
   }
 
 
