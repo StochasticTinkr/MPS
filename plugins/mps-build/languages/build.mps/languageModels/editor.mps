@@ -5998,5 +5998,21 @@
       <node concept="l2Vlx" id="4reBHdWN7OX" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="7xIdWdX6Q0i">
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <ref role="1XX52x" to="kdzh:7xIdWdX6IQF" resolve="BuildMps_TipsNone" />
+    <node concept="3EZMnI" id="7xIdWdX6Q0k" role="2wV5jI">
+      <node concept="3F0ifn" id="7xIdWdX6Q0r" role="3EZMnx">
+        <property role="3F0ifm" value="none" />
+        <node concept="VPxyj" id="7xIdWdX6Q0u" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="VechU" id="7xIdWdX6Q0z" role="3F10Kt">
+          <property role="Vb096" value="DARK_GREEN" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="7xIdWdX6Q0n" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

@@ -68,9 +68,10 @@ public final class LanguageConceptSwitch {
   public static final int BuildMps_TipsImport = 56;
   public static final int BuildMps_TipsImportFrom = 57;
   public static final int BuildMps_TipsMPS = 58;
-  public static final int GeneratorInternal_BuildMps_Module = 59;
-  public static final int GeneratorInternal_BuildSourcePath = 60;
-  public static final int GeneratorInternal_String = 61;
+  public static final int BuildMps_TipsNone = 59;
+  public static final int GeneratorInternal_BuildMps_Module = 60;
+  public static final int GeneratorInternal_BuildSourcePath = 61;
+  public static final int GeneratorInternal_String = 62;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L);
@@ -133,6 +134,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x731030942b02acbeL, BuildMps_TipsImport);
     builder.put(0x731030942b132bd0L, BuildMps_TipsImportFrom);
     builder.put(0x731030942ad60a78L, BuildMps_TipsMPS);
+    builder.put(0x786e37c37d1aedabL, BuildMps_TipsNone);
     builder.put(0x44e5dd192e7771cfL, GeneratorInternal_BuildMps_Module);
     builder.put(0x44e5dd192e77725eL, GeneratorInternal_BuildSourcePath);
     builder.put(0xd94b027412f0824L, GeneratorInternal_String);

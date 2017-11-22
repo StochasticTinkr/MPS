@@ -68,6 +68,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BuildMps_TipsImport;
   private ConceptPresentation props_BuildMps_TipsImportFrom;
   private ConceptPresentation props_BuildMps_TipsMPS;
+  private ConceptPresentation props_BuildMps_TipsNone;
   private ConceptPresentation props_GeneratorInternal_BuildMps_Module;
   private ConceptPresentation props_GeneratorInternal_BuildSourcePath;
   private ConceptPresentation props_GeneratorInternal_String;
@@ -281,7 +282,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildMps_IdeaPlugin == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0lc);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0mc);
           props_BuildMps_IdeaPlugin = cpb.create();
         }
         return props_BuildMps_IdeaPlugin;
@@ -492,6 +493,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BuildMps_TipsMPS = cpb.create();
         }
         return props_BuildMps_TipsMPS;
+      case LanguageConceptSwitch.BuildMps_TipsNone:
+        if (props_BuildMps_TipsNone == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("none");
+          props_BuildMps_TipsNone = cpb.create();
+        }
+        return props_BuildMps_TipsNone;
       case LanguageConceptSwitch.GeneratorInternal_BuildMps_Module:
         if (props_GeneratorInternal_BuildMps_Module == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -1576,5 +1576,12 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7xIdWdX6IQF">
+    <property role="EcuMT" value="8677934844746591659" />
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <property role="TrG5h" value="BuildMps_TipsNone" />
+    <property role="34LRSv" value="none" />
+    <ref role="1TJDcQ" node="7cgc9gF0EMY" resolve="BuildMps_TipsImport" />
+  </node>
 </model>
 
