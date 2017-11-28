@@ -447,7 +447,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_Tips:
         if (props_BuildMps_Tips == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("tips and tricks for new IDE");
+          cpb.shortDesc("tips & tricks for new IDE");
           cpb.rawPresentation("tips & tricks");
           props_BuildMps_Tips = cpb.create();
         }
