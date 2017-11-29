@@ -27,8 +27,8 @@
     <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
     <import index="rzwt" ref="r:77dbf2f6-47ba-4e30-9724-6cb401a543ff(voicemenu.build)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
-    <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="7kwb" ref="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" />
+    <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="zwni" ref="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" implicit="true" />
     <import index="2ogt" ref="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" implicit="true" />
     <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
@@ -543,6 +543,7 @@
       <concept id="2539347366864541544" name="jetbrains.mps.build.structure.BuildSourceArchiveRelativePath" flags="ng" index="30tkmh">
         <child id="2539347366864648268" name="archivePath" index="30tYEP" />
       </concept>
+      <concept id="6647099934206700647" name="jetbrains.mps.build.structure.BuildJavaPlugin" flags="ng" index="10PD9b" />
       <concept id="9184644532456496017" name="jetbrains.mps.build.structure.BuildLayout_AbstractCopy" flags="ng" index="16eZ8r">
         <child id="5248329904287857082" name="fileset" index="3LXIA7" />
       </concept>
@@ -550,6 +551,7 @@
       <concept id="7389400916848050060" name="jetbrains.mps.build.structure.BuildLayout_NamedContainer" flags="ng" index="3981dR">
         <child id="4380385936562148502" name="containerName" index="Nbhlr" />
       </concept>
+      <concept id="7389400916848036997" name="jetbrains.mps.build.structure.BuildLayout_Node" flags="ng" index="39821Y" />
       <concept id="7389400916848036984" name="jetbrains.mps.build.structure.BuildLayout_Folder" flags="ng" index="398223" />
       <concept id="7389400916848073810" name="jetbrains.mps.build.structure.BuildSource_JavaContentRoot" flags="ng" index="398b2D">
         <child id="2754769020641429197" name="folders" index="nFU4p" />
@@ -602,7 +604,11 @@
       <concept id="5610619299014309452" name="jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef" flags="ng" index="3yrxFa">
         <reference id="5610619299014309453" name="jar" index="3yrxFb" />
       </concept>
+      <concept id="841011766565753074" name="jetbrains.mps.build.structure.BuildLayout_Import" flags="ng" index="3_I8Xc">
+        <reference id="841011766565753076" name="target" index="3_I8Xa" />
+      </concept>
       <concept id="841011766566059607" name="jetbrains.mps.build.structure.BuildStringNotEmpty" flags="ng" index="3_J27D" />
+      <concept id="827194453027763799" name="jetbrains.mps.build.structure.AntHardCode" flags="ng" index="3BBBUJ" />
       <concept id="5248329904288051111" name="jetbrains.mps.build.structure.BuildFileExcludeSelector" flags="ng" index="3LWZYq">
         <property id="5248329904288051112" name="pattern" index="3LWZYl" />
       </concept>
@@ -16424,6 +16430,7 @@
           </node>
         </node>
       </node>
+      <node concept="3_I8Xc" id="5kRB48U62Dq" role="39821P" />
       <node concept="28u9K_" id="7LBOED30_pv" role="39821P">
         <property role="28hIV_" value="todo" />
       </node>
@@ -17286,6 +17293,7 @@
         </node>
       </node>
       <node concept="398223" id="5E1nwh5EinB" role="39821P">
+        <node concept="39821Y" id="5kRB48U4ZX_" role="39821P" />
         <node concept="2HvfSZ" id="5E1nwh5hlBt" role="39821P">
           <node concept="55IIr" id="5E1nwh5hlBu" role="2HvfZ0">
             <node concept="29HgVG" id="5E1nwh5hlOc" role="lGtFl">
@@ -17359,12 +17367,14 @@
     <node concept="1l3spW" id="1rMSO91__Hs" role="13RCb5">
       <property role="TrG5h" value="Tips" />
       <property role="turDy" value="test.xml" />
-      <node concept="2sgV4H" id="1rMSO9251ww" role="1l3spa">
-        <ref role="1l3spb" to="rzwt:5ruKdSwyerf" resolve="voicemenu" />
+      <node concept="10PD9b" id="5kRB48U6CRR" role="10PD9s" />
+      <node concept="3b7kt6" id="5kRB48U6FLj" role="10PD9s" />
+      <node concept="2sgV4H" id="5kRB48U6Hgx" role="1l3spa">
+        <ref role="1l3spb" to="ffeo:2eDSGe9d1ot" resolve="mpsWorkbench" />
       </node>
       <node concept="398rNT" id="2eDSGe9d1qB" role="1l3spd">
         <property role="TrG5h" value="mps_home" />
-        <node concept="55IIr" id="2eDSGe9d1qC" role="398pKh" />
+        <node concept="55IIr" id="5kRB48U1Y9D" role="398pKh" />
       </node>
       <node concept="1l3spV" id="1rMSO91__HA" role="1l3spN">
         <node concept="398223" id="1rMSO91__I7" role="39821P">
@@ -17372,27 +17382,8 @@
             <property role="28hIV_" value="remove MPS tips if import from MPS missing" />
           </node>
           <node concept="3981dx" id="1rMSO91__I9" role="39821P">
-            <node concept="2HvfSZ" id="1rMSO91__Ia" role="39821P">
-              <node concept="3LWZYq" id="1rMSO91__Ib" role="2HvfZ1">
-                <property role="3LWZYl" value="tips/**" />
-              </node>
-              <node concept="3LWZYx" id="1rMSO91__Ic" role="2HvfZ1">
-                <property role="3LWZYw" value="**" />
-              </node>
-              <node concept="30tkmh" id="1rMSO91__Id" role="2HvfZ0">
-                <node concept="398BVA" id="1rMSO91__Ie" role="30tYEP">
-                  <ref role="398BVh" node="2eDSGe9d1qB" resolve="mps_home" />
-                  <node concept="2Ry0Ak" id="1rMSO91__If" role="iGT6I">
-                    <property role="2Ry0Am" value="lib" />
-                    <node concept="2Ry0Ak" id="1rMSO91__Ig" role="2Ry0An">
-                      <property role="2Ry0Am" value="mps-resources_en.jar" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="2Ry0Ak" id="1rMSO91__Ih" role="iGT6I">
-                  <property role="2Ry0Am" value="" />
-                </node>
-              </node>
+            <node concept="3_I8Xc" id="HUMfzGxscz" role="39821P">
+              <ref role="3_I8Xa" to="ffeo:5xa9wY2vqbW" resolve="mps-resources.jar" />
             </node>
             <node concept="3_J27D" id="1rMSO91__Ii" role="Nbhlr">
               <node concept="3Mxwew" id="1rMSO91__Ij" role="3MwsjC">
@@ -17404,7 +17395,7 @@
                     <node concept="3clFbS" id="1rMSO91__Im" role="2VODD2">
                       <node concept="3clFbF" id="1rMSO91__In" role="3cqZAp">
                         <node concept="Xl_RD" id="1rMSO91__Io" role="3clFbG">
-                          <property role="Xl_RC" value="mps-resources_en23.jar" />
+                          <property role="Xl_RC" value="mps-resources_en.jar" />
                         </node>
                       </node>
                     </node>
@@ -18248,6 +18239,9 @@
               </node>
             </node>
           </node>
+          <node concept="3BBBUJ" id="HUMfzGU53m" role="39821P">
+            <node concept="raruj" id="HUMfzGU6zt" role="lGtFl" />
+          </node>
           <node concept="3981dx" id="5kRB48TQ380" role="39821P">
             <node concept="3_J27D" id="5kRB48TQ382" role="Nbhlr">
               <node concept="3Mxwew" id="5kRB48TQ4K1" role="3MwsjC">
@@ -18277,6 +18271,22 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="13MO4I" id="5kRB48U5eLC">
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <property role="TrG5h" value="rrr" />
+    <node concept="2VaFvF" id="5kRB48U5flq" role="13RCb5">
+      <property role="TrG5h" value="tmp" />
+      <node concept="2VaFvH" id="5kRB48U5flt" role="2VaFvJ">
+        <property role="TrG5h" value="tipsAndTricsJar" />
+        <node concept="2Vbh7Z" id="5kRB48U5fDE" role="2VaTZU">
+          <node concept="2pNNFK" id="5kRB48U5fFJ" role="2Vbh7K">
+            <property role="2pNNFO" value="jarTTT" />
+          </node>
+        </node>
+        <node concept="raruj" id="5kRB48U5fFf" role="lGtFl" />
       </node>
     </node>
   </node>

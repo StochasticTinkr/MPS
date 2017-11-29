@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -10660,6 +10660,16 @@
       </node>
     </node>
     <node concept="382kZG" id="47y0FrqhJAa" role="lGtFl" />
+  </node>
+  <node concept="24kQdi" id="HUMfzGTbpw">
+    <property role="3GE5qa" value="Layout" />
+    <ref role="1XX52x" to="3ior:HUMfzGTbpn" resolve="AntHardCode" />
+    <node concept="3EZMnI" id="HUMfzGTbpy" role="2wV5jI">
+      <node concept="3F0ifn" id="HUMfzGTbpD" role="3EZMnx">
+        <property role="3F0ifm" value="List" />
+      </node>
+      <node concept="l2Vlx" id="HUMfzGTbp_" role="2iSdaV" />
+    </node>
   </node>
 </model>
 

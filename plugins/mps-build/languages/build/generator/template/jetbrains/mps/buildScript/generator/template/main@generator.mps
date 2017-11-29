@@ -8,8 +8,8 @@
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
-    <use id="0edf22a4-42bc-4e5d-954f-06aaaf51df00" name="jetbrains.mps.lang.makeup" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="0edf22a4-42bc-4e5d-954f-06aaaf51df00" name="jetbrains.mps.lang.makeup" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -281,6 +281,9 @@
       <concept id="6666499814681541919" name="jetbrains.mps.core.xml.structure.XmlTextValue" flags="ng" index="2pMdtt">
         <property id="6666499814681541920" name="text" index="2pMdty" />
       </concept>
+      <concept id="6666499814681541921" name="jetbrains.mps.core.xml.structure.XmlEntityRefValue" flags="ng" index="2pMdtz">
+        <property id="6666499814681543256" name="entityName" index="2pMiwq" />
+      </concept>
       <concept id="6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" flags="ng" index="2pNNFK">
         <property id="6666499814681415862" name="tagName" index="2pNNFO" />
         <property id="6999033275467544021" name="shortEmptyNotation" index="qg3DV" />
@@ -293,6 +296,9 @@
       </concept>
       <concept id="1622293396948952339" name="jetbrains.mps.core.xml.structure.XmlText" flags="nn" index="3o6iSG">
         <property id="1622293396948953704" name="value" index="3o6i5n" />
+      </concept>
+      <concept id="3080189811177215998" name="jetbrains.mps.core.xml.structure.XmlCharRefValue" flags="nn" index="1_gtYI">
+        <property id="3080189811177216006" name="charCode" index="1_gt1m" />
       </concept>
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
@@ -10233,6 +10239,138 @@
                       </node>
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="HUMfzGUDix" role="3acgRq">
+      <ref role="30HIoZ" to="3ior:HUMfzGTbpn" resolve="AntHardCode" />
+      <node concept="gft3U" id="HUMfzGUGoP" role="1lVwrX">
+        <node concept="2VaFvH" id="HUMfzGUGoV" role="gfFT$">
+          <property role="TrG5h" value="task" />
+          <node concept="2Vbh7Z" id="HUMfzH5701" role="2VaTZU">
+            <node concept="2pNNFK" id="HUMfzH570G" role="2Vbh7K">
+              <property role="2pNNFO" value="property" />
+              <node concept="2pNUuL" id="HUMfzH570K" role="2pNNFR">
+                <property role="2pNUuO" value="name" />
+                <node concept="2pMdtt" id="HUMfzH570M" role="2pMdts">
+                  <property role="2pMdty" value="output.dir" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="HUMfzH570Q" role="2pNNFR">
+                <property role="2pNUuO" value="value" />
+                <node concept="2pMdtt" id="HUMfzH570U" role="2pMdts">
+                  <property role="2pMdty" value="/list.out" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2Vbh7Z" id="HUMfzGUGoX" role="2VaTZU">
+            <node concept="2pNNFK" id="HUMfzGUGp1" role="2Vbh7K">
+              <property role="2pNNFO" value="fileset" />
+              <node concept="2pNUuL" id="HUMfzH44Nb" role="2pNNFR">
+                <property role="2pNUuO" value="id" />
+                <node concept="2pMdtt" id="HUMfzH44Nd" role="2pMdts">
+                  <property role="2pMdty" value="contents" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="HUMfzH44Nj" role="2pNNFR">
+                <property role="2pNUuO" value="includes" />
+                <node concept="2pMdtt" id="HUMfzH44Nn" role="2pMdts">
+                  <property role="2pMdty" value="*.*" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="HUMfzH44Nv" role="2pNNFR">
+                <property role="2pNUuO" value="dir" />
+                <node concept="2pMdtt" id="HUMfzH44N_" role="2pMdts">
+                  <property role="2pMdty" value="." />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2Vbh7Z" id="HUMfzH44Oh" role="2VaTZU">
+            <node concept="2pNNFK" id="HUMfzH44Ov" role="2Vbh7K">
+              <property role="2pNNFO" value="property" />
+              <node concept="2pNUuL" id="HUMfzH44Oz" role="2pNNFR">
+                <property role="2pNUuO" value="name" />
+                <node concept="2pMdtt" id="HUMfzH44O_" role="2pMdts">
+                  <property role="2pMdty" value="prop.contents" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="HUMfzH44OF" role="2pNNFR">
+                <property role="2pNUuO" value="refid" />
+                <node concept="2pMdtt" id="HUMfzH44OJ" role="2pMdts">
+                  <property role="2pMdty" value="contents" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2Vbh7Z" id="HUMfzH44P1" role="2VaTZU">
+            <node concept="2pNNFK" id="HUMfzH44Pl" role="2Vbh7K">
+              <property role="2pNNFO" value="echoxml" />
+              <node concept="2pNNFK" id="HUMfzH44PG" role="3o6s8t">
+                <property role="2pNNFO" value="extension" />
+                <node concept="2pNUuL" id="HUMfzH44PN" role="2pNNFR">
+                  <property role="2pNUuO" value="defaultExtensionNs" />
+                  <node concept="2pMdtt" id="HUMfzH44PP" role="2pMdts">
+                    <property role="2pMdty" value="com.intelliJ" />
+                  </node>
+                </node>
+                <node concept="2pNNFK" id="HUMfzH44PX" role="3o6s8t">
+                  <property role="2pNNFO" value="tipAndTricks" />
+                  <node concept="3o6iSG" id="HUMfzH44Q1" role="3o6s8t">
+                    <property role="3o6i5n" value="${prop.contents}" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2pNUuL" id="HUMfzH44Pr" role="2pNNFR">
+                <property role="2pNUuO" value="file" />
+                <node concept="2pMdtt" id="HUMfzH44Pt" role="2pMdts">
+                  <property role="2pMdty" value="${output.dir}/list.xml" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2Vbh7Z" id="HUMfzH44Qx" role="2VaTZU">
+            <node concept="2pNNFK" id="HUMfzH44RM" role="2Vbh7K">
+              <property role="2pNNFO" value="replace" />
+              <node concept="2pNUuL" id="HUMfzH44RQ" role="2pNNFR">
+                <property role="2pNUuO" value="file" />
+                <node concept="2pMdtt" id="HUMfzH44RS" role="2pMdts">
+                  <property role="2pMdty" value="${output.dir}/list.xml" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="HUMfzH48g6" role="2pNNFR">
+                <property role="2pNUuO" value="token" />
+                <node concept="2pMdtt" id="HUMfzH48ga" role="2pMdts">
+                  <property role="2pMdty" value=";" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="HUMfzH48ge" role="2pNNFR">
+                <property role="2pNUuO" value="value" />
+                <node concept="2pMdtz" id="HUMfzH48gr" role="2pMdts">
+                  <property role="2pMiwq" value="lt" />
+                </node>
+                <node concept="2pMdtt" id="HUMfzH48gu" role="2pMdts">
+                  <property role="2pMdty" value="/tipAndTrick" />
+                </node>
+                <node concept="2pMdtz" id="HUMfzH48gz" role="2pMdts">
+                  <property role="2pMiwq" value="gt" />
+                </node>
+                <node concept="1_gtYI" id="HUMfzH48gD" role="2pMdts">
+                  <property role="1_gt1m" value="xD" />
+                </node>
+                <node concept="2pMdtz" id="HUMfzH48h6" role="2pMdts">
+                  <property role="2pMiwq" value="lt" />
+                </node>
+                <node concept="2pMdtt" id="HUMfzH48hd" role="2pMdts">
+                  <property role="2pMdty" value="tipAndTrick" />
+                </node>
+                <node concept="2pMdtz" id="HUMfzH48hm" role="2pMdts">
+                  <property role="2pMiwq" value="gt" />
                 </node>
               </node>
             </node>
