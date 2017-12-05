@@ -276,6 +276,9 @@
       <concept id="6666499814681541919" name="jetbrains.mps.core.xml.structure.XmlTextValue" flags="ng" index="2pMdtt">
         <property id="6666499814681541920" name="text" index="2pMdty" />
       </concept>
+      <concept id="6666499814681541921" name="jetbrains.mps.core.xml.structure.XmlEntityRefValue" flags="ng" index="2pMdtz">
+        <property id="6666499814681543256" name="entityName" index="2pMiwq" />
+      </concept>
       <concept id="6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" flags="ng" index="2pNNFK">
         <property id="6666499814681415862" name="tagName" index="2pNNFO" />
         <property id="6999033275467544021" name="shortEmptyNotation" index="qg3DV" />
@@ -288,6 +291,9 @@
       </concept>
       <concept id="1622293396948952339" name="jetbrains.mps.core.xml.structure.XmlText" flags="nn" index="3o6iSG">
         <property id="1622293396948953704" name="value" index="3o6i5n" />
+      </concept>
+      <concept id="3080189811177215998" name="jetbrains.mps.core.xml.structure.XmlCharRefValue" flags="nn" index="1_gtYI">
+        <property id="3080189811177216006" name="charCode" index="1_gt1m" />
       </concept>
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
@@ -604,11 +610,11 @@
       <concept id="5610619299014309452" name="jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef" flags="ng" index="3yrxFa">
         <reference id="5610619299014309453" name="jar" index="3yrxFb" />
       </concept>
-      <concept id="841011766565753074" name="jetbrains.mps.build.structure.BuildLayout_Import" flags="ng" index="3_I8Xc">
-        <reference id="841011766565753076" name="target" index="3_I8Xa" />
-      </concept>
+      <concept id="841011766565753074" name="jetbrains.mps.build.structure.BuildLayout_Import" flags="ng" index="3_I8Xc" />
       <concept id="841011766566059607" name="jetbrains.mps.build.structure.BuildStringNotEmpty" flags="ng" index="3_J27D" />
-      <concept id="827194453027763799" name="jetbrains.mps.build.structure.AntHardCode" flags="ng" index="3BBBUJ" />
+      <concept id="827194453027763799" name="jetbrains.mps.build.structure.AntHardCode" flags="ng" index="3BBBUJ">
+        <child id="827194453031180421" name="body" index="3Aox1X" />
+      </concept>
       <concept id="5248329904288051111" name="jetbrains.mps.build.structure.BuildFileExcludeSelector" flags="ng" index="3LWZYq">
         <property id="5248329904288051112" name="pattern" index="3LWZYl" />
       </concept>
@@ -625,14 +631,6 @@
       </concept>
       <concept id="4903714810883702019" name="jetbrains.mps.build.structure.BuildTextStringPart" flags="ng" index="3Mxwew">
         <property id="4903714810883755350" name="text" index="3MwjfP" />
-      </concept>
-      <concept id="202934866059043946" name="jetbrains.mps.build.structure.BuildLayout_EchoProperties" flags="ng" index="1TblL5">
-        <child id="202934866059043948" name="fileName" index="1TblL3" />
-        <child id="202934866059043962" name="entries" index="1TblLl" />
-      </concept>
-      <concept id="202934866059043959" name="jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry" flags="ng" index="1TblLo">
-        <property id="202934866059043960" name="key" index="1TblLn" />
-        <child id="202934866059043961" name="value" index="1TblLm" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -17367,11 +17365,6 @@
     <node concept="1l3spW" id="1rMSO91__Hs" role="13RCb5">
       <property role="TrG5h" value="Tips" />
       <property role="turDy" value="test.xml" />
-      <node concept="10PD9b" id="5kRB48U6CRR" role="10PD9s" />
-      <node concept="3b7kt6" id="5kRB48U6FLj" role="10PD9s" />
-      <node concept="2sgV4H" id="5kRB48U6Hgx" role="1l3spa">
-        <ref role="1l3spb" to="ffeo:2eDSGe9d1ot" resolve="mpsWorkbench" />
-      </node>
       <node concept="398rNT" id="2eDSGe9d1qB" role="1l3spd">
         <property role="TrG5h" value="mps_home" />
         <node concept="55IIr" id="5kRB48U1Y9D" role="398pKh" />
@@ -17382,25 +17375,31 @@
             <property role="28hIV_" value="remove MPS tips if import from MPS missing" />
           </node>
           <node concept="3981dx" id="1rMSO91__I9" role="39821P">
-            <node concept="3_I8Xc" id="HUMfzGxscz" role="39821P">
-              <ref role="3_I8Xa" to="ffeo:5xa9wY2vqbW" resolve="mps-resources.jar" />
+            <node concept="2HvfSZ" id="7GaaHzS28_m" role="39821P">
+              <node concept="3LWZYq" id="7GaaHzS28_n" role="2HvfZ1">
+                <property role="3LWZYl" value="tips/**" />
+              </node>
+              <node concept="3LWZYx" id="7GaaHzS28_o" role="2HvfZ1">
+                <property role="3LWZYw" value="**" />
+              </node>
+              <node concept="30tkmh" id="7GaaHzS28_p" role="2HvfZ0">
+                <node concept="398BVA" id="7GaaHzS28_q" role="30tYEP">
+                  <ref role="398BVh" node="2eDSGe9d1qB" resolve="mps_home" />
+                  <node concept="2Ry0Ak" id="7GaaHzS28_r" role="iGT6I">
+                    <property role="2Ry0Am" value="lib" />
+                    <node concept="2Ry0Ak" id="7GaaHzS28_s" role="2Ry0An">
+                      <property role="2Ry0Am" value="mps-resources_en.jar" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2Ry0Ak" id="7GaaHzS28_t" role="iGT6I">
+                  <property role="2Ry0Am" value="" />
+                </node>
+              </node>
             </node>
             <node concept="3_J27D" id="1rMSO91__Ii" role="Nbhlr">
               <node concept="3Mxwew" id="1rMSO91__Ij" role="3MwsjC">
                 <property role="3MwjfP" value="mps-resources_en.jar" />
-                <node concept="17Uvod" id="1rMSO91__Ik" role="lGtFl">
-                  <property role="P4ACc" value="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702019/4903714810883755350" />
-                  <property role="2qtEX9" value="text" />
-                  <node concept="3zFVjK" id="1rMSO91__Il" role="3zH0cK">
-                    <node concept="3clFbS" id="1rMSO91__Im" role="2VODD2">
-                      <node concept="3clFbF" id="1rMSO91__In" role="3cqZAp">
-                        <node concept="Xl_RD" id="1rMSO91__Io" role="3clFbG">
-                          <property role="Xl_RC" value="mps-resources_en.jar" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
               </node>
             </node>
             <node concept="raruj" id="1rMSO91__Ip" role="lGtFl" />
@@ -17584,20 +17583,7 @@
           <node concept="3981dx" id="1rMSO91__JG" role="39821P">
             <node concept="3_J27D" id="1rMSO91__Kn" role="Nbhlr">
               <node concept="3Mxwew" id="1rMSO91__Ko" role="3MwsjC">
-                <property role="3MwjfP" value="file_en.jar" />
-                <node concept="17Uvod" id="1rMSO91__Kp" role="lGtFl">
-                  <property role="P4ACc" value="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702019/4903714810883755350" />
-                  <property role="2qtEX9" value="text" />
-                  <node concept="3zFVjK" id="1rMSO91__Kq" role="3zH0cK">
-                    <node concept="3clFbS" id="1rMSO91__Kr" role="2VODD2">
-                      <node concept="3clFbF" id="1rMSO91__Ks" role="3cqZAp">
-                        <node concept="Xl_RD" id="1rMSO91__Kt" role="3clFbG">
-                          <property role="Xl_RC" value="mps-resources_en.jar" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
+                <property role="3MwjfP" value="mps-resources_en.jar" />
               </node>
             </node>
             <node concept="raruj" id="1rMSO91__Ku" role="lGtFl" />
@@ -17937,7 +17923,7 @@
           <node concept="3981dx" id="1rMSO91__MT" role="39821P">
             <node concept="3_J27D" id="1rMSO91__MU" role="Nbhlr">
               <node concept="3Mxwew" id="1rMSO91__MV" role="3MwsjC">
-                <property role="3MwjfP" value="file_en.jar" />
+                <property role="3MwjfP" value="mps-resources_.jar" />
                 <node concept="17Uvod" id="1rMSO91__MW" role="lGtFl">
                   <property role="P4ACc" value="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702019/4903714810883755350" />
                   <property role="2qtEX9" value="text" />
@@ -18096,9 +18082,6 @@
               </node>
             </node>
           </node>
-          <node concept="28u9K_" id="1rMSO91__O4" role="39821P">
-            <property role="28hIV_" value="todo - loop names of files in dir" />
-          </node>
           <node concept="28u9K_" id="1rMSO91__O5" role="39821P">
             <property role="28hIV_" value="fromDir IdeTipsAndTricks - merge it with future content" />
           </node>
@@ -18239,31 +18222,128 @@
               </node>
             </node>
           </node>
-          <node concept="3BBBUJ" id="HUMfzGU53m" role="39821P">
-            <node concept="raruj" id="HUMfzGU6zt" role="lGtFl" />
+          <node concept="28u9K_" id="1rMSO91__O4" role="39821P">
+            <property role="28hIV_" value="Loop names of files in dir_en" />
           </node>
-          <node concept="3981dx" id="5kRB48TQ380" role="39821P">
-            <node concept="3_J27D" id="5kRB48TQ382" role="Nbhlr">
-              <node concept="3Mxwew" id="5kRB48TQ4K1" role="3MwsjC">
-                <property role="3MwjfP" value="resources_en.jar" />
+          <node concept="3BBBUJ" id="7GaaHzScgy3" role="39821P">
+            <node concept="2pNNFK" id="7GaaHzScgy5" role="3Aox1X">
+              <property role="2pNNFO" value="unjar" />
+              <node concept="2pNUuL" id="7GaaHzScibo" role="2pNNFR">
+                <property role="2pNUuO" value="src" />
+                <node concept="2pMdtt" id="7GaaHzScih9" role="2pMdts">
+                  <property role="2pMdty" value="${build.layout}/lib/mps-resources_en.jar" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="7GaaHzScimW" role="2pNNFR">
+                <property role="2pNUuO" value="dest" />
+                <node concept="2pMdtt" id="7GaaHzScisJ" role="2pMdts">
+                  <property role="2pMdty" value="${build.tmp}/default/resources_en_new" />
+                </node>
               </node>
             </node>
-            <node concept="raruj" id="5kRB48TQ4K6" role="lGtFl" />
-            <node concept="1TblL5" id="5kRB48TQ4K8" role="39821P">
-              <node concept="1TblLo" id="5kRB48TQ4Ke" role="1TblLl">
-                <property role="1TblLn" value="value" />
-                <node concept="NbPM2" id="5kRB48TQ4Kf" role="1TblLm">
-                  <node concept="3Mxwew" id="5kRB48TQ4Ki" role="3MwsjC">
-                    <property role="3MwjfP" value="&quot;./list.out&quot;" />
+            <node concept="raruj" id="7GaaHzSci5_" role="lGtFl" />
+          </node>
+          <node concept="3BBBUJ" id="HUMfzGU53m" role="39821P">
+            <node concept="2pNNFK" id="HUMfzGUGp1" role="3Aox1X">
+              <property role="2pNNFO" value="fileset" />
+              <node concept="2pNUuL" id="HUMfzH44Nb" role="2pNNFR">
+                <property role="2pNUuO" value="id" />
+                <node concept="2pMdtt" id="HUMfzH44Nd" role="2pMdts">
+                  <property role="2pMdty" value="contents" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="HUMfzH44Nj" role="2pNNFR">
+                <property role="2pNUuO" value="includes" />
+                <node concept="2pMdtt" id="HUMfzH44Nn" role="2pMdts">
+                  <property role="2pMdty" value="*.*" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="HUMfzH44Nv" role="2pNNFR">
+                <property role="2pNUuO" value="dir" />
+                <node concept="2pMdtt" id="HUMfzH44N_" role="2pMdts">
+                  <property role="2pMdty" value="${build.tmp}/default/resources_en_new/tips" />
+                </node>
+              </node>
+            </node>
+            <node concept="2pNNFK" id="HUMfzH44Ov" role="3Aox1X">
+              <property role="2pNNFO" value="property" />
+              <node concept="2pNUuL" id="HUMfzH44Oz" role="2pNNFR">
+                <property role="2pNUuO" value="name" />
+                <node concept="2pMdtt" id="HUMfzH44O_" role="2pMdts">
+                  <property role="2pMdty" value="prop.contents" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="HUMfzH44OF" role="2pNNFR">
+                <property role="2pNUuO" value="refid" />
+                <node concept="2pMdtt" id="HUMfzH44OJ" role="2pMdts">
+                  <property role="2pMdty" value="contents" />
+                </node>
+              </node>
+            </node>
+            <node concept="2pNNFK" id="HUMfzH44Pl" role="3Aox1X">
+              <property role="2pNNFO" value="echoxml" />
+              <node concept="2pNNFK" id="HUMfzH44PG" role="3o6s8t">
+                <property role="2pNNFO" value="extension" />
+                <node concept="2pNUuL" id="HUMfzH44PN" role="2pNNFR">
+                  <property role="2pNUuO" value="defaultExtensionNs" />
+                  <node concept="2pMdtt" id="HUMfzH44PP" role="2pMdts">
+                    <property role="2pMdty" value="com.intelliJ" />
+                  </node>
+                </node>
+                <node concept="2pNNFK" id="HUMfzH44PX" role="3o6s8t">
+                  <property role="2pNNFO" value="tipAndTricks" />
+                  <node concept="3o6iSG" id="HUMfzH44Q1" role="3o6s8t">
+                    <property role="3o6i5n" value="${prop.contents}" />
                   </node>
                 </node>
               </node>
-              <node concept="3_J27D" id="5kRB48TQ4K9" role="1TblL3">
-                <node concept="3Mxwew" id="5kRB48TQ4Kc" role="3MwsjC">
-                  <property role="3MwjfP" value="output.dir" />
+              <node concept="2pNUuL" id="HUMfzH44Pr" role="2pNNFR">
+                <property role="2pNUuO" value="file" />
+                <node concept="2pMdtt" id="HUMfzH44Pt" role="2pMdts">
+                  <property role="2pMdty" value="${build.layout}/list.xml" />
                 </node>
               </node>
             </node>
+            <node concept="2pNNFK" id="HUMfzH44RM" role="3Aox1X">
+              <property role="2pNNFO" value="replace" />
+              <node concept="2pNUuL" id="HUMfzH44RQ" role="2pNNFR">
+                <property role="2pNUuO" value="file" />
+                <node concept="2pMdtt" id="HUMfzH44RS" role="2pMdts">
+                  <property role="2pMdty" value="${build.layout}/list.xml" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="HUMfzH48g6" role="2pNNFR">
+                <property role="2pNUuO" value="token" />
+                <node concept="2pMdtt" id="HUMfzH48ga" role="2pMdts">
+                  <property role="2pMdty" value=";" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="HUMfzH48ge" role="2pNNFR">
+                <property role="2pNUuO" value="value" />
+                <node concept="2pMdtz" id="HUMfzH48gr" role="2pMdts">
+                  <property role="2pMiwq" value="lt" />
+                </node>
+                <node concept="2pMdtt" id="HUMfzH48gu" role="2pMdts">
+                  <property role="2pMdty" value="/tipAndTrick" />
+                </node>
+                <node concept="2pMdtz" id="HUMfzH48gz" role="2pMdts">
+                  <property role="2pMiwq" value="gt" />
+                </node>
+                <node concept="1_gtYI" id="HUMfzH48gD" role="2pMdts">
+                  <property role="1_gt1m" value="xD" />
+                </node>
+                <node concept="2pMdtz" id="HUMfzH48h6" role="2pMdts">
+                  <property role="2pMiwq" value="lt" />
+                </node>
+                <node concept="2pMdtt" id="HUMfzH48hd" role="2pMdts">
+                  <property role="2pMdty" value="tipAndTrick" />
+                </node>
+                <node concept="2pMdtz" id="HUMfzH48hm" role="2pMdts">
+                  <property role="2pMiwq" value="gt" />
+                </node>
+              </node>
+            </node>
+            <node concept="raruj" id="HUMfzGU6zt" role="lGtFl" />
           </node>
           <node concept="3_J27D" id="1rMSO91__P2" role="Nbhlr">
             <node concept="3Mxwew" id="1rMSO91__P3" role="3MwsjC">
@@ -18272,6 +18352,11 @@
           </node>
         </node>
       </node>
+      <node concept="2sgV4H" id="5kRB48U6Hgx" role="1l3spa">
+        <ref role="1l3spb" to="ffeo:2eDSGe9d1ot" resolve="mpsWorkbench" />
+      </node>
+      <node concept="10PD9b" id="5kRB48U6CRR" role="10PD9s" />
+      <node concept="3b7kt6" id="5kRB48U6FLj" role="10PD9s" />
     </node>
   </node>
   <node concept="13MO4I" id="5kRB48U5eLC">

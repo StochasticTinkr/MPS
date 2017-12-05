@@ -5,10 +5,10 @@ package jetbrains.mps.build.structure;
 import jetbrains.mps.smodel.runtime.IconResource;
 
 public class IconContainer {
-  protected static IconResource RESOURCE_a0a2a0a6b0gf = new IconResource("externalLayout.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a2a0a7b0gf = new IconResource("dependency.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a3a0a31b0gf = new IconResource("macro.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a2a0a22b0gf = new IconResource("layout.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a5b0gf = new IconResource("externalLayout.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a6b0gf = new IconResource("dependency.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a3a0a21b0gf = new IconResource("macro.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a12b0gf = new IconResource("layout.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a3a0a25b0gf = new IconResource("layout.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a2a0a65b0gf = new IconResource("archive.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a2a0a56b0gf = new IconResource("archive.png", IconContainer.class);

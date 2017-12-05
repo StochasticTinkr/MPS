@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_AntHardCode;
   private ConceptPresentation props_BuildAspect;
   private ConceptPresentation props_BuildCompositePath;
   private ConceptPresentation props_BuildCustomWorkflow;
@@ -34,6 +33,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BuildLayout;
   private ConceptPresentation props_BuildLayout_AbstractContainer;
   private ConceptPresentation props_BuildLayout_AbstractCopy;
+  private ConceptPresentation props_BuildLayout_Ant;
   private ConceptPresentation props_BuildLayout_Comment;
   private ConceptPresentation props_BuildLayout_CompileOutputOf;
   private ConceptPresentation props_BuildLayout_Container;
@@ -150,13 +150,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.AntHardCode:
-        if (props_AntHardCode == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Ant HardCode Listing");
-          props_AntHardCode = cpb.create();
-        }
-        return props_AntHardCode;
       case LanguageConceptSwitch.BuildAspect:
         if (props_BuildAspect == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -193,7 +186,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildExternalLayout == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a6b0gf);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a5b0gf);
           props_BuildExternalLayout = cpb.create();
         }
         return props_BuildExternalLayout;
@@ -201,7 +194,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildExternalLayoutDependency == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByReference(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, 0x63a87b9320d3d0a7L, "layout", "", "");
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a7b0gf);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a6b0gf);
           props_BuildExternalLayoutDependency = cpb.create();
         }
         return props_BuildExternalLayoutDependency;
@@ -243,7 +236,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("defines folder macro with default value (for local build)");
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a3a0a31b0gf);
+          cpb.icon(IconContainer.RESOURCE_a0a3a0a21b0gf);
           props_BuildFolderMacro = cpb.create();
         }
         return props_BuildFolderMacro;
@@ -307,7 +300,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildLayout == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.rawPresentation("BuildLayout");
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a22b0gf);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a12b0gf);
           props_BuildLayout = cpb.create();
         }
         return props_BuildLayout;
@@ -323,6 +316,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BuildLayout_AbstractCopy = cpb.create();
         }
         return props_BuildLayout_AbstractCopy;
+      case LanguageConceptSwitch.BuildLayout_Ant:
+        if (props_BuildLayout_Ant == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ant");
+          props_BuildLayout_Ant = cpb.create();
+        }
+        return props_BuildLayout_Ant;
       case LanguageConceptSwitch.BuildLayout_Comment:
         if (props_BuildLayout_Comment == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
