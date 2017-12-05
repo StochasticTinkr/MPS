@@ -17369,6 +17369,10 @@
         <property role="TrG5h" value="mps_home" />
         <node concept="55IIr" id="5kRB48U1Y9D" role="398pKh" />
       </node>
+      <node concept="398rNT" id="7GaaHzSlGoh" role="1l3spd">
+        <property role="TrG5h" value="build.tmp" />
+        <node concept="55IIr" id="7GaaHzSlHP9" role="398pKh" />
+      </node>
       <node concept="1l3spV" id="1rMSO91__HA" role="1l3spN">
         <node concept="398223" id="1rMSO91__I7" role="39821P">
           <node concept="28u9K_" id="1rMSO91__I8" role="39821P">
@@ -18223,7 +18227,7 @@
             </node>
           </node>
           <node concept="28u9K_" id="1rMSO91__O4" role="39821P">
-            <property role="28hIV_" value="Loop names of files in dir_en" />
+            <property role="28hIV_" value="Unjar tips into folder to prepare set of tips to register" />
           </node>
           <node concept="3BBBUJ" id="7GaaHzScgy3" role="39821P">
             <node concept="2pNNFK" id="7GaaHzScgy5" role="3Aox1X">
@@ -18241,7 +18245,19 @@
                 </node>
               </node>
             </node>
+            <node concept="2pNNFK" id="7GaaHzSfDtc" role="3Aox1X">
+              <property role="2pNNFO" value="mkdir" />
+              <node concept="2pNUuL" id="7GaaHzSfDz4" role="2pNNFR">
+                <property role="2pNUuO" value="dir" />
+                <node concept="2pMdtt" id="7GaaHzSfDz6" role="2pMdts">
+                  <property role="2pMdty" value="${build.tmp}/default/resources_new" />
+                </node>
+              </node>
+            </node>
             <node concept="raruj" id="7GaaHzSci5_" role="lGtFl" />
+          </node>
+          <node concept="28u9K_" id="7GaaHzSfBTB" role="39821P">
+            <property role="28hIV_" value="Loop names of files in dir_en" />
           </node>
           <node concept="3BBBUJ" id="HUMfzGU53m" role="39821P">
             <node concept="2pNNFK" id="HUMfzGUGp1" role="3Aox1X">
@@ -18282,68 +18298,144 @@
             </node>
             <node concept="2pNNFK" id="HUMfzH44Pl" role="3Aox1X">
               <property role="2pNNFO" value="echoxml" />
-              <node concept="2pNNFK" id="HUMfzH44PG" role="3o6s8t">
-                <property role="2pNNFO" value="extension" />
-                <node concept="2pNUuL" id="HUMfzH44PN" role="2pNNFR">
-                  <property role="2pNUuO" value="defaultExtensionNs" />
-                  <node concept="2pMdtt" id="HUMfzH44PP" role="2pMdts">
-                    <property role="2pMdty" value="com.intelliJ" />
+              <node concept="2pNNFK" id="7GaaHzSIydr" role="3o6s8t">
+                <property role="2pNNFO" value="idea-plugin" />
+                <node concept="2pNNFK" id="HUMfzH44PG" role="3o6s8t">
+                  <property role="2pNNFO" value="extensions" />
+                  <node concept="2pNUuL" id="HUMfzH44PN" role="2pNNFR">
+                    <property role="2pNUuO" value="defaultExtensionNs" />
+                    <node concept="2pMdtt" id="HUMfzH44PP" role="2pMdts">
+                      <property role="2pMdty" value="com.intelliJ" />
+                    </node>
                   </node>
-                </node>
-                <node concept="2pNNFK" id="HUMfzH44PX" role="3o6s8t">
-                  <property role="2pNNFO" value="tipAndTricks" />
-                  <node concept="3o6iSG" id="HUMfzH44Q1" role="3o6s8t">
-                    <property role="3o6i5n" value="${prop.contents}" />
+                  <node concept="2pNNFK" id="7GaaHzSAnMD" role="3o6s8t">
+                    <property role="2pNNFO" value="tipAndTrick" />
+                    <property role="qg3DV" value="true" />
+                    <node concept="2pNUuL" id="7GaaHzSAnML" role="2pNNFR">
+                      <property role="2pNUuO" value="file" />
+                      <node concept="2pMdtt" id="7GaaHzSAnMN" role="2pMdts">
+                        <property role="2pMdty" value="${prop.contents}" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
               <node concept="2pNUuL" id="HUMfzH44Pr" role="2pNNFR">
                 <property role="2pNUuO" value="file" />
                 <node concept="2pMdtt" id="HUMfzH44Pt" role="2pMdts">
-                  <property role="2pMdty" value="${build.layout}/list.xml" />
+                  <property role="2pMdty" value="${build.tmp}/default/resources_new/IdeTipsAndTricks.xml" />
                 </node>
               </node>
             </node>
-            <node concept="2pNNFK" id="HUMfzH44RM" role="3Aox1X">
+            <node concept="2pNNFK" id="7GaaHzSE$MY" role="3Aox1X">
               <property role="2pNNFO" value="replace" />
-              <node concept="2pNUuL" id="HUMfzH44RQ" role="2pNNFR">
+              <node concept="2pNUuL" id="7GaaHzSE$MZ" role="2pNNFR">
                 <property role="2pNUuO" value="file" />
-                <node concept="2pMdtt" id="HUMfzH44RS" role="2pMdts">
-                  <property role="2pMdty" value="${build.layout}/list.xml" />
+                <node concept="2pMdtt" id="7GaaHzSE$N0" role="2pMdts">
+                  <property role="2pMdty" value="${build.tmp}/default/resources_new/IdeTipsAndTricks.xml" />
                 </node>
               </node>
-              <node concept="2pNUuL" id="HUMfzH48g6" role="2pNNFR">
+              <node concept="2pNUuL" id="7GaaHzSE$N1" role="2pNNFR">
                 <property role="2pNUuO" value="token" />
-                <node concept="2pMdtt" id="HUMfzH48ga" role="2pMdts">
+                <node concept="2pMdtt" id="7GaaHzSE$N2" role="2pMdts">
                   <property role="2pMdty" value=";" />
                 </node>
               </node>
-              <node concept="2pNUuL" id="HUMfzH48ge" role="2pNNFR">
+              <node concept="2pNUuL" id="7GaaHzSE$N3" role="2pNNFR">
                 <property role="2pNUuO" value="value" />
-                <node concept="2pMdtz" id="HUMfzH48gr" role="2pMdts">
-                  <property role="2pMiwq" value="lt" />
+                <node concept="2pMdtz" id="7GaaHzSE$T_" role="2pMdts">
+                  <property role="2pMiwq" value="quot" />
                 </node>
-                <node concept="2pMdtt" id="HUMfzH48gu" role="2pMdts">
-                  <property role="2pMdty" value="/tipAndTrick" />
+                <node concept="2pMdtt" id="7GaaHzSE$TH" role="2pMdts">
+                  <property role="2pMdty" value="/" />
                 </node>
-                <node concept="2pMdtz" id="HUMfzH48gz" role="2pMdts">
+                <node concept="2pMdtz" id="7GaaHzSE$TM" role="2pMdts">
                   <property role="2pMiwq" value="gt" />
                 </node>
-                <node concept="1_gtYI" id="HUMfzH48gD" role="2pMdts">
+                <node concept="1_gtYI" id="7GaaHzSE$TS" role="2pMdts">
                   <property role="1_gt1m" value="xD" />
                 </node>
-                <node concept="2pMdtz" id="HUMfzH48h6" role="2pMdts">
+                <node concept="2pMdtz" id="7GaaHzSH8Fy" role="2pMdts">
                   <property role="2pMiwq" value="lt" />
                 </node>
-                <node concept="2pMdtt" id="HUMfzH48hd" role="2pMdts">
-                  <property role="2pMdty" value="tipAndTrick" />
+                <node concept="2pMdtt" id="7GaaHzSH8FD" role="2pMdts">
+                  <property role="2pMdty" value="tipsAndTrick file=" />
                 </node>
-                <node concept="2pMdtz" id="HUMfzH48hm" role="2pMdts">
-                  <property role="2pMiwq" value="gt" />
+                <node concept="2pMdtz" id="7GaaHzSH8FM" role="2pMdts">
+                  <property role="2pMiwq" value="quot" />
                 </node>
               </node>
             </node>
             <node concept="raruj" id="HUMfzGU6zt" role="lGtFl" />
+          </node>
+          <node concept="28u9K_" id="7GaaHzSqR7d" role="39821P">
+            <property role="28hIV_" value="Add Tips into jar + other files from mps-resources" />
+          </node>
+          <node concept="3BBBUJ" id="7GaaHzSqVMJ" role="39821P">
+            <node concept="2pNNFK" id="7GaaHzSqVML" role="3Aox1X">
+              <property role="2pNNFO" value="unjar" />
+              <node concept="2pNUuL" id="7GaaHzSqXmH" role="2pNNFR">
+                <property role="2pNUuO" value="src" />
+                <node concept="2pMdtt" id="7GaaHzSqXmJ" role="2pMdts">
+                  <property role="2pMdty" value="${mps_home}/lib/mps-resources.jar" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="7GaaHzSqXmN" role="2pNNFR">
+                <property role="2pNUuO" value="dest" />
+                <node concept="2pMdtt" id="7GaaHzSqXmR" role="2pMdts">
+                  <property role="2pMdty" value="${build.tmp}/default/mps-resources_tmp" />
+                </node>
+              </node>
+            </node>
+            <node concept="2pNNFK" id="7GaaHzStU2B" role="3Aox1X">
+              <property role="2pNNFO" value="jar" />
+              <node concept="2pNNFK" id="7GaaHzStU33" role="3o6s8t">
+                <property role="2pNNFO" value="fileset" />
+                <node concept="2pNNFK" id="7GaaHzStX1C" role="3o6s8t">
+                  <property role="2pNNFO" value="exclude" />
+                  <node concept="2pNUuL" id="7GaaHzStX1I" role="2pNNFR">
+                    <property role="2pNUuO" value="name" />
+                    <node concept="2pMdtt" id="7GaaHzStX1K" role="2pMdts">
+                      <property role="2pMdty" value="META-INF/IdeTipsAndTricks.xml" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNUuL" id="7GaaHzStX1v" role="2pNNFR">
+                  <property role="2pNUuO" value="dir" />
+                  <node concept="2pMdtt" id="7GaaHzStX1x" role="2pMdts">
+                    <property role="2pMdty" value="${build.tmp}/default/mps-resources_tmp/" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2pNNFK" id="7GaaHzSvme2" role="3o6s8t">
+                <property role="2pNNFO" value="zipfileset" />
+                <node concept="2pNUuL" id="7GaaHzSvmec" role="2pNNFR">
+                  <property role="2pNUuO" value="file" />
+                  <node concept="2pMdtt" id="7GaaHzSvmee" role="2pMdts">
+                    <property role="2pMdty" value="${build.tmp}/default/resources_new/IdeTipsAndTricks.xml" />
+                  </node>
+                </node>
+                <node concept="2pNUuL" id="7GaaHzSvmei" role="2pNNFR">
+                  <property role="2pNUuO" value="prefix" />
+                  <node concept="2pMdtt" id="7GaaHzSvmem" role="2pMdts">
+                    <property role="2pMdty" value="META-INF" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2pNUuL" id="7GaaHzStU2M" role="2pNNFR">
+                <property role="2pNUuO" value="destfile" />
+                <node concept="2pMdtt" id="7GaaHzStU2O" role="2pMdts">
+                  <property role="2pMdty" value="${build.layout}/lib/mps-resources_2.jar" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="7GaaHzStU2S" role="2pNNFR">
+                <property role="2pNUuO" value="duplicate" />
+                <node concept="2pMdtt" id="7GaaHzStU2W" role="2pMdts">
+                  <property role="2pMdty" value="preserve" />
+                </node>
+              </node>
+            </node>
+            <node concept="raruj" id="7GaaHzSqXmD" role="lGtFl" />
           </node>
           <node concept="3_J27D" id="1rMSO91__P2" role="Nbhlr">
             <node concept="3Mxwew" id="1rMSO91__P3" role="3MwsjC">
