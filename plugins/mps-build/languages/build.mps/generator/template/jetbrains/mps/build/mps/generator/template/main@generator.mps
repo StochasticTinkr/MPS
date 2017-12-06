@@ -18305,7 +18305,7 @@
                   <node concept="2pNUuL" id="HUMfzH44PN" role="2pNNFR">
                     <property role="2pNUuO" value="defaultExtensionNs" />
                     <node concept="2pMdtt" id="HUMfzH44PP" role="2pMdts">
-                      <property role="2pMdty" value="com.intelliJ" />
+                      <property role="2pMdty" value="com.intellij" />
                     </node>
                   </node>
                   <node concept="2pNNFK" id="7GaaHzSAnMD" role="3o6s8t">
@@ -18355,11 +18355,14 @@
                 <node concept="1_gtYI" id="7GaaHzSE$TS" role="2pMdts">
                   <property role="1_gt1m" value="xD" />
                 </node>
+                <node concept="1_gtYI" id="7GaaHzSJWKd" role="2pMdts">
+                  <property role="1_gt1m" value="x0009" />
+                </node>
                 <node concept="2pMdtz" id="7GaaHzSH8Fy" role="2pMdts">
                   <property role="2pMiwq" value="lt" />
                 </node>
                 <node concept="2pMdtt" id="7GaaHzSH8FD" role="2pMdts">
-                  <property role="2pMdty" value="tipsAndTrick file=" />
+                  <property role="2pMdty" value="tipAndTrick file=" />
                 </node>
                 <node concept="2pMdtz" id="7GaaHzSH8FM" role="2pMdts">
                   <property role="2pMiwq" value="quot" />
@@ -18425,7 +18428,7 @@
               <node concept="2pNUuL" id="7GaaHzStU2M" role="2pNNFR">
                 <property role="2pNUuO" value="destfile" />
                 <node concept="2pMdtt" id="7GaaHzStU2O" role="2pMdts">
-                  <property role="2pMdty" value="${build.layout}/lib/mps-resources_2.jar" />
+                  <property role="2pMdty" value="${build.layout}/lib/mps-resources.jar" />
                 </node>
               </node>
               <node concept="2pNUuL" id="7GaaHzStU2S" role="2pNNFR">
