@@ -41,6 +41,7 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
@@ -152,6 +153,12 @@
       <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="4796668409958418110" />
       <ref role="20lvS9" node="6mpuAlRavrV" resolve="BuildRelativePath" />
+    </node>
+    <node concept="1TJgyj" id="68bDGNq5J1k" role="1TKVEi">
+      <property role="IQ2ns" value="7064923839223230548" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="tips" />
+      <ref role="20lvS9" node="68bDGNq5J1j" resolve="BuildTips" />
     </node>
     <node concept="PrWs8" id="6qcrfIJFCeW" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
@@ -2208,6 +2215,97 @@
       <property role="20kJfa" value="body" />
       <property role="20lbJX" value="1..n" />
       <ref role="20lvS9" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="68bDGNq5J1j">
+    <property role="EcuMT" value="7064923839223230547" />
+    <property role="TrG5h" value="BuildTips" />
+    <property role="3GE5qa" value="TipsAndTricks" />
+    <property role="34LRSv" value="tips &amp; tricks" />
+    <property role="R4oN_" value="tips &amp; tricks for new IDE" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7cgc9gEPwDT" role="1TKVEi">
+      <property role="IQ2ns" value="8291180326921046649" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="imports" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="68bDGNqmVdW" resolve="BuildTips_ImportFrom" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="68bDGNqmVdW">
+    <property role="EcuMT" value="7064923839227736956" />
+    <property role="3GE5qa" value="TipsAndTricks" />
+    <property role="TrG5h" value="BuildTips_ImportFrom" />
+    <property role="34LRSv" value="import from" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="68bDGNqpdST" role="1TKVEi">
+      <property role="IQ2ns" value="7064923839228337721" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="source" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="68bDGNqpdSS" resolve="BuildTips_Import" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="68bDGNqpdSS">
+    <property role="EcuMT" value="7064923839228337720" />
+    <property role="3GE5qa" value="TipsAndTricks" />
+    <property role="TrG5h" value="BuildTips_Import" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="68bDGNqpifm">
+    <property role="EcuMT" value="7064923839228355542" />
+    <property role="3GE5qa" value="TipsAndTricks" />
+    <property role="TrG5h" value="BuildTips_None" />
+    <property role="34LRSv" value="none" />
+    <ref role="1TJDcQ" node="68bDGNqpdSS" resolve="BuildTips_Import" />
+  </node>
+  <node concept="1TIwiD" id="68bDGNqr257">
+    <property role="EcuMT" value="7064923839228813639" />
+    <property role="3GE5qa" value="TipsAndTricks" />
+    <property role="TrG5h" value="BuildTips_MPS" />
+    <property role="34LRSv" value="import from MPS" />
+    <ref role="1TJDcQ" node="68bDGNqpdSS" resolve="BuildTips_Import" />
+  </node>
+  <node concept="1TIwiD" id="68bDGNquUrd">
+    <property role="EcuMT" value="7064923839229830861" />
+    <property role="3GE5qa" value="TipsAndTricks" />
+    <property role="34LRSv" value="import from Tip &amp; Tricks solution" />
+    <property role="TrG5h" value="BuildTips_Generated" />
+    <ref role="1TJDcQ" node="68bDGNqpdSS" resolve="BuildTips_Import" />
+  </node>
+  <node concept="1TIwiD" id="68bDGNquUrC">
+    <property role="EcuMT" value="7064923839229830888" />
+    <property role="3GE5qa" value="TipsAndTricks" />
+    <property role="34LRSv" value="import from directory" />
+    <property role="TrG5h" value="BuildTips_FromDir" />
+    <ref role="1TJDcQ" node="68bDGNqpdSS" resolve="BuildTips_Import" />
+    <node concept="1TJgyj" id="68bDGNquUrD" role="1TKVEi">
+      <property role="IQ2ns" value="7064923839229830889" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="path" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="68bDGNqwcfq">
+    <property role="EcuMT" value="7064923839230165978" />
+    <property role="3GE5qa" value="TipsAndTricks" />
+    <property role="TrG5h" value="BuildTips_FromDirTo" />
+    <property role="34LRSv" value="import language from directory" />
+    <ref role="1TJDcQ" node="68bDGNqpdSS" resolve="BuildTips_Import" />
+    <node concept="1TJgyj" id="4reBHdWN7OG" role="1TKVEi">
+      <property role="IQ2ns" value="5102190059026414892" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="path" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+    <node concept="1TJgyi" id="4reBHdWN7OI" role="1TKVEl">
+      <property role="IQ2nx" value="5102190059026414894" />
+      <property role="TrG5h" value="language" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>

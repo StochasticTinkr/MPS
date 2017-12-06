@@ -10246,6 +10246,10 @@
         <node concept="2VaFvH" id="HUMfzGUGoV" role="gfFT$">
           <property role="TrG5h" value="subtask" />
           <node concept="2Vbh7Z" id="HUMfzH5701" role="2VaTZU">
+            <node concept="2pNNFK" id="HUMfzH570G" role="2Vbh7K">
+              <property role="2pNNFO" value="property" />
+              <node concept="29HgVG" id="HUMfzH98Rn" role="lGtFl" />
+            </node>
             <node concept="1WS0z7" id="HUMfzH98BH" role="lGtFl">
               <node concept="3JmXsc" id="HUMfzH98BK" role="3Jn$fo">
                 <node concept="3clFbS" id="HUMfzH98BL" role="2VODD2">
@@ -10260,12 +10264,14 @@
                 </node>
               </node>
             </node>
-            <node concept="2pNNFK" id="HUMfzH570G" role="2Vbh7K">
-              <property role="2pNNFO" value="property" />
-              <node concept="29HgVG" id="HUMfzH98Rn" role="lGtFl" />
-            </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="68bDGNqtUyD" role="3acgRq">
+      <ref role="30HIoZ" to="3ior:68bDGNq5J1j" resolve="BuildTips" />
+      <node concept="j$656" id="68bDGNqtUyE" role="1lVwrX">
+        <ref role="v9R2y" node="68bDGNqtUyB" resolve="reduce_BuildTips" />
       </node>
     </node>
     <node concept="3lhOvk" id="37Awa9keoP4" role="3lj3bC">
@@ -11430,6 +11436,28 @@
                         <ref role="cht4Q" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2VaFvH" id="68bDGNqjLQE" role="3bMsLN">
+        <property role="TrG5h" value="test" />
+        <node concept="2Vbh7Z" id="68bDGNqjMtZ" role="2VaTZU">
+          <node concept="2pNNFK" id="68bDGNqjMu3" role="2Vbh7K">
+            <property role="2pNNFO" value="testRrrr" />
+          </node>
+        </node>
+        <node concept="29HgVG" id="68bDGNqkJNu" role="lGtFl">
+          <node concept="3NFfHV" id="68bDGNqkJNx" role="3NFExx">
+            <node concept="3clFbS" id="68bDGNqkJNy" role="2VODD2">
+              <node concept="3clFbF" id="68bDGNqkJQR" role="3cqZAp">
+                <node concept="2OqwBi" id="68bDGNqkK12" role="3clFbG">
+                  <node concept="30H73N" id="68bDGNqkJQQ" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="68bDGNqkKd9" role="2OqNvi">
+                    <ref role="3Tt5mk" to="3ior:68bDGNq5J1k" resolve="tips" />
                   </node>
                 </node>
               </node>
@@ -17904,6 +17932,32 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="13MO4I" id="68bDGNqtUyB">
+    <property role="TrG5h" value="reduce_BuildTips" />
+    <property role="3GE5qa" value="TipsAndTricks" />
+    <ref role="3gUMe" to="3ior:68bDGNq5J1j" resolve="BuildTips" />
+    <node concept="2VaFvH" id="68bDGNq6JoX" role="13RCb5">
+      <property role="TrG5h" value="tipsAndTricks" />
+      <node concept="2Vbh7Z" id="68bDGNq6JoZ" role="2VaTZU">
+        <node concept="2pNNFK" id="68bDGNq6Jp3" role="2Vbh7K">
+          <property role="2pNNFO" value="jar" />
+          <node concept="2pNUuL" id="68bDGNqsVdN" role="2pNNFR">
+            <property role="2pNUuO" value="destfile" />
+            <node concept="2pMdtt" id="68bDGNqsVdP" role="2pMdts">
+              <property role="2pMdty" value="${build.layout}/lib/resources_new_tips.jar" />
+            </node>
+          </node>
+          <node concept="2pNUuL" id="68bDGNqsVdT" role="2pNNFR">
+            <property role="2pNUuO" value="duplicate" />
+            <node concept="2pMdtt" id="68bDGNqsVdX" role="2pMdts">
+              <property role="2pMdty" value="preserve" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="raruj" id="68bDGNqtWPq" role="lGtFl" />
     </node>
   </node>
 </model>

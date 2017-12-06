@@ -130,6 +130,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBuildStringNotEmpty = createDescriptorForBuildStringNotEmpty();
   /*package*/ final ConceptDescriptor myConceptBuildStringPart = createDescriptorForBuildStringPart();
   /*package*/ final ConceptDescriptor myConceptBuildTextStringPart = createDescriptorForBuildTextStringPart();
+  /*package*/ final ConceptDescriptor myConceptBuildTips = createDescriptorForBuildTips();
+  /*package*/ final ConceptDescriptor myConceptBuildTips_FromDir = createDescriptorForBuildTips_FromDir();
+  /*package*/ final ConceptDescriptor myConceptBuildTips_FromDirTo = createDescriptorForBuildTips_FromDirTo();
+  /*package*/ final ConceptDescriptor myConceptBuildTips_Generated = createDescriptorForBuildTips_Generated();
+  /*package*/ final ConceptDescriptor myConceptBuildTips_Import = createDescriptorForBuildTips_Import();
+  /*package*/ final ConceptDescriptor myConceptBuildTips_ImportFrom = createDescriptorForBuildTips_ImportFrom();
+  /*package*/ final ConceptDescriptor myConceptBuildTips_MPS = createDescriptorForBuildTips_MPS();
+  /*package*/ final ConceptDescriptor myConceptBuildTips_None = createDescriptorForBuildTips_None();
   /*package*/ final ConceptDescriptor myConceptBuildVarRefStringPart = createDescriptorForBuildVarRefStringPart();
   /*package*/ final ConceptDescriptor myConceptBuildVariableMacro = createDescriptorForBuildVariableMacro();
   /*package*/ final ConceptDescriptor myConceptBuildVariableMacroInitValue = createDescriptorForBuildVariableMacroInitValue();
@@ -157,7 +165,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptBuildAspect, myConceptBuildCompositePath, myConceptBuildCustomWorkflow, myConceptBuildDependency, myConceptBuildExternalDependency, myConceptBuildExternalLayout, myConceptBuildExternalLayoutDependency, myConceptBuildFileExcludeSelector, myConceptBuildFileIncludeSelector, myConceptBuildFileIncludesSelector, myConceptBuildFileSelector, myConceptBuildFileSelectorInAttribute, myConceptBuildFolderMacro, myConceptBuildInputFileSet, myConceptBuildInputFiles, myConceptBuildInputFolderSet, myConceptBuildInputFolders, myConceptBuildInputResourceSet, myConceptBuildInputSingleFile, myConceptBuildInputSingleFolder, myConceptBuildJavaPlugin, myConceptBuildLayout, myConceptBuildLayout_AbstractContainer, myConceptBuildLayout_AbstractCopy, myConceptBuildLayout_Ant, myConceptBuildLayout_Comment, myConceptBuildLayout_CompileOutputOf, myConceptBuildLayout_Container, myConceptBuildLayout_ContainerAcceptingFileSet, myConceptBuildLayout_Copy, myConceptBuildLayout_CopyFilter, myConceptBuildLayout_CopyFilterFixCRLF, myConceptBuildLayout_CopyFilterReplaceRegex, myConceptBuildLayout_CopyFilterReplaceTokens, myConceptBuildLayout_CopyFlattenMapper, myConceptBuildLayout_CopyGlobMapper, myConceptBuildLayout_CopyHandler, myConceptBuildLayout_CopyMapper, myConceptBuildLayout_CopyParameter, myConceptBuildLayout_CopyProcessor, myConceptBuildLayout_CopyRegexMapper, myConceptBuildLayout_CustomCopy, myConceptBuildLayout_EchoProperties, myConceptBuildLayout_EchoPropertyEntry, myConceptBuildLayout_EchoXml, myConceptBuildLayout_ExportAsJavaLibrary, myConceptBuildLayout_File, myConceptBuildLayout_FileSet, myConceptBuildLayout_FileStub, myConceptBuildLayout_Filemode, myConceptBuildLayout_Files, myConceptBuildLayout_FilesOf, myConceptBuildLayout_Folder, myConceptBuildLayout_Import, myConceptBuildLayout_ImportContent, myConceptBuildLayout_InJarNode, myConceptBuildLayout_Jar, myConceptBuildLayout_JarManifest, myConceptBuildLayout_JarManifest_Attribute, myConceptBuildLayout_JarManifest_Part, myConceptBuildLayout_JarManifest_Section, myConceptBuildLayout_NamedContainer, myConceptBuildLayout_Node, myConceptBuildLayout_PathElement, myConceptBuildLayout_PureNode, myConceptBuildLayout_Tar, myConceptBuildLayout_TransparentContainer, myConceptBuildLayout_War, myConceptBuildLayout_Zip, myConceptBuildMacro, myConceptBuildNamedLayout, myConceptBuildPlugin, myConceptBuildProject, myConceptBuildProjectDependency, myConceptBuildProjectPart, myConceptBuildRelativePath, myConceptBuildSourceArchiveRelativePath, myConceptBuildSourceMacroRelativePath, myConceptBuildSourcePath, myConceptBuildSourceProjectRelativePath, myConceptBuildSourceSetContainer, myConceptBuildSource_CompilablePart, myConceptBuildSource_FilesetProjectPart, myConceptBuildSource_JavaCP, myConceptBuildSource_JavaClassFolder, myConceptBuildSource_JavaContentFolder, myConceptBuildSource_JavaContentRoot, myConceptBuildSource_JavaDependency, myConceptBuildSource_JavaDependencyExternalJar, myConceptBuildSource_JavaDependencyExternalJarInFolder, myConceptBuildSource_JavaDependencyFileset, myConceptBuildSource_JavaDependencyJar, myConceptBuildSource_JavaDependencyLibrary, myConceptBuildSource_JavaDependencyModule, myConceptBuildSource_JavaExternalJarFolderRef, myConceptBuildSource_JavaExternalJarRef, myConceptBuildSource_JavaFiles, myConceptBuildSource_JavaJar, myConceptBuildSource_JavaJars, myConceptBuildSource_JavaLibrary, myConceptBuildSource_JavaLibraryCP, myConceptBuildSource_JavaLibraryElement, myConceptBuildSource_JavaLibraryExternalJar, myConceptBuildSource_JavaLibraryExternalJarFolder, myConceptBuildSource_JavaModule, myConceptBuildSource_JavaModuleOptions, myConceptBuildSource_JavaOptions, myConceptBuildSource_JavaResources, myConceptBuildSource_JavaSources, myConceptBuildSource_SingleFile, myConceptBuildSource_SingleFolder, myConceptBuildString, myConceptBuildStringContainer, myConceptBuildStringNotEmpty, myConceptBuildStringPart, myConceptBuildTextStringPart, myConceptBuildVarRefStringPart, myConceptBuildVariableMacro, myConceptBuildVariableMacroInitValue, myConceptBuildVariableMacroInitWithDate, myConceptBuildVariableMacroInitWithFileContent, myConceptBuildVariableMacroInitWithString, myConceptBuildVariableMacroInitWithValueFromFile, myConceptGeneratorInternal_BuildSource_Folder, myConceptGeneratorInternal_BuildSource_JarFolder, myConceptGeneratorInternal_BuildSource_JavaJar, myConceptGeneratorInternal_BuildSource_JavaLibrary, myConceptGeneratorInternal_BuildSource_JavaModule, myConceptGeneratorInternal_BuildSource_SingleFile, myConceptGeneratorInternal_IWorkflowParticipantReference, myConceptGeneratorInternal_IWorkfowParticipants, myConceptGeneratorInternal_LibraryArtifacts, myConceptGeneratorInternal_Mapping, myConceptGeneratorInternal_ProjectDependency, myConceptIWorkflowParticipant);
+    return Arrays.asList(myConceptBuildAspect, myConceptBuildCompositePath, myConceptBuildCustomWorkflow, myConceptBuildDependency, myConceptBuildExternalDependency, myConceptBuildExternalLayout, myConceptBuildExternalLayoutDependency, myConceptBuildFileExcludeSelector, myConceptBuildFileIncludeSelector, myConceptBuildFileIncludesSelector, myConceptBuildFileSelector, myConceptBuildFileSelectorInAttribute, myConceptBuildFolderMacro, myConceptBuildInputFileSet, myConceptBuildInputFiles, myConceptBuildInputFolderSet, myConceptBuildInputFolders, myConceptBuildInputResourceSet, myConceptBuildInputSingleFile, myConceptBuildInputSingleFolder, myConceptBuildJavaPlugin, myConceptBuildLayout, myConceptBuildLayout_AbstractContainer, myConceptBuildLayout_AbstractCopy, myConceptBuildLayout_Ant, myConceptBuildLayout_Comment, myConceptBuildLayout_CompileOutputOf, myConceptBuildLayout_Container, myConceptBuildLayout_ContainerAcceptingFileSet, myConceptBuildLayout_Copy, myConceptBuildLayout_CopyFilter, myConceptBuildLayout_CopyFilterFixCRLF, myConceptBuildLayout_CopyFilterReplaceRegex, myConceptBuildLayout_CopyFilterReplaceTokens, myConceptBuildLayout_CopyFlattenMapper, myConceptBuildLayout_CopyGlobMapper, myConceptBuildLayout_CopyHandler, myConceptBuildLayout_CopyMapper, myConceptBuildLayout_CopyParameter, myConceptBuildLayout_CopyProcessor, myConceptBuildLayout_CopyRegexMapper, myConceptBuildLayout_CustomCopy, myConceptBuildLayout_EchoProperties, myConceptBuildLayout_EchoPropertyEntry, myConceptBuildLayout_EchoXml, myConceptBuildLayout_ExportAsJavaLibrary, myConceptBuildLayout_File, myConceptBuildLayout_FileSet, myConceptBuildLayout_FileStub, myConceptBuildLayout_Filemode, myConceptBuildLayout_Files, myConceptBuildLayout_FilesOf, myConceptBuildLayout_Folder, myConceptBuildLayout_Import, myConceptBuildLayout_ImportContent, myConceptBuildLayout_InJarNode, myConceptBuildLayout_Jar, myConceptBuildLayout_JarManifest, myConceptBuildLayout_JarManifest_Attribute, myConceptBuildLayout_JarManifest_Part, myConceptBuildLayout_JarManifest_Section, myConceptBuildLayout_NamedContainer, myConceptBuildLayout_Node, myConceptBuildLayout_PathElement, myConceptBuildLayout_PureNode, myConceptBuildLayout_Tar, myConceptBuildLayout_TransparentContainer, myConceptBuildLayout_War, myConceptBuildLayout_Zip, myConceptBuildMacro, myConceptBuildNamedLayout, myConceptBuildPlugin, myConceptBuildProject, myConceptBuildProjectDependency, myConceptBuildProjectPart, myConceptBuildRelativePath, myConceptBuildSourceArchiveRelativePath, myConceptBuildSourceMacroRelativePath, myConceptBuildSourcePath, myConceptBuildSourceProjectRelativePath, myConceptBuildSourceSetContainer, myConceptBuildSource_CompilablePart, myConceptBuildSource_FilesetProjectPart, myConceptBuildSource_JavaCP, myConceptBuildSource_JavaClassFolder, myConceptBuildSource_JavaContentFolder, myConceptBuildSource_JavaContentRoot, myConceptBuildSource_JavaDependency, myConceptBuildSource_JavaDependencyExternalJar, myConceptBuildSource_JavaDependencyExternalJarInFolder, myConceptBuildSource_JavaDependencyFileset, myConceptBuildSource_JavaDependencyJar, myConceptBuildSource_JavaDependencyLibrary, myConceptBuildSource_JavaDependencyModule, myConceptBuildSource_JavaExternalJarFolderRef, myConceptBuildSource_JavaExternalJarRef, myConceptBuildSource_JavaFiles, myConceptBuildSource_JavaJar, myConceptBuildSource_JavaJars, myConceptBuildSource_JavaLibrary, myConceptBuildSource_JavaLibraryCP, myConceptBuildSource_JavaLibraryElement, myConceptBuildSource_JavaLibraryExternalJar, myConceptBuildSource_JavaLibraryExternalJarFolder, myConceptBuildSource_JavaModule, myConceptBuildSource_JavaModuleOptions, myConceptBuildSource_JavaOptions, myConceptBuildSource_JavaResources, myConceptBuildSource_JavaSources, myConceptBuildSource_SingleFile, myConceptBuildSource_SingleFolder, myConceptBuildString, myConceptBuildStringContainer, myConceptBuildStringNotEmpty, myConceptBuildStringPart, myConceptBuildTextStringPart, myConceptBuildTips, myConceptBuildTips_FromDir, myConceptBuildTips_FromDirTo, myConceptBuildTips_Generated, myConceptBuildTips_Import, myConceptBuildTips_ImportFrom, myConceptBuildTips_MPS, myConceptBuildTips_None, myConceptBuildVarRefStringPart, myConceptBuildVariableMacro, myConceptBuildVariableMacroInitValue, myConceptBuildVariableMacroInitWithDate, myConceptBuildVariableMacroInitWithFileContent, myConceptBuildVariableMacroInitWithString, myConceptBuildVariableMacroInitWithValueFromFile, myConceptGeneratorInternal_BuildSource_Folder, myConceptGeneratorInternal_BuildSource_JarFolder, myConceptGeneratorInternal_BuildSource_JavaJar, myConceptGeneratorInternal_BuildSource_JavaLibrary, myConceptGeneratorInternal_BuildSource_JavaModule, myConceptGeneratorInternal_BuildSource_SingleFile, myConceptGeneratorInternal_IWorkflowParticipantReference, myConceptGeneratorInternal_IWorkfowParticipants, myConceptGeneratorInternal_LibraryArtifacts, myConceptGeneratorInternal_Mapping, myConceptGeneratorInternal_ProjectDependency, myConceptIWorkflowParticipant);
   }
 
   @Override
@@ -396,6 +404,22 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptBuildStringPart;
       case LanguageConceptSwitch.BuildTextStringPart:
         return myConceptBuildTextStringPart;
+      case LanguageConceptSwitch.BuildTips:
+        return myConceptBuildTips;
+      case LanguageConceptSwitch.BuildTips_FromDir:
+        return myConceptBuildTips_FromDir;
+      case LanguageConceptSwitch.BuildTips_FromDirTo:
+        return myConceptBuildTips_FromDirTo;
+      case LanguageConceptSwitch.BuildTips_Generated:
+        return myConceptBuildTips_Generated;
+      case LanguageConceptSwitch.BuildTips_Import:
+        return myConceptBuildTips_Import;
+      case LanguageConceptSwitch.BuildTips_ImportFrom:
+        return myConceptBuildTips_ImportFrom;
+      case LanguageConceptSwitch.BuildTips_MPS:
+        return myConceptBuildTips_MPS;
+      case LanguageConceptSwitch.BuildTips_None:
+        return myConceptBuildTips_None;
       case LanguageConceptSwitch.BuildVarRefStringPart:
         return myConceptBuildVarRefStringPart;
       case LanguageConceptSwitch.BuildVariableMacro:
@@ -1083,6 +1107,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("aspects", 0x31292e1a60db57afL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60dd541dL).optional(true).ordered(true).multiple(true).origin("3542413272732620719").done();
     b.aggregate("layout", 0x4df58c6f18f84a1cL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L).optional(false).ordered(true).multiple(false).origin("5617550519002745372").done();
     b.aggregate("scriptsDir", 0x4291308148e8c6beL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL).optional(true).ordered(true).multiple(false).origin("4796668409958418110").done();
+    b.aggregate("tips", 0x620ba6ccda16f054L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda16f053L).optional(true).ordered(true).multiple(false).origin("7064923839223230548").done();
     b.alias("build project");
     return b.create();
   }
@@ -1457,6 +1482,71 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/4903714810883702019");
     b.prop("text", 0x440d7ea3b68c4d56L, "4903714810883755350");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForBuildTips() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build", "BuildTips", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda16f053L);
+    b.class_(false, false, false);
+    b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/7064923839223230547");
+    b.aggregate("imports", 0x731030942ad60a79L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda5bb37cL).optional(false).ordered(true).multiple(true).origin("8291180326921046649").done();
+    b.alias("tips & tricks");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForBuildTips_FromDir() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build", "BuildTips_FromDir", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda7ba6e8L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.build.structure.BuildTips_Import", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda64de38L);
+    b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/7064923839229830888");
+    b.aggregate("path", 0x620ba6ccda7ba6e9L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(false).ordered(true).multiple(false).origin("7064923839229830889").done();
+    b.alias("import from directory");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForBuildTips_FromDirTo() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build", "BuildTips_FromDirTo", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda80c3daL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.build.structure.BuildTips_Import", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda64de38L);
+    b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/7064923839230165978");
+    b.prop("language", 0x46ce9ed37ccc7d2eL, "5102190059026414894");
+    b.aggregate("path", 0x46ce9ed37ccc7d2cL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(false).ordered(true).multiple(true).origin("5102190059026414892").done();
+    b.alias("import language from directory");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForBuildTips_Generated() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build", "BuildTips_Generated", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda7ba6cdL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.build.structure.BuildTips_Import", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda64de38L);
+    b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/7064923839229830861");
+    b.alias("import from Tip & Tricks solution");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForBuildTips_Import() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build", "BuildTips_Import", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda64de38L);
+    b.class_(false, true, false);
+    b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/7064923839228337720");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForBuildTips_ImportFrom() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build", "BuildTips_ImportFrom", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda5bb37cL);
+    b.class_(false, false, false);
+    b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/7064923839227736956");
+    b.aggregate("source", 0x620ba6ccda64de39L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda64de38L).optional(false).ordered(true).multiple(false).origin("7064923839228337721").done();
+    b.alias("import from");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForBuildTips_MPS() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build", "BuildTips_MPS", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda6c2147L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.build.structure.BuildTips_Import", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda64de38L);
+    b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/7064923839228813639");
+    b.alias("import from MPS");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForBuildTips_None() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build", "BuildTips_None", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda6523d6L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.build.structure.BuildTips_Import", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda64de38L);
+    b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/7064923839228355542");
+    b.alias("none");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBuildVarRefStringPart() {
