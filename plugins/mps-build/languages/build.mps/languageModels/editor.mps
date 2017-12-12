@@ -6014,5 +6014,49 @@
       <node concept="l2Vlx" id="7xIdWdX6Q0n" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="4JSKezPiMDT">
+    <property role="3GE5qa" value="Project.Tips" />
+    <ref role="1XX52x" to="kdzh:4JSKezPiMCT" resolve="BuildMps_TipsOf" />
+    <node concept="3EZMnI" id="4JSKezPiMDV" role="2wV5jI">
+      <node concept="3F0ifn" id="4JSKezPiME2" role="3EZMnx">
+        <property role="3F0ifm" value="tips of" />
+      </node>
+      <node concept="l2Vlx" id="4JSKezPiMDY" role="2iSdaV" />
+      <node concept="1iCGBv" id="4JSKezPm2F5" role="3EZMnx">
+        <ref role="1NtTu8" to="kdzh:4JSKezPiMCU" resolve="element" />
+        <node concept="1sVBvm" id="4JSKezPm2F7" role="1sWHZn">
+          <node concept="3F0A7n" id="4JSKezPm2Ff" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="4JSKezPqXWM">
+    <property role="3GE5qa" value="Project.Tips" />
+    <ref role="1XX52x" to="kdzh:4JSKezPqXVx" resolve="BuildMps_SpecificTipsOf" />
+    <node concept="3EZMnI" id="4JSKezPqXWO" role="2wV5jI">
+      <node concept="3F0ifn" id="4JSKezPqXWP" role="3EZMnx">
+        <property role="3F0ifm" value="tips" />
+      </node>
+      <node concept="3F0A7n" id="4JSKezPqXX6" role="3EZMnx">
+        <ref role="1NtTu8" to="kdzh:4JSKezPqXWo" resolve="language" />
+      </node>
+      <node concept="3F0ifn" id="4JSKezPqXXk" role="3EZMnx">
+        <property role="3F0ifm" value="of" />
+      </node>
+      <node concept="l2Vlx" id="4JSKezPqXWQ" role="2iSdaV" />
+      <node concept="1iCGBv" id="4JSKezPqXWR" role="3EZMnx">
+        <ref role="1NtTu8" to="kdzh:4JSKezPqXWm" resolve="element" />
+        <node concept="1sVBvm" id="4JSKezPqXWS" role="1sWHZn">
+          <node concept="3F0A7n" id="4JSKezPqXWT" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -10708,6 +10708,9 @@
     <property role="3GE5qa" value="TipsAndTricks" />
     <ref role="1XX52x" to="3ior:68bDGNq5J1j" resolve="BuildTips" />
     <node concept="3EZMnI" id="68bDGNq6pFw" role="2wV5jI">
+      <node concept="3F0A7n" id="4JSKezPlzH2" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
       <node concept="3F0ifn" id="7cgc9gEQiVK" role="3EZMnx">
         <property role="3F0ifm" value="Tips &amp; Tricks:" />
       </node>
@@ -10754,23 +10757,36 @@
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="68bDGNquUrN">
+  <node concept="24kQdi" id="68bDGNqpifv">
     <property role="3GE5qa" value="TipsAndTricks" />
-    <ref role="1XX52x" to="3ior:68bDGNquUrC" resolve="BuildTips_FromDir" />
-    <node concept="3EZMnI" id="7cgc9gF36Ym" role="2wV5jI">
-      <node concept="3F0ifn" id="4reBHdWN7O4" role="3EZMnx">
-        <property role="3F0ifm" value="from" />
-        <node concept="VechU" id="4reBHdWN7Ob" role="3F10Kt">
-          <property role="Vb096" value="DARK_BLUE" />
-        </node>
-      </node>
-      <node concept="3F1sOY" id="5E1nwh4w9sH" role="3EZMnx">
-        <ref role="1NtTu8" to="3ior:68bDGNquUrD" resolve="path" />
-        <node concept="VechU" id="5E1nwh4w9sO" role="3F10Kt">
+    <ref role="1XX52x" to="3ior:68bDGNqpifm" resolve="BuildTips_None" />
+    <node concept="3EZMnI" id="68bDGNqpifx" role="2wV5jI">
+      <node concept="3F0ifn" id="68bDGNqpifC" role="3EZMnx">
+        <property role="3F0ifm" value="none" />
+        <node concept="VechU" id="68bDGNqpifF" role="3F10Kt">
           <property role="Vb096" value="DARK_GREEN" />
         </node>
       </node>
-      <node concept="l2Vlx" id="7cgc9gF36Yr" role="2iSdaV" />
+      <node concept="l2Vlx" id="68bDGNqpif$" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="68bDGNqr25g">
+    <property role="3GE5qa" value="TipsAndTricks" />
+    <ref role="1XX52x" to="3ior:68bDGNqr257" resolve="BuildTips_MPS" />
+    <node concept="3EZMnI" id="68bDGNqr25i" role="2wV5jI">
+      <node concept="3F0ifn" id="68bDGNquUr6" role="3EZMnx">
+        <property role="3F0ifm" value="from" />
+        <node concept="VechU" id="68bDGNquUrb" role="3F10Kt">
+          <property role="Vb096" value="DARK_BLUE" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="68bDGNqr25p" role="3EZMnx">
+        <property role="3F0ifm" value="MPS" />
+        <node concept="VechU" id="68bDGNqr25s" role="3F10Kt">
+          <property role="Vb096" value="DARK_GREEN" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="68bDGNqr25l" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="68bDGNquUrm">
@@ -10792,25 +10808,23 @@
       <node concept="l2Vlx" id="7cgc9gF36YS" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="68bDGNqpifv">
+  <node concept="24kQdi" id="68bDGNquUrN">
     <property role="3GE5qa" value="TipsAndTricks" />
-    <ref role="1XX52x" to="3ior:68bDGNqpifm" resolve="BuildTips_None" />
-    <node concept="3EZMnI" id="68bDGNqpifx" role="2wV5jI">
-      <node concept="3F0ifn" id="68bDGNqpifC" role="3EZMnx">
-        <property role="3F0ifm" value="none" />
-        <node concept="VechU" id="68bDGNqpifF" role="3F10Kt">
+    <ref role="1XX52x" to="3ior:68bDGNquUrC" resolve="BuildTips_FromDir" />
+    <node concept="3EZMnI" id="7cgc9gF36Ym" role="2wV5jI">
+      <node concept="3F0ifn" id="4reBHdWN7O4" role="3EZMnx">
+        <property role="3F0ifm" value="from" />
+        <node concept="VechU" id="4reBHdWN7Ob" role="3F10Kt">
+          <property role="Vb096" value="DARK_BLUE" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="5E1nwh4w9sH" role="3EZMnx">
+        <ref role="1NtTu8" to="3ior:68bDGNquUrD" resolve="path" />
+        <node concept="VechU" id="5E1nwh4w9sO" role="3F10Kt">
           <property role="Vb096" value="DARK_GREEN" />
         </node>
       </node>
-      <node concept="l2Vlx" id="68bDGNqpif$" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="68bDGNqwQze">
-    <property role="3GE5qa" value="TipsAndTricks" />
-    <ref role="1XX52x" to="3ior:68bDGNqpdSS" resolve="BuildTips_Import" />
-    <node concept="3F0ifn" id="5E1nwh5_ANY" role="2wV5jI">
-      <property role="ilYzB" value="&lt;source&gt;" />
-      <property role="1cu_pB" value="2" />
+      <node concept="l2Vlx" id="7cgc9gF36Yr" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="68bDGNqwcf_">
@@ -10930,23 +10944,12 @@
       <node concept="l2Vlx" id="4reBHdWN7OX" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="68bDGNqr25g">
+  <node concept="24kQdi" id="68bDGNqwQze">
     <property role="3GE5qa" value="TipsAndTricks" />
-    <ref role="1XX52x" to="3ior:68bDGNqr257" resolve="BuildTips_MPS" />
-    <node concept="3EZMnI" id="68bDGNqr25i" role="2wV5jI">
-      <node concept="3F0ifn" id="68bDGNquUr6" role="3EZMnx">
-        <property role="3F0ifm" value="from" />
-        <node concept="VechU" id="68bDGNquUrb" role="3F10Kt">
-          <property role="Vb096" value="DARK_BLUE" />
-        </node>
-      </node>
-      <node concept="3F0ifn" id="68bDGNqr25p" role="3EZMnx">
-        <property role="3F0ifm" value="MPS" />
-        <node concept="VechU" id="68bDGNqr25s" role="3F10Kt">
-          <property role="Vb096" value="DARK_GREEN" />
-        </node>
-      </node>
-      <node concept="l2Vlx" id="68bDGNqr25l" role="2iSdaV" />
+    <ref role="1XX52x" to="3ior:68bDGNqpdSS" resolve="BuildTips_Import" />
+    <node concept="3F0ifn" id="5E1nwh5_ANY" role="2wV5jI">
+      <property role="ilYzB" value="&lt;source&gt;" />
+      <property role="1cu_pB" value="2" />
     </node>
   </node>
 </model>

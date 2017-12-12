@@ -1584,5 +1584,38 @@
     <property role="34LRSv" value="none" />
     <ref role="1TJDcQ" node="7cgc9gF0EMY" resolve="BuildMps_TipsImport" />
   </node>
+  <node concept="1TIwiD" id="4JSKezPqXVx">
+    <property role="EcuMT" value="5474337453851270881" />
+    <property role="3GE5qa" value="Project.Tips" />
+    <property role="TrG5h" value="BuildMps_SpecificTipsOf" />
+    <property role="34LRSv" value="specific tips of" />
+    <property role="R4oN_" value="copy tips of project element" />
+    <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+    <node concept="1TJgyj" id="4JSKezPqXWm" role="1TKVEi">
+      <property role="IQ2ns" value="5474337453851270934" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="element" />
+      <ref role="20lvS9" to="3ior:68bDGNq5J1j" resolve="BuildTips" />
+    </node>
+    <node concept="1TJgyi" id="4JSKezPqXWo" role="1TKVEl">
+      <property role="IQ2nx" value="5474337453851270936" />
+      <property role="TrG5h" value="language" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4JSKezPiMCT">
+    <property role="EcuMT" value="5474337453849127481" />
+    <property role="3GE5qa" value="Project.Tips" />
+    <property role="TrG5h" value="BuildMps_TipsOf" />
+    <property role="R4oN_" value="copy tips of project element" />
+    <property role="34LRSv" value="tips of" />
+    <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+    <node concept="1TJgyj" id="4JSKezPiMCU" role="1TKVEi">
+      <property role="IQ2ns" value="5474337453849127482" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="element" />
+      <ref role="20lvS9" to="3ior:68bDGNq5J1j" resolve="BuildTips" />
+    </node>
+  </node>
 </model>
 

@@ -3420,6 +3420,12 @@
       <ref role="30HIoZ" to="kdzh:7xIdWdX6IQF" resolve="BuildMps_TipsNone" />
       <node concept="b5Tf3" id="7LBOED2L4wD" role="1lVwrX" />
     </node>
+    <node concept="3aamgX" id="4JSKezPs4k2" role="3acgRq">
+      <ref role="30HIoZ" to="kdzh:4JSKezPiMCT" resolve="BuildMps_TipsOf" />
+      <node concept="j$656" id="4JSKezPs4k3" role="1lVwrX">
+        <ref role="v9R2y" node="4JSKezPs4k0" resolve="reduce_BuildMps_TipsOf" />
+      </node>
+    </node>
   </node>
   <node concept="1pmfR0" id="2L4pT56hNAU">
     <property role="TrG5h" value="loadModules" />
@@ -17318,6 +17324,41 @@
       </node>
       <node concept="10PD9b" id="5kRB48U6CRR" role="10PD9s" />
       <node concept="3b7kt6" id="5kRB48U6FLj" role="10PD9s" />
+    </node>
+  </node>
+  <node concept="13MO4I" id="4JSKezPs4k0">
+    <property role="TrG5h" value="reduce_BuildMps_TipsOf" />
+    <property role="3GE5qa" value="Project.Tips" />
+    <ref role="3gUMe" to="kdzh:4JSKezPiMCT" resolve="BuildMps_TipsOf" />
+    <node concept="1l3spW" id="4JSKezPsdPU" role="13RCb5">
+      <property role="TrG5h" value="Tips" />
+      <property role="turDy" value="test.xml" />
+      <node concept="398rNT" id="4JSKezPsdPV" role="1l3spd">
+        <property role="TrG5h" value="mps_home" />
+        <node concept="55IIr" id="4JSKezPsdPW" role="398pKh" />
+      </node>
+      <node concept="1l3spV" id="4JSKezPsdPX" role="1l3spN">
+        <node concept="398223" id="4JSKezPv0SX" role="39821P">
+          <node concept="3_J27D" id="4JSKezPv0SZ" role="Nbhlr">
+            <node concept="3Mxwew" id="4JSKezPv0T3" role="3MwsjC">
+              <property role="3MwjfP" value="jar" />
+            </node>
+          </node>
+          <node concept="3981dx" id="4JSKezPv0T5" role="39821P">
+            <node concept="3_J27D" id="4JSKezPv0T6" role="Nbhlr">
+              <node concept="3Mxwew" id="4JSKezPv0T9" role="3MwsjC">
+                <property role="3MwjfP" value="resourcesXX.jar" />
+              </node>
+            </node>
+            <node concept="raruj" id="4JSKezPv0Ts" role="lGtFl" />
+          </node>
+        </node>
+      </node>
+      <node concept="2sgV4H" id="4JSKezPsdWj" role="1l3spa">
+        <ref role="1l3spb" to="ffeo:2eDSGe9d1ot" resolve="mpsWorkbench" />
+      </node>
+      <node concept="10PD9b" id="4JSKezPsdWk" role="10PD9s" />
+      <node concept="3b7kt6" id="4JSKezPsdWl" role="10PD9s" />
     </node>
   </node>
 </model>

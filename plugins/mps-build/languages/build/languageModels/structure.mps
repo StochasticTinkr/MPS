@@ -2231,6 +2231,9 @@
       <property role="20lbJX" value="1..n" />
       <ref role="20lvS9" node="68bDGNqmVdW" resolve="BuildTips_ImportFrom" />
     </node>
+    <node concept="PrWs8" id="4JSKezPiMEx" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
   </node>
   <node concept="1TIwiD" id="68bDGNqmVdW">
     <property role="EcuMT" value="7064923839227736956" />
