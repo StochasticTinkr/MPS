@@ -505,7 +505,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.MPSTipsAndTricks_Base:
         if (props_MPSTipsAndTricks_Base == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Tips And Tricks");
+          cpb.presentationByName();
           props_MPSTipsAndTricks_Base = cpb.create();
         }
         return props_MPSTipsAndTricks_Base;

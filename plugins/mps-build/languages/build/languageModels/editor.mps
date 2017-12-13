@@ -10796,10 +10796,19 @@
           <property role="Vb096" value="DARK_BLUE" />
         </node>
       </node>
-      <node concept="3F0ifn" id="7cgc9gF36YO" role="3EZMnx">
-        <property role="3F0ifm" value="Generated solution" />
-        <node concept="VechU" id="7cgc9gF5lbJ" role="3F10Kt">
-          <property role="Vb096" value="DARK_GREEN" />
+      <node concept="1iCGBv" id="5Ux$AZvklSR" role="3EZMnx">
+        <ref role="1NtTu8" to="3ior:5Ux$AZvklSJ" resolve="source" />
+        <node concept="1sVBvm" id="5Ux$AZvklST" role="1sWHZn">
+          <node concept="3F0A7n" id="5Ux$AZvlBXb" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            <node concept="VechU" id="5Ux$AZvm7ri" role="3F10Kt">
+              <property role="Vb096" value="DARK_GREEN" />
+            </node>
+            <node concept="Vb9p2" id="5Ux$AZvm7rn" role="3F10Kt">
+              <property role="Vbekb" value="BOLD" />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="l2Vlx" id="7cgc9gF36YS" role="2iSdaV" />

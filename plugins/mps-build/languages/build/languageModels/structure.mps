@@ -2274,6 +2274,13 @@
     <property role="34LRSv" value="import from Tip &amp; Tricks solution" />
     <property role="TrG5h" value="BuildTips_Generated" />
     <ref role="1TJDcQ" node="68bDGNqpdSS" resolve="BuildTips_Import" />
+    <node concept="1TJgyj" id="5Ux$AZvklSJ" role="1TKVEi">
+      <property role="IQ2ns" value="6818892320001318447" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="source" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="kdzh:5Ux$AZvbTf6" resolve="MPSTipsAndTricks_Base" />
+    </node>
   </node>
   <node concept="1TIwiD" id="68bDGNquUrC">
     <property role="EcuMT" value="7064923839229830888" />

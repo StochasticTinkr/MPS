@@ -27,6 +27,7 @@
     <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="2ogt" ref="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" implicit="true" />
+    <import index="kdzh" ref="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -18034,8 +18035,128 @@
         </node>
         <node concept="raruj" id="4JSKezPeoGQ" role="lGtFl" />
       </node>
+      <node concept="2VaFvH" id="5Ux$AZvmATz" role="2VaFvJ">
+        <property role="TrG5h" value="create_generated" />
+        <node concept="2Vbh7Z" id="5Ux$AZvp1vP" role="2VaTZU">
+          <node concept="2pNNFK" id="5Ux$AZvp1vQ" role="2Vbh7K">
+            <property role="2pNNFO" value="mkdir" />
+            <node concept="2pNUuL" id="5Ux$AZvp1vR" role="2pNNFR">
+              <property role="2pNUuO" value="dir" />
+              <node concept="2pMdtt" id="5Ux$AZvp1vS" role="2pMdts">
+                <property role="2pMdty" value="${build.tmp}/default/mps-tips_en_jar/tips" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2Vbh7Z" id="5Ux$AZvmC0l" role="2VaTZU">
+          <node concept="2pNNFK" id="5Ux$AZvmC0m" role="2Vbh7K">
+            <property role="2pNNFO" value="echoxml" />
+            <node concept="2pNNFK" id="5Ux$AZvmC0n" role="3o6s8t">
+              <property role="2pNNFO" value="html" />
+              <node concept="2pNNFK" id="5Ux$AZvmC0o" role="3o6s8t">
+                <property role="2pNNFO" value="head" />
+              </node>
+              <node concept="3o6iSG" id="5Ux$AZvrAPJ" role="3o6s8t">
+                <property role="3o6i5n" value="//todo" />
+              </node>
+              <node concept="2pNNFK" id="5Ux$AZvmC0I" role="3o6s8t">
+                <property role="2pNNFO" value="body" />
+              </node>
+            </node>
+            <node concept="2pNUuL" id="5Ux$AZvmC0u" role="2pNNFR">
+              <property role="2pNUuO" value="file" />
+              <node concept="2pMdtt" id="5Ux$AZvmC0v" role="2pMdts">
+                <property role="2pMdty" value="path" />
+                <node concept="17Uvod" id="5Ux$AZvmMbZ" role="lGtFl">
+                  <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
+                  <property role="2qtEX9" value="text" />
+                  <node concept="3zFVjK" id="5Ux$AZvmMc0" role="3zH0cK">
+                    <node concept="3clFbS" id="5Ux$AZvmMc1" role="2VODD2">
+                      <node concept="3clFbF" id="5Ux$AZvmMku" role="3cqZAp">
+                        <node concept="3cpWs3" id="5Ux$AZvmPiz" role="3clFbG">
+                          <node concept="Xl_RD" id="5Ux$AZvmPy6" role="3uHU7w">
+                            <property role="Xl_RC" value=".html" />
+                          </node>
+                          <node concept="3cpWs3" id="5Ux$AZvmNo5" role="3uHU7B">
+                            <node concept="Xl_RD" id="5Ux$AZvmMkt" role="3uHU7B">
+                              <property role="Xl_RC" value="${build.tmp}/default/mps-tips_en_jar/tips/" />
+                            </node>
+                            <node concept="2OqwBi" id="5Ux$AZvpGll" role="3uHU7w">
+                              <node concept="2OqwBi" id="5Ux$AZvmNLj" role="2Oq$k0">
+                                <node concept="30H73N" id="5Ux$AZvmNwF" role="2Oq$k0" />
+                                <node concept="3TrcHB" id="5Ux$AZvmOkC" role="2OqNvi">
+                                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="5Ux$AZvpGW8" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolve="replace" />
+                                <node concept="Xl_RD" id="5Ux$AZvpHrj" role="37wK5m">
+                                  <property role="Xl_RC" value=" " />
+                                </node>
+                                <node concept="Xl_RD" id="5Ux$AZvpIMK" role="37wK5m">
+                                  <property role="Xl_RC" value="_" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="raruj" id="5Ux$AZvmC0L" role="lGtFl" />
+        <node concept="1WS0z7" id="5Ux$AZvmC0Q" role="lGtFl">
+          <node concept="3JmXsc" id="5Ux$AZvmC0S" role="3Jn$fo">
+            <node concept="3clFbS" id="5Ux$AZvmC0U" role="2VODD2">
+              <node concept="3clFbF" id="5Ux$AZvmC5O" role="3cqZAp">
+                <node concept="2OqwBi" id="5Ux$AZvmHGd" role="3clFbG">
+                  <node concept="2OqwBi" id="5Ux$AZvmDWx" role="2Oq$k0">
+                    <node concept="2OqwBi" id="5Ux$AZvmCgZ" role="2Oq$k0">
+                      <node concept="30H73N" id="5Ux$AZvmC5N" role="2Oq$k0" />
+                      <node concept="3Tsc0h" id="5Ux$AZvmCs2" role="2OqNvi">
+                        <ref role="3TtcxE" to="3ior:7cgc9gEPwDT" resolve="imports" />
+                      </node>
+                    </node>
+                    <node concept="13MTOL" id="5Ux$AZvmGhV" role="2OqNvi">
+                      <ref role="13MTZf" to="3ior:68bDGNqpdST" resolve="source" />
+                    </node>
+                  </node>
+                  <node concept="v3k3i" id="5Ux$AZvmI21" role="2OqNvi">
+                    <node concept="chp4Y" id="5Ux$AZvmI99" role="v3oSu">
+                      <ref role="cht4Q" to="3ior:68bDGNquUrd" resolve="BuildTips_Generated" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1WS0z7" id="5Ux$AZvmIr5" role="lGtFl">
+          <node concept="3JmXsc" id="5Ux$AZvmIr7" role="3Jn$fo">
+            <node concept="3clFbS" id="5Ux$AZvmIr9" role="2VODD2">
+              <node concept="3clFbF" id="5Ux$AZvmI$H" role="3cqZAp">
+                <node concept="2OqwBi" id="5Ux$AZvmLpJ" role="3clFbG">
+                  <node concept="2OqwBi" id="5Ux$AZvmIL9" role="2Oq$k0">
+                    <node concept="30H73N" id="5Ux$AZvmI$G" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="5Ux$AZvmJ4$" role="2OqNvi">
+                      <ref role="3Tt5mk" to="3ior:5Ux$AZvklSJ" resolve="source" />
+                    </node>
+                  </node>
+                  <node concept="3Tsc0h" id="5Ux$AZvmLMN" role="2OqNvi">
+                    <ref role="3TtcxE" to="kdzh:5Ux$AZvbV$h" resolve="tips" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="2VaFvH" id="4JSKezPByu4" role="2VaFvJ">
-        <property role="TrG5h" value="import_from_fir" />
+        <property role="TrG5h" value="import_from_dir" />
         <node concept="2Vbh7Z" id="4JSKezPByu5" role="2VaTZU">
           <node concept="2pNNFK" id="4JSKezPByu6" role="2Vbh7K">
             <property role="2pNNFO" value="copy" />

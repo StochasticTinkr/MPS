@@ -1557,12 +1557,38 @@
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="Tips And Tricks" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="5Ux$AZvkVR0" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
     <node concept="1TJgyj" id="5Ux$AZvbV$h" role="1TKVEi">
       <property role="IQ2ns" value="6818892319999113489" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="tips" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="5Ux$AZvbV$g" resolve="MPSTipsAndTricks_Tip" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5Ux$AZvbV$g">
+    <property role="EcuMT" value="6818892319999113488" />
+    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <property role="TrG5h" value="MPSTipsAndTricks_Tip" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5Ux$AZvcAxY" role="1TKVEi">
+      <property role="IQ2ns" value="6818892319999289470" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="text" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="5Ux$AZvcAxW" resolve="MPSTipsAndTricks_Text" />
+    </node>
+    <node concept="1TJgyj" id="5Ux$AZvcAy0" role="1TKVEi">
+      <property role="IQ2ns" value="6818892319999289472" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="img" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5Ux$AZvcAxX" resolve="MPSTipsAndTricks_Img" />
+    </node>
+    <node concept="PrWs8" id="5Ux$AZvcLcn" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="5Ux$AZvcAxW">
@@ -1617,29 +1643,6 @@
       <property role="IQ2nx" value="6818892319999697555" />
       <property role="TrG5h" value="value" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="5Ux$AZvbV$g">
-    <property role="EcuMT" value="6818892319999113488" />
-    <property role="3GE5qa" value="Project.TipsAndTricks" />
-    <property role="TrG5h" value="MPSTipsAndTricks_Tip" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="5Ux$AZvcAxY" role="1TKVEi">
-      <property role="IQ2ns" value="6818892319999289470" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="text" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="5Ux$AZvcAxW" resolve="MPSTipsAndTricks_Text" />
-    </node>
-    <node concept="1TJgyj" id="5Ux$AZvcAy0" role="1TKVEi">
-      <property role="IQ2ns" value="6818892319999289472" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="img" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="5Ux$AZvcAxX" resolve="MPSTipsAndTricks_Img" />
-    </node>
-    <node concept="PrWs8" id="5Ux$AZvcLcn" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
 </model>
