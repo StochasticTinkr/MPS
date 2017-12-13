@@ -69,7 +69,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_GeneratorInternal_BuildMps_Module;
   private ConceptPresentation props_GeneratorInternal_BuildSourcePath;
   private ConceptPresentation props_GeneratorInternal_String;
-  private ConceptPresentation props_MPS_TipsAndTricks;
+  private ConceptPresentation props_MPSTipsAndTricks_Base;
+  private ConceptPresentation props_MPSTipsAndTricks_Img;
+  private ConceptPresentation props_MPSTipsAndTricks_Line;
+  private ConceptPresentation props_MPSTipsAndTricks_Text;
+  private ConceptPresentation props_MPSTipsAndTricks_Tip;
 
   @Override
   @Nullable
@@ -280,7 +284,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildMps_IdeaPlugin == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0kc);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0oc);
           props_BuildMps_IdeaPlugin = cpb.create();
         }
         return props_BuildMps_IdeaPlugin;
@@ -498,13 +502,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_GeneratorInternal_String = cpb.create();
         }
         return props_GeneratorInternal_String;
-      case LanguageConceptSwitch.MPS_TipsAndTricks:
-        if (props_MPS_TipsAndTricks == null) {
+      case LanguageConceptSwitch.MPSTipsAndTricks_Base:
+        if (props_MPSTipsAndTricks_Base == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Tips & Tricks");
-          props_MPS_TipsAndTricks = cpb.create();
+          cpb.rawPresentation("Tips And Tricks");
+          props_MPSTipsAndTricks_Base = cpb.create();
         }
-        return props_MPS_TipsAndTricks;
+        return props_MPSTipsAndTricks_Base;
+      case LanguageConceptSwitch.MPSTipsAndTricks_Img:
+        if (props_MPSTipsAndTricks_Img == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MPSTipsAndTricks_Img");
+          props_MPSTipsAndTricks_Img = cpb.create();
+        }
+        return props_MPSTipsAndTricks_Img;
+      case LanguageConceptSwitch.MPSTipsAndTricks_Line:
+        if (props_MPSTipsAndTricks_Line == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("plain text");
+          cpb.rawPresentation("line");
+          props_MPSTipsAndTricks_Line = cpb.create();
+        }
+        return props_MPSTipsAndTricks_Line;
+      case LanguageConceptSwitch.MPSTipsAndTricks_Text:
+        if (props_MPSTipsAndTricks_Text == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("text");
+          props_MPSTipsAndTricks_Text = cpb.create();
+        }
+        return props_MPSTipsAndTricks_Text;
+      case LanguageConceptSwitch.MPSTipsAndTricks_Tip:
+        if (props_MPSTipsAndTricks_Tip == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_MPSTipsAndTricks_Tip = cpb.create();
+        }
+        return props_MPSTipsAndTricks_Tip;
     }
     return null;
   }

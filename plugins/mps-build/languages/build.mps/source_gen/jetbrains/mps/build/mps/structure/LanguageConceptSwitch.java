@@ -69,7 +69,11 @@ public final class LanguageConceptSwitch {
   public static final int GeneratorInternal_BuildMps_Module = 57;
   public static final int GeneratorInternal_BuildSourcePath = 58;
   public static final int GeneratorInternal_String = 59;
-  public static final int MPS_TipsAndTricks = 60;
+  public static final int MPSTipsAndTricks_Base = 60;
+  public static final int MPSTipsAndTricks_Img = 61;
+  public static final int MPSTipsAndTricks_Line = 62;
+  public static final int MPSTipsAndTricks_Text = 63;
+  public static final int MPSTipsAndTricks_Tip = 64;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L);
@@ -133,7 +137,11 @@ public final class LanguageConceptSwitch {
     builder.put(0x44e5dd192e7771cfL, GeneratorInternal_BuildMps_Module);
     builder.put(0x44e5dd192e77725eL, GeneratorInternal_BuildSourcePath);
     builder.put(0xd94b027412f0824L, GeneratorInternal_String);
-    builder.put(0x5ea1926fdf2f93c6L, MPS_TipsAndTricks);
+    builder.put(0x5ea1926fdf2f93c6L, MPSTipsAndTricks_Base);
+    builder.put(0x5ea1926fdf32687dL, MPSTipsAndTricks_Img);
+    builder.put(0x5ea1926fdf38a292L, MPSTipsAndTricks_Line);
+    builder.put(0x5ea1926fdf32687cL, MPSTipsAndTricks_Text);
+    builder.put(0x5ea1926fdf2fb910L, MPSTipsAndTricks_Tip);
     myIndex = builder.seal();
   }
 
