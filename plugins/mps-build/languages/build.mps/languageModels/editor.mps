@@ -6020,14 +6020,14 @@
     <node concept="3EZMnI" id="4JSKezPiMDV" role="2wV5jI">
       <node concept="3F0ifn" id="4JSKezPiME2" role="3EZMnx">
         <property role="3F0ifm" value="tips of" />
+        <ref role="1k5W1q" to="ot6o:hwW5xkg" resolve="keyword" />
       </node>
       <node concept="l2Vlx" id="4JSKezPiMDY" role="2iSdaV" />
       <node concept="1iCGBv" id="4JSKezPm2F5" role="3EZMnx">
         <ref role="1NtTu8" to="kdzh:4JSKezPiMCU" resolve="element" />
         <node concept="1sVBvm" id="4JSKezPm2F7" role="1sWHZn">
-          <node concept="3F0A7n" id="4JSKezPm2Ff" role="2wV5jI">
-            <property role="1Intyy" value="true" />
-            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          <node concept="PMmxH" id="4JSKezPJDIh" role="2wV5jI">
+            <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
           </node>
         </node>
       </node>
@@ -6038,24 +6038,27 @@
     <ref role="1XX52x" to="kdzh:4JSKezPqXVx" resolve="BuildMps_SpecificTipsOf" />
     <node concept="3EZMnI" id="4JSKezPqXWO" role="2wV5jI">
       <node concept="3F0ifn" id="4JSKezPqXWP" role="3EZMnx">
-        <property role="3F0ifm" value="tips" />
+        <property role="3F0ifm" value="tips of" />
+        <ref role="1k5W1q" to="ot6o:hwW5xkg" resolve="keyword" />
       </node>
       <node concept="3F0A7n" id="4JSKezPqXX6" role="3EZMnx">
         <ref role="1NtTu8" to="kdzh:4JSKezPqXWo" resolve="language" />
+        <node concept="VechU" id="4JSKezPKj38" role="3F10Kt">
+          <property role="Vb096" value="DARK_GREEN" />
+        </node>
+        <node concept="Vb9p2" id="4JSKezPN$KF" role="3F10Kt">
+          <property role="Vbekb" value="BOLD" />
+        </node>
       </node>
-      <node concept="3F0ifn" id="4JSKezPqXXk" role="3EZMnx">
-        <property role="3F0ifm" value="of" />
-      </node>
-      <node concept="l2Vlx" id="4JSKezPqXWQ" role="2iSdaV" />
-      <node concept="1iCGBv" id="4JSKezPqXWR" role="3EZMnx">
+      <node concept="1iCGBv" id="4JSKezPL6D1" role="3EZMnx">
         <ref role="1NtTu8" to="kdzh:4JSKezPqXWm" resolve="element" />
-        <node concept="1sVBvm" id="4JSKezPqXWS" role="1sWHZn">
-          <node concept="3F0A7n" id="4JSKezPqXWT" role="2wV5jI">
-            <property role="1Intyy" value="true" />
-            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        <node concept="1sVBvm" id="4JSKezPL6D3" role="1sWHZn">
+          <node concept="PMmxH" id="4JSKezPL6Dj" role="2wV5jI">
+            <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
           </node>
         </node>
       </node>
+      <node concept="l2Vlx" id="4JSKezPqXWQ" role="2iSdaV" />
     </node>
   </node>
 </model>

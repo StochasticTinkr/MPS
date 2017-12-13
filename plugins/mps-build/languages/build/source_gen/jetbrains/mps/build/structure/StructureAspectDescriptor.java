@@ -1487,10 +1487,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForBuildTips() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build", "BuildTips", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda16f053L);
     b.class_(false, false, false);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/7064923839223230547");
     b.aggregate("imports", 0x731030942ad60a79L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda5bb37cL).optional(false).ordered(true).multiple(true).origin("8291180326921046649").done();
-    b.alias("tips & tricks");
+    b.alias("Tips & Tricks");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBuildTips_FromDir() {

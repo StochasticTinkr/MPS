@@ -18362,7 +18362,7 @@
             <node concept="2pNUuL" id="7GaaHzSfDz4" role="2pNNFR">
               <property role="2pNUuO" value="dir" />
               <node concept="2pMdtt" id="7GaaHzSfDz6" role="2pMdts">
-                <property role="2pMdty" value="${build.tmp}/default/mps-tips_jar" />
+                <property role="2pMdty" value="${build.tmp}/default/mps-tips_jar/META-INF" />
               </node>
             </node>
           </node>
@@ -18435,7 +18435,7 @@
             <node concept="2pNUuL" id="HUMfzH44Pr" role="2pNNFR">
               <property role="2pNUuO" value="file" />
               <node concept="2pMdtt" id="HUMfzH44Pt" role="2pMdts">
-                <property role="2pMdty" value="${build.tmp}/default/mps-tips_jar/IdeTipsAndTricks.xml" />
+                <property role="2pMdty" value="${build.tmp}/default/mps-tips_jar/META-INF/IdeTipsAndTricks.xml" />
               </node>
             </node>
           </node>
@@ -18446,7 +18446,7 @@
             <node concept="2pNUuL" id="7GaaHzSE$MZ" role="2pNNFR">
               <property role="2pNUuO" value="file" />
               <node concept="2pMdtt" id="7GaaHzSE$N0" role="2pMdts">
-                <property role="2pMdty" value="${build.tmp}/default/mps-tips_jar/IdeTipsAndTricks.xml" />
+                <property role="2pMdty" value="${build.tmp}/default/mps-tips_jar/META-INF/IdeTipsAndTricks.xml" />
               </node>
             </node>
             <node concept="2pNUuL" id="7GaaHzSE$N1" role="2pNNFR">

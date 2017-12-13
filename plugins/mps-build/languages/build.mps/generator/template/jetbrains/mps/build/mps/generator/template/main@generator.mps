@@ -697,6 +697,9 @@
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
       <concept id="1144146199828" name="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" flags="nn" index="1$rogu" />
+      <concept id="1139867745658" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" flags="nn" index="1_qnLN">
+        <reference id="1139867957129" name="concept" index="1_rbq0" />
+      </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -3425,6 +3428,10 @@
       <node concept="j$656" id="4JSKezPs4k3" role="1lVwrX">
         <ref role="v9R2y" node="4JSKezPs4k0" resolve="reduce_BuildMps_TipsOf" />
       </node>
+    </node>
+    <node concept="3aamgX" id="4JSKezPLFUI" role="3acgRq">
+      <ref role="30HIoZ" to="kdzh:4JSKezPqXVx" resolve="BuildMps_SpecificTipsOf" />
+      <node concept="b5Tf3" id="4JSKezPLH1_" role="1lVwrX" />
     </node>
   </node>
   <node concept="1pmfR0" id="2L4pT56hNAU">
@@ -17335,22 +17342,38 @@
       <property role="turDy" value="test.xml" />
       <node concept="398rNT" id="4JSKezPsdPV" role="1l3spd">
         <property role="TrG5h" value="mps_home" />
-        <node concept="55IIr" id="4JSKezPsdPW" role="398pKh" />
       </node>
       <node concept="1l3spV" id="4JSKezPsdPX" role="1l3spN">
-        <node concept="398223" id="4JSKezPv0SX" role="39821P">
-          <node concept="3_J27D" id="4JSKezPv0SZ" role="Nbhlr">
-            <node concept="3Mxwew" id="4JSKezPv0T3" role="3MwsjC">
-              <property role="3MwjfP" value="jar" />
+        <node concept="3981dx" id="4JSKezPOEK9" role="39821P">
+          <node concept="3_J27D" id="4JSKezPOEKa" role="Nbhlr">
+            <node concept="3Mxwew" id="4JSKezPOEKd" role="3MwsjC">
+              <property role="3MwjfP" value="test.jar" />
             </node>
           </node>
-          <node concept="3981dx" id="4JSKezPv0T5" role="39821P">
-            <node concept="3_J27D" id="4JSKezPv0T6" role="Nbhlr">
-              <node concept="3Mxwew" id="4JSKezPv0T9" role="3MwsjC">
-                <property role="3MwjfP" value="resourcesXX.jar" />
+          <node concept="2HvfSZ" id="4JSKezPTp6N" role="39821P">
+            <node concept="raruj" id="4JSKezPTp6R" role="lGtFl" />
+            <node concept="55IIr" id="4JSKezPUBoA" role="2HvfZ0">
+              <node concept="29HgVG" id="5Ux$AZuBqMo" role="lGtFl">
+                <node concept="3NFfHV" id="5Ux$AZuBqMr" role="3NFExx">
+                  <node concept="3clFbS" id="5Ux$AZuBqMs" role="2VODD2">
+                    <node concept="3clFbF" id="5Ux$AZuBqPL" role="3cqZAp">
+                      <node concept="2OqwBi" id="5Ux$AZuBrDx" role="3clFbG">
+                        <node concept="2OqwBi" id="5Ux$AZuBr0N" role="2Oq$k0">
+                          <node concept="30H73N" id="5Ux$AZuBqPK" role="2Oq$k0" />
+                          <node concept="1mfA1w" id="5Ux$AZuBrjF" role="2OqNvi" />
+                        </node>
+                        <node concept="1_qnLN" id="5Ux$AZuBrMg" role="2OqNvi">
+                          <ref role="1_rbq0" to="3ior:HUMfzGTbpn" resolve="BuildLayout_Ant" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3cpWs6" id="5Ux$AZuBs9U" role="3cqZAp">
+                      <node concept="10Nm6u" id="5Ux$AZuBsaf" role="3cqZAk" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
-            <node concept="raruj" id="4JSKezPv0Ts" role="lGtFl" />
           </node>
         </node>
       </node>

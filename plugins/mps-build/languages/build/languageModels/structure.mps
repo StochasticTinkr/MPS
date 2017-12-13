@@ -2221,7 +2221,7 @@
     <property role="EcuMT" value="7064923839223230547" />
     <property role="TrG5h" value="BuildTips" />
     <property role="3GE5qa" value="TipsAndTricks" />
-    <property role="34LRSv" value="tips &amp; tricks" />
+    <property role="34LRSv" value="Tips &amp; Tricks" />
     <property role="R4oN_" value="tips &amp; tricks for new IDE" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7cgc9gEPwDT" role="1TKVEi">
@@ -2230,9 +2230,6 @@
       <property role="20kJfa" value="imports" />
       <property role="20lbJX" value="1..n" />
       <ref role="20lvS9" node="68bDGNqmVdW" resolve="BuildTips_ImportFrom" />
-    </node>
-    <node concept="PrWs8" id="4JSKezPiMEx" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="68bDGNqmVdW">
