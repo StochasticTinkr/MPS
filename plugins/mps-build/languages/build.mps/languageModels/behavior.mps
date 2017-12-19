@@ -6372,7 +6372,7 @@
         <node concept="3clFbF" id="5Ux$AZvgOPn" role="3cqZAp">
           <node concept="37vLTI" id="5Ux$AZvgQ8k" role="3clFbG">
             <node concept="Xl_RD" id="5Ux$AZvgQaA" role="37vLTx">
-              <property role="Xl_RC" value="EN" />
+              <property role="Xl_RC" value="en" />
             </node>
             <node concept="2OqwBi" id="5Ux$AZvgP76" role="37vLTJ">
               <node concept="37vLTw" id="5Ux$AZvgOPl" role="2Oq$k0">
