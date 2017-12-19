@@ -22,6 +22,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -6338,11 +6339,11 @@
             <node concept="2OqwBi" id="5Ux$AZvfvvm" role="2Oq$k0">
               <node concept="13iPFW" id="5Ux$AZvfvnH" role="2Oq$k0" />
               <node concept="3Tsc0h" id="5Ux$AZvfvAZ" role="2OqNvi">
-                <ref role="3TtcxE" to="kdzh:5Ux$AZveaay" resolve="line" />
+                <ref role="3TtcxE" to="kdzh:5Ux$AZveaay" resolve="element" />
               </node>
             </node>
             <node concept="WFELt" id="5Ux$AZvfCzC" role="2OqNvi">
-              <ref role="1A0vxQ" to="kdzh:5Ux$AZveaai" resolve="MPSTipsAndTricks_Line" />
+              <ref role="1A0vxQ" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
             </node>
           </node>
         </node>

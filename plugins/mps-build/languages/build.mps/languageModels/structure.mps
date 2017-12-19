@@ -1600,9 +1600,9 @@
     <node concept="1TJgyj" id="5Ux$AZveaay" role="1TKVEi">
       <property role="IQ2ns" value="6818892319999697570" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="line" />
+      <property role="20kJfa" value="element" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="5Ux$AZveaai" resolve="MPSTipsAndTricks_Line" />
+      <ref role="20lvS9" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
     </node>
     <node concept="1TJgyi" id="5Ux$AZvg79q" role="1TKVEl">
       <property role="IQ2nx" value="6818892320000209498" />
