@@ -6116,7 +6116,14 @@
       </node>
       <node concept="3F0A7n" id="5Ux$AZviLnd" role="3EZMnx">
         <property role="1O74Pk" value="true" />
+        <property role="1$x2rV" value="&lt;width&gt;" />
         <ref role="1NtTu8" to="kdzh:5Ux$AZvir$i" resolve="width" />
+      </node>
+      <node concept="3F0ifn" id="15sxrebHuPJ" role="3EZMnx">
+        <property role="3F0ifm" value="px" />
+        <node concept="VechU" id="15sxrebHv1k" role="3F10Kt">
+          <property role="Vb096" value="DARK_BLUE" />
+        </node>
       </node>
       <node concept="3F0ifn" id="5Ux$AZviLnu" role="3EZMnx">
         <property role="3F0ifm" value="height:" />
@@ -6129,7 +6136,14 @@
       </node>
       <node concept="3F0A7n" id="5Ux$AZviLnK" role="3EZMnx">
         <property role="1O74Pk" value="true" />
+        <property role="1$x2rV" value="&lt;height&gt;" />
         <ref role="1NtTu8" to="kdzh:5Ux$AZvir$k" resolve="height" />
+      </node>
+      <node concept="3F0ifn" id="15sxrebH_9m" role="3EZMnx">
+        <property role="3F0ifm" value="px" />
+        <node concept="VechU" id="15sxrebHAmt" role="3F10Kt">
+          <property role="Vb096" value="DARK_BLUE" />
+        </node>
       </node>
       <node concept="3F0ifn" id="5Ux$AZviLob" role="3EZMnx">
         <property role="3F0ifm" value="resources:" />
