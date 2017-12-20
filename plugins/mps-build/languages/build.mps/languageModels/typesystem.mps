@@ -2358,5 +2358,116 @@
       <ref role="1YaFvo" to="kdzh:5Ux$AZvbV$g" resolve="MPSTipsAndTricks_Tip" />
     </node>
   </node>
+  <node concept="18kY7G" id="3I0Cb$qo9sL">
+    <property role="TrG5h" value="check_BuildMps_TipsOthers" />
+    <property role="3GE5qa" value="Project.Tips" />
+    <node concept="3clFbS" id="3I0Cb$qo9sM" role="18ibNy">
+      <node concept="3cpWs8" id="15sxrecxviK" role="3cqZAp">
+        <node concept="3cpWsn" id="15sxrecxviL" role="3cpWs9">
+          <property role="TrG5h" value="language" />
+          <node concept="17QB3L" id="15sxrecxviI" role="1tU5fm" />
+          <node concept="2OqwBi" id="15sxrecxviM" role="33vP2m">
+            <node concept="1YBJjd" id="3I0Cb$qoa2T" role="2Oq$k0">
+              <ref role="1YBMHb" node="3I0Cb$qo9sO" resolve="buildMps_TipsOthers" />
+            </node>
+            <node concept="3TrcHB" id="3I0Cb$qoaz5" role="2OqNvi">
+              <ref role="3TsBF5" to="kdzh:5Ux$AZv0a84" resolve="language" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="3I0Cb$qo9sS" role="3cqZAp" />
+      <node concept="3clFbJ" id="3I0Cb$qo9sT" role="3cqZAp">
+        <node concept="3clFbS" id="3I0Cb$qo9sU" role="3clFbx">
+          <node concept="3clFbJ" id="3I0Cb$qo9sV" role="3cqZAp">
+            <node concept="22lmx$" id="3I0Cb$qo9sW" role="3clFbw">
+              <node concept="3fqX7Q" id="3I0Cb$qo9sX" role="3uHU7B">
+                <node concept="1eOMI4" id="3I0Cb$qo9sY" role="3fr31v">
+                  <node concept="22lmx$" id="3I0Cb$qo9sZ" role="1eOMHV">
+                    <node concept="3clFbC" id="3I0Cb$qo9t0" role="3uHU7w">
+                      <node concept="2OqwBi" id="3I0Cb$qo9t1" role="3uHU7B">
+                        <node concept="37vLTw" id="15sxrecxwkI" role="2Oq$k0">
+                          <ref role="3cqZAo" node="15sxrecxviL" resolve="language" />
+                        </node>
+                        <node concept="liA8E" id="3I0Cb$qo9t2" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
+                        </node>
+                      </node>
+                      <node concept="3cmrfG" id="3I0Cb$qo9t3" role="3uHU7w">
+                        <property role="3cmrfH" value="5" />
+                      </node>
+                    </node>
+                    <node concept="3clFbC" id="3I0Cb$qo9t4" role="3uHU7B">
+                      <node concept="2OqwBi" id="3I0Cb$qo9t5" role="3uHU7B">
+                        <node concept="37vLTw" id="15sxrecxw2f" role="2Oq$k0">
+                          <ref role="3cqZAo" node="15sxrecxviL" resolve="language" />
+                        </node>
+                        <node concept="liA8E" id="3I0Cb$qo9t6" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
+                        </node>
+                      </node>
+                      <node concept="3cmrfG" id="3I0Cb$qo9t7" role="3uHU7w">
+                        <property role="3cmrfH" value="2" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1eOMI4" id="3I0Cb$qo9t8" role="3uHU7w">
+                <node concept="1Wc70l" id="3I0Cb$qo9t9" role="1eOMHV">
+                  <node concept="3fqX7Q" id="3I0Cb$qo9ta" role="3uHU7w">
+                    <node concept="2OqwBi" id="3I0Cb$qo9tb" role="3fr31v">
+                      <node concept="37vLTw" id="15sxrecxwU4" role="2Oq$k0">
+                        <ref role="3cqZAo" node="15sxrecxviL" resolve="language" />
+                      </node>
+                      <node concept="liA8E" id="3I0Cb$qo9tc" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
+                        <node concept="Xl_RD" id="3I0Cb$qo9td" role="37wK5m">
+                          <property role="Xl_RC" value="-" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbC" id="3I0Cb$qo9te" role="3uHU7B">
+                    <node concept="2OqwBi" id="3I0Cb$qo9tf" role="3uHU7B">
+                      <node concept="37vLTw" id="15sxrecxwBk" role="2Oq$k0">
+                        <ref role="3cqZAo" node="15sxrecxviL" resolve="language" />
+                      </node>
+                      <node concept="liA8E" id="3I0Cb$qo9tg" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
+                      </node>
+                    </node>
+                    <node concept="3cmrfG" id="3I0Cb$qo9th" role="3uHU7w">
+                      <property role="3cmrfH" value="5" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="3I0Cb$qo9ti" role="3clFbx">
+              <node concept="2MkqsV" id="3I0Cb$qo9tj" role="3cqZAp">
+                <node concept="Xl_RD" id="3I0Cb$qo9tk" role="2MkJ7o">
+                  <property role="Xl_RC" value="This is not valid Language Code" />
+                </node>
+                <node concept="1YBJjd" id="3I0Cb$qoaV1" role="2OEOjV">
+                  <ref role="1YBMHb" node="3I0Cb$qo9sO" resolve="buildMps_TipsOthers" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3I0Cb$qo9tl" role="3clFbw">
+          <node concept="37vLTw" id="15sxrecxw1Z" role="2Oq$k0">
+            <ref role="3cqZAo" node="15sxrecxviL" resolve="language" />
+          </node>
+          <node concept="17RvpY" id="3I0Cb$qo9tm" role="2OqNvi" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3I0Cb$qo9sO" role="1YuTPh">
+      <property role="TrG5h" value="buildMps_TipsOthers" />
+      <ref role="1YaFvo" to="kdzh:5Ux$AZuPbfZ" resolve="BuildMps_TipsOthers" />
+    </node>
+  </node>
 </model>
 
