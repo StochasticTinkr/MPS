@@ -1529,20 +1529,15 @@
     <property role="3GE5qa" value="Project.Tips" />
     <property role="TrG5h" value="BuildMps_TipsLoad" />
     <property role="34LRSv" value="load new tip (IdeTipsAndTricks)" />
-    <ref role="1TJDcQ" node="5Ux$AZuOzko" resolve="BuildMps_ImportTipsPart" />
-  </node>
-  <node concept="1TIwiD" id="5Ux$AZuPbfE">
-    <property role="EcuMT" value="6818892319993148394" />
-    <property role="3GE5qa" value="Project.Tips" />
-    <property role="TrG5h" value="BuildMps_TipsDefault" />
-    <property role="34LRSv" value="default tips (EN)" />
+    <property role="R4oN_" value="file with set of all names of tips to load them" />
     <ref role="1TJDcQ" node="5Ux$AZuOzko" resolve="BuildMps_ImportTipsPart" />
   </node>
   <node concept="1TIwiD" id="5Ux$AZuPbfZ">
     <property role="EcuMT" value="6818892319993148415" />
     <property role="3GE5qa" value="Project.Tips" />
     <property role="TrG5h" value="BuildMps_TipsOthers" />
-    <property role="34LRSv" value="other tips" />
+    <property role="34LRSv" value="select language" />
+    <property role="R4oN_" value="language of tips" />
     <ref role="1TJDcQ" node="5Ux$AZuOzko" resolve="BuildMps_ImportTipsPart" />
     <node concept="1TJgyi" id="5Ux$AZv0a84" role="1TKVEl">
       <property role="IQ2nx" value="6818892319996027396" />

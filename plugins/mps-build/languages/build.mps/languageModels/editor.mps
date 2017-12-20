@@ -5792,7 +5792,7 @@
         </node>
       </node>
       <node concept="3F0ifn" id="5Ux$AZuY4Vr" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
+        <property role="3F0ifm" value="[" />
         <node concept="Vb9p2" id="5Ux$AZuY4VU" role="3F10Kt">
           <property role="Vbekb" value="BOLD" />
         </node>
@@ -5804,7 +5804,7 @@
         <ref role="1NtTu8" to="kdzh:5Ux$AZuOzkp" resolve="type" />
       </node>
       <node concept="3F0ifn" id="5Ux$AZuY4VJ" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
+        <property role="3F0ifm" value="]" />
         <node concept="Vb9p2" id="5Ux$AZuY4W7" role="3F10Kt">
           <property role="Vbekb" value="BOLD" />
         </node>
@@ -5830,54 +5830,21 @@
       <node concept="l2Vlx" id="5Ux$AZuOzkR" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="5Ux$AZuPbfN">
-    <property role="3GE5qa" value="Project.Tips" />
-    <ref role="1XX52x" to="kdzh:5Ux$AZuPbfE" resolve="BuildMps_TipsDefault" />
-    <node concept="3EZMnI" id="5Ux$AZuPbfP" role="2wV5jI">
-      <node concept="3F0ifn" id="5Ux$AZuPbfW" role="3EZMnx">
-        <property role="3F0ifm" value="Default" />
-        <node concept="VechU" id="5Ux$AZuYurZ" role="3F10Kt">
-          <property role="Vb096" value="DARK_GREEN" />
-        </node>
-        <node concept="Vb9p2" id="5Ux$AZuYus4" role="3F10Kt">
-          <property role="Vbekb" value="BOLD" />
-        </node>
-      </node>
-      <node concept="3F0ifn" id="5Ux$AZv3xiL" role="3EZMnx">
-        <property role="3F0ifm" value="[" />
-      </node>
-      <node concept="3F0ifn" id="5Ux$AZv3xiX" role="3EZMnx">
-        <property role="3F0ifm" value="EN" />
-        <node concept="Vb9p2" id="5Ux$AZv4aEl" role="3F10Kt" />
-      </node>
-      <node concept="3F0ifn" id="5Ux$AZv3xjb" role="3EZMnx">
-        <property role="3F0ifm" value="]" />
-      </node>
-      <node concept="l2Vlx" id="5Ux$AZuPbfS" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="24kQdi" id="5Ux$AZuPbg8">
     <property role="3GE5qa" value="Project.Tips" />
     <ref role="1XX52x" to="kdzh:5Ux$AZuPbfZ" resolve="BuildMps_TipsOthers" />
     <node concept="3EZMnI" id="5Ux$AZuPbga" role="2wV5jI">
-      <node concept="3F0ifn" id="5Ux$AZuPbgh" role="3EZMnx">
-        <property role="3F0ifm" value="Others " />
-        <node concept="VechU" id="5Ux$AZuYusc" role="3F10Kt">
+      <node concept="l2Vlx" id="5Ux$AZuPbgd" role="2iSdaV" />
+      <node concept="3F0A7n" id="5Ux$AZv0a8u" role="3EZMnx">
+        <property role="1O74Pk" value="true" />
+        <property role="1$x2rV" value="en" />
+        <ref role="1NtTu8" to="kdzh:5Ux$AZv0a84" resolve="language" />
+        <node concept="VechU" id="3I0Cb$qiaHB" role="3F10Kt">
           <property role="Vb096" value="DARK_GREEN" />
         </node>
-        <node concept="Vb9p2" id="5Ux$AZuYusd" role="3F10Kt">
+        <node concept="Vb9p2" id="3I0Cb$qiaHG" role="3F10Kt">
           <property role="Vbekb" value="BOLD" />
         </node>
-      </node>
-      <node concept="l2Vlx" id="5Ux$AZuPbgd" role="2iSdaV" />
-      <node concept="3F0ifn" id="5Ux$AZv0a8b" role="3EZMnx">
-        <property role="3F0ifm" value="[" />
-      </node>
-      <node concept="3F0A7n" id="5Ux$AZv0a8u" role="3EZMnx">
-        <ref role="1NtTu8" to="kdzh:5Ux$AZv0a84" resolve="language" />
-      </node>
-      <node concept="3F0ifn" id="5Ux$AZv0a8G" role="3EZMnx">
-        <property role="3F0ifm" value="]" />
       </node>
     </node>
   </node>

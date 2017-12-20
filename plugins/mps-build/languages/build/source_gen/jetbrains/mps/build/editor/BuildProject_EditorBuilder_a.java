@@ -608,8 +608,11 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
     return editorCell;
   }
   private EditorCell createConstant_vny568_u0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Components:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "components:");
     editorCell.setCellId("Constant_vny568_u0");
+    Style style = new StyleImpl();
+    new keywordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

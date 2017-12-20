@@ -4205,6 +4205,7 @@
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
@@ -4696,8 +4697,8 @@
     <classNode dependClassName="jetbrains.mps.build.editor.BuildInputSingleFolder_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildLayout_JarManifest_Part_SubstituteMenu" />
-    <classNode dependClassName="jetbrains.mps.build.editor.BuildLayout_Ant_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildLayout_containerElements" />
+    <classNode dependClassName="jetbrains.mps.build.editor.BuildLayout_Ant_Editor" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildExternalLayoutDependency_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildVariableMacroInitWithDate_Editor" />

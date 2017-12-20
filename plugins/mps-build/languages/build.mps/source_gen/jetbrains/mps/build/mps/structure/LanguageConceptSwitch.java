@@ -63,17 +63,16 @@ public final class LanguageConceptSwitch {
   public static final int BuildMps_ModuleSource = 51;
   public static final int BuildMps_ModuleTestSource = 52;
   public static final int BuildMps_Solution = 53;
-  public static final int BuildMps_TipsDefault = 54;
-  public static final int BuildMps_TipsLoad = 55;
-  public static final int BuildMps_TipsOthers = 56;
-  public static final int GeneratorInternal_BuildMps_Module = 57;
-  public static final int GeneratorInternal_BuildSourcePath = 58;
-  public static final int GeneratorInternal_String = 59;
-  public static final int MPSTipsAndTricks_Base = 60;
-  public static final int MPSTipsAndTricks_Img = 61;
-  public static final int MPSTipsAndTricks_Line = 62;
-  public static final int MPSTipsAndTricks_Text = 63;
-  public static final int MPSTipsAndTricks_Tip = 64;
+  public static final int BuildMps_TipsLoad = 54;
+  public static final int BuildMps_TipsOthers = 55;
+  public static final int GeneratorInternal_BuildMps_Module = 56;
+  public static final int GeneratorInternal_BuildSourcePath = 57;
+  public static final int GeneratorInternal_String = 58;
+  public static final int MPSTipsAndTricks_Base = 59;
+  public static final int MPSTipsAndTricks_Img = 60;
+  public static final int MPSTipsAndTricks_Line = 61;
+  public static final int MPSTipsAndTricks_Text = 62;
+  public static final int MPSTipsAndTricks_Tip = 63;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L);
@@ -131,7 +130,6 @@ public final class LanguageConceptSwitch {
     builder.put(0x48e82d5083341d2fL, BuildMps_ModuleSource);
     builder.put(0x21286cd3b0f27758L, BuildMps_ModuleTestSource);
     builder.put(0x2c446791464290f7L, BuildMps_Solution);
-    builder.put(0x5ea1926fded4b3eaL, BuildMps_TipsDefault);
     builder.put(0x5ea1926fded23529L, BuildMps_TipsLoad);
     builder.put(0x5ea1926fded4b3ffL, BuildMps_TipsOthers);
     builder.put(0x44e5dd192e7771cfL, GeneratorInternal_BuildMps_Module);

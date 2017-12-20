@@ -63,7 +63,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BuildMps_ModuleSource;
   private ConceptPresentation props_BuildMps_ModuleTestSource;
   private ConceptPresentation props_BuildMps_Solution;
-  private ConceptPresentation props_BuildMps_TipsDefault;
   private ConceptPresentation props_BuildMps_TipsLoad;
   private ConceptPresentation props_BuildMps_TipsOthers;
   private ConceptPresentation props_GeneratorInternal_BuildMps_Module;
@@ -284,7 +283,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildMps_IdeaPlugin == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0oc);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0nc);
           props_BuildMps_IdeaPlugin = cpb.create();
         }
         return props_BuildMps_IdeaPlugin;
@@ -460,16 +459,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BuildMps_Solution = cpb.create();
         }
         return props_BuildMps_Solution;
-      case LanguageConceptSwitch.BuildMps_TipsDefault:
-        if (props_BuildMps_TipsDefault == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("default tips (EN)");
-          props_BuildMps_TipsDefault = cpb.create();
-        }
-        return props_BuildMps_TipsDefault;
       case LanguageConceptSwitch.BuildMps_TipsLoad:
         if (props_BuildMps_TipsLoad == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("file with set of all names of tips to load them");
           cpb.rawPresentation("load new tip (IdeTipsAndTricks)");
           props_BuildMps_TipsLoad = cpb.create();
         }
@@ -477,7 +470,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_TipsOthers:
         if (props_BuildMps_TipsOthers == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("other tips");
+          cpb.shortDesc("language of tips");
+          cpb.rawPresentation("select language");
           props_BuildMps_TipsOthers = cpb.create();
         }
         return props_BuildMps_TipsOthers;
