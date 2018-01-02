@@ -11399,14 +11399,14 @@
       </node>
       <node concept="2VaFvH" id="68bDGNqjLQE" role="3bMsLN">
         <property role="TrG5h" value="TipsAndTricks" />
-        <node concept="29HgVG" id="68bDGNqkJNu" role="lGtFl">
-          <node concept="3NFfHV" id="68bDGNqkJNx" role="3NFExx">
-            <node concept="3clFbS" id="68bDGNqkJNy" role="2VODD2">
-              <node concept="3clFbF" id="68bDGNqkJQR" role="3cqZAp">
-                <node concept="2OqwBi" id="68bDGNqkK12" role="3clFbG">
-                  <node concept="30H73N" id="68bDGNqkJQQ" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="68bDGNqkKd9" role="2OqNvi">
-                    <ref role="3Tt5mk" to="3ior:68bDGNq5J1k" resolve="tips" />
+        <node concept="2b32R4" id="5NBtkWDLCje" role="lGtFl">
+          <node concept="3JmXsc" id="5NBtkWDLCjm" role="2P8S$">
+            <node concept="3clFbS" id="5NBtkWDLCju" role="2VODD2">
+              <node concept="3clFbF" id="5NBtkWDLCot" role="3cqZAp">
+                <node concept="2OqwBi" id="5NBtkWDLC_c" role="3clFbG">
+                  <node concept="30H73N" id="5NBtkWDLCos" role="2Oq$k0" />
+                  <node concept="3Tsc0h" id="5NBtkWDLCVe" role="2OqNvi">
+                    <ref role="3TtcxE" to="3ior:68bDGNq5J1k" resolve="components" />
                   </node>
                 </node>
               </node>

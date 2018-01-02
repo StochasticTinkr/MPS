@@ -157,7 +157,7 @@
     <node concept="1TJgyj" id="68bDGNq5J1k" role="1TKVEi">
       <property role="IQ2ns" value="7064923839223230548" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="tips" />
+      <property role="20kJfa" value="components" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="55_FC60tMzz" resolve="BuildComponent" />
     </node>

@@ -1105,7 +1105,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("aspects", 0x31292e1a60db57afL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60dd541dL).optional(true).ordered(true).multiple(true).origin("3542413272732620719").done();
     b.aggregate("layout", 0x4df58c6f18f84a1cL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L).optional(false).ordered(true).multiple(false).origin("5617550519002745372").done();
     b.aggregate("scriptsDir", 0x4291308148e8c6beL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL).optional(true).ordered(true).multiple(false).origin("4796668409958418110").done();
-    b.aggregate("tips", 0x620ba6ccda16f054L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5165ae81807728e3L).optional(true).ordered(true).multiple(true).origin("7064923839223230548").done();
+    b.aggregate("components", 0x620ba6ccda16f054L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5165ae81807728e3L).optional(true).ordered(true).multiple(true).origin("7064923839223230548").done();
     b.alias("build project");
     return b.create();
   }

@@ -33345,7 +33345,7 @@
                         <node concept="liA8E" id="32q" role="2OqNvi">
                           <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.aggregate(java.lang.String,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="aggregate" />
                           <node concept="Xl_RD" id="32r" role="37wK5m">
-                            <property role="Xl_RC" value="tips" />
+                            <property role="Xl_RC" value="components" />
                           </node>
                           <node concept="1adDum" id="32s" role="37wK5m">
                             <property role="1adDun" value="0x620ba6ccda16f054L" />

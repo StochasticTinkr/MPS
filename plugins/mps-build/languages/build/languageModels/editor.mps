@@ -1207,7 +1207,7 @@
         <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
       </node>
       <node concept="3F2HdR" id="55_FC60u0$I" role="3EZMnx">
-        <ref role="1NtTu8" to="3ior:68bDGNq5J1k" resolve="tips" />
+        <ref role="1NtTu8" to="3ior:68bDGNq5J1k" resolve="components" />
         <node concept="l2Vlx" id="55_FC60u0$K" role="2czzBx" />
         <node concept="pVoyu" id="55_FC60u1gm" role="3F10Kt">
           <property role="VOm3f" value="true" />
