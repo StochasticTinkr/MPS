@@ -27,12 +27,7 @@ public class check_BuildComponent_NonTypesystemRule extends AbstractNonTypesyste
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda16f053L, "jetbrains.mps.build.structure.BuildTips"));
       }
     })) {
-      Iterable<SNode> components = ListSequence.fromList(SNodeOperations.getAllSiblings(buildComponent, false)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda16f053L, "jetbrains.mps.build.structure.BuildTips"));
-        }
-      });
-      for (SNode tip : components) {
+      for (SNode tip : SNodeOperations.ofConcept(SNodeOperations.getAllSiblings(buildComponent, false), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda16f053L, "jetbrains.mps.build.structure.BuildTips"))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(tip, "Duplicate Tips & Tricks", "r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.build.typesystem)", "6635588517497558297", null, errorTarget);
