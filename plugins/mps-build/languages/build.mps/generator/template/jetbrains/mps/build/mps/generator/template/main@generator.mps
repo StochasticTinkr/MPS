@@ -25,9 +25,6 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
     <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
-    <import index="rzwt" ref="r:77dbf2f6-47ba-4e30-9724-6cb401a543ff(voicemenu.build)" />
-    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
-    <import index="7kwb" ref="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="zwni" ref="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" implicit="true" />
     <import index="2ogt" ref="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" implicit="true" />
@@ -16338,7 +16335,7 @@
                                           <node concept="2OqwBi" id="5Ux$AZv59F_" role="2Oq$k0">
                                             <node concept="1PxgMI" id="5Ux$AZv59FA" role="2Oq$k0">
                                               <node concept="chp4Y" id="5Ux$AZv59FB" role="3oSUPX">
-                                                <ref role="cht4Q" to="kdzh:5Ux$AZuPbfZ" resolve="BuildMps_TipsOthers" />
+                                                <ref role="cht4Q" to="kdzh:5Ux$AZuPbfZ" resolve="BuildMps_TipsLanguage" />
                                               </node>
                                               <node concept="2OqwBi" id="5Ux$AZv59FC" role="1m5AlR">
                                                 <node concept="30H73N" id="5Ux$AZv59FD" role="2Oq$k0" />
@@ -16363,7 +16360,7 @@
                                   <node concept="2OqwBi" id="5Ux$AZv6vP3" role="2Oq$k0">
                                     <node concept="1PxgMI" id="5Ux$AZv6vP4" role="2Oq$k0">
                                       <node concept="chp4Y" id="5Ux$AZv6vP5" role="3oSUPX">
-                                        <ref role="cht4Q" to="kdzh:5Ux$AZuPbfZ" resolve="BuildMps_TipsOthers" />
+                                        <ref role="cht4Q" to="kdzh:5Ux$AZuPbfZ" resolve="BuildMps_TipsLanguage" />
                                       </node>
                                       <node concept="2OqwBi" id="5Ux$AZv6vP6" role="1m5AlR">
                                         <node concept="30H73N" id="5Ux$AZv6vP7" role="2Oq$k0" />
@@ -16450,7 +16447,7 @@
                       </node>
                       <node concept="1mIQ4w" id="5Ux$AZuZDxr" role="2OqNvi">
                         <node concept="chp4Y" id="5Ux$AZuZEQG" role="cj9EA">
-                          <ref role="cht4Q" to="kdzh:5Ux$AZuPbfZ" resolve="BuildMps_TipsOthers" />
+                          <ref role="cht4Q" to="kdzh:5Ux$AZuPbfZ" resolve="BuildMps_TipsLanguage" />
                         </node>
                       </node>
                     </node>

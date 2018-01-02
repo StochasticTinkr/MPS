@@ -1791,7 +1791,6 @@
           <node concept="17RvpY" id="15sxrecnzuk" role="2OqNvi" />
         </node>
       </node>
-      <node concept="3clFbH" id="15sxrecxtKe" role="3cqZAp" />
     </node>
     <node concept="1YaCAy" id="15sxrecxtK8" role="1YuTPh">
       <property role="TrG5h" value="buildTips_FromDirTo" />
@@ -1849,6 +1848,22 @@
         </node>
         <node concept="3clFbS" id="5Kmm9Ad6oYL" role="3clFbx">
           <node concept="1DcWWT" id="5Kmm9Ad7gtK" role="3cqZAp">
+            <node concept="3clFbS" id="5Kmm9Ad7gtM" role="2LFqv$">
+              <node concept="2MkqsV" id="5Kmm9Ad6_kp" role="3cqZAp">
+                <node concept="Xl_RD" id="5Kmm9Ad6_k_" role="2MkJ7o">
+                  <property role="Xl_RC" value="Duplicate Tips &amp; Tricks" />
+                </node>
+                <node concept="37vLTw" id="5Kmm9AdcKIz" role="2OEOjV">
+                  <ref role="3cqZAo" node="5Kmm9Ad7gtN" resolve="tip" />
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWsn" id="5Kmm9Ad7gtN" role="1Duv9x">
+              <property role="TrG5h" value="tip" />
+              <node concept="3Tqbb2" id="5Kmm9Ad7gM4" role="1tU5fm">
+                <ref role="ehGHo" to="3ior:68bDGNq5J1j" resolve="BuildTips" />
+              </node>
+            </node>
             <node concept="2OqwBi" id="5Kmm9AdcNl4" role="1DdaDG">
               <node concept="2OqwBi" id="5Kmm9AdcNl5" role="2Oq$k0">
                 <node concept="1YBJjd" id="5Kmm9AdcNl6" role="2Oq$k0">
@@ -1860,22 +1875,6 @@
                 <node concept="chp4Y" id="5Kmm9AdcNl9" role="v3oSu">
                   <ref role="cht4Q" to="3ior:68bDGNq5J1j" resolve="BuildTips" />
                 </node>
-              </node>
-            </node>
-            <node concept="3clFbS" id="5Kmm9Ad7gtM" role="2LFqv$">
-              <node concept="2MkqsV" id="5Kmm9Ad6_kp" role="3cqZAp">
-                <node concept="37vLTw" id="5Kmm9AdcKIz" role="2OEOjV">
-                  <ref role="3cqZAo" node="5Kmm9Ad7gtN" resolve="tip" />
-                </node>
-                <node concept="Xl_RD" id="5Kmm9Ad6_k_" role="2MkJ7o">
-                  <property role="Xl_RC" value="Duplicate Tips &amp; Tricks" />
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWsn" id="5Kmm9Ad7gtN" role="1Duv9x">
-              <property role="TrG5h" value="tip" />
-              <node concept="3Tqbb2" id="5Kmm9Ad7gM4" role="1tU5fm">
-                <ref role="ehGHo" to="3ior:68bDGNq5J1j" resolve="BuildTips" />
               </node>
             </node>
           </node>
