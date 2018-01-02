@@ -30,7 +30,7 @@ public class check_BuildMps_TipsOthers_NonTypesystemRule extends AbstractNonType
     }
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fded4b3ffL, "jetbrains.mps.build.mps.structure.BuildMps_TipsOthers");
+    return MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fded4b3ffL, "jetbrains.mps.build.mps.structure.BuildMps_TipsLanguage");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);

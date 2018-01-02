@@ -1535,7 +1535,7 @@
   <node concept="1TIwiD" id="5Ux$AZuPbfZ">
     <property role="EcuMT" value="6818892319993148415" />
     <property role="3GE5qa" value="Project.Tips" />
-    <property role="TrG5h" value="BuildMps_TipsOthers" />
+    <property role="TrG5h" value="BuildMps_TipsLanguage" />
     <property role="34LRSv" value="select language" />
     <property role="R4oN_" value="language of tips" />
     <ref role="1TJDcQ" node="5Ux$AZuOzko" resolve="BuildMps_ImportTipsPart" />

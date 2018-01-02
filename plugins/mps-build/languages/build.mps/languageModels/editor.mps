@@ -5832,7 +5832,7 @@
   </node>
   <node concept="24kQdi" id="5Ux$AZuPbg8">
     <property role="3GE5qa" value="Project.Tips" />
-    <ref role="1XX52x" to="kdzh:5Ux$AZuPbfZ" resolve="BuildMps_TipsOthers" />
+    <ref role="1XX52x" to="kdzh:5Ux$AZuPbfZ" resolve="BuildMps_TipsLanguage" />
     <node concept="3EZMnI" id="5Ux$AZuPbga" role="2wV5jI">
       <node concept="l2Vlx" id="5Ux$AZuPbgd" role="2iSdaV" />
       <node concept="3F0A7n" id="5Ux$AZv0a8u" role="3EZMnx">
