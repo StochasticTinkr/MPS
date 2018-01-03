@@ -7,8 +7,12 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import java.util.List;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
+import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
+import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
+import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -20,12 +24,16 @@ public final class BuildTips__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda16f053L, "jetbrains.mps.build.structure.BuildTips");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
+  public static final SMethod<String> getIdeTipsAndTricksPath_id4JSKezPNzOW = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getIdeTipsAndTricksPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4JSKezPNzOW").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList();
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getIdeTipsAndTricksPath_id4JSKezPNzOW);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  /*package*/ static String getIdeTipsAndTricksPath_id4JSKezPNzOW(@NotNull SNode __thisNode__) {
+    return "${build.tmp}/default/mps-tips_jar/IdeTipsAndTricks.xml";
+  }
 
   /*package*/ BuildTips__BehaviorDescriptor() {
     super(REGISTRY);
@@ -43,6 +51,8 @@ public final class BuildTips__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 0:
+        return (T) ((String) getIdeTipsAndTricksPath_id4JSKezPNzOW(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

@@ -29,6 +29,7 @@ public class check_BuildTips_FromDirTo_NonTypesystemRule extends AbstractNonType
         }
       }
     }
+
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x620ba6ccda80c3daL, "jetbrains.mps.build.structure.BuildTips_FromDirTo");
