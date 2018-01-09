@@ -76,6 +76,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_MpsTips;
   private ConceptPresentation props_MpsTips_Dir;
   private ConceptPresentation props_MpsTips_Import;
+  private ConceptPresentation props_MpsTips_Jar;
+  private ConceptPresentation props_MpsTips_JarIdeTipsAndTricks;
+  private ConceptPresentation props_MpsTips_JarLanguage;
+  private ConceptPresentation props_MpsTips_JarPart;
   private ConceptPresentation props_MpsTips_MPS;
   private ConceptPresentation props_MpsTips_Solution;
 
@@ -288,7 +292,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildMps_IdeaPlugin == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0sc);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0wc);
           props_BuildMps_IdeaPlugin = cpb.create();
         }
         return props_BuildMps_IdeaPlugin;
@@ -540,7 +544,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.MpsTips:
         if (props_MpsTips == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("MpsTips");
+          cpb.rawPresentation("Tips & Tricks");
           props_MpsTips = cpb.create();
         }
         return props_MpsTips;
@@ -557,6 +561,33 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_MpsTips_Import = cpb.create();
         }
         return props_MpsTips_Import;
+      case LanguageConceptSwitch.MpsTips_Jar:
+        if (props_MpsTips_Jar == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("content of Tips & Tricks");
+          props_MpsTips_Jar = cpb.create();
+        }
+        return props_MpsTips_Jar;
+      case LanguageConceptSwitch.MpsTips_JarIdeTipsAndTricks:
+        if (props_MpsTips_JarIdeTipsAndTricks == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ideTipsAndTricks");
+          props_MpsTips_JarIdeTipsAndTricks = cpb.create();
+        }
+        return props_MpsTips_JarIdeTipsAndTricks;
+      case LanguageConceptSwitch.MpsTips_JarLanguage:
+        if (props_MpsTips_JarLanguage == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("language");
+          props_MpsTips_JarLanguage = cpb.create();
+        }
+        return props_MpsTips_JarLanguage;
+      case LanguageConceptSwitch.MpsTips_JarPart:
+        if (props_MpsTips_JarPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MpsTips_JarPart = cpb.create();
+        }
+        return props_MpsTips_JarPart;
       case LanguageConceptSwitch.MpsTips_MPS:
         if (props_MpsTips_MPS == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

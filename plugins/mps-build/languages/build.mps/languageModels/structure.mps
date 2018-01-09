@@ -1508,12 +1508,6 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="5Ux$AZuOzko" resolve="BuildMps_ImportTipsPart" />
     </node>
-    <node concept="1TJgyj" id="5Ux$AZuOzk4" role="1TKVEi">
-      <property role="IQ2ns" value="6818892319992984836" />
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="element" />
-      <ref role="20lvS9" to="3ior:68bDGNq5J1j" resolve="BuildTips" />
-    </node>
   </node>
   <node concept="1TIwiD" id="5Ux$AZuOzko">
     <property role="EcuMT" value="6818892319992984856" />
@@ -1639,10 +1633,34 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
-  <node concept="1TIwiD" id="75N6LqycVf4">
-    <property role="EcuMT" value="8174907532632110020" />
+  <node concept="1TIwiD" id="75N6Lqy0tuW">
+    <property role="EcuMT" value="8174907532628842428" />
     <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
-    <property role="TrG5h" value="MpsTips_Solution" />
+    <property role="TrG5h" value="MpsTips" />
+    <property role="34LRSv" value="Tips &amp; Tricks" />
+    <ref role="1TJDcQ" to="3ior:6qcrfIJFdK8" resolve="BuildProjectPart" />
+    <node concept="1TJgyj" id="75N6Lqya9An" role="1TKVEi">
+      <property role="IQ2ns" value="8174907532631382423" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="tips" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="75N6Lqya9Am" resolve="MpsTips_Import" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="75N6Lqya9Am">
+    <property role="EcuMT" value="8174907532631382422" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
+    <property role="TrG5h" value="MpsTips_Import" />
+    <property role="34LRSv" value="import" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="75N6Lqya9Ap">
+    <property role="EcuMT" value="8174907532631382425" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
+    <property role="TrG5h" value="MpsTips_MPS" />
+    <property role="34LRSv" value="import from MPS" />
     <ref role="1TJDcQ" node="75N6Lqya9Am" resolve="MpsTips_Import" />
   </node>
   <node concept="1TIwiD" id="75N6Lqyb05w">
@@ -1663,34 +1681,58 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
-  <node concept="1TIwiD" id="75N6Lqya9Ap">
-    <property role="EcuMT" value="8174907532631382425" />
+  <node concept="1TIwiD" id="75N6LqycVf4">
+    <property role="EcuMT" value="8174907532632110020" />
     <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
-    <property role="TrG5h" value="MpsTips_MPS" />
-    <property role="34LRSv" value="import from MPS" />
+    <property role="TrG5h" value="MpsTips_Solution" />
     <ref role="1TJDcQ" node="75N6Lqya9Am" resolve="MpsTips_Import" />
   </node>
-  <node concept="1TIwiD" id="75N6Lqy0tuW">
-    <property role="EcuMT" value="8174907532628842428" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
-    <property role="TrG5h" value="MpsTips" />
-    <ref role="1TJDcQ" to="3ior:6qcrfIJFdK8" resolve="BuildProjectPart" />
-    <node concept="1TJgyj" id="75N6Lqya9An" role="1TKVEi">
-      <property role="IQ2ns" value="8174907532631382423" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="tips" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="75N6Lqya9Am" resolve="MpsTips_Import" />
+  <node concept="1TIwiD" id="2DNUTJn1OVj">
+    <property role="EcuMT" value="3059047626474737363" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
+    <property role="TrG5h" value="MpsTips_JarIdeTipsAndTricks" />
+    <property role="34LRSv" value="ideTipsAndTricks" />
+    <ref role="1TJDcQ" node="2DNUTJn1OVh" resolve="MpsTips_JarPart" />
+  </node>
+  <node concept="1TIwiD" id="2DNUTJn1OVi">
+    <property role="EcuMT" value="3059047626474737362" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
+    <property role="TrG5h" value="MpsTips_JarLanguage" />
+    <property role="34LRSv" value="language" />
+    <ref role="1TJDcQ" node="2DNUTJn1OVh" resolve="MpsTips_JarPart" />
+    <node concept="1TJgyi" id="2DNUTJn1OVO" role="1TKVEl">
+      <property role="IQ2nx" value="3059047626474737396" />
+      <property role="TrG5h" value="language" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
-  <node concept="1TIwiD" id="75N6Lqya9Am">
-    <property role="EcuMT" value="8174907532631382422" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
-    <property role="TrG5h" value="MpsTips_Import" />
-    <property role="34LRSv" value="import" />
+  <node concept="1TIwiD" id="2DNUTJn1OVh">
+    <property role="EcuMT" value="3059047626474737361" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
+    <property role="TrG5h" value="MpsTips_JarPart" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="2DNUTJn1OUY">
+    <property role="EcuMT" value="3059047626474737342" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
+    <property role="TrG5h" value="MpsTips_Jar" />
+    <property role="34LRSv" value="content of Tips &amp; Tricks" />
+    <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+    <node concept="1TJgyj" id="2DNUTJn1OVf" role="1TKVEi">
+      <property role="IQ2ns" value="3059047626474737359" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="element" />
+      <ref role="20lvS9" node="75N6Lqy0tuW" resolve="MpsTips" />
+    </node>
+    <node concept="1TJgyj" id="2DNUTJn1OWa" role="1TKVEi">
+      <property role="IQ2ns" value="3059047626474737418" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="type" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2DNUTJn1OVh" resolve="MpsTips_JarPart" />
+    </node>
   </node>
 </model>
 
