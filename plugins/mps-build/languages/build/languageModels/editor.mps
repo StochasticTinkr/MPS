@@ -27,7 +27,6 @@
     <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <import index="8xvf" ref="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
-    <import index="kdzh" ref="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
@@ -649,7 +648,6 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
-      <concept id="1145573345940" name="jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation" flags="nn" index="2TvwIu" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="2644386474302386080" name="jetbrains.mps.lang.smodel.structure.PropertyIdRefExpression" flags="nn" index="355D3s">
         <reference id="2644386474302386081" name="conceptDeclaration" index="355D3t" />
@@ -1204,31 +1202,6 @@
               </node>
             </node>
           </node>
-        </node>
-      </node>
-      <node concept="3F0ifn" id="68bDGNq5JXq" role="3EZMnx">
-        <property role="3F0ifm" value="components:" />
-        <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
-      </node>
-      <node concept="3F2HdR" id="55_FC60u0$I" role="3EZMnx">
-        <ref role="1NtTu8" to="3ior:68bDGNq5J1k" resolve="components" />
-        <node concept="l2Vlx" id="55_FC60u0$K" role="2czzBx" />
-        <node concept="pVoyu" id="55_FC60u1gm" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="lj46D" id="55_FC60u1go" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="pVoyu" id="55_FC60u1gr" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="pj6Ft" id="55_FC60u1gv" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="3F0ifn" id="55_FC60u2BY" role="3EZMnx">
-        <node concept="ljvvj" id="55_FC60u3jE" role="3F10Kt">
-          <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="3F0ifn" id="6qcrfIJEM_A" role="3EZMnx">
@@ -10692,231 +10665,6 @@
       </node>
     </node>
     <node concept="382kZG" id="47y0FrqhJAa" role="lGtFl" />
-  </node>
-  <node concept="24kQdi" id="68bDGNq6pFu">
-    <property role="3GE5qa" value="TipsAndTricksLanguage" />
-    <ref role="1XX52x" to="3ior:68bDGNq5J1j" resolve="BuildTips" />
-    <node concept="3EZMnI" id="68bDGNq6pFw" role="2wV5jI">
-      <node concept="3F0ifn" id="7cgc9gEQiVK" role="3EZMnx">
-        <property role="3F0ifm" value="Tips &amp; Tricks:" />
-        <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
-        <node concept="VechU" id="55_FC60xK2l" role="3F10Kt">
-          <property role="Vb096" value="DARK_BLUE" />
-        </node>
-      </node>
-      <node concept="3F0ifn" id="7cgc9gER362" role="3EZMnx">
-        <property role="3F0ifm" value="{" />
-      </node>
-      <node concept="3F2HdR" id="7cgc9gER36a" role="3EZMnx">
-        <ref role="1NtTu8" to="3ior:7cgc9gEPwDT" resolve="imports" />
-        <node concept="l2Vlx" id="7cgc9gER36c" role="2czzBx" />
-        <node concept="pj6Ft" id="7cgc9gER36u" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="pVoyu" id="7cgc9gER36w" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="lj46D" id="7cgc9gER36z" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="3F0ifn" id="7cgc9gER36n" role="3EZMnx">
-        <property role="3F0ifm" value="}" />
-      </node>
-      <node concept="l2Vlx" id="68bDGNq6pFz" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="68bDGNqod2e">
-    <property role="3GE5qa" value="TipsAndTricksLanguage" />
-    <ref role="1XX52x" to="3ior:68bDGNqmVdW" resolve="BuildTips_ImportFrom" />
-    <node concept="3EZMnI" id="68bDGNqod2g" role="2wV5jI">
-      <node concept="3F0ifn" id="7cgc9gF4MJ_" role="3EZMnx">
-        <property role="3F0ifm" value="import" />
-        <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
-      </node>
-      <node concept="l2Vlx" id="68bDGNqod2j" role="2iSdaV" />
-      <node concept="3F1sOY" id="68bDGNqpQMw" role="3EZMnx">
-        <ref role="1NtTu8" to="3ior:68bDGNqpdST" resolve="source" />
-      </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="68bDGNqpifv">
-    <property role="3GE5qa" value="TipsAndTricksLanguage" />
-    <ref role="1XX52x" to="3ior:68bDGNqpifm" resolve="BuildTips_None" />
-    <node concept="3EZMnI" id="68bDGNqpifx" role="2wV5jI">
-      <node concept="3F0ifn" id="68bDGNqpifC" role="3EZMnx">
-        <property role="3F0ifm" value="none" />
-        <node concept="VechU" id="68bDGNqpifF" role="3F10Kt">
-          <property role="Vb096" value="DARK_GREEN" />
-        </node>
-      </node>
-      <node concept="l2Vlx" id="68bDGNqpif$" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="68bDGNqr25g">
-    <property role="3GE5qa" value="TipsAndTricksLanguage" />
-    <ref role="1XX52x" to="3ior:68bDGNqr257" resolve="BuildTips_MPS" />
-    <node concept="3EZMnI" id="68bDGNqr25i" role="2wV5jI">
-      <node concept="3F0ifn" id="68bDGNquUr6" role="3EZMnx">
-        <property role="3F0ifm" value="from" />
-        <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
-      </node>
-      <node concept="3F0ifn" id="68bDGNqr25p" role="3EZMnx">
-        <property role="3F0ifm" value="MPS" />
-        <node concept="VechU" id="68bDGNqr25s" role="3F10Kt">
-          <property role="Vb096" value="DARK_GREEN" />
-        </node>
-      </node>
-      <node concept="l2Vlx" id="68bDGNqr25l" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="68bDGNquUrm">
-    <property role="3GE5qa" value="TipsAndTricksLanguage" />
-    <ref role="1XX52x" to="3ior:68bDGNquUrd" resolve="BuildTips_Generated" />
-    <node concept="3EZMnI" id="7cgc9gF36YN" role="2wV5jI">
-      <node concept="3F0ifn" id="4reBHdWN7Oi" role="3EZMnx">
-        <property role="3F0ifm" value="from" />
-        <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
-      </node>
-      <node concept="1iCGBv" id="5Ux$AZvklSR" role="3EZMnx">
-        <ref role="1NtTu8" to="3ior:5Ux$AZvklSJ" resolve="source" />
-        <node concept="1sVBvm" id="5Ux$AZvklST" role="1sWHZn">
-          <node concept="3F0A7n" id="5Ux$AZvlBXb" role="2wV5jI">
-            <property role="1Intyy" value="true" />
-            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            <node concept="VechU" id="5Ux$AZvm7ri" role="3F10Kt">
-              <property role="Vb096" value="DARK_GREEN" />
-            </node>
-            <node concept="Vb9p2" id="5Ux$AZvm7rn" role="3F10Kt">
-              <property role="Vbekb" value="BOLD" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="l2Vlx" id="7cgc9gF36YS" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="68bDGNquUrN">
-    <property role="3GE5qa" value="TipsAndTricksLanguage" />
-    <ref role="1XX52x" to="3ior:68bDGNquUrC" resolve="BuildTips_FromDir" />
-    <node concept="3EZMnI" id="7cgc9gF36Ym" role="2wV5jI">
-      <node concept="3F0ifn" id="4reBHdWN7O4" role="3EZMnx">
-        <property role="3F0ifm" value="from" />
-        <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
-      </node>
-      <node concept="3F1sOY" id="5E1nwh4w9sH" role="3EZMnx">
-        <ref role="1NtTu8" to="3ior:68bDGNquUrD" resolve="path" />
-        <node concept="VechU" id="5E1nwh4w9sO" role="3F10Kt">
-          <property role="Vb096" value="DARK_GREEN" />
-        </node>
-      </node>
-      <node concept="l2Vlx" id="7cgc9gF36Yr" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="68bDGNqwcf_">
-    <property role="3GE5qa" value="TipsAndTricksLanguage" />
-    <ref role="1XX52x" to="3ior:68bDGNqwcfq" resolve="BuildTips_FromDirTo" />
-    <node concept="3EZMnI" id="4reBHdWN7OU" role="2wV5jI">
-      <node concept="3F0ifn" id="55_FC60vG8u" role="3EZMnx">
-        <property role="3F0ifm" value="[" />
-      </node>
-      <node concept="3F0A7n" id="4reBHdWN7P4" role="3EZMnx">
-        <property role="1$x2rV" value="&lt;en&gt;" />
-        <ref role="1NtTu8" to="3ior:4reBHdWN7OI" resolve="language" />
-        <node concept="VechU" id="4reBHdWPcDy" role="3F10Kt">
-          <property role="Vb096" value="DARK_GREEN" />
-        </node>
-        <node concept="Vb9p2" id="4reBHdWPcDB" role="3F10Kt">
-          <property role="Vbekb" value="BOLD" />
-        </node>
-      </node>
-      <node concept="3F0ifn" id="55_FC60vG8W" role="3EZMnx">
-        <property role="3F0ifm" value="]" />
-      </node>
-      <node concept="3F0ifn" id="4reBHdWN7Pa" role="3EZMnx">
-        <property role="3F0ifm" value="from:" />
-        <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
-      </node>
-      <node concept="3EZMnI" id="3I0Cb$qnpu3" role="3EZMnx">
-        <node concept="VPM3Z" id="3I0Cb$qnpu5" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="3F2HdR" id="4reBHdWQFju" role="3EZMnx">
-          <ref role="1NtTu8" to="3ior:4reBHdWN7OG" resolve="path" />
-          <node concept="l2Vlx" id="4reBHdWQFjv" role="2czzBx" />
-          <node concept="pj6Ft" id="4reBHdWQFjw" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
-          <node concept="VechU" id="4reBHdWRULS" role="3F10Kt">
-            <property role="Vb096" value="DARK_GREEN" />
-          </node>
-        </node>
-        <node concept="2iRkQZ" id="3I0Cb$qnpu8" role="2iSdaV" />
-      </node>
-      <node concept="l2Vlx" id="4reBHdWN7OX" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="68bDGNqwQze">
-    <property role="3GE5qa" value="TipsAndTricksLanguage" />
-    <ref role="1XX52x" to="3ior:68bDGNqpdSS" resolve="BuildTips_Import" />
-    <node concept="3F0ifn" id="5E1nwh5_ANY" role="2wV5jI">
-      <property role="ilYzB" value="&lt;source&gt;" />
-      <property role="1cu_pB" value="2" />
-    </node>
-  </node>
-  <node concept="3p36aQ" id="55_FC60$Qhy">
-    <property role="3GE5qa" value="TipsAndTricksLanguage" />
-    <ref role="aqKnT" to="3ior:68bDGNq5J1j" resolve="BuildTips" />
-    <node concept="3eGOop" id="55_FC60Azoc" role="3ft7WO">
-      <node concept="ucgPf" id="55_FC60Azod" role="3aKz83">
-        <node concept="3clFbS" id="55_FC60Azoe" role="2VODD2">
-          <node concept="3clFbF" id="55_FC60B3Su" role="3cqZAp">
-            <node concept="2ShNRf" id="55_FC60B3Ss" role="3clFbG">
-              <node concept="3zrR0B" id="55_FC60B499" role="2ShVmc">
-                <node concept="3Tqbb2" id="55_FC60B49b" role="3zrR0E">
-                  <ref role="ehGHo" to="3ior:68bDGNq5J1j" resolve="BuildTips" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="16NL3D" id="55_FC60BzVq" role="upBLP">
-        <node concept="16Na2f" id="55_FC60BzVr" role="16NL3A">
-          <node concept="3clFbS" id="55_FC60BzVs" role="2VODD2">
-            <node concept="3clFbJ" id="55_FC60B$7U" role="3cqZAp">
-              <node concept="3clFbS" id="55_FC60B$7W" role="3clFbx">
-                <node concept="3cpWs6" id="55_FC60BGqZ" role="3cqZAp">
-                  <node concept="3clFbT" id="55_FC60BGrb" role="3cqZAk">
-                    <property role="3clFbU" value="true" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbC" id="55_FC60BEKi" role="3clFbw">
-                <node concept="2OqwBi" id="55_FC60BAW_" role="3uHU7B">
-                  <node concept="2OqwBi" id="55_FC60B_d7" role="2Oq$k0">
-                    <node concept="1yR$tW" id="55_FC60B$VJ" role="2Oq$k0" />
-                    <node concept="2TvwIu" id="55_FC60B_DP" role="2OqNvi" />
-                  </node>
-                  <node concept="liA8E" id="55_FC60BC0d" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
-                  </node>
-                </node>
-                <node concept="3cmrfG" id="55_FC60BG0E" role="3uHU7w">
-                  <property role="3cmrfH" value="0" />
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs6" id="55_FC60BHfh" role="3cqZAp">
-              <node concept="3clFbT" id="55_FC60BHfD" role="3cqZAk">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3VyMlK" id="55_FC60B3of" role="3ft7WO" />
   </node>
   <node concept="24kQdi" id="7aRQeqpPzUJ">
     <property role="3GE5qa" value="SourceSet.Files" />

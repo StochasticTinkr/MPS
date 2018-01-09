@@ -4856,9 +4856,9 @@
     <classNode dependClassName="jetbrains.mps.build.editor.BuildSource_JavaDependency_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildTextStringPart_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_Folder_Editor" />
-    <classNode dependClassName="jetbrains.mps.build.editor.BuildTips_None_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildVariableMacroInitWithString_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.TransformationMenu" />
+    <classNode dependClassName="jetbrains.mps.build.editor.BuildTips_None_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildSource_JavaDependencyModule_TransformationMenu" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildSource_JavaExternalJarFolderRef_SmartReference" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildSource_JavaModule_Editor" />
@@ -4870,8 +4870,8 @@
     <classNode dependClassName="jetbrains.mps.build.editor.BuildSource_JavaLibraryExternalJar_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildSource_JavaLibrary_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildSource_JavaContentRoot_Editor" />
-    <classNode dependClassName="jetbrains.mps.build.editor.BuildTips_ImportFrom_Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.build.editor.BuildTips_ImportFrom_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildLayout_NamedContainer_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildSourceArchiveRelativePath_Editor" />
