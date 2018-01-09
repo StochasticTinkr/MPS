@@ -29,10 +29,14 @@
         <property id="6666499814681415862" name="tagName" index="2pNNFO" />
         <property id="6999033275467544021" name="shortEmptyNotation" index="qg3DV" />
         <child id="6666499814681415861" name="attributes" index="2pNNFR" />
+        <child id="1622293396948928802" name="content" index="3o6s8t" />
       </concept>
       <concept id="6666499814681447923" name="jetbrains.mps.core.xml.structure.XmlAttribute" flags="ng" index="2pNUuL">
         <property id="6666499814681447926" name="attrName" index="2pNUuO" />
         <child id="6666499814681541918" name="value" index="2pMdts" />
+      </concept>
+      <concept id="1622293396948952339" name="jetbrains.mps.core.xml.structure.XmlText" flags="nn" index="3o6iSG">
+        <property id="1622293396948953704" name="value" index="3o6i5n" />
       </concept>
     </language>
     <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build">
@@ -279,6 +283,27 @@
       </concept>
     </language>
     <language id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps">
+      <concept id="6818892319992984815" name="jetbrains.mps.build.mps.structure.BuildMps_ImportTips" flags="ng" index="20sUq0">
+        <child id="6818892319992984857" name="type" index="20sUtQ" />
+      </concept>
+      <concept id="6818892319993148415" name="jetbrains.mps.build.mps.structure.BuildMps_TipsLanguage" flags="ng" index="20ti6g">
+        <property id="6818892319996027396" name="language" index="21Cj1F" />
+      </concept>
+      <concept id="6818892319999103942" name="jetbrains.mps.build.mps.structure.MPSTipsAndTricks_Base" flags="ng" index="21zw6D">
+        <child id="6818892319999113489" name="tips" index="21zyHY" />
+      </concept>
+      <concept id="6818892319999113488" name="jetbrains.mps.build.mps.structure.MPSTipsAndTricks_Tip" flags="ng" index="21zyHZ">
+        <child id="6818892319999289470" name="text" index="21$ZCh" />
+        <child id="6818892319999289472" name="img" index="21$ZFJ" />
+      </concept>
+      <concept id="6818892319999289469" name="jetbrains.mps.build.mps.structure.MPSTipsAndTricks_Img" flags="ng" index="21$ZCi">
+        <property id="6818892320000817428" name="height" index="21U2HV" />
+        <property id="6818892320000817426" name="width" index="21U2HX" />
+      </concept>
+      <concept id="6818892319999289468" name="jetbrains.mps.build.mps.structure.MPSTipsAndTricks_Text" flags="ng" index="21$ZCj">
+        <property id="6818892320000209498" name="language" index="21Su0P" />
+        <child id="6818892319999697570" name="element" index="21Aj3d" />
+      </concept>
       <concept id="6503355885715333289" name="jetbrains.mps.build.mps.structure.BuildMpsAspect" flags="ng" index="2igEWh">
         <property id="6503355885715353788" name="bootstrap" index="2igJW4" />
       </concept>
@@ -20122,6 +20147,11 @@
             </node>
           </node>
         </node>
+        <node concept="20sUq0" id="4lVkHd1ABrm" role="39821P">
+          <node concept="20ti6g" id="4lVkHd1ABrI" role="20sUtQ">
+            <property role="21Cj1F" value="ru" />
+          </node>
+        </node>
       </node>
       <node concept="398223" id="3IKDaVZn4nc" role="39821P">
         <node concept="3_J27D" id="3IKDaVZn4nd" role="Nbhlr">
@@ -21088,6 +21118,9 @@
     <property role="turDy" value="mpsBuild.xml" />
     <property role="3GE5qa" value="common" />
     <property role="2DA0ip" value="../../../../" />
+    <node concept="2igEWh" id="4lVkHd1DtRL" role="1hWBAP">
+      <property role="2igJW4" value="true" />
+    </node>
     <node concept="m$_wf" id="5HVSRHdVm9a" role="3989C9">
       <property role="m$_wk" value="jetbrains.mps.build" />
       <node concept="m$f5U" id="1Z_UwmPeEXg" role="m$_yh">
@@ -35692,6 +35725,34 @@
     </node>
     <node concept="2sgV4H" id="3E9C6pCX_Sa" role="1l3spa">
       <ref role="1l3spb" node="5rNMDvYzelV" resolve="mpsMakePlugin" />
+    </node>
+  </node>
+  <node concept="21zw6D" id="4lVkHd1ACrt">
+    <property role="3GE5qa" value="ide" />
+    <property role="TrG5h" value="Test" />
+    <node concept="21zyHZ" id="4lVkHd1ACru" role="21zyHY">
+      <property role="TrG5h" value="t1" />
+      <node concept="21$ZCj" id="4lVkHd1ACrv" role="21$ZCh">
+        <property role="21Su0P" value="en" />
+        <node concept="2pNNFK" id="4lVkHd1ACrw" role="21Aj3d">
+          <property role="2pNNFO" value="html" />
+          <node concept="3o6iSG" id="4lVkHd1ACrM" role="3o6s8t">
+            <property role="3o6i5n" value="Kukuku!" />
+          </node>
+        </node>
+      </node>
+      <node concept="21$ZCi" id="4lVkHd1ACrx" role="21$ZFJ">
+        <property role="21U2HX" value="100" />
+        <property role="21U2HV" value="100" />
+      </node>
+    </node>
+    <node concept="21zyHZ" id="4lVkHd1ACrA" role="21zyHY">
+      <property role="TrG5h" value="t2" />
+      <node concept="21$ZCj" id="4lVkHd1ACrB" role="21$ZCh">
+        <property role="21Su0P" value="en" />
+        <node concept="2pNNFK" id="4lVkHd1ACrC" role="21Aj3d" />
+      </node>
+      <node concept="21$ZCi" id="4lVkHd1ACrD" role="21$ZFJ" />
     </node>
   </node>
 </model>

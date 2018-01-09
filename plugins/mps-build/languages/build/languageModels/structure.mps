@@ -2311,5 +2311,23 @@
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
+  <node concept="1TIwiD" id="7aRQeqpPz8i">
+    <property role="EcuMT" value="8266314125996864018" />
+    <property role="3GE5qa" value="SourceSet.Files" />
+    <property role="TrG5h" value="BuildInputSingleFileAbsolutePath" />
+    <property role="34LRSv" value="file by absolute path" />
+    <ref role="1TJDcQ" node="4zlO3QT8mNF" resolve="BuildInputFileSet" />
+    <node concept="PrWs8" id="7aRQeqpPz8l" role="PzmwI">
+      <ref role="PrY4T" node="Y2EImGIi9D" resolve="BuildLayout_FileSet" />
+    </node>
+    <node concept="PrWs8" id="7aRQeqpPz8m" role="PzmwI">
+      <ref role="PrY4T" node="4RsV8qJDnFi" resolve="BuildSource_SingleFile" />
+    </node>
+    <node concept="1TJgyi" id="7aRQeqpPz8j" role="1TKVEl">
+      <property role="IQ2nx" value="8266314125996864019" />
+      <property role="TrG5h" value="path" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
 </model>
 

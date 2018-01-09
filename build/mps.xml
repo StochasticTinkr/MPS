@@ -35,7 +35,7 @@
   <property file="${artifacts.mpsBuild}/build.properties" prefix="import.mpsBuild" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBuild.mpsBootstrapCore.version}" />
   
-  <target name="assemble" depends="fetchDependencies">
+  <target name="assemble" depends="collect-tips, fetchDependencies">
     <mkdir dir="${build.layout}/bin" />
     <copy todir="${build.layout}/bin">
       <fileset dir="${mps_home}/bin">
@@ -114,6 +114,17 @@
     <zip destfile="${build.layout}/lib/MPS-src.zip">
       <fileset dir="${build.tmp}/default/MPS-src.zip" />
     </zip>
+    <jar destfile="${build.layout}/lib/mps-tips.jar" duplicate="preserve">
+      <zipfileset file="${build.tmp}/xml/out/tips_index_21" prefix="META-INF" />
+    </jar>
+    <jar destfile="${build.layout}/lib/mps-tips_en.jar" duplicate="preserve">
+      <fileset file="${basedir}/tip1" />
+      <fileset file="${basedir}/tip2" />
+      <fileset file="${basedir}/tip3" />
+    </jar>
+    <jar destfile="${build.layout}/lib/mps-tips_cz.jar" duplicate="preserve">
+      <fileset file="${basedir}/tip2" />
+    </jar>
     <mkdir dir="${build.layout}/license" />
     <copy todir="${build.layout}/license">
       <fileset dir="${artifacts.mpsStandalone}/license" />
@@ -259,5 +270,39 @@
   <target name="clean">
     <delete dir="${build.tmp}" />
     <delete dir="${build.layout}" />
+  </target>
+  
+  <target name="generate-tips-xml">
+    <echoxml file="${tips.metainf.folder}/IdeTipsAndTricks.xml">
+      <idea-plugin>
+        <extensions defaultExtensionNs="com.intellij">
+          <tipAndTrick file="${tips.allcontent}" />
+        </extensions>
+      </idea-plugin>
+    </echoxml>
+    <replace file="${tips.metainf.folder}/IdeTipsAndTricks.xml" token=";" value="&quot;/&gt;&#xD;&#x0009;&lt;tipAndTrick file=&quot;" />
+  </target>
+  
+  <target name="collect-tips" depends="tips_index_21" />
+  
+  <target name="tips_index_21">
+    <delete dir="${build.tmp}/xml/out/tips_index_21" />
+    <mkdir dir="${build.tmp}/xml/out/tips_index_21" />
+    <delete dir="${build.tmp}/tips_index_21" />
+    <mkdir dir="${build.tmp}/tips_index_21" />
+    <copy todir="${build.tmp}/tips_index_21">
+      <fileset dir="${basedir}/tips1.dir" includes="*.*" />
+    </copy>
+    <copy todir="${build.tmp}/tips_index_21">
+      <fileset dir="${basedir}/tips2.dir" includes="*.*" />
+    </copy>
+    <copy todir="${build.tmp}/tips_index_21">
+      <fileset dir="${basedir}/tips3.dir" includes="*.*" />
+    </copy>
+    <fileset id="tips.fileset" includes="*.*" dir="${build.tmp}/tips_index_21" />
+    <antcall target="generate-tips-xml" inheritall="false">
+      <param name="tips.allcontent" refid="tips.fileset" />
+      <param name="tips.metainf.folder" value="${build.tmp}/xml/out/tips_index_21" />
+    </antcall>
   </target>
 </project>
