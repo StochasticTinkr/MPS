@@ -11,26 +11,12 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
-import java.util.Collection;
-import jetbrains.mps.smodel.ConceptDescendantsCache;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.lang.editor.menus.GroupMenuPart;
-import jetbrains.mps.smodel.SModelStereotype;
-import java.util.Arrays;
-import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
-import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
 
 public class BuildLayout_Copy_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new BuildLayout_Copy_SubstituteMenu.SMP_Subconcepts_lz5c5a_a());
-    result.add(new BuildLayout_Copy_SubstituteMenu.SMP_Group_lz5c5a_b());
     return result;
   }
 
@@ -47,60 +33,4 @@ public class BuildLayout_Copy_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public class SMP_Subconcepts_lz5c5a_a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
-    protected Collection getConcepts(final SubstituteMenuContext _context) {
-      return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92339b9L, "jetbrains.mps.build.structure.BuildLayout_Copy"));
-    }
-    @NotNull
-    @Override
-    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
-      context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "BuildLayout_Copy", new SNodePointer("r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)", "8266314125996551380")));
-      try {
-        return super.createItems(context);
-      } finally {
-        context.getEditorMenuTrace().popTraceInfo();
-      }
-    }
-
-    @Override
-    protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
-      return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
-    }
-  }
-  public class SMP_Group_lz5c5a_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
-    @Override
-    protected boolean isApplicable(SubstituteMenuContext _context) {
-      return SModelStereotype.isGeneratorModel(_context.getModel());
-    }
-    @NotNull
-    @Override
-    public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
-      context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("substitute menu group", new SNodePointer("r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)", "8266314125996550829")));
-      try {
-        return super.createItems(context);
-      } finally {
-        context.getEditorMenuTrace().popTraceInfo();
-      }
-    }
-
-    @Override
-    protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92339b9L, "jetbrains.mps.build.structure.BuildLayout_Copy")) {
-
-        @NotNull
-        @Override
-        public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
-          context.getEditorMenuTrace().pushTraceInfo();
-          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("simple substitute menu part for concept: " + "BuildLayout_Copy", new SNodePointer("r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)", "8266314125996550830")));
-          try {
-            return super.createItems(context);
-          } finally {
-            context.getEditorMenuTrace().popTraceInfo();
-          }
-        }
-      }, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92339b9L, "jetbrains.mps.build.structure.BuildLayout_Copy")));
-    }
-  }
 }

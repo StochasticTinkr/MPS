@@ -6330,7 +6330,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="5Ux$AZvfvny">
-    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Language" />
     <ref role="13h7C2" to="kdzh:5Ux$AZvcAxW" resolve="MPSTipsAndTricks_Text" />
     <node concept="13hLZK" id="5Ux$AZvfvnz" role="13h7CW">
       <node concept="3clFbS" id="5Ux$AZvfvn$" role="2VODD2">
@@ -6351,7 +6351,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="5Ux$AZvgMV_">
-    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Language" />
     <ref role="13h7C2" to="kdzh:5Ux$AZvbV$g" resolve="MPSTipsAndTricks_Tip" />
     <node concept="13hLZK" id="5Ux$AZvgMVA" role="13h7CW">
       <node concept="3clFbS" id="5Ux$AZvgMVB" role="2VODD2">

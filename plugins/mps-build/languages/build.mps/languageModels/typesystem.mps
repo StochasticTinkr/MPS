@@ -2194,7 +2194,7 @@
   </node>
   <node concept="18kY7G" id="15sxrechEtg">
     <property role="TrG5h" value="check_MPSTipsAndTricks_Text" />
-    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Language" />
     <node concept="3clFbS" id="15sxrechEth" role="18ibNy">
       <node concept="3cpWs8" id="15sxreciEx5" role="3cqZAp">
         <node concept="3cpWsn" id="15sxreciEx6" role="3cpWs9">
@@ -2305,7 +2305,7 @@
   </node>
   <node concept="18kY7G" id="15sxrecjS3t">
     <property role="TrG5h" value="check_MPSTipsAndTricks_Tip" />
-    <property role="3GE5qa" value="Project.TipsAndTricks" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Language" />
     <node concept="3clFbS" id="15sxrecjS3u" role="18ibNy">
       <node concept="3cpWs8" id="5Kmm9AdbT66" role="3cqZAp">
         <node concept="3cpWsn" id="5Kmm9AdbqwS" role="3cpWs9">
@@ -2513,7 +2513,7 @@
   </node>
   <node concept="18kY7G" id="3I0Cb$qo9sL">
     <property role="TrG5h" value="check_BuildMps_TipsOthers" />
-    <property role="3GE5qa" value="Project.Tips" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.JarTips" />
     <node concept="3clFbS" id="3I0Cb$qo9sM" role="18ibNy">
       <node concept="3cpWs8" id="15sxrecxviK" role="3cqZAp">
         <node concept="3cpWsn" id="15sxrecxviL" role="3cpWs9">

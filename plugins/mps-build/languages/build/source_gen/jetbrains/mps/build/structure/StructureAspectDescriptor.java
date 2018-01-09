@@ -726,7 +726,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.build.structure.BuildLayout_AbstractCopy", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9b91L);
     b.parent(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xf82aae5acb92269L);
     b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/5248329904287857081");
-    b.alias("copy");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBuildLayout_CopyFilter() {
@@ -829,7 +828,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xf82aae5acb92269L);
     b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/9184644532456495794");
     b.aggregate("handlers", 0x7f76698a394e2d1eL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394dcc33L).optional(true).ordered(true).multiple(true).origin("9184644532456533278").done();
-    b.alias("custom copy");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBuildLayout_EchoProperties() {

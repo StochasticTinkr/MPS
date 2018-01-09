@@ -13741,7 +13741,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4JSKezPNzOL">
-    <property role="3GE5qa" value="TipsAndTricks" />
+    <property role="3GE5qa" value="TipsAndTricksLanguage" />
     <ref role="13h7C2" to="3ior:68bDGNq5J1j" resolve="BuildTips" />
     <node concept="13hLZK" id="4JSKezPNzOM" role="13h7CW">
       <node concept="3clFbS" id="4JSKezPNzON" role="2VODD2" />

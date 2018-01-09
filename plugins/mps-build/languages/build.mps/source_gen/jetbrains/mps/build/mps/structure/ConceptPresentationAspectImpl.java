@@ -73,6 +73,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_MPSTipsAndTricks_Line;
   private ConceptPresentation props_MPSTipsAndTricks_Text;
   private ConceptPresentation props_MPSTipsAndTricks_Tip;
+  private ConceptPresentation props_MpsTips;
+  private ConceptPresentation props_MpsTips_Dir;
+  private ConceptPresentation props_MpsTips_Import;
+  private ConceptPresentation props_MpsTips_MPS;
+  private ConceptPresentation props_MpsTips_Solution;
 
   @Override
   @Nullable
@@ -283,7 +288,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildMps_IdeaPlugin == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0nc);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0sc);
           props_BuildMps_IdeaPlugin = cpb.create();
         }
         return props_BuildMps_IdeaPlugin;
@@ -532,6 +537,40 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_MPSTipsAndTricks_Tip = cpb.create();
         }
         return props_MPSTipsAndTricks_Tip;
+      case LanguageConceptSwitch.MpsTips:
+        if (props_MpsTips == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MpsTips");
+          props_MpsTips = cpb.create();
+        }
+        return props_MpsTips;
+      case LanguageConceptSwitch.MpsTips_Dir:
+        if (props_MpsTips_Dir == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MpsTips_Dir");
+          props_MpsTips_Dir = cpb.create();
+        }
+        return props_MpsTips_Dir;
+      case LanguageConceptSwitch.MpsTips_Import:
+        if (props_MpsTips_Import == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MpsTips_Import = cpb.create();
+        }
+        return props_MpsTips_Import;
+      case LanguageConceptSwitch.MpsTips_MPS:
+        if (props_MpsTips_MPS == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("import from MPS");
+          props_MpsTips_MPS = cpb.create();
+        }
+        return props_MpsTips_MPS;
+      case LanguageConceptSwitch.MpsTips_Solution:
+        if (props_MpsTips_Solution == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MpsTips_Solution");
+          props_MpsTips_Solution = cpb.create();
+        }
+        return props_MpsTips_Solution;
     }
     return null;
   }

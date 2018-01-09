@@ -367,7 +367,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildLayout_Copy:
         if (props_BuildLayout_Copy == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("copy");
+          cpb.rawPresentation("BuildLayout_Copy");
           props_BuildLayout_Copy = cpb.create();
         }
         return props_BuildLayout_Copy;
@@ -446,7 +446,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildLayout_CustomCopy:
         if (props_BuildLayout_CustomCopy == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("custom copy");
+          cpb.rawPresentation("BuildLayout_CustomCopy");
           props_BuildLayout_CustomCopy = cpb.create();
         }
         return props_BuildLayout_CustomCopy;

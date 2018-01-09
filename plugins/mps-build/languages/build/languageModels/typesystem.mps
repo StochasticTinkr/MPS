@@ -1687,7 +1687,7 @@
   </node>
   <node concept="18kY7G" id="15sxrecxtK5">
     <property role="TrG5h" value="check_BuildTips_FromDirTo" />
-    <property role="3GE5qa" value="TipsAndTricks" />
+    <property role="3GE5qa" value="TipsAndTricksLanguage" />
     <node concept="3clFbS" id="15sxrecxtK6" role="18ibNy">
       <node concept="3clFbH" id="15sxrecxtKc" role="3cqZAp" />
       <node concept="3cpWs8" id="15sxrecxviK" role="3cqZAp">
