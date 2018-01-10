@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class MpsTips_Solution_Editor extends DefaultNodeEditor {
+public class BuildMps_TipsMps_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new MpsTips_Solution_EditorBuilder_a(editorContext, node).createCell();
+    return new BuildMps_TipsMps_EditorBuilder_a(editorContext, node).createCell();
   }
 }

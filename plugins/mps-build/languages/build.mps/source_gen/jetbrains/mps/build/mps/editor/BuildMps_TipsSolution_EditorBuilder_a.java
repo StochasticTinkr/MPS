@@ -12,16 +12,13 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
 
-/*package*/ class MpsTips_JarLanguage_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class BuildMps_TipsSolution_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public MpsTips_JarLanguage_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public BuildMps_TipsSolution_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -33,24 +30,30 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_1a08p4_a();
+    return createCollection_nodppr_a();
   }
 
-  private EditorCell createCollection_1a08p4_a() {
+  private EditorCell createCollection_nodppr_a() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_1a08p4_a");
+    editorCell.setCellId("Collection_nodppr_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createConstant_1a08p4_a0());
+    editorCell.addEditorCell(createConstant_nodppr_a0());
+    editorCell.addEditorCell(createConstant_nodppr_b0());
     return editorCell;
   }
-  private EditorCell createConstant_1a08p4_a0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "tips");
-    editorCell.setCellId("Constant_1a08p4_a0");
+  private EditorCell createConstant_nodppr_a0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "import from");
+    editorCell.setCellId("Constant_nodppr_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    new keywordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_nodppr_b0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "//todo solution link");
+    editorCell.setCellId("Constant_nodppr_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }

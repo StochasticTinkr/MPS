@@ -5769,7 +5769,7 @@
   </node>
   <node concept="24kQdi" id="5Ux$AZuOzjS">
     <property role="3GE5qa" value="Project.TipsAndTricks.JarTips" />
-    <ref role="1XX52x" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_ImportTips" />
+    <ref role="1XX52x" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsLoad" />
     <node concept="3EZMnI" id="5Ux$AZuOzjU" role="2wV5jI">
       <node concept="3F0ifn" id="5Ux$AZuOzk1" role="3EZMnx">
         <property role="3F0ifm" value="tips" />
@@ -5787,6 +5787,12 @@
       </node>
       <node concept="3F0A7n" id="6mx7ef$3$pw" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        <node concept="Vb9p2" id="6mx7ef$BuGQ" role="3F10Kt">
+          <property role="Vbekb" value="BOLD" />
+        </node>
+        <node concept="VechU" id="6mx7ef$BuGV" role="3F10Kt">
+          <property role="Vb096" value="DARK_GREEN" />
+        </node>
       </node>
       <node concept="3F0ifn" id="6mx7ef$41e8" role="3EZMnx">
         <property role="3F0ifm" value="&gt;" />
@@ -5801,7 +5807,7 @@
         </node>
       </node>
       <node concept="1iCGBv" id="6mx7ef$41eG" role="3EZMnx">
-        <ref role="1NtTu8" to="kdzh:6mx7ef$41ej" resolve="element" />
+        <ref role="1NtTu8" to="kdzh:6mx7ef$41ej" resolve="link" />
         <node concept="1sVBvm" id="6mx7ef$41eI" role="1sWHZn">
           <node concept="PMmxH" id="6mx7ef$41eY" role="2wV5jI">
             <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -6154,10 +6160,10 @@
   </node>
   <node concept="24kQdi" id="75N6Lqy0vWk">
     <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
-    <ref role="1XX52x" to="kdzh:75N6Lqy0tuW" resolve="MpsTips" />
+    <ref role="1XX52x" to="kdzh:75N6Lqy0tuW" resolve="BuildMps_Tips" />
     <node concept="3EZMnI" id="75N6Lqy0vWp" role="2wV5jI">
       <node concept="3F0ifn" id="7cgc9gEQiVK" role="3EZMnx">
-        <property role="3F0ifm" value="Tips &amp; Tricks:" />
+        <property role="3F0ifm" value="tips &amp; tricks:" />
         <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
         <node concept="VechU" id="55_FC60xK2l" role="3F10Kt">
           <property role="Vb096" value="DARK_BLUE" />
@@ -6187,7 +6193,7 @@
   </node>
   <node concept="24kQdi" id="75N6Lqya9Ay">
     <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
-    <ref role="1XX52x" to="kdzh:75N6Lqya9Ap" resolve="MpsTips_MPS" />
+    <ref role="1XX52x" to="kdzh:75N6Lqya9Ap" resolve="BuildMps_TipsMps" />
     <node concept="3EZMnI" id="68bDGNqr25i" role="2wV5jI">
       <node concept="3F0ifn" id="68bDGNquUr6" role="3EZMnx">
         <property role="3F0ifm" value="import from" />
@@ -6204,7 +6210,7 @@
   </node>
   <node concept="24kQdi" id="75N6Lqyb05D">
     <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
-    <ref role="1XX52x" to="kdzh:75N6Lqyb05w" resolve="MpsTips_Dir" />
+    <ref role="1XX52x" to="kdzh:75N6Lqyb05w" resolve="BuildMps_TipsDir" />
     <node concept="3EZMnI" id="4reBHdWN7OU" role="2wV5jI">
       <node concept="3F0ifn" id="75N6LqycxhC" role="3EZMnx">
         <property role="3F0ifm" value="import" />
@@ -6251,7 +6257,7 @@
   </node>
   <node concept="24kQdi" id="75N6LqycVfd">
     <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
-    <ref role="1XX52x" to="kdzh:75N6LqycVf4" resolve="MpsTips_Solution" />
+    <ref role="1XX52x" to="kdzh:75N6LqycVf4" resolve="BuildMps_TipsSolution" />
     <node concept="3EZMnI" id="7cgc9gF36YN" role="2wV5jI">
       <node concept="3F0ifn" id="4reBHdWN7Oi" role="3EZMnx">
         <property role="3F0ifm" value="import from" />
@@ -6265,7 +6271,7 @@
   </node>
   <node concept="24kQdi" id="2DNUTJn1OVs">
     <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
-    <ref role="1XX52x" to="kdzh:2DNUTJn1OVj" resolve="MpsTips_JarIdeTipsAndTricks" />
+    <ref role="1XX52x" to="kdzh:2DNUTJn1OVj" resolve="BuildMps_TipsJarIdeTipsAndTricks" />
     <node concept="3EZMnI" id="2DNUTJn1OVE" role="2wV5jI">
       <node concept="3F0ifn" id="2DNUTJn1OVF" role="3EZMnx">
         <property role="3F0ifm" value="IdeTipsAndTricks" />
@@ -6281,10 +6287,11 @@
   </node>
   <node concept="24kQdi" id="2DNUTJn1OVY">
     <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
-    <ref role="1XX52x" to="kdzh:2DNUTJn1OVi" resolve="MpsTips_JarLanguage" />
+    <ref role="1XX52x" to="kdzh:2DNUTJn1OVi" resolve="BuildMps_TipsJarLanguage" />
     <node concept="3EZMnI" id="2DNUTJn1OW0" role="2wV5jI">
+      <node concept="l2Vlx" id="2DNUTJn1OW1" role="2iSdaV" />
       <node concept="3F0ifn" id="6mx7ef$d61a" role="3EZMnx">
-        <property role="3F0ifm" value="tips" />
+        <property role="3F0ifm" value="Tips" />
         <node concept="VechU" id="2DNUTJn1OW3" role="3F10Kt">
           <property role="Vb096" value="DARK_GREEN" />
         </node>
@@ -6292,12 +6299,11 @@
           <property role="Vbekb" value="BOLD" />
         </node>
       </node>
-      <node concept="l2Vlx" id="2DNUTJn1OW1" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="2DNUTJn1OWl">
     <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
-    <ref role="1XX52x" to="kdzh:2DNUTJn1OUY" resolve="MpsTips_Jar" />
+    <ref role="1XX52x" to="kdzh:2DNUTJn1OUY" resolve="BuildMps_TipsJar" />
     <node concept="3EZMnI" id="2DNUTJn1OWn" role="2wV5jI">
       <node concept="3F0ifn" id="2DNUTJn1OWo" role="3EZMnx">
         <property role="3F0ifm" value="tips of" />
@@ -6305,7 +6311,7 @@
       </node>
       <node concept="l2Vlx" id="2DNUTJn1OWp" role="2iSdaV" />
       <node concept="1iCGBv" id="2DNUTJn1OWq" role="3EZMnx">
-        <ref role="1NtTu8" to="kdzh:2DNUTJn1OVf" resolve="element" />
+        <ref role="1NtTu8" to="kdzh:2DNUTJn1OVf" resolve="link" />
         <node concept="1sVBvm" id="2DNUTJn1OWr" role="1sWHZn">
           <node concept="PMmxH" id="2DNUTJn1OWs" role="2wV5jI">
             <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -6340,10 +6346,6 @@
         </node>
       </node>
     </node>
-  </node>
-  <node concept="3p36aQ" id="2DNUTJn3ct8">
-    <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
-    <ref role="aqKnT" to="kdzh:75N6Lqy0tuW" resolve="MpsTips" />
   </node>
 </model>
 

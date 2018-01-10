@@ -17,11 +17,11 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
-/*package*/ class MpsTips_JarIdeTipsAndTricks_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class BuildMps_TipsJarLanguage_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public MpsTips_JarIdeTipsAndTricks_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public BuildMps_TipsJarLanguage_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -33,20 +33,20 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_h3tvi1_a();
+    return createCollection_takscn_a();
   }
 
-  private EditorCell createCollection_h3tvi1_a() {
+  private EditorCell createCollection_takscn_a() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_h3tvi1_a");
+    editorCell.setCellId("Collection_takscn_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createConstant_h3tvi1_a0());
+    editorCell.addEditorCell(createConstant_takscn_a0());
     return editorCell;
   }
-  private EditorCell createConstant_h3tvi1_a0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "IdeTipsAndTricks");
-    editorCell.setCellId("Constant_h3tvi1_a0");
+  private EditorCell createConstant_takscn_a0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Tips");
+    editorCell.setCellId("Constant_takscn_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
