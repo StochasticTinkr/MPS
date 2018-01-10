@@ -99,6 +99,7 @@
       <modulePath path="$PROJECT_DIR$/languages/core/stub/diffutils/diffutils.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/hamcrest/hamcrest.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/junit/junit.msd" folder="core.stub" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.build.tipsAndTricks/jetbrains.mps.build.tipsAndTricks.mpl" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/access/jetbrains.mps.lang.access.mpl" folder="core.languages" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/actions/jetbrains.mps.lang.actions.mpl" folder="core.aspects.actions" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/analyzers/jetbrains.mps.lang.dataFlow.analyzers.mpl" folder="core.aspects.dataflow" />

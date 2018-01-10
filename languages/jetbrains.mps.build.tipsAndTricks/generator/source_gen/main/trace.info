@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="QueriesGenerated.java">
+      <unit at="16,0,50,0" name="main.QueriesGenerated" />
+    </file>
+  </root>
+  <root nodeRef="r:b7b7c4ba-59b9-4b5b-b6ae-a73d44d4092c(main@generator)/1323541276018393065">
+    <file name="QueriesGenerated.java">
+      <node id="1323541276018683996" at="18,112,19,555" concept="1" />
+      <node id="1323541276018729081" at="21,112,22,554" concept="1" />
+      <node id="1323541276018777508" at="24,112,25,711" concept="1" />
+      <node id="1323541276018421683" at="27,112,28,396" concept="1" />
+      <node id="1323541276018597124" at="30,112,31,124" concept="0" />
+      <node id="1323541276018595793" at="31,124,32,600" concept="1" />
+      <node id="1323541276018702897" at="34,94,35,572" concept="1" />
+      <node id="1323541276018737421" at="37,94,38,572" concept="1" />
+      <node id="1323541276018757663" at="40,94,41,729" concept="1" />
+      <node id="1323541276018444939" at="43,120,44,193" concept="1" />
+      <node id="1323541276018725290" at="46,55,47,43" concept="1" />
+      <node id="1323541276018725290" at="46,0,49,0" concept="2" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <scope id="1323541276018662835" at="18,112,19,555" />
+      <scope id="1323541276018728062" at="21,112,22,554" />
+      <scope id="1323541276018774132" at="24,112,25,711" />
+      <scope id="1323541276018421141" at="27,112,28,396" />
+      <scope id="1323541276018701594" at="34,94,35,572" />
+      <scope id="1323541276018736118" at="37,94,38,572" />
+      <scope id="1323541276018756176" at="40,94,41,729" />
+      <scope id="1323541276018444933" at="43,120,44,193" />
+      <scope id="1323541276018725290" at="46,55,47,43" />
+      <scope id="1323541276018589898" at="30,112,32,600">
+        <var name="path" id="1323541276018597125" />
+      </scope>
+      <scope id="1323541276018725290" at="46,0,49,0">
+        <var name="str" id="1323541276018725290" />
+      </scope>
+    </file>
+  </root>
+</debug-info>
+
