@@ -1501,41 +1501,14 @@
     <property role="R4oN_" value="copy tips of project element" />
     <property role="34LRSv" value="tips of" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
-    <node concept="1TJgyj" id="5Ux$AZuOzkp" role="1TKVEi">
-      <property role="IQ2ns" value="6818892319992984857" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="type" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="5Ux$AZuOzko" resolve="BuildMps_ImportTipsPart" />
+    <node concept="PrWs8" id="6mx7ef$3$pu" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="5Ux$AZuOzko">
-    <property role="EcuMT" value="6818892319992984856" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.JarTips" />
-    <property role="TrG5h" value="BuildMps_ImportTipsPart" />
-    <property role="R5$K7" value="true" />
-    <property role="R5$K2" value="false" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-  </node>
-  <node concept="1TIwiD" id="5Ux$AZuOzkD">
-    <property role="EcuMT" value="6818892319992984873" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.JarTips" />
-    <property role="TrG5h" value="BuildMps_TipsLoad" />
-    <property role="34LRSv" value="load new tip (IdeTipsAndTricks)" />
-    <property role="R4oN_" value="file with set of all names of tips to load them" />
-    <ref role="1TJDcQ" node="5Ux$AZuOzko" resolve="BuildMps_ImportTipsPart" />
-  </node>
-  <node concept="1TIwiD" id="5Ux$AZuPbfZ">
-    <property role="EcuMT" value="6818892319993148415" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.JarTips" />
-    <property role="TrG5h" value="BuildMps_TipsLanguage" />
-    <property role="34LRSv" value="select language" />
-    <property role="R4oN_" value="language of tips" />
-    <ref role="1TJDcQ" node="5Ux$AZuOzko" resolve="BuildMps_ImportTipsPart" />
-    <node concept="1TJgyi" id="5Ux$AZv0a84" role="1TKVEl">
-      <property role="IQ2nx" value="6818892319996027396" />
-      <property role="TrG5h" value="language" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="1TJgyj" id="6mx7ef$41ej" role="1TKVEi">
+      <property role="IQ2ns" value="7323166234190549907" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="element" />
+      <ref role="20lvS9" node="75N6Lqy0tuW" resolve="MpsTips" />
     </node>
   </node>
   <node concept="1TIwiD" id="5Ux$AZvbTf6">
@@ -1620,19 +1593,6 @@
       <ref role="20lvS9" to="1oap:Ib_Fk7zNdB" resolve="Image" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5Ux$AZveaai">
-    <property role="EcuMT" value="6818892319999697554" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.Language" />
-    <property role="TrG5h" value="MPSTipsAndTricks_Line" />
-    <property role="R4oN_" value="plain text" />
-    <property role="34LRSv" value="line" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="5Ux$AZveaaj" role="1TKVEl">
-      <property role="IQ2nx" value="6818892319999697555" />
-      <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="75N6Lqy0tuW">
     <property role="EcuMT" value="8174907532628842428" />
     <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
@@ -1687,33 +1647,6 @@
     <property role="TrG5h" value="MpsTips_Solution" />
     <ref role="1TJDcQ" node="75N6Lqya9Am" resolve="MpsTips_Import" />
   </node>
-  <node concept="1TIwiD" id="2DNUTJn1OVj">
-    <property role="EcuMT" value="3059047626474737363" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
-    <property role="TrG5h" value="MpsTips_JarIdeTipsAndTricks" />
-    <property role="34LRSv" value="ideTipsAndTricks" />
-    <ref role="1TJDcQ" node="2DNUTJn1OVh" resolve="MpsTips_JarPart" />
-  </node>
-  <node concept="1TIwiD" id="2DNUTJn1OVi">
-    <property role="EcuMT" value="3059047626474737362" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
-    <property role="TrG5h" value="MpsTips_JarLanguage" />
-    <property role="34LRSv" value="language" />
-    <ref role="1TJDcQ" node="2DNUTJn1OVh" resolve="MpsTips_JarPart" />
-    <node concept="1TJgyi" id="2DNUTJn1OVO" role="1TKVEl">
-      <property role="IQ2nx" value="3059047626474737396" />
-      <property role="TrG5h" value="language" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="2DNUTJn1OVh">
-    <property role="EcuMT" value="3059047626474737361" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
-    <property role="TrG5h" value="MpsTips_JarPart" />
-    <property role="R5$K7" value="true" />
-    <property role="R5$K2" value="false" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-  </node>
   <node concept="1TIwiD" id="2DNUTJn1OUY">
     <property role="EcuMT" value="3059047626474737342" />
     <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
@@ -1733,6 +1666,28 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="2DNUTJn1OVh" resolve="MpsTips_JarPart" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="2DNUTJn1OVh">
+    <property role="EcuMT" value="3059047626474737361" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
+    <property role="TrG5h" value="MpsTips_JarPart" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="2DNUTJn1OVi">
+    <property role="EcuMT" value="3059047626474737362" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
+    <property role="TrG5h" value="MpsTips_JarLanguage" />
+    <property role="34LRSv" value="language" />
+    <ref role="1TJDcQ" node="2DNUTJn1OVh" resolve="MpsTips_JarPart" />
+  </node>
+  <node concept="1TIwiD" id="2DNUTJn1OVj">
+    <property role="EcuMT" value="3059047626474737363" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
+    <property role="TrG5h" value="MpsTips_JarIdeTipsAndTricks" />
+    <property role="34LRSv" value="ideTipsAndTricks" />
+    <ref role="1TJDcQ" node="2DNUTJn1OVh" resolve="MpsTips_JarPart" />
   </node>
 </model>
 

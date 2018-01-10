@@ -50,7 +50,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBuildMps_IdeaPluginModule = createDescriptorForBuildMps_IdeaPluginModule();
   /*package*/ final ConceptDescriptor myConceptBuildMps_IdeaPluginVendor = createDescriptorForBuildMps_IdeaPluginVendor();
   /*package*/ final ConceptDescriptor myConceptBuildMps_ImportTips = createDescriptorForBuildMps_ImportTips();
-  /*package*/ final ConceptDescriptor myConceptBuildMps_ImportTipsPart = createDescriptorForBuildMps_ImportTipsPart();
   /*package*/ final ConceptDescriptor myConceptBuildMps_Language = createDescriptorForBuildMps_Language();
   /*package*/ final ConceptDescriptor myConceptBuildMps_Module = createDescriptorForBuildMps_Module();
   /*package*/ final ConceptDescriptor myConceptBuildMps_ModuleDependency = createDescriptorForBuildMps_ModuleDependency();
@@ -68,14 +67,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBuildMps_ModuleSource = createDescriptorForBuildMps_ModuleSource();
   /*package*/ final ConceptDescriptor myConceptBuildMps_ModuleTestSource = createDescriptorForBuildMps_ModuleTestSource();
   /*package*/ final ConceptDescriptor myConceptBuildMps_Solution = createDescriptorForBuildMps_Solution();
-  /*package*/ final ConceptDescriptor myConceptBuildMps_TipsLanguage = createDescriptorForBuildMps_TipsLanguage();
-  /*package*/ final ConceptDescriptor myConceptBuildMps_TipsLoad = createDescriptorForBuildMps_TipsLoad();
   /*package*/ final ConceptDescriptor myConceptGeneratorInternal_BuildMps_Module = createDescriptorForGeneratorInternal_BuildMps_Module();
   /*package*/ final ConceptDescriptor myConceptGeneratorInternal_BuildSourcePath = createDescriptorForGeneratorInternal_BuildSourcePath();
   /*package*/ final ConceptDescriptor myConceptGeneratorInternal_String = createDescriptorForGeneratorInternal_String();
   /*package*/ final ConceptDescriptor myConceptMPSTipsAndTricks_Base = createDescriptorForMPSTipsAndTricks_Base();
   /*package*/ final ConceptDescriptor myConceptMPSTipsAndTricks_Img = createDescriptorForMPSTipsAndTricks_Img();
-  /*package*/ final ConceptDescriptor myConceptMPSTipsAndTricks_Line = createDescriptorForMPSTipsAndTricks_Line();
   /*package*/ final ConceptDescriptor myConceptMPSTipsAndTricks_Text = createDescriptorForMPSTipsAndTricks_Text();
   /*package*/ final ConceptDescriptor myConceptMPSTipsAndTricks_Tip = createDescriptorForMPSTipsAndTricks_Tip();
   /*package*/ final ConceptDescriptor myConceptMpsTips = createDescriptorForMpsTips();
@@ -95,7 +91,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptBuildLayout_ToBinaryCopyProcessor, myConceptBuildMPSPlugin, myConceptBuildMpsAspect, myConceptBuildMpsLayout_FolderWithSources, myConceptBuildMpsLayout_ModuleJarContent, myConceptBuildMpsLayout_ModuleJars, myConceptBuildMpsLayout_ModuleSources, myConceptBuildMpsLayout_ModuleXml, myConceptBuildMpsLayout_ModuleXml_CustomJarLocation, myConceptBuildMpsLayout_Plugin, myConceptBuildMpsLayout_PluginDescriptor, myConceptBuildMps_AbstractModule, myConceptBuildMps_Branding, myConceptBuildMps_BrandingCompany, myConceptBuildMps_BrandingHelp, myConceptBuildMps_BrandingKeymap, myConceptBuildMps_BrandingStats, myConceptBuildMps_BrandingUpdateSite, myConceptBuildMps_DevKit, myConceptBuildMps_DevKitExport, myConceptBuildMps_DevKitExportLanguage, myConceptBuildMps_DevKitExportSolution, myConceptBuildMps_DevKitRef, myConceptBuildMps_ExtractedModuleDependency, myConceptBuildMps_Generator, myConceptBuildMps_GeneratorOptions, myConceptBuildMps_GeneratorRef, myConceptBuildMps_Group, myConceptBuildMps_IdeaPlugin, myConceptBuildMps_IdeaPluginContent, myConceptBuildMps_IdeaPluginDependency, myConceptBuildMps_IdeaPluginGroup, myConceptBuildMps_IdeaPluginGroupCustomModule, myConceptBuildMps_IdeaPluginModule, myConceptBuildMps_IdeaPluginVendor, myConceptBuildMps_ImportTips, myConceptBuildMps_ImportTipsPart, myConceptBuildMps_Language, myConceptBuildMps_Module, myConceptBuildMps_ModuleDependency, myConceptBuildMps_ModuleDependencyExtendLanguage, myConceptBuildMps_ModuleDependencyJar, myConceptBuildMps_ModuleDependencyOnDevKit, myConceptBuildMps_ModuleDependencyOnJavaModule, myConceptBuildMps_ModuleDependencyOnModule, myConceptBuildMps_ModuleDependencyUseLanguage, myConceptBuildMps_ModuleJavaSource, myConceptBuildMps_ModuleModelRoot, myConceptBuildMps_ModuleResources, myConceptBuildMps_ModuleRuntime, myConceptBuildMps_ModuleSolutionRuntime, myConceptBuildMps_ModuleSource, myConceptBuildMps_ModuleTestSource, myConceptBuildMps_Solution, myConceptBuildMps_TipsLanguage, myConceptBuildMps_TipsLoad, myConceptGeneratorInternal_BuildMps_Module, myConceptGeneratorInternal_BuildSourcePath, myConceptGeneratorInternal_String, myConceptMPSTipsAndTricks_Base, myConceptMPSTipsAndTricks_Img, myConceptMPSTipsAndTricks_Line, myConceptMPSTipsAndTricks_Text, myConceptMPSTipsAndTricks_Tip, myConceptMpsTips, myConceptMpsTips_Dir, myConceptMpsTips_Import, myConceptMpsTips_Jar, myConceptMpsTips_JarIdeTipsAndTricks, myConceptMpsTips_JarLanguage, myConceptMpsTips_JarPart, myConceptMpsTips_MPS, myConceptMpsTips_Solution);
+    return Arrays.asList(myConceptBuildLayout_ToBinaryCopyProcessor, myConceptBuildMPSPlugin, myConceptBuildMpsAspect, myConceptBuildMpsLayout_FolderWithSources, myConceptBuildMpsLayout_ModuleJarContent, myConceptBuildMpsLayout_ModuleJars, myConceptBuildMpsLayout_ModuleSources, myConceptBuildMpsLayout_ModuleXml, myConceptBuildMpsLayout_ModuleXml_CustomJarLocation, myConceptBuildMpsLayout_Plugin, myConceptBuildMpsLayout_PluginDescriptor, myConceptBuildMps_AbstractModule, myConceptBuildMps_Branding, myConceptBuildMps_BrandingCompany, myConceptBuildMps_BrandingHelp, myConceptBuildMps_BrandingKeymap, myConceptBuildMps_BrandingStats, myConceptBuildMps_BrandingUpdateSite, myConceptBuildMps_DevKit, myConceptBuildMps_DevKitExport, myConceptBuildMps_DevKitExportLanguage, myConceptBuildMps_DevKitExportSolution, myConceptBuildMps_DevKitRef, myConceptBuildMps_ExtractedModuleDependency, myConceptBuildMps_Generator, myConceptBuildMps_GeneratorOptions, myConceptBuildMps_GeneratorRef, myConceptBuildMps_Group, myConceptBuildMps_IdeaPlugin, myConceptBuildMps_IdeaPluginContent, myConceptBuildMps_IdeaPluginDependency, myConceptBuildMps_IdeaPluginGroup, myConceptBuildMps_IdeaPluginGroupCustomModule, myConceptBuildMps_IdeaPluginModule, myConceptBuildMps_IdeaPluginVendor, myConceptBuildMps_ImportTips, myConceptBuildMps_Language, myConceptBuildMps_Module, myConceptBuildMps_ModuleDependency, myConceptBuildMps_ModuleDependencyExtendLanguage, myConceptBuildMps_ModuleDependencyJar, myConceptBuildMps_ModuleDependencyOnDevKit, myConceptBuildMps_ModuleDependencyOnJavaModule, myConceptBuildMps_ModuleDependencyOnModule, myConceptBuildMps_ModuleDependencyUseLanguage, myConceptBuildMps_ModuleJavaSource, myConceptBuildMps_ModuleModelRoot, myConceptBuildMps_ModuleResources, myConceptBuildMps_ModuleRuntime, myConceptBuildMps_ModuleSolutionRuntime, myConceptBuildMps_ModuleSource, myConceptBuildMps_ModuleTestSource, myConceptBuildMps_Solution, myConceptGeneratorInternal_BuildMps_Module, myConceptGeneratorInternal_BuildSourcePath, myConceptGeneratorInternal_String, myConceptMPSTipsAndTricks_Base, myConceptMPSTipsAndTricks_Img, myConceptMPSTipsAndTricks_Text, myConceptMPSTipsAndTricks_Tip, myConceptMpsTips, myConceptMpsTips_Dir, myConceptMpsTips_Import, myConceptMpsTips_Jar, myConceptMpsTips_JarIdeTipsAndTricks, myConceptMpsTips_JarLanguage, myConceptMpsTips_JarPart, myConceptMpsTips_MPS, myConceptMpsTips_Solution);
   }
 
   @Override
@@ -174,8 +170,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptBuildMps_IdeaPluginVendor;
       case LanguageConceptSwitch.BuildMps_ImportTips:
         return myConceptBuildMps_ImportTips;
-      case LanguageConceptSwitch.BuildMps_ImportTipsPart:
-        return myConceptBuildMps_ImportTipsPart;
       case LanguageConceptSwitch.BuildMps_Language:
         return myConceptBuildMps_Language;
       case LanguageConceptSwitch.BuildMps_Module:
@@ -210,10 +204,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptBuildMps_ModuleTestSource;
       case LanguageConceptSwitch.BuildMps_Solution:
         return myConceptBuildMps_Solution;
-      case LanguageConceptSwitch.BuildMps_TipsLanguage:
-        return myConceptBuildMps_TipsLanguage;
-      case LanguageConceptSwitch.BuildMps_TipsLoad:
-        return myConceptBuildMps_TipsLoad;
       case LanguageConceptSwitch.GeneratorInternal_BuildMps_Module:
         return myConceptGeneratorInternal_BuildMps_Module;
       case LanguageConceptSwitch.GeneratorInternal_BuildSourcePath:
@@ -224,8 +214,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptMPSTipsAndTricks_Base;
       case LanguageConceptSwitch.MPSTipsAndTricks_Img:
         return myConceptMPSTipsAndTricks_Img;
-      case LanguageConceptSwitch.MPSTipsAndTricks_Line:
-        return myConceptMPSTipsAndTricks_Line;
       case LanguageConceptSwitch.MPSTipsAndTricks_Text:
         return myConceptMPSTipsAndTricks_Text;
       case LanguageConceptSwitch.MPSTipsAndTricks_Tip:
@@ -645,15 +633,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.mps", "BuildMps_ImportTips", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fded234efL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.build.structure.BuildLayout_Node", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/6818892319992984815");
-    b.aggregate("type", 0x5ea1926fded23519L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fded23518L).optional(false).ordered(true).multiple(false).origin("6818892319992984857").done();
+    b.associate("element", 0x65a11ce3e4101393L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a201d7bcL).optional(true).origin("7323166234190549907").done();
     b.alias("tips of");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForBuildMps_ImportTipsPart() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.mps", "BuildMps_ImportTipsPart", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fded23518L);
-    b.class_(false, true, false);
-    b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/6818892319992984856");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBuildMps_Language() {
@@ -806,23 +789,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("solution");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForBuildMps_TipsLanguage() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.mps", "BuildMps_TipsLanguage", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fded4b3ffL);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.build.mps.structure.BuildMps_ImportTipsPart", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fded23518L);
-    b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/6818892319993148415");
-    b.prop("language", 0x5ea1926fdf00a204L, "6818892319996027396");
-    b.alias("select language");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForBuildMps_TipsLoad() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.mps", "BuildMps_TipsLoad", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fded23529L);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.build.mps.structure.BuildMps_ImportTipsPart", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fded23518L);
-    b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/6818892319992984873");
-    b.alias("load new tip (IdeTipsAndTricks)");
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForGeneratorInternal_BuildMps_Module() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.mps", "GeneratorInternal_BuildMps_Module", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e7771cfL);
     b.class_(false, false, false);
@@ -860,14 +826,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("width", 0x5ea1926fdf49b912L, "6818892320000817426");
     b.prop("height", 0x5ea1926fdf49b914L, "6818892320000817428");
     b.aggregate("source", 0x5ea1926fdf49b917L).target(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0xb8b96b5078f3367L).optional(true).ordered(true).multiple(false).origin("6818892320000817431").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForMPSTipsAndTricks_Line() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.mps", "MPSTipsAndTricks_Line", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fdf38a292L);
-    b.class_(false, false, false);
-    b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/6818892319999697554");
-    b.prop("value", 0x5ea1926fdf38a293L, "6818892319999697555");
-    b.alias("line");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMPSTipsAndTricks_Text() {
@@ -936,7 +894,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.build.mps.structure.MpsTips_JarPart", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2a73eb9bd7074ed1L);
     b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/3059047626474737362");
-    b.prop("language", 0x2a73eb9bd7074ef4L, "3059047626474737396");
     b.alias("language");
     return b.create();
   }
