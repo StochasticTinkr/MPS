@@ -61,7 +61,6 @@
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
-        <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
@@ -1509,88 +1508,6 @@
     </node>
     <node concept="PrWs8" id="6mx7ef$3$pu" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="5Ux$AZvbTf6">
-    <property role="EcuMT" value="6818892319999103942" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.Language" />
-    <property role="TrG5h" value="MPSTipsAndTricks_Base" />
-    <property role="19KtqR" value="true" />
-    <property role="34LRSv" value="Tips And Tricks" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="5Ux$AZvbV$h" role="1TKVEi">
-      <property role="IQ2ns" value="6818892319999113489" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="tips" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="5Ux$AZvbV$g" resolve="MPSTipsAndTricks_Tip" />
-    </node>
-    <node concept="PrWs8" id="5Ux$AZvkVR0" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="5Ux$AZvbV$g">
-    <property role="EcuMT" value="6818892319999113488" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.Language" />
-    <property role="TrG5h" value="MPSTipsAndTricks_Tip" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="5Ux$AZvcAxY" role="1TKVEi">
-      <property role="IQ2ns" value="6818892319999289470" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="text" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="5Ux$AZvcAxW" resolve="MPSTipsAndTricks_Text" />
-    </node>
-    <node concept="1TJgyj" id="5Ux$AZvcAy0" role="1TKVEi">
-      <property role="IQ2ns" value="6818892319999289472" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="img" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="5Ux$AZvcAxX" resolve="MPSTipsAndTricks_Img" />
-    </node>
-    <node concept="PrWs8" id="5Ux$AZvcLcn" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="5Ux$AZvcAxW">
-    <property role="EcuMT" value="6818892319999289468" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.Language" />
-    <property role="TrG5h" value="MPSTipsAndTricks_Text" />
-    <property role="34LRSv" value="text" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="5Ux$AZveaay" role="1TKVEi">
-      <property role="IQ2ns" value="6818892319999697570" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="element" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
-    </node>
-    <node concept="1TJgyi" id="5Ux$AZvg79q" role="1TKVEl">
-      <property role="IQ2nx" value="6818892320000209498" />
-      <property role="TrG5h" value="language" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="5Ux$AZvcAxX">
-    <property role="EcuMT" value="6818892319999289469" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.Language" />
-    <property role="TrG5h" value="MPSTipsAndTricks_Img" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="5Ux$AZvir$i" role="1TKVEl">
-      <property role="IQ2nx" value="6818892320000817426" />
-      <property role="TrG5h" value="width" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="5Ux$AZvir$k" role="1TKVEl">
-      <property role="IQ2nx" value="6818892320000817428" />
-      <property role="TrG5h" value="height" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyj" id="5Ux$AZvir$n" role="1TKVEi">
-      <property role="IQ2ns" value="6818892320000817431" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="source" />
-      <ref role="20lvS9" to="1oap:Ib_Fk7zNdB" resolve="Image" />
     </node>
   </node>
   <node concept="1TIwiD" id="75N6Lqy0tuW">

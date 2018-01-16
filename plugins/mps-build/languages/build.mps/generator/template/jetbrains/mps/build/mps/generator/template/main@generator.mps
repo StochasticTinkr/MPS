@@ -270,9 +270,6 @@
       </concept>
     </language>
     <language id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml">
-      <concept id="6666499814681515200" name="jetbrains.mps.core.xml.structure.XmlFile" flags="ng" index="2pMbU2">
-        <child id="6666499814681515201" name="document" index="2pMbU3" />
-      </concept>
       <concept id="6666499814681541919" name="jetbrains.mps.core.xml.structure.XmlTextValue" flags="ng" index="2pMdtt">
         <property id="6666499814681541920" name="text" index="2pMdty" />
       </concept>
@@ -291,9 +288,6 @@
       </concept>
       <concept id="1622293396948952339" name="jetbrains.mps.core.xml.structure.XmlText" flags="nn" index="3o6iSG">
         <property id="1622293396948953704" name="value" index="3o6i5n" />
-      </concept>
-      <concept id="6786756355279841993" name="jetbrains.mps.core.xml.structure.XmlDocument" flags="ng" index="3rIKKV">
-        <child id="6666499814681299055" name="rootElement" index="2pNm8H" />
       </concept>
       <concept id="3080189811177215998" name="jetbrains.mps.core.xml.structure.XmlCharRefValue" flags="nn" index="1_gtYI">
         <property id="3080189811177216006" name="charCode" index="1_gt1m" />
@@ -335,7 +329,6 @@
         <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4" />
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh">
         <reference id="1200911342686" name="sourceConcept" index="2rTdP9" />
@@ -17065,6 +17058,65 @@
       <node concept="2VaFvH" id="75N6LqyiwhU" role="2VaFvJ">
         <property role="TrG5h" value="import_from_dir" />
         <node concept="2Vbh7Z" id="6mx7ef$qAfc" role="2VaTZU">
+          <node concept="2pNNFK" id="6mx7ef$qAfD" role="2Vbh7K">
+            <property role="2pNNFO" value="mkdir" />
+            <property role="qg3DV" value="true" />
+            <node concept="2pNUuL" id="6mx7ef$qAfE" role="2pNNFR">
+              <property role="2pNUuO" value="dir" />
+              <node concept="2pMdtt" id="6mx7ef$qAfF" role="2pMdts">
+                <property role="2pMdty" value="dir" />
+                <node concept="17Uvod" id="5qlPEM9XLil" role="lGtFl">
+                  <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
+                  <property role="2qtEX9" value="text" />
+                  <node concept="3zFVjK" id="5qlPEM9XLim" role="3zH0cK">
+                    <node concept="3clFbS" id="5qlPEM9XLin" role="2VODD2">
+                      <node concept="3clFbJ" id="5qlPEM9XMuJ" role="3cqZAp">
+                        <node concept="3clFbS" id="5qlPEM9XMuL" role="3clFbx">
+                          <node concept="3cpWs6" id="5qlPEM9XPIv" role="3cqZAp">
+                            <node concept="Xl_RD" id="5qlPEM9XQaQ" role="3cqZAk">
+                              <property role="Xl_RC" value="${build.tmp}/default/mps-tips_en_jar/tips" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="5qlPEM9XNT3" role="3clFbw">
+                          <node concept="2OqwBi" id="5qlPEM9XMP$" role="2Oq$k0">
+                            <node concept="30H73N" id="5qlPEM9XMBy" role="2Oq$k0" />
+                            <node concept="3TrcHB" id="5qlPEM9XNc0" role="2OqNvi">
+                              <ref role="3TsBF5" to="kdzh:4reBHdWN7OI" resolve="language" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="5qlPEM9XOvK" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <node concept="Xl_RD" id="5qlPEM9XP0C" role="37wK5m">
+                              <property role="Xl_RC" value="en" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="9aQIb" id="5qlPEM9XQNP" role="9aQIa">
+                          <node concept="3clFbS" id="5qlPEM9XQNQ" role="9aQI4">
+                            <node concept="3cpWs6" id="5qlPEM9XR00" role="3cqZAp">
+                              <node concept="3cpWs3" id="5qlPEM9XSYS" role="3cqZAk">
+                                <node concept="2OqwBi" id="5qlPEM9XUmA" role="3uHU7w">
+                                  <node concept="30H73N" id="5qlPEM9XTbt" role="2Oq$k0" />
+                                  <node concept="3TrcHB" id="5qlPEM9XURH" role="2OqNvi">
+                                    <ref role="3TsBF5" to="kdzh:4reBHdWN7OI" resolve="language" />
+                                  </node>
+                                </node>
+                                <node concept="Xl_RD" id="5qlPEM9XLqQ" role="3uHU7B">
+                                  <property role="Xl_RC" value="${build.tmp}/default/mps-tips_en_jar/tips_" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbH" id="5qlPEM9XSZ2" role="3cqZAp" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="1WS0z7" id="5qlPEM9XKNJ" role="lGtFl">
             <node concept="3JmXsc" id="5qlPEM9XKNM" role="3Jn$fo">
               <node concept="3clFbS" id="5qlPEM9XKNN" role="2VODD2">
@@ -17143,56 +17195,71 @@
               </node>
             </node>
           </node>
-          <node concept="2pNNFK" id="6mx7ef$qAfD" role="2Vbh7K">
-            <property role="2pNNFO" value="mkdir" />
-            <property role="qg3DV" value="true" />
-            <node concept="2pNUuL" id="6mx7ef$qAfE" role="2pNNFR">
-              <property role="2pNUuO" value="dir" />
-              <node concept="2pMdtt" id="6mx7ef$qAfF" role="2pMdts">
-                <property role="2pMdty" value="dir" />
-                <node concept="17Uvod" id="5qlPEM9XLil" role="lGtFl">
+        </node>
+        <node concept="2Vbh7Z" id="6mx7ef$s1TC" role="2VaTZU">
+          <node concept="2pNNFK" id="6mx7ef$s2_j" role="2Vbh7K">
+            <property role="2pNNFO" value="copy" />
+            <node concept="2pNNFK" id="6mx7ef$s2_$" role="3o6s8t">
+              <property role="2pNNFO" value="fileset" />
+              <node concept="2pNUuL" id="6mx7ef$s2_H" role="2pNNFR">
+                <property role="2pNUuO" value="dir" />
+                <node concept="2pMdtt" id="6mx7ef$s2_J" role="2pMdts">
+                  <property role="2pMdty" value="${build.tmp}/default/resources_en_jar/tips/css" />
+                </node>
+              </node>
+            </node>
+            <node concept="2pNUuL" id="6mx7ef$s2_n" role="2pNNFR">
+              <property role="2pNUuO" value="todir" />
+              <node concept="2pMdtt" id="6mx7ef$s2_p" role="2pMdts">
+                <property role="2pMdty" value="dir/css" />
+                <node concept="17Uvod" id="5qlPEM9XZwR" role="lGtFl">
                   <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
                   <property role="2qtEX9" value="text" />
-                  <node concept="3zFVjK" id="5qlPEM9XLim" role="3zH0cK">
-                    <node concept="3clFbS" id="5qlPEM9XLin" role="2VODD2">
-                      <node concept="3clFbJ" id="5qlPEM9XMuJ" role="3cqZAp">
-                        <node concept="3clFbS" id="5qlPEM9XMuL" role="3clFbx">
-                          <node concept="3cpWs6" id="5qlPEM9XPIv" role="3cqZAp">
-                            <node concept="Xl_RD" id="5qlPEM9XQaQ" role="3cqZAk">
-                              <property role="Xl_RC" value="${build.tmp}/default/mps-tips_en_jar/tips" />
+                  <node concept="3zFVjK" id="5qlPEM9XZwS" role="3zH0cK">
+                    <node concept="3clFbS" id="5qlPEM9XZwT" role="2VODD2">
+                      <node concept="3clFbJ" id="5qlPEM9XZDl" role="3cqZAp">
+                        <node concept="3clFbS" id="5qlPEM9XZDm" role="3clFbx">
+                          <node concept="3cpWs6" id="5qlPEM9XZDn" role="3cqZAp">
+                            <node concept="Xl_RD" id="5qlPEM9XZDo" role="3cqZAk">
+                              <property role="Xl_RC" value="${build.tmp}/default/mps-tips_en_jar/tips/css" />
                             </node>
                           </node>
                         </node>
-                        <node concept="2OqwBi" id="5qlPEM9XNT3" role="3clFbw">
-                          <node concept="2OqwBi" id="5qlPEM9XMP$" role="2Oq$k0">
-                            <node concept="30H73N" id="5qlPEM9XMBy" role="2Oq$k0" />
-                            <node concept="3TrcHB" id="5qlPEM9XNc0" role="2OqNvi">
+                        <node concept="2OqwBi" id="5qlPEM9XZDp" role="3clFbw">
+                          <node concept="2OqwBi" id="5qlPEM9XZDq" role="2Oq$k0">
+                            <node concept="30H73N" id="5qlPEM9XZDr" role="2Oq$k0" />
+                            <node concept="3TrcHB" id="5qlPEM9XZDs" role="2OqNvi">
                               <ref role="3TsBF5" to="kdzh:4reBHdWN7OI" resolve="language" />
                             </node>
                           </node>
-                          <node concept="liA8E" id="5qlPEM9XOvK" role="2OqNvi">
+                          <node concept="liA8E" id="5qlPEM9XZDt" role="2OqNvi">
                             <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                            <node concept="Xl_RD" id="5qlPEM9XP0C" role="37wK5m">
+                            <node concept="Xl_RD" id="5qlPEM9XZDu" role="37wK5m">
                               <property role="Xl_RC" value="en" />
                             </node>
                           </node>
                         </node>
-                        <node concept="9aQIb" id="5qlPEM9XQNP" role="9aQIa">
-                          <node concept="3clFbS" id="5qlPEM9XQNQ" role="9aQI4">
-                            <node concept="3cpWs6" id="5qlPEM9XR00" role="3cqZAp">
-                              <node concept="3cpWs3" id="5qlPEM9XSYS" role="3cqZAk">
-                                <node concept="2OqwBi" id="5qlPEM9XUmA" role="3uHU7w">
-                                  <node concept="30H73N" id="5qlPEM9XTbt" role="2Oq$k0" />
-                                  <node concept="3TrcHB" id="5qlPEM9XURH" role="2OqNvi">
-                                    <ref role="3TsBF5" to="kdzh:4reBHdWN7OI" resolve="language" />
-                                  </node>
+                        <node concept="9aQIb" id="5qlPEM9XZDv" role="9aQIa">
+                          <node concept="3clFbS" id="5qlPEM9XZDw" role="9aQI4">
+                            <node concept="3cpWs6" id="5qlPEM9XZDx" role="3cqZAp">
+                              <node concept="3cpWs3" id="5qlPEM9Y1Qg" role="3cqZAk">
+                                <node concept="Xl_RD" id="5qlPEM9Y27E" role="3uHU7w">
+                                  <property role="Xl_RC" value="/css" />
                                 </node>
-                                <node concept="Xl_RD" id="5qlPEM9XLqQ" role="3uHU7B">
-                                  <property role="Xl_RC" value="${build.tmp}/default/mps-tips_en_jar/tips_" />
+                                <node concept="3cpWs3" id="5qlPEM9XZDy" role="3uHU7B">
+                                  <node concept="Xl_RD" id="5qlPEM9XZDA" role="3uHU7B">
+                                    <property role="Xl_RC" value="${build.tmp}/default/mps-tips_en_jar/tips_" />
+                                  </node>
+                                  <node concept="2OqwBi" id="5qlPEM9XZDz" role="3uHU7w">
+                                    <node concept="30H73N" id="5qlPEM9XZD$" role="2Oq$k0" />
+                                    <node concept="3TrcHB" id="5qlPEM9XZD_" role="2OqNvi">
+                                      <ref role="3TsBF5" to="kdzh:4reBHdWN7OI" resolve="language" />
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
-                            <node concept="3clFbH" id="5qlPEM9XSZ2" role="3cqZAp" />
+                            <node concept="3clFbH" id="5qlPEM9XZDB" role="3cqZAp" />
                           </node>
                         </node>
                       </node>
@@ -17202,8 +17269,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node concept="2Vbh7Z" id="6mx7ef$s1TC" role="2VaTZU">
           <node concept="1WS0z7" id="5qlPEM9XYLd" role="lGtFl">
             <node concept="3JmXsc" id="5qlPEM9XYLg" role="3Jn$fo">
               <node concept="3clFbS" id="5qlPEM9XYLh" role="2VODD2">
@@ -17277,78 +17342,6 @@
                 <node concept="3cpWs6" id="5qlPEM9XYYh" role="3cqZAp">
                   <node concept="37vLTw" id="5qlPEM9XYYi" role="3cqZAk">
                     <ref role="3cqZAo" node="5qlPEM9XYXP" resolve="tips" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2pNNFK" id="6mx7ef$s2_j" role="2Vbh7K">
-            <property role="2pNNFO" value="copy" />
-            <node concept="2pNNFK" id="6mx7ef$s2_$" role="3o6s8t">
-              <property role="2pNNFO" value="fileset" />
-              <node concept="2pNUuL" id="6mx7ef$s2_H" role="2pNNFR">
-                <property role="2pNUuO" value="dir" />
-                <node concept="2pMdtt" id="6mx7ef$s2_J" role="2pMdts">
-                  <property role="2pMdty" value="${build.tmp}/default/resources_en_jar/tips/css" />
-                </node>
-              </node>
-            </node>
-            <node concept="2pNUuL" id="6mx7ef$s2_n" role="2pNNFR">
-              <property role="2pNUuO" value="todir" />
-              <node concept="2pMdtt" id="6mx7ef$s2_p" role="2pMdts">
-                <property role="2pMdty" value="dir/css" />
-                <node concept="17Uvod" id="5qlPEM9XZwR" role="lGtFl">
-                  <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
-                  <property role="2qtEX9" value="text" />
-                  <node concept="3zFVjK" id="5qlPEM9XZwS" role="3zH0cK">
-                    <node concept="3clFbS" id="5qlPEM9XZwT" role="2VODD2">
-                      <node concept="3clFbJ" id="5qlPEM9XZDl" role="3cqZAp">
-                        <node concept="3clFbS" id="5qlPEM9XZDm" role="3clFbx">
-                          <node concept="3cpWs6" id="5qlPEM9XZDn" role="3cqZAp">
-                            <node concept="Xl_RD" id="5qlPEM9XZDo" role="3cqZAk">
-                              <property role="Xl_RC" value="${build.tmp}/default/mps-tips_en_jar/tips/css" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="2OqwBi" id="5qlPEM9XZDp" role="3clFbw">
-                          <node concept="2OqwBi" id="5qlPEM9XZDq" role="2Oq$k0">
-                            <node concept="30H73N" id="5qlPEM9XZDr" role="2Oq$k0" />
-                            <node concept="3TrcHB" id="5qlPEM9XZDs" role="2OqNvi">
-                              <ref role="3TsBF5" to="kdzh:4reBHdWN7OI" resolve="language" />
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="5qlPEM9XZDt" role="2OqNvi">
-                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                            <node concept="Xl_RD" id="5qlPEM9XZDu" role="37wK5m">
-                              <property role="Xl_RC" value="en" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="9aQIb" id="5qlPEM9XZDv" role="9aQIa">
-                          <node concept="3clFbS" id="5qlPEM9XZDw" role="9aQI4">
-                            <node concept="3cpWs6" id="5qlPEM9XZDx" role="3cqZAp">
-                              <node concept="3cpWs3" id="5qlPEM9Y1Qg" role="3cqZAk">
-                                <node concept="Xl_RD" id="5qlPEM9Y27E" role="3uHU7w">
-                                  <property role="Xl_RC" value="/css" />
-                                </node>
-                                <node concept="3cpWs3" id="5qlPEM9XZDy" role="3uHU7B">
-                                  <node concept="Xl_RD" id="5qlPEM9XZDA" role="3uHU7B">
-                                    <property role="Xl_RC" value="${build.tmp}/default/mps-tips_en_jar/tips_" />
-                                  </node>
-                                  <node concept="2OqwBi" id="5qlPEM9XZDz" role="3uHU7w">
-                                    <node concept="30H73N" id="5qlPEM9XZD$" role="2Oq$k0" />
-                                    <node concept="3TrcHB" id="5qlPEM9XZD_" role="2OqNvi">
-                                      <ref role="3TsBF5" to="kdzh:4reBHdWN7OI" resolve="language" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3clFbH" id="5qlPEM9XZDB" role="3cqZAp" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
                   </node>
                 </node>
               </node>
@@ -17942,47 +17935,6 @@
         </node>
       </node>
     </node>
-  </node>
-  <node concept="2pMbU2" id="6mx7ef$mHLO">
-    <property role="TrG5h" value="reduce_BuildMps_Language" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.Language" />
-    <node concept="3rIKKV" id="6mx7ef$mHLP" role="2pMbU3">
-      <node concept="2pNNFK" id="6mx7ef$nS10" role="2pNm8H">
-        <property role="2pNNFO" value="html" />
-        <node concept="3o6iSG" id="6mx7ef$p41d" role="3o6s8t" />
-        <node concept="2pNNFK" id="6mx7ef$p41m" role="3o6s8t">
-          <property role="2pNNFO" value="link" />
-          <property role="qg3DV" value="true" />
-          <node concept="2pNUuL" id="6mx7ef$p41$" role="2pNNFR">
-            <property role="2pNUuO" value="rel" />
-            <node concept="2pMdtt" id="6mx7ef$p41A" role="2pMdts">
-              <property role="2pMdty" value="stylesheet" />
-            </node>
-          </node>
-          <node concept="2pNUuL" id="6mx7ef$p41E" role="2pNNFR">
-            <property role="2pNUuO" value="type" />
-            <node concept="2pMdtt" id="6mx7ef$p41I" role="2pMdts">
-              <property role="2pMdty" value="text/css" />
-            </node>
-          </node>
-          <node concept="2pNUuL" id="6mx7ef$p41M" role="2pNNFR">
-            <property role="2pNUuO" value="href" />
-            <node concept="2pMdtt" id="6mx7ef$p41S" role="2pMdts">
-              <property role="2pMdty" value="css/tips.css" />
-            </node>
-          </node>
-        </node>
-        <node concept="3o6iSG" id="6mx7ef$p41i" role="3o6s8t" />
-        <node concept="3o6iSG" id="6mx7ef$p4UR" role="3o6s8t">
-          <property role="3o6i5n" value="//tohle je cele spatne a musi se predelat" />
-        </node>
-        <node concept="3o6iSG" id="6mx7ef$p4V2" role="3o6s8t" />
-        <node concept="3o6iSG" id="6mx7ef$p4Ve" role="3o6s8t">
-          <property role="3o6i5n" value="//zjistit kam dat TipsAndTricks language" />
-        </node>
-      </node>
-    </node>
-    <node concept="n94m4" id="6mx7ef$mHLR" role="lGtFl" />
   </node>
 </model>
 

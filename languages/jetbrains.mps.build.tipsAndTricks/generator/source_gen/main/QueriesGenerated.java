@@ -48,7 +48,12 @@ public class QueriesGenerated {
 
   }
   public static Object propertyMacro_GetPropertyValue_6239128895329048557(final PropertyMacroContext _context) {
-    return "${build.tmp}/default/mps-tips_en_jar/tips_" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf32687cL, 0x5ea1926fdf40725aL, "language")) + "/css";
+    if (SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf32687cL, 0x5ea1926fdf40725aL, "language")).equals("en")) {
+      return "${build.tmp}/default/mps-tips_en_jar/tips/css";
+    } else {
+      return "${build.tmp}/default/mps-tips_en_jar/tips_" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf32687cL, 0x5ea1926fdf40725aL, "language")) + "/css";
+    }
+
   }
   public static Object propertyMacro_GetPropertyValue_6239128895326520559(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -60,7 +65,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf2fb910L, "jetbrains.mps.build.tipsAndTricks.structure.MPSTipsAndTricks_Tip")), MetaAdapterFactory.getContainmentLink(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf2fb910L, 0x5ea1926fdf326880L, "img")), MetaAdapterFactory.getProperty(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf32687dL, 0x5ea1926fdf49b912L, "width"));
   }
   public static Object propertyMacro_GetPropertyValue_6239128895328113521(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf2fb910L, "jetbrains.mps.build.tipsAndTricks.structure.MPSTipsAndTricks_Tip")), MetaAdapterFactory.getContainmentLink(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf2fb910L, 0x5ea1926fdf326880L, "img")), MetaAdapterFactory.getContainmentLink(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf32687dL, 0x5ea1926fdf49b917L, "source")), MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0xb8b96b5078f3367L, 0xb8b96b5078f33bbL, "file"));
+    String path = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf2fb910L, "jetbrains.mps.build.tipsAndTricks.structure.MPSTipsAndTricks_Tip")), MetaAdapterFactory.getContainmentLink(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf2fb910L, 0x5ea1926fdf326880L, "img")), MetaAdapterFactory.getContainmentLink(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf32687dL, 0x5ea1926fdf49b917L, "source")), MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0xb8b96b5078f3367L, 0xb8b96b5078f33bbL, "file"));
+    int index = path.lastIndexOf("/");
+    return "images" + path.substring(index);
+
   }
   public static Object propertyMacro_GetPropertyValue_6239128895328124563(final PropertyMacroContext _context) {
     if (SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf32687cL, 0x5ea1926fdf40725aL, "language")).equals("en")) {
@@ -70,7 +78,7 @@ public class QueriesGenerated {
     }
   }
   public static boolean ifMacro_Condition_6239128895328113474(final IfMacroContext _context) {
-    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf2fb910L, "jetbrains.mps.build.tipsAndTricks.structure.MPSTipsAndTricks_Tip")), MetaAdapterFactory.getContainmentLink(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf2fb910L, 0x5ea1926fdf326880L, "img")), MetaAdapterFactory.getProperty(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf32687dL, 0x5ea1926fdf49b912L, "width")));
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf2fb910L, "jetbrains.mps.build.tipsAndTricks.structure.MPSTipsAndTricks_Tip")), MetaAdapterFactory.getContainmentLink(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf2fb910L, 0x5ea1926fdf326880L, "img")), MetaAdapterFactory.getProperty(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf32687dL, 0x5ea1926fdf49b914L, "height")));
   }
   public static boolean ifMacro_Condition_6239128895328113504(final IfMacroContext _context) {
     return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf2fb910L, "jetbrains.mps.build.tipsAndTricks.structure.MPSTipsAndTricks_Tip")), MetaAdapterFactory.getContainmentLink(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf2fb910L, 0x5ea1926fdf326880L, "img")), MetaAdapterFactory.getProperty(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf32687dL, 0x5ea1926fdf49b912L, "width")));
