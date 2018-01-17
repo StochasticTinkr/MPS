@@ -5925,8 +5925,14 @@
         <property role="3F0ifm" value="import from" />
         <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
       </node>
-      <node concept="3F0ifn" id="75N6LqycVfr" role="3EZMnx">
-        <property role="3F0ifm" value="//todo solution link" />
+      <node concept="1iCGBv" id="5J862cnMvcy" role="3EZMnx">
+        <ref role="1NtTu8" to="kdzh:5J862cnMvcw" resolve="element" />
+        <node concept="1sVBvm" id="5J862cnMvc$" role="1sWHZn">
+          <node concept="3F0A7n" id="5J862cnMvcG" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
       </node>
       <node concept="l2Vlx" id="7cgc9gF36YS" role="2iSdaV" />
     </node>

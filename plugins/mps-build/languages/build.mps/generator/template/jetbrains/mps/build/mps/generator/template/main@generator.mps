@@ -17536,6 +17536,27 @@
       </node>
       <node concept="2VaFvH" id="5qlPEM9W9aE" role="2VaFvJ">
         <property role="TrG5h" value="generated_tips" />
+        <node concept="1WS0z7" id="5J862cnO$P6" role="lGtFl">
+          <node concept="3JmXsc" id="5J862cnO$Ph" role="3Jn$fo">
+            <node concept="3clFbS" id="5J862cnO$Ps" role="2VODD2">
+              <node concept="3clFbF" id="5J862cnO$Uu" role="3cqZAp">
+                <node concept="2OqwBi" id="5J862cnOANZ" role="3clFbG">
+                  <node concept="2OqwBi" id="5J862cnO_6r" role="2Oq$k0">
+                    <node concept="30H73N" id="5J862cnO$Ut" role="2Oq$k0" />
+                    <node concept="3Tsc0h" id="5J862cnO_iJ" role="2OqNvi">
+                      <ref role="3TtcxE" to="kdzh:75N6Lqya9An" resolve="tips" />
+                    </node>
+                  </node>
+                  <node concept="v3k3i" id="5J862cnOD9y" role="2OqNvi">
+                    <node concept="chp4Y" id="5J862cnODhd" role="v3oSu">
+                      <ref role="cht4Q" to="kdzh:75N6LqycVf4" resolve="BuildMps_TipsSolution" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="2Vbh7Z" id="5qlPEM9W9NS" role="2VaTZU">
           <node concept="2pNNFK" id="5qlPEM9W9NY" role="2Vbh7K">
             <property role="2pNNFO" value="ant" />
