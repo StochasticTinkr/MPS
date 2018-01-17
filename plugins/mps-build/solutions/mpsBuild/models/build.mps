@@ -279,12 +279,6 @@
       </concept>
     </language>
     <language id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps">
-      <concept id="6818892319992984815" name="jetbrains.mps.build.mps.structure.BuildMps_ImportTips" flags="ng" index="20sUq0">
-        <child id="6818892319992984857" name="type" index="20sUtQ" />
-      </concept>
-      <concept id="6818892319993148415" name="jetbrains.mps.build.mps.structure.BuildMps_TipsLanguage" flags="ng" index="20ti6g">
-        <property id="6818892319996027396" name="language" index="21Cj1F" />
-      </concept>
       <concept id="6503355885715333289" name="jetbrains.mps.build.mps.structure.BuildMpsAspect" flags="ng" index="2igEWh">
         <property id="6503355885715353788" name="bootstrap" index="2igJW4" />
       </concept>
@@ -20126,11 +20120,6 @@
               <property role="2$htTY" value="\5" />
               <property role="2$htTZ" value="(.*)(/|\\)(src|sources|source|source_gen|source-api)(/|\\)(.*)" />
             </node>
-          </node>
-        </node>
-        <node concept="20sUq0" id="4lVkHd1ABrm" role="39821P">
-          <node concept="20ti6g" id="4lVkHd1ABrI" role="20sUtQ">
-            <property role="21Cj1F" value="ru" />
           </node>
         </node>
       </node>
