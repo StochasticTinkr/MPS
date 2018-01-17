@@ -670,6 +670,7 @@
             <property role="2pNNFO" value="copy" />
             <node concept="2pNNFK" id="6mx7ef$s2_$" role="3o6s8t">
               <property role="2pNNFO" value="fileset" />
+              <property role="qg3DV" value="true" />
               <node concept="2pNUuL" id="6mx7ef$s2_H" role="2pNNFR">
                 <property role="2pNUuO" value="dir" />
                 <node concept="2pMdtt" id="6mx7ef$s2_J" role="2pMdts">
