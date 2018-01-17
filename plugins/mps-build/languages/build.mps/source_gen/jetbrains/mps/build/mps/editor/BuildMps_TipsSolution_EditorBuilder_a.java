@@ -46,6 +46,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createConstant_nodppr_a0());
     editorCell.addEditorCell(createRefCell_nodppr_b0());
+    editorCell.addEditorCell(createConstant_nodppr_c0());
     return editorCell;
   }
   private EditorCell createConstant_nodppr_a0() {
@@ -126,5 +127,11 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
       } else
       return editorCell;
     }
+  }
+  private EditorCell createConstant_nodppr_c0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "//todo here should be a path");
+    editorCell.setCellId("Constant_nodppr_c0");
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 }
