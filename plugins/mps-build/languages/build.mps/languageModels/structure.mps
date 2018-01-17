@@ -1562,6 +1562,13 @@
     <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
     <property role="TrG5h" value="BuildMps_TipsSolution" />
     <ref role="1TJDcQ" node="75N6Lqya9Am" resolve="BuildMps_TipsImport" />
+    <node concept="1TJgyj" id="7uJAFPqNf3a" role="1TKVEi">
+      <property role="IQ2ns" value="8624281949500666058" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="path" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
     <node concept="1TJgyj" id="5J862cnMvcw" role="1TKVEi">
       <property role="IQ2ns" value="6613562591795606304" />
       <property role="20lmBu" value="reference" />

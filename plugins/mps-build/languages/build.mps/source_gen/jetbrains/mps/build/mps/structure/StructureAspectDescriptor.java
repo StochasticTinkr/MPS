@@ -848,6 +848,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.build.mps.structure.BuildMps_TipsImport", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a2289996L);
     b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/8174907532632110020");
     b.associate("element", 0x5bc8182317c9f320L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L).optional(true).origin("6613562591795606304").done();
+    b.aggregate("path", 0x77af9abd5accf0caL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(true).ordered(true).multiple(false).origin("8624281949500666058").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGeneratorInternal_BuildMps_Module() {

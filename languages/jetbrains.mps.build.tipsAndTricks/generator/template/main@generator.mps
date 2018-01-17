@@ -466,7 +466,7 @@
           <node concept="2pNUuL" id="5qlPEM9RQPx" role="2pNNFR">
             <property role="2pNUuO" value="name" />
             <node concept="2pMdtt" id="5qlPEM9RQPz" role="2pMdts">
-              <property role="2pMdty" value="copy_tips" />
+              <property role="2pMdty" value="tips_copy_generated" />
             </node>
           </node>
         </node>
@@ -653,7 +653,7 @@
           <node concept="2pNUuL" id="5qlPEM9TmP0" role="2pNNFR">
             <property role="2pNUuO" value="name" />
             <node concept="2pMdtt" id="5qlPEM9TmP1" role="2pMdts">
-              <property role="2pMdty" value="copy_images" />
+              <property role="2pMdty" value="tips_copy_images" />
             </node>
           </node>
         </node>
@@ -761,7 +761,7 @@
           <node concept="2pNUuL" id="5qlPEM9Xynq" role="2pNNFR">
             <property role="2pNUuO" value="name" />
             <node concept="2pMdtt" id="5qlPEM9Xynr" role="2pMdts">
-              <property role="2pMdty" value="copy_css" />
+              <property role="2pMdty" value="tips_copy_css" />
             </node>
           </node>
         </node>
@@ -778,7 +778,7 @@
           <node concept="2pNUuL" id="5qlPEM9Thz4" role="2pNNFR">
             <property role="2pNUuO" value="depends" />
             <node concept="2pMdtt" id="5qlPEM9Ti5i" role="2pMdts">
-              <property role="2pMdty" value="copy_tips, copy_images, copy_css" />
+              <property role="2pMdty" value="tips_copy_generated, tips_copy_images, tips_copy_css" />
             </node>
           </node>
         </node>

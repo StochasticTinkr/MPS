@@ -5789,7 +5789,7 @@
           <property role="Vbekb" value="BOLD" />
         </node>
         <node concept="VechU" id="6mx7ef$BuGV" role="3F10Kt">
-          <property role="Vb096" value="DARK_GREEN" />
+          <property role="Vb096" value="DARK_BLUE" />
         </node>
       </node>
       <node concept="3F0ifn" id="6mx7ef$41e8" role="3EZMnx">
@@ -5931,11 +5931,17 @@
           <node concept="3F0A7n" id="5J862cnMvcG" role="2wV5jI">
             <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            <node concept="Vb9p2" id="7uJAFPqOn4X" role="3F10Kt">
+              <property role="Vbekb" value="BOLD" />
+            </node>
+            <node concept="VechU" id="7uJAFPqOn52" role="3F10Kt">
+              <property role="Vb096" value="DARK_MAGENTA" />
+            </node>
           </node>
         </node>
       </node>
-      <node concept="3F0ifn" id="4FAOcOjm3Py" role="3EZMnx">
-        <property role="3F0ifm" value="//todo here should be a path" />
+      <node concept="3F1sOY" id="7uJAFPqNf3k" role="3EZMnx">
+        <ref role="1NtTu8" to="kdzh:7uJAFPqNf3a" resolve="path" />
       </node>
       <node concept="l2Vlx" id="7cgc9gF36YS" role="2iSdaV" />
     </node>
