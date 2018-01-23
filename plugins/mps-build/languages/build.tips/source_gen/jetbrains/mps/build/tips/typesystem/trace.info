@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="TypesystemDescriptor.java">
+      <unit at="8,0,20,0" name="jetbrains.mps.build.tips.typesystem.TypesystemDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:892a2f4e-aabc-44a3-80c6-278efca377d5(jetbrains.mps.build.tips.typesystem)/1251021802701236048">
+    <file name="check_MPSTipsAndTricks_Text_NonTypesystemRule.java">
+      <node id="1251021802701498437" at="20,134,21,203" concept="5" />
+      <node id="1251021802701489131" at="21,203,22,0" concept="7" />
+      <node id="1251021802701266902" at="25,9,26,62" concept="5" />
+      <node id="1251021802701266902" at="26,62,27,263" concept="5" />
+      <node id="1251021802701236048" at="32,50,33,164" concept="6" />
+      <node id="1251021802701236048" at="35,68,36,102" concept="6" />
+      <node id="1251021802701236048" at="38,30,39,17" concept="6" />
+      <node id="1251021802701236048" at="18,0,20,0" concept="1" trace="check_MPSTipsAndTricks_Text_NonTypesystemRule#()V" />
+      <node id="1251021802701236048" at="32,0,35,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1251021802701236048" at="35,0,38,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1251021802701236048" at="38,0,41,0" concept="4" trace="overrides#()Z" />
+      <node id="1251021802701266902" at="24,123,28,9" concept="0" />
+      <node id="1251021802701238097" at="23,54,29,7" concept="3" />
+      <node id="1251021802702775778" at="22,0,30,5" concept="3" />
+      <node id="1251021802701236048" at="20,0,32,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1251021802701236048" at="18,58,18,58" />
+      <scope id="1251021802701236048" at="32,50,33,164" />
+      <scope id="1251021802701236048" at="35,68,36,102" />
+      <scope id="1251021802701236048" at="38,30,39,17" />
+      <scope id="1251021802701236048" at="18,0,20,0" />
+      <scope id="1251021802701266902" at="25,9,27,263">
+        <var name="_reporter_2309309498" id="1251021802701266902" />
+        <var name="errorTarget" id="1251021802701266902" />
+      </scope>
+      <scope id="1251021802701236048" at="32,0,35,0" />
+      <scope id="1251021802701236048" at="35,0,38,0">
+        <var name="argument" id="1251021802701236048" />
+      </scope>
+      <scope id="1251021802701236048" at="38,0,41,0" />
+      <scope id="1251021802701238099" at="24,123,28,9" />
+      <scope id="1251021802702775780" at="23,54,29,7" />
+      <scope id="1251021802701236049" at="20,134,30,5">
+        <var name="language" id="1251021802701498438" />
+      </scope>
+      <scope id="1251021802701236048" at="20,0,32,0">
+        <var name="mpsTipsAndTricks_Text" id="1251021802701236048" />
+        <var name="status" id="1251021802701236048" />
+        <var name="typeCheckingContext" id="1251021802701236048" />
+      </scope>
+      <unit id="1251021802701236048" at="17,0,42,0" name="jetbrains.mps.build.tips.typesystem.check_MPSTipsAndTricks_Text_NonTypesystemRule" />
+    </file>
+  </root>
+  <root nodeRef="r:892a2f4e-aabc-44a3-80c6-278efca377d5(jetbrains.mps.build.tips.typesystem)/1251021802701816029">
+    <file name="check_MPSTipsAndTricks_Tip_NonTypesystemRule.java">
+      <node id="6635588517498950022" at="25,133,26,204" concept="5" />
+      <node id="1251021802701821252" at="29,9,30,62" concept="5" />
+      <node id="1251021802701821252" at="30,62,31,257" concept="5" />
+      <node id="6635588517498631965" at="36,39,37,190" concept="6" />
+      <node id="6635588517498632783" at="41,9,42,62" concept="5" />
+      <node id="6635588517498632783" at="42,62,43,233" concept="5" />
+      <node id="6635588517499020761" at="50,11,51,64" concept="5" />
+      <node id="6635588517499020761" at="51,64,52,234" concept="5" />
+      <node id="1251021802701816029" at="58,50,59,163" concept="6" />
+      <node id="1251021802701816029" at="61,68,62,102" concept="6" />
+      <node id="1251021802701816029" at="64,30,65,17" concept="6" />
+      <node id="1251021802702086268" at="67,55,68,43" concept="6" />
+      <node id="1251021802701816029" at="23,0,25,0" concept="1" trace="check_MPSTipsAndTricks_Tip_NonTypesystemRule#()V" />
+      <node id="6635588517498631963" at="36,0,39,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1251021802701816029" at="58,0,61,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1251021802701816029" at="61,0,64,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1251021802701816029" at="64,0,67,0" concept="4" trace="overrides#()Z" />
+      <node id="1251021802702086268" at="67,0,70,0" concept="8" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <node id="1251021802701821252" at="28,192,32,9" concept="0" />
+      <node id="6635588517498632783" at="40,31,44,9" concept="0" />
+      <node id="6635588517499020761" at="49,350,53,11" concept="0" />
+      <node id="1251021802701816036" at="27,194,33,7" concept="3" />
+      <node id="6635588517498825615" at="39,10,45,7" concept="2" />
+      <node id="6635588517499011145" at="48,260,54,9" concept="3" />
+      <node id="1251021802702080424" at="26,204,34,5" concept="3" />
+      <node id="6635588517498971354" at="47,205,55,7" concept="2" />
+      <node id="6635588517498903189" at="46,5,56,5" concept="2" />
+      <node id="6635588517498605604" at="34,5,46,5" concept="3" />
+      <node id="1251021802701816029" at="25,0,58,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1251021802701816029" at="23,57,23,57" />
+      <scope id="6635588517498631964" at="36,39,37,190" />
+      <scope id="1251021802701816029" at="58,50,59,163" />
+      <scope id="1251021802701816029" at="61,68,62,102" />
+      <scope id="1251021802701816029" at="64,30,65,17" />
+      <scope id="1251021802702086268" at="67,55,68,43" />
+      <scope id="1251021802701816029" at="23,0,25,0" />
+      <scope id="1251021802701821252" at="29,9,31,257">
+        <var name="_reporter_2309309498" id="1251021802701821252" />
+        <var name="errorTarget" id="1251021802701821252" />
+      </scope>
+      <scope id="6635588517498632783" at="41,9,43,233">
+        <var name="_reporter_2309309498" id="6635588517498632783" />
+        <var name="errorTarget" id="6635588517498632783" />
+      </scope>
+      <scope id="6635588517499020761" at="50,11,52,234">
+        <var name="_reporter_2309309498" id="6635588517499020761" />
+        <var name="errorTarget" id="6635588517499020761" />
+      </scope>
+      <scope id="6635588517498631963" at="36,0,39,0">
+        <var name="it" id="6635588517498631963" />
+      </scope>
+      <scope id="1251021802701816029" at="58,0,61,0" />
+      <scope id="1251021802701816029" at="61,0,64,0">
+        <var name="argument" id="1251021802701816029" />
+      </scope>
+      <scope id="1251021802701816029" at="64,0,67,0" />
+      <scope id="1251021802702086268" at="67,0,70,0">
+        <var name="str" id="1251021802702086268" />
+      </scope>
+      <scope id="1251021802701816038" at="28,192,32,9" />
+      <scope id="6635588517498825617" at="40,31,44,9" />
+      <scope id="6635588517499011147" at="49,350,53,11" />
+      <scope id="1251021802702080426" at="27,194,33,7" />
+      <scope id="6635588517498605606" at="39,10,45,7" />
+      <scope id="6635588517498825615" at="39,10,45,7">
+        <var name="item" id="6635588517498825618" />
+      </scope>
+      <scope id="6635588517498971356" at="48,260,54,9" />
+      <scope id="6635588517498903191" at="47,205,55,7" />
+      <scope id="6635588517498971354" at="47,205,55,7">
+        <var name="sibl" id="6635588517498971900" />
+      </scope>
+      <scope id="6635588517498903189" at="46,5,56,5">
+        <var name="item" id="6635588517498903192" />
+      </scope>
+      <scope id="1251021802701816030" at="25,133,56,5">
+        <var name="text" id="6635588517498824760" />
+      </scope>
+      <scope id="1251021802701816029" at="25,0,58,0">
+        <var name="mpsTipsAndTricks_Tip" id="1251021802701816029" />
+        <var name="status" id="1251021802701816029" />
+        <var name="typeCheckingContext" id="1251021802701816029" />
+      </scope>
+      <unit id="6635588517498631963" at="35,222,39,5" name="jetbrains.mps.build.tips.typesystem.check_MPSTipsAndTricks_Tip_NonTypesystemRule$1" />
+      <unit id="1251021802701816029" at="22,0,71,0" name="jetbrains.mps.build.tips.typesystem.check_MPSTipsAndTricks_Tip_NonTypesystemRule" />
+    </file>
+  </root>
+</debug-info>
+
