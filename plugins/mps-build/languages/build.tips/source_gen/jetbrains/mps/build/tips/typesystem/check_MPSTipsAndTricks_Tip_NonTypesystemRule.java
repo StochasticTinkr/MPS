@@ -45,8 +45,8 @@ public class check_MPSTipsAndTricks_Tip_NonTypesystemRule extends AbstractNonTyp
       }
     }
     for (SNode item : SLinkOperations.getChildren(mpsTipsAndTricks_Tip, MetaAdapterFactory.getContainmentLink(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf2fb910L, 0x5ea1926fdf32687eL, "text"))) {
-      for (SNode sibl : SNodeOperations.ofConcept(SNodeOperations.getAllSiblings(item, false), MetaAdapterFactory.getConcept(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf32687cL, "jetbrains.mps.build.tipsAndTricks.structure.MPSTipsAndTricks_Text"))) {
-        if (SPropertyOperations.getString(item, MetaAdapterFactory.getProperty(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf32687cL, 0x5ea1926fdf40725aL, "language")).equals(SPropertyOperations.getString(sibl, MetaAdapterFactory.getProperty(0x380130db72c845e4L, 0x830f5e34d2c36739L, 0x5ea1926fdf32687cL, 0x5ea1926fdf40725aL, "language")))) {
+      for (SNode sibl : SNodeOperations.ofConcept(SNodeOperations.getAllSiblings(item, false), MetaAdapterFactory.getConcept(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf32687cL, "jetbrains.mps.build.tips.structure.MPSTipsAndTricks_Text"))) {
+        if (SPropertyOperations.getString(item, MetaAdapterFactory.getProperty(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf32687cL, 0x5ea1926fdf40725aL, "language")).equals(SPropertyOperations.getString(sibl, MetaAdapterFactory.getProperty(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf32687cL, 0x5ea1926fdf40725aL, "language")))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(item, "Duplicate languages", "r:892a2f4e-aabc-44a3-80c6-278efca377d5(jetbrains.mps.build.tips.typesystem)", "6635588517499020761", null, errorTarget);

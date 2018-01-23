@@ -9,7 +9,6 @@
     <import index="brwy" ref="r:6d672fff-19ac-419c-b29d-e20cdd951b7d(jetbrains.mps.build.tips.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="4a28" ref="r:ff4adc67-c982-4868-af9a-050e0ab142f1(jetbrains.mps.build.tipsAndTricks.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -414,8 +413,8 @@
                       <node concept="37vLTw" id="5Kmm9Adc9AA" role="2Oq$k0">
                         <ref role="3cqZAo" node="5Kmm9AdbYrW" resolve="sibl" />
                       </node>
-                      <node concept="3TrcHB" id="19uassMCCab" role="2OqNvi">
-                        <ref role="3TsBF5" to="4a28:5Ux$AZvg79q" resolve="language" />
+                      <node concept="3TrcHB" id="ChXFZMvkCR" role="2OqNvi">
+                        <ref role="3TsBF5" to="brwy:5Ux$AZvg79q" resolve="language" />
                       </node>
                     </node>
                   </node>
@@ -425,7 +424,7 @@
             <node concept="3cpWsn" id="5Kmm9AdbYrW" role="1Duv9x">
               <property role="TrG5h" value="sibl" />
               <node concept="3Tqbb2" id="5Kmm9AdbYrX" role="1tU5fm">
-                <ref role="ehGHo" to="4a28:5Ux$AZvcAxW" resolve="MPSTipsAndTricks_Text" />
+                <ref role="ehGHo" to="brwy:5Ux$AZvcAxW" resolve="MPSTipsAndTricks_Text" />
               </node>
             </node>
             <node concept="2OqwBi" id="5Kmm9Adc60y" role="1DdaDG">
@@ -436,8 +435,8 @@
                 <node concept="2TvwIu" id="5Kmm9AdbYG3" role="2OqNvi" />
               </node>
               <node concept="v3k3i" id="5Kmm9Adc7Lx" role="2OqNvi">
-                <node concept="chp4Y" id="19uassMCyMO" role="v3oSu">
-                  <ref role="cht4Q" to="4a28:5Ux$AZvcAxW" resolve="MPSTipsAndTricks_Text" />
+                <node concept="chp4Y" id="ChXFZMvjvb" role="v3oSu">
+                  <ref role="cht4Q" to="brwy:5Ux$AZvcAxW" resolve="MPSTipsAndTricks_Text" />
                 </node>
               </node>
             </node>
