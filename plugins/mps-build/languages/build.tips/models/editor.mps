@@ -183,6 +183,9 @@
         <property role="1O74Pk" value="true" />
         <property role="1$x2rV" value="&lt;width&gt;" />
         <ref role="1NtTu8" to="brwy:5Ux$AZvir$i" resolve="width" />
+        <node concept="Vb9p2" id="ChXFZM_T1A" role="3F10Kt">
+          <property role="Vbekb" value="BOLD" />
+        </node>
       </node>
       <node concept="3F0ifn" id="15sxrebHuPJ" role="3EZMnx">
         <property role="3F0ifm" value="px" />
@@ -209,6 +212,9 @@
         <property role="1O74Pk" value="true" />
         <property role="1$x2rV" value="&lt;height&gt;" />
         <ref role="1NtTu8" to="brwy:5Ux$AZvir$k" resolve="height" />
+        <node concept="Vb9p2" id="ChXFZM_T1E" role="3F10Kt">
+          <property role="Vbekb" value="BOLD" />
+        </node>
       </node>
       <node concept="3F0ifn" id="15sxrebH_9m" role="3EZMnx">
         <property role="3F0ifm" value="px" />
