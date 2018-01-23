@@ -12,8 +12,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptMPSTipsAndTricks_Base = createDescriptorForMPSTipsAndTricks_Base();
-  /*package*/ final ConceptDescriptor myConceptMPSTipsAndTricks_Img = createDescriptorForMPSTipsAndTricks_Img();
+  /*package*/ final ConceptDescriptor myConceptMPSTipsAndTricks = createDescriptorForMPSTipsAndTricks();
+  /*package*/ final ConceptDescriptor myConceptMPSTipsAndTricks_Image = createDescriptorForMPSTipsAndTricks_Image();
   /*package*/ final ConceptDescriptor myConceptMPSTipsAndTricks_Text = createDescriptorForMPSTipsAndTricks_Text();
   /*package*/ final ConceptDescriptor myConceptMPSTipsAndTricks_Tip = createDescriptorForMPSTipsAndTricks_Tip();
   private final LanguageConceptSwitch myConceptIndex;
@@ -24,17 +24,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptMPSTipsAndTricks_Base, myConceptMPSTipsAndTricks_Img, myConceptMPSTipsAndTricks_Text, myConceptMPSTipsAndTricks_Tip);
+    return Arrays.asList(myConceptMPSTipsAndTricks, myConceptMPSTipsAndTricks_Image, myConceptMPSTipsAndTricks_Text, myConceptMPSTipsAndTricks_Tip);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myConceptIndex.index(id)) {
-      case LanguageConceptSwitch.MPSTipsAndTricks_Base:
-        return myConceptMPSTipsAndTricks_Base;
-      case LanguageConceptSwitch.MPSTipsAndTricks_Img:
-        return myConceptMPSTipsAndTricks_Img;
+      case LanguageConceptSwitch.MPSTipsAndTricks:
+        return myConceptMPSTipsAndTricks;
+      case LanguageConceptSwitch.MPSTipsAndTricks_Image:
+        return myConceptMPSTipsAndTricks_Image;
       case LanguageConceptSwitch.MPSTipsAndTricks_Text:
         return myConceptMPSTipsAndTricks_Text;
       case LanguageConceptSwitch.MPSTipsAndTricks_Tip:
@@ -48,8 +48,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myConceptIndex.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForMPSTipsAndTricks_Base() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.tips", "MPSTipsAndTricks_Base", 0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf2f93c6L);
+  private static ConceptDescriptor createDescriptorForMPSTipsAndTricks() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.tips", "MPSTipsAndTricks", 0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf2f93c6L);
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:6d672fff-19ac-419c-b29d-e20cdd951b7d(jetbrains.mps.build.tips.structure)/6818892319999103942");
@@ -57,13 +57,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("Tips And Tricks");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForMPSTipsAndTricks_Img() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.tips", "MPSTipsAndTricks_Img", 0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf32687dL);
+  private static ConceptDescriptor createDescriptorForMPSTipsAndTricks_Image() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.tips", "MPSTipsAndTricks_Image", 0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x1377553280f03b1dL);
     b.class_(false, false, false);
-    b.origin("r:6d672fff-19ac-419c-b29d-e20cdd951b7d(jetbrains.mps.build.tips.structure)/6818892319999289469");
-    b.prop("width", 0x5ea1926fdf49b912L, "6818892320000817426");
-    b.prop("height", 0x5ea1926fdf49b914L, "6818892320000817428");
-    b.aggregate("source", 0x5ea1926fdf49b917L).target(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0xb8b96b5078f3367L).optional(true).ordered(true).multiple(false).origin("6818892320000817431").done();
+    b.origin("r:6d672fff-19ac-419c-b29d-e20cdd951b7d(jetbrains.mps.build.tips.structure)/1402683484349152029");
+    b.prop("file", 0x1377553280f17f4bL, "1402683484349235019");
+    b.prop("width", 0x1377553280f5dba2L, "1402683484349520802");
+    b.prop("height", 0x1377553280f5dba3L, "1402683484349520803");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMPSTipsAndTricks_Text() {
@@ -81,7 +81,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:6d672fff-19ac-419c-b29d-e20cdd951b7d(jetbrains.mps.build.tips.structure)/6818892319999113488");
     b.aggregate("text", 0x5ea1926fdf32687eL).target(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf32687cL).optional(true).ordered(true).multiple(true).origin("6818892319999289470").done();
-    b.aggregate("img", 0x5ea1926fdf326880L).target(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf32687dL).optional(false).ordered(true).multiple(false).origin("6818892319999289472").done();
+    b.aggregate("image", 0x1377553280f7a6a7L).target(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x1377553280f03b1dL).optional(true).ordered(true).multiple(false).origin("1402683484349638311").done();
     return b.create();
   }
 }

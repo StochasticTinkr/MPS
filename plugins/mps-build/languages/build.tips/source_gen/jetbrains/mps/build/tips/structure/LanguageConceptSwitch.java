@@ -9,15 +9,15 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int MPSTipsAndTricks_Base = 0;
-  public static final int MPSTipsAndTricks_Img = 1;
+  public static final int MPSTipsAndTricks = 0;
+  public static final int MPSTipsAndTricks_Image = 1;
   public static final int MPSTipsAndTricks_Text = 2;
   public static final int MPSTipsAndTricks_Tip = 3;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xfeee615f9f2b486fL, 0x804f8987b652fceaL);
-    builder.put(0x5ea1926fdf2f93c6L, MPSTipsAndTricks_Base);
-    builder.put(0x5ea1926fdf32687dL, MPSTipsAndTricks_Img);
+    builder.put(0x5ea1926fdf2f93c6L, MPSTipsAndTricks);
+    builder.put(0x1377553280f03b1dL, MPSTipsAndTricks_Image);
     builder.put(0x5ea1926fdf32687cL, MPSTipsAndTricks_Text);
     builder.put(0x5ea1926fdf2fb910L, MPSTipsAndTricks_Tip);
     myIndex = builder.seal();

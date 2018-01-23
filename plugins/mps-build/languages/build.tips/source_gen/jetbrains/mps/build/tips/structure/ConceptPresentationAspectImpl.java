@@ -9,8 +9,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_MPSTipsAndTricks_Base;
-  private ConceptPresentation props_MPSTipsAndTricks_Img;
+  private ConceptPresentation props_MPSTipsAndTricks;
+  private ConceptPresentation props_MPSTipsAndTricks_Image;
   private ConceptPresentation props_MPSTipsAndTricks_Text;
   private ConceptPresentation props_MPSTipsAndTricks_Tip;
 
@@ -19,20 +19,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.MPSTipsAndTricks_Base:
-        if (props_MPSTipsAndTricks_Base == null) {
+      case LanguageConceptSwitch.MPSTipsAndTricks:
+        if (props_MPSTipsAndTricks == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          props_MPSTipsAndTricks_Base = cpb.create();
+          props_MPSTipsAndTricks = cpb.create();
         }
-        return props_MPSTipsAndTricks_Base;
-      case LanguageConceptSwitch.MPSTipsAndTricks_Img:
-        if (props_MPSTipsAndTricks_Img == null) {
+        return props_MPSTipsAndTricks;
+      case LanguageConceptSwitch.MPSTipsAndTricks_Image:
+        if (props_MPSTipsAndTricks_Image == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("MPSTipsAndTricks_Img");
-          props_MPSTipsAndTricks_Img = cpb.create();
+          cpb.rawPresentation("MPSTipsAndTricks_Image");
+          props_MPSTipsAndTricks_Image = cpb.create();
         }
-        return props_MPSTipsAndTricks_Img;
+        return props_MPSTipsAndTricks_Image;
       case LanguageConceptSwitch.MPSTipsAndTricks_Text:
         if (props_MPSTipsAndTricks_Text == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -56,9 +56,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     editorCell.addEditorCell(createConstant_myrjx3_a0());
     editorCell.addEditorCell(createProperty_myrjx3_b0());
     editorCell.addEditorCell(createConstant_myrjx3_c0());
-    editorCell.addEditorCell(createConstant_myrjx3_d0());
-    editorCell.addEditorCell(createRefNodeList_myrjx3_e0());
-    editorCell.addEditorCell(createConstant_myrjx3_f0());
+    editorCell.addEditorCell(createRefNodeList_myrjx3_d0());
+    editorCell.addEditorCell(createConstant_myrjx3_e0());
     return editorCell;
   }
   private EditorCell createConstant_myrjx3_a0() {
@@ -70,7 +69,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   private EditorCell createProperty_myrjx3_b0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
     provider.setRole("language");
-    provider.setNoTargetText("<no language>");
+    provider.setNoTargetText("en");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
     editorCell.setCellId("property_language");
@@ -92,14 +92,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_myrjx3_d0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
-    editorCell.setCellId("Constant_myrjx3_d0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefNodeList_myrjx3_e0() {
-    AbstractCellListHandler handler = new MPSTipsAndTricks_Text_EditorBuilder_a.elementListHandler_myrjx3_e0(myNode, "element", getEditorContext());
+  private EditorCell createRefNodeList_myrjx3_d0() {
+    AbstractCellListHandler handler = new MPSTipsAndTricks_Text_EditorBuilder_a.elementListHandler_myrjx3_d0(myNode, "element", getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_element");
     Style style = new StyleImpl();
@@ -110,11 +104,11 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class elementListHandler_myrjx3_e0 extends RefNodeListHandler {
+  private static class elementListHandler_myrjx3_d0 extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public elementListHandler_myrjx3_e0(SNode ownerNode, String childRole, EditorContext context) {
+    public elementListHandler_myrjx3_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
       myNode = ownerNode;
     }
@@ -135,7 +129,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(elementListHandler_myrjx3_e0.this.getNode(), MetaAdapterFactory.getContainmentLink(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf32687cL, 0x5ea1926fdf38a2a2L, "element")));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(elementListHandler_myrjx3_d0.this.getNode(), MetaAdapterFactory.getContainmentLink(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf32687cL, 0x5ea1926fdf38a2a2L, "element")));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -159,9 +153,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
       }
     }
   }
-  private EditorCell createConstant_myrjx3_f0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
-    editorCell.setCellId("Constant_myrjx3_f0");
+  private EditorCell createConstant_myrjx3_e0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_myrjx3_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }

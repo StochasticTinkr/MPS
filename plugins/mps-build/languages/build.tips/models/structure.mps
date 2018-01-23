@@ -6,7 +6,6 @@
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
-    <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" implicit="true" />
   </imports>
@@ -49,7 +48,7 @@
   </registry>
   <node concept="1TIwiD" id="5Ux$AZvbTf6">
     <property role="EcuMT" value="6818892319999103942" />
-    <property role="TrG5h" value="MPSTipsAndTricks_Base" />
+    <property role="TrG5h" value="MPSTipsAndTricks" />
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="Tips And Tricks" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -62,28 +61,6 @@
     </node>
     <node concept="PrWs8" id="5Ux$AZvkVR0" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="5Ux$AZvcAxX">
-    <property role="EcuMT" value="6818892319999289469" />
-    <property role="3GE5qa" value="" />
-    <property role="TrG5h" value="MPSTipsAndTricks_Img" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="5Ux$AZvir$i" role="1TKVEl">
-      <property role="IQ2nx" value="6818892320000817426" />
-      <property role="TrG5h" value="width" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyi" id="5Ux$AZvir$k" role="1TKVEl">
-      <property role="IQ2nx" value="6818892320000817428" />
-      <property role="TrG5h" value="height" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyj" id="5Ux$AZvir$n" role="1TKVEi">
-      <property role="IQ2ns" value="6818892320000817431" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="source" />
-      <ref role="20lvS9" to="1oap:Ib_Fk7zNdB" resolve="Image" />
     </node>
   </node>
   <node concept="1TIwiD" id="5Ux$AZvcAxW">
@@ -117,15 +94,35 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="5Ux$AZvcAxW" resolve="MPSTipsAndTricks_Text" />
     </node>
-    <node concept="1TJgyj" id="5Ux$AZvcAy0" role="1TKVEi">
-      <property role="IQ2ns" value="6818892319999289472" />
+    <node concept="1TJgyj" id="1dRlja0XUqB" role="1TKVEi">
+      <property role="IQ2ns" value="1402683484349638311" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="img" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="5Ux$AZvcAxX" resolve="MPSTipsAndTricks_Img" />
+      <property role="20kJfa" value="image" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="1dRlja0W3Gt" resolve="MPSTipsAndTricks_Image" />
     </node>
     <node concept="PrWs8" id="5Ux$AZvcLcn" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1dRlja0W3Gt">
+    <property role="EcuMT" value="1402683484349152029" />
+    <property role="TrG5h" value="MPSTipsAndTricks_Image" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="1dRlja0WnXb" role="1TKVEl">
+      <property role="IQ2nx" value="1402683484349235019" />
+      <property role="TrG5h" value="file" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="1dRlja0XtIy" role="1TKVEl">
+      <property role="IQ2nx" value="1402683484349520802" />
+      <property role="TrG5h" value="width" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="1dRlja0XtIz" role="1TKVEl">
+      <property role="IQ2nx" value="1402683484349520803" />
+      <property role="TrG5h" value="height" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>
