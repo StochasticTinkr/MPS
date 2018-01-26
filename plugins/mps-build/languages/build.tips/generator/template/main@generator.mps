@@ -698,7 +698,7 @@
               <node concept="2pNUuL" id="6mx7ef$s2_H" role="2pNNFR">
                 <property role="2pNUuO" value="dir" />
                 <node concept="2pMdtt" id="6mx7ef$s2_J" role="2pMdts">
-                  <property role="2pMdty" value="${build.tmp}/default/resources_en_jar/tips/css" />
+                  <property role="2pMdty" value="${build.tmp}/default/mps-resources_en_jar/tips/css" />
                 </node>
               </node>
             </node>

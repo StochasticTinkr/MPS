@@ -1494,7 +1494,7 @@
   </node>
   <node concept="1TIwiD" id="5Ux$AZuOzjJ">
     <property role="EcuMT" value="6818892319992984815" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.JarTips" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.JarAllTips" />
     <property role="TrG5h" value="BuildMps_TipsLoad" />
     <property role="R4oN_" value="copy tips of project element" />
     <property role="34LRSv" value="tips of" />

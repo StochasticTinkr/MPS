@@ -16300,7 +16300,7 @@
   </node>
   <node concept="13MO4I" id="5Ux$AZuPMk$">
     <property role="TrG5h" value="reduce_BuildMps_ImportTips" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.JarTips" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.JarAllTips" />
     <ref role="3gUMe" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsLoad" />
     <node concept="1l3spW" id="5Ux$AZuPOEI" role="13RCb5">
       <property role="TrG5h" value="Tips" />
@@ -16634,7 +16634,7 @@
   </node>
   <node concept="13MO4I" id="4RU14XEZ4kx">
     <property role="TrG5h" value="weave_BuildMps_ImportTips" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.JarTips" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.JarAllTips" />
     <ref role="3gUMe" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsLoad" />
     <node concept="1l3spW" id="4RU14XEZ4qc" role="13RCb5">
       <property role="TrG5h" value="project" />
@@ -16870,6 +16870,12 @@
                   <node concept="2pNNFK" id="4FAOcOiRdrU" role="3o6s8t">
                     <property role="2pNNFO" value="exclude" />
                     <property role="qg3DV" value="true" />
+                    <node concept="2pNUuL" id="4FAOcOiRdrV" role="2pNNFR">
+                      <property role="2pNUuO" value="name" />
+                      <node concept="2pMdtt" id="4FAOcOiRdrW" role="2pMdts">
+                        <property role="2pMdty" value="tips/**" />
+                      </node>
+                    </node>
                     <node concept="1W57fq" id="64DOkVis2X2" role="lGtFl">
                       <node concept="3IZrLx" id="64DOkVis2X4" role="3IZSJc">
                         <node concept="3clFbS" id="64DOkVis2X6" role="2VODD2">
@@ -16910,12 +16916,6 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="2pNUuL" id="4FAOcOiRdrV" role="2pNNFR">
-                      <property role="2pNUuO" value="name" />
-                      <node concept="2pMdtt" id="4FAOcOiRdrW" role="2pMdts">
-                        <property role="2pMdty" value="tips/**" />
-                      </node>
-                    </node>
                   </node>
                   <node concept="2pNNFK" id="4FAOcOiRdrX" role="3o6s8t">
                     <property role="2pNNFO" value="include" />
@@ -16949,13 +16949,13 @@
                 <node concept="2pNUuL" id="4FAOcOiRds6" role="2pNNFR">
                   <property role="2pNUuO" value="src" />
                   <node concept="2pMdtt" id="4FAOcOiRds7" role="2pMdts">
-                    <property role="2pMdty" value="${mps_home}/lib/resources_en.jar" />
+                    <property role="2pMdty" value="${mps_home}/lib/mps-resources_en.jar" />
                   </node>
                 </node>
                 <node concept="2pNUuL" id="4FAOcOiRds8" role="2pNNFR">
                   <property role="2pNUuO" value="dest" />
                   <node concept="2pMdtt" id="4FAOcOiRds9" role="2pMdts">
-                    <property role="2pMdty" value="${build.tmp}/default/resources_en_jar" />
+                    <property role="2pMdty" value="${build.tmp}/default/mps-resources_en_jar" />
                   </node>
                 </node>
               </node>
@@ -17033,7 +17033,7 @@
                   <node concept="2pNUuL" id="4FAOcOiRdta" role="2pNNFR">
                     <property role="2pNUuO" value="dir" />
                     <node concept="2pMdtt" id="4FAOcOiRdtb" role="2pMdts">
-                      <property role="2pMdty" value="${build.tmp}/default/resources_en_jar/tips/css" />
+                      <property role="2pMdty" value="${build.tmp}/default/mps-resources_en_jar/tips/css" />
                     </node>
                   </node>
                 </node>

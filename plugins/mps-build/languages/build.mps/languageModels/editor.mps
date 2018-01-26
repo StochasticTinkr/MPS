@@ -5766,7 +5766,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5Ux$AZuOzjS">
-    <property role="3GE5qa" value="Project.TipsAndTricks.JarTips" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.JarAllTips" />
     <ref role="1XX52x" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsLoad" />
     <node concept="3EZMnI" id="5Ux$AZuOzjU" role="2wV5jI">
       <node concept="3F0ifn" id="5Ux$AZuOzk1" role="3EZMnx">
