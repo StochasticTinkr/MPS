@@ -1536,13 +1536,14 @@
     <property role="EcuMT" value="8174907532631382425" />
     <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
     <property role="TrG5h" value="BuildMps_TipsMps" />
-    <property role="34LRSv" value="import from MPS" />
+    <property role="34LRSv" value="from MPS" />
     <ref role="1TJDcQ" node="75N6Lqya9Am" resolve="BuildMps_TipsImport" />
   </node>
   <node concept="1TIwiD" id="75N6Lqyb05w">
     <property role="EcuMT" value="8174907532631605600" />
     <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
     <property role="TrG5h" value="BuildMps_TipsDir" />
+    <property role="34LRSv" value="from directory" />
     <ref role="1TJDcQ" node="75N6Lqya9Am" resolve="BuildMps_TipsImport" />
     <node concept="1TJgyj" id="4reBHdWN7OG" role="1TKVEi">
       <property role="IQ2ns" value="5102190059026414892" />
@@ -1561,6 +1562,7 @@
     <property role="EcuMT" value="8174907532632110020" />
     <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
     <property role="TrG5h" value="BuildMps_TipsSolution" />
+    <property role="34LRSv" value="from solution" />
     <ref role="1TJDcQ" node="75N6Lqya9Am" resolve="BuildMps_TipsImport" />
     <node concept="1TJgyj" id="7uJAFPqNf3a" role="1TKVEi">
       <property role="IQ2ns" value="8624281949500666058" />
@@ -1572,7 +1574,7 @@
     <node concept="1TJgyj" id="5J862cnMvcw" role="1TKVEi">
       <property role="IQ2ns" value="6613562591795606304" />
       <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="element" />
+      <property role="20kJfa" value="link" />
       <ref role="20lvS9" node="2L4pT56gD3R" resolve="BuildMps_Solution" />
     </node>
   </node>

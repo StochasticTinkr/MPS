@@ -260,7 +260,7 @@
                                   </node>
                                   <node concept="3cpWs3" id="5qlPEM9TdSd" role="3uHU7B">
                                     <node concept="Xl_RD" id="5qlPEM9TdSe" role="3uHU7B">
-                                      <property role="Xl_RC" value="${tips_home}/tips/tips_" />
+                                      <property role="Xl_RC" value="${tips_home}/tips_" />
                                     </node>
                                     <node concept="2OqwBi" id="5qlPEM9TdSf" role="3uHU7w">
                                       <node concept="30H73N" id="5qlPEM9TdSg" role="2Oq$k0" />
@@ -324,7 +324,7 @@
                                 </node>
                                 <node concept="3cpWs3" id="5qlPEM9TdRQ" role="3uHU7B">
                                   <node concept="Xl_RD" id="5qlPEM9TdRR" role="3uHU7B">
-                                    <property role="Xl_RC" value="${tips_home}/tips/tips/" />
+                                    <property role="Xl_RC" value="${tips_home}/tips/" />
                                   </node>
                                   <node concept="2OqwBi" id="5qlPEM9TdRS" role="3uHU7w">
                                     <node concept="1PxgMI" id="5qlPEM9TdRT" role="2Oq$k0">
@@ -1162,7 +1162,7 @@
                         </node>
                       </node>
                       <node concept="Xl_RD" id="5qlPEM9U8q7" role="3uHU7B">
-                        <property role="Xl_RC" value="tips/tips_" />
+                        <property role="Xl_RC" value="tips_" />
                       </node>
                     </node>
                   </node>
@@ -1215,7 +1215,7 @@
                 <node concept="3cpWs6" id="5qlPEM9U8pH" role="3cqZAp">
                   <node concept="3cpWs3" id="5qlPEM9U8pI" role="3cqZAk">
                     <node concept="Xl_RD" id="5qlPEM9U8pJ" role="3uHU7B">
-                      <property role="Xl_RC" value="tips/tips/" />
+                      <property role="Xl_RC" value="tips/" />
                     </node>
                     <node concept="2OqwBi" id="5qlPEM9U8pK" role="3uHU7w">
                       <node concept="1PxgMI" id="5qlPEM9U8pL" role="2Oq$k0">

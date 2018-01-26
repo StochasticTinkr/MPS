@@ -2279,5 +2279,61 @@
       <ref role="1YaFvo" to="kdzh:75N6Lqy0tuW" resolve="BuildMps_Tips" />
     </node>
   </node>
+  <node concept="18kY7G" id="6YEa3Ro5j24">
+    <property role="TrG5h" value="check_BuildMps_TipsSolution" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
+    <node concept="3clFbS" id="6YEa3Ro5j25" role="18ibNy">
+      <node concept="3clFbJ" id="6YEa3Ro5jfB" role="3cqZAp">
+        <node concept="2OqwBi" id="6YEa3Ro5jYx" role="3clFbw">
+          <node concept="2OqwBi" id="6YEa3Ro5jpa" role="2Oq$k0">
+            <node concept="1YBJjd" id="6YEa3Ro5jfN" role="2Oq$k0">
+              <ref role="1YBMHb" node="6YEa3Ro5j27" resolve="buildMps_TipsSolution" />
+            </node>
+            <node concept="3TrEf2" id="6YEa3Ro5jBZ" role="2OqNvi">
+              <ref role="3Tt5mk" to="kdzh:5J862cnMvcw" resolve="link" />
+            </node>
+          </node>
+          <node concept="3w_OXm" id="6YEa3Ro5kJq" role="2OqNvi" />
+        </node>
+        <node concept="3clFbS" id="6YEa3Ro5jfD" role="3clFbx">
+          <node concept="2MkqsV" id="6YEa3Ro5ZJu" role="3cqZAp">
+            <node concept="Xl_RD" id="6YEa3Ro5ZJx" role="2MkJ7o">
+              <property role="Xl_RC" value="Empty link" />
+            </node>
+            <node concept="1YBJjd" id="6YEa3Ro5ZJw" role="2OEOjV">
+              <ref role="1YBMHb" node="6YEa3Ro5j27" resolve="buildMps_TipsSolution" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="6YEa3Ro5Zzb" role="3cqZAp">
+        <node concept="2OqwBi" id="6YEa3Ro6grO" role="3clFbw">
+          <node concept="2OqwBi" id="6YEa3Ro5Zzd" role="2Oq$k0">
+            <node concept="1YBJjd" id="6YEa3Ro5Zze" role="2Oq$k0">
+              <ref role="1YBMHb" node="6YEa3Ro5j27" resolve="buildMps_TipsSolution" />
+            </node>
+            <node concept="3TrEf2" id="6YEa3Ro6g3z" role="2OqNvi">
+              <ref role="3Tt5mk" to="kdzh:7uJAFPqNf3a" resolve="path" />
+            </node>
+          </node>
+          <node concept="3w_OXm" id="6YEa3Ro6gDv" role="2OqNvi" />
+        </node>
+        <node concept="3clFbS" id="6YEa3Ro5Zzh" role="3clFbx">
+          <node concept="2MkqsV" id="6YEa3Ro5ZPE" role="3cqZAp">
+            <node concept="Xl_RD" id="6YEa3Ro5ZPH" role="2MkJ7o">
+              <property role="Xl_RC" value="No path" />
+            </node>
+            <node concept="1YBJjd" id="6YEa3Ro5ZPG" role="2OEOjV">
+              <ref role="1YBMHb" node="6YEa3Ro5j27" resolve="buildMps_TipsSolution" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6YEa3Ro5j27" role="1YuTPh">
+      <property role="TrG5h" value="buildMps_TipsSolution" />
+      <ref role="1YaFvo" to="kdzh:75N6LqycVf4" resolve="BuildMps_TipsSolution" />
+    </node>
+  </node>
 </model>
 

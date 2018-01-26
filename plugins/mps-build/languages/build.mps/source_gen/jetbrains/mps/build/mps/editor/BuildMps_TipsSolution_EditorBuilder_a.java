@@ -79,20 +79,20 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
           public EditorCell compute() {
             return new BuildMps_TipsSolution_EditorBuilder_a.Inline_Builder_nodppr_a1a(getEditorContext(), myNode, effectiveNode).createCell();
           }
-        }, effectiveNode, "element");
+        }, effectiveNode, "link");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
         installDeleteActions_nullable_reference(cell);
         return cell;
       }
     };
-    provider.setRole("element");
-    provider.setNoTargetText("<no element>");
+    provider.setRole("link");
+    provider.setNoTargetText("<solution>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("element");
+      editorCell.setRole("link");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -196,7 +196,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       }
     }
     protected String getNoTargetText() {
-      return "<no path>";
+      return "<file.xml>";
     }
   }
 }
