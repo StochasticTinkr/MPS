@@ -1609,8 +1609,8 @@
   <node concept="1TIwiD" id="2DNUTJn1OVi">
     <property role="EcuMT" value="3059047626474737362" />
     <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
-    <property role="TrG5h" value="BuildMps_TipsJarLanguage" />
-    <property role="34LRSv" value="language" />
+    <property role="TrG5h" value="BuildMps_TipsJarTips" />
+    <property role="34LRSv" value="tips" />
     <ref role="1TJDcQ" node="2DNUTJn1OVh" resolve="BuildMps_TipsJarPart" />
   </node>
   <node concept="1TIwiD" id="2DNUTJn1OVj">

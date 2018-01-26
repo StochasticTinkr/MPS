@@ -2408,6 +2408,27 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
+  <dependency className="jetbrains.mps.build.mps.editor.BuildMps_TipsImport_Editor" file="BuildMps_TipsImport_Editor.java">
+    <classNode dependClassName="jetbrains.mps.build.mps.editor.BuildMps_TipsImport_EditorBuilder_a" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.mps.editor.BuildMps_TipsImport_EditorBuilder_a" file="BuildMps_TipsImport_EditorBuilder_a.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.Measure" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Error" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_TipsJarIdeTipsAndTricks_Editor" file="BuildMps_TipsJarIdeTipsAndTricks_Editor.java">
     <classNode dependClassName="jetbrains.mps.build.mps.editor.BuildMps_TipsJarIdeTipsAndTricks_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -2432,14 +2453,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.editor.BuildMps_TipsJarLanguage_Editor" file="BuildMps_TipsJarLanguage_Editor.java">
-    <classNode dependClassName="jetbrains.mps.build.mps.editor.BuildMps_TipsJarLanguage_EditorBuilder_a" />
+  <dependency className="jetbrains.mps.build.mps.editor.BuildMps_TipsJarTips_Editor" file="BuildMps_TipsJarTips_Editor.java">
+    <classNode dependClassName="jetbrains.mps.build.mps.editor.BuildMps_TipsJarTips_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.editor.BuildMps_TipsJarLanguage_EditorBuilder_a" file="BuildMps_TipsJarLanguage_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.mps.editor.BuildMps_TipsJarTips_EditorBuilder_a" file="BuildMps_TipsJarTips_EditorBuilder_a.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -2704,8 +2725,9 @@
     <classNode dependClassName="jetbrains.mps.build.mps.editor.BuildMps_Solution_ApplySideTransforms" />
     <classNode dependClassName="jetbrains.mps.build.mps.editor.BuildMps_Solution_Editor" />
     <classNode dependClassName="jetbrains.mps.build.mps.editor.BuildMps_TipsDir_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.mps.editor.BuildMps_TipsImport_Editor" />
     <classNode dependClassName="jetbrains.mps.build.mps.editor.BuildMps_TipsJarIdeTipsAndTricks_Editor" />
-    <classNode dependClassName="jetbrains.mps.build.mps.editor.BuildMps_TipsJarLanguage_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.mps.editor.BuildMps_TipsJarTips_Editor" />
     <classNode dependClassName="jetbrains.mps.build.mps.editor.BuildMps_TipsJar_Editor" />
     <classNode dependClassName="jetbrains.mps.build.mps.editor.BuildMps_TipsLoad_Editor" />
     <classNode dependClassName="jetbrains.mps.build.mps.editor.BuildMps_TipsMps_Editor" />

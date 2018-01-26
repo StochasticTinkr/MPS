@@ -5945,6 +5945,9 @@
       <node concept="3F1sOY" id="7uJAFPqNf3k" role="3EZMnx">
         <property role="1$x2rV" value="&lt;file.xml&gt;" />
         <ref role="1NtTu8" to="kdzh:7uJAFPqNf3a" resolve="path" />
+        <node concept="VechU" id="2v3n_quRAI0" role="3F10Kt">
+          <property role="Vb096" value="DARK_GREEN" />
+        </node>
       </node>
     </node>
   </node>
@@ -5966,7 +5969,7 @@
   </node>
   <node concept="24kQdi" id="2DNUTJn1OVY">
     <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
-    <ref role="1XX52x" to="kdzh:2DNUTJn1OVi" resolve="BuildMps_TipsJarLanguage" />
+    <ref role="1XX52x" to="kdzh:2DNUTJn1OVi" resolve="BuildMps_TipsJarTips" />
     <node concept="3EZMnI" id="2DNUTJn1OW0" role="2wV5jI">
       <node concept="l2Vlx" id="2DNUTJn1OW1" role="2iSdaV" />
       <node concept="3F0ifn" id="6mx7ef$d61a" role="3EZMnx">
@@ -6023,6 +6026,19 @@
         <node concept="VechU" id="2DNUTJn1OW_" role="3F10Kt">
           <property role="Vb096" value="darkGray" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="2v3n_quQoc8">
+    <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
+    <ref role="1XX52x" to="kdzh:75N6Lqya9Am" resolve="BuildMps_TipsImport" />
+    <node concept="1xolST" id="2v3n_quQoca" role="2wV5jI">
+      <property role="1xolSY" value="&lt;no tips&gt;" />
+      <node concept="3$7fVu" id="2v3n_quQocb" role="3F10Kt">
+        <property role="3$6WeP" value="0" />
+      </node>
+      <node concept="3$7jql" id="2v3n_quQocc" role="3F10Kt">
+        <property role="3$6WeP" value="0" />
       </node>
     </node>
   </node>

@@ -66,8 +66,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BuildMps_TipsImport;
   private ConceptPresentation props_BuildMps_TipsJar;
   private ConceptPresentation props_BuildMps_TipsJarIdeTipsAndTricks;
-  private ConceptPresentation props_BuildMps_TipsJarLanguage;
   private ConceptPresentation props_BuildMps_TipsJarPart;
+  private ConceptPresentation props_BuildMps_TipsJarTips;
   private ConceptPresentation props_BuildMps_TipsLoad;
   private ConceptPresentation props_BuildMps_TipsMps;
   private ConceptPresentation props_BuildMps_TipsSolution;
@@ -480,19 +480,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BuildMps_TipsJarIdeTipsAndTricks = cpb.create();
         }
         return props_BuildMps_TipsJarIdeTipsAndTricks;
-      case LanguageConceptSwitch.BuildMps_TipsJarLanguage:
-        if (props_BuildMps_TipsJarLanguage == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("language");
-          props_BuildMps_TipsJarLanguage = cpb.create();
-        }
-        return props_BuildMps_TipsJarLanguage;
       case LanguageConceptSwitch.BuildMps_TipsJarPart:
         if (props_BuildMps_TipsJarPart == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           props_BuildMps_TipsJarPart = cpb.create();
         }
         return props_BuildMps_TipsJarPart;
+      case LanguageConceptSwitch.BuildMps_TipsJarTips:
+        if (props_BuildMps_TipsJarTips == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("tips");
+          props_BuildMps_TipsJarTips = cpb.create();
+        }
+        return props_BuildMps_TipsJarTips;
       case LanguageConceptSwitch.BuildMps_TipsLoad:
         if (props_BuildMps_TipsLoad == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -2335,5 +2335,38 @@
       <ref role="1YaFvo" to="kdzh:75N6LqycVf4" resolve="BuildMps_TipsSolution" />
     </node>
   </node>
+  <node concept="18kY7G" id="2v3n_quM4DW">
+    <property role="TrG5h" value="check_BuildMps_TipsJar" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.JarSingleTips" />
+    <node concept="3clFbS" id="2v3n_quM4DX" role="18ibNy">
+      <node concept="3clFbJ" id="2v3n_quM92Z" role="3cqZAp">
+        <node concept="3clFbS" id="2v3n_quM931" role="3clFbx">
+          <node concept="2MkqsV" id="2v3n_quMa0$" role="3cqZAp">
+            <node concept="Xl_RD" id="2v3n_quMa0K" role="2MkJ7o">
+              <property role="Xl_RC" value="no tips &amp; trick selected" />
+            </node>
+            <node concept="1YBJjd" id="2v3n_quMa4D" role="2OEOjV">
+              <ref role="1YBMHb" node="2v3n_quM4DZ" resolve="buildMps_TipsJar" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="2v3n_quM9Eb" role="3clFbw">
+          <node concept="2OqwBi" id="2v3n_quM9dn" role="2Oq$k0">
+            <node concept="1YBJjd" id="2v3n_quM93e" role="2Oq$k0">
+              <ref role="1YBMHb" node="2v3n_quM4DZ" resolve="buildMps_TipsJar" />
+            </node>
+            <node concept="3TrEf2" id="2v3n_quM9mf" role="2OqNvi">
+              <ref role="3Tt5mk" to="kdzh:2DNUTJn1OVf" resolve="link" />
+            </node>
+          </node>
+          <node concept="3w_OXm" id="2v3n_quM9Ya" role="2OqNvi" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="2v3n_quM4DZ" role="1YuTPh">
+      <property role="TrG5h" value="buildMps_TipsJar" />
+      <ref role="1YaFvo" to="kdzh:2DNUTJn1OUY" resolve="BuildMps_TipsJar" />
+    </node>
+  </node>
 </model>
 
