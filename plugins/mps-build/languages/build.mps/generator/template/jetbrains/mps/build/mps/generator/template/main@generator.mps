@@ -16838,7 +16838,7 @@
                     </node>
                     <node concept="1mIQ4w" id="2DNUTJnpC0Z" role="2OqNvi">
                       <node concept="chp4Y" id="2DNUTJnpCcm" role="cj9EA">
-                        <ref role="cht4Q" to="kdzh:2DNUTJn1OVi" resolve="BuildMps_TipsJarLanguage" />
+                        <ref role="cht4Q" to="kdzh:2DNUTJn1OVi" resolve="BuildMps_TipsJarTips" />
                       </node>
                     </node>
                   </node>
@@ -16868,7 +16868,7 @@
                 <node concept="2pNNFK" id="4FAOcOiRdrT" role="3o6s8t">
                   <property role="2pNNFO" value="patternset" />
                   <node concept="2pNNFK" id="4FAOcOiRdrU" role="3o6s8t">
-                    <property role="2pNNFO" value="exclude" />
+                    <property role="2pNNFO" value="include" />
                     <property role="qg3DV" value="true" />
                     <node concept="2pNUuL" id="4FAOcOiRdrV" role="2pNNFR">
                       <property role="2pNUuO" value="name" />
@@ -16880,34 +16880,32 @@
                       <node concept="3IZrLx" id="64DOkVis2X4" role="3IZSJc">
                         <node concept="3clFbS" id="64DOkVis2X6" role="2VODD2">
                           <node concept="3clFbF" id="64DOkVis38I" role="3cqZAp">
-                            <node concept="3fqX7Q" id="64DOkVis997" role="3clFbG">
-                              <node concept="2OqwBi" id="64DOkVis999" role="3fr31v">
-                                <node concept="2OqwBi" id="64DOkVis99a" role="2Oq$k0">
-                                  <node concept="30H73N" id="64DOkVis99b" role="2Oq$k0" />
-                                  <node concept="3Tsc0h" id="64DOkVis99c" role="2OqNvi">
-                                    <ref role="3TtcxE" to="kdzh:75N6Lqya9An" resolve="tips" />
-                                  </node>
+                            <node concept="2OqwBi" id="64DOkVis999" role="3clFbG">
+                              <node concept="2OqwBi" id="64DOkVis99a" role="2Oq$k0">
+                                <node concept="30H73N" id="64DOkVis99b" role="2Oq$k0" />
+                                <node concept="3Tsc0h" id="64DOkVis99c" role="2OqNvi">
+                                  <ref role="3TtcxE" to="kdzh:75N6Lqya9An" resolve="tips" />
                                 </node>
-                                <node concept="2HwmR7" id="64DOkVis99d" role="2OqNvi">
-                                  <node concept="1bVj0M" id="64DOkVis99e" role="23t8la">
-                                    <node concept="3clFbS" id="64DOkVis99f" role="1bW5cS">
-                                      <node concept="3clFbF" id="64DOkVis99g" role="3cqZAp">
-                                        <node concept="2OqwBi" id="64DOkVis99h" role="3clFbG">
-                                          <node concept="37vLTw" id="64DOkVis99i" role="2Oq$k0">
-                                            <ref role="3cqZAo" node="64DOkVis99l" resolve="it" />
-                                          </node>
-                                          <node concept="1mIQ4w" id="64DOkVis99j" role="2OqNvi">
-                                            <node concept="chp4Y" id="64DOkVis99k" role="cj9EA">
-                                              <ref role="cht4Q" to="kdzh:75N6Lqya9Ap" resolve="BuildMps_TipsMps" />
-                                            </node>
+                              </node>
+                              <node concept="2HwmR7" id="64DOkVis99d" role="2OqNvi">
+                                <node concept="1bVj0M" id="64DOkVis99e" role="23t8la">
+                                  <node concept="3clFbS" id="64DOkVis99f" role="1bW5cS">
+                                    <node concept="3clFbF" id="64DOkVis99g" role="3cqZAp">
+                                      <node concept="2OqwBi" id="64DOkVis99h" role="3clFbG">
+                                        <node concept="37vLTw" id="64DOkVis99i" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="64DOkVis99l" resolve="it" />
+                                        </node>
+                                        <node concept="1mIQ4w" id="64DOkVis99j" role="2OqNvi">
+                                          <node concept="chp4Y" id="64DOkVis99k" role="cj9EA">
+                                            <ref role="cht4Q" to="kdzh:75N6Lqya9Ap" resolve="BuildMps_TipsMps" />
                                           </node>
                                         </node>
                                       </node>
                                     </node>
-                                    <node concept="Rh6nW" id="64DOkVis99l" role="1bW2Oz">
-                                      <property role="TrG5h" value="it" />
-                                      <node concept="2jxLKc" id="64DOkVis99m" role="1tU5fm" />
-                                    </node>
+                                  </node>
+                                  <node concept="Rh6nW" id="64DOkVis99l" role="1bW2Oz">
+                                    <property role="TrG5h" value="it" />
+                                    <node concept="2jxLKc" id="64DOkVis99m" role="1tU5fm" />
                                   </node>
                                 </node>
                               </node>
@@ -16917,13 +16915,53 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="2pNNFK" id="4FAOcOiRdrX" role="3o6s8t">
-                    <property role="2pNNFO" value="include" />
+                  <node concept="2pNNFK" id="2N91GSCRso$" role="3o6s8t">
+                    <property role="2pNNFO" value="exclude" />
                     <property role="qg3DV" value="true" />
-                    <node concept="2pNUuL" id="4FAOcOiRdrY" role="2pNNFR">
+                    <node concept="2pNUuL" id="2N91GSCRso_" role="2pNNFR">
                       <property role="2pNUuO" value="name" />
-                      <node concept="2pMdtt" id="4FAOcOiRdrZ" role="2pMdts">
-                        <property role="2pMdty" value="**" />
+                      <node concept="2pMdtt" id="2N91GSCRsoA" role="2pMdts">
+                        <property role="2pMdty" value="**/*" />
+                      </node>
+                    </node>
+                    <node concept="1W57fq" id="2N91GSCXnYm" role="lGtFl">
+                      <node concept="3IZrLx" id="2N91GSCXnYo" role="3IZSJc">
+                        <node concept="3clFbS" id="2N91GSCXnYq" role="2VODD2">
+                          <node concept="3clFbF" id="2N91GSCXo5B" role="3cqZAp">
+                            <node concept="3fqX7Q" id="2N91GSCXoqR" role="3clFbG">
+                              <node concept="2OqwBi" id="2N91GSCXoqT" role="3fr31v">
+                                <node concept="2OqwBi" id="2N91GSCXoqU" role="2Oq$k0">
+                                  <node concept="30H73N" id="2N91GSCXoqV" role="2Oq$k0" />
+                                  <node concept="3Tsc0h" id="2N91GSCXoqW" role="2OqNvi">
+                                    <ref role="3TtcxE" to="kdzh:75N6Lqya9An" resolve="tips" />
+                                  </node>
+                                </node>
+                                <node concept="2HwmR7" id="2N91GSCXoqX" role="2OqNvi">
+                                  <node concept="1bVj0M" id="2N91GSCXoqY" role="23t8la">
+                                    <node concept="3clFbS" id="2N91GSCXoqZ" role="1bW5cS">
+                                      <node concept="3clFbF" id="2N91GSCXor0" role="3cqZAp">
+                                        <node concept="2OqwBi" id="2N91GSCXor1" role="3clFbG">
+                                          <node concept="37vLTw" id="2N91GSCXor2" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="2N91GSCXor5" resolve="it" />
+                                          </node>
+                                          <node concept="1mIQ4w" id="2N91GSCXor3" role="2OqNvi">
+                                            <node concept="chp4Y" id="2N91GSCXor4" role="cj9EA">
+                                              <ref role="cht4Q" to="kdzh:75N6Lqya9Ap" resolve="BuildMps_TipsMps" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="Rh6nW" id="2N91GSCXor5" role="1bW2Oz">
+                                      <property role="TrG5h" value="it" />
+                                      <node concept="2jxLKc" id="2N91GSCXor6" role="1tU5fm" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
