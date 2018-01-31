@@ -6323,7 +6323,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4Y6KxqQL3a5">
-    <property role="3GE5qa" value="Project.TipsAndTricks.CreateTips" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Collect" />
     <ref role="13h7C2" to="kdzh:75N6Lqy0tuW" resolve="BuildMps_Tips" />
     <node concept="13i0hz" id="4Y6KxqQL3ag" role="13h7CS">
       <property role="TrG5h" value="getPath" />
@@ -6331,8 +6331,16 @@
       <node concept="17QB3L" id="4Y6KxqQL3c0" role="3clF45" />
       <node concept="3clFbS" id="4Y6KxqQL3aj" role="3clF47">
         <node concept="3cpWs6" id="4Y6KxqQL3bG" role="3cqZAp">
-          <node concept="Xl_RD" id="4Y6KxqQL3ci" role="3cqZAk">
-            <property role="Xl_RC" value="${build.tmp}/out/mps-tips" />
+          <node concept="3cpWs3" id="4Y6KxqRpkcU" role="3cqZAk">
+            <node concept="2OqwBi" id="4Y6KxqRpkJt" role="3uHU7w">
+              <node concept="13iPFW" id="4Y6KxqRpkwC" role="2Oq$k0" />
+              <node concept="3TrcHB" id="4Y6KxqRpkZ0" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              </node>
+            </node>
+            <node concept="Xl_RD" id="4Y6KxqQL3ci" role="3uHU7B">
+              <property role="Xl_RC" value="${build.tmp}/out/mps-tips/" />
+            </node>
           </node>
         </node>
       </node>

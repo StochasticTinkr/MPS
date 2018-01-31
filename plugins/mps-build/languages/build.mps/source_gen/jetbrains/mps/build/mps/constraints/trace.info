@@ -14,7 +14,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,79,0" name="jetbrains.mps.build.mps.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,81,0" name="jetbrains.mps.build.mps.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)/1224588814561889089">
@@ -892,6 +892,38 @@
       <unit id="1227128029536567314" at="43,740,47,5" name="jetbrains.mps.build.mps.constraints.BuildMps_Generator_Constraints$2" />
       <unit id="5507251971038967782" at="28,15,39,5" name="jetbrains.mps.build.mps.constraints.BuildMps_Generator_Constraints$1" />
       <unit id="5507251971038967782" at="21,0,51,0" name="jetbrains.mps.build.mps.constraints.BuildMps_Generator_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)/5730480978697088988">
+    <file name="BuildMps_Tips_Constraints.java">
+      <node id="5730480978697088988" at="17,38,18,154" concept="11" />
+      <node id="5730480978697088988" at="22,84,23,119" concept="5" />
+      <node id="5730480978697088988" at="26,40,27,20" concept="6" />
+      <node id="5730480978697088988" at="30,70,31,37" concept="5" />
+      <node id="5730480978697186224" at="31,37,32,210" concept="6" />
+      <node id="5730480978697088988" at="34,7,35,22" concept="6" />
+      <node id="5730480978697088988" at="17,0,20,0" concept="1" trace="BuildMps_Tips_Constraints#()V" />
+      <node id="5730480978697088988" at="25,0,29,0" concept="4" trace="hasOwnValidator#()Z" />
+      <node id="5730480978697088988" at="29,0,34,0" concept="4" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="5730480978697088988" at="23,119,34,7" concept="2" />
+      <node id="5730480978697088988" at="21,0,37,0" concept="4" trace="getSpecifiedProperties#()Ljava/util/Map;" />
+      <scope id="5730480978697088988" at="17,38,18,154" />
+      <scope id="5730480978697088988" at="26,40,27,20" />
+      <scope id="5730480978697088988" at="30,70,32,210">
+        <var name="propertyName" id="5730480978697088988" />
+      </scope>
+      <scope id="5730480978697088988" at="17,0,20,0" />
+      <scope id="5730480978697088988" at="25,0,29,0" />
+      <scope id="5730480978697088988" at="29,0,34,0">
+        <var name="node" id="5730480978697088988" />
+        <var name="propertyValue" id="5730480978697088988" />
+      </scope>
+      <scope id="5730480978697088988" at="22,84,35,22">
+        <var name="properties" id="5730480978697088988" />
+      </scope>
+      <scope id="5730480978697088988" at="21,0,37,0" />
+      <unit id="5730480978697088988" at="24,137,34,5" name="jetbrains.mps.build.mps.constraints.BuildMps_Tips_Constraints$1" />
+      <unit id="5730480978697088988" at="16,0,38,0" name="jetbrains.mps.build.mps.constraints.BuildMps_Tips_Constraints" />
     </file>
   </root>
   <root nodeRef="r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)/6503355885715456079">

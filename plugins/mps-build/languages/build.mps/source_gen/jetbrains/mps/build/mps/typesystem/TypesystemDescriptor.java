@@ -20,7 +20,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_BuildMps_TipsJar_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_BuildMps_TipsBundle_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {

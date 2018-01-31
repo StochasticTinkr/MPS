@@ -486,7 +486,7 @@
       <node concept="3clFbS" id="4Y6KxqQL3aj" role="3clF47">
         <node concept="3cpWs6" id="4Y6KxqQL3bG" role="3cqZAp">
           <node concept="Xl_RD" id="4Y6KxqQL3ci" role="3cqZAk">
-            <property role="Xl_RC" value="${build.tmp}/out/mps-tips" />
+            <property role="Xl_RC" value="${tips_out}" />
           </node>
         </node>
       </node>

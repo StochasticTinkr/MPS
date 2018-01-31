@@ -33,7 +33,7 @@ public final class MPSTipsAndTricks__BehaviorDescriptor extends BaseBHDescriptor
   }
 
   /*package*/ static String getPath_id4Y6KxqQL3ag(@NotNull SNode __thisNode__) {
-    return "${build.tmp}/out/mps-tips";
+    return "${tips_out}";
   }
   /*package*/ static String getLocatedDirectory_id4Y6KxqQN2O7(@NotNull SNode __thisNode__, String language) {
     if ((language == null || language.length() == 0) || language.equals("en")) {

@@ -14,6 +14,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="i8bi" ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
@@ -8968,437 +8969,706 @@
     </node>
   </node>
   <node concept="312cEu" id="NC">
-    <property role="TrG5h" value="ConstraintsAspectDescriptor" />
     <property role="3GE5qa" value="Constraints" />
-    <node concept="3uibUv" id="ND" role="1zkMxy">
-      <ref role="3uigEE" to="ze1i:~BaseConstraintsAspectDescriptor" resolve="BaseConstraintsAspectDescriptor" />
+    <property role="TrG5h" value="BuildMps_Tips_Constraints" />
+    <node concept="3Tm1VV" id="ND" role="1B3o_S" />
+    <node concept="3uibUv" id="NE" role="1zkMxy">
+      <ref role="3uigEE" to="79pl:~BaseConstraintsDescriptor" resolve="BaseConstraintsDescriptor" />
     </node>
-    <node concept="3Tm1VV" id="NE" role="1B3o_S" />
     <node concept="3clFbW" id="NF" role="jymVt">
       <node concept="3cqZAl" id="NI" role="3clF45" />
-      <node concept="3Tm1VV" id="NJ" role="1B3o_S" />
-      <node concept="3clFbS" id="NK" role="3clF47" />
+      <node concept="3clFbS" id="NJ" role="3clF47">
+        <node concept="XkiVB" id="NL" role="3cqZAp">
+          <ref role="37wK5l" to="79pl:~BaseConstraintsDescriptor.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="BaseConstraintsDescriptor" />
+          <node concept="2YIFZM" id="NM" role="37wK5m">
+            <ref role="1Pybhc" to="2k9e:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
+            <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getConcept(long,long,long,java.lang.String):org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
+            <node concept="1adDum" id="NN" role="37wK5m">
+              <property role="1adDun" value="0xcf935df46994e9cL" />
+            </node>
+            <node concept="1adDum" id="NO" role="37wK5m">
+              <property role="1adDun" value="0xa132fa109541cba3L" />
+            </node>
+            <node concept="1adDum" id="NP" role="37wK5m">
+              <property role="1adDun" value="0x71731b16a201d7bcL" />
+            </node>
+            <node concept="Xl_RD" id="NQ" role="37wK5m">
+              <property role="Xl_RC" value="jetbrains.mps.build.mps.structure.BuildMps_Tips" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="NK" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="NG" role="jymVt" />
     <node concept="3clFb_" id="NH" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getConstraints" />
+      <property role="TrG5h" value="getSpecifiedProperties" />
       <property role="DiZV1" value="false" />
-      <node concept="2AHcQZ" id="NL" role="2AJF6D">
+      <node concept="3Tmbuc" id="NR" role="1B3o_S" />
+      <node concept="3uibUv" id="NS" role="3clF45">
+        <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
+        <node concept="3uibUv" id="NV" role="11_B2D">
+          <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+        </node>
+        <node concept="3uibUv" id="NW" role="11_B2D">
+          <ref role="3uigEE" to="ze1i:~PropertyConstraintsDescriptor" resolve="PropertyConstraintsDescriptor" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="NT" role="3clF47">
+        <node concept="3cpWs8" id="NX" role="3cqZAp">
+          <node concept="3cpWsn" id="O0" role="3cpWs9">
+            <property role="TrG5h" value="properties" />
+            <node concept="3uibUv" id="O1" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
+              <node concept="3uibUv" id="O3" role="11_B2D">
+                <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+              </node>
+              <node concept="3uibUv" id="O4" role="11_B2D">
+                <ref role="3uigEE" to="ze1i:~PropertyConstraintsDescriptor" resolve="PropertyConstraintsDescriptor" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="O2" role="33vP2m">
+              <node concept="1pGfFk" id="O5" role="2ShVmc">
+                <ref role="37wK5l" to="33ny:~HashMap.&lt;init&gt;()" resolve="HashMap" />
+                <node concept="3uibUv" id="O6" role="1pMfVU">
+                  <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+                </node>
+                <node concept="3uibUv" id="O7" role="1pMfVU">
+                  <ref role="3uigEE" to="ze1i:~PropertyConstraintsDescriptor" resolve="PropertyConstraintsDescriptor" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="NY" role="3cqZAp">
+          <node concept="2OqwBi" id="O8" role="3clFbG">
+            <node concept="37vLTw" id="O9" role="2Oq$k0">
+              <ref role="3cqZAo" node="O0" resolve="properties" />
+            </node>
+            <node concept="liA8E" id="Oa" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+              <node concept="2YIFZM" id="Ob" role="37wK5m">
+                <ref role="1Pybhc" to="2k9e:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
+                <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getProperty(long,long,long,long,java.lang.String):org.jetbrains.mps.openapi.language.SProperty" resolve="getProperty" />
+                <node concept="1adDum" id="Od" role="37wK5m">
+                  <property role="1adDun" value="0xceab519525ea4f22L" />
+                </node>
+                <node concept="1adDum" id="Oe" role="37wK5m">
+                  <property role="1adDun" value="0x9b92103b95ca8c0cL" />
+                </node>
+                <node concept="1adDum" id="Of" role="37wK5m">
+                  <property role="1adDun" value="0x110396eaaa4L" />
+                </node>
+                <node concept="1adDum" id="Og" role="37wK5m">
+                  <property role="1adDun" value="0x110396ec041L" />
+                </node>
+                <node concept="Xl_RD" id="Oh" role="37wK5m">
+                  <property role="Xl_RC" value="name" />
+                </node>
+              </node>
+              <node concept="2ShNRf" id="Oc" role="37wK5m">
+                <node concept="YeOm9" id="Oi" role="2ShVmc">
+                  <node concept="1Y3b0j" id="Oj" role="YeSDq">
+                    <property role="2bfB8j" value="true" />
+                    <ref role="1Y3XeK" to="79pl:~BasePropertyConstraintsDescriptor" resolve="BasePropertyConstraintsDescriptor" />
+                    <ref role="37wK5l" to="79pl:~BasePropertyConstraintsDescriptor.&lt;init&gt;(jetbrains.mps.smodel.adapter.ids.SPropertyId,jetbrains.mps.smodel.runtime.ConstraintsDescriptor)" resolve="BasePropertyConstraintsDescriptor" />
+                    <node concept="2YIFZM" id="Ok" role="37wK5m">
+                      <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
+                      <ref role="37wK5l" to="e8bb:~MetaIdFactory.propId(long,long,long,long):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="propId" />
+                      <node concept="1adDum" id="Op" role="37wK5m">
+                        <property role="1adDun" value="0xceab519525ea4f22L" />
+                      </node>
+                      <node concept="1adDum" id="Oq" role="37wK5m">
+                        <property role="1adDun" value="0x9b92103b95ca8c0cL" />
+                      </node>
+                      <node concept="1adDum" id="Or" role="37wK5m">
+                        <property role="1adDun" value="0x110396eaaa4L" />
+                      </node>
+                      <node concept="1adDum" id="Os" role="37wK5m">
+                        <property role="1adDun" value="0x110396ec041L" />
+                      </node>
+                    </node>
+                    <node concept="Xjq3P" id="Ol" role="37wK5m" />
+                    <node concept="3Tm1VV" id="Om" role="1B3o_S" />
+                    <node concept="3clFb_" id="On" role="jymVt">
+                      <property role="IEkAT" value="false" />
+                      <property role="1EzhhJ" value="false" />
+                      <property role="TrG5h" value="hasOwnValidator" />
+                      <property role="DiZV1" value="false" />
+                      <node concept="3Tm1VV" id="Ot" role="1B3o_S" />
+                      <node concept="10P_77" id="Ou" role="3clF45" />
+                      <node concept="3clFbS" id="Ov" role="3clF47">
+                        <node concept="3clFbF" id="Ox" role="3cqZAp">
+                          <node concept="3clFbT" id="Oy" role="3clFbG">
+                            <property role="3clFbU" value="true" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2AHcQZ" id="Ow" role="2AJF6D">
+                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                      </node>
+                    </node>
+                    <node concept="3clFb_" id="Oo" role="jymVt">
+                      <property role="IEkAT" value="false" />
+                      <property role="1EzhhJ" value="false" />
+                      <property role="TrG5h" value="validateValue" />
+                      <property role="DiZV1" value="false" />
+                      <node concept="3Tm1VV" id="Oz" role="1B3o_S" />
+                      <node concept="10P_77" id="O$" role="3clF45" />
+                      <node concept="37vLTG" id="O_" role="3clF46">
+                        <property role="TrG5h" value="node" />
+                        <node concept="3Tqbb2" id="OD" role="1tU5fm" />
+                      </node>
+                      <node concept="37vLTG" id="OA" role="3clF46">
+                        <property role="TrG5h" value="propertyValue" />
+                        <node concept="17QB3L" id="OE" role="1tU5fm" />
+                      </node>
+                      <node concept="3clFbS" id="OB" role="3clF47">
+                        <node concept="3cpWs8" id="OF" role="3cqZAp">
+                          <node concept="3cpWsn" id="OH" role="3cpWs9">
+                            <property role="TrG5h" value="propertyName" />
+                            <node concept="17QB3L" id="OI" role="1tU5fm" />
+                            <node concept="Xl_RD" id="OJ" role="33vP2m">
+                              <property role="Xl_RC" value="name" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="9aQIb" id="OG" role="3cqZAp">
+                          <node concept="3clFbS" id="OK" role="9aQI4">
+                            <node concept="3clFbF" id="OL" role="3cqZAp">
+                              <node concept="3fqX7Q" id="OM" role="3clFbG">
+                                <node concept="1eOMI4" id="ON" role="3fr31v">
+                                  <node concept="22lmx$" id="OO" role="1eOMHV">
+                                    <node concept="22lmx$" id="OP" role="3uHU7B">
+                                      <node concept="2OqwBi" id="OR" role="3uHU7B">
+                                        <node concept="1eOMI4" id="OT" role="2Oq$k0">
+                                          <node concept="2YIFZM" id="OV" role="1eOMHV">
+                                            <ref role="1Pybhc" to="i8bi:5IkW5anFfnn" resolve="SPropertyOperations" />
+                                            <ref role="37wK5l" to="i8bi:5IkW5anFfon" resolve="getString" />
+                                            <node concept="37vLTw" id="OW" role="37wK5m">
+                                              <ref role="3cqZAo" node="OA" resolve="propertyValue" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node concept="liA8E" id="OU" role="2OqNvi">
+                                          <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
+                                          <node concept="Xl_RD" id="OX" role="37wK5m">
+                                            <property role="Xl_RC" value=" " />
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="2OqwBi" id="OS" role="3uHU7w">
+                                        <node concept="1eOMI4" id="OY" role="2Oq$k0">
+                                          <node concept="2YIFZM" id="P0" role="1eOMHV">
+                                            <ref role="1Pybhc" to="i8bi:5IkW5anFfnn" resolve="SPropertyOperations" />
+                                            <ref role="37wK5l" to="i8bi:5IkW5anFfon" resolve="getString" />
+                                            <node concept="37vLTw" id="P1" role="37wK5m">
+                                              <ref role="3cqZAo" node="OA" resolve="propertyValue" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node concept="liA8E" id="OZ" role="2OqNvi">
+                                          <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
+                                          <node concept="Xl_RD" id="P2" role="37wK5m">
+                                            <property role="Xl_RC" value="/" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="2OqwBi" id="OQ" role="3uHU7w">
+                                      <node concept="1eOMI4" id="P3" role="2Oq$k0">
+                                        <node concept="2YIFZM" id="P5" role="1eOMHV">
+                                          <ref role="1Pybhc" to="i8bi:5IkW5anFfnn" resolve="SPropertyOperations" />
+                                          <ref role="37wK5l" to="i8bi:5IkW5anFfon" resolve="getString" />
+                                          <node concept="37vLTw" id="P6" role="37wK5m">
+                                            <ref role="3cqZAo" node="OA" resolve="propertyValue" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="liA8E" id="P4" role="2OqNvi">
+                                        <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
+                                        <node concept="Xl_RD" id="P7" role="37wK5m">
+                                          <property role="Xl_RC" value="\\" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2AHcQZ" id="OC" role="2AJF6D">
+                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="NZ" role="3cqZAp">
+          <node concept="37vLTw" id="P8" role="3clFbG">
+            <ref role="3cqZAo" node="O0" resolve="properties" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="NU" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
-      <node concept="3Tm1VV" id="NM" role="1B3o_S" />
-      <node concept="3uibUv" id="NN" role="3clF45">
+    </node>
+  </node>
+  <node concept="312cEu" id="P9">
+    <property role="TrG5h" value="ConstraintsAspectDescriptor" />
+    <property role="3GE5qa" value="Constraints" />
+    <node concept="3uibUv" id="Pa" role="1zkMxy">
+      <ref role="3uigEE" to="ze1i:~BaseConstraintsAspectDescriptor" resolve="BaseConstraintsAspectDescriptor" />
+    </node>
+    <node concept="3Tm1VV" id="Pb" role="1B3o_S" />
+    <node concept="3clFbW" id="Pc" role="jymVt">
+      <node concept="3cqZAl" id="Pf" role="3clF45" />
+      <node concept="3Tm1VV" id="Pg" role="1B3o_S" />
+      <node concept="3clFbS" id="Ph" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="Pd" role="jymVt" />
+    <node concept="3clFb_" id="Pe" role="jymVt">
+      <property role="IEkAT" value="false" />
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getConstraints" />
+      <property role="DiZV1" value="false" />
+      <node concept="2AHcQZ" id="Pi" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3Tm1VV" id="Pj" role="1B3o_S" />
+      <node concept="3uibUv" id="Pk" role="3clF45">
         <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
       </node>
-      <node concept="37vLTG" id="NO" role="3clF46">
+      <node concept="37vLTG" id="Pl" role="3clF46">
         <property role="TrG5h" value="concept" />
-        <node concept="3bZ5Sz" id="NQ" role="1tU5fm" />
+        <node concept="3bZ5Sz" id="Pn" role="1tU5fm" />
       </node>
-      <node concept="3clFbS" id="NP" role="3clF47">
-        <node concept="1_3QMa" id="NR" role="3cqZAp">
-          <node concept="37vLTw" id="NT" role="1_3QMn">
-            <ref role="3cqZAo" node="NO" resolve="concept" />
+      <node concept="3clFbS" id="Pm" role="3clF47">
+        <node concept="1_3QMa" id="Po" role="3cqZAp">
+          <node concept="37vLTw" id="Pq" role="1_3QMn">
+            <ref role="3cqZAo" node="Pl" resolve="concept" />
           </node>
-          <node concept="1pnPoh" id="NU" role="1_3QMm">
-            <node concept="3clFbS" id="Ol" role="1pnPq1">
-              <node concept="3cpWs6" id="On" role="3cqZAp">
-                <node concept="1nCR9W" id="Oo" role="3cqZAk">
+          <node concept="1pnPoh" id="Pr" role="1_3QMm">
+            <node concept="3clFbS" id="PR" role="1pnPq1">
+              <node concept="3cpWs6" id="PT" role="3cqZAp">
+                <node concept="1nCR9W" id="PU" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyExtendLanguage_Constraints" />
-                  <node concept="3uibUv" id="Op" role="2lIhxL">
+                  <node concept="3uibUv" id="PV" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="Om" role="1pnPq6">
+            <node concept="3gn64h" id="PS" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:3HwLahs6gcI" resolve="BuildMps_ModuleDependencyExtendLanguage" />
             </node>
           </node>
-          <node concept="1pnPoh" id="NV" role="1_3QMm">
-            <node concept="3clFbS" id="Oq" role="1pnPq1">
-              <node concept="3cpWs6" id="Os" role="3cqZAp">
-                <node concept="1nCR9W" id="Ot" role="3cqZAk">
+          <node concept="1pnPoh" id="Ps" role="1_3QMm">
+            <node concept="3clFbS" id="PW" role="1pnPq1">
+              <node concept="3cpWs6" id="PY" role="3cqZAp">
+                <node concept="1nCR9W" id="PZ" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_Branding_Constraints" />
-                  <node concept="3uibUv" id="Ou" role="2lIhxL">
+                  <node concept="3uibUv" id="Q0" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="Or" role="1pnPq6">
+            <node concept="3gn64h" id="PX" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:6Iq8148eRud" resolve="BuildMps_Branding" />
             </node>
           </node>
-          <node concept="1pnPoh" id="NW" role="1_3QMm">
-            <node concept="3clFbS" id="Ov" role="1pnPq1">
-              <node concept="3cpWs6" id="Ox" role="3cqZAp">
-                <node concept="1nCR9W" id="Oy" role="3cqZAk">
+          <node concept="1pnPoh" id="Pt" role="1_3QMm">
+            <node concept="3clFbS" id="Q1" role="1pnPq1">
+              <node concept="3cpWs6" id="Q3" role="3cqZAp">
+                <node concept="1nCR9W" id="Q4" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_Group_Constraints" />
-                  <node concept="3uibUv" id="Oz" role="2lIhxL">
+                  <node concept="3uibUv" id="Q5" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="Ow" role="1pnPq6">
+            <node concept="3gn64h" id="Q2" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />
             </node>
           </node>
-          <node concept="1pnPoh" id="NX" role="1_3QMm">
-            <node concept="3clFbS" id="O$" role="1pnPq1">
-              <node concept="3cpWs6" id="OA" role="3cqZAp">
-                <node concept="1nCR9W" id="OB" role="3cqZAk">
+          <node concept="1pnPoh" id="Pu" role="1_3QMm">
+            <node concept="3clFbS" id="Q6" role="1pnPq1">
+              <node concept="3cpWs6" id="Q8" role="3cqZAp">
+                <node concept="1nCR9W" id="Q9" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_Solution_Constraints" />
-                  <node concept="3uibUv" id="OC" role="2lIhxL">
+                  <node concept="3uibUv" id="Qa" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="O_" role="1pnPq6">
+            <node concept="3gn64h" id="Q7" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
             </node>
           </node>
-          <node concept="1pnPoh" id="NY" role="1_3QMm">
-            <node concept="3clFbS" id="OD" role="1pnPq1">
-              <node concept="3cpWs6" id="OF" role="3cqZAp">
-                <node concept="1nCR9W" id="OG" role="3cqZAk">
+          <node concept="1pnPoh" id="Pv" role="1_3QMm">
+            <node concept="3clFbS" id="Qb" role="1pnPq1">
+              <node concept="3cpWs6" id="Qd" role="3cqZAp">
+                <node concept="1nCR9W" id="Qe" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_Language_Constraints" />
-                  <node concept="3uibUv" id="OH" role="2lIhxL">
+                  <node concept="3uibUv" id="Qf" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="OE" role="1pnPq6">
+            <node concept="3gn64h" id="Qc" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
             </node>
           </node>
-          <node concept="1pnPoh" id="NZ" role="1_3QMm">
-            <node concept="3clFbS" id="OI" role="1pnPq1">
-              <node concept="3cpWs6" id="OK" role="3cqZAp">
-                <node concept="1nCR9W" id="OL" role="3cqZAk">
+          <node concept="1pnPoh" id="Pw" role="1_3QMm">
+            <node concept="3clFbS" id="Qg" role="1pnPq1">
+              <node concept="3cpWs6" id="Qi" role="3cqZAp">
+                <node concept="1nCR9W" id="Qj" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_DevKit_Constraints" />
-                  <node concept="3uibUv" id="OM" role="2lIhxL">
+                  <node concept="3uibUv" id="Qk" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="OJ" role="1pnPq6">
+            <node concept="3gn64h" id="Qh" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:hS0KzPOwoe" resolve="BuildMps_DevKit" />
             </node>
           </node>
-          <node concept="1pnPoh" id="O0" role="1_3QMm">
-            <node concept="3clFbS" id="ON" role="1pnPq1">
-              <node concept="3cpWs6" id="OP" role="3cqZAp">
-                <node concept="1nCR9W" id="OQ" role="3cqZAk">
+          <node concept="1pnPoh" id="Px" role="1_3QMm">
+            <node concept="3clFbS" id="Ql" role="1pnPq1">
+              <node concept="3cpWs6" id="Qn" role="3cqZAp">
+                <node concept="1nCR9W" id="Qo" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPlugin_Constraints" />
-                  <node concept="3uibUv" id="OR" role="2lIhxL">
+                  <node concept="3uibUv" id="Qp" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="OO" role="1pnPq6">
+            <node concept="3gn64h" id="Qm" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
             </node>
           </node>
-          <node concept="1pnPoh" id="O1" role="1_3QMm">
-            <node concept="3clFbS" id="OS" role="1pnPq1">
-              <node concept="3cpWs6" id="OU" role="3cqZAp">
-                <node concept="1nCR9W" id="OV" role="3cqZAk">
+          <node concept="1pnPoh" id="Py" role="1_3QMm">
+            <node concept="3clFbS" id="Qq" role="1pnPq1">
+              <node concept="3cpWs6" id="Qs" role="3cqZAp">
+                <node concept="1nCR9W" id="Qt" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMpsLayout_Plugin_Constraints" />
-                  <node concept="3uibUv" id="OW" role="2lIhxL">
+                  <node concept="3uibUv" id="Qu" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="OT" role="1pnPq6">
+            <node concept="3gn64h" id="Qr" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:5HVSRHdUrHI" resolve="BuildMpsLayout_Plugin" />
             </node>
           </node>
-          <node concept="1pnPoh" id="O2" role="1_3QMm">
-            <node concept="3clFbS" id="OX" role="1pnPq1">
-              <node concept="3cpWs6" id="OZ" role="3cqZAp">
-                <node concept="1nCR9W" id="P0" role="3cqZAk">
+          <node concept="1pnPoh" id="Pz" role="1_3QMm">
+            <node concept="3clFbS" id="Qv" role="1pnPq1">
+              <node concept="3cpWs6" id="Qx" role="3cqZAp">
+                <node concept="1nCR9W" id="Qy" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMpsLayout_ModuleJars_Constraints" />
-                  <node concept="3uibUv" id="P1" role="2lIhxL">
+                  <node concept="3uibUv" id="Qz" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="OY" role="1pnPq6">
+            <node concept="3gn64h" id="Qw" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:16hzwWwASfB" resolve="BuildMpsLayout_ModuleJars" />
             </node>
           </node>
-          <node concept="1pnPoh" id="O3" role="1_3QMm">
-            <node concept="3clFbS" id="P2" role="1pnPq1">
-              <node concept="3cpWs6" id="P4" role="3cqZAp">
-                <node concept="1nCR9W" id="P5" role="3cqZAk">
+          <node concept="1pnPoh" id="P$" role="1_3QMm">
+            <node concept="3clFbS" id="Q$" role="1pnPq1">
+              <node concept="3cpWs6" id="QA" role="3cqZAp">
+                <node concept="1nCR9W" id="QB" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_ModuleSolutionRuntime_Constraints" />
-                  <node concept="3uibUv" id="P6" role="2lIhxL">
+                  <node concept="3uibUv" id="QC" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="P3" role="1pnPq6">
+            <node concept="3gn64h" id="Q_" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:2L4pT56hbrz" resolve="BuildMps_ModuleSolutionRuntime" />
             </node>
           </node>
-          <node concept="1pnPoh" id="O4" role="1_3QMm">
-            <node concept="3clFbS" id="P7" role="1pnPq1">
-              <node concept="3cpWs6" id="P9" role="3cqZAp">
-                <node concept="1nCR9W" id="Pa" role="3cqZAk">
+          <node concept="1pnPoh" id="P_" role="1_3QMm">
+            <node concept="3clFbS" id="QD" role="1pnPq1">
+              <node concept="3cpWs6" id="QF" role="3cqZAp">
+                <node concept="1nCR9W" id="QG" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyOnDevKit_Constraints" />
-                  <node concept="3uibUv" id="Pb" role="2lIhxL">
+                  <node concept="3uibUv" id="QH" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="P8" role="1pnPq6">
+            <node concept="3gn64h" id="QE" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:hS0KzPPrL9" resolve="BuildMps_ModuleDependencyOnDevKit" />
             </node>
           </node>
-          <node concept="1pnPoh" id="O5" role="1_3QMm">
-            <node concept="3clFbS" id="Pc" role="1pnPq1">
-              <node concept="3cpWs6" id="Pe" role="3cqZAp">
-                <node concept="1nCR9W" id="Pf" role="3cqZAk">
+          <node concept="1pnPoh" id="PA" role="1_3QMm">
+            <node concept="3clFbS" id="QI" role="1pnPq1">
+              <node concept="3cpWs6" id="QK" role="3cqZAp">
+                <node concept="1nCR9W" id="QL" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyOnJavaModule_Constraints" />
-                  <node concept="3uibUv" id="Pg" role="2lIhxL">
+                  <node concept="3uibUv" id="QM" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="Pd" role="1pnPq6">
+            <node concept="3gn64h" id="QJ" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:2L4pT56gYzV" resolve="BuildMps_ModuleDependencyOnJavaModule" />
             </node>
           </node>
-          <node concept="1pnPoh" id="O6" role="1_3QMm">
-            <node concept="3clFbS" id="Ph" role="1pnPq1">
-              <node concept="3cpWs6" id="Pj" role="3cqZAp">
-                <node concept="1nCR9W" id="Pk" role="3cqZAk">
+          <node concept="1pnPoh" id="PB" role="1_3QMm">
+            <node concept="3clFbS" id="QN" role="1pnPq1">
+              <node concept="3cpWs6" id="QP" role="3cqZAp">
+                <node concept="1nCR9W" id="QQ" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyOnModule_Constraints" />
-                  <node concept="3uibUv" id="Pl" role="2lIhxL">
+                  <node concept="3uibUv" id="QR" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="Pi" role="1pnPq6">
+            <node concept="3gn64h" id="QO" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:4zCbl23db4q" resolve="BuildMps_ModuleDependencyOnModule" />
             </node>
           </node>
-          <node concept="1pnPoh" id="O7" role="1_3QMm">
-            <node concept="3clFbS" id="Pm" role="1pnPq1">
-              <node concept="3cpWs6" id="Po" role="3cqZAp">
-                <node concept="1nCR9W" id="Pp" role="3cqZAk">
+          <node concept="1pnPoh" id="PC" role="1_3QMm">
+            <node concept="3clFbS" id="QS" role="1pnPq1">
+              <node concept="3cpWs6" id="QU" role="3cqZAp">
+                <node concept="1nCR9W" id="QV" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_ModuleDependencyUseLanguage_Constraints" />
-                  <node concept="3uibUv" id="Pq" role="2lIhxL">
+                  <node concept="3uibUv" id="QW" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="Pn" role="1pnPq6">
+            <node concept="3gn64h" id="QT" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:2L4pT56gXbi" resolve="BuildMps_ModuleDependencyUseLanguage" />
             </node>
           </node>
-          <node concept="1pnPoh" id="O8" role="1_3QMm">
-            <node concept="3clFbS" id="Pr" role="1pnPq1">
-              <node concept="3cpWs6" id="Pt" role="3cqZAp">
-                <node concept="1nCR9W" id="Pu" role="3cqZAk">
+          <node concept="1pnPoh" id="PD" role="1_3QMm">
+            <node concept="3clFbS" id="QX" role="1pnPq1">
+              <node concept="3cpWs6" id="QZ" role="3cqZAp">
+                <node concept="1nCR9W" id="R0" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_DevKitRef_Constraints" />
-                  <node concept="3uibUv" id="Pv" role="2lIhxL">
+                  <node concept="3uibUv" id="R1" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="Ps" role="1pnPq6">
+            <node concept="3gn64h" id="QY" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:hS0KzPOz4U" resolve="BuildMps_DevKitRef" />
             </node>
           </node>
-          <node concept="1pnPoh" id="O9" role="1_3QMm">
-            <node concept="3clFbS" id="Pw" role="1pnPq1">
-              <node concept="3cpWs6" id="Py" role="3cqZAp">
-                <node concept="1nCR9W" id="Pz" role="3cqZAk">
+          <node concept="1pnPoh" id="PE" role="1_3QMm">
+            <node concept="3clFbS" id="R2" role="1pnPq1">
+              <node concept="3cpWs6" id="R4" role="3cqZAp">
+                <node concept="1nCR9W" id="R5" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_DevKitExportLanguage_Constraints" />
-                  <node concept="3uibUv" id="P$" role="2lIhxL">
+                  <node concept="3uibUv" id="R6" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="Px" role="1pnPq6">
+            <node concept="3gn64h" id="R3" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:hS0KzPODPE" resolve="BuildMps_DevKitExportLanguage" />
             </node>
           </node>
-          <node concept="1pnPoh" id="Oa" role="1_3QMm">
-            <node concept="3clFbS" id="P_" role="1pnPq1">
-              <node concept="3cpWs6" id="PB" role="3cqZAp">
-                <node concept="1nCR9W" id="PC" role="3cqZAk">
+          <node concept="1pnPoh" id="PF" role="1_3QMm">
+            <node concept="3clFbS" id="R7" role="1pnPq1">
+              <node concept="3cpWs6" id="R9" role="3cqZAp">
+                <node concept="1nCR9W" id="Ra" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_DevKitExportSolution_Constraints" />
-                  <node concept="3uibUv" id="PD" role="2lIhxL">
+                  <node concept="3uibUv" id="Rb" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="PA" role="1pnPq6">
+            <node concept="3gn64h" id="R8" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:hS0KzPODPU" resolve="BuildMps_DevKitExportSolution" />
             </node>
           </node>
-          <node concept="1pnPoh" id="Ob" role="1_3QMm">
-            <node concept="3clFbS" id="PE" role="1pnPq1">
-              <node concept="3cpWs6" id="PG" role="3cqZAp">
-                <node concept="1nCR9W" id="PH" role="3cqZAk">
+          <node concept="1pnPoh" id="PG" role="1_3QMm">
+            <node concept="3clFbS" id="Rc" role="1pnPq1">
+              <node concept="3cpWs6" id="Re" role="3cqZAp">
+                <node concept="1nCR9W" id="Rf" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMpsLayout_ModuleSources_Constraints" />
-                  <node concept="3uibUv" id="PI" role="2lIhxL">
+                  <node concept="3uibUv" id="Rg" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="PF" role="1pnPq6">
+            <node concept="3gn64h" id="Rd" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:1tWbYFNhzsg" resolve="BuildMpsLayout_ModuleSources" />
             </node>
           </node>
-          <node concept="1pnPoh" id="Oc" role="1_3QMm">
-            <node concept="3clFbS" id="PJ" role="1pnPq1">
-              <node concept="3cpWs6" id="PL" role="3cqZAp">
-                <node concept="1nCR9W" id="PM" role="3cqZAk">
+          <node concept="1pnPoh" id="PH" role="1_3QMm">
+            <node concept="3clFbS" id="Rh" role="1pnPq1">
+              <node concept="3cpWs6" id="Rj" role="3cqZAp">
+                <node concept="1nCR9W" id="Rk" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMpsLayout_ModuleXml_Constraints" />
-                  <node concept="3uibUv" id="PN" role="2lIhxL">
+                  <node concept="3uibUv" id="Rl" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="PK" role="1pnPq6">
+            <node concept="3gn64h" id="Ri" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:6CY5wCYZA9O" resolve="BuildMpsLayout_ModuleXml" />
             </node>
           </node>
-          <node concept="1pnPoh" id="Od" role="1_3QMm">
-            <node concept="3clFbS" id="PO" role="1pnPq1">
-              <node concept="3cpWs6" id="PQ" role="3cqZAp">
-                <node concept="1nCR9W" id="PR" role="3cqZAk">
+          <node concept="1pnPoh" id="PI" role="1_3QMm">
+            <node concept="3clFbS" id="Rm" role="1pnPq1">
+              <node concept="3cpWs6" id="Ro" role="3cqZAp">
+                <node concept="1nCR9W" id="Rp" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMpsLayout_PluginDescriptor_Constraints" />
-                  <node concept="3uibUv" id="PS" role="2lIhxL">
+                  <node concept="3uibUv" id="Rq" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="PP" role="1pnPq6">
+            <node concept="3gn64h" id="Rn" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:5HVSRHdV$dW" resolve="BuildMpsLayout_PluginDescriptor" />
             </node>
           </node>
-          <node concept="1pnPoh" id="Oe" role="1_3QMm">
-            <node concept="3clFbS" id="PT" role="1pnPq1">
-              <node concept="3cpWs6" id="PV" role="3cqZAp">
-                <node concept="1nCR9W" id="PW" role="3cqZAk">
+          <node concept="1pnPoh" id="PJ" role="1_3QMm">
+            <node concept="3clFbS" id="Rr" role="1pnPq1">
+              <node concept="3cpWs6" id="Rt" role="3cqZAp">
+                <node concept="1nCR9W" id="Ru" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPluginGroup_Constraints" />
-                  <node concept="3uibUv" id="PX" role="2lIhxL">
+                  <node concept="3uibUv" id="Rv" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="PU" role="1pnPq6">
+            <node concept="3gn64h" id="Rs" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:5HVSRHdUL81" resolve="BuildMps_IdeaPluginGroup" />
             </node>
           </node>
-          <node concept="1pnPoh" id="Of" role="1_3QMm">
-            <node concept="3clFbS" id="PY" role="1pnPq1">
-              <node concept="3cpWs6" id="Q0" role="3cqZAp">
-                <node concept="1nCR9W" id="Q1" role="3cqZAk">
+          <node concept="1pnPoh" id="PK" role="1_3QMm">
+            <node concept="3clFbS" id="Rw" role="1pnPq1">
+              <node concept="3cpWs6" id="Ry" role="3cqZAp">
+                <node concept="1nCR9W" id="Rz" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPluginModule_Constraints" />
-                  <node concept="3uibUv" id="Q2" role="2lIhxL">
+                  <node concept="3uibUv" id="R$" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="PZ" role="1pnPq6">
+            <node concept="3gn64h" id="Rx" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:5HVSRHdUrJs" resolve="BuildMps_IdeaPluginModule" />
             </node>
           </node>
-          <node concept="1pnPoh" id="Og" role="1_3QMm">
-            <node concept="3clFbS" id="Q3" role="1pnPq1">
-              <node concept="3cpWs6" id="Q5" role="3cqZAp">
-                <node concept="1nCR9W" id="Q6" role="3cqZAk">
+          <node concept="1pnPoh" id="PL" role="1_3QMm">
+            <node concept="3clFbS" id="R_" role="1pnPq1">
+              <node concept="3cpWs6" id="RB" role="3cqZAp">
+                <node concept="1nCR9W" id="RC" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPluginDependency_Constraints" />
-                  <node concept="3uibUv" id="Q7" role="2lIhxL">
+                  <node concept="3uibUv" id="RD" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="Q4" role="1pnPq6">
+            <node concept="3gn64h" id="RA" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:5HVSRHdUrJj" resolve="BuildMps_IdeaPluginDependency" />
             </node>
           </node>
-          <node concept="1pnPoh" id="Oh" role="1_3QMm">
-            <node concept="3clFbS" id="Q8" role="1pnPq1">
-              <node concept="3cpWs6" id="Qa" role="3cqZAp">
-                <node concept="1nCR9W" id="Qb" role="3cqZAk">
+          <node concept="1pnPoh" id="PM" role="1_3QMm">
+            <node concept="3clFbS" id="RE" role="1pnPq1">
+              <node concept="3cpWs6" id="RG" role="3cqZAp">
+                <node concept="1nCR9W" id="RH" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPluginGroupCustomModule_Constraints" />
-                  <node concept="3uibUv" id="Qc" role="2lIhxL">
+                  <node concept="3uibUv" id="RI" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="Q9" role="1pnPq6">
+            <node concept="3gn64h" id="RF" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:3vXGXT8byGB" resolve="BuildMps_IdeaPluginGroupCustomModule" />
             </node>
           </node>
-          <node concept="1pnPoh" id="Oi" role="1_3QMm">
-            <node concept="3clFbS" id="Qd" role="1pnPq1">
-              <node concept="3cpWs6" id="Qf" role="3cqZAp">
-                <node concept="1nCR9W" id="Qg" role="3cqZAk">
+          <node concept="1pnPoh" id="PN" role="1_3QMm">
+            <node concept="3clFbS" id="RJ" role="1pnPq1">
+              <node concept="3cpWs6" id="RL" role="3cqZAp">
+                <node concept="1nCR9W" id="RM" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMpsAspect_Constraints" />
-                  <node concept="3uibUv" id="Qh" role="2lIhxL">
+                  <node concept="3uibUv" id="RN" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="Qe" role="1pnPq6">
+            <node concept="3gn64h" id="RK" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:5D0zVz80y2D" resolve="BuildMpsAspect" />
             </node>
           </node>
-          <node concept="1pnPoh" id="Oj" role="1_3QMm">
-            <node concept="3clFbS" id="Qi" role="1pnPq1">
-              <node concept="3cpWs6" id="Qk" role="3cqZAp">
-                <node concept="1nCR9W" id="Ql" role="3cqZAk">
+          <node concept="1pnPoh" id="PO" role="1_3QMm">
+            <node concept="3clFbS" id="RO" role="1pnPq1">
+              <node concept="3cpWs6" id="RQ" role="3cqZAp">
+                <node concept="1nCR9W" id="RR" role="3cqZAk">
                   <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_Generator_Constraints" />
-                  <node concept="3uibUv" id="Qm" role="2lIhxL">
+                  <node concept="3uibUv" id="RS" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="Qj" role="1pnPq6">
+            <node concept="3gn64h" id="RP" role="1pnPq6">
               <ref role="3gnhBz" to="kdzh:4LHG7OIlEyO" resolve="BuildMps_Generator" />
             </node>
           </node>
-          <node concept="3clFbS" id="Ok" role="1prKM_" />
+          <node concept="1pnPoh" id="PP" role="1_3QMm">
+            <node concept="3clFbS" id="RT" role="1pnPq1">
+              <node concept="3cpWs6" id="RV" role="3cqZAp">
+                <node concept="1nCR9W" id="RW" role="3cqZAk">
+                  <property role="1nD$Q0" value="jetbrains.mps.build.mps.constraints.BuildMps_Tips_Constraints" />
+                  <node concept="3uibUv" id="RX" role="2lIhxL">
+                    <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3gn64h" id="RU" role="1pnPq6">
+              <ref role="3gnhBz" to="kdzh:75N6Lqy0tuW" resolve="BuildMps_Tips" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="PQ" role="1prKM_" />
         </node>
-        <node concept="3cpWs6" id="NS" role="3cqZAp">
-          <node concept="2ShNRf" id="Qn" role="3cqZAk">
-            <node concept="1pGfFk" id="Qo" role="2ShVmc">
+        <node concept="3cpWs6" id="Pp" role="3cqZAp">
+          <node concept="2ShNRf" id="RY" role="3cqZAk">
+            <node concept="1pGfFk" id="RZ" role="2ShVmc">
               <ref role="37wK5l" to="79pl:~BaseConstraintsDescriptor.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="BaseConstraintsDescriptor" />
-              <node concept="37vLTw" id="Qp" role="37wK5m">
-                <ref role="3cqZAo" node="NO" resolve="concept" />
+              <node concept="37vLTw" id="S0" role="37wK5m">
+                <ref role="3cqZAo" node="Pl" resolve="concept" />
               </node>
             </node>
           </node>
@@ -9406,6 +9676,6 @@
       </node>
     </node>
   </node>
-  <node concept="39dXUE" id="Qq" />
+  <node concept="39dXUE" id="S1" />
 </model>
 

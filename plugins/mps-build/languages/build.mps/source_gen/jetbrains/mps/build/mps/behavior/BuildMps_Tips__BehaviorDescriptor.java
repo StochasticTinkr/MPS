@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -33,7 +34,7 @@ public final class BuildMps_Tips__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static String getPath_id4Y6KxqQL3ag(@NotNull SNode __thisNode__) {
-    return "${build.tmp}/out/mps-tips";
+    return "${build.tmp}/out/mps-tips/" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   /*package*/ static String getLocatedDirectory_id4Y6KxqQN2O7(@NotNull SNode __thisNode__, String language) {
     if ((language == null || language.length() == 0) || language.equals("en")) {
