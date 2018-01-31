@@ -1494,10 +1494,10 @@
   </node>
   <node concept="1TIwiD" id="5Ux$AZuOzjJ">
     <property role="EcuMT" value="6818892319992984815" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.Bundle" />
-    <property role="TrG5h" value="BuildMps_TipsBundle" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Package" />
+    <property role="TrG5h" value="BuildMps_TipsPackage" />
     <property role="R4oN_" value="jar tips of project element" />
-    <property role="34LRSv" value="bundle tips" />
+    <property role="34LRSv" value="package tips" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
     <node concept="1TJgyj" id="6mx7ef$41ej" role="1TKVEi">
       <property role="IQ2ns" value="7323166234190549907" />

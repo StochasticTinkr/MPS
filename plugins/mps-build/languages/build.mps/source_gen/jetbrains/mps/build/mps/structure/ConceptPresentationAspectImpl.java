@@ -62,10 +62,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BuildMps_ModuleTestSource;
   private ConceptPresentation props_BuildMps_Solution;
   private ConceptPresentation props_BuildMps_Tips;
-  private ConceptPresentation props_BuildMps_TipsBundle;
   private ConceptPresentation props_BuildMps_TipsDir;
   private ConceptPresentation props_BuildMps_TipsImport;
   private ConceptPresentation props_BuildMps_TipsMps;
+  private ConceptPresentation props_BuildMps_TipsPackage;
   private ConceptPresentation props_BuildMps_TipsSolution;
   private ConceptPresentation props_GeneratorInternal_BuildMps_Module;
   private ConceptPresentation props_GeneratorInternal_BuildSourcePath;
@@ -449,14 +449,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BuildMps_Tips = cpb.create();
         }
         return props_BuildMps_Tips;
-      case LanguageConceptSwitch.BuildMps_TipsBundle:
-        if (props_BuildMps_TipsBundle == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("jar tips of project element");
-          cpb.presentationByName();
-          props_BuildMps_TipsBundle = cpb.create();
-        }
-        return props_BuildMps_TipsBundle;
       case LanguageConceptSwitch.BuildMps_TipsDir:
         if (props_BuildMps_TipsDir == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -477,6 +469,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BuildMps_TipsMps = cpb.create();
         }
         return props_BuildMps_TipsMps;
+      case LanguageConceptSwitch.BuildMps_TipsPackage:
+        if (props_BuildMps_TipsPackage == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("jar tips of project element");
+          cpb.presentationByName();
+          props_BuildMps_TipsPackage = cpb.create();
+        }
+        return props_BuildMps_TipsPackage;
       case LanguageConceptSwitch.BuildMps_TipsSolution:
         if (props_BuildMps_TipsSolution == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

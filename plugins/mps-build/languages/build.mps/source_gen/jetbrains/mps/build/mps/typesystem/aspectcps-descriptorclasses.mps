@@ -3121,7 +3121,7 @@
       <node concept="3clFbS" id="hc" role="3clF47">
         <node concept="3cpWs6" id="he" role="3cqZAp">
           <node concept="35c_gC" id="hf" role="3cqZAk">
-            <ref role="35c_gD" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsBundle" />
+            <ref role="35c_gD" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsPackage" />
           </node>
         </node>
       </node>

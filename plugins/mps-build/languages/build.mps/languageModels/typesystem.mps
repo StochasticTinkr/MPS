@@ -2365,7 +2365,7 @@
   </node>
   <node concept="18kY7G" id="4Y6KxqRFYYX">
     <property role="TrG5h" value="check_BuildMps_TipsBundle" />
-    <property role="3GE5qa" value="Project.TipsAndTricks.Bundle" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Package" />
     <node concept="3clFbS" id="4Y6KxqRFYYY" role="18ibNy">
       <node concept="3clFbJ" id="4Y6KxqRGj1s" role="3cqZAp">
         <node concept="3clFbS" id="4Y6KxqRGj1u" role="3clFbx">
@@ -2415,7 +2415,7 @@
     </node>
     <node concept="1YaCAy" id="4Y6KxqRFYZ0" role="1YuTPh">
       <property role="TrG5h" value="buildMps_TipsBundle" />
-      <ref role="1YaFvo" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsBundle" />
+      <ref role="1YaFvo" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsPackage" />
     </node>
   </node>
 </model>

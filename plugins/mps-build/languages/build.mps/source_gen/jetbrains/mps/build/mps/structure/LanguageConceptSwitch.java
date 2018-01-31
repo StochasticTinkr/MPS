@@ -62,10 +62,10 @@ public final class LanguageConceptSwitch {
   public static final int BuildMps_ModuleTestSource = 50;
   public static final int BuildMps_Solution = 51;
   public static final int BuildMps_Tips = 52;
-  public static final int BuildMps_TipsBundle = 53;
-  public static final int BuildMps_TipsDir = 54;
-  public static final int BuildMps_TipsImport = 55;
-  public static final int BuildMps_TipsMps = 56;
+  public static final int BuildMps_TipsDir = 53;
+  public static final int BuildMps_TipsImport = 54;
+  public static final int BuildMps_TipsMps = 55;
+  public static final int BuildMps_TipsPackage = 56;
   public static final int BuildMps_TipsSolution = 57;
   public static final int GeneratorInternal_BuildMps_Module = 58;
   public static final int GeneratorInternal_BuildSourcePath = 59;
@@ -126,10 +126,10 @@ public final class LanguageConceptSwitch {
     builder.put(0x21286cd3b0f27758L, BuildMps_ModuleTestSource);
     builder.put(0x2c446791464290f7L, BuildMps_Solution);
     builder.put(0x71731b16a201d7bcL, BuildMps_Tips);
-    builder.put(0x5ea1926fded234efL, BuildMps_TipsBundle);
     builder.put(0x71731b16a22c0160L, BuildMps_TipsDir);
     builder.put(0x71731b16a2289996L, BuildMps_TipsImport);
     builder.put(0x71731b16a2289999L, BuildMps_TipsMps);
+    builder.put(0x5ea1926fded234efL, BuildMps_TipsPackage);
     builder.put(0x71731b16a233b3c4L, BuildMps_TipsSolution);
     builder.put(0x44e5dd192e7771cfL, GeneratorInternal_BuildMps_Module);
     builder.put(0x44e5dd192e77725eL, GeneratorInternal_BuildSourcePath);

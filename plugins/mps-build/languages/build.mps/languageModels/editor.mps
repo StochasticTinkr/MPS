@@ -5766,8 +5766,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="5Ux$AZuOzjS">
-    <property role="3GE5qa" value="Project.TipsAndTricks.Bundle" />
-    <ref role="1XX52x" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsBundle" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Package" />
+    <ref role="1XX52x" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsPackage" />
     <node concept="3EZMnI" id="5Ux$AZuOzjU" role="2wV5jI">
       <node concept="3F0ifn" id="5Ux$AZuOzk1" role="3EZMnx">
         <property role="3F0ifm" value="tips of" />
@@ -5844,18 +5844,10 @@
           <property role="Vb096" value="DARK_BLUE" />
         </node>
       </node>
-      <node concept="3F0ifn" id="4Y6KxqRnnDD" role="3EZMnx">
-        <property role="3F0ifm" value="[" />
-      </node>
       <node concept="3F0A7n" id="4Y6KxqRnnEA" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
-      <node concept="3F0ifn" id="4Y6KxqRnnF0" role="3EZMnx">
-        <property role="3F0ifm" value="]" />
-      </node>
-      <node concept="3F0ifn" id="7cgc9gER362" role="3EZMnx">
-        <property role="3F0ifm" value="{" />
-      </node>
+      <node concept="3F0ifn" id="7cgc9gER362" role="3EZMnx" />
       <node concept="3F2HdR" id="7cgc9gER36a" role="3EZMnx">
         <ref role="1NtTu8" to="kdzh:75N6Lqya9An" resolve="imports" />
         <node concept="l2Vlx" id="7cgc9gER36c" role="2czzBx" />
@@ -5869,9 +5861,7 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3F0ifn" id="7cgc9gER36n" role="3EZMnx">
-        <property role="3F0ifm" value="}" />
-      </node>
+      <node concept="3F0ifn" id="7cgc9gER36n" role="3EZMnx" />
       <node concept="l2Vlx" id="75N6Lqy0vWs" role="2iSdaV" />
     </node>
   </node>
