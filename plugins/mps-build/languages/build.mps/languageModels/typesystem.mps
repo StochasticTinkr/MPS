@@ -2290,7 +2290,7 @@
               <ref role="1YBMHb" node="6YEa3Ro5j27" resolve="buildMps_TipsSolution" />
             </node>
             <node concept="3TrEf2" id="6YEa3Ro5jBZ" role="2OqNvi">
-              <ref role="3Tt5mk" to="kdzh:5J862cnMvcw" resolve="link" />
+              <ref role="3Tt5mk" to="kdzh:5J862cnMvcw" resolve="solution" />
             </node>
           </node>
           <node concept="3w_OXm" id="6YEa3Ro5kJq" role="2OqNvi" />
@@ -2356,7 +2356,7 @@
               <ref role="1YBMHb" node="2v3n_quM4DZ" resolve="buildMps_TipsJar" />
             </node>
             <node concept="3TrEf2" id="2v3n_quM9mf" role="2OqNvi">
-              <ref role="3Tt5mk" to="kdzh:2DNUTJn1OVf" resolve="link" />
+              <ref role="3Tt5mk" to="kdzh:2DNUTJn1OVf" resolve="tips" />
             </node>
           </node>
           <node concept="3w_OXm" id="2v3n_quM9Ya" role="2OqNvi" />

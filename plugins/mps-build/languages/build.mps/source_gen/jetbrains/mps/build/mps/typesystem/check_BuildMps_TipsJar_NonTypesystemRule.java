@@ -18,7 +18,7 @@ public class check_BuildMps_TipsJar_NonTypesystemRule extends AbstractNonTypesys
   public check_BuildMps_TipsJar_NonTypesystemRule() {
   }
   public void applyRule(final SNode buildMps_TipsJar, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(buildMps_TipsJar, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2a73eb9bd7074ebeL, 0x2a73eb9bd7074ecfL, "link")) == null)) {
+    if ((SLinkOperations.getTarget(buildMps_TipsJar, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2a73eb9bd7074ebeL, 0x2a73eb9bd7074ecfL, "tips")) == null)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(buildMps_TipsJar, "no tips & trick selected", "r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)", "2865237514061914148", null, errorTarget);

@@ -68,8 +68,8 @@ public final class LanguageConceptSwitch {
   public static final int BuildMps_TipsJarIdeTipsAndTricks = 56;
   public static final int BuildMps_TipsJarPart = 57;
   public static final int BuildMps_TipsJarTips = 58;
-  public static final int BuildMps_TipsLoad = 59;
-  public static final int BuildMps_TipsMps = 60;
+  public static final int BuildMps_TipsMps = 59;
+  public static final int BuildMps_TipsPack = 60;
   public static final int BuildMps_TipsSolution = 61;
   public static final int GeneratorInternal_BuildMps_Module = 62;
   public static final int GeneratorInternal_BuildSourcePath = 63;
@@ -136,8 +136,8 @@ public final class LanguageConceptSwitch {
     builder.put(0x2a73eb9bd7074ed3L, BuildMps_TipsJarIdeTipsAndTricks);
     builder.put(0x2a73eb9bd7074ed1L, BuildMps_TipsJarPart);
     builder.put(0x2a73eb9bd7074ed2L, BuildMps_TipsJarTips);
-    builder.put(0x5ea1926fded234efL, BuildMps_TipsLoad);
     builder.put(0x71731b16a2289999L, BuildMps_TipsMps);
+    builder.put(0x5ea1926fded234efL, BuildMps_TipsPack);
     builder.put(0x71731b16a233b3c4L, BuildMps_TipsSolution);
     builder.put(0x44e5dd192e7771cfL, GeneratorInternal_BuildMps_Module);
     builder.put(0x44e5dd192e77725eL, GeneratorInternal_BuildSourcePath);

@@ -120,9 +120,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     return editorCell;
   }
   private EditorCell createRefNodeList_6pbg4q_a5a() {
-    AbstractCellListHandler handler = new BuildMps_TipsDir_EditorBuilder_a.pathListHandler_6pbg4q_a5a(myNode, "path", getEditorContext());
+    AbstractCellListHandler handler = new BuildMps_TipsDir_EditorBuilder_a.pathsListHandler_6pbg4q_a5a(myNode, "paths", getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_path");
+    editorCell.setCellId("refNodeList_paths");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
@@ -130,11 +130,11 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class pathListHandler_6pbg4q_a5a extends RefNodeListHandler {
+  private static class pathsListHandler_6pbg4q_a5a extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public pathListHandler_6pbg4q_a5a(SNode ownerNode, String childRole, EditorContext context) {
+    public pathsListHandler_6pbg4q_a5a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
       myNode = ownerNode;
     }
@@ -155,7 +155,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(pathListHandler_6pbg4q_a5a.this.getNode(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a22c0160L, 0x46ce9ed37ccc7d2cL, "path")));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(pathsListHandler_6pbg4q_a5a.this.getNode(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a22c0160L, 0x46ce9ed37ccc7d2cL, "paths")));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -174,7 +174,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          elementCell.setSubstituteInfo(new SChildSubstituteInfo(elementCell, getNode(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a22c0160L, 0x46ce9ed37ccc7d2cL, "path"), elementNode));
+          elementCell.setSubstituteInfo(new SChildSubstituteInfo(elementCell, getNode(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a22c0160L, 0x46ce9ed37ccc7d2cL, "paths"), elementNode));
         }
       }
     }

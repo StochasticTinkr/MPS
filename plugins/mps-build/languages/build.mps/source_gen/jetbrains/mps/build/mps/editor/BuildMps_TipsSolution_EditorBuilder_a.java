@@ -79,20 +79,20 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
           public EditorCell compute() {
             return new BuildMps_TipsSolution_EditorBuilder_a.Inline_Builder_nodppr_a1a(getEditorContext(), myNode, effectiveNode).createCell();
           }
-        }, effectiveNode, "link");
+        }, effectiveNode, "solution");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
         installDeleteActions_nullable_reference(cell);
         return cell;
       }
     };
-    provider.setRole("link");
+    provider.setRole("solution");
     provider.setNoTargetText("<solution>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("link");
+      editorCell.setRole("solution");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

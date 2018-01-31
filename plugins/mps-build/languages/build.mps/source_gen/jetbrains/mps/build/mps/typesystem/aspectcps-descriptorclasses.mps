@@ -3084,7 +3084,7 @@
                 <ref role="3cqZAo" node="gu" resolve="buildMps_TipsJar" />
               </node>
               <node concept="3TrEf2" id="h1" role="2OqNvi">
-                <ref role="3Tt5mk" to="kdzh:2DNUTJn1OVf" resolve="link" />
+                <ref role="3Tt5mk" to="kdzh:2DNUTJn1OVf" resolve="tips" />
               </node>
             </node>
             <node concept="3w_OXm" id="gZ" role="2OqNvi" />
@@ -3205,7 +3205,7 @@
                 <ref role="3cqZAo" node="hF" resolve="buildMps_TipsSolution" />
               </node>
               <node concept="3TrEf2" id="hU" role="2OqNvi">
-                <ref role="3Tt5mk" to="kdzh:5J862cnMvcw" resolve="link" />
+                <ref role="3Tt5mk" to="kdzh:5J862cnMvcw" resolve="solution" />
               </node>
             </node>
             <node concept="3w_OXm" id="hS" role="2OqNvi" />

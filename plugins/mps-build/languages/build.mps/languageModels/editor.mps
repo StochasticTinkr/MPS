@@ -5767,7 +5767,7 @@
   </node>
   <node concept="24kQdi" id="5Ux$AZuOzjS">
     <property role="3GE5qa" value="Project.TipsAndTricks.JarAllTips" />
-    <ref role="1XX52x" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsLoad" />
+    <ref role="1XX52x" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsPack" />
     <node concept="3EZMnI" id="5Ux$AZuOzjU" role="2wV5jI">
       <node concept="3F0ifn" id="5Ux$AZuOzk1" role="3EZMnx">
         <property role="3F0ifm" value="tips" />
@@ -5805,7 +5805,7 @@
         </node>
       </node>
       <node concept="1iCGBv" id="6mx7ef$41eG" role="3EZMnx">
-        <ref role="1NtTu8" to="kdzh:6mx7ef$41ej" resolve="link" />
+        <ref role="1NtTu8" to="kdzh:6mx7ef$41ej" resolve="tips" />
         <node concept="1sVBvm" id="6mx7ef$41eI" role="1sWHZn">
           <node concept="PMmxH" id="6mx7ef$41eY" role="2wV5jI">
             <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -5835,7 +5835,7 @@
         <property role="3F0ifm" value="{" />
       </node>
       <node concept="3F2HdR" id="7cgc9gER36a" role="3EZMnx">
-        <ref role="1NtTu8" to="kdzh:75N6Lqya9An" resolve="tips" />
+        <ref role="1NtTu8" to="kdzh:75N6Lqya9An" resolve="imports" />
         <node concept="l2Vlx" id="7cgc9gER36c" role="2czzBx" />
         <node concept="pj6Ft" id="7cgc9gER36u" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -5903,7 +5903,7 @@
           <property role="VOm3f" value="false" />
         </node>
         <node concept="3F2HdR" id="4reBHdWQFju" role="3EZMnx">
-          <ref role="1NtTu8" to="kdzh:4reBHdWN7OG" resolve="path" />
+          <ref role="1NtTu8" to="kdzh:4reBHdWN7OG" resolve="paths" />
           <node concept="l2Vlx" id="4reBHdWQFjv" role="2czzBx" />
           <node concept="pj6Ft" id="4reBHdWQFjw" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -5927,7 +5927,7 @@
       </node>
       <node concept="1iCGBv" id="5J862cnMvcy" role="3EZMnx">
         <property role="1$x2rV" value="&lt;solution&gt;" />
-        <ref role="1NtTu8" to="kdzh:5J862cnMvcw" resolve="link" />
+        <ref role="1NtTu8" to="kdzh:5J862cnMvcw" resolve="solution" />
         <node concept="1sVBvm" id="5J862cnMvc$" role="1sWHZn">
           <node concept="3F0A7n" id="5J862cnMvcG" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -5993,7 +5993,7 @@
       </node>
       <node concept="l2Vlx" id="2DNUTJn1OWp" role="2iSdaV" />
       <node concept="1iCGBv" id="2DNUTJn1OWq" role="3EZMnx">
-        <ref role="1NtTu8" to="kdzh:2DNUTJn1OVf" resolve="link" />
+        <ref role="1NtTu8" to="kdzh:2DNUTJn1OVf" resolve="tips" />
         <node concept="1sVBvm" id="2DNUTJn1OWr" role="1sWHZn">
           <node concept="PMmxH" id="2DNUTJn1OWs" role="2wV5jI">
             <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />

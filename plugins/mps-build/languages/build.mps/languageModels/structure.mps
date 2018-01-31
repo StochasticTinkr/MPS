@@ -1495,14 +1495,14 @@
   <node concept="1TIwiD" id="5Ux$AZuOzjJ">
     <property role="EcuMT" value="6818892319992984815" />
     <property role="3GE5qa" value="Project.TipsAndTricks.JarAllTips" />
-    <property role="TrG5h" value="BuildMps_TipsLoad" />
-    <property role="R4oN_" value="copy tips of project element" />
+    <property role="TrG5h" value="BuildMps_TipsPack" />
+    <property role="R4oN_" value="jar tips of project element" />
     <property role="34LRSv" value="tips of" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
     <node concept="1TJgyj" id="6mx7ef$41ej" role="1TKVEi">
       <property role="IQ2ns" value="7323166234190549907" />
       <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="link" />
+      <property role="20kJfa" value="tips" />
       <ref role="20lvS9" node="75N6Lqy0tuW" resolve="BuildMps_Tips" />
     </node>
     <node concept="PrWs8" id="6mx7ef$3$pu" role="PzmwI">
@@ -1518,7 +1518,7 @@
     <node concept="1TJgyj" id="75N6Lqya9An" role="1TKVEi">
       <property role="IQ2ns" value="8174907532631382423" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="tips" />
+      <property role="20kJfa" value="imports" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="75N6Lqya9Am" resolve="BuildMps_TipsImport" />
     </node>
@@ -1548,7 +1548,7 @@
     <node concept="1TJgyj" id="4reBHdWN7OG" role="1TKVEi">
       <property role="IQ2ns" value="5102190059026414892" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="path" />
+      <property role="20kJfa" value="paths" />
       <property role="20lbJX" value="1..n" />
       <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
     </node>
@@ -1574,7 +1574,7 @@
     <node concept="1TJgyj" id="5J862cnMvcw" role="1TKVEi">
       <property role="IQ2ns" value="6613562591795606304" />
       <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="link" />
+      <property role="20kJfa" value="solution" />
       <ref role="20lvS9" node="2L4pT56gD3R" resolve="BuildMps_Solution" />
     </node>
   </node>
@@ -1587,7 +1587,7 @@
     <node concept="1TJgyj" id="2DNUTJn1OVf" role="1TKVEi">
       <property role="IQ2ns" value="3059047626474737359" />
       <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="link" />
+      <property role="20kJfa" value="tips" />
       <ref role="20lvS9" node="75N6Lqy0tuW" resolve="BuildMps_Tips" />
     </node>
     <node concept="1TJgyj" id="2DNUTJn1OWa" role="1TKVEi">

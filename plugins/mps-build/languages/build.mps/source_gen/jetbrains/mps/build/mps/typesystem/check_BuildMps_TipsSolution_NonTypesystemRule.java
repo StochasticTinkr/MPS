@@ -18,7 +18,7 @@ public class check_BuildMps_TipsSolution_NonTypesystemRule extends AbstractNonTy
   public check_BuildMps_TipsSolution_NonTypesystemRule() {
   }
   public void applyRule(final SNode buildMps_TipsSolution, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(buildMps_TipsSolution, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a233b3c4L, 0x5bc8182317c9f320L, "link")) == null)) {
+    if ((SLinkOperations.getTarget(buildMps_TipsSolution, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a233b3c4L, 0x5bc8182317c9f320L, "solution")) == null)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(buildMps_TipsSolution, "Empty link", "r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)", "8046287930334378974", null, errorTarget);
