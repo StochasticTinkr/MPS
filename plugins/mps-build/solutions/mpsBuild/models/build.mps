@@ -17707,6 +17707,47 @@
             </node>
           </node>
         </node>
+        <node concept="3981dx" id="33QebIboz4W" role="39821P">
+          <node concept="3_J27D" id="33QebIboz4Y" role="Nbhlr">
+            <node concept="3Mxwew" id="33QebIboz7s" role="3MwsjC">
+              <property role="3MwjfP" value="mps-tips.jar" />
+            </node>
+          </node>
+          <node concept="2HvfSZ" id="33QebIboz7u" role="39821P">
+            <node concept="3LWZYx" id="33QebIboznU" role="2HvfZ1">
+              <property role="3LWZYw" value="META-INF/IdeTipsAndTricks.xml" />
+            </node>
+            <node concept="398BVA" id="33QebIboz90" role="2HvfZ0">
+              <ref role="398BVh" node="2eDSGe9d1qB" resolve="mps_home" />
+              <node concept="2Ry0Ak" id="33QebIboza$" role="iGT6I">
+                <property role="2Ry0Am" value="workbench" />
+                <node concept="2Ry0Ak" id="33QebIbozaD" role="2Ry0An">
+                  <property role="2Ry0Am" value="resources" />
+                  <node concept="2Ry0Ak" id="33QebIbozaI" role="2Ry0An">
+                    <property role="2Ry0Am" value="source" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2HvfSZ" id="33QebIbozcx" role="39821P">
+            <node concept="3LWZYx" id="33QebIbozkT" role="2HvfZ1">
+              <property role="3LWZYw" value="tips/**" />
+            </node>
+            <node concept="398BVA" id="33QebIbozec" role="2HvfZ0">
+              <ref role="398BVh" node="2eDSGe9d1qB" resolve="mps_home" />
+              <node concept="2Ry0Ak" id="33QebIbozfK" role="iGT6I">
+                <property role="2Ry0Am" value="workbench" />
+                <node concept="2Ry0Ak" id="33QebIbozfP" role="2Ry0An">
+                  <property role="2Ry0Am" value="resources_en" />
+                  <node concept="2Ry0Ak" id="33QebIbozfU" role="2Ry0An">
+                    <property role="2Ry0Am" value="source" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3981dx" id="5xa9wY2vqbR" role="39821P">
           <node concept="3_J27D" id="5xa9wY2vqbS" role="Nbhlr">
             <node concept="3Mxwew" id="5xa9wY2vqbT" role="3MwsjC">
