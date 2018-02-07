@@ -2418,5 +2418,57 @@
       <ref role="1YaFvo" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsPackage" />
     </node>
   </node>
+  <node concept="18kY7G" id="8yBQgWkN2K">
+    <property role="TrG5h" value="check_BuildMps_TipsMps" />
+    <property role="3GE5qa" value="Project.TipsAndTricks.Collect" />
+    <node concept="3clFbS" id="8yBQgWkN2L" role="18ibNy">
+      <node concept="3clFbJ" id="8yBQgWkN2R" role="3cqZAp">
+        <node concept="2OqwBi" id="8yBQgWkOIB" role="3clFbw">
+          <node concept="2OqwBi" id="8yBQgWkNcq" role="2Oq$k0">
+            <node concept="1YBJjd" id="8yBQgWkN33" role="2Oq$k0">
+              <ref role="1YBMHb" node="8yBQgWkN2N" resolve="buildMps_TipsMps" />
+            </node>
+            <node concept="2TvwIu" id="8yBQgWkNrL" role="2OqNvi" />
+          </node>
+          <node concept="2HwmR7" id="8yBQgWkPuP" role="2OqNvi">
+            <node concept="1bVj0M" id="8yBQgWkPuR" role="23t8la">
+              <node concept="3clFbS" id="8yBQgWkPuS" role="1bW5cS">
+                <node concept="3clFbF" id="8yBQgWkPya" role="3cqZAp">
+                  <node concept="2OqwBi" id="8yBQgWkPGI" role="3clFbG">
+                    <node concept="37vLTw" id="8yBQgWkPy9" role="2Oq$k0">
+                      <ref role="3cqZAo" node="8yBQgWkPuT" resolve="it" />
+                    </node>
+                    <node concept="1mIQ4w" id="8yBQgWkPTb" role="2OqNvi">
+                      <node concept="chp4Y" id="8yBQgWkQ0x" role="cj9EA">
+                        <ref role="cht4Q" to="kdzh:75N6Lqya9Ap" resolve="BuildMps_TipsMps" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="Rh6nW" id="8yBQgWkPuT" role="1bW2Oz">
+                <property role="TrG5h" value="it" />
+                <node concept="2jxLKc" id="8yBQgWkPuU" role="1tU5fm" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="8yBQgWkN2T" role="3clFbx">
+          <node concept="a7r0C" id="8yBQgWkQ7y" role="3cqZAp">
+            <node concept="Xl_RD" id="8yBQgWkQ7O" role="a7wSD">
+              <property role="Xl_RC" value="Duplicate imports" />
+            </node>
+            <node concept="1YBJjd" id="8yBQgWkQ9s" role="2OEOjV">
+              <ref role="1YBMHb" node="8yBQgWkN2N" resolve="buildMps_TipsMps" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="8yBQgWkN2N" role="1YuTPh">
+      <property role="TrG5h" value="buildMps_TipsMps" />
+      <ref role="1YaFvo" to="kdzh:75N6Lqya9Ap" resolve="BuildMps_TipsMps" />
+    </node>
+  </node>
 </model>
 

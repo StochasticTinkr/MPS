@@ -24,6 +24,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_BuildMps_TipsMps_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_BuildMps_TipsSolution_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }

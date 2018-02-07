@@ -6345,6 +6345,18 @@
         </node>
       </node>
     </node>
+    <node concept="13i0hz" id="8yBQgWtrz8" role="13h7CS">
+      <property role="TrG5h" value="getMpsTipsPath" />
+      <node concept="3Tm1VV" id="8yBQgWtrz9" role="1B3o_S" />
+      <node concept="17QB3L" id="8yBQgWtrza" role="3clF45" />
+      <node concept="3clFbS" id="8yBQgWtrzb" role="3clF47">
+        <node concept="3cpWs6" id="8yBQgWtrzc" role="3cqZAp">
+          <node concept="Xl_RD" id="8yBQgWtrzh" role="3cqZAk">
+            <property role="Xl_RC" value="${mps_home}/lib/mps-resources_en.jar" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="13i0hz" id="4Y6KxqQN2O7" role="13h7CS">
       <property role="TrG5h" value="getLocatedDirectory" />
       <node concept="3Tm1VV" id="4Y6KxqQN2O8" role="1B3o_S" />

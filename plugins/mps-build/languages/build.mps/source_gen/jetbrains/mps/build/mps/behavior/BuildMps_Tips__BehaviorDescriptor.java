@@ -26,15 +26,19 @@ public final class BuildMps_Tips__BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<String> getPath_id4Y6KxqQL3ag = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Y6KxqQL3ag").registry(REGISTRY).build();
+  public static final SMethod<String> getMpsTipsPath_id8yBQgWtrz8 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getMpsTipsPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("8yBQgWtrz8").registry(REGISTRY).build();
   public static final SMethod<String> getLocatedDirectory_id4Y6KxqQN2O7 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getLocatedDirectory").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Y6KxqQN2O7").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPath_id4Y6KxqQL3ag, getLocatedDirectory_id4Y6KxqQN2O7);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPath_id4Y6KxqQL3ag, getMpsTipsPath_id8yBQgWtrz8, getLocatedDirectory_id4Y6KxqQN2O7);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static String getPath_id4Y6KxqQL3ag(@NotNull SNode __thisNode__) {
     return "${build.tmp}/out/mps-tips/" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+  }
+  /*package*/ static String getMpsTipsPath_id8yBQgWtrz8(@NotNull SNode __thisNode__) {
+    return "${mps_home}/lib/mps-resources_en.jar";
   }
   /*package*/ static String getLocatedDirectory_id4Y6KxqQN2O7(@NotNull SNode __thisNode__, String language) {
     if ((language == null || language.length() == 0) || language.equals("en")) {
@@ -62,6 +66,8 @@ public final class BuildMps_Tips__BehaviorDescriptor extends BaseBHDescriptor {
       case 0:
         return (T) ((String) getPath_id4Y6KxqQL3ag(node));
       case 1:
+        return (T) ((String) getMpsTipsPath_id8yBQgWtrz8(node));
+      case 2:
         return (T) ((String) getLocatedDirectory_id4Y6KxqQN2O7(node, (String) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
