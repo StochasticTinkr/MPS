@@ -142,114 +142,100 @@
   </root>
   <root nodeRef="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)/1222746468862108406">
     <file name="forbid_Insert.java">
-      <node id="1222746468862108406" at="13,95,14,108" concept="3" />
-      <node id="1222746468862108406" at="14,108,15,94" concept="3" />
-      <node id="1222746468862108406" at="18,0,19,0" concept="4" trace="myNode" />
-      <node id="1222746468862108406" at="19,52,20,25" concept="3" />
-      <node id="1222746468862108406" at="22,54,23,56" concept="3" />
-      <node id="7555663668002303373" at="25,75,26,78" concept="7" />
-      <node id="7555663668002303382" at="26,78,27,120" concept="7" />
-      <node id="7555663668002303395" at="28,36,29,31" concept="3" />
-      <node id="7555663668002303411" at="32,40,33,18" concept="1" />
-      <node id="7555663668002303419" at="35,64,36,18" concept="1" />
-      <node id="7555663668002303425" at="37,11,38,34" concept="3" />
-      <node id="7555663668002303433" at="41,25,42,55" concept="3" />
-      <node id="7555663668002303420" at="45,71,46,53" concept="8" />
-      <node id="1222746468862108406" at="50,0,51,0" concept="4" trace="myNode" />
-      <node id="1222746468862108406" at="51,45,52,25" concept="3" />
-      <node id="1222746468862108406" at="54,54,55,56" concept="3" />
-      <node id="1222746468862206034" at="57,75,58,78" concept="7" />
-      <node id="551133496054562388" at="58,78,59,119" concept="7" />
-      <node id="551133496054562480" at="60,36,61,31" concept="3" />
-      <node id="1222746468862206385" at="64,40,65,18" concept="1" />
-      <node id="6862298564642327339" at="67,64,68,18" concept="1" />
-      <node id="1222746468862206296" at="69,11,70,34" concept="3" />
-      <node id="1222746468862206416" at="73,25,74,49" concept="3" />
-      <node id="6862298564642440636" at="77,71,78,53" concept="8" />
-      <node id="1222746468862108406" at="19,0,22,0" concept="2" trace="forbid_Insert_INSERT_BEFORE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222746468862108406" at="22,0,25,0" concept="6" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="7555663668002303409" at="31,30,34,11" concept="5" />
-      <node id="7555663668002303417" at="34,11,37,11" concept="5" />
-      <node id="7555663668002303431" at="40,7,43,7" concept="5" />
-      <node id="7555663668002303420" at="45,0,48,0" concept="12" trace="neq_pledwy_a0b0a0a2a3b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="1222746468862108406" at="51,0,54,0" concept="2" trace="forbid_Insert_INSERT#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222746468862108406" at="54,0,57,0" concept="6" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="1222746468862206329" at="63,30,66,11" concept="5" />
-      <node id="6862298564642327280" at="66,11,69,11" concept="5" />
-      <node id="1222746468862206387" at="72,7,75,7" concept="5" />
-      <node id="6862298564642440636" at="77,0,80,0" concept="12" trace="neq_pledwy_a0b0a0a2a3c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="1222746468862108406" at="13,0,17,0" concept="12" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="7555663668002303404" at="30,14,39,9" concept="16" />
-      <node id="1222746468862206266" at="62,14,71,9" concept="16" />
-      <node id="7555663668002303402" at="30,12,40,7" concept="0" />
-      <node id="551133496054562506" at="62,12,72,7" concept="0" />
-      <node id="7555663668002303393" at="27,120,40,7" concept="5" />
-      <node id="551133496054562377" at="59,119,72,7" concept="5" />
-      <node id="1222746468862108406" at="25,0,45,0" concept="6" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222746468862108406" at="57,0,77,0" concept="6" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1222746468862108406" at="19,52,20,25" />
-      <scope id="1222746468862108406" at="22,54,23,56" />
-      <scope id="7555663668002303394" at="28,36,29,31" />
-      <scope id="7555663668002303410" at="32,40,33,18" />
-      <scope id="7555663668002303418" at="35,64,36,18" />
-      <scope id="7555663668002303432" at="41,25,42,55" />
-      <scope id="7555663668002303420" at="45,71,46,53" />
-      <scope id="1222746468862108406" at="51,45,52,25" />
-      <scope id="1222746468862108406" at="54,54,55,56" />
-      <scope id="551133496054562378" at="60,36,61,31" />
-      <scope id="1222746468862206330" at="64,40,65,18" />
-      <scope id="6862298564642327281" at="67,64,68,18" />
-      <scope id="1222746468862206388" at="73,25,74,49" />
-      <scope id="6862298564642440636" at="77,71,78,53" />
-      <scope id="1222746468862108406" at="13,95,15,94" />
-      <scope id="1222746468862108406" at="19,0,22,0">
+      <node id="1222746468862108406" at="14,95,15,108" concept="3" />
+      <node id="1222746468862108406" at="15,108,16,94" concept="3" />
+      <node id="1222746468862108406" at="19,0,20,0" concept="4" trace="myNode" />
+      <node id="1222746468862108406" at="20,52,21,25" concept="3" />
+      <node id="1222746468862108406" at="23,54,24,56" concept="3" />
+      <node id="7555663668002303373" at="26,75,27,78" concept="7" />
+      <node id="7555663668002303382" at="27,78,28,120" concept="7" />
+      <node id="7555663668002303395" at="29,36,30,31" concept="3" />
+      <node id="7555663668002303411" at="33,40,34,18" concept="1" />
+      <node id="7555663668002303419" at="36,59,37,18" concept="1" />
+      <node id="7555663668002303425" at="38,11,39,34" concept="3" />
+      <node id="7555663668002303433" at="42,25,43,55" concept="3" />
+      <node id="1222746468862108406" at="48,0,49,0" concept="4" trace="myNode" />
+      <node id="1222746468862108406" at="49,45,50,25" concept="3" />
+      <node id="1222746468862108406" at="52,54,53,56" concept="3" />
+      <node id="1222746468862206034" at="55,75,56,78" concept="7" />
+      <node id="551133496054562388" at="56,78,57,119" concept="7" />
+      <node id="551133496054562480" at="58,36,59,31" concept="3" />
+      <node id="1222746468862206385" at="62,40,63,18" concept="1" />
+      <node id="6862298564642327339" at="65,59,66,18" concept="1" />
+      <node id="1222746468862206296" at="67,11,68,34" concept="3" />
+      <node id="1222746468862206416" at="71,25,72,49" concept="3" />
+      <node id="1222746468862108406" at="20,0,23,0" concept="2" trace="forbid_Insert_INSERT_BEFORE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1222746468862108406" at="23,0,26,0" concept="6" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="7555663668002303409" at="32,30,35,11" concept="5" />
+      <node id="7555663668002303417" at="35,11,38,11" concept="5" />
+      <node id="7555663668002303431" at="41,7,44,7" concept="5" />
+      <node id="1222746468862108406" at="49,0,52,0" concept="2" trace="forbid_Insert_INSERT#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1222746468862108406" at="52,0,55,0" concept="6" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="1222746468862206329" at="61,30,64,11" concept="5" />
+      <node id="6862298564642327280" at="64,11,67,11" concept="5" />
+      <node id="1222746468862206387" at="70,7,73,7" concept="5" />
+      <node id="1222746468862108406" at="14,0,18,0" concept="12" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="7555663668002303404" at="31,14,40,9" concept="16" />
+      <node id="1222746468862206266" at="60,14,69,9" concept="16" />
+      <node id="7555663668002303402" at="31,12,41,7" concept="0" />
+      <node id="551133496054562506" at="60,12,70,7" concept="0" />
+      <node id="7555663668002303393" at="28,120,41,7" concept="5" />
+      <node id="551133496054562377" at="57,119,70,7" concept="5" />
+      <node id="1222746468862108406" at="26,0,46,0" concept="6" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1222746468862108406" at="55,0,75,0" concept="6" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1222746468862108406" at="20,52,21,25" />
+      <scope id="1222746468862108406" at="23,54,24,56" />
+      <scope id="7555663668002303394" at="29,36,30,31" />
+      <scope id="7555663668002303410" at="33,40,34,18" />
+      <scope id="7555663668002303418" at="36,59,37,18" />
+      <scope id="7555663668002303432" at="42,25,43,55" />
+      <scope id="1222746468862108406" at="49,45,50,25" />
+      <scope id="1222746468862108406" at="52,54,53,56" />
+      <scope id="551133496054562378" at="58,36,59,31" />
+      <scope id="1222746468862206330" at="62,40,63,18" />
+      <scope id="6862298564642327281" at="65,59,66,18" />
+      <scope id="1222746468862206388" at="71,25,72,49" />
+      <scope id="1222746468862108406" at="14,95,16,94" />
+      <scope id="1222746468862108406" at="20,0,23,0">
         <var name="node" id="1222746468862108406" />
       </scope>
-      <scope id="1222746468862108406" at="22,0,25,0">
+      <scope id="1222746468862108406" at="23,0,26,0">
         <var name="editorContext" id="1222746468862108406" />
       </scope>
-      <scope id="7555663668002303420" at="45,0,48,0">
-        <var name="a" id="7555663668002303420" />
-        <var name="b" id="7555663668002303420" />
-      </scope>
-      <scope id="1222746468862108406" at="51,0,54,0">
+      <scope id="1222746468862108406" at="49,0,52,0">
         <var name="node" id="1222746468862108406" />
       </scope>
-      <scope id="1222746468862108406" at="54,0,57,0">
+      <scope id="1222746468862108406" at="52,0,55,0">
         <var name="editorContext" id="1222746468862108406" />
       </scope>
-      <scope id="6862298564642440636" at="77,0,80,0">
-        <var name="a" id="6862298564642440636" />
-        <var name="b" id="6862298564642440636" />
-      </scope>
-      <scope id="1222746468862108406" at="13,0,17,0">
+      <scope id="1222746468862108406" at="14,0,18,0">
         <var name="context" id="1222746468862108406" />
         <var name="editorCell" id="1222746468862108406" />
         <var name="node" id="1222746468862108406" />
       </scope>
-      <scope id="7555663668002303408" at="31,30,38,34" />
-      <scope id="1222746468862206268" at="63,30,70,34" />
-      <scope id="7555663668002303403" at="30,14,39,9" />
-      <scope id="551133496054562507" at="62,14,71,9" />
-      <scope id="1222746468862108452" at="25,75,43,7">
+      <scope id="7555663668002303408" at="32,30,39,34" />
+      <scope id="1222746468862206268" at="61,30,68,34" />
+      <scope id="7555663668002303403" at="31,14,40,9" />
+      <scope id="551133496054562507" at="60,14,69,9" />
+      <scope id="1222746468862108452" at="26,75,44,7">
         <var name="cell" id="7555663668002303374" />
         <var name="outerCollection" id="7555663668002303383" />
       </scope>
-      <scope id="1222746468862108409" at="57,75,75,7">
+      <scope id="1222746468862108409" at="55,75,73,7">
         <var name="cell" id="1222746468862206035" />
         <var name="outerCollection" id="551133496054562389" />
       </scope>
-      <scope id="1222746468862108406" at="25,0,45,0">
+      <scope id="1222746468862108406" at="26,0,46,0">
         <var name="editorContext" id="1222746468862108406" />
         <var name="node" id="1222746468862108406" />
       </scope>
-      <scope id="1222746468862108406" at="57,0,77,0">
+      <scope id="1222746468862108406" at="55,0,75,0">
         <var name="editorContext" id="1222746468862108406" />
         <var name="node" id="1222746468862108406" />
       </scope>
-      <unit id="1222746468862108406" at="17,0,49,0" name="jetbrains.mps.build.editor.forbid_Insert$forbid_Insert_INSERT_BEFORE" />
-      <unit id="1222746468862108406" at="49,0,81,0" name="jetbrains.mps.build.editor.forbid_Insert$forbid_Insert_INSERT" />
-      <unit id="1222746468862108406" at="12,0,82,0" name="jetbrains.mps.build.editor.forbid_Insert" />
+      <unit id="1222746468862108406" at="18,0,47,0" name="jetbrains.mps.build.editor.forbid_Insert$forbid_Insert_INSERT_BEFORE" />
+      <unit id="1222746468862108406" at="47,0,76,0" name="jetbrains.mps.build.editor.forbid_Insert$forbid_Insert_INSERT" />
+      <unit id="1222746468862108406" at="13,0,77,0" name="jetbrains.mps.build.editor.forbid_Insert" />
     </file>
   </root>
   <root nodeRef="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)/1251221292903960371">
