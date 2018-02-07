@@ -5831,6 +5831,11 @@
           <property role="Vb096" value="DARK_BLUE" />
         </node>
       </node>
+      <node concept="3F0ifn" id="33QebIb$BaG" role="3EZMnx">
+        <node concept="pVoyu" id="33QebIb$Bb3" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="24kQdi" id="75N6Lqy0vWk">
