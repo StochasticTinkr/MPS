@@ -6325,6 +6325,18 @@
   <node concept="13h7C7" id="4Y6KxqQL3a5">
     <property role="3GE5qa" value="Project.TipsAndTricks.Collect" />
     <ref role="13h7C2" to="kdzh:75N6Lqy0tuW" resolve="BuildMps_Tips" />
+    <node concept="13i0hz" id="1tkeUOkqjtp" role="13h7CS">
+      <property role="TrG5h" value="getOutPath" />
+      <node concept="3Tm1VV" id="1tkeUOkqjtq" role="1B3o_S" />
+      <node concept="17QB3L" id="1tkeUOkqmaA" role="3clF45" />
+      <node concept="3clFbS" id="1tkeUOkqjts" role="3clF47">
+        <node concept="3cpWs6" id="1tkeUOkqmbh" role="3cqZAp">
+          <node concept="Xl_RD" id="1tkeUOkqmbz" role="3cqZAk">
+            <property role="Xl_RC" value="${build.tmp}/out/mps-tips/" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="13i0hz" id="4Y6KxqQL3ag" role="13h7CS">
       <property role="TrG5h" value="getPath" />
       <node concept="3Tm1VV" id="4Y6KxqQL3ah" role="1B3o_S" />
@@ -6338,8 +6350,8 @@
                 <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
-            <node concept="Xl_RD" id="4Y6KxqQL3ci" role="3uHU7B">
-              <property role="Xl_RC" value="${build.tmp}/out/mps-tips/" />
+            <node concept="BsUDl" id="1tkeUOkqmkw" role="3uHU7B">
+              <ref role="37wK5l" node="1tkeUOkqjtp" resolve="getOutPath" />
             </node>
           </node>
         </node>
@@ -6434,11 +6446,21 @@
               <property role="Xl_RC" value="/**" />
             </node>
             <node concept="3cpWs3" id="59gOS57J7Jr" role="3uHU7B">
-              <node concept="Xl_RD" id="59gOS57J6_B" role="3uHU7B">
-                <property role="Xl_RC" value="${build.tmp}/out/mps-tips/" />
-              </node>
               <node concept="37vLTw" id="59gOS57NjD1" role="3uHU7w">
                 <ref role="3cqZAo" node="59gOS57Njf8" resolve="folder" />
+              </node>
+              <node concept="2OqwBi" id="1tkeUOkqr6O" role="3uHU7B">
+                <node concept="2OqwBi" id="1tkeUOkqqv9" role="2Oq$k0">
+                  <node concept="37vLTw" id="1tkeUOkqmuV" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1tkeUOkqmu0" resolve="node" />
+                  </node>
+                  <node concept="3TrEf2" id="1tkeUOkqqDT" role="2OqNvi">
+                    <ref role="3Tt5mk" to="kdzh:6mx7ef$41ej" resolve="tips" />
+                  </node>
+                </node>
+                <node concept="2qgKlT" id="1tkeUOkqrkd" role="2OqNvi">
+                  <ref role="37wK5l" node="1tkeUOkqjtp" resolve="getOutPath" />
+                </node>
               </node>
             </node>
           </node>
@@ -6447,6 +6469,12 @@
       <node concept="37vLTG" id="59gOS57Njf8" role="3clF46">
         <property role="TrG5h" value="folder" />
         <node concept="17QB3L" id="59gOS57Njf7" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="1tkeUOkqmu0" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="1tkeUOkqmuq" role="1tU5fm">
+          <ref role="ehGHo" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsPackage" />
+        </node>
       </node>
     </node>
     <node concept="13hLZK" id="59gOS57Nje2" role="13h7CW">

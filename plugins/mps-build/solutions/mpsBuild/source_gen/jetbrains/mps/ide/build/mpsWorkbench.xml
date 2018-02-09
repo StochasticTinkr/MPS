@@ -344,9 +344,7 @@
       </fileset>
     </jar>
     <jar destfile="${build.layout}/lib/mps-resources_en.jar" duplicate="preserve">
-      <fileset dir="${mps_home}/workbench/resources_en/source">
-        <exclude name="tips" />
-      </fileset>
+      <fileset dir="${mps_home}/workbench/resources_en/source" />
     </jar>
     <jar destfile="${build.layout}/lib/mps-tips.jar" duplicate="preserve">
       <fileset file="${build.tmp}/out/mps-tips/mps-tips/**" />

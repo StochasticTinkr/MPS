@@ -864,7 +864,7 @@
           <node concept="2pNUuL" id="5qlPEM9RQPx" role="2pNNFR">
             <property role="2pNUuO" value="name" />
             <node concept="2pMdtt" id="5qlPEM9RQPz" role="2pMdts">
-              <property role="2pMdty" value="tips_copy_generated" />
+              <property role="2pMdty" value="tips_collect_generated" />
             </node>
           </node>
         </node>
@@ -1023,7 +1023,7 @@
           <node concept="2pNUuL" id="5qlPEM9TmP0" role="2pNNFR">
             <property role="2pNUuO" value="name" />
             <node concept="2pMdtt" id="5qlPEM9TmP1" role="2pMdts">
-              <property role="2pMdty" value="tips_copy_images" />
+              <property role="2pMdty" value="tips_collect_images" />
             </node>
           </node>
         </node>
@@ -1143,7 +1143,7 @@
           <node concept="2pNUuL" id="5qlPEM9Xynq" role="2pNNFR">
             <property role="2pNUuO" value="name" />
             <node concept="2pMdtt" id="5qlPEM9Xynr" role="2pMdts">
-              <property role="2pMdty" value="tips_copy_css" />
+              <property role="2pMdty" value="tips_collect_css" />
             </node>
           </node>
         </node>
@@ -1154,13 +1154,13 @@
           <node concept="2pNUuL" id="5qlPEM9O2LC" role="2pNNFR">
             <property role="2pNUuO" value="name" />
             <node concept="2pMdtt" id="5qlPEM9O2LE" role="2pMdts">
-              <property role="2pMdty" value="copy_sources" />
+              <property role="2pMdty" value="collect_tips_sources" />
             </node>
           </node>
           <node concept="2pNUuL" id="5qlPEM9Thz4" role="2pNNFR">
             <property role="2pNUuO" value="depends" />
             <node concept="2pMdtt" id="5qlPEM9Ti5i" role="2pMdts">
-              <property role="2pMdty" value="tips_copy_generated, tips_copy_images, tips_copy_css" />
+              <property role="2pMdty" value="tips_collect_generated, tips_collect_images, tips_collect_css" />
             </node>
           </node>
         </node>

@@ -12,10 +12,11 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -24,15 +25,15 @@ public final class BuildMps_TipsPackage__BehaviorDescriptor extends BaseBHDescri
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fded234efL, "jetbrains.mps.build.mps.structure.BuildMps_TipsPackage");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getTmpPath_id59gOS57Njec = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTmpPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("59gOS57Njec").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<String> getTmpPath_id59gOS57Njec = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTmpPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("59gOS57Njec").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTmpPath_id59gOS57Njec);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static String getTmpPath_id59gOS57Njec(@NotNull SNode __thisNode__, String folder) {
-    return "${build.tmp}/out/mps-tips/" + folder + "/**";
+  /*package*/ static String getTmpPath_id59gOS57Njec(@NotNull SNode __thisNode__, String folder, SNode node) {
+    return BuildMps_Tips__BehaviorDescriptor.getOutPath_id1tkeUOkqjtp.invoke(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fded234efL, 0x65a11ce3e4101393L, "tips"))) + folder + "/**";
   }
 
   /*package*/ BuildMps_TipsPackage__BehaviorDescriptor() {
@@ -52,7 +53,7 @@ public final class BuildMps_TipsPackage__BehaviorDescriptor extends BaseBHDescri
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((String) getTmpPath_id59gOS57Njec(node, (String) parameters[0]));
+        return (T) ((String) getTmpPath_id59gOS57Njec(node, (String) parameters[0], (SNode) parameters[1]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

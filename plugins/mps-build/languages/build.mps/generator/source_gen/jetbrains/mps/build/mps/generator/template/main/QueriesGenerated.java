@@ -603,7 +603,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return ((String) _context.getVariable("sourceJar"));
   }
   public static Object propertyMacro_GetPropertyValue_5931473261454711456(final PropertyMacroContext _context) {
-    return (String) BuildMps_TipsPackage__BehaviorDescriptor.getTmpPath_id59gOS57Njec.invoke(_context.getNode(), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fded234efL, 0x65a11ce3e4101393L, "tips")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return (String) BuildMps_TipsPackage__BehaviorDescriptor.getTmpPath_id59gOS57Njec.invoke(_context.getNode(), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fded234efL, 0x65a11ce3e4101393L, "tips")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_5397230782654310880(final PropertyMacroContext _context) {
     if (SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).endsWith(".jar")) {
