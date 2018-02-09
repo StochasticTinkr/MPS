@@ -6420,5 +6420,38 @@
       <node concept="3clFbS" id="4Y6KxqQL3a7" role="2VODD2" />
     </node>
   </node>
+  <node concept="13h7C7" id="59gOS57Nje1">
+    <property role="3GE5qa" value="Project.TipsAndTricks.Package" />
+    <ref role="13h7C2" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsPackage" />
+    <node concept="13i0hz" id="59gOS57Njec" role="13h7CS">
+      <property role="TrG5h" value="getTmpPath" />
+      <node concept="3Tm1VV" id="59gOS57Njed" role="1B3o_S" />
+      <node concept="17QB3L" id="59gOS57Njes" role="3clF45" />
+      <node concept="3clFbS" id="59gOS57Njef" role="3clF47">
+        <node concept="3cpWs6" id="59gOS57Njxm" role="3cqZAp">
+          <node concept="3cpWs3" id="59gOS57LQ3d" role="3cqZAk">
+            <node concept="Xl_RD" id="59gOS57LQks" role="3uHU7w">
+              <property role="Xl_RC" value="/**" />
+            </node>
+            <node concept="3cpWs3" id="59gOS57J7Jr" role="3uHU7B">
+              <node concept="Xl_RD" id="59gOS57J6_B" role="3uHU7B">
+                <property role="Xl_RC" value="${build.tmp}/out/mps-tips/" />
+              </node>
+              <node concept="37vLTw" id="59gOS57NjD1" role="3uHU7w">
+                <ref role="3cqZAo" node="59gOS57Njf8" resolve="folder" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="59gOS57Njf8" role="3clF46">
+        <property role="TrG5h" value="folder" />
+        <node concept="17QB3L" id="59gOS57Njf7" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="13hLZK" id="59gOS57Nje2" role="13h7CW">
+      <node concept="3clFbS" id="59gOS57Nje3" role="2VODD2" />
+    </node>
+  </node>
 </model>
 

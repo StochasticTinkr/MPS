@@ -26,6 +26,7 @@
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJars__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_Module__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_TipsPackage__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_Tips__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.ArtifactsRelativePathHelper" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.MPSModulesClosure" />

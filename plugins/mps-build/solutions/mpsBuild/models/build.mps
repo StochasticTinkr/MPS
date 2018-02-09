@@ -279,6 +279,9 @@
       </concept>
     </language>
     <language id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps">
+      <concept id="6818892319992984815" name="jetbrains.mps.build.mps.structure.BuildMps_TipsPackage" flags="ng" index="20sUq0">
+        <reference id="7323166234190549907" name="tips" index="21GgXK" />
+      </concept>
       <concept id="6503355885715333289" name="jetbrains.mps.build.mps.structure.BuildMpsAspect" flags="ng" index="2igEWh">
         <property id="6503355885715353788" name="bootstrap" index="2igJW4" />
       </concept>
@@ -340,6 +343,12 @@
       </concept>
       <concept id="978600701690054692" name="jetbrains.mps.build.mps.structure.GeneratorInternal_String" flags="ng" index="1cIVw3">
         <property id="978600701690054695" name="path" index="1cIVw0" />
+      </concept>
+      <concept id="8174907532631605600" name="jetbrains.mps.build.mps.structure.BuildMps_TipsDir" flags="ng" index="3jnLDQ">
+        <child id="5102190059026414892" name="path" index="U0IfZ" />
+      </concept>
+      <concept id="8174907532628842428" name="jetbrains.mps.build.mps.structure.BuildMps_Tips" flags="ng" index="3jsGME">
+        <child id="8174907532631382423" name="imports" index="3jmSa1" />
       </concept>
       <concept id="7655580649838764660" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml" flags="ng" index="1kK7hY">
         <reference id="7655580649838764661" name="module" index="1kK7hZ" />
@@ -17621,6 +17630,26 @@
         </node>
       </node>
     </node>
+    <node concept="3jsGME" id="59gOS57S0HM" role="3989C9">
+      <property role="TrG5h" value="mps-tips" />
+      <node concept="3jnLDQ" id="59gOS57S0Rh" role="3jmSa1">
+        <node concept="398BVA" id="59gOS57S0SQ" role="U0IfZ">
+          <ref role="398BVh" node="2eDSGe9d1qB" resolve="mps_home" />
+          <node concept="2Ry0Ak" id="59gOS57S0Uq" role="iGT6I">
+            <property role="2Ry0Am" value="workbench" />
+            <node concept="2Ry0Ak" id="59gOS57S0Uv" role="2Ry0An">
+              <property role="2Ry0Am" value="mps-tips" />
+              <node concept="2Ry0Ak" id="59gOS57S0U$" role="2Ry0An">
+                <property role="2Ry0Am" value="source" />
+                <node concept="2Ry0Ak" id="59gOS57S0UD" role="2Ry0An">
+                  <property role="2Ry0Am" value="tips" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="55IIr" id="2eDSGe9d1qx" role="auvoZ">
       <node concept="2Ry0Ak" id="2eDSGe9d1qy" role="iGT6I">
         <property role="2Ry0Am" value="build" />
@@ -17713,26 +17742,9 @@
             </node>
           </node>
         </node>
-        <node concept="3981dx" id="3HjqgY5L7zj" role="39821P">
-          <node concept="3_J27D" id="3HjqgY5L7zl" role="Nbhlr">
-            <node concept="3Mxwew" id="3HjqgY5L7Cj" role="3MwsjC">
-              <property role="3MwjfP" value="mps-tips.jar" />
-            </node>
-          </node>
-          <node concept="2HvfSZ" id="3HjqgY5L7Cm" role="39821P">
-            <node concept="398BVA" id="3HjqgY5L7Fo" role="2HvfZ0">
-              <ref role="398BVh" node="2eDSGe9d1qB" resolve="mps_home" />
-              <node concept="2Ry0Ak" id="3HjqgY5L7Is" role="iGT6I">
-                <property role="2Ry0Am" value="workbench" />
-                <node concept="2Ry0Ak" id="3HjqgY5L7Iz" role="2Ry0An">
-                  <property role="2Ry0Am" value="mps-tips" />
-                  <node concept="2Ry0Ak" id="3HjqgY5L7IE" role="2Ry0An">
-                    <property role="2Ry0Am" value="source" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node concept="20sUq0" id="59gOS57S0Xh" role="39821P">
+          <property role="TrG5h" value="mps-tips.jar" />
+          <ref role="21GgXK" node="59gOS57S0HM" resolve="mps-tips" />
         </node>
         <node concept="3981dx" id="5xa9wY2vqbR" role="39821P">
           <node concept="3_J27D" id="5xa9wY2vqbS" role="Nbhlr">
