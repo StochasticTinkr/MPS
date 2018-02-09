@@ -1026,17 +1026,9 @@
   </target>
   
   <target name="collect-tips-mps-tips">
-    <unjar src="${mps_home}/lib/mps-resources_en.jar" dest="${build.tmp}/out/mps-tips/mps-tips">
-      <patternset>
-        <include name="tips/css/**" />
-      </patternset>
-    </unjar>
     <mkdir dir="${build.tmp}/out/mps-tips/mps-tips/tips" />
-    <copy todir="${build.tmp}/out/mps-tips/mps-tips/tips/css">
-      <fileset dir="${build.tmp}/out/mps-tips/mps-tips/tips/css/" />
-    </copy>
     <copy todir="${build.tmp}/out/mps-tips/mps-tips/tips">
-      <fileset dir="${mps_home}/workbench/resources_en/source/tips" />
+      <fileset dir="${mps_home}/workbench/mps-tips/source/tips" />
     </copy>
     <mkdir dir="${build.tmp}/out/mps-tips/mps-tips/META-INF" />
     <fileset id="contents" includes="*.*" dir="${build.tmp}/out/mps-tips/mps-tips/tips" />
