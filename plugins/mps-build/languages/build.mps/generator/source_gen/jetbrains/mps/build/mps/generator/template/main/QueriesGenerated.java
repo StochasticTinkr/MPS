@@ -601,10 +601,10 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object propertyMacro_GetPropertyValue_763829979706038684(final PropertyMacroContext _context) {
     return ((String) _context.getVariable("sourceJar"));
   }
-  public static Object propertyMacro_GetPropertyValue_5730480978700371416(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4274875986693033218(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5ea1926fded234efL, 0x65a11ce3e4101393L, "tips")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_5397230782655904036(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4274875986693033227(final PropertyMacroContext _context) {
     // get name of model 
     return SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())).substring(0, SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())).indexOf("."));
   }
@@ -2266,8 +2266,8 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("4912951749633460798", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c1fa58d992addeL, 0x4c1fa58d9933cacL, "suffix"), "aaa.jar"));
     pvqMethods.put("763829979705979629", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, 0xd94b027412f0827L, "path"), "module/solution.msd"));
     pvqMethods.put("763829979706038683", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, 0xd94b027412f0827L, "path"), "module-src.jar"));
-    pvqMethods.put("5730480978700371415", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), "folder"));
-    pvqMethods.put("5397230782655904035", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), "project"));
+    pvqMethods.put("4274875986693033217", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), "folder"));
+    pvqMethods.put("4274875986693033226", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), "project"));
     pvqMethods.put("5397230782654310879", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, 0x440d7ea3b68c4d56L, "text"), "file_en.jar"));
     pvqMethods.put("153860590143915509", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, 0x5c842a42c54cfd20L, "text"), "mps-tips.jar"));
     pvqMethods.put("5730480978686915483", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, 0x5c842a42c54cfd20L, "text"), "dest"));
@@ -2532,9 +2532,9 @@ public class QueriesGenerated extends QueryProviderBase {
         case 112:
           return QueriesGenerated.propertyMacro_GetPropertyValue_763829979706038684(ctx);
         case 113:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_5730480978700371416(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_4274875986693033218(ctx);
         case 114:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_5397230782655904036(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_4274875986693033227(ctx);
         case 115:
           return QueriesGenerated.propertyMacro_GetPropertyValue_5397230782654310880(ctx);
         case 116:
