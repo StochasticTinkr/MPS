@@ -180,7 +180,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     editorCell = provider.createEditorCell(getEditorContext());
     editorCell.setCellId("property_name_1");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

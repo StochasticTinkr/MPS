@@ -5824,9 +5824,6 @@
       </node>
       <node concept="3F0A7n" id="6mx7ef$3$pw" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        <node concept="Vb9p2" id="6mx7ef$BuGQ" role="3F10Kt">
-          <property role="Vbekb" value="BOLD" />
-        </node>
         <node concept="VechU" id="6mx7ef$BuGV" role="3F10Kt">
           <property role="Vb096" value="DARK_BLUE" />
         </node>

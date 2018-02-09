@@ -17638,7 +17638,7 @@
           <node concept="2Ry0Ak" id="33QebIb$ATv" role="iGT6I">
             <property role="2Ry0Am" value="workbench" />
             <node concept="2Ry0Ak" id="33QebIb$AT$" role="2Ry0An">
-              <property role="2Ry0Am" value="resources_en" />
+              <property role="2Ry0Am" value="mps-tips" />
               <node concept="2Ry0Ak" id="33QebIb$ATD" role="2Ry0An">
                 <property role="2Ry0Am" value="source" />
                 <node concept="2Ry0Ak" id="6lhzV8DCLZ0" role="2Ry0An">
