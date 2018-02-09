@@ -6352,7 +6352,7 @@
       <node concept="3clFbS" id="8yBQgWtrzb" role="3clF47">
         <node concept="3cpWs6" id="8yBQgWtrzc" role="3cqZAp">
           <node concept="Xl_RD" id="8yBQgWtrzh" role="3cqZAk">
-            <property role="Xl_RC" value="${mps_home}/lib/mps-resources_en.jar" />
+            <property role="Xl_RC" value="${mps_home}/lib/mps-tips.jar" />
           </node>
         </node>
       </node>

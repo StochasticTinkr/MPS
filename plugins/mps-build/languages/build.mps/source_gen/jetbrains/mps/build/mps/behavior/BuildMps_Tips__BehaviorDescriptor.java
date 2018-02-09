@@ -38,7 +38,7 @@ public final class BuildMps_Tips__BehaviorDescriptor extends BaseBHDescriptor {
     return "${build.tmp}/out/mps-tips/" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   /*package*/ static String getMpsTipsPath_id8yBQgWtrz8(@NotNull SNode __thisNode__) {
-    return "${mps_home}/lib/mps-resources_en.jar";
+    return "${mps_home}/lib/mps-tips.jar";
   }
   /*package*/ static String getLocatedDirectory_id4Y6KxqQN2O7(@NotNull SNode __thisNode__, String language) {
     if ((language == null || language.length() == 0) || language.equals("en")) {
