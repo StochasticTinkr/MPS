@@ -20039,10 +20039,6 @@
           </node>
         </node>
       </node>
-      <node concept="20sUq0" id="3yx5FXANrXq" role="39821P">
-        <property role="TrG5h" value="mps-tips.jar" />
-        <ref role="21GgXK" node="3yx5FXANrTm" resolve="mps-tips" />
-      </node>
       <node concept="398223" id="3IKDaVZn4n4" role="39821P">
         <node concept="3_J27D" id="3IKDaVZn4n5" role="Nbhlr">
           <node concept="3Mxwew" id="3IKDaVZn4n6" role="3MwsjC">
@@ -20119,6 +20115,10 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="20sUq0" id="3yx5FXANrXq" role="39821P">
+          <property role="TrG5h" value="mps-tips.jar" />
+          <ref role="21GgXK" node="3yx5FXANrTm" resolve="mps-tips" />
         </node>
         <node concept="3981dG" id="7u_tNvPwpfJ" role="39821P">
           <node concept="3_J27D" id="7u_tNvPwpfK" role="Nbhlr">
@@ -29247,9 +29247,6 @@
         </node>
         <node concept="3ygNvl" id="1diLdO26H7m" role="39821P">
           <ref role="3ygNvj" node="5xa9wY2ujzm" resolve="lib" />
-          <node concept="3LWZYq" id="3yx5FXANrRK" role="1juEy9">
-            <property role="3LWZYl" value="mps-tips.jar" />
-          </node>
         </node>
       </node>
       <node concept="398223" id="1aRUp2KiMC$" role="39821P">

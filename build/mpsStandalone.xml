@@ -41,9 +41,7 @@
       <fileset dir="${artifacts.mpsBootstrapCore}/lib" />
     </copy>
     <copy todir="${build.layout}/lib">
-      <fileset dir="${artifacts.mpsWorkbench}/lib">
-        <exclude name="mps-tips.jar" />
-      </fileset>
+      <fileset dir="${artifacts.mpsWorkbench}/lib" />
     </copy>
     <mkdir dir="${build.layout}/license" />
     <copy todir="${build.layout}/license">

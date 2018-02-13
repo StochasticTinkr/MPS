@@ -47,9 +47,6 @@
         <exclude name="**/win/" />
       </fileset>
     </copy>
-    <jar destfile="${build.layout}/mps-tips.jar" duplicate="preserve">
-      <fileset file="${build.tmp}/out/mps-tips/mps-tips/**" />
-    </jar>
     <mkdir dir="${build.layout}/languages" />
     <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.mpsStandalone}/languages" />
@@ -100,6 +97,9 @@
       <fileset file="${basedir}/workbench/mps-icons/source/mpsAbout@2x.png" />
       <fileset file="${basedir}/workbench/mps-icons/source/MPS_welcomeScreen@2x.png" />
       <fileset dir="${build.tmp}/default/branding.jar" />
+    </jar>
+    <jar destfile="${build.layout}/lib/mps-tips.jar" duplicate="preserve">
+      <fileset file="${build.tmp}/out/mps-tips/mps-tips/**" />
     </jar>
     <mkdir dir="${build.tmp}/default/MPS-src.zip" />
     <copy todir="${build.tmp}/default/MPS-src.zip">
