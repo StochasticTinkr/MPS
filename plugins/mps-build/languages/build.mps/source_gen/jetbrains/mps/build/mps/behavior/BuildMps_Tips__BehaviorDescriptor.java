@@ -17,7 +17,6 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -34,8 +33,6 @@ public final class BuildMps_Tips__BehaviorDescriptor extends BaseBHDescriptor {
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getOutPath_id1tkeUOkqjtp, getPath_id4Y6KxqQL3ag, getMpsTipsPath_id8yBQgWtrz8, getLocatedDirectory_id4Y6KxqQN2O7);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "mps-tips");
-    SLinkOperations.addNewChild(__thisNode__, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a201d7bcL, 0x71731b16a2289997L, "imports"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a2289999L, "jetbrains.mps.build.mps.structure.BuildMps_TipsMps"));
   }
 
   /*package*/ static String getOutPath_id1tkeUOkqjtp(@NotNull SNode __thisNode__) {

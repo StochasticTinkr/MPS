@@ -53,6 +53,7 @@
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -168,15 +169,23 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
+        <child id="1144104376918" name="parameter" index="1xVPHs" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
+      <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
+        <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
+      </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
+      <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
         <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
@@ -189,6 +198,9 @@
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
+      <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
+        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
+      </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -1470,6 +1482,86 @@
                         <property role="Xl_RC" value="\\" />
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="4OmJIVVMkr8">
+    <property role="3GE5qa" value="Project.TipsAndTricks.Package" />
+    <ref role="1M2myG" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsPackage" />
+    <node concept="1N5Pfh" id="4OmJIVVMkr9" role="1Mr941">
+      <ref role="1N5Vy1" to="kdzh:6mx7ef$41ej" resolve="tips" />
+      <node concept="3dgokm" id="4OmJIVVMkrd" role="1N6uqs">
+        <node concept="3clFbS" id="4OmJIVVMkrf" role="2VODD2">
+          <node concept="3cpWs8" id="4OmJIVVMq4H" role="3cqZAp">
+            <node concept="3cpWsn" id="4OmJIVVMq4I" role="3cpWs9">
+              <property role="TrG5h" value="descendants" />
+              <node concept="2I9FWS" id="4OmJIVVMq4D" role="1tU5fm">
+                <ref role="2I9WkF" to="kdzh:75N6Lqy0tuW" resolve="BuildMps_Tips" />
+              </node>
+              <node concept="2OqwBi" id="4OmJIVVMq4J" role="33vP2m">
+                <node concept="2OqwBi" id="4OmJIVVMq4K" role="2Oq$k0">
+                  <node concept="2rP1CM" id="4OmJIVVMq4L" role="2Oq$k0" />
+                  <node concept="2Xjw5R" id="4OmJIVVMq4M" role="2OqNvi">
+                    <node concept="1xMEDy" id="4OmJIVVMq4N" role="1xVPHs">
+                      <node concept="chp4Y" id="4OmJIVVMq4O" role="ri$Ld">
+                        <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="2Rf3mk" id="4OmJIVVMq4P" role="2OqNvi">
+                  <node concept="1xMEDy" id="4OmJIVVMq4Q" role="1xVPHs">
+                    <node concept="chp4Y" id="4OmJIVVMq4R" role="ri$Ld">
+                      <ref role="cht4Q" to="kdzh:75N6Lqy0tuW" resolve="BuildMps_Tips" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="4OmJIVVMqHO" role="3cqZAp">
+            <node concept="2ShNRf" id="4OmJIVVMqHK" role="3clFbG">
+              <node concept="YeOm9" id="4OmJIVVMrNV" role="2ShVmc">
+                <node concept="1Y3b0j" id="4OmJIVVMrNY" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="1Y3XeK" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
+                  <ref role="37wK5l" to="o8zo:4IP40Bi3e_T" resolve="ListScope" />
+                  <node concept="3Tm1VV" id="4OmJIVVMrNZ" role="1B3o_S" />
+                  <node concept="3clFb_" id="4OmJIVVMrOe" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="getName" />
+                    <node concept="17QB3L" id="4OmJIVVMrOf" role="3clF45" />
+                    <node concept="3Tm1VV" id="4OmJIVVMrOg" role="1B3o_S" />
+                    <node concept="37vLTG" id="4OmJIVVMrOi" role="3clF46">
+                      <property role="TrG5h" value="child" />
+                      <node concept="3Tqbb2" id="4OmJIVVMrOj" role="1tU5fm" />
+                    </node>
+                    <node concept="3clFbS" id="4OmJIVVMrOk" role="3clF47">
+                      <node concept="3clFbF" id="4OmJIVVMs9_" role="3cqZAp">
+                        <node concept="2OqwBi" id="4OmJIVVMsOY" role="3clFbG">
+                          <node concept="1PxgMI" id="4OmJIVVMsBx" role="2Oq$k0">
+                            <node concept="chp4Y" id="4OmJIVVMsDT" role="3oSUPX">
+                              <ref role="cht4Q" to="kdzh:75N6Lqy0tuW" resolve="BuildMps_Tips" />
+                            </node>
+                            <node concept="37vLTw" id="4OmJIVVMs9$" role="1m5AlR">
+                              <ref role="3cqZAo" node="4OmJIVVMrOi" resolve="child" />
+                            </node>
+                          </node>
+                          <node concept="3TrcHB" id="4OmJIVVMt1c" role="2OqNvi">
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="4OmJIVVMrYx" role="37wK5m">
+                    <ref role="3cqZAo" node="4OmJIVVMq4I" resolve="descendants" />
                   </node>
                 </node>
               </node>

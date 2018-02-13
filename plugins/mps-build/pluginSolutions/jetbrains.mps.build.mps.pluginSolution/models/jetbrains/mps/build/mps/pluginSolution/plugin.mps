@@ -692,9 +692,7 @@
       <concept id="1180964022718" name="jetbrains.mps.baseLanguage.collections.structure.ConcatOperation" flags="nn" index="3QWeyG" />
     </language>
     <language id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps">
-      <concept id="6818892319992984815" name="jetbrains.mps.build.mps.structure.BuildMps_TipsPackage" flags="ng" index="20sUq0">
-        <reference id="7323166234190549907" name="tips" index="21GgXK" />
-      </concept>
+      <concept id="6818892319992984815" name="jetbrains.mps.build.mps.structure.BuildMps_TipsPackage" flags="ng" index="20sUq0" />
       <concept id="6592112598314586625" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup" flags="ng" index="m$f5U">
         <reference id="6592112598314586626" name="group" index="m$f5T" />
       </concept>
@@ -12599,7 +12597,13 @@
                           </node>
                           <node concept="20sUq0" id="66jotwz2KFb" role="39821P">
                             <property role="TrG5h" value="mps-tips.jar" />
-                            <ref role="21GgXK" node="66jotwz2XbB" resolve="mps-tips" />
+                            <node concept="2c44tb" id="4OmJIVVOpdb" role="lGtFl">
+                              <property role="P3scX" value="0cf935df-4699-4e9c-a132-fa109541cba3/6818892319992984815/7323166234190549907" />
+                              <property role="2qtEX8" value="tips" />
+                              <node concept="37vLTw" id="4OmJIVVO_tk" role="2c44t1">
+                                <ref role="3cqZAo" node="66jotwz2Uq7" resolve="tips" />
+                              </node>
+                            </node>
                           </node>
                           <node concept="3981dx" id="2OJWaFGOVpG" role="39821P">
                             <node concept="3_J27D" id="2OJWaFGOVpH" role="Nbhlr">
