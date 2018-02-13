@@ -17630,26 +17630,6 @@
         </node>
       </node>
     </node>
-    <node concept="3jsGME" id="59gOS57S0HM" role="3989C9">
-      <property role="TrG5h" value="mps-tips" />
-      <node concept="3jnLDQ" id="59gOS57S0Rh" role="3jmSa1">
-        <node concept="398BVA" id="59gOS57S0SQ" role="U0IfZ">
-          <ref role="398BVh" node="2eDSGe9d1qB" resolve="mps_home" />
-          <node concept="2Ry0Ak" id="59gOS57S0Uq" role="iGT6I">
-            <property role="2Ry0Am" value="workbench" />
-            <node concept="2Ry0Ak" id="59gOS57S0Uv" role="2Ry0An">
-              <property role="2Ry0Am" value="mps-tips" />
-              <node concept="2Ry0Ak" id="59gOS57S0U$" role="2Ry0An">
-                <property role="2Ry0Am" value="source" />
-                <node concept="2Ry0Ak" id="59gOS57S0UD" role="2Ry0An">
-                  <property role="2Ry0Am" value="tips" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="55IIr" id="2eDSGe9d1qx" role="auvoZ">
       <node concept="2Ry0Ak" id="2eDSGe9d1qy" role="iGT6I">
         <property role="2Ry0Am" value="build" />
@@ -17738,10 +17718,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node concept="20sUq0" id="59gOS57S0Xh" role="39821P">
-          <property role="TrG5h" value="mps-tips.jar" />
-          <ref role="21GgXK" node="59gOS57S0HM" resolve="mps-tips" />
         </node>
         <node concept="3981dx" id="5xa9wY2vqbR" role="39821P">
           <node concept="3_J27D" id="5xa9wY2vqbS" role="Nbhlr">
@@ -19952,6 +19928,25 @@
         </node>
       </node>
     </node>
+    <node concept="3jsGME" id="3yx5FXANrTm" role="3989C9">
+      <property role="TrG5h" value="mps-tips" />
+      <node concept="3jnLDQ" id="3yx5FXANrUV" role="3jmSa1">
+        <node concept="55IIr" id="3yx5FXANrUW" role="U0IfZ">
+          <node concept="2Ry0Ak" id="3yx5FXANrV2" role="iGT6I">
+            <property role="2Ry0Am" value="workbench" />
+            <node concept="2Ry0Ak" id="3yx5FXANrV7" role="2Ry0An">
+              <property role="2Ry0Am" value="mps-tips" />
+              <node concept="2Ry0Ak" id="3yx5FXANrVc" role="2Ry0An">
+                <property role="2Ry0Am" value="source" />
+                <node concept="2Ry0Ak" id="3yx5FXANrVh" role="2Ry0An">
+                  <property role="2Ry0Am" value="tips" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2kB4xC" id="d_WKSiP3Fi" role="1l3spd">
       <property role="TrG5h" value="date" />
       <node concept="hHN3E" id="d_WKSiP3Fj" role="aVJcv">
@@ -20043,6 +20038,10 @@
             <property role="3LWZYl" value="**/win/" />
           </node>
         </node>
+      </node>
+      <node concept="20sUq0" id="3yx5FXANrXq" role="39821P">
+        <property role="TrG5h" value="mps-tips.jar" />
+        <ref role="21GgXK" node="3yx5FXANrTm" resolve="mps-tips" />
       </node>
       <node concept="398223" id="3IKDaVZn4n4" role="39821P">
         <node concept="3_J27D" id="3IKDaVZn4n5" role="Nbhlr">
@@ -29248,6 +29247,9 @@
         </node>
         <node concept="3ygNvl" id="1diLdO26H7m" role="39821P">
           <ref role="3ygNvj" node="5xa9wY2ujzm" resolve="lib" />
+          <node concept="3LWZYq" id="3yx5FXANrRK" role="1juEy9">
+            <property role="3LWZYl" value="mps-tips.jar" />
+          </node>
         </node>
       </node>
       <node concept="398223" id="1aRUp2KiMC$" role="39821P">

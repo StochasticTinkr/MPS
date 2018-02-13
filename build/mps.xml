@@ -35,7 +35,7 @@
   <property file="${artifacts.mpsBuild}/build.properties" prefix="import.mpsBuild" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBuild.mpsBootstrapCore.version}" />
   
-  <target name="assemble" depends="fetchDependencies">
+  <target name="assemble" depends="collect-tips-mps-tips, fetchDependencies">
     <mkdir dir="${build.layout}/bin" />
     <copy todir="${build.layout}/bin">
       <fileset dir="${mps_home}/bin">
@@ -47,6 +47,9 @@
         <exclude name="**/win/" />
       </fileset>
     </copy>
+    <jar destfile="${build.layout}/mps-tips.jar" duplicate="preserve">
+      <fileset file="${build.tmp}/out/mps-tips/mps-tips/**" />
+    </jar>
     <mkdir dir="${build.layout}/languages" />
     <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.mpsStandalone}/languages" />
@@ -259,5 +262,24 @@
   <target name="clean">
     <delete dir="${build.tmp}" />
     <delete dir="${build.layout}" />
+  </target>
+  
+  <target name="collect-tips-mps-tips">
+    <mkdir dir="${build.tmp}/out/mps-tips/mps-tips/tips" />
+    <copy todir="${build.tmp}/out/mps-tips/mps-tips/tips">
+      <fileset dir="${basedir}/workbench/mps-tips/source/tips" />
+    </copy>
+    <mkdir dir="${build.tmp}/out/mps-tips/mps-tips/META-INF" />
+    <fileset id="contents" includes="*.*" dir="${build.tmp}/out/mps-tips/mps-tips/tips" />
+    <property name="mps-tips.prop.contents" refid="contents" />
+    <echoxml file="${build.tmp}/out/mps-tips/mps-tips/META-INF/IdeTipsAndTricks.xml">
+      <idea-plugin>
+        <extensions defaultExtensionNs="com.intellij">
+          <tipAndTrick file="${mps-tips.prop.contents}" />
+        </extensions>
+      </idea-plugin>
+    </echoxml>
+    <replace file="${build.tmp}/out/mps-tips/mps-tips/META-INF/IdeTipsAndTricks.xml" token=";" value="&quot;/&gt;&#xD;&#x0009;&lt;tipAndTrick file=&quot;" />
+    <replace file="${build.tmp}/out/mps-tips/mps-tips/META-INF/IdeTipsAndTricks.xml" token="&lt;tipAndTrick file=&quot;&quot; /&gt;" value="" />
   </target>
 </project>

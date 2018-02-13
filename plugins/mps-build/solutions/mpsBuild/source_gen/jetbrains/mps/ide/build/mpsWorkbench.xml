@@ -41,7 +41,7 @@
   
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
-  <target name="assemble" depends="classes, declare-mps-tasks, collect-tips-mps-tips">
+  <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}/languages" />
     <mkdir dir="${build.layout}/languages/workbench" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.core.pluginSolution.jar" />
@@ -345,9 +345,6 @@
     </jar>
     <jar destfile="${build.layout}/lib/mps-resources_en.jar" duplicate="preserve">
       <fileset dir="${mps_home}/workbench/resources_en/source" />
-    </jar>
-    <jar destfile="${build.layout}/lib/mps-tips.jar" duplicate="preserve">
-      <fileset file="${build.tmp}/out/mps-tips/mps-tips/**" />
     </jar>
     <jar destfile="${build.layout}/lib/mps-boot.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/startup" />
@@ -1021,24 +1018,5 @@
     <delete dir="${mps_home}/languages/languageDesign/migration/solutions/actions/source_gen" />
     <delete dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.script/source_gen" />
     <delete dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.typesystem/source_gen" />
-  </target>
-  
-  <target name="collect-tips-mps-tips">
-    <mkdir dir="${build.tmp}/out/mps-tips/mps-tips/tips" />
-    <copy todir="${build.tmp}/out/mps-tips/mps-tips/tips">
-      <fileset dir="${mps_home}/workbench/mps-tips/source/tips" />
-    </copy>
-    <mkdir dir="${build.tmp}/out/mps-tips/mps-tips/META-INF" />
-    <fileset id="contents" includes="*.*" dir="${build.tmp}/out/mps-tips/mps-tips/tips" />
-    <property name="mps-tips.prop.contents" refid="contents" />
-    <echoxml file="${build.tmp}/out/mps-tips/mps-tips/META-INF/IdeTipsAndTricks.xml">
-      <idea-plugin>
-        <extensions defaultExtensionNs="com.intellij">
-          <tipAndTrick file="${mps-tips.prop.contents}" />
-        </extensions>
-      </idea-plugin>
-    </echoxml>
-    <replace file="${build.tmp}/out/mps-tips/mps-tips/META-INF/IdeTipsAndTricks.xml" token=";" value="&quot;/&gt;&#xD;&#x0009;&lt;tipAndTrick file=&quot;" />
-    <replace file="${build.tmp}/out/mps-tips/mps-tips/META-INF/IdeTipsAndTricks.xml" token="&lt;tipAndTrick file=&quot;&quot; /&gt;" value="" />
   </target>
 </project>
