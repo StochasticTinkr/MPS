@@ -692,6 +692,9 @@
       <concept id="1180964022718" name="jetbrains.mps.baseLanguage.collections.structure.ConcatOperation" flags="nn" index="3QWeyG" />
     </language>
     <language id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps">
+      <concept id="6818892319992984815" name="jetbrains.mps.build.mps.structure.BuildMps_TipsPackage" flags="ng" index="20sUq0">
+        <reference id="7323166234190549907" name="tips" index="21GgXK" />
+      </concept>
       <concept id="6592112598314586625" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup" flags="ng" index="m$f5U">
         <reference id="6592112598314586626" name="group" index="m$f5T" />
       </concept>
@@ -711,6 +714,10 @@
         <child id="1500819558095907806" name="modules" index="2G$12L" />
       </concept>
       <concept id="1265949165890536423" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars" flags="ng" index="L2wRC" />
+      <concept id="8174907532631382425" name="jetbrains.mps.build.mps.structure.BuildMps_TipsMps" flags="ng" index="3jmSaf" />
+      <concept id="8174907532628842428" name="jetbrains.mps.build.mps.structure.BuildMps_Tips" flags="ng" index="3jsGME">
+        <child id="8174907532631382423" name="imports" index="3jmSa1" />
+      </concept>
       <concept id="7753544965996377997" name="jetbrains.mps.build.mps.structure.BuildMps_Branding" flags="ng" index="1zClus">
         <property id="3497141547781541445" name="minor" index="2OjLBK" />
         <property id="3497141547781541444" name="major" index="2OjLBL" />
@@ -12377,7 +12384,39 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="2OJWaFGOVpf" role="3cqZAp" />
+        <node concept="3cpWs8" id="66jotwz2Uq6" role="3cqZAp">
+          <node concept="3cpWsn" id="66jotwz2Uq7" role="3cpWs9">
+            <property role="TrG5h" value="tips" />
+            <node concept="3Tqbb2" id="66jotwz2Uq8" role="1tU5fm">
+              <ref role="ehGHo" to="kdzh:75N6Lqy0tuW" resolve="BuildMps_Tips" />
+            </node>
+            <node concept="2c44tf" id="66jotwz2Uq9" role="33vP2m">
+              <node concept="3jsGME" id="66jotwz2XbB" role="2c44tc">
+                <property role="TrG5h" value="mps-tips" />
+                <node concept="3jmSaf" id="66jotwz2XbC" role="3jmSa1" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="66jotwz2RQH" role="3cqZAp" />
+        <node concept="3clFbF" id="66jotwz0xdF" role="3cqZAp">
+          <node concept="2OqwBi" id="66jotwz0Alf" role="3clFbG">
+            <node concept="2OqwBi" id="66jotwz0zDo" role="2Oq$k0">
+              <node concept="37vLTw" id="66jotwz0xdD" role="2Oq$k0">
+                <ref role="3cqZAo" node="7$e6lgA3BvE" resolve="buildProject" />
+              </node>
+              <node concept="3Tsc0h" id="66jotwz0_0H" role="2OqNvi">
+                <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" resolve="parts" />
+              </node>
+            </node>
+            <node concept="TSZUe" id="66jotwz0ELQ" role="2OqNvi">
+              <node concept="37vLTw" id="66jotwz2ZQi" role="25WWJ7">
+                <ref role="3cqZAo" node="66jotwz2Uq7" resolve="tips" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="66jotwz0rjQ" role="3cqZAp" />
         <node concept="3clFbF" id="7vf_vNz4lk8" role="3cqZAp">
           <node concept="2OqwBi" id="7vf_vNz4lkW" role="3clFbG">
             <node concept="2OqwBi" id="7vf_vNz4lkv" role="2Oq$k0">
@@ -12554,6 +12593,13 @@
                             <node concept="3LWZYq" id="2OJWaFGOVpF" role="1juEy9">
                               <property role="3LWZYl" value="branding.jar" />
                             </node>
+                            <node concept="3LWZYq" id="66jotwz0NeF" role="1juEy9">
+                              <property role="3LWZYl" value="mps-tips.jar" />
+                            </node>
+                          </node>
+                          <node concept="20sUq0" id="66jotwz2KFb" role="39821P">
+                            <property role="TrG5h" value="mps-tips.jar" />
+                            <ref role="21GgXK" node="66jotwz2XbB" resolve="mps-tips" />
                           </node>
                           <node concept="3981dx" id="2OJWaFGOVpG" role="39821P">
                             <node concept="3_J27D" id="2OJWaFGOVpH" role="Nbhlr">
