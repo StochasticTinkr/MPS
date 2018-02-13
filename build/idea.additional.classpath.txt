@@ -58,6 +58,7 @@ workbench/mps-icons/classes
 :workbench
 workbench/resources/classes
 workbench/resources_en/classes
+workbench/mps-tips/classes
 workbench/typesystemUi/classes
 workbench/mps-workbench/jetbrains.mps.ide/classes
 MPSPlugin/apiclasses
