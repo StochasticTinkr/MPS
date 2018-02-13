@@ -17681,9 +17681,6 @@
             </node>
           </node>
           <node concept="2HvfSZ" id="35zoHQHRCKg" role="39821P">
-            <node concept="3LWZYq" id="33QebIb_rbb" role="2HvfZ1">
-              <property role="3LWZYl" value="META-INF/IdeTipsAndTricks.xml" />
-            </node>
             <node concept="398BVA" id="5xa9wY2vqc2" role="2HvfZ0">
               <ref role="398BVh" node="2eDSGe9d1qB" resolve="mps_home" />
               <node concept="2Ry0Ak" id="5xa9wY2vqc3" role="iGT6I">

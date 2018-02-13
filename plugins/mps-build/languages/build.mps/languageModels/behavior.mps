@@ -266,9 +266,6 @@
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
-      <concept id="1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" flags="nn" index="WFELt">
-        <reference id="1139877738879" name="concept" index="1A0vxQ" />
-      </concept>
       <concept id="1143512015885" name="jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation" flags="nn" index="YCak7" />
       <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
         <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
@@ -6432,34 +6429,7 @@
       </node>
     </node>
     <node concept="13hLZK" id="4Y6KxqQL3a6" role="13h7CW">
-      <node concept="3clFbS" id="4Y6KxqQL3a7" role="2VODD2">
-        <node concept="3clFbF" id="66jotwz1U9V" role="3cqZAp">
-          <node concept="37vLTI" id="66jotwz1VlY" role="3clFbG">
-            <node concept="Xl_RD" id="66jotwz1VsD" role="37vLTx">
-              <property role="Xl_RC" value="mps-tips" />
-            </node>
-            <node concept="2OqwBi" id="66jotwz1U_R" role="37vLTJ">
-              <node concept="13iPFW" id="66jotwz1U9U" role="2Oq$k0" />
-              <node concept="3TrcHB" id="66jotwz1UJ7" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="66jotwz1Wcb" role="3cqZAp">
-          <node concept="2OqwBi" id="66jotwz1XY0" role="3clFbG">
-            <node concept="2OqwBi" id="66jotwz1Wn3" role="2Oq$k0">
-              <node concept="13iPFW" id="66jotwz1Wc9" role="2Oq$k0" />
-              <node concept="3Tsc0h" id="66jotwz1Wwj" role="2OqNvi">
-                <ref role="3TtcxE" to="kdzh:75N6Lqya9An" resolve="imports" />
-              </node>
-            </node>
-            <node concept="WFELt" id="66jotwz1Z7X" role="2OqNvi">
-              <ref role="1A0vxQ" to="kdzh:75N6Lqya9Ap" resolve="BuildMps_TipsMps" />
-            </node>
-          </node>
-        </node>
-      </node>
+      <node concept="3clFbS" id="4Y6KxqQL3a7" role="2VODD2" />
     </node>
   </node>
   <node concept="13h7C7" id="59gOS57Nje1">

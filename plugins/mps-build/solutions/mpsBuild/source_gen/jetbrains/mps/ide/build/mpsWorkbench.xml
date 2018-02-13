@@ -339,9 +339,7 @@
     </jar>
     <mkdir dir="${build.layout}/lib" />
     <jar destfile="${build.layout}/lib/mps-resources.jar" duplicate="preserve">
-      <fileset dir="${mps_home}/workbench/resources/source">
-        <exclude name="META-INF/IdeTipsAndTricks.xml" />
-      </fileset>
+      <fileset dir="${mps_home}/workbench/resources/source" />
     </jar>
     <jar destfile="${build.layout}/lib/mps-resources_en.jar" duplicate="preserve">
       <fileset dir="${mps_home}/workbench/resources_en/source" />
