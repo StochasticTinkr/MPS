@@ -16469,6 +16469,75 @@
       <node concept="1y0Vig" id="4FAOcOiOU50" role="1hWBAP">
         <node concept="2VaFvF" id="4FAOcOiOU5e" role="1y0Vin">
           <property role="TrG5h" value="collect-tips" />
+          <node concept="2VaFvH" id="5_o80gNbmAs" role="2VaFvJ">
+            <property role="TrG5h" value="prepare_dir" />
+            <node concept="2Vbh7Z" id="5_o80gNdWHt" role="2VaTZU">
+              <node concept="2pNNFK" id="5_o80gNdWHu" role="2Vbh7K">
+                <property role="2pNNFO" value="mkdir" />
+                <property role="qg3DV" value="true" />
+                <node concept="2pNUuL" id="5_o80gNdWHv" role="2pNNFR">
+                  <property role="2pNUuO" value="dir" />
+                  <node concept="2pMdtt" id="5_o80gNdWHw" role="2pMdts">
+                    <property role="2pMdty" value="dir" />
+                    <node concept="17Uvod" id="5_o80gNdWHx" role="lGtFl">
+                      <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
+                      <property role="2qtEX9" value="text" />
+                      <node concept="3zFVjK" id="5_o80gNdWHy" role="3zH0cK">
+                        <node concept="3clFbS" id="5_o80gNdWHz" role="2VODD2">
+                          <node concept="3clFbF" id="5_o80gNdWH$" role="3cqZAp">
+                            <node concept="3cpWs3" id="5_o80gNdWH_" role="3clFbG">
+                              <node concept="Xl_RD" id="5_o80gNdWHA" role="3uHU7w">
+                                <property role="Xl_RC" value="/tips/css" />
+                              </node>
+                              <node concept="2OqwBi" id="5_o80gNdWHB" role="3uHU7B">
+                                <node concept="30H73N" id="5_o80gNdWHC" role="2Oq$k0" />
+                                <node concept="2qgKlT" id="5_o80gNdWHD" role="2OqNvi">
+                                  <ref role="37wK5l" to="2txq:4Y6KxqQL3ag" resolve="getPath" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2Vbh7Z" id="5_o80gNdZ5L" role="2VaTZU">
+              <node concept="2pNNFK" id="5_o80gNdZ5M" role="2Vbh7K">
+                <property role="2pNNFO" value="mkdir" />
+                <property role="qg3DV" value="true" />
+                <node concept="2pNUuL" id="5_o80gNdZ5N" role="2pNNFR">
+                  <property role="2pNUuO" value="dir" />
+                  <node concept="2pMdtt" id="5_o80gNdZ5O" role="2pMdts">
+                    <property role="2pMdty" value="dir" />
+                    <node concept="17Uvod" id="5_o80gNdZ5P" role="lGtFl">
+                      <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
+                      <property role="2qtEX9" value="text" />
+                      <node concept="3zFVjK" id="5_o80gNdZ5Q" role="3zH0cK">
+                        <node concept="3clFbS" id="5_o80gNdZ5R" role="2VODD2">
+                          <node concept="3clFbF" id="5_o80gNdZ5S" role="3cqZAp">
+                            <node concept="3cpWs3" id="5_o80gNdZ5T" role="3clFbG">
+                              <node concept="Xl_RD" id="5_o80gNdZ5U" role="3uHU7w">
+                                <property role="Xl_RC" value="/tips/images" />
+                              </node>
+                              <node concept="2OqwBi" id="5_o80gNdZ5V" role="3uHU7B">
+                                <node concept="30H73N" id="5_o80gNdZ5W" role="2Oq$k0" />
+                                <node concept="2qgKlT" id="5_o80gNdZ5X" role="2OqNvi">
+                                  <ref role="37wK5l" to="2txq:4Y6KxqQL3ag" resolve="getPath" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="2VaFvH" id="4FAOcOiRdrQ" role="2VaFvJ">
             <property role="TrG5h" value="unjar_resources" />
             <node concept="2Vbh7Z" id="4FAOcOiRdrR" role="2VaTZU">

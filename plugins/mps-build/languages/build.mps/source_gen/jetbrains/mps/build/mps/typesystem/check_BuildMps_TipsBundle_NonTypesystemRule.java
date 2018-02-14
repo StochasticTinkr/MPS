@@ -12,6 +12,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_BuildMps_TipsBundle_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -25,6 +28,17 @@ public class check_BuildMps_TipsBundle_NonTypesystemRule extends AbstractNonType
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(buildMps_TipsBundle, "should end with .jar", "r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)", "5730480978702381242", null, errorTarget);
         }
       }
+    }
+    if (ListSequence.fromList(SNodeOperations.getNodeAncestors(buildMps_TipsBundle, null, false)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f9aL, "jetbrains.mps.build.structure.BuildLayout_Jar"));
+      }
+    })) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(buildMps_TipsBundle, "tips of should not be under jar", "r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)", "6437930869738284975", null, errorTarget);
+      }
+
     }
   }
   public SAbstractConcept getApplicableConcept() {
