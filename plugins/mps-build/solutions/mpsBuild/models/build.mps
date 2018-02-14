@@ -21175,9 +21175,6 @@
       <node concept="m$_wl" id="6b4RkXS7XdG" role="39821P">
         <ref role="m_rDy" node="5HVSRHdVm9a" resolve="jetbrains.mps.build" />
       </node>
-      <node concept="L2wRC" id="bkfO2ZazNF" role="39821P">
-        <ref role="L2wRA" node="bkfO2ZayAR" resolve="jetbrains.mps.build.tips" />
-      </node>
     </node>
     <node concept="10PD9b" id="7pdFgzxlDov" role="10PD9s" />
     <node concept="3b7kt6" id="7pdFgzxlDow" role="10PD9s" />
@@ -22216,9 +22213,6 @@
           <property role="2GAjPV" value="false" />
         </node>
       </node>
-    </node>
-    <node concept="2igEWh" id="4lVkHd1DtRL" role="1hWBAP">
-      <property role="2igJW4" value="true" />
     </node>
   </node>
   <node concept="1l3spW" id="1lMM4owFq4Y">
