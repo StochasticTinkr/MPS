@@ -265,6 +265,8 @@
   </target>
   
   <target name="collect-tips-mps-tips">
+    <mkdir dir="${build.tmp}/out/mps-tips/mps-tips/tips/css" />
+    <mkdir dir="${build.tmp}/out/mps-tips/mps-tips/tips/images" />
     <mkdir dir="${build.tmp}/out/mps-tips/mps-tips/tips" />
     <copy todir="${build.tmp}/out/mps-tips/mps-tips/tips">
       <fileset dir="${basedir}/workbench/mps-tips/source/tips" />
