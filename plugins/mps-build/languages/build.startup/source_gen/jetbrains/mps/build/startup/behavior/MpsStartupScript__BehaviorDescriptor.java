@@ -88,7 +88,7 @@ public final class MpsStartupScript__BehaviorDescriptor extends BaseBHDescriptor
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x35ebd6e5b343750bL, "startupFolder")) + "/" + MpsStartupScript__BehaviorDescriptor.getVmOptionsFileName_id2lwFGYOYlNP.invoke(__thisNode__, ((boolean) is64bit));
   }
   /*package*/ static String getVmOptionsFileName_id2lwFGYOYlNP(@NotNull SNode __thisNode__, boolean is64bit) {
-    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ((is64bit ? "64" : "")) + "." + MpsStartupScript__BehaviorDescriptor.getVmOptionsExtension_id54lRqzvvwXR.invoke(__thisNode__);
+    return BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x30a61e6d55f6abc9L, "branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0xccf01929cb3b53bL, "script")), null) + ((is64bit ? "64" : "")) + "." + MpsStartupScript__BehaviorDescriptor.getVmOptionsExtension_id54lRqzvvwXR.invoke(__thisNode__);
   }
   /*package*/ static String getVmOptionsExtension_id54lRqzvvwXR(@NotNull SNode __thisNode__) {
     return "vmoptions";
@@ -101,7 +101,7 @@ public final class MpsStartupScript__BehaviorDescriptor extends BaseBHDescriptor
     }
 
     // Assume that brandig.codename always consists from instances of BuildTextStringPart so we don't need MacroHelper 
-    return BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(branding, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb230afL, "shortName")), null) + SPropertyOperations.getInteger(branding, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e44L, "major")) + "." + SPropertyOperations.getInteger(branding, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e45L, "minor"));
+    return BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(branding, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb230afL, "product")), null) + SPropertyOperations.getInteger(branding, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e44L, "major")) + "." + SPropertyOperations.getInteger(branding, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e45L, "minor"));
   }
 
   /*package*/ MpsStartupScript__BehaviorDescriptor() {

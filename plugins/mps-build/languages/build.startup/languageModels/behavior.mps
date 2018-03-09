@@ -2,15 +2,14 @@
 <model ref="r:f9efd379-0776-49f3-ae79-8113b86e36ad(jetbrains.mps.build.startup.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
-    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="0" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
+    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="s7om" ref="r:a930f08c-5447-4203-8f2e-507bb76fab12(jetbrains.mps.build.startup.structure)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="kdzh" ref="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" implicit="true" />
     <import index="vbkb" ref="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)" implicit="true" />
   </imports>
@@ -536,12 +535,6 @@
             </node>
             <node concept="3cpWs3" id="2lwFGYOYmSn" role="3uHU7B">
               <node concept="3cpWs3" id="2lwFGYOYml9" role="3uHU7B">
-                <node concept="2OqwBi" id="2lwFGYOYlVy" role="3uHU7B">
-                  <node concept="13iPFW" id="2lwFGYOYlTa" role="2Oq$k0" />
-                  <node concept="3TrcHB" id="2lwFGYOYm4G" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                  </node>
-                </node>
                 <node concept="1eOMI4" id="2lwFGYOYmmY" role="3uHU7w">
                   <node concept="3K4zz7" id="2lwFGYOYmAP" role="1eOMHV">
                     <node concept="Xl_RD" id="2lwFGYOYmCM" role="3K4E3e">
@@ -553,6 +546,23 @@
                     <node concept="37vLTw" id="2lwFGYOYmoK" role="3K4Cdx">
                       <ref role="3cqZAo" node="2lwFGYOYlSQ" resolve="is64bit" />
                     </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="2g$3PZUfS3q" role="3uHU7B">
+                  <node concept="2OqwBi" id="2g$3PZUbiJh" role="2Oq$k0">
+                    <node concept="2OqwBi" id="2lwFGYOYlVy" role="2Oq$k0">
+                      <node concept="13iPFW" id="2lwFGYOYlTa" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="2g$3PZUbi6v" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="2g$3PZUbiYa" role="2OqNvi">
+                      <ref role="3Tt5mk" to="kdzh:Nf0pasGVkV" resolve="script" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="2g$3PZUfSo8" role="2OqNvi">
+                    <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
+                    <node concept="10Nm6u" id="2g$3PZUfSOA" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -639,7 +649,7 @@
                       <ref role="3cqZAo" node="BsOHnja7FP" resolve="branding" />
                     </node>
                     <node concept="3TrEf2" id="3TEkTgEJh6q" role="2OqNvi">
-                      <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="shortName" />
+                      <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="product" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="7C7qUK4tICV" role="2OqNvi">
