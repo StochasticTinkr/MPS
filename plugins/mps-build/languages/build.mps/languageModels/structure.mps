@@ -8,6 +8,7 @@
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" />
+    <import index="3jc9" ref="r:85a46d2f-efef-4783-8e02-3976663ecd73(jetbrains.mps.lang.editor.migration)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -783,6 +784,10 @@
       <property role="20kJfa" value="icon32opaque" />
       <property role="IQ2ns" value="6108265972537229340" />
       <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+      <node concept="asaX9" id="2g$3PZTZDDs" role="lGtFl">
+        <property role="YLPcu" value="2018.1" />
+        <property role="YLQ7P" value="is not used anymore" />
+      </node>
     </node>
     <node concept="1TJgyj" id="FnaIS$EsJY" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -801,6 +806,10 @@
       <property role="20kJfa" value="iconToolWindow" />
       <property role="IQ2ns" value="6845119683729874664" />
       <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+      <node concept="asaX9" id="2g$3PZTZDSj" role="lGtFl">
+        <property role="YLQ7P" value="is not used anymore" />
+        <property role="YLPcu" value="2018.1" />
+      </node>
     </node>
     <node concept="1TJgyj" id="5j4USBYGz2J" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -816,6 +825,19 @@
       <property role="IQ2ns" value="6108265972537372848" />
       <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
     </node>
+    <node concept="1TJgyj" id="Nf0pasGVki" role="1TKVEi">
+      <property role="IQ2ns" value="922958177840117010" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="edition" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
+    </node>
+    <node concept="1TJgyj" id="Nf0pasGVkV" role="1TKVEi">
+      <property role="IQ2ns" value="922958177840117051" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="script" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
+    </node>
     <node concept="1TJgyj" id="ES2LjlW$nI" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="welcomeLogo" />
@@ -828,6 +850,10 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="editorBGUrl" />
       <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+      <node concept="asaX9" id="2g$3PZU2P9A" role="lGtFl">
+        <property role="YLQ7P" value="is not used anymore" />
+        <property role="YLPcu" value="2018.1" />
+      </node>
     </node>
     <node concept="1TJgyj" id="FnaIS$EsWD" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -982,17 +1008,17 @@
     <property role="34LRSv" value="plugin" />
     <property role="EcuMT" value="6592112598314498926" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJEWWc" resolve="BuildLayout_AbstractContainer" />
+    <node concept="1TJgyi" id="2Wb4ucKh_Pd" role="1TKVEl">
+      <property role="TrG5h" value="stripImplementation" />
+      <property role="IQ2nx" value="3389822811991596365" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="36cV00CpqRw" role="1TKVEi">
       <property role="IQ2ns" value="3570488090019868128" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="packagingType" />
       <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="36cV00CpqQv" resolve="BuildMpsLayout_PluginLayoutTypeBase" />
-    </node>
-    <node concept="1TJgyi" id="2Wb4ucKh_Pd" role="1TKVEl">
-      <property role="TrG5h" value="stripImplementation" />
-      <property role="IQ2nx" value="3389822811991596365" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="5HVSRHdV_$p" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -1185,15 +1211,15 @@
     <property role="3GE5qa" value="Project.Plugin" />
     <property role="EcuMT" value="4034578608468929319" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="asaX9" id="36cV00Cx3ar" role="lGtFl">
-      <property role="YLQ7P" value="the packaging is to be defined in the layout section" />
-    </node>
     <node concept="1TJgyj" id="3vXGXT8byGC" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4034578608468929320" />
       <ref role="20lvS9" node="hS0KzPONfF" resolve="BuildMps_AbstractModule" />
+    </node>
+    <node concept="asaX9" id="36cV00Cx3ar" role="lGtFl">
+      <property role="YLQ7P" value="the packaging is to be defined in the layout section" />
     </node>
   </node>
   <node concept="1TIwiD" id="6MNA4JYmRbj">
@@ -1560,6 +1586,22 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
+  <node concept="1TIwiD" id="36cV00CpqQx">
+    <property role="EcuMT" value="3570488090019868065" />
+    <property role="3GE5qa" value="Layout" />
+    <property role="TrG5h" value="BuildMpsLayout_AutoPluginLayoutType" />
+    <property role="34LRSv" value="auto packaging" />
+    <property role="R4oN_" value="all modules are placed into the folder 'languages', which is created in the root of the plugin" />
+    <ref role="1TJDcQ" node="36cV00CpqQv" resolve="BuildMpsLayout_PluginLayoutTypeBase" />
+  </node>
+  <node concept="1TIwiD" id="36cV00CpqQw">
+    <property role="EcuMT" value="3570488090019868064" />
+    <property role="3GE5qa" value="Layout" />
+    <property role="TrG5h" value="BuildMpsLayout_ManualPluginLayoutType" />
+    <property role="34LRSv" value="manual packaging" />
+    <property role="R4oN_" value="packaging of the plugin is to be provided by the user" />
+    <ref role="1TJDcQ" node="36cV00CpqQv" resolve="BuildMpsLayout_PluginLayoutTypeBase" />
+  </node>
   <node concept="1TIwiD" id="75N6Lqya9Ap">
     <property role="EcuMT" value="8174907532631382425" />
     <property role="3GE5qa" value="Project.TipsAndTricks.Collect" />
@@ -1609,22 +1651,6 @@
     <node concept="PrWs8" id="6mx7ef$3$pu" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="36cV00CpqQx">
-    <property role="EcuMT" value="3570488090019868065" />
-    <property role="3GE5qa" value="Layout" />
-    <property role="TrG5h" value="BuildMpsLayout_AutoPluginLayoutType" />
-    <property role="34LRSv" value="auto packaging" />
-    <property role="R4oN_" value="all modules are placed into the folder 'languages', which is created in the root of the plugin" />
-    <ref role="1TJDcQ" node="36cV00CpqQv" resolve="BuildMpsLayout_PluginLayoutTypeBase" />
-  </node>
-  <node concept="1TIwiD" id="36cV00CpqQw">
-    <property role="EcuMT" value="3570488090019868064" />
-    <property role="3GE5qa" value="Layout" />
-    <property role="TrG5h" value="BuildMpsLayout_ManualPluginLayoutType" />
-    <property role="34LRSv" value="manual packaging" />
-    <property role="R4oN_" value="packaging of the plugin is to be provided by the user" />
-    <ref role="1TJDcQ" node="36cV00CpqQv" resolve="BuildMpsLayout_PluginLayoutTypeBase" />
   </node>
   <node concept="1TIwiD" id="36cV00CpqQv">
     <property role="EcuMT" value="3570488090019868063" />
