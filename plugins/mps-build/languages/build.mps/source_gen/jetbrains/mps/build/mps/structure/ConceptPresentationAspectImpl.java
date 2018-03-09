@@ -190,7 +190,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildMps_AbstractModule;
       case LanguageConceptSwitch.BuildMps_Branding:
         if (props_BuildMps_Branding == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL);
+          cpb.deprecateAggregation(0x54c4eb89feb0001cL, "icon32opaque");
+          cpb.deprecateAggregation(0x5efec015d9c0dee8L, "iconToolWindow");
+          cpb.deprecateAggregation(0x54a6365f080e9d69L, "editorBGUrl");
           cpb.shortDesc("name, version and images of your custom IDE");
           cpb.presentationByName();
           props_BuildMps_Branding = cpb.create();
@@ -206,14 +209,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_BrandingHelp:
         if (props_BuildMps_BrandingHelp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("help");
+          cpb.rawPresentation("Help");
           props_BuildMps_BrandingHelp = cpb.create();
         }
         return props_BuildMps_BrandingHelp;
       case LanguageConceptSwitch.BuildMps_BrandingKeymap:
         if (props_BuildMps_BrandingKeymap == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("keymap");
+          cpb.rawPresentation("Keymap");
           props_BuildMps_BrandingKeymap = cpb.create();
         }
         return props_BuildMps_BrandingKeymap;
@@ -227,7 +230,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_BrandingUpdateSite:
         if (props_BuildMps_BrandingUpdateSite == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("update website");
+          cpb.rawPresentation("Update website");
           props_BuildMps_BrandingUpdateSite = cpb.create();
         }
         return props_BuildMps_BrandingUpdateSite;

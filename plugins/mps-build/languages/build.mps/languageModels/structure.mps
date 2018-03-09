@@ -8,7 +8,6 @@
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" />
-    <import index="3jc9" ref="r:85a46d2f-efef-4783-8e02-3976663ecd73(jetbrains.mps.lang.editor.migration)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -813,7 +812,7 @@
     </node>
     <node concept="1TJgyj" id="5j4USBYGz2J" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="shortName" />
+      <property role="20kJfa" value="product" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="6108265972537372847" />
       <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
@@ -949,7 +948,7 @@
   <node concept="1TIwiD" id="6Iq8148fiO7">
     <property role="TrG5h" value="BuildMps_BrandingUpdateSite" />
     <property role="3GE5qa" value="Project.Branding" />
-    <property role="34LRSv" value="update website" />
+    <property role="34LRSv" value="Update website" />
     <property role="EcuMT" value="7753544965996489991" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5j4USBYGpQS" role="1TKVEi">
@@ -977,7 +976,7 @@
   <node concept="1TIwiD" id="6Iq8148fiO8">
     <property role="TrG5h" value="BuildMps_BrandingHelp" />
     <property role="3GE5qa" value="Project.Branding" />
-    <property role="34LRSv" value="help" />
+    <property role="34LRSv" value="Help" />
     <property role="EcuMT" value="7753544965996489992" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="ohKnhBYC6m" role="1TKVEi">
@@ -1481,7 +1480,7 @@
   <node concept="1TIwiD" id="57dcfYPvT7f">
     <property role="3GE5qa" value="Project.Branding" />
     <property role="TrG5h" value="BuildMps_BrandingKeymap" />
-    <property role="34LRSv" value="keymap" />
+    <property role="34LRSv" value="Keymap" />
     <property role="EcuMT" value="5894421362117677519" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="57dcfYPvT7j" role="1TKVEi">

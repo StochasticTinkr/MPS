@@ -16,6 +16,77 @@
       <unit at="11,0,17,0" name="jetbrains.mps.build.mps.migration.MigrationDescriptor" />
     </file>
   </root>
+  <root nodeRef="r:6b4c7cba-3f3c-4384-aa02-e68ac5ea8ee8(jetbrains.mps.build.mps.migration)/2604223389415760761">
+    <file name="UpdateListOfBrandingProperties.java">
+      <node id="2604223389415760761" at="19,30,20,109" concept="7" />
+      <node id="2604223389415760761" at="23,33,24,16" concept="7" />
+      <node id="2604223389415760761" at="26,41,27,17" concept="2" />
+      <node id="2604223389415760761" at="27,17,28,16" concept="7" />
+      <node id="2604223389415773010" at="31,5,32,64" concept="6" />
+      <node id="2604223389415773010" at="32,64,33,90" concept="6" />
+      <node id="2604223389415773010" at="35,52,36,36" concept="7" />
+      <node id="2604223389416300839" at="40,191,41,225" concept="6" />
+      <node id="2604223389416330561" at="43,40,44,363" concept="2" />
+      <node id="2604223389416058310" at="46,11,47,190" concept="2" />
+      <node id="2604223389415934967" at="49,198,50,190" concept="2" />
+      <node id="2604223389415943971" at="52,200,53,192" concept="2" />
+      <node id="2604223389418345996" at="55,197,56,189" concept="2" />
+      <node id="2604223389415760761" at="61,51,62,143" concept="7" />
+      <node id="2604223389415760761" at="19,0,22,0" concept="5" trace="getCaption#()Ljava/lang/String;" />
+      <node id="2604223389415773010" at="35,0,38,0" concept="5" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="2604223389416326893" at="42,203,45,13" concept="4" />
+      <node id="2604223389415924176" at="48,9,51,9" concept="4" />
+      <node id="2604223389415943964" at="51,9,54,9" concept="4" />
+      <node id="2604223389418345989" at="54,9,57,9" concept="4" />
+      <node id="2604223389415760761" at="61,0,64,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="2604223389415760761" at="22,0,26,0" concept="5" trace="isRerunnable#()Z" />
+      <node id="2604223389415760761" at="26,0,30,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2604223389415773010" at="33,90,38,8" concept="6" />
+      <node id="2604223389416315529" at="41,225,46,11" concept="3" />
+      <node id="2604223389416052162" at="39,246,48,9" concept="4" />
+      <node id="2604223389415776761" at="38,8,58,7" concept="3" />
+      <node id="2604223389415773010" at="30,42,59,5" concept="0" />
+      <node id="2604223389415760761" at="30,0,61,0" concept="5" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <scope id="2604223389415760761" at="19,30,20,109" />
+      <scope id="2604223389415760761" at="23,33,24,16" />
+      <scope id="2604223389415773010" at="35,52,36,36" />
+      <scope id="2604223389416326895" at="43,40,44,363" />
+      <scope id="2604223389415924178" at="49,198,50,190" />
+      <scope id="2604223389415943970" at="52,200,53,192" />
+      <scope id="2604223389418345995" at="55,197,56,189" />
+      <scope id="2604223389415760761" at="61,51,62,143" />
+      <scope id="2604223389415760761" at="26,41,28,16" />
+      <scope id="2604223389415760761" at="19,0,22,0" />
+      <scope id="2604223389415773010" at="35,0,38,0" />
+      <scope id="2604223389416315531" at="42,203,45,13" />
+      <scope id="2604223389415760761" at="61,0,64,0" />
+      <scope id="2604223389415760761" at="22,0,26,0" />
+      <scope id="2604223389415760761" at="26,0,30,0">
+        <var name="m" id="2604223389415760761" />
+      </scope>
+      <scope id="2604223389416315529" at="41,225,46,11">
+        <var name="part" id="2604223389416315532" />
+      </scope>
+      <scope id="2604223389416052164" at="40,191,47,190">
+        <var name="productCopy" id="2604223389416300840" />
+      </scope>
+      <scope id="2604223389415776764" at="39,246,57,9" />
+      <scope id="2604223389415776761" at="38,8,58,7">
+        <var name="branding" id="2604223389415776762" />
+      </scope>
+      <scope id="2604223389415773010" at="31,5,58,7">
+        <var name="context" id="2604223389415773010" />
+        <var name="scope_2tnex2_a0d" id="2604223389415773010" />
+        <var name="scope_2tnex2_a0d_0" id="2604223389415773010" />
+      </scope>
+      <scope id="2604223389415760761" at="30,42,59,5" />
+      <scope id="2604223389415760761" at="30,0,61,0">
+        <var name="m" id="2604223389415760761" />
+      </scope>
+      <unit id="2604223389415773010" at="34,42,38,7" name="jetbrains.mps.build.mps.migration.UpdateListOfBrandingProperties$1" />
+      <unit id="2604223389415760761" at="18,0,66,0" name="jetbrains.mps.build.mps.migration.UpdateListOfBrandingProperties" />
+    </file>
+  </root>
   <root nodeRef="r:6b4c7cba-3f3c-4384-aa02-e68ac5ea8ee8(jetbrains.mps.build.mps.migration)/3570488090022661665">
     <file name="TransferCustomPackagingToLayout.java">
       <node id="3570488090022661665" at="34,0,35,0" concept="9" trace="LOG" />

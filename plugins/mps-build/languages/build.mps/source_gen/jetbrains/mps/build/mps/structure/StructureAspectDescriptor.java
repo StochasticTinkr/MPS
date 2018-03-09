@@ -444,8 +444,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("icon128", 0xad72aee24a9cbfeL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(true).ordered(true).multiple(false).origin("781140262677761022").done();
     b.aggregate("icon", 0x5efec015d9b7cdc4L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(true).ordered(true).multiple(false).origin("6845119683729280452").done();
     b.aggregate("iconToolWindow", 0x5efec015d9c0dee8L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(true).ordered(true).multiple(false).origin("6845119683729874664").done();
-    b.aggregate("shortName", 0x54c4eb89feb230afL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("6108265972537372847").done();
+    b.aggregate("product", 0x54c4eb89feb230afL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("6108265972537372847").done();
     b.aggregate("fullName", 0x54c4eb89feb230b0L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("6108265972537372848").done();
+    b.aggregate("edition", 0xccf01929cb3b512L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(true).ordered(true).multiple(false).origin("922958177840117010").done();
+    b.aggregate("script", 0xccf01929cb3b53bL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("922958177840117051").done();
     b.aggregate("welcomeLogo", 0xab80b14d5f245eeL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(false).ordered(true).multiple(false).origin("772379520210716142").done();
     b.aggregate("editorBGUrl", 0x54a6365f080e9d69L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(true).ordered(true).multiple(false).origin("6099622527104884073").done();
     b.aggregate("plugins", 0xad72aee24a9cf29L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(true).ordered(true).multiple(false).origin("781140262677761833").done();
@@ -481,7 +483,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("url", 0x611c17467fa8196L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("437343344536486294").done();
     b.aggregate("root", 0x611c17467fa8197L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("437343344536486295").done();
     b.aggregate("file", 0x611c17467fa8198L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(false).ordered(true).multiple(false).origin("437343344536486296").done();
-    b.alias("help");
+    b.alias("Help");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBuildMps_BrandingKeymap() {
@@ -491,7 +493,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.aggregate("win", 0x51cd30ffb57f91d3L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("5894421362117677523").done();
     b.aggregate("mac", 0x51cd30ffb57f91d8L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("5894421362117677528").done();
-    b.alias("keymap");
+    b.alias("Keymap");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBuildMps_BrandingStats() {
@@ -512,7 +514,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("checkUrl", 0x54c4eb89feb19db8L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("6108265972537335224").done();
     b.aggregate("updateUrl", 0x54c4eb89feb19db9L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("6108265972537335225").done();
     b.aggregate("updateChannel", 0x7a0ffb6a57a037f3L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(true).ordered(true).multiple(false).origin("8795525031433091059").done();
-    b.alias("update website");
+    b.alias("Update website");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBuildMps_DevKit() {
