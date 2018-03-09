@@ -149,7 +149,7 @@ elif [ -r "$IDE_BIN_HOME/mps$BITS.vmoptions" ]; then
 else
   # default, universal package
   test "$OS_TYPE" = "Darwin" && OS_SPECIFIC="mac" || OS_SPECIFIC="linux"
-  VM_OPTIONS_FILE="$IDE_BIN_HOME/$OS_SPECIFIC/idea$BITS.vmoptions"
+  VM_OPTIONS_FILE="$IDE_BIN_HOME/$OS_SPECIFIC/mps$BITS.vmoptions"
 fi
 
 VM_OPTIONS=""

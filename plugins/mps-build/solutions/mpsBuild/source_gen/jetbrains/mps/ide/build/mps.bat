@@ -13,7 +13,7 @@ SET IDE_HOME=%IDE_BIN_DIR%\..
 
 IF "%IDE_BIN_DIR:~-8%" == "bin\win\" (
   echo.
-  echo    You are trying to run MPS from generic distribution
+  echo    You are trying to run JetBrains MPS from generic distribution
   echo Please first copy content of "%IDE_BIN_DIR%"
   echo into its parent directory ("%IDE_BIN_DIR:~0,-4%"^)
   echo and then run mps.bat from there
