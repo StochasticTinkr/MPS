@@ -199,6 +199,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.FromModulesListProjectStrategy" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.TestRootAccessInsight" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />

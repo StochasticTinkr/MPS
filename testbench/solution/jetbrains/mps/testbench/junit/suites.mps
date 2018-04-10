@@ -2474,6 +2474,15 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="6Jk_680DP1x" role="3cqZAp">
+          <node concept="2YIFZM" id="6Jk_680DPhC" role="3clFbG">
+            <ref role="37wK5l" to="oh7r:6Jk_680Dqkj" resolve="allowTestRootAccessForModuleFolders" />
+            <ref role="1Pybhc" to="oh7r:6Jk_680D_wT" resolve="TestRootAccessInsight" />
+            <node concept="37vLTw" id="6Jk_680DPtC" role="37wK5m">
+              <ref role="3cqZAo" node="6yiPRtqk1ci" resolve="libraries" />
+            </node>
+          </node>
+        </node>
         <node concept="2Gpval" id="6yiPRtqk2qJ" role="3cqZAp">
           <node concept="37vLTw" id="6yiPRtqk2u6" role="2GsD0m">
             <ref role="3cqZAo" node="6yiPRtqk1ci" resolve="libraries" />
