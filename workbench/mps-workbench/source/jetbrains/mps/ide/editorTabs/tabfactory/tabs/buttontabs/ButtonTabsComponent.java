@@ -97,7 +97,15 @@ public class ButtonTabsComponent extends BaseTabsComponent {
 
   @Override
   public void updateTabs() {
-    if (isDisposed()) {
+    // Emulate old behaviour - always update
+    final SNodeReference reference = getEditedNode() != null ? getEditedNode() : myBaseNode;
+    updateTabs(Collections.singletonList(reference));
+  }
+
+  @Override
+  public void updateTabs(Collection<SNodeReference> changedRoots) {
+    final SNodeReference reference = getEditedNode() != null ? getEditedNode() : myBaseNode;
+    if (isDisposed() || !changedRoots.contains(reference)) {
       return;
     }
 

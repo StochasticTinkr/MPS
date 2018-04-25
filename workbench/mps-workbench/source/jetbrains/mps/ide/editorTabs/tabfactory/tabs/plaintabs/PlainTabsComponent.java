@@ -190,8 +190,16 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   @Override
-  public synchronized void updateTabs() {
-    if (isDisposed()) {
+  public void updateTabs() {
+    // Emulate old behaviour - always update
+    final SNodeReference reference = getEditedNode() != null ? getEditedNode() : myBaseNode;
+    updateTabs(Collections.singletonList(reference));
+  }
+
+  @Override
+  public synchronized void updateTabs(Collection<SNodeReference> changedRoots) {
+    final SNodeReference reference = getEditedNode() != null ? getEditedNode() : myBaseNode;
+    if (isDisposed() || !changedRoots.contains(reference)) {
       return;
     }
 

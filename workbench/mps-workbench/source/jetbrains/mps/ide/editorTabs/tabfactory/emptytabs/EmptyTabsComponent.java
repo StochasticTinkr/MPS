@@ -22,6 +22,7 @@ import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
@@ -79,6 +80,10 @@ public class EmptyTabsComponent implements TabsComponent {
 
   @Override
   public void updateTabs() {
+  }
+
+  @Override
+  public void updateTabs(Collection<SNodeReference> changedRoots) {
   }
 
   @Override

@@ -45,6 +45,7 @@ import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.EqualUtil;
@@ -75,8 +76,8 @@ public class TabbedEditor extends BaseNodeEditor {
   private final ShadowAction myNextTabAction, myPrevTabAction;
   // UI container to hold tab UI components plus auxiliary controls like 'Add aspect' action and alike.
   private final JPanel myTabsPanel;
-  private final RepoChangeListener myRepoChangeListener = new RepoChangeListener();
-  private final FileStatusChangeListener myFileStatusListener = new FileStatusChangeListener();
+  private final RepoChangeListener myRepoChangeListener;
+  private final FileStatusChangeListener myFileStatusListener;
 
   private final EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     @Override
@@ -116,6 +117,9 @@ public class TabbedEditor extends BaseNodeEditor {
     // bloody BaseNodeEditor makes us know about layout used there
     getComponent().add(myTabsPanel, BorderLayout.SOUTH);
 
+    myRepoChangeListener = myProject instanceof MPSProject ? ((MPSProject) myProject).getProject().getComponent(RepoChangeListener.class) : null;
+    myFileStatusListener = myProject instanceof MPSProject ? ((MPSProject) myProject).getProject().getComponent(FileStatusChangeListener.class) : null;
+
     installTabsComponent();
 
     showNode(myBaseNode.resolve(myProject.getRepository()), false);
@@ -135,8 +139,6 @@ public class TabbedEditor extends BaseNodeEditor {
     myTabsPanel.add(btn, BorderLayout.WEST);
 
     EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
-    myRepoChangeListener.subscribeTo(myProject.getRepository());
-    myFileStatusListener.attach(myProject);
   }
 
   private void installTabsComponent() {
@@ -157,8 +159,12 @@ public class TabbedEditor extends BaseNodeEditor {
     myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getEditorPanel(), nodeChangeCallback, createAspectCallback,
         ProjectHelper.toIdeaProject(myProject));
 
-    myRepoChangeListener.setTabController(myTabsComponent);
-    myFileStatusListener.setTabController(myTabsComponent, myBaseNode);
+    if (myRepoChangeListener != null) {
+      myRepoChangeListener.addTabComponent(myTabsComponent);
+    }
+    if (myFileStatusListener != null) {
+      myFileStatusListener.addTabsComponent(myTabsComponent, myBaseNode);
+    }
 
     JComponent c = myTabsComponent.getComponent();
     if (c != null) {
@@ -169,13 +175,15 @@ public class TabbedEditor extends BaseNodeEditor {
   @Override
   public void dispose() {
     myDisposed = true;
-    myFileStatusListener.detach();
     EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
 
-    myProject.getModelAccess().runReadAction(() -> {
-      myRepoChangeListener.unsubscribeFrom(myProject.getRepository());
-      myNameListener.detach();
-    });
+    myProject.getModelAccess().runReadAction(myNameListener::detach);
+    if (myRepoChangeListener != null) {
+      myRepoChangeListener.removeTabComponent(myTabsComponent);
+    }
+    if (myFileStatusListener != null) {
+      myFileStatusListener.removeTabsComponent(myTabsComponent, myBaseNode);
+    }
     myTabsComponent.dispose();
     super.dispose();
   }

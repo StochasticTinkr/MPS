@@ -164,6 +164,12 @@
     <component>
       <implementation-class>jetbrains.mps.ide.vfs.DirectoryIndexExcludeUpdater</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.editor.tabs.RepoChangeListener</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.editor.tabs.FileStatusChangeListener</implementation-class>
+    </component>
 
     <!-- typesystem -->
     <component>

@@ -15,66 +15,114 @@
  */
 package jetbrains.mps.ide.editor.tabs;
 
+import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.vcs.FileStatusListener;
 import com.intellij.openapi.vcs.FileStatusManager;
+import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
- * Same considerations about single instance of FileStatusListener per all editors as for {@link RepoChangeListener} apply here.
- * FIXME attach(mpsProject)/detach to control listener add/remove
+ * Listener for file changes specific to tabbed editors (VCS changes).
+ * Listener is shared between multiple editors (one for project) and available as {@link ProjectComponent}.
  */
-class FileStatusChangeListener implements FileStatusListener {
+class FileStatusChangeListener implements FileStatusListener, ProjectComponent {
   private Project myProject;
-  private TabsComponent myTabController;
-  private SNodeReference myBaseNode;
+  private com.intellij.openapi.project.Project myIdeaProject;
+  private Map<SNodeReference, Collection<TabsComponent>> myNodeRef2TabsComponents = new HashMap<>();
 
+  public FileStatusChangeListener(com.intellij.openapi.project.Project project) {
+    myIdeaProject = project;
+    myProject = ProjectHelper.fromIdeaProject(project);
+  }
+
+  @Override
+  public void projectOpened() {
+    FileStatusManager.getInstance(myIdeaProject).addFileStatusListener(this);
+  }
+
+  @Override
+  public void projectClosed() {
+    FileStatusManager.getInstance(myIdeaProject).removeFileStatusListener(this);
+    myNodeRef2TabsComponents.clear();
+  }
+
+  /**
+   * @deprecated not used any more
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   /*package*/ void attach(@NotNull Project mpsProject) {
-    FileStatusManager.getInstance(ProjectHelper.toIdeaProject(mpsProject)).addFileStatusListener(this);
-    myProject = mpsProject;
   }
 
+  /**
+   * @deprecated not used any more
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   /*package*/ void detach() {
-    if (myProject != null) {
-      FileStatusManager.getInstance(ProjectHelper.toIdeaProject(myProject)).removeFileStatusListener(this);
-      myProject = null;
-    }
   }
 
+  /**
+   * @deprecated use {@link FileStatusChangeListener#addTabsComponent(jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent, org.jetbrains.mps.openapi.model.SNodeReference)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   /*package*/ void setTabController(TabsComponent controller, @NotNull SNodeReference baseNode) {
-    myTabController = controller;
-    myBaseNode = baseNode;
+    addTabsComponent(controller, baseNode);
   }
 
-  private void updateTabColorsLater() {
-    final Project mpsProject = myProject;
-    if (mpsProject == null) {
-      return;
+  /*package*/ void addTabsComponent(TabsComponent tabsComponent, @NotNull SNodeReference baseNode) {
+    final Collection<TabsComponent> tabsComponents = myNodeRef2TabsComponents.putIfAbsent(baseNode, new ArrayList<>(Collections.singletonList(tabsComponent)));
+    if (tabsComponents != null) {
+      tabsComponents.add(tabsComponent);
     }
-    mpsProject.getModelAccess().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        myTabController.updateTabColors();
+  }
+
+  /*package*/ void removeTabsComponent(TabsComponent tabsComponent, @NotNull SNodeReference baseNode) {
+    final Collection<TabsComponent> tabsComponents = myNodeRef2TabsComponents.get(baseNode);
+    if (tabsComponents == null || tabsComponents.size() == 1) {
+      myNodeRef2TabsComponents.remove(baseNode);
+    } else {
+      tabsComponents.remove(tabsComponent);
+    }
+  }
+
+  private void updateTabColorsLater(SNodeReference reference) {
+    if (myProject != null) {
+      for (TabsComponent tabsComponent: myNodeRef2TabsComponents.get(reference)) {
+        myProject.getModelAccess().runReadInEDT(tabsComponent::updateTabColors);
       }
-    });
+    }
   }
 
-    @Override
+  @Override
   public void fileStatusesChanged() {
-      updateTabColorsLater();
+    // Sometimes this doesn't work fast enough, but handles multiple files change, like adding to VCS
+    for (SNodeReference reference: myNodeRef2TabsComponents.keySet()) {
+      updateTabColorsLater(reference);
     }
+  }
 
   @Override
   public void fileStatusChanged(@NotNull VirtualFile virtualFile) {
-    // FIXME FileStatusListener doesn't tell me if fileStatusesChanged() comes in addition to fileStatusChanged, so I left both methods,
-    // although it does look I could have dropped this one
-    if (virtualFile instanceof MPSNodeVirtualFile && myBaseNode.equals(((MPSNodeVirtualFile) virtualFile).getSNodePointer())) {
-      updateTabColorsLater();
+    // Needed for quick update of one tab
+    if (virtualFile instanceof MPSNodeVirtualFile &&
+        VfsUtilCore.isAncestor(myIdeaProject.getBaseDir(), virtualFile.getParent(), false) &&
+        myNodeRef2TabsComponents.containsKey(((MPSNodeVirtualFile) virtualFile).getSNodePointer())) {
+      updateTabColorsLater(((MPSNodeVirtualFile) virtualFile).getSNodePointer());
     }
   }
 }
