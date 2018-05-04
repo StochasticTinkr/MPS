@@ -100,19 +100,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.structure.PredefinedCellID" />
     <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.RightTransformAnchorTag" file="RightTransformAnchorTag.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.LinkedList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.structure.RightTransformAnchorTag_PropertySupport" file="RightTransformAnchorTag_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.structure.RightTransformAnchorTag" />
-    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.editor.structure.ScriptSwitchEnum" file="ScriptSwitchEnum.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.LinkedList" />

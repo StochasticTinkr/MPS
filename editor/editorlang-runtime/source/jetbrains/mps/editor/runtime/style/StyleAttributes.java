@@ -168,6 +168,8 @@ public class StyleAttributes {
 
   public static final StyleAttribute<Boolean> CONTROL_OVERED_REFERENCE = new SimpleStyleAttribute<Boolean>("control-overed-reference", false, true);
 
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public static final StyleAttribute<String> RT_ANCHOR_TAG =
       new SimpleStyleAttribute<String>("rt-anchor-tag", SideTransformTagUtils.getDefaultSideTransformTag(), true);
   public static final StyleAttribute<String> LAYOUT_CONSTRAINT = new SimpleStyleAttribute<String>("layout-constraint", null, true);

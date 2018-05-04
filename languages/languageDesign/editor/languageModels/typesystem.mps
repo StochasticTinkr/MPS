@@ -2,9 +2,9 @@
 <model ref="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="-1" />
     <devkit ref="00000000-0000-4000-0000-1de82b3a4936(jetbrains.mps.devkit.aspect.typesystem)" />
   </languages>
   <imports>
@@ -2130,42 +2130,6 @@
     <node concept="1YaCAy" id="2wC_gGKWY8s" role="1YuTPh">
       <property role="TrG5h" value="node" />
       <ref role="1YaFvo" to="tpc2:gTQ80DJ" resolve="ConceptFunctionParameter_editorContext" />
-    </node>
-  </node>
-  <node concept="18kY7G" id="4N4i$z6a5S2">
-    <property role="TrG5h" value="check_CellMenuPart_ApplySideTransforms" />
-    <node concept="3clFbS" id="4N4i$z6a5X2" role="18ibNy">
-      <node concept="3clFbJ" id="4N4i$z6a9XZ" role="3cqZAp">
-        <node concept="2OqwBi" id="4N4i$z6aclJ" role="3clFbw">
-          <node concept="3t7uKx" id="4N4i$z6aftI" role="2OqNvi">
-            <node concept="uoxfO" id="4N4i$z6aftK" role="3t7uKA">
-              <ref role="uo_Cq" to="tpdg:38nmGbCPLik" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="4N4i$z6aa64" role="2Oq$k0">
-            <node concept="3TrcHB" id="4N4i$z6abqw" role="2OqNvi">
-              <ref role="3TsBF5" to="tpc2:794AQ2t3LhP" resolve="side" />
-            </node>
-            <node concept="1YBJjd" id="4N4i$z6a9Yb" role="2Oq$k0">
-              <ref role="1YBMHb" node="4N4i$z6a67v" resolve="cellMenuPart_ApplySideTransforms" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbS" id="4N4i$z6a9Y1" role="3clFbx">
-          <node concept="2MkqsV" id="4N4i$z6afuY" role="3cqZAp">
-            <node concept="1YBJjd" id="4N4i$z6afwE" role="2OEOjV">
-              <ref role="1YBMHb" node="4N4i$z6a67v" resolve="cellMenuPart_ApplySideTransforms" />
-            </node>
-            <node concept="Xl_RD" id="4N4i$z6afva" role="2MkJ7o">
-              <property role="Xl_RC" value="`both sides' are not supported" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="4N4i$z6a67v" role="1YuTPh">
-      <property role="TrG5h" value="cellMenuPart_ApplySideTransforms" />
-      <ref role="1YaFvo" to="tpc2:794AQ2t3BuV" resolve="CellMenuPart_ApplySideTransforms" />
     </node>
   </node>
   <node concept="18kY7G" id="5qKdWqHXYTP">
@@ -5970,9 +5934,6 @@
             <ref role="ehGHo" to="tpc2:1o9RazL_awo" resolve="IReferenceContextProvider" />
           </node>
           <node concept="2OqwBi" id="7Wb_DAxdV9$" role="33vP2m">
-            <node concept="37vLTw" id="7Wb_DAxdUXN" role="2Oq$k0">
-              <ref role="3cqZAo" node="601LQojOeIi" resolve="function" />
-            </node>
             <node concept="2Xjw5R" id="1o9RazL_j1K" role="2OqNvi">
               <node concept="1xMEDy" id="1o9RazL_j1M" role="1xVPHs">
                 <node concept="chp4Y" id="1o9RazL_j2D" role="ri$Ld">
@@ -5981,15 +5942,15 @@
               </node>
               <node concept="1xIGOp" id="1o9RazL_j4Z" role="1xVPHs" />
             </node>
+            <node concept="37vLTw" id="7Wb_DAxdUXN" role="2Oq$k0">
+              <ref role="3cqZAo" node="601LQojOeIi" resolve="function" />
+            </node>
           </node>
         </node>
       </node>
       <node concept="3cpWs8" id="7Wb_DAxe4rs" role="3cqZAp">
         <node concept="3cpWsn" id="7Wb_DAxe4rt" role="3cpWs9">
           <property role="TrG5h" value="link" />
-          <node concept="3Tqbb2" id="7Wb_DAxe4re" role="1tU5fm">
-            <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-          </node>
           <node concept="2EnYce" id="1o9RazL_jLD" role="33vP2m">
             <node concept="37vLTw" id="1o9RazL_jqk" role="2Oq$k0">
               <ref role="3cqZAo" node="7Wb_DAxdUKi" resolve="referenceContextProvider" />
@@ -5997,6 +5958,9 @@
             <node concept="2qgKlT" id="1o9RazL_jWf" role="2OqNvi">
               <ref role="37wK5l" to="tpcb:1o9RazL_axx" resolve="getReferenceDeclaration" />
             </node>
+          </node>
+          <node concept="3Tqbb2" id="7Wb_DAxe4re" role="1tU5fm">
+            <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
           </node>
         </node>
       </node>
