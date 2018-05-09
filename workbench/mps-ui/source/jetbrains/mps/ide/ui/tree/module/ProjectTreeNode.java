@@ -15,11 +15,14 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.project.ex.ProjectEx.ProjectSaved;
+import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.TreeElement;
 import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,6 +30,7 @@ import java.awt.Font;
 
 public class ProjectTreeNode extends TextTreeNode implements TreeElement {
   private Project myProject;
+  private MessageBusConnection myConnect;
 
   public ProjectTreeNode(Project project) {
     super("Project");
@@ -41,10 +45,13 @@ public class ProjectTreeNode extends TextTreeNode implements TreeElement {
     super.doUpdatePresentation();
     setText(myProject.getName());
     setFontStyle(Font.BOLD);
-    com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(myProject);
-    if (ideaProject != null && ideaProject.getBaseDir() != null) {
-      //noinspection ConstantConditions
-      setAdditionalText(ideaProject.getBaseDir().getPresentableUrl());
+    if (myProject instanceof MPSProject) {
+      com.intellij.openapi.project.Project ideaProject = ((MPSProject) myProject).getProject();
+
+      if (ideaProject.getBaseDir() != null) {
+        //noinspection ConstantConditions
+        setAdditionalText(ideaProject.getBaseDir().getPresentableUrl());
+      }
     }
   }
 
@@ -55,5 +62,22 @@ public class ProjectTreeNode extends TextTreeNode implements TreeElement {
   @Override
   public void accept(@NotNull TreeNodeVisitor visitor) {
     visitor.visitProjectNode(this);
+  }
+
+  @Override
+  protected void onAdd() {
+    super.onAdd();
+
+    myConnect = ApplicationManager.getApplication().getMessageBus().connect(this.getTree());
+    myConnect.subscribe(ProjectSaved.TOPIC, project -> ProjectTreeNode.this.doUpdatePresentation());
+  }
+
+  @Override
+  protected void onRemove() {
+    super.onRemove();
+
+    if (myConnect != null) {
+      myConnect.disconnect();
+    }
   }
 }

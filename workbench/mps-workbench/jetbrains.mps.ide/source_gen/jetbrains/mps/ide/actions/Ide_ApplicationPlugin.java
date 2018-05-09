@@ -153,6 +153,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new PackageActions_ActionGroup());
     addGroup(new PackageNewActions_ActionGroup());
     addGroup(new PrintNodePosition_Addition_ActionGroup());
+    addGroup(new ProjectActionsRenameProjectContainer_ActionGroup());
     addGroup(new ProjectActions_ActionGroup());
     addGroup(new ProjectNewActions_ActionGroup());
     addGroup(new PropertyNodeActions_ActionGroup());
