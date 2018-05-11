@@ -368,7 +368,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
         addLoaders(monitor);
         addIdeaExtPointPluginContributors(monitor);
         addContributors(monitor);
-      } finally{
+      } finally {
         myTaskInProgress = false;
       }
     }
