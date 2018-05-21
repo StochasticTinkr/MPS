@@ -33,7 +33,7 @@ import java.util.List;
  */
 
 @Deprecated
-@ToRemove(version = 2018.1)
+@ToRemove(version = 2018.2)
 public abstract class AbstractSubstituteInfo extends AbstractNodeSubstituteInfo {
   private final EditorCell myEditorCell;
 
