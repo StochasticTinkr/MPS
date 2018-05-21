@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -32,8 +33,18 @@ import java.util.HashMap;
 
 class InequalitySystemFactory {
   InequalitySystem getInequalitiesSystem(EditorCell contextCell, SModel typeCheckingModel) {
-    SNodeLocation nodeLocation = contextCell.getCellContext().getNodeLocation();
+    SNodeLocation nodeLocation = null;
+    while (contextCell != null) {
+      EditorCellContext cellContext = contextCell.getCellContext();
+      if (cellContext != null){
+        nodeLocation = cellContext.getNodeLocation();
+        if (nodeLocation != null || contextCell.isBig()) {
+          break;
+        }
 
+      }
+      contextCell = contextCell.getParent();
+    }
     if (nodeLocation == null) {
       return null;
     }
