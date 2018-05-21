@@ -37,9 +37,5 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
     return Collections.<NodeFactory>emptyList();
   }
 
-  @Override
-  public boolean hasBuilders() {
-    return false;
-  }
   private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"GenerationContextOp_GetOutputByLabel", "GenerationContextOp_GetOutputByLabelAndInput", "GenerationContextOp_GetOutputListByLabelAndInput", "GenerationContextOp_SessionObjectAccess", "GenerationContextOp_ShowMessageBase", "GenerationContextOp_StepObjectAccess", "GenerationContextOp_TransientObjectAccess"};
 }

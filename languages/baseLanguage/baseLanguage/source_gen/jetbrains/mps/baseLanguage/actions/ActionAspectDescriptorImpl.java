@@ -87,10 +87,6 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
   }
 
   @Override
-  public boolean hasBuilders() {
-    return false;
-  }
-  @Override
   public Collection<CopyPreProcessor> getCopyPreProcessors() {
     return Arrays.asList(new CopyPreProcessor[]{new BL_CopyPasteHandlers_CopyPreProcessor_0()});
   }

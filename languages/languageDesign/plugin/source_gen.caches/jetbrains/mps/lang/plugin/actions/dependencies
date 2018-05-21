@@ -20,7 +20,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.actions.QueriesGenerated" file="QueriesGenerated.java" />
   <dependency className="jetbrains.mps.lang.plugin.actions.add_parameter_to_closure" file="add_parameter_to_closure.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

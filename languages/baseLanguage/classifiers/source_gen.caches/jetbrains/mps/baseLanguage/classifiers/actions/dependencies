@@ -34,7 +34,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.PasteWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.classifiers.actions.QueriesGenerated" file="QueriesGenerated.java" />
   <dependency className="jetbrains.mps.baseLanguage.classifiers.actions.adapt_toBL_PasteWrapper_0" file="adapt_toBL_PasteWrapper_0.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />

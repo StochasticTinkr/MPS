@@ -165,13 +165,11 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
     style.set(StyleAttributes.POSITION_CHILDREN, "next-line");
     style.set(StyleAttributes.POSITION, "indented");
     style.set(StyleAttributes.SHOW_BOUNDARIES_IN, ShowBoundariesArea.GUTTER_AND_EDITOR);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform|ext_2_RTransform");
     style.set(StyleAttributes.TABLE_COMPONENT, TableComponent.VERTICAL_COLLECTION);
     new testStyleStyleClass(getEditorContext(), getNode()).unapply(style, editorCell);
     new testKey_StyleKey().unapply(style);
     style.set(StyleAttributes.UNDERLINED, false);
-    style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_ilv66b_a29a0());
+    style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_ilv66b_a09a0());
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -320,7 +318,7 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private boolean _StyleParameter_QueryFunction_ilv66b_a29a0() {
+  private boolean _StyleParameter_QueryFunction_ilv66b_a09a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }

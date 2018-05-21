@@ -12,7 +12,6 @@
     <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.actions.QueriesGenerated" file="QueriesGenerated.java" />
   <dependency className="jetbrains.mps.baseLanguage.unitTest.actions.unitTest_Factory" file="unitTest_Factory.java">
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.NodeFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />

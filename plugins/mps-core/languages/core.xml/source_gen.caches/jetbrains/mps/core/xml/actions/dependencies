@@ -21,6 +21,5 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.actions.QueriesGenerated" file="QueriesGenerated.java" />
 </dependenciesRoot>
 

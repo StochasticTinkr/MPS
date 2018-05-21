@@ -33,10 +33,6 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
   }
 
   @Override
-  public boolean hasBuilders() {
-    return false;
-  }
-  @Override
   public Collection<PastePostProcessor> getPastePostProcessors() {
     return Arrays.asList(new PastePostProcessor[]{new StructureIds_PastePostProcessor_0(), new StructureIds_PastePostProcessor_1(), new StructureIds_PastePostProcessor_2(), new StructureIds_PastePostProcessor_3()});
   }

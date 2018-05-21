@@ -33,8 +33,6 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
-import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
@@ -92,7 +90,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     }, myNode);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_generic_cellMenu_55ttgk_a0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_generic_cellMenu_55ttgk_b0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_customReplace_cellMenu_55ttgk_c0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_customReplace_cellMenu_55ttgk_d0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ApplySideTransforms_left_cellMenu_55ttgk_e0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_component_cellMenu_55ttgk_f0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_generic_cellMenu_55ttgk_g0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReplaceWith_Error_cellMenu_55ttgk_h0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_generic_cellMenu_55ttgk_a0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_generic_cellMenu_55ttgk_b0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_customReplace_cellMenu_55ttgk_c0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_customReplace_cellMenu_55ttgk_d0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_component_cellMenu_55ttgk_e0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_generic_cellMenu_55ttgk_f0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReplaceWith_Error_cellMenu_55ttgk_g0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     editorCell.setCellId("theId");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
@@ -223,22 +221,17 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     }
 
   }
-  public static class ApplySideTransforms_left_cellMenu_55ttgk_e0a0 extends AbstractCellMenuPart_ApplySideTransforms {
-    public ApplySideTransforms_left_cellMenu_55ttgk_e0a0() {
-      super(CellSide.LEFT, "ext_1_RTransform");
-    }
-  }
-  public static class ReadOnlyModelAccessor_component_cellMenu_55ttgk_f0a0 implements SubstituteInfoPartExt {
+  public static class ReadOnlyModelAccessor_component_cellMenu_55ttgk_e0a0 implements SubstituteInfoPartExt {
     private TestTargetMenuComponent myComponent;
-    public ReadOnlyModelAccessor_component_cellMenu_55ttgk_f0a0() {
+    public ReadOnlyModelAccessor_component_cellMenu_55ttgk_e0a0() {
       this.myComponent = new TestTargetMenuComponent();
     }
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
-  public static class ReadOnlyModelAccessor_generic_cellMenu_55ttgk_g0a0 extends AbstractCellMenuPart_Generic_Item {
-    public ReadOnlyModelAccessor_generic_cellMenu_55ttgk_g0a0() {
+  public static class ReadOnlyModelAccessor_generic_cellMenu_55ttgk_f0a0 extends AbstractCellMenuPart_Generic_Item {
+    public ReadOnlyModelAccessor_generic_cellMenu_55ttgk_f0a0() {
     }
     @Override
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
@@ -268,8 +261,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
       return "matchingText";
     }
   }
-  public static class ReplaceWith_Error_cellMenu_55ttgk_h0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_Error_cellMenu_55ttgk_h0a0() {
+  public static class ReplaceWith_Error_cellMenu_55ttgk_g0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_Error_cellMenu_55ttgk_g0a0() {
     }
     public SAbstractConcept getReplacementConcept() {
       return MetaAdapterFactory.getConcept(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a5a543L, "jetbrains.mps.lang.editor.test.generation.structure.Error");

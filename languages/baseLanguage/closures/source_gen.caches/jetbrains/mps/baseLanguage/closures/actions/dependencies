@@ -13,7 +13,6 @@
     <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.actions.QueriesGenerated" file="QueriesGenerated.java" />
   <dependency className="jetbrains.mps.baseLanguage.closures.actions.initialize_ClosureLiteral" file="initialize_ClosureLiteral.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.List" />

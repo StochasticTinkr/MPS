@@ -25,7 +25,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.actions.QueriesGenerated" file="QueriesGenerated.java" />
   <dependency className="jetbrains.mps.lang.migration.actions.TransformStatement" file="TransformStatement.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

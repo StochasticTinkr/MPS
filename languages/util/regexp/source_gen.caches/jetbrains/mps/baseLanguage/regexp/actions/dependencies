@@ -12,7 +12,6 @@
     <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated" file="QueriesGenerated.java" />
   <dependency className="jetbrains.mps.baseLanguage.regexp.actions.regexps_node_factories" file="regexps_node_factories.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

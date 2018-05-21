@@ -36,7 +36,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.actions.QueriesGenerated" file="QueriesGenerated.java" />
   <dependency className="jetbrains.mps.lang.smodel.actions.SModelLang_factories" file="SModelLang_factories.java">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

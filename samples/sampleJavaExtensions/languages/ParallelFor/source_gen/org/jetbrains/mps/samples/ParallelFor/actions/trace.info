@@ -4,10 +4,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
-      <unit at="13,0,34,0" name="org.jetbrains.mps.samples.ParallelFor.actions.ActionAspectDescriptorImpl" />
-    </file>
-    <file name="QueriesGenerated.java">
-      <unit at="6,0,8,0" name="org.jetbrains.mps.samples.ParallelFor.actions.QueriesGenerated" />
+      <unit at="13,0,30,0" name="org.jetbrains.mps.samples.ParallelFor.actions.ActionAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:d37d8304-386b-47d4-9fb0-209be430470a(org.jetbrains.mps.samples.ParallelFor.actions)/8923957828369569660">
