@@ -3,9 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -945,19 +945,9 @@
                                                     <ref role="37wK5l" to="f4zo:~EditorCell.setSubstituteInfo(jetbrains.mps.openapi.editor.cells.SubstituteInfo):void" resolve="setSubstituteInfo" />
                                                     <node concept="2ShNRf" id="2BI88NWau0E" role="37wK5m">
                                                       <node concept="1pGfFk" id="2BI88NWauph" role="2ShVmc">
-                                                        <ref role="37wK5l" to="6lvu:~SChildSubstituteInfo.&lt;init&gt;(jetbrains.mps.openapi.editor.cells.EditorCell,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode)" resolve="SChildSubstituteInfo" />
+                                                        <ref role="37wK5l" to="6lvu:~SChildSubstituteInfo.&lt;init&gt;(jetbrains.mps.openapi.editor.cells.EditorCell)" resolve="SChildSubstituteInfo" />
                                                         <node concept="37vLTw" id="2BI88NWauvw" role="37wK5m">
                                                           <ref role="3cqZAo" node="5UC0dNSP1p7" resolve="elementCell" />
-                                                        </node>
-                                                        <node concept="1rXfSq" id="3LoVd4J4Xn_" role="37wK5m">
-                                                          <ref role="37wK5l" node="11v13CsnCbE" resolve="getNode" />
-                                                        </node>
-                                                        <node concept="359W_D" id="2BI88NWaxID" role="37wK5m">
-                                                          <ref role="359W_E" to="fbxt:5UC0dNSMxMA" resolve="CustomConstructorUsage" />
-                                                          <ref role="359W_F" to="fbxt:5UC0dNSN770" resolve="element" />
-                                                        </node>
-                                                        <node concept="37vLTw" id="2BI88NWaysu" role="37wK5m">
-                                                          <ref role="3cqZAo" node="5UC0dNSP1p4" resolve="elementNode" />
                                                         </node>
                                                       </node>
                                                     </node>
@@ -967,8 +957,8 @@
                                             </node>
                                             <node concept="22lmx$" id="5UC0dNSP1rI" role="3clFbw">
                                               <node concept="2ZW3vV" id="5UC0dNSP1rR" role="3uHU7w">
-                                                <node concept="3uibUv" id="5UC0dNSP1rU" role="2ZW6by">
-                                                  <ref role="3uigEE" to="6lvu:~DefaultReferenceSubstituteInfo" resolve="DefaultReferenceSubstituteInfo" />
+                                                <node concept="3uibUv" id="6asH6F_E8__" role="2ZW6by">
+                                                  <ref role="3uigEE" to="f4zo:~DefaultSubstituteInfo" resolve="DefaultSubstituteInfo" />
                                                 </node>
                                                 <node concept="2OqwBi" id="5UC0dNSP1rM" role="2ZW6bz">
                                                   <node concept="37vLTw" id="2BHiRxgm9js" role="2Oq$k0">

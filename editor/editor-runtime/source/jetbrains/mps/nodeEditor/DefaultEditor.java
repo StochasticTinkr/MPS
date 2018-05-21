@@ -31,9 +31,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteSReference;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanSPropertySubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultSChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultSReferenceSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
@@ -41,6 +40,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation.FromNode;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation.FromParentAndLink;
@@ -203,10 +203,10 @@ public class DefaultEditor extends AbstractDefaultEditor {
       noRefCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getNode(), DeleteDirection.BACKWARD));
 
       noRefCell.setCellId("empty_" + referenceLink.getName());
-      noRefCell.setSRole(referenceLink);
       noRefCell.setReferenceCell(true);
-      noRefCell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(getNode(), referenceLink, getEditorContext()));
+      noRefCell.setSubstituteInfo(new SReferenceSubstituteInfo(noRefCell, referenceLink));
       noRefCell.setSRole(referenceLink);
+
       setIndent(noRefCell);
       addCell(noRefCell);
     } else {
@@ -231,7 +231,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
         //todo rewrite cell actions
         cell.setAction(CellActionType.DELETE, new CellAction_DeleteSReference(getNode(), referenceLink));
         cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSReference(getNode(), referenceLink));
-        cell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(getNode(), referenceLink, getEditorContext()));
+        cell.setSubstituteInfo(new SReferenceSubstituteInfo(cell, referenceLink));
         if (cell.getCellId() == null) {
           cell.setCellId("reference_" + referenceLink.getName());
         }
@@ -313,7 +313,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode, DeleteDirection.FORWARD));
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, DeleteDirection.BACKWARD));
         }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultSChildSubstituteInfo(listOwner, elementNode, myLink, getEditorContext()));
         }
       }

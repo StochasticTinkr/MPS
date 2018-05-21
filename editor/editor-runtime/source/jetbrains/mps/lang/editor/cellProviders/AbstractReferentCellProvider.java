@@ -182,6 +182,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     if (isAggregation()) {
       return new DefaultSChildSubstituteInfo(getSNode(), ((SContainmentLink) myLink), myEditorContext);
     }
+    // this class is now used only by aggregation cell, so this code is for backward compatibility only
     return new DefaultSReferenceSubstituteInfo(getSNode(), ((SReferenceLink) myLink), myEditorContext);
   }
 

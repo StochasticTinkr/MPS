@@ -25,15 +25,12 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.action.DefaultSReferenceSubstituteAction;
-import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -41,10 +38,12 @@ import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Provides the substitute actions by node and reference link, independently of the editor cell like the {@link SReferenceSubstituteInfo} does
+ */
 public class DefaultSReferenceSubstituteInfo extends AbstractNodeSubstituteInfo implements DefaultSubstituteInfo {
   private SNode mySourceNode;
   private SReferenceLink myLink;
