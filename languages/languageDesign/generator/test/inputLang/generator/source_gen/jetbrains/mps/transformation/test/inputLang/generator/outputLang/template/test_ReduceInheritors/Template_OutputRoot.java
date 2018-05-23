@@ -47,7 +47,7 @@ public class Template_OutputRoot extends TemplateDeclarationBase implements Temp
         try {
           // XXX is innerContext in use during reduce_Node? 
           SNode tnode3 = null;
-          final SNode insertInput3 = QueriesGenerated.insertMacro_Query_7612440128092282150(new InsertMacroContext(context1, insertMacro_38z9ys_b0a0a2a1a4a1a4));
+          final SNode insertInput3 = QueriesGenerated.insertMacro_Query_a1a(new InsertMacroContext(context1, insertMacro_38z9ys_b0a0a2a1a4a1a4));
           if (insertInput3 != null) {
             tnode3 = environment.insertNode(insertInput3, insertMacro_38z9ys_b0a0a2a1a4a1a4, context1);
             environment.registerLabel(context1.getInput(), tnode3, "testLabel1");
@@ -56,7 +56,7 @@ public class Template_OutputRoot extends TemplateDeclarationBase implements Temp
           final SNodeReference weaveMacroRef = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "8417539822878722923");
           if (tlist2.size() == 1) {
             final SNode outputContextNode = tlist2.iterator().next();
-            final Iterable<SNode> weaveList3 = QueriesGenerated.sourceNodesQuery_8417539822878722925(new SourceSubstituteMacroNodesContext(context1, weaveMacroRef));
+            final Iterable<SNode> weaveList3 = QueriesGenerated.sourceNodesQuery_a0a(new SourceSubstituteMacroNodesContext(context1, weaveMacroRef));
             for (SNode itnode3 : weaveList3) {
               if (itnode3 == null) {
                 continue;
@@ -78,7 +78,7 @@ public class Template_OutputRoot extends TemplateDeclarationBase implements Temp
       }
       {
         Collection<SNode> tlist5 = null;
-        final Iterable<SNode> copyListInput5 = QueriesGenerated.sourceNodesQuery_1206460249786(new SourceSubstituteMacroNodesContext(context1, copySrcListMacro_38z9ys_b0a0a1a5a1a4));
+        final Iterable<SNode> copyListInput5 = QueriesGenerated.sourceNodesQuery_a0b(new SourceSubstituteMacroNodesContext(context1, copySrcListMacro_38z9ys_b0a0a1a5a1a4));
         tlist5 = environment.copyNodes(copyListInput5, copySrcListMacro_38z9ys_b0a0a1a5a1a4, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460235939", context1);
         for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
           tnode1.addChild(myAggregationLinks[0], child6);
@@ -88,7 +88,7 @@ public class Template_OutputRoot extends TemplateDeclarationBase implements Temp
       {
         final SNode tnode7 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode7, myProperties[2], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8014813979421777301(new PropertyMacroContext(context1, "foobar", propertyMacro_38z9ys_c0a0c0a0b0g0b0e))));
+          SNodeAccessUtil.setProperty(tnode7, myProperties[2], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0c(new PropertyMacroContext(context1, "foobar", propertyMacro_38z9ys_c0a0c0a0b0g0b0e))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode7);

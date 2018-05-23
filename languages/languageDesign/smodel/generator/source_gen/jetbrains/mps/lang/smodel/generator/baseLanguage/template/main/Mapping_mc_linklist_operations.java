@@ -49,7 +49,7 @@ public class Mapping_mc_linklist_operations extends MapConfigBase implements Tem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_76013687527990378(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_mvfyrh_b0a0c0d0c0b3));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0a0_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_mvfyrh_b0a0c0d0c0b3));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_mvfyrh_b0a0c0d0c0b3, "tpl/r:00000000-0000-4000-0000-011c89590303/76013687527990376", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -58,7 +58,7 @@ public class Mapping_mc_linklist_operations extends MapConfigBase implements Tem
         }
         {
           Collection<SNode> tlist4 = null;
-          SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_76013687527990386(new SourceSubstituteMacroNodeContext(context1, includeMacro_mvfyrh_b0a0a1a4a2a1d));
+          SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_a0b0a0_1(new SourceSubstituteMacroNodeContext(context1, includeMacro_mvfyrh_b0a0a1a4a2a1d));
           TemplateContext context2 = context1.subContext(null, callInputNode4);
           if (callInputNode4 != null) {
             tlist4 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context2);
@@ -79,7 +79,7 @@ public class Mapping_mc_linklist_operations extends MapConfigBase implements Tem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_6960953357954106843(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a1_3(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -91,7 +91,7 @@ public class Mapping_mc_linklist_operations extends MapConfigBase implements Tem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_6246743999000323227(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_mvfyrh_b0a0c0d0c0c4));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0a1_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_mvfyrh_b0a0c0d0c0c4));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_mvfyrh_b0a0c0d0c0c4, "tpl/r:00000000-0000-4000-0000-011c89590303/6246743999000323225", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -101,7 +101,7 @@ public class Mapping_mc_linklist_operations extends MapConfigBase implements Tem
         {
           Collection<SNode> tlist4 = null;
           {
-            final SNode switchInput4 = QueriesGenerated.sourceNodeQuery_6246743999000323237(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_mvfyrh_b0a0a0a1a4a2a2e));
+            final SNode switchInput4 = QueriesGenerated.sourceNodeQuery_a0b0a1_1(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_mvfyrh_b0a0a0a1a4a2a2e));
             if (switchInput4 == null) {
               tlist4 = Collections.emptyList();
             } else {
@@ -126,7 +126,7 @@ public class Mapping_mc_linklist_operations extends MapConfigBase implements Tem
         }
         {
           Collection<SNode> tlist7 = null;
-          SNode callInputNode7 = QueriesGenerated.sourceNodeQuery_6667900741504103529(new SourceSubstituteMacroNodeContext(context1, includeMacro_mvfyrh_b0a0a1a5a2a2e));
+          SNode callInputNode7 = QueriesGenerated.sourceNodeQuery_a0c0a1_0(new SourceSubstituteMacroNodeContext(context1, includeMacro_mvfyrh_b0a0a1a5a2a2e));
           TemplateContext context2 = context1.subContext(null, callInputNode7);
           if (callInputNode7 != null) {
             tlist7 = new Template_reduce_ConceptDeclaration2SConcept().apply(environment, context2);

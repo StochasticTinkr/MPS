@@ -44,13 +44,13 @@ public class Template_reduce_SPropertyAccess_enum extends TemplateDeclarationBas
       environment.resolve(new RefResolver(tnode1, myAssociationLinks[1], context, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1146249898894"), "getString_def") {
         @Override
         public Object resolve() {
-          return QueriesGenerated.referenceMacro_GetReferent_1170461142999(createQueryContext());
+          return QueriesGenerated.referenceMacro_GetReferent_a0a(createQueryContext());
         }
       });
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_1170461311540(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_402ndg_b0a0c0d0c0e));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_45(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_402ndg_b0a0c0d0c0e));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_402ndg_b0a0c0d0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/1146249898890", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -59,7 +59,7 @@ public class Template_reduce_SPropertyAccess_enum extends TemplateDeclarationBas
       }
       {
         Collection<SNode> tlist4 = null;
-        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_6506750610319609734(new SourceSubstituteMacroNodeContext(context1, includeMacro_402ndg_b0a0a1a4a2a4));
+        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_a0b0_15(new SourceSubstituteMacroNodeContext(context1, includeMacro_402ndg_b0a0a1a4a2a4));
         TemplateContext context2 = context1.subContext(null, callInputNode4);
         if (callInputNode4 != null) {
           tlist4 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context2);
@@ -71,10 +71,10 @@ public class Template_reduce_SPropertyAccess_enum extends TemplateDeclarationBas
       }
       {
         Collection<SNode> tlist6 = null;
-        if (QueriesGenerated.ifMacro_Condition_1195247677817(new IfMacroContext(context1, ifMacroRef_402ndg_b0a0b0f0c0e))) {
+        if (QueriesGenerated.ifMacro_Condition_a1c0(new IfMacroContext(context1, ifMacroRef_402ndg_b0a0b0f0c0e))) {
           final SNode tnode7 = environment.createOutputNode(myConcepts[1]);
           try {
-            SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1170461506307(new PropertyMacroContext(context1, "_default_value_", propertyMacro_402ndg_c0a0c0a0b0b0f0c0e))));
+            SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0c0_23(new PropertyMacroContext(context1, "_default_value_", propertyMacro_402ndg_c0a0c0a0b0b0f0c0e))));
           } finally {
           }
           tlist6 = TemplateUtil.singletonList(tnode7);

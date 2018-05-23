@@ -29,13 +29,13 @@
       <node id="1218738629621" at="37,61,38,21" concept="6" />
       <node id="1218738629621" at="41,60,42,20" concept="6" />
       <node id="1218738629621" at="45,31,46,374" concept="9" />
-      <node id="1218738629621" at="49,94,50,118" concept="6" />
+      <node id="1218738629621" at="49,94,50,107" concept="6" />
       <node id="1218738629621" at="53,103,54,80" concept="5" />
       <node id="1218738629621" at="54,80,55,91" concept="5" />
       <node id="1218738629621" at="55,91,56,20" concept="6" />
       <node id="1218738629621" at="60,27,61,369" concept="9" />
-      <node id="1218738629621" at="64,94,65,125" concept="6" />
-      <node id="1218738629621" at="69,100,70,136" concept="6" />
+      <node id="1218738629621" at="64,94,65,116" concept="6" />
+      <node id="1218738629621" at="69,100,70,125" concept="6" />
       <node id="1218738629621" at="73,163,74,120" concept="5" />
       <node id="1218738629621" at="74,120,75,312" concept="5" />
       <node id="1218738629621" at="75,312,76,51" concept="6" />
@@ -52,10 +52,10 @@
       <scope id="1218738629621" at="37,61,38,21" />
       <scope id="1218738629621" at="41,60,42,20" />
       <scope id="1218738629621" at="45,31,46,374" />
-      <scope id="1218738629621" at="49,94,50,118" />
+      <scope id="1218738629621" at="49,94,50,107" />
       <scope id="1218738629621" at="60,27,61,369" />
-      <scope id="1218738629621" at="64,94,65,125" />
-      <scope id="1218738629621" at="69,100,70,136" />
+      <scope id="1218738629621" at="64,94,65,116" />
+      <scope id="1218738629621" at="69,100,70,125" />
       <scope id="1218738629621" at="31,53,34,95" />
       <scope id="1218738629621" at="45,0,48,0" />
       <scope id="1218738629621" at="53,103,56,20">
@@ -95,12 +95,12 @@
       <unit id="1218738629621" at="27,0,80,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mapping_main" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1218738691459" at="16,104,17,215" concept="6" />
-      <node id="1218738882048" at="19,104,20,428" concept="6" />
-      <node id="1218739852064" at="25,116,26,311" concept="6" />
-      <scope id="1218738676458" at="16,104,17,215" />
-      <scope id="1218738876109" at="19,104,20,428" />
-      <scope id="1218738863686" at="25,116,26,311" />
+      <node id="1218738691459" at="16,93,17,215" concept="6" />
+      <node id="1218738882048" at="19,95,20,428" concept="6" />
+      <node id="1218739852064" at="25,105,26,311" concept="6" />
+      <scope id="1218738676458" at="16,93,17,215" />
+      <scope id="1218738876109" at="19,95,20,428" />
+      <scope id="1218738863686" at="25,105,26,311" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)/1218738789586">
@@ -181,14 +181,14 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)/1218738992784">
     <file name="QueriesGenerated.java">
-      <node id="1218740174302" at="22,106,23,206" concept="6" />
-      <scope id="1218740165113" at="22,106,23,206" />
+      <node id="1218740174302" at="22,97,23,206" concept="6" />
+      <scope id="1218740165113" at="22,97,23,206" />
     </file>
     <file name="Template_weave_InputNode_A.java">
       <node id="1218738992784" at="29,43,30,202" concept="6" />
       <node id="1218738992784" at="32,97,33,78" concept="5" />
       <node id="1218738992784" at="33,78,34,69" concept="5" />
-      <node id="1218738992784" at="35,9,36,224" concept="2" />
+      <node id="1218738992784" at="35,9,36,215" concept="2" />
       <node id="1218738992784" at="38,5,39,18" concept="6" />
       <node id="1218738992784" at="42,146,43,59" concept="6" />
       <node id="1218738992784" at="47,156,48,78" concept="5" />
@@ -213,7 +213,7 @@
       <scope id="1218738992784" at="26,39,26,39" />
       <scope id="1218738992784" at="37,15,37,15" />
       <scope id="1218738992784" at="29,43,30,202" />
-      <scope id="1218738992784" at="35,9,36,224" />
+      <scope id="1218738992784" at="35,9,36,215" />
       <scope id="1218738992784" at="42,146,43,59" />
       <scope id="1218738992784" at="26,0,28,0" />
       <scope id="1218738992784" at="29,0,32,0" />

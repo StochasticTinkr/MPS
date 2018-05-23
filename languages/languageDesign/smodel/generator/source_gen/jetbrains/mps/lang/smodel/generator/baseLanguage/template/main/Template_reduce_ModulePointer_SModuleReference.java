@@ -56,7 +56,7 @@ public class Template_reduce_ModulePointer_SModuleReference extends TemplateDecl
           {
             final SNode tnode4 = environment.createOutputNode(myConcepts[3]);
             try {
-              SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1678062499342615993(new PropertyMacroContext(context2, "", propertyMacro_xrggdz_c0a0c0a0b0c0b0c0c0e))));
+              SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a_0(new PropertyMacroContext(context2, "", propertyMacro_xrggdz_c0a0c0a0b0c0b0c0c0e))));
             } finally {
             }
             tnode3.addChild(myAggregationLinks[1], tnode4);

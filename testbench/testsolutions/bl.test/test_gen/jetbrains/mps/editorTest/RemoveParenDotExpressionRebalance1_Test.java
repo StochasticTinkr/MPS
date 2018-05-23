@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class RemoveParenDotExpressionRebalance1_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class RemoveParenDotExpressionRebalance1_Test extends BaseTransformationT
 
   @Test
   public void test_RemoveParenDotExpressionRebalance1() throws Throwable {
-    runTest("jetbrains.mps.editorTest.RemoveParenDotExpressionRebalance1_Test$TestBody", "testMethod", false);
+    new RemoveParenDotExpressionRebalance1_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("7247988578522180116", "7247988578522220439");

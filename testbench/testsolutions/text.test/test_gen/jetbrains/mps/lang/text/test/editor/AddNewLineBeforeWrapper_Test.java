@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class AddNewLineBeforeWrapper_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class AddNewLineBeforeWrapper_Test extends BaseTransformationTest {
 
   @Test
   public void test_AddNewLineBeforeWrapper() throws Throwable {
-    runTest("jetbrains.mps.lang.text.test.editor.AddNewLineBeforeWrapper_Test$TestBody", "testMethod", false);
+    new AddNewLineBeforeWrapper_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6328114375522039481", "6328114375522039733");

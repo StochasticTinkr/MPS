@@ -50,7 +50,7 @@ public class Switch_switch_Parameter extends TemplateSwitchBase implements Templ
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_4698411099515225497(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a0_0(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -63,7 +63,7 @@ public class Switch_switch_Parameter extends TemplateSwitchBase implements Templ
         {
           Collection<SNode> tlist2 = null;
           {
-            final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_4698411099515235207(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_vnjhlw_b0a0a0a1a3a2a2h));
+            final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_a0a0a0a(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_vnjhlw_b0a0a0a1a3a2a2h));
             if (switchInput2 == null) {
               tlist2 = Collections.emptyList();
             } else {
@@ -115,7 +115,7 @@ public class Switch_switch_Parameter extends TemplateSwitchBase implements Templ
         {
           Collection<SNode> tlist2 = null;
           {
-            final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_7830995205626232436(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_vnjhlw_b0a0a0a1a3a2a1i));
+            final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_a0a0a0b(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_vnjhlw_b0a0a0a1a3a2a1i));
             if (switchInput2 == null) {
               tlist2 = Collections.emptyList();
             } else {

@@ -35,7 +35,7 @@ public class Mapping_preprocess extends MapConfigBase implements TemplateMapping
   }
   @Override
   public boolean isApplicable(@NotNull ITemplateGenerator generator) {
-    return QueriesGenerated.mappingConfiguration_Condition_6450631649356501163(new TemplateQueryContext(getMappingNode(), generator));
+    return QueriesGenerated.mappingConfiguration_Condition_a(new TemplateQueryContext(getMappingNode(), generator));
   }
   @Override
   public Collection<TemplateReductionRule> getReductionRules() {
@@ -47,7 +47,7 @@ public class Mapping_preprocess extends MapConfigBase implements TemplateMapping
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_8274572146452630995(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a0_0(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -67,7 +67,7 @@ public class Mapping_preprocess extends MapConfigBase implements TemplateMapping
                 TemplateContext context3 = context2.subContext();
                 {
                   Collection<SNode> tlist4 = null;
-                  final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_7838325468139287103(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_ymvzv2_b0a0c0d0b0b0b0b0c0c4));
+                  final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_a0a0a0a0a0a0_0(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_ymvzv2_b0a0c0d0b0b0b0b0c0c4));
                   tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_ymvzv2_b0a0c0d0b0b0b0b0c0c4, "tpl/r:00000000-0000-4000-0000-011c8959034c/7838325468139286808", context3);
                   for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
                     tnode3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -85,7 +85,7 @@ public class Mapping_preprocess extends MapConfigBase implements TemplateMapping
                 environment.resolve(new RefResolver(tnode6, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1120c45902cL, 0x1120c45d024L, "conceptDeclaration"), context2, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7838325468140239891"), "Attribute") {
                   @Override
                   public Object resolve() {
-                    return QueriesGenerated.referenceMacro_GetReferent_7838325468140239892(createQueryContext());
+                    return QueriesGenerated.referenceMacro_GetReferent_a0a0a0a0a0a(createQueryContext());
                   }
                 });
               } finally {

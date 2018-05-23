@@ -35,7 +35,7 @@ public class Mapping_mc_sequence_operations extends MapConfigBase implements Tem
   }
   @Override
   public boolean isApplicable(@NotNull ITemplateGenerator generator) {
-    return QueriesGenerated.mappingConfiguration_Condition_3624172675690776407(new TemplateQueryContext(getMappingNode(), generator));
+    return QueriesGenerated.mappingConfiguration_Condition_a_8(new TemplateQueryContext(getMappingNode(), generator));
   }
   @Override
   public Collection<TemplateReductionRule> getReductionRules() {
@@ -47,7 +47,7 @@ public class Mapping_mc_sequence_operations extends MapConfigBase implements Tem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_1208621031113(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a0_5(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -59,7 +59,7 @@ public class Mapping_mc_sequence_operations extends MapConfigBase implements Tem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_3902354333654524125(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_jil9eh_b0a0c0d0c0c4));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0a0_1(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_jil9eh_b0a0c0d0c0c4));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_jil9eh_b0a0c0d0c0c4, "tpl/r:00000000-0000-4000-0000-011c89590303/3902354333654524123", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -69,7 +69,7 @@ public class Mapping_mc_sequence_operations extends MapConfigBase implements Tem
         {
           Collection<SNode> tlist4 = null;
           {
-            final SNode switchInput4 = QueriesGenerated.sourceNodeQuery_3902354333654525121(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_jil9eh_b0a0a0a1a4a2a2e));
+            final SNode switchInput4 = QueriesGenerated.sourceNodeQuery_a0b0a0_2(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_jil9eh_b0a0a0a1a4a2a2e));
             if (switchInput4 == null) {
               tlist4 = Collections.emptyList();
             } else {

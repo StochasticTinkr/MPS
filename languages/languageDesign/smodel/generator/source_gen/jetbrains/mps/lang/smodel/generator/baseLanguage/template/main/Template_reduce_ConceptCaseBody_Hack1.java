@@ -50,7 +50,7 @@ public class Template_reduce_ConceptCaseBody_Hack1 extends TemplateDeclarationBa
           TemplateContext context2 = context1.subContext();
           {
             Collection<SNode> tlist4 = null;
-            final Iterable<SNode> copyListInput4 = QueriesGenerated.sourceNodesQuery_7723526804946055159(new SourceSubstituteMacroNodesContext(context2, copySrcListMacro_rlzbfv_b0a0a1a1a1a2a2a4));
+            final Iterable<SNode> copyListInput4 = QueriesGenerated.sourceNodesQuery_a0a0a0a0a(new SourceSubstituteMacroNodesContext(context2, copySrcListMacro_rlzbfv_b0a0a1a1a1a2a2a4));
             tlist4 = environment.copyNodes(copyListInput4, copySrcListMacro_rlzbfv_b0a0a1a1a1a2a2a4, "tpl/r:00000000-0000-4000-0000-011c89590303/7723526804946053432", context2);
             for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
               tnode3.addChild(myAggregationLinks[1], child5);

@@ -7,7 +7,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.LinkedListSequence;
+import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -35,8 +35,8 @@ public final class TestParameters {
 
   public TestParameters(Class<?> executorClass, boolean mpsRequired, @Nullable List<String> classPath, @Nullable List<String> jvmArgs) {
     myExecutorClass = executorClass;
-    myClassPath = (classPath == null ? LinkedListSequence.fromLinkedListNew(new LinkedList<String>()) : classPath);
-    myAdditionalJvmArgs = (jvmArgs == null ? LinkedListSequence.fromLinkedListNew(new LinkedList<String>()) : jvmArgs);
+    myClassPath = (classPath == null ? ListSequence.fromList(new ArrayList<String>()) : classPath);
+    myAdditionalJvmArgs = (jvmArgs == null ? ListSequence.fromList(new ArrayList<String>()) : jvmArgs);
     myNeedsMPS = mpsRequired;
   }
 
@@ -71,6 +71,7 @@ public final class TestParameters {
   }
 
   /**
+   * 
    * 
    * @return {@code true} if tests need a running MPS instance to get executed.
    */

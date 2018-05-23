@@ -12,26 +12,26 @@
   </root>
   <root nodeRef="r:c5fb98f3-de6a-4ae0-bfad-3730305cf813(jetbrains.mps.samples.highlevel.simpleStructure.generator.template.main@generator)/3778147542048248727">
     <file name="QueriesGenerated.java">
-      <node id="3778147542048297379" at="39,112,40,175" concept="1" />
-      <node id="3778147542048369356" at="42,112,43,85" concept="1" />
-      <node id="3778147542048252265" at="45,112,46,112" concept="1" />
-      <node id="3778147542048290855" at="48,112,49,175" concept="1" />
-      <node id="3778147542048420040" at="51,112,52,85" concept="1" />
+      <node id="3778147542048297379" at="39,96,40,175" concept="1" />
+      <node id="3778147542048369356" at="42,96,43,85" concept="1" />
+      <node id="3778147542048252265" at="45,95,46,112" concept="1" />
+      <node id="3778147542048290855" at="48,95,49,175" concept="1" />
+      <node id="3778147542048420040" at="51,95,52,85" concept="1" />
       <node id="987189325382558360" at="56,71,57,344" concept="1" />
-      <node id="3778147542048296862" at="61,152,62,196" concept="1" />
+      <node id="3778147542048296862" at="61,136,62,196" concept="1" />
       <node id="987189325382558008" at="56,0,59,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="987189325382508054" at="54,109,59,7" concept="1" />
-      <scope id="3778147542048296311" at="39,112,40,175" />
-      <scope id="3778147542048368131" at="42,112,43,85" />
-      <scope id="3778147542048248744" at="45,112,46,112" />
-      <scope id="3778147542048290279" at="48,112,49,175" />
-      <scope id="3778147542048414018" at="51,112,52,85" />
+      <node id="987189325382508054" at="54,92,59,7" concept="1" />
+      <scope id="3778147542048296311" at="39,96,40,175" />
+      <scope id="3778147542048368131" at="42,96,43,85" />
+      <scope id="3778147542048248744" at="45,95,46,112" />
+      <scope id="3778147542048290279" at="48,95,49,175" />
+      <scope id="3778147542048414018" at="51,95,52,85" />
       <scope id="987189325382558009" at="56,71,57,344" />
-      <scope id="3778147542048296856" at="61,152,62,196" />
+      <scope id="3778147542048296856" at="61,136,62,196" />
       <scope id="987189325382558008" at="56,0,59,0">
         <var name="it" id="987189325382558008" />
       </scope>
-      <scope id="3778147542049091525" at="54,109,59,7" />
+      <scope id="3778147542049091525" at="54,92,59,7" />
       <unit id="987189325382558008" at="55,285,59,5" name="jetbrains.mps.samples.highlevel.simpleStructure.generator.template.main.QueriesGenerated$1" />
     </file>
   </root>

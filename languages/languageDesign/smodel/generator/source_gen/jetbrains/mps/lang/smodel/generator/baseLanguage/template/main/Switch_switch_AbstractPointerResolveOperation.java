@@ -59,7 +59,7 @@ public class Switch_switch_AbstractPointerResolveOperation extends TemplateSwitc
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_5312793114532107989(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_9t35nv_b0a0c0d0c0b7));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0a0_2(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_9t35nv_b0a0c0d0c0b7));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_9t35nv_b0a0c0d0c0b7, "tpl/r:00000000-0000-4000-0000-011c89590303/5312793114532107924", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -68,7 +68,7 @@ public class Switch_switch_AbstractPointerResolveOperation extends TemplateSwitc
         }
         {
           Collection<SNode> tlist4 = null;
-          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_5312793114532108424(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_9t35nv_b0a0c0e0c0b7));
+          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_a0b0a0_3(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_9t35nv_b0a0c0e0c0b7));
           tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_9t35nv_b0a0c0e0c0b7, "tpl/r:00000000-0000-4000-0000-011c89590303/5312793114532107962", context1);
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -94,7 +94,7 @@ public class Switch_switch_AbstractPointerResolveOperation extends TemplateSwitc
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_4065387505485815600(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_9t35nv_b0a0c0d0c0b8));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0a1_3(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_9t35nv_b0a0c0d0c0b8));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_9t35nv_b0a0c0d0c0b8, "tpl/r:00000000-0000-4000-0000-011c89590303/4065387505485815598", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -103,7 +103,7 @@ public class Switch_switch_AbstractPointerResolveOperation extends TemplateSwitc
         }
         {
           Collection<SNode> tlist4 = null;
-          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_4065387505485815608(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_9t35nv_b0a0c0e0c0b8));
+          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_a0b0a1_2(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_9t35nv_b0a0c0e0c0b8));
           tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_9t35nv_b0a0c0e0c0b8, "tpl/r:00000000-0000-4000-0000-011c89590303/4065387505485815606", context1);
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);

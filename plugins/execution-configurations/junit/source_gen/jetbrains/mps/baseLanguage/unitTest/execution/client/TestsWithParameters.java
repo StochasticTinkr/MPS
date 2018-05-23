@@ -4,16 +4,21 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 
 import org.jetbrains.mps.annotations.Immutable;
 import java.util.List;
+import java.util.Set;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Collections;
 
 @Immutable
 public final class TestsWithParameters {
   private final List<ITestNodeWrapper> myTests;
   private final TestParameters myParameters;
+  private Set<SModuleReference> myRequiredModules;
 
-  public TestsWithParameters(List<ITestNodeWrapper> tests, TestParameters parameters) {
+  public TestsWithParameters(List<ITestNodeWrapper> tests, TestParameters parameters, Set<SModuleReference> requiredModules) {
     myTests = tests;
     myParameters = parameters;
+    myRequiredModules = requiredModules;
   }
 
   public List<ITestNodeWrapper> getTests() {
@@ -22,5 +27,9 @@ public final class TestsWithParameters {
 
   public TestParameters getParameters() {
     return myParameters;
+  }
+
+  public Set<SModuleReference> getRequiredModules() {
+    return Collections.unmodifiableSet(myRequiredModules);
   }
 }

@@ -22,19 +22,19 @@ public class QueriesGenerated extends QueryProviderBase {
   public QueriesGenerated() {
     super(1);
   }
-  public static SNode sourceNodeQuery_8965727632786101402(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_a0a0a0a(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0x57547b70f36dc0dL, 0x57547b70f36dc0eL, "condition"));
   }
-  public static SNode sourceNodeQuery_393299394024635960(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_a0a0a0(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0x57547b70f36dc0dL, 0x57547b70f36dc1cL, "body"));
   }
-  public static SNode sourceNodeQuery_954830572076057051(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_a0a0(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL, 0xd403d58ad448cceL, "body"));
   }
-  public static SNode sourceNodeQuery_954830572076057040(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_a0a0_0(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL, 0xd403d58ad448ccdL, "condition"));
   }
-  public static SNode sourceNodeQuery_954830572076057062(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_a0a0a(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL, 0xd403d58ad457e4dL, "alternative"));
   }
   private final Map<String, SourceNodeQuery> snqMethods = new HashMap<String, SourceNodeQuery>();
@@ -64,15 +64,15 @@ public class QueriesGenerated extends QueryProviderBase {
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.sourceNodeQuery_8965727632786101402(ctx);
+          return QueriesGenerated.sourceNodeQuery_a0a0a0a(ctx);
         case 1:
-          return QueriesGenerated.sourceNodeQuery_393299394024635960(ctx);
+          return QueriesGenerated.sourceNodeQuery_a0a0a0(ctx);
         case 2:
-          return QueriesGenerated.sourceNodeQuery_954830572076057051(ctx);
+          return QueriesGenerated.sourceNodeQuery_a0a0(ctx);
         case 3:
-          return QueriesGenerated.sourceNodeQuery_954830572076057040(ctx);
+          return QueriesGenerated.sourceNodeQuery_a0a0_0(ctx);
         case 4:
-          return QueriesGenerated.sourceNodeQuery_954830572076057062(ctx);
+          return QueriesGenerated.sourceNodeQuery_a0a0a(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

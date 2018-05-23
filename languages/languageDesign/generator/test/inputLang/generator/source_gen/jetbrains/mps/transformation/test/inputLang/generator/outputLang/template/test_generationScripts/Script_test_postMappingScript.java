@@ -27,7 +27,7 @@ public class Script_test_postMappingScript implements TemplateMappingScript {
     return POSTPROCESS;
   }
   public void apply(SModel model, ITemplateGenerator generator) {
-    QueriesGenerated.mappingScript_CodeBlock_1195510384869(new MappingScriptContext(model, getScriptNode(), generator));
+    QueriesGenerated.mappingScript_CodeBlock_a(new MappingScriptContext(model, getScriptNode(), generator));
   }
   private static SNodePointer mappingScriptNode = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195510384868");
 }

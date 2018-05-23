@@ -36,7 +36,7 @@ public class Switch_switch_ConceptMethodCall extends TemplateSwitchBase implemen
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist1 = null;
-    SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_6862765979525743284(new SourceSubstituteMacroNodeContext(context, callMacro_vddlfn_b0a0a1a5));
+    SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_a0a0_47(new SourceSubstituteMacroNodeContext(context, callMacro_vddlfn_b0a0a1a5));
     TemplateContext context1 = context.subContext(null, callInputNode1);
     if (callInputNode1 != null) {
       tlist1 = new Template_reduce_ConceptMethodCallCommon().apply(environment, context1);
@@ -53,7 +53,7 @@ public class Switch_switch_ConceptMethodCall extends TemplateSwitchBase implemen
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_6862765979525741560(new SourceSubstituteMacroNodeContext(context, callMacro_vddlfn_b0a0a2a1h));
+      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_a0a0a_6(new SourceSubstituteMacroNodeContext(context, callMacro_vddlfn_b0a0a2a1h));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
         tlist1 = new Template_reduce_ConceptMethodCallWithThis().apply(environment, context1);
@@ -69,7 +69,7 @@ public class Switch_switch_ConceptMethodCall extends TemplateSwitchBase implemen
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_2926695023080033606(new SourceSubstituteMacroNodeContext(context, callMacro_vddlfn_b0a0a2a1i));
+      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_a0a0b_1(new SourceSubstituteMacroNodeContext(context, callMacro_vddlfn_b0a0a2a1i));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
         tlist1 = new Template_reduce_ConceptMethodCallWithThis().apply(environment, context1);
@@ -85,7 +85,7 @@ public class Switch_switch_ConceptMethodCall extends TemplateSwitchBase implemen
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_6862765979525743046(new SourceSubstituteMacroNodeContext(context, callMacro_vddlfn_b0a0a2a1j));
+      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_a0a0c(new SourceSubstituteMacroNodeContext(context, callMacro_vddlfn_b0a0a2a1j));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
         tlist1 = new Template_reduce_ConceptMethodCallWithSuper().apply(environment, context1);
@@ -101,7 +101,7 @@ public class Switch_switch_ConceptMethodCall extends TemplateSwitchBase implemen
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_2926695023080034667(new SourceSubstituteMacroNodeContext(context, callMacro_vddlfn_b0a0a2a1k));
+      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_a0a0d(new SourceSubstituteMacroNodeContext(context, callMacro_vddlfn_b0a0a2a1k));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
         tlist1 = new Template_reduce_ConceptMethodCallWithSuper().apply(environment, context1);

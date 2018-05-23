@@ -229,7 +229,7 @@ public final class CommonPaths {
     addIfExists(result, "lib/trove4j.jar");
     addIfExists(result, "lib/jdom.jar");
     addIfExists(result, "lib/ecj-4.7.2.jar");
-    addIfExists(result, "lib/guava-21.0.jar");
+    addIfExists(result, "lib/guava-23.6-jre.jar");
     addIfExists(result, "lib/xstream-1.4.8.jar");
     addIfExists(result, "lib/asm-all.jar");
   }
@@ -249,11 +249,17 @@ public final class CommonPaths {
 
   private static void addIdeaJars(CompositeClassPathItem result) {
     addRepackedIdeaJars(result);
-    addIfExists(result, "lib/netty-all-4.1.13.Final.jar");
+    addIfExists(result, "lib/netty-buffer-4.1.24.Final.jar");
+    addIfExists(result, "lib/netty-codec-4.1.24.Final.jar");
+    addIfExists(result, "lib/netty-codec-http-4.1.24.Final.jar");
+    addIfExists(result, "lib/netty-common-4.1.24.Final.jar");
+    addIfExists(result, "lib/netty-handler-4.1.24.Final.jar");
+    addIfExists(result, "lib/netty-resolver-4.1.24.Final.jar");
+    addIfExists(result, "lib/netty-transport-4.1.24.Final.jar");
     addIfExists(result, "lib/commons-imaging-1.0-RC.jar");
     addIfExists(result, "lib/util.jar");
     addIfExists(result, "lib/extensions.jar");
-    addIfExists(result, "lib/picocontainer.jar");
+    addIfExists(result, "lib/picocontainer-1.2.jar");
     addIfExists(result, "lib/forms_rt.jar");
   }
 

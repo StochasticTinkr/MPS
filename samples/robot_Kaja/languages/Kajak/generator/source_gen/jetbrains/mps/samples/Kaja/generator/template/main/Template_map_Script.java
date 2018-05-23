@@ -40,7 +40,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570165");
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3308300503039570175(new PropertyMacroContext(context, "map_Script", propertyMacro_rbrxtl_c0a0c0b0b0e))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1(new PropertyMacroContext(context, "map_Script", propertyMacro_rbrxtl_c0a0c0b0b0e))));
       TemplateContext context1 = context.subContext();
       {
         final SNode tnode2 = environment.createOutputNode(myConcepts[1]);
@@ -121,7 +121,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
               TemplateContext context4 = context3.subContext();
               {
                 final List<SNode> tlist12 = new ArrayList<SNode>();
-                final Iterable<SNode> loopList12 = QueriesGenerated.sourceNodesQuery_3308300503039580700(new SourceSubstituteMacroNodesContext(context4, loopMacroRef_rbrxtl_b0a0a1a1a1a5a1a6a1a4));
+                final Iterable<SNode> loopList12 = QueriesGenerated.sourceNodesQuery_a0a0b(new SourceSubstituteMacroNodesContext(context4, loopMacroRef_rbrxtl_b0a0a1a1a1a5a1a6a1a4));
                 for (SNode itnode12 : loopList12) {
                   if (itnode12 == null) {
                     continue;
@@ -151,7 +151,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
       }
       {
         final List<SNode> tlist15 = new ArrayList<SNode>();
-        final Iterable<SNode> loopList15 = QueriesGenerated.sourceNodesQuery_3308300503039720845(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_rbrxtl_b0a0a1a7a1a4));
+        final Iterable<SNode> loopList15 = QueriesGenerated.sourceNodesQuery_a0c(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_rbrxtl_b0a0a1a7a1a4));
         for (SNode itnode15 : loopList15) {
           if (itnode15 == null) {
             continue;
@@ -171,14 +171,14 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
       }
       {
         final List<SNode> tlist18 = new ArrayList<SNode>();
-        final Iterable<SNode> loopList18 = QueriesGenerated.sourceNodesQuery_4394627182934963473(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_rbrxtl_b0a0a1a8a1a4));
+        final Iterable<SNode> loopList18 = QueriesGenerated.sourceNodesQuery_a0d(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_rbrxtl_b0a0a1a8a1a4));
         for (SNode itnode18 : loopList18) {
           if (itnode18 == null) {
             continue;
           }
           TemplateContext context7 = context1.subContext(itnode18);
           Collection<SNode> tlist19 = null;
-          final Iterable<SNode> copyListInput19 = QueriesGenerated.sourceNodesQuery_4394627182934963575(new SourceSubstituteMacroNodesContext(context7, copySrcListMacro_rbrxtl_b0a0a3a2a8a1a4));
+          final Iterable<SNode> copyListInput19 = QueriesGenerated.sourceNodesQuery_a1d(new SourceSubstituteMacroNodesContext(context7, copySrcListMacro_rbrxtl_b0a0a3a2a8a1a4));
           tlist19 = environment.copyNodes(copyListInput19, copySrcListMacro_rbrxtl_b0a0a3a2a8a1a4, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4394627182934963449", context7);
           if (tlist19 != null) {
             tlist18.addAll(tlist19);

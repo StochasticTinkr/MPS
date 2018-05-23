@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class InsertPlaceholderIntoEmptyMultipleCollection_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class InsertPlaceholderIntoEmptyMultipleCollection_Test extends BaseTrans
 
   @Test
   public void test_InsertPlaceholderIntoEmptyMultipleCollection() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.actions.test.InsertPlaceholderIntoEmptyMultipleCollection_Test$TestBody", "testMethod", false);
+    new InsertPlaceholderIntoEmptyMultipleCollection_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6866182640452619091", "6866182640452682454");

@@ -59,7 +59,7 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
     public void checkTests(final List<ITestNodeWrapper> success, final List<ITestNodeWrapper> failure) {
       try {
         List<ITestNodeWrapper> testNodes = ListSequence.fromList(success).union(ListSequence.fromList(failure)).toListSequence();
-        final TestRunState runState = new TestRunState(testNodes, myProject);
+        final TestRunState runState = new TestRunState(testNodes);
 
         Executor processExecutor = new JUnitInProcessExecutor(myProject, testNodes);
         if (LOG.isInfoEnabled()) {

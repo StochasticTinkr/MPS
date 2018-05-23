@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class Test_CreatePropertyAntiquotation_Key_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class Test_CreatePropertyAntiquotation_Key_Test extends BaseTransformatio
 
   @Test
   public void test_Test_CreatePropertyAntiquotation_Key() throws Throwable {
-    runTest("jetbrains.mps.lang.quotation.test.editorTest.Test_CreatePropertyAntiquotation_Key_Test$TestBody", "testMethod", false);
+    new Test_CreatePropertyAntiquotation_Key_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("7167051279291147218", "7167051279291147231");

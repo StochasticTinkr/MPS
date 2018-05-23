@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class WrapIncompleteMemberDeclarationWithArrayType_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class WrapIncompleteMemberDeclarationWithArrayType_Test extends BaseTrans
 
   @Test
   public void test_WrapIncompleteMemberDeclarationWithArrayType() throws Throwable {
-    runTest("jetbrains.mps.editorTest.WrapIncompleteMemberDeclarationWithArrayType_Test$TestBody", "testMethod", false);
+    new WrapIncompleteMemberDeclarationWithArrayType_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("9002759989422804808", "9002759989422804815");

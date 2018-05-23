@@ -23,10 +23,8 @@ public final class NodeDifference extends DifferenceItem {
   @Override
   protected void print(StringBuilder buf, int indent) {
     super.print(buf, indent);
-    buf.append('\n');
     for (DifferenceItem item : myDifference) {
       item.print(buf, indent + 1);
-      buf.append('\n');
     }
   }
 

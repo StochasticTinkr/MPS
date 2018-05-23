@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 
@@ -22,11 +23,15 @@ public class PlatformCheckbox_CLICK_Toggles_Test extends BaseTransformationTest 
 
   @Test
   public void test_PlatformCheckbox_CLICK_Toggles() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.forms.test.PlatformCheckbox_CLICK_Toggles_Test$TestBody", "testMethod", false);
+    new PlatformCheckbox_CLICK_Toggles_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("7013563450911367694", "7013563450911367697");

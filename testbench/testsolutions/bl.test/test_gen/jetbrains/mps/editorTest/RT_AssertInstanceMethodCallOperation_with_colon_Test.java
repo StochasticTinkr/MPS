@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class RT_AssertInstanceMethodCallOperation_with_colon_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class RT_AssertInstanceMethodCallOperation_with_colon_Test extends BaseTr
 
   @Test
   public void test_RT_AssertInstanceMethodCallOperation_with_colon() throws Throwable {
-    runTest("jetbrains.mps.editorTest.RT_AssertInstanceMethodCallOperation_with_colon_Test$TestBody", "testMethod", false);
+    new RT_AssertInstanceMethodCallOperation_with_colon_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("5041847952539922837", "5041847952539924448");

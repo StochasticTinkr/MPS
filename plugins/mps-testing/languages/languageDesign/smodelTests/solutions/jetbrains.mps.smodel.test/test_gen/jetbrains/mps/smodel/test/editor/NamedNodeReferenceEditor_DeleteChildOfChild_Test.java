@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.EditorUtil;
 
 @MPSLaunch
@@ -21,11 +22,15 @@ public class NamedNodeReferenceEditor_DeleteChildOfChild_Test extends BaseTransf
 
   @Test
   public void test_NamedNodeReferenceEditor_DeleteChildOfChild() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.editor.NamedNodeReferenceEditor_DeleteChildOfChild_Test$TestBody", "testMethod", false);
+    new NamedNodeReferenceEditor_DeleteChildOfChild_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6012981979753517068", "6012981979753517081");

@@ -32,7 +32,7 @@ public class Template_reduce_ConceptMethodCallReflective extends TemplateDeclara
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
     {
-      final SNode switchInput1 = QueriesGenerated.sourceNodeQuery_6862765979525924594(new SourceSubstituteMacroNodeContext(context, switchMacroRef_fdl98n_b0a0a0a2a4));
+      final SNode switchInput1 = QueriesGenerated.sourceNodeQuery_a1a_0(new SourceSubstituteMacroNodeContext(context, switchMacroRef_fdl98n_b0a0a0a2a4));
       if (switchInput1 == null) {
         tlist1 = Collections.emptyList();
       } else {

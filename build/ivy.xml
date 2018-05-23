@@ -1,7 +1,7 @@
 <ivy-module version="2.0">
   <info organisation="org.jetbrains.mps" module="idea-platform"/>
   <dependencies>
-    <dependency org="org" name="MPS_20181_Distribution_Platform" rev="${idea.platform.version}">
+    <dependency org="org" name="MPS_20182_Distribution_Platform" rev="${idea.platform.version}">
       <artifact name="mps-platform" ext="zip"/>
     </dependency>
   </dependencies>

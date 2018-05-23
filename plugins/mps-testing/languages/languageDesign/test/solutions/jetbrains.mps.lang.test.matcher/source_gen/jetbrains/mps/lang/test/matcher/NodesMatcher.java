@@ -20,6 +20,15 @@ import org.jetbrains.mps.openapi.language.SProperty;
  * XXX could add options to parameterize instance prior to diff. E.g. dumpDiff()/debugDiff to use in scenarios where diff().isEmpty() is used but it's handy to see true diff in case anything goes wrong
  */
 public final class NodesMatcher {
+  /**
+   * AFAIU, it's a map of 'structural' correspondence, which is used to ensure reference 
+   * targets of nodes being matched point to the same element within the model structure.
+   * Personally, I don't see why it's reasonable to keep map of a e.g. whole model just to 
+   * ensure structural match provided we ensure equal structure by regular parent-child 
+   * walk approach. I'd rather perform matching of reference targets (if they are from the same 
+   * model; and do it only once). However, there's code that uses the map (editor tests) 
+   * which  I need to refactor first.
+   */
   private final Map<SNode, SNode> myMap;
   private final List<SNode> myFirst;
   private final List<SNode> mySecond;

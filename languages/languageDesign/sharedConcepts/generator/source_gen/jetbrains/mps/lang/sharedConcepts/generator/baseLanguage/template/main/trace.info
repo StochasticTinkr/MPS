@@ -9,8 +9,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bd(jetbrains.mps.lang.sharedConcepts.generator.baseLanguage.template.main@generator)/1161623876737">
     <file name="QueriesGenerated.java">
-      <node id="1199881507907" at="22,104,23,129" concept="0" />
-      <scope id="1199881492478" at="22,104,23,129" />
+      <node id="1199881507907" at="22,93,23,129" concept="0" />
+      <scope id="1199881492478" at="22,93,23,129" />
     </file>
   </root>
 </debug-info>

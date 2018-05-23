@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class InsertCustomPlaceholder_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class InsertCustomPlaceholder_Test extends BaseTransformationTest {
 
   @Test
   public void test_InsertCustomPlaceholder() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.actions.test.InsertCustomPlaceholder_Test$TestBody", "testMethod", false);
+    new InsertCustomPlaceholder_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6997653033587256620", "6997653033587256623");

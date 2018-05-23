@@ -35,7 +35,7 @@ public class Template_reduce_SuperNodeExpression extends TemplateDeclarationBase
   protected Collection<SNode> applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    if (QueriesGenerated.ifMacro_Condition_5722502787474237113(new IfMacroContext(context, ifMacroRef_7zc0vk_b0a0c0e))) {
+    if (QueriesGenerated.ifMacro_Condition_a1a0a0a0(new IfMacroContext(context, ifMacroRef_7zc0vk_b0a0c0e))) {
       final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
       try {
         TemplateContext context1 = context.subContext();
@@ -45,7 +45,7 @@ public class Template_reduce_SuperNodeExpression extends TemplateDeclarationBase
             environment.resolve(new RefResolver(tnode3, myAssociationLinks[0], context1, new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "6862765979525543739"), "thisConcept") {
               @Override
               public Object resolve() {
-                return QueriesGenerated.referenceMacro_GetReferent_6862765979525543740(createQueryContext());
+                return QueriesGenerated.referenceMacro_GetReferent_a0a0a0a0a_0(createQueryContext());
               }
             });
           } finally {
@@ -71,7 +71,7 @@ public class Template_reduce_SuperNodeExpression extends TemplateDeclarationBase
         environment.resolve(new RefResolver(tnode5, myAssociationLinks[0], context, new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "5722502787474238078"), "thisNode") {
           @Override
           public Object resolve() {
-            return QueriesGenerated.referenceMacro_GetReferent_5722502787474238079(createQueryContext());
+            return QueriesGenerated.referenceMacro_GetReferent_a0a0b0a0a0a(createQueryContext());
           }
         });
       } finally {

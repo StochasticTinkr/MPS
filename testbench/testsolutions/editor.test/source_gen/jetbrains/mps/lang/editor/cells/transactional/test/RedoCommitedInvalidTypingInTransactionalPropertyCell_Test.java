@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class RedoCommitedInvalidTypingInTransactionalPropertyCell_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class RedoCommitedInvalidTypingInTransactionalPropertyCell_Test extends B
 
   @Test
   public void test_RedoCommitedInvalidTypingInTransactionalPropertyCell() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.cells.transactional.test.RedoCommitedInvalidTypingInTransactionalPropertyCell_Test$TestBody", "testMethod", false);
+    new RedoCommitedInvalidTypingInTransactionalPropertyCell_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2786154196593934308", "2786154196593934310");

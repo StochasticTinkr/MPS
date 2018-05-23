@@ -10,9 +10,9 @@
   </root>
   <root nodeRef="r:8074a1a0-69fe-4403-9d35-7a6021037b63(L1.generator.template.main@generator)/3842746946078421956">
     <file name="QueriesGenerated.java">
-      <node id="3842746946078480419" at="24,112,25,16" concept="0" />
+      <node id="3842746946078480419" at="24,105,25,16" concept="0" />
       <node id="3842746946078468712" at="25,16,26,13" concept="1" />
-      <scope id="3842746946078461647" at="24,112,26,13" />
+      <scope id="3842746946078461647" at="24,105,26,13" />
     </file>
   </root>
 </debug-info>

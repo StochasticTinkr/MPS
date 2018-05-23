@@ -19,43 +19,43 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 @Generated
 public class QueriesGenerated {
-  public static boolean baseMappingRule_Condition_7496726876599935510(final BaseMappingRuleContext _context) {
+  public static boolean baseMappingRule_Condition_a0a2(final BaseMappingRuleContext _context) {
     return true;
   }
-  public static boolean baseMappingRule_Condition_4929591503636513204(final BaseMappingRuleContext _context) {
+  public static boolean baseMappingRule_Condition_a2(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x118e6cad46aL, 0x44696d5abe089ec8L, "key")) == 1;
   }
-  public static boolean baseMappingRule_Condition_4929591503636589503(final BaseMappingRuleContext _context) {
+  public static boolean baseMappingRule_Condition_a3(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x118e6cad46aL, 0x44696d5abe089ec8L, "key")) == 2;
   }
-  public static boolean baseMappingRule_Condition_4929591503636676782(final BaseMappingRuleContext _context) {
+  public static boolean baseMappingRule_Condition_a0a4(final BaseMappingRuleContext _context) {
     return false;
   }
-  public static boolean baseMappingRule_Condition_4929591503636614138(final BaseMappingRuleContext _context) {
+  public static boolean baseMappingRule_Condition_a4(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x118e6cad46aL, 0x44696d5abe089ec8L, "key")) == 3;
   }
-  public static Object propertyMacro_GetPropertyValue_7496726876599876334(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_a1a(final PropertyMacroContext _context) {
     return "text from argument:" + ((String) _context.getVariable("p1"));
   }
-  public static boolean ifMacro_Condition_4929591503636643306(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_a0a0d(final IfMacroContext _context) {
     return false;
   }
-  public static Object templateArgumentQuery_7496726876599916822(final TemplateArgumentContext _context) {
+  public static Object templateArgumentQuery_a0b(final TemplateArgumentContext _context) {
     return "from expression";
   }
-  public static Object templateArgumentQuery_7496726876599937591(final TemplateArgumentContext _context) {
+  public static Object templateArgumentQuery_a0a0c(final TemplateArgumentContext _context) {
     return "from within case of inline switch";
   }
-  public static Object templateArgumentQuery_4929591503636646079(final TemplateArgumentContext _context) {
+  public static Object templateArgumentQuery_a0a0a3(final TemplateArgumentContext _context) {
     return "from IF/ELSE alternative concequence";
   }
-  public static Object templateArgumentQuery_4929591503636680081(final TemplateArgumentContext _context) {
+  public static Object templateArgumentQuery_a0a4(final TemplateArgumentContext _context) {
     return "from within default case of in-line switch";
   }
-  public static Iterable<SNode> sourceNodesQuery_7496726876599914779(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_a0a(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x11645abf534L, "inputChild"));
   }
-  public static boolean mappingConfiguration_Condition_7496726876599722461(final TemplateQueryContext _context) {
+  public static boolean mappingConfiguration_Condition_a(final TemplateQueryContext _context) {
     return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "argsInTemplDeclRef", "none");

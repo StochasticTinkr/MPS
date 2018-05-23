@@ -13,7 +13,6 @@
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
-    <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="m373" ref="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" />
   </imports>
@@ -192,6 +191,11 @@
         <child id="1196350785114" name="quotedNode" index="2c44tc" />
       </concept>
     </language>
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
+        <reference id="7256306938026143658" name="target" index="2aWVGs" />
+      </concept>
+    </language>
     <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions">
       <concept id="767145758118872833" name="jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation" flags="nn" index="2DeJg1" />
       <concept id="767145758118872830" name="jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation" flags="nn" index="2DeJnY" />
@@ -210,6 +214,9 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
+        <child id="7400021826774799510" name="ref" index="2tJFKM" />
+      </concept>
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
@@ -1784,12 +1791,14 @@
           </node>
         </node>
         <node concept="3clFbF" id="2k6csr7II$j" role="3cqZAp">
-          <node concept="2YIFZM" id="2k6csr7II$k" role="3clFbG">
-            <ref role="37wK5l" to="tpek:2k6csr7bbJR" resolve="attachAnnotation" />
+          <node concept="2YIFZM" id="3WDGf12wLVs" role="3clFbG">
+            <ref role="37wK5l" to="tpek:3WDGf12v044" resolve="attachUniqueAnnotation" />
             <ref role="1Pybhc" to="tpek:7yGNG5q2t7W" resolve="AnnotationUtil" />
-            <node concept="13iPFW" id="2k6csr7II$l" role="37wK5m" />
-            <node concept="3B5_sB" id="2k6csr7II$m" role="37wK5m">
-              <ref role="3B5MYn" to="wyt6:~Deprecated" resolve="Deprecated" />
+            <node concept="13iPFW" id="3WDGf12wLVt" role="37wK5m" />
+            <node concept="2tJFMh" id="3WDGf12wLVu" role="37wK5m">
+              <node concept="ZC_QK" id="3WDGf12wLVv" role="2tJFKM">
+                <ref role="2aWVGs" to="wyt6:~Deprecated" resolve="Deprecated" />
+              </node>
             </node>
           </node>
         </node>
@@ -1827,12 +1836,14 @@
           </node>
         </node>
         <node concept="3clFbF" id="2k6csr7II$v" role="3cqZAp">
-          <node concept="2YIFZM" id="2k6csr7II$w" role="3clFbG">
+          <node concept="2YIFZM" id="3WDGf12wLK8" role="3clFbG">
+            <ref role="37wK5l" to="tpek:3WDGf12vcpF" resolve="detachUniqueAnnotation" />
             <ref role="1Pybhc" to="tpek:7yGNG5q2t7W" resolve="AnnotationUtil" />
-            <ref role="37wK5l" to="tpek:2k6csr7bbOh" resolve="detachAnnotation" />
-            <node concept="13iPFW" id="2k6csr7II$x" role="37wK5m" />
-            <node concept="3B5_sB" id="2k6csr7II$y" role="37wK5m">
-              <ref role="3B5MYn" to="wyt6:~Deprecated" resolve="Deprecated" />
+            <node concept="13iPFW" id="3WDGf12wLK9" role="37wK5m" />
+            <node concept="2tJFMh" id="3WDGf12wLKa" role="37wK5m">
+              <node concept="ZC_QK" id="3WDGf12wLKb" role="2tJFKM">
+                <ref role="2aWVGs" to="wyt6:~Deprecated" resolve="Deprecated" />
+              </node>
             </node>
           </node>
         </node>

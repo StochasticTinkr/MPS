@@ -36,11 +36,11 @@ public class Template_OutputRoot_by_MappingRule extends TemplateDeclarationBase 
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195168984336");
       SNodeAccessUtil.setProperty(tnode1, myProperties[0], "OutputRoot_by_MappingRule");
-      SNodeAccessUtil.setProperty(tnode1, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1195598330258(new PropertyMacroContext(context, "OutputRoot by MappingRule", propertyMacro_5ou570_c0a0c0c0b0e))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1(new PropertyMacroContext(context, "OutputRoot by MappingRule", propertyMacro_5ou570_c0a0c0c0b0e))));
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_1195170582047(new SourceSubstituteMacroNodesContext(context1, copySrcListMacro_5ou570_b0a0a1a4a1a4));
+        final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_a0a(new SourceSubstituteMacroNodesContext(context1, copySrcListMacro_5ou570_b0a0a1a4a1a4));
         tlist2 = environment.copyNodes(copyListInput2, copySrcListMacro_5ou570_b0a0a1a4a1a4, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195170418623", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);

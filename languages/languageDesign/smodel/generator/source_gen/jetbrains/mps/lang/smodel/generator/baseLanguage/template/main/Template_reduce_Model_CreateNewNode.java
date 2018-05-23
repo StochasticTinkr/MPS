@@ -41,7 +41,7 @@ public class Template_reduce_Model_CreateNewNode extends TemplateDeclarationBase
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_9116031298985672797(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_tot7xa_b0a0c0d0c0e));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_29(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_tot7xa_b0a0c0d0c0e));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_tot7xa_b0a0c0d0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/9116031298985672795", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -50,7 +50,7 @@ public class Template_reduce_Model_CreateNewNode extends TemplateDeclarationBase
       }
       {
         Collection<SNode> tlist4 = null;
-        if (QueriesGenerated.ifMacro_Condition_9116031298985672814(new IfMacroContext(context1, ifMacroRef_tot7xa_b0a0b0e0c0e))) {
+        if (QueriesGenerated.ifMacro_Condition_a0b0(new IfMacroContext(context1, ifMacroRef_tot7xa_b0a0b0e0c0e))) {
           final SNode tnode5 = environment.createOutputNode(myConcepts[1]);
           try {
           } finally {
@@ -58,7 +58,7 @@ public class Template_reduce_Model_CreateNewNode extends TemplateDeclarationBase
           tlist4 = TemplateUtil.singletonList(tnode5);
         } else {
           Collection<SNode> tlist6 = null;
-          final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_9116031298985672808(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_tot7xa_b0a0c0a1a4a2a4));
+          final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_a0a0a1a(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_tot7xa_b0a0c0a1a4a2a4));
           tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_tot7xa_b0a0c0a1a4a2a4, "tpl/r:00000000-0000-4000-0000-011c89590303/9116031298985672806", context1);
           tlist4 = tlist6;
         }
@@ -69,7 +69,7 @@ public class Template_reduce_Model_CreateNewNode extends TemplateDeclarationBase
       }
       {
         Collection<SNode> tlist8 = null;
-        SNode callInputNode8 = QueriesGenerated.sourceNodeQuery_9116031298985672824(new SourceSubstituteMacroNodeContext(context1, includeMacro_tot7xa_b0a0a1a5a2a4));
+        SNode callInputNode8 = QueriesGenerated.sourceNodeQuery_a0c0(new SourceSubstituteMacroNodeContext(context1, includeMacro_tot7xa_b0a0a1a5a2a4));
         TemplateContext context2 = context1.subContext(null, callInputNode8);
         if (callInputNode8 != null) {
           tlist8 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context2);

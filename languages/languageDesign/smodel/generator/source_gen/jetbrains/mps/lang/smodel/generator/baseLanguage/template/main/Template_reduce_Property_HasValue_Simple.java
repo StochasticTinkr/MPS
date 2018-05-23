@@ -40,7 +40,7 @@ public class Template_reduce_Property_HasValue_Simple extends TemplateDeclaratio
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_1170635406441(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_29qvky_b0a0c0d0c0e));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_42(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_29qvky_b0a0c0d0c0e));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_29qvky_b0a0c0d0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/1146256190199", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -49,7 +49,7 @@ public class Template_reduce_Property_HasValue_Simple extends TemplateDeclaratio
       }
       {
         Collection<SNode> tlist4 = null;
-        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_6506750610319583884(new SourceSubstituteMacroNodeContext(context1, includeMacro_29qvky_b0a0a1a4a2a4));
+        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_a0b0_13(new SourceSubstituteMacroNodeContext(context1, includeMacro_29qvky_b0a0a1a4a2a4));
         TemplateContext context2 = context1.subContext(null, callInputNode4);
         if (callInputNode4 != null) {
           tlist4 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context2);
@@ -61,7 +61,7 @@ public class Template_reduce_Property_HasValue_Simple extends TemplateDeclaratio
       }
       {
         Collection<SNode> tlist6 = null;
-        final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_1170635509830(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_29qvky_b0a0c0f0c0e));
+        final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_a0c0_2(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_29qvky_b0a0c0f0c0e));
         tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_29qvky_b0a0c0f0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/1146256190203", context1);
         for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
           tnode1.addChild(myAggregationLinks[0], child7);

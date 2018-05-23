@@ -33,7 +33,7 @@ public class Template_reduce_EnumDeclaration_indentityValueSequence extends Temp
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2733396919553079431(new PropertyMacroContext(context, "1L", propertyMacro_snxsfp_c0a0c0a0c0e))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1a0(new PropertyMacroContext(context, "1L", propertyMacro_snxsfp_c0a0c0a0c0e))));
     } finally {
     }
     return tnode1;
@@ -42,7 +42,7 @@ public class Template_reduce_EnumDeclaration_indentityValueSequence extends Temp
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2733396919553097767(new PropertyMacroContext(context, "2L", propertyMacro_snxsfp_c0a0c0a0c0f))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1b0(new PropertyMacroContext(context, "2L", propertyMacro_snxsfp_c0a0c0a0c0f))));
     } finally {
     }
     return tnode1;
@@ -51,7 +51,7 @@ public class Template_reduce_EnumDeclaration_indentityValueSequence extends Temp
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[1]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2733396919553048692(new PropertyMacroContext(context, "language", propertyMacro_snxsfp_c0a0c0a0c0g))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1c0(new PropertyMacroContext(context, "language", propertyMacro_snxsfp_c0a0c0a0c0g))));
     } finally {
     }
     return tnode1;
@@ -60,7 +60,7 @@ public class Template_reduce_EnumDeclaration_indentityValueSequence extends Temp
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2733396919553103725(new PropertyMacroContext(context, "3L", propertyMacro_snxsfp_c0a0c0a0c0h))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1d0(new PropertyMacroContext(context, "3L", propertyMacro_snxsfp_c0a0c0a0c0h))));
     } finally {
     }
     return tnode1;
@@ -69,7 +69,7 @@ public class Template_reduce_EnumDeclaration_indentityValueSequence extends Temp
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[1]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2733396919553049723(new PropertyMacroContext(context, "enum", propertyMacro_snxsfp_c0a0c0a0c0i))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1e0(new PropertyMacroContext(context, "enum", propertyMacro_snxsfp_c0a0c0a0c0i))));
     } finally {
     }
     return tnode1;

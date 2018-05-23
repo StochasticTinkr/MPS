@@ -41,7 +41,7 @@ public class Template_reduce_ReplaceWithNewOperation extends TemplateDeclaration
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_1170443724880(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yrsmdy_b0a0c0d0c0e));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_44(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yrsmdy_b0a0c0d0c0e));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_yrsmdy_b0a0c0d0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/1139868534273", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -54,7 +54,7 @@ public class Template_reduce_ReplaceWithNewOperation extends TemplateDeclaration
           environment.resolve(new RefResolver(tnode4, myAssociationLinks[2], context1, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8510735242382097236"), "BaseConcept") {
             @Override
             public Object resolve() {
-              return QueriesGenerated.referenceMacro_GetReferent_8510735242382097239(createQueryContext());
+              return QueriesGenerated.referenceMacro_GetReferent_a0b0(createQueryContext());
             }
           });
         } finally {

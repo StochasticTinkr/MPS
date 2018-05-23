@@ -46,7 +46,7 @@ public class Template_reduce_GetAncestors_whereConceptInList extends TemplateDec
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_1173123284728(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_tfk7rm_b0a0c0d0c0e));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_9(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_tfk7rm_b0a0c0d0c0e));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_tfk7rm_b0a0c0d0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/1173123284726", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -72,14 +72,14 @@ public class Template_reduce_GetAncestors_whereConceptInList extends TemplateDec
               }
               {
                 final List<SNode> tlist7 = new ArrayList<SNode>();
-                final Iterable<SNode> loopList7 = QueriesGenerated.sourceNodesQuery_3902354333653993423(new SourceSubstituteMacroNodesContext(context3, loopMacroRef_tfk7rm_b0a0a1a2a1a1a1a4a2a4));
+                final Iterable<SNode> loopList7 = QueriesGenerated.sourceNodesQuery_a0a0b0_1(new SourceSubstituteMacroNodesContext(context3, loopMacroRef_tfk7rm_b0a0a1a2a1a1a1a4a2a4));
                 for (SNode itnode7 : loopList7) {
                   if (itnode7 == null) {
                     continue;
                   }
                   TemplateContext context4 = context3.subContext(itnode7);
                   Collection<SNode> tlist8 = null;
-                  SNode callInputNode8 = QueriesGenerated.sourceNodeQuery_3902354333653993429(new SourceSubstituteMacroNodeContext(context4, includeMacro_tfk7rm_b0a0a3a2a2a1a1a1a4a2a4));
+                  SNode callInputNode8 = QueriesGenerated.sourceNodeQuery_a1a0b0_1(new SourceSubstituteMacroNodeContext(context4, includeMacro_tfk7rm_b0a0a3a2a2a1a1a1a4a2a4));
                   TemplateContext context5 = context4.subContext(null, callInputNode8);
                   if (callInputNode8 != null) {
                     tlist8 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context5);
@@ -106,7 +106,7 @@ public class Template_reduce_GetAncestors_whereConceptInList extends TemplateDec
       {
         final SNode tnode10 = environment.createOutputNode(myConcepts[4]);
         try {
-          SNodeAccessUtil.setProperty(tnode10, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1173123508505(new PropertyMacroContext(context1, null, propertyMacro_tfk7rm_c0a0c0a0b0f0c0e))));
+          SNodeAccessUtil.setProperty(tnode10, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0c0_10(new PropertyMacroContext(context1, null, propertyMacro_tfk7rm_c0a0c0a0b0f0c0e))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode10);

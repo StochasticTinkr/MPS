@@ -34,6 +34,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /**
  * Currently used for ant tests
@@ -128,6 +131,17 @@ public class MpsTestsSuite extends BaseMpsSuite {
               } catch (ClassNotFoundException e) {
                 if (LOG.isEnabledFor(Level.WARN)) {
                   LOG.warn("Cannot find the test class " + testClassName + "; will skip this test class");
+                }
+              }
+            }
+            final String packageStmt = JavaNameUtil.packageName(model);
+            for (SNode gt : ListSequence.fromList(SModelOperations.roots(((SModel) model), MetaAdapterFactory.getConcept(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf092beL, "jetbrains.mps.lang.test.generator.structure.GeneratorTest")))) {
+              String testClassName = NameUtil.longNameFromNamespaceAndShortName(packageStmt, SPropertyOperations.getString(gt, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+              try {
+                result.add(builder.safeRunnerForClass(moduleCL.loadClass(testClassName)));
+              } catch (ClassNotFoundException ex) {
+                if (LOG.isEnabledFor(Level.WARN)) {
+                  LOG.warn("Cannot find the test class " + testClassName);
                 }
               }
             }

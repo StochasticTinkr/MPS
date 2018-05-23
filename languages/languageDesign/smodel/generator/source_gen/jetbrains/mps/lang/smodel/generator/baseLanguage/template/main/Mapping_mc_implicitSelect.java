@@ -36,7 +36,7 @@ public class Mapping_mc_implicitSelect extends MapConfigBase implements Template
   }
   @Override
   public boolean isApplicable(@NotNull ITemplateGenerator generator) {
-    return QueriesGenerated.mappingConfiguration_Condition_3624172675691267240(new TemplateQueryContext(getMappingNode(), generator));
+    return QueriesGenerated.mappingConfiguration_Condition_a_4(new TemplateQueryContext(getMappingNode(), generator));
   }
   @Override
   public Collection<TemplateReductionRule> getReductionRules() {
@@ -48,13 +48,13 @@ public class Mapping_mc_implicitSelect extends MapConfigBase implements Template
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_7551657168185616465(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a0_2(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      if (QueriesGenerated.baseMappingRule_Condition_4877343046905065733(new BaseMappingRuleContext(context, rule_x5z8bg_b0a0c0c4))) {
+      if (QueriesGenerated.baseMappingRule_Condition_a0a0_0(new BaseMappingRuleContext(context, rule_x5z8bg_b0a0c0c4))) {
         final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbbebabf09L, "StaticMethodCall"));
         try {
           tnode2.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode2, PersistenceFacade.getInstance().createModelReference("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), PersistenceFacade.getInstance().createNodeId("4877343046905094202")));
@@ -62,7 +62,7 @@ public class Mapping_mc_implicitSelect extends MapConfigBase implements Template
           TemplateContext context1 = context.subContext();
           {
             Collection<SNode> tlist3 = null;
-            final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_4877343046905147149(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_x5z8bg_b0a0c0d0b0c0c4));
+            final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_a0a0a0a0_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_x5z8bg_b0a0c0d0b0c0c4));
             tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_x5z8bg_b0a0c0d0b0c0c4, "tpl/r:00000000-0000-4000-0000-011c89590303/4877343046905139073", context1);
             for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
               tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);
@@ -71,7 +71,7 @@ public class Mapping_mc_implicitSelect extends MapConfigBase implements Template
           }
           {
             Collection<SNode> tlist5 = null;
-            SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_4877343046905178476(new SourceSubstituteMacroNodeContext(context1, callMacro_x5z8bg_b0a0a1a4a1a2a2e));
+            SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_a0b0a0a0_0(new SourceSubstituteMacroNodeContext(context1, callMacro_x5z8bg_b0a0a1a4a1a2a2e));
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
               tlist5 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context2);
@@ -84,7 +84,7 @@ public class Mapping_mc_implicitSelect extends MapConfigBase implements Template
         } finally {
         }
         tlist1 = TemplateUtil.singletonList(tnode2);
-      } else if (QueriesGenerated.baseMappingRule_Condition_4877343046905092782(new BaseMappingRuleContext(context, rule_x5z8bg_b0a0c0c4))) {
+      } else if (QueriesGenerated.baseMappingRule_Condition_a1a0(new BaseMappingRuleContext(context, rule_x5z8bg_b0a0c0c4))) {
         final SNode tnode7 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbbebabf09L, "StaticMethodCall"));
         try {
           tnode7.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), tnode7, PersistenceFacade.getInstance().createModelReference("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), PersistenceFacade.getInstance().createNodeId("6599163591527286349")));
@@ -92,7 +92,7 @@ public class Mapping_mc_implicitSelect extends MapConfigBase implements Template
           TemplateContext context3 = context.subContext();
           {
             Collection<SNode> tlist8 = null;
-            final SNode copySrcInput8 = QueriesGenerated.sourceNodeQuery_4877343046905223676(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_x5z8bg_b0a0c0d0b0a2a2e));
+            final SNode copySrcInput8 = QueriesGenerated.sourceNodeQuery_a0a0a1a0(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_x5z8bg_b0a0c0d0b0a2a2e));
             tlist8 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput8), copySrcMacro_x5z8bg_b0a0c0d0b0a2a2e, "tpl/r:00000000-0000-4000-0000-011c89590303/4877343046905223674", context3);
             for (SNode child9 : TemplateUtil.asNotNull(tlist8)) {
               tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child9);
@@ -101,7 +101,7 @@ public class Mapping_mc_implicitSelect extends MapConfigBase implements Template
           }
           {
             Collection<SNode> tlist10 = null;
-            SNode callInputNode10 = QueriesGenerated.sourceNodeQuery_4877343046905225318(new SourceSubstituteMacroNodeContext(context3, callMacro_x5z8bg_b0a0a1a4a1a0c0c4));
+            SNode callInputNode10 = QueriesGenerated.sourceNodeQuery_a0b0a1a0(new SourceSubstituteMacroNodeContext(context3, callMacro_x5z8bg_b0a0a1a4a1a0c0c4));
             TemplateContext context4 = context3.subContext(null, callInputNode10);
             if (callInputNode10 != null) {
               tlist10 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context4);
@@ -114,7 +114,7 @@ public class Mapping_mc_implicitSelect extends MapConfigBase implements Template
         } finally {
         }
         tlist1 = TemplateUtil.singletonList(tnode7);
-      } else if (QueriesGenerated.baseMappingRule_Condition_4877343046905067102(new BaseMappingRuleContext(context, rule_x5z8bg_b0a0c0c4))) {
+      } else if (QueriesGenerated.baseMappingRule_Condition_a2a0(new BaseMappingRuleContext(context, rule_x5z8bg_b0a0c0c4))) {
         final SNode tnode12 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbbebabf09L, "StaticMethodCall"));
         try {
           tnode12.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode12, PersistenceFacade.getInstance().createModelReference("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), PersistenceFacade.getInstance().createNodeId("4877343046905096608")));
@@ -122,7 +122,7 @@ public class Mapping_mc_implicitSelect extends MapConfigBase implements Template
           TemplateContext context5 = context.subContext();
           {
             Collection<SNode> tlist13 = null;
-            final SNode copySrcInput13 = QueriesGenerated.sourceNodeQuery_4877343046905241410(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_x5z8bg_b0a0c0d0b0b2a2e));
+            final SNode copySrcInput13 = QueriesGenerated.sourceNodeQuery_a0a0a2a0(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_x5z8bg_b0a0c0d0b0b2a2e));
             tlist13 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput13), copySrcMacro_x5z8bg_b0a0c0d0b0b2a2e, "tpl/r:00000000-0000-4000-0000-011c89590303/4877343046905241408", context5);
             for (SNode child14 : TemplateUtil.asNotNull(tlist13)) {
               tnode12.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child14);
@@ -131,7 +131,7 @@ public class Mapping_mc_implicitSelect extends MapConfigBase implements Template
           }
           {
             Collection<SNode> tlist15 = null;
-            SNode callInputNode15 = QueriesGenerated.sourceNodeQuery_4877343046905241423(new SourceSubstituteMacroNodeContext(context5, callMacro_x5z8bg_b0a0a1a4a1a1c0c4));
+            SNode callInputNode15 = QueriesGenerated.sourceNodeQuery_a0b0a2a0(new SourceSubstituteMacroNodeContext(context5, callMacro_x5z8bg_b0a0a1a4a1a1c0c4));
             TemplateContext context6 = context5.subContext(null, callInputNode15);
             if (callInputNode15 != null) {
               tlist15 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context6);

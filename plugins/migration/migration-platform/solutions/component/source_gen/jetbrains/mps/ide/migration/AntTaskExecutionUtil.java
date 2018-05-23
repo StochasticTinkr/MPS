@@ -15,7 +15,6 @@ import jetbrains.mps.ide.migration.wizard.MigrationError;
 import org.apache.log4j.Level;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -43,21 +42,20 @@ public class AntTaskExecutionUtil {
 
     MigrationTask task = new MigrationTask(session, progress) {
       @Override
-      protected void error(MigrationError error) {
+      protected void error(final MigrationError error) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error(error.getMessage());
         }
-        for (final IssueKindReportItem p : Sequence.fromIterable(error.getProblems(new EmptyProgressIndicator()))) {
-          final Wrappers._T<String> problemMsg = new Wrappers._T<String>();
-          project.getRepository().getModelAccess().runReadAction(new Runnable() {
-            public void run() {
-              problemMsg.value = p.getMessage() + " (reason object: " + IssueKindReportItem.PATH_OBJECT.get(p) + ")";
+        project.getRepository().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            for (IssueKindReportItem p : Sequence.fromIterable(error.getProblems(new EmptyProgressIndicator()))) {
+              String problemMsg = p.getMessage() + " (reason object: " + IssueKindReportItem.PATH_OBJECT.get(p) + ")";
+              if (LOG.isEnabledFor(Level.ERROR)) {
+                LOG.error("- " + problemMsg);
+              }
             }
-          });
-          if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("- " + problemMsg.value);
           }
-        }
+        });
 
         properties.setProperty(ERR_CODE_KEY, "1");
       }

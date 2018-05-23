@@ -12,5 +12,6 @@ public abstract class DifferenceItem {
       buf.append(' ').append(' ');
     }
     buf.append(toString());
+    buf.append('\n');
   }
 }

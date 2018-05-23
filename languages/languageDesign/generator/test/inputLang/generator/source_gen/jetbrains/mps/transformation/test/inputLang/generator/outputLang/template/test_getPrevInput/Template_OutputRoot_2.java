@@ -46,21 +46,21 @@ public class Template_OutputRoot_2 extends TemplateDeclarationBase implements Te
       TemplateContext context1 = context.subContext();
       {
         final List<SNode> tlist2 = new ArrayList<SNode>();
-        final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_1202338467105(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_wvaolp_b0a0a1a4a1a4));
+        final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_a0a_0(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_wvaolp_b0a0a1a4a1a4));
         for (SNode itnode2 : loopList2) {
           if (itnode2 == null) {
             continue;
           }
           TemplateContext context2 = context1.subContext("LEVEL 1", itnode2);
           final List<SNode> tlist3 = new ArrayList<SNode>();
-          final Iterable<SNode> loopList3 = QueriesGenerated.sourceNodesQuery_1202338467112(new SourceSubstituteMacroNodesContext(context2, loopMacroRef_wvaolp_b0a0a3a2a4a1a4));
+          final Iterable<SNode> loopList3 = QueriesGenerated.sourceNodesQuery_a1a_0(new SourceSubstituteMacroNodesContext(context2, loopMacroRef_wvaolp_b0a0a3a2a4a1a4));
           for (SNode itnode3 : loopList3) {
             if (itnode3 == null) {
               continue;
             }
             TemplateContext context3 = context2.subContext("LEVEL 2", itnode3);
             final List<SNode> tlist4 = new ArrayList<SNode>();
-            final Iterable<SNode> loopList4 = QueriesGenerated.sourceNodesQuery_1202338467119(new SourceSubstituteMacroNodesContext(context3, loopMacroRef_wvaolp_b0a0a3a4a2a4a1a4));
+            final Iterable<SNode> loopList4 = QueriesGenerated.sourceNodesQuery_a2a_0(new SourceSubstituteMacroNodesContext(context3, loopMacroRef_wvaolp_b0a0a3a4a2a4a1a4));
             for (SNode itnode4 : loopList4) {
               if (itnode4 == null) {
                 continue;
@@ -68,7 +68,7 @@ public class Template_OutputRoot_2 extends TemplateDeclarationBase implements Te
               TemplateContext context4 = context3.subContext(itnode4);
               final SNode tnode5 = environment.createOutputNode(myConcepts[1]);
               try {
-                SNodeAccessUtil.setProperty(tnode5, myProperties[2], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202338467126(new PropertyMacroContext(context4, "_text_", propertyMacro_wvaolp_c0a0c0a0d0e0e0c0e0b0e))));
+                SNodeAccessUtil.setProperty(tnode5, myProperties[2], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a3a_0(new PropertyMacroContext(context4, "_text_", propertyMacro_wvaolp_c0a0c0a0d0e0e0c0e0b0e))));
                 TemplateContext context5 = context4.subContext();
                 {
                   final List<SNode> tlist6 = new ArrayList<SNode>();
@@ -79,12 +79,12 @@ public class Template_OutputRoot_2 extends TemplateDeclarationBase implements Te
                       @NotNull
                       @Override
                       public SNode substitute() throws GenerationFailureException {
-                        return QueriesGenerated.mapSrcMacro_mapper_1202338546473(new MapSrcMacroContext(this));
+                        return QueriesGenerated.mapSrcMacro_mapper_a0a0(new MapSrcMacroContext(this));
                       }
 
                       @Override
                       public void postProcess(@NotNull SNode outputNode) throws GenerationFailureException {
-                        QueriesGenerated.mapSrcMacro_post_mapper_1225236090395(new MapSrcMacroPostProcContext(getTemplateContext(), outputNode, getTemplateNode()));
+                        QueriesGenerated.mapSrcMacro_post_mapper_a0a0(new MapSrcMacroPostProcContext(getTemplateContext(), outputNode, getTemplateNode()));
                       }
                     });
                   }
@@ -102,7 +102,7 @@ public class Template_OutputRoot_2 extends TemplateDeclarationBase implements Te
                       @NotNull
                       @Override
                       public SNode substitute() throws GenerationFailureException {
-                        return QueriesGenerated.mapSrcMacro_mapper_1202338683284(new MapSrcMacroContext(this));
+                        return QueriesGenerated.mapSrcMacro_mapper_a0b0(new MapSrcMacroContext(this));
                       }
 
                     });
@@ -121,12 +121,12 @@ public class Template_OutputRoot_2 extends TemplateDeclarationBase implements Te
                       @NotNull
                       @Override
                       public SNode substitute() throws GenerationFailureException {
-                        return QueriesGenerated.mapSrcMacro_mapper_1202338740199(new MapSrcMacroContext(this));
+                        return QueriesGenerated.mapSrcMacro_mapper_a0c0(new MapSrcMacroContext(this));
                       }
 
                       @Override
                       public void postProcess(@NotNull SNode outputNode) throws GenerationFailureException {
-                        QueriesGenerated.mapSrcMacro_post_mapper_1225236639046(new MapSrcMacroPostProcContext(getTemplateContext(), outputNode, getTemplateNode()));
+                        QueriesGenerated.mapSrcMacro_post_mapper_a0c0(new MapSrcMacroPostProcContext(getTemplateContext(), outputNode, getTemplateNode()));
                       }
                     });
                   }

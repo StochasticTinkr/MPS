@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class MakeMethodStaticAndHaveReferencesUpdatedPositionedOnType_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class MakeMethodStaticAndHaveReferencesUpdatedPositionedOnType_Test exten
 
   @Test
   public void test_MakeMethodStaticAndHaveReferencesUpdatedPositionedOnType() throws Throwable {
-    runTest("jetbrains.mps.editorTest.MakeMethodStaticAndHaveReferencesUpdatedPositionedOnType_Test$TestBody", "testMethod", false);
+    new MakeMethodStaticAndHaveReferencesUpdatedPositionedOnType_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6000820689945021493", "6000820689945021527");

@@ -10,16 +10,16 @@
   </root>
   <root nodeRef="r:d4d12060-4233-4e77-83b8-1701c37af15a(jetbrains.mps.samples.languagePatterns.Basic.generator.template.main@generator)/3803436373353243674">
     <file name="QueriesGenerated.java">
-      <node id="9119725621034483035" at="34,109,35,411" concept="0" />
-      <scope id="9119725621034482889" at="34,109,35,411" />
+      <node id="9119725621034483035" at="34,100,35,411" concept="0" />
+      <scope id="9119725621034482889" at="34,100,35,411" />
     </file>
   </root>
   <root nodeRef="r:d4d12060-4233-4e77-83b8-1701c37af15a(jetbrains.mps.samples.languagePatterns.Basic.generator.template.main@generator)/9119725621034475101">
     <file name="QueriesGenerated.java">
-      <node id="9119725621034481013" at="28,112,29,175" concept="0" />
-      <node id="9119725621034475490" at="31,112,32,252" concept="0" />
-      <scope id="9119725621034481007" at="28,112,29,175" />
-      <scope id="9119725621034475159" at="31,112,32,252" />
+      <node id="9119725621034481013" at="28,98,29,175" concept="0" />
+      <node id="9119725621034475490" at="31,97,32,252" concept="0" />
+      <scope id="9119725621034481007" at="28,98,29,175" />
+      <scope id="9119725621034475159" at="31,97,32,252" />
     </file>
   </root>
 </debug-info>

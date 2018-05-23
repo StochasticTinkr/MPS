@@ -11,15 +11,13 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.List;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.junit.runner.Description;
 import jetbrains.mps.module.ModuleClassLoaderIsNullException;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.classloading.ModuleIsNotLoadableException;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.tool.environment.AbstractEnvironment;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.MPSCoreComponents;
@@ -30,6 +28,7 @@ import java.io.IOException;
 
 /**
  * Knows hot to launch TransformationTest with TestRunner suited for in-process test execution
+ * XXX similar to ScriptTestContributor (for tests executed from command line), although unlike STE supports individual test methods.
  */
 public class NodeWrappersTestsContributor implements TestsContributor {
   private final Iterable<? extends ITestNodeWrapper> myTestNodes;
@@ -52,13 +51,14 @@ public class NodeWrappersTestsContributor implements TestsContributor {
         InProcessExecutionFilter filter = new InProcessExecutionFilter();
         for (ITestNodeWrapper testNode : myTestNodes) {
           String fqName = testNode.getFqName();
-          final SNode tn = testNode.getNode();
-          final SModule module = getModuleByNode(tn);
+          final SModule testModule = testNode.getTestNodeModule().resolve(myProject.getRepository());
+          SNode testNodeSrc = testNode.getNodePointer().resolve(myProject.getRepository());
+          SModel testModel = (testNodeSrc == null ? null : testNodeSrc.getModel());
           if (testNode.isTestCase()) {
             Request requestForClass;
             try {
-              filter.check(testNode, tn);
-              requestForClass = requestForTestClass(fqName, module);
+              filter.check(testNode, testModel);
+              requestForClass = requestForTestClass(fqName, testModule);
             } catch (Exception e) {
               requestForClass = Request.runner(new AssumptionFailedRunner(e, Description.createSuiteDescription(fqName)));
             }
@@ -69,8 +69,8 @@ public class NodeWrappersTestsContributor implements TestsContributor {
             String methodName = fqName.substring(index + 1);
             Request requestForMethod;
             try {
-              filter.check(testNode, tn);
-              final Request classRequest = requestForTestClass(testFqName, module);
+              filter.check(testNode, testModel);
+              final Request classRequest = requestForTestClass(testFqName, testModule);
               requestForMethod = classRequest.filterWith(Description.createTestDescription(testFqName, methodName));
             } catch (Exception e) {
               requestForMethod = Request.runner(new AssumptionFailedRunner(e, Description.createTestDescription(testFqName, methodName)));
@@ -93,13 +93,8 @@ public class NodeWrappersTestsContributor implements TestsContributor {
     if (module instanceof ReloadableModule && myClassloaderManager.isLoadedByMPS(((ReloadableModule) module))) {
       return ((ReloadableModule) module).getOwnClass(fqName);
     } else {
-      throw new ModuleIsNotLoadableException(module, "Module's " + module + " classes are managed by MPS (try setting compileInMPS flag to true)");
+      throw new ClassNotFoundException("Module's " + module + " classes are managed by MPS (try setting compileInMPS flag to true)");
     }
-  }
-
-  private static SModule getModuleByNode(SNode testNode) {
-    final SModel model = SNodeOperations.getModel(testNode);
-    return model.getModule();
   }
 
   /**

@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class LT_MapElement_with_Assignment_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class LT_MapElement_with_Assignment_Test extends BaseTransformationTest {
 
   @Test
   public void test_LT_MapElement_with_Assignment() throws Throwable {
-    runTest("jetbrains.mps.editorTest.LT_MapElement_with_Assignment_Test$TestBody", "testMethod", false);
+    new LT_MapElement_with_Assignment_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3956753173913378559", "3956753173913378561");

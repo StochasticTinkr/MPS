@@ -56,7 +56,7 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
             TemplateContext context2 = context1.subContext();
             {
               Collection<SNode> tlist3 = null;
-              final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_7453996997714666012(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_y3pd1p_b0a0c0d0b0d0c0b3));
+              final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_a0a0a0a_0(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_y3pd1p_b0a0c0d0b0d0c0b3));
               tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_y3pd1p_b0a0c0d0b0d0c0b3, "tpl/r:00000000-0000-4000-0000-011c89590303/7453996997714666010", context2);
               for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
                 tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);
@@ -71,7 +71,7 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
         {
           Collection<SNode> tlist5 = null;
           {
-            final SNode switchInput5 = QueriesGenerated.sourceNodeQuery_7453996997714666020(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_y3pd1p_b0a0a0a1a4a2a1d));
+            final SNode switchInput5 = QueriesGenerated.sourceNodeQuery_a0b0a0(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_y3pd1p_b0a0a0a1a4a2a1d));
             if (switchInput5 == null) {
               tlist5 = Collections.emptyList();
             } else {
@@ -119,7 +119,7 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
             TemplateContext context2 = context1.subContext();
             {
               Collection<SNode> tlist3 = null;
-              final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_1461238478128498765(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_y3pd1p_b0a0c0d0b0d0c0b4));
+              final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_a0a0a0b_1(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_y3pd1p_b0a0c0d0b0d0c0b4));
               tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_y3pd1p_b0a0c0d0b0d0c0b4, "tpl/r:00000000-0000-4000-0000-011c89590303/1461238478128498763", context2);
               for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
                 tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);
@@ -134,7 +134,7 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
         {
           Collection<SNode> tlist5 = null;
           {
-            final SNode switchInput5 = QueriesGenerated.sourceNodeQuery_1461238478128743055(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_y3pd1p_b0a0a0a1a4a2a1e));
+            final SNode switchInput5 = QueriesGenerated.sourceNodeQuery_a0b0a1(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_y3pd1p_b0a0a0a1a4a2a1e));
             if (switchInput5 == null) {
               tlist5 = Collections.emptyList();
             } else {
@@ -182,7 +182,7 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
             TemplateContext context2 = context1.subContext();
             {
               Collection<SNode> tlist3 = null;
-              final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_1219264883986(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_y3pd1p_b0a0c0d0b0d0c0b5));
+              final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_a0a0a0c_0(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_y3pd1p_b0a0c0d0b0d0c0b5));
               tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_y3pd1p_b0a0c0d0b0d0c0b5, "tpl/r:00000000-0000-4000-0000-011c89590303/1219264883984", context2);
               for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
                 tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);
@@ -197,7 +197,7 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
         {
           Collection<SNode> tlist5 = null;
           {
-            final SNode switchInput5 = QueriesGenerated.sourceNodeQuery_1461238478127987009(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_y3pd1p_b0a0a0a1a4a2a1f));
+            final SNode switchInput5 = QueriesGenerated.sourceNodeQuery_a0b0a2(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_y3pd1p_b0a0a0a1a4a2a1f));
             if (switchInput5 == null) {
               tlist5 = Collections.emptyList();
             } else {
@@ -238,13 +238,13 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
         environment.resolve(new RefResolver(tnode1, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), context, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "20719707193801075"), "getDirectSuperConcepts") {
           @Override
           public Object resolve() {
-            return QueriesGenerated.referenceMacro_GetReferent_20719707193801076(createQueryContext());
+            return QueriesGenerated.referenceMacro_GetReferent_a0a0d(createQueryContext());
           }
         });
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_20719707193801062(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_y3pd1p_b0a0c0d0c0b6));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0a3_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_y3pd1p_b0a0c0d0c0b6));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_y3pd1p_b0a0c0d0c0b6, "tpl/r:00000000-0000-4000-0000-011c89590303/20719707193801060", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -254,7 +254,7 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
         {
           final SNode tnode4 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b201L, "BooleanConstant"));
           try {
-            SNodeAccessUtil.setProperty(tnode4, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_20719707193801070(new PropertyMacroContext(context1, "false", propertyMacro_y3pd1p_c0a0c0a0b0e0c0b6))));
+            SNodeAccessUtil.setProperty(tnode4, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0b0a3(new PropertyMacroContext(context1, "false", propertyMacro_y3pd1p_c0a0c0a0b0e0c0b6))));
           } finally {
           }
           tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), tnode4);
@@ -278,13 +278,13 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
         environment.resolve(new RefResolver(tnode1, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), context, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "20719707193823864"), "getAllSuperConcepts") {
           @Override
           public Object resolve() {
-            return QueriesGenerated.referenceMacro_GetReferent_20719707193823865(createQueryContext());
+            return QueriesGenerated.referenceMacro_GetReferent_a0a0e(createQueryContext());
           }
         });
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_20719707193823851(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_y3pd1p_b0a0c0d0c0b7));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0a4(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_y3pd1p_b0a0c0d0c0b7));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_y3pd1p_b0a0c0d0c0b7, "tpl/r:00000000-0000-4000-0000-011c89590303/20719707193823849", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -294,7 +294,7 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
         {
           final SNode tnode4 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b201L, "BooleanConstant"));
           try {
-            SNodeAccessUtil.setProperty(tnode4, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_20719707193823859(new PropertyMacroContext(context1, "false", propertyMacro_y3pd1p_c0a0c0a0b0e0c0b7))));
+            SNodeAccessUtil.setProperty(tnode4, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0b0a4(new PropertyMacroContext(context1, "false", propertyMacro_y3pd1p_c0a0c0a0b0e0c0b7))));
           } finally {
           }
           tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), tnode4);
@@ -318,13 +318,13 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
         environment.resolve(new RefResolver(tnode1, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), context, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "20719707193864681"), "getAllSubConcepts") {
           @Override
           public Object resolve() {
-            return QueriesGenerated.referenceMacro_GetReferent_20719707193864682(createQueryContext());
+            return QueriesGenerated.referenceMacro_GetReferent_a0a0f(createQueryContext());
           }
         });
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_20719707193864667(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_y3pd1p_b0a0c0d0c0b8));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0a5(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_y3pd1p_b0a0c0d0c0b8));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_y3pd1p_b0a0c0d0c0b8, "tpl/r:00000000-0000-4000-0000-011c89590303/20719707193864665", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -333,7 +333,7 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
         }
         {
           Collection<SNode> tlist4 = null;
-          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_20719707193864675(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_y3pd1p_b0a0c0e0c0b8));
+          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_a0b0a5(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_y3pd1p_b0a0c0e0c0b8));
           tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_y3pd1p_b0a0c0e0c0b8, "tpl/r:00000000-0000-4000-0000-011c89590303/20719707193864673", context1);
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -370,7 +370,7 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_4778864149394758482(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_y3pd1p_b0a0c0d0c0b01));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0a7_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_y3pd1p_b0a0c0d0c0b01));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_y3pd1p_b0a0c0d0c0b01, "tpl/r:00000000-0000-4000-0000-011c89590303/4778864149394758480", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -396,7 +396,7 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_4778864149394780278(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_y3pd1p_b0a0c0d0c0b11));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0a8_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_y3pd1p_b0a0c0d0c0b11));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_y3pd1p_b0a0c0d0c0b11, "tpl/r:00000000-0000-4000-0000-011c89590303/4778864149394780276", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);

@@ -7,8 +7,6 @@ import org.apache.log4j.LogManager;
 import org.junit.runners.model.RunnerBuilder;
 import java.io.IOException;
 import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
-import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder;
 import java.util.List;
 import java.util.LinkedList;
 import org.jetbrains.annotations.NotNull;
@@ -28,11 +26,6 @@ public class CommandLineTestsContributor implements TestsContributor {
   public CommandLineTestsContributor(String[] args) throws IOException {
     myArgs = inlineFilesContents(args);
     myRunnerBuilder = new AllDefaultPossibilitiesBuilder(true);
-  }
-
-  public CommandLineTestsContributor(Environment env, String[] args) throws IOException {
-    myArgs = inlineFilesContents(args);
-    myRunnerBuilder = new PushEnvironmentRunnerBuilder(env);
   }
 
   private String[] inlineFilesContents(String[] args) throws IOException {

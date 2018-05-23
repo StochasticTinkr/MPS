@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.EditorUtil;
 
 @MPSLaunch
@@ -21,11 +22,15 @@ public class QueryParameterList_Delete5_Test extends BaseTransformationTest {
 
   @Test
   public void test_QueryParameterList_Delete5() throws Throwable {
-    runTest("jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Delete5_Test$TestBody", "testMethod", false);
+    new QueryParameterList_Delete5_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6252282388788987562", "6252282388788987708");

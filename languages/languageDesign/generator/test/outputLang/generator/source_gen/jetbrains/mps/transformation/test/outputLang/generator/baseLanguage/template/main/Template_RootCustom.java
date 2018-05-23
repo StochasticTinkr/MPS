@@ -104,7 +104,7 @@ public class Template_RootCustom extends TemplateDeclarationBase implements Temp
                   TemplateContext context5 = context4.subContext();
                   {
                     Collection<SNode> tlist11 = null;
-                    final Object varValue11 = QueriesGenerated.insertMacro_varValue_5015072279636761109(new TemplateVarContext(context5, varMacroRef_xizpik_b0a0a1a1a1a1a1a3a1a5a1a4));
+                    final Object varValue11 = QueriesGenerated.insertMacro_varValue_a0a0a1(new TemplateVarContext(context5, varMacroRef_xizpik_b0a0a1a1a1a1a1a3a1a5a1a4));
                     TemplateContext context6 = context5.withVariable("var:var1", varValue11);
                     final SNode tnode12 = environment.createOutputNode(myConcepts[9]);
                     try {
@@ -122,7 +122,7 @@ public class Template_RootCustom extends TemplateDeclarationBase implements Temp
                       {
                         final SNode tnode14 = environment.createOutputNode(myConcepts[10]);
                         try {
-                          SNodeAccessUtil.setProperty(tnode14, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2721957369897795324(new PropertyMacroContext(context7, "0", propertyMacro_xizpik_c0a0c0a0b0e0e0b0b0b0b0d0b0f0b0e))));
+                          SNodeAccessUtil.setProperty(tnode14, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0b(new PropertyMacroContext(context7, "0", propertyMacro_xizpik_c0a0c0a0b0e0e0b0b0b0b0d0b0f0b0e))));
                         } finally {
                         }
                         tnode12.addChild(myAggregationLinks[4], tnode14);
@@ -210,7 +210,7 @@ public class Template_RootCustom extends TemplateDeclarationBase implements Temp
           }
           {
             Collection<SNode> tlist23 = null;
-            final SNode copySrcInput23 = QueriesGenerated.sourceNodeQuery_4146564171992412788(new SourceSubstituteMacroNodeContext(context10, copySrcMacro_xizpik_b0a0c0e0b0g0b0e));
+            final SNode copySrcInput23 = QueriesGenerated.sourceNodeQuery_a0a2(new SourceSubstituteMacroNodeContext(context10, copySrcMacro_xizpik_b0a0c0e0b0g0b0e));
             tlist23 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput23), copySrcMacro_xizpik_b0a0c0e0b0g0b0e, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412785", context10);
             for (SNode child24 : TemplateUtil.asNotNull(tlist23)) {
               tnode20.addChild(myAggregationLinks[10], child24);

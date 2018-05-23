@@ -37,7 +37,7 @@ public class Template_reduce_RoutineDefinition extends TemplateDeclarationBase {
     TemplateContext context1 = context.subContext("routines");
     final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode2, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3308300503039701227(new PropertyMacroContext(context1, "bar", propertyMacro_9qqvr5_c0a0c0a0e0e))));
+      SNodeAccessUtil.setProperty(tnode2, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1b0(new PropertyMacroContext(context1, "bar", propertyMacro_9qqvr5_c0a0c0a0e0e))));
       TemplateContext context2 = context1.subContext();
       {
         final SNode tnode3 = environment.createOutputNode(myConcepts[1]);
@@ -61,7 +61,7 @@ public class Template_reduce_RoutineDefinition extends TemplateDeclarationBase {
           TemplateContext context3 = context2.subContext();
           {
             Collection<SNode> tlist6 = null;
-            final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_3308300503039907032(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_9qqvr5_b0a0c0b0b0e0e0e));
+            final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_a0a0b0(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_9qqvr5_b0a0c0b0b0e0e0e));
             tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_9qqvr5_b0a0c0b0b0e0e0e, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039907017", context3);
             for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
               tnode5.addChild(myAggregationLinks[2], child7);

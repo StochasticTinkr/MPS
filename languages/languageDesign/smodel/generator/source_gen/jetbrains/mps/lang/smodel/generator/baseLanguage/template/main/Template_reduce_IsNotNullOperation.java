@@ -47,7 +47,7 @@ public class Template_reduce_IsNotNullOperation extends TemplateDeclarationBase 
           }
           {
             Collection<SNode> tlist4 = null;
-            final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_1172008623309(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_r8mg05_b0a0c0c0b0b0c0e));
+            final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_a0a0a_4(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_r8mg05_b0a0c0c0b0b0c0e));
             tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_r8mg05_b0a0c0c0b0b0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/1172008609677", context2);
             for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
               tnode2.addChild(myAggregationLinks[1], child5);

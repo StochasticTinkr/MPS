@@ -4,8 +4,9 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.util.annotation.ToRemove;
 
@@ -24,7 +25,23 @@ public interface ITestNodeWrapper<N extends SNode> {
    */
   @Deprecated
   N getNode();
+
   SNodeReference getNodePointer();
+
+  /**
+   * ITestNodeWrapper represents a test that originates at some node. Here, we tell which module this node lives in.
+   * 
+   * PROVISIONAL API, DON'T USE OUTSIDE OF MPS
+   * 
+   * Perhaps, we have to replace this one with a generic 'DependencyConsumer' callback, with distinct methods to register
+   * required deployed modules vs required project/source modules, and to keep the number of this dependencies != exactly 1 as in 
+   * present approach. However, first need to figure out what's TestParameters role would be.
+   * 
+   * @return module of the test node represented by this wrapper
+   */
+  @NotNull
+  SModuleReference getTestNodeModule();
+
   boolean isTestCase();
   @Nullable
   ITestNodeWrapper getTestCase();

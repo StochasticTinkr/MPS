@@ -218,6 +218,7 @@
       <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
         <property id="5858074156537516431" name="text" index="x79VB" />
       </concept>
+      <concept id="6832197706140896242" name="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" flags="ng" index="z59LJ" />
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
@@ -840,6 +841,19 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="5J3TOzBasc_" role="3cqZAp">
+          <node concept="2OqwBi" id="5J3TOzBascA" role="3clFbG">
+            <node concept="37vLTw" id="5J3TOzBascB" role="2Oq$k0">
+              <ref role="3cqZAo" node="39D1ywqTasd" resolve="buf" />
+            </node>
+            <node concept="liA8E" id="5J3TOzBascC" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~StringBuilder.append(char):java.lang.StringBuilder" resolve="append" />
+              <node concept="1Xhbcc" id="5J3TOzBascD" role="37wK5m">
+                <property role="1XhdNS" value="\n" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3Tmbuc" id="39D1ywqTabt" role="1B3o_S" />
       <node concept="3cqZAl" id="39D1ywqTaph" role="3clF45" />
@@ -909,11 +923,11 @@
         </node>
         <node concept="3clFbF" id="7MIYyntDZFc" role="3cqZAp">
           <node concept="37vLTI" id="7MIYyntDZFd" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuTyP" role="37vLTJ">
-              <ref role="3cqZAo" node="7MIYyntDZEQ" resolve="myDifference" />
-            </node>
             <node concept="37vLTw" id="2BHiRxgm6AS" role="37vLTx">
               <ref role="3cqZAo" node="7MIYyntDZF2" resolve="diffs" />
+            </node>
+            <node concept="37vLTw" id="2BHiRxeuTyP" role="37vLTJ">
+              <ref role="3cqZAo" node="7MIYyntDZEQ" resolve="myDifference" />
             </node>
           </node>
         </node>
@@ -994,19 +1008,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="39D1ywqTy$Y" role="3cqZAp">
-          <node concept="2OqwBi" id="39D1ywqTz63" role="3clFbG">
-            <node concept="37vLTw" id="39D1ywqTy$W" role="2Oq$k0">
-              <ref role="3cqZAo" node="39D1ywqTtNJ" resolve="buf" />
-            </node>
-            <node concept="liA8E" id="39D1ywqTzl5" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~StringBuilder.append(char):java.lang.StringBuilder" resolve="append" />
-              <node concept="1Xhbcc" id="39D1ywqTzm2" role="37wK5m">
-                <property role="1XhdNS" value="\n" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="1DcWWT" id="39D1ywqTv6x" role="3cqZAp">
           <node concept="37vLTw" id="39D1ywqTv6y" role="1DdaDG">
             <ref role="3cqZAo" node="7MIYyntDZEQ" resolve="myDifference" />
@@ -1035,19 +1036,6 @@
                     <node concept="37vLTw" id="39D1ywqT$b5" role="3uHU7B">
                       <ref role="3cqZAo" node="39D1ywqTtNL" resolve="indent" />
                     </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="39D1ywqT_rX" role="3cqZAp">
-              <node concept="2OqwBi" id="39D1ywqT_NA" role="3clFbG">
-                <node concept="37vLTw" id="39D1ywqT_rV" role="2Oq$k0">
-                  <ref role="3cqZAo" node="39D1ywqTtNJ" resolve="buf" />
-                </node>
-                <node concept="liA8E" id="39D1ywqTA3T" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~StringBuilder.append(char):java.lang.StringBuilder" resolve="append" />
-                  <node concept="1Xhbcc" id="39D1ywqTA4I" role="37wK5m">
-                    <property role="1XhdNS" value="\n" />
                   </node>
                 </node>
               </node>
@@ -1250,11 +1238,55 @@
   <node concept="312cEu" id="7MIYyntE09$">
     <property role="TrG5h" value="NodesMatcher" />
     <property role="1EXbeo" value="true" />
+    <node concept="3UR2Jj" id="5wEVZcC323f" role="lGtFl">
+      <node concept="TZ5HA" id="5wEVZcC323g" role="TZ5H$">
+        <node concept="1dT_AC" id="5wEVZcC323h" role="1dT_Ay">
+          <property role="1dT_AB" value="XXX could add options to parameterize instance prior to diff. E.g. dumpDiff()/debugDiff to use in scenarios where diff().isEmpty() is used but it's handy to see true diff in case anything goes wrong" />
+        </node>
+      </node>
+    </node>
     <node concept="312cEg" id="4OzBQ_josYs" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myMap" />
       <property role="3TUv4t" value="true" />
+      <node concept="z59LJ" id="6VhyYlfLhxa" role="lGtFl">
+        <node concept="TZ5HA" id="6VhyYlfLhxb" role="TZ5H$">
+          <node concept="1dT_AC" id="6VhyYlfLhxc" role="1dT_Ay">
+            <property role="1dT_AB" value="AFAIU, it's a map of 'structural' correspondence, which is used to ensure reference " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="6VhyYlfLih2" role="TZ5H$">
+          <node concept="1dT_AC" id="6VhyYlfLih3" role="1dT_Ay">
+            <property role="1dT_AB" value="targets of nodes being matched point to the same element within the model structure." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="6VhyYlfLj0P" role="TZ5H$">
+          <node concept="1dT_AC" id="6VhyYlfLj0Q" role="1dT_Ay">
+            <property role="1dT_AB" value="Personally, I don't see why it's reasonable to keep map of a e.g. whole model just to " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="6VhyYlfLjKG" role="TZ5H$">
+          <node concept="1dT_AC" id="6VhyYlfLjKH" role="1dT_Ay">
+            <property role="1dT_AB" value="ensure structural match provided we ensure equal structure by regular parent-child " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="6VhyYlfLkwB" role="TZ5H$">
+          <node concept="1dT_AC" id="6VhyYlfLkwC" role="1dT_Ay">
+            <property role="1dT_AB" value="walk approach. I'd rather perform matching of reference targets (if they are from the same " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="6VhyYlfLlgA" role="TZ5H$">
+          <node concept="1dT_AC" id="6VhyYlfLlgB" role="1dT_Ay">
+            <property role="1dT_AB" value="model; and do it only once). However, there's code that uses the map (editor tests) " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="6VhyYlfLm0D" role="TZ5H$">
+          <node concept="1dT_AC" id="6VhyYlfLm0E" role="1dT_Ay">
+            <property role="1dT_AB" value="which  I need to refactor first." />
+          </node>
+        </node>
+      </node>
       <node concept="3Tm6S6" id="4OzBQ_jor59" role="1B3o_S" />
       <node concept="3uibUv" id="4OzBQ_josLV" role="1tU5fm">
         <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
@@ -1291,6 +1323,18 @@
     <node concept="2tJIrI" id="7ofrMmP9SOe" role="jymVt" />
     <node concept="3Tm1VV" id="7MIYyntE09_" role="1B3o_S" />
     <node concept="3clFbW" id="7MIYyntE09A" role="jymVt">
+      <node concept="2AHcQZ" id="39D1ywqVjVu" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="P$JXv" id="39D1ywqVjVr" role="lGtFl">
+        <node concept="TZ5HI" id="39D1ywqVjVs" role="3nqlJM">
+          <node concept="TZ5HA" id="39D1ywqVjVt" role="3HnX3l">
+            <node concept="1dT_AC" id="39D1ywqVoxF" role="1dT_Ay">
+              <property role="1dT_AB" value="use cons that takes matched nodes" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3Tm1VV" id="7MIYyntE09B" role="1B3o_S" />
       <node concept="3cqZAl" id="7MIYyntE09C" role="3clF45" />
       <node concept="3clFbS" id="7MIYyntE09D" role="3clF47">
@@ -1340,21 +1384,21 @@
           </node>
         </node>
       </node>
-      <node concept="P$JXv" id="39D1ywqVjVr" role="lGtFl">
-        <node concept="TZ5HI" id="39D1ywqVjVs" role="3nqlJM">
-          <node concept="TZ5HA" id="39D1ywqVjVt" role="3HnX3l">
-            <node concept="1dT_AC" id="39D1ywqVoxF" role="1dT_Ay">
+    </node>
+    <node concept="2tJIrI" id="7ofrMmP9U1z" role="jymVt" />
+    <node concept="3clFbW" id="4OzBQ_joz01" role="jymVt">
+      <node concept="2AHcQZ" id="39D1ywqVoxL" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="P$JXv" id="39D1ywqVoxI" role="lGtFl">
+        <node concept="TZ5HI" id="39D1ywqVoxJ" role="3nqlJM">
+          <node concept="TZ5HA" id="39D1ywqVoxK" role="3HnX3l">
+            <node concept="1dT_AC" id="39D1ywqVoMZ" role="1dT_Ay">
               <property role="1dT_AB" value="use cons that takes matched nodes" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="2AHcQZ" id="39D1ywqVjVu" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7ofrMmP9U1z" role="jymVt" />
-    <node concept="3clFbW" id="4OzBQ_joz01" role="jymVt">
       <node concept="3Tm1VV" id="4OzBQ_joz02" role="1B3o_S" />
       <node concept="3cqZAl" id="4OzBQ_joz03" role="3clF45" />
       <node concept="3clFbS" id="4OzBQ_joz04" role="3clF47">
@@ -1405,18 +1449,6 @@
             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
           </node>
         </node>
-      </node>
-      <node concept="P$JXv" id="39D1ywqVoxI" role="lGtFl">
-        <node concept="TZ5HI" id="39D1ywqVoxJ" role="3nqlJM">
-          <node concept="TZ5HA" id="39D1ywqVoxK" role="3HnX3l">
-            <node concept="1dT_AC" id="39D1ywqVoMZ" role="1dT_Ay">
-              <property role="1dT_AB" value="use cons that takes matched nodes" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="39D1ywqVoxL" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2tJIrI" id="39D1ywqVoN1" role="jymVt" />
@@ -2131,6 +2163,9 @@
               </node>
             </node>
             <node concept="2OqwBi" id="4OzBQ_jpInr" role="33vP2m">
+              <node concept="liA8E" id="39D1ywqYEM8" role="2OqNvi">
+                <ref role="37wK5l" node="39D1ywqVH_i" resolve="diff" />
+              </node>
               <node concept="2ShNRf" id="4OzBQ_jpIns" role="2Oq$k0">
                 <node concept="1pGfFk" id="4OzBQ_jpInt" role="2ShVmc">
                   <ref role="37wK5l" node="39D1ywqVsdl" resolve="NodesMatcher" />
@@ -2141,9 +2176,6 @@
                     <ref role="3cqZAo" node="7MIYyntE09J" resolve="b" />
                   </node>
                 </node>
-              </node>
-              <node concept="liA8E" id="39D1ywqYEM8" role="2OqNvi">
-                <ref role="37wK5l" node="39D1ywqVH_i" resolve="diff" />
               </node>
             </node>
           </node>
@@ -2268,6 +2300,29 @@
     <node concept="2tJIrI" id="ORe5oE6TDR" role="jymVt" />
     <node concept="3clFb_" id="4OzBQ_jpsdg" role="jymVt">
       <property role="TrG5h" value="match" />
+      <node concept="2AHcQZ" id="39D1ywqYsjX" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="P$JXv" id="39D1ywqYsjU" role="lGtFl">
+        <node concept="TZ5HI" id="39D1ywqYsjV" role="3nqlJM">
+          <node concept="TZ5HA" id="39D1ywqYsjW" role="3HnX3l">
+            <node concept="1dT_AC" id="39D1ywqYtuv" role="1dT_Ay">
+              <property role="1dT_AB" value="use " />
+            </node>
+            <node concept="1dT_AA" id="39D1ywqYtuy" role="1dT_Ay">
+              <node concept="92FcH" id="39D1ywqYtuC" role="qph3F">
+                <node concept="TZ5HA" id="39D1ywqYtuE" role="2XjZqd" />
+                <node concept="VXe0Z" id="39D1ywqYyqt" role="92FcQ">
+                  <ref role="VXe0S" node="39D1ywqVH_i" resolve="diff" />
+                </node>
+              </node>
+            </node>
+            <node concept="1dT_AC" id="39D1ywqYtux" role="1dT_Ay">
+              <property role="1dT_AB" value=" instead" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3uibUv" id="4OzBQ_jptd9" role="3clF45">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="4OzBQ_jptyq" role="11_B2D">
@@ -2279,12 +2334,6 @@
         <node concept="3cpWs8" id="7MIYyntE0bB" role="3cqZAp">
           <node concept="3cpWsn" id="7MIYyntE0bC" role="3cpWs9">
             <property role="TrG5h" value="ret" />
-            <node concept="3uibUv" id="7MIYyntE0bD" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="3uibUv" id="7MIYyntE0qM" role="11_B2D">
-                <ref role="3uigEE" node="7MIYyntDZEK" resolve="NodeDifference" />
-              </node>
-            </node>
             <node concept="2OqwBi" id="39D1ywqXODQ" role="33vP2m">
               <node concept="2ShNRf" id="39D1ywqXJeV" role="2Oq$k0">
                 <node concept="1pGfFk" id="39D1ywqXKFZ" role="2ShVmc">
@@ -2299,6 +2348,12 @@
               </node>
               <node concept="liA8E" id="39D1ywqXQ3j" role="2OqNvi">
                 <ref role="37wK5l" node="39D1ywqVH_i" resolve="diff" />
+              </node>
+            </node>
+            <node concept="3uibUv" id="7MIYyntE0bD" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+              <node concept="3uibUv" id="7MIYyntE0qM" role="11_B2D">
+                <ref role="3uigEE" node="7MIYyntDZEK" resolve="NodeDifference" />
               </node>
             </node>
           </node>
@@ -2337,29 +2392,6 @@
             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
           </node>
         </node>
-      </node>
-      <node concept="P$JXv" id="39D1ywqYsjU" role="lGtFl">
-        <node concept="TZ5HI" id="39D1ywqYsjV" role="3nqlJM">
-          <node concept="TZ5HA" id="39D1ywqYsjW" role="3HnX3l">
-            <node concept="1dT_AC" id="39D1ywqYtuv" role="1dT_Ay">
-              <property role="1dT_AB" value="use " />
-            </node>
-            <node concept="1dT_AA" id="39D1ywqYtuy" role="1dT_Ay">
-              <node concept="92FcH" id="39D1ywqYtuC" role="qph3F">
-                <node concept="TZ5HA" id="39D1ywqYtuE" role="2XjZqd" />
-                <node concept="VXe0Z" id="39D1ywqYyqt" role="92FcQ">
-                  <ref role="VXe0S" node="39D1ywqVH_i" resolve="diff" />
-                </node>
-              </node>
-            </node>
-            <node concept="1dT_AC" id="39D1ywqYtux" role="1dT_Ay">
-              <property role="1dT_AB" value=" instead" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="39D1ywqYsjX" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2tJIrI" id="ORe5oE6Wx9" role="jymVt" />
@@ -2739,6 +2771,29 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <property role="2aFKle" value="false" />
+      <node concept="2AHcQZ" id="39D1ywr1KT3" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="P$JXv" id="39D1ywr1KT0" role="lGtFl">
+        <node concept="TZ5HI" id="39D1ywr1KT1" role="3nqlJM">
+          <node concept="TZ5HA" id="39D1ywr1KT2" role="3HnX3l">
+            <node concept="1dT_AC" id="39D1ywr1Myv" role="1dT_Ay">
+              <property role="1dT_AB" value="use cons with args and " />
+            </node>
+            <node concept="1dT_AA" id="39D1ywr1Myy" role="1dT_Ay">
+              <node concept="92FcH" id="39D1ywr1MyC" role="qph3F">
+                <node concept="TZ5HA" id="39D1ywr1MyE" role="2XjZqd" />
+                <node concept="VXe0Z" id="39D1ywr1S5Q" role="92FcQ">
+                  <ref role="VXe0S" node="39D1ywqVH_i" resolve="diff" />
+                </node>
+              </node>
+            </node>
+            <node concept="1dT_AC" id="39D1ywr1Myx" role="1dT_Ay">
+              <property role="1dT_AB" value="" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3clFbS" id="4OzBQ_joRGI" role="3clF47">
         <node concept="3cpWs8" id="39D1ywr0L6_" role="3cqZAp">
           <node concept="3cpWsn" id="39D1ywr0L6A" role="3cpWs9">
@@ -2830,29 +2885,6 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="4OzBQ_joRGQ" role="1B3o_S" />
-      <node concept="P$JXv" id="39D1ywr1KT0" role="lGtFl">
-        <node concept="TZ5HI" id="39D1ywr1KT1" role="3nqlJM">
-          <node concept="TZ5HA" id="39D1ywr1KT2" role="3HnX3l">
-            <node concept="1dT_AC" id="39D1ywr1Myv" role="1dT_Ay">
-              <property role="1dT_AB" value="use cons with args and " />
-            </node>
-            <node concept="1dT_AA" id="39D1ywr1Myy" role="1dT_Ay">
-              <node concept="92FcH" id="39D1ywr1MyC" role="qph3F">
-                <node concept="TZ5HA" id="39D1ywr1MyE" role="2XjZqd" />
-                <node concept="VXe0Z" id="39D1ywr1S5Q" role="92FcQ">
-                  <ref role="VXe0S" node="39D1ywqVH_i" resolve="diff" />
-                </node>
-              </node>
-            </node>
-            <node concept="1dT_AC" id="39D1ywr1Myx" role="1dT_Ay">
-              <property role="1dT_AB" value="" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="39D1ywr1KT3" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
     </node>
     <node concept="2tJIrI" id="ORe5oE6XWP" role="jymVt" />
     <node concept="2YIFZL" id="7MIYyntE0ec" role="jymVt">
@@ -4295,13 +4327,6 @@
       <node concept="2tJIrI" id="39D1ywqYTa$" role="jymVt" />
     </node>
     <node concept="2tJIrI" id="4OzBQ_jpgf0" role="jymVt" />
-    <node concept="3UR2Jj" id="5wEVZcC323f" role="lGtFl">
-      <node concept="TZ5HA" id="5wEVZcC323g" role="TZ5H$">
-        <node concept="1dT_AC" id="5wEVZcC323h" role="1dT_Ay">
-          <property role="1dT_AB" value="XXX could add options to parameterize instance prior to diff. E.g. dumpDiff()/debugDiff to use in scenarios where diff().isEmpty() is used but it's handy to see true diff in case anything goes wrong" />
-        </node>
-      </node>
-    </node>
   </node>
   <node concept="312cEu" id="7MIYyntE0kF">
     <property role="TrG5h" value="PropertyDifference" />

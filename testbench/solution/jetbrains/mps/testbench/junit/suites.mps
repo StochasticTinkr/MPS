@@ -2,13 +2,13 @@
 <model ref="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
@@ -53,6 +53,8 @@
     <import index="k76n" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runner.notification(JUnit/)" />
     <import index="k2t0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.checkers(MPS.Core/)" />
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
+    <import index="lur" ref="r:fc8379f0-84d2-4927-817e-ae0057474174(jetbrains.mps.lang.test.generator.structure)" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -343,6 +345,9 @@
       </concept>
       <concept id="1678062499342629858" name="jetbrains.mps.lang.smodel.structure.ModuleRefExpression" flags="ng" index="37shsh">
         <child id="1678062499342629861" name="moduleId" index="37shsm" />
+      </concept>
+      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
+        <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -2980,6 +2985,115 @@
                               </node>
                               <node concept="2RRcyG" id="75VlsX0PbPX" role="2OqNvi">
                                 <ref role="2RRcyH" to="tpe3:hGB2rPm" resolve="ITestCase" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3cpWs8" id="1Wxy7WpigOF" role="3cqZAp">
+                            <node concept="3cpWsn" id="1Wxy7WpigOD" role="3cpWs9">
+                              <property role="3TUv4t" value="true" />
+                              <property role="TrG5h" value="packageStmt" />
+                              <node concept="17QB3L" id="1Wxy7Wpihas" role="1tU5fm" />
+                              <node concept="2YIFZM" id="1Wxy7Wpijy6" role="33vP2m">
+                                <ref role="37wK5l" to="18ew:~JavaNameUtil.packageName(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="packageName" />
+                                <ref role="1Pybhc" to="18ew:~JavaNameUtil" resolve="JavaNameUtil" />
+                                <node concept="2GrUjf" id="1Wxy7WpijWR" role="37wK5m">
+                                  <ref role="2Gs0qQ" node="1CBc8rDv53L" resolve="model" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="2Gpval" id="1Wxy7WpifYP" role="3cqZAp">
+                            <node concept="2GrKxI" id="1Wxy7WpifYR" role="2Gsz3X">
+                              <property role="TrG5h" value="gt" />
+                            </node>
+                            <node concept="3clFbS" id="1Wxy7WpifYV" role="2LFqv$">
+                              <node concept="3cpWs8" id="1Wxy7Wpim31" role="3cqZAp">
+                                <node concept="3cpWsn" id="1Wxy7Wpim34" role="3cpWs9">
+                                  <property role="TrG5h" value="testClassName" />
+                                  <node concept="17QB3L" id="1Wxy7Wpim30" role="1tU5fm" />
+                                  <node concept="2YIFZM" id="1Wxy7WpioSa" role="33vP2m">
+                                    <ref role="37wK5l" to="18ew:~NameUtil.longNameFromNamespaceAndShortName(java.lang.String,java.lang.String):java.lang.String" resolve="longNameFromNamespaceAndShortName" />
+                                    <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                                    <node concept="37vLTw" id="1Wxy7WpiplQ" role="37wK5m">
+                                      <ref role="3cqZAo" node="1Wxy7WpigOD" resolve="packageStmt" />
+                                    </node>
+                                    <node concept="2OqwBi" id="1Wxy7WpiqAP" role="37wK5m">
+                                      <node concept="2GrUjf" id="1Wxy7Wpiq9z" role="2Oq$k0">
+                                        <ref role="2Gs0qQ" node="1Wxy7WpifYR" resolve="gt" />
+                                      </node>
+                                      <node concept="3TrcHB" id="1Wxy7WpitWs" role="2OqNvi">
+                                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="SfApY" id="1Wxy7WpiDXj" role="3cqZAp">
+                                <node concept="3clFbS" id="1Wxy7WpiDXl" role="SfCbr">
+                                  <node concept="3clFbF" id="1Wxy7Wpiv_y" role="3cqZAp">
+                                    <node concept="2OqwBi" id="1Wxy7WpiwkV" role="3clFbG">
+                                      <node concept="37vLTw" id="1Wxy7Wpiv_w" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="1CBc8rDvbMx" resolve="result" />
+                                      </node>
+                                      <node concept="liA8E" id="1Wxy7WpixR8" role="2OqNvi">
+                                        <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
+                                        <node concept="2OqwBi" id="1Wxy7WpiyWz" role="37wK5m">
+                                          <node concept="37vLTw" id="1Wxy7Wpiyy3" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="1CBc8rDsOGR" resolve="builder" />
+                                          </node>
+                                          <node concept="liA8E" id="1Wxy7WpizXV" role="2OqNvi">
+                                            <ref role="37wK5l" to="7cms:~RunnerBuilder.safeRunnerForClass(java.lang.Class):org.junit.runner.Runner" resolve="safeRunnerForClass" />
+                                            <node concept="2OqwBi" id="1Wxy7Wpi_2t" role="37wK5m">
+                                              <node concept="37vLTw" id="1Wxy7Wpi$vS" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="4oW2E9aSh9B" resolve="moduleCL" />
+                                              </node>
+                                              <node concept="liA8E" id="1Wxy7Wpi_My" role="2OqNvi">
+                                                <ref role="37wK5l" to="wyt6:~ClassLoader.loadClass(java.lang.String):java.lang.Class" resolve="loadClass" />
+                                                <node concept="37vLTw" id="1Wxy7WpiB4j" role="37wK5m">
+                                                  <ref role="3cqZAo" node="1Wxy7Wpim34" resolve="testClassName" />
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="TDmWw" id="1Wxy7WpiDXm" role="TEbGg">
+                                  <node concept="3cpWsn" id="1Wxy7WpiDXo" role="TDEfY">
+                                    <property role="TrG5h" value="ex" />
+                                    <node concept="3uibUv" id="1Wxy7WpiIgI" role="1tU5fm">
+                                      <ref role="3uigEE" to="wyt6:~ClassNotFoundException" resolve="ClassNotFoundException" />
+                                    </node>
+                                  </node>
+                                  <node concept="3clFbS" id="1Wxy7WpiDXs" role="TDEfX">
+                                    <node concept="RRSsy" id="1Wxy7WpiJh_" role="3cqZAp">
+                                      <property role="RRSoG" value="warn" />
+                                      <node concept="3cpWs3" id="1Wxy7WpiJhC" role="RRSoy">
+                                        <node concept="Xl_RD" id="1Wxy7WpiJhD" role="3uHU7B">
+                                          <property role="Xl_RC" value="Cannot find the test class " />
+                                        </node>
+                                        <node concept="37vLTw" id="1Wxy7WpiJhE" role="3uHU7w">
+                                          <ref role="3cqZAo" node="1Wxy7Wpim34" resolve="testClassName" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="1Wxy7Wpil8M" role="2GsD0m">
+                              <node concept="1eOMI4" id="1Wxy7Wpil8N" role="2Oq$k0">
+                                <node concept="10QFUN" id="1Wxy7Wpil8O" role="1eOMHV">
+                                  <node concept="2GrUjf" id="1Wxy7Wpil8P" role="10QFUP">
+                                    <ref role="2Gs0qQ" node="1CBc8rDv53L" resolve="model" />
+                                  </node>
+                                  <node concept="H_c77" id="1Wxy7Wpil8Q" role="10QFUM" />
+                                </node>
+                              </node>
+                              <node concept="2RRcyG" id="1Wxy7Wpil8R" role="2OqNvi">
+                                <ref role="2RRcyH" to="lur:uLQNrGW9aY" resolve="GeneratorTest" />
                               </node>
                             </node>
                           </node>

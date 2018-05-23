@@ -39,7 +39,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
   }
   @Override
   public boolean isApplicable(@NotNull ITemplateGenerator generator) {
-    return QueriesGenerated.mappingConfiguration_Condition_7496726876599722461(new TemplateQueryContext(getMappingNode(), generator));
+    return QueriesGenerated.mappingConfiguration_Condition_a(new TemplateQueryContext(getMappingNode(), generator));
   }
   @Override
   public Collection<TemplateReductionRule> getReductionRules() {
@@ -67,7 +67,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_7496726876599916822(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0b0b7)))).apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_a0b(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0b0b7)))).apply(environment, context);
       return tlist1;
     }
   }
@@ -77,14 +77,14 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_4929591503636513204(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a2(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      if (QueriesGenerated.baseMappingRule_Condition_7496726876599935510(new BaseMappingRuleContext(context, rule_ief6mt_b0a0c0c8))) {
-        Collection<SNode> tlist2 = new Template_reduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_7496726876599937591(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0a0c0c8)))).apply(environment, context);
+      if (QueriesGenerated.baseMappingRule_Condition_a0a2(new BaseMappingRuleContext(context, rule_ief6mt_b0a0c0c8))) {
+        Collection<SNode> tlist2 = new Template_reduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_a0a0c(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0a0c0c8)))).apply(environment, context);
         tlist1 = tlist2;
       } else {
         DismissTopMappingRuleException ex_zu1o_a0c = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "shall not hit here");
@@ -101,20 +101,20 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_4929591503636589503(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a3(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      if (QueriesGenerated.ifMacro_Condition_4929591503636643306(new IfMacroContext(context, ifMacroRef_ief6mt_b0a0c0c9))) {
+      if (QueriesGenerated.ifMacro_Condition_a0a0d(new IfMacroContext(context, ifMacroRef_ief6mt_b0a0c0c9))) {
         final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core"), 0x10802efe25aL, "BaseConcept"));
         try {
         } finally {
         }
         tlist1 = TemplateUtil.singletonList(tnode2);
       } else {
-        Collection<SNode> tlist3 = new Template_reduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_4929591503636646079(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0a0a2a2j)))).apply(environment, context);
+        Collection<SNode> tlist3 = new Template_reduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_a0a0a3(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0a0a2a2j)))).apply(environment, context);
         tlist1 = tlist3;
       }
       return tlist1;
@@ -126,20 +126,20 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_4929591503636614138(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a4(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      if (QueriesGenerated.baseMappingRule_Condition_4929591503636676782(new BaseMappingRuleContext(context, rule_ief6mt_b0a0c0c01))) {
+      if (QueriesGenerated.baseMappingRule_Condition_a0a4(new BaseMappingRuleContext(context, rule_ief6mt_b0a0c0c01))) {
         final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core"), 0x10802efe25aL, "BaseConcept"));
         try {
         } finally {
         }
         tlist1 = TemplateUtil.singletonList(tnode2);
       } else {
-        Collection<SNode> tlist3 = new Template_reduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_4929591503636680081(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0a0a2a2k)))).apply(environment, context);
+        Collection<SNode> tlist3 = new Template_reduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_a0a4(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0a0a2a2k)))).apply(environment, context);
         tlist1 = tlist3;
       }
       return tlist1;

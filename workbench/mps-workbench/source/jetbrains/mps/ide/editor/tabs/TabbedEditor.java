@@ -121,9 +121,9 @@ public class TabbedEditor extends BaseNodeEditor {
     showNode(myBaseNode.resolve(myProject.getRepository()), false);
 
     myNextTabAction = new ShadowAction(new BaseNavigationAction(() -> myTabsComponent.nextTab()),
-        ActionManager.getInstance().getAction(IdeActions.ACTION_NEXT_EDITOR_TAB), getComponent());
+        ActionManager.getInstance().getAction(IdeActions.ACTION_NEXT_EDITOR_TAB), getComponent(), this::dispose);
     myPrevTabAction = new ShadowAction(new BaseNavigationAction(() -> myTabsComponent.prevTab()),
-        ActionManager.getInstance().getAction(IdeActions.ACTION_PREVIOUS_EDITOR_TAB), getComponent());
+        ActionManager.getInstance().getAction(IdeActions.ACTION_PREVIOUS_EDITOR_TAB), getComponent(), this::dispose);
 
     final AnAction addAction = new AddAspectAction(mpsProject, myBaseNode, myPossibleTabs, new SetTabsComponentNode()) {
       @Override
@@ -172,8 +172,6 @@ public class TabbedEditor extends BaseNodeEditor {
     myFileStatusListener.detach();
     EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
 
-    myNextTabAction.dispose();
-    myPrevTabAction.dispose();
     myProject.getModelAccess().runReadAction(() -> {
       myRepoChangeListener.unsubscribeFrom(myProject.getRepository());
       myNameListener.detach();

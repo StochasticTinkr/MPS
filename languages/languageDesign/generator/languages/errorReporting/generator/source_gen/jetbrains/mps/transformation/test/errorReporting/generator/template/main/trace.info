@@ -9,12 +9,12 @@
   </root>
   <root nodeRef="r:3798d2f2-a073-4371-ba96-7ecb5095570e(jetbrains.mps.transformation.test.errorReporting.generator.template.main@generator)/7287346816896111111">
     <file name="QueriesGenerated.java">
-      <node id="7287346816896205625" at="28,110,29,194" concept="0" />
-      <node id="7287346816896226967" at="31,122,32,16" concept="0" />
-      <node id="6145560071556217187" at="34,122,35,61" concept="0" />
-      <scope id="7287346816896135374" at="28,110,29,194" />
-      <scope id="7287346816896128677" at="31,122,32,16" />
-      <scope id="6145560071556216093" at="34,122,35,61" />
+      <node id="7287346816896205625" at="28,93,29,194" concept="0" />
+      <node id="7287346816896226967" at="31,105,32,16" concept="0" />
+      <node id="6145560071556217187" at="34,105,35,61" concept="0" />
+      <scope id="7287346816896135374" at="28,93,29,194" />
+      <scope id="7287346816896128677" at="31,105,32,16" />
+      <scope id="6145560071556216093" at="34,105,35,61" />
     </file>
   </root>
 </debug-info>

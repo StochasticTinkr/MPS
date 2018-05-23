@@ -10,18 +10,18 @@
   </root>
   <root nodeRef="r:1001eaaf-b3eb-45aa-8fc4-05df7efd348d(jetbrains.mps.editor.contextActionsTool.lang.menus.generator.template.main@generator)/5126791860783333079">
     <file name="QueriesGenerated.java">
-      <node id="5126791860784859155" at="27,94,28,347" concept="0" />
-      <node id="5126791860784890482" at="33,108,34,337" concept="0" />
-      <scope id="5126791860784856979" at="27,94,28,347" />
-      <scope id="5126791860784889193" at="33,108,34,337" />
+      <node id="5126791860784859155" at="27,80,28,347" concept="0" />
+      <node id="5126791860784890482" at="33,94,34,337" concept="0" />
+      <scope id="5126791860784856979" at="27,80,28,347" />
+      <scope id="5126791860784889193" at="33,94,34,337" />
     </file>
   </root>
   <root nodeRef="r:1001eaaf-b3eb-45aa-8fc4-05df7efd348d(jetbrains.mps.editor.contextActionsTool.lang.menus.generator.template.main@generator)/5126791860783344254">
     <file name="QueriesGenerated.java">
-      <node id="5126791860784906525" at="30,94,31,347" concept="0" />
-      <node id="5126791860784906540" at="36,108,37,337" concept="0" />
-      <scope id="5126791860784906524" at="30,94,31,347" />
-      <scope id="5126791860784906539" at="36,108,37,337" />
+      <node id="5126791860784906525" at="30,82,31,347" concept="0" />
+      <node id="5126791860784906540" at="36,96,37,337" concept="0" />
+      <scope id="5126791860784906524" at="30,82,31,347" />
+      <scope id="5126791860784906539" at="36,96,37,337" />
     </file>
   </root>
 </debug-info>

@@ -7,7 +7,6 @@ import org.apache.log4j.BasicConfigurator;
 import org.jetbrains.annotations.NotNull;
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.Request;
-import java.io.IOException;
 
 /**
  * Command-line front-end to launch BTestCase or JUnit3/JUnit4 ClassConcept without need for MPS instance/environment
@@ -50,7 +49,7 @@ public class DefaultTestExecutor extends JUnitTestExecutor {
   /**
    * Called when BTestCase or JUnit3/JUnit4 ClassConcept is executed without need for MPS instance/environment
    */
-  public static void main(String[] args) throws ClassNotFoundException, IOException {
+  public static void main(String[] args) throws Exception {
     DefaultTestExecutor executor = new DefaultTestExecutor(new CommandLineTestsContributor(args));
     try {
       executor.run();

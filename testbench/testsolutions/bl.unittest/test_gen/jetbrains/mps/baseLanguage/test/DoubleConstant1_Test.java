@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class DoubleConstant1_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class DoubleConstant1_Test extends BaseTransformationTest {
 
   @Test
   public void test_DoubleConstant1() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.DoubleConstant1_Test$TestBody", "testMethod", false);
+    new DoubleConstant1_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("5868639094267614279", "5868639094267615301");

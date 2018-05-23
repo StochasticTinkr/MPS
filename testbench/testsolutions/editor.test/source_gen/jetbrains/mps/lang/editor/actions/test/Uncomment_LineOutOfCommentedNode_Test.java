@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class Uncomment_LineOutOfCommentedNode_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class Uncomment_LineOutOfCommentedNode_Test extends BaseTransformationTes
 
   @Test
   public void test_Uncomment_LineOutOfCommentedNode() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.actions.test.Uncomment_LineOutOfCommentedNode_Test$TestBody", "testMethod", false);
+    new Uncomment_LineOutOfCommentedNode_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("5639868649489841076", "5639868649489841090");

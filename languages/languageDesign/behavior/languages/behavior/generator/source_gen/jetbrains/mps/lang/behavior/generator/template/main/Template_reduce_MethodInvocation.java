@@ -44,13 +44,13 @@ public class Template_reduce_MethodInvocation extends TemplateDeclarationBase {
       environment.resolve(new RefResolver(tnode1, myAssociationLinks[0], context, new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "391057745364430041"), "bhMethodImpl") {
         @Override
         public Object resolve() {
-          return QueriesGenerated.referenceMacro_GetReferent_391057745364430042(createQueryContext());
+          return QueriesGenerated.referenceMacro_GetReferent_a0a0a0(createQueryContext());
         }
       });
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        if (QueriesGenerated.ifMacro_Condition_391057745364429981(new IfMacroContext(context1, ifMacroRef_xgjiki_b0a0b0c0c0e))) {
+        if (QueriesGenerated.ifMacro_Condition_a0a0a0a(new IfMacroContext(context1, ifMacroRef_xgjiki_b0a0b0c0c0e))) {
           final SNode tnode3 = environment.createOutputNode(myConcepts[1]);
           try {
             environment.resolveInTemplateLater(tnode3, myAssociationLinks[1], templateNode_xgjiki_c0a0a1a1a2a2a4, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/4547736967710446796", "node", context1);
@@ -72,7 +72,7 @@ public class Template_reduce_MethodInvocation extends TemplateDeclarationBase {
       }
       {
         final List<SNode> tlist6 = new ArrayList<SNode>();
-        final Iterable<SNode> loopList6 = QueriesGenerated.sourceNodesQuery_4279359955659694569(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_xgjiki_b0a0a1a3a2a4));
+        final Iterable<SNode> loopList6 = QueriesGenerated.sourceNodesQuery_a0b0a0a(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_xgjiki_b0a0a1a3a2a4));
         int loopIndex_parameterCounter_6 = 0;
         for (SNode itnode6 : loopList6) {
           if (itnode6 == null) {
@@ -81,7 +81,7 @@ public class Template_reduce_MethodInvocation extends TemplateDeclarationBase {
           TemplateContext context2 = context1.subContext(itnode6);
           context2 = context2.withVariable("cv:parameterCounter", loopIndex_parameterCounter_6++);
           Collection<SNode> tlist7 = null;
-          if (QueriesGenerated.ifMacro_Condition_4279359955659716962(new IfMacroContext(context2, ifMacroRef_xgjiki_b0a0e0d0d0c0e))) {
+          if (QueriesGenerated.ifMacro_Condition_a1b0a0a(new IfMacroContext(context2, ifMacroRef_xgjiki_b0a0e0d0d0c0e))) {
             final SNode tnode8 = environment.createOutputNode(myConcepts[2]);
             try {
               TemplateContext context3 = context2.subContext();
@@ -95,7 +95,7 @@ public class Template_reduce_MethodInvocation extends TemplateDeclarationBase {
                       TemplateContext context5 = context4.subContext();
                       {
                         Collection<SNode> tlist11 = null;
-                        final SNode copySrcInput11 = QueriesGenerated.sourceNodeQuery_4279359955659612500(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_xgjiki_b0a0c0b0b0b0b0b0b0e0d0d0c0e));
+                        final SNode copySrcInput11 = QueriesGenerated.sourceNodeQuery_a0a0a1a0a0(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_xgjiki_b0a0c0b0b0b0b0b0b0e0d0d0c0e));
                         tlist11 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput11), copySrcMacro_xgjiki_b0a0c0b0b0b0b0b0b0e0d0d0c0e, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/4279359955659612498", context5);
                         for (SNode child12 : TemplateUtil.asNotNull(tlist11)) {
                           tnode10.addChild(myAggregationLinks[1], child12);
@@ -109,7 +109,7 @@ public class Template_reduce_MethodInvocation extends TemplateDeclarationBase {
                           {
                             final SNode tnode14 = environment.createOutputNode(myConcepts[5]);
                             try {
-                              SNodeAccessUtil.setProperty(tnode14, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4279359955659612536(new PropertyMacroContext(context6, "0", propertyMacro_xgjiki_c0a0c0a0b0b0b0c0b0b0b0b0b0e0d0d0c0e))));
+                              SNodeAccessUtil.setProperty(tnode14, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0b0a0a(new PropertyMacroContext(context6, "0", propertyMacro_xgjiki_c0a0c0a0b0b0b0c0b0b0b0b0b0e0d0d0c0e))));
                             } finally {
                             }
                             tnode13.addChild(myAggregationLinks[2], tnode14);
@@ -136,7 +136,7 @@ public class Template_reduce_MethodInvocation extends TemplateDeclarationBase {
                   }
                   {
                     Collection<SNode> tlist16 = null;
-                    final SNode copySrcInput16 = QueriesGenerated.sourceNodeQuery_4279359955659760635(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_xgjiki_b0a0c0c0b0b0b0e0d0d0c0e));
+                    final SNode copySrcInput16 = QueriesGenerated.sourceNodeQuery_a0a0b0a0a(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_xgjiki_b0a0c0c0b0b0b0e0d0d0c0e));
                     tlist16 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput16), copySrcMacro_xgjiki_b0a0c0c0b0b0b0e0d0d0c0e, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/4279359955659612496", context4);
                     for (SNode child17 : TemplateUtil.asNotNull(tlist16)) {
                       tnode9.addChild(myAggregationLinks[1], child17);
@@ -157,7 +157,7 @@ public class Template_reduce_MethodInvocation extends TemplateDeclarationBase {
               TemplateContext context7 = context2.subContext();
               {
                 Collection<SNode> tlist19 = null;
-                final SNode copySrcInput19 = QueriesGenerated.sourceNodeQuery_4279359955659731408(new SourceSubstituteMacroNodeContext(context7, copySrcMacro_xgjiki_b0a0c0b0b0a4a3a3a2a4));
+                final SNode copySrcInput19 = QueriesGenerated.sourceNodeQuery_a0a0a1b0a0a(new SourceSubstituteMacroNodeContext(context7, copySrcMacro_xgjiki_b0a0c0b0b0a4a3a3a2a4));
                 tlist19 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput19), copySrcMacro_xgjiki_b0a0c0b0b0a4a3a3a2a4, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/4279359955659731406", context7);
                 for (SNode child20 : TemplateUtil.asNotNull(tlist19)) {
                   tnode18.addChild(myAggregationLinks[1], child20);
@@ -171,7 +171,7 @@ public class Template_reduce_MethodInvocation extends TemplateDeclarationBase {
                   {
                     final SNode tnode22 = environment.createOutputNode(myConcepts[5]);
                     try {
-                      SNodeAccessUtil.setProperty(tnode22, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4279359955659731444(new PropertyMacroContext(context8, "0", propertyMacro_xgjiki_c0a0c0a0b0b0b0c0b0a4a3a3a2a4))));
+                      SNodeAccessUtil.setProperty(tnode22, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0b1a0a0(new PropertyMacroContext(context8, "0", propertyMacro_xgjiki_c0a0c0a0b0b0b0c0b0a4a3a3a2a4))));
                     } finally {
                     }
                     tnode21.addChild(myAggregationLinks[2], tnode22);

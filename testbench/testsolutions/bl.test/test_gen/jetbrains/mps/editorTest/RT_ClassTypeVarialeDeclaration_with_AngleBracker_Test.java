@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test extends BaseT
 
   @Test
   public void test_RT_ClassTypeVarialeDeclaration_with_AngleBracker() throws Throwable {
-    runTest("jetbrains.mps.editorTest.RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test$TestBody", "testMethod", false);
+    new RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1528454294471609027", "1528454294471625075");

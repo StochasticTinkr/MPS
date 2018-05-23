@@ -47,7 +47,7 @@ public class Switch_switch_InputNode extends TemplateSwitchBase implements Templ
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_produce_OutputNode(((String) QueriesGenerated.templateArgumentQuery_207553032706677823(new TemplateArgumentContext(context, new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "207553032706677823"))))).apply(environment, context);
+      Collection<SNode> tlist1 = new Template_produce_OutputNode(((String) QueriesGenerated.templateArgumentQuery_a0a(new TemplateArgumentContext(context, new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "207553032706677823"))))).apply(environment, context);
       return tlist1;
     }
   }
@@ -59,7 +59,7 @@ public class Switch_switch_InputNode extends TemplateSwitchBase implements Templ
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      final Object varValue1 = QueriesGenerated.insertMacro_varValue_6736062018948583815(new TemplateVarContext(context, varMacroRef_tlt8xy_b0a0a2a1i));
+      final Object varValue1 = QueriesGenerated.insertMacro_varValue_a0a0b(new TemplateVarContext(context, varMacroRef_tlt8xy_b0a0a2a1i));
       TemplateContext context1 = context.withVariable("var:xxx", varValue1);
       Collection<SNode> tlist2 = null;
       tlist2 = new Template_produce_OutputNode(((String) context1.getVariable("var:xxx"))).apply(environment, context1);
@@ -75,7 +75,7 @@ public class Switch_switch_InputNode extends TemplateSwitchBase implements Templ
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      tlist1 = new Template_produce_OutputNode(((String) QueriesGenerated.templateArgumentQuery_6736062018948608740(new TemplateArgumentContext(context, new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948608740"))))).apply(environment, context);
+      tlist1 = new Template_produce_OutputNode(((String) QueriesGenerated.templateArgumentQuery_a0a0c(new TemplateArgumentContext(context, new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948608740"))))).apply(environment, context);
       return tlist1;
     }
   }

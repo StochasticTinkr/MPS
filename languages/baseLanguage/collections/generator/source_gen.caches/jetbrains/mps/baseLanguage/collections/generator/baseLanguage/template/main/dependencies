@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0a8" file="Pattern_x583g4_b0a0a0a8.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0a231" file="Pattern_x583g4_b0a0a0a231.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0cb" file="Pattern_x583g4_b0a0a0cb.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0ef" file="Pattern_x583g4_b0a0a0ef.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0dc" file="Pattern_x583g4_b0a0a0dc.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0fe" file="Pattern_x583g4_b0a0a0fe.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0df" file="Pattern_x583g4_b0a0a0df.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0ie" file="Pattern_x583g4_b0a0a0ie.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0hb" file="Pattern_x583g4_b0a0a0hb.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0if" file="Pattern_x583g4_b0a0a0if.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0hc" file="Pattern_x583g4_b0a0a0hc.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0me" file="Pattern_x583g4_b0a0a0me.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0tb" file="Pattern_x583g4_b0a0a0tb.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0mf" file="Pattern_x583g4_b0a0a0mf.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0vb" file="Pattern_x583g4_b0a0a0vb.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0qe" file="Pattern_x583g4_b0a0a0qe.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0vc" file="Pattern_x583g4_b0a0a0vc.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0te" file="Pattern_x583g4_b0a0a0te.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0z" file="Pattern_x583g4_b0a0a0z.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0wd" file="Pattern_x583g4_b0a0a0wd.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0zb" file="Pattern_x583g4_b0a0a0zb.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0ye" file="Pattern_x583g4_b0a0a0ye.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
@@ -60,17 +60,17 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.TypeDerivable__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0a8" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0cb" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0dc" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0df" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0hb" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0hc" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0tb" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0vb" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0vc" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0z" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0zb" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0a231" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0ef" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0fe" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0ie" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0if" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0me" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0mf" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0qe" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0te" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0wd" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0ye" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Values" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.CallArgumentQuery" />

@@ -43,7 +43,7 @@ public class Template_reduce_GetAncestor_noConceptList_SameML extends TemplateDe
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_1627366655853340210(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_tbyes_b0a0c0d0c0e));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_5(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_tbyes_b0a0c0d0c0e));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_tbyes_b0a0c0d0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/1627366655853340208", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -61,7 +61,7 @@ public class Template_reduce_GetAncestor_noConceptList_SameML extends TemplateDe
       {
         final SNode tnode6 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode6, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1627366655853340220(new PropertyMacroContext(context1, null, propertyMacro_tbyes_c0a0c0a0b0f0c0e))));
+          SNodeAccessUtil.setProperty(tnode6, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0c0_6(new PropertyMacroContext(context1, null, propertyMacro_tbyes_c0a0c0a0b0f0c0e))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode6);
@@ -70,7 +70,7 @@ public class Template_reduce_GetAncestor_noConceptList_SameML extends TemplateDe
       {
         final SNode tnode7 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1627366655853340229(new PropertyMacroContext(context1, null, propertyMacro_tbyes_c0a0c0a0b0g0c0e))));
+          SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0d0_4(new PropertyMacroContext(context1, null, propertyMacro_tbyes_c0a0c0a0b0g0c0e))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode7);

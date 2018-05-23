@@ -50,8 +50,8 @@ public class Template_reduce_InputNode extends TemplateDeclarationBase {
       TemplateContext switchContext1;
       {
         final Map<String, Object> args1 = new HashMap<String, Object>();
-        args1.put("text", ((String) QueriesGenerated.templateArgumentQuery_6736062018948525024(new TemplateArgumentContext(context, new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948525024")))));
-        args1.put("value", ((Integer) QueriesGenerated.templateArgumentQuery_6736062018948578444(new TemplateArgumentContext(context, new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948578444")))));
+        args1.put("text", ((String) QueriesGenerated.templateArgumentQuery_a1a(new TemplateArgumentContext(context, new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948525024")))));
+        args1.put("value", ((Integer) QueriesGenerated.templateArgumentQuery_b1a(new TemplateArgumentContext(context, new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948578444")))));
         args1.put("element", ((SNode) context.getVariable("element")));
         switchContext1 = context.subContext(args1);
         switchContext1 = switchContext1.subContext(null, context.getInput());

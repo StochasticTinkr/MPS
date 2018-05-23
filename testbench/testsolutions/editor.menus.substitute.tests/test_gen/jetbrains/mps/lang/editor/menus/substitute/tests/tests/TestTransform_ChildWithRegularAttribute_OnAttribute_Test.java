@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -22,11 +23,15 @@ public class TestTransform_ChildWithRegularAttribute_OnAttribute_Test extends Ba
 
   @Test
   public void test_TestTransform_ChildWithRegularAttribute_OnAttribute() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestTransform_ChildWithRegularAttribute_OnAttribute_Test$TestBody", "testMethod", false);
+    new TestTransform_ChildWithRegularAttribute_OnAttribute_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("4290896314626079415", "4290896314626079419");

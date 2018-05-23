@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 
 @MPSLaunch
@@ -21,11 +22,15 @@ public class DefaultEditor_DontSubstituteAbstractConcepts_Test extends BaseTrans
 
   @Test
   public void test_DefaultEditor_DontSubstituteAbstractConcepts() throws Throwable {
-    runTest("jetbrains.mps.editorTest.DefaultEditor_DontSubstituteAbstractConcepts_Test$TestBody", "testMethod", false);
+    new DefaultEditor_DontSubstituteAbstractConcepts_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("472942194665436919", "472942194665436916");

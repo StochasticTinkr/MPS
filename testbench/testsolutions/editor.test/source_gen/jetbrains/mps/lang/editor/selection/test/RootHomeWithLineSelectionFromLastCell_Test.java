@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class RootHomeWithLineSelectionFromLastCell_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class RootHomeWithLineSelectionFromLastCell_Test extends BaseTransformati
 
   @Test
   public void test_RootHomeWithLineSelectionFromLastCell() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromLastCell_Test$TestBody", "testMethod", false);
+    new RootHomeWithLineSelectionFromLastCell_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("5097407566121771938", "5097407566121771945");

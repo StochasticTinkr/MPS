@@ -43,7 +43,7 @@ public class Template_reduce_GetAncestors_noConceptsList extends TemplateDeclara
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_1173123173267(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_mxkg5_b0a0c0d0c0e));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_8(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_mxkg5_b0a0c0d0c0e));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_mxkg5_b0a0c0d0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/1173123173265", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -61,7 +61,7 @@ public class Template_reduce_GetAncestors_noConceptsList extends TemplateDeclara
       {
         final SNode tnode6 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode6, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1173123251549(new PropertyMacroContext(context1, null, propertyMacro_mxkg5_c0a0c0a0b0f0c0e))));
+          SNodeAccessUtil.setProperty(tnode6, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0c0_9(new PropertyMacroContext(context1, null, propertyMacro_mxkg5_c0a0c0a0b0f0c0e))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode6);

@@ -13,38 +13,38 @@
   </root>
   <root nodeRef="r:4f47afa3-64fe-42e3-9115-b12425c6d436(jetbrains.mps.generator.test.crossmodel.entity.generator.template.main@generator)/2500545923215239781">
     <file name="QueriesGenerated.java">
-      <node id="2500545923215242438" at="38,110,39,194" concept="1" />
-      <node id="2500545923215242449" at="41,110,42,194" concept="1" />
-      <scope id="2500545923215242437" at="38,110,39,194" />
-      <scope id="2500545923215242448" at="41,110,42,194" />
+      <node id="2500545923215242438" at="38,93,39,194" concept="1" />
+      <node id="2500545923215242449" at="41,93,42,194" concept="1" />
+      <scope id="2500545923215242437" at="38,93,39,194" />
+      <scope id="2500545923215242448" at="41,93,42,194" />
     </file>
   </root>
   <root nodeRef="r:4f47afa3-64fe-42e3-9115-b12425c6d436(jetbrains.mps.generator.test.crossmodel.entity.generator.template.main@generator)/4355167635272122962">
     <file name="QueriesGenerated.java">
-      <node id="5176577547833444533" at="44,112,45,175" concept="1" />
-      <scope id="5176577547833443851" at="44,112,45,175" />
+      <node id="5176577547833444533" at="47,97,48,175" concept="1" />
+      <scope id="5176577547833443851" at="47,97,48,175" />
     </file>
   </root>
   <root nodeRef="r:4f47afa3-64fe-42e3-9115-b12425c6d436(jetbrains.mps.generator.test.crossmodel.entity.generator.template.main@generator)/4355167635272193994">
     <file name="QueriesGenerated.java">
-      <node id="5176577547833545127" at="47,112,48,184" concept="1" />
-      <node id="361130699826302530" at="53,109,54,258" concept="1" />
-      <node id="361130699826299022" at="56,109,57,406" concept="1" />
-      <scope id="5176577547833543229" at="47,112,48,184" />
-      <scope id="5176577547833570999" at="53,109,54,258" />
-      <scope id="5176577547833821222" at="56,109,57,406" />
+      <node id="5176577547833545127" at="50,99,51,184" concept="1" />
+      <node id="361130699826302530" at="53,94,54,258" concept="1" />
+      <node id="361130699826299022" at="56,94,57,406" concept="1" />
+      <scope id="5176577547833543229" at="50,99,51,184" />
+      <scope id="5176577547833570999" at="53,94,54,258" />
+      <scope id="5176577547833821222" at="56,94,57,406" />
     </file>
   </root>
   <root nodeRef="r:4f47afa3-64fe-42e3-9115-b12425c6d436(jetbrains.mps.generator.test.crossmodel.entity.generator.template.main@generator)/5176577547833430286">
     <file name="QueriesGenerated.java">
-      <node id="5176577547833752363" at="50,112,51,184" concept="1" />
+      <node id="5176577547833752363" at="44,95,45,184" concept="1" />
       <node id="5176577547833635184" at="61,39,62,182" concept="1" />
       <node id="5176577547833609462" at="68,39,69,182" concept="1" />
       <node id="5176577547833634072" at="61,0,64,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="5176577547833608350" at="68,0,71,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5176577547833432914" at="59,120,64,7" concept="1" />
-      <node id="5176577547833431188" at="66,120,71,7" concept="1" />
-      <scope id="5176577547833750248" at="50,112,51,184" />
+      <node id="5176577547833432914" at="59,104,64,7" concept="1" />
+      <node id="5176577547833431188" at="66,106,71,7" concept="1" />
+      <scope id="5176577547833750248" at="44,95,45,184" />
       <scope id="5176577547833634073" at="61,39,62,182" />
       <scope id="5176577547833608351" at="68,39,69,182" />
       <scope id="5176577547833634072" at="61,0,64,0">
@@ -53,8 +53,8 @@
       <scope id="5176577547833608350" at="68,0,71,0">
         <var name="it" id="5176577547833608350" />
       </scope>
-      <scope id="5176577547833432908" at="59,120,64,7" />
-      <scope id="5176577547833431182" at="66,120,71,7" />
+      <scope id="5176577547833432908" at="59,104,64,7" />
+      <scope id="5176577547833431182" at="66,106,71,7" />
       <unit id="5176577547833634072" at="60,226,64,5" name="jetbrains.mps.generator.test.crossmodel.entity.generator.template.main.QueriesGenerated$1" />
       <unit id="5176577547833608350" at="67,226,71,5" name="jetbrains.mps.generator.test.crossmodel.entity.generator.template.main.QueriesGenerated$2" />
     </file>

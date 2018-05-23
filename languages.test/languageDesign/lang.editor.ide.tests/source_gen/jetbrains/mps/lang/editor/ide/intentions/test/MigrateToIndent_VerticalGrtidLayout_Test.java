@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 
 @MPSLaunch
@@ -21,11 +22,15 @@ public class MigrateToIndent_VerticalGrtidLayout_Test extends BaseTransformation
 
   @Test
   public void test_MigrateToIndent_VerticalGrtidLayout() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_VerticalGrtidLayout_Test$TestBody", "testMethod", false);
+    new MigrateToIndent_VerticalGrtidLayout_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2390303184246699576", "2390303184246699606");

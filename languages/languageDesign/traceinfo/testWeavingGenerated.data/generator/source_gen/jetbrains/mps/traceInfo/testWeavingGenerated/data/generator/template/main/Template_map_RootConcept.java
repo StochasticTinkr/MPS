@@ -34,7 +34,7 @@ public class Template_map_RootConcept extends TemplateDeclarationBase implements
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008490321");
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008490331(new PropertyMacroContext(context, "map_RootConcept", propertyMacro_m9apof_c0a0c0b0b0e))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1(new PropertyMacroContext(context, "map_RootConcept", propertyMacro_m9apof_c0a0c0b0b0e))));
       TemplateContext context1 = context.subContext();
       {
         final SNode tnode2 = environment.createOutputNode(myConcepts[1]);

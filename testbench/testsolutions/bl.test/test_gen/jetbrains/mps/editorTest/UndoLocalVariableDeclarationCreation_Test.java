@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class UndoLocalVariableDeclarationCreation_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class UndoLocalVariableDeclarationCreation_Test extends BaseTransformatio
 
   @Test
   public void test_UndoLocalVariableDeclarationCreation() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UndoLocalVariableDeclarationCreation_Test$TestBody", "testMethod", false);
+    new UndoLocalVariableDeclarationCreation_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3150412412946315207", "3150412412946402831");

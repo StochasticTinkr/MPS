@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class SurroundWithNegation_notAddingParens_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class SurroundWithNegation_notAddingParens_Test extends BaseTransformatio
 
   @Test
   public void test_SurroundWithNegation_notAddingParens() throws Throwable {
-    runTest("jetbrains.mps.editorTest.SurroundWithNegation_notAddingParens_Test$TestBody", "testMethod", false);
+    new SurroundWithNegation_notAddingParens_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("7864349413057593647", "7864349413057638458");

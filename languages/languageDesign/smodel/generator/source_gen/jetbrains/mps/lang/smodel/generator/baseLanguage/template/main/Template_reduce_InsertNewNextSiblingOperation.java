@@ -40,7 +40,7 @@ public class Template_reduce_InsertNewNextSiblingOperation extends TemplateDecla
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_9116031298986738377(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_kjyzn9_b0a0c0d0c0e));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_24(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_kjyzn9_b0a0c0d0c0e));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_kjyzn9_b0a0c0d0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/9116031298986738375", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -49,7 +49,7 @@ public class Template_reduce_InsertNewNextSiblingOperation extends TemplateDecla
       }
       {
         Collection<SNode> tlist4 = null;
-        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_9116031298986738385(new SourceSubstituteMacroNodeContext(context1, includeMacro_kjyzn9_b0a0a1a4a2a4));
+        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_a0b0_1(new SourceSubstituteMacroNodeContext(context1, includeMacro_kjyzn9_b0a0a1a4a2a4));
         TemplateContext context2 = context1.subContext(null, callInputNode4);
         if (callInputNode4 != null) {
           tlist4 = new Template_reduce_ConceptDeclaration2SConcept().apply(environment, context2);

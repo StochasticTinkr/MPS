@@ -64,3 +64,5 @@ MPSPlugin/apiclasses
 :test
 core/tool/environment/classes
 testbench/classes
+:unassigned
+core/tool/common/classes

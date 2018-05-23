@@ -11,21 +11,34 @@ import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.baseLanguage.unitTest.execution.server.ExecutorScript;
+import jetbrains.mps.tool.common.ScriptData;
+import jetbrains.mps.tool.common.RepositoryDescriptor;
+import java.util.Set;
+import org.jetbrains.mps.openapi.module.SModule;
+import java.util.HashSet;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.PathMacros;
+import org.apache.log4j.Level;
+import org.jdom.Element;
+import jetbrains.mps.tool.common.JDOMUtil;
+import org.jdom.Document;
+import java.io.IOException;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.apache.log4j.Level;
-import java.util.LinkedList;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import java.util.Set;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.LinkedList;
 import java.net.URL;
 import jetbrains.mps.core.tool.environment.classloading.ClassloaderUtil;
 import java.net.URISyntaxException;
@@ -84,20 +97,90 @@ public class JUnit_Command {
     if (ListSequence.fromList(tests).isEmpty()) {
       throw new ExecutionException("Could not find tests to run.");
     }
-    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun.getParameters().getJvmArgs()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ? " " + myVirtualMachineParameter_String : ""))).setClassPath_ListString(ListSequence.fromList(JUnit_Command.getClasspath(testsToRun)).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(JUnit_Command.getProgramParameters(testsToRun.getTests())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun.getParameters().getExecutorClass().getName());
+    // FIXME use of global repository here is just provisional, we need an MPS project here (it's fine to demand an MPS project when we launch MPS tests from within an IDE, right?) 
+    SRepository repo = MPSModuleRepository.getInstance();
+    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun.getParameters().getJvmArgs()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ? " " + myVirtualMachineParameter_String : ""))).setClassPath_ListString(ListSequence.fromList(JUnit_Command.getClasspath(testsToRun, repo)).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(JUnit_Command.getProgramParameters(testsToRun, repo)).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun.getParameters().getExecutorClass().getName());
   }
 
   public static IDebugger getDebugger() {
     return getDebuggerConfiguration().getDebugger();
   }
 
-  private static String getProgramParameters(List<ITestNodeWrapper> tests) {
-    List<String> testsCommandLine = ListSequence.fromList(new ArrayList<String>(ListSequence.fromList(tests).count() * 2));
-    for (ITestNodeWrapper test : ListSequence.fromList(tests)) {
-      ListSequence.fromList(testsCommandLine).addElement((test.isTestCase() ? "-c" : "-m"));
-      ListSequence.fromList(testsCommandLine).addElement(test.getFqName());
+  private static String getProgramParameters(final TestsWithParameters testsToRun, final SRepository repo) throws ExecutionException {
+    if (testsToRun.getParameters().needsMPS()) {
+      ExecutorScript args = new ExecutorScript();
+      ScriptData startupArgs = args.addStartupArguments();
+      final RepositoryDescriptor rd = new RepositoryDescriptor();
+      // I've got set of reference to modules I need to present in a new MPS instance 
+      // and now have to guess their locations to pass to the new instance. 
+      // XXX here, we exploit the assumption module descriptor file resides under a module root 
+      repo.getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          Set<SModule> modules = new HashSet<SModule>();
+          for (SModuleReference testModule : testsToRun.getRequiredModules()) {
+            SModule tm = testModule.resolve(repo);
+            if (tm != null) {
+              modules.add(tm);
+            }
+          }
+          GlobalModuleDependenciesManager gmdm = new GlobalModuleDependenciesManager(modules);
+          Collection<SModule> execClosure = gmdm.getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE);
+          for (SModule m : CollectionSequence.fromCollection(execClosure)) {
+            if (false == m instanceof AbstractModule) {
+              continue;
+            }
+            IFile descriptorFile = ((AbstractModule) m).getDescriptorFile();
+            if (descriptorFile == null) {
+              continue;
+            }
+            // XXX in fact, for non-deployed module this would end up with a module source dir, which is not 'file' per se, but as long as there's 
+            // no distinction in processing rd.files and rd.folders (ModulesMiner doesn't care), I don't bother here either. 
+            rd.files.add(descriptorFile.getBundleHome().getPath());
+          }
+        }
+      });
+      startupArgs.setRepo(rd);
+      // FIXME Shall use proper ComponentHost.findComponent to access PathMacros instance 
+      PathMacros pathMacros = PathMacros.getInstance();
+      // XXX not sure why we iterate over user names only (not getNames()), it's the way it used to be in LanguageTestWrapper/AbstractTestWrapper for a long time 
+      for (String key : pathMacros.getUserNames()) {
+        String value = pathMacros.getValue(key);
+        if (value != null) {
+          startupArgs.addMacro(key, value);
+        } else {
+          // XXX EnvironmentBase is not quite friendly to null macro values. I can't decide whether it's better to relax this restriction (who cares what macro value is 
+          // except its consumer?), to report a warning here or to let EnvironmentBase do that. 
+          if (LOG.isEnabledFor(Level.WARN)) {
+            LOG.warn(String.format("No value for macro %s, ignored", key));
+          }
+        }
+      }
+      // XXX could deduce required plugins from IdeaPluginModuleFacet of required modules. 
+      // startupArgs.addPlugin() 
+      startupArgs.setLoadBootstrapLibraries(true);
+      // XXX May want to pass value of idea.additional.classpath system property further to new IdeaApplication instance to ensure plugins that are  
+      // loaded from sources could get loaded in the new application as well. 
+      for (ITestNodeWrapper test : ListSequence.fromList(testsToRun.getTests())) {
+        args.addTest(test);
+      }
+      try {
+        File tempFile = File.createTempFile("test-exec", ".xml");
+        tempFile.deleteOnExit();
+        Element root = new Element("tests-exec");
+        args.write(root);
+        JDOMUtil.writeDocument(new Document(root), tempFile);
+        return tempFile.getAbsolutePath();
+      } catch (IOException ex) {
+        throw new ExecutionException("Failed to prepare arguments for test executor", ex);
+      }
+    } else {
+      List<String> testsCommandLine = ListSequence.fromList(new ArrayList<String>(ListSequence.fromList(testsToRun.getTests()).count() * 2));
+      for (ITestNodeWrapper test : ListSequence.fromList(testsToRun.getTests())) {
+        ListSequence.fromList(testsCommandLine).addElement((test.isTestCase() ? "-c" : "-m"));
+        ListSequence.fromList(testsCommandLine).addElement(test.getFqName());
+      }
+      return IterableUtils.join(ListSequence.fromList(testsCommandLine), " ");
     }
-    return IterableUtils.join(ListSequence.fromList(testsCommandLine), " ");
   }
   private static TestsWithParameters getTestsToRunWithParameters(@NotNull List<ITestNodeWrapper> tests) throws ExecutionException {
     TestParameters runParams = JUnit_Command.getMaxParams(tests);
@@ -121,7 +204,11 @@ public class JUnit_Command {
         LOG.warn("All tests could not be executed together. Skipped: " + skipped);
       }
     }
-    return new TestsWithParameters(testsToRun, runParams);
+    Set<SModuleReference> uniqueModules = SetSequence.fromSet(new HashSet<SModuleReference>());
+    for (ITestNodeWrapper tt : tests) {
+      SetSequence.fromSet(uniqueModules).addElement(tt.getTestNodeModule());
+    }
+    return new TestsWithParameters(testsToRun, runParams, uniqueModules);
   }
   private static TestParameters getMaxParams(List<ITestNodeWrapper> tests) {
     TestParameters maxParams = ListSequence.fromList(tests).first().getTestRunParameters();
@@ -133,25 +220,32 @@ public class JUnit_Command {
     }
     return maxParams;
   }
-  private static List<String> getClasspath(final TestsWithParameters tests) {
-    List<String> classpath = ListSequence.fromList(new LinkedList<String>());
+  private static List<String> getClasspath(final TestsWithParameters tests, final SRepository repo) {
+    final List<String> classpath = ListSequence.fromList(new LinkedList<String>());
     if (tests.getParameters().needsMPS()) {
-      // FIXME In fact, at the moment, DefaultTestExecutor always starts IDEA environment, and we need to control this better 
       ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromLibFolder()).distinct());
       ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromPreInstalledPluginsFolder()).distinct());
-    }
-    // FIXME i'm going to get rid of ITestNodeWrapper.getNode access anyway, therefore left MA.instance() as is. 
-    //       The idea is to pass list of SModuleReference through TestParameters 
-    ListSequence.fromList(classpath).addSequence(ListSequence.fromList(ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-      public List<String> compute() {
-        Set<SModule> uniqueModules = SetSequence.fromSet(new HashSet<SModule>());
-        for (ITestNodeWrapper testable : tests.getTests()) {
-          SModule module = SNodeOperations.getModel(testable.getNode()).getModule();
-          SetSequence.fromSet(uniqueModules).addElement(module);
+      // Module classpath would get managed by IdeaEnvironment based on set of modules to load 
+    } else {
+      // when no MPS is started, we just build a regular Java classpath with everything test classes may need. 
+      repo.getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          Set<SModule> uniqueModules = SetSequence.fromSet(new HashSet<SModule>());
+          for (SModuleReference testModule : tests.getRequiredModules()) {
+            SModule module = testModule.resolve(repo);
+            if (module != null) {
+              SetSequence.fromSet(uniqueModules).addElement(module);
+            } else {
+              String m = String.format("No test module %s is available, execution classpath may be invalid.", testModule.getModuleName());
+              if (LOG.isEnabledFor(Level.WARN)) {
+                LOG.warn(m);
+              }
+            }
+          }
+          ListSequence.fromList(classpath).addSequence(ListSequence.fromList(Java_Command.getClasspath(uniqueModules)));
         }
-        return Java_Command.getClasspath(uniqueModules);
-      }
-    })));
+      });
+    }
     return ListSequence.fromList(tests.getParameters().getClassPath()).union(ListSequence.fromList(classpath)).toListSequence();
   }
   private static List<String> collectFromLibFolder() {

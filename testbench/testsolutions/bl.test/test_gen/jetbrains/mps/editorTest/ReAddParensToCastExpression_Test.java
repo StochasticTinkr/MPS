@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class ReAddParensToCastExpression_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class ReAddParensToCastExpression_Test extends BaseTransformationTest {
 
   @Test
   public void test_ReAddParensToCastExpression() throws Throwable {
-    runTest("jetbrains.mps.editorTest.ReAddParensToCastExpression_Test$TestBody", "testMethod", false);
+    new ReAddParensToCastExpression_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("7247988578514883309", "7247988578514883325");

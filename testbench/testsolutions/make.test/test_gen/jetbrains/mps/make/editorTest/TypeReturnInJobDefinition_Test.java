@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class TypeReturnInJobDefinition_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class TypeReturnInJobDefinition_Test extends BaseTransformationTest {
 
   @Test
   public void test_TypeReturnInJobDefinition() throws Throwable {
-    runTest("jetbrains.mps.make.editorTest.TypeReturnInJobDefinition_Test$TestBody", "testMethod", false);
+    new TypeReturnInJobDefinition_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3283080073440235491", "3283080073440235494");

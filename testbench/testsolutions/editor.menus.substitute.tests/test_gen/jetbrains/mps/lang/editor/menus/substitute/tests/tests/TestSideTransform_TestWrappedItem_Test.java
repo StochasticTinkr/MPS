@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import junit.framework.Assert;
@@ -24,11 +25,15 @@ public class TestSideTransform_TestWrappedItem_Test extends BaseTransformationTe
 
   @Test
   public void test_TestSideTransform_TestWrappedItem() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSideTransform_TestWrappedItem_Test$TestBody", "testMethod", false);
+    new TestSideTransform_TestWrappedItem_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1179171206859335701", "1179171206859335703");

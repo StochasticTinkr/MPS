@@ -119,7 +119,7 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.createRootRule_Condition_4881419546810727153(new CreateRootRuleContext(context, getRuleNode()));
+      return QueriesGenerated.createRootRule_Condition_a0(new CreateRootRuleContext(context, getRuleNode()));
     }
     public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationException {
       DefaultTemplateContext context = new DefaultTemplateContext(environment, null, null);

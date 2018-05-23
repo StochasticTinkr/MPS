@@ -32,7 +32,7 @@ public class Template_reduce_ConceptMethodCallWithThis extends TemplateDeclarati
   protected Collection<SNode> applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    if (QueriesGenerated.ifMacro_Condition_3099391750892188156(new IfMacroContext(context, ifMacroRef_rcvm0b_b0a0c0e))) {
+    if (QueriesGenerated.ifMacro_Condition_a1a0a0_2(new IfMacroContext(context, ifMacroRef_rcvm0b_b0a0c0e))) {
       final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
       try {
         TemplateContext context1 = context.subContext();
@@ -50,7 +50,7 @@ public class Template_reduce_ConceptMethodCallWithThis extends TemplateDeclarati
             }
             {
               Collection<SNode> tlist6 = null;
-              final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_3099391750892188146(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_rcvm0b_b0a0c0c0b0b0b0c0e));
+              final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_a0a0a0a0_6(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_rcvm0b_b0a0c0c0b0b0b0c0e));
               tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_rcvm0b_b0a0c0c0b0b0b0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/3099391750892188144", context2);
               for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
                 tnode3.addChild(myAggregationLinks[1], child7);

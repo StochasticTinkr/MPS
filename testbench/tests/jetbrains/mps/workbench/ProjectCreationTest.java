@@ -63,7 +63,6 @@ public class ProjectCreationTest implements EnvironmentAware {
   private static final String SOLUTION_NAMESPACE = "CreatedSandbox";
   private static final String PROJECT_PROPERTIES_DIR = PROJECT_NAME + "/.mps";
   private static final List<String> PROJECT_PROPERTIES_DIR_CONTENT = Arrays.asList(
-      PROJECT_PROPERTIES_DIR + "/workspace.xml",
       PROJECT_PROPERTIES_DIR + "/modules.xml",
       PROJECT_PROPERTIES_DIR + "/misc.xml");
 

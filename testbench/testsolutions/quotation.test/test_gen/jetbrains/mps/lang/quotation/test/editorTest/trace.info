@@ -9,197 +9,245 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:05c4fa32-3688-4db6-b828-4373b1de41d9(jetbrains.mps.lang.quotation.test.editorTest@tests)/7167051279291058222">
     <file name="Test_CreateAntiquotation_Intention_Test.java">
-      <node id="7167051279291058222" at="18,52,19,25" concept="6" />
-      <node id="7167051279291058222" at="23,74,24,130" concept="1" />
-      <node id="7167051279291058222" at="30,51,31,72" concept="1" />
-      <node id="7167051279291065237" at="31,72,32,139" concept="1" />
-      <node id="7167051279291072903" at="32,139,33,114" concept="1" />
-      <node id="6181949993339157727" at="33,114,34,106" concept="3" />
-      <node id="6181949993339157844" at="34,106,35,104" concept="3" />
-      <node id="6181949993339157565" at="35,104,36,28" concept="1" />
-      <node id="7167051279291058222" at="15,0,17,0" concept="5" trace="ourParamCache" />
-      <node id="7167051279291058222" at="18,0,21,0" concept="0" trace="Test_CreateAntiquotation_Intention_Test#()V" />
-      <node id="7167051279291058222" at="22,0,26,0" concept="2" trace="test_Test_CreateAntiquotation_Intention#()V" />
-      <node id="7167051279291058222" at="29,0,38,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="7167051279291058222" at="18,52,19,25" />
-      <scope id="7167051279291058222" at="23,74,24,130" />
-      <scope id="7167051279291058222" at="18,0,21,0" />
-      <scope id="7167051279291058222" at="22,0,26,0" />
-      <scope id="7167051279291058222" at="30,51,36,28" />
-      <scope id="7167051279291058222" at="29,0,38,0" />
-      <unit id="7167051279291058222" at="27,0,39,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateAntiquotation_Intention_Test$TestBody" />
-      <unit id="7167051279291058222" at="13,0,40,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateAntiquotation_Intention_Test" />
+      <node id="7167051279291058222" at="19,52,20,25" concept="6" />
+      <node id="7167051279291058222" at="24,74,25,76" concept="1" />
+      <node id="7167051279291058222" at="30,52,31,19" concept="6" />
+      <node id="7167051279291058222" at="35,51,36,72" concept="1" />
+      <node id="7167051279291065237" at="36,72,37,139" concept="1" />
+      <node id="7167051279291072903" at="37,139,38,114" concept="1" />
+      <node id="6181949993339157727" at="38,114,39,106" concept="3" />
+      <node id="6181949993339157844" at="39,106,40,104" concept="3" />
+      <node id="6181949993339157565" at="40,104,41,28" concept="1" />
+      <node id="7167051279291058222" at="16,0,18,0" concept="5" trace="ourParamCache" />
+      <node id="7167051279291058222" at="19,0,22,0" concept="0" trace="Test_CreateAntiquotation_Intention_Test#()V" />
+      <node id="7167051279291058222" at="30,0,33,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="7167051279291058222" at="23,0,27,0" concept="2" trace="test_Test_CreateAntiquotation_Intention#()V" />
+      <node id="7167051279291058222" at="34,0,43,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7167051279291058222" at="19,52,20,25" />
+      <scope id="7167051279291058222" at="24,74,25,76" />
+      <scope id="7167051279291058222" at="30,52,31,19" />
+      <scope id="7167051279291058222" at="19,0,22,0" />
+      <scope id="7167051279291058222" at="30,0,33,0">
+        <var name="owner" id="7167051279291058222" />
+      </scope>
+      <scope id="7167051279291058222" at="23,0,27,0" />
+      <scope id="7167051279291058222" at="35,51,41,28" />
+      <scope id="7167051279291058222" at="34,0,43,0" />
+      <unit id="7167051279291058222" at="28,0,44,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateAntiquotation_Intention_Test$TestBody" />
+      <unit id="7167051279291058222" at="14,0,45,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateAntiquotation_Intention_Test" />
     </file>
   </root>
   <root nodeRef="r:05c4fa32-3688-4db6-b828-4373b1de41d9(jetbrains.mps.lang.quotation.test.editorTest@tests)/7167051279291080561">
     <file name="Test_CreateListAntiquotation_Intention_Test.java">
-      <node id="7167051279291080561" at="18,56,19,25" concept="6" />
-      <node id="7167051279291080561" at="23,78,24,134" concept="1" />
-      <node id="7167051279291080561" at="30,51,31,72" concept="1" />
-      <node id="7167051279291080585" at="31,72,32,143" concept="1" />
-      <node id="7167051279291080587" at="32,143,33,118" concept="1" />
-      <node id="6181949993339158694" at="33,118,34,106" concept="3" />
-      <node id="6181949993339158696" at="34,106,35,104" concept="3" />
-      <node id="6181949993339158698" at="35,104,36,26" concept="1" />
-      <node id="6181949993339158625" at="36,26,37,0" concept="4" />
-      <node id="7167051279291080561" at="15,0,17,0" concept="5" trace="ourParamCache" />
-      <node id="7167051279291080561" at="18,0,21,0" concept="0" trace="Test_CreateListAntiquotation_Intention_Test#()V" />
-      <node id="7167051279291080561" at="22,0,26,0" concept="2" trace="test_Test_CreateListAntiquotation_Intention#()V" />
-      <node id="7167051279291080561" at="29,0,39,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="7167051279291080561" at="18,56,19,25" />
-      <scope id="7167051279291080561" at="23,78,24,134" />
-      <scope id="7167051279291080561" at="18,0,21,0" />
-      <scope id="7167051279291080561" at="22,0,26,0" />
-      <scope id="7167051279291080561" at="30,51,37,0" />
-      <scope id="7167051279291080561" at="29,0,39,0" />
-      <unit id="7167051279291080561" at="27,0,40,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateListAntiquotation_Intention_Test$TestBody" />
-      <unit id="7167051279291080561" at="13,0,41,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateListAntiquotation_Intention_Test" />
+      <node id="7167051279291080561" at="19,56,20,25" concept="6" />
+      <node id="7167051279291080561" at="24,78,25,80" concept="1" />
+      <node id="7167051279291080561" at="30,52,31,19" concept="6" />
+      <node id="7167051279291080561" at="35,51,36,72" concept="1" />
+      <node id="7167051279291080585" at="36,72,37,143" concept="1" />
+      <node id="7167051279291080587" at="37,143,38,118" concept="1" />
+      <node id="6181949993339158694" at="38,118,39,106" concept="3" />
+      <node id="6181949993339158696" at="39,106,40,104" concept="3" />
+      <node id="6181949993339158698" at="40,104,41,26" concept="1" />
+      <node id="6181949993339158625" at="41,26,42,0" concept="4" />
+      <node id="7167051279291080561" at="16,0,18,0" concept="5" trace="ourParamCache" />
+      <node id="7167051279291080561" at="19,0,22,0" concept="0" trace="Test_CreateListAntiquotation_Intention_Test#()V" />
+      <node id="7167051279291080561" at="30,0,33,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="7167051279291080561" at="23,0,27,0" concept="2" trace="test_Test_CreateListAntiquotation_Intention#()V" />
+      <node id="7167051279291080561" at="34,0,44,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7167051279291080561" at="19,56,20,25" />
+      <scope id="7167051279291080561" at="24,78,25,80" />
+      <scope id="7167051279291080561" at="30,52,31,19" />
+      <scope id="7167051279291080561" at="19,0,22,0" />
+      <scope id="7167051279291080561" at="30,0,33,0">
+        <var name="owner" id="7167051279291080561" />
+      </scope>
+      <scope id="7167051279291080561" at="23,0,27,0" />
+      <scope id="7167051279291080561" at="35,51,42,0" />
+      <scope id="7167051279291080561" at="34,0,44,0" />
+      <unit id="7167051279291080561" at="28,0,45,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateListAntiquotation_Intention_Test$TestBody" />
+      <unit id="7167051279291080561" at="14,0,46,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateListAntiquotation_Intention_Test" />
     </file>
   </root>
   <root nodeRef="r:05c4fa32-3688-4db6-b828-4373b1de41d9(jetbrains.mps.lang.quotation.test.editorTest@tests)/7167051279291084329">
     <file name="Test_CreatePropertyAntiquotation_Intention_Test.java">
-      <node id="7167051279291084329" at="18,60,19,25" concept="6" />
-      <node id="7167051279291084329" at="23,82,24,138" concept="1" />
-      <node id="7167051279291084329" at="30,51,31,72" concept="1" />
-      <node id="7167051279291084353" at="31,72,32,147" concept="1" />
-      <node id="7167051279291084355" at="32,147,33,122" concept="1" />
-      <node id="6181949993339159673" at="33,122,34,106" concept="3" />
-      <node id="6181949993339159675" at="34,106,35,104" concept="3" />
-      <node id="6181949993339159677" at="35,104,36,23" concept="1" />
-      <node id="6181949993339159668" at="36,23,37,0" concept="4" />
-      <node id="7167051279291084329" at="15,0,17,0" concept="5" trace="ourParamCache" />
-      <node id="7167051279291084329" at="18,0,21,0" concept="0" trace="Test_CreatePropertyAntiquotation_Intention_Test#()V" />
-      <node id="7167051279291084329" at="22,0,26,0" concept="2" trace="test_Test_CreatePropertyAntiquotation_Intention#()V" />
-      <node id="7167051279291084329" at="29,0,39,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="7167051279291084329" at="18,60,19,25" />
-      <scope id="7167051279291084329" at="23,82,24,138" />
-      <scope id="7167051279291084329" at="18,0,21,0" />
-      <scope id="7167051279291084329" at="22,0,26,0" />
-      <scope id="7167051279291084329" at="30,51,37,0" />
-      <scope id="7167051279291084329" at="29,0,39,0" />
-      <unit id="7167051279291084329" at="27,0,40,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreatePropertyAntiquotation_Intention_Test$TestBody" />
-      <unit id="7167051279291084329" at="13,0,41,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreatePropertyAntiquotation_Intention_Test" />
+      <node id="7167051279291084329" at="19,60,20,25" concept="6" />
+      <node id="7167051279291084329" at="24,82,25,84" concept="1" />
+      <node id="7167051279291084329" at="30,52,31,19" concept="6" />
+      <node id="7167051279291084329" at="35,51,36,72" concept="1" />
+      <node id="7167051279291084353" at="36,72,37,147" concept="1" />
+      <node id="7167051279291084355" at="37,147,38,122" concept="1" />
+      <node id="6181949993339159673" at="38,122,39,106" concept="3" />
+      <node id="6181949993339159675" at="39,106,40,104" concept="3" />
+      <node id="6181949993339159677" at="40,104,41,23" concept="1" />
+      <node id="6181949993339159668" at="41,23,42,0" concept="4" />
+      <node id="7167051279291084329" at="16,0,18,0" concept="5" trace="ourParamCache" />
+      <node id="7167051279291084329" at="19,0,22,0" concept="0" trace="Test_CreatePropertyAntiquotation_Intention_Test#()V" />
+      <node id="7167051279291084329" at="30,0,33,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="7167051279291084329" at="23,0,27,0" concept="2" trace="test_Test_CreatePropertyAntiquotation_Intention#()V" />
+      <node id="7167051279291084329" at="34,0,44,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7167051279291084329" at="19,60,20,25" />
+      <scope id="7167051279291084329" at="24,82,25,84" />
+      <scope id="7167051279291084329" at="30,52,31,19" />
+      <scope id="7167051279291084329" at="19,0,22,0" />
+      <scope id="7167051279291084329" at="30,0,33,0">
+        <var name="owner" id="7167051279291084329" />
+      </scope>
+      <scope id="7167051279291084329" at="23,0,27,0" />
+      <scope id="7167051279291084329" at="35,51,42,0" />
+      <scope id="7167051279291084329" at="34,0,44,0" />
+      <unit id="7167051279291084329" at="28,0,45,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreatePropertyAntiquotation_Intention_Test$TestBody" />
+      <unit id="7167051279291084329" at="14,0,46,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreatePropertyAntiquotation_Intention_Test" />
     </file>
   </root>
   <root nodeRef="r:05c4fa32-3688-4db6-b828-4373b1de41d9(jetbrains.mps.lang.quotation.test.editorTest@tests)/7167051279291141156">
     <file name="Test_CreateReferenceAntiquotation_Intention_Test.java">
-      <node id="7167051279291141156" at="18,61,19,25" concept="6" />
-      <node id="7167051279291141156" at="23,83,24,139" concept="1" />
-      <node id="7167051279291141156" at="30,51,31,72" concept="1" />
-      <node id="7167051279291141167" at="31,72,32,148" concept="1" />
-      <node id="7167051279291141169" at="32,148,33,123" concept="1" />
-      <node id="6181949993339160214" at="33,123,34,106" concept="3" />
-      <node id="6181949993339160216" at="34,106,35,104" concept="3" />
-      <node id="6181949993339160218" at="35,104,36,28" concept="1" />
-      <node id="6181949993339160209" at="36,28,37,0" concept="4" />
-      <node id="7167051279291141156" at="15,0,17,0" concept="5" trace="ourParamCache" />
-      <node id="7167051279291141156" at="18,0,21,0" concept="0" trace="Test_CreateReferenceAntiquotation_Intention_Test#()V" />
-      <node id="7167051279291141156" at="22,0,26,0" concept="2" trace="test_Test_CreateReferenceAntiquotation_Intention#()V" />
-      <node id="7167051279291141156" at="29,0,39,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="7167051279291141156" at="18,61,19,25" />
-      <scope id="7167051279291141156" at="23,83,24,139" />
-      <scope id="7167051279291141156" at="18,0,21,0" />
-      <scope id="7167051279291141156" at="22,0,26,0" />
-      <scope id="7167051279291141156" at="30,51,37,0" />
-      <scope id="7167051279291141156" at="29,0,39,0" />
-      <unit id="7167051279291141156" at="27,0,40,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateReferenceAntiquotation_Intention_Test$TestBody" />
-      <unit id="7167051279291141156" at="13,0,41,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateReferenceAntiquotation_Intention_Test" />
+      <node id="7167051279291141156" at="19,61,20,25" concept="6" />
+      <node id="7167051279291141156" at="24,83,25,85" concept="1" />
+      <node id="7167051279291141156" at="30,52,31,19" concept="6" />
+      <node id="7167051279291141156" at="35,51,36,72" concept="1" />
+      <node id="7167051279291141167" at="36,72,37,148" concept="1" />
+      <node id="7167051279291141169" at="37,148,38,123" concept="1" />
+      <node id="6181949993339160214" at="38,123,39,106" concept="3" />
+      <node id="6181949993339160216" at="39,106,40,104" concept="3" />
+      <node id="6181949993339160218" at="40,104,41,28" concept="1" />
+      <node id="6181949993339160209" at="41,28,42,0" concept="4" />
+      <node id="7167051279291141156" at="16,0,18,0" concept="5" trace="ourParamCache" />
+      <node id="7167051279291141156" at="19,0,22,0" concept="0" trace="Test_CreateReferenceAntiquotation_Intention_Test#()V" />
+      <node id="7167051279291141156" at="30,0,33,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="7167051279291141156" at="23,0,27,0" concept="2" trace="test_Test_CreateReferenceAntiquotation_Intention#()V" />
+      <node id="7167051279291141156" at="34,0,44,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7167051279291141156" at="19,61,20,25" />
+      <scope id="7167051279291141156" at="24,83,25,85" />
+      <scope id="7167051279291141156" at="30,52,31,19" />
+      <scope id="7167051279291141156" at="19,0,22,0" />
+      <scope id="7167051279291141156" at="30,0,33,0">
+        <var name="owner" id="7167051279291141156" />
+      </scope>
+      <scope id="7167051279291141156" at="23,0,27,0" />
+      <scope id="7167051279291141156" at="35,51,42,0" />
+      <scope id="7167051279291141156" at="34,0,44,0" />
+      <unit id="7167051279291141156" at="28,0,45,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateReferenceAntiquotation_Intention_Test$TestBody" />
+      <unit id="7167051279291141156" at="14,0,46,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateReferenceAntiquotation_Intention_Test" />
     </file>
   </root>
   <root nodeRef="r:05c4fa32-3688-4db6-b828-4373b1de41d9(jetbrains.mps.lang.quotation.test.editorTest@tests)/7167051279291147217">
     <file name="Test_CreatePropertyAntiquotation_Key_Test.java">
-      <node id="7167051279291147217" at="17,54,18,25" concept="6" />
-      <node id="7167051279291147217" at="22,76,23,132" concept="1" />
-      <node id="7167051279291147217" at="29,51,30,72" concept="1" />
-      <node id="7167051279291148613" at="30,72,31,22" concept="1" />
-      <node id="6181949993339160106" at="31,22,32,106" concept="3" />
-      <node id="6181949993339160108" at="32,106,33,104" concept="3" />
-      <node id="6181949993339160110" at="33,104,34,23" concept="1" />
-      <node id="6181949993339160103" at="34,23,35,0" concept="4" />
-      <node id="7167051279291147217" at="14,0,16,0" concept="5" trace="ourParamCache" />
-      <node id="7167051279291147217" at="17,0,20,0" concept="0" trace="Test_CreatePropertyAntiquotation_Key_Test#()V" />
-      <node id="7167051279291147217" at="21,0,25,0" concept="2" trace="test_Test_CreatePropertyAntiquotation_Key#()V" />
-      <node id="7167051279291147217" at="28,0,37,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="7167051279291147217" at="17,54,18,25" />
-      <scope id="7167051279291147217" at="22,76,23,132" />
-      <scope id="7167051279291147217" at="17,0,20,0" />
-      <scope id="7167051279291147217" at="21,0,25,0" />
-      <scope id="7167051279291147217" at="29,51,35,0" />
-      <scope id="7167051279291147217" at="28,0,37,0" />
-      <unit id="7167051279291147217" at="26,0,38,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreatePropertyAntiquotation_Key_Test$TestBody" />
-      <unit id="7167051279291147217" at="12,0,39,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreatePropertyAntiquotation_Key_Test" />
+      <node id="7167051279291147217" at="18,54,19,25" concept="6" />
+      <node id="7167051279291147217" at="23,76,24,78" concept="1" />
+      <node id="7167051279291147217" at="29,52,30,19" concept="6" />
+      <node id="7167051279291147217" at="34,51,35,72" concept="1" />
+      <node id="7167051279291148613" at="35,72,36,22" concept="1" />
+      <node id="6181949993339160106" at="36,22,37,106" concept="3" />
+      <node id="6181949993339160108" at="37,106,38,104" concept="3" />
+      <node id="6181949993339160110" at="38,104,39,23" concept="1" />
+      <node id="6181949993339160103" at="39,23,40,0" concept="4" />
+      <node id="7167051279291147217" at="15,0,17,0" concept="5" trace="ourParamCache" />
+      <node id="7167051279291147217" at="18,0,21,0" concept="0" trace="Test_CreatePropertyAntiquotation_Key_Test#()V" />
+      <node id="7167051279291147217" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="7167051279291147217" at="22,0,26,0" concept="2" trace="test_Test_CreatePropertyAntiquotation_Key#()V" />
+      <node id="7167051279291147217" at="33,0,42,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7167051279291147217" at="18,54,19,25" />
+      <scope id="7167051279291147217" at="23,76,24,78" />
+      <scope id="7167051279291147217" at="29,52,30,19" />
+      <scope id="7167051279291147217" at="18,0,21,0" />
+      <scope id="7167051279291147217" at="29,0,32,0">
+        <var name="owner" id="7167051279291147217" />
+      </scope>
+      <scope id="7167051279291147217" at="22,0,26,0" />
+      <scope id="7167051279291147217" at="34,51,40,0" />
+      <scope id="7167051279291147217" at="33,0,42,0" />
+      <unit id="7167051279291147217" at="27,0,43,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreatePropertyAntiquotation_Key_Test$TestBody" />
+      <unit id="7167051279291147217" at="13,0,44,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreatePropertyAntiquotation_Key_Test" />
     </file>
   </root>
   <root nodeRef="r:05c4fa32-3688-4db6-b828-4373b1de41d9(jetbrains.mps.lang.quotation.test.editorTest@tests)/7167051279291148615">
     <file name="Test_CreateReferenceAntiquotation_Key_Test.java">
-      <node id="7167051279291148615" at="17,55,18,25" concept="6" />
-      <node id="7167051279291148615" at="22,77,23,133" concept="1" />
-      <node id="7167051279291148615" at="29,51,30,72" concept="1" />
-      <node id="7167051279291149182" at="30,72,31,22" concept="1" />
-      <node id="6181949993339160319" at="31,22,32,106" concept="3" />
-      <node id="6181949993339160321" at="32,106,33,104" concept="3" />
-      <node id="6181949993339160323" at="33,104,34,28" concept="1" />
-      <node id="6181949993339160316" at="34,28,35,0" concept="4" />
-      <node id="7167051279291148615" at="14,0,16,0" concept="5" trace="ourParamCache" />
-      <node id="7167051279291148615" at="17,0,20,0" concept="0" trace="Test_CreateReferenceAntiquotation_Key_Test#()V" />
-      <node id="7167051279291148615" at="21,0,25,0" concept="2" trace="test_Test_CreateReferenceAntiquotation_Key#()V" />
-      <node id="7167051279291148615" at="28,0,37,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="7167051279291148615" at="17,55,18,25" />
-      <scope id="7167051279291148615" at="22,77,23,133" />
-      <scope id="7167051279291148615" at="17,0,20,0" />
-      <scope id="7167051279291148615" at="21,0,25,0" />
-      <scope id="7167051279291148615" at="29,51,35,0" />
-      <scope id="7167051279291148615" at="28,0,37,0" />
-      <unit id="7167051279291148615" at="26,0,38,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateReferenceAntiquotation_Key_Test$TestBody" />
-      <unit id="7167051279291148615" at="12,0,39,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateReferenceAntiquotation_Key_Test" />
+      <node id="7167051279291148615" at="18,55,19,25" concept="6" />
+      <node id="7167051279291148615" at="23,77,24,79" concept="1" />
+      <node id="7167051279291148615" at="29,52,30,19" concept="6" />
+      <node id="7167051279291148615" at="34,51,35,72" concept="1" />
+      <node id="7167051279291149182" at="35,72,36,22" concept="1" />
+      <node id="6181949993339160319" at="36,22,37,106" concept="3" />
+      <node id="6181949993339160321" at="37,106,38,104" concept="3" />
+      <node id="6181949993339160323" at="38,104,39,28" concept="1" />
+      <node id="6181949993339160316" at="39,28,40,0" concept="4" />
+      <node id="7167051279291148615" at="15,0,17,0" concept="5" trace="ourParamCache" />
+      <node id="7167051279291148615" at="18,0,21,0" concept="0" trace="Test_CreateReferenceAntiquotation_Key_Test#()V" />
+      <node id="7167051279291148615" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="7167051279291148615" at="22,0,26,0" concept="2" trace="test_Test_CreateReferenceAntiquotation_Key#()V" />
+      <node id="7167051279291148615" at="33,0,42,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7167051279291148615" at="18,55,19,25" />
+      <scope id="7167051279291148615" at="23,77,24,79" />
+      <scope id="7167051279291148615" at="29,52,30,19" />
+      <scope id="7167051279291148615" at="18,0,21,0" />
+      <scope id="7167051279291148615" at="29,0,32,0">
+        <var name="owner" id="7167051279291148615" />
+      </scope>
+      <scope id="7167051279291148615" at="22,0,26,0" />
+      <scope id="7167051279291148615" at="34,51,40,0" />
+      <scope id="7167051279291148615" at="33,0,42,0" />
+      <unit id="7167051279291148615" at="27,0,43,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateReferenceAntiquotation_Key_Test$TestBody" />
+      <unit id="7167051279291148615" at="13,0,44,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateReferenceAntiquotation_Key_Test" />
     </file>
   </root>
   <root nodeRef="r:05c4fa32-3688-4db6-b828-4373b1de41d9(jetbrains.mps.lang.quotation.test.editorTest@tests)/7167051279291153721">
     <file name="Test_CreateAntiquotation_Key_Test.java">
-      <node id="7167051279291153721" at="17,46,18,25" concept="6" />
-      <node id="7167051279291153721" at="22,68,23,124" concept="1" />
-      <node id="7167051279291153721" at="29,51,30,72" concept="1" />
-      <node id="7167051279291154385" at="30,72,31,22" concept="1" />
-      <node id="6181949993339158228" at="31,22,32,106" concept="3" />
-      <node id="6181949993339158230" at="32,106,33,104" concept="3" />
-      <node id="6181949993339158232" at="33,104,34,28" concept="1" />
-      <node id="6181949993339158225" at="34,28,35,0" concept="4" />
-      <node id="7167051279291153721" at="14,0,16,0" concept="5" trace="ourParamCache" />
-      <node id="7167051279291153721" at="17,0,20,0" concept="0" trace="Test_CreateAntiquotation_Key_Test#()V" />
-      <node id="7167051279291153721" at="21,0,25,0" concept="2" trace="test_Test_CreateAntiquotation_Key#()V" />
-      <node id="7167051279291153721" at="28,0,37,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="7167051279291153721" at="17,46,18,25" />
-      <scope id="7167051279291153721" at="22,68,23,124" />
-      <scope id="7167051279291153721" at="17,0,20,0" />
-      <scope id="7167051279291153721" at="21,0,25,0" />
-      <scope id="7167051279291153721" at="29,51,35,0" />
-      <scope id="7167051279291153721" at="28,0,37,0" />
-      <unit id="7167051279291153721" at="26,0,38,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateAntiquotation_Key_Test$TestBody" />
-      <unit id="7167051279291153721" at="12,0,39,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateAntiquotation_Key_Test" />
+      <node id="7167051279291153721" at="18,46,19,25" concept="6" />
+      <node id="7167051279291153721" at="23,68,24,70" concept="1" />
+      <node id="7167051279291153721" at="29,52,30,19" concept="6" />
+      <node id="7167051279291153721" at="34,51,35,72" concept="1" />
+      <node id="7167051279291154385" at="35,72,36,22" concept="1" />
+      <node id="6181949993339158228" at="36,22,37,106" concept="3" />
+      <node id="6181949993339158230" at="37,106,38,104" concept="3" />
+      <node id="6181949993339158232" at="38,104,39,28" concept="1" />
+      <node id="6181949993339158225" at="39,28,40,0" concept="4" />
+      <node id="7167051279291153721" at="15,0,17,0" concept="5" trace="ourParamCache" />
+      <node id="7167051279291153721" at="18,0,21,0" concept="0" trace="Test_CreateAntiquotation_Key_Test#()V" />
+      <node id="7167051279291153721" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="7167051279291153721" at="22,0,26,0" concept="2" trace="test_Test_CreateAntiquotation_Key#()V" />
+      <node id="7167051279291153721" at="33,0,42,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7167051279291153721" at="18,46,19,25" />
+      <scope id="7167051279291153721" at="23,68,24,70" />
+      <scope id="7167051279291153721" at="29,52,30,19" />
+      <scope id="7167051279291153721" at="18,0,21,0" />
+      <scope id="7167051279291153721" at="29,0,32,0">
+        <var name="owner" id="7167051279291153721" />
+      </scope>
+      <scope id="7167051279291153721" at="22,0,26,0" />
+      <scope id="7167051279291153721" at="34,51,40,0" />
+      <scope id="7167051279291153721" at="33,0,42,0" />
+      <unit id="7167051279291153721" at="27,0,43,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateAntiquotation_Key_Test$TestBody" />
+      <unit id="7167051279291153721" at="13,0,44,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateAntiquotation_Key_Test" />
     </file>
   </root>
   <root nodeRef="r:05c4fa32-3688-4db6-b828-4373b1de41d9(jetbrains.mps.lang.quotation.test.editorTest@tests)/7167051279291154489">
     <file name="Test_CreateListAntiquotation_Key_Test.java">
-      <node id="7167051279291154489" at="17,50,18,25" concept="6" />
-      <node id="7167051279291154489" at="22,72,23,128" concept="1" />
-      <node id="7167051279291154489" at="29,51,30,72" concept="1" />
-      <node id="7167051279291155062" at="30,72,31,22" concept="1" />
-      <node id="6181949993339159173" at="31,22,32,106" concept="3" />
-      <node id="6181949993339159175" at="32,106,33,104" concept="3" />
-      <node id="6181949993339159177" at="33,104,34,26" concept="1" />
-      <node id="6181949993339159106" at="34,26,35,0" concept="4" />
-      <node id="7167051279291154489" at="14,0,16,0" concept="5" trace="ourParamCache" />
-      <node id="7167051279291154489" at="17,0,20,0" concept="0" trace="Test_CreateListAntiquotation_Key_Test#()V" />
-      <node id="7167051279291154489" at="21,0,25,0" concept="2" trace="test_Test_CreateListAntiquotation_Key#()V" />
-      <node id="7167051279291154489" at="28,0,37,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="7167051279291154489" at="17,50,18,25" />
-      <scope id="7167051279291154489" at="22,72,23,128" />
-      <scope id="7167051279291154489" at="17,0,20,0" />
-      <scope id="7167051279291154489" at="21,0,25,0" />
-      <scope id="7167051279291154489" at="29,51,35,0" />
-      <scope id="7167051279291154489" at="28,0,37,0" />
-      <unit id="7167051279291154489" at="26,0,38,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateListAntiquotation_Key_Test$TestBody" />
-      <unit id="7167051279291154489" at="12,0,39,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateListAntiquotation_Key_Test" />
+      <node id="7167051279291154489" at="18,50,19,25" concept="6" />
+      <node id="7167051279291154489" at="23,72,24,74" concept="1" />
+      <node id="7167051279291154489" at="29,52,30,19" concept="6" />
+      <node id="7167051279291154489" at="34,51,35,72" concept="1" />
+      <node id="7167051279291155062" at="35,72,36,22" concept="1" />
+      <node id="6181949993339159173" at="36,22,37,106" concept="3" />
+      <node id="6181949993339159175" at="37,106,38,104" concept="3" />
+      <node id="6181949993339159177" at="38,104,39,26" concept="1" />
+      <node id="6181949993339159106" at="39,26,40,0" concept="4" />
+      <node id="7167051279291154489" at="15,0,17,0" concept="5" trace="ourParamCache" />
+      <node id="7167051279291154489" at="18,0,21,0" concept="0" trace="Test_CreateListAntiquotation_Key_Test#()V" />
+      <node id="7167051279291154489" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="7167051279291154489" at="22,0,26,0" concept="2" trace="test_Test_CreateListAntiquotation_Key#()V" />
+      <node id="7167051279291154489" at="33,0,42,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7167051279291154489" at="18,50,19,25" />
+      <scope id="7167051279291154489" at="23,72,24,74" />
+      <scope id="7167051279291154489" at="29,52,30,19" />
+      <scope id="7167051279291154489" at="18,0,21,0" />
+      <scope id="7167051279291154489" at="29,0,32,0">
+        <var name="owner" id="7167051279291154489" />
+      </scope>
+      <scope id="7167051279291154489" at="22,0,26,0" />
+      <scope id="7167051279291154489" at="34,51,40,0" />
+      <scope id="7167051279291154489" at="33,0,42,0" />
+      <unit id="7167051279291154489" at="27,0,43,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateListAntiquotation_Key_Test$TestBody" />
+      <unit id="7167051279291154489" at="13,0,44,0" name="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateListAntiquotation_Key_Test" />
     </file>
   </root>
 </debug-info>

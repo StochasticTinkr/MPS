@@ -10,12 +10,12 @@
   </root>
   <root nodeRef="r:422dd8ac-e62c-401d-a6e9-1ea317c4d069(jetbrains.mps.make.outlook.generator.template.main@generator)/5608160002100107296">
     <file name="QueriesGenerated.java">
-      <node id="5608160002100107308" at="31,112,32,188" concept="0" />
-      <node id="5608160002100170953" at="34,112,35,332" concept="0" />
-      <node id="5608160002100170946" at="37,120,38,191" concept="0" />
-      <scope id="5608160002100107307" at="31,112,32,188" />
-      <scope id="5608160002100170952" at="34,112,35,332" />
-      <scope id="5608160002100170945" at="37,120,38,191" />
+      <node id="5608160002100170953" at="31,101,32,332" concept="0" />
+      <node id="5608160002100107308" at="34,95,35,188" concept="0" />
+      <node id="5608160002100170946" at="37,107,38,191" concept="0" />
+      <scope id="5608160002100170952" at="31,101,32,332" />
+      <scope id="5608160002100107307" at="34,95,35,188" />
+      <scope id="5608160002100170945" at="37,107,38,191" />
     </file>
   </root>
 </debug-info>

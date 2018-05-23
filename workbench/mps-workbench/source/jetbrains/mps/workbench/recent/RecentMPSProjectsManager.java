@@ -54,10 +54,8 @@ public class RecentMPSProjectsManager extends RecentProjectsManagerBase {
   }
 
   @Override
-  protected void doOpenProject(@NotNull String projectPath, @Nullable com.intellij.openapi.project.Project projectToClose, boolean forceOpenInNewFrame) {
+  public Project doOpenProject(@NotNull String projectPath, @Nullable com.intellij.openapi.project.Project projectToClose, boolean forceOpenInNewFrame) {
     File projectFile = new File(projectPath); // Use simplest way to check file existence, no need to go with IDEA VFS here.
-    if (projectFile.exists()) {
-      ProjectUtil.openProject(projectPath, projectToClose, forceOpenInNewFrame);
-    }
+    return projectFile.exists() ? ProjectUtil.openProject(projectPath, projectToClose, forceOpenInNewFrame) : null;
   }
 }

@@ -21,6 +21,8 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
+    <import index="tp24" ref="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" />
+    <import index="dvox" ref="r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -2644,6 +2646,57 @@
               </node>
             </node>
             <node concept="WFELt" id="R$fwjLmb7O" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2S6QgY" id="4GJZJa6jt3r">
+    <property role="3GE5qa" value="reference" />
+    <property role="TrG5h" value="ReplaceWithPointer" />
+    <ref role="2ZfgGC" to="tp25:36vPRrqnoSW" resolve="AbstractNodeRefExpression" />
+    <node concept="2S6ZIM" id="4GJZJa6jt3s" role="2ZfVej">
+      <node concept="3clFbS" id="4GJZJa6jt3t" role="2VODD2">
+        <node concept="3clFbF" id="4GJZJa6juA7" role="3cqZAp">
+          <node concept="Xl_RD" id="4GJZJa6juA6" role="3clFbG">
+            <property role="Xl_RC" value="Replace With node-ptr&lt;&gt;" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2Sbjvc" id="4GJZJa6jt3u" role="2ZfgGD">
+      <node concept="3clFbS" id="4GJZJa6jt3v" role="2VODD2">
+        <node concept="3cpWs8" id="4GJZJa6j$4q" role="3cqZAp">
+          <node concept="3cpWsn" id="4GJZJa6j$4r" role="3cpWs9">
+            <property role="TrG5h" value="nodeIdentity" />
+            <node concept="3Tqbb2" id="4GJZJa6j$4o" role="1tU5fm">
+              <ref role="ehGHo" to="dvox:k2ZBl8CwzR" resolve="NodeIdentity" />
+            </node>
+            <node concept="2YIFZM" id="4GJZJa6j$4s" role="33vP2m">
+              <ref role="37wK5l" to="tp24:1tZss7c9HC7" resolve="toNodeIdentity" />
+              <ref role="1Pybhc" to="tp24:1tZss7c9H$s" resolve="NodePointerMigrations" />
+              <node concept="2Sf5sV" id="4GJZJa6j$4t" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4GJZJa6j$7b" role="3cqZAp">
+          <node concept="2OqwBi" id="4GJZJa6j_4S" role="3clFbG">
+            <node concept="2OqwBi" id="4GJZJa6j$EH" role="2Oq$k0">
+              <node concept="2OqwBi" id="4GJZJa6j$dt" role="2Oq$k0">
+                <node concept="2Sf5sV" id="4GJZJa6j$79" role="2Oq$k0" />
+                <node concept="1_qnLN" id="4GJZJa6j$tL" role="2OqNvi">
+                  <ref role="1_rbq0" to="tp25:6qMaajV39gP" resolve="NodePointerExpression" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="4GJZJa6j$Nw" role="2OqNvi">
+                <ref role="3Tt5mk" to="tp25:6qMaajV39im" resolve="ref" />
+              </node>
+            </node>
+            <node concept="2oxUTD" id="4GJZJa6j_n8" role="2OqNvi">
+              <node concept="37vLTw" id="4GJZJa6j_sA" role="2oxUTC">
+                <ref role="3cqZAo" node="4GJZJa6j$4r" resolve="nodeIdentity" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

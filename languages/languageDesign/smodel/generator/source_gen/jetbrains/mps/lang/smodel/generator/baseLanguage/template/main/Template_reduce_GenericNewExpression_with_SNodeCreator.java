@@ -50,7 +50,7 @@ public class Template_reduce_GenericNewExpression_with_SNodeCreator extends Temp
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_5091528797226417731(new SourceSubstituteMacroNodeContext(context1, includeMacro_8mair_b0a0a1a3a2a6));
+        SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_a0a0_2(new SourceSubstituteMacroNodeContext(context1, includeMacro_8mair_b0a0a1a3a2a6));
         TemplateContext context2 = context1.subContext(null, callInputNode2);
         if (callInputNode2 != null) {
           tlist2 = new Template_reduce_ConceptDeclaration2SConcept().apply(environment, context2);

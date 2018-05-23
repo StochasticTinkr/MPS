@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
@@ -14,16 +15,9 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.Set;
-import com.intellij.openapi.application.PathMacros;
-import java.util.List;
-import jetbrains.mps.baseLanguage.execution.api.JvmArgs;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.WithPlatformTestExecutor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeWrapper<N> {
@@ -32,6 +26,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   private final SRepository myRepo;
   private final boolean myRunsInProcess;
   protected final boolean myNeedsMPS;
+  protected final SModuleReference myTestModule;
 
   public AbstractTestWrapper(@NotNull N node) {
     this(node, false, false);
@@ -42,10 +37,17 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
     myRepo = SNodeOperations.getModel(node).getRepository();
     myRunsInProcess = runsInProcess;
     myNeedsMPS = needsMPS;
+    myTestModule = SNodeOperations.getModel(node).getModule().getModuleReference();
   }
 
   /*package*/ SRepository getRepo() {
     return myRepo;
+  }
+
+  @NotNull
+  @Override
+  public final SModuleReference getTestNodeModule() {
+    return myTestModule;
   }
 
   /**
@@ -111,32 +113,10 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   public TestParameters getTestRunParameters() {
     TestParameters rp = TestParameters.calcDefault(myRepo);
     if (myNeedsMPS) {
-      // FIXME move macros into JUnit_Command, too 
-      // FIXME Use same PathMacros instance 
-      Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
-      List<String> jvmArgsWithMacros = ListSequence.fromList(JvmArgs.getDefaultJvmArgs()).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
-        public String select(String key) {
-          return String.format("-Dpath.macro.%s=\"%s\"", key, jetbrains.mps.project.PathMacros.getInstance().getValue(key));
-        }
-      })).toListSequence();
-      return new TestParameters(WithPlatformTestExecutor.class, true, ListSequence.fromList(rp.getClassPath()).toListSequence(), jvmArgsWithMacros);
+      return new TestParameters(WithPlatformTestExecutor.class, true, ListSequence.fromList(rp.getClassPath()).toListSequence(), null);
     } else {
       return rp;
     }
-  }
-
-  @Override
-  public String getName() {
-    return withNode(new Function<N, String>() {
-      public String apply(N node) {
-        if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
-          return SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-        } else if (node != null) {
-          throw new UnsupportedOperationException("Should override getName for not INamedConcept: " + SNodeOperations.getConcept(node));
-        }
-        return null;
-      }
-    });
   }
 
   @Override
@@ -145,7 +125,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
     if (isTestCase() || (testCase = getTestCase()) == null) {
       return getName();
     }
-    return testCase.getFqName() + "." + getName();
+    return testCase.getFqName() + '.' + getName();
   }
 
   @Override

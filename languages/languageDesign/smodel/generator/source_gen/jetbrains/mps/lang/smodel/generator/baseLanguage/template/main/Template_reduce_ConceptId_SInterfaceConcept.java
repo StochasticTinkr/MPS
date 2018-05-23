@@ -46,7 +46,7 @@ public class Template_reduce_ConceptId_SInterfaceConcept extends TemplateDeclara
       {
         Collection<SNode> tlist2 = null;
         {
-          final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_2836521009935072494(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_acp5hl_b0a0a0a1a3a2a4));
+          final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_a0a0_0(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_acp5hl_b0a0a0a1a3a2a4));
           if (switchInput2 == null) {
             {
               TemplateSwitchMapping switch2 = environment.getGenerator().getSwitch(templateSwitchNode_acp5hl_a0a0c0a1a1a3a2a4);
@@ -78,7 +78,7 @@ public class Template_reduce_ConceptId_SInterfaceConcept extends TemplateDeclara
       {
         final SNode tnode5 = environment.createOutputNode(myConcepts[2]);
         try {
-          SNodeAccessUtil.setProperty(tnode5, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2836521009935072502(new PropertyMacroContext(context1, "0L", propertyMacro_acp5hl_c0a0c0a0b0e0c0e))));
+          SNodeAccessUtil.setProperty(tnode5, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0b0_3(new PropertyMacroContext(context1, "0L", propertyMacro_acp5hl_c0a0c0a0b0e0c0e))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode5);
@@ -87,7 +87,7 @@ public class Template_reduce_ConceptId_SInterfaceConcept extends TemplateDeclara
       {
         final SNode tnode6 = environment.createOutputNode(myConcepts[3]);
         try {
-          SNodeAccessUtil.setProperty(tnode6, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2836521009935072515(new PropertyMacroContext(context1, "", propertyMacro_acp5hl_c0a0c0a0b0f0c0e))));
+          SNodeAccessUtil.setProperty(tnode6, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0c0_3(new PropertyMacroContext(context1, "", propertyMacro_acp5hl_c0a0c0a0b0f0c0e))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode6);

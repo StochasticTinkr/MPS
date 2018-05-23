@@ -30,7 +30,7 @@
       <node id="1209150022679" at="37,64,38,17" concept="7" />
       <node id="1209150022679" at="41,61,42,21" concept="7" />
       <node id="1209150022679" at="45,29,46,390" concept="10" />
-      <node id="1209150022679" at="49,94,50,125" concept="7" />
+      <node id="1209150022679" at="49,94,50,114" concept="7" />
       <node id="1209150022679" at="53,103,54,80" concept="6" />
       <node id="1209150022679" at="54,80,55,229" concept="6" />
       <node id="1209150022679" at="56,11,57,56" concept="6" />
@@ -40,7 +40,7 @@
       <node id="1209150022679" at="64,159,65,33" concept="8" />
       <node id="1209150022679" at="68,7,69,48" concept="7" />
       <node id="1209150022679" at="73,31,74,394" concept="10" />
-      <node id="1209150022679" at="77,94,78,118" concept="7" />
+      <node id="1209150022679" at="77,94,78,109" concept="7" />
       <node id="1209150022679" at="81,103,82,80" concept="6" />
       <node id="1209150022679" at="82,80,83,86" concept="6" />
       <node id="1209150022679" at="83,86,84,20" concept="7" />
@@ -61,10 +61,10 @@
       <scope id="1209150022679" at="37,64,38,17" />
       <scope id="1209150022679" at="41,61,42,21" />
       <scope id="1209150022679" at="45,29,46,390" />
-      <scope id="1209150022679" at="49,94,50,125" />
+      <scope id="1209150022679" at="49,94,50,114" />
       <scope id="1209150022679" at="60,15,61,178" />
       <scope id="1209150022679" at="73,31,74,394" />
-      <scope id="1209150022679" at="77,94,78,118" />
+      <scope id="1209150022679" at="77,94,78,109" />
       <scope id="1209150022679" at="31,53,34,104" />
       <scope id="1209150022679" at="45,0,48,0" />
       <scope id="1209150022679" at="73,0,76,0" />
@@ -104,16 +104,16 @@
       <unit id="1209150022679" at="27,0,88,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mapping_main" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1209150621175" at="16,104,17,448" concept="7" />
-      <node id="1209150505329" at="19,104,20,218" concept="7" />
-      <scope id="1209150617831" at="16,104,17,448" />
-      <scope id="1209150502312" at="19,104,20,218" />
+      <node id="1209150621175" at="16,93,17,448" concept="7" />
+      <node id="1209150505329" at="19,95,20,218" concept="7" />
+      <scope id="1209150617831" at="16,93,17,448" />
+      <scope id="1209150502312" at="19,95,20,218" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)/1209150125542">
     <file name="QueriesGenerated.java">
-      <node id="1209150220871" at="22,102,23,187" concept="7" />
-      <scope id="1209150187922" at="22,102,23,187" />
+      <node id="1209150220871" at="22,93,23,187" concept="7" />
+      <scope id="1209150187922" at="22,93,23,187" />
     </file>
     <file name="Template_out_class.java">
       <node id="1209150125542" at="30,43,31,32" concept="7" />
@@ -134,8 +134,8 @@
       <node id="1209150125542" at="64,13,65,59" concept="2" />
       <node id="1209150125542" at="65,59,66,35" concept="8" />
       <node id="1209150125542" at="68,11,69,44" concept="6" />
-      <node id="1209150125542" at="69,44,70,172" concept="6" />
-      <node id="1209150125542" at="70,172,71,193" concept="2" />
+      <node id="1209150125542" at="69,44,70,163" concept="6" />
+      <node id="1209150125542" at="70,163,71,193" concept="2" />
       <node id="1209150125542" at="72,65,73,61" concept="2" />
       <node id="1209150125542" at="74,13,75,35" concept="8" />
       <node id="1209150125542" at="78,9,79,55" concept="2" />

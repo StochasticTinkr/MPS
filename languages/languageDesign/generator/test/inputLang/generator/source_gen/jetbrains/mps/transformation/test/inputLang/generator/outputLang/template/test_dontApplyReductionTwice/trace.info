@@ -26,7 +26,7 @@
       <node id="1209604518979" at="26,223,27,104" concept="2" />
       <node id="1209604518979" at="30,61,31,21" concept="6" />
       <node id="1209604518979" at="34,31,35,373" concept="9" />
-      <node id="1209604518979" at="38,94,39,118" concept="6" />
+      <node id="1209604518979" at="38,94,39,107" concept="6" />
       <node id="1209604518979" at="42,103,43,80" concept="5" />
       <node id="1209604518979" at="43,80,44,87" concept="5" />
       <node id="1209604518979" at="44,87,45,20" concept="6" />
@@ -37,7 +37,7 @@
       <node id="1209604518979" at="41,0,47,0" concept="4" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="1209604518979" at="30,61,31,21" />
       <scope id="1209604518979" at="34,31,35,373" />
-      <scope id="1209604518979" at="38,94,39,118" />
+      <scope id="1209604518979" at="38,94,39,107" />
       <scope id="1209604518979" at="25,53,27,104" />
       <scope id="1209604518979" at="34,0,37,0" />
       <scope id="1209604518979" at="42,103,45,20">
@@ -58,8 +58,8 @@
       <unit id="1209604518979" at="22,0,49,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.Mapping_main" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1209604582248" at="12,104,13,214" concept="6" />
-      <scope id="1209604575153" at="12,104,13,214" />
+      <node id="1209604582248" at="12,93,13,214" concept="6" />
+      <scope id="1209604575153" at="12,93,13,214" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)/1209605205934">

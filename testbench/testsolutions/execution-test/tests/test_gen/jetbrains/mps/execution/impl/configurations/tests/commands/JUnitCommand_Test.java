@@ -55,7 +55,7 @@ public class JUnitCommand_Test extends BaseTransformationTest {
       try {
         List<ITestNodeWrapper> allTests = ListSequence.fromList(success).union(ListSequence.fromList(failure)).toListSequence();
         ProcessHandler process = new JUnit_Command().createProcess(allTests);
-        TestRunState runState = new TestRunState(allTests, myProject);
+        TestRunState runState = new TestRunState(allTests);
         CheckTestStateListener checkListener = new CheckTestStateListener(success, failure);
         runState.addListener(checkListener);
         process.addProcessListener(new UnitTestProcessListener(runState));

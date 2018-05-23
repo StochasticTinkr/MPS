@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import javax.swing.SwingUtilities;
 import java.util.Set;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
@@ -25,11 +26,15 @@ public class ExpandDiagramVisibility_Test extends BaseTransformationTest {
 
   @Test
   public void test_ExpandDiagramVisibility() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.diagram.tests.ExpandDiagramVisibility_Test$TestBody", "testMethod", false);
+    new ExpandDiagramVisibility_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("931754141965328764", "931754141965328767");

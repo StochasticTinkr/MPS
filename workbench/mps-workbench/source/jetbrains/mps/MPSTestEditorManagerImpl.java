@@ -41,6 +41,7 @@ import com.intellij.util.containers.HashMap;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.concurrency.Promise;
 
 import javax.swing.JComponent;
 import java.awt.Component;
@@ -226,7 +227,7 @@ public class MPSTestEditorManagerImpl extends FileEditorManagerEx {
 
   @NotNull
   @Override
-  public AsyncResult<EditorWindow> getActiveWindow() {
+  public Promise<EditorWindow> getActiveWindow() {
     return null;
   }
 

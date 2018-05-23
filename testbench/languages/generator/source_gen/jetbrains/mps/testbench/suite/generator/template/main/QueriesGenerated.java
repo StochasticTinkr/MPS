@@ -34,7 +34,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public QueriesGenerated() {
     super(1);
   }
-  public static Object propertyMacro_GetPropertyValue_2956932267233365622(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_a1a0a0(final PropertyMacroContext _context) {
     String fqn = ITestRef__BehaviorDescriptor.fqClassName_id2$98zG5liRT.invoke(_context.getNode());
     if ((fqn == null || fqn.length() == 0)) {
       _context.showErrorMessage(_context.getNode(), "no class name");
@@ -42,23 +42,23 @@ public class QueriesGenerated extends QueryProviderBase {
     }
     return fqn;
   }
-  public static Object propertyMacro_GetPropertyValue_4089647634161018296(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_a1a0b0(final PropertyMacroContext _context) {
     String tns = IterableUtils.join(Sequence.fromIterable(ITestRef__BehaviorDescriptor.testNames_id3z1mdFUF$j3.invoke(_context.getNode())), ",");
     if ((tns == null || tns.length() == 0)) {
       _context.showWarningMessage(_context.getNode(), "empty test case");
     }
     return tns;
   }
-  public static Object propertyMacro_GetPropertyValue_4089647634160960602(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_a0a0b(final PropertyMacroContext _context) {
     return IModuleRef__BehaviorDescriptor.moduleReference_id173Z5qAOun8.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef"))).toString();
   }
-  public static Object propertyMacro_GetPropertyValue_2956932267233340150(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_a1(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + "_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
-  public static Iterable<SNode> sourceNodesQuery_2956932267233365615(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_a0a0a0(final SourceSubstituteMacroNodesContext _context) {
     return (Iterable<SNode>) ModuleSuite__BehaviorDescriptor.getNotMutedTests_id7tF7F0nXrAX.invoke(_context.getNode());
   }
-  public static Iterable<SNode> sourceNodesQuery_4089647634161018289(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_a0a0b0(final SourceSubstituteMacroNodesContext _context) {
     return (Iterable<SNode>) ModuleSuite__BehaviorDescriptor.getNotMutedTests_id7tF7F0nXrAX.invoke(_context.getNode());
   }
   private final Map<String, SourceNodesQuery> snsqMethods = new HashMap<String, SourceNodesQuery>();
@@ -85,9 +85,9 @@ public class QueriesGenerated extends QueryProviderBase {
     public Collection<SNode> evaluate(@NotNull SourceSubstituteMacroNodesContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_2956932267233365615(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0(ctx));
         case 1:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4089647634161018289(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0b0(ctx));
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -120,13 +120,13 @@ public class QueriesGenerated extends QueryProviderBase {
     public Object evaluate(@NotNull PropertyMacroContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_2956932267233365622(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_a1a0a0(ctx);
         case 1:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_4089647634161018296(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_a1a0b0(ctx);
         case 2:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_4089647634160960602(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_a0a0b(ctx);
         case 3:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_2956932267233340150(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_a1(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

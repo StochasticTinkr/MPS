@@ -291,62 +291,67 @@
         <node concept="2YIFZM" id="4_TMdeLkXj0" role="33vP2m">
           <ref role="1Pybhc" to="ni5j:~Pattern" resolve="Pattern" />
           <ref role="37wK5l" to="ni5j:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
-          <node concept="3cpWs3" id="3zSLWWE6Mhj" role="37wK5m">
-            <node concept="3cpWs3" id="3zSLWWE6LCO" role="3uHU7B">
-              <node concept="3cpWs3" id="3zSLWWE6LjY" role="3uHU7B">
-                <node concept="3cpWs3" id="3zSLWWE6L3m" role="3uHU7B">
-                  <node concept="3cpWs3" id="3zSLWWE6Jsc" role="3uHU7B">
-                    <node concept="3cpWs3" id="3zSLWWE6Jc0" role="3uHU7B">
-                      <node concept="3cpWs3" id="3zSLWWE6IW2" role="3uHU7B">
-                        <node concept="3cpWs3" id="3zSLWWE6HvI" role="3uHU7B">
-                          <node concept="3cpWs3" id="3zSLWWE6Hcb" role="3uHU7B">
-                            <node concept="3cpWs3" id="3zSLWWE6GWR" role="3uHU7B">
-                              <node concept="3cpWs3" id="3zSLWWE6EAD" role="3uHU7B">
-                                <node concept="Xl_RD" id="4_TMdeLkODh" role="3uHU7B">
-                                  <property role="Xl_RC" value="(AWT\\-.*)|(Image Fetch.*)|(Progress Cancel Checker)|(Flushing thread)" />
-                                </node>
-                                <node concept="Xl_RD" id="3zSLWWE6Ggu" role="3uHU7w">
-                                  <property role="Xl_RC" value="|(Keep\\-Alive.*)|(Finalizer.*)|(MPS interrupting thread)" />
-                                </node>
-                              </node>
-                              <node concept="Xl_RD" id="3zSLWWE6GXA" role="3uHU7w">
-                                <property role="Xl_RC" value="|(caret blinker.*)|(ApplicationImpl.*)|(AnimatorThread)" />
-                              </node>
-                            </node>
-                            <node concept="Xl_RD" id="3zSLWWE6HcU" role="3uHU7w">
-                              <property role="Xl_RC" value="|(MPS EDT Executor Thread.*)|(ChangesManager command queue)|(TimerQueue)" />
-                            </node>
-                          </node>
-                          <node concept="Xl_RD" id="3zSLWWE6HF5" role="3uHU7w">
-                            <property role="Xl_RC" value="|(Change List.*)|(Reference.*)|(Periodic task.*)" />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="3zSLWWE6IWL" role="3uHU7w">
-                          <property role="Xl_RC" value="|(Java2D.*)|(LowMemoryWatcher janitor)|(Timer\\-.*)|(FS Sync.*)" />
-                        </node>
-                      </node>
-                      <node concept="Xl_RD" id="3zSLWWE6JcJ" role="3uHU7w">
-                        <property role="Xl_RC" value="|(timed reference disposer)|(Alarm pool\\(own\\))|(Alarm pool\\(shared\\))" />
-                      </node>
-                    </node>
-                    <node concept="Xl_RD" id="3zSLWWE6JsV" role="3uHU7w">
-                      <property role="Xl_RC" value="|(Poller SunPKCS11-Darwin)|(MPS interrupt.*)|(process reaper)" />
-                    </node>
-                  </node>
-                  <node concept="Xl_RD" id="3zSLWWE6L45" role="3uHU7w">
-                    <property role="Xl_RC" value="|(RefCountingStorage.*)|(Encoding detection thread)" />
-                  </node>
-                </node>
-                <node concept="Xl_RD" id="3zSLWWE6LkH" role="3uHU7w">
-                  <property role="Xl_RC" value="|(ProcessWaitFor: .*git(\\.exe)?.*)|(BaseDataReader: error stream of .*git(\\.exe)?.*)" />
-                </node>
-              </node>
-              <node concept="Xl_RD" id="3zSLWWE6M1E" role="3uHU7w">
-                <property role="Xl_RC" value="|(BaseDataReader: output stream of .*git(\\.exe)?.*)" />
-              </node>
+          <node concept="3cpWs3" id="6Z4VR_CI1KG" role="37wK5m">
+            <node concept="Xl_RD" id="6Z4VR_CI5CU" role="3uHU7w">
+              <property role="Xl_RC" value="|(Batik CleanerThread)" />
             </node>
-            <node concept="Xl_RD" id="3zSLWWE6Mi2" role="3uHU7w">
-              <property role="Xl_RC" value="|(Process I/O pool [0-9]+)" />
+            <node concept="3cpWs3" id="3zSLWWE6Mhj" role="3uHU7B">
+              <node concept="3cpWs3" id="3zSLWWE6LCO" role="3uHU7B">
+                <node concept="3cpWs3" id="3zSLWWE6LjY" role="3uHU7B">
+                  <node concept="3cpWs3" id="3zSLWWE6L3m" role="3uHU7B">
+                    <node concept="3cpWs3" id="3zSLWWE6Jsc" role="3uHU7B">
+                      <node concept="3cpWs3" id="3zSLWWE6Jc0" role="3uHU7B">
+                        <node concept="3cpWs3" id="3zSLWWE6IW2" role="3uHU7B">
+                          <node concept="3cpWs3" id="3zSLWWE6HvI" role="3uHU7B">
+                            <node concept="3cpWs3" id="3zSLWWE6Hcb" role="3uHU7B">
+                              <node concept="3cpWs3" id="3zSLWWE6GWR" role="3uHU7B">
+                                <node concept="3cpWs3" id="3zSLWWE6EAD" role="3uHU7B">
+                                  <node concept="Xl_RD" id="4_TMdeLkODh" role="3uHU7B">
+                                    <property role="Xl_RC" value="(AWT\\-.*)|(Image Fetch.*)|(Progress Cancel Checker)|(Flushing thread)" />
+                                  </node>
+                                  <node concept="Xl_RD" id="3zSLWWE6Ggu" role="3uHU7w">
+                                    <property role="Xl_RC" value="|(Keep\\-Alive.*)|(Finalizer.*)|(MPS interrupting thread)" />
+                                  </node>
+                                </node>
+                                <node concept="Xl_RD" id="3zSLWWE6GXA" role="3uHU7w">
+                                  <property role="Xl_RC" value="|(caret blinker.*)|(ApplicationImpl.*)|(AnimatorThread)" />
+                                </node>
+                              </node>
+                              <node concept="Xl_RD" id="3zSLWWE6HcU" role="3uHU7w">
+                                <property role="Xl_RC" value="|(MPS EDT Executor Thread.*)|(ChangesManager command queue)|(TimerQueue)" />
+                              </node>
+                            </node>
+                            <node concept="Xl_RD" id="3zSLWWE6HF5" role="3uHU7w">
+                              <property role="Xl_RC" value="|(Change List.*)|(Reference.*)|(Periodic task.*)" />
+                            </node>
+                          </node>
+                          <node concept="Xl_RD" id="3zSLWWE6IWL" role="3uHU7w">
+                            <property role="Xl_RC" value="|(Java2D.*)|(LowMemoryWatcher janitor)|(Timer\\-.*)|(FS Sync.*)" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="3zSLWWE6JcJ" role="3uHU7w">
+                          <property role="Xl_RC" value="|(timed reference disposer)|(Alarm pool\\(own\\))|(Alarm pool\\(shared\\))" />
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="3zSLWWE6JsV" role="3uHU7w">
+                        <property role="Xl_RC" value="|(Poller SunPKCS11-Darwin)|(MPS interrupt.*)|(process reaper)" />
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="3zSLWWE6L45" role="3uHU7w">
+                      <property role="Xl_RC" value="|(RefCountingStorage.*)|(Encoding detection thread)" />
+                    </node>
+                  </node>
+                  <node concept="Xl_RD" id="3zSLWWE6LkH" role="3uHU7w">
+                    <property role="Xl_RC" value="|(ProcessWaitFor: .*git(\\.exe)?.*)|(BaseDataReader: error stream of .*git(\\.exe)?.*)" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="3zSLWWE6M1E" role="3uHU7w">
+                  <property role="Xl_RC" value="|(BaseDataReader: output stream of .*git(\\.exe)?.*)" />
+                </node>
+              </node>
+              <node concept="Xl_RD" id="3zSLWWE6Mi2" role="3uHU7w">
+                <property role="Xl_RC" value="|(Process I/O pool [0-9]+)" />
+              </node>
             </node>
           </node>
         </node>

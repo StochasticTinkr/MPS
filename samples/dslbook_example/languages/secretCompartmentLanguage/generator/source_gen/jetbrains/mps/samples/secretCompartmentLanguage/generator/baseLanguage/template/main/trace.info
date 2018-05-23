@@ -13,65 +13,65 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959042f(jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template.main@generator)/1197167513943">
     <file name="QueriesGenerated.java">
-      <node id="1197167556058" at="40,106,41,212" concept="1" />
-      <node id="1197225159988" at="43,106,44,180" concept="1" />
-      <node id="1197225159997" at="46,106,47,180" concept="1" />
-      <node id="1197225160005" at="49,106,50,175" concept="1" />
-      <node id="1197225513009" at="52,106,53,180" concept="1" />
-      <node id="1197225513018" at="55,106,56,180" concept="1" />
-      <node id="1197242056411" at="58,106,59,329" concept="1" />
-      <node id="1197241876788" at="79,102,80,57" concept="1" />
-      <node id="1217888432441" at="82,102,83,178" concept="1" />
-      <node id="1197239774187" at="85,102,86,182" concept="1" />
-      <node id="1197225150183" at="88,114,89,181" concept="1" />
-      <node id="1197225505469" at="91,114,92,181" concept="1" />
-      <node id="1197241785842" at="94,114,95,174" concept="0" />
+      <node id="1197167556058" at="40,95,41,212" concept="1" />
+      <node id="1197225159988" at="43,101,44,180" concept="1" />
+      <node id="1197225159997" at="46,103,47,180" concept="1" />
+      <node id="1197225160005" at="49,103,50,175" concept="1" />
+      <node id="1197225513009" at="52,101,53,180" concept="1" />
+      <node id="1197225513018" at="55,103,56,180" concept="1" />
+      <node id="1197242056411" at="58,103,59,329" concept="1" />
+      <node id="1197241876788" at="79,96,80,57" concept="1" />
+      <node id="1217888432441" at="82,97,83,178" concept="1" />
+      <node id="1197239774187" at="85,96,86,182" concept="1" />
+      <node id="1197225150183" at="88,106,89,181" concept="1" />
+      <node id="1197225505469" at="91,106,92,181" concept="1" />
+      <node id="1197241785842" at="94,106,95,174" concept="0" />
       <node id="1197241852666" at="95,174,96,260" concept="1" />
-      <scope id="1197167547635" at="40,106,41,212" />
-      <scope id="1197225159987" at="43,106,44,180" />
-      <scope id="1197225159996" at="46,106,47,180" />
-      <scope id="1197225160004" at="49,106,50,175" />
-      <scope id="1197225513008" at="52,106,53,180" />
-      <scope id="1197225513017" at="55,106,56,180" />
-      <scope id="1197242046926" at="58,106,59,329" />
-      <scope id="1197241620517" at="79,102,80,57" />
-      <scope id="1217888432440" at="82,102,83,178" />
-      <scope id="1197239764839" at="85,102,86,182" />
-      <scope id="1197225142619" at="88,114,89,181" />
-      <scope id="1197225498375" at="91,114,92,181" />
-      <scope id="1197241595256" at="94,114,96,260" />
+      <scope id="1197167547635" at="40,95,41,212" />
+      <scope id="1197225159987" at="43,101,44,180" />
+      <scope id="1197225159996" at="46,103,47,180" />
+      <scope id="1197225160004" at="49,103,50,175" />
+      <scope id="1197225513008" at="52,101,53,180" />
+      <scope id="1197225513017" at="55,103,56,180" />
+      <scope id="1197242046926" at="58,103,59,329" />
+      <scope id="1197241620517" at="79,96,80,57" />
+      <scope id="1217888432440" at="82,97,83,178" />
+      <scope id="1197239764839" at="85,96,86,182" />
+      <scope id="1197225142619" at="88,106,89,181" />
+      <scope id="1197225498375" at="91,106,92,181" />
+      <scope id="1197241595256" at="94,106,96,260" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959042f(jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template.main@generator)/1197239799208">
     <file name="QueriesGenerated.java">
-      <node id="199058371937543683" at="61,111,62,180" concept="1" />
-      <scope id="199058371937543682" at="61,111,62,180" />
+      <node id="199058371937543683" at="67,101,68,180" concept="1" />
+      <scope id="199058371937543682" at="67,101,68,180" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959042f(jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template.main@generator)/1197251176277">
     <file name="QueriesGenerated.java">
-      <node id="1197251224707" at="64,106,65,123" concept="1" />
-      <node id="199058371937525660" at="98,119,99,186" concept="1" />
-      <scope id="1197251191970" at="64,106,65,123" />
-      <scope id="199058371937525659" at="98,119,99,186" />
+      <node id="1197251224707" at="61,97,62,123" concept="1" />
+      <node id="199058371937525660" at="98,105,99,186" concept="1" />
+      <scope id="1197251191970" at="61,97,62,123" />
+      <scope id="199058371937525659" at="98,105,99,186" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959042f(jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template.main@generator)/1197253199675">
     <file name="QueriesGenerated.java">
-      <node id="199058371937525700" at="67,111,68,332" concept="1" />
-      <node id="199058371937525717" at="70,111,71,181" concept="1" />
-      <node id="5891355986060738162" at="76,109,77,572" concept="1" />
-      <node id="199058371937526738" at="101,119,102,187" concept="1" />
-      <scope id="199058371937525699" at="67,111,68,332" />
-      <scope id="199058371937525716" at="70,111,71,181" />
-      <scope id="5891355986060738161" at="76,109,77,572" />
-      <scope id="199058371937526737" at="101,119,102,187" />
+      <node id="199058371937525700" at="70,101,71,332" concept="1" />
+      <node id="199058371937525717" at="73,98,74,181" concept="1" />
+      <node id="5891355986060738162" at="76,100,77,572" concept="1" />
+      <node id="199058371937526738" at="101,108,102,187" concept="1" />
+      <scope id="199058371937525699" at="70,101,71,332" />
+      <scope id="199058371937525716" at="73,98,74,181" />
+      <scope id="5891355986060738161" at="76,100,77,572" />
+      <scope id="199058371937526737" at="101,108,102,187" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959042f(jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template.main@generator)/1197255964668">
     <file name="QueriesGenerated.java">
-      <node id="1197256638850" at="73,106,74,322" concept="1" />
-      <scope id="1197256634489" at="73,106,74,322" />
+      <node id="1197256638850" at="64,102,65,322" concept="1" />
+      <scope id="1197256634489" at="64,102,65,322" />
     </file>
   </root>
 </debug-info>

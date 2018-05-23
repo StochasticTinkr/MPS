@@ -39,7 +39,7 @@ public class Template_reduce_Looking extends TemplateDeclarationBase {
       {
         Collection<SNode> tlist2 = null;
         {
-          final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_7060824959896242619(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_yqxv9z_b0a0a0a1a2a2a4));
+          final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_a0a0a0b0_1(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_yqxv9z_b0a0a0a1a2a2a4));
           if (switchInput2 == null) {
             tlist2 = Collections.emptyList();
           } else {

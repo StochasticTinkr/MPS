@@ -39,7 +39,7 @@ public class Template_OutputRoot extends TemplateDeclarationBase implements Temp
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_3893401255414086894(new SourceSubstituteMacroNodesContext(context1, copySrcListMacro_38z9ys_b0a0a1a4a1a4));
+        final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_a0a(new SourceSubstituteMacroNodesContext(context1, copySrcListMacro_38z9ys_b0a0a1a4a1a4));
         tlist2 = environment.copyNodes(copyListInput2, copySrcListMacro_38z9ys_b0a0a1a4a1a4, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/3893401255414086888", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);

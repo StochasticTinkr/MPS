@@ -2367,24 +2367,21 @@
   </root>
   <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432727278">
     <file name="TestState.java">
-      <node id="3575782568432727347" at="20,0,21,0" concept="6" trace="myIcon" />
-      <node id="3575782568432727299" at="21,24,22,205" concept="10" />
-      <node id="3575782568432727321" at="22,205,23,18" concept="5" />
-      <node id="3575782568432727283" at="26,40,27,52" concept="11" />
-      <node id="3575782568432727289" at="28,5,29,18" concept="11" />
-      <node id="3575782568432727281" at="25,25,28,5" concept="8" />
-      <node id="3575782568432727295" at="21,0,25,0" concept="2" trace="TestState#(Ljavax/swing/Icon;)V" />
-      <node id="3575782568432727279" at="25,0,31,0" concept="9" trace="getIcon#()Ljavax/swing/Icon;" />
-      <scope id="3575782568432727282" at="26,40,27,52" />
-      <scope id="3575782568432727298" at="21,24,23,18">
-        <var name="language" id="3575782568432727300" />
-      </scope>
-      <scope id="3575782568432727295" at="21,0,25,0">
+      <node id="3575782568432727347" at="18,0,19,0" concept="6" trace="myIcon" />
+      <node id="3575782568432727321" at="19,24,20,18" concept="5" />
+      <node id="3575782568432727283" at="23,40,24,52" concept="11" />
+      <node id="3575782568432727289" at="25,5,26,18" concept="11" />
+      <node id="3575782568432727295" at="19,0,22,0" concept="2" trace="TestState#(Ljavax/swing/Icon;)V" />
+      <node id="3575782568432727281" at="22,25,25,5" concept="8" />
+      <node id="3575782568432727279" at="22,0,28,0" concept="9" trace="getIcon#()Ljavax/swing/Icon;" />
+      <scope id="3575782568432727298" at="19,24,20,18" />
+      <scope id="3575782568432727282" at="23,40,24,52" />
+      <scope id="3575782568432727295" at="19,0,22,0">
         <var name="icon" id="3575782568432727296" />
       </scope>
-      <scope id="3575782568432727280" at="25,25,29,18" />
-      <scope id="3575782568432727279" at="25,0,31,0" />
-      <unit id="3575782568432727278" at="10,0,32,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestState" />
+      <scope id="3575782568432727280" at="22,25,26,18" />
+      <scope id="3575782568432727279" at="22,0,28,0" />
+      <unit id="3575782568432727278" at="8,0,29,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestState" />
     </file>
   </root>
   <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3667367438338446327">

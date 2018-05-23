@@ -11,14 +11,14 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)/1143148725345">
     <file name="QueriesGenerated.java">
-      <node id="1199879671618" at="31,106,32,115" concept="0" />
-      <node id="1216411056408" at="34,103,35,91" concept="0" />
-      <node id="1199971784022" at="37,103,38,22" concept="0" />
-      <node id="1199879115662" at="40,88,41,129" concept="0" />
-      <scope id="1199879576744" at="31,106,32,115" />
-      <scope id="1170351924343" at="34,103,35,91" />
-      <scope id="1199971770630" at="37,103,38,22" />
-      <scope id="1199879109302" at="40,88,41,129" />
+      <node id="1199879671618" at="31,104,32,115" concept="0" />
+      <node id="1216411056408" at="34,98,35,91" concept="0" />
+      <node id="1199971784022" at="37,102,38,22" concept="0" />
+      <node id="1199879115662" at="40,83,41,129" concept="0" />
+      <scope id="1199879576744" at="31,104,32,115" />
+      <scope id="1170351924343" at="34,98,35,91" />
+      <scope id="1199971770630" at="37,102,38,22" />
+      <scope id="1199879109302" at="40,83,41,129" />
     </file>
   </root>
 </debug-info>

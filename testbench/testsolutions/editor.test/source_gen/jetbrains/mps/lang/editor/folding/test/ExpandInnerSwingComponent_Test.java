@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import java.util.Set;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import junit.framework.Assert;
@@ -24,11 +25,15 @@ public class ExpandInnerSwingComponent_Test extends BaseTransformationTest {
 
   @Test
   public void test_ExpandInnerSwingComponent() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.folding.test.ExpandInnerSwingComponent_Test$TestBody", "testMethod", false);
+    new ExpandInnerSwingComponent_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3824034168925697478", "3824034168925703824");

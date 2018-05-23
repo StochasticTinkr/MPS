@@ -2,19 +2,18 @@
   <library name="IDEA runtime jars">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/commons-httpclient-3.1-patched.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/commons-codec-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/common-io-3.3.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/idea_rt.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/snappy-in-java-0.5.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/guava-21.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/common-image-3.2.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/common-io-3.2.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/common-lang-3.2.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/commons-compress-1.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/guava-23.6-jre.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/common-image-3.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/common-lang-3.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-codec-1.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-compress-1.16.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-imaging-1.0-RC-1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/imageio-core-3.2.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/imageio-metadata-3.2.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/imageio-tiff-3.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/imageio-core-3.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/imageio-metadata-3.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/imageio-tiff-3.3.2.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/lib/src/commons-httpclient-3.1-src-patched.zip!/commons-httpclient-3.1/docs/apidocs" />

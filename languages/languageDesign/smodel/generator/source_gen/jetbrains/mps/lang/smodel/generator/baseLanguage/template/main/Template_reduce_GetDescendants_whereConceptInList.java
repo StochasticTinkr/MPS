@@ -46,7 +46,7 @@ public class Template_reduce_GetDescendants_whereConceptInList extends TemplateD
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_1173119356575(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_z3mp7r_b0a0c0d0c0e));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_16(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_z3mp7r_b0a0c0d0c0e));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_z3mp7r_b0a0c0d0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/1173119356573", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -72,14 +72,14 @@ public class Template_reduce_GetDescendants_whereConceptInList extends TemplateD
               }
               {
                 final List<SNode> tlist7 = new ArrayList<SNode>();
-                final Iterable<SNode> loopList7 = QueriesGenerated.sourceNodesQuery_3902354333654138604(new SourceSubstituteMacroNodesContext(context3, loopMacroRef_z3mp7r_b0a0a1a2a1a1a1a4a2a4));
+                final Iterable<SNode> loopList7 = QueriesGenerated.sourceNodesQuery_a0a0b0_2(new SourceSubstituteMacroNodesContext(context3, loopMacroRef_z3mp7r_b0a0a1a2a1a1a1a4a2a4));
                 for (SNode itnode7 : loopList7) {
                   if (itnode7 == null) {
                     continue;
                   }
                   TemplateContext context4 = context3.subContext(itnode7);
                   Collection<SNode> tlist8 = null;
-                  SNode callInputNode8 = QueriesGenerated.sourceNodeQuery_3902354333654138610(new SourceSubstituteMacroNodeContext(context4, includeMacro_z3mp7r_b0a0a3a2a2a1a1a1a4a2a4));
+                  SNode callInputNode8 = QueriesGenerated.sourceNodeQuery_a1a0b0_2(new SourceSubstituteMacroNodeContext(context4, includeMacro_z3mp7r_b0a0a3a2a2a1a1a1a4a2a4));
                   TemplateContext context5 = context4.subContext(null, callInputNode8);
                   if (callInputNode8 != null) {
                     tlist8 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context5);
@@ -106,7 +106,7 @@ public class Template_reduce_GetDescendants_whereConceptInList extends TemplateD
       {
         final SNode tnode10 = environment.createOutputNode(myConcepts[4]);
         try {
-          SNodeAccessUtil.setProperty(tnode10, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1176946990349(new PropertyMacroContext(context1, null, propertyMacro_z3mp7r_c0a0c0a0b0f0c0e))));
+          SNodeAccessUtil.setProperty(tnode10, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0c0_12(new PropertyMacroContext(context1, null, propertyMacro_z3mp7r_c0a0c0a0b0f0c0e))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode10);
@@ -131,14 +131,14 @@ public class Template_reduce_GetDescendants_whereConceptInList extends TemplateD
               }
               {
                 final List<SNode> tlist14 = new ArrayList<SNode>();
-                final Iterable<SNode> loopList14 = QueriesGenerated.sourceNodesQuery_3902354333654144730(new SourceSubstituteMacroNodesContext(context7, loopMacroRef_z3mp7r_b0a0a1a2a1a1a1a6a2a4));
+                final Iterable<SNode> loopList14 = QueriesGenerated.sourceNodesQuery_a0a0d0_0(new SourceSubstituteMacroNodesContext(context7, loopMacroRef_z3mp7r_b0a0a1a2a1a1a1a6a2a4));
                 for (SNode itnode14 : loopList14) {
                   if (itnode14 == null) {
                     continue;
                   }
                   TemplateContext context8 = context7.subContext(itnode14);
                   Collection<SNode> tlist15 = null;
-                  SNode callInputNode15 = QueriesGenerated.sourceNodeQuery_3902354333654144736(new SourceSubstituteMacroNodeContext(context8, includeMacro_z3mp7r_b0a0a3a2a2a1a1a1a6a2a4));
+                  SNode callInputNode15 = QueriesGenerated.sourceNodeQuery_a1a0d0_0(new SourceSubstituteMacroNodeContext(context8, includeMacro_z3mp7r_b0a0a3a2a2a1a1a1a6a2a4));
                   TemplateContext context9 = context8.subContext(null, callInputNode15);
                   if (callInputNode15 != null) {
                     tlist15 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context9);

@@ -58,7 +58,7 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
 
     public void startAndTerminate(final List<ITestNodeWrapper> testNodes) {
       try {
-        final TestRunState runState = new TestRunState(testNodes, myProject);
+        final TestRunState runState = new TestRunState(testNodes);
 
         Executor processExecutor = new JUnitInProcessExecutor(myProject, testNodes);
         final TestInProcessRunState lightState = TestInProcessRunState.getInstance();

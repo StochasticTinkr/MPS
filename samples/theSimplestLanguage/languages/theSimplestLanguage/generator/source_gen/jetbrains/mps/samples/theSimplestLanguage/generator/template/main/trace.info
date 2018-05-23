@@ -9,10 +9,10 @@
   </root>
   <root nodeRef="r:d971f3d5-180f-4b06-b56a-ac44861a7c95(jetbrains.mps.samples.theSimplestLanguage.generator.template.main@generator)/1222955948389">
     <file name="QueriesGenerated.java">
-      <node id="1222956039722" at="24,106,25,175" concept="0" />
-      <node id="1222956033525" at="27,106,28,175" concept="0" />
-      <scope id="1222956038127" at="24,106,25,175" />
-      <scope id="1222956031899" at="27,106,28,175" />
+      <node id="1222956039722" at="24,95,25,175" concept="0" />
+      <node id="1222956033525" at="27,101,28,175" concept="0" />
+      <scope id="1222956038127" at="24,95,25,175" />
+      <scope id="1222956031899" at="27,101,28,175" />
     </file>
   </root>
 </debug-info>

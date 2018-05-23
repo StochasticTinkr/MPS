@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class InterWithNonLabelSelected_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class InterWithNonLabelSelected_Test extends BaseTransformationTest {
 
   @Test
   public void test_InterWithNonLabelSelected() throws Throwable {
-    runTest("jetbrains.mps.editorTest.InterWithNonLabelSelected_Test$TestBody", "testMethod", false);
+    new InterWithNonLabelSelected_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("5207728530610872266", "5207728530610872270");

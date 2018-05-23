@@ -14,7 +14,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.util.Key;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
@@ -30,7 +29,7 @@ public final class TestRunState {
   private static final Logger LOG = LogManager.getLogger(TestRunState.class);
   private static final Object lock = new Object();
   private final List<String> myTestMethods = ListSequence.fromList(new ArrayList<String>());
-  private Map<ITestNodeWrapper, List<ITestNodeWrapper>> myTestToMethodsMap = MapSequence.fromMap(new LinkedHashMap<ITestNodeWrapper, List<ITestNodeWrapper>>(16, (float) 0.75, false));
+  private final Map<ITestNodeWrapper, List<ITestNodeWrapper>> myTestToMethodsMap = MapSequence.fromMap(new LinkedHashMap<ITestNodeWrapper, List<ITestNodeWrapper>>(16, (float) 0.75, false));
   private final Set<TestView> myViewsList = SetSequence.fromSet(new HashSet<TestView>());
   private final List<TestStateListener> myListeners = ListSequence.fromList(new ArrayList<TestStateListener>());
   private String myCurrentClass;
@@ -45,48 +44,22 @@ public final class TestRunState {
   private String myAvailableText = null;
   private Key myKey = null;
 
-  private final Project myProject;
-
-  public TestRunState(List<ITestNodeWrapper> tests, Project project) {
-    myProject = project;
-    initTestState(ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
+  public TestRunState(List<ITestNodeWrapper> tests) {
+    for (ITestNodeWrapper testCase : ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
       public boolean accept(ITestNodeWrapper it) {
         return it.isTestCase();
       }
-    }).toListSequence(), ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
-      public boolean accept(ITestNodeWrapper it) {
-        return !(it.isTestCase());
-      }
-    }).toListSequence());
-  }
-
-  private void initTestState(final List<ITestNodeWrapper> testCases, final List<ITestNodeWrapper> testMethods) {
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        TestRunState.this.addTestCases(testCases);
-        TestRunState.this.addTestMethods(testMethods);
-        for (ITestNodeWrapper testCase : MapSequence.fromMap(TestRunState.this.myTestToMethodsMap).keySet()) {
-          for (ITestNodeWrapper testMethod : MapSequence.fromMap(TestRunState.this.myTestToMethodsMap).get(testCase)) {
-            ListSequence.fromList(TestRunState.this.myTestMethods).addElement(testCase.getFqName() + '.' + testMethod.getName());
-          }
-        }
-      }
-    });
-    this.myTotalTests = ListSequence.fromList(this.myTestMethods).count();
-
-    this.initView();
-  }
-
-  private void addTestCases(List<ITestNodeWrapper> testCases) {
-    for (ITestNodeWrapper testCase : ListSequence.fromList(testCases)) {
+    })) {
       List<ITestNodeWrapper> testMethods = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
       ListSequence.fromList(testMethods).addSequence(Sequence.fromIterable(testCase.getTestMethods()));
       MapSequence.fromMap(this.myTestToMethodsMap).put(testCase, testMethods);
     }
-  }
 
-  private void addTestMethods(List<ITestNodeWrapper> testMethods) {
-    for (ITestNodeWrapper testMethod : ListSequence.fromList(testMethods)) {
+    for (ITestNodeWrapper testMethod : ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
+      public boolean accept(ITestNodeWrapper it) {
+        return !(it.isTestCase());
+      }
+    })) {
       ITestNodeWrapper testCase = testMethod.getTestCase();
       List<ITestNodeWrapper> curTestMethods = MapSequence.fromMap(this.myTestToMethodsMap).get(testCase);
       if (curTestMethods == null) {
@@ -97,6 +70,15 @@ public final class TestRunState {
         ListSequence.fromList(curTestMethods).addElement(testMethod);
       }
     }
+
+    for (ITestNodeWrapper testCase : MapSequence.fromMap(this.myTestToMethodsMap).keySet()) {
+      for (ITestNodeWrapper testMethod : MapSequence.fromMap(this.myTestToMethodsMap).get(testCase)) {
+        ListSequence.fromList(this.myTestMethods).addElement(testCase.getFqName() + '.' + testMethod.getName());
+      }
+    }
+    this.myTotalTests = ListSequence.fromList(this.myTestMethods).count();
+
+    this.initView();
   }
 
   private void updateView() {
@@ -249,20 +231,16 @@ public final class TestRunState {
     }
   }
 
-  private void removeUsedTestCase(final String testCaseName) {
-    final List<String> methodsToRemove = ListSequence.fromList(new LinkedList<String>());
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        for (ITestNodeWrapper testCase : MapSequence.fromMap(TestRunState.this.myTestToMethodsMap).keySet()) {
-          if (testCase.getFqName().equals(testCaseName)) {
-            for (ITestNodeWrapper testMethod : MapSequence.fromMap(myTestToMethodsMap).get(testCase)) {
-              String methodKey = testCaseName + '.' + testMethod.getName();
-              ListSequence.fromList(methodsToRemove).addElement(methodKey);
-            }
-          }
+  private void removeUsedTestCase(String testCaseName) {
+    List<String> methodsToRemove = ListSequence.fromList(new LinkedList<String>());
+    for (ITestNodeWrapper testCase : MapSequence.fromMap(this.myTestToMethodsMap).keySet()) {
+      if (testCase.getFqName().equals(testCaseName)) {
+        for (ITestNodeWrapper testMethod : MapSequence.fromMap(myTestToMethodsMap).get(testCase)) {
+          String methodKey = testCaseName + '.' + testMethod.getName();
+          ListSequence.fromList(methodsToRemove).addElement(methodKey);
         }
       }
-    });
+    }
     synchronized (myTestMethods) {
       for (String methodKey : methodsToRemove) {
         if (ListSequence.fromList(myTestMethods).contains(methodKey)) {

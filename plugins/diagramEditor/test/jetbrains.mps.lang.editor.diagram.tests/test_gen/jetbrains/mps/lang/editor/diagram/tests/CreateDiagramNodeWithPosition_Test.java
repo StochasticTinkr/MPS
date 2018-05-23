@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,11 +25,15 @@ public class CreateDiagramNodeWithPosition_Test extends BaseTransformationTest {
 
   @Test
   public void test_CreateDiagramNodeWithPosition() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.diagram.tests.CreateDiagramNodeWithPosition_Test$TestBody", "testMethod", false);
+    new CreateDiagramNodeWithPosition_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("8794120090375902403", "8794120090375978070");

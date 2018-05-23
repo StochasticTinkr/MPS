@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -22,11 +23,15 @@ public class TestSubstitute_ReferenceInAttribute_Test extends BaseTransformation
 
   @Test
   public void test_TestSubstitute_ReferenceInAttribute() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_ReferenceInAttribute_Test$TestBody", "testMethod", false);
+    new TestSubstitute_ReferenceInAttribute_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("4930188782568771952", "4930188782568771995");

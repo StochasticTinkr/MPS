@@ -40,7 +40,7 @@ public class Template_reduce_GetModelOperation extends TemplateDeclarationBase {
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_1170436841750(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_7h6erk_b0a0c0d0c0e));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_18(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_7h6erk_b0a0c0d0c0e));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_7h6erk_b0a0c0d0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/1143240478185", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);

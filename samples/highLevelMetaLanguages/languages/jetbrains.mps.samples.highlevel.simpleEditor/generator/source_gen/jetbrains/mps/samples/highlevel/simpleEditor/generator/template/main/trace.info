@@ -13,23 +13,23 @@
   </root>
   <root nodeRef="r:dff3a23c-f604-4fe9-945d-1b2fa0e65749(jetbrains.mps.samples.highlevel.simpleEditor.generator.template.main@generator)/3778147542048436845">
     <file name="QueriesGenerated.java">
-      <node id="3778147542048439426" at="37,112,38,188" concept="2" />
-      <node id="3778147542048447590" at="40,112,41,331" concept="2" />
-      <node id="3125284130703332723" at="43,109,44,476" concept="1" />
+      <node id="3778147542048439426" at="37,97,38,188" concept="2" />
+      <node id="3778147542048447590" at="40,99,41,331" concept="2" />
+      <node id="3125284130703332723" at="43,96,44,476" concept="1" />
       <node id="3778147542048641462" at="46,39,47,500" concept="2" />
-      <node id="3125284130703324671" at="51,109,52,248" concept="2" />
-      <node id="3778147542048442520" at="54,120,55,203" concept="2" />
+      <node id="3125284130703324671" at="51,92,52,248" concept="2" />
+      <node id="3778147542048442520" at="54,106,55,203" concept="2" />
       <node id="3778147542048639538" at="46,0,49,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="3778147542048603307" at="44,476,49,7" concept="2" />
-      <scope id="3778147542048436872" at="37,112,38,188" />
-      <scope id="3778147542048447049" at="40,112,41,331" />
+      <scope id="3778147542048436872" at="37,97,38,188" />
+      <scope id="3778147542048447049" at="40,99,41,331" />
       <scope id="3778147542048639539" at="46,39,47,500" />
-      <scope id="3778147542048541257" at="51,109,52,248" />
-      <scope id="3778147542048439087" at="54,120,55,203" />
+      <scope id="3778147542048541257" at="51,92,52,248" />
+      <scope id="3778147542048439087" at="54,106,55,203" />
       <scope id="3778147542048639538" at="46,0,49,0">
         <var name="it" id="3778147542048639538" />
       </scope>
-      <scope id="3778147542048540959" at="43,109,49,7">
+      <scope id="3778147542048540959" at="43,96,49,7">
         <var name="n" id="3125284130703332724" />
       </scope>
       <unit id="3778147542048639538" at="45,214,49,5" name="jetbrains.mps.samples.highlevel.simpleEditor.generator.template.main.QueriesGenerated$1" />

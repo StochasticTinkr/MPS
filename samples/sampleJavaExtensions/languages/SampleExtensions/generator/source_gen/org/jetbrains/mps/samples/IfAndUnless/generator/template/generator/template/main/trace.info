@@ -9,20 +9,20 @@
   </root>
   <root nodeRef="r:a07e34b9-3902-4cb5-b6a1-b083eccaa9f3(org.jetbrains.mps.samples.IfAndUnless.generator.template.generator.template.main@generator)/393299394024627257">
     <file name="QueriesGenerated.java">
-      <node id="8965727632786101409" at="25,108,26,191" concept="0" />
-      <node id="393299394024635962" at="28,107,29,186" concept="0" />
-      <scope id="8965727632786101403" at="25,108,26,191" />
-      <scope id="393299394024635961" at="28,107,29,186" />
+      <node id="8965727632786101409" at="25,96,26,191" concept="0" />
+      <node id="393299394024635962" at="28,95,29,186" concept="0" />
+      <scope id="8965727632786101403" at="25,96,26,191" />
+      <scope id="393299394024635961" at="28,95,29,186" />
     </file>
   </root>
   <root nodeRef="r:a07e34b9-3902-4cb5-b6a1-b083eccaa9f3(org.jetbrains.mps.samples.IfAndUnless.generator.template.generator.template.main@generator)/954830572076054994">
     <file name="QueriesGenerated.java">
-      <node id="954830572076057053" at="31,107,32,186" concept="0" />
-      <node id="954830572076057042" at="34,107,35,191" concept="0" />
-      <node id="954830572076057064" at="37,107,38,193" concept="0" />
-      <scope id="954830572076057052" at="31,107,32,186" />
-      <scope id="954830572076057041" at="34,107,35,191" />
-      <scope id="954830572076057063" at="37,107,38,193" />
+      <node id="954830572076057053" at="31,93,32,186" concept="0" />
+      <node id="954830572076057042" at="34,95,35,191" concept="0" />
+      <node id="954830572076057064" at="37,94,38,193" concept="0" />
+      <scope id="954830572076057052" at="31,93,32,186" />
+      <scope id="954830572076057041" at="34,95,35,191" />
+      <scope id="954830572076057063" at="37,94,38,193" />
     </file>
   </root>
 </debug-info>

@@ -40,7 +40,7 @@ public class Template_reduce_Model_RootsOperation_noConcept extends TemplateDecl
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_7125651109159743128(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_8a7aok_b0a0c0d0c0e));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_39(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_8a7aok_b0a0c0d0c0e));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_8a7aok_b0a0c0d0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/7125651109159743126", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);

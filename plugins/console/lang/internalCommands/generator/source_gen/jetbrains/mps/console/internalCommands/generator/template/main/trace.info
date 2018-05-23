@@ -10,10 +10,10 @@
   </root>
   <root nodeRef="r:445e7307-af0d-43ba-baa4-fce1d9f37357(jetbrains.mps.console.internalCommands.generator.template.main@generator)/8483375838963160299">
     <file name="QueriesGenerated.java">
-      <node id="8829647120617379727" at="29,110,30,368" concept="0" />
-      <node id="6369875563697213769" at="32,108,33,179" concept="0" />
-      <scope id="8829647120617326154" at="29,110,30,368" />
-      <scope id="6369875563697213768" at="32,108,33,179" />
+      <node id="8829647120617379727" at="29,93,30,368" concept="0" />
+      <node id="6369875563697213769" at="32,95,33,179" concept="0" />
+      <scope id="8829647120617326154" at="29,93,30,368" />
+      <scope id="6369875563697213768" at="32,95,33,179" />
     </file>
   </root>
 </debug-info>

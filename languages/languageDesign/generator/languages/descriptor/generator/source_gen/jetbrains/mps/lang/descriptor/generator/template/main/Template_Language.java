@@ -42,7 +42,7 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
   }
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist1 = null;
-    final Object varValue1 = QueriesGenerated.insertMacro_varValue_2509399947043525756(new TemplateVarContext(context, varMacroRef_ko6gu6_b0a0a1a4));
+    final Object varValue1 = QueriesGenerated.insertMacro_varValue_a1(new TemplateVarContext(context, varMacroRef_ko6gu6_b0a0a1a4));
     TemplateContext context1 = context.withVariable("var:langModule", varValue1);
     final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
     try {
@@ -155,7 +155,7 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
                           {
                             final SNode tnode17 = environment.createOutputNode(myConcepts[13]);
                             try {
-                              SNodeAccessUtil.setProperty(tnode17, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6768722890464026761(new PropertyMacroContext(context8, "moduleId", propertyMacro_ko6gu6_c0a0c0a0b0d0b0c0b0b0b0b0b0d0b0h0e0e))));
+                              SNodeAccessUtil.setProperty(tnode17, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a2(new PropertyMacroContext(context8, "moduleId", propertyMacro_ko6gu6_c0a0c0a0b0d0b0c0b0b0b0b0b0d0b0h0e0e))));
                             } finally {
                             }
                             tnode16.addChild(myAggregationLinks[6], tnode17);
@@ -221,7 +221,7 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
                   {
                     final SNode tnode23 = environment.createOutputNode(myConcepts[13]);
                     try {
-                      SNodeAccessUtil.setProperty(tnode23, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5102832340571708655(new PropertyMacroContext(context11, "", propertyMacro_ko6gu6_c0a0c0a0b0b0b0b0b0g0b0j0e0e))));
+                      SNodeAccessUtil.setProperty(tnode23, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a4(new PropertyMacroContext(context11, "", propertyMacro_ko6gu6_c0a0c0a0b0b0b0b0b0g0b0j0e0e))));
                     } finally {
                     }
                     tnode22.addChild(myAggregationLinks[8], tnode23);
@@ -302,7 +302,7 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
                   {
                     final SNode tnode32 = environment.createOutputNode(myConcepts[18]);
                     try {
-                      SNodeAccessUtil.setProperty(tnode32, myProperties[8], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5778538955526643721(new PropertyMacroContext(context14, "0", propertyMacro_ko6gu6_c0a0c0a0b0b0b0b0b0h0b0l0e0e))));
+                      SNodeAccessUtil.setProperty(tnode32, myProperties[8], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a6(new PropertyMacroContext(context14, "0", propertyMacro_ko6gu6_c0a0c0a0b0b0b0b0b0h0b0l0e0e))));
                     } finally {
                     }
                     tnode31.addChild(myAggregationLinks[8], tnode32);
@@ -466,7 +466,7 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
               TemplateContext context21 = context18.subContext();
               {
                 final List<SNode> tlist49 = new ArrayList<SNode>();
-                final Iterable<SNode> loopList49 = QueriesGenerated.sourceNodesQuery_2800414547479241756(new SourceSubstituteMacroNodesContext(context21, loopMacroRef_ko6gu6_b0a0a1a1a1a8a1a51a4a4));
+                final Iterable<SNode> loopList49 = QueriesGenerated.sourceNodesQuery_a0a0k(new SourceSubstituteMacroNodesContext(context21, loopMacroRef_ko6gu6_b0a0a1a1a1a8a1a51a4a4));
                 for (SNode itnode49 : loopList49) {
                   if (itnode49 == null) {
                     continue;
@@ -508,7 +508,7 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
                                     {
                                       final SNode tnode56 = environment.createOutputNode(myConcepts[13]);
                                       try {
-                                        SNodeAccessUtil.setProperty(tnode56, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2800414547479297313(new PropertyMacroContext(context27, "", propertyMacro_ko6gu6_c0a0c0a0b0d0b0d0b0c0b0c0b0b0d0c0b0b0i0b0p0e0e))));
+                                        SNodeAccessUtil.setProperty(tnode56, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a0a01(new PropertyMacroContext(context27, "", propertyMacro_ko6gu6_c0a0c0a0b0d0b0d0b0c0b0c0b0b0d0c0b0b0i0b0p0e0e))));
                                       } finally {
                                       }
                                       tnode55.addChild(myAggregationLinks[6], tnode56);
@@ -522,7 +522,7 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
                                 {
                                   final SNode tnode57 = environment.createOutputNode(myConcepts[13]);
                                   try {
-                                    SNodeAccessUtil.setProperty(tnode57, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2800414547479294230(new PropertyMacroContext(context26, "", propertyMacro_ko6gu6_c0a0c0a0b0e0b0c0b0c0b0b0d0c0b0b0i0b0p0e0e))));
+                                    SNodeAccessUtil.setProperty(tnode57, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0b0a0a0k(new PropertyMacroContext(context26, "", propertyMacro_ko6gu6_c0a0c0a0b0e0b0c0b0c0b0b0d0c0b0b0i0b0p0e0e))));
                                   } finally {
                                   }
                                   tnode54.addChild(myAggregationLinks[6], tnode57);
@@ -671,14 +671,14 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
                       TemplateContext context35 = context34.subContext();
                       {
                         final List<SNode> tlist73 = new ArrayList<SNode>();
-                        final Iterable<SNode> loopList73 = QueriesGenerated.sourceNodesQuery_2030416617761783826(new SourceSubstituteMacroNodesContext(context35, loopMacroRef_ko6gu6_b0a0a1a1a1a1a3a1a1a9a1a71a4a4));
+                        final Iterable<SNode> loopList73 = QueriesGenerated.sourceNodesQuery_a0a0a0m(new SourceSubstituteMacroNodesContext(context35, loopMacroRef_ko6gu6_b0a0a1a1a1a1a3a1a1a9a1a71a4a4));
                         for (SNode itnode73 : loopList73) {
                           if (itnode73 == null) {
                             continue;
                           }
                           TemplateContext context36 = context35.subContext(itnode73);
                           Collection<SNode> tlist74 = null;
-                          final Object varValue74 = QueriesGenerated.insertMacro_varValue_2030416617761783846(new TemplateVarContext(context36, varMacroRef_ko6gu6_b0a0a3a2a1a1a1a3a1a1a9a1a71a4a4));
+                          final Object varValue74 = QueriesGenerated.insertMacro_varValue_a1a0a0m(new TemplateVarContext(context36, varMacroRef_ko6gu6_b0a0a3a2a1a1a1a3a1a1a9a1a71a4a4));
                           TemplateContext context37 = context36.withVariable("var:model", varValue74);
                           Collection<SNode> tlist75 = null;
                           try {

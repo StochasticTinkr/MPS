@@ -56,7 +56,7 @@ public class Template_reduce_ModuleReferenceFromString extends TemplateDeclarati
           {
             final SNode tnode4 = environment.createOutputNode(myConcepts[3]);
             try {
-              SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5802093636975087569(new PropertyMacroContext(context2, "module.uid", propertyMacro_xsf8gz_c0a0c0a0b0c0b0c0c0e))));
+              SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a_1(new PropertyMacroContext(context2, "module.uid", propertyMacro_xsf8gz_c0a0c0a0b0c0b0c0c0e))));
             } finally {
             }
             tnode3.addChild(myAggregationLinks[1], tnode4);

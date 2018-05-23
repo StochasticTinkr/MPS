@@ -10,22 +10,22 @@
   </root>
   <root nodeRef="r:822fb14b-1f38-472c-8adc-7992d860c10d(jetbrains.mps.samples.TargetXML.generator.template.main@generator)/7957904439566603891">
     <file name="QueriesGenerated.java">
-      <node id="7957904439566592691" at="32,112,33,94" concept="0" />
-      <node id="7957904439566608163" at="35,112,36,184" concept="0" />
-      <node id="7957904439566608912" at="38,112,39,94" concept="0" />
-      <node id="7957904439566610495" at="41,112,42,190" concept="0" />
-      <scope id="7957904439566606642" at="32,112,33,94" />
-      <scope id="7957904439566608157" at="35,112,36,184" />
-      <scope id="7957904439566608590" at="38,112,39,94" />
-      <scope id="7957904439566610172" at="41,112,42,190" />
+      <node id="7957904439566592691" at="32,98,33,94" concept="0" />
+      <node id="7957904439566608163" at="35,99,36,184" concept="0" />
+      <node id="7957904439566608912" at="38,98,39,94" concept="0" />
+      <node id="7957904439566610495" at="41,99,42,190" concept="0" />
+      <scope id="7957904439566606642" at="32,98,33,94" />
+      <scope id="7957904439566608157" at="35,99,36,184" />
+      <scope id="7957904439566608590" at="38,98,39,94" />
+      <scope id="7957904439566610172" at="41,99,42,190" />
     </file>
   </root>
   <root nodeRef="r:822fb14b-1f38-472c-8adc-7992d860c10d(jetbrains.mps.samples.TargetXML.generator.template.main@generator)/7957904439566603917">
     <file name="QueriesGenerated.java">
-      <node id="7957904439566603934" at="44,112,45,175" concept="0" />
-      <node id="7957904439566604687" at="47,120,48,191" concept="0" />
-      <scope id="7957904439566603928" at="44,112,45,175" />
-      <scope id="7957904439566604681" at="47,120,48,191" />
+      <node id="7957904439566603934" at="44,97,45,175" concept="0" />
+      <node id="7957904439566604687" at="47,106,48,191" concept="0" />
+      <scope id="7957904439566603928" at="44,97,45,175" />
+      <scope id="7957904439566604681" at="47,106,48,191" />
     </file>
   </root>
 </debug-info>

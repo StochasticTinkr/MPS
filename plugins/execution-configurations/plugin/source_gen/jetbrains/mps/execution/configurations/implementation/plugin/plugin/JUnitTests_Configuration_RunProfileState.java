@@ -62,7 +62,7 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
     if (testNodes == null || ListSequence.fromList(testNodes).isEmpty()) {
       throw new ExecutionException("Could not find tests to run");
     }
-    TestRunState runState = new TestRunState(testNodes, mpsProject);
+    TestRunState runState = new TestRunState(testNodes);
     jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor processExecutor;
     if (jUnitSettings.canExecuteInProcess(testNodes)) {
       processExecutor = new JUnitInProcessExecutor(mpsProject, testNodes);

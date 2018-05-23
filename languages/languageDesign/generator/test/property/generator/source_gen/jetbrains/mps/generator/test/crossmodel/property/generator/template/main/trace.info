@@ -11,32 +11,32 @@
   </root>
   <root nodeRef="r:5ae04573-5f86-4c8f-8775-3bf4c8be7f2f(jetbrains.mps.generator.test.crossmodel.property.generator.template.main@generator)/4220080364835905493">
     <file name="QueriesGenerated.java">
-      <node id="4220080364835923446" at="33,112,34,184" concept="0" />
-      <node id="5176577547833330724" at="54,120,55,198" concept="0" />
-      <node id="4220080364835967621" at="57,120,58,196" concept="0" />
-      <scope id="4220080364835917955" at="33,112,34,184" />
-      <scope id="5176577547833330036" at="54,120,55,198" />
-      <scope id="4220080364835967615" at="57,120,58,196" />
+      <node id="4220080364835923446" at="33,95,34,184" concept="0" />
+      <node id="5176577547833330724" at="54,104,55,198" concept="0" />
+      <node id="4220080364835967621" at="57,104,58,196" concept="0" />
+      <scope id="4220080364835917955" at="33,95,34,184" />
+      <scope id="5176577547833330036" at="54,104,55,198" />
+      <scope id="4220080364835967615" at="57,104,58,196" />
     </file>
   </root>
   <root nodeRef="r:5ae04573-5f86-4c8f-8775-3bf4c8be7f2f(jetbrains.mps.generator.test.crossmodel.property.generator.template.main@generator)/4220080364835968486">
     <file name="QueriesGenerated.java">
-      <node id="5176577547833405520" at="36,112,37,183" concept="0" />
-      <node id="5176577547833393759" at="39,112,40,184" concept="0" />
-      <node id="5176577547833410864" at="42,112,43,185" concept="0" />
-      <scope id="5176577547833404375" at="36,112,37,183" />
-      <scope id="5176577547833393069" at="39,112,40,184" />
-      <scope id="5176577547833410174" at="42,112,43,185" />
+      <node id="5176577547833405520" at="36,97,37,183" concept="0" />
+      <node id="5176577547833393759" at="39,97,40,184" concept="0" />
+      <node id="5176577547833410864" at="42,97,43,185" concept="0" />
+      <scope id="5176577547833404375" at="36,97,37,183" />
+      <scope id="5176577547833393069" at="39,97,40,184" />
+      <scope id="5176577547833410174" at="42,97,43,185" />
     </file>
   </root>
   <root nodeRef="r:5ae04573-5f86-4c8f-8775-3bf4c8be7f2f(jetbrains.mps.generator.test.crossmodel.property.generator.template.main@generator)/5925726056274321385">
     <file name="QueriesGenerated.java">
-      <node id="5925726056274272834" at="45,112,46,187" concept="0" />
-      <node id="361130699826326760" at="48,109,49,250" concept="0" />
-      <node id="361130699826330928" at="51,109,52,259" concept="0" />
-      <scope id="5925726056274261652" at="45,112,46,187" />
-      <scope id="5925726056274318833" at="48,109,49,250" />
-      <scope id="5925726056274316711" at="51,109,52,259" />
+      <node id="5925726056274272834" at="45,104,46,187" concept="0" />
+      <node id="361130699826326760" at="48,101,49,250" concept="0" />
+      <node id="361130699826330928" at="51,100,52,259" concept="0" />
+      <scope id="5925726056274261652" at="45,104,46,187" />
+      <scope id="5925726056274318833" at="48,101,49,250" />
+      <scope id="5925726056274316711" at="51,100,52,259" />
     </file>
   </root>
 </debug-info>

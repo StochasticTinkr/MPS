@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -23,11 +24,15 @@ public class TestSubstitute_EnumPropertyWithIsValidConstraints_Test extends Base
 
   @Test
   public void test_TestSubstitute_EnumPropertyWithIsValidConstraints() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_EnumPropertyWithIsValidConstraints_Test$TestBody", "testMethod", false);
+    new TestSubstitute_EnumPropertyWithIsValidConstraints_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1588042961787933459", "1588042961787933461");

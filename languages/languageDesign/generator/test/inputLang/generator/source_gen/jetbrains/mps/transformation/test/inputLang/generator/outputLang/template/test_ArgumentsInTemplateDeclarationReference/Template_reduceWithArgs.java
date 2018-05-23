@@ -43,7 +43,7 @@ public class Template_reduceWithArgs extends TemplateDeclarationBase {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7496726876599876334(new PropertyMacroContext(context, null, propertyMacro_quugqv_c0a0c0a0c0g))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1a(new PropertyMacroContext(context, null, propertyMacro_quugqv_c0a0c0a0c0g))));
     } finally {
     }
     return tnode1;

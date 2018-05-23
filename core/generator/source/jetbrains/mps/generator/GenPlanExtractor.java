@@ -16,9 +16,6 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.GenerationOptions.OptionsBuilder;
-import jetbrains.mps.generator.impl.GenPlanTranslator;
-import jetbrains.mps.generator.impl.plan.EngagedGeneratorCollector;
-import jetbrains.mps.generator.impl.plan.RegularPlanBuilder;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -139,7 +136,7 @@ public final class GenPlanExtractor implements ModelGenerationPlan.Provider {
         DevKit devkit = (DevKit) dkModule;
         ModelGenerationPlan.Provider mgpProvider;
         if (devkit.getModuleDescriptor() != null && (dkPlan = devkit.getModuleDescriptor().getAssociatedGenPlan()) != null) {
-          mgpProvider = new InterpretedPlanProvider(dkPlan);
+          mgpProvider = new InterpretedPlanProvider(LanguageRegistry.getInstance(myRepository), myMessageHandler, dkPlan, myRepository);
           myDevkitToPlan.put(dkRef, new PlanProviderInfo(mgpProvider, true));
           return mgpProvider.getPlan(model);
         } else {
@@ -197,31 +194,6 @@ public final class GenPlanExtractor implements ModelGenerationPlan.Provider {
     }
     ModelGenerationPlan p = getPlan(model);
     myOptions.customPlan(model, p);
-  }
-
-  final class InterpretedPlanProvider implements ModelGenerationPlan.Provider {
-
-    private final SModelReference myPlanModelRef;
-
-    /*package*/ InterpretedPlanProvider(SModelReference planModelRef) {
-      myPlanModelRef = planModelRef;
-    }
-
-    @Nullable
-    @Override
-    public ModelGenerationPlan getPlan(@NotNull SModel model) {
-      final SModel planModel = myPlanModelRef.resolve(myRepository);
-      if (planModel == null) {
-        return null;
-      }
-      GenPlanTranslator gpt = new GenPlanTranslator(planModel.getRootNodes().iterator().next());
-      // FIXME in fact, shall respect additional languages passed through GenerationParametersProviderEx.getAdditionalLanguages(SModel), like
-      // original GenerationPlan did. However, it's rarely (if ever) used feature and contemporary GPs replace it completely, so I do not bother.
-      EngagedGeneratorCollector egc = new EngagedGeneratorCollector(model, null);
-      RegularPlanBuilder planBuilder = new RegularPlanBuilder(LanguageRegistry.getInstance(myRepository), egc.getGenerators(), myMessageHandler);
-      gpt.feed(planBuilder);
-      return planBuilder.wrapUp(gpt.getPlanIdentity());
-    }
   }
 
   final class PlanProviderInfo {

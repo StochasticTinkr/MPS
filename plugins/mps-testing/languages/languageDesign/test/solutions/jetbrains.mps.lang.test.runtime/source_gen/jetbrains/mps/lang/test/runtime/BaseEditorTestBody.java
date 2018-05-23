@@ -67,14 +67,19 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   protected CellReference myStart;
   protected CellReference myFinish;
 
+  protected BaseEditorTestBody() {
+    // this is for legacy path through BaseTransformationTest.runTest(), reflective instantiation and field initialization 
+  }
+
+  protected BaseEditorTestBody(TransformationTest owner) {
+    // this is what BaseTransformationTest.runTest() used to do 
+    myModel = owner.getTransientModelDescriptor();
+    myProject = owner.getProject();
+  }
+
   public abstract void testMethodImpl() throws Exception;
 
-  /**
-   * 
-   * @deprecated use #initEditorComponent instead
-   */
-  @Deprecated
-  protected Editor initEditor(final String before, final String after) {
+  protected EditorComponent initEditorComponent(final String before, final String after) {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing editor");
     }
@@ -89,6 +94,9 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         }
       }
     });
+    if (ts[0] != null) {
+      throw new RuntimeException("Exception while initializing the editor", ts[0]);
+    }
     try {
       flushEDTEvents();
     } catch (InvocationTargetException e) {
@@ -96,16 +104,9 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     } catch (InterruptedException e) {
       ts[0] = e;
     }
-
     if (ts[0] != null) {
       throw new RuntimeException("Exception while initializing the editor", ts[0]);
     }
-
-    return myEditor;
-  }
-
-  protected EditorComponent initEditorComponent(String before, String after) {
-    initEditor(before, after);
     return myCurrentEditorComponent;
   }
 

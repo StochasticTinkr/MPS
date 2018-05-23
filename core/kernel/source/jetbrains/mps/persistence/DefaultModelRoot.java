@@ -27,11 +27,11 @@ import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -135,8 +135,18 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
   @NotNull
   @Override
   public Iterable<SModel> loadModels() {
+    List<SourceRoot> sourceRoots = getSourceRoots(SourceRootKinds.SOURCES);
+    if (sourceRoots.isEmpty()) {
+      IFile contentDir = getContentDirectory();
+      if (contentDir == null) {
+        LOG.error(String.format("Bad model root (no content location nor sources) for module %s", getModule()));
+      } else {
+        LOG.warn(String.format("No source roots specified for location %s of module %s, no models were loaded", contentDir, getModule()));
+      }
+      return Collections.emptyList();
+    }
     List<SModel> result = new ArrayList<>();
-    for (SourceRoot sourceRoot : getSourceRoots(SourceRootKinds.SOURCES)) {
+    for (SourceRoot sourceRoot : sourceRoots) {
       result.addAll(collectModels(sourceRoot));
     }
     return result;

@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class Pre_LocalStaicFieldToStaticFieldReference_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class Pre_LocalStaicFieldToStaticFieldReference_Test extends BaseTransfor
 
   @Test
   public void test_Pre_LocalStaicFieldToStaticFieldReference() throws Throwable {
-    runTest("jetbrains.mps.editorTest.Pre_LocalStaicFieldToStaticFieldReference_Test$TestBody", "testMethod", false);
+    new Pre_LocalStaicFieldToStaticFieldReference_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6769498721974583568", "6769498721974638214");

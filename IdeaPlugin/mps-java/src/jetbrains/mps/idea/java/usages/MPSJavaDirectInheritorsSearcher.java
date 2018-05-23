@@ -49,7 +49,7 @@ public class MPSJavaDirectInheritorsSearcher extends QueryExecutorBase<PsiClass,
   }
 
   @Override
-  public void processQuery(@NotNull SearchParameters queryParameters, final @NotNull Processor<PsiClass> consumer) {
+  public void processQuery(@NotNull SearchParameters queryParameters, @NotNull Processor<? super PsiClass> consumer) {
     // TODO implement: return all MPS classes extending queryParameters.getClassToProcess()
     // TODO use ref index
 

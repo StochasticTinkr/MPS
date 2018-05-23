@@ -37,7 +37,7 @@ public class Template_reduce_ReferenceLinkId_SReferenceLink extends TemplateDecl
   protected Collection<SNode> applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    final Object varValue1 = QueriesGenerated.insertMacro_varValue_8415841354032440827(new TemplateVarContext(context, varMacroRef_y9ad0i_b0a0a2a4));
+    final Object varValue1 = QueriesGenerated.insertMacro_varValue_a1a_5(new TemplateVarContext(context, varMacroRef_y9ad0i_b0a0a2a4));
     TemplateContext context1 = context.withVariable("var:conceptId", varValue1);
     final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
     try {
@@ -47,7 +47,7 @@ public class Template_reduce_ReferenceLinkId_SReferenceLink extends TemplateDecl
       {
         final SNode tnode3 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode3, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8415841354032440745(new PropertyMacroContext(context2, "0L", propertyMacro_y9ad0i_c0a0c0a0b0d0f0e))));
+          SNodeAccessUtil.setProperty(tnode3, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0_12(new PropertyMacroContext(context2, "0L", propertyMacro_y9ad0i_c0a0c0a0b0d0f0e))));
         } finally {
         }
         tnode2.addChild(myAggregationLinks[0], tnode3);
@@ -56,7 +56,7 @@ public class Template_reduce_ReferenceLinkId_SReferenceLink extends TemplateDecl
       {
         final SNode tnode4 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8415841354032440768(new PropertyMacroContext(context2, "0L", propertyMacro_y9ad0i_c0a0c0a0b0e0f0e))));
+          SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0b0_17(new PropertyMacroContext(context2, "0L", propertyMacro_y9ad0i_c0a0c0a0b0e0f0e))));
         } finally {
         }
         tnode2.addChild(myAggregationLinks[0], tnode4);
@@ -65,7 +65,7 @@ public class Template_reduce_ReferenceLinkId_SReferenceLink extends TemplateDecl
       {
         final SNode tnode5 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode5, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8415841354032440791(new PropertyMacroContext(context2, "0L", propertyMacro_y9ad0i_c0a0c0a0b0f0f0e))));
+          SNodeAccessUtil.setProperty(tnode5, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0c0_22(new PropertyMacroContext(context2, "0L", propertyMacro_y9ad0i_c0a0c0a0b0f0f0e))));
         } finally {
         }
         tnode2.addChild(myAggregationLinks[0], tnode5);
@@ -74,7 +74,7 @@ public class Template_reduce_ReferenceLinkId_SReferenceLink extends TemplateDecl
       {
         final SNode tnode6 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode6, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8415841354032440806(new PropertyMacroContext(context2, "0L", propertyMacro_y9ad0i_c0a0c0a0b0g0f0e))));
+          SNodeAccessUtil.setProperty(tnode6, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0d0_15(new PropertyMacroContext(context2, "0L", propertyMacro_y9ad0i_c0a0c0a0b0g0f0e))));
         } finally {
         }
         tnode2.addChild(myAggregationLinks[0], tnode6);
@@ -83,7 +83,7 @@ public class Template_reduce_ReferenceLinkId_SReferenceLink extends TemplateDecl
       {
         final SNode tnode7 = environment.createOutputNode(myConcepts[2]);
         try {
-          SNodeAccessUtil.setProperty(tnode7, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8415841354032440819(new PropertyMacroContext(context2, "", propertyMacro_y9ad0i_c0a0c0a0b0h0f0e))));
+          SNodeAccessUtil.setProperty(tnode7, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0e0_5(new PropertyMacroContext(context2, "", propertyMacro_y9ad0i_c0a0c0a0b0h0f0e))));
         } finally {
         }
         tnode2.addChild(myAggregationLinks[0], tnode7);

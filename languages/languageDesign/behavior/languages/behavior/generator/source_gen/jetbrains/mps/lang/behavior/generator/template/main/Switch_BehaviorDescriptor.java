@@ -49,7 +49,7 @@ public class Switch_BehaviorDescriptor extends TemplateSwitchBase implements Tem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_1570228009929814973(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a0(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -120,7 +120,7 @@ public class Switch_BehaviorDescriptor extends TemplateSwitchBase implements Tem
                                 environment.resolve(new RefResolver(tnode11, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), context7, new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "4147950839246952263"), "BehaviorAspectDescriptor") {
                                   @Override
                                   public Object resolve() {
-                                    return QueriesGenerated.referenceMacro_GetReferent_4147950839246952264(createQueryContext());
+                                    return QueriesGenerated.referenceMacro_GetReferent_a0a0a0a0a0a0a(createQueryContext());
                                   }
                                 });
                               } finally {

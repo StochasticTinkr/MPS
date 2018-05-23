@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class ModelIdentityCompletion_SetPtrOperation_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class ModelIdentityCompletion_SetPtrOperation_Test extends BaseTransforma
 
   @Test
   public void test_ModelIdentityCompletion_SetPtrOperation() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.editor.ModelIdentityCompletion_SetPtrOperation_Test$TestBody", "testMethod", false);
+    new ModelIdentityCompletion_SetPtrOperation_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6012981979753411985", "6012981979753418008");

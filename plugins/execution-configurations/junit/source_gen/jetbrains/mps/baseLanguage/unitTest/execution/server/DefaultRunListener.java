@@ -19,30 +19,34 @@ public class DefaultRunListener extends RunListener {
   }
 
   @Override
-  public void testFinished(Description description) throws Exception {
+  public void testFinished(Description description) {
+    System.err.flush();
     this.printSyncToken(TestEvent.FINISH_TEST_PREFIX, description);
   }
 
   @Override
-  public void testFailure(Failure failure) throws Exception {
-    this.printSyncToken(TestEvent.FAILURE_TEST_PREFIX, failure.getDescription());
+  public void testFailure(Failure failure) {
     failure.getException().printStackTrace(System.err);
+    System.err.flush();
+    this.printSyncToken(TestEvent.FAILURE_TEST_PREFIX, failure.getDescription());
   }
 
   @Override
   public void testAssumptionFailure(Failure failure) {
-    this.printSyncToken(TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX, failure.getDescription());
     failure.getException().printStackTrace(System.err);
+    System.err.flush();
+    this.printSyncToken(TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX, failure.getDescription());
   }
 
   @Override
   public void testIgnored(Description description) {
-    this.printSyncToken(TestEvent.IGNORE_FAILURE_TEST_PREFIX, description);
     System.err.println(description + " ignored");
+    System.err.flush();
+    this.printSyncToken(TestEvent.IGNORE_FAILURE_TEST_PREFIX, description);
   }
 
   @Override
-  public void testStarted(Description description) throws Exception {
+  public void testStarted(Description description) {
     printSyncToken(TestEvent.START_TEST_PREFIX, description);
   }
 

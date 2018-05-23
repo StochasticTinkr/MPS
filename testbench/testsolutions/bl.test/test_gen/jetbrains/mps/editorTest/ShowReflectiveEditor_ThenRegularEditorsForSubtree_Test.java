@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -24,11 +25,15 @@ public class ShowReflectiveEditor_ThenRegularEditorsForSubtree_Test extends Base
 
   @Test
   public void test_ShowReflectiveEditor_ThenRegularEditorsForSubtree() throws Throwable {
-    runTest("jetbrains.mps.editorTest.ShowReflectiveEditor_ThenRegularEditorsForSubtree_Test$TestBody", "testMethod", false);
+    new ShowReflectiveEditor_ThenRegularEditorsForSubtree_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("897648160460478605", "897648160460478620");

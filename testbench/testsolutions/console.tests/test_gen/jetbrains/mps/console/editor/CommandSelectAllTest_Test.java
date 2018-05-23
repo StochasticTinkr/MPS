@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class CommandSelectAllTest_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class CommandSelectAllTest_Test extends BaseTransformationTest {
 
   @Test
   public void test_CommandSelectAllTest() throws Throwable {
-    runTest("jetbrains.mps.console.editor.CommandSelectAllTest_Test$TestBody", "testMethod", false);
+    new CommandSelectAllTest_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1157549163016427194", "1157549163016435632");
