@@ -43,4 +43,8 @@ public interface IProjectHandler extends Remote {
   void addIdeHandler(IMPSIDEHandler handler) throws RemoteException;
 
   void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException;
+
+  default void open(String fileName, int startLine, int startPosition, int endLine, int endPosition) throws RemoteException{
+    //body can be removed after 2018.1
+  }
 }

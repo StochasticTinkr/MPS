@@ -22,6 +22,8 @@ import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
@@ -199,6 +201,17 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
             return;
           }
         }
+      }
+    });
+  }
+
+  @Override
+  public void open(final String fileName, final int startLine, final int startPosition, int endLine, int endPosition) throws RemoteException {
+    executeWriteAction(new Runnable() {
+      public void run() {
+        VirtualFile vfile = LocalFileSystem.getInstance().findFileByPath(fileName);
+        FileEditorManager.getInstance(myProject).navigateToTextEditor(new OpenFileDescriptor(myProject, vfile, startLine, startPosition), true);
+        activateProjectWindow();
       }
     });
   }

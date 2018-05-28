@@ -18,6 +18,8 @@ package jetbrains.mps.ide.generator;
 import jetbrains.mps.ide.navigation.NavigationProvider;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.textgen.trace.TraceInfo;
+import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -50,30 +52,27 @@ public final class GeneratedQueriesOpener {
     }
 
     SModel model = node.getModel();
-    if (model == null || false == model.getModule() instanceof ReloadableModule) {
+    if (model == null || !(model.getModule() instanceof ReloadableModule)) {
       return false;
     }
+
     String packageName = model.getName().getLongName();
     final String queriesClassName = packageName + ".QueriesGenerated";
 
-    Class cls;
-    try {
-      cls = ((ReloadableModule) model.getModule()).getOwnClass(queriesClassName);
-    } catch (Exception e) {
+    TraceablePositionInfo position = new TraceInfo().getPosition(node);
+    if (position == null) {
+      //todo show notification
       return false;
     }
-    final String tail = '_' + node.getNodeId().toString();
+
     final String projectPath = myProject.getProjectFile().getAbsolutePath();
-    for (Method m : cls.getMethods()) {
-      if (m.getName().endsWith(tail)) {
-        for (NavigationProvider np : navProviders) {
-          if (np.openMethod(projectPath, cls.getName(), m.getName(), m.getParameterTypes().length)) {
-            return true;
-          }
-        }
-        return false;
+    for (NavigationProvider np : navProviders) {
+      if (np.navigate(projectPath, position.getFileName(), position.getStartLine(), position.getStartPosition(), position.getEndLine(),
+                      position.getEndPosition())) {
+        return true;
       }
     }
+
     return false;
   }
 }
