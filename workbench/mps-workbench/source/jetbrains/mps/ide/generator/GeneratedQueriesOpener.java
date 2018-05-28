@@ -18,9 +18,12 @@ package jetbrains.mps.ide.generator;
 import jetbrains.mps.ide.navigation.NavigationProvider;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.textgen.trace.TraceInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -56,9 +59,6 @@ public final class GeneratedQueriesOpener {
       return false;
     }
 
-    String packageName = model.getName().getLongName();
-    final String queriesClassName = packageName + ".QueriesGenerated";
-
     TraceablePositionInfo position = new TraceInfo().getPosition(node);
     if (position == null) {
       //todo show notification
@@ -66,13 +66,30 @@ public final class GeneratedQueriesOpener {
     }
 
     final String projectPath = myProject.getProjectFile().getAbsolutePath();
+    IFile file = getGeneratedFile(model, position);
+    if (file == null) {
+      return false;
+    }
+
     for (NavigationProvider np : navProviders) {
-      if (np.navigate(projectPath, position.getFileName(), position.getStartLine(), position.getStartPosition(), position.getEndLine(),
+      if (np.navigate(projectPath, file.getPath(), position.getStartLine(), position.getStartPosition(), position.getEndLine(),
                       position.getEndPosition())) {
         return true;
       }
     }
 
     return false;
+  }
+
+  private IFile getGeneratedFile(SModel model, TraceablePositionInfo position) {
+    JavaModuleFacet facet = model.getModule().getFacet(JavaModuleFacet.class);
+    if (facet == null) {
+      return null;
+    }
+    IFile modelDir = facet.getOutputLocation(model);
+    if (modelDir == null) {
+      return null;
+    }
+    return modelDir.getDescendant(position.getFileName());
   }
 }
