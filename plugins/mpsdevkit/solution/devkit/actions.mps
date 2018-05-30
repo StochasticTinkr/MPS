@@ -832,7 +832,7 @@
       </node>
     </node>
     <node concept="Zd509" id="gXLcbBbpLI" role="Zd508">
-      <ref role="1bYAoF" node="gXLcbBbpK$" resolve="NavigateToGeneratedQuery" />
+      <ref role="1bYAoF" node="gXLcbBbpK$" resolve="NavigateToGeneratedCode" />
       <node concept="pLAjd" id="gXLcbBbpLJ" role="Zd501">
         <property role="pLAjf" value="VK_B" />
         <property role="pLAjc" value="ctrl+alt+shift" />
@@ -4907,6 +4907,9 @@
       <node concept="tCFHf" id="14z8V6nEsaI" role="ftvYc">
         <ref role="tCJdB" node="14z8V6nEs9j" resolve="ShowGenerationTraceback" />
       </node>
+      <node concept="tCFHf" id="4BRIpd2P3AR" role="ftvYc">
+        <ref role="tCJdB" node="gXLcbBbpK$" resolve="NavigateToGeneratedCode" />
+      </node>
     </node>
     <node concept="tT9cl" id="14z8V6nEsaJ" role="2f5YQi">
       <ref role="tU$_T" to="tprs:1GlxrIveqTo" resolve="DebugActions" />
@@ -6783,7 +6786,7 @@
   </node>
   <node concept="sE7Ow" id="gXLcbBbpK$">
     <property role="1WHSii" value="Navigate to generated query method" />
-    <property role="TrG5h" value="NavigateToGeneratedQuery" />
+    <property role="TrG5h" value="NavigateToGeneratedCode" />
     <property role="2uzpH1" value="Open Generated Code" />
     <property role="3GE5qa" value="Goto" />
     <property role="72QZ$" value="true" />

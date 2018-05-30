@@ -13,5 +13,6 @@ public class GenerationTraceActions_ActionGroup extends GeneratedActionGroup {
     GenerationTraceActions_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.ShowOriginNode_Action");
     GenerationTraceActions_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.ShowGenerationTrace_Action");
     GenerationTraceActions_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.ShowGenerationTraceback_Action");
+    GenerationTraceActions_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.NavigateToGeneratedCode_Action");
   }
 }

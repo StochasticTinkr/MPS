@@ -891,7 +891,7 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.MacOSX105_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Mac_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NamespaceNewActionsEx_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NavigateToGeneratedQuery_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NavigateToGeneratedCode_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NewAccessoryModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NewDevKit_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NewGenerator_Action" />
@@ -943,7 +943,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.devkit.actions.NavigateToGeneratedQuery_Action" file="NavigateToGeneratedQuery_Action.java">
+  <dependency className="jetbrains.mps.ide.devkit.actions.NavigateToGeneratedCode_Action" file="NavigateToGeneratedCode_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
