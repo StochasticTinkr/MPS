@@ -6,19 +6,20 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.generator.GeneratedQueriesOpener;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class NavigateToGeneratedQuery_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public NavigateToGeneratedQuery_Action() {
-    super("Generated Query", "Navigate to generated query method", ICON);
+    super("Open Generated Code", "Navigate to generated query method", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -28,8 +29,7 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    // check that node in generator? 
-    return (SNodeOperations.getNodeAncestor(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), true, false) != null);
+    return NavigateToGeneratedQuery_Action.this.getNodeToNavigate(event.getData(MPSCommonDataKeys.NODE), event) != null;
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -56,10 +56,16 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadAction(new Runnable() {
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode fun = SNodeOperations.getNodeAncestor(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), true, false);
-        new GeneratedQueriesOpener(event.getData(MPSCommonDataKeys.MPS_PROJECT)).openQueryMethod(fun);
+        new GeneratedQueriesOpener(event.getData(MPSCommonDataKeys.MPS_PROJECT)).open(NavigateToGeneratedQuery_Action.this.getNodeToNavigate(event.getData(MPSCommonDataKeys.NODE), event));
+      }
+    });
+  }
+  /*package*/ SNode getNodeToNavigate(SNode current, final AnActionEvent event) {
+    return ListSequence.fromList(SNodeOperations.getNodeAncestors(current, null, true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return new GeneratedQueriesOpener(event.getData(MPSCommonDataKeys.MPS_PROJECT)).canOpen(it);
       }
     });
   }

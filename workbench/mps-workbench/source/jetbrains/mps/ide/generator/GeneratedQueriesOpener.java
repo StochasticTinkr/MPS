@@ -47,8 +47,14 @@ public final class GeneratedQueriesOpener {
     return new GeneratedQueriesOpener(project).openQueryMethod(node);
   }
 
-  // model read should be sufficient
+  @Deprecated
+  @ToRemove(version = 2018.1)
   public boolean openQueryMethod(@NotNull SNode node) {
+    return open(node);
+  }
+
+  // model read should be sufficient
+  public boolean open(@NotNull SNode node) {
     NavigationProvider[] navProviders = NavigationProvider.EP_NAME.getExtensions();
     if (navProviders.length == 0) {
       return false;
@@ -60,10 +66,7 @@ public final class GeneratedQueriesOpener {
     }
 
     TraceablePositionInfo position = new TraceInfo().getPosition(node);
-    if (position == null) {
-      //todo show notification
-      return false;
-    }
+    assert position != null;
 
     final String projectPath = myProject.getProjectFile().getAbsolutePath();
     IFile file = getGeneratedFile(model, position);
@@ -79,6 +82,10 @@ public final class GeneratedQueriesOpener {
     }
 
     return false;
+  }
+
+  public boolean canOpen(@NotNull SNode node) {
+    return new TraceInfo().getPosition(node) != null;
   }
 
   private IFile getGeneratedFile(SModel model, TraceablePositionInfo position) {

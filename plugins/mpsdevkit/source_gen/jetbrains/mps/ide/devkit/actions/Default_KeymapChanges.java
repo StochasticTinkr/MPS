@@ -19,7 +19,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.GoToRules_Action", getShortcut("ctrl alt shift R"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.HighlightCellDependencies_Action", getShortcut("ctrl alt shift H"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.ImplementBehaviorMethod_Action", getShortcut("ctrl I"));
-    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.NavigateToGeneratedQuery_Action", getShortcut("ctrl alt shift Q"));
+    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.NavigateToGeneratedQuery_Action", getShortcut("ctrl alt shift B"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.OverrideBehaviorMethod_Action", getShortcut("ctrl O"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.ShowEditorMenuItemTrace_Action", getShortcut("ctrl alt B"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.ShowNodeInExplorer_Action", getShortcut("alt X"));
