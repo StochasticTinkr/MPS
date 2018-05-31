@@ -392,7 +392,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements
     return concept.isValid() ? new DefaultEditor(concept) : new ReadOnlyDefaultEditor(concept);
   }
 
-`  protected SConcept getConcept() {
+  protected SConcept getConcept() {
     return myConcept;
   }
 

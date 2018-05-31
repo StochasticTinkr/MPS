@@ -3948,7 +3948,7 @@
         </node>
         <node concept="TZ5HA" id="6KwcZ1G406y" role="TZ5H$">
           <node concept="1dT_AC" id="6KwcZ1G406z" role="1dT_Ay">
-            <property role="1dT_AB" value="child collection below the cell returned from cell.getNextLeaf() or we should go on and insert" />
+            <property role="1dT_AB" value="child collection below the cell returned from getNextLeaf(cell) or we should go on and insert" />
           </node>
         </node>
         <node concept="TZ5HA" id="6KwcZ1G406$" role="TZ5H$">
@@ -4097,7 +4097,7 @@
         </node>
         <node concept="TZ5HA" id="6KwcZ1G407e" role="TZ5H$">
           <node concept="1dT_AC" id="6KwcZ1G407f" role="1dT_Ay">
-            <property role="1dT_AB" value="child collection below the cell returned from cell.getPrevLeaf() or we should go on and insert" />
+            <property role="1dT_AB" value="child collection below the cell returned from getPrevLeaf(cell) or we should go on and insert" />
           </node>
         </node>
         <node concept="TZ5HA" id="6KwcZ1G407g" role="TZ5H$">

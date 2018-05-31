@@ -3574,7 +3574,7 @@ public class QueriesGenerated extends QueryProviderBase {
     SPropertyOperations.set(defaultBackspaceActionMapItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "backspace_action_id");
     return defaultBackspaceActionMapItem;
   }
-  public static SNode insertMacro_Query_90512222925296981750(final InsertMacroContext _context) {
+  public static SNode insertMacro_Query_59512008530109119690(final InsertMacroContext _context) {
     SNode originalNode = _context.getOriginalCopiedInputNode(_context.getNode());
     SNodeReference nodePtr;
 
@@ -3591,7 +3591,7 @@ public class QueriesGenerated extends QueryProviderBase {
     }
     return NodePointer__BehaviorDescriptor.create_id4nxIQVL$eu9.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e35fL, "jetbrains.mps.lang.modelapi.structure.NodePointer")), _context.getOutputModel(), nodePtr);
   }
-  public static SNode insertMacro_Query_90512222925295786340(final InsertMacroContext _context) {
+  public static SNode insertMacro_Query_59512008530103024670(final InsertMacroContext _context) {
     return (SNode) NodePointer__BehaviorDescriptor.create_id4nxIQVL$eu9.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e35fL, "jetbrains.mps.lang.modelapi.structure.NodePointer")), _context.getOutputModel(), new SNodePointer(_context.getOriginalCopiedInputNode(_context.getNode())));
   }
   public static Object insertMacro_varValue_11841422733400(final TemplateVarContext _context) {
@@ -7186,8 +7186,8 @@ public class QueriesGenerated extends QueryProviderBase {
   {
     imqMethods.put("9186828658631657773", new QueriesGenerated.IMQ(0));
     imqMethods.put("5011379379534104440", new QueriesGenerated.IMQ(1));
-    imqMethods.put("9051222292529718357", new QueriesGenerated.IMQ(2));
-    imqMethods.put("9051222292529579830", new QueriesGenerated.IMQ(3));
+    imqMethods.put("5951200853010924388", new QueriesGenerated.IMQ(2));
+    imqMethods.put("5951200853010308100", new QueriesGenerated.IMQ(3));
   }
   @NotNull
   @Override
@@ -7211,9 +7211,9 @@ public class QueriesGenerated extends QueryProviderBase {
         case 1:
           return QueriesGenerated.insertMacro_Query_50113793795341044250(ctx);
         case 2:
-          return QueriesGenerated.insertMacro_Query_90512222925296981750(ctx);
+          return QueriesGenerated.insertMacro_Query_59512008530109119690(ctx);
         case 3:
-          return QueriesGenerated.insertMacro_Query_90512222925295786340(ctx);
+          return QueriesGenerated.insertMacro_Query_59512008530103024670(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
