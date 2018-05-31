@@ -363,22 +363,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     this(repository, EditorConfigurationBuilder.buildDefault());
   }
 
-  /**
-   * @deprecated since MPS 3.4 use {@link #EditorComponent(SRepository, EditorConfiguration)}
-   */
-  @Deprecated
-  public EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft) {
-    this(repository, new EditorConfigurationBuilder().showErrorsGutter(showErrorsGutter).rightToLeft(rightToLeft).build());
-  }
-
-  /**
-   * @deprecated since MPS 3.4 use {@link #EditorComponent(SRepository, EditorConfiguration)}
-   */
-  @Deprecated
-  protected EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft, boolean createUI) {
-    this(repository, new EditorConfigurationBuilder().showErrorsGutter(showErrorsGutter).rightToLeft(rightToLeft).withUI(createUI).build());
-  }
-
   protected EditorComponent(@NotNull SRepository repository, @NotNull EditorConfiguration configuration) {
     myRepository = repository;
     myEditorConfiguration = configuration;
@@ -739,17 +723,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public boolean onEscape() {
     return false;
-  }
-
-  /**
-   * From now on only NodeEditorComponent has virtual file.
-   * This method will be removed in the next release.
-   *
-   * @param noVirtualFile
-   * @deprecated since MPS 3.4
-   */
-  @Deprecated
-  public void setNoVirtualFile(boolean noVirtualFile) {
   }
 
   public int getShiftX() {

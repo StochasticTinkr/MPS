@@ -118,95 +118,64 @@
   </root>
   <root nodeRef="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)/779128492854173535">
     <file name="SideTransformInfoUtil.java">
-      <node id="779128492854392536" at="21,116,22,52" concept="3" />
-      <node id="329454058123723311" at="24,89,25,41" concept="3" />
-      <node id="779128492854393768" at="34,115,35,53" concept="3" />
-      <node id="329454058123722579" at="37,88,38,42" concept="3" />
-      <node id="779128492854241779" at="47,129,48,198" concept="8" />
-      <node id="779128492854242694" at="48,198,49,169" concept="3" />
-      <node id="779128492854245150" at="49,169,50,175" concept="3" />
-      <node id="779128492854387480" at="50,175,51,189" concept="3" />
-      <node id="779128492854230869" at="51,189,52,237" concept="3" />
-      <node id="329454058123723795" at="54,102,55,198" concept="8" />
-      <node id="329454058123723801" at="55,198,56,169" concept="3" />
-      <node id="329454058123723813" at="56,169,57,189" concept="3" />
-      <node id="329454058123723822" at="57,189,58,237" concept="3" />
-      <node id="779128492854764985" at="61,59,62,408" concept="9" />
-      <node id="779128492854765202" at="65,58,66,407" concept="9" />
-      <node id="779128492854780780" at="69,54,70,237" concept="3" />
-      <node id="779128492854791669" at="73,63,74,393" concept="9" />
-      <node id="779128492854797653" at="77,66,78,396" concept="9" />
-      <node id="329454058123723309" at="24,0,27,0" concept="13" trace="addRightTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
-      <node id="329454058123722577" at="37,0,40,0" concept="13" trace="addLeftTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
-      <node id="779128492854815775" at="61,0,64,0" concept="13" trace="hasRightTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="779128492854817027" at="65,0,68,0" concept="13" trace="hasLeftTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="779128492854818263" at="69,0,72,0" concept="13" trace="removeTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="779128492854819483" at="73,0,76,0" concept="13" trace="getCellIdFromTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="779128492854820709" at="77,0,80,0" concept="13" trace="getAnchorTagFromTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="779128492854810670" at="19,0,24,0" concept="13" trace="addRightTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="779128492854812524" at="32,0,37,0" concept="13" trace="addLeftTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="329454058123723793" at="54,0,60,0" concept="13" trace="addTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Z)V" />
-      <node id="779128492854813020" at="45,0,54,0" concept="13" trace="addTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;Z)V" />
-      <scope id="779128492854382946" at="21,116,22,52" />
-      <scope id="329454058123723310" at="24,89,25,41" />
-      <scope id="779128492854383898" at="34,115,35,53" />
-      <scope id="329454058123722578" at="37,88,38,42" />
-      <scope id="779128492854752792" at="61,59,62,408" />
-      <scope id="779128492854756227" at="65,58,66,407" />
-      <scope id="779128492854778748" at="69,54,70,237" />
-      <scope id="779128492854784030" at="73,63,74,393" />
-      <scope id="779128492854793988" at="77,66,78,396" />
-      <scope id="329454058123723309" at="24,0,27,0">
+      <node id="329454058123723311" at="14,89,15,41" concept="3" />
+      <node id="329454058123722579" at="18,88,19,42" concept="3" />
+      <node id="329454058123723795" at="22,102,23,198" concept="8" />
+      <node id="329454058123723801" at="23,198,24,169" concept="3" />
+      <node id="329454058123723813" at="24,169,25,189" concept="3" />
+      <node id="329454058123723822" at="25,189,26,237" concept="3" />
+      <node id="779128492854764985" at="29,59,30,408" concept="9" />
+      <node id="779128492854765202" at="33,58,34,407" concept="9" />
+      <node id="779128492854780780" at="37,54,38,237" concept="3" />
+      <node id="779128492854791669" at="41,63,42,393" concept="9" />
+      <node id="779128492854797653" at="45,66,46,396" concept="9" />
+      <node id="329454058123723309" at="14,0,17,0" concept="13" trace="addRightTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
+      <node id="329454058123722577" at="18,0,21,0" concept="13" trace="addLeftTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
+      <node id="779128492854815775" at="29,0,32,0" concept="13" trace="hasRightTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="779128492854817027" at="33,0,36,0" concept="13" trace="hasLeftTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="779128492854818263" at="37,0,40,0" concept="13" trace="removeTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="779128492854819483" at="41,0,44,0" concept="13" trace="getCellIdFromTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="779128492854820709" at="45,0,48,0" concept="13" trace="getAnchorTagFromTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="329454058123723793" at="22,0,28,0" concept="13" trace="addTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Z)V" />
+      <scope id="329454058123723310" at="14,89,15,41" />
+      <scope id="329454058123722578" at="18,88,19,42" />
+      <scope id="779128492854752792" at="29,59,30,408" />
+      <scope id="779128492854756227" at="33,58,34,407" />
+      <scope id="779128492854778748" at="37,54,38,237" />
+      <scope id="779128492854784030" at="41,63,42,393" />
+      <scope id="779128492854793988" at="45,66,46,396" />
+      <scope id="329454058123723309" at="14,0,17,0">
         <var name="cellId" id="329454058123723320" />
         <var name="node" id="329454058123723317" />
       </scope>
-      <scope id="329454058123722577" at="37,0,40,0">
+      <scope id="329454058123722577" at="18,0,21,0">
         <var name="cellId" id="329454058123722588" />
         <var name="node" id="329454058123722585" />
       </scope>
-      <scope id="779128492854815775" at="61,0,64,0">
+      <scope id="779128492854815775" at="29,0,32,0">
         <var name="node" id="779128492854754975" />
       </scope>
-      <scope id="779128492854817027" at="65,0,68,0">
+      <scope id="779128492854817027" at="33,0,36,0">
         <var name="node" id="779128492854756230" />
       </scope>
-      <scope id="779128492854818263" at="69,0,72,0">
+      <scope id="779128492854818263" at="37,0,40,0">
         <var name="node" id="779128492854779770" />
       </scope>
-      <scope id="779128492854819483" at="73,0,76,0">
+      <scope id="779128492854819483" at="41,0,44,0">
         <var name="node" id="779128492854786247" />
       </scope>
-      <scope id="779128492854820709" at="77,0,80,0">
+      <scope id="779128492854820709" at="45,0,48,0">
         <var name="node" id="779128492854797386" />
       </scope>
-      <scope id="329454058123723794" at="54,102,58,237">
+      <scope id="329454058123723794" at="22,102,26,237">
         <var name="info" id="329454058123723796" />
       </scope>
-      <scope id="779128492854810670" at="19,0,24,0">
-        <var name="anchorTag" id="779128492854382942" />
-        <var name="cellId" id="779128492854382939" />
-        <var name="node" id="779128492854382936" />
-      </scope>
-      <scope id="779128492854812524" at="32,0,37,0">
-        <var name="anchorTag" id="779128492854383894" />
-        <var name="cellId" id="779128492854383891" />
-        <var name="node" id="779128492854383888" />
-      </scope>
-      <scope id="779128492854222089" at="47,129,52,237">
-        <var name="info" id="779128492854241780" />
-      </scope>
-      <scope id="329454058123723793" at="54,0,60,0">
+      <scope id="329454058123723793" at="22,0,28,0">
         <var name="cellId" id="329454058123723832" />
         <var name="isRight" id="329454058123723838" />
         <var name="node" id="329454058123723829" />
       </scope>
-      <scope id="779128492854813020" at="45,0,54,0">
-        <var name="anchorTag" id="779128492854226602" />
-        <var name="cellId" id="779128492854224666" />
-        <var name="isRight" id="779128492854386462" />
-        <var name="node" id="779128492854223355" />
-      </scope>
-      <unit id="779128492854173535" at="14,0,81,0" name="jetbrains.mps.editor.runtime.SideTransformInfoUtil" />
+      <unit id="779128492854173535" at="13,0,49,0" name="jetbrains.mps.editor.runtime.SideTransformInfoUtil" />
     </file>
   </root>
   <root nodeRef="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)/7973955287399271868">

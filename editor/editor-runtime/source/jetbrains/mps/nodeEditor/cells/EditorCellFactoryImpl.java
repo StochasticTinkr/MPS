@@ -56,19 +56,8 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     public Collection<String> getHints() {
       return Collections.emptySet();
     }
-
-    @Override
-    public boolean hasContextHint(String hint) {
-      return false;
-    }
   };
   public static final String BASE_COMMENT_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment";
-  /**
-   * @deprecated This hint has no meaning since 2018.1.
-   * Reflective editor actions are now controlled in package {@link jetbrains.mps.nodeEditor.reflectiveEditor}.
-   */
-  @Deprecated
-  public static final String BASE_REFLECTIVE_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor";
 
   private final EditorContext myEditorContext;
   private Deque<EditorCellContextImpl> myCellContextStack;

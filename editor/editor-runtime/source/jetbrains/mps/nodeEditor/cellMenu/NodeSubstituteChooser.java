@@ -128,11 +128,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return new Point(anchor.x + myContextCell.getX() + myContextCell.getLeftInset(), anchor.y + myContextCell.getY() + myContextCell.getTopInset());
   }
 
-  @Deprecated
-  public void setLocationRelative(@NotNull EditorCell cell) {
-    myContextCell = cell;
-  }
-
   public void setNodeSubstituteInfo(@NotNull SubstituteInfo nodeSubstituteInfo) {
     assert !myIsVisible;
     myNodeSubstituteInfo = nodeSubstituteInfo;

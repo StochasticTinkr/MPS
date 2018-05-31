@@ -46,11 +46,6 @@ public class EditorCellContextImpl implements EditorCellContext {
   }
 
   @Override
-  public boolean hasContextHint(String hint) {
-    return myHints.contains(hint);
-  }
-
-  @Override
   public SNodeLocation getNodeLocation() {
     return myNodeLocation;
   }

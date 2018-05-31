@@ -38,8 +38,4 @@ public interface EditorCellContext {
   default SPropertyInfo getPropertyInfo() {
     return null;
   }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  boolean hasContextHint(String hint);
 }

@@ -41,22 +41,6 @@ public class InspectorEditorComponent extends EditorComponent {
     this(p, EditorConfigurationBuilder.buildDefault());
   }
 
-  /**
-   * @deprecated since MPS 3.4 use {@link #InspectorEditorComponent(SRepository, EditorConfiguration)}
-   */
-  @Deprecated
-  public InspectorEditorComponent(@NotNull SRepository repository, boolean rightToLeft) {
-    this(repository, new EditorConfigurationBuilder().rightToLeft(rightToLeft).build());
-  }
-
-  /**
-   * @deprecated since MPS 3.4 use {@link #InspectorEditorComponent(SRepository, EditorConfiguration)}
-   */
-  @Deprecated
-  public InspectorEditorComponent(@NotNull SRepository repository, boolean showGutter, boolean rightToLeft) {
-    this(repository, new EditorConfigurationBuilder().showErrorsGutter(showGutter).rightToLeft(rightToLeft).build());
-  }
-
   public InspectorEditorComponent(@NotNull SRepository repository, @NotNull EditorConfiguration configuration) {
     super(repository, configuration);
     myNode = null;

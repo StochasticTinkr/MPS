@@ -392,15 +392,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements
     return concept.isValid() ? new DefaultEditor(concept) : new ReadOnlyDefaultEditor(concept);
   }
 
-  /**
-   * @deprecated since MPS 3.5 use {{@link #getNode()}
-   */
-  @Deprecated
-  protected SNode getSNode() {
-    return mySNode;
-  }
-
-  protected SConcept getConcept() {
+`  protected SConcept getConcept() {
     return myConcept;
   }
 

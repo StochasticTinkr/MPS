@@ -183,31 +183,9 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     myNodeEditorComponent.getUpdater().flushModelEvents();
   }
 
-  /**
-   * @deprecated Since MPS 3.4 use getState()
-   */
-  @Deprecated
-  @Override
-  public Object createMemento() {
-    return getEditorComponentState();
-  }
-
   @Override
   public EditorComponentState getEditorComponentState() {
     return new Memento(this, false);
-  }
-
-  /**
-   * @deprecated Since MPS 3.4 use getState()
-   */
-  @Deprecated
-  @Override
-  public boolean setMemento(Object o) {
-    if (o instanceof EditorComponentState) {
-      restoreEditorComponentState((EditorComponentState) o);
-      return true;
-    }
-    return false;
   }
 
   @Override
@@ -337,11 +315,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
       return;
     }
     myPerformanceTracer.pop();
-  }
-
-  @Override
-  public EditorCellFactory getCellFactory() {
-    return getEditorComponent().getUpdater().getCurrentUpdateSession().getCellFactory();
   }
 
   @Override

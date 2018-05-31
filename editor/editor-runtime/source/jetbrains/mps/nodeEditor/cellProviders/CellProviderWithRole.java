@@ -28,10 +28,6 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   protected String myNoTargetText;
   protected EditorContext myEditorContext;
 
-  // auxiliary cell provider, which may help to create some parts of resulting cell (used in inheritors)
-  @Deprecated
-  protected AbstractCellProvider myAuxiliaryCellProvider;
-
   // if the cell to provide "allows" "empty" target of its relation.
   // The exact meaning of what is "empty" and what is "to allow"
   // may differ among different inheritors of this class.
@@ -93,21 +89,5 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
 
   public void setAllowsEmptyTarget(boolean allowsEmptyTarget) {
     myAllowsEmptyTarget = allowsEmptyTarget;
-  }
-
-  /**
-   * @deprecated Since MPS 3.5 not used
-   */
-  @Deprecated
-  public void setAuxiliaryCellProvider(AbstractCellProvider provider) {
-    myAuxiliaryCellProvider = provider;
-  }
-
-  /**
-   * @deprecated Since MPS 3.5 not used
-   */
-  @Deprecated
-  public AbstractCellProvider getAuxiliaryCellProvider() {
-    return myAuxiliaryCellProvider;
   }
 }

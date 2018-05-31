@@ -29,17 +29,6 @@ public class AggregationCellContext extends BasicCellContext {
   public static final EditorContextKey<SAbstractConcept> CHILD_CONCEPT = new EditorContextKey<>();
   public static final EditorContextKey<SNode> CURRENT_CHILD_NODE = new EditorContextKey<>();
 
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public AggregationCellContext(SNode parentNode, SNode currentChild, SNode linkDeclaration) {
-    super(parentNode);
-    SNode origin = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    put(LINK, MetaAdapterByDeclaration.getContainmentLink(origin));
-    final SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
-    put(CHILD_CONCEPT, MetaAdapterByDeclaration.getConcept(linkDeclarationTarget));
-    put(CURRENT_CHILD_NODE, currentChild);
-  }
-
   public AggregationCellContext(SNode parentNode, SNode currentChild, SContainmentLink link, SAbstractConcept childConcept) {
     super(parentNode);
     put(LINK, link);

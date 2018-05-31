@@ -16,10 +16,7 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
@@ -33,7 +30,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -42,7 +38,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class RefCellCellProvider extends AbstractReferentCellProvider {
+public abstract class RefCellCellProvider extends AbstractReferentCellProvider {
   @Deprecated
   @ToRemove(version = 2018.2)
   //it is important for descendants to have a unique constructor and with the same parameters as this one
@@ -56,42 +52,11 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     super(node, link, targetConcept, roleName, context);
   }
 
-  @Override
-  protected EditorCell createRefCell(final EditorContext context, final SNode effectiveNode, SNode node) {
-    final AbstractCellProvider inlineComponent = myAuxiliaryCellProvider;
-    myAuxiliaryCellProvider.setSNode(effectiveNode);
-    if (inlineComponent instanceof InlineCellProvider) {
-      InlineCellProvider inlineComponentProvider = (InlineCellProvider) inlineComponent;
-      inlineComponentProvider.setRefNode(node);
-    }
-    EditorCell editorCell;
-    if (isAggregation()) {
-      editorCell = inlineComponent.createEditorCell(context);
-    } else {
-      editorCell = context.getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
-        @Override
-        public EditorCell compute() {
-          return inlineComponent.createEditorCell(context);
-        }
-      }, effectiveNode, getRoleName());
-      CellUtil.setupIDeprecatableStyles(effectiveNode, editorCell);
-    }
-    if (!isAggregation()) {
-      setSemanticNodeToCells(editorCell, node);
-    }
-
-    if (!getLink().isOptional()) {
-      installDeleteActions_atLeastOne(editorCell);
-    } else {
-      if (isAggregation()) {
-        installDeleteActions_nullable_aggregation(editorCell);
-      } else {
-        installDeleteActions_nullable_reference(editorCell);
-      }
-    }
-    return editorCell;
-  }
-
+  /**
+   * @deprecated not used anymore. Use corresponding methods directly instead of calling this one.
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   protected void installDeleteActions_atLeastOne(EditorCell editorCell) {
     if (ReferenceConceptUtil.getCharacteristicReference(getSNode().getConcept()) != null) {
       installDeleteActions_notnull_smartReference(editorCell);
@@ -105,6 +70,11 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
   }
 
+  /**
+   * @deprecated not used anymore.
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   protected void installDeleteActions_notnull_smartReference(EditorCell editorCell) {
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), DeleteDirection.FORWARD));
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), DeleteDirection.BACKWARD));
@@ -115,14 +85,22 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), DeleteDirection.BACKWARD));
   }
 
+  /**
+   * @deprecated not used anymore. Use corresponding methods directly instead of calling this one.
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   protected void installDeleteActions_nullable_reference(EditorCell editorCell) {
     SReferenceLink rl = (SReferenceLink) getLink();
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(getSNode(), rl));
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(getSNode(), rl));
   }
 
-  // TODO: review the logic of reference cell lookup in editor. Proposal is: use external logic for reference cell
-  // TODO: lookup (either empty or top-level cell) & remove this method completely.
+  /**
+   * @deprecated not used anymore. Use corresponding methods directly instead of calling this one.
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   protected void setSemanticNodeToCells(EditorCell rootCell, SNode semanticNode) {
     if (!(rootCell instanceof EditorCell_Basic) || semanticNode == null) {
       return;

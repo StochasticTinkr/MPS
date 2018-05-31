@@ -15,31 +15,21 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
-
+/**
+ * @deprecated Since MPS 2018.2 not used. {@link jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder} can be sub-classed instead of it.
+ */
+@Deprecated
+@ToRemove(version = 2018.2)
 public abstract class InlineCellProvider extends AbstractCellProvider {
 
   private SNode myRefNode;
 
-  /**
-   * @deprecated Since MPS 3.5 use {@link #InlineCellProvider(SNode, SNode)}
-   */
-  @Deprecated
-  public InlineCellProvider() {
-  }
-
   public InlineCellProvider(@NotNull SNode node, @NotNull SNode refNode) {
     super(node);
-    myRefNode = refNode;
-  }
-
-  /**
-   * @deprecated Since MPS 3.5 use {@link #InlineCellProvider(SNode, SNode)}
-   */
-  @Deprecated
-  public void setRefNode(SNode refNode) {
     myRefNode = refNode;
   }
 

@@ -46,46 +46,15 @@ public abstract class SingleRoleCellProvider extends AbstractEditorBuilder imple
   protected final SContainmentLink myContainmentLink;
 
   /**
-   * @deprecated since MPS 3.5 use {@link #getNode()} method, this field will be removed in the next release
-   */
-  @Deprecated
-  protected final SNode myOwnerNode;
-
-  /**
    * @deprecated since MPS 3.5 use {@link #getEditorContext()} method, this field will be removed in the next release
    */
   @Deprecated
   protected final EditorContext myEditorContext;
 
-  /**
-   * @deprecated since MPS 3.5 use {@link #SingleRoleCellProvider(SContainmentLink, EditorContext)} constructor
-   */
-  @Deprecated
-  public SingleRoleCellProvider(final SNode ownerNode, final SContainmentLink containmentLink, EditorContext editorContext) {
-    super(editorContext);
-    myOwnerNode = ownerNode;
-    myContainmentLink = containmentLink;
-    myEditorContext = editorContext;
-  }
-
   public SingleRoleCellProvider(final SContainmentLink containmentLink, EditorContext editorContext) {
     super(editorContext);
-    myOwnerNode = null;
     myContainmentLink = containmentLink;
     myEditorContext = editorContext;
-  }
-
-  /**
-   * This is a compatibility implementation of corresponding method from super-class.
-   * Since MPS 3.5 this method will be generated in sub-classes.
-   * After MPS 3.5 this method should be removed, so sub-classes will implement it directly.
-   *
-   * @return
-   */
-  @NotNull
-  @Override
-  public SNode getNode() {
-    return myOwnerNode;
   }
 
   protected EditorCell createChildCell(SNode child) {

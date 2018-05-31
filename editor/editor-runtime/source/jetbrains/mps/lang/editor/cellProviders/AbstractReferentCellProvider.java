@@ -18,11 +18,9 @@ package jetbrains.mps.lang.editor.cellProviders;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultSChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultSReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -158,13 +156,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     return createRefCell(context, referentNode, node);
   }
 
-  protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
-    EditorCell_Error errorCell = new EditorCell_Error(context, node, error);
-    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), DeleteDirection.FORWARD));
-    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), DeleteDirection.BACKWARD));
-    setRoleForCellWithNoTarget(errorCell);
-    return errorCell;
-  }
+  protected abstract EditorCell createErrorCell(String error, SNode node, EditorContext context);
 
   private void setRoleForCellWithNoTarget(EditorCell cell) {
     if (myLink != null) {

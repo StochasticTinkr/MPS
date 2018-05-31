@@ -63,19 +63,6 @@ public class EditorCell_STHint extends EditorCell_Constant {
     return stHintCell instanceof EditorCell_STHint ? (EditorCell_STHint) stHintCell : null;
   }
 
-
-  /**
-   * @deprecated after MPS 3.4 side transform actions will be migrated from actions aspect to editor aspect
-   * so the will be referenced directly from editor and  anchor tag will not be used.
-   * Use {@link EditorCell_STHint#EditorCell_STHint(EditorCell, EditorCell, Side, CellInfo)}  }
-   */
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  public EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @NotNull CellSide oldSide, @NotNull String sideTransformTag,
-                           @Nullable CellInfo restoreSelectionCellInto) {
-    this(bigCell, anchorCell, oldSide == CellSide.LEFT ? Side.LEFT : Side.RIGHT, restoreSelectionCellInto);
-  }
-
   public EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @NotNull Side side, @Nullable CellInfo restoreSelectionCellInto) {
     super(anchorCell.getContext(), anchorCell.getSNode(), "");
     assert bigCell.isBig();
