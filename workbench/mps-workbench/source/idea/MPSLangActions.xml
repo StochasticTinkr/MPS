@@ -1177,8 +1177,11 @@
       <keyboard-shortcut first-keystroke="control F10" keymap="$default"/>
       <add-to-group group-id="DebugMainMenu" anchor="before" relative-to-action="StepOver"/>
     </action>
+    -->
 
     <group id="TouchBar">
+      <!--
+      TODO: Enable after replacing IDEA actions with MPS ones
       <group id="TouchBarDebug" text="Debugger">
         <reference ref="Rerun"/>
         <reference ref="Pause"/>
@@ -1203,7 +1206,7 @@
         </group>
         <group id="TouchBarDebug_cmd" text="Debugger with Cmd key"/>
       </group>
+      -->
     </group>
-    -->
   </actions>
 </component>
