@@ -25,6 +25,5 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.intentions.actions.QueriesGenerated" file="QueriesGenerated.java" />
 </dependenciesRoot>
 

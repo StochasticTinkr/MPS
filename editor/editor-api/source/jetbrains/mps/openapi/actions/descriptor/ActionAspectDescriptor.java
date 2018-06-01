@@ -28,6 +28,11 @@ public interface ActionAspectDescriptor extends ILanguageAspect {
 
   Collection<NodeFactory> getFactories(SAbstractConcept concept);
 
+
+  /**
+   * @deprecated actions language does not support transformation and substitute builders, they were moved to the {@link jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor}
+   */
+  @Deprecated
   boolean hasBuilders();
 
   Collection<CopyPreProcessor> getCopyPreProcessors();

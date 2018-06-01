@@ -186,7 +186,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.actions.QueriesGenerated" file="QueriesGenerated.java" />
   <dependency className="jetbrains.mps.baseLanguage.actions.SingleLineComment_factories" file="SingleLineComment_factories.java">
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.NodeFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />

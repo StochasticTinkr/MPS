@@ -20,6 +20,7 @@ import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.typesystem.inference.InequalitySystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -41,13 +42,25 @@ public class SReferenceSubstituteInfoSmartReferenceDecorator extends AbstractNod
 
   @Override
   protected List<SubstituteAction> createActions() {
-    SNode node = myEditorCell.getSNode();
-    if (CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(myEditorCell)) == myEditorCell &&
-        node.getParent() != null && !node.getChildren().iterator().hasNext()) {
+    if (shouldUseChildActions()) {
       return myChildSubstituteInfo.createActions();
     } else {
       return myReferenceSubstituteInfo.createActions();
     }
   }
 
+  private boolean shouldUseChildActions() {
+    SNode node = myEditorCell.getSNode();
+    return CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(myEditorCell)) == myEditorCell &&
+        node.getParent() != null && !node.getChildren().iterator().hasNext();
+  }
+
+  @Override
+  protected InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
+    if (shouldUseChildActions()) {
+      return myChildSubstituteInfo.getInequalitiesSystem(contextCell);
+    } else {
+      return myReferenceSubstituteInfo.getInequalitiesSystem(contextCell);
+    }
+  }
 }

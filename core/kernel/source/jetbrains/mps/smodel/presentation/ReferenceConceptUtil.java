@@ -15,37 +15,23 @@
  */
 package jetbrains.mps.smodel.presentation;
 
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.SNodeOperations;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Igor Alshannikov
  * Jan 31, 2008
  */
 public class ReferenceConceptUtil {
-  private static final Logger LOG = LogManager.getLogger(ReferenceConceptUtil.class);
-
 
 
   /**
@@ -61,48 +47,16 @@ public class ReferenceConceptUtil {
    * @return characteristic reference or NULL
    */
   @Deprecated
+  @ToRemove(version = 2018.2)
   public static SNode getCharacteristicReference(final SNode concept) {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        String expectedReferentRole = null;
-        String alias = SNodeUtil.getConceptAlias(concept);
-        if (alias != null) {
-          final SmartAliasHelper smartAliasHelper = new SmartAliasHelper(alias);
-          expectedReferentRole = smartAliasHelper.getSmartRole();
-          if (expectedReferentRole == null) {
-            // trick (why?): has an alias but it doesn't match pattern - no characteristic reference
-            return null;
-          }
-        }
-
-        List<SNode> links = new ArrayList<SNode>();
-        //this usage of ConceptAndSuperConceptsCache is inside a deprecated method, which will be removed soon
-        for (SNode link : ConceptAndSuperConceptsCache.getInstance(concept).getLinkDeclarationsExcludingOverridden()) {
-          if (SNodeUtil.getLinkDeclaration_IsReference(link)) {
-            links.add(link);
-          }
-        }
-
-        if (expectedReferentRole != null) {
-          for (SNode link : links) {
-            if (expectedReferentRole.equals(SModelUtil.getLinkDeclarationRole(link))) {
-              return link;
-            }
-          }
-          LOG.warn("the '" + alias + "' doesn't match any reference link in " + SNodeOperations.getDebugText(concept));
-        } else {
-          // if concept declares exactly ONE REQUIRED reference link...
-          if (links.size() == 1) {
-            SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(links.get(0));
-            if (SNodeUtil.getLinkDeclaration_IsExactlyOneMultiplicity(genuineLinkDeclaration)) {
-              return links.get(0);
-            }
-          }
-        }
-        return null;
+    SAbstractConcept sConcept = MetaAdapterByDeclaration.getConcept(concept);
+    if (sConcept != null) {
+      SReferenceLink characteristicReference = getCharacteristicReference(sConcept);
+      if (characteristicReference != null) {
+        return characteristicReference.getDeclarationNode();
       }
-    });
+    }
+    return null;
   }
 
 
@@ -168,17 +122,16 @@ public class ReferenceConceptUtil {
   }
 
   public static String getPresentation(SNode node) {
-    SNode nodeConcept = new SNodeLegacy(node).getConceptDeclarationNode();
-    SNode characteristicReference = getCharacteristicReference(nodeConcept);
+    SAbstractConcept nodeConcept = node.getConcept();
+    SReferenceLink characteristicReference = getCharacteristicReference(nodeConcept);
     if (characteristicReference == null) {
       return null;
     }
-    String genuineRole = SModelUtil.getGenuineLinkRole(characteristicReference);
-    SReference reference = node.getReference(genuineRole);
+    SReference reference = node.getReference(characteristicReference);
     if (reference instanceof DynamicReference) {
       return ((DynamicReference) reference).getResolveInfo();
     }
-    SNode referentNode = node.getReferenceTarget(genuineRole);
+    SNode referentNode = node.getReferenceTarget(characteristicReference);
     final String referentPresentation;
     if (referentNode != null) {
       SConcept targetConcept = referentNode.getConcept();
@@ -188,7 +141,7 @@ public class ReferenceConceptUtil {
         referentPresentation = referentNode.toString();
       }
     } else {
-      referentPresentation = "<no " + SModelUtil.getLinkDeclarationRole(characteristicReference) + ">";
+      referentPresentation = "<no " + characteristicReference.getName() + ">";
     }
     if (hasSmartAlias(nodeConcept)) {
       return getPresentationFromSmartAlias(nodeConcept, referentPresentation);

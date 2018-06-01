@@ -111,9 +111,5 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
     return Collections.<NodeFactory>emptyList();
   }
 
-  @Override
-  public boolean hasBuilders() {
-    return false;
-  }
   private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AbstractContainerType", "AddAllElementsOperation", "AddElementOperation", "AddFirstElementOperation", "AddLastElementOperation", "AllOperation", "AnyOperation", "ComparatorSortOperation", "ContainsAllOperation", "ContainsOperation", "CustomContainerDeclaration", "FindFirstOperation", "FindLastOperation", "FoldLeftOperation", "FoldRightOperation", "ForEachStatement", "GetElementOperation", "GetIndexOfOperation", "GetLastIndexOfOperation", "HashMapCreator", "HashSetCreator", "LinkedHashMapCreator", "LinkedHashSetCreator", "LinkedListCreator", "ListCreatorWithInit", "ListType", "MultiForEachStatement", "PushOperation", "ReduceLeftOperation", "ReduceRightOperation", "RemoveAllElementsOperation", "RemoveElementOperation", "RemoveWhereOperation", "SelectOperation", "SequenceType", "SetType", "SortOperation", "TestAddElementOperation", "TestRemoveElementOperation", "TranslateOperation", "TreeMapCreator", "TreeSetCreator", "VisitAllOperation", "WhereOperation"};
 }

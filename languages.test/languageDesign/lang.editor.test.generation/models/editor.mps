@@ -136,10 +136,6 @@
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styleClass" index="V601i" />
       </concept>
-      <concept id="1214320119173" name="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" flags="ln" index="2V7CMv">
-        <property id="1214320119174" name="tag" index="2V7CMs" />
-        <child id="3608226089191997414" name="tags" index="3TxK5$" />
-      </concept>
       <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
         <property id="1186403713874" name="color" index="Vb096" />
         <child id="1186403803051" name="query" index="VblUZ" />
@@ -341,15 +337,8 @@
       </concept>
       <concept id="1187258617779" name="jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem" flags="ln" index="1I8cUB" />
       <concept id="5624877018226904808" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Named" flags="ng" index="3ICXOK" />
-      <concept id="8233876857994246075" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms" flags="ng" index="3JiINr">
-        <property id="870577895075788418" name="tag" index="2_m5XT" />
-        <property id="8233876857994286197" name="side" index="3JiSWl" />
-      </concept>
       <concept id="6419604448124516209" name="jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent" flags="in" index="3LVrda" />
       <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
-      <concept id="3608226089191997415" name="jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper" flags="ng" index="3TxK5_">
-        <property id="3608226089191997418" name="tag" index="3TxK5C" />
-      </concept>
       <concept id="1176717779940" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text" flags="nn" index="3TQ6bP" />
       <concept id="1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" flags="in" index="3TQlhw" />
       <concept id="1176717871254" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" flags="in" index="3TQsA7" />
@@ -1756,17 +1745,6 @@
         <node concept="1fO$WK" id="2XU9kLBjD7" role="3F10Kt">
           <property role="1fOxUg" value="GUTTER_AND_EDITOR" />
         </node>
-        <node concept="2V7CMv" id="2XU9kLBnm5" role="3F10Kt">
-          <property role="2V7CMs" value="ext_1_RTransform" />
-        </node>
-        <node concept="2V7CMv" id="2XU9kLBqV9" role="3F10Kt">
-          <node concept="3TxK5_" id="2XU9kLBsD_" role="3TxK5$">
-            <property role="3TxK5C" value="ext_1_RTransform" />
-          </node>
-          <node concept="3TxK5_" id="2XU9kLBvBo" role="3TxK5$">
-            <property role="3TxK5C" value="ext_2_RTransform" />
-          </node>
-        </node>
         <node concept="2jF6I7" id="2XU9kLBx$g" role="3F10Kt">
           <property role="2jF6Ia" value="VERTICAL_COLLECTION" />
         </node>
@@ -2122,10 +2100,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node concept="3JiINr" id="2XU9kLD66S" role="OY2wv">
-          <property role="2_m5XT" value="ext_1_RTransform" />
-          <property role="3JiSWl" value="left" />
         </node>
         <node concept="1Y$tRT" id="2XU9kLD81q" role="OY2wv">
           <ref role="1Y$EBa" node="2XU9kLD8Lt" resolve="TestTargetMenuComponent" />
@@ -3593,17 +3567,6 @@
         </node>
         <node concept="1fO$WK" id="2XU9kLDvKq" role="3F10Kt">
           <property role="1fOxUg" value="GUTTER_AND_EDITOR" />
-        </node>
-        <node concept="2V7CMv" id="2XU9kLDvKr" role="3F10Kt">
-          <property role="2V7CMs" value="ext_1_RTransform" />
-        </node>
-        <node concept="2V7CMv" id="2XU9kLDvKs" role="3F10Kt">
-          <node concept="3TxK5_" id="2XU9kLDvKt" role="3TxK5$">
-            <property role="3TxK5C" value="ext_1_RTransform" />
-          </node>
-          <node concept="3TxK5_" id="2XU9kLDvKu" role="3TxK5$">
-            <property role="3TxK5C" value="ext_2_RTransform" />
-          </node>
         </node>
         <node concept="2jF6I7" id="2XU9kLDvKv" role="3F10Kt">
           <property role="2jF6Ia" value="VERTICAL_COLLECTION" />
@@ -5186,17 +5149,6 @@
         <node concept="1fO$WK" id="2XU9kLE8gQ" role="3F10Kt">
           <property role="1fOxUg" value="GUTTER_AND_EDITOR" />
         </node>
-        <node concept="2V7CMv" id="2XU9kLE8gR" role="3F10Kt">
-          <property role="2V7CMs" value="ext_1_RTransform" />
-        </node>
-        <node concept="2V7CMv" id="2XU9kLE8gS" role="3F10Kt">
-          <node concept="3TxK5_" id="2XU9kLE8gT" role="3TxK5$">
-            <property role="3TxK5C" value="ext_1_RTransform" />
-          </node>
-          <node concept="3TxK5_" id="2XU9kLE8gU" role="3TxK5$">
-            <property role="3TxK5C" value="ext_2_RTransform" />
-          </node>
-        </node>
         <node concept="2jF6I7" id="2XU9kLE8gV" role="3F10Kt">
           <property role="2jF6Ia" value="VERTICAL_COLLECTION" />
         </node>
@@ -6548,17 +6500,6 @@
         <node concept="1fO$WK" id="2XU9kLEayj" role="3F10Kt">
           <property role="1fOxUg" value="GUTTER_AND_EDITOR" />
         </node>
-        <node concept="2V7CMv" id="2XU9kLEayk" role="3F10Kt">
-          <property role="2V7CMs" value="ext_1_RTransform" />
-        </node>
-        <node concept="2V7CMv" id="2XU9kLEayl" role="3F10Kt">
-          <node concept="3TxK5_" id="2XU9kLEaym" role="3TxK5$">
-            <property role="3TxK5C" value="ext_1_RTransform" />
-          </node>
-          <node concept="3TxK5_" id="2XU9kLEayn" role="3TxK5$">
-            <property role="3TxK5C" value="ext_2_RTransform" />
-          </node>
-        </node>
         <node concept="2jF6I7" id="2XU9kLEayo" role="3F10Kt">
           <property role="2jF6Ia" value="VERTICAL_COLLECTION" />
         </node>
@@ -6955,10 +6896,6 @@
             </node>
           </node>
         </node>
-        <node concept="3JiINr" id="2XU9kLEjSa" role="OY2wv">
-          <property role="2_m5XT" value="ext_1_RTransform" />
-          <property role="3JiSWl" value="left" />
-        </node>
         <node concept="1Y$tRT" id="2XU9kLEjSb" role="OY2wv">
           <ref role="1Y$EBa" node="2XU9kLD8Lt" resolve="TestTargetMenuComponent" />
         </node>
@@ -7332,10 +7269,6 @@
             </node>
           </node>
         </node>
-        <node concept="3JiINr" id="2XU9kLEx39" role="OY2wv">
-          <property role="2_m5XT" value="ext_1_RTransform" />
-          <property role="3JiSWl" value="left" />
-        </node>
         <node concept="1Y$tRT" id="2XU9kLEx3a" role="OY2wv">
           <ref role="1Y$EBa" node="2XU9kLD8Lt" resolve="TestTargetMenuComponent" />
         </node>
@@ -7696,10 +7629,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node concept="3JiINr" id="2XU9kLEA1l" role="OY2wv">
-          <property role="2_m5XT" value="ext_1_RTransform" />
-          <property role="3JiSWl" value="left" />
         </node>
         <node concept="1Y$tRT" id="2XU9kLEA1m" role="OY2wv">
           <ref role="1Y$EBa" node="2XU9kLD8Lt" resolve="TestTargetMenuComponent" />
@@ -9099,17 +9028,6 @@
         <node concept="1fO$WK" id="2XU9kLEXTJ" role="3F10Kt">
           <property role="1fOxUg" value="GUTTER_AND_EDITOR" />
         </node>
-        <node concept="2V7CMv" id="2XU9kLEXTK" role="3F10Kt">
-          <property role="2V7CMs" value="ext_1_RTransform" />
-        </node>
-        <node concept="2V7CMv" id="2XU9kLEXTL" role="3F10Kt">
-          <node concept="3TxK5_" id="2XU9kLEXTM" role="3TxK5$">
-            <property role="3TxK5C" value="ext_1_RTransform" />
-          </node>
-          <node concept="3TxK5_" id="2XU9kLEXTN" role="3TxK5$">
-            <property role="3TxK5C" value="ext_2_RTransform" />
-          </node>
-        </node>
         <node concept="2jF6I7" id="2XU9kLEXTO" role="3F10Kt">
           <property role="2jF6Ia" value="VERTICAL_COLLECTION" />
         </node>
@@ -9451,10 +9369,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node concept="3JiINr" id="2XU9kLF20U" role="OY2wv">
-          <property role="2_m5XT" value="ext_1_RTransform" />
-          <property role="3JiSWl" value="left" />
         </node>
         <node concept="1Y$tRT" id="2XU9kLF20V" role="OY2wv">
           <ref role="1Y$EBa" node="2XU9kLD8Lt" resolve="TestTargetMenuComponent" />
@@ -10882,17 +10796,6 @@
         <node concept="1fO$WK" id="2XU9kLF_p9" role="3F10Kt">
           <property role="1fOxUg" value="GUTTER_AND_EDITOR" />
         </node>
-        <node concept="2V7CMv" id="2XU9kLF_pa" role="3F10Kt">
-          <property role="2V7CMs" value="ext_1_RTransform" />
-        </node>
-        <node concept="2V7CMv" id="2XU9kLF_pb" role="3F10Kt">
-          <node concept="3TxK5_" id="2XU9kLF_pc" role="3TxK5$">
-            <property role="3TxK5C" value="ext_1_RTransform" />
-          </node>
-          <node concept="3TxK5_" id="2XU9kLF_pd" role="3TxK5$">
-            <property role="3TxK5C" value="ext_2_RTransform" />
-          </node>
-        </node>
         <node concept="2jF6I7" id="2XU9kLF_pe" role="3F10Kt">
           <property role="2jF6Ia" value="VERTICAL_COLLECTION" />
         </node>
@@ -11446,10 +11349,6 @@
             </node>
           </node>
         </node>
-        <node concept="3JiINr" id="2XU9kLGjoK" role="OY2wv">
-          <property role="2_m5XT" value="ext_1_RTransform" />
-          <property role="3JiSWl" value="left" />
-        </node>
         <node concept="1Y$tRT" id="2XU9kLGjoL" role="OY2wv">
           <ref role="1Y$EBa" node="2XU9kLD8Lt" resolve="TestTargetMenuComponent" />
         </node>
@@ -11945,10 +11844,6 @@
                       </node>
                     </node>
                   </node>
-                </node>
-                <node concept="3JiINr" id="7LC8u44iVfu" role="OY2wv">
-                  <property role="2_m5XT" value="ext_1_RTransform" />
-                  <property role="3JiSWl" value="left" />
                 </node>
                 <node concept="1Y$tRT" id="7LC8u44iVfv" role="OY2wv">
                   <ref role="1Y$EBa" node="2XU9kLD8Lt" resolve="TestTargetMenuComponent" />
@@ -13253,17 +13148,6 @@
               <node concept="1fO$WK" id="7LC8u44j67K" role="3F10Kt">
                 <property role="1fOxUg" value="GUTTER_AND_EDITOR" />
               </node>
-              <node concept="2V7CMv" id="7LC8u44j67L" role="3F10Kt">
-                <property role="2V7CMs" value="ext_1_RTransform" />
-              </node>
-              <node concept="2V7CMv" id="7LC8u44j67M" role="3F10Kt">
-                <node concept="3TxK5_" id="7LC8u44j67N" role="3TxK5$">
-                  <property role="3TxK5C" value="ext_1_RTransform" />
-                </node>
-                <node concept="3TxK5_" id="7LC8u44j67O" role="3TxK5$">
-                  <property role="3TxK5C" value="ext_2_RTransform" />
-                </node>
-              </node>
               <node concept="2jF6I7" id="7LC8u44j67P" role="3F10Kt">
                 <property role="2jF6Ia" value="VERTICAL_COLLECTION" />
               </node>
@@ -13582,10 +13466,6 @@
                       </node>
                     </node>
                   </node>
-                </node>
-                <node concept="3JiINr" id="7LC8u44jmGg" role="OY2wv">
-                  <property role="2_m5XT" value="ext_1_RTransform" />
-                  <property role="3JiSWl" value="left" />
                 </node>
                 <node concept="1Y$tRT" id="7LC8u44jmGh" role="OY2wv">
                   <ref role="1Y$EBa" node="2XU9kLD8Lt" resolve="TestTargetMenuComponent" />
@@ -14920,17 +14800,6 @@
               <node concept="1fO$WK" id="7LC8u44jrZ3" role="3F10Kt">
                 <property role="1fOxUg" value="GUTTER_AND_EDITOR" />
               </node>
-              <node concept="2V7CMv" id="7LC8u44jrZ4" role="3F10Kt">
-                <property role="2V7CMs" value="ext_1_RTransform" />
-              </node>
-              <node concept="2V7CMv" id="7LC8u44jrZ5" role="3F10Kt">
-                <node concept="3TxK5_" id="7LC8u44jrZ6" role="3TxK5$">
-                  <property role="3TxK5C" value="ext_1_RTransform" />
-                </node>
-                <node concept="3TxK5_" id="7LC8u44jrZ7" role="3TxK5$">
-                  <property role="3TxK5C" value="ext_2_RTransform" />
-                </node>
-              </node>
               <node concept="2jF6I7" id="7LC8u44jrZ8" role="3F10Kt">
                 <property role="2jF6Ia" value="VERTICAL_COLLECTION" />
               </node>
@@ -15484,10 +15353,6 @@
                       </node>
                     </node>
                   </node>
-                </node>
-                <node concept="3JiINr" id="7LC8u44k93S" role="OY2wv">
-                  <property role="2_m5XT" value="ext_1_RTransform" />
-                  <property role="3JiSWl" value="left" />
                 </node>
                 <node concept="1Y$tRT" id="7LC8u44k93T" role="OY2wv">
                   <ref role="1Y$EBa" node="2XU9kLD8Lt" resolve="TestTargetMenuComponent" />
@@ -16843,17 +16708,6 @@
               <node concept="1fO$WK" id="7LC8u44kfy4" role="3F10Kt">
                 <property role="1fOxUg" value="GUTTER_AND_EDITOR" />
               </node>
-              <node concept="2V7CMv" id="7LC8u44kfy5" role="3F10Kt">
-                <property role="2V7CMs" value="ext_1_RTransform" />
-              </node>
-              <node concept="2V7CMv" id="7LC8u44kfy6" role="3F10Kt">
-                <node concept="3TxK5_" id="7LC8u44kfy7" role="3TxK5$">
-                  <property role="3TxK5C" value="ext_1_RTransform" />
-                </node>
-                <node concept="3TxK5_" id="7LC8u44kfy8" role="3TxK5$">
-                  <property role="3TxK5C" value="ext_2_RTransform" />
-                </node>
-              </node>
               <node concept="2jF6I7" id="7LC8u44kfy9" role="3F10Kt">
                 <property role="2jF6Ia" value="VERTICAL_COLLECTION" />
               </node>
@@ -17236,10 +17090,6 @@
                       </node>
                     </node>
                   </node>
-                </node>
-                <node concept="3JiINr" id="7LC8u44kS$d" role="OY2wv">
-                  <property role="2_m5XT" value="ext_1_RTransform" />
-                  <property role="3JiSWl" value="left" />
                 </node>
                 <node concept="1Y$tRT" id="7LC8u44kS$e" role="OY2wv">
                   <ref role="1Y$EBa" node="2XU9kLD8Lt" resolve="TestTargetMenuComponent" />
@@ -18583,17 +18433,6 @@
               <node concept="1fO$WK" id="7LC8u44kYo1" role="3F10Kt">
                 <property role="1fOxUg" value="GUTTER_AND_EDITOR" />
               </node>
-              <node concept="2V7CMv" id="7LC8u44kYo2" role="3F10Kt">
-                <property role="2V7CMs" value="ext_1_RTransform" />
-              </node>
-              <node concept="2V7CMv" id="7LC8u44kYo3" role="3F10Kt">
-                <node concept="3TxK5_" id="7LC8u44kYo4" role="3TxK5$">
-                  <property role="3TxK5C" value="ext_1_RTransform" />
-                </node>
-                <node concept="3TxK5_" id="7LC8u44kYo5" role="3TxK5$">
-                  <property role="3TxK5C" value="ext_2_RTransform" />
-                </node>
-              </node>
               <node concept="2jF6I7" id="7LC8u44kYo6" role="3F10Kt">
                 <property role="2jF6Ia" value="VERTICAL_COLLECTION" />
               </node>
@@ -18970,10 +18809,6 @@
                       </node>
                     </node>
                   </node>
-                </node>
-                <node concept="3JiINr" id="7LC8u44lDtg" role="OY2wv">
-                  <property role="2_m5XT" value="ext_1_RTransform" />
-                  <property role="3JiSWl" value="left" />
                 </node>
                 <node concept="1Y$tRT" id="7LC8u44lDth" role="OY2wv">
                   <ref role="1Y$EBa" node="2XU9kLD8Lt" resolve="TestTargetMenuComponent" />
@@ -20393,17 +20228,6 @@
               <node concept="1fO$WK" id="7LC8u44lJ2T" role="3F10Kt">
                 <property role="1fOxUg" value="GUTTER_AND_EDITOR" />
               </node>
-              <node concept="2V7CMv" id="7LC8u44lJ2U" role="3F10Kt">
-                <property role="2V7CMs" value="ext_1_RTransform" />
-              </node>
-              <node concept="2V7CMv" id="7LC8u44lJ2V" role="3F10Kt">
-                <node concept="3TxK5_" id="7LC8u44lJ2W" role="3TxK5$">
-                  <property role="3TxK5C" value="ext_1_RTransform" />
-                </node>
-                <node concept="3TxK5_" id="7LC8u44lJ2X" role="3TxK5$">
-                  <property role="3TxK5C" value="ext_2_RTransform" />
-                </node>
-              </node>
               <node concept="2jF6I7" id="7LC8u44lJ2Y" role="3F10Kt">
                 <property role="2jF6Ia" value="VERTICAL_COLLECTION" />
               </node>
@@ -20865,10 +20689,6 @@
                       </node>
                     </node>
                   </node>
-                </node>
-                <node concept="3JiINr" id="7LC8u44n1i3" role="OY2wv">
-                  <property role="2_m5XT" value="ext_1_RTransform" />
-                  <property role="3JiSWl" value="left" />
                 </node>
                 <node concept="1Y$tRT" id="7LC8u44n1i4" role="OY2wv">
                   <ref role="1Y$EBa" node="2XU9kLD8Lt" resolve="TestTargetMenuComponent" />
@@ -22277,17 +22097,6 @@
                 <node concept="1fO$WK" id="7LC8u44nhP4" role="3F10Kt">
                   <property role="1fOxUg" value="GUTTER_AND_EDITOR" />
                 </node>
-                <node concept="2V7CMv" id="7LC8u44nhP5" role="3F10Kt">
-                  <property role="2V7CMs" value="ext_1_RTransform" />
-                </node>
-                <node concept="2V7CMv" id="7LC8u44nhP6" role="3F10Kt">
-                  <node concept="3TxK5_" id="7LC8u44nhP7" role="3TxK5$">
-                    <property role="3TxK5C" value="ext_1_RTransform" />
-                  </node>
-                  <node concept="3TxK5_" id="7LC8u44nhP8" role="3TxK5$">
-                    <property role="3TxK5C" value="ext_2_RTransform" />
-                  </node>
-                </node>
                 <node concept="2jF6I7" id="7LC8u44nhP9" role="3F10Kt">
                   <property role="2jF6Ia" value="VERTICAL_COLLECTION" />
                 </node>
@@ -23684,17 +23493,6 @@
           <node concept="1fO$WK" id="6GkHczkmGYN" role="3F10Kt">
             <property role="1fOxUg" value="GUTTER_AND_EDITOR" />
           </node>
-          <node concept="2V7CMv" id="6GkHczkmGYO" role="3F10Kt">
-            <property role="2V7CMs" value="ext_1_RTransform" />
-          </node>
-          <node concept="2V7CMv" id="6GkHczkmGYP" role="3F10Kt">
-            <node concept="3TxK5_" id="6GkHczkmGYQ" role="3TxK5$">
-              <property role="3TxK5C" value="ext_1_RTransform" />
-            </node>
-            <node concept="3TxK5_" id="6GkHczkmGYR" role="3TxK5$">
-              <property role="3TxK5C" value="ext_2_RTransform" />
-            </node>
-          </node>
           <node concept="2jF6I7" id="6GkHczkmGYS" role="3F10Kt">
             <property role="2jF6Ia" value="VERTICAL_COLLECTION" />
           </node>
@@ -24216,10 +24014,6 @@
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="3JiINr" id="dbAGe2drJ$" role="OY2wv">
-            <property role="2_m5XT" value="ext_1_RTransform" />
-            <property role="3JiSWl" value="left" />
           </node>
           <node concept="1Y$tRT" id="dbAGe2drJ_" role="OY2wv">
             <ref role="1Y$EBa" node="2XU9kLD8Lt" resolve="TestTargetMenuComponent" />
@@ -25739,17 +25533,6 @@
         </node>
         <node concept="1fO$WK" id="3iX8RSsBr6u" role="3F10Kt">
           <property role="1fOxUg" value="GUTTER_AND_EDITOR" />
-        </node>
-        <node concept="2V7CMv" id="3iX8RSsBr6v" role="3F10Kt">
-          <property role="2V7CMs" value="ext_1_RTransform" />
-        </node>
-        <node concept="2V7CMv" id="3iX8RSsBr6w" role="3F10Kt">
-          <node concept="3TxK5_" id="3iX8RSsBr6x" role="3TxK5$">
-            <property role="3TxK5C" value="ext_1_RTransform" />
-          </node>
-          <node concept="3TxK5_" id="3iX8RSsBr6y" role="3TxK5$">
-            <property role="3TxK5C" value="ext_2_RTransform" />
-          </node>
         </node>
         <node concept="2jF6I7" id="3iX8RSsBr6z" role="3F10Kt">
           <property role="2jF6Ia" value="VERTICAL_COLLECTION" />

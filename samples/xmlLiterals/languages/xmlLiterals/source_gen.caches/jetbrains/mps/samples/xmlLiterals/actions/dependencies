@@ -9,6 +9,5 @@
     <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.xmlLiterals.actions.QueriesGenerated" file="QueriesGenerated.java" />
 </dependenciesRoot>
 

@@ -49,6 +49,5 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.PasteWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.actions.QueriesGenerated" file="QueriesGenerated.java" />
 </dependenciesRoot>
 

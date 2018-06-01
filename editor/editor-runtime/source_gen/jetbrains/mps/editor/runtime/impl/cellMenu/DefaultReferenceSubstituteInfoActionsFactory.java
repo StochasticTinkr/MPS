@@ -17,7 +17,10 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import java.util.Collections;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
+import java.util.Objects;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -51,12 +54,13 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
   }
   public List<SubstituteAction> createActions() {
     if (myLinkDeclaration == null) {
-      return Collections.emptyList();
+      return Collections.<SubstituteAction>emptyList();
     }
     EditorComponent editor = (EditorComponent) mySubstituteInfo.getEditorContext().getEditorComponent();
     EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, ((String) BHReflection.invoke0(myLinkDeclaration, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), SMethodTrimmedId.create("getGenuineRole", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "hEwIfAe"))));
 
-    if (referenceCell != null && CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(referenceCell)) == referenceCell && ReferenceConceptUtil.getCharacteristicReference(SNodeOperations.getConceptDeclaration(mySourceNode)) == myLinkDeclaration && SNodeOperations.getParent(mySourceNode) != null && ListSequence.fromList(SNodeOperations.getChildren(mySourceNode)).isEmpty()) {
+    SAbstractConcept concept = SNodeOperations.getConcept(mySourceNode);
+    if (referenceCell != null && CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(referenceCell)) == referenceCell && concept instanceof ConceptMetaInfoConverter && Objects.equals(ReferenceConceptUtil.getCharacteristicReference(concept), ((ConceptMetaInfoConverter) concept).convertAssociation(((String) BHReflection.invoke0(myLinkDeclaration, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), SMethodTrimmedId.create("getGenuineRole", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "hEwIfAe"))))) && SNodeOperations.getParent(mySourceNode) != null && ListSequence.fromList(SNodeOperations.getChildren(mySourceNode)).isEmpty()) {
       SNode parent = SNodeOperations.getParent(mySourceNode);
       SContainmentLink link = mySourceNode.getContainmentLink();
       return ModelActions.createChildNodeSubstituteActions(parent, mySourceNode, link, null, new DefaultSChildSetter(link), mySubstituteInfo.getEditorContext());

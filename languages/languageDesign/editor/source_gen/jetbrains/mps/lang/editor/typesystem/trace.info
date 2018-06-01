@@ -16,7 +16,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="9,0,293,0" name="jetbrains.mps.lang.editor.typesystem.TypesystemDescriptor" />
+      <unit at="9,0,289,0" name="jetbrains.mps.lang.editor.typesystem.TypesystemDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/1063333449539889377">
@@ -2394,44 +2394,6 @@
         <var name="typeCheckingContext" id="5391719598193969565" />
       </scope>
       <unit id="5391719598193969565" at="15,0,35,0" name="jetbrains.mps.lang.editor.typesystem.typeof_ContextVariable_InferenceRule" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/5531627918740446722">
-    <file name="check_CellMenuPart_ApplySideTransforms_NonTypesystemRule.java">
-      <node id="5531627918740486078" at="22,7,23,60" concept="7" />
-      <node id="5531627918740486078" at="23,60,24,272" concept="7" />
-      <node id="5531627918740446722" at="28,50,29,176" concept="8" />
-      <node id="5531627918740446722" at="31,68,32,102" concept="8" />
-      <node id="5531627918740446722" at="34,30,35,17" concept="8" />
-      <node id="5531627918740446722" at="18,0,20,0" concept="1" trace="check_CellMenuPart_ApplySideTransforms_NonTypesystemRule#()V" />
-      <node id="5531627918740446722" at="28,0,31,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="5531627918740446722" at="31,0,34,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="5531627918740446722" at="34,0,37,0" concept="6" trace="overrides#()Z" />
-      <node id="5531627918740486078" at="21,211,25,7" concept="0" />
-      <node id="5531627918740463487" at="20,145,26,5" concept="5" />
-      <node id="5531627918740446722" at="20,0,28,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="5531627918740446722" at="18,69,18,69" />
-      <scope id="5531627918740446722" at="28,50,29,176" />
-      <scope id="5531627918740446722" at="31,68,32,102" />
-      <scope id="5531627918740446722" at="34,30,35,17" />
-      <scope id="5531627918740446722" at="18,0,20,0" />
-      <scope id="5531627918740486078" at="22,7,24,272">
-        <var name="_reporter_2309309498" id="5531627918740486078" />
-        <var name="errorTarget" id="5531627918740486078" />
-      </scope>
-      <scope id="5531627918740446722" at="28,0,31,0" />
-      <scope id="5531627918740446722" at="31,0,34,0">
-        <var name="argument" id="5531627918740446722" />
-      </scope>
-      <scope id="5531627918740446722" at="34,0,37,0" />
-      <scope id="5531627918740463489" at="21,211,25,7" />
-      <scope id="5531627918740447042" at="20,145,26,5" />
-      <scope id="5531627918740446722" at="20,0,28,0">
-        <var name="cellMenuPart_ApplySideTransforms" id="5531627918740446722" />
-        <var name="status" id="5531627918740446722" />
-        <var name="typeCheckingContext" id="5531627918740446722" />
-      </scope>
-      <unit id="5531627918740446722" at="17,0,38,0" name="jetbrains.mps.lang.editor.typesystem.check_CellMenuPart_ApplySideTransforms_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/5944657839032342844">

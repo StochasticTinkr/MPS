@@ -115,7 +115,7 @@
   </root>
   <root nodeRef="r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)/6822392181928383378">
     <file name="SideTransformTagUtils.java">
-      <node id="6973815483245703196" at="7,53,8,32" concept="6" />
+      <node id="3570080868114794912" at="7,53,8,32" concept="6" />
       <node id="6822392181928397368" at="7,0,10,0" concept="7" trace="getDefaultSideTransformTag#()Ljava/lang/String;" />
       <scope id="6822392181928397371" at="7,53,8,32" />
       <scope id="6822392181928397368" at="7,0,10,0" />

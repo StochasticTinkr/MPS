@@ -9,7 +9,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
 import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
@@ -35,24 +34,12 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 0:
         return Collections.<TransformationMenu>singletonList(new checkedDotExpression_Contribution());
       case 1:
-        return Collections.<TransformationMenu>singletonList(new IOperation_LeftTransform_Contribution());
+        return Collections.<TransformationMenu>singletonList(new IOperation_CheckedDot_Contribution());
       default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
-  @NotNull
-  @Override
-  public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (conceptIndex2.index(cncpt)) {
-      case 0:
-        return Collections.<SubstituteMenu>singletonList(new QuestionMarkAction_Contribution());
-      default:
-    }
-    return Collections.<SubstituteMenu>emptyList();
-  }
 
   private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x774bf8a062e541e1L, 0xaf63f4812e60e48bL, 0x389ce13592c3023bL)).seal();
   private static final ConceptSwitchIndex conceptIndex1 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L)).seal();
-  private static final ConceptSwitchIndex conceptIndex2 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L)).seal();
 }

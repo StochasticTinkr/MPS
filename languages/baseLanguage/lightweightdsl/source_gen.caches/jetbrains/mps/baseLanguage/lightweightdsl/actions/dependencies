@@ -34,7 +34,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated" file="QueriesGenerated.java" />
   <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.actions.SubstituteUtil" file="SubstituteUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Collections" />

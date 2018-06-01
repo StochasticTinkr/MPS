@@ -57,13 +57,11 @@ public class CellAction_InsertPlaceholder extends AbstractCellAction {
               containmentLink = ((SContainmentLink) BHReflection.invoke0(SNodeOperations.cast(childNode, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzf")));
             } else if (SNodeOperations.isInstanceOf(((SNode) childNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute"))) {
               childNode = parentNode;
-              parentNode = parentNode.getParent();
-              containmentLink = childNode.getContainmentLink();
-            } else {
-              containmentLink = null;
+              parentNode = check_d2uk49_a0b0a0a3a1a2a7a5(parentNode);
+              containmentLink = check_d2uk49_a0c0a0a3a1a2a7a5(childNode);
             }
           }
-          if (containmentLink != null && containmentLink.isMultiple() && parentNode != null) {
+          if (containmentLink != null && containmentLink.isMultiple() && !(Objects.equals(containmentLink, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))) && parentNode != null) {
             return new CellAction_InsertPlaceholder.PlaceToInsert(parentNode, childNode, containmentLink);
           }
         }
@@ -115,5 +113,17 @@ public class CellAction_InsertPlaceholder extends AbstractCellAction {
     }
 
     return new CellAction_InsertPlaceholder.PlaceToInsert(cell.getSNode(), null, (SContainmentLink) role);
+  }
+  private static SNode check_d2uk49_a0b0a0a3a1a2a7a5(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getParent();
+    }
+    return null;
+  }
+  private static SContainmentLink check_d2uk49_a0c0a0a3a1a2a7a5(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getContainmentLink();
+    }
+    return null;
   }
 }

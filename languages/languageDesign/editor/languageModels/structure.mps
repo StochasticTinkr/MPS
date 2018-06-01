@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="6" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
@@ -1534,42 +1534,6 @@
       <ref role="AX2Wp" node="g$1Qttv" resolve="_Layout_Constraints_Enum" />
     </node>
   </node>
-  <node concept="AxPO7" id="gAtNdpl">
-    <property role="TrG5h" value="RightTransformAnchorTag" />
-    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
-    <ref role="Qgau1" node="gAtNdq$" resolve="none" />
-    <node concept="asaX9" id="5GuVNMLy0Rm" role="lGtFl">
-      <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Attach transformation menu to the specific editor cell" />
-    </node>
-    <node concept="M4N5e" id="gAtNdq$" role="M5hS2">
-      <property role="1uS6qo" value="none" />
-    </node>
-    <node concept="M4N5e" id="gAtNqGF" role="M5hS2">
-      <property role="1uS6qv" value="default_RTransform" />
-      <property role="1uS6qo" value="default_" />
-    </node>
-    <node concept="M4N5e" id="gAtNEc9" role="M5hS2">
-      <property role="1uS6qv" value="ext_1_RTransform" />
-      <property role="1uS6qo" value="ext_1" />
-    </node>
-    <node concept="M4N5e" id="gAtNOgf" role="M5hS2">
-      <property role="1uS6qv" value="ext_2_RTransform" />
-      <property role="1uS6qo" value="ext_2" />
-    </node>
-    <node concept="M4N5e" id="gAtNQdj" role="M5hS2">
-      <property role="1uS6qv" value="ext_3_RTransform" />
-      <property role="1uS6qo" value="ext_3" />
-    </node>
-    <node concept="M4N5e" id="gAtNSuS" role="M5hS2">
-      <property role="1uS6qv" value="ext_4_RTransform" />
-      <property role="1uS6qo" value="ext_4" />
-    </node>
-    <node concept="M4N5e" id="gAtNV2h" role="M5hS2">
-      <property role="1uS6qv" value="ext_5_RTransform" />
-      <property role="1uS6qo" value="ext_5" />
-    </node>
-  </node>
   <node concept="AxPO7" id="gAIkV5K">
     <property role="TrG5h" value="CellKeyMapCaretPolicy" />
     <property role="3GE5qa" value="CellKeyMap" />
@@ -2788,32 +2752,6 @@
       <ref role="AX2Wp" node="g$1Qttv" resolve="_Layout_Constraints_Enum" />
     </node>
   </node>
-  <node concept="1TIwiD" id="hEV7CQ5">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="SideTransformAnchorTagStyleClassItem" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="Stylesheet" />
-    <property role="34LRSv" value="side-transform-anchor-tag" />
-    <property role="EcuMT" value="1214320119173" />
-    <ref role="1TJDcQ" node="hgV6hR6" resolve="StyleClassItem" />
-    <node concept="asaX9" id="5GuVNMLwQXW" role="lGtFl">
-      <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use transformation menu" />
-    </node>
-    <node concept="1TJgyj" id="38iZCbb_vZA" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="tags" />
-      <property role="20lbJX" value="0..n" />
-      <property role="IQ2ns" value="3608226089191997414" />
-      <ref role="20lvS9" node="38iZCbb_vZB" resolve="RightTransformAnchorTagWrapper" />
-    </node>
-    <node concept="1TJgyi" id="hEV7CQ6" role="1TKVEl">
-      <property role="TrG5h" value="tag" />
-      <property role="IQ2nx" value="1214320119174" />
-      <ref role="AX2Wp" node="gAtNdpl" resolve="RightTransformAnchorTag" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="hF0gYTA">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
@@ -3803,19 +3741,6 @@
       <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
     </node>
   </node>
-  <node concept="1TIwiD" id="38iZCbb_vZB">
-    <property role="TrG5h" value="RightTransformAnchorTagWrapper" />
-    <property role="EcuMT" value="3608226089191997415" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="asaX9" id="5GuVNMLwQXY" role="lGtFl">
-      <property role="YLPcu" value="3.4" />
-    </node>
-    <node concept="1TJgyi" id="38iZCbb_vZE" role="1TKVEl">
-      <property role="TrG5h" value="tag" />
-      <property role="IQ2nx" value="3608226089191997418" />
-      <ref role="AX2Wp" node="gAtNdpl" resolve="RightTransformAnchorTag" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="Bqq$mhZ7YP">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
@@ -3951,27 +3876,6 @@
     </node>
     <node concept="PrWs8" id="3AsHGqaEOhI" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="794AQ2t3BuV">
-    <property role="TrG5h" value="CellMenuPart_ApplySideTransforms" />
-    <property role="3GE5qa" value="CellMenu" />
-    <property role="34LRSv" value="apply side transforms" />
-    <property role="EcuMT" value="8233876857994246075" />
-    <ref role="1TJDcQ" node="gWOYc3u" resolve="CellMenuPart_Abstract" />
-    <node concept="asaX9" id="5GuVNMLwW$G" role="lGtFl">
-      <property role="YLQ7P" value="Use transformation menu. Include menu for side transform in completion section" />
-      <property role="YLPcu" value="3.4" />
-    </node>
-    <node concept="1TJgyi" id="794AQ2t3LhP" role="1TKVEl">
-      <property role="TrG5h" value="side" />
-      <property role="IQ2nx" value="8233876857994286197" />
-      <ref role="AX2Wp" to="tpdg:hG7GXih" resolve="Side" />
-    </node>
-    <node concept="1TJgyi" id="KkUvIDjbq2" role="1TKVEl">
-      <property role="TrG5h" value="tag" />
-      <property role="IQ2nx" value="870577895075788418" />
-      <ref role="AX2Wp" node="gAtNdpl" resolve="RightTransformAnchorTag" />
     </node>
   </node>
   <node concept="1TIwiD" id="33FxyQ70GUZ">
@@ -6366,16 +6270,11 @@
     </node>
     <node concept="M6xJ_" id="ve0pwAkEAb" role="lGtFl">
       <property role="Hh88m" value="migratedTo" />
-      <node concept="trNpa" id="ve0pwAl5DS" role="EQaZv">
-        <ref role="trN6q" node="hEV7CQ5" resolve="SideTransformAnchorTagStyleClassItem" />
-      </node>
-      <node concept="trNpa" id="ve0pwAl5X7" role="EQaZv">
-        <ref role="trN6q" node="794AQ2t3BuV" resolve="CellMenuPart_ApplySideTransforms" />
-      </node>
       <node concept="tn0Fv" id="ve0pwAl6FM" role="HhnKV">
         <property role="tnX3d" value="false" />
       </node>
     </node>
+    <node concept="asaX9" id="6asH6F_BZ2x" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="ve0pwAv4UM">
     <property role="EcuMT" value="562388756460228274" />
@@ -6396,13 +6295,8 @@
       <node concept="trNpa" id="ve0pwAv4UT" role="EQaZv">
         <ref role="trN6q" node="4Sf$XywKgZK" resolve="TransformationMenuContribution" />
       </node>
-      <node concept="trNpa" id="1wEcoXivwy1" role="EQaZv">
-        <ref role="trN6q" node="hEV7CQ5" resolve="SideTransformAnchorTagStyleClassItem" />
-      </node>
-      <node concept="trNpa" id="1wEcoXivwye" role="EQaZv">
-        <ref role="trN6q" node="794AQ2t3BuV" resolve="CellMenuPart_ApplySideTransforms" />
-      </node>
     </node>
+    <node concept="asaX9" id="6asH6F_C6Pp" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="2n7QBnujfW5">
     <property role="3GE5qa" value="Menu.Substitute" />
