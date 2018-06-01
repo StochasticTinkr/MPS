@@ -6,11 +6,12 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.runtime.FragmentResult;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -22,8 +23,8 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.Collection;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -38,7 +39,7 @@ public class Template_weave_ConceptSwitchMap extends TemplateDeclarationBase {
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "7723526804945759316");
   }
-  protected SNode applyPart0(@NotNull final TemplateContext contextNoLabel) throws GenerationException {
+  protected FragmentResult applyPart0(@NotNull final TemplateContext contextNoLabel) throws GenerationException {
     final TemplateExecutionEnvironment environment = contextNoLabel.getEnvironment();
     final TemplateContext context = contextNoLabel.subContext("switchField");
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
@@ -177,12 +178,15 @@ public class Template_weave_ConceptSwitchMap extends TemplateDeclarationBase {
       }
     } finally {
     }
-    environment.registerLabel(contextNoLabel.getInput(), tnode1, "switchField");
-    return tnode1;
+    FragmentResult rv = nodeFragment(7, tnode1);
+    rv.label(contextNoLabel, "switchField");
+    return rv;
   }
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    return TemplateUtil.singletonList(applyPart0(context));
+    ArrayList<SNode> rv = new ArrayList<SNode>();
+    applyPart0(context).reportTo(rv);
+    return rv;
   }
 
   public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
@@ -192,9 +196,9 @@ public class Template_weave_ConceptSwitchMap extends TemplateDeclarationBase {
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
     final TemplateContext templateContext = weaveSupport.getTemplateContext();
-    SNode tnodepart0 = applyPart0(templateContext);
-    weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnodepart0);
-    return TemplateUtil.singletonList(tnodepart0);
+    ArrayList<SNode> rv = new ArrayList<SNode>();
+    applyPart0(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    return rv;
   }
   @Override
   protected SConcept[] initConcepts() {
@@ -230,7 +234,7 @@ public class Template_weave_ConceptSwitchMap extends TemplateDeclarationBase {
   }
   @Override
   protected SContainmentLink[] initAggregationLinks() {
-    SContainmentLink[] rv = new SContainmentLink[7];
+    SContainmentLink[] rv = new SContainmentLink[8];
     rv[0] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility");
     rv[1] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator");
     rv[2] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand");
@@ -238,6 +242,7 @@ public class Template_weave_ConceptSwitchMap extends TemplateDeclarationBase {
     rv[4] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation");
     rv[5] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer");
     rv[6] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type");
+    rv[7] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member");
     return rv;
   }
   private static SNodePointer propertyMacro_d69nxd_c0a0c0d0d0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "5809217371282715401");

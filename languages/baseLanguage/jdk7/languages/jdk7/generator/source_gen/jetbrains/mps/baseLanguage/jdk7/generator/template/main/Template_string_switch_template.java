@@ -6,11 +6,12 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.runtime.FragmentResult;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -22,8 +23,8 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -38,7 +39,7 @@ public class Template_string_switch_template extends TemplateDeclarationBase {
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550420129");
   }
-  protected SNode applyPart0(@NotNull final TemplateContext context) throws GenerationException {
+  protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
@@ -160,11 +161,14 @@ public class Template_string_switch_template extends TemplateDeclarationBase {
       }
     } finally {
     }
-    return tnode1;
+    FragmentResult rv = nodeFragment(10, tnode1);
+    return rv;
   }
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    return TemplateUtil.singletonList(applyPart0(context));
+    ArrayList<SNode> rv = new ArrayList<SNode>();
+    applyPart0(context).reportTo(rv);
+    return rv;
   }
 
   public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
@@ -174,9 +178,9 @@ public class Template_string_switch_template extends TemplateDeclarationBase {
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
     final TemplateContext templateContext = weaveSupport.getTemplateContext();
-    SNode tnodepart0 = applyPart0(templateContext);
-    weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnodepart0);
-    return TemplateUtil.singletonList(tnodepart0);
+    ArrayList<SNode> rv = new ArrayList<SNode>();
+    applyPart0(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    return rv;
   }
   @Override
   protected SConcept[] initConcepts() {
@@ -208,7 +212,7 @@ public class Template_string_switch_template extends TemplateDeclarationBase {
   }
   @Override
   protected SContainmentLink[] initAggregationLinks() {
-    SContainmentLink[] rv = new SContainmentLink[10];
+    SContainmentLink[] rv = new SContainmentLink[11];
     rv[0] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, 0x10ef02d67cfL, "expression");
     rv[1] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, 0x10ef02d8048L, "body");
     rv[2] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, 0x10ef02edcafL, "case");
@@ -219,6 +223,7 @@ public class Template_string_switch_template extends TemplateDeclarationBase {
     rv[7] = MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1204d897032L, 0x1204d89beb2L, "expression");
     rv[8] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument");
     rv[9] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, 0x10ef02ec241L, "expression");
+    rv[10] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement");
     return rv;
   }
   private static SNodePointer loopMacroRef_a36rdq_b0a0a1a1a2a5 = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550422239");

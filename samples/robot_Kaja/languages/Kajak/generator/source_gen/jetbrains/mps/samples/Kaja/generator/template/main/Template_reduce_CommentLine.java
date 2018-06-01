@@ -6,18 +6,20 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.runtime.FragmentResult;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.Collection;
+import java.util.ArrayList;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
@@ -31,7 +33,7 @@ public class Template_reduce_CommentLine extends TemplateDeclarationBase {
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "6405700485436287829");
   }
-  protected SNode applyPart0(@NotNull final TemplateContext context) throws GenerationException {
+  protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
@@ -47,11 +49,14 @@ public class Template_reduce_CommentLine extends TemplateDeclarationBase {
       }
     } finally {
     }
-    return tnode1;
+    FragmentResult rv = nodeFragment(1, tnode1);
+    return rv;
   }
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    return TemplateUtil.singletonList(applyPart0(context));
+    ArrayList<SNode> rv = new ArrayList<SNode>();
+    applyPart0(context).reportTo(rv);
+    return rv;
   }
 
   public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
@@ -61,9 +66,9 @@ public class Template_reduce_CommentLine extends TemplateDeclarationBase {
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
     final TemplateContext templateContext = weaveSupport.getTemplateContext();
-    SNode tnodepart0 = applyPart0(templateContext);
-    weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnodepart0);
-    return TemplateUtil.singletonList(tnodepart0);
+    ArrayList<SNode> rv = new ArrayList<SNode>();
+    applyPart0(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    return rv;
   }
   @Override
   protected SConcept[] initConcepts() {
@@ -80,8 +85,9 @@ public class Template_reduce_CommentLine extends TemplateDeclarationBase {
   }
   @Override
   protected SContainmentLink[] initAggregationLinks() {
-    SContainmentLink[] rv = new SContainmentLink[1];
+    SContainmentLink[] rv = new SContainmentLink[2];
     rv[0] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart");
+    rv[1] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement");
     return rv;
   }
   private static SNodePointer propertyMacro_h26r33_c0a0c0a0b0b0c0f = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "6405700485436287838");

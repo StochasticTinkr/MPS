@@ -83,7 +83,9 @@
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Template_weave_InputNode_A" file="Template_weave_InputNode_A.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -96,6 +98,7 @@
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.QueriesGenerated" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />

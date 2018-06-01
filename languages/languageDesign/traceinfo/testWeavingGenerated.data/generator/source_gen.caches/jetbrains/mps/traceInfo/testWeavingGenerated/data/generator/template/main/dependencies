@@ -95,7 +95,9 @@
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Template_weave_ChildConceptWeave" file="Template_weave_ChildConceptWeave.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -120,7 +122,9 @@
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Template_weave_ChildConceptWeaveMany" file="Template_weave_ChildConceptWeaveMany.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />

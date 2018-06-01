@@ -6,18 +6,20 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.Collection;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.runtime.FragmentResult;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import java.util.ArrayList;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 @Generated
@@ -30,7 +32,7 @@ public class Template_reduce_ConceptMethodCallReflectiveCommon extends TemplateD
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8560627202335249984");
   }
-  protected Collection<SNode> applyPart0(@NotNull final TemplateContext context) throws GenerationException {
+  protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
     if (QueriesGenerated.ifMacro_Condition_45987189320376537510(new IfMacroContext(context, ifMacroRef_id0vkc_b0a0c0f))) {
@@ -62,11 +64,14 @@ public class Template_reduce_ConceptMethodCallReflectiveCommon extends TemplateD
       tlist7 = new Template_reduce_reflectiveInvoke().apply(context);
       tlist1 = tlist7;
     }
-    return tlist1;
+    FragmentResult rv = listFragment(2, tlist1);
+    return rv;
   }
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    return applyPart0(context);
+    ArrayList<SNode> rv = new ArrayList<SNode>();
+    applyPart0(context).reportTo(rv);
+    return rv;
   }
 
   public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
@@ -76,11 +81,9 @@ public class Template_reduce_ConceptMethodCallReflectiveCommon extends TemplateD
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
     final TemplateContext templateContext = weaveSupport.getTemplateContext();
-    Collection<SNode> tlistpart0 = applyPart0(templateContext);
-    for (SNode nodeToWeave : TemplateUtil.asNotNull(tlistpart0)) {
-      weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), nodeToWeave);
-    }
-    return tlistpart0;
+    ArrayList<SNode> rv = new ArrayList<SNode>();
+    applyPart0(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    return rv;
   }
   @Override
   protected SConcept[] initConcepts() {
@@ -90,9 +93,10 @@ public class Template_reduce_ConceptMethodCallReflectiveCommon extends TemplateD
   }
   @Override
   protected SContainmentLink[] initAggregationLinks() {
-    SContainmentLink[] rv = new SContainmentLink[2];
+    SContainmentLink[] rv = new SContainmentLink[3];
     rv[0] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression");
     rv[1] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type");
+    rv[2] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression");
     return rv;
   }
   private static SNodePointer copySrcMacro_id0vkc_b0a0c0c0b0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "4598718932037685342");
