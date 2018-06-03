@@ -24,7 +24,7 @@ import com.intellij.psi.*;
 
 import java.util.regex.Pattern;
 
-public class OpenGeneratedQueriesSourceInMPS extends AnAction {
+public class OpenGeneratedCodeSourceInMPS extends AnAction {
   public void update(AnActionEvent e) {
     super.update(e);
     e.getPresentation().setVisible(false);
