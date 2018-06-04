@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -99,6 +100,12 @@ __switch__:
     }
     return SPropertyOperations.getString(keyMapDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_Action" + index;
   }
+  /**
+   * 
+   * @deprecated not in use by MPS and unlikely of any use for anyone else. Use relevant genContext operations instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static String getUnicName(String name, SNode root, TemplateQueryContext context) {
     SNode bigCell = root;
     Set<String> namesSet = ((Set<String>) context.getStepObject(bigCell));
