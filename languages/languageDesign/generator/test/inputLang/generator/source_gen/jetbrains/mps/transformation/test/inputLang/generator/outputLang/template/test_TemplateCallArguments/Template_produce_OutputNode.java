@@ -9,19 +9,22 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.runtime.FragmentResult;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.Collection;
+import java.util.ArrayList;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 @Generated
 public class Template_produce_OutputNode extends TemplateDeclarationBase {
@@ -42,19 +45,22 @@ public class Template_produce_OutputNode extends TemplateDeclarationBase {
     MapSequence.fromMap(result).put("text", myText);
     return result;
   }
-  protected SNode applyPart0(@NotNull final TemplateContext context) throws GenerationException {
+  protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
       SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_67360620189485787590(new PropertyMacroContext(context, "x", propertyMacro_i0lcpv_c0a0c0a0c0i))));
     } finally {
     }
-    return tnode1;
+    FragmentResult rv = nodeFragment(0, tnode1);
+    return rv;
   }
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    TemplateContext contextWithParams = context.subContext(getParametersAsMap());
-    return TemplateUtil.singletonList(applyPart0(contextWithParams));
+    context = context.subContext(getParametersAsMap());
+    ArrayList<SNode> rv = new ArrayList<SNode>();
+    applyPart0(context).reportTo(rv);
+    return rv;
   }
 
   public Collection<SNode> apply(@NotNull TemplateContext context, String text) throws GenerationException {
@@ -65,9 +71,9 @@ public class Template_produce_OutputNode extends TemplateDeclarationBase {
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
     final TemplateContext templateContext = weaveSupport.getTemplateContext().subContext(getParametersAsMap());
-    SNode tnodepart0 = applyPart0(templateContext);
-    weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode"), tnodepart0);
-    return TemplateUtil.singletonList(tnodepart0);
+    ArrayList<SNode> rv = new ArrayList<SNode>();
+    applyPart0(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    return rv;
   }
   @Override
   protected SConcept[] initConcepts() {
@@ -79,6 +85,12 @@ public class Template_produce_OutputNode extends TemplateDeclarationBase {
   protected SProperty[] initProperties() {
     SProperty[] rv = new SProperty[1];
     rv[0] = MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text");
+    return rv;
+  }
+  @Override
+  protected SContainmentLink[] initAggregationLinks() {
+    SContainmentLink[] rv = new SContainmentLink[1];
+    rv[0] = MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode");
     return rv;
   }
   private static SNodePointer propertyMacro_i0lcpv_c0a0c0a0c0i = new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948578788");

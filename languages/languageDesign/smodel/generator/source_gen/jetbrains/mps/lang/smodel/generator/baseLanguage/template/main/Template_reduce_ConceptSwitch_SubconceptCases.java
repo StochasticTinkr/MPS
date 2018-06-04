@@ -6,12 +6,13 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.Collection;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.runtime.FragmentResult;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
@@ -24,8 +25,8 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.impl.reference.RefResolver;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -40,7 +41,7 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "75056552358298205");
   }
-  protected Collection<SNode> applyPart0(@NotNull final TemplateContext context) throws GenerationException {
+  protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
     if (QueriesGenerated.ifMacro_Condition_33281757813492719800(new IfMacroContext(context, ifMacroRef_nyxx76_b0a0c0f))) {
@@ -79,9 +80,10 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
       }
       tlist1 = TemplateUtil.singletonList(tnode2);
     }
-    return tlist1;
+    FragmentResult rv = listFragment(3, tlist1);
+    return rv;
   }
-  protected Collection<SNode> applyPart1(@NotNull final TemplateContext context) throws GenerationException {
+  protected FragmentResult applyPart1(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final List<SNode> tlist1 = new ArrayList<SNode>();
     final Iterable<SNode> loopList1 = QueriesGenerated.sourceNodesQuery_a1c0a(new SourceSubstituteMacroNodesContext(context, loopMacroRef_nyxx76_b0a0a2a6));
@@ -103,7 +105,7 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
                 environment.resolveInTemplateLater(tnode4, myAssociationLinks[0], templateNode_nyxx76_c0a0a1a1a1a1a3a3a6, "tpl/r:00000000-0000-4000-0000-011c89590303/3328175781349271983", "noneMatched", context3);
               } finally {
               }
-              tnode3.addChild(myAggregationLinks[3], tnode4);
+              tnode3.addChild(myAggregationLinks[4], tnode4);
               // TODO validate child 
             }
             {
@@ -123,7 +125,7 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
                     });
                   } finally {
                   }
-                  tnode5.addChild(myAggregationLinks[4], tnode6);
+                  tnode5.addChild(myAggregationLinks[5], tnode6);
                   // TODO validate child 
                 }
                 {
@@ -134,18 +136,18 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
                     tlist7 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context5);
                   }
                   for (SNode child8 : TemplateUtil.asNotNull(tlist7)) {
-                    tnode5.addChild(myAggregationLinks[4], child8);
+                    tnode5.addChild(myAggregationLinks[5], child8);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
-              tnode3.addChild(myAggregationLinks[5], tnode5);
+              tnode3.addChild(myAggregationLinks[6], tnode5);
               // TODO validate child 
             }
           } finally {
           }
-          tnode2.addChild(myAggregationLinks[6], tnode3);
+          tnode2.addChild(myAggregationLinks[7], tnode3);
           // TODO validate child 
         }
         {
@@ -166,7 +168,7 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
                         SNodeAccessUtil.setProperty(tnode12, myProperties[1], "false");
                       } finally {
                       }
-                      tnode11.addChild(myAggregationLinks[7], tnode12);
+                      tnode11.addChild(myAggregationLinks[8], tnode12);
                       // TODO validate child 
                     }
                     {
@@ -175,17 +177,17 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
                         environment.resolveInTemplateLater(tnode13, myAssociationLinks[0], templateNode_nyxx76_c0a0a1a2a1a1a1a1a1a2a3a3a6, "tpl/r:00000000-0000-4000-0000-011c89590303/3328175781349271983", "noneMatched", context8);
                       } finally {
                       }
-                      tnode11.addChild(myAggregationLinks[8], tnode13);
+                      tnode11.addChild(myAggregationLinks[9], tnode13);
                       // TODO validate child 
                     }
                   } finally {
                   }
-                  tnode10.addChild(myAggregationLinks[9], tnode11);
+                  tnode10.addChild(myAggregationLinks[10], tnode11);
                   // TODO validate child 
                 }
               } finally {
               }
-              tnode9.addChild(myAggregationLinks[10], tnode10);
+              tnode9.addChild(myAggregationLinks[3], tnode10);
               // TODO validate child 
             }
             {
@@ -193,7 +195,7 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
               final Iterable<SNode> copyListInput14 = QueriesGenerated.sourceNodesQuery_a0b0c0a(new SourceSubstituteMacroNodesContext(context6, copySrcListMacro_nyxx76_b0a0a1a2a1a2a3a3a6));
               tlist14 = environment.copyNodes(copyListInput14, copySrcListMacro_nyxx76_b0a0a1a2a1a2a3a3a6, "tpl/r:00000000-0000-4000-0000-011c89590303/75056552358317703", context6);
               for (SNode child15 : TemplateUtil.asNotNull(tlist14)) {
-                tnode9.addChild(myAggregationLinks[10], child15);
+                tnode9.addChild(myAggregationLinks[3], child15);
               }
               // TODO validate child 
             }
@@ -208,9 +210,10 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
         tlist1.add(tnode2);
       }
     }
-    return tlist1;
+    FragmentResult rv = listFragment(3, tlist1);
+    return rv;
   }
-  protected Collection<SNode> applyPart2(@NotNull final TemplateContext context) throws GenerationException {
+  protected FragmentResult applyPart2(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
     if (QueriesGenerated.ifMacro_Condition_33281757813492887110(new IfMacroContext(context, ifMacroRef_nyxx76_b0a0c0h))) {
@@ -228,7 +231,7 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
                 final Iterable<SNode> copyListInput5 = QueriesGenerated.sourceNodesQuery_a0a0d0a(new SourceSubstituteMacroNodesContext(context2, copySrcListMacro_nyxx76_b0a0a1a1a1a1a1a1a2a7));
                 tlist5 = environment.copyNodes(copyListInput5, copySrcListMacro_nyxx76_b0a0a1a1a1a1a1a1a2a7, "tpl/r:00000000-0000-4000-0000-011c89590303/75056552358330360", context2);
                 for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
-                  tnode4.addChild(myAggregationLinks[10], child6);
+                  tnode4.addChild(myAggregationLinks[3], child6);
                 }
                 // TODO validate child 
               }
@@ -243,7 +246,7 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
               environment.resolveInTemplateLater(tnode7, myAssociationLinks[0], templateNode_nyxx76_c0a0a1a2a1a1a2a7, "tpl/r:00000000-0000-4000-0000-011c89590303/3328175781349271983", "noneMatched", context1);
             } finally {
             }
-            tnode3.addChild(myAggregationLinks[6], tnode7);
+            tnode3.addChild(myAggregationLinks[7], tnode7);
             // TODO validate child 
           }
         } finally {
@@ -257,11 +260,16 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
       }
       tlist1 = tlist2;
     }
-    return tlist1;
+    FragmentResult rv = listFragment(3, tlist1);
+    return rv;
   }
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    return TemplateUtil.asList(applyPart0(context), applyPart1(context), applyPart2(context));
+    ArrayList<SNode> rv = new ArrayList<SNode>();
+    applyPart0(context).reportTo(rv);
+    applyPart1(context).reportTo(rv);
+    applyPart2(context).reportTo(rv);
+    return rv;
   }
 
   public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
@@ -271,19 +279,11 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
     final TemplateContext templateContext = weaveSupport.getTemplateContext();
-    Collection<SNode> tlistpart0 = applyPart0(templateContext);
-    for (SNode nodeToWeave : TemplateUtil.asNotNull(tlistpart0)) {
-      weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), nodeToWeave);
-    }
-    Collection<SNode> tlistpart1 = applyPart1(templateContext);
-    for (SNode nodeToWeave : TemplateUtil.asNotNull(tlistpart1)) {
-      weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), nodeToWeave);
-    }
-    Collection<SNode> tlistpart2 = applyPart2(templateContext);
-    for (SNode nodeToWeave : TemplateUtil.asNotNull(tlistpart2)) {
-      weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), nodeToWeave);
-    }
-    return TemplateUtil.asList(tlistpart0, tlistpart1, tlistpart2);
+    ArrayList<SNode> rv = new ArrayList<SNode>();
+    applyPart0(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    applyPart1(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    applyPart2(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    return rv;
   }
   @Override
   protected SConcept[] initConcepts() {
@@ -322,14 +322,14 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
     rv[0] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type");
     rv[1] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer");
     rv[2] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, 0xf8cc67c7f1L, "localVariableDeclaration");
-    rv[3] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression");
-    rv[4] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument");
-    rv[5] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression");
-    rv[6] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition");
-    rv[7] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e99L, "rValue");
-    rv[8] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue");
-    rv[9] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression");
-    rv[10] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement");
+    rv[3] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement");
+    rv[4] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression");
+    rv[5] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument");
+    rv[6] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression");
+    rv[7] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition");
+    rv[8] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e99L, "rValue");
+    rv[9] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue");
+    rv[10] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression");
     rv[11] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue");
     return rv;
   }

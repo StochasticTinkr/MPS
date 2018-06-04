@@ -30,6 +30,11 @@ import java.util.Collection;
  * {@link TemplateExecutionEnvironment#prepareWeave(WeaveContext, SNodeReference)}.
  * Knows parent and anchor for nodes being weaved (either one by one or by means of another {@link #weaveTemplate(TemplateDeclaration) template}
  *
+ * It's pretty much just an excerpt from {@link TemplateExecutionEnvironment} tailored as an intermediate between
+ * generated/interpreted weave code and generated/interpreted template. Generally, TEE is intended for use from
+ * generated code, interpreted generators generally don't need additional level of indirection TEE brings. OTOH,
+ * sometimes it's handy to use same code in both scenarios.
+ *
  * @author Artem Tikhomirov
  * @since 3.3
  */

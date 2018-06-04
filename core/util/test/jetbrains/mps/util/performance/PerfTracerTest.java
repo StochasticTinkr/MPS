@@ -42,7 +42,6 @@ public class PerfTracerTest {
      * SE0:1: 111.0 ms  (own: 111.0 ms)
      *     SE1:1: 0.0 ms
      */
-    System.out.println(report);
     Assert.assertTrue(report.indexOf("SE0:1:") > 0);
     Assert.assertTrue(report.indexOf("SE1:1:") > 0);
     long duration = end - start;
@@ -153,6 +152,35 @@ public class PerfTracerTest {
     Assert.assertTrue(report.indexOf("SE1:1:") > 0);
     Assert.assertTrue(report.indexOf("SE1:2:") > 0);
     assertDuration(end-start, 130, 150);
+  }
+
+  @Test
+  public void testCutOffTime() throws InterruptedException {
+    PerformanceTracer pt = new PerformanceTracer("Test");
+    final long start = System.currentTimeMillis();
+    pt.push("SE0");
+
+    pt.push("SE1");
+    Thread.sleep(40);
+    pt.pop();
+
+    pt.push("SE2");
+    Thread.sleep(50);
+    pt.pop();
+
+    pt.push("SE1");
+    Thread.sleep(40);
+    pt.pop();
+
+    pt.pop(); // pop SE0
+    final long end = System.currentTimeMillis();
+    int cutOffTimeMillis = 60;
+    String report = pt.report(cutOffTimeMillis);
+    Assert.assertTrue(report.indexOf("SE0:1:") > 0);
+    Assert.assertTrue(report.indexOf("SE1:2:") > 0); // 40+40 > cutOffTimeMillis
+    Assert.assertTrue(!report.contains("SE2:")); // 50 < cutOffTimeMillis
+    long duration = end - start;
+    assertDuration(duration, 120, 140);
   }
 
 }

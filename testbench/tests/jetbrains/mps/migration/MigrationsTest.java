@@ -20,6 +20,7 @@ import com.intellij.history.integration.LocalHistoryImpl;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.ide.migration.MigrationChecker;
+import jetbrains.mps.ide.migration.MigrationCheckerImpl;
 import jetbrains.mps.ide.migration.MigrationExecutor;
 import jetbrains.mps.ide.migration.MigrationExecutorImpl;
 import jetbrains.mps.ide.migration.MigrationRegistry;
@@ -88,28 +89,7 @@ public class MigrationsTest implements EnvironmentAware {
 
       @Override
       public MigrationChecker getChecker() {
-        //todo return a regular checker here
-        return new MigrationChecker() {
-          @Override
-          public void checkMigrations(ProgressMonitor m, Processor<ScriptApplied> processor) {
-
-          }
-
-          @Override
-          public void checkLibs(ProgressMonitor m, Processor<Pair<SModule, SModule>> processor) {
-
-          }
-
-          @Override
-          public void checkProject(ProgressMonitor m, Processor<IssueKindReportItem> processor) {
-
-          }
-
-          @Override
-          public void findNotMigrated(ProgressMonitor m, Iterable<ScriptApplied> toCheck, Processor<Problem> processor) {
-
-          }
-        };
+        return new MigrationCheckerImpl(myProject, getMigrationRegistry());
       }
 
       @Override

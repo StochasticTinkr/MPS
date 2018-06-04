@@ -1281,8 +1281,10 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_NodeOrConcept" file="Template_NodeOrConcept.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.impl.reference.RefResolver" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1295,6 +1297,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
@@ -1302,7 +1305,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_NodeOrConceptCommon" file="Template_NodeOrConceptCommon.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1327,7 +1332,9 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptCaseBody_Hack1" file="Template_reduce_ConceptCaseBody_Hack1.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1349,7 +1356,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptDeclaration2SAbstractConcept" file="Template_reduce_ConceptDeclaration2SAbstractConcept.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1375,7 +1384,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptDeclaration2SConcept" file="Template_reduce_ConceptDeclaration2SConcept.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1401,7 +1412,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptDeclaration_Bootstrap_SAbstractConcept" file="Template_reduce_ConceptDeclaration_Bootstrap_SAbstractConcept.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1427,8 +1440,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptId_SConcept" file="Template_reduce_ConceptId_SConcept.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1455,8 +1470,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptId_SInterfaceConcept" file="Template_reduce_ConceptId_SInterfaceConcept.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1483,8 +1500,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptMethodCall" file="Template_reduce_ConceptMethodCall.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1497,13 +1516,16 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptMethodCallCommon" file="Template_reduce_ConceptMethodCallCommon.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1525,8 +1547,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptMethodCallReflective" file="Template_reduce_ConceptMethodCallReflective.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1539,13 +1563,16 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptMethodCallReflectiveCommon" file="Template_reduce_ConceptMethodCallReflectiveCommon.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1567,7 +1594,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptMethodCallReflectiveWithSuper" file="Template_reduce_ConceptMethodCallReflectiveWithSuper.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1589,7 +1618,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptMethodCallReflectiveWithThis" file="Template_reduce_ConceptMethodCallReflectiveWithThis.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1611,7 +1642,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptMethodCallWithSuper" file="Template_reduce_ConceptMethodCallWithSuper.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1633,7 +1666,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptMethodCallWithThis" file="Template_reduce_ConceptMethodCallWithThis.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1661,6 +1696,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.generator.impl.reference.RefResolver" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1696,6 +1732,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.generator.impl.reference.RefResolver" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1724,7 +1761,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Concept_NewInstance" file="Template_reduce_Concept_NewInstance.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1748,7 +1787,9 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ContainmentLinkId_SContainmentLink" file="Template_reduce_ContainmentLinkId_SContainmentLink.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1774,7 +1815,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_CopyOperation" file="Template_reduce_CopyOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1797,7 +1840,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_EnumDeclaration_indentityValueSequence" file="Template_reduce_EnumDeclaration_indentityValueSequence.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1810,6 +1855,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
@@ -1818,7 +1864,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_EnumMemberReference_notNull_internalValue" file="Template_reduce_EnumMemberReference_notNull_internalValue.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1831,6 +1879,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
@@ -1839,17 +1888,19 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_EnumMemberReference_null_internalValue" file="Template_reduce_EnumMemberReference_null_internalValue.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
@@ -1858,9 +1909,11 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1885,7 +1938,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetAllSiblingsOperation" file="Template_reduce_GetAllSiblingsOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1911,7 +1966,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetAncestor_noConceptList" file="Template_reduce_GetAncestor_noConceptList.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1938,7 +1995,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetAncestor_noConceptList_SameML" file="Template_reduce_GetAncestor_noConceptList_SameML.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -1969,6 +2028,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2000,6 +2060,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2027,7 +2088,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetAncestors_noConceptsList" file="Template_reduce_GetAncestors_noConceptsList.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2058,6 +2121,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2085,8 +2149,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetChildrenAndChildAttributesOperation" file="Template_reduce_GetChildrenAndChildAttributesOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2109,7 +2175,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetChildrenOperation_noLinkQualifier" file="Template_reduce_GetChildrenOperation_noLinkQualifier.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2132,8 +2200,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetChildrenOperation_whereLinkQualifier" file="Template_reduce_GetChildrenOperation_whereLinkQualifier.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2156,7 +2226,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetConceptOperation" file="Template_reduce_GetConceptOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2179,7 +2251,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetContainingRootOperation" file="Template_reduce_GetContainingRootOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2206,6 +2280,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2238,6 +2313,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2265,7 +2341,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetIndexInParentOperation" file="Template_reduce_GetIndexInParentOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2288,7 +2366,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetModelOperation" file="Template_reduce_GetModelOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2311,7 +2391,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetNextSiblingOperation" file="Template_reduce_GetNextSiblingOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2334,7 +2416,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetNextSiblingsOperation" file="Template_reduce_GetNextSiblingsOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2360,7 +2444,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetPrevSiblingOperation" file="Template_reduce_GetPrevSiblingOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2383,7 +2469,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetPrevSiblingsOperation" file="Template_reduce_GetPrevSiblingsOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2409,7 +2497,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_GetSConceptOperation" file="Template_reduce_GetSConceptOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2432,7 +2522,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_IfInstanceOfStatement" file="Template_reduce_IfInstanceOfStatement.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2459,7 +2551,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_InsertNewNextSiblingOperation" file="Template_reduce_InsertNewNextSiblingOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2483,7 +2577,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_InsertNewPrevSiblingOperation" file="Template_reduce_InsertNewPrevSiblingOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2507,7 +2603,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_InsertNextSiblingOperation" file="Template_reduce_InsertNextSiblingOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2530,7 +2628,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_InsertPrevSiblingOperation" file="Template_reduce_InsertPrevSiblingOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2553,7 +2653,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_IsNotNullOperation" file="Template_reduce_IsNotNullOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2573,7 +2675,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_IsNullOperation" file="Template_reduce_IsNullOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2593,7 +2697,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_IsRoleOperation" file="Template_reduce_IsRoleOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2618,7 +2724,9 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_LanguageId_SLanguage" file="Template_reduce_LanguageId_SLanguage.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2644,8 +2752,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_LanguageRefExpression" file="Template_reduce_LanguageRefExpression.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2659,13 +2769,16 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_LanguageReferenceExpression" file="Template_reduce_LanguageReferenceExpression.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2687,7 +2800,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Link2Id" file="Template_reduce_Link2Id.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2713,7 +2828,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_LinkDeclaration_Bootstrap_SLink" file="Template_reduce_LinkDeclaration_Bootstrap_SLink.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2739,7 +2856,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_LinkDeclaration_SLink" file="Template_reduce_LinkDeclaration_SLink.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2765,7 +2884,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ModelPointerExpression" file="Template_reduce_ModelPointerExpression.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2790,7 +2911,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Model_CreateNewNode" file="Template_reduce_Model_CreateNewNode.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2815,7 +2938,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Model_CreateNewRootNode" file="Template_reduce_Model_CreateNewRootNode.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2839,7 +2964,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Model_NodesIncludingImportedOperation_hasConcept" file="Template_reduce_Model_NodesIncludingImportedOperation_hasConcept.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2863,7 +2990,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Model_NodesIncludingImportedOperation_noConcept" file="Template_reduce_Model_NodesIncludingImportedOperation_noConcept.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2886,8 +3015,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Model_NodesOperation_new" file="Template_reduce_Model_NodesOperation_new.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2911,7 +3042,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Model_NodesOperation_old" file="Template_reduce_Model_NodesOperation_old.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2935,7 +3068,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Model_PointerOperation" file="Template_reduce_Model_PointerOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2958,7 +3093,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Model_RootsIncludingImportedOperation_hasConcept" file="Template_reduce_Model_RootsIncludingImportedOperation_hasConcept.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -2982,7 +3119,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Model_RootsIncludingImportedOperation_noConcept" file="Template_reduce_Model_RootsIncludingImportedOperation_noConcept.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3005,7 +3144,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Model_RootsOperation_hasConcept" file="Template_reduce_Model_RootsOperation_hasConcept.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3029,7 +3170,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Model_RootsOperation_noConcept" file="Template_reduce_Model_RootsOperation_noConcept.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3053,7 +3196,9 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ModuleIdentity_SLanguage" file="Template_reduce_ModuleIdentity_SLanguage.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3079,7 +3224,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ModulePointer_SModuleReference" file="Template_reduce_ModulePointer_SModuleReference.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3104,8 +3251,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ModuleRefExpression" file="Template_reduce_ModuleRefExpression.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3119,13 +3268,16 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ModuleReferenceExpression" file="Template_reduce_ModuleReferenceExpression.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3147,7 +3299,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ModuleReferenceFromString" file="Template_reduce_ModuleReferenceFromString.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3173,7 +3327,9 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_NodeIdentity_SNodeReference" file="Template_reduce_NodeIdentity_SNodeReference.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3200,8 +3356,10 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_OperationParamConcept" file="Template_reduce_OperationParamConcept.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3216,6 +3374,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
@@ -3230,6 +3389,7 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3252,7 +3412,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Property2Id" file="Template_reduce_Property2Id.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3277,7 +3439,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_PropertyDeclaration_Bootstrap_SProperty" file="Template_reduce_PropertyDeclaration_Bootstrap_SProperty.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3302,7 +3466,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_PropertyDeclaration_SProperty" file="Template_reduce_PropertyDeclaration_SProperty.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3328,7 +3494,9 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_PropertyId_SProperty" file="Template_reduce_PropertyId_SProperty.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3354,7 +3522,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Property_HasValue_Enum_notNullDefaultValue" file="Template_reduce_Property_HasValue_Enum_notNullDefaultValue.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3381,7 +3551,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Property_HasValue_Enum_nullDefaultValue" file="Template_reduce_Property_HasValue_Enum_nullDefaultValue.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3405,7 +3577,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Property_HasValue_Simple" file="Template_reduce_Property_HasValue_Simple.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3430,7 +3604,9 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ReferenceLinkId_SReferenceLink" file="Template_reduce_ReferenceLinkId_SReferenceLink.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3456,7 +3632,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ReplaceWithAnotherOperation" file="Template_reduce_ReplaceWithAnotherOperation.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3480,8 +3658,10 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ReplaceWithNewOperation" file="Template_reduce_ReplaceWithNewOperation.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.impl.reference.RefResolver" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3505,8 +3685,10 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_SPropertyAccess_enum" file="Template_reduce_SPropertyAccess_enum.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.impl.reference.RefResolver" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3535,8 +3717,10 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_SPropertyAccess_simple" file="Template_reduce_SPropertyAccess_simple.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.impl.reference.RefResolver" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3560,7 +3744,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_invoke" file="Template_reduce_invoke.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3590,8 +3776,10 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_invokeWithSuper" file="Template_reduce_invokeWithSuper.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.impl.reference.RefResolver" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3622,7 +3810,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_invokeWithThis" file="Template_reduce_invokeWithThis.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3652,8 +3842,10 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_reflectiveInvoke" file="Template_reduce_reflectiveInvoke.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.impl.reference.RefResolver" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3683,8 +3875,10 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_reflectiveInvokeSuper" file="Template_reduce_reflectiveInvokeSuper.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.impl.reference.RefResolver" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3716,8 +3910,10 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_reflectiveInvokeThis" file="Template_reduce_reflectiveInvokeThis.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.impl.reference.RefResolver" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
@@ -3752,6 +3948,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.FragmentResult" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
