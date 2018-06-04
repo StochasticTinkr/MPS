@@ -26,5 +26,7 @@
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="components" />
     <orderEntry type="module" module-name="mps-idea-make-plugin-api" />
+    <orderEntry type="module" module-name="debuginfo-api" />
+    <orderEntry type="module" module-name="smodelquery-runtime" />
   </component>
 </module>

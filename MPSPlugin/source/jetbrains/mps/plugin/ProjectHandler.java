@@ -34,10 +34,7 @@ import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
-import com.intellij.psi.JavaPsiFacade;
-import com.intellij.psi.PsiClass;
-import com.intellij.psi.PsiField;
-import com.intellij.psi.PsiMethod;
+import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.searches.ClassInheritorsSearch;
 import org.jetbrains.annotations.NotNull;
@@ -72,7 +69,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
   @NotNull
   public String getComponentName() {
-
     return "MPSSupport Handler";
   }
 
@@ -380,5 +376,15 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     if (distance == -1) return -1;
 
     return distance + 1;
+  }
+
+  public void showSource(PsiFile file, String className, int line, int column) {
+    for (IMPSIDEHandler h : myIDEHandlers) {
+      try {
+        h.showSource(file.getVirtualFile().getPath(), className , line, column);
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
   }
 }

@@ -182,7 +182,7 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
     myEndPosition = position.myEndPosition;
   }
 
-  static final class StartLineComparator implements Comparator<PositionInfo> {
+  public static final class StartLineComparator implements Comparator<PositionInfo> {
     @Override
     public int compare(PositionInfo p1, PositionInfo p2) {
       return p1.getStartLine() - p2.getStartLine();

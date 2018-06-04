@@ -12,15 +12,33 @@ import jetbrains.mps.RuntimeFlags;
 import java.rmi.NoSuchObjectException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.textgen.trace.DebugInfo;
+import jetbrains.mps.textgen.trace.TraceInfo;
+import jetbrains.mps.smodel.SNodePointer;
+import java.io.File;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.FrameUtil;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.textgen.trace.DebugInfoRoot;
+import java.util.Collection;
+import jetbrains.mps.textgen.trace.TraceablePositionInfo;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.awt.Frame;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.ide.project.ProjectHelper;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
 import jetbrains.mps.project.GlobalScope;
@@ -28,17 +46,11 @@ import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, ProjectComponent {
   private static final Logger LOG = LogManager.getLogger(MPSProjectIDEHandler.class);
@@ -102,6 +114,76 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   @Override
   public void disposeComponent() {
   }
+  @Override
+  public void showSource(final String filePath, final String classFqName, final int line, int column) throws RemoteException {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
+      public void run() {
+        final String modelName = NameUtil.namespaceFromLongName(classFqName);
+        Iterable<SModel> modelsByName;
+        {
+          final SearchScope scope = CommandUtil.createScope(ProjectHelper.fromIdeaProject(myProject));
+          QueryExecutionContext context = new QueryExecutionContext() {
+            public SearchScope getDefaultSearchScope() {
+              return scope;
+            }
+          };
+          modelsByName = Sequence.fromIterable(CommandUtil.models(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SModel>() {
+            public boolean accept(SModel it) {
+              return Objects.equals(SModelOperations.getModelName(it), modelName);
+            }
+          });
+        }
+
+        SNode bestNode = null;
+        for (SModel model : Sequence.fromIterable(modelsByName)) {
+          DebugInfo di = new TraceInfo().getDebugInfo(model);
+          SNodePointer np = getBestNodeForPosition(di, new File(filePath).getName(), line);
+          bestNode = np.resolve(mpsProject.getRepository());
+          if (bestNode != null) {
+            break;
+          }
+        }
+
+        if ((bestNode == null)) {
+          // todo show notification that no node was found 
+        } else {
+          NavigationSupport.getInstance().openNode(mpsProject, bestNode, true, (SNodeOperations.getParent(bestNode) != null));
+        }
+        FrameUtil.activateFrame(getMainFrame());
+      }
+    });
+  }
+
+  @NotNull
+  private SNodePointer getBestNodeForPosition(DebugInfo debugInfo, @NotNull final String fileName, final int line) {
+    // this method was copied from DebugInfo's internals and refactored a bit 
+    PersistenceFacade persFacade = PersistenceFacade.getInstance();
+    Iterable<DebugInfoRoot> roots = debugInfo.getRoots();
+    for (DebugInfoRoot root : Sequence.fromIterable(roots).where(new IWhereFilter<DebugInfoRoot>() {
+      public boolean accept(DebugInfoRoot it) {
+        return it.getFileNames().contains(fileName);
+      }
+    })) {
+      Collection<TraceablePositionInfo> positions = root.getPositions();
+      TraceablePositionInfo info = CollectionSequence.fromCollection(positions).where(new IWhereFilter<TraceablePositionInfo>() {
+        public boolean accept(TraceablePositionInfo it) {
+          return Objects.equals(it.getFileName(), fileName);
+        }
+      }).sort(new ISelector<TraceablePositionInfo, Integer>() {
+        public Integer select(TraceablePositionInfo it) {
+          return it.getStartLine();
+        }
+      }, false).findLast(new IWhereFilter<TraceablePositionInfo>() {
+        public boolean accept(TraceablePositionInfo it) {
+          return it.getStartLine() <= line;
+        }
+      });
+      return new SNodePointer(root.getNodeRef().getModelReference(), persFacade.createNodeId(info.getNodeId()));
+    }
+    return new SNodePointer(null);
+  }
+
   private Frame getMainFrame() {
     return WindowManager.getInstance().getFrame(myProject);
   }
