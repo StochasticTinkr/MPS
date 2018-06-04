@@ -51,7 +51,10 @@
   </dependency>
   <dependency className="jetbrains.mps.plugin.MPSProjectIDEHandler" file="MPSProjectIDEHandler.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.ui.MessageType" />
+    <classNode dependClassName="com.intellij.openapi.wm.IdeFrame" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
+    <classNode dependClassName="com.intellij.openapi.wm.ex.StatusBarEx" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Integer" />

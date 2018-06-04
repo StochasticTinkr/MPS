@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.util.NameUtil;
+import java.io.File;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
@@ -26,7 +27,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.textgen.trace.TraceInfo;
 import jetbrains.mps.smodel.SNodePointer;
-import java.io.File;
+import com.intellij.openapi.wm.IdeFrame;
+import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.wm.ex.StatusBarEx;
+import com.intellij.openapi.ui.MessageType;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.FrameUtil;
@@ -37,7 +41,6 @@ import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.awt.Frame;
-import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
@@ -120,6 +123,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
         final String modelName = NameUtil.namespaceFromLongName(classFqName);
+        String fileName = new File(filePath).getName();
+
         Iterable<SModel> modelsByName;
         {
           final SearchScope scope = CommandUtil.createScope(ProjectHelper.fromIdeaProject(myProject));
@@ -138,7 +143,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         SNode bestNode = null;
         for (SModel model : Sequence.fromIterable(modelsByName)) {
           DebugInfo di = new TraceInfo().getDebugInfo(model);
-          SNodePointer np = getBestNodeForPosition(di, new File(filePath).getName(), line);
+          SNodePointer np = getBestNodeForPosition(di, fileName, line);
           bestNode = np.resolve(mpsProject.getRepository());
           if (bestNode != null) {
             break;
@@ -146,7 +151,11 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         }
 
         if ((bestNode == null)) {
-          // todo show notification that no node was found 
+          final IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(myProject);
+          if (ideFrame != null) {
+            StatusBarEx statusBar = (StatusBarEx) ideFrame.getStatusBar();
+            statusBar.notifyProgressByBalloon(MessageType.WARNING, "No source found for " + fileName + ":" + line, null, null);
+          }
         } else {
           NavigationSupport.getInstance().openNode(mpsProject, bestNode, true, (SNodeOperations.getParent(bestNode) != null));
         }

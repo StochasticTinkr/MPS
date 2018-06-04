@@ -53,6 +53,8 @@
     <import index="fwk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textgen.trace(MPS.Core/)" />
     <import index="2b4n" ref="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="b9kz" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.wm.ex(MPS.IDEA/)" />
+    <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1275,6 +1277,28 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3cpWs8" id="1f31DUOVqZx" role="3cqZAp">
+                    <node concept="3cpWsn" id="1f31DUOVqZy" role="3cpWs9">
+                      <property role="TrG5h" value="fileName" />
+                      <node concept="3uibUv" id="1f31DUOVqZv" role="1tU5fm">
+                        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                      </node>
+                      <node concept="2OqwBi" id="1f31DUOVqZz" role="33vP2m">
+                        <node concept="2ShNRf" id="1f31DUOVqZ$" role="2Oq$k0">
+                          <node concept="1pGfFk" id="1f31DUOVqZ_" role="2ShVmc">
+                            <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                            <node concept="37vLTw" id="1f31DUOVqZA" role="37wK5m">
+                              <ref role="3cqZAo" node="5mG9UR3UMao" resolve="filePath" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="1f31DUOVqZB" role="2OqNvi">
+                          <ref role="37wK5l" to="guwi:~File.getName():java.lang.String" resolve="getName" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="1f31DUOVvdY" role="3cqZAp" />
                   <node concept="3cpWs8" id="5mG9UR3WeAM" role="3cqZAp">
                     <node concept="3cpWsn" id="5mG9UR3WeAN" role="3cpWs9">
                       <property role="TrG5h" value="modelsByName" />
@@ -1377,18 +1401,8 @@
                             <node concept="37vLTw" id="5mG9UR45Gn1" role="37wK5m">
                               <ref role="3cqZAo" node="5mG9UR3UMaF" resolve="di" />
                             </node>
-                            <node concept="2OqwBi" id="1f31DUOU0NC" role="37wK5m">
-                              <node concept="2ShNRf" id="1f31DUOT$9g" role="2Oq$k0">
-                                <node concept="1pGfFk" id="1f31DUOTXwf" role="2ShVmc">
-                                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                                  <node concept="37vLTw" id="1f31DUOTYnB" role="37wK5m">
-                                    <ref role="3cqZAo" node="5mG9UR3UMao" resolve="filePath" />
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="liA8E" id="1f31DUOU24V" role="2OqNvi">
-                                <ref role="37wK5l" to="guwi:~File.getName():java.lang.String" resolve="getName" />
-                              </node>
+                            <node concept="37vLTw" id="1f31DUOVqZC" role="37wK5m">
+                              <ref role="3cqZAo" node="1f31DUOVqZy" resolve="fileName" />
                             </node>
                             <node concept="37vLTw" id="5mG9UR45Gn3" role="37wK5m">
                               <ref role="3cqZAo" node="5mG9UR3UMas" resolve="line" />
@@ -1435,9 +1449,91 @@
                   <node concept="3clFbH" id="5mG9UR3X$cD" role="3cqZAp" />
                   <node concept="3clFbJ" id="5mG9UR3XAbm" role="3cqZAp">
                     <node concept="3clFbS" id="5mG9UR3XAbo" role="3clFbx">
-                      <node concept="3SKdUt" id="5mG9UR3UMcv" role="3cqZAp">
-                        <node concept="3SKdUq" id="5mG9UR3UMcu" role="3SKWNk">
-                          <property role="3SKdUp" value="todo show notification that no node was found" />
+                      <node concept="3cpWs8" id="1f31DUOUMaU" role="3cqZAp">
+                        <node concept="3cpWsn" id="1f31DUOUMaT" role="3cpWs9">
+                          <property role="3TUv4t" value="true" />
+                          <property role="TrG5h" value="ideFrame" />
+                          <node concept="3uibUv" id="1f31DUOUMaV" role="1tU5fm">
+                            <ref role="3uigEE" to="jkny:~IdeFrame" resolve="IdeFrame" />
+                          </node>
+                          <node concept="2OqwBi" id="1f31DUOUMaW" role="33vP2m">
+                            <node concept="2YIFZM" id="1f31DUOUNr0" role="2Oq$k0">
+                              <ref role="1Pybhc" to="jkny:~WindowManager" resolve="WindowManager" />
+                              <ref role="37wK5l" to="jkny:~WindowManager.getInstance():com.intellij.openapi.wm.WindowManager" resolve="getInstance" />
+                            </node>
+                            <node concept="liA8E" id="1f31DUOUMaY" role="2OqNvi">
+                              <ref role="37wK5l" to="jkny:~WindowManager.getIdeFrame(com.intellij.openapi.project.Project):com.intellij.openapi.wm.IdeFrame" resolve="getIdeFrame" />
+                              <node concept="37vLTw" id="1f31DUOUMaZ" role="37wK5m">
+                                <ref role="3cqZAo" node="7vbFQ4bPX_O" resolve="myProject" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbJ" id="1f31DUOUMb0" role="3cqZAp">
+                        <node concept="3y3z36" id="1f31DUOUMb1" role="3clFbw">
+                          <node concept="37vLTw" id="1f31DUOUMb2" role="3uHU7B">
+                            <ref role="3cqZAo" node="1f31DUOUMaT" resolve="ideFrame" />
+                          </node>
+                          <node concept="10Nm6u" id="1f31DUOUMb3" role="3uHU7w" />
+                        </node>
+                        <node concept="3clFbS" id="1f31DUOUMb5" role="3clFbx">
+                          <node concept="3cpWs8" id="1f31DUOUMb7" role="3cqZAp">
+                            <node concept="3cpWsn" id="1f31DUOUMb6" role="3cpWs9">
+                              <property role="3TUv4t" value="false" />
+                              <property role="TrG5h" value="statusBar" />
+                              <node concept="3uibUv" id="1f31DUOUMb8" role="1tU5fm">
+                                <ref role="3uigEE" to="b9kz:~StatusBarEx" resolve="StatusBarEx" />
+                              </node>
+                              <node concept="10QFUN" id="1f31DUOUMb9" role="33vP2m">
+                                <node concept="2OqwBi" id="1f31DUOUNt4" role="10QFUP">
+                                  <node concept="37vLTw" id="1f31DUOUNt3" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="1f31DUOUMaT" resolve="ideFrame" />
+                                  </node>
+                                  <node concept="liA8E" id="1f31DUOUNt5" role="2OqNvi">
+                                    <ref role="37wK5l" to="jkny:~IdeFrame.getStatusBar():com.intellij.openapi.wm.StatusBar" resolve="getStatusBar" />
+                                  </node>
+                                </node>
+                                <node concept="3uibUv" id="1f31DUOUMbb" role="10QFUM">
+                                  <ref role="3uigEE" to="b9kz:~StatusBarEx" resolve="StatusBarEx" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="1f31DUOUMbc" role="3cqZAp">
+                            <node concept="2OqwBi" id="1f31DUOUNqf" role="3clFbG">
+                              <node concept="37vLTw" id="1f31DUOUNqe" role="2Oq$k0">
+                                <ref role="3cqZAo" node="1f31DUOUMb6" resolve="statusBar" />
+                              </node>
+                              <node concept="liA8E" id="1f31DUOUNqg" role="2OqNvi">
+                                <ref role="37wK5l" to="b9kz:~StatusBarEx.notifyProgressByBalloon(com.intellij.openapi.ui.MessageType,java.lang.String,javax.swing.Icon,javax.swing.event.HyperlinkListener):com.intellij.openapi.ui.popup.BalloonHandler" resolve="notifyProgressByBalloon" />
+                                <node concept="10M0yZ" id="1f31DUOV8dZ" role="37wK5m">
+                                  <ref role="3cqZAo" to="jkm4:~MessageType.WARNING" resolve="WARNING" />
+                                  <ref role="1PxDUh" to="jkm4:~MessageType" resolve="MessageType" />
+                                </node>
+                                <node concept="3cpWs3" id="1f31DUOVnUH" role="37wK5m">
+                                  <node concept="37vLTw" id="1f31DUOVpOj" role="3uHU7w">
+                                    <ref role="3cqZAo" node="5mG9UR3UMas" resolve="line" />
+                                  </node>
+                                  <node concept="3cpWs3" id="1f31DUOVl9Y" role="3uHU7B">
+                                    <node concept="3cpWs3" id="1f31DUOVihY" role="3uHU7B">
+                                      <node concept="Xl_RD" id="1f31DUOV9jT" role="3uHU7B">
+                                        <property role="Xl_RC" value="No source found for " />
+                                      </node>
+                                      <node concept="37vLTw" id="1f31DUOVxuS" role="3uHU7w">
+                                        <ref role="3cqZAo" node="1f31DUOVqZy" resolve="fileName" />
+                                      </node>
+                                    </node>
+                                    <node concept="Xl_RD" id="1f31DUOVlkX" role="3uHU7w">
+                                      <property role="Xl_RC" value=":" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="10Nm6u" id="1f31DUOUNql" role="37wK5m" />
+                                <node concept="10Nm6u" id="1f31DUOUNqm" role="37wK5m" />
+                              </node>
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
