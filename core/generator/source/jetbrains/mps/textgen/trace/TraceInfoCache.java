@@ -22,11 +22,14 @@ import jetbrains.mps.generator.cache.ParseFacility.Parser;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -51,7 +54,7 @@ import java.util.concurrent.ConcurrentMap;
 
 /**
  * It's unlikely you need to instantiate this class directly, instead, {@link TraceInfo} might serve better starting point.
- *
+ * <p>
  * The reason [generator] needs [debuginfo-api], which is otherwise textgen-specific (moreover, BL-textgen)
  */
 public final class TraceInfoCache {
@@ -73,13 +76,14 @@ public final class TraceInfoCache {
       return null;
     }
     DebugInfo existing = myCache.putIfAbsent(mr, cache);
-    return  existing != null ? existing : cache;
+    return existing != null ? existing : cache;
   }
 
   /**
    * Invoke to set new cached value
    */
-  /*package*/ final void update(SModel model, DebugInfo cache) {
+  /*package*/
+  final void update(SModel model, DebugInfo cache) {
     final SModelReference mr = model.getReference();
     myCache.put(mr, cache);
   }
@@ -87,12 +91,21 @@ public final class TraceInfoCache {
 
   private DebugInfo readCache(final SModel sm) {
     // First, try to find deployed trace, as it's the one to match deployed classes best.
-    URL url = getDeployedLocation(sm);
-    if (url != null) {
-      return new ParseFacility<>(getClass(), new CacheParser()).input(url).parseSilently();
-    }
+    IFile file = getDeployedLocation(sm);
+
     // XXX Could have resorted to workspace location here, if failed. However, not quite sure it's the right approach,
     //     JavaTraceInfoResourceProvider didn't look elsewhere but module classpath.
+
+    // [MM] this may help when we want to establish connection between generated code and source nodes. We may
+    // not even have compiled classes in this case (or compiled not to /classes_gen, for example, as some parts of MPS project itself)
+    if (file == null || !file.exists()) {
+      file = getWorkspaceLocation(sm);
+    }
+
+    if (file != null && file.exists()) {
+      return new ParseFacility<>(getClass(), new CacheParser()).input(file).parseSilently();
+    }
+
     return null;
   }
 
@@ -107,35 +120,35 @@ public final class TraceInfoCache {
    * search plugin CP completely, too). FIXME however, I'd like to have this fixed with ReloadeableModule.getOwnResource()
    */
   @Nullable
-  private URL getDeployedLocation(@NotNull SModel sm) {
+  private IFile getDeployedLocation(@NotNull SModel sm) {
     // FIXME We didn't come to a consensus whether we shall read trace.info from deployment or source location (ex: remote debug process, need for source
     //       model which comes together with sources only - perhaps, the idea of trace.info being deployment information is not that good)
     //       If trace.info has to be under sources, then the whole idea of classloader.getResource() is wrong, and we shall rely on
     //       GenerationTargetFacet.getOutputLocation() instead.
     final SModule module = sm.getModule();
     String resourceName = traceInfoResourceName(sm);
-    URL url = null;
+    IFile file = null;
     if (module instanceof ReloadableModule) {
       // FIXME would be handy to have getOwnResource() right in the ReloadableModule
       ClassLoader moduleClassLoader = ((ReloadableModule) module).getClassLoader();
-      url = moduleClassLoader == null ? null : moduleClassLoader.getResource(resourceName);
+      if (moduleClassLoader != null) {
+        URL res = moduleClassLoader.getResource(resourceName);
+        if (res != null) {
+          file = ((AbstractModule) module).getFileSystem().getFile(res.getPath());
+        }
+      }
     }
     // Modules in IDEA with MPS Plugin installed, do not have a classloader, instead, there's a hack to supply
     // location of generated classes via custom JavaModuleFacet implementation (see SolutionIdea#setupFacet())
     // Therefore, here we address https://youtrack.jetbrains.com/issue/MPS-26254 and look into location supplied by the hack
-    if (url == null) {
+    if (file == null) {
       JavaModuleFacet javaModuleFacet = module.getFacet(JavaModuleFacet.class);
       IFile classesGen = javaModuleFacet == null ? null : javaModuleFacet.getClassesGen();
       if (classesGen != null) {
-        try {
-          url = classesGen.getDescendant(resourceName).getUrl();
-        } catch (MalformedURLException ex) {
-          String msg = "Failed to look up trace.info location for module %s";
-          Logger.getLogger(getClass()).debug(String.format(msg, module.getModuleName()), ex);
-        }
+        file = classesGen.getDescendant(resourceName);
       }
     }
-    return url;
+    return file;
   }
 
   private String traceInfoResourceName(SModel sm) {
@@ -168,9 +181,9 @@ public final class TraceInfoCache {
   }
 
   /**
-   * @deprecated instead, create a new instance for a series of trace.info access. We don't track these files any more, it's up to caller to decide
-   *             lifespan of the cache.
    * @return new instance for each call
+   * @deprecated instead, create a new instance for a series of trace.info access. We don't track these files any more, it's up to caller to decide
+   * lifespan of the cache.
    */
   @Deprecated
   @ToRemove(version = 2017.2)
@@ -242,7 +255,8 @@ public final class TraceInfoCache {
         // if a node is removed, generatedDebugInfo won't have an entry for it, while cachedDebugInfo has.
         // no position from this cached info, however, would pass unchangedFiles filter, and generatedDebugInfo
         // would stay empty. Here, we detect this case and drop stale debug info entries
-        final boolean noCachedData = generatedRoot.getPositions().isEmpty() && generatedRoot.getScopePositions().isEmpty() && generatedRoot.getUnitPositions().isEmpty();
+        final boolean noCachedData =
+            generatedRoot.getPositions().isEmpty() && generatedRoot.getScopePositions().isEmpty() && generatedRoot.getUnitPositions().isEmpty();
         if (!noCachedData) {
           generatedDebugInfo.putRootInfo(generatedRoot);
         }

@@ -28,6 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.textgen.trace.TraceInfo;
+import org.apache.log4j.Level;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
@@ -58,6 +59,7 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.util.NameUtil;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, ProjectComponent {
+  private static final Logger LOG_1373119566 = LogManager.getLogger(MPSProjectIDEHandler.class);
   private static final Logger LOG = LogManager.getLogger(MPSProjectIDEHandler.class);
   private Project myProject;
   public MPSProjectIDEHandler(Project project) throws RemoteException {
@@ -151,6 +153,12 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         SNode bestNode = null;
         for (SModel model : ListSequence.fromList(modelsByName)) {
           DebugInfo di = new TraceInfo().getDebugInfo(model);
+          if (di == null) {
+            if (LOG_1373119566.isEnabledFor(Level.WARN)) {
+              LOG_1373119566.warn("Debug info not found for model " + SModelOperations.getModelName(model));
+            }
+            continue;
+          }
           SNodePointer np = getBestNodeForPosition(di, fileName, line);
           bestNode = np.resolve(mpsProject.getRepository());
           if (bestNode != null) {

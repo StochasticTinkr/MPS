@@ -8,6 +8,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
   <imports>
     <import index="iqmz" ref="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)" />
@@ -284,6 +285,12 @@
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -1425,6 +1432,31 @@
                                 <ref role="2Gs0qQ" node="5mG9UR3WjJh" resolve="model" />
                               </node>
                             </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbJ" id="7hHiAM9ZHBK" role="3cqZAp">
+                        <node concept="3clFbS" id="7hHiAM9ZHBM" role="3clFbx">
+                          <node concept="RRSsy" id="7hHiAMa02qn" role="3cqZAp">
+                            <property role="RRSoG" value="warn" />
+                            <node concept="3cpWs3" id="7hHiAMa02qp" role="RRSoy">
+                              <node concept="2OqwBi" id="7hHiAMa02qq" role="3uHU7w">
+                                <node concept="2GrUjf" id="7hHiAMa02qr" role="2Oq$k0">
+                                  <ref role="2Gs0qQ" node="5mG9UR3WjJh" resolve="model" />
+                                </node>
+                                <node concept="LkI2h" id="7hHiAMa02qs" role="2OqNvi" />
+                              </node>
+                              <node concept="Xl_RD" id="7hHiAMa02qt" role="3uHU7B">
+                                <property role="Xl_RC" value="Debug info not found for model " />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3N13vt" id="7hHiAMa01Bg" role="3cqZAp" />
+                        </node>
+                        <node concept="3clFbC" id="7hHiAM9ZJsp" role="3clFbw">
+                          <node concept="10Nm6u" id="7hHiAM9ZJBs" role="3uHU7w" />
+                          <node concept="37vLTw" id="7hHiAM9ZI_u" role="3uHU7B">
+                            <ref role="3cqZAo" node="5mG9UR3UMaF" resolve="di" />
                           </node>
                         </node>
                       </node>
