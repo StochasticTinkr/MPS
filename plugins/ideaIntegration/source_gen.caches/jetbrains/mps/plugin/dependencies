@@ -66,7 +66,9 @@
     <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.rmi.NoSuchObjectException" />
     <classNode dependClassName="java.rmi.RemoteException" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />

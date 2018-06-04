@@ -13,9 +13,11 @@ import java.rmi.NoSuchObjectException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.util.NameUtil;
 import java.io.File;
+import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
@@ -51,9 +53,9 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.util.NameUtil;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, ProjectComponent {
   private static final Logger LOG = LogManager.getLogger(MPSProjectIDEHandler.class);
@@ -118,14 +120,14 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   public void disposeComponent() {
   }
   @Override
-  public void showSource(final String filePath, final String classFqName, final int line, int column) throws RemoteException {
+  public void showSource(final String filePath, final String modelHint, final int line, int column) throws RemoteException {
     final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
     mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
-        final String modelName = NameUtil.namespaceFromLongName(classFqName);
         String fileName = new File(filePath).getName();
 
-        Iterable<SModel> modelsByName;
+        List<SModel> modelsByName = ListSequence.fromList(new ArrayList<SModel>());
+
         {
           final SearchScope scope = CommandUtil.createScope(ProjectHelper.fromIdeaProject(myProject));
           QueryExecutionContext context = new QueryExecutionContext() {
@@ -133,15 +135,21 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
               return scope;
             }
           };
-          modelsByName = Sequence.fromIterable(CommandUtil.models(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SModel>() {
+          // we first look up in models with the given name (better chance to succeed), then in all other models 
+          ListSequence.fromList(modelsByName).addSequence(Sequence.fromIterable(CommandUtil.models(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
-              return Objects.equals(SModelOperations.getModelName(it), modelName);
+              return Objects.equals(SModelOperations.getModelName(it), modelHint);
             }
-          });
+          }));
+          ListSequence.fromList(modelsByName).addSequence(Sequence.fromIterable(CommandUtil.models(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SModel>() {
+            public boolean accept(SModel it) {
+              return !(Objects.equals(SModelOperations.getModelName(it), modelHint));
+            }
+          }));
         }
 
         SNode bestNode = null;
-        for (SModel model : Sequence.fromIterable(modelsByName)) {
+        for (SModel model : ListSequence.fromList(modelsByName)) {
           DebugInfo di = new TraceInfo().getDebugInfo(model);
           SNodePointer np = getBestNodeForPosition(di, fileName, line);
           bestNode = np.resolve(mpsProject.getRepository());

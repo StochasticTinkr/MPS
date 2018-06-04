@@ -34,13 +34,9 @@ public class OpenGeneratedCodeSourceInMPS extends AnAction {
     if (project == null) return;
 
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
-    if (file == null) return;
+    if (!(file instanceof PsiJavaFile)) return;
 
-    int offset = editor.getCaretModel().getOffset();
-    PsiElement element = file.findElementAt(offset);
-    if (getClass(element) != null) {
-      e.getPresentation().setVisible(true);
-    }
+    e.getPresentation().setVisible(true);
   }
 
   public void actionPerformed(AnActionEvent e) {
@@ -49,22 +45,12 @@ public class OpenGeneratedCodeSourceInMPS extends AnAction {
     Project project = e.getData(DataKeys.PROJECT);
     assert project != null;
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
-    assert file != null;
-    int offset = editor.getCaretModel().getOffset();
-    PsiElement element = file.findElementAt(offset);
-    PsiClass cls = getClass(element);
-    assert cls != null;
+    assert file instanceof PsiJavaFile;
+    String modelHint = ((PsiJavaFile) file).getPackageName();
 
     LogicalPosition pos = editor.getCaretModel().getLogicalPosition();
     ProjectHandler projectHandler = project.getComponent(ProjectHandler.class);
 
-    projectHandler.showSource(file, cls.getQualifiedName(), pos.line, pos.column);
-  }
-
-  private PsiClass getClass(PsiElement e) {
-    if (e == null) return null;
-    if (e instanceof PsiClass) return (PsiClass) e;
-    if (e.getParent() != null) return getClass(e.getParent());
-    return null;
+    projectHandler.showSource(file, modelHint, pos.line, pos.column);
   }
 }

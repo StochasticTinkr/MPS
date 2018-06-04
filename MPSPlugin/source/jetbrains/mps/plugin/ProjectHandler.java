@@ -378,10 +378,10 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     return distance + 1;
   }
 
-  public void showSource(PsiFile file, String className, int line, int column) {
+  public void showSource(PsiFile file, String modelHint, int line, int column) {
     for (IMPSIDEHandler h : myIDEHandlers) {
       try {
-        h.showSource(file.getVirtualFile().getPath(), className , line, column);
+        h.showSource(file.getVirtualFile().getPath(), modelHint , line, column);
       } catch (RemoteException e) {
         e.printStackTrace();
       }
