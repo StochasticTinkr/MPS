@@ -123,13 +123,17 @@ public final class PerformanceTracer implements IPerformanceTracer {
 
   @Override
   public String report(String... separate) {
+    return report(0, separate);
+  }
+
+  public String report(long cutOffTimeMillis, String... separate) {
     if (top == 0) {
       myStack[0].task.merge(new HashSet<>(Arrays.asList(separate)));
       StringBuilder sb = new StringBuilder();
       sb.append('[');
       sb.append(traceName);
       sb.append("]\n");
-      myStack[0].task.toString(sb, 0);
+      myStack[0].task.toString(cutOffTimeMillis, sb, 0);
       for (String s : externalText) {
         sb.append(s);
         sb.append('\n');
@@ -213,8 +217,11 @@ public final class PerformanceTracer implements IPerformanceTracer {
       tasks.addAll(n.tasks);
     }
 
-    public void toString(StringBuilder sb, int indent) {
+    public void toString(final long cutOffTimeMillis, StringBuilder sb, int indent) {
       if (name != null) {
+        if (cutOffTimeMillis > 0 && executionTime / 1000000 < cutOffTimeMillis) {
+          return;
+        }
         for (int i = 0; i < indent; i++) {
           sb.append("  ");
         }
@@ -240,9 +247,9 @@ public final class PerformanceTracer implements IPerformanceTracer {
         }
         sb.append('\n');
       }
-      tasks.sort(Comparator.comparingLong(o -> o.executionTime));
+      tasks.sort(Comparator.<Task>comparingLong(o -> o.executionTime).reversed());
       for (Task t : tasks) {
-        t.toString(sb, name == null ? indent : indent + 2);
+        t.toString(cutOffTimeMillis, sb, name == null ? indent : indent + 2);
       }
     }
 
