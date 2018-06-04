@@ -35,6 +35,7 @@
     <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
     <import index="inbo" ref="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
+    <import index="csvn" ref="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -3270,8 +3271,8 @@
                         <node concept="37vLTw" id="3GM_nagTz3$" role="2Oq$k0">
                           <ref role="3cqZAo" node="hEwILIk" resolve="method" />
                         </node>
-                        <node concept="3TrcHB" id="hEwILIw" role="2OqNvi">
-                          <ref role="3TsBF5" to="1i04:hP3i0m0" resolve="isVirtual" />
+                        <node concept="2qgKlT" id="6WSEafdwoK6" role="2OqNvi">
+                          <ref role="37wK5l" to="csvn:6WSEafdhbZX" resolve="isVirtual" />
                         </node>
                       </node>
                     </node>

@@ -235,7 +235,7 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
         if (true) {
           // Concept: InstanceMethodDeclaration 
           intentions = new IntentionFactory[3];
-          intentions[0] = new MakeMethodAbstract_Intention();
+          intentions[0] = new MakeBLMethodAbstract_Intention();
           intentions[1] = new MakeClassAbstractFromMethod_Intention();
           intentions[2] = new AddOverrideAnnotation_Intention();
         }
@@ -417,7 +417,7 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     rv[33] = new MakeClassAbstract_Intention();
     rv[34] = new SpecifyClass_Intention();
     rv[35] = new AddThrows_Intention();
-    rv[36] = new MakeMethodAbstract_Intention();
+    rv[36] = new MakeBLMethodAbstract_Intention();
     rv[37] = new IterateOverIterable_Intention();
     rv[38] = new ToggleMethodFinal_Intention();
     rv[39] = new MakeFieldVolatile_Intention();

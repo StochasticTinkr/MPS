@@ -22,14 +22,14 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 
-public final class MakeStatic_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
+public final class ToggleMethodStatic_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-  public MakeStatic_Intention() {
+  public ToggleMethodStatic_Intention() {
     super(Kind.NORMAL, true, new SNodePointer("r:dbb111e4-8af4-4e6d-b49d-e07620d0c285(jetbrains.mps.lang.behavior.intentions)", "4748945189160275754"));
   }
   @Override
   public String getPresentation() {
-    return "MakeStatic";
+    return "ToggleMethodStatic";
   }
   @Override
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -47,7 +47,7 @@ public final class MakeStatic_Intention extends AbstractIntentionDescriptor impl
   }
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeStatic_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ToggleMethodStatic_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -56,11 +56,8 @@ public final class MakeStatic_Intention extends AbstractIntentionDescriptor impl
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic"))) {
-        return "Make Non-Static";
-      } else {
-        return "Make Static";
-      }
+      String methodName = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic")) ? "Make '" + methodName + "' not static" : "Make '" + methodName + "' static");
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
@@ -81,7 +78,7 @@ public final class MakeStatic_Intention extends AbstractIntentionDescriptor impl
     }
     @Override
     public IntentionDescriptor getDescriptor() {
-      return MakeStatic_Intention.this;
+      return ToggleMethodStatic_Intention.this;
     }
   }
 }

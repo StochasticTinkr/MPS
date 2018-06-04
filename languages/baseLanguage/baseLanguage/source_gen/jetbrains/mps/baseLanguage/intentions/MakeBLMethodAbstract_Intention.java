@@ -22,14 +22,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 
-public final class MakeMethodAbstract_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
+public final class MakeBLMethodAbstract_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-  public MakeMethodAbstract_Intention() {
+  public MakeBLMethodAbstract_Intention() {
     super(Kind.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1236187435379"));
   }
   @Override
   public String getPresentation() {
-    return "MakeMethodAbstract";
+    return "MakeBLMethodAbstract";
   }
   @Override
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -61,7 +61,7 @@ public final class MakeMethodAbstract_Intention extends AbstractIntentionDescrip
   }
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeMethodAbstract_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeBLMethodAbstract_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -76,10 +76,11 @@ public final class MakeMethodAbstract_Intention extends AbstractIntentionDescrip
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract")))));
       ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).clear();
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal"), "" + (false));
     }
     @Override
     public IntentionDescriptor getDescriptor() {
-      return MakeMethodAbstract_Intention.this;
+      return MakeBLMethodAbstract_Intention.this;
     }
   }
 }

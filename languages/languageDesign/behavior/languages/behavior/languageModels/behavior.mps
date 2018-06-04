@@ -41,6 +41,7 @@
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -1391,6 +1392,32 @@
   <node concept="13h7C7" id="hP3pnNE">
     <property role="3GE5qa" value="" />
     <ref role="13h7C2" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
+    <node concept="13i0hz" id="6WSEafdhbZX" role="13h7CS">
+      <property role="TrG5h" value="isVirtual" />
+      <node concept="3Tm1VV" id="6WSEafdhbZY" role="1B3o_S" />
+      <node concept="10P_77" id="6WSEafdhcHn" role="3clF45" />
+      <node concept="3clFbS" id="6WSEafdhc00" role="3clF47">
+        <node concept="3cpWs6" id="6WSEafdhcHF" role="3cqZAp">
+          <node concept="22lmx$" id="6WSEafdhf7m" role="3cqZAk">
+            <node concept="3y3z36" id="6WSEafdhhm0" role="3uHU7w">
+              <node concept="10Nm6u" id="6WSEafdhhmj" role="3uHU7w" />
+              <node concept="2OqwBi" id="6WSEafdhfCP" role="3uHU7B">
+                <node concept="13iPFW" id="6WSEafdhfcp" role="2Oq$k0" />
+                <node concept="3TrEf2" id="6WSEafdhjWx" role="2OqNvi">
+                  <ref role="3Tt5mk" to="1i04:hP3i0lZ" resolve="overriddenMethod" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="6WSEafdhd5T" role="3uHU7B">
+              <node concept="13iPFW" id="6WSEafdhcI0" role="2Oq$k0" />
+              <node concept="3TrcHB" id="6WSEafdhedF" role="2OqNvi">
+                <ref role="3TsBF5" to="1i04:hP3i0m0" resolve="isVirtual" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="13i0hz" id="hP3pnNF" role="13h7CS">
       <property role="13i0is" value="false" />
       <property role="TrG5h" value="getBehaviour" />
