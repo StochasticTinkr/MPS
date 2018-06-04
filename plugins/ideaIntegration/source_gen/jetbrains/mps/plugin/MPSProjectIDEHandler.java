@@ -204,6 +204,9 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           return it.getStartLine() <= line;
         }
       });
+      if (info == null) {
+        continue;
+      }
       return new SNodePointer(root.getNodeRef().getModelReference(), persFacade.createNodeId(info.getNodeId()));
     }
     return new SNodePointer(null);
