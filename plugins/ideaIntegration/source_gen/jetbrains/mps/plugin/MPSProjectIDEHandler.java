@@ -199,7 +199,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         public Integer select(TraceablePositionInfo it) {
           return it.getStartLine();
         }
-      }, false).findLast(new IWhereFilter<TraceablePositionInfo>() {
+      }, true).findLast(new IWhereFilter<TraceablePositionInfo>() {
         public boolean accept(TraceablePositionInfo it) {
           return it.getStartLine() <= line;
         }
