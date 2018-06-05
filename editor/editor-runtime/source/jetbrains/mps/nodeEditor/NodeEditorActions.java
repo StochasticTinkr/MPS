@@ -48,7 +48,7 @@ public class NodeEditorActions {
     }
   }
 
-  abstract static class HorizontalNavigationAction extends NavigationAction {
+  public abstract static class HorizontalNavigationAction extends NavigationAction {
     public EditorCell getNextAlignedLeaf(EditorCell cell) {
       return CellTraversalUtil.getNextLeaf(cell,
           c -> c.isSelectable() && !GeometryUtil.isAbove(cell, c) && !GeometryUtil.isAbove(c, cell) && GeometryUtil.isLeftToRight(cell, c));
