@@ -7,15 +7,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import java.io.File;
-import java.util.List;
-import java.util.Arrays;
-import java.util.function.Function;
+import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-import com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess;
-import jetbrains.mps.library.ModulesMiner;
 
 /**
  * todo: merge with "modules collected from dir", or specify here paths to msd/mpl files
@@ -36,22 +30,7 @@ public class FromModulesListProjectStrategy extends ProjectStrategyBase {
   @Override
   public Project construct(@NotNull Project emptyProject) {
     final String[] modules = myModulesPath.split(File.pathSeparator);
-    List<String> moduleFolders = Arrays.stream(modules).map(new Function<String, String>() {
-      @Override
-      public String apply(String module) {
-        IFile file = IoFileSystem.INSTANCE.getFile(module);
-        IFile parent = file.getParent();
-        if (parent == null) {
-          return null;
-        }
-        return parent.getPath();
-      }
-    }).filter(new Predicate<String>() {
-      public boolean test(String file) {
-        return file != null;
-      }
-    }).collect(Collectors.toList());
-    VfsRootAccess.allowRootAccess(moduleFolders.toArray(new String[moduleFolders.size()]));
+    TestRootAccessInsight.allowTestRootAccessForModuleFolders(modules);
     ModulesMiner mm = new ModulesMiner();
     for (String modulePath : modules) {
       IFile fileByPath = IoFileSystem.INSTANCE.getFile(modulePath);
@@ -59,6 +38,7 @@ public class FromModulesListProjectStrategy extends ProjectStrategyBase {
     }
     return loadProjectFromModuleHandles(emptyProject, mm.getCollectedModules());
   }
+
 
   @Override
   public boolean isApplicable() {

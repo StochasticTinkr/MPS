@@ -20,6 +20,7 @@ import java.io.File;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import java.util.Map;
 import java.util.LinkedHashMap;
+import jetbrains.mps.testbench.junit.runners.TestRootAccessInsight;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.ArrayList;
@@ -80,6 +81,7 @@ public class MpsTestsSuite extends BaseMpsSuite {
       return result;
     }
     String[] libraries = librariesString.split(File.pathSeparator);
+    TestRootAccessInsight.allowTestRootAccessForModuleFolders(libraries);
     for (String lib : libraries) {
       File libFile = new File(lib);
       if (libFile.exists()) {

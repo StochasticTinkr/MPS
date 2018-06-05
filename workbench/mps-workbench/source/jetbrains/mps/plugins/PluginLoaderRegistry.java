@@ -289,6 +289,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     if (myTaskInProgress) { // this happens to be called inside the UpdatingTask#doUpdate
       LOG.debug("Rescheduling update");
       reschedule();
+      return;
     }
     LOG.debug("Updating");
     Delta<PluginLoader> loadersDelta;
@@ -375,7 +376,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
         addLoaders(monitor);
         addIdeaExtPointPluginContributors(monitor);
         addContributors(monitor);
-      } finally{
+      } finally {
         myTaskInProgress = false;
       }
     }

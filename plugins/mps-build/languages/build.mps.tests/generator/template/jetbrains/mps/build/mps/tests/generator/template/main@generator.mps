@@ -2,13 +2,13 @@
 <model ref="r:707b7eb5-6dae-4291-ab4d-8d1bac7cbc86(jetbrains.mps.build.mps.tests.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
-    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="0" />
-    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="5" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
+    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -668,6 +668,16 @@
                 </node>
                 <node concept="2pNNFK" id="6u4p9jnZetp" role="3o6s8t">
                   <property role="2pNNFO" value="fileset" />
+                  <node concept="2pNNFK" id="4DmI4ODzfcP" role="3o6s8t">
+                    <property role="2pNNFO" value="patternset" />
+                    <property role="qg3DV" value="true" />
+                    <node concept="2pNUuL" id="4DmI4ODzfxL" role="2pNNFR">
+                      <property role="2pNUuO" value="refid" />
+                      <node concept="2pMdtt" id="4DmI4ODzfxM" role="2pMdts">
+                        <property role="2pMdty" value="plugin.deployed.jars" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="1WS0z7" id="6u4p9jo9gma" role="lGtFl">
                     <node concept="3JmXsc" id="6u4p9jo9gmc" role="3Jn$fo">
                       <node concept="3clFbS" id="6u4p9jo9gme" role="2VODD2">
@@ -781,16 +791,6 @@
                             </node>
                           </node>
                         </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="2pNNFK" id="4DmI4ODzfcP" role="3o6s8t">
-                    <property role="2pNNFO" value="patternset" />
-                    <property role="qg3DV" value="true" />
-                    <node concept="2pNUuL" id="4DmI4ODzfxL" role="2pNNFR">
-                      <property role="2pNUuO" value="refid" />
-                      <node concept="2pMdtt" id="4DmI4ODzfxM" role="2pMdts">
-                        <property role="2pMdty" value="plugin.deployed.jars" />
                       </node>
                     </node>
                   </node>
@@ -1237,6 +1237,22 @@
                   </node>
                 </node>
                 <node concept="3o6iSG" id="6u4p9jnVOJO" role="3o6s8t" />
+                <node concept="2pNNFK" id="6Jk_680DZLE" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="env" />
+                  <node concept="2pNUuL" id="6Jk_680DZLF" role="2pNNFR">
+                    <property role="2pNUuO" value="key" />
+                    <node concept="2pMdtt" id="6Jk_680DZLG" role="2pMdts">
+                      <property role="2pMdty" value="NO_FS_ROOTS_ACCESS_CHECK" />
+                    </node>
+                  </node>
+                  <node concept="2pNUuL" id="6Jk_680DZLH" role="2pNNFR">
+                    <property role="2pNUuO" value="value" />
+                    <node concept="2pMdtt" id="6Jk_680DZLI" role="2pMdts">
+                      <property role="2pMdty" value="true" />
+                    </node>
+                  </node>
+                </node>
                 <node concept="2pNNFK" id="6u4p9joaOrP" role="3o6s8t">
                   <property role="qg3DV" value="true" />
                   <property role="2pNNFO" value="sysproperty" />
@@ -1285,6 +1301,7 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3o6iSG" id="6Jk_680E_wA" role="3o6s8t" />
                 <node concept="2pNNFK" id="8knae4_ekT" role="3o6s8t">
                   <property role="2pNNFO" value="sysproperty" />
                   <property role="qg3DV" value="true" />
