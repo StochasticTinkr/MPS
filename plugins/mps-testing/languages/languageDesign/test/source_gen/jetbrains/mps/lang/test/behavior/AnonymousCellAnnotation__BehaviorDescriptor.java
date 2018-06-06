@@ -21,13 +21,11 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -51,34 +49,25 @@ public final class AnonymousCellAnnotation__BehaviorDescriptor extends BaseBHDes
   /*package*/ static void setupSelection_id5rZKa_fUiYP(@NotNull SNode __thisNode__, NodeEditorComponent nodeEditorComponent, SNode node, Map<SNode, SNode> map) {
     AnonymousCellAnnotation__BehaviorDescriptor.setupSelection_id5rZKa_fUiYP.invoke(__thisNode__, nodeEditorComponent, node, map);
   }
-  /*package*/ static EditorComponent setupSelection_id5g7DxxpaP55(@NotNull final SNode __thisNode__, final NodeEditorComponent nodeEditorComponent, final SNode node, final Map<SNode, SNode> map) {
-    final Wrappers._T<EditorComponent> editorComponent = new Wrappers._T<EditorComponent>(nodeEditorComponent);
-    final Wrappers._T<EditorCell> cellWithId = new Wrappers._T<EditorCell>();
-    SRepository contextRepository = editorComponent.value.getEditorContext().getRepository();
-    contextRepository.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        if (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1b73330fb1241e01L, "isInInspector"))) {
-          editorComponent.value = AnonymousCellAnnotation__BehaviorDescriptor.setupInspector_id4VoD2D0CSEA.invoke(__thisNode__, node, nodeEditorComponent);
-        }
-        cellWithId.value = editorComponent.value.findCellWithId(node, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e31babe13L, "cellId")));
-        if (cellWithId.value == null) {
-          throw new RuntimeException("No cell " + __thisNode__);
-        }
-        AnonymousCellAnnotation__BehaviorDescriptor.setupCaretAndSelection_id7TYU6fNl1yz.invoke(__thisNode__, cellWithId.value);
-      }
-    });
-    editorComponent.value.changeSelection(cellWithId.value);
-    contextRepository.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        if (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9accL, "nodeRangeSelectionStart")) != null) {
-          SNode selectionStart = MapSequence.fromMap(map).get(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9accL, "nodeRangeSelectionStart")));
-          SNode selectionEnd = MapSequence.fromMap(map).get(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9acdL, "nodeRangeSelectionEnd")));
-          SelectionManager selectionManager = editorComponent.value.getSelectionManager();
-          selectionManager.pushSelection(selectionManager.createRangeSelection(selectionStart, selectionEnd));
-        }
-      }
-    });
-    return editorComponent.value;
+  /*package*/ static EditorComponent setupSelection_id5g7DxxpaP55(@NotNull SNode __thisNode__, NodeEditorComponent nodeEditorComponent, SNode node, Map<SNode, SNode> map) {
+    EditorComponent editorComponent = nodeEditorComponent;
+    EditorCell cellWithId;
+    if (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1b73330fb1241e01L, "isInInspector"))) {
+      editorComponent = AnonymousCellAnnotation__BehaviorDescriptor.setupInspector_id4VoD2D0CSEA.invoke(__thisNode__, node, nodeEditorComponent);
+    }
+    cellWithId = editorComponent.findCellWithId(node, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e31babe13L, "cellId")));
+    if (cellWithId == null) {
+      throw new RuntimeException(String.format("No cell with id %s found in %s", SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e31babe13L, "cellId")), SNodeOperations.getParent(__thisNode__)));
+    }
+    AnonymousCellAnnotation__BehaviorDescriptor.setupCaretAndSelection_id7TYU6fNl1yz.invoke(__thisNode__, cellWithId);
+    editorComponent.changeSelection(cellWithId);
+    if (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9accL, "nodeRangeSelectionStart")) != null) {
+      SNode selectionStart = MapSequence.fromMap(map).get(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9accL, "nodeRangeSelectionStart")));
+      SNode selectionEnd = MapSequence.fromMap(map).get(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9acdL, "nodeRangeSelectionEnd")));
+      SelectionManager selectionManager = editorComponent.getSelectionManager();
+      selectionManager.pushSelection(selectionManager.createRangeSelection(selectionStart, selectionEnd));
+    }
+    return editorComponent;
   }
   /*package*/ static int getCaretPosition_id5rZKa_fUlry(@NotNull SNode __thisNode__, EditorCell_Label label) {
     if (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e3fde6f41L, "isLastPosition"))) {
