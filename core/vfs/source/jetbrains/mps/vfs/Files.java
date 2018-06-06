@@ -15,15 +15,10 @@
  */
 package jetbrains.mps.vfs;
 
-import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.StringJoiner;
 
 /**
  * Shorthand for {@link IFile} management.
@@ -32,16 +27,6 @@ import java.util.StringJoiner;
  */
 public final class Files {
   private Files() {}
-
-  @NotNull
-  public static IFile getFile(@NotNull String mainPart, @NotNull String... parts) {
-    StringJoiner joiner = new StringJoiner(Path.UNIX_SEPARATOR);
-    joiner.add(mainPart);
-    for (String part : parts) {
-      joiner.add(part);
-    }
-    return FileSystemExtPoint.getFS().getFile(joiner.toString());
-  }
 
   /**
    * Usually when one calls URL#getPath he expects the result to be without scheme.
@@ -61,12 +46,22 @@ public final class Files {
           if (path.startsWith("file:")) {
             URL hackUrl = new URL(path);
             String authority = hackUrl.getAuthority();
-            path = (authority != null ? authority : "") + hackUrl.getPath();
+            String realPath = hackUrl.getPath();
+
+            //this is a fix for MPS-28009
+            //to get more clear code, we could use our own "path" objects instead of generic
+            //URL objects in model factories code.
+            if (System.getProperty("os.name").startsWith("windows")) {
+              while (realPath.startsWith("/")) {
+                realPath = realPath.substring(1);
+              }
+            }
+            path = (authority != null ? authority : "") + realPath;
           }
-          return getFile(path);
+          return FileSystemExtPoint.getFS().getFile(path);
         }
       }
-      return getFile(path);
+      return FileSystemExtPoint.getFS().getFile(path);
     } catch (MalformedURLException e) {
       throw new RuntimeException(e);
     }
