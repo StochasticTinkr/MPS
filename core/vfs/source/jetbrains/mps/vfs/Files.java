@@ -27,44 +27,35 @@ import java.util.Locale;
  * @author apyshkin
  */
 public final class Files {
-  private Files() {}
+  private Files() {
+  }
 
   /**
    * Usually when one calls URL#getPath he expects the result to be without scheme.
    * However in the case of the 'jar' scheme it is not true (nicely done, JDK!)
    * Hence the hack to resolve 'jar:file://a.jar!/a.txt' like URI is to resolve two times.
-   *
+   * <p>
    * see <code>jetbrains.mps.workbench.index.RootNodeNameIndex</code> for a long and boring explanation
-   *
+   * <p>
    * fixme it is better to parse on our own [apyshkin]
    */
   @NotNull
   public static IFile fromURL(@NotNull URL url) {
-    try {
-      String path = url.getPath();
-      if (!path.startsWith("/")) { //strangely not absolute
-        if ("jar".equals(url.getProtocol())) {
-          if (path.startsWith("file:")) {
-            URL hackUrl = new URL(path);
-            String authority = hackUrl.getAuthority();
-            String realPath = hackUrl.getPath();
+    String path = url.getPath();
+    if (!path.startsWith("/")) { //strangely not absolute
+      if ("jar".equals(url.getProtocol())) {
+        if (path.startsWith("file:")) {
+          path = path.substring(7); // skip "file://"
 
-            //this is a fix for MPS-28009
-            //to get more clear code, we could use our own "path" objects instead of generic
-            //URL objects in model factories code.
-            if (System.getProperty("os.name").toLowerCase(Locale.US).startsWith("windows")) {
-              while (realPath.startsWith("/")) {
-                realPath = realPath.substring(1);
-              }
-            }
-            path = (authority != null ? authority : "") + realPath;
+          //this is a fix for MPS-28009
+          //to get more clear code, we could use our own "path" objects instead of generic
+          //URL objects in model factories code.
+          if (System.getProperty("os.name").toLowerCase(Locale.US).startsWith("windows") && path.startsWith("/")) {
+            path = path.substring(1);
           }
-          return FileSystemExtPoint.getFS().getFile(path);
         }
       }
-      return FileSystemExtPoint.getFS().getFile(path);
-    } catch (MalformedURLException e) {
-      throw new RuntimeException(e);
     }
+    return FileSystemExtPoint.getFS().getFile(path);
   }
 }
