@@ -1464,6 +1464,11 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="3SKdUt" id="HEtnEwqPdr" role="3cqZAp">
+                        <node concept="3SKdUq" id="HEtnEwqPdt" role="3SKWNk">
+                          <property role="3SKdUp" value="IMPORTANT: line+1 because the line parameter means &quot;line, starting with 0&quot;, while in debug info it starts from 1" />
+                        </node>
+                      </node>
                       <node concept="3cpWs8" id="5mG9UR45GmY" role="3cqZAp">
                         <node concept="3cpWsn" id="5mG9UR45GmZ" role="3cpWs9">
                           <property role="TrG5h" value="np" />
@@ -1478,8 +1483,13 @@
                             <node concept="37vLTw" id="1f31DUOVqZC" role="37wK5m">
                               <ref role="3cqZAo" node="1f31DUOVqZy" resolve="fileName" />
                             </node>
-                            <node concept="37vLTw" id="5mG9UR45Gn3" role="37wK5m">
-                              <ref role="3cqZAo" node="5mG9UR3UMas" resolve="line" />
+                            <node concept="3cpWs3" id="HEtnEwqM3z" role="37wK5m">
+                              <node concept="3cmrfG" id="HEtnEwqMjS" role="3uHU7w">
+                                <property role="3cmrfH" value="1" />
+                              </node>
+                              <node concept="37vLTw" id="5mG9UR45Gn3" role="3uHU7B">
+                                <ref role="3cqZAo" node="5mG9UR3UMas" resolve="line" />
+                              </node>
                             </node>
                           </node>
                         </node>

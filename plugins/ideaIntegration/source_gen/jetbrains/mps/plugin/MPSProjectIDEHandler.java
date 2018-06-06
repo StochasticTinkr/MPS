@@ -160,7 +160,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
             }
             continue;
           }
-          SNodePointer np = getBestNodeForPosition(di, fileName, line);
+          // IMPORTANT: line+1 because the line parameter means "line, starting with 0", while in debug info it starts from 1 
+          SNodePointer np = getBestNodeForPosition(di, fileName, line + 1);
           bestNode = np.resolve(mpsProject.getRepository());
           if (bestNode != null) {
             break;
