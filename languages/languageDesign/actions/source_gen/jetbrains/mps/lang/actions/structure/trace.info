@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,274,0" name="jetbrains.mps.lang.actions.structure.ConceptPresentationAspectImpl" />
@@ -12,6 +21,120 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <unit at="16,0,412,0" name="jetbrains.mps.lang.actions.structure.StructureAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)/1215604970641">
+    <file name="Side.java">
+      <node id="1215604970641" at="14,0,15,0" concept="2" trace="myName" />
+      <node id="1215604970641" at="15,27,16,18" concept="6" />
+      <node id="1215604970641" at="18,0,19,0" concept="2" trace="myValue" />
+      <node id="1215604970641" at="19,43,20,18" concept="1" />
+      <node id="1215604970641" at="20,18,21,20" concept="1" />
+      <node id="1215604970641" at="23,28,24,19" concept="6" />
+      <node id="1215604970641" at="26,36,27,19" concept="6" />
+      <node id="1215604970641" at="29,43,30,68" concept="5" />
+      <node id="1215604970641" at="30,68,31,55" concept="1" />
+      <node id="1215604970641" at="31,55,32,54" concept="1" />
+      <node id="1215604970641" at="32,54,33,60" concept="1" />
+      <node id="1215604970641" at="33,60,34,16" concept="6" />
+      <node id="1215604970641" at="36,35,37,22" concept="6" />
+      <node id="1215604970641" at="40,24,41,31" concept="6" />
+      <node id="1215604970641" at="43,54,44,24" concept="6" />
+      <node id="1215604970641" at="46,53,47,23" concept="6" />
+      <node id="1215604970641" at="49,59,50,29" concept="6" />
+      <node id="1215604970641" at="51,5,52,29" concept="6" />
+      <node id="1215604970641" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="1215604970641" at="23,0,26,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="1215604970641" at="26,0,29,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="1215604970641" at="36,0,39,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/actions/structure/Side;" />
+      <node id="1215604970641" at="39,47,42,5" concept="3" />
+      <node id="1215604970641" at="42,5,45,5" concept="3" />
+      <node id="1215604970641" at="45,5,48,5" concept="3" />
+      <node id="1215604970641" at="48,5,51,5" concept="3" />
+      <node id="1215604970641" at="19,0,23,0" concept="0" trace="Side#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="1215604970641" at="29,0,36,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="1215604970641" at="39,0,54,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/actions/structure/Side;" />
+      <scope id="1215604970641" at="15,27,16,18" />
+      <scope id="1215604970641" at="23,28,24,19" />
+      <scope id="1215604970641" at="26,36,27,19" />
+      <scope id="1215604970641" at="36,35,37,22" />
+      <scope id="1215604970641" at="40,24,41,31" />
+      <scope id="1215604970641" at="43,54,44,24" />
+      <scope id="1215604970641" at="46,53,47,23" />
+      <scope id="1215604970641" at="49,59,50,29" />
+      <scope id="1215604970641" at="19,43,21,20" />
+      <scope id="1215604970641" at="15,0,18,0" />
+      <scope id="1215604970641" at="23,0,26,0" />
+      <scope id="1215604970641" at="26,0,29,0" />
+      <scope id="1215604970641" at="36,0,39,0" />
+      <scope id="1215604970641" at="19,0,23,0">
+        <var name="name" id="1215604970641" />
+        <var name="value" id="1215604970641" />
+      </scope>
+      <scope id="1215604970641" at="29,43,34,16">
+        <var name="list" id="1215604970641" />
+      </scope>
+      <scope id="1215604970641" at="29,0,36,0" />
+      <scope id="1215604970641" at="39,47,52,29" />
+      <scope id="1215604970641" at="39,0,54,0">
+        <var name="value" id="1215604970641" />
+      </scope>
+      <unit id="1215604970641" at="9,0,55,0" name="jetbrains.mps.lang.actions.structure.Side" />
+    </file>
+    <file name="Side_PropertySupport.java">
+      <node id="1215604970641" at="11,24,12,18" concept="6" />
+      <node id="1215604970641" at="13,5,14,85" concept="5" />
+      <node id="1215604970641" at="15,33,16,39" concept="5" />
+      <node id="1215604970641" at="17,45,18,20" concept="6" />
+      <node id="1215604970641" at="20,5,21,17" concept="6" />
+      <node id="1215604970641" at="24,24,25,18" concept="6" />
+      <node id="1215604970641" at="26,5,27,85" concept="5" />
+      <node id="1215604970641" at="28,33,29,39" concept="5" />
+      <node id="1215604970641" at="30,45,31,43" concept="6" />
+      <node id="1215604970641" at="33,5,34,16" concept="6" />
+      <node id="1215604970641" at="36,49,37,43" concept="5" />
+      <node id="1215604970641" at="38,27,39,32" concept="6" />
+      <node id="1215604970641" at="40,5,41,14" concept="6" />
+      <node id="1215604970641" at="10,44,13,5" concept="3" />
+      <node id="1215604970641" at="16,39,19,7" concept="3" />
+      <node id="1215604970641" at="23,47,26,5" concept="3" />
+      <node id="1215604970641" at="29,39,32,7" concept="3" />
+      <node id="1215604970641" at="37,43,40,5" concept="3" />
+      <node id="1215604970641" at="14,85,20,5" concept="8" />
+      <node id="1215604970641" at="27,85,33,5" concept="8" />
+      <node id="1215604970641" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1215604970641" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="1215604970641" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="1215604970641" at="11,24,12,18" />
+      <scope id="1215604970641" at="17,45,18,20" />
+      <scope id="1215604970641" at="24,24,25,18" />
+      <scope id="1215604970641" at="30,45,31,43" />
+      <scope id="1215604970641" at="38,27,39,32" />
+      <scope id="1215604970641" at="15,33,19,7">
+        <var name="constant" id="1215604970641" />
+      </scope>
+      <scope id="1215604970641" at="28,33,32,7">
+        <var name="constant" id="1215604970641" />
+      </scope>
+      <scope id="1215604970641" at="36,49,41,14">
+        <var name="constant" id="1215604970641" />
+      </scope>
+      <scope id="1215604970641" at="36,0,43,0">
+        <var name="value" id="1215604970641" />
+      </scope>
+      <scope id="1215604970641" at="10,44,21,17">
+        <var name="constants" id="1215604970641" />
+      </scope>
+      <scope id="1215604970641" at="23,47,34,16">
+        <var name="constants" id="1215604970641" />
+      </scope>
+      <scope id="1215604970641" at="10,0,23,0">
+        <var name="value" id="1215604970641" />
+      </scope>
+      <scope id="1215604970641" at="23,0,36,0">
+        <var name="value" id="1215604970641" />
+      </scope>
+      <unit id="1215604970641" at="9,0,44,0" name="jetbrains.mps.lang.actions.structure.Side_PropertySupport" />
     </file>
   </root>
 </debug-info>

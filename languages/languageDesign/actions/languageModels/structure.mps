@@ -17,12 +17,23 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
+      </concept>
+      <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
+        <reference id="1083171729157" name="memberDataType" index="M4eZT" />
+        <child id="1083172003582" name="member" index="M5hS2" />
+      </concept>
+      <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
+        <property id="1083923523172" name="externalValue" index="1uS6qo" />
+        <property id="1083923523171" name="internalValue" index="1uS6qv" />
       </concept>
       <concept id="2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" flags="ng" index="M6xJ_">
         <property id="7588428831955550663" name="role" index="Hh88m" />
@@ -528,6 +539,25 @@
     <property role="3GE5qa" value="migration" />
     <property role="TrG5h" value="ICouldBeAnnotatedWithMigrateManually" />
     <node concept="asaX9" id="6asH6F_AOyK" role="lGtFl" />
+  </node>
+  <node concept="AxPO7" id="hG7GXih">
+    <property role="TrG5h" value="Side" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="asaX9" id="5GuVNMLxmI_" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use TransformationLocation_SideTransform in the editor aspect" />
+    </node>
+    <node concept="M4N5e" id="hG7GXii" role="M5hS2">
+      <property role="1uS6qo" value="right" />
+    </node>
+    <node concept="M4N5e" id="hG7Hapr" role="M5hS2">
+      <property role="1uS6qv" value="left" />
+      <property role="1uS6qo" value="left" />
+    </node>
+    <node concept="M4N5e" id="38nmGbCPLik" role="M5hS2">
+      <property role="1uS6qv" value="both" />
+      <property role="1uS6qo" value="both sides" />
+    </node>
   </node>
 </model>
 
