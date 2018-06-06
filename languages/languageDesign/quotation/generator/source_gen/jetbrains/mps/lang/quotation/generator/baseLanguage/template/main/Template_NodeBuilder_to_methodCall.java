@@ -236,7 +236,7 @@ public class Template_NodeBuilder_to_methodCall extends TemplateDeclarationBase 
           TemplateContext context11 = context1.subContext();
           {
             final List<SNode> tlist25 = new ArrayList<SNode>();
-            final Iterable<SNode> loopList25 = QueriesGenerated.sourceNodesQuery_a0a0a(new SourceSubstituteMacroNodesContext(context11, loopMacroRef_synbg_b0a0a1a2a1a2a2a5));
+            final Iterable<SNode> loopList25 = QueriesGenerated.sourceNodesQuery_a0a0a_1(new SourceSubstituteMacroNodesContext(context11, loopMacroRef_synbg_b0a0a1a2a1a2a2a5));
             for (SNode itnode25 : loopList25) {
               if (itnode25 == null) {
                 continue;

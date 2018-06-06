@@ -74,7 +74,7 @@ public class Template_reduce_GetAncestor_whereConceptInList_SameML extends Templ
               }
               {
                 final List<SNode> tlist7 = new ArrayList<SNode>();
-                final Iterable<SNode> loopList7 = QueriesGenerated.sourceNodesQuery_a0a0b0_0(new SourceSubstituteMacroNodesContext(context3, loopMacroRef_nv63xn_b0a0a1a2a1a1a1a4a2a5));
+                final Iterable<SNode> loopList7 = QueriesGenerated.sourceNodesQuery_a0a0b0_2(new SourceSubstituteMacroNodesContext(context3, loopMacroRef_nv63xn_b0a0a1a2a1a1a1a4a2a5));
                 for (SNode itnode7 : loopList7) {
                   if (itnode7 == null) {
                     continue;

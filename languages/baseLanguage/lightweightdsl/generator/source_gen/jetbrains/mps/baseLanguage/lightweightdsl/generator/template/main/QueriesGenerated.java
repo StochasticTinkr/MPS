@@ -10,8 +10,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DependentTypeDescriptor__BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.ParameterDescriptor__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor__BehaviorDescriptor;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -54,11 +54,11 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object propertyMacro_GetPropertyValue_37511320652369197680(final PropertyMacroContext _context) {
     return (String) DependentTypeDescriptor__BehaviorDescriptor.getGeneratedMethodName_id2dmnr4$zcCR.invoke(_context.getNode());
   }
-  public static Object propertyMacro_GetPropertyValue_37511320652369197670(final PropertyMacroContext _context) {
-    return (String) DSLDescriptor__BehaviorDescriptor.getGeneratedClassName_id2VRROcY7Vt6.invoke(_context.getNode());
-  }
   public static Object propertyMacro_GetPropertyValue_88803930402174916800(final PropertyMacroContext _context) {
     return (String) ParameterDescriptor__BehaviorDescriptor.getGeneratedMethodName_id7GXvAHO1heb.invoke(_context.getNode());
+  }
+  public static Object propertyMacro_GetPropertyValue_37511320652369197670(final PropertyMacroContext _context) {
+    return (String) DSLDescriptor__BehaviorDescriptor.getGeneratedClassName_id2VRROcY7Vt6.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_36827913168380606060(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));

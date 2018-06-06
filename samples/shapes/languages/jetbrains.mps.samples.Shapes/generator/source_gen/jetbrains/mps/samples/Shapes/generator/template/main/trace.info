@@ -11,11 +11,11 @@
   </root>
   <root nodeRef="r:7167ea39-4474-4333-92a9-38da0777e4f4(jetbrains.mps.samples.Shapes.generator.template.main@generator)/5898776707557581754">
     <file name="QueriesGenerated.java">
-      <node id="5898776707557583118" at="34,113,35,175" concept="0" />
-      <node id="5898776707557737096" at="37,113,38,175" concept="0" />
+      <node id="5898776707557737096" at="34,113,35,175" concept="0" />
+      <node id="5898776707557583118" at="37,113,38,175" concept="0" />
       <node id="5898776707557819865" at="70,110,71,192" concept="0" />
-      <scope id="5898776707557582397" at="34,113,35,175" />
-      <scope id="5898776707557736280" at="37,113,38,175" />
+      <scope id="5898776707557736280" at="34,113,35,175" />
+      <scope id="5898776707557582397" at="37,113,38,175" />
       <scope id="5898776707557819859" at="70,110,71,192" />
     </file>
   </root>

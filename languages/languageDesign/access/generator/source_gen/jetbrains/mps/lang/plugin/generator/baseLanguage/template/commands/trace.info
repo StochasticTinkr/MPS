@@ -70,16 +70,16 @@
   </root>
   <root nodeRef="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)/1225441503956">
     <file name="QueriesGenerated.java">
-      <node id="1225441503970" at="95,103,96,205" concept="0" />
-      <scope id="1225441503969" at="95,103,96,205" />
+      <node id="1225441503970" at="89,103,90,205" concept="0" />
+      <scope id="1225441503969" at="89,103,90,205" />
     </file>
   </root>
   <root nodeRef="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)/5332677359380594915">
     <file name="QueriesGenerated.java">
-      <node id="3353862535916068548" at="89,109,90,188" concept="0" />
-      <node id="3353862535916067221" at="92,109,93,205" concept="0" />
-      <scope id="3353862535916068542" at="89,109,90,188" />
-      <scope id="3353862535916067220" at="92,109,93,205" />
+      <node id="3353862535916068548" at="92,109,93,188" concept="0" />
+      <node id="3353862535916067221" at="95,109,96,205" concept="0" />
+      <scope id="3353862535916068542" at="92,109,93,188" />
+      <scope id="3353862535916067220" at="95,109,96,205" />
     </file>
   </root>
 </debug-info>

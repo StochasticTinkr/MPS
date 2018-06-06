@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.m
 import jetbrains.mps.lang.pattern.GeneratedMatcher;
 import org.jetbrains.mps.openapi.model.SNode;
 
-/*package*/ class Pattern_x583g4_b0a0a0te extends GeneratedMatcher {
-  public Pattern_x583g4_b0a0a0te(SNode patternNode) {
+/*package*/ class Pattern_x583g4_b0a0a0hc extends GeneratedMatcher {
+  public Pattern_x583g4_b0a0a0hc(SNode patternNode) {
     super(patternNode, false);
 
 

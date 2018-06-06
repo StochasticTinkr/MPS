@@ -63,7 +63,7 @@ public class Mapping_mc_concept_switch extends MapConfigBase implements Template
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_a0_1(new WeavingMappingRuleContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a0_3(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     @NotNull
     @Override

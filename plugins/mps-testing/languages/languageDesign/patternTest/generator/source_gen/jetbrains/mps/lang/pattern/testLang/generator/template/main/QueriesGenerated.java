@@ -5,9 +5,9 @@ package jetbrains.mps.lang.pattern.testLang.generator.template.main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.lang.pattern.testLang.behavior.PatternTest__BehaviorDescriptor;
 import jetbrains.mps.lang.test.generator.template.util.TestsUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.pattern.testLang.behavior.PatternTest__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -35,14 +35,14 @@ public class QueriesGenerated extends QueryProviderBase {
   public QueriesGenerated() {
     super(1);
   }
+  public static Object propertyMacro_GetPropertyValue_8158230703252896360(final PropertyMacroContext _context) {
+    return (String) PatternTest__BehaviorDescriptor.getPatternTestName_idlS$o0er$H8.invoke(_context.getNode());
+  }
   public static Object propertyMacro_GetPropertyValue_6027312813826377280(final PropertyMacroContext _context) {
     return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_6027312813826377380(final PropertyMacroContext _context) {
     return _context.getOriginalInputModel().getReference().toString();
-  }
-  public static Object propertyMacro_GetPropertyValue_8158230703252896360(final PropertyMacroContext _context) {
-    return (String) PatternTest__BehaviorDescriptor.getPatternTestName_idlS$o0er$H8.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_15639142264849037530(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb0eL, 0x78d6da5e3799eb0fL, "variable")), MetaAdapterFactory.getReferenceLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb11L, 0x78d6da5e3799eb12L, "declaration")), MetaAdapterFactory.getProperty(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4793L, 0x108a9cb4794L, "varName"));

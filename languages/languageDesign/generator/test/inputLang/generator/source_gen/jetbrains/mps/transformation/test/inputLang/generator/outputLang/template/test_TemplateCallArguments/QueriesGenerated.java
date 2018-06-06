@@ -6,10 +6,10 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -30,17 +30,17 @@ public class QueriesGenerated {
   public static Object templateArgumentQuery_c0a0a(final TemplateArgumentContext _context) {
     return SNodeOperations.getParent(_context.getNode());
   }
+  public static Object templateArgumentQuery_a0a0c(final TemplateArgumentContext _context) {
+    return String.valueOf(((Integer) _context.getVariable("value")) + SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x118e6cad46aL, 0x44696d5abe089ec8L, "key"))) + ((String) _context.getVariable("text"));
+  }
+  public static Object templateArgumentQuery_a0a(final TemplateArgumentContext _context) {
+    return ((String) _context.getVariable("text")) + "__" + String.valueOf(((Integer) _context.getVariable("value")));
+  }
   public static Object templateArgumentQuery_a1a(final TemplateArgumentContext _context) {
     return ((String) _context.getVariable("text")) + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(((SNode) _context.getVariable("element")));
   }
   public static Object templateArgumentQuery_b1a(final TemplateArgumentContext _context) {
     return ((Integer) _context.getVariable("value")) * 2;
-  }
-  public static Object templateArgumentQuery_a0a(final TemplateArgumentContext _context) {
-    return ((String) _context.getVariable("text")) + "__" + String.valueOf(((Integer) _context.getVariable("value")));
-  }
-  public static Object templateArgumentQuery_a0a0c(final TemplateArgumentContext _context) {
-    return String.valueOf(((Integer) _context.getVariable("value")) + SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x118e6cad46aL, 0x44696d5abe089ec8L, "key"))) + ((String) _context.getVariable("text"));
   }
   public static Iterable<SNode> sourceNodesQuery_a0a(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x11645abf534L, "inputChild"));

@@ -56,7 +56,7 @@ public class Template_Quotation_to_staticMethodCall extends TemplateDeclarationB
           TemplateContext context3 = context2.subContext();
           {
             Collection<SNode> tlist4 = null;
-            final Iterable<SNode> copyListInput4 = QueriesGenerated.sourceNodesQuery_a0a0a_0(new SourceSubstituteMacroNodesContext(context3, copySrcListMacro_6fpfng_b0a0a1a2a1a1a5a5));
+            final Iterable<SNode> copyListInput4 = QueriesGenerated.sourceNodesQuery_a0a0a(new SourceSubstituteMacroNodesContext(context3, copySrcListMacro_6fpfng_b0a0a1a2a1a1a5a5));
             tlist4 = environment.copyNodes(copyListInput4, copySrcListMacro_6fpfng_b0a0a1a2a1a1a5a5, "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396691722", context3);
             for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
               tnode3.addChild(myAggregationLinks[0], child5);
@@ -92,7 +92,7 @@ public class Template_Quotation_to_staticMethodCall extends TemplateDeclarationB
           }
           {
             final List<SNode> tlist9 = new ArrayList<SNode>();
-            final Iterable<SNode> loopList9 = QueriesGenerated.sourceNodesQuery_a0a0a_1(new SourceSubstituteMacroNodesContext(context4, loopMacroRef_6fpfng_b0a0a1a5a1a2a5a5));
+            final Iterable<SNode> loopList9 = QueriesGenerated.sourceNodesQuery_a0a0a_0(new SourceSubstituteMacroNodesContext(context4, loopMacroRef_6fpfng_b0a0a1a5a1a2a5a5));
             for (SNode itnode9 : loopList9) {
               if (itnode9 == null) {
                 continue;

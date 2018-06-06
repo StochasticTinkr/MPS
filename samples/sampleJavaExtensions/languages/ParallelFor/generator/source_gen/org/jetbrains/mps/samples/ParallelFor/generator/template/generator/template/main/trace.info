@@ -24,16 +24,16 @@
   </root>
   <root nodeRef="r:0a0b7fa3-dd15-453f-9320-7d451510a2e7(org.jetbrains.mps.samples.ParallelFor.generator.template.generator.template.main@generator)/7865129668866902787">
     <file name="QueriesGenerated.java">
-      <node id="7865129668867016085" at="48,93,49,312" concept="3" />
-      <scope id="7865129668867016084" at="48,93,49,312" />
+      <node id="7865129668867016085" at="54,95,55,312" concept="3" />
+      <scope id="7865129668867016084" at="54,95,55,312" />
     </file>
   </root>
   <root nodeRef="r:0a0b7fa3-dd15-453f-9320-7d451510a2e7(org.jetbrains.mps.samples.ParallelFor.generator.template.generator.template.main@generator)/8923957828369584138">
     <file name="QueriesGenerated.java">
-      <node id="3130664751519218280" at="51,95,52,385" concept="3" />
-      <node id="4697196167065973044" at="54,93,55,281" concept="3" />
-      <scope id="8923957828369629275" at="51,95,52,385" />
-      <scope id="4697196167065973043" at="54,93,55,281" />
+      <node id="3130664751519218280" at="48,93,49,385" concept="3" />
+      <node id="4697196167065973044" at="51,93,52,281" concept="3" />
+      <scope id="8923957828369629275" at="48,93,49,385" />
+      <scope id="4697196167065973043" at="51,93,52,281" />
     </file>
   </root>
   <root nodeRef="r:0a0b7fa3-dd15-453f-9320-7d451510a2e7(org.jetbrains.mps.samples.ParallelFor.generator.template.generator.template.main@generator)/8923957828369584139">
@@ -43,7 +43,7 @@
       <node id="633195941006898712" at="64,346,65,253" concept="0" />
       <node id="633195941006898729" at="66,5,67,0" concept="4" />
       <node id="633195941006880944" at="67,0,68,341" concept="3" />
-      <node id="7865129668867189308" at="76,110,77,30" concept="3" />
+      <node id="7865129668867189308" at="73,110,74,30" concept="3" />
       <node id="8374756414439004443" at="79,95,80,191" concept="3" />
       <node id="8374756414439004409" at="82,94,83,191" concept="3" />
       <node id="633195941006966362" at="85,95,86,202" concept="3" />
@@ -62,7 +62,7 @@
       <scope id="5337045848190803510" at="57,113,58,52" />
       <scope id="5337045848190803544" at="60,112,61,57" />
       <scope id="633195941006898685" at="64,346,65,253" />
-      <scope id="7865129668867189304" at="76,110,77,30" />
+      <scope id="7865129668867189304" at="73,110,74,30" />
       <scope id="8374756414439004442" at="79,95,80,191" />
       <scope id="8374756414439004407" at="82,94,83,191" />
       <scope id="633195941006966361" at="85,95,86,202" />
@@ -85,8 +85,8 @@
   </root>
   <root nodeRef="r:0a0b7fa3-dd15-453f-9320-7d451510a2e7(org.jetbrains.mps.samples.ParallelFor.generator.template.generator.template.main@generator)/8923957828369629354">
     <file name="QueriesGenerated.java">
-      <node id="7793246093815939791" at="73,110,74,20" concept="3" />
-      <scope id="7793246093815939788" at="73,110,74,20" />
+      <node id="7793246093815939791" at="76,110,77,20" concept="3" />
+      <scope id="7793246093815939788" at="76,110,77,20" />
     </file>
   </root>
 </debug-info>

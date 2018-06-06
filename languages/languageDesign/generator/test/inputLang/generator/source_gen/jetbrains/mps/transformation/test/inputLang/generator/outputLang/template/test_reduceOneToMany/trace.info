@@ -291,7 +291,7 @@
       <node id="3893401255414084744" at="36,64,37,17" concept="9" />
       <node id="3893401255414084744" at="40,61,41,21" concept="9" />
       <node id="3893401255414084744" at="44,29,45,366" concept="12" />
-      <node id="3893401255414084744" at="48,94,49,116" concept="9" />
+      <node id="3893401255414084744" at="48,94,49,114" concept="9" />
       <node id="3893401255414084744" at="52,103,53,80" concept="8" />
       <node id="3893401255414084744" at="53,80,54,82" concept="8" />
       <node id="3893401255414084744" at="54,82,55,20" concept="9" />
@@ -312,7 +312,7 @@
       <scope id="3893401255414084744" at="36,64,37,17" />
       <scope id="3893401255414084744" at="40,61,41,21" />
       <scope id="3893401255414084744" at="44,29,45,366" />
-      <scope id="3893401255414084744" at="48,94,49,116" />
+      <scope id="3893401255414084744" at="48,94,49,114" />
       <scope id="3893401255414084744" at="59,31,60,371" />
       <scope id="3893401255414084744" at="63,94,64,109" />
       <scope id="3893401255414084744" at="30,53,33,104" />
@@ -348,10 +348,10 @@
       <unit id="3893401255414084744" at="26,0,74,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mapping_main" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="3893401255414132236" at="20,95,21,419" concept="9" />
-      <node id="3893401255414131864" at="23,95,24,206" concept="9" />
-      <scope id="3893401255414132235" at="20,95,21,419" />
-      <scope id="3893401255414129778" at="23,95,24,206" />
+      <node id="3893401255414132236" at="17,93,18,419" concept="9" />
+      <node id="3893401255414131864" at="20,95,21,206" concept="9" />
+      <scope id="3893401255414132235" at="17,93,18,419" />
+      <scope id="3893401255414129778" at="20,95,21,206" />
     </file>
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/3893401255414086886">
@@ -615,8 +615,8 @@
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/8371596541809066874">
     <file name="QueriesGenerated.java">
-      <node id="8371596541809066881" at="17,93,18,17" concept="9" />
-      <scope id="8371596541809066880" at="17,93,18,17" />
+      <node id="8371596541809066881" at="23,95,24,17" concept="9" />
+      <scope id="8371596541809066880" at="23,95,24,17" />
     </file>
     <file name="Switch_betterSwitch.java">
       <node id="8371596541809066874" at="26,0,27,0" concept="4" trace="rules" />
@@ -628,7 +628,7 @@
       <node id="8371596541809066874" at="40,55,41,18" concept="9" />
       <node id="8371596541809066874" at="43,125,44,71" concept="3" />
       <node id="8371596541809066874" at="47,29,48,366" concept="12" />
-      <node id="8371596541809066874" at="51,94,52,114" concept="9" />
+      <node id="8371596541809066874" at="51,94,52,116" concept="9" />
       <node id="8371596541809066874" at="55,103,56,80" concept="8" />
       <node id="8371596541809066874" at="56,80,57,82" concept="8" />
       <node id="8371596541809066874" at="57,82,58,20" concept="9" />
@@ -647,7 +647,7 @@
       <scope id="8371596541809066874" at="36,62,37,17" />
       <scope id="8371596541809066874" at="43,125,44,71" />
       <scope id="8371596541809066874" at="47,29,48,366" />
-      <scope id="8371596541809066874" at="51,94,52,114" />
+      <scope id="8371596541809066874" at="51,94,52,116" />
       <scope id="8371596541809066874" at="39,199,41,18">
         <var name="tlist1" id="8371596541809066874" />
       </scope>

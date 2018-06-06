@@ -139,7 +139,7 @@ public class Template_reduce_reflectiveInvokeSuper extends TemplateDeclarationBa
       }
       {
         Collection<SNode> tlist13 = null;
-        tlist13 = new Template_reduce_Parameters().apply(context2, ((SNode) QueriesGenerated.templateArgumentQuery_a0d0a0a_0(new TemplateArgumentContext(context2, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3099391750892236076")))));
+        tlist13 = new Template_reduce_Parameters().apply(context2, ((SNode) QueriesGenerated.templateArgumentQuery_a0d0a0a_1(new TemplateArgumentContext(context2, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3099391750892236076")))));
         for (SNode child14 : TemplateUtil.asNotNull(tlist13)) {
           tnode2.addChild(myAggregationLinks[0], child14);
         }

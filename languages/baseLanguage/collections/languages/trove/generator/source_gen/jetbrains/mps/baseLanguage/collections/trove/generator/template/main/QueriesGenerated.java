@@ -95,10 +95,10 @@ public class QueriesGenerated extends QueryProviderBase {
   public static SNode sourceNodeQuery_54995655298113566470(final SourceSubstituteMacroNodeContext _context) {
     return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
-  public static SNode sourceNodeQuery_54995655298113566550(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_54995655298113566630(final SourceSubstituteMacroNodeContext _context) {
     return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
-  public static SNode sourceNodeQuery_54995655298113566630(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_54995655298113566550(final SourceSubstituteMacroNodeContext _context) {
     return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_54995655298113566710(final SourceSubstituteMacroNodeContext _context) {

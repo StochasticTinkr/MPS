@@ -130,7 +130,7 @@ public class Template_reduce_reflectiveInvokeThis extends TemplateDeclarationBas
       }
       {
         Collection<SNode> tlist12 = null;
-        tlist12 = new Template_reduce_Parameters().apply(context1, ((SNode) QueriesGenerated.templateArgumentQuery_a0d0a0a_1(new TemplateArgumentContext(context1, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3099391750892236517")))));
+        tlist12 = new Template_reduce_Parameters().apply(context1, ((SNode) QueriesGenerated.templateArgumentQuery_a0d0a0a(new TemplateArgumentContext(context1, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3099391750892236517")))));
         for (SNode child13 : TemplateUtil.asNotNull(tlist12)) {
           tnode1.addChild(myAggregationLinks[0], child13);
         }
