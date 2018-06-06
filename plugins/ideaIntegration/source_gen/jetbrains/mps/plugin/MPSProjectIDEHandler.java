@@ -37,12 +37,13 @@ import com.intellij.openapi.ui.MessageType;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.FrameUtil;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.DebugInfoRoot;
 import java.util.Collection;
-import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.awt.Frame;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -182,8 +183,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
   @NotNull
   private SNodePointer getBestNodeForPosition(DebugInfo debugInfo, @NotNull final String fileName, final int line) {
-    // this method was copied from DebugInfo's internals and refactored a bit 
-    PersistenceFacade persFacade = PersistenceFacade.getInstance();
+    List<Pair<TraceablePositionInfo, DebugInfoRoot>> nicePositions = ListSequence.fromList(new ArrayList<Pair<TraceablePositionInfo, DebugInfoRoot>>());
     Iterable<DebugInfoRoot> roots = debugInfo.getRoots();
     for (DebugInfoRoot root : Sequence.fromIterable(roots).where(new IWhereFilter<DebugInfoRoot>() {
       public boolean accept(DebugInfoRoot it) {
@@ -191,9 +191,10 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
       }
     })) {
       Collection<TraceablePositionInfo> positions = root.getPositions();
+      // for each root we get the nearest position that contains the given line 
       TraceablePositionInfo info = CollectionSequence.fromCollection(positions).where(new IWhereFilter<TraceablePositionInfo>() {
         public boolean accept(TraceablePositionInfo it) {
-          return Objects.equals(it.getFileName(), fileName);
+          return it.contains(fileName, line);
         }
       }).sort(new ISelector<TraceablePositionInfo, Integer>() {
         public Integer select(TraceablePositionInfo it) {
@@ -204,12 +205,26 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           return it.getStartLine() <= line;
         }
       });
-      if (info == null) {
-        continue;
+      if (info != null) {
+        ListSequence.fromList(nicePositions).addElement(new Pair(info, root));
       }
-      return new SNodePointer(root.getNodeRef().getModelReference(), persFacade.createNodeId(info.getNodeId()));
     }
-    return new SNodePointer(null);
+    if (ListSequence.fromList(nicePositions).isEmpty()) {
+      return new SNodePointer(null);
+    }
+
+    // now, between all those "best local" positions, we select the global best one  
+    Pair<TraceablePositionInfo, DebugInfoRoot> bestPosition = ListSequence.fromList(nicePositions).sort(new ISelector<Pair<TraceablePositionInfo, DebugInfoRoot>, Integer>() {
+      public Integer select(Pair<TraceablePositionInfo, DebugInfoRoot> it) {
+        return it.o1.getStartLine();
+      }
+    }, true).findLast(new IWhereFilter<Pair<TraceablePositionInfo, DebugInfoRoot>>() {
+      public boolean accept(Pair<TraceablePositionInfo, DebugInfoRoot> it) {
+        return it.o1.getStartLine() <= line;
+      }
+    });
+
+    return new SNodePointer(bestPosition.o2.getNodeRef().getModelReference(), PersistenceFacade.getInstance().createNodeId(bestPosition.o1.getNodeId()));
   }
 
   private Frame getMainFrame() {
