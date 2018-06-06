@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Locale;
 
 /**
  * Shorthand for {@link IFile} management.
@@ -51,7 +52,7 @@ public final class Files {
             //this is a fix for MPS-28009
             //to get more clear code, we could use our own "path" objects instead of generic
             //URL objects in model factories code.
-            if (System.getProperty("os.name").startsWith("windows")) {
+            if (System.getProperty("os.name").toLowerCase(Locale.US).startsWith("windows")) {
               while (realPath.startsWith("/")) {
                 realPath = realPath.substring(1);
               }
