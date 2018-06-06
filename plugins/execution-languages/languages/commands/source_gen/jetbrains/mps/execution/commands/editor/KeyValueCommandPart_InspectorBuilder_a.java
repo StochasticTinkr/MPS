@@ -45,25 +45,25 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_4797dc_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_4797dc_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_4797dc_a_0");
+    editorCell.setCellId("Collection_4797dc_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_4797dc_a0_0());
-    editorCell.addEditorCell(createProperty_4797dc_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_4797dc_a0_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "dash");
-    editorCell.setCellId("Constant_4797dc_a0_0");
+    editorCell.setCellId("Constant_4797dc_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_4797dc_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xc58d43a818a1f7fL, 0x166dfef12711aa49L, "dash");

@@ -45,28 +45,28 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_c52lpr_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_c52lpr_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_c52lpr_a_0");
+    editorCell.setCellId("Collection_c52lpr_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_c52lpr_a0_0());
-    editorCell.addEditorCell(createProperty_c52lpr_b0());
-    editorCell.addEditorCell(createConstant_c52lpr_c0_0());
-    editorCell.addEditorCell(createConstant_c52lpr_d0());
-    editorCell.addEditorCell(createProperty_c52lpr_e0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createConstant_c52lpr_a0_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "model");
-    editorCell.setCellId("Constant_c52lpr_a0_0");
+    editorCell.setCellId("Constant_c52lpr_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_c52lpr_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2980b78b2f03a40bL, 0x2980b78b2f03a437L, "modelId");
@@ -93,19 +93,19 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_c52lpr_c0_0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
-    editorCell.setCellId("Constant_c52lpr_c0_0");
+    editorCell.setCellId("Constant_c52lpr_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_c52lpr_d0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "node");
-    editorCell.setCellId("Constant_c52lpr_d0");
+    editorCell.setCellId("Constant_c52lpr_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_c52lpr_e0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2980b78b2f03a40bL, 0x2980b78b2f03a418L, "nodeId");

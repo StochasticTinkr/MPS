@@ -42,25 +42,25 @@ import jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Initializer_Ac
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_d89sde_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_d89sde_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_d89sde_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
     if (nodeCondition_d89sde_a0a()) {
-      editorCell.addEditorCell(createConstant_d89sde_a0());
+      editorCell.addEditorCell(createConstant_0());
     }
-    editorCell.addEditorCell(createRefNode_d89sde_b0());
-    editorCell.addEditorCell(createComponent_d89sde_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createComponent_0());
     return editorCell;
   }
   private boolean nodeCondition_d89sde_a0a() {
     return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"));
   }
-  private EditorCell createConstant_d89sde_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "final");
     editorCell.setCellId("finalModifier");
     Style style = new StyleImpl();
@@ -70,7 +70,7 @@ import jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Initializer_Ac
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_d89sde_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ParallelLoopVariable_EditorBuilder_a.typeSingleRoleHandler_d89sde_b0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), getEditorContext());
     return provider.createCell();
   }
@@ -125,7 +125,7 @@ import jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Initializer_Ac
       return "<no type>";
     }
   }
-  private EditorCell createComponent_d89sde_c0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");
     LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;

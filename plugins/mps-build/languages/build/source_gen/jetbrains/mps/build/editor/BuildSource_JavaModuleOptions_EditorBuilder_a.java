@@ -52,19 +52,19 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_bvukwp_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_bvukwp_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_bvukwp_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_bvukwp_a0());
-    editorCell.addEditorCell(createRefCell_bvukwp_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefCell_0());
     return editorCell;
   }
-  private EditorCell createConstant_bvukwp_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "apply compiler options");
     editorCell.setCellId("Constant_bvukwp_a0");
     Style style = new StyleImpl();
@@ -73,7 +73,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_bvukwp_b0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1708d207f2178b52L, 0x1708d207f214252bL, "compileOptions");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -121,7 +121,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
     }
 
     /*package*/ EditorCell createCell() {
-      return createReferencePresentation_bvukwp_a0b0();
+      return createReferencePresentation_0();
     }
 
     @NotNull
@@ -130,7 +130,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
       return myNode;
     }
 
-    private EditorCell createReferencePresentation_bvukwp_a0b0() {
+    private EditorCell createReferencePresentation_0() {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, PresentationProviders.PRESENTATION_bvukwp_a0a1a);
       editorCell.setCellId("ReferencePresentation_bvukwp_a0b0");
       return editorCell;

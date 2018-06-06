@@ -55,20 +55,20 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_hezczn_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_hezczn_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_hezczn_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_hezczn_a0());
-    editorCell.addEditorCell(createRefNode_hezczn_b0());
-    editorCell.addEditorCell(createProperty_hezczn_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_hezczn_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "@param");
     editorCell.setCellId("Constant_hezczn_a0");
     Style style = new StyleImpl();
@@ -78,7 +78,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_hezczn_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ParameterBlockDocTag_EditorBuilder_a.parameterSingleRoleHandler_hezczn_b0(myNode, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c905f8aL, 0x5ed0d79d7dbe86ebL, "parameter"), getEditorContext());
     return provider.createCell();
   }
@@ -133,7 +133,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no parameter>";
     }
   }
-  private EditorCell createProperty_hezczn_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c905f8aL, 0x757ba20a4c905f8eL, "text");

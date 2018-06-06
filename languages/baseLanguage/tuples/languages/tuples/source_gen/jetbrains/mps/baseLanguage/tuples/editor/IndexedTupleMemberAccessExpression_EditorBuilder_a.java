@@ -40,21 +40,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_pessfj_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_pessfj_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_pessfj_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_pessfj_a0());
-    editorCell.addEditorCell(createConstant_pessfj_b0());
-    editorCell.addEditorCell(createRefNode_pessfj_c0());
-    editorCell.addEditorCell(createConstant_pessfj_d0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createRefNode_pessfj_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new IndexedTupleMemberAccessExpression_EditorBuilder_a.tupleSingleRoleHandler_pessfj_a0(myNode, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071acfb50L, 0x12071ad5056L, "tuple"), getEditorContext());
     return provider.createCell();
   }
@@ -109,7 +109,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
       return "<no tuple>";
     }
   }
-  private EditorCell createConstant_pessfj_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "[");
     editorCell.setCellId("Constant_pessfj_b0");
     Style style = new StyleImpl();
@@ -118,7 +118,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_pessfj_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new IndexedTupleMemberAccessExpression_EditorBuilder_a.indexSingleRoleHandler_pessfj_c0(myNode, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071acfb50L, 0x12071ae5facL, "index"), getEditorContext());
     return provider.createCell();
   }
@@ -173,7 +173,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
       return "<no index>";
     }
   }
-  private EditorCell createConstant_pessfj_d0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "]");
     editorCell.setCellId("Constant_pessfj_d0");
     Style style = new StyleImpl();

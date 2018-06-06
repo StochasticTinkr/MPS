@@ -29,18 +29,18 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.EditorKeyWordStyleClas
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_j2seuy_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_j2seuy_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_j2seuy_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_j2seuy_a0());
+    editorCell.addEditorCell(createComponent_0());
     return editorCell;
   }
-  private EditorCell createComponent_j2seuy_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor.TransformationMenuPartAlias");
     Style style = new StyleImpl();
     new EditorKeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

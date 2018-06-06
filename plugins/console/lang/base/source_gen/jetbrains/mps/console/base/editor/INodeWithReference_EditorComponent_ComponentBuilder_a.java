@@ -57,24 +57,24 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
   }
 
   /*package*/ EditorCell createCell() {
-    return createAlternation_clzyhh_a();
+    return createAlternation_0();
   }
 
-  private EditorCell createAlternation_clzyhh_a() {
+  private EditorCell createAlternation_0() {
     boolean alternationCondition = true;
     alternationCondition = nodeCondition_clzyhh_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = createRefCell_clzyhh_a0();
+      editorCell = createRefCell_0();
     } else {
-      editorCell = createReadOnlyModelAccessor_clzyhh_a0();
+      editorCell = createReadOnlyModelAccessor_0();
     }
     return editorCell;
   }
   private boolean nodeCondition_clzyhh_a0() {
     return (boolean) IActionHolder__BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(myNode);
   }
-  private EditorCell createRefCell_clzyhh_a0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -122,7 +122,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     }
 
     /*package*/ EditorCell createCell() {
-      return createReferencePresentation_clzyhh_a0a0();
+      return createReferencePresentation_0();
     }
 
     @NotNull
@@ -131,7 +131,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
       return myNode;
     }
 
-    private EditorCell createReferencePresentation_clzyhh_a0a0() {
+    private EditorCell createReferencePresentation_0() {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, PresentationProviders.PRESENTATION_clzyhh_a0a0a);
       editorCell.setCellId("ReferencePresentation_clzyhh_a0a0");
       Style style = new StyleImpl();
@@ -157,7 +157,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
       return PresentationProviders.PRESENTATION_clzyhh_a0a0a;
     }
   }
-  private EditorCell createReadOnlyModelAccessor_clzyhh_a0() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return (String) INodeWithReference__BehaviorDescriptor.getTextWhenBroken_idigjXyuNrou.invoke(myNode);

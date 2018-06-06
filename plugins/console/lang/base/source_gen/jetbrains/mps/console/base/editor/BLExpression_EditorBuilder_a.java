@@ -35,18 +35,18 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_f3ggz9_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_f3ggz9_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_f3ggz9_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_f3ggz9_a0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createRefNode_f3ggz9_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new BLExpression_EditorBuilder_a.expressionSingleRoleHandler_f3ggz9_a0(myNode, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6a40a3596560a9d9L, 0x6a40a3596560aa42L, "expression"), getEditorContext());
     return provider.createCell();
   }

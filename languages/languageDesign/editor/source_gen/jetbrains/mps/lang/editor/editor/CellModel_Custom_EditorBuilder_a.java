@@ -30,10 +30,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_zca0xt_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_zca0xt_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_zca0xt_a");
     editorCell.setBig(true);
@@ -41,22 +41,22 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     Style style = new StyleImpl();
     new rootCellModelStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createComponent_zca0xt_a0());
-    editorCell.addEditorCell(createConstant_zca0xt_b0());
-    editorCell.addEditorCell(createComponent_zca0xt_c0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createComponent_1());
     return editorCell;
   }
-  private EditorCell createComponent_zca0xt_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor._OpenTag");
     return editorCell;
   }
-  private EditorCell createConstant_zca0xt_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "custom cell");
     editorCell.setCellId("Constant_zca0xt_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createComponent_zca0xt_c0() {
+  private EditorCell createComponent_1() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor._CloseTag");
     return editorCell;
   }

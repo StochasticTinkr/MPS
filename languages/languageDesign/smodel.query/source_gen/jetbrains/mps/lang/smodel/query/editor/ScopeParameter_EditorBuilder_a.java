@@ -32,17 +32,17 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createAlternation_pzkiaj_a();
+    return createAlternation_0();
   }
 
-  private EditorCell createAlternation_pzkiaj_a() {
+  private EditorCell createAlternation_0() {
     boolean alternationCondition = true;
     alternationCondition = nodeCondition_pzkiaj_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = createError_pzkiaj_a0();
+      editorCell = createError_0();
     } else {
-      editorCell = createComponent_pzkiaj_a0();
+      editorCell = createComponent_0();
     }
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
@@ -54,12 +54,12 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   private boolean nodeCondition_pzkiaj_a0() {
     return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x20c897bb39bb07a2L, "jetbrains.mps.lang.smodel.query.structure.ScopeParameter"));
   }
-  private EditorCell createError_pzkiaj_a0() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<no scope>");
     editorCell.setCellId("Error_pzkiaj_a0");
     return editorCell;
   }
-  private EditorCell createComponent_pzkiaj_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     style.set(StyleAttributes.AUTO_DELETABLE, true);

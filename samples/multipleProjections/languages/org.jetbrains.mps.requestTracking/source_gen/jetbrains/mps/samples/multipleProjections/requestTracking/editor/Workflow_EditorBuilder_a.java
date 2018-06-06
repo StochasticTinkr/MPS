@@ -59,22 +59,22 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_yhw0dy_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_yhw0dy_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_yhw0dy_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createProperty_yhw0dy_a0());
-    editorCell.addEditorCell(createConstant_yhw0dy_b0());
-    editorCell.addEditorCell(createProperty_yhw0dy_c0());
-    editorCell.addEditorCell(createCollection_yhw0dy_d0());
-    editorCell.addEditorCell(createConstant_yhw0dy_e0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_1());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createProperty_yhw0dy_a0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x8d18a45bac7e4d84L, 0xa53975f1d720b09bL, 0x3301f82dc7d2e4f6L, 0x3301f82dc7d4ec4cL, "presentation");
@@ -101,13 +101,13 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_yhw0dy_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "workflow");
     editorCell.setCellId("Constant_yhw0dy_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_yhw0dy_c0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -137,13 +137,13 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createCollection_yhw0dy_d0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_yhw0dy_d0");
     try {
       getCellFactory().pushCellContext();
       getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_yhw0dy_a3a()).toGenericArray(String.class));
-      editorCell.addEditorCell(createRefNode_yhw0dy_a3a());
+      editorCell.addEditorCell(createRefNode_0());
       setInnerCellsContext(editorCell);
     } finally {
       getCellFactory().popCellContext();
@@ -153,7 +153,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   private Iterable<String> getEditorHints_yhw0dy_a3a() {
     return (SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x8d18a45bac7e4d84L, 0xa53975f1d720b09bL, 0x3301f82dc7d2e4f6L, 0x3301f82dc7d4ec4cL, "presentation"), "tabular", "structural") ? ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular") : Collections.<String>emptyList());
   }
-  private EditorCell createRefNode_yhw0dy_a3a() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new Workflow_EditorBuilder_a.stateMachineSingleRoleHandler_yhw0dy_a3a(myNode, MetaAdapterFactory.getContainmentLink(0x8d18a45bac7e4d84L, 0xa53975f1d720b09bL, 0x3301f82dc7d2e4f6L, 0x3301f82dc7d2e50fL, "stateMachine"), getEditorContext());
     return provider.createCell();
   }
@@ -211,7 +211,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no stateMachine>";
     }
   }
-  private EditorCell createConstant_yhw0dy_e0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_yhw0dy_e0");
     editorCell.setDefaultText("");

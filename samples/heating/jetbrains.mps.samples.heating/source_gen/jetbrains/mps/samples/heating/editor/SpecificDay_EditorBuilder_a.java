@@ -58,19 +58,19 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_g4jrcx_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_g4jrcx_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_g4jrcx_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_g4jrcx_a0());
-    editorCell.addEditorCell(createProperty_g4jrcx_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_g4jrcx_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "on");
     editorCell.setCellId("Constant_g4jrcx_a0");
     editorCell.setDefaultText("");
@@ -88,7 +88,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "Applicability" + ")", new SNodePointer("r:4b82218b-d47e-4120-8b44-e2530c2efcf5(jetbrains.mps.samples.heating.editor)", "4001397103658746243"));
     }
   }
-  private EditorCell createProperty_g4jrcx_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e6b4ea6L, 0x40bcae6c0e6b4ea7L, "day");

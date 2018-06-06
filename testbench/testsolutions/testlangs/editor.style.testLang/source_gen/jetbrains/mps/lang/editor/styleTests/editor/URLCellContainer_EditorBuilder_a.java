@@ -49,34 +49,34 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_4mbnlq_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_4mbnlq_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_4mbnlq_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_4mbnlq_a0());
-    editorCell.addEditorCell(createConstant_4mbnlq_b0());
-    editorCell.addEditorCell(createProperty_4mbnlq_c0());
-    editorCell.addEditorCell(createConstant_4mbnlq_d0());
-    editorCell.addEditorCell(createConstant_4mbnlq_e0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createConstant_3());
     return editorCell;
   }
-  private EditorCell createConstant_4mbnlq_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "URL Cell Container");
     editorCell.setCellId("Constant_4mbnlq_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_4mbnlq_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "custom url:");
     editorCell.setCellId("Constant_4mbnlq_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_4mbnlq_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x692a1b3ce85cd977L, 0x2349ec7bddecf3dbL, "customUrl");
@@ -106,7 +106,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_4mbnlq_d0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "cell with simple URL");
     editorCell.setCellId("Constant_4mbnlq_d0");
     Style style = new StyleImpl();
@@ -117,7 +117,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_4mbnlq_e0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "cell with function URL");
     editorCell.setCellId("Constant_4mbnlq_e0");
     Style style = new StyleImpl();

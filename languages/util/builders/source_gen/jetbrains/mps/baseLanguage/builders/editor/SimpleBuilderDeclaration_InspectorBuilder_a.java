@@ -48,37 +48,37 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ths2vx_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ths2vx_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_ths2vx_a_0");
+    editorCell.setCellId("Collection_ths2vx_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_ths2vx_a0_0());
-    editorCell.addEditorCell(createConstant_ths2vx_b0_0());
-    editorCell.addEditorCell(createProperty_ths2vx_c0());
-    editorCell.addEditorCell(createConstant_ths2vx_d0_0());
-    editorCell.addEditorCell(createConstant_ths2vx_e0());
-    editorCell.addEditorCell(createProperty_ths2vx_f0());
-    editorCell.addEditorCell(createConstant_ths2vx_g0());
-    editorCell.addEditorCell(createProperty_ths2vx_h0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createProperty_1());
+    editorCell.addEditorCell(createConstant_4());
+    editorCell.addEditorCell(createProperty_2());
     return editorCell;
   }
-  private EditorCell createConstant_ths2vx_a0_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "root");
-    editorCell.setCellId("Constant_ths2vx_a0_0");
+    editorCell.setCellId("Constant_ths2vx_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_ths2vx_b0_0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
-    editorCell.setCellId("Constant_ths2vx_b0_0");
+    editorCell.setCellId("Constant_ths2vx_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_ths2vx_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, 0x6524536b2e1bddd7L, "root");
@@ -108,19 +108,19 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_ths2vx_d0_0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "leaf");
-    editorCell.setCellId("Constant_ths2vx_d0_0");
+    editorCell.setCellId("Constant_ths2vx_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_ths2vx_e0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
-    editorCell.setCellId("Constant_ths2vx_e0");
+    editorCell.setCellId("Constant_ths2vx_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_ths2vx_f0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, 0x6524536b2e29deeaL, "leaf");
@@ -150,13 +150,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_ths2vx_g0() {
+  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "abstract");
-    editorCell.setCellId("Constant_ths2vx_g0");
+    editorCell.setCellId("Constant_ths2vx_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_ths2vx_h0() {
+  private EditorCell createProperty_2() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, 0x34f5c07463deaa83L, "isAbstract");

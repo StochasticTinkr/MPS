@@ -64,19 +64,19 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_2ot4tw_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_2ot4tw_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_2ot4tw_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_2ot4tw_a0());
-    editorCell.addEditorCell(createRefCell_2ot4tw_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefCell_0());
     return editorCell;
   }
-  private EditorCell createComponent_2ot4tw_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new outputLayoutStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -96,7 +96,7 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "BuildLayout_Node" + ")", new SNodePointer("r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)", "2886182022232400739"));
     }
   }
-  private EditorCell createRefCell_2ot4tw_b0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x23f6fd361bdcfd24L, 0x23f6fd361bdcfd26L, "module");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -144,7 +144,7 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_2ot4tw_a0b0();
+      return createProperty_0();
     }
 
     @NotNull
@@ -153,7 +153,7 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
       return myNode;
     }
 
-    private EditorCell createProperty_2ot4tw_a0b0() {
+    private EditorCell createProperty_0() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");

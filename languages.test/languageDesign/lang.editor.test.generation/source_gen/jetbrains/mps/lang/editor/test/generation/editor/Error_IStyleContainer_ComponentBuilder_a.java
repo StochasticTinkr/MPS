@@ -46,17 +46,17 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_47wt8x_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_47wt8x_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_47wt8x_a");
-    editorCell.addEditorCell(createError_47wt8x_a0());
-    editorCell.addEditorCell(createCollection_47wt8x_b0());
+    editorCell.addEditorCell(createError_0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createError_47wt8x_a0() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "");
     editorCell.setCellId("Error_47wt8x_a0");
     Style style = new StyleImpl();
@@ -306,16 +306,16 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private EditorCell createCollection_47wt8x_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Superscript());
     editorCell.setCellId("Collection_47wt8x_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createError_47wt8x_a1a());
+    editorCell.addEditorCell(createError_1());
     return editorCell;
   }
-  private EditorCell createError_47wt8x_a1a() {
+  private EditorCell createError_1() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "");
     editorCell.setCellId("Error_47wt8x_a1a");
     Style style = new StyleImpl();

@@ -45,25 +45,25 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_vbxoaj_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_vbxoaj_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_vbxoaj_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_vbxoaj_a0());
+    editorCell.addEditorCell(createComponent_0());
     if (SNodeAccessUtil.hasProperty(myNode, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4e2db2c9f6d76026L, 0x4e2db2c9f6d76027L, "value"))) {
-      editorCell.addEditorCell(createNonEmptyProperty_vbxoaj_b0());
+      editorCell.addEditorCell(createNonEmptyProperty_0());
     }
     return editorCell;
   }
-  private EditorCell createComponent_vbxoaj_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
-  private EditorCell createNonEmptyProperty_vbxoaj_b0() {
+  private EditorCell createNonEmptyProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4e2db2c9f6d76026L, 0x4e2db2c9f6d76027L, "value");

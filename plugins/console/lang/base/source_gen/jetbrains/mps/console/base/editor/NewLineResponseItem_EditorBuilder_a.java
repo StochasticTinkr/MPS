@@ -28,10 +28,10 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_e0ktqa_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_e0ktqa_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_e0ktqa_a");
     editorCell.setBig(true);

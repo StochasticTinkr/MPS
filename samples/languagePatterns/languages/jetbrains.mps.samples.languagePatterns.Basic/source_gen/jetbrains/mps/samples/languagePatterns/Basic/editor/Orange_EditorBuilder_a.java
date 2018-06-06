@@ -45,33 +45,33 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_5tsg9b_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_5tsg9b_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_5tsg9b_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_5tsg9b_a0());
-    editorCell.addEditorCell(createConstant_5tsg9b_b0());
-    editorCell.addEditorCell(createProperty_5tsg9b_c0());
-    editorCell.addEditorCell(createComponent_5tsg9b_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createComponent_0());
     return editorCell;
   }
-  private EditorCell createConstant_5tsg9b_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Orange");
     editorCell.setCellId("Constant_5tsg9b_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_5tsg9b_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "taste:");
     editorCell.setCellId("Constant_5tsg9b_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_5tsg9b_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786bb3aL, 0x34c8853ae786bbbaL, "taste");
@@ -98,7 +98,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createComponent_5tsg9b_d0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.samples.languagePatterns.Basic.editor.CommonFruitProperties");
     return editorCell;
   }

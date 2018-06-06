@@ -33,10 +33,10 @@ import jetbrains.mps.editor.runtime.cells.BigCellUtil;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCustom_yfw6cj_a();
+    return createCustom_0();
   }
 
-  private EditorCell createCustom_yfw6cj_a() {
+  private EditorCell createCustom_0() {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider(myNode) {
@@ -64,7 +64,7 @@ import jetbrains.mps.editor.runtime.cells.BigCellUtil;
       }
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(getEditorContext());
-    editorCell.setCellId("Custom_yfw6cj_a");
+    editorCell.setCellId("Custom_yfw6cj_0");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);

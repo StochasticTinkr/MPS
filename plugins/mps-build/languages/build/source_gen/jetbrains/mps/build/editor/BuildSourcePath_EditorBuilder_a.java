@@ -30,10 +30,10 @@ import jetbrains.mps.editor.runtime.style.Measure;
   }
 
   /*package*/ EditorCell createCell() {
-    return createError_gfe26n_a();
+    return createError_0();
   }
 
-  private EditorCell createError_gfe26n_a() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<no path>");
     editorCell.setCellId("Error_gfe26n_a");
     editorCell.setBig(true);

@@ -57,22 +57,22 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_plipoy_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_plipoy_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_plipoy_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_plipoy_a0());
-    editorCell.addEditorCell(createRefNode_plipoy_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_0());
     if (SNodeAccessUtil.hasProperty(myNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) {
-      editorCell.addEditorCell(createNonEmptyProperty_plipoy_c0());
+      editorCell.addEditorCell(createNonEmptyProperty_0());
     }
     return editorCell;
   }
-  private EditorCell createComponent_plipoy_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new NodeOperationStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -81,7 +81,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     Annotation_Actions.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;
   }
-  private EditorCell createRefNode_plipoy_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new NodeConstraintsWarningCheckOperation_EditorBuilder_a.warningRefSingleRoleHandler_plipoy_b0(myNode, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfbbbf8aadL, 0x73a7cdcfbbbf8c41L, "warningRef"), getEditorContext());
     return provider.createCell();
   }
@@ -137,7 +137,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no warningRef>";
     }
   }
-  private EditorCell createNonEmptyProperty_plipoy_c0() {
+  private EditorCell createNonEmptyProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");

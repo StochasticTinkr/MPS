@@ -39,18 +39,18 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_z348sv_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_z348sv_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_z348sv_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNodeList_z348sv_a0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createRefNodeList_z348sv_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new QueryPath_EditorBuilder_a.segmetnsListHandler_z348sv_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_segmetns");

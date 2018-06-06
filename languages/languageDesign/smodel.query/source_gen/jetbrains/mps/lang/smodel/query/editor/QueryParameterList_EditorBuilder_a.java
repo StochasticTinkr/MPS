@@ -43,18 +43,18 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_3efoba_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_3efoba_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_3efoba_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNodeList_3efoba_a0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createRefNodeList_3efoba_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new QueryParameterList_EditorBuilder_a.parameterListHandler_3efoba_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
@@ -93,7 +93,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(parameterListHandler_3efoba_a0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, 0x3bc6442176a262a6L, "parameter")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_3efoba_a0a();
+        emptyCell = createConstant_0();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -126,7 +126,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(prevNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
       return editorCell;
     }
-    private EditorCell createConstant_3efoba_a0a() {
+    private EditorCell createConstant_0() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
       editorCell.setCellId("Constant_3efoba_a0a");
       Style style = new StyleImpl();

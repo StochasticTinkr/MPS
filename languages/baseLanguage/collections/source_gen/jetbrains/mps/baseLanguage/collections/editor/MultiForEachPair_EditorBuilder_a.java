@@ -39,20 +39,20 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_1d0bj4_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_1d0bj4_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_1d0bj4_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_1d0bj4_a0());
-    editorCell.addEditorCell(createConstant_1d0bj4_b0());
-    editorCell.addEditorCell(createRefNode_1d0bj4_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_1d0bj4_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new MultiForEachPair_EditorBuilder_a.variableSingleRoleHandler_1d0bj4_a0(myNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7d7db8f4181fea15L, 0x7d7db8f4181fea42L, "variable"), getEditorContext());
     return provider.createCell();
   }
@@ -107,7 +107,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
       return "<no variable>";
     }
   }
-  private EditorCell createConstant_1d0bj4_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "in");
     editorCell.setCellId("Constant_1d0bj4_b0");
     Style style = new StyleImpl();
@@ -116,7 +116,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_1d0bj4_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new MultiForEachPair_EditorBuilder_a.inputSingleRoleHandler_1d0bj4_c0(myNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7d7db8f4181fea15L, 0x7d7db8f4181fea17L, "input"), getEditorContext());
     return provider.createCell();
   }

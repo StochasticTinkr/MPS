@@ -30,10 +30,10 @@ import jetbrains.mps.editor.runtime.style.Measure;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_c93a65_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_c93a65_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "next-sibling");
     editorCell.setCellId("Constant_c93a65_a");
     editorCell.setBig(true);

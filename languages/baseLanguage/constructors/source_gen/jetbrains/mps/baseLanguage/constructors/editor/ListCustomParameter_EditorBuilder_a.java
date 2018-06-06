@@ -51,19 +51,19 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_fzywrt_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_fzywrt_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_fzywrt_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_fzywrt_a0());
-    editorCell.addEditorCell(createProperty_fzywrt_b0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createRefNode_fzywrt_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ListCustomParameter_EditorBuilder_a.typeSingleRoleHandler_fzywrt_a0(myNode, MetaAdapterFactory.getContainmentLink(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b7431819L, 0x4aa85872b7433028L, "type"), getEditorContext());
     return provider.createCell();
   }
@@ -118,7 +118,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no type>";
     }
   }
-  private EditorCell createProperty_fzywrt_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");

@@ -49,17 +49,17 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ilv66b_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ilv66b_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ilv66b_a");
-    editorCell.addEditorCell(createModelAccess_ilv66b_a0());
-    editorCell.addEditorCell(createCollection_ilv66b_b0());
+    editorCell.addEditorCell(createModelAccess_0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createModelAccess_ilv66b_a0() {
+  private EditorCell createModelAccess_0() {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
         return null;
@@ -322,16 +322,16 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private EditorCell createCollection_ilv66b_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Superscript());
     editorCell.setCellId("Collection_ilv66b_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createModelAccess_ilv66b_a1a());
+    editorCell.addEditorCell(createModelAccess_1());
     return editorCell;
   }
-  private EditorCell createModelAccess_ilv66b_a1a() {
+  private EditorCell createModelAccess_1() {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
         return "";

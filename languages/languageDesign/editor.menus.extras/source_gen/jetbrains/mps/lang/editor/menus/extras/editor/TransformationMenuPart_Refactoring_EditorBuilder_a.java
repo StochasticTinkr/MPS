@@ -64,25 +64,25 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_rkww6w_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_rkww6w_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_rkww6w_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_rkww6w_a0());
-    editorCell.addEditorCell(createRefCell_rkww6w_b0());
-    editorCell.addEditorCell(createRefNodeList_rkww6w_c0());
-    editorCell.addEditorCell(createEmpty_rkww6w_d0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefCell_0());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createEmpty_0());
     return editorCell;
   }
-  private EditorCell createComponent_rkww6w_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor.TransformationMenuPartAlias");
     return editorCell;
   }
-  private EditorCell createRefCell_rkww6w_b0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x41bc200f660dc377L, 0x41bc200f660dc37aL, "refactoring");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -130,7 +130,7 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_rkww6w_a0b0();
+      return createProperty_0();
     }
 
     @NotNull
@@ -139,7 +139,7 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
       return myNode;
     }
 
-    private EditorCell createProperty_rkww6w_a0b0() {
+    private EditorCell createProperty_0() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -167,7 +167,7 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
       }
     }
   }
-  private EditorCell createRefNodeList_rkww6w_c0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new TransformationMenuPart_Refactoring_EditorBuilder_a.featuresListHandler_rkww6w_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_features");
@@ -211,7 +211,7 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(featuresListHandler_rkww6w_c0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, 0x7c45559defbb3517L, "features")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_rkww6w_a2a();
+        emptyCell = createConstant_0();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -231,14 +231,14 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
         }
       }
     }
-    private EditorCell createConstant_rkww6w_a2a() {
+    private EditorCell createConstant_0() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
       editorCell.setCellId("Constant_rkww6w_a2a");
       editorCell.setDefaultText("<no additional features>");
       return editorCell;
     }
   }
-  private EditorCell createEmpty_rkww6w_d0() {
+  private EditorCell createEmpty_0() {
     EditorCell_Empty editorCell = new EditorCell_Empty(getEditorContext(), myNode);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));

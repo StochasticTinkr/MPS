@@ -39,20 +39,20 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_g6qow8_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_g6qow8_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_g6qow8_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_g6qow8_a0());
-    editorCell.addEditorCell(createRefNode_g6qow8_b0());
-    editorCell.addEditorCell(createConstant_g6qow8_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_g6qow8_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
     editorCell.setCellId("Constant_g6qow8_a0");
     Style style = new StyleImpl();
@@ -61,7 +61,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_g6qow8_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new MapAsSequenceVarRef_EditorBuilder_a.originalSingleRoleHandler_g6qow8_b0(myNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x59f2b8b299d62ef0L, 0x59f2b8b299d6e72bL, "original"), getEditorContext());
     return provider.createCell();
   }
@@ -116,7 +116,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no original>";
     }
   }
-  private EditorCell createConstant_g6qow8_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
     editorCell.setCellId("Constant_g6qow8_c0");
     Style style = new StyleImpl();

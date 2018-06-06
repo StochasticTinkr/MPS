@@ -65,20 +65,20 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_s7nj87_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_s7nj87_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_s7nj87_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefCell_s7nj87_a0());
-    editorCell.addEditorCell(createConstant_s7nj87_b0());
-    editorCell.addEditorCell(createRefNode_s7nj87_c0());
+    editorCell.addEditorCell(createRefCell_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createRefCell_s7nj87_a0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20b0325L, 0x4bb51009d20b0326L, "property");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -136,7 +136,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_s7nj87_a0a0();
+      return createProperty_0();
     }
 
     @NotNull
@@ -145,7 +145,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return myNode;
     }
 
-    private EditorCell createProperty_s7nj87_a0a0() {
+    private EditorCell createProperty_0() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -173,7 +173,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       }
     }
   }
-  private EditorCell createConstant_s7nj87_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
     editorCell.setCellId("Constant_s7nj87_b0");
     Style style = new StyleImpl();
@@ -183,7 +183,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_s7nj87_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new NodeBuilderInitProperty_EditorBuilder_a.expressionSingleRoleHandler_s7nj87_c0(myNode, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20b0339L, 0x4bb51009d20b0336L, "expression"), getEditorContext());
     return provider.createCell();
   }

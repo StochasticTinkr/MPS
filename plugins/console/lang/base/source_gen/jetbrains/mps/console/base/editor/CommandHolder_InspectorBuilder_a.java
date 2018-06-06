@@ -27,27 +27,27 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_nvbf9m_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_nvbf9m_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_nvbf9m_a_0");
+    editorCell.setCellId("Collection_nvbf9m_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_nvbf9m_a0_0());
-    editorCell.addEditorCell(createConstant_nvbf9m_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_nvbf9m_a0_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Congratulations!!!");
-    editorCell.setCellId("Constant_nvbf9m_a0_0");
+    editorCell.setCellId("Constant_nvbf9m_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_nvbf9m_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Now you have seen all MPS internals.");
-    editorCell.setCellId("Constant_nvbf9m_b0");
+    editorCell.setCellId("Constant_nvbf9m_1");
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -41,30 +41,30 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_8rtror_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_8rtror_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_8rtror_a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     if (nodeCondition_8rtror_a0a()) {
-      editorCell.addEditorCell(createCollection_8rtror_a0());
+      editorCell.addEditorCell(createCollection_1());
     }
     return editorCell;
   }
   private boolean nodeCondition_8rtror_a0a() {
     return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e5250918L, 0x110e52557daL, "message"))).isNotEmpty();
   }
-  private EditorCell createCollection_8rtror_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_8rtror_a0");
-    editorCell.addEditorCell(createRefNode_8rtror_a0a());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createRefNode_8rtror_a0a() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new MessageComponent_ComponentBuilder_a.messageSingleRoleHandler_8rtror_a0a(myNode, MetaAdapterFactory.getContainmentLink(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e5250918L, 0x110e52557daL, "message"), getEditorContext());
     return provider.createCell();
   }

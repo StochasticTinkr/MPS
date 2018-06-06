@@ -54,19 +54,19 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_rgn2ra_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_rgn2ra_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_rgn2ra_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_rgn2ra_a0());
-    editorCell.addEditorCell(createProperty_rgn2ra_b0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createRefNode_rgn2ra_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ExtensionFieldDeclaration_EditorBuilder_a.fieldTypeSingleRoleHandler_rgn2ra_a0(myNode, MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e99L, 0x61a62b43e1534e9dL, "fieldType"), getEditorContext());
     return provider.createCell();
   }
@@ -121,7 +121,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no fieldType>";
     }
   }
-  private EditorCell createProperty_rgn2ra_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");

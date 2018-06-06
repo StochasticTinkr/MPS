@@ -69,19 +69,19 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_pdl482_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_pdl482_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_pdl482_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_pdl482_a0());
-    editorCell.addEditorCell(createProperty_pdl482_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_pdl482_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "by id:");
     editorCell.setCellId("Constant_pdl482_a0");
     Style style = new StyleImpl();
@@ -91,7 +91,7 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_pdl482_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0xf48c620dd899d06L, 0xf48c620dd89b12eL, "actionId");

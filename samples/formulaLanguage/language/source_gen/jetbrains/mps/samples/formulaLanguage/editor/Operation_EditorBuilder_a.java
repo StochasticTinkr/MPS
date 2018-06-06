@@ -46,19 +46,19 @@ import jetbrains.mps.smodel.SNodePointer;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ujw05e_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ujw05e_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_ujw05e_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_ujw05e_a0());
-    editorCell.addEditorCell(createError_ujw05e_b0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createError_0());
     return editorCell;
   }
-  private EditorCell createRefNode_ujw05e_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new Operation_EditorBuilder_a.leftOperandSingleRoleHandler_ujw05e_a0(myNode, MetaAdapterFactory.getContainmentLink(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, 0x102db86e5b3L, "leftOperand"), getEditorContext());
     return provider.createCell();
   }
@@ -114,7 +114,7 @@ import jetbrains.mps.smodel.SNodePointer;
       return "<expression>";
     }
   }
-  private EditorCell createError_ujw05e_b0() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, " ");
     editorCell.setCellId("Error_ujw05e_b0");
     Operation_symbol_Actions.setCellActions(editorCell, myNode, getEditorContext());

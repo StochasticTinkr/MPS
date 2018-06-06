@@ -49,19 +49,19 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_jy8kcg_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_jy8kcg_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_jy8kcg_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_jy8kcg_a0());
-    editorCell.addEditorCell(createRefNode_jy8kcg_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createComponent_jy8kcg_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new CommentTagStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -81,7 +81,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "BaseInlineDocTag" + ")", new SNodePointer("r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)", "5332352441311588437"));
     }
   }
-  private EditorCell createRefNode_jy8kcg_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ValueInlineDocTag_EditorBuilder_a.variableReferenceSingleRoleHandler_jy8kcg_b0(myNode, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x60a0f9237ac5e83bL, 0x2398cefbc25f6d46L, "variableReference"), getEditorContext());
     return provider.createCell();
   }
@@ -123,7 +123,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       getCellFactory().pushCellContext();
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x60a0f9237ac5e83bL, 0x2398cefbc25f6d46L, "variableReference")));
       try {
-        EditorCell editorCell = createCollection_jy8kcg_a1a();
+        EditorCell editorCell = createCollection_1();
         installCellInfo(null, editorCell, true);
         setCellContext(editorCell);
         return editorCell;
@@ -131,7 +131,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
         getCellFactory().popCellContext();
       }
     }
-    private EditorCell createCollection_jy8kcg_a1a() {
+    private EditorCell createCollection_1() {
       EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
       editorCell.setCellId("Collection_jy8kcg_a1a");
       Style style = new StyleImpl();

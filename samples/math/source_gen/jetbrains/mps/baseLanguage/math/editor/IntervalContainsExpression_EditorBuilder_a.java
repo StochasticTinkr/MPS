@@ -48,20 +48,20 @@ import jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_8gz0ko_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_8gz0ko_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_8gz0ko_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_8gz0ko_a0());
-    editorCell.addEditorCell(createConstant_8gz0ko_b0());
-    editorCell.addEditorCell(createRefNode_8gz0ko_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_8gz0ko_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new IntervalContainsExpression_EditorBuilder_a.leftExpressionSingleRoleHandler_8gz0ko_a0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), getEditorContext());
     return provider.createCell();
   }
@@ -117,7 +117,7 @@ import jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions;
       return "<no leftExpression>";
     }
   }
-  private EditorCell createConstant_8gz0ko_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "contains");
     editorCell.setCellId("Constant_8gz0ko_b0");
     editorCell.setDefaultText("");
@@ -135,7 +135,7 @@ import jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "BinaryOperation" + ")", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1235747377651"));
     }
   }
-  private EditorCell createRefNode_8gz0ko_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new IntervalContainsExpression_EditorBuilder_a.rightExpressionSingleRoleHandler_8gz0ko_c0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), getEditorContext());
     return provider.createCell();
   }

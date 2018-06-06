@@ -47,23 +47,23 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_5rxzhy_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_5rxzhy_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_5rxzhy_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_5rxzhy_a0());
-    editorCell.addEditorCell(createRefCell_5rxzhy_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefCell_0());
     return editorCell;
   }
-  private EditorCell createComponent_5rxzhy_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
-  private EditorCell createRefCell_5rxzhy_b0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x110822ebf819cfd5L, 0x110822ebf819cfd8L, "intention");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -115,7 +115,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
     }
 
     /*package*/ EditorCell createCell() {
-      return createReferencePresentation_5rxzhy_a0b0();
+      return createReferencePresentation_0();
     }
 
     @NotNull
@@ -124,7 +124,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
       return myNode;
     }
 
-    private EditorCell createReferencePresentation_5rxzhy_a0b0() {
+    private EditorCell createReferencePresentation_0() {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, IReferentPresentationProvider.getDefaultPresentation(MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x110822ebf819cfd5L, 0x110822ebf819cfd8L, "intention")));
       editorCell.setCellId("ReferencePresentation_5rxzhy_a0b0");
       return editorCell;

@@ -31,18 +31,18 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_csxlk7_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_csxlk7_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_csxlk7_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_csxlk7_a0());
+    editorCell.addEditorCell(createComponent_0());
     return editorCell;
   }
-  private EditorCell createComponent_csxlk7_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

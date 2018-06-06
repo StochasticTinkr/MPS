@@ -36,27 +36,27 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_bewhnj_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_bewhnj_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_bewhnj_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_bewhnj_a0());
-    editorCell.addEditorCell(createRefNode_bewhnj_b0());
-    editorCell.addEditorCell(createConstant_bewhnj_c0());
-    editorCell.addEditorCell(createRefNode_bewhnj_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createConstant_bewhnj_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "null safe");
     editorCell.setCellId("Constant_bewhnj_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_bewhnj_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new NullSafeDotExpression_EditorBuilder_a.operandSingleRoleHandler_bewhnj_b0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), getEditorContext());
     return provider.createCell();
   }
@@ -111,13 +111,13 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no operand>";
     }
   }
-  private EditorCell createConstant_bewhnj_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ".");
     editorCell.setCellId("Constant_bewhnj_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_bewhnj_d0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new NullSafeDotExpression_EditorBuilder_a.operationSingleRoleHandler_bewhnj_d0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), getEditorContext());
     return provider.createCell();
   }

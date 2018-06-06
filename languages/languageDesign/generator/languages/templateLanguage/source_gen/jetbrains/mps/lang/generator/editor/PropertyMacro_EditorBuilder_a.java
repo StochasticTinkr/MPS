@@ -52,25 +52,25 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_y5igai_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_y5igai_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_y5igai_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_y5igai_a0());
+    editorCell.addEditorCell(createConstant_0());
     if (nodeCondition_y5igai_a1a()) {
-      editorCell.addEditorCell(createProperty_y5igai_b0());
+      editorCell.addEditorCell(createProperty_0());
     }
-    editorCell.addEditorCell(createAttributedPropertyCell_y5igai_c0());
+    editorCell.addEditorCell(createAttributedPropertyCell_0());
     return editorCell;
   }
   private boolean nodeCondition_y5igai_a1a() {
     return SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, 0x2d521c90e9601e88L, "comment")) != null;
   }
-  private EditorCell createConstant_y5igai_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "$");
     editorCell.setCellId("Constant_y5igai_a0");
     Style style = new StyleImpl();
@@ -82,7 +82,7 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_y5igai_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, 0x2d521c90e9601e88L, "comment");
@@ -112,7 +112,7 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createAttributedPropertyCell_y5igai_c0() {
+  private EditorCell createAttributedPropertyCell_0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.PROPERTY, myNode);
     Style style = new StyleImpl();

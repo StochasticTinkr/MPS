@@ -27,25 +27,25 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_h8te0s_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_h8te0s_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_h8te0s_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_h8te0s_a0());
-    editorCell.addEditorCell(createComponent_h8te0s_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createComponent_0());
     return editorCell;
   }
-  private EditorCell createConstant_h8te0s_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Car details");
     editorCell.setCellId("Constant_h8te0s_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createComponent_h8te0s_b0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.samples.languagePatterns.Basic.editor.CarProperties");
     return editorCell;
   }

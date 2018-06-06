@@ -39,16 +39,16 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_nn54vd_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_nn54vd_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_nn54vd_a");
-    editorCell.addEditorCell(createRefNodeList_nn54vd_a0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createRefNodeList_nn54vd_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new StateStates_ComponentBuilder_a.statesListHandler_nn54vd_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("SS_refNodeList_states");

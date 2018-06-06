@@ -36,10 +36,10 @@ import java.awt.Color;
   }
 
   /*package*/ EditorCell createCell() {
-    return createReadOnlyModelAccessor_abi8e8_a();
+    return createReadOnlyModelAccessor_0();
   }
 
-  private EditorCell createReadOnlyModelAccessor_abi8e8_a() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return EditorCellModel__BehaviorDescriptor.getClosingTag_idhKxXx_K.invoke(myNode);

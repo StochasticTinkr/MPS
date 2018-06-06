@@ -52,17 +52,17 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_2eo8r0_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_2eo8r0_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_2eo8r0_a");
-    editorCell.addEditorCell(createTransactionalProperty_2eo8r0_a0());
-    editorCell.addEditorCell(createCollection_2eo8r0_b0());
+    editorCell.addEditorCell(createTransactionalProperty_0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createTransactionalProperty_2eo8r0_a0() {
+  private EditorCell createTransactionalProperty_0() {
     getCellFactory().pushCellContext();
     try {
       SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL, 0xbde89531aae3a9L, "theProperty");
@@ -339,16 +339,16 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private EditorCell createCollection_2eo8r0_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Superscript());
     editorCell.setCellId("Collection_2eo8r0_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createTransactionalProperty_2eo8r0_a1a());
+    editorCell.addEditorCell(createTransactionalProperty_1());
     return editorCell;
   }
-  private EditorCell createTransactionalProperty_2eo8r0_a1a() {
+  private EditorCell createTransactionalProperty_1() {
     getCellFactory().pushCellContext();
     try {
       SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL, 0xbde89531aae3a9L, "theProperty");

@@ -61,22 +61,22 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_95e583_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_95e583_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_95e583_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_95e583_a0());
-    editorCell.addEditorCell(createRefNodeList_95e583_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     if (SNodeAccessUtil.hasProperty(myNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) {
-      editorCell.addEditorCell(createNonEmptyProperty_95e583_c0());
+      editorCell.addEditorCell(createNonEmptyProperty_0());
     }
     return editorCell;
   }
-  private EditorCell createComponent_95e583_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new NodeOperationStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -85,7 +85,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     Annotation_Actions.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;
   }
-  private EditorCell createRefNodeList_95e583_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new NodeTypeSetCheckOperation_EditorBuilder_a.typeListHandler_95e583_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_type");
@@ -158,7 +158,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return editorCell;
     }
   }
-  private EditorCell createNonEmptyProperty_95e583_c0() {
+  private EditorCell createNonEmptyProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");

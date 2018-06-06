@@ -40,32 +40,32 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_s783cw_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_s783cw_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_s783cw_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_s783cw_a0());
-    editorCell.addEditorCell(createCollection_s783cw_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createConstant_s783cw_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "vertical layout");
     editorCell.setCellId("Constant_s783cw_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_s783cw_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_s783cw_b0");
     editorCell.setGridLayout(true);
-    editorCell.addEditorCell(createRefNodeList_s783cw_a1a());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createRefNodeList_s783cw_a1a() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new VerticalLayoutBlockList_EditorBuilder_a.statementListHandler_s783cw_a1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_statement");

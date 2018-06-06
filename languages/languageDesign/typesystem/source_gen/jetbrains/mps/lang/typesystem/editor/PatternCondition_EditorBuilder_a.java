@@ -61,20 +61,20 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_8a66hs_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_8a66hs_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_8a66hs_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_8a66hs_a0());
-    editorCell.addEditorCell(createConstant_8a66hs_b0());
-    editorCell.addEditorCell(createProperty_8a66hs_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createRefNode_8a66hs_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new PatternCondition_EditorBuilder_a.patternSingleRoleHandler_8a66hs_a0(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L, 0x1117e2ccbe9L, "pattern"), getEditorContext());
     return provider.createCell();
   }
@@ -129,7 +129,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no pattern>";
     }
   }
-  private EditorCell createConstant_8a66hs_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "as");
     editorCell.setCellId("Constant_8a66hs_b0");
     Style style = new StyleImpl();
@@ -138,7 +138,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_8a66hs_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");

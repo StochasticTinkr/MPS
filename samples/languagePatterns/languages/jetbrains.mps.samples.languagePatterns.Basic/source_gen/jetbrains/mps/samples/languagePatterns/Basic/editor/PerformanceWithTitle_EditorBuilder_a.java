@@ -52,27 +52,27 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_rzu7p_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_rzu7p_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_rzu7p_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_rzu7p_a0());
-    editorCell.addEditorCell(createProperty_rzu7p_b0());
-    editorCell.addEditorCell(createConstant_rzu7p_c0());
-    editorCell.addEditorCell(createRefNode_rzu7p_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_rzu7p_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Title:");
     editorCell.setCellId("Constant_rzu7p_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_rzu7p_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae795648bL, 0x34c8853ae795648eL, "title");
@@ -99,13 +99,13 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_rzu7p_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "by");
     editorCell.setCellId("Constant_rzu7p_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_rzu7p_d0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new PerformanceWithTitle_EditorBuilder_a.singerSingleRoleHandler_rzu7p_d0(myNode, MetaAdapterFactory.getContainmentLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae795648bL, 0x34c8853ae7956854L, "singer"), getEditorContext());
     return provider.createCell();
   }

@@ -39,25 +39,25 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_mqpyhp_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_mqpyhp_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_mqpyhp_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_mqpyhp_a0());
-    editorCell.addEditorCell(createRefNode_mqpyhp_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_mqpyhp_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "property name");
     editorCell.setCellId("Constant_mqpyhp_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_mqpyhp_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new PropertyNameTarget_EditorBuilder_a.propertyNameSingleRoleHandler_mqpyhp_b0(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db54b106bL, 0x11db54c4ff3L, "propertyName"), getEditorContext());
     return provider.createCell();
   }

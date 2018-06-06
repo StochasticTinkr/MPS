@@ -25,10 +25,10 @@ import jetbrains.mps.editor.runtime.cells.BigCellUtil;
   }
 
   /*package*/ EditorCell createCell() {
-    return createComponent_5wtg0a_a();
+    return createComponent_0();
   }
 
-  private EditorCell createComponent_5wtg0a_a() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.build.editor.BuildLayout_containerElements");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {

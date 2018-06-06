@@ -45,25 +45,25 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_anqw30_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_anqw30_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_anqw30_a_0");
+    editorCell.setCellId("Collection_anqw30_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_anqw30_a0());
-    editorCell.addEditorCell(createProperty_anqw30_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_anqw30_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "register via plugin.xml:");
-    editorCell.setCellId("Constant_anqw30_a0");
+    editorCell.setCellId("Constant_anqw30_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_anqw30_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x77ff578948f6b772L, "isPluginXmlKeymap");

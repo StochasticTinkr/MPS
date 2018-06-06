@@ -53,19 +53,19 @@ import com.intellij.ide.BrowserUtil;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_pmt8oi_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_pmt8oi_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_pmt8oi_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createProperty_pmt8oi_a0());
-    editorCell.addEditorCell(createJComponent_pmt8oi_b0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createJComponent_0());
     return editorCell;
   }
-  private EditorCell createProperty_pmt8oi_a0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url");
@@ -92,9 +92,9 @@ import com.intellij.ide.BrowserUtil;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createJComponent_pmt8oi_b0() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_pmt8oi_a1a(), "_pmt8oi_b0");
-    editorCell.setCellId("JComponent_pmt8oi_b0");
+  private EditorCell createJComponent_0() {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_pmt8oi_a1a(), "JComponent_pmt8oi_b0");
+    editorCell.setCellId("JComponent_pmt8oi_b0_0");
     return editorCell;
   }
   private JComponent _QueryFunction_JComponent_pmt8oi_a1a() {

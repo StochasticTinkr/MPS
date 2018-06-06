@@ -53,54 +53,54 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_kasd0f_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_kasd0f_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_kasd0f_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createCollection_kasd0f_a0());
-    editorCell.addEditorCell(createAttributedNodeCell_kasd0f_b0());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createAttributedNodeCell_0());
     return editorCell;
   }
-  private EditorCell createCollection_kasd0f_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_kasd0f_a0");
-    editorCell.addEditorCell(createConstant_kasd0f_a0a());
+    editorCell.addEditorCell(createConstant_0());
     if (nodeCondition_kasd0f_a1a0()) {
-      editorCell.addEditorCell(createCollection_kasd0f_b0a());
+      editorCell.addEditorCell(createCollection_2());
     }
     return editorCell;
   }
   private boolean nodeCondition_kasd0f_a1a0() {
     return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, 0x7ce0198267c4eb3L, "migrateTo")) != null);
   }
-  private EditorCell createConstant_kasd0f_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "@Migrate manually");
     editorCell.setCellId("Constant_kasd0f_a0a");
     DeleteMigratedManuallyAnnotation.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_kasd0f_b0a() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_kasd0f_b0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_kasd0f_a1a0());
-    editorCell.addEditorCell(createRefCell_kasd0f_b1a0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefCell_0());
     return editorCell;
   }
-  private EditorCell createConstant_kasd0f_a1a0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "to");
     editorCell.setCellId("Constant_kasd0f_a1a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_kasd0f_b1a0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, 0x7ce0198267c4eb3L, "migrateTo");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -153,7 +153,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
     }
 
     /*package*/ EditorCell createCell() {
-      return createReferencePresentation_kasd0f_a0b1a0();
+      return createReferencePresentation_0();
     }
 
     @NotNull
@@ -162,13 +162,13 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
       return myNode;
     }
 
-    private EditorCell createReferencePresentation_kasd0f_a0b1a0() {
+    private EditorCell createReferencePresentation_0() {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, IReferentPresentationProvider.getDefaultPresentation(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, 0x7ce0198267c4eb3L, "migrateTo")));
       editorCell.setCellId("ReferencePresentation_kasd0f_a0b1a0");
       return editorCell;
     }
   }
-  private EditorCell createAttributedNodeCell_kasd0f_b0() {
+  private EditorCell createAttributedNodeCell_0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;

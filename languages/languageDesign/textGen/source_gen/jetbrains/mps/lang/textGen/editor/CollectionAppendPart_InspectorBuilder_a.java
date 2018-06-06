@@ -48,45 +48,45 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_wfu8o0_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_wfu8o0_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_wfu8o0_a_0");
+    editorCell.setCellId("Collection_wfu8o0_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
     if (nodeCondition_wfu8o0_a0a()) {
-      editorCell.addEditorCell(createCollection_wfu8o0_a0());
+      editorCell.addEditorCell(createCollection_1());
     }
     return editorCell;
   }
   private boolean nodeCondition_wfu8o0_a0a() {
     return isNotEmptyString(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL, 0x120152f5107L, "separator")));
   }
-  private EditorCell createCollection_wfu8o0_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_wfu8o0_a0");
-    editorCell.addEditorCell(createConstant_wfu8o0_a0a());
-    editorCell.addEditorCell(createConstant_wfu8o0_b0a());
+    editorCell.setCellId("Collection_wfu8o0_1");
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
     if (SNodeAccessUtil.hasProperty(myNode, MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL, 0x120152f5107L, "separator"))) {
-      editorCell.addEditorCell(createNonEmptyProperty_wfu8o0_c0a());
+      editorCell.addEditorCell(createNonEmptyProperty_0());
     }
     return editorCell;
   }
-  private EditorCell createConstant_wfu8o0_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "separator");
-    editorCell.setCellId("Constant_wfu8o0_a0a");
+    editorCell.setCellId("Constant_wfu8o0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_wfu8o0_b0a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
-    editorCell.setCellId("Constant_wfu8o0_b0a");
+    editorCell.setCellId("Constant_wfu8o0_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createNonEmptyProperty_wfu8o0_c0a() {
+  private EditorCell createNonEmptyProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL, 0x120152f5107L, "separator");
@@ -95,7 +95,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       editorCell.setDefaultText("<no separator>");
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.FORWARD));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.BACKWARD));
-      editorCell.setCellId("property_separator_1");
+      editorCell.setCellId("property_separator");
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"));

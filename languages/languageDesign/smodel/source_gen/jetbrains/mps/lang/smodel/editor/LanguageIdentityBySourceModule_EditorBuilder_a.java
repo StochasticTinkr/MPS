@@ -35,18 +35,18 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_iti5f0_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_iti5f0_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_iti5f0_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_iti5f0_a0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createRefNode_iti5f0_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new LanguageIdentityBySourceModule_EditorBuilder_a.moduleReferenceSingleRoleHandler_iti5f0_a0(myNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2246d35517e858c2L, 0x2246d35517e858e9L, "moduleReference"), getEditorContext());
     return provider.createCell();
   }

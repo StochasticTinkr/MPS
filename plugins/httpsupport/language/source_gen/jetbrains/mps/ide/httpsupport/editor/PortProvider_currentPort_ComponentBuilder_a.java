@@ -34,10 +34,10 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createReadOnlyModelAccessor_udq69y_a();
+    return createReadOnlyModelAccessor_0();
   }
 
-  private EditorCell createReadOnlyModelAccessor_udq69y_a() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return "(" + (int) PortProvider__BehaviorDescriptor.getPort_id6WBmrsjA4L4.invoke(myNode) + ")";

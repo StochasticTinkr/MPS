@@ -25,10 +25,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_5qmfq8_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_5qmfq8_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "child");
     editorCell.setCellId("Constant_5qmfq8_a");
     editorCell.setBig(true);

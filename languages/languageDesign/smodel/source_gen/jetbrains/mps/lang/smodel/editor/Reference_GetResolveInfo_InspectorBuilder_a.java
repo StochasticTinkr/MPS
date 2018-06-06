@@ -33,22 +33,22 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_77164a_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_77164a_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_77164a_a");
+    editorCell.setCellId("Collection_77164a_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_77164a_a0());
-    editorCell.addEditorCell(createConstant_77164a_b0());
-    editorCell.addEditorCell(createConstant_77164a_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
-  private EditorCell createConstant_77164a_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Get reference 'resolveInfo' operation");
-    editorCell.setCellId("Constant_77164a_a0");
+    editorCell.setCellId("Constant_77164a_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
@@ -57,18 +57,18 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_77164a_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
-    editorCell.setCellId("Constant_77164a_b0");
+    editorCell.setCellId("Constant_77164a_1");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_77164a_c0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Returns resolve info for this reference");
-    editorCell.setCellId("Constant_77164a_c0");
+    editorCell.setCellId("Constant_77164a_2");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);

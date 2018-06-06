@@ -39,21 +39,21 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_mc4j88_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_mc4j88_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_mc4j88_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createReadOnlyModelAccessor_mc4j88_a0());
-    editorCell.addEditorCell(createConstant_mc4j88_b0());
-    editorCell.addEditorCell(createAttributedNodeCell_mc4j88_c0());
-    editorCell.addEditorCell(createConstant_mc4j88_d0());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createAttributedNodeCell_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_mc4j88_a0() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return SNodeOperations.getConcept(myNode).getName();
@@ -72,7 +72,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createConstant_mc4j88_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
     editorCell.setCellId("Constant_mc4j88_b0");
     Style style = new StyleImpl();
@@ -83,12 +83,12 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createAttributedNodeCell_mc4j88_c0() {
+  private EditorCell createAttributedNodeCell_0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;
   }
-  private EditorCell createConstant_mc4j88_d0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
     editorCell.setCellId("Constant_mc4j88_d0");
     Style style = new StyleImpl();

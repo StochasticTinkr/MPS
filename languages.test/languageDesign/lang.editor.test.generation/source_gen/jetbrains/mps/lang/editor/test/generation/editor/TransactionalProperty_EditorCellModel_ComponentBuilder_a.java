@@ -73,17 +73,17 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_vfuuik_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_vfuuik_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_vfuuik_a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     if (nodeCondition_vfuuik_a0a()) {
-      editorCell.addEditorCell(createProperty_vfuuik_a0());
+      editorCell.addEditorCell(createProperty_0());
     }
     return editorCell;
   }
@@ -91,7 +91,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     boolean var = getEditorContext() != null || myNode != null;
     return var;
   }
-  private EditorCell createProperty_vfuuik_a0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL, 0xbde89531aae3a9L, "theProperty");

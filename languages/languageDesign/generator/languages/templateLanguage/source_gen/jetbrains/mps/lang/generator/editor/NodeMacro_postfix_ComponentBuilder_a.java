@@ -64,10 +64,10 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_crgygw_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_crgygw_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_crgygw_a");
     Style style = new StyleImpl();
@@ -75,12 +75,12 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     style.set(StyleAttributes.HORIZONTAL_GAP, new Padding(3, Measure.PIXELS));
     editorCell.getStyle().putAll(style);
     if (nodeCondition_crgygw_a0a()) {
-      editorCell.addEditorCell(createCollection_crgygw_a0());
+      editorCell.addEditorCell(createCollection_1());
     }
     if (nodeCondition_crgygw_a1a()) {
-      editorCell.addEditorCell(createRefCell_crgygw_b0());
+      editorCell.addEditorCell(createRefCell_0());
     }
-    editorCell.addEditorCell(createAttributedNodeCell_crgygw_c0());
+    editorCell.addEditorCell(createAttributedNodeCell_0());
     return editorCell;
   }
   private boolean nodeCondition_crgygw_a0a() {
@@ -89,20 +89,20 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
   private boolean nodeCondition_crgygw_a1a() {
     return SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")) != null;
   }
-  private EditorCell createCollection_crgygw_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_crgygw_a0");
-    editorCell.addEditorCell(createConstant_crgygw_a0a());
-    editorCell.addEditorCell(createReadOnlyModelAccessor_crgygw_b0a());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_0());
     return editorCell;
   }
-  private EditorCell createConstant_crgygw_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "bad role:");
     editorCell.setCellId("Constant_crgygw_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_crgygw_b0a() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return myNode.getRoleInParent();
@@ -122,7 +122,7 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createRefCell_crgygw_b0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -170,7 +170,7 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_crgygw_a0b0();
+      return createProperty_0();
     }
 
     @NotNull
@@ -179,7 +179,7 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
       return myNode;
     }
 
-    private EditorCell createProperty_crgygw_a0b0() {
+    private EditorCell createProperty_0() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -210,7 +210,7 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
       }
     }
   }
-  private EditorCell createAttributedNodeCell_crgygw_c0() {
+  private EditorCell createAttributedNodeCell_0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     Style style = new StyleImpl();

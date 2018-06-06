@@ -65,18 +65,18 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_spngij_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_spngij_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Superscript());
     editorCell.setCellId("Collection_spngij_a");
-    editorCell.addEditorCell(createRefNode_spngij_a0());
-    editorCell.addEditorCell(createReadOnlyModelAccessor_spngij_b0());
-    editorCell.addEditorCell(createEmpty_spngij_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_0());
+    editorCell.addEditorCell(createEmpty_0());
     return editorCell;
   }
-  private EditorCell createRefNode_spngij_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ExponentOperation_Component_ComponentBuilder_a.exprSingleRoleHandler_spngij_a0(myNode, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e6443a20L, 0x64b1e972e6443a22L, "expr"), getEditorContext());
     return provider.createCell();
   }
@@ -131,7 +131,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       return "<no expr>";
     }
   }
-  private EditorCell createReadOnlyModelAccessor_spngij_b0() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return (String) ExponentialOperation__BehaviorDescriptor.getOperationSymbol_id1653mnvAgnB.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode)));
@@ -193,7 +193,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1262430001742033319"));
     }
   }
-  private EditorCell createEmpty_spngij_c0() {
+  private EditorCell createEmpty_0() {
     EditorCell_Empty editorCell = new EditorCell_Empty(getEditorContext(), myNode);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));

@@ -40,20 +40,20 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_pitxl1_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_pitxl1_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_pitxl1_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_pitxl1_a0());
-    editorCell.addEditorCell(createConstant_pitxl1_b0());
-    editorCell.addEditorCell(createRefNode_pitxl1_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_pitxl1_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new QuantityTemporalProperty_EditorBuilder_a.dateSingleRoleHandler_pitxl1_a0(myNode, MetaAdapterFactory.getContainmentLink(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbfd085fL, 0x102dbfd4a4bL, "date"), getEditorContext());
     return provider.createCell();
   }
@@ -108,7 +108,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
       return "<no date>";
     }
   }
-  private EditorCell createConstant_pitxl1_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ": ");
     editorCell.setCellId("Constant_pitxl1_b0");
     Style style = new StyleImpl();
@@ -117,7 +117,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_pitxl1_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new QuantityTemporalProperty_EditorBuilder_a.quantitySingleRoleHandler_pitxl1_c0(myNode, MetaAdapterFactory.getContainmentLink(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbfd085fL, 0x102dbfeaee1L, "value"), getEditorContext());
     return provider.createCell();
   }

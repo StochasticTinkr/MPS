@@ -58,20 +58,20 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_1duzn9_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_1duzn9_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_1duzn9_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_1duzn9_a0());
-    editorCell.addEditorCell(createConstant_1duzn9_b0());
-    editorCell.addEditorCell(createProperty_1duzn9_c0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createComponent_1duzn9_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new itemStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -90,13 +90,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "StyleClassItem" + ")", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "2886182022232400347"));
     }
   }
-  private EditorCell createConstant_1duzn9_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
     editorCell.setCellId("Constant_1duzn9_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_1duzn9_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b40a56a20L, 0x11b40a855a6L, "position");

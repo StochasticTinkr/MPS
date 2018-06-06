@@ -47,27 +47,27 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_nev4di_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_nev4di_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_nev4di_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_nev4di_a0());
-    editorCell.addEditorCell(createConstant_nev4di_b0());
-    editorCell.addEditorCell(createRefNodeList_nev4di_c0());
-    editorCell.addEditorCell(createConstant_nev4di_d0());
-    editorCell.addEditorCell(createConstant_nev4di_e0());
-    editorCell.addEditorCell(createConstant_nev4di_f0());
-    editorCell.addEditorCell(createRefNodeList_nev4di_g0());
-    editorCell.addEditorCell(createConstant_nev4di_h0());
-    editorCell.addEditorCell(createComponent_nev4di_i0());
-    editorCell.addEditorCell(createConstant_nev4di_j0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createConstant_4());
+    editorCell.addEditorCell(createRefNodeList_1());
+    editorCell.addEditorCell(createConstant_5());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createConstant_6());
     return editorCell;
   }
-  private EditorCell createConstant_nev4di_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "assert");
     editorCell.setCellId("Constant_nev4di_a0");
     Style style = new StyleImpl();
@@ -76,7 +76,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_nev4di_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<");
     editorCell.setCellId("Constant_nev4di_b0");
     Style style = new StyleImpl();
@@ -85,7 +85,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_nev4di_c0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new AssertMatch_EditorBuilder_a.beforeListHandler_nev4di_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_before");
@@ -158,7 +158,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
       return editorCell;
     }
   }
-  private EditorCell createConstant_nev4di_d0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ">");
     editorCell.setCellId("Constant_nev4di_d0");
     Style style = new StyleImpl();
@@ -167,7 +167,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_nev4di_e0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "match");
     editorCell.setCellId("Constant_nev4di_e0");
     Style style = new StyleImpl();
@@ -176,7 +176,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_nev4di_f0() {
+  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<");
     editorCell.setCellId("Constant_nev4di_f0");
     Style style = new StyleImpl();
@@ -185,7 +185,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_nev4di_g0() {
+  private EditorCell createRefNodeList_1() {
     AbstractCellListHandler handler = new AssertMatch_EditorBuilder_a.afterListHandler_nev4di_g0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_after");
@@ -258,7 +258,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
       return editorCell;
     }
   }
-  private EditorCell createConstant_nev4di_h0() {
+  private EditorCell createConstant_5() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ">");
     editorCell.setCellId("Constant_nev4di_h0");
     Style style = new StyleImpl();
@@ -267,14 +267,14 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createComponent_nev4di_i0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.baseLanguage.unitTest.editor.MessageComponent");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createConstant_nev4di_j0() {
+  private EditorCell createConstant_6() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ";");
     editorCell.setCellId("Constant_nev4di_j0");
     Style style = new StyleImpl();

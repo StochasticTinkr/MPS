@@ -58,29 +58,29 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_h5gehg_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_h5gehg_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_h5gehg_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_h5gehg_a0());
-    editorCell.addEditorCell(createProperty_h5gehg_b0());
-    editorCell.addEditorCell(createConstant_h5gehg_c0());
-    editorCell.addEditorCell(createRefNodeList_h5gehg_d0());
-    editorCell.addEditorCell(createConstant_h5gehg_e0());
-    editorCell.addEditorCell(createRefNodeList_h5gehg_f0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createRefNodeList_1());
     return editorCell;
   }
-  private EditorCell createConstant_h5gehg_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Conversation");
     editorCell.setCellId("Constant_h5gehg_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_h5gehg_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -107,13 +107,13 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_h5gehg_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "between");
     editorCell.setCellId("Constant_h5gehg_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_h5gehg_d0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new Conversation_EditorBuilder_a.participantsListHandler_h5gehg_d0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_participants");
@@ -188,7 +188,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       return editorCell;
     }
   }
-  private EditorCell createConstant_h5gehg_e0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_h5gehg_e0");
     Style style = new StyleImpl();
@@ -197,7 +197,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_h5gehg_f0() {
+  private EditorCell createRefNodeList_1() {
     AbstractCellListHandler handler = new Conversation_EditorBuilder_a.smallTalkListHandler_h5gehg_f0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_smallTalk");

@@ -25,10 +25,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
   }
 
   /*package*/ EditorCell createCell() {
-    return createError_4nerly_a();
+    return createError_0();
   }
 
-  private EditorCell createError_4nerly_a() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<no variable reference>");
     editorCell.setCellId("Error_4nerly_a");
     editorCell.setBig(true);

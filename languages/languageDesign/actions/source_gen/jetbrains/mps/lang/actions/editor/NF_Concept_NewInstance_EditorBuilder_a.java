@@ -40,25 +40,25 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_1fuglm_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_1fuglm_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_1fuglm_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_1fuglm_a0());
-    editorCell.addEditorCell(createConstant_1fuglm_b0());
-    editorCell.addEditorCell(createRefNode_1fuglm_c0());
-    editorCell.addEditorCell(createConstant_1fuglm_d0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createComponent_1fuglm_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp");
     return editorCell;
   }
-  private EditorCell createConstant_1fuglm_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
     editorCell.setCellId("Constant_1fuglm_b0");
     Style style = new StyleImpl();
@@ -67,7 +67,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_1fuglm_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new NF_Concept_NewInstance_EditorBuilder_a.prototypeSingleRoleHandler_1fuglm_c0(myNode, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x6bea674d717de5f4L, 0x3425402a54bf5f34L, "prototype"), getEditorContext());
     return provider.createCell();
   }
@@ -122,7 +122,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
       return "";
     }
   }
-  private EditorCell createConstant_1fuglm_d0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
     editorCell.setCellId("Constant_1fuglm_d0");
     Style style = new StyleImpl();

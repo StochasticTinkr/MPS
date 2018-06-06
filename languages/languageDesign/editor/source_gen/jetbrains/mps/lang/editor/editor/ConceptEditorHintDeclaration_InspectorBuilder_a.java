@@ -49,112 +49,112 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_zcofbb_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_zcofbb_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_zcofbb_a_0");
+    editorCell.setCellId("Collection_zcofbb_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_zcofbb_a0_0());
-    editorCell.addEditorCell(createConstant_zcofbb_b0());
-    editorCell.addEditorCell(createCollection_zcofbb_c0());
-    editorCell.addEditorCell(createCollection_zcofbb_d0());
-    editorCell.addEditorCell(createCollection_zcofbb_e0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createCollection_2());
+    editorCell.addEditorCell(createCollection_3());
     return editorCell;
   }
-  private EditorCell createConstant_zcofbb_a0_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "ConceptEditor context hint declaration");
-    editorCell.setCellId("Constant_zcofbb_a0_0");
+    editorCell.setCellId("Constant_zcofbb_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_zcofbb_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
-    editorCell.setCellId("Constant_zcofbb_b0");
+    editorCell.setCellId("Constant_zcofbb_1");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_zcofbb_c0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_zcofbb_c0");
+    editorCell.setCellId("Collection_zcofbb_1");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_zcofbb_a2a());
-    editorCell.addEditorCell(createConstant_zcofbb_b2a());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createConstant_3());
     return editorCell;
   }
-  private EditorCell createConstant_zcofbb_a2a() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "ID:");
-    editorCell.setCellId("Constant_zcofbb_a2a");
+    editorCell.setCellId("Constant_zcofbb_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_zcofbb_b2a() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "A unique identifier of the hint. Only letters, digits and '_' characters are allowed");
-    editorCell.setCellId("Constant_zcofbb_b2a");
+    editorCell.setCellId("Constant_zcofbb_3");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_zcofbb_d0() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_zcofbb_d0");
+    editorCell.setCellId("Collection_zcofbb_2");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_zcofbb_a3a());
-    editorCell.addEditorCell(createConstant_zcofbb_b3a());
+    editorCell.addEditorCell(createConstant_4());
+    editorCell.addEditorCell(createConstant_5());
     return editorCell;
   }
-  private EditorCell createConstant_zcofbb_a3a() {
+  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Presentation:");
-    editorCell.setCellId("Constant_zcofbb_a3a");
+    editorCell.setCellId("Constant_zcofbb_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_zcofbb_b3a() {
+  private EditorCell createConstant_5() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "a short description of this hint. Will be used in UI.");
-    editorCell.setCellId("Constant_zcofbb_b3a");
+    editorCell.setCellId("Constant_zcofbb_5");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_zcofbb_e0() {
+  private EditorCell createCollection_3() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_zcofbb_e0");
+    editorCell.setCellId("Collection_zcofbb_3");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_zcofbb_a4a());
-    editorCell.addEditorCell(createProperty_zcofbb_b4a());
+    editorCell.addEditorCell(createConstant_6());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_zcofbb_a4a() {
+  private EditorCell createConstant_6() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Can be used as a default hint");
-    editorCell.setCellId("Constant_zcofbb_a4a");
+    editorCell.setCellId("Constant_zcofbb_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_zcofbb_b4a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef50d095eL, 0x256260d9230ff77L, "showInUI");

@@ -52,21 +52,21 @@ import jetbrains.mps.core.xml.editor.XmlSS_StyleSheet.xmlPIDataStyleClass;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_9277sk_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_9277sk_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_9277sk_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_9277sk_a0());
-    editorCell.addEditorCell(createProperty_9277sk_b0());
-    editorCell.addEditorCell(createProperty_9277sk_c0());
-    editorCell.addEditorCell(createConstant_9277sk_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createProperty_1());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_9277sk_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<?");
     editorCell.setCellId("Constant_9277sk_a0");
     Style style = new StyleImpl();
@@ -80,7 +80,7 @@ import jetbrains.mps.core.xml.editor.XmlSS_StyleSheet.xmlPIDataStyleClass;
   private boolean _StyleParameter_QueryFunction_9277sk_a1a0() {
     return !((boolean) XmlPart__BehaviorDescriptor.isFirstPositionAllowed_id1Qs9WekVZ7m.invoke(getNode()));
   }
-  private EditorCell createProperty_9277sk_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494875L, 0x5c842a42c5494876L, "target");
@@ -110,7 +110,7 @@ import jetbrains.mps.core.xml.editor.XmlSS_StyleSheet.xmlPIDataStyleClass;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createProperty_9277sk_c0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494875L, 0x5c842a42c5494877L, "rawData");
@@ -140,7 +140,7 @@ import jetbrains.mps.core.xml.editor.XmlSS_StyleSheet.xmlPIDataStyleClass;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_9277sk_d0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "?>");
     editorCell.setCellId("Constant_9277sk_d0");
     Style style = new StyleImpl();

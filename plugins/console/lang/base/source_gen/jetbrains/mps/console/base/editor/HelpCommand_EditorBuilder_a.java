@@ -39,20 +39,20 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_qkizq9_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_qkizq9_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_qkizq9_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_qkizq9_a0());
-    editorCell.addEditorCell(createConstant_qkizq9_b0());
-    editorCell.addEditorCell(createRefNode_qkizq9_c0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createComponent_qkizq9_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
@@ -60,13 +60,13 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createConstant_qkizq9_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_qkizq9_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_qkizq9_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new HelpCommand_EditorBuilder_a.targetSingleRoleHandler_qkizq9_c0(myNode, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, 0x60279080c2f4192bL, "target"), getEditorContext());
     return provider.createCell();
   }

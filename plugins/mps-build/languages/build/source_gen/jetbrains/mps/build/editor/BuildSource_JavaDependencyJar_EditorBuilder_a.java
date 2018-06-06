@@ -40,24 +40,24 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_tvqbfe_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_tvqbfe_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_tvqbfe_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_tvqbfe_a0());
+    editorCell.addEditorCell(createRefNode_0());
     if (nodeCondition_tvqbfe_a1a()) {
-      editorCell.addEditorCell(createConstant_tvqbfe_b0());
+      editorCell.addEditorCell(createConstant_0());
     }
     return editorCell;
   }
   private boolean nodeCondition_tvqbfe_a1a() {
     return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L, 0x715eee405bff376dL, "reexport"));
   }
-  private EditorCell createRefNode_tvqbfe_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new BuildSource_JavaDependencyJar_EditorBuilder_a.jarSingleRoleHandler_tvqbfe_a0(myNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L, 0x3395e884b6185c41L, "jar"), getEditorContext());
     return provider.createCell();
   }
@@ -112,7 +112,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
       return "<no jar>";
     }
   }
-  private EditorCell createConstant_tvqbfe_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(reexport)");
     editorCell.setCellId("reexportKeyword");
     Style style = new StyleImpl();

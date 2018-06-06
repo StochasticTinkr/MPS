@@ -31,10 +31,10 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_vav8l6_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_vav8l6_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_vav8l6_a");
     editorCell.setBig(true);
@@ -42,12 +42,12 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     Style style = new StyleImpl();
     new CommentStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_vav8l6_a0());
-    editorCell.addEditorCell(createNextEditor_vav8l6_b0());
-    editorCell.addEditorCell(createConstant_vav8l6_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createNextEditor_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_vav8l6_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "/*");
     editorCell.setCellId("LEFT_COMMENT_ANCHOR");
     Style style = new StyleImpl();
@@ -57,7 +57,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createNextEditor_vav8l6_b0() {
+  private EditorCell createNextEditor_0() {
     try {
       getCellFactory().pushCellContext();
       getCellFactory().removeCellContextHints(new String[]{"jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"});
@@ -69,7 +69,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_vav8l6_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "*/");
     editorCell.setCellId("RIGHT_COMMENT_ANCHOR");
     Style style = new StyleImpl();

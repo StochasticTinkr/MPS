@@ -41,30 +41,30 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_lfwa2a_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_lfwa2a_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_lfwa2a_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_lfwa2a_a0());
-    editorCell.addEditorCell(createConstant_lfwa2a_b0());
-    editorCell.addEditorCell(createRefNode_lfwa2a_c0());
-    editorCell.addEditorCell(createConstant_lfwa2a_d0());
-    editorCell.addEditorCell(createRefNode_lfwa2a_e0());
-    editorCell.addEditorCell(createConstant_lfwa2a_f0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
-  private EditorCell createComponent_lfwa2a_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createConstant_lfwa2a_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "with");
     editorCell.setCellId("Constant_lfwa2a_b0");
     Style style = new StyleImpl();
@@ -73,7 +73,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_lfwa2a_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new BaseExecuteCommandStatement_EditorBuilder_a.repoSingleRoleHandler_lfwa2a_c0(myNode, MetaAdapterFactory.getContainmentLink(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20aL, 0x13bfe1ec0ded851eL, "repo"), getEditorContext());
     return provider.createCell();
   }
@@ -128,7 +128,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       return "global repository";
     }
   }
-  private EditorCell createConstant_lfwa2a_d0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
     editorCell.setCellId("Constant_lfwa2a_d0");
     Style style = new StyleImpl();
@@ -138,7 +138,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_lfwa2a_e0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new BaseExecuteCommandStatement_EditorBuilder_a.commandClosureLiteralSingleRoleHandler_lfwa2a_e0(myNode, MetaAdapterFactory.getContainmentLink(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20aL, 0x7c8b08a50a3ea20bL, "commandClosureLiteral"), getEditorContext());
     return provider.createCell();
   }
@@ -197,7 +197,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       return "<no commandClosureLiteral>";
     }
   }
-  private EditorCell createConstant_lfwa2a_f0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
     editorCell.setCellId("Constant_lfwa2a_f0");
     Style style = new StyleImpl();

@@ -46,30 +46,30 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_6n3yp7_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_6n3yp7_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_6n3yp7_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
     if (nodeCondition_6n3yp7_a0a()) {
-      editorCell.addEditorCell(createConstant_6n3yp7_a0());
+      editorCell.addEditorCell(createConstant_0());
     }
-    editorCell.addEditorCell(createProperty_6n3yp7_b0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
   private boolean nodeCondition_6n3yp7_a0a() {
     return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, 0x5115dda8df7dfca2L, "commented"));
   }
-  private EditorCell createConstant_6n3yp7_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "#");
     editorCell.setCellId("Constant_6n3yp7_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_6n3yp7_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, 0x35ebd6e5b343774dL, "options");

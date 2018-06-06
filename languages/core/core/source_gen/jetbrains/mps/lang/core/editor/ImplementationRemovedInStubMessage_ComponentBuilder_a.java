@@ -28,10 +28,10 @@ import jetbrains.mps.lang.core.editor.BaseStyles_StyleSheet.StubImplementationSt
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_a0me9v_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_a0me9v_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "/* compiled code */");
     editorCell.setCellId("Constant_a0me9v_a");
     Style style = new StyleImpl();

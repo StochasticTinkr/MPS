@@ -45,25 +45,25 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_taq11b_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_taq11b_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_taq11b_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_taq11b_a0());
-    editorCell.addEditorCell(createProperty_taq11b_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_taq11b_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "convert to");
     editorCell.setCellId("Constant_taq11b_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_taq11b_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x18d8e0833b34209aL, 0x18d8e0833b34345fL, "targetCurrency");

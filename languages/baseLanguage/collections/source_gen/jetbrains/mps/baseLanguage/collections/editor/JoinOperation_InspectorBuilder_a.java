@@ -36,25 +36,25 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_9t56qv_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_9t56qv_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_9t56qv_a_0");
+    editorCell.setCellId("Collection_9t56qv_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_9t56qv_a0());
-    editorCell.addEditorCell(createRefNode_9t56qv_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_9t56qv_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "delimeter:");
-    editorCell.setCellId("Constant_9t56qv_a0");
+    editorCell.setCellId("Constant_9t56qv_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_9t56qv_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new JoinOperation_InspectorBuilder_a.delimiterSingleRoleHandler_9t56qv_b0(myNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120debe16c6L, 0x120debf4541L, "delimiter"), getEditorContext());
     return provider.createCell();
   }

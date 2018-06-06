@@ -48,30 +48,30 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_4ldurz_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_4ldurz_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_4ldurz_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_4ldurz_a0());
-    editorCell.addEditorCell(createProperty_4ldurz_b0());
-    editorCell.addEditorCell(createConstant_4ldurz_c0());
-    editorCell.addEditorCell(createConstant_4ldurz_d0());
-    editorCell.addEditorCell(createComponent_4ldurz_e0());
-    editorCell.addEditorCell(createConstant_4ldurz_f0());
-    editorCell.addEditorCell(createComponent_4ldurz_g0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createComponent_1());
     return editorCell;
   }
-  private EditorCell createConstant_4ldurz_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "State chart");
     editorCell.setCellId("Constant_4ldurz_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_4ldurz_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -101,7 +101,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_4ldurz_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_4ldurz_c0");
     Style style = new StyleImpl();
@@ -110,7 +110,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_4ldurz_d0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Triggers:");
     editorCell.setCellId("Constant_4ldurz_d0");
     Style style = new StyleImpl();
@@ -119,14 +119,14 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createComponent_4ldurz_e0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.samples.StateChart.editor.StateTriggers");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createConstant_4ldurz_f0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "States:");
     editorCell.setCellId("Constant_4ldurz_f0");
     Style style = new StyleImpl();
@@ -135,7 +135,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createComponent_4ldurz_g0() {
+  private EditorCell createComponent_1() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.samples.StateChart.editor.StateStates");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

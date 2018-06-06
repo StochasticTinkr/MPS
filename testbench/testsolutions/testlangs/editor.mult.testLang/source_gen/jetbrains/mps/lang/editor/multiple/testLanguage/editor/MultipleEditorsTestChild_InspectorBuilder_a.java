@@ -25,12 +25,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_7nhtss_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_7nhtss_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "default");
-    editorCell.setCellId("Constant_7nhtss_a");
+    editorCell.setCellId("Constant_7nhtss_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
     editorCell.setDefaultText("");

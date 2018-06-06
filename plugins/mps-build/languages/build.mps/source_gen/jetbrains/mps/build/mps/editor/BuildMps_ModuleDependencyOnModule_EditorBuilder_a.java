@@ -59,24 +59,24 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_2jl94m_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_2jl94m_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_2jl94m_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefCell_2jl94m_a0());
+    editorCell.addEditorCell(createRefCell_0());
     if (nodeCondition_2jl94m_a1a()) {
-      editorCell.addEditorCell(createConstant_2jl94m_b0());
+      editorCell.addEditorCell(createConstant_0());
     }
     return editorCell;
   }
   private boolean nodeCondition_2jl94m_a1a() {
     return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL, 0x48e82d5083341cc1L, "reexport"));
   }
-  private EditorCell createRefCell_2jl94m_a0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL, 0x48e82d5083341cb9L, "module");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -132,7 +132,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_2jl94m_a0a0();
+      return createProperty_0();
     }
 
     @NotNull
@@ -141,7 +141,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
       return myNode;
     }
 
-    private EditorCell createProperty_2jl94m_a0a0() {
+    private EditorCell createProperty_0() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -169,7 +169,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
       }
     }
   }
-  private EditorCell createConstant_2jl94m_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(reexport)");
     editorCell.setCellId("reexportKeyword");
     Style style = new StyleImpl();

@@ -52,10 +52,10 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_inwiug_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_inwiug_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_inwiug_a");
     editorCell.setBig(true);
@@ -63,18 +63,18 @@ import jetbrains.mps.nodeEditor.MPSColors;
     Style style = new StyleImpl();
     new rootCellModelStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createAlternation_inwiug_a0());
-    editorCell.addEditorCell(createConstant_inwiug_b0());
+    editorCell.addEditorCell(createAlternation_0());
+    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
-  private EditorCell createAlternation_inwiug_a0() {
+  private EditorCell createAlternation_0() {
     boolean alternationCondition = true;
     alternationCondition = nodeCondition_inwiug_a0a();
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = createConstant_inwiug_a0a();
+      editorCell = createConstant_0();
     } else {
-      editorCell = createConstant_inwiug_a0a_0();
+      editorCell = createConstant_1();
     }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new CellModel_DiagramPort_EditorBuilder_a.CellModel_DiagramPort_generic_cellMenu_inwiug_a0a0(), new CellModel_DiagramPort_EditorBuilder_a.CellModel_DiagramPort_generic_cellMenu_inwiug_b0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
@@ -138,19 +138,19 @@ import jetbrains.mps.nodeEditor.MPSColors;
       return "output";
     }
   }
-  private EditorCell createConstant_inwiug_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "input");
     editorCell.setCellId("Constant_inwiug_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_inwiug_a0a_0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "output");
     editorCell.setCellId("Constant_inwiug_a0a_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_inwiug_b0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "port");
     editorCell.setCellId("Constant_inwiug_b0");
     Style style = new StyleImpl();

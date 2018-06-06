@@ -40,20 +40,20 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_fk2o1x_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_fk2o1x_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_fk2o1x_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_fk2o1x_a0());
-    editorCell.addEditorCell(createConstant_fk2o1x_b0());
-    editorCell.addEditorCell(createRefNode_fk2o1x_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_fk2o1x_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ConnectionEndBLQuery_EditorBuilder_a.targetNodeSingleRoleHandler_fk2o1x_a0(myNode, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x10efa534a508176dL, 0x287647ebcf77ee1aL, "targetNode"), getEditorContext());
     return provider.createCell();
   }
@@ -108,7 +108,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
       return "<no targetNode>";
     }
   }
-  private EditorCell createConstant_fk2o1x_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "#");
     editorCell.setCellId("Constant_fk2o1x_b0");
     Style style = new StyleImpl();
@@ -118,7 +118,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_fk2o1x_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new ConnectionEndBLQuery_EditorBuilder_a.pointIDSingleRoleHandler_fk2o1x_c0(myNode, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x10efa534a508176dL, 0x10efa534a5093964L, "pointID"), getEditorContext());
     return provider.createCell();
   }

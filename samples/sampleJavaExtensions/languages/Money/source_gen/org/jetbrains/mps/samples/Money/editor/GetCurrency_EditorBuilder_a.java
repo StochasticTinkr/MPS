@@ -25,10 +25,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_6zlpyq_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_6zlpyq_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "currency");
     editorCell.setCellId("Constant_6zlpyq_a");
     editorCell.setBig(true);

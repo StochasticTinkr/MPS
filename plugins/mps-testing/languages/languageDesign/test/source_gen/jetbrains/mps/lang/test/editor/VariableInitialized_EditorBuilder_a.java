@@ -58,22 +58,22 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_vx851m_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_vx851m_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_vx851m_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_vx851m_a0());
-    editorCell.addEditorCell(createRefNode_vx851m_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     if (SNodeAccessUtil.hasProperty(myNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) {
-      editorCell.addEditorCell(createNonEmptyProperty_vx851m_c0());
+      editorCell.addEditorCell(createNonEmptyProperty_0());
     }
     return editorCell;
   }
-  private EditorCell createConstant_vx851m_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "init");
     editorCell.setCellId("Constant_vx851m_a0");
     Style style = new StyleImpl();
@@ -84,7 +84,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_vx851m_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new VariableInitialized_EditorBuilder_a.varSingleRoleHandler_vx851m_b0(myNode, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b0843a235L, 0x11b0843f269L, "var"), getEditorContext());
     return provider.createCell();
   }
@@ -139,7 +139,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no var>";
     }
   }
-  private EditorCell createNonEmptyProperty_vx851m_c0() {
+  private EditorCell createNonEmptyProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");

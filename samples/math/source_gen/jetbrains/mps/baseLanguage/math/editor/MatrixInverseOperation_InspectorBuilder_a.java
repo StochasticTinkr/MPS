@@ -31,25 +31,25 @@ import jetbrains.mps.nodeEditor.EditorManager;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_j4oyiy_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_j4oyiy_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_j4oyiy_a");
+    editorCell.setCellId("Collection_j4oyiy_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_j4oyiy_a0());
-    editorCell.addEditorCell(createRefCell_j4oyiy_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefCell_0());
     return editorCell;
   }
-  private EditorCell createConstant_j4oyiy_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "precision setting:");
-    editorCell.setCellId("Constant_j4oyiy_a0");
+    editorCell.setCellId("Constant_j4oyiy_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_j4oyiy_b0() {
+  private EditorCell createRefCell_0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abcL, 0x1a6fbb5a434b3ed7L, "context"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1a6fbb5a434b008bL, "jetbrains.mps.baseLanguage.math.structure.MathContext"), "context", getEditorContext()) {
 
       @Override
@@ -87,7 +87,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
     }
 
     /*package*/ EditorCell createCell() {
-      return createComponent_j4oyiy_a0b0();
+      return createComponent_0();
     }
 
     @NotNull
@@ -96,7 +96,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
       return myNode;
     }
 
-    private EditorCell createComponent_j4oyiy_a0b0() {
+    private EditorCell createComponent_0() {
       EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.baseLanguage.math.editor.MathContextEditorPart");
       return editorCell;
     }

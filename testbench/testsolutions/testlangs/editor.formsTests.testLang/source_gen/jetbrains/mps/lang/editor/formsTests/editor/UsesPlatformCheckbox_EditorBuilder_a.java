@@ -36,35 +36,35 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_7xa7wl_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_7xa7wl_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_7xa7wl_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
     Checkbox_ActionMap_7xa7wl_a.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.addKeyMap(new Checkbox_KeyMap_7xa7wl_a());
-    editorCell.addEditorCell(createAlternation_7xa7wl_a0());
-    editorCell.addEditorCell(createConstant_7xa7wl_b0());
+    editorCell.addEditorCell(createAlternation_0());
+    editorCell.addEditorCell(createConstant_0());
     return editorCell;
   }
-  private EditorCell createAlternation_7xa7wl_a0() {
+  private EditorCell createAlternation_0() {
     boolean alternationCondition = true;
     alternationCondition = nodeCondition_7xa7wl_a0a();
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = createImage_7xa7wl_a0a();
+      editorCell = createImage_0();
     } else {
-      editorCell = createImage_7xa7wl_a0a_0();
+      editorCell = createImage_1();
     }
     return editorCell;
   }
   private boolean nodeCondition_7xa7wl_a0a() {
     return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L, 0x61552ecc953bf2aaL, "property"));
   }
-  private EditorCell createImage_7xa7wl_a0a() {
+  private EditorCell createImage_0() {
     SModule imageModule;
     String imagePath;
     {
@@ -81,7 +81,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setDescent(-1);
     return editorCell;
   }
-  private EditorCell createImage_7xa7wl_a0a_0() {
+  private EditorCell createImage_1() {
     SModule imageModule;
     String imagePath;
     {
@@ -98,7 +98,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setDescent(-1);
     return editorCell;
   }
-  private EditorCell createConstant_7xa7wl_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "the label");
     editorCell.setCellId("Constant_7xa7wl_b0");
     editorCell.setDefaultText("");

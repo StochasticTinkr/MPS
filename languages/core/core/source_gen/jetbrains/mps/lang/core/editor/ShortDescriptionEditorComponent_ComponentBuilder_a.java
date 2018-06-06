@@ -34,10 +34,10 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createReadOnlyModelAccessor_37ao6w_a();
+    return createReadOnlyModelAccessor_0();
   }
 
-  private EditorCell createReadOnlyModelAccessor_37ao6w_a() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return SConceptOperations.shortDescription(SNodeOperations.getConcept(myNode));

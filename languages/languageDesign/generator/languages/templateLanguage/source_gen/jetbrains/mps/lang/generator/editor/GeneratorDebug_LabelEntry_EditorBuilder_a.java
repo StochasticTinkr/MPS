@@ -53,19 +53,19 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_mfgmav_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_mfgmav_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_mfgmav_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createProperty_mfgmav_a0());
-    editorCell.addEditorCell(createRefNodeList_mfgmav_b0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createProperty_mfgmav_a0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, 0x35a02f6bfc9810e9L, "label");
@@ -92,7 +92,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createRefNodeList_mfgmav_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new GeneratorDebug_LabelEntry_EditorBuilder_a.entriesListHandler_mfgmav_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_entries");

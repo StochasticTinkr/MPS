@@ -28,23 +28,23 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_r9dw63_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_r9dw63_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_r9dw63_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_r9dw63_a0());
-    editorCell.addEditorCell(createAttributedNodeCell_r9dw63_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createAttributedNodeCell_0());
     return editorCell;
   }
-  private EditorCell createComponent_r9dw63_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
-  private EditorCell createAttributedNodeCell_r9dw63_b0() {
+  private EditorCell createAttributedNodeCell_0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;

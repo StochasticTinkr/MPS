@@ -48,25 +48,25 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_onthxk_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_onthxk_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_onthxk_a_0");
+    editorCell.setCellId("Collection_onthxk_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_onthxk_a0_0());
-    editorCell.addEditorCell(createProperty_onthxk_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_onthxk_a0_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "include recursively:");
-    editorCell.setCellId("Constant_onthxk_a0_0");
+    editorCell.setCellId("Constant_onthxk_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_onthxk_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65af8L, 0x1c94e4abb1e90814L, "includeRecursively");

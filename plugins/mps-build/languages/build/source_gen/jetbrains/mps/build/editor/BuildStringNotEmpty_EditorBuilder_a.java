@@ -42,10 +42,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_vy9fh5_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_vy9fh5_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_vy9fh5_a");
     editorCell.setBig(true);
@@ -53,10 +53,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createRefNodeList_vy9fh5_a0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createRefNodeList_vy9fh5_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new BuildStringNotEmpty_EditorBuilder_a.partsListHandler_vy9fh5_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parts");
@@ -96,7 +96,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(partsListHandler_vy9fh5_a0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, 0x440d7ea3b68cba4bL, "parts")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createError_vy9fh5_a0a();
+        emptyCell = createError_0();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -116,7 +116,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
         }
       }
     }
-    private EditorCell createError_vy9fh5_a0a() {
+    private EditorCell createError_0() {
       EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<empty>");
       editorCell.setCellId("Error_vy9fh5_a0a");
       return editorCell;

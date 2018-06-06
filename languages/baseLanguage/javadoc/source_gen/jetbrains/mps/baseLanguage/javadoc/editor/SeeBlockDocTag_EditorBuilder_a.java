@@ -55,20 +55,20 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_s8euu0_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_s8euu0_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_s8euu0_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_s8euu0_a0());
-    editorCell.addEditorCell(createRefNode_s8euu0_b0());
-    editorCell.addEditorCell(createProperty_s8euu0_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_s8euu0_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "@see");
     editorCell.setCellId("Constant_s8euu0_a0");
     Style style = new StyleImpl();
@@ -78,7 +78,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_s8euu0_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new SeeBlockDocTag_EditorBuilder_a.referenceSingleRoleHandler_s8euu0_b0(myNode, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252ca3abL, 0x1ec532ec252ca3baL, "reference"), getEditorContext());
     return provider.createCell();
   }
@@ -134,7 +134,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no reference>";
     }
   }
-  private EditorCell createProperty_s8euu0_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252ca3abL, 0x1ec532ec252ca3acL, "text");

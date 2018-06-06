@@ -39,19 +39,19 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_l4xam2_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_l4xam2_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_l4xam2_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_l4xam2_a0());
-    editorCell.addEditorCell(createRefNode_l4xam2_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createComponent_l4xam2_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new InsertPositionStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -59,7 +59,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createRefNode_l4xam2_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new InsertBefore_EditorBuilder_a.instructionSingleRoleHandler_l4xam2_b0(myNode, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x75c73261efe5e666L, 0x75c73261efe5e689L, "instruction"), getEditorContext());
     return provider.createCell();
   }

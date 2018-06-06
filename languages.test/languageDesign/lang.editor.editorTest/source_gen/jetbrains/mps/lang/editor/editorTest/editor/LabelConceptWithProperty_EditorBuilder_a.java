@@ -52,25 +52,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ulii9q_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ulii9q_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ulii9q_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_ulii9q_a0());
-    editorCell.addEditorCell(createProperty_ulii9q_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_ulii9q_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "property:");
     editorCell.setCellId("Constant_ulii9q_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_ulii9q_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x19a61c3cfece0e26L, 0x19a61c3cfed036bbL, "myProperty");

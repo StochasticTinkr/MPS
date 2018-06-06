@@ -49,28 +49,28 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_w2x3rd_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_w2x3rd_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_w2x3rd_a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createComponent_w2x3rd_a0());
-    editorCell.addEditorCell(createConstant_w2x3rd_b0());
-    editorCell.addEditorCell(createProperty_w2x3rd_c0());
-    editorCell.addEditorCell(createConstant_w2x3rd_d0());
-    editorCell.addEditorCell(createConstant_w2x3rd_e0());
-    editorCell.addEditorCell(createProperty_w2x3rd_f0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createComponent_w2x3rd_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
-  private EditorCell createConstant_w2x3rd_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "font family =");
     editorCell.setCellId("Constant_w2x3rd_b0");
     Style style = new StyleImpl();
@@ -79,7 +79,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_w2x3rd_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7697714d0d49e230L, 0x7697714d0d4a3399L, "fontFamily");
@@ -109,13 +109,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_w2x3rd_d0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ",");
     editorCell.setCellId("Constant_w2x3rd_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_w2x3rd_e0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "font size =");
     editorCell.setCellId("Constant_w2x3rd_e0");
     Style style = new StyleImpl();
@@ -124,7 +124,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_w2x3rd_f0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7697714d0d49e230L, 0x7697714d0d4e935bL, "fontSize");

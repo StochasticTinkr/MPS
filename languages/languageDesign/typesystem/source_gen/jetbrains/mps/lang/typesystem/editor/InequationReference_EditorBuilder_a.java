@@ -65,18 +65,18 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_boi5ax_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_boi5ax_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_boi5ax_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefCell_boi5ax_a0());
+    editorCell.addEditorCell(createRefCell_0());
     return editorCell;
   }
-  private EditorCell createRefCell_boi5ax_a0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x42501924d0bd1913L, 0x42501924d0bd1914L, "inequation");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -131,7 +131,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
     }
 
     /*package*/ EditorCell createCell() {
-      return createCollection_boi5ax_a0a0();
+      return createCollection_1();
     }
 
     @NotNull
@@ -140,14 +140,14 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
       return myNode;
     }
 
-    private EditorCell createCollection_boi5ax_a0a0() {
+    private EditorCell createCollection_1() {
       EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
       editorCell.setCellId("Collection_boi5ax_a0a0");
-      editorCell.addEditorCell(createModelAccess_boi5ax_a0a0a());
-      editorCell.addEditorCell(createProperty_boi5ax_b0a0a());
+      editorCell.addEditorCell(createModelAccess_0());
+      editorCell.addEditorCell(createProperty_0());
       return editorCell;
     }
-    private EditorCell createModelAccess_boi5ax_a0a0a() {
+    private EditorCell createModelAccess_0() {
       ModelAccessor modelAccessor = new ModelAccessor() {
         public String getText() {
           return SModelOperations.getModelName(SNodeOperations.getModel(myNode)) + (SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getNodeAncestor(myNode, null, false, true), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
@@ -168,7 +168,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
       editorCell.setDefaultText("<no name>");
       return editorCell;
     }
-    private EditorCell createProperty_boi5ax_b0a0a() {
+    private EditorCell createProperty_0() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342c1412L, 0x42501924d0bd6481L, "label");

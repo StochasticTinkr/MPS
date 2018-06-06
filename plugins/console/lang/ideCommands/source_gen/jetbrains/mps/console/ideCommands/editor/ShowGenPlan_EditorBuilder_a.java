@@ -35,23 +35,23 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_mrkoqg_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_mrkoqg_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_mrkoqg_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_mrkoqg_a0());
-    editorCell.addEditorCell(createRefNode_mrkoqg_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createComponent_mrkoqg_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
-  private EditorCell createRefNode_mrkoqg_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ShowGenPlan_EditorBuilder_a.targetModelSingleRoleHandler_mrkoqg_b0(myNode, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x70ee8fac615b4f33L, "targetModel"), getEditorContext());
     return provider.createCell();
   }

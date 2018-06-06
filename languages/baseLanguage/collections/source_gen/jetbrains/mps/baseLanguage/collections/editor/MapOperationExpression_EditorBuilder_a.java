@@ -39,20 +39,20 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.DotStyleCl
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_yz1xt0_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_yz1xt0_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_yz1xt0_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_yz1xt0_a0());
-    editorCell.addEditorCell(createConstant_yz1xt0_b0());
-    editorCell.addEditorCell(createRefNode_yz1xt0_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_yz1xt0_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new MapOperationExpression_EditorBuilder_a.expressionSingleRoleHandler_yz1xt0_a0(myNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117ae10e4d9L, 0x117ae11d026L, "expression"), getEditorContext());
     return provider.createCell();
   }
@@ -107,7 +107,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.DotStyleCl
       return "<no expression>";
     }
   }
-  private EditorCell createConstant_yz1xt0_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ".");
     editorCell.setCellId("Constant_yz1xt0_b0");
     Style style = new StyleImpl();
@@ -116,7 +116,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.DotStyleCl
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_yz1xt0_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new MapOperationExpression_EditorBuilder_a.mapOperationSingleRoleHandler_yz1xt0_c0(myNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117ae10e4d9L, 0x117aea4e016L, "mapOperation"), getEditorContext());
     return provider.createCell();
   }

@@ -67,20 +67,20 @@ import jetbrains.mps.smodel.SNodePointer;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_lvgr57_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_lvgr57_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_lvgr57_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_lvgr57_a0());
-    editorCell.addEditorCell(createProperty_lvgr57_b0());
-    editorCell.addEditorCell(createComponent_lvgr57_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createComponent_0());
     return editorCell;
   }
-  private EditorCell createConstant_lvgr57_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "new");
     editorCell.setCellId("Constant_lvgr57_a0");
     Style style = new StyleImpl();
@@ -89,7 +89,7 @@ import jetbrains.mps.smodel.SNodePointer;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_lvgr57_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2dda7700ec3ae154L, 0x2dda7700ec3bb537L, "className");
@@ -149,7 +149,7 @@ import jetbrains.mps.smodel.SNodePointer;
       return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1913201371134929489"));
     }
   }
-  private EditorCell createComponent_lvgr57_c0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     return editorCell;
   }

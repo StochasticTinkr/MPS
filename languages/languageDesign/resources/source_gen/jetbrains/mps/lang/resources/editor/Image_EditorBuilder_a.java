@@ -45,33 +45,33 @@ import jetbrains.mps.editor.runtime.EditorUtil;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_w2956w_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_w2956w_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_w2956w_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createAlternation_w2956w_a0());
-    editorCell.addEditorCell(createJComponent_w2956w_b0());
+    editorCell.addEditorCell(createAlternation_0());
+    editorCell.addEditorCell(createJComponent_0());
     return editorCell;
   }
-  private EditorCell createAlternation_w2956w_a0() {
+  private EditorCell createAlternation_0() {
     boolean alternationCondition = true;
     alternationCondition = nodeCondition_w2956w_a0a();
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = createConstant_w2956w_a0a();
+      editorCell = createConstant_0();
     } else {
-      editorCell = createAlternation_w2956w_a0a();
+      editorCell = createAlternation_1();
     }
     return editorCell;
   }
   private boolean nodeCondition_w2956w_a0a() {
     return isEmptyString(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0xb8b96b5078f3367L, 0xb8b96b5078f33bbL, "file")));
   }
-  private EditorCell createConstant_w2956w_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<no icon>");
     editorCell.setCellId("Constant_w2956w_a0a");
     Style style = new StyleImpl();
@@ -80,30 +80,30 @@ import jetbrains.mps.editor.runtime.EditorUtil;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createAlternation_w2956w_a0a() {
+  private EditorCell createAlternation_1() {
     boolean alternationCondition = true;
     alternationCondition = nodeCondition_w2956w_a0a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = createCollection_w2956w_a0a0();
+      editorCell = createCollection_1();
     } else {
-      editorCell = createConstant_w2956w_a0a0();
+      editorCell = createConstant_1();
     }
     return editorCell;
   }
   private boolean nodeCondition_w2956w_a0a0() {
     return (boolean) Image__BehaviorDescriptor.isValid_idIb_Fk7zRKP.invoke(myNode);
   }
-  private EditorCell createCollection_w2956w_a0a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_w2956w_a0a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createImage_w2956w_a0a0a());
+    editorCell.addEditorCell(createImage_0());
     return editorCell;
   }
-  private EditorCell createImage_w2956w_a0a0a() {
+  private EditorCell createImage_0() {
     SModule imageModule;
     String imagePath;
     imageModule = SNodeOperations.getModel(myNode).getModule();
@@ -117,7 +117,7 @@ import jetbrains.mps.editor.runtime.EditorUtil;
     editorCell.setDescent(0);
     return editorCell;
   }
-  private EditorCell createConstant_w2956w_a0a0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<invalid path>");
     editorCell.setCellId("Constant_w2956w_a0a0");
     Style style = new StyleImpl();
@@ -126,9 +126,9 @@ import jetbrains.mps.editor.runtime.EditorUtil;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createJComponent_w2956w_b0() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_w2956w_a1a(), "_w2956w_b0");
-    editorCell.setCellId("JComponent_w2956w_b0");
+  private EditorCell createJComponent_0() {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_w2956w_a1a(), "JComponent_w2956w_b0");
+    editorCell.setCellId("JComponent_w2956w_b0_0");
     return editorCell;
   }
   private JComponent _QueryFunction_JComponent_w2956w_a1a() {

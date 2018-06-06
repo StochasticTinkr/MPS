@@ -42,32 +42,32 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_955wzk_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_955wzk_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_955wzk_a_0");
+    editorCell.setCellId("Collection_955wzk_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_955wzk_a0());
-    editorCell.addEditorCell(createRefNodeList_955wzk_b0());
-    editorCell.addEditorCell(createComponent_955wzk_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createComponent_0());
     return editorCell;
   }
-  private EditorCell createConstant_955wzk_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "annotations:");
-    editorCell.setCellId("Constant_955wzk_a0");
+    editorCell.setCellId("Constant_955wzk_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_955wzk_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new NamedTupleDeclaration_InspectorBuilder_a.annotationListHandler_955wzk_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_annotation");
@@ -130,7 +130,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
       }
     }
   }
-  private EditorCell createComponent_955wzk_c0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.VirtualPackage");
     return editorCell;
   }

@@ -36,25 +36,25 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ljswaq_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ljswaq_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ljswaq_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_ljswaq_a0());
-    editorCell.addEditorCell(createRefNode_ljswaq_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_ljswaq_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "listof");
     editorCell.setCellId("Constant_ljswaq_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_ljswaq_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ListArgumentsClause_EditorBuilder_a.listSingleRoleHandler_ljswaq_b0(myNode, MetaAdapterFactory.getContainmentLink(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6b9L, 0x41c47a507380d0bcL, "list"), getEditorContext());
     return provider.createCell();
   }

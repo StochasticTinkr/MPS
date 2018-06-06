@@ -61,22 +61,22 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_8ff02w_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_8ff02w_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_8ff02w_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_8ff02w_a0());
-    editorCell.addEditorCell(createProperty_8ff02w_b0());
-    editorCell.addEditorCell(createRefNode_8ff02w_c0());
-    editorCell.addEditorCell(createCollection_8ff02w_d0());
-    editorCell.addEditorCell(createConstant_8ff02w_e0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
-  private EditorCell createConstant_8ff02w_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "log");
     editorCell.setCellId("Constant_8ff02w_a0");
     Style style = new StyleImpl();
@@ -89,7 +89,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
     return editorCell;
   }
-  private EditorCell createProperty_8ff02w_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, 0x1c3d779b2be2f1b7L, "severity");
@@ -120,7 +120,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createRefNode_8ff02w_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new LogLowLevelStatement_EditorBuilder_a.messageSingleRoleHandler_8ff02w_c0(myNode, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, 0x1c3d779b2be2f1b9L, "message"), getEditorContext());
     return provider.createCell();
   }
@@ -175,17 +175,17 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
       return "<no message>";
     }
   }
-  private EditorCell createCollection_8ff02w_d0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_8ff02w_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_8ff02w_a3a());
-    editorCell.addEditorCell(createRefNode_8ff02w_b3a());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createConstant_8ff02w_a3a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ",");
     editorCell.setCellId("Constant_8ff02w_a3a");
     Style style = new StyleImpl();
@@ -195,7 +195,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_8ff02w_b3a() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new LogLowLevelStatement_EditorBuilder_a.throwableSingleRoleHandler_8ff02w_b3a(myNode, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, 0x1c3d779b2be2f1bbL, "throwable"), getEditorContext());
     return provider.createCell();
   }
@@ -250,7 +250,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
       return "<no throwable>";
     }
   }
-  private EditorCell createConstant_8ff02w_e0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ";");
     editorCell.setCellId("Constant_8ff02w_e0");
     Style style = new StyleImpl();

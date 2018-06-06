@@ -41,23 +41,23 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_cuzp02_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_cuzp02_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_cuzp02_a_0");
+    editorCell.setCellId("Collection_cuzp02_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_cuzp02_a0());
-    editorCell.addEditorCell(createReadOnlyModelAccessor_cuzp02_b0());
-    editorCell.addEditorCell(createConstant_cuzp02_c0());
-    editorCell.addEditorCell(createReadOnlyModelAccessor_cuzp02_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_1());
     return editorCell;
   }
-  private EditorCell createConstant_cuzp02_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "key:");
-    editorCell.setCellId("Constant_cuzp02_a0");
+    editorCell.setCellId("Constant_cuzp02_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
@@ -65,7 +65,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_cuzp02_b0() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return PropEscapeUtil.escapeKey(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
@@ -78,16 +78,16 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     }, myNode);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_cuzp02_b0");
+    editorCell.setCellId("ReadOnlyModelAccessor_cuzp02_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createConstant_cuzp02_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "value:");
-    editorCell.setCellId("Constant_cuzp02_c0");
+    editorCell.setCellId("Constant_cuzp02_1");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
@@ -95,7 +95,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_cuzp02_d0() {
+  private EditorCell createReadOnlyModelAccessor_1() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return PropEscapeUtil.escapeValue(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ac1L, 0x36fb0dc9fd3a3ae4L, "value")));
@@ -108,7 +108,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     }, myNode);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_cuzp02_d0");
+    editorCell.setCellId("ReadOnlyModelAccessor_cuzp02_1");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);

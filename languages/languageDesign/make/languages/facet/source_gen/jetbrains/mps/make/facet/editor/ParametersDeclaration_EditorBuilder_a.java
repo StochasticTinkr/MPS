@@ -41,23 +41,23 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_hy8r7y_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_hy8r7y_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_hy8r7y_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createIndentCell_hy8r7y_a0());
-    editorCell.addEditorCell(createRefNodeList_hy8r7y_b0());
+    editorCell.addEditorCell(createIndentCell_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createIndentCell_hy8r7y_a0() {
+  private EditorCell createIndentCell_0() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createRefNodeList_hy8r7y_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new ParametersDeclaration_EditorBuilder_a.componentListHandler_hy8r7y_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_component");
@@ -96,7 +96,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(componentListHandler_hy8r7y_b0.this.getNode(), MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x12099b7fca9L, "component")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_hy8r7y_a1a();
+        emptyCell = createConstant_0();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -116,7 +116,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
         }
       }
     }
-    private EditorCell createConstant_hy8r7y_a1a() {
+    private EditorCell createConstant_0() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
       editorCell.setCellId("Constant_hy8r7y_a1a");
       editorCell.setDefaultText("Enter creates a property");

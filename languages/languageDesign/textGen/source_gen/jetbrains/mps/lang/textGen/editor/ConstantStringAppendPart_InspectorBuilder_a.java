@@ -45,32 +45,32 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_tc2pit_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_tc2pit_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_tc2pit_a_0");
+    editorCell.setCellId("Collection_tc2pit_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_tc2pit_a0_0());
-    editorCell.addEditorCell(createConstant_tc2pit_b0());
-    editorCell.addEditorCell(createProperty_tc2pit_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_tc2pit_a0_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "with");
-    editorCell.setCellId("Constant_tc2pit_a0_0");
+    editorCell.setCellId("Constant_tc2pit_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_tc2pit_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "indent");
-    editorCell.setCellId("Constant_tc2pit_b0");
+    editorCell.setCellId("Constant_tc2pit_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_tc2pit_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, 0x1201534c74dL, "withIndent");

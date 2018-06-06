@@ -40,20 +40,20 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_pg66x0_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_pg66x0_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_pg66x0_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_pg66x0_a0());
-    editorCell.addEditorCell(createConstant_pg66x0_b0());
-    editorCell.addEditorCell(createRefNode_pg66x0_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_pg66x0_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new InstanceOfExpression_EditorBuilder_a.leftExpressionSingleRoleHandler_pg66x0_a0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbff03700L, 0xfbbff06218L, "leftExpression"), getEditorContext());
     return provider.createCell();
   }
@@ -111,7 +111,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
       return "<no leftExpression>";
     }
   }
-  private EditorCell createConstant_pg66x0_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "instanceof");
     editorCell.setCellId("Constant_pg66x0_b0");
     Style style = new StyleImpl();
@@ -120,7 +120,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_pg66x0_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new InstanceOfExpression_EditorBuilder_a.classTypeSingleRoleHandler_pg66x0_c0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbff03700L, 0xfbbff06219L, "classType"), getEditorContext());
     return provider.createCell();
   }

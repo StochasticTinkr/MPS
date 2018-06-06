@@ -48,10 +48,10 @@ import jetbrains.mps.lang.resources.behavior.FileIcon__BehaviorDescriptor;
   }
 
   /*package*/ EditorCell createCell() {
-    return createProperty_tl1n57_a();
+    return createProperty_0();
   }
 
-  private EditorCell createProperty_tl1n57_a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file");

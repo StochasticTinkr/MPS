@@ -31,10 +31,10 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_8433h8_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_8433h8_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "FUTURE");
     editorCell.setCellId("Constant_8433h8_a");
     editorCell.setBig(true);

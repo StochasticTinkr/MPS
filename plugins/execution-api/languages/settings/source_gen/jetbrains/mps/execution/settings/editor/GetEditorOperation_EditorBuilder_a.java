@@ -28,10 +28,10 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.operat
   }
 
   /*package*/ EditorCell createCell() {
-    return createComponent_3bslic_a();
+    return createComponent_0();
   }
 
-  private EditorCell createComponent_3bslic_a() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {

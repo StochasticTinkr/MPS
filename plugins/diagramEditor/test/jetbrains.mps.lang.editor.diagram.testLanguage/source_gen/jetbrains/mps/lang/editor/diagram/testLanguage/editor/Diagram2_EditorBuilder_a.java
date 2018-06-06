@@ -69,31 +69,31 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_dbn5di_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_dbn5di_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCanBeSynchronized(true);
     editorCell.setCellId("Collection_dbn5di_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createCollection_dbn5di_a0());
-    editorCell.addEditorCell(createCollection_dbn5di_b0());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createCollection_2());
     return editorCell;
   }
-  private EditorCell createCollection_dbn5di_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_dbn5di_a0");
     editorCell.setFoldable(true);
-    editorCell.addEditorCell(createDiagram_dbn5di_a0a());
+    editorCell.addEditorCell(createDiagram_0());
     editorCell.setInitiallyCollapsed(nodeCondition_dbn5di_a0a());
     return editorCell;
   }
   private boolean nodeCondition_dbn5di_a0a() {
     return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1dce2L, 0x1702f223d36d60c8L, "initiallyCollapsed"));
   }
-  private EditorCell createDiagram_dbn5di_a0a() {
+  private EditorCell createDiagram_0() {
     DiagramCell editorCell = new Diagram2_EditorBuilder_a.DiagramCellImpl_dbn5di_a0a(getEditorContext(), myNode);
     editorCell.setCellId("Diagram_dbn5di_a0a");
     return editorCell;
@@ -212,20 +212,20 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return diagramView;
     }
   }
-  private EditorCell createCollection_dbn5di_b0() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_dbn5di_b0");
-    editorCell.addEditorCell(createConstant_dbn5di_a1a());
-    editorCell.addEditorCell(createProperty_dbn5di_b1a());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_dbn5di_a1a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "initially collapsed:");
     editorCell.setCellId("Constant_dbn5di_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_dbn5di_b1a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1dce2L, 0x1702f223d36d60c8L, "initiallyCollapsed");

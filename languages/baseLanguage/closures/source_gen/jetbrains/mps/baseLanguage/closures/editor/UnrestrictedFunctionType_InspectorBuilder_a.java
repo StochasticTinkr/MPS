@@ -39,25 +39,25 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_vablur_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_vablur_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_vablur_a_0");
+    editorCell.setCellId("Collection_vablur_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_vablur_a0_0());
-    editorCell.addEditorCell(createRefNode_vablur_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_vablur_a0_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "return:");
-    editorCell.setCellId("Constant_vablur_a0_0");
+    editorCell.setCellId("Constant_vablur_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_vablur_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new UnrestrictedFunctionType_InspectorBuilder_a.resultTypeSingleRoleHandler_vablur_b0(myNode, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x1174a4d5371L, "resultType"), getEditorContext());
     return provider.createCell();
   }

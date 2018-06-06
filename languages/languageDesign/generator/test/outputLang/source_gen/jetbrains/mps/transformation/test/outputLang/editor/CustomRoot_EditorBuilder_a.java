@@ -36,32 +36,32 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_olleho_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_olleho_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_olleho_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_olleho_a0());
-    editorCell.addEditorCell(createConstant_olleho_b0());
-    editorCell.addEditorCell(createRefNode_olleho_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_olleho_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "My custom root");
     editorCell.setCellId("Constant_olleho_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_olleho_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_olleho_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_olleho_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new CustomRoot_EditorBuilder_a.statementSingleRoleHandler_olleho_c0(myNode, MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x398b8e251df78584L, 0x398b8e251df78585L, "statement"), getEditorContext());
     return provider.createCell();
   }

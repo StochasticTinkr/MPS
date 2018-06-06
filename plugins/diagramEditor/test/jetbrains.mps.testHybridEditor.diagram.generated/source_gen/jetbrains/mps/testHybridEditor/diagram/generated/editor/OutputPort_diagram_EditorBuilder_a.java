@@ -40,10 +40,10 @@ import jetbrains.jetpad.model.property.ReadableProperty;
   }
 
   /*package*/ EditorCell createCell() {
-    return createDiagramPort_bbhyff_a();
+    return createDiagramPort_0();
   }
 
-  private EditorCell createDiagramPort_bbhyff_a() {
+  private EditorCell createDiagramPort_0() {
     final EditorCell editorCell = new OutputPort_diagram_EditorBuilder_a.PortCellImpl_bbhyff_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramPort_bbhyff_a");
     editorCell.setBig(true);

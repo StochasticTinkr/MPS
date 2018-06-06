@@ -64,34 +64,34 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_vx0ep_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_vx0ep_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_vx0ep_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createCollection_vx0ep_a0());
-    editorCell.addEditorCell(createCollection_vx0ep_b0());
-    editorCell.addEditorCell(createConstant_vx0ep_c0());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createCollection_2());
+    editorCell.addEditorCell(createConstant_3());
     return editorCell;
   }
-  private EditorCell createCollection_vx0ep_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_vx0ep_a0");
-    editorCell.addEditorCell(createConstant_vx0ep_a0a());
-    editorCell.addEditorCell(createProperty_vx0ep_b0a());
-    editorCell.addEditorCell(createConstant_vx0ep_c0a());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_vx0ep_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "parent");
     editorCell.setCellId("Constant_vx0ep_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_vx0ep_b0a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -118,31 +118,31 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_vx0ep_c0a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
     editorCell.setCellId("Constant_vx0ep_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_vx0ep_b0() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_vx0ep_b0");
-    editorCell.addEditorCell(createIndentCell_vx0ep_a1a());
-    editorCell.addEditorCell(createCollection_vx0ep_b1a());
+    editorCell.addEditorCell(createIndentCell_0());
+    editorCell.addEditorCell(createCollection_3());
     return editorCell;
   }
-  private EditorCell createIndentCell_vx0ep_a1a() {
+  private EditorCell createIndentCell_0() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createCollection_vx0ep_b1a() {
+  private EditorCell createCollection_3() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_vx0ep_b1a");
-    editorCell.addEditorCell(createRefNodeList_vx0ep_a1b0());
-    editorCell.addEditorCell(createContextAssistant_vx0ep_b1b0());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createContextAssistant_0());
     return editorCell;
   }
-  private EditorCell createRefNodeList_vx0ep_a1b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new Parent_EditorBuilder_a.childrenListHandler_vx0ep_a1b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_children");
@@ -181,7 +181,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(childrenListHandler_vx0ep_a1b0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, 0x4d6a8b533e60aa58L, "children")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_vx0ep_a0b1a();
+        emptyCell = createConstant_2();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -201,7 +201,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
         }
       }
     }
-    private EditorCell createConstant_vx0ep_a0b1a() {
+    private EditorCell createConstant_2() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<no items>");
       editorCell.setCellId("Constant_vx0ep_a0b1a");
       Style style = new StyleImpl();
@@ -213,7 +213,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       return editorCell;
     }
   }
-  private EditorCell createContextAssistant_vx0ep_b1b0() {
+  private EditorCell createContextAssistant_0() {
     EditorCell editorCell = new EditorCell_ContextAssistantComponent(getEditorContext(), myNode);
     editorCell.setCellId("ContextAssistant_vx0ep_b1b0");
     Style style = new StyleImpl();
@@ -221,7 +221,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createConstant_vx0ep_c0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "} a long line of text at the end to check how context assistant is drawn");
     editorCell.setCellId("Constant_vx0ep_c0");
     Style style = new StyleImpl();

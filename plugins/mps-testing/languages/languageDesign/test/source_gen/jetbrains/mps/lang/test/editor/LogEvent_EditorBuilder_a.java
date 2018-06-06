@@ -45,27 +45,27 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ji9bez_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ji9bez_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ji9bez_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_ji9bez_a0());
-    editorCell.addEditorCell(createProperty_ji9bez_b0());
-    editorCell.addEditorCell(createConstant_ji9bez_c0());
-    editorCell.addEditorCell(createProperty_ji9bez_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createConstant_ji9bez_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "log level:");
     editorCell.setCellId("Constant_ji9bez_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_ji9bez_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x486f8079df2fd630L, 0x486f8079df380e64L, "level");
@@ -92,13 +92,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_ji9bez_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "message:");
     editorCell.setCellId("Constant_ji9bez_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_ji9bez_d0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x486f8079df2fd630L, 0x486f8079df380e67L, "message");

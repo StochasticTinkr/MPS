@@ -39,27 +39,27 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_d4fjc3_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_d4fjc3_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_d4fjc3_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_d4fjc3_a0());
-    editorCell.addEditorCell(createConstant_d4fjc3_b0());
-    editorCell.addEditorCell(createCollection_d4fjc3_c0());
-    editorCell.addEditorCell(createConstant_d4fjc3_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createConstant_4());
     return editorCell;
   }
-  private EditorCell createConstant_d4fjc3_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "test substititute parent of wrapper");
     editorCell.setCellId("Constant_d4fjc3_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_d4fjc3_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
     editorCell.setCellId("Constant_d4fjc3_b0");
     Style style = new StyleImpl();
@@ -69,24 +69,24 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_d4fjc3_c0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_d4fjc3_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_d4fjc3_a2a());
-    editorCell.addEditorCell(createConstant_d4fjc3_b2a());
-    editorCell.addEditorCell(createRefNode_d4fjc3_c2a());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_d4fjc3_a2a() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "wrapper");
     editorCell.setCellId("Constant_d4fjc3_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_d4fjc3_b2a() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
     editorCell.setCellId("Constant_d4fjc3_b2a");
     Style style = new StyleImpl();
@@ -96,7 +96,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_d4fjc3_c2a() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new TestSubstituteParentOfWrapper_EditorBuilder_a.wrapperSingleRoleHandler_d4fjc3_c2a(myNode, MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff2fe4cL, 0x401156263ff3470dL, "wrapper"), getEditorContext());
     return provider.createCell();
   }
@@ -155,7 +155,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no wrapper>";
     }
   }
-  private EditorCell createConstant_d4fjc3_d0() {
+  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
     editorCell.setCellId("Constant_d4fjc3_d0");
     Style style = new StyleImpl();

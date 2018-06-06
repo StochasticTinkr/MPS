@@ -46,28 +46,28 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_mx2ru7_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_mx2ru7_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_mx2ru7_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_mx2ru7_a0());
-    editorCell.addEditorCell(createConstant_mx2ru7_b0());
-    editorCell.addEditorCell(createRefNode_mx2ru7_c0());
-    editorCell.addEditorCell(createConstant_mx2ru7_d0());
-    editorCell.addEditorCell(createRefNode_mx2ru7_e0());
-    editorCell.addEditorCell(createConstant_mx2ru7_f0());
-    editorCell.addEditorCell(createRefNodeList_mx2ru7_g0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createComponent_mx2ru7_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
-  private EditorCell createConstant_mx2ru7_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
     editorCell.setCellId("Constant_mx2ru7_b0");
     Style style = new StyleImpl();
@@ -76,7 +76,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_mx2ru7_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new MoveNodeMigrationPart_EditorBuilder_a.fromNodeSingleRoleHandler_mx2ru7_c0(myNode, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode"), getEditorContext());
     return provider.createCell();
   }
@@ -131,13 +131,13 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       return "<no fromNode>";
     }
   }
-  private EditorCell createConstant_mx2ru7_d0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "->");
     editorCell.setCellId("Constant_mx2ru7_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_mx2ru7_e0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new MoveNodeMigrationPart_EditorBuilder_a.toNodeSingleRoleHandler_mx2ru7_e0(myNode, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode"), getEditorContext());
     return provider.createCell();
   }
@@ -192,7 +192,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       return "<no toNode>";
     }
   }
-  private EditorCell createConstant_mx2ru7_f0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
     editorCell.setCellId("Constant_mx2ru7_f0");
     Style style = new StyleImpl();
@@ -202,7 +202,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_mx2ru7_g0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new MoveNodeMigrationPart_EditorBuilder_a.specializationListHandler_mx2ru7_g0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_specialization");

@@ -46,10 +46,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
   }
 
   /*package*/ EditorCell createCell() {
-    return createProperty_skmyf1_a();
+    return createProperty_0();
   }
 
-  private EditorCell createProperty_skmyf1_a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e853388b3L, 0x5ef5a1e85338e19L, "moduleName");

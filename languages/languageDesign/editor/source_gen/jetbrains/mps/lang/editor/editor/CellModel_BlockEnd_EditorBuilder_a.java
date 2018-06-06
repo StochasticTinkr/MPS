@@ -48,10 +48,10 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createProperty_8qemn7_a();
+    return createProperty_0();
   }
 
-  private EditorCell createProperty_8qemn7_a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdba37cdL, 0x1170c8fe13bL, "closeBrace");

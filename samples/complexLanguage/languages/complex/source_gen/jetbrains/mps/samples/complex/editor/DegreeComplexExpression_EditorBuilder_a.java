@@ -36,28 +36,28 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_q607mw_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_q607mw_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_q607mw_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_q607mw_a0());
-    editorCell.addEditorCell(createRefNode_q607mw_b0());
-    editorCell.addEditorCell(createConstant_q607mw_c0());
-    editorCell.addEditorCell(createConstant_q607mw_d0());
-    editorCell.addEditorCell(createRefNode_q607mw_e0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createConstant_q607mw_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
     editorCell.setCellId("Constant_q607mw_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_q607mw_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new DegreeComplexExpression_EditorBuilder_a.complexExpressionSingleRoleHandler_q607mw_b0(myNode, MetaAdapterFactory.getContainmentLink(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b3b49dL, 0x11686b4a081L, "complexExpression"), getEditorContext());
     return provider.createCell();
   }
@@ -112,19 +112,19 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no complexExpression>";
     }
   }
-  private EditorCell createConstant_q607mw_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
     editorCell.setCellId("Constant_q607mw_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_q607mw_d0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "^");
     editorCell.setCellId("Constant_q607mw_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_q607mw_e0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new DegreeComplexExpression_EditorBuilder_a.degreeSingleRoleHandler_q607mw_e0(myNode, MetaAdapterFactory.getContainmentLink(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x116904e45f4L, 0x116904f9752L, "degree"), getEditorContext());
     return provider.createCell();
   }

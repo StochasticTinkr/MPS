@@ -28,10 +28,10 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
   }
 
   /*package*/ EditorCell createCell() {
-    return createTable_9yuogs_a();
+    return createTable_0();
   }
 
-  private EditorCell createTable_9yuogs_a() {
+  private EditorCell createTable_0() {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel() {
         return new StateMachineTableModel(myNode, getEditorContext());

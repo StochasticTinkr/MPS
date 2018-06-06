@@ -61,16 +61,16 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ugmp9z_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ugmp9z_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ugmp9z_a");
-    editorCell.addEditorCell(createRefNodeList_ugmp9z_a0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createRefNodeList_ugmp9z_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new RefNodeList_EditorCellModel_ComponentBuilder_a.childrenListHandler_ugmp9z_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("newId");

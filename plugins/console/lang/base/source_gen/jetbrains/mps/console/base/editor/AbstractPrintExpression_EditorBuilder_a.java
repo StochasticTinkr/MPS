@@ -45,19 +45,19 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_9ckmec_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_9ckmec_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_9ckmec_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_9ckmec_a0());
-    editorCell.addEditorCell(createRefNode_9ckmec_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createComponent_9ckmec_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     AbstractPrintExpression_Actions.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new AbstractPrintExpression_EditorBuilder_a.ReplaceWith_AbstractPrintExpression_cellMenu_9ckmec_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
@@ -74,7 +74,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "AbstractPrintExpression" + ")", new SNodePointer("r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)", "7284872370240936100"));
     }
   }
-  private EditorCell createRefNode_9ckmec_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new AbstractPrintExpression_EditorBuilder_a.objectSingleRoleHandler_9ckmec_b0(myNode, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object"), getEditorContext());
     return provider.createCell();
   }

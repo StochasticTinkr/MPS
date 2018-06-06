@@ -43,25 +43,25 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_dru9lf_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_dru9lf_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_dru9lf_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_dru9lf_a0());
-    editorCell.addEditorCell(createRefNodeList_dru9lf_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createConstant_dru9lf_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Note:");
     editorCell.setCellId("Constant_dru9lf_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_dru9lf_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new Note_inspected_EditorBuilder_a.partsListHandler_dru9lf_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parts");
@@ -106,7 +106,7 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(partsListHandler_dru9lf_b0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, 0x7ba12f0b163df3ffL, "parts")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_dru9lf_a1a();
+        emptyCell = createConstant_1();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -126,7 +126,7 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
         }
       }
     }
-    private EditorCell createConstant_dru9lf_a1a() {
+    private EditorCell createConstant_1() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Please describe...");
       editorCell.setCellId("Constant_dru9lf_a1a");
       Style style = new StyleImpl();

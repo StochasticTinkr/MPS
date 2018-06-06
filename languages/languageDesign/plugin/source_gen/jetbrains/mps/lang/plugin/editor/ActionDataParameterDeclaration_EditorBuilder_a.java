@@ -71,22 +71,22 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_d8l4wt_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_d8l4wt_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_d8l4wt_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createReadOnlyModelAccessor_d8l4wt_a0());
-    editorCell.addEditorCell(createComponent_d8l4wt_b0());
-    editorCell.addEditorCell(createConstant_d8l4wt_c0());
-    editorCell.addEditorCell(createRefCell_d8l4wt_d0());
-    editorCell.addEditorCell(createRefNodeList_d8l4wt_e0());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefCell_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_d8l4wt_a0() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(ActionParameter__BehaviorDescriptor.getType_id112RIkggjzD.invoke(myNode));
@@ -105,17 +105,17 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createComponent_d8l4wt_b0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.plugin.editor.ActionParameter_NameCellComponent");
     return editorCell;
   }
-  private EditorCell createConstant_d8l4wt_c0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "key:");
     editorCell.setCellId("Constant_d8l4wt_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_d8l4wt_d0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, 0x11b69e95df5L, "key");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -166,7 +166,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_d8l4wt_a0d0();
+      return createProperty_0();
     }
 
     @NotNull
@@ -175,7 +175,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
       return myNode;
     }
 
-    private EditorCell createProperty_d8l4wt_a0d0() {
+    private EditorCell createProperty_0() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -206,7 +206,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   private boolean _StyleParameter_QueryFunction_d8l4wt_a0d0() {
     return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SLinkOperations.getTarget(getNode(), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, 0x11b69e95df5L, "key")));
   }
-  private EditorCell createRefNodeList_d8l4wt_e0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new ActionDataParameterDeclaration_EditorBuilder_a.conditionListHandler_d8l4wt_e0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_condition");

@@ -66,19 +66,19 @@ import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_x08tk8_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_x08tk8_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_x08tk8_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createProperty_x08tk8_a0());
-    editorCell.addEditorCell(createRefCell_x08tk8_b0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createRefCell_0());
     return editorCell;
   }
-  private EditorCell createProperty_x08tk8_a0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, 0x73e720709e3139e9L, "qualifier");
@@ -119,7 +119,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "TargetDependency" + ")", new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "3130298387012000727"));
     }
   }
-  private EditorCell createRefCell_x08tk8_b0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, 0x5912a2ab1cd24c63L, "dependsOn");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -174,7 +174,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_x08tk8_a0b0();
+      return createProperty_1();
     }
 
     @NotNull
@@ -183,7 +183,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
       return myNode;
     }
 
-    private EditorCell createProperty_x08tk8_a0b0() {
+    private EditorCell createProperty_1() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");

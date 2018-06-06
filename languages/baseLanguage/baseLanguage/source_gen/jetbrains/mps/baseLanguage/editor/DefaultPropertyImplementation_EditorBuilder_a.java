@@ -35,19 +35,19 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_fanyxu_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_fanyxu_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_fanyxu_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_fanyxu_a0());
-    editorCell.addEditorCell(createRefNode_fanyxu_b0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_fanyxu_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new DefaultPropertyImplementation_EditorBuilder_a.defaultGetAccessorSingleRoleHandler_fanyxu_a0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b7633177L, 0x117e0adb525L, "defaultGetAccessor"), getEditorContext());
     return provider.createCell();
   }
@@ -103,7 +103,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no defaultGetAccessor>";
     }
   }
-  private EditorCell createRefNode_fanyxu_b0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new DefaultPropertyImplementation_EditorBuilder_a.defaultSetAccessorSingleRoleHandler_fanyxu_b0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b7633177L, 0x117e16fe6eaL, "defaultSetAccessor"), getEditorContext());
     return provider.createCell();
   }

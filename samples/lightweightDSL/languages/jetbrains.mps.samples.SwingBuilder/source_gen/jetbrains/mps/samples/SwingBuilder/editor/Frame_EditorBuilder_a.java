@@ -45,26 +45,26 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_6y7w4f_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_6y7w4f_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_6y7w4f_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_6y7w4f_a0());
-    editorCell.addEditorCell(createRefNode_6y7w4f_b0());
-    editorCell.addEditorCell(createRefNodeList_6y7w4f_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createConstant_6y7w4f_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "frame");
     editorCell.setCellId("Constant_6y7w4f_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_6y7w4f_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new Frame_EditorBuilder_a.titleSingleRoleHandler_6y7w4f_b0(myNode, MetaAdapterFactory.getContainmentLink(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543006L, 0x4a1cc65caa547a6fL, "title"), getEditorContext());
     return provider.createCell();
   }
@@ -122,7 +122,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       return "<no title>";
     }
   }
-  private EditorCell createRefNodeList_6y7w4f_c0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new Frame_EditorBuilder_a.componentsListHandler_6y7w4f_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_components");

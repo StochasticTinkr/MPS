@@ -74,20 +74,20 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuP
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_h77kbg_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_h77kbg_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_h77kbg_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_h77kbg_a0());
-    editorCell.addEditorCell(createConstant_h77kbg_b0());
-    editorCell.addEditorCell(createRefCell_h77kbg_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefCell_0());
     return editorCell;
   }
-  private EditorCell createConstant_h77kbg_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "default substitute menu");
     editorCell.setCellId("Constant_h77kbg_a0");
     Style style = new StyleImpl();
@@ -126,7 +126,7 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuP
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "ISubstituteMenuReference" + ")", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "6089045305654894382"));
     }
   }
-  private EditorCell createConstant_h77kbg_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "for");
     editorCell.setCellId("Constant_h77kbg_b0");
     Style style = new StyleImpl();
@@ -135,7 +135,7 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuP
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_h77kbg_c0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -184,7 +184,7 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuP
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_h77kbg_a0c0();
+      return createProperty_0();
     }
 
     @NotNull
@@ -193,7 +193,7 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuP
       return myNode;
     }
 
-    private EditorCell createProperty_h77kbg_a0c0() {
+    private EditorCell createProperty_0() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");

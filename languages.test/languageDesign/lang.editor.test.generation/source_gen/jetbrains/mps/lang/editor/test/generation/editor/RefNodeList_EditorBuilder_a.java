@@ -71,10 +71,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_d0l3p8_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_d0l3p8_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_d0l3p8_a");
     editorCell.setBig(true);
@@ -82,11 +82,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createRefNodeList_d0l3p8_a0());
-    editorCell.addEditorCell(createRefNodeList_d0l3p8_b0());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createRefNodeList_1());
     return editorCell;
   }
-  private EditorCell createRefNodeList_d0l3p8_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new RefNodeList_EditorBuilder_a.differentTypeOfChildrenListHandler_d0l3p8_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_differentTypeOfChildren");
@@ -468,10 +468,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "Constant" + ")", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "237453569860942905"));
     }
   }
-  private EditorCell createRefNodeList_d0l3p8_b0() {
+  private EditorCell createRefNodeList_1() {
     AbstractCellListHandler handler = new RefNodeList_EditorBuilder_a.differentTypeOfChildrenListHandler_d0l3p8_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_differentTypeOfChildren_1");
+    editorCell.setCellId("refNodeList_differentTypeOfChildren1");
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }

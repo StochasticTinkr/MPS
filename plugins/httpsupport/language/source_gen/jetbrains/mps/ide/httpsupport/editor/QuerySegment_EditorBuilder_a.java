@@ -47,19 +47,19 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_qmyjjk_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_qmyjjk_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_qmyjjk_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_qmyjjk_a0());
-    editorCell.addEditorCell(createProperty_qmyjjk_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createComponent_qmyjjk_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -71,7 +71,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   private boolean _StyleParameter_QueryFunction_qmyjjk_a1a0() {
     return (SNodeOperations.getPrevSibling(getNode()) != null);
   }
-  private EditorCell createProperty_qmyjjk_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x53d29f104fa64ed8L, 0x53d29f104face44fL, "segment");

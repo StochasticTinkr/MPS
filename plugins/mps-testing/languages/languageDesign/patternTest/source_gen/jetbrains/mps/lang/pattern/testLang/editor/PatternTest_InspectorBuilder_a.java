@@ -52,31 +52,31 @@ import jetbrains.mps.smodel.IOperationContext;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_kasahx_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_kasahx_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_kasahx_a_0");
+    editorCell.setCellId("Collection_kasahx_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createCollection_kasahx_a0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createCollection_kasahx_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_kasahx_a0");
-    editorCell.addEditorCell(createConstant_kasahx_a0a());
-    editorCell.addEditorCell(createModelAccess_kasahx_b0a());
+    editorCell.setCellId("Collection_kasahx_1");
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createModelAccess_0());
     return editorCell;
   }
-  private EditorCell createConstant_kasahx_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Can execute-in-process:");
-    editorCell.setCellId("Constant_kasahx_a0a");
+    editorCell.setCellId("Constant_kasahx_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createModelAccess_kasahx_b0a() {
+  private EditorCell createModelAccess_0() {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
         return (boolean) ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(myNode) + "";
@@ -95,7 +95,7 @@ import jetbrains.mps.smodel.IOperationContext;
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), modelAccessor, myNode);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ModelAccess_kasahx_b0a");
+    editorCell.setCellId("ModelAccess_kasahx_0");
     editorCell.setDefaultText(" ");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new PatternTest_InspectorBuilder_a.PatternTest_generic_cellMenu_kasahx_a0b0a(), new PatternTest_InspectorBuilder_a.PatternTest_generic_cellMenu_kasahx_b0b0a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;

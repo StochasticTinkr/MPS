@@ -36,33 +36,33 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_avdpng_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_avdpng_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_avdpng_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_avdpng_a0());
-    editorCell.addEditorCell(createConstant_avdpng_b0());
-    editorCell.addEditorCell(createRefNode_avdpng_c0());
-    editorCell.addEditorCell(createConstant_avdpng_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
-  private EditorCell createConstant_avdpng_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "!");
     editorCell.setCellId("Constant_avdpng_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_avdpng_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
     editorCell.setCellId("Constant_avdpng_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_avdpng_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new NotOperation_EditorBuilder_a.leftOperandSingleRoleHandler_avdpng_c0(myNode, MetaAdapterFactory.getContainmentLink(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, 0x102db86e5b3L, "leftOperand"), getEditorContext());
     return provider.createCell();
   }
@@ -117,7 +117,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no leftOperand>";
     }
   }
-  private EditorCell createConstant_avdpng_d0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
     editorCell.setCellId("Constant_avdpng_d0");
     editorCell.setDefaultText("");

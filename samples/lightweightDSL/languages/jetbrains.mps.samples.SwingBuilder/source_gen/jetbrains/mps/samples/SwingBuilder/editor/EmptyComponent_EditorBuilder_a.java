@@ -39,10 +39,10 @@ import jetbrains.mps.smodel.SNodePointer;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_ai75ta_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_ai75ta_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_ai75ta_a");
     editorCell.setBig(true);

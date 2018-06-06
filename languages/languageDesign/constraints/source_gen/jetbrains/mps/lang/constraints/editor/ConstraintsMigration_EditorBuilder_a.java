@@ -33,19 +33,19 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_6w8mne_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_6w8mne_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_6w8mne_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_6w8mne_a0());
-    editorCell.addEditorCell(createAttributedNodeCell_6w8mne_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createAttributedNodeCell_0());
     return editorCell;
   }
-  private EditorCell createComponent_6w8mne_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
@@ -54,7 +54,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     ConstraintsMigration_Actions.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;
   }
-  private EditorCell createAttributedNodeCell_6w8mne_b0() {
+  private EditorCell createAttributedNodeCell_0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;

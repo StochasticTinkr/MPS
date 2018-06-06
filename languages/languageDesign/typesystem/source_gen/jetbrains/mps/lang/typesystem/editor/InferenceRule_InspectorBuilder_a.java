@@ -47,19 +47,19 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_robprv_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_robprv_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_robprv_a_0");
+    editorCell.setCellId("Collection_robprv_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
     if (nodeCondition_robprv_a0a()) {
-      editorCell.addEditorCell(createCollection_robprv_a0_0());
+      editorCell.addEditorCell(createCollection_1());
     }
     if (nodeCondition_robprv_a1a()) {
-      editorCell.addEditorCell(createRefNodeList_robprv_b0());
+      editorCell.addEditorCell(createRefNodeList_0());
     }
     return editorCell;
   }
@@ -69,22 +69,22 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   private boolean nodeCondition_robprv_a1a() {
     return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, 0x115f0161343L, "dependency"))).isNotEmpty();
   }
-  private EditorCell createCollection_robprv_a0_0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_robprv_a0_0");
-    editorCell.addEditorCell(createConstant_robprv_a0a_0());
+    editorCell.setCellId("Collection_robprv_1");
+    editorCell.addEditorCell(createConstant_0());
     return editorCell;
   }
-  private EditorCell createConstant_robprv_a0a_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "user-defined dependencies(advanced):");
-    editorCell.setCellId("Constant_robprv_a0a_0");
+    editorCell.setCellId("Constant_robprv_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.STRIKE_OUT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_robprv_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new InferenceRule_InspectorBuilder_a.dependencyListHandler_robprv_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_dependency");

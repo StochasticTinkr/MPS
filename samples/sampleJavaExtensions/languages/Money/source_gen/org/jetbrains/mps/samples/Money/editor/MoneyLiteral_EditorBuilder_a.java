@@ -53,19 +53,19 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_84i1v2_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_84i1v2_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_84i1v2_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createProperty_84i1v2_a0());
-    editorCell.addEditorCell(createRefCell_84i1v2_b0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createRefCell_0());
     return editorCell;
   }
-  private EditorCell createProperty_84i1v2_a0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, 0x4b9a2fe559135183L, "amount");
@@ -92,7 +92,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createRefCell_84i1v2_b0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, 0x3210b276d14435a8L, "unit");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -143,7 +143,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_84i1v2_a0b0();
+      return createProperty_1();
     }
 
     @NotNull
@@ -152,7 +152,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
       return myNode;
     }
 
-    private EditorCell createProperty_84i1v2_a0b0() {
+    private EditorCell createProperty_1() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");

@@ -44,10 +44,10 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createDiagramConnector_87pg9j_a();
+    return createDiagramConnector_0();
   }
 
-  private EditorCell createDiagramConnector_87pg9j_a() {
+  private EditorCell createDiagramConnector_0() {
     final ConnectorCell editorCell = new OutputToInputPortConnector_EditorBuilder_a.ConnectorCellImpl_87pg9j_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramConnector_87pg9j_a");
     editorCell.setBig(true);

@@ -38,19 +38,19 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_aohue5_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_aohue5_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_aohue5_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_aohue5_a0());
-    editorCell.addEditorCell(createRefNode_aohue5_b0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_aohue5_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new XmlDocument_EditorBuilder_a.prologSingleRoleHandler_aohue5_a0(myNode, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5e2f66f285946ac9L, 0x5c842a42c5494874L, "prolog"), getEditorContext());
     return provider.createCell();
   }
@@ -108,7 +108,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no prolog>";
     }
   }
-  private EditorCell createRefNode_aohue5_b0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new XmlDocument_EditorBuilder_a.rootElementSingleRoleHandler_aohue5_b0(myNode, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5e2f66f285946ac9L, 0x5c842a42c549486fL, "rootElement"), getEditorContext());
     return provider.createCell();
   }

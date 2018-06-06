@@ -40,18 +40,18 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ul5idr_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ul5idr_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ul5idr_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNodeList_ul5idr_a0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createRefNodeList_ul5idr_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new XmlProlog_EditorBuilder_a.elementsListHandler_ul5idr_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_elements");
@@ -95,7 +95,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(elementsListHandler_ul5idr_a0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494871L, 0x6988ccb84e3bd0e6L, "elements")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_ul5idr_a0a();
+        emptyCell = createConstant_0();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -115,7 +115,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
         }
       }
     }
-    private EditorCell createConstant_ul5idr_a0a() {
+    private EditorCell createConstant_0() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
       editorCell.setCellId("Constant_ul5idr_a0a");
       editorCell.setDefaultText("");

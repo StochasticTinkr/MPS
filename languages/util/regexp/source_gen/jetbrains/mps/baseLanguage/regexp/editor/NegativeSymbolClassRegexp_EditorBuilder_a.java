@@ -55,21 +55,21 @@ import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.Righ
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_wznzt8_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_wznzt8_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_wznzt8_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_wznzt8_a0());
-    editorCell.addEditorCell(createConstant_wznzt8_b0());
-    editorCell.addEditorCell(createRefNodeList_wznzt8_c0());
-    editorCell.addEditorCell(createConstant_wznzt8_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
-  private EditorCell createConstant_wznzt8_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "[");
     editorCell.setCellId("Constant_wznzt8_a0");
     Style style = new StyleImpl();
@@ -91,7 +91,7 @@ import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.Righ
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "SymbolClassRegexp" + ")", new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "4759120547780270120"));
     }
   }
-  private EditorCell createConstant_wznzt8_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "^");
     editorCell.setCellId("Constant_wznzt8_b0");
     Style style = new StyleImpl();
@@ -102,7 +102,7 @@ import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.Righ
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_wznzt8_c0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new NegativeSymbolClassRegexp_EditorBuilder_a.partListHandler_wznzt8_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_part");
@@ -162,7 +162,7 @@ import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.Righ
       }
     }
   }
-  private EditorCell createConstant_wznzt8_d0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "]");
     editorCell.setCellId("Constant_wznzt8_d0");
     Style style = new StyleImpl();

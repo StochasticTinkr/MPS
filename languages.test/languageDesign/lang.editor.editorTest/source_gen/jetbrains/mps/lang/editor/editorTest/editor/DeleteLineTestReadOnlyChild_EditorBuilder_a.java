@@ -30,10 +30,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_qk1zkx_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_qk1zkx_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_qk1zkx_a");
     editorCell.setBig(true);
@@ -41,10 +41,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     Style style = new StyleImpl();
     style.set(StyleAttributes.READ_ONLY, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_qk1zkx_a0());
+    editorCell.addEditorCell(createConstant_0());
     return editorCell;
   }
-  private EditorCell createConstant_qk1zkx_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "delete line test read only child");
     editorCell.setCellId("Constant_qk1zkx_a0");
     editorCell.setDefaultText("");

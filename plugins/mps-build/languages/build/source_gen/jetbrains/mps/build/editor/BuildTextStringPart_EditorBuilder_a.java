@@ -52,17 +52,17 @@ import java.awt.Color;
   }
 
   /*package*/ EditorCell createCell() {
-    return createAlternation_zen9g6_a();
+    return createAlternation_0();
   }
 
-  private EditorCell createAlternation_zen9g6_a() {
+  private EditorCell createAlternation_0() {
     boolean alternationCondition = true;
     alternationCondition = nodeCondition_zen9g6_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = createAlternation_zen9g6_a0();
+      editorCell = createAlternation_1();
     } else {
-      editorCell = createAlternation_zen9g6_a0_0();
+      editorCell = createAlternation_2();
     }
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
@@ -74,21 +74,21 @@ import java.awt.Color;
   private boolean nodeCondition_zen9g6_a0() {
     return (BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(myNode) != null) && BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(myNode), SNodeOperations.getParent(myNode).getContainmentLink()) != null;
   }
-  private EditorCell createAlternation_zen9g6_a0() {
+  private EditorCell createAlternation_1() {
     boolean alternationCondition = true;
     alternationCondition = nodeCondition_zen9g6_a0a();
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = createProperty_zen9g6_a0a();
+      editorCell = createProperty_0();
     } else {
-      editorCell = createProperty_zen9g6_a0a_0();
+      editorCell = createProperty_1();
     }
     return editorCell;
   }
   private boolean nodeCondition_zen9g6_a0a() {
     return (boolean) BuildStringPart__BehaviorDescriptor.punctuationLeft_id4qU2HB9e$4N.invoke(myNode);
   }
-  private EditorCell createProperty_zen9g6_a0a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, 0x440d7ea3b68c4d56L, "text");
@@ -131,7 +131,7 @@ import java.awt.Color;
     }
     return null;
   }
-  private EditorCell createProperty_zen9g6_a0a_0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, 0x440d7ea3b68c4d56L, "text");
@@ -140,7 +140,7 @@ import java.awt.Color;
       editorCell.setDefaultText("<no text>");
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.FORWARD));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.BACKWARD));
-      editorCell.setCellId("property_text_1");
+      editorCell.setCellId("property_text1");
       Style style = new StyleImpl();
       new stringStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_zen9g6_a0a0a()));
@@ -173,21 +173,21 @@ import java.awt.Color;
     }
     return null;
   }
-  private EditorCell createAlternation_zen9g6_a0_0() {
+  private EditorCell createAlternation_2() {
     boolean alternationCondition = true;
     alternationCondition = nodeCondition_zen9g6_a0a_0();
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = createProperty_zen9g6_a0a_1();
+      editorCell = createProperty_2();
     } else {
-      editorCell = createProperty_zen9g6_a0a_2();
+      editorCell = createProperty_3();
     }
     return editorCell;
   }
   private boolean nodeCondition_zen9g6_a0a_0() {
     return (boolean) BuildStringPart__BehaviorDescriptor.punctuationLeft_id4qU2HB9e$4N.invoke(myNode);
   }
-  private EditorCell createProperty_zen9g6_a0a_1() {
+  private EditorCell createProperty_2() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, 0x440d7ea3b68c4d56L, "text");
@@ -196,7 +196,7 @@ import java.awt.Color;
       editorCell.setDefaultText("<no text>");
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.FORWARD));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.BACKWARD));
-      editorCell.setCellId("property_text_2");
+      editorCell.setCellId("property_text2");
       Style style = new StyleImpl();
       new stringStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -219,7 +219,7 @@ import java.awt.Color;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createProperty_zen9g6_a0a_2() {
+  private EditorCell createProperty_3() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, 0x440d7ea3b68c4d56L, "text");
@@ -228,7 +228,7 @@ import java.awt.Color;
       editorCell.setDefaultText("<no text>");
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.FORWARD));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.BACKWARD));
-      editorCell.setCellId("property_text_3");
+      editorCell.setCellId("property_text3");
       Style style = new StyleImpl();
       new stringStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
       editorCell.getStyle().putAll(style);

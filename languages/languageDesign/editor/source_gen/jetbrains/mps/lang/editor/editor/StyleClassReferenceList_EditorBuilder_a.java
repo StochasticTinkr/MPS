@@ -43,18 +43,18 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_o1ag05_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_o1ag05_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_o1ag05_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNodeList_o1ag05_a0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createRefNodeList_o1ag05_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new StyleClassReferenceList_EditorBuilder_a.elementListHandler_o1ag05_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_element");

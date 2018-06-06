@@ -30,10 +30,10 @@ import jetbrains.mps.editor.runtime.style.Measure;
   }
 
   /*package*/ EditorCell createCell() {
-    return createError_ho2ryk_a();
+    return createError_0();
   }
 
-  private EditorCell createError_ho2ryk_a() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<no attribute>");
     editorCell.setCellId("Error_ho2ryk_a");
     editorCell.setBig(true);

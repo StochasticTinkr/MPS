@@ -41,36 +41,36 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_g7zihj_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_g7zihj_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_g7zihj_a_0");
+    editorCell.setCellId("Collection_g7zihj_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createIndentCell_g7zihj_a0());
-    editorCell.addEditorCell(createConstant_g7zihj_b0());
-    editorCell.addEditorCell(createRefNode_g7zihj_c0());
+    editorCell.addEditorCell(createIndentCell_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createIndentCell_g7zihj_a0() {
+  private EditorCell createIndentCell_0() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createConstant_g7zihj_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "debugger:");
-    editorCell.setCellId("Constant_g7zihj_b0");
+    editorCell.setCellId("Constant_g7zihj_0");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_g7zihj_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new RunConfigurationExecutor_InspectorBuilder_a.debuggerConfigurationSingleRoleHandler_g7zihj_c0(myNode, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration"), getEditorContext());
     return provider.createCell();
   }

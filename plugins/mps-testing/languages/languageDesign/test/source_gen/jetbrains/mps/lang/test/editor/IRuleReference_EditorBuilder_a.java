@@ -37,10 +37,10 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
 
   /*package*/ EditorCell createCell() {
-    return createReadOnlyModelAccessor_w39r7n_a();
+    return createReadOnlyModelAccessor_0();
   }
 
-  private EditorCell createReadOnlyModelAccessor_w39r7n_a() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return (String) IRuleReference__BehaviorDescriptor.getName_id6EW1JnOFUIS.invoke(myNode);

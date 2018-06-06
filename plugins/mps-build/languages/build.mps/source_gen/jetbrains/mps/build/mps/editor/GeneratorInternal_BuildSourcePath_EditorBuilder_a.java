@@ -25,10 +25,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_defvfa_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_defvfa_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "path");
     editorCell.setCellId("Constant_defvfa_a");
     editorCell.setBig(true);

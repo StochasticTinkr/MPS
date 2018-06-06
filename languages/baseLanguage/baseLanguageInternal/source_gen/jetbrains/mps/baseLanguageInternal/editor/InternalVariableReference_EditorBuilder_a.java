@@ -76,21 +76,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_7tajt9_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_7tajt9_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_7tajt9_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_7tajt9_a0());
-    editorCell.addEditorCell(createRefNode_7tajt9_b0());
-    editorCell.addEditorCell(createConstant_7tajt9_c0());
-    editorCell.addEditorCell(createProperty_7tajt9_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_7tajt9_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "[");
     editorCell.setCellId("Constant_7tajt9_a0");
     Style style = new StyleImpl();
@@ -99,7 +99,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_7tajt9_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new InternalVariableReference_EditorBuilder_a.typeSingleRoleHandler_7tajt9_b0(myNode, MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x111fb5bb1f2L, 0x111fb5c4f4cL, "type"), getEditorContext());
     return provider.createCell();
   }
@@ -154,7 +154,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       return "<no type>";
     }
   }
-  private EditorCell createConstant_7tajt9_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "]");
     editorCell.setCellId("Constant_7tajt9_c0");
     Style style = new StyleImpl();
@@ -163,7 +163,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_7tajt9_d0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x111fb5bb1f2L, 0x111fb5dbc49L, "name");

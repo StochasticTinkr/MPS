@@ -39,17 +39,17 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_6gkixf_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_6gkixf_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_6gkixf_a");
-    editorCell.addEditorCell(createConstant_6gkixf_a0());
-    editorCell.addEditorCell(createRefNode_6gkixf_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_6gkixf_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "on create:");
     editorCell.setCellId("Constant_6gkixf_a0");
     Style style = new StyleImpl();
@@ -58,7 +58,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_6gkixf_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new DiagramElementCreationHandlers_EditoComponent_ComponentBuilder_a.handlerSingleRoleHandler_6gkixf_b0(myNode, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba75918aL, 0x76f1cb20ba7726e1L, "handler"), getEditorContext());
     return provider.createCell();
   }

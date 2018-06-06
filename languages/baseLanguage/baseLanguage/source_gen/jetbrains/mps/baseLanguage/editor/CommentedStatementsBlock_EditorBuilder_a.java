@@ -43,10 +43,10 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ghsvq8_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ghsvq8_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ghsvq8_a");
     editorCell.setBig(true);
@@ -54,12 +54,12 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     Style style = new StyleImpl();
     new BlockCommentStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_ghsvq8_a0());
-    editorCell.addEditorCell(createRefNodeList_ghsvq8_b0());
-    editorCell.addEditorCell(createConstant_ghsvq8_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_ghsvq8_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "/*");
     editorCell.setCellId("Constant_ghsvq8_a0");
     Style style = new StyleImpl();
@@ -69,7 +69,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_ghsvq8_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new CommentedStatementsBlock_EditorBuilder_a.statementListHandler_ghsvq8_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_statement");
@@ -133,7 +133,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
       }
     }
   }
-  private EditorCell createConstant_ghsvq8_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "*/");
     editorCell.setCellId("Constant_ghsvq8_c0");
     CommentedStatementsBlock_Actions.setCellActions(editorCell, myNode, getEditorContext());

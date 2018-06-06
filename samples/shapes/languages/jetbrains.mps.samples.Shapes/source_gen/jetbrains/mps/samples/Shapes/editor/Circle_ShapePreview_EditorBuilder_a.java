@@ -55,26 +55,26 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_347ksb_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_347ksb_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_347ksb_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_347ksb_a0());
-    editorCell.addEditorCell(createConstant_347ksb_b0());
-    editorCell.addEditorCell(createProperty_347ksb_c0());
-    editorCell.addEditorCell(createConstant_347ksb_d0());
-    editorCell.addEditorCell(createProperty_347ksb_e0());
-    editorCell.addEditorCell(createConstant_347ksb_f0());
-    editorCell.addEditorCell(createProperty_347ksb_g0());
-    editorCell.addEditorCell(createComponent_347ksb_h0());
-    editorCell.addEditorCell(createJComponent_347ksb_i0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createProperty_1());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createProperty_2());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createJComponent_0());
     return editorCell;
   }
-  private EditorCell createConstant_347ksb_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "circle");
     editorCell.setCellId("Constant_347ksb_a0");
     Style style = new StyleImpl();
@@ -83,13 +83,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_347ksb_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "x:");
     editorCell.setCellId("Constant_347ksb_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_347ksb_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc199L, "x");
@@ -116,13 +116,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_347ksb_d0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "y:");
     editorCell.setCellId("Constant_347ksb_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_347ksb_e0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19bL, "y");
@@ -149,13 +149,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_347ksb_f0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "radius:");
     editorCell.setCellId("Constant_347ksb_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_347ksb_g0() {
+  private EditorCell createProperty_2() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius");
@@ -182,13 +182,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createComponent_347ksb_h0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.samples.Shapes.editor.ShapeColor");
     return editorCell;
   }
-  private EditorCell createJComponent_347ksb_i0() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_347ksb_a8a(), "_347ksb_i0");
-    editorCell.setCellId("JComponent_347ksb_i0");
+  private EditorCell createJComponent_0() {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_347ksb_a8a(), "JComponent_347ksb_i0");
+    editorCell.setCellId("JComponent_347ksb_i0_0");
     return editorCell;
   }
   private JComponent _QueryFunction_JComponent_347ksb_a8a() {

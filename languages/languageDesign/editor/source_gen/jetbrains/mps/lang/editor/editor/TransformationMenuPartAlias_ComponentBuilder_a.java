@@ -39,10 +39,10 @@ import jetbrains.mps.smodel.SNodePointer;
   }
 
   /*package*/ EditorCell createCell() {
-    return createComponent_3z1roq_a();
+    return createComponent_0();
   }
 
-  private EditorCell createComponent_3z1roq_a() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new EditorKeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

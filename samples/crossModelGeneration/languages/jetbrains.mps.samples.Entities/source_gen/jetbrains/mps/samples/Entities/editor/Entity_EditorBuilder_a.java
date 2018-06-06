@@ -57,26 +57,26 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_n4nctg_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_n4nctg_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_n4nctg_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_n4nctg_a0());
-    editorCell.addEditorCell(createProperty_n4nctg_b0());
-    editorCell.addEditorCell(createRefNodeList_n4nctg_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createConstant_n4nctg_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Entity");
     editorCell.setCellId("Constant_n4nctg_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_n4nctg_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -106,7 +106,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createRefNodeList_n4nctg_c0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new Entity_EditorBuilder_a.relationshipsListHandler_n4nctg_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_relationships");

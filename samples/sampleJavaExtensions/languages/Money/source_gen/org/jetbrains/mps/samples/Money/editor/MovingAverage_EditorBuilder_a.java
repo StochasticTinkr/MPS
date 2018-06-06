@@ -52,33 +52,33 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_jpwu0u_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_jpwu0u_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_jpwu0u_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_jpwu0u_a0());
-    editorCell.addEditorCell(createConstant_jpwu0u_b0());
-    editorCell.addEditorCell(createRefNode_jpwu0u_c0());
-    editorCell.addEditorCell(createConstant_jpwu0u_d0());
-    editorCell.addEditorCell(createProperty_jpwu0u_e0());
-    editorCell.addEditorCell(createConstant_jpwu0u_f0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
-  private EditorCell createComponent_jpwu0u_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
-  private EditorCell createConstant_jpwu0u_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "for");
     editorCell.setCellId("Constant_jpwu0u_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_jpwu0u_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new MovingAverage_EditorBuilder_a.symbolSingleRoleHandler_jpwu0u_c0(myNode, MetaAdapterFactory.getContainmentLink(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480b1c19aL, 0x3786e3f480b1c6d0L, "symbol"), getEditorContext());
     return provider.createCell();
   }
@@ -133,13 +133,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no symbol>";
     }
   }
-  private EditorCell createConstant_jpwu0u_d0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "with period of");
     editorCell.setCellId("Constant_jpwu0u_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_jpwu0u_e0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480b1c19aL, 0x3786e3f480b1c19bL, "period");
@@ -166,7 +166,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_jpwu0u_f0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "months");
     editorCell.setCellId("Constant_jpwu0u_f0");
     editorCell.setDefaultText("");

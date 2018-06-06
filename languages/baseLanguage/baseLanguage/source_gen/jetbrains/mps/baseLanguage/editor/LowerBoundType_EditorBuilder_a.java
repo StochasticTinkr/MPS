@@ -41,19 +41,19 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_d2fqsq_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_d2fqsq_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_d2fqsq_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_d2fqsq_a0());
-    editorCell.addEditorCell(createCollection_d2fqsq_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createConstant_d2fqsq_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "?");
     editorCell.setCellId("Constant_d2fqsq_a0");
     Style style = new StyleImpl();
@@ -62,14 +62,14 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_d2fqsq_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("super");
-    editorCell.addEditorCell(createConstant_d2fqsq_a1a());
-    editorCell.addEditorCell(createRefNode_d2fqsq_b1a());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_d2fqsq_a1a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "super");
     editorCell.setCellId("Constant_d2fqsq_a1a");
     Style style = new StyleImpl();
@@ -78,7 +78,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_d2fqsq_b1a() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new LowerBoundType_EditorBuilder_a.boundSingleRoleHandler_d2fqsq_b1a(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, 0x110dae9f25bL, "bound"), getEditorContext());
     return provider.createCell();
   }

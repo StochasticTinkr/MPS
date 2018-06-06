@@ -58,21 +58,21 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_rtxy5x_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_rtxy5x_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_rtxy5x_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_rtxy5x_a0());
-    editorCell.addEditorCell(createProperty_rtxy5x_b0());
-    editorCell.addEditorCell(createConstant_rtxy5x_c0());
-    editorCell.addEditorCell(createProperty_rtxy5x_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createConstant_rtxy5x_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "from");
     editorCell.setCellId("Constant_rtxy5x_a0");
     editorCell.setDefaultText("");
@@ -90,7 +90,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "Applicability" + ")", new SNodePointer("r:4b82218b-d47e-4120-8b44-e2530c2efcf5(jetbrains.mps.samples.heating.editor)", "4001397103658720674"));
     }
   }
-  private EditorCell createProperty_rtxy5x_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e6bc56bL, 0x40bcae6c0e6bc59fL, "start");
@@ -120,13 +120,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_rtxy5x_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "to");
     editorCell.setCellId("Constant_rtxy5x_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_rtxy5x_d0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e6bc56bL, 0x40bcae6c0e6bc5a1L, "end");

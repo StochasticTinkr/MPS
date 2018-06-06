@@ -43,19 +43,19 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_e22zgz_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_e22zgz_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_e22zgz_a");
-    editorCell.addEditorCell(createConstant_e22zgz_a0());
-    editorCell.addEditorCell(createRefNodeList_e22zgz_b0());
-    editorCell.addEditorCell(createConstant_e22zgz_c0());
-    editorCell.addEditorCell(createRefNodeList_e22zgz_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNodeList_1());
     return editorCell;
   }
-  private EditorCell createConstant_e22zgz_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Triggers");
     editorCell.setCellId("Constant_e22zgz_a0");
     Style style = new StyleImpl();
@@ -64,7 +64,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_e22zgz_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new StateChartContents_ComponentBuilder_a.availableTriggersListHandler_e22zgz_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("SCC_refNodeList_availableTriggers");
@@ -127,7 +127,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
       }
     }
   }
-  private EditorCell createConstant_e22zgz_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "States:");
     editorCell.setCellId("Constant_e22zgz_c0");
     Style style = new StyleImpl();
@@ -136,7 +136,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_e22zgz_d0() {
+  private EditorCell createRefNodeList_1() {
     AbstractCellListHandler handler = new StateChartContents_ComponentBuilder_a.statesListHandler_e22zgz_d0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("SCC_refNodeList_states");

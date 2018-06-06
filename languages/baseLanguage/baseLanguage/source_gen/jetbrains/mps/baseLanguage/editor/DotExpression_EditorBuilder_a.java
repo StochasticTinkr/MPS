@@ -41,20 +41,20 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_t2jtrp_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_t2jtrp_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_t2jtrp_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_t2jtrp_a0());
-    editorCell.addEditorCell(createConstant_t2jtrp_b0());
-    editorCell.addEditorCell(createRefNode_t2jtrp_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_t2jtrp_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new DotExpression_EditorBuilder_a.operandSingleRoleHandler_t2jtrp_a0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), getEditorContext());
     return provider.createCell();
   }
@@ -109,7 +109,7 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
       return "<no operand>";
     }
   }
-  private EditorCell createConstant_t2jtrp_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ".");
     editorCell.setCellId("dot");
     Style style = new StyleImpl();
@@ -118,7 +118,7 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_t2jtrp_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new DotExpression_EditorBuilder_a.operationSingleRoleHandler_t2jtrp_c0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), getEditorContext());
     return provider.createCell();
   }

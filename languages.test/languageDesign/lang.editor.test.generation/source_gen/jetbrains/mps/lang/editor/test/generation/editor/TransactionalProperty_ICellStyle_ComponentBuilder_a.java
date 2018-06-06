@@ -35,10 +35,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
   }
 
   /*package*/ EditorCell createCell() {
-    return createTransactionalProperty_b29fir_a();
+    return createTransactionalProperty_0();
   }
 
-  private EditorCell createTransactionalProperty_b29fir_a() {
+  private EditorCell createTransactionalProperty_0() {
     getCellFactory().pushCellContext();
     try {
       SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL, 0xbde89531aae3a9L, "theProperty");

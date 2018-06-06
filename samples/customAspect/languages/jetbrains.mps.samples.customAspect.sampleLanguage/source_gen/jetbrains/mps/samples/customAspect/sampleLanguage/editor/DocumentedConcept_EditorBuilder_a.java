@@ -25,10 +25,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_lnbvr3_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_lnbvr3_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "This is an instance of documented concept. Select MainMenu->Code->Show Doc to see the doc.");
     editorCell.setCellId("Constant_lnbvr3_a");
     editorCell.setBig(true);

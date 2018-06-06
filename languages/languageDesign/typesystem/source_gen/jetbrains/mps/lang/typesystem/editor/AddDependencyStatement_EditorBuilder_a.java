@@ -42,22 +42,22 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_xs2qhg_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_xs2qhg_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_xs2qhg_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_xs2qhg_a0());
-    editorCell.addEditorCell(createConstant_xs2qhg_b0());
-    editorCell.addEditorCell(createRefNode_xs2qhg_c0());
-    editorCell.addEditorCell(createConstant_xs2qhg_d0());
-    editorCell.addEditorCell(createConstant_xs2qhg_e0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createConstant_3());
     return editorCell;
   }
-  private EditorCell createConstant_xs2qhg_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "addDependency");
     editorCell.setCellId("Constant_xs2qhg_a0");
     Style style = new StyleImpl();
@@ -66,7 +66,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_xs2qhg_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
     editorCell.setCellId("Constant_xs2qhg_b0");
     Style style = new StyleImpl();
@@ -75,7 +75,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_xs2qhg_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new AddDependencyStatement_EditorBuilder_a.dependencySingleRoleHandler_xs2qhg_c0(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11c22f6c964L, 0x11c22f76417L, "dependency"), getEditorContext());
     return provider.createCell();
   }
@@ -130,7 +130,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
       return "<no dependency>";
     }
   }
-  private EditorCell createConstant_xs2qhg_d0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
     editorCell.setCellId("Constant_xs2qhg_d0");
     Style style = new StyleImpl();
@@ -139,7 +139,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_xs2qhg_e0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ";");
     editorCell.setCellId("Constant_xs2qhg_e0");
     Style style = new StyleImpl();

@@ -61,36 +61,36 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_vfprw_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_vfprw_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_vfprw_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createCollection_vfprw_a0());
-    editorCell.addEditorCell(createConstant_vfprw_b0());
-    editorCell.addEditorCell(createCollection_vfprw_c0());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createCollection_2());
     return editorCell;
   }
-  private EditorCell createCollection_vfprw_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_vfprw_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_vfprw_a0a());
-    editorCell.addEditorCell(createProperty_vfprw_b0a());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_vfprw_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "reader configuration");
     editorCell.setCellId("Constant_vfprw_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_vfprw_b0a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -117,7 +117,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_vfprw_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_vfprw_b0");
     Style style = new StyleImpl();
@@ -126,20 +126,20 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_vfprw_c0() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_vfprw_c0");
-    editorCell.addEditorCell(createConstant_vfprw_a2a());
-    editorCell.addEditorCell(createRefNodeList_vfprw_b2a());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createConstant_vfprw_a2a() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "    ");
     editorCell.setCellId("Constant_vfprw_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_vfprw_b2a() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new ReaderConfiguration_EditorBuilder_a.mappingListHandler_vfprw_b2a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_mapping");
@@ -179,7 +179,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(mappingListHandler_vfprw_b2a.this.getNode(), MetaAdapterFactory.getContainmentLink(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6aa11b7L, 0x103f6af233bL, "mapping")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_vfprw_a1c0();
+        emptyCell = createConstant_3();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -211,7 +211,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(prevNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
       return editorCell;
     }
-    private EditorCell createConstant_vfprw_a1c0() {
+    private EditorCell createConstant_3() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "press <Ctrl>-<Enter> to add mapping");
       editorCell.setCellId("Constant_vfprw_a1c0");
       Style style = new StyleImpl();

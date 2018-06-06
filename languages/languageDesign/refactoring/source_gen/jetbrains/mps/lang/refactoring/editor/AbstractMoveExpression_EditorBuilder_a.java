@@ -39,28 +39,28 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_vcboy8_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_vcboy8_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_vcboy8_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_vcboy8_a0());
-    editorCell.addEditorCell(createRefNode_vcboy8_b0());
-    editorCell.addEditorCell(createConstant_vcboy8_c0());
-    editorCell.addEditorCell(createRefNode_vcboy8_d0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createComponent_vcboy8_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createRefNode_vcboy8_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new AbstractMoveExpression_EditorBuilder_a.whatToMoveSingleRoleHandler_vcboy8_b0(myNode, MetaAdapterFactory.getContainmentLink(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ee3c478L, 0x1174ee44ac2L, "whatToMove"), getEditorContext());
     return provider.createCell();
   }
@@ -115,7 +115,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       return "<no whatToMove>";
     }
   }
-  private EditorCell createConstant_vcboy8_c0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "to");
     editorCell.setCellId("Constant_vcboy8_c0");
     Style style = new StyleImpl();
@@ -124,7 +124,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_vcboy8_d0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new AbstractMoveExpression_EditorBuilder_a.destinationSingleRoleHandler_vcboy8_d0(myNode, MetaAdapterFactory.getContainmentLink(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ee3c478L, 0x1174ee44ac3L, "destination"), getEditorContext());
     return provider.createCell();
   }

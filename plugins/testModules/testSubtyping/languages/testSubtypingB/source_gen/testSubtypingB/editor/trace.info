@@ -29,20 +29,20 @@
       <node id="2078093584693310132" at="39,90,40,19" concept="7" />
       <node id="2078093584693310132" at="40,19,41,18" concept="1" />
       <node id="2078093584693310132" at="46,26,47,18" concept="6" />
-      <node id="2078093584693310132" at="50,39,51,39" concept="6" />
-      <node id="2078093584693310132" at="54,50,55,118" concept="5" />
+      <node id="2078093584693310132" at="50,39,51,32" concept="6" />
+      <node id="2078093584693310132" at="54,43,55,118" concept="5" />
       <node id="2078093584693310132" at="55,118,56,48" concept="1" />
       <node id="2078093584693310132" at="56,48,57,28" concept="1" />
       <node id="2078093584693310132" at="57,28,58,31" concept="1" />
-      <node id="2078093584693310132" at="58,31,59,58" concept="1" />
-      <node id="2078093584693310132" at="59,58,60,57" concept="1" />
-      <node id="2078093584693310132" at="60,57,61,22" concept="6" />
-      <node id="2078093584693310156" at="63,50,64,119" concept="5" />
+      <node id="2078093584693310132" at="58,31,59,50" concept="1" />
+      <node id="2078093584693310132" at="59,50,60,49" concept="1" />
+      <node id="2078093584693310132" at="60,49,61,22" concept="6" />
+      <node id="2078093584693310156" at="63,42,64,119" concept="5" />
       <node id="2078093584693310156" at="64,119,65,34" concept="5" />
       <node id="2078093584693310156" at="65,34,66,56" concept="1" />
       <node id="2078093584693310156" at="66,56,67,40" concept="1" />
       <node id="2078093584693310156" at="67,40,68,22" concept="6" />
-      <node id="2078093584693310147" at="70,49,71,39" concept="1" />
+      <node id="2078093584693310147" at="70,41,71,39" concept="1" />
       <node id="2078093584693310147" at="72,9,73,146" concept="5" />
       <node id="2078093584693310147" at="73,146,74,76" concept="1" />
       <node id="2078093584693310147" at="74,76,75,149" concept="5" />
@@ -69,12 +69,12 @@
       <node id="2078093584693310132" at="44,0,49,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2078093584693310147" at="86,306,91,9" concept="5" />
       <node id="2078093584693310147" at="91,9,96,24" concept="3" />
-      <node id="2078093584693310156" at="63,0,70,0" concept="4" trace="createComponent_vmybjk_a0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="2078093584693310132" at="54,0,63,0" concept="4" trace="createCollection_vmybjk_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2078093584693310156" at="63,0,70,0" concept="4" trace="createComponent_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2078093584693310132" at="54,0,63,0" concept="4" trace="createCollection_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2078093584693310147" at="71,39,99,5" concept="8" />
-      <node id="2078093584693310147" at="70,0,101,0" concept="4" trace="createProperty_vmybjk_b0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2078093584693310147" at="70,0,101,0" concept="4" trace="createProperty_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="2078093584693310132" at="46,26,47,18" />
-      <scope id="2078093584693310132" at="50,39,51,39" />
+      <scope id="2078093584693310132" at="50,39,51,32" />
       <scope id="2078093584693310147" at="88,41,89,118" />
       <scope id="2078093584693310147" at="97,15,98,40" />
       <scope id="2078093584693310132" at="39,90,41,18" />
@@ -90,11 +90,11 @@
         <var name="node" id="2078093584693310132" />
       </scope>
       <scope id="2078093584693310132" at="44,0,49,0" />
-      <scope id="2078093584693310156" at="63,50,68,22">
+      <scope id="2078093584693310156" at="63,42,68,22">
         <var name="editorCell" id="2078093584693310156" />
         <var name="style" id="2078093584693310156" />
       </scope>
-      <scope id="2078093584693310132" at="54,50,61,22">
+      <scope id="2078093584693310132" at="54,43,61,22">
         <var name="editorCell" id="2078093584693310132" />
       </scope>
       <scope id="2078093584693310156" at="63,0,70,0" />
@@ -106,7 +106,7 @@
         <var name="propertyAttributes" id="2078093584693310147" />
         <var name="style" id="2078093584693310147" />
       </scope>
-      <scope id="2078093584693310147" at="70,49,99,5" />
+      <scope id="2078093584693310147" at="70,41,99,5" />
       <scope id="2078093584693310147" at="70,0,101,0" />
       <unit id="2078093584693310147" at="87,102,91,7" name="testSubtypingB.editor.CustomType_EditorBuilder_a$1" />
       <unit id="2078093584693310132" at="35,0,102,0" name="testSubtypingB.editor.CustomType_EditorBuilder_a" />

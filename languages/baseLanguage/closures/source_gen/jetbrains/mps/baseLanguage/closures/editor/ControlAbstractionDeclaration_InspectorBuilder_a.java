@@ -42,28 +42,28 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_4f8got_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_4f8got_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_4f8got_a_0");
+    editorCell.setCellId("Collection_4f8got_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_4f8got_a0());
-    editorCell.addEditorCell(createRefNodeList_4f8got_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createConstant_4f8got_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "annotations:");
-    editorCell.setCellId("Constant_4f8got_a0");
+    editorCell.setCellId("Constant_4f8got_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_4f8got_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new ControlAbstractionDeclaration_InspectorBuilder_a.annotationListHandler_4f8got_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_annotation");

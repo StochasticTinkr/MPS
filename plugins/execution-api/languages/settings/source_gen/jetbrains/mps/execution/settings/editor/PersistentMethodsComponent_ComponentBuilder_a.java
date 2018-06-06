@@ -43,16 +43,16 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_55zktd_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_55zktd_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_55zktd_a");
-    editorCell.addEditorCell(createRefNodeList_55zktd_a0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createRefNodeList_55zktd_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new PersistentMethodsComponent_ComponentBuilder_a.methodsListHandler_55zktd_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("PMC_refNodeList_methods");

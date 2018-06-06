@@ -28,10 +28,10 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.FoldedCell
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_hl0bni_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_hl0bni_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{...}");
     editorCell.setCellId("Constant_hl0bni_a");
     Style style = new StyleImpl();

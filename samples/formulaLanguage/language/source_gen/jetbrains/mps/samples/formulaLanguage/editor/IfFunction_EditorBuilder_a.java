@@ -39,30 +39,30 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_tonzor_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_tonzor_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_tonzor_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_tonzor_a0());
-    editorCell.addEditorCell(createRefNode_tonzor_b0());
-    editorCell.addEditorCell(createConstant_tonzor_c0());
-    editorCell.addEditorCell(createRefNode_tonzor_d0());
-    editorCell.addEditorCell(createConstant_tonzor_e0());
-    editorCell.addEditorCell(createRefNode_tonzor_f0());
-    editorCell.addEditorCell(createConstant_tonzor_g0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createRefNode_2());
+    editorCell.addEditorCell(createConstant_3());
     return editorCell;
   }
-  private EditorCell createConstant_tonzor_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "IF(");
     editorCell.setCellId("Constant_tonzor_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_tonzor_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new IfFunction_EditorBuilder_a.logicalTestSingleRoleHandler_tonzor_b0(myNode, MetaAdapterFactory.getContainmentLink(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8d4298L, 0x102db8d7b0eL, "logicalTest"), getEditorContext());
     return provider.createCell();
   }
@@ -117,7 +117,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       return "<no logicalTest>";
     }
   }
-  private EditorCell createConstant_tonzor_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ",");
     editorCell.setCellId("Constant_tonzor_c0");
     Style style = new StyleImpl();
@@ -126,7 +126,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_tonzor_d0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new IfFunction_EditorBuilder_a.valueIfTrueSingleRoleHandler_tonzor_d0(myNode, MetaAdapterFactory.getContainmentLink(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8d4298L, 0x102db8e3288L, "valueIfTrue"), getEditorContext());
     return provider.createCell();
   }
@@ -181,7 +181,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       return "<no valueIfTrue>";
     }
   }
-  private EditorCell createConstant_tonzor_e0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ",");
     editorCell.setCellId("Constant_tonzor_e0");
     Style style = new StyleImpl();
@@ -190,7 +190,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_tonzor_f0() {
+  private EditorCell createRefNode_2() {
     SingleRoleCellProvider provider = new IfFunction_EditorBuilder_a.valueIfFalseSingleRoleHandler_tonzor_f0(myNode, MetaAdapterFactory.getContainmentLink(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8d4298L, 0x102db8eb12fL, "valueIfFalse"), getEditorContext());
     return provider.createCell();
   }
@@ -245,7 +245,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       return "<no valueIfFalse>";
     }
   }
-  private EditorCell createConstant_tonzor_g0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
     editorCell.setCellId("Constant_tonzor_g0");
     editorCell.setDefaultText("");

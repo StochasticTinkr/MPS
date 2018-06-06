@@ -39,20 +39,20 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.OperatorSt
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_xdhh9n_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_xdhh9n_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_xdhh9n_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_xdhh9n_a0());
-    editorCell.addEditorCell(createConstant_xdhh9n_b0());
-    editorCell.addEditorCell(createRefNode_xdhh9n_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_xdhh9n_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new MapEntry_EditorBuilder_a.keySingleRoleHandler_xdhh9n_a0(myNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118f249550fL, 0x118f24b00ccL, "key"), getEditorContext());
     return provider.createCell();
   }
@@ -107,7 +107,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.OperatorSt
       return "<no key>";
     }
   }
-  private EditorCell createConstant_xdhh9n_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
     editorCell.setCellId("Constant_xdhh9n_b0");
     Style style = new StyleImpl();
@@ -116,7 +116,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.OperatorSt
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_xdhh9n_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new MapEntry_EditorBuilder_a.valueSingleRoleHandler_xdhh9n_c0(myNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118f249550fL, 0x118f24b224fL, "value"), getEditorContext());
     return provider.createCell();
   }

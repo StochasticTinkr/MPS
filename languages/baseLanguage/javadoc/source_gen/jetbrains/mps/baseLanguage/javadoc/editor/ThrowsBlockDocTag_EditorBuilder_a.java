@@ -55,20 +55,20 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_fp467p_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_fp467p_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_fp467p_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_fp467p_a0());
-    editorCell.addEditorCell(createRefNode_fp467p_b0());
-    editorCell.addEditorCell(createProperty_fp467p_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_fp467p_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "@throws");
     editorCell.setCellId("Constant_fp467p_a0");
     Style style = new StyleImpl();
@@ -78,7 +78,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_fp467p_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ThrowsBlockDocTag_EditorBuilder_a.exceptionTypeSingleRoleHandler_fp467p_b0(myNode, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f68704ec270L, 0x5ed0d79d7dbd76f9L, "exceptionType"), getEditorContext());
     return provider.createCell();
   }
@@ -134,7 +134,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no exceptionType>";
     }
   }
-  private EditorCell createProperty_fp467p_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f68704ec270L, 0x514c0f68704ec272L, "text");

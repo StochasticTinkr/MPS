@@ -52,20 +52,20 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_4g3hlw_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_4g3hlw_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_4g3hlw_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_4g3hlw_a0());
-    editorCell.addEditorCell(createConstant_4g3hlw_b0());
-    editorCell.addEditorCell(createProperty_4g3hlw_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createRefNode_4g3hlw_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ConceptId_EditorBuilder_a.languageIdentitySingleRoleHandler_4g3hlw_a0(myNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, 0x5fea1eb9fefb6feaL, "languageIdentity"), getEditorContext());
     return provider.createCell();
   }
@@ -120,13 +120,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no languageIdentity>";
     }
   }
-  private EditorCell createConstant_4g3hlw_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "::");
     editorCell.setCellId("Constant_4g3hlw_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_4g3hlw_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, 0x5fea1eb9fefb73d7L, "conceptName");

@@ -45,25 +45,25 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_g1wmr2_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_g1wmr2_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_g1wmr2_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_g1wmr2_a0());
-    editorCell.addEditorCell(createRefNodeList_g1wmr2_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createConstant_g1wmr2_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "menu parts:");
     editorCell.setCellId("Constant_g1wmr2_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_g1wmr2_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new CellMenuDescriptor_EditorBuilder_a.cellMenuPartListHandler_g1wmr2_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_cellMenuPart");
@@ -102,7 +102,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(cellMenuPartListHandler_g1wmr2_b0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, 0x10f34f82910L, "cellMenuPart")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_g1wmr2_a1a();
+        emptyCell = createConstant_1();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -122,7 +122,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
         }
       }
     }
-    private EditorCell createConstant_g1wmr2_a1a() {
+    private EditorCell createConstant_1() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
       editorCell.setCellId("Constant_g1wmr2_a1a");
       Style style = new StyleImpl();

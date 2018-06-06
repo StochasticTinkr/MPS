@@ -46,10 +46,10 @@ import jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor;
   }
 
   /*package*/ EditorCell createCell() {
-    return createProperty_2bpkx8_a();
+    return createProperty_0();
   }
 
-  private EditorCell createProperty_2bpkx8_a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, 0x4890619bb3ff9b53L, "value");

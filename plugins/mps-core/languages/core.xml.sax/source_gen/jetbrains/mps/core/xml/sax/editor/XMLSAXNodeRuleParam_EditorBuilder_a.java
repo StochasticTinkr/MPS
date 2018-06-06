@@ -51,19 +51,19 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_xm8smg_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_xm8smg_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_xm8smg_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_xm8smg_a0());
-    editorCell.addEditorCell(createProperty_xm8smg_b0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createRefNode_xm8smg_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new XMLSAXNodeRuleParam_EditorBuilder_a.typeSingleRoleHandler_xm8smg_a0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), getEditorContext());
     return provider.createCell();
   }
@@ -118,7 +118,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no type>";
     }
   }
-  private EditorCell createProperty_xm8smg_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");

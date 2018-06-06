@@ -52,10 +52,10 @@ import java.awt.Color;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_8hdu2g_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_8hdu2g_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_8hdu2g_a");
     editorCell.setBig(true);
@@ -64,11 +64,11 @@ import java.awt.Color;
     new rootCellModelStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     if (nodeCondition_8hdu2g_a0a()) {
-      editorCell.addEditorCell(createComponent_8hdu2g_a0());
+      editorCell.addEditorCell(createComponent_0());
     }
-    editorCell.addEditorCell(createProperty_8hdu2g_b0());
+    editorCell.addEditorCell(createProperty_0());
     if (nodeCondition_8hdu2g_a2a()) {
-      editorCell.addEditorCell(createComponent_8hdu2g_c0());
+      editorCell.addEditorCell(createComponent_1());
     }
     return editorCell;
   }
@@ -78,11 +78,11 @@ import java.awt.Color;
   private boolean nodeCondition_8hdu2g_a2a() {
     return EditorCellModel__BehaviorDescriptor.getClosingTag_idhKxXx_K.invoke(myNode).length() > 0;
   }
-  private EditorCell createComponent_8hdu2g_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor._OpenTag");
     return editorCell;
   }
-  private EditorCell createProperty_8hdu2g_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, 0xf9eb01232fL, "text");
@@ -141,7 +141,7 @@ import java.awt.Color;
   private boolean _StyleParameter_QueryFunction_8hdu2g_a6b0() {
     return (boolean) EditorCellModel__BehaviorDescriptor.isStrikeOut_idhNnL8J1.invoke(getNode());
   }
-  private EditorCell createComponent_8hdu2g_c0() {
+  private EditorCell createComponent_1() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor._CloseTag");
     return editorCell;
   }

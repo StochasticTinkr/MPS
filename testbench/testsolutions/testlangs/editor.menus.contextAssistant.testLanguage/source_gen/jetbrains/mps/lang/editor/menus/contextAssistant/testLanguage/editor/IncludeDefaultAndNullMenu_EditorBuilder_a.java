@@ -29,10 +29,10 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_1naoec_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_1naoec_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "include default menu and null menu");
     editorCell.setCellId("Constant_1naoec_a");
     editorCell.setBig(true);

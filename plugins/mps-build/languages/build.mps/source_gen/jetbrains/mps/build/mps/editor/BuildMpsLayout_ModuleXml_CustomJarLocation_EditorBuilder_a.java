@@ -52,20 +52,20 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_r8678q_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_r8678q_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_r8678q_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_r8678q_a0());
-    editorCell.addEditorCell(createConstant_r8678q_b0());
-    editorCell.addEditorCell(createProperty_r8678q_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createRefNode_r8678q_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new BuildMpsLayout_ModuleXml_CustomJarLocation_EditorBuilder_a.pathSingleRoleHandler_r8678q_a0(myNode, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, 0x3c765492deb1a385L, "path"), getEditorContext());
     return provider.createCell();
   }
@@ -120,13 +120,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no path>";
     }
   }
-  private EditorCell createConstant_r8678q_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "->");
     editorCell.setCellId("Constant_r8678q_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_r8678q_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, 0x3c765492deb1a386L, "packagedLocation");

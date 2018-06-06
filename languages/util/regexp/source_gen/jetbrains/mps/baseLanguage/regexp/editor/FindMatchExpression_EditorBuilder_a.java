@@ -39,20 +39,20 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_lzqhdw_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_lzqhdw_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_lzqhdw_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_lzqhdw_a0());
-    editorCell.addEditorCell(createConstant_lzqhdw_b0());
-    editorCell.addEditorCell(createRefNode_lzqhdw_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_lzqhdw_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new FindMatchExpression_EditorBuilder_a.inputExpressionSingleRoleHandler_lzqhdw_a0(myNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x550fbf4ebc5de3f5L, 0x550fbf4ebc5f5df9L, "inputExpression"), getEditorContext());
     return provider.createCell();
   }
@@ -107,7 +107,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
       return "<no inputExpression>";
     }
   }
-  private EditorCell createConstant_lzqhdw_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=~");
     editorCell.setCellId("Constant_lzqhdw_b0");
     Style style = new StyleImpl();
@@ -116,7 +116,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_lzqhdw_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new FindMatchExpression_EditorBuilder_a.regexpSingleRoleHandler_lzqhdw_c0(myNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ecbc07aL, 0x1117ecc427cL, "regexp"), getEditorContext());
     return provider.createCell();
   }

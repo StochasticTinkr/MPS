@@ -58,40 +58,40 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_3ry26z_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_3ry26z_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_3ry26z_a_0");
+    editorCell.setCellId("Collection_3ry26z_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
     if (nodeCondition_3ry26z_a0a()) {
-      editorCell.addEditorCell(createCollection_3ry26z_a0());
+      editorCell.addEditorCell(createCollection_1());
     }
-    editorCell.addEditorCell(createCollection_3ry26z_b0());
+    editorCell.addEditorCell(createCollection_2());
     return editorCell;
   }
   private boolean nodeCondition_3ry26z_a0a() {
     return SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, 0x3cfdbd635b5afe8dL, "iconPath")) != null;
   }
-  private EditorCell createCollection_3ry26z_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_3ry26z_a0");
+    editorCell.setCellId("Collection_3ry26z_1");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_3ry26z_a0a());
-    editorCell.addEditorCell(createProperty_3ry26z_b0a());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_3ry26z_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "icon (deprecated)");
-    editorCell.setCellId("Constant_3ry26z_a0a");
+    editorCell.setCellId("Constant_3ry26z_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_3ry26z_b0a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, 0x3cfdbd635b5afe8dL, "iconPath");
@@ -121,23 +121,23 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createCollection_3ry26z_b0() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_3ry26z_b0");
+    editorCell.setCellId("Collection_3ry26z_2");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_3ry26z_a1a());
-    editorCell.addEditorCell(createRefNode_3ry26z_b1a());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_3ry26z_a1a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "icon:");
-    editorCell.setCellId("Constant_3ry26z_a1a");
+    editorCell.setCellId("Constant_3ry26z_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_3ry26z_b1a() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new CreationActionReference_InspectorBuilder_a.iconSingleRoleHandler_3ry26z_b1a(myNode, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, 0x57cf4eb14c4f9ef5L, "icon"), getEditorContext());
     return provider.createCell();
   }

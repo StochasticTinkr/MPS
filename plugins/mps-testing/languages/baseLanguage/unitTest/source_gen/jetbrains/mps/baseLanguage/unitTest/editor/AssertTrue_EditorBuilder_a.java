@@ -41,21 +41,21 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_h8u2a4_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_h8u2a4_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_h8u2a4_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_h8u2a4_a0());
-    editorCell.addEditorCell(createRefNode_h8u2a4_b0());
-    editorCell.addEditorCell(createComponent_h8u2a4_c0());
-    editorCell.addEditorCell(createConstant_h8u2a4_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_h8u2a4_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "assert true");
     editorCell.setCellId("Constant_h8u2a4_a0");
     Style style = new StyleImpl();
@@ -64,7 +64,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_h8u2a4_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new AssertTrue_EditorBuilder_a.conditionSingleRoleHandler_h8u2a4_b0(myNode, MetaAdapterFactory.getContainmentLink(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110df833483L, 0x110df83bc87L, "condition"), getEditorContext());
     return provider.createCell();
   }
@@ -119,14 +119,14 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no condition>";
     }
   }
-  private EditorCell createComponent_h8u2a4_c0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.baseLanguage.unitTest.editor.MessageComponent");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createConstant_h8u2a4_d0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ";");
     editorCell.setCellId("Constant_h8u2a4_d0");
     Style style = new StyleImpl();

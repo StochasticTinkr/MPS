@@ -31,10 +31,10 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_3d0agq_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_3d0agq_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "detach");
     editorCell.setCellId("Constant_3d0agq_a");
     editorCell.setBig(true);

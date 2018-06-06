@@ -45,10 +45,10 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_1bs0fk_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_1bs0fk_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_1bs0fk_a");
     editorCell.setBig(true);
@@ -56,11 +56,11 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_BOTTOM, new Padding(2, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createRefNodeList_1bs0fk_a0());
-    editorCell.addEditorCell(createAttributedNodeCell_1bs0fk_b0());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createAttributedNodeCell_0());
     return editorCell;
   }
-  private EditorCell createRefNodeList_1bs0fk_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new JavaImports_EditorBuilder_a.entriesListHandler_1bs0fk_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_entries");
@@ -120,7 +120,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       }
     }
   }
-  private EditorCell createAttributedNodeCell_1bs0fk_b0() {
+  private EditorCell createAttributedNodeCell_0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;

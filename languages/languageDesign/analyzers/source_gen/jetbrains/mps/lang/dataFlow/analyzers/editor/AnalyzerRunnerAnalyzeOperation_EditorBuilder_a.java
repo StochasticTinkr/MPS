@@ -27,32 +27,32 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_f2r9d9_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_f2r9d9_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_f2r9d9_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_f2r9d9_a0());
-    editorCell.addEditorCell(createConstant_f2r9d9_b0());
-    editorCell.addEditorCell(createConstant_f2r9d9_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
-  private EditorCell createConstant_f2r9d9_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "analyze");
     editorCell.setCellId("Constant_f2r9d9_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_f2r9d9_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
     editorCell.setCellId("Constant_f2r9d9_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_f2r9d9_c0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
     editorCell.setCellId("Constant_f2r9d9_c0");
     editorCell.setDefaultText("");

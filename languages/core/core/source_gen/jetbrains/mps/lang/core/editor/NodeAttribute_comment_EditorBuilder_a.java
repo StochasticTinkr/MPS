@@ -30,10 +30,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
   }
 
   /*package*/ EditorCell createCell() {
-    return createNextEditor_fqq7dl_a();
+    return createNextEditor_0();
   }
 
-  private EditorCell createNextEditor_fqq7dl_a() {
+  private EditorCell createNextEditor_0() {
     try {
       getCellFactory().pushCellContext();
       getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints_fqq7dl_a0()).toGenericArray(String.class));

@@ -51,20 +51,20 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.StringLite
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_zdtp1e_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_zdtp1e_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_zdtp1e_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createProperty_zdtp1e_a0());
-    editorCell.addEditorCell(createConstant_zdtp1e_b0());
-    editorCell.addEditorCell(createProperty_zdtp1e_c0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createProperty_zdtp1e_a0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b59L, "prefix");
@@ -94,7 +94,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.StringLite
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_zdtp1e_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<ref. presentation>");
     editorCell.setCellId("Constant_zdtp1e_b0");
     Style style = new StyleImpl();
@@ -105,7 +105,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.StringLite
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_zdtp1e_c0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b5cL, "suffix");

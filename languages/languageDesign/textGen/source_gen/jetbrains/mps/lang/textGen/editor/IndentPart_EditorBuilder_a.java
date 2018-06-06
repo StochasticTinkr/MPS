@@ -29,10 +29,10 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_ejfj3q_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_ejfj3q_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "indent");
     editorCell.setCellId("Constant_ejfj3q_a");
     editorCell.setBig(true);

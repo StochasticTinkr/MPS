@@ -50,19 +50,19 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_gc1fin_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_gc1fin_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_gc1fin_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createReadOnlyModelAccessor_gc1fin_a0());
-    editorCell.addEditorCell(createRefNodeList_gc1fin_b0());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_gc1fin_a0() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return (String) Flow__BehaviorDescriptor.getTitle_id1653mnvAgr8.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode)));
@@ -83,7 +83,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createRefNodeList_gc1fin_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new Flow_EditorBuilder_a.statementListHandler_gc1fin_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_statement");

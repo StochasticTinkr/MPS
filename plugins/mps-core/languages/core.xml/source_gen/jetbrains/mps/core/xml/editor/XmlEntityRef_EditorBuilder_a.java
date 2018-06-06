@@ -66,20 +66,20 @@ import jetbrains.mps.core.xml.constraints.XmlNameUtil;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_40aq2x_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_40aq2x_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_40aq2x_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_40aq2x_a0());
-    editorCell.addEditorCell(createProperty_40aq2x_b0());
-    editorCell.addEditorCell(createConstant_40aq2x_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_40aq2x_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "&");
     editorCell.setCellId("Constant_40aq2x_a0");
     Style style = new StyleImpl();
@@ -93,7 +93,7 @@ import jetbrains.mps.core.xml.constraints.XmlNameUtil;
   private boolean _StyleParameter_QueryFunction_40aq2x_a1a0() {
     return !((boolean) XmlPart__BehaviorDescriptor.isFirstPositionAllowed_id1Qs9WekVZ7m.invoke(getNode()));
   }
-  private EditorCell createProperty_40aq2x_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9c6f4dL, 0x16838b3fce9c6f8fL, "entityName");
@@ -148,7 +148,7 @@ import jetbrains.mps.core.xml.constraints.XmlNameUtil;
       return Sequence.fromIterable(Sequence.fromArray(XmlNameUtil.getDefaultEntities())).toListSequence();
     }
   }
-  private EditorCell createConstant_40aq2x_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ";");
     editorCell.setCellId("Constant_40aq2x_c0");
     Style style = new StyleImpl();

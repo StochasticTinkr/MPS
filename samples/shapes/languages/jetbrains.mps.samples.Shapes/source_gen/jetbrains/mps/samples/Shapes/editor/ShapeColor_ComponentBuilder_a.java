@@ -36,23 +36,23 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_mblc8h_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_mblc8h_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_mblc8h_a");
-    editorCell.addEditorCell(createConstant_mblc8h_a0());
-    editorCell.addEditorCell(createRefNode_mblc8h_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_mblc8h_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "color:");
     editorCell.setCellId("Constant_mblc8h_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_mblc8h_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ShapeColor_ComponentBuilder_a.colorRefSingleRoleHandler_mblc8h_b0(myNode, MetaAdapterFactory.getContainmentLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, 0x3a2b0182df24928cL, "colorRef"), getEditorContext());
     return provider.createCell();
   }

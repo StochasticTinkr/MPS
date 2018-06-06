@@ -33,10 +33,10 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.attributedCellLabelSty
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_6qfxmi_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_6qfxmi_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_6qfxmi_a");
     editorCell.setBig(true);
@@ -44,12 +44,12 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.attributedCellLabelSty
     Style style = new StyleImpl();
     new rootCellModelStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_6qfxmi_a0());
-    editorCell.addEditorCell(createConstant_6qfxmi_b0());
-    editorCell.addEditorCell(createConstant_6qfxmi_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
-  private EditorCell createConstant_6qfxmi_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "[/>");
     editorCell.setCellId("Constant_6qfxmi_a0");
     Style style = new StyleImpl();
@@ -60,7 +60,7 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.attributedCellLabelSty
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_6qfxmi_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "attributed property");
     editorCell.setCellId("Constant_6qfxmi_b0");
     Style style = new StyleImpl();
@@ -69,7 +69,7 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.attributedCellLabelSty
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_6qfxmi_c0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "</]");
     editorCell.setCellId("Constant_6qfxmi_c0");
     Style style = new StyleImpl();

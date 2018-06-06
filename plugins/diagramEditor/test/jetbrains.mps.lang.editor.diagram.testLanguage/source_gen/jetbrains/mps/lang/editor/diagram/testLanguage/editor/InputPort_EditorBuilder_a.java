@@ -40,10 +40,10 @@ import jetbrains.jetpad.model.property.ReadableProperty;
   }
 
   /*package*/ EditorCell createCell() {
-    return createDiagramPort_w1m4cg_a();
+    return createDiagramPort_0();
   }
 
-  private EditorCell createDiagramPort_w1m4cg_a() {
+  private EditorCell createDiagramPort_0() {
     final EditorCell editorCell = new InputPort_EditorBuilder_a.PortCellImpl_w1m4cg_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramPort_w1m4cg_a");
     editorCell.setBig(true);

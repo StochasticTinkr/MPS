@@ -82,26 +82,26 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ji2wba_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ji2wba_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ji2wba_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createCollection_ji2wba_a0());
-    editorCell.addEditorCell(createConstant_ji2wba_b0());
-    editorCell.addEditorCell(createCollection_ji2wba_c0());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createCollection_2());
     return editorCell;
   }
-  private EditorCell createCollection_ji2wba_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("classifier");
-    editorCell.addEditorCell(createRefCell_ji2wba_a0a());
+    editorCell.addEditorCell(createRefCell_0());
     return editorCell;
   }
-  private EditorCell createRefCell_ji2wba_a0a() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -150,7 +150,7 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
     }
 
     /*package*/ EditorCell createCell() {
-      return createReferencePresentation_ji2wba_a0a0a();
+      return createReferencePresentation_0();
     }
 
     @NotNull
@@ -159,7 +159,7 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
       return myNode;
     }
 
-    private EditorCell createReferencePresentation_ji2wba_a0a0a() {
+    private EditorCell createReferencePresentation_0() {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, PresentationProviders.PRESENTATION_ji2wba_a0a0a0);
       editorCell.setCellId("ReferencePresentation_ji2wba_a0a0a");
       return editorCell;
@@ -179,7 +179,7 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
       return PresentationProviders.PRESENTATION_ji2wba_a0a0a0;
     }
   }
-  private EditorCell createConstant_ji2wba_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ".");
     editorCell.setCellId("Constant_ji2wba_b0");
     Style style = new StyleImpl();
@@ -189,13 +189,13 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_ji2wba_c0() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("field");
-    editorCell.addEditorCell(createRefCell_ji2wba_a2a());
+    editorCell.addEditorCell(createRefCell_1());
     return editorCell;
   }
-  private EditorCell createRefCell_ji2wba_a2a() {
+  private EditorCell createRefCell_1() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -245,7 +245,7 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_ji2wba_a0a2a();
+      return createProperty_0();
     }
 
     @NotNull
@@ -254,7 +254,7 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
       return myNode;
     }
 
-    private EditorCell createProperty_ji2wba_a0a2a() {
+    private EditorCell createProperty_0() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");

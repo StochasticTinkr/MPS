@@ -49,25 +49,25 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ggt0rc_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ggt0rc_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ggt0rc_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
     if (nodeCondition_ggt0rc_a0a()) {
-      editorCell.addEditorCell(createConstant_ggt0rc_a0());
+      editorCell.addEditorCell(createConstant_0());
     }
-    editorCell.addEditorCell(createProperty_ggt0rc_b0());
-    editorCell.addEditorCell(createConstant_ggt0rc_c0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
   private boolean nodeCondition_ggt0rc_a0a() {
     return (boolean) Slot__BehaviorDescriptor.isCustomizing_idNU25Mr1t4q.invoke(myNode);
   }
-  private EditorCell createConstant_ggt0rc_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "customizing");
     editorCell.setCellId("Constant_ggt0rc_a0");
     Style style = new StyleImpl();
@@ -76,7 +76,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_ggt0rc_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start");
@@ -103,7 +103,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_ggt0rc_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "o'clock");
     editorCell.setCellId("Constant_ggt0rc_c0");
     editorCell.setDefaultText("");

@@ -28,10 +28,10 @@ import jetbrains.mps.lang.editor.test.generation.editor.TestTargetStyleSheet_Sty
   }
 
   /*package*/ EditorCell createCell() {
-    return createError_zaxlv2_a();
+    return createError_0();
   }
 
-  private EditorCell createError_zaxlv2_a() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "");
     editorCell.setCellId("Error_zaxlv2_a");
     Style style = new StyleImpl();

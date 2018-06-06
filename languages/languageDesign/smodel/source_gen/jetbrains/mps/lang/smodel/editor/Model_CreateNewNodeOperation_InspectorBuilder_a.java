@@ -36,25 +36,25 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_tsmvai_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_tsmvai_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_tsmvai_a_0");
+    editorCell.setCellId("Collection_tsmvai_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_tsmvai_a0());
-    editorCell.addEditorCell(createRefNode_tsmvai_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_tsmvai_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "id =");
-    editorCell.setCellId("Constant_tsmvai_a0");
+    editorCell.setCellId("Constant_tsmvai_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_tsmvai_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new Model_CreateNewNodeOperation_InspectorBuilder_a.nodeIdSingleRoleHandler_tsmvai_b0(myNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2e210544L, 0x23c00a5f2f61f63L, "nodeId"), getEditorContext());
     return provider.createCell();
   }

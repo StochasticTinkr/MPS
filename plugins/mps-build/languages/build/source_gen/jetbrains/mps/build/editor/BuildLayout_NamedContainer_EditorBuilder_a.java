@@ -50,20 +50,20 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_yrra5q_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_yrra5q_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_yrra5q_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_yrra5q_a0());
-    editorCell.addEditorCell(createRefNode_yrra5q_b0());
-    editorCell.addEditorCell(createComponent_yrra5q_c0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createComponent_1());
     return editorCell;
   }
-  private EditorCell createComponent_yrra5q_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new outputLayoutStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -82,7 +82,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "BuildLayout_NamedContainer" + ")", new SNodePointer("r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)", "2886182022232399828"));
     }
   }
-  private EditorCell createRefNode_yrra5q_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new BuildLayout_NamedContainer_EditorBuilder_a.containerNameSingleRoleHandler_yrra5q_b0(myNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName"), getEditorContext());
     return provider.createCell();
   }
@@ -143,7 +143,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no containerName>";
     }
   }
-  private EditorCell createComponent_yrra5q_c0() {
+  private EditorCell createComponent_1() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.build.editor.BuildLayout_containerElements");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

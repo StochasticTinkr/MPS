@@ -30,18 +30,18 @@ import jetbrains.mps.nodeEditor.EditorManager;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_kydwvz_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_kydwvz_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_kydwvz_a_0");
+    editorCell.setCellId("Collection_kydwvz_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefCell_kydwvz_a0());
+    editorCell.addEditorCell(createRefCell_0());
     return editorCell;
   }
-  private EditorCell createRefCell_kydwvz_a0() {
+  private EditorCell createRefCell_0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abdL, 0x1a6fbb5a434b4c0cL, "context"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1a6fbb5a434b008bL, "jetbrains.mps.baseLanguage.math.structure.MathContext"), "context", getEditorContext()) {
 
       @Override
@@ -79,7 +79,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
     }
 
     /*package*/ EditorCell createCell() {
-      return createComponent_kydwvz_a0a0();
+      return createComponent_0();
     }
 
     @NotNull
@@ -88,7 +88,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
       return myNode;
     }
 
-    private EditorCell createComponent_kydwvz_a0a0() {
+    private EditorCell createComponent_0() {
       EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.baseLanguage.math.editor.MathContextEditorPart");
       return editorCell;
     }

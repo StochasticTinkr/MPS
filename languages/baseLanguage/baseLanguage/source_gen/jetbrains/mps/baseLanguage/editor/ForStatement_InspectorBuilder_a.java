@@ -39,31 +39,31 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_l9yc2b_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_l9yc2b_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_l9yc2b_a_0");
+    editorCell.setCellId("Collection_l9yc2b_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_l9yc2b_a0());
-    editorCell.addEditorCell(createConstant_l9yc2b_b0());
-    editorCell.addEditorCell(createRefNode_l9yc2b_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_l9yc2b_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "label");
-    editorCell.setCellId("Constant_l9yc2b_a0");
+    editorCell.setCellId("Constant_l9yc2b_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_l9yc2b_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
-    editorCell.setCellId("Constant_l9yc2b_b0");
+    editorCell.setCellId("Constant_l9yc2b_1");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.EDITABLE, false);
@@ -71,7 +71,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_l9yc2b_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ForStatement_InspectorBuilder_a.loopLabelSingleRoleHandler_l9yc2b_c0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x50c493bf9555131L, "loopLabel"), getEditorContext());
     return provider.createCell();
   }

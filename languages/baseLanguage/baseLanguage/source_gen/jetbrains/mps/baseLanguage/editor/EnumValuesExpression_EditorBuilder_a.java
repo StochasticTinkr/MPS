@@ -67,20 +67,20 @@ import jetbrains.mps.smodel.SNodePointer;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_igwct4_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_igwct4_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_igwct4_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefCell_igwct4_a0());
-    editorCell.addEditorCell(createConstant_igwct4_b0());
-    editorCell.addEditorCell(createConstant_igwct4_c0());
+    editorCell.addEditorCell(createRefCell_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createRefCell_igwct4_a0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d1e4bce56L, 0x11d1e4bf6afL, "enumClass");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -128,7 +128,7 @@ import jetbrains.mps.smodel.SNodePointer;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_igwct4_a0a0();
+      return createProperty_0();
     }
 
     @NotNull
@@ -137,7 +137,7 @@ import jetbrains.mps.smodel.SNodePointer;
       return myNode;
     }
 
-    private EditorCell createProperty_igwct4_a0a0() {
+    private EditorCell createProperty_0() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -165,7 +165,7 @@ import jetbrains.mps.smodel.SNodePointer;
       }
     }
   }
-  private EditorCell createConstant_igwct4_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ".");
     editorCell.setCellId("Constant_igwct4_b0");
     Style style = new StyleImpl();
@@ -174,7 +174,7 @@ import jetbrains.mps.smodel.SNodePointer;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_igwct4_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "values");
     editorCell.setCellId("Constant_igwct4_c0");
     Style style = new StyleImpl();

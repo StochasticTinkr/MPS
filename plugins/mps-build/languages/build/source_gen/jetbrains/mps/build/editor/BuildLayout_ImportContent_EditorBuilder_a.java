@@ -72,20 +72,20 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_roxgcf_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_roxgcf_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_roxgcf_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_roxgcf_a0());
-    editorCell.addEditorCell(createRefCell_roxgcf_b0());
-    editorCell.addEditorCell(createRefNodeList_roxgcf_c0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefCell_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createComponent_roxgcf_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new keywordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -105,7 +105,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "BuildLayout_Node" + ")", new SNodePointer("r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)", "2886182022232400472"));
     }
   }
-  private EditorCell createRefCell_roxgcf_b0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -156,7 +156,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     }
 
     /*package*/ EditorCell createCell() {
-      return createReferencePresentation_roxgcf_a0b0();
+      return createReferencePresentation_0();
     }
 
     @NotNull
@@ -165,7 +165,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       return myNode;
     }
 
-    private EditorCell createReferencePresentation_roxgcf_a0b0() {
+    private EditorCell createReferencePresentation_0() {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, PresentationProviders.PRESENTATION_roxgcf_a0a1a);
       editorCell.setCellId("ReferencePresentation_roxgcf_a0b0");
       return editorCell;
@@ -185,7 +185,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       return PresentationProviders.PRESENTATION_roxgcf_a0a1a;
     }
   }
-  private EditorCell createRefNodeList_roxgcf_c0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new BuildLayout_ImportContent_EditorBuilder_a.selectorsListHandler_roxgcf_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_selectors");
@@ -228,7 +228,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(selectorsListHandler_roxgcf_c0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x5e395ed30d43f65aL, "selectors")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_roxgcf_a2a();
+        emptyCell = createConstant_0();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -248,7 +248,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
         }
       }
     }
-    private EditorCell createConstant_roxgcf_a2a() {
+    private EditorCell createConstant_0() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
       editorCell.setCellId("Constant_roxgcf_a2a");
       Style style = new StyleImpl();

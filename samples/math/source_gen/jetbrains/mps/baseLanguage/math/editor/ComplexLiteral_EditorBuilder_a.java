@@ -36,20 +36,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_g5m0o6_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_g5m0o6_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_g5m0o6_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_g5m0o6_a0());
-    editorCell.addEditorCell(createConstant_g5m0o6_b0());
-    editorCell.addEditorCell(createRefNode_g5m0o6_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_g5m0o6_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ComplexLiteral_EditorBuilder_a.realSingleRoleHandler_g5m0o6_a0(myNode, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12052224b0bL, 0x1205222bbd7L, "real"), getEditorContext());
     return provider.createCell();
   }
@@ -104,13 +104,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       return "<no real>";
     }
   }
-  private EditorCell createConstant_g5m0o6_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ",");
     editorCell.setCellId("Constant_g5m0o6_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_g5m0o6_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new ComplexLiteral_EditorBuilder_a.imagSingleRoleHandler_g5m0o6_c0(myNode, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12052224b0bL, 0x1205222bdbdL, "imag"), getEditorContext());
     return provider.createCell();
   }

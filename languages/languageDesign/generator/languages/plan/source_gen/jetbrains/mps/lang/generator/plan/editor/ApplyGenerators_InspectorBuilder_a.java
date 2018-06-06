@@ -50,22 +50,22 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_34tr3z_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_34tr3z_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_34tr3z_a_0");
+    editorCell.setCellId("Collection_34tr3z_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_34tr3z_a0());
-    editorCell.addEditorCell(createConstant_34tr3z_b0());
-    editorCell.addEditorCell(createCollection_34tr3z_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createCollection_1());
     if (nodeCondition_34tr3z_a3a()) {
-      editorCell.addEditorCell(createCollection_34tr3z_d0());
+      editorCell.addEditorCell(createCollection_2());
     }
     if (nodeCondition_34tr3z_a4a()) {
-      editorCell.addEditorCell(createConstant_34tr3z_e0());
+      editorCell.addEditorCell(createConstant_4());
     }
     return editorCell;
   }
@@ -75,32 +75,32 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
   private boolean nodeCondition_34tr3z_a4a() {
     return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, 0xf738996443c35afL, "withPriorityRules"));
   }
-  private EditorCell createConstant_34tr3z_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Apply specified generators directly, regardless of generator's language presence");
-    editorCell.setCellId("Constant_34tr3z_a0");
+    editorCell.setCellId("Constant_34tr3z_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_34tr3z_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
-    editorCell.setCellId("Constant_34tr3z_b0");
+    editorCell.setCellId("Constant_34tr3z_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_34tr3z_c0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_34tr3z_c0");
-    editorCell.addEditorCell(createConstant_34tr3z_a2a());
-    editorCell.addEditorCell(createProperty_34tr3z_b2a());
+    editorCell.setCellId("Collection_34tr3z_1");
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_34tr3z_a2a() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "include extending generators into same step:");
-    editorCell.setCellId("Constant_34tr3z_a2a");
+    editorCell.setCellId("Constant_34tr3z_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_34tr3z_b2a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, 0xc11e5088a799353L, "withExtended");
@@ -127,20 +127,20 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createCollection_34tr3z_d0() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_34tr3z_d0");
-    editorCell.addEditorCell(createConstant_34tr3z_a3a());
-    editorCell.addEditorCell(createProperty_34tr3z_b3a());
+    editorCell.setCellId("Collection_34tr3z_2");
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createConstant_34tr3z_a3a() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "respect priority rules for acivated generators:");
-    editorCell.setCellId("Constant_34tr3z_a3a");
+    editorCell.setCellId("Constant_34tr3z_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_34tr3z_b3a() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, 0xf738996443c35afL, "withPriorityRules");
@@ -167,9 +167,9 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_34tr3z_e0() {
+  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Note, it's not recommended to rely on priority rules, the idea of a Generation Plan is to control order explicitly and from outside, rather than delegate this control to generators");
-    editorCell.setCellId("Constant_34tr3z_e0");
+    editorCell.setCellId("Constant_34tr3z_4");
     Style style = new StyleImpl();
     new CommentStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);

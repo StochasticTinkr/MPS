@@ -37,28 +37,28 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_95jom2_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_95jom2_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_95jom2_a_0");
+    editorCell.setCellId("Collection_95jom2_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_95jom2_a0());
-    editorCell.addEditorCell(createReadOnlyModelAccessor_95jom2_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_0());
     return editorCell;
   }
-  private EditorCell createConstant_95jom2_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "unique id:");
-    editorCell.setCellId("Constant_95jom2_a0");
+    editorCell.setCellId("Constant_95jom2_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_95jom2_b0() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return (String) IGeneratorParameter__BehaviorDescriptor.getUniqueId_id$79JWCe2bn.invoke(myNode);
@@ -71,7 +71,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     }, myNode);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_95jom2_b0");
+    editorCell.setCellId("ReadOnlyModelAccessor_95jom2_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);

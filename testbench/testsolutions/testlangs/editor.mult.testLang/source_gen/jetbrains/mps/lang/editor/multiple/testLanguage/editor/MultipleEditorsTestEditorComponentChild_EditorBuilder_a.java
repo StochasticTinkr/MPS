@@ -26,18 +26,18 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_9j3wy4_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_9j3wy4_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_9j3wy4_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_9j3wy4_a0());
+    editorCell.addEditorCell(createComponent_0());
     return editorCell;
   }
-  private EditorCell createComponent_9j3wy4_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestEditorComponentChild_default");
     return editorCell;
   }

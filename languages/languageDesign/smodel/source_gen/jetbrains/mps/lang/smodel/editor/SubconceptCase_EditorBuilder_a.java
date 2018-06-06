@@ -40,21 +40,21 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ikghsa_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ikghsa_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ikghsa_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_ikghsa_a0());
-    editorCell.addEditorCell(createRefNode_ikghsa_b0());
-    editorCell.addEditorCell(createConstant_ikghsa_c0());
-    editorCell.addEditorCell(createRefNode_ikghsa_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createConstant_ikghsa_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "subconcept of");
     editorCell.setCellId("Constant_ikghsa_a0");
     Style style = new StyleImpl();
@@ -63,7 +63,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_ikghsa_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new SubconceptCase_EditorBuilder_a.conceptSingleRoleHandler_ikghsa_b0(myNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f432L, 0x10ef02d67cfL, "concept"), getEditorContext());
     return provider.createCell();
   }
@@ -118,7 +118,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       return "<no concept>";
     }
   }
-  private EditorCell createConstant_ikghsa_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
     editorCell.setCellId("Constant_ikghsa_c0");
     Style style = new StyleImpl();
@@ -127,7 +127,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_ikghsa_d0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new SubconceptCase_EditorBuilder_a.bodySingleRoleHandler_ikghsa_d0(myNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f432L, 0x10ef02d8048L, "body"), getEditorContext());
     return provider.createCell();
   }

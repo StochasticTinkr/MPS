@@ -30,10 +30,10 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
   }
 
   /*package*/ EditorCell createCell() {
-    return createTable_qbxdb8_a();
+    return createTable_0();
   }
 
-  private EditorCell createTable_qbxdb8_a() {
+  private EditorCell createTable_0() {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel() {
         return new XYCTableModel(myNode, MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6a2febf37d11d3dfL, 0x6a2febf37d121001L, "column"), MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6a2febf37d11d3dfL, 0x6a2febf37d121026L, "row"), MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6a2febf37d11d3dfL, 0x6a2febf37d121027L, "body"), getEditorContext()) {};

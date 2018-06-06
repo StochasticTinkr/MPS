@@ -57,21 +57,21 @@ import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.Righ
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_igyl5p_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_igyl5p_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_igyl5p_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
     RegexpSequenceByEnter.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.addEditorCell(createConstant_igyl5p_a0());
-    editorCell.addEditorCell(createRefNode_igyl5p_b0());
-    editorCell.addEditorCell(createConstant_igyl5p_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_igyl5p_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
     editorCell.setCellId("Constant_igyl5p_a0");
     Style style = new StyleImpl();
@@ -120,7 +120,7 @@ import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.Righ
     }
 
   }
-  private EditorCell createRefNode_igyl5p_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ParensRegexp_EditorBuilder_a.exprSingleRoleHandler_igyl5p_b0(myNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, 0x1117521177bL, "expr"), getEditorContext());
     return provider.createCell();
   }
@@ -175,7 +175,7 @@ import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.Righ
       return "<no expr>";
     }
   }
-  private EditorCell createConstant_igyl5p_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
     editorCell.setCellId("Constant_igyl5p_c0");
     Style style = new StyleImpl();

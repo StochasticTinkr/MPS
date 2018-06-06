@@ -42,28 +42,28 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_oeflkv_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_oeflkv_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_oeflkv_a_0");
+    editorCell.setCellId("Collection_oeflkv_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_oeflkv_a0_0());
-    editorCell.addEditorCell(createRefNodeList_oeflkv_b0_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createConstant_oeflkv_a0_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Pattern variables:");
-    editorCell.setCellId("Constant_oeflkv_a0_0");
+    editorCell.setCellId("Constant_oeflkv_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_oeflkv_b0_0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new OrPattern_InspectorBuilder_a.variableListHandler_oeflkv_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_variable");

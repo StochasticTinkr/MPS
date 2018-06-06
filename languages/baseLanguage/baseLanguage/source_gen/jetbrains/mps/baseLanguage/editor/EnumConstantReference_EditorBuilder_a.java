@@ -71,20 +71,20 @@ import jetbrains.mps.smodel.SNodePointer;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_igv5hf_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_igv5hf_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_igv5hf_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefCell_igv5hf_a0());
-    editorCell.addEditorCell(createConstant_igv5hf_b0());
-    editorCell.addEditorCell(createRefCell_igv5hf_c0());
+    editorCell.addEditorCell(createRefCell_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefCell_1());
     return editorCell;
   }
-  private EditorCell createRefCell_igv5hf_a0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0x10a758428feL, "enumClass");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -132,7 +132,7 @@ import jetbrains.mps.smodel.SNodePointer;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_igv5hf_a0a0();
+      return createProperty_0();
     }
 
     @NotNull
@@ -141,7 +141,7 @@ import jetbrains.mps.smodel.SNodePointer;
       return myNode;
     }
 
-    private EditorCell createProperty_igv5hf_a0a0() {
+    private EditorCell createProperty_0() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -169,7 +169,7 @@ import jetbrains.mps.smodel.SNodePointer;
       }
     }
   }
-  private EditorCell createConstant_igv5hf_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ".");
     editorCell.setCellId("Constant_igv5hf_b0");
     Style style = new StyleImpl();
@@ -178,7 +178,7 @@ import jetbrains.mps.smodel.SNodePointer;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_igv5hf_c0() {
+  private EditorCell createRefCell_1() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0xfc37588bcaL, "enumConstantDeclaration");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -229,7 +229,7 @@ import jetbrains.mps.smodel.SNodePointer;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_igv5hf_a0c0();
+      return createProperty_1();
     }
 
     @NotNull
@@ -238,7 +238,7 @@ import jetbrains.mps.smodel.SNodePointer;
       return myNode;
     }
 
-    private EditorCell createProperty_igv5hf_a0c0() {
+    private EditorCell createProperty_1() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -247,7 +247,7 @@ import jetbrains.mps.smodel.SNodePointer;
         editorCell.setDefaultText("<no name>");
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(myNode, CellAction_DeleteNode.DeleteDirection.FORWARD));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(myNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
-        editorCell.setCellId("property_name_1");
+        editorCell.setCellId("property_name1");
         Style style = new StyleImpl();
         style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));

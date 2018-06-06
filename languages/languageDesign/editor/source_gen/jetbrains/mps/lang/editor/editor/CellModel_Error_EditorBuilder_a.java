@@ -51,10 +51,10 @@ import java.awt.Color;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_xkqo7y_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_xkqo7y_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_xkqo7y_a");
     editorCell.setBig(true);
@@ -62,16 +62,16 @@ import java.awt.Color;
     Style style = new StyleImpl();
     new rootCellModelStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createComponent_xkqo7y_a0());
-    editorCell.addEditorCell(createProperty_xkqo7y_b0());
-    editorCell.addEditorCell(createComponent_xkqo7y_c0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createComponent_1());
     return editorCell;
   }
-  private EditorCell createComponent_xkqo7y_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor._OpenTag");
     return editorCell;
   }
-  private EditorCell createProperty_xkqo7y_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa61615ec3L, 0xfa61615ec4L, "text");
@@ -107,7 +107,7 @@ import java.awt.Color;
   private Color _StyleParameter_QueryFunction_xkqo7y_a1b0() {
     return _EditorUtil.grayIfNotSelectable(getNode());
   }
-  private EditorCell createComponent_xkqo7y_c0() {
+  private EditorCell createComponent_1() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor._CloseTag");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);

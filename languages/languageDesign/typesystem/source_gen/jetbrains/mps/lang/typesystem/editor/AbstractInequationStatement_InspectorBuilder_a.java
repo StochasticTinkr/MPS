@@ -49,32 +49,32 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ka3b3c_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ka3b3c_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_ka3b3c_a_0");
+    editorCell.setCellId("Collection_ka3b3c_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_ka3b3c_a0());
-    editorCell.addEditorCell(createProperty_ka3b3c_b0());
-    editorCell.addEditorCell(createComponent_ka3b3c_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createComponent_0());
     if (nodeCondition_ka3b3c_a3a()) {
-      editorCell.addEditorCell(createCollection_ka3b3c_d0());
+      editorCell.addEditorCell(createCollection_1());
     }
     return editorCell;
   }
   private boolean nodeCondition_ka3b3c_a3a() {
     return SNodeOperations.getNodeAncestor(myNode, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x117c5668bf2L, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), false, false) != null;
   }
-  private EditorCell createConstant_ka3b3c_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "label:");
-    editorCell.setCellId("Constant_ka3b3c_a0");
+    editorCell.setCellId("Constant_ka3b3c_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_ka3b3c_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342c1412L, 0x42501924d0bd6481L, "label");
@@ -83,7 +83,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       editorCell.setDefaultText("<no label>");
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.FORWARD));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.BACKWARD));
-      editorCell.setCellId("property_label_1");
+      editorCell.setCellId("property_label");
       Style style = new StyleImpl();
       new InequationLabelStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -105,32 +105,32 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createComponent_ka3b3c_c0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.typesystem.editor.AbstractEquationInspector");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createCollection_ka3b3c_d0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_ka3b3c_d0");
+    editorCell.setCellId("Collection_ka3b3c_1");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_ka3b3c_a3a());
-    editorCell.addEditorCell(createProperty_ka3b3c_b3a());
-    editorCell.addEditorCell(createConstant_ka3b3c_c3a());
-    editorCell.addEditorCell(createProperty_ka3b3c_d3a());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_1());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createProperty_2());
     return editorCell;
   }
-  private EditorCell createConstant_ka3b3c_a3a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "strong:");
-    editorCell.setCellId("Constant_ka3b3c_a3a");
+    editorCell.setCellId("Constant_ka3b3c_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_ka3b3c_b3a() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342c1412L, 0x6b67310af31422a9L, "strong");
@@ -160,13 +160,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_ka3b3c_c3a() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "orientation:");
-    editorCell.setCellId("Constant_ka3b3c_c3a");
+    editorCell.setCellId("Constant_ka3b3c_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_ka3b3c_d3a() {
+  private EditorCell createProperty_2() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342c1412L, 0x6b67310af31422aaL, "orientation");

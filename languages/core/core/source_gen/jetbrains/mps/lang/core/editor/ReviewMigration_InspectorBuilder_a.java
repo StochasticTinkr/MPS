@@ -46,32 +46,32 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_mm2rff_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_mm2rff_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_mm2rff_a_0");
+    editorCell.setCellId("Collection_mm2rff_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createCollection_mm2rff_a0_0());
-    editorCell.addEditorCell(createProperty_mm2rff_b0());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createCollection_mm2rff_a0_0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_mm2rff_a0_0");
-    editorCell.addEditorCell(createConstant_mm2rff_a0a_0());
-    editorCell.addEditorCell(createProperty_mm2rff_b0a());
+    editorCell.setCellId("Collection_mm2rff_1");
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_mm2rff_a0a_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Migration:");
-    editorCell.setCellId("Constant_mm2rff_a0a_0");
+    editorCell.setCellId("Constant_mm2rff_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_mm2rff_b0a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, 0x2274019e61e9f6eaL, "readableId");
@@ -98,7 +98,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createProperty_mm2rff_b0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, 0x2274019e61e234d1L, "todo");

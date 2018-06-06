@@ -25,10 +25,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_noszax_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_noszax_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "+");
     editorCell.setCellId("Constant_noszax_a");
     editorCell.setBig(true);

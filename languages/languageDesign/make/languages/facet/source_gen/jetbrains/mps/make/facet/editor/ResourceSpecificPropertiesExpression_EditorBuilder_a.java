@@ -40,20 +40,20 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_yckn5s_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_yckn5s_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_yckn5s_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_yckn5s_a0());
-    editorCell.addEditorCell(createConstant_yckn5s_b0());
-    editorCell.addEditorCell(createRefNode_yckn5s_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_yckn5s_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ResourceSpecificPropertiesExpression_EditorBuilder_a.propertiesSingleRoleHandler_yckn5s_a0(myNode, MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1e69fdb2a034c3f6L, 0x1e69fdb2a034c3f7L, "properties"), getEditorContext());
     return provider.createCell();
   }
@@ -108,7 +108,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       return "<no properties>";
     }
   }
-  private EditorCell createConstant_yckn5s_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "@");
     editorCell.setCellId("Constant_yckn5s_b0");
     Style style = new StyleImpl();
@@ -119,7 +119,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_yckn5s_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new ResourceSpecificPropertiesExpression_EditorBuilder_a.resourceSingleRoleHandler_yckn5s_c0(myNode, MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1e69fdb2a034c3f6L, 0x1e69fdb2a034c408L, "resource"), getEditorContext());
     return provider.createCell();
   }

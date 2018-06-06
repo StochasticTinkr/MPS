@@ -36,20 +36,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_bqk3nx_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_bqk3nx_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_bqk3nx_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_bqk3nx_a0());
-    editorCell.addEditorCell(createConstant_bqk3nx_b0());
-    editorCell.addEditorCell(createRefNode_bqk3nx_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_bqk3nx_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new FunctionType_EditorBuilder_a.domainSingleRoleHandler_bqk3nx_a0(myNode, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afae8L, 0x3ee0e3dd7c1afae9L, "domain"), getEditorContext());
     return provider.createCell();
   }
@@ -104,13 +104,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       return "<no domain>";
     }
   }
-  private EditorCell createConstant_bqk3nx_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "->");
     editorCell.setCellId("Constant_bqk3nx_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_bqk3nx_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new FunctionType_EditorBuilder_a.rangeSingleRoleHandler_bqk3nx_c0(myNode, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afae8L, 0x3ee0e3dd7c1afaeaL, "range"), getEditorContext());
     return provider.createCell();
   }

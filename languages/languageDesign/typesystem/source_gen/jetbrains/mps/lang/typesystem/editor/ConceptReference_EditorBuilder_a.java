@@ -81,22 +81,22 @@ import java.util.ArrayList;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_s9fwl0_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_s9fwl0_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_s9fwl0_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_s9fwl0_a0());
-    editorCell.addEditorCell(createConstant_s9fwl0_b0());
-    editorCell.addEditorCell(createRefCell_s9fwl0_c0());
-    editorCell.addEditorCell(createConstant_s9fwl0_d0());
-    editorCell.addEditorCell(createProperty_s9fwl0_e0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefCell_0());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createConstant_s9fwl0_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "concept");
     editorCell.setCellId("Constant_s9fwl0_a0");
     Style style = new StyleImpl();
@@ -105,13 +105,13 @@ import java.util.ArrayList;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_s9fwl0_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
     editorCell.setCellId("Constant_s9fwl0_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_s9fwl0_c0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2a88b3L, 0x1117e2ab6c9L, "concept");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -159,7 +159,7 @@ import java.util.ArrayList;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_s9fwl0_a0c0();
+      return createProperty_0();
     }
 
     @NotNull
@@ -168,7 +168,7 @@ import java.util.ArrayList;
       return myNode;
     }
 
-    private EditorCell createProperty_s9fwl0_a0c0() {
+    private EditorCell createProperty_0() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -199,7 +199,7 @@ import java.util.ArrayList;
       }
     }
   }
-  private EditorCell createConstant_s9fwl0_d0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "as");
     editorCell.setCellId("Constant_s9fwl0_d0");
     Style style = new StyleImpl();
@@ -208,7 +208,7 @@ import java.util.ArrayList;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_s9fwl0_e0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -217,7 +217,7 @@ import java.util.ArrayList;
       editorCell.setDefaultText("<no name>");
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.FORWARD));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.BACKWARD));
-      editorCell.setCellId("property_name_1");
+      editorCell.setCellId("property_name1");
       Style style = new StyleImpl();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));

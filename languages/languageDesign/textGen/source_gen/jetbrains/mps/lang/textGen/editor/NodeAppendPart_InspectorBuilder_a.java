@@ -46,38 +46,38 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_jdqktq_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_jdqktq_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_jdqktq_a_0");
+    editorCell.setCellId("Collection_jdqktq_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createCollection_jdqktq_a0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createCollection_jdqktq_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_jdqktq_a0");
-    editorCell.addEditorCell(createConstant_jdqktq_a0a());
-    editorCell.addEditorCell(createConstant_jdqktq_b0a());
-    editorCell.addEditorCell(createProperty_jdqktq_c0a());
+    editorCell.setCellId("Collection_jdqktq_1");
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_jdqktq_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "with");
-    editorCell.setCellId("Constant_jdqktq_a0a");
+    editorCell.setCellId("Constant_jdqktq_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_jdqktq_b0a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "indent");
-    editorCell.setCellId("Constant_jdqktq_b0a");
+    editorCell.setCellId("Constant_jdqktq_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_jdqktq_c0a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015251a28L, 0x12015341f3eL, "withIndent");

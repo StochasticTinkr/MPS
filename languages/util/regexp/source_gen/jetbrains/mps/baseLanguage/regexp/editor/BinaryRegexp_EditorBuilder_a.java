@@ -38,20 +38,20 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_bnwprl_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_bnwprl_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_bnwprl_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_bnwprl_a0());
-    editorCell.addEditorCell(createComponent_bnwprl_b0());
-    editorCell.addEditorCell(createRefNode_bnwprl_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_bnwprl_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new BinaryRegexp_EditorBuilder_a.leftSingleRoleHandler_bnwprl_a0(myNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, 0x11174c59241L, "left"), getEditorContext());
     return provider.createCell();
   }
@@ -107,7 +107,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       return "<no left>";
     }
   }
-  private EditorCell createComponent_bnwprl_b0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -115,7 +115,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createRefNode_bnwprl_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new BinaryRegexp_EditorBuilder_a.rightSingleRoleHandler_bnwprl_c0(myNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, 0x11174c5a26fL, "right"), getEditorContext());
     return provider.createCell();
   }

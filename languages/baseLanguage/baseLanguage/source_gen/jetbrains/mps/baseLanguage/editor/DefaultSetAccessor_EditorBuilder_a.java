@@ -39,20 +39,20 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_7yzysi_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_7yzysi_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_7yzysi_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_7yzysi_a0());
-    editorCell.addEditorCell(createConstant_7yzysi_b0());
-    editorCell.addEditorCell(createConstant_7yzysi_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createRefNode_7yzysi_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new DefaultSetAccessor_EditorBuilder_a.visibilitySingleRoleHandler_7yzysi_a0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117e16a7273L, 0x117e16abba2L, "visibility"), getEditorContext());
     return provider.createCell();
   }
@@ -107,13 +107,13 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
       return "<no visibility>";
     }
   }
-  private EditorCell createConstant_7yzysi_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "set");
     editorCell.setCellId("Constant_7yzysi_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_7yzysi_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ";");
     editorCell.setCellId("Constant_7yzysi_c0");
     Style style = new StyleImpl();

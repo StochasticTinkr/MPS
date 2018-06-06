@@ -38,19 +38,19 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_o0ayvq_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_o0ayvq_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_o0ayvq_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_o0ayvq_a0());
-    editorCell.addEditorCell(createComponent_o0ayvq_b0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createComponent_0());
     return editorCell;
   }
-  private EditorCell createRefNode_o0ayvq_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new MoneyMethodCall_EditorBuilder_a.instanceSingleRoleHandler_o0ayvq_a0(myNode, MetaAdapterFactory.getContainmentLink(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x114740b1673L, 0x114740fc5e3L, "instance"), getEditorContext());
     return provider.createCell();
   }
@@ -105,7 +105,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       return "<no instance>";
     }
   }
-  private EditorCell createComponent_o0ayvq_b0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);

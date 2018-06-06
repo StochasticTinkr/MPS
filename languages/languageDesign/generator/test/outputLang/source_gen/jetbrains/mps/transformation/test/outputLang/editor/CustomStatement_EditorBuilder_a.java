@@ -52,27 +52,27 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_zewgzr_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_zewgzr_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_zewgzr_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_zewgzr_a0());
-    editorCell.addEditorCell(createProperty_zewgzr_b0());
-    editorCell.addEditorCell(createConstant_zewgzr_c0());
-    editorCell.addEditorCell(createRefNode_zewgzr_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_zewgzr_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "work: ");
     editorCell.setCellId("Constant_zewgzr_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_zewgzr_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -99,13 +99,13 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_zewgzr_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "for");
     editorCell.setCellId("Constant_zewgzr_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_zewgzr_d0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new CustomStatement_EditorBuilder_a.innerSingleRoleHandler_zewgzr_d0(myNode, MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x2535e9813339efcaL, 0x2535e9813339efcdL, "inner"), getEditorContext());
     return provider.createCell();
   }

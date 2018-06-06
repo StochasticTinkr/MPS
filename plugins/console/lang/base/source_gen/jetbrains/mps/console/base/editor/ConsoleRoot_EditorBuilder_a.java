@@ -41,10 +41,10 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_drvoix_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_drvoix_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_drvoix_a");
     editorCell.setBig(true);
@@ -52,15 +52,15 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     Style style = new StyleImpl();
     new ReadOnlyStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_drvoix_a0());
-    editorCell.addEditorCell(createConstant_drvoix_b0());
-    editorCell.addEditorCell(createConstant_drvoix_c0());
-    editorCell.addEditorCell(createConstant_drvoix_d0());
-    editorCell.addEditorCell(createRefNode_drvoix_e0());
-    editorCell.addEditorCell(createRefNode_drvoix_f0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createConstant_drvoix_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Type an expression or {statements} to execute.");
     editorCell.setCellId("Constant_drvoix_a0");
     Style style = new StyleImpl();
@@ -69,7 +69,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_drvoix_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Type ? for a list of commands.");
     editorCell.setCellId("Constant_drvoix_b0");
     Style style = new StyleImpl();
@@ -78,7 +78,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_drvoix_c0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Press Ctrl+Enter to execute command.");
     editorCell.setCellId("Constant_drvoix_c0");
     Style style = new StyleImpl();
@@ -87,7 +87,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_drvoix_d0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Use Ctrl+M, Ctrl+R and Ctrl+L to add imports and languages.");
     editorCell.setCellId("Constant_drvoix_d0");
     Style style = new StyleImpl();
@@ -96,7 +96,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_drvoix_e0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ConsoleRoot_EditorBuilder_a.historySingleRoleHandler_drvoix_e0(myNode, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bafL, "history"), getEditorContext());
     return provider.createCell();
   }
@@ -151,7 +151,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no history>";
     }
   }
-  private EditorCell createRefNode_drvoix_f0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new ConsoleRoot_EditorBuilder_a.commandHolderSingleRoleHandler_drvoix_f0(myNode, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder"), getEditorContext());
     return provider.createCell();
   }

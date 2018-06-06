@@ -45,25 +45,25 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_msf9u8_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_msf9u8_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_msf9u8_a_0");
+    editorCell.setCellId("Collection_msf9u8_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_msf9u8_a0());
-    editorCell.addEditorCell(createRefCell_msf9u8_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefCell_0());
     return editorCell;
   }
-  private EditorCell createConstant_msf9u8_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Constructor:");
-    editorCell.setCellId("Constant_msf9u8_a0");
+    editorCell.setCellId("Constant_msf9u8_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_msf9u8_b0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -112,7 +112,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
     }
 
     /*package*/ EditorCell createCell() {
-      return createReferencePresentation_msf9u8_a0b0();
+      return createReferencePresentation_0();
     }
 
     @NotNull
@@ -121,9 +121,9 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
       return myNode;
     }
 
-    private EditorCell createReferencePresentation_msf9u8_a0b0() {
+    private EditorCell createReferencePresentation_0() {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, IReferentPresentationProvider.getDefaultPresentation(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")));
-      editorCell.setCellId("ReferencePresentation_msf9u8_a0b0");
+      editorCell.setCellId("ReferencePresentation_msf9u8_0");
       return editorCell;
     }
   }

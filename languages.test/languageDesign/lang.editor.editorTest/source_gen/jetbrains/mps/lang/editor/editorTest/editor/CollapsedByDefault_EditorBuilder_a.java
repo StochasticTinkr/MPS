@@ -32,39 +32,39 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_2arfu4_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_2arfu4_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_2arfu4_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_2arfu4_a0());
-    editorCell.addEditorCell(createCollection_2arfu4_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createConstant_2arfu4_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "foldable node:");
     editorCell.setCellId("Constant_2arfu4_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_2arfu4_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_2arfu4_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setFoldable(true);
-    editorCell.setFoldedCell(createCollection_2arfu4_a1a());
-    editorCell.addEditorCell(createConstant_2arfu4_a1a());
-    editorCell.addEditorCell(createCollection_2arfu4_b1a());
-    editorCell.addEditorCell(createConstant_2arfu4_c1a());
+    editorCell.setFoldedCell(createCollection_3());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createCollection_2());
+    editorCell.addEditorCell(createConstant_6());
     editorCell.setInitiallyCollapsed(true);
     return editorCell;
   }
-  private EditorCell createConstant_2arfu4_a1a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
     editorCell.setCellId("Constant_2arfu4_a1a");
     Style style = new StyleImpl();
@@ -73,20 +73,20 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_2arfu4_b1a() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_2arfu4_b1a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_2arfu4_a1b0());
-    editorCell.addEditorCell(createConstant_2arfu4_b1b0());
-    editorCell.addEditorCell(createConstant_2arfu4_c1b0());
-    editorCell.addEditorCell(createConstant_2arfu4_d1b0());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createConstant_4());
+    editorCell.addEditorCell(createConstant_5());
     return editorCell;
   }
-  private EditorCell createConstant_2arfu4_a1b0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "1..");
     editorCell.setCellId("Constant_2arfu4_a1b0");
     Style style = new StyleImpl();
@@ -95,7 +95,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_2arfu4_b1b0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "2..");
     editorCell.setCellId("Constant_2arfu4_b1b0");
     Style style = new StyleImpl();
@@ -104,7 +104,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_2arfu4_c1b0() {
+  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "3..");
     editorCell.setCellId("Constant_2arfu4_c1b0");
     Style style = new StyleImpl();
@@ -113,13 +113,13 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_2arfu4_d1b0() {
+  private EditorCell createConstant_5() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "4..");
     editorCell.setCellId("Constant_2arfu4_d1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_2arfu4_c1a() {
+  private EditorCell createConstant_6() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
     editorCell.setCellId("Constant_2arfu4_c1a");
     Style style = new StyleImpl();
@@ -128,16 +128,16 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_2arfu4_a1a() {
+  private EditorCell createCollection_3() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_2arfu4_a1a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_2arfu4_a0b0());
+    editorCell.addEditorCell(createConstant_7());
     return editorCell;
   }
-  private EditorCell createConstant_2arfu4_a0b0() {
+  private EditorCell createConstant_7() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<<folded>>");
     editorCell.setCellId("Constant_2arfu4_a0b0");
     Style style = new StyleImpl();

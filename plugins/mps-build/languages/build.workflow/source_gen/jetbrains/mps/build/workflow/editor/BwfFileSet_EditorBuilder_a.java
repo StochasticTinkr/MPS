@@ -39,18 +39,18 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_wd783v_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_wd783v_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_wd783v_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNodeList_wd783v_a0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createRefNodeList_wd783v_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new BwfFileSet_EditorBuilder_a.elementsListHandler_wd783v_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_elements");
@@ -89,7 +89,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(elementsListHandler_wd783v_a0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6e014d63c07ebd1bL, 0x6e014d63c07ebd1cL, "elements")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_wd783v_a0a();
+        emptyCell = createConstant_0();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -109,7 +109,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
         }
       }
     }
-    private EditorCell createConstant_wd783v_a0a() {
+    private EditorCell createConstant_0() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
       editorCell.setCellId("Constant_wd783v_a0a");
       editorCell.setDefaultText("<no fileset>");

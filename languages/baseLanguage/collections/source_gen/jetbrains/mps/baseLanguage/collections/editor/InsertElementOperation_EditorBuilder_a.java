@@ -54,23 +54,23 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_5acpf8_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_5acpf8_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_5acpf8_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_5acpf8_a0());
-    editorCell.addEditorCell(createConstant_5acpf8_b0());
-    editorCell.addEditorCell(createRefNode_5acpf8_c0());
-    editorCell.addEditorCell(createConstant_5acpf8_d0());
-    editorCell.addEditorCell(createRefNode_5acpf8_e0());
-    editorCell.addEditorCell(createConstant_5acpf8_f0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createConstant_3());
     return editorCell;
   }
-  private EditorCell createConstant_5acpf8_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "insert");
     editorCell.setCellId("Constant_5acpf8_a0");
     Style style = new StyleImpl();
@@ -92,7 +92,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "IOperation" + ")", new SNodePointer("r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)", "1225622177535"));
     }
   }
-  private EditorCell createConstant_5acpf8_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
     editorCell.setCellId("Constant_5acpf8_b0");
     Style style = new StyleImpl();
@@ -101,7 +101,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_5acpf8_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new InsertElementOperation_EditorBuilder_a.indexSingleRoleHandler_5acpf8_c0(myNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d5cc25c8fL, 0x11d5cc2f695L, "index"), getEditorContext());
     return provider.createCell();
   }
@@ -159,7 +159,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
       return "<no index>";
     }
   }
-  private EditorCell createConstant_5acpf8_d0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ",");
     editorCell.setCellId("Constant_5acpf8_d0");
     Style style = new StyleImpl();
@@ -168,7 +168,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_5acpf8_e0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new InsertElementOperation_EditorBuilder_a.elementSingleRoleHandler_5acpf8_e0(myNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d5cc25c8fL, 0x11d5cc2b50dL, "element"), getEditorContext());
     return provider.createCell();
   }
@@ -223,7 +223,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
       return "<no element>";
     }
   }
-  private EditorCell createConstant_5acpf8_f0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
     editorCell.setCellId("Constant_5acpf8_f0");
     Style style = new StyleImpl();

@@ -38,10 +38,10 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_1mgzv8_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_1mgzv8_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_1mgzv8_a");
     editorCell.setBig(true);
@@ -49,10 +49,10 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createRefNode_1mgzv8_a0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createRefNode_1mgzv8_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new StatementCommentPart_EditorBuilder_a.commentedStatementSingleRoleHandler_1mgzv8_a0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af16ff67L, 0x57d533a7af16ff68L, "commentedStatement"), getEditorContext());
     return provider.createCell();
   }

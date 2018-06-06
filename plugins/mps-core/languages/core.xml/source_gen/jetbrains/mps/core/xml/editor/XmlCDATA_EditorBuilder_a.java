@@ -49,20 +49,20 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ei20sr_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ei20sr_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ei20sr_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_ei20sr_a0());
-    editorCell.addEditorCell(createProperty_ei20sr_b0());
-    editorCell.addEditorCell(createConstant_ei20sr_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_ei20sr_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<![CDATA[");
     editorCell.setCellId("Constant_ei20sr_a0");
     Style style = new StyleImpl();
@@ -75,7 +75,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   private boolean _StyleParameter_QueryFunction_ei20sr_a1a0() {
     return !((boolean) XmlPart__BehaviorDescriptor.isFirstPositionAllowed_id1Qs9WekVZ7m.invoke(getNode()));
   }
-  private EditorCell createProperty_ei20sr_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549487aL, 0x16838b3fce9b2633L, "content");
@@ -102,7 +102,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_ei20sr_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "]]>");
     editorCell.setCellId("Constant_ei20sr_c0");
     Style style = new StyleImpl();

@@ -377,14 +377,14 @@
       <node concept="3clFbS" id="13" role="3clF47">
         <node concept="3cpWs6" id="14" role="3cqZAp">
           <node concept="1rXfSq" id="15" role="3cqZAk">
-            <ref role="37wK5l" node="r" resolve="createCollection_h8te0s_a" />
+            <ref role="37wK5l" node="r" resolve="createCollection_0" />
           </node>
         </node>
       </node>
     </node>
     <node concept="2tJIrI" id="q" role="jymVt" />
     <node concept="3clFb_" id="r" role="jymVt">
-      <property role="TrG5h" value="createCollection_h8te0s_a" />
+      <property role="TrG5h" value="createCollection_0" />
       <node concept="3uibUv" id="16" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -457,7 +457,7 @@
                 <node concept="liA8E" id="1A" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="1B" role="37wK5m">
-                    <ref role="37wK5l" node="s" resolve="createConstant_h8te0s_a0" />
+                    <ref role="37wK5l" node="s" resolve="createConstant_0" />
                   </node>
                 </node>
               </node>
@@ -474,7 +474,7 @@
                 <node concept="liA8E" id="1G" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="1H" role="37wK5m">
-                    <ref role="37wK5l" node="t" resolve="createCollection_h8te0s_b0" />
+                    <ref role="37wK5l" node="t" resolve="createCollection_1" />
                   </node>
                 </node>
               </node>
@@ -490,7 +490,7 @@
       <node concept="3Tm6S6" id="18" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="s" role="jymVt">
-      <property role="TrG5h" value="createConstant_h8te0s_a0" />
+      <property role="TrG5h" value="createConstant_0" />
       <node concept="3uibUv" id="1J" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -550,7 +550,7 @@
       <node concept="3Tm6S6" id="1L" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="t" role="jymVt">
-      <property role="TrG5h" value="createCollection_h8te0s_b0" />
+      <property role="TrG5h" value="createCollection_1" />
       <node concept="3uibUv" id="26" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -602,7 +602,7 @@
                 <node concept="liA8E" id="2u" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="2v" role="37wK5m">
-                    <ref role="37wK5l" node="u" resolve="createCollection_h8te0s_a1a" />
+                    <ref role="37wK5l" node="u" resolve="createCollection_2" />
                   </node>
                 </node>
               </node>
@@ -619,7 +619,7 @@
                 <node concept="liA8E" id="2$" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="2_" role="37wK5m">
-                    <ref role="37wK5l" node="z" resolve="createCollection_h8te0s_b1a" />
+                    <ref role="37wK5l" node="z" resolve="createCollection_3" />
                   </node>
                 </node>
               </node>
@@ -635,7 +635,7 @@
       <node concept="3Tm6S6" id="28" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="u" role="jymVt">
-      <property role="TrG5h" value="createCollection_h8te0s_a1a" />
+      <property role="TrG5h" value="createCollection_2" />
       <node concept="3uibUv" id="2B" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -687,7 +687,7 @@
                 <node concept="liA8E" id="31" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="32" role="37wK5m">
-                    <ref role="37wK5l" node="v" resolve="createIndentCell_h8te0s_a0b0" />
+                    <ref role="37wK5l" node="v" resolve="createIndentCell_0" />
                   </node>
                 </node>
               </node>
@@ -704,7 +704,7 @@
                 <node concept="liA8E" id="37" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="38" role="37wK5m">
-                    <ref role="37wK5l" node="w" resolve="createConstant_h8te0s_b0b0" />
+                    <ref role="37wK5l" node="w" resolve="createConstant_1" />
                   </node>
                 </node>
               </node>
@@ -721,7 +721,7 @@
                 <node concept="liA8E" id="3d" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="3e" role="37wK5m">
-                    <ref role="37wK5l" node="x" resolve="createConstant_h8te0s_c0b0" />
+                    <ref role="37wK5l" node="x" resolve="createConstant_2" />
                   </node>
                 </node>
               </node>
@@ -738,7 +738,7 @@
                 <node concept="liA8E" id="3j" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="3k" role="37wK5m">
-                    <ref role="37wK5l" node="y" resolve="createProperty_h8te0s_d0b0" />
+                    <ref role="37wK5l" node="y" resolve="createProperty_0" />
                   </node>
                 </node>
               </node>
@@ -754,7 +754,7 @@
       <node concept="3Tm6S6" id="2D" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="v" role="jymVt">
-      <property role="TrG5h" value="createIndentCell_h8te0s_a0b0" />
+      <property role="TrG5h" value="createIndentCell_0" />
       <node concept="3uibUv" id="3m" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -787,7 +787,7 @@
       <node concept="3Tm6S6" id="3o" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="w" role="jymVt">
-      <property role="TrG5h" value="createConstant_h8te0s_b0b0" />
+      <property role="TrG5h" value="createConstant_1" />
       <node concept="3uibUv" id="3y" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -847,7 +847,7 @@
       <node concept="3Tm6S6" id="3$" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="x" role="jymVt">
-      <property role="TrG5h" value="createConstant_h8te0s_c0b0" />
+      <property role="TrG5h" value="createConstant_2" />
       <node concept="3uibUv" id="3T" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -907,7 +907,7 @@
       <node concept="3Tm6S6" id="3V" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="y" role="jymVt">
-      <property role="TrG5h" value="createProperty_h8te0s_d0b0" />
+      <property role="TrG5h" value="createProperty_0" />
       <node concept="3uibUv" id="4g" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -1241,7 +1241,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="z" role="jymVt">
-      <property role="TrG5h" value="createCollection_h8te0s_b1a" />
+      <property role="TrG5h" value="createCollection_3" />
       <node concept="3uibUv" id="6g" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -1293,7 +1293,7 @@
                 <node concept="liA8E" id="6E" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="6F" role="37wK5m">
-                    <ref role="37wK5l" node="$" resolve="createIndentCell_h8te0s_a1b0" />
+                    <ref role="37wK5l" node="$" resolve="createIndentCell_1" />
                   </node>
                 </node>
               </node>
@@ -1310,7 +1310,7 @@
                 <node concept="liA8E" id="6K" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="6L" role="37wK5m">
-                    <ref role="37wK5l" node="_" resolve="createConstant_h8te0s_b1b0" />
+                    <ref role="37wK5l" node="_" resolve="createConstant_3" />
                   </node>
                 </node>
               </node>
@@ -1327,7 +1327,7 @@
                 <node concept="liA8E" id="6Q" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="6R" role="37wK5m">
-                    <ref role="37wK5l" node="A" resolve="createConstant_h8te0s_c1b0" />
+                    <ref role="37wK5l" node="A" resolve="createConstant_4" />
                   </node>
                 </node>
               </node>
@@ -1344,7 +1344,7 @@
                 <node concept="liA8E" id="6W" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="6X" role="37wK5m">
-                    <ref role="37wK5l" node="B" resolve="createProperty_h8te0s_d1b0" />
+                    <ref role="37wK5l" node="B" resolve="createProperty_1" />
                   </node>
                 </node>
               </node>
@@ -1360,7 +1360,7 @@
       <node concept="3Tm6S6" id="6i" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="$" role="jymVt">
-      <property role="TrG5h" value="createIndentCell_h8te0s_a1b0" />
+      <property role="TrG5h" value="createIndentCell_1" />
       <node concept="3uibUv" id="6Z" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -1393,7 +1393,7 @@
       <node concept="3Tm6S6" id="71" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="_" role="jymVt">
-      <property role="TrG5h" value="createConstant_h8te0s_b1b0" />
+      <property role="TrG5h" value="createConstant_3" />
       <node concept="3uibUv" id="7b" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -1453,7 +1453,7 @@
       <node concept="3Tm6S6" id="7d" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="A" role="jymVt">
-      <property role="TrG5h" value="createConstant_h8te0s_c1b0" />
+      <property role="TrG5h" value="createConstant_4" />
       <node concept="3uibUv" id="7y" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -1513,7 +1513,7 @@
       <node concept="3Tm6S6" id="7$" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="B" role="jymVt">
-      <property role="TrG5h" value="createProperty_h8te0s_d1b0" />
+      <property role="TrG5h" value="createProperty_1" />
       <node concept="3uibUv" id="7T" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -2007,14 +2007,14 @@
           </node>
         </node>
         <node concept="39e2AT" id="b5" role="39e2AY">
-          <ref role="39e2AS" node="v" resolve="createIndentCell_h8te0s_a0b0" />
+          <ref role="39e2AS" node="v" resolve="createIndentCell_0" />
         </node>
       </node>
       <node concept="39e2AG" id="aK" role="39e3Y0">
         <node concept="385nmt" id="b9" role="385vvn">
           <property role="385vuF" value="---&gt;" />
           <node concept="2$VJBW" id="bb" role="385v07">
-            <property role="2$VJBR" value="3778147542048941788" />
+            <property role="2$VJBR" value="3778147542048983658" />
             <node concept="2x4n5u" id="bc" role="3iCydw">
               <property role="2x4mPI" value="CellModel_Indent" />
               <property role="2x4o5l" value="false" />
@@ -2027,14 +2027,14 @@
           </node>
         </node>
         <node concept="39e2AT" id="ba" role="39e2AY">
-          <ref role="39e2AS" node="$" resolve="createIndentCell_h8te0s_a1b0" />
+          <ref role="39e2AS" node="d$" resolve="createIndentCell_0" />
         </node>
       </node>
       <node concept="39e2AG" id="aL" role="39e3Y0">
         <node concept="385nmt" id="be" role="385vvn">
           <property role="385vuF" value="---&gt;" />
           <node concept="2$VJBW" id="bg" role="385v07">
-            <property role="2$VJBR" value="3778147542048983658" />
+            <property role="2$VJBR" value="3778147542048941788" />
             <node concept="2x4n5u" id="bh" role="3iCydw">
               <property role="2x4mPI" value="CellModel_Indent" />
               <property role="2x4o5l" value="false" />
@@ -2047,7 +2047,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="bf" role="39e2AY">
-          <ref role="39e2AS" node="d$" resolve="createIndentCell_n1xayz_a0b0" />
+          <ref role="39e2AS" node="$" resolve="createIndentCell_1" />
         </node>
       </node>
       <node concept="39e2AG" id="aM" role="39e3Y0">
@@ -2067,14 +2067,14 @@
           </node>
         </node>
         <node concept="39e2AT" id="bk" role="39e2AY">
-          <ref role="39e2AS" node="r" resolve="createCollection_h8te0s_a" />
+          <ref role="39e2AS" node="r" resolve="createCollection_0" />
         </node>
       </node>
       <node concept="39e2AG" id="aN" role="39e3Y0">
         <node concept="385nmt" id="bo" role="385vvn">
           <property role="385vuF" value="collection" />
           <node concept="2$VJBW" id="bq" role="385v07">
-            <property role="2$VJBR" value="3778147542048941788" />
+            <property role="2$VJBR" value="3778147542048983658" />
             <node concept="2x4n5u" id="br" role="3iCydw">
               <property role="2x4mPI" value="CellModel_Collection" />
               <property role="2x4o5l" value="false" />
@@ -2087,7 +2087,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="bp" role="39e2AY">
-          <ref role="39e2AS" node="u" resolve="createCollection_h8te0s_a1a" />
+          <ref role="39e2AS" node="dw" resolve="createCollection_0" />
         </node>
       </node>
       <node concept="39e2AG" id="aO" role="39e3Y0">
@@ -2107,14 +2107,14 @@
           </node>
         </node>
         <node concept="39e2AT" id="bu" role="39e2AY">
-          <ref role="39e2AS" node="t" resolve="createCollection_h8te0s_b0" />
+          <ref role="39e2AS" node="t" resolve="createCollection_1" />
         </node>
       </node>
       <node concept="39e2AG" id="aP" role="39e3Y0">
         <node concept="385nmt" id="by" role="385vvn">
           <property role="385vuF" value="collection" />
           <node concept="2$VJBW" id="b$" role="385v07">
-            <property role="2$VJBR" value="3778147542048941788" />
+            <property role="2$VJBR" value="3778147542048983658" />
             <node concept="2x4n5u" id="b_" role="3iCydw">
               <property role="2x4mPI" value="CellModel_Collection" />
               <property role="2x4o5l" value="false" />
@@ -2127,14 +2127,14 @@
           </node>
         </node>
         <node concept="39e2AT" id="bz" role="39e2AY">
-          <ref role="39e2AS" node="z" resolve="createCollection_h8te0s_b1a" />
+          <ref role="39e2AS" node="dy" resolve="createCollection_1" />
         </node>
       </node>
       <node concept="39e2AG" id="aQ" role="39e3Y0">
         <node concept="385nmt" id="bB" role="385vvn">
           <property role="385vuF" value="collection" />
           <node concept="2$VJBW" id="bD" role="385v07">
-            <property role="2$VJBR" value="3778147542048983658" />
+            <property role="2$VJBR" value="3778147542048941788" />
             <node concept="2x4n5u" id="bE" role="3iCydw">
               <property role="2x4mPI" value="CellModel_Collection" />
               <property role="2x4o5l" value="false" />
@@ -2147,7 +2147,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="bC" role="39e2AY">
-          <ref role="39e2AS" node="dw" resolve="createCollection_n1xayz_a" />
+          <ref role="39e2AS" node="u" resolve="createCollection_2" />
         </node>
       </node>
       <node concept="39e2AG" id="aR" role="39e3Y0">
@@ -2167,14 +2167,14 @@
           </node>
         </node>
         <node concept="39e2AT" id="bH" role="39e2AY">
-          <ref role="39e2AS" node="dz" resolve="createCollection_n1xayz_a1a" />
+          <ref role="39e2AS" node="dz" resolve="createCollection_2" />
         </node>
       </node>
       <node concept="39e2AG" id="aS" role="39e3Y0">
         <node concept="385nmt" id="bL" role="385vvn">
           <property role="385vuF" value="collection" />
           <node concept="2$VJBW" id="bN" role="385v07">
-            <property role="2$VJBR" value="3778147542048983658" />
+            <property role="2$VJBR" value="3778147542048941788" />
             <node concept="2x4n5u" id="bO" role="3iCydw">
               <property role="2x4mPI" value="CellModel_Collection" />
               <property role="2x4o5l" value="false" />
@@ -2187,7 +2187,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="bM" role="39e2AY">
-          <ref role="39e2AS" node="dy" resolve="createCollection_n1xayz_b0" />
+          <ref role="39e2AS" node="z" resolve="createCollection_3" />
         </node>
       </node>
       <node concept="39e2AG" id="aT" role="39e3Y0">
@@ -2207,14 +2207,14 @@
           </node>
         </node>
         <node concept="39e2AT" id="bR" role="39e2AY">
-          <ref role="39e2AS" node="s" resolve="createConstant_h8te0s_a0" />
+          <ref role="39e2AS" node="s" resolve="createConstant_0" />
         </node>
       </node>
       <node concept="39e2AG" id="aU" role="39e3Y0">
         <node concept="385nmt" id="bV" role="385vvn">
           <property role="385vuF" value="constant" />
           <node concept="2$VJBW" id="bX" role="385v07">
-            <property role="2$VJBR" value="3778147542048941788" />
+            <property role="2$VJBR" value="3778147542048983658" />
             <node concept="2x4n5u" id="bY" role="3iCydw">
               <property role="2x4mPI" value="CellModel_Constant" />
               <property role="2x4o5l" value="false" />
@@ -2227,7 +2227,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="bW" role="39e2AY">
-          <ref role="39e2AS" node="w" resolve="createConstant_h8te0s_b0b0" />
+          <ref role="39e2AS" node="dx" resolve="createConstant_0" />
         </node>
       </node>
       <node concept="39e2AG" id="aV" role="39e3Y0">
@@ -2247,14 +2247,14 @@
           </node>
         </node>
         <node concept="39e2AT" id="c1" role="39e2AY">
-          <ref role="39e2AS" node="_" resolve="createConstant_h8te0s_b1b0" />
+          <ref role="39e2AS" node="w" resolve="createConstant_1" />
         </node>
       </node>
       <node concept="39e2AG" id="aW" role="39e3Y0">
         <node concept="385nmt" id="c5" role="385vvn">
           <property role="385vuF" value="constant" />
           <node concept="2$VJBW" id="c7" role="385v07">
-            <property role="2$VJBR" value="3778147542048941788" />
+            <property role="2$VJBR" value="3778147542048983658" />
             <node concept="2x4n5u" id="c8" role="3iCydw">
               <property role="2x4mPI" value="CellModel_Constant" />
               <property role="2x4o5l" value="false" />
@@ -2267,7 +2267,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="c6" role="39e2AY">
-          <ref role="39e2AS" node="x" resolve="createConstant_h8te0s_c0b0" />
+          <ref role="39e2AS" node="d_" resolve="createConstant_1" />
         </node>
       </node>
       <node concept="39e2AG" id="aX" role="39e3Y0">
@@ -2287,7 +2287,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="cb" role="39e2AY">
-          <ref role="39e2AS" node="A" resolve="createConstant_h8te0s_c1b0" />
+          <ref role="39e2AS" node="x" resolve="createConstant_2" />
         </node>
       </node>
       <node concept="39e2AG" id="aY" role="39e3Y0">
@@ -2307,14 +2307,14 @@
           </node>
         </node>
         <node concept="39e2AT" id="cg" role="39e2AY">
-          <ref role="39e2AS" node="dx" resolve="createConstant_n1xayz_a0" />
+          <ref role="39e2AS" node="dA" resolve="createConstant_2" />
         </node>
       </node>
       <node concept="39e2AG" id="aZ" role="39e3Y0">
         <node concept="385nmt" id="ck" role="385vvn">
           <property role="385vuF" value="constant" />
           <node concept="2$VJBW" id="cm" role="385v07">
-            <property role="2$VJBR" value="3778147542048983658" />
+            <property role="2$VJBR" value="3778147542048941788" />
             <node concept="2x4n5u" id="cn" role="3iCydw">
               <property role="2x4mPI" value="CellModel_Constant" />
               <property role="2x4o5l" value="false" />
@@ -2327,14 +2327,14 @@
           </node>
         </node>
         <node concept="39e2AT" id="cl" role="39e2AY">
-          <ref role="39e2AS" node="d_" resolve="createConstant_n1xayz_b0b0" />
+          <ref role="39e2AS" node="_" resolve="createConstant_3" />
         </node>
       </node>
       <node concept="39e2AG" id="b0" role="39e3Y0">
         <node concept="385nmt" id="cp" role="385vvn">
           <property role="385vuF" value="constant" />
           <node concept="2$VJBW" id="cr" role="385v07">
-            <property role="2$VJBR" value="3778147542048983658" />
+            <property role="2$VJBR" value="3778147542048941788" />
             <node concept="2x4n5u" id="cs" role="3iCydw">
               <property role="2x4mPI" value="CellModel_Constant" />
               <property role="2x4o5l" value="false" />
@@ -2347,7 +2347,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="cq" role="39e2AY">
-          <ref role="39e2AS" node="dA" resolve="createConstant_n1xayz_c0b0" />
+          <ref role="39e2AS" node="A" resolve="createConstant_4" />
         </node>
       </node>
       <node concept="39e2AG" id="b1" role="39e3Y0">
@@ -2367,7 +2367,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="cv" role="39e2AY">
-          <ref role="39e2AS" node="B" resolve="createProperty_h8te0s_d1b0" />
+          <ref role="39e2AS" node="B" resolve="createProperty_1" />
         </node>
       </node>
       <node concept="39e2AG" id="b2" role="39e3Y0">
@@ -2387,7 +2387,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="c$" role="39e2AY">
-          <ref role="39e2AS" node="dB" resolve="createProperty_n1xayz_d0b0" />
+          <ref role="39e2AS" node="dB" resolve="createProperty_0" />
         </node>
       </node>
       <node concept="39e2AG" id="b3" role="39e3Y0">
@@ -2407,7 +2407,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="cD" role="39e2AY">
-          <ref role="39e2AS" node="y" resolve="createProperty_h8te0s_d0b0" />
+          <ref role="39e2AS" node="y" resolve="createProperty_0" />
         </node>
       </node>
     </node>
@@ -2626,14 +2626,14 @@
       <node concept="3clFbS" id="e3" role="3clF47">
         <node concept="3cpWs6" id="e4" role="3cqZAp">
           <node concept="1rXfSq" id="e5" role="3cqZAk">
-            <ref role="37wK5l" node="dw" resolve="createCollection_n1xayz_a" />
+            <ref role="37wK5l" node="dw" resolve="createCollection_0" />
           </node>
         </node>
       </node>
     </node>
     <node concept="2tJIrI" id="dv" role="jymVt" />
     <node concept="3clFb_" id="dw" role="jymVt">
-      <property role="TrG5h" value="createCollection_n1xayz_a" />
+      <property role="TrG5h" value="createCollection_0" />
       <node concept="3uibUv" id="e6" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -2706,7 +2706,7 @@
                 <node concept="liA8E" id="eA" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="eB" role="37wK5m">
-                    <ref role="37wK5l" node="dx" resolve="createConstant_n1xayz_a0" />
+                    <ref role="37wK5l" node="dx" resolve="createConstant_0" />
                   </node>
                 </node>
               </node>
@@ -2723,7 +2723,7 @@
                 <node concept="liA8E" id="eG" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="eH" role="37wK5m">
-                    <ref role="37wK5l" node="dy" resolve="createCollection_n1xayz_b0" />
+                    <ref role="37wK5l" node="dy" resolve="createCollection_1" />
                   </node>
                 </node>
               </node>
@@ -2739,7 +2739,7 @@
       <node concept="3Tm6S6" id="e8" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="dx" role="jymVt">
-      <property role="TrG5h" value="createConstant_n1xayz_a0" />
+      <property role="TrG5h" value="createConstant_0" />
       <node concept="3uibUv" id="eJ" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -2799,7 +2799,7 @@
       <node concept="3Tm6S6" id="eL" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="dy" role="jymVt">
-      <property role="TrG5h" value="createCollection_n1xayz_b0" />
+      <property role="TrG5h" value="createCollection_1" />
       <node concept="3uibUv" id="f6" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -2851,7 +2851,7 @@
                 <node concept="liA8E" id="ft" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="fu" role="37wK5m">
-                    <ref role="37wK5l" node="dz" resolve="createCollection_n1xayz_a1a" />
+                    <ref role="37wK5l" node="dz" resolve="createCollection_2" />
                   </node>
                 </node>
               </node>
@@ -2867,7 +2867,7 @@
       <node concept="3Tm6S6" id="f8" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="dz" role="jymVt">
-      <property role="TrG5h" value="createCollection_n1xayz_a1a" />
+      <property role="TrG5h" value="createCollection_2" />
       <node concept="3uibUv" id="fw" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -2919,7 +2919,7 @@
                 <node concept="liA8E" id="fU" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="fV" role="37wK5m">
-                    <ref role="37wK5l" node="d$" resolve="createIndentCell_n1xayz_a0b0" />
+                    <ref role="37wK5l" node="d$" resolve="createIndentCell_0" />
                   </node>
                 </node>
               </node>
@@ -2936,7 +2936,7 @@
                 <node concept="liA8E" id="g0" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="g1" role="37wK5m">
-                    <ref role="37wK5l" node="d_" resolve="createConstant_n1xayz_b0b0" />
+                    <ref role="37wK5l" node="d_" resolve="createConstant_1" />
                   </node>
                 </node>
               </node>
@@ -2953,7 +2953,7 @@
                 <node concept="liA8E" id="g6" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="g7" role="37wK5m">
-                    <ref role="37wK5l" node="dA" resolve="createConstant_n1xayz_c0b0" />
+                    <ref role="37wK5l" node="dA" resolve="createConstant_2" />
                   </node>
                 </node>
               </node>
@@ -2970,7 +2970,7 @@
                 <node concept="liA8E" id="gc" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="addEditorCell" />
                   <node concept="1rXfSq" id="gd" role="37wK5m">
-                    <ref role="37wK5l" node="dB" resolve="createProperty_n1xayz_d0b0" />
+                    <ref role="37wK5l" node="dB" resolve="createProperty_0" />
                   </node>
                 </node>
               </node>
@@ -2986,7 +2986,7 @@
       <node concept="3Tm6S6" id="fy" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="d$" role="jymVt">
-      <property role="TrG5h" value="createIndentCell_n1xayz_a0b0" />
+      <property role="TrG5h" value="createIndentCell_0" />
       <node concept="3uibUv" id="gf" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -3019,7 +3019,7 @@
       <node concept="3Tm6S6" id="gh" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="d_" role="jymVt">
-      <property role="TrG5h" value="createConstant_n1xayz_b0b0" />
+      <property role="TrG5h" value="createConstant_1" />
       <node concept="3uibUv" id="gr" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -3079,7 +3079,7 @@
       <node concept="3Tm6S6" id="gt" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="dA" role="jymVt">
-      <property role="TrG5h" value="createConstant_n1xayz_c0b0" />
+      <property role="TrG5h" value="createConstant_2" />
       <node concept="3uibUv" id="gM" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
@@ -3139,7 +3139,7 @@
       <node concept="3Tm6S6" id="gO" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="dB" role="jymVt">
-      <property role="TrG5h" value="createProperty_n1xayz_d0b0" />
+      <property role="TrG5h" value="createProperty_0" />
       <node concept="3uibUv" id="h9" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>

@@ -52,25 +52,25 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_9o3sb9_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_9o3sb9_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_9o3sb9_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_9o3sb9_a0());
+    editorCell.addEditorCell(createConstant_0());
     if (nodeCondition_9o3sb9_a1a()) {
-      editorCell.addEditorCell(createProperty_9o3sb9_b0());
+      editorCell.addEditorCell(createProperty_0());
     }
-    editorCell.addEditorCell(createAttributedLinkCell_9o3sb9_c0());
+    editorCell.addEditorCell(createAttributedLinkCell_0());
     return editorCell;
   }
   private boolean nodeCondition_9o3sb9_a1a() {
     return SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, 0x2d521c90e9601e88L, "comment")) != null;
   }
-  private EditorCell createConstant_9o3sb9_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "->$");
     editorCell.setCellId("Constant_9o3sb9_a0");
     Style style = new StyleImpl();
@@ -82,7 +82,7 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_9o3sb9_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, 0x2d521c90e9601e88L, "comment");
@@ -112,7 +112,7 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createAttributedLinkCell_9o3sb9_c0() {
+  private EditorCell createAttributedLinkCell_0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.REFERENCE, myNode);
     Style style = new StyleImpl();

@@ -24,10 +24,10 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
   }
 
   /*package*/ EditorCell createCell() {
-    return createNextEditor_vav8l6_a();
+    return createNextEditor_0();
   }
 
-  private EditorCell createNextEditor_vav8l6_a() {
+  private EditorCell createNextEditor_0() {
     try {
       getCellFactory().pushCellContext();
       getCellFactory().removeCellContextHints(new String[]{"jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"});

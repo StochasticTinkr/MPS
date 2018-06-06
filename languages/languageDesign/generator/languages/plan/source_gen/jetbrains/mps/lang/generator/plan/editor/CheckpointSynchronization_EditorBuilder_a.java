@@ -36,25 +36,25 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_rojdai_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_rojdai_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_rojdai_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_rojdai_a0());
-    editorCell.addEditorCell(createRefNode_rojdai_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_rojdai_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "synchronize with ");
     editorCell.setCellId("Constant_rojdai_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_rojdai_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new CheckpointSynchronization_EditorBuilder_a.checkpointSingleRoleHandler_rojdai_b0(myNode, MetaAdapterFactory.getContainmentLink(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0xc11e5088a794d07L, 0x340cd07aedd21238L, "checkpoint"), getEditorContext());
     return provider.createCell();
   }

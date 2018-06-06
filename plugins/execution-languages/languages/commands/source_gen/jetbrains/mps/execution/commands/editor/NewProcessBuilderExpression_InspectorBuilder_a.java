@@ -40,35 +40,35 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_u94itw_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_u94itw_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_u94itw_a_0");
+    editorCell.setCellId("Collection_u94itw_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
     editorCell.setGridLayout(true);
-    editorCell.addEditorCell(createCollection_u94itw_a0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createCollection_u94itw_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_u94itw_a0");
-    editorCell.addEditorCell(createConstant_u94itw_a0a());
-    editorCell.addEditorCell(createRefNode_u94itw_b0a());
+    editorCell.setCellId("Collection_u94itw_1");
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_u94itw_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "working directory:");
-    editorCell.setCellId("Constant_u94itw_a0a");
+    editorCell.setCellId("Constant_u94itw_0");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_u94itw_b0a() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new NewProcessBuilderExpression_InspectorBuilder_a.workingDirectorySingleRoleHandler_u94itw_b0a(myNode, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x2085f2c5c8400c12L, 0x2085f2c5c8400c16L, "workingDirectory"), getEditorContext());
     return provider.createCell();
   }

@@ -39,35 +39,35 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_9zlrxo_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_9zlrxo_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_9zlrxo_a_0");
+    editorCell.setCellId("Collection_9zlrxo_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_9zlrxo_a0_0());
-    editorCell.addEditorCell(createConstant_9zlrxo_b0());
-    editorCell.addEditorCell(createRefNode_9zlrxo_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_9zlrxo_a0_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "port");
-    editorCell.setCellId("Constant_9zlrxo_a0_0");
+    editorCell.setCellId("Constant_9zlrxo_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_9zlrxo_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
-    editorCell.setCellId("Constant_9zlrxo_b0");
+    editorCell.setCellId("Constant_9zlrxo_1");
     Style style = new StyleImpl();
     new SemicolonStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_9zlrxo_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new RequestURLBuilderExpression_InspectorBuilder_a.portSingleRoleHandler_9zlrxo_c0(myNode, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5ce93L, 0x6f2759b71399b650L, "port"), getEditorContext());
     return provider.createCell();
   }

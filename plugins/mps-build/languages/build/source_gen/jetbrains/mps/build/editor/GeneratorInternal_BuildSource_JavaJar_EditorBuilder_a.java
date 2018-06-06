@@ -54,25 +54,25 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_g0zw24_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_g0zw24_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_g0zw24_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_g0zw24_a0());
-    editorCell.addEditorCell(createRefCell_g0zw24_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefCell_0());
     return editorCell;
   }
-  private EditorCell createConstant_g0zw24_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "java jar");
     editorCell.setCellId("Constant_g0zw24_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_g0zw24_b0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0de4L, 0x44e5dd192e7c0de5L, "targetJar");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -127,7 +127,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     }
 
     /*package*/ EditorCell createCell() {
-      return createCollection_g0zw24_a0b0();
+      return createCollection_1();
     }
 
     @NotNull
@@ -136,13 +136,13 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return myNode;
     }
 
-    private EditorCell createCollection_g0zw24_a0b0() {
+    private EditorCell createCollection_1() {
       EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
       editorCell.setCellId("Collection_g0zw24_a0b0");
-      editorCell.addEditorCell(createRefNode_g0zw24_a0a1a());
+      editorCell.addEditorCell(createRefNode_0());
       return editorCell;
     }
-    private EditorCell createRefNode_g0zw24_a0a1a() {
+    private EditorCell createRefNode_0() {
       SingleRoleCellProvider provider = new GeneratorInternal_BuildSource_JavaJar_EditorBuilder_a.Inline_Builder_g0zw24_a1a.pathSingleRoleHandler_g0zw24_a0a1a(myNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path"), getEditorContext());
       return provider.createCell();
     }

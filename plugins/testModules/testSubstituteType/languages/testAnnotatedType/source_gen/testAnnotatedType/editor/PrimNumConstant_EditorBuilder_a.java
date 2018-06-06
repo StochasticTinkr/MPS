@@ -49,24 +49,24 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_bzxtc4_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_bzxtc4_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_bzxtc4_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_bzxtc4_a0());
-    editorCell.addEditorCell(createProperty_bzxtc4_b0());
-    editorCell.addEditorCell(createConstant_bzxtc4_c0());
-    editorCell.addEditorCell(createConstant_bzxtc4_d0());
-    editorCell.addEditorCell(createProperty_bzxtc4_e0());
-    editorCell.addEditorCell(createConstant_bzxtc4_f0());
-    editorCell.addEditorCell(createConstant_bzxtc4_g0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createProperty_1());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createConstant_4());
     return editorCell;
   }
-  private EditorCell createConstant_bzxtc4_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "`");
     editorCell.setCellId("Constant_bzxtc4_a0");
     Style style = new StyleImpl();
@@ -77,7 +77,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_bzxtc4_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x1469c391a09a5eefL, 0x1469c391a09bd6aaL, "value");
@@ -107,7 +107,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_bzxtc4_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
     editorCell.setCellId("Constant_bzxtc4_c0");
     Style style = new StyleImpl();
@@ -117,7 +117,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_bzxtc4_d0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "isFloat=");
     editorCell.setCellId("Constant_bzxtc4_d0");
     Style style = new StyleImpl();
@@ -126,7 +126,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_bzxtc4_e0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x1469c391a09a5eefL, 0x1469c391a09a5ef0L, "isFloat");
@@ -156,7 +156,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_bzxtc4_f0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
     editorCell.setCellId("Constant_bzxtc4_f0");
     Style style = new StyleImpl();
@@ -167,7 +167,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_bzxtc4_g0() {
+  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "`");
     editorCell.setCellId("Constant_bzxtc4_g0");
     Style style = new StyleImpl();

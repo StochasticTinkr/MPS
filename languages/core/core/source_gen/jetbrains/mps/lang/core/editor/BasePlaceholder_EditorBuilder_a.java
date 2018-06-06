@@ -41,18 +41,18 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_rkx1ed_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_rkx1ed_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_rkx1ed_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_rkx1ed_a0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createRefNode_rkx1ed_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new BasePlaceholder_EditorBuilder_a.contentSingleRoleHandler_rkx1ed_a0(myNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x339681b4da4ef1a7L, 0x339681b4da4ef1bdL, "content"), getEditorContext());
     return provider.createCell();
   }
@@ -94,7 +94,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
       getCellFactory().pushCellContext();
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x339681b4da4ef1a7L, 0x339681b4da4ef1bdL, "content")));
       try {
-        EditorCell editorCell = createConstant_rkx1ed_a0a();
+        EditorCell editorCell = createConstant_0();
         installCellInfo(null, editorCell, true);
         setCellContext(editorCell);
         return editorCell;
@@ -102,7 +102,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
         getCellFactory().popCellContext();
       }
     }
-    private EditorCell createConstant_rkx1ed_a0a() {
+    private EditorCell createConstant_0() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
       editorCell.setCellId("Constant_rkx1ed_a0a");
       Style style = new StyleImpl();

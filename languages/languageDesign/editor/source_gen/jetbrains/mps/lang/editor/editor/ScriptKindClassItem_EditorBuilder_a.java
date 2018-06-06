@@ -58,20 +58,20 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_8gq3xs_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_8gq3xs_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_8gq3xs_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_8gq3xs_a0());
-    editorCell.addEditorCell(createConstant_8gq3xs_b0());
-    editorCell.addEditorCell(createProperty_8gq3xs_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_8gq3xs_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "script-kind");
     editorCell.setCellId("Constant_8gq3xs_a0");
     Style style = new StyleImpl();
@@ -92,13 +92,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "StyleClassItem" + ")", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "8255250703325731024"));
     }
   }
-  private EditorCell createConstant_8gq3xs_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
     editorCell.setCellId("Constant_8gq3xs_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_8gq3xs_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72908ac6c78618c8L, 0x72908ac6c78618caL, "script");

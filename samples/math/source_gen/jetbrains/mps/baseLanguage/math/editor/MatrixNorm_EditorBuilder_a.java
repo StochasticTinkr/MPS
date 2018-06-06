@@ -56,27 +56,27 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_47eu07_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_47eu07_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Superscript());
     editorCell.setCellId("Collection_47eu07_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_47eu07_a0());
-    editorCell.addEditorCell(createRefNode_47eu07_b0());
-    editorCell.addEditorCell(createConstant_47eu07_c0());
-    editorCell.addEditorCell(createProperty_47eu07_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_47eu07_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "║");
     editorCell.setCellId("Constant_47eu07_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_47eu07_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new MatrixNorm_EditorBuilder_a.matSingleRoleHandler_47eu07_b0(myNode, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0xcc7e1ce69847db2L, 0xa87de0e72bc0fd1L, "mat"), getEditorContext());
     return provider.createCell();
   }
@@ -131,13 +131,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no mat>";
     }
   }
-  private EditorCell createConstant_47eu07_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "║");
     editorCell.setCellId("Constant_47eu07_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_47eu07_d0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0xcc7e1ce69847db2L, 0xa87de0e72c3a3efL, "deg");

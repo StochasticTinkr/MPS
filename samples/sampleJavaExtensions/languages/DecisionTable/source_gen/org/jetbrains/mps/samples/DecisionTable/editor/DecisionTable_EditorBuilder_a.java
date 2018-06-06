@@ -40,21 +40,21 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_h1ymql_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_h1ymql_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_h1ymql_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_h1ymql_a0());
-    editorCell.addEditorCell(createConstant_h1ymql_b0());
-    editorCell.addEditorCell(createRefNode_h1ymql_c0());
-    editorCell.addEditorCell(createTable_h1ymql_d0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createTable_0());
     return editorCell;
   }
-  private EditorCell createRefNode_h1ymql_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new DecisionTable_EditorBuilder_a.expectedTypeSingleRoleHandler_h1ymql_a0(myNode, MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1582L, "expectedType"), getEditorContext());
     return provider.createCell();
   }
@@ -109,13 +109,13 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
       return "<no expectedType>";
     }
   }
-  private EditorCell createConstant_h1ymql_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Default:");
     editorCell.setCellId("Constant_h1ymql_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_h1ymql_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new DecisionTable_EditorBuilder_a.defaultValueSingleRoleHandler_h1ymql_c0(myNode, MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1583L, "defaultValue"), getEditorContext());
     return provider.createCell();
   }
@@ -170,7 +170,7 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
       return "<no defaultValue>";
     }
   }
-  private EditorCell createTable_h1ymql_d0() {
+  private EditorCell createTable_0() {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel() {
         return new XYCTableModel(myNode, MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1584L, "colHeaders"), MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1585L, "rowHeaders"), MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1586L, "resultValues"), getEditorContext());

@@ -37,31 +37,31 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_vo2134_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_vo2134_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_vo2134_a");
+    editorCell.setCellId("Collection_vo2134_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createCollection_vo2134_a0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createCollection_vo2134_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_vo2134_a0");
-    editorCell.addEditorCell(createConstant_vo2134_a0a());
-    editorCell.addEditorCell(createRefNode_vo2134_b0a());
+    editorCell.setCellId("Collection_vo2134_1");
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_vo2134_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "component provider:");
-    editorCell.setCellId("Constant_vo2134_a0a");
+    editorCell.setCellId("Constant_vo2134_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_vo2134_b0a() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new CellModel_JComponent_InspectorBuilder_a.componentProviderSingleRoleHandler_vo2134_b0a(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x100d0e71cb2L, 0x111eb61aef3L, "componentProvider"), getEditorContext());
     return provider.createCell();
   }

@@ -68,22 +68,22 @@ import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_y8xyxm_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_y8xyxm_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_y8xyxm_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_y8xyxm_a0());
-    editorCell.addEditorCell(createProperty_y8xyxm_b0());
-    editorCell.addEditorCell(createConstant_y8xyxm_c0());
-    editorCell.addEditorCell(createProperty_y8xyxm_d0());
-    editorCell.addEditorCell(createConstant_y8xyxm_e0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_1());
+    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
-  private EditorCell createConstant_y8xyxm_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<");
     editorCell.setCellId("Constant_y8xyxm_a0");
     Style style = new StyleImpl();
@@ -93,7 +93,7 @@ import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_y8xyxm_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b5885461L, 0x108b5f30aafL, "modifiers");
@@ -151,7 +151,7 @@ import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
       return result;
     }
   }
-  private EditorCell createConstant_y8xyxm_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "> + <");
     editorCell.setCellId("Constant_y8xyxm_c0");
     Style style = new StyleImpl();
@@ -162,7 +162,7 @@ import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_y8xyxm_d0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b5885461L, 0x108b5f30ab0L, "keycode");
@@ -220,7 +220,7 @@ import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
       return result;
     }
   }
-  private EditorCell createConstant_y8xyxm_e0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ">");
     editorCell.setCellId("Constant_y8xyxm_e0");
     Style style = new StyleImpl();

@@ -52,20 +52,20 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_i4eze2_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_i4eze2_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_i4eze2_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createProperty_i4eze2_a0());
-    editorCell.addEditorCell(createConstant_i4eze2_b0());
-    editorCell.addEditorCell(createRefNode_i4eze2_c0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createProperty_i4eze2_a0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -92,13 +92,13 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_i4eze2_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
     editorCell.setCellId("Constant_i4eze2_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_i4eze2_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new Relationship_EditorBuilder_a.referenceSingleRoleHandler_i4eze2_c0(myNode, MetaAdapterFactory.getContainmentLink(0x7917ee54129c42c6L, 0x8b53ba6a5e718e32L, 0x384147f70ea2b3ddL, 0x384147f70ea2b3e0L, "reference"), getEditorContext());
     return provider.createCell();
   }

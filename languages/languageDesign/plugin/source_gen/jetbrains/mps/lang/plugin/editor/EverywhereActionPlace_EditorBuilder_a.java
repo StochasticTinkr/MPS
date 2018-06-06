@@ -28,10 +28,10 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_8gonsz_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_8gonsz_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "everywhere");
     editorCell.setCellId("Constant_8gonsz_a");
     editorCell.setBig(true);

@@ -41,20 +41,20 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_vhqdz_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_vhqdz_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_vhqdz_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_vhqdz_a0());
-    editorCell.addEditorCell(createRefNode_vhqdz_b0());
-    editorCell.addEditorCell(createConstant_vhqdz_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_vhqdz_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "fail");
     editorCell.setCellId("Constant_vhqdz_a0");
     Style style = new StyleImpl();
@@ -63,7 +63,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_vhqdz_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new Fail_EditorBuilder_a.messageSingleRoleHandler_vhqdz_b0(myNode, MetaAdapterFactory.getContainmentLink(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e5250918L, 0x110e52557daL, "message"), getEditorContext());
     return provider.createCell();
   }
@@ -118,7 +118,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no message>";
     }
   }
-  private EditorCell createConstant_vhqdz_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ";");
     editorCell.setCellId("Constant_vhqdz_c0");
     Style style = new StyleImpl();

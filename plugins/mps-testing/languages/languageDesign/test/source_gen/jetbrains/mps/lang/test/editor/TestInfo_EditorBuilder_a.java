@@ -48,27 +48,27 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_v9r28m_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_v9r28m_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_v9r28m_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_v9r28m_a0());
-    editorCell.addEditorCell(createProperty_v9r28m_b0());
-    editorCell.addEditorCell(createConstant_v9r28m_c0());
-    editorCell.addEditorCell(createProperty_v9r28m_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createConstant_v9r28m_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Project path:");
     editorCell.setCellId("Constant_v9r28m_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_v9r28m_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, 0x46bca02bfb6e730bL, "projectPath");
@@ -98,13 +98,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_v9r28m_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "ReOpen project:");
     editorCell.setCellId("Constant_v9r28m_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_v9r28m_d0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, 0xe51f392b64685d9L, "reOpenProject");

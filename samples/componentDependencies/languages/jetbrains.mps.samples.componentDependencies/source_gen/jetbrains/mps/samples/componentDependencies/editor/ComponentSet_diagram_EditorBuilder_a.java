@@ -55,10 +55,10 @@ import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_amytw9_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_amytw9_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCanBeSynchronized(true);
     editorCell.setCellId("Collection_amytw9_a");
@@ -67,19 +67,19 @@ import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createCollection_amytw9_a0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createCollection_amytw9_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_amytw9_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createDiagram_amytw9_a0a());
+    editorCell.addEditorCell(createDiagram_0());
     return editorCell;
   }
-  private EditorCell createDiagram_amytw9_a0a() {
+  private EditorCell createDiagram_0() {
     DiagramCell editorCell = new ComponentSet_diagram_EditorBuilder_a.DiagramCellImpl_amytw9_a0a(getEditorContext(), myNode);
     editorCell.setCellId("Diagram_amytw9_a0a");
     return editorCell;

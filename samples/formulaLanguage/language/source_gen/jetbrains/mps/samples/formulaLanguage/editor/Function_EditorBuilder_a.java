@@ -25,10 +25,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
   }
 
   /*package*/ EditorCell createCell() {
-    return createError_y1p9lm_a();
+    return createError_0();
   }
 
-  private EditorCell createError_y1p9lm_a() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "?function?");
     editorCell.setCellId("Error_y1p9lm_a");
     editorCell.setBig(true);

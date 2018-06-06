@@ -38,38 +38,38 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ujwr7t_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ujwr7t_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_ujwr7t_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_ujwr7t_a0());
-    editorCell.addEditorCell(createAttributedNodeCell_ujwr7t_b0());
-    editorCell.addEditorCell(createConstant_ujwr7t_c0());
-    editorCell.addEditorCell(createRefNode_ujwr7t_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createAttributedNodeCell_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_ujwr7t_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "meet<");
     editorCell.setCellId("Constant_ujwr7t_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createAttributedNodeCell_ujwr7t_b0() {
+  private EditorCell createAttributedNodeCell_0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;
   }
-  private EditorCell createConstant_ujwr7t_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ">");
     editorCell.setCellId("Constant_ujwr7t_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_ujwr7t_d0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new MeetContainer_EditorBuilder_a.meetTypeSingleRoleHandler_ujwr7t_d0(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1206cd802f8L, 0x1206cd83bb0L, "meetType"), getEditorContext());
     return provider.createCell();
   }

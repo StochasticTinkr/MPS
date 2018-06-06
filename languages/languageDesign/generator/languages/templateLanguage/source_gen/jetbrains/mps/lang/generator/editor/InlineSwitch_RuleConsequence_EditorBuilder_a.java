@@ -47,10 +47,10 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_yn898b_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_yn898b_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_yn898b_a");
     editorCell.setBig(true);
@@ -59,12 +59,12 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
     style.set(StyleAttributes.DRAW_BRACKETS, true);
     style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createRefNodeList_yn898b_a0());
-    editorCell.addEditorCell(createConstant_yn898b_b0());
-    editorCell.addEditorCell(createCollection_yn898b_c0());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createRefNodeList_yn898b_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new InlineSwitch_RuleConsequence_EditorBuilder_a.caseListHandler_yn898b_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_case");
@@ -125,7 +125,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
       }
     }
   }
-  private EditorCell createConstant_yn898b_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "default:");
     editorCell.setCellId("Constant_yn898b_b0");
     Style style = new StyleImpl();
@@ -134,17 +134,17 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_yn898b_c0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_yn898b_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_yn898b_a2a());
-    editorCell.addEditorCell(createRefNode_yn898b_b2a());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_yn898b_a2a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "  ");
     editorCell.setCellId("Constant_yn898b_a2a");
     Style style = new StyleImpl();
@@ -153,7 +153,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_yn898b_b2a() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new InlineSwitch_RuleConsequence_EditorBuilder_a.defaultConsequenceSingleRoleHandler_yn898b_b2a(myNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fa2edeL, 0x11644fb7f64L, "defaultConsequence"), getEditorContext());
     return provider.createCell();
   }

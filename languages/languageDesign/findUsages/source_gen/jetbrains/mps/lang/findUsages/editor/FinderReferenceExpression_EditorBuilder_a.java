@@ -40,26 +40,26 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_q7qayf_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_q7qayf_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_q7qayf_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_q7qayf_a0());
-    editorCell.addEditorCell(createRefNode_q7qayf_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createComponent_q7qayf_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(1, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createRefNode_q7qayf_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new FinderReferenceExpression_EditorBuilder_a.finderSingleRoleHandler_q7qayf_b0(myNode, MetaAdapterFactory.getContainmentLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x5e9f5a0f21d59aacL, 0x5e9f5a0f21d59aadL, "finder"), getEditorContext());
     return provider.createCell();
   }

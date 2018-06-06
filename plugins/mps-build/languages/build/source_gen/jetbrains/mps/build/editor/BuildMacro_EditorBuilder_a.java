@@ -30,10 +30,10 @@ import jetbrains.mps.editor.runtime.cells.BigCellUtil;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCustom_kmk4tj_a();
+    return createCustom_0();
   }
 
-  private EditorCell createCustom_kmk4tj_a() {
+  private EditorCell createCustom_0() {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider(myNode) {

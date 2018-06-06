@@ -40,19 +40,19 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_1r2vma_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_1r2vma_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_1r2vma_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_1r2vma_a0());
-    editorCell.addEditorCell(createCollection_1r2vma_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createComponent_1r2vma_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new keywordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -60,22 +60,22 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createCollection_1r2vma_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_1r2vma_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_1r2vma_a1a());
-    editorCell.addEditorCell(createRefNode_1r2vma_b1a());
-    editorCell.addEditorCell(createConstant_1r2vma_c1a());
-    editorCell.addEditorCell(createRefNode_1r2vma_d1a());
-    editorCell.addEditorCell(createConstant_1r2vma_e1a());
-    editorCell.addEditorCell(createRefNode_1r2vma_f1a());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createRefNode_2());
     return editorCell;
   }
-  private EditorCell createConstant_1r2vma_a1a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "check url");
     editorCell.setCellId("Constant_1r2vma_a1a");
     Style style = new StyleImpl();
@@ -84,7 +84,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_1r2vma_b1a() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new BuildMps_BrandingUpdateSite_EditorBuilder_a.checkUrlSingleRoleHandler_1r2vma_b1a(myNode, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083d2d07L, 0x54c4eb89feb19db8L, "checkUrl"), getEditorContext());
     return provider.createCell();
   }
@@ -142,7 +142,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no checkUrl>";
     }
   }
-  private EditorCell createConstant_1r2vma_c1a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "update url");
     editorCell.setCellId("Constant_1r2vma_c1a");
     Style style = new StyleImpl();
@@ -151,7 +151,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_1r2vma_d1a() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new BuildMps_BrandingUpdateSite_EditorBuilder_a.updateUrlSingleRoleHandler_1r2vma_d1a(myNode, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083d2d07L, 0x54c4eb89feb19db9L, "updateUrl"), getEditorContext());
     return provider.createCell();
   }
@@ -209,7 +209,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no updateUrl>";
     }
   }
-  private EditorCell createConstant_1r2vma_e1a() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "channel");
     editorCell.setCellId("Constant_1r2vma_e1a");
     Style style = new StyleImpl();
@@ -218,7 +218,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_1r2vma_f1a() {
+  private EditorCell createRefNode_2() {
     SingleRoleCellProvider provider = new BuildMps_BrandingUpdateSite_EditorBuilder_a.updateChannelSingleRoleHandler_1r2vma_f1a(myNode, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083d2d07L, 0x7a0ffb6a57a037f3L, "updateChannel"), getEditorContext());
     return provider.createCell();
   }

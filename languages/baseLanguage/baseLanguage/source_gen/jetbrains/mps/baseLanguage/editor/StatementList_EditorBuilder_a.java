@@ -46,10 +46,10 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_u338ov_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_u338ov_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_u338ov_a");
     editorCell.setBig(true);
@@ -58,13 +58,13 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, _StyleParameter_QueryFunction_u338ov_a1a());
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createRefNodeList_u338ov_a0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
   private boolean _StyleParameter_QueryFunction_u338ov_a1a() {
     return !((boolean) StatementList__BehaviorDescriptor.isCompact_idi0zxBt8.invoke(getNode()));
   }
-  private EditorCell createRefNodeList_u338ov_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new StatementList_EditorBuilder_a.statementListHandler_u338ov_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_statement");
@@ -108,7 +108,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(statementListHandler_u338ov_a0.this.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_u338ov_a0a();
+        emptyCell = createConstant_0();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -128,7 +128,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
         }
       }
     }
-    private EditorCell createConstant_u338ov_a0a() {
+    private EditorCell createConstant_0() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
       editorCell.setCellId("Constant_u338ov_a0a");
       Style style = new StyleImpl();

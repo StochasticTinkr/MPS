@@ -43,19 +43,19 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_p8sguv_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_p8sguv_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_p8sguv_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_p8sguv_a0());
-    editorCell.addEditorCell(createRefNodeList_p8sguv_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createConstant_p8sguv_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "workflow");
     editorCell.setCellId("Constant_p8sguv_a0");
     Style style = new StyleImpl();
@@ -65,7 +65,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_p8sguv_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new BuildCustomWorkflow_EditorBuilder_a.partsListHandler_p8sguv_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parts");

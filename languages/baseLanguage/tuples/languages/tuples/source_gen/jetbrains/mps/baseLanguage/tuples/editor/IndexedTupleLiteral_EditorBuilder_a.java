@@ -52,20 +52,20 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_rvpzqy_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_rvpzqy_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_rvpzqy_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createReadOnlyModelAccessor_rvpzqy_a0());
-    editorCell.addEditorCell(createRefNodeList_rvpzqy_b0());
-    editorCell.addEditorCell(createReadOnlyModelAccessor_rvpzqy_c0());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_0());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_1());
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_rvpzqy_a0() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return (String) IndexedTupleLiteral__BehaviorDescriptor.getLeftBracket_id1653mnvAgn6.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode)));
@@ -86,7 +86,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createRefNodeList_rvpzqy_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new IndexedTupleLiteral_EditorBuilder_a.componentListHandler_rvpzqy_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_component");
@@ -125,7 +125,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(componentListHandler_rvpzqy_b0.this.getNode(), MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071708c13L, 0x1207171832eL, "component")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_rvpzqy_a1a();
+        emptyCell = createConstant_0();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -158,14 +158,14 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(prevNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
       return editorCell;
     }
-    private EditorCell createConstant_rvpzqy_a1a() {
+    private EditorCell createConstant_0() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
       editorCell.setCellId("Constant_rvpzqy_a1a");
       editorCell.setDefaultText("");
       return editorCell;
     }
   }
-  private EditorCell createReadOnlyModelAccessor_rvpzqy_c0() {
+  private EditorCell createReadOnlyModelAccessor_1() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return (String) IndexedTupleLiteral__BehaviorDescriptor.getRightBracket_id1653mnvAgtJ.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode)));

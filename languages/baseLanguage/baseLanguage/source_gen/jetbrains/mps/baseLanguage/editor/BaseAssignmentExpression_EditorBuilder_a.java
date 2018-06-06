@@ -51,10 +51,10 @@ import jetbrains.mps.smodel.SNodePointer;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_89tgy3_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_89tgy3_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_89tgy3_a");
     editorCell.setBig(true);
@@ -62,12 +62,12 @@ import jetbrains.mps.smodel.SNodePointer;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createRefNode_89tgy3_a0());
-    editorCell.addEditorCell(createComponent_89tgy3_b0());
-    editorCell.addEditorCell(createRefNode_89tgy3_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_89tgy3_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new BaseAssignmentExpression_EditorBuilder_a.lValueSingleRoleHandler_89tgy3_a0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue"), getEditorContext());
     return provider.createCell();
   }
@@ -126,7 +126,7 @@ import jetbrains.mps.smodel.SNodePointer;
       return "<no lValue>";
     }
   }
-  private EditorCell createComponent_89tgy3_b0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new OperatorStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -146,7 +146,7 @@ import jetbrains.mps.smodel.SNodePointer;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "BaseAssignmentExpression" + ")", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "7018939066168444262"));
     }
   }
-  private EditorCell createRefNode_89tgy3_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new BaseAssignmentExpression_EditorBuilder_a.rValueSingleRoleHandler_89tgy3_c0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e99L, "rValue"), getEditorContext());
     return provider.createCell();
   }

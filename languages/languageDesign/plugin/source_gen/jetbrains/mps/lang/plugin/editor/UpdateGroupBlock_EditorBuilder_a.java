@@ -36,20 +36,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_uu5ska_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_uu5ska_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_uu5ska_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_uu5ska_a0());
-    editorCell.addEditorCell(createConstant_uu5ska_b0());
-    editorCell.addEditorCell(createRefNode_uu5ska_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_uu5ska_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new UpdateGroupBlock_EditorBuilder_a.updateFunctionSingleRoleHandler_uu5ska_a0(myNode, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x120b44a69d3L, 0x120b44c6c5bL, "updateFunction"), getEditorContext());
     return provider.createCell();
   }
@@ -104,13 +104,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       return "<no updateFunction>";
     }
   }
-  private EditorCell createConstant_uu5ska_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_uu5ska_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_uu5ska_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new UpdateGroupBlock_EditorBuilder_a.enumerateFunctionSingleRoleHandler_uu5ska_c0(myNode, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x120b44a69d3L, 0x120b44ca781L, "enumerateFunction"), getEditorContext());
     return provider.createCell();
   }

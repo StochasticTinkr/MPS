@@ -43,26 +43,26 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_a1fgw3_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_a1fgw3_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_a1fgw3_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_a1fgw3_a0());
-    editorCell.addEditorCell(createRefNode_a1fgw3_b0());
-    editorCell.addEditorCell(createRefNode_a1fgw3_c0());
-    editorCell.addEditorCell(createIndentCell_a1fgw3_d0());
-    editorCell.addEditorCell(createIndentCell_a1fgw3_e0());
-    editorCell.addEditorCell(createConstant_a1fgw3_f0());
-    editorCell.addEditorCell(createIndentCell_a1fgw3_g0());
-    editorCell.addEditorCell(createIndentCell_a1fgw3_h0());
-    editorCell.addEditorCell(createRefNode_a1fgw3_i0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createIndentCell_0());
+    editorCell.addEditorCell(createIndentCell_1());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createIndentCell_2());
+    editorCell.addEditorCell(createIndentCell_3());
+    editorCell.addEditorCell(createRefNode_2());
     return editorCell;
   }
-  private EditorCell createConstant_a1fgw3_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "on condition that");
     editorCell.setCellId("Constant_a1fgw3_a0");
     Style style = new StyleImpl();
@@ -71,7 +71,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_a1fgw3_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new MyIfStatement_EditorBuilder_a.conditionSingleRoleHandler_a1fgw3_b0(myNode, MetaAdapterFactory.getContainmentLink(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL, 0xd403d58ad448ccdL, "condition"), getEditorContext());
     return provider.createCell();
   }
@@ -129,7 +129,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
       return "<no condition>";
     }
   }
-  private EditorCell createRefNode_a1fgw3_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new MyIfStatement_EditorBuilder_a.bodySingleRoleHandler_a1fgw3_c0(myNode, MetaAdapterFactory.getContainmentLink(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL, 0xd403d58ad448cceL, "body"), getEditorContext());
     return provider.createCell();
   }
@@ -188,29 +188,29 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
       return "<no body>";
     }
   }
-  private EditorCell createIndentCell_a1fgw3_d0() {
+  private EditorCell createIndentCell_0() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createIndentCell_a1fgw3_e0() {
+  private EditorCell createIndentCell_1() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createConstant_a1fgw3_f0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "|");
     editorCell.setCellId("Constant_a1fgw3_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createIndentCell_a1fgw3_g0() {
+  private EditorCell createIndentCell_2() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createIndentCell_a1fgw3_h0() {
+  private EditorCell createIndentCell_3() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createRefNode_a1fgw3_i0() {
+  private EditorCell createRefNode_2() {
     SingleRoleCellProvider provider = new MyIfStatement_EditorBuilder_a.alternativeSingleRoleHandler_a1fgw3_i0(myNode, MetaAdapterFactory.getContainmentLink(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL, 0xd403d58ad457e4dL, "alternative"), getEditorContext());
     return provider.createCell();
   }

@@ -54,20 +54,20 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_9sw97c_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_9sw97c_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_9sw97c_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_9sw97c_a0());
-    editorCell.addEditorCell(createProperty_9sw97c_b0());
-    editorCell.addEditorCell(createRefNode_9sw97c_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_9sw97c_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ArithmeticSimpleMathExpression_EditorBuilder_a.leftSingleRoleHandler_9sw97c_a0(myNode, MetaAdapterFactory.getContainmentLink(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81c52ccL, 0x1cc69153b81d5476L, "left"), getEditorContext());
     return provider.createCell();
   }
@@ -122,7 +122,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no left>";
     }
   }
-  private EditorCell createProperty_9sw97c_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b8289497L, 0x1cc69153b82894eaL, "operator");
@@ -152,7 +152,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createRefNode_9sw97c_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new ArithmeticSimpleMathExpression_EditorBuilder_a.rightSingleRoleHandler_9sw97c_c0(myNode, MetaAdapterFactory.getContainmentLink(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81c52ccL, 0x1cc69153b81d5478L, "right"), getEditorContext());
     return provider.createCell();
   }

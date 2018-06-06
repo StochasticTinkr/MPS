@@ -45,20 +45,20 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_9xngu4_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_9xngu4_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_9xngu4_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_9xngu4_a0());
-    editorCell.addEditorCell(createConstant_9xngu4_b0());
-    editorCell.addEditorCell(createRefNodeList_9xngu4_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createRefNode_9xngu4_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ListValue_EditorBuilder_a.variableSingleRoleHandler_9xngu4_a0(myNode, MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d0614aL, 0x15b423b3f8d0614cL, "variable"), getEditorContext());
     return provider.createCell();
   }
@@ -113,13 +113,13 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       return "<no variable>";
     }
   }
-  private EditorCell createConstant_9xngu4_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "->");
     editorCell.setCellId("Constant_9xngu4_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_9xngu4_c0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new ListValue_EditorBuilder_a.valueListHandler_9xngu4_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_value");

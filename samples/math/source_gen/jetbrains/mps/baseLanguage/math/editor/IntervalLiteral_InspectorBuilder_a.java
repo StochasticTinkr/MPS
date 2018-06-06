@@ -48,27 +48,27 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_yq81ip_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_yq81ip_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_yq81ip_a_0");
+    editorCell.setCellId("Collection_yq81ip_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_yq81ip_a0());
-    editorCell.addEditorCell(createProperty_yq81ip_b0());
-    editorCell.addEditorCell(createConstant_yq81ip_c0_0());
-    editorCell.addEditorCell(createProperty_yq81ip_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createConstant_yq81ip_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "start incuded:");
-    editorCell.setCellId("Constant_yq81ip_a0");
+    editorCell.setCellId("Constant_yq81ip_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_yq81ip_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb848396cL, 0x11fb848396fL, "startIncluded");
@@ -98,13 +98,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_yq81ip_c0_0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "end included:");
-    editorCell.setCellId("Constant_yq81ip_c0_0");
+    editorCell.setCellId("Constant_yq81ip_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_yq81ip_d0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb848396cL, 0x11fb8483970L, "endIncluded");

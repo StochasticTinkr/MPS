@@ -55,20 +55,20 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_sl01pn_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_sl01pn_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_sl01pn_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_sl01pn_a0());
-    editorCell.addEditorCell(createProperty_sl01pn_b0());
-    editorCell.addEditorCell(createTable_sl01pn_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createTable_0());
     return editorCell;
   }
-  private EditorCell createConstant_sl01pn_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "HierarchycalTable");
     editorCell.setCellId("Constant_sl01pn_a0");
     Style style = new StyleImpl();
@@ -78,7 +78,7 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_sl01pn_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -108,7 +108,7 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createTable_sl01pn_c0() {
+  private EditorCell createTable_0() {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel() {
         return new HierarchycalTableModelWithHeader(myNode, MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea0L, 0x28004d411fa3bea2L, "rows"), MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea6L, 0x28004d411fa3bea7L, "cells"), MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x760c9302beb3e1d1L, 0x760c9302beb3e1d4L, "headers"));

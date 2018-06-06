@@ -29,26 +29,26 @@ import jetbrains.mps.samples.Kaja.editor.KajakStyles_StyleSheet.CommandStyleClas
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_4t4imw_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_4t4imw_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_4t4imw_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_4t4imw_a0());
-    editorCell.addEditorCell(createComponent_4t4imw_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createComponent_1());
     return editorCell;
   }
-  private EditorCell createComponent_4t4imw_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new CommandStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createComponent_4t4imw_b0() {
+  private EditorCell createComponent_1() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.samples.KajaSceneConstruction.editor.Position");
     return editorCell;
   }

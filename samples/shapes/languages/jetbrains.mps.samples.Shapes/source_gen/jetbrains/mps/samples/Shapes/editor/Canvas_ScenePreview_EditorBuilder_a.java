@@ -63,26 +63,26 @@ import jetbrains.mps.samples.Shapes.behavior.PreviewFactory;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_3bcydw_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_3bcydw_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_3bcydw_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_3bcydw_a0());
-    editorCell.addEditorCell(createProperty_3bcydw_b0());
-    editorCell.addEditorCell(createCollection_3bcydw_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createConstant_3bcydw_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Painting");
     editorCell.setCellId("Constant_3bcydw_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_3bcydw_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -112,15 +112,15 @@ import jetbrains.mps.samples.Shapes.behavior.PreviewFactory;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createCollection_3bcydw_c0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_3bcydw_c0");
-    editorCell.addEditorCell(createRefNodeList_3bcydw_a2a());
-    editorCell.addEditorCell(createIndentCell_3bcydw_b2a());
-    editorCell.addEditorCell(createCollection_3bcydw_c2a());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createIndentCell_0());
+    editorCell.addEditorCell(createCollection_2());
     return editorCell;
   }
-  private EditorCell createRefNodeList_3bcydw_a2a() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new Canvas_ScenePreview_EditorBuilder_a.shapesListHandler_3bcydw_a2a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_shapes");
@@ -180,19 +180,19 @@ import jetbrains.mps.samples.Shapes.behavior.PreviewFactory;
       }
     }
   }
-  private EditorCell createIndentCell_3bcydw_b2a() {
+  private EditorCell createIndentCell_0() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createCollection_3bcydw_c2a() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_3bcydw_c2a");
-    editorCell.addEditorCell(createJComponent_3bcydw_a2c0());
+    editorCell.addEditorCell(createJComponent_0());
     return editorCell;
   }
-  private EditorCell createJComponent_3bcydw_a2c0() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_3bcydw_a0c2a(), "_3bcydw_a2c0");
-    editorCell.setCellId("JComponent_3bcydw_a2c0");
+  private EditorCell createJComponent_0() {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_3bcydw_a0c2a(), "JComponent_3bcydw_a2c0");
+    editorCell.setCellId("JComponent_3bcydw_a2c0_0");
     return editorCell;
   }
   private JComponent _QueryFunction_JComponent_3bcydw_a0c2a() {

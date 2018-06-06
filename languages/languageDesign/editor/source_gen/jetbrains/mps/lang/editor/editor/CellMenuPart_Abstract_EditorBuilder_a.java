@@ -29,10 +29,10 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
 
   /*package*/ EditorCell createCell() {
-    return createError_7tiwfz_a();
+    return createError_0();
   }
 
-  private EditorCell createError_7tiwfz_a() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<choose menu part>");
     editorCell.setCellId("Error_7tiwfz_a");
     editorCell.setBig(true);

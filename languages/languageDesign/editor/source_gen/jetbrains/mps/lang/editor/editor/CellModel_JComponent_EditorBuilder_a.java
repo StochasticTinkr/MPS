@@ -28,10 +28,10 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.rootCellModelStyleStyl
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_vo2134_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_vo2134_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "$swing component$");
     editorCell.setCellId("Constant_vo2134_a");
     editorCell.setBig(true);

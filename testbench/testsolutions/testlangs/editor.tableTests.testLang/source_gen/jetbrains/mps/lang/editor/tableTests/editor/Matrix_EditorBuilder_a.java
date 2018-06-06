@@ -55,20 +55,20 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_io08np_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_io08np_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_io08np_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_io08np_a0());
-    editorCell.addEditorCell(createProperty_io08np_b0());
-    editorCell.addEditorCell(createTable_io08np_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createTable_0());
     return editorCell;
   }
-  private EditorCell createConstant_io08np_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Matrix");
     editorCell.setCellId("Constant_io08np_a0");
     Style style = new StyleImpl();
@@ -78,7 +78,7 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_io08np_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -108,7 +108,7 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createTable_io08np_c0() {
+  private EditorCell createTable_0() {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel() {
         return new XYCTableModel(myNode, MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x3cc6bd99e23e4590L, 0x3cc6bd99e23f0931L, "xs"), MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x3cc6bd99e23e4590L, 0x3cc6bd99e23f0932L, "ys"), MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x3cc6bd99e23e4590L, 0x3cc6bd99e23f0933L, "contents"), getEditorContext());

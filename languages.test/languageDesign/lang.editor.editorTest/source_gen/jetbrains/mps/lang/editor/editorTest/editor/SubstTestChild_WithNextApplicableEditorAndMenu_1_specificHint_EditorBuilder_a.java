@@ -38,19 +38,19 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_eiugxc_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_eiugxc_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_eiugxc_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createNextEditor_eiugxc_a0());
-    editorCell.addEditorCell(createConstant_eiugxc_b0());
+    editorCell.addEditorCell(createNextEditor_0());
+    editorCell.addEditorCell(createConstant_0());
     return editorCell;
   }
-  private EditorCell createNextEditor_eiugxc_a0() {
+  private EditorCell createNextEditor_0() {
     {
       EditorCell editorCell = getCellFactory().createEditorCell(myNode, false, SubstTestChild_WithNextApplicableEditorAndMenu_1_specificHint_Editor.class);
       editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new SubstTestChild_WithNextApplicableEditorAndMenu_1_specificHint_EditorBuilder_a.ReplaceWith_SubstTestChild_WithNextApplicableEditorAndMenu_2_cellMenu_eiugxc_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
@@ -68,7 +68,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "SubstTestChild_WithNextApplicableEditorAndMenu_2" + ")", new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "583472190600188833"));
     }
   }
-  private EditorCell createConstant_eiugxc_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "child with next applicable editor and menu 1");
     editorCell.setCellId("Constant_eiugxc_b0");
     editorCell.setDefaultText("");

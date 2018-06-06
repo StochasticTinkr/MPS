@@ -39,20 +39,20 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ojezqy_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ojezqy_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ojezqy_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_ojezqy_a0());
-    editorCell.addEditorCell(createRefNode_ojezqy_b0());
-    editorCell.addEditorCell(createConstant_ojezqy_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_ojezqy_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<xml");
     editorCell.setCellId("Constant_ojezqy_a0");
     Style style = new StyleImpl();
@@ -61,7 +61,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_ojezqy_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new XmlLiteral_EditorBuilder_a.elementSingleRoleHandler_ojezqy_b0(myNode, MetaAdapterFactory.getContainmentLink(0xa1896bc34f5b4a31L, 0xb78bb65514f8d0e5L, 0x7f05a5bbee3522c3L, 0x7f05a5bbee3522c4L, "element"), getEditorContext());
     return provider.createCell();
   }
@@ -120,7 +120,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no element>";
     }
   }
-  private EditorCell createConstant_ojezqy_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ">");
     editorCell.setCellId("Constant_ojezqy_c0");
     editorCell.setDefaultText("");

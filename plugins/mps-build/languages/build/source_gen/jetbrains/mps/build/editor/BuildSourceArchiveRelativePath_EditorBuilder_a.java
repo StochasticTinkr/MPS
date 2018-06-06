@@ -64,20 +64,20 @@ import jetbrains.mps.smodel.SNodePointer;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_4z471d_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_4z471d_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_4z471d_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_4z471d_a0());
-    editorCell.addEditorCell(createConstant_4z471d_b0());
-    editorCell.addEditorCell(createRefNode_4z471d_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_4z471d_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new BuildSourceArchiveRelativePath_EditorBuilder_a.archivePathSingleRoleHandler_4z471d_a0(myNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath"), getEditorContext());
     return provider.createCell();
   }
@@ -132,7 +132,7 @@ import jetbrains.mps.smodel.SNodePointer;
       return "<no archivePath>";
     }
   }
-  private EditorCell createConstant_4z471d_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "!/");
     editorCell.setCellId("Constant_4z471d_b0");
     Style style = new StyleImpl();
@@ -145,7 +145,7 @@ import jetbrains.mps.smodel.SNodePointer;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_4z471d_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new BuildSourceArchiveRelativePath_EditorBuilder_a.compositePartSingleRoleHandler_4z471d_c0(myNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), getEditorContext());
     return provider.createCell();
   }

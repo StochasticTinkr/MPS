@@ -51,19 +51,19 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_xp1rdu_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_xp1rdu_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_xp1rdu_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_xp1rdu_a0());
-    editorCell.addEditorCell(createRefNodeList_xp1rdu_b0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createComponent_xp1rdu_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new CommentTagStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -82,7 +82,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "BaseInlineDocTag" + ")", new SNodePointer("r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)", "5332352441311589012"));
     }
   }
-  private EditorCell createRefNodeList_xp1rdu_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new CodeInlineDocTag_EditorBuilder_a.lineListHandler_xp1rdu_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_line");

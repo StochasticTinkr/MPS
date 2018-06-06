@@ -35,20 +35,20 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_uefsp_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_uefsp_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_uefsp_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_uefsp_a0());
-    editorCell.addEditorCell(createComponent_uefsp_b0());
-    editorCell.addEditorCell(createRefNode_uefsp_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_uefsp_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new BinaryExpression_EditorBuilder_a.leftSingleRoleHandler_uefsp_a0(myNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12f761daL, 0x46eb259b12f761dcL, "left"), getEditorContext());
     return provider.createCell();
   }
@@ -103,11 +103,11 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no left>";
     }
   }
-  private EditorCell createComponent_uefsp_b0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
-  private EditorCell createRefNode_uefsp_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new BinaryExpression_EditorBuilder_a.rightSingleRoleHandler_uefsp_c0(myNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12f761daL, 0x46eb259b12f761ddL, "right"), getEditorContext());
     return provider.createCell();
   }

@@ -39,27 +39,27 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_pd23j_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_pd23j_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_pd23j_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_pd23j_a0());
-    editorCell.addEditorCell(createConstant_pd23j_b0());
-    editorCell.addEditorCell(createCollection_pd23j_c0());
-    editorCell.addEditorCell(createConstant_pd23j_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createConstant_4());
     return editorCell;
   }
-  private EditorCell createConstant_pd23j_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "init child with direct cycle_card1");
     editorCell.setCellId("Constant_pd23j_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_pd23j_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
     editorCell.setCellId("Constant_pd23j_b0");
     Style style = new StyleImpl();
@@ -69,24 +69,24 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_pd23j_c0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_pd23j_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_pd23j_a2a());
-    editorCell.addEditorCell(createConstant_pd23j_b2a());
-    editorCell.addEditorCell(createRefNode_pd23j_c2a());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_pd23j_a2a() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "sub child");
     editorCell.setCellId("Constant_pd23j_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_pd23j_b2a() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
     editorCell.setCellId("Constant_pd23j_b2a");
     Style style = new StyleImpl();
@@ -96,7 +96,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_pd23j_c2a() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new InitChildWithDirectCycle_card1_EditorBuilder_a.subChildSingleRoleHandler_pd23j_c2a(myNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a5L, 0x1b00debf2d3601a9L, "subChild"), getEditorContext());
     return provider.createCell();
   }
@@ -155,7 +155,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no subChild>";
     }
   }
-  private EditorCell createConstant_pd23j_d0() {
+  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
     editorCell.setCellId("Constant_pd23j_d0");
     Style style = new StyleImpl();

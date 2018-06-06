@@ -51,20 +51,20 @@ import jetbrains.mps.core.properties.editor.properiesSS_StyleSheet.ValueStyleCla
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_cuzp02_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_cuzp02_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_cuzp02_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createProperty_cuzp02_a0());
-    editorCell.addEditorCell(createConstant_cuzp02_b0());
-    editorCell.addEditorCell(createProperty_cuzp02_c0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createProperty_cuzp02_a0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -94,7 +94,7 @@ import jetbrains.mps.core.properties.editor.properiesSS_StyleSheet.ValueStyleCla
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_cuzp02_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
     editorCell.setCellId("Constant_cuzp02_b0");
     Style style = new StyleImpl();
@@ -105,7 +105,7 @@ import jetbrains.mps.core.properties.editor.properiesSS_StyleSheet.ValueStyleCla
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_cuzp02_c0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ac1L, 0x36fb0dc9fd3a3ae4L, "value");

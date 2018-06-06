@@ -38,20 +38,20 @@ import jetbrains.mps.samples.Expressions.editor.SimpleMath_StyleSheet.KeyWordSty
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_hge5w8_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_hge5w8_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_hge5w8_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_hge5w8_a0());
-    editorCell.addEditorCell(createComponent_hge5w8_b0());
-    editorCell.addEditorCell(createRefNode_hge5w8_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_hge5w8_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new LogicalSimpleMathExpression_EditorBuilder_a.leftSingleRoleHandler_hge5w8_a0(myNode, MetaAdapterFactory.getContainmentLink(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81c52ccL, 0x1cc69153b81d5476L, "left"), getEditorContext());
     return provider.createCell();
   }
@@ -106,14 +106,14 @@ import jetbrains.mps.samples.Expressions.editor.SimpleMath_StyleSheet.KeyWordSty
       return "<no left>";
     }
   }
-  private EditorCell createComponent_hge5w8_b0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createRefNode_hge5w8_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new LogicalSimpleMathExpression_EditorBuilder_a.rightSingleRoleHandler_hge5w8_c0(myNode, MetaAdapterFactory.getContainmentLink(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81c52ccL, 0x1cc69153b81d5478L, "right"), getEditorContext());
     return provider.createCell();
   }

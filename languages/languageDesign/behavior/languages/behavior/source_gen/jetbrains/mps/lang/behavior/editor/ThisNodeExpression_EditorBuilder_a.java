@@ -32,24 +32,24 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_t6mv7u_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_t6mv7u_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_t6mv7u_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_t6mv7u_a0());
+    editorCell.addEditorCell(createConstant_0());
     if (nodeCondition_t6mv7u_a1a()) {
-      editorCell.addEditorCell(createConstant_t6mv7u_b0());
+      editorCell.addEditorCell(createConstant_1());
     }
     return editorCell;
   }
   private boolean nodeCondition_t6mv7u_a1a() {
     return ConstraintsUtil.isInsideOfBehavior(myNode, true);
   }
-  private EditorCell createConstant_t6mv7u_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "this");
     editorCell.setCellId("Constant_t6mv7u_a0");
     Style style = new StyleImpl();
@@ -63,7 +63,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   private boolean _StyleParameter_QueryFunction_t6mv7u_a1a0() {
     return ConstraintsUtil.isInsideOfBehavior(getNode(), true);
   }
-  private EditorCell createConstant_t6mv7u_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(use ThisConceptExpression)");
     editorCell.setCellId("Constant_t6mv7u_b0");
     editorCell.setDefaultText("");

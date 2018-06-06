@@ -51,43 +51,43 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_gp4zyx_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_gp4zyx_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_gp4zyx_a_0");
+    editorCell.setCellId("Collection_gp4zyx_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createCollection_gp4zyx_a0());
+    editorCell.addEditorCell(createCollection_1());
     if (nodeCondition_gp4zyx_a1a()) {
-      editorCell.addEditorCell(createCollection_gp4zyx_b0());
+      editorCell.addEditorCell(createCollection_2());
     }
     return editorCell;
   }
   private boolean nodeCondition_gp4zyx_a1a() {
     return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(myNode));
   }
-  private EditorCell createCollection_gp4zyx_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_gp4zyx_a0");
+    editorCell.setCellId("Collection_gp4zyx_1");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_gp4zyx_a0a());
-    editorCell.addEditorCell(createProperty_gp4zyx_b0a());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_gp4zyx_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "strip implementation:");
-    editorCell.setCellId("Constant_gp4zyx_a0a");
+    editorCell.setCellId("Constant_gp4zyx_0");
     Style style = new StyleImpl();
     new keywordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_gp4zyx_b0a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x177c2feaf3463710L, 0x6de50fcfc334192fL, "stripImplementation");
@@ -114,23 +114,23 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createCollection_gp4zyx_b0() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_gp4zyx_b0");
-    editorCell.addEditorCell(createConstant_gp4zyx_a1a());
-    editorCell.addEditorCell(createProperty_gp4zyx_b1a());
+    editorCell.setCellId("Collection_gp4zyx_2");
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createConstant_gp4zyx_a1a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "models only:");
-    editorCell.setCellId("Constant_gp4zyx_a1a");
+    editorCell.setCellId("Constant_gp4zyx_1");
     Style style = new StyleImpl();
     new keywordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_gp4zyx_b1a() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x177c2feaf3463710L, 0x407004b11f167886L, "modelsOnly");

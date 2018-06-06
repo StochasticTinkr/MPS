@@ -46,24 +46,24 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
   }
 
   /*package*/ EditorCell createCell() {
-    return createAlternation_85xxz0_a();
+    return createAlternation_0();
   }
 
-  private EditorCell createAlternation_85xxz0_a() {
+  private EditorCell createAlternation_0() {
     boolean alternationCondition = true;
     alternationCondition = nodeCondition_85xxz0_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = createRefNodeList_85xxz0_a0();
+      editorCell = createRefNodeList_0();
     } else {
-      editorCell = createCollection_85xxz0_a0();
+      editorCell = createCollection_0();
     }
     return editorCell;
   }
   private boolean nodeCondition_85xxz0_a0() {
     return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).isNotEmpty();
   }
-  private EditorCell createRefNodeList_85xxz0_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new HasAnnotation_AnnotationComponent_ComponentBuilder_a.annotationListHandler_85xxz0_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("HAAC_refNodeList_annotation");
@@ -72,7 +72,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setFoldable(true);
-    editorCell.setFoldedCell(createConstant_85xxz0_a0a());
+    editorCell.setFoldedCell(createConstant_0());
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
@@ -129,7 +129,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
       }
     }
   }
-  private EditorCell createConstant_85xxz0_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "@{...}");
     editorCell.setCellId("Constant_85xxz0_a0a");
     Style style = new StyleImpl();
@@ -138,7 +138,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_85xxz0_a0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_85xxz0_a0");
     Style style = new StyleImpl();

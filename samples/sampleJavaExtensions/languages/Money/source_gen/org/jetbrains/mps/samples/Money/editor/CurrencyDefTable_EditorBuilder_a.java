@@ -39,25 +39,25 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_6q11gp_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_6q11gp_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_6q11gp_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_6q11gp_a0());
-    editorCell.addEditorCell(createRefNodeList_6q11gp_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createConstant_6q11gp_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Currencies");
     editorCell.setCellId("Constant_6q11gp_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_6q11gp_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new CurrencyDefTable_EditorBuilder_a.unitsListHandler_6q11gp_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_units");

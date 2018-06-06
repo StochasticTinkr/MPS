@@ -50,49 +50,49 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_lfvdu_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_lfvdu_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_lfvdu_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_lfvdu_a0());
-    editorCell.addEditorCell(createCollection_lfvdu_b0());
-    editorCell.addEditorCell(createCollection_lfvdu_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createCollection_2());
     return editorCell;
   }
-  private EditorCell createConstant_lfvdu_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "standalone descriptor");
     editorCell.setCellId("Constant_lfvdu_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_lfvdu_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_lfvdu_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_lfvdu_a1a());
-    editorCell.addEditorCell(createConstant_lfvdu_b1a());
-    editorCell.addEditorCell(createProperty_lfvdu_c1a());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_lfvdu_a1a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_lfvdu_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_lfvdu_b1a() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Generate initializer config");
     editorCell.setCellId("Constant_lfvdu_b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_lfvdu_c1a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x685ef16bc1750e9cL, 0x5f3b7568ba8feb0fL, "needInitConfig");
@@ -119,31 +119,31 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createCollection_lfvdu_c0() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_lfvdu_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_lfvdu_a2a());
-    editorCell.addEditorCell(createConstant_lfvdu_b2a());
-    editorCell.addEditorCell(createConstant_lfvdu_c2a());
-    editorCell.addEditorCell(createConstant_lfvdu_d2a());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createConstant_4());
+    editorCell.addEditorCell(createConstant_5());
+    editorCell.addEditorCell(createConstant_6());
     return editorCell;
   }
-  private EditorCell createConstant_lfvdu_a2a() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_lfvdu_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_lfvdu_b2a() {
+  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_lfvdu_b2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_lfvdu_c2a() {
+  private EditorCell createConstant_5() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "When true, generates a configuration file to get application and project components started from modules with MPS-controlled class loaders (generally, compileInMPS==true)");
     editorCell.setCellId("Constant_lfvdu_c2a");
     Style style = new StyleImpl();
@@ -153,7 +153,7 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_lfvdu_d2a() {
+  private EditorCell createConstant_6() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_lfvdu_d2a");
     editorCell.setDefaultText("");

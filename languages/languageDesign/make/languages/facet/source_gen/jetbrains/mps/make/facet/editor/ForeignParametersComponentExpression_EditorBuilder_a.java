@@ -44,26 +44,26 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_4od8my_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_4od8my_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_4od8my_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_4od8my_a0());
-    editorCell.addEditorCell(createConstant_4od8my_b0());
-    editorCell.addEditorCell(createRefNode_4od8my_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     if (nodeCondition_4od8my_a3a()) {
-      editorCell.addEditorCell(createCollection_4od8my_d0());
+      editorCell.addEditorCell(createCollection_1());
     }
     return editorCell;
   }
   private boolean nodeCondition_4od8my_a3a() {
     return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1e69fdb2a034c3f8L, 0x716499a90689fe76L, "resource"))).isNotEmpty();
   }
-  private EditorCell createRefNode_4od8my_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ForeignParametersComponentExpression_EditorBuilder_a.expressionSingleRoleHandler_4od8my_a0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), getEditorContext());
     return provider.createCell();
   }
@@ -121,7 +121,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
       return "<no expression>";
     }
   }
-  private EditorCell createConstant_4od8my_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ".");
     editorCell.setCellId("Constant_4od8my_b0");
     Style style = new StyleImpl();
@@ -130,7 +130,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_4od8my_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new ForeignParametersComponentExpression_EditorBuilder_a.operationSingleRoleHandler_4od8my_c0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), getEditorContext());
     return provider.createCell();
   }
@@ -185,17 +185,17 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
       return "<no operation>";
     }
   }
-  private EditorCell createCollection_4od8my_d0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_4od8my_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_4od8my_a3a());
-    editorCell.addEditorCell(createRefNode_4od8my_b3a());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_2());
     return editorCell;
   }
-  private EditorCell createConstant_4od8my_a3a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "@");
     editorCell.setCellId("Constant_4od8my_a3a");
     Style style = new StyleImpl();
@@ -206,7 +206,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_4od8my_b3a() {
+  private EditorCell createRefNode_2() {
     SingleRoleCellProvider provider = new ForeignParametersComponentExpression_EditorBuilder_a.resourceSingleRoleHandler_4od8my_b3a(myNode, MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1e69fdb2a034c3f8L, 0x716499a90689fe76L, "resource"), getEditorContext());
     return provider.createCell();
   }

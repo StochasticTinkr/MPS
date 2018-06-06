@@ -45,29 +45,29 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_of3p2o_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_of3p2o_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_of3p2o_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createCollection_of3p2o_a0());
-    editorCell.addEditorCell(createIndentCell_of3p2o_b0());
-    editorCell.addEditorCell(createRefNodeList_of3p2o_c0());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createIndentCell_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createCollection_of3p2o_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_of3p2o_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createRefNode_of3p2o_a0a());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createRefNode_of3p2o_a0a() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ModuleSuite_EditorBuilder_a.moduleRefSingleRoleHandler_of3p2o_a0a(myNode, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef"), getEditorContext());
     return provider.createCell();
   }
@@ -122,11 +122,11 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       return "<no moduleRef>";
     }
   }
-  private EditorCell createIndentCell_of3p2o_b0() {
+  private EditorCell createIndentCell_0() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createRefNodeList_of3p2o_c0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new ModuleSuite_EditorBuilder_a.testRefListHandler_of3p2o_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_testRef");

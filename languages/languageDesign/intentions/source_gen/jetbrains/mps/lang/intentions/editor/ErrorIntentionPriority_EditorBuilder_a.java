@@ -29,10 +29,10 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_6zy5c2_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_6zy5c2_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "error");
     editorCell.setCellId("Constant_6zy5c2_a");
     editorCell.setBig(true);

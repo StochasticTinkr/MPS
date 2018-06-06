@@ -33,22 +33,22 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_5d67ir_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_5d67ir_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_5d67ir_a");
+    editorCell.setCellId("Collection_5d67ir_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_5d67ir_a0());
-    editorCell.addEditorCell(createConstant_5d67ir_b0());
-    editorCell.addEditorCell(createConstant_5d67ir_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
-  private EditorCell createConstant_5d67ir_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Get node 'containingLink' operation");
-    editorCell.setCellId("Constant_5d67ir_a0");
+    editorCell.setCellId("Constant_5d67ir_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
@@ -56,15 +56,15 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_5d67ir_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
-    editorCell.setCellId("Constant_5d67ir_b0");
+    editorCell.setCellId("Constant_5d67ir_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_5d67ir_c0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Returns aggregation LinkDeclararion defined in concept of parent node and representing containment reference for this node");
-    editorCell.setCellId("Constant_5d67ir_c0");
+    editorCell.setCellId("Constant_5d67ir_2");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);

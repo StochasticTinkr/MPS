@@ -41,36 +41,36 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_80j1jf_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_80j1jf_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_80j1jf_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_80j1jf_a0());
-    editorCell.addEditorCell(createCollection_80j1jf_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createConstant_80j1jf_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "editors");
     editorCell.setCellId("Constant_80j1jf_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_80j1jf_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_80j1jf_b0");
-    editorCell.addEditorCell(createIndentCell_80j1jf_a1a());
-    editorCell.addEditorCell(createRefNodeList_80j1jf_b1a());
+    editorCell.addEditorCell(createIndentCell_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createIndentCell_80j1jf_a1a() {
+  private EditorCell createIndentCell_0() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createRefNodeList_80j1jf_b1a() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new EditorAspectDeclaration_EditorBuilder_a.editorsListHandler_80j1jf_b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_editors");

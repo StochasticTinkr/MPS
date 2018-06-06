@@ -57,26 +57,26 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_1i9du0_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_1i9du0_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_1i9du0_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
     if (nodeCondition_1i9du0_a0a()) {
-      editorCell.addEditorCell(createConstant_1i9du0_a0());
+      editorCell.addEditorCell(createConstant_0());
     }
-    editorCell.addEditorCell(createConstant_1i9du0_b0());
-    editorCell.addEditorCell(createRefNode_1i9du0_c0());
-    editorCell.addEditorCell(createRefNodeList_1i9du0_d0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
   private boolean nodeCondition_1i9du0_a0a() {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(myNode), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61fe82bL, "jetbrains.mps.build.structure.BuildSourceSetContainer")));
   }
-  private EditorCell createConstant_1i9du0_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "files");
     editorCell.setCellId("Constant_1i9du0_a0");
     Style style = new StyleImpl();
@@ -97,7 +97,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "BuildInputResourceSet" + ")", new SNodePointer("r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)", "7753544965996771686"));
     }
   }
-  private EditorCell createConstant_1i9du0_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "from");
     editorCell.setCellId("Constant_1i9du0_b0");
     Style style = new StyleImpl();
@@ -106,7 +106,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_1i9du0_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new BuildInputFiles_EditorBuilder_a.dirSingleRoleHandler_1i9du0_c0(myNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, 0x48d5d03db92245a6L, "dir"), getEditorContext());
     return provider.createCell();
   }
@@ -164,7 +164,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       return "<no dir>";
     }
   }
-  private EditorCell createRefNodeList_1i9du0_d0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new BuildInputFiles_EditorBuilder_a.selectorsListHandler_1i9du0_d0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_selectors");
@@ -207,7 +207,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(selectorsListHandler_1i9du0_d0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, 0x48d5d03db92245f7L, "selectors")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_1i9du0_a3a();
+        emptyCell = createConstant_2();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -227,7 +227,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
         }
       }
     }
-    private EditorCell createConstant_1i9du0_a3a() {
+    private EditorCell createConstant_2() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
       editorCell.setCellId("Constant_1i9du0_a3a");
       Style style = new StyleImpl();

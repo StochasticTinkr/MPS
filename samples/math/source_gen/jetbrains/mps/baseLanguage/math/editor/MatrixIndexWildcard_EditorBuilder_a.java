@@ -28,10 +28,10 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_do4b1s_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_do4b1s_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "*");
     editorCell.setCellId("Constant_do4b1s_a");
     editorCell.setBig(true);

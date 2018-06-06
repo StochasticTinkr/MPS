@@ -39,25 +39,25 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_avk0kx_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_avk0kx_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_avk0kx_a_0");
+    editorCell.setCellId("Collection_avk0kx_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_avk0kx_a0_0());
-    editorCell.addEditorCell(createRefNode_avk0kx_b0_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_avk0kx_a0_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Error message : ");
-    editorCell.setCellId("Constant_avk0kx_a0_0");
+    editorCell.setCellId("Constant_avk0kx_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_avk0kx_b0_0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new AssertStatement_InspectorBuilder_a.messageSingleRoleHandler_avk0kx_b0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10e50ecba3dL, 0x10e50ed92e0L, "message"), getEditorContext());
     return provider.createCell();
   }

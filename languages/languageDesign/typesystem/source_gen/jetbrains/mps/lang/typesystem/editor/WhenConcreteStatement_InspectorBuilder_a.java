@@ -48,27 +48,27 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_u56bem_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_u56bem_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_u56bem_a_0");
+    editorCell.setCellId("Collection_u56bem_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_u56bem_a0_0());
-    editorCell.addEditorCell(createProperty_u56bem_b0());
-    editorCell.addEditorCell(createConstant_u56bem_c0());
-    editorCell.addEditorCell(createProperty_u56bem_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createConstant_u56bem_a0_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "is shallow:");
-    editorCell.setCellId("Constant_u56bem_a0_0");
+    editorCell.setCellId("Constant_u56bem_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_u56bem_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114177ce6cdL, 0x11dbf947714L, "isShallow");
@@ -98,13 +98,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_u56bem_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "skips error:");
-    editorCell.setCellId("Constant_u56bem_c0");
+    editorCell.setCellId("Constant_u56bem_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_u56bem_d0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114177ce6cdL, 0x11f3692d9c3L, "skipsError");

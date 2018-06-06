@@ -40,20 +40,20 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_fp74b8_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_fp74b8_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_fp74b8_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_fp74b8_a0());
-    editorCell.addEditorCell(createConstant_fp74b8_b0());
-    editorCell.addEditorCell(createRefNode_fp74b8_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_fp74b8_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new OrCellSelector_EditorBuilder_a.leftSelectorSingleRoleHandler_fp74b8_a0(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b040L, "leftSelector"), getEditorContext());
     return provider.createCell();
   }
@@ -109,7 +109,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
       return "<no leftSelector>";
     }
   }
-  private EditorCell createConstant_fp74b8_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "||");
     editorCell.setCellId("Constant_fp74b8_b0");
     Style style = new StyleImpl();
@@ -118,7 +118,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_fp74b8_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new OrCellSelector_EditorBuilder_a.rightSelectorSingleRoleHandler_fp74b8_c0(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b042L, "rightSelector"), getEditorContext());
     return provider.createCell();
   }

@@ -38,10 +38,10 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_x1gmbt_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_x1gmbt_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_x1gmbt_a");
     editorCell.setBig(true);
@@ -52,10 +52,10 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     HandleEnterInTheEnd_Actions.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.addEditorCell(createModelAccess_x1gmbt_a0());
+    editorCell.addEditorCell(createModelAccess_0());
     return editorCell;
   }
-  private EditorCell createModelAccess_x1gmbt_a0() {
+  private EditorCell createModelAccess_0() {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
         return SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text"));

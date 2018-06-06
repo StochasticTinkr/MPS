@@ -28,10 +28,10 @@ import jetbrains.mps.lang.editor.styleTests.editor.TestStylesheet_StyleSheet.hug
   }
 
   /*package*/ EditorCell createCell() {
-    return createComponent_w76kqt_a();
+    return createComponent_0();
   }
 
-  private EditorCell createComponent_w76kqt_a() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.styleTests.editor.StyleTest_EditorComponent");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {

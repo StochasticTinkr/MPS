@@ -62,17 +62,17 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_mlskyf_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_mlskyf_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_mlskyf_a");
-    editorCell.addEditorCell(createProperty_mlskyf_a0());
-    editorCell.addEditorCell(createCollection_mlskyf_b0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createProperty_mlskyf_a0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0x34bd237e1c9c3f8bL, 0x34bd237e1c9d9533L, "theProperty");
@@ -344,13 +344,13 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private EditorCell createCollection_mlskyf_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Superscript());
     editorCell.setCellId("Collection_mlskyf_b0");
-    editorCell.addEditorCell(createProperty_mlskyf_a1a());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createProperty_mlskyf_a1a() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0x34bd237e1c9c3f8bL, 0x34bd237e1c9d9533L, "theProperty");
@@ -359,7 +359,7 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
       editorCell.setDefaultText("<no theProperty>");
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.FORWARD));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.BACKWARD));
-      editorCell.setCellId("PISC_property_theProperty_1");
+      editorCell.setCellId("PISC_property_theProperty1");
       Style style = new StyleImpl();
       style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.NORMAL);
       style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);

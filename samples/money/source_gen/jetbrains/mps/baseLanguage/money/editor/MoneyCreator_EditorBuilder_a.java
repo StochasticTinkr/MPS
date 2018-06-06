@@ -39,29 +39,29 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ccfkrk_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ccfkrk_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ccfkrk_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_ccfkrk_a0());
-    editorCell.addEditorCell(createConstant_ccfkrk_b0());
-    editorCell.addEditorCell(createRefNode_ccfkrk_c0());
-    editorCell.addEditorCell(createConstant_ccfkrk_d0());
-    editorCell.addEditorCell(createRefNode_ccfkrk_e0());
-    editorCell.addEditorCell(createConstant_ccfkrk_f0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createConstant_3());
     return editorCell;
   }
-  private EditorCell createConstant_ccfkrk_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Money");
     editorCell.setCellId("Constant_ccfkrk_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_ccfkrk_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
     editorCell.setCellId("Constant_ccfkrk_b0");
     Style style = new StyleImpl();
@@ -70,7 +70,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_ccfkrk_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new MoneyCreator_EditorBuilder_a.amountSingleRoleHandler_ccfkrk_c0(myNode, MetaAdapterFactory.getContainmentLink(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, 0x11473383db1L, "amount"), getEditorContext());
     return provider.createCell();
   }
@@ -125,13 +125,13 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no amount>";
     }
   }
-  private EditorCell createConstant_ccfkrk_d0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ",");
     editorCell.setCellId("Constant_ccfkrk_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_ccfkrk_e0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new MoneyCreator_EditorBuilder_a.currencySingleRoleHandler_ccfkrk_e0(myNode, MetaAdapterFactory.getContainmentLink(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, 0x11473390f4aL, "currency"), getEditorContext());
     return provider.createCell();
   }
@@ -186,7 +186,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no currency>";
     }
   }
-  private EditorCell createConstant_ccfkrk_f0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
     editorCell.setCellId("Constant_ccfkrk_f0");
     Style style = new StyleImpl();

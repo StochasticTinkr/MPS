@@ -58,21 +58,21 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_1fg3ie_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_1fg3ie_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_1fg3ie_a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createRefNodeList_1fg3ie_a0());
-    editorCell.addEditorCell(createRefNodeList_1fg3ie_b0());
-    editorCell.addEditorCell(createCollection_1fg3ie_c0());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createRefNodeList_1());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createRefNodeList_1fg3ie_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new RefNodeList_IStyleContainer_ComponentBuilder_a.childrenListHandler_1fg3ie_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("RNLISC_refNodeList_children");
@@ -377,10 +377,10 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private EditorCell createRefNodeList_1fg3ie_b0() {
+  private EditorCell createRefNodeList_1() {
     AbstractCellListHandler handler = new RefNodeList_IStyleContainer_ComponentBuilder_a.childrenListHandler_1fg3ie_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
-    editorCell.setCellId("RNLISC_refNodeList_children_1");
+    editorCell.setCellId("RNLISC_refNodeList_children1");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, _StyleParameter_QueryFunction_1fg3ie_a1b0());
@@ -457,19 +457,19 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
   private boolean _StyleParameter_QueryFunction_1fg3ie_a5b0() {
     return getEditorContext() != null || getNode() != null;
   }
-  private EditorCell createCollection_1fg3ie_c0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Superscript());
     editorCell.setCellId("Collection_1fg3ie_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createRefNodeList_1fg3ie_a2a());
+    editorCell.addEditorCell(createRefNodeList_2());
     return editorCell;
   }
-  private EditorCell createRefNodeList_1fg3ie_a2a() {
+  private EditorCell createRefNodeList_2() {
     AbstractCellListHandler handler = new RefNodeList_IStyleContainer_ComponentBuilder_a.childrenListHandler_1fg3ie_a2a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Superscript(), false);
-    editorCell.setCellId("RNLISC_refNodeList_children_2");
+    editorCell.setCellId("RNLISC_refNodeList_children2");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.NORMAL);
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);

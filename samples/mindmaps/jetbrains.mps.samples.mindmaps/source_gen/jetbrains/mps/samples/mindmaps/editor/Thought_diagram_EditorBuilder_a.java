@@ -48,10 +48,10 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentVi
   }
 
   /*package*/ EditorCell createCell() {
-    return createDiagramNode_a6gtrz_a();
+    return createDiagramNode_0();
   }
 
-  private EditorCell createDiagramNode_a6gtrz_a() {
+  private EditorCell createDiagramNode_0() {
     BlockCell editorCell = new Thought_diagram_EditorBuilder_a.BlockCellImpl_a6gtrz_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramNode_a6gtrz_a");
     editorCell.setBig(true);

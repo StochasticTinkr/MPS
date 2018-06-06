@@ -38,10 +38,10 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCustom_9j55p5_a();
+    return createCustom_0();
   }
 
-  private EditorCell createCustom_9j55p5_a() {
+  private EditorCell createCustom_0() {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider(myNode) {

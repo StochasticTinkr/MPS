@@ -50,26 +50,26 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_xuwwk0_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_xuwwk0_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_xuwwk0_a_0");
+    editorCell.setCellId("Collection_xuwwk0_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_xuwwk0_a0());
-    editorCell.addEditorCell(createProperty_xuwwk0_b0());
-    editorCell.addEditorCell(createConstant_xuwwk0_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_xuwwk0_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Has exception");
-    editorCell.setCellId("Constant_xuwwk0_a0");
+    editorCell.setCellId("Constant_xuwwk0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_xuwwk0_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc43f6f0fL, "hasException");
@@ -96,9 +96,9 @@ import jetbrains.mps.nodeEditor.MPSColors;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_xuwwk0_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Alt+Enter");
-    editorCell.setCellId("Constant_xuwwk0_c0");
+    editorCell.setCellId("Constant_xuwwk0_1");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));

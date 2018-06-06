@@ -41,20 +41,20 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ayfre3_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ayfre3_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ayfre3_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_ayfre3_a0());
-    editorCell.addEditorCell(createRefNode_ayfre3_b0());
-    editorCell.addEditorCell(createConstant_ayfre3_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_ayfre3_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "composite");
     editorCell.setCellId("Constant_ayfre3_a0");
     Style style = new StyleImpl();
@@ -64,7 +64,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_ayfre3_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new CompositeWithParentScopeExpression_EditorBuilder_a.exprSingleRoleHandler_ayfre3_b0(myNode, MetaAdapterFactory.getContainmentLink(0xd8f591ec4d864af2L, 0x9f92a9e93c803ffaL, 0x701a9814629119bdL, 0x701a98146292ea53L, "expr"), getEditorContext());
     return provider.createCell();
   }
@@ -119,7 +119,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return "<no expr>";
     }
   }
-  private EditorCell createConstant_ayfre3_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "with parent scope");
     editorCell.setCellId("Constant_ayfre3_c0");
     Style style = new StyleImpl();

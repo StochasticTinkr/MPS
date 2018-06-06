@@ -42,16 +42,16 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_gjudtn_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_gjudtn_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_gjudtn_a");
-    editorCell.addEditorCell(createRefNodeList_gjudtn_a0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createRefNodeList_gjudtn_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new ClassifierMembers_Component_ComponentBuilder_a.memberListHandler_gjudtn_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("CMC_refNodeList_member");
@@ -100,7 +100,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(memberListHandler_gjudtn_a0.this.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_gjudtn_a0a();
+        emptyCell = createConstant_0();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -120,7 +120,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
         }
       }
     }
-    private EditorCell createConstant_gjudtn_a0a() {
+    private EditorCell createConstant_0() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
       editorCell.setCellId("Constant_gjudtn_a0a");
       Style style = new StyleImpl();

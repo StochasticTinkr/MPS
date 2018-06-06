@@ -58,25 +58,25 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_v24tt6_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_v24tt6_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_v24tt6_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
     if (nodeCondition_v24tt6_a0a()) {
-      editorCell.addEditorCell(createConstant_v24tt6_a0());
+      editorCell.addEditorCell(createConstant_0());
     }
-    editorCell.addEditorCell(createRefNode_v24tt6_b0());
-    editorCell.addEditorCell(createProperty_v24tt6_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
   private boolean nodeCondition_v24tt6_a0a() {
     return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d164L, 0x1c6f8dad3c495fe9L, "condition")) != null);
   }
-  private EditorCell createConstant_v24tt6_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "cond");
     editorCell.setCellId("Constant_v24tt6_a0");
     Style style = new StyleImpl();
@@ -85,7 +85,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_v24tt6_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ParameterDescriptor_EditorBuilder_a.typeSingleRoleHandler_v24tt6_b0(myNode, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d164L, 0x340eb2bd2e03d166L, "type"), getEditorContext());
     return provider.createCell();
   }
@@ -140,7 +140,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no type>";
     }
   }
-  private EditorCell createProperty_v24tt6_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");

@@ -38,10 +38,10 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
   }
 
   /*package*/ EditorCell createCell() {
-    return createDiagramNode_t2nwzx_a();
+    return createDiagramNode_0();
   }
 
-  private EditorCell createDiagramNode_t2nwzx_a() {
+  private EditorCell createDiagramNode_0() {
     BlockCell editorCell = new RectangleNode_EditorBuilder_a.BlockCellImpl_t2nwzx_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramNode_t2nwzx_a");
     editorCell.setBig(true);

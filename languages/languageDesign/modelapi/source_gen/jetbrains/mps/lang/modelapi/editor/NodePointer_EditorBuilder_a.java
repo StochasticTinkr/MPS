@@ -56,20 +56,20 @@ import jetbrains.mps.lang.modelapi.behavior.NodeIdentity__BehaviorDescriptor;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_4hgp54_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_4hgp54_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_4hgp54_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_4hgp54_a0());
-    editorCell.addEditorCell(createConstant_4hgp54_b0());
-    editorCell.addEditorCell(createProperty_4hgp54_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createRefNode_4hgp54_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new NodePointer_EditorBuilder_a.modelRefSingleRoleHandler_4hgp54_a0(myNode, MetaAdapterFactory.getContainmentLink(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e35fL, 0x45e1bb6ef159cf84L, "modelRef"), getEditorContext());
     return provider.createCell();
   }
@@ -124,7 +124,7 @@ import jetbrains.mps.lang.modelapi.behavior.NodeIdentity__BehaviorDescriptor;
       return "<no modelRef>";
     }
   }
-  private EditorCell createConstant_4hgp54_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
     editorCell.setCellId("Constant_4hgp54_b0");
     Style style = new StyleImpl();
@@ -134,7 +134,7 @@ import jetbrains.mps.lang.modelapi.behavior.NodeIdentity__BehaviorDescriptor;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_4hgp54_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e35fL, 0x45e1bb6ef159cf88L, "nodeId");

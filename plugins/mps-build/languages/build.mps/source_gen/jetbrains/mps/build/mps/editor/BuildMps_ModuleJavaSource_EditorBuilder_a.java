@@ -40,24 +40,24 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_uf20rn_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_uf20rn_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_uf20rn_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_uf20rn_a0());
+    editorCell.addEditorCell(createRefNode_0());
     if (nodeCondition_uf20rn_a1a()) {
-      editorCell.addEditorCell(createConstant_uf20rn_b0());
+      editorCell.addEditorCell(createConstant_0());
     }
     return editorCell;
   }
   private boolean nodeCondition_uf20rn_a1a() {
     return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334bdeaL, 0x52da585100dba65aL, "isGenerated"));
   }
-  private EditorCell createRefNode_uf20rn_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new BuildMps_ModuleJavaSource_EditorBuilder_a.folderSingleRoleHandler_uf20rn_a0(myNode, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334bdeaL, 0x48e82d508334bdecL, "folder"), getEditorContext());
     return provider.createCell();
   }
@@ -112,7 +112,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
       return "<no folder>";
     }
   }
-  private EditorCell createConstant_uf20rn_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(generated)");
     editorCell.setCellId("Constant_uf20rn_b0");
     Style style = new StyleImpl();

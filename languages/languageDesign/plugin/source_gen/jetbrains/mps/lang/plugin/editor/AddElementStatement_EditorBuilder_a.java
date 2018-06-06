@@ -39,26 +39,26 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_92vjrw_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_92vjrw_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_92vjrw_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_92vjrw_a0());
-    editorCell.addEditorCell(createRefNode_92vjrw_b0());
-    editorCell.addEditorCell(createConstant_92vjrw_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_92vjrw_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "addJavaAction");
     editorCell.setCellId("Constant_92vjrw_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_92vjrw_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new AddElementStatement_EditorBuilder_a.expressionSingleRoleHandler_92vjrw_b0(myNode, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f7a2d1aL, 0x1190f7a7992L, "expression"), getEditorContext());
     return provider.createCell();
   }
@@ -113,7 +113,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
       return "<no expression>";
     }
   }
-  private EditorCell createConstant_92vjrw_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ";");
     editorCell.setCellId("Constant_92vjrw_c0");
     Style style = new StyleImpl();

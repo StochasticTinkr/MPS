@@ -49,20 +49,20 @@ import jetbrains.mps.smodel.SNodePointer;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_sl2ryj_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_sl2ryj_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_sl2ryj_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_sl2ryj_a0());
-    editorCell.addEditorCell(createComponent_sl2ryj_b0());
-    editorCell.addEditorCell(createRefNode_sl2ryj_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_sl2ryj_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new DecimalBinaryOperation_EditorBuilder_a.leftExpressionSingleRoleHandler_sl2ryj_a0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), getEditorContext());
     return provider.createCell();
   }
@@ -117,7 +117,7 @@ import jetbrains.mps.smodel.SNodePointer;
       return "<no leftExpression>";
     }
   }
-  private EditorCell createComponent_sl2ryj_b0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
@@ -138,7 +138,7 @@ import jetbrains.mps.smodel.SNodePointer;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "BinaryOperation" + ")", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "2886182022232400532"));
     }
   }
-  private EditorCell createRefNode_sl2ryj_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new DecimalBinaryOperation_EditorBuilder_a.rightExpressionSingleRoleHandler_sl2ryj_c0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), getEditorContext());
     return provider.createCell();
   }

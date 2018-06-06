@@ -56,24 +56,24 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_512sof_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_512sof_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_512sof_a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     if (nodeCondition_512sof_a0a()) {
-      editorCell.addEditorCell(createConstant_512sof_a0());
+      editorCell.addEditorCell(createConstant_0());
     }
     return editorCell;
   }
   private boolean nodeCondition_512sof_a0a() {
     return getEditorContext() != null && myNode != null;
   }
-  private EditorCell createConstant_512sof_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "AllOptions");
     editorCell.setCellId("custom_cell_id");
     if (nodeCondition_512sof_a0a_0()) {

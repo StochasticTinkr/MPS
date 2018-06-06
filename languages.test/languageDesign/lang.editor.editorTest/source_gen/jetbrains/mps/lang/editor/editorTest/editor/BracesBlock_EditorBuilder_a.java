@@ -39,19 +39,19 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_nhnpdb_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_nhnpdb_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_nhnpdb_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNodeList_nhnpdb_a0());
+    editorCell.addEditorCell(createRefNodeList_0());
     editorCell.setUsesBraces(true);
     return editorCell;
   }
-  private EditorCell createRefNodeList_nhnpdb_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new BracesBlock_EditorBuilder_a.statementListHandler_nhnpdb_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_statement");
@@ -90,7 +90,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(statementListHandler_nhnpdb_a0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d62dbbL, 0x3361ce1b17d62dc2L, "statement")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = createConstant_nhnpdb_a0a();
+        emptyCell = createConstant_0();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -110,7 +110,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
         }
       }
     }
-    private EditorCell createConstant_nhnpdb_a0a() {
+    private EditorCell createConstant_0() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "no statements");
       editorCell.setCellId("Constant_nhnpdb_a0a");
       editorCell.setDefaultText("");

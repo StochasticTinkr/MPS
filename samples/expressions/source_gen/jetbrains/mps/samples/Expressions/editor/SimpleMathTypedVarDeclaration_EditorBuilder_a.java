@@ -52,21 +52,21 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_8vy4is_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_8vy4is_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_8vy4is_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_8vy4is_a0());
-    editorCell.addEditorCell(createProperty_8vy4is_b0());
-    editorCell.addEditorCell(createConstant_8vy4is_c0());
-    editorCell.addEditorCell(createRefNode_8vy4is_d0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_8vy4is_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new SimpleMathTypedVarDeclaration_EditorBuilder_a.typeSingleRoleHandler_8vy4is_a0(myNode, MetaAdapterFactory.getContainmentLink(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x77a1220187231476L, 0x77a122018723285dL, "type"), getEditorContext());
     return provider.createCell();
   }
@@ -121,7 +121,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       return "<no type>";
     }
   }
-  private EditorCell createProperty_8vy4is_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -148,13 +148,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_8vy4is_c0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
     editorCell.setCellId("Constant_8vy4is_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_8vy4is_d0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new SimpleMathTypedVarDeclaration_EditorBuilder_a.initializerSingleRoleHandler_8vy4is_d0(myNode, MetaAdapterFactory.getContainmentLink(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b832ccbfL, 0x1cc69153b832cd14L, "initializer"), getEditorContext());
     return provider.createCell();
   }

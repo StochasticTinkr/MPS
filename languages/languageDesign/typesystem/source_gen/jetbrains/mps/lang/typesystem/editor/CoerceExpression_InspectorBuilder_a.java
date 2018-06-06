@@ -49,39 +49,39 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_zfkwl8_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_zfkwl8_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_zfkwl8_a_0");
+    editorCell.setCellId("Collection_zfkwl8_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     if (nodeCondition_zfkwl8_a0a()) {
-      editorCell.addEditorCell(createCollection_zfkwl8_a0());
+      editorCell.addEditorCell(createCollection_1());
     }
     return editorCell;
   }
   private boolean nodeCondition_zfkwl8_a0a() {
     return SNodeOperations.getNodeAncestor(myNode, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x117c5668bf2L, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), false, false) != null;
   }
-  private EditorCell createCollection_zfkwl8_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_zfkwl8_a0");
-    editorCell.addEditorCell(createConstant_zfkwl8_a0a());
-    editorCell.addEditorCell(createProperty_zfkwl8_b0a());
+    editorCell.setCellId("Collection_zfkwl8_1");
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_zfkwl8_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "strong:");
-    editorCell.setCellId("Constant_zfkwl8_a0a");
+    editorCell.setCellId("Constant_zfkwl8_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_zfkwl8_b0a() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1127a2a14aeL, 0x6b67310af315d236L, "strong");

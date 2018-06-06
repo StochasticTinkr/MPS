@@ -55,19 +55,19 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_1clvom_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_1clvom_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_1clvom_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
     if (nodeCondition_1clvom_a0a()) {
-      editorCell.addEditorCell(createRefCell_1clvom_a0());
+      editorCell.addEditorCell(createRefCell_0());
     }
     if (nodeCondition_1clvom_a1a()) {
-      editorCell.addEditorCell(createRefCell_1clvom_b0());
+      editorCell.addEditorCell(createRefCell_1());
     }
     return editorCell;
   }
@@ -77,7 +77,7 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
   private boolean nodeCondition_1clvom_a1a() {
     return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration")) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L, "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) != null);
   }
-  private EditorCell createRefCell_1clvom_a0() {
+  private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -126,7 +126,7 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_1clvom_a0a0();
+      return createProperty_0();
     }
 
     @NotNull
@@ -135,7 +135,7 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
       return myNode;
     }
 
-    private EditorCell createProperty_1clvom_a0a0() {
+    private EditorCell createProperty_0() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -166,7 +166,7 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
       }
     }
   }
-  private EditorCell createRefCell_1clvom_b0() {
+  private EditorCell createRefCell_1() {
     final SReferenceLink referenceLink = MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration");
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
@@ -215,7 +215,7 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_1clvom_a0b0();
+      return createProperty_1();
     }
 
     @NotNull
@@ -224,7 +224,7 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
       return myNode;
     }
 
-    private EditorCell createProperty_1clvom_a0b0() {
+    private EditorCell createProperty_1() {
       getCellFactory().pushCellContext();
       try {
         final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -233,7 +233,7 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
         editorCell.setDefaultText("<no name>");
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(myNode, CellAction_DeleteNode.DeleteDirection.FORWARD));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(myNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
-        editorCell.setCellId("property_name_1");
+        editorCell.setCellId("property_name1");
         Style style = new StyleImpl();
         new persistentConfigurationRefDeprecatedStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
         editorCell.getStyle().putAll(style);

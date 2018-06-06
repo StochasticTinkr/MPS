@@ -74,28 +74,28 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_e8klwn_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_e8klwn_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCanBeSynchronized(true);
     editorCell.setCellId("Collection_e8klwn_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_e8klwn_a0());
-    editorCell.addEditorCell(createProperty_e8klwn_b0());
-    editorCell.addEditorCell(createConstant_e8klwn_c0());
-    editorCell.addEditorCell(createDiagram_e8klwn_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createDiagram_0());
     return editorCell;
   }
-  private EditorCell createConstant_e8klwn_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Mind map");
     editorCell.setCellId("Constant_e8klwn_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_e8klwn_b0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -125,7 +125,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_e8klwn_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_e8klwn_c0");
     Style style = new StyleImpl();
@@ -134,7 +134,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createDiagram_e8klwn_d0() {
+  private EditorCell createDiagram_0() {
     DiagramCell editorCell = new MindMap_diagram_EditorBuilder_a.DiagramCellImpl_e8klwn_d0(getEditorContext(), myNode);
     editorCell.setCellId("Diagram_e8klwn_d0");
     return editorCell;

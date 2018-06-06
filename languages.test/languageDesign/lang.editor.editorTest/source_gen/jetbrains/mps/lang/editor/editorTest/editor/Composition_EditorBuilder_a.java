@@ -43,26 +43,26 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_p8dkhd_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_p8dkhd_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_p8dkhd_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_p8dkhd_a0());
-    editorCell.addEditorCell(createRefNodeList_p8dkhd_b0());
-    editorCell.addEditorCell(createConstant_p8dkhd_c0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_p8dkhd_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "[");
     editorCell.setCellId("Constant_p8dkhd_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_p8dkhd_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new Composition_EditorBuilder_a.childrenListHandler_p8dkhd_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_children");
@@ -135,7 +135,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       return editorCell;
     }
   }
-  private EditorCell createConstant_p8dkhd_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "]");
     editorCell.setCellId("Constant_p8dkhd_c0");
     editorCell.setDefaultText("");

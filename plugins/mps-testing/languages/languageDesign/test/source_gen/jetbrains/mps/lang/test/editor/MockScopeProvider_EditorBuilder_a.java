@@ -44,27 +44,27 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_dzagmw_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_dzagmw_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_dzagmw_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_dzagmw_a0());
-    editorCell.addEditorCell(createRefNodeList_dzagmw_b0());
-    editorCell.addEditorCell(createConstant_dzagmw_c0());
-    editorCell.addEditorCell(createRefNode_dzagmw_d0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createConstant_dzagmw_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "mock scopes");
     editorCell.setCellId("Constant_dzagmw_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_dzagmw_b0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new MockScopeProvider_EditorBuilder_a.entriesListHandler_dzagmw_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_entries");
@@ -130,13 +130,13 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
       }
     }
   }
-  private EditorCell createConstant_dzagmw_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "in");
     editorCell.setCellId("Constant_dzagmw_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_dzagmw_d0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new MockScopeProvider_EditorBuilder_a.nodeSingleRoleHandler_dzagmw_d0(myNode, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf63919L, 0x1de1fbd5fbfc8785L, "node"), getEditorContext());
     return provider.createCell();
   }

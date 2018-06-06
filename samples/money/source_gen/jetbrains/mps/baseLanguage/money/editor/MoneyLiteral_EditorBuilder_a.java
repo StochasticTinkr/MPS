@@ -44,19 +44,19 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_84i1v2_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_84i1v2_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_84i1v2_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createProperty_84i1v2_a0());
-    editorCell.addEditorCell(createProperty_84i1v2_b0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createProperty_1());
     return editorCell;
   }
-  private EditorCell createProperty_84i1v2_a0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144ae7606aL, 0x1144aec21fdL, "amount");
@@ -83,7 +83,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createProperty_84i1v2_b0() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144ae7606aL, 0x1144aebdf40L, "currency");

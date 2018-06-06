@@ -44,23 +44,23 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_2l0ivi_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_2l0ivi_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_2l0ivi_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNodeList_2l0ivi_a0());
-    editorCell.addEditorCell(createConstant_2l0ivi_b0());
-    editorCell.addEditorCell(createRefNode_2l0ivi_c0());
-    editorCell.addEditorCell(createRefNode_2l0ivi_d0());
-    editorCell.addEditorCell(createRefNode_2l0ivi_e0());
-    editorCell.addEditorCell(createRefNode_2l0ivi_f0());
+    editorCell.addEditorCell(createRefNodeList_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createRefNode_2());
+    editorCell.addEditorCell(createRefNode_3());
     return editorCell;
   }
-  private EditorCell createRefNodeList_2l0ivi_a0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new SettingsEditor_EditorBuilder_a.propertyDeclarationListHandler_2l0ivi_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_propertyDeclaration");
@@ -120,7 +120,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
       }
     }
   }
-  private EditorCell createConstant_2l0ivi_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_2l0ivi_b0");
     Style style = new StyleImpl();
@@ -129,7 +129,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_2l0ivi_c0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new SettingsEditor_EditorBuilder_a.createEditorSingleRoleHandler_2l0ivi_c0(myNode, MetaAdapterFactory.getContainmentLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, 0xd244b712f91013eL, "createEditor"), getEditorContext());
     return provider.createCell();
   }
@@ -184,7 +184,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
       return "<no createEditor>";
     }
   }
-  private EditorCell createRefNode_2l0ivi_d0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new SettingsEditor_EditorBuilder_a.resetFromSingleRoleHandler_2l0ivi_d0(myNode, MetaAdapterFactory.getContainmentLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, 0xd244b712f910140L, "resetFrom"), getEditorContext());
     return provider.createCell();
   }
@@ -239,7 +239,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
       return "<no resetFrom>";
     }
   }
-  private EditorCell createRefNode_2l0ivi_e0() {
+  private EditorCell createRefNode_2() {
     SingleRoleCellProvider provider = new SettingsEditor_EditorBuilder_a.applyToSingleRoleHandler_2l0ivi_e0(myNode, MetaAdapterFactory.getContainmentLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, 0xd244b712f91013fL, "applyTo"), getEditorContext());
     return provider.createCell();
   }
@@ -294,7 +294,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
       return "<no applyTo>";
     }
   }
-  private EditorCell createRefNode_2l0ivi_f0() {
+  private EditorCell createRefNode_3() {
     SingleRoleCellProvider provider = new SettingsEditor_EditorBuilder_a.disposeSingleRoleHandler_2l0ivi_f0(myNode, MetaAdapterFactory.getContainmentLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, 0xd244b712f910141L, "dispose"), getEditorContext());
     return provider.createCell();
   }

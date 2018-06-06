@@ -28,10 +28,10 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
   }
 
   /*package*/ EditorCell createCell() {
-    return createModelAccess_fvq66v_a();
+    return createModelAccess_0();
   }
 
-  private EditorCell createModelAccess_fvq66v_a() {
+  private EditorCell createModelAccess_0() {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
         boolean var = getEditorContext() != null || myNode != null;

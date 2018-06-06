@@ -28,10 +28,10 @@ import jetbrains.mps.samples.Expressions.editor.SimpleMath_StyleSheet.typeStyleC
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_yrmxc2_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_yrmxc2_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "boolean");
     editorCell.setCellId("Constant_yrmxc2_a");
     editorCell.setBig(true);

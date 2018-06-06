@@ -41,20 +41,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_hrcg2g_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_hrcg2g_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_hrcg2g_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_hrcg2g_a0());
-    editorCell.addEditorCell(createConstant_hrcg2g_b0());
-    editorCell.addEditorCell(createRefNode_hrcg2g_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_hrcg2g_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new PropertyValue_EditorBuilder_a.variableSingleRoleHandler_hrcg2g_a0(myNode, MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d042b6L, 0x15b423b3f8d042b7L, "variable"), getEditorContext());
     return provider.createCell();
   }
@@ -112,13 +112,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       return "<no variable>";
     }
   }
-  private EditorCell createConstant_hrcg2g_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "->");
     editorCell.setCellId("Constant_hrcg2g_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_hrcg2g_c0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new PropertyValue_EditorBuilder_a.valueSingleRoleHandler_hrcg2g_c0(myNode, MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d042b6L, 0x15b423b3f8d042b8L, "value"), getEditorContext());
     return provider.createCell();
   }

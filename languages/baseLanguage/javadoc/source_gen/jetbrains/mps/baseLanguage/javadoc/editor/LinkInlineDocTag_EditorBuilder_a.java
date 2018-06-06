@@ -52,20 +52,20 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_bju3wr_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_bju3wr_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_bju3wr_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createComponent_bju3wr_a0());
-    editorCell.addEditorCell(createRefNode_bju3wr_b0());
-    editorCell.addEditorCell(createRefNodeList_bju3wr_c0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
-  private EditorCell createComponent_bju3wr_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new CommentTagStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -84,7 +84,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "BaseInlineDocTag" + ")", new SNodePointer("r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)", "5332352441311153871"));
     }
   }
-  private EditorCell createRefNode_bju3wr_b0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new LinkInlineDocTag_EditorBuilder_a.referenceSingleRoleHandler_bju3wr_b0(myNode, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x235789022a5d3a2fL, 0x235789022a5d3a34L, "reference"), getEditorContext());
     return provider.createCell();
   }
@@ -139,7 +139,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       return "<no reference>";
     }
   }
-  private EditorCell createRefNodeList_bju3wr_c0() {
+  private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new LinkInlineDocTag_EditorBuilder_a.lineListHandler_bju3wr_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_line");

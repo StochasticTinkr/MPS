@@ -52,20 +52,20 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_n5xu9i_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_n5xu9i_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_n5xu9i_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createRefNode_n5xu9i_a0());
-    editorCell.addEditorCell(createConstant_n5xu9i_b0());
-    editorCell.addEditorCell(createProperty_n5xu9i_c0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createRefNode_n5xu9i_a0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new ReferenceLinkId_EditorBuilder_a.conceptIdentitySingleRoleHandler_n5xu9i_a0(myNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, 0x74cb131f5923b6edL, "conceptIdentity"), getEditorContext());
     return provider.createCell();
   }
@@ -120,13 +120,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return "<no conceptIdentity>";
     }
   }
-  private EditorCell createConstant_n5xu9i_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "::");
     editorCell.setCellId("Constant_n5xu9i_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_n5xu9i_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, 0x74cb131f5923b6efL, "referenceName");

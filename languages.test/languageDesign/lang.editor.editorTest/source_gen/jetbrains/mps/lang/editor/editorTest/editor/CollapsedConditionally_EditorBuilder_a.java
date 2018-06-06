@@ -35,42 +35,42 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_gbleq0_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_gbleq0_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_gbleq0_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_gbleq0_a0());
-    editorCell.addEditorCell(createCollection_gbleq0_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createConstant_gbleq0_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "foldable node:");
     editorCell.setCellId("Constant_gbleq0_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_gbleq0_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_gbleq0_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setFoldable(true);
-    editorCell.setFoldedCell(createCollection_gbleq0_a1a());
-    editorCell.addEditorCell(createConstant_gbleq0_a1a());
-    editorCell.addEditorCell(createCollection_gbleq0_b1a());
-    editorCell.addEditorCell(createConstant_gbleq0_c1a());
+    editorCell.setFoldedCell(createCollection_3());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createCollection_2());
+    editorCell.addEditorCell(createConstant_6());
     editorCell.setInitiallyCollapsed(nodeCondition_gbleq0_a1a());
     return editorCell;
   }
   private boolean nodeCondition_gbleq0_a1a() {
     return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.getParent(myNode), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, "jetbrains.mps.lang.editor.editorTest.structure.FoldingContainer")), MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, 0xc06e5dab971f717L, "collapsed"));
   }
-  private EditorCell createConstant_gbleq0_a1a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
     editorCell.setCellId("Constant_gbleq0_a1a");
     Style style = new StyleImpl();
@@ -79,20 +79,20 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_gbleq0_b1a() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_gbleq0_b1a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_gbleq0_a1b0());
-    editorCell.addEditorCell(createConstant_gbleq0_b1b0());
-    editorCell.addEditorCell(createConstant_gbleq0_c1b0());
-    editorCell.addEditorCell(createConstant_gbleq0_d1b0());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createConstant_4());
+    editorCell.addEditorCell(createConstant_5());
     return editorCell;
   }
-  private EditorCell createConstant_gbleq0_a1b0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "1..");
     editorCell.setCellId("Constant_gbleq0_a1b0");
     Style style = new StyleImpl();
@@ -101,7 +101,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_gbleq0_b1b0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "2..");
     editorCell.setCellId("Constant_gbleq0_b1b0");
     Style style = new StyleImpl();
@@ -110,7 +110,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_gbleq0_c1b0() {
+  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "3..");
     editorCell.setCellId("Constant_gbleq0_c1b0");
     Style style = new StyleImpl();
@@ -119,13 +119,13 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_gbleq0_d1b0() {
+  private EditorCell createConstant_5() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "4..");
     editorCell.setCellId("Constant_gbleq0_d1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_gbleq0_c1a() {
+  private EditorCell createConstant_6() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
     editorCell.setCellId("Constant_gbleq0_c1a");
     Style style = new StyleImpl();
@@ -134,16 +134,16 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_gbleq0_a1a() {
+  private EditorCell createCollection_3() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_gbleq0_a1a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_gbleq0_a0b0());
+    editorCell.addEditorCell(createConstant_7());
     return editorCell;
   }
-  private EditorCell createConstant_gbleq0_a0b0() {
+  private EditorCell createConstant_7() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<<folded>>");
     editorCell.setCellId("Constant_gbleq0_a0b0");
     Style style = new StyleImpl();

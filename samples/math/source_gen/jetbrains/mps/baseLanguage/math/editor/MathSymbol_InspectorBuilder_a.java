@@ -44,20 +44,20 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_b0ego6_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_b0ego6_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_b0ego6_a_0");
+    editorCell.setCellId("Collection_b0ego6_0");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createReadOnlyModelAccessor_b0ego6_a0());
-    editorCell.addEditorCell(createComponent_b0ego6_b0());
-    editorCell.addEditorCell(createRefNode_b0ego6_c0_0());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_0());
+    editorCell.addEditorCell(createComponent_0());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_b0ego6_a0() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return (String) MathSymbol__BehaviorDescriptor.getOpName_id1653mnvAgoA.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode)));
@@ -70,17 +70,17 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     }, myNode);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_b0ego6_a0");
+    editorCell.setCellId("ReadOnlyModelAccessor_b0ego6_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createComponent_b0ego6_b0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent");
     return editorCell;
   }
-  private EditorCell createRefNode_b0ego6_c0_0() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new MathSymbol_InspectorBuilder_a.preconditionSingleRoleHandler_b0ego6_c0(myNode, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cd41a5L, "precondition"), getEditorContext());
     return provider.createCell();
   }
