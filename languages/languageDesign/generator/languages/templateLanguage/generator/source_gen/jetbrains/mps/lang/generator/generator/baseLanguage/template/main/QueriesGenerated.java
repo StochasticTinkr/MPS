@@ -141,7 +141,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return _context.createIndexedName("ifMacro_Condition_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
   }
   public static Object propertyMacro_GetPropertyValue_62202629733007804880(final PropertyMacroContext _context) {
-    return _context.createIndexedName("ifMacro_Condition_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
+    return _context.createIndexedName("sourceNodeQuery_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
   }
   public static Object propertyMacro_GetPropertyValue_80804643610188628290(final PropertyMacroContext _context) {
     return _context.createUniqueName("templateArgumentQuery_", null);

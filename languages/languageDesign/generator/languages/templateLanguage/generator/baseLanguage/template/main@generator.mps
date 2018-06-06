@@ -2223,7 +2223,7 @@
                   </node>
                   <node concept="3cpWs3" id="3eT2yU0KSwb" role="32eq0w">
                     <node concept="Xl_RD" id="3eT2yU0JlWf" role="3uHU7B">
-                      <property role="Xl_RC" value="ifMacro_Condition_" />
+                      <property role="Xl_RC" value="sourceNodeQuery_" />
                     </node>
                     <node concept="2OqwBi" id="3eT2yU0KSwu" role="3uHU7w">
                       <node concept="liA8E" id="3eT2yU0KSwv" role="2OqNvi">
