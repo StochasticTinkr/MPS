@@ -5795,7 +5795,7 @@
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="16" />
         <property role="p6zMs" value="16" />
-        <property role="LIFWd" value="property_name_1" />
+        <property role="LIFWd" value="property_name1" />
       </node>
     </node>
   </node>
@@ -5930,7 +5930,7 @@
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="16" />
         <property role="p6zMs" value="16" />
-        <property role="LIFWd" value="property_name_3" />
+        <property role="LIFWd" value="property_name3" />
       </node>
     </node>
   </node>
@@ -5996,7 +5996,7 @@
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="26" />
         <property role="p6zMs" value="26" />
-        <property role="LIFWd" value="property_name_1" />
+        <property role="LIFWd" value="property_name1" />
       </node>
     </node>
   </node>
@@ -6062,7 +6062,7 @@
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="26" />
         <property role="p6zMs" value="26" />
-        <property role="LIFWd" value="property_name_2" />
+        <property role="LIFWd" value="property_name2" />
       </node>
     </node>
   </node>
@@ -6331,7 +6331,7 @@
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="16" />
         <property role="p6zMs" value="16" />
-        <property role="LIFWd" value="property_name_4" />
+        <property role="LIFWd" value="property_name4" />
       </node>
     </node>
   </node>
@@ -6398,7 +6398,7 @@
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="16" />
         <property role="p6zMs" value="16" />
-        <property role="LIFWd" value="property_name_5" />
+        <property role="LIFWd" value="property_name5" />
       </node>
     </node>
   </node>
