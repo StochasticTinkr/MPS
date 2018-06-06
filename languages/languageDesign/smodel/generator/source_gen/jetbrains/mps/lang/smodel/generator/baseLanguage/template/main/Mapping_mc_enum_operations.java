@@ -51,7 +51,7 @@ public class Mapping_mc_enum_operations extends MapConfigBase implements Templat
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
       {
-        final SNode switchInput1 = QueriesGenerated.ifMacro_Condition_27333969195536742240(new SourceSubstituteMacroNodeContext(context, switchMacroRef_3ivvp5_b0a0a0a2a1e));
+        final SNode switchInput1 = QueriesGenerated.sourceNodeQuery_27333969195536742240(new SourceSubstituteMacroNodeContext(context, switchMacroRef_3ivvp5_b0a0a0a2a1e));
         if (switchInput1 == null) {
           tlist1 = Collections.emptyList();
         } else {
@@ -91,7 +91,7 @@ public class Mapping_mc_enum_operations extends MapConfigBase implements Templat
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
       {
-        final SNode switchInput1 = QueriesGenerated.ifMacro_Condition_27333969195536910840(new SourceSubstituteMacroNodeContext(context, switchMacroRef_3ivvp5_b0a0a0a2a2f));
+        final SNode switchInput1 = QueriesGenerated.sourceNodeQuery_27333969195536910840(new SourceSubstituteMacroNodeContext(context, switchMacroRef_3ivvp5_b0a0a0a2a2f));
         if (switchInput1 == null) {
           tlist1 = Collections.emptyList();
         } else {

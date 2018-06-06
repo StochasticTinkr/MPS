@@ -40,7 +40,7 @@ public class Template_reduce_Heading extends TemplateDeclarationBase {
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.ifMacro_Condition_33083005030396837640(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_2x0e93_b0a0c0c0c0f));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_33083005030396837640(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_2x0e93_b0a0c0c0c0f));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_2x0e93_b0a0c0c0c0f, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039683764", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);

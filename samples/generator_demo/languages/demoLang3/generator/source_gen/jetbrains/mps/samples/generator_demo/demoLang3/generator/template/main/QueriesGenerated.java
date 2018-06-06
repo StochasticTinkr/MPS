@@ -89,14 +89,14 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     }) != null);
   }
-  public static SNode ifMacro_Condition_12285321599570(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_12285321599570(final SourceSubstituteMacroNodeContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8b9L, 0x11d45f8a8baL, "attribute"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals("enabled");
       }
     });
   }
-  public static SNode ifMacro_Condition_12285326128880(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_12285326128880(final SourceSubstituteMacroNodeContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8b9L, 0x11d45f8a8baL, "attribute"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals("background");
@@ -165,9 +165,9 @@ public class QueriesGenerated extends QueryProviderBase {
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.ifMacro_Condition_12285321599570(ctx);
+          return QueriesGenerated.sourceNodeQuery_12285321599570(ctx);
         case 1:
-          return QueriesGenerated.ifMacro_Condition_12285326128880(ctx);
+          return QueriesGenerated.sourceNodeQuery_12285326128880(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

@@ -49,7 +49,7 @@ public class Template_reduce_reflectiveInvokeThis extends TemplateDeclarationBas
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        SNode callInputNode2 = QueriesGenerated.ifMacro_Condition_30993917508922364020(new SourceSubstituteMacroNodeContext(context1, callMacro_f0s0cy_b0a0a1a3a2a5));
+        SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_30993917508922364020(new SourceSubstituteMacroNodeContext(context1, callMacro_f0s0cy_b0a0a1a3a2a5));
         TemplateContext context2 = context1.subContext(null, callInputNode2);
         if (callInputNode2 != null) {
           tlist2 = new Template_NodeOrConcept().apply(context2);

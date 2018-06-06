@@ -210,7 +210,7 @@ public class Template_RootCustom extends TemplateDeclarationBase implements Temp
           }
           {
             Collection<SNode> tlist23 = null;
-            final SNode copySrcInput23 = QueriesGenerated.ifMacro_Condition_41465641719924127850(new SourceSubstituteMacroNodeContext(context10, copySrcMacro_xizpik_b0a0c0e0b0g0b0e));
+            final SNode copySrcInput23 = QueriesGenerated.sourceNodeQuery_41465641719924127850(new SourceSubstituteMacroNodeContext(context10, copySrcMacro_xizpik_b0a0c0e0b0g0b0e));
             tlist23 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput23), copySrcMacro_xizpik_b0a0c0e0b0g0b0e, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412785", context10);
             for (SNode child24 : TemplateUtil.asNotNull(tlist23)) {
               tnode20.addChild(myAggregationLinks[10], child24);

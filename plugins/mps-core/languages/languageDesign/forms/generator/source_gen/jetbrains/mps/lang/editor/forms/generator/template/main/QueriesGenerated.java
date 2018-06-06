@@ -157,29 +157,29 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object referenceReduction_GetReferent_9toapy_a1(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox")), "defaultKeyMap");
   }
-  public static SNode ifMacro_Condition_46820061005727379920(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_46820061005727379920(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, 0x1298d6f05780ea9aL, "ui"));
   }
-  public static SNode ifMacro_Condition_82156125799041991700(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_82156125799041991700(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, 0x1298d6f05780ea9aL, "ui"));
   }
-  public static SNode ifMacro_Condition_82156125799041989490(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_82156125799041989490(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, 0x7203b81cfd6af4e6L, "label"));
   }
-  public static SNode ifMacro_Condition_35671420849516874280(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_35671420849516874280(final SourceSubstituteMacroNodeContext _context) {
     return null;
   }
-  public static SNode ifMacro_Condition_35671420849517104140(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_35671420849517104140(final SourceSubstituteMacroNodeContext _context) {
     return null;
   }
-  public static SNode ifMacro_Condition_25978833218441565620(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_25978833218441565620(final SourceSubstituteMacroNodeContext _context) {
     return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap")) == _context.getNode();
       }
     }).first();
   }
-  public static SNode ifMacro_Condition_25978833218441561270(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_25978833218441561270(final SourceSubstituteMacroNodeContext _context) {
     return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0xfbc4dbd371L, "keyMap")) == _context.getNode();
@@ -368,19 +368,19 @@ public class QueriesGenerated extends QueryProviderBase {
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.ifMacro_Condition_82156125799041991700(ctx);
+          return QueriesGenerated.sourceNodeQuery_82156125799041991700(ctx);
         case 1:
-          return QueriesGenerated.ifMacro_Condition_82156125799041989490(ctx);
+          return QueriesGenerated.sourceNodeQuery_82156125799041989490(ctx);
         case 2:
-          return QueriesGenerated.ifMacro_Condition_35671420849516874280(ctx);
+          return QueriesGenerated.sourceNodeQuery_35671420849516874280(ctx);
         case 3:
-          return QueriesGenerated.ifMacro_Condition_35671420849517104140(ctx);
+          return QueriesGenerated.sourceNodeQuery_35671420849517104140(ctx);
         case 4:
-          return QueriesGenerated.ifMacro_Condition_46820061005727379920(ctx);
+          return QueriesGenerated.sourceNodeQuery_46820061005727379920(ctx);
         case 5:
-          return QueriesGenerated.ifMacro_Condition_25978833218441561270(ctx);
+          return QueriesGenerated.sourceNodeQuery_25978833218441561270(ctx);
         case 6:
-          return QueriesGenerated.ifMacro_Condition_25978833218441565620(ctx);
+          return QueriesGenerated.sourceNodeQuery_25978833218441565620(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

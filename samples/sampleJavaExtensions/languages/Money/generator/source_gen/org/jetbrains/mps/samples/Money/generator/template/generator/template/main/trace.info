@@ -17,34 +17,34 @@
   </root>
   <root nodeRef="r:c68260e6-0a07-47e7-af7c-570ace5903cf(org.jetbrains.mps.samples.Money.generator.template.generator.template.main@generator)/2864272256649712529">
     <file name="QueriesGenerated.java">
-      <node id="2864272256649727834" at="60,111,61,187" concept="0" />
-      <node id="2864272256649728159" at="63,111,64,186" concept="0" />
-      <scope id="2864272256649727828" at="60,111,61,187" />
-      <scope id="2864272256649728153" at="63,111,64,186" />
+      <node id="2864272256649727834" at="60,109,61,187" concept="0" />
+      <node id="2864272256649728159" at="63,109,64,186" concept="0" />
+      <scope id="2864272256649727828" at="60,109,61,187" />
+      <scope id="2864272256649728153" at="63,109,64,186" />
     </file>
   </root>
   <root nodeRef="r:c68260e6-0a07-47e7-af7c-570ace5903cf(org.jetbrains.mps.samples.Money.generator.template.generator.template.main@generator)/2864272256651348747">
     <file name="QueriesGenerated.java">
-      <node id="2864272256651350068" at="66,111,67,187" concept="0" />
-      <node id="2864272256651350078" at="69,111,70,186" concept="0" />
-      <scope id="2864272256651350067" at="66,111,67,187" />
-      <scope id="2864272256651350077" at="69,111,70,186" />
+      <node id="2864272256651350068" at="66,109,67,187" concept="0" />
+      <node id="2864272256651350078" at="69,109,70,186" concept="0" />
+      <scope id="2864272256651350067" at="66,109,67,187" />
+      <scope id="2864272256651350077" at="69,109,70,186" />
     </file>
   </root>
   <root nodeRef="r:c68260e6-0a07-47e7-af7c-570ace5903cf(org.jetbrains.mps.samples.Money.generator.template.generator.template.main@generator)/2864272256651354468">
     <file name="QueriesGenerated.java">
-      <node id="2864272256651359472" at="72,111,73,187" concept="0" />
-      <node id="2864272256651359482" at="75,111,76,186" concept="0" />
-      <scope id="2864272256651359471" at="72,111,73,187" />
-      <scope id="2864272256651359481" at="75,111,76,186" />
+      <node id="2864272256651359472" at="72,109,73,187" concept="0" />
+      <node id="2864272256651359482" at="75,109,76,186" concept="0" />
+      <scope id="2864272256651359471" at="72,109,73,187" />
+      <scope id="2864272256651359481" at="75,109,76,186" />
     </file>
   </root>
   <root nodeRef="r:c68260e6-0a07-47e7-af7c-570ace5903cf(org.jetbrains.mps.samples.Money.generator.template.generator.template.main@generator)/2864272256651361896">
     <file name="QueriesGenerated.java">
-      <node id="2864272256651363164" at="78,111,79,187" concept="0" />
-      <node id="2864272256651363174" at="81,111,82,186" concept="0" />
-      <scope id="2864272256651363163" at="78,111,79,187" />
-      <scope id="2864272256651363173" at="81,111,82,186" />
+      <node id="2864272256651363164" at="78,109,79,187" concept="0" />
+      <node id="2864272256651363174" at="81,109,82,186" concept="0" />
+      <scope id="2864272256651363163" at="78,109,79,187" />
+      <scope id="2864272256651363173" at="81,109,82,186" />
     </file>
   </root>
   <root nodeRef="r:c68260e6-0a07-47e7-af7c-570ace5903cf(org.jetbrains.mps.samples.Money.generator.template.generator.template.main@generator)/5447719361346496651">
@@ -73,18 +73,18 @@
   </root>
   <root nodeRef="r:c68260e6-0a07-47e7-af7c-570ace5903cf(org.jetbrains.mps.samples.Money.generator.template.generator.template.main@generator)/5447719361346553551">
     <file name="QueriesGenerated.java">
-      <node id="5447719361346558524" at="90,111,91,186" concept="0" />
-      <node id="5447719361346558515" at="93,111,94,187" concept="0" />
-      <scope id="5447719361346558523" at="90,111,91,186" />
-      <scope id="5447719361346558514" at="93,111,94,187" />
+      <node id="5447719361346558524" at="90,109,91,186" concept="0" />
+      <node id="5447719361346558515" at="93,109,94,187" concept="0" />
+      <scope id="5447719361346558523" at="90,109,91,186" />
+      <scope id="5447719361346558514" at="93,109,94,187" />
     </file>
   </root>
   <root nodeRef="r:c68260e6-0a07-47e7-af7c-570ace5903cf(org.jetbrains.mps.samples.Money.generator.template.generator.template.main@generator)/5447719361346553568">
     <file name="QueriesGenerated.java">
-      <node id="5447719361346558535" at="84,111,85,186" concept="0" />
-      <node id="5447719361346558492" at="87,111,88,187" concept="0" />
-      <scope id="5447719361346558534" at="84,111,85,186" />
-      <scope id="5447719361346558491" at="87,111,88,187" />
+      <node id="5447719361346558535" at="84,109,85,186" concept="0" />
+      <node id="5447719361346558492" at="87,109,88,187" concept="0" />
+      <scope id="5447719361346558534" at="84,109,85,186" />
+      <scope id="5447719361346558491" at="87,109,88,187" />
     </file>
   </root>
 </debug-info>

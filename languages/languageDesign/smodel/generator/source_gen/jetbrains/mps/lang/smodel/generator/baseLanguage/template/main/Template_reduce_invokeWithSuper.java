@@ -61,7 +61,7 @@ public class Template_reduce_invokeWithSuper extends TemplateDeclarationBase {
           TemplateContext context3 = context2.subContext();
           {
             Collection<SNode> tlist4 = null;
-            SNode callInputNode4 = QueriesGenerated.ifMacro_Condition_30993917508921892140(new SourceSubstituteMacroNodeContext(context3, callMacro_6fy3ro_b0a0a1a2a1a1a5a5));
+            SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_30993917508921892140(new SourceSubstituteMacroNodeContext(context3, callMacro_6fy3ro_b0a0a1a2a1a1a5a5));
             TemplateContext context4 = context3.subContext(null, callInputNode4);
             if (callInputNode4 != null) {
               tlist4 = new Template_NodeOrConcept().apply(context4);
@@ -117,7 +117,7 @@ public class Template_reduce_invokeWithSuper extends TemplateDeclarationBase {
               TemplateContext context6 = context5.subContext();
               {
                 Collection<SNode> tlist13 = null;
-                final SNode copySrcInput13 = QueriesGenerated.ifMacro_Condition_30993917508921892530(new SourceSubstituteMacroNodeContext(context6, copySrcMacro_6fy3ro_b0a0c0c0b0d0b0c0f0f));
+                final SNode copySrcInput13 = QueriesGenerated.sourceNodeQuery_30993917508921892530(new SourceSubstituteMacroNodeContext(context6, copySrcMacro_6fy3ro_b0a0c0c0b0d0b0c0f0f));
                 tlist13 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput13), copySrcMacro_6fy3ro_b0a0c0c0b0d0b0c0f0f, "tpl/r:00000000-0000-4000-0000-011c89590303/3099391750892189253", context6);
                 for (SNode child14 : TemplateUtil.asNotNull(tlist13)) {
                   tnode12.addChild(myAggregationLinks[2], child14);

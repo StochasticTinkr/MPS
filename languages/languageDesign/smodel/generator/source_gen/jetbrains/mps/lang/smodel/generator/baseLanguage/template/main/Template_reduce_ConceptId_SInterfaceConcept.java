@@ -49,7 +49,7 @@ public class Template_reduce_ConceptId_SInterfaceConcept extends TemplateDeclara
       {
         Collection<SNode> tlist2 = null;
         {
-          final SNode switchInput2 = QueriesGenerated.ifMacro_Condition_28365210099350724920(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_acp5hl_b0a0a0a1a3a2a5));
+          final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_28365210099350724920(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_acp5hl_b0a0a0a1a3a2a5));
           if (switchInput2 == null) {
             {
               TemplateSwitchMapping switch2 = environment.getGenerator().getSwitch(templateSwitchNode_acp5hl_a0a0c0a1a1a3a2a5);

@@ -17,17 +17,17 @@
   <root nodeRef="r:5c6a8956-99fe-4c21-bc40-f07fc530339e(jetbrains.mps.lang.slanguage.generator.template.main@generator)/6171083915388337699">
     <file name="QueriesGenerated.java">
       <node id="3184053328214293633" at="33,113,34,333" concept="0" />
-      <node id="3184053328214293625" at="42,111,43,188" concept="0" />
+      <node id="3184053328214293625" at="42,109,43,188" concept="0" />
       <scope id="3184053328214293632" at="33,113,34,333" />
-      <scope id="3184053328214293624" at="42,111,43,188" />
+      <scope id="3184053328214293624" at="42,109,43,188" />
     </file>
   </root>
   <root nodeRef="r:5c6a8956-99fe-4c21-bc40-f07fc530339e(jetbrains.mps.lang.slanguage.generator.template.main@generator)/8149169565821881094">
     <file name="QueriesGenerated.java">
       <node id="2030416617761268420" at="30,113,31,333" concept="0" />
-      <node id="2030416617761266993" at="39,111,40,109" concept="0" />
+      <node id="2030416617761266993" at="39,109,40,109" concept="0" />
       <scope id="2030416617761268206" at="30,113,31,333" />
-      <scope id="2030416617761266992" at="39,111,40,109" />
+      <scope id="2030416617761266992" at="39,109,40,109" />
     </file>
   </root>
 </debug-info>

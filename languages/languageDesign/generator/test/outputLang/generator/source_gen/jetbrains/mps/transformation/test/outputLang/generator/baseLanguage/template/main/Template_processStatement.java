@@ -114,7 +114,7 @@ public class Template_processStatement extends TemplateDeclarationBase {
                   }
                   {
                     Collection<SNode> tlist9 = null;
-                    final SNode copySrcInput9 = QueriesGenerated.ifMacro_Condition_26813058942886950530(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_iblz6q_b0a0c0d0b0b0b0c0b0b0c0m));
+                    final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_26813058942886950530(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_iblz6q_b0a0c0d0b0b0b0c0b0b0c0m));
                     tlist9 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput9), copySrcMacro_iblz6q_b0a0c0d0b0b0b0c0b0b0c0m, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288695053", context5);
                     for (SNode child10 : TemplateUtil.asNotNull(tlist9)) {
                       tnode7.addChild(myAggregationLinks[3], child10);

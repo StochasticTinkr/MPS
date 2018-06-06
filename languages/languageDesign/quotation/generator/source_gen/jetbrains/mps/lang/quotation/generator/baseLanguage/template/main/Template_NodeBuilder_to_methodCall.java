@@ -189,7 +189,7 @@ public class Template_NodeBuilder_to_methodCall extends TemplateDeclarationBase 
               }
               {
                 Collection<SNode> tlist20 = null;
-                final SNode copySrcInput20 = QueriesGenerated.ifMacro_Condition_4296010796768825150(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_synbg_b0a0c0d0b0g0b0b0c0f));
+                final SNode copySrcInput20 = QueriesGenerated.sourceNodeQuery_4296010796768825150(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_synbg_b0a0c0d0b0g0b0b0c0f));
                 tlist20 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput20), copySrcMacro_synbg_b0a0c0d0b0g0b0b0c0f, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676882515", context5);
                 for (SNode child21 : TemplateUtil.asNotNull(tlist20)) {
                   tnode9.addChild(myAggregationLinks[6], child21);

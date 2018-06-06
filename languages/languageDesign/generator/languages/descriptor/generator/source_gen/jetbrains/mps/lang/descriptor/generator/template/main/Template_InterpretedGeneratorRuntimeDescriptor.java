@@ -43,7 +43,7 @@ public class Template_InterpretedGeneratorRuntimeDescriptor extends TemplateDecl
   protected Collection<SNode> applyNode0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final List<SNode> tlist1 = new ArrayList<SNode>();
-    final SNode sourceNode1 = QueriesGenerated.ifMacro_Condition_10666001527157340360(new SourceSubstituteMacroNodeContext(context, mapsrcMacroRef_mgoy7h_b0a0a2a4));
+    final SNode sourceNode1 = QueriesGenerated.sourceNodeQuery_10666001527157340360(new SourceSubstituteMacroNodeContext(context, mapsrcMacroRef_mgoy7h_b0a0a2a4));
     TemplateContext context1 = context.subContext(null, sourceNode1);
     if (sourceNode1 != null) {
       final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
@@ -1046,7 +1046,7 @@ public class Template_InterpretedGeneratorRuntimeDescriptor extends TemplateDecl
   }
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final List<SNode> tlist1 = new ArrayList<SNode>();
-    final SNode sourceNode1 = QueriesGenerated.ifMacro_Condition_10666001527157340360(new SourceSubstituteMacroNodeContext(context, mapsrcMacroRef_mgoy7h_b0a0a1a5));
+    final SNode sourceNode1 = QueriesGenerated.sourceNodeQuery_10666001527157340360(new SourceSubstituteMacroNodeContext(context, mapsrcMacroRef_mgoy7h_b0a0a1a5));
     TemplateContext context1 = context.subContext(null, sourceNode1);
     if (sourceNode1 != null) {
       final SNode tnode2 = environment.createOutputNode(myConcepts[0]);

@@ -100,17 +100,17 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     }) != null);
   }
-  public static SNode ifMacro_Condition_12286802322780(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_12286802322780(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8b6L, 0x11d45f8a8b8L, "rootElement"));
   }
-  public static SNode ifMacro_Condition_12286787525980(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_12286787525980(final SourceSubstituteMacroNodeContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8b9L, 0x11d45f8a8baL, "attribute"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals("enabled");
       }
     });
   }
-  public static SNode ifMacro_Condition_12286787526330(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_12286787526330(final SourceSubstituteMacroNodeContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8b9L, 0x11d45f8a8baL, "attribute"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals("background");
@@ -236,11 +236,11 @@ public class QueriesGenerated extends QueryProviderBase {
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.ifMacro_Condition_12286802322780(ctx);
+          return QueriesGenerated.sourceNodeQuery_12286802322780(ctx);
         case 1:
-          return QueriesGenerated.ifMacro_Condition_12286787525980(ctx);
+          return QueriesGenerated.sourceNodeQuery_12286787525980(ctx);
         case 2:
-          return QueriesGenerated.ifMacro_Condition_12286787526330(ctx);
+          return QueriesGenerated.sourceNodeQuery_12286787526330(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

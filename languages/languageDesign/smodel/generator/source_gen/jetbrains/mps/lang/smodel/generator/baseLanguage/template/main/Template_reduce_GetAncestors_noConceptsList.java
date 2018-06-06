@@ -46,7 +46,7 @@ public class Template_reduce_GetAncestors_noConceptsList extends TemplateDeclara
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.ifMacro_Condition_11731231732650(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_mxkg5_b0a0c0d0c0f));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_11731231732650(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_mxkg5_b0a0c0d0c0f));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_mxkg5_b0a0c0d0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/1173123173265", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);

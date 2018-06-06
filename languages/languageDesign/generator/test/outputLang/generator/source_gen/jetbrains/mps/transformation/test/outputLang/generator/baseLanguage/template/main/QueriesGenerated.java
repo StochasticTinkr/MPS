@@ -86,31 +86,31 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_42656361163630900860(final ReferenceMacroContext _context) {
     return "a";
   }
-  public static SNode ifMacro_Condition_41465641719924127850(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_41465641719924127850(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x398b8e251df78584L, 0x398b8e251df78585L, "statement"));
   }
-  public static SNode ifMacro_Condition_42656361163630937180(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_42656361163630937180(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("left"));
   }
-  public static SNode ifMacro_Condition_41465641719926170790(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_41465641719926170790(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("right"));
   }
-  public static SNode ifMacro_Condition_26813058942882835120(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_26813058942882835120(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getPatternVariable("patternVar_right"));
   }
-  public static SNode ifMacro_Condition_26813058942882834950(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_26813058942882834950(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getPatternVariable("patternVar_left"));
   }
-  public static SNode ifMacro_Condition_89007642487443226510(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_89007642487443226510(final SourceSubstituteMacroNodeContext _context) {
     return null;
   }
-  public static SNode ifMacro_Condition_26813058942883878170(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_26813058942883878170(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getPatternVariable("patternVar_right"));
   }
-  public static SNode ifMacro_Condition_26813058942883878160(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_26813058942883878160(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getPatternVariable("patternVar_left"));
   }
-  public static SNode ifMacro_Condition_26813058942886950530(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_26813058942886950530(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("expr"));
   }
   public static Object templateArgumentQuery_a0d(final TemplateArgumentContext _context) {

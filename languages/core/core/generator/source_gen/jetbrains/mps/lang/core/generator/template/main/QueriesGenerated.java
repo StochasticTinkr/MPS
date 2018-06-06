@@ -26,7 +26,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public QueriesGenerated() {
     super(1);
   }
-  public static SNode ifMacro_Condition_91005580624487441130(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_91005580624487441130(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, 0x2ab99f0d2248e89dL, "commentedNode"));
   }
   public static boolean mappingConfiguration_Condition_zu1o_a(final TemplateQueryContext _context) {
@@ -84,7 +84,7 @@ public class QueriesGenerated extends QueryProviderBase {
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.ifMacro_Condition_91005580624487441130(ctx);
+          return QueriesGenerated.sourceNodeQuery_91005580624487441130(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

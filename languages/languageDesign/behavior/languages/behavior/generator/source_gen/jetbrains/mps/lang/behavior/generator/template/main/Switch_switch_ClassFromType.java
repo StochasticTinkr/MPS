@@ -85,7 +85,7 @@ public class Switch_switch_ClassFromType extends TemplateSwitchBase implements T
           TemplateContext context4 = context1.subContext();
           {
             Collection<SNode> tlist7 = null;
-            final SNode copySrcInput7 = QueriesGenerated.ifMacro_Condition_5176512338944756060(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_ef4au6_b0a0c0c0b0c0b0f));
+            final SNode copySrcInput7 = QueriesGenerated.sourceNodeQuery_5176512338944756060(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_ef4au6_b0a0c0c0b0c0b0f));
             tlist7 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput7), copySrcMacro_ef4au6_b0a0c0c0b0c0b0f, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/517651233894475606", context4);
             for (SNode child8 : TemplateUtil.asNotNull(tlist7)) {
               tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"), child8);
@@ -146,7 +146,7 @@ public class Switch_switch_ClassFromType extends TemplateSwitchBase implements T
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      final SNode copySrcInput1 = QueriesGenerated.ifMacro_Condition_23569493416162728160(new SourceSubstituteMacroNodeContext(context, copySrcMacro_ef4au6_b0a0d0b9));
+      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_23569493416162728160(new SourceSubstituteMacroNodeContext(context, copySrcMacro_ef4au6_b0a0d0b9));
       tlist1 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput1), copySrcMacro_ef4au6_b0a0d0b9, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/2356949341616272816", context);
       return tlist1;
     }
@@ -160,7 +160,7 @@ public class Switch_switch_ClassFromType extends TemplateSwitchBase implements T
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
       {
-        final SNode switchInput1 = QueriesGenerated.ifMacro_Condition_46984110995152039650(new SourceSubstituteMacroNodeContext(context, switchMacroRef_ef4au6_b0a0a0a2a1k));
+        final SNode switchInput1 = QueriesGenerated.sourceNodeQuery_46984110995152039650(new SourceSubstituteMacroNodeContext(context, switchMacroRef_ef4au6_b0a0a0a2a1k));
         if (switchInput1 == null) {
           tlist1 = Collections.emptyList();
         } else {
@@ -190,7 +190,7 @@ public class Switch_switch_ClassFromType extends TemplateSwitchBase implements T
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      final SNode copySrcInput1 = QueriesGenerated.ifMacro_Condition_71545498075402119890(new SourceSubstituteMacroNodeContext(context, copySrcMacro_ef4au6_b0a0d0b11));
+      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_71545498075402119890(new SourceSubstituteMacroNodeContext(context, copySrcMacro_ef4au6_b0a0d0b11));
       tlist1 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput1), copySrcMacro_ef4au6_b0a0d0b11, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/7154549807540211989", context);
       return tlist1;
     }

@@ -82,7 +82,7 @@ public class Template_reduce_invoke extends TemplateDeclarationBase {
               TemplateContext context4 = context3.subContext();
               {
                 Collection<SNode> tlist9 = null;
-                final SNode copySrcInput9 = QueriesGenerated.ifMacro_Condition_38667893537990669420(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_eur96u_b0a0c0c0b0d0b0c0c0f));
+                final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_38667893537990669420(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_eur96u_b0a0c0c0b0d0b0c0c0f));
                 tlist9 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput9), copySrcMacro_eur96u_b0a0c0c0b0d0b0c0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/3866789353799066942", context4);
                 for (SNode child10 : TemplateUtil.asNotNull(tlist9)) {
                   tnode8.addChild(myAggregationLinks[2], child10);

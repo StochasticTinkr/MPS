@@ -65,7 +65,7 @@ public class Template_reduce_ConceptSwitch extends TemplateDeclarationBase {
           }
           {
             Collection<SNode> tlist5 = null;
-            final SNode copySrcInput5 = QueriesGenerated.ifMacro_Condition_60392682293642477220(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_j8e1z8_b0a0c0e0d0b0c0f));
+            final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_60392682293642477220(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_j8e1z8_b0a0c0e0d0b0c0f));
             tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_j8e1z8_b0a0c0e0d0b0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/6039268229364247722", context3);
             for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
               tnode3.addChild(myAggregationLinks[1], child6);

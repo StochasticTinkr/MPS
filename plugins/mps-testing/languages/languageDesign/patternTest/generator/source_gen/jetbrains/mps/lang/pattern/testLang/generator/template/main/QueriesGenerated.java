@@ -65,16 +65,16 @@ public class QueriesGenerated extends QueryProviderBase {
   public static boolean ifMacro_Condition_15639142264849680200(final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb08L, 0x78d6da5e3799eb0bL, "matches")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"));
   }
-  public static SNode ifMacro_Condition_15639142264849036490(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_15639142264849036490(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb08L, 0x78d6da5e3799eb09L, "nodeToMatch"));
   }
-  public static SNode ifMacro_Condition_15639142264849036600(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_15639142264849036600(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb08L, 0x78d6da5e3799eb0aL, "pattern"));
   }
-  public static SNode ifMacro_Condition_15639142264849037390(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_15639142264849037390(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb0eL, 0x33c840a2af5d6e69L, "value"));
   }
-  public static SNode ifMacro_Condition_15639142264849250120(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_15639142264849250120(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d042b6L, 0x15b423b3f8d042b8L, "value"));
   }
   public static Iterable<SNode> sourceNodesQuery_a1e0a0a0a0a0e(final SourceSubstituteMacroNodesContext _context) {
@@ -115,13 +115,13 @@ public class QueriesGenerated extends QueryProviderBase {
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.ifMacro_Condition_15639142264849036490(ctx);
+          return QueriesGenerated.sourceNodeQuery_15639142264849036490(ctx);
         case 1:
-          return QueriesGenerated.ifMacro_Condition_15639142264849036600(ctx);
+          return QueriesGenerated.sourceNodeQuery_15639142264849036600(ctx);
         case 2:
-          return QueriesGenerated.ifMacro_Condition_15639142264849037390(ctx);
+          return QueriesGenerated.sourceNodeQuery_15639142264849037390(ctx);
         case 3:
-          return QueriesGenerated.ifMacro_Condition_15639142264849250120(ctx);
+          return QueriesGenerated.sourceNodeQuery_15639142264849250120(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

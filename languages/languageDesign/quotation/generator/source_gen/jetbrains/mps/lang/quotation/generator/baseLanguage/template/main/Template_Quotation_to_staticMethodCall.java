@@ -227,7 +227,7 @@ public class Template_Quotation_to_staticMethodCall extends TemplateDeclarationB
                   TemplateContext context14 = context7.subContext();
                   {
                     Collection<SNode> tlist27 = null;
-                    SNode callInputNode27 = QueriesGenerated.ifMacro_Condition_10255900563966813240(new SourceSubstituteMacroNodeContext(context14, callMacro_6fpfng_b0a0a1a1a1a3a1a6a1a2a5a5));
+                    SNode callInputNode27 = QueriesGenerated.sourceNodeQuery_10255900563966813240(new SourceSubstituteMacroNodeContext(context14, callMacro_6fpfng_b0a0a1a1a1a3a1a6a1a2a5a5));
                     TemplateContext context15 = context14.subContext(null, callInputNode27);
                     if (callInputNode27 != null) {
                       tlist27 = new Template_QuotedNode_to_statementList().apply(context15);
@@ -278,7 +278,7 @@ public class Template_Quotation_to_staticMethodCall extends TemplateDeclarationB
                             TemplateContext context19 = context18.subContext();
                             {
                               Collection<SNode> tlist34 = null;
-                              SNode callInputNode34 = QueriesGenerated.ifMacro_Condition_20387304700453972510(new SourceSubstituteMacroNodeContext(context19, includeMacro_6fpfng_b0a0a1a2a1a2a1a1a3a2a4a1a6a1a2a5a5));
+                              SNode callInputNode34 = QueriesGenerated.sourceNodeQuery_20387304700453972510(new SourceSubstituteMacroNodeContext(context19, includeMacro_6fpfng_b0a0a1a2a1a2a1a1a3a2a4a1a6a1a2a5a5));
                               TemplateContext context20 = context19.subContext(null, callInputNode34);
                               if (callInputNode34 != null) {
                                 tlist34 = environment.applyTemplate(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6506750610319222074"), new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2038730470045399544"), context20);

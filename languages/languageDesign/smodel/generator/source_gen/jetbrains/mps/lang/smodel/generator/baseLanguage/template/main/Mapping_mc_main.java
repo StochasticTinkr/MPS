@@ -241,7 +241,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.ifMacro_Condition_39023543336543930250(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0c31));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_39023543336543930250(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0c31));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_rbibyw_b0a0c0d0c0c31, "tpl/r:00000000-0000-4000-0000-011c89590303/3902354333654393025", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -252,7 +252,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
           Collection<SNode> tlist4 = null;
           if (QueriesGenerated.ifMacro_Condition_39023543336543930330(new IfMacroContext(context1, ifMacroRef_rbibyw_b0a0b0e0c0c31))) {
             Collection<SNode> tlist5 = null;
-            SNode callInputNode5 = QueriesGenerated.ifMacro_Condition_39023543336543930331(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a2n));
+            SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_39023543336543930330(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a2n));
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
               tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
@@ -261,7 +261,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
           } else {
             Collection<SNode> tlist6 = null;
             {
-              final SNode switchInput6 = QueriesGenerated.ifMacro_Condition_45714276635523178250(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_rbibyw_b0a0a0a1a0b0e0c0c31));
+              final SNode switchInput6 = QueriesGenerated.sourceNodeQuery_45714276635523178250(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_rbibyw_b0a0a0a1a0b0e0c0c31));
               if (switchInput6 == null) {
                 tlist6 = Collections.emptyList();
               } else {
@@ -309,7 +309,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.ifMacro_Condition_39023543336543926040(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0c41));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_39023543336543926040(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0c41));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_rbibyw_b0a0c0d0c0c41, "tpl/r:00000000-0000-4000-0000-011c89590303/3902354333654392604", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -320,7 +320,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
           Collection<SNode> tlist4 = null;
           if (QueriesGenerated.ifMacro_Condition_39023543336543926120(new IfMacroContext(context1, ifMacroRef_rbibyw_b0a0b0e0c0c41))) {
             Collection<SNode> tlist5 = null;
-            SNode callInputNode5 = QueriesGenerated.ifMacro_Condition_39023543336543926121(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a2o));
+            SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_39023543336543926120(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a2o));
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
               tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
@@ -329,7 +329,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
           } else {
             Collection<SNode> tlist6 = null;
             {
-              final SNode switchInput6 = QueriesGenerated.ifMacro_Condition_7713576119170376710(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_rbibyw_b0a0a0a1a0b0e0c0c41));
+              final SNode switchInput6 = QueriesGenerated.sourceNodeQuery_7713576119170376710(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_rbibyw_b0a0a0a1a0b0e0c0c41));
               if (switchInput6 == null) {
                 tlist6 = Collections.emptyList();
               } else {
@@ -377,7 +377,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.ifMacro_Condition_39023543336544267740(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0c51));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_39023543336544267740(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0c51));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_rbibyw_b0a0c0d0c0c51, "tpl/r:00000000-0000-4000-0000-011c89590303/3902354333654426774", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -388,7 +388,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
           Collection<SNode> tlist4 = null;
           if (QueriesGenerated.ifMacro_Condition_39023543336544267820(new IfMacroContext(context1, ifMacroRef_rbibyw_b0a0b0e0c0c51))) {
             Collection<SNode> tlist5 = null;
-            SNode callInputNode5 = QueriesGenerated.ifMacro_Condition_39023543336544267821(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a2p));
+            SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_39023543336544267820(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a2p));
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
               tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
@@ -397,7 +397,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
           } else {
             Collection<SNode> tlist6 = null;
             {
-              final SNode switchInput6 = QueriesGenerated.ifMacro_Condition_83420503313171326410(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_rbibyw_b0a0a0a1a0b0e0c0c51));
+              final SNode switchInput6 = QueriesGenerated.sourceNodeQuery_83420503313171326410(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_rbibyw_b0a0a0a1a0b0e0c0c51));
               if (switchInput6 == null) {
                 tlist6 = Collections.emptyList();
               } else {
@@ -445,7 +445,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.ifMacro_Condition_39023543336544591580(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0c61));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_39023543336544591580(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0c61));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_rbibyw_b0a0c0d0c0c61, "tpl/r:00000000-0000-4000-0000-011c89590303/3902354333654459158", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -456,7 +456,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
           Collection<SNode> tlist4 = null;
           if (QueriesGenerated.ifMacro_Condition_39023543336544591660(new IfMacroContext(context1, ifMacroRef_rbibyw_b0a0b0e0c0c61))) {
             Collection<SNode> tlist5 = null;
-            SNode callInputNode5 = QueriesGenerated.ifMacro_Condition_39023543336544591661(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a2q));
+            SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_39023543336544591660(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a2q));
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
               tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
@@ -465,7 +465,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
           } else {
             Collection<SNode> tlist6 = null;
             {
-              final SNode switchInput6 = QueriesGenerated.ifMacro_Condition_83420503313171763900(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_rbibyw_b0a0a0a1a0b0e0c0c61));
+              final SNode switchInput6 = QueriesGenerated.sourceNodeQuery_83420503313171763900(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_rbibyw_b0a0a0a1a0b0e0c0c61));
               if (switchInput6 == null) {
                 tlist6 = Collections.emptyList();
               } else {
@@ -509,7 +509,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.ifMacro_Condition_17613856202755495660(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0b71));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_17613856202755495660(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0b71));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_rbibyw_b0a0c0d0c0b71, "tpl/r:00000000-0000-4000-0000-011c89590303/1761385620275549566", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -520,7 +520,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
           Collection<SNode> tlist4 = null;
           if (QueriesGenerated.ifMacro_Condition_45714276635523349670(new IfMacroContext(context1, ifMacroRef_rbibyw_b0a0b0e0c0b71))) {
             Collection<SNode> tlist5 = null;
-            SNode callInputNode5 = QueriesGenerated.ifMacro_Condition_45714276635523349671(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a1r));
+            SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_45714276635523349670(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a1r));
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
               tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
@@ -529,7 +529,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
           } else {
             Collection<SNode> tlist6 = null;
             {
-              final SNode switchInput6 = QueriesGenerated.ifMacro_Condition_45714276635523349840(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_rbibyw_b0a0a0a1a0b0e0c0b71));
+              final SNode switchInput6 = QueriesGenerated.sourceNodeQuery_45714276635523349840(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_rbibyw_b0a0a0a1a0b0e0c0b71));
               if (switchInput6 == null) {
                 tlist6 = Collections.emptyList();
               } else {
@@ -567,7 +567,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      final SNode copySrcInput1 = QueriesGenerated.ifMacro_Condition_11771147202030(new SourceSubstituteMacroNodeContext(context, copySrcMacro_rbibyw_b0a0d0b81));
+      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_11771147202030(new SourceSubstituteMacroNodeContext(context, copySrcMacro_rbibyw_b0a0d0b81));
       tlist1 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput1), copySrcMacro_rbibyw_b0a0d0b81, "tpl/r:00000000-0000-4000-0000-011c89590303/1177114720203", context);
       return tlist1;
     }
@@ -586,7 +586,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.ifMacro_Condition_12272658269120(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0b91));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_12272658269120(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0b91));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_rbibyw_b0a0c0d0c0b91, "tpl/r:00000000-0000-4000-0000-011c89590303/1227265826912", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -595,7 +595,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         }
         {
           Collection<SNode> tlist4 = null;
-          final SNode copySrcInput4 = QueriesGenerated.ifMacro_Condition_12272658287110(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0e0c0b91));
+          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_12272658287110(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0e0c0b91));
           tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_rbibyw_b0a0c0e0c0b91, "tpl/r:00000000-0000-4000-0000-011c89590303/1227265828711", context1);
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -672,7 +672,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          SNode callInputNode2 = QueriesGenerated.ifMacro_Condition_68980710158330507670(new SourceSubstituteMacroNodeContext(context1, callMacro_rbibyw_b0a0a1a1a2a1w));
+          SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_68980710158330507670(new SourceSubstituteMacroNodeContext(context1, callMacro_rbibyw_b0a0a1a1a2a1w));
           TemplateContext context2 = context1.subContext(null, callInputNode2);
           if (callInputNode2 != null) {
             tlist2 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
@@ -721,7 +721,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
       Collection<SNode> tlist1 = null;
       if (QueriesGenerated.ifMacro_Condition_65067506103193584410(new IfMacroContext(context, ifMacroRef_rbibyw_b0a0c0b42))) {
         Collection<SNode> tlist2 = null;
-        SNode callInputNode2 = QueriesGenerated.ifMacro_Condition_65067506103193584411(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a2a1y));
+        SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_65067506103193584410(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a2a1y));
         TemplateContext context1 = context.subContext(null, callInputNode2);
         if (callInputNode2 != null) {
           tlist2 = new Template_reduce_ConceptDeclaration_Bootstrap_SAbstractConcept().apply(context1);
@@ -729,7 +729,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         tlist1 = tlist2;
       } else {
         Collection<SNode> tlist3 = null;
-        SNode callInputNode3 = QueriesGenerated.ifMacro_Condition_25652588492858499930(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a0c0b42));
+        SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_25652588492858499930(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a0c0b42));
         TemplateContext context2 = context.subContext(null, callInputNode3);
         if (callInputNode3 != null) {
           tlist3 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
@@ -825,7 +825,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      SNode callInputNode1 = QueriesGenerated.ifMacro_Condition_33206462612223125950(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a2a1bb));
+      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_33206462612223125950(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a2a1bb));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
         tlist1 = new Template_reduce_NodeIdentity_SNodeReference().apply(context1);
@@ -847,7 +847,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          SNode callInputNode2 = QueriesGenerated.ifMacro_Condition_810887482850264600(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a3a2a1cb));
+          SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_810887482850264600(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a3a2a1cb));
           TemplateContext context2 = context1.subContext(null, callInputNode2);
           if (callInputNode2 != null) {
             tlist2 = new Template_reduce_LinkDeclaration_SLink().apply(context2);
@@ -887,7 +887,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
       Collection<SNode> tlist1 = null;
       if (QueriesGenerated.ifMacro_Condition_65067506103193630930(new IfMacroContext(context, ifMacroRef_rbibyw_b0a0c0b03))) {
         Collection<SNode> tlist2 = null;
-        SNode callInputNode2 = QueriesGenerated.ifMacro_Condition_65067506103193630931(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a2a1eb));
+        SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_65067506103193630930(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a2a1eb));
         TemplateContext context1 = context.subContext(null, callInputNode2);
         if (callInputNode2 != null) {
           tlist2 = new Template_reduce_LinkDeclaration_Bootstrap_SLink().apply(context1);
@@ -895,7 +895,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         tlist1 = tlist2;
       } else {
         Collection<SNode> tlist3 = null;
-        SNode callInputNode3 = QueriesGenerated.ifMacro_Condition_25652588492856670020(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a0c0b03));
+        SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_25652588492856670020(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a0c0b03));
         TemplateContext context2 = context.subContext(null, callInputNode3);
         if (callInputNode3 != null) {
           tlist3 = new Template_reduce_LinkDeclaration_SLink().apply(context2);
@@ -930,7 +930,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
       Collection<SNode> tlist1 = null;
       if (QueriesGenerated.ifMacro_Condition_65067506103193608070(new IfMacroContext(context, ifMacroRef_rbibyw_b0a0c0b23))) {
         Collection<SNode> tlist2 = null;
-        SNode callInputNode2 = QueriesGenerated.ifMacro_Condition_65067506103193608071(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a2a1gb));
+        SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_65067506103193608070(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a2a1gb));
         TemplateContext context1 = context.subContext(null, callInputNode2);
         if (callInputNode2 != null) {
           tlist2 = new Template_reduce_PropertyDeclaration_Bootstrap_SProperty().apply(context1);
@@ -938,7 +938,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         tlist1 = tlist2;
       } else {
         Collection<SNode> tlist3 = null;
-        SNode callInputNode3 = QueriesGenerated.ifMacro_Condition_25652588492855935370(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a0c0b23));
+        SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_25652588492855935370(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a0c0b23));
         TemplateContext context2 = context.subContext(null, callInputNode3);
         if (callInputNode3 != null) {
           tlist3 = new Template_reduce_PropertyDeclaration_SProperty().apply(context2);
@@ -975,7 +975,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      final SNode copySrcInput1 = QueriesGenerated.ifMacro_Condition_75354955548099897200(new SourceSubstituteMacroNodeContext(context, copySrcMacro_rbibyw_b0a0d0c43));
+      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_75354955548099897200(new SourceSubstituteMacroNodeContext(context, copySrcMacro_rbibyw_b0a0d0c43));
       tlist1 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput1), copySrcMacro_rbibyw_b0a0d0c43, "tpl/r:00000000-0000-4000-0000-011c89590303/7535495554809989720", context);
       return tlist1;
     }
@@ -993,7 +993,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
       {
-        final SNode switchInput1 = QueriesGenerated.ifMacro_Condition_66834333613869656660(new SourceSubstituteMacroNodeContext(context, switchMacroRef_rbibyw_b0a0a0a2a2jb));
+        final SNode switchInput1 = QueriesGenerated.sourceNodeQuery_66834333613869656660(new SourceSubstituteMacroNodeContext(context, switchMacroRef_rbibyw_b0a0a0a2a2jb));
         if (switchInput1 == null) {
           tlist1 = Collections.emptyList();
         } else {
@@ -1033,7 +1033,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
       {
-        final SNode switchInput1 = QueriesGenerated.ifMacro_Condition_66834333613869725010(new SourceSubstituteMacroNodeContext(context, switchMacroRef_rbibyw_b0a0a0a2a2kb));
+        final SNode switchInput1 = QueriesGenerated.sourceNodeQuery_66834333613869725010(new SourceSubstituteMacroNodeContext(context, switchMacroRef_rbibyw_b0a0a0a2a2kb));
         if (switchInput1 == null) {
           tlist1 = Collections.emptyList();
         } else {
@@ -1072,7 +1072,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      final SNode copySrcInput1 = QueriesGenerated.ifMacro_Condition_12031048900360(new SourceSubstituteMacroNodeContext(context, copySrcMacro_rbibyw_b0a0d0c73));
+      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_12031048900360(new SourceSubstituteMacroNodeContext(context, copySrcMacro_rbibyw_b0a0d0c73));
       tlist1 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput1), copySrcMacro_rbibyw_b0a0d0c73, "tpl/r:00000000-0000-4000-0000-011c89590303/1203104890036", context);
       return tlist1;
     }
@@ -1160,7 +1160,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
                 TemplateContext context3 = context2.subContext();
                 {
                   Collection<SNode> tlist4 = null;
-                  final SNode copySrcInput4 = QueriesGenerated.ifMacro_Condition_14231044112336813630(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_rbibyw_b0a0c0c0b0b0b0b0c0c24));
+                  final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_14231044112336813630(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_rbibyw_b0a0c0c0b0b0b0b0c0c24));
                   tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_rbibyw_b0a0c0c0b0b0b0b0c0c24, "tpl/r:00000000-0000-4000-0000-011c89590303/1423104411233681363", context3);
                   for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
                     tnode3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -1259,7 +1259,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.ifMacro_Condition_27407711691474323970(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0b44));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_27407711691474323970(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0b44));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_rbibyw_b0a0c0d0c0b44, "tpl/r:00000000-0000-4000-0000-011c89590303/2740771169147432397", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -1285,7 +1285,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.ifMacro_Condition_66775043232805187770(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0b54));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_66775043232805187770(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_rbibyw_b0a0c0d0c0b54));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_rbibyw_b0a0c0d0c0b54, "tpl/r:00000000-0000-4000-0000-011c89590303/6677504323280518777", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);

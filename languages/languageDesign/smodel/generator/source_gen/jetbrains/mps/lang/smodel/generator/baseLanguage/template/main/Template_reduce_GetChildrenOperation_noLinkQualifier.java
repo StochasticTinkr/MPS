@@ -43,7 +43,7 @@ public class Template_reduce_GetChildrenOperation_noLinkQualifier extends Templa
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.ifMacro_Condition_11715014084880(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_x0ru9n_b0a0c0d0c0f));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_11715014084880(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_x0ru9n_b0a0c0d0c0f));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_x0ru9n_b0a0c0d0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/1171501408488", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);

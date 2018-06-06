@@ -69,7 +69,7 @@ public class Template_reduce_NodeBuilderNode extends TemplateDeclarationBase {
               TemplateContext context5 = context4.subContext();
               {
                 Collection<SNode> tlist6 = null;
-                SNode callInputNode6 = QueriesGenerated.ifMacro_Condition_54942332852713497080(new SourceSubstituteMacroNodeContext(context5, includeMacro_98emc3_b0a0a1a3a1a3a3a1a5a5));
+                SNode callInputNode6 = QueriesGenerated.sourceNodeQuery_54942332852713497080(new SourceSubstituteMacroNodeContext(context5, includeMacro_98emc3_b0a0a1a3a1a3a3a1a5a5));
                 TemplateContext context6 = context5.subContext(null, callInputNode6);
                 if (callInputNode6 != null) {
                   tlist6 = environment.applyTemplate(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6506750610319308637"), new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5494233285271349709"), context6);

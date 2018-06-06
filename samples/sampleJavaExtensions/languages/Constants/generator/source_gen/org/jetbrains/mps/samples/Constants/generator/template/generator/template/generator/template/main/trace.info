@@ -13,11 +13,11 @@
   <root nodeRef="r:8a83b4bb-5556-4799-a811-f71c11235499(org.jetbrains.mps.samples.Constants.generator.template.generator.template.generator.template.main@generator)/1494751830319061784">
     <file name="QueriesGenerated.java">
       <node id="1494751830319065453" at="42,113,43,175" concept="0" />
-      <node id="2001769927721010678" at="48,111,49,231" concept="0" />
-      <node id="2001769927721010668" at="51,111,52,194" concept="0" />
+      <node id="2001769927721010678" at="48,109,49,231" concept="0" />
+      <node id="2001769927721010668" at="51,109,52,194" concept="0" />
       <scope id="1494751830319065452" at="42,113,43,175" />
-      <scope id="2001769927721010677" at="48,111,49,231" />
-      <scope id="2001769927721010667" at="51,111,52,194" />
+      <scope id="2001769927721010677" at="48,109,49,231" />
+      <scope id="2001769927721010667" at="51,109,52,194" />
     </file>
   </root>
   <root nodeRef="r:8a83b4bb-5556-4799-a811-f71c11235499(org.jetbrains.mps.samples.Constants.generator.template.generator.template.generator.template.main@generator)/1494751830319065468">

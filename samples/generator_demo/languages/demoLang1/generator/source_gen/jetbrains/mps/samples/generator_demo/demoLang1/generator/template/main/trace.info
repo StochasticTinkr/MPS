@@ -12,9 +12,9 @@
   <root nodeRef="r:1e092ddd-f221-460c-81e8-c2c8578d9fa9(jetbrains.mps.samples.generator_demo.demoLang1.generator.template.main@generator)/1228430739337">
     <file name="QueriesGenerated.java">
       <node id="1228430836949" at="38,107,39,175" concept="0" />
-      <node id="1228431537843" at="41,105,42,185" concept="0" />
+      <node id="1228431537843" at="41,103,42,185" concept="0" />
       <scope id="1228430808503" at="38,107,39,175" />
-      <scope id="1228431535920" at="41,105,42,185" />
+      <scope id="1228431535920" at="41,103,42,185" />
     </file>
   </root>
   <root nodeRef="r:1e092ddd-f221-460c-81e8-c2c8578d9fa9(jetbrains.mps.samples.generator_demo.demoLang1.generator.template.main@generator)/1228431323007">

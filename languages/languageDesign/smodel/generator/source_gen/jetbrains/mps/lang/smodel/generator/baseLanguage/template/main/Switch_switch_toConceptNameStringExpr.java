@@ -61,7 +61,7 @@ public class Switch_switch_toConceptNameStringExpr extends TemplateSwitchBase im
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.ifMacro_Condition_12066604549110(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_thr6xb_b0a0c0d0c0b7));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_12066604549110(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_thr6xb_b0a0c0d0c0b7));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_thr6xb_b0a0c0d0c0b7, "tpl/r:00000000-0000-4000-0000-011c89590303/1206660454911", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);

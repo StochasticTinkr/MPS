@@ -15,10 +15,10 @@
   </root>
   <root nodeRef="r:c6505a4e-e114-47ba-aea6-f577e907f241(jetbrains.mps.samples.generator_demo.demoLang4.generator.template.main@generator)/1228678752534">
     <file name="QueriesGenerated.java">
-      <node id="1228680316628" at="98,105,99,185" concept="1" />
+      <node id="1228680316628" at="98,103,99,185" concept="1" />
       <node id="1228680279582" at="115,106,116,195" concept="1" />
       <node id="5273477653284537095" at="118,104,119,194" concept="1" />
-      <scope id="1228680307377" at="98,105,99,185" />
+      <scope id="1228680307377" at="98,103,99,185" />
       <scope id="1228680239722" at="115,106,116,195" />
       <scope id="5273477653284500113" at="118,104,119,194" />
     </file>
@@ -31,8 +31,8 @@
       <node id="1228678752663" at="110,39,111,184" concept="1" />
       <node id="1228678752622" at="103,0,106,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1228678752661" at="110,0,113,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1228678752616" at="101,105,106,7" concept="1" />
-      <node id="1228678752655" at="108,105,113,7" concept="1" />
+      <node id="1228678752616" at="101,103,106,7" concept="1" />
+      <node id="1228678752655" at="108,103,113,7" concept="1" />
       <scope id="1228678752605" at="52,107,53,191" />
       <scope id="1228678752647" at="78,104,79,176" />
       <scope id="1228678752623" at="103,39,104,181" />
@@ -43,8 +43,8 @@
       <scope id="1228678752661" at="110,0,113,0">
         <var name="it" id="1228678752661" />
       </scope>
-      <scope id="1228678752615" at="101,105,106,7" />
-      <scope id="1228678752654" at="108,105,113,7" />
+      <scope id="1228678752615" at="101,103,106,7" />
+      <scope id="1228678752654" at="108,103,113,7" />
       <unit id="1228678752622" at="102,222,106,5" name="jetbrains.mps.samples.generator_demo.demoLang4.generator.template.main.QueriesGenerated$5" />
       <unit id="1228678752661" at="109,222,113,5" name="jetbrains.mps.samples.generator_demo.demoLang4.generator.template.main.QueriesGenerated$6" />
     </file>

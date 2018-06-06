@@ -130,7 +130,7 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
                 }
                 {
                   Collection<SNode> tlist7 = null;
-                  SNode callInputNode7 = QueriesGenerated.ifMacro_Condition_750565523583177550(new SourceSubstituteMacroNodeContext(context4, includeMacro_nyxx76_b0a0a1a4a1a2a1a1a3a3a6));
+                  SNode callInputNode7 = QueriesGenerated.sourceNodeQuery_750565523583177550(new SourceSubstituteMacroNodeContext(context4, includeMacro_nyxx76_b0a0a1a4a1a2a1a1a3a3a6));
                   TemplateContext context5 = context4.subContext(null, callInputNode7);
                   if (callInputNode7 != null) {
                     tlist7 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context5);

@@ -53,7 +53,7 @@ public class Template_reduce_ConceptMethodCallReflectiveWithSuper extends Templa
             }
             {
               Collection<SNode> tlist6 = null;
-              final SNode copySrcInput6 = QueriesGenerated.ifMacro_Condition_30993917508922225900(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_qqxek3_b0a0c0c0b0b0b0c0f));
+              final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_30993917508922225900(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_qqxek3_b0a0c0c0b0b0b0c0f));
               tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_qqxek3_b0a0c0c0b0b0b0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/3099391750892222590", context2);
               for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
                 tnode3.addChild(myAggregationLinks[1], child7);

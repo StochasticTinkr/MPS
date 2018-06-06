@@ -63,7 +63,7 @@ public class Switch_switch_Parameter extends TemplateSwitchBase implements Templ
         {
           Collection<SNode> tlist2 = null;
           {
-            final SNode switchInput2 = QueriesGenerated.ifMacro_Condition_46984110995151933640(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_vnjhlw_b0a0a0a1a3a2a2h));
+            final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_46984110995151933640(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_vnjhlw_b0a0a0a1a3a2a2h));
             if (switchInput2 == null) {
               tlist2 = Collections.emptyList();
             } else {
@@ -115,7 +115,7 @@ public class Switch_switch_Parameter extends TemplateSwitchBase implements Templ
         {
           Collection<SNode> tlist2 = null;
           {
-            final SNode switchInput2 = QueriesGenerated.ifMacro_Condition_78309952056262324340(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_vnjhlw_b0a0a0a1a3a2a1i));
+            final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_78309952056262324340(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_vnjhlw_b0a0a0a1a3a2a1i));
             if (switchInput2 == null) {
               tlist2 = Collections.emptyList();
             } else {

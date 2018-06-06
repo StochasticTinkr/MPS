@@ -26,7 +26,7 @@ public class Template_GDClass extends TemplateDeclarationBase implements Templat
   }
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist1 = null;
-    SNode callInputNode1 = QueriesGenerated.ifMacro_Condition_2632080526396929290(new SourceSubstituteMacroNodeContext(context, callMacro_in8ni3_b0a0a1a4));
+    SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_2632080526396929290(new SourceSubstituteMacroNodeContext(context, callMacro_in8ni3_b0a0a1a4));
     TemplateContext context1 = context.subContext(null, callInputNode1);
     if (callInputNode1 != null) {
       tlist1 = new Template_GeneratorRuntime().apply(context1);

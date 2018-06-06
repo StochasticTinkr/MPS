@@ -20,10 +20,10 @@
   </root>
   <root nodeRef="r:746f58a1-d17e-4009-b865-845d0d70ab6f(jetbrains.mps.samples.generator_demo.demoLang5.generator.template.main@generator)/1228678752534">
     <file name="QueriesGenerated.java">
-      <node id="1228680316628" at="103,105,104,185" concept="4" />
+      <node id="1228680316628" at="103,103,104,185" concept="4" />
       <node id="1228680279582" at="120,106,121,195" concept="4" />
       <node id="5273477653284537095" at="123,104,124,194" concept="4" />
-      <scope id="1228680307377" at="103,105,104,185" />
+      <scope id="1228680307377" at="103,103,104,185" />
       <scope id="1228680239722" at="120,106,121,195" />
       <scope id="5273477653284500113" at="123,104,124,194" />
     </file>
@@ -36,8 +36,8 @@
       <node id="1228678752663" at="115,39,116,184" concept="4" />
       <node id="1228678752622" at="108,0,111,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1228678752661" at="115,0,118,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1228678752616" at="106,105,111,7" concept="4" />
-      <node id="1228678752655" at="113,105,118,7" concept="4" />
+      <node id="1228678752616" at="106,103,111,7" concept="4" />
+      <node id="1228678752655" at="113,103,118,7" concept="4" />
       <scope id="1228678752605" at="57,107,58,191" />
       <scope id="1228678752647" at="83,104,84,176" />
       <scope id="1228678752623" at="108,39,109,181" />
@@ -48,8 +48,8 @@
       <scope id="1228678752661" at="115,0,118,0">
         <var name="it" id="1228678752661" />
       </scope>
-      <scope id="1228678752615" at="106,105,111,7" />
-      <scope id="1228678752654" at="113,105,118,7" />
+      <scope id="1228678752615" at="106,103,111,7" />
+      <scope id="1228678752654" at="113,103,118,7" />
       <unit id="1228678752622" at="107,222,111,5" name="jetbrains.mps.samples.generator_demo.demoLang5.generator.template.main.QueriesGenerated$5" />
       <unit id="1228678752661" at="114,222,118,5" name="jetbrains.mps.samples.generator_demo.demoLang5.generator.template.main.QueriesGenerated$6" />
     </file>

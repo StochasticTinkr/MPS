@@ -394,10 +394,10 @@ public class QueriesGenerated extends QueryProviderBase {
   public static boolean ifMacro_Condition_12120843276350(final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x11a35a5efdaL, "hasNoDefaultMember"));
   }
-  public static SNode ifMacro_Condition_17801771131704356420(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_17801771131704356420(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x18b475a713ca55fbL, "helpURL"));
   }
-  public static SNode ifMacro_Condition_65655607346275493130(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_65655607346275493130(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x57cf4eb14c4f9ef5L, "icon"));
   }
   public static Object templateArgumentQuery_a1a0a0a0a0a1a2(final TemplateArgumentContext _context) {
@@ -804,9 +804,9 @@ public class QueriesGenerated extends QueryProviderBase {
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.ifMacro_Condition_17801771131704356420(ctx);
+          return QueriesGenerated.sourceNodeQuery_17801771131704356420(ctx);
         case 1:
-          return QueriesGenerated.ifMacro_Condition_65655607346275493130(ctx);
+          return QueriesGenerated.sourceNodeQuery_65655607346275493130(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

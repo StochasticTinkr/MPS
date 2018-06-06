@@ -35,10 +35,10 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object propertyMacro_GetPropertyValue_16209554345322199680(final PropertyMacroContext _context) {
     return ("EvaluatorInstance");
   }
-  public static SNode ifMacro_Condition_34097522883621675060(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_34097522883621675060(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0xbbe5b47d7cc5fa1L, 0xbbe5b47d7cc6080L, "code"));
   }
-  public static SNode ifMacro_Condition_62930056177060160710(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_62930056177060160710(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, 0x10093bb8b0669700L, "evaluatedStatements"));
   }
   public static Iterable<SNode> sourceNodesQuery_a0a0b(final SourceSubstituteMacroNodesContext _context) {
@@ -68,9 +68,9 @@ public class QueriesGenerated extends QueryProviderBase {
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.ifMacro_Condition_62930056177060160710(ctx);
+          return QueriesGenerated.sourceNodeQuery_62930056177060160710(ctx);
         case 1:
-          return QueriesGenerated.ifMacro_Condition_34097522883621675060(ctx);
+          return QueriesGenerated.sourceNodeQuery_34097522883621675060(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

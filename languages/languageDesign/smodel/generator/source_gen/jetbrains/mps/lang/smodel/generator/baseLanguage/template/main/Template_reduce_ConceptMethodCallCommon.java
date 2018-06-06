@@ -41,7 +41,7 @@ public class Template_reduce_ConceptMethodCallCommon extends TemplateDeclaration
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist3 = null;
-          final SNode copySrcInput3 = QueriesGenerated.ifMacro_Condition_45987189320376137320(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_2swv9b_b0a0c0b0b0c0f));
+          final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_45987189320376137320(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_2swv9b_b0a0c0b0b0c0f));
           tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_2swv9b_b0a0c0b0b0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/4598718932037613732", context1);
           for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
             tnode2.addChild(myAggregationLinks[0], child4);

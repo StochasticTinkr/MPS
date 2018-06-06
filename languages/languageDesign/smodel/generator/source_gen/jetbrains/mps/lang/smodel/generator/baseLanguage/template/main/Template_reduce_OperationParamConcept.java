@@ -43,7 +43,7 @@ public class Template_reduce_OperationParamConcept extends TemplateDeclarationBa
     if (QueriesGenerated.ifMacro_Condition_28370221169601116870(new IfMacroContext(context1, ifMacroRef_t65l13_b0a0f0f))) {
       Collection<SNode> tlist3 = null;
       {
-        final SNode switchInput3 = QueriesGenerated.ifMacro_Condition_28370221169601116871(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_t65l13_b0a0a0a1a5a5));
+        final SNode switchInput3 = QueriesGenerated.sourceNodeQuery_28370221169601116870(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_t65l13_b0a0a0a1a5a5));
         if (switchInput3 == null) {
           tlist3 = Collections.emptyList();
         } else {
