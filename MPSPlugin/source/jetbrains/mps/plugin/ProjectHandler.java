@@ -54,7 +54,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class ProjectHandler extends UnicastRemoteObject implements ProjectComponent, IProjectHandler {
   private Project myProject;
-  private List<IMPSIDEHandler> myIDEHandlers = new ArrayList<IMPSIDEHandler>();
+  private List<IMPSIDEHandler> myIDEHandlers = new ArrayList<>();
 
   public ProjectHandler(Project project) throws RemoteException {
     super();
@@ -87,18 +87,10 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
   public void refreshFS() {
     try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        public void run() {
-          ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            public void run() {
-              refreshFSInternal();
-            }
-          });
-        }
-      });
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    } catch (InvocationTargetException e) {
+      SwingUtilities.invokeAndWait(
+          () -> ApplicationManager.getApplication().runWriteAction(
+              () -> refreshFSInternal()));
+    } catch (InterruptedException | InvocationTargetException e) {
       e.printStackTrace();
     }
   }
@@ -107,41 +99,37 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   public IdeaCompilationResult buildModules(final String[] paths) {
     final CountDownLatch latch = new CountDownLatch(1);
     final IdeaCompilationResult[] result = new IdeaCompilationResult[1];
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            refreshFSInternal();
+    ApplicationManager.getApplication().invokeLater(
+        () -> ApplicationManager.getApplication().runWriteAction(
+            () -> {
+              refreshFSInternal();
 
-            List<Module> modules = new ArrayList<Module>();
-            for (String path : paths) {
-              Module module = findModule(path);
-              if (module != null) {
-                modules.add(module);
-              }
-            }
-
-            if (modules.isEmpty()) {
-              result[0] = new IdeaCompilationResult(0, 0, false, false);
-              latch.countDown();
-              return;
-            }
-
-            CompilerManager compilerManager = CompilerManager.getInstance(myProject);
-            compilerManager.make(myProject, modules.toArray(new Module[modules.size()]), new CompileStatusNotification() {
-              public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
-                compilationFinished(aborted, errors, warnings);
+              List<Module> modules = new ArrayList<>();
+              for (String path : paths) {
+                Module module = findModule(path);
+                if (module != null) {
+                  modules.add(module);
+                }
               }
 
-              private void compilationFinished(boolean aborted, int errorsNumber, int warningsNumber) {
-                result[0] = new IdeaCompilationResult(errorsNumber, warningsNumber, aborted);
+              if (modules.isEmpty()) {
+                result[0] = new IdeaCompilationResult(0, 0, false, false);
                 latch.countDown();
+                return;
               }
-            });
-          }
-        });
-      }
-    });
+
+              CompilerManager compilerManager = CompilerManager.getInstance(myProject);
+              compilerManager.make(myProject, modules.toArray(new Module[modules.size()]), new CompileStatusNotification() {
+                public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
+                  compilationFinished(aborted, errors, warnings);
+                }
+
+                private void compilationFinished(boolean aborted, int errorsNumber, int warningsNumber) {
+                  result[0] = new IdeaCompilationResult(errorsNumber, warningsNumber, aborted);
+                  latch.countDown();
+                }
+              });
+            }));
     try {
       latch.await();
     } catch (InterruptedException e) {
@@ -151,17 +139,17 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   public List<String> findInheritors(final String fqName) {
-    final List<String> list = new ArrayList<String>();
-    ApplicationManager.getApplication().runReadAction(new Runnable() {
-      public void run() {
-        final JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(myProject);
-        PsiClass cls = javaPsi.findClass(fqName, GlobalSearchScope.allScope(myProject));
-        if (cls == null) return;
-        PsiClass[] result = ClassInheritorsSearch.search(cls, GlobalSearchScope.allScope(myProject), true).toArray(new PsiClass[0]);
-        for (PsiClass aResult : result) {
-          if (aResult.getQualifiedName() != null) {  //i.e anonymous class
-            list.add(aResult.getQualifiedName());
-          }
+    final List<String> list = new ArrayList<>();
+    ApplicationManager.getApplication().runReadAction(() -> {
+      final JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(myProject);
+      PsiClass cls = javaPsi.findClass(fqName, GlobalSearchScope.allScope(myProject));
+      if (cls == null) {
+        return;
+      }
+      PsiClass[] result = ClassInheritorsSearch.search(cls, GlobalSearchScope.allScope(myProject), true).toArray(new PsiClass[0]);
+      for (PsiClass aResult : result) {
+        if (aResult.getQualifiedName() != null) {  //i.e anonymous class
+          list.add(aResult.getQualifiedName());
         }
       }
     });
@@ -170,72 +158,26 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   public void openClass(final String fqName) {
-    executeWriteAction(new Runnable() {
-      public void run() {
-        final JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(myProject);
-        PsiClass cls = javaPsi.findClass(fqName, GlobalSearchScope.allScope(myProject));
-        if (cls == null) return;
-        cls.navigate(true);
-        activateProjectWindow();
+    executeWriteAction(() -> {
+      final JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(myProject);
+      PsiClass cls = javaPsi.findClass(fqName, GlobalSearchScope.allScope(myProject));
+      if (cls == null) {
+        return;
       }
+      cls.navigate(true);
+      activateProjectWindow();
     });
   }
 
   public void openMethod(final String className, final String name, final int parameterCount) {
-    if (findClass(className) == null) return;
-    executeWriteAction(new Runnable() {
-      public void run() {
-        PsiClass cls = findClass(className);
-        PsiMethod[] methods = cls.getAllMethods();
-        for (PsiMethod method : methods) {
-          if (method.getName().equals(name)) {
-            if (parameterCount != -1 && method.getParameterList().getParameters().length != parameterCount) {
-              continue;
-            }
-            method.navigate(true);
-            activateProjectWindow();
-            return;
-          }
-        }
-      }
-    });
-  }
-
-  @Override
-  public void open(final String fileName, final int startLine, final int startPosition, int endLine, int endPosition) throws RemoteException {
-    executeWriteAction(new Runnable() {
-      public void run() {
-        VirtualFile vfile = LocalFileSystem.getInstance().findFileByPath(fileName);
-        FileEditorManager.getInstance(myProject).navigateToTextEditor(new OpenFileDescriptor(myProject, vfile, startLine, startPosition), true);
-        activateProjectWindow();
-      }
-    });
-  }
-
-  public void openField(final String className, final String name) {
-    if (findClass(className) == null) return;
-    executeWriteAction(new Runnable() {
-      public void run() {
-        PsiClass cls = findClass(className);
-        PsiField[] fields = cls.getAllFields();
-        for (PsiField field : fields) {
-          if (name.equals(field.getName())) {
-            field.navigate(true);
-            activateProjectWindow();
-            return;
-          }
-        }
-      }
-    });
-  }
-
-  public void openConstructor(final String className, final int parameterCount) throws RemoteException {
-    if (findClass(className) == null) return;
-    executeWriteAction(new Runnable() {
-      public void run() {
-        PsiClass cls = findClass(className);
-        PsiMethod[] methods = cls.getConstructors();
-        for (PsiMethod method : methods) {
+    if (findClass(className) == null) {
+      return;
+    }
+    executeWriteAction(() -> {
+      PsiClass cls = findClass(className);
+      PsiMethod[] methods = cls.getAllMethods();
+      for (PsiMethod method : methods) {
+        if (method.getName().equals(name)) {
           if (parameterCount != -1 && method.getParameterList().getParameters().length != parameterCount) {
             continue;
           }
@@ -243,6 +185,50 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
           activateProjectWindow();
           return;
         }
+      }
+    });
+  }
+
+  @Override
+  public void open(final String fileName, final int startLine, final int startPosition, int endLine, int endPosition) {
+    executeWriteAction(() -> {
+      VirtualFile vfile = LocalFileSystem.getInstance().findFileByPath(fileName);
+      FileEditorManager.getInstance(myProject).navigateToTextEditor(new OpenFileDescriptor(myProject, vfile, startLine, startPosition), true);
+      activateProjectWindow();
+    });
+  }
+
+  public void openField(final String className, final String name) {
+    if (findClass(className) == null) {
+      return;
+    }
+    executeWriteAction(() -> {
+      PsiClass cls = findClass(className);
+      PsiField[] fields = cls.getAllFields();
+      for (PsiField field : fields) {
+        if (name.equals(field.getName())) {
+          field.navigate(true);
+          activateProjectWindow();
+          return;
+        }
+      }
+    });
+  }
+
+  public void openConstructor(final String className, final int parameterCount) {
+    if (findClass(className) == null) {
+      return;
+    }
+    executeWriteAction(() -> {
+      PsiClass cls = findClass(className);
+      PsiMethod[] methods = cls.getConstructors();
+      for (PsiMethod method : methods) {
+        if (parameterCount != -1 && method.getParameterList().getParameters().length != parameterCount) {
+          continue;
+        }
+        method.navigate(true);
+        activateProjectWindow();
+        return;
       }
     });
   }
@@ -266,11 +252,11 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
 
-  public void addIdeHandler(IMPSIDEHandler handler) throws RemoteException {
+  public void addIdeHandler(IMPSIDEHandler handler) {
     myIDEHandlers.add(handler);
   }
 
-  public void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException {
+  public void removeIdeHandler(IMPSIDEHandler handler) {
     myIDEHandlers.remove(handler);
 
     //we need it because of RMI's distributed gc
@@ -279,40 +265,32 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
   private PsiClass findClass(final String className) {
     final PsiClass[] cls = new PsiClass[1];
-    ApplicationManager.getApplication().runReadAction(new Runnable() {
-      public void run() {
-        final JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(myProject);
-        cls[0] = javaPsi.findClass(className, GlobalSearchScope.allScope(myProject));
-      }
+    ApplicationManager.getApplication().runReadAction(() -> {
+      final JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(myProject);
+      cls[0] = javaPsi.findClass(className, GlobalSearchScope.allScope(myProject));
     });
     return cls[0];
   }
 
   private void executeWriteAction(final Runnable runnable) {
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-        CommandProcessor.getInstance().executeCommand(myProject, new Runnable() {
-          public void run() {
-            ApplicationManager.getApplication().runWriteAction(runnable);
-          }
-        }, "command", "MPSPlugin");
-
-      }
-    }, ModalityState.NON_MODAL);
+    ApplicationManager.getApplication().invokeAndWait(
+        () -> CommandProcessor.getInstance().executeCommand(
+            myProject,
+            () -> ApplicationManager.getApplication().runWriteAction(runnable),
+            "command", "MPSPlugin"),
+        ModalityState.NON_MODAL);
   }
 
   public Module findModule(final String path) {
     VirtualFile file = LocalFileSystem.getInstance().refreshAndFindFileByIoFile(new File(path));
-    if (file == null) return null;
+    if (file == null) {
+      return null;
+    }
 
     int bestDistance = Integer.MAX_VALUE;
     Module bestModule = null;
 
-    Module[] modules = ApplicationManager.getApplication().runReadAction(new Computable<Module[]>() {
-      public Module[] compute() {
-        return ModuleManager.getInstance(myProject).getModules();
-      }
-    });
+    Module[] modules = ApplicationManager.getApplication().runReadAction((Computable<Module[]>) ModuleManager.getInstance(myProject)::getModules);
     for (Module module : modules) {
       ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
       for (VirtualFile contentRoot : rootManager.getContentRoots()) {
@@ -358,11 +336,17 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   public static int getDistance(VirtualFile ancestor, VirtualFile descendant) {
-    if (ancestor.equals(descendant)) return 0;
-    if (descendant.getParent() == null) return -1;
+    if (ancestor.equals(descendant)) {
+      return 0;
+    }
+    if (descendant.getParent() == null) {
+      return -1;
+    }
 
     int distance = getDistance(ancestor, descendant.getParent());
-    if (distance == -1) return -1;
+    if (distance == -1) {
+      return -1;
+    }
 
     return distance + 1;
   }
@@ -370,7 +354,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   public void showSource(PsiFile file, String modelHint, int line, int column) {
     for (IMPSIDEHandler h : myIDEHandlers) {
       try {
-        h.showSource(file.getVirtualFile().getPath(), modelHint , line, column);
+        h.showSource(file.getVirtualFile().getPath(), modelHint, line, column);
       } catch (RemoteException e) {
         e.printStackTrace();
       }
