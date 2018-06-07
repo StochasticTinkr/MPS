@@ -15,47 +15,27 @@
  */
 package jetbrains.mps.ide.generator;
 
-import jetbrains.mps.ide.navigation.NavigationProvider;
+import jetbrains.mps.ide.navigation.CodeNavigationProvider;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.textgen.trace.TraceInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.lang.reflect.Method;
-
-public final class GeneratedQueriesOpener {
-
+public final class GeneratedCodeOpener {
   private final MPSProject myProject;
 
-  public GeneratedQueriesOpener(@NotNull MPSProject project) {
+  public GeneratedCodeOpener(@NotNull MPSProject project) {
     myProject = project;
-  }
-
-  /**
-   * @deprecated use instance method {{@link #openQueryMethod(SNode)}} instead
-   */
-  @Deprecated
-  @ToRemove(version = 2018.1)
-  public static boolean openQueryMethod(MPSProject project, SNode node) {
-    return new GeneratedQueriesOpener(project).openQueryMethod(node);
-  }
-
-  @Deprecated
-  @ToRemove(version = 2018.1)
-  public boolean openQueryMethod(@NotNull SNode node) {
-    return open(node);
   }
 
   // model read should be sufficient
   public boolean open(@NotNull SNode node) {
-    NavigationProvider[] navProviders = NavigationProvider.EP_NAME.getExtensions();
+    CodeNavigationProvider[] navProviders = CodeNavigationProvider.EP_NAME.getExtensions();
     if (navProviders.length == 0) {
       return false;
     }
@@ -74,7 +54,7 @@ public final class GeneratedQueriesOpener {
       return false;
     }
 
-    for (NavigationProvider np : navProviders) {
+    for (CodeNavigationProvider np : navProviders) {
       if (np.navigate(projectPath, file.getPath(), position.getStartLine(), position.getStartPosition(), position.getEndLine(),
                       position.getEndPosition())) {
         return true;

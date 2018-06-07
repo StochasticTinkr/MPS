@@ -4,32 +4,11 @@ package jetbrains.mps.plugin;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.editor.actions.GoToDeclarationHandlerRegistry;
-import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.ide.navigation.NavigationProvider;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class IdeaGoToDeclarationHandlerInitializer implements ApplicationComponent {
-  private GoToDeclarationHandlerRegistry.GoToDeclarationHandler myHandler = new GoToDeclarationHandlerRegistry.GoToDeclarationHandler() {
-    public boolean canNavigate(MPSProject p, SNode node) {
-      for (NavigationProvider np : IdeaNavigationProvider.EP_NAME.getExtensions()) {
-        if (np.canNavigate(p, node)) {
-          return true;
-        }
-      }
-      return false;
-    }
-    public boolean navigate(MPSProject p, SNode node) {
-      boolean navigated = false;
-      for (NavigationProvider np : IdeaNavigationProvider.EP_NAME.getExtensions()) {
-        if (np.canNavigate(p, node)) {
-          navigated |= np.navigate(p, node);
-        }
-      }
-      return navigated;
-    }
-  };
+  private GoToDeclarationHandlerRegistry.GoToDeclarationHandler myHandler = new DefaultGoToDeclarationHandler();
   @Override
   public void initComponent() {
     GoToDeclarationHandlerRegistry.addHandler(this.myHandler);

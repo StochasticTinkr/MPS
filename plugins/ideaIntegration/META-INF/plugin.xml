@@ -29,7 +29,7 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <mps.NavigationProvider implementation="jetbrains.mps.plugin.IdeaNavigationProvider"/>
+    <mps.CodeNavigationProvider implementation="jetbrains.mps.plugin.IdeaCodeNavigationProvider"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
 </idea-plugin>
