@@ -42,10 +42,8 @@ public class GoToDeclaration_Action extends BaseAction {
       return true;
     }
     for (SNode anc : ListSequence.fromList(SNodeOperations.getNodeAncestors(wrtNode, null, true))) {
-      for (GoToDeclarationHandler np : ListSequence.fromList(GoToDeclarationHandler.getHandlers())) {
-        if (np.canNavigate(((MPSProject) MapSequence.fromMap(_params).get("project")), anc)) {
-          return true;
-        }
+      if (GoToDeclarationHandlerRegistry.canNavigateAny(((MPSProject) MapSequence.fromMap(_params).get("project")), anc)) {
+        return true;
       }
     }
     return false;
@@ -84,17 +82,11 @@ public class GoToDeclaration_Action extends BaseAction {
       new EditorNavigator(((MPSProject) MapSequence.fromMap(_params).get("project"))).shallFocus(true).selectIfChild().open(SNodeOperations.getPointer(wrtNode));
     } else {
       for (SNode anc : ListSequence.fromList(SNodeOperations.getNodeAncestors(wrtNode, null, true))) {
-        boolean navigated = false;
-        for (GoToDeclarationHandler np : ListSequence.fromList(GoToDeclarationHandler.getHandlers())) {
-          if (np.canNavigate(((MPSProject) MapSequence.fromMap(_params).get("project")), anc)) {
-            navigated = true;
-            np.navigate(((MPSProject) MapSequence.fromMap(_params).get("project")), anc);
-          }
-        }
-        if (navigated) {
-          break;
+        if (GoToDeclarationHandlerRegistry.navigateAll(((MPSProject) MapSequence.fromMap(_params).get("project")), anc)) {
+          return;
         }
       }
+      // todo show notification: can't navigate 
     }
   }
 }

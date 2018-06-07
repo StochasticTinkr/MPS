@@ -38,7 +38,7 @@ public class IdeaNavigationProvider implements NavigationProvider {
   }
 
   @Override
-  public void navigate(MPSProject p, SNode node) {
+  public boolean navigate(MPSProject p, SNode node) {
     SModelReference ref = SModelOperations.getPointer(SNodeOperations.getModel(node));
     boolean isClassifier = SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
     boolean isConstructor = SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
@@ -46,30 +46,32 @@ public class IdeaNavigationProvider implements NavigationProvider {
     boolean isField = (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
     assert isClassifier || isConstructor || isMethod || isField;
 
-    final String projectPath = check_3kmw26_a0h0g(p.getProjectFile());
+    boolean opened = false;
+    final String projectPath = check_3kmw26_a0i0g(p.getProjectFile());
     if (isClassifier) {
       String fqName = SModelOperations.getModelName(SNodeOperations.getModel(node)) + '.' + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       for (NavigationProvider np : EP_NAME.getExtensions()) {
-        np.openClass(projectPath, fqName);
+        opened |= np.openClass(projectPath, fqName);
       }
     } else if (isConstructor) {
       String classifierName = getClassifierName(node, ref);
       int paramCount = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count();
       for (NavigationProvider np : EP_NAME.getExtensions()) {
-        np.openConstructor(projectPath, classifierName, paramCount);
+        opened |= np.openConstructor(projectPath, classifierName, paramCount);
       }
     } else if (isMethod) {
       String classifierName = getClassifierName(node, ref);
       SNode method = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
       for (NavigationProvider np : EP_NAME.getExtensions()) {
-        np.openMethod(projectPath, classifierName, SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count());
+        opened |= np.openMethod(projectPath, classifierName, SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count());
       }
     } else {
       String classifierName = getClassifierName(node, ref);
       for (NavigationProvider np : EP_NAME.getExtensions()) {
-        np.openField(projectPath, classifierName, node.getName());
+        opened |= np.openField(projectPath, classifierName, node.getName());
       }
     }
+    return opened;
   }
 
   @Override
@@ -194,7 +196,7 @@ public class IdeaNavigationProvider implements NavigationProvider {
     return result[0];
   }
 
-  private static String check_3kmw26_a0h0g(File checkedDotOperand) {
+  private static String check_3kmw26_a0i0g(File checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getAbsolutePath();
     }

@@ -18,14 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.ide.navigation.NavigationProvider;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.io.File;
+import jetbrains.mps.ide.editor.actions.GoToDeclarationHandlerRegistry;
 
 public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -81,74 +74,18 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.definition");
     final SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
-    final String projectPath = check_xgilk9_a0c0h(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectFile());
     new Thread() {
       @Override
       public void run() {
         // todo command here is a must for read action. Without it, openNode will be deadlocked for now 
         ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runWriteInEDT(new Runnable() {
           public void run() {
-            if (!(GoByCurrentReferenceToIDEA_Action.this.navigateToJavaStub(projectPath, targetNode, _params))) {
+            if (!(GoToDeclarationHandlerRegistry.navigateAll(((MPSProject) MapSequence.fromMap(_params).get("project")), targetNode))) {
               // TODO show popup notification "cannot navigate" 
             }
           }
         });
       }
     }.start();
-  }
-  private boolean navigateToJavaStub(String projectPath, SNode targetNode, final Map<String, Object> _params) {
-    SModelReference ref = SModelOperations.getPointer(SNodeOperations.getModel(targetNode));
-    boolean isClassifier = SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
-    boolean isConstructor = SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
-    boolean isMethod = SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(targetNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
-    boolean isField = (SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) || SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(targetNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
-    if (!((isClassifier || isConstructor || isMethod || isField))) {
-      return false;
-    }
-    if (isClassifier) {
-      String fqName = SModelOperations.getModelName(SNodeOperations.getModel(targetNode)) + '.' + SPropertyOperations.getString(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-      for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
-        if (np.openClass(projectPath, fqName)) {
-          return true;
-        }
-      }
-    } else if (isConstructor) {
-      String classifierName = GoByCurrentReferenceToIDEA_Action.this.getClassifierName(targetNode, ref, _params);
-      int paramCount = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count();
-      for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
-        if (np.openClass(projectPath, classifierName)) {
-          if (np.openConstructor(projectPath, classifierName, paramCount)) {
-            return true;
-          }
-        }
-      }
-    } else if (isMethod) {
-      String classifierName = GoByCurrentReferenceToIDEA_Action.this.getClassifierName(targetNode, ref, _params);
-      SNode method = SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
-      for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
-        if (np.openMethod(projectPath, classifierName, SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count())) {
-          return true;
-        }
-      }
-    } else {
-      String classifierName = GoByCurrentReferenceToIDEA_Action.this.getClassifierName(targetNode, ref, _params);
-      for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
-        if (np.openField(projectPath, classifierName, targetNode.getName())) {
-          return true;
-        }
-      }
-    }
-    return false;
-  }
-  private String getClassifierName(SNode targetNode, SModelReference ref, final Map<String, Object> _params) {
-    SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(targetNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
-    assert classifier != null;
-    return ref.getName().getLongName() + '.' + SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-  }
-  private static String check_xgilk9_a0c0h(File checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getAbsolutePath();
-    }
-    return null;
   }
 }

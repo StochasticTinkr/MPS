@@ -39,8 +39,8 @@ public interface NavigationProvider {
     return true;
   }
 
-  default void navigate(MPSProject p, SNode node) {
-
+  default boolean navigate(MPSProject p, SNode node) {
+    return false;
   }
 
   //todo: canNavigate
