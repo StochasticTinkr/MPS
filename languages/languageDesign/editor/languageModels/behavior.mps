@@ -3135,7 +3135,7 @@
         </node>
         <node concept="3SKdUt" id="M76vXnqmxj" role="3cqZAp">
           <node concept="3SKdUq" id="M76vXnqmxl" role="3SKWNk">
-            <property role="3SKdUp" value="InlineEditorComponent residing under a cellModel of another BaseEditorComponent, top-most cell" />
+            <property role="3SKdUp" value="InlineEditorComponent or similar residing under a cellModel of another BaseEditorComponent, top-most cell" />
           </node>
         </node>
         <node concept="3SKdUt" id="M76vXnqmIM" role="3cqZAp">
@@ -3194,23 +3194,6 @@
                 <node concept="1mIQ4w" id="M76vXnqPwE" role="2OqNvi">
                   <node concept="chp4Y" id="M76vXnqPyD" role="cj9EA">
                     <ref role="cht4Q" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3eNFk2" id="M76vXnqUhN" role="3eNLev">
-                <node concept="3clFbS" id="M76vXnqUhP" role="3eOfB_">
-                  <node concept="3zACq4" id="M76vXnr3Te" role="3cqZAp" />
-                </node>
-                <node concept="3fqX7Q" id="M76vXnr3NL" role="3eO9$A">
-                  <node concept="2OqwBi" id="M76vXnr3NN" role="3fr31v">
-                    <node concept="37vLTw" id="M76vXnr3NO" role="2Oq$k0">
-                      <ref role="3cqZAo" node="M76vXnqTQx" resolve="p" />
-                    </node>
-                    <node concept="1mIQ4w" id="M76vXnr3NP" role="2OqNvi">
-                      <node concept="chp4Y" id="M76vXnr3NQ" role="cj9EA">
-                        <ref role="cht4Q" to="tpc2:fPsVBsF" resolve="InlineEditorComponent" />
-                      </node>
-                    </node>
                   </node>
                 </node>
               </node>

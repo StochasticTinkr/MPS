@@ -138,7 +138,7 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
   }
   /*package*/ static SNode getTopAncestorCellModel_idM76vXnqh08(@NotNull SNode __thisNode__) {
     // InlineEditorComponent are transparent for CellModel ancestor walk here, i.e. for an  
-    // InlineEditorComponent residing under a cellModel of another BaseEditorComponent, top-most cell 
+    // InlineEditorComponent or similar residing under a cellModel of another BaseEditorComponent, top-most cell 
     // would be the one from topmost BaseEditorComponent.cellModel/ConceptEditorDeclaration.inspectedCellModel,  
     // not the one from InlineEditorComponent.cellModel 
     SNode topmostCellModel = __thisNode__;
@@ -146,8 +146,6 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
     do {
       if (SNodeOperations.isInstanceOf(p, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
         topmostCellModel = SNodeOperations.cast(p, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
-      } else if (!(SNodeOperations.isInstanceOf(p, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd5cee772bL, "jetbrains.mps.lang.editor.structure.InlineEditorComponent")))) {
-        break;
       }
       p = SNodeOperations.getParent(p);
     } while (p != null);
