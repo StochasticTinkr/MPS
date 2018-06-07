@@ -19,51 +19,39 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.editor.Editor;
+import com.intellij.openapi.editor.LogicalPosition;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import jetbrains.mps.plugin.ProjectHandler;
 
-
-public class FindAspectMethodUsages extends AnAction {
+public class OpenGeneratedCodeSourceInMPSAction extends AnAction {
   public void update(AnActionEvent e) {
     super.update(e);
     e.getPresentation().setVisible(false);
     Editor editor = e.getData(DataKeys.EDITOR);
     if (editor == null) return;
-    Project project = e.getData(DataKeys.PROJECT);
-    int offset = editor.getCaretModel().getOffset();
-    if (project == null) return;
-    PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
-    if (file == null) return;
-    PsiElement element = file.findElementAt(offset);
-    if (element != null && getMethod(element) != null) {
-      e.getPresentation().setVisible(true);
-    }
-  }
 
-  private PsiMethod getMethod(PsiElement e) {
-    if (e instanceof PsiMethod) return (PsiMethod) e;
-    if (e.getParent() != null) return getMethod(e.getParent());
-    return null;
+    Project project = e.getData(DataKeys.PROJECT);
+    if (project == null) return;
+
+    PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
+    if (!(file instanceof PsiJavaFile)) return;
+
+    e.getPresentation().setVisible(true);
   }
 
   public void actionPerformed(AnActionEvent e) {
     Editor editor = e.getData(DataKeys.EDITOR);
-    if (editor == null) return;
+    assert editor != null;
     Project project = e.getData(DataKeys.PROJECT);
-    int offset = editor.getCaretModel().getOffset();
-    if (project == null) return;
+    assert project != null;
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
-    if (file == null) return;
-    PsiElement element = file.findElementAt(offset);
-    PsiMethod method = getMethod(element);
-    String prefixedName = method.getName();
-    PsiJavaFile javaFile = (PsiJavaFile) file;
-    callFindUsage(project, javaFile.getPackageName(), prefixedName);
-  }
+    assert file instanceof PsiJavaFile;
+    String modelHint = ((PsiJavaFile) file).getPackageName();
 
-  private void callFindUsage(Project project, String namespace, String name) {
+    LogicalPosition pos = editor.getCaretModel().getLogicalPosition();
     ProjectHandler projectHandler = project.getComponent(ProjectHandler.class);
-    projectHandler.showAspectMethodUsages(namespace, name);
+
+    projectHandler.showSource(file, modelHint, pos.line, pos.column);
   }
 }

@@ -19,10 +19,10 @@
   </project-components>
 
   <actions>
-    <action class="jetbrains.mps.plugin.actions.FindAspectMethodUsages" text="Find Query Method Usages" id="MPSPlugin.findAspectMethodUsages" />
-    <action class="jetbrains.mps.plugin.actions.FindClassUsagesInMPS" text="Find Class Usages In MPS" id="MPSPlugin.findClassUsages" />
-    <action class="jetbrains.mps.plugin.actions.FindMethodUsagesInMPS" text="Find Method Usages In MPS" id="MPSPlugin.findMethodUsages" />
-    <action class="jetbrains.mps.plugin.actions.OpenGeneratedCodeSourceInMPS" text="Open Source In MPS" id="MPSPlugin.openGeneratedCodeSource" />
+    <action class="jetbrains.mps.plugin.actions.FindAspectMethodUsagesAction" text="Find Query Method Usages" id="MPSPlugin.findAspectMethodUsages" />
+    <action class="jetbrains.mps.plugin.actions.FindClassUsagesInMPSAction" text="Find Class Usages In MPS" id="MPSPlugin.findClassUsages" />
+    <action class="jetbrains.mps.plugin.actions.FindMethodUsagesInMPSAction" text="Find Method Usages In MPS" id="MPSPlugin.findMethodUsages" />
+    <action class="jetbrains.mps.plugin.actions.OpenGeneratedCodeSourceInMPSAction" text="Open Source In MPS" id="MPSPlugin.openGeneratedCodeSource" />
     <action class="jetbrains.mps.plugin.actions.CollectJUnitTestsFromPatternsAction" text="Collect JUnit tests" id="MPSPlugin.collectJUnitTests" />
     <group>
       <separator />
