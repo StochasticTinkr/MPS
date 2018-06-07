@@ -25,7 +25,7 @@ import jetbrains.mps.plugin.PluginUtil;
 import jetbrains.mps.plugin.ProjectHandler;
 import org.jetbrains.annotations.Nullable;
 
-public class FindClassUsagesInMPSAction extends AnAction {
+public class FindMPSClassUsagesAction extends AnAction {
   public void update(AnActionEvent anActionEvent) {
     super.update(anActionEvent);
 

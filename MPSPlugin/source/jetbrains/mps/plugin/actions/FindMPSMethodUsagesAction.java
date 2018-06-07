@@ -25,7 +25,7 @@ import com.intellij.psi.PsiMethod;
 import jetbrains.mps.plugin.PluginUtil;
 import jetbrains.mps.plugin.ProjectHandler;
 
-public class FindMethodUsagesInMPSAction extends AnAction {
+public class FindMPSMethodUsagesAction extends AnAction {
   public void update(AnActionEvent anActionEvent) {
     super.update(anActionEvent);
     PsiElement element = PluginUtil.getCurrentElement(anActionEvent);

@@ -24,7 +24,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import jetbrains.mps.plugin.ProjectHandler;
 
-public class OpenGeneratedCodeSourceInMPSAction extends AnAction {
+public class OpenMPSSourceAction extends AnAction {
   public void update(AnActionEvent e) {
     super.update(e);
     e.getPresentation().setVisible(false);
