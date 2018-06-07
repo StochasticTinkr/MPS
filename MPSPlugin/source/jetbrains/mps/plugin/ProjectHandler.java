@@ -17,6 +17,7 @@ package jetbrains.mps.plugin;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileStatusNotification;
@@ -34,14 +35,19 @@ import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
-import com.intellij.psi.*;
+import com.intellij.psi.JavaPsiFacade;
+import com.intellij.psi.PsiClass;
+import com.intellij.psi.PsiField;
+import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiMethod;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.searches.ClassInheritorsSearch;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.SwingUtilities;
+import java.awt.Frame;
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -234,19 +240,49 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   private void activateProjectWindow() {
+    assert SwingUtilities.isEventDispatchThread();
+
+    // Currently, there's no way to do this in common Java, which will both bring the window to front
+    // and give if a focus. So, we are forced to write specific code for different OSes. This code should
+    // be checked and updated periodically on all three platforms, both with minimized and normal windows
+    // at least. If you know a way to do this generic way, feel free to change the code, but test carefully.
+    // todo write a test
+
+    Frame frame = (Frame) WindowManager.getInstance().suggestParentWindow(myProject);
+    assert frame != null;
+
     if (SystemInfo.isLinux) {
+      // [MM] questionnable, somebody using linux, todo help me with that part
       return;
+    } else if (SystemInfo.isMac) {
+      // main idea of this solution described here:
+      // https://stackoverflow.com/questions/4782231/using-java-to-set-the-focus-to-a-non-java-application-in-windows/4782277#4782277,
+      // by Radek Sip, additions by MM to set correct window state
+      frame.setVisible(true);
+      frame.setState(Frame.NORMAL);
+
+      String contentsFolderPath = PathManager.getHomePath();
+      String appPath = contentsFolderPath.substring(0, contentsFolderPath.lastIndexOf("/Contents"));
+
+      Runtime runtime = Runtime.getRuntime();
+      String[] args = {"osascript", "-e", "tell app \"" + appPath + "\" to activate"};
+      try {
+        Process p = runtime.exec(args);
+        p.waitFor();
+      } catch (IOException | InterruptedException e) {
+        //todo
+        e.printStackTrace();
+      }
+    } else if (SystemInfo.isWindows) {
+      // solution described here: https://stackoverflow.com/questions/309023/how-to-bring-a-window-to-the-front,
+      // by Stefan Reich; was also found by me [MM] previously
+      frame.setState(Frame.ICONIFIED);
+      frame.setState(Frame.NORMAL);
+      frame.toFront();
+      frame.requestFocus();
     }
 
-    Frame window = (Frame) WindowManager.getInstance().suggestParentWindow(myProject);
-    if (window == null) {
-      return;
-    }
-    if (window.getExtendedState() == JFrame.ICONIFIED) {
-      window.setExtendedState(JFrame.MAXIMIZED_BOTH); // NORMAL, perhaps?
-    }
-    window.setVisible(true);
-    window.requestFocus();
+    throw new RuntimeException("Unknown OS. Navigation is only supported on Mac OS, Windows and Linux");
   }
 
 
