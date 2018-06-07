@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,19 +15,32 @@
  */
 package jetbrains.mps.core.aspects.behaviour.api;
 
-import jetbrains.mps.smodel.language.CoreAspectRegistry;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 /**
- * Behavior Registry is a registry which stores a mapping between concepts and behavior descriptors.
- * One should not bother to use it directly cause there is an {@link SMethod} and {@link jetbrains.mps.smodel.behaviour.BHReflection}
- * mechanisms to invoke a behavior method
+ * Unites the concept hierarchy (sources node<>/deployed SAbstractConcept)
+ *
+ * @author apyshkin
  */
-public interface BehaviorRegistry extends CoreAspectRegistry {
+public interface AbstractConceptLike {
   @NotNull
-  MethodResolutionOrder<? extends AbstractConceptLike> getMRO();
+  String getName();
 
   @NotNull
-  BHDescriptor getBHDescriptor(@NotNull SAbstractConcept concept);
+  List<InterfaceConceptLike> getSuperInterfaces();
+
+  interface InterfaceConceptLike extends AbstractConceptLike {
+  }
+
+  interface ConceptLike extends AbstractConceptLike {
+    boolean isAbstract();
+
+    /**
+     * @return null iff it is a root
+     */
+    @Nullable ConceptLike getSuperConcept();
+  }
 }

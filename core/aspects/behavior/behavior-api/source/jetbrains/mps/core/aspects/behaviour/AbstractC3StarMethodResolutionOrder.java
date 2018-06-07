@@ -15,52 +15,40 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
-import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.core.aspects.behaviour.api.AbstractConceptLike;
+import jetbrains.mps.core.aspects.behaviour.api.CachingMethodResolutionOrder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 /**
  * This class counts the linearization for a concept (method resolution order).
  * It is almost C3, though it is fail-safe for the hierarchy like A impl B,C, C impl B.
  * When the usual C3 algorithm fails our algorithm try to abandon the local order and preserve only super linearization.
  * If that is not possible we pick up the first concept from the first super linearization.
+ *
+ * @author apyshkin
  */
-public final class C3StarMethodResolutionOrder implements CachingMethodResolutionOrder {
-  private ConcurrentMap<SAbstractConcept, List<SAbstractConcept>> myCache = new ConcurrentHashMap<>();
-
+public abstract class AbstractC3StarMethodResolutionOrder<C extends AbstractConceptLike> extends CachingMethodResolutionOrder<C> {
   @Override
-  public List<SAbstractConcept> linearize(@NotNull SAbstractConcept concept) {
-    if (myCache.containsKey(concept)) {
-      return new ArrayList<>(myCache.get(concept));
+  protected List<C> calcLinearization0(@NotNull C concept) {
+    List<List<C>> superLinearizations = new ArrayList<>();
+    List<C> immediateParents = getImmediateParents(concept);
+    for (C parent : immediateParents) {
+      superLinearizations.add(new ArrayList<>(calcLinearization(parent)));
     }
-    List<List<SAbstractConcept>> superLinearizations = new ArrayList<>();
-    List<SAbstractConcept> immediateParents = getImmediateParents(concept);
-    for (SAbstractConcept parent : immediateParents) {
-      superLinearizations.add(new C3StarMethodResolutionOrder().linearize(parent));
-    }
-    List<SAbstractConcept> linearization = new ArrayList<>();
+    List<C> linearization = new ArrayList<>();
     linearization.add(concept);
     linearization.addAll(merge(new MergingHelper<>(immediateParents, superLinearizations)));
-    myCache.putIfAbsent(concept, linearization);
-    return new ArrayList<>(linearization);
+    return Collections.unmodifiableList(linearization);
   }
 
-  @Override
-  public void reset() {
-    myCache.clear();
-  }
-
-  private List<SAbstractConcept> merge(MergingHelper<SAbstractConcept> helper) {
-    List<SAbstractConcept> result = new ArrayList<>();
+  private List<C> merge(@NotNull MergingHelper<C> helper) {
+    List<C> result = new ArrayList<>();
     while (!helper.isEmpty()) {
       boolean success = helper.findNextElement(result, KeepingLocalOrder.KEEPING_LOCAL_ORDER);
       if (!success) { // trying not to preserve local order
@@ -80,16 +68,11 @@ public final class C3StarMethodResolutionOrder implements CachingMethodResolutio
     private MergingHelper(List<T> immediateParents, List<List<T>> superLinearizations) {
       myLocalOrder = immediateParents;
       mySuperLinearizations = superLinearizations;
-      checkNoEmptyLins();
+      checkNoEmptyLinearisations();
     }
 
-    private void checkNoEmptyLins() {
-      for (Iterator<List<T>> iterator = mySuperLinearizations.iterator(); iterator.hasNext();) {
-        List<T> superLin = iterator.next();
-        if (superLin.isEmpty()) {
-          iterator.remove();
-        }
-      }
+    private void checkNoEmptyLinearisations() {
+      mySuperLinearizations.removeIf(List::isEmpty);
     }
 
     private boolean check(@NotNull T candidate, KeepingLocalOrder localOrder) {
@@ -97,7 +80,7 @@ public final class C3StarMethodResolutionOrder implements CachingMethodResolutio
         if (superLinearization.lastIndexOf(candidate) > 0) return false; // only head is possible
       }
       if (localOrder.preserveOrder()) {
-        return myLocalOrder.lastIndexOf(candidate) <= 0;
+        if (myLocalOrder.lastIndexOf(candidate) > 0) return false;
       }
       return true;
     }
@@ -162,7 +145,7 @@ public final class C3StarMethodResolutionOrder implements CachingMethodResolutio
         if (myLocalOrder.isEmpty()) return false;
         T candidate = myLocalOrder.get(0);
         boolean succeeded = checkCandidateAndAddToResult(result, candidate, localOrder);
-        return succeeded;
+        if (succeeded) return true;
       }
       return false;
     }
@@ -170,24 +153,7 @@ public final class C3StarMethodResolutionOrder implements CachingMethodResolutio
   }
 
   @NotNull
-  private List<SAbstractConcept> getImmediateParents(SAbstractConcept concept) {
-    List<SAbstractConcept> immediateParents = new ArrayList<>();
-    if (concept instanceof SInterfaceConcept) {
-      for (SAbstractConcept superInt : ((SInterfaceConcept) concept).getSuperInterfaces()) {
-        immediateParents.add(superInt);
-      }
-      immediateParents.add(SNodeUtil.concept_BaseConcept); // hook for editor (interfaces are instances of base concept as well)
-    } else if (concept instanceof SConcept) {
-      SConcept superConcept = ((SConcept) concept).getSuperConcept();
-      if (superConcept != null) {
-        immediateParents.add(superConcept);
-      }
-      for (SAbstractConcept superInt : ((SConcept) concept).getSuperInterfaces()) {
-        immediateParents.add(superInt);
-      }
-    }
-    return immediateParents;
-  }
+  protected abstract List<C> getImmediateParents(@NotNull C concept);
 
   private enum KeepingLocalOrder {
     KEEPING_LOCAL_ORDER,
