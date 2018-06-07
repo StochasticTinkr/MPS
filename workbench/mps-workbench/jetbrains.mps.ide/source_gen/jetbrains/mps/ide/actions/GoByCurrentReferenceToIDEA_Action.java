@@ -74,18 +74,8 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.definition");
     final SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
-    new Thread() {
-      @Override
-      public void run() {
-        // todo command here is a must for read action. Without it, openNode will be deadlocked for now 
-        ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runWriteInEDT(new Runnable() {
-          public void run() {
-            if (!(GoToDeclarationHandlerRegistry.navigateAll(((MPSProject) MapSequence.fromMap(_params).get("project")), targetNode))) {
-              // TODO show popup notification "cannot navigate" 
-            }
-          }
-        });
-      }
-    }.start();
+    if (!(GoToDeclarationHandlerRegistry.navigateAll(((MPSProject) MapSequence.fromMap(_params).get("project")), targetNode))) {
+      // TODO show popup notification "cannot navigate" 
+    }
   }
 }

@@ -5374,25 +5374,20 @@
       <node id="2003512433031647705" at="70,5,71,16" concept="13" />
       <node id="1573205341975593084" at="74,96,75,87" concept="6" />
       <node id="2003512433031647991" at="75,87,76,122" concept="12" />
-      <node id="2003512433031648103" at="79,25,80,104" concept="14" />
-      <node id="2003512433031648113" at="83,136,84,64" concept="14" />
+      <node id="2003512433031648113" at="77,128,78,56" concept="14" />
       <node id="2003512433031648132" at="37,116,40,5" concept="10" />
       <node id="2003512433031648139" at="40,5,43,5" concept="10" />
       <node id="2003512433031647705" at="53,95,56,5" concept="10" />
       <node id="2003512433031647705" at="59,50,62,7" concept="10" />
       <node id="2003512433031647705" at="66,53,69,7" concept="10" />
-      <node id="2003512433031648111" at="82,29,85,13" concept="10" />
+      <node id="2003512433031648111" at="76,122,79,5" concept="10" />
       <node id="2003512433031647705" at="31,0,35,0" concept="11" trace="isDumbAware#()Z" />
       <node id="2003512433031647705" at="48,0,52,0" concept="11" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="2003512433031647705" at="26,0,31,0" concept="4" trace="GoByCurrentReferenceToIDEA_Action#()V" />
-      <node id="2003512433031648109" at="82,0,87,0" concept="11" trace="run#()V" />
       <node id="2003512433031647705" at="56,5,63,5" concept="2" />
       <node id="2003512433031647705" at="63,5,70,5" concept="2" />
-      <node id="2003512433031648105" at="80,104,87,11" concept="6" />
-      <node id="2003512433031648099" at="78,0,89,0" concept="11" trace="run#()V" />
+      <node id="2003512433031647705" at="73,0,81,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="2003512433031647705" at="35,0,48,0" concept="11" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <node id="2003512433031648093" at="76,122,89,14" concept="6" />
-      <node id="2003512433031647705" at="73,0,91,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="2003512433031647705" at="52,0,73,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <scope id="2003512433031647705" at="32,32,33,16" />
       <scope id="2003512433031648133" at="38,29,39,19" />
@@ -5401,9 +5396,8 @@
       <scope id="2003512433031647705" at="54,53,55,19" />
       <scope id="2003512433031647705" at="60,22,61,21" />
       <scope id="2003512433031647705" at="67,22,68,21" />
-      <scope id="2003512433031648112" at="83,136,84,64" />
+      <scope id="2003512433031648112" at="77,128,78,56" />
       <scope id="2003512433031647705" at="26,46,29,41" />
-      <scope id="2003512433031648110" at="82,29,85,13" />
       <scope id="2003512433031647705" at="31,0,35,0" />
       <scope id="2003512433031647705" at="48,0,52,0">
         <var name="_params" id="2003512433031647705" />
@@ -5416,33 +5410,28 @@
       <scope id="2003512433031647705" at="64,5,69,7">
         <var name="p" id="2003512433031647705" />
       </scope>
-      <scope id="2003512433031648109" at="82,0,87,0" />
-      <scope id="2003512433031648102" at="79,25,87,11" />
+      <scope id="2003512433031647705" at="74,96,79,5">
+        <var name="targetNode" id="2003512433031647992" />
+      </scope>
+      <scope id="2003512433031647705" at="73,0,81,0">
+        <var name="_params" id="2003512433031647705" />
+        <var name="event" id="2003512433031647705" />
+      </scope>
       <scope id="2003512433031648123" at="36,87,46,48">
         <var name="stubSter" id="2003512433031648160" />
         <var name="targetNode" id="2003512433031648125" />
         <var name="targetSter" id="2003512433031648151" />
       </scope>
-      <scope id="2003512433031648099" at="78,0,89,0" />
       <scope id="2003512433031647705" at="35,0,48,0">
         <var name="_params" id="2003512433031647705" />
         <var name="event" id="2003512433031647705" />
       </scope>
-      <scope id="2003512433031647705" at="74,96,89,14">
-        <var name="targetNode" id="2003512433031647992" />
-      </scope>
       <scope id="2003512433031647705" at="53,95,71,16" />
-      <scope id="2003512433031647705" at="73,0,91,0">
-        <var name="_params" id="2003512433031647705" />
-        <var name="event" id="2003512433031647705" />
-      </scope>
       <scope id="2003512433031647705" at="52,0,73,0">
         <var name="_params" id="2003512433031647705" />
         <var name="event" id="2003512433031647705" />
       </scope>
-      <unit id="2003512433031648109" at="81,102,87,9" name="jetbrains.mps.ide.actions.GoByCurrentReferenceToIDEA_Action$1$1" />
-      <unit id="2003512433031648097" at="77,8,89,5" name="jetbrains.mps.ide.actions.GoByCurrentReferenceToIDEA_Action$1" />
-      <unit id="2003512433031647705" at="23,0,92,0" name="jetbrains.mps.ide.actions.GoByCurrentReferenceToIDEA_Action" />
+      <unit id="2003512433031647705" at="23,0,82,0" name="jetbrains.mps.ide.actions.GoByCurrentReferenceToIDEA_Action" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/2003512433031648168">

@@ -30173,85 +30173,29 @@
             <node concept="3Tqbb2" id="1JdTZ5pVxbT" role="1tU5fm" />
           </node>
         </node>
-        <node concept="3clFbF" id="1JdTZ5pVxdt" role="3cqZAp">
-          <node concept="2OqwBi" id="1JdTZ5pVxdu" role="3clFbG">
-            <node concept="2ShNRf" id="1JdTZ5pVxdv" role="2Oq$k0">
-              <node concept="YeOm9" id="1JdTZ5pVxdw" role="2ShVmc">
-                <node concept="1Y3b0j" id="1JdTZ5pVxdx" role="YeSDq">
-                  <property role="2bfB8j" value="true" />
-                  <ref role="1Y3XeK" to="wyt6:~Thread" resolve="Thread" />
-                  <ref role="37wK5l" to="wyt6:~Thread.&lt;init&gt;()" resolve="Thread" />
-                  <node concept="3clFb_" id="1JdTZ5pVxdz" role="jymVt">
-                    <property role="TrG5h" value="run" />
-                    <node concept="3clFbS" id="1JdTZ5pVxdA" role="3clF47">
-                      <node concept="3SKdUt" id="1JdTZ5pVxdB" role="3cqZAp">
-                        <node concept="3SKdUq" id="1JdTZ5pVxdC" role="3SKWNk">
-                          <property role="3SKdUp" value="todo command here is a must for read action. Without it, openNode will be deadlocked for now" />
-                        </node>
-                      </node>
-                      <node concept="3clFbF" id="1JdTZ5pVxdD" role="3cqZAp">
-                        <node concept="2OqwBi" id="1JdTZ5pVxdE" role="3clFbG">
-                          <node concept="2OqwBi" id="UpNLkeHVBk" role="2Oq$k0">
-                            <node concept="2OqwBi" id="UpNLkeHVpR" role="2Oq$k0">
-                              <node concept="2WthIp" id="UpNLkeHVpU" role="2Oq$k0">
-                                <ref role="32nkFo" node="1JdTZ5pVx7p" resolve="GoByCurrentReferenceToIDEA" />
-                              </node>
-                              <node concept="1DTwFV" id="UpNLkeHVpW" role="2OqNvi">
-                                <ref role="2WH_rO" node="UpNLkeHNKo" resolve="project" />
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="UpNLkeHVMb" role="2OqNvi">
-                              <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="1JdTZ5pVxdG" role="2OqNvi">
-                            <ref role="37wK5l" to="lui2:~ModelAccess.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
-                            <node concept="1bVj0M" id="1JdTZ5pVxdH" role="37wK5m">
-                              <node concept="3clFbS" id="1JdTZ5pVxdI" role="1bW5cS">
-                                <node concept="3clFbJ" id="1JdTZ5pVxdJ" role="3cqZAp">
-                                  <node concept="3fqX7Q" id="1JdTZ5pVxdN" role="3clFbw">
-                                    <node concept="2YIFZM" id="4Mdt1RkYik_" role="3fr31v">
-                                      <ref role="1Pybhc" to="ekwn:1uYwY98XwG2" resolve="GoToDeclarationHandlerRegistry" />
-                                      <ref role="37wK5l" to="ekwn:4Mdt1RkY1tm" resolve="navigateAll" />
-                                      <node concept="2OqwBi" id="4Mdt1RkYljJ" role="37wK5m">
-                                        <node concept="2WthIp" id="4Mdt1RkYljM" role="2Oq$k0">
-                                          <ref role="32nkFo" node="1JdTZ5pVx7p" resolve="GoByCurrentReferenceToIDEA" />
-                                        </node>
-                                        <node concept="1DTwFV" id="4Mdt1RkYljO" role="2OqNvi">
-                                          <ref role="2WH_rO" node="UpNLkeHNKo" resolve="project" />
-                                        </node>
-                                      </node>
-                                      <node concept="37vLTw" id="4Mdt1RkYlME" role="37wK5m">
-                                        <ref role="3cqZAo" node="1JdTZ5pVxbS" resolve="targetNode" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="3clFbS" id="1JdTZ5pVxdK" role="3clFbx">
-                                    <node concept="3SKdUt" id="1JdTZ5pVxdL" role="3cqZAp">
-                                      <node concept="3SKdUq" id="1JdTZ5pVxdM" role="3SKWNk">
-                                        <property role="3SKdUp" value="TODO show popup notification &quot;cannot navigate&quot;" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3Tm1VV" id="1JdTZ5pVxd$" role="1B3o_S" />
-                    <node concept="3cqZAl" id="1JdTZ5pVxd_" role="3clF45" />
-                    <node concept="2AHcQZ" id="3tYsUK_Sfsd" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                    </node>
-                  </node>
-                  <node concept="3Tm1VV" id="1JdTZ5pVxdy" role="1B3o_S" />
+        <node concept="3clFbJ" id="1JdTZ5pVxdJ" role="3cqZAp">
+          <node concept="3fqX7Q" id="1JdTZ5pVxdN" role="3clFbw">
+            <node concept="2YIFZM" id="4Mdt1RkYik_" role="3fr31v">
+              <ref role="1Pybhc" to="ekwn:1uYwY98XwG2" resolve="GoToDeclarationHandlerRegistry" />
+              <ref role="37wK5l" to="ekwn:4Mdt1RkY1tm" resolve="navigateAll" />
+              <node concept="2OqwBi" id="4Mdt1RkYljJ" role="37wK5m">
+                <node concept="2WthIp" id="4Mdt1RkYljM" role="2Oq$k0">
+                  <ref role="32nkFo" node="1JdTZ5pVx7p" resolve="GoByCurrentReferenceToIDEA" />
+                </node>
+                <node concept="1DTwFV" id="4Mdt1RkYljO" role="2OqNvi">
+                  <ref role="2WH_rO" node="UpNLkeHNKo" resolve="project" />
                 </node>
               </node>
+              <node concept="37vLTw" id="4Mdt1RkYlME" role="37wK5m">
+                <ref role="3cqZAo" node="1JdTZ5pVxbS" resolve="targetNode" />
+              </node>
             </node>
-            <node concept="liA8E" id="1JdTZ5pVxdT" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Thread.start():void" resolve="start" />
+          </node>
+          <node concept="3clFbS" id="1JdTZ5pVxdK" role="3clFbx">
+            <node concept="3SKdUt" id="1JdTZ5pVxdL" role="3cqZAp">
+              <node concept="3SKdUq" id="1JdTZ5pVxdM" role="3SKWNk">
+                <property role="3SKdUp" value="TODO show popup notification &quot;cannot navigate&quot;" />
+              </node>
             </node>
           </node>
         </node>

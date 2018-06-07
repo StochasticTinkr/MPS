@@ -7,7 +7,7 @@
 
   <application-components>
     <component>
-      <implementation-class>jetbrains.mps.plugin.IdeaGoToDeclarationHandlerInitializer</implementation-class>
+      <implementation-class>jetbrains.mps.plugin.IdeaGoToDeclarationInitializer</implementation-class>
     </component>
   </application-components>
 

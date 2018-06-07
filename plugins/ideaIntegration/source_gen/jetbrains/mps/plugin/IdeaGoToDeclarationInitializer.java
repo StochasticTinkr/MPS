@@ -7,7 +7,7 @@ import jetbrains.mps.ide.editor.actions.GoToDeclarationHandlerRegistry;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class IdeaGoToDeclarationHandlerInitializer implements ApplicationComponent {
+public class IdeaGoToDeclarationInitializer implements ApplicationComponent {
   private GoToDeclarationHandlerRegistry.GoToDeclarationHandler myHandler = new DefaultGoToDeclarationHandler();
   @Override
   public void initComponent() {
