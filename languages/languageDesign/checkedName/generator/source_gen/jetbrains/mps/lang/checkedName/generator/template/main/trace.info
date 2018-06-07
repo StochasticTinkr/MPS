@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="QueriesGenerated.java">
       <unit at="49,0,64,0" name="jetbrains.mps.lang.checkedName.generator.template.main.QueriesGenerated$SNQ" />
@@ -12,8 +13,16 @@
     <file name="QueriesGenerated.java">
       <node id="5003188907304823224" at="29,113,30,346" concept="0" />
       <node id="5003188907304823216" at="32,109,33,192" concept="0" />
+      <node id="5003188907304823222" at="29,0,32,0" concept="1" trace="propertyMacro_GetPropertyValue_50031889073048232200#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
+      <node id="5003188907304823214" at="32,0,35,0" concept="1" trace="sourceNodeQuery_50031889073048232120#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="5003188907304823223" at="29,113,30,346" />
       <scope id="5003188907304823215" at="32,109,33,192" />
+      <scope id="5003188907304823222" at="29,0,32,0">
+        <var name="_context" id="5003188907304823222" />
+      </scope>
+      <scope id="5003188907304823214" at="32,0,35,0">
+        <var name="_context" id="5003188907304823214" />
+      </scope>
     </file>
   </root>
 </debug-info>
