@@ -19,11 +19,11 @@
   </project-components>
 
   <actions>
-    <action class="jetbrains.mps.plugin.FindAspectMethodUsages" text="Find Query Method Usages" id="MPSPlugin.findAspectMethodUsages" />
-    <action class="jetbrains.mps.plugin.FindClassUsagesInMPS" text="Find Class Usages In MPS" id="MPSPlugin.findClassUsages" />
-    <action class="jetbrains.mps.plugin.FindMethodUsagesInMPS" text="Find Method Usages In MPS" id="MPSPlugin.findMethodUsages" />
-    <action class="jetbrains.mps.plugin.OpenGeneratedCodeSourceInMPS" text="Open Source In MPS" id="MPSPlugin.openGeneratedCodeSource" />
-    <action class="jetbrains.mps.plugin.CollectJUnitTestsFromPatternsAction" text="Collect JUnit tests" id="MPSPlugin.collectJUnitTests" />
+    <action class="jetbrains.mps.plugin.actions.FindAspectMethodUsages" text="Find Query Method Usages" id="MPSPlugin.findAspectMethodUsages" />
+    <action class="jetbrains.mps.plugin.actions.FindClassUsagesInMPS" text="Find Class Usages In MPS" id="MPSPlugin.findClassUsages" />
+    <action class="jetbrains.mps.plugin.actions.FindMethodUsagesInMPS" text="Find Method Usages In MPS" id="MPSPlugin.findMethodUsages" />
+    <action class="jetbrains.mps.plugin.actions.OpenGeneratedCodeSourceInMPS" text="Open Source In MPS" id="MPSPlugin.openGeneratedCodeSource" />
+    <action class="jetbrains.mps.plugin.actions.CollectJUnitTestsFromPatternsAction" text="Collect JUnit tests" id="MPSPlugin.collectJUnitTests" />
     <group>
       <separator />
       <reference ref="MPSPlugin.findClassUsages" />

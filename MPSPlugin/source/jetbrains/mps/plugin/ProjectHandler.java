@@ -327,7 +327,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     return bestModule;
   }
 
-  void showAspectMethodUsages(String namepace, String name) {
+  public void showAspectMethodUsages(String namepace, String name) {
     for (IMPSIDEHandler h : myIDEHandlers) {
       try {
         h.showAspectMethodUsages(namepace, name);
@@ -337,7 +337,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     }
   }
 
-  void showClassUsages(String fqName) {
+  public void showClassUsages(String fqName) {
     for (IMPSIDEHandler h : myIDEHandlers) {
       try {
         h.showClassUsages(fqName);
@@ -358,7 +358,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     }
   }
 
-  void showMethodUsages(String classFqName, String methodName, int parameterCount) {
+  public void showMethodUsages(String classFqName, String methodName, int parameterCount) {
     for (IMPSIDEHandler h : myIDEHandlers) {
       try {
         h.showMethodUsages(classFqName, methodName, parameterCount);

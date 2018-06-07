@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.plugin;
+package jetbrains.mps.plugin.actions;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -22,6 +22,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiMethod;
+import jetbrains.mps.plugin.PluginUtil;
+import jetbrains.mps.plugin.ProjectHandler;
 
 public class FindMethodUsagesInMPS extends AnAction {
   public void update(AnActionEvent anActionEvent) {
