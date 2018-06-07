@@ -36,19 +36,22 @@ public class NoPendingMigrationsTest extends BaseProjectsTest {
       LOG.info("Project " + projectDir.getName() + ": should be tested");
     }
 
-    boolean[] migrationRequired = new boolean[1];
+    boolean[] migrationRequired = new boolean[]{false,false};
     List<String> projectMigrations = new ArrayList<>();
     List<String> moduleMigrations = new ArrayList<>();
     Exception exception = ThreadUtils.runInUIThreadAndWait(() -> {
       MigrationRegistry migrationManager = getContextProject().getComponent(MigrationRegistry.class);
-      migrationRequired[0] = migrationManager.isMigrationRequired();
-      if (migrationRequired[0]) {
+      List<SModule> modules = new ArrayList<>();
+      getContextProject().getModelAccess().runReadAction(()->{
+        modules.addAll(IterableUtil.asCollection(MigrationModuleUtil.getMigrateableModulesFromProject(getContextProject())));
+        migrationRequired[0] = migrationManager.importVersionsUpdateRequired(modules);
+      });
+      migrationRequired[1] = migrationManager.isMigrationRequired();
+      if (migrationRequired[1]) {
         projectMigrations.addAll(IterableUtil.asCollection(migrationManager.getProjectMigrations())
             .stream().map(ProjectMigration::getDescription)
             .collect(Collectors.toList()));
-        List<SModule> modules = new ArrayList<>();
         getContextProject().getModelAccess().runReadAction(() -> {
-          modules.addAll(IterableUtil.asCollection(MigrationModuleUtil.getMigrateableModulesFromProject(getContextProject())));
           moduleMigrations.addAll(migrationManager.getModuleMigrations(modules)
               .stream().map(it -> it.getScriptReference().resolve(getContextProject(),false).getCaption())
               .collect(Collectors.toList()));
@@ -58,7 +61,10 @@ public class NoPendingMigrationsTest extends BaseProjectsTest {
     if (exception != null) {
       throw new RuntimeException(exception);
     }
-    StringBuilder message = new StringBuilder("Pending migrations:\n");
+    StringBuilder message = new StringBuilder("Pending:\n");
+    if (migrationRequired[0]){
+      message.append("Module resaving required\n");
+    }
     message.append("Project migrations:\n");
     for (String pm : projectMigrations) {
       message.append(pm).append("\n");
