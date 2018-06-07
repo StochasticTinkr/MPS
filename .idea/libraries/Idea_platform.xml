@@ -46,7 +46,9 @@
       <root url="jar://$PROJECT_DIR$/lib/coverage-util.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/eddsa-0.2.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/fst-2.56.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/jackson-core-2.8.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-core-2.9.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-annotations-2.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-databind-2.9.5.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/javassist-3.21.0-GA.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jayatana-1.2.4.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jbcrypt-1.0.0.jar!/" />
