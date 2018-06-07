@@ -36,7 +36,6 @@ import com.intellij.openapi.wm.ex.StatusBarEx;
 import com.intellij.openapi.ui.MessageType;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.DebugInfoRoot;

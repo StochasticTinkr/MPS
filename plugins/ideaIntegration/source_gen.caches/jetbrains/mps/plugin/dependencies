@@ -91,6 +91,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
     <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
+    <classNode dependClassName="jetbrains.mps.plugin.FrameUtil" />
     <classNode dependClassName="jetbrains.mps.plugin.IProjectHandler" />
     <classNode dependClassName="jetbrains.mps.plugin.MPSPlugin" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -102,7 +103,6 @@
     <classNode dependClassName="jetbrains.mps.textgen.trace.DebugInfoRoot" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.TraceInfo" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.TraceablePositionInfo" />
-    <classNode dependClassName="jetbrains.mps.util.FrameUtil" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="org.apache.log4j.Level" />

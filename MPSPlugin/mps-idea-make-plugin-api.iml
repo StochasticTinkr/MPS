@@ -6,7 +6,7 @@
     <content url="file://$MODULE_DIR$/source-api">
       <sourceFolder url="file://$MODULE_DIR$/source-api" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

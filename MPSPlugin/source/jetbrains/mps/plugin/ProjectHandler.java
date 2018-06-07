@@ -242,49 +242,11 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   private void activateProjectWindow() {
     assert SwingUtilities.isEventDispatchThread();
 
-    // Currently, there's no way to do this in common Java, which will both bring the window to front
-    // and give if a focus. So, we are forced to write specific code for different OSes. This code should
-    // be checked and updated periodically on all three platforms, both with minimized and normal windows
-    // at least. If you know a way to do this generic way, feel free to change the code, but test carefully.
-    // todo write a test
-
     Frame frame = (Frame) WindowManager.getInstance().suggestParentWindow(myProject);
     assert frame != null;
 
-    if (SystemInfo.isLinux) {
-      // [MM] questionnable, somebody using linux, todo help me with that part
-      return;
-    } else if (SystemInfo.isMac) {
-      // main idea of this solution described here:
-      // https://stackoverflow.com/questions/4782231/using-java-to-set-the-focus-to-a-non-java-application-in-windows/4782277#4782277,
-      // by Radek Sip, additions by MM to set correct window state
-      frame.setVisible(true);
-      frame.setState(Frame.NORMAL);
-
-      String contentsFolderPath = PathManager.getHomePath();
-      String appPath = contentsFolderPath.substring(0, contentsFolderPath.lastIndexOf("/Contents"));
-
-      Runtime runtime = Runtime.getRuntime();
-      String[] args = {"osascript", "-e", "tell app \"" + appPath + "\" to activate"};
-      try {
-        Process p = runtime.exec(args);
-        p.waitFor();
-      } catch (IOException | InterruptedException e) {
-        //todo
-        e.printStackTrace();
-      }
-    } else if (SystemInfo.isWindows) {
-      // solution described here: https://stackoverflow.com/questions/309023/how-to-bring-a-window-to-the-front,
-      // by Stefan Reich; was also found by me [MM] previously
-      frame.setState(Frame.ICONIFIED);
-      frame.setState(Frame.NORMAL);
-      frame.toFront();
-      frame.requestFocus();
-    }
-
-    throw new RuntimeException("Unknown OS. Navigation is only supported on Mac OS, Windows and Linux");
+    FrameUtil.activateFrame(frame);
   }
-
 
   public void addIdeHandler(IMPSIDEHandler handler) {
     myIDEHandlers.add(handler);
