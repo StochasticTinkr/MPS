@@ -347,17 +347,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     }
   }
 
-
-  void showNode(String namespace, String id) {
-    for (IMPSIDEHandler h : myIDEHandlers) {
-      try {
-        h.showNode(namespace, id);
-      } catch (RemoteException e) {
-        e.printStackTrace();
-      }
-    }
-  }
-
   public void showMethodUsages(String classFqName, String methodName, int parameterCount) {
     for (IMPSIDEHandler h : myIDEHandlers) {
       try {
