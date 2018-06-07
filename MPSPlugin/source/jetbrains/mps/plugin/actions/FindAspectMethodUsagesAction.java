@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
+import jetbrains.mps.plugin.PluginUtil;
 import jetbrains.mps.plugin.ProjectHandler;
 
 
@@ -29,34 +30,36 @@ public class FindAspectMethodUsagesAction extends AnAction {
     super.update(e);
     e.getPresentation().setVisible(false);
     Editor editor = e.getData(DataKeys.EDITOR);
-    if (editor == null) return;
+    if (editor == null) {
+      return;
+    }
     Project project = e.getData(DataKeys.PROJECT);
     int offset = editor.getCaretModel().getOffset();
-    if (project == null) return;
+    if (project == null) {
+      return;
+    }
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
-    if (file == null) return;
+    if (file == null) {
+      return;
+    }
     PsiElement element = file.findElementAt(offset);
-    if (element != null && getMethod(element) != null) {
+    if (element != null && PluginUtil.getAncestor(element, PsiMethod.class) != null) {
       e.getPresentation().setVisible(true);
     }
   }
 
-  private PsiMethod getMethod(PsiElement e) {
-    if (e instanceof PsiMethod) return (PsiMethod) e;
-    if (e.getParent() != null) return getMethod(e.getParent());
-    return null;
-  }
-
   public void actionPerformed(AnActionEvent e) {
-    Editor editor = e.getData(DataKeys.EDITOR);
-    if (editor == null) return;
     Project project = e.getData(DataKeys.PROJECT);
+    assert project != null;
+    Editor editor = e.getData(DataKeys.EDITOR);
+    assert editor != null;
     int offset = editor.getCaretModel().getOffset();
-    if (project == null) return;
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
-    if (file == null) return;
+    assert file != null;
     PsiElement element = file.findElementAt(offset);
-    PsiMethod method = getMethod(element);
+    PsiMethod method = PluginUtil.getAncestor(element, PsiMethod.class);
+    assert method!=null;
+
     String prefixedName = method.getName();
     PsiJavaFile javaFile = (PsiJavaFile) file;
     callFindUsage(project, javaFile.getPackageName(), prefixedName);

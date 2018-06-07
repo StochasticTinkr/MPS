@@ -37,6 +37,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.*;
 import com.intellij.ui.DocumentAdapter;
 import com.intellij.ui.ScrollPaneFactory;
+import jetbrains.mps.plugin.PluginUtil;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
@@ -61,40 +62,56 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
     e.getPresentation().setVisible(false);
 
     Editor editor = e.getData(DataKeys.EDITOR);
-    if (editor == null) return;
+    if (editor == null) {
+      return;
+    }
 
     Project project = e.getData(DataKeys.PROJECT);
-    if (project == null) return;
+    if (project == null) {
+      return;
+    }
 
     int offset = editor.getCaretModel().getOffset();
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
-    if (file == null) return;
+    if (file == null) {
+      return;
+    }
 
     PsiElement element = file.findElementAt(offset);
-    PsiClass pc = getPsiClass(element);
-    if (pc != null) e.getPresentation().setVisible(true);
+    PsiClass pc = PluginUtil.getAncestor(element, PsiClass.class);
+    if (pc != null) {
+      e.getPresentation().setVisible(true);
+    }
   }
 
   @Override
   public void actionPerformed(AnActionEvent e) {
     Editor editor = e.getData(DataKeys.EDITOR);
-    if (editor == null) return;
+    if (editor == null) {
+      return;
+    }
 
     final Project project = e.getData(DataKeys.PROJECT);
-    if (project == null) return;
+    if (project == null) {
+      return;
+    }
 
     int offset = editor.getCaretModel().getOffset();
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
-    if (file == null) return;
+    if (file == null) {
+      return;
+    }
 
     PsiElement element = file.findElementAt(offset);
-    final PsiClass pc = getPsiClass(element);
-    if (pc == null) return;
-
-    File baseDir = getProjectBaseDir(project);
+    final PsiClass pc = PluginUtil.getAncestor(element, PsiClass.class);
+    if (pc == null) {
+      return;
+    }
 
     String ptns = showInputDialog(project, "I want cookie! Give me the cookie!", "Cookie monster");
-    if (ptns == null) return;
+    if (ptns == null) {
+      return;
+    }
 
     Map<File, Set<String>> includePathsMap = new HashMap<File, Set<String>>();
     Map<File, Set<String>> excludePathsMap = new HashMap<File, Set<String>>();
@@ -117,11 +134,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
 
       for (Pair<File, String> pear : pfs.getRelativePaths()) {
         Map<File, Set<String>> pathsMap = fp.include ? includePathsMap : excludePathsMap;
-        Set<String> paths = pathsMap.get(pear.getFirst());
-        if (paths == null) {
-          paths = new HashSet<String>();
-          pathsMap.put(pear.getFirst(), paths);
-        }
+        Set<String> paths = pathsMap.computeIfAbsent(pear.getFirst(), k -> new HashSet<>());
         paths.add(pear.getSecond());
       }
     }
@@ -141,7 +154,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
 
     final WriteAction<String> action = new WriteAction<String>() {
       @Override
-      protected void run(Result<String> stringResult) throws Throwable {
+      protected void run(Result<String> stringResult){
         stringResult.setResult(null);
 
         StringBuilder sb = new StringBuilder("@SuiteClassSymbols({");
@@ -175,12 +188,10 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
     };
 
     if (!suiteClasses.isEmpty()) {
-      CommandProcessor.getInstance().executeCommand(project, new Runnable() {
-        public void run() {
-          String error = action.execute().getResultObject();
-          if (error != null) {
-            errors.add(error);
-          }
+      CommandProcessor.getInstance().executeCommand(project, () -> {
+        String error = action.execute().getResultObject();
+        if (error != null) {
+          errors.add(error);
         }
       }, e.getPresentation().getText(), null);
     } else {
@@ -188,7 +199,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
     }
 
     if (!errors.isEmpty()) {
-      StringBuilder sb = new StringBuilder("");
+      StringBuilder sb = new StringBuilder();
       String sep = "";
       for (String er : errors) {
         sb.append(sep).append(er);
@@ -196,26 +207,6 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
       }
       Messages.showErrorDialog(project, sb.toString(), "I have a bad feeling about this");
     }
-  }
-
-  private File getProjectBaseDir(Project prj) {
-    if (prj != null) {
-      VirtualFile bvf = prj.getBaseDir();
-      if (bvf != null && bvf.isInLocalFileSystem()) {
-        return new File(URI.create(bvf.getUrl()));
-      }
-    }
-    return null;
-  }
-
-  private PsiClass getPsiClass(PsiElement element) {
-    PsiClass pc = null;
-    while (element != null) {
-      pc = element instanceof PsiClass ? (PsiClass) element : null;
-      if (pc != null) break;
-      element = element.getParent();
-    }
-    return pc;
   }
 
   private String filePathToJavaClass(String filePath) {
@@ -230,7 +221,9 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
     if (application.isUnitTestMode() || application.isHeadlessEnvironment()) {
       return null;
     } else {
-      MyMessages.TextAreaInputDialog dialog = new MyMessages.TextAreaInputDialog(project, message, title, null, "", null, new String[]{CommonBundle.getOkButtonText(), CommonBundle.getCancelButtonText()}, 0);
+      MyMessages.TextAreaInputDialog dialog = new MyMessages.TextAreaInputDialog(project, message, title, null, "", null,
+                                                                                 new String[]{CommonBundle.getOkButtonText(), CommonBundle.getCancelButtonText()},
+                                                                                 0);
       dialog.show();
       return dialog.getInputString();
     }
@@ -255,7 +248,9 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
     }
 
     public static FilePattern fromString(String ptn) throws FilePatternParseException {
-      if (ptn.length() == 0) throw new FilePatternParseException("Empty pattern");
+      if (ptn.length() == 0) {
+        throw new FilePatternParseException("Empty pattern");
+      }
 
       boolean include = true;
       char sign = ptn.charAt(0);
@@ -271,7 +266,9 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
         ptn = ptn.substring(si + 1);
       }
 
-      if (ptn.length() == 0) throw new FilePatternParseException("Empty file pattern");
+      if (ptn.length() == 0) {
+        throw new FilePatternParseException("Empty file pattern");
+      }
 
       return new FilePattern(include, modulePtn, ptn);
     }
@@ -279,8 +276,8 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
     public String toString() {
       return
           (include ? "+" : "-") +
-              (modulePtn.length() == 0 ? "" : modulePtn + ":") +
-              filePtn;
+          (modulePtn.length() == 0 ? "" : modulePtn + ":") +
+          filePtn;
     }
   }
 
@@ -301,7 +298,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
         List<File> files = new ArrayList<File>();
         FileUtil.collectMatchedFiles(spd, ptn, files);
         for (File match : files) {
-          res.add(new Pair<File, String>(spd, FileUtil.getRelativePath(spd, match)));
+          res.add(new Pair<>(spd, FileUtil.getRelativePath(spd, match)));
         }
       }
       return Collections.unmodifiableList(res);
@@ -347,7 +344,6 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
   }
 
   private static class MyMessages extends Messages {
-
     private static class TextAreaInputDialog extends InputDialog {
       private JTextArea textArea;
 
@@ -372,9 +368,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
         JPanel messagePanel = null;
         try {
           textField = (JComponent) InputDialog.class.getMethod("getTextField").invoke(this);
-        } catch (InvocationTargetException ignore) {
-        } catch (NoSuchMethodException ignore) {
-        } catch (IllegalAccessException ignore) {
+        } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException ignore) {
         }
 
         if (textField != null) {
@@ -393,9 +387,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
           try {
             Method createScrollPane = ScrollPaneFactory.class.getMethod("createScrollPane", Component.class);
             scrollPane = (JScrollPane) createScrollPane.invoke(null, textArea);
-          } catch (InvocationTargetException ignore) {
-          } catch (NoSuchMethodException ignore) {
-          } catch (IllegalAccessException ignore) {
+          } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException ignore) {
           }
 
           if (scrollPane != null) {
@@ -418,7 +410,6 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
           return null;
         }
       }
-
     }
   }
 }

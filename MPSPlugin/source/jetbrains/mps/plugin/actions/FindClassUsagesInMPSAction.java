@@ -21,44 +21,41 @@ import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiField;
-import com.intellij.psi.PsiMethod;
 import jetbrains.mps.plugin.PluginUtil;
 import jetbrains.mps.plugin.ProjectHandler;
+import org.jetbrains.annotations.Nullable;
 
 public class FindClassUsagesInMPSAction extends AnAction {
   public void update(AnActionEvent anActionEvent) {
     super.update(anActionEvent);
 
     PsiElement element = PluginUtil.getCurrentElement(anActionEvent);
-    PsiClass cls = getPsiClass(element);
-    if (cls == null) {
-      anActionEvent.getPresentation().setVisible(false);
-      anActionEvent.getPresentation().setEnabled(false);
-    } else {
-      anActionEvent.getPresentation().setVisible(true);
-      anActionEvent.getPresentation().setEnabled(true);
-    }
+    PsiClass cls = getRootPsiClass(element);
+
+    boolean enabled = cls != null;
+    anActionEvent.getPresentation().setVisible(enabled);
+    anActionEvent.getPresentation().setEnabled(enabled);
   }
 
-  private PsiClass getPsiClass(PsiElement element) {
-    if (element == null) {
-      return null;
+  @Nullable
+  private PsiClass getRootPsiClass(PsiElement element) {
+    PsiClass next = PluginUtil.getAncestor(element, PsiClass.class);
+    while (next != null) {
+      element = next;
+      next = PluginUtil.getAncestor(element.getParent(), PsiClass.class);
     }
-    PsiClass cls = PluginUtil.getElement(element, PsiClass.class);
-    if (PluginUtil.getElement(element, PsiMethod.class) != null || PluginUtil.getElement(element, PsiField.class) != null) {
-      cls = null;
-    }
-    return cls;
+
+    return (element instanceof PsiClass)? ((PsiClass) element):null;
   }
 
   public void actionPerformed(AnActionEvent anActionEvent) {
-    PsiElement element = PluginUtil.getCurrentElement(anActionEvent);
-
     Project project = anActionEvent.getData(DataKeys.PROJECT);
-    if (project == null) return;
+    assert project != null;
+    PsiElement element = PluginUtil.getCurrentElement(anActionEvent);
+    PsiClass cls = getRootPsiClass(element);
+    assert cls != null;
+
     ProjectHandler projectHandler = project.getComponent(ProjectHandler.class);
-    PsiClass cls = getPsiClass(element);
     projectHandler.showClassUsages(cls.getQualifiedName());
   }
 }

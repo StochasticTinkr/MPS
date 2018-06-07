@@ -29,22 +29,22 @@ public class FindMethodUsagesInMPSAction extends AnAction {
   public void update(AnActionEvent anActionEvent) {
     super.update(anActionEvent);
     PsiElement element = PluginUtil.getCurrentElement(anActionEvent);
-    PsiMethod method = PluginUtil.getElement(element, PsiMethod.class);
-    if (method == null) {
-      anActionEvent.getPresentation().setVisible(false);
-      anActionEvent.getPresentation().setEnabled(false);
-    } else {
-      anActionEvent.getPresentation().setVisible(true);
-      anActionEvent.getPresentation().setEnabled(true);
-    }
+    PsiMethod method = PluginUtil.getAncestor(element, PsiMethod.class);
+    PsiClass cls = method == null ? null : PluginUtil.getAncestor(method, PsiClass.class);
+
+    boolean enabled = method != null && cls != null;
+    anActionEvent.getPresentation().setVisible(enabled);
+    anActionEvent.getPresentation().setEnabled(enabled);
   }
 
   public void actionPerformed(AnActionEvent anActionEvent) {
-    PsiElement element = PluginUtil.getCurrentElement(anActionEvent);
-    PsiMethod method = PluginUtil.getElement(element, PsiMethod.class);
-    PsiClass cls = PluginUtil.getElement(element, PsiClass.class);
     Project project = anActionEvent.getData(DataKeys.PROJECT);
-    if (project == null) return;
+    assert project != null;
+    PsiElement element = PluginUtil.getCurrentElement(anActionEvent);
+    PsiMethod method = PluginUtil.getAncestor(element, PsiMethod.class);
+    assert method != null;
+    PsiClass cls = PluginUtil.getAncestor(method, PsiClass.class);
+    assert cls != null;
     ProjectHandler projectHandler = project.getComponent(ProjectHandler.class);
     projectHandler.showMethodUsages(cls.getQualifiedName(), method.getName(), method.getParameterList().getParameters().length);
   }
