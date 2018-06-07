@@ -244,8 +244,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     }
     if (window.getExtendedState() == JFrame.ICONIFIED) {
       window.setExtendedState(JFrame.MAXIMIZED_BOTH); // NORMAL, perhaps?
-    } else {
-      window.setExtendedState(JFrame.NORMAL);
     }
     window.setVisible(true);
     window.requestFocus();
