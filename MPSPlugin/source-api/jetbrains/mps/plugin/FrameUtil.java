@@ -31,7 +31,6 @@ public abstract class FrameUtil {
 
     if (SystemInfo.isLinux) {
       // [MM] questionnable, somebody using linux, todo help me with that part
-      return;
     } else if (SystemInfo.isMac) {
       // main idea of this solution described here:
       // https://stackoverflow.com/questions/4782231/using-java-to-set-the-focus-to-a-non-java-application-in-windows/4782277#4782277,
@@ -40,7 +39,12 @@ public abstract class FrameUtil {
       frame.setState(Frame.NORMAL);
 
       String contentsFolderPath = PathManager.getHomePath();
-      String appPath = contentsFolderPath.substring(0, contentsFolderPath.lastIndexOf("/Contents"));
+      int index = contentsFolderPath.lastIndexOf("/Contents");
+      if (index==-1){
+        //todo we are not in distrib, can't move focus, add notification
+        return;
+      }
+      String appPath = contentsFolderPath.substring(0, index);
 
       Runtime runtime = Runtime.getRuntime();
       String[] args = {"osascript", "-e", "tell app \"" + appPath + "\" to activate"};
@@ -48,7 +52,7 @@ public abstract class FrameUtil {
         Process p = runtime.exec(args);
         p.waitFor();
       } catch (IOException | InterruptedException e) {
-        //todo
+        //todo show notification
         e.printStackTrace();
       }
     } else if (SystemInfo.isWindows) {
