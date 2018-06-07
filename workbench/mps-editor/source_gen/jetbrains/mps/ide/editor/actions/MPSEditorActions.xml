@@ -94,7 +94,7 @@
     <action id="jetbrains.mps.ide.editor.actions.FoldSelection_Action" class="jetbrains.mps.ide.editor.actions.FoldSelection_Action">
       <keyboard-shortcut first-keystroke="ctrl PERIOD" keymap="$default" />
     </action>
-    <action id="jetbrains.mps.ide.editor.actions.GoByCurrentReference_Action" class="jetbrains.mps.ide.editor.actions.GoByCurrentReference_Action">
+    <action id="jetbrains.mps.ide.editor.actions.GoToDeclaration_Action" class="jetbrains.mps.ide.editor.actions.GoToDeclaration_Action">
       <keyboard-shortcut first-keystroke="ctrl B" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.Home_Action" class="jetbrains.mps.ide.editor.actions.Home_Action">
@@ -348,7 +348,7 @@
       <add-to-group group-id="EditorPopup_ActionGroupfolding" anchor="last" />
     </group>
     <group id="jetbrains.mps.ide.editor.actions.GoToEditorPopupAddition_ActionGroup" text="Go To" popup="true">
-      <reference ref="jetbrains.mps.ide.editor.actions.GoByCurrentReference_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.GoToDeclaration_Action" />
       <reference ref="GoToEditorPopupAddition_ActionGroupother" />
       <reference ref="GoToEditorPopupAddition_ActionGrouprefs" />
       <add-to-group group-id="EditorPopup_ActionGroupgoto" anchor="last" />

@@ -35,7 +35,7 @@ public class GoToReference_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2399036385470603863", "");
-      invokeAction("jetbrains.mps.ide.editor.actions.GoByCurrentReference_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.GoToDeclaration_Action");
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " DELETE"));
     }
   }

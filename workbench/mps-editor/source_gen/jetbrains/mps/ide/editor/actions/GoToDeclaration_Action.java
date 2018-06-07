@@ -10,18 +10,19 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class GoByCurrentReference_Action extends BaseAction {
+public class GoToDeclaration_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public GoByCurrentReference_Action() {
+  public GoToDeclaration_Action() {
     super("Declaration", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
@@ -32,14 +33,22 @@ public class GoByCurrentReference_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
-    if (targetNode == null) {
+    SNode wrtNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
+    if (wrtNode == null) {
       return false;
     }
-    if (targetNode == ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNode()) {
-      return false;
+
+    if (wrtNode != ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNode()) {
+      return true;
     }
-    return true;
+    for (SNode anc : ListSequence.fromList(SNodeOperations.getNodeAncestors(wrtNode, null, true))) {
+      for (GoToDeclarationHandler np : ListSequence.fromList(GoToDeclarationHandler.getHandlers())) {
+        if (np.canNavigate(((MPSProject) MapSequence.fromMap(_params).get("project")), anc)) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -69,7 +78,23 @@ public class GoByCurrentReference_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.definition");
-    final SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
-    new EditorNavigator(((MPSProject) MapSequence.fromMap(_params).get("project"))).shallFocus(true).selectIfChild().open(SNodeOperations.getPointer(targetNode));
+
+    SNode wrtNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
+    if (wrtNode != ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNode()) {
+      new EditorNavigator(((MPSProject) MapSequence.fromMap(_params).get("project"))).shallFocus(true).selectIfChild().open(SNodeOperations.getPointer(wrtNode));
+    } else {
+      for (SNode anc : ListSequence.fromList(SNodeOperations.getNodeAncestors(wrtNode, null, true))) {
+        boolean navigated = false;
+        for (GoToDeclarationHandler np : ListSequence.fromList(GoToDeclarationHandler.getHandlers())) {
+          if (np.canNavigate(((MPSProject) MapSequence.fromMap(_params).get("project")), anc)) {
+            navigated = true;
+            np.navigate(((MPSProject) MapSequence.fromMap(_params).get("project")), anc);
+          }
+        }
+        if (navigated) {
+          break;
+        }
+      }
+    }
   }
 }

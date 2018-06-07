@@ -16,24 +16,36 @@
 package jetbrains.mps.ide.navigation;
 
 import com.intellij.openapi.extensions.ExtensionPointName;
+import jetbrains.mps.project.MPSProject;
+import org.jetbrains.mps.openapi.model.SNode;
 
-/**
- * Evgeny Gryaznov, Aug 24, 2010
- */
 public interface NavigationProvider {
+  ExtensionPointName<NavigationProvider> EP_NAME =
+      ExtensionPointName.create("com.intellij.mps.NavigationProvider");
 
-  public static ExtensionPointName<NavigationProvider> EP_NAME =
-    ExtensionPointName.create("com.intellij.mps.NavigationProvider");
-
+  @Deprecated
   boolean openClass(String projectPath, String fqName);
 
+  @Deprecated
   boolean openMethod(String projectPath, String className, String name, int parameterCount);
 
+  @Deprecated
   boolean openField(String projectPath, String className, String name);
 
+  @Deprecated
   boolean openConstructor(String projectPath, String className, int parameterCount);
 
-  default boolean navigate(String projectPath, String fileName, int startLine, int startPosition, int endLine, int endPosition){
+  default boolean canNavigate(MPSProject p, SNode node) {
+    return true;
+  }
+
+  default void navigate(MPSProject p, SNode node) {
+
+  }
+
+  //todo: canNavigate
+
+  default boolean navigate(String projectPath, String fileName, int startLine, int startPosition, int endLine, int endPosition) {
     //body can be removed after 2018.1
     return false;
   }

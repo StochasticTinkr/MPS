@@ -6,7 +6,9 @@
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
 
   <application-components>
-    <!-- no application components -->
+    <component>
+      <implementation-class>jetbrains.mps.plugin.IdeaGoToDeclarationHandlerInitializer</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
