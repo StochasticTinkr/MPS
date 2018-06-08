@@ -20,7 +20,6 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.EditorQuickFix;
 import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
@@ -69,8 +68,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeSet;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 
@@ -119,87 +116,126 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return visitor.getIntentionKind();
   }
 
-  public synchronized Collection<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final QueryDescriptor query, @NotNull final SNode node,
+  /**
+   * Composite of intention and the node for which the intention was calculated
+   * {@link #getAvailableIntentionsForExactNode(SNode, EditorContext, boolean, Filter)})
+   */
+  private static class IntentionExecutableWithSNode {
+    public final IntentionExecutable intention;
+    public final SNode node;
+
+    private IntentionExecutableWithSNode(@NotNull IntentionExecutable intention, @NotNull SNode node) {
+      this.intention = intention;
+      this.node = node;
+    }
+  }
+
+  private final class IntentionsCollector {
+    @NotNull private final QueryDescriptor myQuery;
+    @NotNull private final SNode myStartingNode;
+    @NotNull private final EditorContext myEditorContext;
+
+    public IntentionsCollector(@NotNull QueryDescriptor query, @NotNull SNode startingNode, @NotNull EditorContext context) {
+      myQuery = query;
+      myStartingNode = startingNode;
+      myEditorContext = context;
+    }
+
+    /**
+     * Called inside the type checking action in the {@link #collect()}
+     * @return the sorted collection (according to kind, distance to the starting node) of the applicable intentions
+     */
+    private Collection<IntentionExecutableWithSNode> collect0() {
+      final Map<IntentionExecutable, Kind> intention2Kind = new HashMap<>();
+      final Map<SNode, Integer> distance2StartingNodeInAST = new HashMap<>();
+
+      // Hiding intentions with same IntentionDescriptor
+      // important when currently selected element and it's parent has same intention
+      final Set<IntentionDescriptor> processedIntentionDescriptors = new HashSet<>();
+      Filter filter = new Filter(myQuery.myEnabledOnly ? getDisabledIntentions() : null, myQuery.mySurroundWith) {
+        @Override
+        boolean accept(IntentionFactory intentionFactory) {
+          return super.accept(intentionFactory) && !processedIntentionDescriptors.contains(intentionFactory);
+        }
+      };
+      List<IntentionExecutableWithSNode> result = new ArrayList<>();
+      Map<IntentionExecutable, Kind> intentionsForExactNode = getAvailableIntentionsForExactNode(myStartingNode, myEditorContext, false, filter);
+      intention2Kind.putAll(intentionsForExactNode);
+      for (IntentionExecutable intentionExecutable : intentionsForExactNode.keySet()) {
+        result.add(new IntentionExecutableWithSNode(intentionExecutable, myStartingNode));
+        processedIntentionDescriptors.add(intentionExecutable.getDescriptor());
+      }
+      distance2StartingNodeInAST.put(myStartingNode, 0);
+      int distance = 0;
+
+      if (!myQuery.isCurrentNodeOnly()) {
+        SNode parent = myStartingNode.getParent();
+        while (parent != null) {
+          Map<IntentionExecutable, Kind> intentionsForParent = getAvailableIntentionsForExactNode(parent, myEditorContext, true, filter);
+          intention2Kind.putAll(intentionsForParent);
+
+          for (IntentionExecutable intentionExecutable : intentionsForParent.keySet()) {
+            result.add(new IntentionExecutableWithSNode(intentionExecutable, parent));
+            processedIntentionDescriptors.add(intentionExecutable.getDescriptor());
+          }
+          distance2StartingNodeInAST.put(parent, ++distance);
+          parent = parent.getParent();
+        }
+      }
+      return sortResult(result, intention2Kind, distance2StartingNodeInAST);
+    }
+
+    private Collection<IntentionExecutableWithSNode> sortResult(Collection<IntentionExecutableWithSNode> result,
+                                                                Map<IntentionExecutable, Kind> intention2Kind,
+                                                                Map<SNode, Integer> distance2StartingNodeInAST) {
+      Comparator<IntentionExecutableWithSNode> pairComparator = (executableNodePair1, executableNodePair2) -> {
+        IntentionExecutable executable1 = executableNodePair1.intention;
+        SNode node1 = executableNodePair1.node;
+        IntentionExecutable executable2 = executableNodePair2.intention;
+        SNode node2 = executableNodePair2.node;
+        Kind kind1 = intention2Kind.get(executable1);
+        Kind kind2 = intention2Kind.get(executable2);
+        if (kind1.ordinal() == kind2.ordinal()) {
+          if (node1 == node2) {
+            return executable1.getDescription(node1, myEditorContext)
+                              .compareTo(executable2.getDescription(node2, myEditorContext));
+          } else {
+            return distance2StartingNodeInAST.get(node1).compareTo(distance2StartingNodeInAST.get(node2));
+          }
+        } else {
+          return kind1.compareTo(kind2);
+        }
+      };
+      return result.stream()
+                   .distinct()
+                   .sorted(pairComparator)
+                   .collect(Collectors.toList());
+    }
+
+    @NotNull
+    public Collection<IntentionExecutableWithSNode> collect() {
+      jetbrains.mps.openapi.editor.EditorComponent editorComponent = myEditorContext.getEditorComponent();
+      return TypeContextManager.getInstance().runTypecheckingAction((ITypeContextOwner) editorComponent, this::collect0);
+    }
+  }
+
+  public synchronized Collection<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final QueryDescriptor query,
+                                                                                          @NotNull final SNode node,
                                                                                           final EditorContext context) {
-    return TypeContextManager.getInstance().runTypecheckingAction((ITypeContextOwner) context.getEditorComponent(),
-                                                                  new Computable<Collection<Pair<IntentionExecutable, SNode>>>() {
-                                                                    @Override
-                                                                    public Collection<Pair<IntentionExecutable, SNode>> compute() {
-                                                                      // Hiding intentions with same IntentionDescriptor
-                                                                      // important when currently selected element and it's parent has same intention
-                                                                      final Set<IntentionDescriptor> processedIntentionDescriptors = new HashSet<>();
-                                                                      Filter filter = new Filter(query.myEnabledOnly ? getDisabledIntentions() : null,
-                                                                                                 query.mySurroundWith) {
-                                                                        @Override
-                                                                        boolean accept(IntentionFactory intentionFactory) {
-                                                                          return super.accept(intentionFactory) &&
-                                                                                 !processedIntentionDescriptors.contains(intentionFactory);
-                                                                        }
-                                                                      };
-                                                                      List<Pair<IntentionExecutable, SNode>> result = new ArrayList<>();
-                                                                      Map<IntentionExecutable, Kind> intention2Kind = new HashMap<>();
-                                                                      Map<IntentionExecutable, Kind> intentionsForExactNode =
-                                                                          getAvailableIntentionsForExactNode(node, context, false, filter);
-                                                                      intention2Kind.putAll(intentionsForExactNode);
-                                                                      for (IntentionExecutable intentionExecutable : intentionsForExactNode.keySet()) {
-                                                                        result.add(new Pair<>(intentionExecutable, node));
-                                                                        processedIntentionDescriptors.add(intentionExecutable.getDescriptor());
-                                                                      }
-
-                                                                      Map<SNode, Integer> node2Height = new HashMap<>();
-                                                                      node2Height.put(node, 0);
-                                                                      int height = 0;
-
-                                                                      if (!query.isCurrentNodeOnly()) {
-                                                                        SNode parent = node.getParent();
-                                                                        while (parent != null) {
-                                                                          Map<IntentionExecutable, Kind> intentionsForParent =
-                                                                              getAvailableIntentionsForExactNode(parent, context, true, filter);
-                                                                          intention2Kind.putAll(intentionsForParent);
-
-                                                                          for (IntentionExecutable intentionExecutable : intentionsForParent.keySet()) {
-                                                                            result.add(new Pair<>(intentionExecutable, parent));
-                                                                            processedIntentionDescriptors.add(intentionExecutable.getDescriptor());
-                                                                          }
-                                                                          node2Height.put(parent, ++height);
-                                                                          parent = parent.getParent();
-                                                                        }
-                                                                      }
-                                                                      List<Pair<IntentionExecutable, SNode>> sortedResult = result.stream()
-                                                                                                                                  .distinct()
-                                                                                                                                  .sorted((executableNodePair1, executableNodePair2) -> {
-                                                                                                                                    IntentionExecutable executable1 = executableNodePair1.o1;
-                                                                                                                                    SNode node1 = executableNodePair1.o2;
-                                                                                                                                    IntentionExecutable executable2 = executableNodePair2.o1;
-                                                                                                                                    SNode node2 = executableNodePair2.o2;
-                                                                                                                                    Kind kind1 = intention2Kind.get(executable1);
-                                                                                                                                    Kind kind2 = intention2Kind.get(executable2);
-                                                                                                                                    if (kind1.ordinal() == kind2.ordinal()) {
-                                                                                                                                      if (node1 == node2) {
-                                                                                                                                        return executable1.getDescription(node1, context)
-                                                                                                                                                          .compareTo(
-                                                                                                                                                              executable2.getDescription(node2, context));
-                                                                                                                                      } else {
-                                                                                                                                        return node2Height.get(node1).compareTo(node2Height.get(node2));
-                                                                                                                                      }
-                                                                                                                                    } else {
-                                                                                                                                      return kind1.compareTo(kind2);
-                                                                                                                                    }
-                                                                                                                                  })
-                                                                                                                                  .collect(Collectors.toList());
-                                                                      return sortedResult;
-                                                                    }
-                                                                  });
+    IntentionsCollector intentionsCollector = new IntentionsCollector(query, node, context);
+    return intentionsCollector.collect()
+                              .stream()
+                              .map(intentionWithNode -> new Pair<>(intentionWithNode.intention, intentionWithNode.node))
+                              .collect(Collectors.toList());
   }
 
 
   private Map<IntentionExecutable, Kind> getAvailableIntentionsForExactNode(@NotNull final SNode node, @NotNull final EditorContext context, boolean isAncestor,
-                                                                       Filter filter) {
+                                                                            Filter filter) {
     CollectAvailableIntentionsVisitor visitor = new CollectAvailableIntentionsVisitor();
     visitIntentions(node, visitor, filter, isAncestor, context);
 
     Map<IntentionExecutable, Kind> result = new HashMap<>();
-
     for (IntentionFactory factory : visitor.getAvailableIntentionFactories()) {
       try {
         for (IntentionExecutable executable : factory.instances(node, context)) {
