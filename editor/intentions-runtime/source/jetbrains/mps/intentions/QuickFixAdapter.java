@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.intentions;
 
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.EditorQuickFix;
 import jetbrains.mps.errors.item.RuleIdFlavouredItem.TypesystemRuleId;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -33,11 +34,11 @@ import static jetbrains.mps.errors.item.RuleIdFlavouredItem.FLAVOUR_RULE_ID;
 
 public class QuickFixAdapter extends OldBaseIntentionFactory {
   private EditorQuickFix myQuickFix;
-  private boolean myIsError;
+  private final MessageStatus myStatus;
 
-  public QuickFixAdapter(@NotNull EditorQuickFix quickFix, boolean isError) {
+  public QuickFixAdapter(@NotNull EditorQuickFix quickFix, @NotNull MessageStatus status) {
     myQuickFix = quickFix;
-    myIsError = isError;
+    myStatus = status;
   }
 
   @Override
@@ -60,7 +61,12 @@ public class QuickFixAdapter extends OldBaseIntentionFactory {
 
   @Override
   public Kind getKind() {
-    return myIsError ? Kind.ERROR : Kind.NORMAL;
+    switch (myStatus) {
+      case OK: return Kind.QUICKFIX;
+      case WARNING: return Kind.QUICKFIX;
+      case ERROR: return Kind.ERROR;
+    }
+    return Kind.NORMAL;
   }
 
   @Override
