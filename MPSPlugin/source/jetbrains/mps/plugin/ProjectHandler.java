@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.plugin;
 
+import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.PathManager;
@@ -245,7 +246,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     Frame frame = (Frame) WindowManager.getInstance().suggestParentWindow(myProject);
     assert frame != null;
 
-    FrameUtil.activateFrame(frame);
+    ProjectUtil.focusProjectWindow(myProject, true);
   }
 
   public void addIdeHandler(IMPSIDEHandler handler) {

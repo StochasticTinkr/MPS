@@ -62,6 +62,7 @@
     <import index="9ti4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.extensions(MPS.IDEA/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <import index="btn2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.impl(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1707,12 +1708,15 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbF" id="5mG9UR3WoWX" role="3cqZAp">
-                    <node concept="2YIFZM" id="1uYwY98TXnA" role="3clFbG">
-                      <ref role="37wK5l" to="ba15:~FrameUtil.activateFrame(java.awt.Frame):void" resolve="activateFrame" />
-                      <ref role="1Pybhc" to="ba15:~FrameUtil" resolve="FrameUtil" />
-                      <node concept="1rXfSq" id="1uYwY98TXnB" role="37wK5m">
-                        <ref role="37wK5l" node="7vbFQ4bPXAS" resolve="getMainFrame" />
+                  <node concept="3clFbF" id="1Di1E9vY6l0" role="3cqZAp">
+                    <node concept="2YIFZM" id="1Di1E9vY6l1" role="3clFbG">
+                      <ref role="37wK5l" to="btn2:~ProjectUtil.focusProjectWindow(com.intellij.openapi.project.Project,boolean):void" resolve="focusProjectWindow" />
+                      <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
+                      <node concept="37vLTw" id="1Di1E9vY6l2" role="37wK5m">
+                        <ref role="3cqZAo" node="7vbFQ4bPX_O" resolve="myProject" />
+                      </node>
+                      <node concept="3clFbT" id="1Di1E9vY6l3" role="37wK5m">
+                        <property role="3clFbU" value="true" />
                       </node>
                     </node>
                   </node>
@@ -2145,29 +2149,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="5mG9UR450lk" role="jymVt" />
-    <node concept="3clFb_" id="7vbFQ4bPXAS" role="jymVt">
-      <property role="TrG5h" value="getMainFrame" />
-      <node concept="3Tm6S6" id="7vbFQ4bPXAT" role="1B3o_S" />
-      <node concept="3uibUv" id="7vbFQ4bPXAU" role="3clF45">
-        <ref role="3uigEE" to="z60i:~Frame" resolve="Frame" />
-      </node>
-      <node concept="3clFbS" id="7vbFQ4bPXAV" role="3clF47">
-        <node concept="3cpWs6" id="7vbFQ4bPXAW" role="3cqZAp">
-          <node concept="2OqwBi" id="7vbFQ4bPXAX" role="3cqZAk">
-            <node concept="2YIFZM" id="7vbFQ4bPXAY" role="2Oq$k0">
-              <ref role="37wK5l" to="jkny:~WindowManager.getInstance():com.intellij.openapi.wm.WindowManager" resolve="getInstance" />
-              <ref role="1Pybhc" to="jkny:~WindowManager" resolve="WindowManager" />
-            </node>
-            <node concept="liA8E" id="7vbFQ4bPXAZ" role="2OqNvi">
-              <ref role="37wK5l" to="jkny:~WindowManager.getFrame(com.intellij.openapi.project.Project):javax.swing.JFrame" resolve="getFrame" />
-              <node concept="37vLTw" id="2BHiRxeuxMe" role="37wK5m">
-                <ref role="3cqZAo" node="7vbFQ4bPX_O" resolve="myProject" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3clFb_" id="7vbFQ4bPXB1" role="jymVt">
       <property role="TrG5h" value="showNode" />
       <node concept="3Tm1VV" id="7vbFQ4bPXB2" role="1B3o_S" />
@@ -2332,12 +2313,15 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbF" id="VutodU6oO7" role="3cqZAp">
-                    <node concept="2YIFZM" id="1uYwY98TZ7I" role="3clFbG">
-                      <ref role="37wK5l" to="ba15:~FrameUtil.activateFrame(java.awt.Frame):void" resolve="activateFrame" />
-                      <ref role="1Pybhc" to="ba15:~FrameUtil" resolve="FrameUtil" />
-                      <node concept="1rXfSq" id="1uYwY98TZ7J" role="37wK5m">
-                        <ref role="37wK5l" node="7vbFQ4bPXAS" resolve="getMainFrame" />
+                  <node concept="3clFbF" id="1Di1E9vY5Bb" role="3cqZAp">
+                    <node concept="2YIFZM" id="1Di1E9vY5Bc" role="3clFbG">
+                      <ref role="37wK5l" to="btn2:~ProjectUtil.focusProjectWindow(com.intellij.openapi.project.Project,boolean):void" resolve="focusProjectWindow" />
+                      <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
+                      <node concept="37vLTw" id="1Di1E9vY5Bd" role="37wK5m">
+                        <ref role="3cqZAo" node="7vbFQ4bPX_O" resolve="myProject" />
+                      </node>
+                      <node concept="3clFbT" id="1Di1E9vY5Be" role="37wK5m">
+                        <property role="3clFbU" value="true" />
                       </node>
                     </node>
                   </node>
@@ -2576,12 +2560,15 @@
                             <node concept="3cpWs6" id="7vbFQ4bPXGn" role="3cqZAp" />
                           </node>
                         </node>
-                        <node concept="3clFbF" id="7vbFQ4bPXGo" role="3cqZAp">
-                          <node concept="2YIFZM" id="1uYwY98U02D" role="3clFbG">
-                            <ref role="37wK5l" to="ba15:~FrameUtil.activateFrame(java.awt.Frame):void" resolve="activateFrame" />
-                            <ref role="1Pybhc" to="ba15:~FrameUtil" resolve="FrameUtil" />
-                            <node concept="1rXfSq" id="1uYwY98U02E" role="37wK5m">
-                              <ref role="37wK5l" node="7vbFQ4bPXAS" resolve="getMainFrame" />
+                        <node concept="3clFbF" id="1Di1E9vY4WF" role="3cqZAp">
+                          <node concept="2YIFZM" id="1Di1E9vY4WG" role="3clFbG">
+                            <ref role="37wK5l" to="btn2:~ProjectUtil.focusProjectWindow(com.intellij.openapi.project.Project,boolean):void" resolve="focusProjectWindow" />
+                            <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
+                            <node concept="37vLTw" id="1Di1E9vY4WH" role="37wK5m">
+                              <ref role="3cqZAo" node="7vbFQ4bPX_O" resolve="myProject" />
+                            </node>
+                            <node concept="3clFbT" id="1Di1E9vY4WI" role="37wK5m">
+                              <property role="3clFbU" value="true" />
                             </node>
                           </node>
                         </node>
@@ -2899,12 +2886,15 @@
                             <node concept="3cpWs6" id="7vbFQ4bPXHB" role="3cqZAp" />
                           </node>
                         </node>
-                        <node concept="3clFbF" id="7vbFQ4bPXHC" role="3cqZAp">
-                          <node concept="2YIFZM" id="1uYwY98U0PU" role="3clFbG">
-                            <ref role="37wK5l" to="ba15:~FrameUtil.activateFrame(java.awt.Frame):void" resolve="activateFrame" />
-                            <ref role="1Pybhc" to="ba15:~FrameUtil" resolve="FrameUtil" />
-                            <node concept="1rXfSq" id="1uYwY98U0PV" role="37wK5m">
-                              <ref role="37wK5l" node="7vbFQ4bPXAS" resolve="getMainFrame" />
+                        <node concept="3clFbF" id="1Di1E9vXUQs" role="3cqZAp">
+                          <node concept="2YIFZM" id="1Di1E9vXVQK" role="3clFbG">
+                            <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
+                            <ref role="37wK5l" to="btn2:~ProjectUtil.focusProjectWindow(com.intellij.openapi.project.Project,boolean):void" resolve="focusProjectWindow" />
+                            <node concept="37vLTw" id="1Di1E9vY3be" role="37wK5m">
+                              <ref role="3cqZAo" node="7vbFQ4bPX_O" resolve="myProject" />
+                            </node>
+                            <node concept="3clFbT" id="1Di1E9vXVQR" role="37wK5m">
+                              <property role="3clFbU" value="true" />
                             </node>
                           </node>
                         </node>

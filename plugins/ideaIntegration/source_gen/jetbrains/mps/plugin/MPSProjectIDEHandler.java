@@ -36,6 +36,7 @@ import com.intellij.openapi.wm.ex.StatusBarEx;
 import com.intellij.openapi.ui.MessageType;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import com.intellij.ide.impl.ProjectUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.DebugInfoRoot;
@@ -43,7 +44,6 @@ import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import java.awt.Frame;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
@@ -176,7 +176,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         } else {
           NavigationSupport.getInstance().openNode(mpsProject, bestNode, true, (SNodeOperations.getParent(bestNode) != null));
         }
-        FrameUtil.activateFrame(getMainFrame());
+        ProjectUtil.focusProjectWindow(myProject, true);
       }
     });
   }
@@ -227,9 +227,6 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     return new SNodePointer(bestPosition.o2.getNodeRef().getModelReference(), PersistenceFacade.getInstance().createNodeId(bestPosition.o1.getNodeId()));
   }
 
-  private Frame getMainFrame() {
-    return WindowManager.getInstance().getFrame(myProject);
-  }
   @Override
   public void showNode(final String namespace, final String id) throws RemoteException {
     final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
@@ -244,7 +241,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
             NavigationSupport.getInstance().openNode(mpsProject, node, true, node.getParent() != null);
           }
         }
-        FrameUtil.activateFrame(getMainFrame());
+        ProjectUtil.focusProjectWindow(myProject, true);
       }
     });
   }
@@ -265,7 +262,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           MPSProjectIDEHandler.LOG.error("Can't find a class " + fqName);
           return;
         }
-        FrameUtil.activateFrame(getMainFrame());
+        ProjectUtil.focusProjectWindow(myProject, true);
         findUsages(cls, GlobalScope.getInstance(), FindUtils.makeProvider("jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder"));
       }
     });
@@ -296,7 +293,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           MPSProjectIDEHandler.LOG.error("Can't find a method " + classFqName + "." + methodName);
           return;
         }
-        FrameUtil.activateFrame(getMainFrame());
+        ProjectUtil.focusProjectWindow(myProject, true);
         IResultProvider provider = FindUtils.makeProvider("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder", "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder");
         findUsages(method, GlobalScope.getInstance(), provider);
       }
