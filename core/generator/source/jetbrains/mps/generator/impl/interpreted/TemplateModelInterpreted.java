@@ -33,51 +33,72 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 /**
+ *
  * Evgeny Gryaznov, Nov 29, 2010
  */
 public class TemplateModelInterpreted extends TemplateModelBase {
 
   private final SModel myModel;
-  private Class<? extends GeneratorQueryProvider> myQueryProviderClass;
-  private Collection<TemplateSwitchMapping> mySwitches;
-  private Collection<TemplateMappingConfiguration> myMappings;
+  private final Class<? extends GeneratorQueryProvider> myQueryProviderClass;
+  private final Collection<TemplateSwitchMapping> mySwitches;
+  private final Collection<TemplateMappingConfiguration> myMappings;
+  private final long myModelTimestamp;
 
+  // XXX this cons is likely of no future use and shall get deprecated or even removed straight away.
   public TemplateModelInterpreted(@NotNull TemplateModule module, @Nullable SModel model) {
-    super(module);
-    myModel = model;
-    mySwitches = new ArrayList<>();
-    myMappings = new ArrayList<>();
-    init();
+    this(module, model, null);
   }
 
   public TemplateModelInterpreted(@NotNull TemplateModule module, @Nullable SModel model, @Nullable Class<? extends GeneratorQueryProvider> queryProviderClass) {
-    this(module, model);
+    super(module);
+    myModel = model;
+    if (myModel != null) {
+      mySwitches = new ArrayList<>();
+      myMappings = new ArrayList<>();
+      for (SNode root : myModel.getRootNodes()) {
+        SConcept c = root.getConcept();
+        if (RuleUtil.concept_TemplateSwitch.equals(c)) {
+          mySwitches.add(new TemplateSwitchMappingInterpreted(root));
+        } else if (RuleUtil.concept_MappingConfiguration.equals(c)) {
+          myMappings.add(new TemplateMappingConfigurationInterpreted(this, root));
+        }
+      }
+      myModelTimestamp = myModel.getSource().getTimestamp();
+    } else {
+      mySwitches = Collections.emptyList();
+      myMappings = Collections.emptyList();
+      myModelTimestamp = -1;
+    }
     myQueryProviderClass = queryProviderClass;
   }
 
-  private void init() {
-    if (myModel == null) {
-      return;
+  /**
+   * INTERNAL METHOD, DON'T USE OUTSIDE OF GENERATOR IMPLEMENTATION
+   * 'public' just to give access from TemplateModuleInterpreted2
+   */
+  public boolean isStale() {
+    if (myModel == null || myModelTimestamp == -1) {
+      return true;
     }
-    for (SNode root : myModel.getRootNodes()) {
-      SConcept c = root.getConcept();
-      if (RuleUtil.concept_TemplateSwitch.equals(c)) {
-        mySwitches.add(new TemplateSwitchMappingInterpreted(root));
-      } else if (RuleUtil.concept_MappingConfiguration.equals(c)) {
-        myMappings.add(new TemplateMappingConfigurationInterpreted(this, root));
-      }
-    }
+    return myModelTimestamp != myModel.getSource().getTimestamp();
   }
 
   @Override
   public Collection<TemplateSwitchMapping> getSwitches() {
+    if (isStale()) {
+      return Collections.emptyList();
+    }
     return mySwitches;
   }
 
   @Override
   public Collection<TemplateMappingConfiguration> getConfigurations() {
+    if (isStale()) {
+      return Collections.emptyList();
+    }
     return myMappings;
   }
 
