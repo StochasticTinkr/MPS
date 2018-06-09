@@ -30,6 +30,7 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -582,6 +583,7 @@
       <node concept="3Tm6S6" id="1LqCkvsbvlW" role="1B3o_S" />
       <node concept="3clFbS" id="1LqCkvsbvlV" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="172ROKPzXqJ" role="jymVt" />
     <node concept="2YIFZL" id="1LqCkvsbvlX" role="jymVt">
       <property role="TrG5h" value="isInsideOfBehavior" />
       <node concept="10P_77" id="1LqCkvsbvm1" role="3clF45" />
@@ -611,6 +613,7 @@
         <node concept="3Tqbb2" id="1LqCkvsbvm3" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="172ROKPzXqK" role="jymVt" />
     <node concept="2YIFZL" id="1LqCkvsbvmp" role="jymVt">
       <property role="TrG5h" value="isInsideOfBehavior" />
       <node concept="10P_77" id="1LqCkvsbvmt" role="3clF45" />
@@ -1009,7 +1012,7 @@
                   <ref role="1Pybhc" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
                   <node concept="2OqwBi" id="5Vvmn_QkN2Z" role="37wK5m">
                     <node concept="2qgKlT" id="5Vvmn_QkN30" role="2OqNvi">
-                      <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getAllConceptMethods" />
+                      <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getVisibleConceptMethods" />
                       <node concept="1eOMI4" id="5Vvmn_QkN31" role="37wK5m">
                         <node concept="3K4zz7" id="5Vvmn_QkN32" role="1eOMHV">
                           <node concept="2rP1CM" id="5Vvmn_QkN33" role="3K4E3e" />

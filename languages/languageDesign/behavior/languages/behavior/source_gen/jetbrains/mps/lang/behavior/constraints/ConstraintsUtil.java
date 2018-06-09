@@ -12,9 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class ConstraintsUtil {
   private ConstraintsUtil() {
   }
+
   public static boolean isInsideOfBehavior(SNode node) {
     return (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), true, false) != null);
   }
+
   public static boolean isInsideOfBehavior(SNode node, final boolean isStatic) {
     if (!(isInsideOfBehavior(node))) {
       return false;

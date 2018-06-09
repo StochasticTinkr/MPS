@@ -16,8 +16,8 @@
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="csvn" ref="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)" />
     <import index="xxh2" ref="r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
   </imports>
   <registry>
@@ -363,6 +363,48 @@
     <ref role="1XX52x" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
     <node concept="3EZMnI" id="hP3h7U5" role="2wV5jI">
       <node concept="3EZMnI" id="hP3h7U6" role="3EZMnx">
+        <node concept="3F0ifn" id="172ROKPJhWl" role="3EZMnx">
+          <property role="3F0ifm" value="interface" />
+          <node concept="pkWqt" id="172ROKPJhWz" role="pqm2j">
+            <node concept="3clFbS" id="172ROKPJhW$" role="2VODD2">
+              <node concept="3clFbF" id="172ROKPJi3X" role="3cqZAp">
+                <node concept="2OqwBi" id="172ROKPJjtm" role="3clFbG">
+                  <node concept="2OqwBi" id="172ROKPJijx" role="2Oq$k0">
+                    <node concept="pncrf" id="172ROKPJi3W" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="172ROKPJiXl" role="2OqNvi">
+                      <ref role="3Tt5mk" to="1i04:hP3h7Gv" resolve="concept" />
+                    </node>
+                  </node>
+                  <node concept="1mIQ4w" id="172ROKPJjWI" role="2OqNvi">
+                    <node concept="chp4Y" id="172ROKPJkeM" role="cj9EA">
+                      <ref role="cht4Q" to="tpce:h0PlHMJ" resolve="InterfaceConceptDeclaration" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="172ROKPJljp" role="3EZMnx">
+          <property role="3F0ifm" value="abstract" />
+          <node concept="pkWqt" id="172ROKPJlxV" role="pqm2j">
+            <node concept="3clFbS" id="172ROKPJlxW" role="2VODD2">
+              <node concept="3clFbF" id="172ROKPJlDl" role="3cqZAp">
+                <node concept="2OqwBi" id="172ROKPJn6F" role="3clFbG">
+                  <node concept="2OqwBi" id="172ROKPJlST" role="2Oq$k0">
+                    <node concept="pncrf" id="172ROKPJlDk" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="172ROKPJmAE" role="2OqNvi">
+                      <ref role="3Tt5mk" to="1i04:hP3h7Gv" resolve="concept" />
+                    </node>
+                  </node>
+                  <node concept="3TrcHB" id="172ROKPJnSk" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3F0ifn" id="hP3h7U7" role="3EZMnx">
           <property role="3F0ifm" value="concept behavior" />
         </node>

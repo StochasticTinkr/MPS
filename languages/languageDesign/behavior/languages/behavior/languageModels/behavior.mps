@@ -207,6 +207,12 @@
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
@@ -215,12 +221,21 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
+        <property id="5858074156537516431" name="text" index="x79VB" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA" />
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
       <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
         <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
@@ -1542,6 +1557,11 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="hP3pnOb" role="1B3o_S" />
+      <node concept="P$JXv" id="6i$L4D_fHWR" role="lGtFl">
+        <node concept="x79VA" id="6i$L4D_fHWU" role="3nqlJM">
+          <property role="x79VB" value="the top-most overriden method" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="hQYykEj" role="13h7CS">
       <property role="TrG5h" value="isCorrectlyOverriden" />
@@ -1753,6 +1773,18 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="hQYyluQ" role="1B3o_S" />
+      <node concept="P$JXv" id="172ROKPxJcD" role="lGtFl">
+        <node concept="TZ5HI" id="172ROKPxJcE" role="3nqlJM">
+          <node concept="TZ5HA" id="172ROKPxJcF" role="3HnX3l">
+            <node concept="1dT_AC" id="172ROKPxJHV" role="1dT_Ay">
+              <property role="1dT_AB" value="it belongs to the typesystem only" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="172ROKPxJcG" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
     </node>
     <node concept="13i0hz" id="hP3pnOc" role="13h7CS">
       <property role="13i0is" value="false" />
@@ -1819,6 +1851,11 @@
       <ref role="13i0hy" to="tpek:4DuBHEkPTzU" resolve="getNearestOverriddenMethod" />
       <node concept="3Tm1VV" id="4mmymf_0zm5" role="1B3o_S" />
       <node concept="3clFbS" id="4mmymf_0zm6" role="3clF47">
+        <node concept="3SKdUt" id="6i$L4D_g8dQ" role="3cqZAp">
+          <node concept="3SKdUq" id="6i$L4D_g8dS" role="3SKWNk">
+            <property role="3SKdUp" value="fixme" />
+          </node>
+        </node>
         <node concept="3clFbF" id="4mmymf_0zmh" role="3cqZAp">
           <node concept="2OqwBi" id="4mmymf_0zmd" role="3clFbG">
             <node concept="13iPFW" id="4mmymf_0zml" role="2Oq$k0" />
