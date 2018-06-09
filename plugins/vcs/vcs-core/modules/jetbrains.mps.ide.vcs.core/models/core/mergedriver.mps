@@ -2277,7 +2277,7 @@
                     <ref role="3cqZAo" node="2TzypFyLJ9v" resolve="e" />
                   </node>
                   <node concept="liA8E" id="2TzypFyLJ9_" role="2OqNvi">
-                    <ref role="37wK5l" to="mmaq:~JDOMException.printStackTrace():void" resolve="printStackTrace" />
+                    <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace():void" resolve="printStackTrace" />
                   </node>
                 </node>
               </node>

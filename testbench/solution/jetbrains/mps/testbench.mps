@@ -759,7 +759,7 @@
                       <ref role="3cqZAo" node="79iMjN5UFv$" resolve="ex" />
                     </node>
                     <node concept="liA8E" id="79iMjN5UTuN" role="2OqNvi">
-                      <ref role="37wK5l" to="mmaq:~JDOMException.getMessage():java.lang.String" resolve="getMessage" />
+                      <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
                     </node>
                   </node>
                 </node>

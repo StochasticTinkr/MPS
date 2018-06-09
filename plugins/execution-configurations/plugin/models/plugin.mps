@@ -10412,7 +10412,7 @@
                         <ref role="3cqZAo" node="7bBQGGiPDsE" resolve="it" />
                       </node>
                       <node concept="liA8E" id="7bBQGGiPG6u" role="2OqNvi">
-                        <ref role="37wK5l" to="mmaq:~Content.detach():org.jdom.Content" resolve="detach" />
+                        <ref role="37wK5l" to="mmaq:~Element.detach():org.jdom.Element" resolve="detach" />
                       </node>
                     </node>
                   </node>

@@ -3023,7 +3023,7 @@
                     <ref role="3cqZAo" node="KL8Aql8eDu" resolve="e" />
                   </node>
                   <node concept="liA8E" id="KL8Aql8eD$" role="2OqNvi">
-                    <ref role="37wK5l" to="mmaq:~JDOMException.printStackTrace():void" resolve="printStackTrace" />
+                    <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace():void" resolve="printStackTrace" />
                   </node>
                 </node>
               </node>
