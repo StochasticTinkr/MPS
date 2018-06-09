@@ -21,8 +21,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public class OverridingMethods_Finder extends GeneratedFinder {
-  public OverridingMethods_Finder() {
+public class ImplementingMethods_Finder extends GeneratedFinder {
+  public ImplementingMethods_Finder() {
   }
   public boolean isVisible(SNode node, SearchScope scope) {
     if ((boolean) ConceptMethodDeclaration__BehaviorDescriptor.isVirtual_id6WSEafdhbZX.invoke(node) || SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d43480582L, "isAbstract"))) {
@@ -36,7 +36,7 @@ public class OverridingMethods_Finder extends GeneratedFinder {
   }
   @Override
   public String getDescription() {
-    return "Overriding Methods";
+    return "Implementing Methods";
   }
   @Override
   public String getLongDescription() {
@@ -70,7 +70,7 @@ public class OverridingMethods_Finder extends GeneratedFinder {
       subMonitor.start("", Sequence.fromIterable(candidates).count());
       for (SNode nodeUsage : Sequence.fromIterable(candidates)) {
         ListSequence.fromList(_results).addElement(nodeUsage);
-        for (SNode overriding : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder", nodeUsage, scope, subMonitor.subTask(1)))) {
+        for (SNode overriding : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder", nodeUsage, scope, subMonitor.subTask(1)))) {
           ListSequence.fromList(_results).addElement(overriding);
         }
       }

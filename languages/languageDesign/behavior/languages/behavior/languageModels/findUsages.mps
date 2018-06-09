@@ -296,9 +296,9 @@
     </language>
   </registry>
   <node concept="2PqlIr" id="hReyrfg">
-    <property role="39L4OI" value="Overriding Methods" />
-    <property role="TrG5h" value="OverridingMethods" />
+    <property role="39L4OI" value="Implementing Methods" />
     <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="ImplementingMethods" />
     <ref role="3gKJdq" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
     <node concept="2PqlIu" id="hReyrfh" role="3gKxsI">
       <node concept="3clFbS" id="hReyrfi" role="2VODD2">
@@ -466,7 +466,7 @@
                 </node>
               </node>
               <node concept="3mZe$p" id="hRe$8Cv" role="2GsD0m">
-                <ref role="3mZe$g" node="hReyrfg" resolve="OverridingMethods" />
+                <ref role="3mZe$g" node="hReyrfg" resolve="ImplementingMethods" />
                 <node concept="2OqwBi" id="7kBaCir6UfF" role="3JOdhr">
                   <node concept="liA8E" id="7kBaCir6VaG" role="2OqNvi">
                     <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
