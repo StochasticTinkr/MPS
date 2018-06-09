@@ -27,6 +27,7 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="1153417849900" name="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" flags="nn" index="2d3UOw" />
+      <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
@@ -61,6 +62,7 @@
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -120,6 +122,12 @@
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
+    </language>
+    <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
+        <child id="1199569906740" name="parameter" index="1bW2Oz" />
+        <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
       <concept id="1196350785110" name="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" flags="ng" index="2c44t0">
@@ -254,13 +262,29 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
+        <child id="1204796294226" name="closure" index="23t8la" />
+      </concept>
       <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
         <child id="540871147943773366" name="argument" index="25WWJ7" />
       </concept>
+      <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
+        <child id="1151689745422" name="elementType" index="A3Ik2" />
+      </concept>
+      <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
+        <child id="1153944400369" name="variable" index="2Gsz3X" />
+        <child id="1153944424730" name="inputSequence" index="2GsD0m" />
+      </concept>
+      <concept id="1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" flags="nr" index="2GrKxI" />
+      <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
+        <reference id="1153944258490" name="variable" index="2Gs0qQ" />
+      </concept>
+      <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1162934736510" name="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" flags="nn" index="34jXtK" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
+      <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
     </language>
   </registry>
@@ -1685,6 +1709,135 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="18kY7G" id="172ROKPERhF">
+    <property role="TrG5h" value="check_MethodIsNotOverriddenTwice" />
+    <property role="3GE5qa" value="" />
+    <property role="18ip37" value="true" />
+    <node concept="3clFbS" id="172ROKPERhG" role="18ibNy">
+      <node concept="3cpWs8" id="172ROKPFzcA" role="3cqZAp">
+        <node concept="3cpWsn" id="172ROKPFzcB" role="3cpWs9">
+          <property role="TrG5h" value="overridingMethods" />
+          <node concept="A3Dl8" id="172ROKPFzco" role="1tU5fm">
+            <node concept="3Tqbb2" id="172ROKPFzcr" role="A3Ik2">
+              <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="172ROKPFzcC" role="33vP2m">
+            <node concept="2OqwBi" id="172ROKPFzcD" role="2Oq$k0">
+              <node concept="1YBJjd" id="172ROKPFzcE" role="2Oq$k0">
+                <ref role="1YBMHb" node="172ROKPERhT" resolve="conceptBehavior" />
+              </node>
+              <node concept="3Tsc0h" id="172ROKPFzcF" role="2OqNvi">
+                <ref role="3TtcxE" to="1i04:hP3h7G_" resolve="method" />
+              </node>
+            </node>
+            <node concept="3zZkjj" id="172ROKPFzcG" role="2OqNvi">
+              <node concept="1bVj0M" id="172ROKPFzcH" role="23t8la">
+                <node concept="3clFbS" id="172ROKPFzcI" role="1bW5cS">
+                  <node concept="3clFbF" id="172ROKPFzcJ" role="3cqZAp">
+                    <node concept="3y3z36" id="172ROKPFzcK" role="3clFbG">
+                      <node concept="10Nm6u" id="172ROKPFzcL" role="3uHU7w" />
+                      <node concept="2OqwBi" id="172ROKPFzcM" role="3uHU7B">
+                        <node concept="37vLTw" id="172ROKPFzcN" role="2Oq$k0">
+                          <ref role="3cqZAo" node="172ROKPFzcP" resolve="it" />
+                        </node>
+                        <node concept="3TrEf2" id="172ROKPFzcO" role="2OqNvi">
+                          <ref role="3Tt5mk" to="1i04:hP3i0lZ" resolve="overriddenMethod" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="172ROKPFzcP" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="172ROKPFzcQ" role="1tU5fm" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="172ROKPFhLA" role="3cqZAp">
+        <node concept="2GrKxI" id="172ROKPFhLC" role="2Gsz3X">
+          <property role="TrG5h" value="method" />
+        </node>
+        <node concept="37vLTw" id="172ROKPFzcR" role="2GsD0m">
+          <ref role="3cqZAo" node="172ROKPFzcB" resolve="overridingMethods" />
+        </node>
+        <node concept="3clFbS" id="172ROKPFhLG" role="2LFqv$">
+          <node concept="2Gpval" id="172ROKPF0kM" role="3cqZAp">
+            <node concept="2GrKxI" id="172ROKPF0kO" role="2Gsz3X">
+              <property role="TrG5h" value="anotherMethod" />
+            </node>
+            <node concept="37vLTw" id="172ROKPFCpQ" role="2GsD0m">
+              <ref role="3cqZAo" node="172ROKPFzcB" resolve="overridingMethods" />
+            </node>
+            <node concept="3clFbS" id="172ROKPF0kS" role="2LFqv$">
+              <node concept="3clFbJ" id="172ROKPF3Rf" role="3cqZAp">
+                <node concept="1Wc70l" id="172ROKPF5c_" role="3clFbw">
+                  <node concept="3clFbC" id="172ROKPF9dh" role="3uHU7w">
+                    <node concept="2OqwBi" id="172ROKPF9Q7" role="3uHU7w">
+                      <node concept="2GrUjf" id="172ROKPFFvS" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="172ROKPFhLC" resolve="method" />
+                      </node>
+                      <node concept="3TrEf2" id="172ROKPFaL6" role="2OqNvi">
+                        <ref role="3Tt5mk" to="1i04:hP3i0lZ" resolve="overriddenMethod" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="172ROKPF5P6" role="3uHU7B">
+                      <node concept="2GrUjf" id="172ROKPF5rd" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="172ROKPF0kO" resolve="anotherMethod" />
+                      </node>
+                      <node concept="3TrEf2" id="172ROKPF70Z" role="2OqNvi">
+                        <ref role="3Tt5mk" to="1i04:hP3i0lZ" resolve="overriddenMethod" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3y3z36" id="172ROKPF4sj" role="3uHU7B">
+                    <node concept="2GrUjf" id="172ROKPF3Sq" role="3uHU7B">
+                      <ref role="2Gs0qQ" node="172ROKPF0kO" resolve="anotherMethod" />
+                    </node>
+                    <node concept="2GrUjf" id="172ROKPFCTL" role="3uHU7w">
+                      <ref role="2Gs0qQ" node="172ROKPFhLC" resolve="method" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="172ROKPF3Rh" role="3clFbx">
+                  <node concept="2MkqsV" id="172ROKPERhN" role="3cqZAp">
+                    <node concept="3cpWs3" id="172ROKPFda0" role="2MkJ7o">
+                      <node concept="Xl_RD" id="172ROKPFda3" role="3uHU7w">
+                        <property role="Xl_RC" value="'" />
+                      </node>
+                      <node concept="3cpWs3" id="172ROKPFcnh" role="3uHU7B">
+                        <node concept="Xl_RD" id="172ROKPERhO" role="3uHU7B">
+                          <property role="Xl_RC" value="The ancestor method is already overridden by '" />
+                        </node>
+                        <node concept="2OqwBi" id="172ROKPFdWM" role="3uHU7w">
+                          <node concept="2GrUjf" id="172ROKPFcJo" role="2Oq$k0">
+                            <ref role="2Gs0qQ" node="172ROKPF0kO" resolve="anotherMethod" />
+                          </node>
+                          <node concept="3TrcHB" id="172ROKPFfol" role="2OqNvi">
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2GrUjf" id="172ROKPFHVH" role="2OEOjV">
+                      <ref role="2Gs0qQ" node="172ROKPFhLC" resolve="method" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="172ROKPERhT" role="1YuTPh">
+      <property role="TrG5h" value="conceptBehavior" />
+      <ref role="1YaFvo" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
     </node>
   </node>
 </model>
