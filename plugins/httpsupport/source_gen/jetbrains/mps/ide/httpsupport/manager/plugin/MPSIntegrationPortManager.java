@@ -20,7 +20,7 @@ public class MPSIntegrationPortManager extends CustomPortServerManagerBase {
   public void cannotBind(Exception e, int port) {
     if (port >= PORT_LAST) {
       this.port = -1;
-      HttpSupportPliginNotifications.showWarning("Built-in server cannot bind to any port from" + PORT_FIRST + " to " + (PORT_LAST - 1) + ". Integration with YouTrack/TeamCity is disabled ");
+      HttpSupportPluginNotifications.showWarning("Built-in server cannot bind to any port from" + PORT_FIRST + " to " + (PORT_LAST - 1) + ". Integration with YouTrack/TeamCity is disabled ");
     } else {
       this.port = port + 1;
       portChanged();

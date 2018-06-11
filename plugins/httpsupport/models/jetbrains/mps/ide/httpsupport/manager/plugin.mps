@@ -1535,7 +1535,7 @@
             <node concept="3clFbF" id="3gdTObr$x9R" role="3cqZAp">
               <node concept="2YIFZM" id="3gdTObr$x9S" role="3clFbG">
                 <ref role="37wK5l" node="3gdTObr$r8x" resolve="showWarning" />
-                <ref role="1Pybhc" node="3gdTObr$r61" resolve="HttpSupportPliginNotifications" />
+                <ref role="1Pybhc" node="3gdTObr$r61" resolve="HttpSupportPluginNotifications" />
                 <node concept="3cpWs3" id="3gdTObr$x9T" role="37wK5m">
                   <node concept="Xl_RD" id="3gdTObr$x9U" role="3uHU7w">
                     <property role="Xl_RC" value=". Integration with YouTrack/TeamCity is disabled " />
@@ -1758,7 +1758,7 @@
         <node concept="3clFbF" id="3gdTObr$wsh" role="3cqZAp">
           <node concept="2YIFZM" id="3gdTObr$wsi" role="3clFbG">
             <ref role="37wK5l" node="3gdTObr$r8x" resolve="showWarning" />
-            <ref role="1Pybhc" node="3gdTObr$r61" resolve="HttpSupportPliginNotifications" />
+            <ref role="1Pybhc" node="3gdTObr$r61" resolve="HttpSupportPluginNotifications" />
             <node concept="3cpWs3" id="3gdTObr$wsj" role="37wK5m">
               <node concept="Xl_RD" id="3gdTObr$wsk" role="3uHU7w">
                 <property role="Xl_RC" value=". Openning node on HTTP request disabled" />
@@ -1835,7 +1835,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3gdTObr$r61">
-    <property role="TrG5h" value="HttpSupportPliginNotifications" />
+    <property role="TrG5h" value="HttpSupportPluginNotifications" />
     <property role="1EXbeo" value="true" />
     <node concept="2tJIrI" id="75ygdWx3$Vi" role="jymVt" />
     <node concept="Wx3nA" id="75ygdWx3$U4" role="jymVt">

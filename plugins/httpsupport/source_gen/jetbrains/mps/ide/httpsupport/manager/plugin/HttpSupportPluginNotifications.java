@@ -9,8 +9,8 @@ import com.intellij.notification.Notification;
 import com.intellij.notification.NotificationType;
 import org.apache.log4j.Level;
 
-public final class HttpSupportPliginNotifications {
-  private static final Logger LOG = LogManager.getLogger(HttpSupportPliginNotifications.class);
+public final class HttpSupportPluginNotifications {
+  private static final Logger LOG = LogManager.getLogger(HttpSupportPluginNotifications.class);
 
   private static final String ID = "HTTP Support Plugin";
 

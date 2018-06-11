@@ -21,7 +21,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.io.Responses" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.HttpSupportPliginNotifications" file="HttpSupportPliginNotifications.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.HttpSupportPluginNotifications" file="HttpSupportPluginNotifications.java">
     <classNode dependClassName="com.intellij.notification.Notification" />
     <classNode dependClassName="com.intellij.notification.NotificationType" />
     <classNode dependClassName="com.intellij.notification.Notifications" />
@@ -42,13 +42,13 @@
   <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.MPSIntegrationPortManager" file="MPSIntegrationPortManager.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpSupportPliginNotifications" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpSupportPluginNotifications" />
     <classNode extendsClassName="org.jetbrains.io.CustomPortServerManagerBase" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.MPSInternalPortManager" file="MPSInternalPortManager.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpSupportPliginNotifications" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpSupportPluginNotifications" />
     <classNode extendsClassName="org.jetbrains.io.CustomPortServerManagerBase" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestManager" file="MPSRequestManager.java">

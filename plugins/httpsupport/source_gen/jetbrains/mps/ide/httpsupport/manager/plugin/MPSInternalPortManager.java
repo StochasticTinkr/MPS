@@ -15,7 +15,7 @@ public class MPSInternalPortManager extends CustomPortServerManagerBase {
 
   @Override
   public void cannotBind(Exception e, int port) {
-    HttpSupportPliginNotifications.showWarning("Built-in server cannot bind to port " + PORT + ". Openning node on HTTP request disabled");
+    HttpSupportPluginNotifications.showWarning("Built-in server cannot bind to port " + PORT + ". Openning node on HTTP request disabled");
   }
 
 
