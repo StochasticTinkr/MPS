@@ -1837,6 +1837,16 @@
   <node concept="312cEu" id="3gdTObr$r61">
     <property role="TrG5h" value="HttpSupportPliginNotifications" />
     <property role="1EXbeo" value="true" />
+    <node concept="2tJIrI" id="75ygdWx3$Vi" role="jymVt" />
+    <node concept="Wx3nA" id="75ygdWx3$U4" role="jymVt">
+      <property role="3TUv4t" value="true" />
+      <property role="TrG5h" value="ID" />
+      <node concept="3Tm6S6" id="75ygdWx3$U1" role="1B3o_S" />
+      <node concept="17QB3L" id="75ygdWx3$U2" role="1tU5fm" />
+      <node concept="Xl_RD" id="75ygdWx3$U3" role="33vP2m">
+        <property role="Xl_RC" value="HTTP Support Plugin" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="3gdTObr$r7b" role="jymVt" />
     <node concept="2YIFZL" id="3gdTObr$r8x" role="jymVt">
       <property role="TrG5h" value="showWarning" />
@@ -1851,9 +1861,11 @@
             <node concept="2ShNRf" id="3gdTObr$rkE" role="37wK5m">
               <node concept="1pGfFk" id="3gdTObr$rkF" role="2ShVmc">
                 <ref role="37wK5l" to="fnpx:~Notification.&lt;init&gt;(java.lang.String,java.lang.String,java.lang.String,com.intellij.notification.NotificationType)" resolve="Notification" />
-                <node concept="Xl_RD" id="3gdTObr$rkG" role="37wK5m" />
-                <node concept="Xl_RD" id="3gdTObr$rkH" role="37wK5m">
-                  <property role="Xl_RC" value="HTTP Support Plugin" />
+                <node concept="37vLTw" id="75ygdWx3$Ua" role="37wK5m">
+                  <ref role="3cqZAo" node="75ygdWx3$U4" resolve="ID" />
+                </node>
+                <node concept="37vLTw" id="75ygdWx3$U7" role="37wK5m">
+                  <ref role="3cqZAo" node="75ygdWx3$U4" resolve="ID" />
                 </node>
                 <node concept="37vLTw" id="3gdTObr$rst" role="37wK5m">
                   <ref role="3cqZAo" node="3gdTObr$rqU" resolve="message" />

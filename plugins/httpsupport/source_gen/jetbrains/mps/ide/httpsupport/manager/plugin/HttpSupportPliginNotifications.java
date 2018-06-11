@@ -12,8 +12,10 @@ import org.apache.log4j.Level;
 public final class HttpSupportPliginNotifications {
   private static final Logger LOG = LogManager.getLogger(HttpSupportPliginNotifications.class);
 
+  private static final String ID = "HTTP Support Plugin";
+
   public static void showWarning(String message) {
-    Notifications.Bus.notify(new Notification("", "HTTP Support Plugin", message, NotificationType.WARNING));
+    Notifications.Bus.notify(new Notification(ID, ID, message, NotificationType.WARNING));
     if (LOG.isEnabledFor(Level.WARN)) {
       LOG.warn(message);
     }
