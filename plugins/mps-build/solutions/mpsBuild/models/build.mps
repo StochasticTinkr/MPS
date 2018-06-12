@@ -18482,20 +18482,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="28jJK3" id="2lgcjg39YtD" role="39821P">
-                <property role="28jJZ5" value="755" />
-                <node concept="55IIr" id="2lgcjg39YtQ" role="28jJRO">
-                  <node concept="2Ry0Ak" id="2lgcjg39YtR" role="iGT6I">
-                    <property role="2Ry0Am" value="bin" />
-                    <node concept="2Ry0Ak" id="2lgcjg39YtS" role="2Ry0An">
-                      <property role="2Ry0Am" value="win" />
-                      <node concept="2Ry0Ak" id="2lgcjg39YtT" role="2Ry0An">
-                        <property role="2Ry0Am" value="vistalauncher.exe" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="28jJK3" id="4eWOtElVDv8" role="39821P">
                 <property role="28jJZ5" value="755" />
                 <node concept="55IIr" id="4eWOtElVDva" role="28jJRO">
@@ -18649,6 +18635,19 @@
                       <property role="2Ry0Am" value="mac" />
                       <node concept="2Ry0Ak" id="6DuyMKt09Ah" role="2Ry0An">
                         <property role="2Ry0Am" value="libMacNativeKit64.dylib" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="28jJK3" id="1MQi5gcBzkk" role="39821P">
+                <node concept="55IIr" id="1MQi5gcBzkm" role="28jJRO">
+                  <node concept="2Ry0Ak" id="1MQi5gcBzlp" role="iGT6I">
+                    <property role="2Ry0Am" value="bin" />
+                    <node concept="2Ry0Ak" id="1MQi5gcBzls" role="2Ry0An">
+                      <property role="2Ry0Am" value="mac" />
+                      <node concept="2Ry0Ak" id="1MQi5gcBzl$" role="2Ry0An">
+                        <property role="2Ry0Am" value="libnst64.dylib" />
                       </node>
                     </node>
                   </node>
@@ -19240,20 +19239,6 @@
                 </node>
               </node>
             </node>
-            <node concept="28jJK3" id="AwiPu7jHRL" role="39821P">
-              <property role="28jJZ5" value="755" />
-              <node concept="55IIr" id="AwiPu7jHRM" role="28jJRO">
-                <node concept="2Ry0Ak" id="AwiPu7jHRN" role="iGT6I">
-                  <property role="2Ry0Am" value="bin" />
-                  <node concept="2Ry0Ak" id="AwiPu7jHRO" role="2Ry0An">
-                    <property role="2Ry0Am" value="win" />
-                    <node concept="2Ry0Ak" id="AwiPu7jHRP" role="2Ry0An">
-                      <property role="2Ry0Am" value="vistalauncher.exe" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="28jJK3" id="4eWOtElVGeI" role="39821P">
               <property role="28jJZ5" value="755" />
               <node concept="55IIr" id="4eWOtElVGeJ" role="28jJRO">
@@ -19436,6 +19421,19 @@
                       <property role="2Ry0Am" value="mac" />
                       <node concept="2Ry0Ak" id="6DuyMKt09EL" role="2Ry0An">
                         <property role="2Ry0Am" value="libMacNativeKit64.dylib" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="28jJK3" id="1MQi5gcBzgn" role="39821P">
+                <node concept="55IIr" id="1MQi5gcBzgp" role="28jJRO">
+                  <node concept="2Ry0Ak" id="1MQi5gcBzh1" role="iGT6I">
+                    <property role="2Ry0Am" value="bin" />
+                    <node concept="2Ry0Ak" id="1MQi5gcBzh4" role="2Ry0An">
+                      <property role="2Ry0Am" value="mac" />
+                      <node concept="2Ry0Ak" id="1MQi5gcBzh9" role="2Ry0An">
+                        <property role="2Ry0Am" value="libnst64.dylib" />
                       </node>
                     </node>
                   </node>
