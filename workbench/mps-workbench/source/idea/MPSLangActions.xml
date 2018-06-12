@@ -1179,10 +1179,10 @@
     </action>
     -->
 
+    <!-- TODO: Enable actions and references after replacing all IDEA actions with MPS ones -->
     <group id="TouchBar">
-      <!--
-      TODO: Enable after replacing IDEA actions with MPS ones
       <group id="TouchBarDebug" text="Debugger">
+        <!--
         <reference ref="Rerun"/>
         <reference ref="Pause"/>
         <reference ref="Resume"/>
@@ -1195,7 +1195,9 @@
         <reference ref="StepOut"/>
         <separator/>
         <reference ref="EvaluateExpression"/>
+        -->
         <group id="TouchBarDebug_alt" text="Debugger with Alt key">
+          <!--
           <separator/>
           <reference ref="ViewBreakpoints"/>
           <separator/>
@@ -1203,10 +1205,10 @@
           <reference ref="ForceStepInto"/>
           <reference ref="SmartStepInto"/>
           <reference ref="RunToCursor"/>
+          -->
         </group>
         <group id="TouchBarDebug_cmd" text="Debugger with Cmd key"/>
       </group>
-      -->
     </group>
   </actions>
 </component>
