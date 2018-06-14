@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,16 +25,6 @@ public class Status implements IStatus {
   public Status(Code code, String message) {
     myCode = code;
     myMessage = message;
-  }
-
-  @Override
-  public boolean isOk() {
-    return myCode == Code.OK;
-  }
-
-  @Override
-  public boolean isError() {
-    return myCode == Code.ERROR;
   }
 
   @Override

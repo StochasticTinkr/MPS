@@ -746,7 +746,7 @@
                                               </node>
                                             </node>
                                             <node concept="liA8E" id="3wgj6mgLPiK" role="2OqNvi">
-                                              <ref role="37wK5l" to="18ew:~Status.isError():boolean" resolve="isError" />
+                                              <ref role="37wK5l" to="18ew:~IStatus.isError():boolean" resolve="isError" />
                                             </node>
                                           </node>
                                         </node>

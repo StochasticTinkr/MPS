@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,39 +17,45 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
-import jetbrains.mps.util.Status;
-import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.util.IStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.Collection;
+import java.util.Collections;
+
 /**
- * Igor Alshannikov
+ * @author Artem Tikhomirov
+ * @author Igor Alshannikov
  * Oct 24, 2005
  */
-public class GenerationStatus extends Status {
+public final class GenerationStatus implements IStatus {
+  private final Code myStatusCode;
   private final SModel myOutputModel;
   private final SModel myInputModel;
   // we initialize it the moment GS is created assuming we can read the input model at this time, so I don't bother with model RA.
   private final SRepository myInputModelRepo;
   private GenerationDependencies myDependencies;
 
-  public GenerationStatus(@NotNull SModel inputModel) {
-    super(Code.ERROR, null);
-    myInputModel = inputModel;
-    myOutputModel = null;
-    myInputModelRepo = inputModel.getRepository();
-  }
-
+  // XXX would be great to hide this one behind a factory method, boolean errors is gross.
   public GenerationStatus(@NotNull SModel inputModel, SModel outputModel, GenerationDependencies dependencies, boolean errors) {
-    super(errors ? Code.ERROR : Code.OK, null);
+    myStatusCode = errors ? Code.ERROR : Code.OK;
     myOutputModel = outputModel;
     myInputModel = inputModel;
     myDependencies = dependencies;
     myInputModelRepo = inputModel.getRepository();
   }
 
+  @Override
+  public Code getCode() {
+    return myStatusCode;
+  }
+
+  /**
+   * @return primary output model, or {@code null} in case of transformation failure; to get all forked output models, use {@link #getOutputModels()} instead
+   */
   @Nullable
   public SModel getOutputModel() {
     return myOutputModel;
@@ -85,13 +91,12 @@ public class GenerationStatus extends Status {
   }
 
   /**
-   * @deprecated use {@link #getInputModel()} instead
-   * @return model that served as input for M2M
+   * @return empty collection for failed transformation; singleton collection unless there were forks in generation plan.
+   *         Output model of a primary 'trunk' always comes first.
    */
-  @Deprecated
-  @ToRemove(version = 2017.3)
-  public SModel getOriginalInputModel() {
-    return getInputModel();
+  @NotNull
+  public Collection<SModel> getOutputModels() {
+    return myOutputModel == null ? Collections.emptyList() : Collections.singleton(myOutputModel);
   }
 
   /**
@@ -112,10 +117,7 @@ public class GenerationStatus extends Status {
   }
   private CrossModelEnvironment myCrossModelEnvironment;
 
-
-  public static class ERROR extends GenerationStatus {
-    public ERROR(SModel inputModel) {
-      super(inputModel);
-    }
+  public static GenerationStatus failure(@NotNull SModel inputModel) {
+    return new GenerationStatus(inputModel, null, null, true);
   }
 }

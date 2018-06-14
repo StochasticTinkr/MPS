@@ -28,14 +28,16 @@ import java.util.stream.IntStream;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.smodel.SModelOperations;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.text.TextGeneratorEngine;
 import java.util.concurrent.ArrayBlockingQueue;
 import jetbrains.mps.text.TextGenResult;
 import java.util.Map;
-import org.jetbrains.mps.openapi.model.SModel;
 import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import jetbrains.mps.make.java.BLDependenciesCache;
@@ -197,45 +199,54 @@ public class TextGen_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_21gswx_a0b);
               }
 
+              int modelsCount = 0;
+              final List<GResource> resourcesWithOutput = ListSequence.fromList(new ArrayList<GResource>(Sequence.fromIterable(input).count()));
               for (GResource resource : Sequence.fromIterable(input)) {
+                // Perhaps, shall check res.status.isError(), however not sure if there 
+                // couldn't be an output model with error state, and we'd like to see erroneous text to localize error 
                 if (SModelOperations.getOutputLocation(resource.model()) == null) {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + resource.model().getName())));
+                  continue;
                 }
+                Collection<SModel> outputModels = resource.status().getOutputModels();
+                if (outputModels.isEmpty()) {
+                  continue;
+                }
+                // need exact number of textgen tasks I'm going to schedule as it's the counter for the poll() loop, and we might get into trouble if 
+                // number of scheduled models doesn't match that we expect to poll. 
+                modelsCount += outputModels.size();
+                ListSequence.fromList(resourcesWithOutput).addElement(resource);
               }
               final IMessageHandler messageHandler = monitor.getSession().getMessageHandler();
               final Project mpsProject = monitor.getSession().getProject();
               final TextGeneratorEngine tgEngine = new TextGeneratorEngine(messageHandler);
 
-              // Perhaps, shall check res.status.isError(), however not sure if there 
-              // couldn't be an output model with error state, and we'd like to see erroneous text to localize error 
-              final Iterable<GResource> resourcesWithOutput = Sequence.fromIterable(input).where(new IWhereFilter<GResource>() {
-                public boolean accept(GResource it) {
-                  return SModelOperations.getOutputLocation(it.model()) != null && it.status().getOutputModel() != null;
-                }
-              });
 
               // configure 
               final boolean _generateDebugInfo = vars(pa.global()).generateDebugInfo() == null || vars(pa.global()).generateDebugInfo();
 
-              int modelsCount = Sequence.fromIterable(resourcesWithOutput).count();
-              final ProgressMonitor subProgress_p0a0b = progressMonitor.subTask(1000);
-              subProgress_p0a0b.start("Writing", modelsCount + 3);
+              final ProgressMonitor subProgress_n0a0b = progressMonitor.subTask(1000);
+              subProgress_n0a0b.start("Writing", modelsCount + 3);
 
               try {
                 final ArrayBlockingQueue<TextGenResult> resultQueue = new ArrayBlockingQueue<TextGenResult>(modelsCount);
                 final Map<SModel, GResource> textGenInput2Resource = new HashMap<SModel, GResource>(modelsCount * 2);
+                // We queue all models first, prior to poll(), and though ArrayBlockingQueue won't allow more than specified number of result elements, I don't care much. 
+                // If I hit the limit and resultQueue is blocked, scheduled textgen tasks would get parked with tgEngine's executor service and proceed once we get to poll(). 
+                // Nevertheless, the fact I did my best to get modelsCount right makes me feel I'd never face this scenario. 
                 mpsProject.getModelAccess().runReadAction(new Runnable() {
                   public void run() {
-                    for (GResource res : Sequence.fromIterable(resourcesWithOutput)) {
-                      SModel model2generate = res.status().getOutputModel();
-                      textGenInput2Resource.put(model2generate, res);
-                      // FIXME status.getOutputRepository is the one to lock for breakDownToUnits (down in schedule() call), and, perhaps, for the outer runReadAction, too. 
-                      tgEngine.schedule(model2generate, resultQueue);
+                    for (GResource res : ListSequence.fromList(resourcesWithOutput)) {
+                      for (SModel model2generate : CollectionSequence.fromCollection(res.status().getOutputModels())) {
+                        textGenInput2Resource.put(model2generate, res);
+                        // FIXME status.getOutputRepository is the one to lock for breakDownToUnits (down in schedule() call), and, perhaps, for the outer runReadAction here, too. 
+                        tgEngine.schedule(model2generate, resultQueue);
+                      }
                     }
                   }
                 });
 
-                subProgress_p0a0b.advance(3);
+                subProgress_n0a0b.advance(3);
 
                 final Map<GResource, List<IDelta>> deltas2 = new HashMap<GResource, List<IDelta>>();
                 final List<FileProcessor> fileProcessors2 = ListSequence.fromList(new ArrayList<FileProcessor>());
@@ -262,8 +273,8 @@ public class TextGen_Facet extends IFacet.Stub {
                     }
                   }
 
-                  subProgress_p0a0b.advance(1);
-                  subProgress_p0a0b.step(tgr.getModel().getReference().getModelName());
+                  subProgress_n0a0b.advance(1);
+                  subProgress_n0a0b.step(tgr.getModel().getReference().getModelName());
                   final GResource inputResource = textGenInput2Resource.get(tgr.getModel());
 
                   _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TextGenOutcomeResource(inputResource.model(), inputResource.module(), tgr))));
@@ -371,7 +382,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_21gswx_a0b);
               } finally {
                 tgEngine.shutdown();
-                subProgress_p0a0b.done();
+                subProgress_n0a0b.done();
               }
             default:
               progressMonitor.done();
@@ -466,21 +477,25 @@ public class TextGen_Facet extends IFacet.Stub {
             case 0:
               final TextGeneratorEngine tgEngine = new TextGeneratorEngine(monitor.getSession().getMessageHandler());
               try {
-                int modelsCount = Sequence.fromIterable(input).count();
-                final ArrayBlockingQueue<TextGenResult> resultQueue = new ArrayBlockingQueue<TextGenResult>(modelsCount);
+                int modelsCount = 0;
                 for (GResource resource : Sequence.fromIterable(input)) {
-                  final SModel model = resource.status().getOutputModel();
-                  if (model == null) {
-                    modelsCount--;
-                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Generated model in null")));
+                  Collection<SModel> outputModels = resource.status().getOutputModels();
+                  if (outputModels.isEmpty()) {
                     // used to be a 'failure', with text generation result collected so far. 
                     // Now, 'failure' here would yield empty result, always. 
                     // It looks like 'best effort' (generate all possible) is reasonable alternative. 
-                    continue;
+                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(String.format("No transformed output models for %s", resource.status().getInputModel().getName()))));
+                  } else {
+                    modelsCount += outputModels.size();
                   }
+                }
+                final ArrayBlockingQueue<TextGenResult> resultQueue = new ArrayBlockingQueue<TextGenResult>(modelsCount);
+                for (final GResource resource : Sequence.fromIterable(input)) {
                   monitor.getSession().getProject().getModelAccess().runReadAction(new Runnable() {
                     public void run() {
-                      tgEngine.schedule(model, resultQueue);
+                      for (SModel model : CollectionSequence.fromCollection(resource.status().getOutputModels())) {
+                        tgEngine.schedule(model, resultQueue);
+                      }
                     }
                   });
                 }

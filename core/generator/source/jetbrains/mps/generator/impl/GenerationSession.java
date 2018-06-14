@@ -295,7 +295,7 @@ class GenerationSession {
           pd = GeneratorUtil.describeInput(tqe.getTemplateContext());
         }
         myLogger.error(tqe.getTemplateModelLocation(), msg, pd);
-        return new GenerationStatus.ERROR(myOriginalInputModel);
+        return GenerationStatus.failure(myOriginalInputModel);
       } catch (GenerationFailureException gfe) {
         final String nestedException;
         if (gfe.getCause() != null) {
@@ -307,11 +307,11 @@ class GenerationSession {
         String msg = String.format("Generation failed for model '%s': %s. %s", myOriginalInputModel.getName(), error, nestedException);
         myLogger.handleException(gfe);
         myLogger.error(gfe.getTemplateModelLocation(), msg, GeneratorUtil.describeInput(gfe.getTemplateContext()));
-        return new GenerationStatus.ERROR(myOriginalInputModel);
+        return GenerationStatus.failure(myOriginalInputModel);
       } catch (Exception e) {
         myLogger.handleException(e);
         myLogger.error(String.format("Generation failed for model '%s': %s", myOriginalInputModel.getName(), e.toString()));
-        return new GenerationStatus.ERROR(myOriginalInputModel);
+        return GenerationStatus.failure(myOriginalInputModel);
       }
     } finally {
       monitor.done();
