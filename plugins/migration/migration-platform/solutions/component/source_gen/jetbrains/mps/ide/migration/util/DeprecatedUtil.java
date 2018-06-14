@@ -19,14 +19,16 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class DeprecatedUtil {
-  public static Set<SNode> usagesOfDeprecated(SearchScope depScope, SearchScope s) {
+  public static Set<SNode> usagesOfDeprecated(SearchScope what, SearchScope where) {
     Set<SNode> usagesOfDeprecated = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(usagesOfDeprecated).addSequence(Sequence.fromIterable(DeprecatedUtil.usagesOfDeprecatedMeta(depScope, s)));
-    SetSequence.fromSet(usagesOfDeprecated).addSequence(Sequence.fromIterable(DeprecatedUtil.usagesOfDeprecatedNodes(depScope, s)));
+    SetSequence.fromSet(usagesOfDeprecated).addSequence(Sequence.fromIterable(DeprecatedUtil.usagesOfDeprecatedMeta(what, where)));
+    SetSequence.fromSet(usagesOfDeprecated).addSequence(Sequence.fromIterable(DeprecatedUtil.usagesOfDeprecatedNodes(what, where)));
     return usagesOfDeprecated;
   }
 
@@ -39,15 +41,16 @@ public class DeprecatedUtil {
     return deprecated;
   }
 
-  private static Iterable<SNode> usagesOfDeprecatedNodes(SearchScope depScope, SearchScope s) {
+  private static Iterable<SNode> usagesOfDeprecatedNodes(SearchScope what, SearchScope where) {
+    Iterable<SNode> depNodes = DeprecatedUtil.depNodes(what);
     {
-      final SearchScope scope = CommandUtil.createScope(s);
+      final SearchScope scope = CommandUtil.createScope(where);
       final QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope;
         }
       };
-      return Sequence.fromIterable(DeprecatedUtil.depNodes(depScope)).translate(new ITranslator2<SNode, SReference>() {
+      return Sequence.fromIterable(depNodes).translate(new ITranslator2<SNode, SReference>() {
         public Iterable<SReference> translate(SNode it) {
           return CommandUtil.usages(CommandUtil.selectScope(null, context), it);
         }
@@ -153,13 +156,13 @@ public class DeprecatedUtil {
           return scope;
         }
       };
-      return CollectionSequence.fromCollection(CommandUtil.usages(CommandUtil.selectScope(null, context), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Deprecated"))).where(new IWhereFilter<SReference>() {
-        public boolean accept(SReference it) {
-          return it.getLink() == MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation");
+      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"), false)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SLinkOperations.hasPointer(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Deprecated"));
         }
-      }).select(new ISelector<SReference, SNode>() {
-        public SNode select(SReference it) {
-          return it.getSourceNode();
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.getParent(it);
         }
       });
     }
@@ -175,7 +178,7 @@ public class DeprecatedUtil {
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !((AttributeOperations.getAttribute(SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))) == null)) && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))) != null);
+          return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))) != null);
         }
       });
     }
@@ -191,7 +194,7 @@ public class DeprecatedUtil {
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !((AttributeOperations.getAttribute(SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))) == null)) && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))) != null);
+          return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))) != null);
         }
       });
     }

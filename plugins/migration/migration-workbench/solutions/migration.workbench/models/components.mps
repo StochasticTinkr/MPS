@@ -689,14 +689,22 @@
                             <node concept="3clFbS" id="51adnVzXcCi" role="1bW5cS">
                               <node concept="3clFbF" id="51adnVzXcL$" role="3cqZAp">
                                 <node concept="2ShNRf" id="5$zfhXztBbU" role="3clFbG">
-                                  <node concept="HV5vD" id="5ZODdE2xDvU" role="2ShVmc">
-                                    <ref role="HV5vE" to="9erk:~SearchResult" resolve="SearchResult" />
-                                    <node concept="3uibUv" id="35jzWtwrdTz" role="HU9BZ">
-                                      <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+                                  <node concept="1pGfFk" id="7qGRRBtcnZg" role="2ShVmc">
+                                    <ref role="37wK5l" to="9erk:~SearchResult.&lt;init&gt;(java.lang.Object,java.lang.Object,java.lang.String)" resolve="SearchResult" />
+                                    <node concept="37vLTw" id="7qGRRBtcooA" role="37wK5m">
+                                      <ref role="3cqZAo" node="51adnVzXcCj" resolve="node" />
                                     </node>
+                                    <node concept="37vLTw" id="7qGRRBtcp2f" role="37wK5m">
+                                      <ref role="3cqZAo" node="51adnVzXcCj" resolve="node" />
+                                    </node>
+                                    <node concept="37vLTw" id="7qGRRBtcp$q" role="37wK5m">
+                                      <ref role="3cqZAo" node="51adnVzXbNp" resolve="k" />
+                                    </node>
+                                    <node concept="3Tqbb2" id="7qGRRBtcvBZ" role="1pMfVU" />
                                   </node>
                                 </node>
                               </node>
+                              <node concept="3clFbH" id="7qGRRBtcmg_" role="3cqZAp" />
                             </node>
                             <node concept="Rh6nW" id="51adnVzXcCj" role="1bW2Oz">
                               <property role="TrG5h" value="node" />

@@ -57,7 +57,7 @@ public class ShowDeprecatedUsages_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadInEDT(new Runnable() {
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Set<SModule> theirModules = SetSequence.fromSetWithValues(new HashSet<SModule>(), event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModules());
         SetSequence.fromSet(theirModules).removeSequence(Sequence.fromIterable(event.getData(MPSCommonDataKeys.MPS_PROJECT).getModulesWithGenerators()));
