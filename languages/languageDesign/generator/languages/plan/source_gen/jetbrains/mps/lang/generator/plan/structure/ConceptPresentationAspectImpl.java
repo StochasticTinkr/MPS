@@ -17,6 +17,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_DeclaredCheckpointSpec;
   private ConceptPresentation props_DocumentationLine;
   private ConceptPresentation props_DocumentationStep;
+  private ConceptPresentation props_Fork;
   private ConceptPresentation props_InPlaceCheckpointRefSpec;
   private ConceptPresentation props_InPlaceCheckpointSpec;
   private ConceptPresentation props_IncludePlan;
@@ -90,6 +91,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DocumentationStep = cpb.create();
         }
         return props_DocumentationStep;
+      case LanguageConceptSwitch.Fork:
+        if (props_Fork == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("fork a new transformation branch with specified plan");
+          cpb.rawPresentation("fork");
+          props_Fork = cpb.create();
+        }
+        return props_Fork;
       case LanguageConceptSwitch.InPlaceCheckpointRefSpec:
         if (props_InPlaceCheckpointRefSpec == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

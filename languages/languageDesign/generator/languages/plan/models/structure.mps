@@ -257,5 +257,22 @@
       <ref role="PrY4T" node="LEyIDSDgXB" resolve="DocumentationLine" />
     </node>
   </node>
+  <node concept="1TIwiD" id="2JQwL_F4Efb">
+    <property role="EcuMT" value="3167863533095527371" />
+    <property role="TrG5h" value="Fork" />
+    <property role="R4oN_" value="fork a new transformation branch with specified plan" />
+    <property role="34LRSv" value="fork" />
+    <ref role="1TJDcQ" node="1_4co2y1LvW" resolve="Step" />
+    <node concept="1TJgyj" id="2JQwL_F4Efc" role="1TKVEi">
+      <property role="IQ2ns" value="3167863533095527372" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="plan" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1_4co2y1LvV" resolve="Plan" />
+    </node>
+    <node concept="t5JxF" id="2JQwL_F4Efe" role="lGtFl">
+      <property role="t5JxN" value="Fork transformation sequence into two branches, one goes on with active plan, another spins off with another plan." />
+    </node>
+  </node>
 </model>
 
