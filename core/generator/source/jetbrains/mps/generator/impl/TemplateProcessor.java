@@ -252,6 +252,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       return myMappingLabel;
     }
 
+    // seems to be non-null return value
     protected final List<SNode> nextMacro(TemplateContext context)
         throws GenerationFailureException, DismissTopMappingRuleException, GenerationCanceledException {
       if (getNextMacro() != null) {
@@ -382,6 +383,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         }
         ctx = ctx.subContext(newInputNode);
         List<SNode> _outputNodes = nextMacro(ctx);
+        TracingUtil.deriveOriginalNode(newInputNode, _outputNodes, false);
         outputNodes.addAll(_outputNodes);
         i++;
         trace.trace(newInputNode.getNodeId(), GenerationTracerUtil.translateOutput(_outputNodes), getMacroNodeRef());
@@ -830,9 +832,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       if (!_outputNodes.isEmpty()) {
         SNode inputNode = getNewInputNode(templateContext);
         if (inputNode != null) {
-          for (SNode outputNode : _outputNodes) {
-            TracingUtil.fillOriginalNode(inputNode, outputNode, false);
-          }
+          TracingUtil.deriveOriginalNode(inputNode, _outputNodes, true);
         }
       }
       return _outputNodes;

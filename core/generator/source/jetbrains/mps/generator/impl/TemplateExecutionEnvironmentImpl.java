@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -261,7 +261,8 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         if (TracingUtil.getInput(reducedNode) == null) {
           CopyUtil.copyUserObjects(inputNode, reducedNode);
           // keep track of 'original input node'
-          TracingUtil.fillOriginalNode(inputNode, reducedNode, false);
+          // XXX in fact, copyUserObjects, above, already did that for us
+          TracingUtil.deriveOriginalNode(inputNode, reducedNode);
         }
       }
       generator.recordTransformInputTrace(inputNode, outputNodes);
