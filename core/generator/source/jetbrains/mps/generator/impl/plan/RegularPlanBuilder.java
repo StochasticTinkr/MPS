@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -201,6 +201,11 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
     ArrayList<Step> steps = new ArrayList<>(mySteps.size());
     mySteps.forEach(s -> s.createStep(RegularPlanBuilder.this, steps));
     return new RigidGenerationPlan(planIdentity, steps);
+  }
+
+  @Override
+  public GenerationPlanBuilder fork() {
+    throw new UnsupportedOperationException();
   }
 
   private Collection<TemplateModule> asTemplateModules(@NotNull Collection<SModuleReference> generators) {

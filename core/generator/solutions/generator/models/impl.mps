@@ -7732,6 +7732,99 @@
                   </node>
                 </node>
               </node>
+              <node concept="3eNFk2" id="4y_AjJOKzLR" role="3eNLev">
+                <node concept="2OqwBi" id="4y_AjJOK$PY" role="3eO9$A">
+                  <node concept="37vLTw" id="4y_AjJOK$IC" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1UVrAZQmVl7" resolve="stepNode" />
+                  </node>
+                  <node concept="1mIQ4w" id="4y_AjJOK_au" role="2OqNvi">
+                    <node concept="chp4Y" id="4y_AjJOK_cI" role="cj9EA">
+                      <ref role="cht4Q" to="bjdw:2JQwL_F4Efb" resolve="Fork" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="4y_AjJOKzLT" role="3eOfB_">
+                  <node concept="3cpWs8" id="4y_AjJOK_hT" role="3cqZAp">
+                    <node concept="3cpWsn" id="4y_AjJOK_hW" role="3cpWs9">
+                      <property role="TrG5h" value="branchPlan" />
+                      <node concept="3Tqbb2" id="4y_AjJOK_hR" role="1tU5fm">
+                        <ref role="ehGHo" to="bjdw:1_4co2y1LvV" resolve="Plan" />
+                      </node>
+                      <node concept="2OqwBi" id="4y_AjJOKH_r" role="33vP2m">
+                        <node concept="1PxgMI" id="4y_AjJOKDrz" role="2Oq$k0">
+                          <property role="1BlNFB" value="true" />
+                          <node concept="chp4Y" id="4y_AjJOKHsW" role="3oSUPX">
+                            <ref role="cht4Q" to="bjdw:2JQwL_F4Efb" resolve="Fork" />
+                          </node>
+                          <node concept="37vLTw" id="4y_AjJOKD17" role="1m5AlR">
+                            <ref role="3cqZAo" node="1UVrAZQmVl7" resolve="stepNode" />
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="4y_AjJOKHQe" role="2OqNvi">
+                          <ref role="3Tt5mk" to="bjdw:2JQwL_F4Efc" resolve="plan" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs8" id="4y_AjJOKLEY" role="3cqZAp">
+                    <node concept="3cpWsn" id="4y_AjJOKLEZ" role="3cpWs9">
+                      <property role="TrG5h" value="branchBuilder" />
+                      <node concept="3uibUv" id="4y_AjJOKLEX" role="1tU5fm">
+                        <ref role="3uigEE" to="ap4t:~GenerationPlanBuilder" resolve="GenerationPlanBuilder" />
+                      </node>
+                      <node concept="2OqwBi" id="4y_AjJOKLF0" role="33vP2m">
+                        <node concept="37vLTw" id="4y_AjJOKLF1" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1UVrAZQmUB_" resolve="planBuilder" />
+                        </node>
+                        <node concept="liA8E" id="4y_AjJOKLF2" role="2OqNvi">
+                          <ref role="37wK5l" to="ap4t:~GenerationPlanBuilder.fork():jetbrains.mps.generator.GenerationPlanBuilder" resolve="fork" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="4y_AjJOKHTb" role="3cqZAp">
+                    <node concept="2OqwBi" id="4y_AjJOKLdT" role="3clFbG">
+                      <node concept="2ShNRf" id="4y_AjJOKHT7" role="2Oq$k0">
+                        <node concept="1pGfFk" id="4y_AjJOKL8g" role="2ShVmc">
+                          <ref role="37wK5l" node="1UVrAZQmUpe" resolve="GenPlanTranslator" />
+                          <node concept="37vLTw" id="4y_AjJOKL9q" role="37wK5m">
+                            <ref role="3cqZAo" node="4y_AjJOK_hW" resolve="branchPlan" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="4y_AjJOKLkw" role="2OqNvi">
+                        <ref role="37wK5l" node="1UVrAZQmU_x" resolve="feed" />
+                        <node concept="37vLTw" id="4y_AjJOKLF3" role="37wK5m">
+                          <ref role="3cqZAo" node="4y_AjJOKLEZ" resolve="branchBuilder" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="4y_AjJOKLPm" role="3cqZAp">
+                    <node concept="2OqwBi" id="4y_AjJOKLUN" role="3clFbG">
+                      <node concept="37vLTw" id="4y_AjJOKLPk" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4y_AjJOKLEZ" resolve="branchBuilder" />
+                      </node>
+                      <node concept="liA8E" id="4y_AjJOKM0D" role="2OqNvi">
+                        <ref role="37wK5l" to="ap4t:~GenerationPlanBuilder.wrapUp(jetbrains.mps.generator.plan.PlanIdentity):jetbrains.mps.generator.ModelGenerationPlan" resolve="wrapUp" />
+                        <node concept="2ShNRf" id="4y_AjJOKM2k" role="37wK5m">
+                          <node concept="1pGfFk" id="4y_AjJOKMof" role="2ShVmc">
+                            <ref role="37wK5l" to="cgca:~PlanIdentity.&lt;init&gt;(java.lang.String)" resolve="PlanIdentity" />
+                            <node concept="2OqwBi" id="4y_AjJOKMy2" role="37wK5m">
+                              <node concept="37vLTw" id="4y_AjJOKMpu" role="2Oq$k0">
+                                <ref role="3cqZAo" node="4y_AjJOK_hW" resolve="branchPlan" />
+                              </node>
+                              <node concept="3TrcHB" id="4y_AjJOKMEJ" role="2OqNvi">
+                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
           <node concept="3cpWsn" id="1UVrAZQmVl7" role="1Duv9x">

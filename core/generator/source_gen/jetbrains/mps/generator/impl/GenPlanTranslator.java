@@ -80,6 +80,11 @@ public final class GenPlanTranslator {
       } else if (SNodeOperations.isInstanceOf(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x336c2500000e1b2fL, "jetbrains.mps.lang.generator.plan.structure.IncludePlan"))) {
         SNode includedPlan = SLinkOperations.getTarget(SNodeOperations.as(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x336c2500000e1b2fL, "jetbrains.mps.lang.generator.plan.structure.IncludePlan")), MetaAdapterFactory.getReferenceLink(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x336c2500000e1b2fL, 0x336c2500000e1b32L, "plan"));
         new GenPlanTranslator(includedPlan).feed(planBuilder);
+      } else if (SNodeOperations.isInstanceOf(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x2bf683196b12a3cbL, "jetbrains.mps.lang.generator.plan.structure.Fork"))) {
+        SNode branchPlan = SLinkOperations.getTarget(SNodeOperations.as(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x2bf683196b12a3cbL, "jetbrains.mps.lang.generator.plan.structure.Fork")), MetaAdapterFactory.getReferenceLink(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x2bf683196b12a3cbL, 0x2bf683196b12a3ccL, "plan"));
+        GenerationPlanBuilder branchBuilder = planBuilder.fork();
+        new GenPlanTranslator(branchPlan).feed(branchBuilder);
+        branchBuilder.wrapUp(new PlanIdentity(SPropertyOperations.getString(branchPlan, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
       }
     }
     return this;
