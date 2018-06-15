@@ -52,7 +52,6 @@ import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.apache.log4j.Priority;
@@ -103,7 +102,7 @@ class GenerationSession {
   private int myMajorStep = 0;
   private int myMinorStep = -1;
   private final GenerationOptions myGenerationOptions;
-  private final List<SModel> myTransientModelsToRecycle = new ArrayList<SModel>();
+  private final List<SModel> myTransientModelsToRecycle = new ArrayList<>();
 
   GenerationSession(@NotNull SModel inputModel, @NotNull GenControllerContext environment, ITaskPoolProvider taskPoolProvider,
       GeneratorLoggerAdapter logger, TransientModelsModule transientModule, IPerformanceTracer performanceTracer, GenerationTrace genTrace) {
@@ -134,7 +133,7 @@ class GenerationSession {
 
       List<SLanguage> extraLanguages = null;
       if (additionalLanguages != null && !additionalLanguages.isEmpty()) {
-        extraLanguages = new ArrayList<SLanguage>(additionalLanguages.size());
+        extraLanguages = new ArrayList<>(additionalLanguages.size());
         for (String l : additionalLanguages) {
           //this usage of by-name is reviewed
           extraLanguages.add(MetaAdapterFactoryByName.getLanguage(l));
@@ -321,7 +320,7 @@ class GenerationSession {
   private SModel executeMajorStep(ProgressMonitor progress, SModel inputModel, Transform planStep, TransitionTrace transitionTrace) throws GenerationCanceledException, GenerationFailureException {
     myMinorStep = -1;
 
-    List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(planStep.getTransformations());
+    List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<>(planStep.getTransformations());
 
     if (myLogger.needsInfo()) {
       printUsedLanguages(inputModel);
@@ -338,7 +337,7 @@ class GenerationSession {
 
     // -- filter mapping configurations
     TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, inputModel, null, new StepArguments(myQuerySource));
-    LinkedList<TemplateMappingConfiguration> drop = new LinkedList<TemplateMappingConfiguration>();
+    LinkedList<TemplateMappingConfiguration> drop = new LinkedList<>();
     for (TemplateMappingConfiguration c : mappingConfigurations) {
       if (!c.isApplicable(templateGenerator)) {
         drop.add(c);
@@ -357,7 +356,7 @@ class GenerationSession {
     }
 
     // -- prepare generator
-    Collections.sort(mappingConfigurations, new MapCfgComparator());
+    mappingConfigurations.sort(new MapCfgComparator());
     GenPlanActiveStep activeStep = new GenPlanActiveStep(myGenerationPlan, planStep, mappingConfigurations);
 
     try {
@@ -616,7 +615,7 @@ class GenerationSession {
 
   private SModel createTransientModel(String stereotype) {
     TransientModelsModule module = mySessionContext.getModule();
-    String longName = NameUtil.getModelLongName(myOriginalInputModel);
+    String longName = myOriginalInputModel.getName().getLongName();
     final String transientModelName = longName + '@' + stereotype;
     final SModelReference mr = PersistenceFacade.getInstance().createModelReference(module.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(), transientModelName);
     return module.createTransientModel(mr);
@@ -693,8 +692,8 @@ class GenerationSession {
   }
 
   private void printUsedLanguages(SModel inputModel) {
-    List<SLanguage> references = new ArrayList<SLanguage>(ModelContentUtil.getUsedLanguages(inputModel));
-    Collections.sort(references, Comparator.comparing(SLanguage::getQualifiedName));
+    List<SLanguage> references = new ArrayList<>(ModelContentUtil.getUsedLanguages(inputModel));
+    references.sort(Comparator.comparing(SLanguage::getQualifiedName));
     myLogger.info("languages used:");
     for (SLanguage lang : references) {
       myLogger.info("    " + lang);
@@ -710,7 +709,7 @@ class GenerationSession {
   }
 
   private void recordAccessedTransientModels() {
-    Collection<SModelReference> modelToKeepCandidates = new LinkedHashSet<SModelReference>();
+    Collection<SModelReference> modelToKeepCandidates = new LinkedHashSet<>();
     final TransientModelsModule transientsModule = mySessionContext.getModule();
     if (keepTransientForMessageNavigation()) {
       modelToKeepCandidates.addAll(myLogRecorder.ofKind(MessageKind.ERROR));
