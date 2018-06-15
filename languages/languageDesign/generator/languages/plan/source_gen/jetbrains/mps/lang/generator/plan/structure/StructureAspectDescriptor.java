@@ -95,7 +95,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator.plan", "Checkpoint", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071801L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.generator.plan.structure.Step", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/1820634577908471809");
     b.aggregate("cpSpec", 0x340cd07aed7cb2d2L).target(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7ca164L).optional(false).ordered(true).multiple(false).origin("3750601816081740498").done();
     b.alias("persist/synchronize checkpoint");

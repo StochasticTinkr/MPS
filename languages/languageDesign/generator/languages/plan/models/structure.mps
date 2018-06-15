@@ -85,18 +85,12 @@
     <property role="EcuMT" value="1820634577908471809" />
     <property role="34LRSv" value="persist/synchronize checkpoint" />
     <ref role="1TJDcQ" node="1_4co2y1LvW" resolve="Step" />
-    <node concept="PrWs8" id="1_4co2y1Lw3" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
     <node concept="1TJgyj" id="3gcO7FHvbbi" role="1TKVEi">
       <property role="IQ2ns" value="3750601816081740498" />
       <property role="20lmBu" value="aggregation" />
       <property role="20lbJX" value="1" />
       <property role="20kJfa" value="cpSpec" />
       <ref role="20lvS9" node="3gcO7FHva5$" resolve="CheckpointSpecification" />
-    </node>
-    <node concept="t5JxF" id="3gcO7FHvCPh" role="lGtFl">
-      <property role="t5JxN" value="INamedConcept has to be removed from implemented ifaces once we migrate all uses of CP with name to use InPlaceCheckpointSpec" />
     </node>
   </node>
   <node concept="1TIwiD" id="1_4co2y1Lw2">

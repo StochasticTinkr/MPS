@@ -9,7 +9,6 @@
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="bjdw" ref="r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -102,17 +101,10 @@
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="4303308395523343364" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link" flags="ng" index="2DA6wF" />
       <concept id="4303308395523096213" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept" flags="ng" index="2DD5aU" />
-      <concept id="1147467115080" name="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" flags="ng" index="EnEH3">
-        <reference id="1147467295099" name="applicableProperty" index="EomxK" />
-        <child id="1147468630220" name="propertyGetter" index="EtsB7" />
-      </concept>
-      <concept id="1147467790433" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" flags="in" index="Eqf_E" />
-      <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
       <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="6702802731807532712" name="canBeParent" index="9SGkU" />
-        <child id="1213098023997" name="property" index="1MhHOB" />
         <child id="1213100494875" name="referent" index="1Mr941" />
       </concept>
       <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
@@ -146,9 +138,6 @@
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
-      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
-        <reference id="1138056395725" name="property" index="3TsBF5" />
-      </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
@@ -305,35 +294,6 @@
         <node concept="3cpWs6" id="3gcO7FHOCii" role="3cqZAp">
           <node concept="3clFbT" id="3gcO7FHOCAC" role="3cqZAk">
             <property role="3clFbU" value="true" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1M2fIO" id="1BDRb8BtZdG">
-    <ref role="1M2myG" to="bjdw:1_4co2y1Lw1" resolve="Checkpoint" />
-    <node concept="EnEH3" id="1BDRb8BtZdH" role="1MhHOB">
-      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
-      <node concept="Eqf_E" id="1BDRb8BtZdJ" role="EtsB7">
-        <node concept="3clFbS" id="1BDRb8BtZdK" role="2VODD2">
-          <node concept="3clFbF" id="1BDRb8BtZm9" role="3cqZAp">
-            <node concept="2OqwBi" id="1BDRb8Bu1GJ" role="3clFbG">
-              <node concept="1PxgMI" id="1BDRb8Bu1cp" role="2Oq$k0">
-                <property role="1BlNFB" value="true" />
-                <node concept="chp4Y" id="1BDRb8Bu1n_" role="3oSUPX">
-                  <ref role="cht4Q" to="bjdw:3gcO7FHva5x" resolve="InPlaceCheckpointSpec" />
-                </node>
-                <node concept="2OqwBi" id="1BDRb8BtZCL" role="1m5AlR">
-                  <node concept="EsrRn" id="1BDRb8BtZm8" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="1BDRb8BtZXn" role="2OqNvi">
-                    <ref role="3Tt5mk" to="bjdw:3gcO7FHvbbi" resolve="cpSpec" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3TrcHB" id="1BDRb8Bu245" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-              </node>
-            </node>
           </node>
         </node>
       </node>

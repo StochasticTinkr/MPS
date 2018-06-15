@@ -42,7 +42,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Checkpoint == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Synchronization point of a generation plan");
-          cpb.presentationByName();
+          cpb.rawPresentation("persist/synchronize checkpoint");
           props_Checkpoint = cpb.create();
         }
         return props_Checkpoint;
