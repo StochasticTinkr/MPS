@@ -6,26 +6,23 @@
     <file name="QueriesGenerated.java">
       <unit at="94,0,119,0" name="jetbrains.mps.lang.editor.menus.extras.generator.template.main.QueriesGenerated$SNsQ" />
       <unit at="139,0,167,0" name="jetbrains.mps.lang.editor.menus.extras.generator.template.main.QueriesGenerated$PVQ" />
-      <unit at="31,0,171,0" name="jetbrains.mps.lang.editor.menus.extras.generator.template.main.QueriesGenerated" />
+      <unit at="31,0,168,0" name="jetbrains.mps.lang.editor.menus.extras.generator.template.main.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:56c9dfde-c44a-4221-a18c-06ba73a42ffb(jetbrains.mps.lang.editor.menus.extras.generator.template.main@generator)/2319156231054335523">
     <file name="QueriesGenerated.java">
-      <node id="2319156231054489315" at="51,113,52,942" concept="0" />
+      <node id="3157835369831455742" at="51,113,52,269" concept="0" />
       <node id="2319156231054489388" at="54,113,55,77" concept="0" />
       <node id="2319156231054489356" at="69,109,70,194" concept="0" />
       <node id="7985135009828838074" at="72,109,73,133" concept="0" />
-      <node id="8147337272227151297" at="167,55,168,43" concept="0" />
       <node id="2319156231054489313" at="51,0,54,0" concept="1" trace="propertyMacro_GetPropertyValue_23191562310544893110#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
       <node id="2319156231054489386" at="54,0,57,0" concept="1" trace="propertyMacro_GetPropertyValue_23191562310544893050#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
       <node id="2319156231054489354" at="69,0,72,0" concept="1" trace="sourceNodesQuery_a0c4a0_0#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodesContext;)Ljava/lang/Iterable;" />
       <node id="7985135009828838072" at="72,0,75,0" concept="1" trace="sourceNodesQuery_a0a4a0_1#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodesContext;)Ljava/lang/Iterable;" />
-      <node id="8147337272227151297" at="167,0,170,0" concept="1" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
-      <scope id="2319156231054489314" at="51,113,52,942" />
+      <scope id="2319156231054489314" at="51,113,52,269" />
       <scope id="2319156231054489387" at="54,113,55,77" />
       <scope id="2319156231054489355" at="69,109,70,194" />
       <scope id="7985135009828838073" at="72,109,73,133" />
-      <scope id="8147337272227151297" at="167,55,168,43" />
       <scope id="2319156231054489313" at="51,0,54,0">
         <var name="_context" id="2319156231054489313" />
       </scope>
@@ -37,9 +34,6 @@
       </scope>
       <scope id="7985135009828838072" at="72,0,75,0">
         <var name="_context" id="7985135009828838072" />
-      </scope>
-      <scope id="8147337272227151297" at="167,0,170,0">
-        <var name="str" id="8147337272227151297" />
       </scope>
     </file>
   </root>

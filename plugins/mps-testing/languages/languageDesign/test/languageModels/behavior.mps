@@ -2108,8 +2108,8 @@
                 <ref role="3Tt5mk" to="tp5g:3FlSiDCuDcn" resolve="action" />
               </node>
             </node>
-            <node concept="2qgKlT" id="13gSnpTAqUH" role="2OqNvi">
-              <ref role="37wK5l" to="tp4s:hEwIGgK" resolve="getGeneratedClassFQName" />
+            <node concept="2qgKlT" id="2JiSCAPZaDu" role="2OqNvi">
+              <ref role="37wK5l" to="tp4s:2JiSCAPXEb8" resolve="getActionId" />
             </node>
           </node>
         </node>

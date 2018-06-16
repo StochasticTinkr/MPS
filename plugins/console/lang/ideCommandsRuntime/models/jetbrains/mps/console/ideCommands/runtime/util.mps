@@ -1633,8 +1633,8 @@
                   <node concept="37vLTw" id="7VSQgz8PhZ$" role="2Oq$k0">
                     <ref role="3cqZAo" node="7VSQgz8NiBH" resolve="actionDeclaration" />
                   </node>
-                  <node concept="2qgKlT" id="7VSQgz8PmLr" role="2OqNvi">
-                    <ref role="37wK5l" to="tp4s:hEwIGgK" resolve="getGeneratedClassFQName" />
+                  <node concept="2qgKlT" id="2JiSCAPZ0bc" role="2OqNvi">
+                    <ref role="37wK5l" to="tp4s:2JiSCAPXEb8" resolve="getActionId" />
                   </node>
                 </node>
               </node>
