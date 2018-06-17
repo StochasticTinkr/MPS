@@ -3308,6 +3308,11 @@
           </node>
         </node>
         <node concept="3clFbH" id="192HKKPP2rE" role="3cqZAp" />
+        <node concept="3SKdUt" id="33R_ryvPnqN" role="3cqZAp">
+          <node concept="3SKdUq" id="33R_ryvPnqP" role="3SKWNk">
+            <property role="3SKdUp" value="Quick fix for usable platform update: non strict icon search to avoid RuntimeException and unusable MPS" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="192HKKPP2rV" role="3cqZAp">
           <node concept="3cpWsn" id="192HKKPP2rW" role="3cpWs9">
             <property role="TrG5h" value="icon" />
@@ -3315,8 +3320,8 @@
               <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
             </node>
             <node concept="2YIFZM" id="4RE4hojHsyK" role="33vP2m">
-              <ref role="37wK5l" to="zn9m:~IconLoader.findIcon(java.lang.String,java.lang.Class):javax.swing.Icon" resolve="findIcon" />
               <ref role="1Pybhc" to="zn9m:~IconLoader" resolve="IconLoader" />
+              <ref role="37wK5l" to="zn9m:~IconLoader.findIcon(java.lang.String,java.lang.Class,boolean,boolean):javax.swing.Icon" resolve="findIcon" />
               <node concept="2OqwBi" id="4RE4hojHsyL" role="37wK5m">
                 <node concept="37vLTw" id="4RE4hojHsyM" role="2Oq$k0">
                   <ref role="3cqZAo" node="192HKKPP2t4" resolve="ir" />
@@ -3332,6 +3337,12 @@
                 <node concept="liA8E" id="4RE4hojHsyQ" role="2OqNvi">
                   <ref role="37wK5l" to="ze1i:~IconResource.getProvider():java.lang.Class" resolve="getProvider" />
                 </node>
+              </node>
+              <node concept="3clFbT" id="33R_ryvPiQG" role="37wK5m">
+                <property role="3clFbU" value="false" />
+              </node>
+              <node concept="3clFbT" id="33R_ryvPl9P" role="37wK5m">
+                <property role="3clFbU" value="false" />
               </node>
             </node>
           </node>

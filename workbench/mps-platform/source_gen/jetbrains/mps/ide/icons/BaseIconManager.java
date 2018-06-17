@@ -209,7 +209,8 @@ public class BaseIconManager {
       return MapSequence.fromMap(myResToIcon).get(ir);
     }
 
-    Icon icon = IconLoader.findIcon(ir.getResourceId(), ir.getProvider());
+    // Quick fix for usable platform update: non strict icon search to avoid RuntimeException and unusable MPS 
+    Icon icon = IconLoader.findIcon(ir.getResourceId(), ir.getProvider(), false, false);
     if (icon == null) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Icon was not found for " + ir);
