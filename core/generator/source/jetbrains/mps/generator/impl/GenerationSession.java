@@ -17,7 +17,6 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationParametersProvider;
 import jetbrains.mps.generator.GenerationParametersProviderEx;
 import jetbrains.mps.generator.GenerationSessionContext;
@@ -51,7 +50,7 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.apache.log4j.Priority;
@@ -84,6 +83,7 @@ import java.util.Map.Entry;
  * Created once per model generation.
  */
 class GenerationSession {
+  private final GenControllerContext myControlEnv;
   private final ITaskPoolProvider myTaskPoolProvider;
   private final SModel myOriginalInputModel;
   private final RoleValidation myRoleValidation;
@@ -102,7 +102,6 @@ class GenerationSession {
 
   private int myMajorStep = 0;
   private int myMinorStep = -1;
-  private final GenerationOptions myGenerationOptions;
   private final List<SModel> myTransientModelsToRecycle = new ArrayList<>();
 
   GenerationSession(@NotNull SModel inputModel, @NotNull GenControllerContext environment, ITaskPoolProvider taskPoolProvider,
@@ -113,9 +112,9 @@ class GenerationSession {
     myLogRecorder = new RecordingFactory(new BasicFactory());
     myLogger = new GenerationSessionLogger(logger, myLogRecorder);
     ttrace = performanceTracer;
-    myGenerationOptions = environment.getOptions();
+    myControlEnv = environment;
     mySessionContext = new GenerationSessionContext(environment, transientModule, myLogger, myOriginalInputModel);
-    myRoleValidation = new RoleValidation(myGenerationOptions.isShowBadChildWarning());
+    myRoleValidation = new RoleValidation(environment.getOptions().isShowBadChildWarning());
   }
 
   GenerationStatus generateModel(ProgressMonitor monitor) throws GenerationCanceledException {
@@ -124,9 +123,9 @@ class GenerationSession {
     }
 
     // create a plan
-    GenerationParametersProvider parametersProvider = myGenerationOptions.getParametersProvider();
+    GenerationParametersProvider parametersProvider = myControlEnv.getOptions().getParametersProvider();
     ttrace.push("analyzing dependencies");
-    myGenerationPlan = myGenerationOptions.getCustomPlan(myOriginalInputModel);
+    myGenerationPlan = myControlEnv.getOptions().getCustomPlan(myOriginalInputModel);
     if (myGenerationPlan == null) {
       Collection<String> additionalLanguages =
           parametersProvider instanceof GenerationParametersProviderEx
@@ -137,13 +136,15 @@ class GenerationSession {
       if (additionalLanguages != null && !additionalLanguages.isEmpty()) {
         extraLanguages = new ArrayList<>(additionalLanguages.size());
         for (String l : additionalLanguages) {
-          //this usage of by-name is reviewed
-          extraLanguages.add(MetaAdapterFactoryByName.getLanguage(l));
+          LanguageRuntime lr = myControlEnv.getLanguageRegistry().getLanguage(l);
+          if (lr != null) {
+            extraLanguages.add(lr.getIdentity());
+          }
         }
       }
       GenerationPlan gp;
       myGenerationPlan = gp = new GenerationPlan(myOriginalInputModel, extraLanguages);
-      if (!checkGenerationPlan(gp) && myGenerationOptions.isStrictMode()) {
+      if (!checkGenerationPlan(gp) && myControlEnv.getOptions().isStrictMode()) {
         throw new GenerationCanceledException();
       }
     }
@@ -215,7 +216,7 @@ class GenerationSession {
               continue;
             }
             CheckpointIdentity checkpointIdentity = checkpointStep.getIdentity();
-            final CrossModelEnvironment xmodelEnv = mySessionContext.getCrossModelEnvironment();
+            final CrossModelEnvironment xmodelEnv = myControlEnv.getCrossModelEnvironment();
             CheckpointIdentity lastPersistedCheckpoint = transitionTrace.getMostRecentCheckpoint();
             SModel checkpointModel = xmodelEnv.createBlankCheckpointModel(myOriginalInputModel.getReference(), lastPersistedCheckpoint, checkpointIdentity);
             CheckpointStateBuilder cpBuilder = new CheckpointStateBuilder(currInputModel, checkpointModel, transitionTrace);
@@ -278,9 +279,9 @@ class GenerationSession {
         // identifies the model and specific "configuration" it has been generated with.
         // XXX we could use GenerationDependencies to pass more information about actual generators/languages involved (including their runtimes
         //     to facilitate proper classpath calculation
-        final GenerationDependencies genDeps = new GenerationDependencies(myOriginalInputModel, myGenerationOptions.getParametersProvider());
+        final GenerationDependencies genDeps = new GenerationDependencies(myOriginalInputModel, myControlEnv.getOptions().getParametersProvider());
         GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput, genDeps, myLogger.getErrorCount() > 0);
-        generationStatus.setCrossModelEnvironment(mySessionContext.getCrossModelEnvironment());
+        generationStatus.setCrossModelEnvironment(myControlEnv.getCrossModelEnvironment());
         return generationStatus;
       } catch (GenerationCanceledException gce) {
         throw gce;
@@ -359,7 +360,7 @@ class GenerationSession {
 
     // -- prepare generator
     mappingConfigurations.sort(new MapCfgComparator());
-    GenPlanActiveStep activeStep = new GenPlanActiveStep(myGenerationPlan, planStep, mappingConfigurations);
+    GenPlanActiveStep activeStep = new GenPlanActiveStep(myGenerationPlan, planStep, mappingConfigurations, myControlEnv.getLanguageRegistry());
 
     try {
       myStepArguments = new StepArguments(activeStep, myNewTrace, new GeneratorMappings(myLogger), transitionTrace, myQuerySource, myRoleValidation, ttrace);
@@ -377,7 +378,7 @@ class GenerationSession {
   // precondition: myStepArguments initialized (!= null);
   private SModel executeMajorStepInternal(SModel inputModel, ProgressMonitor progress) throws GenerationFailureException, GenerationCanceledException {
     SModel currentInputModel = inputModel;
-    final boolean cloneInputModel = myGenerationOptions.isSaveTransientModels() && myGenerationOptions.applyTransformationsInplace();
+    final boolean cloneInputModel = myControlEnv.getOptions().isSaveTransientModels() && myControlEnv.getOptions().applyTransformationsInplace();
 
     // -----------------------
     // run pre-processing scripts
@@ -493,7 +494,7 @@ class GenerationSession {
 
   @NotNull
   private TemplateGenerator prepareToApplyRules(SModel currentInputModel, SModel currentOutputModel) {
-    return myGenerationOptions.isGenerateInParallel()
+    return myControlEnv.getOptions().isGenerateInParallel()
             ? new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, currentInputModel, currentOutputModel, myStepArguments)
             : new TemplateGenerator(mySessionContext, currentInputModel, currentOutputModel, myStepArguments);
   }
@@ -533,7 +534,7 @@ class GenerationSession {
     // need to clone input model?
     // generally, there's no need to have a copy to run a script, even if it modifies the model
     // however, if we keep transients AND model is modified, it's handy to get a copy of the model to see the difference
-    final boolean needToCloneInputModel = modifiesModel && myGenerationOptions.isSaveTransientModels();
+    final boolean needToCloneInputModel = modifiesModel && myControlEnv.getOptions().isSaveTransientModels();
     SModel toRecycle = null;
     if (needToCloneInputModel) {
       ttrace.push("model clone");
@@ -573,7 +574,7 @@ class GenerationSession {
       return currentModel;
     }
     // post-processing script is deemed to modify model always
-    final boolean needToCloneModel = myGenerationOptions.isSaveTransientModels();
+    final boolean needToCloneModel = myControlEnv.getOptions().isSaveTransientModels();
     SModel toRecycle = null;
     if (needToCloneModel) {
       ttrace.push("model clone");
@@ -714,7 +715,7 @@ class GenerationSession {
     final TransientModelsModule transientsModule = mySessionContext.getModule();
     if (keepTransientForMessageNavigation()) {
       modelToKeepCandidates.addAll(myLogRecorder.ofKind(MessageKind.ERROR));
-      if (myGenerationOptions.isShowWarnings() && myGenerationOptions.isKeepModelsWithWarnings()) {
+      if (myControlEnv.getOptions().isShowWarnings() && myControlEnv.getOptions().isKeepModelsWithWarnings()) {
         modelToKeepCandidates.addAll(myLogRecorder.ofKind(MessageKind.WARNING));
       }
       for (SModelReference mr : modelToKeepCandidates) {
@@ -724,7 +725,7 @@ class GenerationSession {
       }
     }
     myLogRecorder.reset();
-    final boolean discardTransients = !myGenerationOptions.isSaveTransientModels();
+    final boolean discardTransients = !myControlEnv.getOptions().isSaveTransientModels();
     for (SModel m : myTransientModelsToRecycle) {
       if (discardTransients && !modelToKeepCandidates.contains(m.getReference())) {
         // drop a model only if we don't save transients and don't keep this model due to errors/warnings
@@ -767,7 +768,7 @@ class GenerationSession {
     if (mySessionContext == null) {
       return;
     }
-    if (!myGenerationOptions.isSaveTransientModels()) {
+    if (!myControlEnv.getOptions().isSaveTransientModels()) {
       mySessionContext.getModule().clearUnused();
     }
     if (myQuerySource != null) {

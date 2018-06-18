@@ -58,8 +58,6 @@ import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -733,28 +731,19 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   public void checkIsExpectedLanguage(@NotNull Iterable<SNode> nodes, @NotNull SNodeReference templateNode, @NotNull TemplateContext templateContext) {
-    HashMap<SLanguage, SNode> langToReport = new HashMap<>();
-    for (SNode node : nodes) {
-      SLanguage lang = node.getConcept().getLanguage();
-      if (!getGenerationPlan().isCountedLanguage(lang)) {
-        // FIXME Put GenControllerContext into StepArguments and use GenControllerContext.getLanguageRegistry() here.
-        //       Better yet, refactor this cumbersome and misguiding check (with hand-crafted GPs in mind)
-        LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(lang);
-        if (lr != null && !lr.getGenerators().isEmpty()) {
-          langToReport.put(lang, node);
-        }
-      }
-    }
-    if (langToReport.isEmpty()) {
+    Collection<SNode> toReport = getGenerationPlan().selectUnexpectedNodes(nodes);
+    if (toReport.isEmpty()) {
       return;
     }
-    for (SLanguage lang : langToReport.keySet()) {
+    for (SNode n : toReport) {
+      SLanguage lang = n.getConcept().getLanguage();
+      // XXX if/when needed, shall track already reported languages and complain only once
       String hint = String.format("workaround: add the language '%s' to list of 'Languages Engaged On Generation' in model '%s'",
                                   lang.getQualifiedName(), getGeneratorSessionContext().getOriginalInputModel().getName());
       getLogger().error(templateNode,
                                     String.format("language of output node is '%s' - this language did not show up when computing generation steps!", lang.getQualifiedName()),
                                     GeneratorUtil.describeInput(templateContext),
-                                    GeneratorUtil.describe(langToReport.get(lang), "output"),
+                                    GeneratorUtil.describe(n, "output"),
                                     new ProblemDescription(hint));
     }
   }
