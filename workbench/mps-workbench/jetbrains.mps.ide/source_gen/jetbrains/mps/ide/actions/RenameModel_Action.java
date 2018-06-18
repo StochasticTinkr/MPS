@@ -6,12 +6,11 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.Language;
-import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.refactoring.RenameModelDialog;
 
 public class RenameModel_Action extends BaseAction {
@@ -28,13 +27,7 @@ public class RenameModel_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(event.getData(MPSCommonDataKeys.CONTEXT_MODULE) instanceof Language)) {
-      return true;
-    }
-    if (!(Language.isLanguageOwnedAccessoryModel(event.getData(MPSCommonDataKeys.MODEL)))) {
-      return false;
-    }
-    return event.getData(MPSCommonDataKeys.MODEL) instanceof EditableSModel;
+    return !(LanguageAspectSupport.isAspectModel(event.getData(MPSCommonDataKeys.MODEL)));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -57,12 +50,6 @@ public class RenameModel_Action extends BaseAction {
         return false;
       }
       if (!(p instanceof EditableSModel) || p.isReadOnly()) {
-        return false;
-      }
-    }
-    {
-      SModule p = event.getData(MPSCommonDataKeys.CONTEXT_MODULE);
-      if (p == null) {
         return false;
       }
     }
