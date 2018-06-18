@@ -73,7 +73,7 @@ public class DeprecatedUtil {
       Iterable<SNode> dc = DeprecatedUtil.depConcepts(depScope);
       Iterable<SNode> dci = Sequence.fromIterable(dc).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
-          return CommandUtil.instances(CommandUtil.selectScope(null, context), SNodeOperations.asSConcept(SNodeOperations.asSConcept(it)), false);
+          return CommandUtil.instances(CommandUtil.selectScope(null, context), SNodeOperations.asSConcept(SNodeOperations.asSConcept(it)), true);
         }
       });
       Iterable<SNode> dcu = Sequence.fromIterable(dc).translate(new ITranslator2<SNode, SReference>() {
@@ -144,7 +144,7 @@ public class DeprecatedUtil {
       });
 
 
-      return Sequence.fromIterable(dci).union(Sequence.fromIterable(dpi)).union(Sequence.fromIterable(dli)).union(Sequence.fromIterable(dri)).union(Sequence.fromIterable(dcu)).union(Sequence.fromIterable(dpu)).union(Sequence.fromIterable(dlu));
+      return Sequence.fromIterable(dci).union(Sequence.fromIterable(dpi)).union(Sequence.fromIterable(dli)).union(Sequence.fromIterable(dri)).union(Sequence.fromIterable(dcu)).union(Sequence.fromIterable(dpu)).union(Sequence.fromIterable(dlu)).toListSequence();
     }
   }
 
