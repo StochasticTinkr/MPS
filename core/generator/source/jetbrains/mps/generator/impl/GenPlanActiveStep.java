@@ -50,7 +50,7 @@ final class GenPlanActiveStep {
       GenerationFailureException {
     myPlan = plan;
     myStep = step;
-    myModelMap = new HashMap<SModelReference, TemplateModel>();
+    myModelMap = new HashMap<>();
     // I'd like to keep predictable order of template models, just in case. Don't want LinkedHasMap since I need the order once
     ArrayList<TemplateModel> allTemplateModels = new ArrayList<TemplateModel>();
     // In fact, to resolve templates (#getTemplateModel(SModelReference) it's not necessary to know ALL template models, it's sufficient to know
@@ -73,7 +73,7 @@ final class GenPlanActiveStep {
     return myActiveTransformations;
   }
 
-  public boolean isCountedLanguage(SLanguage language) {
+  boolean isCountedLanguage(SLanguage language) {
     return myPlan.coversLanguage(language);
   }
 

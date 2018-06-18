@@ -132,16 +132,15 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       @NotNull TemplateContext ctx) throws GenerationCanceledException, GenerationFailureException {
     List<SNode> outputNodes = generator.copyNodes(inputNodes, ctx, templateId, this);
     if (!outputNodes.isEmpty()) {
-      new ChildAdopter(generator).checkIsExpectedLanguage(outputNodes, templateNode, ctx);
+      generator.checkIsExpectedLanguage(outputNodes, templateNode, ctx);
     }
     return outputNodes;
   }
 
   @Override
   public SNode insertNode(SNode child, SNodeReference templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
-    ChildAdopter a = new ChildAdopter(generator);
-    a.checkIsExpectedLanguage(Collections.singletonList(child), templateNode, templateContext);
-    return a.adopt(child, templateContext);
+    generator.checkIsExpectedLanguage(Collections.singletonList(child), templateNode, templateContext);
+    return new ChildAdopter(generator).adopt(child, templateContext);
   }
 
   @Nullable

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -53,7 +51,6 @@ public class GenerationPlan implements ModelGenerationPlan {
   private static final Logger LOG = LogManager.getLogger(GenerationPlan.class);
 
   private final Collection<TemplateModule> myGenerators;
-  private final Collection<TemplateModel> myTemplateModels;
 
   private final List<List<TemplateMappingConfiguration>> myPlan;
   private List<Step> mySteps;
@@ -75,15 +72,11 @@ public class GenerationPlan implements ModelGenerationPlan {
       GenerationPartitioner partitioner = new GenerationPartitioner(c.getGenerators());
       myPlan = partitioner.createMappingSets();
       if (myPlan.isEmpty()) {
-        myPlan.add(Collections.<TemplateMappingConfiguration>emptyList());
+        myPlan.add(Collections.emptyList());
       }
       myConflictingPriorityRules = partitioner.getConflictingPriorityRules();
-      myTemplateModels = new ArrayList<TemplateModel>();
-      for (TemplateModule module : myGenerators) {
-        myTemplateModels.addAll(module.getModels());
-      }
     } catch (Throwable t) {
-      String msg = String.format("Couldn't compute generation steps for model '%s;", NameUtil.getModelLongName(inputModel));
+      String msg = String.format("Couldn't compute generation steps for model '%s;", inputModel.getName());
       LOG.error(msg, t);
       throw new RuntimeException(msg, t);
     }
@@ -92,13 +85,11 @@ public class GenerationPlan implements ModelGenerationPlan {
   @Override
   public List<Step> getSteps() {
     if (mySteps == null) {
-      LinkedList<Step> steps = new LinkedList<Step>();
+      LinkedList<Step> steps = new LinkedList<>();
       for (List<TemplateMappingConfiguration> p : myPlan) {
         steps.add(new Transform(p));
       }
-      // debug
-//      steps.add(myPlan.size() / 3, new Checkpoint("first"));
-//      steps.add(myPlan.size() / 3 * 2, new Checkpoint("second"));
+      //noinspection ToArrayCallWithZeroLengthArrayArgument
       mySteps = Arrays.asList(steps.toArray(new Step[steps.size()]));
     }
     return mySteps;
@@ -131,7 +122,7 @@ public class GenerationPlan implements ModelGenerationPlan {
   }
 
   public List<Conflict> getIgnoredPriorityRules() {
-    return new ArrayList<Conflict>(myConflictingPriorityRules.get(Kind.Invalid));
+    return new ArrayList<>(myConflictingPriorityRules.get(Kind.Invalid));
   }
 
   public boolean hasConflictingPriorityRules() {
@@ -143,7 +134,7 @@ public class GenerationPlan implements ModelGenerationPlan {
   }
 
   private static Collection<Kind> deemedConflict() {
-    ArrayList<Kind> deemedConflict = new ArrayList<Kind>(Arrays.asList(Kind.values()));
+    ArrayList<Kind> deemedConflict = new ArrayList<>(Arrays.asList(Kind.values()));
     deemedConflict.remove(Kind.Invalid);
     return deemedConflict;
   }
