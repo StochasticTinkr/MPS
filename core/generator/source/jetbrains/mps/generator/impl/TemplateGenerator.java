@@ -137,15 +137,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     public final RoleValidation roleValidation;
     public final IPerformanceTracer performanceTrace;
 
-    public StepArguments(GeneratorQueryProvider.Source gqps) {
-      // FIXME refactor TMC.isApplicable call not to take ITemplateGenerator, or use dedicated ITemplateGenerator implementation
-      // that doesn't need anything we could not provide here anyway.
-      // Alternative is to initialize StepArguments once prior to isApplicable check, which we can't do now as isApplicable gives us GenPlanActiveStep
-      // If refactored (e.g. GPAS made TG's argument or use of dedicated fake GPAS for isApplicable), could drop this cons altogether.
-      // I.e. if anyone would like to query e.g. mapping label from isApplicable(), it's a chance not to fail with NPE (and to let the error go unnoticed)
-      this(null, null, null, null, gqps, null, null);
-    }
-
     public StepArguments(GenPlanActiveStep planStep, GenerationTrace genTrace, GeneratorMappings mapLabels,
         TransitionTrace transitionTrace, GeneratorQueryProvider.Source gqps, RoleValidation roleValidator, IPerformanceTracer perfTrace) {
       this.planStep = planStep;
@@ -454,12 +445,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if(copyProcessor.hasChanges()) {
       setChanged();
     }
-  }
-
-  @Override
-  public boolean isDirty(SNode node) {
-    // FIXME deprecate and remove
-    return true;
   }
 
   @Override

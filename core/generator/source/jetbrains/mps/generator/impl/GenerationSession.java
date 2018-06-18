@@ -45,6 +45,7 @@ import jetbrains.mps.generator.plan.CheckpointIdentity;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.FastNodeFinderManager;
@@ -339,7 +340,7 @@ class GenerationSession {
     mySessionContext = new GenerationSessionContext(mySessionContext);
 
     // -- filter mapping configurations
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, inputModel, null, new StepArguments(myQuerySource));
+    ITemplateGenerator templateGenerator = new BogusTemplateGenerator(mySessionContext, inputModel, myQuerySource);
     LinkedList<TemplateMappingConfiguration> drop = new LinkedList<>();
     for (TemplateMappingConfiguration c : mappingConfigurations) {
       if (!c.isApplicable(templateGenerator)) {
