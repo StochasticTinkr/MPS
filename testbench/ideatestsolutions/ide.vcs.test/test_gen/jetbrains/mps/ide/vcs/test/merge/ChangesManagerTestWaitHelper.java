@@ -115,15 +115,18 @@ public class ChangesManagerTestWaitHelper {
       myWaitCompleted = false;
       waitScheduling.run();
       if (timeout > 0) {
-        try {
-          myWaitLock.wait(timeout);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-        if (!(myWaitCompleted)) {
-          // Reset flag for next calls 
-          myWaitCompleted = true;
-          System.err.print("Runnable did not call waitCompleted. Ended by timeout");
+        while (!(myWaitCompleted)) {
+          try {
+            myWaitLock.wait(timeout);
+          } catch (InterruptedException e) {
+            e.printStackTrace();
+          } finally {
+            if (!(myWaitCompleted)) {
+              // Reset flag for next calls 
+              myWaitCompleted = true;
+              System.err.print("Runnable did not call waitCompleted. Ended by timeout");
+            }
+          }
         }
       } else {
         while (!(myWaitCompleted)) {
