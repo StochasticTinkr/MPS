@@ -1388,6 +1388,11 @@
       <property role="IQ2nx" value="6535001758416941941" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+    <node concept="1TJgyi" id="dVfA4asVwA" role="1TKVEl">
+      <property role="IQ2nx" value="250862790757300262" />
+      <property role="TrG5h" value="skipUnmodifiedModels" />
+      <ref role="AX2Wp" node="dVfA4asWrb" resolve="BuildMps_GeneratorOptions_SkipUnmodifiedModels" />
+    </node>
     <node concept="PrWs8" id="3Iy_$1rs43y" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -1501,6 +1506,18 @@
     </node>
     <node concept="t5JxF" id="EpEP7hVccb" role="lGtFl">
       <property role="t5JxN" value="Tells what files to treat as auxiliary module resources (e.g. icons, externalized messages, etc.)" />
+    </node>
+  </node>
+  <node concept="AxPO7" id="dVfA4asWrb">
+    <property role="3GE5qa" value="Project" />
+    <property role="TrG5h" value="BuildMps_GeneratorOptions_SkipUnmodifiedModels" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="dVfA4asWrc" role="M5hS2">
+      <property role="1uS6qo" value="use mps.generator.skipUnmodifiedModels macro" />
+    </node>
+    <node concept="M4N5e" id="dVfA4asWrd" role="M5hS2">
+      <property role="1uS6qv" value="never" />
+      <property role="1uS6qo" value="never" />
     </node>
   </node>
 </model>

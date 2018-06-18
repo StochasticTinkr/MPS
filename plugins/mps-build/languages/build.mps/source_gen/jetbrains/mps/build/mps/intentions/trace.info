@@ -15,10 +15,6 @@
     </file>
   </root>
   <root nodeRef="r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)/1753793013241722025">
-    <file name="IntentionsDescriptor.java">
-      <node id="1753793013241722025" at="65,47,66,64" concept="1" />
-      <node id="1753793013241722025" at="81,47,82,50" concept="1" />
-    </file>
     <file name="ReloadModulesFromDisk_Intention.java">
       <node id="1753793013241722025" at="26,0,27,0" concept="2" trace="myCachedExecutable" />
       <node id="1753793013241722025" at="27,44,28,148" concept="8" />
@@ -154,10 +150,6 @@
       <unit id="2798275735916376328" at="48,0,64,0" name="jetbrains.mps.build.mps.intentions.AddCustomLocationDependency_Intention$IntentionImplementation" />
       <unit id="2798275735916376328" at="19,0,65,0" name="jetbrains.mps.build.mps.intentions.AddCustomLocationDependency_Intention" />
     </file>
-    <file name="IntentionsDescriptor.java">
-      <node id="2798275735916376328" at="58,47,59,70" concept="1" />
-      <node id="2798275735916376328" at="79,51,80,56" concept="1" />
-    </file>
   </root>
   <root nodeRef="r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)/4034578608468929409">
     <file name="AddCustomPackaging_Intention.java">
@@ -224,10 +216,6 @@
       </scope>
       <unit id="4034578608468929409" at="48,0,64,0" name="jetbrains.mps.build.mps.intentions.AddCustomPackaging_Intention$IntentionImplementation" />
       <unit id="4034578608468929409" at="19,0,65,0" name="jetbrains.mps.build.mps.intentions.AddCustomPackaging_Intention" />
-    </file>
-    <file name="IntentionsDescriptor.java">
-      <node id="4034578608468929409" at="44,47,45,61" concept="1" />
-      <node id="4034578608468929409" at="80,56,81,47" concept="1" />
     </file>
   </root>
   <root nodeRef="r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)/6118848850553113137">
@@ -303,16 +291,8 @@
       <unit id="6118848850553113137" at="52,0,72,0" name="jetbrains.mps.build.mps.intentions.AddDefaultResources_Intention$IntentionImplementation" />
       <unit id="6118848850553113137" at="23,0,73,0" name="jetbrains.mps.build.mps.intentions.AddDefaultResources_Intention" />
     </file>
-    <file name="IntentionsDescriptor.java">
-      <node id="6118848850553113137" at="51,47,52,62" concept="1" />
-      <node id="6118848850553113137" at="82,50,83,48" concept="1" />
-    </file>
   </root>
   <root nodeRef="r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)/8369506495128778230">
-    <file name="IntentionsDescriptor.java">
-      <node id="8369506495128778230" at="37,47,38,65" concept="1" />
-      <node id="8369506495128778230" at="78,52,79,51" concept="1" />
-    </file>
     <file name="ToggleCompactMpsModule_Intention.java">
       <node id="8369506495128778230" at="20,0,21,0" concept="2" trace="myCachedExecutable" />
       <node id="8369506495128778230" at="21,45,22,148" concept="8" />

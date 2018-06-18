@@ -147,6 +147,7 @@
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
+        <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
@@ -166,6 +167,10 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" flags="ng" index="3eNFk2">
+        <child id="1206060619838" name="condition" index="3eO9$A" />
+        <child id="1206060644605" name="statementList" index="3eOfB_" />
+      </concept>
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
@@ -259,6 +264,9 @@
         <reference id="3961775458390032825" name="task" index="3bMsLK" />
         <child id="3961775458390032826" name="subTasks" index="3bMsLN" />
         <child id="3961775458390352322" name="additionalDependencies" index="3bNaKb" />
+      </concept>
+      <concept id="6896005762093571400" name="jetbrains.mps.build.workflow.structure.BwfMacro" flags="ng" index="1_4tnW">
+        <property id="6896005762093571402" name="defaultValue" index="1_4tnY" />
       </concept>
       <concept id="2529023923283158037" name="jetbrains.mps.build.workflow.structure.BwfAntTaskBundleDeclaration" flags="ng" index="3WQg7e">
         <property id="2529023923283158047" name="resource" index="3WQg74" />
@@ -605,6 +613,9 @@
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
+      <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
+        <reference id="1138676095763" name="enumMember" index="uo_Cq" />
+      </concept>
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
@@ -646,9 +657,16 @@
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
+      <concept id="6973815483243445083" name="jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression" flags="nn" index="3f7Wdw">
+        <reference id="6973815483243565416" name="member" index="3f7u_j" />
+        <reference id="6973815483243564601" name="enum" index="3f7vo2" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
+      <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
+        <child id="1146171026732" name="value" index="3t7uKA" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
@@ -12000,6 +12018,13 @@
           <node concept="10P_77" id="g0fHFWlnt4" role="2jfP_h" />
         </node>
       </node>
+      <node concept="1y0Vig" id="3sgnuBpl9aB" role="1hWBAP">
+        <node concept="1_4tnW" id="3sgnuBoP9vq" role="1y0Vin">
+          <property role="TrG5h" value="mps.generator.skipUnmodifiedModels" />
+          <property role="1_4tnY" value="false" />
+        </node>
+        <node concept="raruj" id="3sgnuBpljfk" role="lGtFl" />
+      </node>
       <node concept="1y0Vig" id="ahkU72nmc2" role="1hWBAP">
         <node concept="3bMsLL" id="m8_23bHlYo" role="1y0Vin">
           <ref role="3bMsLK" to="zwni:m8_23bzoyR" resolve="generate" />
@@ -12170,6 +12195,22 @@
                                 <node concept="3TrcHB" id="5EKZnAL0fHo" role="2OqNvi">
                                   <ref role="3TsBF5" to="kdzh:5EKZnAKZFdP" resolve="createStaticRefs" />
                                 </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="3sgnuBogLee" role="3cqZAp">
+                            <node concept="37vLTI" id="3sgnuBogMU2" role="3clFbG">
+                              <node concept="2OqwBi" id="3sgnuBogLuI" role="37vLTJ">
+                                <node concept="37vLTw" id="3sgnuBogLec" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="3Iy_$1rTqqd" resolve="defaults" />
+                                </node>
+                                <node concept="3TrcHB" id="3sgnuBogLSf" role="2OqNvi">
+                                  <ref role="3TsBF5" to="kdzh:dVfA4asVwA" resolve="skipUnmodifiedModels" />
+                                </node>
+                              </node>
+                              <node concept="3f7Wdw" id="3sgnuBogNOy" role="37vLTx">
+                                <ref role="3f7vo2" to="kdzh:dVfA4asWrb" resolve="BuildMps_GeneratorOptions_SkipUnmodifiedModels" />
+                                <ref role="3f7u_j" to="kdzh:dVfA4asWrc" />
                               </node>
                             </node>
                           </node>
@@ -12884,6 +12925,112 @@
                               </node>
                               <node concept="10Nm6u" id="3fhM9W4KHS9" role="3uHU7w" />
                             </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNUuL" id="dVfA4asDZV" role="2pNNFR">
+                  <property role="2pNUuO" value="skipUnmodifiedModels" />
+                  <node concept="2pMdtt" id="3sgnuBogRVb" role="2pMdts">
+                    <property role="2pMdty" value="false" />
+                    <node concept="17Uvod" id="3sgnuBogRVd" role="lGtFl">
+                      <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
+                      <property role="2qtEX9" value="text" />
+                      <node concept="3zFVjK" id="3sgnuBogRVe" role="3zH0cK">
+                        <node concept="3clFbS" id="3sgnuBogRVf" role="2VODD2">
+                          <node concept="3cpWs8" id="3sgnuBoh3Bb" role="3cqZAp">
+                            <node concept="3cpWsn" id="3sgnuBoh3Bc" role="3cpWs9">
+                              <property role="TrG5h" value="options" />
+                              <node concept="3Tqbb2" id="3sgnuBoh3Ak" role="1tU5fm">
+                                <ref role="ehGHo" to="kdzh:3Iy_$1rrNGr" resolve="BuildMps_GeneratorOptions" />
+                              </node>
+                              <node concept="2OqwBi" id="3sgnuBoh3Bd" role="33vP2m">
+                                <node concept="1iwH7S" id="3sgnuBoh3Be" role="2Oq$k0" />
+                                <node concept="1bhEwm" id="3sgnuBoh3Bf" role="2OqNvi">
+                                  <ref role="1bhEwl" node="3Iy_$1rM04X" resolve="genOptions" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbJ" id="3sgnuBohf08" role="3cqZAp">
+                            <node concept="3clFbS" id="3sgnuBohf0a" role="3clFbx">
+                              <node concept="3cpWs6" id="3sgnuBohjbD" role="3cqZAp">
+                                <node concept="Xl_RD" id="3sgnuBohjbQ" role="3cqZAk">
+                                  <property role="Xl_RC" value="false" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="3sgnuBohiq5" role="3clFbw">
+                              <node concept="2OqwBi" id="3sgnuBohhpI" role="2Oq$k0">
+                                <node concept="37vLTw" id="3sgnuBohfVy" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="3sgnuBoh3Bc" resolve="options" />
+                                </node>
+                                <node concept="3TrcHB" id="3sgnuBohhKu" role="2OqNvi">
+                                  <ref role="3TsBF5" to="kdzh:dVfA4asVwA" resolve="skipUnmodifiedModels" />
+                                </node>
+                              </node>
+                              <node concept="3t7uKx" id="3sgnuBohiS7" role="2OqNvi">
+                                <node concept="uoxfO" id="3sgnuBohiS9" role="3t7uKA">
+                                  <ref role="uo_Cq" to="kdzh:dVfA4asWrd" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3eNFk2" id="3sgnuBohjCi" role="3eNLev">
+                              <node concept="3clFbS" id="3sgnuBohjCj" role="3eOfB_">
+                                <node concept="3cpWs6" id="3sgnuBohk7p" role="3cqZAp">
+                                  <node concept="Xl_RD" id="3sgnuBohkgo" role="3cqZAk">
+                                    <property role="Xl_RC" value="${mps.generator.skipUnmodifiedModels}" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="22lmx$" id="3sgnuBo_aUI" role="3eO9$A">
+                                <node concept="2OqwBi" id="3sgnuBohjNi" role="3uHU7B">
+                                  <node concept="2OqwBi" id="3sgnuBohjNj" role="2Oq$k0">
+                                    <node concept="37vLTw" id="3sgnuBohjNk" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="3sgnuBoh3Bc" resolve="options" />
+                                    </node>
+                                    <node concept="3TrcHB" id="3sgnuBohjNl" role="2OqNvi">
+                                      <ref role="3TsBF5" to="kdzh:dVfA4asVwA" resolve="skipUnmodifiedModels" />
+                                    </node>
+                                  </node>
+                                  <node concept="3t7uKx" id="3sgnuBohjNm" role="2OqNvi">
+                                    <node concept="uoxfO" id="3sgnuBohjNn" role="3t7uKA">
+                                      <ref role="uo_Cq" to="kdzh:dVfA4asWrc" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="2OqwBi" id="3sgnuBo_9hu" role="3uHU7w">
+                                  <node concept="2OqwBi" id="3sgnuBorYBk" role="2Oq$k0">
+                                    <node concept="37vLTw" id="3sgnuBorYo4" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="3sgnuBoh3Bc" resolve="options" />
+                                    </node>
+                                    <node concept="3TrcHB" id="3sgnuBos3to" role="2OqNvi">
+                                      <ref role="3TsBF5" to="kdzh:dVfA4asVwA" resolve="skipUnmodifiedModels" />
+                                    </node>
+                                  </node>
+                                  <node concept="17RlXB" id="3sgnuBo_9ZS" role="2OqNvi" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbH" id="3sgnuBos5a8" role="3cqZAp" />
+                          <node concept="3clFbF" id="3sgnuBohm6U" role="3cqZAp">
+                            <node concept="2OqwBi" id="3sgnuBohmif" role="3clFbG">
+                              <node concept="1iwH7S" id="3sgnuBohm6T" role="2Oq$k0" />
+                              <node concept="2k5nB$" id="3sgnuBohmCT" role="2OqNvi">
+                                <node concept="Xl_RD" id="3sgnuBohmO6" role="2k5Stb">
+                                  <property role="Xl_RC" value="Unsupported value of skipUnmodifiedModels property" />
+                                </node>
+                                <node concept="37vLTw" id="3sgnuBohnKm" role="2k6f33">
+                                  <ref role="3cqZAo" node="3sgnuBoh3Bc" resolve="options" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3cpWs6" id="3sgnuBohovR" role="3cqZAp">
+                            <node concept="3zGtF$" id="3sgnuBos4Dq" role="3cqZAk" />
                           </node>
                         </node>
                       </node>

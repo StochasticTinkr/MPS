@@ -16,6 +16,7 @@ public final class GeneratorProperties {
    * Counterpart for IGenerationSettings#createStaticReferences()
    */
   private static final String USE_STATIC_REFS = "use-static-refs";
+  private static final String SKIP_UNMODIFIED_MODELS = "skip-unmodified-models";
 
   private Script myScript;
 
@@ -67,5 +68,12 @@ public final class GeneratorProperties {
   }
   public boolean isCreateStaticRefs() {
     return Boolean.parseBoolean(myScript.getProperty(USE_STATIC_REFS));
+  }
+  public GeneratorProperties setSkipUnmodifiedModels(boolean skipUnmodifiedModels) {
+    myScript.putProperty(SKIP_UNMODIFIED_MODELS, Boolean.toString(skipUnmodifiedModels));
+    return this;
+  }
+  public boolean isSkipUnmodifiedModels() {
+    return Boolean.parseBoolean(myScript.getProperty(SKIP_UNMODIFIED_MODELS));
   }
 }

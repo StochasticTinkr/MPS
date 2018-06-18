@@ -8083,6 +8083,17 @@
         </node>
       </node>
     </node>
+    <node concept="Wx3nA" id="dVfA4aqYm8" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="SKIP_UNMODIFIED_MODELS" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="dVfA4aqY2S" role="1B3o_S" />
+      <node concept="17QB3L" id="dVfA4aqY68" role="1tU5fm" />
+      <node concept="Xl_RD" id="dVfA4aqYD_" role="33vP2m">
+        <property role="Xl_RC" value="skip-unmodified-models" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="2XB5puvmQ8d" role="jymVt" />
     <node concept="312cEg" id="2XB5puvmPVf" role="jymVt">
       <property role="TrG5h" value="myScript" />
@@ -8497,6 +8508,74 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3clFb_" id="dVfA4aqZjs" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="setSkipUnmodifiedModels" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="dVfA4aqZjv" role="3clF47">
+        <node concept="3clFbF" id="dVfA4ar0ph" role="3cqZAp">
+          <node concept="2OqwBi" id="dVfA4ar0BJ" role="3clFbG">
+            <node concept="37vLTw" id="dVfA4ar0pf" role="2Oq$k0">
+              <ref role="3cqZAo" node="2XB5puvmPVf" resolve="myScript" />
+            </node>
+            <node concept="liA8E" id="dVfA4ar0IA" role="2OqNvi">
+              <ref role="37wK5l" node="KL8Aql8eBe" resolve="putProperty" />
+              <node concept="37vLTw" id="dVfA4ar0MC" role="37wK5m">
+                <ref role="3cqZAo" node="dVfA4aqYm8" resolve="SKIP_UNMODIFIED_MODELS" />
+              </node>
+              <node concept="2YIFZM" id="dVfA4ar10r" role="37wK5m">
+                <ref role="37wK5l" to="wyt6:~Boolean.toString(boolean):java.lang.String" resolve="toString" />
+                <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
+                <node concept="37vLTw" id="dVfA4ar1ab" role="37wK5m">
+                  <ref role="3cqZAo" node="dVfA4aqZAT" resolve="skipUnmodifiedModels" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="dVfA4aqZS0" role="3cqZAp">
+          <node concept="Xjq3P" id="dVfA4aqZSs" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="dVfA4aqYXl" role="1B3o_S" />
+      <node concept="3uibUv" id="dVfA4aqZg_" role="3clF45">
+        <ref role="3uigEE" node="2XB5puvk9rk" resolve="GeneratorProperties" />
+      </node>
+      <node concept="37vLTG" id="dVfA4aqZAT" role="3clF46">
+        <property role="TrG5h" value="skipUnmodifiedModels" />
+        <node concept="10P_77" id="dVfA4aqZAS" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="dVfA4ar1SE" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isSkipUnmodifiedModels" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="dVfA4ar1SH" role="3clF47">
+        <node concept="3cpWs6" id="dVfA4ar2rc" role="3cqZAp">
+          <node concept="2YIFZM" id="dVfA4ar2Kf" role="3cqZAk">
+            <ref role="37wK5l" to="wyt6:~Boolean.parseBoolean(java.lang.String):boolean" resolve="parseBoolean" />
+            <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
+            <node concept="2OqwBi" id="dVfA4ar3gO" role="37wK5m">
+              <node concept="37vLTw" id="dVfA4ar31B" role="2Oq$k0">
+                <ref role="3cqZAo" node="2XB5puvmPVf" resolve="myScript" />
+              </node>
+              <node concept="liA8E" id="dVfA4ar3$_" role="2OqNvi">
+                <ref role="37wK5l" node="KL8Aql8eBs" resolve="getProperty" />
+                <node concept="37vLTw" id="dVfA4ar3Se" role="37wK5m">
+                  <ref role="3cqZAo" node="dVfA4aqYm8" resolve="SKIP_UNMODIFIED_MODELS" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="dVfA4ar1$g" role="1B3o_S" />
+      <node concept="10P_77" id="dVfA4ar1S$" role="3clF45" />
     </node>
     <node concept="3Tm1VV" id="2XB5puvk9rl" role="1B3o_S" />
     <node concept="3UR2Jj" id="2XB5puvmRG0" role="lGtFl">
