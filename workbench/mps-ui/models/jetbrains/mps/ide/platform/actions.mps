@@ -39,7 +39,7 @@
     <import index="fwk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textgen.trace(MPS.Core/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
-    <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
+    <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -111,6 +111,9 @@
         <reference id="1217252646389" name="key" index="1DUlNI" />
       </concept>
       <concept id="1217252428768" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" flags="nn" index="1DTwFV" />
+      <concept id="1204383956737" name="jetbrains.mps.lang.plugin.structure.InterfaceGroup" flags="ng" index="1ESbSp">
+        <child id="1206193920040" name="groupID" index="3mKD$K" />
+      </concept>
       <concept id="1217413147516" name="jetbrains.mps.lang.plugin.structure.ActionParameter" flags="ng" index="1NuADB">
         <child id="5538333046911298738" name="condition" index="1oa70y" />
       </concept>
@@ -769,6 +772,14 @@
     <property role="1XlLyE" value="true" />
     <node concept="ftmFs" id="5OJQJ_HXTB9" role="ftER_" />
   </node>
+  <node concept="1ESbSp" id="4vodOtydcQH">
+    <property role="TrG5h" value="IDEACode" />
+    <property role="3GE5qa" value="BootstrapGroups" />
+    <node concept="Xl_RD" id="4vodOtydcQI" role="3mKD$K">
+      <property role="Xl_RC" value="CodeMenu" />
+    </node>
+    <node concept="ftmFs" id="4vodOtydcQJ" role="ftER_" />
+  </node>
   <node concept="tC5Ba" id="4vodOtydcQR">
     <property role="TrG5h" value="Code" />
     <property role="3GE5qa" value="MainMenu" />
@@ -787,7 +798,7 @@
       <node concept="2a7GMi" id="4vodOtydcQX" role="ftvYc" />
     </node>
     <node concept="tT9cl" id="4vodOtydcQY" role="2f5YQi">
-      <ref role="tU$_T" to="tprs:4vodOtydcQH" resolve="IDEACode" />
+      <ref role="tU$_T" to="tprs:4TxCHuKwGMO" resolve="IDEACode" />
     </node>
   </node>
   <node concept="312cEu" id="185rHHJdrio">
@@ -1518,6 +1529,14 @@
     </node>
     <node concept="tT9cl" id="222i7iS7hAS" role="2f5YQi">
       <ref role="tU$_T" to="tprs:3rgxLbAgGr4" resolve="IDEAAnalyze" />
+    </node>
+  </node>
+  <node concept="1ESbSp" id="222i7iS7hug">
+    <property role="3GE5qa" value="BootstrapGroups" />
+    <property role="TrG5h" value="IDEAAnalyze" />
+    <node concept="ftmFs" id="222i7iS7hui" role="ftER_" />
+    <node concept="Xl_RD" id="222i7iS7hvp" role="3mKD$K">
+      <property role="Xl_RC" value="AnalyzeMenu" />
     </node>
   </node>
   <node concept="sE7Ow" id="222i7iS8zo1">
