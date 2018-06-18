@@ -114,7 +114,7 @@ class GenerationSession {
     myLogger = new GenerationSessionLogger(logger, myLogRecorder);
     ttrace = performanceTracer;
     myGenerationOptions = environment.getOptions();
-    mySessionContext = new GenerationSessionContext(environment, transientModule, myLogger, myOriginalInputModel, performanceTracer);
+    mySessionContext = new GenerationSessionContext(environment, transientModule, myLogger, myOriginalInputModel);
     myRoleValidation = new RoleValidation(myGenerationOptions.isShowBadChildWarning());
   }
 
@@ -362,7 +362,7 @@ class GenerationSession {
     GenPlanActiveStep activeStep = new GenPlanActiveStep(myGenerationPlan, planStep, mappingConfigurations);
 
     try {
-      myStepArguments = new StepArguments(activeStep, myNewTrace, new GeneratorMappings(myLogger), transitionTrace, myQuerySource, myRoleValidation);
+      myStepArguments = new StepArguments(activeStep, myNewTrace, new GeneratorMappings(myLogger), transitionTrace, myQuerySource, myRoleValidation, ttrace);
       SModel outputModel = executeMajorStepInternal(inputModel, progress);
       if (myLogger.getErrorCount() > 0) {
         myLogger.warning(String.format("model '%s' has been generated with errors", inputModel.getName()));
@@ -389,8 +389,7 @@ class GenerationSession {
     SModel currentOutputModel = createTransientModel();
 
     if (myLogger.needsInfo()) {
-      myLogger.info(
-          "generating model '" + currentInputModel.getModelName() + "' --> '" + currentOutputModel.getModelName() + "'");
+      myLogger.info(String.format("generating model '%s' --> '%s'", currentInputModel.getName(), currentOutputModel.getName()));
     }
     boolean isPrimary = true;
     // exit condition for secondary mapping

@@ -72,7 +72,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     myPool.waitForCompletion();
     for (RootGenerationTask task : myTasks) {
       task.getGeneratedRoots().forEach(super::registerRoot);
-      task.registerRootTrace(getGeneratorSessionContext().getPerformanceTracer());
+      task.registerRootTrace(getPerformanceTracer());
     }
   }
 

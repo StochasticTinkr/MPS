@@ -128,6 +128,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final DynamicReferenceUpdate myDynamicRefs;
   private final GenerationTrace myNewTrace;
   private final TransitionTrace myTransitionTrace;
+  private final IPerformanceTracer myPerformanceTrace; // not null
 
   static final class StepArguments {
     public final GenPlanActiveStep planStep;
@@ -136,6 +137,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     public final TransitionTrace transitionTrace;
     public final GeneratorQueryProvider.Source querySource;
     public final RoleValidation roleValidation;
+    public final IPerformanceTracer performanceTrace;
 
     public StepArguments(GeneratorQueryProvider.Source gqps) {
       // FIXME refactor TMC.isApplicable call not to take ITemplateGenerator, or use dedicated ITemplateGenerator implementation
@@ -143,17 +145,18 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       // Alternative is to initialize StepArguments once prior to isApplicable check, which we can't do now as isApplicable gives us GenPlanActiveStep
       // If refactored (e.g. GPAS made TG's argument or use of dedicated fake GPAS for isApplicable), could drop this cons altogether.
       // I.e. if anyone would like to query e.g. mapping label from isApplicable(), it's a chance not to fail with NPE (and to let the error go unnoticed)
-      this(null, null, null, null, gqps, null);
+      this(null, null, null, null, gqps, null, null);
     }
 
     public StepArguments(GenPlanActiveStep planStep, GenerationTrace genTrace, GeneratorMappings mapLabels,
-        TransitionTrace transitionTrace, GeneratorQueryProvider.Source gqps, RoleValidation roleValidator) {
+        TransitionTrace transitionTrace, GeneratorQueryProvider.Source gqps, RoleValidation roleValidator, IPerformanceTracer perfTrace) {
       this.planStep = planStep;
       this.genTrace = genTrace;
       this.mappingLabels = mapLabels;
       this.transitionTrace = transitionTrace;
       this.querySource = gqps;
       this.roleValidation = roleValidator;
+      this.performanceTrace = perfTrace;
     }
   }
 
@@ -165,8 +168,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myDelayedChanges = new DelayedChanges();
     myOutputRoots = new ArrayList<>();
     DefaultQueryExecutionContext ctx = new DefaultQueryExecutionContext(this);
+    myPerformanceTrace = stepArgs.performanceTrace;
     myExecutionContext = options.getTracingMode() >= GenerationOptions.TRACE_LANGS
-      ? new QueryExecutionContextWithTracing(ctx, operationContext.getPerformanceTracer())
+      ? new QueryExecutionContextWithTracing(ctx, stepArgs.performanceTrace)
       : ctx;
     myPostponedRefs = new PostponedReferenceUpdate();
     myDynamicRefs = new DynamicReferenceUpdate(this);
@@ -177,7 +181,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   public boolean apply(@NotNull ProgressMonitor progressMonitor, boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
     myProgressMonitor = progressMonitor;
     checkMonitorCanceled();
-    final IPerformanceTracer ttrace = getGeneratorSessionContext().getPerformanceTracer();
+    final IPerformanceTracer ttrace = getPerformanceTracer();
     myAreMappingsReady = false;
     // WeavingProcessor.prepareWeavingRules needs myTemplateProcessor to be initialized. Guess, we could have had it as a final field?
     myTemplateProcessor = new TemplateProcessor(this);
@@ -285,7 +289,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         myDeltaBuilder = createDeltaBuilder();
       }
     }
-    final IPerformanceTracer ttrace = getGeneratorSessionContext().getPerformanceTracer();
+    final IPerformanceTracer ttrace = getPerformanceTracer();
     // create all roots
     if (isPrimary) {
       ttrace.push("create roots");
@@ -696,9 +700,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   @NotNull
-  /*package*/ GenerationTrace getTrace() {
+  /*package*/ final GenerationTrace getTrace() {
     return myNewTrace;
   }
+
+  /*package*/ final IPerformanceTracer getPerformanceTracer() {
+    return myPerformanceTrace;
+  }
+
 
   /*package*/ void reportDismissRuleException(@NotNull DismissTopMappingRuleException ex, @NotNull TemplateRule rule) {
     if (!ex.isLoggingNeeded()) {

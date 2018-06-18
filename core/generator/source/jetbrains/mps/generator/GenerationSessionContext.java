@@ -17,7 +17,6 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
-import jetbrains.mps.generator.impl.RoleValidation;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.project.Project;
@@ -28,7 +27,6 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
-import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -60,12 +58,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private final TransientModelsModule myTransientModule;
   private final GenerationSessionLogger myLogger;
 
-  /*
-   * GenerationSessionContext is not the perfect place for this tracer, as it's not really session object,
-   * however it's per-model object, and generation session is per-model as well (thus, can't put it into e.g. GenControllerContext)
-   */
-  private final IPerformanceTracer myPerfTrace;
-
   private final Object NULL_OBJECT = new Object();
 
   /**
@@ -90,13 +82,11 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public GenerationSessionContext(GenControllerContext environment, TransientModelsModule transientModule,
                                   GenerationSessionLogger logger,
-                                  SModel inputModel,
-                                  IPerformanceTracer performanceTracer) {
+                                  SModel inputModel) {
 
     myEnvironment = environment;
     myTransientModule = transientModule;
     myOriginalInputModel = inputModel;
-    myPerfTrace = performanceTracer;
     myLogger = logger;
     mySessionObjects = new ConcurrentHashMap<>();
     myTransientObjects = new ConcurrentHashMap<>();
@@ -112,7 +102,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myEnvironment = prevContext.myEnvironment;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
-    myPerfTrace = prevContext.myPerfTrace;
     myLogger = prevContext.myLogger;
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
@@ -356,9 +345,5 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   public CrossModelEnvironment getCrossModelEnvironment() {
     // same considerations applies as for #getRoleValidationFacility() above, need a distinct implementation context for TG (could use StepArguments, perhaps).
     return myEnvironment.getCrossModelEnvironment();
-  }
-
-  public IPerformanceTracer getPerformanceTracer() {
-    return myPerfTrace;
   }
 }

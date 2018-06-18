@@ -65,6 +65,10 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   private final QueryExecutionContext wrapped;
   private final IPerformanceTracer tracer;
 
+  /**
+   * @param wrapped never null
+   * @param tracer never null
+   */
   public QueryExecutionContextWithTracing(QueryExecutionContext wrapped, IPerformanceTracer tracer) {
     this.wrapped = wrapped;
     this.tracer = tracer;
