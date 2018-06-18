@@ -3263,8 +3263,16 @@
               <ref role="3uigEE" to="5nvm:FLkVtyCNd2" resolve="RefactoringSessionImpl" />
             </node>
             <node concept="2ShNRf" id="4fSm5R8N4gj" role="33vP2m">
-              <node concept="HV5vD" id="4fSm5R8N4gk" role="2ShVmc">
-                <ref role="HV5vE" to="5nvm:FLkVtyCNd2" resolve="RefactoringSessionImpl" />
+              <node concept="1pGfFk" id="7PqTV1oX1by" role="2ShVmc">
+                <ref role="37wK5l" to="5nvm:7PqTV1oWHU5" resolve="RefactoringSessionImpl" />
+                <node concept="2OqwBi" id="7PqTV1oX2Gu" role="37wK5m">
+                  <node concept="37vLTw" id="7PqTV1oX1R$" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3ly2gVliqCP" resolve="refactoringBody" />
+                  </node>
+                  <node concept="liA8E" id="7PqTV1oX3tT" role="2OqNvi">
+                    <ref role="37wK5l" node="2EZTs$ts_ce" resolve="getRefactoringName" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

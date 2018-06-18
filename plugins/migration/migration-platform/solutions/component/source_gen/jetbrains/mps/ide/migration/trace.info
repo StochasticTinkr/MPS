@@ -570,8 +570,8 @@
       <node id="5239783599556559461" at="118,87,119,51" concept="5" />
       <node id="5239783599556559467" at="119,51,120,52" concept="0" />
       <node id="7201972523307679023" at="120,52,121,0" concept="14" />
-      <node id="3194280909370709054" at="121,0,122,83" concept="11" />
-      <node id="7201972523306848533" at="122,83,123,61" concept="11" />
+      <node id="3194280909370709054" at="121,0,122,109" concept="11" />
+      <node id="7201972523306848533" at="122,109,123,61" concept="11" />
       <node id="7201972523301387956" at="123,61,124,39" concept="5" />
       <node id="7201972523307569230" at="126,41,127,104" concept="5" />
       <node id="1144524525582090233" at="131,167,132,79" concept="5" />
@@ -609,11 +609,11 @@
       <node id="6884273804135086001" at="157,143,161,7" concept="9" />
       <node id="7201972523307559050" at="124,39,129,7" concept="5" />
       <node id="1065497338539571590" at="129,7,134,7" concept="5" />
-      <node id="1109674566552013004" at="145,268,150,13" concept="5" />
+      <node id="1109674566552013004" at="145,264,150,13" concept="5" />
       <node id="3358842831931763209" at="167,0,172,0" concept="10" trace="runAll#()V" />
       <node id="4815078419494472714" at="46,0,52,0" concept="10" trace="visit#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
       <node id="4815078419490748507" at="67,62,74,5" concept="9" />
-      <node id="1144524525581364443" at="145,0,152,0" concept="10" trace="doRun#(Ljetbrains/mps/project/AbstractModule;Ljetbrains/mps/refactoring/participant/RefactoringParticipant/PersistentRefactoringParticipant;Ljetbrains/mps/refactoring/participant/RefactoringUI;Ljava/lang/Iterable;Ljava/util/Map;Ljetbrains/mps/refactoring/participant/RefactoringSessionImpl;)V" />
+      <node id="1144524525581364443" at="145,0,152,0" concept="10" trace="doRun#(Ljetbrains/mps/project/AbstractModule;Ljetbrains/mps/refactoring/participant/RefactoringParticipant/PersistentRefactoringParticipant;Ljetbrains/mps/refactoring/participant/RefactoringUI;Ljava/lang/Iterable;Ljava/util/Map;Ljetbrains/mps/refactoring/participant/RefactoringSession;)V" />
       <node id="4815078419494472709" at="44,98,52,9" concept="5" />
       <node id="3358842831931833831" at="156,0,164,0" concept="16" trace="getInstance#(Ljetbrains/mps/refactoring/participant/RefactoringSession;)Ljetbrains/mps/ide/migration/MigrationExecutorImpl/RefactoringSessionTaskQueue;" />
       <node id="4815078419490674199" at="65,0,76,0" concept="10" trace="executeModuleMigration#(Ljetbrains/mps/ide/migration/ScriptApplied;)V" />
@@ -668,7 +668,7 @@
       <scope id="4815078419490674207" at="76,0,80,0">
         <var name="pm" id="4815078419490674208" />
       </scope>
-      <scope id="1144524525581364374" at="145,268,150,13" />
+      <scope id="1144524525581364374" at="145,264,150,13" />
       <scope id="3358842831931763209" at="167,0,172,0" />
       <scope id="4815078419494472714" at="46,0,52,0">
         <var name="it" id="4815078419494472714" />

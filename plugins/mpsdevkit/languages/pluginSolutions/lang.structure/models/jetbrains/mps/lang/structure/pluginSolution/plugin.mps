@@ -387,6 +387,11 @@
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615">
         <child id="1107797138135" name="extendedInterface" index="3HQHJm" />
       </concept>
+      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
+        <child id="1163668914799" name="condition" index="3K4Cdx" />
+        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
+        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
+      </concept>
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
       </concept>
@@ -6196,6 +6201,49 @@
               </node>
             </node>
           </node>
+          <node concept="3cpWs8" id="1j$ykQp3Nft" role="3cqZAp">
+            <node concept="3cpWsn" id="1j$ykQp3Nfu" role="3cpWs9">
+              <property role="TrG5h" value="refactoringName" />
+              <node concept="17QB3L" id="1j$ykQp3Nfp" role="1tU5fm" />
+              <node concept="2OqwBi" id="1j$ykQp3Nfv" role="33vP2m">
+                <node concept="37vLTw" id="1j$ykQp3Nfw" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3r9sVr9TaS8" resolve="session" />
+                </node>
+                <node concept="liA8E" id="1j$ykQp3Nfx" role="2OqNvi">
+                  <ref role="37wK5l" to="5nvm:7PqTV1oWyly" resolve="getRefactoringName" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="7PqTV1p286p" role="3cqZAp">
+            <node concept="3cpWsn" id="7PqTV1p286s" role="3cpWs9">
+              <property role="TrG5h" value="migrationScriptName" />
+              <node concept="17QB3L" id="7PqTV1p286n" role="1tU5fm" />
+              <node concept="3K4zz7" id="1j$ykQp3Pe_" role="33vP2m">
+                <node concept="Xl_RD" id="1j$ykQp3PAA" role="3K4E3e">
+                  <property role="Xl_RC" value="MigrationScript" />
+                </node>
+                <node concept="3clFbC" id="1j$ykQp3OAP" role="3K4Cdx">
+                  <node concept="10Nm6u" id="1j$ykQp3OYM" role="3uHU7w" />
+                  <node concept="37vLTw" id="1j$ykQp3O9v" role="3uHU7B">
+                    <ref role="3cqZAo" node="1j$ykQp3Nfu" resolve="refactoringName" />
+                  </node>
+                </node>
+                <node concept="3cpWs3" id="1j$ykQp3T5d" role="3K4GZi">
+                  <node concept="Xl_RD" id="1j$ykQp3Tmv" role="3uHU7B">
+                    <property role="Xl_RC" value="Migrate_" />
+                  </node>
+                  <node concept="2YIFZM" id="1j$ykQp3N5F" role="3uHU7w">
+                    <ref role="37wK5l" to="18ew:~NameUtil.toValidCamelIdentifier(java.lang.String):java.lang.String" resolve="toValidCamelIdentifier" />
+                    <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                    <node concept="37vLTw" id="1j$ykQp3Nfy" role="37wK5m">
+                      <ref role="3cqZAo" node="1j$ykQp3Nfu" resolve="refactoringName" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="3r9sVr9Tm6G" role="3cqZAp">
             <node concept="37vLTI" id="3r9sVr9Tmd2" role="3clFbG">
               <node concept="2pJPEk" id="3r9sVr9TmfD" role="37vLTx">
@@ -6210,8 +6258,13 @@
                   <node concept="2pJxcG" id="3r9sVr9TuTC" role="2pJxcM">
                     <ref role="2pJxcJ" to="tpck:h0TrG11" resolve="name" />
                     <node concept="3cpWs3" id="3r9sVr9TvI1" role="2pJxcZ">
-                      <node concept="Xl_RD" id="3r9sVr9TvDy" role="3uHU7B">
-                        <property role="Xl_RC" value="MigrationScript_" />
+                      <node concept="3cpWs3" id="1j$ykQp3PY0" role="3uHU7B">
+                        <node concept="37vLTw" id="1j$ykQp3Q99" role="3uHU7B">
+                          <ref role="3cqZAo" node="7PqTV1p286s" resolve="migrationScriptName" />
+                        </node>
+                        <node concept="Xl_RD" id="3r9sVr9TvDy" role="3uHU7w">
+                          <property role="Xl_RC" value="_" />
+                        </node>
                       </node>
                       <node concept="37vLTw" id="3r9sVr9T$gf" role="3uHU7w">
                         <ref role="3cqZAo" node="3r9sVr9T$g9" resolve="languageVersion" />
@@ -11253,6 +11306,15 @@
                           </node>
                         </node>
                         <node concept="3clFbH" id="41U5zKUXlVw" role="3cqZAp" />
+                        <node concept="3cpWs8" id="7PqTV1oX4e6" role="3cqZAp">
+                          <node concept="3cpWsn" id="7PqTV1oX4e7" role="3cpWs9">
+                            <property role="TrG5h" value="refactoringName" />
+                            <node concept="17QB3L" id="7PqTV1oX4e5" role="1tU5fm" />
+                            <node concept="Xl_RD" id="7PqTV1oX4e8" role="33vP2m">
+                              <property role="Xl_RC" value="Rename Node Inline" />
+                            </node>
+                          </node>
+                        </node>
                         <node concept="1QHqEO" id="41U5zKV5mny" role="3cqZAp">
                           <node concept="1QHqEC" id="41U5zKV5mn$" role="1QHqEI">
                             <node concept="3clFbS" id="41U5zKV5mnA" role="1bW5cS">
@@ -11306,8 +11368,11 @@
                                     <ref role="3uigEE" to="5nvm:FLkVtyCNd2" resolve="RefactoringSessionImpl" />
                                   </node>
                                   <node concept="2ShNRf" id="41U5zKUWRp3" role="33vP2m">
-                                    <node concept="HV5vD" id="41U5zKUWRp4" role="2ShVmc">
-                                      <ref role="HV5vE" to="5nvm:FLkVtyCNd2" resolve="RefactoringSessionImpl" />
+                                    <node concept="1pGfFk" id="7PqTV1oXz78" role="2ShVmc">
+                                      <ref role="37wK5l" to="5nvm:7PqTV1oWHU5" resolve="RefactoringSessionImpl" />
+                                      <node concept="37vLTw" id="7PqTV1oX$$7" role="37wK5m">
+                                        <ref role="3cqZAo" node="7PqTV1oX4e7" resolve="refactoringName" />
+                                      </node>
                                     </node>
                                   </node>
                                 </node>
@@ -11405,8 +11470,8 @@
                                   <node concept="37vLTw" id="41U5zKUYg44" role="37wK5m">
                                     <ref role="3cqZAo" node="41U5zKUYg40" resolve="scope" />
                                   </node>
-                                  <node concept="Xl_RD" id="41U5zKUWRq8" role="37wK5m">
-                                    <property role="Xl_RC" value="Rename node" />
+                                  <node concept="37vLTw" id="7PqTV1oX4e9" role="37wK5m">
+                                    <ref role="3cqZAo" node="7PqTV1oX4e7" resolve="refactoringName" />
                                   </node>
                                   <node concept="37vLTw" id="41U5zKUWRq9" role="37wK5m">
                                     <ref role="3cqZAo" node="76O06llYVVI" resolve="participants" />

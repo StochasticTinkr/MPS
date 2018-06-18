@@ -106,7 +106,7 @@ public class RefactoringProcessor {
    * For calling not in migration assistant but in interactive enviromnent, so performs all in single refactoring session with project scope.
    */
   public static <IP, FP> void performRefactoringInProject(final Project project, RefactoringUI refactoringUI, final RefactoringProcessor.RefactoringBody<IP, FP> refactoringBody) {
-    final RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
+    final RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl(refactoringBody.getRefactoringName());
     final List<IP> initialStates = refactoringBody.findInitialStates();
     performRefactoring(new RefactoringParticipant.CollectingParticipantStateFactory<IP, FP>(), refactoringUI, refactoringSession, project.getRepository(), project.getScope(), refactoringBody.getRefactoringName(), refactoringBody.getAllAvailableParticipants(), initialStates, new _FunctionTypes._return_P1_E0<Map<IP, FP>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>>() {
       public Map<IP, FP> invoke(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>> participantStates) {

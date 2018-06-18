@@ -11836,8 +11836,11 @@
               <ref role="3uigEE" to="5nvm:FLkVtyCNd2" resolve="RefactoringSessionImpl" />
             </node>
             <node concept="2ShNRf" id="2Lknp0zQ_FM" role="33vP2m">
-              <node concept="HV5vD" id="2Lknp0zQLcj" role="2ShVmc">
-                <ref role="HV5vE" to="5nvm:FLkVtyCNd2" resolve="RefactoringSessionImpl" />
+              <node concept="1pGfFk" id="7PqTV1oXMqm" role="2ShVmc">
+                <ref role="37wK5l" to="5nvm:7PqTV1oWHU5" resolve="RefactoringSessionImpl" />
+                <node concept="Xl_RD" id="7PqTV1oXM_f" role="37wK5m">
+                  <property role="Xl_RC" value="Apply Logged Refactoring" />
+                </node>
               </node>
             </node>
           </node>
@@ -12108,8 +12111,8 @@
       </node>
       <node concept="37vLTG" id="ZyaJRRZYNh" role="3clF46">
         <property role="TrG5h" value="refactoringSession" />
-        <node concept="3uibUv" id="ZyaJRRZYNi" role="1tU5fm">
-          <ref role="3uigEE" to="5nvm:FLkVtyCNd2" resolve="RefactoringSessionImpl" />
+        <node concept="3uibUv" id="7PqTV1oXWWY" role="1tU5fm">
+          <ref role="3uigEE" to="5nvm:3KqYwoBJ0xf" resolve="RefactoringSession" />
         </node>
       </node>
       <node concept="3clFbS" id="ZyaJRRZYMm" role="3clF47">

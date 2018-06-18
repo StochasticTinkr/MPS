@@ -49,6 +49,7 @@
     <import index="4ugc" ref="r:bd779a69-a10b-4882-b646-c1303f2dd4f7(jetbrains.mps.refactoring.participant.plugin)" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -2679,6 +2680,69 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="1j$ykQp3Nft" role="3cqZAp">
+          <node concept="3cpWsn" id="1j$ykQp3Nfu" role="3cpWs9">
+            <property role="TrG5h" value="refactoringName" />
+            <node concept="17QB3L" id="1j$ykQp3Nfp" role="1tU5fm" />
+            <node concept="2OqwBi" id="1j$ykQp3Nfv" role="33vP2m">
+              <node concept="37vLTw" id="1j$ykQp3Nfw" role="2Oq$k0">
+                <ref role="3cqZAo" node="3r9sVr9TaS8" resolve="session" />
+              </node>
+              <node concept="liA8E" id="1j$ykQp3Nfx" role="2OqNvi">
+                <ref role="37wK5l" to="5nvm:7PqTV1oWyly" resolve="getRefactoringName" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="7PqTV1p286p" role="3cqZAp">
+          <node concept="3cpWsn" id="7PqTV1p286s" role="3cpWs9">
+            <property role="TrG5h" value="refactoringLogName" />
+            <node concept="17QB3L" id="7PqTV1p286n" role="1tU5fm" />
+            <node concept="3K4zz7" id="1j$ykQp3Pe_" role="33vP2m">
+              <node concept="Xl_RD" id="1j$ykQp3PAA" role="3K4E3e">
+                <property role="Xl_RC" value="RefactoringLog" />
+              </node>
+              <node concept="3clFbC" id="1j$ykQp3OAP" role="3K4Cdx">
+                <node concept="10Nm6u" id="1j$ykQp3OYM" role="3uHU7w" />
+                <node concept="37vLTw" id="1j$ykQp3O9v" role="3uHU7B">
+                  <ref role="3cqZAo" node="1j$ykQp3Nfu" resolve="refactoringName" />
+                </node>
+              </node>
+              <node concept="3cpWs3" id="1j$ykQp3T5d" role="3K4GZi">
+                <node concept="Xl_RD" id="1j$ykQp3Tmv" role="3uHU7B">
+                  <property role="Xl_RC" value="Refactor_" />
+                </node>
+                <node concept="2YIFZM" id="1j$ykQp3N5F" role="3uHU7w">
+                  <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                  <ref role="37wK5l" to="18ew:~NameUtil.toValidCamelIdentifier(java.lang.String):java.lang.String" resolve="toValidCamelIdentifier" />
+                  <node concept="37vLTw" id="1j$ykQp3Nfy" role="37wK5m">
+                    <ref role="3cqZAo" node="1j$ykQp3Nfu" resolve="refactoringName" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="1j$ykQp4Myw" role="3cqZAp">
+          <node concept="3SKdUq" id="1j$ykQp4Myy" role="3SKWNk">
+            <property role="3SKdUp" value="Keeping both name from session and caption from constructor is redundant." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="1j$ykQp4Oqv" role="3cqZAp">
+          <node concept="3SKdUq" id="1j$ykQp4Q7$" role="3SKWNk">
+            <property role="3SKdUp" value="Currently name from session represents only refactoring kind: e.g. MoveStaticField," />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="1j$ykQp4RTS" role="3cqZAp">
+          <node concept="3SKdUq" id="1j$ykQp4RTU" role="3SKWNk">
+            <property role="3SKdUp" value="but action also points to node's name. But pushing caption from constructor is not a good way" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="1j$ykQp4TLZ" role="3cqZAp">
+          <node concept="3SKdUq" id="1j$ykQp4TM1" role="3SKWNk">
+            <property role="3SKdUp" value="because it relies on order in which getChanges() is called for node subtree." />
+          </node>
+        </node>
         <node concept="3clFbF" id="3r9sVr9Tm6G" role="3cqZAp">
           <node concept="37vLTI" id="3r9sVr9Tmd2" role="3clFbG">
             <node concept="2pJPEk" id="3r9sVr9TmfD" role="37vLTx">
@@ -2708,11 +2772,16 @@
                         <ref role="3cqZAo" node="5zDh0PE_Jcz" resolve="caption" />
                       </node>
                     </node>
-                    <node concept="3cpWs3" id="3r9sVr9TvI1" role="3K4E3e">
-                      <node concept="Xl_RD" id="3r9sVr9TvDy" role="3uHU7B">
-                        <property role="Xl_RC" value="RefactoringLog_" />
+                    <node concept="3cpWs3" id="1j$ykQp47K0" role="3K4E3e">
+                      <node concept="3cpWs3" id="1j$ykQp47K1" role="3uHU7B">
+                        <node concept="37vLTw" id="1j$ykQp47K2" role="3uHU7B">
+                          <ref role="3cqZAo" node="7PqTV1p286s" resolve="refactoringLogName" />
+                        </node>
+                        <node concept="Xl_RD" id="1j$ykQp47K3" role="3uHU7w">
+                          <property role="Xl_RC" value="_" />
+                        </node>
                       </node>
-                      <node concept="37vLTw" id="3r9sVr9T$gf" role="3uHU7w">
+                      <node concept="37vLTw" id="1j$ykQp47R_" role="3uHU7w">
                         <ref role="3cqZAo" node="3r9sVr9T$g9" resolve="moduleVersion" />
                       </node>
                     </node>

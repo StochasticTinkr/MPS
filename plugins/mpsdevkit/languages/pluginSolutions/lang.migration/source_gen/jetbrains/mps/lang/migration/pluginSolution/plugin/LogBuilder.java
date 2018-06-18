@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelInternal;
@@ -59,7 +60,13 @@ public class LogBuilder {
   private SNode myRefactoringStep;
   private LogBuilder(RefactoringSession session, final SearchScope searchScope, final Language module, @Nullable String caption) {
     final int moduleVersion = module.getModuleVersion();
-    myRefactoringStep = createRefactoringLog_1o8b1n_a0b0d(moduleVersion, (caption == null ? "RefactoringLog_" + moduleVersion : caption));
+    String refactoringName = session.getRefactoringName();
+    String refactoringLogName = (refactoringName == null ? "RefactoringLog" : "Refactor_" + NameUtil.toValidCamelIdentifier(refactoringName));
+    // Keeping both name from session and caption from constructor is redundant. 
+    // Currently name from session represents only refactoring kind: e.g. MoveStaticField, 
+    // but action also points to node's name. But pushing caption from constructor is not a good way 
+    // because it relies on order in which getChanges() is called for node subtree. 
+    myRefactoringStep = createRefactoringLog_1o8b1n_a0h0d(moduleVersion, (caption == null ? refactoringLogName + "_" + moduleVersion : caption));
     session.registerChange(new Runnable() {
       public void run() {
         SModel migrationModel = LanguageAspect.MIGRATION.getOrCreate(module);
@@ -124,7 +131,7 @@ public class LogBuilder {
       }
     }
   }
-  private static SNode createRefactoringLog_1o8b1n_a0b0d(Object p0, Object p1) {
+  private static SNode createRefactoringLog_1o8b1n_a0h0d(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, "jetbrains.mps.lang.migration.structure.RefactoringLog"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), "refactoring");

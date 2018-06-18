@@ -18,6 +18,7 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelInternal;
@@ -108,7 +109,9 @@ public class LanguageStructureMigrationParticipant<I, F> extends RefactoringPart
     private SNode myRefactoringStep;
     public MigrationBuilder(RefactoringSession session, final Language language) {
       final int languageVersion = language.getLanguageVersion();
-      myRefactoringStep = createPureMigrationScript_kz6lmo_a0b0d11(languageVersion, "MigrationScript_" + languageVersion);
+      String refactoringName = session.getRefactoringName();
+      String migrationScriptName = (refactoringName == null ? "MigrationScript" : "Migrate_" + NameUtil.toValidCamelIdentifier(refactoringName));
+      myRefactoringStep = createPureMigrationScript_kz6lmo_a0d0d11(languageVersion, migrationScriptName + "_" + languageVersion);
       session.registerChange(new Runnable() {
         public void run() {
           SModel migrationModel = LanguageAspect.MIGRATION.getOrCreate(language);
@@ -137,7 +140,7 @@ public class LanguageStructureMigrationParticipant<I, F> extends RefactoringPart
     public void addPart(SNode migrationPart) {
       ListSequence.fromList(SLinkOperations.getChildren(myRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5836cabbL, 0x67236d4a5836d7f3L, "part"))).addElement(migrationPart);
     }
-    private static SNode createPureMigrationScript_kz6lmo_a0b0d11(Object p0, Object p1) {
+    private static SNode createPureMigrationScript_kz6lmo_a0d0d11(Object p0, Object p1) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5836cabbL, "jetbrains.mps.lang.migration.structure.PureMigrationScript"), null, null, false);
       n1.setProperty(MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5836cabbL, 0x67236d4a5836cabcL, "fromVersion"), p0 + "");
