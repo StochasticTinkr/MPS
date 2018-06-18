@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private final GenControllerContext myEnvironment;
   private final TransientModelsModule myTransientModule;
   private final GenerationSessionLogger myLogger;
-  private final RoleValidation myValidation;
+
   /*
    * GenerationSessionContext is not the perfect place for this tracer, as it's not really session object,
    * however it's per-model object, and generation session is per-model as well (thus, can't put it into e.g. GenControllerContext)
@@ -98,7 +98,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myOriginalInputModel = inputModel;
     myPerfTrace = performanceTracer;
     myLogger = logger;
-    myValidation = new RoleValidation(environment.getOptions().isShowBadChildWarning());
     mySessionObjects = new ConcurrentHashMap<>();
     myTransientObjects = new ConcurrentHashMap<>();
     myStepObjects = new ConcurrentHashMap<>();
@@ -117,7 +116,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myLogger = prevContext.myLogger;
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
-    myValidation = prevContext.myValidation;
     // this copy cons indicate new major step, hence new empty maps
     myTransientObjects = new ConcurrentHashMap<>();
     myStepObjects = new ConcurrentHashMap<>();
@@ -350,17 +348,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
    */
   public IGeneratorLogger getLogger() {
     return myLogger;
-  }
-
-  /**
-   * @return never <code>null</code>
-   */
-  public RoleValidation getRoleValidationFacility() {
-    // XXX in fact, GenerationSessionContext seems to serve as an API (resides in public package and provides public services
-    // to genContext, like unique name), while RoleValidation is implementation class.
-    // However, don't want to refactor GSC now (split iface and impl) - there's e.g. GenerationPlan (impl class) exposed here as well, so it doesn't
-    // look like that intention was to keep it API, rather a facility to keep everything handy.
-    return myValidation;
   }
 
   /**

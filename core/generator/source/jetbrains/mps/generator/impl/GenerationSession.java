@@ -86,6 +86,7 @@ import java.util.Map.Entry;
 class GenerationSession {
   private final ITaskPoolProvider myTaskPoolProvider;
   private final SModel myOriginalInputModel;
+  private final RoleValidation myRoleValidation;
   private ModelGenerationPlan myGenerationPlan;
 
   private final GenerationTrace myNewTrace;
@@ -114,6 +115,7 @@ class GenerationSession {
     ttrace = performanceTracer;
     myGenerationOptions = environment.getOptions();
     mySessionContext = new GenerationSessionContext(environment, transientModule, myLogger, myOriginalInputModel, performanceTracer);
+    myRoleValidation = new RoleValidation(myGenerationOptions.isShowBadChildWarning());
   }
 
   GenerationStatus generateModel(ProgressMonitor monitor) throws GenerationCanceledException {
@@ -360,7 +362,7 @@ class GenerationSession {
     GenPlanActiveStep activeStep = new GenPlanActiveStep(myGenerationPlan, planStep, mappingConfigurations);
 
     try {
-      myStepArguments = new StepArguments(activeStep, myNewTrace, new GeneratorMappings(myLogger), transitionTrace, myQuerySource);
+      myStepArguments = new StepArguments(activeStep, myNewTrace, new GeneratorMappings(myLogger), transitionTrace, myQuerySource, myRoleValidation);
       SModel outputModel = executeMajorStepInternal(inputModel, progress);
       if (myLogger.getErrorCount() > 0) {
         myLogger.warning(String.format("model '%s' has been generated with errors", inputModel.getName()));
@@ -739,6 +741,7 @@ class GenerationSession {
     return !RuntimeFlags.isTestMode();
   }
 
+  @SuppressWarnings("WeakerAccess")
   public MPSAppenderBase getLoggingHandler() {
     if (myLoggingHandler == null) {
       myLoggingHandler = new MPSAppenderBase() {
@@ -760,6 +763,7 @@ class GenerationSession {
     return myLoggingHandler;
   }
 
+  @SuppressWarnings("WeakerAccess")
   public void discardTransients() {
     if (mySessionContext == null) {
       return;

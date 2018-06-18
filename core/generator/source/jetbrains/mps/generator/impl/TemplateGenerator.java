@@ -135,6 +135,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     public final GeneratorMappings mappingLabels;
     public final TransitionTrace transitionTrace;
     public final GeneratorQueryProvider.Source querySource;
+    public final RoleValidation roleValidation;
 
     public StepArguments(GeneratorQueryProvider.Source gqps) {
       // FIXME refactor TMC.isApplicable call not to take ITemplateGenerator, or use dedicated ITemplateGenerator implementation
@@ -142,21 +143,22 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       // Alternative is to initialize StepArguments once prior to isApplicable check, which we can't do now as isApplicable gives us GenPlanActiveStep
       // If refactored (e.g. GPAS made TG's argument or use of dedicated fake GPAS for isApplicable), could drop this cons altogether.
       // I.e. if anyone would like to query e.g. mapping label from isApplicable(), it's a chance not to fail with NPE (and to let the error go unnoticed)
-      this(null, null, null, null, gqps);
+      this(null, null, null, null, gqps, null);
     }
 
     public StepArguments(GenPlanActiveStep planStep, GenerationTrace genTrace, GeneratorMappings mapLabels,
-        TransitionTrace transitionTrace, GeneratorQueryProvider.Source gqps) {
+        TransitionTrace transitionTrace, GeneratorQueryProvider.Source gqps, RoleValidation roleValidator) {
       this.planStep = planStep;
       this.genTrace = genTrace;
       this.mappingLabels = mapLabels;
       this.transitionTrace = transitionTrace;
       this.querySource = gqps;
+      this.roleValidation = roleValidator;
     }
   }
 
   public TemplateGenerator(GenerationSessionContext operationContext, SModel inputModel, SModel outputModel, StepArguments stepArgs) {
-    super(operationContext, inputModel, outputModel, stepArgs.mappingLabels, stepArgs.querySource);
+    super(operationContext, inputModel, outputModel, stepArgs.mappingLabels, stepArgs.querySource, stepArgs.roleValidation);
     myPlanStep = stepArgs.planStep;
     GenerationOptions options = operationContext.getGenerationOptions();
     myIsStrict = options.isStrictMode();
