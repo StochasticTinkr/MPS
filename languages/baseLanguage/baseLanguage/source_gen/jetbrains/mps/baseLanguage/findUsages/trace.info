@@ -20,6 +20,11 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1200309609796">
+    <file name="FindUsagesDescriptor.java">
+      <node id="1200309609796" at="53,14,54,46" concept="9" />
+      <node id="1200309609796" at="81,184,82,191" concept="3" />
+      <scope id="1200309609796" at="53,14,54,46" />
+    </file>
     <file name="OverridingMethods_Finder.java">
       <node id="1200309609796" at="29,34,30,32" concept="9" />
       <node id="1200309609796" at="33,38,34,14" concept="9" />
@@ -106,6 +111,11 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1200310248824">
+    <file name="FindUsagesDescriptor.java">
+      <node id="1200310248824" at="45,14,46,48" concept="9" />
+      <node id="1200310248824" at="77,182,78,178" concept="3" />
+      <scope id="1200310248824" at="45,14,46,48" />
+    </file>
     <file name="ImplementingClasses_Finder.java">
       <node id="1200310248824" at="24,34,25,34" concept="9" />
       <node id="1200310248824" at="28,38,29,14" concept="9" />
@@ -262,6 +272,11 @@
       </scope>
       <unit id="1200310287391" at="19,0,70,0" name="jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder" />
     </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="1200310287391" at="35,13,36,46" concept="9" />
+      <node id="1200310287391" at="72,174,73,175" concept="3" />
+      <scope id="1200310287391" at="35,13,36,46" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1200310473077">
     <file name="DerivedClasses_Finder.java">
@@ -326,6 +341,11 @@
         <var name="scope" id="1200310473077" />
       </scope>
       <unit id="1200310473077" at="19,0,68,0" name="jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder" />
+    </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="1200310473077" at="33,13,34,43" concept="9" />
+      <node id="1200310473077" at="71,187,72,174" concept="3" />
+      <scope id="1200310473077" at="33,13,34,43" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1200317943493">
@@ -445,6 +465,11 @@
       </scope>
       <unit id="1200317943493" at="20,0,107,0" name="jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder" />
     </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="1200317943493" at="21,13,22,44" concept="9" />
+      <node id="1200317943493" at="65,40,66,184" concept="3" />
+      <scope id="1200317943493" at="21,13,22,44" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1200405628545">
     <file name="FieldUsages_Finder.java">
@@ -535,8 +560,18 @@
       </scope>
       <unit id="1200405628545" at="20,0,85,0" name="jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder" />
     </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="1200405628545" at="41,14,42,40" concept="9" />
+      <node id="1200405628545" at="75,186,76,179" concept="3" />
+      <scope id="1200405628545" at="41,14,42,40" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1200420731716">
+    <file name="FindUsagesDescriptor.java">
+      <node id="1200420731716" at="51,14,52,45" concept="9" />
+      <node id="1200420731716" at="80,204,81,184" concept="3" />
+      <scope id="1200420731716" at="51,14,52,45" />
+    </file>
     <file name="OverridingFields_Finder.java">
       <node id="1200420731716" at="28,34,29,31" concept="9" />
       <node id="1200420731716" at="32,38,33,14" concept="9" />
@@ -614,6 +649,11 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1200425321273">
+    <file name="FindUsagesDescriptor.java">
+      <node id="1200425321273" at="49,14,50,59" concept="9" />
+      <node id="1200425321273" at="79,177,80,204" concept="3" />
+      <scope id="1200425321273" at="49,14,50,59" />
+    </file>
     <file name="InterfaceMethodImplementations_Finder.java">
       <node id="1200425321273" at="27,34,28,46" concept="9" />
       <node id="1200425321273" at="31,38,32,14" concept="9" />
@@ -758,8 +798,18 @@
       </scope>
       <unit id="1200502085335" at="19,0,71,0" name="jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder" />
     </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="1200502085335" at="27,13,28,43" concept="9" />
+      <node id="1200502085335" at="68,185,69,174" concept="3" />
+      <scope id="1200502085335" at="27,13,28,43" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1201091722183">
+    <file name="FindUsagesDescriptor.java">
+      <node id="1201091722183" at="55,14,56,44" concept="9" />
+      <node id="1201091722183" at="82,191,83,184" concept="3" />
+      <scope id="1201091722183" at="55,14,56,44" />
+    </file>
     <file name="ParameterUsages_Finder.java">
       <node id="1201091722183" at="24,34,25,30" concept="9" />
       <node id="1201091722183" at="28,38,29,14" concept="9" />
@@ -985,8 +1035,18 @@
       <unit id="1227876797642" at="55,158,59,11" name="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder$1" />
       <unit id="1204121124763" at="23,0,111,0" name="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder" />
     </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="1204121124763" at="31,13,32,46" concept="9" />
+      <node id="1204121124763" at="70,171,71,187" concept="3" />
+      <scope id="1204121124763" at="31,13,32,46" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1204122859723">
+    <file name="FindUsagesDescriptor.java">
+      <node id="1204122859723" at="57,14,58,51" concept="9" />
+      <node id="1204122859723" at="83,184,84,183" concept="3" />
+      <scope id="1204122859723" at="57,14,58,51" />
+    </file>
     <file name="StraightDerivedClasses_Finder.java">
       <node id="1204122859723" at="22,34,23,34" concept="9" />
       <node id="1204122859723" at="26,38,27,14" concept="9" />
@@ -1150,8 +1210,18 @@
       </scope>
       <unit id="1204898641595" at="26,0,108,0" name="jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder" />
     </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="1204898641595" at="23,13,24,39" concept="9" />
+      <node id="1204898641595" at="66,184,67,179" concept="3" />
+      <scope id="1204898641595" at="23,13,24,39" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1204899453042">
+    <file name="FindUsagesDescriptor.java">
+      <node id="1204899453042" at="47,14,48,47" concept="9" />
+      <node id="1204899453042" at="78,178,79,177" concept="3" />
+      <scope id="1204899453042" at="47,14,48,47" />
+    </file>
     <file name="InterfaceAncestors_Finder.java">
       <node id="1216398061275" at="22,59,23,215" concept="9" />
       <node id="1204899453042" at="26,40,27,61" concept="9" />
@@ -1319,8 +1389,18 @@
       </scope>
       <unit id="1216385454403" at="20,0,83,0" name="jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder" />
     </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="1216385454403" at="25,13,26,45" concept="9" />
+      <node id="1216385454403" at="67,179,68,185" concept="3" />
+      <scope id="1216385454403" at="25,13,26,45" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1216392046439">
+    <file name="FindUsagesDescriptor.java">
+      <node id="1216392046439" at="43,14,44,50" concept="9" />
+      <node id="1216392046439" at="76,179,77,182" concept="3" />
+      <scope id="1216392046439" at="43,14,44,50" />
+    </file>
     <file name="ImplementedInterfaces_Finder.java">
       <node id="1216392046439" at="24,34,25,36" concept="9" />
       <node id="1216392046439" at="28,38,29,14" concept="9" />
@@ -1456,6 +1536,11 @@
       </scope>
       <unit id="1227527031007" at="19,0,69,0" name="jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder" />
     </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="1227527031007" at="39,13,40,46" concept="9" />
+      <node id="1227527031007" at="74,187,75,186" concept="3" />
+      <scope id="1227527031007" at="39,13,40,46" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1237738696198">
     <file name="ClassUsages_Finder.java">
@@ -1535,6 +1620,11 @@
         <var name="scope" id="1237738696198" />
       </scope>
       <unit id="1237738696198" at="20,0,74,0" name="jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder" />
+    </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="1237738696198" at="29,13,30,40" concept="9" />
+      <node id="1237738696198" at="69,174,70,171" concept="3" />
+      <scope id="1237738696198" at="29,13,30,40" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/4151347580001021181">
@@ -1648,6 +1738,11 @@
       <unit id="490151657744238975" at="76,211,80,11" name="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$5" />
       <unit id="490151657744238985" at="80,26,84,11" name="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$6" />
       <unit id="4151347580001021181" at="24,0,99,0" name="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder" />
+    </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="4151347580001021181" at="37,13,38,43" concept="9" />
+      <node id="4151347580001021181" at="73,175,74,187" concept="3" />
+      <scope id="4151347580001021181" at="37,13,38,43" />
     </file>
   </root>
 </debug-info>

@@ -15,30 +15,30 @@
     <file name="BTestCase_Constraints.java">
       <node id="1213104846868" at="17,34,18,158" concept="5" />
       <node id="1213104846868" at="22,84,23,119" concept="3" />
-      <node id="1213104846868" at="26,37,27,20" concept="4" />
-      <node id="1213104846868" at="30,42,31,37" concept="3" />
+      <node id="1213104846869" at="26,37,27,20" concept="4" />
+      <node id="1213104846869" at="30,42,31,37" concept="3" />
       <node id="1213104846872" at="31,37,32,183" concept="4" />
       <node id="1213104846868" at="34,7,35,22" concept="4" />
       <node id="1213104846868" at="17,0,20,0" concept="0" trace="BTestCase_Constraints#()V" />
-      <node id="1213104846868" at="25,0,29,0" concept="2" trace="hasOwnGetter#()Z" />
-      <node id="1213104846868" at="29,0,34,0" concept="2" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="1213104846868" at="23,119,34,7" concept="1" />
+      <node id="1213104846869" at="25,0,29,0" concept="2" trace="hasOwnGetter#()Z" />
+      <node id="1213104846869" at="29,0,34,0" concept="2" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="1213104846869" at="23,119,34,7" concept="1" />
       <node id="1213104846868" at="21,0,37,0" concept="2" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="1213104846868" at="17,34,18,158" />
-      <scope id="1213104846868" at="26,37,27,20" />
-      <scope id="1213104846868" at="30,42,32,183">
-        <var name="propertyName" id="1213104846868" />
+      <scope id="1213104846869" at="26,37,27,20" />
+      <scope id="1213104846869" at="30,42,32,183">
+        <var name="propertyName" id="1213104846869" />
       </scope>
       <scope id="1213104846868" at="17,0,20,0" />
-      <scope id="1213104846868" at="25,0,29,0" />
-      <scope id="1213104846868" at="29,0,34,0">
-        <var name="node" id="1213104846868" />
+      <scope id="1213104846869" at="25,0,29,0" />
+      <scope id="1213104846869" at="29,0,34,0">
+        <var name="node" id="1213104846869" />
       </scope>
       <scope id="1213104846868" at="22,84,35,22">
         <var name="properties" id="1213104846868" />
       </scope>
       <scope id="1213104846868" at="21,0,37,0" />
-      <unit id="1213104846868" at="24,137,34,5" name="jetbrains.mps.baseLanguage.unitTest.constraints.BTestCase_Constraints$1" />
+      <unit id="1213104846869" at="24,137,34,5" name="jetbrains.mps.baseLanguage.unitTest.constraints.BTestCase_Constraints$1" />
       <unit id="1213104846868" at="16,0,38,0" name="jetbrains.mps.baseLanguage.unitTest.constraints.BTestCase_Constraints" />
     </file>
   </root>
@@ -46,30 +46,30 @@
     <file name="TestMethod_Constraints.java">
       <node id="1213104847596" at="17,35,18,159" concept="5" />
       <node id="1213104847596" at="22,84,23,119" concept="3" />
-      <node id="1213104847596" at="26,37,27,20" concept="4" />
-      <node id="1213104847596" at="30,42,31,37" concept="3" />
+      <node id="1213104847597" at="26,37,27,20" concept="4" />
+      <node id="1213104847597" at="30,42,31,37" concept="3" />
       <node id="1213104847600" at="31,37,32,181" concept="4" />
       <node id="1213104847596" at="34,7,35,22" concept="4" />
       <node id="1213104847596" at="17,0,20,0" concept="0" trace="TestMethod_Constraints#()V" />
-      <node id="1213104847596" at="25,0,29,0" concept="2" trace="hasOwnGetter#()Z" />
-      <node id="1213104847596" at="29,0,34,0" concept="2" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="1213104847596" at="23,119,34,7" concept="1" />
+      <node id="1213104847597" at="25,0,29,0" concept="2" trace="hasOwnGetter#()Z" />
+      <node id="1213104847597" at="29,0,34,0" concept="2" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="1213104847597" at="23,119,34,7" concept="1" />
       <node id="1213104847596" at="21,0,37,0" concept="2" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="1213104847596" at="17,35,18,159" />
-      <scope id="1213104847596" at="26,37,27,20" />
-      <scope id="1213104847596" at="30,42,32,181">
-        <var name="propertyName" id="1213104847596" />
+      <scope id="1213104847597" at="26,37,27,20" />
+      <scope id="1213104847597" at="30,42,32,181">
+        <var name="propertyName" id="1213104847597" />
       </scope>
       <scope id="1213104847596" at="17,0,20,0" />
-      <scope id="1213104847596" at="25,0,29,0" />
-      <scope id="1213104847596" at="29,0,34,0">
-        <var name="node" id="1213104847596" />
+      <scope id="1213104847597" at="25,0,29,0" />
+      <scope id="1213104847597" at="29,0,34,0">
+        <var name="node" id="1213104847597" />
       </scope>
       <scope id="1213104847596" at="22,84,35,22">
         <var name="properties" id="1213104847596" />
       </scope>
       <scope id="1213104847596" at="21,0,37,0" />
-      <unit id="1213104847596" at="24,137,34,5" name="jetbrains.mps.baseLanguage.unitTest.constraints.TestMethod_Constraints$1" />
+      <unit id="1213104847597" at="24,137,34,5" name="jetbrains.mps.baseLanguage.unitTest.constraints.TestMethod_Constraints$1" />
       <unit id="1213104847596" at="16,0,38,0" name="jetbrains.mps.baseLanguage.unitTest.constraints.TestMethod_Constraints" />
     </file>
   </root>

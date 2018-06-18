@@ -14,6 +14,14 @@
     </file>
   </root>
   <root nodeRef="r:6bf8c04d-71a0-4d35-a802-6419d6241f0a(jetbrains.mps.lang.generator.generationParameters.typesystem)/5540778578667537766">
+    <file name="TypesystemDescriptor.java">
+      <node id="5540778578667537766" at="10,5,11,97" concept="5" />
+      <node id="5540778578667537766" at="11,97,12,47" concept="2" />
+      <node id="5540778578667537766" at="9,33,13,5" concept="0" />
+      <scope id="5540778578667537766" at="10,5,12,47">
+        <var name="inferenceRule" id="5540778578667537766" />
+      </scope>
+    </file>
     <file name="typeof_DefaultGeneratorParameter_InferenceRule.java">
       <node id="5540778578667542587" at="22,7,23,53" concept="5" />
       <node id="5540778578667542587" at="23,53,24,287" concept="5" />

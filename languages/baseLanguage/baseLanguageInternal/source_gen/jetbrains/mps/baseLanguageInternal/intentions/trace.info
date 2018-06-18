@@ -14,6 +14,10 @@
     </file>
   </root>
   <root nodeRef="r:f0d79467-678d-44a3-9372-d1b2fb477d99(jetbrains.mps.baseLanguageInternal.intentions)/1229871155083">
+    <file name="IntentionsDescriptor.java">
+      <node id="1229871155083" at="44,47,45,82" concept="1" />
+      <node id="1229871155083" at="64,52,65,68" concept="1" />
+    </file>
     <file name="add_parameter_to_InternalClassifierType_Intention.java">
       <node id="1229871155083" at="22,0,23,0" concept="2" trace="myCachedExecutable" />
       <node id="1229871155083" at="23,62,24,154" concept="7" />
@@ -81,6 +85,10 @@
     </file>
   </root>
   <root nodeRef="r:f0d79467-678d-44a3-9372-d1b2fb477d99(jetbrains.mps.baseLanguageInternal.intentions)/5332097447638335653">
+    <file name="IntentionsDescriptor.java">
+      <node id="5332097447638335653" at="37,47,38,68" concept="1" />
+      <node id="5332097447638335653" at="65,68,66,54" concept="1" />
+    </file>
     <file name="ReplaceWithFieldReference_Intention.java">
       <node id="5332097447638335653" at="21,0,22,0" concept="2" trace="myCachedExecutable" />
       <node id="5332097447638335653" at="22,48,23,160" concept="7" />
@@ -144,6 +152,10 @@
     </file>
   </root>
   <root nodeRef="r:f0d79467-678d-44a3-9372-d1b2fb477d99(jetbrains.mps.baseLanguageInternal.intentions)/5332097447638335764">
+    <file name="IntentionsDescriptor.java">
+      <node id="5332097447638335764" at="51,47,52,67" concept="1" />
+      <node id="5332097447638335764" at="66,54,67,53" concept="1" />
+    </file>
     <file name="ReplaceWithConstantValue_Intention.java">
       <node id="5332097447638335764" at="21,0,22,0" concept="2" trace="myCachedExecutable" />
       <node id="5332097447638335764" at="22,47,23,160" concept="7" />

@@ -17,6 +17,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)/1206443423270">
+    <file name="TypesystemDescriptor.java">
+      <node id="1206443423270" at="35,5,36,85" concept="7" />
+      <node id="1206443423270" at="36,85,37,47" concept="3" />
+      <node id="1206443423270" at="34,5,38,5" concept="0" />
+      <scope id="1206443423270" at="35,5,37,47">
+        <var name="inferenceRule" id="1206443423270" />
+      </scope>
+    </file>
     <file name="typeof_NodeParameter_InferenceRule.java">
       <node id="1206443439852" at="22,124,23,235" concept="7" />
       <node id="1206443478602" at="24,5,25,53" concept="7" />
@@ -70,6 +78,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)/1206444740871">
+    <file name="TypesystemDescriptor.java">
+      <node id="1206444740871" at="19,5,20,93" concept="7" />
+      <node id="1206444740871" at="20,93,21,47" concept="3" />
+      <node id="1206444740871" at="18,5,22,5" concept="0" />
+      <scope id="1206444740871" at="19,5,21,47">
+        <var name="inferenceRule" id="1206444740871" />
+      </scope>
+    </file>
     <file name="typeof_EmitVariableStatement_InferenceRule.java">
       <node id="1206444774891" at="21,5,22,205" concept="7" />
       <node id="1206444774891" at="22,205,23,198" concept="7" />
@@ -117,6 +133,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)/1206445108940">
+    <file name="TypesystemDescriptor.java">
+      <node id="1206445108940" at="39,5,40,88" concept="7" />
+      <node id="1206445108940" at="40,88,41,47" concept="3" />
+      <node id="1206445108940" at="38,5,42,5" concept="0" />
+      <scope id="1206445108940" at="39,5,41,47">
+        <var name="inferenceRule" id="1206445108940" />
+      </scope>
+    </file>
     <file name="typeof_RelativePosition_InferenceRule.java">
       <node id="1206445142616" at="21,5,22,207" concept="7" />
       <node id="1206445142616" at="22,207,23,198" concept="7" />
@@ -164,6 +188,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)/1823319949748681653">
+    <file name="TypesystemDescriptor.java">
+      <node id="1823319949748681653" at="31,5,32,101" concept="7" />
+      <node id="1823319949748681653" at="32,101,33,47" concept="3" />
+      <node id="1823319949748681653" at="30,5,34,5" concept="0" />
+      <scope id="1823319949748681653" at="31,5,33,47">
+        <var name="inferenceRule" id="1823319949748681653" />
+      </scope>
+    </file>
     <file name="typeof_InstructionGetSourceOperation_InferenceRule.java">
       <node id="1823319949748684617" at="20,5,21,71" concept="7" />
       <node id="1823319949748684617" at="21,71,22,204" concept="7" />
@@ -211,6 +243,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)/2959643274329928495">
+    <file name="TypesystemDescriptor.java">
+      <node id="2959643274329928495" at="23,5,24,92" concept="7" />
+      <node id="2959643274329928495" at="24,92,25,47" concept="3" />
+      <node id="2959643274329928495" at="22,5,26,5" concept="0" />
+      <scope id="2959643274329928495" at="23,5,25,47">
+        <var name="inferenceRule" id="2959643274329928495" />
+      </scope>
+    </file>
     <file name="typeof_GetCodeForExpression_InferenceRule.java">
       <node id="2959643274329928502" at="20,5,21,61" concept="7" />
       <node id="2959643274329928502" at="21,61,22,204" concept="7" />
@@ -262,6 +302,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)/4358085932829601411">
+    <file name="TypesystemDescriptor.java">
+      <node id="4358085932829601411" at="15,5,16,92" concept="7" />
+      <node id="4358085932829601411" at="16,92,17,47" concept="3" />
+      <node id="4358085932829601411" at="14,5,18,5" concept="0" />
+      <scope id="4358085932829601411" at="15,5,17,47">
+        <var name="inferenceRule" id="4358085932829601411" />
+      </scope>
+    </file>
     <file name="typeof_EmitCodeForStatement_InferenceRule.java">
       <node id="4358085932829606435" at="21,5,22,213" concept="7" />
       <node id="4358085932829606435" at="22,213,23,204" concept="7" />
@@ -309,6 +357,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)/6246554009624637045">
+    <file name="TypesystemDescriptor.java">
+      <node id="6246554009624637045" at="43,5,44,124" concept="7" />
+      <node id="6246554009624637045" at="44,124,45,55" concept="3" />
+      <node id="6246554009624637045" at="42,5,46,5" concept="0" />
+      <scope id="6246554009624637045" at="43,5,45,55">
+        <var name="nonTypesystemRule" id="6246554009624637045" />
+      </scope>
+    </file>
     <file name="check_DataFlowBuilderDeclaration_modeUniqueness_NonTypesystemRule.java">
       <node id="6246554009627622992" at="36,120,37,114" concept="7" />
       <node id="6246554009627929533" at="38,216,39,13" concept="8" />
@@ -423,6 +479,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)/7180022869589052774">
+    <file name="TypesystemDescriptor.java">
+      <node id="7180022869589052774" at="11,5,12,99" concept="7" />
+      <node id="7180022869589052774" at="12,99,13,47" concept="3" />
+      <node id="7180022869589052774" at="10,33,14,5" concept="0" />
+      <scope id="7180022869589052774" at="11,5,13,47">
+        <var name="inferenceRule" id="7180022869589052774" />
+      </scope>
+    </file>
     <file name="typeof_BooleanInstructionOperation_InferenceRule.java">
       <node id="7180022869589054947" at="20,5,21,69" concept="7" />
       <node id="7180022869589054947" at="21,69,22,204" concept="7" />
@@ -470,6 +534,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)/8105845398178352624">
+    <file name="TypesystemDescriptor.java">
+      <node id="8105845398178352624" at="27,5,28,86" concept="7" />
+      <node id="8105845398178352624" at="28,86,29,47" concept="3" />
+      <node id="8105845398178352624" at="26,5,30,5" concept="0" />
+      <scope id="8105845398178352624" at="27,5,29,47">
+        <var name="inferenceRule" id="8105845398178352624" />
+      </scope>
+    </file>
     <file name="typeof_InsertPosition_InferenceRule.java">
       <node id="1823319949748892463" at="21,5,22,221" concept="7" />
       <node id="1823319949748892463" at="22,221,23,204" concept="7" />

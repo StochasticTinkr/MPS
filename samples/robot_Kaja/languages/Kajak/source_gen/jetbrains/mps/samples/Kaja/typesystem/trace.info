@@ -24,8 +24,8 @@
       <node id="1645404595817114210" at="28,905,29,15" concept="8" />
       <node id="1645404595817116829" at="31,7,32,60" concept="7" />
       <node id="1645404595817116829" at="32,60,33,289" concept="7" />
-      <node id="1645404595817116829" at="34,9,35,150" concept="7" />
-      <node id="1645404595817116829" at="35,150,36,71" concept="3" />
+      <node id="1645404595817255600" at="34,9,35,150" concept="7" />
+      <node id="1645404595817255600" at="35,150,36,71" concept="3" />
       <node id="1645404595816833416" at="41,50,42,159" concept="8" />
       <node id="1645404595816833416" at="44,68,45,102" concept="8" />
       <node id="1645404595816833416" at="47,30,48,17" concept="8" />
@@ -35,7 +35,7 @@
       <node id="1645404595816833416" at="41,0,44,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1645404595816833416" at="44,0,47,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1645404595816833416" at="47,0,50,0" concept="6" trace="overrides#()Z" />
-      <node id="1645404595817116829" at="33,289,37,9" concept="0" />
+      <node id="1645404595817255600" at="33,289,37,9" concept="0" />
       <node id="1645404595817116829" at="30,7,38,7" concept="0" />
       <node id="1645404595817040751" at="26,5,39,5" concept="5" />
       <node id="1645404595816833416" at="23,0,41,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
@@ -46,8 +46,8 @@
       <scope id="1645404595816833416" at="44,68,45,102" />
       <scope id="1645404595816833416" at="47,30,48,17" />
       <scope id="1645404595816833416" at="21,0,23,0" />
-      <scope id="1645404595817116829" at="34,9,36,71">
-        <var name="intentionProvider" id="1645404595817116829" />
+      <scope id="1645404595817255600" at="34,9,36,71">
+        <var name="intentionProvider" id="1645404595817255600" />
       </scope>
       <scope id="1645404595816833416" at="41,0,44,0" />
       <scope id="1645404595816833416" at="44,0,47,0">
@@ -66,6 +66,14 @@
         <var name="typeCheckingContext" id="1645404595816833416" />
       </scope>
       <unit id="1645404595816833416" at="20,0,51,0" name="jetbrains.mps.samples.Kaja.typesystem.RepetitionCheck_NonTypesystemRule" />
+    </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="1645404595816833416" at="14,5,15,92" concept="7" />
+      <node id="1645404595816833416" at="15,92,16,55" concept="3" />
+      <node id="1645404595816833416" at="13,5,17,5" concept="0" />
+      <scope id="1645404595816833416" at="14,5,16,55">
+        <var name="nonTypesystemRule" id="1645404595816833416" />
+      </scope>
     </file>
   </root>
   <root nodeRef="r:af5f8eb9-49c0-4279-87d3-3c80b1a56988(jetbrains.mps.samples.Kaja.typesystem)/1645404595817127967">
@@ -160,6 +168,14 @@
       <unit id="4394627182935027543" at="38,418,42,7" name="jetbrains.mps.samples.Kaja.typesystem.RoutineUniqueness_NonTypesystemRule$2" />
       <unit id="1904811872814114087" at="22,0,61,0" name="jetbrains.mps.samples.Kaja.typesystem.RoutineUniqueness_NonTypesystemRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="1904811872814114087" at="18,5,19,94" concept="7" />
+      <node id="1904811872814114087" at="19,94,20,55" concept="3" />
+      <node id="1904811872814114087" at="17,5,21,5" concept="0" />
+      <scope id="1904811872814114087" at="18,5,20,55">
+        <var name="nonTypesystemRule" id="1904811872814114087" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:af5f8eb9-49c0-4279-87d3-3c80b1a56988(jetbrains.mps.samples.Kaja.typesystem)/1904811872814167850">
     <file name="ScriptNameUniqueness_NonTypesystemRule.java">
@@ -228,6 +244,14 @@
       <unit id="1904811872814168071" at="42,50,46,5" name="jetbrains.mps.samples.Kaja.typesystem.ScriptNameUniqueness_NonTypesystemRule$3" />
       <unit id="1904811872814167850" at="25,0,63,0" name="jetbrains.mps.samples.Kaja.typesystem.ScriptNameUniqueness_NonTypesystemRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="1904811872814167850" at="22,5,23,97" concept="7" />
+      <node id="1904811872814167850" at="23,97,24,55" concept="3" />
+      <node id="1904811872814167850" at="21,5,25,5" concept="0" />
+      <scope id="1904811872814167850" at="22,5,24,55">
+        <var name="nonTypesystemRule" id="1904811872814167850" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:af5f8eb9-49c0-4279-87d3-3c80b1a56988(jetbrains.mps.samples.Kaja.typesystem)/1904811872814168197">
     <file name="LibraryNameUniqueness_NonTypesystemRule.java">
@@ -295,8 +319,24 @@
       <unit id="1904811872814168254" at="41,50,45,5" name="jetbrains.mps.samples.Kaja.typesystem.LibraryNameUniqueness_NonTypesystemRule$3" />
       <unit id="1904811872814168197" at="25,0,62,0" name="jetbrains.mps.samples.Kaja.typesystem.LibraryNameUniqueness_NonTypesystemRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="1904811872814168197" at="10,5,11,98" concept="7" />
+      <node id="1904811872814168197" at="11,98,12,55" concept="3" />
+      <node id="1904811872814168197" at="9,33,13,5" concept="0" />
+      <scope id="1904811872814168197" at="10,5,12,55">
+        <var name="nonTypesystemRule" id="1904811872814168197" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:af5f8eb9-49c0-4279-87d3-3c80b1a56988(jetbrains.mps.samples.Kaja.typesystem)/6630310702470230800">
+    <file name="TypesystemDescriptor.java">
+      <node id="6630310702470230800" at="26,5,27,95" concept="7" />
+      <node id="6630310702470230800" at="27,95,28,55" concept="3" />
+      <node id="6630310702470230800" at="25,5,29,5" concept="0" />
+      <scope id="6630310702470230800" at="26,5,28,55">
+        <var name="nonTypesystemRule" id="6630310702470230800" />
+      </scope>
+    </file>
     <file name="check_KajaDataflow_NonTypesystemRule.java">
       <node id="8249991444799099450" at="26,30,27,13" concept="8" />
       <node id="6630310702470719665" at="29,9,30,59" concept="7" />

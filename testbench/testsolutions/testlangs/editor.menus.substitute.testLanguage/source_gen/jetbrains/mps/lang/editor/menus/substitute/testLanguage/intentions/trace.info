@@ -79,6 +79,10 @@
       <unit id="4930188782568043529" at="44,0,68,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions.AddOrRemoveRegularAttribute_Intention$IntentionImplementation" />
       <unit id="4930188782568043529" at="21,0,69,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions.AddOrRemoveRegularAttribute_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="4930188782568043529" at="37,47,38,70" concept="2" />
+      <node id="4930188782568043529" at="52,52,53,56" concept="2" />
+    </file>
   </root>
   <root nodeRef="r:1c12d022-dd1a-4314-bcc9-f6cffa796c03(jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions)/4930188782568104180">
     <file name="AddOrRemoveTransientAttribute_Intention.java">
@@ -146,6 +150,10 @@
       <unit id="4930188782568104180" at="44,0,68,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions.AddOrRemoveTransientAttribute_Intention$IntentionImplementation" />
       <unit id="4930188782568104180" at="21,0,69,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions.AddOrRemoveTransientAttribute_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="4930188782568104180" at="38,70,39,72" concept="2" />
+      <node id="4930188782568104180" at="53,56,54,58" concept="2" />
+    </file>
   </root>
   <root nodeRef="r:1c12d022-dd1a-4314-bcc9-f6cffa796c03(jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions)/4930188782568120127">
     <file name="AddOrRemoveReferenceAttribute_Intention.java">
@@ -212,6 +220,10 @@
       </scope>
       <unit id="4930188782568120127" at="44,0,68,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions.AddOrRemoveReferenceAttribute_Intention$IntentionImplementation" />
       <unit id="4930188782568120127" at="21,0,69,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions.AddOrRemoveReferenceAttribute_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="4930188782568120127" at="39,72,40,72" concept="2" />
+      <node id="4930188782568120127" at="54,58,55,58" concept="2" />
     </file>
   </root>
 </debug-info>

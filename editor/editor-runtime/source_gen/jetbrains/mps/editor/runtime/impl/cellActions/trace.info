@@ -634,7 +634,7 @@
       </scope>
       <scope id="670750554959022115" at="62,0,68,0">
         <var name="checkedDotOperand" id="670750554959022115" />
-        <var name="editorContext" id="670750554959022115" />
+        <var name="editorContext" id="3384976123267985356" />
       </scope>
       <scope id="3384976123267963991" at="21,88,36,60">
         <var name="cellId" id="3384976123267929945" />

@@ -82,6 +82,10 @@
       <unit id="3514655265371682052" at="47,0,63,0" name="jetbrains.mps.lang.pattern.intentions.CreatePatternVariable_Intention$IntentionImplementation" />
       <unit id="3514655265371682052" at="18,0,64,0" name="jetbrains.mps.lang.pattern.intentions.CreatePatternVariable_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="3514655265371682052" at="37,47,38,64" concept="1" />
+      <node id="3514655265371682052" at="57,52,58,50" concept="1" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)/3514655265371724198">
     <file name="CreatePropertyPatternVariable_Intention.java">
@@ -190,6 +194,10 @@
       <unit id="3514655265371724198" at="58,0,78,0" name="jetbrains.mps.lang.pattern.intentions.CreatePropertyPatternVariable_Intention$IntentionImplementation" />
       <unit id="3514655265371724198" at="27,0,97,0" name="jetbrains.mps.lang.pattern.intentions.CreatePropertyPatternVariable_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="3514655265371724198" at="38,64,39,72" concept="1" />
+      <node id="3514655265371724198" at="58,50,59,58" concept="1" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)/3514655265371785881">
     <file name="CreateListPattern_Intention.java">
@@ -271,6 +279,10 @@
       <unit id="3514655265371785881" at="53,0,74,0" name="jetbrains.mps.lang.pattern.intentions.CreateListPattern_Intention$IntentionImplementation" />
       <unit id="3514655265371785881" at="23,0,75,0" name="jetbrains.mps.lang.pattern.intentions.CreateListPattern_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="3514655265371785881" at="39,72,40,60" concept="1" />
+      <node id="3514655265371785881" at="59,58,60,46" concept="1" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)/3514655265371789444">
     <file name="CreateWildcardPattern_Intention.java">
@@ -340,6 +352,10 @@
       </scope>
       <unit id="3514655265371789444" at="50,0,67,0" name="jetbrains.mps.lang.pattern.intentions.CreateWildcardPattern_Intention$IntentionImplementation" />
       <unit id="3514655265371789444" at="21,0,68,0" name="jetbrains.mps.lang.pattern.intentions.CreateWildcardPattern_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="3514655265371789444" at="40,60,41,64" concept="1" />
+      <node id="3514655265371789444" at="60,46,61,50" concept="1" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)/3514655265371789469">
@@ -411,6 +427,10 @@
       <unit id="3514655265371789469" at="50,0,67,0" name="jetbrains.mps.lang.pattern.intentions.CreateAsPattern_Intention$IntentionImplementation" />
       <unit id="3514655265371789469" at="21,0,68,0" name="jetbrains.mps.lang.pattern.intentions.CreateAsPattern_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="3514655265371789469" at="41,64,42,58" concept="1" />
+      <node id="3514655265371789469" at="61,50,62,44" concept="1" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)/4413230749907735528">
     <file name="CreateActionAsPattern_Intention.java">
@@ -481,6 +501,10 @@
       </scope>
       <unit id="4413230749907735528" at="52,0,70,0" name="jetbrains.mps.lang.pattern.intentions.CreateActionAsPattern_Intention$IntentionImplementation" />
       <unit id="4413230749907735528" at="23,0,71,0" name="jetbrains.mps.lang.pattern.intentions.CreateActionAsPattern_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="4413230749907735528" at="42,58,43,64" concept="1" />
+      <node id="4413230749907735528" at="62,44,63,50" concept="1" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)/7503628237557172902">
@@ -559,6 +583,10 @@
       <unit id="7503628237557172902" at="51,0,72,0" name="jetbrains.mps.lang.pattern.intentions.ConvertPatternNodeToQuotation_Intention$IntentionImplementation" />
       <unit id="7503628237557172902" at="22,0,73,0" name="jetbrains.mps.lang.pattern.intentions.ConvertPatternNodeToQuotation_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="7503628237557172902" at="44,58,45,72" concept="1" />
+      <node id="7503628237557172902" at="64,44,65,58" concept="1" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)/8263735385373627208">
     <file name="CreateOrPattern_Intention.java">
@@ -634,6 +662,10 @@
       </scope>
       <unit id="8263735385373627208" at="55,0,74,0" name="jetbrains.mps.lang.pattern.intentions.CreateOrPattern_Intention$IntentionImplementation" />
       <unit id="8263735385373627208" at="25,0,75,0" name="jetbrains.mps.lang.pattern.intentions.CreateOrPattern_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="8263735385373627208" at="43,64,44,58" concept="1" />
+      <node id="8263735385373627208" at="63,50,64,44" concept="1" />
     </file>
   </root>
 </debug-info>

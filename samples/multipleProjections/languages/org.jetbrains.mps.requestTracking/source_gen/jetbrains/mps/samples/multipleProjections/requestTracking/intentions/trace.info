@@ -16,6 +16,10 @@
     </file>
   </root>
   <root nodeRef="r:609c99e8-3a24-425d-8723-60cb603f5c76(jetbrains.mps.samples.multipleProjections.requestTracking.intentions)/1007054899182276663">
+    <file name="IntentionsDescriptor.java">
+      <node id="1007054899182276663" at="37,47,38,56" concept="2" />
+      <node id="1007054899182276663" at="58,52,59,42" concept="2" />
+    </file>
     <file name="ViewAsTabular_Intention.java">
       <node id="1007054899182276663" at="19,0,20,0" concept="3" trace="myCachedExecutable" />
       <node id="1007054899182276663" at="20,36,21,182" concept="9" />
@@ -94,6 +98,10 @@
     </file>
   </root>
   <root nodeRef="r:609c99e8-3a24-425d-8723-60cb603f5c76(jetbrains.mps.samples.multipleProjections.requestTracking.intentions)/1007054899182495150">
+    <file name="IntentionsDescriptor.java">
+      <node id="1007054899182495150" at="45,47,46,59" concept="2" />
+      <node id="1007054899182495150" at="59,42,60,45" concept="2" />
+    </file>
     <file name="ViewAllAsTabular_Intention.java">
       <node id="1007054899182495150" at="18,0,19,0" concept="3" trace="myCachedExecutable" />
       <node id="1007054899182495150" at="19,39,20,182" concept="9" />
@@ -169,6 +177,10 @@
     </file>
   </root>
   <root nodeRef="r:609c99e8-3a24-425d-8723-60cb603f5c76(jetbrains.mps.samples.multipleProjections.requestTracking.intentions)/1007054899182538857">
+    <file name="IntentionsDescriptor.java">
+      <node id="1007054899182538857" at="38,56,39,73" concept="2" />
+      <node id="1007054899182538857" at="60,45,61,59" concept="2" />
+    </file>
     <file name="ViewAsTabularThroughTheEnumBox_Intention.java">
       <node id="1007054899182538857" at="20,0,21,0" concept="3" trace="myCachedExecutable" />
       <node id="1007054899182538857" at="21,53,22,182" concept="9" />

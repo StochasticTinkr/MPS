@@ -127,6 +127,10 @@
       <unit id="2068944020170372970" at="56,0,93,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention$IntentionImplementation" />
       <unit id="2068944020170372970" at="27,0,101,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="2068944020170372970" at="56,47,57,66" concept="3" />
+      <node id="2068944020170372970" at="106,47,107,52" concept="3" />
+    </file>
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/2217234381367409810">
     <file name="AddSeeBlockTag_Intention.java">
@@ -187,6 +191,10 @@
       </scope>
       <unit id="2217234381367409810" at="42,0,60,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddSeeBlockTag_Intention$IntentionImplementation" />
       <unit id="2217234381367409810" at="19,0,61,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddSeeBlockTag_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="2217234381367409810" at="40,64,41,57" concept="3" />
+      <node id="2217234381367409810" at="107,52,108,43" concept="3" />
     </file>
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/3196018662491292781">
@@ -329,6 +337,10 @@
       <unit id="3196018662491292781" at="50,0,107,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention$IntentionImplementation" />
       <unit id="3196018662491292781" at="27,0,122,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="3196018662491292781" at="49,47,50,62" concept="3" />
+      <node id="3196018662491292781" at="99,53,100,48" concept="3" />
+    </file>
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/4021391592916341753">
     <file name="AddStaticFieldDocComment_Intention.java">
@@ -397,6 +409,10 @@
       </scope>
       <unit id="4021391592916341753" at="46,0,71,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddStaticFieldDocComment_Intention$IntentionImplementation" />
       <unit id="4021391592916341753" at="23,0,72,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddStaticFieldDocComment_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="4021391592916341753" at="86,47,87,67" concept="3" />
+      <node id="4021391592916341753" at="108,43,109,53" concept="3" />
     </file>
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/5332352441256170917">
@@ -483,6 +499,10 @@
       <unit id="5858074156537083239" at="42,0,59,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddParameterBlockDocTag_Intention$IntentionImplementation" />
       <unit id="5858074156537083239" at="19,0,60,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddParameterBlockDocTag_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="5858074156537083239" at="77,47,78,66" concept="3" />
+      <node id="5858074156537083239" at="103,50,104,52" concept="3" />
+    </file>
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/6612597108004799966">
     <file name="FoldHTMLElement_Intention.java">
@@ -555,6 +575,10 @@
       <unit id="6612597108004799966" at="46,0,68,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.FoldHTMLElement_Intention$IntentionImplementation" />
       <unit id="6612597108004799966" at="23,0,72,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.FoldHTMLElement_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="6612597108004799966" at="70,47,71,58" concept="3" />
+      <node id="6612597108004799966" at="109,53,110,45" concept="3" />
+    </file>
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/6612597108006318457">
     <file name="AddThrowBlockDocTag_Intention.java">
@@ -616,6 +640,10 @@
       </scope>
       <unit id="6612597108006318457" at="42,0,61,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddThrowBlockDocTag_Intention$IntentionImplementation" />
       <unit id="6612597108006318457" at="19,0,62,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddThrowBlockDocTag_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="6612597108006318457" at="79,60,80,62" concept="3" />
+      <node id="6612597108006318457" at="110,45,111,49" concept="3" />
     </file>
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/6832197706140861451">
@@ -692,6 +720,10 @@
       <unit id="6832197706140861451" at="52,0,71,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddReturnBlockTag_Intention$IntentionImplementation" />
       <unit id="6832197706140861451" at="22,0,72,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddReturnBlockTag_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="6832197706140861451" at="78,66,79,60" concept="3" />
+      <node id="6832197706140861451" at="104,52,105,46" concept="3" />
+    </file>
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/6832197706140958200">
     <file name="AddFieldDocComment_Intention.java">
@@ -762,8 +794,16 @@
       <unit id="6832197706140958200" at="46,0,72,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention$IntentionImplementation" />
       <unit id="6832197706140958200" at="23,0,73,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="6832197706140958200" at="63,47,64,61" concept="3" />
+      <node id="6832197706140958200" at="105,46,106,47" concept="3" />
+    </file>
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/7427066632718011033">
+    <file name="IntentionsDescriptor.java">
+      <node id="7427066632718011033" at="42,67,43,55" concept="3" />
+      <node id="7427066632718011033" at="112,54,113,42" concept="3" />
+    </file>
     <file name="OrganizeTags_Intention.java">
       <node id="7427066632718011033" at="20,0,21,0" concept="4" trace="myCachedExecutable" />
       <node id="7427066632718011033" at="21,35,22,159" concept="13" />
@@ -904,6 +944,10 @@
       <unit id="8362517669643823244" at="53,0,74,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddDeprecatedBlockDocTag_Intention$IntentionImplementation" />
       <unit id="8362517669643823244" at="24,0,75,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddDeprecatedBlockDocTag_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="8362517669643823244" at="41,57,42,67" concept="3" />
+      <node id="8362517669643823244" at="111,49,112,54" concept="3" />
+    </file>
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/8465538089690783660">
     <file name="AddAuthorBlockDocTag_Intention.java">
@@ -964,6 +1008,10 @@
       </scope>
       <unit id="8465538089690783660" at="44,0,62,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddAuthorBlockDocTag_Intention$IntentionImplementation" />
       <unit id="8465538089690783660" at="21,0,63,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddAuthorBlockDocTag_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="8465538089690783660" at="37,47,38,63" concept="3" />
+      <node id="8465538089690783660" at="100,48,101,49" concept="3" />
     </file>
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/8465538089690815842">
@@ -1036,6 +1084,10 @@
       <unit id="8465538089690815842" at="50,0,68,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddSinceBlockDocTag_Intention$IntentionImplementation" />
       <unit id="8465538089690815842" at="21,0,69,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddSinceBlockDocTag_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="8465538089690815842" at="38,63,39,62" concept="3" />
+      <node id="8465538089690815842" at="101,49,102,48" concept="3" />
+    </file>
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/8465538089690851630">
     <file name="AddVersionBlockTagDoc_Intention.java">
@@ -1105,6 +1157,10 @@
       </scope>
       <unit id="8465538089690851630" at="50,0,67,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddVersionBlockTagDoc_Intention$IntentionImplementation" />
       <unit id="8465538089690851630" at="21,0,68,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddVersionBlockTagDoc_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="8465538089690851630" at="39,62,40,64" concept="3" />
+      <node id="8465538089690851630" at="102,48,103,50" concept="3" />
     </file>
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/8520807190704743043">

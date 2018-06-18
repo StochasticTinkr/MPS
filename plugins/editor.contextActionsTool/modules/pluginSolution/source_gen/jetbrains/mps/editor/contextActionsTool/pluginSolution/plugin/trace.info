@@ -226,7 +226,7 @@
       </scope>
       <scope id="1108075632710646118" at="127,0,133,0">
         <var name="checkedDotOperand" id="1108075632710646118" />
-        <var name="collapsed" id="1108075632710646118" />
+        <var name="collapsed" id="1108075632710646123" />
       </scope>
       <scope id="8009069486210097254" at="67,61,74,52">
         <var name="maxWidth" id="8009069486210053579" />
@@ -786,7 +786,6 @@
   <root nodeRef="r:e1663f0e-a433-4acc-be78-d50e0f2be978(jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin)/6294660000051114314">
     <file name="PluginSolution_ProjectPlugin.java">
       <node id="6294660000051114314" at="15,56,16,76" concept="9" />
-      <node id="6294660000051114314" at="16,76,17,82" concept="4" />
       <node id="6294660000051114314" at="17,82,18,17" concept="10" />
       <node id="6294660000051114314" at="13,0,15,0" concept="2" trace="PluginSolution_ProjectPlugin#()V" />
       <node id="6294660000051114314" at="15,0,20,0" concept="8" trace="initAllTools1#(Lcom/intellij/openapi/project/Project;)Ljava/util/List;" />
@@ -859,6 +858,9 @@
       </scope>
       <unit id="979234276368085638" at="37,40,41,5" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsTool_Tool$1" />
       <unit id="6294660000051114344" at="18,0,58,0" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsTool_Tool" />
+    </file>
+    <file name="PluginSolution_ProjectPlugin.java">
+      <node id="6294660000051114344" at="16,76,17,82" concept="4" />
     </file>
   </root>
   <root nodeRef="r:e1663f0e-a433-4acc-be78-d50e0f2be978(jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin)/6866332489278585921">

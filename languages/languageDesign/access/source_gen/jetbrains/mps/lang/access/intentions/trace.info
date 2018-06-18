@@ -15,6 +15,10 @@
     </file>
   </root>
   <root nodeRef="r:4df57e9b-2a09-44c7-b16d-4af6620e3aaa(jetbrains.mps.lang.access.intentions)/1616052750811363739">
+    <file name="IntentionsDescriptor.java">
+      <node id="1616052750811363739" at="37,47,38,89" concept="1" />
+      <node id="1616052750811363739" at="50,52,51,75" concept="1" />
+    </file>
     <file name="SurroundWithExecuteLightweightCommandStatement_Intention.java">
       <node id="1616052750811363739" at="24,0,25,0" concept="2" trace="myCachedExecutable" />
       <node id="1616052750811363739" at="25,69,26,151" concept="8" />

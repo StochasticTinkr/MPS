@@ -15,6 +15,10 @@
     </file>
   </root>
   <root nodeRef="r:dbb111e4-8af4-4e6d-b49d-e07620d0c285(jetbrains.mps.lang.behavior.intentions)/1225201879279">
+    <file name="IntentionsDescriptor.java">
+      <node id="1225201879279" at="37,47,38,55" concept="2" />
+      <node id="1225201879279" at="53,52,54,41" concept="2" />
+    </file>
     <file name="MakeAbstract_Intention.java">
       <node id="1225201879279" at="22,0,23,0" concept="3" trace="myCachedExecutable" />
       <node id="1225201879279" at="23,35,24,146" concept="8" />
@@ -91,6 +95,10 @@
     </file>
   </root>
   <root nodeRef="r:dbb111e4-8af4-4e6d-b49d-e07620d0c285(jetbrains.mps.lang.behavior.intentions)/1225201879322">
+    <file name="IntentionsDescriptor.java">
+      <node id="1225201879322" at="38,55,39,54" concept="2" />
+      <node id="1225201879322" at="54,41,55,40" concept="2" />
+    </file>
     <file name="MakeVirtual_Intention.java">
       <node id="1225201879322" at="20,0,21,0" concept="3" trace="myCachedExecutable" />
       <node id="1225201879322" at="21,34,22,146" concept="8" />
@@ -166,6 +174,10 @@
     </file>
   </root>
   <root nodeRef="r:dbb111e4-8af4-4e6d-b49d-e07620d0c285(jetbrains.mps.lang.behavior.intentions)/4748945189160275754">
+    <file name="IntentionsDescriptor.java">
+      <node id="4748945189160275754" at="40,52,41,53" concept="2" />
+      <node id="4748945189160275754" at="56,38,57,39" concept="2" />
+    </file>
     <file name="MakeStatic_Intention.java">
       <node id="4748945189160275754" at="26,0,27,0" concept="3" trace="myCachedExecutable" />
       <node id="4748945189160275754" at="27,33,28,152" concept="8" />
@@ -261,6 +273,10 @@
     </file>
   </root>
   <root nodeRef="r:dbb111e4-8af4-4e6d-b49d-e07620d0c285(jetbrains.mps.lang.behavior.intentions)/6678378332547031548">
+    <file name="IntentionsDescriptor.java">
+      <node id="6678378332547031548" at="39,54,40,52" concept="2" />
+      <node id="6678378332547031548" at="55,40,56,38" concept="2" />
+    </file>
     <file name="RemoveTVD_Intention.java">
       <node id="6678378332547031548" at="21,0,22,0" concept="3" trace="myCachedExecutable" />
       <node id="6678378332547031548" at="22,32,23,151" concept="8" />

@@ -67,6 +67,10 @@
       <unit id="6820996345401611689" at="40,0,55,0" name="jetbrains.mps.lang.editor.menus.extras.testLanguage.intentions.ApplicableIntention_Intention$IntentionImplementation" />
       <unit id="6820996345401611689" at="17,0,56,0" name="jetbrains.mps.lang.editor.menus.extras.testLanguage.intentions.ApplicableIntention_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="6820996345401611689" at="37,47,38,62" concept="1" />
+      <node id="6820996345401611689" at="51,52,52,48" concept="1" />
+    </file>
   </root>
   <root nodeRef="r:8d2a217a-f2d0-4d4a-b867-e2dd2ddb731c(jetbrains.mps.lang.editor.menus.extras.testLanguage.intentions)/6820996345401618935">
     <file name="InapplicableIntention_Intention.java">
@@ -132,6 +136,10 @@
       </scope>
       <unit id="6820996345401618935" at="46,0,61,0" name="jetbrains.mps.lang.editor.menus.extras.testLanguage.intentions.InapplicableIntention_Intention$IntentionImplementation" />
       <unit id="6820996345401618935" at="17,0,62,0" name="jetbrains.mps.lang.editor.menus.extras.testLanguage.intentions.InapplicableIntention_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="6820996345401618935" at="38,62,39,64" concept="1" />
+      <node id="6820996345401618935" at="52,48,53,50" concept="1" />
     </file>
   </root>
 </debug-info>

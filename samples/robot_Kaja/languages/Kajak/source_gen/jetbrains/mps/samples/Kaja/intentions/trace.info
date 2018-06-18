@@ -86,6 +86,10 @@
       <unit id="7446293342517485574" at="47,0,72,0" name="jetbrains.mps.samples.Kaja.intentions.ExtractRoutine_Intention$IntentionImplementation" />
       <unit id="7446293342517485574" at="24,0,73,0" name="jetbrains.mps.samples.Kaja.intentions.ExtractRoutine_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="7446293342517485574" at="37,47,38,57" concept="1" />
+      <node id="7446293342517485574" at="50,52,51,43" concept="1" />
+    </file>
   </root>
 </debug-info>
 

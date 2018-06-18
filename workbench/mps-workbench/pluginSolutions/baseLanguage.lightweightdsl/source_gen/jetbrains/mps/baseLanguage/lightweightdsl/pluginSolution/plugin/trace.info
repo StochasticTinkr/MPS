@@ -84,6 +84,9 @@
       </scope>
       <unit id="1349873286205735780" at="19,0,46,0" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.DSLComponentMessage" />
     </file>
+    <file name="IconContainer.java">
+      <node id="3721059191406271999" at="9,0,10,0" concept="11" trace="ICON_a0a4" />
+    </file>
   </root>
   <root nodeRef="d43affd0-e5f9-482c-adc1-9400b73f2a8d/r:b2267b28-bfcc-40f1-8447-02c15480f0d2(jetbrains.mps.lang.classLike.pluginSolution/jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin)/3402736933910154624">
     <file name="ClassLikes_ActionGroup.java">
@@ -165,6 +168,10 @@
       <unit id="4601407620868441946" at="60,17,64,5" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikes_ActionGroup$4" />
       <unit id="3402736933910154624" at="33,0,80,0" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikes_ActionGroup" />
     </file>
+    <file name="PluginSolution_ApplicationPlugin.java">
+      <node id="3402736933910154624" at="24,14,25,43" concept="2" />
+      <node id="3402736933910155209" at="27,37,28,131" concept="2" />
+    </file>
   </root>
   <root nodeRef="d43affd0-e5f9-482c-adc1-9400b73f2a8d/r:b2267b28-bfcc-40f1-8447-02c15480f0d2(jetbrains.mps.lang.classLike.pluginSolution/jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin)/3402736933910478500">
     <file name="NewClassLike_Action.java">
@@ -186,10 +193,10 @@
       <node id="8335510736429943163" at="57,173,58,65" concept="2" />
       <node id="6141693041786223082" at="59,5,60,42" concept="2" />
       <node id="3402736933910478500" at="64,53,65,19" concept="8" />
-      <node id="3402736933910478500" at="67,5,68,66" concept="7" />
-      <node id="3402736933910478500" at="69,22,70,21" concept="8" />
-      <node id="3402736933910478500" at="73,5,74,56" concept="7" />
-      <node id="3402736933910478500" at="75,22,76,21" concept="8" />
+      <node id="9043019025105518220" at="67,5,68,66" concept="7" />
+      <node id="9043019025105518221" at="69,22,70,21" concept="8" />
+      <node id="3402736933910987359" at="73,5,74,56" concept="7" />
+      <node id="3402736933910987360" at="75,22,76,21" concept="8" />
       <node id="3402736933910478500" at="78,5,79,16" concept="8" />
       <node id="1291729193367975265" at="82,96,83,160" concept="7" />
       <node id="1909661648054966142" at="83,160,84,19" concept="7" />
@@ -214,14 +221,14 @@
       <node id="1291729193367978933" at="90,10,92,5" concept="0" />
       <node id="6327362524873719327" at="56,10,59,5" concept="0" />
       <node id="3402736933910478500" at="63,95,66,5" concept="5" />
-      <node id="3402736933910478500" at="68,66,71,7" concept="5" />
-      <node id="3402736933910478500" at="74,56,77,7" concept="5" />
+      <node id="9043019025105518221" at="68,66,71,7" concept="5" />
+      <node id="3402736933910987360" at="74,56,77,7" concept="5" />
       <node id="7284128129092652929" at="92,5,95,5" concept="5" />
       <node id="3402736933910478500" at="107,0,110,0" concept="12" trace="descr_State#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="3402736933910478500" at="42,0,46,0" concept="6" trace="isDumbAware#()Z" />
       <node id="3402736933910478500" at="36,0,42,0" concept="1" trace="NewClassLike_Action#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3402736933910478500" at="66,5,72,5" concept="0" />
-      <node id="3402736933910478500" at="72,5,78,5" concept="0" />
+      <node id="9043019025105518220" at="66,5,72,5" concept="0" />
+      <node id="3402736933910987359" at="72,5,78,5" concept="0" />
       <node id="6305381134221737587" at="110,0,116,0" concept="12" trace="createDSLAnnotation_3skzbb_a0c0c0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6305381134221607677" at="51,214,59,5" concept="5" />
       <node id="1291729193367977244" at="84,19,92,5" concept="5" />
@@ -231,8 +238,8 @@
       <node id="3402736933910478500" at="62,0,81,0" concept="6" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <scope id="3402736933910478500" at="43,32,44,16" />
       <scope id="3402736933910478500" at="64,53,65,19" />
-      <scope id="3402736933910478500" at="69,22,70,21" />
-      <scope id="3402736933910478500" at="75,22,76,21" />
+      <scope id="9043019025105518221" at="69,22,70,21" />
+      <scope id="3402736933910987360" at="75,22,76,21" />
       <scope id="1291729193367978934" at="90,12,91,283" />
       <scope id="7284128129092652934" at="93,110,94,114" />
       <scope id="3402736933910486850" at="107,50,108,41" />
@@ -247,11 +254,11 @@
       </scope>
       <scope id="3402736933910478500" at="36,47,40,41" />
       <scope id="3402736933910478500" at="42,0,46,0" />
-      <scope id="3402736933910478500" at="67,5,71,7">
-        <var name="p" id="3402736933910478500" />
+      <scope id="9043019025105518220" at="67,5,71,7">
+        <var name="p" id="9043019025105518220" />
       </scope>
-      <scope id="3402736933910478500" at="73,5,77,7">
-        <var name="p" id="3402736933910478500" />
+      <scope id="3402736933910987359" at="73,5,77,7">
+        <var name="p" id="3402736933910987359" />
       </scope>
       <scope id="1291729193367977246" at="85,211,89,113" />
       <scope id="6305381134221737587" at="110,70,114,14">
@@ -298,14 +305,9 @@
       <node id="3402736933910793048" at="15,0,16,0" concept="3" trace="myId" />
       <node id="3402736933910793048" at="18,27,19,16" concept="8" />
       <node id="3402736933910793048" at="21,30,22,30" concept="9" />
-      <node id="3402736933910793048" at="22,30,23,50" concept="2" />
       <node id="3402736933910793048" at="23,50,24,14" concept="9" />
-      <node id="3402736933910793048" at="24,14,25,43" concept="2" />
-      <node id="3402736933910793048" at="27,37,28,131" concept="2" />
       <node id="3402736933910793048" at="30,48,31,92" concept="7" />
-      <node id="3402736933910793048" at="31,92,32,71" concept="2" />
       <node id="3402736933910793048" at="32,71,33,15" concept="8" />
-      <node id="3402736933910793048" at="36,66,37,59" concept="2" />
       <node id="3402736933910793048" at="16,0,18,0" concept="1" trace="PluginSolution_ApplicationPlugin#()V" />
       <node id="3402736933910793048" at="18,0,21,0" concept="6" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
       <node id="3402736933910793048" at="27,0,30,0" concept="6" trace="adjustRegularGroups#()V" />
@@ -331,7 +333,6 @@
       <unit id="3402736933910793048" at="14,0,40,0" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
     </file>
     <file name="PluginSolution_ProjectPlugin.java">
-      <node id="3402736933910793048" at="12,62,13,76" concept="2" />
       <node id="3402736933910793048" at="10,0,12,0" concept="1" trace="PluginSolution_ProjectPlugin#()V" />
       <node id="3402736933910793048" at="12,0,15,0" concept="6" trace="fillCustomParts#(Ljava/util/List;)V" />
       <scope id="3402736933910793048" at="10,41,10,41" />
@@ -458,11 +459,14 @@
       <unit id="4636688088951516984" at="48,56,91,3" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_AppPluginPart$2" />
       <unit id="4636688088951482428" at="37,0,114,0" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_AppPluginPart" />
     </file>
+    <file name="PluginSolution_ApplicationPlugin.java">
+      <node id="4636688088951482428" at="36,66,37,59" concept="2" />
+    </file>
   </root>
   <root nodeRef="d43affd0-e5f9-482c-adc1-9400b73f2a8d/r:b2267b28-bfcc-40f1-8447-02c15480f0d2(jetbrains.mps.lang.classLike.pluginSolution/jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin)/4786287919262031781">
     <file name="Default_KeymapChanges.java">
       <node id="4786287919262031781" at="11,34,12,14" concept="9" />
-      <node id="4786287919262031781" at="12,14,13,141" concept="2" />
+      <node id="4786287919262031790" at="12,14,13,141" concept="2" />
       <node id="4786287919262031781" at="13,141,14,28" concept="9" />
       <node id="4786287919262031781" at="14,28,15,15" concept="9" />
       <node id="4786287919262031781" at="17,29,18,22" concept="8" />
@@ -479,6 +483,9 @@
       <scope id="4786287919262031781" at="11,34,15,15" />
       <scope id="4786287919262031781" at="11,0,17,0" />
       <unit id="4786287919262031781" at="10,0,24,0" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.Default_KeymapChanges" />
+    </file>
+    <file name="PluginSolution_ApplicationPlugin.java">
+      <node id="4786287919262031781" at="31,92,32,71" concept="2" />
     </file>
   </root>
   <root nodeRef="d43affd0-e5f9-482c-adc1-9400b73f2a8d/r:b2267b28-bfcc-40f1-8447-02c15480f0d2(jetbrains.mps.lang.classLike.pluginSolution/jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin)/677005901390826846">
@@ -505,6 +512,9 @@
       </scope>
       <unit id="677005901390826846" at="9,0,26,0" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.LightweightDSLUneditableMemberGutter_ProjectPluginPart" />
     </file>
+    <file name="PluginSolution_ProjectPlugin.java">
+      <node id="677005901390826846" at="12,62,13,76" concept="2" />
+    </file>
   </root>
   <root nodeRef="d43affd0-e5f9-482c-adc1-9400b73f2a8d/r:b2267b28-bfcc-40f1-8447-02c15480f0d2(jetbrains.mps.lang.classLike.pluginSolution/jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin)/7381594984973208058">
     <file name="GoToMemberDeclaration_Action.java">
@@ -514,44 +524,44 @@
       <node id="7381594984973208058" at="23,35,24,41" concept="2" />
       <node id="7381594984973208058" at="27,32,28,16" concept="8" />
       <node id="7381594984973208058" at="32,53,33,19" concept="8" />
-      <node id="7381594984973208058" at="35,5,36,57" concept="7" />
-      <node id="7381594984973208058" at="37,239,38,20" concept="2" />
-      <node id="7381594984973208058" at="40,25,41,21" concept="8" />
-      <node id="7381594984973208058" at="44,5,45,66" concept="7" />
-      <node id="7381594984973208058" at="46,22,47,21" concept="8" />
+      <node id="7381594984973312042" at="35,5,36,57" concept="7" />
+      <node id="7381594984973312042" at="37,239,38,20" concept="2" />
+      <node id="7381594984973312044" at="40,25,41,21" concept="8" />
+      <node id="4197537290463557562" at="44,5,45,66" concept="7" />
+      <node id="4197537290463557563" at="46,22,47,21" concept="8" />
       <node id="7381594984973208058" at="49,5,50,16" concept="8" />
       <node id="7381594984973338259" at="53,96,54,334" concept="7" />
       <node id="7381594984973351781" at="54,334,55,121" concept="2" />
       <node id="7381594984973208058" at="31,95,34,5" concept="5" />
-      <node id="7381594984973208058" at="36,57,39,7" concept="5" />
-      <node id="7381594984973208058" at="39,7,42,7" concept="5" />
-      <node id="7381594984973208058" at="45,66,48,7" concept="5" />
+      <node id="7381594984973312042" at="36,57,39,7" concept="5" />
+      <node id="7381594984973312044" at="39,7,42,7" concept="5" />
+      <node id="4197537290463557563" at="45,66,48,7" concept="5" />
       <node id="7381594984973208058" at="26,0,30,0" concept="6" trace="isDumbAware#()Z" />
       <node id="7381594984973208058" at="21,0,26,0" concept="1" trace="GoToMemberDeclaration_Action#()V" />
       <node id="7381594984973208058" at="52,0,57,0" concept="6" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="7381594984973208058" at="43,5,49,5" concept="0" />
-      <node id="7381594984973208058" at="34,5,43,5" concept="0" />
+      <node id="4197537290463557562" at="43,5,49,5" concept="0" />
+      <node id="7381594984973312042" at="34,5,43,5" concept="0" />
       <node id="7381594984973208058" at="30,0,52,0" concept="6" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <scope id="7381594984973208058" at="27,32,28,16" />
       <scope id="7381594984973208058" at="32,53,33,19" />
-      <scope id="7381594984973208058" at="37,239,38,20" />
-      <scope id="7381594984973208058" at="40,25,41,21" />
-      <scope id="7381594984973208058" at="46,22,47,21" />
+      <scope id="7381594984973312042" at="37,239,38,20" />
+      <scope id="7381594984973312044" at="40,25,41,21" />
+      <scope id="4197537290463557563" at="46,22,47,21" />
       <scope id="7381594984973208058" at="53,96,55,121">
         <var name="methodDescriptor" id="7381594984973338262" />
       </scope>
       <scope id="7381594984973208058" at="21,41,24,41" />
       <scope id="7381594984973208058" at="26,0,30,0" />
-      <scope id="7381594984973208058" at="44,5,48,7">
-        <var name="p" id="7381594984973208058" />
+      <scope id="4197537290463557562" at="44,5,48,7">
+        <var name="p" id="4197537290463557562" />
       </scope>
       <scope id="7381594984973208058" at="21,0,26,0" />
       <scope id="7381594984973208058" at="52,0,57,0">
         <var name="_params" id="7381594984973208058" />
         <var name="event" id="7381594984973208058" />
       </scope>
-      <scope id="7381594984973208058" at="35,5,42,7">
-        <var name="node" id="7381594984973208058" />
+      <scope id="7381594984973312042" at="35,5,42,7">
+        <var name="node" id="7381594984973312042" />
       </scope>
       <scope id="7381594984973208058" at="31,95,50,16" />
       <scope id="7381594984973208058" at="30,0,52,0">
@@ -559,6 +569,9 @@
         <var name="event" id="7381594984973208058" />
       </scope>
       <unit id="7381594984973208058" at="18,0,58,0" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.GoToMemberDeclaration_Action" />
+    </file>
+    <file name="PluginSolution_ApplicationPlugin.java">
+      <node id="7381594984973208058" at="22,30,23,50" concept="2" />
     </file>
   </root>
 </debug-info>

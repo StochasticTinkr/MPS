@@ -14,6 +14,14 @@
     </file>
   </root>
   <root nodeRef="r:2b8cf114-de7a-440d-b955-6b0f15336c9e(jetbrains.mps.lang.slanguage.typesystem)/2030416617761258183">
+    <file name="TypesystemDescriptor.java">
+      <node id="2030416617761258183" at="14,5,15,95" concept="5" />
+      <node id="2030416617761258183" at="15,95,16,47" concept="2" />
+      <node id="2030416617761258183" at="13,5,17,5" concept="0" />
+      <scope id="2030416617761258183" at="14,5,16,47">
+        <var name="inferenceRule" id="2030416617761258183" />
+      </scope>
+    </file>
     <file name="typeof_Model_IsAspectOperation_InferenceRule.java">
       <node id="2030416617761261133" at="20,5,21,44" concept="5" />
       <node id="2030416617761261133" at="21,44,22,205" concept="5" />
@@ -61,6 +69,14 @@
     </file>
   </root>
   <root nodeRef="r:2b8cf114-de7a-440d-b955-6b0f15336c9e(jetbrains.mps.lang.slanguage.typesystem)/5932042262275872849">
+    <file name="TypesystemDescriptor.java">
+      <node id="5932042262275872849" at="18,5,19,89" concept="5" />
+      <node id="5932042262275872849" at="19,89,20,47" concept="2" />
+      <node id="5932042262275872849" at="17,5,21,5" concept="0" />
+      <scope id="5932042262275872849" at="18,5,20,47">
+        <var name="inferenceRule" id="5932042262275872849" />
+      </scope>
+    </file>
     <file name="typeof_OfAspectOperation_InferenceRule.java">
       <node id="2799321329875510980" at="21,5,22,119" concept="5" />
       <node id="2799321329875510980" at="22,119,23,205" concept="5" />
@@ -134,6 +150,14 @@
     </file>
   </root>
   <root nodeRef="r:2b8cf114-de7a-440d-b955-6b0f15336c9e(jetbrains.mps.lang.slanguage.typesystem)/6171083915388333171">
+    <file name="TypesystemDescriptor.java">
+      <node id="6171083915388333171" at="10,5,11,96" concept="5" />
+      <node id="6171083915388333171" at="11,96,12,47" concept="2" />
+      <node id="6171083915388333171" at="9,33,13,5" concept="0" />
+      <scope id="6171083915388333171" at="10,5,12,47">
+        <var name="inferenceRule" id="6171083915388333171" />
+      </scope>
+    </file>
     <file name="typeof_AspectModelRefExpression_InferenceRule.java">
       <node id="6171083915388336847" at="22,5,23,43" concept="5" />
       <node id="6171083915388336847" at="23,43,24,205" concept="5" />

@@ -78,6 +78,10 @@
       <unit id="8706695667516275787" at="48,0,64,0" name="jetbrains.mps.build.intentions.AddCustomLocationJavaJar_Intention$IntentionImplementation" />
       <unit id="8706695667516275787" at="19,0,65,0" name="jetbrains.mps.build.intentions.AddCustomLocationJavaJar_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="8706695667516275787" at="37,47,38,67" concept="1" />
+      <node id="8706695667516275787" at="50,52,51,53" concept="1" />
+    </file>
   </root>
 </debug-info>
 

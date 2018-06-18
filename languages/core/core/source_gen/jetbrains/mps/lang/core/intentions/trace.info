@@ -18,6 +18,10 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)/4222318806802430725">
+    <file name="IntentionsDescriptor.java">
+      <node id="4222318806802430725" at="44,47,45,57" concept="3" />
+      <node id="4222318806802430725" at="57,52,58,43" concept="3" />
+    </file>
     <file name="SuppressErrors_Intention.java">
       <node id="4222318806802430725" at="23,0,24,0" concept="4" trace="myCachedExecutable" />
       <node id="4222318806802430725" at="24,37,25,148" concept="11" />
@@ -163,6 +167,10 @@
       </scope>
       <unit id="6125986282171430130" at="49,0,66,0" name="jetbrains.mps.lang.core.intentions.AddMissingDependency_Intention$IntentionImplementation" />
       <unit id="6125986282171430130" at="20,0,67,0" name="jetbrains.mps.lang.core.intentions.AddMissingDependency_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="6125986282171430130" at="37,47,38,63" concept="3" />
+      <node id="6125986282171430130" at="58,43,59,49" concept="3" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)/6125986282171721184">

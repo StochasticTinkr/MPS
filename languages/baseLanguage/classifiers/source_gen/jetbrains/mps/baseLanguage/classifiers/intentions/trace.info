@@ -82,6 +82,10 @@
       <unit id="1218968276327" at="49,0,66,0" name="jetbrains.mps.baseLanguage.classifiers.intentions.CreateReferenceOnClassifier_Intention$IntentionImplementation" />
       <unit id="1218968276327" at="20,0,67,0" name="jetbrains.mps.baseLanguage.classifiers.intentions.CreateReferenceOnClassifier_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="1218968276327" at="37,47,38,70" concept="1" />
+      <node id="1218968276327" at="50,52,51,56" concept="1" />
+    </file>
   </root>
 </debug-info>
 

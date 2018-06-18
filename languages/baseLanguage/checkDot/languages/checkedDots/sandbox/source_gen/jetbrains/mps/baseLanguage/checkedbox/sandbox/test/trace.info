@@ -102,8 +102,8 @@
       </scope>
       <scope id="297042804010030398" at="52,0,58,0">
         <var name="checkedDotOperand" id="297042804010030398" />
-        <var name="myString_pdjdqn_a0a0a11" id="297042804010030398" />
-        <var name="myString_pdjdqn_b0a0a11" id="297042804010030398" />
+        <var name="myString_pdjdqn_a0a0a11" id="4726684212254665019" />
+        <var name="myString_pdjdqn_b0a0a11" id="4726684212254665028" />
       </scope>
       <scope id="297042804011726451" at="58,0,64,0">
         <var name="checkedDotOperand" id="297042804011726451" />
@@ -256,17 +256,17 @@
       </scope>
       <scope id="53796356308657442" at="61,0,67,0">
         <var name="checkedDotOperand" id="53796356308657442" />
-        <var name="foo2" id="53796356308657442" />
-        <var name="s" id="53796356308657442" />
-        <var name="t" id="53796356308657442" />
+        <var name="foo2" id="3021153905150326112" />
+        <var name="s" id="3021153905151751701" />
+        <var name="t" id="3021153905151618206" />
       </scope>
       <scope id="53796356308818305" at="67,0,73,0">
         <var name="checkedDotOperand" id="53796356308818305" />
-        <var name="s" id="53796356308818305" />
+        <var name="s" id="3021153905151726000" />
       </scope>
       <scope id="53796356308657431" at="73,0,79,0">
         <var name="checkedDotOperand" id="53796356308657431" />
-        <var name="s" id="53796356308657431" />
+        <var name="s" id="3021153905151720135" />
       </scope>
       <scope id="2319519288049912980" at="79,0,85,0">
         <var name="checkedDotOperand" id="2319519288049912980" />
@@ -278,7 +278,7 @@
       </scope>
       <scope id="3905905920761566061" at="91,0,97,0">
         <var name="checkedDotOperand" id="3905905920761566061" />
-        <var name="myString" id="3905905920761566061" />
+        <var name="myString" id="3021153905120367411" />
       </scope>
       <scope id="3905905920761566072" at="97,0,103,0">
         <var name="checkedDotOperand" id="3905905920761566072" />
@@ -290,7 +290,7 @@
       </scope>
       <scope id="1023687332192251005" at="109,0,115,0">
         <var name="checkedDotOperand" id="1023687332192251005" />
-        <var name="s" id="1023687332192251005" />
+        <var name="s" id="1023687332192535013" />
       </scope>
       <scope id="831786216887884151" at="115,0,121,0">
         <var name="checkedDotOperand" id="831786216887884151" />

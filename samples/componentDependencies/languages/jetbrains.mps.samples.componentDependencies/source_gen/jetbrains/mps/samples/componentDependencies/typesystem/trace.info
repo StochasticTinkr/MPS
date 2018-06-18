@@ -15,6 +15,14 @@
     </file>
   </root>
   <root nodeRef="r:6c7cc4eb-60e9-407a-94da-5f4d6ac9650c(jetbrains.mps.samples.componentDependencies.typesystem)/8153794773742185317">
+    <file name="TypesystemDescriptor.java">
+      <node id="8153794773742185317" at="10,5,11,92" concept="6" />
+      <node id="8153794773742185317" at="11,92,12,55" concept="2" />
+      <node id="8153794773742185317" at="9,33,13,5" concept="0" />
+      <scope id="8153794773742185317" at="10,5,12,55">
+        <var name="nonTypesystemRule" id="8153794773742185317" />
+      </scope>
+    </file>
     <file name="check_Component_NonTypesystemRule.java">
       <node id="8153794773742306724" at="29,377,30,85" concept="6" />
       <node id="8153794773742306695" at="30,85,31,76" concept="6" />
@@ -79,6 +87,14 @@
     </file>
   </root>
   <root nodeRef="r:6c7cc4eb-60e9-407a-94da-5f4d6ac9650c(jetbrains.mps.samples.componentDependencies.typesystem)/8153794773742437304">
+    <file name="TypesystemDescriptor.java">
+      <node id="8153794773742437304" at="14,5,15,93" concept="6" />
+      <node id="8153794773742437304" at="15,93,16,55" concept="2" />
+      <node id="8153794773742437304" at="13,5,17,5" concept="0" />
+      <scope id="8153794773742437304" at="14,5,16,55">
+        <var name="nonTypesystemRule" id="8153794773742437304" />
+      </scope>
+    </file>
     <file name="check_Dependency_NonTypesystemRule.java">
       <node id="8153794773742437541" at="29,532,30,85" concept="6" />
       <node id="8153794773742437548" at="30,85,31,76" concept="6" />

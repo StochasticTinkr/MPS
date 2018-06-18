@@ -18,6 +18,14 @@
     </file>
   </root>
   <root nodeRef="r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)/3316739663069186517">
+    <file name="TypesystemDescriptor.java">
+      <node id="3316739663069186517" at="14,5,15,85" concept="6" />
+      <node id="3316739663069186517" at="15,85,16,47" concept="2" />
+      <node id="3316739663069186517" at="13,5,17,5" concept="0" />
+      <scope id="3316739663069186517" at="14,5,16,47">
+        <var name="inferenceRule" id="3316739663069186517" />
+      </scope>
+    </file>
     <file name="typeof_ExtensionThis_InferenceRule.java">
       <node id="3316739663069207740" at="20,5,21,55" concept="6" />
       <node id="3316739663069207740" at="21,55,22,220" concept="6" />
@@ -55,6 +63,14 @@
     </file>
   </root>
   <root nodeRef="r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)/5744862332973318443">
+    <file name="TypesystemDescriptor.java">
+      <node id="5744862332973318443" at="10,5,11,91" concept="6" />
+      <node id="5744862332973318443" at="11,91,12,47" concept="2" />
+      <node id="5744862332973318443" at="9,33,13,5" concept="0" />
+      <scope id="5744862332973318443" at="10,5,12,47">
+        <var name="inferenceRule" id="5744862332973318443" />
+      </scope>
+    </file>
     <file name="typeof_ExtensionMethodCall_InferenceRule.java">
       <node id="9033423951205385002" at="33,119,34,194" concept="6" />
       <node id="5744862332973319641" at="35,25,36,13" concept="7" />
@@ -76,12 +92,12 @@
       <node id="4107091686347563434" at="62,0,63,84" concept="6" />
       <node id="7499685733215754047" at="66,60,67,106" concept="6" />
       <node id="7499685733215754048" at="67,106,68,115" concept="2" />
-      <node id="7499685733215754061" at="72,7,73,243" concept="6" />
-      <node id="7499685733215754061" at="73,243,74,238" concept="6" />
-      <node id="7499685733215754061" at="74,238,75,22" concept="6" />
-      <node id="7499685733215754061" at="75,22,76,23" concept="6" />
-      <node id="7499685733215754061" at="77,55,78,34" concept="2" />
-      <node id="7499685733215754061" at="78,34,79,36" concept="2" />
+      <node id="7499685733215754062" at="72,7,73,243" concept="6" />
+      <node id="7499685733215754066" at="73,243,74,238" concept="6" />
+      <node id="7499685733215754062" at="74,238,75,22" concept="6" />
+      <node id="7499685733215754066" at="75,22,76,23" concept="6" />
+      <node id="7499685733215754062" at="77,55,78,34" concept="2" />
+      <node id="7499685733215754066" at="78,34,79,36" concept="2" />
       <node id="7499685733215754072" at="79,36,80,59" concept="2" />
       <node id="7499685733215754080" at="81,211,82,288" concept="2" />
       <node id="7499685733215872107" at="86,5,87,0" concept="9" />
@@ -97,12 +113,12 @@
       <node id="4695112407843714989" at="105,48,106,220" concept="6" />
       <node id="4695112407843714989" at="106,220,107,291" concept="2" />
       <node id="8277080359323291207" at="108,5,109,0" concept="9" />
-      <node id="4660288602099522911" at="110,5,111,72" concept="6" />
-      <node id="4660288602099522911" at="111,72,112,75" concept="6" />
-      <node id="4660288602099522911" at="112,75,113,21" concept="6" />
-      <node id="4660288602099522911" at="113,21,114,21" concept="6" />
-      <node id="4660288602099522911" at="115,54,116,34" concept="2" />
-      <node id="4660288602099522911" at="116,34,117,34" concept="2" />
+      <node id="4660288602099522912" at="110,5,111,72" concept="6" />
+      <node id="4660288602099522915" at="111,72,112,75" concept="6" />
+      <node id="4660288602099522912" at="112,75,113,21" concept="6" />
+      <node id="4660288602099522915" at="113,21,114,21" concept="6" />
+      <node id="4660288602099522912" at="115,54,116,34" concept="2" />
+      <node id="4660288602099522915" at="116,34,117,34" concept="2" />
       <node id="3058438378413435409" at="117,34,118,37" concept="6" />
       <node id="3058438378413428023" at="120,11,121,37" concept="6" />
       <node id="4660288602099522921" at="124,17,125,60" concept="6" />
@@ -209,10 +225,10 @@
         <var name="A" id="3058438378413428023" />
       </scope>
       <scope id="7499685733215754061" at="72,7,84,9">
-        <var name="targ_it" id="7499685733215754061" />
-        <var name="targ_var" id="7499685733215754061" />
-        <var name="tvd_it" id="7499685733215754061" />
-        <var name="tvd_var" id="7499685733215754061" />
+        <var name="targ_it" id="7499685733215754066" />
+        <var name="targ_var" id="7499685733215754066" />
+        <var name="tvd_it" id="7499685733215754062" />
+        <var name="tvd_var" id="7499685733215754062" />
       </scope>
       <scope id="4660288602099522920" at="119,206,131,11" />
       <scope id="7499685733215754060" at="71,12,85,7" />
@@ -220,10 +236,10 @@
         <var name="_type" id="3058438378413435410" />
       </scope>
       <scope id="4660288602099522911" at="110,5,141,7">
-        <var name="argt_it" id="4660288602099522911" />
-        <var name="argt_var" id="4660288602099522911" />
-        <var name="type_it" id="4660288602099522911" />
-        <var name="type_var" id="4660288602099522911" />
+        <var name="argt_it" id="4660288602099522915" />
+        <var name="argt_var" id="4660288602099522915" />
+        <var name="type_it" id="4660288602099522912" />
+        <var name="type_var" id="4660288602099522912" />
       </scope>
       <scope id="5744862332973318444" at="33,119,142,5">
         <var name="argTypes" id="7956253646262471168" />
@@ -271,6 +287,14 @@
     </file>
   </root>
   <root nodeRef="r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)/7685333756920239741">
+    <file name="TypesystemDescriptor.java">
+      <node id="7685333756920239741" at="18,5,19,95" concept="6" />
+      <node id="7685333756920239741" at="19,95,20,47" concept="2" />
+      <node id="7685333756920239741" at="17,5,21,5" concept="0" />
+      <scope id="7685333756920239741" at="18,5,20,47">
+        <var name="inferenceRule" id="7685333756920239741" />
+      </scope>
+    </file>
     <file name="typeof_LocalExtendedMethodCall_InferenceRule.java">
       <node id="9033423951287468973" at="33,121,34,190" concept="6" />
       <node id="7685333756920239746" at="35,25,36,13" concept="7" />
@@ -303,12 +327,12 @@
       <node id="9033423951287565215" at="84,50,85,220" concept="6" />
       <node id="9033423951287565215" at="85,220,86,291" concept="2" />
       <node id="9033423951287565221" at="87,5,88,0" concept="9" />
-      <node id="9033423951287571553" at="89,5,90,72" concept="6" />
-      <node id="9033423951287571553" at="90,72,91,75" concept="6" />
-      <node id="9033423951287571553" at="91,75,92,21" concept="6" />
-      <node id="9033423951287571553" at="92,21,93,21" concept="6" />
-      <node id="9033423951287571553" at="94,54,95,34" concept="2" />
-      <node id="9033423951287571553" at="95,34,96,34" concept="2" />
+      <node id="9033423951287571554" at="89,5,90,72" concept="6" />
+      <node id="9033423951287571557" at="90,72,91,75" concept="6" />
+      <node id="9033423951287571554" at="91,75,92,21" concept="6" />
+      <node id="9033423951287571557" at="92,21,93,21" concept="6" />
+      <node id="9033423951287571554" at="94,54,95,34" concept="2" />
+      <node id="9033423951287571557" at="95,34,96,34" concept="2" />
       <node id="9033423951287571561" at="96,34,97,37" concept="6" />
       <node id="9033423951287571567" at="99,11,100,37" concept="6" />
       <node id="9033423951287571569" at="103,17,104,62" concept="6" />
@@ -401,10 +425,10 @@
         <var name="_type" id="9033423951287571562" />
       </scope>
       <scope id="9033423951287571553" at="89,5,120,7">
-        <var name="argt_it" id="9033423951287571553" />
-        <var name="argt_var" id="9033423951287571553" />
-        <var name="type_it" id="9033423951287571553" />
-        <var name="type_var" id="9033423951287571553" />
+        <var name="argt_it" id="9033423951287571557" />
+        <var name="argt_var" id="9033423951287571557" />
+        <var name="type_it" id="9033423951287571554" />
+        <var name="type_var" id="9033423951287571554" />
       </scope>
       <scope id="7685333756920239742" at="33,121,121,5">
         <var name="argTypes" id="9033423951287571986" />

@@ -234,7 +234,7 @@
       <scope id="708810380379965773" at="42,0,48,0">
         <var name="checkedDotOperand" id="708810380379965773" />
         <var name="checkedDotThisExpression" id="708810380379965773" />
-        <var name="mySelected" id="708810380379965773" />
+        <var name="mySelected" id="708810380379967666" />
       </scope>
       <scope id="121824560294450262" at="22,68,31,50" />
       <scope id="121824560294450255" at="22,0,33,0">

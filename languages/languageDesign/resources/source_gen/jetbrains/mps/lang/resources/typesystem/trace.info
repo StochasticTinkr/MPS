@@ -18,6 +18,14 @@
     </file>
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/1860120738943484867">
+    <file name="TypesystemDescriptor.java">
+      <node id="1860120738943484867" at="43,5,44,91" concept="7" />
+      <node id="1860120738943484867" at="44,91,45,55" concept="3" />
+      <node id="1860120738943484867" at="42,5,46,5" concept="0" />
+      <scope id="1860120738943484867" at="43,5,45,55">
+        <var name="nonTypesystemRule" id="1860120738943484867" />
+      </scope>
+    </file>
     <file name="check_TextIcon_NonTypesystemRule.java">
       <node id="1860120738943424034" at="27,121,28,69" concept="7" />
       <node id="1860120738943515427" at="31,9,32,62" concept="7" />
@@ -68,6 +76,14 @@
     </file>
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/3569916352002218904">
+    <file name="TypesystemDescriptor.java">
+      <node id="3569916352002218904" at="11,5,12,87" concept="7" />
+      <node id="3569916352002218904" at="12,87,13,47" concept="3" />
+      <node id="3569916352002218904" at="10,33,14,5" concept="0" />
+      <scope id="3569916352002218904" at="11,5,13,47">
+        <var name="inferenceRule" id="3569916352002218904" />
+      </scope>
+    </file>
     <file name="typeof_BaseURLFunction_InferenceRule.java">
       <node id="3569916352002253219" at="23,7,24,211" concept="7" />
       <node id="3569916352002253219" at="24,211,25,246" concept="7" />
@@ -159,6 +175,14 @@
     </file>
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/4726480899534397116">
+    <file name="TypesystemDescriptor.java">
+      <node id="4726480899534397116" at="47,5,48,93" concept="7" />
+      <node id="4726480899534397116" at="48,93,49,55" concept="3" />
+      <node id="4726480899534397116" at="46,5,50,5" concept="0" />
+      <scope id="4726480899534397116" at="47,5,49,55">
+        <var name="nonTypesystemRule" id="4726480899534397116" />
+      </scope>
+    </file>
     <file name="check_URLLiteral_NonTypesystemRule.java">
       <node id="4726480899534397128" at="18,183,19,13" concept="8" />
       <node id="4726480899534397135" at="20,5,21,208" concept="3" />
@@ -198,6 +222,14 @@
     </file>
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/4786190798786381671">
+    <file name="TypesystemDescriptor.java">
+      <node id="4786190798786381671" at="35,5,36,98" concept="7" />
+      <node id="4786190798786381671" at="36,98,37,47" concept="3" />
+      <node id="4786190798786381671" at="34,5,38,5" concept="0" />
+      <scope id="4786190798786381671" at="35,5,37,47">
+        <var name="inferenceRule" id="4786190798786381671" />
+      </scope>
+    </file>
     <file name="typeof_NodeIconResourceExpression_InferenceRule.java">
       <node id="4786190798786384174" at="22,7,23,201" concept="7" />
       <node id="4786190798786384174" at="23,201,24,207" concept="7" />
@@ -247,6 +279,14 @@
     </file>
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/4786190798786384202">
+    <file name="TypesystemDescriptor.java">
+      <node id="4786190798786384202" at="15,5,16,101" concept="7" />
+      <node id="4786190798786384202" at="16,101,17,47" concept="3" />
+      <node id="4786190798786384202" at="14,5,18,5" concept="0" />
+      <scope id="4786190798786384202" at="15,5,17,47">
+        <var name="inferenceRule" id="4786190798786384202" />
+      </scope>
+    </file>
     <file name="typeof_ConceptIconResourceExpression_InferenceRule.java">
       <node id="6018138421348044573" at="22,5,23,43" concept="7" />
       <node id="6018138421348044573" at="23,43,24,205" concept="7" />
@@ -315,6 +355,14 @@
     </file>
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/5177162104569118321">
+    <file name="TypesystemDescriptor.java">
+      <node id="5177162104569118321" at="39,5,40,90" concept="7" />
+      <node id="5177162104569118321" at="40,90,41,55" concept="3" />
+      <node id="5177162104569118321" at="38,5,42,5" concept="0" />
+      <scope id="5177162104569118321" at="39,5,41,55">
+        <var name="nonTypesystemRule" id="5177162104569118321" />
+      </scope>
+    </file>
     <file name="check_HelpURL_NonTypesystemRule.java">
       <node id="4726480899534333634" at="19,183,20,13" concept="8" />
       <node id="8903462855151283632" at="22,183,23,13" concept="8" />
@@ -358,6 +406,14 @@
     </file>
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/5979521222239172974">
+    <file name="TypesystemDescriptor.java">
+      <node id="5979521222239172974" at="27,5,28,94" concept="7" />
+      <node id="5979521222239172974" at="28,94,29,47" concept="3" />
+      <node id="5979521222239172974" at="26,5,30,5" concept="0" />
+      <scope id="5979521222239172974" at="27,5,29,47">
+        <var name="inferenceRule" id="5979521222239172974" />
+      </scope>
+    </file>
     <file name="typeof_IconResourceExpression_InferenceRule.java">
       <node id="5979521222239172976" at="21,5,22,64" concept="7" />
       <node id="5979521222239172976" at="22,64,23,205" concept="7" />
@@ -406,6 +462,14 @@
     </file>
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/8974276187400030193">
+    <file name="TypesystemDescriptor.java">
+      <node id="8974276187400030193" at="19,5,20,86" concept="7" />
+      <node id="8974276187400030193" at="20,86,21,47" concept="3" />
+      <node id="8974276187400030193" at="18,5,22,5" concept="0" />
+      <scope id="8974276187400030193" at="19,5,21,47">
+        <var name="inferenceRule" id="8974276187400030193" />
+      </scope>
+    </file>
     <file name="typeof_IconExpression_InferenceRule.java">
       <node id="8974276187400030195" at="21,5,22,46" concept="7" />
       <node id="8974276187400030195" at="22,46,23,205" concept="7" />
@@ -454,6 +518,14 @@
     </file>
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/8974276187400030203">
+    <file name="TypesystemDescriptor.java">
+      <node id="8974276187400030203" at="23,5,24,95" concept="7" />
+      <node id="8974276187400030203" at="24,95,25,47" concept="3" />
+      <node id="8974276187400030203" at="22,5,26,5" concept="0" />
+      <scope id="8974276187400030203" at="23,5,25,47">
+        <var name="inferenceRule" id="8974276187400030203" />
+      </scope>
+    </file>
     <file name="typeof_IconResourceDeclaration_InferenceRule.java">
       <node id="8974276187400030205" at="23,7,24,215" concept="7" />
       <node id="8974276187400030205" at="24,215,25,207" concept="7" />
@@ -504,6 +576,14 @@
     </file>
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/8974276187400030215">
+    <file name="TypesystemDescriptor.java">
+      <node id="8974276187400030215" at="31,5,32,93" concept="7" />
+      <node id="8974276187400030215" at="32,93,33,47" concept="3" />
+      <node id="8974276187400030215" at="30,5,34,5" concept="0" />
+      <scope id="8974276187400030215" at="31,5,33,47">
+        <var name="inferenceRule" id="8974276187400030215" />
+      </scope>
+    </file>
     <file name="typeof_IconResourceReference_InferenceRule.java">
       <node id="8974276187400030217" at="21,5,22,45" concept="7" />
       <node id="8974276187400030217" at="22,45,23,205" concept="7" />

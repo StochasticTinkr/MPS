@@ -28,12 +28,15 @@
     </file>
   </root>
   <root nodeRef="r:64e8c41f-3f2d-46c6-8308-0849585af7d7(jetbrains.mps.debugger.java.evaluation.plugin)/7556192913641927632">
+    <file name="FacetManifest.java">
+      <node id="7556192913641927632" at="14,26,15,76" concept="4" />
+    </file>
     <file name="JavaDebugEvaluate_Facet.java">
       <node id="7556192913641927632" at="71,0,72,0" concept="13" trace="LOG" />
       <node id="7556192913641927632" at="72,0,73,0" concept="5" trace="targets" />
       <node id="7556192913641927632" at="73,0,74,0" concept="5" trace="name" />
-      <node id="7556192913641927632" at="74,36,75,103" concept="4" />
-      <node id="7556192913641927632" at="75,103,76,101" concept="4" />
+      <node id="7556192913641954716" at="74,36,75,103" concept="4" />
+      <node id="3008093296141645992" at="75,103,76,101" concept="4" />
       <node id="7556192913641927632" at="78,38,79,19" concept="10" />
       <node id="7556192913641927632" at="81,43,82,16" concept="10" />
       <node id="7556192913641927632" at="84,43,85,154" concept="10" />
@@ -160,14 +163,14 @@
       <node id="3008093296141645992" at="351,106,352,102" concept="10" />
       <node id="7789686367105721244" at="355,27,356,16" concept="15" />
       <node id="7789686367105721244" at="358,60,359,41" concept="15" />
-      <node id="7789686367105721244" at="361,63,362,31" concept="10" />
-      <node id="7789686367105721244" at="364,50,365,26" concept="10" />
-      <node id="7556192913641927632" at="373,7,374,122" concept="9" />
-      <node id="7556192913641927632" at="375,45,376,171" concept="9" />
-      <node id="7556192913641927632" at="376,171,377,150" concept="4" />
-      <node id="7556192913641927632" at="383,9,384,124" concept="9" />
-      <node id="7556192913641927632" at="384,124,385,171" concept="9" />
-      <node id="7556192913641927632" at="386,158,387,50" concept="4" />
+      <node id="7789686367105721246" at="361,63,362,31" concept="10" />
+      <node id="7789686367105721246" at="364,50,365,26" concept="10" />
+      <node id="3008093296141645992" at="373,7,374,122" concept="9" />
+      <node id="3008093296141645992" at="375,45,376,171" concept="9" />
+      <node id="7789686367105721246" at="376,171,377,150" concept="4" />
+      <node id="3008093296141645992" at="383,9,384,124" concept="9" />
+      <node id="3008093296141645992" at="384,124,385,171" concept="9" />
+      <node id="7789686367105721246" at="386,158,387,50" concept="4" />
       <node id="7556192913641954716" at="98,0,100,0" concept="2" trace="Target_transformEvaluator#()V" />
       <node id="3008093296141645992" at="204,0,206,0" concept="2" trace="Target_compileEvaluator#()V" />
       <node id="7556192913641927632" at="370,0,372,0" concept="2" trace="TargetProperties#()V" />
@@ -211,9 +214,9 @@
       <node id="3008093296141645992" at="351,0,354,0" concept="14" trace="vars#(Ljetbrains/mps/make/script/IPropertiesPool;)Ljetbrains/mps/debugger/java/evaluation/plugin/JavaDebugEvaluate_Facet/Target_compileEvaluator/Parameters;" />
       <node id="7789686367105721244" at="355,0,358,0" concept="2" trace="Parameters#()V" />
       <node id="7789686367105721244" at="358,0,361,0" concept="2" trace="Parameters#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <node id="7789686367105721244" at="361,0,364,0" concept="8" trace="evaluationClasspathModule#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="7789686367105721244" at="364,0,367,0" concept="8" trace="evaluationClasspathModule#()Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="7556192913641927632" at="385,171,388,11" concept="7" />
+      <node id="7789686367105721246" at="361,0,364,0" concept="8" trace="evaluationClasspathModule#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="7789686367105721246" at="364,0,367,0" concept="8" trace="evaluationClasspathModule#()Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="7789686367105721246" at="385,171,388,11" concept="7" />
       <node id="7556192913641927632" at="74,0,78,0" concept="2" trace="JavaDebugEvaluate_Facet#()V" />
       <node id="7556192913641954716" at="197,0,201,0" concept="8" trace="createParameters#(Ljava/lang/Class;null)null" />
       <node id="3008093296142597847" at="237,67,241,21" concept="7" />
@@ -221,7 +224,7 @@
       <node id="3008093296142554326" at="258,15,262,15" concept="7" />
       <node id="3008093296142070122" at="265,0,269,0" concept="8" trace="onCompilationResult#(Lorg/eclipse/jdt/internal/compiler/CompilationResult;)V" />
       <node id="3008093296142650376" at="281,69,285,15" concept="7" />
-      <node id="7556192913641927632" at="374,122,378,9" concept="7" />
+      <node id="3008093296141645992" at="374,122,378,9" concept="7" />
       <node id="5309828024600561423" at="130,83,135,29" concept="9" />
       <node id="7556192913641954716" at="186,0,191,0" concept="8" trace="expectedInput#()Ljava/lang/Iterable;" />
       <node id="3008093296142362648" at="274,162,279,17" concept="9" />
@@ -230,8 +233,8 @@
       <node id="3008093296142059883" at="263,108,269,16" concept="9" />
       <node id="3008093296142677876" at="285,15,292,15" concept="7" />
       <node id="3008093296141645992" at="344,0,351,0" concept="8" trace="createParameters#(Ljava/lang/Class;null)null" />
-      <node id="7556192913641927632" at="372,84,379,7" concept="1" />
-      <node id="7556192913641927632" at="382,11,389,9" concept="1" />
+      <node id="3008093296141645992" at="372,84,379,7" concept="1" />
+      <node id="3008093296141645992" at="382,11,389,9" concept="1" />
       <node id="7556192913641927632" at="372,0,381,0" concept="8" trace="storeValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
       <node id="7556192913641927632" at="381,83,391,7" concept="17" />
       <node id="7556192913641927632" at="381,0,393,0" concept="8" trace="loadValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
@@ -304,9 +307,9 @@
       <scope id="3008093296141645992" at="351,106,352,102" />
       <scope id="7789686367105721244" at="355,27,356,16" />
       <scope id="7789686367105721244" at="358,60,359,41" />
-      <scope id="7789686367105721244" at="361,63,362,31" />
-      <scope id="7789686367105721244" at="364,50,365,26" />
-      <scope id="7556192913641927632" at="386,158,387,50" />
+      <scope id="7789686367105721246" at="361,63,362,31" />
+      <scope id="7789686367105721246" at="364,50,365,26" />
+      <scope id="7789686367105721246" at="386,158,387,50" />
       <scope id="7556192913641927632" at="74,36,76,101" />
       <scope id="7556192913641954716" at="98,0,100,0" />
       <scope id="7556192913641954718" at="152,20,154,61" />
@@ -319,8 +322,8 @@
       <scope id="3008093296142650378" at="282,47,284,63" />
       <scope id="3008093296141645994" at="299,20,301,61" />
       <scope id="7556192913641927632" at="370,0,372,0" />
-      <scope id="7556192913641927632" at="375,45,377,150">
-        <var name="props" id="7556192913641927632" />
+      <scope id="3008093296141645992" at="375,45,377,150">
+        <var name="props" id="3008093296141645992" />
       </scope>
       <scope id="7556192913641927632" at="78,0,81,0" />
       <scope id="7556192913641927632" at="81,0,84,0" />
@@ -376,12 +379,12 @@
       </scope>
       <scope id="7789686367105721244" at="355,0,358,0" />
       <scope id="7789686367105721244" at="358,0,361,0">
-        <var name="evaluationClasspathModule" id="7789686367105721244" />
+        <var name="evaluationClasspathModule" id="7789686367105721246" />
       </scope>
-      <scope id="7789686367105721244" at="361,0,364,0">
-        <var name="value" id="7789686367105721244" />
+      <scope id="7789686367105721246" at="361,0,364,0">
+        <var name="value" id="7789686367105721246" />
       </scope>
-      <scope id="7789686367105721244" at="364,0,367,0" />
+      <scope id="7789686367105721246" at="364,0,367,0" />
       <scope id="7556192913641927632" at="74,0,78,0" />
       <scope id="7556192913641954716" at="197,0,201,0">
         <var name="cls" id="7556192913641954716" />
@@ -396,12 +399,12 @@
       <scope id="3008093296141645992" at="344,61,349,15">
         <var name="t" id="3008093296141645992" />
       </scope>
-      <scope id="7556192913641927632" at="373,7,378,9">
-        <var name="name" id="7556192913641927632" />
+      <scope id="3008093296141645992" at="373,7,378,9">
+        <var name="name" id="3008093296141645992" />
       </scope>
-      <scope id="7556192913641927632" at="383,9,388,11">
-        <var name="name" id="7556192913641927632" />
-        <var name="props" id="7556192913641927632" />
+      <scope id="3008093296141645992" at="383,9,388,11">
+        <var name="name" id="3008093296141645992" />
+        <var name="props" id="3008093296141645992" />
       </scope>
       <scope id="3008093296141645992" at="344,0,351,0">
         <var name="cls" id="3008093296141645992" />

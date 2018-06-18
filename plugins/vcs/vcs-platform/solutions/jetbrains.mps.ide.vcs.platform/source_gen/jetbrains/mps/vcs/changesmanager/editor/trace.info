@@ -301,17 +301,17 @@
       <scope id="4045779100445718400" at="215,0,221,0">
         <var name="checkedDotOperand" id="4045779100445718400" />
         <var name="checkedDotThisExpression" id="4045779100445718400" />
-        <var name="myEditorContext" id="4045779100445718400" />
-        <var name="next" id="4045779100445718400" />
+        <var name="myEditorContext" id="4045779100445750514" />
+        <var name="next" id="4045779100445718406" />
       </scope>
       <scope id="4045779100445883760" at="221,0,227,0">
         <var name="checkedDotOperand" id="4045779100445883760" />
         <var name="checkedDotThisExpression" id="4045779100445883760" />
-        <var name="group" id="4045779100445883760" />
+        <var name="group" id="4045779100445883764" />
       </scope>
       <scope id="4045779100445275408" at="227,0,233,0">
         <var name="checkedDotOperand" id="4045779100445275408" />
-        <var name="editorComponent" id="4045779100445275408" />
+        <var name="editorComponent" id="4045779100445275416" />
       </scope>
       <scope id="4045779100445341510" at="233,0,239,0">
         <var name="checkedDotOperand" id="4045779100445341510" />

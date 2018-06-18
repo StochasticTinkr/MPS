@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,102,0" name="org.jetbrains.mps.samples.Money.structure.ConceptPresentationAspectImpl" />
@@ -9,6 +16,355 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <unit at="16,0,161,0" name="org.jetbrains.mps.samples.Money.structure.StructureAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/1790427706118304177">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="1790427706118304177" at="17,0,18,0" concept="1" trace="props_GetCurrency" />
+      <node id="1790427706118304177" at="64,40,65,76" concept="3" />
+      <node id="1790427706118304177" at="65,76,66,42" concept="0" />
+      <node id="1790427706118304177" at="66,42,67,43" concept="0" />
+      <node id="1790427706118304177" at="68,9,69,33" concept="4" />
+      <node id="1790427706118304177" at="63,45,68,9" concept="2" />
+      <scope id="1790427706118304177" at="64,40,67,43">
+        <var name="cpb" id="1790427706118304177" />
+      </scope>
+      <scope id="1790427706118304177" at="63,45,69,33" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="1790427706118304177" at="17,0,18,0" concept="5" trace="GetCurrency" />
+      <node id="1790427706118304177" at="29,48,30,50" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="1790427706118304177" at="22,0,23,0" concept="1" trace="myConceptGetCurrency" />
+      <node id="1790427706118304177" at="52,45,53,36" concept="4" />
+      <node id="1790427706118304177" at="113,69,114,177" concept="3" />
+      <node id="1790427706118304177" at="114,177,115,34" concept="0" />
+      <node id="1790427706118304177" at="115,34,116,71" concept="0" />
+      <node id="1790427706118304177" at="116,71,117,118" concept="0" />
+      <node id="1790427706118304177" at="117,118,118,49" concept="0" />
+      <node id="1790427706118304177" at="118,49,119,24" concept="0" />
+      <node id="1790427706118304177" at="119,24,120,22" concept="4" />
+      <node id="1790427706118304177" at="113,0,122,0" concept="6" trace="createDescriptorForGetCurrency#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="1790427706118304177" at="52,45,53,36" />
+      <scope id="1790427706118304177" at="113,69,120,22">
+        <var name="b" id="1790427706118304177" />
+      </scope>
+      <scope id="1790427706118304177" at="113,0,122,0" />
+    </file>
+  </root>
+  <root nodeRef="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/1790427706118381722">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="1790427706118381722" at="12,0,13,0" concept="1" trace="props_ConvertTo" />
+      <node id="1790427706118381722" at="29,38,30,76" concept="3" />
+      <node id="1790427706118381722" at="30,76,31,44" concept="0" />
+      <node id="1790427706118381722" at="31,44,32,41" concept="0" />
+      <node id="1790427706118381722" at="33,9,34,31" concept="4" />
+      <node id="1790427706118381722" at="28,43,33,9" concept="2" />
+      <scope id="1790427706118381722" at="29,38,32,41">
+        <var name="cpb" id="1790427706118381722" />
+      </scope>
+      <scope id="1790427706118381722" at="28,43,34,31" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="1790427706118381722" at="12,0,13,0" concept="5" trace="ConvertTo" />
+      <node id="1790427706118381722" at="24,116,25,48" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="1790427706118381722" at="17,0,18,0" concept="1" trace="myConceptConvertTo" />
+      <node id="1790427706118381722" at="42,43,43,34" concept="4" />
+      <node id="1790427706118381722" at="71,67,72,175" concept="3" />
+      <node id="1790427706118381722" at="72,175,73,34" concept="0" />
+      <node id="1790427706118381722" at="73,34,74,71" concept="0" />
+      <node id="1790427706118381722" at="74,71,75,118" concept="0" />
+      <node id="1790427706118386783" at="75,118,76,73" concept="0" />
+      <node id="1790427706118381722" at="76,73,77,49" concept="0" />
+      <node id="1790427706118381722" at="77,49,78,26" concept="0" />
+      <node id="1790427706118381722" at="78,26,79,22" concept="4" />
+      <node id="1790427706118381722" at="71,0,81,0" concept="6" trace="createDescriptorForConvertTo#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="1790427706118381722" at="42,43,43,34" />
+      <scope id="1790427706118381722" at="71,67,79,22">
+        <var name="b" id="1790427706118381722" />
+      </scope>
+      <scope id="1790427706118381722" at="71,0,81,0" />
+    </file>
+  </root>
+  <root nodeRef="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/3607579524910560662">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="3607579524910560662" at="13,0,14,0" concept="1" trace="props_CurrencyDefTable" />
+      <node id="3607579524910560662" at="36,45,37,76" concept="3" />
+      <node id="3607579524910560662" at="37,76,38,50" concept="0" />
+      <node id="3607579524910560662" at="38,50,39,48" concept="0" />
+      <node id="3607579524910560662" at="40,9,41,38" concept="4" />
+      <node id="3607579524910560662" at="35,50,40,9" concept="2" />
+      <scope id="3607579524910560662" at="36,45,39,48">
+        <var name="cpb" id="3607579524910560662" />
+      </scope>
+      <scope id="3607579524910560662" at="35,50,41,38" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="3607579524910560662" at="13,0,14,0" concept="5" trace="CurrencyDefTable" />
+      <node id="3607579524910560662" at="25,48,26,55" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="3607579524910560662" at="18,0,19,0" concept="1" trace="myConceptCurrencyDefTable" />
+      <node id="3607579524910560662" at="44,50,45,41" concept="4" />
+      <node id="3607579524910560662" at="81,74,82,182" concept="3" />
+      <node id="3607579524910560662" at="82,182,83,33" concept="0" />
+      <node id="3607579524910560662" at="83,33,84,118" concept="0" />
+      <node id="3607579524910560668" at="84,118,85,197" concept="0" />
+      <node id="3607579524910560662" at="85,197,86,22" concept="4" />
+      <node id="3607579524910560662" at="81,0,88,0" concept="6" trace="createDescriptorForCurrencyDefTable#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="3607579524910560662" at="44,50,45,41" />
+      <scope id="3607579524910560662" at="81,74,86,22">
+        <var name="b" id="3607579524910560662" />
+      </scope>
+      <scope id="3607579524910560662" at="81,0,88,0" />
+    </file>
+  </root>
+  <root nodeRef="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/3607579524910560663">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="3607579524910560663" at="14,0,15,0" concept="1" trace="props_CurrencyUnit" />
+      <node id="3607579524910560663" at="43,41,44,76" concept="3" />
+      <node id="3607579524910560663" at="44,76,45,35" concept="0" />
+      <node id="3607579524910560663" at="45,35,46,44" concept="0" />
+      <node id="3607579524910560663" at="47,9,48,34" concept="4" />
+      <node id="3607579524910560663" at="42,46,47,9" concept="2" />
+      <scope id="3607579524910560663" at="43,41,46,44">
+        <var name="cpb" id="3607579524910560663" />
+      </scope>
+      <scope id="3607579524910560663" at="42,46,48,34" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="3607579524910560663" at="14,0,15,0" concept="5" trace="CurrencyUnit" />
+      <node id="3607579524910560663" at="26,55,27,51" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="3607579524910560663" at="19,0,20,0" concept="1" trace="myConceptCurrencyUnit" />
+      <node id="3607579524910560663" at="46,46,47,37" concept="4" />
+      <node id="3607579524910560663" at="88,70,89,178" concept="3" />
+      <node id="3607579524910560663" at="89,178,90,34" concept="0" />
+      <node id="3607579524910560663" at="90,34,91,71" concept="0" />
+      <node id="3607579524910560663" at="91,71,92,118" concept="0" />
+      <node id="3607579524910560663" at="92,118,93,22" concept="4" />
+      <node id="3607579524910560663" at="88,0,95,0" concept="6" trace="createDescriptorForCurrencyUnit#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="3607579524910560663" at="46,46,47,37" />
+      <scope id="3607579524910560663" at="88,70,93,22">
+        <var name="b" id="3607579524910560663" />
+      </scope>
+      <scope id="3607579524910560663" at="88,0,95,0" />
+    </file>
+  </root>
+  <root nodeRef="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/4001135958233291203">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="4001135958233291203" at="15,0,16,0" concept="1" trace="props_CurrentStockPrice" />
+      <node id="4001135958233291203" at="50,46,51,76" concept="3" />
+      <node id="4001135958233291203" at="51,76,52,53" concept="0" />
+      <node id="4001135958233291203" at="52,53,53,49" concept="0" />
+      <node id="4001135958233291203" at="54,9,55,39" concept="4" />
+      <node id="4001135958233291203" at="49,51,54,9" concept="2" />
+      <scope id="4001135958233291203" at="50,46,53,49">
+        <var name="cpb" id="4001135958233291203" />
+      </scope>
+      <scope id="4001135958233291203" at="49,51,55,39" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="4001135958233291203" at="15,0,16,0" concept="5" trace="CurrentStockPrice" />
+      <node id="4001135958233291203" at="27,51,28,56" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="4001135958233291203" at="20,0,21,0" concept="1" trace="myConceptCurrentStockPrice" />
+      <node id="4001135958233291203" at="48,51,49,42" concept="4" />
+      <node id="4001135958233291203" at="95,75,96,183" concept="3" />
+      <node id="4001135958233291203" at="96,183,97,34" concept="0" />
+      <node id="4001135958233291203" at="97,34,98,121" concept="0" />
+      <node id="4001135958233291203" at="98,121,99,118" concept="0" />
+      <node id="4001135958235845226" at="99,118,100,200" concept="0" />
+      <node id="4001135958233291203" at="100,200,101,35" concept="0" />
+      <node id="4001135958233291203" at="101,35,102,22" concept="4" />
+      <node id="4001135958233291203" at="95,0,104,0" concept="6" trace="createDescriptorForCurrentStockPrice#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="4001135958233291203" at="48,51,49,42" />
+      <scope id="4001135958233291203" at="95,75,102,22">
+        <var name="b" id="4001135958233291203" />
+      </scope>
+      <scope id="4001135958233291203" at="95,0,104,0" />
+    </file>
+  </root>
+  <root nodeRef="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/4001135958235394442">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="4001135958235394442" at="21,0,22,0" concept="1" trace="props_StockSymbol" />
+      <node id="4001135958235394442" at="92,40,93,76" concept="3" />
+      <node id="4001135958235394442" at="93,76,94,40" concept="0" />
+      <node id="4001135958235394442" at="94,40,95,43" concept="0" />
+      <node id="4001135958235394442" at="96,9,97,33" concept="4" />
+      <node id="4001135958235394442" at="91,45,96,9" concept="2" />
+      <scope id="4001135958235394442" at="92,40,95,43">
+        <var name="cpb" id="4001135958235394442" />
+      </scope>
+      <scope id="4001135958235394442" at="91,45,97,33" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="4001135958235394442" at="21,0,22,0" concept="5" trace="StockSymbol" />
+      <node id="4001135958235394442" at="33,52,34,50" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="4001135958235394442" at="26,0,27,0" concept="1" trace="myConceptStockSymbol" />
+      <node id="4001135958235394442" at="60,45,61,36" concept="4" />
+      <node id="4001135958235394442" at="152,69,153,177" concept="3" />
+      <node id="4001135958235394442" at="153,177,154,34" concept="0" />
+      <node id="4001135958235394442" at="154,34,155,118" concept="0" />
+      <node id="4001135958235786331" at="155,118,156,65" concept="0" />
+      <node id="4001135958235394442" at="156,65,157,22" concept="0" />
+      <node id="4001135958235394442" at="157,22,158,22" concept="4" />
+      <node id="4001135958235394442" at="152,0,160,0" concept="6" trace="createDescriptorForStockSymbol#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="4001135958235394442" at="60,45,61,36" />
+      <scope id="4001135958235394442" at="152,69,158,22">
+        <var name="b" id="4001135958235394442" />
+      </scope>
+      <scope id="4001135958235394442" at="152,0,160,0" />
+    </file>
+  </root>
+  <root nodeRef="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/4001135958235922842">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="4001135958235922842" at="20,0,21,0" concept="1" trace="props_MovingAverage" />
+      <node id="4001135958235922842" at="85,42,86,76" concept="3" />
+      <node id="4001135958235922842" at="86,76,87,48" concept="0" />
+      <node id="4001135958235922842" at="87,48,88,45" concept="0" />
+      <node id="4001135958235922842" at="89,9,90,35" concept="4" />
+      <node id="4001135958235922842" at="84,47,89,9" concept="2" />
+      <scope id="4001135958235922842" at="85,42,88,45">
+        <var name="cpb" id="4001135958235922842" />
+      </scope>
+      <scope id="4001135958235922842" at="84,47,90,35" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="4001135958235922842" at="20,0,21,0" concept="5" trace="MovingAverage" />
+      <node id="4001135958235922842" at="32,48,33,52" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="4001135958235922842" at="25,0,26,0" concept="1" trace="myConceptMovingAverage" />
+      <node id="4001135958235922842" at="58,47,59,38" concept="4" />
+      <node id="4001135958235922842" at="142,71,143,179" concept="3" />
+      <node id="4001135958235922842" at="143,179,144,34" concept="0" />
+      <node id="4001135958235922842" at="144,34,145,121" concept="0" />
+      <node id="4001135958235922842" at="145,121,146,118" concept="0" />
+      <node id="4001135958235922843" at="146,118,147,65" concept="0" />
+      <node id="4001135958235924176" at="147,65,148,200" concept="0" />
+      <node id="4001135958235922842" at="148,200,149,30" concept="0" />
+      <node id="4001135958235922842" at="149,30,150,22" concept="4" />
+      <node id="4001135958235922842" at="142,0,152,0" concept="6" trace="createDescriptorForMovingAverage#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="4001135958235922842" at="58,47,59,38" />
+      <scope id="4001135958235922842" at="142,71,150,22">
+        <var name="b" id="4001135958235922842" />
+      </scope>
+      <scope id="4001135958235922842" at="142,0,152,0" />
+    </file>
+  </root>
+  <root nodeRef="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/5447719361346490674">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="5447719361346490674" at="18,0,19,0" concept="1" trace="props_MoneyLiteral" />
+      <node id="5447719361346490674" at="71,41,72,76" concept="3" />
+      <node id="5447719361346490674" at="72,76,73,39" concept="0" />
+      <node id="5447719361346490674" at="73,39,74,44" concept="0" />
+      <node id="5447719361346490674" at="75,9,76,34" concept="4" />
+      <node id="5447719361346490674" at="70,46,75,9" concept="2" />
+      <scope id="5447719361346490674" at="71,41,74,44">
+        <var name="cpb" id="5447719361346490674" />
+      </scope>
+      <scope id="5447719361346490674" at="70,46,76,34" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="5447719361346490674" at="18,0,19,0" concept="5" trace="MoneyLiteral" />
+      <node id="5447719361346490674" at="30,50,31,51" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="5447719361346490674" at="23,0,24,0" concept="1" trace="myConceptMoneyLiteral" />
+      <node id="5447719361346490674" at="54,46,55,37" concept="4" />
+      <node id="5447719361346490674" at="122,70,123,178" concept="3" />
+      <node id="5447719361346490674" at="123,178,124,34" concept="0" />
+      <node id="5447719361346490674" at="124,34,125,121" concept="0" />
+      <node id="5447719361346490674" at="125,121,126,118" concept="0" />
+      <node id="5447719361346490755" at="126,118,127,65" concept="0" />
+      <node id="3607579524910560680" at="127,65,128,168" concept="0" />
+      <node id="5447719361346490674" at="128,168,129,49" concept="0" />
+      <node id="5447719361346490674" at="129,49,130,21" concept="0" />
+      <node id="5447719361346490674" at="130,21,131,22" concept="4" />
+      <node id="5447719361346490674" at="122,0,133,0" concept="6" trace="createDescriptorForMoneyLiteral#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="5447719361346490674" at="54,46,55,37" />
+      <scope id="5447719361346490674" at="122,70,131,22">
+        <var name="b" id="5447719361346490674" />
+      </scope>
+      <scope id="5447719361346490674" at="122,0,133,0" />
+    </file>
+  </root>
+  <root nodeRef="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/5447719361346490730">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="5447719361346490730" at="19,0,20,0" concept="1" trace="props_MoneyType" />
+      <node id="5447719361346490730" at="78,38,79,76" concept="3" />
+      <node id="5447719361346490730" at="79,76,80,39" concept="0" />
+      <node id="5447719361346490730" at="80,39,81,41" concept="0" />
+      <node id="5447719361346490730" at="82,9,83,31" concept="4" />
+      <node id="5447719361346490730" at="77,43,82,9" concept="2" />
+      <scope id="5447719361346490730" at="78,38,81,41">
+        <var name="cpb" id="5447719361346490730" />
+      </scope>
+      <scope id="5447719361346490730" at="77,43,83,31" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="5447719361346490730" at="19,0,20,0" concept="5" trace="MoneyType" />
+      <node id="5447719361346490730" at="31,51,32,48" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="5447719361346490730" at="24,0,25,0" concept="1" trace="myConceptMoneyType" />
+      <node id="5447719361346490730" at="56,43,57,34" concept="4" />
+      <node id="5447719361346490730" at="133,67,134,175" concept="3" />
+      <node id="5447719361346490730" at="134,175,135,34" concept="0" />
+      <node id="5447719361346490730" at="135,34,136,115" concept="0" />
+      <node id="5447719361346490730" at="136,115,137,118" concept="0" />
+      <node id="5447719361346490730" at="137,118,138,52" concept="0" />
+      <node id="5447719361346490730" at="138,52,139,21" concept="0" />
+      <node id="5447719361346490730" at="139,21,140,22" concept="4" />
+      <node id="5447719361346490730" at="133,0,142,0" concept="6" trace="createDescriptorForMoneyType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="5447719361346490730" at="56,43,57,34" />
+      <scope id="5447719361346490730" at="133,67,140,22">
+        <var name="b" id="5447719361346490730" />
+      </scope>
+      <scope id="5447719361346490730" at="133,0,142,0" />
+    </file>
+  </root>
+  <root nodeRef="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/5447719361346519865">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="5447719361346519865" at="16,0,17,0" concept="1" trace="props_GetAmount" />
+      <node id="5447719361346519865" at="57,38,58,76" concept="3" />
+      <node id="5447719361346519865" at="58,76,59,40" concept="0" />
+      <node id="5447719361346519865" at="59,40,60,41" concept="0" />
+      <node id="5447719361346519865" at="61,9,62,31" concept="4" />
+      <node id="5447719361346519865" at="56,43,61,9" concept="2" />
+      <scope id="5447719361346519865" at="57,38,60,41">
+        <var name="cpb" id="5447719361346519865" />
+      </scope>
+      <scope id="5447719361346519865" at="56,43,62,31" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="5447719361346519865" at="16,0,17,0" concept="5" trace="GetAmount" />
+      <node id="5447719361346519865" at="28,56,29,48" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="5447719361346519865" at="21,0,22,0" concept="1" trace="myConceptGetAmount" />
+      <node id="5447719361346519865" at="50,43,51,34" concept="4" />
+      <node id="5447719361346519865" at="104,67,105,175" concept="3" />
+      <node id="5447719361346519865" at="105,175,106,34" concept="0" />
+      <node id="5447719361346519865" at="106,34,107,71" concept="0" />
+      <node id="5447719361346519865" at="107,71,108,118" concept="0" />
+      <node id="5447719361346519865" at="108,118,109,49" concept="0" />
+      <node id="5447719361346519865" at="109,49,110,22" concept="0" />
+      <node id="5447719361346519865" at="110,22,111,22" concept="4" />
+      <node id="5447719361346519865" at="104,0,113,0" concept="6" trace="createDescriptorForGetAmount#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="5447719361346519865" at="50,43,51,34" />
+      <scope id="5447719361346519865" at="104,67,111,22">
+        <var name="b" id="5447719361346519865" />
+      </scope>
+      <scope id="5447719361346519865" at="104,0,113,0" />
     </file>
   </root>
 </debug-info>

@@ -15,89 +15,89 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bb(jetbrains.mps.lang.sharedConcepts.editor)/1203541329669">
     <file name="SharedStyles_StyleSheet.java">
-      <node id="1203541329669" at="21,83,22,69" concept="3" />
-      <node id="1203541329669" at="22,69,23,88" concept="3" />
-      <node id="1203541329669" at="23,88,24,107" concept="1" />
-      <node id="1203541329669" at="31,83,32,69" concept="3" />
-      <node id="1203541329669" at="32,69,33,88" concept="3" />
-      <node id="1203541329669" at="33,88,34,107" concept="1" />
-      <node id="1203541329669" at="41,93,42,69" concept="3" />
-      <node id="1203541329669" at="42,69,43,88" concept="3" />
-      <node id="1203541329669" at="43,88,44,117" concept="1" />
-      <node id="1203541329669" at="48,82,49,33" concept="6" />
-      <node id="1203541329669" at="53,59,54,109" concept="1" />
-      <node id="1203541329669" at="54,109,55,61" concept="1" />
-      <node id="1203541329669" at="60,82,61,33" concept="6" />
-      <node id="1203541329669" at="65,59,66,112" concept="1" />
-      <node id="1203541329669" at="71,92,72,33" concept="6" />
-      <node id="1203541329669" at="76,59,77,112" concept="1" />
-      <node id="1203541329669" at="77,112,78,61" concept="1" />
-      <node id="1203541329669" at="48,0,51,0" concept="0" trace="ReferenceDecoratedStyleClass#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1203541329669" at="60,0,63,0" concept="0" trace="ReferenceOnConceptStyleClass#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1203541329669" at="71,0,74,0" concept="0" trace="ReferenceOnConceptualFeatureStyleClass#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1203541329669" at="64,0,68,0" concept="2" trace="apply#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="1203541329669" at="52,0,57,0" concept="2" trace="apply#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="1203541329669" at="75,0,80,0" concept="2" trace="apply#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="1203541329669" at="20,0,26,0" concept="5" trace="apply_ReferenceDecorated#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="1203541329669" at="30,0,36,0" concept="5" trace="apply_ReferenceOnConcept#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="1203541329669" at="40,0,46,0" concept="5" trace="apply_ReferenceOnConceptualFeature#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <scope id="1203541329669" at="48,82,49,33" />
-      <scope id="1203541329669" at="60,82,61,33" />
-      <scope id="1203541329669" at="65,59,66,112" />
-      <scope id="1203541329669" at="71,92,72,33" />
-      <scope id="1203541329669" at="53,59,55,61" />
-      <scope id="1203541329669" at="76,59,78,61" />
-      <scope id="1203541329669" at="21,83,24,107">
-        <var name="editorContext" id="1203541329669" />
-        <var name="node" id="1203541329669" />
+      <node id="1203541368202" at="21,83,22,69" concept="3" />
+      <node id="1203541368202" at="22,69,23,88" concept="3" />
+      <node id="1203541368202" at="23,88,24,107" concept="1" />
+      <node id="1203541385314" at="31,83,32,69" concept="3" />
+      <node id="1203541385314" at="32,69,33,88" concept="3" />
+      <node id="1203541385314" at="33,88,34,107" concept="1" />
+      <node id="1221170124867" at="41,93,42,69" concept="3" />
+      <node id="1221170124867" at="42,69,43,88" concept="3" />
+      <node id="1221170124867" at="43,88,44,117" concept="1" />
+      <node id="1203541368202" at="48,82,49,33" concept="6" />
+      <node id="1203541368203" at="53,59,54,109" concept="1" />
+      <node id="1203541368204" at="54,109,55,61" concept="1" />
+      <node id="1203541385314" at="60,82,61,33" concept="6" />
+      <node id="1203541509378" at="65,59,66,112" concept="1" />
+      <node id="1221170124867" at="71,92,72,33" concept="6" />
+      <node id="1221170124868" at="76,59,77,112" concept="1" />
+      <node id="1221170145073" at="77,112,78,61" concept="1" />
+      <node id="1203541368202" at="48,0,51,0" concept="0" trace="ReferenceDecoratedStyleClass#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1203541385314" at="60,0,63,0" concept="0" trace="ReferenceOnConceptStyleClass#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1221170124867" at="71,0,74,0" concept="0" trace="ReferenceOnConceptualFeatureStyleClass#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1203541385314" at="64,0,68,0" concept="2" trace="apply#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="1203541368202" at="52,0,57,0" concept="2" trace="apply#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="1221170124867" at="75,0,80,0" concept="2" trace="apply#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="1203541368202" at="20,0,26,0" concept="5" trace="apply_ReferenceDecorated#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="1203541385314" at="30,0,36,0" concept="5" trace="apply_ReferenceOnConcept#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="1221170124867" at="40,0,46,0" concept="5" trace="apply_ReferenceOnConceptualFeature#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <scope id="1203541368202" at="48,82,49,33" />
+      <scope id="1203541385314" at="60,82,61,33" />
+      <scope id="1203541385314" at="65,59,66,112" />
+      <scope id="1221170124867" at="71,92,72,33" />
+      <scope id="1203541368202" at="53,59,55,61" />
+      <scope id="1221170124867" at="76,59,78,61" />
+      <scope id="1203541368202" at="21,83,24,107">
+        <var name="editorContext" id="1203541368202" />
+        <var name="node" id="1203541368202" />
       </scope>
-      <scope id="1203541329669" at="31,83,34,107">
-        <var name="editorContext" id="1203541329669" />
-        <var name="node" id="1203541329669" />
+      <scope id="1203541385314" at="31,83,34,107">
+        <var name="editorContext" id="1203541385314" />
+        <var name="node" id="1203541385314" />
       </scope>
-      <scope id="1203541329669" at="41,93,44,117">
-        <var name="editorContext" id="1203541329669" />
-        <var name="node" id="1203541329669" />
+      <scope id="1221170124867" at="41,93,44,117">
+        <var name="editorContext" id="1221170124867" />
+        <var name="node" id="1221170124867" />
       </scope>
-      <scope id="1203541329669" at="48,0,51,0">
-        <var name="editorContext" id="1203541329669" />
-        <var name="node" id="1203541329669" />
+      <scope id="1203541368202" at="48,0,51,0">
+        <var name="editorContext" id="1203541368202" />
+        <var name="node" id="1203541368202" />
       </scope>
-      <scope id="1203541329669" at="60,0,63,0">
-        <var name="editorContext" id="1203541329669" />
-        <var name="node" id="1203541329669" />
+      <scope id="1203541385314" at="60,0,63,0">
+        <var name="editorContext" id="1203541385314" />
+        <var name="node" id="1203541385314" />
       </scope>
-      <scope id="1203541329669" at="71,0,74,0">
-        <var name="editorContext" id="1203541329669" />
-        <var name="node" id="1203541329669" />
+      <scope id="1221170124867" at="71,0,74,0">
+        <var name="editorContext" id="1221170124867" />
+        <var name="node" id="1221170124867" />
       </scope>
-      <scope id="1203541329669" at="64,0,68,0">
-        <var name="editorCell" id="1203541329669" />
-        <var name="style" id="1203541329669" />
+      <scope id="1203541385314" at="64,0,68,0">
+        <var name="editorCell" id="1203541385314" />
+        <var name="style" id="1203541385314" />
       </scope>
-      <scope id="1203541329669" at="52,0,57,0">
-        <var name="editorCell" id="1203541329669" />
-        <var name="style" id="1203541329669" />
+      <scope id="1203541368202" at="52,0,57,0">
+        <var name="editorCell" id="1203541368202" />
+        <var name="style" id="1203541368202" />
       </scope>
-      <scope id="1203541329669" at="75,0,80,0">
-        <var name="editorCell" id="1203541329669" />
-        <var name="style" id="1203541329669" />
+      <scope id="1221170124867" at="75,0,80,0">
+        <var name="editorCell" id="1221170124867" />
+        <var name="style" id="1221170124867" />
       </scope>
-      <scope id="1203541329669" at="20,0,26,0">
-        <var name="editorCell" id="1203541329669" />
-        <var name="style" id="1203541329669" />
+      <scope id="1203541368202" at="20,0,26,0">
+        <var name="editorCell" id="1203541368202" />
+        <var name="style" id="1203541368202" />
       </scope>
-      <scope id="1203541329669" at="30,0,36,0">
-        <var name="editorCell" id="1203541329669" />
-        <var name="style" id="1203541329669" />
+      <scope id="1203541385314" at="30,0,36,0">
+        <var name="editorCell" id="1203541385314" />
+        <var name="style" id="1203541385314" />
       </scope>
-      <scope id="1203541329669" at="40,0,46,0">
-        <var name="editorCell" id="1203541329669" />
-        <var name="style" id="1203541329669" />
+      <scope id="1221170124867" at="40,0,46,0">
+        <var name="editorCell" id="1221170124867" />
+        <var name="style" id="1221170124867" />
       </scope>
-      <unit id="1203541329669" at="59,0,70,0" name="jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet$ReferenceOnConceptStyleClass" />
-      <unit id="1203541329669" at="47,0,59,0" name="jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet$ReferenceDecoratedStyleClass" />
-      <unit id="1203541329669" at="70,0,82,0" name="jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet$ReferenceOnConceptualFeatureStyleClass" />
+      <unit id="1203541385314" at="59,0,70,0" name="jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet$ReferenceOnConceptStyleClass" />
+      <unit id="1203541368202" at="47,0,59,0" name="jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet$ReferenceDecoratedStyleClass" />
+      <unit id="1221170124867" at="70,0,82,0" name="jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet$ReferenceOnConceptualFeatureStyleClass" />
       <unit id="1203541329669" at="15,0,83,0" name="jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet" />
     </file>
   </root>

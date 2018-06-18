@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,235,0" name="jetbrains.mps.core.xml.sax.structure.ConceptPresentationAspectImpl" />
@@ -9,6 +16,931 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <unit at="16,0,364,0" name="jetbrains.mps.core.xml.sax.structure.StructureAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140353">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140353" at="12,0,13,0" concept="1" trace="props_XMLSAXAttributeHandler" />
+      <node id="2264311582634140353" at="45,51,46,76" concept="3" />
+      <node id="2264311582634140353" at="46,76,47,51" concept="0" />
+      <node id="2264311582634140353" at="47,51,48,54" concept="0" />
+      <node id="2264311582634140353" at="49,9,50,44" concept="4" />
+      <node id="2264311582634140353" at="44,56,49,9" concept="2" />
+      <scope id="2264311582634140353" at="45,51,48,54">
+        <var name="cpb" id="2264311582634140353" />
+      </scope>
+      <scope id="2264311582634140353" at="44,56,50,44" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140353" at="12,0,13,0" concept="5" trace="XMLSAXAttributeHandler" />
+      <node id="2264311582634140353" at="40,116,41,61" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140353" at="17,0,18,0" concept="1" trace="myConceptXMLSAXAttributeHandler" />
+      <node id="2264311582634140353" at="58,56,59,47" concept="4" />
+      <node id="2264311582634140353" at="119,80,120,183" concept="3" />
+      <node id="2264311582634140353" at="120,183,121,34" concept="0" />
+      <node id="2264311582634140353" at="121,34,122,138" concept="0" />
+      <node id="2264311582634140353" at="122,138,123,113" concept="0" />
+      <node id="2264311582634140353" at="123,113,124,52" concept="0" />
+      <node id="2264311582634140353" at="124,52,125,33" concept="0" />
+      <node id="2264311582634140353" at="125,33,126,22" concept="4" />
+      <node id="2264311582634140353" at="119,0,128,0" concept="6" trace="createDescriptorForXMLSAXAttributeHandler#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140353" at="58,56,59,47" />
+      <scope id="2264311582634140353" at="119,80,126,22">
+        <var name="b" id="2264311582634140353" />
+      </scope>
+      <scope id="2264311582634140353" at="119,0,128,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140361">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140361" at="14,0,15,0" concept="1" trace="props_XMLSAXAttributeReference" />
+      <node id="2264311582634140361" at="60,53,61,76" concept="3" />
+      <node id="2264311582634140361" at="61,76,62,143" concept="0" />
+      <node id="2264311582634140361" at="62,143,63,56" concept="0" />
+      <node id="2264311582634140361" at="64,9,65,46" concept="4" />
+      <node id="2264311582634140361" at="59,58,64,9" concept="2" />
+      <scope id="2264311582634140361" at="60,53,63,56">
+        <var name="cpb" id="2264311582634140361" />
+      </scope>
+      <scope id="2264311582634140361" at="59,58,65,46" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140361" at="14,0,15,0" concept="5" trace="XMLSAXAttributeReference" />
+      <node id="2264311582634140361" at="42,67,43,63" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140361" at="19,0,20,0" concept="1" trace="myConceptXMLSAXAttributeReference" />
+      <node id="2264311582634140361" at="62,58,63,49" concept="4" />
+      <node id="2264311582634140361" at="137,82,138,185" concept="3" />
+      <node id="2264311582634140361" at="138,185,139,34" concept="0" />
+      <node id="2264311582634140361" at="139,34,140,121" concept="0" />
+      <node id="2264311582634140361" at="140,121,141,113" concept="0" />
+      <node id="2264311582634140362" at="141,113,142,173" concept="0" />
+      <node id="2264311582634140361" at="142,173,143,49" concept="0" />
+      <node id="2264311582634140361" at="143,49,144,22" concept="4" />
+      <node id="2264311582634140361" at="137,0,146,0" concept="6" trace="createDescriptorForXMLSAXAttributeReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140361" at="62,58,63,49" />
+      <scope id="2264311582634140361" at="137,82,144,22">
+        <var name="b" id="2264311582634140361" />
+      </scope>
+      <scope id="2264311582634140361" at="137,0,146,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140363">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140363" at="15,0,16,0" concept="1" trace="props_XMLSAXAttributeRule" />
+      <node id="2264311582634140363" at="67,48,68,76" concept="3" />
+      <node id="2264311582634140363" at="68,76,69,35" concept="0" />
+      <node id="2264311582634140363" at="69,35,70,51" concept="0" />
+      <node id="2264311582634140363" at="71,9,72,41" concept="4" />
+      <node id="2264311582634140363" at="66,53,71,9" concept="2" />
+      <scope id="2264311582634140363" at="67,48,70,51">
+        <var name="cpb" id="2264311582634140363" />
+      </scope>
+      <scope id="2264311582634140363" at="66,53,72,41" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140363" at="15,0,16,0" concept="5" trace="XMLSAXAttributeRule" />
+      <node id="2264311582634140363" at="43,63,44,58" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140363" at="20,0,21,0" concept="1" trace="myConceptXMLSAXAttributeRule" />
+      <node id="2264311582634140363" at="64,53,65,44" concept="4" />
+      <node id="2264311582634140363" at="146,77,147,180" concept="3" />
+      <node id="2264311582634140363" at="147,180,148,34" concept="0" />
+      <node id="2264311582634140363" at="148,34,149,71" concept="0" />
+      <node id="2264311582634140363" at="149,71,150,113" concept="0" />
+      <node id="2264311582634140364" at="150,113,151,69" concept="0" />
+      <node id="2264311582634140365" at="151,69,152,200" concept="0" />
+      <node id="2264311582634140363" at="152,200,153,22" concept="4" />
+      <node id="2264311582634140363" at="146,0,155,0" concept="6" trace="createDescriptorForXMLSAXAttributeRule#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140363" at="64,53,65,44" />
+      <scope id="2264311582634140363" at="146,77,153,22">
+        <var name="b" id="2264311582634140363" />
+      </scope>
+      <scope id="2264311582634140363" at="146,0,155,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140367">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140367" at="16,0,17,0" concept="1" trace="props_XMLSAXBreakStatement" />
+      <node id="2264311582634140367" at="74,49,75,76" concept="3" />
+      <node id="2264311582634140367" at="75,76,76,46" concept="0" />
+      <node id="2264311582634140367" at="76,46,77,52" concept="0" />
+      <node id="2264311582634140367" at="78,9,79,42" concept="4" />
+      <node id="2264311582634140367" at="73,54,78,9" concept="2" />
+      <scope id="2264311582634140367" at="74,49,77,52">
+        <var name="cpb" id="2264311582634140367" />
+      </scope>
+      <scope id="2264311582634140367" at="73,54,79,42" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140367" at="16,0,17,0" concept="5" trace="XMLSAXBreakStatement" />
+      <node id="2264311582634140367" at="44,58,45,59" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140367" at="21,0,22,0" concept="1" trace="myConceptXMLSAXBreakStatement" />
+      <node id="2264311582634140367" at="66,54,67,45" concept="4" />
+      <node id="2264311582634140367" at="155,78,156,181" concept="3" />
+      <node id="2264311582634140367" at="156,181,157,34" concept="0" />
+      <node id="2264311582634140367" at="157,34,158,120" concept="0" />
+      <node id="2264311582634140367" at="158,120,159,113" concept="0" />
+      <node id="2264311582634140369" at="159,113,160,193" concept="0" />
+      <node id="2264311582634140367" at="160,193,161,49" concept="0" />
+      <node id="2264311582634140367" at="161,49,162,28" concept="0" />
+      <node id="2264311582634140367" at="162,28,163,22" concept="4" />
+      <node id="2264311582634140367" at="155,0,165,0" concept="6" trace="createDescriptorForXMLSAXBreakStatement#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140367" at="66,54,67,45" />
+      <scope id="2264311582634140367" at="155,78,163,22">
+        <var name="b" id="2264311582634140367" />
+      </scope>
+      <scope id="2264311582634140367" at="155,0,165,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140370">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140370" at="17,0,18,0" concept="1" trace="props_XMLSAXChildHandler" />
+      <node id="2264311582634140370" at="81,47,82,76" concept="3" />
+      <node id="2264311582634140370" at="82,76,83,47" concept="0" />
+      <node id="2264311582634140370" at="83,47,84,50" concept="0" />
+      <node id="2264311582634140370" at="85,9,86,40" concept="4" />
+      <node id="2264311582634140370" at="80,52,85,9" concept="2" />
+      <scope id="2264311582634140370" at="81,47,84,50">
+        <var name="cpb" id="2264311582634140370" />
+      </scope>
+      <scope id="2264311582634140370" at="80,52,86,40" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140370" at="17,0,18,0" concept="5" trace="XMLSAXChildHandler" />
+      <node id="2264311582634140370" at="45,59,46,57" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140370" at="22,0,23,0" concept="1" trace="myConceptXMLSAXChildHandler" />
+      <node id="2264311582634140370" at="68,52,69,43" concept="4" />
+      <node id="2264311582634140370" at="165,76,166,179" concept="3" />
+      <node id="2264311582634140370" at="166,179,167,34" concept="0" />
+      <node id="2264311582634140370" at="167,34,168,138" concept="0" />
+      <node id="2264311582634140370" at="168,138,169,113" concept="0" />
+      <node id="2264311582634140370" at="169,113,170,52" concept="0" />
+      <node id="2264311582634140370" at="170,52,171,29" concept="0" />
+      <node id="2264311582634140370" at="171,29,172,22" concept="4" />
+      <node id="2264311582634140370" at="165,0,174,0" concept="6" trace="createDescriptorForXMLSAXChildHandler#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140370" at="68,52,69,43" />
+      <scope id="2264311582634140370" at="165,76,172,22">
+        <var name="b" id="2264311582634140370" />
+      </scope>
+      <scope id="2264311582634140370" at="165,0,174,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140373">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140373" at="18,0,19,0" concept="1" trace="props_XMLSAXChildHandler_childObject" />
+      <node id="2264311582634140373" at="88,59,89,76" concept="3" />
+      <node id="2264311582634140373" at="89,76,90,47" concept="0" />
+      <node id="2264311582634140373" at="90,47,91,39" concept="0" />
+      <node id="2264311582634140373" at="91,39,92,62" concept="0" />
+      <node id="2264311582634140373" at="93,9,94,52" concept="4" />
+      <node id="2264311582634140373" at="87,64,93,9" concept="2" />
+      <scope id="2264311582634140373" at="88,59,92,62">
+        <var name="cpb" id="2264311582634140373" />
+      </scope>
+      <scope id="2264311582634140373" at="87,64,94,52" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140373" at="18,0,19,0" concept="5" trace="XMLSAXChildHandler_childObject" />
+      <node id="2264311582634140373" at="46,57,47,69" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140373" at="23,0,24,0" concept="1" trace="myConceptXMLSAXChildHandler_childObject" />
+      <node id="2264311582634140373" at="70,64,71,55" concept="4" />
+      <node id="2264311582634140373" at="174,88,175,191" concept="3" />
+      <node id="2264311582634140373" at="175,191,176,34" concept="0" />
+      <node id="2264311582634140373" at="176,34,177,136" concept="0" />
+      <node id="2264311582634140373" at="177,136,178,113" concept="0" />
+      <node id="2264311582634140373" at="178,113,179,49" concept="0" />
+      <node id="2264311582634140373" at="179,49,180,21" concept="0" />
+      <node id="2264311582634140373" at="180,21,181,22" concept="4" />
+      <node id="2264311582634140373" at="174,0,183,0" concept="6" trace="createDescriptorForXMLSAXChildHandler_childObject#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140373" at="70,64,71,55" />
+      <scope id="2264311582634140373" at="174,88,181,22">
+        <var name="b" id="2264311582634140373" />
+      </scope>
+      <scope id="2264311582634140373" at="174,0,183,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140376">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140376" at="19,0,20,0" concept="1" trace="props_XMLSAXChildRule" />
+      <node id="2264311582634140376" at="96,44,97,76" concept="3" />
+      <node id="2264311582634140376" at="97,76,98,138" concept="0" />
+      <node id="2264311582634140376" at="98,138,99,47" concept="0" />
+      <node id="2264311582634140376" at="100,9,101,37" concept="4" />
+      <node id="2264311582634140376" at="95,49,100,9" concept="2" />
+      <scope id="2264311582634140376" at="96,44,99,47">
+        <var name="cpb" id="2264311582634140376" />
+      </scope>
+      <scope id="2264311582634140376" at="95,49,101,37" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140376" at="19,0,20,0" concept="5" trace="XMLSAXChildRule" />
+      <node id="2264311582634140376" at="47,69,48,54" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140376" at="24,0,25,0" concept="1" trace="myConceptXMLSAXChildRule" />
+      <node id="2264311582634140376" at="72,49,73,40" concept="4" />
+      <node id="2264311582634140376" at="183,73,184,176" concept="3" />
+      <node id="2264311582634140376" at="184,176,185,34" concept="0" />
+      <node id="2264311582634140376" at="185,34,186,76" concept="0" />
+      <node id="2264311582634140376" at="186,76,187,113" concept="0" />
+      <node id="2264311582634140378" at="187,113,188,66" concept="0" />
+      <node id="2264311582634140379" at="188,66,189,70" concept="0" />
+      <node id="2264311582634140380" at="189,70,190,168" concept="0" />
+      <node id="4720003541470390117" at="190,168,191,202" concept="0" />
+      <node id="2264311582634140377" at="191,202,192,200" concept="0" />
+      <node id="1068499141038" at="192,200,193,188" concept="0" />
+      <node id="2264311582634140376" at="193,188,194,22" concept="4" />
+      <node id="2264311582634140376" at="183,0,196,0" concept="6" trace="createDescriptorForXMLSAXChildRule#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140376" at="72,49,73,40" />
+      <scope id="2264311582634140376" at="183,73,194,22">
+        <var name="b" id="2264311582634140376" />
+      </scope>
+      <scope id="2264311582634140376" at="183,0,196,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140381">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140381" at="24,0,25,0" concept="1" trace="props_XMLSAXFieldDeclaration" />
+      <node id="2264311582634140381" at="132,51,133,76" concept="3" />
+      <node id="2264311582634140381" at="133,76,134,35" concept="0" />
+      <node id="2264311582634140381" at="134,35,135,54" concept="0" />
+      <node id="2264311582634140381" at="136,9,137,44" concept="4" />
+      <node id="2264311582634140381" at="131,56,136,9" concept="2" />
+      <scope id="2264311582634140381" at="132,51,135,54">
+        <var name="cpb" id="2264311582634140381" />
+      </scope>
+      <scope id="2264311582634140381" at="131,56,137,44" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140381" at="24,0,25,0" concept="5" trace="XMLSAXFieldDeclaration" />
+      <node id="2264311582634140381" at="52,61,53,61" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140381" at="29,0,30,0" concept="1" trace="myConceptXMLSAXFieldDeclaration" />
+      <node id="2264311582634140381" at="82,56,83,47" concept="4" />
+      <node id="2264311582634140381" at="230,80,231,183" concept="3" />
+      <node id="2264311582634140381" at="231,183,232,34" concept="0" />
+      <node id="2264311582634140381" at="232,34,233,71" concept="0" />
+      <node id="2264311582634140381" at="233,71,234,113" concept="0" />
+      <node id="2264311582634140382" at="234,113,235,192" concept="0" />
+      <node id="2264311582634140381" at="235,192,236,22" concept="4" />
+      <node id="2264311582634140381" at="230,0,238,0" concept="6" trace="createDescriptorForXMLSAXFieldDeclaration#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140381" at="82,56,83,47" />
+      <scope id="2264311582634140381" at="230,80,236,22">
+        <var name="b" id="2264311582634140381" />
+      </scope>
+      <scope id="2264311582634140381" at="230,0,238,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140384">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140384" at="25,0,26,0" concept="1" trace="props_XMLSAXFieldReference" />
+      <node id="2264311582634140384" at="139,49,140,76" concept="3" />
+      <node id="2264311582634140384" at="140,76,141,145" concept="0" />
+      <node id="2264311582634140384" at="141,145,142,52" concept="0" />
+      <node id="2264311582634140384" at="143,9,144,42" concept="4" />
+      <node id="2264311582634140384" at="138,54,143,9" concept="2" />
+      <scope id="2264311582634140384" at="139,49,142,52">
+        <var name="cpb" id="2264311582634140384" />
+      </scope>
+      <scope id="2264311582634140384" at="138,54,144,42" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140384" at="25,0,26,0" concept="5" trace="XMLSAXFieldReference" />
+      <node id="2264311582634140384" at="53,61,54,59" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140384" at="30,0,31,0" concept="1" trace="myConceptXMLSAXFieldReference" />
+      <node id="2264311582634140384" at="84,54,85,45" concept="4" />
+      <node id="2264311582634140384" at="238,78,239,181" concept="3" />
+      <node id="2264311582634140384" at="239,181,240,34" concept="0" />
+      <node id="2264311582634140384" at="240,34,241,121" concept="0" />
+      <node id="2264311582634140384" at="241,121,242,113" concept="0" />
+      <node id="2264311582634140385" at="242,113,243,175" concept="0" />
+      <node id="2264311582634140384" at="243,175,244,49" concept="0" />
+      <node id="2264311582634140384" at="244,49,245,22" concept="4" />
+      <node id="2264311582634140384" at="238,0,247,0" concept="6" trace="createDescriptorForXMLSAXFieldReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140384" at="84,54,85,45" />
+      <scope id="2264311582634140384" at="238,78,245,22">
+        <var name="b" id="2264311582634140384" />
+      </scope>
+      <scope id="2264311582634140384" at="238,0,247,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140387">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140387" at="26,0,27,0" concept="1" trace="props_XMLSAXHandlerFunction" />
+      <node id="2264311582634140387" at="146,50,147,76" concept="3" />
+      <node id="2264311582634140387" at="147,76,148,53" concept="0" />
+      <node id="2264311582634140387" at="149,9,150,43" concept="4" />
+      <node id="2264311582634140387" at="145,55,149,9" concept="2" />
+      <scope id="2264311582634140387" at="146,50,148,53">
+        <var name="cpb" id="2264311582634140387" />
+      </scope>
+      <scope id="2264311582634140387" at="145,55,150,43" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140387" at="26,0,27,0" concept="5" trace="XMLSAXHandlerFunction" />
+      <node id="2264311582634140387" at="54,59,55,60" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140387" at="31,0,32,0" concept="1" trace="myConceptXMLSAXHandlerFunction" />
+      <node id="2264311582634140387" at="86,55,87,46" concept="4" />
+      <node id="2264311582634140387" at="247,79,248,182" concept="3" />
+      <node id="2264311582634140387" at="248,182,249,33" concept="0" />
+      <node id="2264311582634140387" at="249,33,250,127" concept="0" />
+      <node id="2264311582634140387" at="250,127,251,113" concept="0" />
+      <node id="2264311582634140387" at="251,113,252,52" concept="0" />
+      <node id="2264311582634140387" at="252,52,253,22" concept="4" />
+      <node id="2264311582634140387" at="247,0,255,0" concept="6" trace="createDescriptorForXMLSAXHandlerFunction#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140387" at="86,55,87,46" />
+      <scope id="2264311582634140387" at="247,79,253,22">
+        <var name="b" id="2264311582634140387" />
+      </scope>
+      <scope id="2264311582634140387" at="247,0,255,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140394">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140394" at="27,0,28,0" concept="1" trace="props_XMLSAXHandler_resultObject" />
+      <node id="2264311582634140394" at="152,55,153,76" concept="3" />
+      <node id="2264311582634140394" at="153,76,154,37" concept="0" />
+      <node id="2264311582634140394" at="154,37,155,40" concept="0" />
+      <node id="2264311582634140394" at="155,40,156,58" concept="0" />
+      <node id="2264311582634140394" at="157,9,158,48" concept="4" />
+      <node id="2264311582634140394" at="151,60,157,9" concept="2" />
+      <scope id="2264311582634140394" at="152,55,156,58">
+        <var name="cpb" id="2264311582634140394" />
+      </scope>
+      <scope id="2264311582634140394" at="151,60,158,48" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140394" at="27,0,28,0" concept="5" trace="XMLSAXHandler_resultObject" />
+      <node id="2264311582634140394" at="55,60,56,65" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140394" at="32,0,33,0" concept="1" trace="myConceptXMLSAXHandler_resultObject" />
+      <node id="2264311582634140394" at="88,60,89,51" concept="4" />
+      <node id="2264311582634140394" at="255,84,256,187" concept="3" />
+      <node id="2264311582634140394" at="256,187,257,34" concept="0" />
+      <node id="2264311582634140394" at="257,34,258,136" concept="0" />
+      <node id="2264311582634140394" at="258,136,259,113" concept="0" />
+      <node id="2264311582634140394" at="259,113,260,49" concept="0" />
+      <node id="2264311582634140394" at="260,49,261,22" concept="0" />
+      <node id="2264311582634140394" at="261,22,262,22" concept="4" />
+      <node id="2264311582634140394" at="255,0,264,0" concept="6" trace="createDescriptorForXMLSAXHandler_resultObject#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140394" at="88,60,89,51" />
+      <scope id="2264311582634140394" at="255,84,262,22">
+        <var name="b" id="2264311582634140394" />
+      </scope>
+      <scope id="2264311582634140394" at="255,0,264,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140397">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140397" at="28,0,29,0" concept="1" trace="props_XMLSAXLocatorExpression" />
+      <node id="2264311582634140397" at="160,52,161,76" concept="3" />
+      <node id="2264311582634140397" at="161,76,162,41" concept="0" />
+      <node id="2264311582634140397" at="162,41,163,55" concept="0" />
+      <node id="2264311582634140397" at="164,9,165,45" concept="4" />
+      <node id="2264311582634140397" at="159,57,164,9" concept="2" />
+      <scope id="2264311582634140397" at="160,52,163,55">
+        <var name="cpb" id="2264311582634140397" />
+      </scope>
+      <scope id="2264311582634140397" at="159,57,165,45" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140397" at="28,0,29,0" concept="5" trace="XMLSAXLocatorExpression" />
+      <node id="2264311582634140397" at="56,65,57,62" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140397" at="33,0,34,0" concept="1" trace="myConceptXMLSAXLocatorExpression" />
+      <node id="2264311582634140397" at="90,57,91,48" concept="4" />
+      <node id="2264311582634140397" at="264,81,265,184" concept="3" />
+      <node id="2264311582634140397" at="265,184,266,34" concept="0" />
+      <node id="2264311582634140397" at="266,34,267,121" concept="0" />
+      <node id="2264311582634140397" at="267,121,268,113" concept="0" />
+      <node id="2264311582634140397" at="268,113,269,49" concept="0" />
+      <node id="2264311582634140397" at="269,49,270,23" concept="0" />
+      <node id="2264311582634140397" at="270,23,271,22" concept="4" />
+      <node id="2264311582634140397" at="264,0,273,0" concept="6" trace="createDescriptorForXMLSAXLocatorExpression#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140397" at="90,57,91,48" />
+      <scope id="2264311582634140397" at="264,81,271,22">
+        <var name="b" id="2264311582634140397" />
+      </scope>
+      <scope id="2264311582634140397" at="264,0,273,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140399">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140399" at="29,0,30,0" concept="1" trace="props_XMLSAXNodeCreator" />
+      <node id="2264311582634140399" at="167,46,168,76" concept="3" />
+      <node id="2264311582634140399" at="168,76,169,40" concept="0" />
+      <node id="2264311582634140399" at="169,40,170,49" concept="0" />
+      <node id="2264311582634140399" at="171,9,172,39" concept="4" />
+      <node id="2264311582634140399" at="166,51,171,9" concept="2" />
+      <scope id="2264311582634140399" at="167,46,170,49">
+        <var name="cpb" id="2264311582634140399" />
+      </scope>
+      <scope id="2264311582634140399" at="166,51,172,39" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140399" at="29,0,30,0" concept="5" trace="XMLSAXNodeCreator" />
+      <node id="2264311582634140399" at="57,62,58,56" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140399" at="34,0,35,0" concept="1" trace="myConceptXMLSAXNodeCreator" />
+      <node id="2264311582634140399" at="92,51,93,42" concept="4" />
+      <node id="2264311582634140399" at="273,75,274,178" concept="3" />
+      <node id="2264311582634140399" at="274,178,275,34" concept="0" />
+      <node id="2264311582634140399" at="275,34,276,127" concept="0" />
+      <node id="2264311582634140399" at="276,127,277,113" concept="0" />
+      <node id="2264311582634140399" at="277,113,278,52" concept="0" />
+      <node id="2264311582634140399" at="278,52,279,22" concept="0" />
+      <node id="2264311582634140399" at="279,22,280,22" concept="4" />
+      <node id="2264311582634140399" at="273,0,282,0" concept="6" trace="createDescriptorForXMLSAXNodeCreator#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140399" at="92,51,93,42" />
+      <scope id="2264311582634140399" at="273,75,280,22">
+        <var name="b" id="2264311582634140399" />
+      </scope>
+      <scope id="2264311582634140399" at="273,0,282,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140402">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140402" at="30,0,31,0" concept="1" trace="props_XMLSAXNodeRule" />
+      <node id="2264311582634140402" at="174,43,175,76" concept="3" />
+      <node id="2264311582634140402" at="175,76,176,35" concept="0" />
+      <node id="2264311582634140402" at="176,35,177,46" concept="0" />
+      <node id="2264311582634140402" at="178,9,179,36" concept="4" />
+      <node id="2264311582634140402" at="173,48,178,9" concept="2" />
+      <scope id="2264311582634140402" at="174,43,177,46">
+        <var name="cpb" id="2264311582634140402" />
+      </scope>
+      <scope id="2264311582634140402" at="173,48,179,36" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140402" at="30,0,31,0" concept="5" trace="XMLSAXNodeRule" />
+      <node id="2264311582634140402" at="58,56,59,53" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140402" at="35,0,36,0" concept="1" trace="myConceptXMLSAXNodeRule" />
+      <node id="2264311582634140402" at="94,48,95,39" concept="4" />
+      <node id="2264311582634140402" at="282,72,283,175" concept="3" />
+      <node id="2264311582634140402" at="283,175,284,34" concept="0" />
+      <node id="2264311582634140402" at="284,34,285,76" concept="0" />
+      <node id="2264311582634140402" at="285,76,286,71" concept="0" />
+      <node id="2264311582634140402" at="286,71,287,113" concept="0" />
+      <node id="2264311582634140409" at="287,113,288,66" concept="0" />
+      <node id="2264311582634140410" at="288,66,289,68" concept="0" />
+      <node id="2264311582634140403" at="289,68,290,191" concept="0" />
+      <node id="980633948634473186" at="290,191,291,195" concept="0" />
+      <node id="2264311582634140404" at="291,195,292,197" concept="0" />
+      <node id="2264311582634140405" at="292,197,293,200" concept="0" />
+      <node id="4250669309761816325" at="293,200,294,205" concept="0" />
+      <node id="2264311582634140406" at="294,205,295,197" concept="0" />
+      <node id="2264311582634140407" at="295,197,296,200" concept="0" />
+      <node id="2264311582634140408" at="296,200,297,202" concept="0" />
+      <node id="2264311582634140402" at="297,202,298,22" concept="4" />
+      <node id="2264311582634140402" at="282,0,300,0" concept="6" trace="createDescriptorForXMLSAXNodeRule#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140402" at="94,48,95,39" />
+      <scope id="2264311582634140402" at="282,72,298,22">
+        <var name="b" id="2264311582634140402" />
+      </scope>
+      <scope id="2264311582634140402" at="282,0,300,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140412">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140412" at="33,0,34,0" concept="1" trace="props_XMLSAXNodeValidator" />
+      <node id="2264311582634140412" at="196,48,197,76" concept="3" />
+      <node id="2264311582634140412" at="197,76,198,42" concept="0" />
+      <node id="2264311582634140412" at="198,42,199,51" concept="0" />
+      <node id="2264311582634140412" at="200,9,201,41" concept="4" />
+      <node id="2264311582634140412" at="195,53,200,9" concept="2" />
+      <scope id="2264311582634140412" at="196,48,199,51">
+        <var name="cpb" id="2264311582634140412" />
+      </scope>
+      <scope id="2264311582634140412" at="195,53,201,41" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140412" at="33,0,34,0" concept="5" trace="XMLSAXNodeValidator" />
+      <node id="2264311582634140412" at="61,61,62,58" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140412" at="38,0,39,0" concept="1" trace="myConceptXMLSAXNodeValidator" />
+      <node id="2264311582634140412" at="100,53,101,44" concept="4" />
+      <node id="2264311582634140412" at="316,77,317,180" concept="3" />
+      <node id="2264311582634140412" at="317,180,318,34" concept="0" />
+      <node id="2264311582634140412" at="318,34,319,138" concept="0" />
+      <node id="2264311582634140412" at="319,138,320,113" concept="0" />
+      <node id="2264311582634140412" at="320,113,321,52" concept="0" />
+      <node id="2264311582634140412" at="321,52,322,24" concept="0" />
+      <node id="2264311582634140412" at="322,24,323,22" concept="4" />
+      <node id="2264311582634140412" at="316,0,325,0" concept="6" trace="createDescriptorForXMLSAXNodeValidator#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140412" at="100,53,101,44" />
+      <scope id="2264311582634140412" at="316,77,323,22">
+        <var name="b" id="2264311582634140412" />
+      </scope>
+      <scope id="2264311582634140412" at="316,0,325,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140417">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140417" at="34,0,35,0" concept="1" trace="props_XMLSAXParser" />
+      <node id="2264311582634140417" at="203,41,204,76" concept="3" />
+      <node id="2264311582634140417" at="204,76,205,35" concept="0" />
+      <node id="2264311582634140417" at="205,35,206,44" concept="0" />
+      <node id="2264311582634140417" at="207,9,208,34" concept="4" />
+      <node id="2264311582634140417" at="202,46,207,9" concept="2" />
+      <scope id="2264311582634140417" at="203,41,206,44">
+        <var name="cpb" id="2264311582634140417" />
+      </scope>
+      <scope id="2264311582634140417" at="202,46,208,34" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140417" at="34,0,35,0" concept="5" trace="XMLSAXParser" />
+      <node id="2264311582634140417" at="62,58,63,51" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140417" at="39,0,40,0" concept="1" trace="myConceptXMLSAXParser" />
+      <node id="2264311582634140417" at="102,46,103,37" concept="4" />
+      <node id="2264311582634140417" at="325,70,326,173" concept="3" />
+      <node id="2264311582634140417" at="326,173,327,33" concept="0" />
+      <node id="2264311582634140417" at="327,33,328,76" concept="0" />
+      <node id="2264311582634140417" at="328,76,329,71" concept="0" />
+      <node id="2264311582634140417" at="329,71,330,113" concept="0" />
+      <node id="2264311582634140419" at="330,113,331,168" concept="0" />
+      <node id="2264311582634140418" at="331,168,332,202" concept="0" />
+      <node id="2264311582634140420" at="332,202,333,197" concept="0" />
+      <node id="2264311582634140421" at="333,197,334,198" concept="0" />
+      <node id="2264311582634140422" at="334,198,335,203" concept="0" />
+      <node id="2264311582634140417" at="335,203,336,22" concept="4" />
+      <node id="2264311582634140417" at="325,0,338,0" concept="6" trace="createDescriptorForXMLSAXParser#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140417" at="102,46,103,37" />
+      <scope id="2264311582634140417" at="325,70,336,22">
+        <var name="b" id="2264311582634140417" />
+      </scope>
+      <scope id="2264311582634140417" at="325,0,338,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140424">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140424" at="35,0,36,0" concept="1" trace="props_XMLSAXTextHandler" />
+      <node id="2264311582634140424" at="210,46,211,76" concept="3" />
+      <node id="2264311582634140424" at="211,76,212,46" concept="0" />
+      <node id="2264311582634140424" at="212,46,213,49" concept="0" />
+      <node id="2264311582634140424" at="214,9,215,39" concept="4" />
+      <node id="2264311582634140424" at="209,51,214,9" concept="2" />
+      <scope id="2264311582634140424" at="210,46,213,49">
+        <var name="cpb" id="2264311582634140424" />
+      </scope>
+      <scope id="2264311582634140424" at="209,51,215,39" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140424" at="35,0,36,0" concept="5" trace="XMLSAXTextHandler" />
+      <node id="2264311582634140424" at="63,51,64,56" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140424" at="40,0,41,0" concept="1" trace="myConceptXMLSAXTextHandler" />
+      <node id="2264311582634140424" at="104,51,105,42" concept="4" />
+      <node id="2264311582634140424" at="338,75,339,178" concept="3" />
+      <node id="2264311582634140424" at="339,178,340,34" concept="0" />
+      <node id="2264311582634140424" at="340,34,341,138" concept="0" />
+      <node id="2264311582634140424" at="341,138,342,113" concept="0" />
+      <node id="2264311582634140424" at="342,113,343,52" concept="0" />
+      <node id="2264311582634140424" at="343,52,344,28" concept="0" />
+      <node id="2264311582634140424" at="344,28,345,22" concept="4" />
+      <node id="2264311582634140424" at="338,0,347,0" concept="6" trace="createDescriptorForXMLSAXTextHandler#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140424" at="104,51,105,42" />
+      <scope id="2264311582634140424" at="338,75,345,22">
+        <var name="b" id="2264311582634140424" />
+      </scope>
+      <scope id="2264311582634140424" at="338,0,347,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/2264311582634140432">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2264311582634140432" at="37,0,38,0" concept="1" trace="props_XMLSAXTextRule" />
+      <node id="2264311582634140432" at="225,43,226,76" concept="3" />
+      <node id="2264311582634140432" at="226,76,227,48" concept="0" />
+      <node id="2264311582634140432" at="227,48,228,46" concept="0" />
+      <node id="2264311582634140432" at="229,9,230,36" concept="4" />
+      <node id="2264311582634140432" at="224,48,229,9" concept="2" />
+      <scope id="2264311582634140432" at="225,43,228,46">
+        <var name="cpb" id="2264311582634140432" />
+      </scope>
+      <scope id="2264311582634140432" at="224,48,230,36" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2264311582634140432" at="37,0,38,0" concept="5" trace="XMLSAXTextRule" />
+      <node id="2264311582634140432" at="65,62,66,53" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2264311582634140432" at="42,0,43,0" concept="1" trace="myConceptXMLSAXTextRule" />
+      <node id="2264311582634140432" at="108,48,109,39" concept="4" />
+      <node id="2264311582634140432" at="356,72,357,175" concept="3" />
+      <node id="2264311582634140432" at="357,175,358,34" concept="0" />
+      <node id="2264311582634140432" at="358,34,359,113" concept="0" />
+      <node id="2264311582634140433" at="359,113,360,200" concept="0" />
+      <node id="2264311582634140432" at="360,200,361,22" concept="4" />
+      <node id="2264311582634140432" at="356,0,363,0" concept="6" trace="createDescriptorForXMLSAXTextRule#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2264311582634140432" at="108,48,109,39" />
+      <scope id="2264311582634140432" at="356,72,361,22">
+        <var name="b" id="2264311582634140432" />
+      </scope>
+      <scope id="2264311582634140432" at="356,0,363,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/3465552206661906222">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="3465552206661906222" at="13,0,14,0" concept="1" trace="props_XMLSAXAttributeHandler_value" />
+      <node id="3465552206661906222" at="52,57,53,76" concept="3" />
+      <node id="3465552206661906222" at="53,76,54,43" concept="0" />
+      <node id="3465552206661906222" at="54,43,55,39" concept="0" />
+      <node id="3465552206661906222" at="55,39,56,60" concept="0" />
+      <node id="3465552206661906222" at="57,9,58,50" concept="4" />
+      <node id="3465552206661906222" at="51,62,57,9" concept="2" />
+      <scope id="3465552206661906222" at="52,57,56,60">
+        <var name="cpb" id="3465552206661906222" />
+      </scope>
+      <scope id="3465552206661906222" at="51,62,58,50" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="3465552206661906222" at="13,0,14,0" concept="5" trace="XMLSAXAttributeHandler_value" />
+      <node id="3465552206661906222" at="41,61,42,67" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="3465552206661906222" at="18,0,19,0" concept="1" trace="myConceptXMLSAXAttributeHandler_value" />
+      <node id="3465552206661906222" at="60,62,61,53" concept="4" />
+      <node id="3465552206661906222" at="128,86,129,189" concept="3" />
+      <node id="3465552206661906222" at="129,189,130,34" concept="0" />
+      <node id="3465552206661906222" at="130,34,131,136" concept="0" />
+      <node id="3465552206661906222" at="131,136,132,113" concept="0" />
+      <node id="3465552206661906222" at="132,113,133,49" concept="0" />
+      <node id="3465552206661906222" at="133,49,134,21" concept="0" />
+      <node id="3465552206661906222" at="134,21,135,22" concept="4" />
+      <node id="3465552206661906222" at="128,0,137,0" concept="6" trace="createDescriptorForXMLSAXAttributeHandler_value#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="3465552206661906222" at="60,62,61,53" />
+      <scope id="3465552206661906222" at="128,86,135,22">
+        <var name="b" id="3465552206661906222" />
+      </scope>
+      <scope id="3465552206661906222" at="128,0,137,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/3465552206661911172">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="3465552206661911172" at="36,0,37,0" concept="1" trace="props_XMLSAXTextHandler_value" />
+      <node id="3465552206661911172" at="217,52,218,76" concept="3" />
+      <node id="3465552206661911172" at="218,76,219,38" concept="0" />
+      <node id="3465552206661911172" at="219,38,220,39" concept="0" />
+      <node id="3465552206661911172" at="220,39,221,55" concept="0" />
+      <node id="3465552206661911172" at="222,9,223,45" concept="4" />
+      <node id="3465552206661911172" at="216,57,222,9" concept="2" />
+      <scope id="3465552206661911172" at="217,52,221,55">
+        <var name="cpb" id="3465552206661911172" />
+      </scope>
+      <scope id="3465552206661911172" at="216,57,223,45" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="3465552206661911172" at="36,0,37,0" concept="5" trace="XMLSAXTextHandler_value" />
+      <node id="3465552206661911172" at="64,56,65,62" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="3465552206661911172" at="41,0,42,0" concept="1" trace="myConceptXMLSAXTextHandler_value" />
+      <node id="3465552206661911172" at="106,57,107,48" concept="4" />
+      <node id="3465552206661911172" at="347,81,348,184" concept="3" />
+      <node id="3465552206661911172" at="348,184,349,34" concept="0" />
+      <node id="3465552206661911172" at="349,34,350,136" concept="0" />
+      <node id="3465552206661911172" at="350,136,351,113" concept="0" />
+      <node id="3465552206661911172" at="351,113,352,49" concept="0" />
+      <node id="3465552206661911172" at="352,49,353,21" concept="0" />
+      <node id="3465552206661911172" at="353,21,354,22" concept="4" />
+      <node id="3465552206661911172" at="347,0,356,0" concept="6" trace="createDescriptorForXMLSAXTextHandler_value#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="3465552206661911172" at="106,57,107,48" />
+      <scope id="3465552206661911172" at="347,81,354,22">
+        <var name="b" id="3465552206661911172" />
+      </scope>
+      <scope id="3465552206661911172" at="347,0,356,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/4250669309761661311">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="4250669309761661311" at="23,0,24,0" concept="1" trace="props_XMLSAXDefaultChildRule" />
+      <node id="4250669309761661311" at="125,51,126,76" concept="3" />
+      <node id="4250669309761661311" at="126,76,127,56" concept="0" />
+      <node id="4250669309761661311" at="127,56,128,54" concept="0" />
+      <node id="4250669309761661311" at="129,9,130,44" concept="4" />
+      <node id="4250669309761661311" at="124,56,129,9" concept="2" />
+      <scope id="4250669309761661311" at="125,51,128,54">
+        <var name="cpb" id="4250669309761661311" />
+      </scope>
+      <scope id="4250669309761661311" at="124,56,130,44" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="4250669309761661311" at="23,0,24,0" concept="5" trace="XMLSAXDefaultChildRule" />
+      <node id="4250669309761661311" at="51,72,52,61" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="4250669309761661311" at="28,0,29,0" concept="1" trace="myConceptXMLSAXDefaultChildRule" />
+      <node id="4250669309761661311" at="80,56,81,47" concept="4" />
+      <node id="4250669309761661311" at="222,80,223,183" concept="3" />
+      <node id="4250669309761661311" at="223,183,224,34" concept="0" />
+      <node id="4250669309761661311" at="224,34,225,76" concept="0" />
+      <node id="4250669309761661311" at="225,76,226,113" concept="0" />
+      <node id="4250669309761661313" at="226,113,227,200" concept="0" />
+      <node id="4250669309761661311" at="227,200,228,22" concept="4" />
+      <node id="4250669309761661311" at="222,0,230,0" concept="6" trace="createDescriptorForXMLSAXDefaultChildRule#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="4250669309761661311" at="80,56,81,47" />
+      <scope id="4250669309761661311" at="222,80,228,22">
+        <var name="b" id="4250669309761661311" />
+      </scope>
+      <scope id="4250669309761661311" at="222,0,230,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/4250669309761678855">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="4250669309761678855" at="21,0,22,0" concept="1" trace="props_XMLSAXDefaultChildHandler" />
+      <node id="4250669309761678855" at="110,54,111,76" concept="3" />
+      <node id="4250669309761678855" at="111,76,112,47" concept="0" />
+      <node id="4250669309761678855" at="112,47,113,57" concept="0" />
+      <node id="4250669309761678855" at="114,9,115,47" concept="4" />
+      <node id="4250669309761678855" at="109,59,114,9" concept="2" />
+      <scope id="4250669309761678855" at="110,54,113,57">
+        <var name="cpb" id="4250669309761678855" />
+      </scope>
+      <scope id="4250669309761678855" at="109,59,115,47" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="4250669309761678855" at="21,0,22,0" concept="5" trace="XMLSAXDefaultChildHandler" />
+      <node id="4250669309761678855" at="49,63,50,64" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="4250669309761678855" at="26,0,27,0" concept="1" trace="myConceptXMLSAXDefaultChildHandler" />
+      <node id="4250669309761678855" at="76,59,77,50" concept="4" />
+      <node id="4250669309761678855" at="204,83,205,186" concept="3" />
+      <node id="4250669309761678855" at="205,186,206,34" concept="0" />
+      <node id="4250669309761678855" at="206,34,207,138" concept="0" />
+      <node id="4250669309761678855" at="207,138,208,113" concept="0" />
+      <node id="4250669309761678855" at="208,113,209,52" concept="0" />
+      <node id="4250669309761678855" at="209,52,210,29" concept="0" />
+      <node id="4250669309761678855" at="210,29,211,22" concept="4" />
+      <node id="4250669309761678855" at="204,0,213,0" concept="6" trace="createDescriptorForXMLSAXDefaultChildHandler#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="4250669309761678855" at="76,59,77,50" />
+      <scope id="4250669309761678855" at="204,83,211,22">
+        <var name="b" id="4250669309761678855" />
+      </scope>
+      <scope id="4250669309761678855" at="204,0,213,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/4250669309762245972">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="4250669309762245972" at="22,0,23,0" concept="1" trace="props_XMLSAXDefaultChildHandler_tagName" />
+      <node id="4250669309762245972" at="117,62,118,76" concept="3" />
+      <node id="4250669309762245972" at="118,76,119,36" concept="0" />
+      <node id="4250669309762245972" at="119,36,120,38" concept="0" />
+      <node id="4250669309762245972" at="120,38,121,65" concept="0" />
+      <node id="4250669309762245972" at="122,9,123,55" concept="4" />
+      <node id="4250669309762245972" at="116,67,122,9" concept="2" />
+      <scope id="4250669309762245972" at="117,62,121,65">
+        <var name="cpb" id="4250669309762245972" />
+      </scope>
+      <scope id="4250669309762245972" at="116,67,123,55" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="4250669309762245972" at="22,0,23,0" concept="5" trace="XMLSAXDefaultChildHandler_tagName" />
+      <node id="4250669309762245972" at="50,64,51,72" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="4250669309762245972" at="27,0,28,0" concept="1" trace="myConceptXMLSAXDefaultChildHandler_tagName" />
+      <node id="4250669309762245972" at="78,67,79,58" concept="4" />
+      <node id="4250669309762245972" at="213,91,214,194" concept="3" />
+      <node id="4250669309762245972" at="214,194,215,34" concept="0" />
+      <node id="4250669309762245972" at="215,34,216,136" concept="0" />
+      <node id="4250669309762245972" at="216,136,217,113" concept="0" />
+      <node id="4250669309762245972" at="217,113,218,49" concept="0" />
+      <node id="4250669309762245972" at="218,49,219,20" concept="0" />
+      <node id="4250669309762245972" at="219,20,220,22" concept="4" />
+      <node id="4250669309762245972" at="213,0,222,0" concept="6" trace="createDescriptorForXMLSAXDefaultChildHandler_tagName#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="4250669309762245972" at="78,67,79,58" />
+      <scope id="4250669309762245972" at="213,91,220,22">
+        <var name="b" id="4250669309762245972" />
+      </scope>
+      <scope id="4250669309762245972" at="213,0,222,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/4720003541456852678">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="4720003541456852678" at="32,0,33,0" concept="1" trace="props_XMLSAXNodeRuleParamRef" />
+      <node id="4720003541456852678" at="189,51,190,76" concept="3" />
+      <node id="4720003541456852678" at="190,76,191,139" concept="0" />
+      <node id="4720003541456852678" at="191,139,192,54" concept="0" />
+      <node id="4720003541456852678" at="193,9,194,44" concept="4" />
+      <node id="4720003541456852678" at="188,56,193,9" concept="2" />
+      <scope id="4720003541456852678" at="189,51,192,54">
+        <var name="cpb" id="4720003541456852678" />
+      </scope>
+      <scope id="4720003541456852678" at="188,56,194,44" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="4720003541456852678" at="32,0,33,0" concept="5" trace="XMLSAXNodeRuleParamRef" />
+      <node id="4720003541456852678" at="60,57,61,61" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="4720003541456852678" at="37,0,38,0" concept="1" trace="myConceptXMLSAXNodeRuleParamRef" />
+      <node id="4720003541456852678" at="98,56,99,47" concept="4" />
+      <node id="4720003541456852678" at="307,80,308,183" concept="3" />
+      <node id="4720003541456852678" at="308,183,309,34" concept="0" />
+      <node id="4720003541456852678" at="309,34,310,121" concept="0" />
+      <node id="4720003541456852678" at="310,121,311,113" concept="0" />
+      <node id="4720003541456852960" at="311,113,312,168" concept="0" />
+      <node id="4720003541456852678" at="312,168,313,49" concept="0" />
+      <node id="4720003541456852678" at="313,49,314,22" concept="4" />
+      <node id="4720003541456852678" at="307,0,316,0" concept="6" trace="createDescriptorForXMLSAXNodeRuleParamRef#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="4720003541456852678" at="98,56,99,47" />
+      <scope id="4720003541456852678" at="307,80,314,22">
+        <var name="b" id="4720003541456852678" />
+      </scope>
+      <scope id="4720003541456852678" at="307,0,316,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/4720003541470384741">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="4720003541470384741" at="20,0,21,0" concept="1" trace="props_XMLSAXChildRuleCondition" />
+      <node id="4720003541470384741" at="103,53,104,76" concept="3" />
+      <node id="4720003541470384741" at="104,76,105,58" concept="0" />
+      <node id="4720003541470384741" at="105,58,106,56" concept="0" />
+      <node id="4720003541470384741" at="107,9,108,46" concept="4" />
+      <node id="4720003541470384741" at="102,58,107,9" concept="2" />
+      <scope id="4720003541470384741" at="103,53,106,56">
+        <var name="cpb" id="4720003541470384741" />
+      </scope>
+      <scope id="4720003541470384741" at="102,58,108,46" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="4720003541470384741" at="20,0,21,0" concept="5" trace="XMLSAXChildRuleCondition" />
+      <node id="4720003541470384741" at="48,54,49,63" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="4720003541470384741" at="25,0,26,0" concept="1" trace="myConceptXMLSAXChildRuleCondition" />
+      <node id="4720003541470384741" at="74,58,75,49" concept="4" />
+      <node id="4720003541470384741" at="196,82,197,185" concept="3" />
+      <node id="4720003541470384741" at="197,185,198,34" concept="0" />
+      <node id="4720003541470384741" at="198,34,199,127" concept="0" />
+      <node id="4720003541470384741" at="199,127,200,113" concept="0" />
+      <node id="4720003541470384741" at="200,113,201,52" concept="0" />
+      <node id="4720003541470384741" at="201,52,202,22" concept="4" />
+      <node id="4720003541470384741" at="196,0,204,0" concept="6" trace="createDescriptorForXMLSAXChildRuleCondition#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="4720003541470384741" at="74,58,75,49" />
+      <scope id="4720003541470384741" at="196,82,202,22">
+        <var name="b" id="4720003541470384741" />
+      </scope>
+      <scope id="4720003541470384741" at="196,0,204,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)/980633948634473453">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="980633948634473453" at="31,0,32,0" concept="1" trace="props_XMLSAXNodeRuleParam" />
+      <node id="980633948634473453" at="181,48,182,76" concept="3" />
+      <node id="980633948634473453" at="182,76,183,37" concept="0" />
+      <node id="980633948634473453" at="183,37,184,35" concept="0" />
+      <node id="980633948634473453" at="184,35,185,51" concept="0" />
+      <node id="980633948634473453" at="186,9,187,41" concept="4" />
+      <node id="980633948634473453" at="180,53,186,9" concept="2" />
+      <scope id="980633948634473453" at="181,48,185,51">
+        <var name="cpb" id="980633948634473453" />
+      </scope>
+      <scope id="980633948634473453" at="180,53,187,41" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="980633948634473453" at="31,0,32,0" concept="5" trace="XMLSAXNodeRuleParam" />
+      <node id="980633948634473453" at="59,53,60,57" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="980633948634473453" at="36,0,37,0" concept="1" trace="myConceptXMLSAXNodeRuleParam" />
+      <node id="980633948634473453" at="96,53,97,44" concept="4" />
+      <node id="980633948634473453" at="300,77,301,179" concept="3" />
+      <node id="980633948634473453" at="301,179,302,34" concept="0" />
+      <node id="980633948634473453" at="302,34,303,140" concept="0" />
+      <node id="980633948634473453" at="303,140,304,112" concept="0" />
+      <node id="980633948634473453" at="304,112,305,22" concept="4" />
+      <node id="980633948634473453" at="300,0,307,0" concept="6" trace="createDescriptorForXMLSAXNodeRuleParam#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="980633948634473453" at="96,53,97,44" />
+      <scope id="980633948634473453" at="300,77,305,22">
+        <var name="b" id="980633948634473453" />
+      </scope>
+      <scope id="980633948634473453" at="300,0,307,0" />
     </file>
   </root>
 </debug-info>

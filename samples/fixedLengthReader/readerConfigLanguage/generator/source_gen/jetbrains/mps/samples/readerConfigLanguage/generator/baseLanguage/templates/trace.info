@@ -28,6 +28,26 @@
       <node id="1197681026688" at="59,106,60,182" concept="3" />
       <node id="1197681818617" at="62,106,63,180" concept="3" />
       <node id="1197681042774" at="65,104,66,182" concept="3" />
+      <node id="1197681023761" at="70,14,71,69" concept="0" />
+      <node id="1197681816362" at="71,69,72,69" concept="0" />
+      <node id="1197681041037" at="72,69,73,69" concept="0" />
+      <node id="1197681023761" at="92,15,93,89" concept="3" />
+      <node id="1197681816362" at="94,15,95,89" concept="3" />
+      <node id="1197681041037" at="96,15,97,87" concept="3" />
+      <node id="1116543388137" at="105,14,106,210" concept="0" />
+      <node id="1116614766999" at="106,210,107,190" concept="0" />
+      <node id="1116617332765" at="107,190,108,185" concept="0" />
+      <node id="1116617425391" at="108,185,109,185" concept="0" />
+      <node id="1116617431470" at="109,185,110,196" concept="0" />
+      <node id="1116544437304" at="110,196,111,204" concept="0" />
+      <node id="1116543388137" at="131,15,132,85" concept="3" />
+      <node id="1116614766999" at="133,15,134,85" concept="3" />
+      <node id="1116617332765" at="135,15,136,85" concept="3" />
+      <node id="1116617425391" at="137,15,138,85" concept="3" />
+      <node id="1116617431470" at="139,15,140,85" concept="3" />
+      <node id="1116544437304" at="141,15,142,85" concept="3" />
+      <node id="1116616402501" at="149,3,150,74" concept="0" />
+      <node id="1116616402501" at="170,15,171,81" concept="3" />
       <node id="1197680735636" at="33,0,36,0" concept="4" trace="propertyMacro_GetPropertyValue_11165430957410#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
       <node id="1197681249881" at="36,0,39,0" concept="4" trace="propertyMacro_GetPropertyValue_11166147514810#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
       <node id="1197681829639" at="39,0,42,0" concept="4" trace="propertyMacro_GetPropertyValue_11166171640360#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
@@ -49,6 +69,16 @@
       <scope id="1197681023762" at="59,106,60,182" />
       <scope id="1197681816363" at="62,106,63,180" />
       <scope id="1197681041038" at="65,104,66,182" />
+      <scope id="1197681023761" at="92,15,93,89" />
+      <scope id="1197681816362" at="94,15,95,89" />
+      <scope id="1197681041037" at="96,15,97,87" />
+      <scope id="1116543388137" at="131,15,132,85" />
+      <scope id="1116614766999" at="133,15,134,85" />
+      <scope id="1116617332765" at="135,15,136,85" />
+      <scope id="1116617425391" at="137,15,138,85" />
+      <scope id="1116617431470" at="139,15,140,85" />
+      <scope id="1116544437304" at="141,15,142,85" />
+      <scope id="1116616402501" at="170,15,171,81" />
       <scope id="1197680735636" at="33,0,36,0">
         <var name="_context" id="1197680735636" />
       </scope>

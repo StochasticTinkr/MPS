@@ -14,6 +14,10 @@
     </file>
   </root>
   <root nodeRef="r:2f15cca9-9d4b-4caa-8c6d-31f12b9faf00(jetbrains.mps.execution.settings.intentions)/9191251033651652580">
+    <file name="IntentionsDescriptor.java">
+      <node id="9191251033651652580" at="37,47,38,69" concept="2" />
+      <node id="9191251033651652580" at="50,52,51,55" concept="2" />
+    </file>
     <file name="ToggleDeprecatedAnnotation_Intention.java">
       <node id="9191251033651652580" at="23,0,24,0" concept="3" trace="myCachedExecutable" />
       <node id="9191251033651652580" at="24,49,25,158" concept="7" />

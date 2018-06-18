@@ -172,8 +172,8 @@
       <node id="6628579460233828323" at="27,18,28,121" concept="2" />
       <node id="6628579460233828323" at="28,121,29,46" concept="2" />
       <node id="6628579460233828323" at="29,46,30,129" concept="2" />
-      <node id="6628579460233828323" at="34,0,35,0" concept="3" trace="initialCounter" />
-      <node id="6628579460233828323" at="35,71,36,43" concept="2" />
+      <node id="6628579460233828985" at="34,0,35,0" concept="3" trace="initialCounter" />
+      <node id="6628579460233828985" at="35,71,36,43" concept="2" />
       <node id="8332528989793377539" at="38,45,39,33" concept="8" />
       <node id="8332528989793402998" at="41,64,42,43" concept="7" />
       <node id="8332528989793410165" at="44,35,45,31" concept="2" />
@@ -199,11 +199,11 @@
       <scope id="6628579460233828323" at="53,45,54,39" />
       <scope id="6628579460233828323" at="62,34,63,74" />
       <scope id="6628579460233828323" at="22,0,25,0">
-        <var name="initialCounter" id="6628579460233828323" />
+        <var name="initialCounter" id="6628579460233828985" />
         <var name="node" id="6628579460233828323" />
       </scope>
       <scope id="6628579460233828323" at="35,0,38,0">
-        <var name="initialCounter" id="6628579460233828323" />
+        <var name="initialCounter" id="6628579460233828985" />
       </scope>
       <scope id="6628579460233828323" at="38,0,41,0">
         <var name="program" id="6628579460233828323" />
@@ -222,7 +222,7 @@
       </scope>
       <scope id="6628579460233828323" at="25,0,32,0">
         <var name="factory" id="6628579460233828323" />
-        <var name="initialCounter" id="6628579460233828323" />
+        <var name="initialCounter" id="6628579460233828985" />
         <var name="node" id="6628579460233828323" />
       </scope>
       <scope id="6628579460233828331" at="41,64,48,24">

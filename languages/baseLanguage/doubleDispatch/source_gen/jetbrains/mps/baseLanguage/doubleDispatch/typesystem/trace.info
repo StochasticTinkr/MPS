@@ -91,6 +91,14 @@
       <unit id="2323553266854805157" at="24,213,28,5" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DisptachParamIsClass_NonTypesystemRule$1" />
       <unit id="2323553266854757446" at="20,0,65,0" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DisptachParamIsClass_NonTypesystemRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="2323553266854757446" at="14,5,15,97" concept="10" />
+      <node id="2323553266854757446" at="15,97,16,55" concept="5" />
+      <node id="2323553266854757446" at="13,5,17,5" concept="1" />
+      <scope id="2323553266854757446" at="14,5,16,55">
+        <var name="nonTypesystemRule" id="2323553266854757446" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)/6855443792548948757">
     <file name="DispatchGroup.java">
@@ -336,12 +344,12 @@
       <node id="7139749370073262852" at="44,49,45,19" concept="11" />
       <node id="7139749370073296123" at="47,113,48,19" concept="11" />
       <node id="7139749370073299571" at="49,5,50,0" concept="13" />
-      <node id="7139749370073304961" at="51,5,52,81" concept="10" />
-      <node id="7139749370073304961" at="52,81,53,87" concept="10" />
-      <node id="7139749370073304961" at="53,87,54,20" concept="10" />
-      <node id="7139749370073304961" at="54,20,55,20" concept="10" />
-      <node id="7139749370073304961" at="56,52,57,32" concept="5" />
-      <node id="7139749370073304961" at="57,32,58,32" concept="5" />
+      <node id="7139749370073304966" at="51,5,52,81" concept="10" />
+      <node id="7139749370073308433" at="52,81,53,87" concept="10" />
+      <node id="7139749370073304966" at="53,87,54,20" concept="10" />
+      <node id="7139749370073308433" at="54,20,55,20" concept="10" />
+      <node id="7139749370073304966" at="56,52,57,32" concept="5" />
+      <node id="7139749370073308433" at="57,32,58,32" concept="5" />
       <node id="7139749370073354559" at="59,46,60,23" concept="11" />
       <node id="7139749370073362752" at="63,5,64,0" concept="13" />
       <node id="6855443792548949246" at="64,0,65,16" concept="11" />
@@ -417,10 +425,10 @@
         <var name="cls" id="8480956156621482488" />
       </scope>
       <scope id="7139749370073304961" at="51,5,62,7">
-        <var name="oth_it" id="7139749370073304961" />
-        <var name="oth_var" id="7139749370073304961" />
-        <var name="ths_it" id="7139749370073304961" />
-        <var name="ths_var" id="7139749370073304961" />
+        <var name="oth_it" id="7139749370073308433" />
+        <var name="oth_var" id="7139749370073308433" />
+        <var name="ths_it" id="7139749370073304966" />
+        <var name="ths_var" id="7139749370073304966" />
       </scope>
       <scope id="8480956156621454577" at="75,54,91,161" />
       <scope id="8480956156621454574" at="75,0,93,0">
@@ -774,6 +782,14 @@
       <unit id="6855443792549032754" at="25,141,29,5" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchArgsHierarchy_NonTypesystemRule$1" />
       <unit id="3166734731694412398" at="30,141,34,5" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchArgsHierarchy_NonTypesystemRule$2" />
       <unit id="6855443792548952024" at="21,0,68,0" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchArgsHierarchy_NonTypesystemRule" />
+    </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="6855443792548952024" at="10,5,11,98" concept="10" />
+      <node id="6855443792548952024" at="11,98,12,55" concept="5" />
+      <node id="6855443792548952024" at="9,33,13,5" concept="1" />
+      <scope id="6855443792548952024" at="10,5,12,55">
+        <var name="nonTypesystemRule" id="6855443792548952024" />
+      </scope>
     </file>
   </root>
 </debug-info>

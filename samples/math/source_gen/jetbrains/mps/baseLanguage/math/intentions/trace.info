@@ -95,6 +95,10 @@
       <unit id="1237104496404" at="46,0,62,0" name="jetbrains.mps.baseLanguage.math.intentions.DivExpressionFractionToDiv_Intention$IntentionImplementation" />
       <unit id="1237104496404" at="23,0,79,0" name="jetbrains.mps.baseLanguage.math.intentions.DivExpressionFractionToDiv_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="1237104496404" at="51,47,52,69" concept="1" />
+      <node id="1237104496404" at="71,52,72,55" concept="1" />
+    </file>
   </root>
   <root nodeRef="r:57529505-426f-4f87-bbc0-2843f12bd318(jetbrains.mps.baseLanguage.math.intentions)/1237104500799">
     <file name="DivExpressionDivToFraction_Intention.java">
@@ -177,8 +181,16 @@
       <unit id="1237104500799" at="46,0,62,0" name="jetbrains.mps.baseLanguage.math.intentions.DivExpressionDivToFraction_Intention$IntentionImplementation" />
       <unit id="1237104500799" at="23,0,79,0" name="jetbrains.mps.baseLanguage.math.intentions.DivExpressionDivToFraction_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="1237104500799" at="44,47,45,69" concept="1" />
+      <node id="1237104500799" at="72,55,73,55" concept="1" />
+    </file>
   </root>
   <root nodeRef="r:57529505-426f-4f87-bbc0-2843f12bd318(jetbrains.mps.baseLanguage.math.intentions)/1238402928175">
+    <file name="IntentionsDescriptor.java">
+      <node id="1238402928175" at="58,47,59,61" concept="1" />
+      <node id="1238402928175" at="73,55,74,47" concept="1" />
+    </file>
     <file name="SpecifyMathContext_Intention.java">
       <node id="1238402928175" at="21,0,22,0" concept="2" trace="myCachedExecutable" />
       <node id="1238402928175" at="22,41,23,151" concept="8" />
@@ -300,6 +312,10 @@
       </scope>
       <unit id="1238942880468" at="42,0,58,0" name="jetbrains.mps.baseLanguage.math.intentions.DeleteMathContext_Intention$IntentionImplementation" />
       <unit id="1238942880468" at="19,0,59,0" name="jetbrains.mps.baseLanguage.math.intentions.DeleteMathContext_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="1238942880468" at="37,47,38,60" concept="1" />
+      <node id="1238942880468" at="74,47,75,46" concept="1" />
     </file>
   </root>
 </debug-info>

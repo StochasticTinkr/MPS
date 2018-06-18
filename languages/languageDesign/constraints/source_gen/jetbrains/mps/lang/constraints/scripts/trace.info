@@ -11,44 +11,47 @@
     </file>
   </root>
   <root nodeRef="r:06347ba9-55db-4390-a23e-cfba36a9507f(jetbrains.mps.lang.constraints.scripts)/6243486444683604044">
+    <file name="ScriptsDescriptor.java">
+      <node id="6243486444683604044" at="15,52,16,70" concept="1" />
+    </file>
     <file name="ShowGetNameUsages_MigrationScript.java">
       <node id="6243486444683604044" at="18,46,19,44" concept="4" />
-      <node id="6243486444683604044" at="22,31,23,48" concept="3" />
-      <node id="6243486444683604044" at="26,41,27,48" concept="3" />
-      <node id="6243486444683604044" at="30,54,31,170" concept="3" />
+      <node id="6243486444683604045" at="22,31,23,48" concept="3" />
+      <node id="6243486444683604045" at="26,41,27,48" concept="3" />
+      <node id="6243486444683604045" at="30,54,31,170" concept="3" />
       <node id="6243486444683698873" at="34,59,35,349" concept="3" />
-      <node id="6243486444683604044" at="41,42,42,21" concept="3" />
+      <node id="6243486444683604045" at="41,42,42,21" concept="3" />
       <node id="6243486444683604044" at="49,41,50,165" concept="3" />
-      <node id="6243486444683604044" at="37,0,40,0" concept="2" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6243486444683604044" at="21,0,25,0" concept="2" trace="getName#()Ljava/lang/String;" />
-      <node id="6243486444683604044" at="25,0,29,0" concept="2" trace="getAdditionalInfo#()Ljava/lang/String;" />
-      <node id="6243486444683604044" at="29,0,33,0" concept="2" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="6243486444683604044" at="33,0,37,0" concept="2" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="6243486444683604044" at="40,0,44,0" concept="2" trace="isShowAsIntention#()Z" />
+      <node id="6243486444683604045" at="37,0,40,0" concept="2" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6243486444683604045" at="21,0,25,0" concept="2" trace="getName#()Ljava/lang/String;" />
+      <node id="6243486444683604045" at="25,0,29,0" concept="2" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="6243486444683604045" at="29,0,33,0" concept="2" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="6243486444683604045" at="33,0,37,0" concept="2" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6243486444683604045" at="40,0,44,0" concept="2" trace="isShowAsIntention#()Z" />
       <node id="6243486444683604044" at="47,0,52,0" concept="2" trace="getScriptNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="6243486444683604044" at="19,44,44,7" concept="1" />
+      <node id="6243486444683604045" at="19,44,44,7" concept="1" />
       <node id="6243486444683604044" at="18,0,46,0" concept="0" trace="ShowGetNameUsages_MigrationScript#()V" />
       <scope id="6243486444683604047" at="38,52,38,52" />
-      <scope id="6243486444683604044" at="22,31,23,48" />
-      <scope id="6243486444683604044" at="26,41,27,48" />
-      <scope id="6243486444683604044" at="30,54,31,170" />
+      <scope id="6243486444683604045" at="22,31,23,48" />
+      <scope id="6243486444683604045" at="26,41,27,48" />
+      <scope id="6243486444683604045" at="30,54,31,170" />
       <scope id="6243486444683690986" at="34,59,35,349" />
-      <scope id="6243486444683604044" at="41,42,42,21" />
+      <scope id="6243486444683604045" at="41,42,42,21" />
       <scope id="6243486444683604044" at="49,41,50,165" />
-      <scope id="6243486444683604044" at="37,0,40,0">
-        <var name="node" id="6243486444683604044" />
+      <scope id="6243486444683604045" at="37,0,40,0">
+        <var name="node" id="6243486444683604045" />
       </scope>
-      <scope id="6243486444683604044" at="21,0,25,0" />
-      <scope id="6243486444683604044" at="25,0,29,0" />
-      <scope id="6243486444683604044" at="29,0,33,0" />
-      <scope id="6243486444683604044" at="33,0,37,0">
-        <var name="node" id="6243486444683604044" />
+      <scope id="6243486444683604045" at="21,0,25,0" />
+      <scope id="6243486444683604045" at="25,0,29,0" />
+      <scope id="6243486444683604045" at="29,0,33,0" />
+      <scope id="6243486444683604045" at="33,0,37,0">
+        <var name="node" id="6243486444683604045" />
       </scope>
-      <scope id="6243486444683604044" at="40,0,44,0" />
+      <scope id="6243486444683604045" at="40,0,44,0" />
       <scope id="6243486444683604044" at="47,0,52,0" />
       <scope id="6243486444683604044" at="18,46,44,7" />
       <scope id="6243486444683604044" at="18,0,46,0" />
-      <unit id="6243486444683604044" at="20,28,44,5" name="jetbrains.mps.lang.constraints.scripts.ShowGetNameUsages_MigrationScript$1" />
+      <unit id="6243486444683604045" at="20,28,44,5" name="jetbrains.mps.lang.constraints.scripts.ShowGetNameUsages_MigrationScript$1" />
       <unit id="6243486444683604044" at="17,0,53,0" name="jetbrains.mps.lang.constraints.scripts.ShowGetNameUsages_MigrationScript" />
     </file>
   </root>

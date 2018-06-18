@@ -18,6 +18,10 @@
     </file>
   </root>
   <root nodeRef="r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)/393299394024647596">
+    <file name="IntentionsDescriptor.java">
+      <node id="393299394024647596" at="44,47,45,61" concept="2" />
+      <node id="393299394024647596" at="68,44,69,47" concept="2" />
+    </file>
     <file name="SurroundWithUnless_Intention.java">
       <node id="393299394024647596" at="24,0,25,0" concept="3" trace="myCachedExecutable" />
       <node id="393299394024647596" at="25,41,26,162" concept="11" />
@@ -88,6 +92,10 @@
     </file>
   </root>
   <root nodeRef="r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)/393299394024667052">
+    <file name="IntentionsDescriptor.java">
+      <node id="393299394024667052" at="51,47,52,60" concept="2" />
+      <node id="393299394024667052" at="65,52,66,46" concept="2" />
+    </file>
     <file name="UnwrapUnlessBlock_Intention.java">
       <node id="393299394024667052" at="26,0,27,0" concept="3" trace="myCachedExecutable" />
       <node id="393299394024667052" at="27,40,28,162" concept="11" />
@@ -189,6 +197,10 @@
     </file>
   </root>
   <root nodeRef="r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)/393299394024668987">
+    <file name="IntentionsDescriptor.java">
+      <node id="393299394024668987" at="52,60,53,60" concept="2" />
+      <node id="393299394024668987" at="66,46,67,46" concept="2" />
+    </file>
     <file name="TurnToIfStatement_Intention.java">
       <node id="393299394024668987" at="23,0,24,0" concept="3" trace="myCachedExecutable" />
       <node id="393299394024668987" at="24,40,25,162" concept="11" />
@@ -364,6 +376,10 @@
       </scope>
       <unit id="954830572076058611" at="45,0,72,0" name="org.jetbrains.mps.samples.IfAndUnless.intentions.ConvertMyIfToIf_Intention$IntentionImplementation" />
       <unit id="954830572076058611" at="22,0,73,0" name="org.jetbrains.mps.samples.IfAndUnless.intentions.ConvertMyIfToIf_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="954830572076058611" at="37,47,38,58" concept="2" />
+      <node id="954830572076058611" at="67,46,68,44" concept="2" />
     </file>
   </root>
 </debug-info>

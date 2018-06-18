@@ -81,6 +81,10 @@
       <unit id="2870455723671212067" at="46,0,71,0" name="testDefaultEditor.intentions.AddDefaultNodeAttribute_Intention$IntentionImplementation" />
       <unit id="2870455723671212067" at="23,0,72,0" name="testDefaultEditor.intentions.AddDefaultNodeAttribute_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="2870455723671212067" at="38,70,39,66" concept="2" />
+      <node id="2870455723671212067" at="53,56,54,52" concept="2" />
+    </file>
   </root>
   <root nodeRef="r:be519384-ff73-407d-8bb6-1d18a1417684(testDefaultEditor.intentions)/2870455723671213010">
     <file name="AddDefaultReferenceAttribute_Intention.java">
@@ -150,6 +154,10 @@
       <unit id="2870455723671213010" at="46,0,72,0" name="testDefaultEditor.intentions.AddDefaultReferenceAttribute_Intention$IntentionImplementation" />
       <unit id="2870455723671213010" at="23,0,73,0" name="testDefaultEditor.intentions.AddDefaultReferenceAttribute_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="2870455723671213010" at="39,66,40,71" concept="2" />
+      <node id="2870455723671213010" at="54,52,55,57" concept="2" />
+    </file>
   </root>
   <root nodeRef="r:be519384-ff73-407d-8bb6-1d18a1417684(testDefaultEditor.intentions)/5527270534710867991">
     <file name="AddDefaultPropertyAttribute_Intention.java">
@@ -218,6 +226,10 @@
       </scope>
       <unit id="5527270534710867991" at="46,0,72,0" name="testDefaultEditor.intentions.AddDefaultPropertyAttribute_Intention$IntentionImplementation" />
       <unit id="5527270534710867991" at="23,0,73,0" name="testDefaultEditor.intentions.AddDefaultPropertyAttribute_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="5527270534710867991" at="37,47,38,70" concept="2" />
+      <node id="5527270534710867991" at="52,52,53,56" concept="2" />
     </file>
   </root>
 </debug-info>

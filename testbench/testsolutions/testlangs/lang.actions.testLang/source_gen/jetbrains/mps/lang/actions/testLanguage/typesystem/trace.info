@@ -15,6 +15,14 @@
     </file>
   </root>
   <root nodeRef="r:13c5fcf5-111d-4ae9-b9c9-6a7deeb8dce9(jetbrains.mps.lang.actions.testLanguage.typesystem)/5750432610478621621">
+    <file name="TypesystemDescriptor.java">
+      <node id="5750432610478621621" at="10,5,11,91" concept="5" />
+      <node id="5750432610478621621" at="11,91,12,47" concept="2" />
+      <node id="5750432610478621621" at="9,33,13,5" concept="0" />
+      <scope id="5750432610478621621" at="10,5,12,47">
+        <var name="inferenceRule" id="5750432610478621621" />
+      </scope>
+    </file>
     <file name="typeof_ActionTestContainer_InferenceRule.java">
       <node id="5750432610478685704" at="24,7,25,66" concept="5" />
       <node id="5750432610478685704" at="25,66,26,218" concept="5" />

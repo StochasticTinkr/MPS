@@ -14,6 +14,10 @@
     </file>
   </root>
   <root nodeRef="r:2ad3589c-bd38-4890-949b-a55e367ecd1d(jetbrains.mps.lang.makeup.intentions)/1223283106985269863">
+    <file name="IntentionsDescriptor.java">
+      <node id="1223283106985269863" at="37,47,38,57" concept="2" />
+      <node id="1223283106985269863" at="50,52,51,43" concept="2" />
+    </file>
     <file name="SetCopyOutcome_Intention.java">
       <node id="1223283106985269863" at="22,0,23,0" concept="3" trace="myCachedExecutable" />
       <node id="1223283106985269863" at="23,37,24,151" concept="7" />

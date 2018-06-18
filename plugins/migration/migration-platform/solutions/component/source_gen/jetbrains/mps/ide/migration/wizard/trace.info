@@ -296,6 +296,9 @@
     </file>
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)/4570314324458801858">
+    <file name="IconContainer.java">
+      <node id="4570314324458856281" at="9,0,10,0" concept="14" trace="ICON_a0" />
+    </file>
     <file name="Icons.java">
       <node id="4570314324458801948" at="8,0,9,0" concept="14" trace="Language" />
       <unit id="4570314324458801858" at="7,0,10,0" name="jetbrains.mps.ide.migration.wizard.Icons" />

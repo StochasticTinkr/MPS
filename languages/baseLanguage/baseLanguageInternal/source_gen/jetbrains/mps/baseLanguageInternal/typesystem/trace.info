@@ -15,6 +15,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1100832983841501763">
+    <file name="TypesystemDescriptor.java">
+      <node id="1100832983841501763" at="41,5,42,92" concept="6" />
+      <node id="1100832983841501763" at="42,92,43,47" concept="2" />
+      <node id="1100832983841501763" at="40,5,44,5" concept="0" />
+      <scope id="1100832983841501763" at="41,5,43,47">
+        <var name="inferenceRule" id="1100832983841501763" />
+      </scope>
+    </file>
     <file name="typeof_InternalClassCreator_InferenceRule.java">
       <node id="1100832983841501766" at="24,133,25,15" concept="6" />
       <node id="1100832983841501771" at="26,197,27,190" concept="2" />
@@ -87,6 +95,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1196525371871">
+    <file name="TypesystemDescriptor.java">
+      <node id="1196525371871" at="49,5,50,93" concept="6" />
+      <node id="1196525371871" at="50,93,51,47" concept="2" />
+      <node id="1196525371871" at="48,5,52,5" concept="0" />
+      <scope id="1196525371871" at="49,5,51,47">
+        <var name="inferenceRule" id="1196525371871" />
+      </scope>
+    </file>
     <file name="typeof_InternalNewExpression_InferenceRule.java">
       <node id="1196525371873" at="26,134,27,15" concept="6" />
       <node id="1196525371878" at="28,190,29,183" concept="2" />
@@ -173,6 +189,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1196525371903">
+    <file name="TypesystemDescriptor.java">
+      <node id="1196525371903" at="57,5,58,105" concept="6" />
+      <node id="1196525371903" at="58,105,59,47" concept="2" />
+      <node id="1196525371903" at="56,5,60,5" concept="0" />
+      <scope id="1196525371903" at="57,5,59,47">
+        <var name="inferenceRule" id="1196525371903" />
+      </scope>
+    </file>
     <file name="typeof_InternalPartialInstanceMethodCall_InferenceRule.java">
       <node id="1204072569920" at="19,5,20,44" concept="6" />
       <node id="1204072569920" at="20,44,21,205" concept="6" />
@@ -210,6 +234,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1196525371911">
+    <file name="TypesystemDescriptor.java">
+      <node id="1196525371911" at="45,5,46,95" concept="6" />
+      <node id="1196525371911" at="46,95,47,47" concept="2" />
+      <node id="1196525371911" at="44,5,48,5" concept="0" />
+      <scope id="1196525371911" at="45,5,47,47">
+        <var name="inferenceRule" id="1196525371911" />
+      </scope>
+    </file>
     <file name="typeof_InternalClassExpression_InferenceRule.java">
       <node id="1196525371913" at="23,5,24,43" concept="6" />
       <node id="1196525371913" at="24,43,25,205" concept="6" />
@@ -266,6 +298,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1196525371926">
+    <file name="TypesystemDescriptor.java">
+      <node id="1196525371926" at="61,5,62,96" concept="6" />
+      <node id="1196525371926" at="62,96,63,47" concept="2" />
+      <node id="1196525371926" at="60,5,64,5" concept="0" />
+      <scope id="1196525371926" at="61,5,63,47">
+        <var name="inferenceRule" id="1196525371926" />
+      </scope>
+    </file>
     <file name="typeof_InternalStaticMethodCall_InferenceRule.java">
       <node id="1196525371928" at="19,5,20,46" concept="6" />
       <node id="1196525371928" at="20,46,21,205" concept="6" />
@@ -303,6 +343,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1196525371937">
+    <file name="TypesystemDescriptor.java">
+      <node id="1196525371937" at="77,5,78,97" concept="6" />
+      <node id="1196525371937" at="78,97,79,47" concept="2" />
+      <node id="1196525371937" at="76,5,80,5" concept="0" />
+      <scope id="1196525371937" at="77,5,79,47">
+        <var name="inferenceRule" id="1196525371937" />
+      </scope>
+    </file>
     <file name="typeof_InternalVariableReference_InferenceRule.java">
       <node id="1196525371939" at="19,5,20,48" concept="6" />
       <node id="1196525371939" at="20,48,21,205" concept="6" />
@@ -340,6 +388,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1196525371948">
+    <file name="TypesystemDescriptor.java">
+      <node id="1196525371948" at="53,5,54,101" concept="6" />
+      <node id="1196525371948" at="54,101,55,47" concept="2" />
+      <node id="1196525371948" at="52,5,56,5" concept="0" />
+      <scope id="1196525371948" at="53,5,55,47">
+        <var name="inferenceRule" id="1196525371948" />
+      </scope>
+    </file>
     <file name="typeof_InternalPartialFieldReference_InferenceRule.java">
       <node id="1196525371950" at="19,5,20,50" concept="6" />
       <node id="1196525371950" at="20,50,21,205" concept="6" />
@@ -377,6 +433,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1199964800663">
+    <file name="TypesystemDescriptor.java">
+      <node id="1199964800663" at="81,5,82,90" concept="6" />
+      <node id="1199964800663" at="82,90,83,47" concept="2" />
+      <node id="1199964800663" at="80,5,84,5" concept="0" />
+      <scope id="1199964800663" at="81,5,83,47">
+        <var name="inferenceRule" id="1199964800663" />
+      </scope>
+    </file>
     <file name="typeof_TypeHintExpression_InferenceRule.java">
       <node id="1199964813834" at="19,5,20,53" concept="6" />
       <node id="1199964813834" at="20,53,21,205" concept="6" />
@@ -414,6 +478,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1202838220710">
+    <file name="TypesystemDescriptor.java">
+      <node id="1202838220710" at="69,5,70,94" concept="6" />
+      <node id="1202838220710" at="70,94,71,47" concept="2" />
+      <node id="1202838220710" at="68,5,72,5" concept="0" />
+      <scope id="1202838220710" at="69,5,71,47">
+        <var name="inferenceRule" id="1202838220710" />
+      </scope>
+    </file>
     <file name="typeof_InternalThisExpression_InferenceRule.java">
       <node id="1202838300385" at="21,116,22,205" concept="6" />
       <node id="1202839662334" at="22,205,23,192" concept="6" />
@@ -468,6 +540,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1238253384653">
+    <file name="TypesystemDescriptor.java">
+      <node id="1238253384653" at="25,5,26,99" concept="6" />
+      <node id="1238253384653" at="26,99,27,47" concept="2" />
+      <node id="1238253384653" at="24,5,28,5" concept="0" />
+      <scope id="1238253384653" at="25,5,27,47">
+        <var name="inferenceRule" id="1238253384653" />
+      </scope>
+    </file>
     <file name="typeof_ExtractToConstantExpression_InferenceRule.java">
       <node id="1238253423488" at="19,5,20,52" concept="6" />
       <node id="1238253423488" at="20,52,21,205" concept="6" />
@@ -568,8 +648,24 @@
       </scope>
       <unit id="1293230950168564359" at="15,0,44,0" name="jetbrains.mps.baseLanguageInternal.typesystem.InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="1293230950168564359" at="101,5,102,146" concept="6" />
+      <node id="1293230950168564359" at="102,146,103,61" concept="2" />
+      <node id="1293230950168564359" at="100,5,104,5" concept="0" />
+      <scope id="1293230950168564359" at="101,5,103,61">
+        <var name="eliminationRule" id="1293230950168564359" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1585405235656400053">
+    <file name="TypesystemDescriptor.java">
+      <node id="1585405235656400053" at="89,5,90,93" concept="6" />
+      <node id="1585405235656400053" at="90,93,91,47" concept="2" />
+      <node id="1585405235656400053" at="88,5,92,5" concept="0" />
+      <scope id="1585405235656400053" at="89,5,91,47">
+        <var name="inferenceRule" id="1585405235656400053" />
+      </scope>
+    </file>
     <file name="typeof_WeakConstantReference_InferenceRule.java">
       <node id="1585405235656400060" at="19,5,20,59" concept="6" />
       <node id="1585405235656400060" at="20,59,21,211" concept="6" />
@@ -607,6 +703,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/3196918548952839984">
+    <file name="TypesystemDescriptor.java">
+      <node id="3196918548952839984" at="13,5,14,92" concept="6" />
+      <node id="3196918548952839984" at="14,92,15,47" concept="2" />
+      <node id="3196918548952839984" at="12,33,16,5" concept="0" />
+      <scope id="3196918548952839984" at="13,5,15,47">
+        <var name="inferenceRule" id="3196918548952839984" />
+      </scope>
+    </file>
     <file name="typeof_ExtractStatementList_InferenceRule.java">
       <node id="3196918548952839988" at="19,5,20,52" concept="6" />
       <node id="3196918548952839988" at="20,52,21,211" concept="6" />
@@ -644,6 +748,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/3421461530438560035">
+    <file name="TypesystemDescriptor.java">
+      <node id="3421461530438560035" at="37,5,38,101" concept="6" />
+      <node id="3421461530438560035" at="38,101,39,47" concept="2" />
+      <node id="3421461530438560035" at="36,5,40,5" concept="0" />
+      <scope id="3421461530438560035" at="37,5,39,47">
+        <var name="inferenceRule" id="3421461530438560035" />
+      </scope>
+    </file>
     <file name="typeof_InternalAnonymousClassCreator_InferenceRule.java">
       <node id="3421461530438560042" at="19,5,20,46" concept="6" />
       <node id="3421461530438560042" at="20,46,21,211" concept="6" />
@@ -681,6 +793,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/3421461530438560540">
+    <file name="TypesystemDescriptor.java">
+      <node id="3421461530438560540" at="33,5,34,94" concept="6" />
+      <node id="3421461530438560540" at="34,94,35,47" concept="2" />
+      <node id="3421461530438560540" at="32,5,36,5" concept="0" />
+      <scope id="3421461530438560540" at="33,5,35,47">
+        <var name="inferenceRule" id="3421461530438560540" />
+      </scope>
+    </file>
     <file name="typeof_InternalAnonymousClass_InferenceRule.java">
       <node id="3421461530438560547" at="20,5,21,45" concept="6" />
       <node id="3421461530438560547" at="21,45,22,211" concept="6" />
@@ -759,8 +879,24 @@
       </scope>
       <unit id="3584941796637350105" at="17,0,40,0" name="jetbrains.mps.baseLanguageInternal.typesystem.InternalClassifierType_subtypeOf_ClassifierType_SubtypingRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="3584941796637350105" at="97,5,98,112" concept="6" />
+      <node id="3584941796637350105" at="98,112,99,47" concept="2" />
+      <node id="3584941796637350105" at="96,5,100,5" concept="0" />
+      <scope id="3584941796637350105" at="97,5,99,47">
+        <var name="subtypingRule" id="3584941796637350105" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/3731567766880819190">
+    <file name="TypesystemDescriptor.java">
+      <node id="3731567766880819190" at="65,5,66,104" concept="6" />
+      <node id="3731567766880819190" at="66,104,67,47" concept="2" />
+      <node id="3731567766880819190" at="64,5,68,5" concept="0" />
+      <scope id="3731567766880819190" at="65,5,67,47">
+        <var name="inferenceRule" id="3731567766880819190" />
+      </scope>
+    </file>
     <file name="typeof_InternalSuperMethodCallOperation_InferenceRule.java">
       <node id="3731567766880819193" at="19,5,20,44" concept="6" />
       <node id="3731567766880819193" at="20,44,21,211" concept="6" />
@@ -798,6 +934,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/7738261905749582062">
+    <file name="TypesystemDescriptor.java">
+      <node id="7738261905749582062" at="17,5,18,105" concept="6" />
+      <node id="7738261905749582062" at="18,105,19,47" concept="2" />
+      <node id="7738261905749582062" at="16,5,20,5" concept="0" />
+      <scope id="7738261905749582062" at="17,5,19,47">
+        <var name="inferenceRule" id="7738261905749582062" />
+      </scope>
+    </file>
     <file name="typeof_ExtractStaticInnerClassExpression_InferenceRule.java">
       <node id="7738261905749582065" at="19,5,20,52" concept="6" />
       <node id="7738261905749582065" at="20,52,21,211" concept="6" />
@@ -835,6 +979,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/8228699960986553989">
+    <file name="TypesystemDescriptor.java">
+      <node id="8228699960986553989" at="73,5,74,105" concept="6" />
+      <node id="8228699960986553989" at="74,105,75,47" concept="2" />
+      <node id="8228699960986553989" at="72,5,76,5" concept="0" />
+      <scope id="8228699960986553989" at="73,5,75,47">
+        <var name="inferenceRule" id="8228699960986553989" />
+      </scope>
+    </file>
     <file name="typeof_InternalTypedStaticFieldReference_InferenceRule.java">
       <node id="8228699960986559757" at="19,5,20,46" concept="6" />
       <node id="8228699960986559757" at="20,46,21,211" concept="6" />
@@ -872,6 +1024,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/8791205313600585964">
+    <file name="TypesystemDescriptor.java">
+      <node id="8791205313600585964" at="85,5,86,90" concept="6" />
+      <node id="8791205313600585964" at="86,90,87,47" concept="2" />
+      <node id="8791205313600585964" at="84,5,88,5" concept="0" />
+      <scope id="8791205313600585964" at="85,5,87,47">
+        <var name="inferenceRule" id="8791205313600585964" />
+      </scope>
+    </file>
     <file name="typeof_WeakClassReference_InferenceRule.java">
       <node id="8791205313600585971" at="20,5,21,56" concept="6" />
       <node id="8791205313600585971" at="21,56,22,211" concept="6" />
@@ -919,6 +1079,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/8881995820265138570">
+    <file name="TypesystemDescriptor.java">
+      <node id="8881995820265138570" at="93,5,94,106" concept="6" />
+      <node id="8881995820265138570" at="94,106,95,55" concept="2" />
+      <node id="8881995820265138570" at="92,5,96,5" concept="0" />
+      <scope id="8881995820265138570" at="93,5,95,55">
+        <var name="nonTypesystemRule" id="8881995820265138570" />
+      </scope>
+    </file>
     <file name="check_ExtractStaticMethodCall_NonTypesystemRule.java">
       <node id="8881995820265138612" at="24,123,25,332" concept="6" />
       <node id="8881995820265138588" at="27,7,28,60" concept="6" />
@@ -960,6 +1128,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/8881995820265343417">
+    <file name="TypesystemDescriptor.java">
+      <node id="8881995820265343417" at="21,5,22,101" concept="6" />
+      <node id="8881995820265343417" at="22,101,23,47" concept="2" />
+      <node id="8881995820265343417" at="20,5,24,5" concept="0" />
+      <scope id="8881995820265343417" at="21,5,23,47">
+        <var name="inferenceRule" id="8881995820265343417" />
+      </scope>
+    </file>
     <file name="typeof_ExtractStaticMethodExpression_InferenceRule.java">
       <node id="8881995820265357537" at="19,5,20,52" concept="6" />
       <node id="8881995820265357537" at="20,52,21,211" concept="6" />
@@ -997,6 +1173,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/99767819676010108">
+    <file name="TypesystemDescriptor.java">
+      <node id="99767819676010108" at="29,5,30,102" concept="6" />
+      <node id="99767819676010108" at="30,102,31,47" concept="2" />
+      <node id="99767819676010108" at="28,5,32,5" concept="0" />
+      <scope id="99767819676010108" at="29,5,31,47">
+        <var name="inferenceRule" id="99767819676010108" />
+      </scope>
+    </file>
     <file name="typeof_ExtractToConstantRefExpression_InferenceRule.java">
       <node id="99767819676010115" at="19,5,20,49" concept="6" />
       <node id="99767819676010115" at="20,49,21,209" concept="6" />

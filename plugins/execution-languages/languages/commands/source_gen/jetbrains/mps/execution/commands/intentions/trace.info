@@ -105,6 +105,10 @@
       <unit id="2168104298250372811" at="62,0,80,0" name="jetbrains.mps.execution.commands.intentions.ConvertToItems_Intention$IntentionImplementation" />
       <unit id="2168104298250372811" at="22,0,81,0" name="jetbrains.mps.execution.commands.intentions.ConvertToItems_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="2168104298250372811" at="37,47,38,57" concept="2" />
+      <node id="2168104298250372811" at="51,52,52,43" concept="2" />
+    </file>
   </root>
   <root nodeRef="r:611f7e3f-ffc4-4896-a805-c9fe694989ca(jetbrains.mps.execution.commands.intentions)/2168104298250389155">
     <file name="ConvertToList_Intention.java">
@@ -222,6 +226,10 @@
       <unit id="2168104298250401831" at="72,48,76,7" name="jetbrains.mps.execution.commands.intentions.ConvertToList_Intention$IntentionImplementation$1" />
       <unit id="2168104298250389155" at="62,0,84,0" name="jetbrains.mps.execution.commands.intentions.ConvertToList_Intention$IntentionImplementation" />
       <unit id="2168104298250389155" at="27,0,101,0" name="jetbrains.mps.execution.commands.intentions.ConvertToList_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="2168104298250389155" at="38,57,39,56" concept="2" />
+      <node id="2168104298250389155" at="52,43,53,42" concept="2" />
     </file>
   </root>
 </debug-info>

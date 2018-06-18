@@ -28,7 +28,7 @@
     <file name="Binaries_Facet.java">
       <node id="6648795410103988025" at="45,0,46,0" concept="3" trace="targets" />
       <node id="6648795410103988025" at="46,0,47,0" concept="3" trace="name" />
-      <node id="6648795410103988025" at="47,27,48,88" concept="2" />
+      <node id="6648795410103988026" at="47,27,48,88" concept="2" />
       <node id="6648795410103988025" at="50,38,51,19" concept="8" />
       <node id="6648795410103988025" at="53,43,54,16" concept="8" />
       <node id="6648795410103988025" at="56,43,57,153" concept="8" />
@@ -269,6 +269,9 @@
       <unit id="6648795410103988032" at="73,17,148,7" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$Target_copyBinaries$1" />
       <unit id="6648795410103988026" at="68,0,196,0" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$Target_copyBinaries" />
       <unit id="6648795410103988025" at="44,0,208,0" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet" />
+    </file>
+    <file name="FacetManifest.java">
+      <node id="6648795410103988025" at="14,26,15,67" concept="2" />
     </file>
   </root>
 </debug-info>

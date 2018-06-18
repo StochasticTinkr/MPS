@@ -93,6 +93,10 @@
       <unit id="1227885451240" at="45,0,74,0" name="jetbrains.mps.lang.quotation.intentions.CreateAntiquotation_Intention$IntentionImplementation" />
       <unit id="1227885451240" at="22,0,75,0" name="jetbrains.mps.lang.quotation.intentions.CreateAntiquotation_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="1227885451240" at="37,47,38,62" concept="4" />
+      <node id="1227885451240" at="54,52,55,48" concept="4" />
+    </file>
   </root>
   <root nodeRef="r:f4b34c7d-c02f-43b9-b6e7-feff8966461c(jetbrains.mps.lang.quotation.intentions)/1227886484790">
     <file name="CreateListAntiquotation_Intention.java">
@@ -173,6 +177,10 @@
       </scope>
       <unit id="1227886484790" at="46,0,78,0" name="jetbrains.mps.lang.quotation.intentions.CreateListAntiquotation_Intention$IntentionImplementation" />
       <unit id="1227886484790" at="23,0,79,0" name="jetbrains.mps.lang.quotation.intentions.CreateListAntiquotation_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="1227886484790" at="38,62,39,66" concept="4" />
+      <node id="1227886484790" at="55,48,56,52" concept="4" />
     </file>
   </root>
   <root nodeRef="r:f4b34c7d-c02f-43b9-b6e7-feff8966461c(jetbrains.mps.lang.quotation.intentions)/1227886614590">
@@ -283,6 +291,10 @@
       </scope>
       <unit id="1227886614590" at="62,0,101,0" name="jetbrains.mps.lang.quotation.intentions.CreateReferenceAntiquotation_Intention$IntentionImplementation" />
       <unit id="1227886614590" at="25,0,102,0" name="jetbrains.mps.lang.quotation.intentions.CreateReferenceAntiquotation_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="1227886614590" at="39,66,40,71" concept="4" />
+      <node id="1227886614590" at="56,52,57,57" concept="4" />
     </file>
   </root>
   <root nodeRef="r:f4b34c7d-c02f-43b9-b6e7-feff8966461c(jetbrains.mps.lang.quotation.intentions)/1227886844257">
@@ -421,6 +433,10 @@
       <unit id="1227886844257" at="64,0,103,0" name="jetbrains.mps.lang.quotation.intentions.CreatePropertyAntiquotation_Intention$IntentionImplementation" />
       <unit id="1227886844257" at="27,0,122,0" name="jetbrains.mps.lang.quotation.intentions.CreatePropertyAntiquotation_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="1227886844257" at="40,71,41,70" concept="4" />
+      <node id="1227886844257" at="57,57,58,56" concept="4" />
+    </file>
   </root>
   <root nodeRef="r:f4b34c7d-c02f-43b9-b6e7-feff8966461c(jetbrains.mps.lang.quotation.intentions)/8182547171709991153">
     <file name="ConvertToNodeBuilder_Intention.java">
@@ -477,6 +493,10 @@
       </scope>
       <unit id="8182547171709991153" at="41,0,57,0" name="jetbrains.mps.lang.quotation.intentions.ConvertToNodeBuilder_Intention$IntentionImplementation" />
       <unit id="8182547171709991153" at="18,0,58,0" name="jetbrains.mps.lang.quotation.intentions.ConvertToNodeBuilder_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="8182547171709991153" at="41,70,42,63" concept="4" />
+      <node id="8182547171709991153" at="58,56,59,49" concept="4" />
     </file>
   </root>
   <root nodeRef="r:f4b34c7d-c02f-43b9-b6e7-feff8966461c(jetbrains.mps.lang.quotation.intentions)/8182547171709991160">

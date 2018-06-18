@@ -114,8 +114,18 @@
       </scope>
       <unit id="1197632773078" at="29,0,100,0" name="jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder" />
     </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="1197632773078" at="21,13,22,45" concept="8" />
+      <node id="1197632773078" at="37,40,38,193" concept="3" />
+      <scope id="1197632773078" at="21,13,22,45" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)/1197636141662">
+    <file name="FindUsagesDescriptor.java">
+      <node id="1197636141662" at="27,13,28,39" concept="8" />
+      <node id="1197636141662" at="40,178,41,167" concept="3" />
+      <scope id="1197636141662" at="27,13,28,39" />
+    </file>
     <file name="NodeUsages_Finder.java">
       <node id="322802586017727932" at="25,46,26,207" concept="8" />
       <node id="1197636141662" at="29,34,30,25" concept="8" />
@@ -173,6 +183,11 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)/1201275992898">
+    <file name="FindUsagesDescriptor.java">
+      <node id="1201275992898" at="25,13,26,42" concept="8" />
+      <node id="1201275992898" at="39,189,40,178" concept="3" />
+      <scope id="1201275992898" at="25,13,26,42" />
+    </file>
     <file name="LinkInstances_Finder.java">
       <node id="1201275992898" at="29,34,30,28" concept="8" />
       <node id="1201275992898" at="33,38,34,14" concept="8" />
@@ -311,8 +326,18 @@
       </scope>
       <unit id="1211301915928" at="20,0,59,0" name="jetbrains.mps.lang.structure.findUsages.ExactConceptInstances_Finder" />
     </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="1211301915928" at="23,13,24,50" concept="8" />
+      <node id="1211301915928" at="38,193,39,189" concept="3" />
+      <scope id="1211301915928" at="23,13,24,50" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)/1225128146050">
+    <file name="FindUsagesDescriptor.java">
+      <node id="1225128146050" at="29,13,30,46" concept="8" />
+      <node id="1225128146050" at="41,167,42,186" concept="3" />
+      <scope id="1225128146050" at="29,13,30,46" />
+    </file>
     <file name="PropertyInstances_Finder.java">
       <node id="1225128146050" at="24,34,25,32" concept="8" />
       <node id="1225128146050" at="28,38,29,14" concept="8" />

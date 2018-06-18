@@ -267,7 +267,7 @@
       </scope>
       <scope id="6799683357399163471" at="79,0,85,0">
         <var name="checkedDotOperand" id="6799683357399163471" />
-        <var name="current" id="6799683357399163471" />
+        <var name="current" id="6799683357399163474" />
       </scope>
       <scope id="3309033097910132743" at="30,35,44,16">
         <var name="that" id="3309033097910132767" />

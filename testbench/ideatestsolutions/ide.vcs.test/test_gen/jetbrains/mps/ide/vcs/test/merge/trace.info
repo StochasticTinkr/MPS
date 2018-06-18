@@ -1402,35 +1402,35 @@
     <file name="RootStatusItem.java">
       <node id="5876208808348832447" at="9,27,10,12" concept="15" />
       <node id="5876208808348832447" at="12,61,13,28" concept="15" />
-      <node id="5876208808348832447" at="15,40,16,27" concept="10" />
-      <node id="5876208808348832447" at="18,46,19,27" concept="10" />
-      <node id="5876208808348832447" at="21,28,22,22" concept="10" />
-      <node id="5876208808348832447" at="24,30,25,22" concept="10" />
+      <node id="5876208808348832457" at="15,40,16,27" concept="10" />
+      <node id="5876208808348832501" at="18,46,19,27" concept="10" />
+      <node id="5876208808348832457" at="21,28,22,22" concept="10" />
+      <node id="5876208808348832501" at="24,30,25,22" concept="10" />
       <node id="5876208808348832447" at="9,0,12,0" concept="2" trace="RootStatusItem#()V" />
       <node id="5876208808348832447" at="12,0,15,0" concept="2" trace="RootStatusItem#(Ljava/lang/String;Lcom/intellij/openapi/vcs/FileStatus;)V" />
-      <node id="5876208808348832447" at="15,0,18,0" concept="8" trace="rootName#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="5876208808348832447" at="18,0,21,0" concept="8" trace="status#(Lcom/intellij/openapi/vcs/FileStatus;)Lcom/intellij/openapi/vcs/FileStatus;" />
-      <node id="5876208808348832447" at="21,0,24,0" concept="8" trace="rootName#()Ljava/lang/String;" />
-      <node id="5876208808348832447" at="24,0,27,0" concept="8" trace="status#()Lcom/intellij/openapi/vcs/FileStatus;" />
+      <node id="5876208808348832457" at="15,0,18,0" concept="8" trace="rootName#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="5876208808348832501" at="18,0,21,0" concept="8" trace="status#(Lcom/intellij/openapi/vcs/FileStatus;)Lcom/intellij/openapi/vcs/FileStatus;" />
+      <node id="5876208808348832457" at="21,0,24,0" concept="8" trace="rootName#()Ljava/lang/String;" />
+      <node id="5876208808348832501" at="24,0,27,0" concept="8" trace="status#()Lcom/intellij/openapi/vcs/FileStatus;" />
       <scope id="5876208808348832447" at="9,27,10,12" />
       <scope id="5876208808348832447" at="12,61,13,28" />
-      <scope id="5876208808348832447" at="15,40,16,27" />
-      <scope id="5876208808348832447" at="18,46,19,27" />
-      <scope id="5876208808348832447" at="21,28,22,22" />
-      <scope id="5876208808348832447" at="24,30,25,22" />
+      <scope id="5876208808348832457" at="15,40,16,27" />
+      <scope id="5876208808348832501" at="18,46,19,27" />
+      <scope id="5876208808348832457" at="21,28,22,22" />
+      <scope id="5876208808348832501" at="24,30,25,22" />
       <scope id="5876208808348832447" at="9,0,12,0" />
       <scope id="5876208808348832447" at="12,0,15,0">
-        <var name="rootName" id="5876208808348832447" />
-        <var name="status" id="5876208808348832447" />
+        <var name="rootName" id="5876208808348832457" />
+        <var name="status" id="5876208808348832501" />
       </scope>
-      <scope id="5876208808348832447" at="15,0,18,0">
-        <var name="value" id="5876208808348832447" />
+      <scope id="5876208808348832457" at="15,0,18,0">
+        <var name="value" id="5876208808348832457" />
       </scope>
-      <scope id="5876208808348832447" at="18,0,21,0">
-        <var name="value" id="5876208808348832447" />
+      <scope id="5876208808348832501" at="18,0,21,0">
+        <var name="value" id="5876208808348832501" />
       </scope>
-      <scope id="5876208808348832447" at="21,0,24,0" />
-      <scope id="5876208808348832447" at="24,0,27,0" />
+      <scope id="5876208808348832457" at="21,0,24,0" />
+      <scope id="5876208808348832501" at="24,0,27,0" />
       <unit id="5876208808348832447" at="8,0,28,0" name="jetbrains.mps.ide.vcs.test.merge.RootStatusItem" />
     </file>
   </root>

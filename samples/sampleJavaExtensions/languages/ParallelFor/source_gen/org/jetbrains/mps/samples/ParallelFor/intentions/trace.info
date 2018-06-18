@@ -14,6 +14,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/2975785153735208385">
+    <file name="IntentionsDescriptor.java">
+      <node id="2975785153735208385" at="37,47,38,59" concept="1" />
+      <node id="2975785153735208385" at="103,49,104,45" concept="1" />
+    </file>
     <file name="MarkAsThreadSafe_Intention.java">
       <node id="2975785153735208385" at="22,0,23,0" concept="2" trace="myCachedExecutable" />
       <node id="2975785153735208385" at="23,39,24,163" concept="7" />
@@ -82,6 +86,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/2975785153735222149">
+    <file name="IntentionsDescriptor.java">
+      <node id="2975785153735222149" at="38,59,39,61" concept="1" />
+      <node id="2975785153735222149" at="104,45,105,47" concept="1" />
+    </file>
     <file name="UnmarkAsThreadSafe_Intention.java">
       <node id="2975785153735222149" at="22,0,23,0" concept="2" trace="myCachedExecutable" />
       <node id="2975785153735222149" at="23,41,24,162" concept="7" />
@@ -160,6 +168,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/2975785153735230347">
+    <file name="IntentionsDescriptor.java">
+      <node id="2975785153735230347" at="39,61,40,62" concept="1" />
+      <node id="2975785153735230347" at="105,47,106,48" concept="1" />
+    </file>
     <file name="MarkAsNonThreadSafe_Intention.java">
       <node id="2975785153735230347" at="22,0,23,0" concept="2" trace="myCachedExecutable" />
       <node id="2975785153735230347" at="23,42,24,163" concept="7" />
@@ -228,6 +240,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/2975785153735235995">
+    <file name="IntentionsDescriptor.java">
+      <node id="2975785153735235995" at="40,62,41,64" concept="1" />
+      <node id="2975785153735235995" at="106,48,107,50" concept="1" />
+    </file>
     <file name="UnmarkAsNonThreadSafe_Intention.java">
       <node id="2975785153735235995" at="22,0,23,0" concept="2" trace="myCachedExecutable" />
       <node id="2975785153735235995" at="23,44,24,162" concept="7" />
@@ -306,6 +322,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/2975785153735290139">
+    <file name="IntentionsDescriptor.java">
+      <node id="2975785153735290139" at="88,47,89,78" concept="1" />
+      <node id="2975785153735290139" at="107,50,108,64" concept="1" />
+    </file>
     <file name="MarkVariableDeclarationAsThreadSafe_Intention.java">
       <node id="2975785153735290139" at="22,0,23,0" concept="2" trace="myCachedExecutable" />
       <node id="2975785153735290139" at="23,58,24,163" concept="7" />
@@ -373,6 +393,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/2975785153735291445">
+    <file name="IntentionsDescriptor.java">
+      <node id="2975785153735291445" at="89,78,90,69" concept="1" />
+      <node id="2975785153735291445" at="108,64,109,55" concept="1" />
+    </file>
     <file name="UnmarkVariableAsThreadSafe_Intention.java">
       <node id="2975785153735291445" at="22,0,23,0" concept="2" trace="myCachedExecutable" />
       <node id="2975785153735291445" at="23,49,24,162" concept="7" />
@@ -451,6 +475,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/3540747636396475561">
+    <file name="IntentionsDescriptor.java">
+      <node id="3540747636396475561" at="62,47,63,80" concept="1" />
+      <node id="3540747636396475561" at="115,66,116,67" concept="1" />
+    </file>
     <file name="MarkLocalStaticMethodCallAsThreadSafe_Intention.java">
       <node id="3540747636396475561" at="24,0,25,0" concept="2" trace="myCachedExecutable" />
       <node id="3540747636396475561" at="25,60,26,162" concept="7" />
@@ -532,6 +560,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/3540747636396569313">
+    <file name="IntentionsDescriptor.java">
+      <node id="3540747636396569313" at="63,80,64,82" concept="1" />
+      <node id="3540747636396569313" at="116,67,117,69" concept="1" />
+    </file>
     <file name="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java">
       <node id="3540747636396569313" at="23,0,24,0" concept="2" trace="myCachedExecutable" />
       <node id="3540747636396569313" at="24,62,25,162" concept="7" />
@@ -613,6 +645,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/3540747636396569349">
+    <file name="IntentionsDescriptor.java">
+      <node id="3540747636396569349" at="64,82,65,84" concept="1" />
+      <node id="3540747636396569349" at="117,69,118,71" concept="1" />
+    </file>
     <file name="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java">
       <node id="3540747636396569349" at="23,0,24,0" concept="2" trace="myCachedExecutable" />
       <node id="3540747636396569349" at="24,64,25,162" concept="7" />
@@ -694,6 +730,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/3540747636396581099">
+    <file name="IntentionsDescriptor.java">
+      <node id="3540747636396581099" at="65,84,66,82" concept="1" />
+      <node id="3540747636396581099" at="118,71,119,69" concept="1" />
+    </file>
     <file name="MarkLocalInstanceMethodCallAsThreadSafe_Intention.java">
       <node id="3540747636396581099" at="24,0,25,0" concept="2" trace="myCachedExecutable" />
       <node id="3540747636396581099" at="25,62,26,162" concept="7" />
@@ -775,6 +815,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/5384012304952490058">
+    <file name="IntentionsDescriptor.java">
+      <node id="5384012304952490058" at="47,47,48,77" concept="1" />
+      <node id="5384012304952490058" at="109,55,110,63" concept="1" />
+    </file>
     <file name="MarkInstanceMethodCallAsThreadSafe_Intention.java">
       <node id="5384012304952490058" at="24,0,25,0" concept="2" trace="myCachedExecutable" />
       <node id="5384012304952490058" at="25,57,26,162" concept="7" />
@@ -853,6 +897,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/5384012304952498864">
+    <file name="IntentionsDescriptor.java">
+      <node id="5384012304952498864" at="80,47,81,75" concept="1" />
+      <node id="5384012304952498864" at="110,63,111,61" concept="1" />
+    </file>
     <file name="MarkStaticMethodCallAsThreadSafe_Intention.java">
       <node id="5384012304952498864" at="23,0,24,0" concept="2" trace="myCachedExecutable" />
       <node id="5384012304952498864" at="24,55,25,162" concept="7" />
@@ -931,6 +979,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/5384012304952503177">
+    <file name="IntentionsDescriptor.java">
+      <node id="5384012304952503177" at="81,75,82,77" concept="1" />
+      <node id="5384012304952503177" at="111,61,112,63" concept="1" />
+    </file>
     <file name="UnmarkStaticMethodCallAsThreadSafe_Intention.java">
       <node id="5384012304952503177" at="22,0,23,0" concept="2" trace="myCachedExecutable" />
       <node id="5384012304952503177" at="23,57,24,162" concept="7" />
@@ -1009,6 +1061,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/5384012304952504715">
+    <file name="IntentionsDescriptor.java">
+      <node id="5384012304952504715" at="73,63,74,65" concept="1" />
+      <node id="5384012304952504715" at="112,63,113,52" concept="1" />
+    </file>
     <file name="TurnToForEachStatement_Intention.java">
       <node id="5384012304952504715" at="27,0,28,0" concept="2" trace="myCachedExecutable" />
       <node id="5384012304952504715" at="28,45,29,163" concept="7" />
@@ -1102,6 +1158,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/5384012304952529816">
+    <file name="IntentionsDescriptor.java">
+      <node id="5384012304952529816" at="55,47,56,73" concept="1" />
+      <node id="5384012304952529816" at="113,52,114,60" concept="1" />
+    </file>
     <file name="TurnToParallelForEachStatement_Intention.java">
       <node id="5384012304952529816" at="28,0,29,0" concept="2" trace="myCachedExecutable" />
       <node id="5384012304952529816" at="29,53,30,163" concept="7" />
@@ -1199,6 +1259,10 @@
     </file>
   </root>
   <root nodeRef="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)/5384012304952537573">
+    <file name="IntentionsDescriptor.java">
+      <node id="5384012304952537573" at="48,77,49,79" concept="1" />
+      <node id="5384012304952537573" at="114,60,115,66" concept="1" />
+    </file>
     <file name="UnmarkInstanceMethodCallAsThreadSafe_Intention.java">
       <node id="5384012304952537573" at="23,0,24,0" concept="2" trace="myCachedExecutable" />
       <node id="5384012304952537573" at="24,59,25,162" concept="7" />
@@ -1341,6 +1405,10 @@
       </scope>
       <unit id="633195941006988431" at="48,0,64,0" name="org.jetbrains.mps.samples.ParallelFor.intentions.DetachFromThreadPool_Intention$IntentionImplementation" />
       <unit id="633195941006988431" at="19,0,65,0" name="org.jetbrains.mps.samples.ParallelFor.intentions.DetachFromThreadPool_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="633195941006988431" at="72,47,73,63" concept="1" />
+      <node id="633195941006988431" at="102,53,103,49" concept="1" />
     </file>
   </root>
 </debug-info>

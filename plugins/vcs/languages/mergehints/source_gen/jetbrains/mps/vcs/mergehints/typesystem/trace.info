@@ -74,6 +74,14 @@
       <unit id="6556262262332689291" at="38,17,42,5" name="jetbrains.mps.vcs.mergehints.typesystem.CheckNoDuplicatedConceptHints_NonTypesystemRule$2" />
       <unit id="6556262262332625094" at="25,0,61,0" name="jetbrains.mps.vcs.mergehints.typesystem.CheckNoDuplicatedConceptHints_NonTypesystemRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="6556262262332625094" at="10,5,11,106" concept="5" />
+      <node id="6556262262332625094" at="11,106,12,55" concept="2" />
+      <node id="6556262262332625094" at="9,33,13,5" concept="0" />
+      <scope id="6556262262332625094" at="10,5,12,55">
+        <var name="nonTypesystemRule" id="6556262262332625094" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:09da38a1-d679-467f-8975-eacacbd1c0a3(jetbrains.mps.vcs.mergehints.typesystem)/6556262262332807524">
     <file name="CheckNoDuplicatedLinkHints_NonTypesystemRule.java">
@@ -127,6 +135,14 @@
       <unit id="6556262262332898838" at="30,624,34,5" name="jetbrains.mps.vcs.mergehints.typesystem.CheckNoDuplicatedLinkHints_NonTypesystemRule$1" />
       <unit id="6556262262332807524" at="22,0,53,0" name="jetbrains.mps.vcs.mergehints.typesystem.CheckNoDuplicatedLinkHints_NonTypesystemRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="6556262262332807524" at="14,5,15,103" concept="5" />
+      <node id="6556262262332807524" at="15,103,16,55" concept="2" />
+      <node id="6556262262332807524" at="13,5,17,5" concept="0" />
+      <scope id="6556262262332807524" at="14,5,16,55">
+        <var name="nonTypesystemRule" id="6556262262332807524" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:09da38a1-d679-467f-8975-eacacbd1c0a3(jetbrains.mps.vcs.mergehints.typesystem)/6556262262332943842">
     <file name="CheckNoDuplicatedPropertyHints_NonTypesystemRule.java">
@@ -179,6 +195,14 @@
       </scope>
       <unit id="6556262262332943869" at="30,628,34,5" name="jetbrains.mps.vcs.mergehints.typesystem.CheckNoDuplicatedPropertyHints_NonTypesystemRule$1" />
       <unit id="6556262262332943842" at="22,0,53,0" name="jetbrains.mps.vcs.mergehints.typesystem.CheckNoDuplicatedPropertyHints_NonTypesystemRule" />
+    </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="6556262262332943842" at="18,5,19,107" concept="5" />
+      <node id="6556262262332943842" at="19,107,20,55" concept="2" />
+      <node id="6556262262332943842" at="17,5,21,5" concept="0" />
+      <scope id="6556262262332943842" at="18,5,20,55">
+        <var name="nonTypesystemRule" id="6556262262332943842" />
+      </scope>
     </file>
   </root>
 </debug-info>

@@ -13,6 +13,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)/1180046742861">
+    <file name="TypesystemDescriptor.java">
+      <node id="1180046742861" at="26,5,27,97" concept="4" />
+      <node id="1180046742861" at="27,97,28,47" concept="2" />
+      <node id="1180046742861" at="25,5,29,5" concept="0" />
+      <scope id="1180046742861" at="26,5,28,47">
+        <var name="inferenceRule" id="1180046742861" />
+      </scope>
+    </file>
     <file name="typeof_NodeSetupFunction_NewNode_InferenceRule.java">
       <node id="1180046799998" at="22,138,23,238" concept="4" />
       <node id="1180046815527" at="23,238,24,201" concept="4" />
@@ -68,6 +76,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)/1221137384052">
+    <file name="TypesystemDescriptor.java">
+      <node id="1221137384052" at="22,5,23,112" concept="4" />
+      <node id="1221137384052" at="23,112,24,47" concept="2" />
+      <node id="1221137384052" at="21,5,25,5" concept="0" />
+      <scope id="1221137384052" at="22,5,24,47">
+        <var name="inferenceRule" id="1221137384052" />
+      </scope>
+    </file>
     <file name="typeof_ConceptFunctionParameter_nodeToPasteWrap_InferenceRule.java">
       <node id="1221137397106" at="23,5,24,46" concept="4" />
       <node id="1221137397106" at="24,46,25,197" concept="4" />
@@ -118,6 +134,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)/5948027493682405593">
+    <file name="TypesystemDescriptor.java">
+      <node id="5948027493682405593" at="10,5,11,117" concept="4" />
+      <node id="5948027493682405593" at="11,117,12,47" concept="2" />
+      <node id="5948027493682405593" at="9,33,13,5" concept="0" />
+      <scope id="5948027493682405593" at="10,5,12,47">
+        <var name="inferenceRule" id="5948027493682405593" />
+      </scope>
+    </file>
     <file name="typeof_ConceptFunctionParameter_nodeToCopyPreProcess_InferenceRule.java">
       <node id="5948027493682405602" at="23,5,24,46" concept="4" />
       <node id="5948027493682405602" at="24,46,25,203" concept="4" />
@@ -168,6 +192,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)/5948027493682405618">
+    <file name="TypesystemDescriptor.java">
+      <node id="5948027493682405618" at="14,5,15,125" concept="4" />
+      <node id="5948027493682405618" at="15,125,16,47" concept="2" />
+      <node id="5948027493682405618" at="13,5,17,5" concept="0" />
+      <scope id="5948027493682405618" at="14,5,16,47">
+        <var name="inferenceRule" id="5948027493682405618" />
+      </scope>
+    </file>
     <file name="typeof_ConceptFunctionParameter_nodeToCopyPreProcessOriginal_InferenceRule.java">
       <node id="5948027493682405625" at="23,5,24,46" concept="4" />
       <node id="5948027493682405625" at="24,46,25,203" concept="4" />
@@ -218,6 +250,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)/6026743057587447950">
+    <file name="TypesystemDescriptor.java">
+      <node id="6026743057587447950" at="18,5,19,119" concept="4" />
+      <node id="6026743057587447950" at="19,119,20,47" concept="2" />
+      <node id="6026743057587447950" at="17,5,21,5" concept="0" />
+      <scope id="6026743057587447950" at="18,5,20,47">
+        <var name="inferenceRule" id="6026743057587447950" />
+      </scope>
+    </file>
     <file name="typeof_ConceptFunctionParameter_nodeToPastePostProcess_InferenceRule.java">
       <node id="6026743057587447957" at="23,5,24,46" concept="4" />
       <node id="6026743057587447957" at="24,46,25,203" concept="4" />

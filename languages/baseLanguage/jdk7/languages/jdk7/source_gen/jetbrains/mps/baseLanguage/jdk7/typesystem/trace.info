@@ -16,6 +16,14 @@
     </file>
   </root>
   <root nodeRef="r:ed059f83-fdac-4e67-8269-91684666291c(jetbrains.mps.baseLanguage.jdk7.typesystem)/400642802550421647">
+    <file name="TypesystemDescriptor.java">
+      <node id="400642802550421647" at="10,5,11,99" concept="6" />
+      <node id="400642802550421647" at="11,99,12,55" concept="2" />
+      <node id="400642802550421647" at="9,33,13,5" concept="0" />
+      <scope id="400642802550421647" at="10,5,12,55">
+        <var name="nonTypesystemRule" id="400642802550421647" />
+      </scope>
+    </file>
     <file name="check_StringSwitchCase_NonTypesystemRule.java">
       <node id="400642802550421749" at="25,128,26,30" concept="8" />
       <node id="364584182801826612" at="26,30,27,74" concept="6" />
@@ -78,6 +86,14 @@
     </file>
   </root>
   <root nodeRef="r:ed059f83-fdac-4e67-8269-91684666291c(jetbrains.mps.baseLanguage.jdk7.typesystem)/400642802550421653">
+    <file name="TypesystemDescriptor.java">
+      <node id="400642802550421653" at="14,5,15,104" concept="6" />
+      <node id="400642802550421653" at="15,104,16,55" concept="2" />
+      <node id="400642802550421653" at="13,5,17,5" concept="0" />
+      <scope id="400642802550421653" at="14,5,16,55">
+        <var name="nonTypesystemRule" id="400642802550421653" />
+      </scope>
+    </file>
     <file name="check_StringSwitchStatement_NonTypesystemRule.java">
       <node id="400642802550421655" at="24,128,25,186" concept="6" />
       <node id="400642802550421663" at="26,22,27,13" concept="7" />

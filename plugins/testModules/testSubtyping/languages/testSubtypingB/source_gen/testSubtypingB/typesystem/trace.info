@@ -13,6 +13,14 @@
     </file>
   </root>
   <root nodeRef="r:d612c92b-af4c-4eb4-bc13-d283361ae3f9(testSubtypingB.typesystem)/2078093584693330100">
+    <file name="TypesystemDescriptor.java">
+      <node id="2078093584693330100" at="10,5,11,101" concept="4" />
+      <node id="2078093584693330100" at="11,101,12,61" concept="2" />
+      <node id="2078093584693330100" at="9,33,13,5" concept="0" />
+      <scope id="2078093584693330100" at="10,5,12,61">
+        <var name="eliminationRule" id="2078093584693330100" />
+      </scope>
+    </file>
     <file name="customType_InequationReplacementRule.java">
       <node id="2078093584693330843" at="18,97,19,363" concept="5" />
       <node id="2078093584693351904" at="21,253,22,10" concept="6" />
@@ -80,6 +88,14 @@
     </file>
   </root>
   <root nodeRef="r:d612c92b-af4c-4eb4-bc13-d283361ae3f9(testSubtypingB.typesystem)/2078093584693360010">
+    <file name="TypesystemDescriptor.java">
+      <node id="2078093584693360010" at="14,5,15,109" concept="4" />
+      <node id="2078093584693360010" at="15,109,16,61" concept="2" />
+      <node id="2078093584693360010" at="13,5,17,5" concept="0" />
+      <scope id="2078093584693360010" at="14,5,16,61">
+        <var name="eliminationRule" id="2078093584693360010" />
+      </scope>
+    </file>
     <file name="wrapped_customType_InequationReplacementRule.java">
       <node id="2078093584693360778" at="20,97,21,680" concept="5" />
       <node id="2078093584693398869" at="24,5,25,73" concept="4" />

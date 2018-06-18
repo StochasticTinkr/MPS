@@ -1085,10 +1085,10 @@
       <node id="4327272822834101861" at="316,35,317,154" concept="11" />
       <node id="3926887065466327645" at="321,25,322,14" concept="16" />
       <node id="3926887065466327645" at="324,74,325,26" concept="16" />
-      <node id="3926887065466327645" at="327,60,328,29" concept="11" />
-      <node id="3926887065466327645" at="330,64,331,29" concept="11" />
-      <node id="3926887065466327645" at="333,38,334,24" concept="11" />
-      <node id="3926887065466327645" at="336,39,337,24" concept="11" />
+      <node id="3926887065466327650" at="327,60,328,29" concept="11" />
+      <node id="3926887065466327647" at="330,64,331,29" concept="11" />
+      <node id="3926887065466327650" at="333,38,334,24" concept="11" />
+      <node id="3926887065466327647" at="336,39,337,24" concept="11" />
       <node id="111710558725769720" at="340,69,341,47" concept="11" />
       <node id="4084190412961754412" at="343,72,344,47" concept="11" />
       <node id="403216304430941514" at="346,77,347,47" concept="11" />
@@ -1119,10 +1119,10 @@
       <node id="3805046970175479538" at="316,0,319,0" concept="9" trace="isDependency#()Z" />
       <node id="3926887065466327645" at="321,0,324,0" concept="3" trace="Dependency#()V" />
       <node id="3926887065466327645" at="324,0,327,0" concept="3" trace="Dependency#(Lorg/jetbrains/mps/openapi/module/SModuleReference;Ljetbrains/mps/ide/depanalyzer/DependencyUtil/Role;)V" />
-      <node id="3926887065466327645" at="327,0,330,0" concept="9" trace="module#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="3926887065466327645" at="330,0,333,0" concept="9" trace="role#(Ljetbrains/mps/ide/depanalyzer/DependencyUtil/Role;)Ljetbrains/mps/ide/depanalyzer/DependencyUtil/Role;" />
-      <node id="3926887065466327645" at="333,0,336,0" concept="9" trace="module#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="3926887065466327645" at="336,0,339,0" concept="9" trace="role#()Ljetbrains/mps/ide/depanalyzer/DependencyUtil/Role;" />
+      <node id="3926887065466327650" at="327,0,330,0" concept="9" trace="module#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="3926887065466327647" at="330,0,333,0" concept="9" trace="role#(Ljetbrains/mps/ide/depanalyzer/DependencyUtil/Role;)Ljetbrains/mps/ide/depanalyzer/DependencyUtil/Role;" />
+      <node id="3926887065466327650" at="333,0,336,0" concept="9" trace="module#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="3926887065466327647" at="336,0,339,0" concept="9" trace="role#()Ljetbrains/mps/ide/depanalyzer/DependencyUtil/Role;" />
       <node id="111710558725769720" at="340,0,343,0" concept="15" trace="as_he47wm_a0a1a3d0g#(Ljava/lang/Object;Ljava/lang/Class;)null" />
       <node id="4084190412961754412" at="343,0,346,0" concept="15" trace="as_he47wm_a0b0b0b0e3a6#(Ljava/lang/Object;Ljava/lang/Class;)null" />
       <node id="403216304430941514" at="346,0,349,0" concept="15" trace="as_he47wm_a0a0a0a0a0a1a6d0g#(Ljava/lang/Object;Ljava/lang/Class;)null" />
@@ -1197,10 +1197,10 @@
       <scope id="3805046970175479541" at="316,35,317,154" />
       <scope id="3926887065466327645" at="321,25,322,14" />
       <scope id="3926887065466327645" at="324,74,325,26" />
-      <scope id="3926887065466327645" at="327,60,328,29" />
-      <scope id="3926887065466327645" at="330,64,331,29" />
-      <scope id="3926887065466327645" at="333,38,334,24" />
-      <scope id="3926887065466327645" at="336,39,337,24" />
+      <scope id="3926887065466327650" at="327,60,328,29" />
+      <scope id="3926887065466327647" at="330,64,331,29" />
+      <scope id="3926887065466327650" at="333,38,334,24" />
+      <scope id="3926887065466327647" at="336,39,337,24" />
       <scope id="111710558725769720" at="340,69,341,47" />
       <scope id="4084190412961754412" at="343,72,344,47" />
       <scope id="403216304430941514" at="346,77,347,47" />
@@ -1250,17 +1250,17 @@
       <scope id="3805046970175479538" at="316,0,319,0" />
       <scope id="3926887065466327645" at="321,0,324,0" />
       <scope id="3926887065466327645" at="324,0,327,0">
-        <var name="module" id="3926887065466327645" />
-        <var name="role" id="3926887065466327645" />
+        <var name="module" id="3926887065466327650" />
+        <var name="role" id="3926887065466327647" />
       </scope>
-      <scope id="3926887065466327645" at="327,0,330,0">
-        <var name="value" id="3926887065466327645" />
+      <scope id="3926887065466327650" at="327,0,330,0">
+        <var name="value" id="3926887065466327650" />
       </scope>
-      <scope id="3926887065466327645" at="330,0,333,0">
-        <var name="value" id="3926887065466327645" />
+      <scope id="3926887065466327647" at="330,0,333,0">
+        <var name="value" id="3926887065466327647" />
       </scope>
-      <scope id="3926887065466327645" at="333,0,336,0" />
-      <scope id="3926887065466327645" at="336,0,339,0" />
+      <scope id="3926887065466327650" at="333,0,336,0" />
+      <scope id="3926887065466327647" at="336,0,339,0" />
       <scope id="111710558725769720" at="340,0,343,0">
         <var name="o" id="111710558725769720" />
         <var name="type" id="111710558725769720" />

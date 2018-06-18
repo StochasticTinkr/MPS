@@ -11,11 +11,11 @@
   <root nodeRef="r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)/1029938204559057131">
     <file name="TestDepViewer_Test.java">
       <node id="1029938204559057131" at="26,31,27,25" concept="7" />
-      <node id="1029938204559057131" at="31,56,32,99" concept="1" />
-      <node id="1029938204559057131" at="35,68,36,111" concept="1" />
-      <node id="1029938204559057131" at="39,72,40,115" concept="1" />
-      <node id="1029938204559057131" at="43,65,44,108" concept="1" />
-      <node id="1029938204559057131" at="47,70,48,113" concept="1" />
+      <node id="1029938204559057914" at="31,56,32,99" concept="1" />
+      <node id="1029938204559058262" at="35,68,36,111" concept="1" />
+      <node id="1029938204559058271" at="39,72,40,115" concept="1" />
+      <node id="1029938204559058283" at="43,65,44,108" concept="1" />
+      <node id="1029938204559058298" at="47,70,48,113" concept="1" />
       <node id="1029938204559071143" at="53,58,54,40" concept="3" />
       <node id="1029938204559071147" at="54,40,55,40" concept="3" />
       <node id="1029938204559071151" at="55,40,56,39" concept="1" />
@@ -57,37 +57,37 @@
       <node id="1029938204559073984" at="107,28,108,171" concept="4" />
       <node id="1029938204559057131" at="22,0,24,0" concept="6" trace="ourParamCache" />
       <node id="1029938204559057131" at="26,0,29,0" concept="0" trace="TestDepViewer_Test#()V" />
-      <node id="1029938204559057131" at="101,0,104,0" concept="2" trace="model1#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="1029938204559057131" at="104,0,107,0" concept="2" trace="model2#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="1029938204559057131" at="107,0,110,0" concept="2" trace="model3#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="1029938204559057131" at="30,0,34,0" concept="2" trace="test_testPrecondition#()V" />
-      <node id="1029938204559057131" at="34,0,38,0" concept="2" trace="test_testModel1DependsOnSomething#()V" />
-      <node id="1029938204559057131" at="38,0,42,0" concept="2" trace="test_testModel3DoesntDependOnAnything#()V" />
-      <node id="1029938204559057131" at="42,0,46,0" concept="2" trace="test_testModel1DependsOnModel2#()V" />
-      <node id="1029938204559057131" at="46,0,50,0" concept="2" trace="test_testModel1DoesntDependOnModel3#()V" />
+      <node id="1029938204559073554" at="101,0,104,0" concept="2" trace="model1#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="1029938204559073892" at="104,0,107,0" concept="2" trace="model2#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="1029938204559073981" at="107,0,110,0" concept="2" trace="model3#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="1029938204559057914" at="30,0,34,0" concept="2" trace="test_testPrecondition#()V" />
+      <node id="1029938204559058262" at="34,0,38,0" concept="2" trace="test_testModel1DependsOnSomething#()V" />
+      <node id="1029938204559058271" at="38,0,42,0" concept="2" trace="test_testModel3DoesntDependOnAnything#()V" />
+      <node id="1029938204559058283" at="42,0,46,0" concept="2" trace="test_testModel1DependsOnModel2#()V" />
+      <node id="1029938204559058298" at="46,0,50,0" concept="2" trace="test_testModel1DoesntDependOnModel3#()V" />
       <node id="1029938204559057914" at="53,0,59,0" concept="2" trace="test_testPrecondition#()V" />
       <node id="1029938204559058262" at="59,0,68,0" concept="2" trace="test_testModel1DependsOnSomething#()V" />
       <node id="1029938204559058271" at="68,0,77,0" concept="2" trace="test_testModel3DoesntDependOnAnything#()V" />
       <node id="1029938204559058283" at="77,0,88,0" concept="2" trace="test_testModel1DependsOnModel2#()V" />
       <node id="1029938204559058298" at="88,0,99,0" concept="2" trace="test_testModel1DoesntDependOnModel3#()V" />
       <scope id="1029938204559057131" at="26,31,27,25" />
-      <scope id="1029938204559057131" at="31,56,32,99" />
-      <scope id="1029938204559057131" at="35,68,36,111" />
-      <scope id="1029938204559057131" at="39,72,40,115" />
-      <scope id="1029938204559057131" at="43,65,44,108" />
-      <scope id="1029938204559057131" at="47,70,48,113" />
-      <scope id="1029938204559057131" at="101,28,102,171" />
-      <scope id="1029938204559057131" at="104,28,105,171" />
-      <scope id="1029938204559057131" at="107,28,108,171" />
+      <scope id="1029938204559057914" at="31,56,32,99" />
+      <scope id="1029938204559058262" at="35,68,36,111" />
+      <scope id="1029938204559058271" at="39,72,40,115" />
+      <scope id="1029938204559058283" at="43,65,44,108" />
+      <scope id="1029938204559058298" at="47,70,48,113" />
+      <scope id="1029938204559073554" at="101,28,102,171" />
+      <scope id="1029938204559073892" at="104,28,105,171" />
+      <scope id="1029938204559073981" at="107,28,108,171" />
       <scope id="1029938204559057131" at="26,0,29,0" />
-      <scope id="1029938204559057131" at="101,0,104,0" />
-      <scope id="1029938204559057131" at="104,0,107,0" />
-      <scope id="1029938204559057131" at="107,0,110,0" />
-      <scope id="1029938204559057131" at="30,0,34,0" />
-      <scope id="1029938204559057131" at="34,0,38,0" />
-      <scope id="1029938204559057131" at="38,0,42,0" />
-      <scope id="1029938204559057131" at="42,0,46,0" />
-      <scope id="1029938204559057131" at="46,0,50,0" />
+      <scope id="1029938204559073554" at="101,0,104,0" />
+      <scope id="1029938204559073892" at="104,0,107,0" />
+      <scope id="1029938204559073981" at="107,0,110,0" />
+      <scope id="1029938204559057914" at="30,0,34,0" />
+      <scope id="1029938204559058262" at="34,0,38,0" />
+      <scope id="1029938204559058271" at="38,0,42,0" />
+      <scope id="1029938204559058283" at="42,0,46,0" />
+      <scope id="1029938204559058298" at="46,0,50,0" />
       <scope id="1029938204559057914" at="53,58,57,39">
         <var name="testModel1" id="1029938204559071144" />
         <var name="testModel2" id="1029938204559071148" />

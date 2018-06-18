@@ -15,6 +15,10 @@
     </file>
   </root>
   <root nodeRef="r:7651b6e0-753b-4bcf-af83-d3dfc31e29e7(jetbrains.mps.lang.textGen.intentions)/1236698667104">
+    <file name="IntentionsDescriptor.java">
+      <node id="1236698667104" at="37,47,38,56" concept="2" />
+      <node id="1236698667104" at="57,52,58,42" concept="2" />
+    </file>
     <file name="SetWithIndent_Intention.java">
       <node id="1236698667104" at="22,0,23,0" concept="3" trace="myCachedExecutable" />
       <node id="1236698667104" at="23,36,24,145" concept="8" />
@@ -147,6 +151,10 @@
       </scope>
       <unit id="1237984182824" at="42,0,61,0" name="jetbrains.mps.lang.textGen.intentions.AddRemoveSeparator_Intention$IntentionImplementation" />
       <unit id="1237984182824" at="19,0,62,0" name="jetbrains.mps.lang.textGen.intentions.AddRemoveSeparator_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="1237984182824" at="44,47,45,61" concept="2" />
+      <node id="1237984182824" at="58,42,59,47" concept="2" />
     </file>
   </root>
 </debug-info>

@@ -15,8 +15,8 @@
   <root nodeRef="r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)/5936308221645772775">
     <file name="TestBlPriorities_Test.java">
       <node id="5936308221645772775" at="29,34,30,25" concept="10" />
-      <node id="5936308221645772775" at="34,61,35,111" concept="1" />
-      <node id="5936308221645772775" at="38,73,39,123" concept="1" />
+      <node id="5936308221645772905" at="34,61,35,111" concept="1" />
+      <node id="5907049006927254999" at="38,73,39,123" concept="1" />
       <node id="1488872796929091156" at="44,63,45,81" concept="1" />
       <node id="5907049006927255008" at="47,75,48,81" concept="1" />
       <node id="8266208698961529534" at="52,57,53,45" concept="1" />
@@ -123,18 +123,18 @@
       <node id="5907049006927254833" at="95,0,98,7" concept="3" />
       <node id="5907049006927254906" at="98,7,101,7" concept="3" />
       <node id="5907049006927254967" at="102,0,105,7" concept="3" />
-      <node id="5936308221645772775" at="33,0,37,0" concept="4" trace="test_testBitwisePriorities#()V" />
-      <node id="5936308221645772775" at="37,0,41,0" concept="4" trace="test_testBooleanAndWithEqualsOperation#()V" />
-      <node id="5936308221645772775" at="52,0,56,0" concept="4" trace="check#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)V" />
+      <node id="5936308221645772905" at="33,0,37,0" concept="4" trace="test_testBitwisePriorities#()V" />
+      <node id="5907049006927254999" at="37,0,41,0" concept="4" trace="test_testBooleanAndWithEqualsOperation#()V" />
+      <node id="1488872796929091127" at="52,0,56,0" concept="4" trace="check#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)V" />
       <node id="8266208698961528730" at="56,54,61,7" concept="2" />
-      <node id="5936308221645772775" at="56,0,66,0" concept="4" trace="expressionPriorityRebalance#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5936308221645772775" at="66,0,79,0" concept="4" trace="eval#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="8266208698961528721" at="56,0,66,0" concept="4" trace="expressionPriorityRebalance#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1488872796929091117" at="66,0,79,0" concept="4" trace="eval#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
       <node id="5907049006927255012" at="154,0,178,0" concept="9" trace="_quotation_createNode_p8h609_a0a0a1i#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5936308221645772775" at="79,0,109,0" concept="4" trace="evalBinaryOperation#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="1488872796929098032" at="79,0,109,0" concept="4" trace="evalBinaryOperation#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
       <node id="1488872796929091160" at="109,0,154,0" concept="9" trace="_quotation_createNode_p8h609_a0a0a0i#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="5936308221645772775" at="29,34,30,25" />
-      <scope id="5936308221645772775" at="34,61,35,111" />
-      <scope id="5936308221645772775" at="38,73,39,123" />
+      <scope id="5936308221645772905" at="34,61,35,111" />
+      <scope id="5907049006927254999" at="38,73,39,123" />
       <scope id="5936308221645772905" at="44,63,45,81" />
       <scope id="5907049006927254999" at="47,75,48,81" />
       <scope id="8266208698961528775" at="58,189,59,211" />
@@ -149,26 +149,26 @@
       <scope id="5907049006927254834" at="96,186,97,53" />
       <scope id="5907049006927254907" at="99,185,100,53" />
       <scope id="5907049006927254968" at="103,189,104,43" />
-      <scope id="5936308221645772775" at="52,57,54,210" />
+      <scope id="1488872796929091127" at="52,57,54,210" />
       <scope id="5936308221645772775" at="29,0,32,0" />
       <scope id="5936308221645772905" at="44,0,47,0" />
       <scope id="5907049006927254999" at="47,0,50,0" />
       <scope id="8266208698961528731" at="57,58,60,9" />
-      <scope id="5936308221645772775" at="33,0,37,0" />
-      <scope id="5936308221645772775" at="37,0,41,0" />
-      <scope id="5936308221645772775" at="52,0,56,0">
+      <scope id="5936308221645772905" at="33,0,37,0" />
+      <scope id="5907049006927254999" at="37,0,41,0" />
+      <scope id="1488872796929091127" at="52,0,56,0">
         <var name="expectedValue" id="1488872796929091133" />
         <var name="expr" id="1488872796929091131" />
       </scope>
       <scope id="8266208698961528730" at="56,54,61,7">
         <var name="child" id="8266208698961528733" />
       </scope>
-      <scope id="5936308221645772775" at="56,54,64,7" />
-      <scope id="5936308221645772775" at="56,0,66,0">
+      <scope id="8266208698961528721" at="56,54,64,7" />
+      <scope id="8266208698961528721" at="56,0,66,0">
         <var name="e" id="8266208698961528725" />
       </scope>
-      <scope id="5936308221645772775" at="66,33,77,67" />
-      <scope id="5936308221645772775" at="66,0,79,0">
+      <scope id="1488872796929091117" at="66,33,77,67" />
+      <scope id="1488872796929091117" at="66,0,79,0">
         <var name="e" id="1488872796929091121" />
       </scope>
       <scope id="5907049006927255012" at="154,65,176,26">
@@ -181,11 +181,11 @@
         <var name="quotedNode_6" id="5907049006927255012" />
       </scope>
       <scope id="5907049006927255012" at="154,0,178,0" />
-      <scope id="5936308221645772775" at="79,48,107,67">
+      <scope id="1488872796929098032" at="79,48,107,67">
         <var name="left" id="1488872796929096506" />
         <var name="right" id="1488872796929096618" />
       </scope>
-      <scope id="5936308221645772775" at="79,0,109,0">
+      <scope id="1488872796929098032" at="79,0,109,0">
         <var name="e" id="1488872796929098036" />
       </scope>
       <scope id="1488872796929091160" at="109,65,152,26">

@@ -1663,7 +1663,7 @@
       <node id="8955628568092676100" at="17,62,91,10" concept="13" />
       <node id="8955628568092676100" at="17,0,93,0" concept="11" trace="invoke#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljava/lang/Iterable;" />
       <node id="8955628568092676098" at="15,81,93,20" concept="13" />
-      <node id="8955628568092675853" at="15,0,95,0" concept="17" trace="getCellDescendants#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljava/lang/Iterable;" />
+      <node id="8955628568092676087" at="15,0,95,0" concept="17" trace="getCellDescendants#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljava/lang/Iterable;" />
       <scope id="8955628568092675853" at="13,24,13,24" />
       <scope id="8955628568092676108" at="30,27,31,105" />
       <scope id="8955628568092676117" at="40,28,41,105" />
@@ -1692,8 +1692,8 @@
         <var name="c" id="8955628568092676100" />
       </scope>
       <scope id="8955628568092676090" at="15,81,93,20" />
-      <scope id="8955628568092675853" at="15,0,95,0">
-        <var name="_this" id="8955628568092675853" />
+      <scope id="8955628568092676087" at="15,0,95,0">
+        <var name="_this" id="8955628568092676087" />
       </scope>
       <unit id="8955628568092676100" at="20,23,89,13" name="jetbrains.mps.vcs.annotate.EditorUtils$1$1$1" />
       <unit id="8955628568092676100" at="18,19,91,9" name="jetbrains.mps.vcs.annotate.EditorUtils$1$1" />

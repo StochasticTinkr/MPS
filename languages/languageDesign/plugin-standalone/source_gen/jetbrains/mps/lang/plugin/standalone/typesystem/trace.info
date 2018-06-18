@@ -13,6 +13,14 @@
     </file>
   </root>
   <root nodeRef="r:4e47f84d-850f-4838-ad49-d37c376b2080(jetbrains.mps.lang.plugin.standalone.typesystem)/3418954410726345310">
+    <file name="TypesystemDescriptor.java">
+      <node id="3418954410726345310" at="19,5,20,96" concept="4" />
+      <node id="3418954410726345310" at="20,96,21,47" concept="2" />
+      <node id="3418954410726345310" at="18,5,22,5" concept="0" />
+      <scope id="3418954410726345310" at="19,5,21,47">
+        <var name="inferenceRule" id="3418954410726345310" />
+      </scope>
+    </file>
     <file name="typeof_PlatformAccessExpression_InferenceRule.java">
       <node id="3418954410726346466" at="21,5,22,46" concept="4" />
       <node id="3418954410726346466" at="22,46,23,213" concept="4" />
@@ -99,6 +107,14 @@
       <scope id="481983775135178862" at="31,0,38,0" />
       <unit id="481983775135178859" at="16,0,39,0" name="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ProjectPluginType_SubtypingRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="481983775135178859" at="27,5,28,89" concept="4" />
+      <node id="481983775135178859" at="28,89,29,47" concept="2" />
+      <node id="481983775135178859" at="26,5,30,5" concept="0" />
+      <scope id="481983775135178859" at="27,5,29,47">
+        <var name="subtypingRule" id="481983775135178859" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:4e47f84d-850f-4838-ad49-d37c376b2080(jetbrains.mps.lang.plugin.standalone.typesystem)/481983775135178865">
     <file name="Typeof_ApplicationPluginType_SubtypingRule.java">
@@ -140,8 +156,24 @@
       <scope id="481983775135178868" at="31,0,38,0" />
       <unit id="481983775135178865" at="16,0,39,0" name="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ApplicationPluginType_SubtypingRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="481983775135178865" at="23,5,24,93" concept="4" />
+      <node id="481983775135178865" at="24,93,25,47" concept="2" />
+      <node id="481983775135178865" at="22,5,26,5" concept="0" />
+      <scope id="481983775135178865" at="23,5,25,47">
+        <var name="subtypingRule" id="481983775135178865" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:4e47f84d-850f-4838-ad49-d37c376b2080(jetbrains.mps.lang.plugin.standalone.typesystem)/681855071694758171">
+    <file name="TypesystemDescriptor.java">
+      <node id="681855071694758171" at="15,5,16,97" concept="4" />
+      <node id="681855071694758171" at="16,97,17,47" concept="2" />
+      <node id="681855071694758171" at="14,5,18,5" concept="0" />
+      <scope id="681855071694758171" at="15,5,17,47">
+        <var name="inferenceRule" id="681855071694758171" />
+      </scope>
+    </file>
     <file name="typeof_GetToolInProjectOperation_InferenceRule.java">
       <node id="681855071694758173" at="20,5,21,51" concept="4" />
       <node id="681855071694758173" at="21,51,22,212" concept="4" />
@@ -179,6 +211,14 @@
     </file>
   </root>
   <root nodeRef="r:4e47f84d-850f-4838-ad49-d37c376b2080(jetbrains.mps.lang.plugin.standalone.typesystem)/681855071694758184">
+    <file name="TypesystemDescriptor.java">
+      <node id="681855071694758184" at="11,5,12,113" concept="4" />
+      <node id="681855071694758184" at="12,113,13,47" concept="2" />
+      <node id="681855071694758184" at="10,33,14,5" concept="0" />
+      <scope id="681855071694758184" at="11,5,13,47">
+        <var name="inferenceRule" id="681855071694758184" />
+      </scope>
+    </file>
     <file name="typeof_GetPreferencesComponentInProjectOperation_InferenceRule.java">
       <node id="681855071694758186" at="20,5,21,51" concept="4" />
       <node id="681855071694758186" at="21,51,22,212" concept="4" />

@@ -17,6 +17,14 @@
     </file>
   </root>
   <root nodeRef="r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)/2526721715665547048">
+    <file name="TypesystemDescriptor.java">
+      <node id="2526721715665547048" at="21,5,22,89" concept="6" />
+      <node id="2526721715665547048" at="22,89,23,47" concept="2" />
+      <node id="2526721715665547048" at="20,5,24,5" concept="0" />
+      <scope id="2526721715665547048" at="21,5,23,47">
+        <var name="inferenceRule" id="2526721715665547048" />
+      </scope>
+    </file>
     <file name="typeof_DebuggerReference_InferenceRule.java">
       <node id="2526721715665562909" at="21,5,22,59" concept="6" />
       <node id="2526721715665562909" at="22,59,23,208" concept="6" />
@@ -107,8 +115,24 @@
       <scope id="48168216978079467" at="33,0,38,0" />
       <unit id="3570824963050586846" at="15,0,39,0" name="jetbrains.mps.debugger.api.lang.typesystem.DebuggerTypeIsDebuggerType_SubtypingRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="3570824963050586846" at="29,5,30,91" concept="6" />
+      <node id="3570824963050586846" at="30,91,31,47" concept="2" />
+      <node id="3570824963050586846" at="28,5,32,5" concept="0" />
+      <scope id="3570824963050586846" at="29,5,31,47">
+        <var name="subtypingRule" id="3570824963050586846" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)/4030433165041852571">
+    <file name="TypesystemDescriptor.java">
+      <node id="4030433165041852571" at="25,5,26,117" concept="6" />
+      <node id="4030433165041852571" at="26,117,27,55" concept="2" />
+      <node id="4030433165041852571" at="24,5,28,5" concept="0" />
+      <scope id="4030433165041852571" at="25,5,27,55">
+        <var name="nonTypesystemRule" id="4030433165041852571" />
+      </scope>
+    </file>
     <file name="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java">
       <node id="7329423411587718639" at="25,250,26,72" concept="6" />
       <node id="7329423411587718646" at="26,72,27,90" concept="2" />
@@ -156,6 +180,14 @@
     </file>
   </root>
   <root nodeRef="r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)/5365453833390544926">
+    <file name="TypesystemDescriptor.java">
+      <node id="5365453833390544926" at="13,5,14,97" concept="6" />
+      <node id="5365453833390544926" at="14,97,15,47" concept="2" />
+      <node id="5365453833390544926" at="12,33,16,5" concept="0" />
+      <scope id="5365453833390544926" at="13,5,15,47">
+        <var name="inferenceRule" id="5365453833390544926" />
+      </scope>
+    </file>
     <file name="typeof_CreateBreakpointOperation_InferenceRule.java">
       <node id="5365453833390548228" at="21,138,22,72" concept="6" />
       <node id="5365453833390548276" at="24,7,25,366" concept="6" />
@@ -207,6 +239,14 @@
     </file>
   </root>
   <root nodeRef="r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)/6586232406240905081">
+    <file name="TypesystemDescriptor.java">
+      <node id="6586232406240905081" at="17,5,18,93" concept="6" />
+      <node id="6586232406240905081" at="18,93,19,47" concept="2" />
+      <node id="6586232406240905081" at="16,5,20,5" concept="0" />
+      <scope id="6586232406240905081" at="17,5,19,47">
+        <var name="inferenceRule" id="6586232406240905081" />
+      </scope>
+    </file>
     <file name="typeof_DebuggerConfiguration_InferenceRule.java">
       <node id="6586232406240905084" at="21,5,22,225" concept="6" />
       <node id="6586232406240905084" at="22,225,23,208" concept="6" />
@@ -321,6 +361,14 @@
         <var name="patternNode" id="8321799582437916617" />
       </scope>
       <unit id="8321799582437916617" at="8,0,16,0" name="jetbrains.mps.debugger.api.lang.typesystem.Pattern_wcp5kc_a0a0a0f" />
+    </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="8321799582437916610" at="33,5,34,86" concept="6" />
+      <node id="8321799582437916610" at="34,86,35,49" concept="2" />
+      <node id="8321799582437916610" at="32,5,36,5" concept="0" />
+      <scope id="8321799582437916610" at="33,5,35,49">
+        <var name="comparisonRule" id="8321799582437916610" />
+      </scope>
     </file>
   </root>
 </debug-info>

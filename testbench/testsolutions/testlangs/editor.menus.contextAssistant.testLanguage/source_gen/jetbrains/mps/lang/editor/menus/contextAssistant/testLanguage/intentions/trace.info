@@ -94,6 +94,10 @@
       <unit id="7291101478621544792" at="51,0,72,0" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.intentions.AddLetterToName_Intention$IntentionImplementation" />
       <unit id="7291101478621544792" at="22,0,73,0" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.intentions.AddLetterToName_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="7291101478621544792" at="37,47,38,58" concept="1" />
+      <node id="7291101478621544792" at="50,52,51,44" concept="1" />
+    </file>
   </root>
 </debug-info>
 

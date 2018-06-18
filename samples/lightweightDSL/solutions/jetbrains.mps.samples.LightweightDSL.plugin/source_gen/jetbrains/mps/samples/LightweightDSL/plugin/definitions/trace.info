@@ -10,19 +10,19 @@
       <node id="5575318041730249654" at="11,56,12,290" concept="3" />
       <node id="5575318041730284551" at="14,50,15,290" concept="3" />
       <node id="5575318041730262250" at="17,58,18,453" concept="3" />
-      <node id="5575318041730181722" at="11,0,14,0" concept="4" trace="translate_from_type#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5575318041730181722" at="14,0,17,0" concept="4" trace="translate_ret#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5575318041730181722" at="17,0,20,0" concept="4" trace="translate_null_opt#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5575318041730181753" at="11,0,14,0" concept="4" trace="translate_from_type#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5575318041730182111" at="14,0,17,0" concept="4" trace="translate_ret#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5575318041730204672" at="17,0,20,0" concept="4" trace="translate_null_opt#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="5575318041730181758" at="11,56,12,290" />
       <scope id="5575318041730182115" at="14,50,15,290" />
       <scope id="5575318041730205153" at="17,58,18,453" />
-      <scope id="5575318041730181722" at="11,0,14,0">
+      <scope id="5575318041730181753" at="11,0,14,0">
         <var name="point" id="5575318041730181756" />
       </scope>
-      <scope id="5575318041730181722" at="14,0,17,0">
+      <scope id="5575318041730182111" at="14,0,17,0">
         <var name="point" id="5575318041730182113" />
       </scope>
-      <scope id="5575318041730181722" at="17,0,20,0">
+      <scope id="5575318041730204672" at="17,0,20,0">
         <var name="method" id="5575318041730205154" />
       </scope>
       <unit id="5575318041730181722" at="10,0,21,0" name="jetbrains.mps.samples.LightweightDSL.plugin.definitions.Translator_Queries" />

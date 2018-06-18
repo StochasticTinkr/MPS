@@ -13,6 +13,10 @@
     </file>
   </root>
   <root nodeRef="r:7344827c-92d1-4046-9d4e-c93304e0d649(jetbrains.mps.testbench.suite.intentions)/8605005254686393770">
+    <file name="IntentionsDescriptor.java">
+      <node id="8605005254686393770" at="37,47,38,52" concept="1" />
+      <node id="8605005254686393770" at="50,52,51,38" concept="1" />
+    </file>
     <file name="editoMute_Intention.java">
       <node id="8605005254686393770" at="20,0,21,0" concept="2" trace="myCachedExecutable" />
       <node id="8605005254686393770" at="21,32,22,154" concept="6" />

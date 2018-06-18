@@ -18,6 +18,14 @@
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/1238853976031">
+    <file name="TypesystemDescriptor.java">
+      <node id="1238853976031" at="14,5,15,91" concept="6" />
+      <node id="1238853976031" at="15,91,16,47" concept="2" />
+      <node id="1238853976031" at="13,33,17,5" concept="0" />
+      <scope id="1238853976031" at="14,5,16,47">
+        <var name="inferenceRule" id="1238853976031" />
+      </scope>
+    </file>
     <file name="typeof_IndexedTupleLiteral_InferenceRule.java">
       <node id="1238854144244" at="24,118,25,76" concept="6" />
       <node id="1238854211333" at="26,184,27,201" concept="2" />
@@ -89,28 +97,36 @@
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/1238854440948">
+    <file name="TypesystemDescriptor.java">
+      <node id="1238854440948" at="74,5,75,129" concept="6" />
+      <node id="1238854440948" at="75,129,76,61" concept="2" />
+      <node id="1238854440948" at="73,5,77,5" concept="0" />
+      <scope id="1238854440948" at="74,5,76,61">
+        <var name="eliminationRule" id="1238854440948" />
+      </scope>
+    </file>
     <file name="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java">
       <node id="1238854492399" at="26,414,27,58" concept="6" />
       <node id="1238854492399" at="27,58,28,271" concept="6" />
       <node id="1238854492399" at="28,271,29,77" concept="2" />
-      <node id="816097550963326369" at="31,5,32,232" concept="6" />
-      <node id="816097550963326369" at="32,232,33,234" concept="6" />
-      <node id="816097550963326369" at="33,234,34,20" concept="6" />
-      <node id="816097550963326369" at="34,20,35,20" concept="6" />
-      <node id="816097550963326369" at="36,52,37,32" concept="2" />
-      <node id="816097550963326369" at="37,32,38,32" concept="2" />
+      <node id="816097550963326356" at="31,5,32,232" concept="6" />
+      <node id="816097550963326361" at="32,232,33,234" concept="6" />
+      <node id="816097550963326356" at="33,234,34,20" concept="6" />
+      <node id="816097550963326361" at="34,20,35,20" concept="6" />
+      <node id="816097550963326356" at="36,52,37,32" concept="2" />
+      <node id="816097550963326361" at="37,32,38,32" concept="2" />
       <node id="816097550963326364" at="39,9,40,77" concept="6" />
       <node id="816097550963326364" at="40,77,41,213" concept="6" />
       <node id="816097550963326364" at="41,213,42,66" concept="2" />
       <node id="816097550963326364" at="42,66,43,121" concept="2" />
       <node id="1238854440948" at="48,207,49,35" concept="6" />
       <node id="1238854492399" at="50,414,51,30" concept="2" />
-      <node id="816097550963326369" at="53,5,54,232" concept="6" />
-      <node id="816097550963326369" at="54,232,55,234" concept="6" />
-      <node id="816097550963326369" at="55,234,56,20" concept="6" />
-      <node id="816097550963326369" at="56,20,57,20" concept="6" />
-      <node id="816097550963326369" at="58,52,59,32" concept="2" />
-      <node id="816097550963326369" at="59,32,60,32" concept="2" />
+      <node id="816097550963326356" at="53,5,54,232" concept="6" />
+      <node id="816097550963326361" at="54,232,55,234" concept="6" />
+      <node id="816097550963326356" at="55,234,56,20" concept="6" />
+      <node id="816097550963326361" at="56,20,57,20" concept="6" />
+      <node id="816097550963326356" at="58,52,59,32" concept="2" />
+      <node id="816097550963326361" at="59,32,60,32" concept="2" />
       <node id="816097550963326364" at="60,32,61,143" concept="2" />
       <node id="1238854440948" at="63,5,64,27" concept="7" />
       <node id="1238854440948" at="66,27,67,16" concept="7" />
@@ -161,16 +177,16 @@
       </scope>
       <scope id="816097550963326369" at="36,52,44,9" />
       <scope id="816097550963326369" at="53,5,62,7">
-        <var name="lmt_it" id="816097550963326369" />
-        <var name="lmt_var" id="816097550963326369" />
-        <var name="rmt_it" id="816097550963326369" />
-        <var name="rmt_var" id="816097550963326369" />
+        <var name="lmt_it" id="816097550963326356" />
+        <var name="lmt_var" id="816097550963326356" />
+        <var name="rmt_it" id="816097550963326361" />
+        <var name="rmt_var" id="816097550963326361" />
       </scope>
       <scope id="816097550963326369" at="31,5,45,7">
-        <var name="lmt_it" id="816097550963326369" />
-        <var name="lmt_var" id="816097550963326369" />
-        <var name="rmt_it" id="816097550963326369" />
-        <var name="rmt_var" id="816097550963326369" />
+        <var name="lmt_it" id="816097550963326356" />
+        <var name="lmt_var" id="816097550963326356" />
+        <var name="rmt_it" id="816097550963326361" />
+        <var name="rmt_var" id="816097550963326361" />
       </scope>
       <scope id="1238854440948" at="48,207,64,27">
         <var name="result_14532009" id="1238854440948" />
@@ -197,6 +213,14 @@
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/1238857867840">
+    <file name="TypesystemDescriptor.java">
+      <node id="1238857867840" at="18,5,19,106" concept="6" />
+      <node id="1238857867840" at="19,106,20,47" concept="2" />
+      <node id="1238857867840" at="17,5,21,5" concept="0" />
+      <scope id="1238857867840" at="18,5,20,47">
+        <var name="inferenceRule" id="1238857867840" />
+      </scope>
+    </file>
     <file name="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java">
       <node id="1238859427576" at="31,247,32,58" concept="6" />
       <node id="1238859427576" at="32,58,33,254" concept="6" />
@@ -309,6 +333,14 @@
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/1239579059907">
+    <file name="TypesystemDescriptor.java">
+      <node id="1239579059907" at="26,5,27,89" concept="6" />
+      <node id="1239579059907" at="27,89,28,47" concept="2" />
+      <node id="1239579059907" at="25,5,29,5" concept="0" />
+      <scope id="1239579059907" at="26,5,28,47">
+        <var name="inferenceRule" id="1239579059907" />
+      </scope>
+    </file>
     <file name="typeof_NamedTupleLiteral_InferenceRule.java">
       <node id="2912004279740801484" at="37,52,38,209" concept="7" />
       <node id="1239579091243" at="40,10,41,58" concept="6" />
@@ -436,16 +468,24 @@
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/1239579497085">
+    <file name="TypesystemDescriptor.java">
+      <node id="1239579497085" at="78,5,79,125" concept="6" />
+      <node id="1239579497085" at="79,125,80,61" concept="2" />
+      <node id="1239579497085" at="77,5,81,5" concept="0" />
+      <scope id="1239579497085" at="78,5,80,61">
+        <var name="eliminationRule" id="1239579497085" />
+      </scope>
+    </file>
     <file name="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java">
       <node id="1239968591797" at="28,408,29,60" concept="6" />
       <node id="1239968591797" at="29,60,30,277" concept="6" />
       <node id="1239968591797" at="30,277,31,79" concept="2" />
-      <node id="816097550963331590" at="33,7,34,229" concept="6" />
-      <node id="816097550963331590" at="34,229,35,231" concept="6" />
-      <node id="816097550963331590" at="35,231,36,21" concept="6" />
-      <node id="816097550963331590" at="36,21,37,21" concept="6" />
-      <node id="816097550963331590" at="38,52,39,32" concept="2" />
-      <node id="816097550963331590" at="39,32,40,32" concept="2" />
+      <node id="816097550963331577" at="33,7,34,229" concept="6" />
+      <node id="816097550963331582" at="34,229,35,231" concept="6" />
+      <node id="816097550963331577" at="35,231,36,21" concept="6" />
+      <node id="816097550963331582" at="36,21,37,21" concept="6" />
+      <node id="816097550963331577" at="38,52,39,32" concept="2" />
+      <node id="816097550963331582" at="39,32,40,32" concept="2" />
       <node id="816097550963331585" at="41,11,42,79" concept="6" />
       <node id="816097550963331585" at="42,79,43,215" concept="6" />
       <node id="816097550963331585" at="43,215,44,68" concept="2" />
@@ -455,12 +495,12 @@
       <node id="2213502935616215826" at="52,253,53,79" concept="2" />
       <node id="1239579497085" at="57,207,58,35" concept="6" />
       <node id="1239968591797" at="60,408,61,32" concept="2" />
-      <node id="816097550963331590" at="63,7,64,229" concept="6" />
-      <node id="816097550963331590" at="64,229,65,231" concept="6" />
-      <node id="816097550963331590" at="65,231,66,21" concept="6" />
-      <node id="816097550963331590" at="66,21,67,21" concept="6" />
-      <node id="816097550963331590" at="68,52,69,32" concept="2" />
-      <node id="816097550963331590" at="69,32,70,32" concept="2" />
+      <node id="816097550963331577" at="63,7,64,229" concept="6" />
+      <node id="816097550963331582" at="64,229,65,231" concept="6" />
+      <node id="816097550963331577" at="65,231,66,21" concept="6" />
+      <node id="816097550963331582" at="66,21,67,21" concept="6" />
+      <node id="816097550963331577" at="68,52,69,32" concept="2" />
+      <node id="816097550963331582" at="69,32,70,32" concept="2" />
       <node id="816097550963331585" at="70,32,71,143" concept="2" />
       <node id="2213502935616215826" at="75,445,76,32" concept="2" />
       <node id="1239579497085" at="78,5,79,27" concept="7" />
@@ -525,16 +565,16 @@
       <scope id="2213502935616215825" at="49,12,54,7" />
       <scope id="816097550963331590" at="38,52,46,11" />
       <scope id="816097550963331590" at="63,7,72,9">
-        <var name="lp_it" id="816097550963331590" />
-        <var name="lp_var" id="816097550963331590" />
-        <var name="rp_it" id="816097550963331590" />
-        <var name="rp_var" id="816097550963331590" />
+        <var name="lp_it" id="816097550963331577" />
+        <var name="lp_var" id="816097550963331577" />
+        <var name="rp_it" id="816097550963331582" />
+        <var name="rp_var" id="816097550963331582" />
       </scope>
       <scope id="816097550963331590" at="33,7,47,9">
-        <var name="lp_it" id="816097550963331590" />
-        <var name="lp_var" id="816097550963331590" />
-        <var name="rp_it" id="816097550963331590" />
-        <var name="rp_var" id="816097550963331590" />
+        <var name="lp_it" id="816097550963331577" />
+        <var name="lp_var" id="816097550963331577" />
+        <var name="rp_it" id="816097550963331582" />
+        <var name="rp_var" id="816097550963331582" />
       </scope>
       <scope id="2213502935616215814" at="59,335,73,7" />
       <scope id="2213502935616215814" at="27,335,48,7" />
@@ -563,6 +603,14 @@
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/1239579751280">
+    <file name="TypesystemDescriptor.java">
+      <node id="1239579751280" at="22,5,23,106" concept="6" />
+      <node id="1239579751280" at="23,106,24,47" concept="2" />
+      <node id="1239579751280" at="21,5,25,5" concept="0" />
+      <scope id="1239579751280" at="22,5,24,47">
+        <var name="inferenceRule" id="1239579751280" />
+      </scope>
+    </file>
     <file name="typeof_NamedTupleComponentAccessOperation_InferenceRule.java">
       <node id="1239974175631" at="27,122,28,48" concept="6" />
       <node id="1239974402367" at="28,48,29,390" concept="6" />
@@ -676,6 +724,14 @@
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/1239617235022">
+    <file name="TypesystemDescriptor.java">
+      <node id="1239617235022" at="62,5,63,128" concept="6" />
+      <node id="1239617235022" at="63,128,64,47" concept="2" />
+      <node id="1239617235022" at="61,5,65,5" concept="0" />
+      <scope id="1239617235022" at="62,5,64,47">
+        <var name="subtypingRule" id="1239617235022" />
+      </scope>
+    </file>
     <file name="namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule.java">
       <node id="1239883377493" at="23,113,24,402" concept="7" />
       <node id="1239617235022" at="26,50,27,161" concept="7" />
@@ -733,6 +789,14 @@
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/1239722373118">
+    <file name="TypesystemDescriptor.java">
+      <node id="1239722373118" at="54,5,55,108" concept="6" />
+      <node id="1239722373118" at="55,108,56,47" concept="2" />
+      <node id="1239722373118" at="53,5,57,5" concept="0" />
+      <scope id="1239722373118" at="54,5,56,47">
+        <var name="subtypingRule" id="1239722373118" />
+      </scope>
+    </file>
     <file name="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java">
       <node id="1239972432012" at="26,113,27,77" concept="6" />
       <node id="1239972674655" at="27,77,28,187" concept="6" />
@@ -827,6 +891,14 @@
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/1239881381603">
+    <file name="TypesystemDescriptor.java">
+      <node id="1239881381603" at="34,5,35,97" concept="6" />
+      <node id="1239881381603" at="35,97,36,55" concept="2" />
+      <node id="1239881381603" at="33,5,37,5" concept="0" />
+      <scope id="1239881381603" at="34,5,36,55">
+        <var name="nonTypesystemRule" id="1239881381603" />
+      </scope>
+    </file>
     <file name="check_NamedTupleType_NonTypesystemRule.java">
       <node id="1239881405754" at="22,757,23,58" concept="6" />
       <node id="1239881405754" at="23,58,24,242" concept="6" />
@@ -863,6 +935,14 @@
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/1654804677203434347">
+    <file name="TypesystemDescriptor.java">
+      <node id="1654804677203434347" at="66,5,67,102" concept="6" />
+      <node id="1654804677203434347" at="67,102,68,49" concept="2" />
+      <node id="1654804677203434347" at="65,5,69,5" concept="0" />
+      <scope id="1654804677203434347" at="66,5,68,49">
+        <var name="comparisonRule" id="1654804677203434347" />
+      </scope>
+    </file>
     <file name="comparable_IndexedTupleType_Object_ComparisonRule.java">
       <node id="1654804677203434353" at="17,86,18,260" concept="7" />
       <node id="1654804677203434347" at="20,27,21,16" concept="7" />
@@ -903,6 +983,14 @@
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/1654804677203434372">
+    <file name="TypesystemDescriptor.java">
+      <node id="1654804677203434372" at="70,5,71,100" concept="6" />
+      <node id="1654804677203434372" at="71,100,72,49" concept="2" />
+      <node id="1654804677203434372" at="69,5,73,5" concept="0" />
+      <scope id="1654804677203434372" at="70,5,72,49">
+        <var name="comparisonRule" id="1654804677203434372" />
+      </scope>
+    </file>
     <file name="comparable_NamedTupleType_Object_ComparisonRule.java">
       <node id="1654804677203434375" at="17,86,18,260" concept="7" />
       <node id="1654804677203434372" at="20,27,21,16" concept="7" />
@@ -991,6 +1079,14 @@
       </scope>
       <unit id="2213502935616190236" at="20,0,49,0" name="jetbrains.mps.baseLanguage.tuples.typesystem.NamedTuple_subtypeOf_extended_SubtypingRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="2213502935616190236" at="42,5,43,94" concept="6" />
+      <node id="2213502935616190236" at="43,94,44,47" concept="2" />
+      <node id="2213502935616190236" at="41,5,45,5" concept="0" />
+      <scope id="2213502935616190236" at="42,5,44,47">
+        <var name="subtypingRule" id="2213502935616190236" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/3122175964860974805">
     <file name="NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule.java">
@@ -1033,6 +1129,14 @@
         <var name="typeCheckingContext" id="3122175964860974805" />
       </scope>
       <unit id="3122175964860974805" at="18,0,40,0" name="jetbrains.mps.baseLanguage.tuples.typesystem.NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule" />
+    </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="3122175964860974805" at="46,5,47,108" concept="6" />
+      <node id="3122175964860974805" at="47,108,48,47" concept="2" />
+      <node id="3122175964860974805" at="45,5,49,5" concept="0" />
+      <scope id="3122175964860974805" at="46,5,48,47">
+        <var name="subtypingRule" id="3122175964860974805" />
+      </scope>
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/5264858465808079239">
@@ -1114,8 +1218,24 @@
       <unit id="4690171080785822006" at="33,316,37,5" name="jetbrains.mps.baseLanguage.tuples.typesystem.Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule$1" />
       <unit id="5264858465808079239" at="27,0,70,0" name="jetbrains.mps.baseLanguage.tuples.typesystem.Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="5264858465808079239" at="50,5,51,110" concept="6" />
+      <node id="5264858465808079239" at="51,110,52,47" concept="2" />
+      <node id="5264858465808079239" at="49,5,53,5" concept="0" />
+      <scope id="5264858465808079239" at="50,5,52,47">
+        <var name="subtypingRule" id="5264858465808079239" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/7367153454745440810">
+    <file name="TypesystemDescriptor.java">
+      <node id="7367153454745440810" at="30,5,31,112" concept="6" />
+      <node id="7367153454745440810" at="31,112,32,55" concept="2" />
+      <node id="7367153454745440810" at="29,5,33,5" concept="0" />
+      <scope id="7367153454745440810" at="30,5,32,55">
+        <var name="nonTypesystemRule" id="7367153454745440810" />
+      </scope>
+    </file>
     <file name="check_NamedTupleDeclaration_extends_NonTypesystemRule.java">
       <node id="7367153454745473466" at="27,332,28,418" concept="6" />
       <node id="7367153454745473434" at="29,66,30,60" concept="6" />
@@ -1185,6 +1305,14 @@
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/8197465398807013607">
+    <file name="TypesystemDescriptor.java">
+      <node id="8197465398807013607" at="38,5,39,106" concept="6" />
+      <node id="8197465398807013607" at="39,106,40,55" concept="2" />
+      <node id="8197465398807013607" at="37,5,41,5" concept="0" />
+      <scope id="8197465398807013607" at="38,5,40,55">
+        <var name="nonTypesystemRule" id="8197465398807013607" />
+      </scope>
+    </file>
     <file name="check_TupleComponentIsInScope_NonTypesystemRule.java">
       <node id="2912004279740806095" at="26,51,27,174" concept="7" />
       <node id="8197465398807016936" at="30,199,31,195" concept="6" />
@@ -1239,6 +1367,14 @@
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/9088427053757660374">
+    <file name="TypesystemDescriptor.java">
+      <node id="9088427053757660374" at="58,5,59,126" concept="6" />
+      <node id="9088427053757660374" at="59,126,60,47" concept="2" />
+      <node id="9088427053757660374" at="57,5,61,5" concept="0" />
+      <scope id="9088427053757660374" at="58,5,60,47">
+        <var name="subtypingRule" id="9088427053757660374" />
+      </scope>
+    </file>
     <file name="namedTupleDeclaration_ClassifierType_subtypeOf_namedTupleType_SubtypingRule.java">
       <node id="9088427053757668187" at="21,365,22,396" concept="7" />
       <node id="9088427053757675415" at="23,5,24,16" concept="7" />

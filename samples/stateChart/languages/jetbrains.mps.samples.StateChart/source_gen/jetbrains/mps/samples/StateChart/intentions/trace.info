@@ -89,6 +89,10 @@
       <unit id="6813679070098191263" at="58,0,74,0" name="jetbrains.mps.samples.StateChart.intentions.AddOnEntry_Intention$IntentionImplementation" />
       <unit id="6813679070098191263" at="23,0,75,0" name="jetbrains.mps.samples.StateChart.intentions.AddOnEntry_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="6813679070098191263" at="37,47,38,53" concept="1" />
+      <node id="6813679070098191263" at="51,52,52,39" concept="1" />
+    </file>
   </root>
   <root nodeRef="r:f689cdd6-700e-4c47-a39c-d44523450582(jetbrains.mps.samples.StateChart.intentions)/6813679070098278042">
     <file name="AddOnExit_Intention.java">
@@ -166,6 +170,10 @@
       </scope>
       <unit id="6813679070098278042" at="58,0,74,0" name="jetbrains.mps.samples.StateChart.intentions.AddOnExit_Intention$IntentionImplementation" />
       <unit id="6813679070098278042" at="23,0,75,0" name="jetbrains.mps.samples.StateChart.intentions.AddOnExit_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="6813679070098278042" at="38,53,39,52" concept="1" />
+      <node id="6813679070098278042" at="52,39,53,38" concept="1" />
     </file>
   </root>
 </debug-info>

@@ -14,6 +14,14 @@
     </file>
   </root>
   <root nodeRef="r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)/342110547581236440">
+    <file name="TypesystemDescriptor.java">
+      <node id="342110547581236440" at="11,5,12,87" concept="5" />
+      <node id="342110547581236440" at="12,87,13,47" concept="2" />
+      <node id="342110547581236440" at="10,33,14,5" concept="0" />
+      <scope id="342110547581236440" at="11,5,13,47">
+        <var name="inferenceRule" id="342110547581236440" />
+      </scope>
+    </file>
     <file name="typeof_FigureParameter_InferenceRule.java">
       <node id="342110547581237055" at="18,128,19,143" concept="5" />
       <node id="342110547581237064" at="21,7,22,59" concept="5" />
@@ -56,6 +64,14 @@
     </file>
   </root>
   <root nodeRef="r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)/6568183682644034418">
+    <file name="TypesystemDescriptor.java">
+      <node id="6568183682644034418" at="23,5,24,112" concept="5" />
+      <node id="6568183682644034418" at="24,112,25,55" concept="2" />
+      <node id="6568183682644034418" at="22,5,26,5" concept="0" />
+      <scope id="6568183682644034418" at="23,5,25,55">
+        <var name="nonTypesystemRule" id="6568183682644034418" />
+      </scope>
+    </file>
     <file name="check_FigureParameterAttributeField_NonTypesystemRule.java">
       <node id="6568183682644076223" at="23,7,24,60" concept="5" />
       <node id="6568183682644076223" at="24,60,25,317" concept="5" />
@@ -94,6 +110,14 @@
     </file>
   </root>
   <root nodeRef="r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)/9026300686792780079">
+    <file name="TypesystemDescriptor.java">
+      <node id="9026300686792780079" at="19,5,20,107" concept="5" />
+      <node id="9026300686792780079" at="20,107,21,55" concept="2" />
+      <node id="9026300686792780079" at="18,5,22,5" concept="0" />
+      <scope id="9026300686792780079" at="19,5,21,55">
+        <var name="nonTypesystemRule" id="9026300686792780079" />
+      </scope>
+    </file>
     <file name="check_FigureParameterAttribute_NonTypesystemRule.java">
       <node id="9026300686792786362" at="24,7,25,60" concept="5" />
       <node id="9026300686792786362" at="25,60,26,374" concept="5" />
@@ -132,6 +156,14 @@
     </file>
   </root>
   <root nodeRef="r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)/9176911587995977871">
+    <file name="TypesystemDescriptor.java">
+      <node id="9176911587995977871" at="27,5,28,113" concept="5" />
+      <node id="9176911587995977871" at="28,113,29,55" concept="2" />
+      <node id="9176911587995977871" at="26,5,30,5" concept="0" />
+      <scope id="9176911587995977871" at="27,5,29,55">
+        <var name="nonTypesystemRule" id="9176911587995977871" />
+      </scope>
+    </file>
     <file name="check_FigureParameterAttributeMethod_NonTypesystemRule.java">
       <node id="9176911587996078226" at="23,7,24,60" concept="5" />
       <node id="9176911587996078226" at="24,60,25,326" concept="5" />
@@ -170,6 +202,14 @@
     </file>
   </root>
   <root nodeRef="r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)/9176911587996519805">
+    <file name="TypesystemDescriptor.java">
+      <node id="9176911587996519805" at="31,5,32,119" concept="5" />
+      <node id="9176911587996519805" at="32,119,33,55" concept="2" />
+      <node id="9176911587996519805" at="30,5,34,5" concept="0" />
+      <scope id="9176911587996519805" at="31,5,33,55">
+        <var name="nonTypesystemRule" id="9176911587996519805" />
+      </scope>
+    </file>
     <file name="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java">
       <node id="9176911587996551958" at="23,7,24,60" concept="5" />
       <node id="9176911587996551958" at="24,60,25,351" concept="5" />
@@ -229,6 +269,14 @@
     </file>
   </root>
   <root nodeRef="r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)/9176911587997288581">
+    <file name="TypesystemDescriptor.java">
+      <node id="9176911587997288581" at="15,5,16,110" concept="5" />
+      <node id="9176911587997288581" at="16,110,17,55" concept="2" />
+      <node id="9176911587997288581" at="14,5,18,5" concept="0" />
+      <scope id="9176911587997288581" at="15,5,17,55">
+        <var name="nonTypesystemRule" id="9176911587997288581" />
+      </scope>
+    </file>
     <file name="check_ExternalViewFigureParameter_NonTypesystemRule.java">
       <node id="9176911587997288594" at="23,7,24,60" concept="5" />
       <node id="9176911587997288594" at="24,60,25,347" concept="5" />

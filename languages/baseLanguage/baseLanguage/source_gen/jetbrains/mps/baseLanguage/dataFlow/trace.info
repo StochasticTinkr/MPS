@@ -1056,12 +1056,12 @@
       <node id="7564982745305749384" at="56,43,57,18" concept="10" />
       <node id="741163781874002084" at="59,918,60,204" concept="9" />
       <node id="741163781873991866" at="60,204,61,205" concept="9" />
-      <node id="741163781874019670" at="63,9,64,239" concept="9" />
-      <node id="741163781874019670" at="64,239,65,242" concept="9" />
-      <node id="741163781874019670" at="65,242,66,24" concept="9" />
-      <node id="741163781874019670" at="66,24,67,26" concept="9" />
-      <node id="741163781874019670" at="68,58,69,36" concept="4" />
-      <node id="741163781874019670" at="69,36,70,40" concept="4" />
+      <node id="741163781874019672" at="63,9,64,239" concept="9" />
+      <node id="741163781874049470" at="64,239,65,242" concept="9" />
+      <node id="741163781874019672" at="65,242,66,24" concept="9" />
+      <node id="741163781874049470" at="66,24,67,26" concept="9" />
+      <node id="741163781874019672" at="68,58,69,36" concept="4" />
+      <node id="741163781874049470" at="69,36,70,40" concept="4" />
       <node id="4551363444388398008" at="73,49,74,163" concept="10" />
       <node id="741163781874521043" at="76,53,77,31" concept="9" />
       <node id="741163781874522241" at="78,208,79,384" concept="4" />
@@ -1182,10 +1182,10 @@
         <var name="isNull" id="3791846458263577320" />
       </scope>
       <scope id="741163781874019670" at="63,9,86,11">
-        <var name="arg_it" id="741163781874019670" />
-        <var name="arg_var" id="741163781874019670" />
-        <var name="param_it" id="741163781874019670" />
-        <var name="param_var" id="741163781874019670" />
+        <var name="arg_it" id="741163781874019672" />
+        <var name="arg_var" id="741163781874019672" />
+        <var name="param_it" id="741163781874049470" />
+        <var name="param_var" id="741163781874049470" />
       </scope>
       <scope id="960103517527497080" at="62,38,87,9" />
       <scope id="3906759656537034033" at="93,136,120,16" />
@@ -1650,13 +1650,13 @@
     <file name="Pattern_7fbm30_a0.java">
       <node id="2394615668041444398" at="13,81,14,30" concept="14" />
       <node id="2394615668041444398" at="14,30,15,0" concept="12" />
-      <node id="2394615668041444398" at="15,0,16,54" concept="9" />
-      <node id="2394615668041444398" at="16,54,17,54" concept="9" />
-      <node id="2394615668041444398" at="17,54,18,168" concept="4" />
-      <node id="2394615668041444398" at="18,168,19,169" concept="4" />
+      <node id="2394615668041444409" at="15,0,16,54" concept="9" />
+      <node id="2394615668041444415" at="16,54,17,54" concept="9" />
+      <node id="2394615668041444413" at="17,54,18,168" concept="4" />
+      <node id="2394615668041444420" at="18,168,19,169" concept="4" />
       <node id="2394615668041444398" at="19,169,20,0" concept="12" />
-      <node id="2394615668041444398" at="20,0,21,197" concept="4" />
-      <node id="2394615668041444398" at="21,197,22,217" concept="4" />
+      <node id="2394615668041444402" at="20,0,21,197" concept="4" />
+      <node id="2394615668041444408" at="21,197,22,217" concept="4" />
       <node id="2394615668041444403" at="27,5,28,81" concept="9" />
       <node id="2394615668041444403" at="29,43,30,31" concept="9" />
       <node id="2394615668041444403" at="30,31,31,21" concept="9" />
@@ -1675,12 +1675,12 @@
       <scope id="2394615668041444403" at="32,21,33,54" />
       <scope id="2394615668041444403" at="34,16,35,52" />
       <scope id="2394615668041444398" at="13,81,22,217">
-        <var name="disjunct0" id="2394615668041444398" />
-        <var name="disjunct1" id="2394615668041444398" />
+        <var name="disjunct0" id="2394615668041444409" />
+        <var name="disjunct1" id="2394615668041444415" />
       </scope>
       <scope id="2394615668041444398" at="13,0,24,0">
-        <var name="orClause0" id="2394615668041444398" />
-        <var name="orClause1" id="2394615668041444398" />
+        <var name="orClause0" id="2394615668041444409" />
+        <var name="orClause1" id="2394615668041444415" />
         <var name="patternNode" id="2394615668041444398" />
       </scope>
       <scope id="2394615668041444403" at="29,43,40,68">
@@ -1906,83 +1906,83 @@
       <unit id="6868777471677432036" at="27,0,112,0" name="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner" />
     </file>
     <file name="notNullInstruction.java">
-      <node id="6868777471677432047" at="9,0,10,0" concept="5" trace="myexpression" />
+      <node id="6868777471677432048" at="9,0,10,0" concept="5" trace="myexpression" />
       <node id="6868777471677432047" at="10,0,11,0" concept="5" trace="myPresentation" />
       <node id="6868777471677432047" at="11,47,12,43" concept="9" />
       <node id="6868777471677432047" at="12,43,13,25" concept="4" />
-      <node id="6868777471677432047" at="13,25,14,30" concept="4" />
-      <node id="6868777471677432047" at="14,30,15,44" concept="4" />
-      <node id="6868777471677432047" at="15,44,16,29" concept="4" />
-      <node id="6868777471677432047" at="16,29,17,32" concept="4" />
+      <node id="6868777471677432048" at="13,25,14,30" concept="4" />
+      <node id="6868777471677432048" at="14,30,15,44" concept="4" />
+      <node id="6868777471677432048" at="15,44,16,29" concept="4" />
+      <node id="6868777471677432048" at="16,29,17,32" concept="4" />
       <node id="6868777471677432047" at="17,32,18,35" concept="4" />
       <node id="6868777471677432047" at="21,39,22,26" concept="10" />
-      <node id="6868777471677432047" at="24,32,25,24" concept="10" />
-      <node id="6868777471677432047" at="24,0,27,0" concept="8" trace="getexpression#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6868777471677432048" at="24,32,25,24" concept="10" />
+      <node id="6868777471677432048" at="24,0,27,0" concept="8" trace="getexpression#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6868777471677432047" at="20,0,24,0" concept="8" trace="commandPresentation#()Ljava/lang/String;" />
       <node id="6868777471677432047" at="11,0,20,0" concept="2" trace="notNullInstruction#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="6868777471677432047" at="21,39,22,26" />
-      <scope id="6868777471677432047" at="24,32,25,24" />
-      <scope id="6868777471677432047" at="24,0,27,0" />
+      <scope id="6868777471677432048" at="24,32,25,24" />
+      <scope id="6868777471677432048" at="24,0,27,0" />
       <scope id="6868777471677432047" at="20,0,24,0" />
       <scope id="6868777471677432047" at="11,47,18,35">
         <var name="sb" id="6868777471677432047" />
       </scope>
       <scope id="6868777471677432047" at="11,0,20,0">
-        <var name="expression" id="6868777471677432047" />
+        <var name="expression" id="6868777471677432048" />
       </scope>
       <unit id="6868777471677432047" at="8,0,28,0" name="jetbrains.mps.baseLanguage.dataFlow.notNullInstruction" />
     </file>
     <file name="nullInstruction.java">
-      <node id="6868777471677432053" at="9,0,10,0" concept="5" trace="myexpression" />
+      <node id="6868777471677432054" at="9,0,10,0" concept="5" trace="myexpression" />
       <node id="6868777471677432053" at="10,0,11,0" concept="5" trace="myPresentation" />
       <node id="6868777471677432053" at="11,44,12,43" concept="9" />
       <node id="6868777471677432053" at="12,43,13,22" concept="4" />
-      <node id="6868777471677432053" at="13,22,14,30" concept="4" />
-      <node id="6868777471677432053" at="14,30,15,44" concept="4" />
-      <node id="6868777471677432053" at="15,44,16,29" concept="4" />
-      <node id="6868777471677432053" at="16,29,17,32" concept="4" />
+      <node id="6868777471677432054" at="13,22,14,30" concept="4" />
+      <node id="6868777471677432054" at="14,30,15,44" concept="4" />
+      <node id="6868777471677432054" at="15,44,16,29" concept="4" />
+      <node id="6868777471677432054" at="16,29,17,32" concept="4" />
       <node id="6868777471677432053" at="17,32,18,35" concept="4" />
       <node id="6868777471677432053" at="21,39,22,26" concept="10" />
-      <node id="6868777471677432053" at="24,32,25,24" concept="10" />
-      <node id="6868777471677432053" at="24,0,27,0" concept="8" trace="getexpression#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6868777471677432054" at="24,32,25,24" concept="10" />
+      <node id="6868777471677432054" at="24,0,27,0" concept="8" trace="getexpression#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6868777471677432053" at="20,0,24,0" concept="8" trace="commandPresentation#()Ljava/lang/String;" />
       <node id="6868777471677432053" at="11,0,20,0" concept="2" trace="nullInstruction#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="6868777471677432053" at="21,39,22,26" />
-      <scope id="6868777471677432053" at="24,32,25,24" />
-      <scope id="6868777471677432053" at="24,0,27,0" />
+      <scope id="6868777471677432054" at="24,32,25,24" />
+      <scope id="6868777471677432054" at="24,0,27,0" />
       <scope id="6868777471677432053" at="20,0,24,0" />
       <scope id="6868777471677432053" at="11,44,18,35">
         <var name="sb" id="6868777471677432053" />
       </scope>
       <scope id="6868777471677432053" at="11,0,20,0">
-        <var name="expression" id="6868777471677432053" />
+        <var name="expression" id="6868777471677432054" />
       </scope>
       <unit id="6868777471677432053" at="8,0,28,0" name="jetbrains.mps.baseLanguage.dataFlow.nullInstruction" />
     </file>
     <file name="nullableInstruction.java">
-      <node id="6868777471677432050" at="9,0,10,0" concept="5" trace="myexpression" />
+      <node id="6868777471677432051" at="9,0,10,0" concept="5" trace="myexpression" />
       <node id="6868777471677432050" at="10,0,11,0" concept="5" trace="myPresentation" />
       <node id="6868777471677432050" at="11,48,12,43" concept="9" />
       <node id="6868777471677432050" at="12,43,13,26" concept="4" />
-      <node id="6868777471677432050" at="13,26,14,30" concept="4" />
-      <node id="6868777471677432050" at="14,30,15,44" concept="4" />
-      <node id="6868777471677432050" at="15,44,16,29" concept="4" />
-      <node id="6868777471677432050" at="16,29,17,32" concept="4" />
+      <node id="6868777471677432051" at="13,26,14,30" concept="4" />
+      <node id="6868777471677432051" at="14,30,15,44" concept="4" />
+      <node id="6868777471677432051" at="15,44,16,29" concept="4" />
+      <node id="6868777471677432051" at="16,29,17,32" concept="4" />
       <node id="6868777471677432050" at="17,32,18,35" concept="4" />
       <node id="6868777471677432050" at="21,39,22,26" concept="10" />
-      <node id="6868777471677432050" at="24,32,25,24" concept="10" />
-      <node id="6868777471677432050" at="24,0,27,0" concept="8" trace="getexpression#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6868777471677432051" at="24,32,25,24" concept="10" />
+      <node id="6868777471677432051" at="24,0,27,0" concept="8" trace="getexpression#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6868777471677432050" at="20,0,24,0" concept="8" trace="commandPresentation#()Ljava/lang/String;" />
       <node id="6868777471677432050" at="11,0,20,0" concept="2" trace="nullableInstruction#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="6868777471677432050" at="21,39,22,26" />
-      <scope id="6868777471677432050" at="24,32,25,24" />
-      <scope id="6868777471677432050" at="24,0,27,0" />
+      <scope id="6868777471677432051" at="24,32,25,24" />
+      <scope id="6868777471677432051" at="24,0,27,0" />
       <scope id="6868777471677432050" at="20,0,24,0" />
       <scope id="6868777471677432050" at="11,48,18,35">
         <var name="sb" id="6868777471677432050" />
       </scope>
       <scope id="6868777471677432050" at="11,0,20,0">
-        <var name="expression" id="6868777471677432050" />
+        <var name="expression" id="6868777471677432051" />
       </scope>
       <unit id="6868777471677432050" at="8,0,28,0" name="jetbrains.mps.baseLanguage.dataFlow.nullableInstruction" />
     </file>

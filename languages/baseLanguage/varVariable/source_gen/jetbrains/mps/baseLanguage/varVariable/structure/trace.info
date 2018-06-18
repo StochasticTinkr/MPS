@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,31,0" name="jetbrains.mps.baseLanguage.varVariable.structure.ConceptPresentationAspectImpl" />
@@ -9,6 +16,42 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <unit at="14,0,52,0" name="jetbrains.mps.baseLanguage.varVariable.structure.StructureAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:931e38db-856b-4b95-8ae0-a7cd13da6d32(jetbrains.mps.baseLanguage.varVariable.structure)/1236693300889">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="1236693300889" at="12,0,13,0" concept="1" trace="props_VarVariableDeclaration" />
+      <node id="1236693300889" at="20,51,21,76" concept="3" />
+      <node id="1236693300889" at="21,76,22,42" concept="0" />
+      <node id="1236693300889" at="22,42,23,35" concept="0" />
+      <node id="1236693300889" at="23,35,24,54" concept="0" />
+      <node id="1236693300889" at="25,9,26,44" concept="4" />
+      <node id="1236693300889" at="19,56,25,9" concept="2" />
+      <scope id="1236693300889" at="20,51,24,54">
+        <var name="cpb" id="1236693300889" />
+      </scope>
+      <scope id="1236693300889" at="19,56,26,44" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="1236693300889" at="12,0,13,0" concept="5" trace="VarVariableDeclaration" />
+      <node id="1236693300889" at="15,116,16,56" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="1236693300889" at="15,0,16,0" concept="1" trace="myConceptVarVariableDeclaration" />
+      <node id="1236693300889" at="31,56,32,47" concept="4" />
+      <node id="1236693300889" at="42,80,43,190" concept="3" />
+      <node id="1236693300889" at="43,190,44,34" concept="0" />
+      <node id="1236693300889" at="44,34,45,135" concept="0" />
+      <node id="1236693300889" at="45,135,46,71" concept="0" />
+      <node id="1236693300889" at="46,71,47,119" concept="0" />
+      <node id="1236693300889" at="47,119,48,19" concept="0" />
+      <node id="1236693300889" at="48,19,49,22" concept="4" />
+      <node id="1236693300889" at="42,0,51,0" concept="6" trace="createDescriptorForVarVariableDeclaration#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="1236693300889" at="31,56,32,47" />
+      <scope id="1236693300889" at="42,80,49,22">
+        <var name="b" id="1236693300889" />
+      </scope>
+      <scope id="1236693300889" at="42,0,51,0" />
     </file>
   </root>
 </debug-info>

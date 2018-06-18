@@ -15,30 +15,30 @@
     <file name="StateMachine_Constraints.java">
       <node id="1213107435705" at="17,37,18,173" concept="5" />
       <node id="1213107435705" at="22,84,23,119" concept="3" />
-      <node id="1213107435705" at="26,37,27,20" concept="4" />
-      <node id="1213107435705" at="30,42,31,37" concept="3" />
+      <node id="1213107435706" at="26,37,27,20" concept="4" />
+      <node id="1213107435706" at="30,42,31,37" concept="3" />
       <node id="1213107435709" at="31,37,32,196" concept="4" />
       <node id="1213107435705" at="34,7,35,22" concept="4" />
       <node id="1213107435705" at="17,0,20,0" concept="0" trace="StateMachine_Constraints#()V" />
-      <node id="1213107435705" at="25,0,29,0" concept="2" trace="hasOwnGetter#()Z" />
-      <node id="1213107435705" at="29,0,34,0" concept="2" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="1213107435705" at="23,119,34,7" concept="1" />
+      <node id="1213107435706" at="25,0,29,0" concept="2" trace="hasOwnGetter#()Z" />
+      <node id="1213107435706" at="29,0,34,0" concept="2" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="1213107435706" at="23,119,34,7" concept="1" />
       <node id="1213107435705" at="21,0,37,0" concept="2" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="1213107435705" at="17,37,18,173" />
-      <scope id="1213107435705" at="26,37,27,20" />
-      <scope id="1213107435705" at="30,42,32,196">
-        <var name="propertyName" id="1213107435705" />
+      <scope id="1213107435706" at="26,37,27,20" />
+      <scope id="1213107435706" at="30,42,32,196">
+        <var name="propertyName" id="1213107435706" />
       </scope>
       <scope id="1213107435705" at="17,0,20,0" />
-      <scope id="1213107435705" at="25,0,29,0" />
-      <scope id="1213107435705" at="29,0,34,0">
-        <var name="node" id="1213107435705" />
+      <scope id="1213107435706" at="25,0,29,0" />
+      <scope id="1213107435706" at="29,0,34,0">
+        <var name="node" id="1213107435706" />
       </scope>
       <scope id="1213107435705" at="22,84,35,22">
         <var name="properties" id="1213107435705" />
       </scope>
       <scope id="1213107435705" at="21,0,37,0" />
-      <unit id="1213107435705" at="24,137,34,5" name="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachine_Constraints$1" />
+      <unit id="1213107435706" at="24,137,34,5" name="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachine_Constraints$1" />
       <unit id="1213107435705" at="16,0,38,0" name="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachine_Constraints" />
     </file>
   </root>
@@ -46,30 +46,30 @@
     <file name="StateMachineTest_Constraints.java">
       <node id="1213107435908" at="17,41,18,177" concept="5" />
       <node id="1213107435908" at="22,84,23,119" concept="3" />
-      <node id="1213107435908" at="26,37,27,20" concept="4" />
-      <node id="1213107435908" at="30,42,31,37" concept="3" />
+      <node id="1213107435909" at="26,37,27,20" concept="4" />
+      <node id="1213107435909" at="30,42,31,37" concept="3" />
       <node id="1213107435912" at="31,37,32,119" concept="4" />
       <node id="1213107435908" at="34,7,35,22" concept="4" />
       <node id="1213107435908" at="17,0,20,0" concept="0" trace="StateMachineTest_Constraints#()V" />
-      <node id="1213107435908" at="25,0,29,0" concept="2" trace="hasOwnGetter#()Z" />
-      <node id="1213107435908" at="29,0,34,0" concept="2" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="1213107435908" at="23,119,34,7" concept="1" />
+      <node id="1213107435909" at="25,0,29,0" concept="2" trace="hasOwnGetter#()Z" />
+      <node id="1213107435909" at="29,0,34,0" concept="2" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="1213107435909" at="23,119,34,7" concept="1" />
       <node id="1213107435908" at="21,0,37,0" concept="2" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="1213107435908" at="17,41,18,177" />
-      <scope id="1213107435908" at="26,37,27,20" />
-      <scope id="1213107435908" at="30,42,32,119">
-        <var name="propertyName" id="1213107435908" />
+      <scope id="1213107435909" at="26,37,27,20" />
+      <scope id="1213107435909" at="30,42,32,119">
+        <var name="propertyName" id="1213107435909" />
       </scope>
       <scope id="1213107435908" at="17,0,20,0" />
-      <scope id="1213107435908" at="25,0,29,0" />
-      <scope id="1213107435908" at="29,0,34,0">
-        <var name="node" id="1213107435908" />
+      <scope id="1213107435909" at="25,0,29,0" />
+      <scope id="1213107435909" at="29,0,34,0">
+        <var name="node" id="1213107435909" />
       </scope>
       <scope id="1213107435908" at="22,84,35,22">
         <var name="properties" id="1213107435908" />
       </scope>
       <scope id="1213107435908" at="21,0,37,0" />
-      <unit id="1213107435908" at="24,137,34,5" name="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachineTest_Constraints$1" />
+      <unit id="1213107435909" at="24,137,34,5" name="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachineTest_Constraints$1" />
       <unit id="1213107435908" at="16,0,38,0" name="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachineTest_Constraints" />
     </file>
   </root>
@@ -77,30 +77,30 @@
     <file name="Event_Constraints.java">
       <node id="1213107436125" at="17,30,18,166" concept="5" />
       <node id="1213107436125" at="22,84,23,119" concept="3" />
-      <node id="1213107436125" at="26,37,27,20" concept="4" />
-      <node id="1213107436125" at="30,42,31,37" concept="3" />
+      <node id="1213107436126" at="26,37,27,20" concept="4" />
+      <node id="1213107436126" at="30,42,31,37" concept="3" />
       <node id="1213107436129" at="31,37,32,170" concept="4" />
       <node id="1213107436125" at="34,7,35,22" concept="4" />
       <node id="1213107436125" at="17,0,20,0" concept="0" trace="Event_Constraints#()V" />
-      <node id="1213107436125" at="25,0,29,0" concept="2" trace="hasOwnGetter#()Z" />
-      <node id="1213107436125" at="29,0,34,0" concept="2" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="1213107436125" at="23,119,34,7" concept="1" />
+      <node id="1213107436126" at="25,0,29,0" concept="2" trace="hasOwnGetter#()Z" />
+      <node id="1213107436126" at="29,0,34,0" concept="2" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="1213107436126" at="23,119,34,7" concept="1" />
       <node id="1213107436125" at="21,0,37,0" concept="2" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="1213107436125" at="17,30,18,166" />
-      <scope id="1213107436125" at="26,37,27,20" />
-      <scope id="1213107436125" at="30,42,32,170">
-        <var name="propertyName" id="1213107436125" />
+      <scope id="1213107436126" at="26,37,27,20" />
+      <scope id="1213107436126" at="30,42,32,170">
+        <var name="propertyName" id="1213107436126" />
       </scope>
       <scope id="1213107436125" at="17,0,20,0" />
-      <scope id="1213107436125" at="25,0,29,0" />
-      <scope id="1213107436125" at="29,0,34,0">
-        <var name="node" id="1213107436125" />
+      <scope id="1213107436126" at="25,0,29,0" />
+      <scope id="1213107436126" at="29,0,34,0">
+        <var name="node" id="1213107436126" />
       </scope>
       <scope id="1213107436125" at="22,84,35,22">
         <var name="properties" id="1213107436125" />
       </scope>
       <scope id="1213107436125" at="21,0,37,0" />
-      <unit id="1213107436125" at="24,137,34,5" name="jetbrains.mps.samples.secretCompartmentLanguage.constraints.Event_Constraints$1" />
+      <unit id="1213107436126" at="24,137,34,5" name="jetbrains.mps.samples.secretCompartmentLanguage.constraints.Event_Constraints$1" />
       <unit id="1213107436125" at="16,0,38,0" name="jetbrains.mps.samples.secretCompartmentLanguage.constraints.Event_Constraints" />
     </file>
   </root>
@@ -108,30 +108,30 @@
     <file name="State_Constraints.java">
       <node id="1213107437474" at="17,30,18,166" concept="5" />
       <node id="1213107437474" at="22,84,23,119" concept="3" />
-      <node id="1213107437474" at="26,37,27,20" concept="4" />
-      <node id="1213107437474" at="30,42,31,37" concept="3" />
+      <node id="1213107437475" at="26,37,27,20" concept="4" />
+      <node id="1213107437475" at="30,42,31,37" concept="3" />
       <node id="1213107437478" at="31,37,32,170" concept="4" />
       <node id="1213107437474" at="34,7,35,22" concept="4" />
       <node id="1213107437474" at="17,0,20,0" concept="0" trace="State_Constraints#()V" />
-      <node id="1213107437474" at="25,0,29,0" concept="2" trace="hasOwnGetter#()Z" />
-      <node id="1213107437474" at="29,0,34,0" concept="2" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="1213107437474" at="23,119,34,7" concept="1" />
+      <node id="1213107437475" at="25,0,29,0" concept="2" trace="hasOwnGetter#()Z" />
+      <node id="1213107437475" at="29,0,34,0" concept="2" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="1213107437475" at="23,119,34,7" concept="1" />
       <node id="1213107437474" at="21,0,37,0" concept="2" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="1213107437474" at="17,30,18,166" />
-      <scope id="1213107437474" at="26,37,27,20" />
-      <scope id="1213107437474" at="30,42,32,170">
-        <var name="propertyName" id="1213107437474" />
+      <scope id="1213107437475" at="26,37,27,20" />
+      <scope id="1213107437475" at="30,42,32,170">
+        <var name="propertyName" id="1213107437475" />
       </scope>
       <scope id="1213107437474" at="17,0,20,0" />
-      <scope id="1213107437474" at="25,0,29,0" />
-      <scope id="1213107437474" at="29,0,34,0">
-        <var name="node" id="1213107437474" />
+      <scope id="1213107437475" at="25,0,29,0" />
+      <scope id="1213107437475" at="29,0,34,0">
+        <var name="node" id="1213107437475" />
       </scope>
       <scope id="1213107437474" at="22,84,35,22">
         <var name="properties" id="1213107437474" />
       </scope>
       <scope id="1213107437474" at="21,0,37,0" />
-      <unit id="1213107437474" at="24,137,34,5" name="jetbrains.mps.samples.secretCompartmentLanguage.constraints.State_Constraints$1" />
+      <unit id="1213107437475" at="24,137,34,5" name="jetbrains.mps.samples.secretCompartmentLanguage.constraints.State_Constraints$1" />
       <unit id="1213107437474" at="16,0,38,0" name="jetbrains.mps.samples.secretCompartmentLanguage.constraints.State_Constraints" />
     </file>
   </root>

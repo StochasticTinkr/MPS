@@ -16,6 +16,14 @@
     </file>
   </root>
   <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/2264311582634140434">
+    <file name="TypesystemDescriptor.java">
+      <node id="2264311582634140434" at="30,5,31,98" concept="5" />
+      <node id="2264311582634140434" at="31,98,32,47" concept="2" />
+      <node id="2264311582634140434" at="29,5,33,5" concept="0" />
+      <scope id="2264311582634140434" at="30,5,32,47">
+        <var name="inferenceRule" id="2264311582634140434" />
+      </scope>
+    </file>
     <file name="typeof_XMLSAXHandler_resultObject_InferenceRule.java">
       <node id="2264311582634140436" at="19,117,20,247" concept="5" />
       <node id="2264311582634140448" at="22,7,23,48" concept="5" />
@@ -73,6 +81,14 @@
     </file>
   </root>
   <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/2264311582634140487">
+    <file name="TypesystemDescriptor.java">
+      <node id="2264311582634140487" at="18,5,19,102" concept="5" />
+      <node id="2264311582634140487" at="19,102,20,47" concept="2" />
+      <node id="2264311582634140487" at="17,5,21,5" concept="0" />
+      <scope id="2264311582634140487" at="18,5,20,47">
+        <var name="inferenceRule" id="2264311582634140487" />
+      </scope>
+    </file>
     <file name="typeof_XMLSAXChildHandler_childObject_InferenceRule.java">
       <node id="2264311582634140489" at="22,117,23,219" concept="5" />
       <node id="2264311582634140497" at="24,5,25,46" concept="5" />
@@ -124,6 +140,14 @@
     </file>
   </root>
   <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/2264311582634140528">
+    <file name="TypesystemDescriptor.java">
+      <node id="2264311582634140528" at="10,5,11,96" concept="5" />
+      <node id="2264311582634140528" at="11,96,12,47" concept="2" />
+      <node id="2264311582634140528" at="9,33,13,5" concept="0" />
+      <scope id="2264311582634140528" at="10,5,12,47">
+        <var name="inferenceRule" id="2264311582634140528" />
+      </scope>
+    </file>
     <file name="typeof_XMLSAXAttributeReference_InferenceRule.java">
       <node id="2264311582634140530" at="20,5,21,66" concept="5" />
       <node id="2264311582634140530" at="21,66,22,203" concept="5" />
@@ -171,6 +195,14 @@
     </file>
   </root>
   <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/2264311582634140538">
+    <file name="TypesystemDescriptor.java">
+      <node id="2264311582634140538" at="26,5,27,92" concept="5" />
+      <node id="2264311582634140538" at="27,92,28,47" concept="2" />
+      <node id="2264311582634140538" at="25,5,29,5" concept="0" />
+      <scope id="2264311582634140538" at="26,5,28,47">
+        <var name="inferenceRule" id="2264311582634140538" />
+      </scope>
+    </file>
     <file name="typeof_XMLSAXFieldReference_InferenceRule.java">
       <node id="2264311582634140540" at="19,5,20,62" concept="5" />
       <node id="2264311582634140540" at="20,62,21,203" concept="5" />
@@ -208,6 +240,14 @@
     </file>
   </root>
   <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/2264311582634140551">
+    <file name="TypesystemDescriptor.java">
+      <node id="2264311582634140551" at="34,5,35,95" concept="5" />
+      <node id="2264311582634140551" at="35,95,36,47" concept="2" />
+      <node id="2264311582634140551" at="33,5,37,5" concept="0" />
+      <scope id="2264311582634140551" at="34,5,36,47">
+        <var name="inferenceRule" id="2264311582634140551" />
+      </scope>
+    </file>
     <file name="typeof_XMLSAXLocatorExpression_InferenceRule.java">
       <node id="2264311582634140553" at="21,5,22,59" concept="5" />
       <node id="2264311582634140553" at="22,59,23,203" concept="5" />
@@ -256,6 +296,14 @@
     </file>
   </root>
   <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/2264311582634140561">
+    <file name="TypesystemDescriptor.java">
+      <node id="2264311582634140561" at="14,5,15,92" concept="5" />
+      <node id="2264311582634140561" at="15,92,16,47" concept="2" />
+      <node id="2264311582634140561" at="13,5,17,5" concept="0" />
+      <scope id="2264311582634140561" at="14,5,16,47">
+        <var name="inferenceRule" id="2264311582634140561" />
+      </scope>
+    </file>
     <file name="typeof_XMLSAXBreakStatement_InferenceRule.java">
       <node id="2264311582634140565" at="21,7,22,208" concept="5" />
       <node id="2264311582634140565" at="22,208,23,205" concept="5" />
@@ -295,6 +343,14 @@
     </file>
   </root>
   <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/4720003541456865497">
+    <file name="TypesystemDescriptor.java">
+      <node id="4720003541456865497" at="38,5,39,94" concept="5" />
+      <node id="4720003541456865497" at="39,94,40,47" concept="2" />
+      <node id="4720003541456865497" at="37,5,41,5" concept="0" />
+      <scope id="4720003541456865497" at="38,5,40,47">
+        <var name="inferenceRule" id="4720003541456865497" />
+      </scope>
+    </file>
     <file name="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java">
       <node id="4720003541456866438" at="20,5,21,50" concept="5" />
       <node id="4720003541456866438" at="21,50,22,203" concept="5" />
@@ -332,6 +388,14 @@
     </file>
   </root>
   <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/4720003541458739942">
+    <file name="TypesystemDescriptor.java">
+      <node id="4720003541458739942" at="22,5,23,87" concept="5" />
+      <node id="4720003541458739942" at="23,87,24,47" concept="2" />
+      <node id="4720003541458739942" at="21,5,25,5" concept="0" />
+      <scope id="4720003541458739942" at="22,5,24,47">
+        <var name="inferenceRule" id="4720003541458739942" />
+      </scope>
+    </file>
     <file name="typeof_XMLSAXChildRule_InferenceRule.java">
       <node id="4720003541459220925" at="26,184,27,13" concept="6" />
       <node id="4720003541459227347" at="28,5,29,0" concept="7" />
@@ -342,12 +406,12 @@
       <node id="4720003541458949937" at="35,67,36,269" concept="5" />
       <node id="4720003541459014395" at="37,7,38,13" concept="6" />
       <node id="4720003541459015267" at="39,5,40,0" concept="7" />
-      <node id="4720003541459171382" at="41,5,42,80" concept="5" />
-      <node id="4720003541459171382" at="42,80,43,74" concept="5" />
-      <node id="4720003541459171382" at="43,74,44,20" concept="5" />
-      <node id="4720003541459171382" at="44,20,45,22" concept="5" />
-      <node id="4720003541459171382" at="46,54,47,32" concept="2" />
-      <node id="4720003541459171382" at="47,32,48,36" concept="2" />
+      <node id="4720003541459171384" at="41,5,42,80" concept="5" />
+      <node id="4720003541459173794" at="42,80,43,74" concept="5" />
+      <node id="4720003541459171384" at="43,74,44,20" concept="5" />
+      <node id="4720003541459173794" at="44,20,45,22" concept="5" />
+      <node id="4720003541459171384" at="46,54,47,32" concept="2" />
+      <node id="4720003541459173794" at="47,32,48,36" concept="2" />
       <node id="4720003541459243546" at="50,11,51,55" concept="5" />
       <node id="4720003541459243546" at="51,55,52,209" concept="5" />
       <node id="4720003541459243546" at="52,209,53,439" concept="2" />
@@ -389,10 +453,10 @@
       <scope id="4720003541458776240" at="32,97,38,13" />
       <scope id="4720003541459171382" at="46,54,55,9" />
       <scope id="4720003541459171382" at="41,5,56,7">
-        <var name="arg_it" id="4720003541459171382" />
-        <var name="arg_var" id="4720003541459171382" />
-        <var name="param_it" id="4720003541459171382" />
-        <var name="param_var" id="4720003541459171382" />
+        <var name="arg_it" id="4720003541459171384" />
+        <var name="arg_var" id="4720003541459171384" />
+        <var name="param_it" id="4720003541459173794" />
+        <var name="param_var" id="4720003541459173794" />
       </scope>
       <scope id="4720003541458739943" at="25,122,57,5">
         <var name="actualArgument" id="4720003541458745383" />

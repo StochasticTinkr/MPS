@@ -15,6 +15,9 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:ca0b6fb0-5a5b-46c8-a978-40501bc316cb(jetbrains.mps.samples.ActionWithProgress.plugin)/3412919548652185654">
+    <file name="ActionWithProgress_ApplicationPlugin.java">
+      <node id="3412919548652185654" at="16,30,17,57" concept="2" />
+    </file>
     <file name="BackgroundableProgressAction_Action.java">
       <node id="3412919548652185654" at="23,0,24,0" concept="10" trace="ICON" />
       <node id="3412919548652185654" at="25,48,26,52" concept="11" />
@@ -22,10 +25,10 @@
       <node id="3412919548652185654" at="27,35,28,41" concept="2" />
       <node id="3412919548652185654" at="31,32,32,16" concept="7" />
       <node id="3412919548652185654" at="36,53,37,19" concept="7" />
-      <node id="3412919548652185654" at="39,5,40,56" concept="6" />
-      <node id="3412919548652185654" at="41,22,42,21" concept="7" />
-      <node id="3412919548652185654" at="45,5,46,66" concept="6" />
-      <node id="3412919548652185654" at="47,22,48,21" concept="7" />
+      <node id="3412919548652411146" at="39,5,40,56" concept="6" />
+      <node id="3412919548652411147" at="41,22,42,21" concept="7" />
+      <node id="3412919548652466223" at="45,5,46,66" concept="6" />
+      <node id="3412919548652466224" at="47,22,48,21" concept="7" />
       <node id="3412919548652185654" at="50,5,51,16" concept="7" />
       <node id="3412919548652501546" at="54,96,55,68" concept="8" />
       <node id="3412919548652490758" at="55,68,56,33" concept="6" />
@@ -89,8 +92,8 @@
       <node id="7027685493506754928" at="151,5,152,0" concept="9" />
       <node id="7027685493506754929" at="152,0,153,131" concept="7" />
       <node id="3412919548652185654" at="35,95,38,5" concept="4" />
-      <node id="3412919548652185654" at="40,56,43,7" concept="4" />
-      <node id="3412919548652185654" at="46,66,49,7" concept="4" />
+      <node id="3412919548652411147" at="40,56,43,7" concept="4" />
+      <node id="3412919548652466224" at="46,66,49,7" concept="4" />
       <node id="3764589745561469478" at="83,61,86,9" concept="4" />
       <node id="3764589745562016078" at="95,35,98,9" concept="4" />
       <node id="3764589745562018075" at="107,35,110,9" concept="4" />
@@ -104,8 +107,8 @@
       <node id="3412919548652185654" at="25,0,30,0" concept="1" trace="BackgroundableProgressAction_Action#()V" />
       <node id="3412919548652412914" at="130,83,135,7" concept="2" />
       <node id="7027685493506754910" at="146,0,151,5" concept="4" />
-      <node id="3412919548652185654" at="38,5,44,5" concept="0" />
-      <node id="3412919548652185654" at="44,5,50,5" concept="0" />
+      <node id="3412919548652411146" at="38,5,44,5" concept="0" />
+      <node id="3412919548652466223" at="44,5,50,5" concept="0" />
       <node id="7027685493506750815" at="88,36,94,11" concept="2" />
       <node id="7027685493506750850" at="100,37,106,11" concept="2" />
       <node id="3412919548652417814" at="122,0,128,0" concept="5" trace="onCancel#()V" />
@@ -116,8 +119,8 @@
       <node id="3412919548652185654" at="53,0,137,0" concept="5" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <scope id="3412919548652185654" at="31,32,32,16" />
       <scope id="3412919548652185654" at="36,53,37,19" />
-      <scope id="3412919548652185654" at="41,22,42,21" />
-      <scope id="3412919548652185654" at="47,22,48,21" />
+      <scope id="3412919548652411147" at="41,22,42,21" />
+      <scope id="3412919548652466224" at="47,22,48,21" />
       <scope id="3764589745561469480" at="84,35,85,17" />
       <scope id="3764589745562016079" at="96,35,97,17" />
       <scope id="3764589745562018076" at="108,35,109,17" />
@@ -133,11 +136,11 @@
       <scope id="3412919548652417816" at="123,30,126,118" />
       <scope id="3412919548652412918" at="132,0,135,0" />
       <scope id="3412919548652185654" at="30,0,34,0" />
-      <scope id="3412919548652185654" at="39,5,43,7">
-        <var name="p" id="3412919548652185654" />
+      <scope id="3412919548652411146" at="39,5,43,7">
+        <var name="p" id="3412919548652411146" />
       </scope>
-      <scope id="3412919548652185654" at="45,5,49,7">
-        <var name="p" id="3412919548652185654" />
+      <scope id="3412919548652466223" at="45,5,49,7">
+        <var name="p" id="3412919548652466223" />
       </scope>
       <scope id="7027685493506750829" at="90,0,94,0" />
       <scope id="7027685493506750864" at="102,0,106,0" />
@@ -185,10 +188,7 @@
       <node id="7628537775846003928" at="9,0,10,0" concept="3" trace="myId" />
       <node id="7628537775846003928" at="12,27,13,16" concept="7" />
       <node id="7628537775846003928" at="15,30,16,30" concept="8" />
-      <node id="7628537775846003928" at="16,30,17,57" concept="2" />
-      <node id="7628537775846003928" at="17,57,18,48" concept="2" />
       <node id="7628537775846003928" at="18,48,19,14" concept="8" />
-      <node id="7628537775846003928" at="19,14,20,53" concept="2" />
       <node id="7628537775846003928" at="10,0,12,0" concept="1" trace="ActionWithProgress_ApplicationPlugin#()V" />
       <node id="7628537775846003928" at="22,0,24,0" concept="5" trace="adjustRegularGroups#()V" />
       <node id="7628537775846003928" at="12,0,15,0" concept="5" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
@@ -205,6 +205,9 @@
     </file>
   </root>
   <root nodeRef="r:ca0b6fb0-5a5b-46c8-a978-40501bc316cb(jetbrains.mps.samples.ActionWithProgress.plugin)/7628537775846017637">
+    <file name="ActionWithProgress_ApplicationPlugin.java">
+      <node id="7628537775846017637" at="17,57,18,48" concept="2" />
+    </file>
     <file name="ModalProgressAction_Action.java">
       <node id="7628537775846017637" at="26,0,27,0" concept="10" trace="ICON" />
       <node id="7628537775846017637" at="28,39,29,43" concept="11" />
@@ -212,10 +215,10 @@
       <node id="7628537775846017637" at="30,35,31,41" concept="2" />
       <node id="7628537775846017637" at="34,32,35,16" concept="7" />
       <node id="7628537775846017637" at="39,53,40,19" concept="7" />
-      <node id="7628537775846017637" at="42,5,43,56" concept="6" />
-      <node id="7628537775846017637" at="44,22,45,21" concept="7" />
-      <node id="7628537775846017637" at="48,5,49,66" concept="6" />
-      <node id="7628537775846017637" at="50,22,51,21" concept="7" />
+      <node id="5340228858870582822" at="42,5,43,56" concept="6" />
+      <node id="5340228858870582823" at="44,22,45,21" concept="7" />
+      <node id="3412919548652424659" at="48,5,49,66" concept="6" />
+      <node id="3412919548652424660" at="50,22,51,21" concept="7" />
       <node id="7628537775846017637" at="53,5,54,16" concept="7" />
       <node id="3412919548652509383" at="57,96,58,68" concept="8" />
       <node id="3412919548652509385" at="58,68,59,33" concept="6" />
@@ -314,8 +317,8 @@
       <node id="3412919548652911552" at="229,5,230,0" concept="9" />
       <node id="3412919548652912259" at="230,0,231,113" concept="7" />
       <node id="7628537775846017637" at="38,95,41,5" concept="4" />
-      <node id="7628537775846017637" at="43,56,46,7" concept="4" />
-      <node id="7628537775846017637" at="49,66,52,7" concept="4" />
+      <node id="5340228858870582823" at="43,56,46,7" concept="4" />
+      <node id="3412919548652424660" at="49,66,52,7" concept="4" />
       <node id="3764589745562061597" at="77,41,80,9" concept="4" />
       <node id="3764589745562064746" at="89,35,92,9" concept="4" />
       <node id="3764589745562066375" at="102,35,105,9" concept="4" />
@@ -341,8 +344,8 @@
       <node id="5340228858870773592" at="201,83,206,7" concept="2" />
       <node id="8282647765550490981" at="208,72,213,5" concept="13" />
       <node id="3412919548652899353" at="224,0,229,5" concept="4" />
-      <node id="7628537775846017637" at="41,5,47,5" concept="0" />
-      <node id="7628537775846017637" at="47,5,53,5" concept="0" />
+      <node id="5340228858870582822" at="41,5,47,5" concept="0" />
+      <node id="3412919548652424659" at="47,5,53,5" concept="0" />
       <node id="5340228858870851144" at="82,36,88,11" concept="2" />
       <node id="3412919548652634248" at="94,37,100,11" concept="2" />
       <node id="3412919548652676614" at="149,72,155,11" concept="2" />
@@ -368,8 +371,8 @@
       <scope id="8282647765550490992" at="212,38,212,38" />
       <scope id="7628537775846017637" at="34,32,35,16" />
       <scope id="7628537775846017637" at="39,53,40,19" />
-      <scope id="7628537775846017637" at="44,22,45,21" />
-      <scope id="7628537775846017637" at="50,22,51,21" />
+      <scope id="5340228858870582823" at="44,22,45,21" />
+      <scope id="3412919548652424660" at="50,22,51,21" />
       <scope id="3764589745562061598" at="78,35,79,17" />
       <scope id="3764589745562064747" at="90,35,91,17" />
       <scope id="3764589745562066376" at="103,35,104,17" />
@@ -397,11 +400,11 @@
       <scope id="3412919548651917638" at="193,30,196,118" />
       <scope id="5340228858870788344" at="203,0,206,0" />
       <scope id="7628537775846017637" at="33,0,37,0" />
-      <scope id="7628537775846017637" at="42,5,46,7">
-        <var name="p" id="7628537775846017637" />
+      <scope id="5340228858870582822" at="42,5,46,7">
+        <var name="p" id="5340228858870582822" />
       </scope>
-      <scope id="7628537775846017637" at="48,5,52,7">
-        <var name="p" id="7628537775846017637" />
+      <scope id="3412919548652424659" at="48,5,52,7">
+        <var name="p" id="3412919548652424659" />
       </scope>
       <scope id="5340228858870882584" at="84,0,88,0" />
       <scope id="3412919548652634262" at="96,0,100,0" />
@@ -462,6 +465,9 @@
     </file>
   </root>
   <root nodeRef="r:ca0b6fb0-5a5b-46c8-a978-40501bc316cb(jetbrains.mps.samples.ActionWithProgress.plugin)/7628537775846372132">
+    <file name="ActionWithProgress_ApplicationPlugin.java">
+      <node id="7628537775846372132" at="19,14,20,53" concept="2" />
+    </file>
     <file name="ProgressActionsGroup_ActionGroup.java">
       <node id="7628537775846372132" at="8,0,9,0" concept="10" trace="ID" />
       <node id="7628537775846372132" at="9,45,10,38" concept="11" />

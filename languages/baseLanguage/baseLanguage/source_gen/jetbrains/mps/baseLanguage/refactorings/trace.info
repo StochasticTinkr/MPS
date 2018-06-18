@@ -175,7 +175,7 @@
   </root>
   <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/5161277940733430086">
     <file name="ChangeMethodSignature.java">
-      <node id="5161277940733430086" at="19,34,20,49" concept="2" />
+      <node id="5957075241641455784" at="19,34,20,49" concept="2" />
       <node id="5161277940733430086" at="22,52,23,46" concept="8" />
       <node id="5161277940733430086" at="25,39,26,37" concept="8" />
       <node id="5957075241641501854" at="29,166,30,26" concept="2" />
@@ -259,7 +259,7 @@
   </root>
   <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/7874812549549771289">
     <file name="RenameMethod.java">
-      <node id="7874812549549771289" at="23,25,24,42" concept="2" />
+      <node id="7874812549549772010" at="23,25,24,42" concept="2" />
       <node id="7874812549549771289" at="26,52,27,37" concept="8" />
       <node id="7874812549549771289" at="29,39,30,27" concept="8" />
       <node id="7874812549549771289" at="32,47,33,24" concept="8" />
@@ -344,9 +344,9 @@
   </root>
   <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/9118878263582100185">
     <file name="MakeFieldStatic.java">
-      <node id="9118878263582100185" at="24,28,25,46" concept="2" />
-      <node id="9118878263582100185" at="25,46,26,52" concept="2" />
-      <node id="9118878263582100185" at="26,52,27,41" concept="2" />
+      <node id="9118878263582108236" at="24,28,25,46" concept="2" />
+      <node id="9118878263582108393" at="25,46,26,52" concept="2" />
+      <node id="9118878263582108406" at="26,52,27,41" concept="2" />
       <node id="9118878263582100185" at="29,52,30,40" concept="8" />
       <node id="9118878263582100185" at="32,39,33,31" concept="8" />
       <node id="9118878263582108275" at="35,68,36,60" concept="7" />

@@ -1093,7 +1093,7 @@
       </scope>
       <scope id="8695149241390475278" at="272,0,278,0">
         <var name="checkedDotOperand" id="8695149241390475278" />
-        <var name="file" id="8695149241390475278" />
+        <var name="file" id="8695149241390125161" />
       </scope>
       <scope id="7075964554776858655" at="136,0,143,0">
         <var name="conflictedFiles" id="7075964554776972426" />

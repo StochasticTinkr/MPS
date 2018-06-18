@@ -14,6 +14,10 @@
     </file>
   </root>
   <root nodeRef="r:fb6ad0f1-e6b1-43e0-ae40-6b43fa1f4536(jetbrains.mps.vcs.mergehints.intentions)/6307349610828070962">
+    <file name="IntentionsDescriptor.java">
+      <node id="6307349610828070962" at="44,47,45,59" concept="2" />
+      <node id="6307349610828070962" at="65,48,66,45" concept="2" />
+    </file>
     <file name="SetLinkMergeHint_Intention.java">
       <node id="6307349610828070962" at="22,0,23,0" concept="3" trace="myCachedExecutable" />
       <node id="6307349610828070962" at="23,39,24,154" concept="7" />
@@ -76,6 +80,10 @@
     </file>
   </root>
   <root nodeRef="r:fb6ad0f1-e6b1-43e0-ae40-6b43fa1f4536(jetbrains.mps.vcs.mergehints.intentions)/6307349610828087907">
+    <file name="IntentionsDescriptor.java">
+      <node id="6307349610828087907" at="51,47,52,63" concept="2" />
+      <node id="6307349610828087907" at="66,45,67,49" concept="2" />
+    </file>
     <file name="SetPropertyMergeHint_Intention.java">
       <node id="6307349610828087907" at="22,0,23,0" concept="3" trace="myCachedExecutable" />
       <node id="6307349610828087907" at="23,43,24,154" concept="7" />
@@ -138,6 +146,10 @@
     </file>
   </root>
   <root nodeRef="r:fb6ad0f1-e6b1-43e0-ae40-6b43fa1f4536(jetbrains.mps.vcs.mergehints.intentions)/7313573869697973330">
+    <file name="IntentionsDescriptor.java">
+      <node id="7313573869697973330" at="37,47,38,62" concept="2" />
+      <node id="7313573869697973330" at="64,52,65,48" concept="2" />
+    </file>
     <file name="SetConceptMergeHint_Intention.java">
       <node id="7313573869697973330" at="22,0,23,0" concept="3" trace="myCachedExecutable" />
       <node id="7313573869697973330" at="23,42,24,154" concept="7" />

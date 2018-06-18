@@ -86,6 +86,10 @@
       <unit id="5219429592916136228" at="45,0,70,0" name="jetbrains.mps.baseLanguage.builders.intentions.ConvertToBeanBuilder_Intention$IntentionImplementation" />
       <unit id="5219429592916136228" at="22,0,71,0" name="jetbrains.mps.baseLanguage.builders.intentions.ConvertToBeanBuilder_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="5219429592916136228" at="37,47,38,63" concept="1" />
+      <node id="5219429592916136228" at="59,52,60,49" concept="1" />
+    </file>
   </root>
   <root nodeRef="r:7f54566a-e579-4f13-aaf4-b6e2c202aeb2(jetbrains.mps.baseLanguage.builders.intentions)/5219429592916269568">
     <file name="ChangeRoot_Intention.java">
@@ -142,6 +146,10 @@
       </scope>
       <unit id="5219429592916269568" at="42,0,58,0" name="jetbrains.mps.baseLanguage.builders.intentions.ChangeRoot_Intention$IntentionImplementation" />
       <unit id="5219429592916269568" at="19,0,59,0" name="jetbrains.mps.baseLanguage.builders.intentions.ChangeRoot_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="5219429592916269568" at="44,47,45,53" concept="1" />
+      <node id="5219429592916269568" at="60,49,61,39" concept="1" />
     </file>
   </root>
   <root nodeRef="r:7f54566a-e579-4f13-aaf4-b6e2c202aeb2(jetbrains.mps.baseLanguage.builders.intentions)/5219429592916269604">
@@ -200,6 +208,10 @@
       <unit id="5219429592916269604" at="42,0,58,0" name="jetbrains.mps.baseLanguage.builders.intentions.ChangeLeaf_Intention$IntentionImplementation" />
       <unit id="5219429592916269604" at="19,0,59,0" name="jetbrains.mps.baseLanguage.builders.intentions.ChangeLeaf_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="5219429592916269604" at="45,53,46,53" concept="1" />
+      <node id="5219429592916269604" at="61,39,62,39" concept="1" />
+    </file>
   </root>
   <root nodeRef="r:7f54566a-e579-4f13-aaf4-b6e2c202aeb2(jetbrains.mps.baseLanguage.builders.intentions)/5219429592916269641">
     <file name="ChangeAbstract_Intention.java">
@@ -256,6 +268,10 @@
       </scope>
       <unit id="5219429592916269641" at="42,0,58,0" name="jetbrains.mps.baseLanguage.builders.intentions.ChangeAbstract_Intention$IntentionImplementation" />
       <unit id="5219429592916269641" at="19,0,59,0" name="jetbrains.mps.baseLanguage.builders.intentions.ChangeAbstract_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="5219429592916269641" at="46,53,47,57" concept="1" />
+      <node id="5219429592916269641" at="62,39,63,43" concept="1" />
     </file>
   </root>
 </debug-info>

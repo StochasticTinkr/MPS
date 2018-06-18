@@ -79,6 +79,11 @@
       </scope>
       <unit id="873949054148483155" at="19,0,70,0" name="jetbrains.mps.lang.editor.findUsages.DefaultMenuReferences_Finder" />
     </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="873949054148483155" at="21,13,22,50" concept="6" />
+      <node id="873949054148483155" at="29,40,30,200" concept="1" />
+      <scope id="873949054148483155" at="21,13,22,50" />
+    </file>
   </root>
 </debug-info>
 
