@@ -71,11 +71,6 @@ public class PluginMigrationProblemHandler extends AbstractProjectComponent impl
     ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW).activate(null);
   }
 
-  @Override
-  public void showNodes(Map<String, Set<SNode>> nodesByCategory) {
-    throw new UnsupportedOperationException("Showing nodes in plugin not supported yet");
-  }
-
   @NotNull
   @Override
   public String getComponentName() {

@@ -11,12 +11,13 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.annotations.NotNull;
-import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
+import jetbrains.mps.ide.migration.util.DeprecatedNodeProperties;
 import jetbrains.mps.ide.migration.util.DeprecatedUtil;
-import jetbrains.mps.migration.global.MigrationProblemHandler;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class ShowDeprecatedStuff_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -52,12 +53,12 @@ public class ShowDeprecatedStuff_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadInEDT(new Runnable() {
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Map<String, Set<SNode>> result = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
-        Set<SNode> dep = DeprecatedUtil.deprecated(event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
-        MapSequence.fromMap(result).put("Deprecated stuff in project", dep);
-        event.getData(CommonDataKeys.PROJECT).getComponent(MigrationProblemHandler.class).showNodes(result);
+        Map<SNode, DeprecatedNodeProperties> dep = DeprecatedUtil.deprecated(event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
+        SearchResults<SNode> sr = new SearchResults<SNode>();
+        UsagesFormattingUtil.addResults(sr, new Pair(CategoryKind.DEFAULT_CATEGORY_KIND, "Deprecated Entities in Project"), dep);
+        event.getData(CommonDataKeys.PROJECT).getComponent(UsagesViewTool.class).show(sr, "No usages found");
       }
     });
   }

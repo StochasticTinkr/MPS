@@ -17,11 +17,13 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.ide.migration.util.DeprecatedNodeProperties;
 import jetbrains.mps.ide.migration.util.DeprecatedUtil;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.migration.global.MigrationProblemHandler;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class ShowDeprecatedUsages_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -61,12 +63,14 @@ public class ShowDeprecatedUsages_Action extends BaseAction {
       public void run() {
         Set<SModule> theirModules = SetSequence.fromSetWithValues(new HashSet<SModule>(), event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModules());
         SetSequence.fromSet(theirModules).removeSequence(Sequence.fromIterable(event.getData(MPSCommonDataKeys.MPS_PROJECT).getModulesWithGenerators()));
-        Set<SNode> depLibs = DeprecatedUtil.usagesOfDeprecated(new ModulesScope(theirModules), event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
-        Set<SNode> depProj = DeprecatedUtil.usagesOfDeprecated(event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope(), event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
-        Map<String, Set<SNode>> result = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
-        MapSequence.fromMap(result).put("Deprecated library stuff", depLibs);
-        MapSequence.fromMap(result).put("Deprecated project stuff", depProj);
-        event.getData(CommonDataKeys.PROJECT).getComponent(MigrationProblemHandler.class).showNodes(result);
+        Map<SNode, DeprecatedNodeProperties> depLibs = DeprecatedUtil.usagesOfDeprecated(new ModulesScope(theirModules), event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
+        Map<SNode, DeprecatedNodeProperties> depProj = DeprecatedUtil.usagesOfDeprecated(event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope(), event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
+
+        SearchResults<SNode> sr = new SearchResults<SNode>();
+        CategoryKind locationCategoryKind = CategoryKind.DEFAULT_CATEGORY_KIND;
+        UsagesFormattingUtil.addResults(sr, new Pair(locationCategoryKind, "Deprecated library stuff"), depLibs);
+        UsagesFormattingUtil.addResults(sr, new Pair(locationCategoryKind, "Deprecated project stuff"), depProj);
+        event.getData(CommonDataKeys.PROJECT).getComponent(UsagesViewTool.class).show(sr, "No usages found");
       }
     });
   }
