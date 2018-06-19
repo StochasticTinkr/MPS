@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.references.ImmatureReferencesTracker;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -51,6 +52,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BiConsumer;
 
 public class TransientModelsModule extends AbstractModule implements TransientSModule {
@@ -62,6 +64,9 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
   private final ModelVault<TransientSModelDescriptor> myModelVault = new ModelVault<TransientSModelDescriptor>();
 
   private final Map<String, GenerationTrace> myTraces = new HashMap<String, GenerationTrace>();
+
+  // facility to generate IntegerSModelId, unique within a transient module
+  private final AtomicInteger myCounter = new AtomicInteger(0);
 
   /*package*/ TransientModelsModule(@NotNull TransientModelsProvider tmProvider, @NotNull SModuleReference moduleReference) {
     myComponent = tmProvider;
@@ -208,6 +213,16 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   public boolean isMyTransientModel(SModelReference modelRef) {
     return modelRef != null && myModelVault.known(modelRef);
+  }
+
+
+  /**
+   * @param idHint 5 hex digits for your own use, not necessarily unique for models from this module
+   * @return simple integer id unique within this module, with value from MPS reserved range {@link IntegerSModelId}
+   */
+  public IntegerSModelId nextModelId(int idHint) {
+    int prefix = 0x100 + myCounter.getAndIncrement();
+    return new IntegerSModelId((prefix << 20) | (idHint & 0x000FFFFF));
   }
 
   /**

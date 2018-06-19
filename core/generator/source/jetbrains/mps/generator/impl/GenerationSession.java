@@ -25,6 +25,7 @@ import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
+import jetbrains.mps.generator.ModelGenerationPlan.Fork;
 import jetbrains.mps.generator.ModelGenerationPlan.Step;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -77,6 +78,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Queue;
 
 /**
  * Igor Alshannikov
@@ -152,179 +154,217 @@ class GenerationSession {
     }
     warnIfGenerateSelf(myGenerationPlan);
     myQuerySource = new QueryProviderCache(myGenerationPlan, myLogger);
+    ttrace.pop();
 
     monitor.start("", myGenerationPlan.getSteps().size());
     try {
-      ttrace.pop();
-      try {
-        // prepare input model: make a clone so that rest of generator always works with transient model.
-        // This ensures each node got correct TracingUtil.ORIGINAL_INPUT_NODE (for traceInfo) in SNode.userObjects - there
-        // are templates out there that perform .copy on input nodes, and we have no chances to trace such nodes back. This used to work
-        // (with fallback to parent nodes) until in-place transformations brought cases when either regular model or a transient one
-        // serve as an input, which lead to different traceInfo (being more specific with transient model as input, as each node in transient does keep
-        // reference to origin)
-        // Another benefit is that FastNodeFinder (used throughout generator e.g. with model.nodes(Concept)) gives nodes in different order for
-        // regular and transient SModel (sorted by nodeid from DefaultFastNodeFinder, natural iteration order for TransientModelNodeFinder).
-        // Although this can be fixed in DFNF (not to sort, share impl for both FNF), it's still better to avoid possible differences.
-        // Last, but not least, there's planned switch to GeneratorSNode/GeneratorSModel to facilitate model reconstruction from delta
-        // and we'll need to switch to 'transient' (generator) model here anyway
-        SModel currInputModel = createTransientModel(0, "0");
-        new CloneUtil(myOriginalInputModel, currInputModel).traceOriginalInput().cloneModelWithImports();
-        SModel currOutput = null;
-
-        ttrace.push("steps");
+      // prepare input model: make a clone so that rest of generator always works with transient model.
+      // This ensures each node got correct TracingUtil.ORIGINAL_INPUT_NODE (for traceInfo) in SNode.userObjects - there
+      // are templates out there that perform .copy on input nodes, and we have no chances to trace such nodes back. This used to work
+      // (with fallback to parent nodes) until in-place transformations brought cases when either regular model or a transient one
+      // serve as an input, which lead to different traceInfo (being more specific with transient model as input, as each node in transient does keep
+      // reference to origin)
+      // Another benefit is that FastNodeFinder (used throughout generator e.g. with model.nodes(Concept)) gives nodes in different order for
+      // regular and transient SModel (sorted by nodeid from DefaultFastNodeFinder, natural iteration order for TransientModelNodeFinder).
+      // Although this can be fixed in DFNF (not to sort, share impl for both FNF), it's still better to avoid possible differences.
+      // Last, but not least, there's planned switch to GeneratorSNode/GeneratorSModel to facilitate model reconstruction from delta
+      // and we'll need to switch to 'transient' (generator) model here anyway
+      SModel currInputModel = createTransientModel(0, 0, "0");
+      new CloneUtil(myOriginalInputModel, currInputModel).traceOriginalInput().cloneModelWithImports();
+      ArrayList<SModel> allOutputModels = new ArrayList<>(4);
+      ttrace.push("steps");
 
 
-        ModelTransitions transitionTrace = new ModelTransitions(); // FIXME make it optional, if there are no Checkpoint steps, do not record transitions
-        transitionTrace.newTransition(null, currInputModel, null);
+      ModelTransitions transitionTrace = new ModelTransitions(); // FIXME make it optional, if there are no Checkpoint steps, do not record transitions
+      transitionTrace.newTransition(null, currInputModel, null);
 
-        final ArrayDeque<GeneratorMappings> lastBigTransformStepMappings = new ArrayDeque<>();
 
-        for (myMajorStep = 0; myMajorStep < myGenerationPlan.getSteps().size(); myMajorStep++) {
-          Step planStep = myGenerationPlan.getSteps().get(myMajorStep);
-          if (planStep instanceof Transform) {
-            Transform transformStep = (Transform) planStep;
-            final List<TemplateMappingConfiguration> mappingConfigurations = transformStep.getTransformations();
-            if (mappingConfigurations.size() >= 1) {
-              final TemplateMappingConfiguration first = mappingConfigurations.get(0);
-              String n = GeneratorUtil.compactNamespace(first.getModel().getLongName());
-              monitor.step(String.format("step %d (%s#%s%s)", myMajorStep+1, n, first.getName(), mappingConfigurations.size() == 1 ? "" : "..."));
-            }
 
-            if (myLogger.needsInfo()) {
-              myLogger.info("executing step " + (myMajorStep + 1));
-            }
-            currOutput = executeMajorStep(monitor.subTask(1), currInputModel, transformStep, transitionTrace.getActiveTransition());
-            monitor.advance(0);
-            if (currOutput == null || myLogger.getErrorCount() > 0) {
-              break;
-            }
-            if (mappingConfigurations.isEmpty()) {
-              // XXX revisit. De we need to break if there were no transformations at a step?
-              break;
-            }
-            if (transformStep.isLabeledTransformationsKept()) {
-              // FIXME both transform and checkpoint steps need myStepArgument; need better sharing than just access to the field
-              // another method initialized and generously didn't clean.
-              // FIXME we don't need to keep complete GeneratorMappings, just a subset with labeled input->output and conditional roots
-              lastBigTransformStepMappings.push(myStepArguments.mappingLabels);
-            }
-            currInputModel = currOutput;
-          } else if (planStep instanceof Checkpoint) {
-            Checkpoint checkpointStep = (Checkpoint) planStep;
-            if (!checkpointStep.isPersisted()) {
-              // not sure there's a reason to clear lastBigTransformStepMappings (although should not happen
-              // provided GenerationPlanBuilder marks Transform steps as 'keep' right in front of Checkpoint only)
-              continue;
-            }
-            CheckpointIdentity checkpointIdentity = checkpointStep.getIdentity();
-            final CrossModelEnvironment xmodelEnv = myControlEnv.getCrossModelEnvironment();
-            CheckpointIdentity lastPersistedCheckpoint = transitionTrace.getMostRecentCheckpoint();
-            SModel checkpointModel = xmodelEnv.createBlankCheckpointModel(myOriginalInputModel.getReference(), lastPersistedCheckpoint, checkpointIdentity);
-            CheckpointStateBuilder cpBuilder = new CheckpointStateBuilder(currInputModel, checkpointModel, transitionTrace);
-            // myStepArguments may be null if Checkpoint is the very first step. Not quite sure it's legitimate scenario, though, need to think it over.
-            if (myStepArguments != null) {
-              // Shall populate state with last generator's MappingLabels. Note, ML could have been added from post-processing scripts. Generator
-              // instance could be different, we keep GeneratorMappings with step arguments, that span all pre/post scripts along with transformations.
-              GeneratorMappings stepLabels = myStepArguments.mappingLabels;
-              // stepLabels is likely the last one pushed into lastBigTransformStepMappings when previous Transform step had happened.
-              lastBigTransformStepMappings.remove(stepLabels);
-              for (GeneratorMappings prev : lastBigTransformStepMappings) {
-                for (String l : prev.getConditionalRootLabels()) {
-                  for (SNode conditionalRoot : prev.getConditionalRoots(l)) {
-                    SNode copiedRoot = currInputModel.getNode(conditionalRoot.getNodeId());
-                    if (copiedRoot != null) {
-                      stepLabels.addNewOutputNode(l, copiedRoot);
-                    }
-                  }
-                }
-                for (String l : prev.getAvailableLabels()) {
-                  Map<SNode, Object> lastStepMappings = stepLabels.getMappings(l);
-                  if (lastStepMappings == null) {
-                    lastStepMappings = Collections.emptyMap();
-                  }
-                  for (Entry<SNode, Object> entry : prev.getMappings(l).entrySet()) {
-                    if (lastStepMappings.containsKey(entry.getKey())) {
-                      // there's already labeled transformation for the same input node, no reason to override with value from previous steps
-                      continue;
-                    }
-                    if (entry.getValue() instanceof SNode) {
-                      // intentionally do not care about multiple outputs, just don't want to project multiple outputs into actual transient model
-                      // and it's of no real use anyway as we don't restore x-model references in case there are multiple outputs.
-                      SNode copiedOutput = currInputModel.getNode(((SNode) entry.getValue()).getNodeId());
-                      if (copiedOutput != null) {
-                        stepLabels.addOutputNodeByInputNodeAndMappingName(entry.getKey(), l, copiedOutput);
-                      }
-                    }
-                  }
-                }
-              }
-              cpBuilder.addMappings(myOriginalInputModel, stepLabels, myLogger.getImplementation());
-            }
-            CheckpointState cpState = cpBuilder.create(checkpointIdentity);
-            xmodelEnv.publishCheckpoint(myOriginalInputModel.getReference(), cpState);
-            myStepArguments = null; // XXX what if there are few subsequent CPs (e.g. from different plans), why do we clear step arguments and
-            // prevent other CPs from saving MLs?
-            lastBigTransformStepMappings.clear();
-          }
+      ArrayDeque<PlanBranchInfo> forkQueue = new ArrayDeque<>();
+
+
+      PlanBranchInfo majorBranch = new PlanBranchInfo();
+      majorBranch.inputModel = currInputModel;
+      majorBranch.actualStateCopyOfLastBitTransformStepMappings = Collections.emptyList();
+      majorBranch.majorStepAtFork = myMajorStep = 0;
+      majorBranch.minorStepAtFork = myMinorStep = 0;
+      majorBranch.branch = myGenerationPlan.getSteps();
+      majorBranch.transitionTrace = transitionTrace;
+      forkQueue.add(majorBranch);
+      while (!forkQueue.isEmpty()) {
+        SModel output = processGenPlanBranch(forkQueue.removeFirst(), forkQueue, monitor);
+        // for *each* completed GP branch, keep model as it's the outcome we are going to process further
+        if (output != null) {
+          allOutputModels.add(output);
+          mySessionContext.getModule().addModelToKeep(output.getReference(), true);
         }
-        ttrace.pop();
-
-        // we need this in order to prevent memory leaks from nodes which are reported to message view
-        // since session objects might include objects with disposed class loaders
-        mySessionContext.clearTransientObjects();
-
-        if (currOutput != null) {
-          mySessionContext.getModule().addModelToKeep(currOutput.getReference(), true);
-        }
-
-        // identifies the model and specific "configuration" it has been generated with.
-        // XXX we could use GenerationDependencies to pass more information about actual generators/languages involved (including their runtimes
-        //     to facilitate proper classpath calculation
-        final GenerationDependencies genDeps = new GenerationDependencies(myOriginalInputModel, myControlEnv.getOptions().getParametersProvider());
-        GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput, genDeps, myLogger.getErrorCount() > 0);
-        generationStatus.setCrossModelEnvironment(myControlEnv.getCrossModelEnvironment());
-        return generationStatus;
-      } catch (GenerationCanceledException gce) {
-        throw gce;
-      } catch (TemplateQueryException tqe) {
-        // XXX although it's tqe.getCause which is of interest, it might be reasonable to report
-        // tqe to the logger, as it might get configured outside and decide whether to report a TQE to end user or not
-        myLogger.handleException(tqe.getCause());
-        String msg = String.format("Generation failed for model '%s', unexpected error in generator query: %s", myOriginalInputModel.getName(), tqe.getMessage());
-        ProblemDescription pd;
-        if (tqe.getQueryContext() != null) {
-          pd = GeneratorUtil.describeIfExists(tqe.getQueryContext().getInputNode(), "input node");
-        } else {
-          pd = GeneratorUtil.describeInput(tqe.getTemplateContext());
-        }
-        myLogger.error(tqe.getTemplateModelLocation(), msg, pd);
-        return GenerationStatus.failure(myOriginalInputModel);
-      } catch (GenerationFailureException gfe) {
-        final String nestedException;
-        if (gfe.getCause() != null) {
-          nestedException = gfe.getCause().toString();
-        } else {
-          nestedException = "";
-        }
-        String error = gfe.getMessage() == null ? gfe.toString() : gfe.getMessage();
-        String msg = String.format("Generation failed for model '%s': %s. %s", myOriginalInputModel.getName(), error, nestedException);
-        myLogger.handleException(gfe);
-        myLogger.error(gfe.getTemplateModelLocation(), msg, GeneratorUtil.describeInput(gfe.getTemplateContext()));
-        return GenerationStatus.failure(myOriginalInputModel);
-      } catch (Exception e) {
-        myLogger.handleException(e);
-        myLogger.error(String.format("Generation failed for model '%s': %s", myOriginalInputModel.getName(), e.toString()));
-        return GenerationStatus.failure(myOriginalInputModel);
       }
+
+      ttrace.pop();
+
+      // we need this in order to prevent memory leaks from nodes which are reported to message view
+      // since session objects might include objects with disposed class loaders
+      mySessionContext.clearTransientObjects();
+
+      // identifies the model and specific "configuration" it has been generated with.
+      // XXX we could use GenerationDependencies to pass more information about actual generators/languages involved (including their runtimes
+      //     to facilitate proper classpath calculation
+      final GenerationDependencies genDeps = new GenerationDependencies(myOriginalInputModel, myControlEnv.getOptions().getParametersProvider());
+      GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, allOutputModels, genDeps, myLogger.getErrorCount() > 0);
+      generationStatus.setCrossModelEnvironment(myControlEnv.getCrossModelEnvironment());
+      return generationStatus;
+    } catch (GenerationCanceledException gce) {
+      throw gce;
+    } catch (TemplateQueryException tqe) {
+      // XXX although it's tqe.getCause which is of interest, it might be reasonable to report
+      // tqe to the logger, as it might get configured outside and decide whether to report a TQE to end user or not
+      myLogger.handleException(tqe.getCause());
+      String msg = String.format("Generation failed for model '%s', unexpected error in generator query: %s", myOriginalInputModel.getName(), tqe.getMessage());
+      ProblemDescription pd;
+      if (tqe.getQueryContext() != null) {
+        pd = GeneratorUtil.describeIfExists(tqe.getQueryContext().getInputNode(), "input node");
+      } else {
+        pd = GeneratorUtil.describeInput(tqe.getTemplateContext());
+      }
+      myLogger.error(tqe.getTemplateModelLocation(), msg, pd);
+      return GenerationStatus.failure(myOriginalInputModel);
+    } catch (GenerationFailureException gfe) {
+      final String nestedException;
+      if (gfe.getCause() != null) {
+        nestedException = gfe.getCause().toString();
+      } else {
+        nestedException = "";
+      }
+      String error = gfe.getMessage() == null ? gfe.toString() : gfe.getMessage();
+      String msg = String.format("Generation failed for model '%s': %s. %s", myOriginalInputModel.getName(), error, nestedException);
+      myLogger.handleException(gfe);
+      myLogger.error(gfe.getTemplateModelLocation(), msg, GeneratorUtil.describeInput(gfe.getTemplateContext()));
+      return GenerationStatus.failure(myOriginalInputModel);
+    } catch (Exception e) {
+      myLogger.handleException(e);
+      myLogger.error(String.format("Generation failed for model '%s': %s", myOriginalInputModel.getName(), e.toString()));
+      return GenerationStatus.failure(myOriginalInputModel);
     } finally {
       monitor.done();
     }
   }
 
-  private SModel executeMajorStep(ProgressMonitor progress, SModel inputModel, Transform planStep, TransitionTrace transitionTrace) throws GenerationCanceledException, GenerationFailureException {
-    myMinorStep = -1;
+  private SModel processGenPlanBranch(PlanBranchInfo branchInfo, Queue<PlanBranchInfo> forkQueue, ProgressMonitor monitor) throws GenerationCanceledException, GenerationFailureException {
+    SModel currInputModel = branchInfo.inputModel;
+    List<Step> branchSteps = branchInfo.branch;
+    final ModelTransitions transitionTrace = branchInfo.transitionTrace;
+    final ArrayDeque<GeneratorMappings> lastBigTransformStepMappings = new ArrayDeque<>(branchInfo.actualStateCopyOfLastBitTransformStepMappings);
 
+    myMajorStep = branchInfo.majorStepAtFork;
+    myMinorStep = branchInfo.minorStepAtFork;
+
+    SModel currOutput = null;
+    for (int stepIndex = 0; stepIndex < branchSteps.size(); stepIndex++, myMajorStep++) {
+      Step planStep = branchSteps.get(stepIndex);
+      if (planStep instanceof Transform) {
+        Transform transformStep = (Transform) planStep;
+        final List<TemplateMappingConfiguration> mappingConfigurations = transformStep.getTransformations();
+        if (mappingConfigurations.size() >= 1) {
+          final TemplateMappingConfiguration first = mappingConfigurations.get(0);
+          String n = GeneratorUtil.compactNamespace(first.getModel().getLongName());
+          monitor.step(String.format("step %d (%s#%s%s)", myMajorStep+1, n, first.getName(), mappingConfigurations.size() == 1 ? "" : "..."));
+        }
+
+        if (myLogger.needsInfo()) {
+          myLogger.info("executing step " + (myMajorStep + 1));
+        }
+
+        currOutput = executeMajorStep(monitor.subTask(1), currInputModel, transformStep, transitionTrace.getActiveTransition());
+        monitor.advance(0);
+        if (currOutput == null || myLogger.getErrorCount() > 0) {
+          break;
+        }
+        if (mappingConfigurations.isEmpty()) {
+          // XXX revisit. De we need to break if there were no transformations at a step?
+          break;
+        }
+        if (transformStep.isLabeledTransformationsKept()) {
+          // FIXME both transform and checkpoint steps need myStepArgument; need better sharing than just access to the field
+          // another method initialized and generously didn't clean.
+          // FIXME we don't need to keep complete GeneratorMappings, just a subset with labeled input->output and conditional roots
+          lastBigTransformStepMappings.push(myStepArguments.mappingLabels);
+        }
+        currInputModel = currOutput;
+      } else if (planStep instanceof Checkpoint) {
+        Checkpoint checkpointStep = (Checkpoint) planStep;
+        if (!checkpointStep.isPersisted()) {
+          // not sure there's a reason to clear lastBigTransformStepMappings (although should not happen
+          // provided GenerationPlanBuilder marks Transform steps as 'keep' right in front of Checkpoint only)
+          continue;
+        }
+        CheckpointIdentity checkpointIdentity = checkpointStep.getIdentity();
+        final CrossModelEnvironment xmodelEnv = myControlEnv.getCrossModelEnvironment();
+        CheckpointIdentity lastPersistedCheckpoint = transitionTrace.getMostRecentCheckpoint();
+        SModel checkpointModel = xmodelEnv.createBlankCheckpointModel(myOriginalInputModel.getReference(), lastPersistedCheckpoint, checkpointIdentity);
+        CheckpointStateBuilder cpBuilder = new CheckpointStateBuilder(currInputModel, checkpointModel, transitionTrace);
+        // myStepArguments may be null if Checkpoint is the very first step. Not quite sure it's legitimate scenario, though, need to think it over.
+        if (myStepArguments != null) {
+          // Shall populate state with last generator's MappingLabels. Note, ML could have been added from post-processing scripts. Generator
+          // instance could be different, we keep GeneratorMappings with step arguments, that span all pre/post scripts along with transformations.
+          GeneratorMappings stepLabels = myStepArguments.mappingLabels;
+          // stepLabels is likely the last one pushed into lastBigTransformStepMappings when previous Transform step had happened.
+          lastBigTransformStepMappings.remove(stepLabels);
+          for (GeneratorMappings prev : lastBigTransformStepMappings) {
+            for (String l : prev.getConditionalRootLabels()) {
+              for (SNode conditionalRoot : prev.getConditionalRoots(l)) {
+                SNode copiedRoot = currInputModel.getNode(conditionalRoot.getNodeId());
+                if (copiedRoot != null) {
+                  stepLabels.addNewOutputNode(l, copiedRoot);
+                }
+              }
+            }
+            for (String l : prev.getAvailableLabels()) {
+              Map<SNode, Object> lastStepMappings = stepLabels.getMappings(l);
+              if (lastStepMappings == null) {
+                lastStepMappings = Collections.emptyMap();
+              }
+              for (Entry<SNode, Object> entry : prev.getMappings(l).entrySet()) {
+                if (lastStepMappings.containsKey(entry.getKey())) {
+                  // there's already labeled transformation for the same input node, no reason to override with value from previous steps
+                  continue;
+                }
+                if (entry.getValue() instanceof SNode) {
+                  // intentionally do not care about multiple outputs, just don't want to project multiple outputs into actual transient model
+                  // and it's of no real use anyway as we don't restore x-model references in case there are multiple outputs.
+                  SNode copiedOutput = currInputModel.getNode(((SNode) entry.getValue()).getNodeId());
+                  if (copiedOutput != null) {
+                    stepLabels.addOutputNodeByInputNodeAndMappingName(entry.getKey(), l, copiedOutput);
+                  }
+                }
+              }
+            }
+          }
+          cpBuilder.addMappings(myOriginalInputModel, stepLabels, myLogger.getImplementation());
+        }
+        CheckpointState cpState = cpBuilder.create(checkpointIdentity);
+        xmodelEnv.publishCheckpoint(myOriginalInputModel.getReference(), cpState);
+        myStepArguments = null; // XXX what if there are few subsequent CPs (e.g. from different plans), why do we clear step arguments and
+        // prevent other CPs from saving MLs?
+        lastBigTransformStepMappings.clear();
+      } else if (planStep instanceof Fork) {
+        Fork forkStep = (Fork) planStep;
+        PlanBranchInfo bi = new PlanBranchInfo();
+        // pair cloneTransient/changeModelReference deserves a dedicated utility
+        bi.inputModel = cloneTransientModel(currInputModel);
+        changeModelReference(bi.inputModel, createTransientModelReference(myMajorStep, myMinorStep + 100));
+        bi.branch = forkStep.getBranch();
+        bi.majorStepAtFork = myMajorStep;
+        bi.minorStepAtFork = myMinorStep + 100;
+        bi.actualStateCopyOfLastBitTransformStepMappings = new ArrayList<>(lastBigTransformStepMappings);
+        // bi.inputModel, clone of currInputModel, already has ORIGIN_TRACE values properly set, no need to do anything in fork().
+        bi.transitionTrace = transitionTrace.fork();
+        forkQueue.add(bi);
+      }
+    }
+    return currOutput;
+  }
+
+  private SModel executeMajorStep(ProgressMonitor progress, SModel inputModel, Transform planStep, TransitionTrace transitionTrace) throws GenerationCanceledException, GenerationFailureException {
     List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<>(planStep.getTransformations());
 
     if (myLogger.needsInfo()) {
@@ -595,17 +635,28 @@ class GenerationSession {
 
   // XXX createOutputModel? - since the method has a side effect, increments myMinorStep count
   private SModel createTransientModel() {
-    // 3 least-significant hex digits for minor, then 2 for major, total 5 (expect myMajorStep to be less than 256)
-    return createTransientModel((myMajorStep << 12) | myMinorStep, Integer.toString(myMajorStep + 1) + '_' + Integer.toString(myMinorStep++));
+    SModelReference mr = createTransientModelReference(myMajorStep, myMinorStep++);
+    return mySessionContext.getModule().createTransientModel(mr);
   }
 
-  private SModel createTransientModel(int idHint, String stereotype) {
+  private SModel createTransientModel(int majorStep, int minorStep, String stereotype) {
+    final SModelReference mr = createTransientModelReference(majorStep, minorStep, stereotype);
+    return mySessionContext.getModule().createTransientModel(mr);
+  }
+
+  private SModelReference createTransientModelReference(int majorStep, int minorStep) {
+    String stereotype = Integer.toString(majorStep + 1) + '_' + Integer.toString(minorStep);
+    return createTransientModelReference(majorStep, minorStep, stereotype);
+  }
+
+  private SModelReference createTransientModelReference(int majorStep, int minorStep, String stereotype) {
+    // 3 least-significant hex digits for minor, then 2 for major, total 5 (expect myMajorStep to be less than 256)
+    int idHint = ((majorStep+1) << 12) | minorStep;
+    assert idHint < 1<<20 : "got only 5 hex digits reserved for the model identity";
     TransientModelsModule module = mySessionContext.getModule();
     final SModelName transientModelName = myOriginalInputModel.getName().withStereotype(stereotype);
-    assert idHint < 1<<20 : "got only 5 hex digits reserved for the model identity";
-    IntegerSModelId id = new IntegerSModelId(0x0FA00000 | (idHint & 0x000FFFFF));
-    final SModelReference mr = myControlEnv.getPersistenceFacade().createModelReference(module.getModuleReference(), id, transientModelName);
-    return module.createTransientModel(mr);
+    IntegerSModelId id = module.nextModelId(idHint);
+    return myControlEnv.getPersistenceFacade().createModelReference(module.getModuleReference(), id, transientModelName);
   }
 
   /**

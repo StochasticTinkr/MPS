@@ -34,6 +34,7 @@ import java.util.Collections;
 public final class GenerationStatus implements IStatus {
   private final Code myStatusCode;
   private final SModel myOutputModel;
+  private final Collection<SModel> myOutputModels;
   private final SModel myInputModel;
   // we initialize it the moment GS is created assuming we can read the input model at this time, so I don't bother with model RA.
   private final SRepository myInputModelRepo;
@@ -43,12 +44,23 @@ public final class GenerationStatus implements IStatus {
   public GenerationStatus(@NotNull SModel inputModel, SModel outputModel, GenerationDependencies dependencies, boolean errors) {
     myStatusCode = errors ? Code.ERROR : Code.OK;
     myOutputModel = outputModel;
+    myOutputModels = outputModel == null ? Collections.emptyList() : Collections.singleton(outputModel);
     myInputModel = inputModel;
     myDependencies = dependencies;
     myInputModelRepo = inputModel.getRepository();
   }
 
-  @Override
+  public GenerationStatus(@NotNull SModel inputModel, @NotNull Collection<SModel> outputModels, GenerationDependencies dependencies, boolean errors) {
+    myStatusCode = errors ? Code.ERROR : Code.OK;
+    myOutputModel = outputModels.isEmpty() ? null : outputModels.iterator().next();
+    myOutputModels = outputModels;
+    myInputModel = inputModel;
+    myDependencies = dependencies;
+    myInputModelRepo = inputModel.getRepository();
+  }
+
+
+    @Override
   public Code getCode() {
     return myStatusCode;
   }
@@ -96,7 +108,7 @@ public final class GenerationStatus implements IStatus {
    */
   @NotNull
   public Collection<SModel> getOutputModels() {
-    return myOutputModel == null ? Collections.emptyList() : Collections.singleton(myOutputModel);
+    return myOutputModels;
   }
 
   /**
@@ -118,6 +130,6 @@ public final class GenerationStatus implements IStatus {
   private CrossModelEnvironment myCrossModelEnvironment;
 
   public static GenerationStatus failure(@NotNull SModel inputModel) {
-    return new GenerationStatus(inputModel, null, null, true);
+    return new GenerationStatus(inputModel, (SModel) null, null, true);
   }
 }

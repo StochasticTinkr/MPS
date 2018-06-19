@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -152,6 +152,18 @@ public interface ModelGenerationPlan {
     }
   }
 
+  final class Fork implements Step {
+    private final List<Step> myBranch;
+
+    public Fork(List<Step> branch) {
+      myBranch = branch;
+    }
+
+    public List<Step> getBranch() {
+      return myBranch;
+    }
+
+  }
 
   /**
    * Marker to indicate source capable to supply ModelGenerationPlan for a model
