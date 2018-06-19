@@ -50,6 +50,7 @@ import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.Pair;
@@ -59,11 +60,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayDeque;
@@ -167,7 +168,7 @@ class GenerationSession {
         // Although this can be fixed in DFNF (not to sort, share impl for both FNF), it's still better to avoid possible differences.
         // Last, but not least, there's planned switch to GeneratorSNode/GeneratorSModel to facilitate model reconstruction from delta
         // and we'll need to switch to 'transient' (generator) model here anyway
-        SModel currInputModel = createTransientModel("0");
+        SModel currInputModel = createTransientModel(0, "0");
         new CloneUtil(myOriginalInputModel, currInputModel).traceOriginalInput().cloneModelWithImports();
         SModel currOutput = null;
 
@@ -407,9 +408,15 @@ class GenerationSession {
       final TemplateGenerator tg = prepareToApplyRules(currentInputModel, currentOutputModel);
       boolean somethingHasBeenGenerated = false, applySucceed = false;
       try {
-        somethingHasBeenGenerated = applyRules(tg, progress, isPrimary);
+        ttrace.push(String.format("Step %d.%d", myMajorStep+1, myMinorStep));
+        somethingHasBeenGenerated = tg.apply(progress, isPrimary);
+        ttrace.pop();
         applySucceed = true;
         if (!somethingHasBeenGenerated) {
+          // nothing has been generated
+          if (myLogger.needsInfo()) {
+            myLogger.info(String.format("unchanged, empty model '%s' removed", SModelStereotype.getStereotype(currentOutputModel)));
+          }
           myNewTrace.dropStep(currentInputModel.getReference(), currentOutputModel.getReference());
         } else {
           // next iteration ...
@@ -500,31 +507,6 @@ class GenerationSession {
             : new TemplateGenerator(mySessionContext, currentInputModel, currentOutputModel, myStepArguments);
   }
 
-  private boolean applyRules(TemplateGenerator tg, ProgressMonitor progress, final boolean isPrimary)
-      throws GenerationFailureException, GenerationCanceledException {
-
-    final SModel originalOutputModel = tg.getOutputModel();
-    ttrace.push(String.format("Step %d.%d", myMajorStep+1, myMinorStep));
-    final boolean hasChanges = tg.apply(progress, isPrimary);
-    ttrace.pop();
-
-    if (!hasChanges) {
-      // nothing has been generated
-      if (!isPrimary) {
-        // we may need myMinorStep in postProcess, when we store TransientModelWithMetainfo
-        // applyRules did that for primary step regardless of hasChanges state, hence we decrement minorStep
-        // only on secondary no-change runs to forget about no-op applyRules.
-        // I consider this changes safer than to remove isPrimary check in applyRules (it's appealing
-        // to save TMWM only when there are changes) as it seems there's assumption about TMWM presence (if used) for each step.
-        myMinorStep--;
-      }
-      if (myLogger.needsInfo()) {
-        myLogger.info(String.format("unchanged, empty model '%s' removed", SModelStereotype.getStereotype(originalOutputModel)));
-      }
-    }
-    return hasChanges;
-  }
-
   private SModel preProcessModel(SModel currentInputModel) throws GenerationFailureException {
     final RuleManager ruleManager = myStepArguments.planStep.getRuleManager();
     if (ruleManager.getPreProcessScripts().isEmpty()) {
@@ -613,14 +595,16 @@ class GenerationSession {
 
   // XXX createOutputModel? - since the method has a side effect, increments myMinorStep count
   private SModel createTransientModel() {
-    return createTransientModel(Integer.toString(myMajorStep + 1) + "_" + ++myMinorStep);
+    // 3 least-significant hex digits for minor, then 2 for major, total 5 (expect myMajorStep to be less than 256)
+    return createTransientModel((myMajorStep << 12) | myMinorStep, Integer.toString(myMajorStep + 1) + '_' + Integer.toString(myMinorStep++));
   }
 
-  private SModel createTransientModel(String stereotype) {
+  private SModel createTransientModel(int idHint, String stereotype) {
     TransientModelsModule module = mySessionContext.getModule();
-    String longName = myOriginalInputModel.getName().getLongName();
-    final String transientModelName = longName + '@' + stereotype;
-    final SModelReference mr = PersistenceFacade.getInstance().createModelReference(module.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(), transientModelName);
+    final SModelName transientModelName = myOriginalInputModel.getName().withStereotype(stereotype);
+    assert idHint < 1<<20 : "got only 5 hex digits reserved for the model identity";
+    IntegerSModelId id = new IntegerSModelId(0x0FA00000 | (idHint & 0x000FFFFF));
+    final SModelReference mr = myControlEnv.getPersistenceFacade().createModelReference(module.getModuleReference(), id, transientModelName);
     return module.createTransientModel(mr);
   }
 

@@ -32,6 +32,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -217,6 +218,11 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
 
   @Override
   public SModelReference createModelReference(SModuleReference module, @NotNull SModelId modelId, @NotNull String modelName) {
+    return new jetbrains.mps.smodel.SModelReference(module, modelId, modelName);
+  }
+
+  @Override
+  public SModelReference createModelReference(SModuleReference module, @NotNull SModelId modelId, @NotNull SModelName modelName) {
     return new jetbrains.mps.smodel.SModelReference(module, modelId, modelName);
   }
 

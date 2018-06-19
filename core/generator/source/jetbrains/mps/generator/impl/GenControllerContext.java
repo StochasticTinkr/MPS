@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
  * Holds parameters global for particular generation activity/task. Similar to {@link jetbrains.mps.generator.GenerationSessionContext} which
@@ -78,5 +79,13 @@ public final class GenControllerContext {
   public LanguageRegistry getLanguageRegistry() {
     // FIXME pass LanguageRegistry or (better yet) ComponentHost to GenerationFacade and then here, into this class
     return LanguageRegistry.getInstance(myRepository);
+  }
+
+  /**
+   * @return never {@code null}
+   */
+  public PersistenceFacade getPersistenceFacade() {
+    // FIXME same as getLanguageRegistry
+    return PersistenceFacade.getInstance();
   }
 }

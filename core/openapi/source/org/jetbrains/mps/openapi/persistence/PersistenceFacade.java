@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -180,9 +181,19 @@ public abstract class PersistenceFacade {
 
   /**
    * Creates an SModelReference in a module with a given model id and model name.
+   * Prefer {@link #createModelReference(SModuleReference, SModelId, SModelName)} alternative that takes {@link SModelName}.
    * @param module can be null only if modelId is globally unique (i.e. can be resolved without a module)
    */
   public abstract SModelReference createModelReference(SModuleReference module, @NotNull SModelId modelId, @NotNull String modelName);
+
+  /**
+   * Creates an SModelReference in a module with a given model id and model name.
+   * @param module can be null only if modelId is globally unique (i.e. can be resolved without a module)
+   * @param modelId identity of a model either globally or within a module
+   * @param modelName user-friendly name of a model
+   * @throws IllegalArgumentException when modelId is module-relative and no module has been specified
+   */
+  public abstract SModelReference createModelReference(SModuleReference module, @NotNull SModelId modelId, @NotNull SModelName modelName);
 
   /**
    * Registers the factory with the model id type, overwriting potential earlier registration.
