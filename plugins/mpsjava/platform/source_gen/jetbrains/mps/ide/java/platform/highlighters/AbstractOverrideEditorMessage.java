@@ -24,6 +24,7 @@ public abstract class AbstractOverrideEditorMessage extends AbstractLeftEditorHi
       }
     };
   }
+
   @Override
   public EditorCell getAnchorCell(EditorComponent editorComponent) {
     EditorCell bigCell = getNodeCell(editorComponent);

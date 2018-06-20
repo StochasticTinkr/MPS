@@ -13,18 +13,21 @@ import com.intellij.openapi.actionSystem.ActionManager;
 public class OverridenMethodEditorMessage extends AbstractOverrideEditorMessage {
   private static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(2);
   private boolean isOverriden;
-  public OverridenMethodEditorMessage(SNode node, EditorMessageOwner ovner, String tooltip, boolean overriden) {
-    super(node, ovner, tooltip);
+  public OverridenMethodEditorMessage(SNode node, EditorMessageOwner owner, String tooltip, boolean overriden) {
+    super(node, owner, tooltip);
     this.isOverriden = overriden;
   }
+
   @Override
   public Icon getIcon() {
     return (this.isOverriden ? IconResourceBundle_OverrideImplements.getInstance().getResource("OVERRIDEN") : IconResourceBundle_OverrideImplements.getInstance().getResource("IMPLEMENTED"));
   }
+
   @Override
   public EditorMessageIconRenderer.IconRendererType getType() {
     return TYPE;
   }
+
   @Override
   public AnAction getClickAction() {
     return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.java.actions.GoToOverridingClassMethod_Action"));

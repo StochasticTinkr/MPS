@@ -436,7 +436,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action" file="GoToOverridenMethod_Action.java">
+  <dependency className="jetbrains.mps.ide.java.actions.GoToOverridenClassMethod_Action" file="GoToOverridenClassMethod_Action.java">
     <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />

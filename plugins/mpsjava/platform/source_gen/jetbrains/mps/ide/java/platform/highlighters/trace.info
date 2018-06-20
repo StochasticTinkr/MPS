@@ -99,22 +99,22 @@
       <node id="8432634623182578767" at="17,94,18,32" concept="16" />
       <node id="8432634623182578771" at="18,32,19,190" concept="10" />
       <node id="8432634623182578794" at="22,43,23,49" concept="11" />
-      <node id="2786528417096604188" at="28,68,29,54" concept="10" />
-      <node id="6226950206220127603" at="29,54,30,137" concept="10" />
-      <node id="8432634623182578817" at="30,137,31,63" concept="11" />
+      <node id="2786528417096604188" at="29,68,30,54" concept="10" />
+      <node id="6226950206220127603" at="30,54,31,137" concept="10" />
+      <node id="8432634623182578817" at="31,137,32,63" concept="11" />
       <node id="8432634623182578788" at="21,0,25,0" concept="9" trace="met#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
       <node id="8432634623182578777" at="19,190,25,6" concept="4" />
-      <node id="8432634623182578802" at="27,0,33,0" concept="9" trace="getAnchorCell#(Ljetbrains/mps/openapi/editor/EditorComponent;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8432634623182578802" at="28,0,34,0" concept="9" trace="getAnchorCell#(Ljetbrains/mps/openapi/editor/EditorComponent;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="8432634623182578757" at="17,0,27,0" concept="2" trace="AbstractOverrideEditorMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;Ljava/lang/String;)V" />
       <scope id="8432634623182578793" at="22,43,23,49" />
-      <scope id="8432634623182578807" at="28,68,31,63">
+      <scope id="8432634623182578807" at="29,68,32,63">
         <var name="bigCell" id="2786528417096604191" />
         <var name="returnTypeCell" id="6226950206220127604" />
       </scope>
       <scope id="8432634623182578788" at="21,0,25,0">
         <var name="cell" id="8432634623182578791" />
       </scope>
-      <scope id="8432634623182578802" at="27,0,33,0">
+      <scope id="8432634623182578802" at="28,0,34,0">
         <var name="editorComponent" id="2786528417096610160" />
       </scope>
       <scope id="8432634623182578766" at="17,94,25,6">
@@ -126,7 +126,7 @@
         <var name="tooltip" id="8432634623182578762" />
       </scope>
       <unit id="8432634623182578785" at="20,41,25,5" name="jetbrains.mps.ide.java.platform.highlighters.AbstractOverrideEditorMessage$1" />
-      <unit id="8432634623182578751" at="15,0,34,0" name="jetbrains.mps.ide.java.platform.highlighters.AbstractOverrideEditorMessage" />
+      <unit id="8432634623182578751" at="15,0,35,0" name="jetbrains.mps.ide.java.platform.highlighters.AbstractOverrideEditorMessage" />
     </file>
   </root>
   <root nodeRef="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)/8432634623182578830">
@@ -524,27 +524,27 @@
       <node id="8432634623182579852" at="15,0,16,0" concept="5" trace="isOverriden" />
       <node id="8432634623182579868" at="16,112,17,32" concept="16" />
       <node id="8432634623182579872" at="17,32,18,33" concept="4" />
-      <node id="8432634623182690087" at="21,25,22,190" concept="11" />
-      <node id="8432634623182579896" at="25,63,26,16" concept="11" />
-      <node id="4519712202472261630" at="29,36,30,131" concept="11" />
+      <node id="8432634623182690087" at="22,25,23,190" concept="11" />
+      <node id="8432634623182579896" at="27,63,28,16" concept="11" />
+      <node id="4519712202472261630" at="32,36,33,131" concept="11" />
       <node id="8432634623182579856" at="16,0,20,0" concept="2" trace="OverridenMethodEditorMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;Ljava/lang/String;Z)V" />
-      <node id="8432634623182579879" at="20,0,24,0" concept="9" trace="getIcon#()Ljavax/swing/Icon;" />
-      <node id="8432634623182579892" at="24,0,28,0" concept="9" trace="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
-      <node id="8432634623182579898" at="28,0,32,0" concept="9" trace="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
-      <scope id="8432634623182579882" at="21,25,22,190" />
-      <scope id="8432634623182579895" at="25,63,26,16" />
-      <scope id="8432634623182579901" at="29,36,30,131" />
+      <node id="8432634623182579879" at="21,0,25,0" concept="9" trace="getIcon#()Ljavax/swing/Icon;" />
+      <node id="8432634623182579892" at="26,0,30,0" concept="9" trace="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
+      <node id="8432634623182579898" at="31,0,35,0" concept="9" trace="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
+      <scope id="8432634623182579882" at="22,25,23,190" />
+      <scope id="8432634623182579895" at="27,63,28,16" />
+      <scope id="8432634623182579901" at="32,36,33,131" />
       <scope id="8432634623182579867" at="16,112,18,33" />
       <scope id="8432634623182579856" at="16,0,20,0">
         <var name="node" id="8432634623182579857" />
         <var name="overriden" id="8432634623182579863" />
-        <var name="ovner" id="8432634623182579859" />
+        <var name="owner" id="8432634623182579859" />
         <var name="tooltip" id="8432634623182579861" />
       </scope>
-      <scope id="8432634623182579879" at="20,0,24,0" />
-      <scope id="8432634623182579892" at="24,0,28,0" />
-      <scope id="8432634623182579898" at="28,0,32,0" />
-      <unit id="8432634623182579833" at="13,0,33,0" name="jetbrains.mps.ide.java.platform.highlighters.OverridenMethodEditorMessage" />
+      <scope id="8432634623182579879" at="21,0,25,0" />
+      <scope id="8432634623182579892" at="26,0,30,0" />
+      <scope id="8432634623182579898" at="31,0,35,0" />
+      <unit id="8432634623182579833" at="13,0,36,0" name="jetbrains.mps.ide.java.platform.highlighters.OverridenMethodEditorMessage" />
     </file>
   </root>
   <root nodeRef="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)/8432634623182579907">
@@ -555,19 +555,19 @@
       <node id="8432634623182579946" at="17,32,18,35" concept="4" />
       <node id="8432634623182690115" at="21,25,22,193" concept="11" />
       <node id="8432634623182579970" at="25,63,26,16" concept="11" />
-      <node id="8432634623182579976" at="29,36,30,125" concept="11" />
+      <node id="8432634623182579976" at="29,36,30,130" concept="11" />
       <node id="8432634623182579930" at="16,0,20,0" concept="2" trace="OverridingMethodEditorMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;Ljava/lang/String;Z)V" />
       <node id="8432634623182579953" at="20,0,24,0" concept="9" trace="getIcon#()Ljavax/swing/Icon;" />
       <node id="8432634623182579966" at="24,0,28,0" concept="9" trace="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
       <node id="8432634623182579972" at="28,0,32,0" concept="9" trace="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
       <scope id="8432634623182579956" at="21,25,22,193" />
       <scope id="8432634623182579969" at="25,63,26,16" />
-      <scope id="8432634623182579975" at="29,36,30,125" />
+      <scope id="8432634623182579975" at="29,36,30,130" />
       <scope id="8432634623182579941" at="16,114,18,35" />
       <scope id="8432634623182579930" at="16,0,20,0">
         <var name="node" id="8432634623182579931" />
         <var name="overriding" id="8432634623182579937" />
-        <var name="ovner" id="8432634623182579933" />
+        <var name="owner" id="8432634623182579933" />
         <var name="tooltip" id="8432634623182579935" />
       </scope>
       <scope id="8432634623182579953" at="20,0,24,0" />
@@ -660,52 +660,52 @@
       <node id="8432634623182782110" at="19,0,20,0" concept="5" trace="myProject" />
       <node id="5916754392152657189" at="20,0,21,0" concept="5" trace="myCheckers" />
       <node id="8432634623182782114" at="21,81,22,24" concept="4" />
-      <node id="8432634623182792468" at="31,31,32,47" concept="10" />
-      <node id="2235828751986277314" at="32,47,33,118" concept="4" />
-      <node id="2235828751986277376" at="33,118,34,102" concept="4" />
-      <node id="2235828751986277385" at="34,102,35,128" concept="4" />
-      <node id="8432634623182792549" at="38,34,39,47" concept="10" />
-      <node id="5916754392152657423" at="40,65,41,82" concept="10" />
-      <node id="5916754392152657457" at="41,82,42,41" concept="4" />
-      <node id="5916754392152657394" at="43,55,44,54" concept="4" />
-      <node id="8432634623182782140" at="46,5,47,21" concept="4" />
-      <node id="8432634623182792464" at="52,36,53,30" concept="11" />
-      <node id="8432634623182792457" at="55,40,56,53" concept="11" />
+      <node id="8432634623182792468" at="34,31,35,47" concept="10" />
+      <node id="2235828751986277314" at="35,47,36,118" concept="4" />
+      <node id="2235828751986277376" at="36,118,37,102" concept="4" />
+      <node id="2235828751986277385" at="37,102,38,128" concept="4" />
+      <node id="8432634623182792549" at="42,34,43,47" concept="10" />
+      <node id="5916754392152657423" at="44,65,45,82" concept="10" />
+      <node id="5916754392152657457" at="45,82,46,41" concept="4" />
+      <node id="5916754392152657394" at="47,55,48,54" concept="4" />
+      <node id="8432634623182782140" at="50,5,51,21" concept="4" />
+      <node id="8432634623182792464" at="57,36,58,30" concept="11" />
+      <node id="8432634623182792457" at="61,40,62,53" concept="11" />
       <node id="8432634623182781102" at="21,0,24,0" concept="2" trace="JavaHighlighters#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-      <node id="8432634623182781107" at="24,0,27,0" concept="9" trace="projectOpened#()V" />
-      <node id="8432634623182781111" at="27,0,30,0" concept="9" trace="projectClosed#()V" />
-      <node id="6316328094635219283" at="42,41,45,7" concept="8" />
-      <node id="8432634623182792410" at="55,0,58,0" concept="9" trace="getHighlighter#()Ljetbrains/mps/nodeEditor/Highlighter;" />
-      <node id="8432634623182781123" at="49,0,55,0" concept="9" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="8432634623182781115" at="30,0,37,0" concept="9" trace="initComponent#()V" />
-      <node id="5916754392152657363" at="39,47,46,5" concept="18" />
-      <node id="8432634623182781119" at="37,0,49,0" concept="9" trace="disposeComponent#()V" />
-      <scope id="8432634623182781110" at="25,31,25,31" />
-      <scope id="8432634623182781114" at="28,31,28,31" />
+      <node id="8432634623182781107" at="25,0,28,0" concept="9" trace="projectOpened#()V" />
+      <node id="8432634623182781111" at="29,0,32,0" concept="9" trace="projectClosed#()V" />
+      <node id="6316328094635219283" at="46,41,49,7" concept="8" />
+      <node id="8432634623182792410" at="61,0,64,0" concept="9" trace="getHighlighter#()Ljetbrains/mps/nodeEditor/Highlighter;" />
+      <node id="8432634623182781123" at="54,0,60,0" concept="9" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="8432634623182781115" at="33,0,40,0" concept="9" trace="initComponent#()V" />
+      <node id="5916754392152657363" at="43,47,50,5" concept="18" />
+      <node id="8432634623182781119" at="41,0,53,0" concept="9" trace="disposeComponent#()V" />
+      <scope id="8432634623182781110" at="26,31,26,31" />
+      <scope id="8432634623182781114" at="30,31,30,31" />
       <scope id="8432634623182781105" at="21,81,22,24" />
-      <scope id="6316328094635219285" at="43,55,44,54" />
-      <scope id="8432634623182781128" at="52,36,53,30" />
-      <scope id="8432634623182792413" at="55,40,56,53" />
+      <scope id="6316328094635219285" at="47,55,48,54" />
+      <scope id="8432634623182781128" at="57,36,58,30" />
+      <scope id="8432634623182792413" at="61,40,62,53" />
       <scope id="8432634623182781102" at="21,0,24,0">
         <var name="coreComponents" id="4450057996090661301" />
         <var name="project" id="9017026880110500544" />
       </scope>
-      <scope id="8432634623182781107" at="24,0,27,0" />
-      <scope id="8432634623182781111" at="27,0,30,0" />
-      <scope id="8432634623182792410" at="55,0,58,0" />
-      <scope id="8432634623182781118" at="31,31,35,128">
+      <scope id="8432634623182781107" at="25,0,28,0" />
+      <scope id="8432634623182781111" at="29,0,32,0" />
+      <scope id="8432634623182792410" at="61,0,64,0" />
+      <scope id="8432634623182781118" at="34,31,38,128">
         <var name="highlighter" id="8432634623182792469" />
       </scope>
-      <scope id="5916754392152657365" at="40,65,45,7">
+      <scope id="5916754392152657365" at="44,65,49,7">
         <var name="checker" id="5916754392152657424" />
       </scope>
-      <scope id="8432634623182781123" at="49,0,55,0" />
-      <scope id="8432634623182781115" at="30,0,37,0" />
-      <scope id="8432634623182781122" at="38,34,47,21">
+      <scope id="8432634623182781123" at="54,0,60,0" />
+      <scope id="8432634623182781115" at="33,0,40,0" />
+      <scope id="8432634623182781122" at="42,34,51,21">
         <var name="highlighter" id="8432634623182792550" />
       </scope>
-      <scope id="8432634623182781119" at="37,0,49,0" />
-      <unit id="8432634623182781100" at="18,0,59,0" name="jetbrains.mps.ide.java.platform.highlighters.JavaHighlighters" />
+      <scope id="8432634623182781119" at="41,0,53,0" />
+      <unit id="8432634623182781100" at="18,0,65,0" name="jetbrains.mps.ide.java.platform.highlighters.JavaHighlighters" />
     </file>
   </root>
 </debug-info>

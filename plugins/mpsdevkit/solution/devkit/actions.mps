@@ -828,7 +828,7 @@
       </node>
     </node>
     <node concept="Zd509" id="2rUHgdX3hFH" role="Zd508">
-      <ref role="1bYAoF" node="1oCHNhnjllY" resolve="GoToOverridingBehaviorMethod" />
+      <ref role="1bYAoF" node="1oCHNhnjllY" resolve="GoToImplementingBehaviorMethod" />
       <node concept="pLAjd" id="5GUQLVLhjlE" role="Zd501">
         <property role="pLAjf" value="VK_B" />
         <property role="pLAjc" value="ctrl+alt" />
@@ -10351,7 +10351,7 @@
     <property role="3GE5qa" value="Editor" />
     <node concept="ftmFs" id="1oCHNhnjllV" role="ftER_">
       <node concept="tCFHf" id="1oCHNhnjllW" role="ftvYc">
-        <ref role="tCJdB" node="1oCHNhnjllY" resolve="GoToOverridingBehaviorMethod" />
+        <ref role="tCJdB" node="1oCHNhnjllY" resolve="GoToImplementingBehaviorMethod" />
       </node>
       <node concept="tCFHf" id="1dN09JzO2aZ" role="ftvYc">
         <ref role="tCJdB" node="6ndnYgP5$a$" resolve="GoToOverriddenBehaviorMethod" />
@@ -10362,10 +10362,10 @@
     </node>
   </node>
   <node concept="sE7Ow" id="1oCHNhnjllY">
-    <property role="TrG5h" value="GoToOverridingBehaviorMethod" />
+    <property role="TrG5h" value="GoToImplementingBehaviorMethod" />
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Editor" />
-    <property role="2uzpH1" value="Go to Overriding Methods" />
+    <property role="2uzpH1" value="Go to Implementing Methods" />
     <node concept="2S4$dB" id="1oCHNhnjlm5" role="1NuT2Z">
       <property role="TrG5h" value="methodNode" />
       <node concept="1oajcY" id="1oCHNhnjlm6" role="1oa70y" />
