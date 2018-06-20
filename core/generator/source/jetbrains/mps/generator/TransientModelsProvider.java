@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -193,19 +193,31 @@ public class TransientModelsProvider {
     if (mySessionId == null) {
       return null;
     }
+    return getOrCreateSwapSpace(mySessionId);
+  }
 
+  private TransientSwapSpace getOrCreateSwapSpace(String id) {
     TransientSwapOwner tso = getTransientSwapOwner();
     if (tso == null) {
       return null;
     }
 
-    TransientSwapSpace space = tso.accessSwapSpace(mySessionId);
+    TransientSwapSpace space = tso.accessSwapSpace(id);
     if (space != null) {
       return space;
     }
 
-    return tso.initSwapSpace(mySessionId);
+    return tso.initSwapSpace(id);
   }
+
+  /*package*/ TransientSwapSpace getTransientSwapSpace(TransientModelsModule transientModule) {
+    if (mySessionId == null) {
+      // just to ensure TMP is alive
+      return null;
+    }
+    return getOrCreateSwapSpace(mySessionId + '-' + transientModule.getModuleName());
+  }
+
 
   public void removeAllTransient() {
     clearAll(false);
@@ -256,7 +268,7 @@ public class TransientModelsProvider {
   }
 
   private String newSessionId() {
-    return String.valueOf(System.identityHashCode(myRepository)) + Long.toHexString(System.currentTimeMillis());
+    return Long.toHexString(System.identityHashCode(myRepository) + System.currentTimeMillis());
   }
 
   /**

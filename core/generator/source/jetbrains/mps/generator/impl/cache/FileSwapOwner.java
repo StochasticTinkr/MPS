@@ -24,6 +24,7 @@ import jetbrains.mps.persistence.binary.BareNodeWriter;
 import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.smodel.TrivialModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -100,16 +101,25 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       mySpaceDir = dir;
     }
 
+    private void checkSpaceDir() throws IllegalStateException {
+      if (mySpaceDir == null) {
+        throw new IllegalStateException("no swap dir");
+      }
+      if (!mySpaceDir.exists()) {
+        throw new IllegalStateException(String.format("swap dir %s doesn't exist", mySpaceDir));
+      }
+    }
+
     @Override
     public boolean swapOut(SModelData model) {
-      if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
+      checkSpaceDir();
 
       String modelId = model.getModelId().toString();
       if (modelId == null || modelId.isEmpty()) {
         LOG.error("Bad model id <" + modelId + ">");
         return false;
       }
-      modelId = modelId.replaceAll(":", "-");
+      modelId = modelId.replace(':', '-');
 
       File swapFile = new File(mySpaceDir, modelId);
       if (swapFile.exists() && !swapFile.delete()) {
@@ -121,21 +131,12 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       for (SNode next : model.getRootNodes()) {
         roots.add(next);
       }
-      ModelOutputStream mos = null;
       IOException ioex = null;
-      try {
-        mos = new ModelOutputStream(new FileOutputStream(swapFile));
+      try (ModelOutputStream mos = new ModelOutputStream(new FileOutputStream(swapFile))) {
         saveModel(model.getReference(), roots, mos);
       } catch (IOException e) {
         ioex = e;
         LOG.error(null, e);
-      } finally {
-        if (mos != null) {
-          try {
-            mos.close();
-          } catch (IOException ignore) {
-          }
-        }
       }
 
       return ioex == null;
@@ -143,33 +144,26 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
 
     @Override
     public <T extends SModelData> T restoreFromSwap(SModelReference mref, T modelData) {
-      if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
+      checkSpaceDir();
 
       String modelId = mref.getModelId().toString();
       if (modelId == null || modelId.isEmpty()) {
+        // XXX not quite sure if there's a reason to react here with ISE and with an error in log in swapOut()
         throw new IllegalStateException("bad modelId");
       }
-      modelId = modelId.replaceAll(":", "-");
+      modelId = modelId.replace(':', '-');
 
       File swapFile = new File(mySpaceDir, modelId);
       if (!swapFile.exists()) {
         throw new IllegalStateException("no swap file");
       }
 
-      ModelInputStream mis = null;
-      try {
-        mis = new ModelInputStream(new FileInputStream(swapFile));
+      try (ModelInputStream mis = new ModelInputStream(new FileInputStream(swapFile))) {
         return loadModel(mref, mis, modelData);
       } catch (IOException e) {
         LOG.error(null, e);
         throw new RuntimeException(e);
       } finally {
-        if (mis != null) {
-          try {
-            mis.close();
-          } catch (IOException ignore) {
-          }
-        }
         if (!swapFile.delete()) {
           LOG.error("Couldn't delete swap file");
         }
@@ -178,12 +172,9 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
 
     @Override
     public void clear() {
-      if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
-
-      for (File f : mySpaceDir.listFiles()) {
-        f.delete();
-      }
-      mySpaceDir.delete();
+      checkSpaceDir();
+      // including nested empty directories, just in case
+      FileUtil.delete(mySpaceDir);
       mySpaceDir = null;
     }
 

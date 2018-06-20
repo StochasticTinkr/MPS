@@ -68,6 +68,8 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
   // facility to generate IntegerSModelId, unique within a transient module
   private final AtomicInteger myCounter = new AtomicInteger(0);
 
+  private TransientSwapSpace mySwapSpace;
+
   /*package*/ TransientModelsModule(@NotNull TransientModelsProvider tmProvider, @NotNull SModuleReference moduleReference) {
     myComponent = tmProvider;
     setModuleReference(moduleReference);
@@ -79,6 +81,10 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   @Override
   public void dispose() {
+    if (mySwapSpace != null) {
+      mySwapSpace.clear();
+      mySwapSpace = null;
+    }
     clearAll();
     super.dispose();
   }
@@ -265,6 +271,15 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     ((TransientSModelDescriptor) transientModel).changeModelReference(newRef);
   }
 
+  /*package*/ TransientSwapSpace getSwapSpace() {
+    if (mySwapSpace == null) {
+      // I don't care to guard thread access, as it's responsibility of TransientSwapOwner to make swap allocation atomic (so that check for existence and
+      // create/clear can not get into race condition), and here I don't care if I initialize the field twice with the same value.
+      mySwapSpace = myComponent.getTransientSwapSpace(this);
+    }
+    return mySwapSpace;
+  }
+
   public final class TransientSModelDescriptor extends EditableSModelBase implements jetbrains.mps.extapi.model.TransientSModel, ModelWithAttributes {
     protected volatile TransientSModel mySModel;
     private boolean wasUnloaded = false;
@@ -323,8 +338,11 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
       if (wasUnloaded) {
         LOG.debug("Re-loading " + getReference());
 
-        TransientSwapSpace swap = myComponent.getTransientSwapSpace();
-        if (swap == null) throw new IllegalStateException("no swap space");
+        TransientSwapSpace swap = getSwapSpace();
+        if (swap == null) {
+          // if we got here, it means doUnload managed to access swap and wrote model down there.
+          throw new IllegalStateException("no swap space");
+        }
 
         TransientSModel m = swap.restoreFromSwap(getReference(), new TransientSModel(getReference()));
 
@@ -342,7 +360,7 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
       if (!wasUnloaded) {
         LOG.debug("Un-loading " + getReference());
 
-        TransientSwapSpace swap = myComponent.getTransientSwapSpace();
+        TransientSwapSpace swap = getSwapSpace();
         if (swap == null || !swap.swapOut(mySModel)) {
           return;
         }
