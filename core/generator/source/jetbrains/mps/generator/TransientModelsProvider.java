@@ -36,6 +36,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TransientModelsProvider {
@@ -48,6 +49,7 @@ public class TransientModelsProvider {
   private String mySessionId;
   private final MPSModuleOwner myOwner = new BaseMPSModuleOwner();
   private TransientModelsModule myCheckpointsModule;
+  private final Semaphore mySwapLock = new Semaphore(1);
 
   public TransientModelsProvider(@NotNull SRepository repository, @Nullable TransientSwapOwner swapOwner) {
     myRepository = (SRepositoryExt) repository;
@@ -202,12 +204,17 @@ public class TransientModelsProvider {
       return null;
     }
 
-    TransientSwapSpace space = tso.accessSwapSpace(id);
-    if (space != null) {
-      return space;
-    }
+    mySwapLock.acquireUninterruptibly();
+    try {
+      TransientSwapSpace space = tso.accessSwapSpace(id);
+      if (space != null) {
+        return space;
+      }
 
-    return tso.initSwapSpace(id);
+      return tso.initSwapSpace(id);
+    } finally {
+      mySwapLock.release();
+    }
   }
 
   /*package*/ TransientSwapSpace getTransientSwapSpace(TransientModelsModule transientModule) {
