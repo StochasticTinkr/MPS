@@ -2,20 +2,20 @@
 <model ref="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)">
   <persistence version="9" />
   <languages>
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="0" />
-    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="-1" />
+    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
   </languages>
   <imports>
     <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
@@ -831,6 +831,13 @@
       <ref role="1bYAoF" node="1oCHNhnjllY" resolve="GoToOverridingBehaviorMethod" />
       <node concept="pLAjd" id="5GUQLVLhjlE" role="Zd501">
         <property role="pLAjf" value="VK_B" />
+        <property role="pLAjc" value="ctrl+alt" />
+      </node>
+    </node>
+    <node concept="Zd509" id="1dN09JzO2c3" role="Zd508">
+      <ref role="1bYAoF" node="6ndnYgP5$a$" resolve="GoToOverriddenBehaviorMethod" />
+      <node concept="pLAjd" id="1dN09JzO2c4" role="Zd501">
+        <property role="pLAjf" value="VK_U" />
         <property role="pLAjc" value="ctrl+alt" />
       </node>
     </node>
@@ -10346,6 +10353,9 @@
       <node concept="tCFHf" id="1oCHNhnjllW" role="ftvYc">
         <ref role="tCJdB" node="1oCHNhnjllY" resolve="GoToOverridingBehaviorMethod" />
       </node>
+      <node concept="tCFHf" id="1dN09JzO2aZ" role="ftvYc">
+        <ref role="tCJdB" node="6ndnYgP5$a$" resolve="GoToOverriddenBehaviorMethod" />
+      </node>
     </node>
     <node concept="tT9cl" id="1oCHNhnjllX" role="2f5YQi">
       <ref role="tU$_T" to="ekwn:1xsN4xJX8VI" resolve="EditorPopup" />
@@ -10361,7 +10371,7 @@
       <node concept="1oajcY" id="1oCHNhnjlm6" role="1oa70y" />
       <node concept="3Tm6S6" id="1oCHNhnjlm7" role="1B3o_S" />
       <node concept="3Tqbb2" id="1oCHNhnjlm8" role="1tU5fm">
-        <ref role="ehGHo" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
+        <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
       </node>
     </node>
     <node concept="1DS2jV" id="1oCHNhnjlm9" role="1NuT2Z">
@@ -10436,7 +10446,7 @@
             </node>
             <node concept="1ZiG2z" id="3$9coUqj3iz" role="37wK5m">
               <node concept="zAVLb" id="3$9coUqj3i$" role="1ZiG2y">
-                <ref role="2$JaeB" to="tya3:hReyrfg" resolve="OverridingMethods" />
+                <ref role="2$JaeB" to="tya3:hReyrfg" resolve="ImplementingMethods" />
               </node>
             </node>
             <node concept="2YIFZM" id="1pHoCUay$Ef" role="37wK5m">
@@ -10463,7 +10473,7 @@
             </node>
             <node concept="1ZiG2z" id="5UvmwWxQcEQ" role="33vP2m">
               <node concept="zAVLb" id="5UvmwWxQcER" role="1ZiG2y">
-                <ref role="2$JaeB" to="tya3:hReyrfg" resolve="OverridingMethods" />
+                <ref role="2$JaeB" to="tya3:hReyrfg" resolve="ImplementingMethods" />
               </node>
             </node>
           </node>
@@ -14225,6 +14235,150 @@
       </node>
     </node>
     <node concept="mfpdH" id="1oxUvMUh9Jf" role="med8o" />
+  </node>
+  <node concept="sE7Ow" id="6ndnYgP5$a$">
+    <property role="TrG5h" value="GoToOverriddenBehaviorMethod" />
+    <property role="72QZ$" value="true" />
+    <property role="3GE5qa" value="Editor" />
+    <property role="2uzpH1" value="Go to Overridden Methods" />
+    <node concept="2S4$dB" id="6ndnYgP5$a_" role="1NuT2Z">
+      <property role="TrG5h" value="methodNode" />
+      <node concept="1oajcY" id="6ndnYgP5$aA" role="1oa70y" />
+      <node concept="3Tm6S6" id="6ndnYgP5$aB" role="1B3o_S" />
+      <node concept="3Tqbb2" id="6ndnYgP5$aC" role="1tU5fm">
+        <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
+      </node>
+    </node>
+    <node concept="1DS2jV" id="6ndnYgP5$aD" role="1NuT2Z">
+      <property role="TrG5h" value="selectedCell" />
+      <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
+      <node concept="1oajcY" id="6ndnYgP5$aE" role="1oa70y" />
+    </node>
+    <node concept="1DS2jV" id="6ndnYgP5$aF" role="1NuT2Z">
+      <property role="TrG5h" value="project" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="6ndnYgP5$aG" role="1oa70y" />
+    </node>
+    <node concept="tnohg" id="6ndnYgP5$aH" role="tncku">
+      <node concept="3clFbS" id="6ndnYgP5$aI" role="2VODD2">
+        <node concept="3clFbF" id="6ndnYgP5$aJ" role="3cqZAp">
+          <node concept="2OqwBi" id="6ndnYgP5$aK" role="3clFbG">
+            <node concept="2YIFZM" id="6ndnYgP5$aL" role="2Oq$k0">
+              <ref role="37wK5l" to="thjj:~FeatureUsageTracker.getInstance():com.intellij.featureStatistics.FeatureUsageTracker" resolve="getInstance" />
+              <ref role="1Pybhc" to="thjj:~FeatureUsageTracker" resolve="FeatureUsageTracker" />
+            </node>
+            <node concept="liA8E" id="6ndnYgP5$aM" role="2OqNvi">
+              <ref role="37wK5l" to="thjj:~FeatureUsageTracker.triggerFeatureUsed(java.lang.String):void" resolve="triggerFeatureUsed" />
+              <node concept="Xl_RD" id="6ndnYgP5$aN" role="37wK5m">
+                <property role="Xl_RC" value="navigation.gotoOverriddenMethod" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6ndnYgP5$aO" role="3cqZAp">
+          <node concept="3cpWsn" id="6ndnYgP5$aP" role="3cpWs9">
+            <property role="TrG5h" value="selectedCell" />
+            <node concept="3uibUv" id="6ndnYgP5$aQ" role="1tU5fm">
+              <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
+            </node>
+            <node concept="2OqwBi" id="6ndnYgP5$aR" role="33vP2m">
+              <node concept="2WthIp" id="6ndnYgP5$aS" role="2Oq$k0" />
+              <node concept="1DTwFV" id="6ndnYgP5$aT" role="2OqNvi">
+                <ref role="2WH_rO" node="6ndnYgP5$aD" resolve="selectedCell" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6ndnYgP5$aU" role="3cqZAp">
+          <node concept="3cpWsn" id="6ndnYgP5$aV" role="3cpWs9">
+            <property role="TrG5h" value="inputEvent" />
+            <node concept="3uibUv" id="6ndnYgP5$aW" role="1tU5fm">
+              <ref role="3uigEE" to="hyam:~InputEvent" resolve="InputEvent" />
+            </node>
+            <node concept="2OqwBi" id="6ndnYgP5$aX" role="33vP2m">
+              <node concept="liA8E" id="6ndnYgP5$aY" role="2OqNvi">
+                <ref role="37wK5l" to="qkt:~AnActionEvent.getInputEvent():java.awt.event.InputEvent" resolve="getInputEvent" />
+              </node>
+              <node concept="tl45R" id="6ndnYgP5$aZ" role="2Oq$k0" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6ndnYgP5$b0" role="3cqZAp">
+          <node concept="2YIFZM" id="6ndnYgP5$b1" role="3clFbG">
+            <ref role="37wK5l" to="7lvn:2rUHgdX3h9M" resolve="executeFinders" />
+            <ref role="1Pybhc" to="7lvn:2rUHgdX2_hC" resolve="GoToHelper" />
+            <node concept="2OqwBi" id="6ndnYgP5$b2" role="37wK5m">
+              <node concept="2WthIp" id="6ndnYgP5$b3" role="2Oq$k0" />
+              <node concept="3gHZIF" id="6ndnYgP5$b4" role="2OqNvi">
+                <ref role="2WH_rO" node="6ndnYgP5$a_" resolve="methodNode" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="6ndnYgP5$b5" role="37wK5m">
+              <node concept="2WthIp" id="6ndnYgP5$b6" role="2Oq$k0" />
+              <node concept="1DTwFV" id="6ndnYgP5$b7" role="2OqNvi">
+                <ref role="2WH_rO" node="6ndnYgP5$aF" resolve="project" />
+              </node>
+            </node>
+            <node concept="1ZiG2z" id="6ndnYgP5$b8" role="37wK5m">
+              <node concept="zAVLb" id="6ndnYgP5G2J" role="1ZiG2y">
+                <ref role="2$JaeB" to="tya3:6ndnYgP5nzx" resolve="OverriddenMethods" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="6ndnYgP5$ba" role="37wK5m">
+              <ref role="37wK5l" to="7lvn:1pHoCUayv$Z" resolve="getRelativePoint" />
+              <ref role="1Pybhc" to="7lvn:1pHoCUaw2wq" resolve="GoToContextMenuUtil" />
+              <node concept="37vLTw" id="6ndnYgP5$bb" role="37wK5m">
+                <ref role="3cqZAo" node="6ndnYgP5$aP" resolve="selectedCell" />
+              </node>
+              <node concept="37vLTw" id="6ndnYgP5$bc" role="37wK5m">
+                <ref role="3cqZAo" node="6ndnYgP5$aV" resolve="inputEvent" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2ScWuX" id="6ndnYgP5$bd" role="tmbBb">
+      <node concept="3clFbS" id="6ndnYgP5$be" role="2VODD2">
+        <node concept="3cpWs8" id="6ndnYgP5$bf" role="3cqZAp">
+          <node concept="3cpWsn" id="6ndnYgP5$bg" role="3cpWs9">
+            <property role="TrG5h" value="finder" />
+            <node concept="3uibUv" id="6ndnYgP5$bh" role="1tU5fm">
+              <ref role="3uigEE" to="b2d5:7aWSXuXO6mc" resolve="IInterfacedFinder" />
+            </node>
+            <node concept="1ZiG2z" id="6ndnYgP5$bi" role="33vP2m">
+              <node concept="zAVLb" id="6ndnYgP5Oc_" role="1ZiG2y">
+                <ref role="2$JaeB" to="tya3:6ndnYgP5nzx" resolve="OverriddenMethods" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6ndnYgP5$bk" role="3cqZAp">
+          <node concept="1Wc70l" id="6ndnYgP5$bl" role="3cqZAk">
+            <node concept="2OqwBi" id="6ndnYgP5$bm" role="3uHU7w">
+              <node concept="37vLTw" id="6ndnYgP5$bn" role="2Oq$k0">
+                <ref role="3cqZAo" node="6ndnYgP5$bg" resolve="finder" />
+              </node>
+              <node concept="liA8E" id="6ndnYgP5$bo" role="2OqNvi">
+                <ref role="37wK5l" to="b2d5:7aWSXuXO6mj" resolve="isApplicable" />
+                <node concept="2OqwBi" id="6ndnYgP5$bp" role="37wK5m">
+                  <node concept="2WthIp" id="6ndnYgP5$bq" role="2Oq$k0" />
+                  <node concept="3gHZIF" id="6ndnYgP5$br" role="2OqNvi">
+                    <ref role="2WH_rO" node="6ndnYgP5$a_" resolve="methodNode" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="6ndnYgP5$bs" role="3uHU7B">
+              <node concept="37vLTw" id="6ndnYgP5$bt" role="3uHU7B">
+                <ref role="3cqZAo" node="6ndnYgP5$bg" resolve="finder" />
+              </node>
+              <node concept="10Nm6u" id="6ndnYgP5$bu" role="3uHU7w" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

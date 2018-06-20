@@ -2341,7 +2341,7 @@
       </node>
     </node>
     <node concept="Zd509" id="5GUQLVLhjlB" role="Zd508">
-      <ref role="1bYAoF" node="2rUHgdX2EEL" resolve="GoToOverridenMethod" />
+      <ref role="1bYAoF" node="2rUHgdX2EEL" resolve="GoToOverridenClassMethod" />
       <node concept="pLAjd" id="5GUQLVLhjlC" role="Zd501">
         <property role="pLAjf" value="VK_U" />
         <property role="pLAjc" value="ctrl" />
@@ -15206,7 +15206,7 @@
     </node>
   </node>
   <node concept="sE7Ow" id="2rUHgdX2EEL">
-    <property role="TrG5h" value="GoToOverridenMethod" />
+    <property role="TrG5h" value="GoToOverridenClassMethod" />
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="overridemethod" />
     <property role="2uzpH1" value="Go to Overriden Method" />
@@ -15587,7 +15587,7 @@
                     <ref role="37wK5l" to="xygl:~Task$Modal.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,boolean)" resolve="Task.Modal" />
                     <node concept="2OqwBi" id="2rUHgdX2EGG" role="37wK5m">
                       <node concept="2WthIp" id="2rUHgdX2EGH" role="2Oq$k0">
-                        <ref role="32nkFo" node="2rUHgdX2EEL" resolve="GoToOverridenMethod" />
+                        <ref role="32nkFo" node="2rUHgdX2EEL" resolve="GoToOverridenClassMethod" />
                       </node>
                       <node concept="1DTwFV" id="2rUHgdX2EGI" role="2OqNvi">
                         <ref role="2WH_rO" node="2rUHgdX2EIi" resolve="project" />
@@ -15625,7 +15625,7 @@
                                     <node concept="37vLTI" id="2rUHgdX2EGX" role="3clFbG">
                                       <node concept="2OqwBi" id="2rUHgdX2EGY" role="37vLTx">
                                         <node concept="2WthIp" id="2rUHgdX2EGZ" role="2Oq$k0">
-                                          <ref role="32nkFo" node="2rUHgdX2EEL" resolve="GoToOverridenMethod" />
+                                          <ref role="32nkFo" node="2rUHgdX2EEL" resolve="GoToOverridenClassMethod" />
                                         </node>
                                         <node concept="2XshWL" id="2rUHgdX2EH0" role="2OqNvi">
                                           <ref role="2WH_rO" node="2rUHgdX2EFb" resolve="getOverridenMethod" />
@@ -15641,7 +15641,7 @@
                                       <node concept="2OqwBi" id="2rUHgdX2EH4" role="37vLTx">
                                         <node concept="2OqwBi" id="2rUHgdX2EH5" role="2Oq$k0">
                                           <node concept="2WthIp" id="2rUHgdX2EH6" role="2Oq$k0">
-                                            <ref role="32nkFo" node="2rUHgdX2EEL" resolve="GoToOverridenMethod" />
+                                            <ref role="32nkFo" node="2rUHgdX2EEL" resolve="GoToOverridenClassMethod" />
                                           </node>
                                           <node concept="2XshWL" id="2rUHgdX2EH7" role="2OqNvi">
                                             <ref role="2WH_rO" node="2rUHgdX2EEM" resolve="getInstanceMethodDeclaration" />
@@ -15674,7 +15674,7 @@
                                 </node>
                                 <node concept="2OqwBi" id="fHZXT_2tT" role="2Oq$k0">
                                   <node concept="2WthIp" id="fHZXT_2tW" role="2Oq$k0">
-                                    <ref role="32nkFo" node="2rUHgdX2EEL" resolve="GoToOverridenMethod" />
+                                    <ref role="32nkFo" node="2rUHgdX2EEL" resolve="GoToOverridenClassMethod" />
                                   </node>
                                   <node concept="1DTwFV" id="fHZXT_2tY" role="2OqNvi">
                                     <ref role="2WH_rO" node="2rUHgdX2EIe" resolve="editorContext" />
@@ -16426,7 +16426,7 @@
         <ref role="tCJdB" node="2rUHgdX3hA7" resolve="GoToOverridingClassMethod" />
       </node>
       <node concept="tCFHf" id="5GUQLVLhiok" role="ftvYc">
-        <ref role="tCJdB" node="2rUHgdX2EEL" resolve="GoToOverridenMethod" />
+        <ref role="tCJdB" node="2rUHgdX2EEL" resolve="GoToOverridenClassMethod" />
       </node>
       <node concept="tCFHf" id="5GUQLVLhiol" role="ftvYc">
         <ref role="tCJdB" node="2rUHgdX2EIy" resolve="GoToInheritedClassifier" />
