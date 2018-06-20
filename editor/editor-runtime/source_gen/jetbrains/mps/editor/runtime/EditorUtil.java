@@ -96,6 +96,9 @@ public class EditorUtil {
       public void actionPerformed(ActionEvent e) {
         Project project = ProjectHelper.toIdeaProject(context.getOperationContext().getProject());
         final VirtualFile chosenFile = FileChooser.chooseFile(descriptor, project, oldVFile);
+        if (chosenFile == null) {
+          return;
+        }
 
         final Wrappers._T<IFile> result = new Wrappers._T<IFile>(FileSystems.getDefault().getFile(chosenFile.getCanonicalPath()));
         if (result.value == null) {
