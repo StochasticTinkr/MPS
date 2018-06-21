@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
-import jetbrains.mps.core.aspects.behaviour.api.AbstractConceptLike.InterfaceConceptLike;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -26,13 +27,20 @@ import java.util.List;
  * @since 18.1
  */
 public final class SConceptC3StarMRO extends C3StarMethodResolutionOrder<_SAbstractConcept> {
+  private static final _SAbstractConcept BASECONCEPT_WRAP = _SAbstractConcept.wrap(SNodeUtil.concept_BaseConcept);
+
   @NotNull
   @Override
-  protected List<_SAbstractConcept> getImmediateParents(@NotNull _SAbstractConcept concept) {
-    List<_SAbstractConcept> immediateParents = super.getImmediateParents(concept);
-    if (concept instanceof InterfaceConceptLike) {
-      immediateParents.add(new _SConcept(SNodeUtil.concept_BaseConcept)); // a hack for the editor (interfaces are instances of base concept as well)
+  protected List<_SAbstractConcept> calcLinearization0(@NotNull _SAbstractConcept concept) {
+    if (concept.equals(BASECONCEPT_WRAP)) {
+      return Collections.singletonList(BASECONCEPT_WRAP);
     }
-    return immediateParents;
+    List<_SAbstractConcept> result = new ArrayList<>(super.calcLinearization0(concept));
+    assert result.size() > 0;
+    if (result.get(result.size() - 1).equals(BASECONCEPT_WRAP)) {
+      return result;
+    }
+    result.add(BASECONCEPT_WRAP); // a hack for the editor (interfaces are instances of base concept as well)
+    return Collections.unmodifiableList(result);
   }
 }

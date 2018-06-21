@@ -34,6 +34,7 @@ import java.util.List;
  * @author apyshkin
  */
 public abstract class AbstractC3StarMethodResolutionOrder<C extends AbstractConceptLike> extends CachingMethodResolutionOrder<C> {
+  @NotNull
   @Override
   protected List<C> calcLinearization0(@NotNull C concept) {
     List<List<C>> superLinearizations = new ArrayList<>();

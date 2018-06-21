@@ -55,6 +55,24 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
     throw new UnknownConceptException(concept);
   }
 
+  @Override
+  public String toString() {
+    return "Wrapper{myPeer=" + myPeer + "}";
+  }
+
+  @Override
+  public int hashCode() {
+    return myPeer.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o instanceof _SAbstractConcept) {
+      return myPeer.equals(((_SAbstractConcept) o).getPeer());
+    }
+    return false;
+  }
+
   @NotNull
   public static SAbstractConcept unwrap(@NotNull _SAbstractConcept wrapper) {
     return wrapper.getPeer();

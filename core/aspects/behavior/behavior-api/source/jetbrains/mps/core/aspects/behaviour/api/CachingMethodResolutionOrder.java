@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.core.aspects.behaviour.api;
 
-import jetbrains.mps.core.aspects.behaviour.api.AbstractConceptLike;
-import jetbrains.mps.core.aspects.behaviour.api.MethodResolutionOrder;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.annotations.ImmutableReturn;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -32,11 +31,12 @@ public abstract class CachingMethodResolutionOrder<C extends AbstractConceptLike
 
   @NotNull
   @Override
+  @ImmutableReturn
   public List<C> calcLinearization(@NotNull C concept) {
     if (myConcept2Linearization.containsKey(concept)) {
-      return Collections.unmodifiableList(myConcept2Linearization.get(concept));
+      return myConcept2Linearization.get(concept);
     }
-    List<C> linearization = calcLinearization0(concept);
+    @Immutable List<C> linearization = calcLinearization0(concept);
     myConcept2Linearization.putIfAbsent(concept, linearization);
     return linearization;
   }
@@ -45,6 +45,8 @@ public abstract class CachingMethodResolutionOrder<C extends AbstractConceptLike
    * we cache the result of this
    * @see MethodResolutionOrder#calcLinearization(AbstractConceptLike)
    */
+  @ImmutableReturn
+  @NotNull
   protected abstract List<C> calcLinearization0(@NotNull C concept);
 
   /**

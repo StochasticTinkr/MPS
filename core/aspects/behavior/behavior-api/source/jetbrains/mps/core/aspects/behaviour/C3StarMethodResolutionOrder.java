@@ -33,7 +33,7 @@ import java.util.List;
  */
 public class C3StarMethodResolutionOrder<C extends AbstractConceptLike> extends AbstractC3StarMethodResolutionOrder<C> {
   @NotNull
-  protected List<C> getImmediateParents(@NotNull C concept) {
+  protected final List<C> getImmediateParents(@NotNull C concept) {
     List<C> immediateParents = new ArrayList<>();
     if (concept instanceof InterfaceConceptLike) {
       immediateParents.addAll((List<C>) concept.getSuperInterfaces());
