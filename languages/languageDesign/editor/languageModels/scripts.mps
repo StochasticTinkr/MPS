@@ -13,6 +13,8 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpci" ref="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" />
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -76,6 +78,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
         <child id="1109201940907" name="parameter" index="11_B2D" />
@@ -87,6 +90,12 @@
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="5497648299878491908" name="jetbrains.mps.baseLanguage.structure.BaseVariableReference" flags="nn" index="1M0zk4">
         <reference id="5497648299878491909" name="baseVariableDeclaration" index="1M0zk5" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
@@ -136,6 +145,7 @@
       <concept id="1143224127713" name="jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation" flags="nn" index="HtX7F">
         <child id="1143224127716" name="insertedNode" index="HtX7I" />
       </concept>
+      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
@@ -147,6 +157,9 @@
       </concept>
       <concept id="1883223317721008713" name="jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable" flags="ng" index="JncvC" />
       <concept id="1883223317721107059" name="jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference" flags="nn" index="Jnkvi" />
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
+      </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1143511969223" name="jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation" flags="nn" index="YBYNd" />
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
@@ -192,6 +205,7 @@
         <reference id="7222148688691763792" name="finder" index="2$JaeB" />
       </concept>
       <concept id="2005690715325995353" name="jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults" flags="nn" index="zAVLd">
+        <child id="6366407517031970111" name="scope" index="2GiN3o" />
         <child id="6366407517031970110" name="queryNode" index="2GiN3p" />
         <child id="8150507060913099385" name="finder" index="1C5ry4" />
       </concept>
@@ -843,6 +857,55 @@
               </node>
             </node>
           </node>
+          <node concept="3SKdUt" id="MRN5EIcxIU" role="3cqZAp">
+            <node concept="3SKdUq" id="MRN5EIcxIW" role="3SKWNk">
+              <property role="3SKdUp" value="we need a scope with project modules (the script deals with modules in a project)." />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="MRN5EIcySy" role="3cqZAp">
+            <node concept="3SKdUq" id="MRN5EIcyS$" role="3SKWNk">
+              <property role="3SKdUp" value="I assume the node comes from a project module here. Since there's no RepositoryScope," />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="MRN5EIc$2e" role="3cqZAp">
+            <node concept="3SKdUq" id="MRN5EIc$2g" role="3SKWNk">
+              <property role="3SKdUp" value="I resort to GlobalScope that takes SRepository. I don't need to persist/re-run these find results" />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="MRN5EIc_cd" role="3cqZAp">
+            <node concept="3SKdUq" id="MRN5EIc_cf" role="3SKWNk">
+              <property role="3SKdUp" value="therefore I'm ok with a non-FindUsagesScope subclass." />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="MRN5EIcAmg" role="3cqZAp">
+            <node concept="3SKdUq" id="MRN5EIcAmi" role="3SKWNk">
+              <property role="3SKdUp" value="FIXME introduce a ProjectRepository, decide where to place if (tough part), use it here." />
+            </node>
+          </node>
+          <node concept="3cpWs8" id="MRN5EIcukp" role="3cqZAp">
+            <node concept="3cpWsn" id="MRN5EIcukq" role="3cpWs9">
+              <property role="TrG5h" value="projectRepository" />
+              <node concept="3uibUv" id="MRN5EIcuko" role="1tU5fm">
+                <ref role="3uigEE" to="z1c3:~GlobalScope" resolve="GlobalScope" />
+              </node>
+              <node concept="2ShNRf" id="MRN5EIcukr" role="33vP2m">
+                <node concept="1pGfFk" id="MRN5EIcuks" role="2ShVmc">
+                  <ref role="37wK5l" to="z1c3:~GlobalScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="GlobalScope" />
+                  <node concept="2OqwBi" id="MRN5EIcukt" role="37wK5m">
+                    <node concept="2JrnkZ" id="MRN5EIcuku" role="2Oq$k0">
+                      <node concept="2OqwBi" id="MRN5EIcukv" role="2JrQYb">
+                        <node concept="_YI3z" id="MRN5EIcukw" role="2Oq$k0" />
+                        <node concept="I4A8Y" id="MRN5EIcukx" role="2OqNvi" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="MRN5EIcuky" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3cpWs8" id="4KyLNUL_eJy" role="3cqZAp">
             <node concept="3cpWsn" id="4KyLNUL_eJz" role="3cpWs9">
               <property role="TrG5h" value="results" />
@@ -856,6 +919,9 @@
                 </node>
                 <node concept="zAVLb" id="4KyLNUL_23R" role="1C5ry4">
                   <ref role="2$JaeB" to="tpci:hroFk9u" resolve="NodeUsages" />
+                </node>
+                <node concept="37vLTw" id="MRN5EIcukz" role="2GiN3o">
+                  <ref role="3cqZAo" node="MRN5EIcukq" resolve="projectRepository" />
                 </node>
               </node>
             </node>

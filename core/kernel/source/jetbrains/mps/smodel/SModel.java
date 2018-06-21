@@ -17,8 +17,10 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
+import jetbrains.mps.extapi.model.SModelDescriptorStub;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.event.ModelEventDispatch;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelImportEvent;
@@ -60,8 +62,23 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * An internal model implementation which (!) does not implement the {@link org.jetbrains.mps.openapi.model.SModel}.
- * Instead the SModel implementations such as {@link}
+ * A general {@link SModelData model data} implementation which (!) does not implement
+ * {@link org.jetbrains.mps.openapi.model.SModel}. For {@link org.jetbrains.mps.openapi.model.SModel openapi.SModel}
+ * implementations see subclasses of {@link SModelBase}.
+ * <p>
+ * This is all-purpose model data implementation designed to back up an API representative aka 'model descriptor'.
+ * Can work with any {@link org.jetbrains.mps.openapi.model.SModel openapi.SModel} descriptor, although be careful
+ * to use proper {@link #setModelDescriptor(org.jetbrains.mps.openapi.model.SModel, ModelEventDispatch)} method to
+ * make sure node events get dispatched with proper model descriptor.
+ * </p>
+ * <p>
+ * Generally, it is pure storage and shall not dispatch events, though still does this for legacy {@link SModelListener} events.
+ * Note, it does that only in case associated model descriptor is {@link jetbrains.mps.extapi.model.SModelDescriptorStub}.
+ * </p>
+ * <p>
+ * There's no synchronization nor {@link org.jetbrains.mps.openapi.module.ModelAccess model access} control, it's left up to
+ * discretion of a holding model descriptor.
+ * </p>
  */
 public class SModel implements SModelData, UpdateModeSupport {
   private static final Logger LOG = LogManager.getLogger(SModel.class);
@@ -71,7 +88,7 @@ public class SModel implements SModelData, UpdateModeSupport {
     resetIdCounter();
   }
 
-  protected SModelBase myModelDescriptor;
+  private org.jetbrains.mps.openapi.model.SModel myModelDescriptor;
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
   private SModelReference myReference;
   private boolean myDisposed;
@@ -270,31 +287,34 @@ public class SModel implements SModelData, UpdateModeSupport {
     return myDisposedStacktrace;
   }
 
-  @Deprecated
-  public void addModelListener(@NotNull SModelListener listener) {
-    getModelDescriptor().addModelListener(listener);
-  }
-
-  @Deprecated
-  public void removeModelListener(@NotNull SModelListener listener) {
-    getModelDescriptor().removeModelListener(listener);
-  }
-
-  /**
-   * FIXME it looks we can use openapi.SModel as return value now (i.e. not to restrain to SModelBase use)
-   */
-  public SModelBase getModelDescriptor() {
+  public final org.jetbrains.mps.openapi.model.SModel getModelDescriptor() {
     return myModelDescriptor;
   }
 
+  /**
+   * @deprecated assumes use of SModelBase implementation, prefer general {@link #setModelDescriptor(org.jetbrains.mps.openapi.model.SModel, ModelEventDispatch)}.
+   * @param modelDescriptor if {@link SModelBase}, node event notification dispatch (see {@link SModelBase#getNodeEventDispatch()} is initialized as well.
+   */
   // FIXME (1) synchronized, really? (2) do we really care to have SModelBase here? (3) if yes, why it's not argument type?
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public synchronized void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
     if (myModelDescriptor == modelDescriptor) {
       // just to guard against accidental second assignment
       return;
     }
-    myModelDescriptor = ((SModelBase) modelDescriptor);
-    myNodeOwner.setEventDispatch(modelDescriptor == null ? null : myModelDescriptor.getNodeEventDispatch());
+    setModelDescriptor(modelDescriptor, modelDescriptor instanceof SModelBase ? ((SModelBase) modelDescriptor).getNodeEventDispatch() : null);
+  }
+
+  /**
+   * Tells this model data implementation is bound to specific model descriptor and uses a supplied mechanism to dispatch events.
+   * This method is intended for use by {@link org.jetbrains.mps.openapi.model.SModel model descriptor} implementations only.
+   * @param modelDescriptor
+   * @param eventDispatch generally, non-null value makes sense only when {@code modelDescriptor} is not null as well.
+   */
+  public void setModelDescriptor(@Nullable org.jetbrains.mps.openapi.model.SModel modelDescriptor, @Nullable ModelEventDispatch eventDispatch) {
+    myModelDescriptor = modelDescriptor;
+    myNodeOwner.setEventDispatch(eventDispatch);
   }
 
   protected void enforceFullLoad() {
@@ -336,12 +356,20 @@ public class SModel implements SModelData, UpdateModeSupport {
     return canFireEvent();
   }
 
+  /**
+   * Make this SModelData unusable, free references to nodes hold to get them available to GC.
+   * Doesn't dispatch any event (it's responsibility of openapi.SModel impl).
+   * Disconnects from openapi.SModel descriptor, if any.
+   * XXX At the moment, doesn't change owner of nodes to DetachedNodeOwner, though it seems it should.
+   *     The only objection is that doing so would trigger a lot of unregister events we don't really care to get.
+   */
   public void dispose() {
     if (myDisposed) {
       return;
     }
 
     myDisposed = true;
+    setModelDescriptor(null, null);
     myDisposedStacktrace = new Throwable().getStackTrace();
     myIdToNodeMap = null;
     myRoots.clear();
@@ -358,10 +386,10 @@ public class SModel implements SModelData, UpdateModeSupport {
   }
 
   private List<SModelListener> getModelListeners() {
-    if (myModelDescriptor == null) {
-      return Collections.emptyList();
+    if (myModelDescriptor instanceof SModelDescriptorStub) {
+      return ((SModelDescriptorStub) myModelDescriptor).getModelListeners();
     }
-    return myModelDescriptor.getModelListeners();
+    return Collections.emptyList();
   }
 
   private void fireDevKitAddedEvent(@NotNull SModuleReference ref) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Reference;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -61,10 +60,8 @@ public class DefaultCellInfo implements CellInfo {
   }
 
   private void initNodeReference(EditorCell cell) {
-    ModelAccess.instance().runReadAction(() -> {
-      SNode sNode = cell.getSNode();
-      myNodeReference = sNode == null ? null : sNode.getReference();
-    });
+    SNode sNode = cell.getSNode();
+    myNodeReference = sNode == null ? null : sNode.getReference();
   }
 
   private void initParentInfo(EditorCell cell) {

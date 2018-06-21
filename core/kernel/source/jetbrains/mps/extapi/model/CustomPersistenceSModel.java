@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,7 +71,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
         oldState = getLoadingState();
         if (myModel == null) {
           myModel = loadSModel();
-          myModel.setModelDescriptor(this);
+          myModel.setModelDescriptor(this, getNodeEventDispatch());
           setLoadingState(ModelLoadingState.FULLY_LOADED);
         }
       }
@@ -133,9 +133,8 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
 
     final SModel oldModel = myModel;
     myModel = loadSModel();
-    oldModel.setModelDescriptor(null);
-    myModel.setModelDescriptor(this);
     oldModel.dispose();
+    myModel.setModelDescriptor(this, getNodeEventDispatch());
     setChanged(false);
 
     // XXX loadSModel() doesn't change loading state (though it's wrong, as reload might load empty model)
@@ -145,7 +144,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
 
   @Override
   protected boolean saveModel() throws ModelSaveException, IOException {
-    SModel smodel = getSModel();
+    SModelData smodel = getModelData();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
@@ -161,8 +160,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
       IFile brokenFile = getBackupFile(false);
       try {
         PersistenceFacade.getInstance().getDefaultModelFactory().save(this, new FileDataSource(brokenFile, null));
-      } catch (ModelSaveException ignore) {
-      } catch (IOException ignore) {
+      } catch (ModelSaveException | IOException ignore) {
       }
       myProblems = e.getProblems();
       throw e;

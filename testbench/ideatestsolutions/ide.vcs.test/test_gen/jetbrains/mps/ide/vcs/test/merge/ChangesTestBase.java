@@ -17,6 +17,8 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import java.io.File;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.ide.platform.watching.ReloadManager;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import org.junit.Assume;
 import com.intellij.openapi.vcs.VcsShowConfirmationOption;
@@ -36,7 +38,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -104,7 +105,7 @@ public abstract class ChangesTestBase implements EnvironmentAware {
 
     myIdeaProject = ourProject.getProject();
     CurrentDifferenceRegistry.getInstance(myIdeaProject).getCommandQueue().setHadExceptions(false);
-    myWaitHelper = new ChangesManagerTestWaitHelper(myIdeaProject);
+    myWaitHelper = new ChangesManagerTestWaitHelper(myIdeaProject, ApplicationManager.getApplication().getComponent(ReloadManager.class));
     myWaitHelper.waitForChangesManager();
 
     myGitVcs = AllVcses.getInstance(myIdeaProject).getByName("Git");
@@ -197,7 +198,7 @@ public abstract class ChangesTestBase implements EnvironmentAware {
     });
     // wait while statuses update 
     myWaitHelper.waitForChangesManager();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ourProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         ListSequence.fromList(SModelOperations.roots(model, null)).visitAll(new IVisitor<SNode>() {
           public void visit(final SNode r) {

@@ -17,6 +17,7 @@
     <import index="k3nr" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.ide.editor(MPS.Editor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="kpve" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.message(MPS.Editor/)" />
+    <import index="zdap" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util.text(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -340,12 +341,16 @@
                 </node>
                 <node concept="liA8E" id="6G33IkaAPCq" role="2OqNvi">
                   <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                  <node concept="2OqwBi" id="6G33IkaAPCr" role="37wK5m">
-                    <node concept="37vLTw" id="3GM_nagTtnJ" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6G33IkaAPCK" resolve="message" />
-                    </node>
-                    <node concept="liA8E" id="6G33IkaAPCt" role="2OqNvi">
-                      <ref role="37wK5l" to="kpve:~SimpleEditorMessage.getMessage():java.lang.String" resolve="getMessage" />
+                  <node concept="2YIFZM" id="2itmi5iAtwd" role="37wK5m">
+                    <ref role="37wK5l" to="zdap:~StringUtil.escapeXml(java.lang.String):java.lang.String" resolve="escapeXml" />
+                    <ref role="1Pybhc" to="zdap:~StringUtil" resolve="StringUtil" />
+                    <node concept="2OqwBi" id="6G33IkaAPCr" role="37wK5m">
+                      <node concept="37vLTw" id="3GM_nagTtnJ" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6G33IkaAPCK" resolve="message" />
+                      </node>
+                      <node concept="liA8E" id="6G33IkaAPCt" role="2OqNvi">
+                        <ref role="37wK5l" to="kpve:~SimpleEditorMessage.getMessage():java.lang.String" resolve="getMessage" />
+                      </node>
                     </node>
                   </node>
                 </node>

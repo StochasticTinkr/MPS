@@ -9,7 +9,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
@@ -230,9 +230,10 @@
       </concept>
       <concept id="1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" flags="nn" index="1iwH7S" />
     </language>
-    <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
-      <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
-        <child id="1196350785114" name="quotedNode" index="2c44tc" />
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
+        <reference id="7256306938026143658" name="target" index="2aWVGs" />
+        <child id="7256306938026143676" name="child" index="2aWVGa" />
       </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
@@ -257,6 +258,9 @@
       </concept>
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
+      </concept>
+      <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
+        <child id="7400021826774799510" name="ref" index="2tJFKM" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -1369,15 +1373,15 @@
                     </node>
                     <node concept="3clFbS" id="6$pyvmK_iKe" role="3clFbx">
                       <node concept="3cpWs6" id="6$pyvmK_iMe" role="3cqZAp">
-                        <node concept="2OqwBi" id="2DTSamXFggw" role="3cqZAk">
-                          <node concept="2c44tf" id="6$pyvmK_iMg" role="2Oq$k0">
-                            <node concept="Rm8GO" id="1AK8hIRu91p" role="2c44tc">
-                              <ref role="Rm8GQ" to="ge2m:4a0HOMfn9yM" resolve="NODE" />
-                              <ref role="1Px2BO" to="ge2m:4a0HOMfn8wY" resolve="IRefactoringTarget.TargetType" />
+                        <node concept="2tJFMh" id="3XR0QgVCmYR" role="3cqZAk">
+                          <node concept="ZC_QK" id="3XR0QgVCmYQ" role="2tJFKM">
+                            <ref role="2aWVGs" to="ge2m:4a0HOMfn9yJ" resolve="IRefactoringTarget" />
+                            <node concept="ZC_QK" id="3XR0QgVCmYP" role="2aWVGa">
+                              <ref role="2aWVGs" to="ge2m:4a0HOMfn8wY" resolve="IRefactoringTarget.TargetType" />
+                              <node concept="ZC_QK" id="3XR0QgVCmYO" role="2aWVGa">
+                                <ref role="2aWVGs" to="ge2m:4a0HOMfn9yM" resolve="NODE" />
+                              </node>
                             </node>
-                          </node>
-                          <node concept="3TrEf2" id="2DTSamXFgg_" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:fKRm8Ja" resolve="enumConstantDeclaration" />
                           </node>
                         </node>
                       </node>
@@ -1385,15 +1389,15 @@
                     <node concept="3eNFk2" id="6$pyvmK_iMB" role="3eNLev">
                       <node concept="3clFbS" id="6$pyvmK_iMD" role="3eOfB_">
                         <node concept="3cpWs6" id="6$pyvmK_iMT" role="3cqZAp">
-                          <node concept="2OqwBi" id="6$pyvmK_iMU" role="3cqZAk">
-                            <node concept="2c44tf" id="6$pyvmK_iMV" role="2Oq$k0">
-                              <node concept="Rm8GO" id="1AK8hIRu91q" role="2c44tc">
-                                <ref role="Rm8GQ" to="ge2m:4a0HOMfn9yN" resolve="MODEL" />
-                                <ref role="1Px2BO" to="ge2m:4a0HOMfn8wY" resolve="IRefactoringTarget.TargetType" />
+                          <node concept="2tJFMh" id="3XR0QgVCmYV" role="3cqZAk">
+                            <node concept="ZC_QK" id="3XR0QgVCmYU" role="2tJFKM">
+                              <ref role="2aWVGs" to="ge2m:4a0HOMfn9yJ" resolve="IRefactoringTarget" />
+                              <node concept="ZC_QK" id="3XR0QgVCmYT" role="2aWVGa">
+                                <ref role="2aWVGs" to="ge2m:4a0HOMfn8wY" resolve="IRefactoringTarget.TargetType" />
+                                <node concept="ZC_QK" id="3XR0QgVCmYS" role="2aWVGa">
+                                  <ref role="2aWVGs" to="ge2m:4a0HOMfn9yN" resolve="MODEL" />
+                                </node>
                               </node>
-                            </node>
-                            <node concept="3TrEf2" id="6$pyvmK_iMX" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpee:fKRm8Ja" resolve="enumConstantDeclaration" />
                             </node>
                           </node>
                         </node>
@@ -1410,15 +1414,15 @@
                     <node concept="3eNFk2" id="6$pyvmK_iME" role="3eNLev">
                       <node concept="3clFbS" id="6$pyvmK_iMG" role="3eOfB_">
                         <node concept="3cpWs6" id="6$pyvmK_iMY" role="3cqZAp">
-                          <node concept="2OqwBi" id="6$pyvmK_iMZ" role="3cqZAk">
-                            <node concept="2c44tf" id="6$pyvmK_iN0" role="2Oq$k0">
-                              <node concept="Rm8GO" id="1AK8hIRu91r" role="2c44tc">
-                                <ref role="Rm8GQ" to="ge2m:4a0HOMfn9yO" resolve="MODULE" />
-                                <ref role="1Px2BO" to="ge2m:4a0HOMfn8wY" resolve="IRefactoringTarget.TargetType" />
+                          <node concept="2tJFMh" id="3XR0QgVCmYZ" role="3cqZAk">
+                            <node concept="ZC_QK" id="3XR0QgVCmYY" role="2tJFKM">
+                              <ref role="2aWVGs" to="ge2m:4a0HOMfn9yJ" resolve="IRefactoringTarget" />
+                              <node concept="ZC_QK" id="3XR0QgVCmYX" role="2aWVGa">
+                                <ref role="2aWVGs" to="ge2m:4a0HOMfn8wY" resolve="IRefactoringTarget.TargetType" />
+                                <node concept="ZC_QK" id="3XR0QgVCmYW" role="2aWVGa">
+                                  <ref role="2aWVGs" to="ge2m:4a0HOMfn9yO" resolve="MODULE" />
+                                </node>
                               </node>
-                            </node>
-                            <node concept="3TrEf2" id="6$pyvmK_iN2" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpee:fKRm8Ja" resolve="enumConstantDeclaration" />
                             </node>
                           </node>
                         </node>

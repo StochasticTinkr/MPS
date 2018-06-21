@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,22 +16,10 @@
 package jetbrains.mps.excluded;
 
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.ProjectPathUtil;
-import jetbrains.mps.project.facets.TestsFacetImpl;
-import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
-import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -90,77 +78,6 @@ public class Utils {
     return files;
   }
 
-  public static MultiMap<String, String> collectMPSCompiledModulesInfo(File... dirs) {
-    try {
-      MultiMap<String, String> result = new MultiMap<String, String>();
-      for (File dir : dirs) {
-        collectMPSCompiledModulesInfoRecursively(dir, result);
-      }
-      return result;
-    } catch (RuntimeException ex) {
-      throw ex;
-    } catch (Exception ex) {
-      throw new RuntimeException(ex);
-    }
-  }
-
-  private static void collectMPSCompiledModulesInfoRecursively(File dir, MultiMap<String, String> result) throws Exception {
-    for (File child : dir.listFiles()) {
-      if (child.isDirectory()) {
-        collectMPSCompiledModulesInfoRecursively(child, result);
-        continue;
-      }
-
-      boolean solution = child.getName().endsWith(MPSExtentions.DOT_SOLUTION);
-      boolean language = child.getName().endsWith(MPSExtentions.DOT_LANGUAGE);
-      if (!(solution || language)) {
-        continue;
-      }
-
-      final IFile moduleIFile = IoFileSystem.INSTANCE.getFile(child.getAbsolutePath());
-      IFile moduleDir = moduleIFile.getParent();
-      // XXX what's the reason for custom MyMacroHelper, why not MacrosFactory.forModuleFile()
-      MacroHelper expander = new MyMacroHelper(moduleIFile);
-
-      Document document = JDOMUtil.loadDocument(child);
-      Element rootElement = document.getRootElement();
-
-      if (solution) {
-        SolutionDescriptor sd = new SolutionDescriptorPersistence(expander).load(rootElement);
-        if (!sd.getCompileInMPS()) {
-          continue;
-        }
-
-        String srcPath = ProjectPathUtil.getGeneratorOutputPath(sd);
-        result.putValue(getCanonicalPath(moduleDir.getPath()), getCanonicalPath(srcPath));
-        String testPath = TestsFacetImpl.getTestsOutputPath(sd, moduleIFile).getPath();
-        result.putValue(getCanonicalPath(moduleDir.getPath()), getCanonicalPath(testPath));
-      } else {
-        LanguageDescriptor ld = new LanguageDescriptorPersistence(expander).load(rootElement);
-        String srcPath = ProjectPathUtil.getGeneratorOutputPath(ld);
-        result.putValue(getCanonicalPath(moduleDir.getPath()), getCanonicalPath(srcPath));
-        // currently same getGeneratorOutputPath used for all generators, so generatorSrcPath will be the same for
-        // all generators in the language. Using only first one for now.
-        boolean generatorAdded = false;
-        for (GeneratorDescriptor generator : ld.getGenerators()) {
-          // FIXME (1) just break as the last statement would be better
-          //       (2) caller doesn't care about map keys. what we need here is *set* for values, so that if there's the same path for few
-          //           generators, we get it only once in the return map
-          if (generatorAdded) {
-            break;
-          }
-          String generatorSrcPath = ProjectPathUtil.getGeneratorOutputPath(generator);
-          result.putValue(getCanonicalPath(moduleDir.getPath() + "/generator"), getCanonicalPath(generatorSrcPath));
-          generatorAdded = true;
-        }
-      }
-    }
-  }
-
-  private static String getCanonicalPath(String path) {
-    return FileUtil.getCanonicalPath(path);
-  }
-
   public static File root() {
     return new File(".");
   }
@@ -191,7 +108,7 @@ public class Utils {
     return result;
   }
 
-  private static class MyMacroHelper implements MacroHelper {
+  static class MyMacroHelper implements MacroHelper {
     private final IFile myModuleIFile;
 
     public MyMacroHelper(IFile moduleIFile) {

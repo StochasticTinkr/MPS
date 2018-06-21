@@ -59,6 +59,10 @@ public class ProjectHelper {
     return null;
   }
 
+  /**
+   * Can return null at least for default project in case if the corresponding project component
+   * is not configured as loadForDefaultProject in its plugin descriptor file.
+   */
   @Nullable
   public static MPSProject fromIdeaProject(com.intellij.openapi.project.Project p) {
     if (p != null) {
@@ -67,6 +71,9 @@ public class ProjectHelper {
     return null;
   }
 
+  /**
+   * See {@link ProjectHelper#fromIdeaProject(com.intellij.openapi.project.Project)} for nullability condition
+   */
   @Nullable
   public static SRepository getProjectRepository(com.intellij.openapi.project.Project p) {
     if (p != null) {
@@ -78,6 +85,9 @@ public class ProjectHelper {
     return null;
   }
 
+  /**
+   * See {@link ProjectHelper#fromIdeaProject(com.intellij.openapi.project.Project)} for nullability condition
+   */
   @Nullable
   public static ModelAccess getModelAccess(com.intellij.openapi.project.Project p) {
     SRepository repository = getProjectRepository(p);

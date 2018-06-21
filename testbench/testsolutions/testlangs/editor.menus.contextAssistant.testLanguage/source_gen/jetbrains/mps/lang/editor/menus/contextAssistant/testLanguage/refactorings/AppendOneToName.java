@@ -18,6 +18,6 @@ public class AppendOneToName extends BaseRefactoring {
     return "Append 1 to name";
   }
   public void refactor(final RefactoringContext refactoringContext) {
-    SPropertyOperations.set(refactoringContext.getSelectedNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString_def(refactoringContext.getSelectedNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "") + "1");
+    SPropertyOperations.assign(refactoringContext.getSelectedNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString_def(refactoringContext.getSelectedNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "") + "1");
   }
 }

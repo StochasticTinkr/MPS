@@ -9,12 +9,26 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
+        <property id="6054523464626875854" name="value" index="tnX3d" />
+      </concept>
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
+      </concept>
+      <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
+        <property id="1212080844762" name="hasNoDefaultMember" index="PDuV0" />
+        <property id="1197591154882" name="memberIdentifierPolicy" index="3lZH7k" />
+        <reference id="1083171729157" name="memberDataType" index="M4eZT" />
+        <child id="1083172003582" name="member" index="M5hS2" />
+      </concept>
+      <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
+        <property id="1083923523172" name="externalValue" index="1uS6qo" />
+        <property id="1083923523171" name="internalValue" index="1uS6qv" />
       </concept>
       <concept id="2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" flags="ng" index="M6xJ_">
         <property id="7588428831955550663" name="role" index="Hh88m" />
         <child id="7588428831947959310" name="attributed" index="EQaZv" />
+        <child id="7588428831955550186" name="multiple" index="HhnKV" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
@@ -122,9 +136,23 @@
     <node concept="1TJgyj" id="7Nx4mSUDsRz" role="1TKVEi">
       <property role="IQ2ns" value="8998492695590981091" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="smartReference" />
+      <property role="20kJfa" value="smartReferenceWithMenu" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7Nx4mSUrV2Y" resolve="TestSubstituteChild" />
+    </node>
+    <node concept="1TJgyj" id="6szUVE$$bRC" role="1TKVEi">
+      <property role="IQ2ns" value="7432042996948844008" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="smartReferenceWithoutMenu" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="6szUVE$$bRA" resolve="TestSubstituteSmartRef_WithoutExplicitMenu" />
+    </node>
+    <node concept="1TJgyj" id="6szUVE$AZw4" role="1TKVEi">
+      <property role="IQ2ns" value="7432042996949579780" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="smartReferenceWithoutMenuSubconcept" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="6szUVE$$bRA" resolve="TestSubstituteSmartRef_WithoutExplicitMenu" />
     </node>
     <node concept="1TJgyj" id="7Nx4mSUsh9l" role="1TKVEi">
       <property role="IQ2ns" value="8998492695587525205" />
@@ -235,28 +263,28 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="ambigousSameConcepts" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="7XjOxAidktF" resolve="TestSubstitituteAbstractChildAmbigousPosition" />
+      <ref role="20lvS9" node="7XjOxAidktF" resolve="TestSubstituteAbstractChildAmbigousPosition" />
     </node>
     <node concept="1TJgyj" id="7XjOxAid$fs" role="1TKVEi">
       <property role="IQ2ns" value="9174907873152877532" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="ambigousWrapSameConcepts" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="7XjOxAidktF" resolve="TestSubstitituteAbstractChildAmbigousPosition" />
+      <ref role="20lvS9" node="7XjOxAidktF" resolve="TestSubstituteAbstractChildAmbigousPosition" />
     </node>
     <node concept="1TJgyj" id="7XjOxAie6ag" role="1TKVEi">
       <property role="IQ2ns" value="9174907873153016464" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="ambigousDifferentConcepts" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="7XjOxAidktF" resolve="TestSubstitituteAbstractChildAmbigousPosition" />
+      <ref role="20lvS9" node="7XjOxAidktF" resolve="TestSubstituteAbstractChildAmbigousPosition" />
     </node>
     <node concept="1TJgyj" id="7XjOxAie6aJ" role="1TKVEi">
       <property role="IQ2ns" value="9174907873153016495" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="ambigousWrapDifferentConcepts" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="7XjOxAidktF" resolve="TestSubstitituteAbstractChildAmbigousPosition" />
+      <ref role="20lvS9" node="7XjOxAidktF" resolve="TestSubstituteAbstractChildAmbigousPosition" />
     </node>
   </node>
   <node concept="1TIwiD" id="7Nx4mSUrV2Y">
@@ -291,7 +319,7 @@
   </node>
   <node concept="1TIwiD" id="7Nx4mSUrZaI">
     <property role="EcuMT" value="8998492695587451566" />
-    <property role="TrG5h" value="TestSubstituteSubChildSmartReference" />
+    <property role="TrG5h" value="TestSubstituteSubChildSmartReference_WithMenu" />
     <ref role="1TJDcQ" node="7Nx4mSUrV2Y" resolve="TestSubstituteChild" />
     <node concept="1TJgyj" id="7Nx4mSUDA8y" role="1TKVEi">
       <property role="IQ2ns" value="8998492695591019042" />
@@ -320,6 +348,13 @@
       <property role="20kJfa" value="children" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
+    <node concept="1TJgyj" id="6szUVE$_EN7" role="1TKVEi">
+      <property role="IQ2ns" value="7432042996949232839" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childrenSubconcept" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="6szUVE$_m2m" resolve="TestSubstituteChildToReferenceSubconcept" />
     </node>
     <node concept="PrWs8" id="7Nx4mSUDWtE" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -396,7 +431,7 @@
   </node>
   <node concept="1TIwiD" id="7XjOxAidktF">
     <property role="EcuMT" value="9174907873152812907" />
-    <property role="TrG5h" value="TestSubstitituteAbstractChildAmbigousPosition" />
+    <property role="TrG5h" value="TestSubstituteAbstractChildAmbigousPosition" />
     <property role="R5$K7" value="true" />
     <property role="34LRSv" value="ambigous" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -404,7 +439,7 @@
       <property role="IQ2ns" value="9174907873152872229" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="subchild" />
-      <ref role="20lvS9" node="7XjOxAidyWy" resolve="TestSubstitituteAbstractSubChildAmbigousPosition" />
+      <ref role="20lvS9" node="7XjOxAidyWy" resolve="TestSubstituteAbstractSubChildAmbigousPosition" />
     </node>
   </node>
   <node concept="1TIwiD" id="7v1E5Mv$btr">
@@ -494,7 +529,7 @@
   </node>
   <node concept="1TIwiD" id="7XjOxAidyWy">
     <property role="EcuMT" value="9174907873152872226" />
-    <property role="TrG5h" value="TestSubstitituteAbstractSubChildAmbigousPosition" />
+    <property role="TrG5h" value="TestSubstituteAbstractSubChildAmbigousPosition" />
     <property role="R5$K7" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
@@ -543,10 +578,10 @@
   </node>
   <node concept="1TIwiD" id="7XjOxAie6Go">
     <property role="EcuMT" value="9174907873153018648" />
-    <property role="TrG5h" value="TestSubstitituteSubChildAmbigousPosition1" />
+    <property role="TrG5h" value="TestSubstituteSubChildAmbigousPosition1" />
     <property role="R5$K7" value="false" />
     <property role="34LRSv" value="subambigous" />
-    <ref role="1TJDcQ" node="7XjOxAidyWy" resolve="TestSubstitituteAbstractSubChildAmbigousPosition" />
+    <ref role="1TJDcQ" node="7XjOxAidyWy" resolve="TestSubstituteAbstractSubChildAmbigousPosition" />
   </node>
   <node concept="1TIwiD" id="B8RBnMN6Uq">
     <property role="EcuMT" value="705057939849506458" />
@@ -593,17 +628,17 @@
   </node>
   <node concept="1TIwiD" id="7XjOxAie6Gp">
     <property role="EcuMT" value="9174907873153018649" />
-    <property role="TrG5h" value="TestSubstitituteSubChildAmbigousPosition2" />
+    <property role="TrG5h" value="TestSubstituteSubChildAmbigousPosition2" />
     <property role="R5$K7" value="false" />
     <property role="34LRSv" value="subambigous" />
-    <ref role="1TJDcQ" node="7XjOxAidyWy" resolve="TestSubstitituteAbstractSubChildAmbigousPosition" />
+    <ref role="1TJDcQ" node="7XjOxAidyWy" resolve="TestSubstituteAbstractSubChildAmbigousPosition" />
   </node>
   <node concept="1TIwiD" id="7XjOxAidSJc">
     <property role="EcuMT" value="9174907873152961484" />
-    <property role="TrG5h" value="TestSubstitituteChildAmbigousPosition1" />
+    <property role="TrG5h" value="TestSubstituteChildAmbigousPosition1" />
     <property role="R5$K7" value="false" />
     <property role="34LRSv" value="ambigous" />
-    <ref role="1TJDcQ" node="7XjOxAidktF" resolve="TestSubstitituteAbstractChildAmbigousPosition" />
+    <ref role="1TJDcQ" node="7XjOxAidktF" resolve="TestSubstituteAbstractChildAmbigousPosition" />
   </node>
   <node concept="1TIwiD" id="B8RBnMOQFr">
     <property role="EcuMT" value="705057939849964251" />
@@ -624,33 +659,33 @@
   </node>
   <node concept="1TIwiD" id="7XjOxAidSY3">
     <property role="EcuMT" value="9174907873152962435" />
-    <property role="TrG5h" value="TestSubstitituteChildAmbigousPosition2" />
+    <property role="TrG5h" value="TestSubstituteChildAmbigousPosition2" />
     <property role="R5$K7" value="false" />
     <property role="34LRSv" value="ambigous" />
-    <ref role="1TJDcQ" node="7XjOxAidktF" resolve="TestSubstitituteAbstractChildAmbigousPosition" />
+    <ref role="1TJDcQ" node="7XjOxAidktF" resolve="TestSubstituteAbstractChildAmbigousPosition" />
   </node>
   <node concept="1TIwiD" id="40hlyoZWOsc">
     <property role="EcuMT" value="4616565815313123084" />
-    <property role="TrG5h" value="TestSubstitituteChildOfWrapper" />
+    <property role="TrG5h" value="TestSubstituteChildOfWrapper" />
     <property role="3GE5qa" value="wrappers" />
     <property role="34LRSv" value="test substitute child of wrapper" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="40hlyoZWJTc">
     <property role="EcuMT" value="4616565815313104460" />
-    <property role="TrG5h" value="TestSubstitituteParentOfWrapper" />
+    <property role="TrG5h" value="TestSubstituteParentOfWrapper" />
     <property role="3GE5qa" value="wrappers" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="40hlyoZWOsd" role="1TKVEi">
       <property role="IQ2ns" value="4616565815313123085" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="wrapper" />
-      <ref role="20lvS9" node="40hlyoZWOsb" resolve="TestSubstitituteWrapper" />
+      <ref role="20lvS9" node="40hlyoZWOsb" resolve="TestSubstituteWrapper" />
     </node>
   </node>
   <node concept="1TIwiD" id="40hlyoZWOsb">
     <property role="EcuMT" value="4616565815313123083" />
-    <property role="TrG5h" value="TestSubstitituteWrapper" />
+    <property role="TrG5h" value="TestSubstituteWrapper" />
     <property role="3GE5qa" value="wrappers" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5aIBqVWL5K0" role="1TKVEl">
@@ -672,7 +707,7 @@
       <property role="IQ2ns" value="4616565815313123087" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="child" />
-      <ref role="20lvS9" node="40hlyoZWOsc" resolve="TestSubstitituteChildOfWrapper" />
+      <ref role="20lvS9" node="40hlyoZWOsc" resolve="TestSubstituteChildOfWrapper" />
     </node>
   </node>
   <node concept="1TIwiD" id="3XP_kj6C72q">
@@ -1009,6 +1044,235 @@
     <property role="3GE5qa" value="exception" />
     <property role="TrG5h" value="TestSubstituteExceptionActionIconChild" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="6szUVE$$bRA">
+    <property role="EcuMT" value="7432042996948844006" />
+    <property role="TrG5h" value="TestSubstituteSmartRef_WithoutExplicitMenu" />
+    <node concept="1TJgyj" id="6szUVE$$bRB" role="1TKVEi">
+      <property role="IQ2ns" value="7432042996948844007" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="childToReference" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6szUVE$_m2m">
+    <property role="EcuMT" value="7432042996949147798" />
+    <property role="TrG5h" value="TestSubstituteChildToReferenceSubconcept" />
+    <ref role="1TJDcQ" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+  </node>
+  <node concept="1TIwiD" id="6szUVE$AZx7">
+    <property role="EcuMT" value="7432042996949579847" />
+    <property role="TrG5h" value="TestSubstituteSmartRef_WithoutExplicitMenu_Subconcept" />
+    <ref role="1TJDcQ" node="6szUVE$$bRA" resolve="TestSubstituteSmartRef_WithoutExplicitMenu" />
+    <node concept="1TJgyj" id="6szUVE$AZx8" role="1TKVEi">
+      <property role="IQ2ns" value="7432042996949579848" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="childToReferenceSpecial" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6szUVE$_m2m" resolve="TestSubstituteChildToReferenceSubconcept" />
+      <ref role="20ksaX" node="6szUVE$$bRB" resolve="childToReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="qrtnJnJhw1">
+    <property role="EcuMT" value="476103360378640385" />
+    <property role="TrG5h" value="TestSubstituteParentPropertyAndReference" />
+    <property role="3GE5qa" value="propertyAndReference" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="qrtnJnJhwg" role="1TKVEi">
+      <property role="IQ2ns" value="476103360378640400" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="defaultReference" />
+      <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
+    <node concept="1TJgyj" id="qrtnJnJhwi" role="1TKVEi">
+      <property role="IQ2ns" value="476103360378640402" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="referenceWithCustomMenu" />
+      <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
+    <node concept="1TJgyj" id="73AphEk2ddN" role="1TKVEi">
+      <property role="IQ2ns" value="8135300941718541171" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="referenceWithReferenceMenuPart" />
+      <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
+    <node concept="1TJgyj" id="1o9RazLqGZY" role="1TKVEi">
+      <property role="IQ2ns" value="1588042961787736062" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="referenceWithScope" />
+      <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
+    <node concept="1TJgyj" id="1o9RazLqH0D" role="1TKVEi">
+      <property role="IQ2ns" value="1588042961787736105" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="referenceWithSetHandler" />
+      <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
+    <node concept="1TJgyi" id="qrtnJnJhw2" role="1TKVEl">
+      <property role="IQ2nx" value="476103360378640386" />
+      <property role="TrG5h" value="defaultBooleanProperty" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="qrtnJnYgvW" role="1TKVEl">
+      <property role="IQ2nx" value="476103360382568444" />
+      <property role="TrG5h" value="booleanPropertyWithPropertyMenuPart" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="qrtnJnJhw4" role="1TKVEl">
+      <property role="IQ2nx" value="476103360378640388" />
+      <property role="TrG5h" value="defaultEnumProperty" />
+      <ref role="AX2Wp" node="qrtnJnJhw7" resolve="TestSubstituteEnumDataType" />
+    </node>
+    <node concept="1TJgyi" id="qrtnJnYgw2" role="1TKVEl">
+      <property role="IQ2nx" value="476103360382568450" />
+      <property role="TrG5h" value="enumPropertyWithPropertyMenuPart" />
+      <ref role="AX2Wp" node="qrtnJnJhw7" resolve="TestSubstituteEnumDataType" />
+    </node>
+    <node concept="1TJgyi" id="1o9RazLpuEJ" role="1TKVEl">
+      <property role="IQ2nx" value="1588042961787415215" />
+      <property role="TrG5h" value="enumPropertyWithIsValidConstraints" />
+      <ref role="AX2Wp" node="qrtnJnJhw7" resolve="TestSubstituteEnumDataType" />
+    </node>
+    <node concept="1TJgyi" id="1o9RazLqfzx" role="1TKVEl">
+      <property role="IQ2nx" value="1588042961787615457" />
+      <property role="TrG5h" value="enumPropertyWithSetter" />
+      <ref role="AX2Wp" node="qrtnJnJhw7" resolve="TestSubstituteEnumDataType" />
+    </node>
+    <node concept="1TJgyi" id="1o9RazLqg7J" role="1TKVEl">
+      <property role="IQ2nx" value="1588042961787617775" />
+      <property role="TrG5h" value="enumPropertyWithGetter" />
+      <ref role="AX2Wp" node="qrtnJnJhw7" resolve="TestSubstituteEnumDataType" />
+    </node>
+    <node concept="1TJgyi" id="qrtnJnJhwc" role="1TKVEl">
+      <property role="IQ2nx" value="476103360378640396" />
+      <property role="TrG5h" value="defaultStringProperty" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="qrtnJnYgw9" role="1TKVEl">
+      <property role="IQ2nx" value="476103360382568457" />
+      <property role="TrG5h" value="stringPropertyWithPropertyMenuPart" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="qrtnJnYdUL" role="1TKVEl">
+      <property role="IQ2nx" value="476103360382557873" />
+      <property role="TrG5h" value="propertyWithCustomActions" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="PrWs8" id="qrtnJnYeBy" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="AxPO7" id="qrtnJnJhw7">
+    <property role="3GE5qa" value="propertyAndReference" />
+    <property role="TrG5h" value="TestSubstituteEnumDataType" />
+    <property role="3lZH7k" value="derive_from_presentation" />
+    <property role="PDuV0" value="true" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="qrtnJnJhw8" role="M5hS2">
+      <property role="1uS6qo" value="first presentation" />
+      <property role="1uS6qv" value="myFirstValue" />
+    </node>
+    <node concept="M4N5e" id="qrtnJnJhw9" role="M5hS2">
+      <property role="1uS6qo" value="second presentation" />
+      <property role="1uS6qv" value="mySecondValue" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="35fpGdQRU$9">
+    <property role="EcuMT" value="3553171620717635849" />
+    <property role="TrG5h" value="TestSubstituteParentPropertyAndReference_Subconcept" />
+    <property role="3GE5qa" value="propertyAndReference" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" node="qrtnJnJhw1" resolve="TestSubstituteParentPropertyAndReference" />
+    <node concept="1TJgyj" id="35fpGdQRU$l" role="1TKVEi">
+      <property role="IQ2ns" value="3553171620717635861" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="defaultSpecialReference" />
+      <property role="20lbJX" value="1" />
+      <ref role="20ksaX" node="qrtnJnJhwg" resolve="defaultReference" />
+      <ref role="20lvS9" node="6szUVE$_m2m" resolve="TestSubstituteChildToReferenceSubconcept" />
+    </node>
+    <node concept="1TJgyj" id="35fpGdQRU$Q" role="1TKVEi">
+      <property role="IQ2ns" value="3553171620717635894" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="specialReferenceWithMenuPart" />
+      <property role="20lbJX" value="1" />
+      <ref role="20ksaX" node="73AphEk2ddN" resolve="referenceWithReferenceMenuPart" />
+      <ref role="20lvS9" node="6szUVE$_m2m" resolve="TestSubstituteChildToReferenceSubconcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4hFz9ek_hvj">
+    <property role="EcuMT" value="4930188782568019923" />
+    <property role="TrG5h" value="TestSubstituteParentForChildrenWithAttibute" />
+    <property role="3GE5qa" value="childWithAttribute" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="4hFz9ek_hvo" role="1TKVEi">
+      <property role="IQ2ns" value="4930188782568019928" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childWithAttribute" />
+      <ref role="20lvS9" node="4hFz9ek_hvk" resolve="TestSubstituteChildWithAttibute" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4hFz9ek_hvk">
+    <property role="EcuMT" value="4930188782568019924" />
+    <property role="TrG5h" value="TestSubstituteChildWithAttibute" />
+    <property role="3GE5qa" value="childWithAttribute" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="4hFz9ekABuM" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4hFz9ek_hvl">
+    <property role="EcuMT" value="4930188782568019925" />
+    <property role="3GE5qa" value="childWithAttribute" />
+    <property role="TrG5h" value="TestSubstituteAttribute_TransparentEditor" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="4hFz9ek_ncp" role="lGtFl">
+      <property role="Hh88m" value="attributeTransparentEditor" />
+      <node concept="tn0Fv" id="4hFz9ek_ncr" role="HhnKV">
+        <property role="tnX3d" value="false" />
+      </node>
+      <node concept="trNpa" id="4hFz9ek_nct" role="EQaZv">
+        <ref role="trN6q" node="4hFz9ek_hvk" resolve="TestSubstituteChildWithAttibute" />
+      </node>
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4hFz9ek_hvm">
+    <property role="EcuMT" value="4930188782568019926" />
+    <property role="3GE5qa" value="childWithAttribute" />
+    <property role="TrG5h" value="TestSubstituteAttribute_RegularEditor" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="4hFz9ek_nem" role="lGtFl">
+      <property role="Hh88m" value="attributeRegularEditor" />
+      <node concept="trNpa" id="4hFz9ek_neo" role="EQaZv">
+        <ref role="trN6q" node="4hFz9ek_hvk" resolve="TestSubstituteChildWithAttibute" />
+      </node>
+      <node concept="tn0Fv" id="4hFz9ek_nfG" role="HhnKV">
+        <property role="tnX3d" value="false" />
+      </node>
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4hFz9ek_hvn">
+    <property role="EcuMT" value="4930188782568019927" />
+    <property role="3GE5qa" value="childWithAttribute" />
+    <property role="TrG5h" value="TestSubstituteAttribute_WithReference" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyj" id="4hFz9ek_nd5" role="1TKVEi">
+      <property role="IQ2ns" value="4930188782568043333" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="nodeToReference" />
+      <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
+    <node concept="M6xJ_" id="4hFz9ek_nd7" role="lGtFl">
+      <property role="Hh88m" value="attributeWithReference" />
+      <node concept="trNpa" id="4hFz9ek_nd9" role="EQaZv">
+        <ref role="trN6q" node="4hFz9ek_hvk" resolve="TestSubstituteChildWithAttibute" />
+      </node>
+      <node concept="tn0Fv" id="4hFz9ek_nfI" role="HhnKV">
+        <property role="tnX3d" value="false" />
+      </node>
+    </node>
   </node>
 </model>
 

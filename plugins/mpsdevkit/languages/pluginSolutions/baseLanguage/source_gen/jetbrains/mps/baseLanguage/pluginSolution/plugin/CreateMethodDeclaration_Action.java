@@ -21,6 +21,7 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -126,8 +127,9 @@ public class CreateMethodDeclaration_Action extends BaseAction {
       return null;
     }
     SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(operandType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
-    SModule module = SNodeOperations.getModel(classifier).getModule();
-    if (!(SModelStereotype.isUserModel(SNodeOperations.getModel(classifier))) || module.isReadOnly()) {
+    SModel model = SNodeOperations.getModel(classifier);
+    SModule module = model.getModule();
+    if (SModelStereotype.isStubModel(model) || model.isReadOnly() || module.isReadOnly()) {
       return null;
     }
     return classifier;

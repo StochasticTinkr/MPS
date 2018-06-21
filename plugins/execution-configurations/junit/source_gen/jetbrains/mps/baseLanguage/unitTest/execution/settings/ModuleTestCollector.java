@@ -31,7 +31,7 @@ public class ModuleTestCollector extends TestCollector {
     myMonitor.start("Fetching tests from module " + myModule.getModuleName(), IterableUtil.asCollection(models).size());
     try {
       for (SModel model : Sequence.fromIterable(models)) {
-        if (SModelStereotype.isUserModel(model)) {
+        if (!(SModelStereotype.isStubModel(model))) {
           if (myMonitor.isCanceled()) {
             return ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
           }

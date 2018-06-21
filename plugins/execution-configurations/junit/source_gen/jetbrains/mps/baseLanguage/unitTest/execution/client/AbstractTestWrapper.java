@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
@@ -14,22 +15,39 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.unitTest.execution.server.WithPlatformTestExecutor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeWrapper<N> {
   @NotNull
   protected final SNodeReference myNodePointer;
-  private String myFqName;
   private final SRepository myRepo;
+  private final boolean myRunsInProcess;
+  protected final boolean myNeedsMPS;
+  protected final SModuleReference myTestModule;
 
   public AbstractTestWrapper(@NotNull N node) {
+    this(node, false, false);
+  }
+
+  public AbstractTestWrapper(@NotNull N node, boolean runsInProcess, boolean needsMPS) {
     myNodePointer = new SNodePointer(node);
     myRepo = SNodeOperations.getModel(node).getRepository();
+    myRunsInProcess = runsInProcess;
+    myNeedsMPS = needsMPS;
+    myTestModule = SNodeOperations.getModel(node).getModule().getModuleReference();
   }
 
   /*package*/ SRepository getRepo() {
     return myRepo;
+  }
+
+  @NotNull
+  @Override
+  public final SModuleReference getTestNodeModule() {
+    return myTestModule;
   }
 
   /**
@@ -93,21 +111,12 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   @NotNull
   @Override
   public TestParameters getTestRunParameters() {
-    return TestParameters.calcDefault(myRepo);
-  }
-
-  @Override
-  public String getName() {
-    return withNode(new Function<N, String>() {
-      public String apply(N node) {
-        if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
-          return SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-        } else if (node != null) {
-          throw new UnsupportedOperationException("Should override getName for not INamedConcept: " + SNodeOperations.getConcept(node));
-        }
-        return null;
-      }
-    });
+    TestParameters rp = TestParameters.calcDefault(myRepo);
+    if (myNeedsMPS) {
+      return new TestParameters(WithPlatformTestExecutor.class, true, ListSequence.fromList(rp.getClassPath()).toListSequence(), null);
+    } else {
+      return rp;
+    }
   }
 
   @Override
@@ -116,14 +125,53 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
     if (isTestCase() || (testCase = getTestCase()) == null) {
       return getName();
     }
-    return testCase.getFqName() + "." + getName();
+    return testCase.getFqName() + '.' + getName();
   }
 
   @Override
   public String getCachedFqName() {
-    if (myFqName == null) {
-      myFqName = getFqName();
+    return getFqName();
+  }
+
+  @Override
+  public boolean canRunInProcess() {
+    return myRunsInProcess;
+  }
+
+  /**
+   * Check if class or any its superclass got MPSLaunch annotation, or extends/implements EnvironmentAware. 
+   * If true, we assume the class needs running MPS instance to get executed.
+   * Note, this method doesn't look into annotations on distinct test methods (therefore, we could use it for both JUnit3 and JUnit4 ClassConcepts)
+   * 
+   * @return true if a test represented by the class needs MPS instance
+   */
+  /*package*/ static boolean needsMPS(@Nullable SNode clazz) {
+    while (clazz != null) {
+      if (isAnnotatedToLaunch(clazz)) {
+        return true;
+      }
+      // check java stub target only to avoid dependency from j.m.testbench module which is not part of MPS build (only via Testbench stub solution) 
+      if (SNodeOperations.is(clazz, new SNodePointer("920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench(Testbench/)", "~EnvironmentAwareTestCase"))) {
+        return true;
+      }
+      // check both java stub and regular node for EnvironmentAware as  j.m.tool.environment is part of MPS build (unlike j.m.testbench) 
+      if (ListSequence.fromList(SLinkOperations.getChildren(clazz, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SLinkOperations.hasPointer(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), new SNodePointer("r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)", "8946405811982722281")) || SLinkOperations.hasPointer(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), new SNodePointer("r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)", "8946405811982722281"));
+        }
+      })) {
+        return true;
+      }
+      clazz = SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(clazz, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     }
-    return myFqName;
+    return false;
+  }
+  /*package*/ static boolean isAnnotatedToLaunch(SNode withAnnotation) {
+    // MPSLaunch lives in j.m.testbench which is not part of MPS build, therefore check here for java stub only 
+    return ListSequence.fromList(SLinkOperations.getChildren(withAnnotation, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.hasPointer(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), new SNodePointer("920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps(Testbench/)", "~MPSLaunch"));
+      }
+    });
   }
 }

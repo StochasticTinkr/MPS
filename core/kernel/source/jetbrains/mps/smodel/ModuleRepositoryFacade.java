@@ -175,7 +175,16 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   @Deprecated
   @ToRemove(version = 2017.3)
   public SModel getModelByName(@Nullable String modelQualifiedName) {
-    return SModelRepository.getInstance().getModelDescriptor(modelQualifiedName);
+    if (modelQualifiedName == null) {
+      return null;
+    }
+    try {
+      Collection<SModel> models = getModelsByName(new SModelName(modelQualifiedName));
+      return models.isEmpty() ? null : models.iterator().next();
+    } catch (IllegalArgumentException ex) {
+      // bad model name, just pretend we didn't find anything
+      return null;
+    }
   }
 
   /**

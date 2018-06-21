@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,24 @@
  */
 package jetbrains.mps.smodel.persistence.lines;
 
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
  * @author Evgeny Gerashchenko
  * @since 11/22/10
  */
-public class ReferenceLineContent extends LineContent {
+public final class ReferenceLineContent extends LineContent {
   private String myRole;
 
   public ReferenceLineContent(SNodeId nodeId, String role) {
     super(nodeId);
     myRole = role;
+  }
+
+  public ReferenceLineContent(SNodeId nodeId, SReferenceLink link) {
+    super(nodeId);
+    myRole = link.getName();
   }
 
   public String getRole() {
@@ -35,6 +41,6 @@ public class ReferenceLineContent extends LineContent {
 
   @Override
   public String toString() {
-    return "R{" + getNodeId() + ":" + myRole + "}";
+    return String.format("R{%s:%s}", getNodeId(), getRole());
   }
 }

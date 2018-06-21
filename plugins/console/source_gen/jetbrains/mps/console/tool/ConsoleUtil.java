@@ -13,6 +13,8 @@ import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
@@ -37,10 +39,8 @@ public class ConsoleUtil {
 
     IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.ReloadClasses"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
     final MessagesViewTool mvt = project.getComponent(MessagesViewTool.class);
-    final String messagesListName = "Console Make";
-    mvt.getAvailableList(messagesListName, true).setWarningsEnabled(false);
-    mvt.getAvailableList(messagesListName, true).setInfoEnabled(false);
-    MakeSession session = new MakeSession(project, mvt.newHandler(messagesListName), true);
+    IMessageHandler messageHandler = mvt.newHandler("Console Make", true).restrict(MessageKind.ERROR);
+    MakeSession session = new MakeSession(project, messageHandler, true);
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
       Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).canGenerateCondition(new _FunctionTypes._return_P1_E0<Boolean, SModel>() {
         public Boolean invoke(SModel m) {

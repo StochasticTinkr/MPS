@@ -5,6 +5,17 @@ package jetbrains.mps.tool.common;
 import java.util.Set;
 import java.util.HashSet;
 
+/**
+ * Intended as a generic replacement for 'library jar' and 'named library' of MpsLoadTask/Script.
+ * Gives a mechanism to include whole folder with modules or just a single module (with a reference to module descriptor file).
+ * 
+ * XXX It's unspecified whether location strings have to be complete file paths or macro could be used in there, would be great to have this covered (perhaps, leave to owing task?)
+ * 
+ * XXX Though one could reference source module descriptors (i.e. .mpl, .msd, .devkit) and modules would get loaded into a repository, this scenario is dubious - generally one should
+ * stick to MPS Project to keep source modules. At the moment, referenced modules are injected into EnvironmentConfig.addLib() and consumed by ModulesMiner. It's recommended to treat this
+ * class as 'deployed modules repository' and avoid use of source module descriptors.
+ * 
+ */
 public class RepositoryDescriptor {
   public Set<String> files = new HashSet<String>();
   public Set<String> folders = new HashSet<String>();

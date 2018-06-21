@@ -20,6 +20,7 @@ import com.intellij.ui.SimpleColoredComponent;
 import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.speedSearch.SpeedSearchUtil;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.nodeEditor.EditorSettings;
@@ -189,7 +190,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer<Substitute
   private Icon getIcon(SubstituteAction action, String pattern) {
     Icon icon = null;
     if (action instanceof CompletionActionItemAsSubstituteAction) {
-      icon = IconManager.getIconForResource(((CompletionActionItemAsSubstituteAction) action).getIcon(pattern));
+      icon = GlobalIconManager.getInstance().getIconForResource(((CompletionActionItemAsSubstituteAction) action).getIcon(pattern));
     }
     if (icon != null) {
       return icon;
@@ -204,13 +205,13 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer<Substitute
       }
       if (icon == null) {
         if (isConcept) {
-          icon = IconManager.getIcon(MetaAdapterByDeclaration.getConcept(iconNode));
+          icon = GlobalIconManager.getInstance().getIconFor(MetaAdapterByDeclaration.getConcept(iconNode));
           if (icon == null) {
             icon = IdeIcons.DEFAULT_NODE_ICON;
           }
           myConceptIconMap.put(iconNode, icon);
         } else {
-          icon = IconManager.getIconFor(iconNode);
+          icon = GlobalIconManager.getInstance().getIconFor(iconNode);
           myNodeIconMap.put(iconNode, icon);
         }
       }

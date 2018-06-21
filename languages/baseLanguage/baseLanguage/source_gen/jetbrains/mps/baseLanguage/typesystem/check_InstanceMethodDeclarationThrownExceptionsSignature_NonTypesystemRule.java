@@ -15,10 +15,11 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescri
 import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
-import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -52,9 +53,9 @@ public class check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesys
         }
         Iterable<SNode> superTypes = Classifier__BehaviorDescriptor.getAllExtendedClassifiers_id2xreLMO8jma.invoke(myClassifier);
 
-        if (!((Objects.equals(myClassifier, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~RuntimeException")) || Sequence.fromIterable(superTypes).any(new IWhereFilter<SNode>() {
+        if (!((SNodeOperations.is(myClassifier, new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~RuntimeException")) || Sequence.fromIterable(superTypes).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return Objects.equals(it, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~RuntimeException"));
+            return SNodeOperations.is(it, new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~RuntimeException"));
           }
         }))) && !(ListSequence.fromList(superThrown).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

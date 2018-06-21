@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,16 +24,17 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.ui.Queryable;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.projectView.BaseProjectViewTestCase;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.vfs.IFile;
 import org.junit.Assert;
 
-import java.util.Arrays;
+import java.util.Collections;
 
 import static com.intellij.testFramework.LightPlatformTestCase.getModule;
 
@@ -70,11 +71,8 @@ public class ProjectViewTests extends BaseProjectViewTestCase {
     Assert.assertNotNull("MPS facet type is not found", facetType);
     MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
     final MPSFacetConfiguration configuration = facet.getConfiguration();
-    String path = VirtualFileManager.extractPath(getContentRoot().findChild("src").getUrl());
-    DefaultModelRoot root = new DefaultModelRoot();
-    root.setContentRoot(path);
-    root.addFile(DefaultModelRoot.SOURCE_ROOTS, path);
-    configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
+    IFile path = VirtualFileUtils.toIFile(getContentRoot().findChild("src"));
+    configuration.getBean().setModelRootDescriptors(Collections.singleton(DefaultModelRoot.createSingleFolderDescriptor(path)));
 
     final ModifiableFacetModel facetModel = facetManager.createModifiableModel();
     facetModel.addFacet(facet);

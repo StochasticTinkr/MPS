@@ -26,6 +26,7 @@
     </language>
   </registry>
   <node concept="3UTxk9" id="gbVcHM3">
+    <property role="TrG5h" value="Enumerations" />
     <node concept="3s4oj1" id="gbVcSEq" role="3UTQT5">
       <property role="TrG5h" value="SERVICE CALL" />
       <node concept="3s4AkW" id="gbVdL6_" role="3s4wDW">

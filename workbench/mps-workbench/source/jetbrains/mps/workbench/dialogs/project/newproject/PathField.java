@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 
 import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
+import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.DocumentAdapter;
@@ -103,7 +104,7 @@ public class PathField extends JPanel {
     final String oldPath = !myPathField.getText().isEmpty() ? myPathField.getText() : "";
     final VirtualFile result = FileChooser.chooseFile(FileChooserDescriptorFactory.createSingleFolderDescriptor(), myPathField, null, LocalFileSystem.getInstance().findFileByPath(oldPath));
     if (result != null) {
-      setPath(result.getCanonicalPath());
+      setPath(FileUtil.toSystemDependentName(result.getPath()));
       myIsPathChangedByUser = true; //User change path only if dialog has result.
     }
   }

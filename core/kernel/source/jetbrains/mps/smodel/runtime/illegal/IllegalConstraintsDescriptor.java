@@ -87,15 +87,9 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
     return null;
   }
 
-  @Override
-  public String getAlternativeIcon(SNode node) {
-    return null;
-  }
-
   @Nullable
   @Override
   public IconResource getInstanceIcon(SNode node) {
     return null;
   }
-
 }

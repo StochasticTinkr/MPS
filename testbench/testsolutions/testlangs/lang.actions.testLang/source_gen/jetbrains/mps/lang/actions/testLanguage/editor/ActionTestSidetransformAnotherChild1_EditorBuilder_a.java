@@ -30,25 +30,25 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_po6iq8_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_po6iq8_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_po6iq8_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createConstant_po6iq8_a0());
-    editorCell.addEditorCell(createConstant_po6iq8_b0());
+    setCellContext(editorCell);
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_po6iq8_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "action test sidetransform another child1");
     editorCell.setCellId("Constant_po6iq8_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_po6iq8_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ";");
     editorCell.setCellId("Constant_po6iq8_b0");
     Style style = new StyleImpl();

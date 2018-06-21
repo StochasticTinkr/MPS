@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.diagram.generator.template.main.Pattern_x583g4_a0a0a0kf" file="Pattern_x583g4_a0a0a0kf.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.generator.template.main.Pattern_x583g4_a0a0a0gf" file="Pattern_x583g4_a0a0a0gf.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
@@ -47,14 +47,13 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.AbstractDiagramCreation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.generator.template.main.Pattern_x583g4_a0a0a0kf" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.generator.template.main.Pattern_x583g4_a0a0a0gf" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.generator.template.util.FigureUtils" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigureParameter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.FigureAttribute__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeField__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeMethod__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeViewProperty__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

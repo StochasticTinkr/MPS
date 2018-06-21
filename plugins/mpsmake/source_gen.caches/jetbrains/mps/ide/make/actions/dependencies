@@ -129,12 +129,14 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.make.ModuleMaker" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
@@ -247,6 +249,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.make.IMakeService" />
+    <classNode dependClassName="jetbrains.mps.make.MakeServiceComponent" />
     <classNode dependClassName="jetbrains.mps.make.MakeSession" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
@@ -488,13 +491,9 @@
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.Make_ProjectPlugin" file="Make_ProjectPlugin.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModels_CustomProjectPlugin" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.custom.BaseCustomProjectPlugin" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModels_ProjectPluginPart" />
+    <classNode dependClassName="jetbrains.mps.plugins.part.ProjectPluginPart" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.NamespaceMake_ActionGroup" file="NamespaceMake_ActionGroup.java">
@@ -813,12 +812,13 @@
     <classNode extendsClassName="com.intellij.openapi.wm.StatusBarWidget" />
     <classNode extendsClassName="java.beans.PropertyChangeListener" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.actions.TransientModels_CustomProjectPlugin" file="TransientModels_CustomProjectPlugin.java">
+  <dependency className="jetbrains.mps.ide.make.actions.TransientModels_ProjectPluginPart" file="TransientModels_ProjectPluginPart.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsNotification" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomProjectPlugin" />
+    <classNode extendsClassName="jetbrains.mps.plugins.part.ProjectPluginPart" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.WidgetSettingsPanel" file="WidgetSettingsPanel.java">
     <classNode dependClassName="com.intellij.notification.impl.NotificationsConfigurationImpl" />

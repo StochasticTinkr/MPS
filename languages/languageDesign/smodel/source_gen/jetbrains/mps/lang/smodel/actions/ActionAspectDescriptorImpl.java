@@ -46,18 +46,20 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
         case 13:
           return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829548());
         case 14:
-          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3602058458308809797());
+          return Collections.<NodeFactory>singletonList(new SNodeTypeFactories.NodeFactory_3320646261220827861());
         case 15:
+          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3602058458308809797());
+        case 16:
           return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_1205353787833());
+        case 17:
+          return Collections.<NodeFactory>singletonList(new SNodeTypeFactories.NodeFactory_8153066124498048370());
+        case 18:
+          return Collections.<NodeFactory>singletonList(new SNodeTypeFactories.NodeFactory_3320646261220621242());
         default:
       }
     }
     return Collections.<NodeFactory>emptyList();
   }
 
-  @Override
-  public boolean hasBuilders() {
-    return false;
-  }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"ConceptIdRefExpression", "ConceptRefExpression", "Concept_IsSubConceptOfOperation", "Concept_IsSuperConceptOfOperation", "Concept_NewInstance", "LinkList_AddNewChildOperation", "Link_SetNewChildOperation", "Model_CreateNewNodeOperation", "Node_GetAncestorOperation", "Node_GetChildrenAndChildAttributesOperation", "Node_GetDescendantsOperation", "Node_InsertNewNextSiblingOperation", "Node_InsertNewPrevSiblingOperation", "Node_ReplaceWithNewOperation", "SNodeCreator", "SNodeListType"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"ConceptIdRefExpression", "ConceptRefExpression", "Concept_IsSubConceptOfOperation", "Concept_IsSuperConceptOfOperation", "Concept_NewInstance", "LinkList_AddNewChildOperation", "Link_SetNewChildOperation", "Model_CreateNewNodeOperation", "Node_GetAncestorOperation", "Node_GetChildrenAndChildAttributesOperation", "Node_GetDescendantsOperation", "Node_InsertNewNextSiblingOperation", "Node_InsertNewPrevSiblingOperation", "Node_ReplaceWithNewOperation", "SConceptType", "SNodeCreator", "SNodeListType", "SNodePointerType", "SNodeType"};
 }

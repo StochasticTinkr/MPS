@@ -319,7 +319,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements
         return EqualUtil.equals(s, getText());
       }
     }, targetNode);
-    result.setRole(link.getName());
+    result.setSRole(link);
     result.setReferenceCell(true);
     return result;
   }
@@ -390,14 +390,6 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements
   public static AbstractDefaultEditor createEditor(SNode node) {
     SConcept concept = node.getConcept();
     return concept.isValid() ? new DefaultEditor(concept) : new ReadOnlyDefaultEditor(concept);
-  }
-
-  /**
-   * @deprecated since MPS 3.5 use {{@link #getNode()}
-   */
-  @Deprecated
-  protected SNode getSNode() {
-    return mySNode;
   }
 
   protected SConcept getConcept() {

@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Tes
 
   @Test
   public void test_NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween() throws Throwable {
-    runTest("jetbrains.mps.editorTest.NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test$TestBody", "testMethod", false);
+    new NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1528454294471625117", "1528454294471625127");

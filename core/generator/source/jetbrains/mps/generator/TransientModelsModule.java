@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.references.ImmatureReferencesTracker;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -51,6 +52,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BiConsumer;
 
 public class TransientModelsModule extends AbstractModule implements TransientSModule {
@@ -63,6 +65,11 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   private final Map<String, GenerationTrace> myTraces = new HashMap<String, GenerationTrace>();
 
+  // facility to generate IntegerSModelId, unique within a transient module
+  private final AtomicInteger myCounter = new AtomicInteger(0);
+
+  private TransientSwapSpace mySwapSpace;
+
   /*package*/ TransientModelsModule(@NotNull TransientModelsProvider tmProvider, @NotNull SModuleReference moduleReference) {
     myComponent = tmProvider;
     setModuleReference(moduleReference);
@@ -74,6 +81,10 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   @Override
   public void dispose() {
+    if (mySwapSpace != null) {
+      mySwapSpace.clear();
+      mySwapSpace = null;
+    }
     clearAll();
     super.dispose();
   }
@@ -210,6 +221,16 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     return modelRef != null && myModelVault.known(modelRef);
   }
 
+
+  /**
+   * @param idHint 5 hex digits for your own use, not necessarily unique for models from this module
+   * @return simple integer id unique within this module, with value from MPS reserved range {@link IntegerSModelId}
+   */
+  public IntegerSModelId nextModelId(int idHint) {
+    int prefix = 0x100 + myCounter.getAndIncrement();
+    return new IntegerSModelId((prefix << 20) | (idHint & 0x000FFFFF));
+  }
+
   /**
    * Module of any referenced model we can access through our repository (one of TransientModelsProvider) is deemed declared dependency.
    * There's little value to show 'out of scope' errors for transient nodes, that's why everything is here.
@@ -250,6 +271,15 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     ((TransientSModelDescriptor) transientModel).changeModelReference(newRef);
   }
 
+  /*package*/ TransientSwapSpace getSwapSpace() {
+    if (mySwapSpace == null) {
+      // I don't care to guard thread access, as it's responsibility of TransientSwapOwner to make swap allocation atomic (so that check for existence and
+      // create/clear can not get into race condition), and here I don't care if I initialize the field twice with the same value.
+      mySwapSpace = myComponent.getTransientSwapSpace(this);
+    }
+    return mySwapSpace;
+  }
+
   public final class TransientSModelDescriptor extends EditableSModelBase implements jetbrains.mps.extapi.model.TransientSModel, ModelWithAttributes {
     protected volatile TransientSModel mySModel;
     private boolean wasUnloaded = false;
@@ -277,7 +307,7 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
         oldState = getLoadingState();
         if (mySModel == null) {
           mySModel = createModel();
-          mySModel.setModelDescriptor(this);
+          mySModel.setModelDescriptor(this, getNodeEventDispatch());
           if (wasUnloaded) {
             // ensure imports are back
             // XXX don't ask me why we don't swap out models with imports, but bare nodes only.
@@ -308,8 +338,11 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
       if (wasUnloaded) {
         LOG.debug("Re-loading " + getReference());
 
-        TransientSwapSpace swap = myComponent.getTransientSwapSpace();
-        if (swap == null) throw new IllegalStateException("no swap space");
+        TransientSwapSpace swap = getSwapSpace();
+        if (swap == null) {
+          // if we got here, it means doUnload managed to access swap and wrote model down there.
+          throw new IllegalStateException("no swap space");
+        }
 
         TransientSModel m = swap.restoreFromSwap(getReference(), new TransientSModel(getReference()));
 
@@ -327,7 +360,7 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
       if (!wasUnloaded) {
         LOG.debug("Un-loading " + getReference());
 
-        TransientSwapSpace swap = myComponent.getTransientSwapSpace();
+        TransientSwapSpace swap = getSwapSpace();
         if (swap == null || !swap.swapOut(mySModel)) {
           return;
         }
@@ -353,7 +386,6 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
       myRefsTracker.detach();
       if (mySModel != null) {
         LOG.debug("Dropped " + getReference());
-        mySModel.setModelDescriptor(null);
         mySModel.dispose();
         mySModel = null;
         setLoadingState(ModelLoadingState.NOT_LOADED);

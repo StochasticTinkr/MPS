@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -40,7 +41,6 @@ public class GenerationOptions {
 
   private final GenerationParametersProvider myParametersProvider;
   private final Map<SModel, ModelGenerationPlan> myCustomPlans;
-  private boolean myKeepOutputModel;
 
   private final boolean myGenerateInParallel;
   private final int myNumberOfThreads;
@@ -56,7 +56,7 @@ public class GenerationOptions {
                             boolean generateInParallel, int numberOfThreads, int tracingMode, boolean showInfo,
                             boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
                             boolean useDynamicRefs,
-                            GenerationParametersProvider parametersProvider, boolean keepOutputModel, boolean showBadChildWarning,
+                            GenerationParametersProvider parametersProvider, boolean showBadChildWarning,
                             Map<SModel, ModelGenerationPlan> customPlans) {
     mySaveTransientModels = saveTransientModels;
     myActiveInplaceTransform = useInplaceTransformations;
@@ -69,7 +69,6 @@ public class GenerationOptions {
     myShowWarnings = showWarnings;
     myKeepModelsWithWarnings = keepModelsWithWarnings;
     myParametersProvider = parametersProvider;
-    myKeepOutputModel = keepOutputModel;
     myShowBadChildWarning = showBadChildWarning;
     myCustomPlans = customPlans;
     myUseDynamicRefs = useDynamicRefs;
@@ -96,9 +95,6 @@ public class GenerationOptions {
   }
 
   public int getTracingMode() {
-    if (isGenerateInParallel() && myTracingMode > TRACE_STEPS) {
-      return TRACE_STEPS;
-    }
     return myTracingMode;
   }
 
@@ -146,8 +142,13 @@ public class GenerationOptions {
   }
 
 
+  /**
+   * @deprecated As long as output model is part of GenerationStatus, it's odd not to keep it.
+   */
+  @Deprecated
+  @ToRemove(version = 2018.1)
   public boolean isKeepOutputModel() {
-    return myKeepOutputModel;
+    return true;
   }
 
   /**
@@ -179,7 +180,6 @@ public class GenerationOptions {
 
     private GenerationParametersProvider myParametersProvider = null;
 
-    private boolean myKeepOutputModel;
     private boolean myUseInplace;
     private boolean myUseDynamicRefs = false;
 
@@ -190,7 +190,7 @@ public class GenerationOptions {
       return new GenerationOptions(myStrictMode, mySaveTransientModels, myUseInplace,
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
         myKeepModelsWithWarnings, myNumberOfModelsToKeep, myUseDynamicRefs,
-        myParametersProvider, myKeepOutputModel, myShowBadChildWarning,
+        myParametersProvider, myShowBadChildWarning,
         myCustomPlans);
     }
 
@@ -243,8 +243,13 @@ public class GenerationOptions {
       return this;
     }
 
+    /**
+     * @deprecated no-op, just throw away, output model is always preserved (although not necessarily published, just not discarded/disposed, and is
+     * available to clients with access to GenerationStatus)
+     */
+    @Deprecated
+    @ToRemove(version = 2018.1)
     public OptionsBuilder keepOutputModel(boolean keepOutputModel) {
-      myKeepOutputModel = keepOutputModel;
       return this;
     }
 

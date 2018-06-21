@@ -35,7 +35,7 @@ public class NewAccessoryModel_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    event.getPresentation().setText(((event.getData(MPSCommonDataKeys.TREE_NODE) instanceof ProjectModuleTreeNode ? "" : "New ")) + "Accesory Model");
+    event.getPresentation().setText(((event.getData(MPSCommonDataKeys.TREE_NODE) instanceof ProjectModuleTreeNode ? "" : "New ")) + "Accessory Model");
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {

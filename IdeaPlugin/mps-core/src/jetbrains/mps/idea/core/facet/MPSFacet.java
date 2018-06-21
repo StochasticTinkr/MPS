@@ -44,55 +44,53 @@ import org.jetbrains.mps.openapi.module.SRepository;
  */
 public class MPSFacet extends Facet<MPSFacetConfiguration> {
   private static final Logger LOG = Logger.getInstance(MPSFacet.class);
+  private final Project myMpsProject;
   private Solution mySolution;
-  private Project myMpsProject;
 
   public MPSFacet(@NotNull FacetType facetType, @NotNull Module module, @NotNull String name, @NotNull MPSFacetConfiguration configuration, Facet underlyingFacet) {
     super(facetType, module, name, configuration, underlyingFacet);
+    myMpsProject = ProjectHelper.fromIdeaProject(module.getProject());
     configuration.setFacet(this);
   }
 
   @Override
   public void initFacet() {
-    StartupManager.getInstance(getModule().getProject()).runWhenProjectIsInitialized(() -> {
-      myMpsProject = ProjectHelper.fromIdeaProject(getModule().getProject());
-      myMpsProject.getModelAccess().runWriteAction(() -> {
-        SolutionDescriptor solutionDescriptor = getConfiguration().getBean().getSolutionDescriptor();
-        Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
+    myMpsProject.getModelAccess().runWriteAction(() -> {
+      SolutionDescriptor solutionDescriptor = getConfiguration().getBean().getSolutionDescriptor();
+      Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
 
-        com.intellij.openapi.project.Project project = getModule().getProject();
+      com.intellij.openapi.project.Project project = getModule().getProject();
 
-        SRepository repository = myMpsProject.getRepository();
-        ModuleRepositoryFacade facade = new ModuleRepositoryFacade(repository);
-        SModule previousModule = facade.getModule(solutionDescriptor.getModuleReference());
-        if (previousModule != null) {
-          if (previousModule instanceof SolutionIdea && facade.getModuleOwners(previousModule).size() == 1) {
-            // Happens because upon .iml change, idea first initialises new facet and then disposes the old one.
-            // Thus, the solution from the old one under the same module reference is still in the repo.
-            // Deleting it here is dirty but likely safe, since MPSFacet is the only place that handles
-            // creation/deletion of SolutionIdea instances.
-            ((SRepositoryExt) repository).unregisterModule(previousModule, myMpsProject);
-          } else {
-            // fixme this is too silent, we are just left with a broken facet where solution is null
-            MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
-            return;
-          }
+      SRepository repository = myMpsProject.getRepository();
+      ModuleRepositoryFacade facade = new ModuleRepositoryFacade(repository);
+      SModule previousModule = facade.getModule(solutionDescriptor.getModuleReference());
+      if (previousModule != null) {
+        if (previousModule instanceof SolutionIdea && facade.getModuleOwners(previousModule).size() == 1) {
+          // Happens because upon .iml change, idea first initialises new facet and then disposes the old one.
+          // Thus, the solution from the old one under the same module reference is still in the repo.
+          // Deleting it here is dirty but likely safe, since MPSFacet is the only place that handles
+          // creation/deletion of SolutionIdea instances.
+          ((SRepositoryExt) repository).unregisterModule(previousModule, myMpsProject);
+        } else {
+          // fixme this is too silent, we are just left with a broken facet where solution is null
+          MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
+          return;
         }
+      }
 
-        ((SRepositoryExt) repository).registerModule(mySolution = solution, myMpsProject);
-        myMpsProject.addModule(mySolution);
+      ((SRepositoryExt) repository).registerModule(mySolution = solution, myMpsProject);
+      myMpsProject.addModule(mySolution);
 
-        if (!getConfiguration().isLoaded()) {
-          //this means we have just created this facet, need to set current dep versions
-          new VersionFixer(myMpsProject, mySolution, false).updateImportVersions();
-          mySolution.save();
-        }
+      if (!getConfiguration().isLoaded()) {
+        //this means we have just created this facet, need to set current dep versions
+        new VersionFixer(myMpsProject, mySolution, false).updateImportVersions();
+        mySolution.save();
+      }
 
-        LOG.info(MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleName()));
-        IdeaPluginDescriptor descriptor = PluginManager.getPlugin(PluginManager.getPluginByClassName(MPSFacet.class.getName()));
-        String version = descriptor == null ? null : descriptor.getVersion();
-        UsageTrigger.trigger("MPS.initFacet." + version);
-      });
+      LOG.info(MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleName()));
+      IdeaPluginDescriptor descriptor = PluginManager.getPlugin(PluginManager.getPluginByClassName(MPSFacet.class.getName()));
+      String version = descriptor == null ? null : descriptor.getVersion();
+      UsageTrigger.trigger("MPS.initFacet." + version);
     });
   }
 

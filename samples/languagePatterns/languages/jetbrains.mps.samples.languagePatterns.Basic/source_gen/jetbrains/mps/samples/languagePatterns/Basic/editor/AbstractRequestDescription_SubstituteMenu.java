@@ -112,7 +112,7 @@ public class AbstractRequestDescription_SubstituteMenu extends SubstituteMenuBas
       @Override
       public SNode createNode(@NotNull String pattern) {
         SNode desc = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db223d5L, "jetbrains.mps.samples.languagePatterns.Basic.structure.StringDescription")), null);
-        SPropertyOperations.set(desc, MetaAdapterFactory.getProperty(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db223d5L, 0x1a2a793c4db223d6L, "value"), pattern);
+        SPropertyOperations.assign(desc, MetaAdapterFactory.getProperty(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db223d5L, 0x1a2a793c4db223d6L, "value"), pattern);
         return desc;
       }
 

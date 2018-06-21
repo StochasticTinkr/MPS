@@ -36,10 +36,10 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
   }
 
   /*package*/ EditorCell createCell() {
-    return createTable_y763qk_a();
+    return createTable_0();
   }
 
-  private EditorCell createTable_y763qk_a() {
+  private EditorCell createTable_0() {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel() {
         return new TableModel() {
@@ -108,7 +108,7 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
     EditorCell_Collection editorCell = EditorCell_Table.createTable(getEditorContext(), myNode, creator.createTableModel(), "Table_y763qk_a");
     editorCell.setCellId("Table_y763qk_a_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     return editorCell;
   }
 }

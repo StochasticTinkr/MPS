@@ -19,6 +19,7 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -27,6 +28,8 @@ public class CellAction_Insert extends AbstractCellAction {
   private final SContainmentLink myRole;
   private final String myLegacyRole;
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public CellAction_Insert(SNode node, String role) {
     myNode = node;
     myLegacyRole = role;

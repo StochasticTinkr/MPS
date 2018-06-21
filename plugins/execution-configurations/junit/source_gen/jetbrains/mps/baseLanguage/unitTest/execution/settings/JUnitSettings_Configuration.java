@@ -206,11 +206,11 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   }
   @Override
   public JUnitSettings_Configuration clone() {
-    JUnitSettings_Configuration clone = null;
+    JUnitSettings_Configuration clone = createCloneTemplate();
     try {
-      clone = createCloneTemplate();
+      // beware, PersistenceConfiguration.this of newly created MyState instance would be the same as 
+      // the value of myState, and != clone as regular Java passer-by would expect. 
       clone.myState = (JUnitSettings_Configuration.MyState) myState.clone();
-      return clone;
     } catch (CloneNotSupportedException ex) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", ex);
@@ -218,7 +218,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
     }
     return clone;
   }
-  public class MyState {
+  public final class MyState {
     public String myModelRef;
     public String myModuleRef;
     public boolean myInProcess = true;

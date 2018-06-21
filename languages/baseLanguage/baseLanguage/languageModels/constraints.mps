@@ -275,6 +275,7 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -1086,16 +1087,12 @@
                 <node concept="2YIFZM" id="2ZDBRmjSWMy" role="3uHU7w">
                   <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                   <ref role="37wK5l" to="18ew:~NameUtil.compactModelName(org.jetbrains.mps.openapi.model.SModelReference):java.lang.String" resolve="compactModelName" />
-                  <node concept="2OqwBi" id="2ZDBRmjSWMz" role="37wK5m">
-                    <node concept="liA8E" id="2ZDBRmjSWM$" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                  <node concept="2OqwBi" id="3XR0QgVCjSo" role="37wK5m">
+                    <node concept="2OqwBi" id="3XR0QgVCjSl" role="2Oq$k0">
+                      <node concept="EsrRn" id="3XR0QgVCjSm" role="2Oq$k0" />
+                      <node concept="I4A8Y" id="3XR0QgVCjSn" role="2OqNvi" />
                     </node>
-                    <node concept="2JrnkZ" id="2ZDBRmjSWM_" role="2Oq$k0">
-                      <node concept="2OqwBi" id="2ZDBRmjSWMA" role="2JrQYb">
-                        <node concept="EsrRn" id="2ZDBRmjSWMB" role="2Oq$k0" />
-                        <node concept="I4A8Y" id="2ZDBRmjSWMC" role="2OqNvi" />
-                      </node>
-                    </node>
+                    <node concept="aIX43" id="3XR0QgVCjSp" role="2OqNvi" />
                   </node>
                 </node>
                 <node concept="3cpWs3" id="hDMFJoX" role="3uHU7B">
@@ -4547,6 +4544,27 @@
             <node concept="2qgKlT" id="147CB3QsTRo" role="2OqNvi">
               <ref role="37wK5l" to="tpek:6GtiBfDgtyx" resolve="doesOperandHaveInnerClassesToInstantiateHere" />
               <node concept="nLn13" id="147CB3QsTRp" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="67wnfVkIZF6">
+    <property role="3GE5qa" value="variables" />
+    <ref role="1M2myG" to="tpee:fzcpWvK" resolve="LocalVariableDeclarationStatement" />
+    <node concept="9S07l" id="67wnfVkIZMv" role="9Vyp8">
+      <node concept="3clFbS" id="67wnfVkIZMw" role="2VODD2">
+        <node concept="3cpWs6" id="67wnfVkILQt" role="3cqZAp">
+          <node concept="3fqX7Q" id="67wnfVkJ0Fp" role="3cqZAk">
+            <node concept="1eOMI4" id="67wnfVkJi$a" role="3fr31v">
+              <node concept="17R0WA" id="67wnfVkJ0Fr" role="1eOMHV">
+                <node concept="2DA6wF" id="67wnfVkJ0Fs" role="3uHU7B" />
+                <node concept="359W_D" id="67wnfVkJ0Ft" role="3uHU7w">
+                  <ref role="359W_E" to="tpee:fzclF8n" resolve="IfStatement" />
+                  <ref role="359W_F" to="tpee:fK9aQHQ" resolve="ifFalseStatement" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

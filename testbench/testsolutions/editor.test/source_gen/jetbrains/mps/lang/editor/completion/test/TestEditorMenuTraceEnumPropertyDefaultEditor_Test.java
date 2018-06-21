@@ -8,14 +8,15 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @MPSLaunch
@@ -29,11 +30,15 @@ public class TestEditorMenuTraceEnumPropertyDefaultEditor_Test extends BaseTrans
 
   @Test
   public void test_TestEditorMenuTraceEnumPropertyDefaultEditor() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.completion.test.TestEditorMenuTraceEnumPropertyDefaultEditor_Test$TestBody", "testMethod", false);
+    new TestEditorMenuTraceEnumPropertyDefaultEditor_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3631615103242228899", "3631615103242228897");
@@ -46,7 +51,7 @@ public class TestEditorMenuTraceEnumPropertyDefaultEditor_Test extends BaseTrans
           Assert.assertTrue(action != null);
 
           EditorMenuTraceInfo editorMenuTraceInfo = action.getEditorMenuTraceInfo();
-          SNodeReference enumMemberDeclaration = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNode("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "3631615103242154418"), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).first().getReference();
+          SNodeReference enumMemberDeclaration = SNodeOperations.getPointer(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNode("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "3631615103242154418"), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).first());
           EditorMenuTraceTestUtil.checkTraceInfoPath(editorMenuTraceInfo, enumMemberDeclaration);
         }
       });

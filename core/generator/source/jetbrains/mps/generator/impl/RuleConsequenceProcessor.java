@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import jetbrains.mps.generator.impl.query.QueryKey;
 import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.impl.template.QueryExecutor;
+import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.util.Pair;
@@ -33,6 +34,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -184,20 +186,42 @@ public abstract class RuleConsequenceProcessor {
   }
 
   private static class TemplateDeclarationReference extends RuleConsequenceProcessor {
-    private final RuleConsequenceProcessor myTemplateContainer;
+    private final SNode myTemplateDeclaration;
     private final TemplateCall myTemplateCall;
+    private final SNodeReference myCallSite;
 
-    public TemplateDeclarationReference(@NotNull SNode ruleConsequence, @NotNull RuleConsequenceProcessor templateContainer) {
-      myTemplateContainer = templateContainer;
+    /**
+     * If we invoked generated external template from non-generated generator, we use TEE.applyTemplate() or its replacement here,
+     * which would load proper TemplateDeclaration (either from model or generated code)?
+     * @param ruleConsequence
+     * @param templateDeclaration in fact, at the moment we need only SNodeReference of template declaration (or anything else we use in
+     *                            applyTemplates to identify invoked template. If it's from compiled, we shall not use {@code node<>}.
+     *                            I pass SNode here just because I've got it handy
+     */
+    public TemplateDeclarationReference(@NotNull SNode ruleConsequence, @NotNull SNode templateDeclaration) {
+      myTemplateDeclaration = templateDeclaration;
       myTemplateCall = new TemplateCall(ruleConsequence);
+      myCallSite = ruleConsequence.getReference();
     }
 
     @NotNull
     @Override
     public List<SNode> processRuleConsequence(@NotNull TemplateContext context)
         throws GenerationFailureException, GenerationCanceledException, DismissTopMappingRuleException, AbandonRuleInputException {
-      TemplateContext ctx = myTemplateCall.prepareCallContext(context);
-      return myTemplateContainer.processRuleConsequence(ctx);
+      // FIXME pretty much the same code is in CallMacro, shall unify.
+      if (myTemplateCall.argumentsMismatch()) {
+        context.getEnvironment().getLogger().error(myCallSite, "number of arguments doesn't match template", GeneratorUtil.describeInput(context));
+      }
+
+      Object[] args = myTemplateCall.evaluateArguments(context);
+      try {
+        Collection<SNode> rv = context.getEnvironment().applyTemplate(myTemplateDeclaration.getReference(), myCallSite, context, args);
+        return new ArrayList<>(rv);
+      } catch (GenerationFailureException | GenerationCanceledException | DismissTopMappingRuleException | AbandonRuleInputException ex) {
+        throw ex;
+      } catch (GenerationException ex) {
+        throw new GenerationFailureException(ex);
+      }
     }
   }
 
@@ -222,7 +246,12 @@ public abstract class RuleConsequenceProcessor {
 
     @Override
     public void inlineTemplateWithContext(SNode ruleConsequence) {
-      myConsequence = getTemplateContainer(ruleConsequence, RuleUtil.getInlineTemplateWithContext_contentNode(ruleConsequence));
+      SNode templateContainer = RuleUtil.getInlineTemplateWithContext_contentNode(ruleConsequence);
+      if (templateContainer != null) {
+        myConsequence = new TemplateContainer(templateContainer);
+      } else {
+        myConsequence = new BadConsequence(ruleConsequence, "error processing template consequence: no 'template'");
+      }
     }
 
     @Override
@@ -240,20 +269,11 @@ public abstract class RuleConsequenceProcessor {
       // XXX the reason we don't use TemplateDeclarationInterpreted here seems to be
       // limitation of the TemplateDeclarationInterpreted - the way arguments are supplied there is different
       // from the one we use here (latter evaluates, while former get actual values)
-      final RuleConsequenceProcessor templateContainer = getTemplateContainer(ruleConsequence, RuleUtil.getTemplateDeclarationReference_Template(ruleConsequence));
-      // XXX what if we invoked generated external template from non-generated generator? Shouldn't we use TEE.applyTemplate() here, which would load proper
-      //     TemplateDeclaration (either from model or generated code)?
-      // Besides, the fact we use TemplateContainer, not TemplateDeclarationInterpreted, forces us to duplicate invocation code
-      // and leads to errors like https://youtrack.jetbrains.com/issue/MPS-24406, when invocation of a template from generated code yields results
-      // different from that of invocation from interpreted code.
-      myConsequence = new TemplateDeclarationReference(ruleConsequence, templateContainer);
-    }
-
-    private static RuleConsequenceProcessor getTemplateContainer(SNode ruleConsequence, SNode templateContainer) {
-      if (templateContainer != null) {
-        return new TemplateContainer(templateContainer);
+      SNode templateDeclNode = RuleUtil.getTemplateDeclarationReference_Template(ruleConsequence);
+      if (templateDeclNode == null) {
+        myConsequence = new BadConsequence(ruleConsequence, "error processing template consequence: no 'template'");
       } else {
-        return new BadConsequence(ruleConsequence, "error processing template consequence: no 'template'");
+        myConsequence = new TemplateDeclarationReference(ruleConsequence, templateDeclNode);
       }
     }
 

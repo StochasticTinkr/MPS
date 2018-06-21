@@ -7,7 +7,7 @@ import org.junit.runner.Request;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runner.Description;
 
-public class StoppableRunner extends Runner {
+public final class StoppableRunner extends Runner {
   private final Object myLock = "";
   protected final Request myRequest;
   private boolean myStopping;

@@ -190,7 +190,9 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   @TestOnly
-  ModulesWatcher getModulesWatcher() {
+  //[MM] Alexey suggested to use this method to check module status until no other API provided
+  //TODO make an API for that purpose
+  public ModulesWatcher getModulesWatcher() {
     return myModulesWatcher;
   }
 

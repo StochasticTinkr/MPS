@@ -69,7 +69,7 @@ public class RenameModuleDialog extends RenameDialog {
       public void run() {
         final String newModuleName = getCurrentValue();
         try {
-          Renamer.renameModuleWithSubModules(myModule, newModuleName, mySubModules);
+          Renamer.renameModuleWithSubModules(myModule, newModuleName, mySubModules, myProject);
         } catch (DescriptorTargetFileAlreadyExistsException e) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("", e);

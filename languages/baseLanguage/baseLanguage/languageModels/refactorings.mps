@@ -133,6 +133,12 @@
       <concept id="5497648299878491908" name="jetbrains.mps.baseLanguage.structure.BaseVariableReference" flags="nn" index="1M0zk4">
         <reference id="5497648299878491909" name="baseVariableDeclaration" index="1M0zk5" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
@@ -957,6 +963,21 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3SKdUt" id="MRN5EIeqNx" role="3cqZAp">
+                    <node concept="3SKdUq" id="MRN5EIeqNz" role="3SKWNk">
+                      <property role="3SKdUp" value="XXX perhaps, we shall use refactoringContext.mpsProject.getScope() instead of refactoringContext.scope" />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="MRN5EIeI$2" role="3cqZAp">
+                    <node concept="3SKdUq" id="MRN5EIeI$4" role="3SKWNk">
+                      <property role="3SKdUp" value="    as we might be interested in any usage. However, it's not clear what rc.scope is and as since it's " />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="MRN5EIfrJM" role="3cqZAp">
+                    <node concept="3SKdUq" id="MRN5EIfrJN" role="3SKWNk">
+                      <property role="3SKdUp" value="    technically the same now, I decided to go with just rc.scope." />
+                    </node>
+                  </node>
                   <node concept="3clFbF" id="7UcKRu2PUFF" role="3cqZAp">
                     <node concept="37vLTI" id="7UcKRu2PVqb" role="3clFbG">
                       <node concept="zAVLd" id="3X$1g2Ty9BF" role="37vLTx">
@@ -965,6 +986,10 @@
                         </node>
                         <node concept="1M0UyE" id="7UcKRu2PUFJ" role="2GiN3p">
                           <ref role="1M0zk5" node="7UcKRu2PUDc" resolve="declaration" />
+                        </node>
+                        <node concept="2OqwBi" id="MRN5EIdz31" role="2GiN3o">
+                          <node concept="50NuE" id="MRN5EIe0PI" role="2Oq$k0" />
+                          <node concept="50M6r" id="MRN5EIdMjS" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="1M0UyE" id="7UcKRu2PVqe" role="37vLTJ">

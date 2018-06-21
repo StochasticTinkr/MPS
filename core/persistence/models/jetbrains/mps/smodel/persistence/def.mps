@@ -6,7 +6,7 @@
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
@@ -485,6 +485,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4PEU_E_BGC" role="jymVt" />
     <node concept="3clFb_" id="7E_6zdv1nkM" role="jymVt">
       <property role="TrG5h" value="saveProperty" />
       <node concept="3cqZAl" id="7E_6zdv1nkN" role="3clF45" />
@@ -524,6 +525,48 @@
       </node>
       <node concept="3Tm1VV" id="7E_6zdv1nkO" role="1B3o_S" />
     </node>
+    <node concept="3clFb_" id="4PEU_E_AVQ" role="jymVt">
+      <property role="TrG5h" value="saveProperty" />
+      <node concept="3cqZAl" id="4PEU_E_AVR" role="3clF45" />
+      <node concept="37vLTG" id="4PEU_E_AVS" role="3clF46">
+        <property role="TrG5h" value="prop" />
+        <node concept="3uibUv" id="4PEU_E_CJW" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="4PEU_E_AVU" role="3clF46">
+        <property role="TrG5h" value="locator" />
+        <node concept="3uibUv" id="4PEU_E_AVV" role="1tU5fm">
+          <ref role="3uigEE" to="kart:~Locator" resolve="Locator" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="4PEU_E_AVW" role="3clF47">
+        <node concept="3clFbF" id="4PEU_E_AVX" role="3cqZAp">
+          <node concept="1rXfSq" id="4PEU_E_AVY" role="3clFbG">
+            <ref role="37wK5l" node="7E_6zdv1nnq" resolve="saveElement" />
+            <node concept="37vLTw" id="4PEU_E_AVZ" role="37wK5m">
+              <ref role="3cqZAo" node="4PEU_E_AVU" resolve="locator" />
+            </node>
+            <node concept="2ShNRf" id="4PEU_E_AW0" role="37wK5m">
+              <node concept="1pGfFk" id="4PEU_E_AW1" role="2ShVmc">
+                <ref role="37wK5l" to="mdm6:~PropertyLineContent.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNodeId,org.jetbrains.mps.openapi.language.SProperty)" resolve="PropertyLineContent" />
+                <node concept="2OqwBi" id="4PEU_E_AW2" role="37wK5m">
+                  <node concept="37vLTw" id="4PEU_E_AW3" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7E_6zdv1nlh" resolve="myNodeIdStack" />
+                  </node>
+                  <node concept="2oR75g" id="4PEU_E_AW4" role="2OqNvi" />
+                </node>
+                <node concept="37vLTw" id="4PEU_E_AW5" role="37wK5m">
+                  <ref role="3cqZAo" node="4PEU_E_AVS" resolve="prop" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4PEU_E_AW6" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="4PEU_E_ytR" role="jymVt" />
     <node concept="3clFb_" id="7E_6zdv1nkU" role="jymVt">
       <property role="TrG5h" value="saveReference" />
       <node concept="3cqZAl" id="7E_6zdv1nkV" role="3clF45" />
@@ -563,6 +606,48 @@
         </node>
       </node>
     </node>
+    <node concept="3clFb_" id="4PEU_E_zhs" role="jymVt">
+      <property role="TrG5h" value="saveReference" />
+      <node concept="3cqZAl" id="4PEU_E_zht" role="3clF45" />
+      <node concept="37vLTG" id="4PEU_E_zhu" role="3clF46">
+        <property role="TrG5h" value="link" />
+        <node concept="3uibUv" id="4PEU_E__Kw" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="4PEU_E_zhw" role="3clF47">
+        <node concept="3clFbF" id="4PEU_E_zhx" role="3cqZAp">
+          <node concept="1rXfSq" id="4PEU_E_zhy" role="3clFbG">
+            <ref role="37wK5l" node="7E_6zdv1nnq" resolve="saveElement" />
+            <node concept="37vLTw" id="4PEU_E_zhz" role="37wK5m">
+              <ref role="3cqZAo" node="4PEU_E_zhF" resolve="locator" />
+            </node>
+            <node concept="2ShNRf" id="4PEU_E_zh$" role="37wK5m">
+              <node concept="1pGfFk" id="4PEU_E_zh_" role="2ShVmc">
+                <ref role="37wK5l" to="mdm6:~ReferenceLineContent.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNodeId,org.jetbrains.mps.openapi.language.SReferenceLink)" resolve="ReferenceLineContent" />
+                <node concept="2OqwBi" id="4PEU_E_zhA" role="37wK5m">
+                  <node concept="2oR75g" id="4PEU_E_zhB" role="2OqNvi" />
+                  <node concept="37vLTw" id="4PEU_E_zhC" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7E_6zdv1nlh" resolve="myNodeIdStack" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="4PEU_E_zhD" role="37wK5m">
+                  <ref role="3cqZAo" node="4PEU_E_zhu" resolve="link" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4PEU_E_zhE" role="1B3o_S" />
+      <node concept="37vLTG" id="4PEU_E_zhF" role="3clF46">
+        <property role="TrG5h" value="locator" />
+        <node concept="3uibUv" id="4PEU_E_zhG" role="1tU5fm">
+          <ref role="3uigEE" to="kart:~Locator" resolve="Locator" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4PEU_E_xAL" role="jymVt" />
     <node concept="3clFb_" id="7E_6zdv1nl2" role="jymVt">
       <property role="TrG5h" value="processText" />
       <node concept="3Tm1VV" id="7E_6zdv1nl4" role="1B3o_S" />

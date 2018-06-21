@@ -28,10 +28,10 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
   }
 
   /*package*/ EditorCell createCell() {
-    return createModelAccess_tdtdsv_a();
+    return createModelAccess_0();
   }
 
-  private EditorCell createModelAccess_tdtdsv_a() {
+  private EditorCell createModelAccess_0() {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
         boolean var = getEditorContext() != null || myNode != null;
@@ -53,7 +53,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ModelAccess_tdtdsv_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.setDefaultText("text");
     return editorCell;
   }

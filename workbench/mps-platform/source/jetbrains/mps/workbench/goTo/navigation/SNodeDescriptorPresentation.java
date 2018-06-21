@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.goTo.navigation;
 
 import com.intellij.navigation.ItemPresentation;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
@@ -53,6 +53,6 @@ import javax.swing.Icon;
   @Override
   public Icon getIcon(boolean b) {
     //we don't use alternative icon here since it's very expensive and slows down Ctrl+N popup considerably
-    return IconManager.getIconFor(myNodeResult.getConcept());
+    return GlobalIconManager.getInstance().getIconFor(myNodeResult.getConcept());
   }
 }

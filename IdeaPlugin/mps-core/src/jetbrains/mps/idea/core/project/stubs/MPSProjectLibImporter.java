@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.idea.core.project.stubs;
 
 import com.intellij.notification.Notification;
@@ -47,6 +46,14 @@ public class MPSProjectLibImporter extends BaseLibImporter implements ProjectCom
   @Override
   protected void addModuleForLibrary(Library l) {
     if (ModuleLibraryType.isModuleLibrary(l)) {
+      return;
+    }
+    if (l.getName() == null || l.getName().trim().isEmpty()) {
+      new Notification(
+          MPSBundle.message("mps.stub.warning.group.display.id"),
+          MPSBundle.message("mps.stub.warning.duplicate.project.lib.title"),
+          MPSBundle.message("mps.stub.warning.empty.project.lib.message"),
+          NotificationType.WARNING).notify(myProject);
       return;
     }
     super.addModuleForLibrary(l);

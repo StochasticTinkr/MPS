@@ -19,7 +19,7 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.project.Project;
@@ -51,7 +51,7 @@ public class ModelNodeData extends AbstractResultNodeData {
   public Icon getIcon(PresentationContext presentationContext) {
     SModel modelDescriptor = myModelReference.resolve(presentationContext.getRepository());
     if (modelDescriptor != null) {
-      return IconManager.getIconFor(modelDescriptor);
+      return GlobalIconManager.getInstance().getIconFor(modelDescriptor);
     }
     return IdeIcons.MODEL_ICON;
   }

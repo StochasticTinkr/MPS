@@ -16,11 +16,9 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.SNodeLegacy;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.kernel.model.SModelUtil;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public class CellAction_InsertPlaceholder extends AbstractCellAction {
   private final boolean myIsAfter;
@@ -57,11 +55,13 @@ public class CellAction_InsertPlaceholder extends AbstractCellAction {
           if (Objects.equals(containmentLink, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))) {
             if (SNodeOperations.isInstanceOf(((SNode) childNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"))) {
               containmentLink = ((SContainmentLink) BHReflection.invoke0(SNodeOperations.cast(childNode, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzf")));
-            } else {
-              containmentLink = null;
+            } else if (SNodeOperations.isInstanceOf(((SNode) childNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute"))) {
+              childNode = parentNode;
+              parentNode = check_d2uk49_a0b0a0a3a1a2a7a5(parentNode);
+              containmentLink = check_d2uk49_a0c0a0a3a1a2a7a5(childNode);
             }
           }
-          if (containmentLink != null && containmentLink.isMultiple() && parentNode != null) {
+          if (containmentLink != null && containmentLink.isMultiple() && !(Objects.equals(containmentLink, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))) && parentNode != null) {
             return new CellAction_InsertPlaceholder.PlaceToInsert(parentNode, childNode, containmentLink);
           }
         }
@@ -85,9 +85,6 @@ public class CellAction_InsertPlaceholder extends AbstractCellAction {
       myChildNode = childNode;
       myContainmentLink = containmentLink;
     }
-    private PlaceToInsert(@NotNull SNode parentNode, @Nullable SNode childNode, @NotNull String role) {
-      this(parentNode, childNode, ((ConceptMetaInfoConverter) parentNode.getConcept()).convertAggregation(role));
-    }
 
     /*package*/ void insertPlaceholder() {
       SNode placeholder = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x339681b4da4ef1a7L, "jetbrains.mps.lang.core.structure.BasePlaceholder"));
@@ -105,17 +102,28 @@ public class CellAction_InsertPlaceholder extends AbstractCellAction {
     }
   }
 
-
   private static CellAction_InsertPlaceholder.PlaceToInsert getPlaceFromCollectionCell(EditorCell cell) {
-    if (cell.getRole() != null) {
-      String role = cell.getRole();
-      SNode currentNode = cell.getSNode();
-      SNode linkDeclaration = (SNode) new SNodeLegacy(currentNode).getLinkDeclaration(role);
-      if (linkDeclaration != null && !(SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) && SModelUtil.isMultipleLinkDeclaration(linkDeclaration)) {
-        return new CellAction_InsertPlaceholder.PlaceToInsert(currentNode, null, role);
-      }
+    if (cell.getSRole() == null) {
+      return null;
+    }
+
+    SAbstractLink role = (SAbstractLink) cell.getSRole();
+    if (role == null || (role instanceof SReferenceLink) || !(role.isMultiple())) {
+      return null;
+    }
+
+    return new CellAction_InsertPlaceholder.PlaceToInsert(cell.getSNode(), null, (SContainmentLink) role);
+  }
+  private static SNode check_d2uk49_a0b0a0a3a1a2a7a5(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getParent();
     }
     return null;
   }
-
+  private static SContainmentLink check_d2uk49_a0c0a0a3a1a2a7a5(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getContainmentLink();
+    }
+    return null;
+  }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
@@ -37,9 +38,18 @@ public class PersistenceProblem implements SModel.Problem {
   private final boolean isError;
   private final int line;
   private final int column;
-  private final SNode anchor;
+  private final SNodeReference anchor;
 
+  /**
+   * @deprecated use alternative with {@link SNodeReference node reference} for anchor
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public PersistenceProblem(Kind kind, String text, String location, boolean error, int line, int column, SNode anchor) {
+    this(kind, text, location, error, line, column, anchor == null ? null : anchor.getReference());
+  }
+
+  public PersistenceProblem(Kind kind, String text, String location, boolean error, int line, int column, @Nullable SNodeReference anchor) {
     this.myKind = kind;
     this.text = text;
     this.location = location;
@@ -50,7 +60,7 @@ public class PersistenceProblem implements SModel.Problem {
   }
 
   public PersistenceProblem(Kind kind, String text, String location, boolean error) {
-    this(kind, text, location, error, -1, -1, null);
+    this(kind, text, location, error, -1, -1, (SNodeReference) null);
   }
 
   @Override
@@ -83,25 +93,34 @@ public class PersistenceProblem implements SModel.Problem {
     return isError;
   }
 
+  @Nullable
   @Override
-  public SNode getNode() {
+  public SNodeReference getAnchorNode() {
     return anchor;
   }
 
+  /**
+   * @deprecated not in use, is it worth to keep?
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static Problem fromIMessage(SModelData model, Kind kind, IMessage message) {
     if (message == null) {
       return null;
     }
-    SNode anchor = message.getHintObject() instanceof SNode ? (SNode) message.getHintObject() : null;
-    if (anchor == null && model != null && message.getHintObject() instanceof SNodeReference) {
-      SNodeReference ptr = (SNodeReference) message.getHintObject();
-      if (model.getReference().equals(ptr.getModelReference())) {
-        anchor = model.getNode(ptr.getNodeId());
-      }
+
+    SNodeReference anchor =  message.getHintObject() instanceof SNodeReference? (SNodeReference) message.getHintObject() : null;
+    if (anchor == null && message.getHintObject() instanceof SNode) {
+      anchor = ((SNode) message.getHintObject()).getReference();
     }
     return new PersistenceProblem(kind, message.getText(), null, message.getKind() == MessageKind.ERROR, -1, -1, anchor);
   }
 
+  /**
+   * @deprecated not in use, is it worth to keep?
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static Iterable<Problem> fromIMessages(@Nullable SModelData model, Kind kind, Iterable<IMessage> seq) {
     List<Problem> result = new ArrayList<Problem>();
     for (IMessage m : seq) {

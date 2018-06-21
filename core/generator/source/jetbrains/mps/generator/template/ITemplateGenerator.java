@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -64,9 +65,17 @@ public interface ITemplateGenerator extends GeneratorQueryProvider.Source {
 
   GenerationSessionContext getGeneratorSessionContext();
 
+  // XXX likely, useless as well.
   boolean isStrict();
 
-  boolean isDirty(SNode node);
+  /**
+   * @deprecated always {@code true}
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  default boolean isDirty(SNode node) {
+    return true;
+  }
 
   IGeneratorLogger getLogger();
 }

@@ -17,7 +17,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -76,7 +75,7 @@ public class RunMigrationScripts_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<SearchScope> scope = new Wrappers._T<SearchScope>();
     final Wrappers._T<List<SNodeReference>> allScripts = new Wrappers._T<List<SNodeReference>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         if (RunMigrationScripts_Action.this.global) {
           scope.value = AbstractMigrationScriptHelper.createMigrationScope(((List<SModule>) MapSequence.fromMap(_params).get("modules")), ((List<SModel>) MapSequence.fromMap(_params).get("models")));

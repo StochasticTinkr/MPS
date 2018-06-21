@@ -24,6 +24,7 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.IReferentPresentationProvider;
 import jetbrains.mps.smodel.action.ModelActions;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -35,9 +36,9 @@ import java.util.List;
 public class PrimaryReferentMenuCellMenuPart implements SubstituteInfoPartExt {
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-    SNode referenceNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    SNode linkDeclaration = (SNode) cellContext.get(ReferenceCellContext.LINK_DECLARATION);
-    SNode currentReferent = (SNode) cellContext.getOpt(ReferenceCellContext.CURRENT_REFERENT_NODE);
+    SNode referenceNode = cellContext.get(BasicCellContext.EDITED_NODE);
+    SReferenceLink linkDeclaration = cellContext.get(ReferenceCellContext.LINK_DECLARATION);
+    SNode currentReferent = cellContext.getOpt(ReferenceCellContext.CURRENT_REFERENT_NODE);
     IReferentPresentationProvider matchingTextProvider = getMatchingTextProvider();
     IReferentPresentationProvider visibleMatchingTextProvider = getVisibleMatchingTextProvider();
     if (matchingTextProvider == null) {

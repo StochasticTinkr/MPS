@@ -10,13 +10,13 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class DocumentationDescriptor implements DocumentationAspectDescriptor {
   public String getConceptDocumentation(SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0a = concept;
-    switch (index_kuvwlw_a0a.index(cncpt_a0a)) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         return "Hello, documentation world!";
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex index_kuvwlw_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x4ac0b19e3e884e61L, 0xbab3507ba2cceae8L, 0x28360eb22c3ac6f9L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x4ac0b19e3e884e61L, 0xbab3507ba2cceae8L, 0x28360eb22c3ac6f9L)).seal();
 }

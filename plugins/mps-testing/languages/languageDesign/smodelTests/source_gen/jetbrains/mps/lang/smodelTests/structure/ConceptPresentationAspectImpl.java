@@ -12,6 +12,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Child;
   private ConceptPresentation props_ChildSubConcept;
   private ConceptPresentation props_GrandChild;
+  private ConceptPresentation props_NPTypesystem_ConceptA;
+  private ConceptPresentation props_NPTypesystem_ConceptB;
+  private ConceptPresentation props_NPTypesystem_IntA;
+  private ConceptPresentation props_NPTypesystem_IntB;
+  private ConceptPresentation props_NPTypesystem_RefToIntA;
   private ConceptPresentation props_ReferenceContainer;
   private ConceptPresentation props_ReferenceContainerSubConcept;
   private ConceptPresentation props_Root;
@@ -42,6 +47,39 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_GrandChild = cpb.create();
         }
         return props_GrandChild;
+      case LanguageConceptSwitch.NPTypesystem_ConceptA:
+        if (props_NPTypesystem_ConceptA == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("NPTypesystem_ConceptA");
+          props_NPTypesystem_ConceptA = cpb.create();
+        }
+        return props_NPTypesystem_ConceptA;
+      case LanguageConceptSwitch.NPTypesystem_ConceptB:
+        if (props_NPTypesystem_ConceptB == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("NPTypesystem_ConceptB");
+          props_NPTypesystem_ConceptB = cpb.create();
+        }
+        return props_NPTypesystem_ConceptB;
+      case LanguageConceptSwitch.NPTypesystem_IntA:
+        if (props_NPTypesystem_IntA == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NPTypesystem_IntA = cpb.create();
+        }
+        return props_NPTypesystem_IntA;
+      case LanguageConceptSwitch.NPTypesystem_IntB:
+        if (props_NPTypesystem_IntB == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NPTypesystem_IntB = cpb.create();
+        }
+        return props_NPTypesystem_IntB;
+      case LanguageConceptSwitch.NPTypesystem_RefToIntA:
+        if (props_NPTypesystem_RefToIntA == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x76fa9e459e19e64L, 0x76fa9e459e19e65L, "ref", "", "");
+          props_NPTypesystem_RefToIntA = cpb.create();
+        }
+        return props_NPTypesystem_RefToIntA;
       case LanguageConceptSwitch.ReferenceContainer:
         if (props_ReferenceContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

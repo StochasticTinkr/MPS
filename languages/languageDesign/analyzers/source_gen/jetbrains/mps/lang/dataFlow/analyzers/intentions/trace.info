@@ -78,6 +78,10 @@
       <unit id="5034669639904583260" at="50,0,66,0" name="jetbrains.mps.lang.dataFlow.analyzers.intentions.AddModeToRule_Intention$IntentionImplementation" />
       <unit id="5034669639904583260" at="21,0,67,0" name="jetbrains.mps.lang.dataFlow.analyzers.intentions.AddModeToRule_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="5034669639904583260" at="44,47,45,56" concept="1" />
+      <node id="5034669639904583260" at="58,59,59,42" concept="1" />
+    </file>
   </root>
   <root nodeRef="r:40d6976b-ffc4-4d91-8b1c-e02439dc24bc(jetbrains.mps.lang.dataFlow.analyzers.intentions)/735072980478878565">
     <file name="AddModeToAnalyzerRunnerCreator_Intention.java">
@@ -144,6 +148,10 @@
       </scope>
       <unit id="735072980478878565" at="49,0,65,0" name="jetbrains.mps.lang.dataFlow.analyzers.intentions.AddModeToAnalyzerRunnerCreator_Intention$IntentionImplementation" />
       <unit id="735072980478878565" at="20,0,66,0" name="jetbrains.mps.lang.dataFlow.analyzers.intentions.AddModeToAnalyzerRunnerCreator_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="735072980478878565" at="37,47,38,73" concept="1" />
+      <node id="735072980478878565" at="57,52,58,59" concept="1" />
     </file>
   </root>
 </debug-info>

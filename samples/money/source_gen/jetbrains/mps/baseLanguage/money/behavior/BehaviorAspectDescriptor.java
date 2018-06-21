@@ -22,8 +22,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0h = concept;
-    switch (index_846f5o_a0h.index(cncpt_a0h)) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         return myMoneyCreator__BehaviorDescriptor;
       case 1:
@@ -36,5 +36,5 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     }
     return null;
   }
-  private static final ConceptSwitchIndex index_846f5o_a0h = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L), MetaIdFactory.conceptId(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x114740c6f9bL), MetaIdFactory.conceptId(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144ae7606aL), MetaIdFactory.conceptId(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144b05194dL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L), MetaIdFactory.conceptId(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x114740c6f9bL), MetaIdFactory.conceptId(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144ae7606aL), MetaIdFactory.conceptId(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144b05194dL)).seal();
 }

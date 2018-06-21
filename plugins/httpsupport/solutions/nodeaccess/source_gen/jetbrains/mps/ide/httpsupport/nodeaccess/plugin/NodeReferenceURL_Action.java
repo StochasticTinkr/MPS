@@ -60,7 +60,7 @@ public class NodeReferenceURL_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    CopyPasteUtil.copyTextToClipboard(buildRequest_njdhnr_a0a0a7(event.getData(MPSCommonDataKeys.NODE).getReference(), event.getData(MPSCommonDataKeys.MPS_PROJECT)));
+    CopyPasteUtil.copyTextToClipboard(buildRequest_njdhnr_a0a0a7(SNodeOperations.getPointer(event.getData(MPSCommonDataKeys.NODE)), event.getData(MPSCommonDataKeys.MPS_PROJECT)));
   }
   private static String buildRequest_njdhnr_a0a0a7(SNodeReference ref, Project project) {
     QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSInternalPortManager.PORT + "/node");

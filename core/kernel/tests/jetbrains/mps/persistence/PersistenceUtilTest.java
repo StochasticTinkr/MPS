@@ -15,33 +15,27 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import jetbrains.mps.testbench.WriteAction;
+import jetbrains.mps.smodel.TrivialModelDescriptor;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentAware;
-import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.junit.Assert;
-import org.junit.Rule;
 import org.junit.Test;
 
 import java.util.Iterator;
+import java.util.Objects;
 
 public class PersistenceUtilTest implements EnvironmentAware {
 
-  // FIXME need access to Project which has been initialized for the test to take its ModelAccess instead of one from global repository
-  @Rule
-  public WriteAction wa = new WriteAction(() -> {
-    return getEnvironment().getPlatform().findComponent(MPSModuleRepository.class).getModelAccess();
-  });
   private Environment myEnvironment;
 
   @Override
@@ -54,9 +48,11 @@ public class PersistenceUtilTest implements EnvironmentAware {
   }
 
   private SModel createTestModel() {
-    SModel result = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
-    result.addRootNode(new jetbrains.mps.smodel.SNode(SNodeUtil.concept_BaseConcept));
-    return result;
+    PersistenceFacade pf = myEnvironment.getPlatform().findComponent(PersistenceRegistry.class);
+    SModelReference mr = pf.createModelReference(null, SModelId.generate(), "persistence.util.test");
+    jetbrains.mps.smodel.SModel modelData = new jetbrains.mps.smodel.SModel(mr);
+    modelData.addRootNode(new jetbrains.mps.smodel.SNode(SNodeUtil.concept_BaseConcept));
+    return new TrivialModelDescriptor(modelData);
   }
 
   private boolean modelsEquals(SModel a, SModel b) {
@@ -74,11 +70,12 @@ public class PersistenceUtilTest implements EnvironmentAware {
   }
 
   private boolean nodesEquals(SNode a, SNode b) {
-    if (!EqualUtil.equals(a.getConcept(), b.getConcept())) {
+    // pretty much identical to NodesMatcher (which is in [gensources], unfortunately)
+    if (!Objects.equals(a.getConcept(), b.getConcept())) {
       return false;
     }
 
-    if (!EqualUtil.equals(a.getNodeId(), b.getNodeId())) {
+    if (!Objects.equals(a.getNodeId(), b.getNodeId())) {
       return false;
     }
 
@@ -99,7 +96,7 @@ public class PersistenceUtilTest implements EnvironmentAware {
       if (!aProperties.hasNext() || !bProperties.hasNext()) {
         return false;
       }
-      if (!EqualUtil.equals(aProperties.next(), bProperties.next())) {
+      if (!Objects.equals(aProperties.next(), bProperties.next())) {
         return false;
       }
     }
@@ -112,10 +109,10 @@ public class PersistenceUtilTest implements EnvironmentAware {
       }
       SReference aRef = aReferences.next();
       SReference bRef = bReferences.next();
-      if (!EqualUtil.equals(aRef.getLink(), bRef.getLink())) {
+      if (!Objects.equals(aRef.getLink(), bRef.getLink())) {
         return false;
       }
-      if (!EqualUtil.equals(aRef.getTargetNodeReference(), bRef.getTargetNodeReference())) {
+      if (!Objects.equals(aRef.getTargetNodeReference(), bRef.getTargetNodeReference())) {
         return false;
       }
     }

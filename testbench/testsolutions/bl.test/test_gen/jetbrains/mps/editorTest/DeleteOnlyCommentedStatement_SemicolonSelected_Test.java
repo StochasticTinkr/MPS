@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.EditorUtil;
 
 @MPSLaunch
@@ -21,11 +22,15 @@ public class DeleteOnlyCommentedStatement_SemicolonSelected_Test extends BaseTra
 
   @Test
   public void test_DeleteOnlyCommentedStatement_SemicolonSelected() throws Throwable {
-    runTest("jetbrains.mps.editorTest.DeleteOnlyCommentedStatement_SemicolonSelected_Test$TestBody", "testMethod", false);
+    new DeleteOnlyCommentedStatement_SemicolonSelected_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("8821749938013431275", "8821749938013431288");

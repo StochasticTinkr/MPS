@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -22,11 +23,15 @@ public class EmptyEnumConstantCreationWithConstructorTest_Test extends BaseTrans
 
   @Test
   public void test_EmptyEnumConstantCreationWithConstructorTest() throws Throwable {
-    runTest("jetbrains.mps.editorTest.EmptyEnumConstantCreationWithConstructorTest_Test$TestBody", "testMethod", false);
+    new EmptyEnumConstantCreationWithConstructorTest_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("7045533117182184908", "7045533117182184964");

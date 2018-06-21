@@ -7,7 +7,7 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
@@ -583,11 +583,13 @@
                                                           <node concept="1bVj0M" id="1KUoCipvwIL" role="23t8la">
                                                             <node concept="3clFbS" id="1KUoCipvwIM" role="1bW5cS">
                                                               <node concept="3clFbF" id="1KUoCipvwIN" role="3cqZAp">
-                                                                <node concept="2OqwBi" id="fweninXn1x" role="3clFbG">
-                                                                  <node concept="37vLTw" id="fweninXlUk" role="2Oq$k0">
-                                                                    <ref role="3cqZAo" node="1KUoCipvwIU" resolve="it" />
+                                                                <node concept="2JrnkZ" id="7u2HgD1Kny_" role="3clFbG">
+                                                                  <node concept="2OqwBi" id="fweninXn1x" role="2JrQYb">
+                                                                    <node concept="37vLTw" id="fweninXlUk" role="2Oq$k0">
+                                                                      <ref role="3cqZAo" node="1KUoCipvwIU" resolve="it" />
+                                                                    </node>
+                                                                    <node concept="iZEcu" id="fweninXn9I" role="2OqNvi" />
                                                                   </node>
-                                                                  <node concept="iZEcu" id="fweninXn9I" role="2OqNvi" />
                                                                 </node>
                                                               </node>
                                                             </node>

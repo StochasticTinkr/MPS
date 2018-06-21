@@ -62,6 +62,10 @@ public class MPSPackageFinder extends PsiElementFinder {
       return null;
     }
     SRepository repository = ProjectHelper.getProjectRepository(myProject);
+    if (repository == null) {
+      // e.g. default project
+      return null;
+    }
     return new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<PsiPackage>() {
       @Override
       public PsiPackage compute() {

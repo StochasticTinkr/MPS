@@ -12,6 +12,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.IdEncoder" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.IdInfoReadHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.xml.sax.Attributes" />
     <classNode dependClassName="org.xml.sax.Locator" />
     <classNode dependClassName="org.xml.sax.SAXException" />

@@ -60,7 +60,7 @@ public class ForcedSaveAll_Action extends BaseAction {
       }
     }).ofType(EditableSModel.class).where(new IWhereFilter<EditableSModel>() {
       public boolean accept(EditableSModel it) {
-        return SModelStereotype.isUserModel(it);
+        return !(SModelStereotype.isStubModel(it));
       }
     }).toListSequence();
 

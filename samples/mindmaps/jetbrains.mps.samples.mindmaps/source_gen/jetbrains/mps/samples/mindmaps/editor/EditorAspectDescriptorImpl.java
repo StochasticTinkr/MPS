@@ -17,11 +17,11 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("diagram", "", true, "jetbrains.mps.samples.mindmaps.editor.mindmaps.diagram"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("diagram", "Mind Map", true, "jetbrains.mps.samples.mindmaps.editor.mindmaps.diagram"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0b = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0b.index(cncpt_a0b)) {
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new CoreThrought_diagram_Editor());
       case 1:
@@ -42,5 +42,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   }
 
 
-  private static final ConceptSwitchIndex index_xbvbvu_a0b = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x46337bb59bbce054L), MetaIdFactory.conceptId(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL), MetaIdFactory.conceptId(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L), MetaIdFactory.conceptId(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x46337bb59bbba841L), MetaIdFactory.conceptId(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x46337bb59bbce054L), MetaIdFactory.conceptId(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL), MetaIdFactory.conceptId(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L), MetaIdFactory.conceptId(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x46337bb59bbba841L), MetaIdFactory.conceptId(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L)).seal();
 }

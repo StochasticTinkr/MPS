@@ -12,15 +12,25 @@ public final class LanguageConceptSwitch {
   public static final int Child = 0;
   public static final int ChildSubConcept = 1;
   public static final int GrandChild = 2;
-  public static final int ReferenceContainer = 3;
-  public static final int ReferenceContainerSubConcept = 4;
-  public static final int Root = 5;
+  public static final int NPTypesystem_ConceptA = 3;
+  public static final int NPTypesystem_ConceptB = 4;
+  public static final int NPTypesystem_IntA = 5;
+  public static final int NPTypesystem_IntB = 6;
+  public static final int NPTypesystem_RefToIntA = 7;
+  public static final int ReferenceContainer = 8;
+  public static final int ReferenceContainerSubConcept = 9;
+  public static final int Root = 10;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL);
     builder.put(0x3dd540b968e9fbfL, Child);
     builder.put(0x7a02788de4ab4dL, ChildSubConcept);
     builder.put(0x3dd540b968e9fc4L, GrandChild);
+    builder.put(0x76fa9e459df911fL, NPTypesystem_ConceptA);
+    builder.put(0x76fa9e459df9122L, NPTypesystem_ConceptB);
+    builder.put(0x76fa9e459dda66eL, NPTypesystem_IntA);
+    builder.put(0x76fa9e459dda66fL, NPTypesystem_IntB);
+    builder.put(0x76fa9e459e19e64L, NPTypesystem_RefToIntA);
     builder.put(0x798c0d67da965ac6L, ReferenceContainer);
     builder.put(0x279bb63b8ca8b7feL, ReferenceContainerSubConcept);
     builder.put(0x3dd540b968e9fc5L, Root);

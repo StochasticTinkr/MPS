@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
@@ -87,8 +88,9 @@ public class MPSCompilerComponent implements ProjectComponent {
 
       final File repositoryCache = new File(CompilerPaths.getCompilerSystemDirectory(myProject), "mps_repository.dat");
       final long start = System.nanoTime();
-      ProjectHelper.fromIdeaProject(myProject).getModelAccess().runReadAction(() -> {
-        CachedRepositoryData cachedRepositoryData = new MPSRepositoryUtil(context).buildData(myLibraryInitializer.getModuleHandles());
+      final MPSProject mpsProject = ProjectHelper.fromIdeaProject(myProject);
+      mpsProject.getModelAccess().runReadAction(() -> {
+        CachedRepositoryData cachedRepositoryData = new MPSRepositoryUtil(context, mpsProject.getRepository()).buildData(myLibraryInitializer.getModuleHandles());
         ModelOutputStream mos = null;
         try {
           mos = new ModelOutputStream(new FileOutputStream(repositoryCache));

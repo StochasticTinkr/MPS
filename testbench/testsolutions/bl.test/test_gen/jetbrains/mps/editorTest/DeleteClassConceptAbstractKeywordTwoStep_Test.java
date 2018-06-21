@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.EditorUtil;
 import junit.framework.Assert;
 
@@ -22,11 +23,15 @@ public class DeleteClassConceptAbstractKeywordTwoStep_Test extends BaseTransform
 
   @Test
   public void test_DeleteClassConceptAbstractKeywordTwoStep() throws Throwable {
-    runTest("jetbrains.mps.editorTest.DeleteClassConceptAbstractKeywordTwoStep_Test$TestBody", "testMethod", false);
+    new DeleteClassConceptAbstractKeywordTwoStep_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("5758795789001482522", "5758795789001482527");

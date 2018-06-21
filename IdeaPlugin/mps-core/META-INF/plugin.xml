@@ -19,9 +19,9 @@
   <name>MPS Core</name>
   <category>Custom Languages</category>
   <description>MPS Core</description>
-  <version>2018.1</version>
+  <version>2018.2</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains MPS</vendor>
-  <idea-version since-build="181.1" until-build="182.*"/>
+  <idea-version since-build="181.1" until-build="183.*"/>
 
   <depends optional="true" config-file="idea-support.xml">com.intellij.modules.java</depends>
   <depends optional="true" config-file="intellij-ides-support.xml">com.intellij.modules.ultimate</depends>

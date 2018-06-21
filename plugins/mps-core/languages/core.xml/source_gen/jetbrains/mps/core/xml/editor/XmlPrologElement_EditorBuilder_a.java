@@ -30,14 +30,14 @@ import jetbrains.mps.editor.runtime.style.Measure;
   }
 
   /*package*/ EditorCell createCell() {
-    return createError_hddz4f_a();
+    return createError_0();
   }
 
-  private EditorCell createError_hddz4f_a() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<no prolog element>");
     editorCell.setCellId("Error_hddz4f_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_LEFT, new Padding(0, Measure.SPACES));
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0, Measure.SPACES));

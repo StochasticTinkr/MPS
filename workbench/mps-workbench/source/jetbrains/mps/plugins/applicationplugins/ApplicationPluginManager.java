@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.plugins.BasePluginManager;
 import jetbrains.mps.plugins.PluginContributor;
@@ -37,10 +38,11 @@ import java.util.List;
 public class ApplicationPluginManager extends BasePluginManager<BaseApplicationPlugin> implements ApplicationComponent, IRegistryManager {
   private static final Logger LOG = LogManager.getLogger(ApplicationPluginManager.class);
 
-  private volatile boolean myInitialized = false;
+  private final Platform myPlatform;
 
   public ApplicationPluginManager(MPSCoreComponents coreComponents, PluginLoaderRegistry pluginLoaderRegistry) {
-    super(coreComponents.getModuleRepository(), pluginLoaderRegistry);
+    super(pluginLoaderRegistry);
+    myPlatform = coreComponents.getPlatform();
   }
 
   public BaseApplicationPlugin getPlugin(PluginId id) {
@@ -59,7 +61,11 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
 
   @Override
   protected BaseApplicationPlugin createPlugin(PluginContributor contributor) {
-    return contributor.createApplicationPlugin();
+    BaseApplicationPlugin rv = contributor.createApplicationPlugin();
+    if (rv != null) {
+      rv.setPlatform(myPlatform);
+    }
+    return rv;
   }
 
   @Override

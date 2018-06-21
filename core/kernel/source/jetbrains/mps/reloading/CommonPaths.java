@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -120,7 +120,7 @@ public final class CommonPaths {
       }
       return URLDecoder.decode(urls.o1, Charset.defaultCharset().name()).replace('/', File.separatorChar);
     } catch (ClassNotFoundException | UnsupportedEncodingException e) {
-      LOG.warn("jar file for class " + classFQName + " could not be found", new Throwable());
+      LOG.warn("jar file for class " + classFQName + " could not be found");
       return null;
     }
   }
@@ -189,7 +189,7 @@ public final class CommonPaths {
           return ourClassPathCachingFacility.createFromPath(canonicalPath, REQUESTER_STRING);
         }
       } catch (URISyntaxException | IOException e) {
-        LOG.error(null, e);
+        LOG.error(String.format("Bad bootstrap jar '%s'", url), e);
       }
     }
     return null;
@@ -229,7 +229,7 @@ public final class CommonPaths {
     addIfExists(result, "lib/trove4j.jar");
     addIfExists(result, "lib/jdom.jar");
     addIfExists(result, "lib/ecj-4.7.2.jar");
-    addIfExists(result, "lib/guava-21.0.jar");
+    addIfExists(result, "lib/guava-23.6-jre.jar");
     addIfExists(result, "lib/xstream-1.4.8.jar");
     addIfExists(result, "lib/asm-all.jar");
   }
@@ -249,11 +249,17 @@ public final class CommonPaths {
 
   private static void addIdeaJars(CompositeClassPathItem result) {
     addRepackedIdeaJars(result);
-    addIfExists(result, "lib/netty-all-4.1.13.Final.jar");
+    addIfExists(result, "lib/netty-buffer-4.1.25.Final.jar");
+    addIfExists(result, "lib/netty-codec-4.1.25.Final.jar");
+    addIfExists(result, "lib/netty-codec-http-4.1.25.Final.jar");
+    addIfExists(result, "lib/netty-common-4.1.25.Final.jar");
+    addIfExists(result, "lib/netty-handler-4.1.25.Final.jar");
+    addIfExists(result, "lib/netty-resolver-4.1.25.Final.jar");
+    addIfExists(result, "lib/netty-transport-4.1.25.Final.jar");
     addIfExists(result, "lib/commons-imaging-1.0-RC.jar");
     addIfExists(result, "lib/util.jar");
     addIfExists(result, "lib/extensions.jar");
-    addIfExists(result, "lib/picocontainer.jar");
+    addIfExists(result, "lib/picocontainer-1.2.jar");
     addIfExists(result, "lib/forms_rt.jar");
   }
 

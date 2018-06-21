@@ -20,7 +20,7 @@
       <include name="jdom.jar" />
       <include name="asm4-all.jar" />
       <include name="asm-all.jar" />
-      <include name="jgoodies-forms.jar" />
+      <include name="forms-1.1-preview.jar" />
     </fileset>
   </path>
   
@@ -1532,7 +1532,6 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.7.2.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>

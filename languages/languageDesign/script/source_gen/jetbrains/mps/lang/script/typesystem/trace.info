@@ -14,6 +14,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)/1177463041902">
+    <file name="TypesystemDescriptor.java">
+      <node id="1177463041902" at="11,5,12,96" concept="5" />
+      <node id="1177463041902" at="12,96,13,47" concept="2" />
+      <node id="1177463041902" at="10,33,14,5" concept="0" />
+      <scope id="1177463041902" at="11,5,13,47">
+        <var name="inferenceRule" id="1177463041902" />
+      </scope>
+    </file>
     <file name="typeof_MigrationScriptPart_node_InferenceRule.java">
       <node id="1177463235295" at="22,117,23,400" concept="5" />
       <node id="1209063748602" at="24,5,25,46" concept="5" />
@@ -67,6 +75,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)/2598676492883170109">
+    <file name="TypesystemDescriptor.java">
+      <node id="2598676492883170109" at="15,5,16,109" concept="5" />
+      <node id="2598676492883170109" at="16,109,17,55" concept="2" />
+      <node id="2598676492883170109" at="14,5,18,5" concept="0" />
+      <scope id="2598676492883170109" at="15,5,17,55">
+        <var name="nonTypesystemRule" id="2598676492883170109" />
+      </scope>
+    </file>
     <file name="check_FactoryMigrationScriptPath_NonTypesystemRule.java">
       <node id="2598676492883176318" at="25,117,26,231" concept="5" />
       <node id="2598676492883176352" at="28,7,29,60" concept="5" />
@@ -124,6 +140,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)/7867202088808416390">
+    <file name="TypesystemDescriptor.java">
+      <node id="7867202088808416390" at="19,5,20,95" concept="5" />
+      <node id="7867202088808416390" at="20,95,21,55" concept="2" />
+      <node id="7867202088808416390" at="18,5,22,5" concept="0" />
+      <scope id="7867202088808416390" at="19,5,21,55">
+        <var name="nonTypesystemRule" id="7867202088808416390" />
+      </scope>
+    </file>
     <file name="check_PullUpMethod_NonTypesystemRule.java">
       <node id="7867202088808423945" at="22,7,23,60" concept="5" />
       <node id="7867202088808423945" at="23,60,24,266" concept="5" />

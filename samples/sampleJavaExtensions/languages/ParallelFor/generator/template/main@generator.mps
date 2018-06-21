@@ -239,6 +239,11 @@
       </concept>
       <concept id="1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" flags="nn" index="1iwH7S" />
     </language>
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
+        <reference id="7256306938026143658" name="target" index="2aWVGs" />
+      </concept>
+    </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
       <concept id="1176544042499" name="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" flags="nn" index="3JvlWi" />
       <concept id="1178870617262" name="jetbrains.mps.lang.typesystem.structure.CoerceExpression" flags="nn" index="1UaxmW">
@@ -258,8 +263,8 @@
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1144146199828" name="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" flags="nn" index="1$rogu" />
-      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
-        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
+      <concept id="3661776679762942774" name="jetbrains.mps.lang.smodel.structure.Node_IsOperation" flags="ng" index="1QLmlb">
+        <child id="3661776679762942860" name="ref" index="1QLmnL" />
       </concept>
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
@@ -677,12 +682,16 @@
                                               <node concept="1bVj0M" id="4CgZIKboVWe" role="23t8la">
                                                 <node concept="3clFbS" id="4CgZIKboVWf" role="1bW5cS">
                                                   <node concept="3clFbF" id="4CgZIKboVWj" role="3cqZAp">
-                                                    <node concept="3y3z36" id="4CgZIKboVXK" role="3clFbG">
-                                                      <node concept="3B5_sB" id="4CgZIKboVXO" role="3uHU7w">
-                                                        <ref role="3B5MYn" to="wyt6:~RuntimeException" resolve="RuntimeException" />
-                                                      </node>
-                                                      <node concept="37vLTw" id="2BHiRxgm3_E" role="3uHU7B">
-                                                        <ref role="3cqZAo" node="4CgZIKboVWg" resolve="it" />
+                                                    <node concept="3fqX7Q" id="3XR0QgXpv2J" role="3clFbG">
+                                                      <node concept="2OqwBi" id="3XR0QgXpv2H" role="3fr31v">
+                                                        <node concept="37vLTw" id="3XR0QgXpv2F" role="2Oq$k0">
+                                                          <ref role="3cqZAo" node="4CgZIKboVWg" resolve="it" />
+                                                        </node>
+                                                        <node concept="1QLmlb" id="3XR0QgXpv2I" role="2OqNvi">
+                                                          <node concept="ZC_QK" id="3XR0QgXpv2G" role="1QLmnL">
+                                                            <ref role="2aWVGs" to="wyt6:~RuntimeException" resolve="RuntimeException" />
+                                                          </node>
+                                                        </node>
                                                       </node>
                                                     </node>
                                                   </node>

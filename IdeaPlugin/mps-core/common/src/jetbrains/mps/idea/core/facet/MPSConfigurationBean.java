@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -163,14 +164,12 @@ public class MPSConfigurationBean {
 
   /**
    * You can invoke this method only once MPS is initialized
+   * XXX prefer {@link #getModelRootDescriptors()} unless there's a true need to access ModelRoot
    */
   @Transient
   public Collection<ModelRoot> getModelRoots() {
-    List<ModelRootDescriptor> mrd = new ArrayList<>();
-    fromPersistableState(mrd);
-
     List<ModelRoot> rv = new ArrayList<>();
-    for (ModelRootDescriptor modelRootDescriptor : mrd) {
+    for (ModelRootDescriptor modelRootDescriptor : getModelRootDescriptors()) {
       ModelRootFactory factory = PersistenceFacade.getInstance().getModelRootFactory(modelRootDescriptor.getType());
       if (factory == null) {
         continue;
@@ -182,8 +181,21 @@ public class MPSConfigurationBean {
     return rv;
   }
 
+  public Collection<ModelRootDescriptor> getModelRootDescriptors() {
+    List<ModelRootDescriptor> mrd = new ArrayList<>();
+    fromPersistableState(mrd);
+    return mrd;
+  }
 
+
+  /**
+   * @deprecated Prefer {@link #setModelRootDescriptors(Collection)} instead of this method.
+   *             Technically, the method itself is fine, the problem is that there's no way to create and configure ModeRoot instances
+   *             other that knowing their direct implementation classes (i.e. set/add methods for DefaultModelRoot)
+   */
   @Transient
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public void setModelRoots(Collection<ModelRoot> roots) {
     ArrayList<ModelRootDescriptor> mrd = new ArrayList<>(roots.size());
     for (ModelRoot path : roots) {
@@ -191,7 +203,11 @@ public class MPSConfigurationBean {
       path.save(descr.getMemento());
       mrd.add(descr);
     }
-    myState.rootDescriptors = toPersistableState(mrd);
+    setModelRootDescriptors(mrd);
+  }
+
+  public void setModelRootDescriptors(Collection<ModelRootDescriptor> roots) {
+    myState.rootDescriptors = toPersistableState(roots);
     dropDescriptorInstance();
   }
 

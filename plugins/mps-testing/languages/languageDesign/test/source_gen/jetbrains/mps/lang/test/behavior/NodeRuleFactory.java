@@ -4,6 +4,7 @@ package jetbrains.mps.lang.test.behavior;
 
 import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -15,16 +16,16 @@ public class NodeRuleFactory {
     this.reporter = reporter;
   }
 
-  public SNode createNodeFromRuleMsg(SNode reference) {
+  public SNode createNodeFromRuleMsg(@Nullable SNode reference) {
     NodeRuleReference ruleReference = new NodeRuleReference(reference);
     if (ruleReference.getType() == RuleType.TYPESYSTEM) {
       return this.createTypeSystemCheckOperation();
     } else if (ruleReference.getType() == RuleType.CONSTRAINTS) {
-      return this.createConstraintsCheckOperation(reference);
+      return this.createConstraintsCheckOperation();
     } else if (ruleReference.getType() == RuleType.MESSAGESTATEMENT) {
-      return this.createMessageStatementCheckOperation(reference);
+      return this.createMessageStatementCheckOperation();
     } else {
-      return this.createDefaultCheckOperation(reference);
+      return this.createDefaultCheckOperation();
     }
   }
 
@@ -36,7 +37,7 @@ public class NodeRuleFactory {
     }
   }
 
-  private SNode createConstraintsCheckOperation(SNode reference) {
+  private SNode createConstraintsCheckOperation() {
     SNode result;
     if (reporter.getSeverity() == MessageStatus.ERROR) {
       result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfba5276dfL, "jetbrains.mps.lang.test.structure.NodeConstraintsErrorCheckOperation"));
@@ -46,7 +47,7 @@ public class NodeRuleFactory {
     return result;
   }
 
-  private SNode createMessageStatementCheckOperation(SNode reference) {
+  private SNode createMessageStatementCheckOperation() {
     SNode result;
     if (reporter.getSeverity() == MessageStatus.ERROR) {
       result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"));
@@ -56,7 +57,7 @@ public class NodeRuleFactory {
     return result;
   }
 
-  private SNode createDefaultCheckOperation(SNode reference) {
+  private SNode createDefaultCheckOperation() {
     SNode result;
     if (reporter.getSeverity() == MessageStatus.ERROR) {
       result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6cbc57bb7a1917bdL, "jetbrains.mps.lang.test.structure.NodeUnknownErrorCheckOperation"));

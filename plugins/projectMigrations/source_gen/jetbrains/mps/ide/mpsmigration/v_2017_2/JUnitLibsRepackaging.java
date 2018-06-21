@@ -89,7 +89,7 @@ public class JUnitLibsRepackaging extends BaseProjectMigration {
               if (newTarget != null) {
                 SetSequence.fromSet(modelsToOptimize).addElement(targetSModelReference);
                 node.setReferenceTarget(existingRef.getLink(), newTarget);
-                ListSequence.fromList(modelsToImport).addElement(MapSequence.fromMap(junitModels).get(targetModelName).getReference());
+                ListSequence.fromList(modelsToImport).addElement(SModelOperations.getPointer(MapSequence.fromMap(junitModels).get(targetModelName)));
                 SetSequence.fromSet(modulesToImport).addElement(PersistenceFacade.getInstance().createModuleReference("49808fad-9d41-4b96-83fa-9231640f6b2b(JUnit)"));
               }
             } else if (MapSequence.fromMap(hamcrestModels).containsKey(targetModelName)) {
@@ -97,7 +97,7 @@ public class JUnitLibsRepackaging extends BaseProjectMigration {
               if (newTarget != null) {
                 SetSequence.fromSet(modelsToOptimize).addElement(targetSModelReference);
                 node.setReferenceTarget(existingRef.getLink(), newTarget);
-                ListSequence.fromList(modelsToImport).addElement(MapSequence.fromMap(hamcrestModels).get(targetModelName).getReference());
+                ListSequence.fromList(modelsToImport).addElement(SModelOperations.getPointer(MapSequence.fromMap(hamcrestModels).get(targetModelName)));
                 SetSequence.fromSet(modulesToImport).addElement(PersistenceFacade.getInstance().createModuleReference("1fd846c3-c5f9-4b9e-9ecc-e716f7149f86(Hamcrest)"));
               }
             }

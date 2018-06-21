@@ -28,9 +28,9 @@ import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
@@ -41,7 +41,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.migration.behavior.AbstractNodeReference__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class WriteSubconceptMigrationParticipant extends RefactoringParticipantBase<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void, SNode, SNode> implements MoveNodeRefactoringParticipant<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void>, RefactoringParticipant.PersistentRefactoringParticipant<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void, SNode, SNode> {
@@ -87,6 +86,9 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
 
   @Override
   public List<RefactoringParticipant.Option> getAvailableOptions(Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef> initialState, SRepository repository) {
+    if (initialState == null) {
+      return ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
+    }
     return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), OPTION);
   }
 
@@ -107,14 +109,14 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
       List<SNode> subConcepts = ListSequence.fromList(new ArrayList<SNode>());
       ListSequence.fromList(subConcepts).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return Objects.equals(check_8k3jue_a0a0a0a0a0b0c0m(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"))), initialState._0().reference());
+          return Objects.equals(SLinkOperations.getPointer(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")), initialState._0().reference());
         }
       }).toListSequence());
       ListSequence.fromList(subConcepts).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, 0x110356e9df4L, "extends"))).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return Objects.equals(it.getReference(), initialState._0().reference());
+              return Objects.equals(SNodeOperations.getPointer(it), initialState._0().reference());
             }
           });
         }
@@ -123,7 +125,7 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
         public boolean accept(SNode it) {
           return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x110358d693eL, "implements"))).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return Objects.equals(it.getReference(), initialState._0().reference());
+              return Objects.equals(SNodeOperations.getPointer(it), initialState._0().reference());
             }
           });
         }
@@ -172,7 +174,7 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
         return null;
       }
       Language language = ((Language) SNodeOperations.getModel(nodeToMove).getModule());
-      return MultiTuple.<NamedNodeReference,WriteSubconceptMigrationParticipant.MigrationScriptRef>from(new NamedNodeReference(nodeToMove.getReference(), NodeReferenceUtil.getNodePresentation(nodeToMove)), new WriteSubconceptMigrationParticipant.MigrationScriptRef(language.getModuleReference(), language.getLanguageVersion()));
+      return MultiTuple.<NamedNodeReference,WriteSubconceptMigrationParticipant.MigrationScriptRef>from(new NamedNodeReference(SNodeOperations.getPointer(nodeToMove), NodeReferenceUtil.getNodePresentation(nodeToMove)), new WriteSubconceptMigrationParticipant.MigrationScriptRef(language.getModuleReference(), language.getLanguageVersion()));
     }
     public Void afterMove(SNode movedNode) {
       return null;
@@ -180,12 +182,6 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
   };
   public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void> getDataCollector() {
     return myDataCollector;
-  }
-  private static SNodeReference check_8k3jue_a0a0a0a0a0b0c0m(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getReference();
-    }
-    return null;
   }
   private static SNode createIncludeMigrationPart_8k3jue_a0a1a1a0a0a0a0a0a5a2a21(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

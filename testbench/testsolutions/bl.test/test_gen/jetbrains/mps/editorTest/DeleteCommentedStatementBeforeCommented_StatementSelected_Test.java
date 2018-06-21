@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.EditorUtil;
 
 @MPSLaunch
@@ -21,11 +22,15 @@ public class DeleteCommentedStatementBeforeCommented_StatementSelected_Test exte
 
   @Test
   public void test_DeleteCommentedStatementBeforeCommented_StatementSelected() throws Throwable {
-    runTest("jetbrains.mps.editorTest.DeleteCommentedStatementBeforeCommented_StatementSelected_Test$TestBody", "testMethod", false);
+    new DeleteCommentedStatementBeforeCommented_StatementSelected_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("8821749938013418425", "8821749938013418461");

@@ -122,18 +122,21 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.CheckBoxCellRenderrer" file="CheckBoxCellRenderrer.java">
+    <classNode dependClassName="com.intellij.ui.components.JBCheckBox" />
+    <classNode dependClassName="com.intellij.ui.components.JBLabel" />
+    <classNode dependClassName="com.intellij.util.ui.JBUI" />
     <classNode dependClassName="com.intellij.util.ui.UIUtil" />
+    <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Component" />
-    <classNode dependClassName="java.awt.Dimension" />
-    <classNode dependClassName="java.awt.FlowLayout" />
-    <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JTree" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.CheckBoxNode" />
-    <classNode extendsClassName="javax.swing.JPanel" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
+    <classNode extendsClassName="com.intellij.ui.components.JBPanel" />
     <classNode extendsClassName="javax.swing.tree.TreeCellRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.CheckBoxNamespaceNode" file="CheckBoxNamespaceNode.java">
@@ -408,6 +411,12 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.TwoOptionsStep" file="TwoOptionsStep.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.ui.ComboBox" />
+    <classNode dependClassName="com.intellij.ui.JBColor" />
+    <classNode dependClassName="com.intellij.ui.components.JBCheckBox" />
+    <classNode dependClassName="com.intellij.ui.components.JBLabel" />
+    <classNode dependClassName="com.intellij.ui.components.JBPanel" />
+    <classNode dependClassName="com.intellij.ui.components.JBTextField" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
@@ -422,7 +431,6 @@
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JComboBox" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JTextField" />
     <classNode dependClassName="javax.swing.event.CaretEvent" />

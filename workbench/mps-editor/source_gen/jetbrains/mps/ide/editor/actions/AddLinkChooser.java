@@ -101,8 +101,8 @@ import jetbrains.mps.editor.runtime.commands.EditorCommand;
     public void actionPerformed(ActionEvent event) {
       myEditorComponent.getEditorContext().getRepository().getModelAccess().executeCommand(new EditorCommand(myEditorComponent) {
         protected void doExecute() {
-          SPropertyOperations.set(myWord, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), myTextField.getText());
-          SPropertyOperations.set(myWord, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x57d1fa7f2af1d485L, "url"), myLinkField.getText());
+          SPropertyOperations.assign(myWord, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), myTextField.getText());
+          SPropertyOperations.assign(myWord, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x57d1fa7f2af1d485L, "url"), myLinkField.getText());
           myPopup.closeOk(null);
         }
       });

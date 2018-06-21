@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,7 @@ public class TypeContextManager implements CoreComponent {
   private Map<ITypeContextOwner, TypecheckingContextHolder> myTypeCheckingContexts = Collections.synchronizedMap(new HashMap<ITypeContextOwner, TypecheckingContextHolder>());
 
   private TypeChecker myTypeChecker;
+  private final ClassLoaderManager myClassLoaderManager;
 
   private AtomicBoolean myDisposeRequested = new AtomicBoolean(false);
   private AtomicInteger myExecuting = new AtomicInteger(0);
@@ -78,6 +79,7 @@ public class TypeContextManager implements CoreComponent {
 
   public TypeContextManager(TypeChecker typeChecker, ClassLoaderManager classLoaderManager) {
     myTypeChecker = typeChecker;
+    myClassLoaderManager = classLoaderManager;
   }
 
   @Override
@@ -109,11 +111,11 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public void runTypeCheckingAction(SNode node, ITypechecking.Action r) {
-    new Executor<Object>(node, r).execute();
+    new Executor<>(node, r).execute();
   }
 
   public void runTypeCheckingAction(@NotNull final ITypeContextOwner contextOwner, SNode node, ITypechecking.Action r) {
-    new Executor<Object>(contextOwner, node, r).execute();
+    new Executor<>(contextOwner, node, r).execute();
   }
 
   public <T> T runTypeCheckingComputation(@NotNull final ITypeContextOwner contextOwner, SNode node, Computation<T> r) {
@@ -129,7 +131,7 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public void runTypecheckingAction(ITypeContextOwner contextOwner, Runnable r) {
-    new Executor<Object>(contextOwner, r).execute();
+    new Executor<>(contextOwner, r).execute();
   }
 
   public <T> T runTypecheckingAction(ITypeContextOwner contextOwner, Computable<T> computable) {
@@ -140,7 +142,7 @@ public class TypeContextManager implements CoreComponent {
     if (myTypeChecker.isGenerationMode()) {
       return new TargetTypecheckingContext(node, myTypeChecker);
     } else {
-      return new IncrementalTypecheckingContext(node, myTypeChecker);
+      return new IncrementalTypecheckingContext(node, myTypeChecker, myClassLoaderManager);
     }
   }
 
@@ -158,11 +160,6 @@ public class TypeContextManager implements CoreComponent {
 
   public TypeCheckingContext acquireTypecheckingContext(SNode node, ITypeContextOwner contextOwner) {
     return getOrCreateContext(node, contextOwner);
-  }
-
-  @Deprecated
-  public void releaseTypecheckingContext(SNode node, ITypeContextOwner contextOwner) {
-    releaseTypecheckingContext(contextOwner);
   }
 
   public void releaseTypecheckingContext(ITypeContextOwner contextOwner) {
@@ -347,7 +344,7 @@ public class TypeContextManager implements CoreComponent {
     //now we are not in generation mode
     final ITypeContextOwner contextOwner = myTypecheckingContextOwner.get();
 
-    return new Executor<SNode>(contextOwner, node, new Computation<SNode>() {
+    return new Executor<>(contextOwner, node, new Computation<SNode>() {
       @Override
       public SNode compute(TypeCheckingContext context) {
         return context != null ? context.getTypeOf(node, myTypeChecker) : null;
@@ -371,7 +368,7 @@ public class TypeContextManager implements CoreComponent {
 
   private class CountingTypecheckingContextHolder implements TypecheckingContextHolder {
     private final ITypeContextOwner myOwner;
-    private AtomicReference<TypeCheckingContext> myContext = new AtomicReference<TypeCheckingContext>(null);
+    private AtomicReference<TypeCheckingContext> myContext = new AtomicReference<>(null);
     private Map<Thread, Integer> myCounters = Collections.synchronizedMap(new HashMap<Thread, Integer>());
 
     CountingTypecheckingContextHolder(ITypeContextOwner owner) {
@@ -438,7 +435,7 @@ public class TypeContextManager implements CoreComponent {
 
   private class NonReusableTypecheckingContextHolder implements TypecheckingContextHolder {
 
-    private LinkedList<TypeCheckingContext> myContexts = new LinkedList<TypeCheckingContext>();
+    private LinkedList<TypeCheckingContext> myContexts = new LinkedList<>();
     private ITypeContextOwner myOwner;
 
     NonReusableTypecheckingContextHolder(ITypeContextOwner owner) {

@@ -283,11 +283,7 @@ public class TestMakeOnRealProject implements EnvironmentAware {
     solutionDescriptor.setNamespace(name);
     solutionDescriptor.setOutputPath(runtimeSolutionDescriptorFile.getParent().getDescendant("src_gen").getPath());
 
-    DefaultModelRoot modelRoot = new DefaultModelRoot();
-    modelRoot.setContentRoot(runtimeSolutionDescriptorFile.getParent().getPath());
-    modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, runtimeSolutionDescriptorFile.getParent().getPath());
-
-    solutionDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
+    solutionDescriptor.getModelRootDescriptors().add(DefaultModelRoot.createSingleFolderDescriptor(runtimeSolutionDescriptorFile.getParent()));
     solutionDescriptor.getDependencies().add(new Dependency(BootstrapLanguages.jdkRef(), true));
 
     runtimeSolutionDescriptorFile.createNewFile();
@@ -307,11 +303,8 @@ public class TestMakeOnRealProject implements EnvironmentAware {
     d.setGenPath(descriptorFile.getParent().getDescendant("src_gen").getPath());
 
 
-    DefaultModelRoot modelRoot = new DefaultModelRoot();
     IFile languageModels = descriptorFile.getParent().getDescendant(Language.LANGUAGE_MODELS);
-    modelRoot.setContentRoot(languageModels.getParent().getPath());
-    modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, languageModels.getPath());
-    d.getModelRootDescriptors().add(modelRoot.toDescriptor());
+    d.getModelRootDescriptors().add(DefaultModelRoot.createDescriptor(languageModels.getParent(), languageModels));
 
     ModuleHandle handle = new ModuleHandle(descriptorFile, d);
     Language language = (Language) new ModuleRepositoryFacade(ourRepository).instantiateModule(handle, myModuleOwner);
@@ -330,11 +323,7 @@ public class TestMakeOnRealProject implements EnvironmentAware {
     solutionDescriptor.setNamespace(name);
     solutionDescriptor.setOutputPath(descriptorFile.getParent().getDescendant("src_gen").getPath());
 
-    DefaultModelRoot modelRoot = new DefaultModelRoot();
-    modelRoot.setContentRoot(descriptorFile.getParent().getPath());
-    modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, descriptorFile.getParent().getPath());
-
-    solutionDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
+    solutionDescriptor.getModelRootDescriptors().add(DefaultModelRoot.createSingleFolderDescriptor(descriptorFile.getParent()));
     
     ModuleHandle handle = new ModuleHandle(descriptorFile, solutionDescriptor);
     final Solution rv = (Solution) new ModuleRepositoryFacade(ourRepository).instantiateModule(handle, myModuleOwner);

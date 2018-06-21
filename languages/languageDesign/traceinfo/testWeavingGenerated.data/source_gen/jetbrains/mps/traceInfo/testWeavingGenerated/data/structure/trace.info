@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,62,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ConceptPresentationAspectImpl" />
@@ -9,6 +16,175 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <unit at="14,0,94,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.StructureAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:b8c93b44-499b-404a-a011-c0847b38eb58(jetbrains.mps.traceInfo.testWeavingGenerated.data.structure)/6186432342008318668">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="6186432342008318668" at="16,0,17,0" concept="1" trace="props_RootConcept" />
+      <node id="6186432342008318668" at="52,40,53,76" concept="3" />
+      <node id="6186432342008318668" at="53,76,54,35" concept="0" />
+      <node id="6186432342008318668" at="54,35,55,43" concept="0" />
+      <node id="6186432342008318668" at="56,9,57,33" concept="4" />
+      <node id="6186432342008318668" at="51,45,56,9" concept="2" />
+      <scope id="6186432342008318668" at="52,40,55,43">
+        <var name="cpb" id="6186432342008318668" />
+      </scope>
+      <scope id="6186432342008318668" at="51,45,57,33" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="6186432342008318668" at="16,0,17,0" concept="5" trace="RootConcept" />
+      <node id="6186432342008318668" at="23,60,24,50" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="6186432342008318668" at="19,0,20,0" concept="1" trace="myConceptRootConcept" />
+      <node id="6186432342008318668" at="43,45,44,36" concept="4" />
+      <node id="6186432342008318668" at="82,69,83,195" concept="3" />
+      <node id="6186432342008318668" at="83,195,84,33" concept="0" />
+      <node id="6186432342008318668" at="84,33,85,71" concept="0" />
+      <node id="6186432342008318668" at="85,71,86,136" concept="0" />
+      <node id="6186432342008329118" at="86,136,87,197" concept="0" />
+      <node id="6186432342008329119" at="87,197,88,201" concept="0" />
+      <node id="6186432342008533358" at="88,201,89,201" concept="0" />
+      <node id="6186432342008533359" at="89,201,90,205" concept="0" />
+      <node id="6186432342008318668" at="90,205,91,22" concept="4" />
+      <node id="6186432342008318668" at="82,0,93,0" concept="6" trace="createDescriptorForRootConcept#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6186432342008318668" at="43,45,44,36" />
+      <scope id="6186432342008318668" at="82,69,91,22">
+        <var name="b" id="6186432342008318668" />
+      </scope>
+      <scope id="6186432342008318668" at="82,0,93,0" />
+    </file>
+  </root>
+  <root nodeRef="r:b8c93b44-499b-404a-a011-c0847b38eb58(jetbrains.mps.traceInfo.testWeavingGenerated.data.structure)/6186432342008329114">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="6186432342008329114" at="13,0,14,0" concept="1" trace="props_ChildConceptWeaveEach" />
+      <node id="6186432342008329114" at="31,50,32,76" concept="3" />
+      <node id="6186432342008329114" at="32,76,33,35" concept="0" />
+      <node id="6186432342008329114" at="33,35,34,53" concept="0" />
+      <node id="6186432342008329114" at="35,9,36,43" concept="4" />
+      <node id="6186432342008329114" at="30,55,35,9" concept="2" />
+      <scope id="6186432342008329114" at="31,50,34,53">
+        <var name="cpb" id="6186432342008329114" />
+      </scope>
+      <scope id="6186432342008329114" at="30,55,36,43" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="6186432342008329114" at="13,0,14,0" concept="5" trace="ChildConceptWeaveEach" />
+      <node id="6186432342008329114" at="20,56,21,60" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="6186432342008329114" at="16,0,17,0" concept="1" trace="myConceptChildConceptWeaveEach" />
+      <node id="6186432342008329114" at="37,55,38,46" concept="4" />
+      <node id="6186432342008329114" at="61,79,62,205" concept="3" />
+      <node id="6186432342008329114" at="62,205,63,34" concept="0" />
+      <node id="6186432342008329114" at="63,34,64,71" concept="0" />
+      <node id="6186432342008329114" at="64,71,65,136" concept="0" />
+      <node id="6186432342008329114" at="65,136,66,22" concept="4" />
+      <node id="6186432342008329114" at="61,0,68,0" concept="6" trace="createDescriptorForChildConceptWeaveEach#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6186432342008329114" at="37,55,38,46" />
+      <scope id="6186432342008329114" at="61,79,66,22">
+        <var name="b" id="6186432342008329114" />
+      </scope>
+      <scope id="6186432342008329114" at="61,0,68,0" />
+    </file>
+  </root>
+  <root nodeRef="r:b8c93b44-499b-404a-a011-c0847b38eb58(jetbrains.mps.traceInfo.testWeavingGenerated.data.structure)/6186432342008329116">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="6186432342008329116" at="12,0,13,0" concept="1" trace="props_ChildConceptWeave" />
+      <node id="6186432342008329116" at="24,46,25,76" concept="3" />
+      <node id="6186432342008329116" at="25,76,26,35" concept="0" />
+      <node id="6186432342008329116" at="26,35,27,49" concept="0" />
+      <node id="6186432342008329116" at="28,9,29,39" concept="4" />
+      <node id="6186432342008329116" at="23,51,28,9" concept="2" />
+      <scope id="6186432342008329116" at="24,46,27,49">
+        <var name="cpb" id="6186432342008329116" />
+      </scope>
+      <scope id="6186432342008329116" at="23,51,29,39" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="6186432342008329116" at="12,0,13,0" concept="5" trace="ChildConceptWeave" />
+      <node id="6186432342008329116" at="19,116,20,56" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="6186432342008329116" at="15,0,16,0" concept="1" trace="myConceptChildConceptWeave" />
+      <node id="6186432342008329116" at="35,51,36,42" concept="4" />
+      <node id="6186432342008329116" at="54,75,55,201" concept="3" />
+      <node id="6186432342008329116" at="55,201,56,34" concept="0" />
+      <node id="6186432342008329116" at="56,34,57,71" concept="0" />
+      <node id="6186432342008329116" at="57,71,58,136" concept="0" />
+      <node id="6186432342008329116" at="58,136,59,22" concept="4" />
+      <node id="6186432342008329116" at="54,0,61,0" concept="6" trace="createDescriptorForChildConceptWeave#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6186432342008329116" at="35,51,36,42" />
+      <scope id="6186432342008329116" at="54,75,59,22">
+        <var name="b" id="6186432342008329116" />
+      </scope>
+      <scope id="6186432342008329116" at="54,0,61,0" />
+    </file>
+  </root>
+  <root nodeRef="r:b8c93b44-499b-404a-a011-c0847b38eb58(jetbrains.mps.traceInfo.testWeavingGenerated.data.structure)/6186432342008533337">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="6186432342008533337" at="15,0,16,0" concept="1" trace="props_ChildConceptWeaveMany" />
+      <node id="6186432342008533337" at="45,50,46,76" concept="3" />
+      <node id="6186432342008533337" at="46,76,47,35" concept="0" />
+      <node id="6186432342008533337" at="47,35,48,53" concept="0" />
+      <node id="6186432342008533337" at="49,9,50,43" concept="4" />
+      <node id="6186432342008533337" at="44,55,49,9" concept="2" />
+      <scope id="6186432342008533337" at="45,50,48,53">
+        <var name="cpb" id="6186432342008533337" />
+      </scope>
+      <scope id="6186432342008533337" at="44,55,50,43" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="6186432342008533337" at="15,0,16,0" concept="5" trace="ChildConceptWeaveMany" />
+      <node id="6186432342008533337" at="22,64,23,60" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="6186432342008533337" at="18,0,19,0" concept="1" trace="myConceptChildConceptWeaveMany" />
+      <node id="6186432342008533337" at="41,55,42,46" concept="4" />
+      <node id="6186432342008533337" at="75,79,76,205" concept="3" />
+      <node id="6186432342008533337" at="76,205,77,34" concept="0" />
+      <node id="6186432342008533337" at="77,34,78,71" concept="0" />
+      <node id="6186432342008533337" at="78,71,79,136" concept="0" />
+      <node id="6186432342008533337" at="79,136,80,22" concept="4" />
+      <node id="6186432342008533337" at="75,0,82,0" concept="6" trace="createDescriptorForChildConceptWeaveMany#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6186432342008533337" at="41,55,42,46" />
+      <scope id="6186432342008533337" at="75,79,80,22">
+        <var name="b" id="6186432342008533337" />
+      </scope>
+      <scope id="6186432342008533337" at="75,0,82,0" />
+    </file>
+  </root>
+  <root nodeRef="r:b8c93b44-499b-404a-a011-c0847b38eb58(jetbrains.mps.traceInfo.testWeavingGenerated.data.structure)/6186432342008533347">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="6186432342008533347" at="14,0,15,0" concept="1" trace="props_ChildConceptWeaveEachMany" />
+      <node id="6186432342008533347" at="38,54,39,76" concept="3" />
+      <node id="6186432342008533347" at="39,76,40,35" concept="0" />
+      <node id="6186432342008533347" at="40,35,41,57" concept="0" />
+      <node id="6186432342008533347" at="42,9,43,47" concept="4" />
+      <node id="6186432342008533347" at="37,59,42,9" concept="2" />
+      <scope id="6186432342008533347" at="38,54,41,57">
+        <var name="cpb" id="6186432342008533347" />
+      </scope>
+      <scope id="6186432342008533347" at="37,59,43,47" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="6186432342008533347" at="14,0,15,0" concept="5" trace="ChildConceptWeaveEachMany" />
+      <node id="6186432342008533347" at="21,60,22,64" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="6186432342008533347" at="17,0,18,0" concept="1" trace="myConceptChildConceptWeaveEachMany" />
+      <node id="6186432342008533347" at="39,59,40,50" concept="4" />
+      <node id="6186432342008533347" at="68,83,69,209" concept="3" />
+      <node id="6186432342008533347" at="69,209,70,34" concept="0" />
+      <node id="6186432342008533347" at="70,34,71,71" concept="0" />
+      <node id="6186432342008533347" at="71,71,72,136" concept="0" />
+      <node id="6186432342008533347" at="72,136,73,22" concept="4" />
+      <node id="6186432342008533347" at="68,0,75,0" concept="6" trace="createDescriptorForChildConceptWeaveEachMany#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6186432342008533347" at="39,59,40,50" />
+      <scope id="6186432342008533347" at="68,83,73,22">
+        <var name="b" id="6186432342008533347" />
+      </scope>
+      <scope id="6186432342008533347" at="68,0,75,0" />
     </file>
   </root>
 </debug-info>

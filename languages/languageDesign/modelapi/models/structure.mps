@@ -2,6 +2,7 @@
 <model ref="r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)">
   <persistence version="9" />
   <languages>
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="6" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
@@ -17,6 +18,7 @@
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
+        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -52,10 +54,28 @@
   </registry>
   <node concept="1TIwiD" id="k2ZBl8Cedv">
     <property role="EcuMT" value="361130699826193247" />
-    <property role="TrG5h" value="SNodeReference" />
+    <property role="TrG5h" value="NodePointer" />
     <property role="R4oN_" value="node&lt;&gt; presentation for openapi.model.SNodeReference" />
     <property role="3GE5qa" value="openapi" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="4nxIQVLmsY4" role="1TKVEi">
+      <property role="IQ2ns" value="5035511943546916740" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="modelRef" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7PoJpZpMbrj" resolve="ModelIdentity" />
+    </node>
+    <node concept="1TJgyi" id="4nxIQVLmsY8" role="1TKVEl">
+      <property role="IQ2nx" value="5035511943546916744" />
+      <property role="TrG5h" value="nodeId" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <node concept="t5JxF" id="4nxIQVLmsY9" role="lGtFl">
+        <property role="t5JxN" value="Could be a datatype to represent SNodeId but can't accomplish that with present datatypes." />
+      </node>
+    </node>
+    <node concept="PrWs8" id="4nxIQVLmsZm" role="PzmwI">
+      <ref role="PrY4T" node="k2ZBl8CwzR" resolve="NodeIdentity" />
+    </node>
   </node>
   <node concept="1TIwiD" id="k2ZBl8Cedw">
     <property role="EcuMT" value="361130699826193248" />
@@ -145,6 +165,31 @@
     <property role="TrG5h" value="ModuleIdentity" />
     <node concept="t5JxF" id="1Bs_61$mqCB" role="lGtFl">
       <property role="t5JxN" value="Identifies a module, corresponds  (but not limited) to openapi.module.SModuleReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="46J8CTY3nWY">
+    <property role="EcuMT" value="4733039728785194814" />
+    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="NamedNodeReference" />
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="34LRSv" value="reference to named node" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6iN_brIg2YW" role="1TKVEi">
+      <property role="IQ2ns" value="7256306938026143676" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="child" />
+      <ref role="20lvS9" node="46J8CTY3nWY" resolve="NamedNodeReference" />
+    </node>
+    <node concept="PrWs8" id="46J8CTY3rGa" role="PzmwI">
+      <ref role="PrY4T" node="k2ZBl8CwzR" resolve="NodeIdentity" />
+    </node>
+    <node concept="1TJgyj" id="6iN_brIg2YE" role="1TKVEi">
+      <property role="IQ2ns" value="7256306938026143658" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="target" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
 </model>

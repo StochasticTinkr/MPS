@@ -97,6 +97,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForAgreementDeclarations() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.agreementLanguage", "AgreementDeclarations", 0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102fae6140bL);
     b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)/1112310944779");
     b.aggregate("eventType", 0x102fae76f47L).target(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc1185c3L).optional(true).ordered(true).multiple(true).origin("1112311033671").done();
     b.aggregate("accountType", 0x102fae91a78L).target(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc29baa2L).optional(true).ordered(true).multiple(true).origin("1112311143032").done();

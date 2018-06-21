@@ -31,29 +31,29 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_viba1c_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_viba1c_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_viba1c_a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_viba1c_a0());
-    editorCell.addEditorCell(createConstant_viba1c_b0());
-    editorCell.addEditorCell(createConstant_viba1c_c0());
-    editorCell.addEditorCell(createConstant_viba1c_d0());
-    editorCell.addEditorCell(createConstant_viba1c_e0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createConstant_4());
     return editorCell;
   }
-  private EditorCell createConstant_viba1c_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Handles Incoming HTTP Requests. Workflow:");
     editorCell.setCellId("Constant_viba1c_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_viba1c_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "1. Checks that 'query prefix' is a prefix of query path; ");
     editorCell.setCellId("Constant_viba1c_b0");
     Style style = new StyleImpl();
@@ -62,7 +62,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_viba1c_c0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "2. Checks that all required parameters is in query;");
     editorCell.setCellId("Constant_viba1c_c0");
     Style style = new StyleImpl();
@@ -71,7 +71,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_viba1c_d0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "3. Invokes canHandle() method and checks that it returns true;");
     editorCell.setCellId("Constant_viba1c_d0");
     Style style = new StyleImpl();
@@ -80,7 +80,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_viba1c_e0() {
+  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "4. If all criteria are satisfied invokes handle() method.");
     editorCell.setCellId("Constant_viba1c_e0");
     Style style = new StyleImpl();

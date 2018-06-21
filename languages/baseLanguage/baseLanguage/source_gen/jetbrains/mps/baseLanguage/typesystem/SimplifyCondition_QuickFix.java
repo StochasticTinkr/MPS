@@ -23,7 +23,7 @@ public class SimplifyCondition_QuickFix extends QuickFix_Runtime {
     Object value = Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(expr, SNodeOperations.getModel(expr).getModule());
     if (value instanceof Boolean) {
       SNode v = SNodeFactoryOperations.replaceWithNewChild(expr, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant")));
-      SPropertyOperations.set(v, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "" + (((Boolean) value).booleanValue()));
+      SPropertyOperations.assign(v, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "" + (((Boolean) value).booleanValue()));
     }
   }
 }

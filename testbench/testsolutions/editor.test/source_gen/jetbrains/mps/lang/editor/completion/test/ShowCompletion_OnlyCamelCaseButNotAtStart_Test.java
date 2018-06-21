@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -23,11 +24,15 @@ public class ShowCompletion_OnlyCamelCaseButNotAtStart_Test extends BaseTransfor
 
   @Test
   public void test_ShowCompletion_OnlyCamelCaseButNotAtStart() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.completion.test.ShowCompletion_OnlyCamelCaseButNotAtStart_Test$TestBody", "testMethod", false);
+    new ShowCompletion_OnlyCamelCaseButNotAtStart_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2769359054249401212", "2769359054249401214");

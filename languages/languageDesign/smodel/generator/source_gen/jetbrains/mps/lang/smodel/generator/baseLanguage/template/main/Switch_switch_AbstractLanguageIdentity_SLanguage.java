@@ -52,7 +52,7 @@ public class Switch_switch_AbstractLanguageIdentity_SLanguage extends TemplateSw
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_LanguageId_SLanguage().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_LanguageId_SLanguage().apply(context);
       return tlist1;
     }
   }
@@ -64,11 +64,10 @@ public class Switch_switch_AbstractLanguageIdentity_SLanguage extends TemplateSw
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_2469893808086103406(new SourceSubstituteMacroNodeContext(context, callMacro_9oew2a_b0a0a2a1i));
+      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_24698938080861033860(new SourceSubstituteMacroNodeContext(context, callMacro_9oew2a_b0a0a2a1i));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new Template_reduce_ModuleIdentity_SLanguage().apply(environment, context1);
-
+        tlist1 = new Template_reduce_ModuleIdentity_SLanguage().apply(context1);
       }
       return tlist1;
     }

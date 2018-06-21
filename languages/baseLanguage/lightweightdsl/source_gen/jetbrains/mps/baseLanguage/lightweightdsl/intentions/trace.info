@@ -93,6 +93,10 @@
     </file>
   </root>
   <root nodeRef="r:5bb264d9-7f7a-4139-93e6-30697488a61b(jetbrains.mps.baseLanguage.lightweightdsl.intentions)/2049012130657192359">
+    <file name="IntentionsDescriptor.java">
+      <node id="2049012130657192359" at="45,47,46,60" concept="2" />
+      <node id="2049012130657192359" at="58,52,59,46" concept="2" />
+    </file>
     <file name="SwitchConditional_Intention.java">
       <node id="2049012130657192359" at="25,0,26,0" concept="3" trace="myCachedExecutable" />
       <node id="2049012130657192359" at="26,40,27,166" concept="11" />
@@ -190,7 +194,7 @@
       <node id="6305381134221689014" at="53,97,54,53" concept="7" />
       <node id="6305381134221689014" at="56,37,57,116" concept="2" />
       <node id="6305381134221689014" at="59,5,60,16" concept="8" />
-      <node id="8817954235657369358" at="64,39,65,218" concept="8" />
+      <node id="8817954235657369358" at="64,39,65,232" concept="8" />
       <node id="6305381134221689014" at="70,0,71,0" concept="3" trace="myParameter" />
       <node id="6305381134221689014" at="71,53,72,30" concept="2" />
       <node id="6305381134221692343" at="75,87,76,192" concept="8" />
@@ -226,7 +230,7 @@
       <scope id="6305381134221721957" at="45,91,46,478" />
       <scope id="6305381134221689014" at="49,35,50,17" />
       <scope id="6305381134221689014" at="56,37,57,116" />
-      <scope id="8817954235657365273" at="64,39,65,218" />
+      <scope id="8817954235657365273" at="64,39,65,232" />
       <scope id="6305381134221689014" at="71,53,72,30" />
       <scope id="6305381134221689018" at="75,87,76,192" />
       <scope id="6305381134221689014" at="84,48,85,51" />
@@ -288,8 +292,16 @@
       <unit id="6305381134221689014" at="69,0,91,0" name="jetbrains.mps.baseLanguage.lightweightdsl.intentions.AddClasslikeAnnotation_Intention$IntentionImplementation" />
       <unit id="6305381134221689014" at="30,0,98,0" name="jetbrains.mps.baseLanguage.lightweightdsl.intentions.AddClasslikeAnnotation_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="6305381134221689014" at="38,61,39,65" concept="2" />
+      <node id="6305381134221689014" at="60,47,61,51" concept="2" />
+    </file>
   </root>
   <root nodeRef="r:5bb264d9-7f7a-4139-93e6-30697488a61b(jetbrains.mps.baseLanguage.lightweightdsl.intentions)/6647275119336296656">
+    <file name="IntentionsDescriptor.java">
+      <node id="6647275119336296656" at="37,47,38,61" concept="2" />
+      <node id="6647275119336296656" at="59,46,60,47" concept="2" />
+    </file>
     <file name="UpdatePlaceholders_Intention.java">
       <node id="6647275119336296656" at="19,0,20,0" concept="3" trace="myCachedExecutable" />
       <node id="6647275119336296656" at="20,41,21,167" concept="11" />

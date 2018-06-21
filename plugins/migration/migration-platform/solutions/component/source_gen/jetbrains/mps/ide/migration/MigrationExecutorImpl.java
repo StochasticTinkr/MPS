@@ -4,10 +4,9 @@ package jetbrains.mps.ide.migration;
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.lang.migration.runtime.base.DataCollector;
 import java.util.Map;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -40,8 +39,6 @@ public class MigrationExecutorImpl implements MigrationExecutor {
   private Project myProject;
   private MPSProject myMpsProject;
 
-  private SModule myDataModule;
-  private TempModuleOptions myDataModuleOptions;
   private DataCollector myDataCollector = new DataCollector() {
     public Map<SModule, SNode> collectData(SModule module, final MigrationScriptReference scriptReference) {
       final Map<SModule, SNode> requiredData = MapSequence.fromMap(new HashMap<SModule, SNode>());
@@ -60,20 +57,9 @@ public class MigrationExecutorImpl implements MigrationExecutor {
   public MigrationExecutorImpl(Project project) {
     myProject = project;
     myMpsProject = ((MPSProject) myProject);
-    myMpsProject.getModelAccess().runWriteAction(new Runnable() {
-      public void run() {
-        myDataModuleOptions = TempModuleOptions.forDefaultModule();
-        myDataModule = myDataModuleOptions.createModule();
-      }
-    });
   }
 
   public void dispose() {
-    myMpsProject.getModelAccess().runWriteAction(new Runnable() {
-      public void run() {
-        myDataModuleOptions.disposeModule();
-      }
-    });
   }
 
   @Override
@@ -103,7 +89,7 @@ public class MigrationExecutorImpl implements MigrationExecutor {
     script.setDataCollector(myDataCollector);
     SNode data = script.execute(module);
     if (data != null) {
-      MigrationDataUtil.addData(module, myDataModule, script.getReference(), data);
+      MigrationDataUtil.addData(module, script.getReference(), data);
     }
 
     int toVersion = script.getReference().getFromVersion() + 1;

@@ -900,7 +900,7 @@
       <node concept="3clFbS" id="44" role="3clF47">
         <node concept="3cpWs8" id="48" role="3cqZAp">
           <node concept="3cpWsn" id="4b" role="3cpWs9">
-            <property role="TrG5h" value="cncpt_a0b" />
+            <property role="TrG5h" value="cncpt" />
             <node concept="3uibUv" id="4c" role="1tU5fm">
               <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
             </node>
@@ -1090,11 +1090,11 @@
             <node concept="liA8E" id="5j" role="2OqNvi">
               <ref role="37wK5l" to="ksn4:~ConceptIndex.index(org.jetbrains.mps.openapi.language.SAbstractConcept):int" resolve="index" />
               <node concept="37vLTw" id="5l" role="37wK5m">
-                <ref role="3cqZAo" node="4b" resolve="cncpt_a0b" />
+                <ref role="3cqZAo" node="4b" resolve="cncpt" />
               </node>
             </node>
             <node concept="37vLTw" id="5k" role="2Oq$k0">
-              <ref role="3cqZAo" node="3Z" resolve="index_vhxjlb_a0b" />
+              <ref role="3cqZAo" node="3Z" resolve="conceptIndex" />
             </node>
           </node>
         </node>
@@ -1120,7 +1120,7 @@
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="index_vhxjlb_a0b" />
+      <property role="TrG5h" value="conceptIndex" />
       <node concept="3Tm6S6" id="5o" role="1B3o_S" />
       <node concept="2OqwBi" id="5p" role="33vP2m">
         <node concept="2OqwBi" id="5r" role="2Oq$k0">
@@ -1266,7 +1266,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="65" role="39e2AY">
-          <ref role="39e2AS" node="3Z" resolve="index_vhxjlb_a0b" />
+          <ref role="39e2AS" node="3Z" resolve="conceptIndex" />
         </node>
       </node>
     </node>
@@ -1289,7 +1289,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="6b" role="39e2AY">
-          <ref role="39e2AS" node="4b" resolve="cncpt_a0b" />
+          <ref role="39e2AS" node="4b" resolve="cncpt" />
         </node>
       </node>
     </node>

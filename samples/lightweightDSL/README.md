@@ -4,7 +4,7 @@
 
 
 This sample illustrates usages of the Lightweight DSL language, as documented at
-https://confluence.jetbrains.com/display/MPSD20173/Lightweight+DSL.
+https://confluence.jetbrains.com/display/MPSD20181/Lightweight+DSL.
 
 The "swing" example uses a custom UI builder injected into plain BaseLanguage classes to allow the users to define Swing-based UI.
 

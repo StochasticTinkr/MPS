@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,7 +108,7 @@ public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequesto
           out = file.openOutputStream();
           out.write(content);
         } catch (IOException e) {
-          LOG.error(null, e);
+          LOG.error(String.format("Failed to re-create file '%s'", file), e);
         } finally {
           FileUtil.closeFileSafe(out);
         }

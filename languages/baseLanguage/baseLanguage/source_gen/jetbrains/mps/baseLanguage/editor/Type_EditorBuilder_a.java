@@ -30,34 +30,34 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
   }
 
   /*package*/ EditorCell createCell() {
-    return createAlternation_a1nfgp_a();
+    return createAlternation_0();
   }
 
-  private EditorCell createAlternation_a1nfgp_a() {
+  private EditorCell createAlternation_0() {
     boolean alternationCondition = true;
     alternationCondition = nodeCondition_a1nfgp_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = createError_a1nfgp_a0();
+      editorCell = createError_0();
     } else {
-      editorCell = createComponent_a1nfgp_a0();
+      editorCell = createComponent_0();
     }
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);
-      bigCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(bigCell);
     }
     return editorCell;
   }
   private boolean nodeCondition_a1nfgp_a0() {
     return SNodeOperations.getConcept(myNode).isAbstract();
   }
-  private EditorCell createError_a1nfgp_a0() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<type>");
     editorCell.setCellId("Error_a1nfgp_a0");
     return editorCell;
   }
-  private EditorCell createComponent_a1nfgp_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

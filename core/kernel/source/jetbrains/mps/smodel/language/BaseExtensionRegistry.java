@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -179,13 +180,25 @@ public class BaseExtensionRegistry {
   }
 
   private boolean activateExtension(Extension extension) {
-    extension.activate();
-    return true;
+    try {
+      extension.activate();
+      return true;
+    } catch (Exception ex) {
+      String m = String.format("Activation failed for extension %s of point %s", extension.getClass().getName(), extension.getExtensionPointId());
+      Logger.getLogger(getClass()).error(m, ex);
+    }
+    return false;
   }
 
   private boolean deactivateExtension(Extension extension) {
-    extension.deactivate();
-    return true;
+    try {
+      extension.deactivate();
+      return true;
+    } catch (Exception ex) {
+      String m = String.format("Deactivation failed for extension %s of point %s", extension.getClass().getName(), extension.getExtensionPointId());
+      Logger.getLogger(getClass()).error(m, ex);
+    }
+    return false;
   }
 
   @SuppressWarnings("unchecked")

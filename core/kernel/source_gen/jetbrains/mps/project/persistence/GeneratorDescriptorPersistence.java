@@ -46,34 +46,28 @@ public class GeneratorDescriptorPersistence {
           String genUID = generatorElement.getAttributeValue("namespace");
           final String result_wk2vdq_a1a0a0a0a0h = genUID;
           result_wk2vdq_a0a0a0a0h.setNamespace(result_wk2vdq_a1a0a0a0a0h);
-          boolean genTemplatesSetting = XmlUtil.booleanWithDefault(generatorElement, "generate-templates", false);
-          final boolean result_wk2vdq_a3a0a0a0a0h = genTemplatesSetting;
-          result_wk2vdq_a0a0a0a0h.setGenerateTemplates(result_wk2vdq_a3a0a0a0a0h);
-          // reflective queries are deprecated and are off by default now. For generated templates, however, I don't want to have 
-          // regular QG API (there's no need, generated templates still invoke static methods directly) just not get confused now. 
-          // Perhaps, later will generate non-reflective access for generated templates as well, and even may utilize query objects in there. 
-          final boolean result_wk2vdq_a7a0a0a0a0h = XmlUtil.booleanWithDefault(generatorElement, "reflective-queries", genTemplatesSetting);
-          result_wk2vdq_a0a0a0a0h.setReflectiveQueries(result_wk2vdq_a7a0a0a0a0h);
-          final String result_wk2vdq_a8a0a0a0a0h = myMacroHelper.expandPath(XmlUtil.stringWithDefault(generatorElement, "generatorOutputPath", SOURCE_GEN_DEFAULT));
-          result_wk2vdq_a0a0a0a0h.setOutputPath(result_wk2vdq_a8a0a0a0a0h);
+          final boolean result_wk2vdq_a2a0a0a0a0h = XmlUtil.booleanWithDefault(generatorElement, "generate-templates", false);
+          result_wk2vdq_a0a0a0a0h.setGenerateTemplates(result_wk2vdq_a2a0a0a0a0h);
+          final String result_wk2vdq_a3a0a0a0a0h = myMacroHelper.expandPath(XmlUtil.stringWithDefault(generatorElement, "generatorOutputPath", SOURCE_GEN_DEFAULT));
+          result_wk2vdq_a0a0a0a0h.setOutputPath(result_wk2vdq_a3a0a0a0a0h);
 
           String uuid = generatorElement.getAttributeValue("uuid");
           if (uuid != null) {
-            final ModuleId result_wk2vdq_a0a11a0a0a0a0h = ModuleId.fromString(uuid);
-            result_wk2vdq_a0a0a0a0h.setId(result_wk2vdq_a0a11a0a0a0a0h);
+            final ModuleId result_wk2vdq_a0a6a0a0a0a0h = ModuleId.fromString(uuid);
+            result_wk2vdq_a0a0a0a0h.setId(result_wk2vdq_a0a6a0a0a0a0h);
           }
 
           String generatorName = generatorElement.getAttributeValue("alias");
           if (generatorName != null) {
-            final String result_wk2vdq_a0a41a0a0a0a0h = generatorName;
-            result_wk2vdq_a0a0a0a0h.setAlias(result_wk2vdq_a0a41a0a0a0a0h);
+            final String result_wk2vdq_a0a9a0a0a0a0h = generatorName;
+            result_wk2vdq_a0a0a0a0h.setAlias(result_wk2vdq_a0a9a0a0a0a0h);
           }
 
           if (!(myIsInsideLanguage)) {
             Element srcLang = XmlUtil.first(generatorElement, "source-language");
             if (srcLang != null) {
-              final SModuleReference result_wk2vdq_a0a1a61a0a0a0a0h = PersistenceFacade.getInstance().createModuleReference(srcLang.getAttributeValue("module"));
-              result_wk2vdq_a0a0a0a0h.setSourceLanguage(result_wk2vdq_a0a1a61a0a0a0a0h);
+              final SModuleReference result_wk2vdq_a0a1a11a0a0a0a0h = PersistenceFacade.getInstance().createModuleReference(srcLang.getAttributeValue("module"));
+              result_wk2vdq_a0a0a0a0h.setSourceLanguage(result_wk2vdq_a0a1a11a0a0a0a0h);
             }
           }
 
@@ -95,20 +89,20 @@ public class GeneratorDescriptorPersistence {
           }
 
           for (Element ruleElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(generatorElement, "mapping-priorities"), "mapping-priority-rule"))) {
-            final MappingPriorityRule result_wk2vdq_a0a92a0a0a0a0h = new MappingPriorityRule();
-            final RuleType result_wk2vdq_a0a0a92a0a0a0a0h = RuleType.parse(ruleElement.getAttributeValue("kind"));
-            result_wk2vdq_a0a92a0a0a0a0h.setType(result_wk2vdq_a0a0a92a0a0a0a0h);
+            final MappingPriorityRule result_wk2vdq_a0a42a0a0a0a0h = new MappingPriorityRule();
+            final RuleType result_wk2vdq_a0a0a42a0a0a0a0h = RuleType.parse(ruleElement.getAttributeValue("kind"));
+            result_wk2vdq_a0a42a0a0a0a0h.setType(result_wk2vdq_a0a0a42a0a0a0a0h);
             Element greaterPM = XmlUtil.first(ruleElement, "greater-priority-mapping");
             if (greaterPM != null) {
-              final MappingConfig_AbstractRef result_wk2vdq_a0a2a0a92a0a0a0a0h = loadGeneratorMappingConfigRef(greaterPM, genUID, false);
-              result_wk2vdq_a0a92a0a0a0a0h.setLeft(result_wk2vdq_a0a2a0a92a0a0a0a0h);
+              final MappingConfig_AbstractRef result_wk2vdq_a0a2a0a42a0a0a0a0h = loadGeneratorMappingConfigRef(greaterPM, genUID, false);
+              result_wk2vdq_a0a42a0a0a0a0h.setLeft(result_wk2vdq_a0a2a0a42a0a0a0a0h);
             }
             Element lesserPM = XmlUtil.first(ruleElement, "lesser-priority-mapping");
             if (lesserPM != null) {
-              final MappingConfig_AbstractRef result_wk2vdq_a0a4a0a92a0a0a0a0h = loadGeneratorMappingConfigRef(lesserPM, genUID, false);
-              result_wk2vdq_a0a92a0a0a0a0h.setRight(result_wk2vdq_a0a4a0a92a0a0a0a0h);
+              final MappingConfig_AbstractRef result_wk2vdq_a0a4a0a42a0a0a0a0h = loadGeneratorMappingConfigRef(lesserPM, genUID, false);
+              result_wk2vdq_a0a42a0a0a0a0h.setRight(result_wk2vdq_a0a4a0a42a0a0a0a0h);
             }
-            result_wk2vdq_a0a0a0a0h.getPriorityRules().add(result_wk2vdq_a0a92a0a0a0a0h);
+            result_wk2vdq_a0a0a0a0h.getPriorityRules().add(result_wk2vdq_a0a42a0a0a0a0h);
           }
           return result_wk2vdq_a0a0a0a0h;
         }
@@ -133,12 +127,6 @@ public class GeneratorDescriptorPersistence {
     }
     if (descriptor.isGenerateTemplates()) {
       generator.setAttribute("generate-templates", Boolean.toString(descriptor.isGenerateTemplates()));
-    }
-    if (descriptor.isReflectiveQueries() && !(descriptor.isGenerateTemplates())) {
-      // XXX transition. I've changed default to be off, and only explicitly set options ought to be persisted. 
-      // Since generated templated do not use non-reflective (aka API) queries, we ignore this option for generated templates, 
-      // assuming it to be true. 
-      generator.setAttribute("reflective-queries", Boolean.toString(true));
     }
     if (descriptor.getOutputPath() != null) {
       String p = myMacroHelper.shrinkPath(descriptor.getOutputPath());

@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.EditorUtil;
 
 @MPSLaunch
@@ -21,11 +22,15 @@ public class Del_InInitializerEnding_Test extends BaseTransformationTest {
 
   @Test
   public void test_Del_InInitializerEnding() throws Throwable {
-    runTest("jetbrains.mps.editorTest.Del_InInitializerEnding_Test$TestBody", "testMethod", false);
+    new Del_InInitializerEnding_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3737056097451784839", "3737056097451784846");

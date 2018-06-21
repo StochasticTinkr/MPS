@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.vfs;
 
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.path.Path;
-import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.util.FileUtil;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedInputStream;
@@ -48,7 +48,7 @@ public class IFileUtils {
       out.write(bytes);
       return true;
     } catch (IOException e) {
-      LOG.error(null, e);
+      LOG.error(String.format("Faile to copy %s to %s", oldFile, newFile), e);
       return false;
     } finally {
       FileUtil.closeFileSafe(in);

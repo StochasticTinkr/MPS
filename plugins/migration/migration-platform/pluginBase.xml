@@ -17,17 +17,7 @@
 <idea-plugin>
   <depends>jetbrains.mps.core</depends>
 
-  <actions>
-    <group id="Migration" text="_Migration" configurable="true" popup="true" compact="true">
-      <add-to-group group-id="MainMenu" relative-to-action="ToolsMenu" anchor="after" />
-    </group>
-  </actions>
-
   <project-components>
-    <component>
-      <interface-class>jetbrains.mps.migration.global.MigrationProperties</interface-class>
-      <implementation-class>jetbrains.mps.ide.migration.ProjectMigrationProperties</implementation-class>
-    </component>
     <component>
       <interface-class>jetbrains.mps.ide.migration.IStartupMigrationExecutor</interface-class>
       <implementation-class>jetbrains.mps.ide.migration.MigrationTrigger</implementation-class>

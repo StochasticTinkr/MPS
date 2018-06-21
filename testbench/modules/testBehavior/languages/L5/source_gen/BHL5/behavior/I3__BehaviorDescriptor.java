@@ -33,7 +33,7 @@ public final class I3__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static void foo_id2k7p7sTv$MS(@NotNull SNode __thisNode__) {
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x25076477397e4c6fL, 0x6c4ee9d44295ea26L, "c"), "set");
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x25076477397e4c6fL, 0x6c4ee9d44295ea26L, "c"), "set");
   }
 
   /*package*/ I3__BehaviorDescriptor() {

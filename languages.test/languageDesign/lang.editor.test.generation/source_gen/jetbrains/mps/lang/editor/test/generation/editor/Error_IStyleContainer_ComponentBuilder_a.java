@@ -23,6 +23,7 @@ import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.editor.runtime.style.CellAlign;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.editor.runtime.style.ShowBoundariesArea;
 import jetbrains.mps.editor.runtime.style.TableComponent;
 import jetbrains.mps.util.Pair;
@@ -45,17 +46,17 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_47wt8x_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_47wt8x_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_47wt8x_a");
-    editorCell.addEditorCell(createError_47wt8x_a0());
-    editorCell.addEditorCell(createCollection_47wt8x_b0());
+    editorCell.addEditorCell(createError_0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createError_47wt8x_a0() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "");
     editorCell.setCellId("Error_47wt8x_a0");
     Style style = new StyleImpl();
@@ -144,18 +145,16 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
     style.set(StyleAttributes.MAX_WIDTH, 10);
     style.set(StyleAttributes.MAX_WIDTH, _StyleParameter_QueryFunction_47wt8x_a97a0());
     style.set(StyleAttributes.NAVIGATABLE_NODE, _StyleParameter_QueryFunction_47wt8x_a08a0());
-    style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "navigable");
+    style.set(StyleAttributes.NAVIGATABLE_SREFERENCE, MetaAdapterFactory.getReferenceLink(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a681a1L, 0xbde895319b644cL, "navigable"));
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new TestTargetParametersInformation());
     style.set(StyleAttributes.POSITION_CHILDREN, "next-line");
     style.set(StyleAttributes.POSITION, "indented");
     style.set(StyleAttributes.SHOW_BOUNDARIES_IN, ShowBoundariesArea.GUTTER_AND_EDITOR);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform|ext_2_RTransform");
     style.set(StyleAttributes.TABLE_COMPONENT, TableComponent.VERTICAL_COLLECTION);
     new testStyleStyleClass(getEditorContext(), getNode()).unapply(style, editorCell);
     new testKey_StyleKey().unapply(style);
     style.set(StyleAttributes.UNDERLINED, false);
-    style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_47wt8x_a29a0());
+    style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_47wt8x_a09a0());
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -303,20 +302,20 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a29a0() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a09a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private EditorCell createCollection_47wt8x_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Superscript());
     editorCell.setCellId("Collection_47wt8x_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createError_47wt8x_a1a());
+    editorCell.addEditorCell(createError_1());
     return editorCell;
   }
-  private EditorCell createError_47wt8x_a1a() {
+  private EditorCell createError_1() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "");
     editorCell.setCellId("Error_47wt8x_a1a");
     Style style = new StyleImpl();

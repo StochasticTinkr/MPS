@@ -30,18 +30,18 @@ import jetbrains.mps.lang.project.editor.ProjectStructure_StyleSheet.KeyWordStyl
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_yx0g67_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_yx0g67_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_yx0g67_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createConstant_yx0g67_a0());
+    setCellContext(editorCell);
+    editorCell.addEditorCell(createConstant_0());
     return editorCell;
   }
-  private EditorCell createConstant_yx0g67_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "all local");
     editorCell.setCellId("Constant_yx0g67_a0");
     Style style = new StyleImpl();

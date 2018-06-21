@@ -26,7 +26,6 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.JLabel;
 import com.intellij.openapi.progress.TaskInfo;
-import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.project.MPSProject;
 import java.util.Collection;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -128,11 +127,6 @@ public abstract class MigrationScriptsView implements ResultsListener {
       public boolean isCancellable() {
         return false;
       }
-      @NonNls
-      @Override
-      public String getProcessId() {
-        return "migration";
-      }
     };
   }
   private MPSProject getMPSProject() {
@@ -156,7 +150,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
     final TaskInfo task = createTaskInfo();
     // There's no hidden knowledge in use of task.getProcessId(), just picked first string that might serve as group indicator,  
     // as groupId is irrelevant for us anyway 
-    UndoRunnable ur = new UndoRunnable.Base(task.getTitle(), task.getProcessId(), true) {
+    UndoRunnable ur = new UndoRunnable.Base(task.getTitle(), "migration", true) {
       public void run() {
         myController.process(new ProgressMonitorAdapter(myIndicator), aliveIncludedResults);
         checkMigrationResults();

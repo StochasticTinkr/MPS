@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.ui.tree.smodel;
 
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.tree.TreeElement;
@@ -77,7 +77,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
     // full name including stereotype, as use of plain name is ambiguous.
     setUserObject(model.getName().getLongName());
     setNodeIdentifier(model.toString());
-    Icon icon = IconManager.getIconFor(model);
+    Icon icon = GlobalIconManager.getInstance().getIconFor(model);
     setIcon(icon);
     setBaseIcon(icon);
     myNodesCondition = Condition.TRUE_CONDITION;

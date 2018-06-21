@@ -51,7 +51,7 @@ public class WordRemoveLink_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    SPropertyOperations.set(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x57d1fa7f2af1d485L, "url"), null);
+    SPropertyOperations.assign(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x57d1fa7f2af1d485L, "url"), null);
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

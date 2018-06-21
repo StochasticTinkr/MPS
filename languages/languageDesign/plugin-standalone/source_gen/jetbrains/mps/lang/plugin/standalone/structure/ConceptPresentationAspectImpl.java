@@ -15,6 +15,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ApplicationPluginType;
   private ConceptPresentation props_GetPreferencesComponentInProjectOperation;
   private ConceptPresentation props_GetToolInProjectOperation;
+  private ConceptPresentation props_PlatformAccessExpression;
   private ConceptPresentation props_ProjectPluginDeclaration;
   private ConceptPresentation props_ProjectPluginDisposeBlock;
   private ConceptPresentation props_ProjectPluginInitBlock;
@@ -30,7 +31,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ApplicationPluginDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a0b0m);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a0b0n);
           props_ApplicationPluginDeclaration = cpb.create();
         }
         return props_ApplicationPluginDeclaration;
@@ -69,11 +70,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_GetToolInProjectOperation = cpb.create();
         }
         return props_GetToolInProjectOperation;
+      case LanguageConceptSwitch.PlatformAccessExpression:
+        if (props_PlatformAccessExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("access MPS platform");
+          cpb.rawPresentation("mpsPlatform");
+          props_PlatformAccessExpression = cpb.create();
+        }
+        return props_PlatformAccessExpression;
       case LanguageConceptSwitch.ProjectPluginDeclaration:
         if (props_ProjectPluginDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a6b0m);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a7b0n);
           props_ProjectPluginDeclaration = cpb.create();
         }
         return props_ProjectPluginDeclaration;

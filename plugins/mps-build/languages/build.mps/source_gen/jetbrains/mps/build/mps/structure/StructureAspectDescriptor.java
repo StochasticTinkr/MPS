@@ -406,6 +406,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/781140262677906392");
     b.aggregate("name", 0xad72aee24ac03e1L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("781140262677906401").done();
     b.aggregate("url", 0xad72aee24ac03e2L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("781140262677906402").done();
+    b.aggregate("copyrightStar", 0x20b13992ef6a5dd2L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(false).ordered(true).multiple(false).origin("2355727383336213970").done();
     b.alias("company information");
     return b.create();
   }
@@ -545,6 +546,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.parent(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L);
     b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/6592112598314498932");
+    b.prop("pluginXmlProvided", 0x450018b736351dc3L, "4972001163784560067");
     b.prop("id", 0x5b7be37b4de9bb6fL, "6592112598314498927");
     b.aggregate("name", 0x5b7be37b4de9bbcdL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("6592112598314499021").done();
     b.aggregate("description", 0x1e274e75c23f88b2L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(true).ordered(true).multiple(false).origin("2172791612906637490").done();

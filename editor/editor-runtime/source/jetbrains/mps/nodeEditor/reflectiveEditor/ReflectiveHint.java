@@ -32,10 +32,8 @@ import java.util.stream.Stream;
 enum ReflectiveHint {
   REFLECTIVE("jetbrains.mps.lang.core.editor.reflective") {
     @Override
-    void processForChild(EditorCellFactory factory) {
-      if (getReflectiveHintsFromCellContext(factory.getCellContext()).contains(DENY_FOR_CHILDREN)) {
-        super.processForChild(factory);
-      }
+    boolean shouldRemoveFromCellFactory(EditorCellFactory factory) {
+      return getReflectiveHintsFromCellContext(factory.getCellContext()).contains(DENY_FOR_CHILDREN);
     }
   },
   DENY_FOR_NODE("jetbrains.mps.lang.core.editor.denyForNode"),
@@ -76,11 +74,11 @@ enum ReflectiveHint {
     updater.removeExplicitEditorHintsForNode(node.getReference(), myHint);
   }
 
-  void processForChild(EditorCellFactory factory) {
-    removeFromCellFactory(factory);
+  boolean shouldRemoveFromCellFactory(EditorCellFactory factory) {
+    return true;
   }
 
-  private void removeFromCellFactory(EditorCellFactory factory) {
+  void removeFromCellFactory(EditorCellFactory factory) {
     factory.removeCellContextHints(getHint());
   }
 

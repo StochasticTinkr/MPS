@@ -50,7 +50,7 @@ public class FindInPriorityRules_Finder extends GeneratedFinder {
       SModel modelOfSelectedMC = SNodeOperations.getModel(node);
       final SNode moduleOfSelectedMC = SNodeOperations.as(SModelOperations.getModuleStub(modelOfSelectedMC), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, "jetbrains.mps.lang.project.structure.Generator"));
       SModule projectStructureModule = SNodeOperations.getModel(moduleOfSelectedMC).getModule();
-      final String selectedModelReference = PersistenceFacade.getInstance().asString(modelOfSelectedMC.getReference());
+      final String selectedModelReference = PersistenceFacade.getInstance().asString(SModelOperations.getPointer(modelOfSelectedMC));
       final String selectedNodeId = node.getNodeId().toString();
       _FunctionTypes._void_P1_E0<? super SNode> addResultFunc = new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode it) {

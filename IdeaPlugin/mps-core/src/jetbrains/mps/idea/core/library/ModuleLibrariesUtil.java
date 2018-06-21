@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.intellij.openapi.roots.ui.configuration.libraryEditor.NewLibraryEdito
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer.LibraryLevel;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.AbstractModule;
@@ -53,18 +54,18 @@ public class ModuleLibrariesUtil {
 
   @NotNull
   public static Collection<Library> getLibraries(SModuleReference reference, Project project) {
+    SRepository repo = ProjectHelper.getProjectRepository(project);
     Set<Library> libraries = new HashSet<Library>();
+    // use MRF intentionally, I don't know if we are in model read here or not, and the code below doesn't need one.
+    // FIXME shall refactor this code so that I don't need to grab model read. The only thing we use module for is its descriptor file.
+    //       Could we solve this task in another way?
+    SModule module = new ModuleRepositoryFacade(repo).getModule(reference);
     for (Library library : ProjectLibraryTable.getInstance(project).getLibraries()) {
-      if (hasModule(library, reference)) {
+      if (hasModule(library, module)) {
         libraries.add(library);
       }
     }
     return libraries;
-  }
-
-  private static boolean hasModule(Library library, SModuleReference reference) {
-    SModule module = ModuleRepositoryFacade.getInstance().getModule(reference);
-    return hasModule(library, module);
   }
 
   private static boolean hasModule(Library library, SModule module) {

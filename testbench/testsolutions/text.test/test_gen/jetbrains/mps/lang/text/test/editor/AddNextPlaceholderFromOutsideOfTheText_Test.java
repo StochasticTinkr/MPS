@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class AddNextPlaceholderFromOutsideOfTheText_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class AddNextPlaceholderFromOutsideOfTheText_Test extends BaseTransformat
 
   @Test
   public void test_AddNextPlaceholderFromOutsideOfTheText() throws Throwable {
-    runTest("jetbrains.mps.lang.text.test.editor.AddNextPlaceholderFromOutsideOfTheText_Test$TestBody", "testMethod", false);
+    new AddNextPlaceholderFromOutsideOfTheText_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6328114375522083893", "6328114375522083904");

@@ -4,23 +4,12 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import java.util.List;
-import jetbrains.mps.plugins.custom.BaseCustomProjectPlugin;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.plugins.part.ProjectPluginPart;
 
 public class Make_ProjectPlugin extends BaseProjectPlugin {
   public Make_ProjectPlugin() {
   }
-  public List<BaseCustomProjectPlugin> initCustomParts(Project project) {
-    List<BaseCustomProjectPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomProjectPlugin>());
-    MPSProject mpsProject = project.getComponent(MPSProject.class);
-    {
-      BaseCustomProjectPlugin plugin = new TransientModels_CustomProjectPlugin();
-      ListSequence.fromList(res).addElement(plugin);
-      plugin.init(mpsProject);
-    }
-    return res;
+  public void fillCustomParts(List<ProjectPluginPart> parts) {
+    parts.add(new TransientModels_ProjectPluginPart());
   }
 }

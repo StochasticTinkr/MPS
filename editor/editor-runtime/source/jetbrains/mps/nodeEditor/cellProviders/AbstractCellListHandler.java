@@ -28,6 +28,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Iterator;
@@ -36,44 +37,45 @@ import java.util.List;
 public abstract class AbstractCellListHandler extends AbstractEditorBuilder implements EditorBuilderEnvironment {
   public static final String ELEMENT_CELL_ACTIONS_SET = "element-cell-actions-set";
 
-  /**
-   * @deprecated since MPS 3.5 use {@link #getNode()} method, this field will become private in the next release
-   */
-  @Deprecated
-  protected SNode myOwnerNode;
-  /**
-   * @deprecated since MPS 3.5 use {@link #getEditorContext()} method, this field will become private in the next release
-   */
-  @Deprecated
-  protected EditorContext myEditorContext;
   protected EditorCell_Collection myListEditorCell_Collection;
-  protected String myElementRole;
 
-  public AbstractCellListHandler(String elementRole, EditorContext editorContext) {
-    super(editorContext);
-    myElementRole = elementRole;
-    myEditorContext = editorContext;
-  }
-
-  /**
-   * @deprecated since MPS 3.5 use {@link #AbstractCellListHandler(String, EditorContext)}
-   */
   @Deprecated
-  public AbstractCellListHandler(SNode ownerNode, String elementRole, EditorContext editorContext) {
-    this(elementRole, editorContext);
-    myOwnerNode = ownerNode;
+  @ToRemove(version = 2018.2)
+  public AbstractCellListHandler(String elementRole, EditorContext editorContext) {
+    this(editorContext);
+  }
+
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  //used bu mps-extensions in 2018.1, can be removed when different branches are used for 18.1 and 18.2
+  public AbstractCellListHandler(SNode node, String elementRole, EditorContext editorContext) {
+    this(editorContext);
+  }
+
+  public AbstractCellListHandler(EditorContext editorContext) {
+    super(editorContext);
+  }
+
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  //use getLink/getReference instead
+  public String getElementRole(){
+    return null;
   }
 
   /**
+   * Usage in mbeddr-generated code in 2018.1, so we leave it here until 18.2
    * @deprecated since MPS 3.5 use {@link #getNode()} method
    */
   @Deprecated
+  @ToRemove(version = 2018.2)
   public SNode getOwner() {
-    return myOwnerNode;
+    return getNode();
   }
 
-  public String getElementRole() {
-    return myElementRole;
+  //todo remove body after 2018.2
+  public SConceptFeature getElementSRole(){
+    return null;
   }
 
   protected abstract SNode getAnchorNode(EditorCell anchorCell);
@@ -86,60 +88,37 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     doInsertNode(nodeToInsert, anchorNode, insertBefore);
   }
 
-  public EditorCell createNodeCell(SNode node) {
-    // TODO: after MPS 3.5 make this method abstract
-    return createNodeCell(getEditorContext(), node);
-  }
-
-  /**
-   * @deprecated since MPS 3.5 use {@link #createNodeCell(SNode)}
-   */
-  @Deprecated
-  public EditorCell createNodeCell(EditorContext editorContext, SNode node) {
+  public EditorCell createNodeCell(SNode node){
     return null;
   }
 
-  protected EditorCell createSeparatorCell(SNode prevNode, SNode nextNode) {
-    return createSeparatorCell(getEditorContext(), prevNode, nextNode);
-  }
-
-  /**
-   * @deprecated since MPS 3.5 use {@link #createSeparatorCell(SNode, SNode)}
-   */
-  @Deprecated
-  protected EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
+  protected EditorCell createSeparatorCell(SNode prevNode, SNode nextNode){
     return null;
   }
 
-  protected EditorCell createEmptyCell() {
+  protected EditorCell createEmptyCell(){
     // TODO: after MPS 3.5 make this method abstract
-    return createEmptyCell(getEditorContext());
-  }
-
-  /**
-   * @deprecated since MPS 3.5 use {@link #createEmptyCell()}
-   */
-  @Deprecated
-  protected EditorCell createEmptyCell(EditorContext editorContext) {
     return null;
   }
 
   public abstract SNode createNodeToInsert(EditorContext editorContext);
 
+  /**
+   * Usage in mbeddr-generated code in 2018.1, so we leave it here until 18.2
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public EditorCell_Collection createCells_Vertical(EditorContext editorContext) {
-    return createCells(editorContext, new CellLayout_Vertical());
-  }
-
-  public EditorCell_Collection createCells_Horizontal(EditorContext editorContext) {
-    return createCells(editorContext, new CellLayout_Horizontal());
+    return createCells(new CellLayout_Vertical());
   }
 
   /**
-   * @deprecated since MPS 3.5 use {@link #createCells(CellLayout, boolean)}
+   * Usage in mbeddr-generated code in 2018.1, so we leave it here until 18.2
    */
   @Deprecated
-  public EditorCell_Collection createCells(EditorContext editorContext, CellLayout cellLayout, boolean selectable) {
-    return createCells(cellLayout, selectable);
+  @ToRemove(version = 2018.2)
+  public EditorCell_Collection createCells_Horizontal(EditorContext editorContext) {
+    return createCells(new CellLayout_Horizontal());
   }
 
   public EditorCell_Collection createCells(CellLayout cellLayout, boolean selectable) {
@@ -156,14 +135,6 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     return wrapperCell;
   }
 
-  /**
-   * @deprecated since MPS 3.5 use {@link #createCells(CellLayout)}
-   */
-  @Deprecated
-  public EditorCell_Collection createCells(EditorContext editorContext, CellLayout cellLayout) {
-    return createCells(cellLayout);
-  }
-
   public EditorCell_Collection createCells(CellLayout cellLayout) {
     myListEditorCell_Collection = EditorCell_Collection.create(getEditorContext(), getNode(), cellLayout, this);
     myListEditorCell_Collection.setSelectable(false);
@@ -177,19 +148,11 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     return myListEditorCell_Collection;
   }
 
-  /**
-   * @deprecated since MPS 3.5 use {@link #createInnerCells()}
-   */
-  protected void createInnerCells(SNode node, EditorContext editorContext) {
-    //TODO: after MPS 3.5 remove createInnerCells(SNode node, EditorContext editorContext) & inline it here.
-    createInnerCells(getNode(), getEditorContext());
-  }
-
   protected void createInnerCells() {
     Iterator<? extends SNode> listNodes = getNodesForList().iterator();
     if (!listNodes.hasNext()) {
       EditorCell emptyCell = createEmptyCell();
-      emptyCell.setRole(getElementRole());
+      emptyCell.setSRole(getElementSRole());
       myListEditorCell_Collection.addEditorCell(emptyCell);
     } else {
       SNode prevNode = null;

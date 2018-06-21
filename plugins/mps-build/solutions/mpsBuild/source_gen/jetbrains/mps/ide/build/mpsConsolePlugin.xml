@@ -24,7 +24,7 @@
       <include name="jdom.jar" />
       <include name="asm4-all.jar" />
       <include name="asm-all.jar" />
-      <include name="jgoodies-forms.jar" />
+      <include name="forms-1.1-preview.jar" />
     </fileset>
   </path>
   
@@ -65,6 +65,18 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/models" prefix="modules/jetbrains.mps.console/models" />
     </jar>
     <mkdir dir="${build.layout}/mps-console/lang" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.console.devkit.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.console.devkit.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.console.devkit.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.console.devkit" type="devkit" uuid="70d3d6da-af63-483d-a75f-9c8acf8de332">
+        <dependencies />
+        <sources jar="." descriptor="jetbrains.mps.console.devkit.devkit" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.devkit.jar" duplicate="preserve">
+      <zipfileset file="${mps_home}/plugins/console/lang/devkit/jetbrains.mps.console.devkit.devkit" prefix="module" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.console.devkit.jar" />
+    </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.console.base.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.console.base.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.console.base.jar/META-INF/module.xml">
@@ -330,11 +342,9 @@
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
           <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
-          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e(jetbrains.mps.lang.migration.runtime)" />
-          <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="31f56055-9d30-42b3-a2b1-fb3f554d7075(jetbrains.mps.lang.smodel.query.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
@@ -691,6 +701,7 @@
       <chunk>
         <module file="${mps_home}/plugins/console/jetbrains.mps.console.msd" />
         <module file="${mps_home}/plugins/console/lang/base/jetbrains.mps.console.base.mpl" />
+        <module file="${mps_home}/plugins/console/lang/devkit/jetbrains.mps.console.devkit.devkit" />
         <module file="${mps_home}/plugins/console/lang/ideCommands/jetbrains.mps.console.ideCommands.mpl" />
         <module file="${mps_home}/plugins/console/lang/ideCommandsRuntime/jetbrains.mps.console.ideCommands.runtime.msd" />
         <module file="${mps_home}/plugins/console/lang/internalCommands/jetbrains.mps.console.internalCommands.mpl" />
@@ -927,7 +938,6 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.7.2.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />

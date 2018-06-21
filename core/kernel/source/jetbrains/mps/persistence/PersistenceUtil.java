@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,7 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleCoreService;
-import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.extapi.persistence.datasource.URLNotSupportedException;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
@@ -127,7 +126,7 @@ public final class PersistenceUtil {
 
   @Nullable
   private static DataSourceFactoryFromURL getDataSourceFactory(@NotNull URL url) {
-    DataSourceFactoryRuleCoreService service = DataSourceFactoryRuleCoreService.getInstance();
+    DataSourceFactoryRuleService service = DataSourceFactoryRuleService.getInstance();
     DataSourceFactoryFromURL dataSourceFactory = service.getFactory(url);
     if (dataSourceFactory == null) {
       LOG.error("Data Source Factory is not found for " + url);

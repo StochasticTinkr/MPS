@@ -10,7 +10,7 @@
     <file name="AppendOneToName.java">
       <node id="4736696158596280783" at="14,52,15,40" concept="4" />
       <node id="4736696158596280783" at="17,39,18,30" concept="4" />
-      <node id="4736696158596280815" at="20,69,21,377" concept="1" />
+      <node id="4736696158596280815" at="20,69,21,380" concept="1" />
       <node id="4736696158596280783" at="12,0,14,0" concept="0" trace="AppendOneToName#()V" />
       <node id="4736696158596280783" at="14,0,17,0" concept="3" trace="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
       <node id="4736696158596280783" at="17,0,20,0" concept="3" trace="getUserFriendlyName#()Ljava/lang/String;" />
@@ -18,7 +18,7 @@
       <scope id="4736696158596280783" at="12,28,12,28" />
       <scope id="4736696158596280783" at="14,52,15,40" />
       <scope id="4736696158596280783" at="17,39,18,30" />
-      <scope id="4736696158596280786" at="20,69,21,377" />
+      <scope id="4736696158596280786" at="20,69,21,380" />
       <scope id="4736696158596280783" at="12,0,14,0" />
       <scope id="4736696158596280783" at="14,0,17,0" />
       <scope id="4736696158596280783" at="17,0,20,0" />

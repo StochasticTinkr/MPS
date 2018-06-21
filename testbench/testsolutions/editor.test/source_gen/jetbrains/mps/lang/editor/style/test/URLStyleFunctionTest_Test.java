@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import java.util.Objects;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -23,11 +24,15 @@ public class URLStyleFunctionTest_Test extends BaseTransformationTest {
 
   @Test
   public void test_URLStyleFunctionTest() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.style.test.URLStyleFunctionTest_Test$TestBody", "testMethod", false);
+    new URLStyleFunctionTest_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2542823481375847329", "");

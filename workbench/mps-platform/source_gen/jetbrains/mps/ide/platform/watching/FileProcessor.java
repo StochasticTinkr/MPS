@@ -30,6 +30,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.function.Function;
+import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.vfs.FileSystemEvent;
 import java.util.HashSet;
@@ -207,7 +208,7 @@ public class FileProcessor extends ReloadParticipant {
   private static boolean acceptDescendant(String eventPath, FileSystemListener listenerToChildFile, FileProcessor.EventKind kind) {
     IFile childFile = listenerToChildFile.getFileToListen();
     // contract to comment out later 
-    assert childFile.getPath().startsWith(eventPath) : "Contract is broken: " + childFile.getPath() + " does not start with " + eventPath;
+    assert FileUtil.startsWith(childFile.getPath(), eventPath) : "Contract is broken: " + childFile.getPath() + " does not start with " + eventPath;
     if (kind == FileProcessor.EventKind.CREATED && listenerToChildFile.listeningPreferences().notifyOnParentCreation) {
       return true;
     } else if (kind == FileProcessor.EventKind.CONTENT_CHANGED && listenerToChildFile.listeningPreferences().notifyOnParentChange) {
@@ -221,7 +222,7 @@ public class FileProcessor extends ReloadParticipant {
   private static boolean acceptAncestor(String eventPath, FileSystemListener listenerToParentFile, FileProcessor.EventKind kind) {
     IFile parentFile = listenerToParentFile.getFileToListen();
     // contract to comment out later 
-    assert eventPath.startsWith(parentFile.getPath()) : "Contract is broken: " + eventPath + " does not start with " + parentFile.getPath();
+    assert FileUtil.startsWith(eventPath, parentFile.getPath()) : "Contract is broken: " + eventPath + " does not start with " + parentFile.getPath();
     if (kind == FileProcessor.EventKind.CREATED && listenerToParentFile.listeningPreferences().notifyOnChildCreation) {
       return true;
     } else if (kind == FileProcessor.EventKind.CONTENT_CHANGED && listenerToParentFile.listeningPreferences().notifyOnChildChange) {

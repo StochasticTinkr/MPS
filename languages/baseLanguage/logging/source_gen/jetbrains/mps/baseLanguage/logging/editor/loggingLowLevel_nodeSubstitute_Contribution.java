@@ -153,7 +153,7 @@ public class loggingLowLevel_nodeSubstitute_Contribution extends SubstituteMenuB
         }
         @Override
         public void select(@NotNull SNode createdNode, @NotNull String pattern) {
-          SelectionUtil.selectCell(_context.getEditorContext(), createdNode, SelectionManager.LAST_EDITABLE_CELL);
+          SelectionUtil.selectCell(_context.getEditorContext(), SLinkOperations.getTarget(createdNode, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, 0x1c3d779b2be2f1b9L, "message")), SelectionManager.FIRST_EDITABLE_CELL);
         }
       }
     }

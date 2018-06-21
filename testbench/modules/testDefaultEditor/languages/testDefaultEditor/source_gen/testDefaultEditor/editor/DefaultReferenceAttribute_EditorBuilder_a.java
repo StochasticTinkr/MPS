@@ -29,25 +29,25 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_nltvu5_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_nltvu5_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_nltvu5_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createConstant_nltvu5_a0());
-    editorCell.addEditorCell(createAttributedLinkCell_nltvu5_b0());
+    setCellContext(editorCell);
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createAttributedLinkCell_0());
     return editorCell;
   }
-  private EditorCell createConstant_nltvu5_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "$R$");
     editorCell.setCellId("const");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createAttributedLinkCell_nltvu5_b0() {
+  private EditorCell createAttributedLinkCell_0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.REFERENCE, myNode);
     return editorCell;

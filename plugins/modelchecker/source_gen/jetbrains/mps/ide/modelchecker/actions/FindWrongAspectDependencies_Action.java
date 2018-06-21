@@ -52,7 +52,7 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadInEDT(new Runnable() {
       public void run() {
-        List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModule>) event.getData(MPSCommonDataKeys.MPS_PROJECT).getModules())).where(new IWhereFilter<SModule>() {
+        List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModule>) event.getData(MPSCommonDataKeys.MPS_PROJECT).getProjectModules())).where(new IWhereFilter<SModule>() {
           public boolean accept(SModule it) {
             return FindWrongAspectDependencies_Action.this.needsProcessing(it, event);
           }
@@ -62,7 +62,7 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
           }
         }).where(new IWhereFilter<SModel>() {
           public boolean accept(SModel md) {
-            return SModelStereotype.isUserModel(md);
+            return !(SModelStereotype.isStubModel(md));
           }
         }));
         ModelCheckerTool.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject()).checkModelsAndShowResult(models, new AspectDependenciesChecker(event.getData(MPSCommonDataKeys.MPS_PROJECT)));

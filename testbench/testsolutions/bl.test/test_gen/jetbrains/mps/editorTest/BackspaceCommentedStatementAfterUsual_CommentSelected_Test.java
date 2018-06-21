@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class BackspaceCommentedStatementAfterUsual_CommentSelected_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class BackspaceCommentedStatementAfterUsual_CommentSelected_Test extends 
 
   @Test
   public void test_BackspaceCommentedStatementAfterUsual_CommentSelected() throws Throwable {
-    runTest("jetbrains.mps.editorTest.BackspaceCommentedStatementAfterUsual_CommentSelected_Test$TestBody", "testMethod", false);
+    new BackspaceCommentedStatementAfterUsual_CommentSelected_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3178160097415619936", "3178160097415619960");

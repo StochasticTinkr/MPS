@@ -274,7 +274,7 @@ public class SNodeOperations {
     if (concept == null) {
       return false;
     }
-    return SNodeUtil.isInstanceOf(node, concept);
+    return node.isInstanceOfConcept(concept);
   }
   public static SNode getNextSibling(SNode node) {
     if (node == null) {
@@ -711,5 +711,9 @@ public class SNodeOperations {
   @Nullable
   public static SNodeReference getPointer(SNode node) {
     return (node == null ? null : node.getReference());
+  }
+
+  public static boolean is(SNode node, SNodeReference nodePtr) {
+    return (node == null ? false : node.getReference().equals(nodePtr));
   }
 }

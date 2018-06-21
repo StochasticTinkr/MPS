@@ -26,7 +26,7 @@
       <include name="jdom.jar" />
       <include name="asm4-all.jar" />
       <include name="asm-all.jar" />
-      <include name="jgoodies-forms.jar" />
+      <include name="forms-1.1-preview.jar" />
     </fileset>
   </path>
   
@@ -192,7 +192,6 @@
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
       <library file="${artifacts.mpsEditor}/languages/testDefaultEditor.jar" />
-      <library file="${artifacts.mpsEditor}/languages/testSpaceCompletion.jar" />
       <library file="${artifacts.mpsEditor}/tests/jetbrains.mps.baseLanguage.test.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -288,6 +287,7 @@
       <library file="${artifacts.mps}/plugins/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.languages.jar" />
       <library file="${artifacts.mps}/plugins/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.library.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
+      <library file="${artifacts.mps}/plugins/mps-testing/languages/gentest/jetbrains.mps.lang.test.generator.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
@@ -480,7 +480,6 @@
   <target name="test.execution" depends="assemble">
     <path id="mps.libraries.path">
       <pathelement location="${artifacts.mpsEditor}/languages/testDefaultEditor.jar" />
-      <pathelement location="${artifacts.mpsEditor}/languages/testSpaceCompletion.jar" />
       <pathelement location="${artifacts.mpsEditor}/tests/jetbrains.mps.baseLanguage.test.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -574,6 +573,7 @@
       <pathelement location="${artifacts.mps}/plugins/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.languages.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.library.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/gentest/jetbrains.mps.lang.test.generator.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
@@ -597,38 +597,35 @@
       <pathelement location="${build.layout}/jetbrains.mps.execution.impl.tests.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
+    <patternset id="plugin.deployed.jars">
+      <include name="lib/**/*.jar" />
+      <include name="languages/**/*.jar" />
+      <exclude name="**/*-src.jar" />
+    </patternset>
     <path id="long.class.path">
       <fileset dir="${artifacts.mps}/plugins/mps-build">
-        <include name="lib/**/*.jar" />
-        <include name="languages/**/*.jar" />
+        <patternset refid="plugin.deployed.jars" />
       </fileset>
       <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
-        <include name="lib/**/*.jar" />
-        <include name="languages/**/*.jar" />
+        <patternset refid="plugin.deployed.jars" />
       </fileset>
       <fileset dir="${artifacts.mps}/plugins/mps-debugger-api">
-        <include name="lib/**/*.jar" />
-        <include name="languages/**/*.jar" />
+        <patternset refid="plugin.deployed.jars" />
       </fileset>
       <fileset dir="${artifacts.mps}/plugins/mps-debugger-java">
-        <include name="lib/**/*.jar" />
-        <include name="languages/**/*.jar" />
+        <patternset refid="plugin.deployed.jars" />
       </fileset>
       <fileset dir="${artifacts.mps}/plugins/mps-execution-api">
-        <include name="lib/**/*.jar" />
-        <include name="languages/**/*.jar" />
+        <patternset refid="plugin.deployed.jars" />
       </fileset>
       <fileset dir="${artifacts.mps}/plugins/mps-execution-configurations">
-        <include name="lib/**/*.jar" />
-        <include name="languages/**/*.jar" />
+        <patternset refid="plugin.deployed.jars" />
       </fileset>
       <fileset dir="${artifacts.mps}/plugins/mps-execution-languages">
-        <include name="lib/**/*.jar" />
-        <include name="languages/**/*.jar" />
+        <patternset refid="plugin.deployed.jars" />
       </fileset>
       <fileset dir="${artifacts.mps}/plugins/mps-testing">
-        <include name="lib/**/*.jar" />
-        <include name="languages/**/*.jar" />
+        <patternset refid="plugin.deployed.jars" />
       </fileset>
       <fileset dir="${artifacts.mps}/lib">
         <include name="**/*.jar" />
@@ -649,7 +646,7 @@
         <attribute name="Class-Path" value="${manifest.classpath}" />
       </manifest>
     </jar>
-    <junit showoutput="true" fork="true" haltonfailure="false">
+    <junit showoutput="true" fork="true" haltonfailure="false" dir="${basedir}">
       <jvmarg value="-ea" />
       <jvmarg value="-Xss2048k" />
       <jvmarg value="-Xmx1024m" />
@@ -662,9 +659,11 @@
         </fileset>
       </classpath>
       
+      <env key="NO_FS_ROOTS_ACCESS_CHECK" value="true" />
       <sysproperty key="plugin.path" value="${mps.plugins.path.string}" />
       <sysproperty key="mps.libraries" value="${mps.libraries.path.string}" />
       <sysproperty key="mps.test.modules" value="${mps.tests.path.string}" />
+      
       
       <test name="jetbrains.mps.testbench.junit.suites.AntModuleTestSuite" outfile="TEST-jetbrains.mps.testbench.junit.suites.AntModuleTestSuite-execution" />
       <formatter type="xml" />

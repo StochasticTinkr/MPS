@@ -13,6 +13,14 @@
     </file>
   </root>
   <root nodeRef="r:376aaabb-efff-403a-9afa-fc63fa67c6b3(jetbrains.mps.baseLanguage.varVariable.typesystem)/1236696569510">
+    <file name="TypesystemDescriptor.java">
+      <node id="1236696569510" at="11,5,12,94" concept="5" />
+      <node id="1236696569510" at="12,94,13,47" concept="2" />
+      <node id="1236696569510" at="10,33,14,5" concept="0" />
+      <scope id="1236696569510" at="11,5,13,47">
+        <var name="inferenceRule" id="1236696569510" />
+      </scope>
+    </file>
     <file name="typeof_VarVariableDeclaration_InferenceRule.java">
       <node id="8425555512443936489" at="20,135,21,114" concept="5" />
       <node id="1236696586241" at="22,5,23,217" concept="5" />
@@ -75,6 +83,14 @@
     </file>
   </root>
   <root nodeRef="r:376aaabb-efff-403a-9afa-fc63fa67c6b3(jetbrains.mps.baseLanguage.varVariable.typesystem)/8067700594454594112">
+    <file name="TypesystemDescriptor.java">
+      <node id="8067700594454594112" at="15,5,16,105" concept="5" />
+      <node id="8067700594454594112" at="16,105,17,55" concept="2" />
+      <node id="8067700594454594112" at="14,5,18,5" concept="0" />
+      <scope id="8067700594454594112" at="15,5,17,55">
+        <var name="nonTypesystemRule" id="8067700594454594112" />
+      </scope>
+    </file>
     <file name="check_VarVariableDeclaration_NonTypesystemRule.java">
       <node id="8067700594454596069" at="21,188,22,58" concept="5" />
       <node id="8067700594454596069" at="22,58,23,263" concept="5" />

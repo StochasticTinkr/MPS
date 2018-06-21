@@ -98,11 +98,11 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration {
   }
   @Override
   public NodeByConcept_Configuration clone() {
-    NodeByConcept_Configuration clone = null;
+    NodeByConcept_Configuration clone = createCloneTemplate();
     try {
-      clone = createCloneTemplate();
+      // beware, PersistenceConfiguration.this of newly created MyState instance would be the same as 
+      // the value of myState, and != clone as regular Java passer-by would expect. 
       clone.myState = (NodeByConcept_Configuration.MyState) myState.clone();
-      return clone;
     } catch (CloneNotSupportedException ex) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", ex);
@@ -110,7 +110,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration {
     }
     return clone;
   }
-  public class MyState {
+  public final class MyState {
     public String myNodePointer;
     public String myNodeText;
     public MyState() {

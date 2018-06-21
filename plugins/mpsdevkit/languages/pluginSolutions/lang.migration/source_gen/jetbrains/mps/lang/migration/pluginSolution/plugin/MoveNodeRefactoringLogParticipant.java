@@ -13,6 +13,7 @@ import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -23,7 +24,6 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import org.apache.log4j.Level;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -60,10 +60,10 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
 
   private MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<SNodeReference, SNodeReference> myDataCollector = new MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<SNodeReference, SNodeReference>() {
     public SNodeReference beforeMove(SNode nodeToMove) {
-      return nodeToMove.getReference();
+      return SNodeOperations.getPointer(nodeToMove);
     }
     public SNodeReference afterMove(SNode movedNode) {
-      return movedNode.getReference();
+      return SNodeOperations.getPointer(movedNode);
     }
   };
 

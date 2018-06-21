@@ -40,14 +40,14 @@ import jetbrains.jetpad.model.property.ReadableProperty;
   }
 
   /*package*/ EditorCell createCell() {
-    return createDiagramPort_dwqpkk_a();
+    return createDiagramPort_0();
   }
 
-  private EditorCell createDiagramPort_dwqpkk_a() {
+  private EditorCell createDiagramPort_0() {
     final EditorCell editorCell = new OutPort_diagram_EditorBuilder_a.PortCellImpl_dwqpkk_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramPort_dwqpkk_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     return editorCell;
   }
   private class PortCellImpl_dwqpkk_a extends PortCell {

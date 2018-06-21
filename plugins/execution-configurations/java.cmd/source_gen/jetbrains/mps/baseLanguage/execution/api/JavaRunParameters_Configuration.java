@@ -54,11 +54,11 @@ public class JavaRunParameters_Configuration implements IPersistentConfiguration
   }
   @Override
   public JavaRunParameters_Configuration clone() {
-    JavaRunParameters_Configuration clone = null;
+    JavaRunParameters_Configuration clone = createCloneTemplate();
     try {
-      clone = createCloneTemplate();
+      // beware, PersistenceConfiguration.this of newly created MyState instance would be the same as 
+      // the value of myState, and != clone as regular Java passer-by would expect. 
       clone.myState = (JavaRunParameters_Configuration.MyState) myState.clone();
-      return clone;
     } catch (CloneNotSupportedException ex) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", ex);
@@ -66,7 +66,7 @@ public class JavaRunParameters_Configuration implements IPersistentConfiguration
     }
     return clone;
   }
-  public class MyState {
+  public final class MyState {
     public JavaRunParameters myJavaRunParameters = new JavaRunParameters(null, null, null, getDefaultWorkingDir(), false);
     public MyState() {
     }

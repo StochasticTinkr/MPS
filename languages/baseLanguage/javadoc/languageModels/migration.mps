@@ -99,6 +99,9 @@
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
+      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
+        <child id="1081516765348" name="expression" index="3fr31v" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -118,7 +121,6 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
-      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -176,6 +178,11 @@
         <child id="1196350785114" name="quotedNode" index="2c44tc" />
       </concept>
     </language>
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
+        <reference id="7256306938026143658" name="target" index="2aWVGs" />
+      </concept>
+    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
@@ -192,8 +199,8 @@
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
-      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
-        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
+      <concept id="3661776679762942774" name="jetbrains.mps.lang.smodel.structure.Node_IsOperation" flags="ng" index="1QLmlb">
+        <child id="3661776679762942860" name="ref" index="1QLmnL" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -387,15 +394,19 @@
                       <node concept="1bVj0M" id="61H$Q7rO5f2" role="23t8la">
                         <node concept="3clFbS" id="61H$Q7rO5f3" role="1bW5cS">
                           <node concept="3clFbF" id="61H$Q7rO5q3" role="3cqZAp">
-                            <node concept="3y3z36" id="61H$Q7rO6tg" role="3clFbG">
-                              <node concept="3B5_sB" id="61H$Q7rO6A5" role="3uHU7w">
-                                <ref role="3B5MYn" node="49IRVjgsYgz" resolve="UpdateDeprecatedBlockDocTags" />
-                              </node>
-                              <node concept="2OqwBi" id="61H$Q7rO5zk" role="3uHU7B">
-                                <node concept="37vLTw" id="61H$Q7rO5q2" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="61H$Q7rO5f4" resolve="it" />
+                            <node concept="3fqX7Q" id="3XR0QgVCj6T" role="3clFbG">
+                              <node concept="2OqwBi" id="3XR0QgVCj6R" role="3fr31v">
+                                <node concept="2OqwBi" id="3XR0QgVCj6N" role="2Oq$k0">
+                                  <node concept="37vLTw" id="3XR0QgVCj6O" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="61H$Q7rO5f4" resolve="it" />
+                                  </node>
+                                  <node concept="2Rxl7S" id="3XR0QgVCj6P" role="2OqNvi" />
                                 </node>
-                                <node concept="2Rxl7S" id="61H$Q7rO5Ro" role="2OqNvi" />
+                                <node concept="1QLmlb" id="3XR0QgVCj6S" role="2OqNvi">
+                                  <node concept="ZC_QK" id="3XR0QgVCj6Q" role="1QLmnL">
+                                    <ref role="2aWVGs" node="49IRVjgsYgz" resolve="UpdateDeprecatedBlockDocTags" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>

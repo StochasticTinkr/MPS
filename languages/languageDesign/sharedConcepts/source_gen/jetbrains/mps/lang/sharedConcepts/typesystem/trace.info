@@ -13,6 +13,14 @@
     </file>
   </root>
   <root nodeRef="r:64dee47d-8ebf-4e34-bb0f-d4fef04647b0(jetbrains.mps.lang.sharedConcepts.typesystem)/2893726635884034887">
+    <file name="TypesystemDescriptor.java">
+      <node id="2893726635884034887" at="14,5,15,102" concept="4" />
+      <node id="2893726635884034887" at="15,102,16,47" concept="2" />
+      <node id="2893726635884034887" at="13,5,17,5" concept="0" />
+      <scope id="2893726635884034887" at="14,5,16,47">
+        <var name="inferenceRule" id="2893726635884034887" />
+      </scope>
+    </file>
     <file name="typeof_ConceptFunctionParameter_scope_InferenceRule.java">
       <node id="2893726635884035517" at="21,5,22,46" concept="4" />
       <node id="2893726635884035517" at="22,46,23,210" concept="4" />
@@ -61,6 +69,14 @@
     </file>
   </root>
   <root nodeRef="r:64dee47d-8ebf-4e34-bb0f-d4fef04647b0(jetbrains.mps.lang.sharedConcepts.typesystem)/558005353046665155">
+    <file name="TypesystemDescriptor.java">
+      <node id="558005353046665155" at="10,5,11,112" concept="4" />
+      <node id="558005353046665155" at="11,112,12,47" concept="2" />
+      <node id="558005353046665155" at="9,33,13,5" concept="0" />
+      <scope id="558005353046665155" at="10,5,12,47">
+        <var name="inferenceRule" id="558005353046665155" />
+      </scope>
+    </file>
     <file name="typeof_ConceptFunctionParameter_progressMonitor_InferenceRule.java">
       <node id="558005353046665205" at="21,5,22,46" concept="4" />
       <node id="558005353046665205" at="22,46,23,209" concept="4" />

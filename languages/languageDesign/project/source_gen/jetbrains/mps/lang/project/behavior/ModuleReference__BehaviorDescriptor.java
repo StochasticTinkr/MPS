@@ -47,8 +47,8 @@ public final class ModuleReference__BehaviorDescriptor extends BaseBHDescriptor 
     return pf.createModuleReference(pf.createModuleId(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210dL, "uuid"))), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210eL, "qualifiedName")));
   }
   /*package*/ static void populateFrom_id2BHFktfnlSL(@NotNull SNode __thisNode__, SModuleReference moduleRef) {
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210dL, "uuid"), PersistenceFacade.getInstance().asString(moduleRef.getModuleId()));
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210eL, "qualifiedName"), moduleRef.getModuleName());
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210dL, "uuid"), PersistenceFacade.getInstance().asString(moduleRef.getModuleId()));
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210eL, "qualifiedName"), moduleRef.getModuleName());
   }
 
   /*package*/ ModuleReference__BehaviorDescriptor() {

@@ -47,10 +47,10 @@ import java.util.List;
 public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept implements SubstituteInfoPartExt {
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-    SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    SContainmentLink containmentLink = (SContainmentLink) cellContext.get(AggregationCellContext.LINK);
-    SAbstractConcept defaultConceptOfChild = (SAbstractConcept) cellContext.get(AggregationCellContext.CHILD_CONCEPT);
-    SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
+    SNode parentNode = cellContext.get(BasicCellContext.EDITED_NODE);
+    SContainmentLink containmentLink = cellContext.get(AggregationCellContext.LINK);
+    SAbstractConcept defaultConceptOfChild = cellContext.get(AggregationCellContext.CHILD_CONCEPT);
+    SNode currentChild = cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
 
 
     IOperationContext context = editorContext.getOperationContext();

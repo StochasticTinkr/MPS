@@ -4,12 +4,11 @@ package jetbrains.mps.project.io;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.util.MacroHelper;
-import jetbrains.mps.util.MacrosFactory;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
@@ -22,33 +21,46 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import java.io.IOException;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 
-public class StandardDescriptorIOProvider implements DescriptorIOProvider {
+/*package*/ class StandardDescriptorIOProvider implements DescriptorIOProvider {
   private static final Logger LOG = LogManager.getLogger(StandardDescriptorIOProvider.class);
-  private static final StandardDescriptorIOProvider.SolutionDescriptorIO SOLUTION = new StandardDescriptorIOProvider.SolutionDescriptorIO();
-  private static final StandardDescriptorIOProvider.LanguageDescriptorIO LANGUAGE = new StandardDescriptorIOProvider.LanguageDescriptorIO();
-  private static final StandardDescriptorIOProvider.DevkitDescriptorIO DEVKIT = new StandardDescriptorIOProvider.DevkitDescriptorIO();
-  /*package*/ StandardDescriptorIOProvider() {
+  private final MacroHelper.Source myMacroHelperSource;
+  private final MacroHelper myMacroHelperSingleton;
+
+  /*package*/ StandardDescriptorIOProvider(MacroHelper.Source macroHelperSource) {
+    myMacroHelperSource = macroHelperSource;
+    myMacroHelperSingleton = null;
   }
+
+  /*package*/ StandardDescriptorIOProvider(MacroHelper macroHelperSingleton) {
+    myMacroHelperSource = null;
+    myMacroHelperSingleton = macroHelperSingleton;
+  }
+
   @Override
   public DescriptorIO<SolutionDescriptor> solutionDescriptorIO() {
-    return SOLUTION;
+    return new StandardDescriptorIOProvider.SolutionDescriptorIO();
   }
   @Override
   public DescriptorIO<LanguageDescriptor> languageDescriptorIO() {
-    return LANGUAGE;
+    return new StandardDescriptorIOProvider.LanguageDescriptorIO();
   }
   @Override
   public DescriptorIO<DevkitDescriptor> devkitDescriptorIO() {
-    return DEVKIT;
+    return new StandardDescriptorIOProvider.DevkitDescriptorIO();
   }
-  public static class SolutionDescriptorIO implements DescriptorIO<SolutionDescriptor> {
+
+  /*package*/ MacroHelper forModuleFile(IFile file) {
+    return (myMacroHelperSingleton != null ? myMacroHelperSingleton : myMacroHelperSource.moduleFile(file));
+  }
+
+  /*package*/ class SolutionDescriptorIO implements DescriptorIO<SolutionDescriptor> {
     public SolutionDescriptorIO() {
     }
     @Override
     public SolutionDescriptor readFromFile(IFile file) throws DescriptorIOException {
       SolutionDescriptor descriptor;
       try {
-        MacroHelper macroHelper = MacrosFactory.forModuleFile(file);
+        MacroHelper macroHelper = forModuleFile(file);
         Document document = JDOMUtil.loadDocument(file);
         Element rootElement = document.getRootElement();
         descriptor = new SolutionDescriptorPersistence(macroHelper).load(rootElement);
@@ -72,7 +84,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
       }
 
       try {
-        MacroHelper macroHelper = MacrosFactory.forModuleFile(file);
+        MacroHelper macroHelper = forModuleFile(file);
         Element result = new SolutionDescriptorPersistence(macroHelper).save(sd);
         JDOMUtil.writeDocument(new Document(result), file);
       } catch (Exception e) {
@@ -93,7 +105,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     }
   }
 
-  public static class LanguageDescriptorIO implements DescriptorIO<LanguageDescriptor> {
+  /*package*/ class LanguageDescriptorIO implements DescriptorIO<LanguageDescriptor> {
     public LanguageDescriptorIO() {
     }
     @Override
@@ -101,7 +113,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
       LanguageDescriptor descriptor;
 
       try {
-        MacroHelper macroHelper = MacrosFactory.forModuleFile(file);
+        MacroHelper macroHelper = forModuleFile(file);
         Document document = JDOMUtil.loadDocument(file);
         Element languageElement = document.getRootElement();
         descriptor = new LanguageDescriptorPersistence(macroHelper).load(languageElement);
@@ -128,7 +140,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
         return;
       }
       try {
-        MacroHelper macroHelper = MacrosFactory.forModuleFile(file);
+        MacroHelper macroHelper = forModuleFile(file);
         Element element = new LanguageDescriptorPersistence(macroHelper).save(ld);
         Document doc = new Document(element);
         JDOMUtil.writeDocument(doc, file);
@@ -151,7 +163,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     }
   }
 
-  public static class DevkitDescriptorIO implements DescriptorIO<DevkitDescriptor> {
+  /*package*/ class DevkitDescriptorIO implements DescriptorIO<DevkitDescriptor> {
     public DevkitDescriptorIO() {
     }
     @Override

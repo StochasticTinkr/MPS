@@ -30,18 +30,18 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.pluginStyleClass;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_gciqt0_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_gciqt0_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_gciqt0_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createConstant_gciqt0_a0());
+    setCellContext(editorCell);
+    editorCell.addEditorCell(createConstant_0());
     return editorCell;
   }
-  private EditorCell createConstant_gciqt0_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "java");
     editorCell.setCellId("Constant_gciqt0_a0");
     Style style = new StyleImpl();

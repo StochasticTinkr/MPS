@@ -9,50 +9,43 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_ConceptA;
-  private ConceptPresentation props_ConceptB;
-  private ConceptPresentation props_ConceptC;
-  private ConceptPresentation props_Interface1;
-  private ConceptPresentation props_Interface2;
+  private ConceptPresentation props_A;
+  private ConceptPresentation props_B;
+  private ConceptPresentation props_C;
+  private ConceptPresentation props_I;
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.ConceptA:
-        if (props_ConceptA == null) {
+      case LanguageConceptSwitch.A:
+        if (props_A == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ConceptA");
-          props_ConceptA = cpb.create();
+          cpb.rawPresentation("A");
+          props_A = cpb.create();
         }
-        return props_ConceptA;
-      case LanguageConceptSwitch.ConceptB:
-        if (props_ConceptB == null) {
+        return props_A;
+      case LanguageConceptSwitch.B:
+        if (props_B == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ConceptB");
-          props_ConceptB = cpb.create();
+          cpb.rawPresentation("B");
+          props_B = cpb.create();
         }
-        return props_ConceptB;
-      case LanguageConceptSwitch.ConceptC:
-        if (props_ConceptC == null) {
+        return props_B;
+      case LanguageConceptSwitch.C:
+        if (props_C == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ConceptC");
-          props_ConceptC = cpb.create();
+          cpb.rawPresentation("C");
+          props_C = cpb.create();
         }
-        return props_ConceptC;
-      case LanguageConceptSwitch.Interface1:
-        if (props_Interface1 == null) {
+        return props_C;
+      case LanguageConceptSwitch.I:
+        if (props_I == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_Interface1 = cpb.create();
+          props_I = cpb.create();
         }
-        return props_Interface1;
-      case LanguageConceptSwitch.Interface2:
-        if (props_Interface2 == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_Interface2 = cpb.create();
-        }
-        return props_Interface2;
+        return props_I;
     }
     return null;
   }

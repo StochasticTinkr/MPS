@@ -29,8 +29,8 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    SAbstractConcept cncpt_d0f = concept;
-    switch (index_hphjzv_d0f.index(cncpt_d0f)) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         if (true) {
           // Concept: AnalyzerRunnerCreator 
@@ -59,5 +59,5 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     rv[1] = new AddModeToRule_Intention();
     return Arrays.asList(rv);
   }
-  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L), MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L), MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L)).seal();
 }

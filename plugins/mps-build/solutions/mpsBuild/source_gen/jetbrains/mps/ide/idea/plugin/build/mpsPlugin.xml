@@ -17,7 +17,7 @@
   <property name="artifacts.mpsJpsIdea" location="${build.dir}/artifacts/mpsJpsIdea" />
   <property name="artifacts.mpsIdeaVcs" location="${build.dir}/artifacts/mpsIdeaVcs" />
   <property name="artifacts.mpsBuild" location="${build.dir}/artifacts/mpsBuild" />
-  <property name="artifacts.mpsVcsCore" location="${build.dir}/artifacts/mpsVcsCore" />
+  <property name="artifacts.mpsVcsPlatform" location="${build.dir}/artifacts/mpsVcsPlatform" />
   <property name="artifacts.mpsMigrationCore" location="${build.dir}/artifacts/mpsMigrationCore" />
   <property name="artifacts.mpsIdeaMigration" location="${build.dir}/artifacts/mpsIdeaMigration" />
   <property name="artifacts.mpsPluginCommon" location="${build.dir}/artifacts/mpsPluginCommon" />
@@ -77,7 +77,8 @@
     <ant antfile="IdeaPlugin/mpsPluginCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsJavaIdeaPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsVcsCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsVcsPlatformPre.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsVcsPlatform.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsIdeaVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsMigrationCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsIdeaMigration.xml" inheritAll="false" useNativeBasedir="true" />

@@ -15,6 +15,14 @@
     </file>
   </root>
   <root nodeRef="r:c2d05fc3-fe25-4093-95ce-8e3356e61084(jetbrains.mps.lang.scopes.typesystem)/8077936094962911283">
+    <file name="TypesystemDescriptor.java">
+      <node id="8077936094962911283" at="31,5,32,94" concept="5" />
+      <node id="8077936094962911283" at="32,94,33,55" concept="2" />
+      <node id="8077936094962911283" at="30,5,34,5" concept="0" />
+      <scope id="8077936094962911283" at="31,5,33,55">
+        <var name="nonTypesystemRule" id="8077936094962911283" />
+      </scope>
+    </file>
     <file name="check_ParentScope_NonTypesystemRule.java">
       <node id="8077936094962911286" at="21,117,22,32" concept="7" />
       <node id="8077936094962911290" at="24,7,25,60" concept="5" />
@@ -54,6 +62,14 @@
     </file>
   </root>
   <root nodeRef="r:c2d05fc3-fe25-4093-95ce-8e3356e61084(jetbrains.mps.lang.scopes.typesystem)/8077936094962934007">
+    <file name="TypesystemDescriptor.java">
+      <node id="8077936094962934007" at="19,5,20,83" concept="5" />
+      <node id="8077936094962934007" at="20,83,21,47" concept="2" />
+      <node id="8077936094962934007" at="18,5,22,5" concept="0" />
+      <scope id="8077936094962934007" at="19,5,21,47">
+        <var name="inferenceRule" id="8077936094962934007" />
+      </scope>
+    </file>
     <file name="typeof_ParentScope_InferenceRule.java">
       <node id="8077936094962934081" at="21,5,22,47" concept="5" />
       <node id="8077936094962934081" at="22,47,23,202" concept="5" />
@@ -102,6 +118,14 @@
     </file>
   </root>
   <root nodeRef="r:c2d05fc3-fe25-4093-95ce-8e3356e61084(jetbrains.mps.lang.scopes.typesystem)/8077936094962944993">
+    <file name="TypesystemDescriptor.java">
+      <node id="8077936094962944993" at="23,5,24,101" concept="5" />
+      <node id="8077936094962944993" at="24,101,25,55" concept="2" />
+      <node id="8077936094962944993" at="22,5,26,5" concept="0" />
+      <scope id="8077936094962944993" at="23,5,25,55">
+        <var name="nonTypesystemRule" id="8077936094962944993" />
+      </scope>
+    </file>
     <file name="check_ComeFromExpression_NonTypesystemRule.java">
       <node id="8077936094962944996" at="21,117,22,32" concept="7" />
       <node id="8077936094962945000" at="24,7,25,60" concept="5" />
@@ -141,6 +165,14 @@
     </file>
   </root>
   <root nodeRef="r:c2d05fc3-fe25-4093-95ce-8e3356e61084(jetbrains.mps.lang.scopes.typesystem)/8077936094962945017">
+    <file name="TypesystemDescriptor.java">
+      <node id="8077936094962945017" at="11,5,12,90" concept="5" />
+      <node id="8077936094962945017" at="12,90,13,47" concept="2" />
+      <node id="8077936094962945017" at="10,33,14,5" concept="0" />
+      <scope id="8077936094962945017" at="11,5,13,47">
+        <var name="inferenceRule" id="8077936094962945017" />
+      </scope>
+    </file>
     <file name="typeof_ComeFromExpression_InferenceRule.java">
       <node id="8077936094962945044" at="20,5,21,46" concept="5" />
       <node id="8077936094962945044" at="21,46,22,202" concept="5" />
@@ -188,6 +220,14 @@
     </file>
   </root>
   <root nodeRef="r:c2d05fc3-fe25-4093-95ce-8e3356e61084(jetbrains.mps.lang.scopes.typesystem)/8077936094962969207">
+    <file name="TypesystemDescriptor.java">
+      <node id="8077936094962969207" at="27,5,28,117" concept="5" />
+      <node id="8077936094962969207" at="28,117,29,55" concept="2" />
+      <node id="8077936094962969207" at="26,5,30,5" concept="0" />
+      <scope id="8077936094962969207" at="27,5,29,55">
+        <var name="nonTypesystemRule" id="8077936094962969207" />
+      </scope>
+    </file>
     <file name="check_CompositeWithParentScopeExpression_NonTypesystemRule.java">
       <node id="8077936094962969210" at="25,117,26,32" concept="7" />
       <node id="8077936094962969214" at="28,7,29,60" concept="5" />
@@ -274,6 +314,14 @@
     </file>
   </root>
   <root nodeRef="r:c2d05fc3-fe25-4093-95ce-8e3356e61084(jetbrains.mps.lang.scopes.typesystem)/8077936094962969229">
+    <file name="TypesystemDescriptor.java">
+      <node id="8077936094962969229" at="15,5,16,106" concept="5" />
+      <node id="8077936094962969229" at="16,106,17,47" concept="2" />
+      <node id="8077936094962969229" at="14,5,18,5" concept="0" />
+      <scope id="8077936094962969229" at="15,5,17,47">
+        <var name="inferenceRule" id="8077936094962969229" />
+      </scope>
+    </file>
     <file name="typeof_CompositeWithParentScopeExpression_InferenceRule.java">
       <node id="8077936094962969232" at="21,5,22,47" concept="5" />
       <node id="8077936094962969232" at="22,47,23,202" concept="5" />

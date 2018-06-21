@@ -25,11 +25,10 @@ import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.refactoring.participant.RenameNodeRefactoringParticipant;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
-import java.util.HashMap;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -109,14 +108,36 @@ public class Rename_Action extends BaseAction {
       return;
     }
 
-    Iterable<? extends RefactoringParticipant<?, ?, SNode, String>> participants = new ExtensionPoint<RenameNodeRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.participant.RenameNodeParticipantEP").getObjects();
-    RefactoringProcessor.performRefactoringUserInteractive(((MPSProject) MapSequence.fromMap(_params).get("project")), "Rename node", participants, ListSequence.fromListAndArray(new ArrayList<SNode>(), ((SNode) MapSequence.fromMap(_params).get("target"))), new _FunctionTypes._return_P2_E0<Map<SNode, String>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, String, SNode, String>>, RefactoringSession>() {
-      public Map<SNode, String> invoke(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, String, SNode, String>> changes, RefactoringSession refactoringSession) {
-        SPropertyOperations.set(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newName);
-        Map<SNode, String> m = MapSequence.<SNode, String>fromMapAndKeysArray(new HashMap<SNode, String>(), ((SNode) MapSequence.fromMap(_params).get("target"))).withValues(newName);
-        return m;
+    RefactoringProcessor.RefactoringBody refactoringBody = new RefactoringProcessor.RefactoringBody<SNode, String>() {
+      public String getRefactoringName() {
+        return "Rename node";
       }
-    });
+      public Iterable<? extends RefactoringParticipant<?, ?, SNode, String>> getAllAvailableParticipants() {
+        return new ExtensionPoint<RenameNodeRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.participant.RenameNodeParticipantEP").getObjects();
+      }
+      public List<SNode> findInitialStates() {
+        return ListSequence.fromListAndArray(new ArrayList<SNode>(), ((SNode) MapSequence.fromMap(_params).get("target")));
+      }
+      public void doRefactor(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, String, SNode, String>> participantStates, RefactoringSession refactoringSession) {
+        ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
+          public void run() {
+            SPropertyOperations.assign(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newName);
+          }
+        });
+      }
+      @Override
+      public String getFinalStateFor(SNode initialState) {
+        if (initialState == ((SNode) MapSequence.fromMap(_params).get("target"))) {
+          return newName;
+        } else {
+          throw new IllegalStateException("asked for: " + initialState.getReference() + ", known: " + ((SNode) MapSequence.fromMap(_params).get("target")).getReference());
+        }
+      }
+      public void doCleanup() {
+        // do nothing 
+      }
+    };
+    RefactoringProcessor.performRefactoringInProject(((MPSProject) MapSequence.fromMap(_params).get("project")), new DefaultRefactoringUI(((MPSProject) MapSequence.fromMap(_params).get("project"))), refactoringBody);
   }
   private boolean canBeRenamed(final Map<String, Object> _params) {
     // we won't rename nodes, for which there is getter without setter 

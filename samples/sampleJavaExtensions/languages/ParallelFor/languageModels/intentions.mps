@@ -49,7 +49,6 @@
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
-      <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -111,6 +110,11 @@
         <child id="2522969319638093993" name="descriptionFunction" index="2ZfVej" />
       </concept>
     </language>
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
+        <reference id="7256306938026143658" name="target" index="2aWVGs" />
+      </concept>
+    </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
       <concept id="1176544042499" name="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" flags="nn" index="3JvlWi" />
     </language>
@@ -147,9 +151,6 @@
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
       <concept id="1144146199828" name="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" flags="nn" index="1$rogu" />
-      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
-        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
-      </concept>
       <concept id="6407023681583036853" name="jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier" flags="ng" index="3CFYIy">
         <reference id="6407023681583036854" name="attributeConcept" index="3CFYIx" />
       </concept>
@@ -160,6 +161,9 @@
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
+      <concept id="3661776679762942774" name="jetbrains.mps.lang.smodel.structure.Node_IsOperation" flags="ng" index="1QLmlb">
+        <child id="3661776679762942860" name="ref" index="1QLmnL" />
+      </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -1373,18 +1377,20 @@
     <node concept="2SaL7w" id="32jmVfUAELH" role="2ZfVeh">
       <node concept="3clFbS" id="32jmVfUAELI" role="2VODD2">
         <node concept="3clFbF" id="32jmVfUAELJ" role="3cqZAp">
-          <node concept="17R0WA" id="2XA_ayKgEvi" role="3clFbG">
-            <node concept="3B5_sB" id="2XA_ayKgEMk" role="3uHU7w">
-              <ref role="3B5MYn" to="tpee:fz3vP1H" resolve="Type" />
-            </node>
-            <node concept="2OqwBi" id="32jmVfUAMuW" role="3uHU7B">
-              <node concept="2OqwBi" id="32jmVfUAELZ" role="2Oq$k0">
-                <node concept="2Sf5sV" id="32jmVfUAELK" role="2Oq$k0" />
-                <node concept="3TrEf2" id="32jmVfUAMuG" role="2OqNvi">
+          <node concept="2OqwBi" id="3XR0QgXpzow" role="3clFbG">
+            <node concept="2OqwBi" id="3XR0QgXpzoq" role="2Oq$k0">
+              <node concept="2OqwBi" id="3XR0QgXpzor" role="2Oq$k0">
+                <node concept="2Sf5sV" id="3XR0QgXpzos" role="2Oq$k0" />
+                <node concept="3TrEf2" id="3XR0QgXpzot" role="2OqNvi">
                   <ref role="3Tt5mk" to="tp2q:gMGsz7L" resolve="variable" />
                 </node>
               </node>
-              <node concept="3JvlWi" id="32jmVfUAMv1" role="2OqNvi" />
+              <node concept="3JvlWi" id="3XR0QgXpzou" role="2OqNvi" />
+            </node>
+            <node concept="1QLmlb" id="3XR0QgXpzox" role="2OqNvi">
+              <node concept="ZC_QK" id="3XR0QgXpzov" role="1QLmnL">
+                <ref role="2aWVGs" to="tpee:fz3vP1H" resolve="Type" />
+              </node>
             </node>
           </node>
         </node>

@@ -32,7 +32,8 @@
     <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
-    <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" implicit="true" />
+    <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -128,6 +129,15 @@
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
+      </concept>
+      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ">
+        <child id="1214996921760" name="bound" index="3ztrMU" />
+      </concept>
+      <concept id="1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" flags="ng" index="16eOlS">
+        <child id="1109279881614" name="typeVariableDeclaration" index="16eVyc" />
+      </concept>
+      <concept id="1109283449304" name="jetbrains.mps.baseLanguage.structure.TypeVariableReference" flags="in" index="16syzq">
+        <reference id="1109283546497" name="typeVariableDeclaration" index="16sUi3" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
@@ -2156,6 +2166,14 @@
         <ref role="3uigEE" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
       </node>
     </node>
+    <node concept="312cEg" id="1LibDRnL4OZ" role="jymVt">
+      <property role="TrG5h" value="myMakeServiceComponent" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="1LibDRnL4P0" role="1B3o_S" />
+      <node concept="3uibUv" id="1LibDRnL4w0" role="1tU5fm">
+        <ref role="3uigEE" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="1PwNLcbNZUy" role="jymVt" />
     <node concept="3clFbW" id="1PwNLcbO00J" role="jymVt">
       <node concept="3cqZAl" id="1PwNLcbO00K" role="3clF45" />
@@ -2188,6 +2206,21 @@
       <node concept="3Tm1VV" id="1PwNLcbNzFv" role="1B3o_S" />
       <node concept="3cqZAl" id="1PwNLcbNzFx" role="3clF45" />
       <node concept="3clFbS" id="1PwNLcbNzFy" role="3clF47">
+        <node concept="3clFbF" id="1LibDRnL4$X" role="3cqZAp">
+          <node concept="37vLTI" id="1LibDRnL4$Z" role="3clFbG">
+            <node concept="1rXfSq" id="1LibDRnL4w3" role="37vLTx">
+              <ref role="37wK5l" to="wyuk:~ComponentPlugin.init(jetbrains.mps.components.CoreComponent):jetbrains.mps.components.CoreComponent" resolve="init" />
+              <node concept="2ShNRf" id="1LibDRnL4w4" role="37wK5m">
+                <node concept="1pGfFk" id="1LibDRnL4w5" role="2ShVmc">
+                  <ref role="37wK5l" to="hfuk:4QUA3SqtAAl" resolve="MakeServiceComponent" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="1LibDRnL4Xt" role="37vLTJ">
+              <ref role="3cqZAo" node="1LibDRnL4OZ" resolve="myMakeServiceComponent" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="1PwNLcbO0Qz" role="3cqZAp">
           <node concept="3cpWsn" id="1PwNLcbO0Q$" role="3cpWs9">
             <property role="TrG5h" value="facetRegistry" />
@@ -2225,9 +2258,83 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1LibDRnKMuw" role="jymVt" />
+    <node concept="2tJIrI" id="1LibDRnKMv6" role="jymVt" />
+    <node concept="3clFb_" id="1LibDRnKMyV" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="findComponent" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="1LibDRnKMyW" role="1B3o_S" />
+      <node concept="2AHcQZ" id="1LibDRnKMyY" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+      <node concept="16euLQ" id="1LibDRnKMyZ" role="16eVyc">
+        <property role="TrG5h" value="T" />
+        <node concept="3uibUv" id="1LibDRnL_DB" role="3ztrMU">
+          <ref role="3uigEE" to="wyuk:~CoreComponent" resolve="CoreComponent" />
+        </node>
+      </node>
+      <node concept="16syzq" id="1LibDRnKMz1" role="3clF45">
+        <ref role="16sUi3" node="1LibDRnKMyZ" resolve="T" />
+      </node>
+      <node concept="37vLTG" id="1LibDRnKMz2" role="3clF46">
+        <property role="TrG5h" value="aClass" />
+        <node concept="3uibUv" id="1LibDRnKMz3" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+          <node concept="16syzq" id="1LibDRnKMz4" role="11_B2D">
+            <ref role="16sUi3" node="1LibDRnKMyZ" resolve="T" />
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="1LibDRnKMz5" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="1LibDRnKMz7" role="3clF47">
+        <node concept="3clFbJ" id="1LibDRnKMJw" role="3cqZAp">
+          <node concept="3clFbC" id="1LibDRnKNsU" role="3clFbw">
+            <node concept="3VsKOn" id="1LibDRnKNy3" role="3uHU7w">
+              <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+            </node>
+            <node concept="37vLTw" id="1LibDRnKMK5" role="3uHU7B">
+              <ref role="3cqZAo" node="1LibDRnKMz2" resolve="aClass" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="1LibDRnKMJy" role="3clFbx">
+            <node concept="3cpWs6" id="1LibDRnL53J" role="3cqZAp">
+              <node concept="2OqwBi" id="1LibDRnL5Le" role="3cqZAk">
+                <node concept="37vLTw" id="1LibDRnL5u1" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1LibDRnKMz2" resolve="aClass" />
+                </node>
+                <node concept="liA8E" id="1LibDRnL63K" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~Class.cast(java.lang.Object):java.lang.Object" resolve="cast" />
+                  <node concept="37vLTw" id="1LibDRnL6eX" role="37wK5m">
+                    <ref role="3cqZAo" node="1LibDRnL4OZ" resolve="myMakeServiceComponent" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="1LibDRnL6NS" role="3cqZAp">
+          <node concept="3SKdUq" id="1LibDRnL6NU" role="3SKWNk">
+            <property role="3SKdUp" value="I don't expose other core components unless there's need to." />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1LibDRnL5kr" role="3cqZAp">
+          <node concept="10Nm6u" id="1LibDRnL5kT" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1LibDRnKMz8" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="3Tm1VV" id="1PwNLcbNzEw" role="1B3o_S" />
     <node concept="3uibUv" id="1PwNLcbNzFe" role="1zkMxy">
       <ref role="3uigEE" to="wyuk:~ComponentPlugin" resolve="ComponentPlugin" />
+    </node>
+    <node concept="3uibUv" id="1LibDRnKMrb" role="EKbjA">
+      <ref role="3uigEE" to="wyuk:~ComponentHost" resolve="ComponentHost" />
     </node>
   </node>
 </model>

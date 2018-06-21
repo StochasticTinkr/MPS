@@ -37,8 +37,7 @@ public class BaseActionAspectDescriptor implements ActionAspectDescriptor {
 
   @Override
   public boolean hasBuilders() {
-    // Treat all subclasses of this class as having builders by default.
-    return getClass() != BaseActionAspectDescriptor.class;
+    return false;
   }
 
   @Override

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.devkit.cellExplorer;
 
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 import javax.swing.Icon;
@@ -52,7 +52,7 @@ public class CellPropertiesWindow extends JFrame {
     String cellNumber = cellProperties.getCellNumber();
     String cellRole = cellProperties.getCellRole();
     String cellSNode = cellProperties.getCellSNode();
-    Icon icon = IconManager.getIconFor(cellProperties.getSNode());
+    Icon icon = GlobalIconManager.getInstance().getIconFor(cellProperties.getSNode());
 
     setLayout(new BorderLayout());
 

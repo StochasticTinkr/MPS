@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class BackspaceToUnwrapArrayTypeInFieldDeclaration_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class BackspaceToUnwrapArrayTypeInFieldDeclaration_Test extends BaseTrans
 
   @Test
   public void test_BackspaceToUnwrapArrayTypeInFieldDeclaration() throws Throwable {
-    runTest("jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInFieldDeclaration_Test$TestBody", "testMethod", false);
+    new BackspaceToUnwrapArrayTypeInFieldDeclaration_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("9002759989422729207", "9002759989422761326");

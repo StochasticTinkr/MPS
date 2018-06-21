@@ -50,7 +50,7 @@ public class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
     Color additionalForeground;
     setOpaque(false);
     if (selected) {
-      foreground = hasFocus && !UIUtil.isUnderDarcula() ? UIUtil.getTreeSelectionForeground() : UIUtil.getTreeForeground();
+      foreground = tree.hasFocus() && !UIUtil.isUnderDarcula() ? UIUtil.getTreeSelectionForeground() : UIUtil.getTreeForeground();
       additionalForeground = foreground;
     } else {
       foreground = UIUtil.getTreeForeground();

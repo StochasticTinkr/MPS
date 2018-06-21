@@ -7,13 +7,21 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 public interface TransformationTest {
   void setProject(Project project);
-  void setTestRunner(TestRunner runner);
-  TestRunner getTestRunner();
   Project getProject();
   void setModelDescriptor(SModel descriptor);
   void setTransientModelDescriptor(SModel descriptor);
   SModel getModelDescriptor();
   SModel getTransientModelDescriptor();
+  /**
+   * 
+   * @deprecated useless methods, are not invoked from any external code, but from implementation class only. Therefore, could be protected and don't neex to be exposed in the interface.
+   */
+  @Deprecated
   void init();
+  /**
+   * 
+   * @deprecated see {@link jetbrains.mps.lang.test.runtime.TransformationTest#init() }
+   */
+  @Deprecated
   void dispose();
 }

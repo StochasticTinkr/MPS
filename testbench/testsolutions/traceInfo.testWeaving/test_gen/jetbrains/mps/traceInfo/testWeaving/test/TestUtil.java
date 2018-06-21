@@ -34,7 +34,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
         {
           List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), it);
           List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), getTracedNode(root, line.value));
-          Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
+          Assert.assertTrue("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher(nodesBefore, nodesAfter).diff().isEmpty());
         }
         line.value += delta;
       }
@@ -51,7 +51,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
           {
             List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), it);
             List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), getTracedNode(root, line.value));
-            Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
+            Assert.assertTrue("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher(nodesBefore, nodesAfter).diff().isEmpty());
           }
           line.value += delta;
         }

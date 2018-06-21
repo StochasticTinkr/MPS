@@ -20,16 +20,13 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class CellProviderWithRole extends AbstractCellProvider {
   protected String myNoTargetText;
   protected EditorContext myEditorContext;
-
-  // auxiliary cell provider, which may help to create some parts of resulting cell (used in inheritors)
-  @Deprecated
-  protected AbstractCellProvider myAuxiliaryCellProvider;
 
   // if the cell to provide "allows" "empty" target of its relation.
   // The exact meaning of what is "empty" and what is "to allow"
@@ -54,6 +51,9 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   }
 
   //sets a role object for this provider
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  //use setProperty/setLink instead
   public abstract void setRole(Object role);
 
   //gets an attribute for this provider's node hanging on this provider's role
@@ -89,21 +89,5 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
 
   public void setAllowsEmptyTarget(boolean allowsEmptyTarget) {
     myAllowsEmptyTarget = allowsEmptyTarget;
-  }
-
-  /**
-   * @deprecated Since MPS 3.5 not used
-   */
-  @Deprecated
-  public void setAuxiliaryCellProvider(AbstractCellProvider provider) {
-    myAuxiliaryCellProvider = provider;
-  }
-
-  /**
-   * @deprecated Since MPS 3.5 not used
-   */
-  @Deprecated
-  public AbstractCellProvider getAuxiliaryCellProvider() {
-    return myAuxiliaryCellProvider;
   }
 }

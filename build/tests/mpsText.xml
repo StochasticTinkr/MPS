@@ -26,7 +26,7 @@
       <include name="jdom.jar" />
       <include name="asm4-all.jar" />
       <include name="asm-all.jar" />
-      <include name="jgoodies-forms.jar" />
+      <include name="forms-1.1-preview.jar" />
     </fileset>
   </path>
   
@@ -335,14 +335,17 @@
     <pathconvert pathsep="${path.separator}" property="mps.plugins.path.string" refid="mps.plugins.path" />
     <path location="${build.layout}/jetbrains.mps.lang.text.test.jar" id="mps.tests.path" />
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
+    <patternset id="plugin.deployed.jars">
+      <include name="lib/**/*.jar" />
+      <include name="languages/**/*.jar" />
+      <exclude name="**/*-src.jar" />
+    </patternset>
     <path id="long.class.path">
       <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
-        <include name="lib/**/*.jar" />
-        <include name="languages/**/*.jar" />
+        <patternset refid="plugin.deployed.jars" />
       </fileset>
       <fileset dir="${artifacts.mps}/plugins/mps-testing">
-        <include name="lib/**/*.jar" />
-        <include name="languages/**/*.jar" />
+        <patternset refid="plugin.deployed.jars" />
       </fileset>
       <fileset dir="${artifacts.mps}/lib">
         <include name="**/*.jar" />
@@ -363,7 +366,7 @@
         <attribute name="Class-Path" value="${manifest.classpath}" />
       </manifest>
     </jar>
-    <junit showoutput="true" fork="true" haltonfailure="false">
+    <junit showoutput="true" fork="true" haltonfailure="false" dir="${basedir}">
       <jvmarg value="-ea" />
       <jvmarg value="-Xss2048k" />
       <jvmarg value="-Xmx1024m" />
@@ -376,9 +379,11 @@
         </fileset>
       </classpath>
       
+      <env key="NO_FS_ROOTS_ACCESS_CHECK" value="true" />
       <sysproperty key="plugin.path" value="${mps.plugins.path.string}" />
       <sysproperty key="mps.libraries" value="${mps.libraries.path.string}" />
       <sysproperty key="mps.test.modules" value="${mps.tests.path.string}" />
+      
       
       <test name="jetbrains.mps.testbench.junit.suites.AntModuleTestSuite" outfile="TEST-jetbrains.mps.testbench.junit.suites.AntModuleTestSuite-text" />
       <formatter type="xml" />

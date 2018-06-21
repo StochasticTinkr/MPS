@@ -22,7 +22,6 @@
   <dependency className="jetbrains.mps.ide.migration.wizard.InitialStep" file="InitialStep.java">
     <classNode dependClassName="com.intellij.ide.wizard.AbstractWizardStepEx" />
     <classNode dependClassName="com.intellij.ide.wizard.CommitStepException" />
-    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.ui.IdeBorderFactory" />
     <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
     <classNode dependClassName="java.awt.BorderLayout" />

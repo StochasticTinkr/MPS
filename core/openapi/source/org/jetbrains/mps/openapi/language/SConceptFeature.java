@@ -16,8 +16,6 @@
 package org.jetbrains.mps.openapi.language;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Member of a concept, named.

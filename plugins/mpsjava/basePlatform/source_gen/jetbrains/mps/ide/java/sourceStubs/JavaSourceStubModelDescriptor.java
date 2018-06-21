@@ -179,7 +179,7 @@ public class JavaSourceStubModelDescriptor extends RegularModelDescriptor implem
         // double check 
         return;
       }
-      final SModel mi = getSModelInternal();
+      final SModel mi = getSModel();
       try {
         myIsLoadInProgress = true;
         mi.enterUpdateMode();

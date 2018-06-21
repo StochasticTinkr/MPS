@@ -36,6 +36,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.FileProcessor" file="FileProcessor.java">
+    <classNode dependClassName="com.intellij.openapi.util.io.FileUtil" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />

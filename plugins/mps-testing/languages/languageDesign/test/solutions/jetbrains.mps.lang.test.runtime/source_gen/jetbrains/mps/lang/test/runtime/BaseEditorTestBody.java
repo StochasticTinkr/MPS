@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
-import java.util.Collections;
 import junit.framework.Assert;
 import java.util.Map;
 import jetbrains.mps.testbench.util.CachingAppender;
@@ -68,14 +67,19 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   protected CellReference myStart;
   protected CellReference myFinish;
 
+  protected BaseEditorTestBody() {
+    // this is for legacy path through BaseTransformationTest.runTest(), reflective instantiation and field initialization 
+  }
+
+  protected BaseEditorTestBody(TransformationTest owner) {
+    // this is what BaseTransformationTest.runTest() used to do 
+    myModel = owner.getTransientModelDescriptor();
+    myProject = owner.getProject();
+  }
+
   public abstract void testMethodImpl() throws Exception;
 
-  /**
-   * 
-   * @deprecated use #initEditorComponent instead
-   */
-  @Deprecated
-  protected Editor initEditor(final String before, final String after) {
+  protected EditorComponent initEditorComponent(final String before, final String after) {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing editor");
     }
@@ -90,6 +94,9 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         }
       }
     });
+    if (ts[0] != null) {
+      throw new RuntimeException("Exception while initializing the editor", ts[0]);
+    }
     try {
       flushEDTEvents();
     } catch (InvocationTargetException e) {
@@ -97,16 +104,9 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     } catch (InterruptedException e) {
       ts[0] = e;
     }
-
     if (ts[0] != null) {
       throw new RuntimeException("Exception while initializing the editor", ts[0]);
     }
-
-    return myEditor;
-  }
-
-  protected EditorComponent initEditorComponent(String before, String after) {
-    initEditor(before, after);
     return myCurrentEditorComponent;
   }
 
@@ -160,9 +160,9 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
             if (myResult != null) {
               try {
                 SNode editedNode = myBefore;
-                NodesMatcher nm = new NodesMatcher();
-                List<NodeDifference> diff = nm.match(Collections.singletonList(editedNode), Collections.singletonList(myResult));
-                Assert.assertEquals(null, diff);
+                NodesMatcher nm = new NodesMatcher(editedNode, myResult);
+                List<NodeDifference> diff = nm.diff();
+                Assert.assertTrue(diff.isEmpty());
                 if (myFinish != null) {
                   myFinish.assertSelectionIsTheSame(myCurrentEditorComponent, (Map<SNode, SNode>) nm.getMap());
                 }

@@ -8,7 +8,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 
-public class IdeaDescriptorIOProvider implements DescriptorIOProvider {
+/*package*/ class IdeaDescriptorIOProvider implements DescriptorIOProvider {
   private static final IdeaModuleSolutionDescriptorIO SOLUTION = new IdeaModuleSolutionDescriptorIO();
   /*package*/ IdeaDescriptorIOProvider() {
   }

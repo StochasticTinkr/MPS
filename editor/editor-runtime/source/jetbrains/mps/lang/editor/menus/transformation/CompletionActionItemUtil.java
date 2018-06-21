@@ -41,12 +41,13 @@ public class CompletionActionItemUtil {
     if (item instanceof SubstituteMenuItemAsActionItem) {
       final SubstituteMenuItem substituteItem = ((SubstituteMenuItemAsActionItem) item).getSubstituteItem();
       return SubstituteMenuItemUtil.getReferentNode(substituteItem);
+    } else if (item instanceof ReferenceTransformationMenuItem) {
+      return ((ReferenceTransformationMenuItem) item).getTargetNode();
     }
     return null;
   }
 
   /**
-   *
    * @deprecated Use {@link #getVisibleMatchingText(CompletionActionItem, String)} instead.
    */
   @Deprecated
@@ -59,6 +60,8 @@ public class CompletionActionItemUtil {
     if (item instanceof SubstituteMenuItemAsActionItem) {
       final SubstituteMenuItem substituteItem = ((SubstituteMenuItemAsActionItem) item).getSubstituteItem();
       return SubstituteMenuItemUtil.getVisibleMatchingText(substituteItem, pattern);
+    } else if (item instanceof ReferenceTransformationMenuItem) {
+      return ((ReferenceTransformationMenuItem) item).getVisibleText(pattern);
     }
     return null;
   }

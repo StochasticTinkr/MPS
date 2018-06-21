@@ -58,10 +58,10 @@ public class AllRepositoryModels_TM extends TransformationMenuBase {
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      SAbstractConcept targetConcept = getTargetConcept(context);
-      String name = (targetConcept == null ? "" : targetConcept.getName());
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include substitute menu " + "named substitute menu " + "AllRepositoryModels_SM", new SNodePointer("r:7bd127a5-e641-4c13-b150-b9c9b96f76ae(jetbrains.mps.lang.modelapi.editor)", "3815448882692956574")));
       try {
+        SAbstractConcept targetConcept = getTargetConcept(context);
+        String name = (targetConcept == null ? "" : targetConcept.getName());
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include substitute menu " + "named substitute menu " + "AllRepositoryModels_SM", new SNodePointer("r:7bd127a5-e641-4c13-b150-b9c9b96f76ae(jetbrains.mps.lang.modelapi.editor)", "3815448882692956574")));
         return super.createItems(context);
       } finally {
         context.getEditorMenuTrace().popTraceInfo();

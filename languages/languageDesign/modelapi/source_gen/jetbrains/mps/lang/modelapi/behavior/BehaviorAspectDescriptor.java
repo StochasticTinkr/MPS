@@ -12,10 +12,13 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
+  private final BHDescriptor myNodePointer__BehaviorDescriptor = new NodePointer__BehaviorDescriptor();
   private final BHDescriptor myModelPointer__BehaviorDescriptor = new ModelPointer__BehaviorDescriptor();
   private final BHDescriptor myModulePointer__BehaviorDescriptor = new ModulePointer__BehaviorDescriptor();
+  private final BHDescriptor myNodeIdentity__BehaviorDescriptor = new NodeIdentity__BehaviorDescriptor();
   private final BHDescriptor myModelName__BehaviorDescriptor = new ModelName__BehaviorDescriptor();
   private final BHDescriptor myModuleIdentity__BehaviorDescriptor = new ModuleIdentity__BehaviorDescriptor();
+  private final BHDescriptor myNamedNodeReference__BehaviorDescriptor = new NamedNodeReference__BehaviorDescriptor();
   private final BHDescriptor myModelIdentity__BehaviorDescriptor = new ModelIdentity__BehaviorDescriptor();
 
   public BehaviorAspectDescriptor() {
@@ -23,8 +26,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0i = concept;
-    switch (index_846f5o_a0i.index(cncpt_a0i)) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         return myModelIdentity__BehaviorDescriptor;
       case 1:
@@ -35,9 +38,15 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
         return myModuleIdentity__BehaviorDescriptor;
       case 4:
         return myModulePointer__BehaviorDescriptor;
+      case 5:
+        return myNamedNodeReference__BehaviorDescriptor;
+      case 6:
+        return myNodeIdentity__BehaviorDescriptor;
+      case 7:
+        return myNodePointer__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex index_846f5o_a0i = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b6d3L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afbf490L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e360L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afc2bc9L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e361L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b6d3L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afbf490L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e360L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afc2bc9L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e361L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a208f7L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e35fL)).seal();
 }

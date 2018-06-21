@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.refactoring.participant.MoveModelRefactoringParticipant;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -52,10 +53,10 @@ public class UpdateDependentModelsRefactoringParticipant extends RefactoringPart
 
   private final RefactoringParticipant.RefactoringDataCollector<SModelReference, SModelReference, SModel, SModel> myDataCollector = new RefactoringParticipant.RefactoringDataCollector<SModelReference, SModelReference, SModel, SModel>() {
     public SModelReference beforeMove(SModel modelToMove) {
-      return modelToMove.getReference();
+      return SModelOperations.getPointer(modelToMove);
     }
     public SModelReference afterMove(SModel movedModel) {
-      return movedModel.getReference();
+      return SModelOperations.getPointer(movedModel);
     }
   };
 

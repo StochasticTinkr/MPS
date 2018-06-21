@@ -29,14 +29,13 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    SAbstractConcept cncpt_d0f = concept;
-    switch (index_hphjzv_d0f.index(cncpt_d0f)) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         if (true) {
           // Concept: BaseConcept 
-          intentions = new IntentionFactory[2];
-          intentions[0] = new SetExportAnnotation_Intention();
-          intentions[1] = new AddMissingDependency_Intention();
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddMissingDependency_Intention();
         }
         break;
       case 1:
@@ -55,11 +54,10 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[3];
-    rv[0] = new SetExportAnnotation_Intention();
-    rv[1] = new SuppressErrors_Intention();
-    rv[2] = new AddMissingDependency_Intention();
+    IntentionFactory[] rv = new IntentionFactory[2];
+    rv[0] = new SuppressErrors_Intention();
+    rv[1] = new AddMissingDependency_Intention();
     return Arrays.asList(rv);
   }
-  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L)).seal();
 }

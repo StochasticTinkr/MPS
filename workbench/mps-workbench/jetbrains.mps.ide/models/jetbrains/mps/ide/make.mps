@@ -47,6 +47,8 @@
     <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
     <import index="ao3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.text(MPS.Core/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
+    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3192,14 +3194,6 @@
       </node>
       <node concept="3Tm6S6" id="9D0Ba05uYn" role="1B3o_S" />
     </node>
-    <node concept="Wx3nA" id="9D0Ba05uYr" role="jymVt">
-      <property role="TrG5h" value="INSTANCE" />
-      <node concept="3Tm6S6" id="9D0Ba05uYs" role="1B3o_S" />
-      <node concept="3uibUv" id="9D0Ba05uYt" role="1tU5fm">
-        <ref role="3uigEE" node="9D0Ba05uYl" resolve="WorkbenchMakeService" />
-      </node>
-      <node concept="10Nm6u" id="9D0Ba05uYu" role="33vP2m" />
-    </node>
     <node concept="312cEg" id="9D0Ba05vmg" role="jymVt">
       <property role="TrG5h" value="currentSessionStickyMark" />
       <node concept="3Tm6S6" id="9D0Ba05vmh" role="1B3o_S" />
@@ -3267,11 +3261,41 @@
         </node>
       </node>
     </node>
+    <node concept="312cEg" id="1LibDRnMi__" role="jymVt">
+      <property role="TrG5h" value="myPlatform" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="1LibDRnMi_A" role="1B3o_S" />
+      <node concept="3uibUv" id="1LibDRnMii3" role="1tU5fm">
+        <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="6ZzUxXZQOVM" role="jymVt" />
     <node concept="3clFbW" id="9D0Ba05v9E" role="jymVt">
       <node concept="3cqZAl" id="9D0Ba05v9F" role="3clF45" />
       <node concept="3Tm1VV" id="9D0Ba05v9G" role="1B3o_S" />
-      <node concept="3clFbS" id="9D0Ba05v9H" role="3clF47" />
+      <node concept="3clFbS" id="9D0Ba05v9H" role="3clF47">
+        <node concept="3clFbF" id="1LibDRnMisW" role="3cqZAp">
+          <node concept="37vLTI" id="1LibDRnMisY" role="3clFbG">
+            <node concept="2OqwBi" id="1LibDRnMii9" role="37vLTx">
+              <node concept="37vLTw" id="1LibDRnMiia" role="2Oq$k0">
+                <ref role="3cqZAo" node="1LibDRnMhj6" resolve="mpsComponents" />
+              </node>
+              <node concept="liA8E" id="1LibDRnMiib" role="2OqNvi">
+                <ref role="37wK5l" to="3a50:~MPSCoreComponents.getPlatform():jetbrains.mps.core.platform.Platform" resolve="getPlatform" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="1LibDRnMit2" role="37vLTJ">
+              <ref role="3cqZAo" node="1LibDRnMi__" resolve="myPlatform" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1LibDRnMhj6" role="3clF46">
+        <property role="TrG5h" value="mpsComponents" />
+        <node concept="3uibUv" id="1LibDRnMhj5" role="1tU5fm">
+          <ref role="3uigEE" to="3a50:~MPSCoreComponents" resolve="MPSCoreComponents" />
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="6ZzUxXZPQ1p" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vam" role="jymVt">
@@ -3282,19 +3306,23 @@
       <node concept="3Tm1VV" id="9D0Ba05van" role="1B3o_S" />
       <node concept="3cqZAl" id="9D0Ba05vao" role="3clF45" />
       <node concept="3clFbS" id="9D0Ba05vap" role="3clF47">
-        <node concept="3clFbF" id="9D0Ba05vaq" role="3cqZAp">
-          <node concept="37vLTI" id="9D0Ba05var" role="3clFbG">
-            <node concept="Xjq3P" id="9D0Ba05vas" role="37vLTx" />
-            <node concept="37vLTw" id="2BHiRxeop26" role="37vLTJ">
-              <ref role="3cqZAo" node="9D0Ba05uYr" resolve="INSTANCE" />
+        <node concept="3clFbF" id="1LibDRnMxcS" role="3cqZAp">
+          <node concept="2OqwBi" id="1LibDRnMy$D" role="3clFbG">
+            <node concept="2OqwBi" id="1LibDRnMxFO" role="2Oq$k0">
+              <node concept="37vLTw" id="1LibDRnMxcN" role="2Oq$k0">
+                <ref role="3cqZAo" node="1LibDRnMi__" resolve="myPlatform" />
+              </node>
+              <node concept="liA8E" id="1LibDRnMy66" role="2OqNvi">
+                <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                <node concept="3VsKOn" id="1LibDRnMyn5" role="37wK5m">
+                  <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                </node>
+              </node>
             </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="9D0Ba05vau" role="3cqZAp">
-          <node concept="2YIFZM" id="9D0Ba05vav" role="3clFbG">
-            <ref role="37wK5l" to="hfuk:7q76xKYjgBM" resolve="set" />
-            <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
-            <node concept="Xjq3P" id="9D0Ba05vaw" role="37wK5m" />
+            <node concept="liA8E" id="1LibDRnMzgI" role="2OqNvi">
+              <ref role="37wK5l" to="hfuk:4QUA3SqtAPh" resolve="install" />
+              <node concept="Xjq3P" id="1LibDRnMzuE" role="37wK5m" />
+            </node>
           </node>
         </node>
       </node>
@@ -3311,18 +3339,22 @@
       <node concept="3Tm1VV" id="9D0Ba05vaL" role="1B3o_S" />
       <node concept="3cqZAl" id="9D0Ba05vaM" role="3clF45" />
       <node concept="3clFbS" id="9D0Ba05vaN" role="3clF47">
-        <node concept="3clFbF" id="9D0Ba05vb3" role="3cqZAp">
-          <node concept="2YIFZM" id="9D0Ba05vb4" role="3clFbG">
-            <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
-            <ref role="37wK5l" to="hfuk:7q76xKYjgBM" resolve="set" />
-            <node concept="10Nm6u" id="9D0Ba05vb5" role="37wK5m" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="9D0Ba05vb6" role="3cqZAp">
-          <node concept="37vLTI" id="9D0Ba05vb7" role="3clFbG">
-            <node concept="10Nm6u" id="9D0Ba05vb8" role="37vLTx" />
-            <node concept="37vLTw" id="2BHiRxeogqe" role="37vLTJ">
-              <ref role="3cqZAo" node="9D0Ba05uYr" resolve="INSTANCE" />
+        <node concept="3clFbF" id="1LibDRnM$1y" role="3cqZAp">
+          <node concept="2OqwBi" id="1LibDRnM$1z" role="3clFbG">
+            <node concept="2OqwBi" id="1LibDRnM$1$" role="2Oq$k0">
+              <node concept="37vLTw" id="1LibDRnM$1_" role="2Oq$k0">
+                <ref role="3cqZAo" node="1LibDRnMi__" resolve="myPlatform" />
+              </node>
+              <node concept="liA8E" id="1LibDRnM$1A" role="2OqNvi">
+                <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                <node concept="3VsKOn" id="1LibDRnM$1B" role="37wK5m">
+                  <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="1LibDRnM$1C" role="2OqNvi">
+              <ref role="37wK5l" to="hfuk:4QUA3SqtAZW" resolve="uninstall" />
+              <node concept="Xjq3P" id="1LibDRnM$1D" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -3357,21 +3389,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6DhoVFdfVzM" role="jymVt" />
-    <node concept="3clFb_" id="9D0Ba05vbi" role="jymVt">
-      <property role="TrG5h" value="isInstance" />
-      <node concept="10P_77" id="9D0Ba05vbj" role="3clF45" />
-      <node concept="3Tm6S6" id="9D0Ba05vbk" role="1B3o_S" />
-      <node concept="3clFbS" id="9D0Ba05vbl" role="3clF47">
-        <node concept="3clFbF" id="9D0Ba05vbm" role="3cqZAp">
-          <node concept="3clFbC" id="9D0Ba05vbn" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeon3m" role="3uHU7w">
-              <ref role="3cqZAo" node="9D0Ba05uYr" resolve="INSTANCE" />
-            </node>
-            <node concept="Xjq3P" id="9D0Ba05vbp" role="3uHU7B" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="2tJIrI" id="6DhoVFdfVzN" role="jymVt" />
     <node concept="3clFb_" id="43l$qHE8U6I" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -4843,6 +4860,59 @@
       <node concept="3Tm6S6" id="9D0Ba05vla" role="1B3o_S" />
       <node concept="3cqZAl" id="9D0Ba05vlb" role="3clF45" />
       <node concept="3clFbS" id="9D0Ba05vlc" role="3clF47">
+        <node concept="3cpWs8" id="1LibDRnM_z$" role="3cqZAp">
+          <node concept="3cpWsn" id="1LibDRnM_z_" role="3cpWs9">
+            <property role="TrG5h" value="msc" />
+            <node concept="3uibUv" id="1LibDRnM_zz" role="1tU5fm">
+              <ref role="3uigEE" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+            </node>
+            <node concept="2OqwBi" id="1LibDRnM_zA" role="33vP2m">
+              <node concept="37vLTw" id="1LibDRnM_zB" role="2Oq$k0">
+                <ref role="3cqZAo" node="1LibDRnMi__" resolve="myPlatform" />
+              </node>
+              <node concept="liA8E" id="1LibDRnM_zC" role="2OqNvi">
+                <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                <node concept="3VsKOn" id="1LibDRnM_zD" role="37wK5m">
+                  <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1LibDRnM$Wr" role="3cqZAp" />
+        <node concept="3clFbJ" id="9D0Ba05vlm" role="3cqZAp">
+          <node concept="22lmx$" id="1LibDRnMB7Y" role="3clFbw">
+            <node concept="3y3z36" id="1LibDRnMCO4" role="3uHU7w">
+              <node concept="Xjq3P" id="1LibDRnMEmO" role="3uHU7w" />
+              <node concept="2OqwBi" id="1LibDRnMBrA" role="3uHU7B">
+                <node concept="37vLTw" id="1LibDRnMBfK" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1LibDRnM_z_" resolve="msc" />
+                </node>
+                <node concept="liA8E" id="1LibDRnMB$y" role="2OqNvi">
+                  <ref role="37wK5l" to="hfuk:4QUA3SqtLoe" resolve="get" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbC" id="1LibDRnMAZf" role="3uHU7B">
+              <node concept="37vLTw" id="1LibDRnMAND" role="3uHU7B">
+                <ref role="3cqZAo" node="1LibDRnM_z_" resolve="msc" />
+              </node>
+              <node concept="10Nm6u" id="1LibDRnMB6G" role="3uHU7w" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="9D0Ba05vlp" role="3clFbx">
+            <node concept="YS8fn" id="9D0Ba05vlq" role="3cqZAp">
+              <node concept="2ShNRf" id="9D0Ba05vlr" role="YScLw">
+                <node concept="1pGfFk" id="9D0Ba05vls" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                  <node concept="Xl_RD" id="9D0Ba05vlt" role="37wK5m">
+                    <property role="Xl_RC" value="invalid usage of service" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="9D0Ba05vld" role="3cqZAp">
           <node concept="3clFbS" id="9D0Ba05vle" role="3clFbx">
             <node concept="YS8fn" id="9D0Ba05vlf" role="3cqZAp">
@@ -4856,28 +4926,14 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbC" id="9D0Ba05vlj" role="3clFbw">
-            <node concept="10Nm6u" id="9D0Ba05vlk" role="3uHU7w" />
-            <node concept="37vLTw" id="2BHiRxeoq9s" role="3uHU7B">
-              <ref role="3cqZAo" node="9D0Ba05uYr" resolve="INSTANCE" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="9D0Ba05vlm" role="3cqZAp">
-          <node concept="3fqX7Q" id="9D0Ba05vln" role="3clFbw">
-            <node concept="1rXfSq" id="4hiugqyzhC7" role="3fr31v">
-              <ref role="37wK5l" node="9D0Ba05vbi" resolve="isInstance" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="9D0Ba05vlp" role="3clFbx">
-            <node concept="YS8fn" id="9D0Ba05vlq" role="3cqZAp">
-              <node concept="2ShNRf" id="9D0Ba05vlr" role="YScLw">
-                <node concept="1pGfFk" id="9D0Ba05vls" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
-                  <node concept="Xl_RD" id="9D0Ba05vlt" role="37wK5m">
-                    <property role="Xl_RC" value="invalid usage of service" />
-                  </node>
-                </node>
+          <node concept="3clFbC" id="1LibDRnMDPW" role="3clFbw">
+            <node concept="10Nm6u" id="1LibDRnMEga" role="3uHU7w" />
+            <node concept="2OqwBi" id="1LibDRnMD$z" role="3uHU7B">
+              <node concept="37vLTw" id="1LibDRnMDmw" role="2Oq$k0">
+                <ref role="3cqZAo" node="1LibDRnM_z_" resolve="msc" />
+              </node>
+              <node concept="liA8E" id="1LibDRnMDHv" role="2OqNvi">
+                <ref role="37wK5l" to="hfuk:4QUA3SqtLoe" resolve="get" />
               </node>
             </node>
           </node>

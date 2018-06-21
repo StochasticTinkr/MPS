@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import com.intellij.openapi.ui.Messages;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -27,7 +28,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 
-public class MoveConcepts implements MoveNodesAction {
+public class MoveConcepts extends AbstractLanguageMove implements MoveNodesAction {
 
   public static class MoveConcepts_extension extends Extension.Default<MoveNodesAction> {
     public MoveConcepts_extension() {
@@ -60,6 +61,11 @@ public class MoveConcepts implements MoveNodesAction {
   public void execute(final MPSProject project, List<SNode> nodesToMove) {
     final List<SNode> conceptsToMove = Sequence.fromIterable(SNodeOperations.ofConcept(nodesToMove, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).toListSequence();
 
+    ListSequence.fromList(conceptsToMove).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        checkDeployed(project, it);
+      }
+    });
     final Wrappers._boolean hasGenerator = new Wrappers._boolean(false);
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -80,7 +86,7 @@ public class MoveConcepts implements MoveNodesAction {
         Iterable<SModule> modules = project.getProjectModules();
         return structureModels.value = Sequence.fromIterable(modules).ofType(Language.class).select(new ISelector<Language, SModelReference>() {
           public SModelReference select(Language it) {
-            return check_u6ijv2_a0a0a0a0a1a0h0f(it.getStructureModelDescriptor());
+            return check_u6ijv2_a0a0a0a0a1a0i0f(it.getStructureModelDescriptor());
           }
         }).where(new IWhereFilter<SModelReference>() {
           public boolean accept(SModelReference it) {
@@ -104,7 +110,7 @@ public class MoveConcepts implements MoveNodesAction {
     MoveNodesUtil.moveTo(project, getName(), MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel.value), project)).withValues(nodesToMove));
   }
 
-  private static SModelReference check_u6ijv2_a0a0a0a0a1a0h0f(SModel checkedDotOperand) {
+  private static SModelReference check_u6ijv2_a0a0a0a0a1a0i0f(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }

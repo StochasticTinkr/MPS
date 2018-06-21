@@ -24,6 +24,8 @@ import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleCoreService;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.languageScope.LanguageScopeFactory;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -70,6 +72,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   private FacetsRegistry myModuleFacetsRegistry;
   private PathMacros myPathMacros;
   private ExtensionRegistry myExtensionRegistry;
+  private DataSourceFactoryRuleService myDataSourceService;
 
   /**
    * made package-private
@@ -91,6 +94,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     myClassLoaderManager = null;
     myLibraryInitializer = null;
     myPersistenceFacade = null;
+    myDataSourceService = null;
     myModuleRepository = null;
     myLanguageRegistry = null;
     myRepositoryRegistry = null;
@@ -101,7 +105,11 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
 
   private void doInit() {
     SNodeAccessUtil.setInstance(new SNodeAccessUtilImpl());
-    myPersistenceFacade = init(new PersistenceRegistry());
+    // in fact, could be part of PersistenceRegistry to minimize number of components. OTOH, complicates access
+    // to the instance, findComponent(PersistenceRegistry.class).getDataSourceService() is longer than just findComponent(DataSourceFactoryRuleService.class)
+    myDataSourceService = init(new DataSourceFactoryRuleService());
+    init(new DataSourceFactoryRuleCoreService(myDataSourceService));
+    myPersistenceFacade = init(new PersistenceRegistry(myDataSourceService));
     myModuleFacetsRegistry = init(new FacetsRegistry());
 
     myRepositoryRegistry = init(new SRepositoryRegistry());
@@ -200,7 +208,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     if (LibraryInitializer.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myLibraryInitializer);
     }
-    if (PersistenceFacade.class.isAssignableFrom(componentClass)) {
+    if (PersistenceFacade.class.isAssignableFrom(componentClass) || PersistenceRegistry.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myPersistenceFacade);
     }
     if (ClassLoaderManager.class.isAssignableFrom(componentClass)) {
@@ -218,7 +226,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     if (SRepositoryRegistry.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myRepositoryRegistry);
     }
-    if (FacetsFacade.class.isAssignableFrom(componentClass)) {
+    if (FacetsFacade.class.isAssignableFrom(componentClass) || FacetsRegistry.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myModuleFacetsRegistry);
     }
     if (PathMacros.class.isAssignableFrom(componentClass)) {
@@ -226,6 +234,9 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     }
     if (ExtensionRegistry.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myExtensionRegistry);
+    }
+    if (DataSourceFactoryRuleService.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myDataSourceService);
     }
     return null;
   }

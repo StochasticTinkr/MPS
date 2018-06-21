@@ -32,8 +32,6 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
-import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
@@ -61,24 +59,24 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_c4hqyc_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_c4hqyc_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_c4hqyc_a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     if (nodeCondition_c4hqyc_a0a()) {
-      editorCell.addEditorCell(createModelAccess_c4hqyc_a0());
+      editorCell.addEditorCell(createModelAccess_0());
     }
     return editorCell;
   }
   private boolean nodeCondition_c4hqyc_a0a() {
     return getEditorContext() != null && myNode != null;
   }
-  private EditorCell createModelAccess_c4hqyc_a0() {
+  private EditorCell createModelAccess_0() {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
         return null;
@@ -100,7 +98,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     editorCell.addKeyMap(new TestTargetKeymap());
     editorCell.setTransformationMenuLookup(new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a681a1L, "jetbrains.mps.lang.editor.test.generation.structure.AbstractCellTest")));
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new ModelAccess_EditorCellModel_ComponentBuilder_a.ModelAccess_generic_cellMenu_c4hqyc_a0a0(), new ModelAccess_EditorCellModel_ComponentBuilder_a.ModelAccess_generic_cellMenu_c4hqyc_b0a0(), new ModelAccess_EditorCellModel_ComponentBuilder_a.ModelAccess_customReplace_cellMenu_c4hqyc_c0a0(), new ModelAccess_EditorCellModel_ComponentBuilder_a.ModelAccess_customReplace_cellMenu_c4hqyc_d0a0(), new ModelAccess_EditorCellModel_ComponentBuilder_a.ApplySideTransforms_left_cellMenu_c4hqyc_e0a0(), new ModelAccess_EditorCellModel_ComponentBuilder_a.ModelAccess_component_cellMenu_c4hqyc_f0a0(), new ModelAccess_EditorCellModel_ComponentBuilder_a.ModelAccess_generic_cellMenu_c4hqyc_g0a0(), new ModelAccess_EditorCellModel_ComponentBuilder_a.ReplaceWith_ModelAccess_cellMenu_c4hqyc_h0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new ModelAccess_EditorCellModel_ComponentBuilder_a.ModelAccess_generic_cellMenu_c4hqyc_a0a0(), new ModelAccess_EditorCellModel_ComponentBuilder_a.ModelAccess_generic_cellMenu_c4hqyc_b0a0(), new ModelAccess_EditorCellModel_ComponentBuilder_a.ModelAccess_customReplace_cellMenu_c4hqyc_c0a0(), new ModelAccess_EditorCellModel_ComponentBuilder_a.ModelAccess_customReplace_cellMenu_c4hqyc_d0a0(), new ModelAccess_EditorCellModel_ComponentBuilder_a.ModelAccess_component_cellMenu_c4hqyc_e0a0(), new ModelAccess_EditorCellModel_ComponentBuilder_a.ModelAccess_generic_cellMenu_c4hqyc_f0a0(), new ModelAccess_EditorCellModel_ComponentBuilder_a.ReplaceWith_ModelAccess_cellMenu_c4hqyc_g0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   private boolean nodeCondition_c4hqyc_a0a_0() {
@@ -221,22 +219,17 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     }
 
   }
-  public static class ApplySideTransforms_left_cellMenu_c4hqyc_e0a0 extends AbstractCellMenuPart_ApplySideTransforms {
-    public ApplySideTransforms_left_cellMenu_c4hqyc_e0a0() {
-      super(CellSide.LEFT, "ext_1_RTransform");
-    }
-  }
-  public static class ModelAccess_component_cellMenu_c4hqyc_f0a0 implements SubstituteInfoPartExt {
+  public static class ModelAccess_component_cellMenu_c4hqyc_e0a0 implements SubstituteInfoPartExt {
     private TestTargetMenuComponent myComponent;
-    public ModelAccess_component_cellMenu_c4hqyc_f0a0() {
+    public ModelAccess_component_cellMenu_c4hqyc_e0a0() {
       this.myComponent = new TestTargetMenuComponent();
     }
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
-  public static class ModelAccess_generic_cellMenu_c4hqyc_g0a0 extends AbstractCellMenuPart_Generic_Item {
-    public ModelAccess_generic_cellMenu_c4hqyc_g0a0() {
+  public static class ModelAccess_generic_cellMenu_c4hqyc_f0a0 extends AbstractCellMenuPart_Generic_Item {
+    public ModelAccess_generic_cellMenu_c4hqyc_f0a0() {
     }
     @Override
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
@@ -266,8 +259,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
       return "matchingText";
     }
   }
-  public static class ReplaceWith_ModelAccess_cellMenu_c4hqyc_h0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_ModelAccess_cellMenu_c4hqyc_h0a0() {
+  public static class ReplaceWith_ModelAccess_cellMenu_c4hqyc_g0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_ModelAccess_cellMenu_c4hqyc_g0a0() {
     }
     public SAbstractConcept getReplacementConcept() {
       return MetaAdapterFactory.getConcept(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c22L, "jetbrains.mps.lang.editor.test.generation.structure.ModelAccess");

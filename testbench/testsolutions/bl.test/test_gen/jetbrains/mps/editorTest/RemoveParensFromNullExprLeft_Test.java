@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.EditorUtil;
 
 @MPSLaunch
@@ -21,11 +22,15 @@ public class RemoveParensFromNullExprLeft_Test extends BaseTransformationTest {
 
   @Test
   public void test_RemoveParensFromNullExprLeft() throws Throwable {
-    runTest("jetbrains.mps.editorTest.RemoveParensFromNullExprLeft_Test$TestBody", "testMethod", false);
+    new RemoveParensFromNullExprLeft_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("5967765797429375678", "5967765797429377872");

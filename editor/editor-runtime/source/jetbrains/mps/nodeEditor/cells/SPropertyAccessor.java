@@ -32,7 +32,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  * User: shatalin
  * Date: 21/01/15
  */
-public class SPropertyAccessor implements ModelAccessor {
+public class SPropertyAccessor implements ModelAccessor, IPropertyAccessor {
 
   private final SProperty myProperty;
   private final SNode myNode;

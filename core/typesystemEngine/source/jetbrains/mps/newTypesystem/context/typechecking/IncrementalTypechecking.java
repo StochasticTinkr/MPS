@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,12 @@ package jetbrains.mps.newTypesystem.context.typechecking;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.classloading.MPSClassesListener;
-import jetbrains.mps.classloading.MPSClassesListenerAdapter;
+import jetbrains.mps.classloading.DeployListener;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.newTypesystem.context.component.ITypeErrorComponent;
 import jetbrains.mps.newTypesystem.context.component.IncrementalTypecheckingComponent;
 import jetbrains.mps.newTypesystem.context.component.NonTypeSystemComponent;
@@ -53,7 +52,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -66,17 +67,20 @@ import java.util.Set;
 
 public class IncrementalTypechecking extends ReportingTypechecking<State, TypeSystemComponent> {
 
-  private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
-  private List<SModel> myReplacedModels = new ArrayList<SModel>();
+  private List<SModelEvent> myEvents = new ArrayList<>();
+  private List<SModel> myReplacedModels = new ArrayList<>();
 
-  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
+  private DeployListener myClassesListener = new DeployListener() {
     @Override
-    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules) {
+    public void onUnloaded(Set<ReloadableModule> unloadedModules, @NotNull ProgressMonitor monitor) {
       myNonTypeSystemComponent.clear();
+    }
+    @Override
+    public void onLoaded(Set<ReloadableModule> loadedModules, @NotNull ProgressMonitor monitor) {
     }
   };
 
-  private Map<SModel, Set<SNode>> mySModelNodes = new THashMap<SModel, Set<SNode>>();
+  private Map<SModel, Set<SNode>> mySModelNodes = new THashMap<>();
 
   private MyTypeRecalculatedListener myTypeRecalculatedListener = new MyTypeRecalculatedListener();
 
@@ -94,16 +98,21 @@ public class IncrementalTypechecking extends ReportingTypechecking<State, TypeSy
 
   private ITypeErrorComponent myTypeErrorComponent;
 
-  public IncrementalTypechecking(SNode node, State state) {
+  private final TypeChecker myTypeChecker;
+  private final ClassLoaderManager myClassManager;
+
+  public IncrementalTypechecking(SNode node, State state, TypeChecker typeChecker, ClassLoaderManager clManager) {
     super(node, state);
-    myNonTypeSystemComponent = new NonTypeSystemComponent(TypeChecker.getInstance(), state, this);
+    myTypeChecker = typeChecker;
+    myClassManager = clManager;
+    myNonTypeSystemComponent = new NonTypeSystemComponent(typeChecker, state, this);
     myModelListenerManager.track(myRootNode);
-    ClassLoaderManager.getInstance().addClassesHandler(myClassesListener);
+    clManager.addListener(myClassesListener);
   }
 
   @Override
   protected TypeSystemComponent createTypecheckingComponent() {
-    return new TypeSystemComponent(TypeChecker.getInstance(), getState(), this);
+    return new TypeSystemComponent(myTypeChecker, getState(), this);
   }
 
   public void clear() {
@@ -159,12 +168,12 @@ public class IncrementalTypechecking extends ReportingTypechecking<State, TypeSy
 
   @Override
   public void dispose() {
-    ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
+    myClassManager.removeListener(myClassesListener);
     if (myModelListenerManager != null) {
       myModelListenerManager.dispose();
       myModelListenerManager = null;
     }
-    TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
+    myTypeChecker.removeTypeRecalculatedListener(myTypeRecalculatedListener);
     if (myNonTypeSystemComponent != null) {
       myNonTypeSystemComponent = null;
     }
@@ -197,7 +206,7 @@ public class IncrementalTypechecking extends ReportingTypechecking<State, TypeSy
       return;
     }
 
-    Set<SNode> hashSet = new THashSet<SNode>(1);
+    Set<SNode> hashSet = new THashSet<>(1);
     hashSet.add(myNodeTypeAccess.peekNode());
     getTypecheckingComponent().addDependentNodesTypeSystem(node, hashSet, typeAffected);
   }
@@ -209,7 +218,7 @@ public class IncrementalTypechecking extends ReportingTypechecking<State, TypeSy
       return;
     }
 
-    Set<SNode> hashSet = new THashSet<SNode>(1);
+    Set<SNode> hashSet = new THashSet<>(1);
     hashSet.add(node);
     getTypecheckingComponent().addDependentNodesTypeSystem(current, hashSet, true);
   }
@@ -232,7 +241,7 @@ public class IncrementalTypechecking extends ReportingTypechecking<State, TypeSy
   @Override
   @NotNull
   public List<IErrorReporter> getErrors(SNode node) {
-    List<IErrorReporter> result = new ArrayList<IErrorReporter>(super.getErrors(node));
+    List<IErrorReporter> result = new ArrayList<>(super.getErrors(node));
     Map<SNode, List<IErrorReporter>> nodesToErrorsMapNT = myNonTypeSystemComponent.getNodesToErrorsMap();
     List<IErrorReporter> iErrorReporters = nodesToErrorsMapNT.get(node);
     if (iErrorReporters != null) {
@@ -245,12 +254,12 @@ public class IncrementalTypechecking extends ReportingTypechecking<State, TypeSy
   @Override
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors(boolean typesystemErrors) {
     if (typesystemErrors) {
-      return new THashSet<Pair<SNode, List<IErrorReporter>>>(super.getNodesWithErrors(typesystemErrors));
+      return new THashSet<>(super.getNodesWithErrors(typesystemErrors));
     }
 
-    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>();
+    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<>();
     Map<SNode, List<IErrorReporter>> nodesToErrorsMapNT = myNonTypeSystemComponent.getNodesToErrorsMap();
-    Set<SNode> keySet = new THashSet<SNode>(nodesToErrorsMapNT.keySet());
+    Set<SNode> keySet = new THashSet<>(nodesToErrorsMapNT.keySet());
     keySet.addAll(nodesToErrorsMapNT.keySet());
 
     for (SNode key : keySet) {
@@ -263,7 +272,7 @@ public class IncrementalTypechecking extends ReportingTypechecking<State, TypeSy
         }
         continue;
       }
-      result.add(new Pair<SNode, List<IErrorReporter>>(key, reporters));
+      result.add(new Pair<>(key, reporters));
     }
     return result;
   }
@@ -426,29 +435,31 @@ public class IncrementalTypechecking extends ReportingTypechecking<State, TypeSy
   }
 
   private class MyModelListenerManager {
-    private ReferenceQueue<SNode> myReferenceQueue = new ReferenceQueue<SNode>();
-    private Map<SModel, Integer> myNodesCount = new THashMap<SModel, Integer>();
-    private Map<WeakReference, SModel> myDescriptors = new THashMap<WeakReference, SModel>();
+    private ReferenceQueue<SNode> myReferenceQueue = new ReferenceQueue<>();
+    private Map<SModel, Integer> myNodesCount = new THashMap<>();
+    private Map<WeakReference, SModel> myDescriptors = new THashMap<>();
 
     /**
      * Warning: this method should be called only once for each node
      * We do not check for duplicated nodes
      */
     void track(SNode node) {
-      if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return;
-
       SModel sm = node.getModel();
+      if (sm == null || sm.getRepository() == null) {
+        // detached model, ignore. This check used to be SNodeUtil.isAccessible.
+        return;
+      }
       if (!myNodesCount.containsKey(sm)) {
         ((SModelInternal) sm).addModelListener(myModelListener);
         sm.addModelListener(mySModelListener);
         myNodesCount.put(sm, 1);
-        mySModelNodes.put(sm, new WeakSet<SNode>());
+        mySModelNodes.put(sm, new WeakSet<>());
       } else {
         Integer oldValue = myNodesCount.get(sm);
         myNodesCount.put(sm, oldValue + 1);
       }
 
-      WeakReference<SNode> ref = new WeakReference<SNode>(node, myReferenceQueue);
+      WeakReference<SNode> ref = new WeakReference<>(node, myReferenceQueue);
       myDescriptors.put(ref, sm);
 
       mySModelNodes.get(sm).add(node);
@@ -457,8 +468,10 @@ public class IncrementalTypechecking extends ReportingTypechecking<State, TypeSy
 
     void updateGCedNodes() {
       while (true) {
-        WeakReference<SNode> ref = (WeakReference<SNode>) myReferenceQueue.poll();
-        if (ref == null) return;
+        Reference<? extends SNode> ref = myReferenceQueue.poll();
+        if (ref == null) {
+          return;
+        }
 
         SModel sm = myDescriptors.get(ref);
         Integer count = myNodesCount.get(sm);
@@ -484,10 +497,10 @@ public class IncrementalTypechecking extends ReportingTypechecking<State, TypeSy
   }
 
   private static class NodeTypeAccess {
-    private LinkedList<Pair<SNode, Boolean>> myStack = new LinkedList<Pair<SNode, Boolean>>();
+    private LinkedList<Pair<SNode, Boolean>> myStack = new LinkedList<>();
 
     private void pushNode(SNode node) {
-      myStack.push(new Pair<SNode, Boolean>(node, false));
+      myStack.push(new Pair<>(node, false));
     }
 
     private boolean popNode() {

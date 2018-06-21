@@ -51,7 +51,7 @@ public class Switch_switch_ModuleIdentity_SModuleReference extends TemplateSwitc
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ModulePointer_SModuleReference().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_ModulePointer_SModuleReference().apply(context);
       return tlist1;
     }
   }

@@ -29,7 +29,7 @@ import com.intellij.ui.OnePixelSplitter;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.devkit.cellExplorer.cellsTree.CellsTree;
 import jetbrains.mps.ide.devkit.cellExplorer.detailTree.CellDetailTree;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.tools.BaseTabbedProjectTool;
 import jetbrains.mps.nodeEditor.EditorComponent.EditorDisposeListener;
 import jetbrains.mps.openapi.editor.EditorComponent;
@@ -121,7 +121,7 @@ public class CellExplorerTab implements IComponentDisposer<JComponent> {
               return new Pair<String, Icon>(null, null);
             }
 
-            return new Pair<String, Icon>(editedNode.getPresentation(), IconManager.getIconFor(editedNode));
+            return new Pair<String, Icon>(editedNode.getPresentation(), GlobalIconManager.getInstance().getIconFor(editedNode));
           }
         });
 

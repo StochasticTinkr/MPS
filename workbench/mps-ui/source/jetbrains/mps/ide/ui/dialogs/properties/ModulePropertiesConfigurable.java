@@ -32,7 +32,6 @@ import com.intellij.ui.CheckedTreeNode;
 import com.intellij.ui.FieldPanel;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.InsertPathAction;
-import com.intellij.ui.JBColor;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.SpeedSearchComparator;
 import com.intellij.ui.ToolbarDecorator;
@@ -112,7 +111,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -355,6 +353,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                                              GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
         myGenOut = new JTextField();
+        myGenOut.setEditable(false); // Allow edit only with FileChooser
         final FileChooserDescriptor outputPathsChooserDescriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor();
         InsertPathAction.addTo(myGenOut, outputPathsChooserDescriptor);
         outputPathsChooserDescriptor.setHideIgnored(false);
@@ -1048,8 +1047,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private final GeneratorDependencyProvider myDepGenerators;
     private GenPrioritiesTableModel myPrioritiesTableModel;
     private JBCheckBox myGenerateTemplates;
-    @ToRemove(version = 2017.2)
-    private JBCheckBox myReflectiveQueries;
     private JBTable myTable;
 
     public GeneratorAdvancesTab(Generator generator, GeneratorDependencyProvider depGenerators) {
@@ -1065,7 +1062,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
       final GeneratorDescriptor genDescr = myGenerator.getModuleDescriptor();
       genDescr.setGenerateTemplates(myGenerateTemplates.isSelected());
-      genDescr.setReflectiveQueries(myReflectiveQueries.isSelected());
       myPrioritiesTableModel.apply(myDepGenerators);
     }
 
@@ -1268,20 +1264,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       generationOptions.setLayout(new FlowLayout(FlowLayout.LEFT));
       myGenerateTemplates = new JBCheckBox(PropertiesBundle.message("module.generator.gentemplates.name"), genDescr.isGenerateTemplates());
       myGenerateTemplates.setToolTipText(PropertiesBundle.message("module.generator.gentemplates.tip"));
-      myReflectiveQueries = new JBCheckBox("Reflective queries");
-      myReflectiveQueries.setToolTipText("Invoke generated queries via reflection. Legacy option, scheduled for removal");
-      myReflectiveQueries.addItemListener(e -> {
-        boolean isSelected = e.getStateChange() == ItemEvent.SELECTED;
-        if (isSelected && !myGenerateTemplates.isSelected()) {
-          myReflectiveQueries.setOpaque(true);
-          myReflectiveQueries.setBackground(JBColor.yellow);
-        } else {
-          myReflectiveQueries.setOpaque(false);
-        }
-      });
       generationOptions.add(myGenerateTemplates);
-      generationOptions.add(myReflectiveQueries);
-      myReflectiveQueries.setSelected(genDescr.isReflectiveQueries());
       panel.add(generationOptions,
                 new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
                                     GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -1293,9 +1276,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     public boolean isModified() {
       final GeneratorDescriptor genDescr = myGenerator.getModuleDescriptor();
       final boolean b1 = genDescr.isGenerateTemplates();
-      final boolean b2 = genDescr.isReflectiveQueries();
-      return myPrioritiesTableModel.isModified()
-             || myGenerateTemplates.isSelected() != b1 || myReflectiveQueries.isSelected() != b2;
+      return myPrioritiesTableModel.isModified() || myGenerateTemplates.isSelected() != b1;
     }
   }
 

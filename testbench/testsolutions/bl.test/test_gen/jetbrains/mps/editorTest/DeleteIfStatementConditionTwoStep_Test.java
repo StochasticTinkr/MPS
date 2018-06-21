@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.EditorUtil;
 import junit.framework.Assert;
 import jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil;
@@ -25,11 +26,15 @@ public class DeleteIfStatementConditionTwoStep_Test extends BaseTransformationTe
 
   @Test
   public void test_DeleteIfStatementConditionTwoStep() throws Throwable {
-    runTest("jetbrains.mps.editorTest.DeleteIfStatementConditionTwoStep_Test$TestBody", "testMethod", false);
+    new DeleteIfStatementConditionTwoStep_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("8979250711593085435", "8979250711593087915");

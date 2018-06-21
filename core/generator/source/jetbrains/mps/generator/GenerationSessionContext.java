@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
-import jetbrains.mps.generator.impl.RoleValidation;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.project.Project;
@@ -28,7 +27,6 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
-import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -59,12 +57,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private final GenControllerContext myEnvironment;
   private final TransientModelsModule myTransientModule;
   private final GenerationSessionLogger myLogger;
-  private final RoleValidation myValidation;
-  /*
-   * GenerationSessionContext is not the perfect place for this tracer, as it's not really session object,
-   * however it's per-model object, and generation session is per-model as well (thus, can't put it into e.g. GenControllerContext)
-   */
-  private final IPerformanceTracer myPerfTrace;
 
   private final Object NULL_OBJECT = new Object();
 
@@ -90,15 +82,12 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public GenerationSessionContext(GenControllerContext environment, TransientModelsModule transientModule,
                                   GenerationSessionLogger logger,
-                                  SModel inputModel,
-                                  IPerformanceTracer performanceTracer) {
+                                  SModel inputModel) {
 
     myEnvironment = environment;
     myTransientModule = transientModule;
     myOriginalInputModel = inputModel;
-    myPerfTrace = performanceTracer;
     myLogger = logger;
-    myValidation = new RoleValidation(environment.getOptions().isShowBadChildWarning());
     mySessionObjects = new ConcurrentHashMap<>();
     myTransientObjects = new ConcurrentHashMap<>();
     myStepObjects = new ConcurrentHashMap<>();
@@ -113,11 +102,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myEnvironment = prevContext.myEnvironment;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
-    myPerfTrace = prevContext.myPerfTrace;
     myLogger = prevContext.myLogger;
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
-    myValidation = prevContext.myValidation;
     // this copy cons indicate new major step, hence new empty maps
     myTransientObjects = new ConcurrentHashMap<>();
     myStepObjects = new ConcurrentHashMap<>();
@@ -355,23 +342,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   /**
    * @return never <code>null</code>
    */
-  public RoleValidation getRoleValidationFacility() {
-    // XXX in fact, GenerationSessionContext seems to serve as an API (resides in public package and provides public services
-    // to genContext, like unique name), while RoleValidation is implementation class.
-    // However, don't want to refactor GSC now (split iface and impl) - there's e.g. GenerationPlan (impl class) exposed here as well, so it doesn't
-    // look like that intention was to keep it API, rather a facility to keep everything handy.
-    return myValidation;
-  }
-
-  /**
-   * @return never <code>null</code>
-   */
   public CrossModelEnvironment getCrossModelEnvironment() {
     // same considerations applies as for #getRoleValidationFacility() above, need a distinct implementation context for TG (could use StepArguments, perhaps).
     return myEnvironment.getCrossModelEnvironment();
-  }
-
-  public IPerformanceTracer getPerformanceTracer() {
-    return myPerfTrace;
   }
 }

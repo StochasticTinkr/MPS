@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
@@ -88,7 +89,7 @@ public class UpdateLocalInstancesParticipant<I, F> extends RefactoringParticipan
 
     return CollectionSequence.fromCollection(instances).select(new ISelector<SNode, RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>>>() {
       public RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>> select(SNode instance) {
-        final SNodeReference nodeRef = instance.getReference();
+        final SNodeReference nodeRef = SNodeOperations.getPointer(instance);
         final SearchResults searchResults = new SearchResults();
         searchResults.add(new SearchResult<SNode>(instance, "instance"));
         RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>> change = new MoveNodeRefactoringParticipant.ChangeBase<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>>() {

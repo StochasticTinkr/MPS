@@ -34,7 +34,7 @@ public class Mapping_LanguageModule extends MapConfigBase implements TemplateMap
   }
   @Override
   public boolean isApplicable(@NotNull ITemplateGenerator generator) {
-    return QueriesGenerated.mappingConfiguration_Condition_3919235298192647144(new TemplateQueryContext(getMappingNode(), generator));
+    return QueriesGenerated.mappingConfiguration_Condition_nsasqq_a(new TemplateQueryContext(getMappingNode(), generator));
   }
   @Override
   public Collection<TemplateCreateRootRule> getCreateRules() {
@@ -51,7 +51,7 @@ public class Mapping_LanguageModule extends MapConfigBase implements TemplateMap
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> result = new Template_Language().apply(environment, context);
+      Collection<SNode> result = new Template_Language().apply(context);
       return result;
     }
   }
@@ -60,7 +60,8 @@ public class Mapping_LanguageModule extends MapConfigBase implements TemplateMap
       super(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "3919235298192674546"));
     }
     public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationException {
-      Collection<SNode> result = new Template_language_descriptor().apply(environment, new DefaultTemplateContext(environment, null, null));
+      DefaultTemplateContext context = new DefaultTemplateContext(environment, null, null);
+      Collection<SNode> result = new Template_language_descriptor().apply(context);
       return result;
     }
   }

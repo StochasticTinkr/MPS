@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -69,7 +70,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -107,7 +108,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -145,7 +146,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -193,7 +194,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -236,7 +237,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -275,7 +276,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -314,7 +315,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -353,7 +354,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -396,7 +397,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -442,7 +443,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -494,7 +495,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -540,7 +541,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -579,7 +580,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -618,7 +619,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -657,7 +658,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -698,7 +699,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -751,7 +752,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -791,7 +792,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -831,7 +832,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -870,7 +871,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -909,7 +910,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -949,7 +950,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -988,7 +989,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return SNodeOperations.getContainingRoot(node) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224");
+          return !(SNodeOperations.is(SNodeOperations.getContainingRoot(node), new SNodePointer("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "5746001382833706224")));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {

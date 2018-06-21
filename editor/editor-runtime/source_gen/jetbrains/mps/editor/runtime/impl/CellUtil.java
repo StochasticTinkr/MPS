@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.kernel.language.ConceptAspectsHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class CellUtil {
   public CellUtil() {
@@ -54,23 +53,5 @@ public class CellUtil {
   }
   public static String getLinkDeclarationRole(SNode linkDeclaration) {
     return SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
-  }
-  public static SContainmentLink getCellContainmentLink(EditorCell cell) {
-    SNode node = cell.getSNode();
-    if (node == null) {
-      return null;
-    }
-    String role = cell.getRole();
-    if (role == null) {
-      return null;
-    }
-
-    // todo remove getLink(role) when cell will have link 
-    for (SContainmentLink link : node.getConcept().getContainmentLinks()) {
-      if (link.getName().equals(role)) {
-        return link;
-      }
-    }
-    return null;
   }
 }

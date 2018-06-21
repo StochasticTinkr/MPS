@@ -19,6 +19,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label.DummyUndoableAction;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class TransactionalPropertyAccessor extends PropertyAccessor implements TransactionalModelAccessor {
@@ -28,8 +30,15 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
 
   private EditorCell myEditorCell;
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public TransactionalPropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
     super(node, propertyName, readOnly, allowEmptyText, editorContext);
+  }
+
+  public TransactionalPropertyAccessor(SNode node, SProperty property, boolean readOnly, boolean allowEmptyText,
+                                       EditorContext editorContext) {
+    super(node, property, readOnly, allowEmptyText, editorContext);
   }
 
   void setCell(EditorCell editorCell) {

@@ -8,8 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant;
 import jetbrains.mps.refactoring.participant.RecursiveParticipant;
 import jetbrains.mps.smodel.structure.Extension;
-import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
@@ -53,10 +53,10 @@ public class MoveAspectsParticipant extends RefactoringParticipantBase<SNodeRefe
 
   private MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<SNodeReference, SNodeReference> myDataCollector = new MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<SNodeReference, SNodeReference>() {
     public SNodeReference beforeMove(SNode nodeToMove) {
-      return nodeToMove.getReference();
+      return SNodeOperations.getPointer(nodeToMove);
     }
     public SNodeReference afterMove(SNode movedNode) {
-      return movedNode.getReference();
+      return SNodeOperations.getPointer(movedNode);
     }
   };
 

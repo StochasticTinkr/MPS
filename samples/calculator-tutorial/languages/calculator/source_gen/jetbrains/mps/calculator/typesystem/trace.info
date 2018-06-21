@@ -13,6 +13,14 @@
     </file>
   </root>
   <root nodeRef="r:450e06fb-ac8b-4ea9-abbf-87478c21328b(jetbrains.mps.calculator.typesystem)/1241364865026">
+    <file name="TypesystemDescriptor.java">
+      <node id="1241364865026" at="10,5,11,91" concept="4" />
+      <node id="1241364865026" at="11,91,12,47" concept="2" />
+      <node id="1241364865026" at="9,33,13,5" concept="0" />
+      <scope id="1241364865026" at="10,5,12,47">
+        <var name="inferenceRule" id="1241364865026" />
+      </scope>
+    </file>
     <file name="typeof_InputFieldReference_InferenceRule.java">
       <node id="1241364869216" at="20,5,21,51" concept="4" />
       <node id="1241364869216" at="21,51,22,195" concept="4" />

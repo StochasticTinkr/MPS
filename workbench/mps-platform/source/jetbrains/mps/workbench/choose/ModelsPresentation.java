@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.choose;
 
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -58,7 +58,7 @@ public class ModelsPresentation implements ElementPresentation<SModelReference> 
       if (model != null) {
         presentation.name = model.getName().getValue();
         presentation.location = model.getModule().getModuleName();
-        presentation.icon = IconManager.getIconFor(model);
+        presentation.icon = GlobalIconManager.getInstance().getIconFor(model);
       } else {
         presentation.name = element.getName().getValue();
         presentation.location = "unknown";

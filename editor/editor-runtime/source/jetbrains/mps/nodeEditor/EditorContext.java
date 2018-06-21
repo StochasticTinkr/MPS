@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,6 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
@@ -184,38 +183,16 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     myNodeEditorComponent.getUpdater().flushModelEvents();
   }
 
-  /**
-   * @deprecated Since MPS 3.4 use getState()
-   */
-  @Deprecated
-  @Override
-  public Object createMemento() {
-    return getEditorComponentState();
-  }
-
   @Override
   public EditorComponentState getEditorComponentState() {
     return new Memento(this, false);
-  }
-
-  /**
-   * @deprecated Since MPS 3.4 use getState()
-   */
-  @Deprecated
-  @Override
-  public boolean setMemento(Object o) {
-    if (o instanceof EditorComponentState) {
-      restoreEditorComponentState((EditorComponentState) o);
-      return true;
-    }
-    return false;
   }
 
   @Override
   public void restoreEditorComponentState(EditorComponentState state) {
     if (state instanceof Memento) {
       Memento memento = (Memento) state;
-      ModelAccess.instance().runReadAction(() -> {
+      myRepository.getModelAccess().runReadAction(() -> {
         myNodeEditorComponent.relayout();
         memento.restore(myNodeEditorComponent);
       });
@@ -326,11 +303,11 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return myPerformanceTracer != null;
   }
 
-  public void pushTracerTask(String message, boolean isMajor) {
+  void pushTracerTask(String message) {
     if (myPerformanceTracer == null) {
       return;
     }
-    myPerformanceTracer.push(message, isMajor);
+    myPerformanceTracer.push(message);
   }
 
   public void popTracerTask() {
@@ -338,11 +315,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
       return;
     }
     myPerformanceTracer.pop();
-  }
-
-  @Override
-  public EditorCellFactory getCellFactory() {
-    return getEditorComponent().getUpdater().getCurrentUpdateSession().getCellFactory();
   }
 
   @Override

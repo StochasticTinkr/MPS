@@ -98,7 +98,7 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
       @Override
       public void setValue(SNode node, String propertyValue) {
         String propertyName = "name";
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"), (SPropertyOperations.getString(propertyValue)));
+        SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"), (SPropertyOperations.getString(propertyValue)));
       }
     });
     return properties;

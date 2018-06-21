@@ -20,7 +20,7 @@ public class Queries {
     List<SNode> leastCommonSupertypes = SubtypingUtil.leastCommonSuperTypes(Arrays.asList(leftType, rightType), null);
     if (leastCommonSupertypes.isEmpty()) {
       SNode runtimeErrorType = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType"));
-      SPropertyOperations.set(runtimeErrorType, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, 0x113f84956faL, "errorText"), "incompatible types");
+      SPropertyOperations.assign(runtimeErrorType, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, 0x113f84956faL, "errorText"), "incompatible types");
       return runtimeErrorType;
     }
     SNode type = leastCommonSupertypes.iterator().next();

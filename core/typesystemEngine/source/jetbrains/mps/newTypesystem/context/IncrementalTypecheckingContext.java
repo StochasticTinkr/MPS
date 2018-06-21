@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.context;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
@@ -36,6 +37,7 @@ import java.util.Map;
 
 public class IncrementalTypecheckingContext extends ReportingTypecheckingContext<State, IncrementalTypechecking> {
   private static Logger LOG = LogManager.getLogger(IncrementalTypecheckingContext.class);
+  private final ClassLoaderManager myClassManager;
 
   private boolean myIsNonTypesystemComputation = false;
 //  private boolean myIsInferenceMode = false;
@@ -43,13 +45,14 @@ public class IncrementalTypecheckingContext extends ReportingTypecheckingContext
   private Map<Object, Integer> myRequesting = new HashMap<Object, Integer>();
   private Integer myOldHash = 0;
 
-  public IncrementalTypecheckingContext(SNode node, TypeChecker typeChecker) {
+  public IncrementalTypecheckingContext(SNode node, TypeChecker typeChecker, ClassLoaderManager clManager) {
     super(node, typeChecker);
+    myClassManager = clManager;
   }
 
   @Override
   protected IncrementalTypechecking createTypechecking() {
-    return new IncrementalTypechecking(getNode(), getState());
+    return new IncrementalTypechecking(getNode(), getState(), getTypeChecker(), myClassManager);
   }
 
   @Override

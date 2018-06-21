@@ -31,20 +31,20 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_jf7bj_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_jf7bj_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_jf7bj_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     if (nodeCondition_jf7bj_a0a()) {
-      editorCell.addEditorCell(createComponent_jf7bj_a0());
+      editorCell.addEditorCell(createComponent_0());
     }
-    editorCell.addEditorCell(createComponent_jf7bj_b0());
+    editorCell.addEditorCell(createComponent_1());
     if (nodeCondition_jf7bj_a2a()) {
-      editorCell.addEditorCell(createComponent_jf7bj_c0());
+      editorCell.addEditorCell(createComponent_2());
     }
     return editorCell;
   }
@@ -54,18 +54,18 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   private boolean nodeCondition_jf7bj_a2a() {
     return EditorCellModel__BehaviorDescriptor.getClosingTag_idhKxXx_K.invoke(myNode).length() > 0;
   }
-  private EditorCell createComponent_jf7bj_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor._OpenTag");
     return editorCell;
   }
-  private EditorCell createComponent_jf7bj_b0() {
+  private EditorCell createComponent_1() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createComponent_jf7bj_c0() {
+  private EditorCell createComponent_2() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor._CloseTag");
     return editorCell;
   }

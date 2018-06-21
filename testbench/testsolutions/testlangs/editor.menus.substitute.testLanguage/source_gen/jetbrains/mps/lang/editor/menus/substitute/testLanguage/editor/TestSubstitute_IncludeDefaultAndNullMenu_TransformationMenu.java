@@ -58,10 +58,10 @@ public class TestSubstitute_IncludeDefaultAndNullMenu_TransformationMenu extends
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      SAbstractConcept targetConcept = getTargetConcept(context);
-      String name = (targetConcept == null ? "" : targetConcept.getName());
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include substitute menu " + "named substitute menu " + "IncludeDefaultAndNullMenu", new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "4695456347262403795")));
       try {
+        SAbstractConcept targetConcept = getTargetConcept(context);
+        String name = (targetConcept == null ? "" : targetConcept.getName());
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include substitute menu " + "named substitute menu " + "IncludeDefaultAndNullMenu", new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "4695456347262403795")));
         return super.createItems(context);
       } finally {
         context.getEditorMenuTrace().popTraceInfo();

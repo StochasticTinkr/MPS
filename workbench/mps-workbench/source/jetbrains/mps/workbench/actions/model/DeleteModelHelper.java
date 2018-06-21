@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -160,8 +160,8 @@ public class DeleteModelHelper {
           Collections.singleton(modelDescriptor.getReference()),
           new EmptyProgressMonitor());
       for (SModel md : usages) {
-        if (SModelStereotype.isUserModel(md)) {
-          ((SModelInternal) md).deleteModelImport(modelDescriptor.getReference());
+        if (!SModelStereotype.isStubModel(md)) {
+          new ModelImports(md).removeModelImport(modelDescriptor.getReference());
         }
       }
       delete(modelOwner, modelDescriptor, myDeleteFiles);

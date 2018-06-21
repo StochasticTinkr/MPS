@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 
 public final class ViewAsTabular_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
@@ -42,7 +43,7 @@ public final class ViewAsTabular_Intention extends AbstractIntentionDescriptor i
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      String[] explicitEditorHintsForNode = editorContext.getEditorComponent().getUpdater().getExplicitEditorHintsForNode(node.getReference());
+      String[] explicitEditorHintsForNode = editorContext.getEditorComponent().getUpdater().getExplicitEditorHintsForNode(SNodeOperations.getPointer(node));
       if (explicitEditorHintsForNode == null || explicitEditorHintsForNode.length == 0) {
         return "View As Tabular";
       } else {
@@ -51,15 +52,15 @@ public final class ViewAsTabular_Intention extends AbstractIntentionDescriptor i
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      String[] explicitEditorHintsForNode = editorContext.getEditorComponent().getUpdater().getExplicitEditorHintsForNode(node.getReference());
+      String[] explicitEditorHintsForNode = editorContext.getEditorComponent().getUpdater().getExplicitEditorHintsForNode(SNodeOperations.getPointer(node));
 
       editorContext.getEditorComponent().getUpdater().clearExplicitHints();
 
       if (explicitEditorHintsForNode == null || explicitEditorHintsForNode.length == 0) {
 
-        editorContext.getEditorComponent().getUpdater().addExplicitEditorHintsForNode(node.getReference(), new String[]{"jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular"});
+        editorContext.getEditorComponent().getUpdater().addExplicitEditorHintsForNode(SNodeOperations.getPointer(node), new String[]{"jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular"});
       } else {
-        editorContext.getEditorComponent().getUpdater().addExplicitEditorHintsForNode(node.getReference(), new String[]{});
+        editorContext.getEditorComponent().getUpdater().addExplicitEditorHintsForNode(SNodeOperations.getPointer(node), new String[]{});
       }
       editorContext.getEditorComponent().getUpdater().update();
     }

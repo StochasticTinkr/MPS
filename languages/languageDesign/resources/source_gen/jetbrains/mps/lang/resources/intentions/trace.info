@@ -72,6 +72,10 @@
       <unit id="3524064283240511589" at="43,0,60,0" name="jetbrains.mps.lang.resources.intentions.Icon2Resource_Intention$IntentionImplementation" />
       <unit id="3524064283240511589" at="20,0,61,0" name="jetbrains.mps.lang.resources.intentions.Icon2Resource_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="3524064283240511589" at="37,47,38,56" concept="1" />
+      <node id="3524064283240511589" at="50,52,51,42" concept="1" />
+    </file>
   </root>
 </debug-info>
 

@@ -13,6 +13,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)/1196267612159">
+    <file name="TypesystemDescriptor.java">
+      <node id="1196267612159" at="19,5,20,89" concept="4" />
+      <node id="1196267612159" at="20,89,21,47" concept="2" />
+      <node id="1196267612159" at="18,5,22,5" concept="0" />
+      <scope id="1196267612159" at="19,5,21,47">
+        <var name="inferenceRule" id="1196267612159" />
+      </scope>
+    </file>
     <file name="typeof_ComplexExpression_InferenceRule.java">
       <node id="1196268989250" at="21,5,22,214" concept="4" />
       <node id="1196268989250" at="22,214,23,200" concept="4" />
@@ -60,6 +68,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)/1196422182398">
+    <file name="TypesystemDescriptor.java">
+      <node id="1196422182398" at="27,5,28,95" concept="4" />
+      <node id="1196422182398" at="28,95,29,47" concept="2" />
+      <node id="1196422182398" at="26,5,30,5" concept="0" />
+      <scope id="1196422182398" at="27,5,29,47">
+        <var name="inferenceRule" id="1196422182398" />
+      </scope>
+    </file>
     <file name="typeof_DegreeComplexExpression_InferenceRule.java">
       <node id="381326360563794655" at="21,5,22,53" concept="4" />
       <node id="381326360563794655" at="22,53,23,205" concept="4" />
@@ -125,6 +141,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)/1196427128503">
+    <file name="TypesystemDescriptor.java">
+      <node id="1196427128503" at="51,5,52,84" concept="4" />
+      <node id="1196427128503" at="52,84,53,47" concept="2" />
+      <node id="1196427128503" at="50,5,54,5" concept="0" />
+      <scope id="1196427128503" at="51,5,53,47">
+        <var name="subtypingRule" id="1196427128503" />
+      </scope>
+    </file>
     <file name="subtype_ComplexType_SubtypingRule.java">
       <node id="1196427154993" at="18,120,19,47" concept="5" />
       <node id="1196427128503" at="21,50,22,149" concept="5" />
@@ -204,8 +228,24 @@
       <scope id="1196434498632" at="32,0,39,0" />
       <unit id="1196434481781" at="17,0,40,0" name="jetbrains.mps.samples.complex.typesystem.Complex_is_Numeric_SubtypingRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="1196434481781" at="43,5,44,83" concept="4" />
+      <node id="1196434481781" at="44,83,45,47" concept="2" />
+      <node id="1196434481781" at="42,5,46,5" concept="0" />
+      <scope id="1196434481781" at="43,5,45,47">
+        <var name="subtypingRule" id="1196434481781" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)/1196436222736">
+    <file name="TypesystemDescriptor.java">
+      <node id="1196436222736" at="35,5,36,85" concept="4" />
+      <node id="1196436222736" at="36,85,37,47" concept="2" />
+      <node id="1196436222736" at="34,5,38,5" concept="0" />
+      <scope id="1196436222736" at="35,5,37,47">
+        <var name="inferenceRule" id="1196436222736" />
+      </scope>
+    </file>
     <file name="typeof_ImaginaryUnit_InferenceRule.java">
       <node id="1196436242603" at="20,5,21,53" concept="4" />
       <node id="1196436242603" at="21,53,22,200" concept="4" />
@@ -253,6 +293,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)/381326360563851979">
+    <file name="TypesystemDescriptor.java">
+      <node id="381326360563851979" at="15,5,16,85" concept="4" />
+      <node id="381326360563851979" at="16,85,17,47" concept="2" />
+      <node id="381326360563851979" at="14,5,18,5" concept="0" />
+      <scope id="381326360563851979" at="15,5,17,47">
+        <var name="inferenceRule" id="381326360563851979" />
+      </scope>
+    </file>
     <file name="typeof_ArgExpression_InferenceRule.java">
       <node id="381326360563853005" at="20,5,21,55" concept="4" />
       <node id="381326360563853005" at="21,55,22,205" concept="4" />
@@ -300,6 +348,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)/381326360563855902">
+    <file name="TypesystemDescriptor.java">
+      <node id="381326360563855902" at="23,5,24,98" concept="4" />
+      <node id="381326360563855902" at="24,98,25,47" concept="2" />
+      <node id="381326360563855902" at="22,5,26,5" concept="0" />
+      <scope id="381326360563855902" at="23,5,25,47">
+        <var name="inferenceRule" id="381326360563855902" />
+      </scope>
+    </file>
     <file name="typeof_ConjugateComplexExpression_InferenceRule.java">
       <node id="381326360563857201" at="20,5,21,68" concept="4" />
       <node id="381326360563857201" at="21,68,22,205" concept="4" />
@@ -347,6 +403,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)/381326360563857384">
+    <file name="TypesystemDescriptor.java">
+      <node id="381326360563857384" at="31,5,32,84" concept="4" />
+      <node id="381326360563857384" at="32,84,33,47" concept="2" />
+      <node id="381326360563857384" at="30,5,34,5" concept="0" />
+      <scope id="381326360563857384" at="31,5,33,47">
+        <var name="inferenceRule" id="381326360563857384" />
+      </scope>
+    </file>
     <file name="typeof_ImExpression_InferenceRule.java">
       <node id="381326360563858323" at="20,5,21,54" concept="4" />
       <node id="381326360563858323" at="21,54,22,205" concept="4" />
@@ -394,6 +458,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)/381326360563858780">
+    <file name="TypesystemDescriptor.java">
+      <node id="381326360563858780" at="39,5,40,84" concept="4" />
+      <node id="381326360563858780" at="40,84,41,47" concept="2" />
+      <node id="381326360563858780" at="38,5,42,5" concept="0" />
+      <scope id="381326360563858780" at="39,5,41,47">
+        <var name="inferenceRule" id="381326360563858780" />
+      </scope>
+    </file>
     <file name="typeof_ReExpression_InferenceRule.java">
       <node id="381326360563859212" at="20,5,21,54" concept="4" />
       <node id="381326360563859212" at="21,54,22,205" concept="4" />
@@ -441,6 +513,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)/5584396657092301806">
+    <file name="TypesystemDescriptor.java">
+      <node id="5584396657092301806" at="11,5,12,85" concept="4" />
+      <node id="5584396657092301806" at="12,85,13,47" concept="2" />
+      <node id="5584396657092301806" at="10,33,14,5" concept="0" />
+      <scope id="5584396657092301806" at="11,5,13,47">
+        <var name="inferenceRule" id="5584396657092301806" />
+      </scope>
+    </file>
     <file name="typeof_AbsExpression_InferenceRule.java">
       <node id="5584396657092302817" at="20,5,21,55" concept="4" />
       <node id="5584396657092302817" at="21,55,22,206" concept="4" />
@@ -526,6 +606,14 @@
       </scope>
       <scope id="7587029747152134041" at="31,0,38,0" />
       <unit id="7587029747152134035" at="16,0,39,0" name="jetbrains.mps.samples.complex.typesystem.Complex_is_Object_weak_SubtypingRule" />
+    </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="7587029747152134035" at="47,5,48,87" concept="4" />
+      <node id="7587029747152134035" at="48,87,49,47" concept="2" />
+      <node id="7587029747152134035" at="46,5,50,5" concept="0" />
+      <scope id="7587029747152134035" at="47,5,49,47">
+        <var name="subtypingRule" id="7587029747152134035" />
+      </scope>
     </file>
   </root>
 </debug-info>

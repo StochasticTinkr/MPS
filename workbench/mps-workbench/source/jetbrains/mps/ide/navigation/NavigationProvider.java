@@ -32,4 +32,9 @@ public interface NavigationProvider {
   boolean openField(String projectPath, String className, String name);
 
   boolean openConstructor(String projectPath, String className, int parameterCount);
+
+  default boolean navigate(String projectPath, String fileName, int startLine, int startPosition, int endLine, int endPosition){
+    //body can be removed after 2018.1
+    return false;
+  }
 }

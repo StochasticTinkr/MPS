@@ -12,10 +12,9 @@ import java.util.List;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -172,17 +171,34 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      return (editorContext.getSelectedCell() instanceof EditorCell_Property) && PatternAddingUtil.isPatternApplicable(editorContext);
+      EditorCell selectedCell = editorContext.getSelectedCell();
+      return check_3nxerd_a0a1a0d(check_3nxerd_a0a0b0a3(check_3nxerd_a0a0a1a0d(selectedCell))) != null && PatternAddingUtil.isPatternApplicable(editorContext);
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      EditorCell_Property cell = (EditorCell_Property) editorContext.getSelectedCell();
-      PropertyAccessor acc = (PropertyAccessor) cell.getModelAccessor();
-      String propertyName = (acc).getPropertyName();
-      SProperty p = ((ConceptMetaInfoConverter) cell.getSNode().getConcept()).convertProperty(propertyName);
-      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), p), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")));
+      EditorCell cell = editorContext.getSelectedCell();
+      SProperty property = cell.getCellContext().getPropertyInfo().getProperty();
+      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), property), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")));
     }
     public String getKeyStroke() {
       return " $";
+    }
+    private static SProperty check_3nxerd_a0a1a0d(SPropertyInfo checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getProperty();
+      }
+      return null;
+    }
+    private static SPropertyInfo check_3nxerd_a0a0b0a3(EditorCellContext checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getPropertyInfo();
+      }
+      return null;
+    }
+    private static EditorCellContext check_3nxerd_a0a0a1a0d(EditorCell checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getCellContext();
+      }
+      return null;
     }
   }
   public static class _PatternExpression_KeyMap_Action4 extends KeyMapActionImpl {
@@ -351,8 +367,7 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       if (!(selectedCell.isReferenceCell())) {
         return;
       }
-      String role = selectedCell.getRole();
-      SReferenceLink ref = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(contextNode)).convertAssociation(role);
+      SReferenceLink ref = (SReferenceLink) selectedCell.getSRole();
       if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"))) {
         SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
         assert attributedNode != null;

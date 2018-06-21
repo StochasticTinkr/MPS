@@ -22,8 +22,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0h = concept;
-    switch (index_846f5o_a0h.index(cncpt_a0h)) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         return myConsoleModelExpression__BehaviorDescriptor;
       case 1:
@@ -36,5 +36,5 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     }
     return null;
   }
-  private static final ConceptSwitchIndex index_846f5o_a0h = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x995a73947f764b8bL, 0xa929c53448708106L, 0x4d7759afcea851bdL), MetaIdFactory.conceptId(0x995a73947f764b8bL, 0xa929c53448708106L, 0x7a89354654722219L), MetaIdFactory.conceptId(0x995a73947f764b8bL, 0xa929c53448708106L, 0x75bb0160f191dd31L), MetaIdFactory.conceptId(0x995a73947f764b8bL, 0xa929c53448708106L, 0x75bb0160f191df0cL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x995a73947f764b8bL, 0xa929c53448708106L, 0x4d7759afcea851bdL), MetaIdFactory.conceptId(0x995a73947f764b8bL, 0xa929c53448708106L, 0x7a89354654722219L), MetaIdFactory.conceptId(0x995a73947f764b8bL, 0xa929c53448708106L, 0x75bb0160f191dd31L), MetaIdFactory.conceptId(0x995a73947f764b8bL, 0xa929c53448708106L, 0x75bb0160f191df0cL)).seal();
 }

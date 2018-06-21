@@ -42,7 +42,6 @@ public class IntentionTester {
   public void invokeMatchingIntention(final SNode node, final Condition<IntentionExecutable> intentionCondition) throws InterruptedException, InvocationTargetException {
     myEditorTest.runUndoableCommandInEDTAndWait(new Runnable() {
       public void run() {
-        myEditorTest.getEditorContext().select(node);
         Pair<IntentionExecutable, SNode> singleMatch = getSingleMatchingIntention(node, intentionCondition);
         singleMatch.o1.execute(singleMatch.o2, myEditorTest.getEditorContext());
       }

@@ -27,10 +27,6 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
   }
 
   @Override
-  public boolean hasBuilders() {
-    return false;
-  }
-  @Override
   public Collection<PasteWrapper> getPasteWrappers() {
     return Arrays.asList(new PasteWrapper[]{new blExpression_PasteWrapper_0(), new blExpression_PasteWrapper_1(), new blExpression_PasteWrapper_2()});
   }

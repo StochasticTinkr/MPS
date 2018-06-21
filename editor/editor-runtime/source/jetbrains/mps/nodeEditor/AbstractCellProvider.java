@@ -23,28 +23,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class AbstractCellProvider {
-  // TODO: make @NotNull after MPS 3.5
+  @NotNull
   private SNode myNode;
 
   public AbstractCellProvider(@NotNull SNode node) {
     myNode = node;
   }
 
-  /**
-   * @deprecated Since MPS 3.5 use {@link #AbstractCellProvider(SNode)} instead
-   */
-  @Deprecated
-  public AbstractCellProvider() {
-  }
-
-  /**
-   * @deprecated Since MPS 3.5 create new instance of AbstractCellProvider instead
-   */
-  @Deprecated
-  public void setSNode(SNode node) {
-    myNode = node;
-  }
-
+  @NotNull
   public SNode getSNode() {
     return myNode;
   }

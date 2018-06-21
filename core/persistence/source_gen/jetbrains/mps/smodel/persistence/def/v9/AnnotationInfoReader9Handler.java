@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.persistence.def.LineContentAccumulator;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent>> {
   private AnnotationInfoReader9Handler.ModelElementHandler modelHandler = new AnnotationInfoReader9Handler.ModelElementHandler();
@@ -281,13 +283,13 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       return super.createChild(resultObject, tagName, attrs);
     }
     private void handleChild_7167172773708891038(Object resultObject, Object value) throws SAXException {
-      String child = (String) value;
+      SProperty child = (SProperty) value;
       if (child != null) {
         my_accumulatorField.saveProperty(child, myLocator);
       }
     }
     private void handleChild_7167172773708891052(Object resultObject, Object value) throws SAXException {
-      String child = (String) value;
+      SReferenceLink child = (SReferenceLink) value;
       if (child != null) {
         my_accumulatorField.saveReference(child, myLocator);
       }
@@ -302,8 +304,8 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       setRequiredAttributes("role");
     }
     @Override
-    protected String createObject(Attributes attrs) throws SAXException {
-      return my_readHelperParam.readProperty(attrs.getValue("role")).getName();
+    protected SProperty createObject(Attributes attrs) throws SAXException {
+      return my_readHelperParam.readProperty(attrs.getValue("role"));
     }
   }
   public class ReferenceElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
@@ -311,8 +313,8 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       setRequiredAttributes("role");
     }
     @Override
-    protected String createObject(Attributes attrs) throws SAXException {
-      return my_readHelperParam.readAssociation(attrs.getValue("role")).getRoleName();
+    protected SReferenceLink createObject(Attributes attrs) throws SAXException {
+      return my_readHelperParam.readAssociation(attrs.getValue("role"));
     }
   }
   public class DefaultElementHandler extends AnnotationInfoReader9Handler.ElementHandler {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,9 +19,11 @@ import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
  * Holds parameters global for particular generation activity/task. Similar to {@link jetbrains.mps.generator.GenerationSessionContext} which
@@ -69,5 +71,21 @@ public final class GenControllerContext {
 
   public CrossModelEnvironment getCrossModelEnvironment() {
     return myCrossModelEnvironment;
+  }
+
+  /**
+   * @return never {@code null}
+   */
+  public LanguageRegistry getLanguageRegistry() {
+    // FIXME pass LanguageRegistry or (better yet) ComponentHost to GenerationFacade and then here, into this class
+    return LanguageRegistry.getInstance(myRepository);
+  }
+
+  /**
+   * @return never {@code null}
+   */
+  public PersistenceFacade getPersistenceFacade() {
+    // FIXME same as getLanguageRegistry
+    return PersistenceFacade.getInstance();
   }
 }

@@ -10,8 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.util.Objects;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -29,7 +30,7 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
     Iterable<SNode> allSuperConcepts = AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(conceptDeclaration, ((boolean) false));
     boolean isStub = Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return Objects.equals(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "155087542027447621"));
+        return SNodeOperations.is(it, new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "155087542027447621"));
       }
     });
     if (isStub) {
@@ -38,11 +39,11 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
 
     if (Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return Objects.equals(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1319728274784973096"));
+        return SNodeOperations.is(it, new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1319728274784973096"));
       }
     }) && Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return Objects.equals(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1319728274783077719")) || Objects.equals(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "6999738288738427190"));
+        return SNodeOperations.is(it, new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1319728274783077719")) || SNodeOperations.is(it, new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "6999738288738427190"));
       }
     })) {
       {
@@ -53,7 +54,7 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
 
     boolean isInterfacePart = Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return Objects.equals(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1319728274784973096"));
+        return SNodeOperations.is(it, new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1319728274784973096"));
       }
     });
     if (isInterfacePart) {
@@ -61,7 +62,7 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
     }
     if (Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return Objects.equals(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "6999738288738427190"));
+        return SNodeOperations.is(it, new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "6999738288738427190"));
       }
     })) {
       final String stubName = "Stub" + SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));

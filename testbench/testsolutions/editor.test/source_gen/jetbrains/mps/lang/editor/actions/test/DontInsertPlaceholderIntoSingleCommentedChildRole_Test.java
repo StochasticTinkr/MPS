@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class DontInsertPlaceholderIntoSingleCommentedChildRole_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class DontInsertPlaceholderIntoSingleCommentedChildRole_Test extends Base
 
   @Test
   public void test_DontInsertPlaceholderIntoSingleCommentedChildRole() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.actions.test.DontInsertPlaceholderIntoSingleCommentedChildRole_Test$TestBody", "testMethod", false);
+    new DontInsertPlaceholderIntoSingleCommentedChildRole_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3766420342434348914", "3766420342434349011");

@@ -20,6 +20,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_I3;
   private ConceptPresentation props_I4;
   private ConceptPresentation props_I5;
+  private ConceptPresentation props_IA;
+  private ConceptPresentation props_IB;
+  private ConceptPresentation props_P;
+  private ConceptPresentation props_Q;
+  private ConceptPresentation props_R;
 
   @Override
   @Nullable
@@ -97,6 +102,39 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_I5 = cpb.create();
         }
         return props_I5;
+      case LanguageConceptSwitch.IA:
+        if (props_IA == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IA = cpb.create();
+        }
+        return props_IA;
+      case LanguageConceptSwitch.IB:
+        if (props_IB == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IB = cpb.create();
+        }
+        return props_IB;
+      case LanguageConceptSwitch.P:
+        if (props_P == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("P");
+          props_P = cpb.create();
+        }
+        return props_P;
+      case LanguageConceptSwitch.Q:
+        if (props_Q == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Q");
+          props_Q = cpb.create();
+        }
+        return props_Q;
+      case LanguageConceptSwitch.R:
+        if (props_R == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("R");
+          props_R = cpb.create();
+        }
+        return props_R;
     }
     return null;
   }

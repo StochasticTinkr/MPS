@@ -34,7 +34,7 @@ public enum DependencyCellState {
    * Engaged generator entry that might need attention as the language is directly in use by the model
    */
   SUPERFLUOUS_ENGAGED(
-      NORMAL.getTextAttributes().derive(SimpleTextAttributes.STYLE_WAVED, null, null, fromPlatform(CodeInsightColors.WARNINGS_ATTRIBUTES).getEffectColor()),
+      NORMAL.getTextAttributes().derive(SimpleTextAttributes.STYLE_WAVED, null, null, fromPlatform(CodeInsightColors.WARNINGS_ATTRIBUTES).getErrorStripeColor()),
       "Language is used by the model directly, no need to engage it explicitly"),
 
   /**

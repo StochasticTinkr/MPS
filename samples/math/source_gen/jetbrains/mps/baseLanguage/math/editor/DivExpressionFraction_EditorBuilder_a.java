@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -44,20 +45,20 @@ import jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ksgn1c_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ksgn1c_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ksgn1c_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createEmpty_ksgn1c_a0());
-    editorCell.addEditorCell(createCollection_ksgn1c_b0());
-    editorCell.addEditorCell(createEmpty_ksgn1c_c0());
+    setCellContext(editorCell);
+    editorCell.addEditorCell(createEmpty_0());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createEmpty_1());
     return editorCell;
   }
-  private EditorCell createEmpty_ksgn1c_a0() {
+  private EditorCell createEmpty_0() {
     EditorCell_Empty editorCell = new EditorCell_Empty(getEditorContext(), myNode);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
@@ -67,19 +68,19 @@ import jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createCollection_ksgn1c_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_ksgn1c_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createRefNode_ksgn1c_a1a());
-    editorCell.addEditorCell(createCustom_ksgn1c_b1a());
-    editorCell.addEditorCell(createRefNode_ksgn1c_c1a());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createCustom_0());
+    editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
-  private EditorCell createRefNode_ksgn1c_a1a() {
+  private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new DivExpressionFraction_EditorBuilder_a.numeratorSingleRoleHandler_ksgn1c_a1a(myNode, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x1200914977fL, "numerator"), getEditorContext());
     return provider.createCell();
   }
@@ -102,18 +103,18 @@ import jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider;
       EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x1200914977fL, "numerator"), child));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x1200914977fL, "numerator"), child));
-      installCellInfo(child, editorCell);
+      installCellInfo(child, editorCell, false);
       return editorCell;
     }
 
 
 
-    private void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell, boolean isEmpty) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x1200914977fL, "numerator"), child));
+        editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("numerator");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x1200914977fL, "numerator"));
       }
       delete_numerator.setCellActions(editorCell, getNode(), getEditorContext());
     }
@@ -124,7 +125,7 @@ import jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider;
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_numerator");
-        installCellInfo(null, editorCell);
+        installCellInfo(null, editorCell, true);
         setCellContext(editorCell);
         return editorCell;
       } finally {
@@ -135,7 +136,7 @@ import jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider;
       return "<no numerator>";
     }
   }
-  private EditorCell createCustom_ksgn1c_b1a() {
+  private EditorCell createCustom_0() {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<HLineCellProvider>() {
       public HLineCellProvider invoke() {
         return new HLineCellProvider(myNode);
@@ -148,7 +149,7 @@ import jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createRefNode_ksgn1c_c1a() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new DivExpressionFraction_EditorBuilder_a.denominatorSingleRoleHandler_ksgn1c_c1a(myNode, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x12009149b1aL, "denominator"), getEditorContext());
     return provider.createCell();
   }
@@ -171,18 +172,18 @@ import jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider;
       EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x12009149b1aL, "denominator"), child));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x12009149b1aL, "denominator"), child));
-      installCellInfo(child, editorCell);
+      installCellInfo(child, editorCell, false);
       return editorCell;
     }
 
 
 
-    private void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell, boolean isEmpty) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x12009149b1aL, "denominator"), child));
+        editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("denominator");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x12009149b1aL, "denominator"));
       }
       delete_denominator.setCellActions(editorCell, getNode(), getEditorContext());
     }
@@ -193,7 +194,7 @@ import jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider;
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_denominator");
-        installCellInfo(null, editorCell);
+        installCellInfo(null, editorCell, true);
         setCellContext(editorCell);
         return editorCell;
       } finally {
@@ -204,7 +205,7 @@ import jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider;
       return "<no denominator>";
     }
   }
-  private EditorCell createEmpty_ksgn1c_c0() {
+  private EditorCell createEmpty_1() {
     EditorCell_Empty editorCell = new EditorCell_Empty(getEditorContext(), myNode);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));

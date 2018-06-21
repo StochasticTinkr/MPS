@@ -23,7 +23,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.findusages.model.scopes.GlobalScope;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -79,7 +79,7 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
 
         modelAccess.runReadAction(new Runnable() {
           public void run() {
-            concepts.value = FindUtils.getSearchResults(new EmptyProgressMonitor(), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1071489090640"), new GlobalScope(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
+            concepts.value = FindUtils.getSearchResults(new EmptyProgressMonitor(), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1071489090640"), new ProjectScope(((MPSProject) MapSequence.fromMap(_params).get("project"))), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
             results.value = ListSequence.fromList(((List<SearchResult<SNode>>) concepts.value.getSearchResults())).where(new IWhereFilter<SearchResult<SNode>>() {
               public boolean accept(SearchResult<SNode> it) {
                 SNode node = (SNode) it.getObject();

@@ -35,6 +35,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.junit.Assert;
 import org.junit.Test;
@@ -140,9 +141,17 @@ public class ModuleIDETests extends ModuleInProjectTest {
         (moduleName, module) -> {
           Assert.assertTrue(module instanceof Language);
           // Runtime and sandbox solutions must be renamed
+          runtimeSolution[0] = (Solution) myProject.getRepository().getModule(runtimeSolution[0].getModuleId());
+          Assert.assertNotNull(runtimeSolution[0]);
           Assert.assertTrue(runtimeSolution[0].getModuleName().contains(moduleName));
+
+          sandboxSolution[0] = (Solution) myProject.getRepository().getModule(sandboxSolution[0].getModuleId());
+          Assert.assertNotNull(sandboxSolution[0]);
           Assert.assertTrue(sandboxSolution[0].getModuleName().contains(moduleName));
+
           // Unexpected solution must not be renamed
+          someUnexpectedSolution[0] = (Solution) myProject.getRepository().getModule(someUnexpectedSolution[0].getModuleId());
+          Assert.assertNotNull(someUnexpectedSolution[0]);
           Assert.assertTrue(!someUnexpectedSolution[0].getModuleName().contains(moduleName));
         });
   }
@@ -203,18 +212,23 @@ public class ModuleIDETests extends ModuleInProjectTest {
 
       // If module name is not equals to folder name, that folder should not be renamed
       boolean mustBeMoved = module.getModuleName().equals(module.getModuleSourceDir().getName());
+      final SModuleId moduleId = module.getModuleId();
 
       try {
-        Renamer.renameModuleWithSubModules(module, newModuleName, subModules);
+        Renamer.renameModuleWithSubModules(module, newModuleName, subModules, myProject);
       } catch (DescriptorTargetFileAlreadyExistsException e) {
         throw new RuntimeException(e);
       }
+
+      // Module is reloaded after rename, so need to update reference
+      module = (AbstractModule) myProject.getRepository().getModule(moduleId);
+      Assert.assertNotNull("Renamed module was not found in project repository by SModuleId", module);
 
       // Check module itself and descriptor file rename
       Assert.assertEquals(newModuleName, module.getModuleName());
       IFile descriptorFile = module.getDescriptorFile();
       Assert.assertNotNull(descriptorFile);
-      String fileName = descriptorFile.toPath().getFileName();
+      String fileName = descriptorFile.path().getFileName();
       Assert.assertNotNull(fileName);
       Assert.assertTrue(fileName.contains(newModuleName));
 
@@ -335,7 +349,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
     invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
       try {
-        Renamer.renameModule(lang, newModuleName);
+        Renamer.renameModule(lang, newModuleName, myProject);
       } catch (DescriptorTargetFileAlreadyExistsException e) {
         throw new RuntimeException(e);
       }
@@ -360,7 +374,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
       saveProjectInTest();
       projectBackup.doBackup();
       try {
-        Renamer.renameModule(lang, newModuleName);
+        Renamer.renameModule(lang, newModuleName, myProject);
       } catch (DescriptorTargetFileAlreadyExistsException e) {
         throw new RuntimeException(e);
       }

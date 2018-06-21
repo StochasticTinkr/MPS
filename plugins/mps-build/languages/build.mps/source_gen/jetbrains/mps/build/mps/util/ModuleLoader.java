@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.vfs.openapi.FileSystem;
+import jetbrains.mps.project.io.DescriptorIOFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -32,6 +33,7 @@ public final class ModuleLoader {
   private final Context myBuildContext;
   private final IMessageHandler myMsgHandler;
   private FileSystem myFS;
+  private final DescriptorIOFacade myDescriptorIO;
 
   public ModuleLoader(@NotNull SNode buildProject, @Nullable TemplateQueryContext genContext, IMessageHandler msgHandler) {
     myBuildProject = buildProject;
@@ -42,6 +44,8 @@ public final class ModuleLoader {
     myMsgHandler = msgHandler;
     // TODO enforce outer code to specify FS to avoid singleton access 
     myFS = jetbrains.mps.vfs.FileSystem.getInstance();
+    // TODO need access to plafrom to obtain DescriptorIOFacade instance, or supply from caller. 
+    myDescriptorIO = DescriptorIOFacade.getInstance();
   }
 
   public ModuleLoader useFileSystem(jetbrains.mps.vfs.FileSystem fs) {
@@ -94,7 +98,7 @@ public final class ModuleLoader {
     ModuleDescriptor md = null;
     try {
       MacroHelper helper = new ModuleLoaderUtils.ModuleMacroHelper(file.getParent(), myBuildContext, myBuildProject, myMsgHandler);
-      md = ModuleLoaderUtils.loadModuleDescriptor(file, helper);
+      md = myDescriptorIO.readFromModuleFile(helper, file);
       if (md.getLoadException() != null) {
         reportError(String.format("cannot import module file for %s: exception: %s", SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), md.getLoadException().getMessage()), module);
       }

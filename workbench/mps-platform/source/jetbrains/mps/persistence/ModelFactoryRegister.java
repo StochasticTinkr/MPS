@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.util.xmlb.annotations.Attribute;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
-import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
@@ -32,9 +31,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.NotImplementedModelFactoryType;
-import org.jetbrains.mps.openapi.persistence.NullDataSource.NullDataSourceType;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +40,7 @@ import java.util.List;
  * A platform extension point to client custom model factories
  * delegates to the {@link ModelFactoryService}
  * The legacy persistence facade registration eventually triggers the registration in the {@link ModelFactoryService}.
+ * XXX perhaps, shall merge with PersistenceComponent, both just populate PersistenceRegistry with extensions
  */
 @Internal
 public final class ModelFactoryRegister implements ApplicationComponent {

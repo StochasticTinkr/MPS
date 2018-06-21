@@ -18,9 +18,10 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.project.MPSProject;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -61,10 +62,10 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
 
   @Override
   protected List<SNodeReference> collectCandidates(final ProgressMonitor progress) {
-    final SRepository repo = ProjectHelper.getProjectRepository(myProject);
-    return new ModelAccessHelper(repo).runReadAction(new Computable<List<SNodeReference>>() {
+    final MPSProject mpsProject = ProjectHelper.fromIdeaProject(myProject);
+    return new ModelAccessHelper(mpsProject.getRepository()).runReadAction(new Computable<List<SNodeReference>>() {
       public List<SNodeReference> compute() {
-        Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin")), false, progress);
+        Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(new ProjectScope(mpsProject), Collections.singleton(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin")), false, progress);
         List<SNodeReference> rv = ListSequence.fromList(new ArrayList<SNodeReference>());
         for (SNode node : SetSequence.fromSet(usages)) {
           ListSequence.fromList(rv).addElement(node.getReference());

@@ -62,9 +62,6 @@ public final class TestParametersCache implements TestRule {
     myInitialized = true;
   }
 
-  public void populate() {
-  }
-
   public Project getProject() {
     return myProject;
   }

@@ -10,6 +10,7 @@ import java.util.Map;
 import jetbrains.mps.ide.devkit.generator.GenerationTracerViewTool;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -34,7 +35,7 @@ public class ShowGenerationTrace_Action extends BaseAction {
     if ((event.getData(MPSCommonDataKeys.NODE) == null) || tool == null) {
       disable(event.getPresentation());
     } else {
-      setEnabledState(event.getPresentation(), tool.hasTraceInputData(SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE)).getReference()));
+      setEnabledState(event.getPresentation(), tool.hasTraceInputData(SModelOperations.getPointer(SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE)))));
     }
   }
   @Override

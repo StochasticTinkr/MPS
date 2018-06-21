@@ -49,7 +49,7 @@ public class MPSJavaDirectInheritorsSearcher extends QueryExecutorBase<PsiClass,
   }
 
   @Override
-  public void processQuery(@NotNull SearchParameters queryParameters, final @NotNull Processor<PsiClass> consumer) {
+  public void processQuery(@NotNull SearchParameters queryParameters, @NotNull Processor<? super PsiClass> consumer) {
     // TODO implement: return all MPS classes extending queryParameters.getClassToProcess()
     // TODO use ref index
 
@@ -68,7 +68,7 @@ public class MPSJavaDirectInheritorsSearcher extends QueryExecutorBase<PsiClass,
     for (Module module : ModuleManager.getInstance(project).getModules()) {
       if (!scope.isSearchInModuleContent(module)) continue;
       MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
-      if (facet == null) continue;
+      if (facet == null || facet.getSolution() == null) continue;
 
       final Solution facetSolution = facet.getSolution();
       ProjectHelper.getModelAccess(project).runReadAction(new Runnable() {
@@ -78,9 +78,10 @@ public class MPSJavaDirectInheritorsSearcher extends QueryExecutorBase<PsiClass,
             for (SNode root : model.getRootNodes()) {
               for (SNode claz : SNodeOperations.getNodeAncestors(root, SNodeUtil.concept_Classifier, true)) {
                 PsiElement psiElem = MPSPsiProvider.getInstance(project).getPsi(claz);
-                // not our real project MPS node, probably stub
-                if (!(psiElem instanceof MPSPsiNode)) continue; // should skip all model
-                assert psiElem instanceof PsiClass;
+                // not our real project MPS node, probably stub OR not a known kind of Classifier
+                if (!(psiElem instanceof MPSPsiNode) || !(psiElem instanceof PsiClass)) {
+                  continue; // should skip all model
+                }
 
                 PsiClass psiClas = (PsiClass) psiElem;
 

@@ -17,47 +17,49 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0b = ((SAbstractConcept) concept);
-    switch (index_vhxjlb_a0b.index(cncpt_a0b)) {
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (conceptIndex.index(cncpt)) {
       case 0:
-        return Collections.<IDataFlowBuilder>singletonList(new AbstractTypeCastExpression_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new AbstractPointerResolveOperation_DataFlow());
       case 1:
-        return Collections.<IDataFlowBuilder>singletonList(new AttributeAccess_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new AbstractTypeCastExpression_DataFlow());
       case 2:
-        return Collections.<IDataFlowBuilder>singletonList(new ConceptSwitchStatement_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new AttributeAccess_DataFlow());
       case 3:
-        return Collections.<IDataFlowBuilder>singletonList(new Concept_IsSubConceptOfOperation_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new ConceptSwitchStatement_DataFlow());
       case 4:
-        return Collections.<IDataFlowBuilder>singletonList(new Concept_IsSuperConceptOfOperation_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new Concept_IsSubConceptOfOperation_DataFlow());
       case 5:
-        return Collections.<IDataFlowBuilder>singletonList(new ExactConceptCase_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new Concept_IsSuperConceptOfOperation_DataFlow());
       case 6:
-        return Collections.<IDataFlowBuilder>singletonList(new IfInstanceOfStatement_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new ExactConceptCase_DataFlow());
       case 7:
-        return Collections.<IDataFlowBuilder>singletonList(new IfInstanceOfVarReference_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new IfInstanceOfStatement_DataFlow());
       case 8:
-        return Collections.<IDataFlowBuilder>singletonList(new LinkAttributeQualifier_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new IfInstanceOfVarReference_DataFlow());
       case 9:
-        return Collections.<IDataFlowBuilder>singletonList(new ModelReferenceExpression_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new LinkAttributeQualifier_DataFlow());
       case 10:
-        return Collections.<IDataFlowBuilder>singletonList(new Node_IsInstanceOfOperation_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new ModelReferenceExpression_DataFlow());
       case 11:
-        return Collections.<IDataFlowBuilder>singletonList(new OfConceptOperation_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new Node_IsInstanceOfOperation_DataFlow());
       case 12:
-        return Collections.<IDataFlowBuilder>singletonList(new OperationParm_Concept_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new OfConceptOperation_DataFlow());
       case 13:
-        return Collections.<IDataFlowBuilder>singletonList(new PoundExpression_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new OperationParm_Concept_DataFlow());
       case 14:
-        return Collections.<IDataFlowBuilder>singletonList(new PropertyAttributeQualifier_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new PoundExpression_DataFlow());
       case 15:
-        return Collections.<IDataFlowBuilder>singletonList(new SNodeOperation_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new PropertyAttributeQualifier_DataFlow());
       case 16:
-        return Collections.<IDataFlowBuilder>singletonList(new SemanticDowncastExpression_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new SNodeOperation_DataFlow());
       case 17:
+        return Collections.<IDataFlowBuilder>singletonList(new SemanticDowncastExpression_DataFlow());
+      case 18:
         return Collections.<IDataFlowBuilder>singletonList(new SubconceptCase_DataFlow());
       default:
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }
-  private static final ConceptSwitchIndex index_vhxjlb_a0b = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045a3b2L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f42dL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112bf601180L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112bf289d94L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x53cfca750a909c64L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1a228da1357e4a44L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1a228da1357fca73L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b7L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10956bb6029L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x412437525e297780L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61caab68L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11885c0d945L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045c9b9L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f432L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x386b28659aca029dL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045a3b2L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f42dL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112bf601180L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112bf289d94L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x53cfca750a909c64L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1a228da1357e4a44L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1a228da1357fca73L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b7L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10956bb6029L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x412437525e297780L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61caab68L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11885c0d945L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045c9b9L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f432L)).seal();
 }

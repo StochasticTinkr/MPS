@@ -213,68 +213,13 @@ public class BaseConstraintsDescriptor implements ConstraintsDescriptor {
     return myDefaultScopeConstraint.invoke(ConstraintContext_DefaultScopeProvider.getInstance(), null);
   }
 
-  @Override
-  public String getAlternativeIcon(SNode node) {
-    return null;
-  }
-
   @Nullable
   @Override
   public IconResource getInstanceIcon(SNode node) {
-    //compatibility code introduced before 3.4
-    //we can remove this code when users migrate to new method in constraints
-    return new MyIconResource(node);
+    return null;
   }
 
   public SAbstractConcept getDefaultConcreteConcept() {
     return myConcept;
-  }
-
-  private class MyIconResource extends IconResource {
-    private final SNode myNode;
-
-    public MyIconResource(SNode node) {
-      super("", null);
-      myNode = node;
-    }
-
-    @Override
-    public InputStream getResource() {
-      String iconPath = MacrosFactory.forModule((AbstractModule) myNode.getConcept().getDeclarationNode().getModel().getModule()).expandPath(
-          getAlternativeIcon(myNode));
-      if (iconPath == null) {
-        return null;
-      }
-
-      IFile file = FileSystem.getInstance().getFileByPath(iconPath);
-      if (!file.exists()) {
-        return null;
-      }
-      try {
-        return file.openInputStream();
-      } catch (IOException e) {
-        return null;
-      }
-    }
-
-    @Override
-    public boolean equals(Object o) {
-      if (this == o) {
-        return true;
-      }
-      if (o == null || getClass() != o.getClass()) {
-        return false;
-      }
-
-      MyIconResource that = (MyIconResource) o;
-      return myNode == that.myNode;
-    }
-
-    @Override
-    public int hashCode() {
-      int result = super.hashCode();
-      result = 31 * result + (myNode != null ? myNode.hashCode() : 0);
-      return result;
-    }
   }
 }

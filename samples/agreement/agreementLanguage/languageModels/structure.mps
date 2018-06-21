@@ -327,6 +327,9 @@
       <property role="IQ2ns" value="1112311143032" />
       <ref role="20lvS9" node="gbsarEy" resolve="AccountType" />
     </node>
+    <node concept="PrWs8" id="67wnfVkG0M4" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
   </node>
   <node concept="AxPO7" id="gfGHRIZ">
     <property role="3lZH7k" value="custom" />

@@ -7,7 +7,13 @@
 
   <depends>jetbrains.mps.ide.modelchecker</depends>
 
-  <xi:include href="../migration-platform/pluginBase.xml" xpointer="xpointer(/idea-plugin/*)"/>
+  <xi:include href="pluginBaseDispatch.xml" xpointer="xpointer(/idea-plugin/*)"/>
+
+  <actions>
+    <group id="Migration" text="_Migration" configurable="true" popup="true" compact="true">
+      <add-to-group group-id="MainMenu" relative-to-action="ToolsMenu" anchor="after" />
+    </group>
+  </actions>
 
   <project-components>
   <component>

@@ -70,7 +70,6 @@ public class ModulesWatcher {
 
   private final SRepository myRepository;
   private final Map<SModuleReference, ClassLoadingStatus> myStatusMap = new HashMap<SModuleReference, ClassLoadingStatus>();
-  private Collection<SModuleReference> myCurrentInvalidModules;
   private final ReferenceStorage<ReloadableModule> myRefStorage = new ReferenceStorage<ReloadableModule>();
   private final ModuleUpdater myModuleUpdater;
 
@@ -134,13 +133,9 @@ public class ModulesWatcher {
    */
   private void recountStatus() {
     LOG.debug("Recount status map for modules");
-    boolean updated = myModuleUpdater.refreshGraph();
-    Collection<SModuleReference> invalidModules = findInvalidModules();
-    updated |= (!invalidModules.equals(myCurrentInvalidModules));
-    if (updated) {
-      myCurrentInvalidModules = invalidModules;
-      refillStatusMap(invalidModules);
-    }
+    myModuleUpdater.refreshGraph();
+    findInvalidModules();
+    refillStatusMap(findInvalidModules());
     LOG.debug("Finished recounting");
   }
 
@@ -334,7 +329,7 @@ public class ModulesWatcher {
     return myModuleUpdater.isDirty();
   }
 
-  enum ClassLoadingStatus {
+  public enum ClassLoadingStatus {
     /**
      * module is not loadable OR
      * module is loadable and disposed from the repository OR

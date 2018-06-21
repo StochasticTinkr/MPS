@@ -28,7 +28,7 @@ import java.util.Collections;
 public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implements TemplateSwitchMapping {
   private final Iterable<TemplateReductionRule> rules;
   public Switch_switch_SNodeOperation_node() {
-    rules = TemplateUtil.<TemplateReductionRule>asIterable(new Switch_switch_SNodeOperation_node.ReductionRule0(), new Switch_switch_SNodeOperation_node.ReductionRule1(), new Switch_switch_SNodeOperation_node.ReductionRule2(), new Switch_switch_SNodeOperation_node.ReductionRule3(), new Switch_switch_SNodeOperation_node.ReductionRule4(), new Switch_switch_SNodeOperation_node.ReductionRule5(), new Switch_switch_SNodeOperation_node.ReductionRule6(), new Switch_switch_SNodeOperation_node.ReductionRule7(), new Switch_switch_SNodeOperation_node.ReductionRule8(), new Switch_switch_SNodeOperation_node.ReductionRule9(), new Switch_switch_SNodeOperation_node.ReductionRule10(), new Switch_switch_SNodeOperation_node.ReductionRule11(), new Switch_switch_SNodeOperation_node.ReductionRule12(), new Switch_switch_SNodeOperation_node.ReductionRule13(), new Switch_switch_SNodeOperation_node.ReductionRule14(), new Switch_switch_SNodeOperation_node.ReductionRule15(), new Switch_switch_SNodeOperation_node.ReductionRule16(), new Switch_switch_SNodeOperation_node.ReductionRule17(), new Switch_switch_SNodeOperation_node.ReductionRule18(), new Switch_switch_SNodeOperation_node.ReductionRule19(), new Switch_switch_SNodeOperation_node.ReductionRule20(), new Switch_switch_SNodeOperation_node.ReductionRule21(), new Switch_switch_SNodeOperation_node.ReductionRule22(), new Switch_switch_SNodeOperation_node.ReductionRule23(), new Switch_switch_SNodeOperation_node.ReductionRule24(), new Switch_switch_SNodeOperation_node.ReductionRule25(), new Switch_switch_SNodeOperation_node.ReductionRule26(), new Switch_switch_SNodeOperation_node.ReductionRule27(), new Switch_switch_SNodeOperation_node.ReductionRule28(), new Switch_switch_SNodeOperation_node.ReductionRule29(), new Switch_switch_SNodeOperation_node.ReductionRule30(), new Switch_switch_SNodeOperation_node.ReductionRule31(), new Switch_switch_SNodeOperation_node.ReductionRule32(), new Switch_switch_SNodeOperation_node.ReductionRule33(), new Switch_switch_SNodeOperation_node.ReductionRule34(), new Switch_switch_SNodeOperation_node.ReductionRule35(), new Switch_switch_SNodeOperation_node.ReductionRule36(), new Switch_switch_SNodeOperation_node.ReductionRule37(), new Switch_switch_SNodeOperation_node.ReductionRule38(), new Switch_switch_SNodeOperation_node.ReductionRule39(), new Switch_switch_SNodeOperation_node.ReductionRule40(), new Switch_switch_SNodeOperation_node.ReductionRule41(), new Switch_switch_SNodeOperation_node.ReductionRule42());
+    rules = TemplateUtil.<TemplateReductionRule>asIterable(new Switch_switch_SNodeOperation_node.ReductionRule0(), new Switch_switch_SNodeOperation_node.ReductionRule1(), new Switch_switch_SNodeOperation_node.ReductionRule2(), new Switch_switch_SNodeOperation_node.ReductionRule3(), new Switch_switch_SNodeOperation_node.ReductionRule4(), new Switch_switch_SNodeOperation_node.ReductionRule5(), new Switch_switch_SNodeOperation_node.ReductionRule6(), new Switch_switch_SNodeOperation_node.ReductionRule7(), new Switch_switch_SNodeOperation_node.ReductionRule8(), new Switch_switch_SNodeOperation_node.ReductionRule9(), new Switch_switch_SNodeOperation_node.ReductionRule10(), new Switch_switch_SNodeOperation_node.ReductionRule11(), new Switch_switch_SNodeOperation_node.ReductionRule12(), new Switch_switch_SNodeOperation_node.ReductionRule13(), new Switch_switch_SNodeOperation_node.ReductionRule14(), new Switch_switch_SNodeOperation_node.ReductionRule15(), new Switch_switch_SNodeOperation_node.ReductionRule16(), new Switch_switch_SNodeOperation_node.ReductionRule17(), new Switch_switch_SNodeOperation_node.ReductionRule18(), new Switch_switch_SNodeOperation_node.ReductionRule19(), new Switch_switch_SNodeOperation_node.ReductionRule20(), new Switch_switch_SNodeOperation_node.ReductionRule21(), new Switch_switch_SNodeOperation_node.ReductionRule22(), new Switch_switch_SNodeOperation_node.ReductionRule23(), new Switch_switch_SNodeOperation_node.ReductionRule24(), new Switch_switch_SNodeOperation_node.ReductionRule25(), new Switch_switch_SNodeOperation_node.ReductionRule26(), new Switch_switch_SNodeOperation_node.ReductionRule27(), new Switch_switch_SNodeOperation_node.ReductionRule28(), new Switch_switch_SNodeOperation_node.ReductionRule29(), new Switch_switch_SNodeOperation_node.ReductionRule30(), new Switch_switch_SNodeOperation_node.ReductionRule31(), new Switch_switch_SNodeOperation_node.ReductionRule32(), new Switch_switch_SNodeOperation_node.ReductionRule33(), new Switch_switch_SNodeOperation_node.ReductionRule34(), new Switch_switch_SNodeOperation_node.ReductionRule35(), new Switch_switch_SNodeOperation_node.ReductionRule36(), new Switch_switch_SNodeOperation_node.ReductionRule37(), new Switch_switch_SNodeOperation_node.ReductionRule38(), new Switch_switch_SNodeOperation_node.ReductionRule39(), new Switch_switch_SNodeOperation_node.ReductionRule40(), new Switch_switch_SNodeOperation_node.ReductionRule41(), new Switch_switch_SNodeOperation_node.ReductionRule42(), new Switch_switch_SNodeOperation_node.ReductionRule43());
   }
   public SNodeReference getSwitchNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6683433361386630999");
@@ -61,7 +61,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_6683433361386640459(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b7));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_66834333613866404570(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b7));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_yds1mf_b0a0c0d0c0b7, "tpl/r:00000000-0000-4000-0000-011c89590303/6683433361386640457", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -79,12 +79,12 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_6683433361386640466(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a1_6(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_noConceptList().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_noConceptList().apply(context);
       return tlist1;
     }
   }
@@ -94,12 +94,12 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_6683433361386640477(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a2_3(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_noConceptList_SameML().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_noConceptList_SameML().apply(context);
       return tlist1;
     }
   }
@@ -109,12 +109,12 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_6683433361386640487(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a3_3(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_whereConceptInList().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_whereConceptInList().apply(context);
       return tlist1;
     }
   }
@@ -124,12 +124,12 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_6683433361386640499(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a4_1(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_whereConceptInList_SameML().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_whereConceptInList_SameML().apply(context);
       return tlist1;
     }
   }
@@ -139,12 +139,12 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_6683433361386640510(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a5_0(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetAncestors_noConceptsList().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetAncestors_noConceptsList().apply(context);
       return tlist1;
     }
   }
@@ -154,12 +154,12 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_6683433361386640517(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a6_0(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetAncestors_whereConceptInList().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetAncestors_whereConceptInList().apply(context);
       return tlist1;
     }
   }
@@ -169,12 +169,12 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_6683433361386640526(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a7_1(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetDescendants_noConceptsList().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetDescendants_noConceptsList().apply(context);
       return tlist1;
     }
   }
@@ -184,12 +184,12 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_6683433361386640533(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a8_1(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetDescendants_whereConceptInList().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetDescendants_whereConceptInList().apply(context);
       return tlist1;
     }
   }
@@ -200,7 +200,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetContainingRootOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetContainingRootOperation().apply(context);
       return tlist1;
     }
   }
@@ -210,12 +210,12 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_6683433361386640543(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a01_0(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetChildrenOperation_noLinkQualifier().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetChildrenOperation_noLinkQualifier().apply(context);
       return tlist1;
     }
   }
@@ -225,12 +225,12 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_6683433361386640552(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a11_0(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetChildrenOperation_whereLinkQualifier().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetChildrenOperation_whereLinkQualifier().apply(context);
       return tlist1;
     }
   }
@@ -240,12 +240,12 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_6683433361386640562(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a21_0(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetChildrenAndChildAttributesOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetChildrenAndChildAttributesOperation().apply(context);
       return tlist1;
     }
   }
@@ -255,7 +255,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_6683433361386640573(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a31_0(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -271,7 +271,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetModelOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetModelOperation().apply(context);
       return tlist1;
     }
   }
@@ -282,7 +282,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetIndexInParentOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetIndexInParentOperation().apply(context);
       return tlist1;
     }
   }
@@ -300,7 +300,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_6683433361386640590(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b32));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_66834333613866405880(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b32));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_yds1mf_b0a0c0d0c0b32, "tpl/r:00000000-0000-4000-0000-011c89590303/6683433361386640588", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -310,7 +310,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
         {
           Collection<SNode> tlist4 = null;
           {
-            final SNode switchInput4 = QueriesGenerated.sourceNodeQuery_6683433361386640598(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_yds1mf_b0a0a0a1a4a2a1x));
+            final SNode switchInput4 = QueriesGenerated.sourceNodeQuery_66834333613866405960(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_yds1mf_b0a0a0a1a4a2a1x));
             if (switchInput4 == null) {
               tlist4 = Collections.emptyList();
             } else {
@@ -345,7 +345,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetNextSiblingOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetNextSiblingOperation().apply(context);
       return tlist1;
     }
   }
@@ -356,7 +356,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetPrevSiblingOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetPrevSiblingOperation().apply(context);
       return tlist1;
     }
   }
@@ -367,7 +367,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetNextSiblingsOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetNextSiblingsOperation().apply(context);
       return tlist1;
     }
   }
@@ -378,7 +378,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetPrevSiblingsOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetPrevSiblingsOperation().apply(context);
       return tlist1;
     }
   }
@@ -389,7 +389,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetAllSiblingsOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetAllSiblingsOperation().apply(context);
       return tlist1;
     }
   }
@@ -400,7 +400,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_InsertNewNextSiblingOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_InsertNewNextSiblingOperation().apply(context);
       return tlist1;
     }
   }
@@ -411,7 +411,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_InsertNewPrevSiblingOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_InsertNewPrevSiblingOperation().apply(context);
       return tlist1;
     }
   }
@@ -422,7 +422,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_InsertNextSiblingOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_InsertNextSiblingOperation().apply(context);
       return tlist1;
     }
   }
@@ -433,7 +433,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_InsertPrevSiblingOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_InsertPrevSiblingOperation().apply(context);
       return tlist1;
     }
   }
@@ -444,7 +444,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ReplaceWithNewOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_ReplaceWithNewOperation().apply(context);
       return tlist1;
     }
   }
@@ -455,7 +455,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ReplaceWithAnotherOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_ReplaceWithAnotherOperation().apply(context);
       return tlist1;
     }
   }
@@ -473,7 +473,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_6683433361386640631(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b53));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_66834333613866406290(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b53));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_yds1mf_b0a0c0d0c0b53, "tpl/r:00000000-0000-4000-0000-011c89590303/6683433361386640629", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -499,7 +499,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_6683433361386640642(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b63));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_66834333613866406400(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b63));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_yds1mf_b0a0c0d0c0b63, "tpl/r:00000000-0000-4000-0000-011c89590303/6683433361386640640", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -518,7 +518,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_CopyOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_CopyOperation().apply(context);
       return tlist1;
     }
   }
@@ -529,7 +529,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_IsNotNullOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_IsNotNullOperation().apply(context);
       return tlist1;
     }
   }
@@ -540,7 +540,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_IsNullOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_IsNullOperation().apply(context);
       return tlist1;
     }
   }
@@ -551,7 +551,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_IsRoleOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_IsRoleOperation().apply(context);
       return tlist1;
     }
   }
@@ -562,7 +562,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetConceptOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetConceptOperation().apply(context);
       return tlist1;
     }
   }
@@ -573,7 +573,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetSConceptOperation().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_GetSConceptOperation().apply(context);
       return tlist1;
     }
   }
@@ -591,7 +591,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_6683433361386640665(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b34));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_66834333613866406630(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b34));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_yds1mf_b0a0c0d0c0b34, "tpl/r:00000000-0000-4000-0000-011c89590303/6683433361386640663", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -617,7 +617,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_6683433361386640676(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b44));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_66834333613866406740(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b44));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_yds1mf_b0a0c0d0c0b44, "tpl/r:00000000-0000-4000-0000-011c89590303/6683433361386640674", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -643,7 +643,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_6683433361386640687(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b54));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_66834333613866406850(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b54));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_yds1mf_b0a0c0d0c0b54, "tpl/r:00000000-0000-4000-0000-011c89590303/6683433361386640685", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -653,7 +653,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
         {
           Collection<SNode> tlist4 = null;
           {
-            final SNode switchInput4 = QueriesGenerated.sourceNodeQuery_6683433361386640695(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_yds1mf_b0a0a0a1a4a2a1tb));
+            final SNode switchInput4 = QueriesGenerated.sourceNodeQuery_66834333613866406930(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_yds1mf_b0a0a0a1a4a2a1tb));
             if (switchInput4 == null) {
               tlist4 = Collections.emptyList();
             } else {
@@ -695,7 +695,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_6683433361386640708(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b64));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_66834333613866407060(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b64));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_yds1mf_b0a0c0d0c0b64, "tpl/r:00000000-0000-4000-0000-011c89590303/6683433361386640706", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -721,7 +721,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_6683433361386640719(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b74));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_66834333613866407170(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b74));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_yds1mf_b0a0c0d0c0b74, "tpl/r:00000000-0000-4000-0000-011c89590303/6683433361386640717", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -747,7 +747,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_6683433361386640730(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b84));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_66834333613866407280(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b84));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_yds1mf_b0a0c0d0c0b84, "tpl/r:00000000-0000-4000-0000-011c89590303/6683433361386640728", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -759,9 +759,13 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
       return TemplateUtil.singletonList(tnode1);
     }
   }
-  public final class ReductionRule42 extends ReductionRuleBase {
+  public final class ReductionRule42 extends ReductionRuleBase implements TemplateRuleWithCondition {
     public ReductionRule42() {
       super(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6683433361386640736"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4604033d54faa023L, "jetbrains.mps.lang.smodel.structure.Node_PointerOperation"), false);
+    }
+    @Override
+    public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
+      return QueriesGenerated.baseMappingRule_Condition_a24(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -773,10 +777,52 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_6683433361386640741(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0b94));
-          tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_yds1mf_b0a0c0d0c0b94, "tpl/r:00000000-0000-4000-0000-011c89590303/6683433361386640739", context1);
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_66834333613866407390(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0c94));
+          tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_yds1mf_b0a0c0d0c0c94, "tpl/r:00000000-0000-4000-0000-011c89590303/6683433361386640739", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
+          }
+          // TODO validate child 
+        }
+      } finally {
+      }
+      return TemplateUtil.singletonList(tnode1);
+    }
+  }
+  public final class ReductionRule43 extends ReductionRuleBase implements TemplateRuleWithCondition {
+    public ReductionRule43() {
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3661776679763905062"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x32d13e7d44145b36L, "jetbrains.mps.lang.smodel.structure.Node_IsOperation"), true);
+    }
+    @Override
+    public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
+      return QueriesGenerated.baseMappingRule_Condition_a34(new ReductionRuleQueryContext(context, getRuleNode()));
+    }
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
+      final SNode tnode1 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbbebabf09L, "StaticMethodCall"));
+      try {
+        tnode1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode1, PersistenceFacade.getInstance().createModelReference("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), PersistenceFacade.getInstance().createNodeId("3661776679763970291")));
+        tnode1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), tnode1, PersistenceFacade.getInstance().createModelReference("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), PersistenceFacade.getInstance().createNodeId("6599163591527286941")));
+        TemplateContext context1 = context.subContext();
+        {
+          Collection<SNode> tlist2 = null;
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_36617766797639941760(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_yds1mf_b0a0c0d0c0c05));
+          tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_yds1mf_b0a0c0d0c0c05, "tpl/r:00000000-0000-4000-0000-011c89590303/3661776679763994176", context1);
+          for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
+          }
+          // TODO validate child 
+        }
+        {
+          Collection<SNode> tlist4 = null;
+          SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_36617766797639947110(new SourceSubstituteMacroNodeContext(context1, callMacro_yds1mf_b0a0a1a4a2a2yb));
+          TemplateContext context2 = context1.subContext(null, callInputNode4);
+          if (callInputNode4 != null) {
+            tlist4 = new Template_reduce_NodeIdentity_SNodeReference().apply(context2);
+          }
+          for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
           }
           // TODO validate child 
         }
@@ -800,5 +846,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
   private static SNodePointer copySrcMacro_yds1mf_b0a0c0d0c0b64 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6683433361386640707");
   private static SNodePointer copySrcMacro_yds1mf_b0a0c0d0c0b74 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6683433361386640718");
   private static SNodePointer copySrcMacro_yds1mf_b0a0c0d0c0b84 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6683433361386640729");
-  private static SNodePointer copySrcMacro_yds1mf_b0a0c0d0c0b94 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6683433361386640740");
+  private static SNodePointer copySrcMacro_yds1mf_b0a0c0d0c0c94 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6683433361386640740");
+  private static SNodePointer copySrcMacro_yds1mf_b0a0c0d0c0c05 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3661776679763994177");
+  private static SNodePointer callMacro_yds1mf_b0a0a1a4a2a2yb = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3661776679763994850");
 }

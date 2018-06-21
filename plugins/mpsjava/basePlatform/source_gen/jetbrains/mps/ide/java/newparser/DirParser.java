@@ -14,7 +14,6 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import java.io.IOException;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -29,7 +28,6 @@ public class DirParser {
   private static final Logger LOG = LogManager.getLogger(DirParser.class);
   private List<SModel> myAffectedModels = ListSequence.fromList(new ArrayList<SModel>());
   private List<IFile> mySourceDirs;
-  private List<IFile> mySuccessfulFiles;
   private SModule myModule;
   private ModelAccess myModelAccess;
   private JavaParser myJavaParser = new JavaParser();
@@ -37,16 +35,18 @@ public class DirParser {
   public DirParser(SModule module, ModelAccess modelAccess) {
     myModule = module;
     myModelAccess = modelAccess;
+    mySourceDirs = ListSequence.fromList(new ArrayList<IFile>());
   }
   public DirParser(SModule module, ModelAccess modelAccess, IFile sourceDir) {
     this(module, modelAccess);
-    mySourceDirs = ListSequence.fromListAndArray(new ArrayList<IFile>(), sourceDir);
-    mySuccessfulFiles = ListSequence.fromList(new ArrayList<IFile>());
+    addDirectory(sourceDir);
   }
 
   public void addDirectory(IFile dir) {
+    assert dir.isDirectory();
     ListSequence.fromList(mySourceDirs).addElement(dir);
   }
+
   public void parseDirs() throws IOException, JavaParseException {
     for (IFile sourceDir : ListSequence.fromList(mySourceDirs)) {
       addSourceFromDirectory(sourceDir);
@@ -75,77 +75,55 @@ public class DirParser {
 
   }
 
-  public List<IFile> getSuccessfulFiles() {
-    return mySuccessfulFiles;
-  }
-
   public List<SModel> getAffectedModels() {
     return myAffectedModels;
   }
 
-  public void addSourceFromDirectory(final IFile dir) throws IOException, JavaParseException {
+  private void addSourceFromDirectory(IFile dir) throws IOException, JavaParseException {
     assert dir.isDirectory();
 
     // packages which match the directory 
     // in the proper case: there should be only one 
-    final Wrappers._T<String> pkg = new Wrappers._T<String>(null);
-    final Wrappers._T<JavaParseException> javaParseException = new Wrappers._T<JavaParseException>(null);
-    final Wrappers._boolean wasDefaultPkg = new Wrappers._boolean(false);
+    String pkg = null;
+    boolean wasDefaultPkg = false;
     final List<SNode> roots = new ArrayList<SNode>();
 
-    for (final IFile file : dir.getChildren()) {
+    for (IFile file : dir.getChildren()) {
       if (file.isDirectory()) {
         addSourceFromDirectory(file);
 
       } else if (file.getName().endsWith(".java")) {
-        myModelAccess.runReadAction(new Runnable() {
-          public void run() {
-            try {
-              JavaParser.JavaParseResult parseRes = parseFile(file);
-              String p = parseRes.getPackage();
+        JavaParser.JavaParseResult parseRes = parseFile(file);
+        String p = parseRes.getPackage();
 
-              if (p == null) {
-                // default package (i.e. none), bad 
-                if (!(wasDefaultPkg.value)) {
-                  LOG.error("default package is not supported in java source directory input (first such file in dir: " + file.getName() + ")");
-                  wasDefaultPkg.value = true;
-                }
-                return;
-              }
-              if (pkg.value == null) {
-                if (DirParser.checkPackageMatchesSourceDirectory(p, dir)) {
-                  pkg.value = p;
-                } else {
-                  LOG.error("package " + p + " doesn't match directory " + dir.getPath() + " (in file " + file.getName() + ")");
-                  return;
-                }
-
-              } else if (!(pkg.value.equals(p))) {
-                LOG.error("different packages in directory " + dir.getPath() + ", namely " + pkg.value + " and " + p);
-                return;
-              }
-
-              ListSequence.fromList(roots).addSequence(ListSequence.fromList(parseRes.getNodes()));
-              ListSequence.fromList(mySuccessfulFiles).addElement(file);
-
-            } catch (JavaParseException e) {
-              javaParseException.value = e;
-            } catch (IOException e) {
-              // FIXME 
-              throw new RuntimeException(e);
-            }
+        if (p == null) {
+          // default package (i.e. none), bad 
+          if (!(wasDefaultPkg)) {
+            LOG.error("default package is not supported in java source directory input (first such file in dir: " + file.getName() + ")");
+            wasDefaultPkg = true;
           }
-        });
-
-        if (javaParseException.value != null) {
-          throw new JavaParseException(javaParseException.value);
+          return;
         }
+        if (pkg == null) {
+          if (DirParser.checkPackageMatchesSourceDirectory(p, dir)) {
+            pkg = p;
+          } else {
+            LOG.error("package " + p + " doesn't match directory " + dir.getPath() + " (in file " + file.getName() + ")");
+            return;
+          }
+
+        } else if (!(pkg.equals(p))) {
+          LOG.error("different packages in directory " + dir.getPath() + ", namely " + pkg + " and " + p);
+          return;
+        }
+
+        ListSequence.fromList(roots).addSequence(ListSequence.fromList(parseRes.getNodes()));
       }
     }
 
     // do model stuff 
-    final String finalPkg = pkg.value;
-    if (pkg.value != null && ListSequence.fromList(roots).isNotEmpty()) {
+    final String finalPkg = pkg;
+    if (pkg != null && ListSequence.fromList(roots).isNotEmpty()) {
       myModelAccess.executeCommand(new Runnable() {
         @Override
         public void run() {

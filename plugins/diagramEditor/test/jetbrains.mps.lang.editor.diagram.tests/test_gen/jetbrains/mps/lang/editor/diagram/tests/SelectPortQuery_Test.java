@@ -8,11 +8,11 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.jetpad.mapper.Mapper;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import junit.framework.Assert;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
@@ -33,11 +33,15 @@ public class SelectPortQuery_Test extends BaseTransformationTest {
 
   @Test
   public void test_SelectPortQuery() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test$TestBody", "testMethod", false);
+    new SelectPortQuery_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2278461409091838099", "2278461409091838103");
@@ -49,7 +53,7 @@ public class SelectPortQuery_Test extends BaseTransformationTest {
         processSecondaryMouseEvent(eventTargetComponent_vw537p_a0, x_vw537p_a0, y_vw537p_a0, MouseEvent.MOUSE_CLICKED);
       }
       final Wrappers._T<Mapper> descendantMapper = new Wrappers._T<Mapper>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           EditorCell selectedCell = getEditorComponent().getSelectedCell();
           Assert.assertTrue(selectedCell != null);

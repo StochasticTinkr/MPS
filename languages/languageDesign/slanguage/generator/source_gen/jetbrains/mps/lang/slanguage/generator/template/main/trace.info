@@ -1,27 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="57,0,74,0" name="jetbrains.mps.lang.slanguage.generator.template.main.QueriesGenerated$SNQ" />
-      <unit at="89,0,107,0" name="jetbrains.mps.lang.slanguage.generator.template.main.QueriesGenerated$PVQ" />
-      <unit at="25,0,108,0" name="jetbrains.mps.lang.slanguage.generator.template.main.QueriesGenerated" />
+      <unit at="60,0,77,0" name="jetbrains.mps.lang.slanguage.generator.template.main.QueriesGenerated$SNQ" />
+      <unit at="93,0,113,0" name="jetbrains.mps.lang.slanguage.generator.template.main.QueriesGenerated$PVQ" />
+      <unit at="25,0,114,0" name="jetbrains.mps.lang.slanguage.generator.template.main.QueriesGenerated" />
+    </file>
+  </root>
+  <root nodeRef="r:5c6a8956-99fe-4c21-bc40-f07fc530339e(jetbrains.mps.lang.slanguage.generator.template.main@generator)/5932042262275887951">
+    <file name="QueriesGenerated.java">
+      <node id="8994852683961394488" at="36,113,37,342" concept="1" />
+      <node id="8994852683961392854" at="81,194,82,190" concept="0" />
+      <node id="8994852683961392854" at="106,15,107,91" concept="1" />
+      <node id="8994852683961392855" at="36,0,39,0" concept="2" trace="propertyMacro_GetPropertyValue_89948526839613922220#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
+      <scope id="8994852683961392856" at="36,113,37,342" />
+      <scope id="8994852683961392854" at="106,15,107,91" />
+      <scope id="8994852683961392855" at="36,0,39,0">
+        <var name="_context" id="8994852683961392855" />
+      </scope>
     </file>
   </root>
   <root nodeRef="r:5c6a8956-99fe-4c21-bc40-f07fc530339e(jetbrains.mps.lang.slanguage.generator.template.main@generator)/6171083915388337699">
     <file name="QueriesGenerated.java">
-      <node id="3184053328214293633" at="33,112,34,333" concept="0" />
-      <node id="3184053328214293625" at="39,108,40,188" concept="0" />
-      <scope id="3184053328214293632" at="33,112,34,333" />
-      <scope id="3184053328214293624" at="39,108,40,188" />
+      <node id="3184053328214293633" at="33,113,34,333" concept="1" />
+      <node id="3184053328214293625" at="42,109,43,188" concept="1" />
+      <node id="3184053328214293623" at="48,73,49,73" concept="0" />
+      <node id="3184053328214293623" at="70,15,71,76" concept="1" />
+      <node id="3184053328214293630" at="80,194,81,194" concept="0" />
+      <node id="3184053328214293630" at="104,15,105,91" concept="1" />
+      <node id="3184053328214293631" at="33,0,36,0" concept="2" trace="propertyMacro_GetPropertyValue_31840533282142936290#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
+      <node id="3184053328214293623" at="42,0,45,0" concept="2" trace="sourceNodeQuery_31840533282142936210#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3184053328214293632" at="33,113,34,333" />
+      <scope id="3184053328214293624" at="42,109,43,188" />
+      <scope id="3184053328214293623" at="70,15,71,76" />
+      <scope id="3184053328214293630" at="104,15,105,91" />
+      <scope id="3184053328214293631" at="33,0,36,0">
+        <var name="_context" id="3184053328214293631" />
+      </scope>
+      <scope id="3184053328214293623" at="42,0,45,0">
+        <var name="_context" id="3184053328214293623" />
+      </scope>
     </file>
   </root>
   <root nodeRef="r:5c6a8956-99fe-4c21-bc40-f07fc530339e(jetbrains.mps.lang.slanguage.generator.template.main@generator)/8149169565821881094">
     <file name="QueriesGenerated.java">
-      <node id="2030416617761268420" at="30,112,31,333" concept="0" />
-      <node id="2030416617761266993" at="36,108,37,109" concept="0" />
-      <scope id="2030416617761268206" at="30,112,31,333" />
-      <scope id="2030416617761266992" at="36,108,37,109" />
+      <node id="2030416617761268420" at="30,113,31,333" concept="1" />
+      <node id="2030416617761266993" at="39,109,40,109" concept="1" />
+      <node id="2030416617761266991" at="47,14,48,73" concept="0" />
+      <node id="2030416617761266991" at="68,15,69,76" concept="1" />
+      <node id="2030416617761268204" at="79,14,80,194" concept="0" />
+      <node id="2030416617761268204" at="102,15,103,91" concept="1" />
+      <node id="2030416617761268205" at="30,0,33,0" concept="2" trace="propertyMacro_GetPropertyValue_20304166177612679150#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
+      <node id="2030416617761266991" at="39,0,42,0" concept="2" trace="sourceNodeQuery_20304166177612669890#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="2030416617761268206" at="30,113,31,333" />
+      <scope id="2030416617761266992" at="39,109,40,109" />
+      <scope id="2030416617761266991" at="68,15,69,76" />
+      <scope id="2030416617761268204" at="102,15,103,91" />
+      <scope id="2030416617761268205" at="30,0,33,0">
+        <var name="_context" id="2030416617761268205" />
+      </scope>
+      <scope id="2030416617761266991" at="39,0,42,0">
+        <var name="_context" id="2030416617761266991" />
+      </scope>
     </file>
   </root>
 </debug-info>

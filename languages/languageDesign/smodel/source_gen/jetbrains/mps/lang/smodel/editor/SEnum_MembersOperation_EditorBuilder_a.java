@@ -28,14 +28,14 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.StaticMeth
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_rgzic9_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_rgzic9_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "members");
     editorCell.setCellId("Constant_rgzic9_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     new StaticMethodStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);

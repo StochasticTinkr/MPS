@@ -35,9 +35,9 @@ public class RenameMethod extends BaseRefactoring {
   public void refactor(final RefactoringContext refactoringContext) {
     SNode method = MethodRefactoringUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
     for (SNode node : ListSequence.fromList(MethodRefactoringUtils.findOverridingMethods(refactoringContext.getCurrentScope(), method, new EmptyProgressMonitor()))) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), ((String) refactoringContext.getParameter("newName")));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), ((String) refactoringContext.getParameter("newName")));
     }
-    SPropertyOperations.set(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), ((String) refactoringContext.getParameter("newName")));
+    SPropertyOperations.assign(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), ((String) refactoringContext.getParameter("newName")));
   }
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
     return (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel());

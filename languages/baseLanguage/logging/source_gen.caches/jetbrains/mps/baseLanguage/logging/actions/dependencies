@@ -21,6 +21,5 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.logging.actions.QueriesGenerated" file="QueriesGenerated.java" />
 </dependenciesRoot>
 

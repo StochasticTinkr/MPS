@@ -9,64 +9,64 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @Generated
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_3210697320273563062(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202735630520(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe40L, "row"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273563071(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202735630540(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe41L, "col"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273648347(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736483430(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe41L, "col"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273648356(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736483180(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe40L, "row"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273608239(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736082320(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe40L, "row"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273608248(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736082340(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe41L, "col"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273648397(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736483950(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe41L, "col"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273648406(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736484040(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe40L, "row"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273614396(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736143890(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe40L, "row"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273614405(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736143910(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe41L, "col"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273614416(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736142350(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe40L, "row"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273614425(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736142370(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe41L, "col"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273648551(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736485490(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe41L, "col"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273648560(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736485580(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe40L, "row"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273614493(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736144610(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe40L, "row"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273614502(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736144730(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe41L, "col"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273614513(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736144740(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe40L, "row"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273614524(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736144860(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe41L, "col"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273648470(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736484680(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe41L, "col"));
   }
-  public static Object propertyMacro_GetPropertyValue_3210697320273648479(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32106973202736484770(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe40L, "row"));
   }
 }

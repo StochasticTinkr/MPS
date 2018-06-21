@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 /**
  * 
@@ -66,7 +67,7 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo imple
         @Override
         public EditorMenuTraceInfo getEditorMenuTraceInfo() {
           EditorMenuTraceInfoImpl info = new EditorMenuTraceInfoImpl();
-          info.setDescriptor(new EditorMenuDescriptorBase("Enum member substitute action: " + getMatchingText(""), enumMemberDeclaration.getReference(), true));
+          info.setDescriptor(new EditorMenuDescriptorBase("Enum member substitute action: " + getMatchingText(""), SNodeOperations.getPointer(enumMemberDeclaration), true));
           return info;
         }
       });

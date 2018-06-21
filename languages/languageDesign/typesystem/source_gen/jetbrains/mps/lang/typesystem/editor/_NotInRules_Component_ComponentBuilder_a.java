@@ -27,23 +27,23 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_rcqmfi_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_rcqmfi_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_rcqmfi_a");
-    editorCell.addEditorCell(createConstant_rcqmfi_a0());
-    editorCell.addEditorCell(createConstant_rcqmfi_b0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_rcqmfi_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "do not use in rules");
     editorCell.setCellId("Constant_rcqmfi_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_rcqmfi_b0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "use in queries only");
     editorCell.setCellId("Constant_rcqmfi_b0");
     editorCell.setDefaultText("");

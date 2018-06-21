@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -207,7 +208,21 @@ public interface SModel {
 
     /**
      * The incomplete node (when available) for load problems, or a node which caused troubles during save operation.
+     * @deprecated use {@link #getAnchorNode()} instead
+     * @return always null
      */
-    SNode getNode();
+    @Deprecated
+    @ToRemove(version = 2018.2)
+    default SNode getNode() {
+      return null;
+    }
+
+    /**
+     * The incomplete node (when available) for load problems, or a node which caused troubles during save operation.
+     */
+    @Nullable
+    default SNodeReference getAnchorNode() {
+      return getNode() == null ? null : getNode().getReference();
+    }
   }
 }

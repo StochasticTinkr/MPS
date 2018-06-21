@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,7 +71,7 @@ public class BLDependenciesCache extends BaseModelCache<ModelDependencies> {
       if (deps == null) {
         return;
       }
-      update(status.getOriginalInputModel(), deps);
+      update(status.getInputModel(), deps);
 
       handler.saveStream(getCacheFileName(), deps.toXml());
     }
@@ -84,7 +84,7 @@ public class BLDependenciesCache extends BaseModelCache<ModelDependencies> {
       ModelDependencies modelDep = null;
 
       // process unchanged files
-      SModel originalInputModel = genStatus.getOriginalInputModel();
+      SModel originalInputModel = genStatus.getInputModel();
       for (GenerationRootDependencies rdep : genStatus.getDependencies().getUnchangedDependencies()) {
         for (String filename : rdep.getFiles()) {
           // re-register baseLanguage dependencies

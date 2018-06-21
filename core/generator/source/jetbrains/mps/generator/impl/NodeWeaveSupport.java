@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,7 @@ public final class NodeWeaveSupport implements NodeWeaveFacility {
     SNode contextParentNode = myWeaveContext.getContextNode();
     SNode anchor = myWeaveContext.getAnchorNode(contextParentNode, outputNodeToWeave);
     assert anchor == null || anchor.getParent() == contextParentNode;
-    TracingUtil.fillOriginalNode(myTemplateContext.getInput(), outputNodeToWeave, false);
+    TracingUtil.deriveOriginalNode(myTemplateContext.getInput(), outputNodeToWeave);
 
     // check child
     RoleValidator v = myGenerator.getChildRoleValidator(contextParentNode, childRole);

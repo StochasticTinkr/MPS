@@ -35,14 +35,13 @@ public class SNodeOperations {
    */
   @Deprecated
   public static boolean isAncestor(SNode ancestor, SNode node) {
-    if (ancestor == node) {
-      return true;
-    }
-    SNode parentOfChild = node.getParent();
-    if (parentOfChild == null) {
-      return false;
-    }
-    return isAncestor(ancestor, parentOfChild);
+    do {
+      if (ancestor == node) {
+        return true;
+      }
+      node = node.getParent();
+    } while (node != null);
+    return false;
   }
   /**
    * 
@@ -283,7 +282,8 @@ public class SNodeOperations {
    */
   @Deprecated
   public static String getModelLongName(SModel model) {
-    return NameUtil.getModelLongName(model);
+    // replaced NameUtil.getModelLongName didn't expect null and returned a qualified name w/o stereotype 
+    return model.getName().getLongName();
   }
 
   /**

@@ -54,6 +54,10 @@ import java.util.List;
 import java.util.Objects;
 
 /**
+ * NOTE the IdeaFiles' equality now totally depends on the starting string.
+ * That means that some IdeaFiles which point to the essentially the same place on fs, might not be equal in the sense
+ * of the current #equals relation
+ *
  * TODO rewrite using {@link Path}; rewrite {@link #getChildren(),#getDescendant(String)} behavior in the case of jar system
  */
 @Immutable
@@ -483,6 +487,10 @@ public class IdeaFile implements IFileEx, CachingFile {
     }
   }
 
+  /**
+   * note that in order to make IdeaFile immutable which is rather desirable (e.g. to store them in hash sets, not strings)
+   * we need to have equals relation totally dependent on the string from which the object is constructed
+   */
   @Override
   public boolean equals(Object another) {
     if (this == another) return true;

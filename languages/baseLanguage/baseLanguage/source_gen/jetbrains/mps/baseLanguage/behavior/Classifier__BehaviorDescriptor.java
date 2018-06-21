@@ -377,10 +377,10 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       return Scopes.forMethods(kind, new MethodsScope(IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(__thisNode__), methods), ScopeUtils.lazyParentScope(__thisNode__, kind));
     }
 
-    SAbstractConcept cncpt_i0ad = kind;
-    boolean noneMatched_i0ad = true;
-    if (noneMatched_i0ad && SConceptOperations.isSubConceptOf(cncpt_i0ad, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
-      noneMatched_i0ad = false;
+    SAbstractConcept cncpt = kind;
+    boolean noneMatched = true;
+    if (noneMatched && SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
+      noneMatched = false;
       // add instance fields + static fields 
       Iterable<SNode> staticMethods = SNodeOperations.ofConcept(IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invoke(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
       if (!(isStaticContext)) {
@@ -405,8 +405,8 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       }
 
     }
-    if (noneMatched_i0ad && SConceptOperations.isSubConceptOf(cncpt_i0ad, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-      noneMatched_i0ad = false;
+    if (noneMatched && SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      noneMatched = false;
       if (child == null) {
         return ScopeUtils.lazyParentScope(__thisNode__, kind);
       }
@@ -417,8 +417,8 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       return ClassifierScopes.getVisibleClassifiersScope(child, true);
 
     }
-    if (noneMatched_i0ad && SConceptOperations.isSubConceptOf(cncpt_i0ad, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
-      noneMatched_i0ad = false;
+    if (noneMatched && SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
+      noneMatched = false;
       // in other cases - hide everything by name... 
       // todo: change! 
       Scope addition = null;
@@ -432,12 +432,12 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       }
       return (addition != null ? Scopes.defaultWithNameHiding(kind, addition, ScopeUtils.lazyParentScope(__thisNode__, kind)) : ScopeUtils.lazyParentScope(__thisNode__, kind));
     }
-    if (noneMatched_i0ad && SConceptOperations.isSubConceptOf(cncpt_i0ad, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32e8e5805c50376L, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind"))) {
-      noneMatched_i0ad = false;
+    if (noneMatched && SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32e8e5805c50376L, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind"))) {
+      noneMatched = false;
       return CompositeWithParentScope.from(__thisNode__, __thisNode__, kind);
     }
-    if (noneMatched_i0ad && SConceptOperations.isSubConceptOf(cncpt_i0ad, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"))) {
-      noneMatched_i0ad = false;
+    if (noneMatched && SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"))) {
+      noneMatched = false;
       if (!(isStaticContext)) {
         return Scopes.forTypeVariables(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration")), ScopeUtils.lazyParentScope(__thisNode__, kind));
       } else {

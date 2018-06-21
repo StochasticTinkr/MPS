@@ -31,7 +31,7 @@ import com.intellij.xdebugger.impl.ui.DebuggerUIUtil;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointIconRenderrerEx;
 import jetbrains.mps.idea.java.MpsJavaBundle;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
@@ -57,8 +57,8 @@ import java.awt.Point;
   }
 
   @Override
-  public SNode getNode() {
-    return BreakpointPainter.getNodeForBreakpoint(myBreakpoint);
+  public SNodeReference getNodeReference() {
+    return BreakpointPainter.getNodeReferenceForBreakpoint(myBreakpoint);
   }
 
   @Override

@@ -20,7 +20,6 @@ import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfoFilterDecorator;
-import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -28,6 +27,8 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 
@@ -53,8 +54,8 @@ public class APICellAdapter {
       return target;
     }
     SNode node = cell.getSNode();
-    String role = cell.getRole();
-    SNode referentNode = role == null ? null : node.getReferenceTarget(role);
+    SConceptFeature role = cell.getSRole();
+    SNode referentNode = role instanceof SReferenceLink ? node.getReferenceTarget(((SReferenceLink) role)) : null;
     return referentNode != null ? referentNode : node;
   }
 
@@ -64,7 +65,8 @@ public class APICellAdapter {
       return false;
     }
 
-    final SubstituteInfo substituteInfoWithPatternMatchingFilter = NodeSubstituteInfoFilterDecorator.createSubstituteInfoWithPatternMatchingFilter(substituteInfo, cell.getContext().getRepository());
+    final SubstituteInfo substituteInfoWithPatternMatchingFilter =
+        NodeSubstituteInfoFilterDecorator.createSubstituteInfoWithPatternMatchingFilter(substituteInfo, cell.getContext().getRepository());
 
     if (cell instanceof EditorCell_Collection) {
       return false;
@@ -78,7 +80,8 @@ public class APICellAdapter {
     List<SubstituteAction> matchingActions = new ModelAccessHelper(cell.getContext().getRepository()).runReadAction(
         () -> TypeContextManager.getInstance().runTypeCheckingComputation((ITypeContextOwner) cell.getEditorComponent(),
                                                                           cell.getEditorComponent().getEditedNode(),
-                                                                          context -> substituteInfoWithPatternMatchingFilter.getMatchingActions(pattern, strict)));
+                                                                          context -> substituteInfoWithPatternMatchingFilter.getMatchingActions(pattern,
+                                                                                                                                                strict)));
     return substituteIfPossible(cell, canActivatePopup, pattern, matchingActions);
   }
 
@@ -109,22 +112,6 @@ public class APICellAdapter {
     }
   }
 
-  /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#isFirstPositionInBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
-   */
-  @Deprecated
-  public static boolean isFirstPositionInBigCell(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isFirstPositionInBigCell();
-  }
-
-  /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#isLastPositionInBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
-   */
-  @Deprecated
-  public static boolean isLastPositionInBigCell(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isLastPositionInBigCell();
-  }
-
   public static boolean isUnderFolded(EditorCell cell) {
     for (EditorCell_Collection parent = cell.getParent(); parent != null; parent = parent.getParent()) {
       if (parent.isCollapsed()) {
@@ -132,21 +119,5 @@ public class APICellAdapter {
       }
     }
     return false;
-  }
-
-  /**
-   * @deprecated since MPS 3.4 use {@link EditorCell#getCellInfo()}
-   */
-  @Deprecated
-  public static CellInfo getCellInfo(EditorCell cell) {
-    return cell.getCellInfo();
-  }
-
-  /**
-   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getContainingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
-   */
-  @Deprecated
-  public static EditorCell getContainingBigCell(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getContainingBigCell();
   }
 }

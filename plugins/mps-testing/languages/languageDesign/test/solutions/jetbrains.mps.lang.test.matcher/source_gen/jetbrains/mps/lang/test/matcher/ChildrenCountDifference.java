@@ -8,15 +8,23 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
   private final SContainmentLink myRole;
   private final int myActualCount;
   private final int myExpectedCount;
+
   public ChildrenCountDifference(SContainmentLink role, int actualCount, int expectedCount) {
     myRole = role;
     myActualCount = actualCount;
     myExpectedCount = expectedCount;
   }
+
   @Override
   public String toString() {
     return "Different children count in role: " + myRole + " [was: " + myActualCount + ", expected: " + myExpectedCount + "]";
   }
+
+  @Override
+  public int hashCode() {
+    return myRole.hashCode() + myActualCount * 31 + myExpectedCount * 37;
+  }
+
   @Override
   public boolean equals(Object obj) {
     if (obj == null) {

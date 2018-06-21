@@ -282,31 +282,38 @@ public class MigrationTask {
       }
     });
     m.start("Resaving modules...", ListSequence.fromList(allModules.value).count() + 10);
-    JComponent modalityComponent = check_ajmasp_a0e0lb(as_ajmasp_a0a0e0mb(myMonitor.getIndicator(), InlineProgressIndicator.class));
-    ModalityState modalityState = (modalityComponent == null ? ModalityState.NON_MODAL : ModalityState.stateForComponent(modalityComponent));
+    assert myCurrentChange == null;
+    myCurrentChange = LocalHistory.getInstance().startAction("Module resaving started");
+    try {
+      JComponent modalityComponent = check_ajmasp_a0a0g0lb(as_ajmasp_a0a0a0g0mb(myMonitor.getIndicator(), InlineProgressIndicator.class));
+      ModalityState modalityState = (modalityComponent == null ? ModalityState.NON_MODAL : ModalityState.stateForComponent(modalityComponent));
 
-    for (final SModule module : ListSequence.fromList(allModules.value)) {
-      m.advance(1);
+      for (final SModule module : ListSequence.fromList(allModules.value)) {
+        m.advance(1);
+        ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+          public void run() {
+            project.getRepository().getModelAccess().executeCommand(new Runnable() {
+              public void run() {
+                mySession.getMigrationRegistry().doUpdateImportVersions(module);
+              }
+            });
+          }
+        }, modalityState);
+      }
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         public void run() {
           project.getRepository().getModelAccess().executeCommand(new Runnable() {
             public void run() {
-              mySession.getMigrationRegistry().doUpdateImportVersions(module);
+              project.getRepository().saveAll();
             }
           });
         }
       }, modalityState);
+    } finally {
+      myCurrentChange.finish();
+      myCurrentChange = null;
+      m.done();
     }
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-        project.getRepository().getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            project.getRepository().saveAll();
-          }
-        });
-      }
-    }, modalityState);
-    m.done();
   }
 
   private boolean runProjectMigrations(ProgressMonitor m) {
@@ -413,7 +420,7 @@ public class MigrationTask {
     }
     return null;
   }
-  private static JComponent check_ajmasp_a0e0lb(InlineProgressIndicator checkedDotOperand) {
+  private static JComponent check_ajmasp_a0a0g0lb(InlineProgressIndicator checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent();
     }
@@ -422,7 +429,7 @@ public class MigrationTask {
   private static <T> T as_ajmasp_a0a0e0cb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_ajmasp_a0a0e0mb(Object o, Class<T> type) {
+  private static <T> T as_ajmasp_a0a0a0g0mb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

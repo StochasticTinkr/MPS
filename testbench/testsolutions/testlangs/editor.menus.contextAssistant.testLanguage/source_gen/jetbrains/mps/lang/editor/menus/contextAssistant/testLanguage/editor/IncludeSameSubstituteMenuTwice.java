@@ -61,10 +61,10 @@ public class IncludeSameSubstituteMenuTwice extends TransformationMenuBase {
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      SAbstractConcept targetConcept = getTargetConcept(context);
-      String name = (targetConcept == null ? "" : targetConcept.getName());
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include substitute menu " + "default substitute menu for " + "ToIncludeSubstituteMenu", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4572725119287832324")));
       try {
+        SAbstractConcept targetConcept = getTargetConcept(context);
+        String name = (targetConcept == null ? "" : targetConcept.getName());
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include substitute menu " + "default substitute menu for " + "ToIncludeSubstituteMenu", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4572725119287832324")));
         return super.createItems(context);
       } finally {
         context.getEditorMenuTrace().popTraceInfo();
@@ -98,10 +98,10 @@ public class IncludeSameSubstituteMenuTwice extends TransformationMenuBase {
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      SAbstractConcept targetConcept = getTargetConcept(context);
-      String name = (targetConcept == null ? "" : targetConcept.getName());
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include substitute menu " + "default substitute menu for " + "ToIncludeSubstituteMenu", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4572725119287832335")));
       try {
+        SAbstractConcept targetConcept = getTargetConcept(context);
+        String name = (targetConcept == null ? "" : targetConcept.getName());
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include substitute menu " + "default substitute menu for " + "ToIncludeSubstituteMenu", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4572725119287832335")));
         return super.createItems(context);
       } finally {
         context.getEditorMenuTrace().popTraceInfo();

@@ -22,6 +22,7 @@ import com.intellij.diagnostic.ErrorReportConfigurable;
 import com.intellij.diagnostic.JetBrainsAccountDialogKt;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
+import com.intellij.ide.ui.UISettings;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.application.ex.ApplicationInfoEx;
 import com.intellij.openapi.extensions.PluginDescriptor;
@@ -29,13 +30,20 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.DimensionService;
+import com.intellij.ui.BrowserHyperlinkListener;
+import com.intellij.ui.HideableDecorator;
 import com.intellij.ui.HyperlinkLabel;
+import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.ui.components.JBTextField;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.intellij.uiDesigner.core.Spacer;
+import com.intellij.util.ui.JBUI;
+import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.ide.IdeBundle;
 import jetbrains.mps.ide.blame.command.Command;
 import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.blame.perform.Query;
@@ -47,14 +55,16 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
+import javax.swing.JEditorPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.event.HyperlinkEvent;
+import java.awt.BorderLayout;
 import java.awt.Dialog;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Frame;
-import java.awt.Insets;
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -69,10 +79,14 @@ public class BlameDialog extends DialogWrapper {
   private JPanel myPanel;
   private JTextField myTitleField;
   private JTextArea myDescriptionField;
+  private JCheckBox myDoNotIncludeAppInfo;
   private JPanel myExceptionContainer;
   private JTextArea myException;
+  private JCheckBox mySkipTrace;
   private JCheckBox myHiddenCheckBox;
   private HyperlinkLabel myCredentialsLabel;
+  private JBCheckBox myShareDataAgreementCheck;
+  private JEditorPane myShareDataAgreement;
 
   private boolean myIsCancelled = true;
   private Response myResult;
@@ -141,7 +155,7 @@ public class BlameDialog extends DialogWrapper {
 
   @Override
   protected JComponent createCenterPanel() {
-    myPanel = new JPanel(new GridLayoutManager(7, 1, new Insets(0, 0, 0, 0), -1, -1));
+    myPanel = new JPanel(new GridLayoutManager(9, 1, JBUI.emptyInsets(), -1, -1));
 
     myPanel.add(new JBLabel("Title:"), getConstraints(myPanel.getComponentCount()));
     myTitleField = new JBTextField();
@@ -159,7 +173,22 @@ public class BlameDialog extends DialogWrapper {
     descriptionConstraints.setVSizePolicy(GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_WANT_GROW);
     myPanel.add(descriptionScrollPane, descriptionConstraints);
 
-    myExceptionContainer = new JPanel(new GridLayoutManager(2, 1, new Insets(0, 0, 0, 0), -1, -1));
+
+    final JPanel appInfoPanel = new JPanel(new GridLayoutManager(2, 1));
+    appInfoPanel.setBorder(IdeBorderFactory.createEmptyBorder(JBUI.emptyInsets()));
+    final JBLabel appInfo = new JBLabel(getAdditionalInfo(true));
+    appInfoPanel.add(appInfo, getConstraints(appInfoPanel.getComponentCount()));
+    myDoNotIncludeAppInfo = new JBCheckBox("Do not include application info to issue description", false);
+    myDoNotIncludeAppInfo.addChangeListener(changeEvent -> appInfo.setEnabled(!myDoNotIncludeAppInfo.isSelected()));
+    appInfoPanel.add(myDoNotIncludeAppInfo, getConstraints(appInfoPanel.getComponentCount()));
+
+    final JPanel appInfoHolder = new JPanel(new BorderLayout());
+    HideableDecorator decorator = new HideableDecorator(appInfoHolder, "Application information", true);
+    decorator.setContentComponent(appInfoPanel);
+    decorator.setOn(false);
+    myPanel.add(appInfoHolder, getConstraints(myPanel.getComponentCount()));
+
+    myExceptionContainer = new JPanel(new GridLayoutManager(3, 1, JBUI.emptyInsets(), -1, -1));
 
     myExceptionContainer.add(new JBLabel("Exception:"), getConstraints(myExceptionContainer.getComponentCount()));
     myException = new JTextArea();
@@ -167,6 +196,9 @@ public class BlameDialog extends DialogWrapper {
     final JBScrollPane exceptionScrollPane = new JBScrollPane();
     exceptionScrollPane.setViewportView(myException);
     myExceptionContainer.add(exceptionScrollPane, getConstraints(myExceptionContainer.getComponentCount()));
+    mySkipTrace = new JBCheckBox("Exclude exception trace from description", false);
+    mySkipTrace.addChangeListener(changeEvent -> myException.setEnabled(!mySkipTrace.isSelected()));
+    myExceptionContainer.add(mySkipTrace, getConstraints(myExceptionContainer.getComponentCount()));
 
     myPanel.add(myExceptionContainer, getConstraints(myPanel.getComponentCount()));
 
@@ -186,7 +218,47 @@ public class BlameDialog extends DialogWrapper {
     credentialsConstraints.setFill(GridConstraints.FILL_NONE);
     myPanel.add(myCredentialsLabel, credentialsConstraints);
 
+    JPanel agreementPanel = new JPanel(new GridLayoutManager(1, 3));
+
+    myShareDataAgreementCheck = new JBCheckBox();
+    myShareDataAgreementCheck.addChangeListener(changeEvent -> this.setOKActionEnabled(myShareDataAgreementCheck.isSelected()));
+    myShareDataAgreementCheck.setSelected(false);
+    GridConstraints constraints = getConstraints(0);
+    constraints.setAnchor(GridConstraints.ANCHOR_NORTHWEST);
+    constraints.setFill(GridConstraints.FILL_NONE);
+    agreementPanel.add(myShareDataAgreementCheck, constraints);
+
+    myShareDataAgreement = new JEditorPane(UIUtil.HTML_MIME, "");
+    updateDataUsageAgreementText();
+    myShareDataAgreement.setEditable(false);
+    myShareDataAgreement.setBackground(UIUtil.getPanelBackground());
+    myShareDataAgreement.addHyperlinkListener(new BrowserHyperlinkListener());
+    myShareDataAgreement.setBorder(JBUI.Borders.empty());
+    myShareDataAgreement.setFocusable(false);
+    constraints = getConstraints(0);
+    constraints.setColumn(1);
+    constraints.setAnchor(GridConstraints.ANCHOR_NORTHWEST);
+    agreementPanel.add(myShareDataAgreement, constraints);
+
+    constraints = getConstraints(0);
+    constraints.setColumn(2);
+    constraints.setHSizePolicy(GridConstraints.SIZEPOLICY_CAN_GROW);
+    agreementPanel.add(new Spacer(),constraints);
+
+    myPanel.add(agreementPanel, getConstraints(myPanel.getComponentCount()));
+
     return myPanel;
+  }
+
+  private void updateDataUsageAgreementText() {
+    final Font font = UISettings.getInstance().getFontFace() != null
+                      ? new Font(UISettings.getInstance().getFontFace(), Font.PLAIN, UISettings.getInstance().getFontSize()) : UIUtil.getLabelFont();
+    final String signedInAgreement =
+        String.format(IdeBundle.message("blame.dialog.agreement"), font.getFamily());
+    final String anonymousAgreement =
+        String.format(IdeBundle.message("blame.dialog.agreement.anonymous"), font.getFamily());
+
+    myShareDataAgreement.setText(CredentialAttributesKt.isFulfilled(ErrorReportConfigurable.getCredentials()) ? signedInAgreement : anonymousAgreement);
   }
 
   private GridConstraints getConstraints(int row) {
@@ -212,6 +284,7 @@ public class BlameDialog extends DialogWrapper {
     } else {
       myCredentialsLabel.setHtmlText(DiagnosticBundle.message("diagnostic.error.report.submit.error.anonymously"));
     }
+    updateDataUsageAgreementText();
   }
 
   /**
@@ -244,6 +317,7 @@ public class BlameDialog extends DialogWrapper {
 
     setOKButtonText("Send");
     setOKButtonMnemonic('S');
+    setOKActionEnabled(false);
   }
 
   @Override
@@ -270,16 +344,17 @@ public class BlameDialog extends DialogWrapper {
     return (e.getMessage() == null ? "" : e.getMessage() + "\n") + sw.toString();
   }
 
-  private String getAdditionalInfo() {
+  private String getAdditionalInfo(boolean html) {
     ApplicationInfo ai = ApplicationInfo.getInstance();
-    StringBuilder builder = new StringBuilder("{cut [Build info]}*[Build info]*\n");
+
+    StringBuilder builder = new StringBuilder(html ? "<html><body><strong>[Build info]</strong><br>" : "{cut [Build info]}*[Build info]*\n");
     if (ai instanceof ApplicationInfoEx) {
       builder.append("Application name: ''").append(((ApplicationInfoEx) ai).getFullApplicationName()).append("''\n");
     }
     builder.append("Build number: ''").append(ai.getBuild().asString()).append("''\n");
     builder.append("Version: ''").append(ai.getFullVersion()).append("''\n");
     if (myPluginDescriptor != null) {
-      builder.append("*[Plugin info]*").append('\n');
+      builder.append(html ? "<strong>" : "*").append("[Plugin info]").append(html ? "</strong>" : "*").append('\n');
       builder.append("Plugin id: ''").append(myPluginDescriptor.getPluginId()).append("''\n");
       if (myPluginDescriptor instanceof IdeaPluginDescriptor) {
         final IdeaPluginDescriptor pluginDescriptor = (IdeaPluginDescriptor) myPluginDescriptor;
@@ -291,8 +366,8 @@ public class BlameDialog extends DialogWrapper {
         builder.append("Is enabled: ''").append(pluginDescriptor.isEnabled()).append("''\n");
       }
     }
-    builder.append("{cut}");
-    return builder.toString();
+    builder.append(html ? "</body></html>" : "{cut}");
+    return html ? builder.toString().replaceAll("\n", "<br>").replaceAll("''", ""): builder.toString();
   }
 
   protected JComponent getMainComponent() {
@@ -320,12 +395,18 @@ public class BlameDialog extends DialogWrapper {
       description.append("\n\n");
     }
 
-    description.append(getAdditionalInfo());
-    description.append('\n');
+    if (!myDoNotIncludeAppInfo.isSelected()) {
+      description.append(getAdditionalInfo(false));
+      description.append('\n');
+    }
 
     if (!myThrowableList.isEmpty()) {
-      for (Throwable ex : myThrowableList) {
-        description.append(ex2str(ex)).append("\n\n");
+      if (!mySkipTrace.isSelected()) {
+        for (Throwable ex : myThrowableList) {
+          description.append(ex2str(ex)).append("\n\n");
+        }
+      } else {
+        description.append("Exception trace was hidden by submitter\n");
       }
     }
 

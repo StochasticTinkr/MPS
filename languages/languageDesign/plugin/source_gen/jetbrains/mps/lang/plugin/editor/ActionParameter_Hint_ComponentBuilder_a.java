@@ -46,32 +46,32 @@ import jetbrains.mps.smodel.SReference;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_xpsq7t_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_xpsq7t_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_xpsq7t_a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     if (nodeCondition_xpsq7t_a0a()) {
-      editorCell.addEditorCell(createCollection_xpsq7t_a0());
+      editorCell.addEditorCell(createCollection_1());
     }
     return editorCell;
   }
   private boolean nodeCondition_xpsq7t_a0a() {
     return ActionParameter__BehaviorDescriptor.getFieldDeclaration_id112RIkgil0h.invoke(myNode) != null;
   }
-  private EditorCell createCollection_xpsq7t_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_xpsq7t_a0");
-    editorCell.addEditorCell(createReadOnlyModelAccessor_xpsq7t_a0a());
-    editorCell.addEditorCell(createConstant_xpsq7t_b0a());
-    editorCell.addEditorCell(createReadOnlyModelAccessor_xpsq7t_c0a());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_1());
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_xpsq7t_a0a() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         SNode annotation = ListSequence.fromList(SLinkOperations.getChildren(ActionParameter__BehaviorDescriptor.getFieldDeclaration_id112RIkgil0h.invoke(myNode), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).where(new IWhereFilter<SNode>() {
@@ -108,7 +108,7 @@ import jetbrains.mps.smodel.SReference;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createConstant_xpsq7t_b0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_xpsq7t_b0a");
     Style style = new StyleImpl();
@@ -117,7 +117,7 @@ import jetbrains.mps.smodel.SReference;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_xpsq7t_c0a() {
+  private EditorCell createReadOnlyModelAccessor_1() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         SNode annotation = ListSequence.fromList(SLinkOperations.getChildren(ActionParameter__BehaviorDescriptor.getFieldDeclaration_id112RIkgil0h.invoke(myNode), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).where(new IWhereFilter<SNode>() {

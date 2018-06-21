@@ -71,8 +71,8 @@ public class PartitioningHelper {
         List<Pair<String, TemplateMappingConfiguration>> strings = GenerationPartitioningUtil.toStrings(mappingSet);
         for (Pair<String, TemplateMappingConfiguration> string : strings) {
           SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, "jetbrains.mps.console.ideCommands.structure.ClickableGenerator"));
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId"), PersistenceFacade.getInstance().asString(string.o2.getModel().getModule().getModuleReference().getModuleId()));
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), string.o1);
+          SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId"), PersistenceFacade.getInstance().asString(string.o2.getModel().getModule().getModuleReference().getModuleId()));
+          SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), string.o1);
           console.addText(" ");
           console.addNode(node);
           console.addText("\n");

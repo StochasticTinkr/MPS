@@ -16,6 +16,7 @@ import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationConta
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -27,7 +28,6 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
@@ -84,7 +84,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
 
     final SNode evaluatorNode = createEvaluatorNode();
     containerModel.addRootNode(evaluatorNode);
-    myNode = evaluatorNode.getReference();
+    myNode = SNodeOperations.getPointer(evaluatorNode);
 
     createVars();
     tryToImport(evaluatorNode, nodesToImport);
@@ -278,7 +278,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     public SNode findVariable(final SReference variableReference) {
       SNode matchingVar = ListSequence.fromList(SLinkOperations.getChildren(myEvaluatorNode, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, 0x53c5060c6b19c797L, "variables"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode variable) {
-          return Objects.equals(SNodePointer.deserialize(SPropertyOperations.getString(variable, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d926L, 0x6db8b4aef007e84fL, "highLevelNodeId"))), SLinkOperations.getTargetNode(variableReference).getReference());
+          return Objects.equals(SNodePointer.deserialize(SPropertyOperations.getString(variable, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d926L, 0x6db8b4aef007e84fL, "highLevelNodeId"))), SNodeOperations.getPointer(SLinkOperations.getTargetNode(variableReference)));
         }
       });
       if (matchingVar == null) {

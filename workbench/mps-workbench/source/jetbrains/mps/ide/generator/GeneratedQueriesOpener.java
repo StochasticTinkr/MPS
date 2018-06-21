@@ -18,7 +18,12 @@ package jetbrains.mps.ide.generator;
 import jetbrains.mps.ide.navigation.NavigationProvider;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.textgen.trace.TraceInfo;
+import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -42,38 +47,56 @@ public final class GeneratedQueriesOpener {
     return new GeneratedQueriesOpener(project).openQueryMethod(node);
   }
 
-  // model read should be sufficient
+  @Deprecated
+  @ToRemove(version = 2018.1)
   public boolean openQueryMethod(@NotNull SNode node) {
+    return open(node);
+  }
+
+  // model read should be sufficient
+  public boolean open(@NotNull SNode node) {
     NavigationProvider[] navProviders = NavigationProvider.EP_NAME.getExtensions();
     if (navProviders.length == 0) {
       return false;
     }
 
     SModel model = node.getModel();
-    if (model == null || false == model.getModule() instanceof ReloadableModule) {
+    if (model == null || !(model.getModule() instanceof ReloadableModule)) {
       return false;
     }
-    String packageName = model.getName().getLongName();
-    final String queriesClassName = packageName + ".QueriesGenerated";
 
-    Class cls;
-    try {
-      cls = ((ReloadableModule) model.getModule()).getOwnClass(queriesClassName);
-    } catch (Exception e) {
+    TraceablePositionInfo position = new TraceInfo().getPosition(node);
+    assert position != null;
+
+    final String projectPath = myProject.getProjectFile().getAbsolutePath();
+    IFile file = getGeneratedFile(model, position);
+    if (file == null) {
       return false;
     }
-    final String tail = '_' + node.getNodeId().toString();
-    final String projectPath = myProject.getProjectFile().getAbsolutePath();
-    for (Method m : cls.getMethods()) {
-      if (m.getName().endsWith(tail)) {
-        for (NavigationProvider np : navProviders) {
-          if (np.openMethod(projectPath, cls.getName(), m.getName(), m.getParameterTypes().length)) {
-            return true;
-          }
-        }
-        return false;
+
+    for (NavigationProvider np : navProviders) {
+      if (np.navigate(projectPath, file.getPath(), position.getStartLine(), position.getStartPosition(), position.getEndLine(),
+                      position.getEndPosition())) {
+        return true;
       }
     }
+
     return false;
+  }
+
+  public boolean canOpen(@NotNull SNode node) {
+    return new TraceInfo().getPosition(node) != null;
+  }
+
+  private IFile getGeneratedFile(SModel model, TraceablePositionInfo position) {
+    JavaModuleFacet facet = model.getModule().getFacet(JavaModuleFacet.class);
+    if (facet == null) {
+      return null;
+    }
+    IFile modelDir = facet.getOutputLocation(model);
+    if (modelDir == null) {
+      return null;
+    }
+    return modelDir.getDescendant(position.getFileName());
   }
 }

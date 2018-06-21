@@ -51,7 +51,7 @@ public class Switch_switch_AggregationIdentity_SContainmentLink extends Template
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ContainmentLinkId_SContainmentLink().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_ContainmentLinkId_SContainmentLink().apply(context);
       return tlist1;
     }
   }

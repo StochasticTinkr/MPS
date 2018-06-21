@@ -39,16 +39,9 @@ import jetbrains.mps.errors.item.NodeFlavouredItem;
 import jetbrains.mps.errors.item.ModelFlavouredItem;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
-import java.util.Collection;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.findUsages.CompositeFinder;
-import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchTask;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -181,25 +174,26 @@ public class ModelCheckerViewer extends JPanel {
 
   }
   /*package*/ void checkModules(List<SModule> modules, String taskTargetTitle) {
-    SearchQuery query = new SearchQuery(new GenericHolder<Collection<SModuleReference>>(ListSequence.fromList(modules).select(new ISelector<SModule, SModuleReference>() {
-      public SModuleReference select(SModule it) {
-        return it.getModuleReference();
-      }
-    }).toListSequence()), GlobalScope.getInstance());
-    runCheck(FindUtils.makeProvider(new CompositeFinder(newModelChecker())), query, taskTargetTitle);
+    ModelCheckerIssueFinder f = newModelChecker();
+    f.addModuleScope(modules);
+    runCheck(f, taskTargetTitle);
   }
   /*package*/ void checkModels(List<SModel> models, String taskTargetTitle) {
-    runCheck(FindUtils.makeProvider(newModelChecker()), new SearchQuery(new ModelsHolder(ListSequence.fromList(models).select(new ISelector<SModel, SModelReference>() {
-      public SModelReference select(SModel it) {
-        return it.getReference();
-      }
-    }).toListSequence()), GlobalScope.getInstance()), taskTargetTitle);
+    ModelCheckerIssueFinder f = newModelChecker();
+    f.addModelScope(models);
+    runCheck(f, taskTargetTitle);
   }
   /*package*/ void runCheck(IResultProvider resultProvider, SearchQuery searchQuery, String taskTargetTitle) {
     myCheckAction.setProgressText(String.format("Checking %s", taskTargetTitle));
     myCheckAction.setRunOptions(resultProvider, searchQuery);
     doReCheck();
   }
+  /*package*/ void runCheck(SearchTask searchTask, String taskTargetTitle) {
+    myCheckAction.setProgressText(String.format("Checking %s", taskTargetTitle));
+    myCheckAction.setRunOptions(searchTask);
+    doReCheck();
+  }
+
   private void doReCheck() {
     myCheckAction.actionPerformed(AnActionEvent.createFromInputEvent(myCheckAction, null, ActionPlaces.UNKNOWN));
   }

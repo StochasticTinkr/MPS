@@ -25,10 +25,13 @@
     </file>
   </root>
   <root nodeRef="r:a1e8a5cc-94d1-45e1-acd4-cff6f9adcdf2(jetbrains.mps.lang.makeup.plugin)/1223283106983544495">
+    <file name="FacetManifest.java">
+      <node id="1223283106983544495" at="14,26,15,65" concept="3" />
+    </file>
     <file name="Makeup_Facet.java">
       <node id="1223283106983544495" at="44,0,45,0" concept="4" trace="targets" />
       <node id="1223283106983544495" at="45,0,46,0" concept="4" trace="name" />
-      <node id="1223283106983544495" at="46,25,47,87" concept="3" />
+      <node id="1223283106983559382" at="46,25,47,87" concept="3" />
       <node id="1223283106983544495" at="49,38,50,19" concept="9" />
       <node id="1223283106983544495" at="52,43,53,16" concept="9" />
       <node id="1223283106983544495" at="55,43,56,101" concept="9" />

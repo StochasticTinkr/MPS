@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -22,11 +23,15 @@ public class LT_DotExpression_with_Not_Test extends BaseTransformationTest {
 
   @Test
   public void test_LT_DotExpression_with_Not() throws Throwable {
-    runTest("jetbrains.mps.editorTest.LT_DotExpression_with_Not_Test$TestBody", "testMethod", false);
+    new LT_DotExpression_with_Not_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6042072087468729532", "6042072087468729550");

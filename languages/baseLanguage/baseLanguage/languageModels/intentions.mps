@@ -9699,7 +9699,7 @@
   </node>
   <node concept="2S6QgY" id="i34zMA3">
     <property role="2ZfUl0" value="true" />
-    <property role="TrG5h" value="MakeMethodFinal" />
+    <property role="TrG5h" value="ToggleMethodFinal" />
     <property role="3GE5qa" value="method" />
     <ref role="2ZfgGC" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
     <node concept="2S6ZIM" id="i34zMA4" role="2ZfVej">
@@ -14195,7 +14195,7 @@
     </node>
   </node>
   <node concept="2S6QgY" id="3HnrdCzoiNN">
-    <property role="TrG5h" value="MakeSynchronized" />
+    <property role="TrG5h" value="ToggleMethodSynchronized" />
     <property role="3GE5qa" value="method" />
     <ref role="2ZfgGC" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
     <node concept="2S6ZIM" id="3HnrdCzoiNO" role="2ZfVej">

@@ -27,16 +27,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ModelStatisticsTarget;
   private ConceptPresentation props_ModuleProperties;
   private ConceptPresentation props_NodeReference;
-  private ConceptPresentation props_OfAspectOperation;
+  private ConceptPresentation props_OfAspectOperation_old;
   private ConceptPresentation props_ProjectStatisticsTarget;
-  private ConceptPresentation props_RebuildProjectCommand;
   private ConceptPresentation props_RemoveGenSources;
   private ConceptPresentation props_ShowBrokenReferences;
   private ConceptPresentation props_ShowExpression;
   private ConceptPresentation props_ShowGenPlan;
   private ConceptPresentation props_StatCommand;
   private ConceptPresentation props_SubtreeStatisticsTarget;
-  private ConceptPresentation props_UnloadModelsCommand;
   private ConceptPresentation props_VisibleModulesScope;
   private ConceptPresentation props_WithDependencies;
 
@@ -146,13 +144,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ModelReference:
         if (props_ModelReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           cpb.rawPresentation("model");
           props_ModelReference = cpb.create();
         }
         return props_ModelReference;
       case LanguageConceptSwitch.ModelStatisticsTarget:
         if (props_ModelStatisticsTarget == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L);
+          cpb.deprecateAggregation(0x67f2bafb7a5cad99L, "targetOld");
           cpb.rawPresentation("model");
           props_ModelStatisticsTarget = cpb.create();
         }
@@ -171,15 +171,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_NodeReference = cpb.create();
         }
         return props_NodeReference;
-      case LanguageConceptSwitch.OfAspectOperation:
-        if (props_OfAspectOperation == null) {
+      case LanguageConceptSwitch.OfAspectOperation_old:
+        if (props_OfAspectOperation_old == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L);
-          cpb.deprecateAssociation(0x5252d9021b8c25b0L, "requestedAspect_old");
+          cpb.deprecated(true);
+          cpb.deprecateAssociation(0x7cd422dbfa7b06f8L, "requestedAspect_old");
           cpb.shortDesc("filter models by their aspect");
-          cpb.rawPresentation("ofAspect");
-          props_OfAspectOperation = cpb.create();
+          props_OfAspectOperation_old = cpb.create();
         }
-        return props_OfAspectOperation;
+        return props_OfAspectOperation_old;
       case LanguageConceptSwitch.ProjectStatisticsTarget:
         if (props_ProjectStatisticsTarget == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -187,13 +187,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ProjectStatisticsTarget = cpb.create();
         }
         return props_ProjectStatisticsTarget;
-      case LanguageConceptSwitch.RebuildProjectCommand:
-        if (props_RebuildProjectCommand == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("clean and make");
-          props_RebuildProjectCommand = cpb.create();
-        }
-        return props_RebuildProjectCommand;
       case LanguageConceptSwitch.RemoveGenSources:
         if (props_RemoveGenSources == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -220,7 +213,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ShowExpression;
       case LanguageConceptSwitch.ShowGenPlan:
         if (props_ShowGenPlan == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L);
+          cpb.deprecateAggregation(0x61f2dd6de47f867aL, "targetModelOld");
           cpb.shortDesc("show the generation plan");
           cpb.rawPresentation("#showGenPlan");
           props_ShowGenPlan = cpb.create();
@@ -241,12 +235,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SubtreeStatisticsTarget = cpb.create();
         }
         return props_SubtreeStatisticsTarget;
-      case LanguageConceptSwitch.UnloadModelsCommand:
-        if (props_UnloadModelsCommand == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_UnloadModelsCommand = cpb.create();
-        }
-        return props_UnloadModelsCommand;
       case LanguageConceptSwitch.VisibleModulesScope:
         if (props_VisibleModulesScope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

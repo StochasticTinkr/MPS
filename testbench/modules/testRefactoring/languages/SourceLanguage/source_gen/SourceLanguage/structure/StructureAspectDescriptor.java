@@ -12,11 +12,10 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptConceptA = createDescriptorForConceptA();
-  /*package*/ final ConceptDescriptor myConceptConceptB = createDescriptorForConceptB();
-  /*package*/ final ConceptDescriptor myConceptConceptC = createDescriptorForConceptC();
-  /*package*/ final ConceptDescriptor myConceptInterface1 = createDescriptorForInterface1();
-  /*package*/ final ConceptDescriptor myConceptInterface2 = createDescriptorForInterface2();
+  /*package*/ final ConceptDescriptor myConceptA = createDescriptorForA();
+  /*package*/ final ConceptDescriptor myConceptB = createDescriptorForB();
+  /*package*/ final ConceptDescriptor myConceptC = createDescriptorForC();
+  /*package*/ final ConceptDescriptor myConceptI = createDescriptorForI();
   private final LanguageConceptSwitch myConceptIndex;
 
   public StructureAspectDescriptor() {
@@ -25,23 +24,21 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptConceptA, myConceptConceptB, myConceptConceptC, myConceptInterface1, myConceptInterface2);
+    return Arrays.asList(myConceptA, myConceptB, myConceptC, myConceptI);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myConceptIndex.index(id)) {
-      case LanguageConceptSwitch.ConceptA:
-        return myConceptConceptA;
-      case LanguageConceptSwitch.ConceptB:
-        return myConceptConceptB;
-      case LanguageConceptSwitch.ConceptC:
-        return myConceptConceptC;
-      case LanguageConceptSwitch.Interface1:
-        return myConceptInterface1;
-      case LanguageConceptSwitch.Interface2:
-        return myConceptInterface2;
+      case LanguageConceptSwitch.A:
+        return myConceptA;
+      case LanguageConceptSwitch.B:
+        return myConceptB;
+      case LanguageConceptSwitch.C:
+        return myConceptC;
+      case LanguageConceptSwitch.I:
+        return myConceptI;
       default:
         return null;
     }
@@ -51,42 +48,35 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myConceptIndex.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForConceptA() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SourceLanguage", "ConceptA", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9fdL);
+  private static ConceptDescriptor createDescriptorForA() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SourceLanguage", "A", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9fdL);
     b.class_(false, false, true);
     b.origin("r:3a85a332-d9ac-4332-b817-0bc70c21b404(SourceLanguage.structure)/3334961109014792701");
-    b.prop("propAcustom", 0x2e4829759291ca42L, "3334961109014792770");
     b.prop("propAstring", 0x2e4829759291ca60L, "3334961109014792800");
-    b.aggregate("childA1", 0x2e4829759291ca44L).target(0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9fdL).optional(false).ordered(true).multiple(false).origin("3334961109014792772").done();
+    b.aggregate("childA1", 0x2e4829759291ca44L).target(0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9fdL).optional(true).ordered(true).multiple(false).origin("3334961109014792772").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForConceptB() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SourceLanguage", "ConceptB", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9feL);
+  private static ConceptDescriptor createDescriptorForB() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SourceLanguage", "B", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9feL);
     b.class_(false, false, false);
-    b.super_("SourceLanguage.structure.ConceptA", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9fdL);
+    b.super_("SourceLanguage.structure.A", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9fdL);
     b.parent(0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291ca00L);
     b.origin("r:3a85a332-d9ac-4332-b817-0bc70c21b404(SourceLanguage.structure)/3334961109014792702");
     b.prop("propB", 0x2e4829759291ca40L, "3334961109014792768");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForConceptC() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SourceLanguage", "ConceptC", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9ffL);
+  private static ConceptDescriptor createDescriptorForC() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SourceLanguage", "C", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9ffL);
     b.class_(false, false, false);
-    b.super_("SourceLanguage.structure.ConceptB", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9feL);
+    b.super_("SourceLanguage.structure.B", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9feL);
     b.parent(0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291ca00L);
     b.origin("r:3a85a332-d9ac-4332-b817-0bc70c21b404(SourceLanguage.structure)/3334961109014792703");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForInterface1() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SourceLanguage", "Interface1", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291ca00L);
+  private static ConceptDescriptor createDescriptorForI() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SourceLanguage", "I", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291ca00L);
     b.interface_();
     b.origin("r:3a85a332-d9ac-4332-b817-0bc70c21b404(SourceLanguage.structure)/3334961109014792704");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForInterface2() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SourceLanguage", "Interface2", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291ca3bL);
-    b.interface_();
-    b.origin("r:3a85a332-d9ac-4332-b817-0bc70c21b404(SourceLanguage.structure)/3334961109014792763");
     return b.create();
   }
 }

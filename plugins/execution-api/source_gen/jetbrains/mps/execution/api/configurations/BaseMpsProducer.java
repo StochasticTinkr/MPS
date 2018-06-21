@@ -8,6 +8,7 @@ import org.apache.log4j.LogManager;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.actions.ConfigurationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import org.jetbrains.annotations.NotNull;
@@ -42,6 +43,12 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
   @Nullable
   private ConfigurationContext myContext;
 
+  /**
+   * 
+   * @deprecated there's no value in specific factory class. The cons left for compatibility with generated code, templates use counterpart with ConfigurationFactory now.
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public BaseMpsProducer(ConfigurationType configurationType, String factoryClassName) {
     super(BaseMpsProducer.findFactory(configurationType, factoryClassName));
   }
@@ -167,6 +174,8 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
   }
 
   @NotNull
+  @Deprecated
+  @ToRemove(version = 2018.2)
   protected static ConfigurationFactory findFactory(ConfigurationType configurationType, @NonNls String configurationFactoryClassName) {
     for (ConfigurationFactory factory : Sequence.fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {
       if (factory.getClass().getName().equals(configurationFactoryClassName)) {

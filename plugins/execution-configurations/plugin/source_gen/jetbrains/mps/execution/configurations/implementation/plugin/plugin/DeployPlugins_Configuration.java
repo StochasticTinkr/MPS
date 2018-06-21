@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Level;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -112,20 +113,20 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
   }
   @Override
   public DeployPlugins_Configuration clone() {
-    DeployPlugins_Configuration clone = null;
+    DeployPlugins_Configuration clone = createCloneTemplate();
     try {
-      clone = createCloneTemplate();
+      // beware, PersistenceConfiguration.this of newly created MyState instance would be the same as 
+      // the value of myState, and != clone as regular Java passer-by would expect. 
       clone.myState = (DeployPlugins_Configuration.MyState) myState.clone();
-      clone.myPluginsSettings = (DeployPluginsSettings_Configuration) myPluginsSettings.clone();
-      return clone;
     } catch (CloneNotSupportedException ex) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", ex);
       }
     }
+    clone.myPluginsSettings = (DeployPluginsSettings_Configuration) myPluginsSettings.clone();
     return clone;
   }
-  public class MyState {
+  public final class MyState {
     public boolean mySkipModulesLoading = true;
     public boolean myRestartCurrentInstance = true;
     public MyState() {
@@ -138,7 +139,7 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
       return state;
     }
   }
-  public DeployPlugins_Configuration(Project project, DeployPlugins_Configuration_Factory factory, String name) {
+  public DeployPlugins_Configuration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
   @Nullable

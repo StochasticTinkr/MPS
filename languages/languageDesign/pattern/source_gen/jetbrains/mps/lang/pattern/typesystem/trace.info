@@ -14,6 +14,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)/1196515055991">
+    <file name="TypesystemDescriptor.java">
+      <node id="1196515055991" at="22,5,23,89" concept="5" />
+      <node id="1196515055991" at="23,89,24,47" concept="2" />
+      <node id="1196515055991" at="21,5,25,5" concept="0" />
+      <scope id="1196515055991" at="22,5,24,47">
+        <var name="inferenceRule" id="1196515055991" />
+      </scope>
+    </file>
     <file name="typeof_PatternExpression_InferenceRule.java">
       <node id="5495892681291713943" at="22,115,23,724" concept="5" />
       <node id="1223981705727" at="24,5,25,44" concept="5" />
@@ -67,6 +75,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)/1202483500731">
+    <file name="TypesystemDescriptor.java">
+      <node id="1202483500731" at="14,5,15,102" concept="5" />
+      <node id="1202483500731" at="15,102,16,47" concept="2" />
+      <node id="1202483500731" at="13,5,17,5" concept="0" />
+      <scope id="1202483500731" at="14,5,16,47">
+        <var name="inferenceRule" id="1202483500731" />
+      </scope>
+    </file>
     <file name="typeof_LinkPatternVariableDeclaration_InferenceRule.java">
       <node id="1202486181555" at="22,5,23,53" concept="5" />
       <node id="1202486181555" at="23,53,24,197" concept="5" />
@@ -117,6 +133,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)/1202488162378">
+    <file name="TypesystemDescriptor.java">
+      <node id="1202488162378" at="30,5,31,106" concept="5" />
+      <node id="1202488162378" at="31,106,32,47" concept="2" />
+      <node id="1202488162378" at="29,5,33,5" concept="0" />
+      <scope id="1202488162378" at="30,5,32,47">
+        <var name="inferenceRule" id="1202488162378" />
+      </scope>
+    </file>
     <file name="typeof_PropertyPatternVariableDeclaration_InferenceRule.java">
       <node id="1202488174301" at="20,5,21,53" concept="5" />
       <node id="1202488174301" at="21,53,22,197" concept="5" />
@@ -164,6 +188,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)/1202488392899">
+    <file name="TypesystemDescriptor.java">
+      <node id="1202488392899" at="26,5,27,98" concept="5" />
+      <node id="1202488392899" at="27,98,28,47" concept="2" />
+      <node id="1202488392899" at="25,5,29,5" concept="0" />
+      <scope id="1202488392899" at="26,5,28,47">
+        <var name="inferenceRule" id="1202488392899" />
+      </scope>
+    </file>
     <file name="typeof_PatternVariableDeclaration_InferenceRule.java">
       <node id="1202488411718" at="22,124,23,66" concept="5" />
       <node id="1202488433157" at="23,66,24,61" concept="5" />
@@ -244,6 +276,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)/1202491110369">
+    <file name="TypesystemDescriptor.java">
+      <node id="1202491110369" at="10,5,11,81" concept="5" />
+      <node id="1202491110369" at="11,81,12,47" concept="2" />
+      <node id="1202491110369" at="9,33,13,5" concept="0" />
+      <scope id="1202491110369" at="10,5,12,47">
+        <var name="inferenceRule" id="1202491110369" />
+      </scope>
+    </file>
     <file name="typeof_AsPattern_InferenceRule.java">
       <node id="1202491123370" at="22,5,23,53" concept="5" />
       <node id="1202491123370" at="23,53,24,197" concept="5" />
@@ -294,6 +334,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)/1202491204038">
+    <file name="TypesystemDescriptor.java">
+      <node id="1202491204038" at="18,5,19,83" concept="5" />
+      <node id="1202491204038" at="19,83,20,47" concept="2" />
+      <node id="1202491204038" at="17,5,21,5" concept="0" />
+      <scope id="1202491204038" at="18,5,20,47">
+        <var name="inferenceRule" id="1202491204038" />
+      </scope>
+    </file>
     <file name="typeof_ListPattern_InferenceRule.java">
       <node id="1202491231717" at="22,124,23,66" concept="5" />
       <node id="1202491231723" at="23,66,24,61" concept="5" />

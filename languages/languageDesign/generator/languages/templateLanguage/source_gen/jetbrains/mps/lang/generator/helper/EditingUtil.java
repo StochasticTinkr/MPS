@@ -6,11 +6,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -19,9 +18,9 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 
 public final class EditingUtil {
   public static boolean isNodeMacroApplicable(SNode node) {
@@ -37,16 +36,15 @@ public final class EditingUtil {
     }
     // ----- 
     // it can be 'ref.cell->{name}'. in this case both are 'applicable'. but link has priority 
-    String linkRole = EditingUtil.getEditedLinkRole(cell);
+    SReferenceLink linkRole = EditingUtil.getEditedLink(cell);
     if (linkRole != null) {
       return false;
     }
-    String propertyName = EditingUtil.getEditedPropertyName(cell);
-    if (propertyName == null) {
+    SProperty property = EditingUtil.getEditedProperty(cell);
+    if (property == null) {
       return false;
     }
-    SProperty p = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertProperty(propertyName);
-    return AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro"), p)) == null;
+    return AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro"), property)) == null;
   }
   public static boolean isReferenceMacroApplicable(SNode node, EditorCell cell) {
     if (cell == null) {
@@ -55,12 +53,11 @@ public final class EditingUtil {
     if (!(isAnyMacroApplicable(node))) {
       return false;
     }
-    String linkRole = EditingUtil.getEditedLinkRole(cell);
-    if (linkRole == null) {
+    SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
+    SReferenceLink ref = EditingUtil.getEditedLink(cell);
+    if (ref == null) {
       return false;
     }
-    SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
-    SReferenceLink ref = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertAssociation(linkRole);
     return AttributeOperations.getAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), ref)) == null;
   }
   public static boolean isAnyMacroApplicable(SNode node) {
@@ -108,23 +105,27 @@ public final class EditingUtil {
     }
     return nodeMacro;
   }
+
+
+  /**
+   * 
+   * 
+   * @throws IllegalArgumentException if the {@link EditingUtil#getEditedProperty(SNode, EditorCell)} == null
+   */
   public static SNode addPropertyMacro(SNode node, EditorCell cell) {
+
     // surround with <TF> if necessary 
     if (SNodeOperations.getNodeAncestorWhereConceptInList(node, new SAbstractConcept[]{MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")}, false, false) != null) {
       if (!(EditingUtil.isInsideTemplateFragment(node))) {
         EditingUtil.createTemplateFragment(node);
       }
     }
-    String propertyName = EditingUtil.getEditedPropertyName(cell);
-    SProperty p = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertProperty(propertyName);
+    SProperty p = EditingUtil.getEditedProperty(cell);
     SNode propertyMacro = SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro"), p), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro")));
-    if (p != null) {
-      PropertyAttribute__BehaviorDescriptor.setProperty_id6Gg5Klvu8CV.invoke(propertyMacro, p);
-    }
+    PropertyAttribute__BehaviorDescriptor.setProperty_id6Gg5Klvu8CV.invoke(propertyMacro, p);
     return propertyMacro;
   }
   public static SNode addReferenceMacro(SNode node, EditorCell cell) {
-    String linkRole = EditingUtil.getEditedLinkRole(cell);
     SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
     // surround with <TF> if necessary 
     if (SNodeOperations.getNodeAncestorWhereConceptInList(referentNode, new SAbstractConcept[]{MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")}, false, false) != null) {
@@ -132,7 +133,7 @@ public final class EditingUtil {
         EditingUtil.createTemplateFragment(referentNode);
       }
     }
-    SReferenceLink ref = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertAssociation(linkRole);
+    SReferenceLink ref = EditingUtil.getEditedLink(cell);
     SNode referenceMacro = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), ref), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro")));
     if (ref != null) {
       LinkAttribute__BehaviorDescriptor.setLink_id6Gg5KlvuxxF.invoke(referenceMacro, ref);
@@ -173,22 +174,55 @@ public final class EditingUtil {
     });
   }
   public static String getEditedPropertyName(EditorCell cell) {
-    if (cell instanceof EditorCell_Property) {
-      ModelAccessor modelAccessor = ((EditorCell_Property) cell).getModelAccessor();
-      if (modelAccessor instanceof PropertyAccessor) {
-        String propertyName = ((PropertyAccessor) modelAccessor).getPropertyName();
-        return propertyName;
-      }
-    }
-    return null;
+    return check_vooyx9_a0a21(getEditedProperty(cell));
   }
+  public static SProperty getEditedProperty(EditorCell cell) {
+    return check_vooyx9_a0a31(check_vooyx9_a0a0n(check_vooyx9_a0a0a31(cell)));
+  }
+  /**
+   * Use getEditedLink() instead
+   * 
+   * @deprecated 
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static String getEditedLinkRole(EditorCell cell) {
     if (!(cell.isReferenceCell())) {
       return null;
     }
     return cell.getRole();
   }
+  public static SReferenceLink getEditedLink(EditorCell cell) {
+    if (!(cell.isReferenceCell())) {
+      return null;
+    }
+    return (SReferenceLink) cell.getSRole();
+  }
   public static SNode getEditedLinkReferentNode(EditorCell cell) {
     return cell.getSNode();
+  }
+  private static String check_vooyx9_a0a21(SProperty checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getName();
+    }
+    return null;
+  }
+  private static SProperty check_vooyx9_a0a31(SPropertyInfo checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getProperty();
+    }
+    return null;
+  }
+  private static SPropertyInfo check_vooyx9_a0a0n(EditorCellContext checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getPropertyInfo();
+    }
+    return null;
+  }
+  private static EditorCellContext check_vooyx9_a0a0a31(EditorCell checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getCellContext();
+    }
+    return null;
   }
 }

@@ -15,11 +15,12 @@ public final class LanguageConceptSwitch {
   public static final int ApplicationPluginType = 3;
   public static final int GetPreferencesComponentInProjectOperation = 4;
   public static final int GetToolInProjectOperation = 5;
-  public static final int ProjectPluginDeclaration = 6;
-  public static final int ProjectPluginDisposeBlock = 7;
-  public static final int ProjectPluginInitBlock = 8;
-  public static final int ProjectPluginType = 9;
-  public static final int StandalonePluginDescriptor = 10;
+  public static final int PlatformAccessExpression = 6;
+  public static final int ProjectPluginDeclaration = 7;
+  public static final int ProjectPluginDisposeBlock = 8;
+  public static final int ProjectPluginInitBlock = 9;
+  public static final int ProjectPluginType = 10;
+  public static final int StandalonePluginDescriptor = 11;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xef7bf5acd06c4342L, 0xb11de42104eb9343L);
@@ -29,6 +30,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x6b059b0986f204fL, ApplicationPluginType);
     builder.put(0x9766f9338aa2118L, GetPreferencesComponentInProjectOperation);
     builder.put(0x9766f9338aa2115L, GetToolInProjectOperation);
+    builder.put(0x2f7290ec129946e7L, PlatformAccessExpression);
     builder.put(0x6b059b0986f2052L, ProjectPluginDeclaration);
     builder.put(0x6b059b0986f2043L, ProjectPluginDisposeBlock);
     builder.put(0x6b059b0986f2049L, ProjectPluginInitBlock);

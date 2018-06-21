@@ -62,7 +62,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
           if (SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
             SNode decl = SNodeOperations.cast(target, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
             if (SPropertyOperations.hasValue(decl, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), "none", null)) {
-              ListSequence.fromList(results).addElement(new NodeReportItemBase(MessageStatus.ERROR, ref.getReference(), "Reference to a non-referenceable concept found: " + SPropertyOperations.getString(target, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) {
+              ListSequence.fromList(results).addElement(new NodeReportItemBase(MessageStatus.ERROR, SNodeOperations.getPointer(ref), "Reference to a non-referenceable concept found: " + SPropertyOperations.getString(target, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) {
                 @Override
                 public String getIssueKind() {
                   return "reference to a non-referenceable concept";
@@ -73,7 +73,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
         }
         if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && SPropertyOperations.hasValue(SNodeOperations.cast(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), "none", null)) {
           if (((boolean) (Boolean) BHReflection.invoke0(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), SMethodTrimmedId.create("isSubconceptOf", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "73yVtVlWOga"), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1169194658468")))) {
-            ListSequence.fromList(results).addElement(new NodeReportItemBase(MessageStatus.WARNING, concept.getReference(), "INamedConcept inheritors are usually referenceable") {
+            ListSequence.fromList(results).addElement(new NodeReportItemBase(MessageStatus.WARNING, SNodeOperations.getPointer(concept), "INamedConcept inheritors are usually referenceable") {
               @Override
               public String getIssueKind() {
                 return "non-referenceable named concept";
@@ -119,7 +119,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
       return;
     }
     if (cncpt instanceof SInterfaceConcept) {
-      ListSequence.fromList(results).addElement(new NodeReportItemBase(MessageStatus.ERROR, node.getReference(), "Interface instance found! " + node.toString()) {
+      ListSequence.fromList(results).addElement(new NodeReportItemBase(MessageStatus.ERROR, SNodeOperations.getPointer(node), "Interface instance found! " + node.toString()) {
         @Override
         public String getIssueKind() {
           return "interface instance";
@@ -128,7 +128,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
       return;
     }
     if (cncpt.isAbstract()) {
-      ListSequence.fromList(results).addElement(new NodeReportItemBase(MessageStatus.ERROR, node.getReference(), "Abstract concept instance found! " + node.toString()) {
+      ListSequence.fromList(results).addElement(new NodeReportItemBase(MessageStatus.ERROR, SNodeOperations.getPointer(node), "Abstract concept instance found! " + node.toString()) {
         @Override
         public String getIssueKind() {
           return "abstract concept instance";
@@ -138,7 +138,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
     }
     if (isAncestor) {
       if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2ea65c0b397bd5beL, "jetbrains.mps.lang.core.structure.ScopeFacade")) && !(ListSequence.fromList(SNodeOperations.getNodeAncestors(refNode, null, true)).contains(node))) {
-        ListSequence.fromList(results).addElement(new NodeReportItemBase(MessageStatus.ERROR, anchor.getReference(), "Reference from outside to a node under ScopeFacade: facade=" + cncpt.getName()) {
+        ListSequence.fromList(results).addElement(new NodeReportItemBase(MessageStatus.ERROR, SNodeOperations.getPointer(anchor), "Reference from outside to a node under ScopeFacade: facade=" + cncpt.getName()) {
           @Override
           public String getIssueKind() {
             return "reference to a non-referenceable node";
@@ -148,14 +148,14 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
     } else {
       ConceptDescriptor cd = ((SAbstractConceptAdapter) cncpt).getConceptDescriptor();
       if (cd.getStaticScope() == StaticScope.NONE) {
-        ListSequence.fromList(results).addElement(new NodeReportItemBase(MessageStatus.ERROR, anchor.getReference(), "Reference to a non-referenceable node found: " + cncpt.getName()) {
+        ListSequence.fromList(results).addElement(new NodeReportItemBase(MessageStatus.ERROR, SNodeOperations.getPointer(anchor), "Reference to a non-referenceable node found: " + cncpt.getName()) {
           @Override
           public String getIssueKind() {
             return "reference to a non-referenceable node";
           }
         });
       } else if (cd.getStaticScope() == StaticScope.ROOT && !((SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(refNode)))) {
-        ListSequence.fromList(results).addElement(new NodeReportItemBase(MessageStatus.ERROR, anchor.getReference(), "Cross-root reference to a locally referenceable node found: " + cncpt.getName()) {
+        ListSequence.fromList(results).addElement(new NodeReportItemBase(MessageStatus.ERROR, SNodeOperations.getPointer(anchor), "Cross-root reference to a locally referenceable node found: " + cncpt.getName()) {
           @Override
           public String getIssueKind() {
             return "reference to a locally referenceable node";

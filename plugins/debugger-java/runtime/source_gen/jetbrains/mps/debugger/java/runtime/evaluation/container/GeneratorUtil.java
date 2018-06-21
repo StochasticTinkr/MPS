@@ -13,21 +13,18 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.compiler.EclipseJavaCompiler;
-import jetbrains.mps.smodel.resources.FResource;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.text.TextUnit;
-import jetbrains.mps.compiler.JavaCompilerOptions;
-import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.Set;
-import jetbrains.mps.project.facets.JavaModuleOperations;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.make.script.PropertyPoolInitializer;
+import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.smodel.resources.CResource;
 import java.util.concurrent.ExecutionException;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException;
@@ -42,75 +39,46 @@ public class GeneratorUtil {
     MakeSession makeSession = new MakeSession(project, new DefaultMakeMessageHandler(project), false);
     if (makeService.openNewSession(makeSession)) {
       try {
-        IScript script = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.debugger.java.evaluation.JavaDebugEvaluate"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")).toScript();
-        IResult result = makeService.make(makeSession, new ModelsToResources(Sequence.<SModel>singleton(model)).canGenerateCondition(new _FunctionTypes._return_P1_E0<Boolean, SModel>() {
+        IScript script = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.debugger.java.evaluation.JavaDebugEvaluate"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.debugger.java.evaluation.JavaDebugEvaluate.compileEvaluator")).toScript();
+        Iterable<IResource> resources = new ModelsToResources(Sequence.<SModel>singleton(model)).canGenerateCondition(new _FunctionTypes._return_P1_E0<Boolean, SModel>() {
           public Boolean invoke(SModel m) {
             return true;
           }
-        }).resources(), script).get();
-        boolean successful = result.isSucessful();
-        String source = null;
-        final String desiredSourceUnitName = className + ".java";
-        if (successful) {
-          EclipseJavaCompiler javaCompiler = new EclipseJavaCompiler();
-          for (FResource res : Sequence.fromIterable(result.output()).ofType(FResource.class)) {
-            Map<String, Object> contents = res.contents();
-            for (String unitName : MapSequence.fromMap(contents).keySet()) {
-              if (!(unitName.endsWith(".java"))) {
-                continue;
-              }
-              Object textGenOutcome = MapSequence.fromMap(contents).get(unitName);
-              if (textGenOutcome instanceof TextUnit) {
-                TextUnit tu = (TextUnit) textGenOutcome;
-                source = new String(tu.getBytes(), tu.getEncoding());
-              } else {
-                // FIXME fallback, shall not happen with textGenToMemory using new j.m.text API 
-                source = String.valueOf(textGenOutcome);
-              }
-              javaCompiler.addSource(res.packageName() + '.' + unitName.substring(0, unitName.length() - 5), source);
-              if (unitName.equals(desiredSourceUnitName)) {
-                // FIXME WTF? why unit name is treated as source, and do we really need to keep source at all? 
-                source = String.valueOf(unitName);
-              }
+        }).resources();
+        IResult result = makeService.make(makeSession, resources, script, new IScriptController.Stub2(makeSession, new PropertyPoolInitializer() {
+          public void populate(IPropertiesPool ppool) {
+            // FIXME this is an ugly hack to pass a module to take classpath from when compiling a generated Evaluator class. 
+            //       Since there's only transient model after textgen, classpath could not get calculated 
+            Tuples._1<SModule> pp = (Tuples._1<SModule>) ppool.properties(new ITarget.Name("jetbrains.mps.debugger.java.evaluation.JavaDebugEvaluate.compileEvaluator"), Object.class);
+            if (pp != null) {
+              pp._0(model.getModule());
             }
           }
-          GeneratorUtil.MyCompilationResultAdapter compilationResult = new GeneratorUtil.MyCompilationResultAdapter();
-          javaCompiler.addCompilationResultListener(compilationResult);
-          JavaCompilerOptions options = null;
-          if (project != null) {
-            options = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project);
+        })).get();
+        if (result.isSucessful()) {
+          final String fullClassName = JavaNameUtil.packageName(model) + '.' + className;
+          // FIXME I know ICResource is deprecated and FResource replaced with CResource looks a bit odd, however my point is to 
+          //       drop FResource from TextGen facet ASAP, not to make java.evaluation perfect. That activity requires thorough redesign of a whole piece 
+          //       and I'm not the brave one (too much of a hate flows in me).  
+          // In fact, to get anything out from Make facet (MPS-compiled code) to this place (IDEA-compiled code), I still need an IResource declared somewhere 
+          // in a module accessible to both lang java.evaluation and this debugger.java.runtime solution. As there's not too many options to put this class to, 
+          // I'll end up with IResource declared in this (IDEA-compiled) solution, introducing yet another dependency cycle (this solutuin references Make facet 
+          // and JavaDebugEvaluate would reference IResource class), which is not the way I like. Indeed, depedency from solution to language works, as JavaDebugEvaluate  
+          // facet reference is translated into a string AND solution is not loaded by MPS (therefore, MPS classloader doesn't deal with the cycle). Nevertheless, I don't like it. 
+          for (CResource cres : Sequence.fromIterable(result.output()).ofType(CResource.class)) {
+            try {
+              ClassLoader cl = cres.classes().getClassLoader(parentloader);
+              return cl.loadClass(fullClassName);
+            } catch (ClassNotFoundException ex) {
+              // ignore silently, try another resource 
+            }
           }
-          final Wrappers._T<Set<String>> collectCompileClasspath = new Wrappers._T<Set<String>>(null);
-          project.getModelAccess().runReadAction(new Runnable() {
-            public void run() {
-              collectCompileClasspath.value = JavaModuleOperations.collectCompileClasspath(model.getModule());
-            }
-          });
-          javaCompiler.compile(JavaModuleOperations.createClassPathItem(collectCompileClasspath.value, GeneratorUtil.class.getName()), (options != null ? options : JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS));
-          javaCompiler.removeCompilationResultListener(compilationResult);
-
-          final String fullClassName = SNodeOperations.getModelLongName(model) + "." + className;
-          if (successful && (source != null && source.length() > 0)) {
-            if (developerMode) {
-              System.err.println("[Generated text]\n" + source + "\n[Generated text]");
-            }
-            return Class.forName(fullClassName, true, javaCompiler.getClassLoader(parentloader));
-          } else if ((source != null && source.length() > 0) && !(successful)) {
-            String text = "Errors during compilation";
-            if (compilationResult.hasErrors()) {
-              text += ":\n" + compilationResult.getMessage();
-            } else {
-              text += ".";
-            }
-            throw new EvaluationException(text);
-          }
+          throw new EvaluationException(String.format("Can not load evaluator class %s", fullClassName));
         }
         // else fall-through, up to throws EvaluationException below 
       } catch (InterruptedException e) {
         throw new EvaluationException(e);
       } catch (ExecutionException e) {
-        throw new EvaluationException(e);
-      } catch (ClassNotFoundException e) {
         throw new EvaluationException(e);
       }
     }

@@ -80,7 +80,7 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final List<SModel> modelDescriptors = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModel>) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel md) {
-        return SModelStereotype.isUserModel(md);
+        return !(SModelStereotype.isStubModel(md));
       }
     }));
 

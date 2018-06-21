@@ -296,7 +296,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
       return cell;
     }
 
-    if (cell instanceof EditorCell_Label && cell.getRole() == null) {
+    if (cell instanceof EditorCell_Label && cell.getSRole() == null) {
       EditorCell result = new ChildrenCollectionFinder(cell, true, false).find();
       if (result != null) {
         return result;

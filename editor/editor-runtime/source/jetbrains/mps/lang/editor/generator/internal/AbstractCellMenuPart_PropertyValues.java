@@ -22,6 +22,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.PropertySubstituteAction;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -35,8 +36,8 @@ import java.util.List;
 public abstract class AbstractCellMenuPart_PropertyValues implements SubstituteInfoPartExt {
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-    SNode node = (SNode) cellContext.get(PropertyCellContext.EDITED_NODE);
-    SNode property = (SNode) cellContext.get(PropertyCellContext.PROPERTY_DECLARATION);
+    SNode node = cellContext.get(PropertyCellContext.EDITED_NODE);
+    SProperty property = cellContext.get(PropertyCellContext.PROPERTY_DECLARATION);
     if (property == null) {
       return Collections.emptyList();
     }

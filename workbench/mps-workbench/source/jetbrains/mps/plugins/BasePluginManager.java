@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -42,14 +41,12 @@ public abstract class BasePluginManager<T> implements PluginLoader {
   private static final Logger LOG = LogManager.getLogger(BasePluginManager.class);
 
   protected final Object myPluginsLock = new Object(); //guarding my fields
-  protected final SRepository myRepository;
   private final PluginLoaderRegistry myPluginLoaderRegistry;
 
-  private List<T> mySortedPlugins = new ArrayList<T>(); // does not contain nulls
+  private List<T> mySortedPlugins = new ArrayList<>(); // does not contain nulls
   private final Map<PluginContributor, T> myContributorToPlugin = new LinkedHashMap<>(); // NOTE ALLOWED NULL VALUES
 
-  public BasePluginManager(@NotNull SRepository repository, PluginLoaderRegistry pluginLoaderRegistry) {
-    myRepository = repository;
+  public BasePluginManager(PluginLoaderRegistry pluginLoaderRegistry) {
     myPluginLoaderRegistry = pluginLoaderRegistry;
   }
 
@@ -75,9 +72,7 @@ public abstract class BasePluginManager<T> implements PluginLoader {
     LOG.debug("Loading plugins from " + size + " contributors [" + toString() + "]");
     final Map<PluginContributor, T> plugins = createPlugins(contributors);
     synchronized (myPluginsLock) {
-      plugins.entrySet().forEach(entry -> {
-        PluginContributor contributor = entry.getKey();
-        @Nullable T plugin = entry.getValue();
+      plugins.forEach((contributor, plugin) -> {
         if (myContributorToPlugin.containsKey(contributor)) { // not in one step because nulls are allowed
           LOG.error("", new IllegalArgumentException(this + ": contributor " + contributor + " is already registered"));
         }
@@ -164,7 +159,7 @@ public abstract class BasePluginManager<T> implements PluginLoader {
 
   public List<T> getPlugins() {
     synchronized (myPluginsLock) {
-      return new ArrayList<T>(mySortedPlugins);
+      return new ArrayList<>(mySortedPlugins);
     }
   }
 }

@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class SynchronizedFieldUnavailable_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class SynchronizedFieldUnavailable_Test extends BaseTransformationTest {
 
   @Test
   public void test_SynchronizedFieldUnavailable() throws Throwable {
-    runTest("jetbrains.mps.editorTest.SynchronizedFieldUnavailable_Test$TestBody", "testMethod", false);
+    new SynchronizedFieldUnavailable_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("284804022080833434", "284804022080833439");

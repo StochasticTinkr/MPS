@@ -19,7 +19,6 @@ import jetbrains.mps.project.Project;
 import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.ide.migration.MigrationRegistry;
 import javax.swing.Icon;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -125,7 +124,7 @@ public class InitialStep extends BaseStep {
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         MigrationRegistry manager = mySession.getMigrationRegistry();
-        final Icon migrationIcon = ApplicationManager.getApplication().getComponent(GlobalIconManager.class).getIconFor(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
+        final Icon migrationIcon = GlobalIconManager.getInstance().getIconFor(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
 
         // module resave 
         if (mySession.getRequiredSteps().contains(MigrationSession.MigrationStepKind.RESAVE)) {

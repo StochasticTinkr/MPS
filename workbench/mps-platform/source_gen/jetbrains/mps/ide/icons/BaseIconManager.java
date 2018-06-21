@@ -4,7 +4,6 @@ package jetbrains.mps.ide.icons;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import java.awt.MediaTracker;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.IconResource;
@@ -13,6 +12,7 @@ import java.util.HashMap;
 import javax.swing.Icon;
 import java.util.Set;
 import jetbrains.mps.module.ReloadableModule;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -43,15 +43,10 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.IconLoader;
-import java.io.InputStream;
-import java.io.IOException;
 import org.apache.log4j.Level;
-import javax.swing.ImageIcon;
 
 public class BaseIconManager {
   private static final Logger LOG = LogManager.getLogger(BaseIconManager.class);
-  private static final int IMAGE_LOADED = ~(((MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING)));
-
   private Map<SAbstractConcept, IconResource> myConceptToIcon = MapSequence.fromMap(new HashMap<SAbstractConcept, IconResource>());
   private Map<IconResource, Icon> myResToIcon = MapSequence.fromMap(new HashMap<IconResource, Icon>());
 
@@ -62,7 +57,6 @@ public class BaseIconManager {
   }
 
   public Icon getIconFor(SAbstractConcept concept) {
-    IconResource cached = MapSequence.fromMap(myConceptToIcon).get(concept);
     if (!(MapSequence.fromMap(myConceptToIcon).containsKey(concept))) {
       IconResource ir = getIconForConceptNoCache(concept);
       MapSequence.fromMap(myConceptToIcon).put(concept, ir);
@@ -70,13 +64,17 @@ public class BaseIconManager {
 
     IconResource actual = MapSequence.fromMap(myConceptToIcon).get(concept);
     if (actual == null) {
-      return IdeIcons.DEFAULT_CONCEPT_ICON;
+      return getDefaultConceptIcon(concept);
     }
     Icon icon = getIconForResource(actual);
     if (icon == null) {
-      return IdeIcons.DEFAULT_CONCEPT_ICON;
+      return getDefaultConceptIcon(concept);
     }
     return icon;
+  }
+
+  private static Icon getDefaultConceptIcon(SAbstractConcept concept) {
+    return (concept instanceof SConcept && ((SConcept) concept).isRootable() ? IdeIcons.DEFAULT_ROOT_ICON : IdeIcons.DEFAULT_CONCEPT_ICON);
   }
 
   public Icon getIconFor(@NotNull final SNode node) {
@@ -211,43 +209,15 @@ public class BaseIconManager {
       return MapSequence.fromMap(myResToIcon).get(ir);
     }
 
-    Icon icon = IconLoader.findIcon(ir.getResourceId(), ir.getProvider());
+    // Quick fix for usable platform update: non strict icon search to avoid RuntimeException and unusable MPS 
+    Icon icon = IconLoader.findIcon(ir.getResourceId(), ir.getProvider(), false, false);
     if (icon == null) {
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("Icon was not found for " + ir);
+      }
       return null;
     }
     MapSequence.fromMap(myResToIcon).put(ir, icon);
     return icon;
   }
-
-  private Icon loadIcon(@NotNull InputStream is) {
-    byte[] image = new byte[0];
-    try {
-      image = new byte[is.available()];
-    } catch (IOException e) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("", e);
-      }
-    }
-    try {
-      int current = 0;
-      while (true) {
-        int result = is.read(image, current, image.length - current);
-        if (result == -1 || result == 0) {
-          break;
-        } else {
-          current += result;
-        }
-      }
-    } catch (IOException e) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("", e);
-      }
-    }
-    ImageIcon icon = new ImageIcon(image);
-    if ((icon.getImageLoadStatus() & IMAGE_LOADED) != 0) {
-      return icon;
-    }
-    return null;
-  }
-
 }

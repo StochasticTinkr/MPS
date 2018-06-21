@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodeLegacy;
-import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -48,7 +48,8 @@ public class ChildrenCollectionFinder {
   }
 
   public EditorCell find() {
-    return ModelAccess.instance().runReadAction(new Computable<EditorCell>() {
+    SRepository repo = myCurrent.getContext().getRepository();
+    return new ModelAccessHelper(repo).runReadAction(new Computable<EditorCell>() {
       @Override
       public EditorCell compute() {
         if (myCheckFirst && isMultipleCollectionCell(myCurrent)) {
@@ -91,17 +92,12 @@ public class ChildrenCollectionFinder {
   }
 
   private static boolean isMultipleCollectionCell(EditorCell current) {
-    if (current.getRole() != null) {
-      String role = current.getRole();
-      SNode currentNode = current.getSNode();
-      SNode linkDeclaration = new SNodeLegacy(currentNode).getLinkDeclaration(role);
-      if (linkDeclaration != null &&
-        !SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration) &&
-        SModelUtil.isMultipleLinkDeclaration(linkDeclaration)) {
-        return true;
-      }
+    if (current.getSRole() == null) {
+      return false;
     }
-    return false;
+
+    SAbstractLink role = ((SAbstractLink) current.getSRole());
+    return role != null && (!(role instanceof SReferenceLink)) && role.isMultiple();
   }
 
   private static SNode getLCA(SNode left, SNode right) {

@@ -27,9 +27,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.openapi.editor.cells.traversal.CellTreeIterable;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
 import java.util.Objects;
 import org.jetbrains.annotations.Nullable;
 
@@ -262,7 +262,7 @@ public class IntelligentNodeMover {
     }
     EditorCell cellToMove = findCellToMoveInsideCell(cell);
     if (cellToMove != null) {
-      SContainmentLink cellContainmentLink = CellUtil.getCellContainmentLink(cellToMove);
+      SContainmentLink cellContainmentLink = (SContainmentLink) cellToMove.getSRole();
       assert cellContainmentLink != null;
       return new IntelligentNodeMover.PlaceToMove(cellToMove.getSNode(), cellContainmentLink, null, myIsForward);
     }
@@ -280,8 +280,8 @@ public class IntelligentNodeMover {
   }
 
   private boolean isProperCellToMove(@NotNull EditorCell cell) {
-    SContainmentLink link = CellUtil.getCellContainmentLink(cell);
-    return link != null && link.isMultiple() && isSimilarLink(link);
+    SAbstractLink link = (SAbstractLink) cell.getSRole();
+    return link != null && (link instanceof SContainmentLink) && link.isMultiple() && isSimilarLink(((SContainmentLink) link));
   }
 
   private boolean isSimilarLink(@NotNull SContainmentLink link) {

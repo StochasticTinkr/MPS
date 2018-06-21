@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,16 +132,15 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       @NotNull TemplateContext ctx) throws GenerationCanceledException, GenerationFailureException {
     List<SNode> outputNodes = generator.copyNodes(inputNodes, ctx, templateId, this);
     if (!outputNodes.isEmpty()) {
-      new ChildAdopter(generator).checkIsExpectedLanguage(outputNodes, templateNode, ctx);
+      generator.checkIsExpectedLanguage(outputNodes, templateNode, ctx);
     }
     return outputNodes;
   }
 
   @Override
   public SNode insertNode(SNode child, SNodeReference templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
-    ChildAdopter a = new ChildAdopter(generator);
-    a.checkIsExpectedLanguage(Collections.singletonList(child), templateNode, templateContext);
-    return a.adopt(child, templateContext);
+    generator.checkIsExpectedLanguage(Collections.singletonList(child), templateNode, templateContext);
+    return new ChildAdopter(generator).adopt(child, templateContext);
   }
 
   @Nullable
@@ -261,7 +260,8 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         if (TracingUtil.getInput(reducedNode) == null) {
           CopyUtil.copyUserObjects(inputNode, reducedNode);
           // keep track of 'original input node'
-          TracingUtil.fillOriginalNode(inputNode, reducedNode, false);
+          // XXX in fact, copyUserObjects, above, already did that for us
+          TracingUtil.deriveOriginalNode(inputNode, reducedNode);
         }
       }
       generator.recordTransformInputTrace(inputNode, outputNodes);

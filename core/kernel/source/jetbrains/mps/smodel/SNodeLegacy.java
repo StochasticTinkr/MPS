@@ -27,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Artem Tikhomirov
  */
 @Deprecated
-@ToRemove(version = 3.3)
+@ToRemove(version = 2018.2)
 public final class SNodeLegacy {
   private final SNode myNode;
 

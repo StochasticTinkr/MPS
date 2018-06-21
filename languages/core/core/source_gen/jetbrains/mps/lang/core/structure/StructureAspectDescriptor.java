@@ -17,10 +17,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBaseConcept = createDescriptorForBaseConcept();
   /*package*/ final ConceptDescriptor myConceptBasePlaceholder = createDescriptorForBasePlaceholder();
   /*package*/ final ConceptDescriptor myConceptChildAttribute = createDescriptorForChildAttribute();
-  /*package*/ final ConceptDescriptor myConceptExportScope = createDescriptorForExportScope();
-  /*package*/ final ConceptDescriptor myConceptExportScopeModule = createDescriptorForExportScopeModule();
-  /*package*/ final ConceptDescriptor myConceptExportScopeNamespace = createDescriptorForExportScopeNamespace();
-  /*package*/ final ConceptDescriptor myConceptExportScopePublic = createDescriptorForExportScopePublic();
   /*package*/ final ConceptDescriptor myConceptIAntisuppressErrors = createDescriptorForIAntisuppressErrors();
   /*package*/ final ConceptDescriptor myConceptICanSuppressErrors = createDescriptorForICanSuppressErrors();
   /*package*/ final ConceptDescriptor myConceptIContainer = createDescriptorForIContainer();
@@ -59,7 +55,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAttribute, myConceptBaseCommentAttribute, myConceptBaseConcept, myConceptBasePlaceholder, myConceptChildAttribute, myConceptExportScope, myConceptExportScopeModule, myConceptExportScopeNamespace, myConceptExportScopePublic, myConceptIAntisuppressErrors, myConceptICanSuppressErrors, myConceptIContainer, myConceptIDeprecatable, myConceptIDontApplyTypesystemRules, myConceptIDontSubstituteByDefault, myConceptIMetaLevelChanger, myConceptINamedConcept, myConceptIOldCommentContainer, myConceptIPlaceholderContent, myConceptIResolveInfo, myConceptISkipConstraintsChecking, myConceptISmartReferent, myConceptIStubForAnotherConcept, myConceptISuppressErrors, myConceptIType, myConceptIWrapper, myConceptImplementationContainer, myConceptImplementationPart, myConceptImplementationWithStubPart, myConceptInterfacePart, myConceptLinkAttribute, myConceptMigrationAnnotation, myConceptNodeAttribute, myConceptPropertyAttribute, myConceptReviewMigration, myConceptScopeFacade, myConceptScopeProvider, myConceptSideTransformInfo, myConceptSuppressErrorsAnnotation);
+    return Arrays.asList(myConceptAttribute, myConceptBaseCommentAttribute, myConceptBaseConcept, myConceptBasePlaceholder, myConceptChildAttribute, myConceptIAntisuppressErrors, myConceptICanSuppressErrors, myConceptIContainer, myConceptIDeprecatable, myConceptIDontApplyTypesystemRules, myConceptIDontSubstituteByDefault, myConceptIMetaLevelChanger, myConceptINamedConcept, myConceptIOldCommentContainer, myConceptIPlaceholderContent, myConceptIResolveInfo, myConceptISkipConstraintsChecking, myConceptISmartReferent, myConceptIStubForAnotherConcept, myConceptISuppressErrors, myConceptIType, myConceptIWrapper, myConceptImplementationContainer, myConceptImplementationPart, myConceptImplementationWithStubPart, myConceptInterfacePart, myConceptLinkAttribute, myConceptMigrationAnnotation, myConceptNodeAttribute, myConceptPropertyAttribute, myConceptReviewMigration, myConceptScopeFacade, myConceptScopeProvider, myConceptSideTransformInfo, myConceptSuppressErrorsAnnotation);
   }
 
   @Override
@@ -76,14 +72,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptBasePlaceholder;
       case LanguageConceptSwitch.ChildAttribute:
         return myConceptChildAttribute;
-      case LanguageConceptSwitch.ExportScope:
-        return myConceptExportScope;
-      case LanguageConceptSwitch.ExportScopeModule:
-        return myConceptExportScopeModule;
-      case LanguageConceptSwitch.ExportScopeNamespace:
-        return myConceptExportScopeNamespace;
-      case LanguageConceptSwitch.ExportScopePublic:
-        return myConceptExportScopePublic;
       case LanguageConceptSwitch.IAntisuppressErrors:
         return myConceptIAntisuppressErrors;
       case LanguageConceptSwitch.ICanSuppressErrors:
@@ -197,39 +185,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/709746936026466394");
     b.prop("linkRole", 0x9d98713f249b585L, "709746936026609029");
     b.prop("linkId", 0x9d98713f249b587L, "709746936026609031");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForExportScope() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "ExportScope", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL);
-    b.class_(false, true, false);
-    b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L);
-    b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/5425021671150136555");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForExportScopeModule() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "ExportScopeModule", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aebaL);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.core.structure.ExportScope", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL);
-    b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/2565736246230036154");
-    b.alias("@export(module)");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForExportScopeNamespace() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "ExportScopeNamespace", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aeb7L);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.core.structure.ExportScope", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL);
-    b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/2565736246230036151");
-    b.prop("namespace", 0x239b5385a7e2aeb9L, "2565736246230036153");
-    b.alias("@export(namespace)");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForExportScopePublic() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "ExportScopePublic", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aeb6L);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.core.structure.ExportScope", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL);
-    b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/2565736246230036150");
-    b.alias("@export(public)");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIAntisuppressErrors() {

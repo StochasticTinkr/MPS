@@ -15,6 +15,14 @@
     </file>
   </root>
   <root nodeRef="r:aad06b20-0a6a-42d7-81b8-671529c6126a(jetbrains.mps.lang.access.typesystem)/1423104411234567525">
+    <file name="TypesystemDescriptor.java">
+      <node id="1423104411234567525" at="11,5,12,99" concept="6" />
+      <node id="1423104411234567525" at="12,99,13,47" concept="2" />
+      <node id="1423104411234567525" at="10,33,14,5" concept="0" />
+      <scope id="1423104411234567525" at="11,5,13,47">
+        <var name="inferenceRule" id="1423104411234567525" />
+      </scope>
+    </file>
     <file name="typeof_BaseExecuteCommandStatement_InferenceRule.java">
       <node id="5532289631195975165" at="22,5,23,227" concept="6" />
       <node id="5532289631195975165" at="23,227,24,202" concept="6" />
@@ -62,6 +70,14 @@
     </file>
   </root>
   <root nodeRef="r:aad06b20-0a6a-42d7-81b8-671529c6126a(jetbrains.mps.lang.access.typesystem)/1423104411234568923">
+    <file name="TypesystemDescriptor.java">
+      <node id="1423104411234568923" at="19,5,20,110" concept="6" />
+      <node id="1423104411234568923" at="20,110,21,55" concept="2" />
+      <node id="1423104411234568923" at="18,5,22,5" concept="0" />
+      <scope id="1423104411234568923" at="19,5,21,55">
+        <var name="nonTypesystemRule" id="1423104411234568923" />
+      </scope>
+    </file>
     <file name="check_BaseExecuteCommandStatement_NonTypesystemRule.java">
       <node id="1423104411234571683" at="22,7,23,60" concept="6" />
       <node id="1423104411234571683" at="23,60,24,269" concept="6" />
@@ -100,6 +116,14 @@
     </file>
   </root>
   <root nodeRef="r:aad06b20-0a6a-42d7-81b8-671529c6126a(jetbrains.mps.lang.access.typesystem)/8974276187400348229">
+    <file name="TypesystemDescriptor.java">
+      <node id="8974276187400348229" at="23,5,24,104" concept="6" />
+      <node id="8974276187400348229" at="24,104,25,55" concept="2" />
+      <node id="8974276187400348229" at="22,5,26,5" concept="0" />
+      <scope id="8974276187400348229" at="23,5,25,55">
+        <var name="nonTypesystemRule" id="8974276187400348229" />
+      </scope>
+    </file>
     <file name="check_CommandClosureLiteral_NonTypesystemRule.java">
       <node id="5842059399448775938" at="24,9,25,62" concept="6" />
       <node id="5842059399448775938" at="25,62,26,247" concept="6" />
@@ -143,6 +167,14 @@
     </file>
   </root>
   <root nodeRef="r:aad06b20-0a6a-42d7-81b8-671529c6126a(jetbrains.mps.lang.access.typesystem)/8974276187400348251">
+    <file name="TypesystemDescriptor.java">
+      <node id="8974276187400348251" at="15,5,16,100" concept="6" />
+      <node id="8974276187400348251" at="16,100,17,47" concept="2" />
+      <node id="8974276187400348251" at="14,5,18,5" concept="0" />
+      <scope id="8974276187400348251" at="15,5,17,47">
+        <var name="inferenceRule" id="8974276187400348251" />
+      </scope>
+    </file>
     <file name="typeof_ExecuteCommandInEDTStatement_InferenceRule.java">
       <node id="8974276187400348253" at="22,5,23,212" concept="6" />
       <node id="8974276187400348253" at="23,212,24,202" concept="6" />

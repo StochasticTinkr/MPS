@@ -455,7 +455,7 @@ public class ASTConverterWithExpressions extends ASTConverter {
     }
     sb.deleteCharAt(sb.length() - 1);
 
-    SPropertyOperations.set(unkName, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens"), sb.toString());
+    SPropertyOperations.assign(unkName, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens"), sb.toString());
     return unkName;
   }
 
@@ -490,7 +490,7 @@ public class ASTConverterWithExpressions extends ASTConverter {
         // handle this special case 
 
         SNode unkDotCall = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc7b5L, "jetbrains.mps.baseLanguage.structure.UnknownDotCall"));
-        SPropertyOperations.set(unkDotCall, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc7b5L, 0x439f6403036ad2f4L, "callee"), methodName);
+        SPropertyOperations.assign(unkDotCall, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc7b5L, 0x439f6403036ad2f4L, "callee"), methodName);
 
         String[] tokens;
 
@@ -517,7 +517,7 @@ public class ASTConverterWithExpressions extends ASTConverter {
         }
         sb.deleteCharAt(sb.length() - 1);
 
-        SPropertyOperations.set(unkDotCall, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens"), sb.toString());
+        SPropertyOperations.assign(unkDotCall, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens"), sb.toString());
 
         result = unkDotCall;
         call = unkDotCall;
@@ -561,7 +561,7 @@ public class ASTConverterWithExpressions extends ASTConverter {
       SNode unkNew = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2dda7700ec3ae154L, "jetbrains.mps.baseLanguage.structure.UnknownNew"));
       addCallArgs(unkNew, x.arguments);
       addTypeArgs(typeArguments(x.type), SLinkOperations.getChildren(unkNew, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0x4500f31eb02a7788L, "typeArgument")));
-      SPropertyOperations.set(unkNew, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2dda7700ec3ae154L, 0x2dda7700ec3bb537L, "className"), typeName(x.type));
+      SPropertyOperations.assign(unkNew, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2dda7700ec3ae154L, 0x2dda7700ec3bb537L, "className"), typeName(x.type));
 
       return unkNew;
     }

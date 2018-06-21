@@ -42,7 +42,7 @@ import java.util.List;
 public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteInfoPartExt {
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
-    final SNode node = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
+    final SNode node = cellContext.get(BasicCellContext.EDITED_NODE);
     final IOperationContext context = editorContext.getOperationContext();
     List parameterObjects = createParameterObjects(node, context, editorContext);
     if (parameterObjects == null) {

@@ -183,10 +183,13 @@
     </file>
   </root>
   <root nodeRef="r:c3ac4b0a-a487-4481-b87d-bcfbfdd6a85d(jetbrains.mps.lang.editor.imageGen.plugin)/448727181061901862">
+    <file name="FacetManifest.java">
+      <node id="448727181061901862" at="14,26,15,73" concept="2" />
+    </file>
     <file name="GenerateImages_Facet.java">
       <node id="448727181061901862" at="51,0,52,0" concept="3" trace="targets" />
       <node id="448727181061901862" at="52,0,53,0" concept="3" trace="name" />
-      <node id="448727181061901862" at="53,33,54,96" concept="2" />
+      <node id="448727181062170045" at="53,33,54,96" concept="2" />
       <node id="448727181061901862" at="56,38,57,19" concept="8" />
       <node id="448727181061901862" at="59,43,60,16" concept="8" />
       <node id="448727181061901862" at="62,43,63,205" concept="8" />

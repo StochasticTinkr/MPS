@@ -34,29 +34,29 @@ import jetbrains.mps.editor.runtime.style.Measure;
   }
 
   /*package*/ EditorCell createCell() {
-    return createAlternation_hdhct1_a();
+    return createAlternation_0();
   }
 
-  private EditorCell createAlternation_hdhct1_a() {
+  private EditorCell createAlternation_0() {
     boolean alternationCondition = true;
     alternationCondition = nodeCondition_hdhct1_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = createConstant_hdhct1_a0();
+      editorCell = createConstant_0();
     } else {
-      editorCell = createConstant_hdhct1_a0_0();
+      editorCell = createConstant_1();
     }
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);
-      bigCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(bigCell);
     }
     return editorCell;
   }
   private boolean nodeCondition_hdhct1_a0() {
     return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"));
   }
-  private EditorCell createConstant_hdhct1_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "asc");
     editorCell.setCellId("Constant_hdhct1_a0");
     Style style = new StyleImpl();
@@ -66,7 +66,7 @@ import jetbrains.mps.editor.runtime.style.Measure;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_hdhct1_a0_0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "desc");
     editorCell.setCellId("Constant_hdhct1_a0_0");
     Style style = new StyleImpl();

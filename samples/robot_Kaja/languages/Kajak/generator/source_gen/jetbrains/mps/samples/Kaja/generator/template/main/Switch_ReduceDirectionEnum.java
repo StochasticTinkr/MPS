@@ -48,7 +48,7 @@ public class Switch_ReduceDirectionEnum extends TemplateSwitchBase implements Te
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_7060824959896330163(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a0(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -68,7 +68,7 @@ public class Switch_ReduceDirectionEnum extends TemplateSwitchBase implements Te
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_7060824959896205081(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a1(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -88,7 +88,7 @@ public class Switch_ReduceDirectionEnum extends TemplateSwitchBase implements Te
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_7060824959896333440(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a2(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -108,7 +108,7 @@ public class Switch_ReduceDirectionEnum extends TemplateSwitchBase implements Te
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_7060824959896333392(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a3(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {

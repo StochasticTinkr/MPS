@@ -54,7 +54,9 @@ import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
     if (!(solutionBaseDirFile.exists())) {
       solutionBaseDirFile.mkdirs();
     }
-    return NewModuleUtil.createSolution(solutionName, solutionBaseDirFile.getPath(), mpsProject);
+    Solution solution = NewModuleUtil.createSolution(solutionName, solutionBaseDirFile.getPath(), mpsProject);
+    mpsProject.save();
+    return solution;
   }
 
   private static boolean isValidSolutionDir(IFile baseDirFile) {

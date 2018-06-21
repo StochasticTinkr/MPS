@@ -353,7 +353,7 @@
     </node>
     <node concept="M4N5e" id="1ng4Vf3UMuc" role="M5hS2">
       <property role="1uS6qv" value="6" />
-      <property role="1uS6qo" value="med" />
+      <property role="1uS6qo" value="medium" />
     </node>
     <node concept="M4N5e" id="1ng4Vf3UMuf" role="M5hS2">
       <property role="1uS6qv" value="4" />

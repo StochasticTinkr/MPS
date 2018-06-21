@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,12 @@ class PlatformBase implements Platform {
     // once other ComponentPlugins become ComponentHost, shall consult all of them (initialized only, of course)
     if (myCore != null) {
       rv = myCore.findComponent(componentClass);
+    }
+    if (rv == null && myPersistence != null) {
+      rv = myPersistence.findComponent(componentClass);
+    }
+    if (rv == null && myMake != null) {
+      rv = myMake.findComponent(componentClass);
     }
     if (rv == null && myGenerator != null) {
       rv = myGenerator.findComponent(componentClass);

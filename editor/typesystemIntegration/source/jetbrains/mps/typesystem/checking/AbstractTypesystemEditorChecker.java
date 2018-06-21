@@ -19,10 +19,10 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.IndexNotReadyException;
 import jetbrains.mps.checkers.ErrorReportUtil;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.item.EditorQuickFix;
 import jetbrains.mps.errors.item.FlavouredItem.ReportItemFlavour;
-import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -62,7 +62,7 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
 
   @NotNull
   protected abstract UpdateResult doCreateMessages(TypeCheckingContext context, boolean wasCheckedOnce, EditorContext editorContext,
-      SNode rootNode, Cancellable cancellable, boolean applyQuickFixes);
+                                                   SNode rootNode, Cancellable cancellable, boolean applyQuickFixes);
 
   @Override
   public void processEvents(List<SModelEvent> events) {
@@ -82,10 +82,12 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
   @NotNull
   @Override
   public UpdateResult update(final EditorComponent editorComponent, final boolean incremental, final boolean applyQuickFixes,
-      final Cancellable cancellable) {
+                             final Cancellable cancellable) {
     try {
       return TypeContextManager.getInstance().runTypeCheckingComputation(editorComponent.getTypecheckingContextOwner(), editorComponent.getEditedNode(),
-          context -> doCreateMessages(context, incremental, editorComponent.getEditorContext(), editorComponent.getEditedNode(), cancellable, applyQuickFixes));
+                                                                         context -> doCreateMessages(context, incremental, editorComponent.getEditorContext(),
+                                                                                                     editorComponent.getEditedNode(), cancellable,
+                                                                                                     applyQuickFixes));
     } catch (IndexNotReadyException e) {
       if (editorComponent.getNodeForTypechecking() != null) {
         TypeContextManager.getInstance().acquireTypecheckingContext(editorComponent.getNodeForTypechecking(), editorComponent);
@@ -96,7 +98,7 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
   }
 
   protected Collection<EditorMessage> collectMessagesForNodesWithErrors(TypeCheckingContext context, final EditorContext editorContext,
-      boolean typesystemErrors, boolean applyQuickFixes) {
+                                                                        boolean typesystemErrors, boolean applyQuickFixes) {
     Set<EditorMessage> messages = new HashSet<EditorMessage>();
     for (Pair<SNode, List<IErrorReporter>> errorNode : context.getNodesWithErrors(typesystemErrors)) {
       if (!ErrorReportUtil.shouldReportError(errorNode.o1)) {
@@ -132,7 +134,7 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
   }
 
   private boolean applyInstantIntention(final EditorContext editorContext, final SNode quickFixNode,
-      @NotNull final EditorQuickFix intention) {
+                                        @NotNull final EditorQuickFix intention) {
     Map<ReportItemFlavour, Object> flavours = new HashMap<>();
     for (ReportItemFlavour<?, ?> flavour : intention.getIdFlavours()) {
       flavours.put(flavour, flavour.tryToGet(intention));
@@ -150,9 +152,9 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
           int caretX = selectedCell.getCaretX();
           int caretY = selectedCell.getBaseline();
 
-          editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new Runnable() {
+          editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new EditorCommand(editorContext) {
             @Override
-            public void run() {
+            public void doExecute() {
               intention.execute(editorContext.getRepository());
             }
           });

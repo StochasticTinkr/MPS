@@ -28,29 +28,29 @@
       <node id="7078910619969046091" at="16,115,17,19" concept="7" />
       <node id="7078910619969046091" at="17,19,18,18" concept="1" />
       <node id="7078910619969046091" at="23,26,24,18" concept="6" />
-      <node id="7078910619969046091" at="27,39,28,37" concept="6" />
-      <node id="7966224008969064153" at="31,48,32,119" concept="5" />
+      <node id="7078910619969046091" at="27,39,28,31" concept="6" />
+      <node id="7966224008969064153" at="31,42,32,119" concept="5" />
       <node id="7966224008969064153" at="32,119,33,72" concept="5" />
       <node id="7966224008969064153" at="34,26,35,27" concept="1" />
-      <node id="7966224008969064153" at="35,27,36,64" concept="1" />
+      <node id="7966224008969064153" at="35,27,36,30" concept="1" />
       <node id="7966224008969064153" at="37,5,38,22" concept="6" />
       <node id="7078910619969046091" at="13,0,15,0" concept="2" trace="myNode" />
       <node id="7078910619969046091" at="27,0,30,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="7078910619969046091" at="16,0,20,0" concept="0" trace="IntraProceduralSpecific_BuilderMode_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7966224008969064153" at="33,72,37,5" concept="3" />
       <node id="7078910619969046091" at="21,0,26,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="7966224008969064153" at="31,0,40,0" concept="4" trace="createComponent_ygfeo_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="7966224008969064153" at="31,0,40,0" concept="4" trace="createComponent_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="7078910619969046091" at="23,26,24,18" />
-      <scope id="7078910619969046091" at="27,39,28,37" />
+      <scope id="7078910619969046091" at="27,39,28,31" />
       <scope id="7078910619969046091" at="16,115,18,18" />
-      <scope id="7966224008969064153" at="34,26,36,64" />
+      <scope id="7966224008969064153" at="34,26,36,30" />
       <scope id="7078910619969046091" at="27,0,30,0" />
       <scope id="7078910619969046091" at="16,0,20,0">
         <var name="context" id="7078910619969046091" />
         <var name="node" id="7078910619969046091" />
       </scope>
       <scope id="7078910619969046091" at="21,0,26,0" />
-      <scope id="7966224008969064153" at="31,48,38,22">
+      <scope id="7966224008969064153" at="31,42,38,22">
         <var name="bigCell" id="7966224008969064153" />
         <var name="editorCell" id="7966224008969064153" />
       </scope>

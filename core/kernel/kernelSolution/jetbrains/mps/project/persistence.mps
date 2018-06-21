@@ -1400,64 +1400,21 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="3cpWs8" id="7Xmq4r1KGOM" role="3cqZAp">
-                        <node concept="3cpWsn" id="7Xmq4r1KGON" role="3cpWs9">
-                          <property role="TrG5h" value="genTemplatesSetting" />
-                          <node concept="10P_77" id="7Xmq4r1KGOK" role="1tU5fm" />
-                          <node concept="2YIFZM" id="7Xmq4r1KGOO" role="33vP2m">
-                            <ref role="37wK5l" to="7a2w:4eI2K_Iuewr" resolve="booleanWithDefault" />
-                            <ref role="1Pybhc" to="7a2w:4eI2K_Iuet$" resolve="XmlUtil" />
-                            <node concept="37vLTw" id="7Xmq4r1KGOP" role="37wK5m">
-                              <ref role="3cqZAo" node="33oJVYhhiYs" resolve="generatorElement" />
-                            </node>
-                            <node concept="Xl_RD" id="7Xmq4r1KGOQ" role="37wK5m">
-                              <property role="Xl_RC" value="generate-templates" />
-                            </node>
-                            <node concept="3clFbT" id="7Xmq4r1KGOR" role="37wK5m">
-                              <property role="3clFbU" value="false" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
                       <node concept="g8Q5y" id="2kB9H2JFQ1p" role="3cqZAp">
                         <node concept="3clFbS" id="2kB9H2JFQ1q" role="GGjiV" />
                         <node concept="3tyRfN" id="2kB9H2JFQ1r" role="GIGjv">
                           <ref role="3tyRfW" to="w0gx:~GeneratorDescriptor.setGenerateTemplates(boolean):void" resolve="setGenerateTemplates" />
-                          <node concept="37vLTw" id="7Xmq4r1KGOS" role="3tyRfI">
-                            <ref role="3cqZAo" node="7Xmq4r1KGON" resolve="genTemplatesSetting" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3SKdUt" id="7Xmq4r1KJaH" role="3cqZAp">
-                        <node concept="3SKdUq" id="7Xmq4r1KJaJ" role="3SKWNk">
-                          <property role="3SKdUp" value="reflective queries are deprecated and are off by default now. For generated templates, however, I don't want to have" />
-                        </node>
-                      </node>
-                      <node concept="3SKdUt" id="7Xmq4r1KKkf" role="3cqZAp">
-                        <node concept="3SKdUq" id="7Xmq4r1KKkh" role="3SKWNk">
-                          <property role="3SKdUp" value="regular QG API (there's no need, generated templates still invoke static methods directly) just not get confused now." />
-                        </node>
-                      </node>
-                      <node concept="3SKdUt" id="7Xmq4r1KLtP" role="3cqZAp">
-                        <node concept="3SKdUq" id="7Xmq4r1KLtR" role="3SKWNk">
-                          <property role="3SKdUp" value="Perhaps, later will generate non-reflective access for generated templates as well, and even may utilize query objects in there." />
-                        </node>
-                      </node>
-                      <node concept="g8Q5y" id="6iByHjq_Xtk" role="3cqZAp">
-                        <node concept="3clFbS" id="6iByHjq_Xtm" role="GGjiV" />
-                        <node concept="3tyRfN" id="6iByHjq_Xti" role="GIGjv">
-                          <ref role="3tyRfW" to="w0gx:~GeneratorDescriptor.setReflectiveQueries(boolean):void" resolve="setReflectiveQueries" />
-                          <node concept="2YIFZM" id="6iByHjqA0Gx" role="3tyRfI">
+                          <node concept="2YIFZM" id="5lVMngvZuFf" role="3tyRfI">
                             <ref role="37wK5l" to="7a2w:4eI2K_Iuewr" resolve="booleanWithDefault" />
                             <ref role="1Pybhc" to="7a2w:4eI2K_Iuet$" resolve="XmlUtil" />
-                            <node concept="37vLTw" id="6iByHjqA22L" role="37wK5m">
+                            <node concept="37vLTw" id="5lVMngvZuFg" role="37wK5m">
                               <ref role="3cqZAo" node="33oJVYhhiYs" resolve="generatorElement" />
                             </node>
-                            <node concept="Xl_RD" id="6iByHjqA2df" role="37wK5m">
-                              <property role="Xl_RC" value="reflective-queries" />
+                            <node concept="Xl_RD" id="5lVMngvZuFh" role="37wK5m">
+                              <property role="Xl_RC" value="generate-templates" />
                             </node>
-                            <node concept="37vLTw" id="7Xmq4r1KIsa" role="37wK5m">
-                              <ref role="3cqZAo" node="7Xmq4r1KGON" resolve="genTemplatesSetting" />
+                            <node concept="3clFbT" id="5lVMngvZuFi" role="37wK5m">
+                              <property role="3clFbU" value="false" />
                             </node>
                           </node>
                         </node>
@@ -2195,65 +2152,6 @@
             </node>
             <node concept="liA8E" id="6gJ6wY4bVEa" role="2OqNvi">
               <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.isGenerateTemplates():boolean" resolve="isGenerateTemplates" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="6kEPduOzL74" role="3cqZAp">
-          <node concept="3clFbS" id="6kEPduOzL77" role="3clFbx">
-            <node concept="3SKdUt" id="7Xmq4r1KOgF" role="3cqZAp">
-              <node concept="3SKdUq" id="7Xmq4r1KOgH" role="3SKWNk">
-                <property role="3SKdUp" value="XXX transition. I've changed default to be off, and only explicitly set options ought to be persisted." />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="7Xmq4r1KO$8" role="3cqZAp">
-              <node concept="3SKdUq" id="7Xmq4r1KO$a" role="3SKWNk">
-                <property role="3SKdUp" value="Since generated templated do not use non-reflective (aka API) queries, we ignore this option for generated templates," />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="7Xmq4r1KOI4" role="3cqZAp">
-              <node concept="3SKdUq" id="7Xmq4r1KOI6" role="3SKWNk">
-                <property role="3SKdUp" value="assuming it to be true." />
-              </node>
-            </node>
-            <node concept="3clFbF" id="6kEPduOzSHc" role="3cqZAp">
-              <node concept="2OqwBi" id="6kEPduOzSLb" role="3clFbG">
-                <node concept="37vLTw" id="6kEPduOzSHb" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1Tieq1imh0G" resolve="generator" />
-                </node>
-                <node concept="liA8E" id="6kEPduOzU4s" role="2OqNvi">
-                  <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
-                  <node concept="Xl_RD" id="6kEPduOzVEh" role="37wK5m">
-                    <property role="Xl_RC" value="reflective-queries" />
-                  </node>
-                  <node concept="2YIFZM" id="6kEPduOzZcq" role="37wK5m">
-                    <ref role="37wK5l" to="wyt6:~Boolean.toString(boolean):java.lang.String" resolve="toString" />
-                    <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
-                    <node concept="3clFbT" id="6kEPduO$0xZ" role="37wK5m">
-                      <property role="3clFbU" value="true" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="1Wc70l" id="7Xmq4r1KMWu" role="3clFbw">
-            <node concept="3fqX7Q" id="7Xmq4r1KONI" role="3uHU7w">
-              <node concept="2OqwBi" id="7Xmq4r1KONK" role="3fr31v">
-                <node concept="37vLTw" id="7Xmq4r1KONL" role="2Oq$k0">
-                  <ref role="3cqZAo" node="33oJVYhhW0c" resolve="descriptor" />
-                </node>
-                <node concept="liA8E" id="7Xmq4r1KONM" role="2OqNvi">
-                  <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.isGenerateTemplates():boolean" resolve="isGenerateTemplates" />
-                </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="6kEPduOzQRZ" role="3uHU7B">
-              <node concept="37vLTw" id="6kEPduOzPyw" role="2Oq$k0">
-                <ref role="3cqZAo" node="33oJVYhhW0c" resolve="descriptor" />
-              </node>
-              <node concept="liA8E" id="6kEPduOzRok" role="2OqNvi">
-                <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.isReflectiveQueries():boolean" resolve="isReflectiveQueries" />
-              </node>
             </node>
           </node>
         </node>

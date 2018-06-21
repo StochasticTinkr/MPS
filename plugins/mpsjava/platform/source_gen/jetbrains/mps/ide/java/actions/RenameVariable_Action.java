@@ -98,7 +98,7 @@ public class RenameVariable_Action extends BaseAction {
     }
     modelAccess.executeCommand(new EditorCommand(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext()) {
       protected void doExecute() {
-        SPropertyOperations.set(result._0(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newName);
+        SPropertyOperations.assign(result._0(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newName);
       }
     });
   }

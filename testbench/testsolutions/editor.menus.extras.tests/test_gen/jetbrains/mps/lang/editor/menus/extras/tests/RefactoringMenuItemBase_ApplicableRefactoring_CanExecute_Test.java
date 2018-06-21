@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.smodel.SNodePointer;
@@ -27,11 +28,15 @@ public class RefactoringMenuItemBase_ApplicableRefactoring_CanExecute_Test exten
 
   @Test
   public void test_RefactoringMenuItemBase_ApplicableRefactoring_CanExecute() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.extras.tests.RefactoringMenuItemBase_ApplicableRefactoring_CanExecute_Test$TestBody", "testMethod", false);
+    new RefactoringMenuItemBase_ApplicableRefactoring_CanExecute_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6820996345401023608", "");

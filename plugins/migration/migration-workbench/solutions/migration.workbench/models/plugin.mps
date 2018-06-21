@@ -2,7 +2,7 @@
 <model ref="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
@@ -6080,16 +6080,6 @@
                 <node concept="10Nm6u" id="285c2S_YiZc" role="37wK5m" />
               </node>
             </node>
-            <node concept="3clFbF" id="7FLry2XRg86" role="3cqZAp">
-              <node concept="2OqwBi" id="7FLry2XS5Ir" role="3clFbG">
-                <node concept="37vLTw" id="7FLry2XS5Ek" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7lByCvU$QgL" resolve="mt" />
-                </node>
-                <node concept="liA8E" id="7FLry2XS6g2" role="2OqNvi">
-                  <ref role="37wK5l" to="bim2:7FLry2XRgwU" resolve="resetMigrationQueuedFlag" />
-                </node>
-              </node>
-            </node>
           </node>
           <node concept="3fqX7Q" id="2fg9H9N2hlv" role="3clFbw">
             <node concept="37vLTw" id="6KPfPAmPB06" role="3fr31v">
@@ -6105,6 +6095,9 @@
                   </node>
                   <node concept="liA8E" id="7lByCvU_3f2" role="2OqNvi">
                     <ref role="37wK5l" to="bim2:1AzqgyAh5MG" resolve="postponeMigration" />
+                    <node concept="3clFbT" id="26DkYAc7fKt" role="37wK5m">
+                      <property role="3clFbU" value="true" />
+                    </node>
                   </node>
                 </node>
               </node>

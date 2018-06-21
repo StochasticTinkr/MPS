@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class MoveStatementOutOfIf_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class MoveStatementOutOfIf_Test extends BaseTransformationTest {
 
   @Test
   public void test_MoveStatementOutOfIf() throws Throwable {
-    runTest("jetbrains.mps.editorTest.MoveStatementOutOfIf_Test$TestBody", "testMethod", false);
+    new MoveStatementOutOfIf_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("5938462602860139977", "5938462602860139990");

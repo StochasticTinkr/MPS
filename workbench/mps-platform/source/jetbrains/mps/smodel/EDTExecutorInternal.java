@@ -16,13 +16,17 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.Disposable;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.TransactionGuard;
+import com.intellij.openapi.application.TransactionGuardImpl;
 import com.intellij.testFramework.ThreadTracker;
 import com.intellij.util.ReflectionUtil;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.TaskScheduler.Task;
 import jetbrains.mps.smodel.TaskScheduler.TaskIsOutdated;
 import jetbrains.mps.util.NamedThreadFactory;
+import jetbrains.mps.util.annotation.Hack;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -60,6 +64,8 @@ final class EDTExecutorInternal implements Disposable {
   private final Condition myQueueIsEmptyCondition = myQueueLock.newCondition();
   private final AtomicInteger myTasksCount = new AtomicInteger();
   private boolean myDisposed = false; // access only in EDT!
+
+  private final com.intellij.openapi.util.Condition myExpiredCondition = o -> myDisposed;
 
   @NotNull
   private static ThreadFactory createDaemonFactory() {
@@ -105,7 +111,7 @@ final class EDTExecutorInternal implements Disposable {
 
   private void traceTheCaller() {
     if (LOG.isTraceEnabled()) {
-      LOG.trace("schedule task: the caller is " + ReflectionUtil.findCallerClass(7));
+      LOG.trace("schedule task: the caller is " + ReflectionUtil.findCallerClass(8));
     }
   }
 
@@ -114,11 +120,32 @@ final class EDTExecutorInternal implements Disposable {
   }
 
   /**
-   * flushing the whole queue in the edt within the transaction.
+   * flushing the whole queue in the edt asynchronously
    */
   private void flushQueueLaterInEDT() {
     assert !taskQueueIsEmpty() : "private method precondition is not satisfied";
-    TransactionGuard.getInstance().submitTransactionLater(this, this::flushTasksQueue);
+    if (LOG.isTraceEnabled()) {
+      LOG.trace("flushing the queue: the caller is " + ReflectionUtil.findCallerClass(9) + " : context transaction " +
+                TransactionGuard.getInstance().getContextTransaction());
+    }
+    TransactionGuardImpl guard = (TransactionGuardImpl) TransactionGuard.getInstance();
+    Runnable wrapped = guaranteeWriteSafetyViaHack(guard);
+    ApplicationManager.getApplication().invokeLater(wrapped, ModalityState.any(), myExpiredCondition);
+  }
+
+  /**
+   * Tricking the IDEA's write-safety model.
+   * The hack simply repeats the code from the ApplicationImpl#invokeLater with write-safe modality (e.g. NON_MODAL)
+   * Due to that we never get the exception from the TransactionGuardImpl#assertWriteActionAllowed
+   */
+  @Hack
+  @NotNull
+  private Runnable guaranteeWriteSafetyViaHack(@NotNull TransactionGuardImpl guard) {
+    return guard.wrapLaterInvocation(() -> {
+        ThreadUtils.assertEDT();
+        guard.assertWriteActionAllowed();
+        flushTasksQueue();
+      }, ModalityState.NON_MODAL);
   }
 
   private void flushTasksQueue() {
@@ -144,7 +171,7 @@ final class EDTExecutorInternal implements Disposable {
           }
           queueSize = myTasksCount.get();
         }
-      } finally{
+      } finally {
         try {
           myQueueLock.lock();
           if (taskQueueIsEmpty()) {
@@ -202,6 +229,9 @@ final class EDTExecutorInternal implements Disposable {
     boolean taskPassed = true;
     try {
       taskPassed = task.tryRun();
+      if (!taskPassed) {
+        LOG.warn("refused in the task execution: " + task);
+      }
     } catch (TaskIsOutdated ignored) {
       LOG.warn("The scheduled task has expired", ignored);
     } catch (Exception e) {

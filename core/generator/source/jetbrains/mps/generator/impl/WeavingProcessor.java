@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,19 +48,15 @@ public class WeavingProcessor {
     myReadyRules.clear();
     final BlockedReductionsData ruleBlocks = myGenerator.getBlockedReductionsData();
     final FastNodeFinder nodeFinder = FastNodeFinderManager.get(inputModel);
+    final TemplateExecutionEnvironment environment = myGenerator.newExecutionEnvironment(myGenerator.getDefaultExecutionContext());
     for (TemplateWeavingRule rule : rules) {
       boolean includeInheritors = rule.applyToInheritors();
       for (SNode applicableNode : nodeFinder.getNodes(rule.getApplicableConcept(), includeInheritors)) {
         if (ruleBlocks.isWeavingBlocked(applicableNode, rule)) {
           continue;
         }
-        QueryExecutionContext executionContext = myGenerator.getExecutionContext(applicableNode);
-        if (executionContext == null) {
-          continue;
-        }
-        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(new TemplateProcessor(myGenerator), executionContext, new ReductionTrack(myGenerator.getBlockedReductionsData()));
         DefaultTemplateContext context = new DefaultTemplateContext(environment, applicableNode, null);
-        if (executionContext.isApplicable(rule, context)) {
+        if (environment.getQueryExecutor().isApplicable(rule, context)) {
           // if there are too many ArmedWeavingRule instances (i.e. a lot of applicable SNode),
           // it's easy to refactor AWR to keep list of applicable nodes and to recreate TEE on demand
           myReadyRules.add(new ArmedWeavingRule(rule, environment, applicableNode));

@@ -33,7 +33,7 @@ public final class ConceptEditorHintDeclaration__BehaviorDescriptor extends Base
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getHintsContainer_id59ZEGVRaGvE, getQualifiedName_id59ZEGVRaGvv);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef50d095eL, 0x256260d9230ff77L, "showInUI"), "" + (true));
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef50d095eL, 0x256260d9230ff77L, "showInUI"), "" + (true));
   }
 
   /*package*/ static SNode getHintsContainer_id59ZEGVRaGvE(@NotNull SNode __thisNode__) {

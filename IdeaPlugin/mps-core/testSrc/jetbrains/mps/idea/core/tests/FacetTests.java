@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,17 +27,19 @@ import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ModuleOrderEntry;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderEntry;
+import jetbrains.mps.extapi.persistence.SourceRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -47,10 +49,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 public class FacetTests extends AbstractMPSFixtureTestCase {
   private ModuleRepositoryFacade myModuleRepositoryFacade;
@@ -129,12 +129,10 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
     final SModuleReference solutionReference = getMpsFixture().getMpsFacet().getSolution().getModuleReference();
 
-    String modelRootPath = modelRootDir.getPath();
     MPSConfigurationBean configurationBean = getMpsFixture().getMpsFacet().getConfiguration().getBean();
-    DefaultModelRoot root = new DefaultModelRoot();
-    root.setContentRoot(modelRootPath);
-    root.addFile(DefaultModelRoot.SOURCE_ROOTS, modelRootPath);
-    configurationBean.setModelRoots(Collections.singletonList(root));
+    // I didn't find a better alternative how to obtain IFile for java.io.File, resort to what DefaultModelRoot did behind the scenes for string paths.
+    ModelRootDescriptor modelRoot = DefaultModelRoot.createSingleFolderDescriptor(FileSystem.getInstance().getFile(modelRootDir.getPath()));
+    configurationBean.setModelRootDescriptors(Collections.singletonList(modelRoot));
     getMpsFixture().getMpsFacet().setConfiguration(configurationBean);
     getMpsFixture().flushEDT();
 
@@ -147,11 +145,13 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
       assertTrue(iterator.hasNext());
       ModelRoot theModelRoot = iterator.next();
       assertFalse(iterator.hasNext());
-      assertEquals(modelRootDir.getPath(), ((DefaultModelRoot) theModelRoot).getFiles(DefaultModelRoot.SOURCE_ROOTS).iterator().next());
+      SourceRoot sr = ((DefaultModelRoot) theModelRoot).getSourceRoots(SourceRootKinds.SOURCES).iterator().next();
+      // the contract for getPath is not clear enough, whether it's absolute or not, please fix the contract
+      assertEquals(modelRootDir.getPath(), sr.getAbsolutePath().getPath());
     });
 
     configurationBean = getMpsFixture().getMpsFacet().getConfiguration().getBean();
-    configurationBean.setModelRoots(new ArrayList<>());
+    configurationBean.setModelRootDescriptors(new ArrayList<>());
     getMpsFixture().getMpsFacet().setConfiguration(configurationBean);
     getMpsFixture().flushEDT();
 

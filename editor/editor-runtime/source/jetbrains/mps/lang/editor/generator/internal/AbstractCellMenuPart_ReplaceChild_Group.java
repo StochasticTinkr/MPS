@@ -49,12 +49,12 @@ import java.util.List;
 public abstract class AbstractCellMenuPart_ReplaceChild_Group implements SubstituteInfoPartExt {
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
-    final SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    SContainmentLink containmentLink = (SContainmentLink) cellContext.get(AggregationCellContext.LINK);
-    SAbstractConcept defaultConceptOfChild = (SAbstractConcept) cellContext.get(AggregationCellContext.CHILD_CONCEPT);
+    final SNode parentNode = cellContext.get(BasicCellContext.EDITED_NODE);
+    SContainmentLink containmentLink = cellContext.get(AggregationCellContext.LINK);
+    SAbstractConcept defaultConceptOfChild = cellContext.get(AggregationCellContext.CHILD_CONCEPT);
 
     IChildNodeSetter setter = new DefaultChildNodeSetter(containmentLink.getDeclarationNode());
-    final SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
+    final SNode currentChild = cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
 
     final IOperationContext context = editorContext.getOperationContext();
     List parameterObjects = createParameterObjects(parentNode, currentChild, defaultConceptOfChild, context, editorContext);

@@ -49,7 +49,7 @@ public final class PathBuilder {
         continue;
       }
       SNode npath = SModelOperations.createNewNode(myNodeFactory, null, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, "jetbrains.mps.build.structure.BuildCompositePath"));
-      SPropertyOperations.set(npath, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), fname);
+      SPropertyOperations.assign(npath, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), fname);
       if (head == null) {
         head = tail = npath;
       } else {

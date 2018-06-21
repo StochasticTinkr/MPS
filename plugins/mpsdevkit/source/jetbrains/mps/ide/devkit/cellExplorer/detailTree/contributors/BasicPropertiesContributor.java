@@ -17,7 +17,7 @@ package jetbrains.mps.ide.devkit.cellExplorer.detailTree.contributors;
 
 import jetbrains.mps.icons.MPSIcons.CellExplorer;
 import jetbrains.mps.ide.devkit.cellExplorer.detailTree.TreeBuilder;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.openapi.editor.cells.CellLayout;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -54,7 +54,7 @@ public class BasicPropertiesContributor implements CellTreeContributor {
     SNode node = cell.getSNode();
     if (node != null) {
       cell.getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(() -> {
-        basicProperties.property(IconManager.getIconFor(node), "node", toString(node));
+        basicProperties.property(GlobalIconManager.getInstance().getIconFor(node), "node", toString(node));
       });
     }
 

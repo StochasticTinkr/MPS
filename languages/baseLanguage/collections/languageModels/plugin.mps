@@ -216,7 +216,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1863527487546129879" name="jetbrains.mps.lang.smodel.structure.ModelRefExpression" flags="ng" index="1Xw6AR">
+      <concept id="1863527487546129879" name="jetbrains.mps.lang.smodel.structure.ModelPointerExpression" flags="ng" index="1Xw6AR">
         <child id="1863527487546132519" name="modelRef" index="1XwpL7" />
       </concept>
     </language>
@@ -819,18 +819,20 @@
                   <property role="TrG5h" value="mdl" />
                   <node concept="H_c77" id="4SIS$II2Lfw" role="1tU5fm" />
                   <node concept="2OqwBi" id="5kWneGu3Myr" role="33vP2m">
-                    <node concept="1Xw6AR" id="5kWneGu3Myn" role="2Oq$k0">
-                      <node concept="1dCxOl" id="5kWneGu3Myo" role="1XwpL7">
-                        <property role="1XweGQ" value="r:dfdf3542-dbcf-43df-870a-3c3504b3c840" />
-                        <node concept="1j_P7g" id="5kWneGu3Myp" role="1j$8Uc">
-                          <property role="1j_P7h" value="jetbrains.mps.baseLanguage.collections.custom" />
-                        </node>
-                      </node>
-                    </node>
                     <node concept="liA8E" id="5kWneGu3Myq" role="2OqNvi">
                       <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
                       <node concept="37vLTw" id="6j36NaoDHO6" role="37wK5m">
                         <ref role="3cqZAo" node="6j36NaoDHJC" resolve="repo" />
+                      </node>
+                    </node>
+                    <node concept="2JrnkZ" id="7u2HgD1KhFu" role="2Oq$k0">
+                      <node concept="1Xw6AR" id="7u2HgD1KhFr" role="2JrQYb">
+                        <node concept="1dCxOl" id="7u2HgD1KhFs" role="1XwpL7">
+                          <property role="1XweGQ" value="r:dfdf3542-dbcf-43df-870a-3c3504b3c840" />
+                          <node concept="1j_P7g" id="7u2HgD1KhFt" role="1j$8Uc">
+                            <property role="1j_P7h" value="jetbrains.mps.baseLanguage.collections.custom" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>

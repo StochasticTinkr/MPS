@@ -17,10 +17,16 @@ package jetbrains.mps.plugins.custom;
 
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSProject;
 
+/**
+ * @deprecated replaced with {@link jetbrains.mps.plugins.part.ProjectPluginPart}.
+ */
+@ToRemove(version = 2018.1)
+@Deprecated
 public abstract class BaseCustomProjectPlugin {
   /**
    * PROVISIONAL CODE, TILL I COME UP WITH AN APPROACH TO KEEP USER DATA ALONG WITH IDEA/MPS PROJECT.

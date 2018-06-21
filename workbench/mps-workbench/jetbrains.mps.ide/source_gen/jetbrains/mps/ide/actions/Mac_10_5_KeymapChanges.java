@@ -22,7 +22,6 @@ public class Mac_10_5_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", new BaseKeymapChanges.ShortcutWrapper(getShortcut("ctrl H"), false, true));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", new BaseKeymapChanges.ShortcutWrapper(getShortcut("ctrl H"), false, true));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowNodeInfo_Action", new BaseKeymapChanges.ShortcutWrapper(getShortcut("ctrl Q"), false, true));
-    addSimpleShortcut("jetbrains.mps.ide.actions.ShowParameters_Action", new BaseKeymapChanges.ShortcutWrapper(getShortcut("ctrl P"), false, true));
     // simple parameterized 
     addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl 0")));
     addComplexShortcut("jetbrains.mps.ide.actions.GoToRootNode_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("meta O")));

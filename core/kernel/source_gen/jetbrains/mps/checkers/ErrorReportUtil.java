@@ -27,7 +27,7 @@ public class ErrorReportUtil {
     if (model == null) {
       return false;
     }
-    if (SModelStereotype.isStubModelStereotype(model.getName().getStereotype())) {
+    if (SModelStereotype.isStubModel(model)) {
       return false;
     }
     SNode current = node;

@@ -16,8 +16,8 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0c = concept;
-    switch (index_2qnle6_a0c.index(cncpt_a0c)) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         return new Base_Constraints();
       case 1:
@@ -34,5 +34,5 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
     }
     return new BaseConstraintsDescriptor(concept);
   }
-  private static final ConceptSwitchIndex index_2qnle6_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL), MetaIdFactory.conceptId(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223ebL), MetaIdFactory.conceptId(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223eaL), MetaIdFactory.conceptId(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223ecL), MetaIdFactory.conceptId(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73116L), MetaIdFactory.conceptId(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73112L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL), MetaIdFactory.conceptId(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223ebL), MetaIdFactory.conceptId(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223eaL), MetaIdFactory.conceptId(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223ecL), MetaIdFactory.conceptId(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73116L), MetaIdFactory.conceptId(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73112L)).seal();
 }

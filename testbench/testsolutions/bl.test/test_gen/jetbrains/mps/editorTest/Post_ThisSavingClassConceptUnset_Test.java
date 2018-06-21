@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class Post_ThisSavingClassConceptUnset_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class Post_ThisSavingClassConceptUnset_Test extends BaseTransformationTes
 
   @Test
   public void test_Post_ThisSavingClassConceptUnset() throws Throwable {
-    runTest("jetbrains.mps.editorTest.Post_ThisSavingClassConceptUnset_Test$TestBody", "testMethod", false);
+    new Post_ThisSavingClassConceptUnset_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("222793074662091832", "222793074662091867");

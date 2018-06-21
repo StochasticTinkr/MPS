@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,21 +46,27 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.link.InvalidContainmentLink;
+import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
+import jetbrains.mps.smodel.adapter.structure.ref.InvalidReferenceLink;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.ListMap;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.util.Condition;
 
@@ -71,17 +77,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 import java.util.Set;
 
-/**
- * Author: Sergey Dmitriev
- * Created Sep 14, 2003
- */
 public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mps.openapi.editor.cells.EditorCell> {
   public static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorCell_Basic.class));
 
@@ -112,8 +111,8 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   private KeyMap myKeyMap;
   private String myCellId;
-  private String myRole;
-  private SNodeReference myLinkDeclarationPointer;
+  private SConceptFeature mySRole;
+
   private boolean myInTree;
   private boolean myIsReferenceCell = false;
   protected int myGapLeft;
@@ -150,8 +149,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return myErrorState;
   }
 
-  @Override
-  public boolean isPunctuationLayout() {
+  protected boolean isPunctuationLayout() {
     return LayoutConstraints.PUNCTUATION_LAYOUT_CONSTRAINT.getName().equals(getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT));
   }
 
@@ -193,26 +191,6 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   public boolean isDrawBrackets() {
     return getStyle().get(StyleAttributes.DRAW_BRACKETS);
-  }
-
-  /**
-   * @deprecated since MPS 3.4 use:
-   * <code>cell.getStyle().set(StyleAttributes.BACKGROUND_COLOR, color)</code>
-   */
-  @Deprecated
-  @Override
-  public void setCellBackgroundColor(Color color) {
-    getStyle().set(StyleAttributes.BACKGROUND_COLOR, color);
-  }
-
-  /**
-   * @deprecated since MPS 3.4 use:
-   * <code>cell.getStyle().get(StyleAttributes.BACKGROUND_COLOR)</code>
-   */
-  @Deprecated
-  @Override
-  public Color getCellBackgroundColor() {
-    return getStyle().get(StyleAttributes.BACKGROUND_COLOR);
   }
 
   public Color getBracketsColor() {
@@ -357,7 +335,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   public boolean isWithinSelection() {
-    return mySelected && getEditor().getDeepestSelectedCell() == this;
+    return mySelected && getEditorComponent().getDeepestSelectedCell() == this;
   }
 
 
@@ -382,18 +360,73 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return myCellId;
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   @Override
   public String getRole() {
     String role = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
     if (role != null) {
       return role;
     }
-    return myRole;
+    SConceptFeature sRole = getSRole();
+    return sRole == null ? null : sRole.getName();
+  }
+
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  @Override
+  public void setRole(String role) {
+    mySRole = extractRole(role);
+  }
+
+  private SConceptFeature extractRole(String role) {
+    SProperty prop = ((ConceptMetaInfoConverter) myNode.getConcept()).convertProperty(role);
+    SReferenceLink link = ((ConceptMetaInfoConverter) myNode.getConcept()).convertAssociation(role);
+    SContainmentLink child = ((ConceptMetaInfoConverter) myNode.getConcept()).convertAggregation(role);
+
+    boolean validProp = !(prop instanceof InvalidProperty);
+    boolean validLink = !(link instanceof InvalidReferenceLink);
+    boolean validChild = !(child instanceof InvalidContainmentLink);
+
+    if (!validChild && !validLink && !validProp) {
+      return null;
+    }
+
+    //if more than one valid
+    if (!(validProp ^ validChild ^ validLink)) {
+      LOG.error("Can't determine the feature for cell. Editor may work incorrectly. Node:" + myNode + "; role:" + role +
+                ". Please rebuild editor model in language " +
+                myNode.getConcept().getLanguage().getQualifiedName());
+    }
+
+    if (validProp) {
+      return prop;
+    } else if (validLink) {
+      return link;
+    } else {
+      return child;
+    }
   }
 
   @Override
-  public void setRole(String role) {
-    myRole = role;
+  public SConceptFeature getSRole() {
+    //todo remove following lines after 2018.2
+    String oldRole = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
+    if (oldRole != null) {
+      return extractRole(oldRole);
+    }
+    //todo end
+
+    SConceptFeature role = getStyle().get(StyleAttributes.NAVIGATABLE_SREFERENCE);
+    if (role != null) {
+      return role;
+    }
+    return mySRole;
+  }
+
+  @Override
+  public void setSRole(SConceptFeature role) {
+    mySRole = role;
   }
 
   @Override
@@ -432,10 +465,6 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return myEditorContext;
   }
 
-  public IOperationContext getOperationContext() {
-    return getContext().getOperationContext();
-  }
-
   @Override
   public final boolean processKeyPressed(KeyEvent e, boolean allowErrors) {
     if (e.isConsumed()) {
@@ -461,7 +490,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
       return false;
     }
 
-    if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+    if (new ModelAccessHelper(getContext().getRepository()).runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         return getSNode().getModel() != null && getSNode().getParent() == null;
@@ -568,49 +597,6 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     }
   }
 
-  /**
-   * @deprecated since MPS 3.4 use {@link #findLeaf(int, int)} and check the condition upon returned cell
-   */
-  @Deprecated
-  @Override
-  public EditorCell findLeaf(int x, int y, Condition<EditorCell> condition) {
-    if (myX <= x && x < myX + myWidth && myY <= y && y < myY + myHeight && condition.met(this)) {
-      return this;
-    }
-    return null;
-  }
-
-  /**
-   * @deprecated since MPS 3.4 use {@link #findNearestLeafOnLine(int, int, Condition)}
-   * using {@link com.intellij.openapi.util.Conditions#TRUE} as a parameter
-   */
-  @Deprecated
-  @Override
-  public final EditorCell findCellWeak(int x, int y) {
-    return findCellWeak(x, y, Condition.TRUE_CONDITION);
-  }
-
-  /**
-   * @deprecated since MPS 3.4 use {@link #findNearestLeafOnLine(int, int, Condition)}
-   */
-  @Deprecated
-  @Override
-  public EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition) {
-    Set<EditorCell> candidates = new LinkedHashSet<EditorCell>();
-    collectCellsWithY(this, y, candidates);
-
-    EditorCell best = findClosestHorizontal(x, condition, candidates);
-
-    if (best == null) {
-      best = findClosestHorizontal(x, Condition.TRUE_CONDITION, candidates);
-      if (best != null) {
-        best = best.getPrevLeaf(condition);
-      }
-    }
-
-    return best;
-  }
-
   private EditorCell findClosestHorizontal(int x, Condition<? super EditorCell> condition, Set<EditorCell> candidates) {
     EditorCell best = null;
     int bestDistance = -1;
@@ -640,7 +626,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   private void collectCellsWithY(EditorCell current, int y, Set<EditorCell> cells, boolean leafsOnly) {
-    if (y >= current.getY() && y <= current.getY() + current.getHeight() && (!leafsOnly || current.isLeaf())) {
+    if (y >= current.getY() && y <= current.getY() + current.getHeight() && !(leafsOnly && current instanceof EditorCell_Collection)) {
       cells.add(current);
     }
 
@@ -892,36 +878,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   }
 
-  /**
-   * @deprecated since MPS 3.4 some cells can implement {@link jetbrains.mps.openapi.editor.cells.optional.WithCaret}
-   * interface in order to have this method.
-   */
-  @Deprecated
-  @Override
-  public void switchCaretVisible() {
-
-  }
-
   @NotNull
   @Override
   public CellInfo getCellInfo() {
     return new DefaultCellInfo(this);
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public boolean isAncestorOf(EditorCell cell) {
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = cell.getParent();
-    while (parent != null) {
-      if (parent == this) {
-        return true;
-      }
-      parent = parent.getParent();
-    }
-    return false;
   }
 
   public Color getSelectionColor() {
@@ -930,54 +890,6 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   public static Color getRangeSelectionColor() {
     return EditorSettings.getInstance().getRangeSelectionForegroundColor();
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public Iterator<EditorCell_Collection> parents() {
-    return new Iterator<EditorCell_Collection>() {
-      private EditorCell myCurrentCell = EditorCell_Basic.this;
-
-      @Override
-      public boolean hasNext() {
-        return myCurrentCell.getParent() != null;
-      }
-
-      @Override
-      public EditorCell_Collection next() {
-        EditorCell_Collection parent = (EditorCell_Collection) myCurrentCell.getParent();
-        if (parent == null) {
-          throw new NoSuchElementException();
-        }
-        myCurrentCell = parent;
-        return parent;
-      }
-
-      @Override
-      public void remove() {
-        throw new UnsupportedOperationException();
-      }
-    };
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell_Collection findParent(Condition<EditorCell_Collection> condition) {
-    if (this instanceof EditorCell_Collection && condition.met((EditorCell_Collection) this)) {
-      return (EditorCell_Collection) this;
-    }
-    for (EditorCell_Collection collection : IterableUtil.asIterable(parents())) {
-      if (condition.met(collection)) {
-        return collection;
-      }
-    }
-    return null;
   }
 
   @Override
@@ -992,182 +904,6 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   @Override
-  public boolean isFirstCaretPosition() {
-    return false;
-  }
-
-  @Override
-  public boolean isLastCaretPosition() {
-    return false;
-  }
-
-  @Override
-  public boolean isFirstPositionInBigCell() {
-    return false;
-  }
-
-  @Override
-  public boolean isLastPositionInBigCell() {
-    return false;
-  }
-
-  /**
-   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getContainingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
-   */
-  @Deprecated
-  @Override
-  public EditorCell getContainingBigCell() {
-    if (isBig() || getParent() == null) {
-      return this;
-    }
-    return getParent().getContainingBigCell();
-  }
-
-  /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#isAbove(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
-   * like: isAbove(this, cell)
-   */
-  @Deprecated
-  @Override
-  public boolean isAbove(EditorCell cell) {
-    return GeometryUtil.isAbove(this, cell);
-  }
-
-  /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#isAbove(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
-   * like: isAbove(cell, this)
-   */
-  @Deprecated
-  @Override
-  public boolean isBelow(EditorCell cell) {
-    return GeometryUtil.isAbove(cell, this);
-  }
-
-  @Override
-  public boolean isToLeft(EditorCell cell) {
-    return GeometryUtil.isLeftToRight(this, cell);
-  }
-
-  @Override
-  public boolean isToRight(EditorCell cell) {
-    return cell.isToLeft(this);
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell getUpper(Condition<EditorCell> condition, int baseX) {
-    EditorCell bestMatch = null;
-    EditorCell current = getPrevLeaf(condition);
-
-    while (current != null) {
-      if (GeometryUtil.isAbove(current, this)) {
-        if (bestMatch != null && GeometryUtil.isAbove(current, bestMatch)) {
-          break;
-        }
-
-        if (bestMatch != null) {
-          if (GeometryUtil.getHorizontalDistance(bestMatch, baseX) > GeometryUtil.getHorizontalDistance(current, baseX)) {
-            bestMatch = current;
-          }
-        } else {
-          bestMatch = current;
-        }
-      }
-
-      current = current.getPrevLeaf(condition);
-    }
-
-    return bestMatch;
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell getLower(Condition<EditorCell> condition, int baseX) {
-    EditorCell bestMatch = null;
-    EditorCell current = getNextLeaf(condition);
-
-    while (current != null) {
-      if (current.isBelow(this)) {
-        if (bestMatch != null && current.isBelow(bestMatch)) {
-          break;
-        }
-
-        if (bestMatch != null) {
-          if (GeometryUtil.getHorizontalDistance(bestMatch, baseX) > GeometryUtil.getHorizontalDistance(current, baseX)) {
-            bestMatch = current;
-          }
-        } else {
-          bestMatch = current;
-        }
-      }
-
-      current = current.getNextLeaf(condition);
-    }
-
-    return bestMatch;
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell getEndCell(Condition<EditorCell> condition) {
-    EditorCell current = this;
-    while (current.getLeafToRight(condition) != null) {
-      current = current.getLeafToRight(condition);
-    }
-    return current.getLastLeaf(condition);
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell getHomeCell(Condition<EditorCell> condition) {
-    EditorCell current = this;
-    while (current.getLeafToLeft(condition) != null) {
-      current = current.getLeafToLeft(condition);
-    }
-    return current.getFirstLeaf();
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell getLeafToLeft(Condition<EditorCell> condition) {
-    return getPrevLeaf(new Condition<EditorCell>() {
-      @Override
-      public boolean met(EditorCell current) {
-        return current.isSelectable() && !GeometryUtil.isAbove(EditorCell_Basic.this, current) && !isBelow(current) && isToRight(current);
-      }
-    });
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell getLeafToRight(Condition<EditorCell> condition) {
-    return getNextLeaf(new Condition<EditorCell>() {
-      @Override
-      public boolean met(EditorCell current) {
-        return current.isSelectable() && !GeometryUtil.isAbove(EditorCell_Basic.this, current) && !isBelow(current) && isToLeft(current);
-      }
-    });
-  }
-
-  @Override
   public EditorCell getNextSibling() {
     return myNext != null ? (EditorCell) myNext.getItem() : null;
   }
@@ -1177,140 +913,9 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return myPrev != null && myPrev.getNext() != null ? (EditorCell) myPrev.getItem() : null;
   }
 
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell getNextLeaf() {
-    if (getNextSibling() != null) {
-      return getNextSibling().getFirstLeaf();
-    }
-    if (myParent != null) {
-      return myParent.getNextLeaf();
-    }
-    return null;
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell getNextLeaf(Condition<EditorCell> condition) {
-    EditorCell current = getNextLeaf();
-    while (current != null) {
-      if (condition.met(current)) {
-        return current;
-      }
-      current = current.getNextLeaf();
-    }
-    return null;
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell getPrevLeaf() {
-    if (getPrevSibling() != null) {
-      return getPrevSibling().getLastLeaf();
-    }
-    if (myParent != null) {
-      return myParent.getPrevLeaf();
-    }
-    return null;
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell getPrevLeaf(Condition<EditorCell> condition) {
-    EditorCell current = getPrevLeaf();
-    while (current != null) {
-      if (condition.met(current)) {
-        return current;
-      }
-      current = current.getPrevLeaf();
-    }
-    return null;
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell getFirstLeaf() {
-    return this;
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell getLastLeaf() {
-    return this;
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell getFirstLeaf(final Condition<EditorCell> condition) {
-    EditorCell firstLeaf = getFirstLeaf();
-    if (condition.met(firstLeaf)) {
-      return firstLeaf;
-    }
-    return firstLeaf.getNextLeaf(new Condition<EditorCell>() {
-      @Override
-      public boolean met(EditorCell object) {
-        return isAncestorOf(object) && condition.met(object);
-      }
-    });
-  }
-
-  /**
-   * @deprecated since MPS 3.4 not used
-   */
-  @Deprecated
-  @Override
-  public EditorCell getLastLeaf(final Condition<EditorCell> condition) {
-    EditorCell lastLeaf = getLastLeaf();
-    if (condition.met(lastLeaf)) {
-      return lastLeaf;
-    }
-    return lastLeaf.getPrevLeaf(new Condition<EditorCell>() {
-      @Override
-      public boolean met(EditorCell object) {
-        return isAncestorOf(object) && condition.met(object);
-      }
-    });
-  }
-
-  @Override
-  public EditorCell getLastChild() {
-    return this;
-  }
-
-  @Override
-  public EditorCell getFirstChild() {
-    return this;
-  }
-
   @Override
   public Style getStyle() {
     return myStyle;
-  }
-
-  @Override
-  public boolean isLeaf() {
-    return true;
   }
 
   public boolean isInTree() {

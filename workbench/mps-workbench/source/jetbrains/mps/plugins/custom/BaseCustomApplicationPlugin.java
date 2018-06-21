@@ -15,9 +15,15 @@
  */
 package jetbrains.mps.plugins.custom;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
+/**
+ * @deprecated replaced with {@link jetbrains.mps.plugins.part.ApplicationPluginPart}.
+ */
+@ToRemove(version = 2018.1)
+@Deprecated
 public abstract class BaseCustomApplicationPlugin {
   private static final Logger LOG = LogManager.getLogger(BaseCustomApplicationPlugin.class);
 

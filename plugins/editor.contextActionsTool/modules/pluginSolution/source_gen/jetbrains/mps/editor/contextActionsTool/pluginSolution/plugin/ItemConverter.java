@@ -16,7 +16,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import javax.swing.Icon;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.CommandPolicy;
@@ -65,7 +65,7 @@ public class ItemConverter {
     if (actionItem instanceof SidebarActionItem) {
       SidebarActionItem sidebarItem = (SidebarActionItem) actionItem;
       try {
-        icon = IconManager.getIconForResource(sidebarItem.getIcon());
+        icon = GlobalIconManager.getInstance().getIconForResource(sidebarItem.getIcon());
       } catch (LinkageError error) {
         if (LOG.isEnabledFor(Level.WARN)) {
           LOG.warn("Error trying to get icon for " + actionItem, error);

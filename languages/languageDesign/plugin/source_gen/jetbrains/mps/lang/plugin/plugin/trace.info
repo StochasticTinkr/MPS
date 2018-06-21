@@ -36,7 +36,7 @@
     <file name="CopyPluginXml_Facet.java">
       <node id="1675754527181903316" at="38,0,39,0" concept="4" trace="targets" />
       <node id="1675754527181903316" at="39,0,40,0" concept="4" trace="name" />
-      <node id="1675754527181903316" at="40,32,41,94" concept="3" />
+      <node id="1670948443106462369" at="40,32,41,94" concept="3" />
       <node id="1675754527181903316" at="43,38,44,19" concept="9" />
       <node id="1675754527181903316" at="46,43,47,16" concept="9" />
       <node id="1675754527181903316" at="49,43,50,154" concept="9" />
@@ -86,14 +86,14 @@
       <node id="1670948443106462369" at="172,99,173,95" concept="9" />
       <node id="834312300517864417" at="176,27,177,16" concept="13" />
       <node id="834312300517864417" at="179,44,180,26" concept="13" />
-      <node id="834312300517864417" at="182,46,183,31" concept="9" />
-      <node id="834312300517864417" at="185,34,186,26" concept="9" />
-      <node id="1675754527181903316" at="194,7,195,102" concept="8" />
-      <node id="1675754527181903316" at="196,45,197,157" concept="8" />
-      <node id="1675754527181903316" at="197,157,198,145" concept="3" />
-      <node id="1675754527181903316" at="204,9,205,104" concept="8" />
-      <node id="1675754527181903316" at="205,104,206,157" concept="8" />
-      <node id="1675754527181903316" at="207,123,208,145" concept="3" />
+      <node id="834312300517864419" at="182,46,183,31" concept="9" />
+      <node id="834312300517864419" at="185,34,186,26" concept="9" />
+      <node id="1670948443106462369" at="194,7,195,102" concept="8" />
+      <node id="1670948443106462369" at="196,45,197,157" concept="8" />
+      <node id="834312300517864419" at="197,157,198,145" concept="3" />
+      <node id="1670948443106462369" at="204,9,205,104" concept="8" />
+      <node id="1670948443106462369" at="205,104,206,157" concept="8" />
+      <node id="834312300517864419" at="207,123,208,145" concept="3" />
       <node id="1670948443106462369" at="63,0,65,0" concept="2" trace="Target_copyPluginXml#()V" />
       <node id="1675754527181903316" at="191,0,193,0" concept="2" trace="TargetProperties#()V" />
       <node id="1675754527181903316" at="40,0,43,0" concept="2" trace="CopyPluginXml_Facet#()V" />
@@ -120,16 +120,16 @@
       <node id="1670948443106462369" at="172,0,175,0" concept="12" trace="vars#(Ljetbrains/mps/make/script/IPropertiesPool;)Ljetbrains/mps/lang/plugin/plugin/CopyPluginXml_Facet/Target_copyPluginXml/Parameters;" />
       <node id="834312300517864417" at="176,0,179,0" concept="2" trace="Parameters#()V" />
       <node id="834312300517864417" at="179,0,182,0" concept="2" trace="Parameters#(Ljava/lang/String;)V" />
-      <node id="834312300517864417" at="182,0,185,0" concept="7" trace="pluginRoot#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="834312300517864417" at="185,0,188,0" concept="7" trace="pluginRoot#()Ljava/lang/String;" />
-      <node id="1675754527181903316" at="206,157,209,11" concept="6" />
-      <node id="1675754527181903316" at="195,102,199,9" concept="6" />
+      <node id="834312300517864419" at="182,0,185,0" concept="7" trace="pluginRoot#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="834312300517864419" at="185,0,188,0" concept="7" trace="pluginRoot#()Ljava/lang/String;" />
+      <node id="834312300517864419" at="206,157,209,11" concept="6" />
+      <node id="1670948443106462369" at="195,102,199,9" concept="6" />
       <node id="994937056134597787" at="87,68,92,29" concept="6" />
       <node id="1670948443106462369" at="151,0,156,0" concept="7" trace="expectedInput#()Ljava/lang/Iterable;" />
       <node id="1675754527182057072" at="98,0,105,0" concept="7" trace="run#()V" />
       <node id="1670948443106462369" at="162,0,169,0" concept="7" trace="createParameters#(Ljava/lang/Class;null)null" />
-      <node id="1675754527181903316" at="193,84,200,7" concept="1" />
-      <node id="1675754527181903316" at="203,11,210,9" concept="1" />
+      <node id="1670948443106462369" at="193,84,200,7" concept="1" />
+      <node id="1670948443106462369" at="203,11,210,9" concept="1" />
       <node id="1670948443106485494" at="86,0,95,0" concept="7" trace="acceptWritten#(Ljetbrains/mps/vfs/IFile;)Z" />
       <node id="2314086701969565629" at="96,51,105,29" concept="3" />
       <node id="1675754527181903316" at="193,0,202,0" concept="7" trace="storeValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
@@ -177,14 +177,14 @@
       <scope id="1670948443106462369" at="172,99,173,95" />
       <scope id="834312300517864417" at="176,27,177,16" />
       <scope id="834312300517864417" at="179,44,180,26" />
-      <scope id="834312300517864417" at="182,46,183,31" />
-      <scope id="834312300517864417" at="185,34,186,26" />
-      <scope id="1675754527181903316" at="207,123,208,145" />
+      <scope id="834312300517864419" at="182,46,183,31" />
+      <scope id="834312300517864419" at="185,34,186,26" />
+      <scope id="834312300517864419" at="207,123,208,145" />
       <scope id="1670948443106462369" at="63,0,65,0" />
       <scope id="1670948443106462371" at="117,20,119,61" />
       <scope id="1675754527181903316" at="191,0,193,0" />
-      <scope id="1675754527181903316" at="196,45,198,145">
-        <var name="props" id="1675754527181903316" />
+      <scope id="1670948443106462369" at="196,45,198,145">
+        <var name="props" id="1670948443106462369" />
       </scope>
       <scope id="1675754527181903316" at="40,0,43,0" />
       <scope id="1675754527181903316" at="43,0,46,0" />
@@ -216,23 +216,23 @@
       </scope>
       <scope id="834312300517864417" at="176,0,179,0" />
       <scope id="834312300517864417" at="179,0,182,0">
-        <var name="pluginRoot" id="834312300517864417" />
+        <var name="pluginRoot" id="834312300517864419" />
       </scope>
-      <scope id="834312300517864417" at="182,0,185,0">
-        <var name="value" id="834312300517864417" />
+      <scope id="834312300517864419" at="182,0,185,0">
+        <var name="value" id="834312300517864419" />
       </scope>
-      <scope id="834312300517864417" at="185,0,188,0" />
+      <scope id="834312300517864419" at="185,0,188,0" />
       <scope id="1675754527182057075" at="99,47,103,118" />
       <scope id="1670948443106462369" at="151,0,156,0" />
       <scope id="1670948443106462369" at="162,61,167,15">
         <var name="t" id="1670948443106462369" />
       </scope>
-      <scope id="1675754527181903316" at="194,7,199,9">
-        <var name="name" id="1675754527181903316" />
+      <scope id="1670948443106462369" at="194,7,199,9">
+        <var name="name" id="1670948443106462369" />
       </scope>
-      <scope id="1675754527181903316" at="204,9,209,11">
-        <var name="name" id="1675754527181903316" />
-        <var name="props" id="1675754527181903316" />
+      <scope id="1670948443106462369" at="204,9,209,11">
+        <var name="name" id="1670948443106462369" />
+        <var name="props" id="1670948443106462369" />
       </scope>
       <scope id="1670948443106485499" at="87,68,93,40" />
       <scope id="1675754527182057072" at="98,0,105,0" />
@@ -291,6 +291,9 @@
       <unit id="1670948443106462371" at="66,17,122,7" name="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$Target_copyPluginXml$1" />
       <unit id="1670948443106462369" at="61,0,190,0" name="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$Target_copyPluginXml" />
       <unit id="1675754527181903316" at="37,0,216,0" name="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet" />
+    </file>
+    <file name="FacetManifest.java">
+      <node id="1675754527181903316" at="14,26,15,72" concept="3" />
     </file>
   </root>
   <root nodeRef="r:01d327ba-040c-402c-a2b6-8832116588df(jetbrains.mps.lang.plugin.plugin)/3193873080290339088">

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,15 +17,18 @@
 package jetbrains.mps.idea.core.make;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.core.platform.Platform;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeServiceComponent;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.concurrent.Future;
 
@@ -33,6 +36,7 @@ import java.util.concurrent.Future;
  * evgeny, 11/20/11
  */
 public class NoMakeService implements IMakeService, ApplicationComponent {
+  private final Platform myPlatform;
 
   @Override
   public boolean openNewSession(MakeSession session) {
@@ -76,14 +80,20 @@ public class NoMakeService implements IMakeService, ApplicationComponent {
   public void removeListener(IMakeNotificationListener listener) {
   }
 
+  public NoMakeService(MPSCoreComponents mpsComponents) {
+    myPlatform = mpsComponents.getPlatform();
+  }
+
   @Override
   public void initComponent() {
-    IMakeService.INSTANCE.set(this);
+    // I assume MPSMake is always initialized for the plugin's platform level.
+    // If not, I'd like to know this right away with NPE
+    myPlatform.findComponent(MakeServiceComponent.class).install(this);
   }
 
   @Override
   public void disposeComponent() {
-    IMakeService.INSTANCE.set(null);
+    myPlatform.findComponent(MakeServiceComponent.class).uninstall(this);
   }
 
   @NotNull

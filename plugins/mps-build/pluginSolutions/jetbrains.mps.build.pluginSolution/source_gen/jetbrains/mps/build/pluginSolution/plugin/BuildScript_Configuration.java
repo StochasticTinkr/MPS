@@ -6,7 +6,6 @@ import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -21,12 +20,12 @@ import com.intellij.execution.configurations.RuntimeConfigurationError;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
-import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
-import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ExecutionException;
@@ -41,8 +40,6 @@ import java.util.ArrayList;
 
 public class BuildScript_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = LogManager.getLogger(BuildScript_Configuration.class);
-  @NotNull
-  private BuildScript_Configuration.MyState myState = new BuildScript_Configuration.MyState();
   private NodeByConcept_Configuration myNodePointer = new NodeByConcept_Configuration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return true;
@@ -69,7 +66,6 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
   }
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
-    element.addContent(XmlSerializer.serialize(myState));
     {
       Element fieldElement = new Element("myNodePointer");
       myNodePointer.writeExternal(fieldElement);
@@ -86,7 +82,6 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     if (element == null) {
       throw new InvalidDataException("Cant read " + this + ": element is null.");
     }
-    XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
     {
       Element fieldElement = element.getChild("myNodePointer");
       if (fieldElement != null) {
@@ -116,30 +111,12 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
   }
   @Override
   public BuildScript_Configuration clone() {
-    BuildScript_Configuration clone = null;
-    try {
-      clone = createCloneTemplate();
-      clone.myState = (BuildScript_Configuration.MyState) myState.clone();
-      clone.myNodePointer = (NodeByConcept_Configuration) myNodePointer.clone();
-      clone.mySettings = (AntSettings_Configuration) mySettings.clone();
-      return clone;
-    } catch (CloneNotSupportedException ex) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("", ex);
-      }
-    }
+    BuildScript_Configuration clone = createCloneTemplate();
+    clone.myNodePointer = (NodeByConcept_Configuration) myNodePointer.clone();
+    clone.mySettings = (AntSettings_Configuration) mySettings.clone();
     return clone;
   }
-  public class MyState {
-    public MyState() {
-    }
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      BuildScript_Configuration.MyState state = new BuildScript_Configuration.MyState();
-      return state;
-    }
-  }
-  public BuildScript_Configuration(Project project, BuildScript_Configuration_Factory factory, String name) {
+  public BuildScript_Configuration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
   @Nullable

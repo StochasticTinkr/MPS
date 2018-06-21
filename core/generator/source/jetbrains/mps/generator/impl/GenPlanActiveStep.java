@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,12 +22,17 @@ import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -43,14 +48,16 @@ import java.util.Map;
 final class GenPlanActiveStep {
   private final ModelGenerationPlan myPlan;
   private final Transform myStep;
+  private final LanguageRegistry myLanguageRegistry;
   private final RuleManager myActiveTransformations;
   private final Map<SModelReference, TemplateModel> myModelMap;
 
-  public GenPlanActiveStep(@NotNull ModelGenerationPlan plan, @NotNull Transform step, List<TemplateMappingConfiguration> applicableConfigurations) throws
-      GenerationFailureException {
+  public GenPlanActiveStep(@NotNull ModelGenerationPlan plan, @NotNull Transform step, List<TemplateMappingConfiguration> applicableConfigurations,
+                           LanguageRegistry languageRegistry) throws GenerationFailureException {
     myPlan = plan;
     myStep = step;
-    myModelMap = new HashMap<SModelReference, TemplateModel>();
+    myLanguageRegistry = languageRegistry;
+    myModelMap = new HashMap<>();
     // I'd like to keep predictable order of template models, just in case. Don't want LinkedHasMap since I need the order once
     ArrayList<TemplateModel> allTemplateModels = new ArrayList<TemplateModel>();
     // In fact, to resolve templates (#getTemplateModel(SModelReference) it's not necessary to know ALL template models, it's sufficient to know
@@ -73,8 +80,29 @@ final class GenPlanActiveStep {
     return myActiveTransformations;
   }
 
-  public boolean isCountedLanguage(SLanguage language) {
-    return myPlan.coversLanguage(language);
+  /**
+   * Looks at supplied nodes and tells those with languages unexpected from perspective of actual generation plan.
+   * 'Unexpected' means the plan doesn't account for nodes of that language. This doesn't make sense with custom generation plans
+   * where we expect incomplete set of languages. However, in the future we may get smart enough to respect order and to complain about
+   * scenarios when a language has been processed already (so that we introduce a loop into plan, A->B->C->A)
+   *
+   * XXX refactor this cumbersome and misguiding check (with hand-crafted GPs in mind)
+   */
+  Collection<SNode> selectUnexpectedNodes(Iterable<SNode> nodes) {
+    ArrayList<SNode> rv = null;
+    for (SNode node : nodes) {
+      SLanguage lang = node.getConcept().getLanguage();
+      if (!myPlan.coversLanguage(lang)) {
+        LanguageRuntime lr = myLanguageRegistry.getLanguage(lang);
+        if (lr != null && !lr.getGenerators().isEmpty()) {
+          if (rv == null) {
+            rv = new ArrayList<>();
+          }
+          rv.add(node);
+        }
+      }
+    }
+    return rv == null ? Collections.emptyList() : rv;
   }
 
   @Nullable

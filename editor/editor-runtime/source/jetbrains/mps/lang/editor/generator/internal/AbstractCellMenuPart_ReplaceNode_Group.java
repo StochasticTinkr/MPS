@@ -44,7 +44,7 @@ import java.util.List;
 public abstract class AbstractCellMenuPart_ReplaceNode_Group implements SubstituteInfoPartExt {
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
-    final SNode node = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
+    final SNode node = cellContext.get(BasicCellContext.EDITED_NODE);
     final SNode parent = node.getParent();
     if (parent == null) {
       return Collections.emptyList();

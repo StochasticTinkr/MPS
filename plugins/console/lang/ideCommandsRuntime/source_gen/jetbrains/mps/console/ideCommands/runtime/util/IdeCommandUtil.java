@@ -187,7 +187,7 @@ public class IdeCommandUtil {
   }
 
   public static void callAction(final SNode actionDeclaration, final Map<String, Object> parameters) {
-    AnAction action = ActionManager.getInstance().getAction(ActionDeclaration__BehaviorDescriptor.getGeneratedClassFQName_idhEwIGgK.invoke(actionDeclaration));
+    AnAction action = ActionManager.getInstance().getAction(ActionDeclaration__BehaviorDescriptor.getActionId_id2JiSCAPXEb8.invoke(actionDeclaration));
     ActionUtils.updateAndPerformAction(action, ActionUtils.createEvent(ActionPlaces.UNKNOWN, new DataContext() {
       @Nullable
       public Object getData(@NonNls String key) {

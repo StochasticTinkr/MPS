@@ -35,8 +35,10 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -228,6 +230,7 @@ public class UpdateSessionImpl implements UpdateSession {
 
     final EditorContext editorContext = getUpdater().getEditorContext();
     getCellFactory().pushCellContext();
+    getCellFactory().setNodeLocation(new SNodeLocation.FromNode(attribute));
     ReflectiveHintsManager.propagateReflectiveHints(getCellFactory());
 
     final boolean isNodeAttribute = attributeKind == AttributeKind.NODE;
@@ -285,6 +288,8 @@ public class UpdateSessionImpl implements UpdateSession {
         () -> new EditorCell_Error(getUpdater().getEditorContext(), attribute, "<attributed cell not found>"));
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   @Override
   public <T> T updateReferencedNodeCell(Computable<T> update, SNode node, String role) {
     ReferencedNodeContext newContext = getCurrentContext().contextWithOneMoreReference(node, getCurrentContext().getNode(), role);

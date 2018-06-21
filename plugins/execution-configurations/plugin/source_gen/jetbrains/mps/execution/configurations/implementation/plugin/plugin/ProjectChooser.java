@@ -17,6 +17,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 /*package*/ class ProjectChooser extends JPanel {
   private final JCheckBox myOpenCurrentProject;
   private final FieldWithPathChooseDialog myProjectPath;
+
   public ProjectChooser() {
     super(new GridBagLayout());
 
@@ -33,14 +34,17 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
     this.add(new JLabel("Project to open:"), LayoutUtil.createLabelConstraints(1));
     this.add(myProjectPath, LayoutUtil.createFieldConstraints(2));
   }
+
   public void reset(boolean openCurrentProject, String pathToProject) {
     myOpenCurrentProject.setSelected(openCurrentProject);
     myProjectPath.setEditable(!(openCurrentProject));
     myProjectPath.setText(pathToProject);
   }
+
   public Tuples._2<Boolean, String> getValue() {
     return MultiTuple.<Boolean,String>from(myOpenCurrentProject.isSelected(), myProjectPath.getText());
   }
+
   public void setEditable(boolean editable) {
     myOpenCurrentProject.setEnabled(editable);
     myProjectPath.setEditable(editable);

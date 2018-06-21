@@ -15,6 +15,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptChild = createDescriptorForChild();
   /*package*/ final ConceptDescriptor myConceptChildSubConcept = createDescriptorForChildSubConcept();
   /*package*/ final ConceptDescriptor myConceptGrandChild = createDescriptorForGrandChild();
+  /*package*/ final ConceptDescriptor myConceptNPTypesystem_ConceptA = createDescriptorForNPTypesystem_ConceptA();
+  /*package*/ final ConceptDescriptor myConceptNPTypesystem_ConceptB = createDescriptorForNPTypesystem_ConceptB();
+  /*package*/ final ConceptDescriptor myConceptNPTypesystem_IntA = createDescriptorForNPTypesystem_IntA();
+  /*package*/ final ConceptDescriptor myConceptNPTypesystem_IntB = createDescriptorForNPTypesystem_IntB();
+  /*package*/ final ConceptDescriptor myConceptNPTypesystem_RefToIntA = createDescriptorForNPTypesystem_RefToIntA();
   /*package*/ final ConceptDescriptor myConceptReferenceContainer = createDescriptorForReferenceContainer();
   /*package*/ final ConceptDescriptor myConceptReferenceContainerSubConcept = createDescriptorForReferenceContainerSubConcept();
   /*package*/ final ConceptDescriptor myConceptRoot = createDescriptorForRoot();
@@ -26,7 +31,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptChild, myConceptChildSubConcept, myConceptGrandChild, myConceptReferenceContainer, myConceptReferenceContainerSubConcept, myConceptRoot);
+    return Arrays.asList(myConceptChild, myConceptChildSubConcept, myConceptGrandChild, myConceptNPTypesystem_ConceptA, myConceptNPTypesystem_ConceptB, myConceptNPTypesystem_IntA, myConceptNPTypesystem_IntB, myConceptNPTypesystem_RefToIntA, myConceptReferenceContainer, myConceptReferenceContainerSubConcept, myConceptRoot);
   }
 
   @Override
@@ -39,6 +44,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptChildSubConcept;
       case LanguageConceptSwitch.GrandChild:
         return myConceptGrandChild;
+      case LanguageConceptSwitch.NPTypesystem_ConceptA:
+        return myConceptNPTypesystem_ConceptA;
+      case LanguageConceptSwitch.NPTypesystem_ConceptB:
+        return myConceptNPTypesystem_ConceptB;
+      case LanguageConceptSwitch.NPTypesystem_IntA:
+        return myConceptNPTypesystem_IntA;
+      case LanguageConceptSwitch.NPTypesystem_IntB:
+        return myConceptNPTypesystem_IntB;
+      case LanguageConceptSwitch.NPTypesystem_RefToIntA:
+        return myConceptNPTypesystem_RefToIntA;
       case LanguageConceptSwitch.ReferenceContainer:
         return myConceptReferenceContainer;
       case LanguageConceptSwitch.ReferenceContainerSubConcept:
@@ -76,6 +91,39 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodelTests", "GrandChild", 0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc4L);
     b.class_(false, false, false);
     b.origin("r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/278471160714141636");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForNPTypesystem_ConceptA() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodelTests", "NPTypesystem_ConceptA", 0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x76fa9e459df911fL);
+    b.class_(false, false, false);
+    b.parent(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x76fa9e459dda66eL);
+    b.origin("r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/535833678905839903");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForNPTypesystem_ConceptB() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodelTests", "NPTypesystem_ConceptB", 0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x76fa9e459df9122L);
+    b.class_(false, false, false);
+    b.parent(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x76fa9e459dda66fL);
+    b.origin("r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/535833678905839906");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForNPTypesystem_IntA() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodelTests", "NPTypesystem_IntA", 0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x76fa9e459dda66eL);
+    b.interface_();
+    b.origin("r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/535833678905714286");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForNPTypesystem_IntB() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodelTests", "NPTypesystem_IntB", 0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x76fa9e459dda66fL);
+    b.interface_();
+    b.origin("r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/535833678905714287");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForNPTypesystem_RefToIntA() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodelTests", "NPTypesystem_RefToIntA", 0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x76fa9e459e19e64L);
+    b.class_(false, false, false);
+    b.origin("r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)/535833678905974372");
+    b.associate("ref", 0x76fa9e459e19e65L).target(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x76fa9e459dda66eL).optional(false).origin("535833678905974373").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForReferenceContainer() {

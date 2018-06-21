@@ -376,7 +376,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
           results[0] = result;
           myContext.select(result);
           if ((myRefactoringModel != null) && myExtractIntoOuterContainer) {
-            SModelReference ref = SNodeOperations.getModel(myStaticTarget).getReference();
+            SModelReference ref = jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getPointer(SNodeOperations.getModel(myStaticTarget));
             new ModelImports(myRefactoringModel).addModelImport(ref);
           }
         }

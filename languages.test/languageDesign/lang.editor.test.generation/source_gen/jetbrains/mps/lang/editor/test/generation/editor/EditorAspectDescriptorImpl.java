@@ -26,8 +26,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("HINT1", "H1", true, "jetbrains.mps.lang.editor.test.generation.editor.TestTargetHints.HINT1"), new ConceptEditorHintImpl("Hint2", "H2", true, "jetbrains.mps.lang.editor.test.generation.editor.TestTargetHints.Hint2"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0b = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0b.index(cncpt_a0b)) {
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new Constant_Editor());
       case 1:
@@ -47,8 +47,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    SAbstractConcept cncpt_a0d = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0d.index(cncpt_a0d)) {
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (conceptIndex1.index(cncpt)) {
       case 0:
         if (true) {
           switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a3, editorComponentId)) {
@@ -176,8 +176,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    SAbstractConcept cncpt_a0h = (SAbstractConcept) menuId.getConcept();
-    switch (index_xbvbvu_a0h.index(cncpt_a0h)) {
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (conceptIndex2.index(cncpt)) {
       case 0:
         if (true) {
           switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a7, menuId.getFqName())) {
@@ -193,9 +193,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
     return Collections.<TransformationMenu>emptyList();
   }
 
-  private static final ConceptSwitchIndex index_xbvbvu_a0b = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde8953186ee02L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a5a543L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c22L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c23L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde8953186ee02L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a5a543L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c22L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0x34bd237e1c9c3f8bL), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c23L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0h = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a681a1L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde8953186ee02L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a5a543L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c22L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c23L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL)).seal();
+  private static final ConceptSwitchIndex conceptIndex1 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde8953186ee02L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a5a543L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c22L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0x34bd237e1c9c3f8bL), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c23L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL)).seal();
+  private static final ConceptSwitchIndex conceptIndex2 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a681a1L)).seal();
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a3 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.Constant_Default", "jetbrains.mps.lang.editor.test.generation.editor.Constant_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.Constant_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.Constant_IStyleContainer"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a3 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.Error_Default", "jetbrains.mps.lang.editor.test.generation.editor.Error_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.Error_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.Error_IStyleContainer"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a3 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.ModelAccess_Default", "jetbrains.mps.lang.editor.test.generation.editor.ModelAccess_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.ModelAccess_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.ModelAccess_IStyleContainer"};

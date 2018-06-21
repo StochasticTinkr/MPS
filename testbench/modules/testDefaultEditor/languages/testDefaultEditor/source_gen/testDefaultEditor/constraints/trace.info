@@ -19,8 +19,8 @@
     <file name="Developer_Constraints.java">
       <node id="6007318803035047592" at="30,34,31,144" concept="9" />
       <node id="6007318803035047592" at="35,90,36,131" concept="5" />
-      <node id="6007318803035047592" at="39,44,40,20" concept="6" />
-      <node id="6007318803035047592" at="47,63,48,58" concept="6" />
+      <node id="6007318803035331485" at="39,44,40,20" concept="6" />
+      <node id="6007318803035331485" at="47,63,48,58" concept="6" />
       <node id="6836281137582852554" at="59,84,60,83" concept="5" />
       <node id="6836281137582852561" at="60,83,61,0" concept="7" />
       <node id="6836281137582852562" at="61,0,62,62" concept="5" />
@@ -37,22 +37,22 @@
       <node id="6007318803035047592" at="110,0,111,0" concept="8" trace="breakingNode_f3ukjk_a0a0a0a0a1a0b0a1a2" />
       <node id="6836281137582852603" at="69,24,71,19" concept="0" />
       <node id="6007318803035047592" at="30,0,33,0" concept="1" trace="Developer_Constraints#()V" />
-      <node id="6007318803035047592" at="38,0,42,0" concept="4" trace="hasOwnScopeProvider#()Z" />
-      <node id="6007318803035047592" at="46,0,50,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="6007318803035331485" at="38,0,42,0" concept="4" trace="hasOwnScopeProvider#()Z" />
+      <node id="6007318803035331485" at="46,0,50,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="6836281137582852613" at="85,0,89,0" concept="4" trace="resolve#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6836281137582852637" at="99,0,103,0" concept="4" trace="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="6836281137582852584" at="65,66,71,19" concept="3" />
       <node id="6836281137582852566" at="62,62,72,17" concept="3" />
       <node id="6836281137582852540" at="59,0,76,0" concept="4" trace="getAvailableElements#(Ljava/lang/String;)Ljava/lang/Iterable;" />
       <node id="6836281137582852535" at="51,122,103,14" concept="6" />
-      <node id="6007318803035047592" at="50,0,105,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-      <node id="6007318803035047592" at="44,56,105,10" concept="6" />
-      <node id="6007318803035047592" at="42,0,107,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="6007318803035047592" at="36,131,107,7" concept="2" />
+      <node id="6007318803035331485" at="50,0,105,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="6007318803035331485" at="44,56,105,10" concept="6" />
+      <node id="6007318803035331485" at="42,0,107,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="6007318803035331485" at="36,131,107,7" concept="2" />
       <node id="6007318803035047592" at="34,0,110,0" concept="4" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="6007318803035047592" at="30,34,31,144" />
-      <scope id="6007318803035047592" at="39,44,40,20" />
-      <scope id="6007318803035047592" at="47,63,48,58" />
+      <scope id="6007318803035331485" at="39,44,40,20" />
+      <scope id="6007318803035331485" at="47,63,48,58" />
       <scope id="6836281137582852604" at="69,26,70,70" />
       <scope id="6836281137582852634" at="86,80,87,28" />
       <scope id="6836281137582852660" at="100,86,101,28" />
@@ -60,8 +60,8 @@
         <var name="teamNode" id="6836281137582852591" />
       </scope>
       <scope id="6007318803035047592" at="30,0,33,0" />
-      <scope id="6007318803035047592" at="38,0,42,0" />
-      <scope id="6007318803035047592" at="46,0,50,0" />
+      <scope id="6007318803035331485" at="38,0,42,0" />
+      <scope id="6007318803035331485" at="46,0,50,0" />
       <scope id="6836281137582852613" at="85,0,89,0">
         <var name="contextNode" id="6836281137582852616" />
         <var name="refText" id="6836281137582852618" />
@@ -81,20 +81,20 @@
       <scope id="6836281137582852540" at="59,0,76,0">
         <var name="prefix" id="6836281137582852544" />
       </scope>
-      <scope id="6007318803035047592" at="51,122,103,14" />
-      <scope id="6007318803035047592" at="50,0,105,0">
-        <var name="_context" id="6007318803035047592" />
-        <var name="operationContext" id="6007318803035047592" />
+      <scope id="6007318803035331485" at="51,122,103,14" />
+      <scope id="6007318803035331485" at="50,0,105,0">
+        <var name="_context" id="6007318803035331485" />
+        <var name="operationContext" id="6007318803035331485" />
       </scope>
-      <scope id="6007318803035047592" at="44,56,105,10" />
-      <scope id="6007318803035047592" at="42,0,107,0" />
+      <scope id="6007318803035331485" at="44,56,105,10" />
+      <scope id="6007318803035331485" at="42,0,107,0" />
       <scope id="6007318803035047592" at="35,90,108,22">
         <var name="references" id="6007318803035047592" />
       </scope>
       <scope id="6007318803035047592" at="34,0,110,0" />
       <unit id="6836281137582852538" at="52,23,103,13" name="testDefaultEditor.constraints.Developer_Constraints$1$1$1" />
-      <unit id="6007318803035047592" at="45,19,105,9" name="testDefaultEditor.constraints.Developer_Constraints$1$1" />
-      <unit id="6007318803035047592" at="37,156,107,5" name="testDefaultEditor.constraints.Developer_Constraints$1" />
+      <unit id="6007318803035331485" at="45,19,105,9" name="testDefaultEditor.constraints.Developer_Constraints$1$1" />
+      <unit id="6007318803035331485" at="37,156,107,5" name="testDefaultEditor.constraints.Developer_Constraints$1" />
       <unit id="6007318803035047592" at="29,0,112,0" name="testDefaultEditor.constraints.Developer_Constraints" />
     </file>
   </root>

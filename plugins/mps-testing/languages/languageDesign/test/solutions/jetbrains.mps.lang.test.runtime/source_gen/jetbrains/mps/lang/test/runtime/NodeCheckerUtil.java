@@ -16,8 +16,7 @@ public class NodeCheckerUtil {
   }
 
   public static void assertTypesAreTheSame(SNode node, final SNode type1, final SNode type2) {
-    String errorString = "node '" + nodeWithIdToString(node) + "' does not have type '" + nodeWithIdToString(type2) + "'!";
-    Assert.assertNull(errorString, NodesMatcher.matchNodes(type1, type2));
+    Assert.assertTrue(String.format("node '%s' doesn't have type '%s'!", nodeWithIdToString(node), nodeWithIdToString(type2)), new NodesMatcher(type1, type2).diff().isEmpty());
   }
 
   public static SNode getRuleNodeFromReporter(NodeReportItem reporter, SRepository contextRepository) {

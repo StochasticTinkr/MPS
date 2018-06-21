@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.EditorUtil;
 import junit.framework.Assert;
 import jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil;
@@ -23,11 +24,15 @@ public class TwoStepDeleteSingleOptional_Test extends BaseTransformationTest {
 
   @Test
   public void test_TwoStepDeleteSingleOptional() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleOptional_Test$TestBody", "testMethod", false);
+    new TwoStepDeleteSingleOptional_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1241246198931555563", "1241246198931555568");

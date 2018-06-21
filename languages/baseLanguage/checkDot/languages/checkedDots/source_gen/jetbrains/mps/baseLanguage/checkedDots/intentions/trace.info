@@ -15,6 +15,10 @@
     </file>
   </root>
   <root nodeRef="r:e7b16359-4f7b-4995-8330-19c6bbadce25(jetbrains.mps.baseLanguage.checkedDots.intentions)/1038097819968653124">
+    <file name="IntentionsDescriptor.java">
+      <node id="1038097819968653124" at="37,47,38,67" concept="2" />
+      <node id="1038097819968653124" at="50,52,51,53" concept="2" />
+    </file>
     <file name="MakeDotExpressionChecked_Intention.java">
       <node id="1038097819968653124" at="22,0,23,0" concept="3" trace="myCachedExecutable" />
       <node id="1038097819968653124" at="23,47,24,164" concept="8" />

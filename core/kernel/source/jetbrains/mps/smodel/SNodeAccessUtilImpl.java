@@ -165,6 +165,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   public void setReferenceImpl(org.jetbrains.mps.openapi.model.SNode node, SReferenceLink referenceLink,
       @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
     //todo for symmetry.Not yet used
+    //RS: WHY there is no logic that invokes constraints like in SNodeAccessUtilImpl#setReferenceTargetImpl ???
     node.setReference(referenceLink, reference);
   }
 

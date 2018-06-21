@@ -222,7 +222,7 @@ public class RunMigrationScriptsDialog extends JDialog {
         public void run() {
           SNode sn = SNodeOperations.cast(ListSequence.fromList(myScripts).getElement(row).resolve(repo), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, "jetbrains.mps.lang.script.structure.MigrationScript"));
           if (column == 0) {
-            result.value = mySelectedScriptIds.contains(sn.getReference());
+            result.value = mySelectedScriptIds.contains(SNodeOperations.getPointer(sn));
           } else if (column == 1) {
             result.value = "  " + SPropertyOperations.getString(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x11225f2354aL, "title"));
           } else if (column == 2) {

@@ -105,6 +105,10 @@ public interface IFile {
     return toPath();
   }
 
+  /**
+   * Null if an error has occured.
+   */
+  @Nullable
   URL getUrl() throws MalformedURLException;
 
   /**

@@ -26,10 +26,10 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_tplquy_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_tplquy_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_tplquy_a");
     return editorCell;

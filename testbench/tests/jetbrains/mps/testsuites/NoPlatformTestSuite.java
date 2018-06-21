@@ -41,6 +41,7 @@ import org.junit.runners.Suite.SuiteClasses;
     jetbrains.mps.editor.runtime.style.StyleTests.class,
     jetbrains.mps.text.TextAreaTest.class,
     jetbrains.mps.text.TextBufferTest.class,
+    jetbrains.mps.util.performance.PerfTracerTest.class,
     ThreadUtilsTest.class})
 public class NoPlatformTestSuite {
 }

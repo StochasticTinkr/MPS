@@ -17,6 +17,10 @@
     </file>
   </root>
   <root nodeRef="r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)/2230548360390192818">
+    <file name="IntentionsDescriptor.java">
+      <node id="2230548360390192818" at="44,47,45,77" concept="2" />
+      <node id="2230548360390192818" at="64,52,65,63" concept="2" />
+    </file>
     <file name="convert_test_case_to_unittest_case_Intention.java">
       <node id="2230548360390192818" at="33,0,34,0" concept="3" trace="myCachedExecutable" />
       <node id="2230548360390192818" at="34,57,35,161" concept="10" />
@@ -29,9 +33,9 @@
       <node id="2230548360390192818" at="58,5,59,30" concept="8" />
       <node id="2230548360390198539" at="65,87,66,40" concept="8" />
       <node id="1571838961922885080" at="69,78,70,262" concept="7" />
-      <node id="1571838961922885087" at="70,262,71,305" concept="2" />
-      <node id="1571838961922969825" at="71,305,72,313" concept="2" />
-      <node id="1571838961922885104" at="73,687,74,633" concept="2" />
+      <node id="1571838961922885087" at="70,262,71,308" concept="2" />
+      <node id="1571838961922969825" at="71,308,72,316" concept="2" />
+      <node id="1571838961922885104" at="73,597,74,633" concept="2" />
       <node id="2230548360390286967" at="77,180,78,760" concept="2" />
       <node id="1571838961922885174" at="79,16,80,241" concept="2" />
       <node id="1571838961922885224" at="83,117,84,239" concept="2" />
@@ -41,31 +45,26 @@
       <node id="2230548360390284900" at="94,30,95,252" concept="2" />
       <node id="2230548360390284900" at="95,252,96,445" concept="2" />
       <node id="2230548360390284900" at="96,445,97,24" concept="8" />
-      <node id="1571838961922885163" at="99,63,100,63" concept="7" />
-      <node id="1571838961922885163" at="100,63,101,30" concept="7" />
-      <node id="1571838961922885163" at="101,30,102,252" concept="2" />
-      <node id="1571838961922885163" at="102,252,103,445" concept="2" />
-      <node id="1571838961922885163" at="103,445,104,24" concept="8" />
-      <node id="2230548360390286986" at="106,104,107,63" concept="7" />
-      <node id="2230548360390286986" at="107,63,108,30" concept="7" />
-      <node id="2230548360390286986" at="108,30,109,30" concept="7" />
-      <node id="2230548360390286986" at="109,30,110,30" concept="7" />
-      <node id="2230548360390286986" at="110,30,111,257" concept="2" />
-      <node id="2230548360390286986" at="111,257,112,188" concept="2" />
-      <node id="2230548360390286986" at="112,188,113,245" concept="2" />
-      <node id="2230548360390286986" at="113,245,114,165" concept="2" />
-      <node id="2230548360390286986" at="114,165,115,39" concept="2" />
-      <node id="2230548360390286986" at="116,31,117,184" concept="2" />
-      <node id="2230548360390286986" at="118,5,119,24" concept="8" />
+      <node id="2230548360390286986" at="99,104,100,63" concept="7" />
+      <node id="2230548360390286986" at="100,63,101,30" concept="7" />
+      <node id="2230548360390286986" at="101,30,102,30" concept="7" />
+      <node id="2230548360390286986" at="102,30,103,30" concept="7" />
+      <node id="2230548360390286986" at="103,30,104,257" concept="2" />
+      <node id="2230548360390286986" at="104,257,105,188" concept="2" />
+      <node id="2230548360390286986" at="105,188,106,245" concept="2" />
+      <node id="2230548360390286986" at="106,245,107,165" concept="2" />
+      <node id="2230548360390286986" at="107,165,108,39" concept="2" />
+      <node id="2230548360390286986" at="109,31,110,184" concept="2" />
+      <node id="2230548360390286986" at="111,5,112,24" concept="8" />
       <node id="2230548360390192818" at="62,0,64,0" concept="1" trace="IntentionImplementation#()V" />
       <node id="1571838961922885172" at="79,14,81,9" concept="0" />
       <node id="2230548360390192818" at="34,0,37,0" concept="1" trace="convert_test_case_to_unittest_case_Intention#()V" />
       <node id="2230548360390192818" at="42,84,45,5" concept="5" />
       <node id="2230548360390192818" at="48,0,51,0" concept="6" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="2230548360390192818" at="55,99,58,5" concept="5" />
-      <node id="1571838961922885131" at="72,313,75,7" concept="5" />
+      <node id="1571838961922885131" at="72,316,75,7" concept="5" />
       <node id="1571838961922885211" at="82,7,85,7" concept="4" />
-      <node id="2230548360390286986" at="115,39,118,5" concept="5" />
+      <node id="2230548360390286986" at="108,39,111,5" concept="5" />
       <node id="2230548360390192818" at="37,0,41,0" concept="6" trace="getPresentation#()Ljava/lang/String;" />
       <node id="2230548360390192818" at="51,0,55,0" concept="6" trace="isSurroundWith#()Z" />
       <node id="2230548360390192818" at="64,0,68,0" concept="6" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
@@ -75,8 +74,7 @@
       <node id="2230548360390192818" at="41,0,48,0" concept="6" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="2230548360390286806" at="75,7,82,7" concept="4" />
       <node id="2230548360390284900" at="92,0,99,0" concept="9" trace="_quotation_createNode_g240td_b0a0a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1571838961922885163" at="99,0,106,0" concept="9" trace="_quotation_createNode_g240td_a0a0d0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2230548360390286986" at="106,0,121,0" concept="9" trace="_quotation_createNode_g240td_a0a0a0a4a0#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2230548360390286986" at="99,0,114,0" concept="9" trace="_quotation_createNode_g240td_a0a0a0a4a0#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2230548360390192818" at="68,0,87,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="2230548360390192818" at="62,38,62,38" />
       <scope id="2230548360390192818" at="34,57,35,161" />
@@ -86,12 +84,12 @@
       <scope id="2230548360390192818" at="52,35,53,17" />
       <scope id="2230548360390192818" at="56,37,57,150" />
       <scope id="2230548360390192820" at="65,87,66,40" />
-      <scope id="1571838961922885132" at="73,687,74,633" />
+      <scope id="1571838961922885132" at="73,597,74,633" />
       <scope id="2230548360390286821" at="77,180,78,760" />
       <scope id="1571838961922885173" at="79,16,80,241" />
       <scope id="1571838961922885214" at="83,117,84,239" />
       <scope id="2230548360390192818" at="88,48,89,63" />
-      <scope id="2230548360390286986" at="116,31,117,184" />
+      <scope id="2230548360390286986" at="109,31,110,184" />
       <scope id="2230548360390192818" at="62,0,64,0" />
       <scope id="2230548360390192818" at="34,0,37,0" />
       <scope id="2230548360390192818" at="48,0,51,0">
@@ -115,10 +113,6 @@
         <var name="facade" id="2230548360390284900" />
         <var name="quotedNode_1" id="2230548360390284900" />
       </scope>
-      <scope id="1571838961922885163" at="99,63,104,24">
-        <var name="facade" id="1571838961922885163" />
-        <var name="quotedNode_1" id="1571838961922885163" />
-      </scope>
       <scope id="2230548360390192818" at="55,0,61,0">
         <var name="context" id="2230548360390192818" />
         <var name="node" id="2230548360390192818" />
@@ -131,14 +125,13 @@
         <var name="m" id="2230548360390286807" />
       </scope>
       <scope id="2230548360390284900" at="92,0,99,0" />
-      <scope id="1571838961922885163" at="99,0,106,0" />
-      <scope id="2230548360390286986" at="106,104,119,24">
+      <scope id="2230548360390286986" at="99,104,112,24">
         <var name="facade" id="2230548360390286986" />
         <var name="quotedNode_3" id="2230548360390286986" />
         <var name="quotedNode_4" id="2230548360390286986" />
         <var name="quotedNode_5" id="2230548360390286986" />
       </scope>
-      <scope id="2230548360390286986" at="106,0,121,0">
+      <scope id="2230548360390286986" at="99,0,114,0">
         <var name="parameter_1" id="2230548360390286986" />
         <var name="parameter_2" id="2230548360390286986" />
       </scope>
@@ -150,7 +143,7 @@
         <var name="node" id="2230548360390192818" />
       </scope>
       <unit id="2230548360390192818" at="61,0,92,0" name="jetbrains.mps.baseLanguage.unitTest.intentions.convert_test_case_to_unittest_case_Intention$IntentionImplementation" />
-      <unit id="2230548360390192818" at="32,0,122,0" name="jetbrains.mps.baseLanguage.unitTest.intentions.convert_test_case_to_unittest_case_Intention" />
+      <unit id="2230548360390192818" at="32,0,115,0" name="jetbrains.mps.baseLanguage.unitTest.intentions.convert_test_case_to_unittest_case_Intention" />
     </file>
   </root>
   <root nodeRef="r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)/7080278351417190887">
@@ -214,6 +207,10 @@
       <unit id="7080278351417190887" at="43,0,63,0" name="jetbrains.mps.baseLanguage.unitTest.intentions.AddRemoveMessage_Intention$IntentionImplementation" />
       <unit id="7080278351417190887" at="20,0,64,0" name="jetbrains.mps.baseLanguage.unitTest.intentions.AddRemoveMessage_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="7080278351417190887" at="51,47,52,59" concept="2" />
+      <node id="7080278351417190887" at="65,63,66,45" concept="2" />
+    </file>
   </root>
   <root nodeRef="r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)/7523560072226634120">
     <file name="FlipAssertEquals_Intention.java">
@@ -276,6 +273,10 @@
       </scope>
       <unit id="7523560072226634120" at="43,0,62,0" name="jetbrains.mps.baseLanguage.unitTest.intentions.FlipAssertEquals_Intention$IntentionImplementation" />
       <unit id="7523560072226634120" at="20,0,63,0" name="jetbrains.mps.baseLanguage.unitTest.intentions.FlipAssertEquals_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="7523560072226634120" at="37,47,38,59" concept="2" />
+      <node id="7523560072226634120" at="66,45,67,45" concept="2" />
     </file>
   </root>
 </debug-info>

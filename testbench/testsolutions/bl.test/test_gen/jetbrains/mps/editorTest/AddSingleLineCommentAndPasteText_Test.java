@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class AddSingleLineCommentAndPasteText_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class AddSingleLineCommentAndPasteText_Test extends BaseTransformationTes
 
   @Test
   public void test_AddSingleLineCommentAndPasteText() throws Throwable {
-    runTest("jetbrains.mps.editorTest.AddSingleLineCommentAndPasteText_Test$TestBody", "testMethod", false);
+    new AddSingleLineCommentAndPasteText_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("4130647685505580331", "4130647685505580338");

@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -22,11 +23,15 @@ public class SUBST_BooleanConstantArgument_with_Expression_Test extends BaseTran
 
   @Test
   public void test_SUBST_BooleanConstantArgument_with_Expression() throws Throwable {
-    runTest("jetbrains.mps.editorTest.SUBST_BooleanConstantArgument_with_Expression_Test$TestBody", "testMethod", false);
+    new SUBST_BooleanConstantArgument_with_Expression_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("957371990172616469", "957371990172715706");

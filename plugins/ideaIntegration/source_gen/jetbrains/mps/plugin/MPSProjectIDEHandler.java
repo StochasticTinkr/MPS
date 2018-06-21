@@ -12,15 +12,40 @@ import jetbrains.mps.RuntimeFlags;
 import java.rmi.NoSuchObjectException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import java.awt.Frame;
-import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.project.ProjectHelper;
+import java.io.File;
+import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.textgen.trace.DebugInfo;
+import jetbrains.mps.textgen.trace.TraceInfo;
+import org.apache.log4j.Level;
+import jetbrains.mps.smodel.SNodePointer;
+import com.intellij.openapi.wm.IdeFrame;
+import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.wm.ex.StatusBarEx;
+import com.intellij.openapi.ui.MessageType;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.FrameUtil;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.textgen.trace.TraceablePositionInfo;
+import jetbrains.mps.textgen.trace.DebugInfoRoot;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import java.awt.Frame;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
 import jetbrains.mps.project.GlobalScope;
@@ -28,19 +53,14 @@ import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
-import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, ProjectComponent {
+  private static final Logger LOG_1373119566 = LogManager.getLogger(MPSProjectIDEHandler.class);
   private static final Logger LOG = LogManager.getLogger(MPSProjectIDEHandler.class);
   private Project myProject;
   public MPSProjectIDEHandler(Project project) throws RemoteException {
@@ -102,6 +122,112 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   @Override
   public void disposeComponent() {
   }
+  @Override
+  public void showSource(final String filePath, final String modelHint, final int line, int column) throws RemoteException {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
+      public void run() {
+        String fileName = new File(filePath).getName();
+
+        List<SModel> modelsByName = ListSequence.fromList(new ArrayList<SModel>());
+
+        {
+          final SearchScope scope = CommandUtil.createScope(ProjectHelper.fromIdeaProject(myProject));
+          QueryExecutionContext context = new QueryExecutionContext() {
+            public SearchScope getDefaultSearchScope() {
+              return scope;
+            }
+          };
+          // we first look up in models with the given name (better chance to succeed), then in all other models 
+          ListSequence.fromList(modelsByName).addSequence(Sequence.fromIterable(CommandUtil.models(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SModel>() {
+            public boolean accept(SModel it) {
+              return Objects.equals(SModelOperations.getModelName(it), modelHint);
+            }
+          }));
+          ListSequence.fromList(modelsByName).addSequence(Sequence.fromIterable(CommandUtil.models(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SModel>() {
+            public boolean accept(SModel it) {
+              return !(Objects.equals(SModelOperations.getModelName(it), modelHint));
+            }
+          }));
+        }
+
+        SNode bestNode = null;
+        for (SModel model : ListSequence.fromList(modelsByName)) {
+          DebugInfo di = new TraceInfo().getDebugInfo(model);
+          if (di == null) {
+            if (LOG_1373119566.isEnabledFor(Level.WARN)) {
+              LOG_1373119566.warn("Debug info not found for model " + SModelOperations.getModelName(model));
+            }
+            continue;
+          }
+          // IMPORTANT: line+1 because the line parameter means "line, starting with 0", while in debug info it starts from 1 
+          SNodePointer np = getBestNodeForPosition(di, fileName, line + 1);
+          bestNode = np.resolve(mpsProject.getRepository());
+          if (bestNode != null) {
+            break;
+          }
+        }
+
+        if ((bestNode == null)) {
+          final IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(myProject);
+          if (ideFrame != null) {
+            StatusBarEx statusBar = (StatusBarEx) ideFrame.getStatusBar();
+            statusBar.notifyProgressByBalloon(MessageType.WARNING, "No source found for " + fileName + ":" + line, null, null);
+          }
+        } else {
+          NavigationSupport.getInstance().openNode(mpsProject, bestNode, true, (SNodeOperations.getParent(bestNode) != null));
+        }
+        FrameUtil.activateFrame(getMainFrame());
+      }
+    });
+  }
+
+  @NotNull
+  private SNodePointer getBestNodeForPosition(DebugInfo debugInfo, @NotNull final String fileName, final int line) {
+    List<Pair<TraceablePositionInfo, DebugInfoRoot>> nicePositions = ListSequence.fromList(new ArrayList<Pair<TraceablePositionInfo, DebugInfoRoot>>());
+    Iterable<DebugInfoRoot> roots = debugInfo.getRoots();
+    for (DebugInfoRoot root : Sequence.fromIterable(roots).where(new IWhereFilter<DebugInfoRoot>() {
+      public boolean accept(DebugInfoRoot it) {
+        return it.getFileNames().contains(fileName);
+      }
+    })) {
+      Collection<TraceablePositionInfo> positions = root.getPositions();
+      // for each root we get the nearest position that contains the given line 
+      TraceablePositionInfo info = CollectionSequence.fromCollection(positions).where(new IWhereFilter<TraceablePositionInfo>() {
+        public boolean accept(TraceablePositionInfo it) {
+          return it.contains(fileName, line);
+        }
+      }).sort(new ISelector<TraceablePositionInfo, Integer>() {
+        public Integer select(TraceablePositionInfo it) {
+          return it.getStartLine();
+        }
+      }, true).findLast(new IWhereFilter<TraceablePositionInfo>() {
+        public boolean accept(TraceablePositionInfo it) {
+          return it.getStartLine() <= line;
+        }
+      });
+      if (info != null) {
+        ListSequence.fromList(nicePositions).addElement(new Pair(info, root));
+      }
+    }
+    if (ListSequence.fromList(nicePositions).isEmpty()) {
+      return new SNodePointer(null);
+    }
+
+    // now, between all those "best local" positions, we select the global best one  
+    Pair<TraceablePositionInfo, DebugInfoRoot> bestPosition = ListSequence.fromList(nicePositions).sort(new ISelector<Pair<TraceablePositionInfo, DebugInfoRoot>, Integer>() {
+      public Integer select(Pair<TraceablePositionInfo, DebugInfoRoot> it) {
+        return it.o1.getStartLine();
+      }
+    }, true).findLast(new IWhereFilter<Pair<TraceablePositionInfo, DebugInfoRoot>>() {
+      public boolean accept(Pair<TraceablePositionInfo, DebugInfoRoot> it) {
+        return it.o1.getStartLine() <= line;
+      }
+    });
+
+    return new SNodePointer(bestPosition.o2.getNodeRef().getModelReference(), PersistenceFacade.getInstance().createNodeId(bestPosition.o1.getNodeId()));
+  }
+
   private Frame getMainFrame() {
     return WindowManager.getInstance().getFrame(myProject);
   }

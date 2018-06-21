@@ -17,7 +17,6 @@
 package jetbrains.mps.jps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.idea.core.module.CachedModelData;
 import jetbrains.mps.idea.core.module.CachedModelData.Kind;
 import jetbrains.mps.idea.core.module.CachedModuleData;
@@ -37,7 +36,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,6 +46,7 @@ import java.util.Map;
 
 /**
  * evgeny, 12/11/12
+ * XXX imo, the only justification for this class to subclass DefaultModelRoot is that there's code in MPS that does instanceof check
  */
 public class CachedDefaultModelRoot extends DefaultModelRoot {
 

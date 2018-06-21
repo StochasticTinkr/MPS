@@ -13,7 +13,7 @@
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
   </languages>
   <imports>
     <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
@@ -8395,15 +8395,20 @@
                     <node concept="37vLTw" id="5Xa7gk5cbC3" role="37vLTJ">
                       <ref role="3cqZAo" node="5Xa7gk5cafr" resolve="icon" />
                     </node>
-                    <node concept="2YIFZM" id="3uJzduifvvD" role="37vLTx">
-                      <ref role="37wK5l" to="sn11:Z6TQiSQgL4" resolve="getIconForResource" />
-                      <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                      <node concept="2OqwBi" id="5Xa7gk5c998" role="37wK5m">
-                        <node concept="37vLTw" id="5Xa7gk5c999" role="2Oq$k0">
-                          <ref role="3cqZAo" node="5Xa7gk5c991" resolve="sidebarItem" />
-                        </node>
-                        <node concept="liA8E" id="5Xa7gk5c99a" role="2OqNvi">
-                          <ref role="37wK5l" to="dfte:601$vVQgJ2b" resolve="getIcon" />
+                    <node concept="2OqwBi" id="7eHFHBMo5xj" role="37vLTx">
+                      <node concept="2YIFZM" id="7eHFHBMo5fg" role="2Oq$k0">
+                        <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                        <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
+                      </node>
+                      <node concept="liA8E" id="7eHFHBMo6b8" role="2OqNvi">
+                        <ref role="37wK5l" to="sn11:192HKKPP2rb" resolve="getIconForResource" />
+                        <node concept="2OqwBi" id="7eHFHBMo5fh" role="37wK5m">
+                          <node concept="37vLTw" id="7eHFHBMo5fi" role="2Oq$k0">
+                            <ref role="3cqZAo" node="5Xa7gk5c991" resolve="sidebarItem" />
+                          </node>
+                          <node concept="liA8E" id="7eHFHBMo5fj" role="2OqNvi">
+                            <ref role="37wK5l" to="dfte:601$vVQgJ2b" resolve="getIcon" />
+                          </node>
                         </node>
                       </node>
                     </node>

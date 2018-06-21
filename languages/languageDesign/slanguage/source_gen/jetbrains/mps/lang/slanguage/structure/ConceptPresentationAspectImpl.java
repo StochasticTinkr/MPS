@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_AspectModelRefExpression;
   private ConceptPresentation props_Model_IsAspectOperation;
+  private ConceptPresentation props_OfAspectOperation;
 
   @Override
   @Nullable
@@ -31,6 +32,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Model_IsAspectOperation = cpb.create();
         }
         return props_Model_IsAspectOperation;
+      case LanguageConceptSwitch.OfAspectOperation:
+        if (props_OfAspectOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("filter models by their aspect");
+          cpb.rawPresentation("ofAspect");
+          props_OfAspectOperation = cpb.create();
+        }
+        return props_OfAspectOperation;
     }
     return null;
   }

@@ -16,6 +16,7 @@ import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.debugger.java.api.settings.RemoteConnectionSettings;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -53,11 +54,11 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
   }
   @Override
   public Remote_Configuration clone() {
-    Remote_Configuration clone = null;
+    Remote_Configuration clone = createCloneTemplate();
     try {
-      clone = createCloneTemplate();
+      // beware, PersistenceConfiguration.this of newly created MyState instance would be the same as 
+      // the value of myState, and != clone as regular Java passer-by would expect. 
       clone.myState = (Remote_Configuration.MyState) myState.clone();
-      return clone;
     } catch (CloneNotSupportedException ex) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", ex);
@@ -65,7 +66,7 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
     }
     return clone;
   }
-  public class MyState {
+  public final class MyState {
     public RemoteConnectionSettings mySettings = new RemoteConnectionSettings("localhost", 5005);
     public MyState() {
     }
@@ -78,7 +79,7 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
       return state;
     }
   }
-  public Remote_Configuration(Project project, Remote_Configuration_Factory factory, String name) {
+  public Remote_Configuration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
   @Nullable

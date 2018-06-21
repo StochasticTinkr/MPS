@@ -25,8 +25,8 @@ public final class BlockInstance__BehaviorDescriptor extends BaseBHDescriptor {
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList();
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x2c11e15d8177197eL, "width"), "" + (40));
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x2c11e15d817719aeL, "height"), "" + (50));
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x2c11e15d8177197eL, "width"), "" + (40));
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x2c11e15d817719aeL, "height"), "" + (50));
   }
 
 

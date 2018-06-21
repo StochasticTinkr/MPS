@@ -36,6 +36,8 @@ import static org.jetbrains.mps.openapi.module.SDependencyScope.EXTENDS;
 import static org.jetbrains.mps.openapi.module.SDependencyScope.GENERATES_INTO;
 
 /**
+ * FIXME need to specify explicit contract what modules this class expects to receive (either deployed or from project), what are model access expectations,
+ * and what does 'used module' means here. There are quite suspicious uses of the class in ModuleRuntimeLibrariesImporter.
  * User: shatalin
  * Date: 19/11/15
  */

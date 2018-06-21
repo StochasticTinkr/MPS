@@ -291,7 +291,7 @@
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
           <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="property_name_1" />
+          <property role="LIFWd" value="property_name1" />
         </node>
       </node>
     </node>
@@ -329,7 +329,7 @@
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="15" />
           <property role="p6zMs" value="15" />
-          <property role="LIFWd" value="property_name_1" />
+          <property role="LIFWd" value="property_name1" />
         </node>
       </node>
     </node>

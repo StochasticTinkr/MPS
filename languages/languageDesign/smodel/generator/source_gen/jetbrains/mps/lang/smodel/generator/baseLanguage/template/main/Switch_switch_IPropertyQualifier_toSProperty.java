@@ -51,7 +51,7 @@ public class Switch_switch_IPropertyQualifier_toSProperty extends TemplateSwitch
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_1757699476691451327(new SourceSubstituteMacroNodeContext(context, copySrcMacro_2s2e5_b0a0d0b7));
+      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_17576994766914513250(new SourceSubstituteMacroNodeContext(context, copySrcMacro_2s2e5_b0a0d0b7));
       tlist1 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput1), copySrcMacro_2s2e5_b0a0d0b7, "tpl/r:00000000-0000-4000-0000-011c89590303/1757699476691451325", context);
       return tlist1;
     }
@@ -64,22 +64,14 @@ public class Switch_switch_IPropertyQualifier_toSProperty extends TemplateSwitch
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      try {
-        SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_1341860900490770478(new SourceSubstituteMacroNodeContext(context, includeMacro_2s2e5_b0a0a0a2a1i));
-        TemplateContext context1 = context.subContext(null, callInputNode1);
-        if (callInputNode1 != null) {
-          try {
-            tlist1 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context1);
-          } finally {
-          }
-
-        }
-
-      } finally {
+      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_13418609004907704760(new SourceSubstituteMacroNodeContext(context, includeMacro_2s2e5_b0a0a2a1i));
+      TemplateContext context1 = context.subContext(null, callInputNode1);
+      if (callInputNode1 != null) {
+        tlist1 = new Template_reduce_PropertyDeclaration_SProperty().apply(context1);
       }
       return tlist1;
     }
   }
   private static SNodePointer copySrcMacro_2s2e5_b0a0d0b7 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1757699476691451326");
-  private static SNodePointer includeMacro_2s2e5_b0a0a0a2a1i = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1341860900490770477");
+  private static SNodePointer includeMacro_2s2e5_b0a0a2a1i = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1341860900490770477");
 }

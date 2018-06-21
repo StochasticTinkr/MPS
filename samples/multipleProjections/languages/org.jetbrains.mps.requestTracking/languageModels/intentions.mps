@@ -115,11 +115,9 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
-      </concept>
-      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
-        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="6973815483243445083" name="jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression" flags="nn" index="3f7Wdw">
         <reference id="6973815483243565416" name="member" index="3f7u_j" />
@@ -166,13 +164,9 @@
               </node>
               <node concept="liA8E" id="RTLLxv5Ogu" role="2OqNvi">
                 <ref role="37wK5l" to="22ra:~Updater.getExplicitEditorHintsForNode(org.jetbrains.mps.openapi.model.SNodeReference):java.lang.String[]" resolve="getExplicitEditorHintsForNode" />
-                <node concept="2OqwBi" id="RTLLxv5Ogv" role="37wK5m">
-                  <node concept="2JrnkZ" id="RTLLxv5Ogw" role="2Oq$k0">
-                    <node concept="2Sf5sV" id="RTLLxv5Ogx" role="2JrQYb" />
-                  </node>
-                  <node concept="liA8E" id="RTLLxv5Ogy" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                  </node>
+                <node concept="2OqwBi" id="3XR0QgXNyMe" role="37wK5m">
+                  <node concept="2Sf5sV" id="3XR0QgXNyMd" role="2Oq$k0" />
+                  <node concept="iZEcu" id="3XR0QgXNyMf" role="2OqNvi" />
                 </node>
               </node>
             </node>
@@ -241,13 +235,9 @@
               </node>
               <node concept="liA8E" id="RTLLxv5PiG" role="2OqNvi">
                 <ref role="37wK5l" to="22ra:~Updater.getExplicitEditorHintsForNode(org.jetbrains.mps.openapi.model.SNodeReference):java.lang.String[]" resolve="getExplicitEditorHintsForNode" />
-                <node concept="2OqwBi" id="RTLLxv5PiH" role="37wK5m">
-                  <node concept="2JrnkZ" id="RTLLxv5PiI" role="2Oq$k0">
-                    <node concept="2Sf5sV" id="RTLLxv5PiJ" role="2JrQYb" />
-                  </node>
-                  <node concept="liA8E" id="RTLLxv5PiK" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                  </node>
+                <node concept="2OqwBi" id="3XR0QgXNyMk" role="37wK5m">
+                  <node concept="2Sf5sV" id="3XR0QgXNyMj" role="2Oq$k0" />
+                  <node concept="iZEcu" id="3XR0QgXNyMl" role="2OqNvi" />
                 </node>
               </node>
             </node>
@@ -291,13 +281,9 @@
                 </node>
                 <node concept="liA8E" id="RTLLxv5BzB" role="2OqNvi">
                   <ref role="37wK5l" to="22ra:~Updater.addExplicitEditorHintsForNode(org.jetbrains.mps.openapi.model.SNodeReference,java.lang.String...):void" resolve="addExplicitEditorHintsForNode" />
-                  <node concept="2OqwBi" id="RTLLxv5Eiy" role="37wK5m">
-                    <node concept="2JrnkZ" id="RTLLxv5DZt" role="2Oq$k0">
-                      <node concept="2Sf5sV" id="RTLLxv5B_m" role="2JrQYb" />
-                    </node>
-                    <node concept="liA8E" id="RTLLxv5ECK" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                    </node>
+                  <node concept="2OqwBi" id="3XR0QgXNyMq" role="37wK5m">
+                    <node concept="2Sf5sV" id="3XR0QgXNyMp" role="2Oq$k0" />
+                    <node concept="iZEcu" id="3XR0QgXNyMr" role="2OqNvi" />
                   </node>
                   <node concept="2ShNRf" id="RTLLxv5BJ7" role="37wK5m">
                     <node concept="3g6Rrh" id="RTLLxv5BJ9" role="2ShVmc">
@@ -349,13 +335,9 @@
                   </node>
                   <node concept="liA8E" id="RTLLxv5NrA" role="2OqNvi">
                     <ref role="37wK5l" to="22ra:~Updater.addExplicitEditorHintsForNode(org.jetbrains.mps.openapi.model.SNodeReference,java.lang.String...):void" resolve="addExplicitEditorHintsForNode" />
-                    <node concept="2OqwBi" id="RTLLxv5NrB" role="37wK5m">
-                      <node concept="2JrnkZ" id="RTLLxv5NrC" role="2Oq$k0">
-                        <node concept="2Sf5sV" id="RTLLxv5NrD" role="2JrQYb" />
-                      </node>
-                      <node concept="liA8E" id="RTLLxv5NrE" role="2OqNvi">
-                        <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                      </node>
+                    <node concept="2OqwBi" id="3XR0QgXNyMw" role="37wK5m">
+                      <node concept="2Sf5sV" id="3XR0QgXNyMv" role="2Oq$k0" />
+                      <node concept="iZEcu" id="3XR0QgXNyMx" role="2OqNvi" />
                     </node>
                     <node concept="2ShNRf" id="RTLLxv5NrF" role="37wK5m">
                       <node concept="3g6Rrh" id="RTLLxv5NEP" role="2ShVmc">

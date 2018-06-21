@@ -13,6 +13,7 @@ import jetbrains.mps.make.script.IScriptController;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.messages.Message;
@@ -21,7 +22,6 @@ import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.make.dependencies.MakeSequence;
 import jetbrains.mps.make.service.CoreMakeTask;
 import jetbrains.mps.make.script.ScriptBuilder;
-import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
 
 public class BuildMakeService extends AbstractMakeService implements IMakeService {
@@ -33,7 +33,10 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
   }
   @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
-    return make(session, resources, defaultMakeScript(), null, new EmptyProgressMonitor());
+    return make(session, resources, BuildMakeService.defaultScript().toScript(), null, new EmptyProgressMonitor());
+  }
+  public Future<IResult> makeAndReload(MakeSession session, Iterable<? extends IResource> resources) {
+    return make(session, resources, BuildMakeService.defaultScript().withFacetNames(new IFacet.Name("jetbrains.mps.make.facets.ReloadClasses")).toScript(), null, new EmptyProgressMonitor());
   }
   @Override
   public boolean isSessionActive() {
@@ -83,7 +86,8 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     // service's to guess defaults. Id rather fail and see which targets were not configured. 
     return new IScriptController.Stub2(msess);
   }
-  public static IScript defaultMakeScript() {
-    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
+
+  private static ScriptBuilder defaultScript() {
+    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make"));
   }
 }

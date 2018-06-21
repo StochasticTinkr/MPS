@@ -15,6 +15,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)/1205753100058">
+    <file name="TypesystemDescriptor.java">
+      <node id="1205753100058" at="24,5,25,95" concept="5" />
+      <node id="1205753100058" at="25,95,26,47" concept="2" />
+      <node id="1205753100058" at="23,5,27,5" concept="0" />
+      <scope id="1205753100058" at="24,5,26,47">
+        <var name="inferenceRule" id="1205753100058" />
+      </scope>
+    </file>
     <file name="typeof_ThisClassifierExpresson_InferenceRule.java">
       <node id="1205753102905" at="22,124,23,112" concept="5" />
       <node id="1205753196184" at="25,7,26,55" concept="5" />
@@ -66,16 +74,24 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)/1205769672845">
+    <file name="TypesystemDescriptor.java">
+      <node id="1205769672845" at="16,5,17,98" concept="5" />
+      <node id="1205769672845" at="17,98,18,47" concept="2" />
+      <node id="1205769672845" at="15,5,19,5" concept="0" />
+      <scope id="1205769672845" at="16,5,18,47">
+        <var name="inferenceRule" id="1205769672845" />
+      </scope>
+    </file>
     <file name="typeof_DefaultMethodCallOperation_InferenceRule.java">
       <node id="1205769679712" at="24,5,25,53" concept="5" />
       <node id="1205769679712" at="25,53,26,209" concept="5" />
       <node id="1205769679712" at="26,209,27,561" concept="2" />
-      <node id="816097550963422890" at="29,5,30,384" concept="5" />
-      <node id="816097550963422890" at="30,384,31,242" concept="5" />
-      <node id="816097550963422890" at="31,242,32,26" concept="5" />
-      <node id="816097550963422890" at="32,26,33,25" concept="5" />
-      <node id="816097550963422890" at="34,63,35,44" concept="2" />
-      <node id="816097550963422890" at="35,44,36,42" concept="2" />
+      <node id="816097550963422874" at="29,5,30,384" concept="5" />
+      <node id="816097550963422879" at="30,384,31,242" concept="5" />
+      <node id="816097550963422874" at="31,242,32,26" concept="5" />
+      <node id="816097550963422879" at="32,26,33,25" concept="5" />
+      <node id="816097550963422874" at="34,63,35,44" concept="2" />
+      <node id="816097550963422879" at="35,44,36,42" concept="2" />
       <node id="816097550963422882" at="37,9,38,58" concept="5" />
       <node id="816097550963422882" at="38,58,39,218" concept="5" />
       <node id="816097550963422882" at="39,218,40,453" concept="2" />
@@ -120,10 +136,10 @@
       <scope id="1205854636587" at="44,560,48,7" />
       <scope id="816097550963422890" at="34,63,41,9" />
       <scope id="816097550963422890" at="29,5,42,7">
-        <var name="argument_it" id="816097550963422890" />
-        <var name="argument_var" id="816097550963422890" />
-        <var name="parameter_it" id="816097550963422890" />
-        <var name="parameter_var" id="816097550963422890" />
+        <var name="argument_it" id="816097550963422879" />
+        <var name="argument_var" id="816097550963422879" />
+        <var name="parameter_it" id="816097550963422874" />
+        <var name="parameter_var" id="816097550963422874" />
       </scope>
       <scope id="1205769672846" at="23,124,49,5" />
       <scope id="1205769672845" at="23,0,51,0">
@@ -135,6 +151,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)/1205853960046">
+    <file name="TypesystemDescriptor.java">
+      <node id="1205853960046" at="32,5,33,99" concept="5" />
+      <node id="1205853960046" at="33,99,34,55" concept="2" />
+      <node id="1205853960046" at="31,5,35,5" concept="0" />
+      <scope id="1205853960046" at="32,5,34,55">
+        <var name="nonTypesystemRule" id="1205853960046" />
+      </scope>
+    </file>
     <file name="check_IMemberOperation_NonTypesystemRule.java">
       <node id="1225121628861" at="26,124,27,133" concept="5" />
       <node id="1205921883368" at="28,5,29,240" concept="5" />
@@ -186,6 +210,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)/1214001475035">
+    <file name="TypesystemDescriptor.java">
+      <node id="1214001475035" at="12,5,13,109" concept="5" />
+      <node id="1214001475035" at="13,109,14,47" concept="2" />
+      <node id="1214001475035" at="11,33,15,5" concept="0" />
+      <scope id="1214001475035" at="12,5,14,47">
+        <var name="inferenceRule" id="1214001475035" />
+      </scope>
+    </file>
     <file name="typeof_DefaultClassifierFieldAccessOperation_InferenceRule.java">
       <node id="1214001485999" at="19,5,20,53" concept="5" />
       <node id="1214001485999" at="20,53,21,209" concept="5" />
@@ -223,6 +255,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)/1217433986271">
+    <file name="TypesystemDescriptor.java">
+      <node id="1217433986271" at="20,5,21,96" concept="5" />
+      <node id="1217433986271" at="21,96,22,47" concept="2" />
+      <node id="1217433986271" at="19,5,23,5" concept="0" />
+      <scope id="1217433986271" at="20,5,22,47">
+        <var name="inferenceRule" id="1217433986271" />
+      </scope>
+    </file>
     <file name="typeof_SuperClassifierExpresson_InferenceRule.java">
       <node id="1217434001441" at="22,122,23,110" concept="5" />
       <node id="1217434001449" at="25,7,26,53" concept="5" />
@@ -274,6 +314,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)/5415321287508135637">
+    <file name="TypesystemDescriptor.java">
+      <node id="5415321287508135637" at="28,5,29,116" concept="5" />
+      <node id="5415321287508135637" at="29,116,30,55" concept="2" />
+      <node id="5415321287508135637" at="27,5,31,5" concept="0" />
+      <scope id="5415321287508135637" at="28,5,30,55">
+        <var name="nonTypesystemRule" id="5415321287508135637" />
+      </scope>
+    </file>
     <file name="check_DefaultClassifierFieldDeclaration_NonTypesystemRule.java">
       <node id="5415321287508135637" at="18,50,19,185" concept="6" />
       <node id="5415321287508135637" at="21,68,22,102" concept="6" />
@@ -345,6 +393,14 @@
       </scope>
       <scope id="7697840286086411908" at="34,0,41,0" />
       <unit id="7697840286086411669" at="16,0,42,0" name="jetbrains.mps.baseLanguage.classifiers.typesystem.BaseClassifierType_subtypeOf_Object_SubtypingRule" />
+    </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="7697840286086411669" at="36,5,37,100" concept="5" />
+      <node id="7697840286086411669" at="37,100,38,47" concept="2" />
+      <node id="7697840286086411669" at="35,5,39,5" concept="0" />
+      <scope id="7697840286086411669" at="36,5,38,47">
+        <var name="subtypingRule" id="7697840286086411669" />
+      </scope>
     </file>
   </root>
 </debug-info>

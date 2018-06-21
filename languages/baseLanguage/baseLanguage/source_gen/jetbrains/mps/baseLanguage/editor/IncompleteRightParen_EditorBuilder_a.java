@@ -41,24 +41,24 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_lnoz1c_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_lnoz1c_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_lnoz1c_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createAttributedNodeCell_lnoz1c_a0());
-    editorCell.addEditorCell(createReadOnlyModelAccessor_lnoz1c_b0());
+    setCellContext(editorCell);
+    editorCell.addEditorCell(createAttributedNodeCell_0());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_0());
     return editorCell;
   }
-  private EditorCell createAttributedNodeCell_lnoz1c_a0() {
+  private EditorCell createAttributedNodeCell_0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_lnoz1c_b0() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         StringBuffer buffer = new StringBuffer(")");

@@ -23,28 +23,23 @@ import com.intellij.openapi.actionSystem.ActionPopupMenu;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.UIUtil;
-import gnu.trove.TIntObjectHashMap;
-import gnu.trove.TIntObjectProcedure;
+import gnu.trove.THashMap;
 import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer.IconRendererType;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.leftHighlighter.IconPositionCalculator.IntLocation;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.workbench.action.ActionUtils;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -66,7 +61,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -81,15 +75,11 @@ import java.util.TreeSet;
  * This class should be called in UI (EventDispatch) thread only
  */
 public class LeftEditorHighlighter extends JComponent implements TooltipComponent {
-  private static final Logger LOG = LogManager.getLogger(LeftEditorHighlighter.class);
   public static final String ICON_AREA = "LeftEditorHighlighterIconArea";
 
   private static final int MIN_LEFT_TEXT_WIDTH = 0;
-  private static final int MIN_ICON_RENDERERS_WIDTH = 14;
   private static final int MIN_LEFT_FOLDING_AREA_WIDTH = 7;
   private static final int MIN_RIGHT_FOLDING_AREA_WIDTH = 4;
-  private static final int GAP_BETWEEN_ICONS = 3;
-  private static final int LEFT_GAP = 1;
   private static final int FOLDING_LINE_WIDTH = 1;
   private static final Comparator<AbstractFoldingAreaPainter> FOLDING_AREA_PAINTERS_COMPARATOR = new Comparator<AbstractFoldingAreaPainter>() {
     @Override
@@ -109,8 +99,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private List<AbstractLeftColumn> myLeftColumns = new ArrayList<AbstractLeftColumn>();
 
   private Set<EditorMessageIconRenderer> myIconRenderers = new HashSet<EditorMessageIconRenderer>();
-  private TIntObjectHashMap<List<IconRendererLayoutConstraint>> myLineToRenderersMap = new TIntObjectHashMap<List<IconRendererLayoutConstraint>>();
-  private Comparator myIconRenderersComparator = new IconRendererLayoutConstraintComparator();
+  private THashMap<EditorMessageIconRenderer, IntLocation> myRendererToCoord;
   private EditorMessageIconRenderer myRendererUnderMouse;
   private int myMaxIconHeight = 0;
 
@@ -313,11 +302,11 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         g.fillRect(clipBounds.x, selectedCellY, clipBounds.width, selectedCellHeight);
         // Drawing folding line
         UIUtil.drawVDottedLine(g2d, myFoldingLineX, clipBounds.y, selectedCellY, getBackground(),
-            EditorSettings.getInstance().getLeftHighlighterTearLineColor());
+                               EditorSettings.getInstance().getLeftHighlighterTearLineColor());
         UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY, selectedCellY + selectedCellHeight, EditorSettings.getInstance().getCaretRowColor(),
-            EditorSettings.getInstance().getLeftHighlighterTearLineColor());
+                               EditorSettings.getInstance().getLeftHighlighterTearLineColor());
         UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY + selectedCellHeight, clipBounds.y + clipBounds.height, getBackground(),
-            EditorSettings.getInstance().getLeftHighlighterTearLineColor());
+                               EditorSettings.getInstance().getLeftHighlighterTearLineColor());
         return;
       }
     }
@@ -332,16 +321,11 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     }
     final int startY = clipBounds.y;
     final int endY = clipBounds.y + clipBounds.height;
-    myLineToRenderersMap.forEachEntry(new TIntObjectProcedure<List<IconRendererLayoutConstraint>>() {
-      @Override
-      public boolean execute(int y, List<IconRendererLayoutConstraint> rendererConstraints) {
-        if (startY <= y && y <= endY) {
-          for (IconRendererLayoutConstraint constraint : rendererConstraints) {
-            constraint.getIconRenderer().getIcon().paintIcon(LeftEditorHighlighter.this, g, constraint.getX(), y);
-          }
-        }
-        return true;
+    myRendererToCoord.forEachEntry((renderer, location) -> {
+      if (startY <= location.getY() && location.getY() <= endY) {
+        renderer.getIcon().paintIcon(LeftEditorHighlighter.this, g, location.getX(), location.getY());
       }
+      return true;
     });
   }
 
@@ -356,7 +340,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       column.paint(g);
       //  COLORS: find out where it is and remove hardcoded color
       UIUtil.drawVDottedLine((Graphics2D) g, myRightToLeft ? column.getX() : column.getX() + column.getWidth() - 1,
-          (int) clipBounds.getMinY(), (int) clipBounds.getMaxY(), getBackground(), Color.GRAY);
+                             (int) clipBounds.getMinY(), (int) clipBounds.getMaxY(), getBackground(), Color.GRAY);
     }
   }
 
@@ -379,7 +363,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.relayout() should be executed in eventDispatchThread";
     final SNode editedNode = myEditorComponent.getEditedNode();
     // additional check - during editor dispose process some Folding area painters can be removed calling relayout()..
-    if (myEditorComponent.isDisposed()) return;
+    if (myEditorComponent.isDisposed()) {
+      return;
+    }
     if (editedNode != null) {
       SRepository repository = myEditorComponent.getEditorContext().getRepository();
       if (new ModelAccessHelper(repository).runReadAction(() -> !SNodeUtil.isAccessible(editedNode, repository))) {
@@ -504,45 +490,12 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   }
 
   private void recalculateIconRenderersWidth() {
-    myLineToRenderersMap.clear();
-    for (EditorMessageIconRenderer renderer : myIconRenderers) {
-      int yCoordinate = getIconCoordinate(renderer);
-      if (yCoordinate < 0) {
-        continue;
-      }
-      List<IconRendererLayoutConstraint> renderersForLine = myLineToRenderersMap.get(yCoordinate);
-      if (renderersForLine == null) {
-        renderersForLine = new SortedList(myIconRenderersComparator);
-        myLineToRenderersMap.put(yCoordinate, renderersForLine);
-      }
-      renderersForLine.add(new IconRendererLayoutConstraint(renderer));
-    }
+    IconPositionCalculator ipc = new IconPositionCalculator(myIconRenderers, getIconRenderersOffset(), myEditorComponent);
+    ipc.calculate();
 
-    myIconRenderersWidth = MIN_ICON_RENDERERS_WIDTH;
-    myMaxIconHeight = 0;
-    int[] sortedYCoordinates = myLineToRenderersMap.keys();
-    Arrays.sort(sortedYCoordinates);
-
-    int initialOffset = getIconRenderersOffset();
-    for (int y : sortedYCoordinates) {
-      List<IconRendererLayoutConstraint> row = myLineToRenderersMap.get(y);
-      assert row.size() != 0;
-      int maxIconHeight = 0;
-      for (IconRendererLayoutConstraint rendererConstraint : row) {
-        maxIconHeight = Math.max(maxIconHeight, rendererConstraint.getIconRenderer().getIcon().getIconHeight());
-      }
-      myMaxIconHeight = Math.max(myMaxIconHeight, maxIconHeight);
-      int offset = initialOffset + LEFT_GAP;
-      for (Iterator<IconRendererLayoutConstraint> it = row.iterator(); it.hasNext(); ) {
-        IconRendererLayoutConstraint rendererConstraint = it.next();
-        rendererConstraint.setX(offset);
-        offset += rendererConstraint.getIconRenderer().getIcon().getIconWidth();
-        if (it.hasNext()) {
-          offset += GAP_BETWEEN_ICONS;
-        }
-      }
-      myIconRenderersWidth = Math.max(myIconRenderersWidth, offset - initialOffset);
-    }
+    myRendererToCoord = ipc.getLocations();
+    myMaxIconHeight = ipc.getMaxHeight();
+    myIconRenderersWidth = ipc.getWidth();
   }
 
   private void recalculateTextColumnWidth() {
@@ -579,21 +532,10 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     return new Dimension(myWidth + 1, myEditorComponent.getPreferredSize().height);
   }
 
+  //used in plugin
+  @SuppressWarnings("unused")
   public int getIconCoordinate(EditorMessageIconRenderer renderer) {
-    jetbrains.mps.openapi.editor.cells.EditorCell anchorCell = getAnchorCell(renderer);
-    if (anchorCell == null || APICellAdapter.isUnderFolded(anchorCell)) {
-      // no anchorCell 
-      return -1;
-    }
-    if (renderer.getIcon() == null) {
-      LOG.error("null icon was returned by renderer: " + renderer);
-      return -1;
-    }
-    return anchorCell.getY() + anchorCell.getHeight() / 2 - renderer.getIcon().getIconHeight() / 2;
-  }
-
-  private jetbrains.mps.openapi.editor.cells.EditorCell getAnchorCell(EditorMessageIconRenderer renderer) {
-    return renderer.getAnchorCell(myEditorComponent);
+    return new IconPositionCalculator(myIconRenderers, getIconRenderersOffset(), myEditorComponent).getIconCoordinate(renderer);
   }
 
   @Override
@@ -664,7 +606,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         if (e.getID() == MouseEvent.MOUSE_CLICKED) {
           AnActionEvent actionEvent =
               new AnActionEvent(e, new LeftEditorHighlighterDataContext(myEditorComponent, iconRenderer), ICON_AREA, action.getTemplatePresentation(),
-                  ActionManager.getInstance(), e.getModifiers());
+                                ActionManager.getInstance(), e.getModifiers());
           action.update(actionEvent);
           action.actionPerformed(actionEvent);
         }
@@ -684,7 +626,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   }
 
   private void mousePressedInTextArea(MouseEvent e) {
-    if (e.isConsumed()) return;
+    if (e.isConsumed()) {
+      return;
+    }
     AbstractLeftColumn column = getTextColumnByX(e.getX());
     if (column != null) {
       column.mousePressed(e);
@@ -750,21 +694,15 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     final int mouseX = e.getX();
     final int mouseY = e.getY();
     final EditorMessageIconRenderer[] theRenderer = new EditorMessageIconRenderer[]{null};
-    myLineToRenderersMap.forEachEntry(new TIntObjectProcedure<List<IconRendererLayoutConstraint>>() {
-      @Override
-      public boolean execute(int y, List<IconRendererLayoutConstraint> layoutConstraints) {
-        if (y <= mouseY && mouseY <= y + myMaxIconHeight) {
-          for (IconRendererLayoutConstraint constraint : layoutConstraints) {
-            int x = constraint.getX();
-            if (y <= mouseY && mouseY <= y + constraint.getIconRenderer().getIcon().getIconHeight() &&
-                x <= mouseX && mouseX <= x + constraint.getIconRenderer().getIcon().getIconWidth()) {
-              theRenderer[0] = constraint.getIconRenderer();
-              return false;
-            }
-          }
+    myRendererToCoord.forEachEntry((renderer, location) -> {
+      if (location.getY() <= mouseY && mouseY <= location.getY() + myMaxIconHeight) {
+        if (location.getY() <= mouseY && mouseY <= location.getY() + renderer.getIcon().getIconHeight() &&
+            location.getX() <= mouseX && mouseX <= location.getX() + renderer.getIcon().getIconWidth()) {
+          theRenderer[0] = renderer;
+          return false;
         }
-        return true;
       }
+      return true;
     });
     return theRenderer[0];
   }
@@ -777,63 +715,6 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       }
     }
     return null;
-  }
-
-  private class IconRendererLayoutConstraintComparator implements Comparator<IconRendererLayoutConstraint> {
-    @Override
-    public int compare(IconRendererLayoutConstraint constraint1, IconRendererLayoutConstraint constraint2) {
-      if (constraint1 == constraint2) {
-        return 0;
-      }
-      EditorMessageIconRenderer renderer1 = constraint1.getIconRenderer();
-      EditorMessageIconRenderer renderer2 = constraint2.getIconRenderer();
-      if (renderer1.getType() != renderer2.getType()) {
-        return renderer1.getType().getWeight() - renderer2.getType().getWeight();
-      }
-      jetbrains.mps.openapi.editor.cells.EditorCell anchorCell1 = getAnchorCell(renderer1);
-      jetbrains.mps.openapi.editor.cells.EditorCell anchorCell2 = getAnchorCell(renderer2);
-      // [++] Debugging assertion
-      if (anchorCell1 == anchorCell2 && renderer1 instanceof EditorMessage && renderer2 instanceof EditorMessage) {
-        EditorMessage editorMessage1 = (EditorMessage) renderer1;
-        EditorMessage editorMessage2 = (EditorMessage) renderer2;
-        assert false :
-            "Two EditorMessages with same type are attached to the same EditorCell: m1 = " +
-                editorMessage1 + ", m2 = " + editorMessage2 +
-                "; owner1 = " + editorMessage1.getOwner() + ", owner2 = " + editorMessage2.getOwner();
-      }
-      // [--] Debugging assertion
-      if (anchorCell1 != null) {
-        if (anchorCell2 == null) {
-          return 1;
-        } else {
-          return anchorCell1.getX() - anchorCell2.getX();
-        }
-      } else if (anchorCell2 != null) {
-        return -1;
-      }
-      return 0;
-    }
-  }
-
-  private static class IconRendererLayoutConstraint {
-    private EditorMessageIconRenderer myIconRenderer;
-    private int myX;
-
-    public IconRendererLayoutConstraint(EditorMessageIconRenderer iconRenderer) {
-      myIconRenderer = iconRenderer;
-    }
-
-    public void setX(int x) {
-      myX = x;
-    }
-
-    public int getX() {
-      return myX;
-    }
-
-    public EditorMessageIconRenderer getIconRenderer() {
-      return myIconRenderer;
-    }
   }
 
   private static class LeftEditorHighlighterDataContext implements DataContext {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -333,8 +333,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
     List<SModel> result = new ArrayList<>(models.size());
     for (SModel md : models) {
-      String st = SModelStereotype.getStereotype(md);
-      if (SModelStereotype.isStubModelStereotype(st) || SModelStereotype.isDescriptorModelStereotype(st)) {
+      if (SModelStereotype.isStubModel(md) || SModelStereotype.isDescriptorModel(md)) {
         // perhaps, we need more generic isPredefinedStereotypeMPS()
         continue;
       }
@@ -548,7 +547,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
       if (!initialDevKits.isEmpty()) {
         return initialDevKits;
       }
-      return Collections.singleton(BootstrapLanguages.getLanguageDesignDevKit());
+      return Collections.singleton(BootstrapLanguages.getGeneralPurposeDevKit());
     }
   }
 }

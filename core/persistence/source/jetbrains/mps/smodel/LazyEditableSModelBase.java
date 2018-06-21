@@ -38,7 +38,7 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
       // FIXME need a new loadSModel(state) that return proper ModelLoadResult, and deprecate the old one.
       ModelLoadResult result = loadSModel(state);
       if (result.getModel() != null) {
-        result.getModel().setModelDescriptor(LazyEditableSModelBase.this);
+        result.getModel().setModelDescriptor(LazyEditableSModelBase.this, getNodeEventDispatch());
       }
       return new jetbrains.mps.smodel.ModelLoadResult<>(result.getModel(), result.getState());
     });

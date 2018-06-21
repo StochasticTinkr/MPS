@@ -57,27 +57,17 @@ public class GeometryUtil {
   }
 
   public static boolean isFirstPositionInBigCell(EditorCell cell) {
-    if (cell instanceof WithCaret) {
-      return ((WithCaret) cell).isFirstCaretPosition() && CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(cell)) == cell;
+    if (CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(cell)) != cell) {
+      return false;
     }
-    if (cell instanceof jetbrains.mps.nodeEditor.cells.EditorCell) {
-      // TODO: remove this option after MPS 3.4
-      return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isFirstCaretPosition() &&
-          CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(cell)) == cell;
-    }
-    return false;
+    return !(cell instanceof WithCaret) || ((WithCaret) cell).isFirstCaretPosition();
   }
 
   public static boolean isLastPositionInBigCell(EditorCell cell) {
-    if (cell instanceof WithCaret) {
-      return ((WithCaret) cell).isLastCaretPosition() && CellTraversalUtil.getLastLeaf(CellTraversalUtil.getContainingBigCell(cell)) == cell;
+    if (CellTraversalUtil.getLastLeaf(CellTraversalUtil.getContainingBigCell(cell)) != cell) {
+      return false;
     }
-    if (cell instanceof jetbrains.mps.nodeEditor.cells.EditorCell) {
-      // TODO: remove this option after MPS 3.4
-      return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isLastCaretPosition() &&
-          CellTraversalUtil.getLastLeaf(CellTraversalUtil.getContainingBigCell(cell)) == cell;
-    }
-    return false;
+    return !(cell instanceof WithCaret) || ((WithCaret) cell).isLastCaretPosition();
   }
 
 }

@@ -9,21 +9,21 @@
   <root nodeRef="r:3b93a80b-8267-4154-a2f6-29cf728da0a5(jetbrains.mps.internalCollections.test.types)/6699137465481734229">
     <file name="GenericCollections_Test.java">
       <node id="6699137465481734229" at="22,36,23,25" concept="5" />
-      <node id="6699137465481734229" at="27,77,28,145" concept="1" />
-      <node id="6699137465481734229" at="34,79,35,242" concept="3" />
-      <node id="6699137465481734229" at="35,242,36,123" concept="1" />
+      <node id="6699137465481874845" at="27,77,28,145" concept="1" />
+      <node id="6699137465481874845" at="34,79,35,242" concept="3" />
+      <node id="6699137465481874845" at="35,242,36,123" concept="1" />
       <node id="6699137465481734229" at="18,0,20,0" concept="4" trace="ourParamCache" />
       <node id="6699137465481734229" at="22,0,25,0" concept="0" trace="GenericCollections_Test#()V" />
-      <node id="6699137465481734229" at="26,0,30,0" concept="2" trace="test_ErrorMessagesCheck6699137465481874845#()V" />
-      <node id="6699137465481734229" at="34,0,38,0" concept="2" trace="test_ErrorMessagesCheck6699137465481874845#()V" />
+      <node id="6699137465481874845" at="26,0,30,0" concept="2" trace="test_ErrorMessagesCheck6699137465481874845#()V" />
+      <node id="6699137465481874845" at="34,0,38,0" concept="2" trace="test_ErrorMessagesCheck6699137465481874845#()V" />
       <scope id="6699137465481734229" at="22,36,23,25" />
-      <scope id="6699137465481734229" at="27,77,28,145" />
-      <scope id="6699137465481734229" at="34,79,36,123">
-        <var name="operation" id="6699137465481734229" />
+      <scope id="6699137465481874845" at="27,77,28,145" />
+      <scope id="6699137465481874845" at="34,79,36,123">
+        <var name="operation" id="6699137465481874845" />
       </scope>
       <scope id="6699137465481734229" at="22,0,25,0" />
-      <scope id="6699137465481734229" at="26,0,30,0" />
-      <scope id="6699137465481734229" at="34,0,38,0" />
+      <scope id="6699137465481874845" at="26,0,30,0" />
+      <scope id="6699137465481874845" at="34,0,38,0" />
       <unit id="6699137465481734229" at="31,0,40,0" name="jetbrains.mps.internalCollections.test.types.GenericCollections_Test$TestBody" />
       <unit id="6699137465481734229" at="16,0,41,0" name="jetbrains.mps.internalCollections.test.types.GenericCollections_Test" />
     </file>

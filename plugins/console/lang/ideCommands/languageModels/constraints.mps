@@ -19,10 +19,6 @@
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
-      <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
-        <child id="1068498886297" name="rValue" index="37vLTx" />
-        <child id="1068498886295" name="lValue" index="37vLTJ" />
-      </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
@@ -43,7 +39,6 @@
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
-      <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -96,7 +91,6 @@
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="4303308395523096213" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept" flags="ng" index="2DD5aU" />
       <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
-      <concept id="1163200368514" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler" flags="in" index="3k9gUc" />
       <concept id="1163200647017" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" flags="nn" index="3kakTB" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
@@ -106,7 +100,6 @@
       </concept>
       <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
         <reference id="1148687202698" name="applicableLink" index="1N5Vy1" />
-        <child id="1163203787401" name="referentSetHandler" index="3kmjI7" />
         <child id="1148687345559" name="searchScopeFactory" index="1N6uqs" />
       </concept>
     </language>
@@ -406,9 +399,9 @@
     </node>
   </node>
   <node concept="1M2fIO" id="59iQg8rz2Lg">
-    <ref role="1M2myG" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation" />
+    <ref role="1M2myG" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation_old" />
     <node concept="1N5Pfh" id="7Nk8HJUuNsz" role="1Mr941">
-      <ref role="1N5Vy1" to="caxt:7Nk8HJUuKrS" resolve="requestedAspect" />
+      <ref role="1N5Vy1" to="caxt:7Nk8HJUuKrS" resolve="requestedAspect_old" />
       <node concept="3dgokm" id="5Vvmn_QkWQh" role="1N6uqs">
         <node concept="3clFbS" id="5Vvmn_QkWQi" role="2VODD2">
           <node concept="3cpWs8" id="5Vvmn_QkWQj" role="3cqZAp">
@@ -474,27 +467,12 @@
                 </node>
                 <node concept="2OqwBi" id="5Vvmn_QkWQH" role="37wK5m">
                   <node concept="359W_D" id="5Vvmn_QkWQI" role="2Oq$k0">
-                    <ref role="359W_E" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation" />
-                    <ref role="359W_F" to="caxt:7Nk8HJUuKrS" resolve="requestedAspect" />
+                    <ref role="359W_E" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation_old" />
+                    <ref role="359W_F" to="caxt:7Nk8HJUuKrS" resolve="requestedAspect_old" />
                   </node>
                   <node concept="liA8E" id="5Vvmn_QkWQJ" role="2OqNvi">
                     <ref role="37wK5l" to="c17a:~SAbstractLink.getTargetConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getTargetConcept" />
                   </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3k9gUc" id="7Nk8HJUv$PQ" role="3kmjI7">
-        <node concept="3clFbS" id="7Nk8HJUv$PR" role="2VODD2">
-          <node concept="3clFbF" id="7Nk8HJUv$YV" role="3cqZAp">
-            <node concept="37vLTI" id="7Nk8HJUv_UE" role="3clFbG">
-              <node concept="10Nm6u" id="7Nk8HJUvA14" role="37vLTx" />
-              <node concept="2OqwBi" id="7Nk8HJUv_73" role="37vLTJ">
-                <node concept="3kakTB" id="7Nk8HJUv$YU" role="2Oq$k0" />
-                <node concept="3TrEf2" id="7Nk8HJUv_jx" role="2OqNvi">
-                  <ref role="3Tt5mk" to="caxt:59iQg8rz2mK" resolve="requestedAspect_old" />
                 </node>
               </node>
             </node>

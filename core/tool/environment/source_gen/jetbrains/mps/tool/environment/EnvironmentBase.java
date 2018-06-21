@@ -8,14 +8,15 @@ import jetbrains.mps.project.PathMacrosProvider;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
+import jetbrains.mps.core.platform.Platform;
+import jetbrains.mps.project.PathMacros;
+import jetbrains.mps.library.LibraryInitializer;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider;
 import jetbrains.mps.core.tool.environment.util.CanonicalPath;
-import jetbrains.mps.library.LibraryInitializer;
 import java.util.List;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -55,29 +56,31 @@ public abstract class EnvironmentBase implements Environment {
 
   public EnvironmentBase(@NotNull EnvironmentConfig config) {
     if (!(RuntimeFlags.isTestMode())) {
+      // XXX it is odd to enfore test mode for any use of Environment, isn't it? 
       RuntimeFlags.setTestMode(TestMode.USUAL);
     }
     myConfig = config;
   }
 
-  public void init() {
+  protected void init(Platform mpsPlatform) {
     if (myInitialized) {
       throw new IllegalStateException("Double initialization " + this);
     }
-    initMacros();
     myRootClassLoader = createRootClassLoader();
+    initMacros(mpsPlatform.findComponent(PathMacros.class));
+    initLibraries(mpsPlatform.findComponent(LibraryInitializer.class));
     retain();
     myInitialized = true;
   }
 
-  private PathMacrosProvider initMacros() {
+  private PathMacrosProvider initMacros(PathMacros macroComponent) {
     Map<String, String> macros = new HashMap<String, String>();
     Map<String, File> macrosConfig = myConfig.getMacros();
     for (String name : MapSequence.fromMap(macrosConfig).keySet()) {
       MapSequence.fromMap(macros).put(name, MapSequence.fromMap(macrosConfig).get(name).getAbsolutePath());
     }
     myMacrosProvider = createMapMacrosProvider(macros);
-    PathMacros.getInstance().addMacrosProvider(myMacrosProvider);
+    macroComponent.addMacrosProvider(myMacrosProvider);
     return myMacrosProvider;
   }
 
@@ -85,6 +88,7 @@ public abstract class EnvironmentBase implements Environment {
     Map<String, String> realMacros = new HashMap<String, String>();
     for (String macroName : macros.keySet()) {
       String macroValue = MapSequence.fromMap(macros).get(macroName);
+      // XXX anyone knows why we care that much about 'canonical' directory path for a macro value? I see no reason to enforce this at all 
       CanonicalPath path = new CanonicalPath(macroValue);
       if (path.isValidDirectory()) {
         realMacros.put(macroName, path.getValue());

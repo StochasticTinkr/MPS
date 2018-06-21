@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,19 +17,19 @@ package jetbrains.mps.newTypesystem.context;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.typesystem.inference.TypeSubstitution;
+import jetbrains.mps.languageScope.LanguageScopeExecutor;
+import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
 import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
-import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
-import jetbrains.mps.languageScope.LanguageScopeExecutor;
 import jetbrains.mps.newTypesystem.state.State;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeSubstitution;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -52,7 +52,6 @@ public abstract class SimpleTypecheckingContext<
   public SimpleTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
     myState = createState();
-    setTypechecking(createTypechecking());
   }
 
   @SuppressWarnings("unchecked")
@@ -70,6 +69,9 @@ public abstract class SimpleTypecheckingContext<
   }
 
   public TCHECK getTypechecking() {
+    if (myTypechecking == null) {
+      setTypechecking(createTypechecking());
+    }
     return myTypechecking;
   }
 
@@ -305,7 +307,7 @@ public abstract class SimpleTypecheckingContext<
     return LanguageScopeExecutor.execWithLanguageScope(null, new Computable<TypeSubstitution>() {
       @Override
       public TypeSubstitution compute() {
-        return myTypechecking.getTypecheckingComponent().lookupSubstitution(origNode, SimpleTypecheckingContext.this);
+        return getTypechecking().getTypecheckingComponent().lookupSubstitution(origNode, SimpleTypecheckingContext.this);
       }
     });
   }

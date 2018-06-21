@@ -13,11 +13,13 @@
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspect.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="dvox" ref="r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
         <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
@@ -58,36 +60,6 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="7mV0m3L$tRZ">
-    <property role="TrG5h" value="UnloadModelsCommand" />
-    <property role="34LRSv" value="#unload models" />
-    <property role="R5$K7" value="true" />
-    <property role="R5$K2" value="false" />
-    <property role="EcuMT" value="8483375838963817983" />
-    <ref role="1TJDcQ" to="eynw:1yfzJNJq9L_" resolve="InterpretedCommand" />
-    <node concept="PrWs8" id="6M9lfhDxhdV" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="7mV0m3L$tW2">
-    <property role="TrG5h" value="RebuildProjectCommand" />
-    <property role="34LRSv" value="#rebuild project" />
-    <property role="R4oN_" value="clean and make" />
-    <property role="R5$K7" value="true" />
-    <property role="R5$K2" value="false" />
-    <property role="EcuMT" value="8483375838963818242" />
-    <ref role="1TJDcQ" to="eynw:1yfzJNJq9L_" resolve="InterpretedCommand" />
-    <node concept="1TJgyj" id="7mV0m3L$tW3" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="model" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="8483375838963818243" />
-      <ref role="20lvS9" to="tp25:v3WHCwUiHy" resolve="ModelReferenceExpression" />
-    </node>
-    <node concept="PrWs8" id="6M9lfhDxgRi" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="6vMIJHUloMo">
     <property role="TrG5h" value="StatCommand" />
     <property role="R5$K7" value="false" />
@@ -144,10 +116,20 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6vMIJHUnaQp" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="target" />
-      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="targetOld" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="7490254719523007897" />
       <ref role="20lvS9" node="6M9lfhD$0$C" resolve="ModelReference" />
+      <node concept="asaX9" id="4xqDcS7DICi" role="lGtFl">
+        <property role="YLPcu" value="2018.2" />
+        <property role="YLQ7P" value="Remove in next release along with ModelReference, and set [1] for target" />
+      </node>
+    </node>
+    <node concept="1TJgyj" id="4xqDcS7DICf" role="1TKVEi">
+      <property role="IQ2ns" value="5213660723433368079" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="target" />
+      <ref role="20lvS9" to="dvox:7PoJpZpMbrj" resolve="ModelIdentity" />
     </node>
     <node concept="PrWs8" id="6vMIJHUnaQn" role="PzmwI">
       <ref role="PrY4T" node="6vMIJHUlTMM" resolve="IStatisticsTarget" />
@@ -200,6 +182,10 @@
     <property role="34LRSv" value="model" />
     <property role="EcuMT" value="7820875636625377576" />
     <ref role="1TJDcQ" to="tp25:v3WHCwUiHy" resolve="ModelReferenceExpression" />
+    <node concept="asaX9" id="4xqDcS7BDh8" role="lGtFl">
+      <property role="YLPcu" value="2018.2" />
+      <property role="YLQ7P" value="Neither extends Expression nor name-only reference are acceptable" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6M9lfhD_4eJ">
     <property role="3GE5qa" value="stat" />
@@ -216,10 +202,21 @@
     <ref role="1TJDcQ" to="eynw:1yfzJNJq9L_" resolve="InterpretedCommand" />
     <node concept="1TJgyj" id="67MRmR$vSpU" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="targetModel" />
-      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="targetModelOld" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="7057947030097725050" />
       <ref role="20lvS9" node="6M9lfhD$0$C" resolve="ModelReference" />
+      <node concept="asaX9" id="73IzULxmLje" role="lGtFl">
+        <property role="YLPcu" value="2018.2" />
+        <property role="YLQ7P" value="ModelReference is faulty, deprecated and about to cease existence. Set targetModel[1] once old is gone" />
+      </node>
+    </node>
+    <node concept="1TJgyj" id="73IzULxmOWN" role="1TKVEi">
+      <property role="IQ2ns" value="8137599547235585843" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="targetModel" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="dvox:7PoJpZpMbrj" resolve="ModelIdentity" />
     </node>
     <node concept="1TJgyi" id="2Lh2Nufzent" role="1TKVEl">
       <property role="TrG5h" value="ignoreExternalPlan" />
@@ -382,31 +379,29 @@
     </node>
   </node>
   <node concept="1TIwiD" id="59iQg8ryOmC">
-    <property role="TrG5h" value="OfAspectOperation" />
+    <property role="TrG5h" value="OfAspectOperation_old" />
     <property role="34LRSv" value="ofAspect" />
     <property role="3GE5qa" value="expression" />
     <property role="R4oN_" value="filter models by their aspect" />
     <property role="EcuMT" value="5932042262275638696" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tp2q:gKAMqbp" resolve="SequenceOperation" />
-    <node concept="1TJgyj" id="59iQg8rz2mK" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20lbJX" value="0..1" />
-      <property role="20kJfa" value="requestedAspect_old" />
-      <property role="IQ2ns" value="5932042262275696048" />
-      <ref role="20lvS9" to="tpee:fKQsSyN" resolve="EnumConstantDeclaration" />
-      <node concept="asaX9" id="7Nk8HJUuNkF" role="lGtFl">
-        <property role="YLPcu" value="MPS 3.4" />
-      </node>
-    </node>
     <node concept="1TJgyj" id="7Nk8HJUuKrS" role="1TKVEi">
       <property role="IQ2ns" value="8994852683961272056" />
       <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="requestedAspect" />
-      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="requestedAspect_old" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
+      <node concept="asaX9" id="q_ruBBvOei" role="lGtFl">
+        <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.lang.slanguage.structure.OfAspectOperation&quot;" />
+      </node>
     </node>
     <node concept="PrWs8" id="59iQg8ryZAl" role="PzmwI">
       <ref role="PrY4T" to="3xdn:59iQg8ryQK3" resolve="OperationHelpProvider" />
+    </node>
+    <node concept="asaX9" id="q_ruBBvOe7" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.slanguage&quot;" />
     </node>
   </node>
   <node concept="1TIwiD" id="7mV0m3L$tuv">

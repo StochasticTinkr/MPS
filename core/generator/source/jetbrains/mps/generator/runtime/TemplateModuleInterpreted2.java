@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.stream.Collectors;
 
@@ -47,7 +48,7 @@ import java.util.stream.Collectors;
  */
 public abstract class TemplateModuleInterpreted2 extends TemplateModuleBase {
   private final Generator myGenerator;
-  private Collection<TemplateModel> myModels;
+  private Collection<TemplateModelInterpreted> myModels;
 
   protected TemplateModuleInterpreted2(LanguageRegistry registry, LanguageRuntime sourceLanguage, Generator generatorModule) {
     super(registry, sourceLanguage);
@@ -58,12 +59,12 @@ public abstract class TemplateModuleInterpreted2 extends TemplateModuleBase {
   public Collection<TemplateModel> getModels() {
     // XXX copied from TemplateModuleInterpreted#getModels()
     // FIXME need to deal with scenario when template models change (distinct from scenario when set of models change, which is important, too)
-    if (myModels != null) {
-      return myModels;
+    if (modelsUpToDate()) {
+      return Collections.unmodifiableCollection(myModels);
     }
     synchronized (this) {
-      if (myModels != null) {
-        return myModels;
+      if (modelsUpToDate()) {
+        return Collections.unmodifiableCollection(myModels);
       }
       TemplateModels tm = new TemplateModels();
       fillTemplateModels(tm);
@@ -72,7 +73,22 @@ public abstract class TemplateModuleInterpreted2 extends TemplateModuleBase {
         return new TemplateModelInterpreted(this, templateModel, e.getValue());
       }).collect(Collectors.toList());
     }
-    return myModels;
+    return Collections.unmodifiableCollection(myModels);
+  }
+
+  private boolean modelsUpToDate() {
+    if (myModels == null) {
+      return false;
+    }
+    synchronized (this) {
+      for (TemplateModelInterpreted tm : myModels) {
+        if (tm.isStale()) {
+          myModels = null;
+          return false;
+        }
+      }
+    }
+    return true;
   }
 
   /**

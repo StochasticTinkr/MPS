@@ -11,19 +11,18 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
-import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 
 public final class CreatePropertyAntiquotation_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -43,7 +42,7 @@ public final class CreatePropertyAntiquotation_Intention extends AbstractIntenti
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     EditorCell selectedCell = editorContext.getSelectedCell();
-    if (!(selectedCell instanceof EditorCell_Property)) {
+    if (check_vcwk4z_a0b0e(check_vcwk4z_a0a1a4(check_vcwk4z_a0a0b0e(selectedCell))) == null) {
       return false;
     }
     SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
@@ -79,12 +78,7 @@ public final class CreatePropertyAntiquotation_Intention extends AbstractIntenti
       if (contextNode == null) {
         return;
       }
-      if (!(selectedCell instanceof EditorCell_Property)) {
-        return;
-      }
-      EditorCell_Property editorCell_Property = (EditorCell_Property) selectedCell;
-      String propertyName = ((PropertyAccessor) editorCell_Property.getModelAccessor()).getPropertyName();
-      SProperty p = ((ConceptMetaInfoConverter) selectedCell.getSNode().getConcept()).convertProperty(propertyName);
+      SProperty p = selectedCell.getCellContext().getPropertyInfo().getProperty();
       if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"))) {
         SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
         assert attributedNode != null;
@@ -105,5 +99,23 @@ public final class CreatePropertyAntiquotation_Intention extends AbstractIntenti
     public IntentionDescriptor getDescriptor() {
       return CreatePropertyAntiquotation_Intention.this;
     }
+  }
+  private static SProperty check_vcwk4z_a0b0e(SPropertyInfo checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getProperty();
+    }
+    return null;
+  }
+  private static SPropertyInfo check_vcwk4z_a0a1a4(EditorCellContext checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getPropertyInfo();
+    }
+    return null;
+  }
+  private static EditorCellContext check_vcwk4z_a0a0b0e(EditorCell checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getCellContext();
+    }
+    return null;
   }
 }

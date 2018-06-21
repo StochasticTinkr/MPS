@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,10 +37,10 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -56,9 +56,11 @@ import java.util.Map;
  */
 public class MPSRepositoryUtil {
   private final CompileContext myCompileContext;
+  private final SRepository myRepository;
 
-  public MPSRepositoryUtil(CompileContext context) {
+  public MPSRepositoryUtil(CompileContext context, SRepository repository) {
     myCompileContext = context;
+    myRepository = repository;
   }
 
   public CachedRepositoryData buildData(Collection<ModuleHandle> handles) {
@@ -73,7 +75,7 @@ public class MPSRepositoryUtil {
   }
 
   private void buildModule(Map<String, List<CachedModelData>> modelsByKindAndPath, SModuleReference moduleReference) {
-    SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
+    SModule module = moduleReference.resolve(myRepository);
     if (module != null) {
       for (ModelRoot root : module.getModelRoots()) {
         if (root instanceof DefaultModelRoot) {

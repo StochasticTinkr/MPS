@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.event.ModelEventDispatch;
 import jetbrains.mps.smodel.event.ModelListenerDispatch;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -127,7 +128,14 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     fireBeforeModelDisposed(this);
     jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
     if (model != null) {
+      // XXX In fact, seems reasonable to call doUnload() here, as subclasses might need to clear their state on detach in
+      //     a manner similar to unload (just w/o event dispatch, though this is questionable as well - why detach doesn't
+      //     need to send out 'unloaded' event?). However, at the moment TransientModel does swap out on doUnload, and it's
+      //     NOT what we want on model detach. Need a better contract for unload, detach and cleanup of instance fields.
+      // OTOH, it's not apparent why detach of a model shall dispose its data. Perhaps, all we need to do here
+      //     is to clean fields to free references, and leave model data intact?
       model.dispose();
+      setLoadingState(ModelLoadingState.NOT_LOADED);
     }
     clearListeners();
   }
@@ -233,9 +241,13 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     return true;
   }
 
+  /**
+   * @deprecated not in use, no apparent scenario for usage.
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public boolean isRegistered() {
-    SModule copy = myModule;
-    return copy != null && copy.getRepository() != null;
+    return myRepository != null;
   }
 
   /**
@@ -259,9 +271,9 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   public Iterable<Problem> getProblems() {
     assertCanRead();
-    jetbrains.mps.smodel.SModel sModelInternal = getSModelInternal();
-    if (sModelInternal instanceof InvalidSModel) {
-      return ((InvalidSModel) sModelInternal).getProblems();
+    SModelData modelData = getModelData();
+    if (modelData instanceof InvalidSModel) {
+      return ((InvalidSModel) modelData).getProblems();
     }
     return Collections.emptySet();
   }
@@ -302,7 +314,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     if (modelData == null) {
       return;
     }
-    modelData.setModelDescriptor(null);
     modelData.dispose();
     setLoadingState(ModelLoadingState.NOT_LOADED);
   }
@@ -412,11 +423,10 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
    */
   protected synchronized void replaceModelAndFireEvent(jetbrains.mps.smodel.SModel oldModel, jetbrains.mps.smodel.SModel newModel) {
     if (oldModel != null) {
-      oldModel.setModelDescriptor(null);
       oldModel.dispose();
     }
     if (newModel != null) {
-      newModel.setModelDescriptor(this);
+      newModel.setModelDescriptor(this, getNodeEventDispatch());
     }
 
     fireModelReplaced();
@@ -463,6 +473,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   /**
    * CLIENTS SHALL NOT USE THIS METHOD. It's public merely to overcome java package boundaries (those of SModelData implementation and this class).
+   * FIXME Once deprecated SModel.setModelDescriptor is removed, visibility shall be changed to protected
    * FIXME This is a hack. We shall pass myEventDispatch the moment internal model is initialized.
    * However, it's tricky to find out exact moment with present approach (getSModelInternal() either
    * returns existing or creates new), fireModeStateChanged is feasible option, but misguiding as well.

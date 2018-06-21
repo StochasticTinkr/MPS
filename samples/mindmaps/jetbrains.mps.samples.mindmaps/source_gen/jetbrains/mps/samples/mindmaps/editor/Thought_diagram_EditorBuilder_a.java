@@ -48,14 +48,14 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentVi
   }
 
   /*package*/ EditorCell createCell() {
-    return createDiagramNode_a6gtrz_a();
+    return createDiagramNode_0();
   }
 
-  private EditorCell createDiagramNode_a6gtrz_a() {
+  private EditorCell createDiagramNode_0() {
     BlockCell editorCell = new Thought_diagram_EditorBuilder_a.BlockCellImpl_a6gtrz_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramNode_a6gtrz_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     DeleteThought.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;
   }
@@ -70,7 +70,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentVi
           return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff15ca26L, 0x1198689ff15ca27L, "x"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff15ca26L, 0x1198689ff15ca27L, "x"), "" + (value));
+          SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff15ca26L, 0x1198689ff15ca27L, "x"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_a6gtrz_a0a);
@@ -80,7 +80,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentVi
           return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff15ca26L, 0x1198689ff15ca29L, "y"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff15ca26L, 0x1198689ff15ca29L, "y"), "" + (value));
+          SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff15ca26L, 0x1198689ff15ca29L, "y"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_a6gtrz_a1a);
@@ -90,7 +90,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentVi
           return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
         }
         protected void setModelPropertyValueImpl(String value) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), value);
+          SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), value);
         }
       };
       addEditorCell(myPropertyCell_a6gtrz_a2a);

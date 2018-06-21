@@ -38,224 +38,224 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_p0t1np_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_p0t1np_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_p0t1np_a_0");
+    editorCell.setCellId("Collection_p0t1np_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_p0t1np_a0_0());
-    editorCell.addEditorCell(createCollection_p0t1np_b0());
-    editorCell.addEditorCell(createConstant_p0t1np_c0());
-    editorCell.addEditorCell(createConstant_p0t1np_d0_0());
-    editorCell.addEditorCell(createConstant_p0t1np_e0());
-    editorCell.addEditorCell(createConstant_p0t1np_f0_0());
-    editorCell.addEditorCell(createConstant_p0t1np_g0());
-    editorCell.addEditorCell(createConstant_p0t1np_h0_0());
-    editorCell.addEditorCell(createConstant_p0t1np_i0_0());
-    editorCell.addEditorCell(createConstant_p0t1np_j0());
-    editorCell.addEditorCell(createConstant_p0t1np_k0_0());
-    editorCell.addEditorCell(createConstant_p0t1np_l0());
-    editorCell.addEditorCell(createConstant_p0t1np_m0());
-    editorCell.addEditorCell(createConstant_p0t1np_n0());
-    editorCell.addEditorCell(createConstant_p0t1np_o0());
-    editorCell.addEditorCell(createConstant_p0t1np_p0());
-    editorCell.addEditorCell(createConstant_p0t1np_q0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createConstant_6());
+    editorCell.addEditorCell(createConstant_7());
+    editorCell.addEditorCell(createConstant_8());
+    editorCell.addEditorCell(createConstant_9());
+    editorCell.addEditorCell(createConstant_10());
+    editorCell.addEditorCell(createConstant_11());
+    editorCell.addEditorCell(createConstant_12());
+    editorCell.addEditorCell(createConstant_13());
+    editorCell.addEditorCell(createConstant_14());
+    editorCell.addEditorCell(createConstant_15());
+    editorCell.addEditorCell(createConstant_16());
+    editorCell.addEditorCell(createConstant_17());
+    editorCell.addEditorCell(createConstant_18());
+    editorCell.addEditorCell(createConstant_19());
+    editorCell.addEditorCell(createConstant_20());
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_a0_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Loops through a collection in parallel using multiple threads.");
-    editorCell.setCellId("Constant_p0t1np_a0_0");
+    editorCell.setCellId("Constant_p0t1np_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_p0t1np_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_p0t1np_b0");
+    editorCell.setCellId("Collection_p0t1np_1");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_p0t1np_a1a());
-    editorCell.addEditorCell(createConstant_p0t1np_b1a());
-    editorCell.addEditorCell(createConstant_p0t1np_c1a());
-    editorCell.addEditorCell(createCollection_p0t1np_d1a());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createCollection_2());
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_a1a() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Threads may be taken from a specified thread pool.");
-    editorCell.setCellId("Constant_p0t1np_a1a");
+    editorCell.setCellId("Constant_p0t1np_1");
     Style style = new StyleImpl();
     new CommentStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_b1a() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "The main thread may or may not wait for the the parallel branches to finish before continuing.");
-    editorCell.setCellId("Constant_p0t1np_b1a");
+    editorCell.setCellId("Constant_p0t1np_2");
     Style style = new StyleImpl();
     new CommentStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_c1a() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Potential Exceptions in branches are collected and re-thrown into the main thread grouped into a single");
-    editorCell.setCellId("Constant_p0t1np_c1a");
+    editorCell.setCellId("Constant_p0t1np_3");
     Style style = new StyleImpl();
     new CommentStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_p0t1np_d1a() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_p0t1np_d1a");
-    editorCell.addEditorCell(createConstant_p0t1np_a3b0());
-    editorCell.addEditorCell(createConstant_p0t1np_b3b0());
+    editorCell.setCellId("Collection_p0t1np_2");
+    editorCell.addEditorCell(createConstant_4());
+    editorCell.addEditorCell(createConstant_5());
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_a3b0() {
+  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "ParallelForLoopException");
-    editorCell.setCellId("Constant_p0t1np_a3b0");
+    editorCell.setCellId("Constant_p0t1np_4");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_b3b0() {
+  private EditorCell createConstant_5() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "instance.");
-    editorCell.setCellId("Constant_p0t1np_b3b0");
+    editorCell.setCellId("Constant_p0t1np_5");
     Style style = new StyleImpl();
     new CommentStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_c0() {
+  private EditorCell createConstant_6() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
-    editorCell.setCellId("Constant_p0t1np_c0");
+    editorCell.setCellId("Constant_p0t1np_6");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_d0_0() {
+  private EditorCell createConstant_7() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Example:");
-    editorCell.setCellId("Constant_p0t1np_d0_0");
+    editorCell.setCellId("Constant_p0t1np_7");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_e0() {
+  private EditorCell createConstant_8() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "parallel for");
-    editorCell.setCellId("Constant_p0t1np_e0");
+    editorCell.setCellId("Constant_p0t1np_8");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_f0_0() {
+  private EditorCell createConstant_9() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
-    editorCell.setCellId("Constant_p0t1np_f0_0");
+    editorCell.setCellId("Constant_p0t1np_9");
     Style style = new StyleImpl();
     new LeftParenStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_g0() {
+  private EditorCell createConstant_10() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "int");
-    editorCell.setCellId("Constant_p0t1np_g0");
+    editorCell.setCellId("Constant_p0t1np_10");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_h0_0() {
+  private EditorCell createConstant_11() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "element");
-    editorCell.setCellId("Constant_p0t1np_h0");
+    editorCell.setCellId("Constant_p0t1np_11");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_i0_0() {
+  private EditorCell createConstant_12() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "in");
-    editorCell.setCellId("Constant_p0t1np_i0_0");
+    editorCell.setCellId("Constant_p0t1np_12");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_j0() {
+  private EditorCell createConstant_13() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "inputSequence");
-    editorCell.setCellId("Constant_p0t1np_j0");
+    editorCell.setCellId("Constant_p0t1np_13");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_k0_0() {
+  private EditorCell createConstant_14() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
-    editorCell.setCellId("Constant_p0t1np_k0_0");
+    editorCell.setCellId("Constant_p0t1np_14");
     Style style = new StyleImpl();
     new RightParenStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_l0() {
+  private EditorCell createConstant_15() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "using");
-    editorCell.setCellId("Constant_p0t1np_l0");
+    editorCell.setCellId("Constant_p0t1np_15");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_m0() {
+  private EditorCell createConstant_16() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "threadPool");
-    editorCell.setCellId("Constant_p0t1np_m0");
+    editorCell.setCellId("Constant_p0t1np_16");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_n0() {
+  private EditorCell createConstant_17() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "no wait");
-    editorCell.setCellId("Constant_p0t1np_n0");
+    editorCell.setCellId("Constant_p0t1np_17");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_o0() {
+  private EditorCell createConstant_18() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
-    editorCell.setCellId("Constant_p0t1np_o0");
+    editorCell.setCellId("Constant_p0t1np_18");
     Style style = new StyleImpl();
     new LeftBraceStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_p0() {
+  private EditorCell createConstant_19() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "...");
-    editorCell.setCellId("Constant_p0t1np_p0");
+    editorCell.setCellId("Constant_p0t1np_19");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_p0t1np_q0() {
+  private EditorCell createConstant_20() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
-    editorCell.setCellId("Constant_p0t1np_q0");
+    editorCell.setCellId("Constant_p0t1np_20");
     Style style = new StyleImpl();
     new RightBraceStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);

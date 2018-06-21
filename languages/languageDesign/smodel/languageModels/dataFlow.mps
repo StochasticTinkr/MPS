@@ -512,5 +512,21 @@
       </node>
     </node>
   </node>
+  <node concept="3_zdsH" id="2SljyTo$e1u">
+    <property role="3GE5qa" value="operation" />
+    <ref role="3_znuS" to="tp25:3xFa6mqMwat" resolve="AbstractPointerResolveOperation" />
+    <node concept="3__wT9" id="2SljyTo$e1v" role="3_A6iZ">
+      <node concept="3clFbS" id="2SljyTo$e1w" role="2VODD2">
+        <node concept="3AgYrR" id="2SljyTo$e1N" role="3cqZAp">
+          <node concept="2OqwBi" id="2SljyTo$eab" role="3Ah4Yx">
+            <node concept="3__QtB" id="2SljyTo$e2e" role="2Oq$k0" />
+            <node concept="3TrEf2" id="2SljyTo$emh" role="2OqNvi">
+              <ref role="3Tt5mk" to="tp25:3ayRDg9aL$v" resolve="repositoryArg" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

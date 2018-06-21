@@ -35,7 +35,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 /**
  * Idea platform has the same mechanism in {@link com.intellij.ide.SaveAndSyncHandlerImpl}
  * however it does not work for us (poor editor subsystem platform integration?)
- *
+ * <p>
  * SO this class is a delegate: it saves everything whenever the platform saves everything.
  */
 public class MPSFilesSaver implements ApplicationComponent {
@@ -58,19 +58,17 @@ public class MPSFilesSaver implements ApplicationComponent {
     myMessageBusConnection.subscribe(AppTopics.FILE_DOCUMENT_SYNC, new FileDocumentManagerAdapter() {
       @Override
       public void beforeAllDocumentsSaving() {
-        if (!RuntimeFlags.isTestMode()) {
-          ThreadUtils.assertEDT();
+        ThreadUtils.assertEDT();
 
-          SaveRepositoryCommand saveCommand = new SaveRepositoryCommand(myRepository);
-          // FIXME consider IMakeService check to move into SaveRepositoryCommand - whether other clients of repo save might
-          // be interested as well.
+        SaveRepositoryCommand saveCommand = new SaveRepositoryCommand(myRepository);
+        // FIXME consider IMakeService check to move into SaveRepositoryCommand - whether other clients of repo save might
+        // be interested as well.
 
-          if (ProjectManager.getInstance().getOpenProjects().length > 0) {
-            if (IMakeService.INSTANCE.isSessionActive()) {
-              ApplicationManager.getApplication().invokeLater(saveCommand::runSavingTask);
-            } else {
-              saveCommand.runSavingTask();
-            }
+        if (ProjectManager.getInstance().getOpenProjects().length > 0) {
+          if (IMakeService.INSTANCE.isSessionActive()) {
+            ApplicationManager.getApplication().invokeLater(saveCommand::runSavingTask);
+          } else {
+            saveCommand.runSavingTask();
           }
         }
       }

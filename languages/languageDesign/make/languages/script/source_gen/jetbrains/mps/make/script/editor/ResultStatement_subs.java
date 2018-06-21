@@ -141,7 +141,7 @@ public class ResultStatement_subs extends SubstituteMenuBase {
           @Override
           public SNode createNode(@NotNull String pattern) {
             SNode rs = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL, "jetbrains.mps.make.script.structure.ResultStatement")), null);
-            SPropertyOperations.set(rs, MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL, 0x6237d5bb8b2a942eL, "result"), SEnumOperations.getMemberValue(myParameterObject));
+            SPropertyOperations.assign(rs, MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL, 0x6237d5bb8b2a942eL, "result"), SEnumOperations.getMemberValue(myParameterObject));
             return rs;
           }
 

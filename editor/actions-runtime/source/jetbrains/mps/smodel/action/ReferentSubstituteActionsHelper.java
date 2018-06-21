@@ -22,6 +22,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -35,6 +36,8 @@ import java.util.List;
 /*package*/ class ReferentSubstituteActionsHelper {
   private static final Logger LOG = LogManager.getLogger(ReferentSubstituteActionsHelper.class);
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static List<SubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
                                                      IReferentPresentationProvider matchingTextProvider,
                                                      IReferentPresentationProvider visibleMatchingTextProvider) {
@@ -42,6 +45,21 @@ import java.util.List;
     // ModelConstraints works with valid links that should be taken from genuine link declaration
     final SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
     SReferenceLink association = MetaAdapterByDeclaration.getReferenceLink(genuineLinkDeclaration);
+    ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(referenceNode, association);
+    Scope searchScope = refDescriptor.getScope();
+    if (searchScope instanceof ErrorScope) {
+      LOG.error("Couldn't create referent search scope : " + ((ErrorScope) searchScope).getMessage());
+      return Collections.emptyList();
+    }
+    return createActions(referenceNode, currentReferent, association, refDescriptor, matchingTextProvider, visibleMatchingTextProvider);
+  }
+
+  public static List<SubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SReferenceLink link,
+                                                     IReferentPresentationProvider matchingTextProvider,
+                                                     IReferentPresentationProvider visibleMatchingTextProvider) {
+    // search scope
+    // ModelConstraints works with valid links that should be taken from genuine link declaration
+    SReferenceLink association = MetaAdapterByDeclaration.getReferenceLink(link.getDeclarationNode());
     ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(referenceNode, association);
     Scope searchScope = refDescriptor.getScope();
     if (searchScope instanceof ErrorScope) {

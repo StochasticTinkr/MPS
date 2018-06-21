@@ -51,7 +51,7 @@ public class Switch_switch_PropertyIdentity_SProperty extends TemplateSwitchBase
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_PropertyId_SProperty().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_PropertyId_SProperty().apply(context);
       return tlist1;
     }
   }

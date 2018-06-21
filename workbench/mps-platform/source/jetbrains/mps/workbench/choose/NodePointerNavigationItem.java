@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.choose;
 
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -43,7 +43,7 @@ public class NodePointerNavigationItem implements NavigationItem, ItemPresentati
   public NodePointerNavigationItem(@NotNull SNode node) {
     myNodePointer = node.getReference();
     myName = node.getPresentation();
-    myIcon = IconManager.getIconFor(node);
+    myIcon = GlobalIconManager.getInstance().getIconFor(node);
   }
 
   public NodePointerNavigationItem(@NotNull SNodeReference nodePointer, @Nullable String name, @Nullable Icon icon) {

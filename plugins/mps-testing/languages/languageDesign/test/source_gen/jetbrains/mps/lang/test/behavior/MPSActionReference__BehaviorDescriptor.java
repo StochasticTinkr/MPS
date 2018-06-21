@@ -34,7 +34,7 @@ public final class MPSActionReference__BehaviorDescriptor extends BaseBHDescript
   }
 
   /*package*/ static String getActionId_idX8Ly3typOa(@NotNull SNode __thisNode__) {
-    return (String) ActionDeclaration__BehaviorDescriptor.getGeneratedClassFQName_idhEwIGgK.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ad5e12a687a89d9L, 0x3ad5e12a687a9317L, "action")));
+    return (String) ActionDeclaration__BehaviorDescriptor.getActionId_id2JiSCAPXEb8.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ad5e12a687a89d9L, 0x3ad5e12a687a9317L, "action")));
   }
 
   /*package*/ MPSActionReference__BehaviorDescriptor() {

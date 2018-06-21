@@ -32,7 +32,7 @@ public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
   protected void runCreation() {
     // TODO: reuse runnable in DefaultLanguageProjectTemplate 
 
-    Language language = NewModuleUtil.createLanguage(mySettings.getModuleName(), mySettings.getModuleLocation(), (MPSProject) myProject);
+    Language language = NewModuleUtil.createLanguage(mySettings.getModuleName(), mySettings.getModuleLocation(), (MPSProject) myProject, false);
     ((StandaloneMPSProject) myProject).setFolderFor(language, myVirtualFolder);
 
     try {

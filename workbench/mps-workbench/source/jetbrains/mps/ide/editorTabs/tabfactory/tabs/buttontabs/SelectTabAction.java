@@ -26,7 +26,7 @@ import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -128,7 +128,7 @@ class SelectTabAction extends ToggleAction {
       }
       added.add(root);
       final SNodeReference nodePtr = node.getReference();
-      result.add(new AnAction(getActionName(node), "", IconManager.getIconFor(root)) {
+      result.add(new AnAction(getActionName(node), "", GlobalIconManager.getInstance().getIconFor(root)) {
         @Override
         public void actionPerformed(AnActionEvent anActionEvent) {
           myProject.getModelAccess().runReadAction(() -> myCallback.changeNode(nodePtr));

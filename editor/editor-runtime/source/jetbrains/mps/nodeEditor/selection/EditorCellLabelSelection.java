@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
@@ -217,8 +219,8 @@ public class EditorCellLabelSelection extends EditorCellSelection {
         }
       }
 
-      if (target == null || ModelAccess.instance().runReadAction(
-          () -> jetbrains.mps.util.SNodeOperations.isAncestor(target.getSNode(), selectedCell.getSNode()))) {
+      Computable<Boolean> isAncestor = () -> SNodeOperations.isAncestor(target.getSNode(), selectedCell.getSNode());
+      if (target == null || new ModelAccessHelper(selectedCell.getContext().getRepository()).runReadAction(isAncestor)) {
         return false;
       }
 

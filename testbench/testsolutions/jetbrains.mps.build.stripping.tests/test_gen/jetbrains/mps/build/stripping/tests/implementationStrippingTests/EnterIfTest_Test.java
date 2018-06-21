@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class EnterIfTest_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class EnterIfTest_Test extends BaseTransformationTest {
 
   @Test
   public void test_EnterIfTest() throws Throwable {
-    runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.EnterIfTest_Test$TestBody", "testMethod", false);
+    new EnterIfTest_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("5264300948581797740", "5264300948581797748");

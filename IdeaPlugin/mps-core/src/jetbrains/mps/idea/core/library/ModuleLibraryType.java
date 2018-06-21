@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,7 @@ import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -104,9 +105,10 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
 
   @Override
   public NewLibraryConfiguration createNewLibrary(@NotNull JComponent parentComponent, @Nullable VirtualFile contextDirectory, @NotNull final Project project) {
-    List<SModuleReference> availableSolutions = calculateVisibleModules(ProjectHelper.getProjectRepository(project), Collections.<VirtualFile>emptySet());
+    SRepository projectRepository = ProjectHelper.getProjectRepository(project);
+    List<SModuleReference> availableSolutions = calculateVisibleModules(projectRepository, Collections.<VirtualFile>emptySet());
 
-    ChooseElementsDialog<SModuleReference> chooser = new SModuleReferenceChooserDialog(project, availableSolutions);
+    ChooseElementsDialog<SModuleReference> chooser = new SModuleReferenceChooserDialog(projectRepository, parentComponent, availableSolutions);
     chooser.show();
     List<SModuleReference> chosenElements = chooser.getChosenElements();
     if (chosenElements.isEmpty()) {
@@ -118,7 +120,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
       name += "...";
     }
 
-    final Set<OrderRoot> roots = createRootsFor(chosenElements);
+    final Set<OrderRoot> roots = createRootsFor(projectRepository, chosenElements);
 
     return new NewLibraryConfiguration(name, this, new DummyLibraryProperties()) {
       @Override
@@ -128,10 +130,10 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
     };
   }
 
-  private Set<OrderRoot> createRootsFor(List<SModuleReference> chosenElements) {
+  private Set<OrderRoot> createRootsFor(SRepository repository, List<SModuleReference> chosenElements) {
     final Set<OrderRoot> roots = new LinkedHashSet<OrderRoot>();
     for (SModuleReference moduleReference : chosenElements) {
-      AbstractModule module = (AbstractModule) ModuleRepositoryFacade.getInstance().getModule(moduleReference);
+      AbstractModule module = new ModelAccessHelper(repository).runReadAction(() -> (AbstractModule) moduleReference.resolve(repository));
       roots.add(new OrderRoot(VirtualFileUtils.getOrCreateVirtualFile(module.getDescriptorFile()), ModuleXmlRootDetector.MPS_MODULE_XML, false));
       for (VirtualFile virtualFile : getModuleJars(module)) {
         roots.add(new OrderRoot(virtualFile, OrderRootType.CLASSES, false));
@@ -178,13 +180,13 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
   }
 
   private static class SModuleReferenceChooserDialog extends ChooseElementsDialog<SModuleReference> {
-    public SModuleReferenceChooserDialog(Project project, List<SModuleReference> availableSolutions) {
-      super(project, availableSolutions, MPSBundle.message("used.modules.chooser.title"), null);
+    private final SRepository myRepo;
+
+    public SModuleReferenceChooserDialog(SRepository repo, Component parent, List<SModuleReference> availableSolutions) {
+      super(parent, availableSolutions, MPSBundle.message("used.modules.chooser.title"));
+      myRepo = repo;
     }
 
-    private SModuleReferenceChooserDialog(Component parent, List<SModuleReference> availableSolutions) {
-      super(parent, availableSolutions, MPSBundle.message("used.modules.chooser.title"));
-    }
 
     @Override
     protected String getItemText(SModuleReference item) {
@@ -192,15 +194,15 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
     }
 
     @Override
-    protected Icon getItemIcon(SModuleReference item) {
-      if (ModuleRepositoryFacade.getInstance().getModule(item) instanceof Solution) {
-        return MPSIcons.SOLUTION_ICON;
-      } else {
-        return MPSIcons.LANGUAGE_ICON;
-      }
+    protected Icon getItemIcon(final SModuleReference item) {
+      return new ModelAccessHelper(myRepo).runReadAction(() -> {
+        if (item.resolve(myRepo) instanceof Solution) {
+          return MPSIcons.SOLUTION_ICON;
+        } else {
+          return MPSIcons.LANGUAGE_ICON;
+        }
+      });
     }
-
-
   }
 
   private static class MyLibraryRootsComponentDescriptor extends DefaultLibraryRootsComponentDescriptor {
@@ -246,10 +248,10 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
       return Arrays.asList(new AttachRootButtonDescriptor(ModuleXmlRootDetector.MPS_MODULE_XML, MPSBundle.message("library.attach.mps.solution")) {
         @Override
         public VirtualFile[] selectFiles(@NotNull JComponent parent, @Nullable VirtualFile initialSelection, @Nullable final Module contextModule, @NotNull final LibraryEditor libraryEditor) {
-          SRepository repository = ProjectHelper.getProjectRepository(contextModule.getProject());
+          final SRepository repository = ProjectHelper.getProjectRepository(contextModule.getProject());
           List<SModuleReference> visibleModules = calculateVisibleModules(repository, new HashSet<VirtualFile>(Arrays.asList(libraryEditor.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML))));
 
-          ChooseElementsDialog<SModuleReference> chooser = new SModuleReferenceChooserDialog(parent, visibleModules);
+          ChooseElementsDialog<SModuleReference> chooser = new SModuleReferenceChooserDialog(repository, parent, visibleModules);
           chooser.show();
           final List<SModuleReference> chosenElements = chooser.getChosenElements();
 
@@ -259,7 +261,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
             @Override
             public void run() {
               for (SModuleReference module : chosenElements) {
-                AbstractModule chosenModule = (AbstractModule) ModuleRepositoryFacade.getInstance().getModule(module);
+                AbstractModule chosenModule = (AbstractModule) module.resolve(repository);
                 addedDescriptors.add(VirtualFileUtils.getOrCreateVirtualFile(chosenModule.getDescriptorFile()));
                 for (VirtualFile virtualFile : getModuleJars(chosenModule)) {
                   addedJars.add(virtualFile);

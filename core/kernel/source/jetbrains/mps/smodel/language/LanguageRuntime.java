@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,15 @@ public abstract class LanguageRuntime {
    * @return identity of the language, never {@code null}. Generated LanguageRuntime classes shall override return value
    */
   public abstract SLanguageId getId(); // FIXME supply a cons that takes mandatory values (id, name), rather than overriding methods in generated classes
+
+
+  /**
+   * @return persistable identity of a deployed language
+   */
+  public final SLanguage getIdentity() {
+    // since 2018.2. XXX replace usages MetaAdapterFactory.getLanguage(langRuntime.getId, langRuntime.getNamespace) with this method
+    return MetaAdapterFactory.getLanguage(getId(), getNamespace());
+  }
 
   /**
    * Generated LanguageRuntime classes shall override this method

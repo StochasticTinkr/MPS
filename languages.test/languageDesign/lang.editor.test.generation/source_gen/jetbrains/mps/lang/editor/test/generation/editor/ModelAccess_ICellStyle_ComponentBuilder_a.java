@@ -31,10 +31,10 @@ import jetbrains.mps.lang.editor.test.generation.editor.TestTargetStyleSheet_Sty
   }
 
   /*package*/ EditorCell createCell() {
-    return createModelAccess_eenn1o_a();
+    return createModelAccess_0();
   }
 
-  private EditorCell createModelAccess_eenn1o_a() {
+  private EditorCell createModelAccess_0() {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
         return null;

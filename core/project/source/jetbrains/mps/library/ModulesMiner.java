@@ -73,6 +73,7 @@ public final class ModulesMiner {
   // excludes is going to be updated from #processExcludes, ensure it can be changed.
   private final Set<IFile> myExcludes = new HashSet<IFile>();
   private final List<ModuleHandle> myOutcome = new ArrayList<ModuleHandle>();
+  private final DescriptorIOFacade myDescriptorIOFacade;
 
   public ModulesMiner() {
     this(Collections.emptySet());
@@ -80,6 +81,7 @@ public final class ModulesMiner {
 
   public ModulesMiner(@NotNull Collection<IFile> excludes) {
     myExcludes.addAll(excludes);
+    myDescriptorIOFacade = DescriptorIOFacade.getInstance();
   }
 
   /**
@@ -365,7 +367,7 @@ public final class ModulesMiner {
 
   private ModuleDescriptor loadSourceModuleDescriptor(IFile file) {
     try {
-      DescriptorIO<? extends ModuleDescriptor> descriptorIO = DescriptorIOFacade.getInstance().fromFileType(file);
+      DescriptorIO<? extends ModuleDescriptor> descriptorIO = myDescriptorIOFacade.fromFileType(file);
       return descriptorIO.readFromFile(file);
     } catch (DescriptorIOException t) {
       LOG.error("Fail to load module from descriptor " + file.getPath(), t);

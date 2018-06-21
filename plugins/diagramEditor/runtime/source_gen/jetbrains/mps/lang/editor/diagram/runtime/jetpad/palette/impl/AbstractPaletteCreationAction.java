@@ -8,11 +8,11 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import javax.swing.Icon;
 import jetbrains.jetpad.projectional.view.ViewTrait;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.smodel.ModelAccess;
 
 public abstract class AbstractPaletteCreationAction implements PaletteToggleAction {
   protected DiagramCell myDiagramCell;
@@ -32,14 +32,19 @@ public abstract class AbstractPaletteCreationAction implements PaletteToggleActi
     SNode iconNode = mySubstituteAction.getIconNode("");
     if (iconNode != null) {
       // todo should pass concept here, not concept node 
-      icon = ((SNodeOperations.isInstanceOf(iconNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) && !((mySubstituteAction.isReferentPresentation()))) ? IconManager.getIcon(SNodeOperations.asSConcept(((SNode) iconNode))) : IconManager.getIconFor(iconNode));
+      // FIXME the moment there's SConcept, not SNode, #init() down here doesn't need model read any more 
+      SAbstractConcept concept = SNodeOperations.asSConcept(((SNode) iconNode));
+      icon = ((SNodeOperations.isInstanceOf(iconNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) && !((mySubstituteAction.isReferentPresentation()))) ? GlobalIconManager.getInstance().getIconFor(concept) : GlobalIconManager.getInstance().getIconFor(iconNode));
     } else {
       icon = IdeIcons.DEFAULT_ICON;
     }
     return icon;
   }
+  /**
+   * FIXME protected method invoked from a cons is a bad pattern (e.g. subclasses may face uninitilized final fields if overide this method), please redesign!
+   */
   protected void init() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myDiagramCell.getContext().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         myIcon = createIcon();
         myText = mySubstituteAction.getMatchingText("");

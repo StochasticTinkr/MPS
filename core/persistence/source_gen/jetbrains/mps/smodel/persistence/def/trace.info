@@ -232,83 +232,97 @@
   </root>
   <root nodeRef="r:3e2c3b97-24cc-4bee-9343-0bf0b2be88e3(jetbrains.mps.smodel.persistence.def)/8837498651724313880">
     <file name="LineContentAccumulator.java">
-      <node id="8837498651724313930" at="19,0,20,0" concept="4" trace="myLineToContentMap" />
-      <node id="8837498651724313937" at="20,0,21,0" concept="4" trace="myNodeIdStack" />
-      <node id="8837498651724313885" at="23,57,24,66" concept="3" />
-      <node id="7606567306781654147" at="24,66,25,22" concept="3" />
-      <node id="7606567306781654137" at="27,40,28,22" concept="3" />
-      <node id="8837498651724313896" at="28,22,29,59" concept="3" />
-      <node id="8837498651724314041" at="32,72,33,65" concept="3" />
-      <node id="8837498651724314064" at="34,5,35,77" concept="3" />
-      <node id="8837498651724314088" at="37,70,38,58" concept="3" />
-      <node id="8837498651724313969" at="40,42,41,103" concept="3" />
-      <node id="8837498651724314102" at="43,58,44,113" concept="3" />
-      <node id="8837498651724314117" at="46,59,47,114" concept="3" />
-      <node id="8837498651724314165" at="49,57,50,35" concept="7" />
-      <node id="8837498651724314181" at="51,65,52,97" concept="3" />
-      <node id="8837498651724314134" at="54,93,55,72" concept="3" />
-      <node id="8837498651724313956" at="58,50,59,30" concept="8" />
-      <node id="8837498651724313945" at="21,0,23,0" concept="2" trace="LineContentAccumulator#()V" />
-      <node id="8837498651724314020" at="31,64,34,5" concept="13" />
-      <node id="8837498651724314074" at="37,0,40,0" concept="6" trace="saveElement#(Lorg/xml/sax/Locator;Ljetbrains/mps/smodel/persistence/lines/LineContent;)V" />
-      <node id="8837498651724313900" at="40,0,43,0" concept="6" trace="saveNode#(Lorg/xml/sax/Locator;)V" />
-      <node id="8837498651724313906" at="43,0,46,0" concept="6" trace="saveProperty#(Ljava/lang/String;Lorg/xml/sax/Locator;)V" />
-      <node id="8837498651724313914" at="46,0,49,0" concept="6" trace="saveReference#(Ljava/lang/String;Lorg/xml/sax/Locator;)V" />
-      <node id="8837498651724314171" at="50,35,53,5" concept="5" />
-      <node id="8837498651724314127" at="53,5,56,5" concept="13" />
-      <node id="8837498651724313951" at="58,0,61,0" concept="6" trace="getLineToContentMap#()Ljava/util/List;" />
-      <node id="8837498651724313881" at="23,0,27,0" concept="6" trace="pushNode#(Lorg/jetbrains/mps/openapi/model/SNodeId;Lorg/xml/sax/Locator;)V" />
-      <node id="8837498651724313892" at="27,0,31,0" concept="6" trace="popNode#(Lorg/xml/sax/Locator;)V" />
-      <node id="8837498651724313980" at="31,0,37,0" concept="6" trace="saveElement#(ILjetbrains/mps/smodel/persistence/lines/LineContent;)V" />
-      <node id="8837498651724313922" at="49,0,58,0" concept="6" trace="processText#(Ljava/lang/String;Lorg/xml/sax/Locator;)V" />
-      <scope id="8837498651724313948" at="21,35,21,35" />
-      <scope id="8837498651724314022" at="32,72,33,65" />
-      <scope id="8837498651724314077" at="37,70,38,58" />
-      <scope id="8837498651724313903" at="40,42,41,103" />
-      <scope id="8837498651724313909" at="43,58,44,113" />
-      <scope id="8837498651724313917" at="46,59,47,114" />
-      <scope id="8837498651724314172" at="51,65,52,97" />
-      <scope id="8837498651724314133" at="54,93,55,72" />
-      <scope id="8837498651724313955" at="58,50,59,30" />
-      <scope id="8837498651724313945" at="21,0,23,0" />
-      <scope id="8837498651724313884" at="23,57,25,22" />
-      <scope id="8837498651724313895" at="27,40,29,59" />
-      <scope id="8837498651724314074" at="37,0,40,0">
+      <node id="8837498651724313930" at="21,0,22,0" concept="4" trace="myLineToContentMap" />
+      <node id="8837498651724313937" at="22,0,23,0" concept="4" trace="myNodeIdStack" />
+      <node id="8837498651724313885" at="25,57,26,66" concept="3" />
+      <node id="7606567306781654147" at="26,66,27,22" concept="3" />
+      <node id="7606567306781654137" at="29,40,30,22" concept="3" />
+      <node id="8837498651724313896" at="30,22,31,59" concept="3" />
+      <node id="8837498651724314041" at="34,72,35,65" concept="3" />
+      <node id="8837498651724314064" at="36,5,37,77" concept="3" />
+      <node id="8837498651724314088" at="39,70,40,58" concept="3" />
+      <node id="8837498651724313969" at="42,42,43,103" concept="3" />
+      <node id="8837498651724314102" at="46,58,47,113" concept="3" />
+      <node id="87164511929659133" at="49,61,50,113" concept="3" />
+      <node id="8837498651724314117" at="53,59,54,114" concept="3" />
+      <node id="87164511929644129" at="56,67,57,114" concept="3" />
+      <node id="8837498651724314165" at="60,57,61,35" concept="7" />
+      <node id="8837498651724314181" at="62,65,63,97" concept="3" />
+      <node id="8837498651724314134" at="65,93,66,72" concept="3" />
+      <node id="8837498651724313956" at="69,50,70,30" concept="8" />
+      <node id="8837498651724313945" at="23,0,25,0" concept="2" trace="LineContentAccumulator#()V" />
+      <node id="8837498651724314020" at="33,64,36,5" concept="13" />
+      <node id="8837498651724314074" at="39,0,42,0" concept="6" trace="saveElement#(Lorg/xml/sax/Locator;Ljetbrains/mps/smodel/persistence/lines/LineContent;)V" />
+      <node id="8837498651724313900" at="42,0,45,0" concept="6" trace="saveNode#(Lorg/xml/sax/Locator;)V" />
+      <node id="8837498651724313906" at="46,0,49,0" concept="6" trace="saveProperty#(Ljava/lang/String;Lorg/xml/sax/Locator;)V" />
+      <node id="87164511929659126" at="49,0,52,0" concept="6" trace="saveProperty#(Lorg/jetbrains/mps/openapi/language/SProperty;Lorg/xml/sax/Locator;)V" />
+      <node id="8837498651724313914" at="53,0,56,0" concept="6" trace="saveReference#(Ljava/lang/String;Lorg/xml/sax/Locator;)V" />
+      <node id="87164511929644124" at="56,0,59,0" concept="6" trace="saveReference#(Lorg/jetbrains/mps/openapi/language/SReferenceLink;Lorg/xml/sax/Locator;)V" />
+      <node id="8837498651724314171" at="61,35,64,5" concept="5" />
+      <node id="8837498651724314127" at="64,5,67,5" concept="13" />
+      <node id="8837498651724313951" at="69,0,72,0" concept="6" trace="getLineToContentMap#()Ljava/util/List;" />
+      <node id="8837498651724313881" at="25,0,29,0" concept="6" trace="pushNode#(Lorg/jetbrains/mps/openapi/model/SNodeId;Lorg/xml/sax/Locator;)V" />
+      <node id="8837498651724313892" at="29,0,33,0" concept="6" trace="popNode#(Lorg/xml/sax/Locator;)V" />
+      <node id="8837498651724313980" at="33,0,39,0" concept="6" trace="saveElement#(ILjetbrains/mps/smodel/persistence/lines/LineContent;)V" />
+      <node id="8837498651724313922" at="60,0,69,0" concept="6" trace="processText#(Ljava/lang/String;Lorg/xml/sax/Locator;)V" />
+      <scope id="8837498651724313948" at="23,35,23,35" />
+      <scope id="8837498651724314022" at="34,72,35,65" />
+      <scope id="8837498651724314077" at="39,70,40,58" />
+      <scope id="8837498651724313903" at="42,42,43,103" />
+      <scope id="8837498651724313909" at="46,58,47,113" />
+      <scope id="87164511929659132" at="49,61,50,113" />
+      <scope id="8837498651724313917" at="53,59,54,114" />
+      <scope id="87164511929644128" at="56,67,57,114" />
+      <scope id="8837498651724314172" at="62,65,63,97" />
+      <scope id="8837498651724314133" at="65,93,66,72" />
+      <scope id="8837498651724313955" at="69,50,70,30" />
+      <scope id="8837498651724313945" at="23,0,25,0" />
+      <scope id="8837498651724313884" at="25,57,27,22" />
+      <scope id="8837498651724313895" at="29,40,31,59" />
+      <scope id="8837498651724314074" at="39,0,42,0">
         <var name="lineContent" id="8837498651724314081" />
         <var name="locator" id="8837498651724314079" />
       </scope>
-      <scope id="8837498651724313900" at="40,0,43,0">
+      <scope id="8837498651724313900" at="42,0,45,0">
         <var name="locator" id="8837498651724313904" />
       </scope>
-      <scope id="8837498651724313906" at="43,0,46,0">
+      <scope id="8837498651724313906" at="46,0,49,0">
         <var name="locator" id="8837498651724313912" />
         <var name="name" id="8837498651724313910" />
       </scope>
-      <scope id="8837498651724313914" at="46,0,49,0">
+      <scope id="87164511929659126" at="49,0,52,0">
+        <var name="locator" id="87164511929659130" />
+        <var name="prop" id="87164511929659128" />
+      </scope>
+      <scope id="8837498651724313914" at="53,0,56,0">
         <var name="locator" id="8837498651724313920" />
         <var name="role" id="8837498651724313918" />
       </scope>
-      <scope id="8837498651724313951" at="58,0,61,0" />
-      <scope id="8837498651724313881" at="23,0,27,0">
+      <scope id="87164511929644124" at="56,0,59,0">
+        <var name="link" id="87164511929644126" />
+        <var name="locator" id="87164511929644139" />
+      </scope>
+      <scope id="8837498651724313951" at="69,0,72,0" />
+      <scope id="8837498651724313881" at="25,0,29,0">
         <var name="locator" id="7606567306781654143" />
         <var name="nodeId" id="8837498651724313890" />
       </scope>
-      <scope id="8837498651724313892" at="27,0,31,0">
+      <scope id="8837498651724313892" at="29,0,33,0">
         <var name="locator" id="7606567306781654134" />
       </scope>
-      <scope id="8837498651724313983" at="31,64,35,77" />
-      <scope id="8837498651724313980" at="31,0,37,0">
+      <scope id="8837498651724313983" at="33,64,37,77" />
+      <scope id="8837498651724313980" at="33,0,39,0">
         <var name="index" id="8837498651724313985" />
         <var name="lineContent" id="8837498651724313987" />
       </scope>
-      <scope id="8837498651724313925" at="49,57,56,5">
+      <scope id="8837498651724313925" at="60,57,67,5">
         <var name="lineContent" id="8837498651724314166" />
       </scope>
-      <scope id="8837498651724313922" at="49,0,58,0">
+      <scope id="8837498651724313922" at="60,0,69,0">
         <var name="locator" id="8837498651724313928" />
         <var name="text" id="8837498651724313926" />
       </scope>
-      <unit id="8837498651724313880" at="18,0,62,0" name="jetbrains.mps.smodel.persistence.def.LineContentAccumulator" />
+      <unit id="8837498651724313880" at="20,0,73,0" name="jetbrains.mps.smodel.persistence.def.LineContentAccumulator" />
     </file>
   </root>
 </debug-info>

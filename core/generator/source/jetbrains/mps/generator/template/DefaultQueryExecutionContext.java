@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,17 +57,10 @@ import java.util.Collection;
  * Evgeny Gryaznov, Feb 10, 2010
  */
 public class DefaultQueryExecutionContext implements QueryExecutionContext {
-
   private final ITemplateGenerator myGenerator;
-  private final boolean myIsMultithread;
 
   public DefaultQueryExecutionContext(@NotNull ITemplateGenerator generator) {
-    this(generator, true);
-  }
-
-  public DefaultQueryExecutionContext(@NotNull ITemplateGenerator generator, boolean isMultithread) {
     myGenerator = generator;
-    myIsMultithread = isMultithread;
   }
 
   @Override
@@ -315,10 +308,5 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       ex.setTemplateModelLocation(mappingScript.getScriptNode());
       throw ex;
     }
-  }
-
-  @Override
-  public boolean isMultithreaded() {
-    return myIsMultithread;
   }
 }

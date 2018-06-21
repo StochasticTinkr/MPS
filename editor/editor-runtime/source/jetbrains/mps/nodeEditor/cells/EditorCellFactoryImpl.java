@@ -26,6 +26,7 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -55,19 +56,8 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     public Collection<String> getHints() {
       return Collections.emptySet();
     }
-
-    @Override
-    public boolean hasContextHint(String hint) {
-      return false;
-    }
   };
   public static final String BASE_COMMENT_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment";
-  /**
-   * @deprecated This hint has no meaning since 2018.1.
-   * Reflective editor actions are now controlled in package {@link jetbrains.mps.nodeEditor.reflectiveEditor}.
-   */
-  @Deprecated
-  public static final String BASE_REFLECTIVE_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor";
 
   private final EditorContext myEditorContext;
   private Deque<EditorCellContextImpl> myCellContextStack;
@@ -122,9 +112,6 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
       result = createCell(node, isInspector, editor);
       assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
     }
-
-    //TODO: remove this call after MPS 3.5 - CellContext should be correctly set during editor cell creation process
-    result.setCellContext(getCellContext());
     return result;
   }
 
@@ -142,15 +129,13 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
         result = editorComponent.createEditorCell(myEditorContext, node);
       } catch (RuntimeException | AssertionError | NoClassDefFoundError e) {
         LOG.warning("Failed to create cell for node: " + SNodeOperations.getDebugText(node) + " using editor component: " + editorComponent.getClass(), e,
-            node);
+                    node);
       }
     }
 
     if (result == null) {
       result = new DefaultEditorComponent(editorComponentId).createEditorCell(myEditorContext, node);
     }
-    //TODO: remove this call after MPS 3.5 - CellContext should be correctly set during editor cell creation process
-    result.setCellContext(getCellContext());
     return result;
 
   }
@@ -187,25 +172,31 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
   @Override
   public void addCellContextHints(String... hints) {
-    if (myCellContextStack == null) {
-      throw new IllegalStateException("There is no CellContext in the stack");
-    }
+    checkContextExist();
     myCellContextStack.getLast().addHints(hints);
   }
 
   @Override
   public void removeCellContextHints(String... hints) {
-    if (myCellContextStack == null) {
-      throw new IllegalStateException("There is no CellContext in the stack");
-    }
+    checkContextExist();
     myCellContextStack.getLast().removeHints(hints);
   }
 
   public void setNodeLocation(SNodeLocation location) {
+    checkContextExist();
+    myCellContextStack.getLast().setNodeLocation(location);
+  }
+
+  @Override
+  public void setPropertyInfo(SPropertyInfo propertyInfo) {
+    checkContextExist();
+    myCellContextStack.getLast().setPropertyInfo(propertyInfo);
+  }
+
+  private void checkContextExist() {
     if (myCellContextStack == null) {
       throw new IllegalStateException("There is no CellContext in the stack");
     }
-    myCellContextStack.getLast().setNodeLocation(location);
   }
 
   private ConceptEditor getCachedEditor(SConcept concept, Collection<Class<? extends ConceptEditor>> excludedEditors) {

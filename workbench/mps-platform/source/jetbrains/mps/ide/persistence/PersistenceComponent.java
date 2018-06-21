@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,16 @@ package jetbrains.mps.ide.persistence;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.KeyedExtensionCollector;
 import jetbrains.mps.ide.MPSCoreComponents;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+/*
+ * XXX likely shall get merged into ModelFactoryRegister, no reason for a distinct
+ */
 public class PersistenceComponent implements ApplicationComponent {
   private static final Logger LOG = LogManager.getLogger(PersistenceComponent.class);
 
@@ -37,7 +40,10 @@ public class PersistenceComponent implements ApplicationComponent {
       }
     };
 
+  private final MPSCoreComponents myCore;
+
   public PersistenceComponent(MPSCoreComponents components) {
+    myCore = components;
   }
 
   public static ModelRootSettingsEditor getModelRootSettingsEditor(String type) {
@@ -49,22 +55,27 @@ public class PersistenceComponent implements ApplicationComponent {
 
   @Override
   public void initComponent() {
-    PersistenceRegistry registry = PersistenceRegistry.getInstance();
+    PersistenceRegistry registry = myCore.getPlatform().findComponent(PersistenceRegistry.class);
 
     ModelRootFactoryEP[] extensions = ModelRootFactoryEP.EP_NAME.getExtensions();
     for (ModelRootFactoryEP extension : extensions) {
-      registry.setModelRootFactory(extension.rootType, extension.getFactory());
+      try {
+        registry.setModelRootFactory(extension.rootType, extension.getFactory());
+      } catch (ClassNotFoundException ex) {
+        String f = "Failed to instantiate model root factory extension (class %s from plugin %s)";
+        String m = String.format(f, extension.className, extension.getPluginDescriptor().getPluginId());
+        LOG.error(m);
+      }
     }
   }
 
   @Override
   public void disposeComponent() {
-
   }
 
   @NotNull
   @Override
   public String getComponentName() {
-    return "MPS custom persistence";
+    return "ModelRootFactory Register Component";
   }
 }

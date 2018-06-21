@@ -61,8 +61,8 @@ public class SampleDeclMigration extends MigrationScriptBase {
 
         // store the id mapping 
         SNode data = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L, "decl.structure.DeclMigrationData_Component"));
-        SPropertyOperations.set(data, MetaAdapterFactory.getProperty(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L, 0x1b931c975a732f6dL, "oldId"), oldNode.getNodeId().toString());
-        SPropertyOperations.set(data, MetaAdapterFactory.getProperty(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L, 0x1b931c975a732f7bL, "newId"), newNode.getNodeId().toString());
+        SPropertyOperations.assign(data, MetaAdapterFactory.getProperty(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L, 0x1b931c975a732f6dL, "oldId"), oldNode.getNodeId().toString());
+        SPropertyOperations.assign(data, MetaAdapterFactory.getProperty(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L, 0x1b931c975a732f7bL, "newId"), newNode.getNodeId().toString());
         ListSequence.fromList(SLinkOperations.getChildren(res, MetaAdapterFactory.getContainmentLink(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732f8bL, 0x1b931c975a732f9aL, "entry"))).addElement(data);
 
       }

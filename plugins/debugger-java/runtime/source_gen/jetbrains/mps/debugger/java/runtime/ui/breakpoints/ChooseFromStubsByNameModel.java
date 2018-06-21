@@ -35,7 +35,7 @@ import org.jetbrains.annotations.NotNull;
         Iterable<SModel> mds = mpsProject.getProjectModels();
         Iterable<SModel> stubModels = Sequence.fromIterable(mds).where(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {
-            return SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(it));
+            return SModelStereotype.isStubModel(it);
           }
         });
         Iterable<NavigationParticipant.NavigationTarget> descr = GotoNavigationUtil.getNavigationTargets(NavigationParticipant.TargetKind.ROOT, new ModelsScope(stubModels), new EmptyProgressMonitor());

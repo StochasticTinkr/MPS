@@ -23,6 +23,7 @@
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -210,6 +211,47 @@
       <property role="1uS6qo" value="presentation_2" />
       <property role="1uS6qv" value="value_2" />
       <property role="2fHolG" value="identifier_2" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="tJEuhpRqpI">
+    <property role="EcuMT" value="535833678905714286" />
+    <property role="3GE5qa" value="nodepointer" />
+    <property role="TrG5h" value="NPTypesystem_IntA" />
+  </node>
+  <node concept="PlHQZ" id="tJEuhpRqpJ">
+    <property role="EcuMT" value="535833678905714287" />
+    <property role="3GE5qa" value="nodepointer" />
+    <property role="TrG5h" value="NPTypesystem_IntB" />
+  </node>
+  <node concept="1TIwiD" id="tJEuhpRT4v">
+    <property role="EcuMT" value="535833678905839903" />
+    <property role="3GE5qa" value="nodepointer" />
+    <property role="TrG5h" value="NPTypesystem_ConceptA" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="tJEuhpRT4w" role="PzmwI">
+      <ref role="PrY4T" node="tJEuhpRqpI" resolve="NPTypesystem_IntA" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="tJEuhpRT4y">
+    <property role="EcuMT" value="535833678905839906" />
+    <property role="3GE5qa" value="nodepointer" />
+    <property role="TrG5h" value="NPTypesystem_ConceptB" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="tJEuhpRT4z" role="PzmwI">
+      <ref role="PrY4T" node="tJEuhpRqpJ" resolve="NPTypesystem_IntB" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="tJEuhpSpT$">
+    <property role="EcuMT" value="535833678905974372" />
+    <property role="3GE5qa" value="nodepointer" />
+    <property role="TrG5h" value="NPTypesystem_RefToIntA" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="tJEuhpSpT_" role="1TKVEi">
+      <property role="IQ2ns" value="535833678905974373" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="ref" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="tJEuhpRqpI" resolve="NPTypesystem_IntA" />
     </node>
   </node>
 </model>

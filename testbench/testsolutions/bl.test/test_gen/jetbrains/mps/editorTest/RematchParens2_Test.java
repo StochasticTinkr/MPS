@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class RematchParens2_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class RematchParens2_Test extends BaseTransformationTest {
 
   @Test
   public void test_RematchParens2() throws Throwable {
-    runTest("jetbrains.mps.editorTest.RematchParens2_Test$TestBody", "testMethod", false);
+    new RematchParens2_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3706019411771839689", "3706019411771839701");

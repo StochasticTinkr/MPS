@@ -29,7 +29,7 @@ public class TwoStepDeleteCustomChildContainer_CellWithCustomId_Delete {
       if (DeletionApproverUtil.approve(editorContext, node, "customId")) {
         return;
       }
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d67L, 0x1139cad76e33a27fL, "showCellWithCustomId"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d67L, 0x1139cad76e33a27fL, "showCellWithCustomId"), "" + (false));
       SelectionUtil.selectCell(editorContext, node, "stringId");
     }
   }
@@ -45,7 +45,7 @@ public class TwoStepDeleteCustomChildContainer_CellWithCustomId_Delete {
       if (DeletionApproverUtil.approve(editorContext, node, "customId")) {
         return;
       }
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d67L, 0x1139cad76e33a27fL, "showCellWithCustomId"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d67L, 0x1139cad76e33a27fL, "showCellWithCustomId"), "" + (false));
       SelectionUtil.selectCell(editorContext, node, "stringId");
     }
   }

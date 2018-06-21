@@ -13,6 +13,10 @@
     </file>
   </root>
   <root nodeRef="r:9acda20f-f1e0-485f-bac0-18b2eef5c3e9(jetbrains.mps.samples.Shapes.intentions)/1082824515535656124">
+    <file name="IntentionsDescriptor.java">
+      <node id="1082824515535656124" at="37,47,38,55" concept="1" />
+      <node id="1082824515535656124" at="50,52,51,41" concept="1" />
+    </file>
     <file name="PreviewScene_Intention.java">
       <node id="1082824515535656124" at="19,0,20,0" concept="2" trace="myCachedExecutable" />
       <node id="1082824515535656124" at="20,35,21,153" concept="6" />

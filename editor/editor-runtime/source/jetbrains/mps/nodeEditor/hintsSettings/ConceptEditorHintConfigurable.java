@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -120,14 +119,9 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable, Co
     HintsState newState = new HintsState();
     newState.setEnabledHints(mySettings.getEnabledHints());
     ConceptEditorHintSettingsComponent.getInstance(myProject).loadState(newState);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        for (EditorComponent component : EditorComponentUtil.getAllEditorComponents(FileEditorManager.getInstance(myProject), true)) {
-          component.rebuildEditorContent();
-        }
-      }
-    });
+    for (EditorComponent component : EditorComponentUtil.getAllEditorComponents(FileEditorManager.getInstance(myProject), true)) {
+      component.getEditorContext().getRepository().getModelAccess().runReadAction(component::rebuildEditorContent);
+    }
   }
 
   private void showRegistryChangedDialog() {

@@ -18,7 +18,6 @@
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
-    <import index="2eq1" ref="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="1wbl" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.idea(MPS.IDEA/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
@@ -570,12 +569,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="2KZwJXNrjan" role="3cqZAp" />
-        <node concept="3clFbF" id="3eUNqOk7G04" role="3cqZAp">
-          <node concept="3nyPlj" id="3eUNqOk7G02" role="3clFbG">
-            <ref role="37wK5l" to="79ha:3eUNqOk6clf" resolve="init" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="1sAB67Tx6ls" role="3cqZAp" />
         <node concept="3cpWs8" id="1sAB67Tx5Dr" role="3cqZAp">
           <node concept="3cpWsn" id="1sAB67Tx5Dq" role="3cpWs9">
             <property role="3TUv4t" value="false" />
@@ -588,15 +581,15 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="1sAB67Tx5e_" role="3cqZAp">
-          <node concept="1rXfSq" id="1sAB67Tx5ez" role="3clFbG">
-            <ref role="37wK5l" to="79ha:2jln2VqYj4c" resolve="initLibraries" />
-            <node concept="2OqwBi" id="1sAB67Tx6Cj" role="37wK5m">
-              <node concept="37vLTw" id="1sAB67Tx6zK" role="2Oq$k0">
+        <node concept="3clFbF" id="3eUNqOk7G04" role="3cqZAp">
+          <node concept="3nyPlj" id="3eUNqOk7G02" role="3clFbG">
+            <ref role="37wK5l" to="79ha:3eUNqOk6clf" resolve="init" />
+            <node concept="2OqwBi" id="1Pvl5nrefi1" role="37wK5m">
+              <node concept="37vLTw" id="1Pvl5nrefdq" role="2Oq$k0">
                 <ref role="3cqZAo" node="1sAB67Tx5Dq" resolve="coreComponents" />
               </node>
-              <node concept="liA8E" id="1sAB67Tx6Mp" role="2OqNvi">
-                <ref role="37wK5l" to="3a50:~MPSCoreComponents.getLibraryInitializer():jetbrains.mps.library.LibraryInitializer" resolve="getLibraryInitializer" />
+              <node concept="liA8E" id="1Pvl5nrefrW" role="2OqNvi">
+                <ref role="37wK5l" to="3a50:~MPSCoreComponents.getPlatform():jetbrains.mps.core.platform.Platform" resolve="getPlatform" />
               </node>
             </node>
           </node>
@@ -604,9 +597,6 @@
       </node>
       <node concept="3Tm1VV" id="3eUNqOk7md8" role="1B3o_S" />
       <node concept="3cqZAl" id="3eUNqOk7mHt" role="3clF45" />
-      <node concept="2AHcQZ" id="5A5jZryYZDt" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
     </node>
     <node concept="2tJIrI" id="Pw_fmFMPqS" role="jymVt" />
     <node concept="3clFb_" id="Pw_fmFMRo6" role="jymVt">

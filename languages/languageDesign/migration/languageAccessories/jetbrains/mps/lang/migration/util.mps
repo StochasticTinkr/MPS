@@ -196,6 +196,7 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
@@ -2016,15 +2017,11 @@
         <node concept="3clFbF" id="2SJclOrQkUr" role="3cqZAp">
           <node concept="1rXfSq" id="2SJclOrQkUp" role="3clFbG">
             <ref role="37wK5l" node="2SJclOrQjKm" resolve="makeReflection" />
-            <node concept="2OqwBi" id="2SJclOrQl5G" role="37wK5m">
-              <node concept="2JrnkZ" id="2SJclOrQl4p" role="2Oq$k0">
-                <node concept="37vLTw" id="2SJclOrQl1I" role="2JrQYb">
-                  <ref role="3cqZAo" node="6szrkDodCya" resolve="targetNode" />
-                </node>
+            <node concept="2OqwBi" id="3XR0QgVCmTj" role="37wK5m">
+              <node concept="37vLTw" id="3XR0QgVCmTi" role="2Oq$k0">
+                <ref role="3cqZAo" node="6szrkDodCya" resolve="targetNode" />
               </node>
-              <node concept="liA8E" id="2SJclOrQl8e" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-              </node>
+              <node concept="iZEcu" id="3XR0QgVCmTk" role="2OqNvi" />
             </node>
             <node concept="1rXfSq" id="2SJclOrQoWR" role="37wK5m">
               <ref role="37wK5l" node="2SJclOrQoBE" resolve="getNodePresentation" />

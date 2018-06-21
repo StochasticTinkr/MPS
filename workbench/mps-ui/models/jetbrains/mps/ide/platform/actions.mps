@@ -798,7 +798,7 @@
       <node concept="2a7GMi" id="4vodOtydcQX" role="ftvYc" />
     </node>
     <node concept="tT9cl" id="4vodOtydcQY" role="2f5YQi">
-      <ref role="tU$_T" node="4vodOtydcQH" resolve="IDEACode" />
+      <ref role="tU$_T" to="tprs:4TxCHuKwGMO" resolve="IDEACode" />
     </node>
   </node>
   <node concept="312cEu" id="185rHHJdrio">
@@ -1528,7 +1528,7 @@
       </node>
     </node>
     <node concept="tT9cl" id="222i7iS7hAS" role="2f5YQi">
-      <ref role="tU$_T" node="222i7iS7hug" resolve="IDEAAnalyze" />
+      <ref role="tU$_T" to="tprs:3rgxLbAgGr4" resolve="IDEAAnalyze" />
     </node>
   </node>
   <node concept="1ESbSp" id="222i7iS7hug">

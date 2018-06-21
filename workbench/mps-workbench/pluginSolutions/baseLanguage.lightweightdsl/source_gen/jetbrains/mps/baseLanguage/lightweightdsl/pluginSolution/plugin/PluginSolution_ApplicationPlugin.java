@@ -9,7 +9,7 @@ import java.util.List;
 import jetbrains.mps.plugins.actions.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
+import jetbrains.mps.plugins.part.ApplicationPluginPart;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution");
@@ -32,13 +32,8 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());
     return res;
   }
-  public List<BaseCustomApplicationPlugin> initCustomParts() {
-    List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
-    {
-      BaseCustomApplicationPlugin plugin = new ClassLikeMenuAdjustment_CustomApplicationPlugin();
-      ListSequence.fromList(res).addElement(plugin);
-      plugin.init();
-    }
-    return res;
+  @Override
+  public void fillCustomParts(List<ApplicationPluginPart> parts) {
+    parts.add(new ClassLikeMenuAdjustment_AppPluginPart());
   }
 }

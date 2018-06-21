@@ -28,6 +28,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Objects;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 public final class SModelOperations {
   public SModelOperations() {
@@ -145,5 +146,11 @@ public final class SModelOperations {
       SModel m = ProjectStructureModule.getInstance(repo).getModelByModule(module);
       return (m == null ? null : ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, "jetbrains.mps.lang.project.structure.Module"))).first());
     }
+  }
+  public static SModelReference getPointer(SModel model) {
+    if (model == null) {
+      return null;
+    }
+    return model.getReference();
   }
 }

@@ -15,4 +15,4 @@ The Highlevel language models conversations between several people. It serves as
 
 You should perhaps play with examples in Highlevel.sandbox solution. You can see the generated text, run the samples, set breakpoints and debug them.
 
-Read more on customizing the debugger in MPS at https://confluence.jetbrains.com/display/MPSD20173/Debugger
+Read more on customizing the debugger in MPS at https://confluence.jetbrains.com/display/MPSD20181/Debugger

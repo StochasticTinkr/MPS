@@ -1513,5 +1513,71 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7DEfJmqPDQB">
+    <property role="TrG5h" value="DelTestChildReferenceContainer" />
+    <property role="3GE5qa" value="delete" />
+    <property role="EcuMT" value="8820932044744203687" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7DEfJmqPDQC" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childWithUsualReference" />
+      <property role="20lbJX" value="0..1" />
+      <property role="IQ2ns" value="8820932044744203688" />
+      <ref role="20lvS9" node="7DEfJmqPDQG" resolve="DelTestChildWithUsualReference" />
+    </node>
+    <node concept="1TJgyj" id="7DEfJmqPDQM" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childWithSmartReference" />
+      <property role="20lbJX" value="0..1" />
+      <property role="IQ2ns" value="8820932044744203698" />
+      <ref role="20lvS9" node="7DEfJmqPDQH" resolve="DelTestChildWithSmartReference" />
+    </node>
+    <node concept="1TJgyj" id="5EogwwlOCa4" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childToReference" />
+      <property role="20lbJX" value="0..1" />
+      <property role="IQ2ns" value="6528040262366823044" />
+      <ref role="20lvS9" node="7DEfJmqPDQI" resolve="DelTestNodeToReference" />
+    </node>
+    <node concept="PrWs8" id="2vGL3zqZrkX" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7DEfJmqPDQG">
+    <property role="3GE5qa" value="delete" />
+    <property role="TrG5h" value="DelTestChildWithUsualReference" />
+    <property role="EcuMT" value="8820932044744203692" />
+    <property role="34LRSv" value="usual reference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7DEfJmqPDSk" role="1TKVEi">
+      <property role="IQ2ns" value="8820932044744203796" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="reference" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="7DEfJmqPDQI" resolve="DelTestNodeToReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7DEfJmqPDQH">
+    <property role="3GE5qa" value="delete" />
+    <property role="TrG5h" value="DelTestChildWithSmartReference" />
+    <property role="EcuMT" value="8820932044744203693" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7DEfJmqPDTa" role="1TKVEi">
+      <property role="IQ2ns" value="8820932044744203850" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="reference" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7DEfJmqPDQI" resolve="DelTestNodeToReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7DEfJmqPDQI">
+    <property role="EcuMT" value="8820932044744203694" />
+    <property role="3GE5qa" value="delete" />
+    <property role="TrG5h" value="DelTestNodeToReference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="7DEfJmqPDQJ" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
 </model>
 

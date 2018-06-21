@@ -5,7 +5,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
   </languages>
   <imports>
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
@@ -168,6 +168,7 @@
         <property id="427659576753753627" name="moduleId" index="20Rdg5" />
         <property id="427659576753753625" name="moduleName" index="20Rdg7" />
       </concept>
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -946,20 +947,16 @@
                                       <ref role="3cqZAo" node="3MU8x$ZVgL4" resolve="modelsToImport" />
                                     </node>
                                     <node concept="TSZUe" id="3MU8x$ZVgM$" role="2OqNvi">
-                                      <node concept="2OqwBi" id="3MU8x$ZVgM_" role="25WWJ7">
-                                        <node concept="2JrnkZ" id="3MU8x$ZVgMA" role="2Oq$k0">
-                                          <node concept="3EllGN" id="3MU8x$ZVgMB" role="2JrQYb">
-                                            <node concept="37vLTw" id="3MU8x$ZVgMC" role="3ElQJh">
-                                              <ref role="3cqZAo" node="3MU8x$ZVgKq" resolve="junitModels" />
-                                            </node>
-                                            <node concept="37vLTw" id="3MU8x$ZVgMD" role="3ElVtu">
-                                              <ref role="3cqZAo" node="3MU8x$ZVgLT" resolve="targetModelName" />
-                                            </node>
+                                      <node concept="2OqwBi" id="5iUdt5cQWFC" role="25WWJ7">
+                                        <node concept="3EllGN" id="5iUdt5cQWF_" role="2Oq$k0">
+                                          <node concept="37vLTw" id="5iUdt5cQWFA" role="3ElQJh">
+                                            <ref role="3cqZAo" node="3MU8x$ZVgKq" resolve="junitModels" />
+                                          </node>
+                                          <node concept="37vLTw" id="5iUdt5cQWFB" role="3ElVtu">
+                                            <ref role="3cqZAo" node="3MU8x$ZVgLT" resolve="targetModelName" />
                                           </node>
                                         </node>
-                                        <node concept="liA8E" id="3MU8x$ZVgME" role="2OqNvi">
-                                          <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                                        </node>
+                                        <node concept="aIX43" id="5iUdt5cQWFD" role="2OqNvi" />
                                       </node>
                                     </node>
                                   </node>
@@ -1069,20 +1066,16 @@
                                         <ref role="3cqZAo" node="3MU8x$ZVgL4" resolve="modelsToImport" />
                                       </node>
                                       <node concept="TSZUe" id="5LaVA51pIxV" role="2OqNvi">
-                                        <node concept="2OqwBi" id="5LaVA51pIxW" role="25WWJ7">
-                                          <node concept="2JrnkZ" id="5LaVA51pIxX" role="2Oq$k0">
-                                            <node concept="3EllGN" id="5LaVA51pIxY" role="2JrQYb">
-                                              <node concept="37vLTw" id="5LaVA51pW_L" role="3ElQJh">
-                                                <ref role="3cqZAo" node="5LaVA51oYvR" resolve="hamcrestModels" />
-                                              </node>
-                                              <node concept="37vLTw" id="5LaVA51pIy0" role="3ElVtu">
-                                                <ref role="3cqZAo" node="3MU8x$ZVgLT" resolve="targetModelName" />
-                                              </node>
+                                        <node concept="2OqwBi" id="5iUdt5cQWMl" role="25WWJ7">
+                                          <node concept="3EllGN" id="5iUdt5cQWMi" role="2Oq$k0">
+                                            <node concept="37vLTw" id="5iUdt5cQWMj" role="3ElQJh">
+                                              <ref role="3cqZAo" node="5LaVA51oYvR" resolve="hamcrestModels" />
+                                            </node>
+                                            <node concept="37vLTw" id="5iUdt5cQWMk" role="3ElVtu">
+                                              <ref role="3cqZAo" node="3MU8x$ZVgLT" resolve="targetModelName" />
                                             </node>
                                           </node>
-                                          <node concept="liA8E" id="5LaVA51pIy1" role="2OqNvi">
-                                            <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                                          </node>
+                                          <node concept="aIX43" id="5iUdt5cQWMm" role="2OqNvi" />
                                         </node>
                                       </node>
                                     </node>

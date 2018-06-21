@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import javax.swing.Icon;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 
 public abstract class BaseTestTreeNode extends MPSTreeNode {
@@ -19,10 +20,16 @@ public abstract class BaseTestTreeNode extends MPSTreeNode {
       setIcon(icon);
     }
   }
+
   public void setState(TestState state) {
     myState = state;
-    renewPresentation();
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        renewPresentation();
+      }
+    });
   }
+
   public TestState getState() {
     return myState;
   }

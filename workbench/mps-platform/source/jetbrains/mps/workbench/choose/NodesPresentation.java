@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.choose;
 
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -93,7 +93,7 @@ public class NodesPresentation implements ElementPresentation<SNodeReference> {
           if (model != null) {
             presentation.location = model.getName().getValue();
           }
-          presentation.icon = IconManager.getIconFor(node);
+          presentation.icon = GlobalIconManager.getInstance().getIconFor(node);
         }
       }
     });

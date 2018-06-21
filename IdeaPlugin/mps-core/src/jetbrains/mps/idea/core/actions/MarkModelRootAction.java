@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,11 +25,14 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
@@ -50,15 +53,14 @@ public class MarkModelRootAction extends AnAction {
     assert mpsFacet != null;
 
     MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getBean();
-    List<ModelRoot> modelRoots = new ArrayList<>(configurationBean.getModelRoots());
+    List<ModelRootDescriptor> modelRoots = new ArrayList<>(configurationBean.getModelRootDescriptors());
     for (VirtualFile vFile : vFiles) {
-      DefaultModelRoot root = new DefaultModelRoot();
-      String path = VirtualFileManager.extractPath(vFile.getUrl());
-      root.setContentRoot(path);
-      root.addFile(DefaultModelRoot.SOURCE_ROOTS, path);
-      modelRoots.add(root);
+      IFile modelDir = VirtualFileUtils.toIFile(vFile);
+      if (modelDir != null) {
+        modelRoots.add(DefaultModelRoot.createSingleFolderDescriptor(modelDir));
+      }
     }
-    configurationBean.setModelRoots(modelRoots);
+    configurationBean.setModelRootDescriptors(modelRoots);
     mpsFacet.setConfiguration(configurationBean);
   }
 

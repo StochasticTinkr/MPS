@@ -19,6 +19,7 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
+        <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
@@ -261,6 +262,14 @@
       <property role="IQ2nx" value="6862207549896125199" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="2XM$eKiAkrB">
+    <property role="EcuMT" value="3418954410726344423" />
+    <property role="3GE5qa" value="Custom" />
+    <property role="TrG5h" value="PlatformAccessExpression" />
+    <property role="R4oN_" value="access MPS platform" />
+    <property role="34LRSv" value="mpsPlatform" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
 </model>
 

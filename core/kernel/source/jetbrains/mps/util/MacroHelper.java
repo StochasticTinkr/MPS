@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public interface MacroHelper {
   String expandPath(@Nullable String path);
@@ -34,5 +37,28 @@ public interface MacroHelper {
     public String shrinkPath(@Nullable String absolutePath) {
       return absolutePath;
     }
+  }
+
+  /**
+   * PROVISIONAL API
+   *
+   * Source capable of producing MacroHelper instances.
+   * XXX need to decide whether this source has to be generic or have specific methods for typical usage scenarios (like module, etc). In latter case,
+   *     would be nice to have a dedicated method for project. OTOH, it's unlikely we can specify all possible usage scenarions, and former approach, then,
+   *     is more appealing (specific Source, e.g. the one aware of module files and their locations) would get instantiated where appropriate.
+   * <p/>
+   * Implementation note. Implementors of this interface that have no idea how to support specific methods are free to return  more general instance, usually
+   * {@linkplain #global() global one}.
+   * @since 2018.1
+   */
+  interface Source {
+    @NotNull
+    MacroHelper global();
+    @NotNull
+    MacroHelper module(SModule m);
+    @NotNull
+    MacroHelper moduleFile(IFile f);
+    @NotNull
+    MacroHelper projectFile(IFile f);
   }
 }

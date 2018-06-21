@@ -14,6 +14,14 @@
     </file>
   </root>
   <root nodeRef="r:2f45a819-e3a6-4cfa-b807-e9f10176b62b(jetbrains.mps.lang.aspect.typesystem)/5177162104569118321">
+    <file name="TypesystemDescriptor.java">
+      <node id="5177162104569118321" at="19,5,20,86" concept="5" />
+      <node id="5177162104569118321" at="20,86,21,55" concept="2" />
+      <node id="5177162104569118321" at="18,5,22,5" concept="0" />
+      <scope id="5177162104569118321" at="19,5,21,55">
+        <var name="nonTypesystemRule" id="5177162104569118321" />
+      </scope>
+    </file>
     <file name="check_URL_NonTypesystemRule.java">
       <node id="8903462855151283632" at="19,183,20,13" concept="6" />
       <node id="4726480899534830531" at="21,5,22,208" concept="2" />
@@ -53,6 +61,14 @@
     </file>
   </root>
   <root nodeRef="r:2f45a819-e3a6-4cfa-b807-e9f10176b62b(jetbrains.mps.lang.aspect.typesystem)/5386558680326206395">
+    <file name="TypesystemDescriptor.java">
+      <node id="5386558680326206395" at="11,5,12,94" concept="5" />
+      <node id="5386558680326206395" at="12,94,13,47" concept="2" />
+      <node id="5386558680326206395" at="10,33,14,5" concept="0" />
+      <scope id="5386558680326206395" at="11,5,13,47">
+        <var name="inferenceRule" id="5386558680326206395" />
+      </scope>
+    </file>
     <file name="typeof_AspectMethodDescriptor_InferenceRule.java">
       <node id="5386558680326206553" at="23,5,24,45" concept="5" />
       <node id="5386558680326206553" at="24,45,25,202" concept="5" />
@@ -112,6 +128,14 @@
     </file>
   </root>
   <root nodeRef="r:2f45a819-e3a6-4cfa-b807-e9f10176b62b(jetbrains.mps.lang.aspect.typesystem)/6422667311313318807">
+    <file name="TypesystemDescriptor.java">
+      <node id="6422667311313318807" at="15,5,16,109" concept="5" />
+      <node id="6422667311313318807" at="16,109,17,55" concept="2" />
+      <node id="6422667311313318807" at="14,5,18,5" concept="0" />
+      <scope id="6422667311313318807" at="15,5,17,55">
+        <var name="nonTypesystemRule" id="6422667311313318807" />
+      </scope>
+    </file>
     <file name="check_GenerationDescriptor_Class_NonTypesystemRule.java">
       <node id="6422667311313324270" at="24,522,25,13" concept="6" />
       <node id="6422667311313324286" at="27,5,28,58" concept="5" />

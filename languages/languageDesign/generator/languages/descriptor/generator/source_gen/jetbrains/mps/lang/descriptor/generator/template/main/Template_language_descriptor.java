@@ -38,7 +38,7 @@ public class Template_language_descriptor extends TemplateDeclarationBase implem
       TemplateContext context1 = context.subContext();
       {
         SNode tnode2 = null;
-        final SNode insertInput2 = QueriesGenerated.insertMacro_Query_1509962061695074412(new InsertMacroContext(context1, insertMacro_xu4w5k_b0a0a1a3a1a4));
+        final SNode insertInput2 = QueriesGenerated.insertMacro_Query_16983022799874111260(new InsertMacroContext(context1, insertMacro_xu4w5k_b0a0a1a3a1a4));
         if (insertInput2 != null) {
           tnode2 = environment.insertNode(insertInput2, insertMacro_xu4w5k_b0a0a1a3a1a4, context1);
         }
@@ -50,6 +50,10 @@ public class Template_language_descriptor extends TemplateDeclarationBase implem
     } finally {
     }
     return TemplateUtil.singletonList(tnode1);
+  }
+
+  public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override

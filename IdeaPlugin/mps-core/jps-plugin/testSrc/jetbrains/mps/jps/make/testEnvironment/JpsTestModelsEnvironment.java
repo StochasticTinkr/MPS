@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,13 +20,13 @@ package jetbrains.mps.jps.make.testEnvironment;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.jps.make.tests.MpsJpsBuildTestCase;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.model.module.JpsModule;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
-import java.util.Arrays;
+import java.util.Collections;
 
 public class JpsTestModelsEnvironment extends JpsTestEnvironmentBase<JpsTestBean> {
   @NonNls
@@ -78,14 +78,12 @@ public class JpsTestModelsEnvironment extends JpsTestEnvironmentBase<JpsTestBean
   }
 
   private void initModelRoots(MPSConfigurationBean configuration, String modelsFolder) {
-    DefaultModelRoot modelRoot = createModelRoot(modelsFolder);
-    configuration.setModelRoots(Arrays.<ModelRoot>asList(modelRoot));
+    ModelRootDescriptor modelRoot = createModelRoot(modelsFolder);
+    configuration.setModelRootDescriptors(Collections.singleton(modelRoot));
   }
 
-  protected DefaultModelRoot createModelRoot(String models) {
-    DefaultModelRoot dmr = new DefaultModelRoot();
-    dmr.setContentRoot(models);
-    dmr.addFile(DefaultModelRoot.SOURCE_ROOTS, models);
-    return dmr;
+  private ModelRootDescriptor createModelRoot(String models) {
+    // XXX use of FileSystem.getInstance().getFile originates from DefaultModelRoot.setContentRoot impl.
+    return DefaultModelRoot.createSingleFolderDescriptor(jetbrains.mps.vfs.FileSystem.getInstance().getFile(models));
   }
 }

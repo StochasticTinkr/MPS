@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,7 +147,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   }
 
   private void findUsages(IResultProvider provider, final SearchQuery query, final UsageToolOptions options) {
-    final SearchTaskImpl searchTask = new SearchTaskImpl(provider, query);
+    final SearchTaskImpl searchTask = new SearchTaskImpl(ProjectHelper.fromIdeaProject(getProject()), provider, query);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
@@ -156,7 +156,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
           @Override
           public void run(@NotNull final ProgressIndicator indicator) {
-            searchResults = searchTask.execute(ProjectHelper.toMPSProject(getProject()).getModelAccess(), new ProgressMonitorAdapter(indicator));
+            searchResults = searchTask.execute(new ProgressMonitorAdapter(indicator));
           }
 
           @Override

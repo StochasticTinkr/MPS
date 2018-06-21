@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
@@ -221,19 +221,27 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
+        <reference id="7256306938026143658" name="target" index="2aWVGs" />
+      </concept>
+    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
+      <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
+        <child id="7400021826774799510" name="ref" index="2tJFKM" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
-      </concept>
-      <concept id="1828409047608048457" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="nn" index="1N_AGu">
-        <reference id="1828409047608048458" name="referentNode" index="1N_AGt" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
@@ -701,15 +709,11 @@
                           <node concept="1bVj0M" id="1KUoCipvwGm" role="23t8la">
                             <node concept="3clFbS" id="1KUoCipvwGn" role="1bW5cS">
                               <node concept="3clFbF" id="1KUoCipvwGo" role="3cqZAp">
-                                <node concept="2YIFZM" id="1KUoCipvwGp" role="3clFbG">
+                                <node concept="2YIFZM" id="7d$WBe3bRY0" role="3clFbG">
+                                  <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
                                   <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                                  <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolve="isStubModelStereotype" />
-                                  <node concept="2YIFZM" id="1KUoCipvwGq" role="37wK5m">
-                                    <ref role="37wK5l" to="w1kc:~SModelStereotype.getStereotype(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getStereotype" />
-                                    <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                                    <node concept="37vLTw" id="1KUoCipvwGr" role="37wK5m">
-                                      <ref role="3cqZAo" node="1KUoCipvwGs" resolve="it" />
-                                    </node>
+                                  <node concept="37vLTw" id="7d$WBe3bS$p" role="37wK5m">
+                                    <ref role="3cqZAo" node="1KUoCipvwGs" resolve="it" />
                                   </node>
                                 </node>
                               </node>
@@ -1710,8 +1714,12 @@
             <property role="3TUv4t" value="true" />
             <node concept="3Tqbb2" id="DdPZ52JP34" role="1tU5fm" />
             <node concept="2OqwBi" id="2inpOcaxqbx" role="33vP2m">
-              <node concept="1N_AGu" id="2inpOcaxpZ5" role="2Oq$k0">
-                <ref role="1N_AGt" to="wyt6:~Throwable" resolve="Throwable" />
+              <node concept="2JrnkZ" id="7uvxILPmWRF" role="2Oq$k0">
+                <node concept="2tJFMh" id="7uvxILPmWRE" role="2JrQYb">
+                  <node concept="ZC_QK" id="7uvxILPmWRD" role="2tJFKM">
+                    <ref role="2aWVGs" to="wyt6:~Throwable" resolve="Throwable" />
+                  </node>
+                </node>
               </node>
               <node concept="liA8E" id="2inpOcaxqi$" role="2OqNvi">
                 <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />

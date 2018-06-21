@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.loading.ModelLoadResult.ContentKind;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -42,7 +43,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -202,10 +202,19 @@ public class FilePerRootFormatUtil {
     return false;
   }
 
+  /**
+   * @deprecated exposes internal SModelData implementation, while all it needs is a bunch of nodes
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static Map<SNodeId, String> getStreamNames(SModel model) {
+    return getStreamNames(model.getRootNodes());
+  }
+
+  public static Map<SNodeId, String> getStreamNames(Iterable<SNode> roots) {
     Map<SNodeId, String> result = new HashMap<SNodeId, String>();
     Set<String> usedNames = new HashSet<String>();
-    for (SNode root : model.getRootNodes()) {
+    for (SNode root : roots) {
       SNodeId key = root.getNodeId();
       String value = asFileName(root.getName());
       if (value.length() == 0) {

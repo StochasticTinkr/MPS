@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class LT_PlusExpressionRArgument_with_Plus_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class LT_PlusExpressionRArgument_with_Plus_Test extends BaseTransformatio
 
   @Test
   public void test_LT_PlusExpressionRArgument_with_Plus() throws Throwable {
-    runTest("jetbrains.mps.editorTest.LT_PlusExpressionRArgument_with_Plus_Test$TestBody", "testMethod", false);
+    new LT_PlusExpressionRArgument_with_Plus_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("5331479185384374304", "5331479185384376308");

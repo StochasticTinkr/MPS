@@ -59,11 +59,11 @@
     <mkdir dir="${build.tmp}/default/branding.jar/idea" />
     <echoxml file="${build.tmp}/default/branding.jar/idea/IdeaApplicationInfo.xml">
       <component>
-        <version codename="MPS" major="2018" minor="1" eap="true" update-channel="MPS181" />
-        <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE" />
+        <version codename="MPS" major="2018" minor="2" eap="true" update-channel="MPS182" />
+        <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE" copyrightStart="2009" />
         <build number="${build.number}" date="${date}" />
-        <logo url="/splash.png" textcolor="E5E5E5" progressColor="0383F9" progressX="117" progressY="280" progressHeight="3" />
-        <about url="/mpsAbout.png" foreground="FFFFFF" copyrightForeground="858585" />
+        <logo url="/splash.png" textcolor="FFFFFF" progressColor="FFFFFF" progressX="117" progressY="280" progressHeight="3" />
+        <about url="/mpsAbout.png" foreground="FFFFFF" copyrightForeground="FFFFFF" />
         <icon size32="/MPS_32.png" size16="/MPS_16.png" size128="/MPS_128.png" ico="/MPS.ico" />
         <package code="code" />
         <names product="MPS" fullname="JetBrains MPS" />
@@ -246,7 +246,9 @@
     <ant antfile="build/mpsDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsVcsCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsVcsPlatformPre.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsVcsPlatform.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsVcsStandaloneJar.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsMigrationCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsMigration.xml" inheritAll="false" useNativeBasedir="true" />

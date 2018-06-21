@@ -6,6 +6,8 @@ import org.jetbrains.mps.annotations.Immutable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
+import org.jetbrains.annotations.Nullable;
+import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -21,15 +23,21 @@ public final class TestParameters {
   private final Class<?> myExecutorClass;
   private final List<String> myClassPath;
   private final List<String> myAdditionalJvmArgs;
+  private final boolean myNeedsMPS;
 
   public TestParameters(Class<?> executorClass, List<String> classPath, List<String> jvmArgs) {
-    myExecutorClass = executorClass;
-    myClassPath = classPath;
-    myAdditionalJvmArgs = jvmArgs;
+    this(executorClass, false, classPath, jvmArgs);
   }
 
   public TestParameters(Class<?> executorClass, List<String> classPath) {
-    this(executorClass, classPath, ListSequence.fromList(new LinkedList<String>()));
+    this(executorClass, false, classPath, ListSequence.fromList(new LinkedList<String>()));
+  }
+
+  public TestParameters(Class<?> executorClass, boolean mpsRequired, @Nullable List<String> classPath, @Nullable List<String> jvmArgs) {
+    myExecutorClass = executorClass;
+    myClassPath = (classPath == null ? ListSequence.fromList(new ArrayList<String>()) : classPath);
+    myAdditionalJvmArgs = (jvmArgs == null ? ListSequence.fromList(new ArrayList<String>()) : jvmArgs);
+    myNeedsMPS = mpsRequired;
   }
 
   public Class<?> getExecutorClass() {
@@ -49,6 +57,10 @@ public final class TestParameters {
       return true;
     }
     if (other.getExecutorClass().isAssignableFrom(getExecutorClass())) {
+      if (!(myNeedsMPS) && other.myNeedsMPS) {
+        // tests that don't need MPS can run from within MPS instance, but not other way round. 
+        return false;
+      }
       if (ListSequence.fromList(myClassPath).containsSequence(ListSequence.fromList(other.getClassPath()))) {
         if (ListSequence.fromList(myAdditionalJvmArgs).containsSequence(ListSequence.fromList(other.getJvmArgs()))) {
           return true;
@@ -56,6 +68,15 @@ public final class TestParameters {
       }
     }
     return false;
+  }
+
+  /**
+   * 
+   * 
+   * @return {@code true} if tests need a running MPS instance to get executed.
+   */
+  public boolean needsMPS() {
+    return myNeedsMPS;
   }
 
   public static TestParameters calcDefault(final SRepository repo) {

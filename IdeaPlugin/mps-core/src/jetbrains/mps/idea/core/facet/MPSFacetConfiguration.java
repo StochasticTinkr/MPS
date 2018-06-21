@@ -30,21 +30,25 @@ import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.PathUtil;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean.State;
 import jetbrains.mps.idea.core.facet.ui.MPSFacetCommonTabUI;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import javax.swing.JComponent;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 /**
  * evgeny, 10/26/11
@@ -123,16 +127,19 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
 
     if (myConfigurationBean.getModelRoots().isEmpty()) {
       // Create default model root pointing to source root
-      DefaultModelRoot mr = new DefaultModelRoot();
+      // XXX why do we use folder of module file and not ContentEntry.getFile(), and at the same time use source root from whatever ContentEntry?
       final VirtualFile moduleFile = myMpsFacet.getModule().getModuleFile();
-      if (moduleFile != null) {
-        mr.setContentRoot(moduleFile.getParent().getPath());
-        for (VirtualFile sRoot : ModuleRootManager.getInstance(myMpsFacet.getModule()).getSourceRoots()) {
-          mr.addFile(DefaultModelRoot.SOURCE_ROOTS, sRoot.getPath());
+      Collection<IFile> sourceRoots = new ArrayList<>();
+      for (VirtualFile sr : ModuleRootManager.getInstance(myMpsFacet.getModule()).getSourceRoots()) {
+        IFile f = VirtualFileUtils.toIFile(sr);
+        if (f != null) {
+          sourceRoots.add(f);
         }
-        Collection<ModelRoot> modelRoots = myConfigurationBean.getModelRoots();
-        modelRoots.add(mr);
-        myConfigurationBean.setModelRoots(modelRoots);
+      }
+      IFile contentRoot = moduleFile == null ? null : VirtualFileUtils.toIFile(moduleFile.getParent());
+      if (contentRoot != null && !sourceRoots.isEmpty()) {
+        ModelRootDescriptor modelRoot = DefaultModelRoot.createDescriptor(contentRoot, sourceRoots.toArray(new IFile[0]));
+        myConfigurationBean.setModelRootDescriptors(Collections.singleton(modelRoot));
       }
     }
   }

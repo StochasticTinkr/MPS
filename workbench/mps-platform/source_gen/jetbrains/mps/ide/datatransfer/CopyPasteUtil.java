@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.datatransfer.DataTransferManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -38,7 +39,6 @@ import java.awt.datatransfer.DataFlavor;
 import org.apache.log4j.Level;
 import java.util.Collection;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import org.jetbrains.annotations.NotNull;
@@ -95,7 +95,7 @@ public final class CopyPasteUtil {
       DataTransferManager.getInstance().preProcessNode(target, newNodesToSourceNodes);
     }
 
-    return new PasteNodeData(targetNodes, null, check_lwiaog_c0a91a2(model), necessaryLanguages, necessaryModels);
+    return new PasteNodeData(targetNodes, null, SModelOperations.getPointer(model), necessaryLanguages, necessaryModels);
   }
   public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModelReference sourceModel, Set<SLanguage> necessaryLanguages, Set<SModelReference> necessaryModels) {
     if (sourceNodes.isEmpty()) {
@@ -313,7 +313,7 @@ public final class CopyPasteUtil {
         List<SModelReference> allImportedModels = new ArrayList<SModelReference>();
         //  XXX in fact, allImportedModels doesn't give us implicit imports, while one in necessaryImports may actually be imported already as implicit 
         // need better way to deal with implicit imports. 
-        for (SModel sm : SModelOperations.allImportedModels(targetModel)) {
+        for (SModel sm : jetbrains.mps.smodel.SModelOperations.allImportedModels(targetModel)) {
           allImportedModels.add(sm.getReference());
         }
         // no idea why allImportedModels explicitly removes models from its imports 
@@ -326,7 +326,7 @@ public final class CopyPasteUtil {
           }
         }
         LanguageRegistry langReg = mpsProject.getComponent(LanguageRegistry.class);
-        Set<SLanguage> allVisibleLanguages = new SLanguageHierarchy(langReg, SModelOperations.getAllLanguageImports(targetModel)).getExtended();
+        Set<SLanguage> allVisibleLanguages = new SLanguageHierarchy(langReg, jetbrains.mps.smodel.SModelOperations.getAllLanguageImports(targetModel)).getExtended();
         for (SLanguage lang : necessaryLanguages) {
           if (!(allVisibleLanguages.contains(lang))) {
             additionalLanguages.add(lang);
@@ -411,11 +411,5 @@ public final class CopyPasteUtil {
       break;
     }
     return false;
-  }
-  private static SModelReference check_lwiaog_c0a91a2(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getReference();
-    }
-    return null;
   }
 }

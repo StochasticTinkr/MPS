@@ -25,14 +25,14 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_5ya0vk_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_5ya0vk_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Apply generators of specified languages");
-    editorCell.setCellId("Constant_5ya0vk_a");
+    editorCell.setCellId("Constant_5ya0vk_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }

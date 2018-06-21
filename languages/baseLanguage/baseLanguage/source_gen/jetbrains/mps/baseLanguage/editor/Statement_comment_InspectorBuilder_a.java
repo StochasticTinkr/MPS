@@ -24,17 +24,17 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
   }
 
   /*package*/ EditorCell createCell() {
-    return createNextEditor_ffwlke_a();
+    return createNextEditor_0();
   }
 
-  private EditorCell createNextEditor_ffwlke_a() {
+  private EditorCell createNextEditor_0() {
     try {
       getCellFactory().pushCellContext();
       getCellFactory().removeCellContextHints(new String[]{"jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"});
       {
         EditorCell editorCell = getCellFactory().createEditorCell(myNode, true, Statement_comment_Editor.class);
         editorCell.setBig(true);
-        editorCell.setCellContext(getCellFactory().getCellContext());
+        setCellContext(editorCell);
         return editorCell;
       }
     } finally {

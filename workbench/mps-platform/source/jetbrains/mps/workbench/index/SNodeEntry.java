@@ -49,14 +49,20 @@ public final class SNodeEntry {
 
   public SNodeEntry(@NotNull SNodeReference node) {
     SModelReference modelReference = node.getModelReference();
-    if (modelReference == null) {
+    SNodeId nodeId = node.getNodeId();
+    if (modelReference == null || nodeId == null) {
       throw new IllegalArgumentException(String.format("Pointer to unknown node: %s", node));
     }
     myModule = modelReference.getModelId().isGloballyUnique() ? null : modelReference.getModuleReference().getModuleId();
     myModel = modelReference.getModelId();
-    myNode = node.getNodeId();
+    myNode = nodeId;
   }
 
+  public SNodeEntry(@NotNull SModelReference model, @NotNull SNodeId node) {
+    this(model.getModelId().isGloballyUnique() ? null : model.getModuleReference().getModuleId(), model.getModelId(), node);
+  }
+
+  // XXX Do I need non-null node id? It complicates construction code for SNodeEntry (from SNodeReference, as the latter has nullable nodeId).
   public SNodeEntry(@Nullable SModuleId module, @NotNull SModelId model, @NotNull SNodeId node) {
     assert module != null || model.isGloballyUnique();
     myModule = module;

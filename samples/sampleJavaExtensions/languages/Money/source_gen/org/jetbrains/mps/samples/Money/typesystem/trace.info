@@ -9,12 +9,18 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="53,0,91,0" name="org.jetbrains.mps.samples.Money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_b" />
-      <unit at="91,0,129,0" name="org.jetbrains.mps.samples.Money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_a" />
       <unit at="16,0,130,0" name="org.jetbrains.mps.samples.Money.typesystem.TypesystemDescriptor" />
     </file>
   </root>
   <root nodeRef="r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)/1861416031385290160">
+    <file name="TypesystemDescriptor.java">
+      <node id="1861416031385290160" at="18,5,19,81" concept="4" />
+      <node id="1861416031385290160" at="19,81,20,47" concept="2" />
+      <node id="1861416031385290160" at="17,33,21,5" concept="0" />
+      <scope id="1861416031385290160" at="18,5,20,47">
+        <var name="inferenceRule" id="1861416031385290160" />
+      </scope>
+    </file>
     <file name="typeof_ConvertTo_InferenceRule.java">
       <node id="654553635094918384" at="20,5,21,52" concept="4" />
       <node id="654553635094918384" at="21,52,22,207" concept="4" />
@@ -101,8 +107,24 @@
       <scope id="3694786099210006967" at="31,0,38,0" />
       <unit id="3694786099210003295" at="16,0,39,0" name="org.jetbrains.mps.samples.Money.typesystem.Money_extends_java_lang_Object_SubtypingRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="3694786099210003295" at="42,5,43,95" concept="4" />
+      <node id="3694786099210003295" at="43,95,44,47" concept="2" />
+      <node id="3694786099210003295" at="41,5,45,5" concept="0" />
+      <scope id="3694786099210003295" at="42,5,44,47">
+        <var name="subtypingRule" id="3694786099210003295" />
+      </scope>
+    </file>
   </root>
   <root nodeRef="r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)/4001135958233292020">
+    <file name="TypesystemDescriptor.java">
+      <node id="4001135958233292020" at="38,5,39,89" concept="4" />
+      <node id="4001135958233292020" at="39,89,40,47" concept="2" />
+      <node id="4001135958233292020" at="37,5,41,5" concept="0" />
+      <scope id="4001135958233292020" at="38,5,40,47">
+        <var name="inferenceRule" id="4001135958233292020" />
+      </scope>
+    </file>
     <file name="typeof_StockPriceInquiry_InferenceRule.java">
       <node id="4001135958233292330" at="20,5,21,59" concept="4" />
       <node id="4001135958233292330" at="21,59,22,208" concept="4" />
@@ -150,6 +172,14 @@
     </file>
   </root>
   <root nodeRef="r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)/4001135958235924255">
+    <file name="TypesystemDescriptor.java">
+      <node id="4001135958235924255" at="34,5,35,85" concept="4" />
+      <node id="4001135958235924255" at="35,85,36,47" concept="2" />
+      <node id="4001135958235924255" at="33,5,37,5" concept="0" />
+      <scope id="4001135958235924255" at="34,5,36,47">
+        <var name="inferenceRule" id="4001135958235924255" />
+      </scope>
+    </file>
     <file name="typeof_MovingAverage_InferenceRule.java">
       <node id="4001135958235924470" at="21,5,22,55" concept="4" />
       <node id="4001135958235924470" at="22,55,23,208" concept="4" />
@@ -202,6 +232,14 @@
     </file>
   </root>
   <root nodeRef="r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)/5447719361346490733">
+    <file name="TypesystemDescriptor.java">
+      <node id="5447719361346490733" at="30,5,31,84" concept="4" />
+      <node id="5447719361346490733" at="31,84,32,47" concept="2" />
+      <node id="5447719361346490733" at="29,5,33,5" concept="0" />
+      <scope id="5447719361346490733" at="30,5,32,47">
+        <var name="inferenceRule" id="5447719361346490733" />
+      </scope>
+    </file>
     <file name="typeof_MoneyLiteral_InferenceRule.java">
       <node id="5447719361346490740" at="20,5,21,44" concept="4" />
       <node id="5447719361346490740" at="21,44,22,208" concept="4" />
@@ -250,7 +288,23 @@
   </root>
   <root nodeRef="r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)/5447719361346552309">
     <file name="TypesystemDescriptor.java">
+      <node id="2864272256649701393" at="45,5,46,268" concept="2" />
+      <node id="2864272256649701422" at="46,268,47,277" concept="2" />
+      <node id="2864272256649701453" at="47,277,48,265" concept="2" />
+      <node id="2864272256649701486" at="48,265,49,274" concept="2" />
+      <node id="5447719361346552322" at="49,274,50,262" concept="2" />
+      <node id="5447719361346552320" at="50,262,51,261" concept="2" />
+      <node id="2864272256649699155" at="54,80,55,69" concept="2" />
+      <node id="2864272256649699155" at="55,69,56,70" concept="2" />
+      <node id="2864272256649699155" at="56,70,57,40" concept="2" />
+      <node id="2864272256649699155" at="57,40,58,37" concept="2" />
+      <node id="2864272256649699155" at="58,37,59,38" concept="2" />
+      <node id="2864272256649699155" at="59,38,60,35" concept="2" />
+      <node id="2864272256649699155" at="60,35,61,34" concept="2" />
+      <node id="2864272256649699155" at="61,34,62,112" concept="2" />
+      <node id="2864272256649699155" at="62,112,63,48" concept="2" />
       <node id="2864272256649701815" at="65,99,66,50" concept="5" />
+      <node id="2864272256649699155" at="69,71,70,59" concept="2" />
       <node id="2864272256649701503" at="72,64,73,65" concept="4" />
       <node id="2864272256649701503" at="73,65,74,32" concept="4" />
       <node id="2864272256649701503" at="74,32,75,259" concept="2" />
@@ -263,7 +317,17 @@
       <node id="2864272256649701911" at="85,65,86,32" concept="4" />
       <node id="2864272256649701911" at="86,32,87,250" concept="2" />
       <node id="2864272256649701911" at="87,250,88,26" concept="5" />
+      <node id="5447719361346552314" at="92,80,93,69" concept="2" />
+      <node id="5447719361346552314" at="93,69,94,70" concept="2" />
+      <node id="5447719361346552314" at="94,70,95,40" concept="2" />
+      <node id="5447719361346552314" at="95,40,96,37" concept="2" />
+      <node id="5447719361346552314" at="96,37,97,38" concept="2" />
+      <node id="5447719361346552314" at="97,38,98,35" concept="2" />
+      <node id="5447719361346552314" at="98,35,99,34" concept="2" />
+      <node id="5447719361346552314" at="99,34,100,112" concept="2" />
+      <node id="5447719361346552314" at="100,112,101,48" concept="2" />
       <node id="5447719361346552330" at="103,99,104,50" concept="5" />
+      <node id="5447719361346552314" at="107,71,108,59" concept="2" />
       <node id="5447719361346552323" at="110,64,111,65" concept="4" />
       <node id="5447719361346552323" at="111,65,112,32" concept="4" />
       <node id="5447719361346552323" at="112,32,113,259" concept="2" />
@@ -276,14 +340,35 @@
       <node id="5447719361346552331" at="123,65,124,32" concept="4" />
       <node id="5447719361346552331" at="124,32,125,259" concept="2" />
       <node id="5447719361346552331" at="125,259,126,26" concept="5" />
+      <node id="2864272256649699155" at="65,0,68,0" concept="3" trace="getOperationType#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5447719361346552314" at="103,0,106,0" concept="3" trace="getOperationType#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2864272256649699155" at="68,0,72,0" concept="3" trace="reportConflict#(Ljetbrains/mps/errors/IRuleConflictWarningProducer;)V" />
+      <node id="5447719361346552314" at="106,0,110,0" concept="3" trace="reportConflict#(Ljetbrains/mps/errors/IRuleConflictWarningProducer;)V" />
       <node id="2864272256649701503" at="72,0,78,0" concept="6" trace="_quotation_createNode_3ist9o_a0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2864272256649701768" at="78,0,84,0" concept="6" trace="_quotation_createNode_3ist9o_a0b0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2864272256649701911" at="84,0,90,0" concept="6" trace="_quotation_createNode_3ist9o_a0a1b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5447719361346552323" at="110,0,116,0" concept="6" trace="_quotation_createNode_3ist9o_a0a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5447719361346552326" at="116,0,122,0" concept="6" trace="_quotation_createNode_3ist9o_a0b0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5447719361346552331" at="122,0,128,0" concept="6" trace="_quotation_createNode_3ist9o_a0a1c#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2864272256649699155" at="54,0,65,0" concept="1" trace="CustomOverloadedOperationsTypesProvider_b#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)V" />
+      <node id="5447719361346552314" at="92,0,103,0" concept="1" trace="CustomOverloadedOperationsTypesProvider_a#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)V" />
       <scope id="2864272256649699180" at="65,99,66,50" />
+      <scope id="2864272256649699155" at="69,71,70,59" />
       <scope id="5447719361346552319" at="103,99,104,50" />
+      <scope id="5447719361346552314" at="107,71,108,59" />
+      <scope id="2864272256649699155" at="65,0,68,0">
+        <var name="leftOperandType" id="2864272256649699155" />
+        <var name="operation" id="2864272256649699155" />
+        <var name="rightOperandType" id="2864272256649699155" />
+      </scope>
+      <scope id="5447719361346552314" at="103,0,106,0">
+        <var name="leftOperandType" id="5447719361346552314" />
+        <var name="operation" id="5447719361346552314" />
+        <var name="rightOperandType" id="5447719361346552314" />
+      </scope>
+      <scope id="2864272256649699155" at="68,0,72,0">
+        <var name="producer" id="2864272256649699155" />
+      </scope>
       <scope id="2864272256649701503" at="72,64,76,26">
         <var name="facade" id="2864272256649701503" />
         <var name="quotedNode_1" id="2864272256649701503" />
@@ -295,6 +380,9 @@
       <scope id="2864272256649701911" at="84,63,88,26">
         <var name="facade" id="2864272256649701911" />
         <var name="quotedNode_1" id="2864272256649701911" />
+      </scope>
+      <scope id="5447719361346552314" at="106,0,110,0">
+        <var name="producer" id="5447719361346552314" />
       </scope>
       <scope id="5447719361346552323" at="110,64,114,26">
         <var name="facade" id="5447719361346552323" />
@@ -314,9 +402,27 @@
       <scope id="5447719361346552323" at="110,0,116,0" />
       <scope id="5447719361346552326" at="116,0,122,0" />
       <scope id="5447719361346552331" at="122,0,128,0" />
+      <scope id="2864272256649699155" at="54,80,63,48" />
+      <scope id="5447719361346552314" at="92,80,101,48" />
+      <scope id="2864272256649699155" at="54,0,65,0">
+        <var name="concept" id="2864272256649699155" />
+      </scope>
+      <scope id="5447719361346552314" at="92,0,103,0">
+        <var name="concept" id="5447719361346552314" />
+      </scope>
+      <unit id="2864272256649699155" at="53,0,91,0" name="org.jetbrains.mps.samples.Money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_b" />
+      <unit id="5447719361346552314" at="91,0,129,0" name="org.jetbrains.mps.samples.Money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_a" />
     </file>
   </root>
   <root nodeRef="r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)/654553635094964690">
+    <file name="TypesystemDescriptor.java">
+      <node id="654553635094964690" at="22,5,23,81" concept="4" />
+      <node id="654553635094964690" at="23,81,24,47" concept="2" />
+      <node id="654553635094964690" at="21,5,25,5" concept="0" />
+      <scope id="654553635094964690" at="22,5,24,47">
+        <var name="inferenceRule" id="654553635094964690" />
+      </scope>
+    </file>
     <file name="typeof_GetAmount_InferenceRule.java">
       <node id="654553635094958668" at="21,5,22,44" concept="4" />
       <node id="654553635094958668" at="22,44,23,207" concept="4" />
@@ -365,6 +471,14 @@
     </file>
   </root>
   <root nodeRef="r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)/654553635094966707">
+    <file name="TypesystemDescriptor.java">
+      <node id="654553635094966707" at="26,5,27,83" concept="4" />
+      <node id="654553635094966707" at="27,83,28,47" concept="2" />
+      <node id="654553635094966707" at="25,5,29,5" concept="0" />
+      <scope id="654553635094966707" at="26,5,28,47">
+        <var name="inferenceRule" id="654553635094966707" />
+      </scope>
+    </file>
     <file name="typeof_GetCurrency_InferenceRule.java">
       <node id="654553635094967282" at="20,5,21,44" concept="4" />
       <node id="654553635094967282" at="21,44,22,207" concept="4" />

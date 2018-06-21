@@ -9,6 +9,13 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.EqualUtil;
 
 public class SPropertyOperations {
+  public static String assign(SNode node, SProperty property, String propertyValue) {
+    // this is the same as set(), but returns the assigned value 
+    if (node != null) {
+      SNodeAccessUtil.setProperty(node, property, propertyValue);
+    }
+    return propertyValue;
+  }
   public static void set(SNode node, SProperty property, String propertyValue) {
     if (node != null) {
       SNodeAccessUtil.setProperty(node, property, propertyValue);

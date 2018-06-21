@@ -4,27 +4,66 @@ package jetbrains.mps.lang.test.matcher;
 
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.HashMap;
 import java.util.List;
+import java.util.HashMap;
 import java.util.Collections;
-import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
 import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SProperty;
 
+/**
+ * XXX could add options to parameterize instance prior to diff. E.g. dumpDiff()/debugDiff to use in scenarios where diff().isEmpty() is used but it's handy to see true diff in case anything goes wrong
+ */
 public final class NodesMatcher {
-  private final Map<SNode, SNode> map;
+  /**
+   * AFAIU, it's a map of 'structural' correspondence, which is used to ensure reference 
+   * targets of nodes being matched point to the same element within the model structure.
+   * Personally, I don't see why it's reasonable to keep map of a e.g. whole model just to 
+   * ensure structural match provided we ensure equal structure by regular parent-child 
+   * walk approach. I'd rather perform matching of reference targets (if they are from the same 
+   * model; and do it only once). However, there's code that uses the map (editor tests) 
+   * which  I need to refactor first.
+   */
+  private final Map<SNode, SNode> myMap;
+  private final List<SNode> myFirst;
+  private final List<SNode> mySecond;
 
+  /**
+   * 
+   * @deprecated use cons that takes matched nodes
+   */
+  @Deprecated
   public NodesMatcher() {
-    map = new HashMap<SNode, SNode>();
+    myMap = new HashMap<SNode, SNode>();
+    myFirst = Collections.emptyList();
+    mySecond = Collections.emptyList();
     // FIXME refactor to use instances instead of static method 
   }
 
+  /**
+   * 
+   * @deprecated use cons that takes matched nodes
+   */
+  @Deprecated
   public NodesMatcher(Map<SNode, SNode> map) {
-    this.map = map;
+    this.myMap = map;
+    myFirst = Collections.emptyList();
+    mySecond = Collections.emptyList();
+  }
+
+  public NodesMatcher(SNode a, SNode b) {
+    this(Collections.singletonList(a), Collections.singletonList(b));
+  }
+
+  public NodesMatcher(@NotNull List<SNode> a, @NotNull List<SNode> b) {
+    myMap = new HashMap<SNode, SNode>();
+    myFirst = a;
+    mySecond = b;
   }
 
   public Map<SNode, SNode> getMap() {
@@ -32,7 +71,53 @@ public final class NodesMatcher {
     // why matchNodes(node,node) goes through matchNodes(list,list), creates and populates map, 
     // while matchNodes(node,node,map) does not populate the map 
     // Once I understand what map is, I can give method better name 
-    return map;
+    return myMap;
+  }
+
+  /**
+   * Collection of differences in initial nodes, in an order that corresponds to order of original collections 
+   * (not necessarily identical as original collections are not necessarily of the same size)
+   * 
+   * Builds a map of corresponding nodes later available through {@link jetbrains.mps.lang.test.matcher.NodesMatcher#getMap() }
+   * 
+   * @return differences, or empty collection if all nodes match
+   */
+  @NotNull
+  public List<NodeDifference> diff() {
+    HashMap<SNode, SNode> map = new HashMap<SNode, SNode>();
+    Iterator<SNode> iteratorA = myFirst.iterator();
+    Iterator<SNode> iteratorB = mySecond.iterator();
+    while (iteratorA.hasNext() && iteratorB.hasNext()) {
+      populateMap(iteratorA.next(), iteratorB.next(), map);
+    }
+    myMap.clear();
+    myMap.putAll(map);
+    return diff(map);
+  }
+
+  @NotNull
+  public List<NodeDifference> diff(Map<SNode, SNode> nodeMap) {
+    ArrayList<NodeDifference> ret = new ArrayList<NodeDifference>(myFirst.size());
+    Iterator<SNode> iteratorA = myFirst.iterator();
+    Iterator<SNode> iteratorB = mySecond.iterator();
+    NodesMatcher.MatcherImpl mi = new NodesMatcher.MatcherImpl(nodeMap);
+    while (iteratorA.hasNext() && iteratorB.hasNext()) {
+      mi.match(iteratorA.next(), iteratorB.next());
+    }
+    for (DifferenceItem di : mi.myDifferences) {
+      // we can't get anything but NodeDifference elements after mi.match() execution as it replaces any DI item created with an ND 
+      assert di instanceof NodeDifference;
+      if (di instanceof NodeDifference) {
+        ret.add((NodeDifference) di);
+      }
+    }
+    while (iteratorA.hasNext()) {
+      ret.add(new NodeDifference(iteratorA.next().getPresentation(), Collections.singletonList(new UnmatchedNode())));
+    }
+    while (iteratorB.hasNext()) {
+      ret.add(new NodeDifference(iteratorB.next().getPresentation(), Collections.singletonList(new UnmatchedNode())));
+    }
+    return ret;
   }
 
   /**
@@ -41,11 +126,8 @@ public final class NodesMatcher {
    */
   @Deprecated
   public static NodeDifference matchNodes(SNode a, SNode b) {
-    List<SNode> aList = Collections.singletonList(a);
-    List<SNode> bList = Collections.singletonList(b);
-    // for whatever reason match(SNode,SNode) just reads map, while match(list<node>, list<node>) populates map first 
-    List<NodeDifference> diffs = new NodesMatcher().match(aList, bList);
-    if (diffs != null) {
+    List<NodeDifference> diffs = new NodesMatcher(a, b).diff();
+    if (!(diffs.isEmpty())) {
       return diffs.get(0);
     } else {
       return null;
@@ -58,24 +140,16 @@ public final class NodesMatcher {
    */
   @Deprecated
   public static ArrayList<NodeDifference> matchNodes(List<SNode> a, List<SNode> b) {
-    return NodesMatcher.matchNodes(a, b, new HashMap<SNode, SNode>());
+    return new ArrayList<NodeDifference>(new NodesMatcher(a, b).diff(new HashMap<SNode, SNode>()));
   }
 
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.lang.test.matcher.NodesMatcher#diff() } instead
+   */
+  @Deprecated
   public List<NodeDifference> match(List<SNode> a, List<SNode> b) {
-    Iterator<SNode> iteratorA = a.iterator();
-    Iterator<SNode> iteratorB = b.iterator();
-    while (iteratorA.hasNext() && iteratorB.hasNext()) {
-      populateMap(iteratorA.next(), iteratorB.next());
-    }
-    ArrayList<NodeDifference> ret = new ArrayList<NodeDifference>();
-    iteratorA = a.iterator();
-    iteratorB = b.iterator();
-    while (iteratorA.hasNext() && iteratorB.hasNext()) {
-      NodeDifference diff = match(iteratorA.next(), iteratorB.next());
-      if (diff != null) {
-        ret.add(diff);
-      }
-    }
+    List<NodeDifference> ret = new NodesMatcher(a, b).diff();
     return (ret.isEmpty() ? null : ret);
   }
 
@@ -85,12 +159,10 @@ public final class NodesMatcher {
    */
   @Deprecated
   public static ArrayList<NodeDifference> matchNodes(List<SNode> a, List<SNode> b, Map<SNode, SNode> map) {
-    NodesMatcher nm = new NodesMatcher(map);
-    List<NodeDifference> rv = nm.match(a, b);
-    return (rv == null ? null : new ArrayList<NodeDifference>(rv));
+    return new ArrayList<NodeDifference>(new NodesMatcher(a, b).diff(map));
   }
 
-  private void populateMap(SNode a, SNode b) {
+  private static void populateMap(SNode a, SNode b, Map<SNode, SNode> map) {
     if (!(a.getConcept().equals(b.getConcept()))) {
       return;
     }
@@ -105,24 +177,21 @@ public final class NodesMatcher {
       Iterator<? extends SNode> iterator1 = a.getChildren(role).iterator();
       Iterator<? extends SNode> iterator2 = b.getChildren(role).iterator();
       while (iterator1.hasNext() && iterator2.hasNext()) {
-        populateMap(iterator1.next(), iterator2.next());
+        populateMap(iterator1.next(), iterator2.next(), map);
       }
     }
     map.put(a, b);
   }
 
+  /**
+   * 
+   * @deprecated use cons with args and {@link jetbrains.mps.lang.test.matcher.NodesMatcher#diff() }
+   */
+  @Deprecated
   public NodeDifference match(SNode a, SNode b) {
-    ArrayList<DifferenceItem> difference = new ArrayList<DifferenceItem>();
-    if (matchConcepts(a, b, difference)) {
-      return new NodeDifference(a.getPresentation(), difference);
-    }
-    matchProperties(a, b, difference);
-    matchChildren(a, b, difference);
-    matchReferences(a, b, difference);
-    if (difference.size() != 0) {
-      return new NodeDifference(a.getPresentation(), difference);
-    }
-    return null;
+    NodesMatcher.MatcherImpl mi = new NodesMatcher.MatcherImpl(myMap);
+    mi.match(a, b);
+    return (mi.myDifferences.isEmpty() ? null : ((NodeDifference) mi.myDifferences.get(0)));
   }
 
   /**
@@ -134,105 +203,132 @@ public final class NodesMatcher {
     return new NodesMatcher(map).match(a, b);
   }
 
-  private boolean matchConcepts(SNode a, SNode b, ArrayList<DifferenceItem> difference) {
-    if (!(a.getConcept().equals(b.getConcept()))) {
-      difference.add(new ConceptDifference(a.getConcept(), b.getConcept()));
-      return true;
-    }
-    return false;
-  }
+  /*package*/ static class MatcherImpl {
+    /*package*/ final List<DifferenceItem> myDifferences = new ArrayList<DifferenceItem>();
+    private final Map<SNode, SNode> myMap;
 
-  private void matchReferences(SNode a, SNode b, ArrayList<DifferenceItem> difference) {
-    HashSet<SReferenceLink> roles = new HashSet<SReferenceLink>();
-    for (SReference nextReference : a.getReferences()) {
-      roles.add(nextReference.getLink());
+    /*package*/ MatcherImpl(Map<SNode, SNode> nodeMap) {
+      myMap = nodeMap;
     }
-    for (SReference nextReference : b.getReferences()) {
-      roles.add(nextReference.getLink());
-    }
-    for (SReferenceLink role : roles) {
-      SReference reference1 = a.getReference(role);
-      SNode referenceTarget1 = null;
-      if (reference1 != null) {
-        referenceTarget1 = reference1.getTargetNode();
+
+    /*package*/ void match(SNode a, SNode b) {
+      final int before = myDifferences.size();
+      if (matchConcepts(a, b)) {
+        matchProperties(a, b);
+        matchReferences(a, b);
+        matchChildren(a, b);
       }
-
-      SReference reference2 = b.getReference(role);
-      SNode referenceTarget2 = null;
-      if (reference2 != null) {
-        referenceTarget2 = reference2.getTargetNode();
-      }
-
-      if (map.containsKey(referenceTarget1)) {
-        if (map.get(referenceTarget1) != referenceTarget2) {
-          difference.add(new ReferenceDifference(role, true, map.get(referenceTarget1), referenceTarget2));
+      final int after = myDifferences.size();
+      if (after != before) {
+        assert after > before;
+        NodeDifference nd = new NodeDifference(a.getPresentation(), new ArrayList<DifferenceItem>(myDifferences.subList(before, after)));
+        // i>before, not >=, as we replace element @before with nd afterwards 
+        for (int i = after - 1; i > before; i--) {
+          myDifferences.remove(i);
         }
-      } else {
-        if (referenceTarget1 != referenceTarget2) {
-          difference.add(new ReferenceDifference(role, false, referenceTarget1, referenceTarget2));
+        myDifferences.set(before, nd);
+      }
+    }
+
+    private boolean matchConcepts(SNode a, SNode b) {
+      if (a.getConcept().equals(b.getConcept())) {
+        return true;
+      }
+      myDifferences.add(new ConceptDifference(a.getConcept(), b.getConcept()));
+      return false;
+    }
+
+    private void matchReferences(SNode a, SNode b) {
+      HashSet<SReferenceLink> roles = new HashSet<SReferenceLink>();
+      for (SReference nextReference : a.getReferences()) {
+        roles.add(nextReference.getLink());
+      }
+      for (SReference nextReference : b.getReferences()) {
+        roles.add(nextReference.getLink());
+      }
+      for (SReferenceLink role : roles) {
+        SReference reference1 = a.getReference(role);
+        SNode referenceTarget1 = null;
+        if (reference1 != null) {
+          referenceTarget1 = reference1.getTargetNode();
         }
-      }
-    }
-  }
 
-  private static int countElements(Iterator<?> it) {
-    int counter = 0;
-    while (it.hasNext()) {
-      it.next();
-      counter++;
-    }
-    return counter;
-  }
+        SReference reference2 = b.getReference(role);
+        SNode referenceTarget2 = null;
+        if (reference2 != null) {
+          referenceTarget2 = reference2.getTargetNode();
+        }
 
-  private void matchChildren(SNode a, SNode b, ArrayList<DifferenceItem> difference) {
-    HashSet<SContainmentLink> roles = new HashSet<SContainmentLink>();
-    for (SNode child : a.getChildren()) {
-      roles.add(child.getContainmentLink());
-    }
-    for (SNode child : b.getChildren()) {
-      roles.add(child.getContainmentLink());
-    }
-    for (SContainmentLink role : roles) {
-      Iterable<? extends SNode> children1 = a.getChildren(role);
-      Iterable<? extends SNode> children2 = b.getChildren(role);
-      int size1 = countElements(children1.iterator());
-      int size2 = countElements(children2.iterator());
-      if (size1 != size2) {
-        difference.add(new ChildrenCountDifference(role, size1, size2));
-        continue;
-      }
-
-      Iterator<? extends SNode> iterator1 = children1.iterator();
-      Iterator<? extends SNode> iterator2 = children2.iterator();
-      while (iterator1.hasNext() && iterator2.hasNext()) {
-        NodeDifference d = match(iterator1.next(), iterator2.next());
-        if (d != null) {
-          difference.add(d);
+        if (myMap.containsKey(referenceTarget1)) {
+          if (myMap.get(referenceTarget1) != referenceTarget2) {
+            myDifferences.add(new ReferenceDifference(role, true, myMap.get(referenceTarget1), referenceTarget2));
+          }
+        } else {
+          if (referenceTarget1 != referenceTarget2) {
+            myDifferences.add(new ReferenceDifference(role, false, referenceTarget1, referenceTarget2));
+          }
         }
       }
     }
+
+    private static int countElements(Iterator<?> it) {
+      int counter = 0;
+      while (it.hasNext()) {
+        it.next();
+        counter++;
+      }
+      return counter;
+    }
+
+    private void matchChildren(SNode a, SNode b) {
+      HashSet<SContainmentLink> roles = new HashSet<SContainmentLink>();
+      for (SNode child : a.getChildren()) {
+        roles.add(child.getContainmentLink());
+      }
+      for (SNode child : b.getChildren()) {
+        roles.add(child.getContainmentLink());
+      }
+      for (SContainmentLink role : roles) {
+        Iterable<? extends SNode> children1 = a.getChildren(role);
+        Iterable<? extends SNode> children2 = b.getChildren(role);
+        int size1 = countElements(children1.iterator());
+        int size2 = countElements(children2.iterator());
+        if (size1 != size2) {
+          myDifferences.add(new ChildrenCountDifference(role, size1, size2));
+          continue;
+        }
+
+        Iterator<? extends SNode> iterator1 = children1.iterator();
+        Iterator<? extends SNode> iterator2 = children2.iterator();
+        while (iterator1.hasNext() && iterator2.hasNext()) {
+          match(iterator1.next(), iterator2.next());
+        }
+      }
+    }
+
+    private void matchProperties(SNode a, SNode b) {
+      HashSet<SProperty> properties = new HashSet<SProperty>();
+      for (SProperty p : a.getProperties()) {
+        properties.add(p);
+      }
+      for (SProperty p : b.getProperties()) {
+        properties.add(p);
+      }
+      for (SProperty key : properties) {
+        String p1 = a.getProperty(key);
+        String p2 = b.getProperty(key);
+        if (p1 == null && "false".equals(p2)) {
+          continue;
+        }
+        if (p2 == null && "false".equals(p1)) {
+          continue;
+        }
+        if (p1 == null || p2 == null || !(p1.equals(p2))) {
+          myDifferences.add(new PropertyDifference(key, p1, p2));
+        }
+      }
+    }
+
   }
 
-  private void matchProperties(SNode a, SNode b, ArrayList<DifferenceItem> difference) {
-    HashSet<SProperty> properties = new HashSet<SProperty>();
-    for (SProperty p : a.getProperties()) {
-      properties.add(p);
-    }
-    for (SProperty p : b.getProperties()) {
-      properties.add(p);
-    }
-    for (SProperty key : properties) {
-      String p1 = a.getProperty(key);
-      String p2 = b.getProperty(key);
-      if (p1 == null && "false".equals(p2)) {
-        continue;
-      }
-      if (p2 == null && "false".equals(p1)) {
-        continue;
-      }
-      if (p1 == null || p2 == null || !(p1.equals(p2))) {
-        difference.add(new PropertyDifference(key, p1, p2));
-      }
-    }
-  }
 }

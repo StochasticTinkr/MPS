@@ -7,11 +7,9 @@
     <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IConfigMonitor" file="IConfigMonitor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.make.MakeSession" />
     <classNode dependClassName="jetbrains.mps.make.script.IOption" />
-    <classNode dependClassName="jetbrains.mps.make.script.IProgress" />
     <classNode dependClassName="jetbrains.mps.make.script.IQuery" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.make.script.IJobMonitor" />
@@ -36,12 +34,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IJobMonitor" file="IJobMonitor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.make.MakeSession" />
     <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
-    <classNode dependClassName="jetbrains.mps.make.script.IProgress" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IOption" file="IOption.java">

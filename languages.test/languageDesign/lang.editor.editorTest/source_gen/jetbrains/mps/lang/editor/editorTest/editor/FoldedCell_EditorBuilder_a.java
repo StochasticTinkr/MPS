@@ -30,33 +30,33 @@ import javax.swing.JLabel;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_xdfm7p_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_xdfm7p_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_xdfm7p_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createConstant_xdfm7p_a0());
-    editorCell.addEditorCell(createJComponent_xdfm7p_b0());
+    setCellContext(editorCell);
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createJComponent_0());
     return editorCell;
   }
-  private EditorCell createConstant_xdfm7p_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Swing Label:");
     editorCell.setCellId("Constant_xdfm7p_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createJComponent_xdfm7p_b0() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_xdfm7p_a1a(), "_xdfm7p_b0");
-    editorCell.setCellId("JComponent_xdfm7p_b0");
+  private EditorCell createJComponent_0() {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_xdfm7p_a1a(), "JComponent_xdfm7p_b0");
+    editorCell.setCellId("JComponent_xdfm7p_b0_0");
     return editorCell;
   }
   private JComponent _QueryFunction_JComponent_xdfm7p_a1a() {
     return new JLabel("Label");
   }
-  private EditorCell createConstant_xdfm7p_a0_0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "NoComponent");
     editorCell.setCellId("Constant_xdfm7p_a0_0");
     editorCell.setDefaultText("");

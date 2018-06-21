@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ import java.util.function.Function;
  * @author Artem Tikhomirov
  * @since 3.4
  */
-public class ModelTransitions {
+public final class ModelTransitions {
   private TransitionTrace myActiveTransition;
   private List<CheckpointIdentity> myCheckpoints = new ArrayList<>(5);
 
@@ -81,5 +81,19 @@ public class ModelTransitions {
   @Nullable
   public CheckpointIdentity getMostRecentCheckpoint() {
     return myCheckpoints.isEmpty() ? null : myCheckpoints.get(myCheckpoints.size() - 1);
+  }
+
+  /**
+   * @return recorded snapshot of model transition states so that we can use new object for another plan branch
+   */
+  public ModelTransitions fork() {
+    if (myActiveTransition == null) {
+      throw new IllegalStateException("How come I need to fork when there's no ongoing transformation?");
+    }
+    ModelTransitions rv = new ModelTransitions();
+    rv.myCheckpoints.addAll(myCheckpoints);
+    CheckpointIdentity recentCheckpoint = getMostRecentCheckpoint();
+    rv.myActiveTransition = recentCheckpoint == null ? new TransitionTrace(rv) : new TransitionTrace(recentCheckpoint, rv);
+    return rv;
   }
 }

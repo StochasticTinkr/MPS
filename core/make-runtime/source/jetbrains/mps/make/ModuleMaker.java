@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -214,7 +214,7 @@ public final class ModuleMaker {
   private Set<SModule> buildDirtyModulesClosure(ModulesContainer modulesContainer, CompositeTracer tracer) {
     tracer.start(BUILDING_DIRTY_CLOSURE, 3);
     Set<SModule> candidates = modulesContainer.getModules();
-    tracer.push(CHECKING_DIRTY_MODULES_MSG, false);
+    tracer.push(CHECKING_DIRTY_MODULES_MSG);
     List<SModule> dirtyModules = new ArrayList<SModule>(candidates.size());
     for (SModule m : candidates) {
       if (modulesContainer.isDirty(m)) {
@@ -230,7 +230,7 @@ public final class ModuleMaker {
 
     Map<SModule, Set<SModule>> backDependencies = new HashMap<>();
 
-    tracer.push(BUILDING_BACK_DEPS_MSG, true);
+    tracer.push(BUILDING_BACK_DEPS_MSG);
     for (SModule m : candidates) {
       for (SModule dep : new GlobalModuleDependenciesManager(m).getModules(Deptype.COMPILE)) {
         Set<SModule> incoming = backDependencies.get(dep);

@@ -13,7 +13,9 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.BaseTestTreeNode" file="BaseTestTreeNode.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestState" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
@@ -177,8 +179,6 @@
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTreeIconAnimator" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestStatisticsRow" file="TestStatisticsRow.java">
     <classNode dependClassName="java.lang.String" />

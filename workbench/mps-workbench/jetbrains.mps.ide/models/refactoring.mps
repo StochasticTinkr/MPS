@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
@@ -2736,8 +2736,8 @@
                 <node concept="3clFbS" id="16Fpg60PyXC" role="SfCbr">
                   <node concept="3clFbF" id="7msLDqMEkym" role="3cqZAp">
                     <node concept="2YIFZM" id="684ZMLPnvvy" role="3clFbG">
-                      <ref role="37wK5l" to="smoa:~Renamer.renameModuleWithSubModules(jetbrains.mps.project.AbstractModule,java.lang.String,java.util.Collection):void" resolve="renameModuleWithSubModules" />
                       <ref role="1Pybhc" to="smoa:~Renamer" resolve="Renamer" />
+                      <ref role="37wK5l" to="smoa:~Renamer.renameModuleWithSubModules(jetbrains.mps.project.AbstractModule,java.lang.String,java.util.Collection,jetbrains.mps.project.Project):void" resolve="renameModuleWithSubModules" />
                       <node concept="37vLTw" id="684ZMLPnvvz" role="37wK5m">
                         <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
                       </node>
@@ -2746,6 +2746,9 @@
                       </node>
                       <node concept="37vLTw" id="684ZMLPn$9$" role="37wK5m">
                         <ref role="3cqZAo" node="52AFxJVoR3s" resolve="mySubModules" />
+                      </node>
+                      <node concept="37vLTw" id="44aRABLn0_F" role="37wK5m">
+                        <ref role="3cqZAo" node="2sTGsLqeK$D" resolve="myProject" />
                       </node>
                     </node>
                   </node>

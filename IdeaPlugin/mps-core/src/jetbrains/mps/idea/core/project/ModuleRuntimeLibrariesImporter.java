@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,11 +31,11 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.UsedModulesCollector;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -83,42 +83,45 @@ public abstract class ModuleRuntimeLibrariesImporter {
   }
 
   public void addMissingLibraries() {
-    Set<SModuleReference> alreadyImported = ModuleLibrariesUtil.getModules(ProjectHelper.getProjectRepository(myProject), myModifiableRootModel.getOrderEntries());
+    final SRepository projectRepository = ProjectHelper.getProjectRepository(myProject);
+    projectRepository.getModelAccess().runReadAction(() -> {
+      Set<SModuleReference> alreadyImported = ModuleLibrariesUtil.getModules(projectRepository, myModifiableRootModel.getOrderEntries());
 
-    Collection<Library> projectLibs2Add = new HashSet<Library>();
-    for (SModule usedModule : collectRuntimeModules(myAddedModules)) {
-      if (BootstrapLanguages.jdkRef().equals(usedModule.getModuleReference())) {
-        continue;
+      Collection<Library> projectLibs2Add = new HashSet<Library>();
+      for (SModule usedModule : collectRuntimeModules(projectRepository, myAddedModules)) {
+        if (BootstrapLanguages.jdkRef().equals(usedModule.getModuleReference())) {
+          continue;
+        }
+
+        if (alreadyImported.contains(usedModule.getModuleReference())) {
+          continue;
+        }
+
+        // todo how to deal with sdk stubs?
+
+        Library library = null;
+        if (usedModule instanceof StubSolutionIdea) {
+          library = StubSolutionIdea.findLibrary((StubSolutionIdea) usedModule);
+        } else {
+          library = ModuleLibrariesUtil.getOrCreateAutoLibrary((AbstractModule) usedModule, getProject(), myLibrariesContainer);
+        }
+
+        if (library != null) {
+          projectLibs2Add.add(library);
+        }
       }
 
-      if (alreadyImported.contains(usedModule.getModuleReference())) {
-        continue;
+      for (Library projectLibrary : projectLibs2Add) {
+        myModifiableRootModel.addLibraryEntry(projectLibrary);
       }
-
-      // todo how to deal with sdk stubs?
-
-      Library library = null;
-      if (usedModule instanceof StubSolutionIdea) {
-        library = StubSolutionIdea.findLibrary((StubSolutionIdea) usedModule);
-      } else {
-        library = ModuleLibrariesUtil.getOrCreateAutoLibrary((AbstractModule) usedModule, getProject(), myLibrariesContainer);
-      }
-
-      if (library != null) {
-        projectLibs2Add.add(library);
-      }
-    }
-
-    for (Library projectLibrary : projectLibs2Add) {
-      myModifiableRootModel.addLibraryEntry(projectLibrary);
-    }
+    });
   }
 
   private Project getProject() {
     return myLibrariesContainer.getProject();
   }
 
-  protected abstract Set<SModule> collectRuntimeModules(Collection<? extends SModuleReference> moduleReferences);
+  protected abstract Set<SModule> collectRuntimeModules(SRepository repository, Collection<? extends SModuleReference> moduleReferences);
 
   private static class UsedLanguagesImporter extends ModuleRuntimeLibrariesImporter {
 
@@ -131,20 +134,29 @@ public abstract class ModuleRuntimeLibrariesImporter {
     }
 
     @Override
-    protected Set<SModule> collectRuntimeModules(Collection<? extends SModuleReference> moduleReferences) {
+    protected Set<SModule> collectRuntimeModules(SRepository repository, Collection<? extends SModuleReference> moduleReferences) {
       Set<SModule> runtimeDependencies = new HashSet<SModule>();
       UsedModulesCollector usedModulesCollector = new UsedModulesCollector();
       for (SModuleReference moduleReference : moduleReferences) {
-        Language language = ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
-        LOG.assertTrue(language != null, "Can not find language by reference " + moduleReference);
-        collectRuntimeModules(runtimeDependencies, language, usedModulesCollector);
+        SModule module = moduleReference.resolve(repository);
+        if (module == null) {
+          // module is absent, e.g. its providing plugin is not enabled
+          continue;
+        }
+        LOG.assertTrue(module != null, "Can not find language by reference " + moduleReference);
+        if (false == module instanceof Language) {
+          continue;
+        }
+        Language language = (Language) module;
+        // XXX this code is suspicious, why do we use Language module to collect runtime dependencies. Why not SLanguage?
+        collectRuntimeModules(repository, runtimeDependencies, language, usedModulesCollector);
       }
       return runtimeDependencies;
     }
 
-    private void collectRuntimeModules(Set<SModule> runtimeDependencies, Language language, UsedModulesCollector usedModulesCollector) {
+    private void collectRuntimeModules(SRepository repository, Set<SModule> runtimeDependencies, Language language, UsedModulesCollector usedModulesCollector) {
       for (SModuleReference runtimeModuleReference : language.getRuntimeModulesReferences()) {
-        SModule runtimeModule = ModuleRepositoryFacade.getInstance().getModule(runtimeModuleReference);
+        SModule runtimeModule = runtimeModuleReference.resolve(repository);
         if (runtimeModule != null) {
           collectRuntimeDependencies(runtimeModule, runtimeDependencies, usedModulesCollector);
         }
@@ -157,6 +169,7 @@ public abstract class ModuleRuntimeLibrariesImporter {
         return;
       }
       result.add(module);
+      // XXX usedModulesCollector.directlyUsedModules relies on module.getRepository()
       for (SModule usedModule : usedModulesCollector.directlyUsedModules(module, Deptype.EXECUTE.reexportAll, Deptype.EXECUTE.runtimes)) {
         collectRuntimeDependencies(usedModule, result, usedModulesCollector);
       }
@@ -169,10 +182,10 @@ public abstract class ModuleRuntimeLibrariesImporter {
     }
 
     @Override
-    protected Set<SModule> collectRuntimeModules(Collection<? extends SModuleReference> moduleReferences) {
+    protected Set<SModule> collectRuntimeModules(SRepository repository, Collection<? extends SModuleReference> moduleReferences) {
       Set<SModule> runtimeDependencies = new HashSet<SModule>();
       for (SModuleReference moduleReference : moduleReferences) {
-        SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
+        SModule module = moduleReference.resolve(repository);
         collectRuntimeModules(runtimeDependencies, module);
       }
       return runtimeDependencies;

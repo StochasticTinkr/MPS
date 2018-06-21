@@ -24,14 +24,14 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
   }
 
   /*package*/ EditorCell createCell() {
-    return createNextEditor_nejlv4_a();
+    return createNextEditor_0();
   }
 
-  private EditorCell createNextEditor_nejlv4_a() {
+  private EditorCell createNextEditor_0() {
     {
       EditorCell editorCell = getCellFactory().createEditorCell(myNode, true, Expression_VisibleExpressionBoundaries_Editor.class);
       editorCell.setBig(true);
-      editorCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(editorCell);
       return editorCell;
     }
   }

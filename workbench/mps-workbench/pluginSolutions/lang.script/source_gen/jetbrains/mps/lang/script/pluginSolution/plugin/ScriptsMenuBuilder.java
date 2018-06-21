@@ -19,7 +19,7 @@ import jetbrains.mps.workbench.action.BaseGroup;
   private List<SNode> allScripts;
   public ScriptsMenuBuilder(MPSProject mpsProject, boolean applyToSelection) {
     this.applyToSelection = applyToSelection;
-    this.allLanguages = ListSequence.fromListWithValues(new ArrayList<Language>(), ModuleRepositoryFacade.getInstance().getAllModules(Language.class));
+    this.allLanguages = ListSequence.fromListWithValues(new ArrayList<Language>(), new ModuleRepositoryFacade(mpsProject).getAllModules(Language.class));
     ListSequence.fromList(this.allLanguages).sort(new Comparator<Language>() {
       public int compare(Language l1, Language l2) {
         return l1.getModuleName().compareTo(l2.getModuleName());

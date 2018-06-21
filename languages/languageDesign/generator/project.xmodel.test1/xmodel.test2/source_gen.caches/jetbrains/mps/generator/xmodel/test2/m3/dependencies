@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.generator.xmodel.test2.m3.Bean3" file="Bean3.java">
+    <classNode dependClassName="jetbrains.mps.generator.xmodel.test.m1.Bean1" />
+  </dependency>
+</dependenciesRoot>
+

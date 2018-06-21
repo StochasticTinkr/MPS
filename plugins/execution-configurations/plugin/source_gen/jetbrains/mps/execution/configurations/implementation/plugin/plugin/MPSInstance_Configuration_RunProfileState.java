@@ -15,11 +15,6 @@ import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import java.io.File;
-import com.intellij.execution.process.ProcessAdapter;
-import com.intellij.execution.process.ProcessEvent;
-import jetbrains.mps.util.FileUtil;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
@@ -50,18 +45,7 @@ public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfil
     Project project = myEnvironment.getProject();
     ProcessHandler process;
 
-    final Tuples._2<File, File> files = myRunConfiguration.getMpsSettings().prepareFilesToOpenAndToDelete(project);
-    process = new Mps_Command().setVirtualMachineParameters_String(myRunConfiguration.getMpsSettings().getVmOptions()).setJrePath_String(myRunConfiguration.getMpsSettings().getJrePath()).setConfigurationPath_String(myRunConfiguration.getMpsSettings().expandPath(myRunConfiguration.getMpsSettings().getConfigurationPath())).setSystemPath_String(myRunConfiguration.getMpsSettings().expandPath(myRunConfiguration.getMpsSettings().getSystemPath())).setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(files._0());
-    if (files._1() != null) {
-      process.addProcessListener(new ProcessAdapter() {
-        @Override
-        public void processTerminated(ProcessEvent event) {
-          super.processTerminated(event);
-          FileUtil.delete(files._1());
-        }
-      });
-    }
-
+    process = new Mps_Command().setVirtualMachineParameters_String(myRunConfiguration.getMpsSettings().getVmOptions()).setJrePath_String(myRunConfiguration.getMpsSettings().getJrePath()).setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(myRunConfiguration.getMpsSettings().getExpandedSettingsPath());
     ConsoleView console = ConsoleCreator.createConsoleView(project, false);
     console.addMessageFilter(new StandaloneMPSStackTraceFilter(project));
     {

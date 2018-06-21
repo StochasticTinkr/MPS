@@ -208,13 +208,14 @@
       <keyboard-shortcut first-keystroke="alt shift M" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action" class="jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action">
-      <keyboard-shortcut first-keystroke="ctrl shift OPEN_BRACKET" keymap="$default" />
+      <keyboard-shortcut first-keystroke="ctrl OPEN_BRACKET" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action" class="jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action">
-      <keyboard-shortcut first-keystroke="ctrl shift CLOSE_BRACKET" keymap="$default" />
+      <keyboard-shortcut first-keystroke="ctrl shift OPEN_BRACKET" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action" class="jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action">
-      <keyboard-shortcut first-keystroke="ctrl shift P" keymap="$default" />
+      <keyboard-shortcut first-keystroke="ctrl CLOSE_BRACKET" keymap="$default" />
+      <keyboard-shortcut first-keystroke="ctrl shift CLOSE_BRACKET" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action" class="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action">
       <keyboard-shortcut first-keystroke="ctrl alt T" keymap="$default" />

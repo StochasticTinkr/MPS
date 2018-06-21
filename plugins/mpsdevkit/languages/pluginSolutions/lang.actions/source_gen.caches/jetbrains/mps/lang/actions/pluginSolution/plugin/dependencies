@@ -1,20 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.actions.pluginSolution.plugin.ActionsMenuAdjustment_CustomApplicationPlugin" file="ActionsMenuAdjustment_CustomApplicationPlugin.java">
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.CreateRootFilterEP" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.actions.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.pluginSolution.plugin.ActionsMenuAdjustment_CustomApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
-    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
-  </dependency>
-</dependenciesRoot>
+<dependenciesRoot />
 

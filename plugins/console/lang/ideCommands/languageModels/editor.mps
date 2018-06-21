@@ -8,14 +8,10 @@
   <imports>
     <import index="caxt" ref="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
-    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
-    <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
     <import index="n8mm" ref="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.lang.smodel.query.editor)" />
     <import index="tpep" ref="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" />
-    <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
@@ -30,9 +26,6 @@
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" flags="nn" index="0IXxy" />
-      <concept id="2000375450116454183" name="jetbrains.mps.lang.editor.structure.ISubstituteMenu" flags="ng" index="22mbnS">
-        <child id="414384289274416996" name="parts" index="3ft7WO" />
-      </concept>
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1597643335227097138" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_node" flags="ng" index="7Obwk" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
@@ -61,7 +54,6 @@
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
-      <concept id="615427434521884870" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Subconcepts" flags="ng" index="2VfDsV" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
@@ -69,9 +61,6 @@
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
         <reference id="6591946374543067572" name="conceptDeclaration" index="aqKnT" />
-      </concept>
-      <concept id="414384289274424754" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept" flags="ng" index="3ft5Ry">
-        <reference id="697754674827630451" name="concept" index="4PJHt" />
       </concept>
       <concept id="1139535219966" name="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" flags="ig" index="1h_SRR">
         <reference id="1139535219968" name="applicableConcept" index="1h_SK9" />
@@ -274,7 +263,7 @@
     <property role="3GE5qa" value="stat" />
     <ref role="1XX52x" to="caxt:6vMIJHUnaQm" resolve="ModelStatisticsTarget" />
     <node concept="3F1sOY" id="6vMIJHUnaQO" role="2wV5jI">
-      <ref role="1NtTu8" to="caxt:6vMIJHUnaQp" resolve="target" />
+      <ref role="1NtTu8" to="caxt:4xqDcS7DICf" resolve="target" />
     </node>
   </node>
   <node concept="24kQdi" id="1NRmRaKF8Rh">
@@ -384,7 +373,7 @@
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="3F1sOY" id="67MRmR$$e2q" role="3EZMnx">
-        <ref role="1NtTu8" to="caxt:67MRmR$vSpU" resolve="targetModel" />
+        <ref role="1NtTu8" to="caxt:73IzULxmOWN" resolve="targetModel" />
       </node>
     </node>
   </node>
@@ -554,7 +543,7 @@
   </node>
   <node concept="24kQdi" id="59iQg8rz2HX">
     <property role="3GE5qa" value="expression.callAction" />
-    <ref role="1XX52x" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation" />
+    <ref role="1XX52x" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation_old" />
     <node concept="3EZMnI" id="3ZZC$G5C4uw" role="2wV5jI">
       <node concept="PMmxH" id="2wdLO7KhY6T" role="3EZMnx">
         <property role="1cu_pB" value="0" />
@@ -566,7 +555,7 @@
         <ref role="1k5W1q" to="tp2u:hGdV7pS" resolve="LeftAngleBracket" />
       </node>
       <node concept="1iCGBv" id="7Nk8HJUuNkV" role="3EZMnx">
-        <ref role="1NtTu8" to="caxt:7Nk8HJUuKrS" resolve="requestedAspect" />
+        <ref role="1NtTu8" to="caxt:7Nk8HJUuKrS" resolve="requestedAspect_old" />
         <node concept="1sVBvm" id="7Nk8HJUuNkZ" role="1sWHZn">
           <node concept="3F0A7n" id="7Nk8HJUuNld" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -1060,20 +1049,10 @@
   </node>
   <node concept="3p36aQ" id="1wEcoXjJ7K5">
     <property role="3GE5qa" value="make" />
-    <ref role="aqKnT" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation" />
-    <node concept="2VfDsV" id="1wEcoXjJ7K9" role="3ft7WO" />
-    <node concept="3ft5Ry" id="1wEcoXjJ7Ka" role="3ft7WO">
-      <ref role="4PJHt" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation" />
-    </node>
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJ7Kb">
-    <ref role="aqKnT" to="caxt:7mV0m3L$tRZ" resolve="UnloadModelsCommand" />
+    <ref role="aqKnT" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation_old" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjJ7Kc">
     <ref role="aqKnT" to="caxt:4PRmqZe_ouN" resolve="ModuleProperties" />
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJ7Ke">
-    <ref role="aqKnT" to="caxt:7mV0m3L$tW2" resolve="RebuildProjectCommand" />
   </node>
 </model>
 

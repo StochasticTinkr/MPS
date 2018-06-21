@@ -10,8 +10,9 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFacto
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.project.ProjectHelper;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -44,19 +45,20 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
 
   @Override
   protected String getFqName(ITestNodeWrapper element) {
-    return element.getCachedFqName();
+    return element.getFqName();
   }
 
   @Override
   protected List<ITestNodeWrapper> collectCandidates(final ProgressMonitor progress) {
-    final SRepository repo = ProjectHelper.fromIdeaProject(myProject).getRepository();
+    final MPSProject mpsProject = ProjectHelper.fromIdeaProject(myProject);
+    final SRepository repo = mpsProject.getRepository();
     return new ModelAccessHelper(repo).runReadAction(new Computable<List<ITestNodeWrapper>>() {
       public List<ITestNodeWrapper> compute() {
         List<SNode> nodesList = new ArrayList<SNode>();
         Iterable<SAbstractConcept> wrappedRootConcepts = TestNodeWrapperFactory.getWrappedRootConcepts();
         progress.start("Looking up...", Sequence.fromIterable(wrappedRootConcepts).count());
         for (SAbstractConcept c : Sequence.fromIterable(wrappedRootConcepts)) {
-          Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c), false, progress.subTask(1, SubProgressKind.REPLACING));
+          Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(new ProjectScope(mpsProject), Collections.singleton(c), false, progress.subTask(1, SubProgressKind.REPLACING));
           ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(usages));
         }
         progress.done();

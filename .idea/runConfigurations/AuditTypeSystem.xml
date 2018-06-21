@@ -23,6 +23,9 @@
     <ConfigurationWrapper RunnerId="Run" />
     <method>
       <option name="AntTarget" enabled="true" antfile="file://$PROJECT_DIR$/testbench/cleanup.xml" target="cleanup" />
+      <option name="BuildArtifacts" enabled="true">
+        <artifact name="migration-platform" />
+      </option>
     </method>
   </configuration>
 </component>

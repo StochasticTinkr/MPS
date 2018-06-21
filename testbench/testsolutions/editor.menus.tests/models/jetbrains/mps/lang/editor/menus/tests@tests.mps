@@ -10,7 +10,7 @@
     <use id="9b3af7e0-9a52-4741-a75d-becf7e1d5117" name="jetbrains.mps.lang.editor.menus.testExtendingLanguage" version="-1" />
     <use id="69068b7c-ba1f-47fb-a486-4981f42606e9" name="jetbrains.mps.lang.editor.menus.testMetaLanguage" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
   </languages>
   <imports>
@@ -425,6 +425,11 @@
         <child id="5339489019635910985" name="node" index="1NpImK" />
       </concept>
     </language>
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
+        <reference id="7256306938026143658" name="target" index="2aWVGs" />
+      </concept>
+    </language>
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
       <concept id="8427750732757990717" name="jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert" flags="nn" index="3tpDYu">
         <child id="8427750732757990725" name="actual" index="3tpDZA" />
@@ -452,6 +457,9 @@
         <child id="3542851458883491298" name="languageId" index="2V$M_3" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
+        <child id="7400021826774799510" name="ref" index="2tJFKM" />
+      </concept>
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -463,9 +471,6 @@
       </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
-      </concept>
-      <concept id="1828409047608048457" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="nn" index="1N_AGu">
-        <reference id="1828409047608048458" name="referentNode" index="1N_AGt" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
@@ -981,8 +986,10 @@
             <ref role="1Pybhc" node="229s7wVDmym" resolve="MenuLoadingUtils" />
             <ref role="37wK5l" node="5oiZ4v5db60" resolve="loadNamedMenu" />
             <node concept="369mXd" id="5oiZ4v5mbtA" role="37wK5m" />
-            <node concept="1N_AGu" id="5oiZ4v5mbtB" role="37wK5m">
-              <ref role="1N_AGt" to="j2fg:5oiZ4v5mfRL" resolve="WithNonExecutableAction" />
+            <node concept="2tJFMh" id="7uvxILPmWSO" role="37wK5m">
+              <node concept="ZC_QK" id="7uvxILPmWSN" role="2tJFKM">
+                <ref role="2aWVGs" to="j2fg:5oiZ4v5mfRL" resolve="WithNonExecutableAction" />
+              </node>
             </node>
             <node concept="Xl_RD" id="5oiZ4v5mbtC" role="37wK5m">
               <property role="Xl_RC" value="test location" />
@@ -1061,8 +1068,10 @@
             <ref role="37wK5l" node="5oiZ4v5db60" resolve="loadNamedMenu" />
             <ref role="1Pybhc" node="229s7wVDmym" resolve="MenuLoadingUtils" />
             <node concept="369mXd" id="5oiZ4v5qmJS" role="37wK5m" />
-            <node concept="1N_AGu" id="5oiZ4v5qmJT" role="37wK5m">
-              <ref role="1N_AGt" to="j2fg:5oiZ4v5qnDK" resolve="WithExecutableAction" />
+            <node concept="2tJFMh" id="7uvxILPmWSQ" role="37wK5m">
+              <node concept="ZC_QK" id="7uvxILPmWSP" role="2tJFKM">
+                <ref role="2aWVGs" to="j2fg:5oiZ4v5qnDK" resolve="WithExecutableAction" />
+              </node>
             </node>
             <node concept="Xl_RD" id="5oiZ4v5qmJU" role="37wK5m">
               <property role="Xl_RC" value="test location" />
@@ -1241,8 +1250,10 @@
             <ref role="37wK5l" node="5oiZ4v5db60" resolve="loadNamedMenu" />
             <ref role="1Pybhc" node="229s7wVDmym" resolve="MenuLoadingUtils" />
             <node concept="369mXd" id="5oiZ4v5c4D6" role="37wK5m" />
-            <node concept="1N_AGu" id="5oiZ4v5cCLE" role="37wK5m">
-              <ref role="1N_AGt" to="j2fg:5oiZ4v5c5_K" resolve="NamedTestMenu" />
+            <node concept="2tJFMh" id="7uvxILPmWSI" role="37wK5m">
+              <node concept="ZC_QK" id="7uvxILPmWSH" role="2tJFKM">
+                <ref role="2aWVGs" to="j2fg:5oiZ4v5c5_K" resolve="NamedTestMenu" />
+              </node>
             </node>
             <node concept="Xl_RD" id="5oiZ4v5c4D7" role="37wK5m">
               <property role="Xl_RC" value="test location" />
@@ -1361,8 +1372,10 @@
             <ref role="1Pybhc" node="229s7wVDmym" resolve="MenuLoadingUtils" />
             <ref role="37wK5l" node="5oiZ4v5db60" resolve="loadNamedMenu" />
             <node concept="369mXd" id="33LYnHO_$rN" role="37wK5m" />
-            <node concept="1N_AGu" id="33LYnHO_$rO" role="37wK5m">
-              <ref role="1N_AGt" to="j2fg:33LYnHO_wMY" resolve="ContributedToFromUnusedLanguage" />
+            <node concept="2tJFMh" id="7uvxILPmWSU" role="37wK5m">
+              <node concept="ZC_QK" id="7uvxILPmWST" role="2tJFKM">
+                <ref role="2aWVGs" to="j2fg:33LYnHO_wMY" resolve="ContributedToFromUnusedLanguage" />
+              </node>
             </node>
             <node concept="Xl_RD" id="33LYnHO_$rP" role="37wK5m">
               <property role="Xl_RC" value="test location" />
@@ -1420,8 +1433,10 @@
             <ref role="1Pybhc" node="229s7wVDmym" resolve="MenuLoadingUtils" />
             <ref role="37wK5l" node="5oiZ4v5db60" resolve="loadNamedMenu" />
             <node concept="369mXd" id="33LYnHOC7QM" role="37wK5m" />
-            <node concept="1N_AGu" id="33LYnHOC7QN" role="37wK5m">
-              <ref role="1N_AGt" to="j2fg:33LYnHOC7cL" resolve="ContributedToFromUsedLanguage" />
+            <node concept="2tJFMh" id="7uvxILPmWSS" role="37wK5m">
+              <node concept="ZC_QK" id="7uvxILPmWSR" role="2tJFKM">
+                <ref role="2aWVGs" to="j2fg:33LYnHOC7cL" resolve="ContributedToFromUsedLanguage" />
+              </node>
             </node>
             <node concept="Xl_RD" id="33LYnHOC7QO" role="37wK5m">
               <property role="Xl_RC" value="test location" />
@@ -2302,8 +2317,10 @@
             <ref role="1Pybhc" node="229s7wVDmym" resolve="MenuLoadingUtils" />
             <ref role="37wK5l" node="5oiZ4v5db60" resolve="loadNamedMenu" />
             <node concept="369mXd" id="20vEJZ2C19p" role="37wK5m" />
-            <node concept="1N_AGu" id="20vEJZ2C19q" role="37wK5m">
-              <ref role="1N_AGt" to="j2fg:4yPLZV9qC8H" resolve="WithNestedVariables" />
+            <node concept="2tJFMh" id="7uvxILPmWSM" role="37wK5m">
+              <node concept="ZC_QK" id="7uvxILPmWSL" role="2tJFKM">
+                <ref role="2aWVGs" to="j2fg:4yPLZV9qC8H" resolve="WithNestedVariables" />
+              </node>
             </node>
             <node concept="Xl_RD" id="20vEJZ2C19r" role="37wK5m">
               <property role="Xl_RC" value="test location" />
@@ -2474,8 +2491,10 @@
             <ref role="37wK5l" node="5oiZ4v5db60" resolve="loadNamedMenu" />
             <ref role="1Pybhc" node="229s7wVDmym" resolve="MenuLoadingUtils" />
             <node concept="369mXd" id="7N9KcaJ7B0x" role="37wK5m" />
-            <node concept="1N_AGu" id="7N9KcaJ7B0y" role="37wK5m">
-              <ref role="1N_AGt" to="j2fg:7N9KcaJ6PXg" resolve="MenuForEmptyCell" />
+            <node concept="2tJFMh" id="7uvxILPmWSK" role="37wK5m">
+              <node concept="ZC_QK" id="7uvxILPmWSJ" role="2tJFKM">
+                <ref role="2aWVGs" to="j2fg:7N9KcaJ6PXg" resolve="MenuForEmptyCell" />
+              </node>
             </node>
             <node concept="Xl_RD" id="7N9KcaJ7B0z" role="37wK5m">
               <property role="Xl_RC" value="test location" />

@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.Icon;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
@@ -31,7 +31,7 @@ public class MyBlockCreationAction implements PaletteToggleAction {
     myDiagramCell.getContext().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         myText = SPropertyOperations.getString(block, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-        myIcon = IconManager.getIconFor(myMetaBlock);
+        myIcon = GlobalIconManager.getInstance().getIconFor(myMetaBlock);
       }
     });
   }
@@ -49,8 +49,8 @@ public class MyBlockCreationAction implements PaletteToggleAction {
             public void run() {
               SNode newBlockInstance = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance"));
               SLinkOperations.setTarget(newBlockInstance, MetaAdapterFactory.getReferenceLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec4404a9L, "metaBlock"), myMetaBlock);
-              SPropertyOperations.set(newBlockInstance, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec440489L, "x"), "" + (event.x()));
-              SPropertyOperations.set(newBlockInstance, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec44048aL, "y"), "" + (event.y()));
+              SPropertyOperations.assign(newBlockInstance, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec440489L, "x"), "" + (event.x()));
+              SPropertyOperations.assign(newBlockInstance, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec44048aL, "y"), "" + (event.y()));
               ListSequence.fromList(SLinkOperations.getChildren(((SNode) myDiagramCell.getSNode()), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0x20a804e2ec43f4b6L, "newBlocks"))).addElement(newBlockInstance);
             }
           });

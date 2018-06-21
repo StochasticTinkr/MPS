@@ -9,7 +9,9 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -50,138 +52,144 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_2eo8r0_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_2eo8r0_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_2eo8r0_a");
-    editorCell.addEditorCell(createTransactionalProperty_2eo8r0_a0());
-    editorCell.addEditorCell(createCollection_2eo8r0_b0());
+    editorCell.addEditorCell(createTransactionalProperty_0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createTransactionalProperty_2eo8r0_a0() {
-    CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
-    provider.setRole("theProperty");
-    EditorCell_Property editorCell = null;
-    {
-      ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, "theProperty", false, false, getEditorContext()) {
-        public void doCommit(final String oldValue, final String newValue) {
-          doCommitImpl(oldValue, newValue);
-        }
-        public void doCommitImpl(final String oldValue, final String newValue) {
-        }
-      };
-      editorCell = EditorCell_Property.create(getEditorContext(), modelAccessor, myNode);
-      editorCell.setCellId("TransactionalProperty_2eo8r0_a0");
-      Style style = new StyleImpl();
-      new testStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
-      new testKey_StyleKey().apply(style);
-      if (_StyleParameter_QueryFunction_2eo8r0_a2a0()) {
+  private EditorCell createTransactionalProperty_0() {
+    getCellFactory().pushCellContext();
+    try {
+      SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL, 0xbde89531aae3a9L, "theProperty");
+      getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
+      PropertyCellProvider provider = new PropertyCellProvider(myNode, property, getEditorContext());
+      EditorCell_Property editorCell = null;
+      {
+        ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, property, false, false, getEditorContext()) {
+          public void doCommit(final String oldValue, final String newValue) {
+            doCommitImpl(oldValue, newValue);
+          }
+          public void doCommitImpl(final String oldValue, final String newValue) {
+          }
+        };
+        editorCell = EditorCell_Property.create(getEditorContext(), modelAccessor, myNode);
+        editorCell.setCellId("TransactionalProperty_2eo8r0_a0");
+        Style style = new StyleImpl();
         new testStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+        new testKey_StyleKey().apply(style);
+        if (_StyleParameter_QueryFunction_2eo8r0_a2a0()) {
+          new testStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+        }
+        if (_StyleParameter_QueryFunction_2eo8r0_a3a0()) {
+          new testStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+        }
+        style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.test.generation", "testStringAttribute"), _StyleParameter_QueryFunction_2eo8r0_a4a0());
+        style.set(StyleAttributes.AUTO_DELETABLE, true);
+        style.set(StyleAttributes.AUTO_DELETABLE, _StyleParameter_QueryFunction_2eo8r0_a6a0());
+        style.set(StyleAttributes.BASE_LINE_CELL, true);
+        style.set(StyleAttributes.BASE_LINE_CELL, _StyleParameter_QueryFunction_2eo8r0_a8a0());
+        style.set(StyleAttributes.DRAW_BORDER, false);
+        style.set(StyleAttributes.DRAW_BORDER, _StyleParameter_QueryFunction_2eo8r0_a01a0());
+        style.set(StyleAttributes.DRAW_BRACKETS, false);
+        style.set(StyleAttributes.DRAW_BRACKETS, _StyleParameter_QueryFunction_2eo8r0_a21a0());
+        style.set(StyleAttributes.EDITABLE, false);
+        style.set(StyleAttributes.EDITABLE, _StyleParameter_QueryFunction_2eo8r0_a41a0());
+        style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+        style.set(StyleAttributes.FIRST_POSITION_ALLOWED, _StyleParameter_QueryFunction_2eo8r0_a61a0());
+        style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+        style.set(StyleAttributes.INDENT_LAYOUT_INDENT, _StyleParameter_QueryFunction_2eo8r0_a81a0());
+        style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, _StyleParameter_QueryFunction_2eo8r0_a02a0());
+        style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+        style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, _StyleParameter_QueryFunction_2eo8r0_a22a0());
+        style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+        style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, _StyleParameter_QueryFunction_2eo8r0_a42a0());
+        style.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
+        style.set(StyleAttributes.LAST_POSITION_ALLOWED, _StyleParameter_QueryFunction_2eo8r0_a62a0());
+        style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        style.set(StyleAttributes.PUNCTUATION_LEFT, _StyleParameter_QueryFunction_2eo8r0_a82a0());
+        style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+        style.set(StyleAttributes.PUNCTUATION_RIGHT, _StyleParameter_QueryFunction_2eo8r0_a03a0());
+        style.set(StyleAttributes.READ_ONLY, true);
+        style.set(StyleAttributes.READ_ONLY, _StyleParameter_QueryFunction_2eo8r0_a23a0());
+        style.set(StyleAttributes.SELECTABLE, true);
+        style.set(StyleAttributes.SELECTABLE, _StyleParameter_QueryFunction_2eo8r0_a43a0());
+        style.set(StyleAttributes.STRIKE_OUT, true);
+        style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_2eo8r0_a63a0());
+        style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
+        style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_2eo8r0_a83a0()));
+        style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
+        style.set(StyleAttributes.BACKGROUND_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_2eo8r0_a04a0().o1 : _StyleParameter_QueryFunction_2eo8r0_a04a0().o2));
+        style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+        style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_2eo8r0_a24a0()));
+        style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
+        style.set(StyleAttributes.BRACKETS_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_2eo8r0_a44a0().o1 : _StyleParameter_QueryFunction_2eo8r0_a44a0().o2));
+        style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan)));
+        style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_2eo8r0_a64a0()));
+        style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
+        style.set(StyleAttributes.TEXT_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_2eo8r0_a84a0().o1 : _StyleParameter_QueryFunction_2eo8r0_a84a0().o2));
+        style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+        style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_2eo8r0_a05a0()));
+        style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
+        style.set(StyleAttributes.NULL_TEXT_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_2eo8r0_a25a0().o1 : _StyleParameter_QueryFunction_2eo8r0_a25a0().o2));
+        style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+        style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_2eo8r0_a45a0()));
+        style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
+        style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_2eo8r0_a65a0().o1 : _StyleParameter_QueryFunction_2eo8r0_a65a0().o2));
+        style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan));
+        style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_2eo8r0_a85a0()));
+        style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
+        style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_2eo8r0_a06a0().o1 : _StyleParameter_QueryFunction_2eo8r0_a06a0().o2));
+        style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.LAST);
+        style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.FIRST);
+        style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.LAST);
+        style.set(StyleAttributes.HORIZONTAL_GAP, new Padding(12, Measure.SPACES));
+        style.set(StyleAttributes.PADDING_BOTTOM, new Padding(1, Measure.PIXELS));
+        style.set(StyleAttributes.PADDING_LEFT, new Padding(1, Measure.SPACES));
+        style.set(StyleAttributes.PADDING_RIGHT, new Padding(0, Measure.SPACES));
+        style.set(StyleAttributes.PADDING_TOP, new Padding(0, Measure.SPACES));
+        style.set(StyleAttributes.FONT_SIZE, 15);
+        style.set(StyleAttributes.FONT_SIZE, _StyleParameter_QueryFunction_2eo8r0_a07a0());
+        style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+        style.set(StyleAttributes.FONT_STYLE, _StyleParameter_QueryFunction_2eo8r0_a27a0());
+        style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
+        style.set(StyleAttributes.LAYOUT_CONSTRAINT, "noflow");
+        style.set(StyleAttributes.MATCHING_LABEL, (String) null);
+        style.set(StyleAttributes.MATCHING_LABEL, "labelName");
+        style.set(StyleAttributes.MATCHING_LABEL, matchingNode_2eo8r0_a77a0());
+        style.set(StyleAttributes.MAX_WIDTH, 10);
+        style.set(StyleAttributes.MAX_WIDTH, _StyleParameter_QueryFunction_2eo8r0_a97a0());
+        style.set(StyleAttributes.NAVIGATABLE_NODE, _StyleParameter_QueryFunction_2eo8r0_a08a0());
+        style.set(StyleAttributes.NAVIGATABLE_SREFERENCE, MetaAdapterFactory.getReferenceLink(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a681a1L, 0xbde895319b644cL, "navigable"));
+        style.set(StyleAttributes.PARAMETERS_INFORMATION, new TestTargetParametersInformation());
+        style.set(StyleAttributes.POSITION_CHILDREN, "next-line");
+        style.set(StyleAttributes.POSITION, "indented");
+        style.set(StyleAttributes.SHOW_BOUNDARIES_IN, ShowBoundariesArea.GUTTER_AND_EDITOR);
+        style.set(StyleAttributes.TABLE_COMPONENT, TableComponent.VERTICAL_COLLECTION);
+        new testStyleStyleClass(getEditorContext(), getNode()).unapply(style, editorCell);
+        new testKey_StyleKey().unapply(style);
+        style.set(StyleAttributes.UNDERLINED, false);
+        style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_2eo8r0_a09a0());
+        editorCell.getStyle().putAll(style);
+        editorCell.setDefaultText("<no theProperty>");
+        setCellContext(editorCell);
+        editorCell.setCommitInCommand(false);
       }
-      if (_StyleParameter_QueryFunction_2eo8r0_a3a0()) {
-        new testStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
-      }
-      style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.test.generation", "testStringAttribute"), _StyleParameter_QueryFunction_2eo8r0_a4a0());
-      style.set(StyleAttributes.AUTO_DELETABLE, true);
-      style.set(StyleAttributes.AUTO_DELETABLE, _StyleParameter_QueryFunction_2eo8r0_a6a0());
-      style.set(StyleAttributes.BASE_LINE_CELL, true);
-      style.set(StyleAttributes.BASE_LINE_CELL, _StyleParameter_QueryFunction_2eo8r0_a8a0());
-      style.set(StyleAttributes.DRAW_BORDER, false);
-      style.set(StyleAttributes.DRAW_BORDER, _StyleParameter_QueryFunction_2eo8r0_a01a0());
-      style.set(StyleAttributes.DRAW_BRACKETS, false);
-      style.set(StyleAttributes.DRAW_BRACKETS, _StyleParameter_QueryFunction_2eo8r0_a21a0());
-      style.set(StyleAttributes.EDITABLE, false);
-      style.set(StyleAttributes.EDITABLE, _StyleParameter_QueryFunction_2eo8r0_a41a0());
-      style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-      style.set(StyleAttributes.FIRST_POSITION_ALLOWED, _StyleParameter_QueryFunction_2eo8r0_a61a0());
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, _StyleParameter_QueryFunction_2eo8r0_a81a0());
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, _StyleParameter_QueryFunction_2eo8r0_a02a0());
-      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, _StyleParameter_QueryFunction_2eo8r0_a22a0());
-      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, _StyleParameter_QueryFunction_2eo8r0_a42a0());
-      style.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
-      style.set(StyleAttributes.LAST_POSITION_ALLOWED, _StyleParameter_QueryFunction_2eo8r0_a62a0());
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, _StyleParameter_QueryFunction_2eo8r0_a82a0());
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, _StyleParameter_QueryFunction_2eo8r0_a03a0());
-      style.set(StyleAttributes.READ_ONLY, true);
-      style.set(StyleAttributes.READ_ONLY, _StyleParameter_QueryFunction_2eo8r0_a23a0());
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.SELECTABLE, _StyleParameter_QueryFunction_2eo8r0_a43a0());
-      style.set(StyleAttributes.STRIKE_OUT, true);
-      style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_2eo8r0_a63a0());
-      style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
-      style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_2eo8r0_a83a0()));
-      style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
-      style.set(StyleAttributes.BACKGROUND_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_2eo8r0_a04a0().o1 : _StyleParameter_QueryFunction_2eo8r0_a04a0().o2));
-      style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-      style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_2eo8r0_a24a0()));
-      style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
-      style.set(StyleAttributes.BRACKETS_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_2eo8r0_a44a0().o1 : _StyleParameter_QueryFunction_2eo8r0_a44a0().o2));
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan)));
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_2eo8r0_a64a0()));
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
-      style.set(StyleAttributes.TEXT_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_2eo8r0_a84a0().o1 : _StyleParameter_QueryFunction_2eo8r0_a84a0().o2));
-      style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-      style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_2eo8r0_a05a0()));
-      style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
-      style.set(StyleAttributes.NULL_TEXT_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_2eo8r0_a25a0().o1 : _StyleParameter_QueryFunction_2eo8r0_a25a0().o2));
-      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_2eo8r0_a45a0()));
-      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
-      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_2eo8r0_a65a0().o1 : _StyleParameter_QueryFunction_2eo8r0_a65a0().o2));
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan));
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_2eo8r0_a85a0()));
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_2eo8r0_a06a0().o1 : _StyleParameter_QueryFunction_2eo8r0_a06a0().o2));
-      style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.LAST);
-      style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.FIRST);
-      style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.LAST);
-      style.set(StyleAttributes.HORIZONTAL_GAP, new Padding(12, Measure.SPACES));
-      style.set(StyleAttributes.PADDING_BOTTOM, new Padding(1, Measure.PIXELS));
-      style.set(StyleAttributes.PADDING_LEFT, new Padding(1, Measure.SPACES));
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0, Measure.SPACES));
-      style.set(StyleAttributes.PADDING_TOP, new Padding(0, Measure.SPACES));
-      style.set(StyleAttributes.FONT_SIZE, 15);
-      style.set(StyleAttributes.FONT_SIZE, _StyleParameter_QueryFunction_2eo8r0_a07a0());
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      style.set(StyleAttributes.FONT_STYLE, _StyleParameter_QueryFunction_2eo8r0_a27a0());
-      style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
-      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "noflow");
-      style.set(StyleAttributes.MATCHING_LABEL, (String) null);
-      style.set(StyleAttributes.MATCHING_LABEL, "labelName");
-      style.set(StyleAttributes.MATCHING_LABEL, matchingNode_2eo8r0_a77a0());
-      style.set(StyleAttributes.MAX_WIDTH, 10);
-      style.set(StyleAttributes.MAX_WIDTH, _StyleParameter_QueryFunction_2eo8r0_a97a0());
-      style.set(StyleAttributes.NAVIGATABLE_NODE, _StyleParameter_QueryFunction_2eo8r0_a08a0());
-      style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "navigable");
-      style.set(StyleAttributes.PARAMETERS_INFORMATION, new TestTargetParametersInformation());
-      style.set(StyleAttributes.POSITION_CHILDREN, "next-line");
-      style.set(StyleAttributes.POSITION, "indented");
-      style.set(StyleAttributes.SHOW_BOUNDARIES_IN, ShowBoundariesArea.GUTTER_AND_EDITOR);
-      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
-      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform|ext_2_RTransform");
-      style.set(StyleAttributes.TABLE_COMPONENT, TableComponent.VERTICAL_COLLECTION);
-      new testStyleStyleClass(getEditorContext(), getNode()).unapply(style, editorCell);
-      new testKey_StyleKey().unapply(style);
-      style.set(StyleAttributes.UNDERLINED, false);
-      style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_2eo8r0_a29a0());
-      editorCell.getStyle().putAll(style);
-      editorCell.setDefaultText("<no theProperty>");
-      editorCell.setCommitInCommand(false);
+      SNode attributeConcept = provider.getRoleAttribute();
+      if (attributeConcept != null) {
+        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
+        return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
+      } else
+      return editorCell;
+
+    } finally {
+      getCellFactory().popCellContext();
     }
-    SNode attributeConcept = provider.getRoleAttribute();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
-    } else
-    return editorCell;
   }
   private boolean _StyleParameter_QueryFunction_2eo8r0_a2a0() {
     boolean var = getEditorContext() != null || getNode() != null;
@@ -327,46 +335,54 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private boolean _StyleParameter_QueryFunction_2eo8r0_a29a0() {
+  private boolean _StyleParameter_QueryFunction_2eo8r0_a09a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private EditorCell createCollection_2eo8r0_b0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Superscript());
     editorCell.setCellId("Collection_2eo8r0_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createTransactionalProperty_2eo8r0_a1a());
+    editorCell.addEditorCell(createTransactionalProperty_1());
     return editorCell;
   }
-  private EditorCell createTransactionalProperty_2eo8r0_a1a() {
-    CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
-    provider.setRole("theProperty");
-    EditorCell_Property editorCell = null;
-    {
-      ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, "theProperty", false, false, getEditorContext()) {
-        public void doCommit(final String oldValue, final String newValue) {
-          doCommitImpl(oldValue, newValue);
-        }
-        public void doCommitImpl(final String oldValue, final String newValue) {
-        }
-      };
-      editorCell = EditorCell_Property.create(getEditorContext(), modelAccessor, myNode);
-      editorCell.setCellId("TransactionalProperty_2eo8r0_a1a");
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.NORMAL);
-      style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
-      style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
-      editorCell.getStyle().putAll(style);
-      editorCell.setDefaultText("<no theProperty>");
-      editorCell.setCommitInCommand(false);
+  private EditorCell createTransactionalProperty_1() {
+    getCellFactory().pushCellContext();
+    try {
+      SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL, 0xbde89531aae3a9L, "theProperty");
+      getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
+      PropertyCellProvider provider = new PropertyCellProvider(myNode, property, getEditorContext());
+      EditorCell_Property editorCell = null;
+      {
+        ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, property, false, false, getEditorContext()) {
+          public void doCommit(final String oldValue, final String newValue) {
+            doCommitImpl(oldValue, newValue);
+          }
+          public void doCommitImpl(final String oldValue, final String newValue) {
+          }
+        };
+        editorCell = EditorCell_Property.create(getEditorContext(), modelAccessor, myNode);
+        editorCell.setCellId("TransactionalProperty_2eo8r0_a1a");
+        Style style = new StyleImpl();
+        style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.NORMAL);
+        style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+        style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
+        editorCell.getStyle().putAll(style);
+        editorCell.setDefaultText("<no theProperty>");
+        setCellContext(editorCell);
+        editorCell.setCommitInCommand(false);
+      }
+      SNode attributeConcept = provider.getRoleAttribute();
+      if (attributeConcept != null) {
+        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
+        return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
+      } else
+      return editorCell;
+
+    } finally {
+      getCellFactory().popCellContext();
     }
-    SNode attributeConcept = provider.getRoleAttribute();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
-    } else
-    return editorCell;
   }
 }

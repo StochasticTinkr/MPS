@@ -50,6 +50,9 @@
     <import index="ma4t" ref="r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)" />
     <import index="ya75" ref="r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)" />
     <import index="62xu" ref="r:3187e3e8-ddb0-4ff3-a5a8-255ce21a0125(jetbrains.mps.smodel.test.migrations@tests)" />
+    <import index="3skg" ref="r:cbdcb51c-64a3-4f95-8704-5b9a754c9773(jetbrains.mps.generator.editor.tests@tests)" />
+    <import index="mpm6" ref="r:05c4fa32-3688-4db6-b828-4373b1de41d9(jetbrains.mps.lang.quotation.test.editorTest@tests)" />
+    <import index="2j2z" ref="r:809bd876-c877-4bf5-8f9e-fbd73017df4f(jetbrains.mps.lang.pattern.editorTest@tests)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -389,6 +392,9 @@
     <node concept="lpD6D" id="2m_lP2P61EU" role="lpD6w">
       <ref role="lpD7u" to="srq7:7aIFSN31ezV" resolve="MultipleOr" />
     </node>
+    <node concept="lpD6D" id="6hx2iFnoqPd" role="lpD6w">
+      <ref role="lpD7u" to="2j2z:6hx2iFnoizQ" resolve="Test_CreatePropertyPatternIntention" />
+    </node>
   </node>
   <node concept="lpD6F" id="2m_lP2P61EW">
     <node concept="2R4zua" id="2m_lP2P61EX" role="2R4z3u">
@@ -535,6 +541,12 @@
   <node concept="lpD6F" id="2KT_lBAnCt6">
     <node concept="lpD6D" id="2KT_lBAnH1P" role="lpD6w">
       <ref role="lpD7u" to="rq2b:7PheqTj57Tu" resolve="FileSwapOwnerTests" />
+    </node>
+    <node concept="lpD6D" id="2hj6Qpwm4ds" role="lpD6w">
+      <ref role="lpD7u" to="3skg:2hj6Qpwl8Nv" resolve="Test_PropertyMacroApplicable" />
+    </node>
+    <node concept="lpD6D" id="2hj6Qpwm4dR" role="lpD6w">
+      <ref role="lpD7u" to="3skg:2hj6QpwkIN0" resolve="Test_ReferenceMacroApplicable" />
     </node>
     <node concept="2R4zua" id="2KT_lBAnCt8" role="2R4z3u">
       <property role="2R4zu8" value="50fc24f9-2bc9-4702-84ed-7f00cd088aca" />
@@ -1085,6 +1097,36 @@
     </node>
     <node concept="lpD6D" id="4fy9ApAcQaa" role="lpD6w">
       <ref role="lpD7u" to="ya75:65lbGMlf28I" resolve="PlatformCheckbox_SPACE_InLabel_Toggles" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="6dQuMDPab2j">
+    <node concept="2R4zua" id="6dQuMDPab2l" role="2R4z3u">
+      <property role="2R4zub" value="jetbrains.mps.lang.quotation.test" />
+      <property role="2R4zu8" value="f0c7dabe-a007-49ff-965e-4f6c6b0d78ab" />
+    </node>
+    <node concept="lpD6D" id="6dQuMDPab2n" role="lpD6w">
+      <ref role="lpD7u" to="mpm6:6dQuMDP9KwI" resolve="Test_CreateAntiquotation_Intention" />
+    </node>
+    <node concept="lpD6D" id="6dQuMDPab2s" role="lpD6w">
+      <ref role="lpD7u" to="mpm6:6dQuMDPa7OT" resolve="Test_CreateAntiquotation_Key" />
+    </node>
+    <node concept="lpD6D" id="6dQuMDPab2z" role="lpD6w">
+      <ref role="lpD7u" to="mpm6:6dQuMDP9PXL" resolve="Test_CreateListAntiquotation_Intention" />
+    </node>
+    <node concept="lpD6D" id="6dQuMDPab2G" role="lpD6w">
+      <ref role="lpD7u" to="mpm6:6dQuMDPa80T" resolve="Test_CreateListAntiquotation_Key" />
+    </node>
+    <node concept="lpD6D" id="6dQuMDPab2R" role="lpD6w">
+      <ref role="lpD7u" to="mpm6:6dQuMDP9QSD" resolve="Test_CreatePropertyAntiquotation_Intention" />
+    </node>
+    <node concept="lpD6D" id="6dQuMDPab34" role="lpD6w">
+      <ref role="lpD7u" to="mpm6:6dQuMDPa6fh" resolve="Test_CreatePropertyAntiquotation_Key" />
+    </node>
+    <node concept="lpD6D" id="6dQuMDPab3j" role="lpD6w">
+      <ref role="lpD7u" to="mpm6:6dQuMDPa4K$" resolve="Test_CreateReferenceAntiquotation_Intention" />
+    </node>
+    <node concept="lpD6D" id="6dQuMDPab3$" role="lpD6w">
+      <ref role="lpD7u" to="mpm6:6dQuMDPa6_7" resolve="Test_CreateReferenceAntiquotation_Key" />
     </node>
   </node>
 </model>

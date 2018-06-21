@@ -14,10 +14,18 @@ import org.jetbrains.mps.openapi.language.SProperty;
     myActualValue = actualValue;
     myExpectedValue = expectedValue;
   }
+
   @Override
   public String toString() {
     return "Different property: " + myProperty + " = " + myActualValue + ", expected: " + myExpectedValue;
   }
+
+  @Override
+  public int hashCode() {
+    // XXX no idea why equals is based on myProperty only, here I just respect what's there in the equals() method. 
+    return myProperty.hashCode();
+  }
+
   @Override
   public boolean equals(Object obj) {
     if (obj == null) {

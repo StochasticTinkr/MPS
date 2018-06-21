@@ -18,8 +18,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0c = concept;
-    switch (index_xbvbvu_a0c.index(cncpt_a0c)) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_editorContext_SubstituteMenu());
       case 1:
@@ -37,5 +37,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     return Collections.<SubstituteMenu>emptyList();
   }
 
-  private static final ConceptSwitchIndex index_xbvbvu_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x11601f73f7aL), MetaIdFactory.conceptId(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x10e761b3745L), MetaIdFactory.conceptId(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x118e7145df4L), MetaIdFactory.conceptId(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x10e761c927aL), MetaIdFactory.conceptId(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x7be6ee9831c8594L), MetaIdFactory.conceptId(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x10e761e7965L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x11601f73f7aL), MetaIdFactory.conceptId(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x10e761b3745L), MetaIdFactory.conceptId(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x118e7145df4L), MetaIdFactory.conceptId(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x10e761c927aL), MetaIdFactory.conceptId(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x7be6ee9831c8594L), MetaIdFactory.conceptId(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x10e761e7965L)).seal();
 }

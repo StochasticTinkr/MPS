@@ -31,7 +31,7 @@ public final class XmlDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isSingle_id1653mnvAgni, isFirst_id1653mnvAgw8);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x4c3596ee25a4a423L, "version"), "1.0");
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x4c3596ee25a4a423L, "version"), "1.0");
   }
 
   /*package*/ static boolean isSingle_id1653mnvAgni(@NotNull SAbstractConcept __thisConcept__) {

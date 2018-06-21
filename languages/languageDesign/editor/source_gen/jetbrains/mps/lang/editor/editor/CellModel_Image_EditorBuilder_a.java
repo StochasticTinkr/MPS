@@ -28,14 +28,14 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.rootCellModelStyleStyl
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_yczb8_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_yczb8_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "$image$");
     editorCell.setCellId("Constant_yczb8_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     new rootCellModelStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);

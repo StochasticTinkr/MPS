@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.ide.ui.tree.smodel;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.ui.tree.ErrorState;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
@@ -32,6 +33,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.util.Condition;
 
+import javax.swing.Icon;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import java.awt.Color;
@@ -94,7 +96,8 @@ public class SNodeTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
     } else {
       setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED")));
     }
-    setIcon(IconManager.getIconFor(myNode));
+    Icon nodeIcon = GlobalIconManager.getInstance().getIconFor(myNode);
+    setIcon(nodeIcon);
 
     if (!myNode.getConcept().isValid()) {
       setErrorState(ErrorState.ERROR);

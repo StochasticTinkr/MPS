@@ -51,7 +51,7 @@ public class Switch_switch_AssociationIdentity_SReferenceLink extends TemplateSw
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ReferenceLinkId_SReferenceLink().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_ReferenceLinkId_SReferenceLink().apply(context);
       return tlist1;
     }
   }

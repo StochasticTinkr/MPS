@@ -74,6 +74,10 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.undo.OnReloadingUndoCleaner</implementation-class>
+    </component>    <!-- migration: versions handling -->
+    <component>
+      <interface-class>jetbrains.mps.migration.global.MigrationProperties</interface-class>
+      <implementation-class>jetbrains.mps.migration.global.ProjectMigrationProperties</implementation-class>
     </component>
   </project-components>
 

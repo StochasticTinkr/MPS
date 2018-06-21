@@ -17,13 +17,13 @@
     </file>
   </root>
   <root nodeRef="r:74325108-7c6d-42c1-8e54-4f0d750bf90f(jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior)/9174907873152887910">
-    <file name="TestSubstitituteAbstractSubChildAmbigousPosition__BehaviorDescriptor.java">
+    <file name="TestSubstituteAbstractSubChildAmbigousPosition__BehaviorDescriptor.java">
       <node id="9174907873152887910" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="9174907873152887910" at="25,0,26,0" concept="6" trace="REGISTRY" />
       <node id="9174907873152887910" at="27,0,28,0" concept="6" trace="substituteInAmbigousPosition_id1653mnvAgq$" />
       <node id="9174907873152887910" at="29,0,30,0" concept="6" trace="BH_METHODS" />
       <node id="9174907873152888126" at="34,116,35,16" concept="5" />
-      <node id="9174907873152887910" at="38,86,39,20" concept="8" />
+      <node id="9174907873152887910" at="38,84,39,20" concept="8" />
       <node id="9174907873152887910" at="43,114,44,21" concept="1" />
       <node id="9174907873152887910" at="48,114,49,49" concept="4" />
       <node id="9174907873152887910" at="50,26,51,56" concept="10" />
@@ -36,7 +36,7 @@
       <node id="9174907873152887910" at="81,40,82,19" concept="5" />
       <node id="9174907873152887910" at="31,0,33,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="9174907873152887910" at="34,0,37,0" concept="7" trace="substituteInAmbigousPosition_id1653mnvAgq$#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-      <node id="9174907873152887910" at="38,0,41,0" concept="0" trace="TestSubstitituteAbstractSubChildAmbigousPosition__BehaviorDescriptor#()V" />
+      <node id="9174907873152887910" at="38,0,41,0" concept="0" trace="TestSubstituteAbstractSubChildAmbigousPosition__BehaviorDescriptor#()V" />
       <node id="9174907873152887910" at="49,49,52,5" concept="2" />
       <node id="9174907873152887910" at="61,49,64,5" concept="2" />
       <node id="9174907873152887910" at="42,0,46,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -48,7 +48,7 @@
       <node id="9174907873152887910" at="59,0,72,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="9174907873152887910" at="31,63,31,63" />
       <scope id="9174907873152887927" at="34,116,35,16" />
-      <scope id="9174907873152887910" at="38,86,39,20" />
+      <scope id="9174907873152887910" at="38,84,39,20" />
       <scope id="9174907873152887910" at="43,114,44,21" />
       <scope id="9174907873152887910" at="50,26,51,56" />
       <scope id="9174907873152887910" at="54,14,55,58" />
@@ -87,17 +87,17 @@
         <var name="method" id="9174907873152887910" />
         <var name="parameters" id="9174907873152887910" />
       </scope>
-      <unit id="9174907873152887910" at="23,0,85,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstitituteAbstractSubChildAmbigousPosition__BehaviorDescriptor" />
+      <unit id="9174907873152887910" at="23,0,85,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteAbstractSubChildAmbigousPosition__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:74325108-7c6d-42c1-8e54-4f0d750bf90f(jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior)/9174907873153014152">
-    <file name="TestSubstitituteAbstractChildAmbigousPosition__BehaviorDescriptor.java">
+    <file name="TestSubstituteAbstractChildAmbigousPosition__BehaviorDescriptor.java">
       <node id="9174907873153014152" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="9174907873153014152" at="25,0,26,0" concept="6" trace="REGISTRY" />
       <node id="9174907873153014152" at="27,0,28,0" concept="6" trace="substituteInAmbigousPosition_id1653mnvAgq$" />
       <node id="9174907873153014152" at="29,0,30,0" concept="6" trace="BH_METHODS" />
       <node id="9174907873153014368" at="34,116,35,16" concept="5" />
-      <node id="9174907873153014152" at="38,83,39,20" concept="8" />
+      <node id="9174907873153014152" at="38,81,39,20" concept="8" />
       <node id="9174907873153014152" at="43,114,44,21" concept="1" />
       <node id="9174907873153014152" at="48,114,49,49" concept="4" />
       <node id="9174907873153014152" at="50,26,51,56" concept="10" />
@@ -110,7 +110,7 @@
       <node id="9174907873153014152" at="81,40,82,19" concept="5" />
       <node id="9174907873153014152" at="31,0,33,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="9174907873153014152" at="34,0,37,0" concept="7" trace="substituteInAmbigousPosition_id1653mnvAgq$#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-      <node id="9174907873153014152" at="38,0,41,0" concept="0" trace="TestSubstitituteAbstractChildAmbigousPosition__BehaviorDescriptor#()V" />
+      <node id="9174907873153014152" at="38,0,41,0" concept="0" trace="TestSubstituteAbstractChildAmbigousPosition__BehaviorDescriptor#()V" />
       <node id="9174907873153014152" at="49,49,52,5" concept="2" />
       <node id="9174907873153014152" at="61,49,64,5" concept="2" />
       <node id="9174907873153014152" at="42,0,46,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -122,7 +122,7 @@
       <node id="9174907873153014152" at="59,0,72,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="9174907873153014152" at="31,63,31,63" />
       <scope id="9174907873153014169" at="34,116,35,16" />
-      <scope id="9174907873153014152" at="38,83,39,20" />
+      <scope id="9174907873153014152" at="38,81,39,20" />
       <scope id="9174907873153014152" at="43,114,44,21" />
       <scope id="9174907873153014152" at="50,26,51,56" />
       <scope id="9174907873153014152" at="54,14,55,58" />
@@ -161,7 +161,7 @@
         <var name="method" id="9174907873153014152" />
         <var name="parameters" id="9174907873153014152" />
       </scope>
-      <unit id="9174907873153014152" at="23,0,85,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstitituteAbstractChildAmbigousPosition__BehaviorDescriptor" />
+      <unit id="9174907873153014152" at="23,0,85,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteAbstractChildAmbigousPosition__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

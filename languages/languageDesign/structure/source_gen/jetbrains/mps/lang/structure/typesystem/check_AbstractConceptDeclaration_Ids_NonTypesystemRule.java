@@ -7,6 +7,8 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -15,7 +17,6 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Objects;
 import jetbrains.mps.lang.structure.util.ConceptIdHelper;
@@ -26,6 +27,10 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
   public check_AbstractConceptDeclaration_Ids_NonTypesystemRule() {
   }
   public void applyRule(final SNode acd, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (!(SModuleOperations.isAspect(SNodeOperations.getModel(acd), "structure"))) {
+      return;
+    }
+
     if (isEmptyString(SPropertyOperations.getString(acd, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -133,7 +138,7 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
         } else if (!(Objects.equals(SPropertyOperations.getString(l, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")), ConceptIdHelper.getNodeIdString(l)))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(l, "Node id and property id differ. It's recommended to keep ids synchronised until MPS 3.5. Use quickfix to set corrected id", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "2819660830273606558", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(l, "Node id and property id differ. It's recommended to keep ids synchronised. Use quickfix to set corrected id", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "2819660830273606558", null, errorTarget);
             {
               BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.CorrectDuplicateId_QuickFix", false);
               intentionProvider.putArgument("l", l);

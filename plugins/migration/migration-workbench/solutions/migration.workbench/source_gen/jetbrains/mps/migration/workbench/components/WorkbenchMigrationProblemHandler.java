@@ -7,6 +7,7 @@ import jetbrains.mps.migration.global.MigrationProblemHandler;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.ide.migration.IStartupMigrationExecutor;
 import jetbrains.mps.project.MPSProject;
 import java.util.Collection;
 import jetbrains.mps.errors.item.IssueKindReportItem;
@@ -25,18 +26,38 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.function.Consumer;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.generator.GenerationFacade;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
+import javax.swing.SwingUtilities;
+import jetbrains.mps.ide.save.SaveRepositoryCommand;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
+import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeServiceComponent;
+import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.resources.MResource;
 import org.jetbrains.annotations.NotNull;
 
 public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent implements MigrationProblemHandler {
   private UsagesViewTool myUsagesTool;
   private ModelCheckerTool myMcTool;
   private Project myMpsProject;
+  private IStartupMigrationExecutor myMigrationTrigger;
 
-  public WorkbenchMigrationProblemHandler(MPSProject project, UsagesViewTool usagesTool, ModelCheckerTool mcTool) {
+  public WorkbenchMigrationProblemHandler(MPSProject project, IStartupMigrationExecutor migrationTrigger, UsagesViewTool usagesTool, ModelCheckerTool mcTool) {
     super(project.getProject());
     myUsagesTool = usagesTool;
     myMcTool = mcTool;
     myMpsProject = project;
+    myMigrationTrigger = migrationTrigger;
   }
 
   public void showProblems(Collection<IssueKindReportItem> problems) {
@@ -98,9 +119,65 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
   }
   @Override
   public void initComponent() {
+    myMigrationTrigger.setRebuildHandler(new Consumer<Iterable<SModuleReference>>() {
+      public void accept(final Iterable<SModuleReference> modules) {
+        final SRepository repo = myMpsProject.getRepository();
+        repo.getModelAccess().runWriteAction(new Runnable() {
+          public void run() {
+            final List<SModel> modelsToClean = Sequence.fromIterable(modules).translate(new ITranslator2<SModuleReference, SModel>() {
+              public Iterable<SModel> translate(SModuleReference it) {
+                return it.resolve(repo).getModels();
+              }
+            }).where(new IWhereFilter<SModel>() {
+              public boolean accept(SModel it) {
+                return GenerationFacade.canGenerate(it);
+              }
+            }).toListSequence();
+            myMpsProject.getComponent(ModelGenerationStatusManager.class).discard(modelsToClean);
+
+            // todo the following is copied from MakeActionImpl, it's better to make MAI to be compilied in Idea  
+            // todo (and contributed by xml); this code should use idea-compiled class then 
+            SwingUtilities.invokeLater(new Runnable() {
+              public void run() {
+                // save all before launching make 
+                new SaveRepositoryCommand(myMpsProject.getRepository()).execute();
+                MakeSession session = new MakeSession(myMpsProject, new DefaultMakeMessageHandler(myMpsProject), false);
+                final IMakeService makeService = myMpsProject.getComponent(MakeServiceComponent.class).get();
+                if (makeService.openNewSession(session)) {
+                  final List<IResource> inputRes = ListSequence.fromList(new ArrayList<IResource>());
+                  repo.getModelAccess().runReadAction(new Runnable() {
+                    public void run() {
+                      ListSequence.fromList(inputRes).addSequence(ListSequence.fromList(modelsToClean).select(new ISelector<SModel, SModule>() {
+                        public SModule select(SModel it) {
+                          return it.getModule();
+                        }
+                      }).distinct().select(new ISelector<SModule, MResource>() {
+                        public MResource select(final SModule module) {
+                          return new MResource(module, ListSequence.fromList(modelsToClean).where(new IWhereFilter<SModel>() {
+                            public boolean accept(SModel model) {
+                              return model.getModule() == module;
+                            }
+                          }));
+                        }
+                      }));
+                    }
+                  });
+                  if (inputRes != null) {
+                    makeService.make(session, (Iterable<? extends IResource>) (Iterable<IResource>) inputRes);
+                  } else {
+                    makeService.closeSession(session);
+                  }
+                }
+              }
+            });
+          }
+        });
+      }
+    });
   }
   @Override
   public void disposeComponent() {
+    myMigrationTrigger.setRebuildHandler(null);
   }
   @Override
   @NotNull

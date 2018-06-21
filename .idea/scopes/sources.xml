@@ -1,3 +1,3 @@
 <component name="DependencyValidationManager">
-  <scope name="sources" pattern="!file:source_gen//*&amp;&amp;!file:*test_gen//*&amp;&amp;!file[mps-project-excludes]:*/&amp;&amp;file:*java" />
+  <scope name="sources" pattern="!file:jetbrains.mps.ide.vcs/source_gen//*&amp;&amp;!file:*test_gen//*&amp;&amp;!file[mps-project-excludes]:*/&amp;&amp;file:*java" />
 </component>

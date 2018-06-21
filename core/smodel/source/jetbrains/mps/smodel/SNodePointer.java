@@ -86,7 +86,7 @@ public class SNodePointer implements SNodeReference {
   }
 
   public String toString() {
-    return myModelReference + "/" + StringUtil.escapeRefChars("" + myNodeId);
+    return SNodePointer.serialize(this);
   }
 
   public boolean equals(Object o) {
@@ -110,12 +110,7 @@ public class SNodePointer implements SNodeReference {
 
   public static String serialize(SNodeReference p) {
     SNodePointer np = (SNodePointer) p;
-    SModelReference ref = np.myModelReference;
-    SNodeId id = np.myNodeId;
-
-    assert ref != null && id != null;
-
-    return ref.toString() + "/" + StringUtil.escapeRefChars(id.toString());
+    return String.valueOf(np.myModelReference) + "/" + StringUtil.escapeRefChars(String.valueOf(np.myNodeId));
   }
 
   public static SNodeReference deserialize(@NotNull String from) {
@@ -124,9 +119,24 @@ public class SNodePointer implements SNodeReference {
       throw new IncorrectNodeIdFormatException("No delimiter discovered in the passed argument " + from);
     }
     String nodeId = StringUtil.unescapeRefChars(from.substring(delimiterIndex + 1));
-    String modelReference = from.substring(0, delimiterIndex);
+    SNodeId sNodeId;
+    if (String.valueOf((Object) null).equals(nodeId)) {
+      // supporting myNodeId == null serialized to string
+      sNodeId = null;
+    } else {
+      sNodeId = PersistenceFacade.getInstance().createNodeId(nodeId);
+    }
 
-    return new jetbrains.mps.smodel.SNodePointer(modelReference, nodeId);
+    String modelReference = from.substring(0, delimiterIndex);
+    SModelReference sModelReference;
+    if (String.valueOf((Object) null).equals(modelReference)) {
+      // supporting myModelReference == null serialized to string
+      sModelReference = null;
+    } else {
+      sModelReference = PersistenceFacade.getInstance().createModelReference(modelReference);
+    }
+
+    return new jetbrains.mps.smodel.SNodePointer(sModelReference, sNodeId);
   }
 
   @Nullable

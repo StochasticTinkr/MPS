@@ -22,7 +22,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointViewSettingsComponent" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUtil" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.GroupedTree" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.GlobalIconManager" />
     <classNode dependClassName="jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.project.Project" />

@@ -7,13 +7,10 @@ import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
-import java.util.Map;
 import java.io.File;
-import java.util.List;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.MPSCompilationResult;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -51,22 +48,21 @@ public class MigrationWorker extends MpsWorker {
 
   @Override
   public void work() {
-    Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
-    for (File file : mpsProjects.keySet()) {
+    for (File file : myWhatToDo.getMPSProjectFiles()) {
       final Project p = myEnvironment.openProject(file);
       info("Loaded project " + p);
       myEnvironment.flushAllEvents();
 
       final Wrappers._T<MPSCompilationResult> mpsCompilationResult = new Wrappers._T<MPSCompilationResult>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      p.getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           mpsCompilationResult.value = new ModuleMaker().make(IterableUtil.asCollection(p.getProjectModulesWithGenerators()), new EmptyProgressMonitor(), myJavaCompilerOptions);
         }
       });
       if (mpsCompilationResult.value.isReloadingNeeded()) {
-        ModelAccess.instance().runWriteAction(new Runnable() {
+        p.getRepository().getModelAccess().runWriteAction(new Runnable() {
           public void run() {
-            ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.value.getChangedModules());
+            p.getComponent(ClassLoaderManager.class).reloadModules(mpsCompilationResult.value.getChangedModules());
           }
         });
       }

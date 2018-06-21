@@ -21,7 +21,7 @@
       <node id="2433297057223904681" at="36,11,37,111" concept="5" />
       <node id="2433297057223871794" at="37,111,38,154" concept="3" />
       <node id="3750601816081921048" at="38,154,39,144" concept="0" />
-      <node id="3750601816081902244" at="39,144,40,484" concept="0" />
+      <node id="3750601816081902244" at="39,144,40,487" concept="0" />
       <node id="3750601816081858308" at="44,51,45,154" concept="4" />
       <node id="3750601816081858308" at="19,0,22,0" concept="2" trace="getCaption#()Ljava/lang/String;" />
       <node id="3750601816081892520" at="33,0,36,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -45,7 +45,7 @@
       <scope id="3750601816081858308" at="26,0,30,0">
         <var name="m" id="3750601816081858308" />
       </scope>
-      <scope id="3750601816081867208" at="36,11,40,484">
+      <scope id="3750601816081867208" at="36,11,40,487">
         <var name="cpName" id="2433297057223871795" />
       </scope>
       <scope id="3750601816081865304" at="31,63,41,7" />

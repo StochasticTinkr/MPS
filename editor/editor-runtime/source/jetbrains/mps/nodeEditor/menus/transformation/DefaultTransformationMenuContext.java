@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.menus.transformation;
 
-import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.InUsedLanguagesPredicate;
 import jetbrains.mps.nodeEditor.menus.CachingPredicate;
@@ -41,7 +40,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -60,8 +58,10 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   private final String myMenuLocation;
   @NotNull
   private final EditorContext myEditorContext;
+
   @NotNull
   private final SNodeLocation myNodeLocation;
+
   private final EditorMenuTrace myEditorMenuTrace;
 
   private Predicate<SAbstractConcept> mySuitableForConstraintsPredicate;
@@ -75,8 +75,7 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
     EditorContext editorContext = cell.getContext();
     SNodeLocation nodeLocation = nodeLocationFromCell(cell);
     return new DefaultTransformationMenuContext(new RecursionSafeMenuItemFactory<>(new DefaultTransformationMenuItemFactory(MenuUtil.getUsedLanguages(
-                                                       nodeLocation.getContextNode()))),
-                                                   menuLocation, editorContext, nodeLocation, new EditorMenuTraceImpl());
+        nodeLocation.getContextNode()))), menuLocation, editorContext, nodeLocation, new EditorMenuTraceImpl());
   }
 
   @NotNull
@@ -102,8 +101,12 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
       throw new IllegalArgumentException("cell should have a node: " + cell);
     }
 
+    if (!(cell.getSRole() instanceof SContainmentLink)) {
+      return new SNodeLocation.FromNode(cellNode);
+    }
+
     SContainmentLink link;
-    if (!cell.isBig() && (link = CellUtil.getCellContainmentLink(cell)) != null && cell.isSelectable()) {
+    if (!cell.isBig() && (link = ((SContainmentLink) cell.getSRole())) != null && cell.isSelectable()) {
       // FIXME This is a hacky way to determine whether the cell is a no-target cell.
       //
       // We assume here that if the cell had a role specified and was selectable then that the cell is a no-target placeholder cell (called "empty cell" in the
@@ -118,10 +121,12 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
     return new SNodeLocation.FromNode(cellNode);
   }
 
-  private DefaultTransformationMenuContext(@NotNull MenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenuLookup> menuItemFactory,
-                                           @NotNull String menuLocation,
-                                           @NotNull EditorContext editorContext, @NotNull SNodeLocation nodeLocation,
-                                           @NotNull EditorMenuTrace editorMenuTrace) {
+
+  private DefaultTransformationMenuContext(
+      @NotNull MenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenuLookup> menuItemFactory,
+      @NotNull String menuLocation,
+      @NotNull EditorContext editorContext, @NotNull SNodeLocation nodeLocation,
+      @NotNull EditorMenuTrace editorMenuTrace) {
     myMenuItemFactory = menuItemFactory;
     myMenuLocation = menuLocation;
     myEditorContext = editorContext;
@@ -130,9 +135,9 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   }
 
   @NotNull
-  private Predicate<SAbstractConcept> createSuitableForConstraintsPredicate(@NotNull SNodeLocation nodeLocation, @NotNull SRepository repository) {
+  private Predicate<SAbstractConcept> createSuitableForConstraintsPredicate(@NotNull SNodeLocation nodeLocation) {
     final SContainmentLink containmentLink = nodeLocation.getContainmentLink();
-    Predicate<SAbstractConcept> predicate = new CanBeParentPredicate(nodeLocation.getParent(), containmentLink, repository);
+    Predicate<SAbstractConcept> predicate = new CanBeParentPredicate(nodeLocation.getParent(), containmentLink);
     if (nodeLocation.getParent() != null) {
       predicate = predicate.and(new CanBeChildPredicate(nodeLocation.getParent(), containmentLink));
     }
@@ -179,7 +184,8 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   @Override
   public Predicate<SAbstractConcept> getConstraintsCheckingPredicate() {
     if (mySuitableForConstraintsPredicate == null) {
-      mySuitableForConstraintsPredicate = new CachingPredicate<>(createSuitableForConstraintsPredicate(myNodeLocation, myEditorContext.getRepository()));
+      mySuitableForConstraintsPredicate =
+          new CachingPredicate<>(createSuitableForConstraintsPredicate(myNodeLocation));
     }
     return mySuitableForConstraintsPredicate;
   }
@@ -192,7 +198,7 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
                                                        myNodeLocation.getContextNode().getConcept());
     }
     if (myUsedLookups.contains(menuLookup)) {
-      LOG.info("Lookup + " + menuLookup + " vas already used within this context. Return empty collection to prevent items duplication");
+      LOG.info("Lookup + " + menuLookup + " was already used within this context. Return empty collection to prevent items duplication");
       return Collections.emptyList();
     }
     myUsedLookups.add(menuLookup);

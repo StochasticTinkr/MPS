@@ -13,7 +13,9 @@ import java.util.LinkedList;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.persistence.lines.NodeLineContent;
 import jetbrains.mps.smodel.persistence.lines.PropertyLineContent;
+import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.persistence.lines.ReferenceLineContent;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public class LineContentAccumulator {
   private List<LineContent> myLineToContentMap = ListSequence.fromList(new ArrayList<LineContent>());
@@ -40,12 +42,21 @@ public class LineContentAccumulator {
   private void saveNode(Locator locator) {
     saveElement(locator, new NodeLineContent(DequeSequence.fromDequeNew(myNodeIdStack).peekElement()));
   }
+
   public void saveProperty(String name, Locator locator) {
     saveElement(locator, new PropertyLineContent(DequeSequence.fromDequeNew(myNodeIdStack).peekElement(), name));
   }
+  public void saveProperty(SProperty prop, Locator locator) {
+    saveElement(locator, new PropertyLineContent(DequeSequence.fromDequeNew(myNodeIdStack).peekElement(), prop));
+  }
+
   public void saveReference(String role, Locator locator) {
     saveElement(locator, new ReferenceLineContent(DequeSequence.fromDequeNew(myNodeIdStack).peekElement(), role));
   }
+  public void saveReference(SReferenceLink link, Locator locator) {
+    saveElement(locator, new ReferenceLineContent(DequeSequence.fromDequeNew(myNodeIdStack).peekElement(), link));
+  }
+
   public void processText(String text, Locator locator) {
     LineContent lineContent = null;
     if (DequeSequence.fromDequeNew(myNodeIdStack).isNotEmpty()) {

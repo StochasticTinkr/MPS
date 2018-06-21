@@ -25,7 +25,7 @@ public class KeyMapKeystroke_Change {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), null);
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), null);
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "keyCode", -1);
     }
   }
@@ -38,7 +38,7 @@ public class KeyMapKeystroke_Change {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), null);
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), null);
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "keyCode", -1);
     }
   }

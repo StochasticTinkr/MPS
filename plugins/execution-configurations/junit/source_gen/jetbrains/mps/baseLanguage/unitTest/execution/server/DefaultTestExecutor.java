@@ -7,16 +7,12 @@ import org.apache.log4j.BasicConfigurator;
 import org.jetbrains.annotations.NotNull;
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.Request;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import java.util.Properties;
-import jetbrains.mps.core.tool.environment.util.CanonicalPath;
-import java.io.File;
-import java.io.IOException;
-import jetbrains.mps.tool.environment.Environment;
 
+/**
+ * Command-line front-end to launch BTestCase or JUnit3/JUnit4 ClassConcept without need for MPS instance/environment
+ * XXX Unfortunate name, no idea what 'default' refers to.
+ */
 public class DefaultTestExecutor extends JUnitTestExecutor {
-  private static final String PATH_MACRO_PREFIX = "path.macro.";
 
   public static final int EXIT_CODE_FOR_EXCEPTION = -12345;
 
@@ -49,49 +45,25 @@ public class DefaultTestExecutor extends JUnitTestExecutor {
     return new DefaultRunListener(myOutStream);
   }
 
-  public static IdeaEnvironment startIdea() {
-    // XXX would be great to have this code as part of init() method, but it's too much of refactoring now. Shall drop init/dispose of TestExecutor. 
-    EnvironmentConfig cfg = EnvironmentConfig.defaultConfigNoPluginsSpecified();
-    // test parameters of LanguageTestWrapper may supply path variables this way. Not sure it's the right way to move on, though. 
-    // There are mps.macro. values in MpsTestsSuite that end up as EnvironmentConfig's macros and eventually as PathMacros's PathMacrosProvider, 
-    // why do we duplicate same logic here but with "path.macro." prefix? 
-    // FWIW, comment in TransformationTestRunner used to read: "to enable such macros as ${charisma}; see MPS-10568" 
-    Properties sysProps = System.getProperties();
-    for (String key : sysProps.stringPropertyNames()) {
-      String value = sysProps.getProperty(key);
-      if (key.startsWith(PATH_MACRO_PREFIX) && (value != null && value.length() > 0)) {
-        CanonicalPath path = new CanonicalPath(value);
-        if (path.isValidDirectory()) {
-          // XXX the reason we limit path macros to directories only is hidden deep in the history, perhaps, there's no reason to? 
-          // Besides, I don't like the idea we restrict this to *paths*, it's just a macro/property with a value, after all. 
-          cfg.addMacro(key.substring(PATH_MACRO_PREFIX.length()), new File(path.getValue()));
-        }
-      }
-    }
-    IdeaEnvironment rv = new IdeaEnvironment(cfg);
-    rv.init();
-    return rv;
-  }
 
   /**
-   * Called when BTestCase is executed
+   * Called when BTestCase or JUnit3/JUnit4 ClassConcept is executed without need for MPS instance/environment
    */
-  public static void main(String[] args) throws ClassNotFoundException, IOException {
-    Environment env = startIdea();
-    DefaultTestExecutor executor = new DefaultTestExecutor(new CommandLineTestsContributor(env, args));
+  public static void main(String[] args) throws Exception {
+    DefaultTestExecutor executor = new DefaultTestExecutor(new CommandLineTestsContributor(args));
     try {
       executor.run();
-    } catch (Throwable t) {
-      executor.processThrowable(t);
+    } finally {
+      executor.exit();
     }
-    executor.exit();
-    env.dispose();
   }
 
   protected void run() {
     try {
       init();
       execute();
+    } catch (Throwable t) {
+      processThrowable(t);
     } finally {
       dispose();
     }

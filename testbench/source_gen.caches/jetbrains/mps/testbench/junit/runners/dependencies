@@ -30,18 +30,13 @@
     <classNode extendsClassName="jetbrains.mps.tool.environment.ProjectStrategyBase" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.FromModulesListProjectStrategy" file="FromModulesListProjectStrategy.java">
-    <classNode dependClassName="com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.function.Function" />
-    <classNode dependClassName="java.util.function.Predicate" />
-    <classNode dependClassName="java.util.stream.Collectors" />
     <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.TestRootAccessInsight" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.vfs.impl.IoFileSystem" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -154,6 +149,18 @@
     <classNode dependClassName="org.junit.runners.model.Statement" />
     <classNode dependClassName="org.junit.runners.model.TestClass" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.BaseMpsRunner" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.runners.TestRootAccessInsight" file="TestRootAccessInsight.java">
+    <classNode dependClassName="com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.function.Function" />
+    <classNode dependClassName="java.util.function.Predicate" />
+    <classNode dependClassName="java.util.stream.Collectors" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="jetbrains.mps.vfs.impl.IoFileSystem" />
   </dependency>
 </dependenciesRoot>
 

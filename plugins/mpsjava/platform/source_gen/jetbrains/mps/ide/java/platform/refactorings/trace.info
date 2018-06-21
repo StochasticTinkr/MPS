@@ -629,8 +629,8 @@
       <node id="4507335185602804288" at="374,36,375,52" concept="9" />
       <node id="9126638202844872976" at="375,52,376,30" concept="3" />
       <node id="2034046503373005947" at="376,30,377,35" concept="3" />
-      <node id="2034046503373005961" at="378,76,379,90" concept="9" />
-      <node id="4353113571804147247" at="379,90,380,69" concept="3" />
+      <node id="2034046503373005961" at="378,76,379,154" concept="9" />
+      <node id="4353113571804147247" at="379,154,380,69" concept="3" />
       <node id="4507335185602804370" at="384,33,385,155" concept="3" />
       <node id="4507335185602804366" at="387,5,388,32" concept="3" />
       <node id="4507335185602802782" at="391,0,392,0" concept="4" trace="myMethod" />
@@ -934,8 +934,8 @@
   <root nodeRef="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)/4507335185602804386">
     <file name="IconResourceBundle_ExtractMethodIcons.java">
       <node id="4507335185602804386" at="13,0,14,0" concept="12" trace="INSTANCE" />
-      <node id="4507335185602804386" at="15,5,16,41" concept="3" />
-      <node id="4507335185602804386" at="16,41,17,48" concept="3" />
+      <node id="4507335185602804387" at="15,5,16,41" concept="3" />
+      <node id="4507335185602804390" at="16,41,17,48" concept="3" />
       <node id="4507335185602804386" at="22,37,23,26" concept="10" />
       <node id="4507335185602804386" at="25,39,26,26" concept="10" />
       <node id="4507335185602804386" at="28,69,29,58" concept="10" />

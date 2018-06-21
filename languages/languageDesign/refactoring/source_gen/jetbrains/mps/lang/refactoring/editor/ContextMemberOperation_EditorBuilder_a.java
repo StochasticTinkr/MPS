@@ -28,15 +28,15 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.FieldStyle
   }
 
   /*package*/ EditorCell createCell() {
-    return createComponent_pf5wzr_a();
+    return createComponent_0();
   }
 
-  private EditorCell createComponent_pf5wzr_a() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);
-      bigCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(bigCell);
     }
     Style style = new StyleImpl();
     new FieldStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

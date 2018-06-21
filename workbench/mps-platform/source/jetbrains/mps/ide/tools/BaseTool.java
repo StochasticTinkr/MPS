@@ -66,9 +66,10 @@ public abstract class BaseTool {
     if (number == -1) {
       return Collections.emptyMap();
     }
-    Map<String, KeyStroke> result = new HashMap<>(4);
+    Map<String, KeyStroke> result = new HashMap<>(6); // avoiding rehash & decrease default capacity
     result.put(KeymapManager.DEFAULT_IDEA_KEYMAP, KeyStroke.getKeyStroke("alt " + number));
     result.put(KeymapManager.MAC_OS_X_KEYMAP, KeyStroke.getKeyStroke("meta " + number));
+    result.put(KeymapManager.MAC_OS_X_10_5_PLUS_KEYMAP, KeyStroke.getKeyStroke("meta " + number));
     return result;
   }
 

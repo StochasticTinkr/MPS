@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class TestCreateComparableEquationStatementStrong_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class TestCreateComparableEquationStatementStrong_Test extends BaseTransf
 
   @Test
   public void test_TestCreateComparableEquationStatementStrong() throws Throwable {
-    runTest("jetbrains.mps.lang.typesystem.editorTest.TestCreateComparableEquationStatementStrong_Test$TestBody", "testMethod", false);
+    new TestCreateComparableEquationStatementStrong_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("4981802504972075119", "4981802504972075129");

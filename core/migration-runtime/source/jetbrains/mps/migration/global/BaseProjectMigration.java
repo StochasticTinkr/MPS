@@ -16,6 +16,7 @@
 package jetbrains.mps.migration.global;
 
 import jetbrains.mps.project.Project;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A migration that runs only once and does not run on a newly created project
@@ -51,7 +52,7 @@ public abstract class BaseProjectMigration implements ProjectMigration {
     setExecuted(p, true);
   }
 
-  public final void setExecuted(Project p, boolean executed) {
+  public final void setExecuted(@NotNull Project p, boolean executed) {
     MigrationPropertiesManager.getInstance().getProperties(p).setProperty(migrationId, executed ? EXECUTED_VALUE : null);
   }
 

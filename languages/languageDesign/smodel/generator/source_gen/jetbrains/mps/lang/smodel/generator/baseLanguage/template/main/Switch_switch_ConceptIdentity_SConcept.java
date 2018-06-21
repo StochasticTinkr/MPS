@@ -52,12 +52,12 @@ public class Switch_switch_ConceptIdentity_SConcept extends TemplateSwitchBase i
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_2836521009935068573(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.baseMappingRule_Condition_a0_5(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ConceptId_SInterfaceConcept().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_ConceptId_SInterfaceConcept().apply(context);
       return tlist1;
     }
   }
@@ -68,7 +68,7 @@ public class Switch_switch_ConceptIdentity_SConcept extends TemplateSwitchBase i
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ConceptId_SConcept().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_ConceptId_SConcept().apply(context);
       return tlist1;
     }
   }

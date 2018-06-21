@@ -11,11 +11,13 @@ public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
   public static final int AspectModelRefExpression = 0;
   public static final int Model_IsAspectOperation = 1;
+  public static final int OfAspectOperation = 2;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x69b8a9939b874d96L, 0xbf0c3559f4bb0c63L);
     builder.put(0x55a418200fd9206aL, AspectModelRefExpression);
     builder.put(0x1c2d7d27ffb53efbL, Model_IsAspectOperation);
+    builder.put(0x5252d9021b8b45a8L, OfAspectOperation);
     myIndex = builder.seal();
   }
 

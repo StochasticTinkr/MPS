@@ -78,7 +78,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
       } else {
         newWord = SNodeOperations.copyNode(myCurrentWord);
       }
-      SPropertyOperations.set(newWord, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), getNewValue());
+      SPropertyOperations.assign(newWord, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), getNewValue());
       SNodeOperations.deleteNode(myNeighbour);
       SNodeOperations.replaceWithAnother(myCurrentWord, newWord);
       SelectionUtil.selectLabelCellAnSetCaret(myEditorContext, newWord, "*" + CellIdManager.createPropertyId("value"), selectionIndex);

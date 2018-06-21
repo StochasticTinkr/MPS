@@ -32,7 +32,6 @@ import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
 import jetbrains.mps.nodeEditor.ui.InputMethodListenerImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
-import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -91,17 +90,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     setAction(CellActionType.PASTE, new PasteIntoLabelText());
     setAction(CellActionType.CUT, new CutLabelText());
     setAction(CellActionType.CLEAR_SELECTION, new ClearSelection());
-  }
-
-  @Override
-  public boolean isFirstPositionInBigCell() {
-    return CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(this)) == this && isFirstCaretPosition();
-  }
-
-  @Override
-  public boolean isLastPositionInBigCell() {
-    return CellTraversalUtil.getLastLeaf(CellTraversalUtil.getContainingBigCell(this)) == this && isLastCaretPosition() &&
-           !getTextLine().hasNonTrivialSelection();
   }
 
   public boolean canPasteText() {

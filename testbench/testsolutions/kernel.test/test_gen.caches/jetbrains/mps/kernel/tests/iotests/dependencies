@@ -24,7 +24,7 @@
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="junit.framework.TestCase" />
+    <classNode extendsClassName="jetbrains.mps.testbench.EnvironmentAwareTestCase" />
   </dependency>
   <dependency className="jetbrains.mps.kernel.tests.iotests.TestUtils" file="TestUtils.java">
     <classNode dependClassName="java.io.File" />

@@ -8,6 +8,7 @@ import jetbrains.mps.ide.save.SaveRepositoryCommand;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeServiceComponent;
 import java.util.List;
 import jetbrains.mps.make.resources.IResource;
 import java.util.ArrayList;
@@ -40,7 +41,8 @@ public class MakeActionImpl {
 
 
     MakeSession session = new MakeSession(project, new DefaultMakeMessageHandler(project), myParams.isCleanMake());
-    if (IMakeService.INSTANCE.get().openNewSession(session)) {
+    final IMakeService makeService = project.getComponent(MakeServiceComponent.class).get();
+    if (makeService.openNewSession(session)) {
       // empty collection is fine, it's up to make service to report there's nothing to do (odd, but fine for now. Action could have do that instead) 
       // 
       // ModelValidatorAdapter needs to be refactored not to mix model checking code with UI, which might request  
@@ -68,15 +70,15 @@ public class MakeActionImpl {
 
 
       } catch (RuntimeException e) {
-        IMakeService.INSTANCE.get().closeSession(session);
+        makeService.closeSession(session);
         throw e;
       }
 
       if (inputRes != null) {
-        IMakeService.INSTANCE.get().make(session, inputRes);
+        makeService.make(session, inputRes);
 
       } else {
-        IMakeService.INSTANCE.get().closeSession(session);
+        makeService.closeSession(session);
       }
 
     }

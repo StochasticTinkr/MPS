@@ -3,7 +3,7 @@
   <dependencies>
     <dependency org="com.googlecode.java-diff-utils" name="diffutils" rev="1.2.1">
       <artifact name="diffutils" ext="jar"/>
-      <artifact name="diffutils" m:classifier="src" ext="jar"/>
+      <artifact name="diffutils" m:classifier="sources" ext="jar"/>
       <artifact name="diffutils" m:classifier="javadoc" ext="jar"/>
     </dependency>
   </dependencies>

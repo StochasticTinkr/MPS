@@ -42,12 +42,12 @@ public final class ModelName__BehaviorDescriptor extends BaseBHDescriptor {
 
   /*package*/ static SNode create_id_GDk1qZ6bz(@NotNull SAbstractConcept __thisConcept__, SModel where, String value) {
     SNode rv = SModelOperations.createNewNode(where, null, MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afbf490L, "jetbrains.mps.lang.modelapi.structure.ModelName"));
-    SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afbf490L, 0x96ca5405afbf491L, "value"), value);
+    SPropertyOperations.assign(rv, MetaAdapterFactory.getProperty(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afbf490L, 0x96ca5405afbf491L, "value"), value);
     return rv;
   }
   /*package*/ static SNode create_id_GDk1qZdiH(@NotNull SAbstractConcept __thisConcept__, SModel where, SModelName modelName) {
     SNode rv = SModelOperations.createNewNode(where, null, MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afbf490L, "jetbrains.mps.lang.modelapi.structure.ModelName"));
-    SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afbf490L, 0x96ca5405afbf491L, "value"), modelName.getValue());
+    SPropertyOperations.assign(rv, MetaAdapterFactory.getProperty(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afbf490L, 0x96ca5405afbf491L, "value"), modelName.getValue());
     return rv;
   }
   /*package*/ static String getNamespace_id_GDk1qYZiR(@NotNull SNode __thisNode__) {

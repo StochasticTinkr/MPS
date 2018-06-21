@@ -14,6 +14,14 @@
     </file>
   </root>
   <root nodeRef="r:d9c7d7eb-2b42-4829-a0ae-81b54923bc48(testAnnotatedType.typesystem)/1470921783545416820">
+    <file name="TypesystemDescriptor.java">
+      <node id="1470921783545416820" at="12,5,13,87" concept="5" />
+      <node id="1470921783545416820" at="13,87,14,47" concept="2" />
+      <node id="1470921783545416820" at="11,33,15,5" concept="0" />
+      <scope id="1470921783545416820" at="12,5,14,47">
+        <var name="inferenceRule" id="1470921783545416820" />
+      </scope>
+    </file>
     <file name="typeof_PrimNumConstant_InferenceRule.java">
       <node id="1470921783545367408" at="22,5,23,59" concept="5" />
       <node id="1470921783545367408" at="23,59,24,194" concept="5" />
@@ -76,6 +84,14 @@
     </file>
   </root>
   <root nodeRef="r:d9c7d7eb-2b42-4829-a0ae-81b54923bc48(testAnnotatedType.typesystem)/6405009306797672392">
+    <file name="TypesystemDescriptor.java">
+      <node id="6405009306797672392" at="20,5,21,111" concept="5" />
+      <node id="6405009306797672392" at="21,111,22,57" concept="2" />
+      <node id="6405009306797672392" at="19,5,23,5" concept="0" />
+      <scope id="6405009306797672392" at="20,5,22,57">
+        <var name="substituteTypeRule" id="6405009306797672392" />
+      </scope>
+    </file>
     <file name="substituteType_SubstituteAnnotation_SubstituteTypeRule.java">
       <node id="6405009306797677123" at="25,280,26,473" concept="6" />
       <node id="6405009306797677894" at="27,9,28,20" concept="6" />
@@ -151,6 +167,14 @@
       </scope>
       <scope id="8675420879155410244" at="33,0,38,0" />
       <unit id="8675420879155410189" at="15,0,39,0" name="testAnnotatedType.typesystem.PrimInt_subtypeOf_PrimLong_SubtypingRule" />
+    </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="8675420879155410189" at="16,5,17,91" concept="5" />
+      <node id="8675420879155410189" at="17,91,18,47" concept="2" />
+      <node id="8675420879155410189" at="15,5,19,5" concept="0" />
+      <scope id="8675420879155410189" at="16,5,18,47">
+        <var name="subtypingRule" id="8675420879155410189" />
+      </scope>
     </file>
   </root>
 </debug-info>

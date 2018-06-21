@@ -59,7 +59,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Step().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_Step().apply(context);
       return tlist1;
     }
   }
@@ -70,7 +70,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_LeftTurn().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_LeftTurn().apply(context);
       return tlist1;
     }
   }
@@ -81,7 +81,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_IsWall().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_IsWall().apply(context);
       return tlist1;
     }
   }
@@ -92,7 +92,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Not().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_Not().apply(context);
       return tlist1;
     }
   }
@@ -103,7 +103,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_IsMark().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_IsMark().apply(context);
       return tlist1;
     }
   }
@@ -114,7 +114,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_IsFull().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_IsFull().apply(context);
       return tlist1;
     }
   }
@@ -125,7 +125,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_IfStatement().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_IfStatement().apply(context);
       return tlist1;
     }
   }
@@ -136,7 +136,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Repeat().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_Repeat().apply(context);
       return tlist1;
     }
   }
@@ -147,7 +147,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_While().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_While().apply(context);
       return tlist1;
     }
   }
@@ -158,7 +158,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Heading().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_Heading().apply(context);
       return tlist1;
     }
   }
@@ -169,7 +169,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Looking().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_Looking().apply(context);
       return tlist1;
     }
   }
@@ -180,7 +180,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_North().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_North().apply(context);
       return tlist1;
     }
   }
@@ -191,7 +191,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_East().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_East().apply(context);
       return tlist1;
     }
   }
@@ -202,7 +202,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_South().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_South().apply(context);
       return tlist1;
     }
   }
@@ -213,7 +213,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_West().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_West().apply(context);
       return tlist1;
     }
   }
@@ -224,7 +224,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_RoutineDefinition().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_RoutineDefinition().apply(context);
       return tlist1;
     }
   }
@@ -235,7 +235,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_RoutineCall().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_RoutineCall().apply(context);
       return tlist1;
     }
   }
@@ -246,7 +246,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_CommandList().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_CommandList().apply(context);
       return tlist1;
     }
   }
@@ -257,7 +257,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Drop().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_Drop().apply(context);
       return tlist1;
     }
   }
@@ -268,7 +268,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Pick().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_Pick().apply(context);
       return tlist1;
     }
   }
@@ -279,7 +279,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_CommentLine().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_CommentLine().apply(context);
       return tlist1;
     }
   }
@@ -290,7 +290,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_TraceMessage().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_TraceMessage().apply(context);
       return tlist1;
     }
   }
@@ -301,7 +301,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> result = new Template_map_Script().apply(environment, context);
+      Collection<SNode> result = new Template_map_Script().apply(context);
       return result;
     }
   }

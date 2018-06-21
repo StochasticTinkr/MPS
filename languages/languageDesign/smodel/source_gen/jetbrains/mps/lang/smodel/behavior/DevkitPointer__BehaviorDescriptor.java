@@ -47,11 +47,11 @@ public final class DevkitPointer__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static void setModuleReference_id78qQRpbgix9(@NotNull SNode __thisNode__, @Nullable SModuleReference moduleRef) {
     if (moduleRef == null) {
-      SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x721adb764b3fbd1bL, 0x721adb764b3fbd1dL, "devkitId"), null);
-      SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x721adb764b3fbd1bL, 0x721adb764b3fbd1cL, "devkitName"), null);
+      SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x721adb764b3fbd1bL, 0x721adb764b3fbd1dL, "devkitId"), null);
+      SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x721adb764b3fbd1bL, 0x721adb764b3fbd1cL, "devkitName"), null);
     } else {
-      SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x721adb764b3fbd1bL, 0x721adb764b3fbd1dL, "devkitId"), PersistenceFacade.getInstance().asString(moduleRef.getModuleId()));
-      SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x721adb764b3fbd1bL, 0x721adb764b3fbd1cL, "devkitName"), moduleRef.getModuleName());
+      SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x721adb764b3fbd1bL, 0x721adb764b3fbd1dL, "devkitId"), PersistenceFacade.getInstance().asString(moduleRef.getModuleId()));
+      SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x721adb764b3fbd1bL, 0x721adb764b3fbd1cL, "devkitName"), moduleRef.getModuleName());
     }
   }
 

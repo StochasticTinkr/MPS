@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class NoFinalInInterface_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class NoFinalInInterface_Test extends BaseTransformationTest {
 
   @Test
   public void test_NoFinalInInterface() throws Throwable {
-    runTest("jetbrains.mps.editorTest.NoFinalInInterface_Test$TestBody", "testMethod", false);
+    new NoFinalInInterface_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("4615554537706951047", "4615554537706951054");

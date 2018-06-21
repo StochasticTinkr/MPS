@@ -209,14 +209,6 @@ public class SolutionIdea extends Solution {
 
       addUsedSdk(myDependencies);
       addUsedLibraries(myDependencies);
-
-      // adding JDK module to a set of dependencies
-      // why, oh, why are we doing it?
-      // FIXME, PLEASE!
-//      Solution jdkSolution = StubSolutionIdea.getJdkSolution();
-//      if (jdkSolution != null) {
-//        myDependencies.add(new Dependency(jdkSolution.getModuleReference(), false));
-//      }
     }
     return myDependencies;
   }

@@ -11,9 +11,9 @@
   <root nodeRef="r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)/359299525883788095">
     <file name="SConceptHierarchy_Test.java">
       <node id="359299525883788095" at="26,35,27,25" concept="7" />
-      <node id="359299525883788095" at="31,56,32,113" concept="1" />
-      <node id="359299525883788095" at="35,59,36,116" concept="1" />
-      <node id="359299525883788095" at="39,59,40,116" concept="1" />
+      <node id="359299525883788102" at="31,56,32,113" concept="1" />
+      <node id="5308535536686266820" at="35,59,36,116" concept="1" />
+      <node id="5308535536686088778" at="39,59,40,116" concept="1" />
       <node id="6638738203687277589" at="45,58,46,374" concept="1" />
       <node id="6638738203687278534" at="46,374,47,326" concept="1" />
       <node id="6638738203687280475" at="47,326,48,375" concept="1" />
@@ -43,20 +43,20 @@
       <node id="5302237107384209108" at="75,118,76,253" concept="1" />
       <node id="359299525883788095" at="22,0,24,0" concept="6" trace="ourParamCache" />
       <node id="359299525883788095" at="26,0,29,0" concept="0" trace="SConceptHierarchy_Test#()V" />
-      <node id="359299525883788095" at="30,0,34,0" concept="2" trace="test_conceptHierarchy#()V" />
-      <node id="359299525883788095" at="34,0,38,0" concept="2" trace="test_conceptSuperConcept#()V" />
-      <node id="359299525883788095" at="38,0,42,0" concept="2" trace="test_defaultIfaceConcept#()V" />
+      <node id="359299525883788102" at="30,0,34,0" concept="2" trace="test_conceptHierarchy#()V" />
+      <node id="5308535536686266820" at="34,0,38,0" concept="2" trace="test_conceptSuperConcept#()V" />
+      <node id="5308535536686088778" at="38,0,42,0" concept="2" trace="test_defaultIfaceConcept#()V" />
       <node id="359299525883788102" at="45,0,54,0" concept="2" trace="test_conceptHierarchy#()V" />
       <node id="5308535536686266820" at="54,0,63,0" concept="2" trace="test_conceptSuperConcept#()V" />
       <node id="5308535536686088778" at="63,0,78,0" concept="2" trace="test_defaultIfaceConcept#()V" />
       <scope id="359299525883788095" at="26,35,27,25" />
-      <scope id="359299525883788095" at="31,56,32,113" />
-      <scope id="359299525883788095" at="35,59,36,116" />
-      <scope id="359299525883788095" at="39,59,40,116" />
+      <scope id="359299525883788102" at="31,56,32,113" />
+      <scope id="5308535536686266820" at="35,59,36,116" />
+      <scope id="5308535536686088778" at="39,59,40,116" />
       <scope id="359299525883788095" at="26,0,29,0" />
-      <scope id="359299525883788095" at="30,0,34,0" />
-      <scope id="359299525883788095" at="34,0,38,0" />
-      <scope id="359299525883788095" at="38,0,42,0" />
+      <scope id="359299525883788102" at="30,0,34,0" />
+      <scope id="5308535536686266820" at="34,0,38,0" />
+      <scope id="5308535536686088778" at="38,0,42,0" />
       <scope id="359299525883788102" at="45,58,52,396" />
       <scope id="5308535536686266820" at="54,61,61,335">
         <var name="baseConcept" id="5308535536686274910" />

@@ -87,12 +87,13 @@ public class EmptyPsiSearchHelper implements PsiSearchHelper {
   }
 
   @Override
-  public boolean processRequests(@NotNull SearchRequestCollector request, @NotNull Processor<PsiReference> processor) {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+  public boolean processRequests(@NotNull SearchRequestCollector request, @NotNull Processor<? super PsiReference> processor) {
+    return false;
   }
 
+  @NotNull
   @Override
-  public AsyncFuture<Boolean> processRequestsAsync(@NotNull SearchRequestCollector request, @NotNull Processor<PsiReference> processor) {
+  public AsyncFuture<Boolean> processRequestsAsync(@NotNull SearchRequestCollector request, @NotNull Processor<? super PsiReference> processor) {
     return null;
   }
 

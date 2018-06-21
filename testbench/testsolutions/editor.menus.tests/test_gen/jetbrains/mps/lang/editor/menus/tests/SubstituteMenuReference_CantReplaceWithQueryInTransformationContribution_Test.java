@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 
 @MPSLaunch
@@ -21,11 +22,15 @@ public class SubstituteMenuReference_CantReplaceWithQueryInTransformationContrib
 
   @Test
   public void test_SubstituteMenuReference_CantReplaceWithQueryInTransformationContribution() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_CantReplaceWithQueryInTransformationContribution_Test$TestBody", "testMethod", false);
+    new SubstituteMenuReference_CantReplaceWithQueryInTransformationContribution_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2508844969610743990", "2508844969610760588");

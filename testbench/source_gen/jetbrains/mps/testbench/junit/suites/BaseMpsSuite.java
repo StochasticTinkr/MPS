@@ -10,8 +10,6 @@ import org.junit.runner.Runner;
 import org.junit.runner.notification.RunNotifier;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
-import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.EnvironmentContainer;
 
 public class BaseMpsSuite extends Suite {
   public BaseMpsSuite(Class<?> aClass, RunnerBuilder builder) throws InitializationError {
@@ -27,10 +25,6 @@ public class BaseMpsSuite extends Suite {
     try {
       RuntimeFlags.setTestMode(TestMode.USUAL);
       super.run(notifier);
-      Environment env = EnvironmentContainer.get();
-      if (env != null) {
-        env.dispose();
-      }
     } finally {
       RuntimeFlags.setTestMode(TestMode.NONE);
     }

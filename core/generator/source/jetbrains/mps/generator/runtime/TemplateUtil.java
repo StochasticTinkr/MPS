@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.generator.impl.interpreted.TemplateModuleInterpreted;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -24,9 +23,6 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -118,21 +114,6 @@ public class TemplateUtil {
       final String msg = String.format("Wrong number of arguments for template %s. Expected %d, actual count is %d", template, 0, actual);
       throw new IllegalArgumentException(msg);
     }
-  }
-
-  /**
-   * @deprecated This method has been in use from languages with interpreted generators (LanguageRuntime.getGenerators) to instantiate an interpreted TemplateModule
-   * prior to 2018.1.
-   */
-  @Deprecated
-  @ToRemove(version = 2018.1)
-  public static TemplateModule createInterpretedGenerator(LanguageRuntime sourceLanguage, String moduleReference) {
-    Generator g = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(moduleReference), Generator.class);
-    if (g == null) {
-      LOG.error("language " + sourceLanguage.getNamespace() + " doesn't contain generator `" + moduleReference + "': try to regenerate language");
-      return null;
-    }
-    return new TemplateModuleInterpreted(sourceLanguage, g);
   }
 
   public static TemplateMappingPriorityRule createStrictlyBeforeRule(TemplateMappingConfigRef left, TemplateMappingConfigRef right) {

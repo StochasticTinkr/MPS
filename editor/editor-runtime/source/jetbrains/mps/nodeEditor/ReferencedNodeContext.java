@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.memory.MemoryAnalyzer;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -71,6 +72,8 @@ public class ReferencedNodeContext {
     return new ReferencedNodeContext(newNode, this);
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public ReferencedNodeContext contextWithOneMoreReference(SNode node, SNode contextRefererNode, String contextRole) {
     ReferencedNodeContext result = new ReferencedNodeContext(node, this);
     result.addContextRole(contextRole);

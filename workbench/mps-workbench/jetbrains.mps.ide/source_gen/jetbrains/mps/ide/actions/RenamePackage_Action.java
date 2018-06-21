@@ -83,7 +83,7 @@ public class RenamePackage_Action extends BaseAction {
         for (SNode node : nodesUnderPackage) {
           String oldPackage = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"));
           String newPackage = newName + oldPackage.substring(name.length());
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), (newPackage.length() > 0 ? newPackage : null));
+          SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), (newPackage.length() > 0 ? newPackage : null));
         }
       }
     });

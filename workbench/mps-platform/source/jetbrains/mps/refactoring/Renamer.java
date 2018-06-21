@@ -15,14 +15,20 @@
  */
 package jetbrains.mps.refactoring;
 
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Internal;
@@ -41,11 +47,56 @@ import java.util.List;
  */
 @ToRemove(version = 3.5)
 public final class Renamer {
-  public static void renameModule(@NotNull AbstractModule module, String newModuleName) throws DescriptorTargetFileAlreadyExistsException {
-    module.getRepository().saveAll();
-    module.rename(newModuleName);
-    updateModelAndModuleReferences(module.getRepository());
-    module.getRepository().saveAll();
+  private static void renameModule(@NotNull AbstractModule module, String newModuleName, @NotNull Project project, boolean withReload) throws DescriptorTargetFileAlreadyExistsException {
+    project.getRepository().saveAll();
+    final String oldModuleName = module.getModuleName();
+
+    IFile moduleFolder = module.getDescriptorFile() != null ? module.getDescriptorFile().getParent() : null;
+    if (project.getRepository() instanceof SRepositoryExt && moduleFolder != null) {
+      if (moduleFolder.getName().equals(oldModuleName) || withReload) {
+        // Removing module from project for reload
+        project.removeModule(module);
+
+        if (moduleFolder.getName().equals(oldModuleName)) {
+          moduleFolder.rename(newModuleName);
+          assert moduleFolder.getParent() != null;
+          moduleFolder = moduleFolder.getParent().getDescendant(newModuleName);
+        }
+
+        ModulesMiner modulesMiner = new ModulesMiner();
+        ModuleRepositoryFacade repositoryFacade = new ModuleRepositoryFacade(project);
+        assert moduleFolder.getChildren() != null;
+        final String name = module.getDescriptorFile().getName();
+        final IFile moduleFile = moduleFolder.getChildren().stream().filter(file -> file.getName().equals(name)).findFirst().get();
+
+        // Load module from new location
+        final Collection<ModuleHandle> collectedModules = modulesMiner.collectModules(moduleFile).getCollectedModules();
+        for (ModuleHandle handle : collectedModules) {
+          SModule sModule = repositoryFacade.instantiateModule(handle, project);
+          if (!(sModule instanceof Generator)) {
+            // Adding module back to project after reload
+            project.addModule(sModule);
+          }
+          if (sModule.getModuleName().equals(oldModuleName)) {
+            module = (AbstractModule) sModule;
+          }
+        }
+      }
+
+      // Rename module in new place after containing folder rename
+      // Skip if current & old names are the same - can happen for submodule
+      if (!module.getModuleName().equals(newModuleName)) {
+        module.rename(newModuleName);
+      }
+    }
+
+    updateModelAndModuleReferences(project.getRepository());
+
+    project.getRepository().saveAll();
+  }
+
+  public static void renameModule(@NotNull AbstractModule module, String newModuleName, @NotNull Project project) throws DescriptorTargetFileAlreadyExistsException {
+    renameModule(module, newModuleName, project, false);
   }
 
   /**
@@ -60,9 +111,10 @@ public final class Renamer {
    */
   @Internal
   public static void renameModuleWithSubModules(@NotNull AbstractModule module, @NotNull String newModuleName,
-                                                @NotNull Collection<AbstractModule> subModules) throws DescriptorTargetFileAlreadyExistsException {
+                                                @NotNull Collection<AbstractModule> subModules,
+                                                @NotNull Project project) throws DescriptorTargetFileAlreadyExistsException {
     final String oldModuleName = module.getModuleName();
-    Renamer.renameModule(module, newModuleName);
+    Renamer.renameModule(module, newModuleName, project);
     if (!subModules.isEmpty()) {
       for (AbstractModule subModule : subModules) {
         final ModuleDescriptor subModuleDescriptor = subModule.getModuleDescriptor();
@@ -82,7 +134,8 @@ public final class Renamer {
                                           : subModule.getModuleName()));
 
         // Rename even if name stays the same to update module descriptor
-        Renamer.renameModule(subModule, newSubModuleName);
+        // Reload required to update AbstractModule#getModuleDescriptor - IdeaFile implementation caches path and can't handle parent folder move
+        Renamer.renameModule(subModule, newSubModuleName, project, true);
       }
     }
   }

@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.migration.behavior.MigrationScript__BehaviorDescriptor;
 
 public class MigrationScriptBuilder {
@@ -30,7 +31,7 @@ public class MigrationScriptBuilder {
   }
 
   public MigrationScriptBuilder setName(String name) {
-    SPropertyOperations.set(myScript, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), name);
+    SPropertyOperations.assign(myScript, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), name);
     return this;
   }
 
@@ -49,7 +50,7 @@ public class MigrationScriptBuilder {
   }
 
   public MigrationScriptBuilder addDependency(SModel m) {
-    ((SModelInternal) SNodeOperations.getModel(myScript)).addModelImport(m.getReference());
+    ((SModelInternal) SNodeOperations.getModel(myScript)).addModelImport(SModelOperations.getPointer(m));
     return this;
   }
 

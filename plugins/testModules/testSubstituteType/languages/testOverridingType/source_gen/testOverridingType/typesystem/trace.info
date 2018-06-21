@@ -15,6 +15,14 @@
     </file>
   </root>
   <root nodeRef="r:d8c6e16f-e698-4fc4-9c7f-4a279bcfaaf0(testOverridingType.typesystem)/1870027727456311990">
+    <file name="TypesystemDescriptor.java">
+      <node id="1870027727456311990" at="18,5,19,103" concept="5" />
+      <node id="1870027727456311990" at="19,103,20,47" concept="2" />
+      <node id="1870027727456311990" at="17,5,21,5" concept="0" />
+      <scope id="1870027727456311990" at="18,5,20,47">
+        <var name="inferenceRule" id="1870027727456311990" />
+      </scope>
+    </file>
     <file name="typeof_UnconditionalOverrideAnnotation_InferenceRule.java">
       <node id="1870027727456320100" at="22,87,23,16" concept="6" />
       <node id="1870027727456321080" at="27,7,28,89" concept="5" />
@@ -85,6 +93,14 @@
     </file>
   </root>
   <root nodeRef="r:d8c6e16f-e698-4fc4-9c7f-4a279bcfaaf0(testOverridingType.typesystem)/6560794580689850748">
+    <file name="TypesystemDescriptor.java">
+      <node id="6560794580689850748" at="10,5,11,90" concept="5" />
+      <node id="6560794580689850748" at="11,90,12,47" concept="2" />
+      <node id="6560794580689850748" at="9,33,13,5" concept="0" />
+      <scope id="6560794580689850748" at="10,5,12,47">
+        <var name="inferenceRule" id="6560794580689850748" />
+      </scope>
+    </file>
     <file name="typeof_OverrideAnnotation_InferenceRule.java">
       <node id="2401040147804524711" at="21,5,22,87" concept="5" />
       <node id="2401040147804524711" at="22,87,23,195" concept="5" />
@@ -139,6 +155,14 @@
     </file>
   </root>
   <root nodeRef="r:d8c6e16f-e698-4fc4-9c7f-4a279bcfaaf0(testOverridingType.typesystem)/6572489169071324640">
+    <file name="TypesystemDescriptor.java">
+      <node id="6572489169071324640" at="14,5,15,97" concept="5" />
+      <node id="6572489169071324640" at="15,97,16,47" concept="2" />
+      <node id="6572489169071324640" at="13,5,17,5" concept="0" />
+      <scope id="6572489169071324640" at="14,5,16,47">
+        <var name="inferenceRule" id="6572489169071324640" />
+      </scope>
+    </file>
     <file name="typeof_OverridingPrimNumConstant_InferenceRule.java">
       <node id="6572489169071325350" at="21,94,22,201" concept="6" />
       <node id="6572489169071355994" at="25,5,26,67" concept="5" />

@@ -16,18 +16,19 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root nodeRef="r:05ff02e5-9836-4ae9-a454-eab43fa58c8f(jetbrains.mps.ide.httpsupport.manager.plugin)/3750908339007107457">
-    <file name="HttpSupportPliginNotifications.java">
+    <file name="HttpSupportPluginNotifications.java">
       <node id="3750908339007107457" at="13,0,14,0" concept="11" trace="LOG" />
-      <node id="3750908339007108392" at="15,50,16,109" concept="2" />
-      <node id="3750908339007108400" at="17,39,18,24" concept="2" />
-      <node id="3750908339007108400" at="16,109,19,5" concept="5" />
-      <node id="3750908339007107617" at="15,0,21,0" concept="12" trace="showWarning#(Ljava/lang/String;)V" />
-      <scope id="3750908339007108400" at="17,39,18,24" />
-      <scope id="3750908339007107619" at="15,50,19,5" />
-      <scope id="3750908339007107617" at="15,0,21,0">
+      <node id="8170164001079971460" at="15,0,16,0" concept="11" trace="ID" />
+      <node id="3750908339007108392" at="17,50,18,90" concept="2" />
+      <node id="3750908339007108400" at="19,39,20,24" concept="2" />
+      <node id="3750908339007108400" at="18,90,21,5" concept="5" />
+      <node id="3750908339007107617" at="17,0,23,0" concept="12" trace="showWarning#(Ljava/lang/String;)V" />
+      <scope id="3750908339007108400" at="19,39,20,24" />
+      <scope id="3750908339007107619" at="17,50,21,5" />
+      <scope id="3750908339007107617" at="17,0,23,0">
         <var name="message" id="3750908339007108794" />
       </scope>
-      <unit id="3750908339007107457" at="12,0,22,0" name="jetbrains.mps.ide.httpsupport.manager.plugin.HttpSupportPliginNotifications" />
+      <unit id="3750908339007107457" at="12,0,24,0" name="jetbrains.mps.ide.httpsupport.manager.plugin.HttpSupportPluginNotifications" />
     </file>
   </root>
   <root nodeRef="r:05ff02e5-9836-4ae9-a454-eab43fa58c8f(jetbrains.mps.ide.httpsupport.manager.plugin)/4060668212259736923">

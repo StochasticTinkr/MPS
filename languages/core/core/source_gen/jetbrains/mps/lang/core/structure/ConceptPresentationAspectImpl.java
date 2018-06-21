@@ -14,10 +14,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BaseConcept;
   private ConceptPresentation props_BasePlaceholder;
   private ConceptPresentation props_ChildAttribute;
-  private ConceptPresentation props_ExportScope;
-  private ConceptPresentation props_ExportScopeModule;
-  private ConceptPresentation props_ExportScopeNamespace;
-  private ConceptPresentation props_ExportScopePublic;
   private ConceptPresentation props_IAntisuppressErrors;
   private ConceptPresentation props_ICanSuppressErrors;
   private ConceptPresentation props_IContainer;
@@ -57,7 +53,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Attribute:
         if (props_Attribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a0b0ob);
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a0b0kb);
           props_Attribute = cpb.create();
         }
         return props_Attribute;
@@ -90,33 +86,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ChildAttribute = cpb.create();
         }
         return props_ChildAttribute;
-      case LanguageConceptSwitch.ExportScope:
-        if (props_ExportScope == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_ExportScope = cpb.create();
-        }
-        return props_ExportScope;
-      case LanguageConceptSwitch.ExportScopeModule:
-        if (props_ExportScopeModule == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("@export(module)");
-          props_ExportScopeModule = cpb.create();
-        }
-        return props_ExportScopeModule;
-      case LanguageConceptSwitch.ExportScopeNamespace:
-        if (props_ExportScopeNamespace == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("@export(namespace)");
-          props_ExportScopeNamespace = cpb.create();
-        }
-        return props_ExportScopeNamespace;
-      case LanguageConceptSwitch.ExportScopePublic:
-        if (props_ExportScopePublic == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("@export(public)");
-          props_ExportScopePublic = cpb.create();
-        }
-        return props_ExportScopePublic;
       case LanguageConceptSwitch.IAntisuppressErrors:
         if (props_IAntisuppressErrors == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

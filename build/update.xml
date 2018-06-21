@@ -169,22 +169,52 @@
     </channel>
 
     <channel id="MPS173EAP" name="MPS 2017.3" status="eap"
-             url="https://www.jetbrains.com/mps/download"
+             url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2017.3+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2017" minorVersoin="3">
-      <build number="173.1734" version="2017.3.4">
-        <message>JetBrains MPS 2017.3.4 is available.</message>
-        <button name="Download" url="https://www.jetbrains.com/mps/download" download="true"/>
+      <build number="173.1812" version="2017.3.6">
+        <message>JetBrains MPS 2017.3.6 is available.</message>
+        <button name="Download" url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2017.3+Download+Page" download="true"/>
       </build>
     </channel>
 
     <channel id="MPS173" name="MPS 2017.3" status="release"
-             url="https://www.jetbrains.com/mps/download"
+             url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2017.3+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2017" minorVersoin="3">
-      <build number="173.1734" version="2017.3.4">
-        <message>JetBrains MPS 2017.3.4 is available.</message>
+      <build number="173.1812" version="2017.3.6">
+        <message>JetBrains MPS 2017.3.6 is available.</message>
+        <button name="Download" url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2017.3+Download+Page" download="true"/>
+      </build>
+    </channel>
+
+    <channel id="MPS181EAP" name="MPS 2018.1" status="eap"
+             url="https://www.jetbrains.com/mps/download"
+             feedback="http://youtrack.jetbrains.net"
+             majorVersion="2018" minorVersoin="1">
+      <build number="181.1404" version="2018.1.4">
+        <message>JetBrains MPS 2018.1.4 is available.</message>
         <button name="Download" url="https://www.jetbrains.com/mps/download" download="true"/>
+      </build>
+    </channel>
+
+    <channel id="MPS181" name="MPS 2018.1" status="release"
+             url="https://www.jetbrains.com/mps/download"
+             feedback="http://youtrack.jetbrains.net"
+             majorVersion="2018" minorVersoin="1">
+      <build number="181.1469" version="2018.1.5">
+        <message>JetBrains MPS 2018.1.5 is available.</message>
+        <button name="Download" url="https://www.jetbrains.com/mps/download" download="true"/>
+      </build>
+    </channel>
+
+    <channel id="MPS182EAP" name="MPS 2018.2" status="eap"
+             url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2018.2+EAP+Download+Page"
+             feedback="http://youtrack.jetbrains.net"
+             majorVersion="2018" minorVersoin="2">
+      <build number="182.821" version="2018.2 EAP4">
+        <message>JetBrains MPS 2018.2 EAP4 is available.</message>
+        <button name="Download" url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2018.2+EAP+Download+Page" download="true"/>
       </build>
     </channel>
 

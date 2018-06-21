@@ -80,5 +80,7 @@
     <orderEntry type="module" module-name="modelchecker" />
     <orderEntry type="module" module-name="migration-platform" scope="TEST" />
     <orderEntry type="module" module-name="mps-testing" scope="TEST" />
+    <orderEntry type="module" module-name="vcs-platform" scope="TEST" />
+    <orderEntry type="module" module-name="util-core" scope="TEST" />
   </component>
 </module>

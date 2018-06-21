@@ -3532,7 +3532,7 @@
                 <node concept="2pNUuL" id="1Mjrj7j4BBx" role="2pNNFR">
                   <property role="2pNUuO" value="name" />
                   <node concept="2pMdtt" id="1Mjrj7j4BBD" role="2pMdts">
-                    <property role="2pMdty" value="jgoodies-forms.jar" />
+                    <property role="2pMdty" value="forms-1.1-preview.jar" />
                   </node>
                 </node>
               </node>

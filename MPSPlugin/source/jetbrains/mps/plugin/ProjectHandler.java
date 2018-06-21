@@ -22,6 +22,8 @@ import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
@@ -32,10 +34,7 @@ import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
-import com.intellij.psi.JavaPsiFacade;
-import com.intellij.psi.PsiClass;
-import com.intellij.psi.PsiField;
-import com.intellij.psi.PsiMethod;
+import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.searches.ClassInheritorsSearch;
 import org.jetbrains.annotations.NotNull;
@@ -70,7 +69,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
   @NotNull
   public String getComponentName() {
-
     return "MPSSupport Handler";
   }
 
@@ -105,6 +103,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     }
   }
 
+  // guarantees NotNull return value
   public IdeaCompilationResult buildModules(final String[] paths) {
     final CountDownLatch latch = new CountDownLatch(1);
     final IdeaCompilationResult[] result = new IdeaCompilationResult[1];
@@ -123,6 +122,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
             }
 
             if (modules.isEmpty()) {
+              result[0] = new IdeaCompilationResult(0, 0, false, false);
               latch.countDown();
               return;
             }
@@ -197,6 +197,17 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
             return;
           }
         }
+      }
+    });
+  }
+
+  @Override
+  public void open(final String fileName, final int startLine, final int startPosition, int endLine, int endPosition) throws RemoteException {
+    executeWriteAction(new Runnable() {
+      public void run() {
+        VirtualFile vfile = LocalFileSystem.getInstance().findFileByPath(fileName);
+        FileEditorManager.getInstance(myProject).navigateToTextEditor(new OpenFileDescriptor(myProject, vfile, startLine, startPosition), true);
+        activateProjectWindow();
       }
     });
   }
@@ -365,5 +376,15 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     if (distance == -1) return -1;
 
     return distance + 1;
+  }
+
+  public void showSource(PsiFile file, String modelHint, int line, int column) {
+    for (IMPSIDEHandler h : myIDEHandlers) {
+      try {
+        h.showSource(file.getVirtualFile().getPath(), modelHint , line, column);
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
   }
 }

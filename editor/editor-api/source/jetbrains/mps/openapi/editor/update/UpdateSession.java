@@ -159,6 +159,7 @@ public interface UpdateSession {
    */
   <T> T updateReferencedNodeCell(Computable<T> update, SNode node, String role);
 
+
   /**
    * Returning {@link EditorCellFactory} instance used inside current update session
    * to create EditorCell instances.

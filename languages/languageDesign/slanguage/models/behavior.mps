@@ -79,5 +79,12 @@
       <node concept="3clFbS" id="1KHvivZHjZL" role="2VODD2" />
     </node>
   </node>
+  <node concept="13h7C7" id="59iQg8rz24x">
+    <property role="3GE5qa" value="operation.model" />
+    <ref role="13h7C2" to="5ds8:59iQg8ryOmC" resolve="OfAspectOperation" />
+    <node concept="13hLZK" id="59iQg8rz24y" role="13h7CW">
+      <node concept="3clFbS" id="59iQg8rz24z" role="2VODD2" />
+    </node>
+  </node>
 </model>
 

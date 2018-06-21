@@ -38,12 +38,16 @@ public class Template_generator_descriptor extends TemplateDeclarationBase imple
       environment.resolve(new RefResolver(tnode1, myAssociationLinks[0], context, new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639668775"), "") {
         @Override
         public Object resolve() {
-          return QueriesGenerated.referenceMacro_GetReferent_263208052639668776(createQueryContext());
+          return QueriesGenerated.referenceMacro_GetReferent_2632080526396174190(createQueryContext());
         }
       });
     } finally {
     }
     return TemplateUtil.singletonList(tnode1);
+  }
+
+  public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override

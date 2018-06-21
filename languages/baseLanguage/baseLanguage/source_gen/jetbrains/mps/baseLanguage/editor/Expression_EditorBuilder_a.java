@@ -32,29 +32,29 @@ import jetbrains.mps.editor.runtime.style.Padding;
   }
 
   /*package*/ EditorCell createCell() {
-    return createAlternation_1ltshm_a();
+    return createAlternation_0();
   }
 
-  private EditorCell createAlternation_1ltshm_a() {
+  private EditorCell createAlternation_0() {
     boolean alternationCondition = true;
     alternationCondition = nodeCondition_1ltshm_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = createCustom_1ltshm_a0();
+      editorCell = createCustom_0();
     } else {
-      editorCell = createComponent_1ltshm_a0();
+      editorCell = createComponent_0();
     }
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);
-      bigCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(bigCell);
     }
     return editorCell;
   }
   private boolean nodeCondition_1ltshm_a0() {
     return isEmptyString(SConceptOperations.conceptAlias(SNodeOperations.getConcept(myNode)));
   }
-  private EditorCell createCustom_1ltshm_a0() {
+  private EditorCell createCustom_0() {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider(myNode) {
@@ -72,7 +72,7 @@ import jetbrains.mps.editor.runtime.style.Padding;
     editorCell.setCellId("Custom_1ltshm_a0");
     return editorCell;
   }
-  private EditorCell createComponent_1ltshm_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }

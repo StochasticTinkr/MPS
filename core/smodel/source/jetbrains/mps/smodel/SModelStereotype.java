@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,10 +36,21 @@ public class SModelStereotype {
 
   public static final String[] values = new String[]{NONE, GENERATOR, TESTS};
 
+  /**
+   * @deprecated there's no direct replacement, in most cases negation of {@link #isStubModel(SModel)} is what original intention was
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static boolean isUserModel(@NotNull SModel model) {
+    // there's 1 use in mbeddr
     return isUserModelStereotype(getStereotype(model));
   }
 
+  /**
+   * @deprecated there's no direct replacement, in most cases negation of {@link #isStubModel(SModel)} is what original intention was
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static boolean isUserModel(@NotNull String modelFqName) {
     return isUserModelStereotype(getStereotype(modelFqName));
   }
@@ -60,7 +71,13 @@ public class SModelStereotype {
     return isTestModelStereotype(getStereotype(model));
   }
 
+  /**
+   * @deprecated use {@link #isStubModel(SModel)} instead, plain strings instead of objects are just bad design
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static boolean isStubModelStereotype(String stereotype) {
+    // there's 1 use in mbeddr
     return stereotype.endsWith(STUB_SUFFIX);
   }
 

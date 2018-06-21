@@ -123,6 +123,12 @@ public interface GenerationPlanBuilder {
   void synchronizeWithCheckpoint(@NotNull CheckpointIdentity cp);
 
   /**
+   * Support for parallel branches of transformations
+   * @return builder instance to handle separate branch of transformations
+   */
+  GenerationPlanBuilder fork();
+
+  /**
    * Completes {@link ModelGenerationPlan} instance with any state information build is aware of (e.g. build extends relation between
    * generators for {@link #applyGeneratorWithExtended(SModule...) or respect priority rules of generators involved}
    *

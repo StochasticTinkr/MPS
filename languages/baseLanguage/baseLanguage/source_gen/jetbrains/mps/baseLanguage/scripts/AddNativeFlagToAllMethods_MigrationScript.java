@@ -34,7 +34,7 @@ public final class AddNativeFlagToAllMethods_MigrationScript extends BaseMigrati
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, 0x73f30e3df95c0b73L, "isNative"), "" + (false));
+        SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, 0x73f30e3df95c0b73L, "isNative"), "" + (false));
       }
       @Override
       public boolean isShowAsIntention() {

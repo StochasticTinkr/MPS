@@ -85,7 +85,7 @@ public class GenerationContextOp_CreateIndexedName_SubstituteMenu extends Substi
       @Override
       public SNode createNode(@NotNull String pattern) {
         SNode rv = SModelOperations.createNewNode(_context.getModel(), null, MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x107ac9fcd24369dbL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateIndexedName"));
-        SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x107ac9fcd24369dbL, 0x107ac9fcd2448676L, "skipFirstIndex"), "" + (false));
+        SPropertyOperations.assign(rv, MetaAdapterFactory.getProperty(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x107ac9fcd24369dbL, 0x107ac9fcd2448676L, "skipFirstIndex"), "" + (false));
         return rv;
       }
 
@@ -145,7 +145,7 @@ public class GenerationContextOp_CreateIndexedName_SubstituteMenu extends Substi
       @Override
       public SNode createNode(@NotNull String pattern) {
         SNode rv = SModelOperations.createNewNode(_context.getModel(), null, MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x107ac9fcd24369dbL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateIndexedName"));
-        SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x107ac9fcd24369dbL, 0x107ac9fcd2448676L, "skipFirstIndex"), "" + (true));
+        SPropertyOperations.assign(rv, MetaAdapterFactory.getProperty(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x107ac9fcd24369dbL, 0x107ac9fcd2448676L, "skipFirstIndex"), "" + (true));
         return rv;
       }
 

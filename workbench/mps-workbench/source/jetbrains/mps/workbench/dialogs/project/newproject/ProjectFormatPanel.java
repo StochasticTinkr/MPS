@@ -81,10 +81,11 @@ public class ProjectFormatPanel {
     final JLabel label1 = new JLabel();
     label1.setText("Project format:");
     myWholePanel.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
-        GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+                                                 GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     myStorageFormatCombo = new JComboBox();
     myWholePanel.add(myStorageFormatCombo, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+                                                               GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                                                               GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
   }
 
   /**

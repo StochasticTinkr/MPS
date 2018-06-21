@@ -48,7 +48,7 @@ public class AbstractCellMenuPart_ApplySideTransforms implements SubstituteInfoP
 
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-    SNode node = (SNode) cellContext.get(CellContext.EDITED_NODE);
+    SNode node = cellContext.get(CellContext.EDITED_NODE);
     List<SubstituteAction> list = ModelActions.createSideTransformHintSubstituteActions(node, myCellSide, myTag, editorContext.getOperationContext());
 
     List<SubstituteAction> wrapperList = new ArrayList<SubstituteAction>(list.size());

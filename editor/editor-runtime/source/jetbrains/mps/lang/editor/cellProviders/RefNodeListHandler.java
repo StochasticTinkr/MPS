@@ -29,10 +29,9 @@ import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -42,73 +41,92 @@ import java.util.Iterator;
 import java.util.List;
 
 public abstract class RefNodeListHandler extends AbstractCellListHandler {
-
-  private SNode myChildConcept; //todo make it use S-entities internally
-  private SNode myLinkDeclaration; //todo make it use S-entities internally
   private boolean myIsReverseOrder = false;
 
+  //the following two fields are generated as get...() methods in 2018.2
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  private SContainmentLink mySLink;
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  private SAbstractConcept myChildSConcept;
+
+  public RefNodeListHandler(EditorContext editorContext) {
+    super(editorContext);
+  }
+
+  public RefNodeListHandler(EditorContext editorContext, boolean isReverseOrder) {
+    super(editorContext);
+    myIsReverseOrder = isReverseOrder;
+  }
+
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public RefNodeListHandler(final SNode ownerNode, final String childRole, EditorContext editorContext) {
-    // TODO: remove ownerNode parameter after MPS 3.5
-    super(ownerNode, childRole, editorContext);
-    NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
-      @Override
-      public void run() {
-        myLinkDeclaration = new SNodeLegacy(ownerNode).getLinkDeclaration(childRole);
-        assert
-            myLinkDeclaration != null :
-            "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConcept().getQualifiedName();
-        SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
-        myChildConcept = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
-        if (SNodeUtil.getLinkDeclaration_IsReference(genuineLink)) {
-          throw new RuntimeException("Only Aggregation links can be used in list");
-        }
-        myElementRole = SModelUtil.getLinkDeclarationRole(genuineLink);
+    super(editorContext);
+    NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
+      SNode linkDecl = new SNodeLegacy(ownerNode).getLinkDeclaration(childRole);
+      assert
+          linkDecl != null :
+          "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConcept().getQualifiedName();
+      SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(linkDecl);
+      SNode childConcept = SModelUtil.getLinkDeclarationTarget(linkDecl);
+      if (SNodeUtil.getLinkDeclaration_IsReference(genuineLink)) {
+        throw new RuntimeException("Only Aggregation links can be used in list");
       }
+      mySLink = MetaAdapterByDeclaration.getContainmentLink(SModelUtil.getGenuineLinkDeclaration(linkDecl));
+      myChildSConcept = MetaAdapterByDeclaration.getConcept(childConcept);
     });
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public RefNodeListHandler(SNode ownerNode, String childRole, EditorContext editorContext, boolean isReverseOrder) {
     this(ownerNode, childRole, editorContext);
     myIsReverseOrder = isReverseOrder;
   }
 
   @Deprecated
-  @ToRemove(version = 3.5)
-  public SNode getLinkDeclaration() {
-    return myLinkDeclaration;
+  @ToRemove(version = 2018.2)
+  @Override
+  public String getElementRole() {
+    return getSLink().getName();
+  }
+
+  @Override
+  public SConceptFeature getElementSRole() {
+    return getSLink();
   }
 
   /**
    * @return original link (not specialized)
    */
+  //todo: should be made abstract after 2018.2
   public SContainmentLink getSLink() {
-    return MetaAdapterByDeclaration.getContainmentLink(SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration));
+    return mySLink;
   }
 
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public SNode getChildConcept() {
-    return myChildConcept;
-  }
-
+  //todo: should be made abstract after 2018.2
   public SAbstractConcept getChildSConcept() {
-    return MetaAdapterByDeclaration.getConcept(myChildConcept);
+    return myChildSConcept;
   }
 
-  @Override
-  public EditorCell createNodeCell(EditorContext editorContext, SNode node) {
-    // TODO: after MPS 3.5 remove editorContext parameter & delete overridden deprecated method
-    return editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(node);
+  /**
+   * Usage in mbeddr-generated code in 2018.1, so we leave it here until 18.2
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  protected EditorCell createEmptyCell(EditorContext ec) {
+    return createEmptyCell();
   }
 
-  @Override
-  protected EditorCell createEmptyCell(EditorContext editorContext) {
-    // TODO: after MPS 3.5 remove editorContext parameter & delete overridden deprecated method
+    @Override
+  protected EditorCell createEmptyCell() {
     EditorCell_Constant emptyCell = new EditorCell_Constant(getEditorContext(), getNode(), null);
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);
-    emptyCell.setRole(getElementRole());
-    emptyCell.setCellId("empty_" + getElementRole());
+    emptyCell.setSRole(getElementSRole());
+    emptyCell.setCellId("empty_" + getElementSRole().getName());
     return emptyCell;
   }
 
@@ -118,7 +136,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     SNode anchorNodeResult = null;
     if (anchorNodeTemp != null) {
       Collection<? extends SNode> listElements = IterableUtil.asCollection(
-          AttributeOperations.getChildNodesAndAttributes(getNode(), ((ConceptMetaInfoConverter) getNode().getConcept()).convertAggregation(myElementRole)));
+          AttributeOperations.getChildNodesAndAttributes(getNode(), getSLink()));
       if (!listElements.isEmpty()) {
         // anchor should be directly referenced from "list owner"
         while (anchorNodeTemp != null && anchorNodeTemp != getNode()) {
@@ -144,9 +162,8 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   @Override
   protected List<SNode> getNodesForList() {
     List<SNode> resultList = new ArrayList<SNode>();
-    SContainmentLink containmentLink = ((ConceptMetaInfoConverter) getNode().getConcept()).convertAggregation(myElementRole);
     Iterable<SNode> nodesAndComments =
-        AttributeOperations.getChildNodesAndAttributes(getNode(), containmentLink);
+        AttributeOperations.getChildNodesAndAttributes(getNode(), getSLink());
     if (!myIsReverseOrder) {
       resultList.addAll(IterableUtil.asCollection(nodesAndComments));
     } else {
@@ -177,14 +194,5 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   protected void setInnerCellsContext() {
     setInnerCellsContext(myListEditorCell_Collection);
-  }
-
-  /**
-   * TODO: remove after MPS 3.5 was introduced for backward compatibility
-   */
-  @NotNull
-  @Override
-  public SNode getNode() {
-    return myOwnerNode;
   }
 }

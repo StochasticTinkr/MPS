@@ -11,9 +11,11 @@
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.generator.findUsages.FindUsagesDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.scripts.ScriptsDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.generator.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.typesystem.TypesystemDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />

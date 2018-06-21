@@ -11,15 +11,6 @@ public interface IConfigMonitor extends IJobMonitor {
     public Stub() {
       super();
     }
-    /**
-     * 
-     * 
-     * @deprecated do not use
-     */
-    @Deprecated
-    public Stub(IProgress pro) {
-      super(pro);
-    }
     public Stub(@NotNull MakeSession makeSession) {
       super(makeSession);
     }

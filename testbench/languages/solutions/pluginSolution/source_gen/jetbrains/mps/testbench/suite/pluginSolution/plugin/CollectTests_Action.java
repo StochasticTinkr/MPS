@@ -23,8 +23,12 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.ide.ThreadUtils;
@@ -39,9 +43,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.generator.GenerationFacade;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
 
@@ -116,9 +118,15 @@ public class CollectTests_Action extends BaseAction {
   private boolean doExecute(ProgressIndicator proInd, final Map<String, Object> _params) {
     final SModel model = ((SModel) MapSequence.fromMap(_params).get("modelDesc"));
     final Wrappers._T<List<SModuleReference>> solutions = new Wrappers._T<List<SModuleReference>>();
-    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
+    final SRepository projectRepo = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository();
+    projectRepo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        solutions.value = CollectTests_Action.this.allSolutions(_params);
+        Iterable<Solution> allSolutions = new ModuleRepositoryFacade(projectRepo).getAllModules(Solution.class);
+        solutions.value = Sequence.fromIterable(allSolutions).select(new ISelector<Solution, SModuleReference>() {
+          public SModuleReference select(Solution s) {
+            return s.getModuleReference();
+          }
+        }).toListSequence();
       }
     });
 
@@ -128,7 +136,7 @@ public class CollectTests_Action extends BaseAction {
         return false;
       }
       proInd.setText("Processing " + mref.getModuleName());
-      final SModule module = ModuleRepositoryFacade.getInstance().getModule(mref);
+      final SModule module = mref.resolve(projectRepo);
       if (module != null) {
         for (final SModel smodel : module.getModels()) {
           if (!(CollectTests_Action.this.isUserEditableGeneratableModel(smodel, _params))) {
@@ -137,7 +145,7 @@ public class CollectTests_Action extends BaseAction {
 
           final List<SNode> tests = new ArrayList<SNode>();
           final Wrappers._boolean collected = new Wrappers._boolean();
-          ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
+          projectRepo.getModelAccess().runReadAction(new Runnable() {
             public void run() {
               collected.value = new TestCollector().collectTests(smodel, tests);
             }
@@ -146,10 +154,10 @@ public class CollectTests_Action extends BaseAction {
           if (collected.value) {
             ThreadUtils.runInUIThreadAndWait(new Runnable() {
               public void run() {
-                ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().executeCommand(new Runnable() {
+                projectRepo.getModelAccess().executeCommand(new Runnable() {
                   public void run() {
                     final Wrappers._T<SNode> suite = new Wrappers._T<SNode>(null);
-                    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
+                    projectRepo.getModelAccess().runReadAction(new Runnable() {
                       public void run() {
                         suite.value = ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite"))).findFirst(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
@@ -163,8 +171,8 @@ public class CollectTests_Action extends BaseAction {
                       suite.value = SModelOperations.createNewRootNode(model, MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite"));
                       SNode sref = SLinkOperations.setNewChild(suite.value, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef"), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, "jetbrains.mps.testbench.suite.structure.SolutionRef"));
                       SModuleReference mref = module.getModuleReference();
-                      SPropertyOperations.set(sref, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbddL, "moduleFQName"), mref.getModuleName());
-                      SPropertyOperations.set(sref, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbdeL, "moduleID"), mref.getModuleId().toString());
+                      SPropertyOperations.assign(sref, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbddL, "moduleFQName"), mref.getModuleName());
+                      SPropertyOperations.assign(sref, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbdeL, "moduleID"), mref.getModuleId().toString());
                     }
                     for (final SNode tref : tests) {
                       if (!(ListSequence.fromList(SLinkOperations.getChildren(suite.value, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x3e81ed1e2be77cbeL, "testRef"))).any(new IWhereFilter<SNode>() {
@@ -189,21 +197,13 @@ public class CollectTests_Action extends BaseAction {
     return true;
   }
   private boolean isUserEditableModel(SModel md, final Map<String, Object> _params) {
-    if (!(SModelStereotype.isUserModel(md))) {
+    if (SModelStereotype.isStubModel(md)) {
       return false;
     }
     return md instanceof EditableSModel && !(md.isReadOnly());
   }
   private boolean isUserEditableGeneratableModel(SModel md, final Map<String, Object> _params) {
-    return CollectTests_Action.this.isUserEditableModel(md, _params) && jetbrains.mps.util.SNodeOperations.isGeneratable(md);
-  }
-  private List<SModuleReference> allSolutions(final Map<String, Object> _params) {
-    Iterable<Solution> allSolutions = ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
-    return Sequence.fromIterable(allSolutions).select(new ISelector<Solution, SModuleReference>() {
-      public SModuleReference select(Solution s) {
-        return s.getModuleReference();
-      }
-    }).toListSequence();
+    return CollectTests_Action.this.isUserEditableModel(md, _params) && GenerationFacade.canGenerate(md);
   }
   private void displayInfo(String info, final Map<String, Object> _params) {
     IdeFrame frame = WindowManager.getInstance().getIdeFrame(((Project) MapSequence.fromMap(_params).get("project")));

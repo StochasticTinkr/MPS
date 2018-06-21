@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,15 +26,16 @@ import com.intellij.util.indexing.ID;
 import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
 import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.extapi.persistence.datasource.URLNotSupportedException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.persistence.IndexAwareModelFactory;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.findusages.ConcreteFilesGlobalSearchScope;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import jetbrains.mps.workbench.index.ModelRootsData.Entry;
@@ -43,13 +44,10 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
-import org.jetbrains.mps.util.Condition;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -72,8 +70,9 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
   private static final ID<Integer, ModelRootsData> NAME = ID.create("mps.RootNodeName");
   private static final Logger LOG = LogManager.getLogger(RootNodeNameIndex.class);
   private static final Key<SModelData> PARSED_MODEL = new Key<SModelData>("parsed-model");
+  private final MPSCoreComponents myCoreComponents;
 
-  public static SModelData doModelParsing(FileContent inputData) {
+  public static SModelData doModelParsing(Platform mpsPlatform, FileContent inputData) {
     SModelData modelData = inputData.getUserData(PARSED_MODEL);
 
     if (modelData == null) {
@@ -83,7 +82,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
           LOG.error("URL cannot be created from " + inputData.getFile());
           return null;
         }
-        DataSourceFactoryFromURL dataSourceFactory = getDataSourceFactory(url);
+        DataSourceFactoryFromURL dataSourceFactory = getDataSourceFactory(mpsPlatform, url);
         if (dataSourceFactory == null) {
           return null;
         }
@@ -105,7 +104,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
         }
         inputData.putUserData(PARSED_MODEL, modelData);
       } catch (URLNotSupportedException | URISyntaxException | IOException e) {
-        LOG.error("", e);
+        LOG.error(String.format("Failed to index %s", inputData.getFileName()), e);
         return null;
       }
     }
@@ -113,8 +112,8 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
   }
 
   @Nullable
-  private static DataSourceFactoryFromURL getDataSourceFactory(URL url) {
-    DataSourceFactoryRuleService service = DataSourceFactoryRuleService.getInstance();
+  private static DataSourceFactoryFromURL getDataSourceFactory(Platform mpsPlatform, URL url) {
+    DataSourceFactoryRuleService service = mpsPlatform.findComponent(DataSourceFactoryRuleService.class);
     DataSourceFactoryFromURL dataSourceFactory = service.getFactory(url);
     if (dataSourceFactory == null) {
       LOG.error("Data Source Factory is not found for " + url);
@@ -125,11 +124,6 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
   @Nullable
   private static URL constructURLFromData(FileContent inputData) throws MalformedURLException, URISyntaxException {
     return VfsUtilCore.convertToURL(inputData.getFile().getUrl());
-  }
-
-  // FIXME No idea what's this method for, why do we care about node id serialization format. Drop
-  public static Iterable<SNode> getRootsToIterate(SModel model) {
-    return new ConditionalIterable<SNode>(model.getRootNodes(), new MyCondition());
   }
 
   /**
@@ -167,6 +161,10 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
     return rv;
   }
 
+  public RootNodeNameIndex(MPSCoreComponents mpsCore) {
+    myCoreComponents = mpsCore;
+  }
+
   @Override
   @NotNull
   public ID<Integer, ModelRootsData> getName() {
@@ -182,7 +180,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
   @NotNull
   @Override
   public SingleEntryIndexer<ModelRootsData> getIndexer() {
-    return new MyIndexer();
+    return new MyIndexer(myCoreComponents.getPlatform());
   }
 
   @NotNull
@@ -196,14 +194,6 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
     return 1;
   }
 
-  private static class MyCondition implements Condition<SNode> {
-    @Override
-    public boolean met(SNode node) {
-      // FIXME I've got no idea why we discriminate nodes with such id
-      return !node.getNodeId().toString().contains("$");
-    }
-  }
-
   private static class MyInputFilter implements FileBasedIndex.InputFilter {
     @Override
     public boolean acceptInput(@NotNull VirtualFile file) {
@@ -213,15 +203,18 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
   }
 
   private static class MyIndexer extends SingleEntryIndexer<ModelRootsData> {
-    private MyIndexer() {
+    private final Platform myPlatform;
+
+    private MyIndexer(Platform platform) {
       super(false);
+      myPlatform = platform;
     }
 
     @Override
     protected ModelRootsData computeValue(@NotNull final FileContent inputData) {
       try {
         // XXX Perhaps, shall extend xml.persistence.Indexer with proper methods (name, concept) not to read as complete SModel?
-        SModelData modelData = doModelParsing(inputData);
+        SModelData modelData = doModelParsing(myPlatform, inputData);
         if (modelData == null) {
           // e.g. model with merge conflict
           return null;

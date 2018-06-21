@@ -17,6 +17,7 @@ import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.vcs.diff.changes.SetReferenceStructChange;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.StructChangeSet;
 import jetbrains.mps.vcs.diff.StructChangeSetBuilder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -159,7 +160,7 @@ public class StructuredChangesCalculationTest extends ChangesTestBase {
         SNode n11 = ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(n1, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SAbstractConcept[]{})).first();
         SNode n21 = ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(n2, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SAbstractConcept[]{})).first();
         SNode target = ListSequence.fromList(SLinkOperations.getChildren(n2, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).getElement(1);
-        return new ModelChange[]{new SetReferenceStructChange(getChangeSet(), n11.getNodeId(), n21.getNodeId(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), SNodeOperations.getModel(target).getReference(), target.getNodeId(), "b")};
+        return new ModelChange[]{new SetReferenceStructChange(getChangeSet(), n11.getNodeId(), n21.getNodeId(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), SModelOperations.getPointer(SNodeOperations.getModel(target)), target.getNodeId(), "b")};
       }
     });
   }
@@ -183,7 +184,7 @@ public class StructuredChangesCalculationTest extends ChangesTestBase {
         SNode n11 = ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(n1, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SAbstractConcept[]{})).first();
         SNode n21 = ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(n2, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SAbstractConcept[]{})).first();
         SNode target = SLinkOperations.getTarget(n21, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"));
-        return new ModelChange[]{new SetReferenceStructChange(getChangeSet(), n11.getNodeId(), n21.getNodeId(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), SNodeOperations.getModel(target).getReference(), target.getNodeId(), "n")};
+        return new ModelChange[]{new SetReferenceStructChange(getChangeSet(), n11.getNodeId(), n21.getNodeId(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), SModelOperations.getPointer(SNodeOperations.getModel(target)), target.getNodeId(), "n")};
       }
     });
   }

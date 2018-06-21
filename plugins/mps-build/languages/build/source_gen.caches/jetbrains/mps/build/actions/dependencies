@@ -17,7 +17,6 @@
     <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.actions.QueriesGenerated" file="QueriesGenerated.java" />
   <dependency className="jetbrains.mps.build.actions.buildScript_nodeFactories" file="buildScript_nodeFactories.java">
     <classNode dependClassName="jetbrains.mps.generator.TransientModelsModule" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

@@ -106,10 +106,6 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
       callback.onClose();
     }
 
-    @Override
-    public Set<SLanguage> chooseAdditionalLanguages(Set<SLanguage> set) {
-      return null;
-    }
   };
 
   protected final Interaction chooseOnlyBaseLanguageInteraction = new Interaction() {
@@ -122,12 +118,6 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
       callback.elementChosen(navigationItems[0]);
       // we _must_ close the "window", real UI probably always calls this method
       callback.onClose();
-    }
-
-    @Override
-    public Set<SLanguage> chooseAdditionalLanguages(Set<SLanguage> set) {
-      // equivalent of hitting 'none' in the dialog box asking if we want to import more langs
-      return Collections.emptySet();
     }
   };
 

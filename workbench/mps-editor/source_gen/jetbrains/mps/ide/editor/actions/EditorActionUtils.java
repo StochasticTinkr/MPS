@@ -116,7 +116,7 @@ public class EditorActionUtils {
 
   /**
    * We can use this method to determine if we should redispatch insert event to the corresponding
-   * child collection below the cell returned from cell.getNextLeaf() or we should go on and insert
+   * child collection below the cell returned from getNextLeaf(cell) or we should go on and insert
    * next child into a collection containing cell itself.
    * 
    * @return true if we should redispatch insert event to the next leaft cell
@@ -140,7 +140,7 @@ public class EditorActionUtils {
   }
   /**
    * We can use this method to determine if we should redispatch insert event to the corresponding
-   * child collection below the cell returned from cell.getPrevLeaf() or we should go on and insert
+   * child collection below the cell returned from getPrevLeaf(cell) or we should go on and insert
    * prev. child into a collection containing cell itself
    * 
    * @return true if we should redispatch insert event to the prev. leaft cell
@@ -175,6 +175,6 @@ public class EditorActionUtils {
     return l != null && l.isValid() && !(l.isMultiple());
   }
   private static boolean isLinkCollection(EditorCell cell) {
-    return cell.getRole() != null;
+    return cell.getSRole() != null;
   }
 }

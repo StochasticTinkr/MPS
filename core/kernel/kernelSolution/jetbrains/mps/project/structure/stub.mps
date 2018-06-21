@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
@@ -1837,13 +1837,8 @@
         </node>
         <node concept="3clFbF" id="6iByHjq_iAT" role="3cqZAp">
           <node concept="37vLTI" id="6iByHjq_r0L" role="3clFbG">
-            <node concept="2OqwBi" id="6iByHjq_uaX" role="37vLTx">
-              <node concept="37vLTw" id="6iByHjq_rIa" role="2Oq$k0">
-                <ref role="3cqZAo" node="6mz0KzMF7AL" resolve="source" />
-              </node>
-              <node concept="liA8E" id="6iByHjq_vrX" role="2OqNvi">
-                <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.isReflectiveQueries():boolean" resolve="isReflectiveQueries" />
-              </node>
+            <node concept="3clFbT" id="5lVMngvZg4Q" role="37vLTx">
+              <property role="3clFbU" value="false" />
             </node>
             <node concept="2OqwBi" id="6iByHjq_lsV" role="37vLTJ">
               <node concept="37vLTw" id="6iByHjq_iAS" role="2Oq$k0">
@@ -2728,11 +2723,13 @@
                   </node>
                 </node>
               </node>
-              <node concept="2YIFZM" id="6mz0KzMFtcw" role="3clFbw">
-                <ref role="37wK5l" to="w1kc:~SModelStereotype.isUserModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isUserModel" />
-                <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                <node concept="2GrUjf" id="6mz0KzMFtd9" role="37wK5m">
-                  <ref role="2Gs0qQ" node="6mz0KzMFsqc" resolve="m" />
+              <node concept="3fqX7Q" id="7d$WBe35Plp" role="3clFbw">
+                <node concept="2YIFZM" id="7d$WBe35Plr" role="3fr31v">
+                  <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
+                  <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+                  <node concept="2GrUjf" id="7d$WBe35Pls" role="37wK5m">
+                    <ref role="2Gs0qQ" node="6mz0KzMFsqc" resolve="m" />
+                  </node>
                 </node>
               </node>
             </node>

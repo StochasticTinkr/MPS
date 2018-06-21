@@ -28,7 +28,7 @@ public class _ConceptDeclaration_DeleteAbstract_Action {
       if (DeletionApproverUtil.approve(editorContext, node, "abstractKeyword")) {
         return;
       }
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"), "" + (false));
     }
   }
   public static class _ConceptDeclaration_DeleteAbstract_Action_BACKSPACE extends AbstractCellAction {
@@ -43,7 +43,7 @@ public class _ConceptDeclaration_DeleteAbstract_Action {
       if (DeletionApproverUtil.approve(editorContext, node, "abstractKeyword")) {
         return;
       }
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"), "" + (false));
     }
   }
 }

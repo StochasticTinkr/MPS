@@ -65,7 +65,7 @@
     <file name="CopyGeneratedScripts_Facet.java">
       <node id="4243675727097083061" at="38,0,39,0" concept="4" trace="targets" />
       <node id="4243675727097083061" at="39,0,40,0" concept="4" trace="name" />
-      <node id="4243675727097083061" at="40,39,41,97" concept="3" />
+      <node id="3647894154989314685" at="40,39,41,97" concept="3" />
       <node id="4243675727097083061" at="43,38,44,19" concept="9" />
       <node id="4243675727097083061" at="46,43,47,16" concept="9" />
       <node id="4243675727097083061" at="49,43,50,154" concept="9" />
@@ -300,6 +300,9 @@
       <unit id="3647894154989314687" at="66,17,141,7" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$Target_copyFiles$1" />
       <unit id="3647894154989314685" at="61,0,186,0" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$Target_copyFiles" />
       <unit id="4243675727097083061" at="37,0,198,0" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet" />
+    </file>
+    <file name="FacetManifest.java">
+      <node id="4243675727097083061" at="14,26,15,79" concept="3" />
     </file>
   </root>
 </debug-info>

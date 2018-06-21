@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
@@ -108,7 +109,7 @@ public class CreateGroupsBuilder {
       //todo pass concepts instead of nodes
       super(!concept.getConceptAlias().replaceAll("_", "__").isEmpty()
               ? concept.getConceptAlias().replaceAll("_", "__") : concept.getName(),
-          "", IconManager.getIconFor(concept)
+            "", GlobalIconManager.getInstance().getIconFor(concept)
       );
       myConcept = concept;
       myDescriptor = descriptor;

@@ -48,6 +48,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="jetbrains.mps.TestMode" />
+    <classNode dependClassName="jetbrains.mps.core.platform.Platform" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.classloading.UrlClassLoader" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.util.CanonicalPath" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider" />
@@ -145,9 +146,9 @@
     <classNode dependClassName="jetbrains.mps.core.platform.PlatformFactory" />
     <classNode dependClassName="jetbrains.mps.core.platform.PlatformOptionsBuilder" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.util.FileMPSProject" />
+    <classNode dependClassName="jetbrains.mps.extapi.module.FacetsRegistry" />
     <classNode dependClassName="jetbrains.mps.generator.DefaultModifiableGenerationSettings" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
-    <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />

@@ -51,7 +51,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
     IChildNodeSetter {
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-    SNode node = (SNode) cellContext.get(PropertyCellContext.EDITED_NODE);
+    SNode node = cellContext.get(PropertyCellContext.EDITED_NODE);
     SNode parent = node.getParent();
     if (parent == null) {
       return Collections.emptyList();

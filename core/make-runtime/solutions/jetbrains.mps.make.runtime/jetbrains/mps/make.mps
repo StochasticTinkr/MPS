@@ -19,6 +19,7 @@
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
+    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -79,7 +80,10 @@
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
-      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
+      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
+        <property id="8606350594693632173" name="isTransient" index="eg7rD" />
+        <property id="1240249534625" name="isVolatile" index="34CwA1" />
+      </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
@@ -107,6 +111,7 @@
         <property id="1113006610751" name="value" index="$nhwW" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
@@ -134,6 +139,9 @@
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
+        <child id="1160998896846" name="condition" index="1gVkn0" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -176,6 +184,10 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
       <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
       <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
         <reference id="6832197706140518108" name="param" index="zr_51" />
@@ -199,9 +211,19 @@
         <property id="6612597108003615642" name="name" index="2U$1Ai" />
         <child id="6612597108003615643" name="line" index="2U$1Aj" />
       </concept>
+      <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
+        <reference id="2217234381367530213" name="classifier" index="VXe09" />
+      </concept>
+      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
+        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
+      </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -540,6 +562,29 @@
             </node>
           </node>
         </node>
+      </node>
+      <node concept="3UR2Jj" id="4QUA3SqtSoT" role="lGtFl">
+        <node concept="TZ5HI" id="4QUA3SqtSoU" role="3nqlJM">
+          <node concept="TZ5HA" id="4QUA3SqtSoV" role="3HnX3l">
+            <node concept="1dT_AC" id="4QUA3SqtSs0" role="1dT_Ay">
+              <property role="1dT_AB" value="global singleton is not a proper way to obtain active make facility of MPS platform. Instead, use " />
+            </node>
+            <node concept="1dT_AA" id="4QUA3SqtSs3" role="1dT_Ay">
+              <node concept="92FcH" id="4QUA3SqtSs9" role="qph3F">
+                <node concept="TZ5HA" id="4QUA3SqtSsb" role="2XjZqd" />
+                <node concept="VXe08" id="4QUA3SqtVVa" role="92FcQ">
+                  <ref role="VXe09" node="4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                </node>
+              </node>
+            </node>
+            <node concept="1dT_AC" id="4QUA3SqtSs2" role="1dT_Ay">
+              <property role="1dT_AB" value="." />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="4QUA3SqtSoW" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
   </node>
@@ -1293,6 +1338,211 @@
       <node concept="17QB3L" id="NcJEcVvEwF" role="3clF45" />
       <node concept="3Tm1VV" id="NcJEcVvEwB" role="1B3o_S" />
       <node concept="3clFbS" id="NcJEcVvEwC" role="3clF47" />
+    </node>
+  </node>
+  <node concept="312cEu" id="4QUA3Sqts3M">
+    <property role="TrG5h" value="MakeServiceComponent" />
+    <node concept="312cEg" id="4QUA3SqtBpB" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myActiveMakeService" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="4QUA3SqtBl9" role="1B3o_S" />
+      <node concept="3uibUv" id="4QUA3SqtBnF" role="1tU5fm">
+        <ref role="3uigEE" node="1NAY6bPd4nM" resolve="IMakeService" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4QUA3SqtAxW" role="jymVt" />
+    <node concept="3clFbW" id="4QUA3SqtAAl" role="jymVt">
+      <node concept="3cqZAl" id="4QUA3SqtAAn" role="3clF45" />
+      <node concept="3Tm1VV" id="4QUA3SqtAAo" role="1B3o_S" />
+      <node concept="3clFbS" id="4QUA3SqtAAp" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="4QUA3SqtACK" role="jymVt" />
+    <node concept="3clFb_" id="4QUA3SqtAPh" role="jymVt">
+      <property role="TrG5h" value="install" />
+      <node concept="3cqZAl" id="4QUA3SqtAPj" role="3clF45" />
+      <node concept="3Tm1VV" id="4QUA3SqtAPk" role="1B3o_S" />
+      <node concept="3clFbS" id="4QUA3SqtAPl" role="3clF47">
+        <node concept="1gVbGN" id="4QUA3SqtRE8" role="3cqZAp">
+          <node concept="3clFbC" id="4QUA3SqtRNx" role="1gVkn0">
+            <node concept="10Nm6u" id="4QUA3SqtRQS" role="3uHU7w" />
+            <node concept="37vLTw" id="4QUA3SqtRG7" role="3uHU7B">
+              <ref role="3cqZAo" node="4QUA3SqtBpB" resolve="myActiveMakeService" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4QUA3SqtQY3" role="3cqZAp">
+          <node concept="37vLTI" id="4QUA3SqtRjr" role="3clFbG">
+            <node concept="37vLTw" id="4QUA3SqtRoh" role="37vLTx">
+              <ref role="3cqZAo" node="4QUA3SqtAU7" resolve="makeService" />
+            </node>
+            <node concept="37vLTw" id="4QUA3SqtQY2" role="37vLTJ">
+              <ref role="3cqZAo" node="4QUA3SqtBpB" resolve="myActiveMakeService" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4QUA3SqtS5W" role="3cqZAp">
+          <node concept="2YIFZM" id="4QUA3SqtS7I" role="3clFbG">
+            <ref role="37wK5l" node="7q76xKYjgBM" resolve="set" />
+            <ref role="1Pybhc" node="7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+            <node concept="37vLTw" id="4QUA3SqtS8s" role="37wK5m">
+              <ref role="3cqZAo" node="4QUA3SqtAU7" resolve="makeService" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4QUA3SqtAU7" role="3clF46">
+        <property role="TrG5h" value="makeService" />
+        <node concept="3uibUv" id="4QUA3SqtAU6" role="1tU5fm">
+          <ref role="3uigEE" node="1NAY6bPd4nM" resolve="IMakeService" />
+        </node>
+        <node concept="2AHcQZ" id="4QUA3SqtBhE" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4QUA3SqtAXc" role="jymVt" />
+    <node concept="3clFb_" id="4QUA3SqtAZW" role="jymVt">
+      <property role="TrG5h" value="uninstall" />
+      <node concept="3cqZAl" id="4QUA3SqtAZY" role="3clF45" />
+      <node concept="3Tm1VV" id="4QUA3SqtAZZ" role="1B3o_S" />
+      <node concept="3clFbS" id="4QUA3SqtB00" role="3clF47">
+        <node concept="3clFbF" id="4QUA3SqtS8V" role="3cqZAp">
+          <node concept="2YIFZM" id="4QUA3SqtS8W" role="3clFbG">
+            <ref role="37wK5l" node="7q76xKYjgBM" resolve="set" />
+            <ref role="1Pybhc" node="7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+            <node concept="10Nm6u" id="4QUA3SqtSbX" role="37wK5m" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4QUA3SqtQNm" role="3cqZAp">
+          <node concept="37vLTI" id="4QUA3SqtQTo" role="3clFbG">
+            <node concept="10Nm6u" id="4QUA3SqtQWA" role="37vLTx" />
+            <node concept="37vLTw" id="4QUA3SqtQNl" role="37vLTJ">
+              <ref role="3cqZAo" node="4QUA3SqtBpB" resolve="myActiveMakeService" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4QUA3SqtBdH" role="3clF46">
+        <property role="TrG5h" value="makeService" />
+        <node concept="3uibUv" id="4QUA3SqtBdG" role="1tU5fm">
+          <ref role="3uigEE" node="1NAY6bPd4nM" resolve="IMakeService" />
+        </node>
+        <node concept="2AHcQZ" id="4QUA3SqtBgE" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4QUA3SqtLAp" role="jymVt" />
+    <node concept="3clFb_" id="4QUA3SqtLoe" role="jymVt">
+      <property role="TrG5h" value="get" />
+      <node concept="3uibUv" id="4QUA3SqtLr8" role="3clF45">
+        <ref role="3uigEE" node="1NAY6bPd4nM" resolve="IMakeService" />
+      </node>
+      <node concept="3Tm1VV" id="4QUA3SqtLoh" role="1B3o_S" />
+      <node concept="3clFbS" id="4QUA3SqtLoi" role="3clF47">
+        <node concept="1gVbGN" id="4QUA3SqtQCm" role="3cqZAp">
+          <node concept="3clFbC" id="4QUA3SqtQIY" role="1gVkn0">
+            <node concept="37vLTw" id="4QUA3SqtQJY" role="3uHU7w">
+              <ref role="3cqZAo" node="4QUA3SqtBpB" resolve="myActiveMakeService" />
+            </node>
+            <node concept="2YIFZM" id="4QUA3SqtQEp" role="3uHU7B">
+              <ref role="37wK5l" node="7yGn3z4MRr2" resolve="get" />
+              <ref role="1Pybhc" node="7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4QUA3SqtQ$s" role="3cqZAp">
+          <node concept="37vLTw" id="4QUA3SqtQ$r" role="3clFbG">
+            <ref role="3cqZAo" node="4QUA3SqtBpB" resolve="myActiveMakeService" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4QUA3SqtAuQ" role="jymVt" />
+    <node concept="3clFb_" id="4QUA3SqtAv6" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="init" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="4QUA3SqtAv7" role="1B3o_S" />
+      <node concept="3cqZAl" id="4QUA3SqtAv9" role="3clF45" />
+      <node concept="3clFbS" id="4QUA3SqtAva" role="3clF47" />
+      <node concept="2AHcQZ" id="4QUA3SqtAvb" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="4QUA3SqtAvc" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="dispose" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="4QUA3SqtAvd" role="1B3o_S" />
+      <node concept="3cqZAl" id="4QUA3SqtAvf" role="3clF45" />
+      <node concept="3clFbS" id="4QUA3SqtAvg" role="3clF47" />
+      <node concept="2AHcQZ" id="4QUA3SqtAvh" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="4QUA3Sqts3N" role="1B3o_S" />
+    <node concept="3uibUv" id="4QUA3SqtAuF" role="EKbjA">
+      <ref role="3uigEE" to="wyuk:~CoreComponent" resolve="CoreComponent" />
+    </node>
+    <node concept="3UR2Jj" id="4QUA3SqtBst" role="lGtFl">
+      <node concept="TZ5HA" id="4QUA3SqtBsu" role="TZ5H$">
+        <node concept="1dT_AC" id="4QUA3SqtBsv" role="1dT_Ay">
+          <property role="1dT_AB" value="Part of MPS platform that gives access to active facility to perform project make." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4QUA3SqtBuz" role="TZ5H$">
+        <node concept="1dT_AC" id="4QUA3SqtBu$" role="1dT_Ay">
+          <property role="1dT_AB" value="Its " />
+        </node>
+        <node concept="1dT_AA" id="4QUA3SqtBuE" role="1dT_Ay">
+          <node concept="92FcH" id="4QUA3SqtBuK" role="qph3F">
+            <node concept="TZ5HA" id="4QUA3SqtBuM" role="2XjZqd" />
+            <node concept="VXe0Z" id="4QUA3SqtEXJ" role="92FcQ">
+              <ref role="VXe0S" node="4QUA3SqtAPh" resolve="install" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="4QUA3SqtBuD" role="1dT_Ay">
+          <property role="1dT_AB" value=" and " />
+        </node>
+        <node concept="1dT_AA" id="4QUA3SqtGpQ" role="1dT_Ay">
+          <node concept="92FcH" id="4QUA3SqtGq1" role="qph3F">
+            <node concept="TZ5HA" id="4QUA3SqtGq3" role="2XjZqd" />
+            <node concept="VXe0Z" id="4QUA3SqtJT0" role="92FcQ">
+              <ref role="VXe0S" node="4QUA3SqtAZW" resolve="uninstall" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="4QUA3SqtGpP" role="1dT_Ay">
+          <property role="1dT_AB" value=" methods are intended for other MPS components that contribute " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4QUA3SqtLl6" role="TZ5H$">
+        <node concept="1dT_AC" id="4QUA3SqtLl7" role="1dT_Ay">
+          <property role="1dT_AB" value="particular facility implementation. Clients access active service using " />
+        </node>
+        <node concept="1dT_AA" id="4QUA3SqtLD0" role="1dT_Ay">
+          <node concept="92FcH" id="4QUA3SqtLD6" role="qph3F">
+            <node concept="TZ5HA" id="4QUA3SqtLD8" role="2XjZqd" />
+            <node concept="VXe0Z" id="4QUA3SqtP87" role="92FcQ">
+              <ref role="VXe0S" node="4QUA3SqtLoe" resolve="get" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="4QUA3SqtLCZ" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4QUA3SqtLlo" role="TZ5H$">
+        <node concept="1dT_AC" id="4QUA3SqtLlp" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

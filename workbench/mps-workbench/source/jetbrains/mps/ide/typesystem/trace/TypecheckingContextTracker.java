@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@ package jetbrains.mps.ide.typesystem.trace;
 import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
@@ -161,6 +161,6 @@ public class TypecheckingContextTracker implements ITypeContextOwner {
   }
 
   public void dispose() {
-    TypeContextManager.getInstance().releaseTypecheckingContext(myRootNode, this);
+    TypeContextManager.getInstance().releaseTypecheckingContext(this);
   }
 }

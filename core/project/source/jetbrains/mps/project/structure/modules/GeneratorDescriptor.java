@@ -17,6 +17,7 @@ package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
@@ -39,7 +40,6 @@ public class GeneratorDescriptor extends ModuleDescriptor {
   private List<MappingPriorityRule> myPriorityRules;
 
   private boolean myGenerateTemplates = false;
-  private boolean myQueriesViaReflection = false;
   private String myGenOutputPath;
   private SModuleReference mySourceLanguage;
 
@@ -91,14 +91,21 @@ public class GeneratorDescriptor extends ModuleDescriptor {
   }
 
   /**
-   * @return <code>true</code> to execute method in QueriesGenerated via reflection,
-   * <code>false</code> to provide mechanism for direct calls
+   * @deprecated reflective queries are no longer supported
+   * @return always <code>false</code>
    */
+  @Deprecated
+  @ToRemove(version = 2018.1)
   public boolean isReflectiveQueries() {
-    return myQueriesViaReflection;
+    return false;
   }
-  public void setReflectiveQueries(boolean value) {
-    myQueriesViaReflection = value;
+
+  /**
+   * @deprecated reflective queries are no longer supported
+   */
+  @Deprecated
+  @ToRemove(version = 2018.1)
+  public void setReflectiveQueries(boolean ignored) {
   }
 
   /**
@@ -187,7 +194,6 @@ public class GeneratorDescriptor extends ModuleDescriptor {
     copy.setAlias(myAlias);
     copy.setGenerateTemplates(isGenerateTemplates());
     copy.setOutputPath(getOutputPath());
-    copy.setReflectiveQueries(isReflectiveQueries());
     copy.setSourceLanguage(getSourceLanguage());
     copy.getDepGenerators().addAll(getDepGenerators());
     copy.getPriorityRules().addAll(getPriorityRules().stream().map(MappingPriorityRule::copy).collect(toList()));

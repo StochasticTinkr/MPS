@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,13 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,29 +32,23 @@ import static org.junit.Assert.assertEquals;
 /**
  * evgeny, 3/15/13
  */
-public class SModelReferenceTest {
+public class SModelReferenceTest implements EnvironmentAware {
+  private Environment myEnv;
   private PersistenceRegistry myPersistenceRegistry = null;
+
+  @Override
+  public void setEnvironment(@NotNull Environment env) {
+    myEnv = env;
+  }
 
   @Before
   public void setUp() {
-    if (PersistenceFacade.getInstance() == null) {
-      myPersistenceRegistry = new PersistenceRegistry();
-      myPersistenceRegistry.init();
-      new JavaClassesPersistence(myPersistenceRegistry).init();
-    }
-    Assert.assertNotNull(PersistenceFacade.getInstance());
-  }
-
-  @After
-  public void tearDown() {
-    if (myPersistenceRegistry != null) {
-      myPersistenceRegistry.dispose();
-      myPersistenceRegistry = null;
-    }
+    myPersistenceRegistry = myEnv.getPlatform().findComponent(PersistenceRegistry.class);
+    Assert.assertNotNull(myPersistenceRegistry);
   }
 
   private PersistenceFacade getPersistenceFacade() {
-    return myPersistenceRegistry == null ? PersistenceFacade.getInstance() : myPersistenceRegistry;
+    return myPersistenceRegistry;
   }
 
   /**

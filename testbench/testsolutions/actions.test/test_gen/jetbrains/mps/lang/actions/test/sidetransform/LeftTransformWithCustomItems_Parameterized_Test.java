@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class LeftTransformWithCustomItems_Parameterized_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class LeftTransformWithCustomItems_Parameterized_Test extends BaseTransfo
 
   @Test
   public void test_LeftTransformWithCustomItems_Parameterized() throws Throwable {
-    runTest("jetbrains.mps.lang.actions.test.sidetransform.LeftTransformWithCustomItems_Parameterized_Test$TestBody", "testMethod", false);
+    new LeftTransformWithCustomItems_Parameterized_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3185679905992082138", "3185679905992082140");

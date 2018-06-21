@@ -9,7 +9,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
@@ -308,6 +308,7 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
@@ -3781,15 +3782,11 @@
         </node>
         <node concept="3clFbF" id="hASWOEoLIJ" role="3cqZAp">
           <node concept="37vLTI" id="hASWOEoLIK" role="3clFbG">
-            <node concept="2OqwBi" id="hASWOEoLIL" role="37vLTx">
-              <node concept="liA8E" id="hASWOEoLIM" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
+            <node concept="2OqwBi" id="3XR0QgVClQf" role="37vLTx">
+              <node concept="37vLTw" id="3XR0QgVClQe" role="2Oq$k0">
+                <ref role="3cqZAo" node="hASWOEoLIB" resolve="evaluatorNode" />
               </node>
-              <node concept="2JrnkZ" id="hASWOEoLIN" role="2Oq$k0">
-                <node concept="37vLTw" id="hASWOEoLIO" role="2JrQYb">
-                  <ref role="3cqZAo" node="hASWOEoLIB" resolve="evaluatorNode" />
-                </node>
-              </node>
+              <node concept="iZEcu" id="3XR0QgVClQg" role="2OqNvi" />
             </node>
             <node concept="37vLTw" id="hASWOEoLIP" role="37vLTJ">
               <ref role="3cqZAo" to="i1lu:IYmOvnMC4i" resolve="myNode" />
@@ -5556,18 +5553,14 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="2OqwBi" id="7dwGA3aa9pe" role="3uHU7w">
-                            <node concept="liA8E" id="7dwGA3aa9pf" role="2OqNvi">
-                              <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                            </node>
-                            <node concept="2JrnkZ" id="7dwGA3aa9pg" role="2Oq$k0">
-                              <node concept="2OqwBi" id="7dwGA3aa9ph" role="2JrQYb">
-                                <node concept="37vLTw" id="7dwGA3aa9pi" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="7dwGA3aa9oV" resolve="variableReference" />
-                                </node>
-                                <node concept="2ZHEkA" id="7dwGA3aa9pj" role="2OqNvi" />
+                          <node concept="2OqwBi" id="3XR0QgVClQt" role="3uHU7w">
+                            <node concept="2OqwBi" id="3XR0QgVClQq" role="2Oq$k0">
+                              <node concept="37vLTw" id="3XR0QgVClQr" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7dwGA3aa9oV" resolve="variableReference" />
                               </node>
+                              <node concept="2ZHEkA" id="3XR0QgVClQs" role="2OqNvi" />
                             </node>
+                            <node concept="iZEcu" id="3XR0QgVClQu" role="2OqNvi" />
                           </node>
                         </node>
                       </node>

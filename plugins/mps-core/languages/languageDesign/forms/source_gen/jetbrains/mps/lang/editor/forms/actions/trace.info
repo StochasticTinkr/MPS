@@ -4,21 +4,18 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
-      <unit at="13,0,36,0" name="jetbrains.mps.lang.editor.forms.actions.ActionAspectDescriptorImpl" />
-    </file>
-    <file name="QueriesGenerated.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.editor.forms.actions.QueriesGenerated" />
+      <unit at="13,0,32,0" name="jetbrains.mps.lang.editor.forms.actions.ActionAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:fa8ccb4f-be82-497d-8a1d-abe52be0e6b9(jetbrains.mps.lang.editor.forms.actions)/5347446703373799064">
     <file name="CellModel_Checkbox_NodeFactories.java">
       <node id="5347446703373799119" at="15,91,16,410" concept="0" />
-      <node id="5347446703373814562" at="20,91,21,175" concept="0" />
-      <node id="5347446703373815100" at="21,175,22,174" concept="0" />
+      <node id="5347446703373814562" at="20,91,21,178" concept="0" />
+      <node id="5347446703373815100" at="21,178,22,177" concept="0" />
       <node id="5347446703373799065" at="15,0,18,0" concept="1" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="5347446703373814501" at="20,0,24,0" concept="1" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <scope id="5347446703373799065" at="15,91,16,410" />
-      <scope id="5347446703373814501" at="20,91,22,174" />
+      <scope id="5347446703373814501" at="20,91,22,177" />
       <scope id="5347446703373799065" at="15,0,18,0">
         <var name="enclosingNode" id="5347446703373799065" />
         <var name="model" id="5347446703373799065" />

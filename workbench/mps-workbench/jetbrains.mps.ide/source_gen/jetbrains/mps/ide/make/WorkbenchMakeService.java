@@ -17,6 +17,9 @@ import jetbrains.mps.make.IMakeNotificationListener;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.core.platform.Platform;
+import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.make.MakeServiceComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.resources.IResource;
@@ -59,24 +62,23 @@ import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
 
 public class WorkbenchMakeService extends AbstractMakeService implements IMakeService, ApplicationComponent {
   private static Logger LOG = LogManager.getLogger(WorkbenchMakeService.class);
-  private static WorkbenchMakeService INSTANCE = null;
   private AtomicMarkableReference<MakeSession> currentSessionStickyMark = new AtomicMarkableReference<MakeSession>(null, false);
   private volatile AtomicReference<Future<IResult>> currentProcess = new AtomicReference<Future<IResult>>();
   private List<IMakeNotificationListener> listeners = Collections.synchronizedList(ListSequence.fromList(new ArrayList<IMakeNotificationListener>()));
+  private final Platform myPlatform;
 
-  public WorkbenchMakeService() {
+  public WorkbenchMakeService(MPSCoreComponents mpsComponents) {
+    myPlatform = mpsComponents.getPlatform();
   }
 
   @Override
   public void initComponent() {
-    INSTANCE = this;
-    IMakeService.INSTANCE.set(this);
+    myPlatform.findComponent(MakeServiceComponent.class).install(this);
   }
 
   @Override
   public void disposeComponent() {
-    IMakeService.INSTANCE.set(null);
-    INSTANCE = null;
+    myPlatform.findComponent(MakeServiceComponent.class).uninstall(this);
   }
 
   @NonNls
@@ -86,9 +88,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     return "Workbench Make Service";
   }
 
-  private boolean isInstance() {
-    return this == INSTANCE;
-  }
 
   @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
@@ -263,11 +262,13 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   }
 
   private void checkValidUsage() {
-    if (INSTANCE == null) {
-      throw new IllegalStateException("already disposed");
-    }
-    if (!(isInstance())) {
+    MakeServiceComponent msc = myPlatform.findComponent(MakeServiceComponent.class);
+
+    if (msc == null || msc.get() != this) {
       throw new IllegalStateException("invalid usage of service");
+    }
+    if (msc.get() == null) {
+      throw new IllegalStateException("already disposed");
     }
   }
 

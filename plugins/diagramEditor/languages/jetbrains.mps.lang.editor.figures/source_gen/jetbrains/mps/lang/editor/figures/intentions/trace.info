@@ -101,6 +101,10 @@
       <unit id="2084788800270642821" at="67,0,87,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeMethod_Intention$IntentionImplementation" />
       <unit id="2084788800270642821" at="26,0,88,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeMethod_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="2084788800270642821" at="51,47,52,82" concept="2" />
+      <node id="2084788800270642821" at="73,67,74,68" concept="2" />
+    </file>
   </root>
   <root nodeRef="r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)/5422656561926830596">
     <file name="AddRemoveFigureAttribute_Intention.java">
@@ -172,6 +176,10 @@
       </scope>
       <unit id="5422656561926830596" at="53,0,73,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureAttribute_Intention$IntentionImplementation" />
       <unit id="5422656561926830596" at="24,0,74,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureAttribute_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="5422656561926830596" at="37,47,38,67" concept="2" />
+      <node id="5422656561926830596" at="71,52,72,53" concept="2" />
     </file>
   </root>
   <root nodeRef="r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)/5422656561930152815">
@@ -260,6 +268,10 @@
       <unit id="5422656561930152815" at="67,0,87,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeField_Intention$IntentionImplementation" />
       <unit id="5422656561930152815" at="26,0,88,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeField_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="5422656561930152815" at="44,47,45,81" concept="2" />
+      <node id="5422656561930152815" at="72,53,73,67" concept="2" />
+    </file>
   </root>
   <root nodeRef="r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)/7319867929567458791">
     <file name="AddRemoveFigureParameterAttributePropertySpecification_Intention.java">
@@ -344,6 +356,10 @@
       </scope>
       <unit id="7319867929567458791" at="64,0,85,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributePropertySpecification_Intention$IntentionImplementation" />
       <unit id="7319867929567458791" at="26,0,86,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributePropertySpecification_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="7319867929567458791" at="58,47,59,97" concept="2" />
+      <node id="7319867929567458791" at="74,68,75,83" concept="2" />
     </file>
   </root>
 </debug-info>

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.devkit.editorMenuTrace;
 
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
@@ -64,7 +64,7 @@ class EditorMenuTraceNode extends MPSTreeNode implements NodeTargetProvider {
       sourceNode = source.resolve(myProject.getRepository());
     }
     if (sourceNode != null) {
-      icon = IconManager.getIconFor(sourceNode);
+      icon = GlobalIconManager.getInstance().getIconFor(sourceNode);
       if (!menuDescriptor.isImplicit()) {
         font = Font.BOLD;
       } else {

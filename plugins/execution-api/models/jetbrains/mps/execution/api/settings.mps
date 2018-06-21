@@ -216,6 +216,18 @@
           <ref role="3uigEE" node="qCQmZRT2wq" resolve="PersistentConfigurationContext" />
         </node>
       </node>
+      <node concept="P$JXv" id="CZHNfvxvqT" role="lGtFl">
+        <node concept="TZ5HA" id="CZHNfvxvqU" role="TZ5H$">
+          <node concept="1dT_AC" id="CZHNfvxvqV" role="1dT_Ay">
+            <property role="1dT_AB" value="RunConfiguration.checkConfiguration, generified for PersistentConfigurationTemplate." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="CZHNfvxvAy" role="TZ5H$">
+          <node concept="1dT_AC" id="CZHNfvxvAz" role="1dT_Ay">
+            <property role="1dT_AB" value="As long as RunConfiguration has access to context (like project), and PCT does not, a parameter was introduced to share context values." />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="3oW7HLfqDr2" role="jymVt">
       <property role="1EzhhJ" value="true" />
@@ -230,6 +242,23 @@
       </node>
       <node concept="3Tm1VV" id="3oW7HLfqDr6" role="1B3o_S" />
       <node concept="3clFbS" id="3oW7HLfqDr7" role="3clF47" />
+      <node concept="P$JXv" id="CZHNfvxuzI" role="lGtFl">
+        <node concept="TZ5HA" id="CZHNfvxuzJ" role="TZ5H$">
+          <node concept="1dT_AC" id="CZHNfvxuzK" role="1dT_Ay">
+            <property role="1dT_AB" value="This is what RunConfiguration.getConfigurationEditor does, generified for PersistentContfigurationTemplate." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="CZHNfvxvin" role="TZ5H$">
+          <node concept="1dT_AC" id="CZHNfvxvio" role="1dT_Ay">
+            <property role="1dT_AB" value="There's no obvious value in SettingsEditorEx, though, shall I drop i?" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="CZHNfvxvmH" role="TZ5H$">
+          <node concept="1dT_AC" id="CZHNfvxvmI" role="1dT_Ay">
+            <property role="1dT_AB" value="There's only apply() method there which seems to be of no use (let alone of any value)." />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="3oW7HLfqDr8" role="jymVt">
       <property role="1EzhhJ" value="true" />
@@ -238,6 +267,28 @@
       <node concept="3clFbS" id="3oW7HLfqDra" role="3clF47" />
       <node concept="3uibUv" id="3oW7HLfqDrb" role="3clF45">
         <ref role="3uigEE" node="3oW7HLfqDqW" resolve="IPersistentConfiguration" />
+      </node>
+      <node concept="P$JXv" id="CZHNfvxucJ" role="lGtFl">
+        <node concept="TZ5HA" id="CZHNfvxucK" role="TZ5H$">
+          <node concept="1dT_AC" id="CZHNfvxucL" role="1dT_Ay">
+            <property role="1dT_AB" value="Although public, intended for alternative implementations of clone() method in owner class (RunConfiguration has clone() in superclass, " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="CZHNfvxuiu" role="TZ5H$">
+          <node concept="1dT_AC" id="CZHNfvxuiv" role="1dT_Ay">
+            <property role="1dT_AB" value="while PersistentConfigurationTemplate does not. Both share clone() implementation supplied by PersistentConfiguration template." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="CZHNfvxuq0" role="TZ5H$">
+          <node concept="1dT_AC" id="CZHNfvxuq1" role="1dT_Ay">
+            <property role="1dT_AB" value="I feel there's no need in the method, nor in shared clone() implementation (iow, superclass for PCT that supports clone() would eliminate need for " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="CZHNfvxuwO" role="TZ5H$">
+          <node concept="1dT_AC" id="CZHNfvxuwP" role="1dT_Ay">
+            <property role="1dT_AB" value="createCloneTemplate)" />
+          </node>
+        </node>
       </node>
     </node>
   </node>

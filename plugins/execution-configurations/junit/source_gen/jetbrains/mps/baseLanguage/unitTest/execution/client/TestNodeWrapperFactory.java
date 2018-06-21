@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
@@ -45,7 +46,12 @@ public enum TestNodeWrapperFactory {
       if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
         return null;
       }
-      return new LanguageTestWrapper(node);
+      ITestNodeWrapper testCase = TestNodeWrapperFactory.LanguageTestCaseNodeWrapperFactory.wrap(ITestMethod__BehaviorDescriptor.getTestCase_idhGBgWVd.invoke(node));
+      return (testCase == null ? null : new LanguageTestWrapper(testCase, node));
+    }
+    @Override
+    public boolean canWrap(@NotNull SNode node) {
+      return super.canWrap(node) && TestNodeWrapperFactory.LanguageTestCaseNodeWrapperFactory.canWrap(ITestMethod__BehaviorDescriptor.getTestCase_idhGBgWVd.invoke(SNodeOperations.as(node, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"))));
     }
 
   },
@@ -79,14 +85,15 @@ public enum TestNodeWrapperFactory {
   JUnit3MethodsNodeWrapperFactory(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false) {
     @Nullable
     public ITestNodeWrapper<SNode> wrap(@NotNull SNode node) {
-      return new JUnit3MethodWrapper(node);
+      ITestNodeWrapper testCase = TestNodeWrapperFactory.JUnit3TestCaseNodeWrapperFactory.wrap(SNodeOperations.getParent(node));
+      return (testCase == null ? null : new JUnit3MethodWrapper(testCase, node));
     }
     @Override
     public boolean canWrap(@NotNull SNode node) {
       if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
         return false;
       }
-      return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && JUnit3MethodWrapper.isTestMethod(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
+      return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && JUnit3MethodWrapper.isTestMethod(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) && TestNodeWrapperFactory.JUnit3TestCaseNodeWrapperFactory.canWrap(SNodeOperations.getParent(node));
     }
 
   },
@@ -110,14 +117,26 @@ public enum TestNodeWrapperFactory {
   JUnit4MethodsNodeWrapperFactory(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false) {
     @Nullable
     public ITestNodeWrapper<SNode> wrap(@NotNull SNode node) {
-      return new JUnit4MethodWrapper(node);
+      ITestNodeWrapper testCase = TestNodeWrapperFactory.JUnit4TestNodeWrapperFactory.wrap(SNodeOperations.getParent(node));
+      return (testCase == null ? null : new JUnit4MethodWrapper(testCase, node));
     }
     @Override
     public boolean canWrap(@NotNull SNode node) {
       if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
         return false;
       }
-      return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && JUnit4MethodWrapper.isJUnit4TestMethod(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
+      // XXX it's not clear to me how this story works in case test method comes from an abstract class (i.e. if we've got non-trivial test class hierarch) 
+      //     It seems that in this case we just create an odd testcase for the abstract class.  
+      //     JUnit4MethodWrapper.getTestCase used to take node.ancestor<ClassConcept>, so it has been like that for a while. 
+      return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && JUnit4MethodWrapper.isJUnit4TestMethod(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) && TestNodeWrapperFactory.JUnit4TestNodeWrapperFactory.canWrap(SNodeOperations.getParent(node));
+    }
+
+  },
+  GeneratorTest(MetaAdapterFactory.getConcept(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf092beL, "jetbrains.mps.lang.test.generator.structure.GeneratorTest"), true) {
+    @Nullable
+    @Override
+    public ITestNodeWrapper wrap(@NotNull SNode node) {
+      return new GeneratorTestWrapper(node);
     }
 
   };
@@ -184,6 +203,7 @@ public enum TestNodeWrapperFactory {
     Iterable<SAbstractConcept> concepts = (isRoot ? TestNodeWrapperFactory.getWrappedRootConcepts() : TestNodeWrapperFactory.getWrappedNonRootConcepts());
     return SNodeOperations.getNodeAncestorWhereConceptInList(source, Sequence.fromIterable(concepts).toGenericArray(SAbstractConcept.class), true, isRoot);
   }
+
   private static SNode check_kl7j79_a0a0d0b0b2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));

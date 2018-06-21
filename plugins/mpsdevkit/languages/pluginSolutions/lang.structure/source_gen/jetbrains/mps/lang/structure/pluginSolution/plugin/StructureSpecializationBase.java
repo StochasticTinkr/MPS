@@ -13,12 +13,12 @@ import jetbrains.mps.util.annotation.ToRemove;
 
 public abstract class StructureSpecializationBase<T> implements StructureSpecialization<T, T>, MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<T, SNodeReference>, Tuples._2<T, SNodeReference>> {
   public Tuples._2<T, SNodeReference> beforeMove(SNode nodeToMove) {
-    return fetchState(nodeToMove);
+    return fetchState(nodeToMove, true);
   }
   public Tuples._2<T, SNodeReference> afterMove(SNode movedNode) {
-    return fetchState(movedNode);
+    return fetchState(movedNode, false);
   }
-  public abstract Tuples._2<T, SNodeReference> fetchState(SNode movingNode);
+  public abstract Tuples._2<T, SNodeReference> fetchState(SNode movingNode, boolean filterOutInvalid);
   public void confirm(List<RefactoringParticipant.Option> selectedOptions, Tuples._2<T, SNodeReference> initialState, Tuples._2<T, SNodeReference> finalState, SRepository repository, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder, boolean updateModuleDependencies) {
     confirm(initialState, finalState, repository, migrationBuilder);
   }

@@ -14,6 +14,10 @@
     </file>
   </root>
   <root nodeRef="r:24bf2ceb-413d-48b7-a7ea-ab65995b3a1b(testExtendingAnalyzer.intentions)/1417601170173100068">
+    <file name="IntentionsDescriptor.java">
+      <node id="1417601170173100068" at="37,47,38,61" concept="1" />
+      <node id="1417601170173100068" at="51,52,52,47" concept="1" />
+    </file>
     <file name="SwitchToNullUnsafe_Intention.java">
       <node id="1417601170173100068" at="22,0,23,0" concept="2" trace="myCachedExecutable" />
       <node id="1417601170173100068" at="23,41,24,147" concept="7" />
@@ -76,6 +80,10 @@
     </file>
   </root>
   <root nodeRef="r:24bf2ceb-413d-48b7-a7ea-ab65995b3a1b(testExtendingAnalyzer.intentions)/1417601170173123978">
+    <file name="IntentionsDescriptor.java">
+      <node id="1417601170173123978" at="38,61,39,59" concept="1" />
+      <node id="1417601170173123978" at="52,47,53,45" concept="1" />
+    </file>
     <file name="SwitchToNullSafe_Intention.java">
       <node id="1417601170173123978" at="22,0,23,0" concept="2" trace="myCachedExecutable" />
       <node id="1417601170173123978" at="23,39,24,147" concept="7" />

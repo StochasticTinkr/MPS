@@ -61,7 +61,7 @@ public class ClassStubPsiMapper implements MPS2PsiMapper {
   }
 
   private PsiClass findPsiClass(SNode claz, Project project) {
-    String classFqName = ((String) BHReflection.invoke(claz, SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
+    String classFqName = ((String) BHReflection.invoke0(claz, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"), SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
     return JavaPsiFacade.getInstance(project).findClass(classFqName, GlobalSearchScope.allScope(project));
   }
 }

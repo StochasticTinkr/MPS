@@ -51,19 +51,15 @@ public class DelayedChanges {
   public void doAllChanges(@NotNull TemplateGenerator generator) throws GenerationFailureException {
     SNode[] newOutputNodes = new SNode[myPostProcessors.size()];
     int i = 0;
+    ChildAdopter ca = new ChildAdopter(generator);
     for (NodePostProcessor p : myPostProcessors) {
       SNode child = p.substitute();
-      if (child == null) {
-        generator.getLogger().error(p.getTemplateNode(), "Unexpected null value. Transform function of MAP-SRC didn't produce any result. Please check the function and make sure it always supplies a node");
-        continue;
-      }
       if (child != p.getOutputAnchor()) {
-        ChildAdopter ca = new ChildAdopter(generator);
-        ca.checkIsExpectedLanguage(Collections.singletonList(child), p.getTemplateNode(), p.getTemplateContext());
+        generator.checkIsExpectedLanguage(Collections.singletonList(child), p.getTemplateNode(), p.getTemplateContext());
         child = ca.adopt(child, p.getTemplateContext());
         generator.replacePlaceholderNode(p, child);
       }
-
+      // even if not replaced, chances are there's post-processing code
       newOutputNodes[i++] = child;
     }
     i = 0;

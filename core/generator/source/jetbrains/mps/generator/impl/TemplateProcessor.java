@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -252,6 +252,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       return myMappingLabel;
     }
 
+    // seems to be non-null return value
     protected final List<SNode> nextMacro(TemplateContext context)
         throws GenerationFailureException, DismissTopMappingRuleException, GenerationCanceledException {
       if (getNextMacro() != null) {
@@ -382,6 +383,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         }
         ctx = ctx.subContext(newInputNode);
         List<SNode> _outputNodes = nextMacro(ctx);
+        TracingUtil.deriveOriginalNode(newInputNode, _outputNodes, false);
         outputNodes.addAll(_outputNodes);
         i++;
         trace.trace(newInputNode.getNodeId(), GenerationTracerUtil.translateOutput(_outputNodes), getMacroNodeRef());
@@ -701,7 +703,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         // use initial context, not the one prepared (could be filled with switch arguments)
         collection = nextMacro(templateContext.subContext(newInputNode));
       }
-      return new ArrayList<SNode>(collection);
+      return new ArrayList<>(collection);
     }
   }
 
@@ -715,20 +717,18 @@ public final class TemplateProcessor implements ITemplateProcessor {
       super(macro, templateNode, next, templateProcessor);
       myName = macroName;
     }
-    protected abstract TemplateContext prepareContext(TemplateContext templateContext) throws GenerationFailureException;
 
-    private TemplateContainer getTemplates() {
-      TemplateContainer rv = myTemplates;
-      if (rv == null) {
-        synchronized (this) {
-          if ((rv = myTemplates) == null) {
-            rv = new TemplateContainer(myInvokedTemplate);
-            myTemplates = rv;
-          }
-        }
-      }
-      return rv;
+    // shall not return null. templateContext != null.
+    protected abstract Object[] arguments(TemplateContext templateContext) throws GenerationFailureException;
+
+    /*
+    FIXME introduce a mechanism to access template declaration instance without need to evaluate actual arguments first
+          in fact, at this moment, would be sufficient to know only SNodeReference for template declaration node, not node<>
+          OTOH, here, we are in interpreted template model and have node<TemplateDeclaration> anyway.
+    private TemplateDeclaration getTemplate(TemplateExecutionEnvironment env) {
+      return env.loadTemplate(myInvokedTemplate.getReference());
     }
+    */
 
     @NotNull
     @Override
@@ -744,17 +744,25 @@ public final class TemplateProcessor implements ITemplateProcessor {
       if (invokedTemplate == null) {
         throw new TemplateProcessingFailureException(macro, String.format("error processing %s : no template to invoke", myName));
       }
+      final TemplateExecutionEnvironment env = templateContext.getEnvironment();
+      TemplateContext tcInput = templateContext.subContext(newInputNode);
 
-      TemplateContext newcontext = prepareContext(templateContext).subContext(newInputNode);
-      if (newcontext == null) {
-        throw new TemplateProcessingFailureException(macro, String.format("error processing %s : failed to prepare new context", myName),
-            GeneratorUtil.describe(invokedTemplate, "invoked template"));
+      try {
+        // myInvokedTemplate may come from a template model that has generated source code, have to access proper TemplateModel
+        // implementation and proper TemplateDeclaration instance. In fact, likely need more complex reference to template than
+        // mere SNodeReference (in case we would like to avoid deploy of models with generated templates), e.g. an additional
+        // node to hold template identity key (OTOH, why not SNodeReference itself as identity key, if we could access
+        // reference target w/o need to get it resolved to a node?).
+        // Note, use of TemplateContainer here would imply we interpret any CALL/INCLUDE template.
+        Collection<SNode> rv = env.applyTemplate(myInvokedTemplate.getReference(), getMacroNodeRef(), tcInput, arguments(templateContext));
+        env.getTrace().trace(newInputNode.getNodeId(), GenerationTracerUtil.translateOutput(rv), getMacroNodeRef());
+        // FIXME stick to same API, e.g. List<SNode>, do not mix the two.
+        return new ArrayList<>(rv);
+      } catch (GenerationFailureException | DismissTopMappingRuleException | GenerationCanceledException ex) {
+        throw ex;
+      } catch (GenerationException ex) {
+        throw new GenerationFailureException(ex);
       }
-
-      final TemplateContainer tc = getTemplates();
-      final List<SNode> rv = tc.processRuleConsequence(newcontext);
-      templateContext.getEnvironment().getTrace().trace(newInputNode.getNodeId(), GenerationTracerUtil.translateOutput(rv), getMacroNodeRef());
-      return rv;
     }
   }
 
@@ -767,7 +775,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     @Override
-    protected TemplateContext prepareContext(TemplateContext templateContext) throws GenerationFailureException {
+    protected Object[] arguments(TemplateContext templateContext) {
       final String[] parameterNames = RuleUtil.getTemplateDeclarationParameterNames(myInvokedTemplate);
       if (parameterNames == null) {
         getLogger().error(getMacroNodeRef(), "error processing $INCLUDE$: target template is broken", GeneratorUtil.describeInput(templateContext));
@@ -780,7 +788,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
               GeneratorUtil.describeInput(templateContext));
         }
       }
-      return templateContext;
+      // $INCLUDE$ doesn't pass arguments per se (the macro has no mechanism to specify them), merely uses values of outer context
+      return new Object[0];
     }
   }
 
@@ -794,7 +803,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     @Override
-    protected TemplateContext prepareContext(TemplateContext templateContext) throws GenerationFailureException {
+    protected Object[] arguments(TemplateContext templateContext) throws GenerationFailureException {
       TemplateCall tc = myCallProcessor;
       if (tc == null) {
         tc = new TemplateCall(macro);
@@ -804,7 +813,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         }
         myCallProcessor = tc;
       }
-      return tc.prepareCallContext(templateContext);
+      return tc.evaluateArguments(templateContext);
     }
   }
 
@@ -823,9 +832,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       if (!_outputNodes.isEmpty()) {
         SNode inputNode = getNewInputNode(templateContext);
         if (inputNode != null) {
-          for (SNode outputNode : _outputNodes) {
-            TracingUtil.fillOriginalNode(inputNode, outputNode, false);
-          }
+          TracingUtil.deriveOriginalNode(inputNode, _outputNodes, true);
         }
       }
       return _outputNodes;

@@ -40,7 +40,6 @@
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
-        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -73,7 +72,6 @@
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
-      <concept id="2565736246230036150" name="jetbrains.mps.lang.core.structure.ExportScopePublic" flags="ig" index="24uvON" />
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -154,67 +152,6 @@
     <property role="TrG5h" value="IMetaLevelChanger" />
     <property role="EcuMT" value="201537367881071930" />
     <node concept="asaX9" id="70UXEPd7_Wd" role="lGtFl" />
-  </node>
-  <node concept="1TIwiD" id="4H9z7u7GMNF">
-    <property role="R5$K7" value="true" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="ExportScope" />
-    <property role="3GE5qa" value="export" />
-    <property role="EcuMT" value="5425021671150136555" />
-    <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
-    <node concept="PrWs8" id="1PH8wrDFZav" role="PzmwI">
-      <ref role="PrY4T" node="19gBtYEAf4C" resolve="InterfacePart" />
-    </node>
-    <node concept="M6xJ_" id="6_gUeuqOeTD" role="lGtFl">
-      <property role="Hh88m" value="export" />
-      <node concept="trNpa" id="166$sc$ZIAz" role="EQaZv">
-        <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
-      </node>
-    </node>
-  </node>
-  <node concept="1TIwiD" id="2erkSmBSEUQ">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="ExportScopePublic" />
-    <property role="3GE5qa" value="export" />
-    <property role="34LRSv" value="@export(public)" />
-    <property role="EcuMT" value="2565736246230036150" />
-    <ref role="1TJDcQ" node="4H9z7u7GMNF" resolve="ExportScope" />
-    <node concept="24uvON" id="3ye0wbzmDhi" role="lGtFl" />
-    <node concept="M6xJ_" id="6_gUeuqOeP5" role="lGtFl">
-      <property role="Hh88m" value="" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="2erkSmBSEUR">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="ExportScopeNamespace" />
-    <property role="3GE5qa" value="export" />
-    <property role="34LRSv" value="@export(namespace)" />
-    <property role="EcuMT" value="2565736246230036151" />
-    <ref role="1TJDcQ" node="4H9z7u7GMNF" resolve="ExportScope" />
-    <node concept="1TJgyi" id="2erkSmBSEUT" role="1TKVEl">
-      <property role="TrG5h" value="namespace" />
-      <property role="IQ2nx" value="2565736246230036153" />
-      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
-    </node>
-    <node concept="24uvON" id="3ye0wbzmDhh" role="lGtFl" />
-    <node concept="M6xJ_" id="6_gUeuqOeTm" role="lGtFl">
-      <property role="Hh88m" value="" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="2erkSmBSEUU">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="ExportScopeModule" />
-    <property role="3GE5qa" value="export" />
-    <property role="34LRSv" value="@export(module)" />
-    <property role="EcuMT" value="2565736246230036154" />
-    <ref role="1TJDcQ" node="4H9z7u7GMNF" resolve="ExportScope" />
-    <node concept="24uvON" id="3ye0wbzmDhg" role="lGtFl" />
-    <node concept="M6xJ_" id="6_gUeuqOeQ2" role="lGtFl">
-      <property role="Hh88m" value="" />
-    </node>
   </node>
   <node concept="1TIwiD" id="4uZwTti3_$T">
     <property role="R5$K7" value="true" />

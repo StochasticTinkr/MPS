@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,62,0" name="org.jetbrains.mps.samples.ParallelFor.structure.ConceptPresentationAspectImpl" />
@@ -9,6 +16,182 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <unit at="16,0,103,0" name="org.jetbrains.mps.samples.ParallelFor.structure.StructureAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)/2975785153735111398">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2975785153735111398" at="16,0,17,0" concept="1" trace="props_ThreadSafe" />
+      <node id="2975785153735111398" at="52,39,53,76" concept="3" />
+      <node id="2975785153735111398" at="53,76,54,44" concept="0" />
+      <node id="2975785153735111398" at="54,44,55,42" concept="0" />
+      <node id="2975785153735111398" at="56,9,57,32" concept="4" />
+      <node id="2975785153735111398" at="51,44,56,9" concept="2" />
+      <scope id="2975785153735111398" at="52,39,55,42">
+        <var name="cpb" id="2975785153735111398" />
+      </scope>
+      <scope id="2975785153735111398" at="51,44,57,32" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2975785153735111398" at="16,0,17,0" concept="5" trace="ThreadSafe" />
+      <node id="2975785153735111398" at="23,48,24,49" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2975785153735111398" at="21,0,22,0" concept="1" trace="myConceptThreadSafe" />
+      <node id="2975785153735111398" at="45,44,46,35" concept="4" />
+      <node id="2975785153735111398" at="95,68,96,182" concept="3" />
+      <node id="2975785153735111398" at="96,182,97,34" concept="0" />
+      <node id="2975785153735111398" at="97,34,98,127" concept="0" />
+      <node id="2975785153735111398" at="98,127,99,124" concept="0" />
+      <node id="2975785153735111398" at="99,124,100,22" concept="4" />
+      <node id="2975785153735111398" at="95,0,102,0" concept="6" trace="createDescriptorForThreadSafe#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2975785153735111398" at="45,44,46,35" />
+      <scope id="2975785153735111398" at="95,68,100,22">
+        <var name="b" id="2975785153735111398" />
+      </scope>
+      <scope id="2975785153735111398" at="95,0,102,0" />
+    </file>
+  </root>
+  <root nodeRef="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)/2975785153735230336">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="2975785153735230336" at="12,0,13,0" concept="1" trace="props_NonThreadSafeClass" />
+      <node id="2975785153735230336" at="24,47,25,76" concept="3" />
+      <node id="2975785153735230336" at="25,76,26,52" concept="0" />
+      <node id="2975785153735230336" at="26,52,27,50" concept="0" />
+      <node id="2975785153735230336" at="28,9,29,40" concept="4" />
+      <node id="2975785153735230336" at="23,52,28,9" concept="2" />
+      <scope id="2975785153735230336" at="24,47,27,50">
+        <var name="cpb" id="2975785153735230336" />
+      </scope>
+      <scope id="2975785153735230336" at="23,52,29,40" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="2975785153735230336" at="12,0,13,0" concept="5" trace="NonThreadSafeClass" />
+      <node id="2975785153735230336" at="19,116,20,57" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="2975785153735230336" at="17,0,18,0" concept="1" trace="myConceptNonThreadSafeClass" />
+      <node id="2975785153735230336" at="37,52,38,43" concept="4" />
+      <node id="2975785153735230336" at="56,76,57,190" concept="3" />
+      <node id="2975785153735230336" at="57,190,58,34" concept="0" />
+      <node id="2975785153735230336" at="58,34,59,127" concept="0" />
+      <node id="2975785153735230336" at="59,127,60,124" concept="0" />
+      <node id="2975785153735230336" at="60,124,61,22" concept="4" />
+      <node id="2975785153735230336" at="56,0,63,0" concept="6" trace="createDescriptorForNonThreadSafeClass#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2975785153735230336" at="37,52,38,43" />
+      <scope id="2975785153735230336" at="56,76,61,22">
+        <var name="b" id="2975785153735230336" />
+      </scope>
+      <scope id="2975785153735230336" at="56,0,63,0" />
+    </file>
+  </root>
+  <root nodeRef="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)/633195941006921788">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="633195941006921788" at="15,0,16,0" concept="1" trace="props_ThreadPool" />
+      <node id="633195941006921788" at="45,39,46,76" concept="3" />
+      <node id="633195941006921788" at="46,76,47,45" concept="0" />
+      <node id="633195941006921788" at="47,45,48,42" concept="0" />
+      <node id="633195941006921788" at="49,9,50,32" concept="4" />
+      <node id="633195941006921788" at="44,44,49,9" concept="2" />
+      <scope id="633195941006921788" at="45,39,48,42">
+        <var name="cpb" id="633195941006921788" />
+      </scope>
+      <scope id="633195941006921788" at="44,44,50,32" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="633195941006921788" at="15,0,16,0" concept="5" trace="ThreadPool" />
+      <node id="633195941006921788" at="22,59,23,48" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="633195941006921788" at="20,0,21,0" concept="1" trace="myConceptThreadPool" />
+      <node id="633195941006921788" at="43,44,44,35" concept="4" />
+      <node id="633195941006921788" at="85,68,86,181" concept="3" />
+      <node id="633195941006921788" at="86,181,87,34" concept="0" />
+      <node id="633195941006921788" at="87,34,88,121" concept="0" />
+      <node id="633195941006921788" at="88,121,89,123" concept="0" />
+      <node id="633195941006921797" at="89,123,90,72" concept="0" />
+      <node id="633195941006921788" at="90,72,91,49" concept="0" />
+      <node id="633195941006921788" at="91,49,92,27" concept="0" />
+      <node id="633195941006921788" at="92,27,93,22" concept="4" />
+      <node id="633195941006921788" at="85,0,95,0" concept="6" trace="createDescriptorForThreadPool#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="633195941006921788" at="43,44,44,35" />
+      <scope id="633195941006921788" at="85,68,93,22">
+        <var name="b" id="633195941006921788" />
+      </scope>
+      <scope id="633195941006921788" at="85,0,95,0" />
+    </file>
+  </root>
+  <root nodeRef="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)/8923957828369477802">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="8923957828369477802" at="13,0,14,0" concept="1" trace="props_ParallelFor" />
+      <node id="8923957828369477802" at="31,40,32,76" concept="3" />
+      <node id="8923957828369477802" at="32,76,33,45" concept="0" />
+      <node id="8923957828369477802" at="33,45,34,43" concept="0" />
+      <node id="8923957828369477802" at="35,9,36,33" concept="4" />
+      <node id="8923957828369477802" at="30,45,35,9" concept="2" />
+      <scope id="8923957828369477802" at="31,40,34,43">
+        <var name="cpb" id="8923957828369477802" />
+      </scope>
+      <scope id="8923957828369477802" at="30,45,36,33" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="8923957828369477802" at="13,0,14,0" concept="5" trace="ParallelFor" />
+      <node id="8923957828369477802" at="20,57,21,50" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="8923957828369477802" at="18,0,19,0" concept="1" trace="myConceptParallelFor" />
+      <node id="8923957828369477802" at="39,45,40,36" concept="4" />
+      <node id="8923957828369477802" at="63,69,64,183" concept="3" />
+      <node id="8923957828369477802" at="64,183,65,34" concept="0" />
+      <node id="8923957828369477802" at="65,34,66,133" concept="0" />
+      <node id="8923957828369477802" at="66,133,67,71" concept="0" />
+      <node id="8923957828369477802" at="67,71,68,71" concept="0" />
+      <node id="8923957828369477802" at="68,71,69,124" concept="0" />
+      <node id="8374756414438970116" at="69,124,70,65" concept="0" />
+      <node id="8923957828369518786" at="70,65,71,206" concept="0" />
+      <node id="8923957828369550462" at="71,206,72,201" concept="0" />
+      <node id="4659204813808501246" at="72,201,73,197" concept="0" />
+      <node id="8923957828369477802" at="73,197,74,49" concept="0" />
+      <node id="8923957828369477802" at="74,49,75,27" concept="0" />
+      <node id="8923957828369477802" at="75,27,76,22" concept="4" />
+      <node id="8923957828369477802" at="63,0,78,0" concept="6" trace="createDescriptorForParallelFor#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="8923957828369477802" at="39,45,40,36" />
+      <scope id="8923957828369477802" at="63,69,76,22">
+        <var name="b" id="8923957828369477802" />
+      </scope>
+      <scope id="8923957828369477802" at="63,0,78,0" />
+    </file>
+  </root>
+  <root nodeRef="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)/8923957828369477803">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="8923957828369477803" at="14,0,15,0" concept="1" trace="props_ParallelLoopVariable" />
+      <node id="8923957828369477803" at="38,49,39,76" concept="3" />
+      <node id="8923957828369477803" at="39,76,40,35" concept="0" />
+      <node id="8923957828369477803" at="40,35,41,52" concept="0" />
+      <node id="8923957828369477803" at="42,9,43,42" concept="4" />
+      <node id="8923957828369477803" at="37,54,42,9" concept="2" />
+      <scope id="8923957828369477803" at="38,49,41,52">
+        <var name="cpb" id="8923957828369477803" />
+      </scope>
+      <scope id="8923957828369477803" at="37,54,43,42" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="8923957828369477803" at="14,0,15,0" concept="5" trace="ParallelLoopVariable" />
+      <node id="8923957828369477803" at="21,50,22,59" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="8923957828369477803" at="19,0,20,0" concept="1" trace="myConceptParallelLoopVariable" />
+      <node id="8923957828369477803" at="41,54,42,45" concept="4" />
+      <node id="8923957828369477803" at="78,78,79,192" concept="3" />
+      <node id="8923957828369477803" at="79,192,80,34" concept="0" />
+      <node id="8923957828369477803" at="80,34,81,135" concept="0" />
+      <node id="8923957828369477803" at="81,135,82,124" concept="0" />
+      <node id="8923957828369477803" at="82,124,83,22" concept="4" />
+      <node id="8923957828369477803" at="78,0,85,0" concept="6" trace="createDescriptorForParallelLoopVariable#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="8923957828369477803" at="41,54,42,45" />
+      <scope id="8923957828369477803" at="78,78,83,22">
+        <var name="b" id="8923957828369477803" />
+      </scope>
+      <scope id="8923957828369477803" at="78,0,85,0" />
     </file>
   </root>
 </debug-info>

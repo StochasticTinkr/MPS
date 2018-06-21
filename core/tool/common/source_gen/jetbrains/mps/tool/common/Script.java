@@ -5,17 +5,15 @@ package jetbrains.mps.tool.common;
 import java.util.Set;
 import java.io.File;
 import java.util.LinkedHashSet;
-import java.util.Map;
 import java.util.List;
-import java.util.LinkedHashMap;
-import org.apache.log4j.Level;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Map;
+import java.util.LinkedHashMap;
 import java.util.Collections;
-import java.lang.reflect.Method;
-import java.lang.reflect.InvocationTargetException;
+import org.apache.log4j.Level;
 import org.jdom.Element;
 import java.io.FileNotFoundException;
+import org.jdom.Document;
 import java.io.IOException;
 import org.jdom.JDOMException;
 
@@ -26,81 +24,52 @@ public class Script {
   private static final String ELEMENT_EXCLUDEDFROMDIFF = "excludedFromDiff";
   private static final String ELEMENT_PROJECT = "project";
   private static final String ELEMENT_PARAMETER = "parameter";
-  private static final String ELEMENT_PROPERTY = "property";
   private static final String PATH = "path";
   private static final String VALUE = "value";
   private static final String ELEMENT_CHUNK = "chunk";
   private static final String ATTRIBUTE_BOOTSTRAP = "bootstrap";
-  private static final String ELEMENT_LIBRARYJAR = "libraryJar";
 
-  private RepositoryDescriptor myRepo = null;
+  private final ScriptData myStartupData = new ScriptData();
   private final Set<File> myModels = new LinkedHashSet<File>();
   private final Set<File> myModules = new LinkedHashSet<File>();
   private final Set<File> myExcludedFromDiff = new LinkedHashSet<File>();
-  private final Map<File, List<String>> myMPSProjects = new LinkedHashMap<File, List<String>>();
-  private boolean myFailOnError = true;
-  private final Set<String> myCompiledLibraries = new LinkedHashSet<String>();
-  private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
-  private Level myLogLevel = Level.INFO;
-  private final Map<String, String> myProperties = new LinkedHashMap<String, String>();
+  /**
+   * XXX why File, can't I use some macro to specify project location?
+   */
+  private final List<File> myMPSProjects = new ArrayList<File>(3);
   private final List<String> myParameters = new ArrayList<String>();
   private final Map<List<String>, Boolean> myChunks = new LinkedHashMap<List<String>, Boolean>();
-  private final List<String> myLibraryJars = new ArrayList<String>();
-
-  /**
-   * 
-   * @deprecated use repository descriptor instead
-   */
-  @Deprecated
-  private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
 
   public Script() {
   }
   public RepositoryDescriptor getRepoDescriptor() {
-    return myRepo;
+    return myStartupData.getRepo();
   }
   public void setRepoDescriptor(RepositoryDescriptor repo) {
-    myRepo = repo;
+    myStartupData.setRepo(repo);
   }
-  public void addModuleFile(File file) {
-    assert file.exists() && !(file.isDirectory()) : "bad file: " + file.toString();
-    myModules.add(file);
+
+  public void addProjectFile(File projectFile) {
+    assert projectFile.exists() && projectFile.isFile();
+    if (!(myMPSProjects.contains(projectFile))) {
+      myMPSProjects.add(projectFile);
+    }
   }
+
   public void addModelFile(File file) {
     assert file.exists() && !(file.isDirectory()) : "bad file: " + file.toString();
     myModels.add(file);
   }
-  public void excludeFileFromDiff(File file) {
-    assert file.exists() && !(file.isDirectory());
-    myExcludedFromDiff.add(file);
-  }
-  public void addProjectFile(File projectFile) {
-    assert projectFile.exists() && projectFile.isFile();
-    if (!(myMPSProjects.containsKey(projectFile))) {
-      myMPSProjects.put(projectFile, new ArrayList<String>());
-    }
-  }
-  public void addProjectFile(File projectFile, String... property) {
-    assert projectFile.exists() && projectFile.isFile();
-    List<String> projectProperties = myMPSProjects.get(projectFile);
-    if (projectProperties == null) {
-      projectProperties = new ArrayList<String>();
-      myMPSProjects.put(projectFile, projectProperties);
-    }
-    projectProperties.addAll(Arrays.asList(property));
-  }
-  public void addChunk(List<String> modules, boolean isBootstrap) {
-    myChunks.put(modules, isBootstrap);
-  }
-  public void addLibraryJar(String libraryJar) {
-    myLibraryJars.add(libraryJar);
-  }
-
   public Set<File> getModels() {
     return Collections.unmodifiableSet(myModels);
   }
   public void updateModels(Set<File> models) {
     myModels.addAll(models);
+  }
+
+  public void excludeFileFromDiff(File file) {
+    assert file.exists() && !(file.isDirectory());
+    myExcludedFromDiff.add(file);
   }
   public Set<File> getExcludedFromDiffFiles() {
     return Collections.unmodifiableSet(myExcludedFromDiff);
@@ -108,62 +77,71 @@ public class Script {
   public void updateExcludedFromDiffFiles(Set<File> excluded) {
     myExcludedFromDiff.addAll(excluded);
   }
+
+  public void addModuleFile(File file) {
+    assert file.exists() && !(file.isDirectory()) : "bad file: " + file.toString();
+    myModules.add(file);
+  }
   public Set<File> getModules() {
     return Collections.unmodifiableSet(myModules);
   }
   public void updateModules(Set<File> modules) {
     myModules.addAll(modules);
   }
-  public Map<File, List<String>> getMPSProjectFiles() {
-    return Collections.unmodifiableMap(myMPSProjects);
+
+  public List<File> getMPSProjectFiles() {
+    return Collections.unmodifiableList(myMPSProjects);
   }
-  public void updateMPSProjectFiles(Map<File, List<String>> mpsProjects) {
-    myMPSProjects.putAll(mpsProjects);
+  public void updateMPSProjectFiles(List<File> mpsProjects) {
+    myMPSProjects.addAll(mpsProjects);
   }
+
   public boolean getFailOnError() {
-    return myFailOnError;
+    return myStartupData.getFailOnError();
   }
   public void updateFailOnError(boolean showError) {
-    myFailOnError = showError;
+    myStartupData.setFailOnError(showError);
   }
+
   public Map<String, String> getProperties() {
-    return Collections.unmodifiableMap(myProperties);
+    return Collections.unmodifiableMap(myStartupData.getProperties());
   }
   public void updateProperties(Map<String, String> properties) {
-    myProperties.putAll(properties);
+    myStartupData.getProperties().putAll(properties);
   }
-  public void addLibrary(String name, File dir, boolean compile) {
-    myLibraries.put(name, dir);
-    if (compile) {
-      myCompiledLibraries.add(name);
-    }
+  public void putProperty(String name, String value) {
+    myStartupData.addProperty(name, value);
+  }
+  public String getProperty(String name) {
+    return myStartupData.getProperties().get(name);
+  }
+
+
+  public void addLibrary(String name, File dir) {
+    myStartupData.addLibrary(name, dir);
   }
   public Map<String, File> getLibraries() {
-    return Collections.unmodifiableMap(myLibraries);
+    return Collections.unmodifiableMap(myStartupData.getLibraries());
   }
   public void updateLibraries(Map<String, File> libraries) {
-    myLibraries.putAll(libraries);
+    myStartupData.getLibraries().putAll(libraries);
   }
-  public Set<String> getCompiledLibraries() {
-    return Collections.unmodifiableSet(myCompiledLibraries);
-  }
-  public void updateCompiledLibraries(Set<String> libraries) {
-    myCompiledLibraries.addAll(libraries);
-  }
+
   public void addMacro(String name, String value) {
-    myMacro.put(name, value);
+    myStartupData.addMacro(name, value);
   }
   public Map<String, String> getMacro() {
-    return Collections.unmodifiableMap(myMacro);
+    return Collections.unmodifiableMap(myStartupData.getMacros());
   }
   public void updateMacro(Map<String, String> macro) {
-    myMacro.putAll(macro);
+    myStartupData.getMacros().putAll(macro);
   }
+
   public void updateLogLevel(Level level) {
-    myLogLevel = level;
+    myStartupData.setLogLevel(level);
   }
   public Level getLogLevel() {
-    return myLogLevel;
+    return myStartupData.getLogLevel();
   }
   public void addParameter(String parameter) {
     myParameters.add(parameter);
@@ -174,41 +152,28 @@ public class Script {
   public void updateParameters(List<String> parameters) {
     myParameters.addAll(parameters);
   }
+
+  public void addChunk(List<String> modules, boolean isBootstrap) {
+    myChunks.put(modules, isBootstrap);
+  }
   public Map<List<String>, Boolean> getChunks() {
     return Collections.unmodifiableMap(myChunks);
   }
   public void updateChunks(Map<List<String>, Boolean> chunks) {
     myChunks.putAll(chunks);
   }
+
+  public void addLibraryJar(String libraryJar) {
+    myStartupData.addLibraryJar(libraryJar);
+  }
   public List<String> getLibraryJars() {
-    return Collections.unmodifiableList(myLibraryJars);
+    return Collections.unmodifiableList(myStartupData.getLibraryJars());
   }
   public void updateLibraryJars(List<String> libraryJars) {
-    myLibraryJars.addAll(libraryJars);
+    myStartupData.getLibraryJars().addAll(libraryJars);
   }
-  public void cloneTo(Object dest) {
-    // TODO get rid of generic cloneTo 
-    Class<? extends Script> srcClass = this.getClass();
-    Class<? extends Object> destClass = dest.getClass();
-    Method[] srcMethods = srcClass.getMethods();
-    for (Method srcMethod : srcMethods) {
-      String srcMethodName = srcMethod.getName();
-      if (srcMethodName.startsWith("get")) {
-        String dstMethodName = srcMethodName.replace("get", "update");
-        try {
-          Method destMethod = destClass.getMethod(dstMethodName, srcMethod.getReturnType());
-          destMethod.invoke(dest, srcMethod.invoke(this));
-        } catch (NoSuchMethodException e) {
-          //  doing nothing 
-        } catch (InvocationTargetException e) {
-          throw new IllegalArgumentException("cannot clone", e);
-        } catch (IllegalAccessException e) {
-          throw new IllegalArgumentException("cannot clone", e);
-        }
-      }
-    }
-  }
-  private Element prepareData() {
+
+  private Element prepareTaskCustomData() {
     Element data = new Element(ELEMENT_TODO);
     for (File f : myModels) {
       data.addContent(new Element(ELEMENT_MODEL).setAttribute(PATH, f.getAbsolutePath()));
@@ -219,12 +184,8 @@ public class Script {
     for (File f : myExcludedFromDiff) {
       data.addContent(new Element(ELEMENT_EXCLUDEDFROMDIFF).setAttribute(PATH, f.getAbsolutePath()));
     }
-    for (File f : myMPSProjects.keySet()) {
-      Element elem = new Element(ELEMENT_PROJECT).setAttribute(PATH, f.getAbsolutePath());
-      for (String s : myMPSProjects.get(f)) {
-        elem.addContent(new Element(ELEMENT_PROPERTY).setAttribute(VALUE, s));
-      }
-      data.addContent(elem);
+    for (File f : myMPSProjects) {
+      data.addContent(new Element(ELEMENT_PROJECT).setAttribute(PATH, f.getAbsolutePath()));
     }
     for (String p : myParameters) {
       data.addContent(new Element(ELEMENT_PARAMETER).setAttribute(VALUE, p));
@@ -236,15 +197,11 @@ public class Script {
       }
       data.addContent(element);
     }
-    for (String jar : myLibraryJars) {
-      data.addContent(new Element(ELEMENT_LIBRARYJAR).setAttribute(PATH, jar));
-    }
-
     return data;
   }
-  public void parseData(Element elem) {
-    for (Object o : elem.getChildren()) {
-      Element e = (Element) o;
+
+  private void parseTaskCustomData(Element elem) {
+    for (Element e : elem.getChildren()) {
       String elementName = e.getName();
       if (ELEMENT_MODEL.equals(elementName)) {
         addModelFile(new File(e.getAttributeValue(PATH)));
@@ -253,11 +210,7 @@ public class Script {
       } else if (ELEMENT_EXCLUDEDFROMDIFF.equals(elementName)) {
         excludeFileFromDiff(new File(e.getAttributeValue(PATH)));
       } else if (ELEMENT_PROJECT.equals(elementName)) {
-        List<String> properties = new ArrayList<String>();
-        for (Object prop : e.getChildren(ELEMENT_PROPERTY)) {
-          properties.add(((Element) prop).getAttributeValue(VALUE));
-        }
-        addProjectFile(new File(e.getAttributeValue(PATH)), properties.toArray(new String[properties.size()]));
+        addProjectFile(new File(e.getAttributeValue(PATH)));
       } else if (ELEMENT_PARAMETER.equals(elementName)) {
         addParameter(e.getAttributeValue(VALUE));
       } else if (ELEMENT_CHUNK.equals(elementName)) {
@@ -273,39 +226,27 @@ public class Script {
           }
         }
         addChunk(chunkModules, Boolean.parseBoolean(e.getAttributeValue(ATTRIBUTE_BOOTSTRAP)));
-      } else if (ELEMENT_LIBRARYJAR.equals(elementName)) {
-        String path = e.getAttributeValue(PATH);
-        if ((path != null && path.length() > 0)) {
-          addLibraryJar(path);
-        }
       }
     }
   }
   public File dumpToTmpFile() throws FileNotFoundException {
-    File tmpFile = Script.createTmpFile();
-    ScriptData data = new ScriptData();
-    data.setFailOnError(myFailOnError);
-    data.setLogLevel(myLogLevel);
-    data.setLibraries(myLibraries);
-    data.setMacros(myMacro);
-    data.setProperties(myProperties);
-    data.setRepo(myRepo);
-    data.setData(ELEMENT_TODO, prepareData());
+    Element root = new Element("script");
+    Element startup = new Element("startup");
+    myStartupData.write(startup);
+    root.addContent(startup);
+    root.addContent(prepareTaskCustomData());
     try {
-      data.save(tmpFile);
+      File tmpFile = Script.createTmpFile();
+      JDOMUtil.writeDocument(new Document(root), tmpFile);
+      return tmpFile;
     } catch (IOException e) {
       e.printStackTrace();
+      throw new RuntimeException(e);
     }
-    return tmpFile;
   }
-  public void putProperty(String name, String value) {
-    myProperties.put(name, value);
-  }
-  public String getProperty(String name) {
-    return myProperties.get(name);
-  }
+
   public void addPerfomanceReport(String s) {
-    String reports = myProperties.get(ScriptProperties.GENERATE_PERFORMANCE_REPORT);
+    String reports = getProperty(ScriptProperties.GENERATE_PERFORMANCE_REPORT);
     if (reports == null) {
       reports = "";
     }
@@ -313,9 +254,10 @@ public class Script {
       reports += ",";
     }
     reports += s;
-    myProperties.put(ScriptProperties.GENERATE_PERFORMANCE_REPORT, reports);
+    putProperty(ScriptProperties.GENERATE_PERFORMANCE_REPORT, reports);
   }
-  public static File createTmpFile() {
+
+  private static File createTmpFile() {
     File tmp = new File(System.getProperty("java.io.tmpdir"));
     int i = 0;
     while (true) {
@@ -332,28 +274,27 @@ public class Script {
     }
     return result;
   }
+
+  /**
+   * XXX InputStream would be better than File, but I'm lazy to get this fixed now
+   */
   public static Script fromDumpInFile(File file) {
-    ScriptData data = new ScriptData();
+    Script whatToDo = new Script();
     try {
-      data.load(file);
+      Document doc = JDOMUtil.loadDocument(file);
+      Element root = doc.getRootElement();
+      whatToDo.myStartupData.read(root.getChild("startup"));
+      whatToDo.parseTaskCustomData(root.getChild(ELEMENT_TODO));
     } catch (JDOMException e) {
       e.printStackTrace();
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
+      // XXX why on earth do we remove the file here 
       if (!(file.delete())) {
         throw new RuntimeException("File " + file + " was not deleted.");
       }
     }
-
-    Script whatToDo = new Script();
-    whatToDo.myFailOnError = data.getFailOnError();
-    whatToDo.myLogLevel = data.getLogLevel();
-    whatToDo.myProperties.putAll(data.getProperties());
-    whatToDo.myMacro.putAll(data.getMacros());
-    whatToDo.myLibraries.putAll(data.getLibraries());
-    whatToDo.myRepo = data.getRepo();
-    whatToDo.parseData(data.getData(ELEMENT_TODO));
     return whatToDo;
   }
 }

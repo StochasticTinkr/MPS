@@ -47,7 +47,7 @@ public class MessagesPoolClearer implements ApplicationComponent {
     myClassesListener = new MPSClassesListenerAdapter() {
       @Override
       public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
-        ApplicationManager.getApplication().invokeLater(() -> MessagePool.getInstance().clearFatals());
+        ApplicationManager.getApplication().invokeLater(() -> MessagePool.getInstance().clearErrors());
       }
     };
     myManager.addClassesHandler(myClassesListener);

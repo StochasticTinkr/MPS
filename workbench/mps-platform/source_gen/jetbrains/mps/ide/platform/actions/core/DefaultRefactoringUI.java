@@ -19,18 +19,15 @@ import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchTask;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.platform.refactoring.UsagesModelTracker;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import org.apache.log4j.Level;
 import com.intellij.openapi.ui.Messages;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 
 public class DefaultRefactoringUI implements RefactoringUI {
   private static final Logger LOG = LogManager.getLogger(DefaultRefactoringUI.class);
@@ -71,53 +68,49 @@ public class DefaultRefactoringUI implements RefactoringUI {
         DefaultRefactoringUI.this.myRepository.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             ProgressMonitorAdapter progressMonitor = new ProgressMonitorAdapter(progressIndicator);
-            task.invoke(progressMonitor);
+            try {
+              task.invoke(progressMonitor);
+            } catch (RuntimeException e) {
+              progressMonitor.cancel();
+              if (LOG.isEnabledFor(Level.ERROR)) {
+                LOG.error("Exception during usages search", e);
+              }
+            }
           }
         });
       }
     });
   }
 
-  public void showRefactoringView(final Runnable performRefactoringTask, final String refactoringName, final SearchResults searchResults, final SearchTask rerunTask, RefactoringSession refactoringSession) {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        final UsagesModelTracker usagesModelTracker = new UsagesModelTracker(myRepository);
-        RefactoringAccessEx.getInstance().showRefactoringView(myProject, new RefactoringViewAction() {
-          public void performAction(final RefactoringViewItem refactoringViewItem) {
-            final Wrappers._boolean changed = new Wrappers._boolean();
-            myRepository.getModelAccess().executeCommand(new Runnable() {
-              public void run() {
-                changed.value = usagesModelTracker.isChanged();
-                if (!(changed.value)) {
-                  try {
-                    performRefactoringTask.run();
-                  } catch (RuntimeException exception) {
-                    if (LOG.isEnabledFor(Level.ERROR)) {
-                      LOG.error("Exception during refactoring: ", exception);
-                    }
-                  }
-                  refactoringViewItem.close();
-                }
-              }
-            });
-            if (changed.value) {
-              Messages.showMessageDialog(myProject, "Cannot perform refactoring operation.\nThere were changes in code after usages have been found.\nPlease perform usage search again.", "Changes Detected", Messages.getErrorIcon());
+  public void showRefactoringView(final Runnable performRefactoringTask, String refactoringName, SearchResults searchResults, final SearchTask rerunTask, RefactoringSession refactoringSession) {
+    final UsagesModelTracker usagesModelTracker = new UsagesModelTracker(myRepository);
+    RefactoringAccessEx.getInstance().showRefactoringView(myProject, new RefactoringViewAction() {
+      public void performAction(RefactoringViewItem refactoringViewItem) {
+        if (usagesModelTracker.isChanged()) {
+          Messages.showMessageDialog(myProject, "Cannot perform refactoring operation.\nThere were changes in code after usages have been found.\nPlease perform usage search again.", "Changes Detected", Messages.getErrorIcon());
+        } else {
+          try {
+            performRefactoringTask.run();
+          } catch (RuntimeException exception) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error("Exception during refactoring: ", exception);
             }
           }
-        }, new Runnable() {
-          public void run() {
-            usagesModelTracker.dispose();
-          }
-        }, searchResults, new SearchTask() {
-          public boolean canExecute() {
-            return rerunTask.canExecute();
-          }
-          public SearchResults execute(ModelAccess modelAccess, ProgressMonitor progressMonitor) {
-            usagesModelTracker.reset();
-            return rerunTask.execute(modelAccess, progressMonitor);
-          }
-        }, refactoringName);
+          refactoringViewItem.close();
+        }
       }
-    });
+    }, new Runnable() {
+      public void run() {
+        usagesModelTracker.dispose();
+      }
+    }, searchResults, new SearchTask() {
+      public boolean canExecute() {
+        return rerunTask.canExecute();
+      }
+      public SearchResults execute(ProgressMonitor progressMonitor) {
+        usagesModelTracker.reset();
+        return rerunTask.execute(progressMonitor);
+      }
+    }, refactoringName);
   }
 }

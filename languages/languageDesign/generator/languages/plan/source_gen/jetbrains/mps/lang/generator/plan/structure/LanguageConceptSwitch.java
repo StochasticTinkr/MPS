@@ -17,13 +17,14 @@ public final class LanguageConceptSwitch {
   public static final int DeclaredCheckpointSpec = 5;
   public static final int DocumentationLine = 6;
   public static final int DocumentationStep = 7;
-  public static final int InPlaceCheckpointRefSpec = 8;
-  public static final int InPlaceCheckpointSpec = 9;
-  public static final int IncludePlan = 10;
-  public static final int Plan = 11;
-  public static final int Step = 12;
-  public static final int TextDocLine = 13;
-  public static final int Transform = 14;
+  public static final int Fork = 8;
+  public static final int InPlaceCheckpointRefSpec = 9;
+  public static final int InPlaceCheckpointSpec = 10;
+  public static final int IncludePlan = 11;
+  public static final int Plan = 12;
+  public static final int Step = 13;
+  public static final int TextDocLine = 14;
+  public static final int Transform = 15;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L);
@@ -35,6 +36,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x340cd07aed7cb2fdL, DeclaredCheckpointSpec);
     builder.put(0xc6a8aea78a50f67L, DocumentationLine);
     builder.put(0xc6a8aea78a4805dL, DocumentationStep);
+    builder.put(0x2bf683196b12a3cbL, Fork);
     builder.put(0x340cd07aed7cb32cL, InPlaceCheckpointRefSpec);
     builder.put(0x340cd07aed7ca161L, InPlaceCheckpointSpec);
     builder.put(0x336c2500000e1b2fL, IncludePlan);

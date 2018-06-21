@@ -65,10 +65,11 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   private final FileViewProvider myViewProvider;
   private final SNodeId myNodeId;
   private final String myName;
+  @NotNull
   private final MPSPsiModel myModel;
   private VirtualFile mySeparateFile;
 
-  public MPSPsiRootNode(SNodeReference nodeRef, @NotNull String name, MPSPsiModel containingModel, PsiManager manager) {
+  public MPSPsiRootNode(SNodeReference nodeRef, @NotNull String name, @NotNull MPSPsiModel containingModel, PsiManager manager) {
     super(manager);
     myNodeId = nodeRef.getNodeId();
     myModel = containingModel;
@@ -77,7 +78,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
     myViewProvider = new MPSNodeFileViewProvider(manager, nodeFile);
   }
 
-  public MPSPsiRootNode(SNodeReference nodeRef, @NotNull String name, MPSPsiModel containingModel, PsiManager manager, @NotNull VirtualFile virtualFile) {
+  public MPSPsiRootNode(SNodeReference nodeRef, @NotNull String name, @NotNull MPSPsiModel containingModel, PsiManager manager, @NotNull VirtualFile virtualFile) {
     this(nodeRef, name, containingModel, manager);
     mySeparateFile = virtualFile;
   }
@@ -88,7 +89,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
     return new ModelAccessHelper(repository.getModelAccess()).runReadAction(() -> {
       final SNode node = getSNodeReference().resolve(repository);
       if (node == null) return IdeIcons.UNKNOWN_ICON;
-      final GlobalIconManager globalIconManager = ApplicationManager.getApplication().getComponent(GlobalIconManager.class);
+      final GlobalIconManager globalIconManager = GlobalIconManager.getInstance();
       return globalIconManager == null ? Nodes.Node : globalIconManager.getIconFor(node);
     });
   }
@@ -140,7 +141,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
 
   @Override
   public MPSPsiModel getContainingModel() {
-    return myModel != null ? myModel : super.getContainingModel();
+    return myModel;
   }
 
   @Nullable
@@ -157,10 +158,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   @Nullable
   @Override
   public PsiDirectory getParent() {
-    if (myViewProvider.getVirtualFile().getFileType() == MPSFileTypeFactory.MPS_ROOT_FILE_TYPE && super.getParent() instanceof MPSPsiModel) {
-      return ((MPSPsiModel) super.getParent()).getParentDirectory();
-    }
-    return (PsiDirectory) super.getParent();
+    return getContainingModel();
   }
 
   @Override

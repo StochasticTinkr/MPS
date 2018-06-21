@@ -249,6 +249,14 @@
       <unit id="5934496548013521234" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_jetbrains_mps_transformation_test_inputModels" />
     </file>
   </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/7167051279291166867">
+    <file name="TestModule_jetbrains_mps_lang_quotation_test.java">
+      <node id="7167051279291166867" at="12,0,14,0" concept="0" trace="TestModule_jetbrains_mps_lang_quotation_test#()V" />
+      <scope id="7167051279291166867" at="12,57,12,57" />
+      <scope id="7167051279291166867" at="12,0,14,0" />
+      <unit id="7167051279291166867" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_quotation_test" />
+    </file>
+  </root>
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/7261441936922900508">
     <file name="TestModule_jetbrains_mps_baseLanguage_doubleDispatch_test.java">
       <node id="7261441936922900508" at="12,0,14,0" concept="0" trace="TestModule_jetbrains_mps_baseLanguage_doubleDispatch_test#()V" />

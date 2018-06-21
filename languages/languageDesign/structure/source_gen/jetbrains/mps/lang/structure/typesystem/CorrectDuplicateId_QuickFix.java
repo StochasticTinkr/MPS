@@ -19,13 +19,13 @@ public class CorrectDuplicateId_QuickFix extends QuickFix_Runtime {
   }
   public void execute(SNode node) {
     if (((SNode) CorrectDuplicateId_QuickFix.this.getField("c")[0]) != null) {
-      SPropertyOperations.set(((SNode) CorrectDuplicateId_QuickFix.this.getField("c")[0]), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId"), ConceptIdHelper.generateConceptId(SNodeOperations.getModel(((SNode) CorrectDuplicateId_QuickFix.this.getField("c")[0])), ((SNode) CorrectDuplicateId_QuickFix.this.getField("c")[0])) + "");
+      SPropertyOperations.assign(((SNode) CorrectDuplicateId_QuickFix.this.getField("c")[0]), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId"), ConceptIdHelper.generateConceptId(SNodeOperations.getModel(((SNode) CorrectDuplicateId_QuickFix.this.getField("c")[0])), ((SNode) CorrectDuplicateId_QuickFix.this.getField("c")[0])) + "");
     }
     if (((SNode) CorrectDuplicateId_QuickFix.this.getField("p")[0]) != null) {
-      SPropertyOperations.set(((SNode) CorrectDuplicateId_QuickFix.this.getField("p")[0]), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId"), ConceptIdHelper.generatePropertyId(((SNode) CorrectDuplicateId_QuickFix.this.getField("c")[0]), ((SNode) CorrectDuplicateId_QuickFix.this.getField("p")[0])) + "");
+      SPropertyOperations.assign(((SNode) CorrectDuplicateId_QuickFix.this.getField("p")[0]), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId"), ConceptIdHelper.generatePropertyId(((SNode) CorrectDuplicateId_QuickFix.this.getField("c")[0]), ((SNode) CorrectDuplicateId_QuickFix.this.getField("p")[0])) + "");
     }
     if (((SNode) CorrectDuplicateId_QuickFix.this.getField("l")[0]) != null) {
-      SPropertyOperations.set(((SNode) CorrectDuplicateId_QuickFix.this.getField("l")[0]), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId"), ConceptIdHelper.generateLinkId(((SNode) CorrectDuplicateId_QuickFix.this.getField("c")[0]), ((SNode) CorrectDuplicateId_QuickFix.this.getField("l")[0])) + "");
+      SPropertyOperations.assign(((SNode) CorrectDuplicateId_QuickFix.this.getField("l")[0]), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId"), ConceptIdHelper.generateLinkId(((SNode) CorrectDuplicateId_QuickFix.this.getField("c")[0]), ((SNode) CorrectDuplicateId_QuickFix.this.getField("l")[0])) + "");
     }
   }
 }

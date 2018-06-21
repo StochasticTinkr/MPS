@@ -16,6 +16,6 @@ public class fix_Braces_QuickFix extends QuickFix_Runtime {
     return "Do Not Use Braces";
   }
   public void execute(SNode node) {
-    SPropertyOperations.set(((SNode) fix_Braces_QuickFix.this.getField("collectionCell")[0]), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x1094a893c4dL, "usesBraces"), "" + (false));
+    SPropertyOperations.assign(((SNode) fix_Braces_QuickFix.this.getField("collectionCell")[0]), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x1094a893c4dL, "usesBraces"), "" + (false));
   }
 }

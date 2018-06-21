@@ -8,7 +8,7 @@
     <use id="97a52717-898f-4598-8150-573d9fd03868" name="jetbrains.mps.lang.dataFlow.analyzers" version="-1" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
@@ -43,7 +43,6 @@
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" />
     <import index="5nvm" ref="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)" />
     <import index="4ugc" ref="r:bd779a69-a10b-4882-b646-c1303f2dd4f7(jetbrains.mps.refactoring.participant.plugin)" />
-    <import index="tpcq" ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" />
     <import index="crsq" ref="r:58b9acd8-db32-428c-ac80-a2787e2bcd96(jetbrains.mps.lang.core.pluginSolution.plugin)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -787,17 +786,28 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="7d$WBe31hdC" role="3cqZAp">
+          <node concept="3cpWsn" id="7d$WBe31hdD" role="3cpWs9">
+            <property role="TrG5h" value="model" />
+            <node concept="3uibUv" id="7d$WBe31hdt" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+            </node>
+            <node concept="2JrnkZ" id="7d$WBe31hdE" role="33vP2m">
+              <node concept="2OqwBi" id="7d$WBe31hdF" role="2JrQYb">
+                <node concept="37vLTw" id="7d$WBe31hdG" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5MiyNmB80f7" resolve="classifier" />
+                </node>
+                <node concept="I4A8Y" id="7d$WBe31hdH" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="rWxrrT9s9K" role="3cqZAp">
           <node concept="3cpWsn" id="rWxrrT9s9L" role="3cpWs9">
             <property role="TrG5h" value="module" />
             <node concept="2OqwBi" id="256tImPkKxf" role="33vP2m">
-              <node concept="2JrnkZ" id="256tImPkKxi" role="2Oq$k0">
-                <node concept="2OqwBi" id="256tImPkKxj" role="2JrQYb">
-                  <node concept="37vLTw" id="3GM_nagTyh4" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5MiyNmB80f7" resolve="classifier" />
-                  </node>
-                  <node concept="I4A8Y" id="256tImPkKxl" role="2OqNvi" />
-                </node>
+              <node concept="37vLTw" id="7d$WBe31hdI" role="2Oq$k0">
+                <ref role="3cqZAo" node="7d$WBe31hdD" resolve="model" />
               </node>
               <node concept="liA8E" id="256tImPkKxg" role="2OqNvi">
                 <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
@@ -823,15 +833,20 @@
                 <ref role="37wK5l" to="lui2:~SModule.isReadOnly():boolean" resolve="isReadOnly" />
               </node>
             </node>
-            <node concept="3fqX7Q" id="5MiyNmB8tVr" role="3uHU7B">
-              <node concept="2YIFZM" id="5MiyNmB8tVt" role="3fr31v">
-                <ref role="37wK5l" to="w1kc:~SModelStereotype.isUserModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isUserModel" />
+            <node concept="22lmx$" id="7d$WBe31iMz" role="3uHU7B">
+              <node concept="2OqwBi" id="7d$WBe31iW7" role="3uHU7w">
+                <node concept="37vLTw" id="7d$WBe31iO8" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7d$WBe31hdD" resolve="model" />
+                </node>
+                <node concept="liA8E" id="7d$WBe31jg1" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModel.isReadOnly():boolean" resolve="isReadOnly" />
+                </node>
+              </node>
+              <node concept="2YIFZM" id="7d$WBe31egH" role="3uHU7B">
+                <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
                 <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                <node concept="2OqwBi" id="5MiyNmB8tVu" role="37wK5m">
-                  <node concept="37vLTw" id="3GM_nagTvHg" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5MiyNmB80f7" resolve="classifier" />
-                  </node>
-                  <node concept="I4A8Y" id="5MiyNmB8tVw" role="2OqNvi" />
+                <node concept="37vLTw" id="7d$WBe31iwe" role="37wK5m">
+                  <ref role="3cqZAo" node="7d$WBe31hdD" resolve="model" />
                 </node>
               </node>
             </node>

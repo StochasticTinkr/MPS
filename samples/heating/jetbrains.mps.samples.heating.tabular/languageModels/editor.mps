@@ -60,6 +60,7 @@
       </concept>
       <concept id="5944657839003601246" name="jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration" flags="ig" index="2BsEeg">
         <property id="168363875802087287" name="showInUI" index="2gpH_U" />
+        <property id="5944657839012629576" name="presentation" index="2BUmq6" />
       </concept>
       <concept id="3473224453637651916" name="jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform_PlaceInCellHolder" flags="ng" index="CtIbL">
         <property id="3473224453637651917" name="placeInCell" index="CtIbK" />
@@ -292,6 +293,7 @@
     <node concept="2BsEeg" id="2XgRSpVMDzk" role="2ABdcP">
       <property role="2gpH_U" value="true" />
       <property role="TrG5h" value="tabular" />
+      <property role="2BUmq6" value="Heating Plan Table" />
     </node>
   </node>
   <node concept="24kQdi" id="2XgRSpVMDzm">

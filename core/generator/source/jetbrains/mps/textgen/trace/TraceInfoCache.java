@@ -88,11 +88,23 @@ public final class TraceInfoCache {
   private DebugInfo readCache(final SModel sm) {
     // First, try to find deployed trace, as it's the one to match deployed classes best.
     URL url = getDeployedLocation(sm);
-    if (url != null) {
-      return new ParseFacility<>(getClass(), new CacheParser()).input(url).parseSilently();
+    if (url != null){
+      DebugInfo result = new ParseFacility<>(getClass(), new CacheParser()).input(url).parseSilently();
+      if (result != null) {
+        return result;
+      }
     }
+
     // XXX Could have resorted to workspace location here, if failed. However, not quite sure it's the right approach,
     //     JavaTraceInfoResourceProvider didn't look elsewhere but module classpath.
+
+    // [MM] this may help when we want to establish connection between generated code and source nodes. We may
+    // not even have compiled classes in this case (or compiled not to /classes_gen, for example, as some parts of MPS project itself)
+    IFile file = getWorkspaceLocation(sm);
+    if (file != null && file.exists()) {
+      return new ParseFacility<>(getClass(), new CacheParser()).input(file).parseSilently();
+    }
+
     return null;
   }
 
@@ -144,6 +156,7 @@ public final class TraceInfoCache {
   }
 
   @Nullable
+  //todo [MM] why does the return type differ from that of getDeployedLocation?
   private IFile getWorkspaceLocation(@NotNull SModel model) {
     IFile outputLocation = SModelOperations.getOutputLocation(model);
     if (outputLocation == null) {

@@ -34,10 +34,12 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -78,6 +80,8 @@ public class ModelActions {
   // referent substitute
   //-------------------
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static List<SubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
                                                                        IOperationContext context) {
     IReferentPresentationProvider matchingTextProvider = IReferentPresentationProvider.getDefaultMatchingText(linkDeclaration);
@@ -85,11 +89,20 @@ public class ModelActions {
     return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration, matchingTextProvider, visibleMatchingTextProvider);
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static List<SubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
                                                                        @NotNull IReferentPresentationProvider matchingTextProvider,
                                                                        @NotNull IReferentPresentationProvider visibleMatchingTextProvider,
                                                                        IOperationContext context) {
     return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration, matchingTextProvider, visibleMatchingTextProvider);
+  }
+
+  public static List<SubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, SReferenceLink link,
+                                                                       @NotNull IReferentPresentationProvider matchingTextProvider,
+                                                                       @NotNull IReferentPresentationProvider visibleMatchingTextProvider,
+                                                                       IOperationContext context) {
+    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, link, matchingTextProvider, visibleMatchingTextProvider);
   }
 
   //-------------------

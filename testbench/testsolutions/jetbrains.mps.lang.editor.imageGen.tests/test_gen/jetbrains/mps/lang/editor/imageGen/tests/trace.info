@@ -17,8 +17,8 @@
   <root nodeRef="r:57812925-2ef0-43c6-8314-0222b2c13acf(jetbrains.mps.lang.editor.imageGen.tests@tests)/5244026788026549053">
     <file name="ImageExport_Test.java">
       <node id="5244026788026549053" at="21,29,22,25" concept="7" />
-      <node id="5244026788026549053" at="26,61,27,118" concept="1" />
-      <node id="5244026788026549053" at="30,64,31,121" concept="1" />
+      <node id="5244026788026549149" at="26,61,27,118" concept="1" />
+      <node id="3856853424911892005" at="30,64,31,121" concept="1" />
       <node id="5244026788026559032" at="36,63,37,77" concept="4" />
       <node id="5244026788026564435" at="38,11,39,53" concept="4" />
       <node id="5244026788026564797" at="39,53,40,36" concept="1" />
@@ -29,15 +29,15 @@
       <node id="3856853424911892026" at="50,31,51,56" concept="1" />
       <node id="5244026788026549053" at="17,0,19,0" concept="6" trace="ourParamCache" />
       <node id="5244026788026549053" at="21,0,24,0" concept="0" trace="ImageExport_Test#()V" />
-      <node id="5244026788026549053" at="25,0,29,0" concept="3" trace="test_manuallyExportedImage#()V" />
-      <node id="5244026788026549053" at="29,0,33,0" concept="3" trace="test_imageExportedByGenerator#()V" />
+      <node id="5244026788026549149" at="25,0,29,0" concept="3" trace="test_manuallyExportedImage#()V" />
+      <node id="3856853424911892005" at="29,0,33,0" concept="3" trace="test_imageExportedByGenerator#()V" />
       <node id="5244026788026564922" at="37,77,43,7" concept="8" />
       <node id="3856853424911892014" at="46,84,52,7" concept="8" />
       <node id="5244026788026549149" at="36,0,45,0" concept="3" trace="test_manuallyExportedImage#()V" />
       <node id="3856853424911892005" at="45,0,54,0" concept="3" trace="test_imageExportedByGenerator#()V" />
       <scope id="5244026788026549053" at="21,29,22,25" />
-      <scope id="5244026788026549053" at="26,61,27,118" />
-      <scope id="5244026788026549053" at="30,64,31,121" />
+      <scope id="5244026788026549149" at="26,61,27,118" />
+      <scope id="3856853424911892005" at="30,64,31,121" />
       <scope id="5244026788026564918" at="41,0,42,56">
         <var name="e" id="5244026788026564920" />
       </scope>
@@ -53,8 +53,8 @@
         <var name="image" id="3856853424911892017" />
       </scope>
       <scope id="5244026788026549053" at="21,0,24,0" />
-      <scope id="5244026788026549053" at="25,0,29,0" />
-      <scope id="5244026788026549053" at="29,0,33,0" />
+      <scope id="5244026788026549149" at="25,0,29,0" />
+      <scope id="3856853424911892005" at="29,0,33,0" />
       <scope id="5244026788026549149" at="36,63,43,7">
         <var name="imageloader" id="5244026788026559033" />
       </scope>

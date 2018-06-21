@@ -166,7 +166,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   public IMessageHandler newHandler() {
-    return new MsgHandler(getDefaultList());
+    return getDefaultList();
   }
 
   /**
@@ -186,7 +186,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     if (clear) {
       availableList.clear();
     }
-    return new MsgHandler(availableList);
+    return availableList;
   }
 
   /**
@@ -385,16 +385,4 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     p.getComponent(MessagesViewTool.class).add(new Message(kind, message));
   }
 
-  private static class MsgHandler implements IMessageHandler {
-    private final MessageList myList;
-
-    MsgHandler(@NotNull MessageList list) {
-      myList = list;
-    }
-
-    @Override
-    public void handle(@NotNull IMessage msg) {
-      myList.add(msg);
-    }
-  }
 }

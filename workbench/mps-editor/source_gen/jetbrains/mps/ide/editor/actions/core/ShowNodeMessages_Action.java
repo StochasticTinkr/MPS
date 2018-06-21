@@ -18,6 +18,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.ui.Messages;
 
 public class ShowNodeMessages_Action extends BaseAction {
@@ -88,7 +89,7 @@ public class ShowNodeMessages_Action extends BaseAction {
     sb.append("<html>");
     for (SimpleEditorMessage message : messages) {
       sb.append("<p>");
-      sb.append(message.getMessage());
+      sb.append(StringUtil.escapeXml(message.getMessage()));
       sb.append("<br>");
       sb.append("Message owner: ");
       sb.append(message.getOwner());

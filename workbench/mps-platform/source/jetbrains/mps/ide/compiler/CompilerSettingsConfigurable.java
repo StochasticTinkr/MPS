@@ -55,7 +55,7 @@ public class CompilerSettingsConfigurable implements SearchableConfigurable {
   @Nullable
   @Override
   public String getHelpTopic() {
-    return null;
+    return "Compiler._Java_Compiler";
   }
 
   @Nullable

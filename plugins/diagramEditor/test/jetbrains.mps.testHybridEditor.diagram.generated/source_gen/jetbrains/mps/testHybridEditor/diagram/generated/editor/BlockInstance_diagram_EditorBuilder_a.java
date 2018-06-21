@@ -58,14 +58,14 @@ import jetbrains.jetpad.model.property.ReadableProperty;
   }
 
   /*package*/ EditorCell createCell() {
-    return createDiagramNode_79747v_a();
+    return createDiagramNode_0();
   }
 
-  private EditorCell createDiagramNode_79747v_a() {
+  private EditorCell createDiagramNode_0() {
     BlockCell editorCell = new BlockInstance_diagram_EditorBuilder_a.BlockCellImpl_79747v_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramNode_79747v_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     BlockActionMap.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;
   }
@@ -85,7 +85,7 @@ import jetbrains.jetpad.model.property.ReadableProperty;
           return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
         }
         protected void setModelPropertyValueImpl(String value) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), value);
+          SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), value);
         }
       };
       addEditorCell(myPropertyCell_79747v_a0a);
@@ -101,7 +101,7 @@ import jetbrains.jetpad.model.property.ReadableProperty;
           return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec440489L, "x"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec440489L, "x"), "" + (value));
+          SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec440489L, "x"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_79747v_a2a);
@@ -111,7 +111,7 @@ import jetbrains.jetpad.model.property.ReadableProperty;
           return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec44048aL, "y"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec44048aL, "y"), "" + (value));
+          SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec44048aL, "y"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_79747v_a3a);
@@ -121,7 +121,7 @@ import jetbrains.jetpad.model.property.ReadableProperty;
           return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x2c11e15d8177197eL, "width"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x2c11e15d8177197eL, "width"), "" + (value));
+          SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x2c11e15d8177197eL, "width"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_79747v_a4a);
@@ -131,7 +131,7 @@ import jetbrains.jetpad.model.property.ReadableProperty;
           return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x2c11e15d817719aeL, "height"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x2c11e15d817719aeL, "height"), "" + (value));
+          SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x2c11e15d817719aeL, "height"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_79747v_a5a);

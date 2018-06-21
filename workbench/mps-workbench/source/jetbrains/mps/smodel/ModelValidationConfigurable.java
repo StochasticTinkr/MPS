@@ -59,7 +59,7 @@ public class ModelValidationConfigurable implements SearchableConfigurable {
   @Nullable
   @Override
   public String getHelpTopic() {
-    return null;
+    return getId();
   }
 
   @Override

@@ -76,7 +76,6 @@ public final class IdeaEnvironment extends EnvironmentBase {
     }
   }
 
-  @Override
   public void init() {
     if (LOG.isInfoEnabled()) {
       LOG.info("Creating IDEA environment");
@@ -91,10 +90,8 @@ public final class IdeaEnvironment extends EnvironmentBase {
     myIdeaApplication = createIdeaTestApp();
     disallowAccessToClosedProjectsDir();
 
-    super.init();
-
     MPSCoreComponents coreComponents = getMPSCoreComponents();
-    initLibraries(coreComponents.getLibraryInitializer());
+    super.init(coreComponents.getPlatform());
   }
 
   private void disallowAccessToClosedProjectsDir() {

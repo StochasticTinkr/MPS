@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,7 +49,7 @@ public final class CompositeTracer {
     myCurrentStartMsg = startMsg;
     if (!startMsg.isEmpty()) {
       mySender.trace(startMsg);
-      myTracer.push(startMsg, true); // major by default
+      myTracer.push(startMsg);
     }
     if (myMonitor != null) {
       myMonitor.start(startMsg, stepsCount);
@@ -60,15 +60,8 @@ public final class CompositeTracer {
    * composite action to print the msg to log, to the performance tracer and to the ui
    */
   public void push(@NotNull String msg) {
-    push(msg, false);
-  }
-
-  /**
-   * @param major set to true means that the operation must be time-consuming
-   */
-  public void push(@NotNull String msg, boolean major) {
     mySender.trace(msg);
-    myTracer.push(msg, major);
+    myTracer.push(msg);
     if (myMonitor != null) {
       myMonitor.step(msg);
     }

@@ -30,7 +30,7 @@ public class QueryParameter_Actions {
       if (DeletionApproverUtil.approve(editorContext, node, "requiredKeyword")) {
         return;
       }
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x205f4376c585b43dL, "required"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x205f4376c585b43dL, "required"), "" + (false));
       SelectionUtil.selectCell(editorContext, node, "*" + CellIdManager.createPropertyId("name"));
     }
     @Override
@@ -53,7 +53,7 @@ public class QueryParameter_Actions {
       if (DeletionApproverUtil.approve(editorContext, node, "requiredKeyword")) {
         return;
       }
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x205f4376c585b43dL, "required"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x205f4376c585b43dL, "required"), "" + (false));
       SelectionUtil.selectCell(editorContext, node, "*" + CellIdManager.createPropertyId("name"));
     }
     @Override

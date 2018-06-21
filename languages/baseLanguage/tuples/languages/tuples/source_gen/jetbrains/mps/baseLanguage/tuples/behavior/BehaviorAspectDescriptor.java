@@ -26,8 +26,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0l = concept;
-    switch (index_846f5o_a0l.index(cncpt_a0l)) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         return myIndexedTupleLiteral__BehaviorDescriptor;
       case 1:
@@ -48,5 +48,5 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     }
     return null;
   }
-  private static final ConceptSwitchIndex index_846f5o_a0l = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071708c13L), MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071acfb50L), MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1207157a8dcL), MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209c84a4eaL), MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL), MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L), MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b88731cL), MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12099dc1365L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071708c13L), MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071acfb50L), MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1207157a8dcL), MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209c84a4eaL), MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL), MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L), MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b88731cL), MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12099dc1365L)).seal();
 }

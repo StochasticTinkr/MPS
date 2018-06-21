@@ -190,7 +190,7 @@ public class VfsTest implements EnvironmentAware {
       fail();
     }
 
-    assertEquals(jarRoot, file1.getParent().getParent().getParent());
+    assertEquals(jarRoot.getPath(), file1.getParent().getParent().getParent().getPath());
     assertTrue(jarRoot.getParent() != null);
     assertTrue(jarRoot.getParent().getParent() == null);
   }

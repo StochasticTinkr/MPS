@@ -8,9 +8,11 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SReference;
+import java.util.Objects;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -80,6 +82,32 @@ public class SLinkOperations {
     }
     return null;
   }
+  public static SNodeReference setPointer(SNode node, SReferenceLink role, SNodeReference targetPointer) {
+    if (node != null && targetPointer != null) {
+      SNodeAccessUtil.setReference(node, role, SReference.create(role, node, targetPointer, null));
+    }
+    return targetPointer;
+  }
+  public static SNodeReference getPointer(SNode node, SReferenceLink role) {
+    if (node != null) {
+      org.jetbrains.mps.openapi.model.SReference reference = node.getReference(role);
+      if (reference != null) {
+        return reference.getTargetNodeReference();
+      }
+    }
+    return null;
+  }
+  public static boolean hasPointer(SNode node, SReferenceLink role, SNodeReference targetPointer) {
+    if (node != null) {
+      org.jetbrains.mps.openapi.model.SReference reference = node.getReference(role);
+      if (reference != null) {
+        return Objects.equals(targetPointer, reference.getTargetNodeReference());
+      } else {
+        return targetPointer == null;
+      }
+    }
+    return false;
+  }
   public static List<SNode> getChildren(SNode node, SContainmentLink role) {
     if (node != null && role != null) {
       return new AbstractSNodeList.ChildrenSNodesList(node, role);
@@ -129,35 +157,35 @@ public class SLinkOperations {
     }
     return IterableUtil.asList(children);
   }
-  public static SNode findLinkDeclaration(SReference reference) {
+  public static SNode findLinkDeclaration(org.jetbrains.mps.openapi.model.SReference reference) {
     if (reference == null) {
       return null;
     }
     return reference.getLink().getDeclarationNode();
   }
-  public static SNode getTargetNode(SReference reference) {
+  public static SNode getTargetNode(org.jetbrains.mps.openapi.model.SReference reference) {
     if (reference == null) {
       return null;
     }
     return reference.getTargetNode();
   }
-  public static String getRole(SReference reference) {
+  public static String getRole(org.jetbrains.mps.openapi.model.SReference reference) {
     if (reference == null) {
       return null;
     }
     return reference.getRole();
   }
-  public static SReferenceLink getRefLink(SReference reference) {
+  public static SReferenceLink getRefLink(org.jetbrains.mps.openapi.model.SReference reference) {
     if (reference == null) {
       return null;
     }
     return reference.getLink();
   }
-  public static String getResolveInfo(SReference reference) {
+  public static String getResolveInfo(org.jetbrains.mps.openapi.model.SReference reference) {
     if (reference == null) {
       return null;
     }
-    return ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
+    return ((SReference) reference).getResolveInfo();
   }
 
   /**

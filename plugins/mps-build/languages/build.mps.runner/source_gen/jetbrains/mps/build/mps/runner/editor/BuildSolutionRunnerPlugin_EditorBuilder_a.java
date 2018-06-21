@@ -29,18 +29,18 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.pluginStyleClass;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_k2ph2p_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_k2ph2p_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_k2ph2p_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createComponent_k2ph2p_a0());
+    setCellContext(editorCell);
+    editorCell.addEditorCell(createComponent_0());
     return editorCell;
   }
-  private EditorCell createComponent_k2ph2p_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new pluginStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

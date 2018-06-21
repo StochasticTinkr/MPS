@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.customizedDebugger.Bottomline.debug.plugin.DebugInfoProvider_CustomApplicationPlugin" file="DebugInfoProvider_CustomApplicationPlugin.java">
+  <dependency className="jetbrains.mps.samples.customizedDebugger.Bottomline.debug.plugin.DebugInfoProvider_AppPluginPart" file="DebugInfoProvider_AppPluginPart.java">
     <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -22,15 +23,14 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
+    <classNode extendsClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
   </dependency>
   <dependency className="jetbrains.mps.samples.customizedDebugger.Bottomline.debug.plugin.Debug_ApplicationPlugin" file="Debug_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.samples.customizedDebugger.Bottomline.debug.plugin.DebugInfoProvider_CustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
+    <classNode dependClassName="jetbrains.mps.samples.customizedDebugger.Bottomline.debug.plugin.DebugInfoProvider_AppPluginPart" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
 </dependenciesRoot>

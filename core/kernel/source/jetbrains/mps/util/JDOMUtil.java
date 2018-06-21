@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.util;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
@@ -34,7 +34,20 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import java.io.*;
+import java.io.BufferedOutputStream;
+import java.io.CharArrayReader;
+import java.io.CharArrayWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.Writer;
 
 public class JDOMUtil {
   private static final Logger LOG = LogManager.getLogger(JDOMUtil.class);
@@ -54,20 +67,11 @@ public class JDOMUtil {
     try {
       in = file.openInputStream();
       return saxBuilder.build(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
-    } catch (JDOMException e) {
-      LOG.error("FAILED TO LOAD FILE : " + file.getPath(), e);
-      throw e;
-    } catch (IOException e) {
+    } catch (JDOMException | IOException e) {
       LOG.error("FAILED TO LOAD FILE : " + file.getPath(), e);
       throw e;
     } finally {
-      if (in != null) {
-        try {
-          in.close();
-        } catch (IOException e) {
-          LOG.error(null, e);
-        }
-      }
+      FileUtil.closeFileSafe(in);
     }
   }
 
@@ -75,10 +79,7 @@ public class JDOMUtil {
     SAXBuilder saxBuilder = createBuilder();
     try {
       return saxBuilder.build(source);
-    } catch (JDOMException e) {
-      LOG.error("FAILED TO LOAD FILE : " + source.toString());
-      throw e;
-    } catch (IOException e) {
+    } catch (JDOMException | IOException e) {
       LOG.error("FAILED TO LOAD FILE : " + source.toString());
       throw e;
     }
@@ -116,7 +117,7 @@ public class JDOMUtil {
       writeDocument(doc, writer);
     } catch (IOException e) {
       // This is hardly possible
-      LOG.error(null, e);
+      LOG.error(String.valueOf(doc), e);
     }
     return writer.toString();
   }

@@ -37,7 +37,7 @@ public final class HierarchycalTable__BehaviorDescriptor extends BaseBHDescripto
   private static void ___init___(@NotNull SNode __thisNode__) {
     for (int i = 0; i < (int) Table__BehaviorDescriptor.getInitialColumnCount_id1653mnvAgqE.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__))); i++) {
       SNode dataCell = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea4L, "jetbrains.mps.lang.editor.tableTests.structure.DataCell"));
-      SPropertyOperations.set(dataCell, MetaAdapterFactory.getProperty(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea4L, 0x28004d411fa3bea5L, "value"), "h-" + i);
+      SPropertyOperations.assign(dataCell, MetaAdapterFactory.getProperty(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea4L, 0x28004d411fa3bea5L, "value"), "h-" + i);
       ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x760c9302beb3e1d1L, 0x760c9302beb3e1d4L, "headers"))).addElement(dataCell);
     }
   }

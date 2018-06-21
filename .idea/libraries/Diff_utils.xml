@@ -4,10 +4,10 @@
       <root url="jar://$PROJECT_DIR$/lib/ext/diffutils-1.2.1.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/lib/ext/javadoc/diffutils-1.2.1-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ext/diffutils-1.2.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/lib/ext/src/diffutils-1.2.1-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ext/diffutils-1.2.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

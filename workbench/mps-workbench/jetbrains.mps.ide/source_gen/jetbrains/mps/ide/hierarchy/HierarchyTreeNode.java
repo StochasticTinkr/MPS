@@ -6,9 +6,9 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 
 public class HierarchyTreeNode extends MPSTreeNode {
   private final SNodeReference myNodeRef;
@@ -16,14 +16,14 @@ public class HierarchyTreeNode extends MPSTreeNode {
   public HierarchyTreeNode(@NotNull SNode declaration) {
     super(declaration);
     //  note, for node<> coming from typesystem (hung in the air), pointer likely to be null/null 
-    myNodeRef = declaration.getReference();
+    myNodeRef = SNodeOperations.getPointer(declaration);
     String name = declaration.getName();
     setText((name == null ? "no name" : name));
     setNodeIdentifier(declaration.getNodeId().toString());
     setToggleClickCount(-1);
     setAutoExpandable(false);
     setAdditionalText(SModelOperations.getModelName(SNodeOperations.getModel(declaration)));
-    setIcon(IconManager.getIconFor(declaration));
+    setIcon(GlobalIconManager.getInstance().getIconFor(declaration));
   }
 
   @NotNull

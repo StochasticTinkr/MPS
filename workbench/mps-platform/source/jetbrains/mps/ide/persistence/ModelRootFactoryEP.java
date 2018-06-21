@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,17 @@
  */
 package jetbrains.mps.ide.persistence;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.extensions.AbstractExtensionPointBean;
 import com.intellij.openapi.extensions.ExtensionPointName;
-import com.intellij.openapi.util.LazyInstance;
 import com.intellij.util.xmlb.annotations.Attribute;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 
 /**
- * evgeny, 10/24/12
+ * Extension point to contribute own {@link ModelRootFactory} implementations.
+ * Factory class have access to IDEA application components (i.e. may access MPS Platform
+ * through {@link jetbrains.mps.ide.MPSCoreComponents} constructor argument).
+ * @since 2012
  */
 public class ModelRootFactoryEP extends AbstractExtensionPointBean {
   public static final ExtensionPointName<ModelRootFactoryEP> EP_NAME = ExtensionPointName.create("com.intellij.mps.modelRootFactory");
@@ -33,14 +36,7 @@ public class ModelRootFactoryEP extends AbstractExtensionPointBean {
   public String className;
 
 
-  private final LazyInstance<ModelRootFactory> myFactory = new LazyInstance<ModelRootFactory>() {
-    @Override
-    protected Class<ModelRootFactory> getInstanceClass() throws ClassNotFoundException {
-      return findClass(className);
-    }
-  };
-
-  public ModelRootFactory getFactory() {
-    return myFactory.getValue();
+  public ModelRootFactory getFactory() throws ClassNotFoundException {
+    return instantiate(className, ApplicationManager.getApplication().getPicoContainer());
   }
 }

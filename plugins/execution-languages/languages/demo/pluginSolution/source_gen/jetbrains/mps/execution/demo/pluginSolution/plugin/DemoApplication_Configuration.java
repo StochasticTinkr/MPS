@@ -6,7 +6,6 @@ import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -17,12 +16,12 @@ import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
-import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
-import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ExecutionException;
@@ -38,8 +37,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = LogManager.getLogger(DemoApplication_Configuration.class);
-  @NotNull
-  private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
   private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration(MetaAdapterFactory.getConcept(0xe6081818930c4926L, 0xbdef3537bcc59087L, 0x446739e63be33684L, "jetbrains.mps.execution.demo.structure.SomeConcept"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return SPropertyOperations.getBoolean(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xe6081818930c4926L, 0xbdef3537bcc59087L, 0x446739e63be33684L, "jetbrains.mps.execution.demo.structure.SomeConcept")), MetaAdapterFactory.getProperty(0xe6081818930c4926L, 0xbdef3537bcc59087L, 0x446739e63be33684L, 0x446739e63be7cbc4L, "valid"));
@@ -50,7 +47,6 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
   }
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
-    element.addContent(XmlSerializer.serialize(myState));
     {
       Element fieldElement = new Element("node");
       myNode.writeExternal(fieldElement);
@@ -62,7 +58,6 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     if (element == null) {
       throw new InvalidDataException("Cant read " + this + ": element is null.");
     }
-    XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
     {
       Element fieldElement = element.getChild("node");
       if (fieldElement != null) {
@@ -79,29 +74,11 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
   }
   @Override
   public DemoApplication_Configuration clone() {
-    DemoApplication_Configuration clone = null;
-    try {
-      clone = createCloneTemplate();
-      clone.myState = (DemoApplication_Configuration.MyState) myState.clone();
-      clone.myNode = (NodeByConcept_Configuration) myNode.clone();
-      return clone;
-    } catch (CloneNotSupportedException ex) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("", ex);
-      }
-    }
+    DemoApplication_Configuration clone = createCloneTemplate();
+    clone.myNode = (NodeByConcept_Configuration) myNode.clone();
     return clone;
   }
-  public class MyState {
-    public MyState() {
-    }
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      DemoApplication_Configuration.MyState state = new DemoApplication_Configuration.MyState();
-      return state;
-    }
-  }
-  public DemoApplication_Configuration(Project project, DemoApplication_Configuration_Factory factory, String name) {
+  public DemoApplication_Configuration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
   @Nullable

@@ -16,6 +16,9 @@
         <ivy pattern="https://teamcity.jetbrains.com/guestAuth/repository/download/[module]/[revision]/teamcity-ivy.xml"/>
         <artifact pattern="https://teamcity.jetbrains.com/guestAuth/repository/download/[module]/[revision]/[artifact](.[ext])"/>
       </url>
+      <url name="maven" m2compatible="true">
+        <artifact pattern="http://repo1.maven.org/maven2/[organization]/[module]/[revision]/[module]-[revision](-[classifier]).[ext]" />
+      </url>
       <url name="artifactory" m2compatible="true">
         <artifact pattern="http://repository.jetbrains.com/repo/[organization]/[module]/[revision]/[module]-[revision](-[classifier]).[ext]" />
       </url>

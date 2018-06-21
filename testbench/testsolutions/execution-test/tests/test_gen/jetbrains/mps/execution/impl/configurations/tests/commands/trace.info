@@ -17,14 +17,14 @@
   <root nodeRef="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)/8128243960970298224">
     <file name="JUnitCommand_Test.java">
       <node id="8128243960970298224" at="31,30,32,25" concept="12" />
-      <node id="8128243960970298224" at="36,60,37,136" concept="2" />
-      <node id="8128243960970298224" at="40,60,41,136" concept="2" />
+      <node id="8128243960970298225" at="36,60,37,136" concept="2" />
+      <node id="7120092006645143711" at="40,60,41,136" concept="2" />
       <node id="7120092006645143181" at="46,62,47,297" concept="2" />
       <node id="2983330400684827914" at="49,62,50,297" concept="2" />
       <node id="7120092006645143164" at="55,11,56,128" concept="7" />
       <node id="7120092006645143074" at="56,128,57,77" concept="7" />
-      <node id="7120092006645143080" at="57,77,58,70" concept="7" />
-      <node id="7120092006645143086" at="58,70,59,92" concept="7" />
+      <node id="7120092006645143080" at="57,77,58,59" concept="7" />
+      <node id="7120092006645143086" at="58,59,59,92" concept="7" />
       <node id="7120092006645143095" at="59,92,60,44" concept="2" />
       <node id="7120092006645143106" at="60,44,61,74" concept="2" />
       <node id="7120092006645143114" at="61,74,62,78" concept="7" />
@@ -39,14 +39,14 @@
       <node id="7120092006645143711" at="49,0,52,0" concept="6" trace="test_startFailedBTestCase#()V" />
       <node id="7120092006645143139" at="67,9,70,9" concept="5" />
       <node id="7120092006645143150" at="75,0,78,0" concept="11" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
-      <node id="8128243960970298224" at="35,0,39,0" concept="6" trace="test_startSimpleBTestCase#()V" />
-      <node id="8128243960970298224" at="39,0,43,0" concept="6" trace="test_startFailedBTestCase#()V" />
+      <node id="8128243960970298225" at="35,0,39,0" concept="6" trace="test_startSimpleBTestCase#()V" />
+      <node id="7120092006645143711" at="39,0,43,0" concept="6" trace="test_startFailedBTestCase#()V" />
       <node id="7120092006645143121" at="62,78,67,9" concept="5" />
       <node id="7120092006645245950" at="54,92,73,7" concept="13" />
-      <node id="8128243960970298224" at="54,0,75,0" concept="6" trace="checkTests#(Ljava/util/List;Ljava/util/List;)V" />
+      <node id="7120092006645138817" at="54,0,75,0" concept="6" trace="checkTests#(Ljava/util/List;Ljava/util/List;)V" />
       <scope id="8128243960970298224" at="31,30,32,25" />
-      <scope id="8128243960970298224" at="36,60,37,136" />
-      <scope id="8128243960970298224" at="40,60,41,136" />
+      <scope id="8128243960970298225" at="36,60,37,136" />
+      <scope id="7120092006645143711" at="40,60,41,136" />
       <scope id="8128243960970298225" at="46,62,47,297" />
       <scope id="7120092006645143711" at="49,62,50,297" />
       <scope id="7120092006645143122" at="63,65,64,116" />
@@ -63,8 +63,8 @@
       <scope id="7120092006645143150" at="75,0,78,0">
         <var name="str" id="7120092006645143150" />
       </scope>
-      <scope id="8128243960970298224" at="35,0,39,0" />
-      <scope id="8128243960970298224" at="39,0,43,0" />
+      <scope id="8128243960970298225" at="35,0,39,0" />
+      <scope id="7120092006645143711" at="39,0,43,0" />
       <scope id="7120092006645245951" at="55,11,70,9">
         <var name="allTests" id="7120092006645143165" />
         <var name="checkListener" id="7120092006645143087" />
@@ -72,8 +72,8 @@
         <var name="process" id="7120092006645143075" />
         <var name="runState" id="7120092006645143081" />
       </scope>
-      <scope id="8128243960970298224" at="54,92,73,7" />
-      <scope id="8128243960970298224" at="54,0,75,0">
+      <scope id="7120092006645138817" at="54,92,73,7" />
+      <scope id="7120092006645138817" at="54,0,75,0">
         <var name="failure" id="7120092006645143068" />
         <var name="success" id="7120092006645138821" />
       </scope>
@@ -84,7 +84,7 @@
   <root nodeRef="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)/8128243960970298272">
     <file name="JavaCommand_Test.java">
       <node id="8128243960970298272" at="39,29,40,25" concept="12" />
-      <node id="8128243960970298272" at="44,55,45,130" concept="2" />
+      <node id="8128243960970298479" at="44,55,45,130" concept="2" />
       <node id="8128243960970298482" at="50,57,51,84" concept="7" />
       <node id="2034046503361578121" at="53,27,54,229" concept="7" />
       <node id="2034046503361578135" at="56,45,57,213" concept="8" />
@@ -109,7 +109,7 @@
       <node id="8128243960970298422" at="87,65,90,7" concept="5" />
       <node id="8128243960970298436" at="90,7,93,7" concept="5" />
       <node id="8128243960970298445" at="93,7,96,7" concept="5" />
-      <node id="8128243960970298272" at="43,0,47,0" concept="6" trace="test_startJavaByNode#()V" />
+      <node id="8128243960970298479" at="43,0,47,0" concept="6" trace="test_startJavaByNode#()V" />
       <node id="2034046503361578125" at="54,229,59,13" concept="7" />
       <node id="8128243960970298376" at="74,54,80,13" concept="5" />
       <node id="2034046503361578119" at="53,0,62,0" concept="6" trace="run#()V" />
@@ -118,9 +118,9 @@
       <node id="8128243960970298366" at="72,0,86,0" concept="6" trace="onTextAvailable#(Lcom/intellij/execution/process/ProcessEvent;Lcom/intellij/openapi/util/Key;)V" />
       <node id="8128243960970298479" at="50,0,65,0" concept="6" trace="test_startJavaByNode#()V" />
       <node id="8128243960970298360" at="70,35,86,9" concept="2" />
-      <node id="8128243960970298272" at="67,0,98,0" concept="6" trace="checkProcess#(Lcom/intellij/execution/process/ProcessHandler;Ljava/lang/String;)V" />
+      <node id="8128243960970298337" at="67,0,98,0" concept="6" trace="checkProcess#(Lcom/intellij/execution/process/ProcessHandler;Ljava/lang/String;)V" />
       <scope id="8128243960970298272" at="39,29,40,25" />
-      <scope id="8128243960970298272" at="44,55,45,130" />
+      <scope id="8128243960970298479" at="44,55,45,130" />
       <scope id="2034046503361578134" at="56,45,57,213" />
       <scope id="8128243960970298390" at="78,20,79,32" />
       <scope id="8128243960970298423" at="88,30,89,41" />
@@ -132,7 +132,7 @@
       <scope id="2034046503361578133" at="56,0,59,0">
         <var name="it" id="2034046503361578133" />
       </scope>
-      <scope id="8128243960970298272" at="43,0,47,0" />
+      <scope id="8128243960970298479" at="43,0,47,0" />
       <scope id="8128243960970298375" at="74,54,80,13" />
       <scope id="2034046503361578120" at="53,27,60,53">
         <var name="mainNode" id="2034046503361578126" />
@@ -148,12 +148,12 @@
         <var name="key" id="8128243960970298371" />
       </scope>
       <scope id="8128243960970298479" at="50,0,65,0" />
-      <scope id="8128243960970298272" at="67,83,96,7">
+      <scope id="8128243960970298337" at="67,83,96,7">
         <var name="exitCode" id="8128243960970298417" />
         <var name="failed" id="8128243960970298341" />
         <var name="printed" id="8128243960970298350" />
       </scope>
-      <scope id="8128243960970298272" at="67,0,98,0">
+      <scope id="8128243960970298337" at="67,0,98,0">
         <var name="expectedSysErr" id="8128243960970298458" />
         <var name="process" id="8128243960970298456" />
       </scope>

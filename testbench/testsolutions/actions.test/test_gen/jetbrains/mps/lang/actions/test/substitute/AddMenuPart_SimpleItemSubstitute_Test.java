@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class AddMenuPart_SimpleItemSubstitute_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class AddMenuPart_SimpleItemSubstitute_Test extends BaseTransformationTes
 
   @Test
   public void test_AddMenuPart_SimpleItemSubstitute() throws Throwable {
-    runTest("jetbrains.mps.lang.actions.test.substitute.AddMenuPart_SimpleItemSubstitute_Test$TestBody", "testMethod", false);
+    new AddMenuPart_SimpleItemSubstitute_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2534942168331329397", "5164819300891517121");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
-import org.jetbrains.mps.util.Condition;
 
 import java.awt.Frame;
 
@@ -99,18 +98,8 @@ public class ModelImportHelper {
    * @param model model to add import to
    */
   public void addImport(@NotNull SModel model) {
-    // FIXME identical condition in GoToModel_Action and in GoToModelPlatformAction
-    Condition<SModel> cond = new Condition<SModel>() {
-      @Override
-      public boolean met(SModel modelDescriptor) {
-        boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
-                                  || SModelStereotype.isStubModel(modelDescriptor);
-        boolean hasModule = modelDescriptor.getModule() != null;
-        return rightStereotype && hasModule;
-      }
-    };
-    ConditionalScope localScope = new ConditionalScope(myProject.getScope(), null, cond);
-    ConditionalScope globalScope = new ConditionalScope(new FilteredGlobalScope(), null, cond);
+    SearchScope localScope = myProject.getScope();
+    SearchScope globalScope = new FilteredGlobalScope();
     SRepository repo = myProject.getRepository();
     ChooseByNameData<SModelReference> gotoData = new ChooseByNameData<>(new ModelsPresentation(repo));
     gotoData.derivePrompts("model").setPrompts("Import model:", gotoData.getNotFoundMessage(), gotoData.getNotInMessage());

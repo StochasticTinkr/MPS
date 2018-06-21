@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 public enum Size {
   big("big", 8),
-  med("med", 6),
+  medium("medium", 6),
   small("small", 4);
 
   private final String myName;
@@ -29,7 +29,7 @@ public enum Size {
   public static List<Size> getConstants() {
     List<Size> list = ListSequence.fromList(new LinkedList<Size>());
     ListSequence.fromList(list).addElement(Size.big);
-    ListSequence.fromList(list).addElement(Size.med);
+    ListSequence.fromList(list).addElement(Size.medium);
     ListSequence.fromList(list).addElement(Size.small);
     return list;
   }
@@ -43,8 +43,8 @@ public enum Size {
     if (value.equals(Size.big.getValueAsString())) {
       return Size.big;
     }
-    if (value.equals(Size.med.getValueAsString())) {
-      return Size.med;
+    if (value.equals(Size.medium.getValueAsString())) {
+      return Size.medium;
     }
     if (value.equals(Size.small.getValueAsString())) {
       return Size.small;

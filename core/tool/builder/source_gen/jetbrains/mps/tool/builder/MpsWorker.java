@@ -210,7 +210,7 @@ public abstract class MpsWorker {
     }
   }
   private boolean includeModel(SModel model) {
-    return SModelStereotype.isUserModel(model) && GenerationFacade.canGenerate(model);
+    return !(SModelStereotype.isStubModel(model)) && GenerationFacade.canGenerate(model);
   }
   protected void extractModels(Collection<SModel> modelsList, SModule m) {
     for (SModel d : m.getModels()) {
@@ -248,7 +248,8 @@ public abstract class MpsWorker {
     // use these modules as part of the project. 
     final FileSystem fs = FileSystem.getInstance();
     IFile descriptorFile = fs.getFile(moduleSourceDescriptorFile.getPath());
-    if (DescriptorIOFacade.getInstance().fromFileType(descriptorFile) == null) {
+    DescriptorIOFacade descriptorIOFacade = myEnvironment.getPlatform().findComponent(DescriptorIOFacade.class);
+    if (descriptorIOFacade.fromFileType(descriptorFile) == null) {
       info(String.format("File %s doesn't point to module descriptor, ignored", moduleSourceDescriptorFile));
       return;
     }

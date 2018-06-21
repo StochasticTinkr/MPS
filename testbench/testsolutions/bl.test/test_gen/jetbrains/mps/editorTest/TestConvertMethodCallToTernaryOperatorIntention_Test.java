@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class TestConvertMethodCallToTernaryOperatorIntention_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class TestConvertMethodCallToTernaryOperatorIntention_Test extends BaseTr
 
   @Test
   public void test_TestConvertMethodCallToTernaryOperatorIntention() throws Throwable {
-    runTest("jetbrains.mps.editorTest.TestConvertMethodCallToTernaryOperatorIntention_Test$TestBody", "testMethod", false);
+    new TestConvertMethodCallToTernaryOperatorIntention_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("7737741562085930048", "7737741562085948256");

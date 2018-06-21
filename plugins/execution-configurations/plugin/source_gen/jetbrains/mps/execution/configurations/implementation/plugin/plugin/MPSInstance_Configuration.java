@@ -6,18 +6,16 @@ import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
-import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
-import java.io.File;
-import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ExecutionException;
@@ -30,8 +28,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 
 public class MPSInstance_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = LogManager.getLogger(MPSInstance_Configuration.class);
-  @NotNull
-  private MPSInstance_Configuration.MyState myState = new MPSInstance_Configuration.MyState();
   private MpsStartupSettings_Configuration myMpsSettings = new MpsStartupSettings_Configuration();
   private DeployPluginsSettings_Configuration myPluginsSettings = new DeployPluginsSettings_Configuration(this.getProject());
   public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
@@ -40,7 +36,6 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
-    element.addContent(XmlSerializer.serialize(myState));
     {
       Element fieldElement = new Element("myMpsSettings");
       myMpsSettings.writeExternal(fieldElement);
@@ -57,7 +52,6 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     if (element == null) {
       throw new InvalidDataException("Cant read " + this + ": element is null.");
     }
-    XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
     {
       Element fieldElement = element.getChild("myMpsSettings");
       if (fieldElement != null) {
@@ -85,35 +79,14 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   public DeployPluginsSettings_Configuration getPluginsSettings() {
     return myPluginsSettings;
   }
-  public File getPluginsPath() {
-    return new File(this.getMpsSettings().expandPath(this.getMpsSettings().getConfigurationPath()), "plugins");
-  }
   @Override
   public MPSInstance_Configuration clone() {
-    MPSInstance_Configuration clone = null;
-    try {
-      clone = createCloneTemplate();
-      clone.myState = (MPSInstance_Configuration.MyState) myState.clone();
-      clone.myMpsSettings = (MpsStartupSettings_Configuration) myMpsSettings.clone();
-      clone.myPluginsSettings = (DeployPluginsSettings_Configuration) myPluginsSettings.clone();
-      return clone;
-    } catch (CloneNotSupportedException ex) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("", ex);
-      }
-    }
+    MPSInstance_Configuration clone = createCloneTemplate();
+    clone.myMpsSettings = (MpsStartupSettings_Configuration) myMpsSettings.clone();
+    clone.myPluginsSettings = (DeployPluginsSettings_Configuration) myPluginsSettings.clone();
     return clone;
   }
-  public class MyState {
-    public MyState() {
-    }
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      MPSInstance_Configuration.MyState state = new MPSInstance_Configuration.MyState();
-      return state;
-    }
-  }
-  public MPSInstance_Configuration(Project project, MPSInstance_Configuration_Factory factory, String name) {
+  public MPSInstance_Configuration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
   @Nullable
@@ -150,6 +123,6 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     return MPSInstance_Configuration_RunProfileState.canExecute(executorId);
   }
   public Object[] createDeployPluginsTask() {
-    return new Object[]{this.getPluginsSettings().getPluginsListToDeploy(), this.getPluginsPath()};
+    return new Object[]{this.getPluginsSettings().getPluginsListToDeploy(), this.getMpsSettings().getPluginsPath()};
   }
 }

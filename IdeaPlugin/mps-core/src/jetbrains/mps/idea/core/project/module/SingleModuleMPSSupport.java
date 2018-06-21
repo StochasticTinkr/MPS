@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,24 +23,23 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.extapi.module.SRepositoryExt;
-import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.persistence.MementoImpl;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.persistence.Memento;
 
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  * Created by danilla on 26/10/15.
@@ -99,19 +98,24 @@ public class SingleModuleMPSSupport extends ModuleMPSSupport {
     descriptor.setOutputPath(outputPath);
     descriptor.setCompileInMPS(false);
 
-    FileBasedModelRoot root = new DefaultModelRoot();
-    root.setContentRoot(moduleContentRoot.getPath());
+    ArrayList<IFile> sourceRoots = new ArrayList<>();
 
     for (VirtualFile sourceRoot : ModuleRootManager.getInstance(module).getSourceRoots()) {
       if (!VfsUtilCore.isAncestor(moduleContentRoot, sourceRoot, true)) {
         continue;
       }
-      root.addFile(FileBasedModelRoot.SOURCE_ROOTS, sourceRoot.getPath());
+      IFile f = VirtualFileUtils.toIFile(sourceRoot);
+      if (f == null) {
+        continue;
+      }
+      sourceRoots.add(f);
     }
-    root.addFile(FileBasedModelRoot.SOURCE_ROOTS, moduleContentRoot.getPath());
-    Memento m = new MementoImpl();
-    root.save(m);
-    ModelRootDescriptor modelRootDesc = new ModelRootDescriptor(PersistenceRegistry.DEFAULT_MODEL_ROOT, m);
+    final ModelRootDescriptor modelRootDesc;
+    if (sourceRoots.isEmpty()) {
+      modelRootDesc = DefaultModelRoot.createSingleFolderDescriptor(VirtualFileUtils.toIFile(moduleContentRoot));
+    } else {
+      modelRootDesc = DefaultModelRoot.createDescriptor(VirtualFileUtils.toIFile(moduleContentRoot), sourceRoots.toArray(new IFile[0]));
+    }
 
     descriptor.getModelRootDescriptors().add(modelRootDesc);
     return descriptor;

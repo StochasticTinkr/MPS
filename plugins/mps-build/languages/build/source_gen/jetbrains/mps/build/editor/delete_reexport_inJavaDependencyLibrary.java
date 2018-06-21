@@ -28,7 +28,7 @@ public class delete_reexport_inJavaDependencyLibrary {
       if (DeletionApproverUtil.approve(editorContext, node, "reexportKeyword")) {
         return;
       }
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd9079dceL, 0x52fab202d8f26228L, "reexport"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd9079dceL, 0x52fab202d8f26228L, "reexport"), "" + (false));
     }
   }
   public static class delete_reexport_inJavaDependencyLibrary_BACKSPACE extends AbstractCellAction {
@@ -43,7 +43,7 @@ public class delete_reexport_inJavaDependencyLibrary {
       if (DeletionApproverUtil.approve(editorContext, node, "reexportKeyword")) {
         return;
       }
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd9079dceL, 0x52fab202d8f26228L, "reexport"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd9079dceL, 0x52fab202d8f26228L, "reexport"), "" + (false));
     }
   }
 }

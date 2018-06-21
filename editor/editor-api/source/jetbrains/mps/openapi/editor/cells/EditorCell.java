@@ -21,8 +21,10 @@ import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.Condition;
 
@@ -122,9 +124,21 @@ public interface EditorCell {
 
   String getCellId();
 
+  //use setSRole
+  @Deprecated
+  @ToRemove(version = 2018.2)
   void setRole(String role);
 
+  //use getSRole
+  @Deprecated
+  @ToRemove(version = 2018.2)
   String getRole();
+
+  //it would be better to have typing here, however introducing generics may lead to compilation incompatibility
+  void setSRole(SConceptFeature role);
+
+  //it would be better to have typing here, however introducing generics may lead to compilation incompatibility
+  SConceptFeature getSRole();
 
   boolean isErrorState();
 

@@ -45,14 +45,23 @@ import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
     }
   }
   /*package*/ void update(AnActionEvent event) {
+    boolean multipleNodes = myActions.size() > 1;
     boolean canMake = myActions.stream().anyMatch(new Predicate<ReflectiveEditorAction.ReflectiveHintsAction>() {
       public boolean test(ReflectiveEditorAction.ReflectiveHintsAction action) {
         return action.isApplicable();
       }
-    }) && !((myActions.size() > 1 && !(myIsForSubtree)));
+    }) && !((multipleNodes && !(myIsForSubtree)));
     if (canMake) {
-      String plurality = ((myIsForSubtree ? "s for Subtree" : "")) + ((myActions.size() > 1 ? "s" : ""));
-      String caption = String.format("Show %s Editor%s", (myIsReflective ? "Reflective" : "Regular"), plurality);
+      String caption = String.format("Show %s Editor", (myIsReflective ? "Reflective" : "Regular"));
+      if (multipleNodes) {
+        caption += "s";
+      }
+      if (myIsForSubtree) {
+        caption += " for the Subtree";
+      }
+      if (multipleNodes) {
+        caption += "s";
+      }
       event.getPresentation().setText(caption);
       event.getPresentation().setVisible(true);
       event.getPresentation().setEnabled(true);

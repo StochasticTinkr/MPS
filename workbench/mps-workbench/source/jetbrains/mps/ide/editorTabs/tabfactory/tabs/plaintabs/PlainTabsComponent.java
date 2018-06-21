@@ -29,7 +29,7 @@ import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.TabEditorLayout;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.TabEditorLayout.Entry;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
@@ -221,7 +221,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
             SNode node = pet.getNode().resolve(getProject().getRepository());
 
             TabInfo info = new TabInfo(new JLabel(""))
-                .setIcon(IconManager.getIconFor(node))
+                .setIcon(GlobalIconManager.getInstance().getIconFor(node))
                 .setText(node.getPresentation())
                 .setPreferredFocusableComponent(myEditor);
             myTabs.addTab(info);

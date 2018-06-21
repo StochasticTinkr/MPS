@@ -16,34 +16,42 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeletePropertyOrNode;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyOrNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_URL;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
+@SuppressWarnings("unused")
+//used as generation target
 public class URLCellProvider extends PropertyCellProvider {
-
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public URLCellProvider(@NotNull SNode node, EditorContext context) {
     super(node, context);
   }
 
+  public URLCellProvider(@NotNull SNode node, SProperty property, EditorContext context) {
+    super(node, property, context);
+  }
+
   @Override
   public EditorCell createEditorCell(EditorContext context) {
-    EditorCell_URL editorCell = EditorCell_URL.create(context, getSNode(), getPropertyName());
+    EditorCell_URL editorCell = EditorCell_URL.create(context, getSNode(), getProperty());
     editorCell.setDefaultText(myNoTargetText);
     if (!myReadOnly) {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeletePropertyOrNode(getSNode(), getPropertyName(), DeleteDirection.FORWARD));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeletePropertyOrNode(getSNode(), getPropertyName(), DeleteDirection.BACKWARD));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(getSNode(), getProperty(), DeleteDirection.FORWARD));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(getSNode(), getProperty(), DeleteDirection.BACKWARD));
     } else {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode(), DeleteDirection.FORWARD));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getSNode(), DeleteDirection.BACKWARD));
     }
     return editorCell;
   }
-
 }
 

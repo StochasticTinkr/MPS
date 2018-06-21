@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.refactoring.participant.RenameNodeRefactoringParticipant;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -45,7 +46,7 @@ public class RenameReferencesParticipant extends RefactoringParticipantBase<SNod
   public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("renameNode.options.renameReferences", "Update resolveInfo");
   private RefactoringParticipant.RefactoringDataCollector<SNodeReference, String, SNode, String> myDataCollector = new RefactoringParticipant.RefactoringDataCollector<SNodeReference, String, SNode, String>() {
     public SNodeReference beforeMove(SNode nodeToMove) {
-      return nodeToMove.getReference();
+      return SNodeOperations.getPointer(nodeToMove);
     }
     public String afterMove(String name) {
       return name;

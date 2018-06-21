@@ -161,11 +161,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.GeneratorIDE_CustomApplicationPlugin" file="GeneratorIDE_CustomApplicationPlugin.java">
+  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.GeneratorIDE_AppPluginPart" file="GeneratorIDE_AppPluginPart.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.CreateNodeExtension" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.CreateRootFilterEP" />
     <classNode dependClassName="jetbrains.mps.lang.generator.pluginSolution.plugin.AddRootTemplateAnnotation" />
-    <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
+    <classNode extendsClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.MappingLabelUtil" file="MappingLabelUtil.java">
     <classNode dependClassName="java.lang.String" />
@@ -238,16 +239,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action" />
     <classNode dependClassName="jetbrains.mps.lang.generator.pluginSolution.plugin.DeriveGenPlanModel_Action" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.pluginSolution.plugin.GeneratorIDE_CustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.pluginSolution.plugin.GeneratorIDE_AppPluginPart" />
     <classNode dependClassName="jetbrains.mps.lang.generator.pluginSolution.plugin.NewCreateRootRule_Action" />
     <classNode dependClassName="jetbrains.mps.lang.generator.pluginSolution.plugin.NewRootMappingRule_Action" />
     <classNode dependClassName="jetbrains.mps.lang.generator.pluginSolution.plugin.ShowAsIntentions_Generator_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.ShowAsIntentions_Generator_ActionGroup" file="ShowAsIntentions_Generator_ActionGroup.java">

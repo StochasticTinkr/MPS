@@ -14,6 +14,7 @@
 /contrib/build/artifacts/
 /build/resources/help/
 /build/resources/JDK/
+/build/resources/openJDK
 classes
 classes_gen
 testclasses
@@ -23,6 +24,7 @@ teamcity-info.xml
 *.class
 /plugins/debugger-api/lib
 /plugins/debugger-java/lib
+/plugins/vcs/lib/
 /plugins/mpsjava/lib/
 /plugins/mps-java-workbench/lib/
 /plugins/execution-languages/lib
@@ -36,6 +38,7 @@ teamcity-info.xml
 /plugins/svn4idea/lib
 /plugins/mps-testing/lib
 /plugins/terminal
+/plugins/migration/migration-platform/lib
 /lib/
 /mps-platform.zip
 /bin/linux

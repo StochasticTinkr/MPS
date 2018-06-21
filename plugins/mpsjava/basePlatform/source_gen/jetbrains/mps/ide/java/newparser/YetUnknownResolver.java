@@ -149,7 +149,7 @@ public class YetUnknownResolver {
    */
   public void updateWithImportsOfResolved() {
     assert myRefTargetOfResolved != null;
-    SModelReference srcModelRef = myModel.getReference();
+    SModelReference srcModelRef = SModelOperations.getPointer(myModel);
     SetSequence.fromSet(myRefTargetOfResolved).removeElement(srcModelRef);
     ModelImports mi = new ModelImports(myModel);
     for (SModelReference mr : myRefTargetOfResolved) {
@@ -163,7 +163,7 @@ public class YetUnknownResolver {
    * @param callback receives each external model reference of the most recent {@link #replaceYetUnresolved(ProgressMonitor) node replacement} run
    */
   public void withImportsOfResolved(Consumer<SModelReference> callback) {
-    SModelReference srcModelRef = myModel.getReference();
+    SModelReference srcModelRef = SModelOperations.getPointer(myModel);
     SetSequence.fromSet(myRefTargetOfResolved).removeElement(srcModelRef);
     myRefTargetOfResolved.stream().forEach(callback);
   }

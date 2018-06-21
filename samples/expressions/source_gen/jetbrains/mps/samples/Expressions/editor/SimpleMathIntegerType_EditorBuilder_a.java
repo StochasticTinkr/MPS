@@ -28,14 +28,14 @@ import jetbrains.mps.samples.Expressions.editor.SimpleMath_StyleSheet.typeStyleC
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_l9u5sn_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_l9u5sn_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Int");
     editorCell.setCellId("Constant_l9u5sn_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     new typeStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);

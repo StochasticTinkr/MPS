@@ -23,8 +23,8 @@
       <node id="7868642031296632680" at="49,9,50,64" concept="4" />
       <node id="7868642031296247446" at="50,64,51,253" concept="4" />
       <node id="7868642031296282807" at="51,253,52,96" concept="4" />
-      <node id="7868642031296728015" at="52,96,53,119" concept="4" />
-      <node id="7868642031296802353" at="53,119,54,64" concept="4" />
+      <node id="7868642031296728015" at="52,96,53,133" concept="4" />
+      <node id="7868642031296802353" at="53,133,54,64" concept="4" />
       <node id="7868642031296542378" at="56,38,57,57" concept="1" />
       <node id="7868642031297009762" at="61,216,62,289" concept="1" />
       <node id="7868642031296395270" at="64,45,65,533" concept="5" />
@@ -107,6 +107,11 @@
       <unit id="7868642031296395024" at="63,292,67,11" name="jetbrains.mps.lang.generator.findUsages.FindInPriorityRules_Finder$3" />
       <unit id="7868642031296541998" at="69,276,73,13" name="jetbrains.mps.lang.generator.findUsages.FindInPriorityRules_Finder$2" />
       <unit id="7868642031296064248" at="26,0,89,0" name="jetbrains.mps.lang.generator.findUsages.FindInPriorityRules_Finder" />
+    </file>
+    <file name="FindUsagesDescriptor.java">
+      <node id="7868642031296064248" at="21,13,22,48" concept="5" />
+      <node id="7868642031296064248" at="29,40,30,189" concept="1" />
+      <scope id="7868642031296064248" at="21,13,22,48" />
     </file>
   </root>
 </debug-info>

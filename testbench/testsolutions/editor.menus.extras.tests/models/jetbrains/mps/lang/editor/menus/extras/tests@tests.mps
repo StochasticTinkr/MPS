@@ -159,6 +159,11 @@
     <language id="4eb772b0-4df3-414a-b894-63abeb912f56" name="jetbrains.mps.lang.editor.menus.testLanguage">
       <concept id="2344528742722056854" name="jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept" flags="ng" index="rbkbI" />
     </language>
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
+        <reference id="7256306938026143658" name="target" index="2aWVGs" />
+      </concept>
+    </language>
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
       <concept id="8427750732757990717" name="jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert" flags="nn" index="3tpDYu">
         <child id="8427750732757990725" name="actual" index="3tpDZA" />
@@ -177,12 +182,12 @@
         <child id="3542851458883491298" name="languageId" index="2V$M_3" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
+        <child id="7400021826774799510" name="ref" index="2tJFKM" />
+      </concept>
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
-      </concept>
-      <concept id="1828409047608048457" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="nn" index="1N_AGu">
-        <reference id="1828409047608048458" name="referentNode" index="1N_AGt" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -247,8 +252,10 @@
                   <node concept="37vLTw" id="5UD30_PSaif" role="37wK5m">
                     <ref role="3cqZAo" node="5UD30_PR7sn" resolve="repository" />
                   </node>
-                  <node concept="1N_AGu" id="5UD30_PSaig" role="37wK5m">
-                    <ref role="1N_AGt" to="6rzo:6K07tEmQO3" resolve="InapplicableRefactoring" />
+                  <node concept="2tJFMh" id="7uvxILPmWSq" role="37wK5m">
+                    <node concept="ZC_QK" id="7uvxILPmWSp" role="2tJFKM">
+                      <ref role="2aWVGs" to="6rzo:6K07tEmQO3" resolve="InapplicableRefactoring" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -363,8 +370,10 @@
                   <node concept="37vLTw" id="5UD30_PS9Hm" role="37wK5m">
                     <ref role="3cqZAo" node="5UD30_PRpM0" resolve="repository" />
                   </node>
-                  <node concept="1N_AGu" id="5UD30_PS9nx" role="37wK5m">
-                    <ref role="1N_AGt" to="6rzo:5UD30_PRqjh" resolve="ApplicableRefactoring" />
+                  <node concept="2tJFMh" id="7uvxILPmWSw" role="37wK5m">
+                    <node concept="ZC_QK" id="7uvxILPmWSv" role="2tJFKM">
+                      <ref role="2aWVGs" to="6rzo:5UD30_PRqjh" resolve="ApplicableRefactoring" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -662,8 +671,10 @@
                         <node concept="37vLTw" id="5UD30_PTNrQ" role="37wK5m">
                           <ref role="3cqZAo" node="5UD30_PTNlc" resolve="repository" />
                         </node>
-                        <node concept="1N_AGu" id="5UD30_PTN$_" role="37wK5m">
-                          <ref role="1N_AGt" to="nht:5UD30_PTF7R" resolve="InapplicableIntention" />
+                        <node concept="2tJFMh" id="7uvxILPmWSu" role="37wK5m">
+                          <node concept="ZC_QK" id="7uvxILPmWSt" role="2tJFKM">
+                            <ref role="2aWVGs" to="nht:5UD30_PTF7R" resolve="InapplicableIntention" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -832,8 +843,10 @@
                         <node concept="37vLTw" id="7GARn1zME5r" role="37wK5m">
                           <ref role="3cqZAo" node="7GARn1zME4U" resolve="repository" />
                         </node>
-                        <node concept="1N_AGu" id="7GARn1zME5s" role="37wK5m">
-                          <ref role="1N_AGt" to="nht:5UD30_PTDmD" resolve="ApplicableIntention" />
+                        <node concept="2tJFMh" id="7uvxILPmWSs" role="37wK5m">
+                          <node concept="ZC_QK" id="7uvxILPmWSr" role="2tJFKM">
+                            <ref role="2aWVGs" to="nht:5UD30_PTDmD" resolve="ApplicableIntention" />
+                          </node>
                         </node>
                       </node>
                     </node>

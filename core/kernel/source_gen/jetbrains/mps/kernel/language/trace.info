@@ -11,7 +11,7 @@
   <root nodeRef="r:cb40950c-9102-4caf-8d31-b0388f359313(jetbrains.mps.kernel.language)/616772488614529103">
     <file name="ConceptAspectsHelper.java">
       <node id="2970389781193035768" at="24,103,25,274" concept="1" />
-      <node id="616772488615054826" at="26,185,27,334" concept="1" />
+      <node id="616772488615054826" at="26,185,27,337" concept="1" />
       <node id="2970389781193035773" at="28,5,29,58" concept="1" />
       <node id="8796678305523716975" at="29,58,30,22" concept="4" />
       <node id="8459337780165325841" at="33,116,34,50" concept="5" />
@@ -49,7 +49,7 @@
       <node id="2970389781193035758" at="24,0,32,0" concept="7" trace="attachNewConceptAspect#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6301062378819378619" at="45,0,54,0" concept="7" trace="getPresentationAspect#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/runtime/ConceptPresentation;" />
       <node id="2970389781193035787" at="33,0,45,0" concept="7" trace="attachNewConceptAspect#(Ljetbrains/mps/smodel/LanguageAspect;Lorg/jetbrains/mps/openapi/model/SNode;null)null" />
-      <scope id="616772488615050006" at="26,185,27,334" />
+      <scope id="616772488615050006" at="26,185,27,337" />
       <scope id="2970389781193035812" at="39,21,40,38" />
       <scope id="7034487495166184799" at="47,23,48,18" />
       <scope id="7034487495166182231" at="56,36,57,43" />
@@ -69,7 +69,7 @@
       </scope>
       <scope id="7034487495166212304" at="67,0,73,0">
         <var name="checkedDotOperand" id="7034487495166212304" />
-        <var name="n" id="7034487495166212304" />
+        <var name="n" id="6301062378819446562" />
       </scope>
       <scope id="6430266965569377490" at="73,0,79,0">
         <var name="checkedDotOperand" id="6430266965569377490" />

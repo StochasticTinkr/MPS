@@ -19,7 +19,7 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.project.Project;
 import org.jdom.Element;
@@ -53,7 +53,7 @@ public class ModuleNodeData extends AbstractResultNodeData {
   @Override
   public Icon getIcon(PresentationContext presentationContext) {
     SModule module = myModuleReference.resolve(presentationContext.getRepository());
-    return module == null ? null : IconManager.getIconFor(module);
+    return module == null ? null : GlobalIconManager.getInstance().getIconFor(module);
   }
 
   public SModuleReference getModuleReference() {

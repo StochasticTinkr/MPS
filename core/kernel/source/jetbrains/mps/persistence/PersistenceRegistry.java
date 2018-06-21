@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -31,6 +32,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -69,6 +71,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   public static final String JAVA_CLASSES_ROOT = "java_classes";
 
   private final ModelFactoryService MODEL_FACTORY_SERVICE = ModelFactoryService.getInstance();
+  private final DataSourceFactoryRuleService myDataSourceRegistry;
 
   @ToRemove(version = 181) private final Map<String, ModelFactory> myLegacyFileExt2ModelFactoryMap = new ConcurrentHashMap<>();
 
@@ -79,6 +82,10 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   private final Set<NavigationParticipant> myNavigationParticipants = new LinkedHashSet<NavigationParticipant>();
 
   private boolean isDisabled = false;
+
+  public PersistenceRegistry(DataSourceFactoryRuleService dsRegistry) {
+    myDataSourceRegistry = dsRegistry;
+  }
 
   public static PersistenceRegistry getInstance() {
     return (PersistenceRegistry) INSTANCE;
@@ -215,6 +222,11 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   }
 
   @Override
+  public SModelReference createModelReference(SModuleReference module, @NotNull SModelId modelId, @NotNull SModelName modelName) {
+    return new jetbrains.mps.smodel.SModelReference(module, modelId, modelName);
+  }
+
+  @Override
   public void setModelIdFactory(String type, SModelIdFactory factory) {
     if (factory == null) {
       myModelIdFactory.remove(type);
@@ -332,11 +344,11 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     isDisabled = false;
   }
 
-  private static class DefaultModelRootFactory implements ModelRootFactory {
+  private class DefaultModelRootFactory implements ModelRootFactory {
     @NotNull
     @Override
     public ModelRoot create() {
-      return new DefaultModelRoot();
+      return new DefaultModelRoot(PersistenceRegistry.this.MODEL_FACTORY_SERVICE, PersistenceRegistry.this.myDataSourceRegistry);
     }
   }
 }

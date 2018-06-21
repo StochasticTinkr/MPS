@@ -37,7 +37,7 @@ public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInf
 
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
-    final SNode node = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
+    final SNode node = cellContext.get(BasicCellContext.EDITED_NODE);
     final IOperationContext context = editorContext.getOperationContext();
 
     return Collections.<SubstituteAction>singletonList(new AbstractNodeSubstituteAction(null, null, node) {

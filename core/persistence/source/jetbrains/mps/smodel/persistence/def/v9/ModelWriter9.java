@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -309,7 +309,7 @@ public class ModelWriter9 implements IModelWriter {
     Map<String, Document> result = new HashMap<String, Document>();
     result.put(FilePerRootDataSource.HEADER_FILE, new Document(headerRoot));
     // roots
-    Map<SNodeId, String> rootToFile = FilePerRootFormatUtil.getStreamNames(sourceModel);
+    Map<SNodeId, String> rootToFile = FilePerRootFormatUtil.getStreamNames(sourceModel.getRootNodes());
     for (SNode root : sourceModel.getRootNodes()) {
       Element rootElement = new Element(ModelPersistence9.MODEL);
       rootElement.setAttribute(ModelPersistence9.REF, myIdEncoder.toText(sourceModel.getReference()));

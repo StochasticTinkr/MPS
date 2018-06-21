@@ -18,6 +18,7 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.util.RuntimeUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -63,7 +64,7 @@ public final class UpdateRuntimeUtil_MigrationScript extends BaseMigrationScript
 
         // this reference must point to the @java_stub model 
         SNode fncls = RuntimeUtil.functionClassifierContainer();
-        SModelReference modelRef = SNodeOperations.getModel(fncls).getReference();
+        SModelReference modelRef = SModelOperations.getPointer(SNodeOperations.getModel(fncls));
 
         for (SNode ifc : SNodeOperations.ofConcept(SLinkOperations.getChildren(fncls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
           ListSequence.fromList(SLinkOperations.getChildren(ssw, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, 0x10ef02edcafL, "case"))).addElement(_quotation_createNode_tdy3l4_a0a0a21a0a(SPropertyOperations.getString(ifc, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), modelRef.toString(), ifc.getNodeId().toString()));
@@ -108,7 +109,7 @@ public final class UpdateRuntimeUtil_MigrationScript extends BaseMigrationScript
 
         // this reference must point to the @java_stub model 
         SNode fncls = RuntimeUtil.ufunctionClassifierContainer();
-        SModelReference modelRef = SNodeOperations.getModel(fncls).getReference();
+        SModelReference modelRef = SModelOperations.getPointer(SNodeOperations.getModel(fncls));
 
         for (SNode ifc : SNodeOperations.ofConcept(SLinkOperations.getChildren(fncls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
           ListSequence.fromList(SLinkOperations.getChildren(ssw, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, 0x10ef02edcafL, "case"))).addElement(_quotation_createNode_tdy3l4_a0a0a21a0b(SPropertyOperations.getString(ifc, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), modelRef.toString(), ifc.getNodeId().toString()));

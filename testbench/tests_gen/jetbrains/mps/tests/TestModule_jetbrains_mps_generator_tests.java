@@ -5,7 +5,7 @@ package jetbrains.mps.tests;
 import jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite;
 import org.junit.runner.RunWith;
 
-@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test"}, tests = {"test_justWrite,test_stringUserObjects,test_intUserObjects,test_charUserObjects,test_numberUserObjects,test_booleanUserObjects,test_mpsUserObjects,test_baseLanguageStructure,test_testOverloadedOperatorsSandbox,test_testSkipNodesWhileSaving"})
+@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test", "jetbrains.mps.generator.editor.tests.Test_PropertyMacroApplicable_Test", "jetbrains.mps.generator.editor.tests.Test_ReferenceMacroApplicable_Test"}, tests = {"test_justWrite,test_stringUserObjects,test_intUserObjects,test_charUserObjects,test_numberUserObjects,test_booleanUserObjects,test_mpsUserObjects,test_baseLanguageStructure,test_testOverloadedOperatorsSandbox,test_testSkipNodesWhileSaving", "test_Test_PropertyMacroApplicable", "test_Test_ReferenceMacroApplicable"})
 @ModuleSymbolicSuite.ModuleReference("50fc24f9-2bc9-4702-84ed-7f00cd088aca(jetbrains.mps.generator.tests)")
 @RunWith(ModuleSymbolicSuite.class)
 public class TestModule_jetbrains_mps_generator_tests {

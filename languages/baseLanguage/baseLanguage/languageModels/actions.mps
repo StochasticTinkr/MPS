@@ -249,6 +249,11 @@
         <reference id="8182547171709614741" name="target" index="36bGnp" />
       </concept>
     </language>
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
+        <reference id="7256306938026143658" name="target" index="2aWVGs" />
+      </concept>
+    </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
       <concept id="1176544042499" name="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" flags="nn" index="3JvlWi" />
     </language>
@@ -403,8 +408,8 @@
       <concept id="1139867745658" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" flags="nn" index="1_qnLN">
         <reference id="1139867957129" name="concept" index="1_rbq0" />
       </concept>
-      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
-        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
+      <concept id="942336824646299470" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetPointerOperation" flags="ng" index="1AR3kn">
+        <child id="942336824646299471" name="linkTarget" index="1AR3km" />
       </concept>
       <concept id="1144195091934" name="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" flags="nn" index="1BlSNk">
         <reference id="1144195362400" name="conceptOfParent" index="1BmUXE" />
@@ -422,6 +427,9 @@
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
+      </concept>
+      <concept id="3320646261221695165" name="jetbrains.mps.lang.smodel.structure.NodePointerArg_Identity" flags="ng" index="1QN52j">
+        <child id="3320646261221695238" name="ref" index="1QN54C" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -1110,9 +1118,11 @@
                   <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                 </node>
               </node>
-              <node concept="2oxUTD" id="5JI19XbtwjN" role="2OqNvi">
-                <node concept="3B5_sB" id="5JI19XbtwjQ" role="2oxUTC">
-                  <ref role="3B5MYn" to="wyt6:~String" resolve="String" />
+              <node concept="1AR3kn" id="3XR0QgVCjsi" role="2OqNvi">
+                <node concept="1QN52j" id="3XR0QgVCjsj" role="1AR3km">
+                  <node concept="ZC_QK" id="3XR0QgVCjsh" role="1QN54C">
+                    <ref role="2aWVGs" to="wyt6:~String" resolve="String" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -10454,16 +10464,20 @@
                         </node>
                       </node>
                       <node concept="3clFbF" id="QZgTbHnKE1" role="3cqZAp">
-                        <node concept="37vLTI" id="QZgTbHnWGd" role="3clFbG">
-                          <node concept="3B5_sB" id="QZgTbHo8JK" role="37vLTx">
-                            <ref role="3B5MYn" to="33ny:~Iterator" resolve="Iterator" />
-                          </node>
-                          <node concept="2OqwBi" id="YTk2rEGPlF" role="37vLTJ">
-                            <node concept="37vLTw" id="QZgTbHnIPa" role="2Oq$k0">
+                        <node concept="2OqwBi" id="3XR0QgVCjnU" role="3clFbG">
+                          <node concept="2OqwBi" id="3XR0QgVCjnR" role="2Oq$k0">
+                            <node concept="37vLTw" id="3XR0QgVCjnS" role="2Oq$k0">
                               <ref role="3cqZAo" node="QZgTbHnIP6" resolve="f" />
                             </node>
-                            <node concept="3TrEf2" id="YTk2rEGQll" role="2OqNvi">
+                            <node concept="3TrEf2" id="3XR0QgVCjnT" role="2OqNvi">
                               <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
+                            </node>
+                          </node>
+                          <node concept="1AR3kn" id="3XR0QgVCjnV" role="2OqNvi">
+                            <node concept="1QN52j" id="3XR0QgVCjnW" role="1AR3km">
+                              <node concept="ZC_QK" id="3XR0QgVCjnQ" role="1QN54C">
+                                <ref role="2aWVGs" to="33ny:~Iterator" resolve="Iterator" />
+                              </node>
                             </node>
                           </node>
                         </node>

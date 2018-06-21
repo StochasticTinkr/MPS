@@ -26,8 +26,10 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
         case 3:
           return Collections.<NodeFactory>singletonList(new node_factories.NodeFactory_1217895102248());
         case 4:
-          return Collections.<NodeFactory>singletonList(new node_factories.NodeFactory_1217895169604());
+          return Collections.<NodeFactory>singletonList(new node_factories.NodeFactory_6601781453102013447());
         case 5:
+          return Collections.<NodeFactory>singletonList(new node_factories.NodeFactory_1217895169604());
+        case 6:
           return Collections.<NodeFactory>singletonList(new node_factories.NodeFactory_1217895187934());
         default:
       }
@@ -35,9 +37,5 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
     return Collections.<NodeFactory>emptyList();
   }
 
-  @Override
-  public boolean hasBuilders() {
-    return false;
-  }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"GenerationContextOp_GetOutputByLabel", "GenerationContextOp_GetOutputByLabelAndInput", "GenerationContextOp_GetOutputListByLabelAndInput", "GenerationContextOp_SessionObjectAccess", "GenerationContextOp_StepObjectAccess", "GenerationContextOp_TransientObjectAccess"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"GenerationContextOp_GetOutputByLabel", "GenerationContextOp_GetOutputByLabelAndInput", "GenerationContextOp_GetOutputListByLabelAndInput", "GenerationContextOp_SessionObjectAccess", "GenerationContextOp_ShowMessageBase", "GenerationContextOp_StepObjectAccess", "GenerationContextOp_TransientObjectAccess"};
 }

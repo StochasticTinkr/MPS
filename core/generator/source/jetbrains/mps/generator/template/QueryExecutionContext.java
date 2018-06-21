@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,12 +42,6 @@ import java.util.Collection;
  * Evgeny Gryaznov, Feb 24, 2010
  */
 public interface QueryExecutionContext extends QueryExecutor {
-
-  /**
-   * @return true if nodes using this context can be generated in parallel. When false, all nodes that use this context
-   * will be generated from the same thread.
-   */
-  boolean isMultithreaded();
 
   Collection<SNode> applyRule(TemplateReductionRule rule, TemplateContext context) throws GenerationException;
 

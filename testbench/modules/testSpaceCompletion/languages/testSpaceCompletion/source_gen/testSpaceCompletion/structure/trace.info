@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,78,0" name="testSpaceCompletion.structure.ConceptPresentationAspectImpl" />
@@ -9,6 +16,244 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <unit at="14,0,117,0" name="testSpaceCompletion.structure.StructureAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)/3586175963764952689">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="3586175963764952689" at="12,0,13,0" concept="1" trace="props_ABC" />
+      <node id="3586175963764952689" at="26,32,27,76" concept="3" />
+      <node id="3586175963764952689" at="27,76,28,37" concept="0" />
+      <node id="3586175963764952689" at="28,37,29,35" concept="0" />
+      <node id="3586175963764952689" at="30,9,31,25" concept="4" />
+      <node id="3586175963764952689" at="25,37,30,9" concept="2" />
+      <scope id="3586175963764952689" at="26,32,29,35">
+        <var name="cpb" id="3586175963764952689" />
+      </scope>
+      <scope id="3586175963764952689" at="25,37,31,25" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="3586175963764952689" at="12,0,13,0" concept="5" trace="ABC" />
+      <node id="3586175963764952689" at="21,116,22,42" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="3586175963764952689" at="15,0,16,0" concept="1" trace="myConceptABC" />
+      <node id="3586175963764952689" at="37,37,38,28" concept="4" />
+      <node id="3586175963764952689" at="60,61,61,157" concept="3" />
+      <node id="3586175963764952689" at="61,157,62,34" concept="0" />
+      <node id="3586175963764952689" at="62,34,63,120" concept="0" />
+      <node id="3586175963764952689" at="63,120,64,106" concept="0" />
+      <node id="3586175963764952689" at="64,106,65,19" concept="0" />
+      <node id="3586175963764952689" at="65,19,66,22" concept="4" />
+      <node id="3586175963764952689" at="60,0,68,0" concept="6" trace="createDescriptorForABC#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="3586175963764952689" at="37,37,38,28" />
+      <scope id="3586175963764952689" at="60,61,66,22">
+        <var name="b" id="3586175963764952689" />
+      </scope>
+      <scope id="3586175963764952689" at="60,0,68,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)/3586175963764954956">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="3586175963764954956" at="13,0,14,0" concept="1" trace="props_ABCDE" />
+      <node id="3586175963764954956" at="33,34,34,76" concept="3" />
+      <node id="3586175963764954956" at="34,76,35,40" concept="0" />
+      <node id="3586175963764954956" at="35,40,36,37" concept="0" />
+      <node id="3586175963764954956" at="37,9,38,27" concept="4" />
+      <node id="3586175963764954956" at="32,39,37,9" concept="2" />
+      <scope id="3586175963764954956" at="33,34,36,37">
+        <var name="cpb" id="3586175963764954956" />
+      </scope>
+      <scope id="3586175963764954956" at="32,39,38,27" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="3586175963764954956" at="13,0,14,0" concept="5" trace="ABCDE" />
+      <node id="3586175963764954956" at="22,42,23,44" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="3586175963764954956" at="16,0,17,0" concept="1" trace="myConceptABCDE" />
+      <node id="3586175963764954956" at="39,39,40,30" concept="4" />
+      <node id="3586175963764954956" at="68,63,69,159" concept="3" />
+      <node id="3586175963764954956" at="69,159,70,34" concept="0" />
+      <node id="3586175963764954956" at="70,34,71,120" concept="0" />
+      <node id="3586175963764954956" at="71,120,72,106" concept="0" />
+      <node id="3586175963764954956" at="72,106,73,22" concept="0" />
+      <node id="3586175963764954956" at="73,22,74,22" concept="4" />
+      <node id="3586175963764954956" at="68,0,76,0" concept="6" trace="createDescriptorForABCDE#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="3586175963764954956" at="39,39,40,30" />
+      <scope id="3586175963764954956" at="68,63,74,22">
+        <var name="b" id="3586175963764954956" />
+      </scope>
+      <scope id="3586175963764954956" at="68,0,76,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)/3586175963764954964">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="3586175963764954964" at="15,0,16,0" concept="1" trace="props_ABCDEG" />
+      <node id="3586175963764954964" at="47,35,48,76" concept="3" />
+      <node id="3586175963764954964" at="48,76,49,42" concept="0" />
+      <node id="3586175963764954964" at="49,42,50,38" concept="0" />
+      <node id="3586175963764954964" at="51,9,52,28" concept="4" />
+      <node id="3586175963764954964" at="46,40,51,9" concept="2" />
+      <scope id="3586175963764954964" at="47,35,50,38">
+        <var name="cpb" id="3586175963764954964" />
+      </scope>
+      <scope id="3586175963764954964" at="46,40,52,28" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="3586175963764954964" at="15,0,16,0" concept="5" trace="ABCDEG" />
+      <node id="3586175963764954964" at="24,45,25,45" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="3586175963764954964" at="18,0,19,0" concept="1" trace="myConceptABCDEG" />
+      <node id="3586175963764954964" at="43,40,44,31" concept="4" />
+      <node id="3586175963764954964" at="84,64,85,160" concept="3" />
+      <node id="3586175963764954964" at="85,160,86,34" concept="0" />
+      <node id="3586175963764954964" at="86,34,87,120" concept="0" />
+      <node id="3586175963764954964" at="87,120,88,106" concept="0" />
+      <node id="3586175963764954964" at="88,106,89,24" concept="0" />
+      <node id="3586175963764954964" at="89,24,90,22" concept="4" />
+      <node id="3586175963764954964" at="84,0,92,0" concept="6" trace="createDescriptorForABCDEG#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="3586175963764954964" at="43,40,44,31" />
+      <scope id="3586175963764954964" at="84,64,90,22">
+        <var name="b" id="3586175963764954964" />
+      </scope>
+      <scope id="3586175963764954964" at="84,0,92,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)/3586175963764954968">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="3586175963764954968" at="14,0,15,0" concept="1" trace="props_ABCDEF" />
+      <node id="3586175963764954968" at="40,35,41,76" concept="3" />
+      <node id="3586175963764954968" at="41,76,42,42" concept="0" />
+      <node id="3586175963764954968" at="42,42,43,38" concept="0" />
+      <node id="3586175963764954968" at="44,9,45,28" concept="4" />
+      <node id="3586175963764954968" at="39,40,44,9" concept="2" />
+      <scope id="3586175963764954968" at="40,35,43,38">
+        <var name="cpb" id="3586175963764954968" />
+      </scope>
+      <scope id="3586175963764954968" at="39,40,45,28" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="3586175963764954968" at="14,0,15,0" concept="5" trace="ABCDEF" />
+      <node id="3586175963764954968" at="23,44,24,45" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="3586175963764954968" at="17,0,18,0" concept="1" trace="myConceptABCDEF" />
+      <node id="3586175963764954968" at="41,40,42,31" concept="4" />
+      <node id="3586175963764954968" at="76,64,77,160" concept="3" />
+      <node id="3586175963764954968" at="77,160,78,34" concept="0" />
+      <node id="3586175963764954968" at="78,34,79,120" concept="0" />
+      <node id="3586175963764954968" at="79,120,80,106" concept="0" />
+      <node id="3586175963764954968" at="80,106,81,24" concept="0" />
+      <node id="3586175963764954968" at="81,24,82,22" concept="4" />
+      <node id="3586175963764954968" at="76,0,84,0" concept="6" trace="createDescriptorForABCDEF#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="3586175963764954968" at="41,40,42,31" />
+      <scope id="3586175963764954968" at="76,64,82,22">
+        <var name="b" id="3586175963764954968" />
+      </scope>
+      <scope id="3586175963764954968" at="76,0,84,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)/7653661050353915512">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="7653661050353915512" at="16,0,17,0" concept="1" trace="props_ABCEEG" />
+      <node id="7653661050353915512" at="54,35,55,76" concept="3" />
+      <node id="7653661050353915512" at="55,76,56,42" concept="0" />
+      <node id="7653661050353915512" at="56,42,57,38" concept="0" />
+      <node id="7653661050353915512" at="58,9,59,28" concept="4" />
+      <node id="7653661050353915512" at="53,40,58,9" concept="2" />
+      <scope id="7653661050353915512" at="54,35,57,38">
+        <var name="cpb" id="7653661050353915512" />
+      </scope>
+      <scope id="7653661050353915512" at="53,40,59,28" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="7653661050353915512" at="16,0,17,0" concept="5" trace="ABCEEG" />
+      <node id="7653661050353915512" at="25,45,26,45" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="7653661050353915512" at="19,0,20,0" concept="1" trace="myConceptABCEEG" />
+      <node id="7653661050353915512" at="45,40,46,31" concept="4" />
+      <node id="7653661050353915512" at="92,64,93,160" concept="3" />
+      <node id="7653661050353915512" at="93,160,94,34" concept="0" />
+      <node id="7653661050353915512" at="94,34,95,120" concept="0" />
+      <node id="7653661050353915512" at="95,120,96,106" concept="0" />
+      <node id="7653661050353915512" at="96,106,97,24" concept="0" />
+      <node id="7653661050353915512" at="97,24,98,22" concept="4" />
+      <node id="7653661050353915512" at="92,0,100,0" concept="6" trace="createDescriptorForABCEEG#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="7653661050353915512" at="45,40,46,31" />
+      <scope id="7653661050353915512" at="92,64,98,22">
+        <var name="b" id="7653661050353915512" />
+      </scope>
+      <scope id="7653661050353915512" at="92,0,100,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)/8933061889659252101">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="8933061889659252101" at="17,0,18,0" concept="1" trace="props_BAC" />
+      <node id="8933061889659252101" at="61,32,62,76" concept="3" />
+      <node id="8933061889659252101" at="62,76,63,37" concept="0" />
+      <node id="8933061889659252101" at="63,37,64,35" concept="0" />
+      <node id="8933061889659252101" at="65,9,66,25" concept="4" />
+      <node id="8933061889659252101" at="60,37,65,9" concept="2" />
+      <scope id="8933061889659252101" at="61,32,64,35">
+        <var name="cpb" id="8933061889659252101" />
+      </scope>
+      <scope id="8933061889659252101" at="60,37,66,25" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="8933061889659252101" at="17,0,18,0" concept="5" trace="BAC" />
+      <node id="8933061889659252101" at="26,45,27,42" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="8933061889659252101" at="20,0,21,0" concept="1" trace="myConceptBAC" />
+      <node id="8933061889659252101" at="47,37,48,28" concept="4" />
+      <node id="8933061889659252101" at="100,61,101,157" concept="3" />
+      <node id="8933061889659252101" at="101,157,102,34" concept="0" />
+      <node id="8933061889659252101" at="102,34,103,120" concept="0" />
+      <node id="8933061889659252101" at="103,120,104,106" concept="0" />
+      <node id="8933061889659252101" at="104,106,105,19" concept="0" />
+      <node id="8933061889659252101" at="105,19,106,22" concept="4" />
+      <node id="8933061889659252101" at="100,0,108,0" concept="6" trace="createDescriptorForBAC#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="8933061889659252101" at="47,37,48,28" />
+      <scope id="8933061889659252101" at="100,61,106,22">
+        <var name="b" id="8933061889659252101" />
+      </scope>
+      <scope id="8933061889659252101" at="100,0,108,0" />
+    </file>
+  </root>
+  <root nodeRef="r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)/8933061889659259091">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="8933061889659259091" at="18,0,19,0" concept="1" trace="props_BCA" />
+      <node id="8933061889659259091" at="68,32,69,76" concept="3" />
+      <node id="8933061889659259091" at="69,76,70,37" concept="0" />
+      <node id="8933061889659259091" at="70,37,71,35" concept="0" />
+      <node id="8933061889659259091" at="72,9,73,25" concept="4" />
+      <node id="8933061889659259091" at="67,37,72,9" concept="2" />
+      <scope id="8933061889659259091" at="68,32,71,35">
+        <var name="cpb" id="8933061889659259091" />
+      </scope>
+      <scope id="8933061889659259091" at="67,37,73,25" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="8933061889659259091" at="18,0,19,0" concept="5" trace="BCA" />
+      <node id="8933061889659259091" at="27,42,28,42" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="8933061889659259091" at="21,0,22,0" concept="1" trace="myConceptBCA" />
+      <node id="8933061889659259091" at="49,37,50,28" concept="4" />
+      <node id="8933061889659259091" at="108,61,109,157" concept="3" />
+      <node id="8933061889659259091" at="109,157,110,34" concept="0" />
+      <node id="8933061889659259091" at="110,34,111,120" concept="0" />
+      <node id="8933061889659259091" at="111,120,112,106" concept="0" />
+      <node id="8933061889659259091" at="112,106,113,19" concept="0" />
+      <node id="8933061889659259091" at="113,19,114,22" concept="4" />
+      <node id="8933061889659259091" at="108,0,116,0" concept="6" trace="createDescriptorForBCA#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="8933061889659259091" at="49,37,50,28" />
+      <scope id="8933061889659259091" at="108,61,114,22">
+        <var name="b" id="8933061889659259091" />
+      </scope>
+      <scope id="8933061889659259091" at="108,0,116,0" />
     </file>
   </root>
 </debug-info>

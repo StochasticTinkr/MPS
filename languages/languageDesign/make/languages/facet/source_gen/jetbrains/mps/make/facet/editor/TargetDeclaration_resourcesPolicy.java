@@ -34,7 +34,7 @@ public class TargetDeclaration_resourcesPolicy extends AbstractCellMenuComponent
       this.handleAction_impl((SEnumerationLiteral) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SEnumerationLiteral parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x1740bd43b75c4b28L, "resourcesPolicy"), SEnumOperations.getMemberValue(parameterObject));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x1740bd43b75c4b28L, "resourcesPolicy"), SEnumOperations.getMemberValue(parameterObject));
     }
     public boolean isReferentPresentation() {
       return false;

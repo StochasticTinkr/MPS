@@ -16,6 +16,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/1198577527397">
+    <file name="TypesystemDescriptor.java">
+      <node id="1198577527397" at="87,5,88,92" concept="5" />
+      <node id="1198577527397" at="88,92,89,47" concept="2" />
+      <node id="1198577527397" at="86,5,90,5" concept="0" />
+      <scope id="1198577527397" at="87,5,89,47">
+        <var name="inferenceRule" id="1198577527397" />
+      </scope>
+    </file>
     <file name="typeof_UpdateModelProcedure_InferenceRule.java">
       <node id="1198577561806" at="21,5,22,205" concept="5" />
       <node id="1198577561806" at="22,205,23,201" concept="5" />
@@ -63,6 +71,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/1199620226785">
+    <file name="TypesystemDescriptor.java">
+      <node id="1199620226785" at="11,5,12,98" concept="5" />
+      <node id="1199620226785" at="12,98,13,47" concept="2" />
+      <node id="1199620226785" at="10,33,14,5" concept="0" />
+      <scope id="1199620226785" at="11,5,13,47">
+        <var name="inferenceRule" id="1199620226785" />
+      </scope>
+    </file>
     <file name="typeof_AbstractMoveNodeExpression_InferenceRule.java">
       <node id="1199620247213" at="21,5,22,207" concept="5" />
       <node id="1199620247213" at="22,207,23,201" concept="5" />
@@ -128,6 +144,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/1199620289346">
+    <file name="TypesystemDescriptor.java">
+      <node id="1199620289346" at="15,5,16,99" concept="5" />
+      <node id="1199620289346" at="16,99,17,47" concept="2" />
+      <node id="1199620289346" at="14,5,18,5" concept="0" />
+      <scope id="1199620289346" at="15,5,17,47">
+        <var name="inferenceRule" id="1199620289346" />
+      </scope>
+    </file>
     <file name="typeof_AbstractMoveNodesExpression_InferenceRule.java">
       <node id="1199620292740" at="21,5,22,207" concept="5" />
       <node id="1199620292740" at="22,207,23,201" concept="5" />
@@ -201,6 +225,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/1199620550073">
+    <file name="TypesystemDescriptor.java">
+      <node id="1199620550073" at="59,5,60,97" concept="5" />
+      <node id="1199620550073" at="60,97,61,47" concept="2" />
+      <node id="1199620550073" at="58,5,62,5" concept="0" />
+      <scope id="1199620550073" at="59,5,61,47">
+        <var name="inferenceRule" id="1199620550073" />
+      </scope>
+    </file>
     <file name="typeof_MoveNodeToModelExpression_InferenceRule.java">
       <node id="1199620552358" at="21,5,22,208" concept="5" />
       <node id="1199620552358" at="22,208,23,201" concept="5" />
@@ -248,6 +280,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/1199620685904">
+    <file name="TypesystemDescriptor.java">
+      <node id="1199620685904" at="63,5,64,96" concept="5" />
+      <node id="1199620685904" at="64,96,65,47" concept="2" />
+      <node id="1199620685904" at="62,5,66,5" concept="0" />
+      <scope id="1199620685904" at="63,5,65,47">
+        <var name="inferenceRule" id="1199620685904" />
+      </scope>
+    </file>
     <file name="typeof_MoveNodeToNodeExpression_InferenceRule.java">
       <node id="1199620700407" at="21,5,22,208" concept="5" />
       <node id="1199620700407" at="22,208,23,201" concept="5" />
@@ -313,6 +353,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/1199620847921">
+    <file name="TypesystemDescriptor.java">
+      <node id="1199620847921" at="67,5,68,98" concept="5" />
+      <node id="1199620847921" at="68,98,69,47" concept="2" />
+      <node id="1199620847921" at="66,5,70,5" concept="0" />
+      <scope id="1199620847921" at="67,5,69,47">
+        <var name="inferenceRule" id="1199620847921" />
+      </scope>
+    </file>
     <file name="typeof_MoveNodesToModelExpression_InferenceRule.java">
       <node id="1199620849752" at="21,5,22,208" concept="5" />
       <node id="1199620849752" at="22,208,23,201" concept="5" />
@@ -360,6 +408,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/1199621029855">
+    <file name="TypesystemDescriptor.java">
+      <node id="1199621029855" at="71,5,72,97" concept="5" />
+      <node id="1199621029855" at="72,97,73,47" concept="2" />
+      <node id="1199621029855" at="70,5,74,5" concept="0" />
+      <scope id="1199621029855" at="71,5,73,47">
+        <var name="inferenceRule" id="1199621029855" />
+      </scope>
+    </file>
     <file name="typeof_MoveNodesToNodeExpression_InferenceRule.java">
       <node id="1199621033921" at="21,5,22,208" concept="5" />
       <node id="1199621033921" at="22,208,23,201" concept="5" />
@@ -425,6 +481,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/1215084433134">
+    <file name="TypesystemDescriptor.java">
+      <node id="1215084433134" at="51,5,52,87" concept="5" />
+      <node id="1215084433134" at="52,87,53,47" concept="2" />
+      <node id="1215084433134" at="50,5,54,5" concept="0" />
+      <scope id="1215084433134" at="51,5,53,47">
+        <var name="inferenceRule" id="1215084433134" />
+      </scope>
+    </file>
     <file name="typeof_ModuleOperation_InferenceRule.java">
       <node id="1215084454335" at="21,5,22,57" concept="5" />
       <node id="1215084454335" at="22,57,23,201" concept="5" />
@@ -473,6 +537,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/1817812116819936881">
+    <file name="TypesystemDescriptor.java">
+      <node id="1817812116819936881" at="31,5,32,96" concept="5" />
+      <node id="1817812116819936881" at="32,96,33,47" concept="2" />
+      <node id="1817812116819936881" at="30,5,34,5" concept="0" />
+      <scope id="1817812116819936881" at="31,5,33,47">
+        <var name="inferenceRule" id="1817812116819936881" />
+      </scope>
+    </file>
     <file name="typeof_CreateRefactoringContext_InferenceRule.java">
       <node id="1817812116820048292" at="28,130,29,360" concept="5" />
       <node id="5697951647051825960" at="31,7,32,221" concept="5" />
@@ -486,12 +558,12 @@
       <node id="7340098493333217437" at="45,207,46,310" concept="2" />
       <node id="1817812116819949498" at="49,7,50,60" concept="5" />
       <node id="1817812116819949498" at="50,60,51,258" concept="5" />
-      <node id="5697951647051825989" at="54,5,55,260" concept="5" />
-      <node id="5697951647051825989" at="55,260,56,425" concept="5" />
-      <node id="5697951647051825989" at="56,425,57,31" concept="5" />
-      <node id="5697951647051825989" at="57,31,58,34" concept="5" />
-      <node id="5697951647051825989" at="59,77,60,54" concept="2" />
-      <node id="5697951647051825989" at="60,54,61,60" concept="2" />
+      <node id="5697951647051825990" at="54,5,55,260" concept="5" />
+      <node id="5697951647051825994" at="55,260,56,425" concept="5" />
+      <node id="5697951647051825990" at="56,425,57,31" concept="5" />
+      <node id="5697951647051825994" at="57,31,58,34" concept="5" />
+      <node id="5697951647051825990" at="59,77,60,54" concept="2" />
+      <node id="5697951647051825994" at="60,54,61,60" concept="2" />
       <node id="7340098493333217424" at="62,9,63,64" concept="5" />
       <node id="7340098493333217424" at="63,64,64,211" concept="5" />
       <node id="7340098493333217424" at="64,211,65,438" concept="2" />
@@ -595,10 +667,10 @@
         <var name="parameter_1" id="1817812116820118152" />
       </scope>
       <scope id="5697951647051825989" at="54,5,67,7">
-        <var name="declaredParameter_it" id="5697951647051825989" />
-        <var name="declaredParameter_var" id="5697951647051825989" />
-        <var name="inputParameter_it" id="5697951647051825989" />
-        <var name="inputParameter_var" id="5697951647051825989" />
+        <var name="declaredParameter_it" id="5697951647051825994" />
+        <var name="declaredParameter_var" id="5697951647051825994" />
+        <var name="inputParameter_it" id="5697951647051825990" />
+        <var name="inputParameter_var" id="5697951647051825990" />
       </scope>
       <scope id="1817812116819936882" at="28,130,73,5">
         <var name="target" id="1817812116820048293" />
@@ -612,6 +684,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/1817812116820048345">
+    <file name="TypesystemDescriptor.java">
+      <node id="1817812116820048345" at="75,5,76,82" concept="5" />
+      <node id="1817812116820048345" at="76,82,77,47" concept="2" />
+      <node id="1817812116820048345" at="74,5,78,5" concept="0" />
+      <scope id="1817812116820048345" at="75,5,77,47">
+        <var name="inferenceRule" id="1817812116820048345" />
+      </scope>
+    </file>
     <file name="typeof_NodeTarget_InferenceRule.java">
       <node id="1817812116820054000" at="21,123,22,194" concept="5" />
       <node id="1817812116820054012" at="24,7,25,54" concept="5" />
@@ -687,6 +767,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/1817812116820062083">
+    <file name="TypesystemDescriptor.java">
+      <node id="1817812116820062083" at="43,5,44,83" concept="5" />
+      <node id="1817812116820062083" at="44,83,45,47" concept="2" />
+      <node id="1817812116820062083" at="42,5,46,5" concept="0" />
+      <scope id="1817812116820062083" at="43,5,45,47">
+        <var name="inferenceRule" id="1817812116820062083" />
+      </scope>
+    </file>
     <file name="typeof_ModelTarget_InferenceRule.java">
       <node id="1817812116820062090" at="20,5,21,48" concept="5" />
       <node id="1817812116820062090" at="21,48,22,207" concept="5" />
@@ -734,6 +822,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/2298239814950983825">
+    <file name="TypesystemDescriptor.java">
+      <node id="2298239814950983825" at="35,5,36,99" concept="5" />
+      <node id="2298239814950983825" at="36,99,37,47" concept="2" />
+      <node id="2298239814950983825" at="34,5,38,5" concept="0" />
+      <scope id="2298239814950983825" at="35,5,37,47">
+        <var name="inferenceRule" id="2298239814950983825" />
+      </scope>
+    </file>
     <file name="typeof_ExecuteRefactoringStatement_InferenceRule.java">
       <node id="2298239814950983828" at="29,122,30,352" concept="5" />
       <node id="2298239814950983838" at="32,7,33,213" concept="5" />
@@ -748,12 +844,12 @@
       <node id="2298239814950983878" at="50,7,51,60" concept="5" />
       <node id="2298239814950983878" at="51,60,52,63" concept="2" />
       <node id="2298239814950983878" at="52,63,53,250" concept="5" />
-      <node id="2298239814950983894" at="56,5,57,252" concept="5" />
-      <node id="2298239814950983894" at="57,252,58,417" concept="5" />
-      <node id="2298239814950983894" at="58,417,59,31" concept="5" />
-      <node id="2298239814950983894" at="59,31,60,34" concept="5" />
-      <node id="2298239814950983894" at="61,77,62,54" concept="2" />
-      <node id="2298239814950983894" at="62,54,63,60" concept="2" />
+      <node id="2298239814950983895" at="56,5,57,252" concept="5" />
+      <node id="2298239814950983900" at="57,252,58,417" concept="5" />
+      <node id="2298239814950983895" at="58,417,59,31" concept="5" />
+      <node id="2298239814950983900" at="59,31,60,34" concept="5" />
+      <node id="2298239814950983895" at="61,77,62,54" concept="2" />
+      <node id="2298239814950983900" at="62,54,63,60" concept="2" />
       <node id="2298239814950983908" at="64,9,65,64" concept="5" />
       <node id="2298239814950983908" at="65,64,66,211" concept="5" />
       <node id="2298239814950983908" at="66,211,67,438" concept="2" />
@@ -857,10 +953,10 @@
         <var name="parameter_1" id="2298239814950983861" />
       </scope>
       <scope id="2298239814950983894" at="56,5,69,7">
-        <var name="declaredParameter_it" id="2298239814950983894" />
-        <var name="declaredParameter_var" id="2298239814950983894" />
-        <var name="inputParameter_it" id="2298239814950983894" />
-        <var name="inputParameter_var" id="2298239814950983894" />
+        <var name="declaredParameter_it" id="2298239814950983900" />
+        <var name="declaredParameter_var" id="2298239814950983900" />
+        <var name="inputParameter_it" id="2298239814950983895" />
+        <var name="inputParameter_var" id="2298239814950983895" />
       </scope>
       <scope id="2298239814950983826" at="29,122,75,5">
         <var name="target" id="2298239814950983829" />
@@ -874,6 +970,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/4347648036456857058">
+    <file name="TypesystemDescriptor.java">
+      <node id="4347648036456857058" at="47,5,48,97" concept="5" />
+      <node id="4347648036456857058" at="48,97,49,47" concept="2" />
+      <node id="4347648036456857058" at="46,5,50,5" concept="0" />
+      <scope id="4347648036456857058" at="47,5,49,47">
+        <var name="inferenceRule" id="4347648036456857058" />
+      </scope>
+    </file>
     <file name="typeof_ModelsToGenerateByDefault_InferenceRule.java">
       <node id="4347648036456861906" at="20,5,21,67" concept="5" />
       <node id="4347648036456861906" at="21,67,22,207" concept="5" />
@@ -925,6 +1029,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/4413749148913634032">
+    <file name="TypesystemDescriptor.java">
+      <node id="4413749148913634032" at="55,5,56,84" concept="5" />
+      <node id="4413749148913634032" at="56,84,57,47" concept="2" />
+      <node id="4413749148913634032" at="54,5,58,5" concept="0" />
+      <scope id="4413749148913634032" at="55,5,57,47">
+        <var name="inferenceRule" id="4413749148913634032" />
+      </scope>
+    </file>
     <file name="typeof_ModuleTarget_InferenceRule.java">
       <node id="4413749148913634044" at="23,7,24,214" concept="5" />
       <node id="4413749148913634044" at="24,214,25,209" concept="5" />
@@ -1010,6 +1122,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/478744034994505040">
+    <file name="TypesystemDescriptor.java">
+      <node id="478744034994505040" at="83,5,84,101" concept="5" />
+      <node id="478744034994505040" at="84,101,85,47" concept="2" />
+      <node id="478744034994505040" at="82,5,86,5" concept="0" />
+      <scope id="478744034994505040" at="83,5,85,47">
+        <var name="inferenceRule" id="478744034994505040" />
+      </scope>
+    </file>
     <file name="typeof_RefactoringParameterReference_InferenceRule.java">
       <node id="478744034994505047" at="19,5,20,51" concept="5" />
       <node id="478744034994505047" at="20,51,21,206" concept="5" />
@@ -1047,6 +1167,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/6598645150040036543">
+    <file name="TypesystemDescriptor.java">
+      <node id="6598645150040036543" at="39,5,40,95" concept="5" />
+      <node id="6598645150040036543" at="40,95,41,47" concept="2" />
+      <node id="6598645150040036543" at="38,5,42,5" concept="0" />
+      <scope id="6598645150040036543" at="39,5,41,47">
+        <var name="inferenceRule" id="6598645150040036543" />
+      </scope>
+    </file>
     <file name="typeof_IsRefactoringApplicable_InferenceRule.java">
       <node id="8416108457267651111" at="22,117,23,347" concept="5" />
       <node id="8416108457267651081" at="25,7,26,208" concept="5" />
@@ -1135,6 +1263,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/6895093993902310779">
+    <file name="TypesystemDescriptor.java">
+      <node id="6895093993902310779" at="19,5,20,103" concept="5" />
+      <node id="6895093993902310779" at="20,103,21,47" concept="2" />
+      <node id="6895093993902310779" at="18,5,22,5" concept="0" />
+      <scope id="6895093993902310779" at="19,5,21,47">
+        <var name="inferenceRule" id="6895093993902310779" />
+      </scope>
+    </file>
     <file name="typeof_ConceptFunctionParameter_Module_InferenceRule.java">
       <node id="5697951647051827734" at="19,5,20,48" concept="5" />
       <node id="5697951647051827734" at="20,48,21,207" concept="5" />
@@ -1172,6 +1308,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/6895093993902310818">
+    <file name="TypesystemDescriptor.java">
+      <node id="6895093993902310818" at="23,5,24,102" concept="5" />
+      <node id="6895093993902310818" at="24,102,25,47" concept="2" />
+      <node id="6895093993902310818" at="22,5,26,5" concept="0" />
+      <scope id="6895093993902310818" at="23,5,25,47">
+        <var name="inferenceRule" id="6895093993902310818" />
+      </scope>
+    </file>
     <file name="typeof_ConceptFunctionParameter_SNode_InferenceRule.java">
       <node id="5697951647051826660" at="19,5,20,46" concept="5" />
       <node id="5697951647051826660" at="20,46,21,207" concept="5" />
@@ -1209,6 +1353,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/7012097027058652457">
+    <file name="TypesystemDescriptor.java">
+      <node id="7012097027058652457" at="27,5,28,94" concept="5" />
+      <node id="7012097027058652457" at="28,94,29,47" concept="2" />
+      <node id="7012097027058652457" at="26,5,30,5" concept="0" />
+      <scope id="7012097027058652457" at="27,5,29,47">
+        <var name="inferenceRule" id="7012097027058652457" />
+      </scope>
+    </file>
     <file name="typeof_ContextMemberOperation_InferenceRule.java">
       <node id="7012097027058652464" at="19,5,20,64" concept="5" />
       <node id="7012097027058652464" at="20,64,21,207" concept="5" />
@@ -1246,6 +1398,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/7953996722066536529">
+    <file name="TypesystemDescriptor.java">
+      <node id="7953996722066536529" at="79,5,80,115" concept="5" />
+      <node id="7953996722066536529" at="80,115,81,47" concept="2" />
+      <node id="7953996722066536529" at="78,5,82,5" concept="0" />
+      <scope id="7953996722066536529" at="79,5,81,47">
+        <var name="inferenceRule" id="7953996722066536529" />
+      </scope>
+    </file>
     <file name="typeof_RefactoringContext_ConceptFunctionParameter_InferenceRule.java">
       <node id="7953996722066536536" at="20,5,21,51" concept="5" />
       <node id="7953996722066536536" at="21,51,22,207" concept="5" />
@@ -1293,6 +1453,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)/883491221943684120">
+    <file name="TypesystemDescriptor.java">
+      <node id="883491221943684120" at="91,5,92,107" concept="5" />
+      <node id="883491221943684120" at="92,107,93,47" concept="2" />
+      <node id="883491221943684120" at="90,5,94,5" concept="0" />
+      <scope id="883491221943684120" at="91,5,93,47">
+        <var name="subtypingRule" id="883491221943684120" />
+      </scope>
+    </file>
     <file name="supertypeOf_ContextType_RefactoringContext_SubtypingRule.java">
       <node id="883491221943684129" at="19,114,20,47" concept="6" />
       <node id="883491221943684120" at="22,50,23,160" concept="6" />

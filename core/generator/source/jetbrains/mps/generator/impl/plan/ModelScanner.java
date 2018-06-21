@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -184,8 +183,12 @@ public final class ModelScanner {
 
     /**
      * Collect meta-dependencies of the node, including all its children
+     * @param node top of a tree to walk, {@code null} is tolerated and results in no-op
      */
-    public NodeScanner scanStructure(@NotNull SNode node) {
+    public NodeScanner scanStructure(@Nullable SNode node) {
+      if (node == null) {
+        return this;
+      }
       myLanguagesInUse = null;
       for (Iterator<SNode> it = getNodeIterator(node); it.hasNext(); ) {
         SNode n = it.next();
@@ -196,8 +199,12 @@ public final class ModelScanner {
 
     /**
      * Collect meta-dependencies of references from the node and its children
+     * @param node top of a tree to walk, {@code null} is tolerated and results in no-op
      */
-    public NodeScanner scanReferences(@NotNull SNode node) {
+    public NodeScanner scanReferences(@Nullable SNode node) {
+      if (node == null) {
+        return this;
+      }
       myLanguagesInUse = null;
       for (Iterator<SNode> it = getNodeIterator(node); it.hasNext(); ) {
         SNode n = it.next();

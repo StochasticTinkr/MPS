@@ -11,7 +11,7 @@ import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
-import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.extapi.module.FacetsRegistry;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import jetbrains.mps.classloading.DumbIdeaPluginFacet;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
@@ -55,24 +55,22 @@ public final class MpsEnvironment extends EnvironmentBase {
     }
   }
 
-  @Override
   public void init() {
     if (LOG.isInfoEnabled()) {
       LOG.info("Creating MPS environment");
     }
     myPlatform = PlatformFactory.initPlatform(PlatformOptionsBuilder.ALL);
 
-    GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
-    registerFacetFactory();
-    super.init();
-    initLibraries(myPlatform.findComponent(LibraryInitializer.class));
+    myPlatform.findComponent(GenerationSettingsProvider.class).setGenerationSettings(new DefaultModifiableGenerationSettings());
+    registerFacetFactory(myPlatform.findComponent(FacetsRegistry.class));
+    super.init(myPlatform);
   }
 
-  private void registerFacetFactory() {
-    FacetsFacade.FacetFactory dumbFactory = FacetsFacade.getInstance().getFacetFactory(DumbIdeaPluginFacet.FACET_TYPE);
+  private void registerFacetFactory(FacetsFacade facetsFacade) {
+    FacetsFacade.FacetFactory dumbFactory = facetsFacade.getFacetFactory(DumbIdeaPluginFacet.FACET_TYPE);
     assert dumbFactory != null;
-    FacetsFacade.getInstance().removeFactory(dumbFactory);
-    FacetsFacade.getInstance().addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetsFacade.FacetFactory() {
+    facetsFacade.removeFactory(dumbFactory);
+    facetsFacade.addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetsFacade.FacetFactory() {
       @Override
       public SModuleFacet create() {
         return new DumbIdeaPluginFacet() {

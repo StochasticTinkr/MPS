@@ -44,7 +44,7 @@ public class InlineMethodWithConceptFunctionParameters_Test extends BaseTransfor
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("4412735672780109162"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, "jetbrains.mps.lang.intentions"), 0x115b81bfaa7L, "DescriptionBlock"))));
         List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("4412735672780116650"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, "jetbrains.mps.lang.intentions"), 0x115b81bfaa7L, "DescriptionBlock"))));
-        Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
+        Assert.assertTrue("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher(nodesBefore, nodesAfter).diff().isEmpty());
       }
     }
 

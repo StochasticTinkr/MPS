@@ -30,72 +30,72 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_hqlgg9_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_hqlgg9_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_hqlgg9_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createCollection_hqlgg9_a0());
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createCollection_hqlgg9_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("coveringCollection");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteCellCollectionChild.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.addEditorCell(createCollection_hqlgg9_a0a());
-    editorCell.addEditorCell(createCollection_hqlgg9_b0a());
+    editorCell.addEditorCell(createCollection_2());
+    editorCell.addEditorCell(createCollection_3());
     return editorCell;
   }
-  private EditorCell createCollection_hqlgg9_a0a() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_hqlgg9_a0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteCellCollectionChild.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.addEditorCell(createConstant_hqlgg9_a0a0());
-    editorCell.addEditorCell(createConstant_hqlgg9_b0a0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_hqlgg9_a0a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "subcol");
     editorCell.setCellId("Constant_hqlgg9_a0a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_hqlgg9_b0a0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "lection1");
     editorCell.setCellId("Constant_hqlgg9_b0a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_hqlgg9_b0a() {
+  private EditorCell createCollection_3() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_hqlgg9_b0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteCellCollectionChild.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.addEditorCell(createConstant_hqlgg9_a1a0());
-    editorCell.addEditorCell(createConstant_hqlgg9_b1a0());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createConstant_3());
     return editorCell;
   }
-  private EditorCell createConstant_hqlgg9_a1a0() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "subcol");
     editorCell.setCellId("Constant_hqlgg9_a1a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_hqlgg9_b1a0() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "lection2");
     editorCell.setCellId("Constant_hqlgg9_b1a0");
     editorCell.setDefaultText("");

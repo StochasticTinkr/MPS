@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -152,10 +153,10 @@ public abstract class UpdateReferencesParticipantBase<T> extends RefactoringPart
 
   public static class MyMoveNodeRefactoringDataCollector implements MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<UpdateReferencesParticipantBase.NamedNodeReference, UpdateReferencesParticipantBase.NamedNodeReference> {
     public UpdateReferencesParticipantBase.NamedNodeReference beforeMove(SNode nodeToMove) {
-      return new NamedNodeReference(nodeToMove.getReference(), NodeReferenceUtil.getNodePresentation(nodeToMove));
+      return new NamedNodeReference(SNodeOperations.getPointer(nodeToMove), NodeReferenceUtil.getNodePresentation(nodeToMove));
     }
     public UpdateReferencesParticipantBase.NamedNodeReference afterMove(SNode movedNode) {
-      return new NamedNodeReference(movedNode.getReference(), NodeReferenceUtil.getNodePresentation(movedNode));
+      return new NamedNodeReference(SNodeOperations.getPointer(movedNode), NodeReferenceUtil.getNodePresentation(movedNode));
     }
   }
 

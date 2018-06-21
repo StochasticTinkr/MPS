@@ -66,7 +66,7 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
       @Override
       public void setValue(SNode node, String propertyValue) {
         String propertyName = "hasNoDefaultMember";
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x11a35a5efdaL, "hasNoDefaultMember"), "" + ((SPropertyOperations.getBoolean(propertyValue))));
+        SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x11a35a5efdaL, "hasNoDefaultMember"), "" + ((SPropertyOperations.getBoolean(propertyValue))));
         if ((SPropertyOperations.getBoolean(propertyValue)) == true) {
           SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3640a77dL, "defaultMember"), null);
         }

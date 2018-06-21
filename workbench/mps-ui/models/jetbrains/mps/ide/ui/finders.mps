@@ -21,7 +21,6 @@
     <import index="yctd" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.findUsages(MPS.Core/)" />
     <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
     <import index="k4i4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/)" />
-    <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1861,15 +1860,11 @@
           </node>
           <node concept="3clFbS" id="271DUEnPTHR" role="2LFqv$">
             <node concept="3clFbJ" id="271DUEnPTHS" role="3cqZAp">
-              <node concept="3fqX7Q" id="271DUEnPTHT" role="3clFbw">
-                <node concept="1eOMI4" id="271DUEnPTHW" role="3fr31v">
-                  <node concept="2YIFZM" id="271DUEnPUF8" role="1eOMHV">
-                    <ref role="37wK5l" to="w1kc:~SModelStereotype.isUserModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isUserModel" />
-                    <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                    <node concept="37vLTw" id="271DUEnPUF9" role="37wK5m">
-                      <ref role="3cqZAo" node="271DUEnPTI5" resolve="model" />
-                    </node>
-                  </node>
+              <node concept="2YIFZM" id="7d$WBe35itF" role="3clFbw">
+                <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
+                <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+                <node concept="37vLTw" id="7d$WBe35itG" role="37wK5m">
+                  <ref role="3cqZAo" node="271DUEnPTI5" resolve="model" />
                 </node>
               </node>
               <node concept="3clFbS" id="271DUEnPTHY" role="3clFbx">

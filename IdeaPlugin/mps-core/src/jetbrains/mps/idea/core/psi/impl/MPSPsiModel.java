@@ -45,6 +45,7 @@ import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.IFile;
@@ -106,7 +107,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
   @Override
   protected Icon getBaseIcon() {
-    final GlobalIconManager globalIconManager = ApplicationManager.getApplication().getComponent(GlobalIconManager.class);
+    final GlobalIconManager globalIconManager = GlobalIconManager.getInstance();
     if (globalIconManager == null) {
       return Nodes.Model;
     }
@@ -356,6 +357,14 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     return mySourceVirtualFile;
   }
 
+  public DataSource getSource() {
+    SRepository repository = getProjectRepository();
+    return new ModelAccessHelper(repository.getModelAccess()).runReadAction(() -> {
+      SModel model = myModelReference.resolve(repository);
+      return model.getSource();
+    });
+  }
+
   /* package */
 
   boolean isRoot(MPSPsiNode psiNode) {
@@ -547,7 +556,10 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   }
 
   private String extractName(SNode sNode) {
-    return sNode.getName() != null && !sNode.getName().isEmpty() ? sNode.getName() : sNode.getNodeId().toString();
+    // Take it directly as we must not depend on whether concept is currently valid (plugin loaded or not).
+    // We're persisting into files with these names
+    String nameProperty = sNode.getProperty(SNodeUtil.property_INamedConcept_name);
+    return nameProperty != null && !nameProperty.isEmpty() ? nameProperty : sNode.getNodeId().toString();
   }
 
   // todo replace with depth-first; depth is never very big in real models, and memory consumption will be less,

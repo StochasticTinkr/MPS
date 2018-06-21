@@ -35,9 +35,10 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.awt.Dimension;
 import java.awt.Container;
@@ -56,7 +57,6 @@ import java.awt.event.MouseListener;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
@@ -221,12 +221,11 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     SModel structureModel = ((Language) resolved).getStructureModelDescriptor();
 
     Map<SNode, LanguageHierarchiesComponent.ConceptContainer> processed = new HashMap<SNode, LanguageHierarchiesComponent.ConceptContainer>();
-    SNode baseConcept = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
 outer:
     for (SNode concept : SModelOperations.roots(structureModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       SNode parentConcept = concept;
       LanguageHierarchiesComponent.ConceptContainer prevConceptContainer = null;
-      while (parentConcept != null && parentConcept != baseConcept && !((mySkipAncestors && SNodeOperations.getModel(parentConcept) != structureModel))) {
+      while (parentConcept != null && !(SNodeOperations.is(parentConcept, new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"))) && !((mySkipAncestors && SNodeOperations.getModel(parentConcept) != structureModel))) {
         LanguageHierarchiesComponent.ConceptContainer newConceptContainer = processed.get(parentConcept);
         if (newConceptContainer == null) {
           newConceptContainer = new LanguageHierarchiesComponent.ConceptContainer(parentConcept, this, SNodeOperations.getModel(parentConcept) != structureModel);

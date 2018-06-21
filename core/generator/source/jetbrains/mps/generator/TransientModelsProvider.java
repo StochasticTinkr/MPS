@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TransientModelsProvider {
@@ -48,6 +49,7 @@ public class TransientModelsProvider {
   private String mySessionId;
   private final MPSModuleOwner myOwner = new BaseMPSModuleOwner();
   private TransientModelsModule myCheckpointsModule;
+  private final Semaphore mySwapLock = new Semaphore(1);
 
   public TransientModelsProvider(@NotNull SRepository repository, @Nullable TransientSwapOwner swapOwner) {
     myRepository = (SRepositoryExt) repository;
@@ -193,19 +195,36 @@ public class TransientModelsProvider {
     if (mySessionId == null) {
       return null;
     }
+    return getOrCreateSwapSpace(mySessionId);
+  }
 
+  private TransientSwapSpace getOrCreateSwapSpace(String id) {
     TransientSwapOwner tso = getTransientSwapOwner();
     if (tso == null) {
       return null;
     }
 
-    TransientSwapSpace space = tso.accessSwapSpace(mySessionId);
-    if (space != null) {
-      return space;
-    }
+    mySwapLock.acquireUninterruptibly();
+    try {
+      TransientSwapSpace space = tso.accessSwapSpace(id);
+      if (space != null) {
+        return space;
+      }
 
-    return tso.initSwapSpace(mySessionId);
+      return tso.initSwapSpace(id);
+    } finally {
+      mySwapLock.release();
+    }
   }
+
+  /*package*/ TransientSwapSpace getTransientSwapSpace(TransientModelsModule transientModule) {
+    if (mySessionId == null) {
+      // just to ensure TMP is alive
+      return null;
+    }
+    return getOrCreateSwapSpace(mySessionId + '-' + transientModule.getModuleName());
+  }
+
 
   public void removeAllTransient() {
     clearAll(false);
@@ -256,7 +275,7 @@ public class TransientModelsProvider {
   }
 
   private String newSessionId() {
-    return String.valueOf(System.identityHashCode(myRepository)) + Long.toHexString(System.currentTimeMillis());
+    return Long.toHexString(System.identityHashCode(myRepository) + System.currentTimeMillis());
   }
 
   /**

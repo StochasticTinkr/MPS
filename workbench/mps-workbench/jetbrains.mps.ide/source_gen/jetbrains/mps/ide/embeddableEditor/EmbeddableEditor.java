@@ -10,8 +10,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import java.awt.BorderLayout;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import org.jetbrains.annotations.NotNull;
 import java.awt.Color;
 import jetbrains.mps.ide.editor.NodeEditor;
@@ -20,6 +18,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
@@ -30,7 +30,7 @@ public class EmbeddableEditor extends JPanel implements DataProvider {
   private final SRepository repository;
   private final boolean editable;
 
-  private final SModel temporaryModel;
+  private SModel temporaryModel;
 
   private SNode node;
   private MPSFileNodeEditor nodeEditor;
@@ -41,7 +41,6 @@ public class EmbeddableEditor extends JPanel implements DataProvider {
     this.project = project;
     this.repository = project.getRepository();
     this.editable = editable;
-    this.temporaryModel = TemporaryModels.getInstance().create(true, TempModuleOptions.forDefaultModule());
   }
 
   public void editNode(@NotNull final SNode node) {
@@ -84,13 +83,14 @@ public class EmbeddableEditor extends JPanel implements DataProvider {
   }
 
   private MPSFileNodeEditor createEditorForNode(SNode node) {
-    SModel nodeModel;
     if (SNodeOperations.getModel(node) == null) {
       // node is not in repository 
       if (!(editable)) {
-        nodeModel = TemporaryModels.getInstance().create(true, TempModuleOptions.forDefaultModule());
-        SModelOperations.addRootNode(nodeModel, node);
-        TemporaryModels.getInstance().addMissingImports(nodeModel);
+        if (temporaryModel == null) {
+          temporaryModel = TemporaryModels.getInstance().create(true, TempModuleOptions.forDefaultModule());
+        }
+        SModelOperations.addRootNode(temporaryModel, node);
+        TemporaryModels.getInstance().addMissingImports(temporaryModel);
       } else {
         throw new IllegalStateException("For nodes not from repository edit mode is disabled");
       }
@@ -99,11 +99,13 @@ public class EmbeddableEditor extends JPanel implements DataProvider {
   }
 
   public void disposeEditor() {
-    repository.getModelAccess().runWriteAction(new Runnable() {
-      public void run() {
-        TemporaryModels.getInstance().dispose(temporaryModel);
-      }
-    });
+    if (temporaryModel != null) {
+      repository.getModelAccess().runWriteAction(new Runnable() {
+        public void run() {
+          TemporaryModels.getInstance().dispose(temporaryModel);
+        }
+      });
+    }
     if (nodeEditor != null) {
       nodeEditor.dispose();
     }

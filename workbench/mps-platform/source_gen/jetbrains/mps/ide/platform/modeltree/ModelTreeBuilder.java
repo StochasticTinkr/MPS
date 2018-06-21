@@ -7,7 +7,7 @@ import javax.swing.JTree;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.tree.DefaultTreeModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -45,12 +45,12 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
   }
   public static ModelTreeNode createSModelTreeNode(SModel descriptor) {
     String label = descriptor.getName().getValue();
-    ModelTreeNode node = new ModelTreeNode(label, IconManager.getIconFor(descriptor), descriptor);
+    ModelTreeNode node = new ModelTreeNode(label, GlobalIconManager.getInstance().getIconFor(descriptor), descriptor);
     node.setInitialized(false);
     return node;
   }
   public static ModelTreeNode createSNodeTreeNode(SNode node) {
-    return new ModelTreeNode(node.getPresentation(), IconManager.getIconFor(node), new SNodePointer(node));
+    return new ModelTreeNode(node.getPresentation(), GlobalIconManager.getInstance().getIconFor(node), new SNodePointer(node));
   }
   public static ModelTreeNode createFolderTreeNode(String folderName) {
     return new ModelTreeNode(folderName, IdeIcons.CLOSED_FOLDER, IdeIcons.OPENED_FOLDER);

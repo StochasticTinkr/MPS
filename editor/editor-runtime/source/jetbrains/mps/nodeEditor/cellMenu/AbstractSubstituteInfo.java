@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -27,7 +28,12 @@ import java.util.List;
 
 /**
  * @author simon
+ *
+ * @deprecated use {@link TransformationMenuSubstituteInfo}
  */
+
+@Deprecated
+@ToRemove(version = 2018.2)
 public abstract class AbstractSubstituteInfo extends AbstractNodeSubstituteInfo {
   private final EditorCell myEditorCell;
 

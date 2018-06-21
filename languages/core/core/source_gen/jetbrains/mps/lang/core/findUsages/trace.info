@@ -15,6 +15,11 @@
     </file>
   </root>
   <root nodeRef="r:3d049421-2cf2-4818-944e-c4d825789632(jetbrains.mps.lang.core.findUsages)/1198430852441">
+    <file name="FindUsagesDescriptor.java">
+      <node id="1198430852441" at="21,13,22,53" concept="6" />
+      <node id="1198430852441" at="29,40,30,181" concept="1" />
+      <scope id="1198430852441" at="21,13,22,53" />
+    </file>
     <file name="NodeAndDescendantsUsages_Finder.java">
       <node id="1198430852441" at="26,34,27,39" concept="6" />
       <node id="1198430852441" at="30,38,31,14" concept="6" />

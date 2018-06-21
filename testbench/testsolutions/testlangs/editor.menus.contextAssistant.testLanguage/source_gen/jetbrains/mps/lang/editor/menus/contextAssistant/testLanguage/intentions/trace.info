@@ -28,7 +28,7 @@
       <node id="7291101478621544792" at="52,0,53,0" concept="2" trace="myParameter" />
       <node id="7291101478621544792" at="53,52,54,30" concept="1" />
       <node id="7291101478621545361" at="57,87,58,52" concept="7" />
-      <node id="7291101478621596288" at="61,78,62,323" concept="1" />
+      <node id="7291101478621596288" at="61,78,62,326" concept="1" />
       <node id="7291101478621544792" at="65,48,66,44" concept="7" />
       <node id="7291101478621544792" at="68,34,69,25" concept="7" />
       <node id="7291101478621544792" at="23,0,26,0" concept="0" trace="AddLetterToName_Intention#()V" />
@@ -52,7 +52,7 @@
       <scope id="7291101478621544792" at="48,90,49,89" />
       <scope id="7291101478621544792" at="53,52,54,30" />
       <scope id="7291101478621544794" at="57,87,58,52" />
-      <scope id="7291101478621544796" at="61,78,62,323" />
+      <scope id="7291101478621544796" at="61,78,62,326" />
       <scope id="7291101478621544792" at="65,48,66,44" />
       <scope id="7291101478621544792" at="68,34,69,25" />
       <scope id="7291101478621544792" at="23,0,26,0" />
@@ -93,6 +93,10 @@
       </scope>
       <unit id="7291101478621544792" at="51,0,72,0" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.intentions.AddLetterToName_Intention$IntentionImplementation" />
       <unit id="7291101478621544792" at="22,0,73,0" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.intentions.AddLetterToName_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="7291101478621544792" at="37,47,38,58" concept="1" />
+      <node id="7291101478621544792" at="50,52,51,44" concept="1" />
     </file>
   </root>
 </debug-info>

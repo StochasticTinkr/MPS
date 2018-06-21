@@ -26,7 +26,7 @@
       <node id="4958193202997147682" at="36,47,37,41" concept="2" />
       <node id="4958193202997147686" at="37,41,38,0" concept="10" />
       <node id="4958193202997147687" at="38,0,39,213" concept="2" />
-      <node id="4958193202997147708" at="39,213,40,47" concept="2" />
+      <node id="8335510736429943209" at="39,213,40,70" concept="2" />
       <node id="5142486769433059678" at="42,41,43,41" concept="2" />
       <node id="4394877045814249811" at="45,72,46,97" concept="8" />
       <node id="121824560294466038" at="50,28,51,16" concept="8" />
@@ -63,7 +63,7 @@
       <scope id="639949279720498704" at="61,105,66,22">
         <var name="result" id="639949279720498706" />
       </scope>
-      <scope id="4958193202997147671" at="34,258,40,47" />
+      <scope id="4958193202997147671" at="34,258,40,70" />
       <scope id="121824560294466022" at="42,41,48,59" />
       <scope id="639949279720498699" at="61,0,68,0">
         <var name="cellContext" id="639949279720498699" />
@@ -182,7 +182,7 @@
       <node id="4958193202997075398" at="47,47,48,54" concept="2" />
       <node id="4958193202997075402" at="48,54,49,50" concept="2" />
       <node id="4958193202997075406" at="49,50,50,260" concept="2" />
-      <node id="4958193202997075426" at="50,260,51,47" concept="2" />
+      <node id="8335510736429943186" at="50,260,51,70" concept="2" />
       <node id="7882925886018839889" at="53,41,54,41" concept="2" />
       <node id="4394877045818040233" at="56,73,57,140" concept="8" />
       <node id="4394877045818040246" at="61,28,62,16" concept="8" />
@@ -230,7 +230,7 @@
         <var name="diagramCell" id="7882925886018820452" />
         <var name="setConnectorCallback" id="4394877045819034248" />
       </scope>
-      <scope id="4958193202997075387" at="45,420,51,47" />
+      <scope id="4958193202997075387" at="45,420,51,70" />
       <scope id="4394877045818040217" at="53,41,59,60" />
       <scope id="639949279732119618" at="77,0,83,0">
         <var name="context" id="639949279732119621" />
@@ -401,52 +401,56 @@
       <node id="6194248980632177478" at="30,53,31,14" concept="7" />
       <node id="6194248980632177481" at="31,14,32,56" concept="7" />
       <node id="6327362524872575230" at="33,27,34,57" concept="9" />
-      <node id="6194248980632177500" at="34,57,35,371" concept="2" />
-      <node id="6194248980632177494" at="36,12,37,35" concept="2" />
-      <node id="6194248980632177518" at="38,5,39,16" concept="8" />
-      <node id="4394877045818107907" at="43,25,44,30" concept="2" />
-      <node id="4394877045818107911" at="44,30,45,56" concept="2" />
-      <node id="4394877045818108059" at="49,25,50,18" concept="8" />
-      <node id="4394877045818108111" at="52,27,53,18" concept="8" />
-      <node id="5142486769434461115" at="56,25,57,47" concept="2" />
-      <node id="6194248980632177492" at="36,10,38,5" concept="0" />
-      <node id="4394877045818108055" at="49,0,52,0" concept="6" trace="getIcon#()Ljavax/swing/Icon;" />
-      <node id="4394877045818108107" at="52,0,55,0" concept="6" trace="getText#()Ljava/lang/String;" />
-      <node id="5142486769434349590" at="56,0,59,0" concept="6" trace="onClick#()V" />
-      <node id="6831048720710621636" at="43,0,47,0" concept="6" trace="run#()V" />
+      <node id="1590052124026021115" at="34,57,35,106" concept="9" />
+      <node id="8335510736429048493" at="35,106,36,80" concept="7" />
+      <node id="8335510736429943057" at="36,80,37,375" concept="2" />
+      <node id="6194248980632177494" at="38,12,39,35" concept="2" />
+      <node id="6194248980632177518" at="40,5,41,16" concept="8" />
+      <node id="4394877045818107907" at="48,25,49,30" concept="2" />
+      <node id="4394877045818107911" at="49,30,50,56" concept="2" />
+      <node id="4394877045818108059" at="54,25,55,18" concept="8" />
+      <node id="4394877045818108111" at="57,27,58,18" concept="8" />
+      <node id="5142486769434461115" at="61,25,62,47" concept="2" />
+      <node id="6194248980632177492" at="38,10,40,5" concept="0" />
+      <node id="4394877045818108055" at="54,0,57,0" concept="6" trace="getIcon#()Ljavax/swing/Icon;" />
+      <node id="4394877045818108107" at="57,0,60,0" concept="6" trace="getText#()Ljava/lang/String;" />
+      <node id="5142486769434349590" at="61,0,64,0" concept="6" trace="onClick#()V" />
+      <node id="6831048720710621636" at="48,0,52,0" concept="6" trace="run#()V" />
       <node id="6194248980632153182" at="22,0,27,0" concept="1" trace="AbstractPaletteCreationAction#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;Ljetbrains/mps/openapi/editor/cells/SubstituteAction;)V" />
-      <node id="6194248980632177488" at="32,56,38,5" concept="5" />
-      <node id="6831048720710621634" at="41,25,47,7" concept="2" />
-      <node id="6194248980632334697" at="41,0,49,0" concept="6" trace="init#()V" />
-      <node id="6194248980632177472" at="29,0,41,0" concept="6" trace="createIcon#()Ljavax/swing/Icon;" />
+      <node id="6831048720710621634" at="46,25,52,7" concept="2" />
+      <node id="6194248980632177488" at="32,56,40,5" concept="5" />
+      <node id="6194248980632334697" at="46,0,54,0" concept="6" trace="init#()V" />
+      <node id="6194248980632177472" at="29,0,43,0" concept="6" trace="createIcon#()Ljavax/swing/Icon;" />
       <scope id="6194248980632818796" at="27,0,28,0">
         <var name="action" id="6194248980632855101" />
       </scope>
       <scope id="6194248980632167228" at="28,0,29,0" />
-      <scope id="6194248980632177493" at="36,12,37,35" />
-      <scope id="4394877045818108058" at="49,25,50,18" />
-      <scope id="4394877045818108110" at="52,27,53,18" />
-      <scope id="5142486769434349595" at="56,25,57,47" />
-      <scope id="6194248980632177498" at="33,27,35,371" />
-      <scope id="6831048720710621638" at="43,25,45,56" />
+      <scope id="6194248980632177493" at="38,12,39,35" />
+      <scope id="4394877045818108058" at="54,25,55,18" />
+      <scope id="4394877045818108110" at="57,27,58,18" />
+      <scope id="5142486769434349595" at="61,25,62,47" />
+      <scope id="6831048720710621638" at="48,25,50,56" />
       <scope id="6194248980632153186" at="22,90,25,11" />
-      <scope id="4394877045818108055" at="49,0,52,0" />
-      <scope id="4394877045818108107" at="52,0,55,0" />
-      <scope id="5142486769434349590" at="56,0,59,0" />
-      <scope id="6831048720710621636" at="43,0,47,0" />
+      <scope id="4394877045818108055" at="54,0,57,0" />
+      <scope id="4394877045818108107" at="57,0,60,0" />
+      <scope id="5142486769434349590" at="61,0,64,0" />
+      <scope id="6194248980632177498" at="33,27,37,375">
+        <var name="concept" id="8335510736429048489" />
+      </scope>
+      <scope id="6831048720710621636" at="48,0,52,0" />
       <scope id="6194248980632153182" at="22,0,27,0">
         <var name="action" id="6194248980632861460" />
         <var name="diagramCell" id="6194248980632153198" />
       </scope>
-      <scope id="6194248980632334700" at="41,25,47,7" />
-      <scope id="6194248980632334697" at="41,0,49,0" />
-      <scope id="6194248980632177475" at="29,29,39,16">
+      <scope id="6194248980632334700" at="46,25,52,7" />
+      <scope id="6194248980632334697" at="46,0,54,0" />
+      <scope id="6194248980632177475" at="29,29,41,16">
         <var name="icon" id="6194248980632177479" />
         <var name="iconNode" id="6194248980632177482" />
       </scope>
-      <scope id="6194248980632177472" at="29,0,41,0" />
-      <unit id="6831048720710621636" at="42,45,47,5" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.AbstractPaletteCreationAction$1" />
-      <unit id="6194248980632146498" at="17,0,61,0" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.AbstractPaletteCreationAction" />
+      <scope id="6194248980632177472" at="29,0,43,0" />
+      <unit id="6831048720710621636" at="47,82,52,5" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.AbstractPaletteCreationAction$1" />
+      <unit id="6194248980632146498" at="17,0,66,0" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.AbstractPaletteCreationAction" />
     </file>
   </root>
   <root nodeRef="r:fe63f202-319c-458b-a90e-3e34b73997ae(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl)/708810380380373892">

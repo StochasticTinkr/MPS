@@ -191,7 +191,7 @@ public class ModuleUsagesFinder extends BaseFinder implements IFinder {
 
   private void collectUsagesInModels(SModule owner) {
     for (SModel model : owner.getModels()) {
-      if (!((SModelStereotype.isUserModel(model)))) {
+      if (SModelStereotype.isStubModel(model)) {
         continue;
       }
       myModels2Visit.add(model);

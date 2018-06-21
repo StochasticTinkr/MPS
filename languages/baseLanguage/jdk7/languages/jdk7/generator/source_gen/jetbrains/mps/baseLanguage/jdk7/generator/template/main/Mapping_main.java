@@ -36,7 +36,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_string_switch_template().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_string_switch_template().apply(context);
       return tlist1;
     }
   }

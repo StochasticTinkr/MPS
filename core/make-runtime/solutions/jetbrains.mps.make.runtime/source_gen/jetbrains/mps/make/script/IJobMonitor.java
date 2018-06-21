@@ -20,15 +20,6 @@ public interface IJobMonitor {
 
   class Stub implements IJobMonitor {
     private final MakeSession mySession;
-    /**
-     * 
-     * 
-     * @deprecated use another cons
-     */
-    @Deprecated
-    public Stub(IProgress ignored) {
-      mySession = null;
-    }
     public Stub() {
       mySession = null;
     }

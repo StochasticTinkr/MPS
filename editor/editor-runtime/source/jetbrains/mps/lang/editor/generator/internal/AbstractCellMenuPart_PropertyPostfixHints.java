@@ -30,6 +30,7 @@ import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -46,8 +47,8 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
 
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-    SNode node = (SNode) cellContext.get(PropertyCellContext.EDITED_NODE);
-    final SNode property = (SNode) cellContext.get(PropertyCellContext.PROPERTY_DECLARATION);
+    SNode node = cellContext.get(PropertyCellContext.EDITED_NODE);
+    final SProperty property = cellContext.get(PropertyCellContext.PROPERTY_DECLARATION);
     if (property == null) {
       return Collections.emptyList();
     }

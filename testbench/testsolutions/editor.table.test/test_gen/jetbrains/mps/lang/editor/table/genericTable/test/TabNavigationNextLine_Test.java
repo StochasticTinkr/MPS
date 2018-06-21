@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -22,11 +23,15 @@ public class TabNavigationNextLine_Test extends BaseTransformationTest {
 
   @Test
   public void test_TabNavigationNextLine() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.table.genericTable.test.TabNavigationNextLine_Test$TestBody", "testMethod", false);
+    new TabNavigationNextLine_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1626657127781667190", "1626657127781667212");

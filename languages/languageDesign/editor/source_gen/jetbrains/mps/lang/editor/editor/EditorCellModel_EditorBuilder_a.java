@@ -28,14 +28,14 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.rootCellModelStyleStyl
   }
 
   /*package*/ EditorCell createCell() {
-    return createError_nb4xc9_a();
+    return createError_0();
   }
 
-  private EditorCell createError_nb4xc9_a() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<choose cell model>");
     editorCell.setCellId("Error_nb4xc9_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     new rootCellModelStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);

@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /**
@@ -72,7 +73,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
   }
 
   /*package*/ void nodeRemoved(SNode child, SNode formerParent, SModel m) {
-    if (myCache.wasChecked(new SNodePointer(m.getReference(), formerParent.getNodeId()))) {
+    if (myCache.wasChecked(new SNodePointer(SModelOperations.getPointer(m), formerParent.getNodeId()))) {
       SNode methodCallNode = SNodeOperations.cast(formerParent, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
       checkMethodCall(methodCallNode);
     }

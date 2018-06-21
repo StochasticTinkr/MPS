@@ -16,6 +16,9 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 
@@ -24,10 +27,15 @@ import org.jetbrains.annotations.NotNull;
  * Date: Nov 29, 2006
  */
 public class PropertyCellContext extends BasicCellContext {
-  public static final Object PROPERTY_DECLARATION = new Object();
-
+  public static final EditorContextKey<SProperty> PROPERTY_DECLARATION = new EditorContextKey<>();
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public PropertyCellContext(SNode node, @NotNull SNode propertyDeclaration) {
+    this(node, MetaAdapterByDeclaration.getProperty(propertyDeclaration));
+  }
+
+  public PropertyCellContext(SNode node, @NotNull SProperty property) {
     super(node);
-    put(PROPERTY_DECLARATION, propertyDeclaration);
+    put(PROPERTY_DECLARATION, property);
   }
 }

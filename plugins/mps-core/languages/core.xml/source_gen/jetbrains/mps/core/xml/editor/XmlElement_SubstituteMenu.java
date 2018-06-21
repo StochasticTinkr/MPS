@@ -88,7 +88,7 @@ public class XmlElement_SubstituteMenu extends SubstituteMenuBase {
         Matcher _matcher_xunnx5_a1a6c5;
         SNode element = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement")), null);
         if ((_matcher_xunnx5_a1a6c5 = REGEXP_xunnx5_a0a0a2a6c5.matcher(pattern)).find()) {
-          SPropertyOperations.set(element, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName"), _matcher_xunnx5_a1a6c5.group(1));
+          SPropertyOperations.assign(element, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName"), _matcher_xunnx5_a1a6c5.group(1));
         }
         return element;
       }

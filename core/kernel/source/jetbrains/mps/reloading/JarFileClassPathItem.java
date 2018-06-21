@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.impl.IoFileSystem;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -36,7 +35,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -155,20 +153,11 @@ public class JarFileClassPathItem extends RealClassPathItem {
       zf = new ZipFile(myFile);
       if (zf.getEntry(name) == null) return null;
       return new URL(myPrefix + name);
-    } catch (MalformedURLException e) {
-      LOG.error(null, e);
-      return null;
     } catch (IOException e) {
-      LOG.error(null, e);
+      LOG.error(String.format("Failed to get resource '%s'", name), e);
       return null;
     } finally {
-      if (zf != null) {
-        try {
-          zf.close();
-        } catch (IOException e) {
-          LOG.error(null, e);
-        }
-      }
+      FileUtil.closeFileSafe(zf);
     }
   }
 
@@ -213,29 +202,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
     buildCaches();
   }
 
-  private long getClassTimestamp(String name) {
-    String path = name.replace('.', '/') + ".class";
-    ZipFile zf = null;
-    try {
-      zf = new ZipFile(myFile);
-
-      ZipEntry entry = zf.getEntry(path);
-      assert entry != null : path;
-      return entry.getTime();
-    } catch (IOException e) {
-      LOG.error(null, e);
-      return 0;
-    } finally {
-      if (zf != null) {
-        try {
-          zf.close();
-        } catch (IOException e) {
-          LOG.error(null, e);
-        }
-      }
-    }
-  }
-
   private synchronized void buildCaches() {
     ZipFile zf = null;
     try {
@@ -266,13 +232,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     } catch (IOException e) {
       LOG.error(String.format("Path %s (%s) \nFile exists: %s", myFile.getPath(), myFile.getAbsolutePath(), myFile.exists()), e);
     } finally {
-      if (zf != null) {
-        try {
-          zf.close();
-        } catch (IOException e) {
-          LOG.error(null, e);
-        }
-      }
+      FileUtil.closeFileSafe(zf);
     }
   }
 

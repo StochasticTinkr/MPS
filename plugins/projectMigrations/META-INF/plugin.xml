@@ -5,11 +5,11 @@
         >
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jetbrains.mps.ide.mpsmigration</id>
-  <name>Migration 2018.1</name>
+  <name>Migration 2018.2</name>
   <description>Provides actions to migrate models and languages developed using previous versions of MPS</description>
-  <version>2018.1</version>
+  <version>2018.2</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="181.1" until-build="182.*"/>
+  <idea-version since-build="181.1" until-build="183.*"/>
 
   <depends>jetbrains.mps.ide.modelchecker</depends>
   <depends>jetbrains.mps.ide.java</depends>

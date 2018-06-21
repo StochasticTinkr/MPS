@@ -19,6 +19,7 @@ import jetbrains.mps.classloading.ModuleClassLoader;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
@@ -32,10 +33,9 @@ public class IconResource {
   private String myClassName; //used to make IconResources unique and avoid things like MPS-24005
   private WeakReference<Class> myResourceProvider;
 
-  //in 3.5, both parameters must become @NotNull
-  public IconResource(String iconResId, Class resourceProvider) {
+  public IconResource(@NotNull String iconResId, @NotNull  Class resourceProvider) {
     myIconResId = iconResId;
-    myClassName = resourceProvider == null ? null : resourceProvider.getName();
+    myClassName = resourceProvider.getName();
     myResourceProvider = new WeakReference<Class>(resourceProvider);
   }
 
@@ -112,5 +112,13 @@ public class IconResource {
     int result = myIconResId != null ? myIconResId.hashCode() : 0;
     result = 31 * result + (myClassName != null ? myClassName.hashCode() : 0);
     return result;
+  }
+
+  @Override
+  public String toString() {
+    return "IconResource{" +
+           "myIconResId='" + myIconResId + '\'' +
+           ", myClassName='" + myClassName + '\'' +
+           '}';
   }
 }

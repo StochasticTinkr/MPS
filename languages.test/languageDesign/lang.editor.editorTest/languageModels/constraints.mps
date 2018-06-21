@@ -66,6 +66,9 @@
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
+      <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu$B">
+        <reference id="8401916545537438643" name="kind" index="1dDu$A" />
+      </concept>
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <reference id="1213106917431" name="defaultConcreteConcept" index="1MND4H" />
@@ -332,6 +335,26 @@
     <property role="3GE5qa" value="selection" />
     <ref role="1M2myG" to="68nn:6KrovOGOuVY" resolve="Container" />
     <ref role="1MND4H" to="68nn:6KrovOGOuVX" resolve="SelectableContainer" />
+  </node>
+  <node concept="1M2fIO" id="2vGL3zqZrhH">
+    <property role="3GE5qa" value="delete" />
+    <ref role="1M2myG" to="68nn:7DEfJmqPDQG" resolve="DelTestChildWithUsualReference" />
+    <node concept="1N5Pfh" id="2vGL3zqZrhI" role="1Mr941">
+      <ref role="1N5Vy1" to="68nn:7DEfJmqPDSk" resolve="reference" />
+      <node concept="1dDu$B" id="2vGL3zqZrkM" role="1N6uqs">
+        <ref role="1dDu$A" to="68nn:7DEfJmqPDQI" resolve="DelTestNodeToReference" />
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="2vGL3zqZrkP">
+    <property role="3GE5qa" value="delete" />
+    <ref role="1M2myG" to="68nn:7DEfJmqPDQH" resolve="DelTestChildWithSmartReference" />
+    <node concept="1N5Pfh" id="2vGL3zr3I_t" role="1Mr941">
+      <ref role="1N5Vy1" to="68nn:7DEfJmqPDTa" resolve="reference" />
+      <node concept="1dDu$B" id="2vGL3zr3I_x" role="1N6uqs">
+        <ref role="1dDu$A" to="68nn:7DEfJmqPDQI" resolve="DelTestNodeToReference" />
+      </node>
+    </node>
   </node>
 </model>
 

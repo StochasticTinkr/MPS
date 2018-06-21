@@ -31,6 +31,6 @@ public class NodeExplorer_Tool extends BaseTabbedProjectTool {
         NodeExplorer_Tool.this.closeTab(nodeExplorer);
       }
     });
-    NodeExplorer_Tool.this.addTab(nodeExplorer, node.toString(), NodeExplorer_Tool.this.myProject.getComponent(GlobalIconManager.class).getIconFor(node), null, true);
+    NodeExplorer_Tool.this.addTab(nodeExplorer, node.toString(), GlobalIconManager.getInstance().getIconFor(node), null, true);
   }
 }

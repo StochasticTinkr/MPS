@@ -124,13 +124,13 @@ public class CommandUtil {
   }
 
   public static SNodeReference getNodeReference(SNode aNode) {
-    return check_1pinza_a0a81(aNode);
+    return SNodeOperations.getPointer(aNode);
   }
   public static SNodeReference getReferenceReference(SReference aReference) {
     return check_1pinza_a0a91(check_1pinza_a0a0t(aReference));
   }
   public static SModelReference getModelReference(SModel aModel) {
-    return check_1pinza_a0a02(aModel);
+    return SModelOperations.getPointer(aModel);
   }
   public static SModuleReference getModuleReference(SModule aModule) {
     return check_1pinza_a0a12(aModule);
@@ -203,12 +203,6 @@ public class CommandUtil {
     }
     return null;
   }
-  private static SNodeReference check_1pinza_a0a81(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getReference();
-    }
-    return null;
-  }
   private static SNodeReference check_1pinza_a0a91(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
@@ -218,12 +212,6 @@ public class CommandUtil {
   private static SNode check_1pinza_a0a0t(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSourceNode();
-    }
-    return null;
-  }
-  private static SModelReference check_1pinza_a0a02(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getReference();
     }
     return null;
   }

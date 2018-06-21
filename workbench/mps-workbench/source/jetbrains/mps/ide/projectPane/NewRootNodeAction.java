@@ -24,7 +24,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -44,7 +44,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.ModelAccess;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
@@ -66,7 +65,7 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
       name = nodeConcept.getName();
     }
     getTemplatePresentation().setText(name);
-    Icon icon = IconManager.getIcon(nodeConcept);
+    Icon icon = GlobalIconManager.getInstance().getIconFor(nodeConcept);
     getTemplatePresentation().setIcon(icon);
     setExecuteOutsideCommand(true);
   }

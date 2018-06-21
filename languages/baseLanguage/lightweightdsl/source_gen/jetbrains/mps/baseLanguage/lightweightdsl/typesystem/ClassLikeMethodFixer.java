@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ClassLikeMethodFixer implements ClassLikeMethodProblemVisitor {
   public void visitName(SNode method, String corrected) throws ClassLikeMethodChecker.StopMethodCheckerException {
-    SPropertyOperations.set(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), corrected);
+    SPropertyOperations.assign(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), corrected);
   }
 
   public void visitReturnType(SNode method, _FunctionTypes._return_P0_E0<? extends SNode> getCorrected) {
@@ -32,7 +32,7 @@ public class ClassLikeMethodFixer implements ClassLikeMethodProblemVisitor {
   }
 
   public void visitParamName(SNode param, String corrected) throws ClassLikeMethodChecker.StopMethodCheckerException {
-    SPropertyOperations.set(param, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), corrected);
+    SPropertyOperations.assign(param, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), corrected);
   }
 
   public void visitParamType(SNode param, _FunctionTypes._return_P0_E0<? extends SNode> getCorrected) throws ClassLikeMethodChecker.StopMethodCheckerException {

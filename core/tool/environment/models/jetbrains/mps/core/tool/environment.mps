@@ -30,6 +30,7 @@
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
     <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
+    <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -1849,10 +1850,6 @@
         <node concept="3clFbH" id="5mffBJ2WjPp" role="3cqZAp" />
         <node concept="3clFbF" id="KL8AqljyHw" role="3cqZAp">
           <node concept="2OqwBi" id="KL8AqljyHx" role="3clFbG">
-            <node concept="2YIFZM" id="KL8AqljyHy" role="2Oq$k0">
-              <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getInstance():jetbrains.mps.generator.GenerationSettingsProvider" resolve="getInstance" />
-              <ref role="1Pybhc" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
-            </node>
             <node concept="liA8E" id="KL8AqljyHz" role="2OqNvi">
               <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.setGenerationSettings(jetbrains.mps.generator.IModifiableGenerationSettings):void" resolve="setGenerationSettings" />
               <node concept="2ShNRf" id="KL8AqljyH$" role="37wK5m">
@@ -1861,40 +1858,46 @@
                 </node>
               </node>
             </node>
+            <node concept="2OqwBi" id="1Pvl5nreID1" role="2Oq$k0">
+              <node concept="37vLTw" id="1Pvl5nreIiM" role="2Oq$k0">
+                <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatform" />
+              </node>
+              <node concept="liA8E" id="1Pvl5nreJ6c" role="2OqNvi">
+                <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                <node concept="3VsKOn" id="1Pvl5nreJhB" role="37wK5m">
+                  <ref role="3VsUkX" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="5mffBJ2W8Aa" role="3cqZAp">
           <node concept="1rXfSq" id="5mffBJ2W8A8" role="3clFbG">
             <ref role="37wK5l" node="2hWPXztUBs3" resolve="registerFacetFactory" />
+            <node concept="2OqwBi" id="1Pvl5nrencr" role="37wK5m">
+              <node concept="37vLTw" id="1Pvl5nremUm" role="2Oq$k0">
+                <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatform" />
+              </node>
+              <node concept="liA8E" id="1Pvl5nrenvs" role="2OqNvi">
+                <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                <node concept="3VsKOn" id="1Pvl5nreunz" role="37wK5m">
+                  <ref role="3VsUkX" to="31cb:~FacetsRegistry" resolve="FacetsRegistry" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="3eUNqOk7iCY" role="3cqZAp">
           <node concept="3nyPlj" id="3eUNqOk7iCX" role="3clFbG">
             <ref role="37wK5l" node="3eUNqOk6clf" resolve="init" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="735HJCLtfCL" role="3cqZAp">
-          <node concept="1rXfSq" id="735HJCLtfCJ" role="3clFbG">
-            <ref role="37wK5l" node="2jln2VqYj4c" resolve="initLibraries" />
-            <node concept="2OqwBi" id="3eUNqOk9b60" role="37wK5m">
-              <node concept="liA8E" id="2W5tzczG3S9" role="2OqNvi">
-                <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
-                <node concept="3VsKOn" id="2W5tzczG7XF" role="37wK5m">
-                  <ref role="3VsUkX" to="32g5:~LibraryInitializer" resolve="LibraryInitializer" />
-                </node>
-              </node>
-              <node concept="37vLTw" id="3eUNqOk9b1t" role="2Oq$k0">
-                <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatform" />
-              </node>
+            <node concept="37vLTw" id="1Pvl5nre6m5" role="37wK5m">
+              <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatform" />
             </node>
           </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="3eUNqOk7h2h" role="1B3o_S" />
       <node concept="3cqZAl" id="3eUNqOk7hpW" role="3clF45" />
-      <node concept="2AHcQZ" id="3eUNqOk7hRq" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
     </node>
     <node concept="2tJIrI" id="5mffBJ2W8gY" role="jymVt" />
     <node concept="3clFb_" id="2hWPXztUBs3" role="jymVt">
@@ -1911,9 +1914,8 @@
               <ref role="3uigEE" to="lui2:~FacetsFacade$FacetFactory" resolve="FacetsFacade.FacetFactory" />
             </node>
             <node concept="2OqwBi" id="2hWPXztV81k" role="33vP2m">
-              <node concept="2YIFZM" id="2hWPXztV81l" role="2Oq$k0">
-                <ref role="1Pybhc" to="lui2:~FacetsFacade" resolve="FacetsFacade" />
-                <ref role="37wK5l" to="lui2:~FacetsFacade.getInstance():org.jetbrains.mps.openapi.module.FacetsFacade" resolve="getInstance" />
+              <node concept="37vLTw" id="1Pvl5nrevqa" role="2Oq$k0">
+                <ref role="3cqZAo" node="1Pvl5nreuxx" resolve="facetsFacade" />
               </node>
               <node concept="liA8E" id="2hWPXztV81m" role="2OqNvi">
                 <ref role="37wK5l" to="lui2:~FacetsFacade.getFacetFactory(java.lang.String):org.jetbrains.mps.openapi.module.FacetsFacade$FacetFactory" resolve="getFacetFactory" />
@@ -1935,24 +1937,19 @@
         </node>
         <node concept="3clFbF" id="2hWPXztUD6P" role="3cqZAp">
           <node concept="2OqwBi" id="2hWPXztUD6Q" role="3clFbG">
-            <node concept="2YIFZM" id="2hWPXztUD7s" role="2Oq$k0">
-              <ref role="1Pybhc" to="lui2:~FacetsFacade" resolve="FacetsFacade" />
-              <ref role="37wK5l" to="lui2:~FacetsFacade.getInstance():org.jetbrains.mps.openapi.module.FacetsFacade" resolve="getInstance" />
-            </node>
             <node concept="liA8E" id="2hWPXztUD6S" role="2OqNvi">
               <ref role="37wK5l" to="lui2:~FacetsFacade.removeFactory(org.jetbrains.mps.openapi.module.FacetsFacade$FacetFactory):void" resolve="removeFactory" />
               <node concept="37vLTw" id="2hWPXztUD6T" role="37wK5m">
                 <ref role="3cqZAo" node="2hWPXztUD6E" resolve="dumbFactory" />
               </node>
             </node>
+            <node concept="37vLTw" id="1Pvl5nrevsL" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Pvl5nreuxx" resolve="facetsFacade" />
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="2hWPXztUD6U" role="3cqZAp">
           <node concept="2OqwBi" id="2hWPXztUD6V" role="3clFbG">
-            <node concept="2YIFZM" id="2hWPXztUD7v" role="2Oq$k0">
-              <ref role="1Pybhc" to="lui2:~FacetsFacade" resolve="FacetsFacade" />
-              <ref role="37wK5l" to="lui2:~FacetsFacade.getInstance():org.jetbrains.mps.openapi.module.FacetsFacade" resolve="getInstance" />
-            </node>
             <node concept="liA8E" id="2hWPXztUD6X" role="2OqNvi">
               <ref role="37wK5l" to="lui2:~FacetsFacade.addFactory(java.lang.String,org.jetbrains.mps.openapi.module.FacetsFacade$FacetFactory):void" resolve="addFactory" />
               <node concept="10M0yZ" id="2hWPXztV8_v" role="37wK5m">
@@ -2021,11 +2018,20 @@
                 </node>
               </node>
             </node>
+            <node concept="37vLTw" id="1Pvl5nrevuK" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Pvl5nreuxx" resolve="facetsFacade" />
+            </node>
           </node>
         </node>
       </node>
       <node concept="3Tm6S6" id="2hWPXztUBoq" role="1B3o_S" />
       <node concept="3cqZAl" id="2hWPXztUBrA" role="3clF45" />
+      <node concept="37vLTG" id="1Pvl5nreuxx" role="3clF46">
+        <property role="TrG5h" value="facetsFacade" />
+        <node concept="3uibUv" id="1Pvl5nreuxw" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~FacetsFacade" resolve="FacetsFacade" />
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="3eUNqOk7icx" role="jymVt" />
     <node concept="3Tm1VV" id="6rx4kZDk6yq" role="1B3o_S" />
@@ -2902,6 +2908,11 @@
       <node concept="3clFbS" id="3eUNqOk4ff1" role="3clF47">
         <node concept="3clFbJ" id="61uE6zXmAQO" role="3cqZAp">
           <node concept="3clFbS" id="61uE6zXmAQQ" role="3clFbx">
+            <node concept="3SKdUt" id="1Pvl5nrfoRK" role="3cqZAp">
+              <node concept="3SKdUq" id="1Pvl5nrfoRM" role="3SKWNk">
+                <property role="3SKdUp" value="XXX it is odd to enfore test mode for any use of Environment, isn't it?" />
+              </node>
+            </node>
             <node concept="3clFbF" id="33DmQTH3aWF" role="3cqZAp">
               <node concept="2YIFZM" id="3w8hPtGBQL5" role="3clFbG">
                 <ref role="1Pybhc" to="fyhk:~RuntimeFlags" resolve="RuntimeFlags" />
@@ -2949,7 +2960,7 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
-      <node concept="3Tm1VV" id="2KZwJXNrsa2" role="1B3o_S" />
+      <node concept="3Tmbuc" id="1Pvl5nrejeK" role="1B3o_S" />
       <node concept="3clFbS" id="3eUNqOk6cli" role="3clF47">
         <node concept="3clFbJ" id="3pEStHM4f3P" role="3cqZAp">
           <node concept="3clFbS" id="3pEStHM4f3R" role="3clFbx">
@@ -2971,11 +2982,6 @@
             <ref role="3cqZAo" node="6LlhC3WLD99" resolve="myInitialized" />
           </node>
         </node>
-        <node concept="3clFbF" id="3eUNqOk8PRy" role="3cqZAp">
-          <node concept="1rXfSq" id="3eUNqOk8PRw" role="3clFbG">
-            <ref role="37wK5l" node="2jln2VqY69D" resolve="initMacros" />
-          </node>
-        </node>
         <node concept="3clFbF" id="3x_lgCAcKqz" role="3cqZAp">
           <node concept="37vLTI" id="3x_lgCAcKq$" role="3clFbG">
             <node concept="37vLTw" id="3x_lgCAdZnd" role="37vLTJ">
@@ -2983,6 +2989,38 @@
             </node>
             <node concept="1rXfSq" id="3x_lgCAcKqC" role="37vLTx">
               <ref role="37wK5l" node="3x_lgCAcjqZ" resolve="createRootClassLoader" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3eUNqOk8PRy" role="3cqZAp">
+          <node concept="1rXfSq" id="3eUNqOk8PRw" role="3clFbG">
+            <ref role="37wK5l" node="2jln2VqY69D" resolve="initMacros" />
+            <node concept="2OqwBi" id="1Pvl5nrearw" role="37wK5m">
+              <node concept="37vLTw" id="1Pvl5nreain" role="2Oq$k0">
+                <ref role="3cqZAo" node="1Pvl5nre0KE" resolve="mpsPlatform" />
+              </node>
+              <node concept="liA8E" id="1Pvl5nreaHJ" role="2OqNvi">
+                <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                <node concept="3VsKOn" id="1Pvl5nreaM7" role="37wK5m">
+                  <ref role="3VsUkX" to="z1c3:~PathMacros" resolve="PathMacros" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1Pvl5nre9AW" role="3cqZAp">
+          <node concept="1rXfSq" id="1Pvl5nre9AX" role="3clFbG">
+            <ref role="37wK5l" node="2jln2VqYj4c" resolve="initLibraries" />
+            <node concept="2OqwBi" id="1Pvl5nre9AY" role="37wK5m">
+              <node concept="liA8E" id="1Pvl5nre9AZ" role="2OqNvi">
+                <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                <node concept="3VsKOn" id="1Pvl5nre9B0" role="37wK5m">
+                  <ref role="3VsUkX" to="32g5:~LibraryInitializer" resolve="LibraryInitializer" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="1Pvl5nrea9_" role="2Oq$k0">
+                <ref role="3cqZAo" node="1Pvl5nre0KE" resolve="mpsPlatform" />
+              </node>
             </node>
           </node>
         </node>
@@ -3003,6 +3041,12 @@
         </node>
       </node>
       <node concept="3cqZAl" id="3eUNqOk6cld" role="3clF45" />
+      <node concept="37vLTG" id="1Pvl5nre0KE" role="3clF46">
+        <property role="TrG5h" value="mpsPlatform" />
+        <node concept="3uibUv" id="1Pvl5nre0KD" role="1tU5fm">
+          <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="3eUNqOk7Hw1" role="jymVt" />
     <node concept="3clFb_" id="2jln2VqY69D" role="jymVt">
@@ -3100,9 +3144,8 @@
         </node>
         <node concept="3clFbF" id="KL8AqljyKb" role="3cqZAp">
           <node concept="2OqwBi" id="KL8AqljyKc" role="3clFbG">
-            <node concept="2YIFZM" id="KL8AqljyKd" role="2Oq$k0">
-              <ref role="1Pybhc" to="z1c3:~PathMacros" resolve="PathMacros" />
-              <ref role="37wK5l" to="z1c3:~PathMacros.getInstance():jetbrains.mps.project.PathMacros" resolve="getInstance" />
+            <node concept="37vLTw" id="1Pvl5nrecMW" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Pvl5nreaRM" resolve="macroComponent" />
             </node>
             <node concept="liA8E" id="KL8AqljyKe" role="2OqNvi">
               <ref role="37wK5l" to="z1c3:~PathMacros.addMacrosProvider(jetbrains.mps.project.PathMacrosProvider):void" resolve="addMacrosProvider" />
@@ -3121,6 +3164,12 @@
       <node concept="3Tm6S6" id="2jln2VqY4EW" role="1B3o_S" />
       <node concept="3uibUv" id="2jln2Vr5Gu6" role="3clF45">
         <ref role="3uigEE" to="z1c3:~PathMacrosProvider" resolve="PathMacrosProvider" />
+      </node>
+      <node concept="37vLTG" id="1Pvl5nreaRM" role="3clF46">
+        <property role="TrG5h" value="macroComponent" />
+        <node concept="3uibUv" id="1Pvl5nreaRL" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~PathMacros" resolve="PathMacros" />
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="3eUNqOk7$mT" role="jymVt" />
@@ -3173,6 +3222,11 @@
                     <ref role="3cqZAo" node="5mza6Qqg7gI" resolve="macros" />
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="1Pvl5nrflJa" role="3cqZAp">
+              <node concept="3SKdUq" id="1Pvl5nrflJc" role="3SKWNk">
+                <property role="3SKdUp" value="XXX anyone knows why we care that much about 'canonical' directory path for a macro value? I see no reason to enforce this at all" />
               </node>
             </node>
             <node concept="3cpWs8" id="2jln2Vr2Far" role="3cqZAp">

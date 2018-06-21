@@ -31,10 +31,10 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.awt.FontMetrics;
 import java.awt.Graphics;
@@ -285,7 +285,8 @@ public class SearchPanel extends AbstractSearchPanel {
   }
 
   private void highlight(final List<SearchEntry> searchEntries) {
-    ModelAccess.instance().runReadAction(() -> {
+    final SRepository editorRepo = myEditor.getEditorContext().getRepository();
+    editorRepo.getModelAccess().runReadAction(() -> {
       myHighlightManager = myEditor.getHighlightManager();
       List<EditorMessage> messages = new ArrayList<>();
       Map<EditorCell_Label, List<Pair>> cellToPositions = new LinkedHashMap<>();

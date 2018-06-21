@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -184,7 +184,7 @@ public class JarEntryFile implements IFileEx {
 
   @Override
   public OutputStream openOutputStream() throws IOException {
-    throw new UnsupportedOperationException();
+    throw new IOException("Write for jar files is not supported.");
   }
 
   @Override

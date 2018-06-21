@@ -8,6 +8,7 @@
     <classNode dependClassName="jetbrains.mps.make.MakeNotification" />
   </dependency>
   <dependency className="jetbrains.mps.make.IMakeService" file="IMakeService.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.concurrent.Future" />
@@ -24,6 +25,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.make.IMakeService" />
     <classNode extendsClassName="java.util.EventObject" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.MakeServiceComponent" file="MakeServiceComponent.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.make.IMakeService" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
   <dependency className="jetbrains.mps.make.MakeSession" file="MakeSession.java">
     <classNode dependClassName="java.lang.Deprecated" />

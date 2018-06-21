@@ -26,6 +26,7 @@ public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler 
   public IdeaJavaCompilerImpl(Project project) {
     myProject = project;
   }
+
   @Override
   public void projectOpened() {
     new Thread(new Runnable() {
@@ -35,25 +36,31 @@ public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler 
       }
     }).start();
   }
+
   @Override
   public void projectClosed() {
     myIdeaProjectHandler = null;
   }
+
   @NotNull
   @Override
   public String getComponentName() {
     return "IDEA Java Compiler";
   }
+
   @Override
   public void initComponent() {
   }
+
   @Override
   public void disposeComponent() {
   }
+
   @Override
   public boolean isValid() {
     return !(RuntimeFlags.isTestMode()) && myIdeaProjectHandler != null;
   }
+
   @Override
   public MPSCompilationResult compileModules(SModule[] modules) {
     if (!(isValid())) {
@@ -69,15 +76,14 @@ public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler 
       }
     }
     try {
-      IdeaCompilationResult ideaResult = myIdeaProjectHandler.buildModules(SetSequence.fromSet(modulePaths).toGenericArray(String.class));
-      if (ideaResult != null) {
-        return new MPSCompilationResult(ideaResult.getErrorCount(), ideaResult.getWarningCount(), ideaResult.isAborted(), (ideaResult.hasCompiledAnything() ? Arrays.asList(modules) : Collections.<SModule>emptySet()));
-      }
+      @NotNull IdeaCompilationResult ideaResult = myIdeaProjectHandler.buildModules(SetSequence.fromSet(modulePaths).toGenericArray(String.class));
+      return new MPSCompilationResult(ideaResult.getErrorCount(), ideaResult.getWarningCount(), ideaResult.isAborted(), (ideaResult.hasCompiledAnything() ? Arrays.asList(modules) : Collections.<SModule>emptySet()));
     } catch (RemoteException e) {
       e.printStackTrace();
     }
     return null;
   }
+
   private IProjectHandler getIdeaProjectHandler() {
     if (RuntimeFlags.isTestMode()) {
       return null;

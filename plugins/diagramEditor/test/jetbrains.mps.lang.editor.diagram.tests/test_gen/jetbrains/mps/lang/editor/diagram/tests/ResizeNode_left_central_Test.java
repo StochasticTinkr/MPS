@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 
@@ -22,11 +23,15 @@ public class ResizeNode_left_central_Test extends BaseTransformationTest {
 
   @Test
   public void test_ResizeNode_left_central() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.diagram.tests.ResizeNode_left_central_Test$TestBody", "testMethod", false);
+    new ResizeNode_left_central_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3873095776498950264", "3873095776498950267");

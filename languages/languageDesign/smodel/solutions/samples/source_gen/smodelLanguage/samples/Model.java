@@ -25,7 +25,7 @@ public class Model {
   }
   public void new_node_2(SModel model) {
     SNode named = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-    SPropertyOperations.set(named, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "a");
+    SPropertyOperations.assign(named, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "a");
   }
   public void roots_access_1(SModel model) {
     List<SNode> roots1 = SModelOperations.roots(model, null);

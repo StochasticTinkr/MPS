@@ -11,18 +11,18 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.lang.pattern.editor.PatternAddingUtil;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.editor.runtime.cells.CellIdManager;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 
 public final class CreatePropertyPatternVariable_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -42,7 +42,8 @@ public final class CreatePropertyPatternVariable_Intention extends AbstractInten
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     EditorCell selectedCell = editorContext.getSelectedCell();
-    return selectedCell instanceof EditorCell_Property && ((EditorCell_Property) selectedCell).getModelAccessor() instanceof PropertyAccessor && PatternAddingUtil.isPatternApplicable(editorContext);
+    SPropertyInfo propertyInfo = check_22jfzo_a0b0e(check_22jfzo_a0a1a4(selectedCell));
+    return check_22jfzo_a0a2a4(propertyInfo) != null && PatternAddingUtil.isPatternApplicable(editorContext);
   }
   @Override
   public boolean isSurroundWith() {
@@ -63,15 +64,33 @@ public final class CreatePropertyPatternVariable_Intention extends AbstractInten
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      EditorCell_Property cell = (EditorCell_Property) editorContext.getSelectedCell();
-      String propertyName = ((PropertyAccessor) cell.getModelAccessor()).getPropertyName();
+      EditorCell cell = editorContext.getSelectedCell();
       SNode cellNode = cell.getSNode();
-      SProperty p = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(cellNode)).convertProperty(propertyName);
-      SNodeFactoryOperations.setNewAttribute(cellNode, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), p), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")));
+      SProperty property = cell.getCellContext().getPropertyInfo().getProperty();
+      SNode variableDeclaration = SNodeFactoryOperations.setNewAttribute(cellNode, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), property), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")));
+      SelectionUtil.selectCell(editorContext, variableDeclaration, "*" + CellIdManager.createPropertyId("varName"));
     }
     @Override
     public IntentionDescriptor getDescriptor() {
       return CreatePropertyPatternVariable_Intention.this;
     }
+  }
+  private static SPropertyInfo check_22jfzo_a0b0e(EditorCellContext checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getPropertyInfo();
+    }
+    return null;
+  }
+  private static EditorCellContext check_22jfzo_a0a1a4(EditorCell checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getCellContext();
+    }
+    return null;
+  }
+  private static SProperty check_22jfzo_a0a2a4(SPropertyInfo checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getProperty();
+    }
+    return null;
   }
 }

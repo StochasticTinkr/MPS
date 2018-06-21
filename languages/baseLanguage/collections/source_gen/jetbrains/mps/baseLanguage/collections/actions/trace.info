@@ -12,10 +12,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
-      <unit at="13,0,120,0" name="jetbrains.mps.baseLanguage.collections.actions.ActionAspectDescriptorImpl" />
-    </file>
-    <file name="QueriesGenerated.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.baseLanguage.collections.actions.QueriesGenerated" />
+      <unit at="13,0,116,0" name="jetbrains.mps.baseLanguage.collections.actions.ActionAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590326(jetbrains.mps.baseLanguage.collections.actions)/1206444812617">
@@ -902,7 +899,7 @@
       <node id="8656797459614551222" at="24,504,25,342" concept="2" />
       <node id="8656797459614619464" at="25,342,26,718" concept="2" />
       <node id="8656797459614518981" at="26,718,27,573" concept="2" />
-      <node id="8656797459614518989" at="27,573,28,1000" concept="2" />
+      <node id="8656797459614518989" at="27,573,28,1003" concept="2" />
       <node id="8656797459614519018" at="30,43,31,518" concept="8" />
       <node id="8656797459614519035" at="34,39,35,468" concept="2" />
       <node id="8656797459614519039" at="40,88,41,65" concept="7" />
@@ -912,7 +909,7 @@
       <node id="8656797459614241734" at="49,221,50,514" concept="2" />
       <node id="8656797459614249354" at="50,514,51,728" concept="2" />
       <node id="8656797459614285924" at="51,728,52,359" concept="2" />
-      <node id="8656797459614292660" at="52,359,53,1010" concept="2" />
+      <node id="8656797459614292660" at="52,359,53,1013" concept="2" />
       <node id="8656797459614339212" at="55,43,56,742" concept="8" />
       <node id="8656797459614373446" at="59,39,60,259" concept="2" />
       <node id="8656797459614376069" at="65,83,66,65" concept="7" />
@@ -925,8 +922,8 @@
       <node id="8656797459614372623" at="59,0,62,0" concept="6" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8656797459614519039" at="40,0,46,0" concept="9" trace="createMultiForEachVariableReference_a0a0a0a0f0a0a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8656797459614376069" at="65,0,71,0" concept="9" trace="createForEachVariableReference_a0a0a0a0e0a0a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="8656797459614519005" at="28,1000,37,11" concept="2" />
-      <node id="8656797459614328509" at="53,1010,62,11" concept="2" />
+      <node id="8656797459614519005" at="28,1003,37,11" concept="2" />
+      <node id="8656797459614328509" at="53,1013,62,11" concept="2" />
       <node id="8656797459614853082" at="48,103,63,7" concept="5" />
       <node id="8656797459614957332" at="22,103,38,7" concept="5" />
       <node id="8656797459614853042" at="48,0,65,0" concept="6" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />

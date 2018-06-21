@@ -36,7 +36,7 @@ public final class BooleanStyleSheetItem__BehaviorDescriptor extends BaseBHDescr
     if (sa == null) {
       return;
     }
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, 0x1143bd161dbL, "flag"), "" + (!(sa.combine(null, null))));
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, 0x1143bd161dbL, "flag"), "" + (!(sa.combine(null, null))));
   }
 
   /*package*/ static boolean useQuery_idhNn$rq2(@NotNull SNode __thisNode__) {

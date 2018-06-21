@@ -29,40 +29,40 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_c4zoug_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_c4zoug_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_c4zoug_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Checkbox_ActionMap_c4zoug_a.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.addKeyMap(new Checkbox_KeyMap_c4zoug_a());
-    editorCell.addEditorCell(createAlternation_c4zoug_a0());
+    editorCell.addEditorCell(createAlternation_0());
     return editorCell;
   }
-  private EditorCell createAlternation_c4zoug_a0() {
+  private EditorCell createAlternation_0() {
     boolean alternationCondition = true;
     alternationCondition = nodeCondition_c4zoug_a0a();
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = createConstant_c4zoug_a0a();
+      editorCell = createConstant_0();
     } else {
-      editorCell = createConstant_c4zoug_a0a_0();
+      editorCell = createConstant_1();
     }
     return editorCell;
   }
   private boolean nodeCondition_c4zoug_a0a() {
     return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e94L, 0x4a35f271d9f26e95L, "property"));
   }
-  private EditorCell createConstant_c4zoug_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "x");
     editorCell.setCellId("Constant_c4zoug_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_c4zoug_a0a_0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, " ");
     editorCell.setCellId("Constant_c4zoug_a0a_0");
     editorCell.setDefaultText("");

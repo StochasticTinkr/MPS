@@ -17,11 +17,9 @@ package jetbrains.mps.nodeEditor.messageTargets;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -81,19 +79,16 @@ public class CellFinder {
   }
 
   static boolean isCellForProperty(@NotNull EditorCell cell, @Nullable SNode node, @NotNull String name) {
-    if (!(cell instanceof EditorCell_Property)) {
-      return false;
-    }
-
-    EditorCell_Property propertyCell = (EditorCell_Property) cell;
-    if (propertyCell.getRole() != null) {
+    if (cell.getSRole() != null) {
       // Ignore property cells with a role since they do not display the property of their node but rather the property of the target node.
       return false;
     }
 
-    ModelAccessor modelAccessor = propertyCell.getModelAccessor();
-    return modelAccessor instanceof PropertyAccessor && node == propertyCell.getSNode()
-           && name.equals(((PropertyAccessor) modelAccessor).getPropertyName());
+    if (cell.getCellContext() != null && cell.getCellContext().getPropertyInfo() != null) {
+      SPropertyInfo propertyInfo = cell.getCellContext().getPropertyInfo();
+      return node == propertyInfo.getNode() && name.equals(propertyInfo.getProperty().getName());
+    }
+    return false;
   }
 
   @Nullable

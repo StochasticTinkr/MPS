@@ -28,6 +28,7 @@
         <languageVersions>
           <map>
             <entry key="l:3a13115c-633c-4c5c-bbcc-75c4219e9555:jetbrains.mps.lang.quotation" value="0" />
+            <entry key="l:446c26eb-2b7b-4bf0-9b35-f83fa582753e:jetbrains.mps.lang.modelapi" value="0" />
             <entry key="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" value="8" />
             <entry key="l:83888646-71ce-4f1c-9c53-c54016f6ad4f:jetbrains.mps.baseLanguage.collections" value="0" />
             <entry key="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" value="0" />
@@ -48,9 +49,7 @@
             <entry key="9cff0c7f-34fe-4409-aace-1680a0beef14(mps-java)" value="0" />
             <entry key="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" value="0" />
             <entry key="c1969cf6-0de2-4f84-9a6b-4019c52c438c(mps-core)" value="0" />
-            <entry key="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" value="0" />
             <entry key="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" value="0" />
-            <entry key="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" value="0" />
             <entry key="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" value="0" />
             <entry key="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" value="0" />
             <entry key="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" value="0" />

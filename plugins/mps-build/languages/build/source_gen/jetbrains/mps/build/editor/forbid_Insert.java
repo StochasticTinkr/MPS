@@ -9,6 +9,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.ide.editor.actions.EditorActionUtils;
 import java.util.Objects;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class forbid_Insert {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -33,7 +34,7 @@ public class forbid_Insert {
           if (cell.getSNode() != node) {
             break;
           }
-          if (!(Objects.equals(cell.getRole(), "parts"))) {
+          if (!(Objects.equals(cell.getSRole(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, 0x440d7ea3b68cba4bL, "parts")))) {
             break;
           }
           cell = cell.getParent();
@@ -62,7 +63,7 @@ public class forbid_Insert {
           if (cell.getSNode() != node) {
             break;
           }
-          if (!(Objects.equals(cell.getRole(), "parts"))) {
+          if (!(Objects.equals(cell.getSRole(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, 0x440d7ea3b68cba4bL, "parts")))) {
             break;
           }
           cell = cell.getParent();

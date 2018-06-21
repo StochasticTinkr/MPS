@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import java.util.Iterator;
 import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.project.Project;
@@ -31,7 +31,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
     if (m == null) {
       setIcon(IdeIcons.DEFAULT_ICON);
     } else {
-      setIcon(IconManager.getIconFor(m));
+      setIcon(GlobalIconManager.getInstance().getIconFor(m));
     }
   }
   public SModuleReference getModule() {

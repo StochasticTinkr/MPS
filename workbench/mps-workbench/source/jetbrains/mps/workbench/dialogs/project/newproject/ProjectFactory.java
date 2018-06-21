@@ -85,12 +85,12 @@ public class ProjectFactory {
       throw new ProjectNotCreatedException(error[0]);
     }
 
-    boolean doNotSave = ApplicationManagerEx.getApplicationEx().isDoNotSave();
+    boolean saveAllowed = ApplicationManagerEx.getApplicationEx().isSaveAllowed();
     try {
-      ApplicationManagerEx.getApplicationEx().doNotSave(false);
+      ApplicationManagerEx.getApplicationEx().setSaveAllowed(true);
       myCreatedProject.save();
     } finally {
-      ApplicationManagerEx.getApplicationEx().doNotSave(doNotSave);
+      ApplicationManagerEx.getApplicationEx().setSaveAllowed(saveAllowed);
     }
 
     //noinspection ConstantConditions

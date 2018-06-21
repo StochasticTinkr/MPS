@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -40,10 +41,10 @@ public class UpdateModelImports extends RefactoringParticipantBase<SNodeReferenc
   public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.updateModelImports", "Update model imports");
   private MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<SNodeReference, SNodeReference> myDataCollector = new MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<SNodeReference, SNodeReference>() {
     public SNodeReference beforeMove(SNode nodeToMove) {
-      return nodeToMove.getReference();
+      return SNodeOperations.getPointer(nodeToMove);
     }
     public SNodeReference afterMove(SNode movedNode) {
-      return movedNode.getReference();
+      return SNodeOperations.getPointer(movedNode);
     }
   };
   public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<SNodeReference, SNodeReference> getDataCollector() {

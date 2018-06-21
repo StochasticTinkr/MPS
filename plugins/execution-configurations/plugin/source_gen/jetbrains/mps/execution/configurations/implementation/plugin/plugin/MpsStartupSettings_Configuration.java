@@ -15,16 +15,8 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.util.FileUtil;
-import org.jdom.Document;
-import jetbrains.mps.util.JDOMUtil;
-import org.jdom.JDOMException;
-import java.io.IOException;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.application.PathManager;
+import java.nio.file.Paths;
 import org.apache.log4j.Level;
 
 public class MpsStartupSettings_Configuration implements IPersistentConfiguration {
@@ -32,11 +24,8 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
   @NotNull
   private MpsStartupSettings_Configuration.MyState myState = new MpsStartupSettings_Configuration.MyState();
   public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
-    if (isEmptyString(this.getConfigurationPath())) {
-      throw new RuntimeConfigurationError("Configuration path is empty.");
-    }
-    if (isEmptyString(this.getSystemPath())) {
-      throw new RuntimeConfigurationError("System path is empty.");
+    if (isEmptyString(this.getSettingsPath())) {
+      throw new RuntimeConfigurationError("The settings path is empty");
     }
   }
   @Override
@@ -56,17 +45,8 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
   public String getJrePath() {
     return myState.myJrePath;
   }
-  public String getSystemPath() {
-    return myState.mySystemPath;
-  }
-  public String getConfigurationPath() {
-    return myState.myConfigurationPath;
-  }
-  public boolean getOpenCurrentProject() {
-    return myState.myOpenCurrentProject;
-  }
-  public String getProjectToOpen() {
-    return myState.myProjectToOpen;
+  public String getSettingsPath() {
+    return myState.mySettingsPath;
   }
   public void setVmOptions(String value) {
     myState.myVmOptions = value;
@@ -74,85 +54,44 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
   public void setJrePath(String value) {
     myState.myJrePath = value;
   }
-  public void setSystemPath(String value) {
-    myState.mySystemPath = value;
+  public void setSettingsPath(String value) {
+    myState.mySettingsPath = value;
   }
-  public void setConfigurationPath(String value) {
-    myState.myConfigurationPath = value;
-  }
-  public void setOpenCurrentProject(boolean value) {
-    myState.myOpenCurrentProject = value;
-  }
-  public void setProjectToOpen(String value) {
-    myState.myProjectToOpen = value;
-  }
-  public String expandPath(String path) {
+  private String expandPath(String path) {
     if ((path == null || path.length() == 0)) {
       return path;
     }
     return MacrosFactory.getGlobal().expandPath(path).replace(File.separator, "/");
   }
-  public String shinkPath(String path) {
+  private String shrinkPath(String path) {
     if ((path == null || path.length() == 0)) {
       return path;
     }
     return MacrosFactory.getGlobal().shrinkPath(path).replace(File.separator, "/");
   }
-  public Tuples._2<File, File> prepareFilesToOpenAndToDelete(Project project) {
-    File projectDir = getProjectDir(project);
-    if (!(this.getOpenCurrentProject())) {
-      return MultiTuple.<File,File>from(projectDir, (File) null);
-    }
-
-    // not my best code, not at all 
-    File temporalDir = FileUtil.createTmpDir();
-    File mpsDir = new File(temporalDir, ".mps");
-    mpsDir.mkdir();
-    File tmpProjectFile = new File(mpsDir, "modules.xml");
-    FileUtil.copyDir(new File(projectDir, ".mps"), mpsDir);
-
-    // replace project macro 
-    // todo: do that foreach file 
-    try {
-      Document document = JDOMUtil.loadDocument(tmpProjectFile);
-      replacePathMacro(document.getRootElement(), project);
-      JDOMUtil.writeDocument(document, tmpProjectFile);
-      projectDir = temporalDir;
-    } catch (JDOMException e) {
-      // ignore and hope for the best 
-    } catch (IOException e) {
-      // same as previous 
-    }
-
-    return MultiTuple.<File,File>from(projectDir, temporalDir);
+  public void setShrinkedSettingsPath(@NotNull String path) {
+    this.setSettingsPath(shrinkPath(path));
   }
-  private File getProjectDir(Project currentProject) {
-    if (this.getOpenCurrentProject()) {
-      return new File(currentProject.getBasePath());
-    }
-    if (this.getProjectToOpen() != null) {
-      return new File(expandPath(this.getProjectToOpen()));
-    }
-    return null;
+  private String getDefaultSettingsPath() {
+    String defaultConfigPathFor = PathManager.getDefaultConfigPathFor("MPSInstanceRC");
+    String defaultSettingsPath = Paths.get(defaultConfigPathFor).getParent().toAbsolutePath().toString();
+    return shrinkPath(defaultSettingsPath);
   }
-  private void replacePathMacro(Element element, Project project) {
-    String path = "path";
-    String value = element.getAttributeValue(path);
-    if ((value != null && value.length() > 0)) {
-      // nooooooooo 
-      element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(getProjectDir(project).getPath())).expandPath(value.replace("$PROJECT_DIR$", getProjectDir(project).getPath())));
-    }
-    for (Element child : ListSequence.fromList(element.getChildren())) {
-      replacePathMacro((Element) child, project);
-    }
+  public String getExpandedSettingsPath() {
+    String notExpanded = this.getSettingsPath();
+    return expandPath(notExpanded);
+  }
+  public File getPluginsPath() {
+    String configPath = new File(getExpandedSettingsPath(), "config").getAbsolutePath();
+    return new File(configPath, "plugins");
   }
   @Override
   public MpsStartupSettings_Configuration clone() {
-    MpsStartupSettings_Configuration clone = null;
+    MpsStartupSettings_Configuration clone = createCloneTemplate();
     try {
-      clone = createCloneTemplate();
+      // beware, PersistenceConfiguration.this of newly created MyState instance would be the same as 
+      // the value of myState, and != clone as regular Java passer-by would expect. 
       clone.myState = (MpsStartupSettings_Configuration.MyState) myState.clone();
-      return clone;
     } catch (CloneNotSupportedException ex) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", ex);
@@ -160,13 +99,10 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
     }
     return clone;
   }
-  public class MyState {
+  public final class MyState {
     public String myVmOptions;
     public String myJrePath;
-    public String mySystemPath = shinkPath(Mps_Command.getDefaultSystemPath());
-    public String myConfigurationPath = shinkPath(Mps_Command.getDefaultConfigurationPath());
-    public boolean myOpenCurrentProject = false;
-    public String myProjectToOpen;
+    public String mySettingsPath = getDefaultSettingsPath();
     public MyState() {
     }
     @Override
@@ -174,10 +110,7 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
       MpsStartupSettings_Configuration.MyState state = new MpsStartupSettings_Configuration.MyState();
       state.myVmOptions = myVmOptions;
       state.myJrePath = myJrePath;
-      state.mySystemPath = mySystemPath;
-      state.myConfigurationPath = myConfigurationPath;
-      state.myOpenCurrentProject = myOpenCurrentProject;
-      state.myProjectToOpen = myProjectToOpen;
+      state.mySettingsPath = mySettingsPath;
       return state;
     }
   }

@@ -34,6 +34,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
   private TestNameMap<TestCaseTreeNode, TestMethodTreeNode> myMap;
   private boolean myAllTree = true;
   private final TestTreeIconAnimator myAnimator;
+
   public TestTree(TestRunState state, @NotNull Project project, Disposable disposable) {
     Disposer.register(disposable, this);
     myState = state;

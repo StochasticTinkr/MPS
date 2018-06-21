@@ -40,7 +40,7 @@ public class ReferenceTreeNode extends TextTreeNode implements NodeTargetProvide
     final Icon iconForRef = PowerSaveMode.isEnabled()
                             ? MPSIcons.Nodes.Node
                             // TODO: reference to generated code. Extract some interface for icons to source code.
-                            : ((BaseIconManager) ApplicationManager.getApplication().getComponent(GlobalIconManager.class)).getIconFor(ref.getTargetNode());
+                            : GlobalIconManager.getInstance().getIconFor(ref.getTargetNode());
     // Decorate icon with symlink pictogram
     setIcon(LayeredIcon.create(iconForRef, Nodes.Symlink));
   }

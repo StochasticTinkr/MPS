@@ -6,7 +6,6 @@ import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -27,18 +26,19 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
-import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.actions.ConfigurationContext;
+import com.intellij.psi.PsiElement;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.behavior.StaticMethodDeclaration__BehaviorDescriptor;
-import java.util.Objects;
-import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -52,8 +52,6 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 
 public class Java_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = LogManager.getLogger(Java_Configuration.class);
-  @NotNull
-  private Java_Configuration.MyState myState = new Java_Configuration.MyState();
   private NodeBySeveralConcepts_Configuration myNode = new NodeBySeveralConcepts_Configuration(ListSequence.fromListAndArray(new ArrayList<NodesDescriptor>(), new NodesDescriptor(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return (ClassConcept__BehaviorDescriptor.getMainMethod_idhEwIClG.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) != null);
@@ -83,7 +81,6 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
   }
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
-    element.addContent(XmlSerializer.serialize(myState));
     {
       Element fieldElement = new Element("myNode");
       myNode.writeExternal(fieldElement);
@@ -100,7 +97,6 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     if (element == null) {
       throw new InvalidDataException("Cant read " + this + ": element is null.");
     }
-    XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
     {
       Element fieldElement = element.getChild("myNode");
       if (fieldElement != null) {
@@ -129,56 +125,43 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     return myRunParameters;
   }
   public boolean isFromContext(@NotNull ConfigurationContext context) {
-    if (context.getPsiLocation() instanceof MPSPsiElement) {
-      MPSPsiElement mpsElement = (MPSPsiElement) context.getPsiLocation();
-      if (mpsElement != null) {
-        final SNodeReference nodePointer = mpsElement.getUnresolvedItem(SNodeReference.class);
-        final SRepository repository = mpsElement.getMPSProject().getRepository();
-        return new ModelAccessHelper(repository).runReadAction(new Computable<Boolean>() {
-          public Boolean compute() {
-            SNode source = nodePointer.resolve(repository);
-            if (!(SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
-              SNode mainMethodCandidate = SNodeOperations.getNodeAncestor(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), true, false);
-              if (mainMethodCandidate != null && (boolean) StaticMethodDeclaration__BehaviorDescriptor.isMainMethod_idhEwJkuu.invoke(mainMethodCandidate)) {
-                SNode classifier = SNodeOperations.getNodeAncestor(mainMethodCandidate, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
-                source = classifier;
-              } else {
-                return false;
-              }
-            }
-            return Objects.equals(source.getReference(), Java_Configuration.this.getNode().getNode());
-          }
-        });
+    PsiElement psiLocation = context.getPsiLocation();
+    if (psiLocation instanceof MPSPsiElement) {
+      MPSPsiElement mpsElement = (MPSPsiElement) psiLocation;
+      final SNodeReference nodePointer = mpsElement.getUnresolvedItem(SNodeReference.class);
+      if (Objects.equals(nodePointer, this.getNode().getNode())) {
+        return true;
       }
+      final SRepository repository = mpsElement.getMPSProject().getRepository();
+      return new ModelAccessHelper(repository).runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          SNode source = nodePointer.resolve(repository);
+          if (!(SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
+            // XXX Seems that this code assumes source to be descendant of a classifier, exactly as described in MPS-25114 
+            //     If, however, source points to a non-classifier root (e.g. samples.shapes.Canvas which implements IMainClass) 
+            //     the code below looks odd (StaticMethodDeclaration ancestor?!). 
+            SNode mainMethodCandidate = SNodeOperations.getNodeAncestor(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), true, false);
+            if (mainMethodCandidate != null && (boolean) StaticMethodDeclaration__BehaviorDescriptor.isMainMethod_idhEwJkuu.invoke(mainMethodCandidate)) {
+              SNode classifier = SNodeOperations.getNodeAncestor(mainMethodCandidate, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+              source = classifier;
+            } else {
+              return false;
+            }
+          }
+          return Objects.equals(SNodeOperations.getPointer(source), Java_Configuration.this.getNode().getNode());
+        }
+      });
     }
     return false;
   }
   @Override
   public Java_Configuration clone() {
-    Java_Configuration clone = null;
-    try {
-      clone = createCloneTemplate();
-      clone.myState = (Java_Configuration.MyState) myState.clone();
-      clone.myNode = (NodeBySeveralConcepts_Configuration) myNode.clone();
-      clone.myRunParameters = (JavaRunParameters_Configuration) myRunParameters.clone();
-      return clone;
-    } catch (CloneNotSupportedException ex) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("", ex);
-      }
-    }
+    Java_Configuration clone = createCloneTemplate();
+    clone.myNode = (NodeBySeveralConcepts_Configuration) myNode.clone();
+    clone.myRunParameters = (JavaRunParameters_Configuration) myRunParameters.clone();
     return clone;
   }
-  public class MyState {
-    public MyState() {
-    }
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      Java_Configuration.MyState state = new Java_Configuration.MyState();
-      return state;
-    }
-  }
-  public Java_Configuration(Project project, Java_Configuration_Factory factory, String name) {
+  public Java_Configuration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
   @Nullable

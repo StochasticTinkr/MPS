@@ -81,7 +81,7 @@ import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
     }
     @Override
     /*package*/ void execute() {
-      SPropertyOperations.set(SNodeOperations.cast(myElement, MetaAdapterFactory.getConcept(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, "jetbrains.mps.lang.text.structure.Word")), MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), mySplitter.getLeftText());
+      SPropertyOperations.assign(SNodeOperations.cast(myElement, MetaAdapterFactory.getConcept(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, "jetbrains.mps.lang.text.structure.Word")), MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), mySplitter.getLeftText());
       super.execute();
     }
 
@@ -131,9 +131,9 @@ import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
     @Override
     /*package*/ void execute() {
       if (myAddNext) {
-        SPropertyOperations.set(SNodeOperations.cast(myElement, MetaAdapterFactory.getConcept(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, "jetbrains.mps.lang.text.structure.Word")), MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), mySplitter.getLeftText());
+        SPropertyOperations.assign(SNodeOperations.cast(myElement, MetaAdapterFactory.getConcept(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, "jetbrains.mps.lang.text.structure.Word")), MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), mySplitter.getLeftText());
       } else {
-        SPropertyOperations.set(SNodeOperations.cast(myElement, MetaAdapterFactory.getConcept(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, "jetbrains.mps.lang.text.structure.Word")), MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), mySplitter.getRightText());
+        SPropertyOperations.assign(SNodeOperations.cast(myElement, MetaAdapterFactory.getConcept(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, "jetbrains.mps.lang.text.structure.Word")), MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), mySplitter.getRightText());
       }
       super.execute();
     }
@@ -181,9 +181,9 @@ import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
     }
     /*package*/ SNode copyWord(String text) {
       SNode copy = SNodeOperations.copyNode(myWord);
-      SPropertyOperations.set(copy, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), text);
+      SPropertyOperations.assign(copy, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), text);
       if (isEmptyString(SPropertyOperations.getString(copy, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value")))) {
-        SPropertyOperations.set(copy, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x57d1fa7f2af1d485L, "url"), null);
+        SPropertyOperations.assign(copy, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x57d1fa7f2af1d485L, "url"), null);
       }
       return copy;
     }

@@ -9,7 +9,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.update.UpdateSession" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment" />
   </dependency>
   <dependency className="jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment" file="EditorBuilderEnvironment.java">

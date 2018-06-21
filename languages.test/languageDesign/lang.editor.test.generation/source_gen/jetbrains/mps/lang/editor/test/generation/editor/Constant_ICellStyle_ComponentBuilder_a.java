@@ -28,10 +28,10 @@ import jetbrains.mps.lang.editor.test.generation.editor.TestTargetStyleSheet_Sty
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_2osvnk_a();
+    return createConstant_0();
   }
 
-  private EditorCell createConstant_2osvnk_a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "parentStyleClass");
     editorCell.setCellId("Constant_2osvnk_a");
     Style style = new StyleImpl();

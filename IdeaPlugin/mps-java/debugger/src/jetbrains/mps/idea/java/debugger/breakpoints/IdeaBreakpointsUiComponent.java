@@ -47,6 +47,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -94,13 +95,14 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
   protected Set<BreakpointWithHighlighter> getBreakpointsForComponent(@NotNull final EditorComponent component) {
     final Set<BreakpointWithHighlighter> result = new HashSet<BreakpointWithHighlighter>();
     final List<Breakpoint> breakpoints = myDebuggerManager.getBreakpointManager().getBreakpoints(); //XDebuggerManager.getInstance(myProject).getBreakpointManager()
-    ProjectHelper.getModelAccess(myProject).runReadAction(new Runnable() {
+    SRepository repository = ProjectHelper.getProjectRepository(myProject);
+    repository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         for (Breakpoint breakpoint : breakpoints) {
           if (breakpoint instanceof BreakpointWithHighlighter) {
             BreakpointWithHighlighter breakpointWithHighlighter = (BreakpointWithHighlighter) breakpoint;
-            SNode node = BreakpointPainter.getNodeForBreakpoint(breakpointWithHighlighter);
+            SNode node = BreakpointPainter.getNodeForBreakpoint(breakpointWithHighlighter, repository);
             if (node != null && EditorComponentUtil.isNodeShownInTheComponent(component, node)) {
               result.add(breakpointWithHighlighter);
             }
@@ -114,9 +116,10 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
   @Override
   @NotNull
   protected List<EditorComponent> getComponentsForBreakpoint(@NotNull final BreakpointWithHighlighter breakpoint) {
-    return new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).runReadAction(new Computable<List<EditorComponent>>() {
+    SRepository repository = ProjectHelper.getProjectRepository(myProject);
+    return new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<List<EditorComponent>>() {
       public List<EditorComponent> compute() {
-        SNode node = BreakpointPainter.getNodeForBreakpoint(breakpoint);
+        SNode node = BreakpointPainter.getNodeForBreakpoint(breakpoint, repository);
         if (node != null) {
           return EditorComponentUtil.findComponentForNode(node, myFileEditorManager);
         }

@@ -2,7 +2,7 @@
 <model ref="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
@@ -5995,6 +5995,163 @@
     <ref role="1XX52x" to="68nn:lKjGr4fekd" resolve="ImmediateCompletionChild" />
     <node concept="3F0A7n" id="2pIJmcs4s3d" role="2wV5jI">
       <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7DEfJmqPDQX">
+    <property role="3GE5qa" value="delete" />
+    <ref role="1XX52x" to="68nn:7DEfJmqPDQB" resolve="DelTestChildReferenceContainer" />
+    <node concept="3EZMnI" id="7DEfJmqPDQZ" role="2wV5jI">
+      <node concept="l2Vlx" id="7DEfJmqPDR0" role="2iSdaV" />
+      <node concept="3F0ifn" id="7DEfJmqPDR1" role="3EZMnx">
+        <property role="3F0ifm" value="del test child with reference container" />
+      </node>
+      <node concept="3F0ifn" id="7DEfJmqPDR2" role="3EZMnx">
+        <property role="3F0ifm" value="{" />
+        <node concept="3mYdg7" id="7DEfJmqPDR3" role="3F10Kt">
+          <property role="1413C4" value="body-brace" />
+        </node>
+        <node concept="ljvvj" id="7DEfJmqPDR4" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="7DEfJmqPDR5" role="3EZMnx">
+        <node concept="l2Vlx" id="7DEfJmqPDR6" role="2iSdaV" />
+        <node concept="lj46D" id="7DEfJmqPDR7" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="7DEfJmqPDR8" role="3EZMnx">
+          <property role="3F0ifm" value="child with usual reference" />
+        </node>
+        <node concept="3F0ifn" id="7DEfJmqPDR9" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="7DEfJmqPDRa" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="7DEfJmqPDRb" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="7DEfJmqPDRc" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:7DEfJmqPDQC" resolve="childWithUsualReference" />
+          <node concept="lj46D" id="7DEfJmqPDRd" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="7DEfJmqPDRe" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="7DEfJmqPDRf" role="3EZMnx">
+          <node concept="ljvvj" id="7DEfJmqPDRg" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="7DEfJmqPDRh" role="3EZMnx">
+          <property role="3F0ifm" value="child with smart reference" />
+        </node>
+        <node concept="3F0ifn" id="7DEfJmqPDRi" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="7DEfJmqPDRj" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="7DEfJmqPDRk" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="7DEfJmqPDRl" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:7DEfJmqPDQM" resolve="childWithSmartReference" />
+          <node concept="lj46D" id="7DEfJmqPDRm" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="7DEfJmqPDRn" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="5EogwwlOCaf" role="3EZMnx">
+          <node concept="ljvvj" id="5EogwwlOCag" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="5EogwwlOCae" role="3EZMnx">
+          <property role="3F0ifm" value="node to reference" />
+        </node>
+        <node concept="3F0ifn" id="5EogwwlOCab" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="5EogwwlOCac" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="5EogwwlOCad" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="5EogwwlOCa8" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:5EogwwlOCa4" resolve="childToReference" />
+          <node concept="lj46D" id="5EogwwlOCa9" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="5EogwwlOCaa" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="7DEfJmqPDRo" role="3EZMnx">
+        <property role="3F0ifm" value="}" />
+        <node concept="3mYdg7" id="7DEfJmqPDRp" role="3F10Kt">
+          <property role="1413C4" value="body-brace" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="7DEfJmqPDSu">
+    <property role="3GE5qa" value="delete" />
+    <ref role="1XX52x" to="68nn:7DEfJmqPDQG" resolve="DelTestChildWithUsualReference" />
+    <node concept="3EZMnI" id="7DEfJmqPDSw" role="2wV5jI">
+      <node concept="l2Vlx" id="7DEfJmqPDSx" role="2iSdaV" />
+      <node concept="3F0ifn" id="7DEfJmqPDSy" role="3EZMnx">
+        <property role="3F0ifm" value="del test child with usual reference" />
+      </node>
+      <node concept="1iCGBv" id="7DEfJmqPDS$" role="3EZMnx">
+        <ref role="1NtTu8" to="68nn:7DEfJmqPDSk" resolve="reference" />
+        <node concept="1sVBvm" id="7DEfJmqPDSB" role="1sWHZn">
+          <node concept="3F0A7n" id="7DEfJmqPDSD" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="7DEfJmqPDSE" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+        <node concept="11L4FC" id="7DEfJmqPDSF" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3mYdg7" id="7DEfJmqPDSG" role="3F10Kt">
+          <property role="1413C4" value="body-paren" />
+        </node>
+        <node concept="11LMrY" id="7DEfJmqPDSH" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="7DEfJmqPDSI" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+        <node concept="11L4FC" id="7DEfJmqPDSJ" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3mYdg7" id="7DEfJmqPDSK" role="3F10Kt">
+          <property role="1413C4" value="body-paren" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="7DEfJmqPDTk">
+    <property role="3GE5qa" value="delete" />
+    <ref role="1XX52x" to="68nn:7DEfJmqPDQH" resolve="DelTestChildWithSmartReference" />
+    <node concept="1iCGBv" id="7DEfJmqPDTm" role="2wV5jI">
+      <ref role="1NtTu8" to="68nn:7DEfJmqPDTa" resolve="reference" />
+      <node concept="1sVBvm" id="7DEfJmqPDTo" role="1sWHZn">
+        <node concept="3F0A7n" id="7DEfJmqPDTv" role="2wV5jI">
+          <property role="1Intyy" value="true" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

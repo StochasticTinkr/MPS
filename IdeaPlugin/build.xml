@@ -20,7 +20,7 @@
         ant -Dhome.idea_ce={IDEA_HOME_DIR} -Dhome.idea_ce.plugins={IDEA_PLUGINS_FOLDER} <task>
 
         e.g. for MacOs it will be:
-        ant -Dhome.idea_ce=/Applications/IntelliJ\ IDEA\ CE\ 2017.3.app/Contents/ -Dhome.idea_ce.plugins=~/Library/Application Support/IdeaIC2017.3 <task>
+        ant -Dhome.idea_ce=/Applications/IntelliJ\ IDEA\ CE\ 2018.2.app/Contents/ -Dhome.idea_ce.plugins=~/Library/Application Support/IdeaIC2018.2 <task>
 
      2. To run tests locally, it's sufficient to set home.idea_ce and home.jdk:
         ant -Dhome.idea_ce=/IDEA13/ -Dhome.jdk=/Library/Java/Home/ -f IdeaPlugin/build.xml clean zip runTests
@@ -109,15 +109,15 @@
       <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsJavaPlatform/lib/mps-java-platform.jar"/>
     </copy>
     <copy todir="${base_dir}/IdeaPlugin/mps-vcs/META-INF">
-      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsVcsCore/vcs-core/META-INF/MPSVcs.xml"/>
+      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsIdeaVcs/mps-vcs/META-INF/MPSVcs.xml"/>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-vcs/languages"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-vcs/languages">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsVcsCore/vcs-core/languages"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsIdeaVcs/mps-vcs/languages"/>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-vcs/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-vcs/lib">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsVcsCore/vcs-core/lib"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsIdeaVcs/mps-vcs/lib"/>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-migration/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-migration/lib">

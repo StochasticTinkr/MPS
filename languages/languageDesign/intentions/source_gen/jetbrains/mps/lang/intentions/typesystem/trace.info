@@ -13,6 +13,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)/1192798450063">
+    <file name="TypesystemDescriptor.java">
+      <node id="1192798450063" at="14,5,15,101" concept="4" />
+      <node id="1192798450063" at="15,101,16,47" concept="2" />
+      <node id="1192798450063" at="13,5,17,5" concept="0" />
+      <scope id="1192798450063" at="14,5,16,47">
+        <var name="inferenceRule" id="1192798450063" />
+      </scope>
+    </file>
     <file name="typeof_ConceptFunctionParameter_node_InferenceRule.java">
       <node id="1192798450065" at="22,142,23,431" concept="4" />
       <node id="1223982145698" at="24,5,25,71" concept="4" />
@@ -66,6 +74,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)/1240322703523">
+    <file name="TypesystemDescriptor.java">
+      <node id="1240322703523" at="18,5,19,106" concept="4" />
+      <node id="1240322703523" at="19,106,20,47" concept="2" />
+      <node id="1240322703523" at="17,5,21,5" concept="0" />
+      <scope id="1240322703523" at="18,5,20,47">
+        <var name="inferenceRule" id="1240322703523" />
+      </scope>
+    </file>
     <file name="typeof_ConceptFunctionParameter_parameter_InferenceRule.java">
       <node id="1240322768265" at="19,122,20,245" concept="4" />
       <node id="1240322726298" at="21,5,22,51" concept="4" />
@@ -106,6 +122,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)/3618415754251192148">
+    <file name="TypesystemDescriptor.java">
+      <node id="3618415754251192148" at="10,5,11,106" concept="4" />
+      <node id="3618415754251192148" at="11,106,12,47" concept="2" />
+      <node id="3618415754251192148" at="9,33,13,5" concept="0" />
+      <scope id="3618415754251192148" at="10,5,12,47">
+        <var name="inferenceRule" id="3618415754251192148" />
+      </scope>
+    </file>
     <file name="typeof_ConceptFunctionParameter_childNode_InferenceRule.java">
       <node id="3618415754251192278" at="20,5,21,46" concept="4" />
       <node id="3618415754251192278" at="21,46,22,206" concept="4" />
@@ -153,6 +177,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)/6490020717319166398">
+    <file name="TypesystemDescriptor.java">
+      <node id="6490020717319166398" at="22,5,23,102" concept="4" />
+      <node id="6490020717319166398" at="23,102,24,47" concept="2" />
+      <node id="6490020717319166398" at="21,5,25,5" concept="0" />
+      <scope id="6490020717319166398" at="22,5,24,47">
+        <var name="inferenceRule" id="6490020717319166398" />
+      </scope>
+    </file>
     <file name="typeof_ForConceptParameterDeclaration_InferenceRule.java">
       <node id="6490020717319166730" at="19,5,20,44" concept="4" />
       <node id="6490020717319166730" at="20,44,21,206" concept="4" />

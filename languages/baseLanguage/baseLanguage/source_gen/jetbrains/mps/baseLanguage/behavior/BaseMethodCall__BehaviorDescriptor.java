@@ -48,6 +48,9 @@ public final class BaseMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
       } else {
         variableExpectedName = name;
       }
+      if (variableExpectedName.length() > 0 && Character.isDigit(variableExpectedName.charAt(0))) {
+        variableExpectedName = "_" + variableExpectedName;
+      }
     }
     return NameUtil.decapitalize(variableExpectedName);
   }

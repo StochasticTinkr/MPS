@@ -8,282 +8,360 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)/2534942168317963684">
     <file name="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java">
-      <node id="2534942168317963684" at="18,67,19,25" concept="5" />
-      <node id="2534942168317963684" at="23,89,24,143" concept="1" />
-      <node id="2534942168317963684" at="30,51,31,72" concept="1" />
-      <node id="2534942168317967778" at="31,72,32,37" concept="1" />
-      <node id="3694071247855997989" at="32,37,33,71" concept="1" />
-      <node id="2534942168318029728" at="33,71,34,85" concept="1" />
-      <node id="2534942168318030531" at="34,85,35,72" concept="1" />
-      <node id="2943528396300262139" at="35,72,36,76" concept="1" />
-      <node id="2534942168317963684" at="15,0,17,0" concept="4" trace="ourParamCache" />
-      <node id="2534942168317963684" at="18,0,21,0" concept="0" trace="AddMenuPart_ParameterizedSubstitute_smartComplete_Test#()V" />
-      <node id="2534942168317963684" at="22,0,26,0" concept="2" trace="test_AddMenuPart_ParameterizedSubstitute_smartComplete#()V" />
-      <node id="2534942168317963684" at="29,0,38,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="2534942168317963684" at="18,67,19,25" />
-      <scope id="2534942168317963684" at="23,89,24,143" />
-      <scope id="2534942168317963684" at="18,0,21,0" />
-      <scope id="2534942168317963684" at="22,0,26,0" />
-      <scope id="2534942168317963684" at="30,51,36,76" />
-      <scope id="2534942168317963684" at="29,0,38,0" />
-      <unit id="2534942168317963684" at="27,0,39,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_smartComplete_Test$TestBody" />
-      <unit id="2534942168317963684" at="13,0,40,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_smartComplete_Test" />
+      <node id="2534942168317963684" at="19,67,20,25" concept="5" />
+      <node id="2534942168317963684" at="24,89,25,91" concept="1" />
+      <node id="2534942168317963684" at="30,52,31,19" concept="5" />
+      <node id="2534942168317963684" at="35,51,36,72" concept="1" />
+      <node id="2534942168317967778" at="36,72,37,37" concept="1" />
+      <node id="3694071247855997989" at="37,37,38,71" concept="1" />
+      <node id="2534942168318029728" at="38,71,39,85" concept="1" />
+      <node id="2534942168318030531" at="39,85,40,72" concept="1" />
+      <node id="2943528396300262139" at="40,72,41,76" concept="1" />
+      <node id="2534942168317963684" at="16,0,18,0" concept="4" trace="ourParamCache" />
+      <node id="2534942168317963684" at="19,0,22,0" concept="0" trace="AddMenuPart_ParameterizedSubstitute_smartComplete_Test#()V" />
+      <node id="2534942168317963684" at="30,0,33,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="2534942168317963684" at="23,0,27,0" concept="2" trace="test_AddMenuPart_ParameterizedSubstitute_smartComplete#()V" />
+      <node id="2534942168317963684" at="34,0,43,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2534942168317963684" at="19,67,20,25" />
+      <scope id="2534942168317963684" at="24,89,25,91" />
+      <scope id="2534942168317963684" at="30,52,31,19" />
+      <scope id="2534942168317963684" at="19,0,22,0" />
+      <scope id="2534942168317963684" at="30,0,33,0">
+        <var name="owner" id="2534942168317963684" />
+      </scope>
+      <scope id="2534942168317963684" at="23,0,27,0" />
+      <scope id="2534942168317963684" at="35,51,41,76" />
+      <scope id="2534942168317963684" at="34,0,43,0" />
+      <unit id="2534942168317963684" at="28,0,44,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_smartComplete_Test$TestBody" />
+      <unit id="2534942168317963684" at="14,0,45,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_smartComplete_Test" />
     </file>
   </root>
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)/2534942168331319973">
     <file name="AddMenuPart_SimpleItemSubstitute_Test.java">
-      <node id="2534942168331319973" at="17,50,18,25" concept="5" />
-      <node id="2534942168331319973" at="22,72,23,126" concept="1" />
-      <node id="2534942168331319973" at="29,51,30,72" concept="1" />
-      <node id="5164819300891971614" at="30,72,31,30" concept="1" />
-      <node id="2534942168331319973" at="14,0,16,0" concept="4" trace="ourParamCache" />
-      <node id="2534942168331319973" at="17,0,20,0" concept="0" trace="AddMenuPart_SimpleItemSubstitute_Test#()V" />
-      <node id="2534942168331319973" at="21,0,25,0" concept="2" trace="test_AddMenuPart_SimpleItemSubstitute#()V" />
-      <node id="2534942168331319973" at="28,0,33,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="2534942168331319973" at="17,50,18,25" />
-      <scope id="2534942168331319973" at="22,72,23,126" />
-      <scope id="2534942168331319973" at="29,51,31,30" />
-      <scope id="2534942168331319973" at="17,0,20,0" />
-      <scope id="2534942168331319973" at="21,0,25,0" />
-      <scope id="2534942168331319973" at="28,0,33,0" />
-      <unit id="2534942168331319973" at="26,0,34,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_SimpleItemSubstitute_Test$TestBody" />
-      <unit id="2534942168331319973" at="12,0,35,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_SimpleItemSubstitute_Test" />
+      <node id="2534942168331319973" at="18,50,19,25" concept="5" />
+      <node id="2534942168331319973" at="23,72,24,74" concept="1" />
+      <node id="2534942168331319973" at="29,52,30,19" concept="5" />
+      <node id="2534942168331319973" at="34,51,35,72" concept="1" />
+      <node id="5164819300891971614" at="35,72,36,30" concept="1" />
+      <node id="2534942168331319973" at="15,0,17,0" concept="4" trace="ourParamCache" />
+      <node id="2534942168331319973" at="18,0,21,0" concept="0" trace="AddMenuPart_SimpleItemSubstitute_Test#()V" />
+      <node id="2534942168331319973" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="2534942168331319973" at="22,0,26,0" concept="2" trace="test_AddMenuPart_SimpleItemSubstitute#()V" />
+      <node id="2534942168331319973" at="33,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2534942168331319973" at="18,50,19,25" />
+      <scope id="2534942168331319973" at="23,72,24,74" />
+      <scope id="2534942168331319973" at="29,52,30,19" />
+      <scope id="2534942168331319973" at="34,51,36,30" />
+      <scope id="2534942168331319973" at="18,0,21,0" />
+      <scope id="2534942168331319973" at="29,0,32,0">
+        <var name="owner" id="2534942168331319973" />
+      </scope>
+      <scope id="2534942168331319973" at="22,0,26,0" />
+      <scope id="2534942168331319973" at="33,0,38,0" />
+      <unit id="2534942168331319973" at="27,0,39,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_SimpleItemSubstitute_Test$TestBody" />
+      <unit id="2534942168331319973" at="13,0,40,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_SimpleItemSubstitute_Test" />
     </file>
   </root>
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)/2550657305103524282">
     <file name="DontSubstiuteByDefault_Test.java">
-      <node id="2550657305103524282" at="18,40,19,25" concept="5" />
-      <node id="2550657305103524282" at="23,62,24,116" concept="1" />
-      <node id="2550657305103524282" at="30,51,31,72" concept="1" />
-      <node id="3694071247855998019" at="31,72,32,71" concept="1" />
-      <node id="2550657305104001899" at="32,71,33,85" concept="1" />
-      <node id="6866660893594420694" at="33,85,34,87" concept="1" />
-      <node id="6866660893594421553" at="34,87,35,72" concept="1" />
-      <node id="2550657305103524282" at="15,0,17,0" concept="4" trace="ourParamCache" />
-      <node id="2550657305103524282" at="18,0,21,0" concept="0" trace="DontSubstiuteByDefault_Test#()V" />
-      <node id="2550657305103524282" at="22,0,26,0" concept="2" trace="test_DontSubstiuteByDefault#()V" />
-      <node id="2550657305103524282" at="29,0,37,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="2550657305103524282" at="18,40,19,25" />
-      <scope id="2550657305103524282" at="23,62,24,116" />
-      <scope id="2550657305103524282" at="18,0,21,0" />
-      <scope id="2550657305103524282" at="22,0,26,0" />
-      <scope id="2550657305103524282" at="30,51,35,72" />
-      <scope id="2550657305103524282" at="29,0,37,0" />
-      <unit id="2550657305103524282" at="27,0,38,0" name="jetbrains.mps.lang.actions.test.substitute.DontSubstiuteByDefault_Test$TestBody" />
-      <unit id="2550657305103524282" at="13,0,39,0" name="jetbrains.mps.lang.actions.test.substitute.DontSubstiuteByDefault_Test" />
+      <node id="2550657305103524282" at="19,40,20,25" concept="5" />
+      <node id="2550657305103524282" at="24,62,25,64" concept="1" />
+      <node id="2550657305103524282" at="30,52,31,19" concept="5" />
+      <node id="2550657305103524282" at="35,51,36,72" concept="1" />
+      <node id="3694071247855998019" at="36,72,37,71" concept="1" />
+      <node id="2550657305104001899" at="37,71,38,85" concept="1" />
+      <node id="6866660893594420694" at="38,85,39,87" concept="1" />
+      <node id="6866660893594421553" at="39,87,40,72" concept="1" />
+      <node id="2550657305103524282" at="16,0,18,0" concept="4" trace="ourParamCache" />
+      <node id="2550657305103524282" at="19,0,22,0" concept="0" trace="DontSubstiuteByDefault_Test#()V" />
+      <node id="2550657305103524282" at="30,0,33,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="2550657305103524282" at="23,0,27,0" concept="2" trace="test_DontSubstiuteByDefault#()V" />
+      <node id="2550657305103524282" at="34,0,42,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2550657305103524282" at="19,40,20,25" />
+      <scope id="2550657305103524282" at="24,62,25,64" />
+      <scope id="2550657305103524282" at="30,52,31,19" />
+      <scope id="2550657305103524282" at="19,0,22,0" />
+      <scope id="2550657305103524282" at="30,0,33,0">
+        <var name="owner" id="2550657305103524282" />
+      </scope>
+      <scope id="2550657305103524282" at="23,0,27,0" />
+      <scope id="2550657305103524282" at="35,51,40,72" />
+      <scope id="2550657305103524282" at="34,0,42,0" />
+      <unit id="2550657305103524282" at="28,0,43,0" name="jetbrains.mps.lang.actions.test.substitute.DontSubstiuteByDefault_Test$TestBody" />
+      <unit id="2550657305103524282" at="14,0,44,0" name="jetbrains.mps.lang.actions.test.substitute.DontSubstiuteByDefault_Test" />
     </file>
   </root>
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)/2870536390420394081">
     <file name="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java">
-      <node id="2870536390420394081" at="17,63,18,25" concept="5" />
-      <node id="2870536390420394081" at="22,85,23,139" concept="1" />
-      <node id="2870536390420394081" at="29,51,30,72" concept="1" />
-      <node id="2870536390420394090" at="30,72,31,34" concept="1" />
-      <node id="2870536390420394081" at="14,0,16,0" concept="4" trace="ourParamCache" />
-      <node id="2870536390420394081" at="17,0,20,0" concept="0" trace="AddMenuPart_WrapperSubstituteDefaultSelection_Test#()V" />
-      <node id="2870536390420394081" at="21,0,25,0" concept="2" trace="test_AddMenuPart_WrapperSubstituteDefaultSelection#()V" />
-      <node id="2870536390420394081" at="28,0,33,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="2870536390420394081" at="17,63,18,25" />
-      <scope id="2870536390420394081" at="22,85,23,139" />
-      <scope id="2870536390420394081" at="29,51,31,34" />
-      <scope id="2870536390420394081" at="17,0,20,0" />
-      <scope id="2870536390420394081" at="21,0,25,0" />
-      <scope id="2870536390420394081" at="28,0,33,0" />
-      <unit id="2870536390420394081" at="26,0,34,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstituteDefaultSelection_Test$TestBody" />
-      <unit id="2870536390420394081" at="12,0,35,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstituteDefaultSelection_Test" />
+      <node id="2870536390420394081" at="18,63,19,25" concept="5" />
+      <node id="2870536390420394081" at="23,85,24,87" concept="1" />
+      <node id="2870536390420394081" at="29,52,30,19" concept="5" />
+      <node id="2870536390420394081" at="34,51,35,72" concept="1" />
+      <node id="2870536390420394090" at="35,72,36,34" concept="1" />
+      <node id="2870536390420394081" at="15,0,17,0" concept="4" trace="ourParamCache" />
+      <node id="2870536390420394081" at="18,0,21,0" concept="0" trace="AddMenuPart_WrapperSubstituteDefaultSelection_Test#()V" />
+      <node id="2870536390420394081" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="2870536390420394081" at="22,0,26,0" concept="2" trace="test_AddMenuPart_WrapperSubstituteDefaultSelection#()V" />
+      <node id="2870536390420394081" at="33,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2870536390420394081" at="18,63,19,25" />
+      <scope id="2870536390420394081" at="23,85,24,87" />
+      <scope id="2870536390420394081" at="29,52,30,19" />
+      <scope id="2870536390420394081" at="34,51,36,34" />
+      <scope id="2870536390420394081" at="18,0,21,0" />
+      <scope id="2870536390420394081" at="29,0,32,0">
+        <var name="owner" id="2870536390420394081" />
+      </scope>
+      <scope id="2870536390420394081" at="22,0,26,0" />
+      <scope id="2870536390420394081" at="33,0,38,0" />
+      <unit id="2870536390420394081" at="27,0,39,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstituteDefaultSelection_Test$TestBody" />
+      <unit id="2870536390420394081" at="13,0,40,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstituteDefaultSelection_Test" />
     </file>
   </root>
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)/3213804652589013780">
     <file name="AddMenuPart_ConceptSubstitute_Test.java">
-      <node id="3213804652589013780" at="19,47,20,25" concept="5" />
-      <node id="3213804652589013780" at="24,69,25,123" concept="1" />
-      <node id="3213804652589013780" at="31,51,32,72" concept="1" />
-      <node id="3694071247855998027" at="32,72,33,71" concept="1" />
-      <node id="3213804652592951689" at="33,71,34,82" concept="1" />
-      <node id="3213804652589013780" at="16,0,18,0" concept="4" trace="ourParamCache" />
-      <node id="3213804652589013780" at="19,0,22,0" concept="0" trace="AddMenuPart_ConceptSubstitute_Test#()V" />
-      <node id="3213804652589013780" at="23,0,27,0" concept="2" trace="test_AddMenuPart_ConceptSubstitute#()V" />
-      <node id="3213804652589013780" at="30,0,36,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="3213804652589013780" at="19,47,20,25" />
-      <scope id="3213804652589013780" at="24,69,25,123" />
-      <scope id="3213804652589013780" at="19,0,22,0" />
-      <scope id="3213804652589013780" at="31,51,34,82" />
-      <scope id="3213804652589013780" at="23,0,27,0" />
-      <scope id="3213804652589013780" at="30,0,36,0" />
-      <unit id="3213804652589013780" at="28,0,37,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ConceptSubstitute_Test$TestBody" />
-      <unit id="3213804652589013780" at="14,0,38,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ConceptSubstitute_Test" />
+      <node id="3213804652589013780" at="20,47,21,25" concept="5" />
+      <node id="3213804652589013780" at="25,69,26,71" concept="1" />
+      <node id="3213804652589013780" at="31,52,32,19" concept="5" />
+      <node id="3213804652589013780" at="36,51,37,72" concept="1" />
+      <node id="3694071247855998027" at="37,72,38,71" concept="1" />
+      <node id="3213804652592951689" at="38,71,39,82" concept="1" />
+      <node id="3213804652589013780" at="17,0,19,0" concept="4" trace="ourParamCache" />
+      <node id="3213804652589013780" at="20,0,23,0" concept="0" trace="AddMenuPart_ConceptSubstitute_Test#()V" />
+      <node id="3213804652589013780" at="31,0,34,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="3213804652589013780" at="24,0,28,0" concept="2" trace="test_AddMenuPart_ConceptSubstitute#()V" />
+      <node id="3213804652589013780" at="35,0,41,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3213804652589013780" at="20,47,21,25" />
+      <scope id="3213804652589013780" at="25,69,26,71" />
+      <scope id="3213804652589013780" at="31,52,32,19" />
+      <scope id="3213804652589013780" at="20,0,23,0" />
+      <scope id="3213804652589013780" at="31,0,34,0">
+        <var name="owner" id="3213804652589013780" />
+      </scope>
+      <scope id="3213804652589013780" at="36,51,39,82" />
+      <scope id="3213804652589013780" at="24,0,28,0" />
+      <scope id="3213804652589013780" at="35,0,41,0" />
+      <unit id="3213804652589013780" at="29,0,42,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ConceptSubstitute_Test$TestBody" />
+      <unit id="3213804652589013780" at="15,0,43,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ConceptSubstitute_Test" />
     </file>
   </root>
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)/3286607483605154581">
     <file name="AddMenuPart_ParameterizedSubstitute_Test.java">
-      <node id="3286607483605154581" at="17,53,18,25" concept="5" />
-      <node id="3286607483605154581" at="22,75,23,129" concept="1" />
-      <node id="3286607483605154581" at="29,51,30,72" concept="1" />
-      <node id="3286607483605960932" at="30,72,31,37" concept="1" />
-      <node id="3286607483605154581" at="14,0,16,0" concept="4" trace="ourParamCache" />
-      <node id="3286607483605154581" at="17,0,20,0" concept="0" trace="AddMenuPart_ParameterizedSubstitute_Test#()V" />
-      <node id="3286607483605154581" at="21,0,25,0" concept="2" trace="test_AddMenuPart_ParameterizedSubstitute#()V" />
-      <node id="3286607483605154581" at="28,0,33,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="3286607483605154581" at="17,53,18,25" />
-      <scope id="3286607483605154581" at="22,75,23,129" />
-      <scope id="3286607483605154581" at="29,51,31,37" />
-      <scope id="3286607483605154581" at="17,0,20,0" />
-      <scope id="3286607483605154581" at="21,0,25,0" />
-      <scope id="3286607483605154581" at="28,0,33,0" />
-      <unit id="3286607483605154581" at="26,0,34,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_Test$TestBody" />
-      <unit id="3286607483605154581" at="12,0,35,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_Test" />
+      <node id="3286607483605154581" at="18,53,19,25" concept="5" />
+      <node id="3286607483605154581" at="23,75,24,77" concept="1" />
+      <node id="3286607483605154581" at="29,52,30,19" concept="5" />
+      <node id="3286607483605154581" at="34,51,35,72" concept="1" />
+      <node id="3286607483605960932" at="35,72,36,37" concept="1" />
+      <node id="3286607483605154581" at="15,0,17,0" concept="4" trace="ourParamCache" />
+      <node id="3286607483605154581" at="18,0,21,0" concept="0" trace="AddMenuPart_ParameterizedSubstitute_Test#()V" />
+      <node id="3286607483605154581" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="3286607483605154581" at="22,0,26,0" concept="2" trace="test_AddMenuPart_ParameterizedSubstitute#()V" />
+      <node id="3286607483605154581" at="33,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3286607483605154581" at="18,53,19,25" />
+      <scope id="3286607483605154581" at="23,75,24,77" />
+      <scope id="3286607483605154581" at="29,52,30,19" />
+      <scope id="3286607483605154581" at="34,51,36,37" />
+      <scope id="3286607483605154581" at="18,0,21,0" />
+      <scope id="3286607483605154581" at="29,0,32,0">
+        <var name="owner" id="3286607483605154581" />
+      </scope>
+      <scope id="3286607483605154581" at="22,0,26,0" />
+      <scope id="3286607483605154581" at="33,0,38,0" />
+      <unit id="3286607483605154581" at="27,0,39,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_Test$TestBody" />
+      <unit id="3286607483605154581" at="13,0,40,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_Test" />
     </file>
   </root>
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)/5164819300891972344">
     <file name="AddMenuPart_SimpleItemSubstitute_smartComplete_Test.java">
-      <node id="5164819300891972344" at="18,64,19,25" concept="5" />
-      <node id="5164819300891972344" at="23,86,24,140" concept="1" />
-      <node id="5164819300891972344" at="30,51,31,72" concept="1" />
-      <node id="5164819300891972352" at="31,72,32,24" concept="1" />
-      <node id="3694071247855998013" at="32,24,33,71" concept="1" />
-      <node id="5164819300891979049" at="33,71,34,85" concept="1" />
-      <node id="5164819300891979055" at="34,85,35,72" concept="1" />
-      <node id="2943528396300262532" at="35,72,36,76" concept="1" />
-      <node id="5164819300891978182" at="36,76,37,0" concept="3" />
-      <node id="5164819300891972344" at="15,0,17,0" concept="4" trace="ourParamCache" />
-      <node id="5164819300891972344" at="18,0,21,0" concept="0" trace="AddMenuPart_SimpleItemSubstitute_smartComplete_Test#()V" />
-      <node id="5164819300891972344" at="22,0,26,0" concept="2" trace="test_AddMenuPart_SimpleItemSubstitute_smartComplete#()V" />
-      <node id="5164819300891972344" at="29,0,39,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="5164819300891972344" at="18,64,19,25" />
-      <scope id="5164819300891972344" at="23,86,24,140" />
-      <scope id="5164819300891972344" at="18,0,21,0" />
-      <scope id="5164819300891972344" at="22,0,26,0" />
-      <scope id="5164819300891972344" at="30,51,37,0" />
-      <scope id="5164819300891972344" at="29,0,39,0" />
-      <unit id="5164819300891972344" at="27,0,40,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_SimpleItemSubstitute_smartComplete_Test$TestBody" />
-      <unit id="5164819300891972344" at="13,0,41,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_SimpleItemSubstitute_smartComplete_Test" />
+      <node id="5164819300891972344" at="19,64,20,25" concept="5" />
+      <node id="5164819300891972344" at="24,86,25,88" concept="1" />
+      <node id="5164819300891972344" at="30,52,31,19" concept="5" />
+      <node id="5164819300891972344" at="35,51,36,72" concept="1" />
+      <node id="5164819300891972352" at="36,72,37,24" concept="1" />
+      <node id="3694071247855998013" at="37,24,38,71" concept="1" />
+      <node id="5164819300891979049" at="38,71,39,85" concept="1" />
+      <node id="5164819300891979055" at="39,85,40,72" concept="1" />
+      <node id="2943528396300262532" at="40,72,41,76" concept="1" />
+      <node id="5164819300891978182" at="41,76,42,0" concept="3" />
+      <node id="5164819300891972344" at="16,0,18,0" concept="4" trace="ourParamCache" />
+      <node id="5164819300891972344" at="19,0,22,0" concept="0" trace="AddMenuPart_SimpleItemSubstitute_smartComplete_Test#()V" />
+      <node id="5164819300891972344" at="30,0,33,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="5164819300891972344" at="23,0,27,0" concept="2" trace="test_AddMenuPart_SimpleItemSubstitute_smartComplete#()V" />
+      <node id="5164819300891972344" at="34,0,44,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5164819300891972344" at="19,64,20,25" />
+      <scope id="5164819300891972344" at="24,86,25,88" />
+      <scope id="5164819300891972344" at="30,52,31,19" />
+      <scope id="5164819300891972344" at="19,0,22,0" />
+      <scope id="5164819300891972344" at="30,0,33,0">
+        <var name="owner" id="5164819300891972344" />
+      </scope>
+      <scope id="5164819300891972344" at="23,0,27,0" />
+      <scope id="5164819300891972344" at="35,51,42,0" />
+      <scope id="5164819300891972344" at="34,0,44,0" />
+      <unit id="5164819300891972344" at="28,0,45,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_SimpleItemSubstitute_smartComplete_Test$TestBody" />
+      <unit id="5164819300891972344" at="14,0,46,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_SimpleItemSubstitute_smartComplete_Test" />
     </file>
   </root>
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)/5164819300892646889">
     <file name="AddMenuPart_WrapperSubstitute_Test.java">
-      <node id="5164819300892646889" at="19,47,20,25" concept="5" />
-      <node id="5164819300892646889" at="24,69,25,123" concept="1" />
-      <node id="5164819300892646889" at="31,51,32,72" concept="1" />
-      <node id="3694071247855998047" at="32,72,33,71" concept="1" />
-      <node id="8064223962396962880" at="33,71,34,82" concept="1" />
-      <node id="5164819300892646889" at="16,0,18,0" concept="4" trace="ourParamCache" />
-      <node id="5164819300892646889" at="19,0,22,0" concept="0" trace="AddMenuPart_WrapperSubstitute_Test#()V" />
-      <node id="5164819300892646889" at="23,0,27,0" concept="2" trace="test_AddMenuPart_WrapperSubstitute#()V" />
-      <node id="5164819300892646889" at="30,0,36,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="5164819300892646889" at="19,47,20,25" />
-      <scope id="5164819300892646889" at="24,69,25,123" />
-      <scope id="5164819300892646889" at="19,0,22,0" />
-      <scope id="5164819300892646889" at="31,51,34,82" />
-      <scope id="5164819300892646889" at="23,0,27,0" />
-      <scope id="5164819300892646889" at="30,0,36,0" />
-      <unit id="5164819300892646889" at="28,0,37,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstitute_Test$TestBody" />
-      <unit id="5164819300892646889" at="14,0,38,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstitute_Test" />
+      <node id="5164819300892646889" at="20,47,21,25" concept="5" />
+      <node id="5164819300892646889" at="25,69,26,71" concept="1" />
+      <node id="5164819300892646889" at="31,52,32,19" concept="5" />
+      <node id="5164819300892646889" at="36,51,37,72" concept="1" />
+      <node id="3694071247855998047" at="37,72,38,71" concept="1" />
+      <node id="8064223962396962880" at="38,71,39,82" concept="1" />
+      <node id="5164819300892646889" at="17,0,19,0" concept="4" trace="ourParamCache" />
+      <node id="5164819300892646889" at="20,0,23,0" concept="0" trace="AddMenuPart_WrapperSubstitute_Test#()V" />
+      <node id="5164819300892646889" at="31,0,34,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="5164819300892646889" at="24,0,28,0" concept="2" trace="test_AddMenuPart_WrapperSubstitute#()V" />
+      <node id="5164819300892646889" at="35,0,41,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5164819300892646889" at="20,47,21,25" />
+      <scope id="5164819300892646889" at="25,69,26,71" />
+      <scope id="5164819300892646889" at="31,52,32,19" />
+      <scope id="5164819300892646889" at="20,0,23,0" />
+      <scope id="5164819300892646889" at="31,0,34,0">
+        <var name="owner" id="5164819300892646889" />
+      </scope>
+      <scope id="5164819300892646889" at="36,51,39,82" />
+      <scope id="5164819300892646889" at="24,0,28,0" />
+      <scope id="5164819300892646889" at="35,0,41,0" />
+      <unit id="5164819300892646889" at="29,0,42,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstitute_Test$TestBody" />
+      <unit id="5164819300892646889" at="15,0,43,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstitute_Test" />
     </file>
   </root>
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)/6866660893594595018">
     <file name="ConceptSubstitutePart_Test.java">
-      <node id="6866660893594595018" at="17,39,18,25" concept="5" />
-      <node id="6866660893594595018" at="22,61,23,115" concept="1" />
-      <node id="6866660893594595018" at="29,51,30,72" concept="1" />
-      <node id="3213804652571125191" at="30,72,31,25" concept="1" />
-      <node id="3694071247855998071" at="31,25,32,71" concept="1" />
-      <node id="6866660893594595018" at="14,0,16,0" concept="4" trace="ourParamCache" />
-      <node id="6866660893594595018" at="17,0,20,0" concept="0" trace="ConceptSubstitutePart_Test#()V" />
-      <node id="6866660893594595018" at="21,0,25,0" concept="2" trace="test_ConceptSubstitutePart#()V" />
-      <node id="6866660893594595018" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6866660893594595018" at="17,39,18,25" />
-      <scope id="6866660893594595018" at="22,61,23,115" />
-      <scope id="6866660893594595018" at="17,0,20,0" />
-      <scope id="6866660893594595018" at="29,51,32,71" />
-      <scope id="6866660893594595018" at="21,0,25,0" />
-      <scope id="6866660893594595018" at="28,0,34,0" />
-      <unit id="6866660893594595018" at="26,0,35,0" name="jetbrains.mps.lang.actions.test.substitute.ConceptSubstitutePart_Test$TestBody" />
-      <unit id="6866660893594595018" at="12,0,36,0" name="jetbrains.mps.lang.actions.test.substitute.ConceptSubstitutePart_Test" />
+      <node id="6866660893594595018" at="18,39,19,25" concept="5" />
+      <node id="6866660893594595018" at="23,61,24,63" concept="1" />
+      <node id="6866660893594595018" at="29,52,30,19" concept="5" />
+      <node id="6866660893594595018" at="34,51,35,72" concept="1" />
+      <node id="3213804652571125191" at="35,72,36,25" concept="1" />
+      <node id="3694071247855998071" at="36,25,37,71" concept="1" />
+      <node id="6866660893594595018" at="15,0,17,0" concept="4" trace="ourParamCache" />
+      <node id="6866660893594595018" at="18,0,21,0" concept="0" trace="ConceptSubstitutePart_Test#()V" />
+      <node id="6866660893594595018" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="6866660893594595018" at="22,0,26,0" concept="2" trace="test_ConceptSubstitutePart#()V" />
+      <node id="6866660893594595018" at="33,0,39,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="6866660893594595018" at="18,39,19,25" />
+      <scope id="6866660893594595018" at="23,61,24,63" />
+      <scope id="6866660893594595018" at="29,52,30,19" />
+      <scope id="6866660893594595018" at="18,0,21,0" />
+      <scope id="6866660893594595018" at="29,0,32,0">
+        <var name="owner" id="6866660893594595018" />
+      </scope>
+      <scope id="6866660893594595018" at="34,51,37,71" />
+      <scope id="6866660893594595018" at="22,0,26,0" />
+      <scope id="6866660893594595018" at="33,0,39,0" />
+      <unit id="6866660893594595018" at="27,0,40,0" name="jetbrains.mps.lang.actions.test.substitute.ConceptSubstitutePart_Test$TestBody" />
+      <unit id="6866660893594595018" at="13,0,41,0" name="jetbrains.mps.lang.actions.test.substitute.ConceptSubstitutePart_Test" />
     </file>
   </root>
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)/8349639607716109534">
     <file name="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java">
-      <node id="8349639607716109534" at="17,63,18,25" concept="5" />
-      <node id="8349639607716109534" at="22,85,23,139" concept="1" />
-      <node id="8349639607716109534" at="29,51,30,72" concept="1" />
-      <node id="8349639607716109543" at="30,72,31,34" concept="1" />
-      <node id="8349639607716109534" at="14,0,16,0" concept="4" trace="ourParamCache" />
-      <node id="8349639607716109534" at="17,0,20,0" concept="0" trace="AddMenuPart_WrapperSubstitute_returnSmallPart_Test#()V" />
-      <node id="8349639607716109534" at="21,0,25,0" concept="2" trace="test_AddMenuPart_WrapperSubstitute_returnSmallPart#()V" />
-      <node id="8349639607716109534" at="28,0,33,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="8349639607716109534" at="17,63,18,25" />
-      <scope id="8349639607716109534" at="22,85,23,139" />
-      <scope id="8349639607716109534" at="29,51,31,34" />
-      <scope id="8349639607716109534" at="17,0,20,0" />
-      <scope id="8349639607716109534" at="21,0,25,0" />
-      <scope id="8349639607716109534" at="28,0,33,0" />
-      <unit id="8349639607716109534" at="26,0,34,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstitute_returnSmallPart_Test$TestBody" />
-      <unit id="8349639607716109534" at="12,0,35,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstitute_returnSmallPart_Test" />
+      <node id="8349639607716109534" at="18,63,19,25" concept="5" />
+      <node id="8349639607716109534" at="23,85,24,87" concept="1" />
+      <node id="8349639607716109534" at="29,52,30,19" concept="5" />
+      <node id="8349639607716109534" at="34,51,35,72" concept="1" />
+      <node id="8349639607716109543" at="35,72,36,34" concept="1" />
+      <node id="8349639607716109534" at="15,0,17,0" concept="4" trace="ourParamCache" />
+      <node id="8349639607716109534" at="18,0,21,0" concept="0" trace="AddMenuPart_WrapperSubstitute_returnSmallPart_Test#()V" />
+      <node id="8349639607716109534" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="8349639607716109534" at="22,0,26,0" concept="2" trace="test_AddMenuPart_WrapperSubstitute_returnSmallPart#()V" />
+      <node id="8349639607716109534" at="33,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="8349639607716109534" at="18,63,19,25" />
+      <scope id="8349639607716109534" at="23,85,24,87" />
+      <scope id="8349639607716109534" at="29,52,30,19" />
+      <scope id="8349639607716109534" at="34,51,36,34" />
+      <scope id="8349639607716109534" at="18,0,21,0" />
+      <scope id="8349639607716109534" at="29,0,32,0">
+        <var name="owner" id="8349639607716109534" />
+      </scope>
+      <scope id="8349639607716109534" at="22,0,26,0" />
+      <scope id="8349639607716109534" at="33,0,38,0" />
+      <unit id="8349639607716109534" at="27,0,39,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstitute_returnSmallPart_Test$TestBody" />
+      <unit id="8349639607716109534" at="13,0,40,0" name="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstitute_returnSmallPart_Test" />
     </file>
   </root>
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)/8349639607730863318">
     <file name="RemoveByConditionPart_Test.java">
-      <node id="8349639607730863318" at="17,39,18,25" concept="5" />
-      <node id="8349639607730863318" at="22,61,23,115" concept="1" />
-      <node id="8349639607730863318" at="29,51,30,72" concept="1" />
-      <node id="8349639607731509561" at="30,72,31,25" concept="1" />
-      <node id="3694071247855998017" at="31,25,32,71" concept="1" />
-      <node id="8349639607730863318" at="14,0,16,0" concept="4" trace="ourParamCache" />
-      <node id="8349639607730863318" at="17,0,20,0" concept="0" trace="RemoveByConditionPart_Test#()V" />
-      <node id="8349639607730863318" at="21,0,25,0" concept="2" trace="test_RemoveByConditionPart#()V" />
-      <node id="8349639607730863318" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="8349639607730863318" at="17,39,18,25" />
-      <scope id="8349639607730863318" at="22,61,23,115" />
-      <scope id="8349639607730863318" at="17,0,20,0" />
-      <scope id="8349639607730863318" at="29,51,32,71" />
-      <scope id="8349639607730863318" at="21,0,25,0" />
-      <scope id="8349639607730863318" at="28,0,34,0" />
-      <unit id="8349639607730863318" at="26,0,35,0" name="jetbrains.mps.lang.actions.test.substitute.RemoveByConditionPart_Test$TestBody" />
-      <unit id="8349639607730863318" at="12,0,36,0" name="jetbrains.mps.lang.actions.test.substitute.RemoveByConditionPart_Test" />
+      <node id="8349639607730863318" at="18,39,19,25" concept="5" />
+      <node id="8349639607730863318" at="23,61,24,63" concept="1" />
+      <node id="8349639607730863318" at="29,52,30,19" concept="5" />
+      <node id="8349639607730863318" at="34,51,35,72" concept="1" />
+      <node id="8349639607731509561" at="35,72,36,25" concept="1" />
+      <node id="3694071247855998017" at="36,25,37,71" concept="1" />
+      <node id="8349639607730863318" at="15,0,17,0" concept="4" trace="ourParamCache" />
+      <node id="8349639607730863318" at="18,0,21,0" concept="0" trace="RemoveByConditionPart_Test#()V" />
+      <node id="8349639607730863318" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="8349639607730863318" at="22,0,26,0" concept="2" trace="test_RemoveByConditionPart#()V" />
+      <node id="8349639607730863318" at="33,0,39,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="8349639607730863318" at="18,39,19,25" />
+      <scope id="8349639607730863318" at="23,61,24,63" />
+      <scope id="8349639607730863318" at="29,52,30,19" />
+      <scope id="8349639607730863318" at="18,0,21,0" />
+      <scope id="8349639607730863318" at="29,0,32,0">
+        <var name="owner" id="8349639607730863318" />
+      </scope>
+      <scope id="8349639607730863318" at="34,51,37,71" />
+      <scope id="8349639607730863318" at="22,0,26,0" />
+      <scope id="8349639607730863318" at="33,0,39,0" />
+      <unit id="8349639607730863318" at="27,0,40,0" name="jetbrains.mps.lang.actions.test.substitute.RemoveByConditionPart_Test$TestBody" />
+      <unit id="8349639607730863318" at="13,0,41,0" name="jetbrains.mps.lang.actions.test.substitute.RemoveByConditionPart_Test" />
     </file>
   </root>
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)/8349639607733366556">
     <file name="RemovePart_Test.java">
-      <node id="8349639607733366556" at="17,28,18,25" concept="5" />
-      <node id="8349639607733366556" at="22,50,23,104" concept="1" />
-      <node id="8349639607733366556" at="29,51,30,72" concept="1" />
-      <node id="8349639607733366972" at="30,72,31,25" concept="1" />
-      <node id="3694071247855998031" at="31,25,32,71" concept="1" />
-      <node id="8349639607733366556" at="14,0,16,0" concept="4" trace="ourParamCache" />
-      <node id="8349639607733366556" at="17,0,20,0" concept="0" trace="RemovePart_Test#()V" />
-      <node id="8349639607733366556" at="21,0,25,0" concept="2" trace="test_RemovePart#()V" />
-      <node id="8349639607733366556" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="8349639607733366556" at="17,28,18,25" />
-      <scope id="8349639607733366556" at="22,50,23,104" />
-      <scope id="8349639607733366556" at="17,0,20,0" />
-      <scope id="8349639607733366556" at="29,51,32,71" />
-      <scope id="8349639607733366556" at="21,0,25,0" />
-      <scope id="8349639607733366556" at="28,0,34,0" />
-      <unit id="8349639607733366556" at="26,0,35,0" name="jetbrains.mps.lang.actions.test.substitute.RemovePart_Test$TestBody" />
-      <unit id="8349639607733366556" at="12,0,36,0" name="jetbrains.mps.lang.actions.test.substitute.RemovePart_Test" />
+      <node id="8349639607733366556" at="18,28,19,25" concept="5" />
+      <node id="8349639607733366556" at="23,50,24,52" concept="1" />
+      <node id="8349639607733366556" at="29,52,30,19" concept="5" />
+      <node id="8349639607733366556" at="34,51,35,72" concept="1" />
+      <node id="8349639607733366972" at="35,72,36,25" concept="1" />
+      <node id="3694071247855998031" at="36,25,37,71" concept="1" />
+      <node id="8349639607733366556" at="15,0,17,0" concept="4" trace="ourParamCache" />
+      <node id="8349639607733366556" at="18,0,21,0" concept="0" trace="RemovePart_Test#()V" />
+      <node id="8349639607733366556" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="8349639607733366556" at="22,0,26,0" concept="2" trace="test_RemovePart#()V" />
+      <node id="8349639607733366556" at="33,0,39,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="8349639607733366556" at="18,28,19,25" />
+      <scope id="8349639607733366556" at="23,50,24,52" />
+      <scope id="8349639607733366556" at="29,52,30,19" />
+      <scope id="8349639607733366556" at="18,0,21,0" />
+      <scope id="8349639607733366556" at="29,0,32,0">
+        <var name="owner" id="8349639607733366556" />
+      </scope>
+      <scope id="8349639607733366556" at="34,51,37,71" />
+      <scope id="8349639607733366556" at="22,0,26,0" />
+      <scope id="8349639607733366556" at="33,0,39,0" />
+      <unit id="8349639607733366556" at="27,0,40,0" name="jetbrains.mps.lang.actions.test.substitute.RemovePart_Test$TestBody" />
+      <unit id="8349639607733366556" at="13,0,41,0" name="jetbrains.mps.lang.actions.test.substitute.RemovePart_Test" />
     </file>
   </root>
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)/8349639607733719183">
     <file name="RemoveDefaultsPart_Test.java">
-      <node id="8349639607733719183" at="18,36,19,25" concept="5" />
-      <node id="8349639607733719183" at="23,58,24,112" concept="1" />
-      <node id="8349639607733719183" at="30,51,31,72" concept="1" />
-      <node id="3694071247855998075" at="31,72,32,71" concept="1" />
-      <node id="8349639607733720785" at="32,71,33,85" concept="1" />
-      <node id="8349639607733720791" at="33,85,34,87" concept="1" />
-      <node id="8349639607733720797" at="34,87,35,72" concept="1" />
-      <node id="8349639607733719183" at="15,0,17,0" concept="4" trace="ourParamCache" />
-      <node id="8349639607733719183" at="18,0,21,0" concept="0" trace="RemoveDefaultsPart_Test#()V" />
-      <node id="8349639607733719183" at="22,0,26,0" concept="2" trace="test_RemoveDefaultsPart#()V" />
-      <node id="8349639607733719183" at="29,0,37,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="8349639607733719183" at="18,36,19,25" />
-      <scope id="8349639607733719183" at="23,58,24,112" />
-      <scope id="8349639607733719183" at="18,0,21,0" />
-      <scope id="8349639607733719183" at="22,0,26,0" />
-      <scope id="8349639607733719183" at="30,51,35,72" />
-      <scope id="8349639607733719183" at="29,0,37,0" />
-      <unit id="8349639607733719183" at="27,0,38,0" name="jetbrains.mps.lang.actions.test.substitute.RemoveDefaultsPart_Test$TestBody" />
-      <unit id="8349639607733719183" at="13,0,39,0" name="jetbrains.mps.lang.actions.test.substitute.RemoveDefaultsPart_Test" />
+      <node id="8349639607733719183" at="19,36,20,25" concept="5" />
+      <node id="8349639607733719183" at="24,58,25,60" concept="1" />
+      <node id="8349639607733719183" at="30,52,31,19" concept="5" />
+      <node id="8349639607733719183" at="35,51,36,72" concept="1" />
+      <node id="3694071247855998075" at="36,72,37,71" concept="1" />
+      <node id="8349639607733720785" at="37,71,38,85" concept="1" />
+      <node id="8349639607733720791" at="38,85,39,87" concept="1" />
+      <node id="8349639607733720797" at="39,87,40,72" concept="1" />
+      <node id="8349639607733719183" at="16,0,18,0" concept="4" trace="ourParamCache" />
+      <node id="8349639607733719183" at="19,0,22,0" concept="0" trace="RemoveDefaultsPart_Test#()V" />
+      <node id="8349639607733719183" at="30,0,33,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="8349639607733719183" at="23,0,27,0" concept="2" trace="test_RemoveDefaultsPart#()V" />
+      <node id="8349639607733719183" at="34,0,42,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="8349639607733719183" at="19,36,20,25" />
+      <scope id="8349639607733719183" at="24,58,25,60" />
+      <scope id="8349639607733719183" at="30,52,31,19" />
+      <scope id="8349639607733719183" at="19,0,22,0" />
+      <scope id="8349639607733719183" at="30,0,33,0">
+        <var name="owner" id="8349639607733719183" />
+      </scope>
+      <scope id="8349639607733719183" at="23,0,27,0" />
+      <scope id="8349639607733719183" at="35,51,40,72" />
+      <scope id="8349639607733719183" at="34,0,42,0" />
+      <unit id="8349639607733719183" at="28,0,43,0" name="jetbrains.mps.lang.actions.test.substitute.RemoveDefaultsPart_Test$TestBody" />
+      <unit id="8349639607733719183" at="14,0,44,0" name="jetbrains.mps.lang.actions.test.substitute.RemoveDefaultsPart_Test" />
     </file>
   </root>
 </debug-info>

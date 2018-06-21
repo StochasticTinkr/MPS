@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,10 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRule;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
+import jetbrains.mps.ide.MPSCoreComponents;
 import org.apache.log4j.LogManager;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.annotations.Internal;
-import org.picocontainer.PicoContainer;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -38,19 +37,20 @@ import java.util.concurrent.CopyOnWriteArrayList;
 @Immutable
 public final class DataSourceFactoryRuleRegistrar implements ApplicationComponent {
   private final List<DataSourceFactoryRule> myRegisteredRules = new CopyOnWriteArrayList<>();
-  private final PicoContainer PICO_CONTAINER = ApplicationManager.getApplication().getPicoContainer();
-  private final DataSourceFactoryRuleService SERVICE = DataSourceFactoryRuleService.getInstance();
+  private final MPSCoreComponents myCoreComponents;
 
-  public DataSourceFactoryRuleRegistrar() {
+  public DataSourceFactoryRuleRegistrar(MPSCoreComponents mpsCoreComponents) {
+    myCoreComponents = mpsCoreComponents;
   }
 
   @Override
   public void initComponent() {
+    DataSourceFactoryRuleService dsRegistry = myCoreComponents.getPlatform().findComponent(DataSourceFactoryRuleService.class);
     for (DataSourceFactoryRuleProvider provider : DataSourceFactoryRuleProvider.EP_DATA_SOURCE_FACTORY.getExtensions()) {
       try {
-        DataSourceFactoryRule factoryRule = provider.instantiate(provider.getImplementationClass(), PICO_CONTAINER);
+        DataSourceFactoryRule factoryRule = provider.instantiate(provider.getImplementationClass(), ApplicationManager.getApplication().getPicoContainer());
         myRegisteredRules.add(factoryRule);
-        register(factoryRule);
+        dsRegistry.register(factoryRule);
       } catch (ClassNotFoundException e) {
         String message = String.format("Failed to load %s in the plugin %s",
                                        provider.getImplementationClass(),
@@ -60,25 +60,10 @@ public final class DataSourceFactoryRuleRegistrar implements ApplicationComponen
     }
   }
 
-  private void register(@NotNull DataSourceFactoryRule rule) {
-    myRegisteredRules.add(rule);
-    SERVICE.register(rule);
-  }
-
-  private void unregister(@NotNull DataSourceFactoryRule rule) {
-    SERVICE.unregister(rule);
-    myRegisteredRules.remove(rule);
-  }
-
   @Override
   public void disposeComponent() {
-    myRegisteredRules.forEach(this::unregister);
+    DataSourceFactoryRuleService dsRegistry = myCoreComponents.getPlatform().findComponent(DataSourceFactoryRuleService.class);
+    myRegisteredRules.forEach(dsRegistry::unregister);
+    myRegisteredRules.clear();
   }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "DataSourceFactoryRegistrar";
-  }
-
 }

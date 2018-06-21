@@ -724,7 +724,7 @@
                       <ref role="3cqZAo" node="$JCvV4mXX" resolve="status" />
                     </node>
                     <node concept="liA8E" id="$JCvV4n9L" role="2OqNvi">
-                      <ref role="37wK5l" to="18ew:~Status.isOk():boolean" resolve="isOk" />
+                      <ref role="37wK5l" to="18ew:~IStatus.isOk():boolean" resolve="isOk" />
                     </node>
                   </node>
                 </node>

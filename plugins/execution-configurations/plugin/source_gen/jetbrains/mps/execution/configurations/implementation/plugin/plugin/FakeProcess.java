@@ -102,9 +102,4 @@ public class FakeProcess extends Process {
     };
     return myExitCode;
   }
-
-  @Override
-  public String toString() {
-    return "in-process.execution";
-  }
 }

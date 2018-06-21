@@ -48,12 +48,4 @@ public interface ConstraintsDescriptor {
 
   // FIXME why default_CONCRETE_concept is SAbstractConcept? Need to check generated code and make sure it's SConcept at generation time
   SAbstractConcept getDefaultConcreteConcept();
-
-  // todo: remove/move this methods
-  // by convention inheritance for this methods not works
-  // null if icon not alternative
-  @Deprecated
-  @ToRemove(version = 3.4)
-  @Nullable
-  String getAlternativeIcon(SNode node);
 }

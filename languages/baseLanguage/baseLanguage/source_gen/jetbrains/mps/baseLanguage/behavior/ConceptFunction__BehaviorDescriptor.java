@@ -139,14 +139,14 @@ public final class ConceptFunction__BehaviorDescriptor extends BaseBHDescriptor 
   }
   /*package*/ static Scope getScope_id52_Geb4QDV$(@NotNull SNode __thisNode__, SAbstractConcept kind, SNode child) {
     // todo: rewrite using filtering scope 
-    SAbstractConcept cncpt_b0lb = kind;
-    boolean noneMatched_b0lb = true;
-    if (noneMatched_b0lb && SConceptOperations.isSubConceptOf(cncpt_b0lb, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
-      noneMatched_b0lb = false;
+    SAbstractConcept cncpt = kind;
+    boolean noneMatched = true;
+    if (noneMatched && SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+      noneMatched = false;
       return new EmptyScope();
     }
-    if (noneMatched_b0lb && SConceptOperations.isSubConceptOf(cncpt_b0lb, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
-      noneMatched_b0lb = false;
+    if (noneMatched && SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+      noneMatched = false;
       return new EmptyScope();
     }
     return ScopeUtils.lazyParentScope(__thisNode__, kind);

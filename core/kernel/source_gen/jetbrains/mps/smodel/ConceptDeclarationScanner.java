@@ -79,7 +79,7 @@ public class ConceptDeclarationScanner {
 
       myExtendedModels.removeIf(new Predicate<SModel>() {
         public boolean test(SModel m) {
-          return langCoreStructureModelRef.equals(m.getReference());
+          return langCoreStructureModelRef.equals(SModelOperations.getPointer(m));
         }
       });
     }

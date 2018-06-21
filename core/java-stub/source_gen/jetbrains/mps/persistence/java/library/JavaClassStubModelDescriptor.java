@@ -79,7 +79,7 @@ public class JavaClassStubModelDescriptor extends RegularModelDescriptor impleme
           // the check shall be inside synchronized block, otherwise any other thread won't block on load 
           return;
         }
-        final SModel mi = getSModelInternal();
+        final SModel mi = getSModel();
         oldState = getLoadingState();
         if (oldState == ModelLoadingState.FULLY_LOADED) {
           // another thread succeeded first 

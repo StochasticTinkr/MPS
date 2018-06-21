@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.Map;
@@ -21,7 +22,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -58,7 +58,7 @@ public class StubResolver {
     // resolve only to models from sequence 
     myUsedModels = SetSequence.fromSetWithValues(new HashSet<SModelReference>(), Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
       public SModelReference select(SModel it) {
-        return it.getReference();
+        return SModelOperations.getPointer(it);
       }
     }));
     myContextRepository = contextRepo;
@@ -132,7 +132,7 @@ public class StubResolver {
         continue;
       }
       for (SModel model : Sequence.fromIterable(module.getModels())) {
-        if (SModelStereotype.isUserModel(model) && model instanceof EditableSModel) {
+        if (!(SModelStereotype.isStubModel(model)) && model instanceof EditableSModel) {
           resolveInModel(model);
         }
       }
@@ -158,7 +158,7 @@ public class StubResolver {
           public IListSequence<SNode> compute() {
             return Sequence.fromIterable(refScope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode n) {
-                return modelRef.equals(SNodeOperations.getModel(n).getReference()) && resolveInfo.equals(jetbrains.mps.util.SNodeOperations.getResolveInfo(n));
+                return modelRef.equals(SModelOperations.getPointer(SNodeOperations.getModel(n))) && resolveInfo.equals(jetbrains.mps.util.SNodeOperations.getResolveInfo(n));
               }
             }).toListSequence();
           }

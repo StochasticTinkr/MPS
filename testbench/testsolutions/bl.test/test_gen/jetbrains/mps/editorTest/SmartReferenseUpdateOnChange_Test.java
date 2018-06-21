@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -26,11 +27,15 @@ public class SmartReferenseUpdateOnChange_Test extends BaseTransformationTest {
 
   @Test
   public void test_SmartReferenseUpdateOnChange() throws Throwable {
-    runTest("jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$TestBody", "testMethod", false);
+    new SmartReferenseUpdateOnChange_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2345623147105495371", "2345623147105495377");

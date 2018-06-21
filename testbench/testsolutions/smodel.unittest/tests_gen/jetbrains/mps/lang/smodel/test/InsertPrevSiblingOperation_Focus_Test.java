@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class InsertPrevSiblingOperation_Focus_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class InsertPrevSiblingOperation_Focus_Test extends BaseTransformationTes
 
   @Test
   public void test_InsertPrevSiblingOperation_Focus() throws Throwable {
-    runTest("jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test$TestBody", "testMethod", false);
+    new InsertPrevSiblingOperation_Focus_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1835794636205189194", "1835794636205189199");

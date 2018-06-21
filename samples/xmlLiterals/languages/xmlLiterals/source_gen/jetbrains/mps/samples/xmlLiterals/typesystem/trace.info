@@ -13,6 +13,14 @@
     </file>
   </root>
   <root nodeRef="r:0264c2b0-f115-4504-b39f-f4dbddf68df1(jetbrains.mps.samples.xmlLiterals.typesystem)/9152904044274365443">
+    <file name="TypesystemDescriptor.java">
+      <node id="9152904044274365443" at="18,5,19,82" concept="4" />
+      <node id="9152904044274365443" at="19,82,20,47" concept="2" />
+      <node id="9152904044274365443" at="17,5,21,5" concept="0" />
+      <scope id="9152904044274365443" at="18,5,20,47">
+        <var name="inferenceRule" id="9152904044274365443" />
+      </scope>
+    </file>
     <file name="typeof_XmlLiteral_InferenceRule.java">
       <node id="9152904044274382249" at="21,5,22,49" concept="4" />
       <node id="9152904044274382249" at="22,49,23,210" concept="4" />
@@ -61,6 +69,14 @@
     </file>
   </root>
   <root nodeRef="r:0264c2b0-f115-4504-b39f-f4dbddf68df1(jetbrains.mps.samples.xmlLiterals.typesystem)/9152904044274516047">
+    <file name="TypesystemDescriptor.java">
+      <node id="9152904044274516047" at="14,5,15,81" concept="4" />
+      <node id="9152904044274516047" at="15,81,16,47" concept="2" />
+      <node id="9152904044274516047" at="13,5,17,5" concept="0" />
+      <scope id="9152904044274516047" at="14,5,16,47">
+        <var name="inferenceRule" id="9152904044274516047" />
+      </scope>
+    </file>
     <file name="typeof_TextMacro_InferenceRule.java">
       <node id="9152904044274518113" at="22,5,23,211" concept="4" />
       <node id="9152904044274518113" at="23,211,24,210" concept="4" />
@@ -109,6 +125,14 @@
     </file>
   </root>
   <root nodeRef="r:0264c2b0-f115-4504-b39f-f4dbddf68df1(jetbrains.mps.samples.xmlLiterals.typesystem)/9152904044274518139">
+    <file name="TypesystemDescriptor.java">
+      <node id="9152904044274518139" at="10,5,11,84" concept="4" />
+      <node id="9152904044274518139" at="11,84,12,47" concept="2" />
+      <node id="9152904044274518139" at="9,33,13,5" concept="0" />
+      <scope id="9152904044274518139" at="10,5,12,47">
+        <var name="inferenceRule" id="9152904044274518139" />
+      </scope>
+    </file>
     <file name="typeof_ElementMacro_InferenceRule.java">
       <node id="9152904044274518151" at="22,5,23,211" concept="4" />
       <node id="9152904044274518151" at="23,211,24,210" concept="4" />

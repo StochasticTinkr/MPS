@@ -27,6 +27,7 @@ import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -86,7 +87,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";
-        return NodePresentationUtil.getAliasOrConceptName(node) + " (" + NameUtil.compactModelName(SNodeOperations.getModel(node).getReference()) + ")";
+        return NodePresentationUtil.getAliasOrConceptName(node) + " (" + NameUtil.compactModelName(SModelOperations.getPointer(SNodeOperations.getModel(node))) + ")";
       }
     });
     return properties;

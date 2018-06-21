@@ -15,17 +15,19 @@ import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.console.tool.ConsoleContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.lang.modelapi.behavior.ModelIdentity__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -36,8 +38,9 @@ public final class ModelStatisticsTarget__BehaviorDescriptor extends BaseBHDescr
 
   public static final SMethod<Iterable<Tuples._2<String, Integer>>> getStat_id6vMIJHUBlVT = new SMethodBuilder<Iterable<Tuples._2<String, Integer>>>(new SJavaCompoundTypeImpl((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class))).name("getStat").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6vMIJHUBlVT").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(ConsoleContext.class, ""));
   public static final SMethod<Iterable<SNode>> getNodes_id4x3U0fq41hN = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getNodes").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4x3U0fq41hN").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(ConsoleContext.class, ""));
+  /*package*/ static final SMethod<SModel> resolveModel_id4xqDcS7DWbP = new SMethodBuilder<SModel>(new SJavaCompoundTypeImpl((Class<SModel>) ((Class) Object.class))).name("resolveModel").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("4xqDcS7DWbP").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SRepository.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getStat_id6vMIJHUBlVT, getNodes_id4x3U0fq41hN);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getStat_id6vMIJHUBlVT, getNodes_id4x3U0fq41hN, resolveModel_id4xqDcS7DWbP);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -45,21 +48,31 @@ public final class ModelStatisticsTarget__BehaviorDescriptor extends BaseBHDescr
   /*package*/ static Iterable<Tuples._2<String, Integer>> getStat_id6vMIJHUBlVT(@NotNull SNode __thisNode__, ConsoleContext context) {
     int references = 0;
     int properties = 0;
-    for (SNode node : INodeSetReference__BehaviorDescriptor.getNodes_id4x3U0fq41hN.invoke(__thisNode__, context)) {
+    int nodes = 0;
+    SModel model = ModelStatisticsTarget__BehaviorDescriptor.resolveModel_id4xqDcS7DWbP.invoke(__thisNode__, context.getProject().getRepository());
+    for (SNode node : SModelOperations.nodes(model, null)) {
+      nodes++;
       references += IterableUtil.asCollection(node.getReferences()).size();
-      properties += SNodeOperations.getProperties(node).keySet().size();
+      properties += IterableUtil.asCollection(node.getProperties()).size();
     }
     List<Tuples._2<String, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, Integer>>());
-    SModel model = ModelReference__BehaviorDescriptor.getModel_id67MRmR$z8Z2.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, 0x67f2bafb7a5cad99L, "target")), context.getProject().getRepository());
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Roots", ListSequence.fromList(SModelOperations.roots(model, null)).count()));
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Nodes", (model == null ? 0 : SNodeOperations.nodesCount(model))));
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Nodes", nodes));
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("References", references));
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Properties", properties));
 
     return result;
   }
   /*package*/ static Iterable<SNode> getNodes_id4x3U0fq41hN(@NotNull SNode __thisNode__, ConsoleContext context) {
-    return SModelOperations.nodes(ModelReference__BehaviorDescriptor.getModel_id67MRmR$z8Z2.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, 0x67f2bafb7a5cad99L, "target")), context.getProject().getRepository()), null);
+    return SModelOperations.nodes(ModelStatisticsTarget__BehaviorDescriptor.resolveModel_id4xqDcS7DWbP.invoke(__thisNode__, context.getProject().getRepository()), null);
+  }
+  /*package*/ static SModel resolveModel_id4xqDcS7DWbP(@NotNull SNode __thisNode__, SRepository repo) {
+    SModel m = null;
+    SModelReference ref = ModelIdentity__BehaviorDescriptor.toModelReference_id1Bs_61$mvvu.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, 0x485aa4ce07a6ea0fL, "target")));
+    if (ref != null) {
+      m = ref.resolve(repo);
+    }
+    return m;
   }
 
   /*package*/ ModelStatisticsTarget__BehaviorDescriptor() {
@@ -82,6 +95,8 @@ public final class ModelStatisticsTarget__BehaviorDescriptor extends BaseBHDescr
         return (T) ((Iterable<Tuples._2<String, Integer>>) getStat_id6vMIJHUBlVT(node, (ConsoleContext) parameters[0]));
       case 1:
         return (T) ((Iterable<SNode>) getNodes_id4x3U0fq41hN(node, (ConsoleContext) parameters[0]));
+      case 2:
+        return (T) ((SModel) resolveModel_id4xqDcS7DWbP(node, (SRepository) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

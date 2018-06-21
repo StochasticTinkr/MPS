@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,7 +80,7 @@ public class PartialModelUpdateFacility {
       SNode fullNode = myFullModel.getNode(node.getNodeId());
       if (fullNode == null) {
         final String m = "model %s: no peer node in full model for %s (in %s)";
-        LOG.error(String.format(m, myModel.getReference().getModelName(), node.getNodeId(), myDataOwner.getSource().getLocation()));
+        LOG.error(String.format(m, myModel.getModelName(), node.getNodeId(), myDataOwner.getSource().getLocation()));
         return;
       }
       Iterator<? extends SNode> it = fullNode.getChildren().iterator();

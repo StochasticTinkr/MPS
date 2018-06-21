@@ -76,6 +76,10 @@
       <unit id="1870027727456307005" at="44,0,65,0" name="testOverridingType.intentions.AddRemoveUnconditionalPresenceAnnotation_Intention$IntentionImplementation" />
       <unit id="1870027727456307005" at="21,0,66,0" name="testOverridingType.intentions.AddRemoveUnconditionalPresenceAnnotation_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="1870027727456307005" at="38,70,39,83" concept="2" />
+      <node id="1870027727456307005" at="52,56,53,69" concept="2" />
+    </file>
   </root>
   <root nodeRef="r:d884d12b-f79a-4b35-a8fe-63e10e0c9c8d(testOverridingType.intentions)/4113274076525537945">
     <file name="AddRemovePresenceAnnotation_Intention.java">
@@ -138,6 +142,10 @@
       </scope>
       <unit id="4113274076525537945" at="44,0,65,0" name="testOverridingType.intentions.AddRemovePresenceAnnotation_Intention$IntentionImplementation" />
       <unit id="4113274076525537945" at="21,0,66,0" name="testOverridingType.intentions.AddRemovePresenceAnnotation_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="4113274076525537945" at="37,47,38,70" concept="2" />
+      <node id="4113274076525537945" at="51,52,52,56" concept="2" />
     </file>
   </root>
 </debug-info>

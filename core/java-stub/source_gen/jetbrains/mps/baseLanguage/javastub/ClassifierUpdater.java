@@ -95,13 +95,13 @@ public class ClassifierUpdater {
   }
 
   private void initClass(SNode cls) {
-    SPropertyOperations.set(cls, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"), "" + (myParsedClass.isAbstract()));
+    SPropertyOperations.assign(cls, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"), "" + (myParsedClass.isAbstract()));
     updateAnnotations(cls);
     if (myParsedClass.isDeprecated()) {
       BHReflection.invoke0(SNodeOperations.asSConcept(SNodeOperations.getConcept(cls)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), SMethodTrimmedId.create("markLoadedNodeAsDeprecated", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "5H8W9_EDlcn"), cls);
     }
 
-    SPropertyOperations.set(cls, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c6af4b284L, "isFinal"), "" + (myParsedClass.isFinal()));
+    SPropertyOperations.assign(cls, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c6af4b284L, "isFinal"), "" + (myParsedClass.isFinal()));
 
     updateTypeVariables(cls);
     updateExtendsAndImplements(cls);
@@ -262,7 +262,7 @@ public class ClassifierUpdater {
         }
 
         if (field.isFinal()) {
-          SPropertyOperations.set(decl, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"), "" + (true));
+          SPropertyOperations.assign(decl, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"), "" + (true));
           if (field.hasValue()) {
             Object value = field.getValue();
             if (value instanceof Integer) {
@@ -354,7 +354,7 @@ public class ClassifierUpdater {
 
       SNode md = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ((jetbrains.mps.smodel.SNode) md).setId(ASMNodeId.createId(myParsedClass, m));
-      SPropertyOperations.set(md, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"), "" + (m.isAbstract()));
+      SPropertyOperations.assign(md, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"), "" + (m.isAbstract()));
       SLinkOperations.setTarget(md, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), createVisibility(m));
       this.updateBaseMethod(m, md, cls);
 
@@ -385,9 +385,9 @@ public class ClassifierUpdater {
     }
   }
   private void updateBaseMethod(ASMMethod m, SNode md, SNode cls) {
-    SPropertyOperations.set(md, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), m.getName());
+    SPropertyOperations.assign(md, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), m.getName());
     SLinkOperations.setTarget(md, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), _quotation_createNode_ol94f8_a0b0bb());
-    SPropertyOperations.set(md, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal"), "" + (m.isFinal()));
+    SPropertyOperations.assign(md, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal"), "" + (m.isFinal()));
 
     for (ASMAnnotation annotation : m.getAnnotations()) {
       ListSequence.fromList(SLinkOperations.getChildren(md, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).addElement(createAnnotation(annotation));
@@ -396,7 +396,7 @@ public class ClassifierUpdater {
     if (m.isDeprecated()) {
       BHReflection.invoke0(SNodeOperations.asSConcept(SNodeOperations.getConcept(md)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), SMethodTrimmedId.create("markLoadedNodeAsDeprecated", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "5H8W9_EDFVg"), md);
     }
-    SPropertyOperations.set(md, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x3b576cda23612c7aL, "isSynchronized"), "" + (m.isSynchronized()));
+    SPropertyOperations.assign(md, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x3b576cda23612c7aL, "isSynchronized"), "" + (m.isSynchronized()));
     updateTypeVariables(m, md, cls);
     SLinkOperations.setTarget(md, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"), getTypeByASMType(m.getGenericReturnType(), md, cls));
     {

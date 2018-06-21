@@ -51,9 +51,13 @@ import jetbrains.mps.util.JavaNameUtil;
   }
 
   private ImportEntry getRootClassifierRefText(String packageName, String className, SNode contextNode) {
-    assert !(className.contains("."));
+    assert className.indexOf('.') == -1;
 
-    String fqName = packageName + "." + className;
+    if (packageName.isEmpty()) {
+      return new ImportEntry(className);
+    }
+
+    String fqName = packageName + '.' + className;
     Map<String, String> nestedClassifiersBinding = contextClassifiers.getContextClassifiers(contextNode);
 
     // 1) check nested classes context 

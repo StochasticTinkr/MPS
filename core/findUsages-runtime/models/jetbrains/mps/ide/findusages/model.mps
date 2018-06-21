@@ -232,6 +232,9 @@
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
+      <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
+        <reference id="2217234381367530213" name="classifier" index="VXe09" />
+      </concept>
       <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
         <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
       </concept>
@@ -2804,13 +2807,6 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="7DGCeT2Ukph" role="1B3o_S" />
-      <node concept="37vLTG" id="7DGCeT2Ukpi" role="3clF46">
-        <property role="TrG5h" value="modelAccess" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="2FW2ExVkIuC" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~ModelAccess" resolve="ModelAccess" />
-        </node>
-      </node>
       <node concept="37vLTG" id="7DGCeT2Ukpk" role="3clF46">
         <property role="TrG5h" value="progressMonitor" />
         <property role="3TUv4t" value="false" />
@@ -2828,6 +2824,43 @@
       <node concept="TZ5HA" id="7ZzFP$JA2yn" role="TZ5H$">
         <node concept="1dT_AC" id="7ZzFP$JA2yo" role="1dT_Ay">
           <property role="1dT_AB" value="Abstraction of search activity one could execute several times." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="6MDTP4X1EcI" role="TZ5H$">
+        <node concept="1dT_AC" id="6MDTP4X1EcJ" role="1dT_Ay">
+          <property role="1dT_AB" value="It's distinct from " />
+        </node>
+        <node concept="1dT_AA" id="6MDTP4X1Ed3" role="1dT_Ay">
+          <node concept="92FcH" id="6MDTP4X1Ed9" role="qph3F">
+            <node concept="TZ5HA" id="6MDTP4X1Edb" role="2XjZqd" />
+            <node concept="VXe08" id="6MDTP4X1LhN" role="92FcQ">
+              <ref role="VXe09" node="J2bOg02GFE" resolve="IResultProvider" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="6MDTP4X1Ed2" role="1dT_Ay">
+          <property role="1dT_AB" value=" being non-externalizable and unrestricted to use of " />
+        </node>
+        <node concept="1dT_AA" id="6MDTP4X1LxA" role="1dT_Ay">
+          <node concept="92FcH" id="6MDTP4X1LxL" role="qph3F">
+            <node concept="TZ5HA" id="6MDTP4X1LxN" role="2XjZqd" />
+            <node concept="VXe08" id="6MDTP4X1RDw" role="92FcQ">
+              <ref role="VXe09" node="J2bOg0cap_" resolve="SearchQuery" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="6MDTP4X1Lx_" role="1dT_Ay">
+          <property role="1dT_AB" value="." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="6MDTP4X24bf" role="TZ5H$">
+        <node concept="1dT_AC" id="6MDTP4X24bg" role="1dT_Ay">
+          <property role="1dT_AB" value="It is intended rather for customized tools that re-use 'Find Usages' presentation functionality, but generally " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="6MDTP4X24bJ" role="TZ5H$">
+        <node concept="1dT_AC" id="6MDTP4X24bK" role="1dT_Ay">
+          <property role="1dT_AB" value="provide search result by means other that Finder and SearchQuery." />
         </node>
       </node>
       <node concept="TZ5HA" id="3veQ_zQyFp8" role="TZ5H$">

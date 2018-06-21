@@ -8,7 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -24,16 +24,20 @@ public class SelectAllNonSelectableRootThroughNonSelectable_Test extends BaseTra
 
   @Test
   public void test_SelectAllNonSelectableRootThroughNonSelectable() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.selection.test.SelectAllNonSelectableRootThroughNonSelectable_Test$TestBody", "testMethod", false);
+    new SelectAllNonSelectableRootThroughNonSelectable_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3756708898179594225", "3756708898179594401");
       invokeAction("jetbrains.mps.ide.editor.actions.SelectAll_Action");
-      ModelAccess.instance().runReadAction(new Runnable() {
+      getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           Assert.assertEquals(SNodeOperations.cast(getNodeById("3756708898179594226"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, "jetbrains.mps.lang.editor.editorTest"), 0x6c1b61fd2cd1eefdL, "SelectableContainer"))), getEditorComponent().getSelectedNode());
         }

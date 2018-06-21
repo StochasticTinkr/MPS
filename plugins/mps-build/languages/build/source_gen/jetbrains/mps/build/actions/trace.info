@@ -9,10 +9,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
-      <unit at="14,0,55,0" name="jetbrains.mps.build.actions.ActionAspectDescriptorImpl" />
-    </file>
-    <file name="QueriesGenerated.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.build.actions.QueriesGenerated" />
+      <unit at="14,0,51,0" name="jetbrains.mps.build.actions.ActionAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:d9276ffc-8964-4ead-b55c-1f2409698238(jetbrains.mps.build.actions)/5248329904287896622">
@@ -118,10 +115,10 @@
       <node id="1258644073389160388" at="56,201,57,514" concept="0" />
       <node id="1258644073389160430" at="63,196,64,507" concept="0" />
       <node id="1258644073389160504" at="64,507,65,581" concept="0" />
-      <node id="6099797596647417318" at="71,392,72,654" concept="0" />
+      <node id="6099797596647417318" at="71,392,72,657" concept="0" />
       <node id="6099797596647438152" at="78,207,79,590" concept="0" />
       <node id="6099797596647438279" at="79,590,80,538" concept="0" />
-      <node id="6099797596647440633" at="86,191,87,472" concept="0" />
+      <node id="6099797596647440633" at="86,191,87,475" concept="0" />
       <node id="6977615362526183873" at="93,205,94,524" concept="0" />
       <node id="1841835149314792846" at="22,37,25,7" concept="1" />
       <node id="1841835149314794264" at="26,51,29,7" concept="1" />
@@ -148,8 +145,8 @@
       <scope id="7389400916848172020" at="42,211,43,568" />
       <scope id="5481553824944787394" at="49,209,50,566" />
       <scope id="1258644073389160375" at="56,201,57,514" />
-      <scope id="6099797596647417255" at="71,392,72,654" />
-      <scope id="6099797596647440679" at="86,191,87,472" />
+      <scope id="6099797596647417255" at="71,392,72,657" />
+      <scope id="6099797596647440679" at="86,191,87,475" />
       <scope id="6977615362526183840" at="93,205,94,524" />
       <scope id="1258644073389160429" at="63,196,65,581" />
       <scope id="6099797596647438176" at="78,207,80,538" />

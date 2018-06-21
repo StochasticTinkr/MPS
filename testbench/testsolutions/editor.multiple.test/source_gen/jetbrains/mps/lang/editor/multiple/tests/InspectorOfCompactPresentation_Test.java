@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import junit.framework.Assert;
@@ -24,11 +25,15 @@ public class InspectorOfCompactPresentation_Test extends BaseTransformationTest 
 
   @Test
   public void test_InspectorOfCompactPresentation() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_Test$TestBody", "testMethod", false);
+    new InspectorOfCompactPresentation_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2112659629360583086", "2112659629360583089");

@@ -34,18 +34,14 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.wm.IdeFocusManager;
-import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.Collection;
-import jetbrains.mps.smodel.SLanguageHierarchy;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import java.util.Collections;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.project.ImportUtil;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -79,8 +75,6 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
@@ -264,24 +258,24 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
   }
 
   protected void addBuiltInImports() {
-    SLanguage base = MetaAdapterFactory.getLanguage(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, "jetbrains.mps.console.base");
-    Collection<SLanguage> baseAndExtensions = new SLanguageHierarchy(myProject.getComponent(LanguageRegistry.class), Collections.singleton(base)).getExtending();
-    SModelInternal modelInternal = ((SModelInternal) myModel);
-    for (SLanguage l : CollectionSequence.fromCollection(baseAndExtensions)) {
-      modelInternal.addLanguage(l);
-      SModuleReference langSourceModuleRef = l.getSourceModuleReference();
-      SModule langSrcModule = (langSourceModuleRef == null ? null : langSourceModuleRef.resolve(myProject.getRepository()));
-      if (!(langSrcModule instanceof Language)) {
-        continue;
+    final DevKit consoleDevkit = new ModuleRepositoryFacade(myProject).getModule(PersistenceFacade.getInstance().createModuleReference("70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)"), DevKit.class);
+    if (consoleDevkit == null) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Could not find console devkit in current repository");
       }
-      SModel structureModel = ((Language) langSrcModule).getStructureModelDescriptor();
-      if (structureModel == null) {
-        continue;
-      }
-      modelInternal.addModelImport(structureModel.getReference());
-      ((AbstractModule) myModel.getModule()).addDependency(langSrcModule.getModuleReference(), false);
+      return;
     }
-    modelInternal.addDevKit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
+    Collection<DevKit> allDevkits = new ModuleRepositoryFacade(myProject).getAllModules(DevKit.class);
+    final SModelInternal modelInternal = ((SModelInternal) myModel);
+    CollectionSequence.fromCollection(allDevkits).where(new IWhereFilter<DevKit>() {
+      public boolean accept(DevKit it) {
+        return it.getAllExtendedDevkits().contains(consoleDevkit);
+      }
+    }).visitAll(new IVisitor<DevKit>() {
+      public void visit(DevKit it) {
+        modelInternal.addDevKit(it.getModuleReference());
+      }
+    });
   }
 
   protected void validateImports() {
@@ -518,7 +512,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
       }
       public void addClosure(Runnable closure, String text) {
         SNode nodeWithClosure = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xf6d4d958ec2f2c6L, "jetbrains.mps.console.base.structure.NodeWithClosure"));
-        SPropertyOperations.set(nodeWithClosure, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), text);
+        SPropertyOperations.assign(nodeWithClosure, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), text);
         ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, closure);
         addNode(nodeWithClosure);
       }
@@ -607,7 +601,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
   }
   private static boolean check_6q36mf_a0a4a0a0a0a0a5ec(SModelReference checkedDotOperand, SModel myModel) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.equals(myModel.getReference());
+      return checkedDotOperand.equals(SModelOperations.getPointer(myModel));
     }
     return false;
   }

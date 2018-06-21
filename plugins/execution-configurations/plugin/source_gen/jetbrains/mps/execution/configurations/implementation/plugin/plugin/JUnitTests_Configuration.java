@@ -6,14 +6,12 @@ import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
 import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
-import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -25,10 +23,11 @@ import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ExecutionException;
@@ -40,8 +39,6 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 
 public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = LogManager.getLogger(JUnitTests_Configuration.class);
-  @NotNull
-  private JUnitTests_Configuration.MyState myState = new JUnitTests_Configuration.MyState();
   private JUnitSettings_Configuration myJUnitSettings = new JUnitSettings_Configuration(this.getProject());
   private JavaRunParameters_Configuration myJavaRunParameters = new JavaRunParameters_Configuration(this.getProject());
   public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
@@ -49,7 +46,6 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   }
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
-    element.addContent(XmlSerializer.serialize(myState));
     {
       Element fieldElement = new Element("myJUnitSettings");
       myJUnitSettings.writeExternal(fieldElement);
@@ -66,7 +62,6 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     if (element == null) {
       throw new InvalidDataException("Cant read " + this + ": element is null.");
     }
-    XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
     {
       Element fieldElement = element.getChild("myJUnitSettings");
       if (fieldElement != null) {
@@ -110,30 +105,12 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   }
   @Override
   public JUnitTests_Configuration clone() {
-    JUnitTests_Configuration clone = null;
-    try {
-      clone = createCloneTemplate();
-      clone.myState = (JUnitTests_Configuration.MyState) myState.clone();
-      clone.myJUnitSettings = (JUnitSettings_Configuration) myJUnitSettings.clone();
-      clone.myJavaRunParameters = (JavaRunParameters_Configuration) myJavaRunParameters.clone();
-      return clone;
-    } catch (CloneNotSupportedException ex) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("", ex);
-      }
-    }
+    JUnitTests_Configuration clone = createCloneTemplate();
+    clone.myJUnitSettings = (JUnitSettings_Configuration) myJUnitSettings.clone();
+    clone.myJavaRunParameters = (JavaRunParameters_Configuration) myJavaRunParameters.clone();
     return clone;
   }
-  public class MyState {
-    public MyState() {
-    }
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      JUnitTests_Configuration.MyState state = new JUnitTests_Configuration.MyState();
-      return state;
-    }
-  }
-  public JUnitTests_Configuration(Project project, JUnitTests_Configuration_Factory factory, String name) {
+  public JUnitTests_Configuration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
   @Nullable

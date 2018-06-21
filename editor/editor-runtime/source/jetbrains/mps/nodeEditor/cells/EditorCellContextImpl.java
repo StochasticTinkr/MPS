@@ -17,7 +17,9 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -30,6 +32,7 @@ import java.util.Set;
  */
 public class EditorCellContextImpl implements EditorCellContext {
   private SNodeLocation myNodeLocation;
+  private SPropertyInfo myPropertyInfo;
   private final Set<String> myHints = new HashSet<>();
 
   public EditorCellContextImpl(EditorCellContext parentContext) {
@@ -43,19 +46,17 @@ public class EditorCellContextImpl implements EditorCellContext {
   }
 
   @Override
-  public boolean hasContextHint(String hint) {
-    return myHints.contains(hint);
-  }
-
-  @Override
   public SNodeLocation getNodeLocation() {
     return myNodeLocation;
   }
 
+  @Override
+  public SPropertyInfo getPropertyInfo() {
+    return myPropertyInfo;
+  }
+
   public void addHints(String... hints) {
-    for (String hint : hints) {
-      myHints.add(hint);
-    }
+    myHints.addAll(Arrays.asList(hints));
   }
 
   public void removeHints(String... hints) {
@@ -66,6 +67,10 @@ public class EditorCellContextImpl implements EditorCellContext {
 
   public void setNodeLocation(SNodeLocation location) {
     myNodeLocation = location;
+  }
+
+  public void setPropertyInfo(SPropertyInfo propertyInfo) {
+    myPropertyInfo = propertyInfo;
   }
 
   @Override

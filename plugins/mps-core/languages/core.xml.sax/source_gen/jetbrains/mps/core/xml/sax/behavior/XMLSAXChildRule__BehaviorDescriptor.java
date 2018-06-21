@@ -50,14 +50,14 @@ public final class XMLSAXChildRule__BehaviorDescriptor extends BaseBHDescriptor 
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0x1f6c736337b5e2daL, "tagName"));
   }
   /*package*/ static Scope getArgumentsScope_id460OzqriLdX(@NotNull SNode __thisNode__, SAbstractConcept kind) {
-    SAbstractConcept cncpt_a0n = (kind);
-    boolean noneMatched_a0n = true;
-    if (noneMatched_a0n && SConceptOperations.isSubConceptOf(cncpt_a0n, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
-      noneMatched_a0n = false;
+    SAbstractConcept cncpt = (kind);
+    boolean noneMatched = true;
+    if (noneMatched && SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
+      noneMatched = false;
       return new EmptyScope();
     }
-    if (noneMatched_a0n && SConceptOperations.isSubConceptOf(cncpt_a0n, MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2cbL, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"))) {
-      noneMatched_a0n = false;
+    if (noneMatched && SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2cbL, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"))) {
+      noneMatched = false;
       return SimpleRoleScope.forNamedElements(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), false, false), MetaAdapterFactory.getContainmentLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, 0x1f6c736337b5e2f4L, "attrs"));
     }
     return null;
@@ -70,10 +70,10 @@ public final class XMLSAXChildRule__BehaviorDescriptor extends BaseBHDescriptor 
       }
     }
     if (child == SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0x4180d2369beda765L, "condition"))) {
-      SAbstractConcept cncpt_a0b0o = kind;
-      boolean noneMatched_a0b0o = true;
-      if (noneMatched_a0b0o && SConceptOperations.isSubConceptOf(cncpt_a0b0o, MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2cbL, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"))) {
-        noneMatched_a0b0o = false;
+      SAbstractConcept cncpt = kind;
+      boolean noneMatched = true;
+      if (noneMatched && SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2cbL, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"))) {
+        noneMatched = false;
         return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0x1f6c736337b5e2dcL, "rule")), MetaAdapterFactory.getContainmentLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, 0x1f6c736337b5e2f4L, "attrs"));
       }
     }

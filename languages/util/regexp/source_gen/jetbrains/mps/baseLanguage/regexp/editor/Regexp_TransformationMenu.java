@@ -177,7 +177,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
             Pattern _pattern_0 = REGEXP_luzgqn_a0a0d0g2e7;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
-              SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dbeda57L, 0x1118dbf202dL, "n"), "" + (Integer.parseInt(_matcher_0.group(1))));
+              SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dbeda57L, 0x1118dbf202dL, "n"), "" + (Integer.parseInt(_matcher_0.group(1))));
             }
           }
           SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), node, SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
@@ -250,7 +250,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
             Pattern _pattern_0 = REGEXP_luzgqn_a0a0d0g2f7;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
-              SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc30ee2L, 0x1118dc39835L, "n"), "" + (Integer.parseInt(_matcher_0.group(1))));
+              SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc30ee2L, 0x1118dc39835L, "n"), "" + (Integer.parseInt(_matcher_0.group(1))));
             }
           }
           SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), node, SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
@@ -335,14 +335,14 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
             Pattern _pattern_0 = REGEXP_luzgqn_a0a0d0g2g7;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
-              SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc58c6eL, 0x1118dc5ca73L, "m"), "" + (Integer.parseInt(_matcher_0.group(1))));
+              SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc58c6eL, 0x1118dc5ca73L, "m"), "" + (Integer.parseInt(_matcher_0.group(1))));
             }
           }
           {
             Pattern _pattern_0 = REGEXP_luzgqn_a0a0e0g2g7;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
-              SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc58c6eL, 0x1118dc5bf75L, "n"), "" + (Integer.parseInt(_matcher_0.group(1))));
+              SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc58c6eL, 0x1118dc5bf75L, "n"), "" + (Integer.parseInt(_matcher_0.group(1))));
             }
           }
           SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), node, SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);

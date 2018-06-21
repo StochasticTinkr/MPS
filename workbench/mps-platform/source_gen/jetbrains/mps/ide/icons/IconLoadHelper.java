@@ -17,11 +17,12 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.ImageIcon;
 
 /**
+ * Remove after 2018.2 as there could be usages in generated code before
  * 
- * @deprecated 
+ * @deprecated GlobalIconManager should be used for icon management. This class is not intended to be used outside of MPS
  */
 @Deprecated
-@ToRemove(version = 3.5)
+@ToRemove(version = 2018.2)
 public class IconLoadHelper {
   private static final Logger LOG = LogManager.getLogger(IconLoadHelper.class);
   private static final int IMAGE_LOADED = ~(((MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING)));

@@ -18,19 +18,20 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
-import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.refactoring.participant.RefactoringSessionImpl;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Map;
-import jetbrains.mps.refactoring.participant.RefactoringSession;
-import jetbrains.mps.project.Project;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.refactoring.participant.RefactoringSessionImpl;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import org.apache.log4j.Level;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.refactoring.participant.RefactoringSession;
+import org.jetbrains.annotations.Nullable;
 
 public class RefactoringProcessor {
   private static final Logger LOG = LogManager.getLogger(RefactoringProcessor.class);
@@ -65,22 +66,14 @@ public class RefactoringProcessor {
       public boolean canExecute() {
         return true;
       }
-      public SearchResults execute(ModelAccess modelAccess, final ProgressMonitor progressMonitor) {
+      public SearchResults execute(final ProgressMonitor progressMonitor) {
         final Wrappers._boolean cancelled = new Wrappers._boolean(false);
-        modelAccess.runReadAction(new Runnable() {
+        repository.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             int steps = ListSequence.fromList(participantStates).count();
             progressMonitor.start("Searching for usages", steps);
             for (RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS> participantState : ListSequence.fromList(participantStates)) {
-              try {
-                participantState.findChanges(repository, selectedOptions, searchScope, progressMonitor.subTask(1, SubProgressKind.AS_COMMENT));
-              } catch (RuntimeException e) {
-                if (LOG.isEnabledFor(Level.ERROR)) {
-                  LOG.error("Exception during usages search", e);
-                }
-                cancelled.value = true;
-                break;
-              }
+              participantState.findChanges(repository, selectedOptions, searchScope, progressMonitor.subTask(1, SubProgressKind.AS_COMMENT));
               if (progressMonitor.isCanceled()) {
                 cancelled.value = true;
                 break;
@@ -108,32 +101,65 @@ public class RefactoringProcessor {
     return MultiTuple.<List<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS>>,SearchTask>from(participantStates, searchTask);
   }
 
-  public static <IP, FP> void performRefactoringUserInteractive(MPSProject project, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IP> initialStates, final _FunctionTypes._return_P2_E0<? extends Map<IP, FP>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>, ? super RefactoringSession> doRefactor) {
-    performRefactoringInProject(project, new DefaultRefactoringUI(project), refactoringName, participants, initialStates, doRefactor, null);
-  }
-
   /**
    * Update usages during refactoring.
    * For calling not in migration assistant but in interactive enviromnent, so performs all in single refactoring session with project scope.
-   * 
-   * @see jetbrains.mps.refactoring.participant.RefactoringParticipant.KeepOldNodes 
-   * @param doRefactor callback that performs refactoring itself (e.g. moves or renames smth)
-   * @param doCleanup cleanup that should be performed after all usages are updated (e.g. deletion of old code that can be used by participants), used only because of POSTPONE_REMOVE option
    */
-  public static <IP, FP> void performRefactoringInProject(Project project, RefactoringUI refactoringUI, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IP> initialStates, final _FunctionTypes._return_P2_E0<? extends Map<IP, FP>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>, ? super RefactoringSession> doRefactor, @Nullable final _FunctionTypes._void_P1_E0<? super RefactoringSession> doCleanup) {
+  public static <IP, FP> void performRefactoringInProject(final Project project, RefactoringUI refactoringUI, final RefactoringProcessor.RefactoringBody<IP, FP> refactoringBody) {
     final RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
-    performRefactoring(new RefactoringParticipant.CollectingParticipantStateFactory<IP, FP>(), refactoringUI, refactoringSession, project.getRepository(), project.getScope(), refactoringName, participants, initialStates, new _FunctionTypes._return_P1_E0<Map<IP, FP>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>>() {
+    final List<IP> initialStates = refactoringBody.findInitialStates();
+    performRefactoring(new RefactoringParticipant.CollectingParticipantStateFactory<IP, FP>(), refactoringUI, refactoringSession, project.getRepository(), project.getScope(), refactoringBody.getRefactoringName(), refactoringBody.getAllAvailableParticipants(), initialStates, new _FunctionTypes._return_P1_E0<Map<IP, FP>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>>() {
       public Map<IP, FP> invoke(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>> participantStates) {
-        return doRefactor.invoke(participantStates, refactoringSession);
+        refactoringBody.doRefactor(participantStates, refactoringSession);
+        Map<IP, FP> finalStateMap = MapSequence.fromMap(new HashMap<IP, FP>());
+        for (IP is : ListSequence.fromList(initialStates)) {
+          MapSequence.fromMap(finalStateMap).put(is, refactoringBody.getFinalStateFor(is));
+        }
+        if (Sequence.fromIterable(MapSequence.fromMap(finalStateMap).values()).contains(null)) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
+            LOG.error("Refactoring was interruped. Final state is null for initial state '" + MapSequence.fromMap(finalStateMap).findFirst(new IWhereFilter<IMapping<IP, FP>>() {
+              public boolean accept(IMapping<IP, FP> it) {
+                return it.value() == null;
+              }
+            }).key());
+          }
+          return null;
+        }
+        return finalStateMap;
       }
     }, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        refactoringSession.performAllRegistered();
-        if (doCleanup != null) {
-          doCleanup.invoke(refactoringSession);
-        }
+        project.getRepository().getModelAccess().executeCommand(new Runnable() {
+          public void run() {
+            refactoringSession.performAllRegistered();
+          }
+        });
+        refactoringBody.doCleanup();
       }
     });
+  }
+
+  public interface RefactoringBody<IP, FP> {
+    String getRefactoringName();
+    Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> getAllAvailableParticipants();
+    List<IP> findInitialStates();
+    /**
+     * perform refactoring itself (e.g. moves or renames smth)
+     * 
+     * executed in edt but not in command, so can show some final adjustment dialogs
+     */
+    void doRefactor(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>> participantStates, RefactoringSession refactoringSession);
+    /**
+     * pure method doing nothing but looking into a map that can be prepared in doRefactor(), so this method can be called outside of command
+     */
+    FP getFinalStateFor(IP initialState);
+    /**
+     * cleanup that should be performed after all usages are updated (e.g. deletion of old code that can be used by participants), used only because of POSTPONE_REMOVE option
+     * executed in edt but not in command, so can show some final adjustment dialogs
+     * 
+     * @see jetbrains.mps.refactoring.participant.RefactoringParticipant.KeepOldNodes 
+     */
+    void doCleanup();
   }
 
   /**
@@ -151,7 +177,7 @@ public class RefactoringProcessor {
     final Wrappers._T<SearchResults> searchResults = new Wrappers._T<SearchResults>();
     refactoringUI.runSearch(new _FunctionTypes._void_P1_E0<ProgressMonitor>() {
       public void invoke(ProgressMonitor progressMonitor) {
-        searchResults.value = participantChanges._1().execute(repository.getModelAccess(), progressMonitor);
+        searchResults.value = participantChanges._1().execute(progressMonitor);
       }
     });
 
@@ -165,13 +191,17 @@ public class RefactoringProcessor {
         if (getFinalObject == null) {
           return;
         }
-        for (RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS> participantState : ListSequence.fromList(participantChanges._0())) {
-          participantState.doRefactor(ListSequence.fromList(initialStates).select(new ISelector<IS, FS>() {
-            public FS select(IS it) {
-              return MapSequence.fromMap(getFinalObject).get(it);
+        repository.getModelAccess().executeCommand(new Runnable() {
+          public void run() {
+            for (RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS> participantState : ListSequence.fromList(participantChanges._0())) {
+              participantState.doRefactor(ListSequence.fromList(initialStates).select(new ISelector<IS, FS>() {
+                public FS select(IS it) {
+                  return MapSequence.fromMap(getFinalObject).get(it);
+                }
+              }).toListSequence(), repository, refactoringSession, factory);
             }
-          }).toListSequence(), repository, refactoringSession, factory);
-        }
+          }
+        });
         if (doCleanup != null) {
           doCleanup.invoke();
         }

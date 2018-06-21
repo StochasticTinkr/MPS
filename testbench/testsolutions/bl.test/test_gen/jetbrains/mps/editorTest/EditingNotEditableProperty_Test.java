@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class EditingNotEditableProperty_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class EditingNotEditableProperty_Test extends BaseTransformationTest {
 
   @Test
   public void test_EditingNotEditableProperty() throws Throwable {
-    runTest("jetbrains.mps.editorTest.EditingNotEditableProperty_Test$TestBody", "testMethod", false);
+    new EditingNotEditableProperty_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("4965160547087514302", "4965160547087627107");

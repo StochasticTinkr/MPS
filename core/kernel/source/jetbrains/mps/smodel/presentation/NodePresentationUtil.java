@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,16 +79,24 @@ public class NodePresentationUtil {
 
   public static int getFontStyle(SNode referenceNode, SNode referentNode) {
     SModel model = referentNode.getModel();
-    if (model == null) return Font.PLAIN;
-    if (!SModelStereotype.isUserModel(model)) return Font.PLAIN;
+    if (model == null) {
+      return Font.PLAIN;
+    }
+    if (SModelStereotype.isStubModel(model)) {
+      return Font.PLAIN;
+    }
     return isLocalTo(referenceNode, referentNode) ? Font.BOLD : Font.PLAIN;
   }
 
   public static int getSortPriority(SNode referenceNode, SNode referentNode) {
     if (isLocalTo(referenceNode, referentNode)) return -2;
     SModel model = referentNode.getModel();
-    if (model == null) return 0;
-    if (SModelStereotype.isUserModel(model)) return -1;
+    if (model == null) {
+      return 0;
+    }
+    if (!SModelStereotype.isStubModel(model)) {
+      return -1;
+    }
     return 0;
   }
 

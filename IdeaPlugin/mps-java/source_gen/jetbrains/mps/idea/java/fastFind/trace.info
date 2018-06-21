@@ -35,8 +35,8 @@
       <node id="1855001631467972412" at="56,101,57,49" concept="10" />
       <node id="2831825197766875590" at="58,5,59,0" concept="11" />
       <node id="1855001631467833113" at="59,0,60,16" concept="9" />
-      <node id="1264383190525724194" at="63,62,64,117" concept="8" />
-      <node id="1264383190525740029" at="64,117,65,106" concept="9" />
+      <node id="1264383190525724194" at="63,62,64,267" concept="8" />
+      <node id="1264383190525740029" at="64,267,65,106" concept="9" />
       <node id="1264383190525598337" at="24,0,27,0" concept="7" trace="hasCorrespondingPsi#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="1264383190525624615" at="32,27,35,5" concept="6" />
       <node id="1855001631467859996" at="43,408,46,7" concept="6" />

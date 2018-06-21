@@ -5,6 +5,7 @@
   <property name="build.layout" location="${build.dir}/artifacts/mpsPlugins" />
   <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
+  <property name="plugin_home" location="${mps_home}/plugins/modelchecker" />
   <property name="artifacts.mpsBootstrapCore" location="${build.dir}/artifacts/mpsBootstrapCore" />
   <property name="artifacts.mpsCore" location="${build.dir}/artifacts/mpsCore" />
   <property name="artifacts.mpsJavaWorkbench" location="${build.dir}/artifacts/mpsJavaWorkbench" />
@@ -26,7 +27,7 @@
       <include name="jdom.jar" />
       <include name="asm4-all.jar" />
       <include name="asm-all.jar" />
-      <include name="jgoodies-forms.jar" />
+      <include name="forms-1.1-preview.jar" />
     </fileset>
   </path>
   
@@ -52,15 +53,21 @@
       <fileset dir="${build.tmp}/java/out/ideaIntegration" />
       <zipfileset file="${mps_home}/plugins/ideaIntegration/META-INF/plugin.xml" prefix="META-INF" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-modelchecker-platform-models">
-      <fileset dir="${mps_home}/plugins/modelchecker/platform/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <mkdir dir="${build.layout}/modelchecker" />
+    <mkdir dir="${build.layout}/modelchecker/META-INF" />
+    <copy todir="${build.layout}/modelchecker/META-INF">
+      <fileset file="${plugin_home}/META-INF/plugin.xml" />
+    </copy>
+    <mkdir dir="${build.layout}/modelchecker/lib" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/platform-models">
+      <fileset dir="${plugin_home}/platform/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/modelchecker.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/modelchecker/lib/modelchecker.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/modelchecker" />
       <zipfileset file="${mps_home}/plugins/modelchecker/META-INF/plugin.xml" prefix="META-INF" />
       <zipfileset file="${basedir}/plugins/modelchecker/platform/jetbrains.mps.ide.modelchecker.platform.msd" prefix="modules/jetbrains.mps.ide.modelchecker.platform" />
       <zipfileset dir="${basedir}/plugins/modelchecker/platform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.modelchecker.platform" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-modelchecker-platform-models" prefix="modules/jetbrains.mps.ide.modelchecker.platform/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/platform-models" prefix="modules/jetbrains.mps.ide.modelchecker.platform/models" />
     </jar>
     <jar destfile="${build.layout}/samples.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples" />
@@ -103,6 +110,7 @@
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
+      <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -141,7 +149,6 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.generator.plan.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.migration.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.migration.runtime.jar" />
@@ -176,11 +183,6 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-test.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
-      <library file="${artifacts.mpsTesting}/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
-      <library file="${artifacts.mpsTesting}/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
-      <library file="${artifacts.mpsTesting}/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
-      <library file="${artifacts.mpsTesting}/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
-      <library file="${artifacts.mpsTesting}/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
       <chunk>
         <module file="${basedir}/plugins/modelchecker/platform/jetbrains.mps.ide.modelchecker.platform.msd" />
       </chunk>
@@ -189,6 +191,7 @@
       </jvmargs>
       <macro name="idea_home" path="${idea_home}" />
       <macro name="mps_home" path="${mps_home}" />
+      <macro name="plugin_home" path="${plugin_home}" />
     </generate>
   </target>
   
@@ -360,6 +363,6 @@
   </target>
   
   <target name="cleanSources">
-    <delete dir="${mps_home}/plugins/modelchecker/platform/source_gen" />
+    <delete dir="${plugin_home}/platform/source_gen" />
   </target>
 </project>

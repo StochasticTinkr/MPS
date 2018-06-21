@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -22,11 +23,15 @@ public class SurroundExpressionWithParenthesis_Test extends BaseTransformationTe
 
   @Test
   public void test_SurroundExpressionWithParenthesis() throws Throwable {
-    runTest("jetbrains.mps.editorTest.SurroundExpressionWithParenthesis_Test$TestBody", "testMethod", false);
+    new SurroundExpressionWithParenthesis_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1989240834983537721", "1989240834983537728");

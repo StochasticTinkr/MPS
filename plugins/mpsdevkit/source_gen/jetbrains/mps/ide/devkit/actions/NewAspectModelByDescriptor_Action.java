@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
@@ -46,7 +46,7 @@ public class NewAspectModelByDescriptor_Action extends BaseAction {
     enable(event.getPresentation());
 
     event.getPresentation().setText(NameUtil.capitalize(ad.getPresentableAspectName()) + " Aspect");
-    Icon icon = IconManager.getIconForResource(ad.getIconResource());
+    Icon icon = GlobalIconManager.getInstance().getIconForResource(ad.getIconResource());
     event.getPresentation().setIcon((icon != null ? icon : IdeIcons.MODEL_ICON));
 
     NewAspectModelByDescriptor_Action.this.setEnabledState(event.getPresentation(), ad.canCreate(((SModule) MapSequence.fromMap(_params).get("module"))));

@@ -15,8 +15,8 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0a = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0a.index(cncpt_a0a)) {
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new Block_diagram_Editor());
       case 1:
@@ -38,5 +38,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
-  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L), MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL), MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fa1L), MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec441516L), MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L), MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fb4L), MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fbfL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L), MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL), MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fa1L), MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec441516L), MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L), MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fb4L), MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fbfL)).seal();
 }

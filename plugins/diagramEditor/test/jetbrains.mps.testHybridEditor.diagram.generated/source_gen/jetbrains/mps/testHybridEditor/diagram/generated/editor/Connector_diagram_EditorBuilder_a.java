@@ -44,14 +44,14 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createDiagramConnector_a4xffp_a();
+    return createDiagramConnector_0();
   }
 
-  private EditorCell createDiagramConnector_a4xffp_a() {
+  private EditorCell createDiagramConnector_0() {
     final ConnectorCell editorCell = new Connector_diagram_EditorBuilder_a.ConnectorCellImpl_a4xffp_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramConnector_a4xffp_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     DefaultDiagramElementActionMap_0.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;
   }

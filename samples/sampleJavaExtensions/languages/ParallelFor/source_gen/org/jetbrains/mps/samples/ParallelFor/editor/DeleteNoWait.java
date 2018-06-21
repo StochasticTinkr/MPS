@@ -28,7 +28,7 @@ public class DeleteNoWait {
       if (DeletionApproverUtil.approve(editorContext, node, "noWaitKeyword")) {
         return;
       }
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, 0x74391c966b0f1304L, "nowait"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, 0x74391c966b0f1304L, "nowait"), "" + (false));
     }
   }
   public static class DeleteNoWait_BACKSPACE extends AbstractCellAction {
@@ -43,7 +43,7 @@ public class DeleteNoWait {
       if (DeletionApproverUtil.approve(editorContext, node, "noWaitKeyword")) {
         return;
       }
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, 0x74391c966b0f1304L, "nowait"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, 0x74391c966b0f1304L, "nowait"), "" + (false));
     }
   }
 }

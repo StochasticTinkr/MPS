@@ -6,7 +6,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root>
     <file name="DataFlowAspectDescriptorImpl.java">
-      <unit at="15,0,64,0" name="jetbrains.mps.lang.smodel.dataFlow.DataFlowAspectDescriptorImpl" />
+      <unit at="15,0,66,0" name="jetbrains.mps.lang.smodel.dataFlow.DataFlowAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)/1210626395131">
@@ -96,6 +96,17 @@
         <var name="_context" id="3016266886293105448" />
       </scope>
       <unit id="3016266886293105448" at="11,0,18,0" name="jetbrains.mps.lang.smodel.dataFlow.ModelReferenceExpression_DataFlow" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)/3320646261216960606">
+    <file name="AbstractPointerResolveOperation_DataFlow.java">
+      <node id="3320646261216960627" at="12,60,13,227" concept="0" />
+      <node id="3320646261216960606" at="12,0,15,0" concept="3" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="3320646261216960608" at="12,60,13,227" />
+      <scope id="3320646261216960606" at="12,0,15,0">
+        <var name="_context" id="3320646261216960606" />
+      </scope>
+      <unit id="3320646261216960606" at="11,0,16,0" name="jetbrains.mps.lang.smodel.dataFlow.AbstractPointerResolveOperation_DataFlow" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)/4268767923418714695">

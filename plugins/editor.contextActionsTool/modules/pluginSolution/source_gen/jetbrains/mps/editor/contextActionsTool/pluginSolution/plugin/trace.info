@@ -226,7 +226,7 @@
       </scope>
       <scope id="1108075632710646118" at="127,0,133,0">
         <var name="checkedDotOperand" id="1108075632710646118" />
-        <var name="collapsed" id="1108075632710646118" />
+        <var name="collapsed" id="1108075632710646123" />
       </scope>
       <scope id="8009069486210097254" at="67,61,74,52">
         <var name="maxWidth" id="8009069486210053579" />
@@ -786,7 +786,6 @@
   <root nodeRef="r:e1663f0e-a433-4acc-be78-d50e0f2be978(jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin)/6294660000051114314">
     <file name="PluginSolution_ProjectPlugin.java">
       <node id="6294660000051114314" at="15,56,16,76" concept="9" />
-      <node id="6294660000051114314" at="16,76,17,82" concept="4" />
       <node id="6294660000051114314" at="17,82,18,17" concept="10" />
       <node id="6294660000051114314" at="13,0,15,0" concept="2" trace="PluginSolution_ProjectPlugin#()V" />
       <node id="6294660000051114314" at="15,0,20,0" concept="8" trace="initAllTools1#(Lcom/intellij/openapi/project/Project;)Ljava/util/List;" />
@@ -860,6 +859,9 @@
       <unit id="979234276368085638" at="37,40,41,5" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsTool_Tool$1" />
       <unit id="6294660000051114344" at="18,0,58,0" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsTool_Tool" />
     </file>
+    <file name="PluginSolution_ProjectPlugin.java">
+      <node id="6294660000051114344" at="16,76,17,82" concept="4" />
+    </file>
   </root>
   <root nodeRef="r:e1663f0e-a433-4acc-be78-d50e0f2be978(jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin)/6866332489278585921">
     <file name="ItemConverter.java">
@@ -880,7 +882,7 @@
       <node id="6866332489278860476" at="62,21,63,26" concept="9" />
       <node id="6866332489278907192" at="63,26,64,0" concept="12" />
       <node id="6866332489278853696" at="65,50,66,69" concept="9" />
-      <node id="6866332489278853702" at="67,11,68,69" concept="4" />
+      <node id="6866332489278853702" at="67,11,68,89" concept="4" />
       <node id="3818729150937329490" at="70,43,71,72" concept="4" />
       <node id="3818729150937329502" at="74,43,75,80" concept="4" />
       <node id="6866332489278907718" at="77,7,78,0" concept="12" />
@@ -931,7 +933,7 @@
       <node id="6866332489278853694" at="64,0,90,5" concept="7" />
       <node id="6866332489278847650" at="61,0,94,0" concept="14" trace="convertActionItem#(Ljetbrains/mps/openapi/editor/menus/transformation/ActionItem;Ljava/lang/String;)Ljetbrains/mps/editor/contextActionsTool/pluginSolution/plugin/ToolComponent/IItem;" />
       <scope id="6866332489278652212" at="28,60,29,34" />
-      <scope id="6866332489278886643" at="67,11,68,69" />
+      <scope id="6866332489278886643" at="67,11,68,89" />
       <scope id="3818729150937329490" at="70,43,71,72" />
       <scope id="3818729150937329502" at="74,43,75,80" />
       <scope id="6866332489278902351" at="79,11,80,47" />

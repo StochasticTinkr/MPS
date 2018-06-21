@@ -68,6 +68,10 @@
       <unit id="7205391946760650912" at="43,0,59,0" name="jetbrains.mps.samples.attribute.intentions.AttachComment1_Intention$IntentionImplementation" />
       <unit id="7205391946760650912" at="20,0,60,0" name="jetbrains.mps.samples.attribute.intentions.AttachComment1_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="7205391946760650912" at="37,47,38,57" concept="1" />
+      <node id="7205391946760650912" at="51,52,52,43" concept="1" />
+    </file>
   </root>
   <root nodeRef="r:72e47166-8f77-453a-8c51-48d556a5cc3b(jetbrains.mps.samples.attribute.intentions)/8081432364527460206">
     <file name="AttachComment2_Intention.java">
@@ -124,6 +128,10 @@
       </scope>
       <unit id="8081432364527460206" at="43,0,59,0" name="jetbrains.mps.samples.attribute.intentions.AttachComment2_Intention$IntentionImplementation" />
       <unit id="8081432364527460206" at="20,0,60,0" name="jetbrains.mps.samples.attribute.intentions.AttachComment2_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="8081432364527460206" at="38,57,39,57" concept="1" />
+      <node id="8081432364527460206" at="52,43,53,43" concept="1" />
     </file>
   </root>
 </debug-info>

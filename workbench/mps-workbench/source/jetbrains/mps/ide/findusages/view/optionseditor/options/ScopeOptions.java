@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelName;
-import org.jetbrains.mps.openapi.module.SModule;
 
 // FIXME myModel and myModule are DEFAULT_VALUE - why do we serialize this
 public class ScopeOptions extends BaseOptions {
@@ -92,7 +91,7 @@ public class ScopeOptions extends BaseOptions {
     //     as scope (despite the fact user may have picked a specific one. OTOH, he may have entered name and its intention is not obvious).
     switch (myScopeType) {
       case GLOBAL:
-        return new GlobalScope();
+        return new GlobalScope(project);
       case PROJECT:
         return new ProjectScope(project);
       case MODULE:
@@ -101,7 +100,7 @@ public class ScopeOptions extends BaseOptions {
         return new ModelsScope(new ModuleRepositoryFacade(project).getModelsByName(new SModelName(myModel)));
       default:
         LOG.error("Illegal scope type: " + myScopeType);
-        return new GlobalScope();
+        return new GlobalScope(project);
     }
   }
 

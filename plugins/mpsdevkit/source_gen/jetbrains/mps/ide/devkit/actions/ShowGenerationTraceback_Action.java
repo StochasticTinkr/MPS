@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.extapi.model.TransientSModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.project.Project;
 import java.awt.Frame;
 import javax.swing.JOptionPane;
@@ -36,7 +37,7 @@ public class ShowGenerationTraceback_Action extends BaseAction {
     if ((n == null) || !(SNodeOperations.getModel(n) instanceof TransientSModel) || tool == null) {
       disable(event.getPresentation());
     } else {
-      setEnabledState(event.getPresentation(), tool.hasTracebackData(SNodeOperations.getModel(n).getReference()));
+      setEnabledState(event.getPresentation(), tool.hasTracebackData(SModelOperations.getPointer(SNodeOperations.getModel(n))));
     }
   }
   @Override

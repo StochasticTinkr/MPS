@@ -34,24 +34,24 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_91idit_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_91idit_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_91idit_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createError_91idit_a0());
+    setCellContext(editorCell);
+    editorCell.addEditorCell(createError_0());
     if (nodeCondition_91idit_a1a()) {
-      editorCell.addEditorCell(createConstant_91idit_b0());
+      editorCell.addEditorCell(createConstant_0());
     }
     return editorCell;
   }
   private boolean nodeCondition_91idit_a1a() {
     return (boolean) XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(myNode);
   }
-  private EditorCell createError_91idit_a0() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<no content>");
     editorCell.setCellId("Error_91idit_a0");
     Style style = new StyleImpl();
@@ -64,7 +64,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   private boolean _StyleParameter_QueryFunction_91idit_a0a0() {
     return (boolean) XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(getNode());
   }
-  private EditorCell createConstant_91idit_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_91idit_b0");
     Style style = new StyleImpl();

@@ -6,6 +6,7 @@ import com.intellij.util.indexing.FileBasedIndexExtension;
 import jetbrains.mps.workbench.index.SNodeEntry;
 import java.util.List;
 import com.intellij.util.indexing.ID;
+import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.psi.search.GlobalSearchScope;
@@ -22,6 +23,7 @@ import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.core.platform.Platform;
 import java.util.Map;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.workbench.index.RootNodeNameIndex;
@@ -37,13 +39,17 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNodePointer;
 
 public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEntry, List<SNodeEntry>> {
   private static final ID<SNodeEntry, List<SNodeEntry>> NAME = ID.create("mps.ClassifierSuccessors");
+  private final MPSCoreComponents myCoreComponents;
 
   /*package*/ static void processValues(SNode nextClassifier, FileBasedIndex.ValueProcessor<List<SNodeEntry>> valueProcessor, GlobalSearchScope filter) {
     FileBasedIndex.getInstance().processValues(NAME, new SNodeEntry(SNodeOperations.getPointer(nextClassifier)), null, valueProcessor, filter);
+  }
+
+  public ClassifierSuccessorsIndexer(MPSCoreComponents mpsCoreComponents) {
+    myCoreComponents = mpsCoreComponents;
   }
 
   @NotNull
@@ -92,7 +98,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEn
   @NotNull
   @Override
   public DataIndexer<SNodeEntry, List<SNodeEntry>, FileContent> getIndexer() {
-    return new ClassifierSuccessorsIndexer.Indexer();
+    return new ClassifierSuccessorsIndexer.Indexer(myCoreComponents.getPlatform());
   }
 
   private static class InputFilter implements FileBasedIndex.InputFilter {
@@ -103,11 +109,17 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEn
   }
 
   private static class Indexer implements DataIndexer<SNodeEntry, List<SNodeEntry>, FileContent> {
+    private final Platform myPlatform;
+
+    /*package*/ Indexer(Platform mpsPlatform) {
+      myPlatform = mpsPlatform;
+    }
+
     @NotNull
     @Override
     public Map<SNodeEntry, List<SNodeEntry>> map(final FileContent inputData) {
       try {
-        SModelData modelData = RootNodeNameIndex.doModelParsing(inputData);
+        SModelData modelData = RootNodeNameIndex.doModelParsing(myPlatform, inputData);
         // e.g. model with merge conflict 
         if (modelData == null) {
           return Collections.emptyMap();
@@ -148,7 +160,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEn
 
     private void safeMap(Map<SNodeEntry, List<SNodeEntry>> result, SReference reference, SModelReference modelReference, SNode node) {
       SNodeReference targetNode = (reference == null ? null : reference.getTargetNodeReference());
-      if (targetNode == null) {
+      if (targetNode == null || targetNode.getModelReference() == null || targetNode.getNodeId() == null) {
         return;
       }
       SNodeEntry key = new SNodeEntry(targetNode);
@@ -157,9 +169,8 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEn
         successors = new ArrayList<SNodeEntry>();
         MapSequence.fromMap(result).put(key, successors);
       }
-      // being carefull with SNodePointer because node is not in a model 
-      SNodePointer nodePointer = new SNodePointer(modelReference, node.getNodeId());
-      successors.add(new SNodeEntry(nodePointer));
+      // being careful with node.pointer because node is not in a model 
+      successors.add(new SNodeEntry(modelReference, node.getNodeId()));
     }
   }
 }

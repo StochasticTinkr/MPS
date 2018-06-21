@@ -37,7 +37,10 @@ public class DecoratorTestRunner {
     if (diagramCell == null) {
       return null;
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
+    // FIXME There are 3 invocations of the method from within a model read, and 1 from prepareAndGetMapper, above, which is invoked 3 times outside of model read. 
+    //       Please explain what's expected thread for the calling code, whether there's any need to have model read around getMapper, and if yes, what's the reason 
+    //       for prepareAndGetMapper to live outside of model read. I'd rather keep all model read access control external to this utility class 
+    editorComponent.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         descendantMapper.value = diagramCell.getDecorationRootMapper().getDescendantMapper(node);
       }

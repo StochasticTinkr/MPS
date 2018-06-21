@@ -14,98 +14,104 @@
   <root nodeRef="r:4d68829a-5f0e-4737-9dcf-eed0080fbaa6(jetbrains.mps.baseLanguage.logging.scripts)/1704189004094297789">
     <file name="ConvertLegacyStatementsToLogLowLevel_MigrationScript.java">
       <node id="1704189004094297789" at="18,65,19,69" concept="5" />
-      <node id="1704189004094297789" at="22,31,23,53" concept="4" />
-      <node id="1704189004094297789" at="26,41,27,53" concept="4" />
-      <node id="1704189004094297789" at="30,54,31,164" concept="4" />
-      <node id="1704189004094297789" at="34,59,35,20" concept="4" />
+      <node id="1704189004094297802" at="22,31,23,53" concept="4" />
+      <node id="1704189004094297802" at="26,41,27,53" concept="4" />
+      <node id="1704189004094297802" at="30,54,31,164" concept="4" />
+      <node id="1704189004094297802" at="34,59,35,20" concept="4" />
       <node id="108963660037300424" at="38,52,39,278" concept="3" />
       <node id="108963660037301552" at="39,278,40,340" concept="1" />
       <node id="108963660037308328" at="40,340,41,338" concept="1" />
-      <node id="108963660037315543" at="41,338,42,337" concept="1" />
-      <node id="1704189004094297789" at="45,42,46,20" concept="4" />
+      <node id="108963660037315543" at="41,338,42,340" concept="1" />
+      <node id="1704189004094297802" at="45,42,46,20" concept="4" />
       <node id="1704189004094297789" at="53,41,54,169" concept="4" />
-      <node id="1704189004094297789" at="21,0,25,0" concept="2" trace="getName#()Ljava/lang/String;" />
-      <node id="1704189004094297789" at="25,0,29,0" concept="2" trace="getAdditionalInfo#()Ljava/lang/String;" />
-      <node id="1704189004094297789" at="29,0,33,0" concept="2" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="1704189004094297789" at="33,0,37,0" concept="2" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1704189004094297789" at="44,0,48,0" concept="2" trace="isShowAsIntention#()Z" />
+      <node id="1704189004094297802" at="21,0,25,0" concept="2" trace="getName#()Ljava/lang/String;" />
+      <node id="1704189004094297802" at="25,0,29,0" concept="2" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="1704189004094297802" at="29,0,33,0" concept="2" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1704189004094297802" at="33,0,37,0" concept="2" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1704189004094297802" at="44,0,48,0" concept="2" trace="isShowAsIntention#()Z" />
       <node id="1704189004094297789" at="51,0,56,0" concept="2" trace="getScriptNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="1704189004094297789" at="37,0,44,0" concept="2" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1704189004094297789" at="19,69,48,7" concept="1" />
+      <node id="1704189004094297802" at="37,0,44,0" concept="2" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1704189004094297802" at="19,69,48,7" concept="1" />
       <node id="1704189004094297789" at="18,0,50,0" concept="0" trace="ConvertLegacyStatementsToLogLowLevel_MigrationScript#()V" />
-      <scope id="1704189004094297789" at="22,31,23,53" />
-      <scope id="1704189004094297789" at="26,41,27,53" />
-      <scope id="1704189004094297789" at="30,54,31,164" />
-      <scope id="1704189004094297789" at="34,59,35,20" />
-      <scope id="1704189004094297789" at="45,42,46,20" />
+      <scope id="1704189004094297802" at="22,31,23,53" />
+      <scope id="1704189004094297802" at="26,41,27,53" />
+      <scope id="1704189004094297802" at="30,54,31,164" />
+      <scope id="1704189004094297802" at="34,59,35,20" />
+      <scope id="1704189004094297802" at="45,42,46,20" />
       <scope id="1704189004094297789" at="53,41,54,169" />
-      <scope id="1704189004094297789" at="21,0,25,0" />
-      <scope id="1704189004094297789" at="25,0,29,0" />
-      <scope id="1704189004094297789" at="29,0,33,0" />
-      <scope id="1704189004094297789" at="33,0,37,0">
-        <var name="node" id="1704189004094297789" />
+      <scope id="1704189004094297802" at="21,0,25,0" />
+      <scope id="1704189004094297802" at="25,0,29,0" />
+      <scope id="1704189004094297802" at="29,0,33,0" />
+      <scope id="1704189004094297802" at="33,0,37,0">
+        <var name="node" id="1704189004094297802" />
       </scope>
-      <scope id="1704189004094297804" at="38,52,42,337">
+      <scope id="1704189004094297804" at="38,52,42,340">
         <var name="newNode" id="108963660037300425" />
       </scope>
-      <scope id="1704189004094297789" at="44,0,48,0" />
+      <scope id="1704189004094297802" at="44,0,48,0" />
       <scope id="1704189004094297789" at="51,0,56,0" />
-      <scope id="1704189004094297789" at="37,0,44,0">
-        <var name="node" id="1704189004094297789" />
+      <scope id="1704189004094297802" at="37,0,44,0">
+        <var name="node" id="1704189004094297802" />
       </scope>
       <scope id="1704189004094297789" at="18,65,48,7" />
       <scope id="1704189004094297789" at="18,0,50,0" />
-      <unit id="1704189004094297789" at="20,28,48,5" name="jetbrains.mps.baseLanguage.logging.scripts.ConvertLegacyStatementsToLogLowLevel_MigrationScript$1" />
+      <unit id="1704189004094297802" at="20,28,48,5" name="jetbrains.mps.baseLanguage.logging.scripts.ConvertLegacyStatementsToLogLowLevel_MigrationScript$1" />
       <unit id="1704189004094297789" at="17,0,57,0" name="jetbrains.mps.baseLanguage.logging.scripts.ConvertLegacyStatementsToLogLowLevel_MigrationScript" />
+    </file>
+    <file name="ScriptsDescriptor.java">
+      <node id="1704189004094297789" at="15,52,16,89" concept="1" />
     </file>
   </root>
   <root nodeRef="r:4d68829a-5f0e-4737-9dcf-eed0080fbaa6(jetbrains.mps.baseLanguage.logging.scripts)/5721587534047299317">
     <file name="ConvertLegacyStatementsToMessageStatements_MigrationScript.java">
       <node id="5721587534047299317" at="18,71,19,70" concept="5" />
-      <node id="5721587534047299317" at="22,31,23,47" concept="4" />
-      <node id="5721587534047299317" at="26,41,27,47" concept="4" />
-      <node id="5721587534047299317" at="30,54,31,164" concept="4" />
-      <node id="5721587534047299317" at="34,59,35,20" concept="4" />
+      <node id="5721587534047299318" at="22,31,23,47" concept="4" />
+      <node id="5721587534047299318" at="26,41,27,47" concept="4" />
+      <node id="5721587534047299318" at="30,54,31,164" concept="4" />
+      <node id="5721587534047299318" at="34,59,35,20" concept="4" />
       <node id="5721587534047299321" at="38,52,39,270" concept="3" />
       <node id="5721587534047299327" at="39,270,40,340" concept="1" />
       <node id="5721587534047299335" at="40,340,41,338" concept="1" />
-      <node id="5721587534047299343" at="41,338,42,337" concept="1" />
-      <node id="5721587534047304978" at="42,337,43,339" concept="1" />
-      <node id="5721587534047299317" at="46,42,47,20" concept="4" />
+      <node id="5721587534047299343" at="41,338,42,340" concept="1" />
+      <node id="5721587534047304978" at="42,340,43,339" concept="1" />
+      <node id="5721587534047299318" at="46,42,47,20" concept="4" />
       <node id="5721587534047299317" at="54,41,55,169" concept="4" />
-      <node id="5721587534047299317" at="21,0,25,0" concept="2" trace="getName#()Ljava/lang/String;" />
-      <node id="5721587534047299317" at="25,0,29,0" concept="2" trace="getAdditionalInfo#()Ljava/lang/String;" />
-      <node id="5721587534047299317" at="29,0,33,0" concept="2" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="5721587534047299317" at="33,0,37,0" concept="2" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5721587534047299317" at="45,0,49,0" concept="2" trace="isShowAsIntention#()Z" />
+      <node id="5721587534047299318" at="21,0,25,0" concept="2" trace="getName#()Ljava/lang/String;" />
+      <node id="5721587534047299318" at="25,0,29,0" concept="2" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="5721587534047299318" at="29,0,33,0" concept="2" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="5721587534047299318" at="33,0,37,0" concept="2" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5721587534047299318" at="45,0,49,0" concept="2" trace="isShowAsIntention#()Z" />
       <node id="5721587534047299317" at="52,0,57,0" concept="2" trace="getScriptNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="5721587534047299317" at="37,0,45,0" concept="2" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5721587534047299317" at="19,70,49,7" concept="1" />
+      <node id="5721587534047299318" at="37,0,45,0" concept="2" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5721587534047299318" at="19,70,49,7" concept="1" />
       <node id="5721587534047299317" at="18,0,51,0" concept="0" trace="ConvertLegacyStatementsToMessageStatements_MigrationScript#()V" />
-      <scope id="5721587534047299317" at="22,31,23,47" />
-      <scope id="5721587534047299317" at="26,41,27,47" />
-      <scope id="5721587534047299317" at="30,54,31,164" />
-      <scope id="5721587534047299317" at="34,59,35,20" />
-      <scope id="5721587534047299317" at="46,42,47,20" />
+      <scope id="5721587534047299318" at="22,31,23,47" />
+      <scope id="5721587534047299318" at="26,41,27,47" />
+      <scope id="5721587534047299318" at="30,54,31,164" />
+      <scope id="5721587534047299318" at="34,59,35,20" />
+      <scope id="5721587534047299318" at="46,42,47,20" />
       <scope id="5721587534047299317" at="54,41,55,169" />
-      <scope id="5721587534047299317" at="21,0,25,0" />
-      <scope id="5721587534047299317" at="25,0,29,0" />
-      <scope id="5721587534047299317" at="29,0,33,0" />
-      <scope id="5721587534047299317" at="33,0,37,0">
-        <var name="node" id="5721587534047299317" />
+      <scope id="5721587534047299318" at="21,0,25,0" />
+      <scope id="5721587534047299318" at="25,0,29,0" />
+      <scope id="5721587534047299318" at="29,0,33,0" />
+      <scope id="5721587534047299318" at="33,0,37,0">
+        <var name="node" id="5721587534047299318" />
       </scope>
-      <scope id="5721587534047299317" at="45,0,49,0" />
+      <scope id="5721587534047299318" at="45,0,49,0" />
       <scope id="5721587534047299320" at="38,52,43,339">
         <var name="newNode" id="5721587534047299322" />
       </scope>
       <scope id="5721587534047299317" at="52,0,57,0" />
-      <scope id="5721587534047299317" at="37,0,45,0">
-        <var name="node" id="5721587534047299317" />
+      <scope id="5721587534047299318" at="37,0,45,0">
+        <var name="node" id="5721587534047299318" />
       </scope>
       <scope id="5721587534047299317" at="18,71,49,7" />
       <scope id="5721587534047299317" at="18,0,51,0" />
-      <unit id="5721587534047299317" at="20,28,49,5" name="jetbrains.mps.baseLanguage.logging.scripts.ConvertLegacyStatementsToMessageStatements_MigrationScript$1" />
+      <unit id="5721587534047299318" at="20,28,49,5" name="jetbrains.mps.baseLanguage.logging.scripts.ConvertLegacyStatementsToMessageStatements_MigrationScript$1" />
       <unit id="5721587534047299317" at="17,0,58,0" name="jetbrains.mps.baseLanguage.logging.scripts.ConvertLegacyStatementsToMessageStatements_MigrationScript" />
+    </file>
+    <file name="ScriptsDescriptor.java">
+      <node id="5721587534047299317" at="16,89,17,95" concept="1" />
     </file>
   </root>
 </debug-info>

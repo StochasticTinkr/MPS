@@ -83,6 +83,9 @@ public class AutoResolver extends BaseEventProcessingEditorChecker {
         myProject.getModelAccess().executeUndoTransparentCommand(new Runnable() {
           @Override
           public void run() {
+            if (editorContext.getEditorComponent().isDisposed()) {
+              return;
+            }
             EditorComponentState state = editorContext.getEditorComponentState();
 
             // in case this becomes a performance bottleneck, consider reusing the editor's typechecking context  

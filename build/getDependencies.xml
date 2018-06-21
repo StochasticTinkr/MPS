@@ -44,7 +44,7 @@
       <not>
         <and>
           <available file="${diffutils.lib}"/>
-          <available file="${diffutils.src}"/>
+          <available file="${diffutils.sources}"/>
           <available file="${diffutils.javadoc}"/>
         </and>
       </not>
@@ -181,6 +181,9 @@
       </patternset>
     </unzip>
 
+    <!-- TODO: quick fix. Need to update platform build script to use annotations for java 8+ -->
+    <move file="${basedir}/../lib/annotations-java5.jar" tofile="${basedir}/../lib/annotations.jar"/>
+
     <!-- Set executable flag to binaries -->
     <chmod file="${basedir}/../bin/mac/fsnotifier" perm="755"/>
     <chmod file="${basedir}/../bin/mac/restarter" perm="755"/>
@@ -206,7 +209,7 @@
           description="Download com.googlecode.java-diff-utils-diffutils library">
     <echo message="DiffUtil library is missing. Downloading..."/>
     <ivy:resolve file="ivyDiffUtils.xml" showprogress="true"/>
-    <ivy:retrieve pattern="${basedir}/../lib/ext/([classifier]/)[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
+    <ivy:retrieve pattern="${basedir}/../lib/ext/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
   </target>
 
   <target name="download-testlib" depends="check-testlib,install-ivy" if="${testlib.missing}"
@@ -231,7 +234,12 @@
   <!-- ===================================================== -->
 
   <target name="clean-platform" description="Delete platform libraries">
-    <delete dir="${basedir}/../lib" includeemptydirs="true" failonerror="false"/>
+    <delete includeemptydirs="true" failonerror="false">
+      <fileset dir="${basedir}/../lib">
+        <include name="**/*"/>
+        <exclude name="**/ext/**"/>
+      </fileset>
+    </delete>
 
     <delete dir="${basedir}/../plugins/cvsIntegration/lib" failonerror="false"/>
     <delete dir="${basedir}/../plugins/git4idea/lib" failonerror="false"/>
@@ -241,7 +249,7 @@
 
   <target name="clean-diffutils">
     <delete file="${diffutils.lib}" failonerror="false"/>
-    <delete file="${diffutils.src}" failonerror="false"/>
+    <delete file="${diffutils.sources}" failonerror="false"/>
     <delete file="${diffutils.javadoc}" failonerror="false"/>
   </target>
 

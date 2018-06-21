@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class BinaryExpressionSubstitutions3_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class BinaryExpressionSubstitutions3_Test extends BaseTransformationTest 
 
   @Test
   public void test_BinaryExpressionSubstitutions3() throws Throwable {
-    runTest("jetbrains.mps.editorTest.BinaryExpressionSubstitutions3_Test$TestBody", "testMethod", false);
+    new BinaryExpressionSubstitutions3_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("7992311601979810504", "7992311601979817173");

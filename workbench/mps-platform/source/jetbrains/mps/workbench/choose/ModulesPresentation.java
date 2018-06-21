@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.choose;
 
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -57,7 +57,7 @@ public class ModulesPresentation implements ElementPresentation<SModuleReference
       SModule module = element.resolve(myRepo);
       if (module != null) {
         presentation.name = module.getModuleName();
-        presentation.icon = IconManager.getIconFor(module);
+        presentation.icon = GlobalIconManager.getInstance().getIconFor(module);
       } else {
         presentation.name = element.getModuleName();
         presentation.icon = IdeIcons.UNKNOWN_ICON;

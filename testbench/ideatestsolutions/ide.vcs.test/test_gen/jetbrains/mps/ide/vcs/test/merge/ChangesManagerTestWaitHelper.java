@@ -24,14 +24,16 @@ public class ChangesManagerTestWaitHelper {
 
   private Runnable myAfterReloadTask;
   private ChangesManagerTestWaitHelper.MyReloadListener myReloadListener = new ChangesManagerTestWaitHelper.MyReloadListener();
+  private final ReloadManager myReloadManager;
 
-  public ChangesManagerTestWaitHelper(Project p) {
+  public ChangesManagerTestWaitHelper(Project p, ReloadManager reloadManager) {
     myProject = p;
-    ReloadManager.getInstance().addReloadListener(this.myReloadListener);
+    myReloadManager = reloadManager;
+    myReloadManager.addReloadListener(this.myReloadListener);
   }
 
   public void dispose() {
-    ReloadManager.getInstance().removeReloadListener(myReloadListener);
+    myReloadManager.removeReloadListener(myReloadListener);
   }
 
   public void waitForFileStatusChange(@NotNull final VirtualFile file, @NotNull final FileStatus expectedFileStatus) {
@@ -152,11 +154,11 @@ public class ChangesManagerTestWaitHelper {
     @Override
     public void reloadFinished() {
       synchronized (this) {
-        check_6valm7_a0a0a2w(myAfterReloadTask);
+        check_6valm7_a0a0a2x(myAfterReloadTask);
       }
     }
   }
-  private static void check_6valm7_a0a0a2w(Runnable checkedDotOperand) {
+  private static void check_6valm7_a0a0a2x(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }

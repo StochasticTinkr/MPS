@@ -20,6 +20,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptApplicationPluginType = createDescriptorForApplicationPluginType();
   /*package*/ final ConceptDescriptor myConceptGetPreferencesComponentInProjectOperation = createDescriptorForGetPreferencesComponentInProjectOperation();
   /*package*/ final ConceptDescriptor myConceptGetToolInProjectOperation = createDescriptorForGetToolInProjectOperation();
+  /*package*/ final ConceptDescriptor myConceptPlatformAccessExpression = createDescriptorForPlatformAccessExpression();
   /*package*/ final ConceptDescriptor myConceptProjectPluginDeclaration = createDescriptorForProjectPluginDeclaration();
   /*package*/ final ConceptDescriptor myConceptProjectPluginDisposeBlock = createDescriptorForProjectPluginDisposeBlock();
   /*package*/ final ConceptDescriptor myConceptProjectPluginInitBlock = createDescriptorForProjectPluginInitBlock();
@@ -33,7 +34,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptApplicationPluginDeclaration, myConceptApplicationPluginDisposeBlock, myConceptApplicationPluginInitBlock, myConceptApplicationPluginType, myConceptGetPreferencesComponentInProjectOperation, myConceptGetToolInProjectOperation, myConceptProjectPluginDeclaration, myConceptProjectPluginDisposeBlock, myConceptProjectPluginInitBlock, myConceptProjectPluginType, myConceptStandalonePluginDescriptor);
+    return Arrays.asList(myConceptApplicationPluginDeclaration, myConceptApplicationPluginDisposeBlock, myConceptApplicationPluginInitBlock, myConceptApplicationPluginType, myConceptGetPreferencesComponentInProjectOperation, myConceptGetToolInProjectOperation, myConceptPlatformAccessExpression, myConceptProjectPluginDeclaration, myConceptProjectPluginDisposeBlock, myConceptProjectPluginInitBlock, myConceptProjectPluginType, myConceptStandalonePluginDescriptor);
   }
 
   @Override
@@ -52,6 +53,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptGetPreferencesComponentInProjectOperation;
       case LanguageConceptSwitch.GetToolInProjectOperation:
         return myConceptGetToolInProjectOperation;
+      case LanguageConceptSwitch.PlatformAccessExpression:
+        return myConceptPlatformAccessExpression;
       case LanguageConceptSwitch.ProjectPluginDeclaration:
         return myConceptProjectPluginDeclaration;
       case LanguageConceptSwitch.ProjectPluginDisposeBlock:
@@ -126,6 +129,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)/681855071694758165");
     b.associate("tool", 0x9766f9338aa2116L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL).optional(false).origin("681855071694758166").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForPlatformAccessExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.plugin.standalone", "PlatformAccessExpression", 0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x2f7290ec129946e7L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
+    b.origin("r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)/3418954410726344423");
+    b.alias("mpsPlatform");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForProjectPluginDeclaration() {

@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class Comment_InsideComment_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class Comment_InsideComment_Test extends BaseTransformationTest {
 
   @Test
   public void test_Comment_InsideComment() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.actions.test.Comment_InsideComment_Test$TestBody", "testMethod", false);
+    new Comment_InsideComment_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6047905657530809269", "6047905657530809287");

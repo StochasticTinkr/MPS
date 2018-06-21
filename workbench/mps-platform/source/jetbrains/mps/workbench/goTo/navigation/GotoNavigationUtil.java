@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.goTo.navigation;
 
 import jetbrains.mps.util.CollectConsumer;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.workbench.index.RootNodeNameIndex;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -55,7 +54,7 @@ public class GotoNavigationUtil {
       subMonitor.start("", current.size());
       for (SModel m : current) {
         subMonitor.step(m.getName().getValue());
-        for (SNode root : RootNodeNameIndex.getRootsToIterate(m)) {
+        for (SNode root : m.getRootNodes()) {
           consumer.consume(new SNodeDescriptor(root));
         }
         if (monitor.isCanceled()) break;

@@ -54,7 +54,7 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ThisNodeExpression().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_ThisNodeExpression().apply(context);
       return tlist1;
     }
   }
@@ -65,7 +65,7 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ThisConceptExpression().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_ThisConceptExpression().apply(context);
       return tlist1;
     }
   }
@@ -76,7 +76,7 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_SuperNodeExpression().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_SuperNodeExpression().apply(context);
       return tlist1;
     }
   }
@@ -87,7 +87,7 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_SuperConceptExpression().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_SuperConceptExpression().apply(context);
       return tlist1;
     }
   }
@@ -98,7 +98,7 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_LocalBehaviorMethodCallWithCast().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_LocalBehaviorMethodCallWithCast().apply(context);
       return tlist1;
     }
   }
@@ -109,7 +109,7 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> result = new Template_BehaviorDescriptor().apply(environment, context);
+      Collection<SNode> result = new Template_BehaviorDescriptor().apply(context);
       return result;
     }
   }
@@ -119,10 +119,11 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.createRootRule_Condition_4881419546810727153(new CreateRootRuleContext(context, getRuleNode()));
+      return QueriesGenerated.createRootRule_Condition_911nct_a0(new CreateRootRuleContext(context, getRuleNode()));
     }
     public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationException {
-      Collection<SNode> result = new Template_BehaviorAspectDescriptor().apply(environment, new DefaultTemplateContext(environment, null, null));
+      DefaultTemplateContext context = new DefaultTemplateContext(environment, null, null);
+      Collection<SNode> result = new Template_BehaviorAspectDescriptor().apply(context);
       return result;
     }
   }

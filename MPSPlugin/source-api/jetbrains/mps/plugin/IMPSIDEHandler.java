@@ -27,4 +27,6 @@ public interface IMPSIDEHandler extends Remote {
   void showClassUsages(String fqName) throws RemoteException;
 
   void showMethodUsages(String classFqName, String methodName, int parameterCount) throws RemoteException;
+
+  void showSource(String filePath, String modelHint, int line, int column) throws RemoteException;
 }

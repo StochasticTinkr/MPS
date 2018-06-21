@@ -76,7 +76,7 @@ public class ModelCheckerBuilder {
       return result;
     }
     public boolean includeModel(SModel model) {
-      return SModelStereotype.isUserModel(model) || (myIncludeStubs && SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model)));
+      return myIncludeStubs || !(SModelStereotype.isStubModel(model));
     }
   }
 

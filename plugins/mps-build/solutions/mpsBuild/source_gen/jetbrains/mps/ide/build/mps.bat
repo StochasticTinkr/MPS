@@ -32,9 +32,9 @@ IF EXIST "%MPS_JDK%" SET JDK=%MPS_JDK%
 IF NOT "%JDK%" == "" GOTO check
 
 SET BITS=64
-SET USER_JDK64_FILE=%USERPROFILE%\.MPS2018.1\config\mps%BITS%.exe.jdk
+SET USER_JDK64_FILE=%USERPROFILE%\.MPS2018.2\config\mps%BITS%.exe.jdk
 SET BITS=
-SET USER_JDK_FILE=%USERPROFILE%\.MPS2018.1\config\mps%BITS%.exe.jdk
+SET USER_JDK_FILE=%USERPROFILE%\.MPS2018.2\config\mps%BITS%.exe.jdk
 IF EXIST "%USER_JDK64_FILE%" (
   SET /P JDK=<%USER_JDK64_FILE%
 ) ELSE (
@@ -79,7 +79,7 @@ IF EXIST "%JRE%\lib\amd64" SET BITS=64
 :: ---------------------------------------------------------------------
 IF NOT "%IDEA_PROPERTIES%" == "" SET IDE_PROPERTIES_PROPERTY="-Didea.properties.file=%IDEA_PROPERTIES%"
 
-SET USER_VM_OPTIONS_FILE=%USERPROFILE%\.MPS2018.1\mps%BITS%.exe.vmoptions
+SET USER_VM_OPTIONS_FILE=%USERPROFILE%\.MPS2018.2\mps%BITS%.exe.vmoptions
 SET VM_OPTIONS_FILE=%IDE_BIN_DIR%\mps%BITS%.exe.vmoptions
 IF EXIST "%IDE_BIN_DIR%\win\mps%BITS%.exe.vmoptions" SET VM_OPTIONS_FILE=%IDE_BIN_DIR%\win\mps%BITS%.exe.vmoptions
 IF EXIST %USER_VM_OPTIONS_FILE% SET VM_OPTIONS_FILE=%USER_VM_OPTIONS_FILE%
@@ -97,7 +97,7 @@ IF EXIST "%VM_OPTIONS_FILE%" SET ACC=%ACC% -Djb.vmOptionsFile="%VM_OPTIONS_FILE%
 ::set ADDITIONAL_JVM_ARGS=-XX:ReservedCodeCacheSize=240m
 ::set ADDITIONAL_JVM_ARGS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5071
 
-set IDEA_PATHS_SELECTOR=MPS2018.1
+set IDEA_PATHS_SELECTOR=MPS2018.2
 SET COMMON_JVM_ARGS="-XX:ErrorFile=%USERPROFILE%\java_error_in_IDEA_%%p.log" "-XX:HeapDumpPath=%USERPROFILE%\java_error_in_IDEA.hprof" -Didea.paths.selector=%IDEA_PATHS_SELECTOR% %IDE_PROPERTIES_PROPERTY%
 SET IDE_JVM_ARGS=-Didea.platform.prefix=Idea -Didea.jre.check=true
 SET ALL_JVM_ARGS=%ACC% %COMMON_JVM_ARGS% %IDE_JVM_ARGS% %ADDITIONAL_JVM_ARGS%

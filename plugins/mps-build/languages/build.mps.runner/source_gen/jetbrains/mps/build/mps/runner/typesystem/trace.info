@@ -15,6 +15,14 @@
     </file>
   </root>
   <root nodeRef="r:6869e2b7-2b2d-443c-a462-ce5a9004892e(jetbrains.mps.build.mps.runner.typesystem)/7415565752189045153">
+    <file name="TypesystemDescriptor.java">
+      <node id="7415565752189045153" at="10,5,11,108" concept="7" />
+      <node id="7415565752189045153" at="11,108,12,55" concept="3" />
+      <node id="7415565752189045153" at="9,33,13,5" concept="0" />
+      <scope id="7415565752189045153" at="10,5,12,55">
+        <var name="nonTypesystemRule" id="7415565752189045153" />
+      </scope>
+    </file>
     <file name="check_BuildSolutionRunnerAspect_NonTypesystemRule.java">
       <node id="1350734474211084472" at="35,132,36,130" concept="7" />
       <node id="1350734474211091640" at="36,130,37,132" concept="7" />

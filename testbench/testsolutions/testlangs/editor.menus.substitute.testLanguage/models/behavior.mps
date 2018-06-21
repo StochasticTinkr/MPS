@@ -55,7 +55,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="7XjOxAidALA">
-    <ref role="13h7C2" to="wdez:7XjOxAidyWy" resolve="TestSubstitituteAbstractSubChildAmbigousPosition" />
+    <ref role="13h7C2" to="wdez:7XjOxAidyWy" resolve="TestSubstituteAbstractSubChildAmbigousPosition" />
     <node concept="13hLZK" id="7XjOxAidALB" role="13h7CW">
       <node concept="3clFbS" id="7XjOxAidALC" role="2VODD2" />
     </node>
@@ -78,7 +78,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="7XjOxAie5A8">
-    <ref role="13h7C2" to="wdez:7XjOxAidktF" resolve="TestSubstitituteAbstractChildAmbigousPosition" />
+    <ref role="13h7C2" to="wdez:7XjOxAidktF" resolve="TestSubstituteAbstractChildAmbigousPosition" />
     <node concept="13hLZK" id="7XjOxAie5A9" role="13h7CW">
       <node concept="3clFbS" id="7XjOxAie5Aa" role="2VODD2" />
     </node>

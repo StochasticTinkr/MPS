@@ -139,7 +139,7 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
       menuLookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), getTargetConcept());
     }
     if (myUsedLookups.contains(menuLookup)) {
-      LOG.info("Lookup + " + menuLookup + " vas already used within this context. Return empty collection to prevent items duplication");
+      LOG.info("Lookup + " + menuLookup + " was already used within this context. Return empty collection to prevent items duplication");
       return Collections.emptyList();
     }
     myUsedLookups.add(menuLookup);

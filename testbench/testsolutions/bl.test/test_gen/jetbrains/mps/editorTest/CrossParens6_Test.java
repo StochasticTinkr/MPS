@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class CrossParens6_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class CrossParens6_Test extends BaseTransformationTest {
 
   @Test
   public void test_CrossParens6() throws Throwable {
-    runTest("jetbrains.mps.editorTest.CrossParens6_Test$TestBody", "testMethod", false);
+    new CrossParens6_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("7437995586875908152", "7437995586875908171");

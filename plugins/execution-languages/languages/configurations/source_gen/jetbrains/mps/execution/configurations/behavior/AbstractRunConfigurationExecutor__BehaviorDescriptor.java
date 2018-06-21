@@ -35,8 +35,8 @@ public final class AbstractRunConfigurationExecutor__BehaviorDescriptor extends 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getCanExecuteMethodName_id6LlKjXrMerG, getSuffix_idO$iR4JBsSb, getGeneratedClassName_idO$iR4JBsSg);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x523a1a6c9706408bL, "canRun"), "" + (true));
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x1acdeec3ca0ad49cL, "configurationName"), "myRunConfiguration");
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x523a1a6c9706408bL, "canRun"), "" + (true));
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x1acdeec3ca0ad49cL, "configurationName"), "myRunConfiguration");
   }
 
   /*package*/ static String getCanExecuteMethodName_id6LlKjXrMerG(@NotNull SNode __thisNode__) {

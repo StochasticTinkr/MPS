@@ -47,29 +47,29 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_29llnk_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_29llnk_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_29llnk_a_0");
+    editorCell.setCellId("Collection_29llnk_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createCollection_29llnk_a0());
+    setCellContext(editorCell);
+    editorCell.addEditorCell(createCollection_1());
     return editorCell;
   }
-  private EditorCell createCollection_29llnk_a0() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_29llnk_a0");
+    editorCell.setCellId("Collection_29llnk_1");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_29llnk_a0a());
+    editorCell.addEditorCell(createConstant_0());
     if (nodeCondition_29llnk_a1a0()) {
-      editorCell.addEditorCell(createReadOnlyModelAccessor_29llnk_b0a());
+      editorCell.addEditorCell(createReadOnlyModelAccessor_0());
     }
     if (nodeCondition_29llnk_a2a0()) {
-      editorCell.addEditorCell(createError_29llnk_c0a());
+      editorCell.addEditorCell(createError_0());
     }
     return editorCell;
   }
@@ -79,9 +79,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
   private boolean nodeCondition_29llnk_a2a0() {
     return SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465aL, "quotedNode")) == null;
   }
-  private EditorCell createConstant_29llnk_a0a() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "concept:");
-    editorCell.setCellId("Constant_29llnk_a0a");
+    editorCell.setCellId("Constant_29llnk_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.SELECTABLE, false);
@@ -89,7 +89,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_29llnk_b0a() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465aL, "quotedNode")) != null ? SNodeOperations.getConcept(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465aL, "quotedNode"))).getName() : "<not specitied>");
@@ -103,7 +103,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new Quotation_InspectorBuilder_a.Quotation_component_cellMenu_29llnk_a0b0a(), new SChildSubstituteInfoPartEx(editorCell)}));
-    editorCell.setCellId("ReadOnlyModelAccessor_29llnk_b0a");
+    editorCell.setCellId("ReadOnlyModelAccessor_29llnk_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
@@ -118,9 +118,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
       return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
-  private EditorCell createError_29llnk_c0a() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<not specified>");
-    editorCell.setCellId("Error_29llnk_c0a");
+    editorCell.setCellId("Error_29llnk_0");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new Quotation_InspectorBuilder_a.Quotation_component_cellMenu_29llnk_a0c0a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }

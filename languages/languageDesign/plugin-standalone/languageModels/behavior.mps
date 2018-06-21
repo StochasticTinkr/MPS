@@ -11,7 +11,6 @@
     <import index="tp4h" ref="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)" />
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
     <import index="tp4k" ref="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" />
-    <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
@@ -116,9 +115,6 @@
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
-      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
-        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
-      </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
@@ -180,7 +176,7 @@
               </node>
             </node>
             <node concept="Xl_RD" id="qKmr2orM31" role="3uHU7w">
-              <property role="Xl_RC" value="_CustomProjectPlugin" />
+              <property role="Xl_RC" value="_ProjectPluginPart" />
             </node>
           </node>
         </node>
@@ -193,24 +189,15 @@
       <node concept="17QB3L" id="qKmr2orM34" role="3clF45" />
       <node concept="3clFbS" id="qKmr2orM35" role="3clF47">
         <node concept="3cpWs6" id="qKmr2orM36" role="3cqZAp">
-          <node concept="3cpWs3" id="qKmr2orM37" role="3cqZAk">
-            <node concept="BsUDl" id="qKmr2orM38" role="3uHU7w">
-              <ref role="37wK5l" node="qKmr2orM2S" resolve="getGeneratedName" />
+          <node concept="2YIFZM" id="51KFoiwJ8sc" role="3cqZAk">
+            <ref role="37wK5l" to="18ew:~JavaNameUtil.fqClassName(org.jetbrains.mps.openapi.model.SModel,java.lang.String):java.lang.String" resolve="fqClassName" />
+            <ref role="1Pybhc" to="18ew:~JavaNameUtil" resolve="JavaNameUtil" />
+            <node concept="2OqwBi" id="51KFoiwJ8sd" role="37wK5m">
+              <node concept="13iPFW" id="51KFoiwJ8se" role="2Oq$k0" />
+              <node concept="I4A8Y" id="51KFoiwJ8sf" role="2OqNvi" />
             </node>
-            <node concept="3cpWs3" id="qKmr2orM39" role="3uHU7B">
-              <node concept="2YIFZM" id="2n9zn0CqMMu" role="3uHU7B">
-                <ref role="37wK5l" to="unno:7WvVJ3rORmu" resolve="getModelLongName" />
-                <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                <node concept="2JrnkZ" id="2n9zn0CqMMv" role="37wK5m">
-                  <node concept="2OqwBi" id="2n9zn0CqMMw" role="2JrQYb">
-                    <node concept="13iPFW" id="2n9zn0CqMMx" role="2Oq$k0" />
-                    <node concept="I4A8Y" id="2n9zn0CqMMy" role="2OqNvi" />
-                  </node>
-                </node>
-              </node>
-              <node concept="Xl_RD" id="qKmr2orM3g" role="3uHU7w">
-                <property role="Xl_RC" value="." />
-              </node>
+            <node concept="BsUDl" id="51KFoiwJ8Hx" role="37wK5m">
+              <ref role="37wK5l" node="qKmr2orM2S" resolve="getGeneratedName" />
             </node>
           </node>
         </node>
@@ -361,7 +348,7 @@
               </node>
             </node>
             <node concept="Xl_RD" id="qKmr2orM4f" role="3uHU7w">
-              <property role="Xl_RC" value="_CustomApplicationPlugin" />
+              <property role="Xl_RC" value="_AppPluginPart" />
             </node>
           </node>
         </node>
@@ -374,24 +361,15 @@
       <node concept="17QB3L" id="qKmr2orM4i" role="3clF45" />
       <node concept="3clFbS" id="qKmr2orM4j" role="3clF47">
         <node concept="3cpWs6" id="qKmr2orM4k" role="3cqZAp">
-          <node concept="3cpWs3" id="qKmr2orM4l" role="3cqZAk">
-            <node concept="BsUDl" id="qKmr2orM4m" role="3uHU7w">
-              <ref role="37wK5l" node="qKmr2orM46" resolve="getGeneratedName" />
+          <node concept="2YIFZM" id="51KFoiwJah6" role="3cqZAk">
+            <ref role="37wK5l" to="18ew:~JavaNameUtil.fqClassName(org.jetbrains.mps.openapi.model.SModel,java.lang.String):java.lang.String" resolve="fqClassName" />
+            <ref role="1Pybhc" to="18ew:~JavaNameUtil" resolve="JavaNameUtil" />
+            <node concept="2OqwBi" id="51KFoiwJah8" role="37wK5m">
+              <node concept="13iPFW" id="51KFoiwJah9" role="2Oq$k0" />
+              <node concept="I4A8Y" id="51KFoiwJaha" role="2OqNvi" />
             </node>
-            <node concept="3cpWs3" id="qKmr2orM4n" role="3uHU7B">
-              <node concept="2YIFZM" id="2n9zn0CqMVK" role="3uHU7B">
-                <ref role="37wK5l" to="unno:7WvVJ3rORmu" resolve="getModelLongName" />
-                <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                <node concept="2JrnkZ" id="2n9zn0CqMVL" role="37wK5m">
-                  <node concept="2OqwBi" id="2n9zn0CqMVM" role="2JrQYb">
-                    <node concept="13iPFW" id="2n9zn0CqMVN" role="2Oq$k0" />
-                    <node concept="I4A8Y" id="2n9zn0CqMVO" role="2OqNvi" />
-                  </node>
-                </node>
-              </node>
-              <node concept="Xl_RD" id="qKmr2orM4u" role="3uHU7w">
-                <property role="Xl_RC" value="." />
-              </node>
+            <node concept="BsUDl" id="51KFoiwJb3y" role="37wK5m">
+              <ref role="37wK5l" node="qKmr2orM46" resolve="getGeneratedName" />
             </node>
           </node>
         </node>

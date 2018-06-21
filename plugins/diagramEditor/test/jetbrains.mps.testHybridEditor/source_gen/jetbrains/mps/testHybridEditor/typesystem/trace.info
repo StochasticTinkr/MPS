@@ -14,6 +14,14 @@
     </file>
   </root>
   <root nodeRef="r:ad8f2b18-3038-4a9d-ad27-aa5680bf8421(jetbrains.mps.testHybridEditor.typesystem)/2574029987314617115">
+    <file name="TypesystemDescriptor.java">
+      <node id="2574029987314617115" at="22,5,23,87" concept="6" />
+      <node id="2574029987314617115" at="23,87,24,55" concept="2" />
+      <node id="2574029987314617115" at="21,5,25,5" concept="0" />
+      <scope id="2574029987314617115" at="22,5,24,55">
+        <var name="nonTypesystemRule" id="2574029987314617115" />
+      </scope>
+    </file>
     <file name="check_port_NonTypesystemRule.java">
       <node id="2574029987314617119" at="20,5,21,58" concept="6" />
       <node id="2574029987314617119" at="21,58,22,238" concept="6" />
@@ -50,6 +58,14 @@
     </file>
   </root>
   <root nodeRef="r:ad8f2b18-3038-4a9d-ad27-aa5680bf8421(jetbrains.mps.testHybridEditor.typesystem)/3804439703459446717">
+    <file name="TypesystemDescriptor.java">
+      <node id="3804439703459446717" at="18,5,19,93" concept="6" />
+      <node id="3804439703459446717" at="19,93,20,55" concept="2" />
+      <node id="3804439703459446717" at="17,5,21,5" concept="0" />
+      <scope id="3804439703459446717" at="18,5,20,55">
+        <var name="nonTypesystemRule" id="3804439703459446717" />
+      </scope>
+    </file>
     <file name="check_outputport_NonTypesystemRule.java">
       <node id="3804439703459446719" at="20,5,21,58" concept="6" />
       <node id="3804439703459446719" at="21,58,22,239" concept="6" />
@@ -86,6 +102,14 @@
     </file>
   </root>
   <root nodeRef="r:ad8f2b18-3038-4a9d-ad27-aa5680bf8421(jetbrains.mps.testHybridEditor.typesystem)/4883444763024798188">
+    <file name="TypesystemDescriptor.java">
+      <node id="4883444763024798188" at="10,5,11,90" concept="6" />
+      <node id="4883444763024798188" at="11,90,12,55" concept="2" />
+      <node id="4883444763024798188" at="9,33,13,5" concept="0" />
+      <scope id="4883444763024798188" at="10,5,12,55">
+        <var name="nonTypesystemRule" id="4883444763024798188" />
+      </scope>
+    </file>
     <file name="blockInstance_NonTypesystemRule.java">
       <node id="4883444763024798190" at="22,7,23,60" concept="6" />
       <node id="4883444763024798190" at="23,60,24,239" concept="6" />
@@ -124,6 +148,14 @@
     </file>
   </root>
   <root nodeRef="r:ad8f2b18-3038-4a9d-ad27-aa5680bf8421(jetbrains.mps.testHybridEditor.typesystem)/884514646183009561">
+    <file name="TypesystemDescriptor.java">
+      <node id="884514646183009561" at="14,5,15,92" concept="6" />
+      <node id="884514646183009561" at="15,92,16,55" concept="2" />
+      <node id="884514646183009561" at="13,5,17,5" concept="0" />
+      <scope id="884514646183009561" at="14,5,16,55">
+        <var name="nonTypesystemRule" id="884514646183009561" />
+      </scope>
+    </file>
     <file name="check_all_ports_NonTypesystemRule.java">
       <node id="884514646183025010" at="23,118,24,26" concept="6" />
       <node id="884514646184202366" at="25,217,26,33" concept="6" />
@@ -195,6 +227,14 @@
     </file>
   </root>
   <root nodeRef="r:ad8f2b18-3038-4a9d-ad27-aa5680bf8421(jetbrains.mps.testHybridEditor.typesystem)/884514646186392376">
+    <file name="TypesystemDescriptor.java">
+      <node id="884514646186392376" at="26,5,27,86" concept="6" />
+      <node id="884514646186392376" at="27,86,28,55" concept="2" />
+      <node id="884514646186392376" at="25,5,29,5" concept="0" />
+      <scope id="884514646186392376" at="26,5,28,55">
+        <var name="nonTypesystemRule" id="884514646186392376" />
+      </scope>
+    </file>
     <file name="connector_NonTypesystemRule.java">
       <node id="884514646186394469" at="20,5,21,58" concept="6" />
       <node id="884514646186394469" at="21,58,22,244" concept="6" />

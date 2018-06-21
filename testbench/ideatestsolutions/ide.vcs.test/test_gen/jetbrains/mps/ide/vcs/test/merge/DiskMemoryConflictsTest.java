@@ -197,7 +197,7 @@ public class DiskMemoryConflictsTest implements EnvironmentAware {
           if (nameToWrite == null) {
             result[0] = SPropertyOperations.getString(theField, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
           } else {
-            SPropertyOperations.set(theField, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), nameToWrite);
+            SPropertyOperations.assign(theField, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), nameToWrite);
           }
         } catch (Throwable t) {
           refThrowable.set(t);

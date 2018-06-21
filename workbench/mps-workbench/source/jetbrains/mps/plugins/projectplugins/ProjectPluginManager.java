@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,7 +71,7 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
 
   public ProjectPluginManager(@NotNull Project project, jetbrains.mps.project.Project mpsProject, PluginLoaderRegistry pluginLoaderRegistry,
       @SuppressWarnings("unused") StartupModuleMaker moduleMaker, FileEditorManager manager) {
-    super(mpsProject.getRepository(), pluginLoaderRegistry);
+    super(pluginLoaderRegistry);
     myProject = project;
     myMpsProject = mpsProject;
     myManager = manager;
@@ -292,7 +292,7 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
         } else if (editor.getNodeEditor() instanceof NodeEditor) {
           //and this is to make non-tabbed editors tabbed if they need to
           for (RelationDescriptor tab : getTabDescriptors()) {
-            SNode node = editor.getNodeEditor().getCurrentlyEditedNode().resolve(myRepository);
+            SNode node = editor.getNodeEditor().getCurrentlyEditedNode().resolve(myMpsProject.getRepository());
             if (tab.isApplicable(node)) {
               editor.recreateEditorOnTabChange();
               break;

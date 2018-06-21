@@ -68,7 +68,7 @@ public class IdPrefixSearch extends QueryExecutorBase<PsiReference, SearchParame
   }
 
   @Override
-  public void processQuery(@NotNull SearchParameters queryParameters, @NotNull final Processor<PsiReference> consumer) {
+  public void processQuery(@NotNull SearchParameters queryParameters, @NotNull Processor<? super PsiReference> consumer) {
 
     if (!(queryParameters.getEffectiveSearchScope() instanceof GlobalSearchScope)) {
       return;

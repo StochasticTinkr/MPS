@@ -12,12 +12,14 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.project.ProjectHelper;
+import java.util.Set;
+import jetbrains.mps.util.CollectionUtil;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 
 public class CleanModule_Action extends BaseAction {
@@ -61,13 +63,15 @@ public class CleanModule_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+    final MPSProject mpsProject = ProjectHelper.fromIdeaProject(event.getData(CommonDataKeys.PROJECT));
+    final Set<SModule> moduleSet = CollectionUtil.set(event.getData(MPSCommonDataKeys.MODULE));
     ProgressManager.getInstance().run(new Task.Modal(event.getData(CommonDataKeys.PROJECT), "Cleaning", true) {
       @Override
       public void run(@NotNull final ProgressIndicator indicator) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        mpsProject.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             ModuleMaker maker = new ModuleMaker();
-            maker.clean(CollectionUtil.set(event.getData(MPSCommonDataKeys.MODULE)), new ProgressMonitorAdapter(indicator));
+            maker.clean(moduleSet, new ProgressMonitorAdapter(indicator));
           }
         });
       }

@@ -67,7 +67,9 @@ public abstract class DefaultScope extends BaseScope {
         result.addAll(IterableUtil.asCollection(module.getModels()));
       }
       for (Language language : myUsedLanguages) {
-        result.addAll(language.getModels()); // todo: ?
+        // XXX models of used languages have been added with an odd 'Fix tests' in commit 886dd4b, I see no reason for
+        // used languages to contribute their models to the scope. Left commented out line to keep this comment attached to smth.
+//        result.addAll(language.getModels()); // todo: ?
         result.addAll(language.getAccessoryModels());
       }
     }

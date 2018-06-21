@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,21 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
+import jetbrains.mps.project.io.DescriptorIOFacade;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
  * evgeny, 11/9/12
  */
-public final class MPSPersistence extends ComponentPlugin {
+public final class MPSPersistence extends ComponentPlugin implements ComponentHost {
   @NotNull private final PersistenceFacade myPersistenceFacade;
+  private DescriptorIOFacade myModuleDescriptorFacade;
 
   public MPSPersistence(@NotNull PersistenceFacade persistenceFacade) {
     myPersistenceFacade = persistenceFacade;
@@ -34,5 +39,15 @@ public final class MPSPersistence extends ComponentPlugin {
   public void init() {
     super.init();
     init(new JavaClassesPersistence(myPersistenceFacade));
+    init(myModuleDescriptorFacade = new DescriptorIOFacade());
+  }
+
+  @Nullable
+  @Override
+  public <T extends CoreComponent> T findComponent(@NotNull Class<T> componentClass) {
+    if (DescriptorIOFacade.class == componentClass) {
+      return componentClass.cast(myModuleDescriptorFacade);
+    }
+    return null;
   }
 }

@@ -18,10 +18,11 @@ import org.apache.tools.ant.taskdefs.Execute;
 import java.net.URL;
 import java.net.MalformedURLException;
 import java.net.URLClassLoader;
-import org.apache.tools.ant.ProjectComponent;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import org.jetbrains.annotations.NotNull;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Constructor;
+import org.apache.tools.ant.ProjectComponent;
 import java.util.Collections;
 import java.io.FileInputStream;
 import java.util.LinkedHashSet;
@@ -102,6 +103,8 @@ public abstract class MpsLoadTask extends Task {
 
   @Override
   public void execute() throws BuildException {
+    // XXX classpath contains MPS jars, which is odd in 'fork' scenario where AntBootstrap class adds 
+    // relevant MPS jars again (it also re-uses urls of the calculated classpath). Is there's any reason to do that? 
     Set<File> classPaths = calculateClassPath(myFork);
     if (myUsePropertiesAsMacro) {
       Hashtable properties = getProject().getProperties();
@@ -174,21 +177,42 @@ public abstract class MpsLoadTask extends Task {
           throw new BuildException(e);
         }
       }
-      URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), ProjectComponent.class.getClassLoader());
+      URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), getClass().getClassLoader());
       Thread.currentThread().setContextClassLoader(classLoader);
       try {
-        Class<?> whatToGenerateClass = classLoader.loadClass(Script.class.getCanonicalName());
-        Object whatToGenerate = whatToGenerateClass.newInstance();
-        myWhatToDo.cloneTo(whatToGenerate);
-        Class<?> generatorClass = classLoader.loadClass(getWorkerClass());
-        Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
-        Object generator = constructor.newInstance(whatToGenerate, this);
-        Method method = generatorClass.getMethod("work");
-        method.invoke(generator);
+        Class<?> workerClass = classLoader.loadClass(getWorkerClass());
+        Object worker = instantiateInProcessWorker(workerClass);
+        Method method = workerClass.getMethod("work");
+        method.invoke(worker);
       } catch (Throwable t) {
         throw new BuildException(t.getMessage() + "\n" + "Used class path: " + classPathUrls.toString());
       }
     }
+  }
+
+  protected Object instantiateInProcessWorker(@NotNull Class<?> workerClass) throws IllegalAccessException, InvocationTargetException, InstantiationException {
+    // First, check if there's a desire to get ProjectComponent, i.e. a worker that is Ant-aware 
+    for (Constructor<?> constructor : workerClass.getConstructors()) {
+      if (constructor.getParameterCount() != 2) {
+        continue;
+      }
+      Class<?>[] parameterTypes = constructor.getParameterTypes();
+      if (parameterTypes[0].isAssignableFrom(Script.class) && parameterTypes[1].isAssignableFrom(ProjectComponent.class)) {
+        return constructor.newInstance(myWhatToDo, this);
+      }
+    }
+    // Then, resort to a worker that doesn't depend from Ant  
+    for (Constructor<?> constructor : workerClass.getConstructors()) {
+      if (constructor.getParameterCount() != 1) {
+        continue;
+      }
+      Class<?>[] parameterTypes = constructor.getParameterTypes();
+      if (parameterTypes[0].isAssignableFrom(Script.class)) {
+        return constructor.newInstance(myWhatToDo);
+      }
+    }
+    // Last, respect the case worker doesn't need anything 
+    return workerClass.newInstance();
   }
 
   @NotNull

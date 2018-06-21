@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.testbench.ModuleGenerationHolder" file="ModuleGenerationHolder.java">
+    <classNode dependClassName="difflib.Delta" />
     <classNode dependClassName="difflib.DiffUtils" />
     <classNode dependClassName="difflib.Patch" />
     <classNode dependClassName="java.io.BufferedReader" />

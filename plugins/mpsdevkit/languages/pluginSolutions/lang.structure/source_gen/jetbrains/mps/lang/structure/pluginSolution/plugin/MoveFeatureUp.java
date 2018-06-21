@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class MoveFeatureUp implements MoveNodesAction {
+public class MoveFeatureUp extends AbstractLanguageMove implements MoveNodesAction {
   private String myName;
   private String myKind;
   private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myApplicableToConceptFeature;
@@ -59,6 +59,13 @@ public class MoveFeatureUp implements MoveNodesAction {
     }
 
     final SNode feature = SNodeOperations.cast(ListSequence.fromList(nodesToMove).first(), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"));
+    final Wrappers._T<SNode> sourceConcept = new Wrappers._T<SNode>();
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        sourceConcept.value = SNodeOperations.as(SNodeOperations.getParent(feature), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+      }
+    });
+    checkDeployed(project, sourceConcept.value);
     final SNode targetConcept = MoveUpDialog.getConcept(project, feature, featureKind);
     if (targetConcept == null) {
       return;
@@ -84,7 +91,7 @@ public class MoveFeatureUp implements MoveNodesAction {
     }
 
     if (merge) {
-      MoveNodesUtil.moveTo(project, getName(), MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.ExistingTargetProcessor(mergeTarget.value.getReference(), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), feature)));
+      MoveNodesUtil.moveTo(project, getName(), MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.ExistingTargetProcessor(SNodeOperations.getPointer(mergeTarget.value), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), feature)));
 
     } else {
       MoveNodesUtil.moveTo(project, getName(), MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationChild(targetConcept, feature.getContainmentLink()), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), feature)));

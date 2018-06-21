@@ -39,8 +39,8 @@ public final class ModulePointer__BehaviorDescriptor extends BaseBHDescriptor {
 
   /*package*/ static SNode create_id1Bs_61$mIAC(@NotNull SAbstractConcept __thisConcept__, SModel where, SModuleReference moduleRef) {
     SNode rv = SModelOperations.createNewNode(where, null, MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e361L, "jetbrains.mps.lang.modelapi.structure.ModulePointer"));
-    SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e361L, 0x19dc9460645c7f5cL, "moduleId"), PersistenceFacade.getInstance().asString(moduleRef.getModuleId()));
-    SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e361L, 0x19dc9460645ae969L, "moduleName"), moduleRef.getModuleName());
+    SPropertyOperations.assign(rv, MetaAdapterFactory.getProperty(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e361L, 0x19dc9460645c7f5cL, "moduleId"), PersistenceFacade.getInstance().asString(moduleRef.getModuleId()));
+    SPropertyOperations.assign(rv, MetaAdapterFactory.getProperty(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e361L, 0x19dc9460645ae969L, "moduleName"), moduleRef.getModuleName());
     return rv;
   }
   /*package*/ static SModuleReference toModuleReference_id1Bs_61$mqDd(@NotNull SNode __thisNode__) {

@@ -10,10 +10,13 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
+import java.util.function.Consumer;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import com.intellij.notification.Notification;
+import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
-import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
@@ -44,6 +47,10 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.notification.NotificationType;
+import com.intellij.notification.NotificationListener;
+import javax.swing.event.HyperlinkEvent;
+import com.intellij.notification.Notifications;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.migration.wizard.MigrationWizard;
 import jetbrains.mps.ide.migration.wizard.MigrationError;
@@ -68,6 +75,14 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.ide.migration.wizard.MigrationSession;
+import jetbrains.mps.classloading.DeployListener;
+import jetbrains.mps.module.ReloadableModule;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 /**
  * At the first startup, migration is not required
@@ -91,7 +106,13 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   private final MigrationRegistry myMigrationRegistry;
   private final ReloadManager myReloadManager;
 
-  private boolean myMigrationQueued = false;
+  private boolean myMigrationForbidden = false;
+  private boolean myMigrationPostponed = false;
+  private int myBlocked = 0;
+  private Consumer<Iterable<SModuleReference>> myRebuildHandler = null;
+
+  private Notification myLastNotification = null;
+  private Notification myLastDeployWarning = null;
 
   private ProjectMigrationProperties myProperties;
 
@@ -99,6 +120,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   private MigrationTrigger.MyReloadListener myReloadListener = new MigrationTrigger.MyReloadListener();
   private MigrationTrigger.MyClassesListener myClassesListener = new MigrationTrigger.MyClassesListener();
   private MigrationTrigger.MyPropertiesListener myPropertiesListener = new MigrationTrigger.MyPropertiesListener();
+  private MigrationTrigger.MyDeployListener myDeployListener;
   private boolean myListenersAdded = false;
 
   public MigrationTrigger(Project ideaProject, MPSProject p, MigrationRegistry migrationManager, ProjectMigrationProperties props, MPSCoreComponents mpsCore, ReloadManagerComponent reloadManager) {
@@ -108,18 +130,30 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     myProperties = props;
     myClassLoaderManager = mpsCore.getClassLoaderManager();
     myReloadManager = reloadManager;
+    this.myDeployListener = new MigrationTrigger.MyDeployListener(ideaProject);
   }
 
-  private final AtomicInteger myBlocked = new AtomicInteger(0);
+  public void setRebuildHandler(Consumer<Iterable<SModuleReference>> rebuildHandler) {
+    myRebuildHandler = rebuildHandler;
+  }
 
-  public void blockMigrationsCheck() {
-    myBlocked.incrementAndGet();
+  public synchronized void blockMigrationsCheck() {
+    myBlocked++;
+    myMigrationForbidden = true;
   }
 
   public void unblockMigrationsCheck() {
-    int locks = myBlocked.decrementAndGet();
-    assert locks >= 0 : "Non-paired block-unblock method usage";
-    if (locks == 0) {
+    boolean check = false;
+    synchronized (this) {
+      assert myBlocked >= 1 : "Non-paired block-unblock method usage";
+      myBlocked--;
+      if (myBlocked == 0) {
+        myMigrationForbidden = false;
+        check = true;
+      }
+    }
+
+    if (check) {
       checkMigrationNeeded();
     }
   }
@@ -138,6 +172,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
             initModuleVersionsWhereNeeded();
 
             addListeners();
+
+            myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+              public void run() {
+                checkNotDeployedLanguages();
+              }
+            });
             checkMigrationNeeded();
           }
         });
@@ -194,6 +234,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
 
   private void addListeners() {
     myListenersAdded = true;
+    myClassLoaderManager.addListener(this.myDeployListener);
     new RepoListenerRegistrar(myMpsProject.getRepository(), myRepoListener).attach();
     myClassLoaderManager.addClassesHandler(this.myClassesListener);
     myProperties.addListener(myPropertiesListener);
@@ -208,6 +249,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     myClassLoaderManager.removeClassesHandler(myClassesListener);
     new RepoListenerRegistrar(myMpsProject.getRepository(), myRepoListener).detach();
     myReloadManager.removeReloadListener(myReloadListener);
+    myClassLoaderManager.removeListener(this.myDeployListener);
     return false;
   }
 
@@ -215,10 +257,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   @NotNull
   public String getComponentName() {
     return "MigrationTrigger";
-  }
-
-  public synchronized void resetMigrationQueuedFlag() {
-    myMigrationQueued = false;
   }
 
   /*package*/ void checkMigrationNeeded() {
@@ -230,17 +268,22 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   }
 
   private synchronized void checkMigrationNeededOnModuleChange(Iterable<SModule> modules) {
-    if (myMigrationQueued) {
+    if (myMigrationForbidden) {
       return;
     }
+
     Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
-    if (myMigrationRegistry.importVersionsUpdateRequired(modules2Check) || CollectionSequence.fromCollection(myMigrationRegistry.getModuleMigrations(modules2Check)).isNotEmpty() || CollectionSequence.fromCollection(myMigrationRegistry.getProjectMigrations()).isNotEmpty()) {
-      postponeMigration();
+    if (isMigrationRequired(modules2Check)) {
+      postponeMigration(false);
     }
   }
 
+  private boolean isMigrationRequired(Iterable<SModule> modules2Check) {
+    return myMigrationRegistry.importVersionsUpdateRequired(modules2Check) || CollectionSequence.fromCollection(myMigrationRegistry.getModuleMigrations(modules2Check)).isNotEmpty() || CollectionSequence.fromCollection(myMigrationRegistry.getProjectMigrations()).isNotEmpty();
+  }
+
   private synchronized void checkMigrationNeededOnLanguageReload(Iterable<Language> languages) {
-    if (myMigrationQueued) {
+    if (myMigrationForbidden) {
       return;
     }
 
@@ -262,17 +305,17 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       }
     });
     if (myMigrationRegistry.importVersionsUpdateRequired(modules2Check) || CollectionSequence.fromCollection(myMigrationRegistry.getModuleMigrations(modules2Check)).isNotEmpty()) {
-      postponeMigration();
+      postponeMigration(false);
     }
   }
 
-  public synchronized void postponeMigration() {
-    if (myBlocked.get() != 0) {
+  public synchronized void postponeMigration(final boolean forceAssistant) {
+    if (myMigrationForbidden) {
       return;
     }
 
     final Project ideaProject = myProject;
-    myMigrationQueued = true;
+    myMigrationForbidden = true;
 
     // wait until project is fully loaded (if not yet) 
     StartupManager.getInstance(ideaProject).runWhenProjectIsInitialized(new Runnable() {
@@ -297,28 +340,48 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
               }
             });
 
-            if (resave.value || migrate.value) {
-              startMigration(resave.value, migrate.value);
+            myMigrationForbidden = false;
+            if (myMigrationPostponed && !(forceAssistant)) {
+              if (myLastNotification != null && !(myLastNotification.isExpired())) {
+                return;
+              }
+              myLastNotification = new Notification("Migration", "Migration required", "<p>This project requires migration.</p><p><a href=\"migrate\">Migrate</a></p>", NotificationType.INFORMATION, new NotificationListener() {
+                @Override
+                public void hyperlinkUpdate(@NotNull Notification notification, @NotNull HyperlinkEvent e) {
+                  if (e.getEventType() != HyperlinkEvent.EventType.ACTIVATED) {
+                    return;
+                  }
+                  if ("migrate".equals(e.getDescription())) {
+                    synchronized (MigrationTrigger.this) {
+                      myMigrationPostponed = false;
+                    }
+                    postponeMigration(true);
+                  }
+                  notification.expire();
+                }
+              });
+              Notifications.Bus.notify(myLastNotification, myProject);
             } else {
-              resetMigrationQueuedFlag();
+              if (resave.value || migrate.value) {
+                myMigrationPostponed = runMigration(resave.value, migrate.value);
+              }
             }
           }
         }, ModalityState.NON_MODAL);
       }
     });
+
   }
 
-  private void startMigration(boolean update, boolean migrate) {
+  private boolean runMigration(boolean update, boolean migrate) {
     MigrationTrigger.MyMigrationSession session = new MigrationTrigger.MyMigrationSession(update, migrate);
     final MigrationWizard wizard = new MigrationWizard(myProject, session);
     boolean finished = wizard.showAndGet();
     final MigrationError errors = session.getError();
     if (!(finished) && errors == null) {
       // user has postponed migration 
-      return;
+      return true;
     }
-
-    resetMigrationQueuedFlag();
 
     if (errors == null) {
       ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -351,6 +414,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
         }
       });
     }
+
+    return false;
   }
 
   private void syncRefresh() {
@@ -536,5 +601,114 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     public MigrationExecutor getExecutor() {
       return this.myExecutor;
     }
+  }
+
+  private class MyDeployListener implements DeployListener {
+    private final Project myIdeaProject;
+    public MyDeployListener(Project ideaProject) {
+      this.myIdeaProject = ideaProject;
+    }
+    public void onUnloaded(Set<ReloadableModule> modules, @NotNull ProgressMonitor p) {
+      checkNotDeployedLanguages();
+    }
+    public void onLoaded(Set<ReloadableModule> modules, @NotNull ProgressMonitor p) {
+      checkNotDeployedLanguages();
+    }
+  }
+
+  private void checkNotDeployedLanguages() {
+    Iterable<SLanguage> problems = getNotDeployedUsedLanguages(myMpsProject);
+    if (Sequence.fromIterable(problems).isEmpty()) {
+      if (myLastDeployWarning != null) {
+        myLastNotification = null;
+        myLastDeployWarning = null;
+
+        unblockMigrationsCheck();
+      }
+    } else {
+      if (myLastDeployWarning != null && myLastDeployWarning.getBalloon() != null) {
+        return;
+      }
+      // migrations already blocked, warning is showing 
+
+      if (myLastDeployWarning == null) {
+        blockMigrationsCheck();
+      } else {
+        // expire old, show new to get the balloon again 
+        if (!((myLastDeployWarning.isExpired()))) {
+          myLastDeployWarning.expire();
+        }
+      }
+
+      myLastDeployWarning = createDeployWarn(problems);
+      Notifications.Bus.notify(myLastDeployWarning, myProject);
+    }
+  }
+  private Notification createDeployWarn(final Iterable<SLanguage> problems) {
+    final int treshold = 20;
+    Iterable<SLanguage> sortedProblems = Sequence.fromIterable(problems).sort(new ISelector<SLanguage, String>() {
+      public String select(SLanguage it) {
+        return NameUtil.compactNamespace(it.getQualifiedName());
+      }
+    }, true);
+
+    StringBuilder sb = new StringBuilder();
+    sb.append("Some languages used in project are not deployed. Can't check migrations applicability.<br><br>");
+    sb.append("Not deployed languages");
+    if (Sequence.fromIterable(sortedProblems).count() > treshold) {
+      sb.append(" (first " + treshold + " shown)");
+    }
+    sb.append(":");
+    sb.append("<p>");
+
+    final String space = "&nbsp;";
+    final String gotoPrefix = "goto_";
+    for (SLanguage langProblem : Sequence.fromIterable(sortedProblems).take(treshold)) {
+      sb.append(space + space + "-");
+      sb.append("<a href=\"").append(gotoPrefix).append(langProblem.getSourceModuleReference().toString()).append("\">");
+      sb.append(NameUtil.compactNamespace(langProblem.getQualifiedName()));
+      sb.append("</a>");
+      sb.append(" (" + ((langProblem.getSourceModule() == null ? "absent" : "dependency problem")) + ")");
+      sb.append("<br>");
+    }
+
+    if (myRebuildHandler != null) {
+      sb.append("<br><p><a href=\"rebuild\">Rebuild and deploy listed languages</a></p>");
+    }
+
+    return new Notification("Migration", "Migration suspended", sb.toString(), NotificationType.WARNING, new NotificationListener() {
+      @Override
+      public void hyperlinkUpdate(@NotNull Notification notification, @NotNull HyperlinkEvent e) {
+        if (e.getEventType() != HyperlinkEvent.EventType.ACTIVATED) {
+          return;
+        }
+        if ("rebuild".equals(e.getDescription())) {
+          myRebuildHandler.accept(Sequence.fromIterable(problems).select(new ISelector<SLanguage, SModuleReference>() {
+            public SModuleReference select(SLanguage it) {
+              return it.getSourceModuleReference();
+            }
+          }).where(new NotNullWhereFilter<SModuleReference>()));
+        }
+        if (e.getDescription().startsWith(gotoPrefix)) {
+          String ref = e.getDescription().substring(gotoPrefix.length());
+          SModuleReference module = ModuleReference.parseReference(ref);
+          new ProjectPaneNavigator(myMpsProject).shallFocus(true).select(module);
+        }
+      }
+    });
+  }
+
+  private Collection<SLanguage> getNotDeployedUsedLanguages(jetbrains.mps.project.Project p) {
+    Iterable<SModule> projectModules = MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject);
+    Iterable<SLanguage> languages = Sequence.fromIterable(projectModules).translate(new ITranslator2<SModule, SLanguage>() {
+      public Iterable<SLanguage> translate(SModule it) {
+        return it.getUsedLanguages();
+      }
+    });
+    return Sequence.fromIterable(languages).where(new IWhereFilter<SLanguage>() {
+      public boolean accept(SLanguage it) {
+        return !(myClassLoaderManager.getModulesWatcher().getStatus(it.getSourceModuleReference()).isValid());
+      }
+    }).toListSequence();
   }
 }

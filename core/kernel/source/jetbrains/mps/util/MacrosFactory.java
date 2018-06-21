@@ -27,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
-public final class MacrosFactory {
+public final class MacrosFactory implements MacroHelper.Source {
   public static final String MODULE = "${module}";
   public static final String PROJECT_LEGACY = "${project}";
   public static final String MPS_HOME = "${mps_home}";
@@ -36,7 +36,32 @@ public final class MacrosFactory {
 
   static final char SEPARATOR_CHAR = Path.UNIX_SEPARATOR_CHAR;
 
-  private MacrosFactory() {
+  public MacrosFactory() {
+  }
+
+  @NotNull
+  @Override
+  public MacroHelper global() {
+    return getGlobal();
+  }
+
+  @NotNull
+  @Override
+  public MacroHelper module(SModule m) {
+    return forModule(m);
+  }
+
+  @NotNull
+  @Override
+  public MacroHelper moduleFile(IFile f) {
+    MacroHelper mh = forModuleFile(f);
+    return mh == null ? global() : mh;
+  }
+
+  @NotNull
+  @Override
+  public MacroHelper projectFile(IFile f) {
+    return forProjectFile(f);
   }
 
   public static MacroHelper forModuleFile(IFile moduleFile) {
@@ -59,7 +84,7 @@ public final class MacrosFactory {
   }
 
   /**
-   * @deprecated why wound anyone care to cast openapi.SModule to AbstractModule? Use {@link #forModule(SModule)} instead.
+   * @deprecated why would anyone care to cast openapi.SModule to AbstractModule? Use {@link #forModule(SModule)} instead.
    *
    */
   @Deprecated

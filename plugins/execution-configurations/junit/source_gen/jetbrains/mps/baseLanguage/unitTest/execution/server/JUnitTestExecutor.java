@@ -9,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.junit.runner.Request;
 import org.junit.runner.JUnitCore;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.junit.runner.Result;
 import org.junit.runner.notification.StoppedByUserException;
 import org.apache.log4j.Level;
@@ -69,14 +68,9 @@ public class JUnitTestExecutor implements TestExecutor {
   }
 
   private JUnitCore prepareJUnitCore(Iterable<Request> requests) {
-    Iterable<Request> reqSeq = Sequence.fromIterable(requests);
     JUnitCore core = new JUnitCore();
     myListener = createListener(requests);
     core.addListener(myListener);
-    if (!(Sequence.fromIterable(reqSeq).isEmpty())) {
-      Request firstRequest = Sequence.fromIterable(reqSeq).first();
-      updateRunner(firstRequest);
-    }
     return core;
   }
 

@@ -33,22 +33,22 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_525l3g_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_525l3g_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_525l3g_a");
-    editorCell.addEditorCell(createConstant_525l3g_a0());
+    editorCell.addEditorCell(createConstant_0());
     if (nodeCondition_525l3g_a1a()) {
-      editorCell.addEditorCell(createComponent_525l3g_b0());
+      editorCell.addEditorCell(createComponent_0());
     }
     return editorCell;
   }
   private boolean nodeCondition_525l3g_a1a() {
     return ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).isNotEmpty();
   }
-  private EditorCell createConstant_525l3g_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("TYPE_VARIABLES_ANCHOR");
     Style style = new StyleImpl();
@@ -63,7 +63,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   private boolean _StyleParameter_QueryFunction_525l3g_a1a0() {
     return ListSequence.fromList(SLinkOperations.getChildren(getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).isNotEmpty();
   }
-  private EditorCell createComponent_525l3g_b0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component");
     return editorCell;
   }

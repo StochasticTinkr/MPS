@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,30,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.structure.ConceptPresentationAspectImpl" />
@@ -9,6 +16,40 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <unit at="16,0,53,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.structure.StructureAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:9250e562-77b8-46ca-b96b-24ddc8274461(jetbrains.mps.traceInfo.tracemacro.testlang.structure)/7980748436587788162">
+    <file name="ConceptPresentationAspectImpl.java">
+      <node id="7980748436587788162" at="12,0,13,0" concept="1" trace="props_GeneratedForeach" />
+      <node id="7980748436587788162" at="20,45,21,76" concept="3" />
+      <node id="7980748436587788162" at="21,76,22,50" concept="0" />
+      <node id="7980748436587788162" at="22,50,23,48" concept="0" />
+      <node id="7980748436587788162" at="24,9,25,38" concept="4" />
+      <node id="7980748436587788162" at="19,50,24,9" concept="2" />
+      <scope id="7980748436587788162" at="20,45,23,48">
+        <var name="cpb" id="7980748436587788162" />
+      </scope>
+      <scope id="7980748436587788162" at="19,50,25,38" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <node id="7980748436587788162" at="12,0,13,0" concept="5" trace="GeneratedForeach" />
+      <node id="7980748436587788162" at="15,116,16,55" concept="0" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <node id="7980748436587788162" at="17,0,18,0" concept="1" trace="myConceptGeneratedForeach" />
+      <node id="7980748436587788162" at="33,50,34,41" concept="4" />
+      <node id="7980748436587788162" at="44,74,45,194" concept="3" />
+      <node id="7980748436587788162" at="45,194,46,34" concept="0" />
+      <node id="7980748436587788162" at="46,34,47,140" concept="0" />
+      <node id="7980748436587788162" at="47,140,48,130" concept="0" />
+      <node id="7980748436587788162" at="48,130,49,49" concept="0" />
+      <node id="7980748436587788162" at="49,49,50,22" concept="4" />
+      <node id="7980748436587788162" at="44,0,52,0" concept="6" trace="createDescriptorForGeneratedForeach#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="7980748436587788162" at="33,50,34,41" />
+      <scope id="7980748436587788162" at="44,74,50,22">
+        <var name="b" id="7980748436587788162" />
+      </scope>
+      <scope id="7980748436587788162" at="44,0,52,0" />
     </file>
   </root>
 </debug-info>

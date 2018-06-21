@@ -46,6 +46,7 @@ import jetbrains.mps.ide.actions.MPSActionPlaces;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
 import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.annotations.NonNls;
@@ -740,6 +741,13 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     myAutoscrollToSourceAction.setSelected(null, state.isAutoscrollToSource());
     setSearches(state.getSearches());
     myMaxListSize = state.getMaxListSize();
+  }
+
+  @Override
+  public IMessageHandler restrict(@NotNull MessageKind atLeastOfKind) {
+    setWarningsEnabled(MessageKind.WARNING.isSameOrGreaterSeverityThan(atLeastOfKind));
+    setInfoEnabled(MessageKind.INFORMATION.isSameOrGreaterSeverityThan(atLeastOfKind));
+    return this;
   }
 
   public void setWarningsEnabled(boolean enabled) {

@@ -52,7 +52,6 @@
       <module fileurl="file://$PROJECT_DIR$/mps.iml" filepath="$PROJECT_DIR$/mps.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/mps-annotations/mps-annotations.iml" filepath="$PROJECT_DIR$/core/mps-annotations/mps-annotations.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/tool/builder/mps-ant.iml" filepath="$PROJECT_DIR$/core/tool/builder/mps-ant.iml" group="ant" />
-      <module fileurl="file://$PROJECT_DIR$/core/mps-core/mps-core.iml" filepath="$PROJECT_DIR$/core/mps-core/mps-core.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-debugger/mps-debugger.iml" filepath="$PROJECT_DIR$/workbench/mps-debugger/mps-debugger.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/plugins/mpsdevkit/mps-devkit.iml" filepath="$PROJECT_DIR$/plugins/mpsdevkit/mps-devkit.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-editor/mps-editor.iml" filepath="$PROJECT_DIR$/workbench/mps-editor/mps-editor.iml" group="workbench" />
@@ -92,8 +91,9 @@
       <module fileurl="file://$PROJECT_DIR$/editor/typesystemIntegration/typesystemIntegration.iml" filepath="$PROJECT_DIR$/editor/typesystemIntegration/typesystemIntegration.iml" group="editor" />
       <module fileurl="file://$PROJECT_DIR$/workbench/typesystemUi/typesystemUi.iml" filepath="$PROJECT_DIR$/workbench/typesystemUi/typesystemUi.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/core/util/util-core.iml" filepath="$PROJECT_DIR$/core/util/util-core.iml" group="core" />
-      <module fileurl="file://$PROJECT_DIR$/plugins/vcs/vcs.iml" filepath="$PROJECT_DIR$/plugins/vcs/vcs.iml" group="plugins" />
-      <module fileurl="file://$PROJECT_DIR$/plugins/vcs-core/vcs-core.iml" filepath="$PROJECT_DIR$/plugins/vcs-core/vcs-core.iml" group="plugins" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/vcs/vcs.iml" filepath="$PROJECT_DIR$/plugins/vcs/vcs.iml" group="plugins/vcs" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/vcs/vcs-core/vcs-core.iml" filepath="$PROJECT_DIR$/plugins/vcs/vcs-core/vcs-core.iml" group="plugins/vcs" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/vcs/vcs-platform/vcs-platform.iml" filepath="$PROJECT_DIR$/plugins/vcs/vcs-platform/vcs-platform.iml" group="plugins/vcs" />
       <module fileurl="file://$PROJECT_DIR$/core/vfs/vfs.iml" filepath="$PROJECT_DIR$/core/vfs/vfs.iml" group="core" />
     </modules>
   </component>

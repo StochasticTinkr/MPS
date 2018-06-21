@@ -2894,12 +2894,17 @@
           </node>
         </node>
         <node concept="3clFbS" id="3SnNvqCbxCK" role="3clF47">
-          <node concept="3cpWs6" id="3SnNvqCbxCL" role="3cqZAp">
-            <node concept="2YIFZM" id="3SnNvqCccDK" role="3cqZAk">
-              <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-              <ref role="37wK5l" to="sn11:277Nzj6qTKB" resolve="getIconFor" />
-              <node concept="37vLTw" id="2BHiRxgm6cz" role="37wK5m">
-                <ref role="3cqZAo" node="3SnNvqCbxx3" resolve="m" />
+          <node concept="3clFbF" id="7eHFHBMisC6" role="3cqZAp">
+            <node concept="2OqwBi" id="7eHFHBMitGC" role="3clFbG">
+              <node concept="2YIFZM" id="7eHFHBMithv" role="2Oq$k0">
+                <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
+              </node>
+              <node concept="liA8E" id="7eHFHBMitZb" role="2OqNvi">
+                <ref role="37wK5l" to="sn11:192HKKPOe1b" resolve="getIconFor" />
+                <node concept="37vLTw" id="7eHFHBMiudJ" role="37wK5m">
+                  <ref role="3cqZAo" node="3SnNvqCbxx3" resolve="m" />
+                </node>
               </node>
             </node>
           </node>
@@ -3082,22 +3087,27 @@
           </node>
         </node>
         <node concept="3clFbS" id="3SnNvqCbxDr" role="3clF47">
-          <node concept="3cpWs6" id="3SnNvqCbxDs" role="3cqZAp">
-            <node concept="2YIFZM" id="7LWtwT1pt3X" role="3cqZAk">
-              <ref role="37wK5l" to="sn11:277Nzj6qTJV" resolve="getIconFor" />
-              <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-              <node concept="2OqwBi" id="7LWtwT1pt3Y" role="37wK5m">
-                <node concept="37vLTw" id="7LWtwT1pt3Z" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3SnNvqCbxxt" resolve="model" />
-                </node>
-                <node concept="liA8E" id="7LWtwT1pt40" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
-                  <node concept="2OqwBi" id="7LWtwT1pt41" role="37wK5m">
-                    <node concept="37vLTw" id="7LWtwT1pt42" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4_scbGUHAvq" resolve="myProject" />
-                    </node>
-                    <node concept="liA8E" id="7LWtwT1pt43" role="2OqNvi">
-                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+          <node concept="3clFbF" id="7eHFHBMig2M" role="3cqZAp">
+            <node concept="2OqwBi" id="7eHFHBMiiuj" role="3clFbG">
+              <node concept="2YIFZM" id="7eHFHBMiheN" role="2Oq$k0">
+                <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
+              </node>
+              <node concept="liA8E" id="7eHFHBMijVR" role="2OqNvi">
+                <ref role="37wK5l" to="sn11:192HKKPOd$O" resolve="getIconFor" />
+                <node concept="2OqwBi" id="7LWtwT1pt3Y" role="37wK5m">
+                  <node concept="37vLTw" id="7LWtwT1pt3Z" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3SnNvqCbxxt" resolve="model" />
+                  </node>
+                  <node concept="liA8E" id="7LWtwT1pt40" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
+                    <node concept="2OqwBi" id="7LWtwT1pt41" role="37wK5m">
+                      <node concept="37vLTw" id="7LWtwT1pt42" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4_scbGUHAvq" resolve="myProject" />
+                      </node>
+                      <node concept="liA8E" id="7LWtwT1pt43" role="2OqNvi">
+                        <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -3264,12 +3274,17 @@
           </node>
         </node>
         <node concept="3clFbS" id="3SnNvqCbxEa" role="3clF47">
-          <node concept="3cpWs6" id="3SnNvqCbxEb" role="3cqZAp">
-            <node concept="2YIFZM" id="3SnNvqCccDy" role="3cqZAk">
-              <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-              <ref role="37wK5l" to="sn11:277Nzj6qTFM" resolve="getIconFor" />
-              <node concept="37vLTw" id="2BHiRxgllaC" role="37wK5m">
-                <ref role="3cqZAo" node="3SnNvqCbxxJ" resolve="group" />
+          <node concept="3cpWs6" id="7eHFHBMiZj9" role="3cqZAp">
+            <node concept="2OqwBi" id="7eHFHBMiZja" role="3cqZAk">
+              <node concept="2YIFZM" id="7eHFHBMiZjb" role="2Oq$k0">
+                <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
+              </node>
+              <node concept="liA8E" id="7eHFHBMiZjc" role="2OqNvi">
+                <ref role="37wK5l" to="sn11:192HKKPOd3m" resolve="getIconFor" />
+                <node concept="37vLTw" id="7eHFHBMiZjd" role="37wK5m">
+                  <ref role="3cqZAo" node="3SnNvqCbxxJ" resolve="group" />
+                </node>
               </node>
             </node>
           </node>

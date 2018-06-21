@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
 public class ForStatementAdditionalVariableDeleteWithNoAdditionalVariables_Test extends BaseTransformationTest {
@@ -20,11 +21,15 @@ public class ForStatementAdditionalVariableDeleteWithNoAdditionalVariables_Test 
 
   @Test
   public void test_ForStatementAdditionalVariableDeleteWithNoAdditionalVariables() throws Throwable {
-    runTest("jetbrains.mps.editorTest.ForStatementAdditionalVariableDeleteWithNoAdditionalVariables_Test$TestBody", "testMethod", false);
+    new ForStatementAdditionalVariableDeleteWithNoAdditionalVariables_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3461663384198597041", "3461663384198597134");

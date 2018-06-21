@@ -4,7 +4,7 @@ package jetbrains.mps.ide.depanalyzer;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -17,7 +17,7 @@ public class DependencyTreeNode extends MPSTreeNode {
     super(link);
     myLink = link;
     myProject = mpsProject;
-    setIcon(IconManager.getIconFor(getModule()));
+    setIcon(GlobalIconManager.getInstance().getIconFor(getModule()));
     String linktype = (link.linktype == null ? "" : "<i>" + link.linktype.toString() + "</i> ");
     setNodeIdentifier(link.linktype + link.module.getModuleName());
     setText("<html>" + linktype + link.module.getModuleName() + "</html>");

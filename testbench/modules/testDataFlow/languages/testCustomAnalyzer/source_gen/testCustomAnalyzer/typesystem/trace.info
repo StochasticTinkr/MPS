@@ -15,6 +15,14 @@
     </file>
   </root>
   <root nodeRef="r:6ac8df16-203b-470e-8af3-57784a2fb1f4(testCustomAnalyzer.typesystem)/2955426575106086733">
+    <file name="TypesystemDescriptor.java">
+      <node id="2955426575106086733" at="14,5,15,96" concept="7" />
+      <node id="2955426575106086733" at="15,96,16,55" concept="3" />
+      <node id="2955426575106086733" at="13,5,17,5" concept="0" />
+      <scope id="2955426575106086733" at="14,5,16,55">
+        <var name="nonTypesystemRule" id="2955426575106086733" />
+      </scope>
+    </file>
     <file name="check_ParentCounter_NonTypesystemRule.java">
       <node id="2955426575106086735" at="30,117,31,41" concept="7" />
       <node id="2955426575106103251" at="32,185,33,62" concept="3" />
@@ -77,6 +85,14 @@
     </file>
   </root>
   <root nodeRef="r:6ac8df16-203b-470e-8af3-57784a2fb1f4(testCustomAnalyzer.typesystem)/6628579460233842869">
+    <file name="TypesystemDescriptor.java">
+      <node id="6628579460233842869" at="10,5,11,90" concept="7" />
+      <node id="6628579460233842869" at="11,90,12,55" concept="3" />
+      <node id="6628579460233842869" at="9,33,13,5" concept="0" />
+      <scope id="6628579460233842869" at="10,5,12,55">
+        <var name="nonTypesystemRule" id="6628579460233842869" />
+      </scope>
+    </file>
     <file name="check_Counter_NonTypesystemRule.java">
       <node id="6628579460233854452" at="26,117,27,274" concept="7" />
       <node id="6628579460233858815" at="27,274,28,54" concept="7" />

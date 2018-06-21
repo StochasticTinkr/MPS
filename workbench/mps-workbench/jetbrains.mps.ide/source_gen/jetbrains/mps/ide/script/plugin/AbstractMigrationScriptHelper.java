@@ -60,7 +60,7 @@ public abstract class AbstractMigrationScriptHelper {
     if (scriptAspect == null) {
       return null;
     }
-    final SNodeReference scriptNodeRef = scriptNode.getReference();
+    final SNodeReference scriptNodeRef = SNodeOperations.getPointer(scriptNode);
     for (RefactoringScript rs : scriptAspect.getRefactoringScripts()) {
       if (scriptNodeRef.equals(rs.getScriptNode())) {
         return rs;
@@ -81,7 +81,7 @@ public abstract class AbstractMigrationScriptHelper {
   }
 
   public static SearchScope createMigrationScope(Project project) {
-    return createMigrationScopeInternal(project.getModulesWithGenerators(), (Iterable<SModel>) Collections.<SModel>emptySet());
+    return createMigrationScopeInternal(project.getProjectModulesWithGenerators(), (Iterable<SModel>) Collections.<SModel>emptySet());
   }
 
   private static SearchScope createMigrationScopeInternal(Iterable<? extends SModule> modules, Iterable<? extends SModel> models) {
@@ -107,17 +107,14 @@ public abstract class AbstractMigrationScriptHelper {
     return new ModelsScope(result);
   }
   private static boolean includeModel(SModel model) {
-    if (!(((model instanceof EditableSModel)))) {
+    if (!((model instanceof EditableSModel))) {
       return false;
     }
     if (model.isReadOnly()) {
       return false;
     }
-    String modelStereotype = SModelStereotype.getStereotype(model);
-    if (modelStereotype != null) {
-      if (SModelStereotype.isStubModelStereotype(modelStereotype)) {
-        return false;
-      }
+    if (SModelStereotype.isStubModel(model)) {
+      return false;
     }
     return true;
   }

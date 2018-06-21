@@ -86,7 +86,7 @@ public class EditorParenthesisUtil {
       SLinkOperations.setTarget(binOp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), expr);
     }
     ParenthesisUtil.checkOperationWRTPriority(binOp);
-    selectNode(context, expr, false);
+    selectNode(context, expr, !(toRight));
   }
   public static SNode findRightmostOrLeftmostLeafExpression(SNode root, boolean rightmost) {
     if (!(SNodeOperations.isInstanceOf(root, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x182da1771714863eL, "jetbrains.mps.baseLanguage.structure.IBinaryLike")))) {

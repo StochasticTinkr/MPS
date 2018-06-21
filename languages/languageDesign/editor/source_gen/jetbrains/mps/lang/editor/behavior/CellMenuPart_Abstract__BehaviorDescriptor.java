@@ -29,8 +29,9 @@ public final class CellMenuPart_Abstract__BehaviorDescriptor extends BaseBHDescr
   public static final SMethod<SNode> getEditedFeature_idhJEvH7P = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getEditedFeature").modifiers(SModifiersImpl.create(0, AccessPrivileges.PACKAGE)).concept(CONCEPT).id("hJEvH7P").registry(REGISTRY).build();
   public static final SMethod<SNode> getEditedLink_idhJEvotS = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getEditedLink").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hJEvotS").registry(REGISTRY).build();
   public static final SMethod<SNode> getEditedAggregationLink_idhJEvgUM = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getEditedAggregationLink").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hJEvgUM").registry(REGISTRY).build();
+  public static final SMethod<SNode> getReferenceDeclaration_id1o9RazL_axx = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getReferenceDeclaration").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1o9RazL_axx").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getEditedFeature_idhJEvH7P, getEditedLink_idhJEvotS, getEditedAggregationLink_idhJEvgUM);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getEditedFeature_idhJEvH7P, getEditedLink_idhJEvotS, getEditedAggregationLink_idhJEvgUM, getReferenceDeclaration_id1o9RazL_axx);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -51,6 +52,9 @@ public final class CellMenuPart_Abstract__BehaviorDescriptor extends BaseBHDescr
       return editedLink;
     }
     return null;
+  }
+  /*package*/ static SNode getReferenceDeclaration_id1o9RazL_axx(@NotNull SNode __thisNode__) {
+    return CellMenuPart_Abstract__BehaviorDescriptor.getEditedLink_idhJEvotS.invoke(__thisNode__);
   }
 
   /*package*/ CellMenuPart_Abstract__BehaviorDescriptor() {
@@ -75,6 +79,8 @@ public final class CellMenuPart_Abstract__BehaviorDescriptor extends BaseBHDescr
         return (T) ((SNode) getEditedLink_idhJEvotS(node));
       case 2:
         return (T) ((SNode) getEditedAggregationLink_idhJEvgUM(node));
+      case 3:
+        return (T) ((SNode) getReferenceDeclaration_id1o9RazL_axx(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

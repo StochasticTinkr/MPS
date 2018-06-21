@@ -144,7 +144,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConnectionEndBLQuery;
       case LanguageConceptSwitch.CreationActionReference:
         if (props_CreationActionReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L);
+          cpb.deprecateProperty(0x3cfdbd635b5afe8dL, "iconPath");
           cpb.rawPresentation("creation");
           props_CreationActionReference = cpb.create();
         }

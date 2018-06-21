@@ -577,8 +577,8 @@
               <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
             </node>
             <node concept="2YIFZM" id="7iZR6YlY98t" role="33vP2m">
-              <ref role="37wK5l" to="tprr:7BBl3KIzam7" resolve="createLanguage" />
               <ref role="1Pybhc" to="tprr:56Y$nab_bZy" resolve="NewModuleUtil" />
+              <ref role="37wK5l" to="tprr:1hiSUCgvvR3" resolve="createLanguage" />
               <node concept="2OqwBi" id="7iZR6YlY98u" role="37wK5m">
                 <node concept="37vLTw" id="2UnPMOMmJq0" role="2Oq$k0">
                   <ref role="3cqZAo" node="3sOM1a16Xtj" resolve="mySettings" />
@@ -602,6 +602,9 @@
                 <node concept="37vLTw" id="2UnPMOMmIV_" role="10QFUP">
                   <ref role="3cqZAo" node="Ecfd3cMwd2" resolve="myProject" />
                 </node>
+              </node>
+              <node concept="3clFbT" id="1hiSUCgvYFf" role="37wK5m">
+                <property role="3clFbU" value="false" />
               </node>
             </node>
           </node>

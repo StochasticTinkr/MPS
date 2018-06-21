@@ -27,4 +27,16 @@ public abstract class BaseMpsRunConfiguration extends RunConfigurationBase imple
     }
     return name;
   }
+
+  /**
+   * MPS plugin part manages validity of configuration factories it provides according to MPS module/plugin/class reloading events.
+   * When invalid, run configuration shall assume its classes are about to be disposed and its classloader is likely already non-functional.
+   */
+  protected final boolean isValid() {
+    ConfigurationFactory factory = getFactory();
+    if (factory instanceof ConfigFactoryEnvoy) {
+      return ((ConfigFactoryEnvoy) factory).isValid();
+    }
+    return true;
+  }
 }

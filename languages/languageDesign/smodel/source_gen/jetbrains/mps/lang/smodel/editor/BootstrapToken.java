@@ -28,7 +28,7 @@ public class BootstrapToken {
       if (DeletionApproverUtil.approve(editorContext, node, "bootstrapKeyword")) {
         return;
       }
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2399a155048244c5L, 0x2399a1550482726bL, "bootstrap"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2399a155048244c5L, 0x2399a1550482726bL, "bootstrap"), "" + (false));
     }
   }
   public static class BootstrapToken_BACKSPACE extends AbstractCellAction {
@@ -43,7 +43,7 @@ public class BootstrapToken {
       if (DeletionApproverUtil.approve(editorContext, node, "bootstrapKeyword")) {
         return;
       }
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2399a155048244c5L, 0x2399a1550482726bL, "bootstrap"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2399a155048244c5L, 0x2399a1550482726bL, "bootstrap"), "" + (false));
     }
   }
 }

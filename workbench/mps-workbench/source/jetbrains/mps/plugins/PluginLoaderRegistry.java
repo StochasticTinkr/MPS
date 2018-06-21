@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.JavaNameUtil;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -265,6 +266,13 @@ public class PluginLoaderRegistry implements ApplicationComponent {
                && Objects.equals(myExtension.myProjectPartContributor, other.myExtension.myProjectPartContributor);
       }
 
+      @Override
+      public String toString() {
+        String app = JavaNameUtil.shortName(myExtension.myApplicationPartContributor);
+        String proj = JavaNameUtil.shortName(myExtension.myProjectPartContributor);
+        return String.format("ext-point contributor (%s, %s) from %s", app, proj, getContributingPluginId());
+      }
+
       private String getContributingPluginId() {
         return myExtension.getPluginDescriptor().getPluginId().getIdString();
       }
@@ -281,6 +289,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     if (myTaskInProgress) { // this happens to be called inside the UpdatingTask#doUpdate
       LOG.debug("Rescheduling update");
       reschedule();
+      return;
     }
     LOG.debug("Updating");
     Delta<PluginLoader> loadersDelta;
@@ -367,7 +376,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
         addLoaders(monitor);
         addIdeaExtPointPluginContributors(monitor);
         addContributors(monitor);
-      } finally{
+      } finally {
         myTaskInProgress = false;
       }
     }

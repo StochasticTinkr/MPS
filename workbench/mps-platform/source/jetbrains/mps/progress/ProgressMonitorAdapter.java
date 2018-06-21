@@ -33,6 +33,9 @@ public class ProgressMonitorAdapter extends ProgressMonitorBase {
 
   public ProgressMonitorAdapter(@NotNull ProgressIndicator indicator) {
     myIndicator = indicator;
+    if (myIndicator.isIndeterminate()) {
+      myIndicator.setIndeterminate(false);
+    }
   }
 
   @Override

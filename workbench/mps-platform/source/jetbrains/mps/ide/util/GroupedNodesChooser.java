@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ import com.intellij.util.containers.FactoryMap;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.ui.UIUtil;
 import com.intellij.util.ui.tree.TreeUtil;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.annotations.NonNls;
@@ -90,6 +90,7 @@ import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 
 
 public class GroupedNodesChooser extends DialogWrapper {
@@ -163,24 +164,21 @@ public class GroupedNodesChooser extends DialogWrapper {
     final DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode();
     final Ref<Integer> count = new Ref<Integer>(0);
     final SRepository projectRepo = ProjectHelper.getProjectRepository(myProject);
-    final FactoryMap<Object, ParentNode> map = new FactoryMap<Object, ParentNode>() {
-      @Override
-      protected ParentNode create(final Object key) {
-        if (key instanceof SNodeReference) {
-          SNode el = ((SNodeReference) key).resolve(projectRepo);
-          if (el != null) {
-            final ContainerNode containerNode = new ContainerNode(rootNode, (SNodeReference) key, getText(el), getIcon(el), count);
-            myContainerNodes.add(containerNode);
-            return containerNode;
-          }
-          return new ParentNode(rootNode, null, "<unknown>", null, count);
+    final Map<Object, ParentNode> map = FactoryMap.create(key -> {
+      if (key instanceof SNodeReference) {
+        SNode el = ((SNodeReference) key).resolve(projectRepo);
+        if (el != null) {
+          final ContainerNode containerNode = new ContainerNode(rootNode, (SNodeReference) key, getText(el), getIcon(el), count);
+          myContainerNodes.add(containerNode);
+          return containerNode;
         }
-        if (key instanceof String) {
-          return new ParentNode(rootNode, null, (String) key, null, count);
-        }
-        throw new IllegalArgumentException();
+        return new ParentNode(rootNode, null, "<unknown>", null, count);
       }
-    };
+      if (key instanceof String) {
+        return new ParentNode(rootNode, null, (String) key, null, count);
+      }
+      throw new IllegalArgumentException();
+    });
 
     for (SNodeReference object : myElements) {
       SNode node = object.resolve(projectRepo);
@@ -195,7 +193,7 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
   protected Icon getIcon(SNode node) {
-    return IconManager.getIconFor(node);
+    return GlobalIconManager.getInstance().getIconFor(node);
   }
 
   protected String getText(SNode node) {

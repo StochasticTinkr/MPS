@@ -6,6 +6,7 @@ import jetbrains.mps.plugins.actions.GeneratedActionGroup;
 import jetbrains.mps.plugins.actions.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
+import com.intellij.openapi.actionSystem.AnAction;
 
 public class ProjectActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.ProjectActions_ActionGroup";
@@ -30,6 +31,17 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
       ActionManagerEx manager = ActionManagerEx.getInstanceEx();
       manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
       ProjectActions_ActionGroup.this.addAction(action);
+    }
+    ProjectActions_ActionGroup.this.addSeparator();
+    {
+      GeneratedActionGroup newAction = new ProjectActionsRenameProjectContainer_ActionGroup();
+      ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+      AnAction oldAction = manager.getAction(newAction.getId());
+      if (oldAction == null) {
+        manager.registerAction(newAction.getId(), newAction, PluginId.getId("jetbrains.mps.ide"));
+        oldAction = newAction;
+      }
+      ProjectActions_ActionGroup.this.addAction(oldAction);
     }
     ProjectActions_ActionGroup.this.addSeparator();
     {

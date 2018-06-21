@@ -69,6 +69,14 @@
       </scope>
       <unit id="5347446703374068849" at="19,0,54,0" name="jetbrains.mps.lang.editor.forms.typesystem.CheckboxUI_Text_validity_NonTypesystemRule" />
     </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="5347446703374068849" at="10,5,11,101" concept="5" />
+      <node id="5347446703374068849" at="11,101,12,55" concept="2" />
+      <node id="5347446703374068849" at="9,33,13,5" concept="0" />
+      <scope id="5347446703374068849" at="10,5,12,55">
+        <var name="nonTypesystemRule" id="5347446703374068849" />
+      </scope>
+    </file>
   </root>
 </debug-info>
 

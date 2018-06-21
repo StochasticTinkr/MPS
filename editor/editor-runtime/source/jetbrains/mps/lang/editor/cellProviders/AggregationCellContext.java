@@ -24,25 +24,10 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
-/**
- * Igor Alshannikov
- * Date: Nov 29, 2006
- */
 public class AggregationCellContext extends BasicCellContext {
-  public static final Object LINK = new Object();
-  public static final Object CHILD_CONCEPT = new Object();
-  public static final Object CURRENT_CHILD_NODE = new Object();
-
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public AggregationCellContext(SNode parentNode, SNode currentChild, SNode linkDeclaration) {
-    super(parentNode);
-    SNode origin = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    put(LINK, MetaAdapterByDeclaration.getContainmentLink(origin));
-    final SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
-    put(CHILD_CONCEPT, MetaAdapterByDeclaration.getConcept(linkDeclarationTarget));
-    put(CURRENT_CHILD_NODE, currentChild);
-  }
+  public static final EditorContextKey<SContainmentLink> LINK = new EditorContextKey<>();
+  public static final EditorContextKey<SAbstractConcept> CHILD_CONCEPT = new EditorContextKey<>();
+  public static final EditorContextKey<SNode> CURRENT_CHILD_NODE = new EditorContextKey<>();
 
   public AggregationCellContext(SNode parentNode, SNode currentChild, SContainmentLink link, SAbstractConcept childConcept) {
     super(parentNode);

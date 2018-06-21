@@ -6,12 +6,10 @@
       <implementation-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</implementation-class>
     </component>
 
-    <!--
     <component>
       <interface-class>com.intellij.formatting.FormatterEx</interface-class>
       <implementation-class>com.intellij.formatting.FormatterImpl</implementation-class>
     </component>
-    -->
 
     <component>
       <interface-class>com.intellij.util.indexing.FileBasedIndex</interface-class>
@@ -76,7 +74,7 @@
     </component>
     <component>
       <interface-class>com.intellij.psi.PsiDocumentManager</interface-class>
-      <implementation-class>com.intellij.core.CorePsiDocumentManager</implementation-class>
+      <implementation-class>com.intellij.psi.impl.PsiDocumentManagerImpl</implementation-class>
       <loadForDefaultProject/>
     </component>
 
@@ -111,7 +109,6 @@
       <headless-implementation-class>com.intellij.codeInsight.problems.MockWolfTheProblemSolver</headless-implementation-class>
     </component>
 
-    <!--
     <component>
       <interface-class>com.intellij.pom.tree.TreeAspect</interface-class>
       <implementation-class>com.intellij.pom.tree.TreeAspect</implementation-class>
@@ -120,9 +117,8 @@
     <component>
       <implementation-class>com.intellij.psi.impl.source.PostprocessReformattingAspect</implementation-class>
       <loadForDefaultProject/>
-      &lt;!&ndash; <skipForDefaultProject/> &ndash;&gt;
+      <!-- <skipForDefaultProject/> -->
     </component>
-    -->
 
     <component>
       <interface-class>com.intellij.codeInsight.daemon.DaemonCodeAnalyzer</interface-class>

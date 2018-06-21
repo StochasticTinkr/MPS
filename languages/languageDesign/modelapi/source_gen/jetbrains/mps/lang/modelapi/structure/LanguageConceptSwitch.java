@@ -15,8 +15,9 @@ public final class LanguageConceptSwitch {
   public static final int ModelPointer = 3;
   public static final int ModuleIdentity = 4;
   public static final int ModulePointer = 5;
-  public static final int NodeIdentity = 6;
-  public static final int SNodeReference = 7;
+  public static final int NamedNodeReference = 6;
+  public static final int NodeIdentity = 7;
+  public static final int NodePointer = 8;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL);
@@ -26,8 +27,9 @@ public final class LanguageConceptSwitch {
     builder.put(0x502fe7548a0e360L, ModelPointer);
     builder.put(0x96ca5405afc2bc9L, ModuleIdentity);
     builder.put(0x502fe7548a0e361L, ModulePointer);
+    builder.put(0x41af228e7e0d7f3eL, NamedNodeReference);
     builder.put(0x502fe7548a208f7L, NodeIdentity);
-    builder.put(0x502fe7548a0e35fL, SNodeReference);
+    builder.put(0x502fe7548a0e35fL, NodePointer);
     myIndex = builder.seal();
   }
 

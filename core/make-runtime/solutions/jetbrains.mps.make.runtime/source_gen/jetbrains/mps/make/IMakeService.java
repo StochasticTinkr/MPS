@@ -21,8 +21,14 @@ public interface IMakeService {
   void addListener(IMakeNotificationListener listener);
   void removeListener(IMakeNotificationListener listener);
 
+  /**
+   * 
+   * @deprecated global singleton is not a proper way to obtain active make facility of MPS platform. Instead, use {@link jetbrains.mps.make.MakeServiceComponent }.
+   */
+  @Deprecated
   class INSTANCE {
     private static IMakeService Component;
+    @Deprecated
     private INSTANCE() {
     }
     public static IMakeService get() {

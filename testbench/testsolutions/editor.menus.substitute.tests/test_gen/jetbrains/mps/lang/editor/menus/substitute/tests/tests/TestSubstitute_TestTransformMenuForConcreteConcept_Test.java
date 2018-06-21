@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 
 @MPSLaunch
@@ -21,11 +22,15 @@ public class TestSubstitute_TestTransformMenuForConcreteConcept_Test extends Bas
 
   @Test
   public void test_TestSubstitute_TestTransformMenuForConcreteConcept() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_TestTransformMenuForConcreteConcept_Test$TestBody", "testMethod", false);
+    new TestSubstitute_TestTransformMenuForConcreteConcept_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("9151323058739140353", "9151323058739140355");

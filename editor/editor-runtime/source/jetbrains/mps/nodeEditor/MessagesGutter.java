@@ -318,6 +318,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI.Transparent implements
     if (myUpdateQueue != null) {
       // TODO unsure if this is the right way to dispose the queue
       myUpdateQueue.dispose();
+      myUpdateQueue.cancelAllUpdates();
     }
   }
 

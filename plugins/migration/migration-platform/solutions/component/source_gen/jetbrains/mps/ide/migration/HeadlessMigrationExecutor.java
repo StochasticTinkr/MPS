@@ -4,6 +4,8 @@ package jetbrains.mps.ide.migration;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
+import java.util.function.Consumer;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class HeadlessMigrationExecutor extends AbstractProjectComponent implements IStartupMigrationExecutor {
   private MigrationRegistry myMigrationManager;
@@ -14,5 +16,8 @@ public class HeadlessMigrationExecutor extends AbstractProjectComponent implemen
 
   @Override
   public void projectOpened() {
+  }
+
+  public void setRebuildHandler(Consumer<Iterable<SModuleReference>> rebuildHandler) {
   }
 }

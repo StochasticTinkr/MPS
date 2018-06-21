@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
@@ -21,26 +22,24 @@ public final class SmartRefAttributeUtil {
 
 
   public static SNode extractAttribute(SNode concept) {
+    if (concept == null) {
+      return null;
+    }
     SNode attr = AttributeOperations.getAttribute(concept, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, "jetbrains.mps.lang.structure.structure.SmartReferenceAttribute")));
     if (attr != null) {
       return attr;
     }
-
     // check for implicit smart reference 
-    if (!(SPropertyOperations.getBoolean(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) && isEmptyString(SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")))) {
-      List<SNode> referenceLinks = AbstractConceptDeclaration__BehaviorDescriptor.getReferenceLinkDeclarations_idhEwILL0.invoke(concept);
-      if (ListSequence.fromList(referenceLinks).count() == 1) {
-        SNode ref = ListSequence.fromList(referenceLinks).first();
-        if ((boolean) LinkDeclaration__BehaviorDescriptor.isAtLeastOneCardinality_id2VYdUfnkjmB.invoke(ref)) {
-          return createSmartReferenceAttribute_9k4hui_a0a1a1a4a4(ref);
-        }
-      }
+    SNode ref = getImplicitCharacteristicLinkDeclaration(concept);
+    if (ref != null) {
+      return createSmartReferenceAttribute_9k4hui_a0a5a4(ref);
+    } else {
+      return null;
     }
-    return null;
   }
 
   public static boolean isAttributed(SNode concept) {
-    return (AttributeOperations.getAttribute(concept, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, "jetbrains.mps.lang.structure.structure.SmartReferenceAttribute"))) != null) || canBeAttributedImplicitly(concept);
+    return getCharacteristicLinkDeclaration(concept) != null;
   }
 
   public static boolean isAttributedImplicitly(SNode concept) {
@@ -48,13 +47,33 @@ public final class SmartRefAttributeUtil {
   }
 
   public static boolean canBeAttributedImplicitly(SNode concept) {
+    return getImplicitCharacteristicLinkDeclaration(concept) != null;
+  }
+
+  public static SNode getCharacteristicLinkDeclaration(SNode concept) {
+    if (concept == null) {
+      return null;
+    }
+    if ((AttributeOperations.getAttribute(concept, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, "jetbrains.mps.lang.structure.structure.SmartReferenceAttribute"))) != null)) {
+      return SLinkOperations.getTarget(AttributeOperations.getAttribute(concept, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, "jetbrains.mps.lang.structure.structure.SmartReferenceAttribute"))), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, 0x7ab7b29c4d6297edL, "charactersticReference"));
+    } else {
+      return getImplicitCharacteristicLinkDeclaration(concept);
+    }
+  }
+
+  private static SNode getImplicitCharacteristicLinkDeclaration(SNode concept) {
+    if (concept == null) {
+      return null;
+    }
     if (!(SPropertyOperations.getBoolean(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) && isEmptyString(SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")))) {
       List<SNode> referenceLinks = AbstractConceptDeclaration__BehaviorDescriptor.getReferenceLinkDeclarations_idhEwILL0.invoke(concept);
-      return ListSequence.fromList(referenceLinks).count() == 1 && (boolean) LinkDeclaration__BehaviorDescriptor.isAtLeastOneCardinality_id2VYdUfnkjmB.invoke(ListSequence.fromList(referenceLinks).first());
+      if (ListSequence.fromList(referenceLinks).count() == 1 && (boolean) LinkDeclaration__BehaviorDescriptor.isAtLeastOneCardinality_id2VYdUfnkjmB.invoke(ListSequence.fromList(referenceLinks).first())) {
+        return ListSequence.fromList(referenceLinks).first();
+      }
     }
-    return false;
+    return null;
   }
-  private static SNode createSmartReferenceAttribute_9k4hui_a0a1a1a4a4(Object p0) {
+  private static SNode createSmartReferenceAttribute_9k4hui_a0a5a4(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, "jetbrains.mps.lang.structure.structure.SmartReferenceAttribute"), null, null, false);
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, 0x7ab7b29c4d6297edL, "charactersticReference"), (SNode) p0);

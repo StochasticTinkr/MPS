@@ -16,10 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.impl.interpreted.ReflectiveQueryProvider;
-import jetbrains.mps.generator.impl.interpreted.TemplateModelInterpreted;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
-import jetbrains.mps.generator.impl.query.QueryProviderBase;
-import org.apache.log4j.Logger;
 
 /**
  * Base implementation of {@link jetbrains.mps.generator.runtime.TemplateModel} to use as superclass in generated code

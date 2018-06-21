@@ -22,7 +22,6 @@ import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
 import jetbrains.mps.openapi.editor.ColorConstants;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -59,7 +58,8 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   }
 
   public HighlighterMessage(EditorMessageOwner owner, NodeReportItem reportItem, SNode node) {
-    super(node, reportItem.getSeverity(), NodeFeatureReportItem.MESSAGE_TARGET_FEATURE.get(reportItem), getMessageColor(reportItem.getSeverity()), reportItem.getMessage(), owner);
+    super(node, reportItem.getSeverity(), NodeFeatureReportItem.MESSAGE_TARGET_FEATURE.get(reportItem), getMessageColor(reportItem.getSeverity()),
+          reportItem.getMessage(), owner);
     if (!node.getReference().equals(reportItem.getNode())) {
       throw new IllegalStateException();
     }
@@ -165,9 +165,8 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   }
 
   public static AnchorCellType getAnchorCellType(EditorCell cell, boolean prefixCell) {
-    if (cell instanceof EditorCell_Property && ((EditorCell_Property) cell).getModelAccessor() instanceof PropertyAccessor) {
-      PropertyAccessor accessor = (PropertyAccessor) ((EditorCell_Property) cell).getModelAccessor();
-      if (SNodeUtil.property_INamedConcept_name.getName().equals(accessor.getPropertyName())) {
+    if (cell.getCellContext() != null && cell.getCellContext().getPropertyInfo() != null) {
+      if (SNodeUtil.property_INamedConcept_name.getName().equals(cell.getCellContext().getPropertyInfo().getProperty().getName())) {
         return AnchorCellType.NAME;
       }
     }
@@ -224,7 +223,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
       int leftInset = isFirst ? myLeftInset : another.myLeftInset;
       int width = myWidth + another.myWidth;
       int effectiveWidth = isFirst ? myWidth - myLeftInset + another.myLeftInset + another.myEffectiveWidth :
-          another.myWidth - another.myLeftInset + myLeftInset + myEffectiveWidth;
+                           another.myWidth - another.myLeftInset + myLeftInset + myEffectiveWidth;
       return new Region(x, y, leftInset, effectiveWidth, width);
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util.performance;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
 /**
  * Interface which offers a cosy stack-like methods to track the performance (e.g. time consumption)
  *
@@ -22,10 +24,31 @@ package jetbrains.mps.util.performance;
  */
 public interface IPerformanceTracer {
 
+  /**
+   * @deprecated parameter {@code isMajor} is useless, use {@link #push(String)}
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   void push(String taskName, boolean isMajor);
+
+  default void push(String taskName) {
+    push(taskName, false);
+  };
+
+  /**
+   * Include trace information from another instance as part of active task.
+   * Might come handy to overcome limitations of single-threaded implementation (e.g. generator's main thread with a
+   * 'global' tracer, and individual transformation threads reporting into own trace, with results merged).
+   * @param other not null
+   */
+  void push(IPerformanceTracer other);
 
   void pop();
 
+  /**
+   * @param separate name of tasks not to get merged with other and reported individually
+   * @return multi-line report text
+   */
   String report(String... separate);
 
   void addText(String s);
@@ -33,10 +56,18 @@ public interface IPerformanceTracer {
   /**
    * Default implementation which tracks nothing
    */
-  class NullPerformanceTracer implements IPerformanceTracer {
+  final class NullPerformanceTracer implements IPerformanceTracer {
 
     @Override
     public void push(String taskName, boolean isMajor) {
+    }
+
+    @Override
+    public void push(String taskName) {
+    }
+
+    @Override
+    public void push(IPerformanceTracer other) {
     }
 
     @Override

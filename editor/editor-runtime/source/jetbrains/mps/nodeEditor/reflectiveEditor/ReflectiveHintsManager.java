@@ -20,12 +20,14 @@ import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Arrays;
+
 public class ReflectiveHintsManager {
 
   public static void propagateReflectiveHints(EditorCellFactory cellFactory) {
-    for (ReflectiveHint reflectiveHint : ReflectiveHint.values()) {
-      reflectiveHint.processForChild(cellFactory);
-    }
+    Arrays.stream(ReflectiveHint.values())
+          .filter(reflectiveHint -> reflectiveHint.shouldRemoveFromCellFactory(cellFactory))
+          .forEach(reflectiveHint -> reflectiveHint.removeFromCellFactory(cellFactory));
   }
 
   public static boolean shouldShowReflectiveEditor(EditorCellContext cellContext) {

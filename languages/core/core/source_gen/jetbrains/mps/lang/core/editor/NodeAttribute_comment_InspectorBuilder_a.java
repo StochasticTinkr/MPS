@@ -30,17 +30,17 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
   }
 
   /*package*/ EditorCell createCell() {
-    return createNextEditor_fqq7dl_a_0();
+    return createNextEditor_0();
   }
 
-  private EditorCell createNextEditor_fqq7dl_a_0() {
+  private EditorCell createNextEditor_0() {
     try {
       getCellFactory().pushCellContext();
       getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints_fqq7dl_a0_0()).toGenericArray(String.class));
       {
         EditorCell editorCell = getCellFactory().createEditorCell(myNode, true, NodeAttribute_comment_Editor.class);
         editorCell.setBig(true);
-        editorCell.setCellContext(getCellFactory().getCellContext());
+        setCellContext(editorCell);
         return editorCell;
       }
     } finally {

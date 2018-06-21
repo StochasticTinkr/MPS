@@ -50,7 +50,7 @@ public final class SpecifyRuleReferences_Intention extends AbstractIntentionDesc
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Specify Rule References In Test Annotation";
+      return "Specify Rule References in Test Annotation";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

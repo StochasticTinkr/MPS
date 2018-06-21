@@ -173,17 +173,16 @@ public class NewModel_Action extends BaseAction {
     return false;
   }
   protected String getNamespace(final Map<String, Object> _params) {
+    String namespace = ((SModule) MapSequence.fromMap(_params).get("module")).getModuleName();
     if (((SModule) MapSequence.fromMap(_params).get("module")) instanceof Generator) {
-      Generator gen = (Generator) ((SModule) MapSequence.fromMap(_params).get("module"));
-      String name = gen.getModuleName();
-      String genNamespace = gen.getSourceLanguage().getModuleName() + ".generator";
-
-      if ((name == null || name.length() == 0)) {
-        return genNamespace;
+      // in fact, we could check any module name for # char. Though, at the moment one may encounter # in generator modules only. 
+      int sharpIndex = namespace.indexOf('#');
+      if (sharpIndex != -1) {
+        namespace = namespace.substring(0, sharpIndex);
       }
-      return genNamespace + "." + name;
+      return namespace + ".generator";
     }
-    return ((SModule) MapSequence.fromMap(_params).get("module")).getModuleName();
+    return namespace;
   }
   private boolean hasModelRoots(final Map<String, Object> _params) {
     return new ModelAccessHelper(((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess()).runReadAction(new Computable<Boolean>() {

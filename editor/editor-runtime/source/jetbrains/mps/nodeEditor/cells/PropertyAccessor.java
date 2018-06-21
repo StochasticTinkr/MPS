@@ -20,33 +20,41 @@ import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeLegacy;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-public class PropertyAccessor implements ModelAccessor {
+public class PropertyAccessor implements ModelAccessor, IPropertyAccessor {
   private SNode myNode;
-  private String myPropertyName;
+  private SProperty myProperty;
   private boolean myReadOnly;
   private boolean myAllowEmptyText;
-  private final SNodeReference myPropertyDeclaration;
   private final SRepository myRepository;
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
     myNode = node;
-    myPropertyName = propertyName;
     myReadOnly = readOnly || SModelOperations.isReadOnly(node.getModel()) || editorContext.getEditorComponent().isReadOnly();
     myAllowEmptyText = allowEmptyText;
-    myPropertyDeclaration = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNodeReference>() {
-      @Override
-      public SNodeReference compute() {
-        SNode propertyDeclaration = new SNodeLegacy(myNode).getPropertyDeclaration(myPropertyName);
-        return propertyDeclaration != null ? propertyDeclaration.getReference() : null;
-      }
+    NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
+      SNode pd = new SNodeLegacy(myNode).getPropertyDeclaration(propertyName);
+      myProperty = pd == null ? null : MetaAdapterByDeclaration.getProperty(pd);
     });
+    myRepository = editorContext.getRepository();
+  }
+
+  public PropertyAccessor(SNode node, SProperty property, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
+    myNode = node;
+    myProperty = property;
+    myReadOnly = readOnly || SModelOperations.isReadOnly(node.getModel()) || editorContext.getEditorComponent().isReadOnly();
+    myAllowEmptyText = allowEmptyText;
     myRepository = editorContext.getRepository();
   }
 
@@ -58,8 +66,15 @@ public class PropertyAccessor implements ModelAccessor {
     return myRepository;
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  // can't remove before 2018.2 as it was used in mbeddr and no alternative was provided
   public String getPropertyName() {
-    return myPropertyName;
+    return myProperty.getName();
+  }
+
+  public SProperty getProperty(){
+    return myProperty;
   }
 
   @Override
@@ -81,19 +96,16 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   protected String doGetValue() {
-    return NodeReadAccessCasterInEditor.runCleanPropertyAccessAction(new Computable<String>() {
-      @Override
-      public String compute() {
-        if (myNode == null) {
-          return null;
-        }
-        return SNodeAccessUtil.getProperty(myNode, myPropertyName);
+    return NodeReadAccessCasterInEditor.runCleanPropertyAccessAction(() -> {
+      if (myNode == null) {
+        return null;
       }
+      return SNodeAccessUtil.getProperty(myNode, myProperty);
     });
   }
 
   protected void doSetValue(String newText) {
-    SNodeAccessUtil.setProperty(myNode, myPropertyName, newText);
+    SNodeAccessUtil.setProperty(myNode, myProperty, newText);
   }
 
   @Override
@@ -112,10 +124,9 @@ public class PropertyAccessor implements ModelAccessor {
       return (text == null && (propertyValue == null || propertyValue.isEmpty())) || (text != null && text.equals(propertyValue));
     }
 
-    SNode node = getPropertyDeclaration();
-    if (node != null) {
-      PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
-      return propertySupport.canSetValue(myNode, myPropertyName, text);
+    if (myProperty != null) {
+      PropertySupport propertySupport = PropertySupport.getPropertySupport(myProperty);
+      return propertySupport.canSetValue(myNode, myProperty, text);
     }
     return true;
   }
@@ -126,29 +137,18 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   private String fromInternal(String value) {
-    SNode node = getPropertyDeclaration();
-    if (node != null) {
-      PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
+    if (myProperty != null) {
+      PropertySupport propertySupport = PropertySupport.getPropertySupport(myProperty);
       return propertySupport.fromInternalValue(value);
     }
     return value;
   }
 
   private String toInternal(String value) {
-    SNode node = getPropertyDeclaration();
-    if (node != null) {
-      PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
+    if (myProperty != null) {
+      PropertySupport propertySupport = PropertySupport.getPropertySupport(myProperty);
       return propertySupport.toInternalValue(value);
     }
     return value;
-  }
-
-  private SNode getPropertyDeclaration() {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        return myPropertyDeclaration != null ? myPropertyDeclaration.resolve(myRepository) : null;
-      }
-    });
   }
 }

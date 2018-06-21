@@ -15,8 +15,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ModelPointer;
   private ConceptPresentation props_ModuleIdentity;
   private ConceptPresentation props_ModulePointer;
+  private ConceptPresentation props_NamedNodeReference;
   private ConceptPresentation props_NodeIdentity;
-  private ConceptPresentation props_SNodeReference;
+  private ConceptPresentation props_NodePointer;
 
   @Override
   @Nullable
@@ -64,20 +65,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ModulePointer = cpb.create();
         }
         return props_ModulePointer;
+      case LanguageConceptSwitch.NamedNodeReference:
+        if (props_NamedNodeReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("reference to named node");
+          props_NamedNodeReference = cpb.create();
+        }
+        return props_NamedNodeReference;
       case LanguageConceptSwitch.NodeIdentity:
         if (props_NodeIdentity == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           props_NodeIdentity = cpb.create();
         }
         return props_NodeIdentity;
-      case LanguageConceptSwitch.SNodeReference:
-        if (props_SNodeReference == null) {
+      case LanguageConceptSwitch.NodePointer:
+        if (props_NodePointer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("node<> presentation for openapi.model.SNodeReference");
-          cpb.rawPresentation("SNodeReference");
-          props_SNodeReference = cpb.create();
+          cpb.rawPresentation("NodePointer");
+          props_NodePointer = cpb.create();
         }
-        return props_SNodeReference;
+        return props_NodePointer;
     }
     return null;
   }

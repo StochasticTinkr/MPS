@@ -26,8 +26,9 @@ public final class CellModel_Indent__BehaviorDescriptor extends BaseBHDescriptor
 
   public static final SMethod<Boolean> isCellIdInitialized_idhTuDsSD = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isCellIdInitialized").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hTuDsSD").registry(REGISTRY).build();
   public static final SMethod<Boolean> canBeUsedAsEmptyCell_id6RO52Mcgrfa = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeUsedAsEmptyCell").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6RO52Mcgrfa").registry(REGISTRY).build();
+  public static final SMethod<String> getCellModelKind_idhHfCaJf = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getCellModelKind").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hHfCaJf").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isCellIdInitialized_idhTuDsSD, canBeUsedAsEmptyCell_id6RO52Mcgrfa);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isCellIdInitialized_idhTuDsSD, canBeUsedAsEmptyCell_id6RO52Mcgrfa, getCellModelKind_idhHfCaJf);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -37,6 +38,9 @@ public final class CellModel_Indent__BehaviorDescriptor extends BaseBHDescriptor
   }
   /*package*/ static boolean canBeUsedAsEmptyCell_id6RO52Mcgrfa(@NotNull SNode __thisNode__) {
     return true;
+  }
+  /*package*/ static String getCellModelKind_idhHfCaJf(@NotNull SNode __thisNode__) {
+    return "IndentCell";
   }
 
   /*package*/ CellModel_Indent__BehaviorDescriptor() {
@@ -59,6 +63,8 @@ public final class CellModel_Indent__BehaviorDescriptor extends BaseBHDescriptor
         return (T) ((Boolean) isCellIdInitialized_idhTuDsSD(node));
       case 1:
         return (T) ((Boolean) canBeUsedAsEmptyCell_id6RO52Mcgrfa(node));
+      case 2:
+        return (T) ((String) getCellModelKind_idhHfCaJf(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

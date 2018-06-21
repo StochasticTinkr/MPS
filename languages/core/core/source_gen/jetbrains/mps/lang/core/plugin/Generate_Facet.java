@@ -193,7 +193,7 @@ public class Generate_Facet extends IFacet.Stub {
               Iterable<GenerationCacheContainer> caches = new ExtensionPoint<GenerationCacheContainer>("jetbrains.mps.lang.core.GeneratorCache").getObjects();
               GenerationCacheContainer cacheContainer = (Sequence.fromIterable(caches).isEmpty() ? null : Sequence.fromIterable(caches).first());
               vars(pa.global()).generationOptions().tracing(settings.getPerformanceTracingLevel());
-              vars(pa.global()).generationOptions().saveTransientModels(vars(pa.global()).saveTransient()).keepOutputModel(true);
+              vars(pa.global()).generationOptions().saveTransientModels(vars(pa.global()).saveTransient());
               vars(pa.global()).parametersProvider(new DefaultGenerationParametersProvider());
               vars(pa.global()).generationOptions().parameters(vars(pa.global()).parametersProvider());
 

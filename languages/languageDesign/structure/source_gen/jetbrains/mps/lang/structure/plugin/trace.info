@@ -5,13 +5,10 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -25,7 +22,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)/2415215581734104897">
     <file name="MPSAspects_Order.java">
-      <node id="2415215581734104897" at="8,29,9,186" concept="14" />
+      <node id="2415215581734104897" at="8,29,9,186" concept="11" />
       <node id="2415215581734104897" at="8,0,11,0" concept="2" trace="MPSAspects_Order#()V" />
       <scope id="2415215581734104897" at="8,29,9,186" />
       <scope id="2415215581734104897" at="8,0,11,0" />
@@ -34,44 +31,44 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)/3193873080290339088">
     <file name="LanguageAspectsEP_extension.java">
-      <node id="3193873080290339088" at="30,40,31,57" concept="14" />
-      <node id="3193873080290339088" at="35,48,36,27" concept="9" />
-      <node id="3193873080290339088" at="39,29,40,42" concept="9" />
-      <node id="3193873080290339088" at="43,60,44,71" concept="9" />
-      <node id="3193873080290339088" at="48,48,49,41" concept="9" />
-      <node id="3193873080290339088" at="50,9,51,58" concept="8" />
-      <node id="3193873080290339088" at="53,44,54,48" concept="8" />
-      <node id="3193873080290339088" at="54,48,55,105" concept="9" />
-      <node id="3193873080290339088" at="60,55,61,179" concept="9" />
-      <node id="3193873080290339088" at="64,53,65,20" concept="9" />
-      <node id="3193873080290339088" at="68,45,69,49" concept="9" />
-      <node id="3193873080290339088" at="72,34,73,24" concept="9" />
+      <node id="3193873080290339088" at="30,40,31,57" concept="11" />
+      <node id="3193873080290339088" at="35,48,36,27" concept="8" />
+      <node id="3193873080290339088" at="39,29,40,42" concept="8" />
+      <node id="3193873080290339088" at="43,60,44,71" concept="8" />
+      <node id="3193873080290339088" at="48,48,49,41" concept="8" />
+      <node id="3193873080290339088" at="50,9,51,58" concept="7" />
+      <node id="3193873080290339088" at="53,44,54,48" concept="7" />
+      <node id="3193873080290339088" at="54,48,55,105" concept="8" />
+      <node id="3193873080290339088" at="60,55,61,179" concept="8" />
+      <node id="3193873080290339088" at="64,53,65,20" concept="8" />
+      <node id="3193873080290339088" at="68,45,69,49" concept="8" />
+      <node id="3193873080290339088" at="72,34,73,24" concept="8" />
       <node id="3193873080290339088" at="77,0,78,0" concept="4" trace="myOrderConstraints" />
-      <node id="3193873080290339088" at="84,50,85,86" concept="9" />
-      <node id="3193873080290339088" at="88,44,89,43" concept="8" />
-      <node id="3193873080290339088" at="89,43,90,64" concept="8" />
-      <node id="3193873080290339088" at="90,64,91,28" concept="8" />
+      <node id="3193873080290339088" at="84,50,85,86" concept="8" />
+      <node id="3193873080290339088" at="88,44,89,43" concept="7" />
+      <node id="3193873080290339088" at="89,43,90,64" concept="7" />
+      <node id="3193873080290339088" at="90,64,91,28" concept="7" />
       <node id="3193873080290339088" at="92,37,93,58" concept="3" />
       <node id="3193873080290339088" at="94,16,95,52" concept="3" />
       <node id="3193873080290339088" at="96,9,97,118" concept="3" />
-      <node id="4726480899536083431" at="103,0,104,0" concept="12" trace="HELP_URL" />
+      <node id="4726480899536083431" at="103,0,104,0" concept="9" trace="HELP_URL" />
       <node id="3193873080290339088" at="94,14,96,9" concept="1" />
       <node id="3193873080290339088" at="30,0,33,0" concept="2" trace="LanguageAspectsEP_extension#()V" />
-      <node id="3193873080290339088" at="35,0,38,0" concept="7" trace="getPresentableAspectName#()Ljava/lang/String;" />
-      <node id="3193873080290339088" at="47,73,50,9" concept="6" />
-      <node id="3193873080290339088" at="84,0,87,0" concept="7" trace="canCreate#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
-      <node id="3193873080290339088" at="38,0,42,0" concept="7" trace="getId#()Ljava/lang/String;" />
-      <node id="3193873080290339088" at="42,0,46,0" concept="7" trace="compareTo#(Ljetbrains/mps/aspects/OrderParticipant;)I" />
-      <node id="3193873080290339088" at="53,0,57,0" concept="7" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-      <node id="3193873080290339088" at="59,0,63,0" concept="7" trace="getMainLanguages#()Ljava/util/Collection;" />
-      <node id="3193873080290339088" at="63,0,67,0" concept="7" trace="getGenerator#()Ljetbrains/mps/smodel/language/LanguageAspectGenerator;" />
-      <node id="3193873080290339088" at="67,0,71,0" concept="7" trace="getIconResource#()Ljetbrains/mps/smodel/runtime/IconResource;" />
-      <node id="3193873080290339088" at="71,0,75,0" concept="7" trace="getHelpUrl#()Ljava/lang/String;" />
-      <node id="3193873080290339088" at="91,28,96,9" concept="6" />
-      <node id="3193873080290339088" at="51,58,57,49" concept="9" />
-      <node id="3193873080290339088" at="88,0,99,0" concept="7" trace="create#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <node id="3193873080290339088" at="46,0,59,0" concept="7" trace="getAspectModels#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/util/Collection;" />
-      <node id="3193873080290339088" at="33,41,101,6" concept="9" />
+      <node id="3193873080290339088" at="35,0,38,0" concept="6" trace="getPresentableAspectName#()Ljava/lang/String;" />
+      <node id="3193873080290339088" at="47,73,50,9" concept="5" />
+      <node id="3193873080290339088" at="84,0,87,0" concept="6" trace="canCreate#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
+      <node id="3193873080290339088" at="38,0,42,0" concept="6" trace="getId#()Ljava/lang/String;" />
+      <node id="3193873080290339088" at="42,0,46,0" concept="6" trace="compareTo#(Ljetbrains/mps/aspects/OrderParticipant;)I" />
+      <node id="3193873080290339088" at="53,0,57,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <node id="3193873080290339088" at="59,0,63,0" concept="6" trace="getMainLanguages#()Ljava/util/Collection;" />
+      <node id="3193873080290339088" at="63,0,67,0" concept="6" trace="getGenerator#()Ljetbrains/mps/smodel/language/LanguageAspectGenerator;" />
+      <node id="3193873080290339088" at="67,0,71,0" concept="6" trace="getIconResource#()Ljetbrains/mps/smodel/runtime/IconResource;" />
+      <node id="3193873080290339088" at="71,0,75,0" concept="6" trace="getHelpUrl#()Ljava/lang/String;" />
+      <node id="3193873080290339088" at="91,28,96,9" concept="5" />
+      <node id="3193873080290339088" at="51,58,57,49" concept="8" />
+      <node id="3193873080290339088" at="88,0,99,0" concept="6" trace="create#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="3193873080290339088" at="46,0,59,0" concept="6" trace="getAspectModels#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/util/Collection;" />
+      <node id="3193873080290339088" at="33,41,101,6" concept="8" />
       <node id="3193873080290339088" at="33,0,103,0" concept="0" trace="get#()Ljetbrains/mps/smodel/language/LanguageAspectDescriptor;" />
       <scope id="3193873080290339088" at="30,40,31,57" />
       <scope id="3193873080290339088" at="35,48,36,27" />
@@ -127,208 +124,16 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)/4726480899536586749">
     <file name="URLFunction_ConfluenceDocUrl.java">
-      <node id="3569916352002070174" at="11,30,12,54" concept="9" />
-      <node id="4726480899536705523" at="11,0,14,0" concept="7" trace="invoke#()Ljava/lang/String;" />
-      <node id="4726480899536586749" at="9,33,14,15" concept="9" />
-      <node id="4726480899536586749" at="9,0,16,0" concept="13" trace="getUrl#()Ljava/lang/String;" />
+      <node id="3569916352002070174" at="11,30,12,54" concept="8" />
+      <node id="4726480899536705523" at="11,0,14,0" concept="6" trace="invoke#()Ljava/lang/String;" />
+      <node id="4726480899536586749" at="9,33,14,15" concept="8" />
+      <node id="4726480899536586749" at="9,0,16,0" concept="10" trace="getUrl#()Ljava/lang/String;" />
       <scope id="4726480899536705524" at="11,30,12,54" />
       <scope id="4726480899536705523" at="11,0,14,0" />
       <scope id="4726480899536586749" at="9,33,14,15" />
       <scope id="4726480899536586749" at="9,0,16,0" />
       <unit id="4726480899536705523" at="10,15,14,5" name="jetbrains.mps.lang.structure.plugin.URLFunction_ConfluenceDocUrl$1" />
       <unit id="4726480899536586749" at="8,0,17,0" name="jetbrains.mps.lang.structure.plugin.URLFunction_ConfluenceDocUrl" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)/4853505765036703346">
-    <file name="RefactoringRuntime.java">
-      <node id="1990992034211370065" at="31,148,32,20" concept="10" />
-      <node id="1990992034211370027" at="32,20,33,13" concept="9" />
-      <node id="1990992034211366817" at="34,5,35,0" concept="11" />
-      <node id="4853505765033726315" at="35,0,36,205" concept="8" />
-      <node id="4853505765033726337" at="38,39,39,106" concept="9" />
-      <node id="4853505765033726349" at="42,35,43,92" concept="3" />
-      <node id="4853505765033726356" at="45,7,46,0" concept="11" />
-      <node id="4853505765033726357" at="46,0,47,45" concept="8" />
-      <node id="4853505765033726364" at="47,45,48,37" concept="3" />
-      <node id="4853505765033726370" at="48,37,49,36" concept="3" />
-      <node id="6015942601922435281" at="53,57,54,20" concept="10" />
-      <node id="6015942601922435283" at="54,20,55,13" concept="9" />
-      <node id="6015942601922434599" at="56,5,57,0" concept="11" />
-      <node id="5168866961623204576" at="57,0,58,205" concept="8" />
-      <node id="5168866961623204597" at="60,39,61,98" concept="9" />
-      <node id="5168866961623204609" at="64,35,65,84" concept="3" />
-      <node id="5168866961623204143" at="67,7,68,0" concept="11" />
-      <node id="4853505765032841859" at="68,0,69,128" concept="8" />
-      <node id="4853505765032841876" at="70,57,71,30" concept="3" />
-      <node id="4853505765032841881" at="71,30,72,36" concept="3" />
-      <node id="1990992034211775860" at="77,45,78,20" concept="10" />
-      <node id="1990992034211775862" at="78,20,79,13" concept="9" />
-      <node id="1990992034211775794" at="80,5,81,0" concept="11" />
-      <node id="2870965692426517823" at="81,0,82,205" concept="8" />
-      <node id="2870965692426517845" at="84,39,85,98" concept="9" />
-      <node id="2870965692426517857" at="88,35,89,84" concept="3" />
-      <node id="2870965692426517864" at="91,7,92,0" concept="11" />
-      <node id="2870965692426517865" at="92,0,93,61" concept="8" />
-      <node id="2870965692426517872" at="93,61,94,54" concept="3" />
-      <node id="2870965692426517878" at="94,54,95,43" concept="3" />
-      <node id="7217668918201233084" at="98,92,99,154" concept="8" />
-      <node id="1601710079322421414" at="99,154,100,71" concept="3" />
-      <node id="7217668918201237938" at="100,71,101,0" concept="11" />
-      <node id="7217668918201234015" at="102,72,103,60" concept="3" />
-      <node id="7217668918201234030" at="105,72,106,73" concept="3" />
-      <node id="7217668918201234046" at="108,67,109,68" concept="8" />
-      <node id="7217668918201234052" at="109,68,110,30" concept="3" />
-      <node id="7217668918201234057" at="110,30,111,51" concept="3" />
-      <node id="1601710079321016562" at="114,149,115,121" concept="3" />
-      <node id="1480034579734606128" at="117,5,118,79" concept="8" />
-      <node id="1480034579734632441" at="120,55,121,49" concept="9" />
-      <node id="1480034579734637902" at="124,44,125,57" concept="9" />
-      <node id="1480034579734645041" at="128,40,129,68" concept="3" />
-      <node id="1601710079322137735" at="131,7,132,18" concept="9" />
-      <node id="1601710079321016564" at="134,70,135,47" concept="9" />
-      <node id="1601710079321015731" at="137,72,138,47" concept="9" />
-      <node id="4853505765033726335" at="38,0,41,0" concept="7" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="4853505765033726347" at="42,0,45,0" concept="7" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5168866961623204595" at="60,0,63,0" concept="7" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5168866961623204607" at="64,0,67,0" concept="7" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2870965692426517843" at="84,0,87,0" concept="7" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="2870965692426517855" at="88,0,91,0" concept="7" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7217668918201234012" at="101,0,104,5" concept="5" />
-      <node id="7217668918201234027" at="104,5,107,5" concept="5" />
-      <node id="1601710079321015367" at="113,67,116,7" concept="6" />
-      <node id="1480034579734632003" at="120,0,123,0" concept="7" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="1480034579734637652" at="124,0,127,0" concept="7" trace="accept#(Lorg/jetbrains/mps/openapi/model/SReference;)Z" />
-      <node id="1480034579734644794" at="128,0,131,0" concept="7" trace="visit#(Lorg/jetbrains/mps/openapi/model/SReference;)V" />
-      <node id="1601710079321016564" at="134,0,137,0" concept="13" trace="as_7voxfg_a0a0a0a6a7#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="1601710079321015731" at="137,0,140,0" concept="13" trace="as_7voxfg_a0a0a0a6a7_0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="1990992034211367489" at="30,107,34,5" concept="6" />
-      <node id="6015942601922435279" at="52,128,56,5" concept="6" />
-      <node id="4853505765032841873" at="69,128,73,5" concept="5" />
-      <node id="1990992034211775858" at="76,123,80,5" concept="6" />
-      <node id="7217668918201234043" at="107,5,112,5" concept="5" />
-      <node id="1601710079320924991" at="112,5,117,5" concept="6" />
-      <node id="4853505765033726324" at="36,205,45,7" concept="3" />
-      <node id="5168866961623204587" at="58,205,67,7" concept="3" />
-      <node id="2870965692426517832" at="82,205,91,7" concept="3" />
-      <node id="1480034579734611067" at="118,79,131,7" concept="3" />
-      <node id="4853505765035392526" at="30,0,51,0" concept="13" trace="changePropertyInstance#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SProperty;Lorg/jetbrains/mps/openapi/language/SProperty;)V" />
-      <node id="4853505765035354594" at="76,0,97,0" concept="13" trace="changeReferenceLinkInstances#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SReferenceLink;Lorg/jetbrains/mps/openapi/language/SReferenceLink;)V" />
-      <node id="4853505765035305509" at="52,0,75,0" concept="13" trace="changeContainmentLinkInstance#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)V" />
-      <node id="7217668918201205170" at="98,0,134,0" concept="13" trace="replaceWithNewConcept#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="4853505765033726336" at="38,39,39,106" />
-      <scope id="4853505765033726348" at="42,35,43,92" />
-      <scope id="5168866961623204596" at="60,39,61,98" />
-      <scope id="5168866961623204608" at="64,35,65,84" />
-      <scope id="2870965692426517844" at="84,39,85,98" />
-      <scope id="2870965692426517856" at="88,35,89,84" />
-      <scope id="7217668918201234014" at="102,72,103,60" />
-      <scope id="7217668918201234029" at="105,72,106,73" />
-      <scope id="1601710079321015368" at="114,149,115,121" />
-      <scope id="1480034579734632004" at="120,55,121,49" />
-      <scope id="1480034579734637653" at="124,44,125,57" />
-      <scope id="1480034579734644795" at="128,40,129,68" />
-      <scope id="1601710079321016564" at="134,70,135,47" />
-      <scope id="1601710079321015731" at="137,72,138,47" />
-      <scope id="1990992034211367491" at="31,148,33,13" />
-      <scope id="6015942601922435280" at="53,57,55,13" />
-      <scope id="4853505765032841875" at="70,57,72,36" />
-      <scope id="1990992034211775859" at="77,45,79,13" />
-      <scope id="4853505765033726335" at="38,0,41,0">
-        <var name="it" id="4853505765033726335" />
-      </scope>
-      <scope id="4853505765033726347" at="42,0,45,0">
-        <var name="it" id="4853505765033726347" />
-      </scope>
-      <scope id="5168866961623204595" at="60,0,63,0">
-        <var name="it" id="5168866961623204595" />
-      </scope>
-      <scope id="5168866961623204607" at="64,0,67,0">
-        <var name="it" id="5168866961623204607" />
-      </scope>
-      <scope id="2870965692426517843" at="84,0,87,0">
-        <var name="it" id="2870965692426517843" />
-      </scope>
-      <scope id="2870965692426517855" at="88,0,91,0">
-        <var name="it" id="2870965692426517855" />
-      </scope>
-      <scope id="7217668918201234012" at="101,0,104,5">
-        <var name="prop" id="7217668918201234013" />
-      </scope>
-      <scope id="7217668918201234027" at="104,5,107,5">
-        <var name="ref" id="7217668918201234028" />
-      </scope>
-      <scope id="7217668918201234045" at="108,67,111,51">
-        <var name="containmentLink" id="7217668918201234047" />
-      </scope>
-      <scope id="1601710079320924993" at="113,67,116,7" />
-      <scope id="1480034579734632003" at="120,0,123,0">
-        <var name="it" id="1480034579734632003" />
-      </scope>
-      <scope id="1480034579734637652" at="124,0,127,0">
-        <var name="it" id="1480034579734637652" />
-      </scope>
-      <scope id="1480034579734644794" at="128,0,131,0">
-        <var name="it" id="1480034579734644794" />
-      </scope>
-      <scope id="1601710079321016564" at="134,0,137,0">
-        <var name="o" id="1601710079321016564" />
-        <var name="type" id="1601710079321016564" />
-      </scope>
-      <scope id="1601710079321015731" at="137,0,140,0">
-        <var name="o" id="1601710079321015731" />
-        <var name="type" id="1601710079321015731" />
-      </scope>
-      <scope id="4853505765032841873" at="69,128,73,5">
-        <var name="child" id="4853505765032841874" />
-      </scope>
-      <scope id="7217668918201234043" at="107,5,112,5">
-        <var name="child" id="7217668918201234044" />
-      </scope>
-      <scope id="4853505765035392527" at="30,107,49,36">
-        <var name="attributes" id="4853505765033726316" />
-        <var name="value" id="4853505765033726358" />
-      </scope>
-      <scope id="4853505765035354595" at="76,123,95,43">
-        <var name="attributes" id="2870965692426517824" />
-        <var name="referenceTarget" id="2870965692426517866" />
-      </scope>
-      <scope id="4853505765035392526" at="30,0,51,0">
-        <var name="newProp" id="4853505765035392595" />
-        <var name="node" id="4853505765035392591" />
-        <var name="oldProp" id="4853505765035392593" />
-      </scope>
-      <scope id="4853505765035305512" at="52,128,73,5">
-        <var name="attributes" id="5168866961623204577" />
-        <var name="children" id="4853505765032841860" />
-      </scope>
-      <scope id="4853505765035354594" at="76,0,97,0">
-        <var name="newLink" id="4853505765035354631" />
-        <var name="node" id="4853505765035354627" />
-        <var name="oldLink" id="4853505765035354629" />
-      </scope>
-      <scope id="4853505765035305509" at="52,0,75,0">
-        <var name="newLink" id="4853505765035307390" />
-        <var name="node" id="4853505765035307078" />
-        <var name="oldLink" id="4853505765035307090" />
-      </scope>
-      <scope id="7217668918201205171" at="98,92,132,18">
-        <var name="newInstance" id="7217668918201233085" />
-        <var name="result" id="1480034579734606129" />
-      </scope>
-      <scope id="7217668918201205170" at="98,0,134,0">
-        <var name="newConcept" id="7217668918201205236" />
-        <var name="node" id="7217668918201205234" />
-      </scope>
-      <unit id="4853505765033726335" at="37,224,41,5" name="jetbrains.mps.lang.structure.plugin.RefactoringRuntime$1" />
-      <unit id="4853505765033726347" at="41,20,45,5" name="jetbrains.mps.lang.structure.plugin.RefactoringRuntime$2" />
-      <unit id="5168866961623204595" at="59,220,63,5" name="jetbrains.mps.lang.structure.plugin.RefactoringRuntime$3" />
-      <unit id="5168866961623204607" at="63,20,67,5" name="jetbrains.mps.lang.structure.plugin.RefactoringRuntime$4" />
-      <unit id="2870965692426517843" at="83,220,87,5" name="jetbrains.mps.lang.structure.plugin.RefactoringRuntime$5" />
-      <unit id="2870965692426517855" at="87,20,91,5" name="jetbrains.mps.lang.structure.plugin.RefactoringRuntime$6" />
-      <unit id="1480034579734632003" at="119,122,123,5" name="jetbrains.mps.lang.structure.plugin.RefactoringRuntime$7" />
-      <unit id="1480034579734637652" at="123,17,127,5" name="jetbrains.mps.lang.structure.plugin.RefactoringRuntime$8" />
-      <unit id="1480034579734644794" at="127,20,131,5" name="jetbrains.mps.lang.structure.plugin.RefactoringRuntime$9" />
-      <unit id="4853505765036703346" at="28,0,141,0" name="jetbrains.mps.lang.structure.plugin.RefactoringRuntime" />
     </file>
   </root>
 </debug-info>

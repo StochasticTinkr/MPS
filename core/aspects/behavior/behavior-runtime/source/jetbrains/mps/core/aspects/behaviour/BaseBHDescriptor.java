@@ -97,13 +97,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     for (SAbstractConcept ancestor : ancestors) {
       if (ancestor != myConcept) {
         BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
-        // now its vtable is initialized
-        if (bhDescriptor instanceof BaseBHDescriptor) {
-          // fixme think how to get rid of this cast (vtable is not an API)
-          SMethodVirtualTable vTable = ((BaseBHDescriptor) bhDescriptor).myVTable;
-          myVTable.merge(vTable);
-          mySuperVTable.merge(vTable);
-        }
+        myVTable.merge(bhDescriptor);
+        mySuperVTable.merge(bhDescriptor);
       }
     }
   }

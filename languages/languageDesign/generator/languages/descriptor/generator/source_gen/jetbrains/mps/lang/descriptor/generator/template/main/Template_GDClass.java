@@ -26,13 +26,16 @@ public class Template_GDClass extends TemplateDeclarationBase implements Templat
   }
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist1 = null;
-    SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_263208052639693925(new SourceSubstituteMacroNodeContext(context, callMacro_in8ni3_b0a0a1a4));
+    SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_2632080526396929290(new SourceSubstituteMacroNodeContext(context, callMacro_in8ni3_b0a0a1a4));
     TemplateContext context1 = context.subContext(null, callInputNode1);
     if (callInputNode1 != null) {
-      tlist1 = new Template_GeneratorRuntime().apply(environment, context1);
-
+      tlist1 = new Template_GeneratorRuntime().apply(context1);
     }
     return tlist1;
+  }
+
+  public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   private static SNodePointer template_in8ni3_a0a3 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639692929");

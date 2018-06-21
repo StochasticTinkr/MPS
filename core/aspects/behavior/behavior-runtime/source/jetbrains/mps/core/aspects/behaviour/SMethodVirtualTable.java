@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.api.SMethodId;
 import org.jetbrains.annotations.NotNull;
@@ -60,18 +61,17 @@ public final class SMethodVirtualTable {
   }
 
   /**
-   * merges two vTables, stores the results in this.
-   * mainly a method from 'another' table is merged into <code>myIdToImplementationTable</code> if only
-   * there is no any record in it yet or if it is
+   * merges a descriptor into the vTable
+   * mainly a method from 'another' descriptor is merged into <code>myIdToImplementationTable</code> if only
+   * there is no any record in it yet
    */
-  public void merge(@NotNull final SMethodVirtualTable another) {
-    //noinspection UnnecessaryLocalVariable
-    Map<SMethodId, SMethod<?>> anotherTable = another.myIdToImplementationTable;
-    for (Entry<SMethodId, SMethod<?>> pair : anotherTable.entrySet()) {
-      SMethodId id = pair.getKey();
-      SMethod<?> methodImplementation = pair.getValue();
-      if (!myIdToImplementationTable.containsKey(id) || myIdToImplementationTable.get(id).isAbstract()) {
-        myIdToImplementationTable.put(id, methodImplementation);
+  public void merge(@NotNull final BHDescriptor descriptor) {
+    for (SMethod method : descriptor.getDeclaredMethods()) {
+      if (method.isVirtual()) {
+        SMethodId id = method.getId();
+        if (!myIdToImplementationTable.containsKey(id) || myIdToImplementationTable.get(id).isAbstract()) {
+          myIdToImplementationTable.put(id, method);
+        }
       }
     }
   }

@@ -29,7 +29,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_DelTestAbstractChild;
   private ConceptPresentation props_DelTestChild1;
   private ConceptPresentation props_DelTestChildContainer;
+  private ConceptPresentation props_DelTestChildReferenceContainer;
   private ConceptPresentation props_DelTestChildSpecialContainer;
+  private ConceptPresentation props_DelTestChildWithSmartReference;
+  private ConceptPresentation props_DelTestChildWithUsualReference;
+  private ConceptPresentation props_DelTestNodeToReference;
   private ConceptPresentation props_DelTestRoot;
   private ConceptPresentation props_DelTestSpecialAbstractChild;
   private ConceptPresentation props_DelTestSpecialChild1;
@@ -259,6 +263,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DelTestChildContainer = cpb.create();
         }
         return props_DelTestChildContainer;
+      case LanguageConceptSwitch.DelTestChildReferenceContainer:
+        if (props_DelTestChildReferenceContainer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DelTestChildReferenceContainer");
+          props_DelTestChildReferenceContainer = cpb.create();
+        }
+        return props_DelTestChildReferenceContainer;
       case LanguageConceptSwitch.DelTestChildSpecialContainer:
         if (props_DelTestChildSpecialContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -266,6 +277,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DelTestChildSpecialContainer = cpb.create();
         }
         return props_DelTestChildSpecialContainer;
+      case LanguageConceptSwitch.DelTestChildWithSmartReference:
+        if (props_DelTestChildWithSmartReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x7a6a3ef59ad69dadL, 0x7a6a3ef59ad69e4aL, "reference", "", "");
+          props_DelTestChildWithSmartReference = cpb.create();
+        }
+        return props_DelTestChildWithSmartReference;
+      case LanguageConceptSwitch.DelTestChildWithUsualReference:
+        if (props_DelTestChildWithUsualReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("usual reference");
+          props_DelTestChildWithUsualReference = cpb.create();
+        }
+        return props_DelTestChildWithUsualReference;
+      case LanguageConceptSwitch.DelTestNodeToReference:
+        if (props_DelTestNodeToReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_DelTestNodeToReference = cpb.create();
+        }
+        return props_DelTestNodeToReference;
       case LanguageConceptSwitch.DelTestRoot:
         if (props_DelTestRoot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.LinkedHashSet;
 
 public class ModuleXmlRootDetector extends RootDetector {
   public static final OrderRootType MPS_MODULE_XML = new OrderRootType("MPS_MODULE_XML") {
@@ -44,6 +45,12 @@ public class ModuleXmlRootDetector extends RootDetector {
   @Override
   public Collection<VirtualFile> detectRoots(@NotNull VirtualFile rootCandidate, @NotNull ProgressIndicator progressIndicator) {
     LinkedHashSet<VirtualFile> result = new LinkedHashSet<VirtualFile>();
+    // FIXME Perhaps, could parameterize this code as there's no real reason to keep it singleton, OTOH owning ModulelibraryType seems to be
+    //       a pure descriptor not bound to anything like a project, therefore nothing to get context from.
+    //       Likely, would need to take MPSCoreComponent from idea.Application here to access Platform for ModulesMiner purposes,
+    //       and abandon existence check for modules (I don't quite buy it, anyway. Why do we 'detect' roots with *existing* modules only?
+    //       Is it because we can not load modules from arbitrary locations (but we can!)?
+    //       Have to talk to someone who knows what this ModuleLibraryType is about to get this right.
 
     for (ModuleHandle handle : new ModulesMiner().collectModules(VirtualFileUtils.toIFile(rootCandidate)).getCollectedModules()) {
       // need only loaded modules

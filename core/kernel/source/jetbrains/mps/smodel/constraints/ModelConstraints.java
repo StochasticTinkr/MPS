@@ -183,23 +183,6 @@ public class ModelConstraints {
     return new OkReferenceDescriptor(association, sourceNode);
   }
 
-  /**
-   * @deprecated shall use {@link #getReferenceDescriptor(SReference)} or {@link #getReferenceDescriptor(SNode, SReferenceLink)} instead.
-   */
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode referenceNode, @NotNull String role) {
-    // TODO: this method first argument before is enclosingNode, it's wrong - it's referenceNode. check usages of method
-    SConcept concept = referenceNode.getConcept();
-    SReferenceLink referenceLink = ((ConceptMetaInfoConverter) concept).convertAssociation(role);
-    if (referenceLink instanceof InvalidReferenceLink) {
-      return new ErrorReferenceDescriptor("can't find reference link for role '" + role + "' in '" + concept + "'");
-    }
-    return new OkReferenceDescriptor(referenceLink, referenceNode);
-  }
-
-
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode contextNode, /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink,
                                                            int position, @NotNull SReferenceLink association) {
     return getReferenceDescriptor(contextNode, containmentLink, position, association, association.getOwner());
@@ -208,50 +191,6 @@ public class ModelConstraints {
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode contextNode, /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink,
                                                            int position, @NotNull SReferenceLink association, @NotNull SAbstractConcept concept) {
     return new OkReferenceDescriptor(concept, association, contextNode, containmentLink, position);
-  }
-
-  /**
-   * @deprecated Smart-concept heuristics at runtime will be dropped in next releases.
-   *             Use {@link #getReferenceDescriptor(SNode, SContainmentLink, int, SReferenceLink, SAbstractConcept)} instead.
-   */
-  @Deprecated
-  @ToRemove(version = 2017.1)
-  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode contextNode,
-      /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink, int position,
-      @NotNull SAbstractConcept smartConcept) {
-    SReferenceLink smartReferenceLink = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
-    if (smartReferenceLink == null) {
-      return new ErrorReferenceDescriptor("smart concept '" + smartConcept.getName() + "' has no characteristic reference");
-    }
-    return getReferenceDescriptor(contextNode, containmentLink, position, smartReferenceLink, smartConcept);
-  }
-
-  /**
-   * @deprecated Smart-concept heuristics at runtime will be dropped in next releases.
-   *             Use {@link #getReferenceDescriptor(SNode, SContainmentLink, int, SReferenceLink, SAbstractConcept)} instead.
-   */
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept) {
-    SConcept concept = enclosingNode.getConcept();
-    SContainmentLink containmentLink = ((ConceptMetaInfoConverter) concept).convertAggregation(role);
-    if (containmentLink instanceof InvalidContainmentLink) {
-      return new ErrorReferenceDescriptor("can't find containment link for role '" + role + "' in '" + concept + "'");
-    }
-    return getSmartReferenceDescriptor(enclosingNode, containmentLink, index, MetaAdapterByDeclaration.getConcept(smartConcept));
-  }
-
-  /**
-   * @deprecated Smart-concept heuristics at runtime will be dropped in next releases.
-   *             Use {@link #getReferenceDescriptor(SNode, SContainmentLink, int, SReferenceLink, SAbstractConcept)} instead.
-   */
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable SContainmentLink link, int index,
-      @NotNull SConcept smartConcept, SRepository repository) {
-    return getSmartReferenceDescriptor(enclosingNode, link, index, smartConcept);
   }
 
   public static SConcept getDefaultConcreteConcept(SAbstractConcept concept) {

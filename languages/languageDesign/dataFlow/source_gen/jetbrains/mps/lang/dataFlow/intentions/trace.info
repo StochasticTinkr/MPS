@@ -14,6 +14,10 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)/1206534526647">
+    <file name="IntentionsDescriptor.java">
+      <node id="1206534526647" at="44,47,45,65" concept="1" />
+      <node id="1206534526647" at="58,52,59,51" concept="1" />
+    </file>
     <file name="RemoveMayBeUnreachable_Intention.java">
       <node id="1206534526647" at="21,0,22,0" concept="2" trace="myCachedExecutable" />
       <node id="1206534526647" at="22,45,23,147" concept="7" />
@@ -152,6 +156,10 @@
       <unit id="1206534589230" at="51,0,70,0" name="jetbrains.mps.lang.dataFlow.intentions.AddMayBeUnreachable_Intention$IntentionImplementation" />
       <unit id="1206534589230" at="22,0,71,0" name="jetbrains.mps.lang.dataFlow.intentions.AddMayBeUnreachable_Intention" />
     </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="1206534589230" at="45,65,46,62" concept="1" />
+      <node id="1206534589230" at="59,51,60,48" concept="1" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)/3880671512445174886">
     <file name="AddModeToDataFlowBuilder_Intention.java">
@@ -218,6 +226,10 @@
       </scope>
       <unit id="3880671512445174886" at="50,0,66,0" name="jetbrains.mps.lang.dataFlow.intentions.AddModeToDataFlowBuilder_Intention$IntentionImplementation" />
       <unit id="3880671512445174886" at="21,0,67,0" name="jetbrains.mps.lang.dataFlow.intentions.AddModeToDataFlowBuilder_Intention" />
+    </file>
+    <file name="IntentionsDescriptor.java">
+      <node id="3880671512445174886" at="37,47,38,67" concept="1" />
+      <node id="3880671512445174886" at="60,48,61,53" concept="1" />
     </file>
   </root>
 </debug-info>

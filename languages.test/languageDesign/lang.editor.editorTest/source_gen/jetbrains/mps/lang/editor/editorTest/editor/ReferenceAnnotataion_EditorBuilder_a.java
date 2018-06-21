@@ -32,31 +32,31 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_q5i94r_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_q5i94r_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_q5i94r_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createConstant_q5i94r_a0());
-    editorCell.addEditorCell(createAttributedLinkCell_q5i94r_b0());
-    editorCell.addEditorCell(createConstant_q5i94r_c0());
+    setCellContext(editorCell);
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createAttributedLinkCell_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
-  private EditorCell createConstant_q5i94r_a0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<ref");
     editorCell.setCellId("Constant_q5i94r_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createAttributedLinkCell_q5i94r_b0() {
+  private EditorCell createAttributedLinkCell_0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.REFERENCE, myNode);
     return editorCell;
   }
-  private EditorCell createConstant_q5i94r_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ">");
     editorCell.setCellId("Constant_q5i94r_c0");
     Style style = new StyleImpl();

@@ -142,7 +142,9 @@
     <ant antfile="../../../../build/mpsDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="../../../../build/mpsVcsCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsVcsPlatformPre.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsVcsPlatform.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsVcsStandaloneJar.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsMigrationCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsMigration.xml" inheritAll="false" useNativeBasedir="true" />
@@ -330,7 +332,15 @@
       <target name="generate" />
       <target name="assemble" />
     </ant>
-    <ant antfile="../../../../build/mpsVcsCore.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="../../../../build/mpsVcsPlatformPre.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="generate" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsVcsPlatform.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="generate" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsVcsStandaloneJar.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
     </ant>
@@ -444,7 +454,6 @@
         <fileset file="${artifacts.mps}/lib/trove4j.jar" />
         <fileset file="${artifacts.mps}/lib/ecj-4.7.2.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
-        <fileset dir="${artifacts.mps}/lib/ant/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />

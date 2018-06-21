@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,16 +26,19 @@ import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
- * Runtime presentation of a template invocation. Handles arguments, prepares template context for a call.
+ * Runtime presentation of a template invocation or call site. Handles arguments, prepares template context for a call.
+ * Represents {@code node<ITemplateCall>}.
  * @author Artem Tikhomirov
  */
 public class TemplateCall {
@@ -61,18 +64,41 @@ public class TemplateCall {
   }
 
   /**
+   * Transition from TemplateDeclaration that knows its arguments at construction time to TD that evaluates argument
+   * values prior to call and therefore can cache and reuse template runtime nodes (i.e. TemplateContainer)
+   * @param parameterNames name of template parameter, if any
+   * @param arguments values of template parameters
+   */
+  public TemplateCall(@Nullable String[] parameterNames, @Nullable Object[] arguments) {
+    myArguments = arguments == null ? new ArgumentExpression[0] : Arrays.stream(arguments).map(ConstantExpression::new).toArray(ArgumentExpression[]::new);
+    myParameters = parameterNames == null ? new String[0] : parameterNames;
+    myNoArgs = myArguments.length == 0 || myArguments.length != myParameters.length;
+  }
+
+
+  /**
    * @return <code>true</code> iff there are arguments or parameters, but their count doesn't match
    */
   public boolean argumentsMismatch() {
     return myArguments.length != myParameters.length;
   }
 
+
   @NotNull
-  public TemplateContext prepareCallContext(@NotNull TemplateContext outerContext) throws GenerationFailureException{
+  public Object[] evaluateArguments(@NotNull TemplateContext outerContext) throws GenerationFailureException {
+    Object[] rv = new Object[myArguments.length];
+    for (int i = 0; i < myArguments.length; i++) {
+      rv[i] = myArguments[i].evaluate(outerContext);
+    }
+    return rv;
+  }
+
+  @NotNull
+  public TemplateContext prepareCallContext(@NotNull TemplateContext outerContext) throws GenerationFailureException {
     if (myNoArgs) {
       return outerContext;
     }
-    final Map<String, Object> vars = new HashMap<String, Object>(myArguments.length * 2);
+    final Map<String, Object> vars = new HashMap<>(myArguments.length * 2);
     for (int i = 0; i < myArguments.length; i++) {
       Object value = myArguments[i].evaluate(outerContext);
       vars.put(myParameters[i], value);
@@ -225,6 +251,19 @@ public class TemplateCall {
             GeneratorUtil.describeInput(context));
       }
       return null;
+    }
+  }
+
+  private static class ConstantExpression implements ArgumentExpression {
+    private final Object myValue;
+
+    public ConstantExpression(@Nullable Object value) {
+      myValue = value;
+    }
+
+    @Override
+    public Object evaluate(TemplateContext context) throws GenerationFailureException {
+      return myValue;
     }
   }
 }

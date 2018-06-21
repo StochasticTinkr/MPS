@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 /*package*/ class ConceptDifference extends DifferenceItem {
   public final SConcept myActualConcept;
   public final SConcept myExpectedConcept;
+
   public ConceptDifference(SConcept actualConcept, SConcept expectedConcept) {
     myActualConcept = actualConcept;
     myExpectedConcept = expectedConcept;
@@ -15,6 +16,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
   public String toString() {
     return "Different concepts: [was: " + myActualConcept + ", expected: " + myExpectedConcept + "]";
   }
+
+  @Override
+  public int hashCode() {
+    return myActualConcept.hashCode() * 17 + myExpectedConcept.hashCode();
+  }
+
   @Override
   public boolean equals(Object obj) {
     if (obj == null) {

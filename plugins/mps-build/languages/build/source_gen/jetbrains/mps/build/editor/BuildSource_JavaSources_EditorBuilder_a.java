@@ -30,14 +30,14 @@ import jetbrains.mps.editor.runtime.style.Measure;
   }
 
   /*package*/ EditorCell createCell() {
-    return createError_uremau_a();
+    return createError_0();
   }
 
-  private EditorCell createError_uremau_a() {
+  private EditorCell createError_0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<no sources>");
     editorCell.setCellId("Error_uremau_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_LEFT, new Padding(0, Measure.SPACES));
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0, Measure.SPACES));

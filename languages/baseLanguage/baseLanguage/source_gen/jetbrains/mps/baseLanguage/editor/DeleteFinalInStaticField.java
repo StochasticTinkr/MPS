@@ -29,7 +29,7 @@ public class DeleteFinalInStaticField {
         editorContext.flushEvents();
         return;
       }
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"), "" + (false));
       CursorFocusUtils.setCursorAfterModifierDeleted(editorContext, node, false);
     }
   }
@@ -46,7 +46,7 @@ public class DeleteFinalInStaticField {
         editorContext.flushEvents();
         return;
       }
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"), "" + (false));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"), "" + (false));
       CursorFocusUtils.setCursorAfterModifierDeleted(editorContext, node, true);
     }
   }

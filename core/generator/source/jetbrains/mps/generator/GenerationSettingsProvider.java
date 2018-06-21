@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public class GenerationSettingsProvider implements CoreComponent {
 
@@ -23,6 +24,11 @@ public class GenerationSettingsProvider implements CoreComponent {
 
   private IModifiableGenerationSettings myGenerationSettings;
 
+  /**
+   * @deprecated it's a CoreComponent, use {@link jetbrains.mps.components.ComponentHost#findComponent(Class)} to access proper instance
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static GenerationSettingsProvider getInstance () {
     return INSTANCE;
   }

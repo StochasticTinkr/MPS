@@ -27,7 +27,7 @@ public class FakeProcessHandler extends BaseOSProcessHandler {
   private final FakeProcessHandler.BlockingReader myErrorReader = new FakeProcessHandler.BlockingReader(createProcessErrReader(), ProcessOutputTypes.STDERR, "error stream of " + myPresentableName);
 
   public FakeProcessHandler(@NotNull FakeProcess fakeProcess, Future<?> future) {
-    super(fakeProcess, fakeProcess.toString(), null);
+    super(fakeProcess, "Simulating the start of a new process", null);
     myFakeProcess = fakeProcess;
     myFuture = future;
   }

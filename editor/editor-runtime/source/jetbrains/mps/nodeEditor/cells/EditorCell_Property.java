@@ -44,12 +44,13 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
       TransactionalPropertyAccessor propertyAccessor = (TransactionalPropertyAccessor) myModelAccessor;
       propertyAccessor.setCell(this);
     }
-    synchronizeViewWithModel();
+    synchronizeViewWithModel_internal();
   }
 
   public static EditorCell_Property create(jetbrains.mps.openapi.editor.EditorContext editorContext, ModelAccessor modelAccessor, SNode node) {
     NodeReadAccessInEditorListener listener = NodeReadAccessCasterInEditor.getReadAccessListener();
-    if (modelAccessor instanceof PropertyAccessor) {
+    // todo are there situations when the listener's cleanlyReadAccessProperties are not empty? If yes, should not we always clean it
+    if (modelAccessor instanceof IPropertyAccessor) {
       if (listener != null) {
         listener.clearCleanlyReadAccessProperties();
       }
@@ -70,6 +71,10 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
 
   @Override
   public void synchronizeViewWithModel() {
+    synchronizeViewWithModel_internal();
+  }
+
+  private void synchronizeViewWithModel_internal() {
     String text = myModelAccessor.getText();
     myLastModelText = text;
     setErrorState(!isValidText(text));

@@ -13,15 +13,9 @@ import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import com.intellij.icons.AllIcons;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.errors.item.IssueKindReportItem;
@@ -55,18 +49,15 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
       finder = new ModelCheckerIssueFinder(mpsProject.getRepository(), Sequence.fromIterable(Sequence.fromArray(checkers)).toListSequence());
     }
     String title = (ListSequence.fromList(models).count() == 1 ? ListSequence.fromList(models).first().getName().getValue() : String.format("%d models", ListSequence.fromList(models).count()));
-    newViewer.runCheck(FindUtils.makeProvider(finder), new SearchQuery(new ModelsHolder(ListSequence.fromList(models).select(new ISelector<SModel, SModelReference>() {
-      public SModelReference select(SModel it) {
-        return it.getReference();
-      }
-    }).toListSequence()), GlobalScope.getInstance()), title);
+    finder.addModelScope(models);
+    newViewer.runCheck(finder, title);
     revealResults(newViewer, title, IdeIcons.MODEL_ICON);
   }
   public void checkModulesAndShowResult(List<SModule> modules) {
     ModelCheckerViewer newViewer = createViewerForTab();
     String title = (ListSequence.fromList(modules).count() == 1 ? ListSequence.fromList(modules).first().getModuleName() : "modules");
     newViewer.checkModules(modules, title);
-    Icon icon = (ListSequence.fromList(modules).count() == 1 ? IconManager.getIconFor(ListSequence.fromList(modules).first()) : AllIcons.Nodes.ModuleGroup);
+    Icon icon = (ListSequence.fromList(modules).count() == 1 ? GlobalIconManager.getInstance().getIconFor(ListSequence.fromList(modules).first()) : AllIcons.Nodes.ModuleGroup);
     revealResults(newViewer, title, icon);
   }
   private void revealResults(ModelCheckerViewer newViewer, String title, Icon icon) {

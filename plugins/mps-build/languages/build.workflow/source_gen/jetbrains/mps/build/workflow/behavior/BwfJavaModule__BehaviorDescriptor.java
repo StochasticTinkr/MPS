@@ -32,7 +32,7 @@ public final class BwfJavaModule__BehaviorDescriptor extends BaseBHDescriptor {
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getCompilerNames_id3Par5_LaIPl, getAntTargetName_id6pYRYgn8i1z, needsFork_id3Par5_LaArg);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x3d4a6c597112f405L, "fork"), "" + (true));
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x3d4a6c597112f405L, "fork"), "" + (true));
   }
 
   /*package*/ static List<String> getCompilerNames_id3Par5_LaIPl(@NotNull SAbstractConcept __thisConcept__) {

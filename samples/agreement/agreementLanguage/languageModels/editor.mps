@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590409(jetbrains.mps.samples.agreementLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
@@ -739,8 +739,14 @@
   <node concept="24kQdi" id="gbUUv6J">
     <ref role="1XX52x" to="tpna:gbUTxgb" resolve="AgreementDeclarations" />
     <node concept="3EZMnI" id="gbUUyqb" role="2wV5jI">
-      <node concept="3F0ifn" id="gbUV5x4" role="3EZMnx">
-        <property role="3F0ifm" value="agreement declarations" />
+      <node concept="3EZMnI" id="67wnfVkGdFN" role="3EZMnx">
+        <node concept="2iRfu4" id="67wnfVkGdFO" role="2iSdaV" />
+        <node concept="3F0ifn" id="gbUV5x4" role="3EZMnx">
+          <property role="3F0ifm" value="agreement declarations" />
+        </node>
+        <node concept="3F0A7n" id="67wnfVkGdFl" role="3EZMnx">
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
       </node>
       <node concept="3F0ifn" id="gbUV5x5" role="3EZMnx">
         <node concept="VPM3Z" id="hF4QVIX" role="3F10Kt">

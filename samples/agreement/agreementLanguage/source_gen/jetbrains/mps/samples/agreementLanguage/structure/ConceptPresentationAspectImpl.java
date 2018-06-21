@@ -42,7 +42,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AgreementDeclarations:
         if (props_AgreementDeclarations == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("AgreementDeclarations");
+          cpb.presentationByName();
           props_AgreementDeclarations = cpb.create();
         }
         return props_AgreementDeclarations;

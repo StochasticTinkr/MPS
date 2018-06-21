@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -193,7 +193,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   public <T> T computeWithTrace(Computable<T> c, String taskName) {
     if (myPerformanceTracer != null) {
       try {
-        myPerformanceTracer.push(taskName, true);
+        myPerformanceTracer.push(taskName);
         return c.compute();
       } finally {
         myPerformanceTracer.pop();

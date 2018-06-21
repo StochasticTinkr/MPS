@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -23,11 +24,15 @@ public class RightTransformWithCustomItems_Parameterized_checkCanBeParent_Test e
 
   @Test
   public void test_RightTransformWithCustomItems_Parameterized_checkCanBeParent() throws Throwable {
-    runTest("jetbrains.mps.lang.actions.test.sidetransform.RightTransformWithCustomItems_Parameterized_checkCanBeParent_Test$TestBody", "testMethod", false);
+    new RightTransformWithCustomItems_Parameterized_checkCanBeParent_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseEditorTestBody {
+  /*package*/ static class TestBody extends BaseEditorTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3185679905991685373", "3185679905991685376");

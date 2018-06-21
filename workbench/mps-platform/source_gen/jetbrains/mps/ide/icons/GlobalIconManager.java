@@ -5,6 +5,7 @@ package jetbrains.mps.ide.icons;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.MPSCoreComponents;
+import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.classloading.DeployListener;
@@ -18,6 +19,10 @@ public class GlobalIconManager extends BaseIconManager implements ApplicationCom
 
   public GlobalIconManager(MPSCoreComponents cc) {
     myClm = cc.getClassLoaderManager();
+  }
+
+  public static GlobalIconManager getInstance() {
+    return ApplicationManager.getApplication().getComponent(GlobalIconManager.class);
   }
 
   @Override
