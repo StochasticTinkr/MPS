@@ -7,10 +7,10 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.Set;
+import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
@@ -28,12 +28,12 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer;
 
 public class GoToHelper {
-  public GoToHelper() {
+  private GoToHelper() {
   }
 
   public static void executeFinders(final SNode node, final MPSProject mpsProject, final IInterfacedFinder finder, RelativePoint relativePoint) {
     final Wrappers._T<String> caption = new Wrappers._T<String>();
-    final Set<SNodeReference> nodes = SetSequence.fromSet(new HashSet<SNodeReference>());
+    final List<SNodeReference> nodes = ListSequence.fromList(new ArrayList<SNodeReference>());
     ProgressManager.getInstance().run(new Task.Modal(mpsProject.getProject(), "Searching...", true) {
       @Override
       public void run(@NotNull final ProgressIndicator p) {
@@ -48,7 +48,7 @@ public class GoToHelper {
             // We desperately need a mechanism to match stub classes with their MPS origins. 
             for (Object sr : FindUtils.getSearchResults(new ProgressMonitorAdapter(p), new SearchQuery(node, GlobalScope.getInstance()), (IFinder) finder).getResultObjects()) {
               if (sr instanceof SNode) {
-                SetSequence.fromSet(nodes).addElement(SNodeOperations.getPointer(((SNode) sr)));
+                ListSequence.fromList(nodes).addElement(SNodeOperations.getPointer(((SNode) sr)));
               }
             }
           }
@@ -57,6 +57,6 @@ public class GoToHelper {
     });
 
     String title = "Choose overriding method of " + caption.value + "() to navigate to";
-    GoToContextMenuUtil.showMenu(mpsProject, title, SetSequence.fromSet(nodes).toListSequence(), new DefaultMethodRenderer(mpsProject.getRepository()), relativePoint);
+    GoToContextMenuUtil.showMenu(mpsProject, title, ListSequence.fromList(nodes).toListSequence(), new DefaultMethodRenderer(mpsProject.getRepository()), relativePoint);
   }
 }
