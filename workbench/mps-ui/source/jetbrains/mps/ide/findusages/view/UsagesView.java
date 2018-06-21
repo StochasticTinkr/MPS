@@ -381,7 +381,9 @@ public class UsagesView implements IExternalizeable {
 
     @Override
     public void run() {
-      myLastResults = myResultProvider.getResults(mySearchQuery, myProgress);
+      SearchResults results = myResultProvider.getResults(mySearchQuery, myProgress);
+      SearchResultsSorter sorter = new SearchResultsSorter(results);
+      myLastResults = sorter.sortNodeResultsByLocationInTheEditor();
     }
 
     public SearchResults getSearchResults() {
@@ -464,4 +466,5 @@ public class UsagesView implements IExternalizeable {
       }
     }
   }
+
 }
