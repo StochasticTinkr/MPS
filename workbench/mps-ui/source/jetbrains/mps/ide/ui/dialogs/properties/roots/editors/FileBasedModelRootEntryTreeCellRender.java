@@ -42,7 +42,7 @@ public class FileBasedModelRootEntryTreeCellRender extends NodeRenderer {
   public void customizeCellRenderer(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
     super.customizeCellRenderer(tree, value, selected, expanded, leaf, row, hasFocus);
 
-    ModelRootEntry entry = myModelRootEditor.getFileBasedModelRootEntry();
+    ModelRootEntry<FileBasedModelRoot> entry = myModelRootEditor.getFileBasedModelRootEntry();
     if (entry != null) {
       final Object userObject = ((DefaultMutableTreeNode) value).getUserObject();
       if (userObject instanceof NodeDescriptor) {

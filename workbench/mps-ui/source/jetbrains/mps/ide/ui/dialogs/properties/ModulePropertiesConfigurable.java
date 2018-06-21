@@ -685,7 +685,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           return combo;
         }
         DependenciesTableItem rowItem = myDependTableModel.getValueAt(row);
-        List items = getItemsForCell(rowItem);
+        List<SDependencyScope> items = getItemsForCell(rowItem);
         for (Object o : items) {
           combo.addItem(o);
         }
