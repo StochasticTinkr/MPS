@@ -30,6 +30,7 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -57,6 +58,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class ProjectPaneDnDListener implements DropTargetListener {
+  private static final Logger LOG = LogManager.getLogger(ProjectPaneDnDListener.class);
+
   private final JTree myTree;
   private final DataFlavor myDataFlavor;
 
@@ -128,11 +131,15 @@ public class ProjectPaneDnDListener implements DropTargetListener {
             SNode baseNode = sourceNode.o1;
             List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(project.getProject(), baseNode);
             for (RelationDescriptor tab : tabs) {
-              if (!tab.isApplicable(baseNode)) continue;
+              try {
+                if (!tab.isApplicable(baseNode)) continue;
 
-              for (SNode aspect : tab.getNodes(baseNode)) {
-                if (tab.getBaseNode(aspect) != baseNode) continue;
-                SNodeAccessUtil.setProperty(aspect, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
+                for (SNode aspect : tab.getNodes(baseNode)) {
+                  if (tab.getBaseNode(aspect) != baseNode) continue;
+                  SNodeAccessUtil.setProperty(aspect, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
+                }
+              } catch (Throwable t) {
+                LOG.error("Exception in extension code: ", t);
               }
             }
           }

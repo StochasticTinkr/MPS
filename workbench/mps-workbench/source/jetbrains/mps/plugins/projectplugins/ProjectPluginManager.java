@@ -70,7 +70,7 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   private final List<PluginReloadingListener> myReloadingListeners = new CopyOnWriteArrayList<>();
 
   public ProjectPluginManager(@NotNull Project project, jetbrains.mps.project.Project mpsProject, PluginLoaderRegistry pluginLoaderRegistry,
-      @SuppressWarnings("unused") StartupModuleMaker moduleMaker, FileEditorManager manager) {
+                              @SuppressWarnings("unused") StartupModuleMaker moduleMaker, FileEditorManager manager) {
     super(pluginLoaderRegistry);
     myProject = project;
     myMpsProject = mpsProject;
@@ -143,8 +143,12 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
     final ProjectPluginManager ppm = p.getComponent(ProjectPluginManager.class);
     List<RelationDescriptor> tabs = ppm == null ? Collections.emptyList() : ppm.getTabDescriptors();
     for (RelationDescriptor tab : tabs) {
-      if (tab.isApplicable(node)) {
-        result.add(tab);
+      try {
+        if (tab.isApplicable(node)) {
+          result.add(tab);
+        }
+      } catch (Throwable t) {
+        LOG.error("Exception in extension code: ", t);
       }
     }
     return result;

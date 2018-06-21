@@ -3,12 +3,16 @@
   <dependency className="jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMappingExt" file="NodeFileStatusMappingExt.java">
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.nodefs.NodeVirtualFileSystem" />
     <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
     <classNode dependClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping" />
   </dependency>

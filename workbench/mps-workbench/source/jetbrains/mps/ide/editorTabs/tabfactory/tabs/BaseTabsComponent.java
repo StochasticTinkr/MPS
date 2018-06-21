@@ -26,6 +26,8 @@ import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.util.containers.MultiMap;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -44,6 +46,8 @@ import java.util.Set;
  * manages layout constraints of the only child itself. Method {@link #getComponent()} is for external consumers or child unrelated activities.
  */
 public abstract class BaseTabsComponent implements TabsComponent {
+  private static final Logger LOG = LogManager.getLogger(BaseTabsComponent.class);
+
   private final NodeChangeCallback myCallback;
   private final CreateModeCallback myCreateModeCallback;
   protected final SNodeReference myBaseNode;
@@ -138,7 +142,15 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
     for (RelationDescriptor d : myPossibleTabs) {
       MultiMap<SNodeReference, SNodeReference> topToUses = new MultiMap<SNodeReference, SNodeReference>();
-      for (SNode n : d.getNodes(baseNode)) {
+      List<SNode> nodes;
+      try {
+        nodes = d.getNodes(baseNode);
+      } catch (Throwable t){
+        LOG.error("Exception in extension: ", t);
+        nodes = Collections.emptyList();
+      }
+
+      for (SNode n : nodes) {
         if (n == null || n.getModel() == null/* n.model == null is hack for MPS-21506*/) {
           continue;
         }

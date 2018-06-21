@@ -31,8 +31,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NodeStructureViewProviderImpl implements ApplicationComponent, NodeStructureViewProvider {
+import static jetbrains.mps.lang.editor.cellProviders.AbstractReferentCellProvider.LOG;
 
+public class NodeStructureViewProviderImpl implements ApplicationComponent, NodeStructureViewProvider {
   public NodeStructureViewProviderImpl() {
   }
 
@@ -43,20 +44,36 @@ public class NodeStructureViewProviderImpl implements ApplicationComponent, Node
 
     List<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>();
     for (RelationDescriptor tab : mpsProject.getProject().getComponent(ProjectPluginManager.class).getTabDescriptors()) {
-      if (tab.getBaseNode(node)==null && !tab.isApplicable(node)) continue;
-      tabs.add(tab);
+      try {
+        if (tab.getBaseNode(node) != null || tab.isApplicable(node)) {
+          tabs.add(tab);
+        }
+      } catch (Throwable t){
+        LOG.error("Exception in extension: ", t);
+      }
     }
 
     for (RelationDescriptor tab : tabs) {
-      SNode baseNode = tab.getBaseNode(node);
+      SNode baseNode = null;
+      try {
+        baseNode = tab.getBaseNode(node);
+      } catch (Throwable t){
+        LOG.error("Exception in extension: ", t);
+      }
+
       if (baseNode != null && baseNode.getName() != null) {
         return new NodeStructureViewBuilder(mpsProject, baseNode.getReference());
       }
     }
 
     for (RelationDescriptor tab : tabs) {
-      List<SNode> nodes = tab.getNodes(node);
-      if (!nodes.isEmpty()) {
+      List<SNode> nodes = null;
+      try {
+        nodes = tab.getNodes(node);
+      } catch (Throwable t){
+        LOG.error("Exception in extension: ", t);
+      }
+      if (node != null && !nodes.isEmpty()) {
         return new NodeStructureViewBuilder(mpsProject, new jetbrains.mps.smodel.SNodePointer(node));
       }
     }
