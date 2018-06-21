@@ -26,12 +26,14 @@ import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.roots.ui.componentsList.components.ScrollablePanel;
 import com.intellij.openapi.roots.ui.componentsList.layout.VerticalStackLayout;
 import com.intellij.openapi.roots.ui.configuration.actions.IconWithTextAction;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.Splitter;
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.awt.RelativePoint;
@@ -342,8 +344,9 @@ public class ModelRootContentEntriesEditor implements Disposable {
           chosen = files[0];
           for (VirtualFile candidate : candidatesForIntersection) {
             if (doIntersect(chosen, candidate)) {
-              JOptionPane.showMessageDialog(myMainPanel,
-                  MessageFormat.format("Can''t create new model root, it intersects with the existing model root: ''{0}''! \nChoose another folder", candidate));
+              Messages.showWarningDialog(myMainPanel,
+                                         MessageFormat.format("<html>Can''t create new model root, it intersects with the existing model root:<br><b>{0}</b><br><br>Please, choose another folder.</html>", StringUtil.escapeXml(String.valueOf(candidate))),
+                                         "Model Roots Intersection");
               chosen = null;
               break;
             }
