@@ -434,11 +434,44 @@
       <property role="IQ2ns" value="2890539347285154139" />
       <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
     </node>
+    <node concept="1TJgyj" id="ylzIYEG02o" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="singleChildWithCustomInsert" />
+      <property role="IQ2ns" value="618557683845300376" />
+      <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
+    </node>
+    <node concept="1TJgyj" id="ylzIYEGrgc" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="singleChildWithNonEmptyCellAndCustomInsert" />
+      <property role="IQ2ns" value="618557683845411852" />
+      <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
+    </node>
     <node concept="1TJgyj" id="P9hc2KgOpM" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="multiChild" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="957371990174549618" />
+      <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
+    </node>
+    <node concept="1TJgyj" id="ylzIYEH7TO" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="multiChildWithFactory" />
+      <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="618557683845594740" />
+      <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
+    </node>
+    <node concept="1TJgyj" id="ylzIYEIaQm" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="multiChildWithCustomInsert" />
+      <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="618557683845868950" />
+      <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
+    </node>
+    <node concept="1TJgyj" id="ylzIYEIiug" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="multiChildWithCustomEmptyCellAndInsert" />
+      <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="618557683845900176" />
       <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
     </node>
     <node concept="1TJgyj" id="7UZdOvgzajQ" role="1TKVEi">

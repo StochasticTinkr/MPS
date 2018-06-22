@@ -250,6 +250,11 @@
       </concept>
       <concept id="957371990174086071" name="jetbrains.mps.lang.editor.editorTest.structure.SubstTestRoot" flags="ng" index="2XtntR">
         <child id="2890539347285154139" name="singleChildWithNonEmptyCell" index="2k9tHz" />
+        <child id="618557683845594740" name="multiChildWithFactory" index="2y8v2r" />
+        <child id="618557683845411852" name="singleChildWithNonEmptyCellAndCustomInsert" index="2y93Fz" />
+        <child id="618557683845300376" name="singleChildWithCustomInsert" index="2y9oTR" />
+        <child id="618557683845900176" name="multiChildWithCustomEmptyCellAndInsert" index="2yba_Z" />
+        <child id="618557683845868950" name="multiChildWithCustomEmptyCellAndInsert" index="2ybidT" />
         <child id="9133079350911739126" name="separatorChild" index="2IcTeL" />
         <child id="9133079350911740921" name="middlewareChild" index="2IcTMY" />
         <child id="583472190600143148" name="childWithNextEditorAndMenu" index="2T4CBL" />
@@ -8681,6 +8686,197 @@
           <property role="p6zMq" value="14" />
           <property role="p6zMs" value="14" />
           <property role="LIFWd" value="property_name" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="ylzIYEFZY$">
+    <property role="TrG5h" value="Subst_SingleChild_Insert" />
+    <property role="3GE5qa" value="substitute" />
+    <node concept="2XtntR" id="ylzIYEFZY_" role="LiRBU">
+      <node concept="LIFWc" id="ylzIYEG01f" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_singleChild" />
+      </node>
+    </node>
+    <node concept="2XtntR" id="ylzIYEFZYC" role="LiZbd">
+      <node concept="2Xtn1I" id="ylzIYEG01p" role="2Xtn4J">
+        <node concept="LIFWc" id="ylzIYEG01F" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Error" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="ylzIYEFZYF" role="LjaKd">
+      <node concept="2HxZob" id="ylzIYEFZYH" role="3cqZAp">
+        <node concept="1iFQzN" id="ylzIYEFZYI" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="ylzIYEH7NC">
+    <property role="TrG5h" value="Subst_SingleChild_WithCustomInsert_Insert" />
+    <property role="3GE5qa" value="substitute" />
+    <node concept="2XtntR" id="ylzIYEH7ND" role="LiRBU">
+      <node concept="LIFWc" id="ylzIYEJBhR" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_singleChildWithCustomInsert" />
+      </node>
+    </node>
+    <node concept="2XtntR" id="ylzIYEH7NF" role="LiZbd">
+      <node concept="2Xtn7H" id="ylzIYEH7Rn" role="2y9oTR">
+        <property role="2XtjmT" value="true" />
+        <node concept="LIFWc" id="ylzIYEH7RD" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="4" />
+          <property role="p6zMs" value="4" />
+          <property role="LIFWd" value="property_myProperty" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="ylzIYEH7NI" role="LjaKd">
+      <node concept="2HxZob" id="ylzIYEH7NJ" role="3cqZAp">
+        <node concept="1iFQzN" id="ylzIYEH7NK" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="ylzIYEH7RF">
+    <property role="TrG5h" value="Subst_SingleChild_WithNonEmptyCellAndCustomInsert_Insert" />
+    <property role="3GE5qa" value="substitute" />
+    <node concept="2XtntR" id="ylzIYEH7RG" role="LiRBU">
+      <node concept="LIFWc" id="ylzIYEH7T4" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_3mh94b_b0b4a" />
+      </node>
+    </node>
+    <node concept="2XtntR" id="ylzIYEH7RI" role="LiZbd">
+      <node concept="2Xtn7H" id="ylzIYEH7Tw" role="2y93Fz">
+        <property role="2XtjmT" value="true" />
+        <node concept="LIFWc" id="ylzIYEH7TM" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="4" />
+          <property role="p6zMs" value="4" />
+          <property role="LIFWd" value="property_myProperty" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="ylzIYEH7RL" role="LjaKd">
+      <node concept="2HxZob" id="ylzIYEH7RM" role="3cqZAp">
+        <node concept="1iFQzN" id="ylzIYEH7RN" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="ylzIYEHFwP">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="Subst_MultiChildWithFactory_AddNewChildByEnter" />
+    <node concept="2XtntR" id="ylzIYEHFwQ" role="LiRBU">
+      <node concept="LIFWc" id="ylzIYEJBih" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_multiChildWithFactory" />
+      </node>
+    </node>
+    <node concept="2XtntR" id="ylzIYEHFwT" role="LiZbd">
+      <node concept="2Xtn7H" id="ylzIYEIaPZ" role="2y8v2r">
+        <property role="2XtjmT" value="true" />
+        <node concept="LIFWc" id="ylzIYEIaQh" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="4" />
+          <property role="p6zMs" value="4" />
+          <property role="LIFWd" value="property_myProperty" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="ylzIYEHFwX" role="LjaKd">
+      <node concept="2HxZob" id="ylzIYEHFwY" role="3cqZAp">
+        <node concept="1iFQzN" id="ylzIYEHFwZ" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="ylzIYEIQhm">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="Subst_MultiChildWithCustomInsert_AddNewChildByEnter" />
+    <node concept="2XtntR" id="ylzIYEIQhn" role="LiRBU">
+      <node concept="LIFWc" id="ylzIYEIQiB" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_multiChildWithCustomInsert" />
+      </node>
+    </node>
+    <node concept="2XtntR" id="ylzIYEIQhp" role="LiZbd">
+      <node concept="2Xtn7H" id="ylzIYEIQiT" role="2ybidT">
+        <property role="2XtjmT" value="true" />
+        <node concept="LIFWc" id="ylzIYEIQjb" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="4" />
+          <property role="p6zMs" value="4" />
+          <property role="LIFWd" value="property_myProperty" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="ylzIYEIQhs" role="LjaKd">
+      <node concept="2HxZob" id="ylzIYEIQht" role="3cqZAp">
+        <node concept="1iFQzN" id="ylzIYEIQhu" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="ylzIYEIQjd">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="Subst_MultiChildWithCustomEmptyCellAndInsert_AddNewChildByEnter" />
+    <node concept="2XtntR" id="ylzIYEIQje" role="LiRBU">
+      <node concept="LIFWc" id="ylzIYEJmBU" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_3mh94b_a1k0" />
+      </node>
+    </node>
+    <node concept="2XtntR" id="ylzIYEIQjg" role="LiZbd">
+      <node concept="2Xtn7H" id="ylzIYEJmC4" role="2yba_Z">
+        <property role="2XtjmT" value="true" />
+        <node concept="LIFWc" id="ylzIYEJmCm" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="4" />
+          <property role="p6zMs" value="4" />
+          <property role="LIFWd" value="property_myProperty" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="ylzIYEIQjj" role="LjaKd">
+      <node concept="2HxZob" id="ylzIYEIQjk" role="3cqZAp">
+        <node concept="1iFQzN" id="ylzIYEIQjl" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
         </node>
       </node>
     </node>

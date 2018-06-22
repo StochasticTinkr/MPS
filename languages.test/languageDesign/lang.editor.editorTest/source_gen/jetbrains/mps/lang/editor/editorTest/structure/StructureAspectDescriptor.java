@@ -1091,7 +1091,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/957371990174086071");
     b.aggregate("singleChild", 0xd4944c0b03c35efL).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL).optional(true).ordered(true).multiple(false).origin("957371990174086639").done();
     b.aggregate("singleChildWithNonEmptyCell", 0x281d4238bc38995bL).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL).optional(true).ordered(true).multiple(false).origin("2890539347285154139").done();
+    b.aggregate("singleChildWithCustomInsert", 0x8958eefaab00098L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL).optional(true).ordered(true).multiple(false).origin("618557683845300376").done();
+    b.aggregate("singleChildWithNonEmptyCellAndCustomInsert", 0x8958eefaab1b40cL).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL).optional(true).ordered(true).multiple(false).origin("618557683845411852").done();
     b.aggregate("multiChild", 0xd4944c0b0434672L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL).optional(true).ordered(true).multiple(true).origin("957371990174549618").done();
+    b.aggregate("multiChildWithFactory", 0x8958eefaab47e74L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL).optional(true).ordered(true).multiple(true).origin("618557683845594740").done();
+    b.aggregate("multiChildWithCustomInsert", 0x8958eefaab8ad96L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL).optional(true).ordered(true).multiple(true).origin("618557683845868950").done();
+    b.aggregate("multiChildWithCustomEmptyCellAndInsert", 0x8958eefaab92790L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL).optional(true).ordered(true).multiple(true).origin("618557683845900176").done();
     b.aggregate("separatorChild", 0x7ebf3747d08ca4f6L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL).optional(true).ordered(true).multiple(true).origin("9133079350911739126").done();
     b.aggregate("middlewareChild", 0x7ebf3747d08cabf9L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x7ebf3747d08cab96L).optional(true).ordered(true).multiple(false).origin("9133079350911740921").done();
     b.aggregate("childWithNextEditorAndMenu", 0x818e8ddb10a612cL).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x818e8ddb10c8044L).optional(true).ordered(true).multiple(false).origin("583472190600143148").done();

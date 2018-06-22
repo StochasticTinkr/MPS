@@ -2543,6 +2543,162 @@
       <unit id="6047905657530835410" at="13,0,41,0" name="jetbrains.mps.lang.editor.actions.test.Comment_CommentUncomment_Test" />
     </file>
   </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/618557683845300132">
+    <file name="Subst_SingleChild_Insert_Test.java">
+      <node id="618557683845300132" at="18,42,19,25" concept="6" />
+      <node id="618557683845300132" at="23,64,24,66" concept="1" />
+      <node id="618557683845300132" at="29,52,30,19" concept="6" />
+      <node id="618557683845300132" at="34,51,35,70" concept="1" />
+      <node id="618557683845300141" at="35,70,36,69" concept="1" />
+      <node id="618557683845300132" at="15,0,17,0" concept="5" trace="ourParamCache" />
+      <node id="618557683845300132" at="18,0,21,0" concept="0" trace="Subst_SingleChild_Insert_Test#()V" />
+      <node id="618557683845300132" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="618557683845300132" at="22,0,26,0" concept="2" trace="test_Subst_SingleChild_Insert#()V" />
+      <node id="618557683845300132" at="33,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="618557683845300132" at="18,42,19,25" />
+      <scope id="618557683845300132" at="23,64,24,66" />
+      <scope id="618557683845300132" at="29,52,30,19" />
+      <scope id="618557683845300132" at="34,51,36,69" />
+      <scope id="618557683845300132" at="18,0,21,0" />
+      <scope id="618557683845300132" at="29,0,32,0">
+        <var name="owner" id="618557683845300132" />
+      </scope>
+      <scope id="618557683845300132" at="22,0,26,0" />
+      <scope id="618557683845300132" at="33,0,38,0" />
+      <unit id="618557683845300132" at="27,0,39,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_Insert_Test$TestBody" />
+      <unit id="618557683845300132" at="13,0,40,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_Insert_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/618557683845594344">
+    <file name="Subst_SingleChild_WithCustomInsert_Insert_Test.java">
+      <node id="618557683845594344" at="18,59,19,25" concept="6" />
+      <node id="618557683845594344" at="23,81,24,83" concept="1" />
+      <node id="618557683845594344" at="29,52,30,19" concept="6" />
+      <node id="618557683845594344" at="34,51,35,70" concept="1" />
+      <node id="618557683845594351" at="35,70,36,69" concept="1" />
+      <node id="618557683845594344" at="15,0,17,0" concept="5" trace="ourParamCache" />
+      <node id="618557683845594344" at="18,0,21,0" concept="0" trace="Subst_SingleChild_WithCustomInsert_Insert_Test#()V" />
+      <node id="618557683845594344" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="618557683845594344" at="22,0,26,0" concept="2" trace="test_Subst_SingleChild_WithCustomInsert_Insert#()V" />
+      <node id="618557683845594344" at="33,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="618557683845594344" at="18,59,19,25" />
+      <scope id="618557683845594344" at="23,81,24,83" />
+      <scope id="618557683845594344" at="29,52,30,19" />
+      <scope id="618557683845594344" at="34,51,36,69" />
+      <scope id="618557683845594344" at="18,0,21,0" />
+      <scope id="618557683845594344" at="29,0,32,0">
+        <var name="owner" id="618557683845594344" />
+      </scope>
+      <scope id="618557683845594344" at="22,0,26,0" />
+      <scope id="618557683845594344" at="33,0,38,0" />
+      <unit id="618557683845594344" at="27,0,39,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_WithCustomInsert_Insert_Test$TestBody" />
+      <unit id="618557683845594344" at="13,0,40,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_WithCustomInsert_Insert_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/618557683845594603">
+    <file name="Subst_SingleChild_WithNonEmptyCellAndCustomInsert_Insert_Test.java">
+      <node id="618557683845594603" at="18,74,19,25" concept="6" />
+      <node id="618557683845594603" at="23,96,24,98" concept="1" />
+      <node id="618557683845594603" at="29,52,30,19" concept="6" />
+      <node id="618557683845594603" at="34,51,35,70" concept="1" />
+      <node id="618557683845594610" at="35,70,36,69" concept="1" />
+      <node id="618557683845594603" at="15,0,17,0" concept="5" trace="ourParamCache" />
+      <node id="618557683845594603" at="18,0,21,0" concept="0" trace="Subst_SingleChild_WithNonEmptyCellAndCustomInsert_Insert_Test#()V" />
+      <node id="618557683845594603" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="618557683845594603" at="22,0,26,0" concept="2" trace="test_Subst_SingleChild_WithNonEmptyCellAndCustomInsert_Insert#()V" />
+      <node id="618557683845594603" at="33,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="618557683845594603" at="18,74,19,25" />
+      <scope id="618557683845594603" at="23,96,24,98" />
+      <scope id="618557683845594603" at="29,52,30,19" />
+      <scope id="618557683845594603" at="34,51,36,69" />
+      <scope id="618557683845594603" at="18,0,21,0" />
+      <scope id="618557683845594603" at="29,0,32,0">
+        <var name="owner" id="618557683845594603" />
+      </scope>
+      <scope id="618557683845594603" at="22,0,26,0" />
+      <scope id="618557683845594603" at="33,0,38,0" />
+      <unit id="618557683845594603" at="27,0,39,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_WithNonEmptyCellAndCustomInsert_Insert_Test$TestBody" />
+      <unit id="618557683845594603" at="13,0,40,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_WithNonEmptyCellAndCustomInsert_Insert_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/618557683845740597">
+    <file name="Subst_MultiChildWithFactory_AddNewChildByEnter_Test.java">
+      <node id="618557683845740597" at="18,64,19,25" concept="6" />
+      <node id="618557683845740597" at="23,86,24,88" concept="1" />
+      <node id="618557683845740597" at="29,52,30,19" concept="6" />
+      <node id="618557683845740597" at="34,51,35,70" concept="1" />
+      <node id="618557683845740606" at="35,70,36,69" concept="1" />
+      <node id="618557683845740597" at="15,0,17,0" concept="5" trace="ourParamCache" />
+      <node id="618557683845740597" at="18,0,21,0" concept="0" trace="Subst_MultiChildWithFactory_AddNewChildByEnter_Test#()V" />
+      <node id="618557683845740597" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="618557683845740597" at="22,0,26,0" concept="2" trace="test_Subst_MultiChildWithFactory_AddNewChildByEnter#()V" />
+      <node id="618557683845740597" at="33,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="618557683845740597" at="18,64,19,25" />
+      <scope id="618557683845740597" at="23,86,24,88" />
+      <scope id="618557683845740597" at="29,52,30,19" />
+      <scope id="618557683845740597" at="34,51,36,69" />
+      <scope id="618557683845740597" at="18,0,21,0" />
+      <scope id="618557683845740597" at="29,0,32,0">
+        <var name="owner" id="618557683845740597" />
+      </scope>
+      <scope id="618557683845740597" at="22,0,26,0" />
+      <scope id="618557683845740597" at="33,0,38,0" />
+      <unit id="618557683845740597" at="27,0,39,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildWithFactory_AddNewChildByEnter_Test$TestBody" />
+      <unit id="618557683845740597" at="13,0,40,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildWithFactory_AddNewChildByEnter_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/618557683846046806">
+    <file name="Subst_MultiChildWithCustomInsert_AddNewChildByEnter_Test.java">
+      <node id="618557683846046806" at="18,69,19,25" concept="6" />
+      <node id="618557683846046806" at="23,91,24,93" concept="1" />
+      <node id="618557683846046806" at="29,52,30,19" concept="6" />
+      <node id="618557683846046806" at="34,51,35,70" concept="1" />
+      <node id="618557683846046813" at="35,70,36,69" concept="1" />
+      <node id="618557683846046806" at="15,0,17,0" concept="5" trace="ourParamCache" />
+      <node id="618557683846046806" at="18,0,21,0" concept="0" trace="Subst_MultiChildWithCustomInsert_AddNewChildByEnter_Test#()V" />
+      <node id="618557683846046806" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="618557683846046806" at="22,0,26,0" concept="2" trace="test_Subst_MultiChildWithCustomInsert_AddNewChildByEnter#()V" />
+      <node id="618557683846046806" at="33,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="618557683846046806" at="18,69,19,25" />
+      <scope id="618557683846046806" at="23,91,24,93" />
+      <scope id="618557683846046806" at="29,52,30,19" />
+      <scope id="618557683846046806" at="34,51,36,69" />
+      <scope id="618557683846046806" at="18,0,21,0" />
+      <scope id="618557683846046806" at="29,0,32,0">
+        <var name="owner" id="618557683846046806" />
+      </scope>
+      <scope id="618557683846046806" at="22,0,26,0" />
+      <scope id="618557683846046806" at="33,0,38,0" />
+      <unit id="618557683846046806" at="27,0,39,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildWithCustomInsert_AddNewChildByEnter_Test$TestBody" />
+      <unit id="618557683846046806" at="13,0,40,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildWithCustomInsert_AddNewChildByEnter_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/618557683846046925">
+    <file name="Subst_MultiChildWithCustomEmptyCellAndInsert_AddNewChildByEnter_Test.java">
+      <node id="618557683846046925" at="18,81,19,25" concept="6" />
+      <node id="618557683846046925" at="23,103,24,105" concept="1" />
+      <node id="618557683846046925" at="29,52,30,19" concept="6" />
+      <node id="618557683846046925" at="34,51,35,70" concept="1" />
+      <node id="618557683846046932" at="35,70,36,69" concept="1" />
+      <node id="618557683846046925" at="15,0,17,0" concept="5" trace="ourParamCache" />
+      <node id="618557683846046925" at="18,0,21,0" concept="0" trace="Subst_MultiChildWithCustomEmptyCellAndInsert_AddNewChildByEnter_Test#()V" />
+      <node id="618557683846046925" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="618557683846046925" at="22,0,26,0" concept="2" trace="test_Subst_MultiChildWithCustomEmptyCellAndInsert_AddNewChildByEnter#()V" />
+      <node id="618557683846046925" at="33,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="618557683846046925" at="18,81,19,25" />
+      <scope id="618557683846046925" at="23,103,24,105" />
+      <scope id="618557683846046925" at="29,52,30,19" />
+      <scope id="618557683846046925" at="34,51,36,69" />
+      <scope id="618557683846046925" at="18,0,21,0" />
+      <scope id="618557683846046925" at="29,0,32,0">
+        <var name="owner" id="618557683846046925" />
+      </scope>
+      <scope id="618557683846046925" at="22,0,26,0" />
+      <scope id="618557683846046925" at="33,0,38,0" />
+      <unit id="618557683846046925" at="27,0,39,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildWithCustomEmptyCellAndInsert_AddNewChildByEnter_Test$TestBody" />
+      <unit id="618557683846046925" at="13,0,40,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChildWithCustomEmptyCellAndInsert_AddNewChildByEnter_Test" />
+    </file>
+  </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/6528040262366822287">
     <file name="DelSmartValidReference_Test.java">
       <node id="6528040262366822287" at="19,40,20,25" concept="6" />

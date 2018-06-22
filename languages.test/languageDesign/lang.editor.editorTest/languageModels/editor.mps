@@ -326,6 +326,7 @@
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
       <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" stub="3610246225209162225" index="3F0ifn">
+        <property id="1082639509531" name="nullText" index="ilYzB" />
         <property id="1073389577007" name="text" index="3F0ifm" />
       </concept>
       <concept id="1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" flags="sg" stub="730538219796134133" index="3F0A7n" />
@@ -518,6 +519,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
@@ -558,11 +560,16 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
+        <child id="540871147943773366" name="argument" index="25WWJ7" />
+      </concept>
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435808" name="initValue" index="HW$Y0" />
         <child id="1237721435807" name="elementType" index="HW$YZ" />
       </concept>
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
+      <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
+      <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
     </language>
   </registry>
@@ -1140,6 +1147,57 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
+      <node concept="3EZMnI" id="ylzIYEG02B" role="3EZMnx">
+        <node concept="VPM3Z" id="ylzIYEG02C" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="lj46D" id="ylzIYEG02D" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="ylzIYEG02E" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="ylzIYEG02F" role="3EZMnx">
+          <property role="3F0ifm" value="single child with custom insert:" />
+        </node>
+        <node concept="3F1sOY" id="ylzIYEG02G" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:ylzIYEG02o" resolve="singleChildWithCustomInsert" />
+          <ref role="1ERwB7" node="ylzIYEG086" resolve="SubstTestRoot_CustomSingleInsertAction" />
+        </node>
+        <node concept="l2Vlx" id="ylzIYEG02H" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="ylzIYEGrhA" role="3EZMnx">
+        <node concept="VPM3Z" id="ylzIYEGrhB" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="ylzIYEGrhC" role="3EZMnx">
+          <property role="3F0ifm" value="single child with non empty cell and custom insert" />
+        </node>
+        <node concept="3F1sOY" id="ylzIYEGrhD" role="3EZMnx">
+          <property role="2ru_X1" value="true" />
+          <ref role="1NtTu8" to="68nn:ylzIYEGrgc" resolve="singleChildWithNonEmptyCellAndCustomInsert" />
+          <node concept="3EZMnI" id="ylzIYEGrhE" role="2ruayu">
+            <node concept="3F0ifn" id="ylzIYEGrhF" role="3EZMnx">
+              <property role="3F0ifm" value="&lt;" />
+            </node>
+            <node concept="3F0ifn" id="ylzIYEGrhG" role="3EZMnx">
+              <property role="3F0ifm" value="child" />
+              <ref role="1ERwB7" node="ylzIYEIbaJ" resolve="SubstTestRoot_CustomEmptyCellSingleInsertAction" />
+            </node>
+            <node concept="3F0ifn" id="ylzIYEGrhH" role="3EZMnx">
+              <property role="3F0ifm" value="&gt;" />
+            </node>
+            <node concept="l2Vlx" id="ylzIYEGrhI" role="2iSdaV" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="ylzIYEGrhJ" role="2iSdaV" />
+        <node concept="lj46D" id="ylzIYEGrhK" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="ylzIYEGrhL" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
       <node concept="3EZMnI" id="7UZdOvgzaO7" role="3EZMnx">
         <node concept="3F0ifn" id="7UZdOvgzaQX" role="3EZMnx">
           <property role="3F0ifm" value="children with separator" />
@@ -1217,6 +1275,143 @@
           </node>
         </node>
         <node concept="l2Vlx" id="P9hc2KgOtk" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="ylzIYEH7TY" role="3EZMnx">
+        <node concept="VPM3Z" id="ylzIYEH7TZ" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="lj46D" id="ylzIYEH7U0" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="ylzIYEH7U1" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="ylzIYEH7U2" role="3EZMnx">
+          <property role="3F0ifm" value="multi children with factory:" />
+          <node concept="ljvvj" id="ylzIYEH7U3" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F2HdR" id="ylzIYEH7U4" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:ylzIYEH7TO" resolve="multiChildWithFactory" />
+          <node concept="l2Vlx" id="ylzIYEH7U5" role="2czzBx" />
+          <node concept="VPM3Z" id="ylzIYEH7U6" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="pj6Ft" id="ylzIYEH7U7" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="ylzIYEH7U8" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="4$FPG" id="ylzIYEH7VF" role="4_6I_">
+            <node concept="3clFbS" id="ylzIYEH7VG" role="2VODD2">
+              <node concept="3cpWs8" id="ylzIYEH8zN" role="3cqZAp">
+                <node concept="3cpWsn" id="ylzIYEH8zO" role="3cpWs9">
+                  <property role="TrG5h" value="child" />
+                  <node concept="3Tqbb2" id="ylzIYEH8zP" role="1tU5fm">
+                    <ref role="ehGHo" to="68nn:P9hc2Kf3kH" resolve="SubstTestBooleanPropertyChild" />
+                  </node>
+                  <node concept="2ShNRf" id="ylzIYEH8zQ" role="33vP2m">
+                    <node concept="3zrR0B" id="ylzIYEH8zR" role="2ShVmc">
+                      <node concept="3Tqbb2" id="ylzIYEH8zS" role="3zrR0E">
+                        <ref role="ehGHo" to="68nn:P9hc2Kf3kH" resolve="SubstTestBooleanPropertyChild" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="ylzIYEH8zT" role="3cqZAp">
+                <node concept="37vLTI" id="ylzIYEH8zU" role="3clFbG">
+                  <node concept="3clFbT" id="ylzIYEH8zV" role="37vLTx">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                  <node concept="2OqwBi" id="ylzIYEH8zW" role="37vLTJ">
+                    <node concept="37vLTw" id="ylzIYEH8zX" role="2Oq$k0">
+                      <ref role="3cqZAo" node="ylzIYEH8zO" resolve="child" />
+                    </node>
+                    <node concept="3TrcHB" id="ylzIYEH8zY" role="2OqNvi">
+                      <ref role="3TsBF5" to="68nn:P9hc2Kf75T" resolve="myProperty" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="ylzIYEH8QZ" role="3cqZAp">
+                <node concept="37vLTw" id="ylzIYEH8QX" role="3clFbG">
+                  <ref role="3cqZAo" node="ylzIYEH8zO" resolve="child" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="l2Vlx" id="ylzIYEH7U9" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="ylzIYEIaQx" role="3EZMnx">
+        <node concept="VPM3Z" id="ylzIYEIaQy" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="lj46D" id="ylzIYEIaQz" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="ylzIYEIaQ$" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="ylzIYEIaQ_" role="3EZMnx">
+          <property role="3F0ifm" value="multi children with custom insert" />
+          <node concept="ljvvj" id="ylzIYEIaQA" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F2HdR" id="ylzIYEIaQB" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:ylzIYEIaQm" resolve="multiChildWithCustomInsert" />
+          <ref role="1ERwB7" node="ylzIYEIcnZ" resolve="SubstTestRoot_CustomMultipleInsertAction" />
+          <node concept="l2Vlx" id="ylzIYEIaQC" role="2czzBx" />
+          <node concept="VPM3Z" id="ylzIYEIaQD" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="pj6Ft" id="ylzIYEIaQE" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="ylzIYEIaQF" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="ylzIYEIaQW" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="ylzIYEIius" role="3EZMnx">
+        <node concept="VPM3Z" id="ylzIYEIiut" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="lj46D" id="ylzIYEIiuu" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="ylzIYEIiuv" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="ylzIYEIiuw" role="3EZMnx">
+          <property role="3F0ifm" value="multi children with custom empty cell and insert" />
+          <node concept="ljvvj" id="ylzIYEIiux" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F2HdR" id="ylzIYEIiuy" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:ylzIYEIiug" resolve="multiChildWithCustomEmptyCellAndInsert" />
+          <node concept="l2Vlx" id="ylzIYEIiuz" role="2czzBx" />
+          <node concept="VPM3Z" id="ylzIYEIiu$" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="pj6Ft" id="ylzIYEIiu_" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="ylzIYEIiuA" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="3F0ifn" id="ylzIYEIQst" role="2czzBI">
+            <property role="ilYzB" value="&lt;custom cell&gt;" />
+            <ref role="1ERwB7" node="ylzIYEIcEF" resolve="SubstTestRoot_CustomEmptyCellMultipleInsertAction" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="ylzIYEIiuR" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="woUdQL2A4N" role="3EZMnx">
         <node concept="VPM3Z" id="woUdQL2A4O" role="3F10Kt">
@@ -6150,6 +6345,260 @@
         <node concept="3F0A7n" id="7DEfJmqPDTv" role="2wV5jI">
           <property role="1Intyy" value="true" />
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="ylzIYEG086">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="SubstTestRoot_CustomSingleInsertAction" />
+    <ref role="1h_SK9" to="68nn:P9hc2Kf3eR" resolve="SubstTestRoot" />
+    <node concept="1hA7zw" id="ylzIYEG087" role="1h_SK8">
+      <property role="1hAc7j" value="insert_action_id" />
+      <node concept="1hAIg9" id="ylzIYEG088" role="1hA7z_">
+        <node concept="3clFbS" id="ylzIYEG089" role="2VODD2">
+          <node concept="3cpWs8" id="ylzIYEGszi" role="3cqZAp">
+            <node concept="3cpWsn" id="ylzIYEGszj" role="3cpWs9">
+              <property role="TrG5h" value="child" />
+              <node concept="3Tqbb2" id="ylzIYEGsxA" role="1tU5fm">
+                <ref role="ehGHo" to="68nn:P9hc2Kf3kH" resolve="SubstTestBooleanPropertyChild" />
+              </node>
+              <node concept="2ShNRf" id="ylzIYEGszk" role="33vP2m">
+                <node concept="3zrR0B" id="ylzIYEGszl" role="2ShVmc">
+                  <node concept="3Tqbb2" id="ylzIYEGszm" role="3zrR0E">
+                    <ref role="ehGHo" to="68nn:P9hc2Kf3kH" resolve="SubstTestBooleanPropertyChild" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="ylzIYEGsM3" role="3cqZAp">
+            <node concept="37vLTI" id="ylzIYEGu0X" role="3clFbG">
+              <node concept="3clFbT" id="ylzIYEGu1m" role="37vLTx">
+                <property role="3clFbU" value="true" />
+              </node>
+              <node concept="2OqwBi" id="ylzIYEGsVS" role="37vLTJ">
+                <node concept="37vLTw" id="ylzIYEGsM1" role="2Oq$k0">
+                  <ref role="3cqZAo" node="ylzIYEGszj" resolve="child" />
+                </node>
+                <node concept="3TrcHB" id="ylzIYEGt9Q" role="2OqNvi">
+                  <ref role="3TsBF5" to="68nn:P9hc2Kf75T" resolve="myProperty" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="ylzIYEG0pD" role="3cqZAp">
+            <node concept="37vLTI" id="ylzIYEG11o" role="3clFbG">
+              <node concept="37vLTw" id="ylzIYEGszn" role="37vLTx">
+                <ref role="3cqZAo" node="ylzIYEGszj" resolve="child" />
+              </node>
+              <node concept="2OqwBi" id="ylzIYEG0wH" role="37vLTJ">
+                <node concept="0IXxy" id="ylzIYEG0pC" role="2Oq$k0" />
+                <node concept="3TrEf2" id="ylzIYEG0Dt" role="2OqNvi">
+                  <ref role="3Tt5mk" to="68nn:ylzIYEG02o" resolve="singleChildWithCustomInsert" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="jK8Ss" id="ylzIYEK5Vw" role="jK8aL">
+        <node concept="3clFbS" id="ylzIYEK5Vx" role="2VODD2">
+          <node concept="3clFbF" id="ylzIYEK68r" role="3cqZAp">
+            <node concept="2OqwBi" id="ylzIYEK75A" role="3clFbG">
+              <node concept="2OqwBi" id="ylzIYEK6kR" role="2Oq$k0">
+                <node concept="0IXxy" id="ylzIYEK68q" role="2Oq$k0" />
+                <node concept="3TrEf2" id="ylzIYEK6Ff" role="2OqNvi">
+                  <ref role="3Tt5mk" to="68nn:ylzIYEG02o" resolve="singleChildWithCustomInsert" />
+                </node>
+              </node>
+              <node concept="3w_OXm" id="ylzIYEK7P6" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="ylzIYEIbaJ">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="SubstTestRoot_CustomEmptyCellSingleInsertAction" />
+    <ref role="1h_SK9" to="68nn:P9hc2Kf3eR" resolve="SubstTestRoot" />
+    <node concept="1hA7zw" id="ylzIYEIbaK" role="1h_SK8">
+      <property role="1hAc7j" value="insert_action_id" />
+      <node concept="1hAIg9" id="ylzIYEIbaL" role="1hA7z_">
+        <node concept="3clFbS" id="ylzIYEIbaM" role="2VODD2">
+          <node concept="3cpWs8" id="ylzIYEIbaN" role="3cqZAp">
+            <node concept="3cpWsn" id="ylzIYEIbaO" role="3cpWs9">
+              <property role="TrG5h" value="child" />
+              <node concept="3Tqbb2" id="ylzIYEIbaP" role="1tU5fm">
+                <ref role="ehGHo" to="68nn:P9hc2Kf3kH" resolve="SubstTestBooleanPropertyChild" />
+              </node>
+              <node concept="2ShNRf" id="ylzIYEIbaQ" role="33vP2m">
+                <node concept="3zrR0B" id="ylzIYEIbaR" role="2ShVmc">
+                  <node concept="3Tqbb2" id="ylzIYEIbaS" role="3zrR0E">
+                    <ref role="ehGHo" to="68nn:P9hc2Kf3kH" resolve="SubstTestBooleanPropertyChild" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="ylzIYEIbaT" role="3cqZAp">
+            <node concept="37vLTI" id="ylzIYEIbaU" role="3clFbG">
+              <node concept="3clFbT" id="ylzIYEIbaV" role="37vLTx">
+                <property role="3clFbU" value="true" />
+              </node>
+              <node concept="2OqwBi" id="ylzIYEIbaW" role="37vLTJ">
+                <node concept="37vLTw" id="ylzIYEIbaX" role="2Oq$k0">
+                  <ref role="3cqZAo" node="ylzIYEIbaO" resolve="child" />
+                </node>
+                <node concept="3TrcHB" id="ylzIYEIbaY" role="2OqNvi">
+                  <ref role="3TsBF5" to="68nn:P9hc2Kf75T" resolve="myProperty" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="ylzIYEIbaZ" role="3cqZAp">
+            <node concept="37vLTI" id="ylzIYEIbb0" role="3clFbG">
+              <node concept="37vLTw" id="ylzIYEIbb1" role="37vLTx">
+                <ref role="3cqZAo" node="ylzIYEIbaO" resolve="child" />
+              </node>
+              <node concept="2OqwBi" id="ylzIYEIbb2" role="37vLTJ">
+                <node concept="0IXxy" id="ylzIYEIbb3" role="2Oq$k0" />
+                <node concept="3TrEf2" id="ylzIYEIcj7" role="2OqNvi">
+                  <ref role="3Tt5mk" to="68nn:ylzIYEGrgc" resolve="singleChildWithNonEmptyCellAndCustomInsert" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="ylzIYEIcnZ">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="SubstTestRoot_CustomMultipleInsertAction" />
+    <ref role="1h_SK9" to="68nn:P9hc2Kf3eR" resolve="SubstTestRoot" />
+    <node concept="1hA7zw" id="ylzIYEIco0" role="1h_SK8">
+      <property role="1hAc7j" value="insert_action_id" />
+      <node concept="1hAIg9" id="ylzIYEIco1" role="1hA7z_">
+        <node concept="3clFbS" id="ylzIYEIco2" role="2VODD2">
+          <node concept="3cpWs8" id="ylzIYEIco3" role="3cqZAp">
+            <node concept="3cpWsn" id="ylzIYEIco4" role="3cpWs9">
+              <property role="TrG5h" value="child" />
+              <node concept="3Tqbb2" id="ylzIYEIco5" role="1tU5fm">
+                <ref role="ehGHo" to="68nn:P9hc2Kf3kH" resolve="SubstTestBooleanPropertyChild" />
+              </node>
+              <node concept="2ShNRf" id="ylzIYEIco6" role="33vP2m">
+                <node concept="3zrR0B" id="ylzIYEIco7" role="2ShVmc">
+                  <node concept="3Tqbb2" id="ylzIYEIco8" role="3zrR0E">
+                    <ref role="ehGHo" to="68nn:P9hc2Kf3kH" resolve="SubstTestBooleanPropertyChild" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="ylzIYEIco9" role="3cqZAp">
+            <node concept="37vLTI" id="ylzIYEIcoa" role="3clFbG">
+              <node concept="3clFbT" id="ylzIYEIcob" role="37vLTx">
+                <property role="3clFbU" value="true" />
+              </node>
+              <node concept="2OqwBi" id="ylzIYEIcoc" role="37vLTJ">
+                <node concept="37vLTw" id="ylzIYEIcod" role="2Oq$k0">
+                  <ref role="3cqZAo" node="ylzIYEIco4" resolve="child" />
+                </node>
+                <node concept="3TrcHB" id="ylzIYEIcoe" role="2OqNvi">
+                  <ref role="3TsBF5" to="68nn:P9hc2Kf75T" resolve="myProperty" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="ylzIYEIcof" role="3cqZAp">
+            <node concept="2OqwBi" id="ylzIYEIeOJ" role="3clFbG">
+              <node concept="2OqwBi" id="ylzIYEIcoi" role="2Oq$k0">
+                <node concept="0IXxy" id="ylzIYEIcoj" role="2Oq$k0" />
+                <node concept="3Tsc0h" id="ylzIYEIdbw" role="2OqNvi">
+                  <ref role="3TtcxE" to="68nn:ylzIYEIaQm" resolve="multiChildWithCustomInsert" />
+                </node>
+              </node>
+              <node concept="TSZUe" id="ylzIYEIhHN" role="2OqNvi">
+                <node concept="37vLTw" id="ylzIYEIi9z" role="25WWJ7">
+                  <ref role="3cqZAo" node="ylzIYEIco4" resolve="child" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="jK8Ss" id="ylzIYELRLz" role="jK8aL">
+        <node concept="3clFbS" id="ylzIYELRL$" role="2VODD2">
+          <node concept="3clFbF" id="ylzIYELS73" role="3cqZAp">
+            <node concept="2OqwBi" id="ylzIYELUAd" role="3clFbG">
+              <node concept="2OqwBi" id="ylzIYELSjv" role="2Oq$k0">
+                <node concept="0IXxy" id="ylzIYELS72" role="2Oq$k0" />
+                <node concept="3Tsc0h" id="ylzIYELSK$" role="2OqNvi">
+                  <ref role="3TtcxE" to="68nn:ylzIYEIaQm" resolve="multiChildWithCustomInsert" />
+                </node>
+              </node>
+              <node concept="1v1jN8" id="ylzIYEM3Xh" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="ylzIYEIcEF">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="SubstTestRoot_CustomEmptyCellMultipleInsertAction" />
+    <ref role="1h_SK9" to="68nn:P9hc2Kf3eR" resolve="SubstTestRoot" />
+    <node concept="1hA7zw" id="ylzIYEIcEG" role="1h_SK8">
+      <property role="1hAc7j" value="insert_action_id" />
+      <node concept="1hAIg9" id="ylzIYEIcEH" role="1hA7z_">
+        <node concept="3clFbS" id="ylzIYEIcEI" role="2VODD2">
+          <node concept="3cpWs8" id="ylzIYEIcEJ" role="3cqZAp">
+            <node concept="3cpWsn" id="ylzIYEIcEK" role="3cpWs9">
+              <property role="TrG5h" value="child" />
+              <node concept="3Tqbb2" id="ylzIYEIcEL" role="1tU5fm">
+                <ref role="ehGHo" to="68nn:P9hc2Kf3kH" resolve="SubstTestBooleanPropertyChild" />
+              </node>
+              <node concept="2ShNRf" id="ylzIYEIcEM" role="33vP2m">
+                <node concept="3zrR0B" id="ylzIYEIcEN" role="2ShVmc">
+                  <node concept="3Tqbb2" id="ylzIYEIcEO" role="3zrR0E">
+                    <ref role="ehGHo" to="68nn:P9hc2Kf3kH" resolve="SubstTestBooleanPropertyChild" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="ylzIYEIcEP" role="3cqZAp">
+            <node concept="37vLTI" id="ylzIYEIcEQ" role="3clFbG">
+              <node concept="3clFbT" id="ylzIYEIcER" role="37vLTx">
+                <property role="3clFbU" value="true" />
+              </node>
+              <node concept="2OqwBi" id="ylzIYEIcES" role="37vLTJ">
+                <node concept="37vLTw" id="ylzIYEIcET" role="2Oq$k0">
+                  <ref role="3cqZAo" node="ylzIYEIcEK" resolve="child" />
+                </node>
+                <node concept="3TrcHB" id="ylzIYEIcEU" role="2OqNvi">
+                  <ref role="3TsBF5" to="68nn:P9hc2Kf75T" resolve="myProperty" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="ylzIYEIcEV" role="3cqZAp">
+            <node concept="2OqwBi" id="ylzIYELMvE" role="3clFbG">
+              <node concept="2OqwBi" id="ylzIYEIcEY" role="2Oq$k0">
+                <node concept="0IXxy" id="ylzIYEIcEZ" role="2Oq$k0" />
+                <node concept="3Tsc0h" id="ylzIYELKJj" role="2OqNvi">
+                  <ref role="3TtcxE" to="68nn:ylzIYEIiug" resolve="multiChildWithCustomEmptyCellAndInsert" />
+                </node>
+              </node>
+              <node concept="TSZUe" id="ylzIYELR3_" role="2OqNvi">
+                <node concept="37vLTw" id="ylzIYELRx7" role="25WWJ7">
+                  <ref role="3cqZAo" node="ylzIYEIcEK" resolve="child" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
