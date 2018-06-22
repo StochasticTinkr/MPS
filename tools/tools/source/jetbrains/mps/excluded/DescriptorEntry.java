@@ -36,11 +36,15 @@ import java.util.Collections;
   }
 
   /*package*/ void addSourcePath(String sourcePath) {
-    mySourcePaths.add(sourcePath);
+    if (!mySourcePaths.contains(sourcePath)) {
+      mySourcePaths.add(sourcePath);
+    }
   }
 
   /*package*/ void addClassGenPath(IFile path) {
-    myClassGenPaths.add(path);
+    if (!myClassGenPaths.contains(path)) {
+      myClassGenPaths.add(path);
+    }
   }
 
   public IFile getModuleDir() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,7 +86,7 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
       return null;
     }
     // XXX would adore IFile from ModuleDescriptor, not String.
-    return getModule().getFileSystem().getFile(sourceGenPath).getParent().getDescendant("classes_gen");
+    return getModule().getFileSystem().getFile(sourceGenPath).getParent().getDescendant(AbstractModule.CLASSES_GEN);
   }
 
   @Override
@@ -111,7 +111,7 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
       IFile classes = null;
       if (generatorOutputPath != null) {
         // same 'sibling to sources_gen/' logic is in ModulesMiner. Location of a module as IFile would be much more handy.
-        classes = getModule().getFileSystem().getFile(generatorOutputPath).getParent().getDescendant("classes");
+        classes = getModule().getFileSystem().getFile(generatorOutputPath).getParent().getDescendant(AbstractModule.CLASSES);
       }
       if (classes != null && classes.exists()) {
         libraryClassPath.add(getClassPath(classes));
