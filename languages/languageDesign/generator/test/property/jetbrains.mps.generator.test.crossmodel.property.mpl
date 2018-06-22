@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator alias="" namespace="jetbrains.mps.generator.test.crossmodel.property#5533782486491461721" uuid="708caccd-8eb1-451b-a7a7-f8ae5e214206">
+    <generator alias="property2class" namespace="jetbrains.mps.generator.test.crossmodel.property#5533782486491461721" uuid="708caccd-8eb1-451b-a7a7-f8ae5e214206">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
@@ -47,6 +47,17 @@
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
         <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
       </dependencyVersions>
+      <mapping-priorities />
+    </generator>
+    <generator alias="property2xml" namespace="jetbrains.mps.generator.test.crossmodel.property#g2" uuid="0748f69c-0123-4fe4-84a5-b51ed82f0548" generatorOutputPath="${module}/gen2/source_gen">
+      <models>
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="gen2/models" />
+        </modelRoot>
+      </models>
+      <external-templates />
+      <languageVersions />
+      <dependencyVersions />
       <mapping-priorities />
     </generator>
   </generators>

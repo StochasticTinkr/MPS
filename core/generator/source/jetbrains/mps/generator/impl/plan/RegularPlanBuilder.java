@@ -222,10 +222,16 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
       @NotNull
       @Override
       public ModelGenerationPlan wrapUp(@NotNull PlanIdentity planIdentity) {
-        forkStep.steps(mySteps);
+        forkStep.steps(getEntries());
+        // blank, non-null return value, shall be ignored
         return new RigidGenerationPlan(planIdentity, Collections.emptyList());
       }
     };
+  }
+
+  // just to ensure subclass in fork() accesses right mySteps field (not the one from enclosing entry)
+  protected final List<StepEntry> getEntries() {
+    return mySteps;
   }
 
   private Collection<TemplateModule> asTemplateModules(@NotNull Collection<SModuleReference> generators) {
@@ -407,6 +413,7 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
     private List<StepEntry> mySteps = Collections.emptyList();
 
     public void steps(List<StepEntry> steps) {
+      assert !steps.contains(this) : "Fork step shall not include itself";
       mySteps = steps;
     }
 

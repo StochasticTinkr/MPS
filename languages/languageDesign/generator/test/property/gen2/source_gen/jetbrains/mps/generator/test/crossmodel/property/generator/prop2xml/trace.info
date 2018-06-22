@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="QueriesGenerated.java">
+      <unit at="54,0,69,0" name="jetbrains.mps.generator.test.crossmodel.property.generator.prop2xml.QueriesGenerated$SNsQ" />
+      <unit at="84,0,102,0" name="jetbrains.mps.generator.test.crossmodel.property.generator.prop2xml.QueriesGenerated$PVQ" />
+      <unit at="26,0,103,0" name="jetbrains.mps.generator.test.crossmodel.property.generator.prop2xml.QueriesGenerated" />
+    </file>
+  </root>
+  <root nodeRef="r:dfc6700f-cc84-4660-bd72-27010fbc7a73(jetbrains.mps.generator.test.crossmodel.property.generator.prop2xml@generator)/1839439947432278903">
+    <file name="QueriesGenerated.java">
+      <node id="7845380026077787381" at="31,113,32,175" concept="1" />
+      <node id="7845380026077764195" at="34,113,35,175" concept="1" />
+      <node id="7845380026077767694" at="37,106,38,196" concept="1" />
+      <node id="7845380026077767687" at="42,14,43,75" concept="0" />
+      <node id="7845380026077767687" at="62,15,63,89" concept="1" />
+      <node id="7845380026077786829" at="71,14,72,204" concept="0" />
+      <node id="7845380026077763643" at="72,204,73,204" concept="0" />
+      <node id="7845380026077786829" at="93,15,94,91" concept="1" />
+      <node id="7845380026077763643" at="95,15,96,91" concept="1" />
+      <node id="7845380026077786830" at="31,0,34,0" concept="2" trace="propertyMacro_GetPropertyValue_18394399474322803140#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
+      <node id="7845380026077763644" at="34,0,37,0" concept="2" trace="propertyMacro_GetPropertyValue_18394399474322789200#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
+      <node id="7845380026077767687" at="37,0,40,0" concept="2" trace="sourceNodesQuery_a0a0a#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodesContext;)Ljava/lang/Iterable;" />
+      <scope id="7845380026077786831" at="31,113,32,175" />
+      <scope id="7845380026077763645" at="34,113,35,175" />
+      <scope id="7845380026077767688" at="37,106,38,196" />
+      <scope id="7845380026077767687" at="62,15,63,89" />
+      <scope id="7845380026077786829" at="93,15,94,91" />
+      <scope id="7845380026077763643" at="95,15,96,91" />
+      <scope id="7845380026077786830" at="31,0,34,0">
+        <var name="_context" id="7845380026077786830" />
+      </scope>
+      <scope id="7845380026077763644" at="34,0,37,0">
+        <var name="_context" id="7845380026077763644" />
+      </scope>
+      <scope id="7845380026077767687" at="37,0,40,0">
+        <var name="_context" id="7845380026077767687" />
+      </scope>
+    </file>
+  </root>
+</debug-info>
+

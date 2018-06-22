@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator alias="" namespace="jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718" uuid="0748f69c-0f19-4fe4-84a5-b51ed82f0548">
+    <generator alias="entity2bean" namespace="jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718" uuid="0748f69c-0f19-4fe4-84a5-b51ed82f0548">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
