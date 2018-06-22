@@ -29,7 +29,7 @@ public final class MPSTipsAndTricks_Tip__BehaviorDescriptor extends BaseBHDescri
 
   private static void ___init___(@NotNull SNode __thisNode__) {
     SNode tmp = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf32687cL, "jetbrains.mps.build.tips.structure.MPSTipsAndTricks_Text"));
-    SPropertyOperations.set(tmp, MetaAdapterFactory.getProperty(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf32687cL, 0x5ea1926fdf40725aL, "language"), "en");
+    SPropertyOperations.assign(tmp, MetaAdapterFactory.getProperty(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf32687cL, 0x5ea1926fdf40725aL, "language"), "en");
     ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x5ea1926fdf2fb910L, 0x5ea1926fdf32687eL, "text"))).addElement(tmp);
   }
 
