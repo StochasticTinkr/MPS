@@ -620,7 +620,10 @@
   <dependency className="jetbrains.mps.ide.editor.actions.InsertUtil" file="InsertUtil.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributesUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.optional.WithCaret" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.Insert_Action" file="Insert_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />

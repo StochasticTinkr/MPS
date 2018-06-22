@@ -58,7 +58,7 @@ public class Insert_Action extends BaseAction {
     }
 
     EditorCell editorCell = EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
-    if (InsertUtil.isAtFirstPositionOfCellWithCaret(editorCell)) {
+    if (InsertUtil.isAtFirstPositionOfCellWithCaret(editorCell) && (InsertUtil.isFirstCellOfTheNode(editorCell) || InsertUtil.isRightAfterChildrenCollection(editorCell))) {
       EditorActionUtils.callInsertBeforeAction(editorCell);
     } else {
       if (editorCell instanceof EditorCell_Property && ((EditorCell_Property) editorCell).commit()) {
