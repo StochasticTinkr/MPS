@@ -95,19 +95,12 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
-      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
-        <child id="1070534934091" name="type" index="10QFUM" />
-        <child id="1070534934092" name="expression" index="10QFUP" />
-      </concept>
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
-      </concept>
-      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
-        <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
@@ -118,9 +111,6 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
-      </concept>
-      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
-        <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -488,18 +478,15 @@
         <node concept="3Fmcul" id="Ib_Fk7zNg7" role="3FoqZy">
           <node concept="3clFbS" id="Ib_Fk7zNg8" role="2VODD2">
             <node concept="3cpWs6" id="Ib_Fk7zNg9" role="3cqZAp">
-              <node concept="2YIFZM" id="Ib_Fk7zNga" role="3cqZAk">
+              <node concept="2YIFZM" id="1luvpNwSpk3" role="3cqZAk">
+                <ref role="37wK5l" to="7a0s:lnREv2ShpJ" resolve="createSelectImageButton" />
                 <ref role="1Pybhc" to="7a0s:6UDbxo8i0QW" resolve="EditorUtil" />
-                <ref role="37wK5l" to="7a0s:6UDbxo8i0Rf" resolve="createSelectIconButton" />
-                <node concept="pncrf" id="1dRlja0XRm4" role="37wK5m" />
-                <node concept="355D3s" id="5xzMQBRDJWv" role="37wK5m">
+                <node concept="pncrf" id="1luvpNwSpk4" role="37wK5m" />
+                <node concept="355D3s" id="1luvpNwSpk5" role="37wK5m">
                   <ref role="355D3t" to="brwy:1dRlja0W3Gt" resolve="MPSTipsAndTricks_Image" />
                   <ref role="355D3u" to="brwy:1dRlja0WnXb" resolve="file" />
                 </node>
-                <node concept="1Q80Hx" id="Ib_Fk7zNgd" role="37wK5m" />
-                <node concept="3clFbT" id="5xzMQBRDKp4" role="37wK5m">
-                  <property role="3clFbU" value="false" />
-                </node>
+                <node concept="1Q80Hx" id="1luvpNwSpk6" role="37wK5m" />
               </node>
             </node>
           </node>
@@ -572,24 +559,19 @@
                 <node concept="3clFbS" id="Ib_Fk7zNfL" role="2VODD2">
                   <node concept="3clFbF" id="Ib_Fk7zNfM" role="3cqZAp">
                     <node concept="2OqwBi" id="Ib_Fk7zNfN" role="3clFbG">
-                      <node concept="2YIFZM" id="Ib_Fk7zNfO" role="2Oq$k0">
-                        <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
+                      <node concept="2YIFZM" id="1luvpNwSrBY" role="2Oq$k0">
+                        <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(org.jetbrains.mps.openapi.module.SModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
                         <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-                        <node concept="1eOMI4" id="Ib_Fk7zNfP" role="37wK5m">
-                          <node concept="10QFUN" id="Ib_Fk7zNfQ" role="1eOMHV">
-                            <node concept="2OqwBi" id="Ib_Fk7zNfR" role="10QFUP">
-                              <node concept="2JrnkZ" id="Ib_Fk7zNfS" role="2Oq$k0">
-                                <node concept="2OqwBi" id="Ib_Fk7zNfT" role="2JrQYb">
-                                  <node concept="pncrf" id="Ib_Fk7zNfU" role="2Oq$k0" />
-                                  <node concept="I4A8Y" id="Ib_Fk7zNfV" role="2OqNvi" />
-                                </node>
-                              </node>
-                              <node concept="liA8E" id="Ib_Fk7zNfW" role="2OqNvi">
-                                <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                        <node concept="1eOMI4" id="1luvpNwSrBZ" role="37wK5m">
+                          <node concept="2OqwBi" id="1luvpNwSrC0" role="1eOMHV">
+                            <node concept="2JrnkZ" id="1luvpNwSrC1" role="2Oq$k0">
+                              <node concept="2OqwBi" id="1luvpNwSrC2" role="2JrQYb">
+                                <node concept="pncrf" id="1luvpNwSrC3" role="2Oq$k0" />
+                                <node concept="I4A8Y" id="1luvpNwSrC4" role="2OqNvi" />
                               </node>
                             </node>
-                            <node concept="3uibUv" id="Ib_Fk7zNfX" role="10QFUM">
-                              <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                            <node concept="liA8E" id="1luvpNwSrC5" role="2OqNvi">
+                              <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
                             </node>
                           </node>
                         </node>

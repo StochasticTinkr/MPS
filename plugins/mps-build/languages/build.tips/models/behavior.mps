@@ -65,10 +65,6 @@
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
-      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
-        <child id="1070534934091" name="type" index="10QFUM" />
-        <child id="1070534934092" name="expression" index="10QFUP" />
-      </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -91,6 +87,7 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
@@ -326,47 +323,26 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="1luvpNwSvnB" role="3cqZAp" />
         <node concept="3cpWs8" id="Ib_Fk7zRLa" role="3cqZAp">
           <node concept="3cpWsn" id="Ib_Fk7zRLb" role="3cpWs9">
             <property role="TrG5h" value="macroHelper" />
             <node concept="3uibUv" id="Ib_Fk7zRLc" role="1tU5fm">
               <ref role="3uigEE" to="18ew:~MacroHelper" resolve="MacroHelper" />
             </node>
-            <node concept="2YIFZM" id="Ib_Fk7zRLd" role="33vP2m">
-              <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
+            <node concept="2YIFZM" id="1luvpNwSs5S" role="33vP2m">
+              <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(org.jetbrains.mps.openapi.module.SModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
               <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-              <node concept="10QFUN" id="Ib_Fk7zRLe" role="37wK5m">
-                <node concept="3uibUv" id="Ib_Fk7zRLf" role="10QFUM">
-                  <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                </node>
-                <node concept="37vLTw" id="Ib_Fk7zRLg" role="10QFUP">
-                  <ref role="3cqZAo" node="Ib_Fk7zRKU" resolve="module" />
-                </node>
+              <node concept="37vLTw" id="1luvpNwSs5T" role="37wK5m">
+                <ref role="3cqZAo" node="Ib_Fk7zRKU" resolve="module" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="Ib_Fk7zRLh" role="3cqZAp">
-          <node concept="3clFbS" id="Ib_Fk7zRLi" role="3clFbx">
-            <node concept="3cpWs6" id="Ib_Fk7zRLj" role="3cqZAp">
-              <node concept="3clFbT" id="Ib_Fk7zRLk" role="3cqZAk">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="Ib_Fk7zRLl" role="3clFbw">
-            <node concept="10Nm6u" id="Ib_Fk7zRLm" role="3uHU7w" />
-            <node concept="37vLTw" id="Ib_Fk7zRLn" role="3uHU7B">
-              <ref role="3cqZAo" node="Ib_Fk7zRLb" resolve="macroHelper" />
             </node>
           </node>
         </node>
         <node concept="3cpWs8" id="1dRlja0X0xd" role="3cqZAp">
           <node concept="3cpWsn" id="1dRlja0X0xe" role="3cpWs9">
             <property role="TrG5h" value="path" />
-            <node concept="3uibUv" id="1dRlja0X0xf" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-            </node>
+            <node concept="17QB3L" id="1luvpNwSsGt" role="1tU5fm" />
             <node concept="2OqwBi" id="1dRlja0X0xg" role="33vP2m">
               <node concept="liA8E" id="1dRlja0X0xh" role="2OqNvi">
                 <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
@@ -398,20 +374,21 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="1luvpNwSvvd" role="3cqZAp" />
         <node concept="3cpWs8" id="1dRlja0X0xt" role="3cqZAp">
           <node concept="3cpWsn" id="1dRlja0X0xu" role="3cpWs9">
             <property role="TrG5h" value="file" />
             <node concept="3uibUv" id="1dRlja0X0xv" role="1tU5fm">
               <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
             </node>
-            <node concept="2OqwBi" id="1dRlja0X0xw" role="33vP2m">
-              <node concept="2YIFZM" id="1dRlja0X0xx" role="2Oq$k0">
-                <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
-                <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
+            <node concept="2OqwBi" id="1luvpNwStYa" role="33vP2m">
+              <node concept="2YIFZM" id="1luvpNwStP7" role="2Oq$k0">
+                <ref role="1Pybhc" to="3ju5:~FileSystems" resolve="FileSystems" />
+                <ref role="37wK5l" to="3ju5:~FileSystems.getDefault():jetbrains.mps.vfs.FileSystem" resolve="getDefault" />
               </node>
-              <node concept="liA8E" id="1dRlja0X0xy" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
-                <node concept="37vLTw" id="Ib_Fk7zRLI" role="37wK5m">
+              <node concept="liA8E" id="1luvpNwSunD" role="2OqNvi">
+                <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
+                <node concept="37vLTw" id="1luvpNwSuBk" role="37wK5m">
                   <ref role="3cqZAo" node="1dRlja0X0xe" resolve="path" />
                 </node>
               </node>

@@ -43,7 +43,6 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 
 /*package*/ class MPSTipsAndTricks_Image_EditorBuilder_a extends AbstractEditorBuilder {
@@ -237,7 +236,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
     return editorCell;
   }
   private JComponent _QueryFunction_JComponent_hfhp3k_a8a() {
-    return EditorUtil.createSelectIconButton(myNode, MetaAdapterFactory.getProperty(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x1377553280f03b1dL, 0x1377553280f17f4bL, "file"), getEditorContext(), false);
+    return EditorUtil.createSelectImageButton(myNode, MetaAdapterFactory.getProperty(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x1377553280f03b1dL, 0x1377553280f17f4bL, "file"), getEditorContext());
   }
   private EditorCell createConstant_5() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "preview:");
@@ -312,7 +311,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
     imageModule = SNodeOperations.getModel(myNode).getModule();
     imagePath = (new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
-        return MacrosFactory.forModule(((AbstractModule) SNodeOperations.getModel(myNode).getModule())).expandPath(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x1377553280f03b1dL, 0x1377553280f17f4bL, "file")));
+        return MacrosFactory.forModule((SNodeOperations.getModel(myNode).getModule())).expandPath(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xfeee615f9f2b486fL, 0x804f8987b652fceaL, 0x1377553280f03b1dL, 0x1377553280f17f4bL, "file")));
       }
     }).invoke();
     EditorCell_Image editorCell = EditorCell_Image.createImageCell(getEditorContext(), myNode, imageModule, imagePath);
