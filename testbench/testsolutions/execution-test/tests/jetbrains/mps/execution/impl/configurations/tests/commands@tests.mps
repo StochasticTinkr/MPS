@@ -127,6 +127,7 @@
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <property id="1221565133444" name="isFinal" index="1EXbeo" />
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1068390468201" name="constructor" index="312cEh" />
       </concept>
@@ -1467,6 +1468,7 @@
   </node>
   <node concept="312cEu" id="73dkH4Pmk_n">
     <property role="TrG5h" value="CheckTestStateListener" />
+    <property role="1EXbeo" value="true" />
     <node concept="3Tm1VV" id="73dkH4Pmk_o" role="1B3o_S" />
     <node concept="3uibUv" id="56tRMpP_Y95" role="EKbjA">
       <ref role="3uigEE" to="sfqd:56tRMpP_Y8z" resolve="TestStateListener" />
@@ -1523,6 +1525,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1XbiPVzqWqP" role="jymVt" />
     <node concept="3clFbW" id="73dkH4Pmk_p" role="jymVt">
       <node concept="37vLTG" id="73dkH4Pmk_Y" role="3clF46">
         <property role="TrG5h" value="success" />

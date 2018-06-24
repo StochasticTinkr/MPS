@@ -92,8 +92,6 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
         int exitcode = exitCode[0];
         if (exitcode != FakeProcess.TERMINATION_CODE) {
           Assert.fail("Exit code must be equal to " + FakeProcess.TERMINATION_CODE + ", but " + exitcode);
-        } else if (exitcode < 0) {
-          Assert.fail("Process is running for too long");
         }
         if (!(checkListener.value.getMessages().equals(""))) {
           Assert.fail(checkListener.value.getMessages());
@@ -105,6 +103,12 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
       }
     }
     public void waitForRunToStart(final TestInProcessRunState lightState) {
+      new WaitFor(1000) {
+        protected boolean condition() {
+          return false;
+        }
+      };
+
       new WaitFor(5 * 1000) {
         protected boolean condition() {
           return lightState.isRunning();

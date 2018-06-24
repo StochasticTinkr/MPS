@@ -14,11 +14,12 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 
-public class CheckTestStateListener implements TestStateListener {
+public final class CheckTestStateListener implements TestStateListener {
   private final Set<String> mySuccessExpected = SetSequence.fromSet(new HashSet<String>());
   private final Set<String> myFailExpected = SetSequence.fromSet(new HashSet<String>());
   private final Set<String> myFailed = SetSequence.fromSet(new HashSet<String>());
   private final StringBuilder myMessages = new StringBuilder();
+
   public CheckTestStateListener(List<ITestNodeWrapper> success, List<ITestNodeWrapper> failed) {
     SetSequence.fromSet(mySuccessExpected).addSequence(Sequence.fromIterable(selectNames(success)));
     SetSequence.fromSet(myFailExpected).addSequence(Sequence.fromIterable(selectNames(failed)));

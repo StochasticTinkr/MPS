@@ -23,6 +23,7 @@ import org.apache.log4j.Level;
 import com.intellij.openapi.util.Key;
 import org.jetbrains.mps.annotations.ImmutableReturn;
 import java.util.Collections;
+import org.jetbrains.annotations.TestOnly;
 
 /**
  * State of test execution; updates associated {@link jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener } when there's a change.
@@ -246,5 +247,15 @@ public final class TestRunState {
   @ImmutableReturn
   public Map<ITestNodeWrapper, List<ITestNodeWrapper>> getTestsMap() {
     return Collections.unmodifiableMap(myTestToMethodsMap);
+  }
+
+  @TestOnly
+  public int getCompletedTests() {
+    return myInnerData.myCompletedTests;
+  }
+
+  @TestOnly
+  public int getFailedTests() {
+    return myInnerData.myFailedTests;
   }
 }
