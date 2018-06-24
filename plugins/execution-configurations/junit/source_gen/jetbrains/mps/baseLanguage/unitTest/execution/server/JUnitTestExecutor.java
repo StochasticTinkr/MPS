@@ -10,8 +10,8 @@ import org.jetbrains.annotations.Nullable;
 import org.junit.runner.Request;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
-import org.junit.runner.notification.StoppedByUserException;
 import org.apache.log4j.Level;
+import org.junit.runner.notification.StoppedByUserException;
 
 /**
  * Mechanism to execute tests using JUnit.
@@ -84,8 +84,13 @@ public class JUnitTestExecutor implements TestExecutor {
 
   public void stopRun() {
     StoppableRunner currentRunner = this.getCurrentRunner();
-    assert currentRunner != null;
-    currentRunner.pleaseStop();
+    if (currentRunner != null) {
+      currentRunner.pleaseStop();
+    } else {
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("the current runner is not initialized yet which might indicate that the run has not started yet.");
+      }
+    }
     myStopping = true;
   }
 
@@ -100,8 +105,6 @@ public class JUnitTestExecutor implements TestExecutor {
   }
 
   private void updateRunner(Request request) {
-    //  FIXME boolean flag and extra runnable to monitor it is a bit too much, no? 
-    // when we updateRunner() on each step, why can't we check myStoping == true inside doExecute()? 
     myCurrentRunner = new StoppableRunner(request, myStopping);
   }
 

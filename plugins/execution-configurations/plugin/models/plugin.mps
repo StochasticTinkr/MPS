@@ -12937,6 +12937,7 @@
   <node concept="312cEu" id="53lh2wVpD6g">
     <property role="3GE5qa" value="junit" />
     <property role="TrG5h" value="FakeProcessHandler" />
+    <property role="1sVAO0" value="true" />
     <node concept="312cEg" id="3L_EFdmB6ne" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />

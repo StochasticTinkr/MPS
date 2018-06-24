@@ -2274,21 +2274,33 @@
             </node>
           </node>
         </node>
-        <node concept="1gVbGN" id="4qWYmcp57CY" role="3cqZAp">
-          <node concept="3y3z36" id="4qWYmcp57CZ" role="1gVkn0">
-            <node concept="10Nm6u" id="4qWYmcp57D0" role="3uHU7w" />
-            <node concept="37vLTw" id="4qWYmcp57D1" role="3uHU7B">
+        <node concept="3clFbJ" id="xTUx3LiSFm" role="3cqZAp">
+          <node concept="3clFbS" id="xTUx3LiSFo" role="3clFbx">
+            <node concept="3clFbF" id="4qWYmcp57D2" role="3cqZAp">
+              <node concept="2OqwBi" id="4qWYmcp57D3" role="3clFbG">
+                <node concept="37vLTw" id="4qWYmcp57D4" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4qWYmcp57CT" resolve="currentRunner" />
+                </node>
+                <node concept="liA8E" id="4qWYmcp57D5" role="2OqNvi">
+                  <ref role="37wK5l" node="6lmAJjAMBT$" resolve="pleaseStop" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="xTUx3LiSTs" role="3clFbw">
+            <node concept="10Nm6u" id="xTUx3LiSTS" role="3uHU7w" />
+            <node concept="37vLTw" id="xTUx3LiSHN" role="3uHU7B">
               <ref role="3cqZAo" node="4qWYmcp57CT" resolve="currentRunner" />
             </node>
           </node>
-        </node>
-        <node concept="3clFbF" id="4qWYmcp57D2" role="3cqZAp">
-          <node concept="2OqwBi" id="4qWYmcp57D3" role="3clFbG">
-            <node concept="37vLTw" id="4qWYmcp57D4" role="2Oq$k0">
-              <ref role="3cqZAo" node="4qWYmcp57CT" resolve="currentRunner" />
-            </node>
-            <node concept="liA8E" id="4qWYmcp57D5" role="2OqNvi">
-              <ref role="37wK5l" node="6lmAJjAMBT$" resolve="pleaseStop" />
+          <node concept="9aQIb" id="xTUx3LkLcW" role="9aQIa">
+            <node concept="3clFbS" id="xTUx3LkLcX" role="9aQI4">
+              <node concept="RRSsy" id="xTUx3LkLlc" role="3cqZAp">
+                <property role="RRSoG" value="warn" />
+                <node concept="Xl_RD" id="xTUx3LkLdY" role="RRSoy">
+                  <property role="Xl_RC" value="the current runner is not initialized yet which might indicate that the run has not started yet." />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -2367,16 +2379,6 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="1DJqn2eDUn4" role="3clF47">
-        <node concept="3SKdUt" id="MY2kIkaJ$S" role="3cqZAp">
-          <node concept="3SKdUq" id="MY2kIkaJ$U" role="3SKWNk">
-            <property role="3SKdUp" value=" FIXME boolean flag and extra runnable to monitor it is a bit too much, no?" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="MY2kIkaNY1" role="3cqZAp">
-          <node concept="3SKdUq" id="MY2kIkaNY3" role="3SKWNk">
-            <property role="3SKdUp" value="when we updateRunner() on each step, why can't we check myStoping == true inside doExecute()?" />
-          </node>
-        </node>
         <node concept="3clFbF" id="1DJqn2eEIca" role="3cqZAp">
           <node concept="37vLTI" id="1DJqn2eEIcb" role="3clFbG">
             <node concept="37vLTw" id="1DJqn2eEIcc" role="37vLTJ">
