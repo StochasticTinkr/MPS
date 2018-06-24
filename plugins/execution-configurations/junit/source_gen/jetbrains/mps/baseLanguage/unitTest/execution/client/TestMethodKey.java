@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 
 /**
- * 
+ * messages from the process come as strings so the keys here are strings
  */
 @Immutable
 /*package*/ final class TestMethodKey {

@@ -28,11 +28,12 @@ public class StatisticsTableModel implements TableModel {
   protected String myFilterTestMethod = null;
   private final TestNameMap<TestCaseRow, TestMethodRow> myMap = new TestNameMap<TestCaseRow, TestMethodRow>();
   private final TestRunState myState;
+  private final TestStateListener myTestStateListener;
 
   public StatisticsTableModel(TestRunState state) {
     myState = state;
     setTests(state.getTestsMap());
-    myState.addListener(new TestStateListener() {
+    myTestStateListener = new TestStateListener() {
       @Override
       public void onTestStart(TestEvent event) {
         TestMethodRow row = findRowForEvent(event);
@@ -82,7 +83,12 @@ public class StatisticsTableModel implements TableModel {
           fireTableChanged();
         }
       }
-    });
+    };
+    myState.addListener(myTestStateListener);
+  }
+
+  public void dispose() {
+    myState.removeListener(myTestStateListener);
   }
 
   private void setTests(Map<ITestNodeWrapper, List<ITestNodeWrapper>> tests) {

@@ -50,12 +50,13 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   private final TestToolbarPanel myActionToolComponent;
   private final MPSProject myProject;
   private final FailedTestOccurrenceNavigator myTestNavigator;
+  private final StatisticsTableModel myStatisticsModel;
   private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
 
   public UnitTestViewComponent(Project project, ConsoleView console, TestRunState testRunState, _FunctionTypes._void_P0_E0 closeListener) {
     myProject = ProjectHelper.fromIdeaProject(project);
     myTestState = testRunState;
-    StatisticsTableModel statisticsModel = new StatisticsTableModel(myTestState);
+    myStatisticsModel = new StatisticsTableModel(myTestState);
 
     myTreeComponent = new TestTree(myTestState, myProject, this);
     myTestNavigator = new FailedTestOccurrenceNavigator(myTreeComponent);
@@ -68,11 +69,11 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     myProgressLineComponent.setMinimumSize(new Dimension(0, myProgressLineComponent.getMinimumSize().height));
     myOutputComponent = new TestOutputComponent(console, myTestState);
     myOutputComponent.init();
-    myTreeComponent.addTreeSelectionListener(new TestTreeSelectionListener(myTreeComponent, statisticsModel, myOutputComponent));
-    myTreeComponent.addMouseListener(new TestTreeRootMouseListener(myTreeComponent, statisticsModel, myOutputComponent));
+    myTreeComponent.addTreeSelectionListener(new TestTreeSelectionListener(myTreeComponent, myStatisticsModel, myOutputComponent));
+    myTreeComponent.addMouseListener(new TestTreeRootMouseListener(myTreeComponent, myStatisticsModel, myOutputComponent));
     myTreeComponent.init();
 
-    JPanel rightPanel = createOutputComponent(console, myProgressLineComponent, myOutputComponent.getComponent(), statisticsModel);
+    JPanel rightPanel = createOutputComponent(console, myProgressLineComponent, myOutputComponent.getComponent(), myStatisticsModel);
 
     Splitter splitter = new Splitter(false);
     initSplitterProportion(splitter, 0.2f, "tree");
@@ -118,6 +119,10 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
   @Override
   public void dispose() {
+    myTestState.removeUpdateListener(myTreeComponent);
+    myTestState.removeUpdateListener(myProgressLineComponent);
+    myTestState.removeUpdateListener(myOutputComponent);
+    myStatisticsModel.dispose();
     myOutputComponent.dispose();
     myTreeComponent.dispose();
     invokeCloseListeners();

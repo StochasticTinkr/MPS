@@ -27,7 +27,6 @@ public class TestEventsDispatcher {
 
   public void onTestEvent(TestEvent event) {
     String token = event.getToken();
-    myState.setToken(token);
     if (TestEvent.START_TEST_PREFIX.equals(token)) {
       myState.onTestStarted(event);
     } else if (TestEvent.FINISH_TEST_PREFIX.equals(token)) {
@@ -35,6 +34,7 @@ public class TestEventsDispatcher {
     } else if (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(token)) {
       myState.onTestAssumptionFailure(event);
     } else if (TestEvent.IGNORE_FAILURE_TEST_PREFIX.equals(token)) {
+      // fix: no difference between assumption failure and ignoring the test 
       myState.onTestAssumptionFailure(event);
     } else if (TestEvent.FAILURE_TEST_PREFIX.equals(token)) {
       myState.onTestFailure(event);

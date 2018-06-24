@@ -76,22 +76,18 @@ public final class TestRunState {
         ListSequence.fromList(currentTestMethods).addElement(testMethod);
       }
     }
-  }
-
-  public TestRunState(@NotNull List<ITestNodeWrapper> tests) {
-    processTestCases(tests);
-
-    processTestMethods(tests);
-
     for (ITestNodeWrapper testCase : MapSequence.fromMap(myTestToMethodsMap).keySet()) {
       for (ITestNodeWrapper testMethod : MapSequence.fromMap(myTestToMethodsMap).get(testCase)) {
         ListSequence.fromList(myTestMethodsLeftToRun).addElement(new TestMethodKey(testCase.getFqName(), testMethod.getName()));
       }
     }
-    myTotalTests = ListSequence.fromList(myTestMethodsLeftToRun).count();
   }
 
-
+  public TestRunState(@NotNull List<ITestNodeWrapper> tests) {
+    processTestCases(tests);
+    processTestMethods(tests);
+    myTotalTests = ListSequence.fromList(myTestMethodsLeftToRun).count();
+  }
 
   private void notifyUpdateListeners() {
     for (TestRunStateUpdateListener listener : myUpdateListenersList) {
@@ -107,23 +103,58 @@ public final class TestRunState {
     SetSequence.fromSet(myUpdateListenersList).removeElement(updateListener);
   }
 
+  private void setToken(@NotNull String token) {
+    myCurrentToken = token;
+  }
+
   public void onTestStarted(final TestEvent event) {
-    ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
-      public void visit(TestStateListener it) {
-        it.onTestStart(event);
-      }
-    });
-    startTest(event.getTestCaseName(), event.getTestMethodName());
+    synchronized (LOCK) {
+      setToken(event.getToken());
+      ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
+        public void visit(TestStateListener it) {
+          it.onTestStart(event);
+        }
+      });
+      startTest(event.getTestCaseName(), event.getTestMethodName());
+    }
   }
 
   public void onTestFinished(final TestEvent event) {
-    ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
-      public void visit(TestStateListener it) {
-        it.onTestFinish(event);
-      }
-    });
-    finishTest();
-    completeTestEvent(event);
+    synchronized (LOCK) {
+      setToken(event.getToken());
+      ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
+        public void visit(TestStateListener it) {
+          it.onTestFinish(event);
+        }
+      });
+      finishTest();
+      completeTestEvent(event);
+    }
+  }
+
+  public void onTestAssumptionFailure(final TestEvent event) {
+    synchronized (LOCK) {
+      setToken(event.getToken());
+      ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
+        public void visit(TestStateListener it) {
+          it.onTestAssumptionFailure(event);
+        }
+      });
+      notifyUpdateListeners();
+    }
+  }
+
+  public void onTestFailure(final TestEvent event) {
+    synchronized (LOCK) {
+      setToken(event.getToken());
+      ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
+        public void visit(TestStateListener it) {
+          it.onTestFailure(event);
+        }
+      });
+      myFailedTests++;
+      notifyUpdateListeners();
+    }
   }
 
   private void completeTestEvent(TestEvent event) {
@@ -136,68 +167,31 @@ public final class TestRunState {
     }
   }
 
-  public void onTestFailure(final TestEvent event) {
-    ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
-      public void visit(TestStateListener it) {
-        it.onTestFailure(event);
-      }
-    });
-    failTest();
-  }
-
-  public void onTestAssumptionFailure(final TestEvent event) {
-    ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
-      public void visit(TestStateListener it) {
-        it.onTestAssumptionFailure(event);
-      }
-    });
-    ignoreTest();
-  }
-
   private void startTest(String className, String methodName) {
-    synchronized (LOCK) {
-      if (myCurrentMethod != null && myCurrentClass != null) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Seems that the previous test is not finished yet");
-        }
+    if (myCurrentMethod != null && myCurrentClass != null) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Seems that the previous test is not finished yet");
       }
-      checkConsistency();
-      myCurrentClass = className;
-      myCurrentMethod = methodName;
-      notifyUpdateListeners();
     }
+    checkConsistency();
+    myCurrentClass = className;
+    myCurrentMethod = methodName;
+    notifyUpdateListeners();
   }
 
   private void finishTest() {
-    synchronized (LOCK) {
-      myCompletedTests++;
-      notifyUpdateListeners();
-      myCurrentClass = null;
-      myCurrentMethod = null;
-    }
-  }
-
-  private void failTest() {
-    synchronized (LOCK) {
-      myFailedTests++;
-      notifyUpdateListeners();
-    }
-  }
-
-  private void ignoreTest() {
-    synchronized (LOCK) {
-      notifyUpdateListeners();
-    }
+    myCompletedTests++;
+    notifyUpdateListeners();
+    myCurrentClass = null;
+    myCurrentMethod = null;
   }
 
   private void looseTestInternal(String test, String method) {
-    synchronized (LOCK) {
-      myCurrentNotExecutedDueToErrorTest = test;
-      myCurrentNotExecutedDueToErrorMethod = method;
-      notifyUpdateListeners();
-      myCurrentNotExecutedDueToErrorTest = null;
-      myCurrentNotExecutedDueToErrorMethod = null;
-    }
+    myCurrentNotExecutedDueToErrorTest = test;
+    myCurrentNotExecutedDueToErrorMethod = method;
+    notifyUpdateListeners();
+    myCurrentNotExecutedDueToErrorTest = null;
+    myCurrentNotExecutedDueToErrorMethod = null;
   }
 
   public void terminate(boolean terminatingCorrectly) {
@@ -240,67 +234,81 @@ public final class TestRunState {
 
   private void removeFinishedTestMethod(String testCaseName, String testMethodName) {
     TestMethodKey methodKey = new TestMethodKey(testCaseName, testMethodName);
-    synchronized (LOCK) {
-      ListSequence.fromList(myTestMethodsLeftToRun).removeElement(methodKey);
-    }
+    ListSequence.fromList(myTestMethodsLeftToRun).removeElement(methodKey);
   }
 
   private void removeFinishedTestCase(@NotNull final String testCaseName) {
-    synchronized (LOCK) {
-      ListSequence.fromList(myTestMethodsLeftToRun).removeWhere(new IWhereFilter<TestMethodKey>() {
-        public boolean accept(TestMethodKey it) {
-          return testCaseName.equals(it.getTestCaseFqName());
-        }
-      });
-    }
+    ListSequence.fromList(myTestMethodsLeftToRun).removeWhere(new IWhereFilter<TestMethodKey>() {
+      public boolean accept(TestMethodKey it) {
+        return testCaseName.equals(it.getTestCaseFqName());
+      }
+    });
   }
 
   public int getTotalTests() {
-    return myTotalTests;
+    synchronized (LOCK) {
+      return myTotalTests;
+    }
   }
 
   public int getFailedTests() {
-    return myFailedTests;
+    synchronized (LOCK) {
+      return myFailedTests;
+    }
   }
 
   public int getCompletedTests() {
-    return myCompletedTests;
+    synchronized (LOCK) {
+      return myCompletedTests;
+    }
   }
 
   public String getCurrentClass() {
-    return myCurrentClass;
+    synchronized (LOCK) {
+      return myCurrentClass;
+    }
   }
 
   public String getCurrentMethod() {
-    return myCurrentMethod;
-  }
-
-  public void setToken(String token) {
-    myCurrentToken = token;
+    synchronized (LOCK) {
+      return myCurrentMethod;
+    }
   }
 
   public String getToken() {
-    return myCurrentToken;
+    synchronized (LOCK) {
+      return myCurrentToken;
+    }
   }
 
   public String getLostMethod() {
-    return myCurrentNotExecutedDueToErrorMethod;
+    synchronized (LOCK) {
+      return myCurrentNotExecutedDueToErrorMethod;
+    }
   }
 
   public String getLostClass() {
-    return myCurrentNotExecutedDueToErrorTest;
+    synchronized (LOCK) {
+      return myCurrentNotExecutedDueToErrorTest;
+    }
   }
 
   public boolean isTerminated() {
-    return myIsTerminated;
+    synchronized (LOCK) {
+      return myIsTerminated;
+    }
   }
 
   public String getAvailableText() {
-    return myAvailableText;
+    synchronized (LOCK) {
+      return myAvailableText;
+    }
   }
 
   public Key getKey() {
-    return myKey;
+    synchronized (LOCK) {
+      return myKey;
+    }
   }
 
   public void addListener(TestStateListener listener) {
@@ -312,6 +320,9 @@ public final class TestRunState {
   }
 
   public Map<ITestNodeWrapper, List<ITestNodeWrapper>> getTestsMap() {
-    return myTestToMethodsMap;
+    synchronized (LOCK) {
+      // fix MUTATOR 
+      return myTestToMethodsMap;
+    }
   }
 }
