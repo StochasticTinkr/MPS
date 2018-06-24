@@ -286,11 +286,21 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData" file="TestRunData.java">
+    <classNode dependClassName="com.intellij.openapi.util.Key" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestMethodKey" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState" file="TestRunState.java">
     <classNode dependClassName="com.intellij.openapi.util.Key" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.LinkedHashMap" />
     <classNode dependClassName="java.util.List" />
@@ -299,6 +309,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestEvent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestMethodKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateListener" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -310,9 +321,14 @@
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.annotations.Immutable" />
+    <classNode dependClassName="org.jetbrains.mps.annotations.ImmutableReturn" />
     <classNode dependClassName="org.jetbrains.mps.annotations.Mutable" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener" file="TestRunStateUpdateListener.java" />
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener" file="TestRunStateUpdateListener.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateListener" file="TestStateListener.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestEvent" />

@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 import com.intellij.openapi.Disposable;
 import javax.swing.Icon;
 import com.intellij.util.Alarm;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.icons.AllIcons;
@@ -16,65 +16,71 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
   private static final int FRAME_TIME = MOVIE_TIME / FRAMES_COUNT;
   private static Icon[] FRAMES = new Icon[FRAMES_COUNT];
   private long myLastInvocationTime = -1;
-  private Alarm myAlarm;
-  private TestRunState myState;
+  private Alarm myAlarm = new Alarm();
+  private TestRunData myCurrentData;
   private TestTree myTestTree;
+
   public TestTreeIconAnimator(TestTree testTree) {
     Disposer.register(testTree, this);
     myTestTree = testTree;
   }
-  public void init(TestRunState state) {
-    myState = state;
-    myAlarm = new Alarm();
-  }
+
   @Override
   public void run() {
-    String methodName = myState.getCurrentMethod();
+    String methodName = myCurrentData.getCurrentMethod();
     if (methodName != null) {
       final long time = System.currentTimeMillis();
       if (time - myLastInvocationTime >= FRAME_TIME) {
         myLastInvocationTime = time;
-        String className = myState.getCurrentClass();
+        String className = myCurrentData.getCurrentClass();
         TestMethodTreeNode methodTreeNode = myTestTree.get(className, methodName);
         updateTreeNode(methodTreeNode);
         TestCaseTreeNode testTreeNode = myTestTree.get(className);
         updateTreeNode(testTreeNode);
       }
     }
-    scheduleRepaint();
+    scheduleRepaint(myCurrentData);
   }
-  public void scheduleRepaint() {
+
+  public void scheduleRepaint(TestRunData data) {
     if (myAlarm == null) {
       return;
     }
     myAlarm.cancelAllRequests();
-    if (myState.getCurrentMethod() != null) {
+    if (data.getCurrentMethod() != null) {
+      myCurrentData = data;
       myAlarm.addRequest(this, FRAME_TIME);
     }
   }
+
   public void stopMovie() {
     cancelAlarm();
   }
+
   @Override
   public void dispose() {
     cancelAlarm();
   }
+
   private void updateTreeNode(@Nullable BaseTestTreeNode node) {
     if (node == null) {
       return;
     }
     node.renewPresentation();
   }
+
   private void cancelAlarm() {
     if (myAlarm != null) {
       myAlarm.cancelAllRequests();
       myAlarm = null;
     }
   }
+
   public static Icon getCurrentFrame() {
     final int index = (int) ((System.currentTimeMillis() % MOVIE_TIME) / FRAME_TIME);
     return FRAMES[index];
   }
+
   static {
     FRAMES[0] = AllIcons.RunConfigurations.TestInProgress1;
     FRAMES[1] = AllIcons.RunConfigurations.TestInProgress2;

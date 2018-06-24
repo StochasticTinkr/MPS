@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import javax.swing.JComponent;
 import com.intellij.execution.ui.ConsoleView;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData;
 import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
 import javax.swing.SwingUtilities;
@@ -38,19 +38,17 @@ public class TestOutputComponent implements TestRunStateUpdateListener {
   private final TestOutputComponent.CompositeMessage myRootMessage = new TestOutputComponent.RootMessage();
   private String myFilterClass;
   private String myFilterMethod;
-  private final TestRunState myState;
 
-  public TestOutputComponent(ConsoleView console, TestRunState state) {
+  public TestOutputComponent(ConsoleView console) {
     myConsoleView = console;
     myComponent = myConsoleView.getComponent();
-    myState = state;
   }
 
   @Override
-  public void update() {
-    if (myState.getLostClass() != null && myState.getLostMethod() != null) {
-      final String method = myState.getLostMethod();
-      final String test = myState.getLostClass();
+  public void update(TestRunData data) {
+    if (data.getLostClass() != null && data.getLostMethod() != null) {
+      final String method = data.getLostMethod();
+      final String test = data.getLostClass();
       final String text = "\nError: method '" + method + "' in '" + test + "' was not executed due to the tests execution error.\n\n";
       final Key key = ProcessOutputTypes.STDERR;
       SwingUtilities.invokeLater(new Runnable() {
@@ -58,11 +56,11 @@ public class TestOutputComponent implements TestRunStateUpdateListener {
           appendWithParameters(test, method, text, key);
         }
       });
-    } else if (myState.getAvailableText() != null) {
-      final String text = myState.getAvailableText();
-      final Key key = myState.getKey();
-      final String test = myState.getCurrentClass();
-      final String method = myState.getCurrentMethod();
+    } else if (data.getAvailableText() != null) {
+      final String text = data.getAvailableText();
+      final Key key = data.getKey();
+      final String test = data.getCurrentClass();
+      final String method = data.getCurrentMethod();
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           appendWithParameters(test, method, text, key);

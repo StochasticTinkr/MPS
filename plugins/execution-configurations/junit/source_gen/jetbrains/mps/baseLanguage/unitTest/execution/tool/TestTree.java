@@ -7,6 +7,9 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateLi
 import com.intellij.openapi.Disposable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
+import java.util.Map;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
+import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.Nullable;
@@ -14,35 +17,33 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class TestTree extends MPSTree implements TestRunStateUpdateListener, Disposable {
   @NotNull
   private final Project myProject;
-  private final TestRunState myState;
   private TestNameMap<TestCaseTreeNode, TestMethodTreeNode> myMap;
   private boolean myAllTree = true;
   private final TestTreeIconAnimator myAnimator;
+  private final Map<ITestNodeWrapper, List<ITestNodeWrapper>> myTestsMap;
 
-  public TestTree(TestRunState state, @NotNull Project project, Disposable disposable) {
+  public TestTree(@NotNull TestRunState state, @NotNull Project project, Disposable disposable) {
     Disposer.register(disposable, this);
-    myState = state;
+    myTestsMap = state.getTestsMap();
     myProject = project;
     myMap = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
     myAllTree = !(UnitTestOptions.isHidePassed());
     myAnimator = new TestTreeIconAnimator(this);
-    myAnimator.init(state);
   }
 
   private void updateState(@Nullable TestMethodTreeNode methodNode, TestCaseTreeNode testCaseNode, TestState testState) {
@@ -75,14 +76,14 @@ public class TestTree extends MPSTree implements TestRunStateUpdateListener, Dis
   }
 
   @Override
-  public void update() {
-    if (myState.getAvailableText() != null) {
+  public void update(@NotNull final TestRunData data) {
+    if (data.getAvailableText() != null) {
       return;
     }
-    String lostTest = myState.getLostClass();
-    String lostMethod = myState.getLostMethod();
-    String test = myState.getCurrentClass();
-    String method = myState.getCurrentMethod();
+    String lostTest = data.getLostClass();
+    String lostMethod = data.getLostMethod();
+    String test = data.getCurrentClass();
+    String method = data.getCurrentMethod();
     final Wrappers._T<TestMethodTreeNode> methodNode = new Wrappers._T<TestMethodTreeNode>();
     if (lostTest != null && lostMethod != null) {
       methodNode.value = get(lostTest, lostMethod);
@@ -94,14 +95,15 @@ public class TestTree extends MPSTree implements TestRunStateUpdateListener, Dis
       TestCaseTreeNode testCaseNode = get(test);
       methodNode.value = get(test, method);
       if (testCaseNode != null) {
-        if (myState.isTerminated()) {
+        String token = data.getToken();
+        if (data.isTerminated()) {
           updateState(methodNode.value, testCaseNode, TestState.TERMINATED);
           myAnimator.stopMovie();
-        } else if (TestEvent.START_TEST_PREFIX.equals(myState.getToken())) {
+        } else if (TestEvent.START_TEST_PREFIX.equals(token)) {
           updateState(methodNode.value, testCaseNode, TestState.IN_PROGRESS);
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-              myAnimator.scheduleRepaint();
+              myAnimator.scheduleRepaint(data);
             }
           });
           if (UnitTestOptions.isTrackRunning()) {
@@ -113,13 +115,13 @@ public class TestTree extends MPSTree implements TestRunStateUpdateListener, Dis
               });
             }
           }
-        } else if (TestEvent.FINISH_TEST_PREFIX.equals(myState.getToken())) {
+        } else if (TestEvent.FINISH_TEST_PREFIX.equals(token)) {
           if (methodNode.value != null && TestState.IN_PROGRESS.equals(methodNode.value.getState())) {
             updateState(methodNode.value, testCaseNode, TestState.PASSED);
           }
-        } else if (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(myState.getToken()) || TestEvent.IGNORE_FAILURE_TEST_PREFIX.equals(myState.getToken())) {
+        } else if (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(token) || TestEvent.IGNORE_FAILURE_TEST_PREFIX.equals(token)) {
           updateState(methodNode.value, testCaseNode, TestState.IGNORED);
-        } else if (TestEvent.FAILURE_TEST_PREFIX.equals(myState.getToken())) {
+        } else if (TestEvent.FAILURE_TEST_PREFIX.equals(token)) {
           if (methodNode.value != null) {
             methodNode.value.setState(TestState.FAILED);
             updateState(methodNode.value, testCaseNode, TestState.ERROR);
@@ -166,7 +168,7 @@ public class TestTree extends MPSTree implements TestRunStateUpdateListener, Dis
     MPSTreeNode root = new TextTreeNode("Tests");
     setRootVisible(false);
     TestNameMap<TestCaseTreeNode, TestMethodTreeNode> temp = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
-    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myState.getTestsMap()).keySet())) {
+    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myTestsMap).keySet())) {
       if (testCase == null) {
         continue;
       }
@@ -176,7 +178,7 @@ public class TestTree extends MPSTree implements TestRunStateUpdateListener, Dis
       }
       testCaseTreeNode.removeAllChildren();
       boolean hasTestNotPassed = false;
-      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myState.getTestsMap()).get(testCase))) {
+      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myTestsMap).get(testCase))) {
         TestMethodTreeNode oldMethodTreeNode = myMap.get(testCase.getFqName(), method.getName());
         TestMethodTreeNode newMethodTreeNode = new TestMethodTreeNode(method);
         TestMethodTreeNode methodTreeNode = (oldMethodTreeNode == null ? newMethodTreeNode : oldMethodTreeNode);
@@ -204,11 +206,11 @@ public class TestTree extends MPSTree implements TestRunStateUpdateListener, Dis
   }
 
   public boolean hasFailedTests() {
-    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myState.getTestsMap()).keySet())) {
+    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myTestsMap).keySet())) {
       if (testCase == null) {
         continue;
       }
-      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myState.getTestsMap()).get(testCase))) {
+      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myTestsMap).get(testCase))) {
         String className = testCase.getFqName();
         String methodName = method.getName();
         TestMethodTreeNode treeNode = myMap.get(className, methodName);
@@ -236,7 +238,7 @@ public class TestTree extends MPSTree implements TestRunStateUpdateListener, Dis
 
   public List<String> getMethodName() {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
-    for (List<ITestNodeWrapper> values : MapSequence.fromMap(myState.getTestsMap()).values()) {
+    for (List<ITestNodeWrapper> values : MapSequence.fromMap(myTestsMap).values()) {
       for (ITestNodeWrapper value : values) {
         ListSequence.fromList(result).addElement(value.getName());
       }
@@ -253,8 +255,8 @@ public class TestTree extends MPSTree implements TestRunStateUpdateListener, Dis
   }
 
   public void selectFirstDefectNode() {
-    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myState.getTestsMap()).keySet())) {
-      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myState.getTestsMap()).get(testCase))) {
+    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myTestsMap).keySet())) {
+      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myTestsMap).get(testCase))) {
         String className = testCase.getFqName();
         String methodName = method.getName();
         // FIXME Is it true myMap.get(string, string) is the best way to find failed test??? 

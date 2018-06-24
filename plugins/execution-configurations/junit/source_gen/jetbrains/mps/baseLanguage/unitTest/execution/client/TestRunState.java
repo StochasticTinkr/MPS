@@ -5,21 +5,24 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 import org.jetbrains.mps.annotations.Mutable;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import java.util.Map;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.LinkedHashMap;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.openapi.util.Key;
+import org.jetbrains.mps.annotations.Immutable;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Level;
+import com.intellij.openapi.util.Key;
+import org.jetbrains.mps.annotations.ImmutableReturn;
+import java.util.Collections;
 
 /**
  * State of test execution; updates associated {@link jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener } when there's a change.
@@ -29,26 +32,12 @@ public final class TestRunState {
   private static final Logger LOG = LogManager.getLogger(TestRunState.class);
   private static final Object LOCK = new Object();
 
-  private final Map<ITestNodeWrapper, List<ITestNodeWrapper>> myTestToMethodsMap = MapSequence.fromMap(new LinkedHashMap<ITestNodeWrapper, List<ITestNodeWrapper>>(16, (float) 0.75, false));
   private final Set<TestRunStateUpdateListener> myUpdateListenersList = SetSequence.fromSet(new HashSet<TestRunStateUpdateListener>());
   private final List<TestStateListener> myListeners = ListSequence.fromList(new ArrayList<TestStateListener>());
+  @Immutable
+  private final Map<ITestNodeWrapper, List<ITestNodeWrapper>> myTestToMethodsMap = MapSequence.fromMap(new LinkedHashMap<ITestNodeWrapper, List<ITestNodeWrapper>>(16, (float) 0.75, false));
 
-  /**
-   * mutable fields below
-   */
-  private final List<TestMethodKey> myTestMethodsLeftToRun = ListSequence.fromList(new ArrayList<TestMethodKey>());
-  private String myCurrentClass;
-  private String myCurrentMethod;
-  private String myCurrentToken;
-  private String myCurrentNotExecutedDueToErrorTest;
-  private String myCurrentNotExecutedDueToErrorMethod;
-
-  private int myTotalTests;
-  private int myCompletedTests = 0;
-  private int myFailedTests = 0;
-  private boolean myIsTerminated;
-  private String myAvailableText = null;
-  private Key myKey = null;
+  private final TestRunData myInnerData = new TestRunData();
 
   private void processTestCases(List<ITestNodeWrapper> tests) {
     for (ITestNodeWrapper testCase : ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
@@ -78,7 +67,7 @@ public final class TestRunState {
     }
     for (ITestNodeWrapper testCase : MapSequence.fromMap(myTestToMethodsMap).keySet()) {
       for (ITestNodeWrapper testMethod : MapSequence.fromMap(myTestToMethodsMap).get(testCase)) {
-        ListSequence.fromList(myTestMethodsLeftToRun).addElement(new TestMethodKey(testCase.getFqName(), testMethod.getName()));
+        ListSequence.fromList(myInnerData.myTestMethodsLeftToRun).addElement(new TestMethodKey(testCase.getFqName(), testMethod.getName()));
       }
     }
   }
@@ -86,12 +75,12 @@ public final class TestRunState {
   public TestRunState(@NotNull List<ITestNodeWrapper> tests) {
     processTestCases(tests);
     processTestMethods(tests);
-    myTotalTests = ListSequence.fromList(myTestMethodsLeftToRun).count();
+    myInnerData.myTotalTests = ListSequence.fromList(myInnerData.myTestMethodsLeftToRun).count();
   }
 
   private void notifyUpdateListeners() {
     for (TestRunStateUpdateListener listener : myUpdateListenersList) {
-      listener.update();
+      listener.update(myInnerData.copy());
     }
   }
 
@@ -104,7 +93,7 @@ public final class TestRunState {
   }
 
   private void setToken(@NotNull String token) {
-    myCurrentToken = token;
+    myInnerData.myCurrentToken = token;
   }
 
   public void onTestStarted(final TestEvent event) {
@@ -152,7 +141,7 @@ public final class TestRunState {
           it.onTestFailure(event);
         }
       });
-      myFailedTests++;
+      myInnerData.myFailedTests++;
       notifyUpdateListeners();
     }
   }
@@ -168,39 +157,39 @@ public final class TestRunState {
   }
 
   private void startTest(String className, String methodName) {
-    if (myCurrentMethod != null && myCurrentClass != null) {
+    if (myInnerData.myCurrentMethod != null && myInnerData.myCurrentClass != null) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Seems that the previous test is not finished yet");
       }
     }
     checkConsistency();
-    myCurrentClass = className;
-    myCurrentMethod = methodName;
+    myInnerData.myCurrentClass = className;
+    myInnerData.myCurrentMethod = methodName;
     notifyUpdateListeners();
   }
 
   private void finishTest() {
-    myCompletedTests++;
+    myInnerData.myCompletedTests++;
     notifyUpdateListeners();
-    myCurrentClass = null;
-    myCurrentMethod = null;
+    myInnerData.myCurrentClass = null;
+    myInnerData.myCurrentMethod = null;
   }
 
   private void looseTestInternal(String test, String method) {
-    myCurrentNotExecutedDueToErrorTest = test;
-    myCurrentNotExecutedDueToErrorMethod = method;
+    myInnerData.myCurrentNotExecutedDueToTerminationClass = test;
+    myInnerData.myCurrentNotExecutedDueToTerminationMethod = method;
     notifyUpdateListeners();
-    myCurrentNotExecutedDueToErrorTest = null;
-    myCurrentNotExecutedDueToErrorMethod = null;
+    myInnerData.myCurrentNotExecutedDueToTerminationClass = null;
+    myInnerData.myCurrentNotExecutedDueToTerminationMethod = null;
   }
 
   public void terminate(boolean terminatingCorrectly) {
     synchronized (LOCK) {
       checkConsistency();
-      myIsTerminated = true;
+      myInnerData.myIsTerminated = true;
       // these are the tests which have not been executed yet 
       if (!(terminatingCorrectly)) {
-        List<TestMethodKey> testsNotRunDueToError = myTestMethodsLeftToRun;
+        List<TestMethodKey> testsNotRunDueToError = myInnerData.myTestMethodsLeftToRun;
         for (TestMethodKey notRunTest : testsNotRunDueToError) {
           final String methodName = notRunTest.getTestCaseFqName();
           final String className = notRunTest.getTestMethodFqName();
@@ -218,98 +207,33 @@ public final class TestRunState {
   }
 
   private void checkConsistency() {
-    assert myCompletedTests <= myTotalTests;
-    assert myFailedTests <= myCompletedTests;
+    assert myInnerData.myCompletedTests <= myInnerData.myTotalTests;
+    assert myInnerData.myFailedTests <= myInnerData.myCompletedTests;
   }
 
   public void outputText(String text, @NotNull Key key) {
     synchronized (LOCK) {
-      myAvailableText = text;
-      myKey = key;
+      myInnerData.myAvailableText = text;
+      myInnerData.myKey = key;
       notifyUpdateListeners();
-      myAvailableText = null;
-      myKey = null;
+      myInnerData.myAvailableText = null;
+      myInnerData.myKey = null;
     }
   }
 
   private void removeFinishedTestMethod(String testCaseName, String testMethodName) {
     TestMethodKey methodKey = new TestMethodKey(testCaseName, testMethodName);
-    ListSequence.fromList(myTestMethodsLeftToRun).removeElement(methodKey);
+    ListSequence.fromList(myInnerData.myTestMethodsLeftToRun).removeElement(methodKey);
   }
 
   private void removeFinishedTestCase(@NotNull final String testCaseName) {
-    ListSequence.fromList(myTestMethodsLeftToRun).removeWhere(new IWhereFilter<TestMethodKey>() {
+    ListSequence.fromList(myInnerData.myTestMethodsLeftToRun).removeWhere(new IWhereFilter<TestMethodKey>() {
       public boolean accept(TestMethodKey it) {
         return testCaseName.equals(it.getTestCaseFqName());
       }
     });
   }
 
-  public int getTotalTests() {
-    synchronized (LOCK) {
-      return myTotalTests;
-    }
-  }
-
-  public int getFailedTests() {
-    synchronized (LOCK) {
-      return myFailedTests;
-    }
-  }
-
-  public int getCompletedTests() {
-    synchronized (LOCK) {
-      return myCompletedTests;
-    }
-  }
-
-  public String getCurrentClass() {
-    synchronized (LOCK) {
-      return myCurrentClass;
-    }
-  }
-
-  public String getCurrentMethod() {
-    synchronized (LOCK) {
-      return myCurrentMethod;
-    }
-  }
-
-  public String getToken() {
-    synchronized (LOCK) {
-      return myCurrentToken;
-    }
-  }
-
-  public String getLostMethod() {
-    synchronized (LOCK) {
-      return myCurrentNotExecutedDueToErrorMethod;
-    }
-  }
-
-  public String getLostClass() {
-    synchronized (LOCK) {
-      return myCurrentNotExecutedDueToErrorTest;
-    }
-  }
-
-  public boolean isTerminated() {
-    synchronized (LOCK) {
-      return myIsTerminated;
-    }
-  }
-
-  public String getAvailableText() {
-    synchronized (LOCK) {
-      return myAvailableText;
-    }
-  }
-
-  public Key getKey() {
-    synchronized (LOCK) {
-      return myKey;
-    }
-  }
 
   public void addListener(TestStateListener listener) {
     ListSequence.fromList(myListeners).addElement(listener);
@@ -319,10 +243,8 @@ public final class TestRunState {
     ListSequence.fromList(myListeners).removeElement(listener);
   }
 
+  @ImmutableReturn
   public Map<ITestNodeWrapper, List<ITestNodeWrapper>> getTestsMap() {
-    synchronized (LOCK) {
-      // fix MUTATOR 
-      return myTestToMethodsMap;
-    }
+    return Collections.unmodifiableMap(myTestToMethodsMap);
   }
 }

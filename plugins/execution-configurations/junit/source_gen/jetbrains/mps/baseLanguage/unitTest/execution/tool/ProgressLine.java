@@ -6,11 +6,12 @@ import javax.swing.JPanel;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener;
 import com.intellij.openapi.progress.util.ColorProgressBar;
 import javax.swing.JLabel;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import java.awt.GridLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData;
 import com.intellij.execution.process.ProcessOutputTypes;
 import javax.swing.SwingUtilities;
 import com.intellij.execution.process.ProcessListener;
@@ -22,11 +23,9 @@ public class ProgressLine extends JPanel implements TestRunStateUpdateListener {
   private final ColorProgressBar myProgressBar = new ColorProgressBar();
   private final JLabel myStateLabel = new JLabel("Starting...");
   private boolean myTestsBuilt = false;
-  private TestRunState myState;
 
-  public ProgressLine(TestRunState testState) {
+  public ProgressLine() {
     super(new GridLayout(1, 2));
-    myState = testState;
     add(myStateLabel);
     final JPanel progress = new JPanel(new GridBagLayout());
     progress.add(myProgressBar, new GridBagConstraints(0, 0, 0, 0, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(2, 0, 0, 2), 0, 0));
@@ -36,18 +35,18 @@ public class ProgressLine extends JPanel implements TestRunStateUpdateListener {
   }
 
   @Override
-  public void update() {
-    if (myState.getAvailableText() != null || ProcessOutputTypes.SYSTEM.equals(myState.getKey())) {
+  public void update(@NotNull final TestRunData data) {
+    if (data.getAvailableText() != null || ProcessOutputTypes.SYSTEM.equals(data.getKey())) {
       return;
     }
-    final int defectedTests = myState.getFailedTests();
-    final int totalTests = myState.getTotalTests();
-    final int completedTests = myState.getCompletedTests();
-    final String testName = myState.getCurrentMethod();
+    final int defectedTests = data.getFailedTests();
+    final int totalTests = data.getTotalTests();
+    final int completedTests = data.getCompletedTests();
+    final String testName = data.getCurrentMethod();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        updateProgressBar(defectedTests, totalTests, completedTests);
-        updateLabel(defectedTests, totalTests, completedTests, testName);
+        updateProgressBar(data.isTerminated(), defectedTests, totalTests, completedTests);
+        updateLabel(data.isTerminated(), defectedTests, totalTests, completedTests, testName);
       }
     });
   }
@@ -55,10 +54,10 @@ public class ProgressLine extends JPanel implements TestRunStateUpdateListener {
   public void init() {
   }
 
-  private void updateProgressBar(int defected, int total, int completed) {
+  private void updateProgressBar(boolean isTerminated, int defected, int total, int completed) {
     if (defected > 0) {
       myProgressBar.setColor(ColorProgressBar.RED);
-    } else if (myState.isTerminated() && !((total == completed))) {
+    } else if (isTerminated && !((total == completed))) {
       myProgressBar.setColor(ColorProgressBar.YELLOW);
     }
     if (total != 0) {
@@ -66,21 +65,20 @@ public class ProgressLine extends JPanel implements TestRunStateUpdateListener {
     }
   }
 
-  private void updateLabel(int defected, int total, int completed, String testName) {
+  private void updateLabel(boolean isTerminated, int defected, int total, int completed, String testName) {
     StringBuilder sb = new StringBuilder();
     boolean done = total == completed || testName == null;
-    boolean terminated = myState.isTerminated();
     if (done) {
       sb.append(" Done: " + completed + " of " + total + " ");
       testName = "";
-    } else if (terminated) {
+    } else if (isTerminated) {
       sb.append(" Terminated: " + completed + " of " + total + " ");
       testName = "";
     }
     if (defected > 0) {
       sb.append(" Failed: " + defected);
     }
-    if (!(terminated) && !(done)) {
+    if (!(isTerminated) && !(done)) {
       sb.append(" Running: " + completed + " of " + total);
     }
     myStateLabel.setText(sb + "  " + testName);

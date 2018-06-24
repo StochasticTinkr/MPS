@@ -64,10 +64,10 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
     JComponent leftPanel = createTreeComponent(myActionToolComponent, myTreeComponent);
 
-    myProgressLineComponent = new ProgressLine(myTestState);
+    myProgressLineComponent = new ProgressLine();
     myProgressLineComponent.init();
     myProgressLineComponent.setMinimumSize(new Dimension(0, myProgressLineComponent.getMinimumSize().height));
-    myOutputComponent = new TestOutputComponent(console, myTestState);
+    myOutputComponent = new TestOutputComponent(console);
     myOutputComponent.init();
     myTreeComponent.addTreeSelectionListener(new TestTreeSelectionListener(myTreeComponent, myStatisticsModel, myOutputComponent));
     myTreeComponent.addMouseListener(new TestTreeRootMouseListener(myTreeComponent, myStatisticsModel, myOutputComponent));
