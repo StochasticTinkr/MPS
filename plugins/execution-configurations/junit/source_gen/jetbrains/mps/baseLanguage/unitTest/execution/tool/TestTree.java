@@ -80,20 +80,20 @@ public class TestTree extends MPSTree implements TestRunStateUpdateListener, Dis
     if (data.getAvailableText() != null) {
       return;
     }
-    String lostTest = data.getLostClass();
-    String lostMethod = data.getLostMethod();
+    String lostTest = data.getNotExecutedClass();
+    String lostMethod = data.getNotExecutedMethod();
     String test = data.getCurrentClass();
     String method = data.getCurrentMethod();
     final Wrappers._T<TestMethodTreeNode> methodNode = new Wrappers._T<TestMethodTreeNode>();
     if (lostTest != null && lostMethod != null) {
-      methodNode.value = get(lostTest, lostMethod);
-      TestCaseTreeNode testCaseNode = get(lostTest);
+      methodNode.value = getMethodTreeNode(lostTest, lostMethod);
+      TestCaseTreeNode testCaseNode = getClassTreeNode(lostTest);
       if (methodNode.value != null && testCaseNode != null) {
         updateState(methodNode.value, testCaseNode, TestState.ERROR);
       }
     } else {
-      TestCaseTreeNode testCaseNode = get(test);
-      methodNode.value = get(test, method);
+      TestCaseTreeNode testCaseNode = getClassTreeNode(test);
+      methodNode.value = getMethodTreeNode(test, method);
       if (testCaseNode != null) {
         String token = data.getToken();
         if (data.isTerminated()) {
@@ -246,11 +246,11 @@ public class TestTree extends MPSTree implements TestRunStateUpdateListener, Dis
     return result;
   }
 
-  public TestCaseTreeNode get(String className) {
+  public TestCaseTreeNode getClassTreeNode(String className) {
     return myMap.get(className);
   }
 
-  public TestMethodTreeNode get(String className, String methodName) {
+  public TestMethodTreeNode getMethodTreeNode(String className, String methodName) {
     return myMap.get(className, methodName);
   }
 

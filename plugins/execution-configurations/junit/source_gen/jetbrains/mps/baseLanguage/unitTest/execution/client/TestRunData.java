@@ -25,7 +25,7 @@ public final class TestRunData {
   /*package*/ int myTotalTests;
   /*package*/ int myCompletedTests = 0;
   /*package*/ int myFailedTests = 0;
-  /*package*/ boolean myIsTerminated;
+  /*package*/ boolean myTerminated;
   /*package*/ String myAvailableText = null;
   /*package*/ Key myKey = null;
 
@@ -53,16 +53,16 @@ public final class TestRunData {
     return myCurrentToken;
   }
 
-  public String getLostMethod() {
+  public String getNotExecutedMethod() {
     return myCurrentNotExecutedDueToTerminationMethod;
   }
 
-  public String getLostClass() {
+  public String getNotExecutedClass() {
     return myCurrentNotExecutedDueToTerminationClass;
   }
 
   public boolean isTerminated() {
-    return myIsTerminated;
+    return myTerminated;
   }
 
   public String getAvailableText() {
@@ -85,7 +85,7 @@ public final class TestRunData {
     dataCopy.myTotalTests = myTotalTests;
     dataCopy.myCompletedTests = myCompletedTests;
     dataCopy.myFailedTests = myFailedTests;
-    dataCopy.myIsTerminated = myIsTerminated;
+    dataCopy.myTerminated = myTerminated;
     dataCopy.myAvailableText = myAvailableText;
     dataCopy.myKey = myKey;
     return dataCopy;

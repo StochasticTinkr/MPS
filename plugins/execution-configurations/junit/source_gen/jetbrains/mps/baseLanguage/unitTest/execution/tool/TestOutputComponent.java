@@ -46,9 +46,9 @@ public class TestOutputComponent implements TestRunStateUpdateListener {
 
   @Override
   public void update(TestRunData data) {
-    if (data.getLostClass() != null && data.getLostMethod() != null) {
-      final String method = data.getLostMethod();
-      final String test = data.getLostClass();
+    if (data.getNotExecutedClass() != null && data.getNotExecutedMethod() != null) {
+      final String method = data.getNotExecutedMethod();
+      final String test = data.getNotExecutedClass();
       final String text = "\nError: method '" + method + "' in '" + test + "' was not executed due to the tests execution error.\n\n";
       final Key key = ProcessOutputTypes.STDERR;
       SwingUtilities.invokeLater(new Runnable() {

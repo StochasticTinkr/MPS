@@ -33,9 +33,9 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
       if (time - myLastInvocationTime >= FRAME_TIME) {
         myLastInvocationTime = time;
         String className = myCurrentData.getCurrentClass();
-        TestMethodTreeNode methodTreeNode = myTestTree.get(className, methodName);
+        TestMethodTreeNode methodTreeNode = myTestTree.getMethodTreeNode(className, methodName);
         updateTreeNode(methodTreeNode);
-        TestCaseTreeNode testTreeNode = myTestTree.get(className);
+        TestCaseTreeNode testTreeNode = myTestTree.getClassTreeNode(className);
         updateTreeNode(testTreeNode);
       }
     }

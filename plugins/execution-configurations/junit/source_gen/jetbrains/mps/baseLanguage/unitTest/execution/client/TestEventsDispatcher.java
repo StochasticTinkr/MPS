@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.process.ProcessEvent;
+import jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 
@@ -18,7 +19,7 @@ public class TestEventsDispatcher {
   }
 
   public void onProcessTerminated(@NotNull ProcessEvent event) {
-    myState.terminate(event.getExitCode() == 0);
+    myState.terminate(event.getExitCode() == DefaultTestExecutor.EXIT_CODE_FOR_EXCEPTION);
   }
 
   public void onSimpleTextAvailable(String text, Key key) {

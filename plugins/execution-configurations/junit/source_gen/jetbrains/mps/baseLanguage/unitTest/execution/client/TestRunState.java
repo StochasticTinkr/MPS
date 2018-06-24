@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.annotations.Nullable;
 import org.apache.log4j.Level;
 import com.intellij.openapi.util.Key;
 import org.jetbrains.mps.annotations.ImmutableReturn;
@@ -118,7 +119,7 @@ public final class TestRunState {
         }
       });
       finishTest();
-      completeTestEvent(event);
+      removeFinishedTestEvent(event);
     }
   }
 
@@ -147,7 +148,7 @@ public final class TestRunState {
     }
   }
 
-  private void completeTestEvent(TestEvent event) {
+  private void removeFinishedTestEvent(TestEvent event) {
     String testCaseName = event.getTestCaseName();
     String testMethodName = event.getTestMethodName();
     if (testMethodName == null) {
@@ -157,7 +158,7 @@ public final class TestRunState {
     }
   }
 
-  private void startTest(String className, String methodName) {
+  private void startTest(@NotNull String className, @Nullable String methodName) {
     if (myInnerData.myCurrentMethod != null && myInnerData.myCurrentClass != null) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Seems that the previous test is not finished yet");
@@ -184,16 +185,16 @@ public final class TestRunState {
     myInnerData.myCurrentNotExecutedDueToTerminationMethod = null;
   }
 
-  public void terminate(boolean terminatingCorrectly) {
+  public void terminate(boolean terminatingOnException) {
     synchronized (LOCK) {
       checkConsistency();
-      myInnerData.myIsTerminated = true;
+      myInnerData.myTerminated = true;
       // these are the tests which have not been executed yet 
-      if (!(terminatingCorrectly)) {
+      if (terminatingOnException) {
         List<TestMethodKey> testsNotRunDueToError = myInnerData.myTestMethodsLeftToRun;
         for (TestMethodKey notRunTest : testsNotRunDueToError) {
-          final String methodName = notRunTest.getTestCaseFqName();
-          final String className = notRunTest.getTestMethodFqName();
+          final String className = notRunTest.getTestCaseFqName();
+          final String methodName = notRunTest.getTestMethodFqName();
           ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
             public void visit(TestStateListener it) {
               it.onLooseTest(className, methodName);
@@ -201,9 +202,8 @@ public final class TestRunState {
           });
           looseTestInternal(className, methodName);
         }
-      } else {
-        notifyUpdateListeners();
       }
+      notifyUpdateListeners();
     }
   }
 

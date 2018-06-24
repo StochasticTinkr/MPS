@@ -57,7 +57,7 @@ public class ProgressLine extends JPanel implements TestRunStateUpdateListener {
   private void updateProgressBar(boolean isTerminated, int defected, int total, int completed) {
     if (defected > 0) {
       myProgressBar.setColor(ColorProgressBar.RED);
-    } else if (isTerminated && !((total == completed))) {
+    } else if (isTerminated && total > completed) {
       myProgressBar.setColor(ColorProgressBar.YELLOW);
     }
     if (total != 0) {
@@ -67,7 +67,7 @@ public class ProgressLine extends JPanel implements TestRunStateUpdateListener {
 
   private void updateLabel(boolean isTerminated, int defected, int total, int completed, String testName) {
     StringBuilder sb = new StringBuilder();
-    boolean done = total == completed || testName == null;
+    boolean done = total == completed;
     if (done) {
       sb.append(" Done: " + completed + " of " + total + " ");
       testName = "";

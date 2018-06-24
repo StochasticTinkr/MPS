@@ -1093,7 +1093,7 @@
                 <ref role="3cqZAo" node="xTUx3Lqvzh" resolve="data" />
               </node>
               <node concept="liA8E" id="36vIONTtPpo" role="2OqNvi">
-                <ref role="37wK5l" to="sfqd:xTUx3LqSR6" resolve="getLostClass" />
+                <ref role="37wK5l" to="sfqd:xTUx3LqSR6" resolve="getNotExecutedClass" />
               </node>
             </node>
           </node>
@@ -1107,7 +1107,7 @@
                 <ref role="3cqZAo" node="xTUx3Lqvzh" resolve="data" />
               </node>
               <node concept="liA8E" id="36vIONTtPpw" role="2OqNvi">
-                <ref role="37wK5l" to="sfqd:xTUx3LqSQZ" resolve="getLostMethod" />
+                <ref role="37wK5l" to="sfqd:xTUx3LqSQZ" resolve="getNotExecutedMethod" />
               </node>
             </node>
           </node>
@@ -1156,7 +1156,7 @@
                   <ref role="3cqZAo" node="36vIONTtPpM" resolve="methodNode" />
                 </node>
                 <node concept="1rXfSq" id="4hiugqyza4J" role="37vLTx">
-                  <ref role="37wK5l" node="36vIONTtPzq" resolve="get" />
+                  <ref role="37wK5l" node="36vIONTtPzq" resolve="getMethodTreeNode" />
                   <node concept="37vLTw" id="3GM_nagTwjp" role="37wK5m">
                     <ref role="3cqZAo" node="36vIONTtPpi" resolve="lostTest" />
                   </node>
@@ -1173,7 +1173,7 @@
                   <ref role="3uigEE" node="36vIONTtQyK" resolve="TestCaseTreeNode" />
                 </node>
                 <node concept="1rXfSq" id="4hiugqyz9z1" role="33vP2m">
-                  <ref role="37wK5l" node="36vIONTtPzd" resolve="get" />
+                  <ref role="37wK5l" node="36vIONTtPzd" resolve="getClassTreeNode" />
                   <node concept="37vLTw" id="3GM_nagTv5P" role="37wK5m">
                     <ref role="3cqZAo" node="36vIONTtPpi" resolve="lostTest" />
                   </node>
@@ -1192,8 +1192,8 @@
                       <ref role="3cqZAo" node="36vIONTtPpZ" resolve="testCaseNode" />
                     </node>
                     <node concept="Rm8GO" id="36vIONTtPqc" role="37wK5m">
-                      <ref role="Rm8GQ" node="36vIONTtRkF" resolve="ERROR" />
                       <ref role="1Px2BO" node="36vIONTtRjI" resolve="TestState" />
+                      <ref role="Rm8GQ" node="36vIONTtRkF" resolve="ERROR" />
                     </node>
                   </node>
                 </node>
@@ -1237,7 +1237,7 @@
                     <ref role="3uigEE" node="36vIONTtQyK" resolve="TestCaseTreeNode" />
                   </node>
                   <node concept="1rXfSq" id="4hiugqyzhhj" role="33vP2m">
-                    <ref role="37wK5l" node="36vIONTtPzd" resolve="get" />
+                    <ref role="37wK5l" node="36vIONTtPzd" resolve="getClassTreeNode" />
                     <node concept="37vLTw" id="3GM_nagTyWe" role="37wK5m">
                       <ref role="3cqZAo" node="36vIONTtPpy" resolve="test" />
                     </node>
@@ -1246,11 +1246,11 @@
               </node>
               <node concept="3clFbF" id="36vIONTtPq_" role="3cqZAp">
                 <node concept="37vLTI" id="36vIONTtPqA" role="3clFbG">
-                  <node concept="37vLTw" id="3GM_nagTvU5" role="37vLTJ">
+                  <node concept="37vLTw" id="7MUl7ZcJAvs" role="37vLTJ">
                     <ref role="3cqZAo" node="36vIONTtPpM" resolve="methodNode" />
                   </node>
                   <node concept="1rXfSq" id="4hiugqyz8K0" role="37vLTx">
-                    <ref role="37wK5l" node="36vIONTtPzq" resolve="get" />
+                    <ref role="37wK5l" node="36vIONTtPzq" resolve="getMethodTreeNode" />
                     <node concept="37vLTw" id="3GM_nagT_Dv" role="37wK5m">
                       <ref role="3cqZAo" node="36vIONTtPpy" resolve="test" />
                     </node>
@@ -1288,8 +1288,8 @@
                             <ref role="3cqZAo" node="36vIONTtPqv" resolve="testCaseNode" />
                           </node>
                           <node concept="Rm8GO" id="36vIONTtPqQ" role="37wK5m">
-                            <ref role="Rm8GQ" node="36vIONTtRkL" resolve="TERMINATED" />
                             <ref role="1Px2BO" node="36vIONTtRjI" resolve="TestState" />
+                            <ref role="Rm8GQ" node="36vIONTtRkL" resolve="TERMINATED" />
                           </node>
                         </node>
                       </node>
@@ -1324,8 +1324,8 @@
                               <ref role="3cqZAo" node="36vIONTtPqv" resolve="testCaseNode" />
                             </node>
                             <node concept="Rm8GO" id="36vIONTtPra" role="37wK5m">
-                              <ref role="Rm8GQ" node="36vIONTtRk_" resolve="IN_PROGRESS" />
                               <ref role="1Px2BO" node="36vIONTtRjI" resolve="TestState" />
+                              <ref role="Rm8GQ" node="36vIONTtRk_" resolve="IN_PROGRESS" />
                             </node>
                           </node>
                         </node>
@@ -1384,8 +1384,8 @@
                             </node>
                           </node>
                           <node concept="2YIFZM" id="3b_6O4IZVhQ" role="3clFbw">
-                            <ref role="37wK5l" node="3b_6O4IZPgb" resolve="isTrackRunning" />
                             <ref role="1Pybhc" node="3b_6O4IZPfR" resolve="UnitTestOptions" />
+                            <ref role="37wK5l" node="3b_6O4IZPgb" resolve="isTrackRunning" />
                           </node>
                         </node>
                       </node>
@@ -1428,8 +1428,8 @@
                                   <ref role="3cqZAo" node="36vIONTtPqv" resolve="testCaseNode" />
                                 </node>
                                 <node concept="Rm8GO" id="36vIONTtPrZ" role="37wK5m">
-                                  <ref role="Rm8GQ" node="36vIONTtRkH" resolve="PASSED" />
                                   <ref role="1Px2BO" node="36vIONTtRjI" resolve="TestState" />
+                                  <ref role="Rm8GQ" node="36vIONTtRkH" resolve="PASSED" />
                                 </node>
                               </node>
                             </node>
@@ -1500,8 +1500,8 @@
                               <ref role="3cqZAo" node="36vIONTtPqv" resolve="testCaseNode" />
                             </node>
                             <node concept="Rm8GO" id="5S8tugobutm" role="37wK5m">
-                              <ref role="Rm8GQ" node="36vIONTtRkB" resolve="IGNORED" />
                               <ref role="1Px2BO" node="36vIONTtRjI" resolve="TestState" />
+                              <ref role="Rm8GQ" node="36vIONTtRkB" resolve="IGNORED" />
                             </node>
                           </node>
                         </node>
@@ -1531,8 +1531,8 @@
                                 <node concept="liA8E" id="36vIONTtPs_" role="2OqNvi">
                                   <ref role="37wK5l" node="36vIONTtQMR" resolve="setState" />
                                   <node concept="Rm8GO" id="5S8tugobwLV" role="37wK5m">
-                                    <ref role="Rm8GQ" node="36vIONTtRkD" resolve="FAILED" />
                                     <ref role="1Px2BO" node="36vIONTtRjI" resolve="TestState" />
+                                    <ref role="Rm8GQ" node="36vIONTtRkD" resolve="FAILED" />
                                   </node>
                                 </node>
                               </node>
@@ -1547,8 +1547,8 @@
                                   <ref role="3cqZAo" node="36vIONTtPqv" resolve="testCaseNode" />
                                 </node>
                                 <node concept="Rm8GO" id="36vIONTtPsG" role="37wK5m">
-                                  <ref role="Rm8GQ" node="36vIONTtRkF" resolve="ERROR" />
                                   <ref role="1Px2BO" node="36vIONTtRjI" resolve="TestState" />
+                                  <ref role="Rm8GQ" node="36vIONTtRkF" resolve="ERROR" />
                                 </node>
                               </node>
                             </node>
@@ -1600,8 +1600,8 @@
               </node>
             </node>
             <node concept="2YIFZM" id="3b_6O4IZVhS" role="3uHU7w">
-              <ref role="37wK5l" node="3b_6O4IZPgj" resolve="isSelectFirstFailded" />
               <ref role="1Pybhc" node="3b_6O4IZPfR" resolve="UnitTestOptions" />
+              <ref role="37wK5l" node="3b_6O4IZPgj" resolve="isSelectFirstFailded" />
             </node>
           </node>
         </node>
@@ -1627,8 +1627,8 @@
             </node>
           </node>
           <node concept="2YIFZM" id="3b_6O4IZVhT" role="3clFbw">
-            <ref role="37wK5l" node="3b_6O4IZPfX" resolve="isHidePassed" />
             <ref role="1Pybhc" node="3b_6O4IZPfR" resolve="UnitTestOptions" />
+            <ref role="37wK5l" node="3b_6O4IZPfX" resolve="isHidePassed" />
           </node>
         </node>
       </node>
@@ -2425,7 +2425,7 @@
     </node>
     <node concept="2tJIrI" id="4w8hOcpWcx9" role="jymVt" />
     <node concept="3clFb_" id="36vIONTtPzd" role="jymVt">
-      <property role="TrG5h" value="get" />
+      <property role="TrG5h" value="getClassTreeNode" />
       <node concept="3uibUv" id="36vIONTtPze" role="3clF45">
         <ref role="3uigEE" node="36vIONTtQyK" resolve="TestCaseTreeNode" />
       </node>
@@ -2452,7 +2452,7 @@
     </node>
     <node concept="2tJIrI" id="4w8hOcpWcxa" role="jymVt" />
     <node concept="3clFb_" id="36vIONTtPzq" role="jymVt">
-      <property role="TrG5h" value="get" />
+      <property role="TrG5h" value="getMethodTreeNode" />
       <node concept="3uibUv" id="36vIONTtPzr" role="3clF45">
         <ref role="3uigEE" node="36vIONTtPiY" resolve="TestMethodTreeNode" />
       </node>
@@ -4165,8 +4165,8 @@
                         <ref role="37wK5l" node="36vIONTtPID" resolve="setSelected" />
                         <node concept="10Nm6u" id="36vIONTtPIy" role="37wK5m" />
                         <node concept="2YIFZM" id="3b_6O4IZVi9" role="37wK5m">
-                          <ref role="37wK5l" node="3b_6O4IZPgj" resolve="isSelectFirstFailded" />
                           <ref role="1Pybhc" node="3b_6O4IZPfR" resolve="UnitTestOptions" />
+                          <ref role="37wK5l" node="3b_6O4IZPgj" resolve="isSelectFirstFailded" />
                         </node>
                       </node>
                     </node>
@@ -4189,8 +4189,8 @@
                   <node concept="3clFbS" id="36vIONTtPIK" role="3clF47">
                     <node concept="3clFbF" id="3b_6O4IZVib" role="3cqZAp">
                       <node concept="2YIFZM" id="3b_6O4IZVid" role="3clFbG">
-                        <ref role="37wK5l" node="3b_6O4IZPgf" resolve="setSelectFirstFailded" />
                         <ref role="1Pybhc" node="3b_6O4IZPfR" resolve="UnitTestOptions" />
+                        <ref role="37wK5l" node="3b_6O4IZPgf" resolve="setSelectFirstFailded" />
                         <node concept="37vLTw" id="2BHiRxgmaH_" role="37wK5m">
                           <ref role="3cqZAo" node="36vIONTtPII" resolve="setectFirstFailed" />
                         </node>
@@ -4214,8 +4214,8 @@
                   <node concept="3clFbS" id="36vIONTtPIY" role="3clF47">
                     <node concept="3clFbF" id="3b_6O4IZVif" role="3cqZAp">
                       <node concept="2YIFZM" id="3b_6O4IZVih" role="3clFbG">
-                        <ref role="37wK5l" node="3b_6O4IZPgj" resolve="isSelectFirstFailded" />
                         <ref role="1Pybhc" node="3b_6O4IZPfR" resolve="UnitTestOptions" />
+                        <ref role="37wK5l" node="3b_6O4IZPgj" resolve="isSelectFirstFailded" />
                       </node>
                     </node>
                   </node>
@@ -6227,7 +6227,7 @@
                     <ref role="3cqZAo" node="xTUx3LsVTO" resolve="data" />
                   </node>
                   <node concept="liA8E" id="36vIONTtQne" role="2OqNvi">
-                    <ref role="37wK5l" to="sfqd:xTUx3LqSQZ" resolve="getLostMethod" />
+                    <ref role="37wK5l" to="sfqd:xTUx3LqSQZ" resolve="getNotExecutedMethod" />
                   </node>
                 </node>
               </node>
@@ -6241,7 +6241,7 @@
                     <ref role="3cqZAo" node="xTUx3LsVTO" resolve="data" />
                   </node>
                   <node concept="liA8E" id="36vIONTtQnk" role="2OqNvi">
-                    <ref role="37wK5l" to="sfqd:xTUx3LqSR6" resolve="getLostClass" />
+                    <ref role="37wK5l" to="sfqd:xTUx3LqSR6" resolve="getNotExecutedClass" />
                   </node>
                 </node>
               </node>
@@ -6322,7 +6322,7 @@
                   <ref role="3cqZAo" node="xTUx3LsVTO" resolve="data" />
                 </node>
                 <node concept="liA8E" id="36vIONTtQnP" role="2OqNvi">
-                  <ref role="37wK5l" to="sfqd:xTUx3LqSQZ" resolve="getLostMethod" />
+                  <ref role="37wK5l" to="sfqd:xTUx3LqSQZ" resolve="getNotExecutedMethod" />
                 </node>
               </node>
               <node concept="10Nm6u" id="36vIONTtQnQ" role="3uHU7w" />
@@ -6333,7 +6333,7 @@
                   <ref role="3cqZAo" node="xTUx3LsVTO" resolve="data" />
                 </node>
                 <node concept="liA8E" id="36vIONTtQnU" role="2OqNvi">
-                  <ref role="37wK5l" to="sfqd:xTUx3LqSR6" resolve="getLostClass" />
+                  <ref role="37wK5l" to="sfqd:xTUx3LqSR6" resolve="getNotExecutedClass" />
                 </node>
               </node>
               <node concept="10Nm6u" id="36vIONTtQnV" role="3uHU7w" />
@@ -9055,16 +9055,12 @@
           </node>
           <node concept="3eNFk2" id="36vIONTtQsN" role="3eNLev">
             <node concept="1Wc70l" id="36vIONTtQsO" role="3eO9$A">
-              <node concept="3fqX7Q" id="36vIONTtQsP" role="3uHU7w">
-                <node concept="1eOMI4" id="3$myXoLqleA" role="3fr31v">
-                  <node concept="3clFbC" id="36vIONTtQsQ" role="1eOMHV">
-                    <node concept="37vLTw" id="2BHiRxgm86o" role="3uHU7B">
-                      <ref role="3cqZAo" node="36vIONTtQsw" resolve="total" />
-                    </node>
-                    <node concept="37vLTw" id="2BHiRxglqRS" role="3uHU7w">
-                      <ref role="3cqZAo" node="36vIONTtQsy" resolve="completed" />
-                    </node>
-                  </node>
+              <node concept="3eOSWO" id="7MUl7ZcOFK$" role="3uHU7w">
+                <node concept="37vLTw" id="2BHiRxgm86o" role="3uHU7B">
+                  <ref role="3cqZAo" node="36vIONTtQsw" resolve="total" />
+                </node>
+                <node concept="37vLTw" id="2BHiRxglqRS" role="3uHU7w">
+                  <ref role="3cqZAo" node="36vIONTtQsy" resolve="completed" />
                 </node>
               </node>
               <node concept="37vLTw" id="xTUx3Ltor8" role="3uHU7B">
@@ -9169,20 +9165,12 @@
           <node concept="3cpWsn" id="16F3iyjG6dX" role="3cpWs9">
             <property role="TrG5h" value="done" />
             <node concept="10P_77" id="16F3iyjG6dS" role="1tU5fm" />
-            <node concept="22lmx$" id="16F3iyjG8NV" role="33vP2m">
-              <node concept="3clFbC" id="16F3iyjG90t" role="3uHU7w">
-                <node concept="10Nm6u" id="16F3iyjG91D" role="3uHU7w" />
-                <node concept="37vLTw" id="16F3iyjG8P9" role="3uHU7B">
-                  <ref role="3cqZAo" node="36vIONTtQtv" resolve="testName" />
-                </node>
+            <node concept="3clFbC" id="16F3iyjG7TN" role="33vP2m">
+              <node concept="37vLTw" id="16F3iyjG7eL" role="3uHU7B">
+                <ref role="3cqZAo" node="36vIONTtQtr" resolve="total" />
               </node>
-              <node concept="3clFbC" id="16F3iyjG7TN" role="3uHU7B">
-                <node concept="37vLTw" id="16F3iyjG7eL" role="3uHU7B">
-                  <ref role="3cqZAo" node="36vIONTtQtr" resolve="total" />
-                </node>
-                <node concept="37vLTw" id="16F3iyjG7Ur" role="3uHU7w">
-                  <ref role="3cqZAo" node="36vIONTtQtt" resolve="completed" />
-                </node>
+              <node concept="37vLTw" id="16F3iyjG7Ur" role="3uHU7w">
+                <ref role="3cqZAo" node="36vIONTtQtt" resolve="completed" />
               </node>
             </node>
           </node>
@@ -12116,7 +12104,7 @@
                         <ref role="3cqZAo" node="36vIONTtQNJ" resolve="myTestTree" />
                       </node>
                       <node concept="liA8E" id="36vIONTtQPw" role="2OqNvi">
-                        <ref role="37wK5l" node="36vIONTtPzq" resolve="get" />
+                        <ref role="37wK5l" node="36vIONTtPzq" resolve="getMethodTreeNode" />
                         <node concept="37vLTw" id="3GM_nagT_d1" role="37wK5m">
                           <ref role="3cqZAo" node="36vIONTtQPi" resolve="className" />
                         </node>
@@ -12146,7 +12134,7 @@
                         <ref role="3cqZAo" node="36vIONTtQNJ" resolve="myTestTree" />
                       </node>
                       <node concept="liA8E" id="36vIONTtQPJ" role="2OqNvi">
-                        <ref role="37wK5l" node="36vIONTtPzd" resolve="get" />
+                        <ref role="37wK5l" node="36vIONTtPzd" resolve="getClassTreeNode" />
                         <node concept="37vLTw" id="3GM_nagTz2I" role="37wK5m">
                           <ref role="3cqZAo" node="36vIONTtQPi" resolve="className" />
                         </node>
