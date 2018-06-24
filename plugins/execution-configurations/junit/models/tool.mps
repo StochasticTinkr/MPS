@@ -635,7 +635,7 @@
     </node>
     <node concept="3Tm1VV" id="36vIONTtP$Q" role="1B3o_S" />
     <node concept="3uibUv" id="36vIONTtP$R" role="EKbjA">
-      <ref role="3uigEE" to="sfqd:56tRMpP_Y8p" resolve="TestView" />
+      <ref role="3uigEE" to="sfqd:56tRMpP_Y8p" resolve="TestRunStateUpdateListener" />
     </node>
     <node concept="3uibUv" id="36vIONTtP$S" role="EKbjA">
       <ref role="3uigEE" to="v23q:~Disposable" resolve="Disposable" />
@@ -6151,7 +6151,7 @@
     <property role="3GE5qa" value="view.component" />
     <node concept="3Tm1VV" id="36vIONTtQrc" role="1B3o_S" />
     <node concept="3uibUv" id="36vIONTtQrd" role="EKbjA">
-      <ref role="3uigEE" to="sfqd:56tRMpP_Y8p" resolve="TestView" />
+      <ref role="3uigEE" to="sfqd:56tRMpP_Y8p" resolve="TestRunStateUpdateListener" />
     </node>
     <node concept="Wx3nA" id="36vIONTtQmZ" role="jymVt">
       <property role="TrG5h" value="MAX_SIZE" />
@@ -8695,7 +8695,7 @@
       <ref role="3uigEE" to="dxuu:~JPanel" resolve="JPanel" />
     </node>
     <node concept="3uibUv" id="36vIONTtQx_" role="EKbjA">
-      <ref role="3uigEE" to="sfqd:56tRMpP_Y8p" resolve="TestView" />
+      <ref role="3uigEE" to="sfqd:56tRMpP_Y8p" resolve="TestRunStateUpdateListener" />
     </node>
     <node concept="312cEg" id="36vIONTtQxj" role="jymVt">
       <property role="TrG5h" value="myProgressBar" />
@@ -8741,6 +8741,7 @@
         <ref role="3uigEE" to="sfqd:56tRMpP_f5M" resolve="TestRunState" />
       </node>
     </node>
+    <node concept="2tJIrI" id="5fQrkF77PTs" role="jymVt" />
     <node concept="3clFbW" id="36vIONTtQw4" role="jymVt">
       <node concept="3cqZAl" id="36vIONTtQw5" role="3clF45" />
       <node concept="3Tm1VV" id="36vIONTtQw6" role="1B3o_S" />
@@ -8895,11 +8896,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="36vIONTtQxc" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyzk6P" role="3clFbG">
-            <ref role="37wK5l" node="36vIONTtQsp" resolve="init" />
-          </node>
-        </node>
       </node>
       <node concept="37vLTG" id="36vIONTtQxg" role="3clF46">
         <property role="TrG5h" value="testState" />
@@ -8908,6 +8904,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="5fQrkF77NJS" role="jymVt" />
     <node concept="3clFb_" id="36vIONTtQrf" role="jymVt">
       <property role="TrG5h" value="update" />
       <node concept="3cqZAl" id="36vIONTtQrg" role="3clF45" />
@@ -9050,6 +9047,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="5fQrkF77NJT" role="jymVt" />
     <node concept="3clFb_" id="36vIONTtQsp" role="jymVt">
       <property role="TrG5h" value="init" />
       <node concept="3cqZAl" id="36vIONTtQsq" role="3clF45" />
@@ -9059,6 +9057,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="5fQrkF77NJU" role="jymVt" />
     <node concept="3clFb_" id="36vIONTtQst" role="jymVt">
       <property role="TrG5h" value="updateProgressBar" />
       <node concept="37vLTG" id="36vIONTtQsu" role="3clF46">
@@ -9179,6 +9178,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="5fQrkF77NJV" role="jymVt" />
     <node concept="3clFb_" id="36vIONTtQto" role="jymVt">
       <property role="TrG5h" value="updateLabel" />
       <node concept="37vLTG" id="36vIONTtQtp" role="3clF46">
@@ -9448,6 +9448,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="5fQrkF77NJW" role="jymVt" />
     <node concept="3clFb_" id="36vIONTtQv4" role="jymVt">
       <property role="TrG5h" value="getProcessListener" />
       <node concept="3Tm1VV" id="36vIONTtQv5" role="1B3o_S" />
@@ -14919,6 +14920,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1XbiPVzsv4n" role="jymVt" />
     <node concept="3clFbW" id="7dV9$tm6ITj" role="jymVt">
       <node concept="3cqZAl" id="7dV9$tm6ITk" role="3clF45" />
       <node concept="3Tm1VV" id="7dV9$tm6ITl" role="1B3o_S" />
@@ -15330,6 +15332,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1XbiPVzssVE" role="jymVt" />
     <node concept="3clFb_" id="7dV9$tm6IVT" role="jymVt">
       <property role="TrG5h" value="createActionsToolbar" />
       <node concept="3uibUv" id="7dV9$tm6IVU" role="3clF45">
@@ -15428,6 +15431,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1XbiPVzssVF" role="jymVt" />
     <node concept="3clFb_" id="7dV9$tm6IWt" role="jymVt">
       <property role="TrG5h" value="createTreeComponent" />
       <node concept="37vLTG" id="7dV9$tm6IWu" role="3clF46">
@@ -15521,6 +15525,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1XbiPVzssVG" role="jymVt" />
     <node concept="3clFb_" id="7dV9$tm6IWZ" role="jymVt">
       <property role="TrG5h" value="createStatisticsComponent" />
       <node concept="3uibUv" id="7dV9$tm6IX0" role="3clF45">
@@ -15617,6 +15622,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1XbiPVzssVH" role="jymVt" />
     <node concept="3clFb_" id="7dV9$tm6IXW" role="jymVt">
       <property role="TrG5h" value="getProcessListener" />
       <node concept="3uibUv" id="7dV9$tm6IXX" role="3clF45">
@@ -15636,6 +15642,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1XbiPVzssVI" role="jymVt" />
     <node concept="3clFb_" id="7dV9$tm6IY4" role="jymVt">
       <property role="TrG5h" value="dispose" />
       <node concept="3cqZAl" id="7dV9$tm6IY5" role="3clF45" />
@@ -15671,6 +15678,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1XbiPVzssVJ" role="jymVt" />
     <node concept="3clFb_" id="7dV9$tm6IYj" role="jymVt">
       <property role="TrG5h" value="addCloseListener" />
       <node concept="3cqZAl" id="7dV9$tm6IYk" role="3clF45" />
@@ -15696,6 +15704,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1XbiPVzssVK" role="jymVt" />
     <node concept="3clFb_" id="7dV9$tm6IYv" role="jymVt">
       <property role="TrG5h" value="invokeCloseListeners" />
       <node concept="3cqZAl" id="7dV9$tm6IYw" role="3clF45" />
@@ -15721,6 +15730,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1XbiPVzssVL" role="jymVt" />
     <node concept="3clFb_" id="7dV9$tm6IYF" role="jymVt">
       <property role="TrG5h" value="createOutputComponent" />
       <node concept="3Tm6S6" id="7dV9$tm6IYG" role="1B3o_S" />
@@ -16217,6 +16227,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1XbiPVzssVM" role="jymVt" />
     <node concept="3clFb_" id="7dV9$tm6J1H" role="jymVt">
       <property role="TrG5h" value="initSplitterProportion" />
       <node concept="3Tm1VV" id="7dV9$tm6J1I" role="1B3o_S" />
@@ -16466,6 +16477,7 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="1XbiPVzsxcX" role="jymVt" />
       <node concept="3clFb_" id="7dV9$tm6J3_" role="jymVt">
         <property role="TrG5h" value="getData" />
         <node concept="3Tm1VV" id="7dV9$tm6J3A" role="1B3o_S" />
