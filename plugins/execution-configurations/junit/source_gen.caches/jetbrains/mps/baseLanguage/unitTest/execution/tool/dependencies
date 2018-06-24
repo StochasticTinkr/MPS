@@ -47,7 +47,7 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState" />
     <classNode extendsClassName="javax.swing.JPanel" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestView" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.StatisticsRowRenderer" file="StatisticsRowRenderer.java">
     <classNode dependClassName="java.awt.BorderLayout" />
@@ -173,7 +173,7 @@
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestView" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestState" file="TestState.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
@@ -239,7 +239,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestView" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTreeIconAnimator" file="TestTreeIconAnimator.java">

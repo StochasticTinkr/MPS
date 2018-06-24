@@ -14,16 +14,17 @@ import com.intellij.execution.process.ProcessOutputTypes;
  * update {@link jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState } with a help of TestEventsDispatcher.
  * You likely don't need this one unless there's {@link jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState } you'd like to refresh.
  */
-public class UnitTestProcessListener extends ProcessAdapter {
+public final class UnitTestProcessListener extends ProcessAdapter {
   private final TestEventsDispatcher myDispatcher;
   private TestEvent myLastEvent;
+
   public UnitTestProcessListener(TestRunState runState) {
     myDispatcher = new TestEventsDispatcher(runState);
   }
 
   @Override
   public void processTerminated(@NotNull ProcessEvent event) {
-    myDispatcher.onProcessTerminated(event.getText());
+    myDispatcher.onProcessTerminated(event);
   }
 
   @Override
@@ -37,10 +38,14 @@ public class UnitTestProcessListener extends ProcessAdapter {
       myLastEvent = testEvent;
       myDispatcher.onTestEvent(testEvent);
     } else {
-      if (myLastEvent != null && (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()) || TestEvent.FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()))) {
+      if (isErrorOutputInProgress()) {
         k = ProcessOutputTypes.STDERR;
       }
       myDispatcher.onSimpleTextAvailable(text, k);
     }
+  }
+
+  private boolean isErrorOutputInProgress() {
+    return myLastEvent != null && (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()) || TestEvent.FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()));
   }
 }

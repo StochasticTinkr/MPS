@@ -1728,9 +1728,6 @@
           </node>
         </node>
       </node>
-      <node concept="2AHcQZ" id="3tYsUK_Sfza" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
     </node>
     <node concept="2tJIrI" id="4w8hOcpWcx4" role="jymVt" />
     <node concept="3clFb_" id="36vIONTtPtQ" role="jymVt">
@@ -6305,7 +6302,7 @@
                 <node concept="17QB3L" id="36vIONTtQnn" role="1tU5fm" />
                 <node concept="3cpWs3" id="36vIONTtQno" role="33vP2m">
                   <node concept="Xl_RD" id="36vIONTtQnp" role="3uHU7w">
-                    <property role="Xl_RC" value="' was not executed somehow.\n\n" />
+                    <property role="Xl_RC" value="' was not executed due to the tests execution error.\n\n" />
                   </node>
                   <node concept="3cpWs3" id="36vIONTtQnq" role="3uHU7B">
                     <node concept="37vLTw" id="3GM_nagTwfc" role="3uHU7w">
@@ -6509,9 +6506,6 @@
             <ref role="37wK5l" node="36vIONTtQq5" resolve="clear" />
           </node>
         </node>
-      </node>
-      <node concept="2AHcQZ" id="3tYsUK_UAx_" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="29pY0YYv0iS" role="jymVt" />
@@ -9053,9 +9047,6 @@
       <node concept="3cqZAl" id="36vIONTtQsq" role="3clF45" />
       <node concept="3Tm1VV" id="36vIONTtQsr" role="1B3o_S" />
       <node concept="3clFbS" id="36vIONTtQss" role="3clF47" />
-      <node concept="2AHcQZ" id="3tYsUK_Se2r" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
     </node>
     <node concept="2tJIrI" id="5fQrkF77NJU" role="jymVt" />
     <node concept="3clFb_" id="36vIONTtQst" role="jymVt">
@@ -15052,6 +15043,16 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="1XbiPVzAT6U" role="3cqZAp">
+          <node concept="2OqwBi" id="1XbiPVzAVca" role="3clFbG">
+            <node concept="37vLTw" id="1XbiPVzAT6S" role="2Oq$k0">
+              <ref role="3cqZAo" node="7dV9$tm6ISY" resolve="myProgressLineComponent" />
+            </node>
+            <node concept="liA8E" id="1XbiPVzAWN7" role="2OqNvi">
+              <ref role="37wK5l" node="36vIONTtQsp" resolve="init" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="7dV9$tm6IU9" role="3cqZAp">
           <node concept="2OqwBi" id="7dV9$tm6IUa" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeu_FB" role="2Oq$k0">
@@ -15101,6 +15102,16 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="1XbiPVzAFHV" role="3cqZAp">
+          <node concept="2OqwBi" id="1XbiPVzAHtJ" role="3clFbG">
+            <node concept="37vLTw" id="1XbiPVzAFHT" role="2Oq$k0">
+              <ref role="3cqZAo" node="7dV9$tm6ISS" resolve="myOutputComponent" />
+            </node>
+            <node concept="liA8E" id="1XbiPVzAIh7" role="2OqNvi">
+              <ref role="37wK5l" node="36vIONTtQoB" resolve="init" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="7dV9$tm6IUu" role="3cqZAp">
           <node concept="2OqwBi" id="7dV9$tm6IUv" role="3clFbG">
             <node concept="liA8E" id="7dV9$tm6IUw" role="2OqNvi">
@@ -15146,6 +15157,16 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1XbiPVzAKi3" role="3cqZAp">
+          <node concept="2OqwBi" id="1XbiPVzAMIV" role="3clFbG">
+            <node concept="37vLTw" id="1XbiPVzAKi1" role="2Oq$k0">
+              <ref role="3cqZAo" node="7dV9$tm6ISV" resolve="myTreeComponent" />
+            </node>
+            <node concept="liA8E" id="1XbiPVzAPUL" role="2OqNvi">
+              <ref role="37wK5l" node="36vIONTtPtE" resolve="init" />
             </node>
           </node>
         </node>
@@ -15265,7 +15286,7 @@
               <ref role="3cqZAo" node="7dV9$tm6ISP" resolve="myTestState" />
             </node>
             <node concept="liA8E" id="7dV9$tm6IVu" role="2OqNvi">
-              <ref role="37wK5l" to="sfqd:56tRMpP_f8R" resolve="addView" />
+              <ref role="37wK5l" to="sfqd:56tRMpP_f8R" resolve="addUpdateListener" />
               <node concept="37vLTw" id="2BHiRxeudIP" role="37wK5m">
                 <ref role="3cqZAo" node="7dV9$tm6ISV" resolve="myTreeComponent" />
               </node>
@@ -15278,7 +15299,7 @@
               <ref role="3cqZAo" node="7dV9$tm6ISP" resolve="myTestState" />
             </node>
             <node concept="liA8E" id="7dV9$tm6IVz" role="2OqNvi">
-              <ref role="37wK5l" to="sfqd:56tRMpP_f8R" resolve="addView" />
+              <ref role="37wK5l" to="sfqd:56tRMpP_f8R" resolve="addUpdateListener" />
               <node concept="37vLTw" id="2BHiRxeuvIn" role="37wK5m">
                 <ref role="3cqZAo" node="7dV9$tm6ISY" resolve="myProgressLineComponent" />
               </node>
@@ -15291,7 +15312,7 @@
               <ref role="3cqZAo" node="7dV9$tm6ISP" resolve="myTestState" />
             </node>
             <node concept="liA8E" id="7dV9$tm6IVC" role="2OqNvi">
-              <ref role="37wK5l" to="sfqd:56tRMpP_f8R" resolve="addView" />
+              <ref role="37wK5l" to="sfqd:56tRMpP_f8R" resolve="addUpdateListener" />
               <node concept="37vLTw" id="2BHiRxeusoR" role="37wK5m">
                 <ref role="3cqZAo" node="7dV9$tm6ISS" resolve="myOutputComponent" />
               </node>

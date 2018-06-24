@@ -51,6 +51,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   private final MPSProject myProject;
   private final FailedTestOccurrenceNavigator myTestNavigator;
   private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
+
   public UnitTestViewComponent(Project project, ConsoleView console, TestRunState testRunState, _FunctionTypes._void_P0_E0 closeListener) {
     myProject = ProjectHelper.fromIdeaProject(project);
     myTestState = testRunState;
@@ -63,10 +64,13 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     JComponent leftPanel = createTreeComponent(myActionToolComponent, myTreeComponent);
 
     myProgressLineComponent = new ProgressLine(myTestState);
+    myProgressLineComponent.init();
     myProgressLineComponent.setMinimumSize(new Dimension(0, myProgressLineComponent.getMinimumSize().height));
     myOutputComponent = new TestOutputComponent(console, myTestState);
+    myOutputComponent.init();
     myTreeComponent.addTreeSelectionListener(new TestTreeSelectionListener(myTreeComponent, statisticsModel, myOutputComponent));
     myTreeComponent.addMouseListener(new TestTreeRootMouseListener(myTreeComponent, statisticsModel, myOutputComponent));
+    myTreeComponent.init();
 
     JPanel rightPanel = createOutputComponent(console, myProgressLineComponent, myOutputComponent.getComponent(), statisticsModel);
 
@@ -78,11 +82,12 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
     add(splitter, BorderLayout.CENTER);
 
-    myTestState.addView(myTreeComponent);
-    myTestState.addView(myProgressLineComponent);
-    myTestState.addView(myOutputComponent);
+    myTestState.addUpdateListener(myTreeComponent);
+    myTestState.addUpdateListener(myProgressLineComponent);
+    myTestState.addUpdateListener(myOutputComponent);
     addCloseListener(closeListener);
   }
+
   public JComponent createActionsToolbar(ConsoleView console) {
     DefaultActionGroup group = new DefaultActionGroup(console.createConsoleActions());
     ActionManager manager = ActionManager.getInstance();
@@ -90,6 +95,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     toolbar.setLayoutPolicy(ActionToolbar.WRAP_LAYOUT_POLICY);
     return toolbar.getComponent();
   }
+
   private JComponent createTreeComponent(JComponent toolbar, JComponent tree) {
     UnitTestViewComponent.MyTreePanel treePanel = new UnitTestViewComponent.MyTreePanel(new BorderLayout());
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(tree);
@@ -97,6 +103,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     treePanel.add(toolbar, BorderLayout.NORTH);
     return treePanel;
   }
+
   private JComponent createStatisticsComponent(StatisticsTableModel testStatisticsModel) {
     JTable statisticsTable = new JBTable(testStatisticsModel);
     statisticsTable.setDefaultRenderer(TestStatisticsRow.class, new StatisticsRowRenderer());
@@ -104,23 +111,28 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     tablePanel.add(new JBScrollPane(statisticsTable));
     return tablePanel;
   }
+
   public ProcessListener getProcessListener() {
     return myProgressLineComponent.getProcessListener();
   }
+
   @Override
   public void dispose() {
     myOutputComponent.dispose();
     myTreeComponent.dispose();
     invokeCloseListeners();
   }
+
   public void addCloseListener(_FunctionTypes._void_P0_E0 listener) {
     ListSequence.fromList(myListeners).addElement(listener);
   }
+
   public void invokeCloseListeners() {
     for (_FunctionTypes._void_P0_E0 listener : ListSequence.fromList(myListeners)) {
       listener.invoke();
     }
   }
+
   private JPanel createOutputComponent(ConsoleView console, JComponent progressLine, JComponent testOutput, StatisticsTableModel statisticsModel) {
     JPanel rightPanel = new JPanel(new GridBagLayout());
 
@@ -157,6 +169,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     rightPanel.add(outputStatisticSplitter, c);
     return rightPanel;
   }
+
   public void initSplitterProportion(final Splitter splitter, float defaultProportion, final String id) {
     final PropertiesComponent propertiesComponent = PropertiesComponent.getInstance();
     String value = propertiesComponent.getValue(UnitTestViewComponent.SPLITTER_SIZE_PROPERTY + "." + id);
@@ -184,6 +197,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     public MyTreePanel(LayoutManager manager) {
       super(manager);
     }
+
     @Nullable
     @Override
     public Object getData(@NonNls String dataId) {

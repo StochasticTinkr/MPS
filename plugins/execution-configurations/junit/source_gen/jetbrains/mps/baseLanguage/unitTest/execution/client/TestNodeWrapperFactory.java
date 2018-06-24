@@ -200,7 +200,7 @@ public enum TestNodeWrapperFactory {
   }
 
   public static SNode findWrappableAncestor(SNode source, boolean isRoot) {
-    Iterable<SAbstractConcept> concepts = (isRoot ? TestNodeWrapperFactory.getWrappedRootConcepts() : TestNodeWrapperFactory.getWrappedNonRootConcepts());
+    Iterable<SAbstractConcept> concepts = (isRoot ? getWrappedRootConcepts() : getWrappedNonRootConcepts());
     return SNodeOperations.getNodeAncestorWhereConceptInList(source, Sequence.fromIterable(concepts).toGenericArray(SAbstractConcept.class), true, isRoot);
   }
 
