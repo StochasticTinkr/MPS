@@ -189,21 +189,20 @@ public final class TestRunState {
     synchronized (LOCK) {
       checkConsistency();
       myInnerData.myTerminated = true;
-      // these are the tests which have not been executed yet 
-      if (terminatingOnException) {
-        List<TestMethodKey> testsNotRunDueToError = myInnerData.myTestMethodsLeftToRun;
-        for (TestMethodKey notRunTest : testsNotRunDueToError) {
-          final String className = notRunTest.getTestCaseFqName();
-          final String methodName = notRunTest.getTestMethodFqName();
-          ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
-            public void visit(TestStateListener it) {
-              it.onLooseTest(className, methodName);
-            }
-          });
-          looseTestInternal(className, methodName);
-        }
-      }
+      myInnerData.myTerminatedCorrectly = !(terminatingOnException);
       notifyUpdateListeners();
+      // these are the tests which have not been executed yet 
+      List<TestMethodKey> testsNotRunDueToError = myInnerData.myTestMethodsLeftToRun;
+      for (TestMethodKey notRunTest : testsNotRunDueToError) {
+        final String className = notRunTest.getTestCaseFqName();
+        final String methodName = notRunTest.getTestMethodFqName();
+        ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
+          public void visit(TestStateListener it) {
+            it.onLooseTest(className, methodName);
+          }
+        });
+        looseTestInternal(className, methodName);
+      }
     }
   }
 

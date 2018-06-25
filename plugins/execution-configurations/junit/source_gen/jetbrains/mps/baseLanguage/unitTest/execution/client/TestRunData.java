@@ -26,6 +26,7 @@ public final class TestRunData {
   /*package*/ int myCompletedTests = 0;
   /*package*/ int myFailedTests = 0;
   /*package*/ boolean myTerminated;
+  /*package*/ boolean myTerminatedCorrectly;
   /*package*/ String myAvailableText = null;
   /*package*/ Key myKey = null;
 
@@ -41,7 +42,7 @@ public final class TestRunData {
     return myCompletedTests;
   }
 
-  public String getCurrentClass() {
+  public String getCurrentTestCase() {
     return myCurrentClass;
   }
 
@@ -57,11 +58,15 @@ public final class TestRunData {
     return myCurrentNotExecutedDueToTerminationMethod;
   }
 
-  public String getNotExecutedClass() {
+  public String getNotExecutedTestCase() {
     return myCurrentNotExecutedDueToTerminationClass;
   }
 
   public boolean isTerminated() {
+    return myTerminated;
+  }
+
+  public boolean isTerminatedCorrectly() {
     return myTerminated;
   }
 
@@ -86,6 +91,7 @@ public final class TestRunData {
     dataCopy.myCompletedTests = myCompletedTests;
     dataCopy.myFailedTests = myFailedTests;
     dataCopy.myTerminated = myTerminated;
+    dataCopy.myTerminatedCorrectly = myTerminatedCorrectly;
     dataCopy.myAvailableText = myAvailableText;
     dataCopy.myKey = myKey;
     return dataCopy;

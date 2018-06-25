@@ -65,7 +65,9 @@
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
-      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
+      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <property id="1221565133444" name="isFinal" index="1EXbeo" />
+      </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
@@ -224,6 +226,7 @@
   </registry>
   <node concept="312cEu" id="1zHDQsywvgL">
     <property role="TrG5h" value="TestEvent" />
+    <property role="1EXbeo" value="true" />
     <node concept="3Tm1VV" id="1zHDQsywvkp" role="1B3o_S" />
     <node concept="Wx3nA" id="1zHDQsywvlq" role="jymVt">
       <property role="TrG5h" value="START_TEST_PREFIX" />

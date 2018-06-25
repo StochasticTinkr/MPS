@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 
-/*package*/ class TestMethodTreeNode extends BaseTestTreeNode {
+/*package*/ class TestMethodTreeNode extends NonRootTestTreeNode {
   @NotNull
   protected final ITestNodeWrapper myTestMethod;
 

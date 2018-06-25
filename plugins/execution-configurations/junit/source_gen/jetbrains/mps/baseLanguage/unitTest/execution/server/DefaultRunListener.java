@@ -10,6 +10,9 @@ import org.junit.runner.notification.Failure;
 /**
  * JUnit test listener that spits out control sequences into supplied stream. 
  * These control sequences are for external process to receive JUnit events.
+ * 
+ * for the explcit contract for the events
+ * see https://junit.org/junit4/javadoc/4.12/org/junit/runner/notification/RunListener.html
  */
 public class DefaultRunListener extends RunListener {
   private final CommandOutputStream myOutput;

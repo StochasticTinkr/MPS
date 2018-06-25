@@ -4,13 +4,13 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 
-public abstract class BaseTestTreeNode extends MPSTreeNode {
+public abstract class TestTreeNode extends MPSTreeNode {
   private TestState myState = TestState.NOT_RAN;
 
-  public BaseTestTreeNode() {
+  protected TestTreeNode() {
   }
 
   @Override
@@ -21,7 +21,7 @@ public abstract class BaseTestTreeNode extends MPSTreeNode {
     }
   }
 
-  public void setState(TestState state) {
+  public void setState(@NotNull TestState state) {
     myState = state;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
@@ -30,9 +30,8 @@ public abstract class BaseTestTreeNode extends MPSTreeNode {
     });
   }
 
+  @NotNull
   public TestState getState() {
     return myState;
   }
-
-  public abstract ITestNodeWrapper getTestWrapper();
 }

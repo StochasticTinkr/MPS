@@ -129,15 +129,15 @@ public class TestToolbarPanel extends JPanel {
   private ToggleAction createSelectFirstFailedAction() {
     return new ToggleAction("Select First Failed Test When Finished", "", AllIcons.RunConfigurations.SelectFirstDefect) {
       {
-        setSelected(null, UnitTestOptions.isSelectFirstFailded());
+        setSelected(null, UnitTestOptions.isSelectFirstFailed());
       }
       @Override
       public void setSelected(AnActionEvent event, boolean setectFirstFailed) {
-        UnitTestOptions.setSelectFirstFailded(setectFirstFailed);
+        UnitTestOptions.setSelectFirstFailed(setectFirstFailed);
       }
       @Override
       public boolean isSelected(AnActionEvent event) {
-        return UnitTestOptions.isSelectFirstFailded();
+        return UnitTestOptions.isSelectFirstFailed();
       }
     };
   }

@@ -5206,6 +5206,21 @@
           <property role="1dT_AB" value="These control sequences are for external process to receive JUnit events." />
         </node>
       </node>
+      <node concept="TZ5HA" id="4iTAT3SYJjJ" role="TZ5H$">
+        <node concept="1dT_AC" id="4iTAT3SYJjK" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4iTAT3SYOk$" role="TZ5H$">
+        <node concept="1dT_AC" id="4iTAT3SYOk_" role="1dT_Ay">
+          <property role="1dT_AB" value="for the explcit contract for the events" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4iTAT3SYOkq" role="TZ5H$">
+        <node concept="1dT_AC" id="4iTAT3SYOkr" role="1dT_Ay">
+          <property role="1dT_AB" value="see https://junit.org/junit4/javadoc/4.12/org/junit/runner/notification/RunListener.html" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="1b7CZFPGW70">

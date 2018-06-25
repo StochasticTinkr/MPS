@@ -46,20 +46,23 @@ public class TestOutputComponent implements TestRunStateUpdateListener {
 
   @Override
   public void update(TestRunData data) {
-    if (data.getNotExecutedClass() != null && data.getNotExecutedMethod() != null) {
-      final String method = data.getNotExecutedMethod();
-      final String test = data.getNotExecutedClass();
-      final String text = "\nError: method '" + method + "' in '" + test + "' was not executed due to the tests execution error.\n\n";
-      final Key key = ProcessOutputTypes.STDERR;
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          appendWithParameters(test, method, text, key);
-        }
-      });
+    if (data.getNotExecutedTestCase() != null && data.getNotExecutedMethod() != null) {
+      assert data.isTerminated();
+      if (!(data.isTerminatedCorrectly())) {
+        final String method = data.getNotExecutedMethod();
+        final String test = data.getNotExecutedTestCase();
+        final String text = "\nError: method '" + method + "' in '" + test + "' was not executed due to the tests execution error.\n\n";
+        final Key key = ProcessOutputTypes.STDERR;
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            appendWithParameters(test, method, text, key);
+          }
+        });
+      }
     } else if (data.getAvailableText() != null) {
       final String text = data.getAvailableText();
       final Key key = data.getKey();
-      final String test = data.getCurrentClass();
+      final String test = data.getCurrentTestCase();
       final String method = data.getCurrentMethod();
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {

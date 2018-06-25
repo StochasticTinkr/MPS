@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
-public class TestEvent {
+public final class TestEvent {
   public static final String START_TEST_PREFIX = "<START_TEST>";
   public static final String FINISH_TEST_PREFIX = "<FINISH_TEST>";
   public static final String FAILURE_TEST_PREFIX = "<TEST_FAILURE_BEGIN>";
