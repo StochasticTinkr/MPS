@@ -54,6 +54,7 @@ import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -1389,9 +1390,13 @@ public class QueriesGenerated extends QueryProviderBase {
               location = _context.getModel().getNode(nodePtr.getNodeId());
             }
           }
-          // Reporter used to show errors only, that's why I don't check MessageKind here. 
-          // XXX nevertheless, shall change this and report info/warn as well. 
-          _context.showErrorMessage(location, msg.getText());
+          if (MessageKind.ERROR.is(msg)) {
+            _context.showErrorMessage(location, msg.getText());
+          } else if (MessageKind.WARNING.is(msg)) {
+            _context.showWarningMessage(location, msg.getText());
+          } else {
+            _context.showInformationMessage(location, msg.getText());
+          }
         }
       });
       ml.checkAllModules(ModuleChecker.CheckType.LOAD_ALL);

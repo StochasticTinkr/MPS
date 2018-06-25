@@ -147,6 +147,7 @@
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
+        <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
@@ -166,6 +167,10 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" flags="ng" index="3eNFk2">
+        <child id="1206060619838" name="condition" index="3eO9$A" />
+        <child id="1206060644605" name="statementList" index="3eOfB_" />
+      </concept>
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
@@ -445,6 +450,8 @@
         <child id="1217960314448" name="messageText" index="2k5Stb" />
         <child id="1217960407512" name="referenceNode" index="2k6f33" />
       </concept>
+      <concept id="1217969995796" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage" flags="nn" index="2kEO4f" />
+      <concept id="1217970068025" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage" flags="nn" index="2kF5Gy" />
       <concept id="2721957369897614808" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef" flags="nn" index="1bhEwm">
         <reference id="2721957369897614810" name="varmacro" index="1bhEwl" />
       </concept>
@@ -3513,30 +3520,92 @@
                                   </node>
                                 </node>
                               </node>
-                              <node concept="3SKdUt" id="6cqWk79Aawf" role="3cqZAp">
-                                <node concept="3SKdUq" id="6cqWk79Aawh" role="3SKWNk">
-                                  <property role="3SKdUp" value="Reporter used to show errors only, that's why I don't check MessageKind here." />
-                                </node>
-                              </node>
-                              <node concept="3SKdUt" id="6cqWk79AFNo" role="3cqZAp">
-                                <node concept="3SKdUq" id="6cqWk79AFNq" role="3SKWNk">
-                                  <property role="3SKdUp" value="XXX nevertheless, shall change this and report info/warn as well." />
-                                </node>
-                              </node>
-                              <node concept="3clFbF" id="6cqWk79_ZEk" role="3cqZAp">
-                                <node concept="2OqwBi" id="6cqWk79_ZL5" role="3clFbG">
-                                  <node concept="1iwH7S" id="6cqWk79_ZEj" role="2Oq$k0" />
-                                  <node concept="2k5nB$" id="6cqWk79_ZTO" role="2OqNvi">
-                                    <node concept="2OqwBi" id="6cqWk79A03g" role="2k5Stb">
-                                      <node concept="37vLTw" id="6cqWk79_ZU$" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="6cqWk79_Ysa" resolve="msg" />
-                                      </node>
-                                      <node concept="liA8E" id="6cqWk79A0fY" role="2OqNvi">
-                                        <ref role="37wK5l" to="et5u:~IMessage.getText():java.lang.String" resolve="getText" />
+                              <node concept="3clFbJ" id="5IzazlwScnf" role="3cqZAp">
+                                <node concept="3clFbS" id="5IzazlwScnh" role="3clFbx">
+                                  <node concept="3clFbF" id="6cqWk79_ZEk" role="3cqZAp">
+                                    <node concept="2OqwBi" id="6cqWk79_ZL5" role="3clFbG">
+                                      <node concept="1iwH7S" id="6cqWk79_ZEj" role="2Oq$k0" />
+                                      <node concept="2k5nB$" id="6cqWk79_ZTO" role="2OqNvi">
+                                        <node concept="2OqwBi" id="6cqWk79A03g" role="2k5Stb">
+                                          <node concept="37vLTw" id="6cqWk79_ZU$" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="6cqWk79_Ysa" resolve="msg" />
+                                          </node>
+                                          <node concept="liA8E" id="6cqWk79A0fY" role="2OqNvi">
+                                            <ref role="37wK5l" to="et5u:~IMessage.getText():java.lang.String" resolve="getText" />
+                                          </node>
+                                        </node>
+                                        <node concept="37vLTw" id="6cqWk79B07i" role="2k6f33">
+                                          <ref role="3cqZAo" node="6cqWk79AUiY" resolve="location" />
+                                        </node>
                                       </node>
                                     </node>
-                                    <node concept="37vLTw" id="6cqWk79B07i" role="2k6f33">
-                                      <ref role="3cqZAo" node="6cqWk79AUiY" resolve="location" />
+                                  </node>
+                                </node>
+                                <node concept="2OqwBi" id="5IzazlwSdlr" role="3clFbw">
+                                  <node concept="Rm8GO" id="5IzazlwScMB" role="2Oq$k0">
+                                    <ref role="Rm8GQ" to="et5u:~MessageKind.ERROR" resolve="ERROR" />
+                                    <ref role="1Px2BO" to="et5u:~MessageKind" resolve="MessageKind" />
+                                  </node>
+                                  <node concept="liA8E" id="5IzazlwSeei" role="2OqNvi">
+                                    <ref role="37wK5l" to="et5u:~MessageKind.is(jetbrains.mps.messages.IMessage):boolean" resolve="is" />
+                                    <node concept="37vLTw" id="5IzazlwSefP" role="37wK5m">
+                                      <ref role="3cqZAo" node="6cqWk79_Ysa" resolve="msg" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="3eNFk2" id="5IzazlwSeiN" role="3eNLev">
+                                  <node concept="3clFbS" id="5IzazlwSeiP" role="3eOfB_">
+                                    <node concept="3clFbF" id="5IzazlwSePd" role="3cqZAp">
+                                      <node concept="2OqwBi" id="5IzazlwSePe" role="3clFbG">
+                                        <node concept="1iwH7S" id="5IzazlwSePf" role="2Oq$k0" />
+                                        <node concept="2kEO4f" id="5IzazlwSfg9" role="2OqNvi">
+                                          <node concept="2OqwBi" id="5IzazlwSfgb" role="2k5Stb">
+                                            <node concept="37vLTw" id="5IzazlwSfgc" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="6cqWk79_Ysa" resolve="msg" />
+                                            </node>
+                                            <node concept="liA8E" id="5IzazlwSfgd" role="2OqNvi">
+                                              <ref role="37wK5l" to="et5u:~IMessage.getText():java.lang.String" resolve="getText" />
+                                            </node>
+                                          </node>
+                                          <node concept="37vLTw" id="5IzazlwSfge" role="2k6f33">
+                                            <ref role="3cqZAo" node="6cqWk79AUiY" resolve="location" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="2OqwBi" id="5IzazlwSf53" role="3eO9$A">
+                                    <node concept="Rm8GO" id="5IzazlwSfdA" role="2Oq$k0">
+                                      <ref role="Rm8GQ" to="et5u:~MessageKind.WARNING" resolve="WARNING" />
+                                      <ref role="1Px2BO" to="et5u:~MessageKind" resolve="MessageKind" />
+                                    </node>
+                                    <node concept="liA8E" id="5IzazlwSf55" role="2OqNvi">
+                                      <ref role="37wK5l" to="et5u:~MessageKind.is(jetbrains.mps.messages.IMessage):boolean" resolve="is" />
+                                      <node concept="37vLTw" id="5IzazlwSf56" role="37wK5m">
+                                        <ref role="3cqZAo" node="6cqWk79_Ysa" resolve="msg" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="9aQIb" id="5IzazlwSfmQ" role="9aQIa">
+                                  <node concept="3clFbS" id="5IzazlwSfmR" role="9aQI4">
+                                    <node concept="3clFbF" id="5IzazlwSeHS" role="3cqZAp">
+                                      <node concept="2OqwBi" id="5IzazlwSeHT" role="3clFbG">
+                                        <node concept="1iwH7S" id="5IzazlwSeHU" role="2Oq$k0" />
+                                        <node concept="2kF5Gy" id="5IzazlwSgbt" role="2OqNvi">
+                                          <node concept="2OqwBi" id="5IzazlwSgbv" role="2k5Stb">
+                                            <node concept="37vLTw" id="5IzazlwSgbw" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="6cqWk79_Ysa" resolve="msg" />
+                                            </node>
+                                            <node concept="liA8E" id="5IzazlwSgbx" role="2OqNvi">
+                                              <ref role="37wK5l" to="et5u:~IMessage.getText():java.lang.String" resolve="getText" />
+                                            </node>
+                                          </node>
+                                          <node concept="37vLTw" id="5IzazlwSgby" role="2k6f33">
+                                            <ref role="3cqZAo" node="6cqWk79AUiY" resolve="location" />
+                                          </node>
+                                        </node>
+                                      </node>
                                     </node>
                                   </node>
                                 </node>

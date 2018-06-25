@@ -7,6 +7,7 @@ import jetbrains.mps.build.util.Context;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.project.io.DescriptorIOFacade;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -25,6 +26,20 @@ import java.io.IOException;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import java.util.Objects;
+import jetbrains.mps.extapi.module.SRepositoryBase;
+import jetbrains.mps.extapi.module.SRepositoryExt;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import java.util.Map;
+import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SModule;
+import java.util.HashMap;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.project.AbstractModule;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.AbstractModelAccess;
 
 public final class ModuleLoader {
   private final SNode myBuildProject;
@@ -34,6 +49,14 @@ public final class ModuleLoader {
   private final IMessageHandler myMsgHandler;
   private FileSystem myFS;
   private final DescriptorIOFacade myDescriptorIO;
+  /**
+   * To access certain module properties (like used languages and devkits), we need to load modules temporarily.
+   * As long as generator modules could not be loaded without their source language module already present in the repository, we need to share repository
+   * between language's ModuleChecker and that of its generators.
+   * The field is not initialized unless full import is requested (CheckType.doFullImport == true)
+   */
+  private ModuleRepositoryFacade myRepository = null;
+
 
   public ModuleLoader(@NotNull SNode buildProject, @Nullable TemplateQueryContext genContext, IMessageHandler msgHandler) {
     myBuildProject = buildProject;
@@ -59,6 +82,10 @@ public final class ModuleLoader {
 
   public void checkAllModules(final ModuleChecker.CheckType type) {
     Iterable<SNode> parts = SLinkOperations.getChildren(myBuildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"));
+    if (type.doFullImport) {
+      ModuleLoader.Repo r = new ModuleLoader.Repo(new ModuleLoader.ModelAccessNoLimit());
+      myRepository = new ModuleRepositoryFacade(r);
+    }
 
     Sequence.fromIterable(SLinkOperations.collectMany(SNodeOperations.ofConcept(parts, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x14d3fb6fb843ebddL, "jetbrains.mps.build.mps.structure.BuildMps_Group")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x14d3fb6fb843ebddL, 0x14d3fb6fb843ebdeL, "modules"))).union(Sequence.fromIterable(SNodeOperations.ofConcept(parts, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule")))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -69,6 +96,9 @@ public final class ModuleLoader {
         createModuleChecker(it).check(type);
       }
     });
+
+    // XXX would be great to unregister all modules here, to dispose them explicitly, but as long as its our private repo, does it matter? 
+    // BEWARE, don't ever try to do myRepository.dispose(). MRF is CoreComponent AND singleton, dispose just makes subsequent MRF.getInstance() (yes, there are still few out there) to fail with NPE 
   }
 
   public ModuleChecker createModuleChecker(SNode module) {
@@ -76,7 +106,7 @@ public final class ModuleLoader {
     String moduleFilePath = BuildSourcePath__BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), myBuildContext);
     if (moduleFilePath == null) {
       reportError(String.format("cannot import module file for %s: file doesn't exist (%s)", SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), BuildSourcePath__BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), myBuildContext)), module);
-      return new ModuleChecker(module, myVisibleModules, myPathConverter, null, null, myMsgHandler);
+      return new ModuleChecker(module, myVisibleModules, myPathConverter, null, null, myMsgHandler, myRepository);
     }
 
     try {
@@ -88,11 +118,11 @@ public final class ModuleLoader {
     IFile file = myFS.getFile(moduleFilePath);
     if (!(file.exists())) {
       reportError(String.format("cannot import module file for %s: file doesn't exist (%s)", SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), moduleFilePath), module);
-      return new ModuleChecker(module, myVisibleModules, myPathConverter, null, null, myMsgHandler);
+      return new ModuleChecker(module, myVisibleModules, myPathConverter, null, null, myMsgHandler, myRepository);
     }
     if (file.isDirectory()) {
       reportError(String.format("cannot import module file for %s: file is a directory (%s)", SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), moduleFilePath), module);
-      return new ModuleChecker(module, myVisibleModules, myPathConverter, null, null, myMsgHandler);
+      return new ModuleChecker(module, myVisibleModules, myPathConverter, null, null, myMsgHandler, myRepository);
     }
 
     ModuleDescriptor md = null;
@@ -106,6 +136,99 @@ public final class ModuleLoader {
       reportError(String.format("cannot import module file for %s: exception: %s", SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), ex.getMessage()), module);
     }
 
-    return new ModuleChecker(module, myVisibleModules, myPathConverter, file, md, myMsgHandler);
+    if (md instanceof LanguageDescriptor && SNodeOperations.isInstanceOf(module, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
+      // A hack to support multiple generator modules per language (BuildMps_Language limits generator to [0..1]. 
+      // An idea here is to utilize BuildMps_Generator as project part, referencing its language mpl file. Though technically MPS hides 
+      // module path for BuildMps_Generator, it's possible to edit it using reflective editor. 
+      for (GeneratorDescriptor gd : ((LanguageDescriptor) md).getGenerators()) {
+        if (Objects.equals(SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid")), gd.getId().toString())) {
+          md = gd;
+          break;
+        }
+      }
+    }
+    return new ModuleChecker(module, myVisibleModules, myPathConverter, file, md, myMsgHandler, myRepository);
+  }
+
+  private static class Repo extends SRepositoryBase implements SRepositoryExt {
+    private final ModelAccess myModelAccess;
+    private final Map<SModuleId, SModule> myModules;
+
+    public Repo(ModelAccess ma) {
+      myModelAccess = ma;
+      myModules = new HashMap<SModuleId, SModule>();
+    }
+
+    public <T extends SModule> T registerModule(@NotNull T module, @NotNull MPSModuleOwner owner) {
+      SModule existing = myModules.putIfAbsent(module.getModuleId(), module);
+      if (existing != null) {
+        throw new IllegalStateException();
+      }
+      if (module instanceof AbstractModule) {
+        ((AbstractModule) module).attach(this);
+      }
+      return module;
+    }
+
+    @Override
+    public void unregisterModule(@NotNull SModule module, @NotNull MPSModuleOwner owner) {
+      SModule removed = myModules.remove(module.getModuleId());
+      if (removed != module) {
+        throw new IllegalStateException();
+      }
+      if (module instanceof AbstractModule) {
+        ((AbstractModule) module).dispose();
+      }
+    }
+
+    @Nullable
+    public SModule getModule(@NotNull SModuleId mid) {
+      return myModules.get(mid);
+    }
+    public void saveAll() {
+      throw new UnsupportedOperationException();
+    }
+    @NotNull
+    public Iterable<SModule> getModules() {
+      return new ArrayList<SModule>(myModules.values());
+    }
+
+    @NotNull
+    public ModelAccess getModelAccess() {
+      return myModelAccess;
+    }
+  }
+
+  private static class ModelAccessNoLimit extends AbstractModelAccess {
+    public boolean canRead() {
+      return true;
+    }
+    public boolean canWrite() {
+      return true;
+    }
+    public void runReadAction(Runnable p0) {
+      throw new UnsupportedOperationException();
+    }
+    public void runReadInEDT(Runnable p0) {
+      throw new UnsupportedOperationException();
+    }
+    public void runWriteAction(Runnable p0) {
+      throw new UnsupportedOperationException();
+    }
+    public void runWriteInEDT(Runnable p0) {
+      throw new UnsupportedOperationException();
+    }
+    public void executeCommand(Runnable p0) {
+      throw new UnsupportedOperationException();
+    }
+    public void executeCommandInEDT(Runnable p0) {
+      throw new UnsupportedOperationException();
+    }
+    public void executeUndoTransparentCommand(Runnable p0) {
+      throw new UnsupportedOperationException();
+    }
+    public boolean isCommandAction() {
+      return false;
+    }
   }
 }

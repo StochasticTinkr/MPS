@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,14 @@ public enum MessageKind {
     // INFORMATION.isSameOrGreaterSeverityThan(WARNING) : false
     // WARNING.isSameOrGreaterSeverityThan(INFORMATION) : true
     return ordinal() >= kind.ordinal();
+  }
+
+  /**
+   * @param msg never {@code null}
+   * @return {@code true} if message's kind is exactly the one identified by {@code this}
+   */
+  public boolean is(IMessage msg) {
+    return msg.getKind() == this;
   }
 
   @NotNull

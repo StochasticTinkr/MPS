@@ -47,6 +47,8 @@ import jetbrains.mps.build.mps.behavior.BuildMps_Generator__BehaviorDescriptor;
 import java.util.LinkedHashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.library.ModulesMiner;
@@ -54,16 +56,6 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.smodel.ModelImports;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.extapi.module.SRepositoryBase;
-import jetbrains.mps.extapi.module.SRepositoryExt;
-import org.jetbrains.mps.openapi.module.ModelAccess;
-import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.AbstractModelAccess;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -76,20 +68,19 @@ public final class ModuleChecker {
   private final IMessageHandler myReporter;
   /**
    * To access certain module properties (like used languages and devkits), we need to load modules temporarily.
-   * As long as generator modules could not be loaded without their source language module already present in the repository, we need to share repository
-   * between language's ModuleChecker and that of its generators.
-   * The field is not initialized unless CheckType.doFullImport == true
+   * The field is not in use and may stay null unless CheckType.doFullImport == true
    */
-  private ModuleRepositoryFacade myRepository;
+  private final ModuleRepositoryFacade myRepository;
   private SModule myLoadedModule;
 
-  /*package*/ ModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter, IFile moduleDescriptorFile, ModuleDescriptor moduleDescriptor, IMessageHandler reporter) {
+  /*package*/ ModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter, IFile moduleDescriptorFile, ModuleDescriptor moduleDescriptor, IMessageHandler reporter, ModuleRepositoryFacade repo) {
     myModule = module;
     myVisibleModules = visible;
     myPathConverter = pathConverter;
     myModuleDescriptorFile = moduleDescriptorFile;
     myModuleDescriptor = moduleDescriptor;
     myReporter = reporter;
+    myRepository = repo;
   }
 
   private ModuleChecker(ModuleChecker parent, SNode module, IFile moduleDescriptorFile, ModuleDescriptor moduleDescriptor) {
@@ -128,7 +119,8 @@ public final class ModuleChecker {
       checkModule(type);
     }
     if (myRepository != null && myLoadedModule != null) {
-      myRepository.unregisterModule(myLoadedModule);
+      // XXX in case myMudyle is _Language, there' might be another _Generator that references it, and we need to keep module registered. 
+      // Don't want to deal with different module kinds right now (i.e. can drop _Solution and _Generator here) 
       myLoadedModule = null;
     }
   }
@@ -736,8 +728,11 @@ public final class ModuleChecker {
     String langName = languageDescriptor.getModuleReference().getModuleName();
 
     if (languageDescriptor.getGenerators().size() > 1) {
-      report("more than one generator for language `" + langName + "'");
-      return;
+      String msg = String.format("more than one generator for language `%s'", langName);
+      myReporter.handle(Message.createMessage(MessageKind.WARNING, getClass().getName(), msg, SNodeOperations.getPointer(myModule)));
+      // fall though 
+      // It's unlikely we face this case in user models (no easy way to add more than 1 generator into a language module) 
+      // likely, it's our own hand-crafted scenario 
     }
     if (languageDescriptor.getGenerators().isEmpty()) {
       if (type.doCheck && (SLinkOperations.getTarget(language, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x7fae147806433827L, "generator")) != null)) {
@@ -855,10 +850,6 @@ public final class ModuleChecker {
     Set<SLanguage> usedLanguage = new HashSet<SLanguage>();
     Set<SModuleReference> usedDevkits = new HashSet<SModuleReference>();
 
-    if (myRepository == null) {
-      ModuleChecker.Repo r = new ModuleChecker.Repo(new ModuleChecker.ModelAccessNoLimit());
-      myRepository = new ModuleRepositoryFacade(r);
-    }
     myLoadedModule = myRepository.instantiateModule(new ModulesMiner.ModuleHandle(myModuleDescriptorFile, myModuleDescriptor), new MPSModuleOwner() {
       public boolean isHidden() {
         return true;
@@ -977,87 +968,7 @@ public final class ModuleChecker {
     }
   }
 
-  private static class Repo extends SRepositoryBase implements SRepositoryExt {
-    private final ModelAccess myModelAccess;
-    private final Map<SModuleId, SModule> myModules;
 
-    public Repo(ModelAccess ma) {
-      myModelAccess = ma;
-      myModules = new HashMap<SModuleId, SModule>();
-    }
-
-    public <T extends SModule> T registerModule(@NotNull T module, @NotNull MPSModuleOwner owner) {
-      SModule existing = myModules.putIfAbsent(module.getModuleId(), module);
-      if (existing != null) {
-        throw new IllegalStateException();
-      }
-      if (module instanceof AbstractModule) {
-        ((AbstractModule) module).attach(this);
-      }
-      return module;
-    }
-
-    @Override
-    public void unregisterModule(@NotNull SModule module, @NotNull MPSModuleOwner owner) {
-      SModule removed = myModules.remove(module.getModuleId());
-      if (removed != module) {
-        throw new IllegalStateException();
-      }
-      if (module instanceof AbstractModule) {
-        ((AbstractModule) module).dispose();
-      }
-    }
-
-    @Nullable
-    public SModule getModule(@NotNull SModuleId mid) {
-      return myModules.get(mid);
-    }
-    public void saveAll() {
-      throw new UnsupportedOperationException();
-    }
-    @NotNull
-    public Iterable<SModule> getModules() {
-      return new ArrayList<SModule>(myModules.values());
-    }
-
-    @NotNull
-    public ModelAccess getModelAccess() {
-      return myModelAccess;
-    }
-  }
-
-  private static class ModelAccessNoLimit extends AbstractModelAccess {
-    public boolean canRead() {
-      return true;
-    }
-    public boolean canWrite() {
-      return true;
-    }
-    public void runReadAction(Runnable p0) {
-      throw new UnsupportedOperationException();
-    }
-    public void runReadInEDT(Runnable p0) {
-      throw new UnsupportedOperationException();
-    }
-    public void runWriteAction(Runnable p0) {
-      throw new UnsupportedOperationException();
-    }
-    public void runWriteInEDT(Runnable p0) {
-      throw new UnsupportedOperationException();
-    }
-    public void executeCommand(Runnable p0) {
-      throw new UnsupportedOperationException();
-    }
-    public void executeCommandInEDT(Runnable p0) {
-      throw new UnsupportedOperationException();
-    }
-    public void executeUndoTransparentCommand(Runnable p0) {
-      throw new UnsupportedOperationException();
-    }
-    public boolean isCommandAction() {
-      return false;
-    }
-  }
   private static SNode createBuildMps_ModuleDependencyOnModule_yr5c5g_a0a0a0a31a13(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule"), null, null, false);
