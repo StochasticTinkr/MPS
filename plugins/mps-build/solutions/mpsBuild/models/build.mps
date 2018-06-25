@@ -30298,6 +30298,12 @@
               <ref role="3bR37D" node="1xb0AuwN7WS" resolve="JUnit" />
             </node>
           </node>
+          <node concept="1SiIV0" id="46rVcNAEN9v" role="3bR37C">
+            <node concept="3bR9La" id="46rVcNAEN9w" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
+            </node>
+          </node>
         </node>
         <node concept="1E0d5M" id="3AyJARAAl5S" role="1E1XAP">
           <ref role="1E0d5P" node="3AyJARA_gND" resolve="jetbrains.mps.lang.test.generator.rt" />
