@@ -15,6 +15,7 @@ public final class LanguageConceptSwitch {
   public static final int TestArgument = 3;
   public static final int TestAssertion = 4;
   public static final int TransformationMatchAssertion = 5;
+  public static final int TransformationMatchManyAssertion = 6;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x68015e26cc4d49dbL, 0x8715b643faea1769L);
@@ -24,6 +25,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x7b1db36ecf09c6aL, TestArgument);
     builder.put(0x7b1db36ecf0d058L, TestAssertion);
     builder.put(0x7b1db36ecf0d057L, TransformationMatchAssertion);
+    builder.put(0x5812b95d667f29d9L, TransformationMatchManyAssertion);
     myIndex = builder.seal();
   }
 

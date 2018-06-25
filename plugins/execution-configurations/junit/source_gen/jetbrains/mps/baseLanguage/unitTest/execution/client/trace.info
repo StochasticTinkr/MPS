@@ -1946,57 +1946,69 @@
       <node id="6340472395757571898" at="19,0,20,0" concept="5" trace="myMethods" />
       <node id="6340472395757379487" at="21,58,22,28" concept="15" />
       <node id="2062028767196075458" at="22,28,23,89" concept="4" />
-      <node id="3127778616804444226" at="25,58,26,221" concept="9" />
+      <node id="3127778616804444226" at="25,83,26,221" concept="9" />
       <node id="3127778616804478937" at="26,221,27,138" concept="11" />
       <node id="3127778616804516245" at="27,138,28,141" concept="11" />
       <node id="3127778616804608948" at="28,141,29,142" concept="11" />
       <node id="3127778616804453058" at="29,142,30,62" concept="9" />
-      <node id="6340472395758050716" at="32,39,33,25" concept="10" />
-      <node id="6340472395758050725" at="38,49,39,45" concept="10" />
-      <node id="6340472395758050734" at="43,35,44,30" concept="10" />
-      <node id="2062028767196022119" at="52,31,53,16" concept="10" />
-      <node id="2062028767196108613" at="57,27,58,59" concept="10" />
-      <node id="2062028767196084943" at="62,29,63,27" concept="10" />
-      <node id="1350343323801050006" at="68,54,69,21" concept="10" />
-      <node id="6340472395758050712" at="32,0,35,0" concept="8" trace="isTestCase#()Z" />
-      <node id="2062028767196020930" at="52,0,55,0" concept="8" trace="isTestCase#()Z" />
-      <node id="6340472395758050729" at="42,0,46,0" concept="8" trace="getName#()Ljava/lang/String;" />
-      <node id="2062028767196053403" at="56,0,60,0" concept="8" trace="getName#()Ljava/lang/String;" />
-      <node id="2062028767196058592" at="61,0,65,0" concept="8" trace="getFqName#()Ljava/lang/String;" />
-      <node id="6340472395758050719" at="36,0,41,0" concept="8" trace="getTestCase#()Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
-      <node id="1350343323801037559" at="66,0,71,0" concept="8" trace="getTestMethods#()Ljava/lang/Iterable;" />
-      <node id="6340472395758050707" at="30,62,47,10" concept="10" />
-      <node id="6340472395758050705" at="25,0,49,0" concept="8" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/AbstractTestWrapper;" />
-      <node id="6340472395757573859" at="23,89,49,55" concept="4" />
-      <node id="6340472395757379480" at="21,0,51,0" concept="2" trace="GeneratorTestWrapper#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="6340472395758050715" at="32,39,33,25" />
-      <scope id="6340472395758050724" at="38,49,39,45" />
-      <scope id="6340472395758050733" at="43,35,44,30" />
-      <scope id="2062028767196020934" at="52,31,53,16" />
-      <scope id="2062028767196053407" at="57,27,58,59" />
-      <scope id="2062028767196058596" at="62,29,63,27" />
-      <scope id="1350343323801037572" at="68,54,69,21" />
-      <scope id="6340472395758050712" at="32,0,35,0" />
-      <scope id="2062028767196020930" at="52,0,55,0" />
-      <scope id="6340472395758050729" at="42,0,46,0" />
-      <scope id="2062028767196053403" at="56,0,60,0" />
-      <scope id="2062028767196058592" at="61,0,65,0" />
-      <scope id="6340472395758050719" at="36,0,41,0" />
-      <scope id="1350343323801037559" at="66,0,71,0" />
-      <scope id="6340472395758050706" at="25,58,47,10">
+      <node id="6340472395758050707" at="30,62,31,114" concept="10" />
+      <node id="2062028767196022119" at="36,31,37,16" concept="10" />
+      <node id="2062028767196108613" at="41,27,42,59" concept="10" />
+      <node id="2062028767196084943" at="46,29,47,27" concept="10" />
+      <node id="1350343323801050006" at="52,54,53,21" concept="10" />
+      <node id="4727632598642427624" at="57,0,58,0" concept="5" trace="myTestCase" />
+      <node id="4727632598642439382" at="58,0,59,0" concept="5" trace="myName" />
+      <node id="4727632598642414426" at="60,108,61,34" concept="15" />
+      <node id="4727632598642427628" at="61,34,62,28" concept="4" />
+      <node id="4727632598642439386" at="62,28,63,20" concept="4" />
+      <node id="4727632598642420291" at="67,33,68,19" concept="10" />
+      <node id="4727632598642420300" at="73,43,74,24" concept="10" />
+      <node id="4727632598642441831" at="78,29,79,20" concept="10" />
+      <node id="2062028767196020930" at="36,0,39,0" concept="8" trace="isTestCase#()Z" />
+      <node id="2062028767196053403" at="40,0,44,0" concept="8" trace="getName#()Ljava/lang/String;" />
+      <node id="2062028767196058592" at="45,0,49,0" concept="8" trace="getFqName#()Ljava/lang/String;" />
+      <node id="4727632598642420287" at="66,0,70,0" concept="8" trace="isTestCase#()Z" />
+      <node id="4727632598642420303" at="77,0,81,0" concept="8" trace="getName#()Ljava/lang/String;" />
+      <node id="1350343323801037559" at="50,0,55,0" concept="8" trace="getTestMethods#()Ljava/lang/Iterable;" />
+      <node id="4727632598642401026" at="60,0,65,0" concept="2" trace="TransformMatchStatementWrapper#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/GeneratorTestWrapper;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
+      <node id="4727632598642420294" at="71,0,76,0" concept="8" trace="getTestCase#()Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+      <node id="6340472395758050705" at="25,0,33,0" concept="8" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/GeneratorTestWrapper/TransformMatchStatementWrapper;" />
+      <node id="6340472395757573859" at="23,89,33,55" concept="4" />
+      <node id="6340472395757379480" at="21,0,35,0" concept="2" trace="GeneratorTestWrapper#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="2062028767196020934" at="36,31,37,16" />
+      <scope id="2062028767196053407" at="41,27,42,59" />
+      <scope id="2062028767196058596" at="46,29,47,27" />
+      <scope id="1350343323801037572" at="52,54,53,21" />
+      <scope id="4727632598642420290" at="67,33,68,19" />
+      <scope id="4727632598642420299" at="73,43,74,24" />
+      <scope id="4727632598642420307" at="78,29,79,20" />
+      <scope id="2062028767196020930" at="36,0,39,0" />
+      <scope id="4727632598642401030" at="60,108,63,20" />
+      <scope id="2062028767196053403" at="40,0,44,0" />
+      <scope id="2062028767196058592" at="45,0,49,0" />
+      <scope id="4727632598642420287" at="66,0,70,0" />
+      <scope id="4727632598642420303" at="77,0,81,0" />
+      <scope id="1350343323801037559" at="50,0,55,0" />
+      <scope id="4727632598642401026" at="60,0,65,0">
+        <var name="name" id="4727632598642402903" />
+        <var name="testCase" id="4727632598642401873" />
+        <var name="testNode" id="4727632598642413836" />
+      </scope>
+      <scope id="4727632598642420294" at="71,0,76,0" />
+      <scope id="6340472395758050706" at="25,83,31,114">
         <var name="i" id="3127778616804444227" />
         <var name="methodName" id="3127778616804453056" />
       </scope>
-      <scope id="6340472395758050705" at="25,0,49,0">
+      <scope id="6340472395758050705" at="25,0,33,0">
         <var name="it" id="6340472395758050705" />
       </scope>
-      <scope id="6340472395757379481" at="21,58,49,55" />
-      <scope id="6340472395757379480" at="21,0,51,0">
+      <scope id="6340472395757379481" at="21,58,33,55" />
+      <scope id="6340472395757379480" at="21,0,35,0">
         <var name="node" id="6340472395757379469" />
       </scope>
-      <unit id="6340472395758050710" at="31,19,47,9" name="jetbrains.mps.baseLanguage.unitTest.execution.client.GeneratorTestWrapper$1$1" />
-      <unit id="6340472395758050705" at="24,214,49,5" name="jetbrains.mps.baseLanguage.unitTest.execution.client.GeneratorTestWrapper$1" />
-      <unit id="6340472395757379476" at="17,0,72,0" name="jetbrains.mps.baseLanguage.unitTest.execution.client.GeneratorTestWrapper" />
+      <unit id="6340472395758050705" at="24,214,33,5" name="jetbrains.mps.baseLanguage.unitTest.execution.client.GeneratorTestWrapper$1" />
+      <unit id="4727632598642386523" at="56,0,82,0" name="jetbrains.mps.baseLanguage.unitTest.execution.client.GeneratorTestWrapper$TransformMatchStatementWrapper" />
+      <unit id="6340472395757379476" at="17,0,83,0" name="jetbrains.mps.baseLanguage.unitTest.execution.client.GeneratorTestWrapper" />
     </file>
   </root>
 </debug-info>

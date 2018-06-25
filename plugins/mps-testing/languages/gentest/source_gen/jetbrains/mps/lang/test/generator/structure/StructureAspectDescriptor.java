@@ -18,6 +18,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTestArgument = createDescriptorForTestArgument();
   /*package*/ final ConceptDescriptor myConceptTestAssertion = createDescriptorForTestAssertion();
   /*package*/ final ConceptDescriptor myConceptTransformationMatchAssertion = createDescriptorForTransformationMatchAssertion();
+  /*package*/ final ConceptDescriptor myConceptTransformationMatchManyAssertion = createDescriptorForTransformationMatchManyAssertion();
   private final LanguageConceptSwitch myConceptIndex;
 
   public StructureAspectDescriptor() {
@@ -26,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptArgumentReference, myConceptGeneratorTest, myConceptModelArgument, myConceptTestArgument, myConceptTestAssertion, myConceptTransformationMatchAssertion);
+    return Arrays.asList(myConceptArgumentReference, myConceptGeneratorTest, myConceptModelArgument, myConceptTestArgument, myConceptTestAssertion, myConceptTransformationMatchAssertion, myConceptTransformationMatchManyAssertion);
   }
 
   @Override
@@ -45,6 +46,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptTestAssertion;
       case LanguageConceptSwitch.TransformationMatchAssertion:
         return myConceptTransformationMatchAssertion;
+      case LanguageConceptSwitch.TransformationMatchManyAssertion:
+        return myConceptTransformationMatchManyAssertion;
       default:
         return null;
     }
@@ -101,6 +104,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("inputModel", 0x7b1db36ecf0d05eL).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL).optional(false).ordered(true).multiple(false).origin("554465258093203550").done();
     b.aggregate("referenceModel", 0x7b1db36ecf0d060L).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL).optional(false).ordered(true).multiple(false).origin("554465258093203552").done();
     b.aggregate("transformationPlan", 0x7b1db36ecf0d063L).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL).optional(true).ordered(true).multiple(false).origin("554465258093203555").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTransformationMatchManyAssertion() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.test.generator", "TransformationMatchManyAssertion", 0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x5812b95d667f29d9L);
+    b.class_(false, false, false);
+    b.parent(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d058L);
+    b.origin("r:fc8379f0-84d2-4927-817e-ae0057474174(jetbrains.mps.lang.test.generator.structure)/6346338635721157081");
+    b.aggregate("inputModel", 0x7b1db36ecf0d05eL).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL).optional(false).ordered(true).multiple(false).origin("6346338635721157083").done();
+    b.aggregate("referenceModels", 0x7b1db36ecf0d060L).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL).optional(false).ordered(true).multiple(true).origin("6346338635721157084").done();
+    b.aggregate("transformationPlan", 0x7b1db36ecf0d063L).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL).optional(true).ordered(true).multiple(false).origin("6346338635721157085").done();
     return b.create();
   }
 }

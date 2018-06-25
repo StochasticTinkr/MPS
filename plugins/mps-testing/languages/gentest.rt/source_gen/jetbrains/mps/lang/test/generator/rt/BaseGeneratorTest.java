@@ -17,6 +17,8 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.junit.Assert;
+import java.util.Collection;
+import java.util.Iterator;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.InterpretedPlanProvider;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -69,6 +71,15 @@ public class BaseGeneratorTest implements EnvironmentAware {
       sb.append(nd.print());
     }
     Assert.fail("Transformation output model doesn't match reference one:\n" + sb.toString());
+  }
+
+  protected final void assertMatch(Collection<SModel> actual, SModel... expected) {
+    // FIXME move all assert methods into dedicated ModelAsserts class 
+    assert actual.size() == expected.length;
+    Iterator<SModel> it = actual.iterator();
+    for (SModel ex : expected) {
+      assertMatch(it.next(), ex);
+    }
   }
 
   protected final ModelGenerationPlan.Provider planProviderFromModel(final SModel gpm) {

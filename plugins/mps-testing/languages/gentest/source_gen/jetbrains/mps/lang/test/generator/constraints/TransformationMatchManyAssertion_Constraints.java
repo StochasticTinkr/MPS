@@ -17,9 +17,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class TransformationMatchAssertion_Constraints extends BaseConstraintsDescriptor {
-  public TransformationMatchAssertion_Constraints() {
-    super(MetaAdapterFactory.getConcept(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d057L, "jetbrains.mps.lang.test.generator.structure.TransformationMatchAssertion"));
+public class TransformationMatchManyAssertion_Constraints extends BaseConstraintsDescriptor {
+  public TransformationMatchManyAssertion_Constraints() {
+    super(MetaAdapterFactory.getConcept(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x5812b95d667f29d9L, "jetbrains.mps.lang.test.generator.structure.TransformationMatchManyAssertion"));
   }
 
   @Override
@@ -39,14 +39,14 @@ public class TransformationMatchAssertion_Constraints extends BaseConstraintsDes
   }
   private static boolean staticCanBeAParent(SNode node, SNode childNode, SAbstractConcept childConcept, SContainmentLink link) {
     // this assertion is allowed to reference arguments that point to model only. 
+    // FIXME introduce an argument kind to hold collection of models and allow to reference it from referenceModels 
     if (childNode != null && SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL, "jetbrains.mps.lang.test.generator.structure.ArgumentReference"))) {
-      if (link.equals(MetaAdapterFactory.getContainmentLink(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d057L, 0x7b1db36ecf0d05eL, "inputModel")) || link.equals(MetaAdapterFactory.getContainmentLink(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d057L, 0x7b1db36ecf0d060L, "referenceModel")) || link.equals(MetaAdapterFactory.getContainmentLink(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d057L, 0x7b1db36ecf0d063L, "transformationPlan"))) {
+      if (link.equals(MetaAdapterFactory.getContainmentLink(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x5812b95d667f29d9L, 0x7b1db36ecf0d05eL, "inputModel")) || link.equals(MetaAdapterFactory.getContainmentLink(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x5812b95d667f29d9L, 0x7b1db36ecf0d060L, "referenceModels")) || link.equals(MetaAdapterFactory.getContainmentLink(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d057L, 0x7b1db36ecf0d063L, "transformationPlan"))) {
         SNode arg = SLinkOperations.getTarget(SNodeOperations.as(childNode, MetaAdapterFactory.getConcept(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL, "jetbrains.mps.lang.test.generator.structure.ArgumentReference")), MetaAdapterFactory.getReferenceLink(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL, 0x7b1db36ecf0d05cL, "arg"));
         return (arg == null) || SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(arg)), MetaAdapterFactory.getConcept(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf09c6eL, "jetbrains.mps.lang.test.generator.structure.ModelArgument"));
       }
-      // fall through 
     }
     return true;
   }
-  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:d9fe9834-daa9-425b-9f8a-1debaf95f372(jetbrains.mps.lang.test.generator.constraints)", "7985317431306261564");
+  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:d9fe9834-daa9-425b-9f8a-1debaf95f372(jetbrains.mps.lang.test.generator.constraints)", "6346338635721157191");
 }

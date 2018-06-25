@@ -15,6 +15,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TestArgument;
   private ConceptPresentation props_TestAssertion;
   private ConceptPresentation props_TransformationMatchAssertion;
+  private ConceptPresentation props_TransformationMatchManyAssertion;
 
   @Override
   @Nullable
@@ -58,10 +59,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TransformationMatchAssertion:
         if (props_TransformationMatchAssertion == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("transform and match primary output model");
           cpb.rawPresentation("TransformationMatchAssertion");
           props_TransformationMatchAssertion = cpb.create();
         }
         return props_TransformationMatchAssertion;
+      case LanguageConceptSwitch.TransformationMatchManyAssertion:
+        if (props_TransformationMatchManyAssertion == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("transform and match multiple output models");
+          cpb.rawPresentation("TransformationMatchManyAssertion");
+          props_TransformationMatchManyAssertion = cpb.create();
+        }
+        return props_TransformationMatchManyAssertion;
     }
     return null;
   }

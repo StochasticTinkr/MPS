@@ -102,6 +102,7 @@
   <node concept="1TIwiD" id="uLQNrGWd1n">
     <property role="EcuMT" value="554465258093203543" />
     <property role="TrG5h" value="TransformationMatchAssertion" />
+    <property role="R4oN_" value="transform and match primary output model" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="uLQNrGWd1p" role="PzmwI">
       <ref role="PrY4T" node="uLQNrGWd1o" resolve="TestAssertion" />
@@ -141,6 +142,35 @@
       <property role="20kJfa" value="arg" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="uLQNrGW9LE" resolve="TestArgument" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5wiIlPAvMBp">
+    <property role="EcuMT" value="6346338635721157081" />
+    <property role="TrG5h" value="TransformationMatchManyAssertion" />
+    <property role="R4oN_" value="transform and match multiple output models" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="5wiIlPAvMBq" role="PzmwI">
+      <ref role="PrY4T" node="uLQNrGWd1o" resolve="TestAssertion" />
+    </node>
+    <node concept="1TJgyj" id="5wiIlPAvMBr" role="1TKVEi">
+      <property role="IQ2ns" value="554465258093203550" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="inputModel" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="uLQNrGWd1r" resolve="ArgumentReference" />
+    </node>
+    <node concept="1TJgyj" id="5wiIlPAvMBs" role="1TKVEi">
+      <property role="IQ2ns" value="554465258093203552" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="referenceModels" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="uLQNrGWd1r" resolve="ArgumentReference" />
+    </node>
+    <node concept="1TJgyj" id="5wiIlPAvMBt" role="1TKVEi">
+      <property role="IQ2ns" value="554465258093203555" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="transformationPlan" />
+      <ref role="20lvS9" node="uLQNrGWd1r" resolve="ArgumentReference" />
     </node>
   </node>
 </model>

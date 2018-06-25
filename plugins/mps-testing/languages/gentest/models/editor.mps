@@ -15,6 +15,7 @@
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
+        <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
@@ -227,6 +228,32 @@
             <property role="Vb096" value="DARK_GREEN" />
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="5wiIlPAvMBR">
+    <ref role="1XX52x" to="lur:5wiIlPAvMBp" resolve="TransformationMatchManyAssertion" />
+    <node concept="3EZMnI" id="5wiIlPAvMBT" role="2wV5jI">
+      <node concept="3F0ifn" id="5wiIlPAvMBU" role="3EZMnx">
+        <property role="3F0ifm" value="transform model " />
+      </node>
+      <node concept="3F1sOY" id="5wiIlPAvMBV" role="3EZMnx">
+        <ref role="1NtTu8" to="lur:5wiIlPAvMBr" resolve="inputModel" />
+      </node>
+      <node concept="2iRfu4" id="5wiIlPAvMBW" role="2iSdaV" />
+      <node concept="3F0ifn" id="5wiIlPAvMBX" role="3EZMnx">
+        <property role="3F0ifm" value=" with plan " />
+      </node>
+      <node concept="3F1sOY" id="5wiIlPAvMBY" role="3EZMnx">
+        <ref role="1NtTu8" to="lur:5wiIlPAvMBt" resolve="transformationPlan" />
+      </node>
+      <node concept="3F0ifn" id="5wiIlPAvMBZ" role="3EZMnx">
+        <property role="3F0ifm" value="and match " />
+      </node>
+      <node concept="3F2HdR" id="5wiIlPAvMCw" role="3EZMnx">
+        <property role="2czwfO" value="," />
+        <ref role="1NtTu8" to="lur:5wiIlPAvMBs" resolve="referenceModels" />
+        <node concept="2iRfu4" id="5wiIlPAvMCy" role="2czzBx" />
       </node>
     </node>
   </node>
