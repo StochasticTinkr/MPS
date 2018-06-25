@@ -120,6 +120,7 @@
   </dependencyVersions>
   <runtime>
     <dependency reexport="false">c8cbf416-5e11-499c-816d-60b07b47b8c1(jetbrains.mps.lang.test.generator.rt)</dependency>
+    <dependency reexport="false">49808fad-9d41-4b96-83fa-9231640f6b2b(JUnit)</dependency>
   </runtime>
   <extendedLanguages />
 </language>

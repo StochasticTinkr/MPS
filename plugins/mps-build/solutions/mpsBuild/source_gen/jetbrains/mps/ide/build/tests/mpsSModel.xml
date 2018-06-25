@@ -129,6 +129,7 @@
     <echoxml file="${build.tmp}/default/jetbrains.mps.test.smodel.jar/META-INF/module.xml">
       <module namespace="jetbrains.mps.test.smodel" type="solution" uuid="494e76b6-a751-488a-8cfa-cbf8aead39e9">
         <dependencies>
+          <module ref="49808fad-9d41-4b96-83fa-9231640f6b2b(JUnit)" />
           <module ref="c8cbf416-5e11-499c-816d-60b07b47b8c1(jetbrains.mps.lang.test.generator.rt)" />
         </dependencies>
         <classpath>
@@ -407,6 +408,7 @@
         <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.IDEA}/lib/junit-4.12.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />

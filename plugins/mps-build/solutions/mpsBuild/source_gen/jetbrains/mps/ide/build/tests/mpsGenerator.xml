@@ -314,6 +314,189 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceinfo-testWeavingInterpreted.data-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceinfo-testWeavingInterpreted.data-languageModels" prefix="module/languageModels" />
     </jar>
+    <mkdir dir="${build.layout}/crossmodel" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.entity.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.entity.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.entity.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.generator.test.crossmodel.entity" type="language" uuid="4d14758c-3ecb-486d-b8c8-ea5beb8ae408">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.generator.test.crossmodel.entity-src.jar" descriptor="jetbrains.mps.generator.test.crossmodel.entity.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.entity.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.entity" />
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/entity/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.entity.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.entity-generator.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.entity-generator.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.entity-generator.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718" type="generator" uuid="0748f69c-0f19-4fe4-84a5-b51ed82f0548">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.generator.test.crossmodel.entity-src.jar" descriptor="jetbrains.mps.generator.test.crossmodel.entity.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.entity-generator.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.entity-generator.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-generator-test-entity-generator-template">
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/entity/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-generator-test-entity-languageModels">
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/entity/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.entity-src.jar" duplicate="preserve">
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/entity/generator/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/entity/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/languages/languageDesign/generator/test/entity/jetbrains.mps.generator.test.crossmodel.entity.mpl" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-generator-test-entity-generator-template" prefix="module/generator/template" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-generator-test-entity-languageModels" prefix="module/languageModels" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.property.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.property.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.property.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.generator.test.crossmodel.property" type="language" uuid="dc1cc948-6f43-4687-90cb-17dd5cb27219">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.generator.test.crossmodel.property-src.jar" descriptor="jetbrains.mps.generator.test.crossmodel.property.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.property.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property" />
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/property/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.property.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.property-generator.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.property-generator.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.property-generator.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.generator.test.crossmodel.property#5533782486491461721" type="generator" uuid="708caccd-8eb1-451b-a7a7-f8ae5e214206">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.generator.test.crossmodel.property-src.jar" descriptor="jetbrains.mps.generator.test.crossmodel.property.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.property-generator.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property#5533782486491461721" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.generator.test.crossmodel.property-generator.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-generator-test-property-generator-template">
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/property/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-generator-test-property-languageModels">
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/property/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.property-src.jar" duplicate="preserve">
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/property/generator/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/property/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/languages/languageDesign/generator/test/property/jetbrains.mps.generator.test.crossmodel.property.mpl" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-generator-test-property-generator-template" prefix="module/generator/template" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-generator-test-property-languageModels" prefix="module/languageModels" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.generator.crossmodel.sandbox.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.generator.crossmodel.sandbox.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.generator.crossmodel.sandbox.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.generator.crossmodel.sandbox" type="solution" uuid="381c65cf-580d-4518-a354-e370843af551">
+        <dependencies />
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.generator.crossmodel.sandbox-src.jar" descriptor="jetbrains.mps.generator.crossmodel.sandbox.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/crossmodel/jetbrains.mps.generator.crossmodel.sandbox.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.generator.crossmodel.sandbox" />
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/crossmodel/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.generator.crossmodel.sandbox.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-generator-test-crossmodel-models">
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/crossmodel/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/crossmodel/jetbrains.mps.generator.crossmodel.sandbox-src.jar" duplicate="preserve">
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/crossmodel/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/languages/languageDesign/generator/test/crossmodel/jetbrains.mps.generator.crossmodel.sandbox.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-generator-test-crossmodel-models" prefix="module/models" />
+    </jar>
     <mkdir dir="${build.layout}/xmodel-tests" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.generator.xmodel.build.test.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.generator.xmodel.build.test.jar/META-INF" />
@@ -362,7 +545,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.baseLanguage.overloadedOperators.sandbox, java.compile.jetbrains.mps.generator.tests, java.compile.jetbrains.mps.traceInfo.testWeaving, java.compile.jetbrains.mps.traceInfo.testWeavingGenerated.data, java.compile.jetbrains.mps.traceInfo.testWeavingGenerated.data#6186432342008486849, java.compile.jetbrains.mps.traceInfo.testWeavingInterpreted.data, java.compile.jetbrains.mps.traceInfo.testWeavingInterpreted.data#2819311507031176971, java.compile.jetbrains.mps.generator.xmodel.build.test" />
+  <target name="compileJava" depends="java.compile.jetbrains.mps.baseLanguage.overloadedOperators.sandbox, java.compile.jetbrains.mps.generator.tests, java.compile.jetbrains.mps.generator.test.crossmodel.entity, java.compile.jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718, java.compile.jetbrains.mps.generator.test.crossmodel.property, java.compile.jetbrains.mps.generator.test.crossmodel.property#5533782486491461721, java.compile.jetbrains.mps.generator.crossmodel.sandbox, java.compile.jetbrains.mps.generator.test.crossmodel.property#g2, java.compile.jetbrains.mps.traceInfo.testWeaving, java.compile.jetbrains.mps.traceInfo.testWeavingGenerated.data, java.compile.jetbrains.mps.traceInfo.testWeavingGenerated.data#6186432342008486849, java.compile.jetbrains.mps.traceInfo.testWeavingInterpreted.data, java.compile.jetbrains.mps.traceInfo.testWeavingInterpreted.data#2819311507031176971, java.compile.jetbrains.mps.generator.xmodel.build.test" />
   
   <target name="processResources" />
   
@@ -397,6 +580,7 @@
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.aspect.typesystem.jar" />
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.general-purpose.jar" />
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-descriptor.jar" />
+      <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.templates.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
@@ -409,6 +593,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationParameters.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.plan.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
@@ -473,6 +658,9 @@
       <library file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
       <chunk>
         <module file="${basedir}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.msd" />
+        <module file="${basedir}/languages/languageDesign/generator/test/crossmodel/jetbrains.mps.generator.crossmodel.sandbox.msd" />
+        <module file="${basedir}/languages/languageDesign/generator/test/entity/jetbrains.mps.generator.test.crossmodel.entity.mpl" />
+        <module file="${basedir}/languages/languageDesign/generator/test/property/jetbrains.mps.generator.test.crossmodel.property.mpl" />
         <module file="${basedir}/testbench/testsolutions/generator.test/jetbrains.mps.generator.tests.msd" />
         <module file="${basedir}/testbench/modules/xmodel.build/jetbrains.mps.generator.xmodel.build.test.msd" />
         <module file="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/jetbrains.mps.traceInfo.testWeavingGenerated.data.mpl" />
@@ -534,28 +722,31 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.generator.tests" depends="fetchDependencies">
+  <target name="java.compile.jetbrains.mps.generator.tests" depends="java.compile.jetbrains.mps.generator.crossmodel.sandbox, java.compile.jetbrains.mps.generator.test.crossmodel.entity, java.compile.jetbrains.mps.generator.test.crossmodel.property, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.generator.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.generator.tests" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/testbench/testsolutions/generator.test/test_gen/" />
       <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
         <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.crossmodel.sandbox" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.entity" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
@@ -582,6 +773,249 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.generator.tests">
       <fileset dir="${basedir}/testbench/testsolutions/generator.test/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.generator.test.crossmodel.entity" depends="java.compile.jetbrains.mps.generator.test.crossmodel.property, fetchDependencies">
+    <mkdir dir="${basedir}/languages/languageDesign/generator/test/entity/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.entity" />
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.entity" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/languages/languageDesign/generator/test/entity/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.7.2.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.aspects.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.entity">
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/entity/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718" depends="java.compile.jetbrains.mps.generator.test.crossmodel.entity, java.compile.jetbrains.mps.generator.test.crossmodel.property, java.compile.jetbrains.mps.generator.test.crossmodel.property#5533782486491461721, fetchDependencies">
+    <mkdir dir="${basedir}/languages/languageDesign/generator/test/entity/generator/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718" />
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/languages/languageDesign/generator/test/entity/generator/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.entity" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property#5533782486491461721" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.7.2.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718">
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/entity/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.generator.test.crossmodel.property" depends="fetchDependencies">
+    <mkdir dir="${basedir}/languages/languageDesign/generator/test/property/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property" />
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/languages/languageDesign/generator/test/property/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.7.2.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.aspects.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property">
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/property/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.generator.test.crossmodel.property#5533782486491461721" depends="java.compile.jetbrains.mps.generator.test.crossmodel.property, fetchDependencies">
+    <mkdir dir="${basedir}/languages/languageDesign/generator/test/property/generator/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property#5533782486491461721" />
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property#5533782486491461721" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/languages/languageDesign/generator/test/property/generator/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.7.2.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property#5533782486491461721">
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/property/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.generator.crossmodel.sandbox" depends="java.compile.jetbrains.mps.generator.test.crossmodel.entity, java.compile.jetbrains.mps.generator.test.crossmodel.property, fetchDependencies">
+    <mkdir dir="${basedir}/languages/languageDesign/generator/test/crossmodel/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.generator.crossmodel.sandbox" />
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.generator.crossmodel.sandbox" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/languages/languageDesign/generator/test/crossmodel/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.entity" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.7.2.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.generator.crossmodel.sandbox">
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/crossmodel/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.generator.test.crossmodel.property#g2" depends="java.compile.jetbrains.mps.generator.test.crossmodel.property, fetchDependencies">
+    <mkdir dir="${basedir}/languages/languageDesign/generator/test/property/gen2/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property#g2" />
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property#g2" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/languages/languageDesign/generator/test/property/gen2/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.7.2.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property#g2">
+      <fileset dir="${basedir}/languages/languageDesign/generator/test/property/gen2/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -965,6 +1399,9 @@
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
+      <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.crossmodel.sandbox.jar" />
+      <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.entity.jar" />
+      <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.property.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">
@@ -1064,10 +1501,16 @@
   
   <target name="cleanSources">
     <delete dir="${basedir}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen" />
+    <delete dir="${basedir}/languages/languageDesign/generator/test/crossmodel/source_gen" />
+    <delete dir="${basedir}/languages/languageDesign/generator/test/entity/source_gen" />
+    <delete dir="${basedir}/languages/languageDesign/generator/test/property/source_gen" />
+    <delete dir="${basedir}/languages/languageDesign/generator/test/property/generator/source_gen" />
+    <delete dir="${basedir}/languages/languageDesign/generator/test/property/gen2/source_gen" />
     <delete dir="${basedir}/testbench/modules/xmodel.build/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/generator/source_gen" />
+    <delete dir="${basedir}/languages/languageDesign/generator/test/entity/generator/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/traceInfo.testWeaving/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/generator/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/generator.test/test_gen" />
