@@ -697,12 +697,12 @@
         <module file="${basedir}/languages/languageDesign/generator/test/crossmodel/jetbrains.mps.generator.crossmodel.sandbox.msd" />
         <module file="${basedir}/languages/languageDesign/generator/test/entity/jetbrains.mps.generator.test.crossmodel.entity.mpl" />
         <module file="${basedir}/languages/languageDesign/generator/test/property/jetbrains.mps.generator.test.crossmodel.property.mpl" />
-        <module file="${basedir}/testbench/testsolutions/generator.test/jetbrains.mps.generator.tests.msd" />
         <module file="${basedir}/testbench/modules/xmodel.build/jetbrains.mps.generator.xmodel.build.test.msd" />
         <module file="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/jetbrains.mps.traceInfo.testWeavingGenerated.data.mpl" />
         <module file="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/jetbrains.mps.traceInfo.testWeavingInterpreted.data.mpl" />
       </chunk>
       <chunk>
+        <module file="${basedir}/testbench/testsolutions/generator.test/jetbrains.mps.generator.tests.msd" />
         <module file="${basedir}/testbench/testsolutions/traceInfo.testWeaving/jetbrains.mps.traceInfo.testWeaving.msd" />
       </chunk>
       <jvmargs>
@@ -758,7 +758,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.generator.tests" depends="java.compile.jetbrains.mps.generator.crossmodel.sandbox, java.compile.jetbrains.mps.generator.test.crossmodel.entity, java.compile.jetbrains.mps.generator.test.crossmodel.property, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.generator.tests" depends="java.compile.jetbrains.mps.generator.crossmodel.sandbox, java.compile.jetbrains.mps.generator.test.crossmodel.entity, java.compile.jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718, java.compile.jetbrains.mps.generator.test.crossmodel.property, java.compile.jetbrains.mps.generator.test.crossmodel.property#5533782486491461721, java.compile.jetbrains.mps.generator.test.crossmodel.property#g2, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.generator.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.generator.tests" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -782,7 +782,10 @@
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.entity" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property#5533782486491461721" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property#g2" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
@@ -1361,6 +1364,7 @@
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.aspect.typesystem.jar" />
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.general-purpose.jar" />
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-descriptor.jar" />
+      <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.templates.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
@@ -1436,7 +1440,9 @@
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
       <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.crossmodel.sandbox.jar" />
+      <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.entity-generator.jar" />
       <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.entity.jar" />
+      <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.property-generator.jar" />
       <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.property.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
@@ -1549,8 +1555,8 @@
     <delete dir="${basedir}/languages/languageDesign/generator/test/entity/generator/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/traceInfo.testWeaving/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/generator/source_gen" />
-    <delete dir="${basedir}/testbench/testsolutions/generator.test/test_gen" />
     <delete dir="${basedir}/testbench/modules/xmodel.build/test_gen" />
+    <delete dir="${basedir}/testbench/testsolutions/generator.test/test_gen" />
     <delete dir="${basedir}/testbench/testsolutions/traceInfo.testWeaving/test_gen" />
   </target>
 </project>

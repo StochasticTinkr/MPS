@@ -2452,8 +2452,17 @@
         <node concept="3bR9La" id="7uEMFG4SGry" role="3bR37C">
           <ref role="3bR37D" node="tvZ$I9VJ9X" resolve="jetbrains.mps.generator.test.crossmodel.entity" />
         </node>
+        <node concept="3bR9La" id="1l1jHO6iBpB" role="3bR37C">
+          <ref role="3bR37D" node="tvZ$I9VJIL" resolve="jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718" />
+        </node>
         <node concept="3bR9La" id="7uEMFG4SGuS" role="3bR37C">
           <ref role="3bR37D" node="tvZ$I9VJov" resolve="jetbrains.mps.generator.test.crossmodel.property" />
+        </node>
+        <node concept="3bR9La" id="1l1jHO6iBiL" role="3bR37C">
+          <ref role="3bR37D" node="tvZ$I9VJRe" resolve="jetbrains.mps.generator.test.crossmodel.property#5533782486491461721" />
+        </node>
+        <node concept="3bR9La" id="1l1jHO6iBmb" role="3bR37C">
+          <ref role="3bR37D" node="tvZ$I9W3a2" resolve="jetbrains.mps.generator.test.crossmodel.property#g2" />
         </node>
       </node>
     </node>
