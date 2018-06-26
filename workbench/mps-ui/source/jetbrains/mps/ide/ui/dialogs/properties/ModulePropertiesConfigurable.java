@@ -99,8 +99,10 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriority
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.smodel.ConceptDeclarationScanner;
 import jetbrains.mps.smodel.DefaultScope;
+import jetbrains.mps.smodel.EditorDeclarationScanner;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.util.Computable;
@@ -595,12 +597,19 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       myModuleRepository.getModelAccess().runReadAction(() -> {
         // XXX perhaps, worth adding ModuleProperties data collection (much like ModelProperties)
         if (myModule instanceof Language) {
+          // XXX Next code to find 'true' extends dependencies is pretty similar to LanguageValidator, is there any chance to share it?
           SModel structureAspect = ((Language) myModule).getStructureModelDescriptor();
           if (structureAspect != null) {
             // we keep lang.core.structure reference, if any, just not to warn about superfluous lang.core import
             ConceptDeclarationScanner cds = new ConceptDeclarationScanner();
             cds.scan(structureAspect);
             cds.getDependencyModules().forEach(m -> extendsSet.add(m.getModuleReference()));
+          }
+          SModel editorModel = LanguageAspect.EDITOR.get((Language) myModule);
+          if (editorModel != null) {
+            EditorDeclarationScanner eds = new EditorDeclarationScanner();
+            eds.scan(editorModel);
+            eds.getDependencyModules().forEach(m -> extendsSet.add(m.getModuleReference()));
           }
           ModelScanner tms = new ModelScanner();
           for (Generator g : ((Language) myModule).getOwnedGenerators()) {
