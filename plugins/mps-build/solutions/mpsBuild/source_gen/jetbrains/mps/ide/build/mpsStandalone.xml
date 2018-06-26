@@ -52,6 +52,10 @@
     <copy todir="${build.layout}/plugins/mps-core">
       <fileset dir="${artifacts.mpsCore}/mps-core" />
     </copy>
+    <mkdir dir="${build.layout}/plugins/github" />
+    <copy todir="${build.layout}/plugins/github">
+      <fileset dir="${basedir}/plugins/github" />
+    </copy>
     <mkdir dir="${build.layout}/plugins/cvsIntegration" />
     <copy todir="${build.layout}/plugins/cvsIntegration">
       <fileset dir="${basedir}/plugins/cvsIntegration" />

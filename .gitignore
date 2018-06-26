@@ -46,6 +46,7 @@ teamcity-info.xml
 /plugins/jetpad/lib/jetpadBuildNumber.txt
 /plugins/cvsIntegration/lib
 /plugins/git4idea/lib
+/plugins/github
 /plugins/svn4idea/lib
 /plugins/mps-testing/lib
 /plugins/terminal

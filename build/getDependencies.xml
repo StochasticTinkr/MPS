@@ -240,6 +240,7 @@
 
     <delete dir="${basedir}/../plugins/cvsIntegration/lib" failonerror="false"/>
     <delete dir="${basedir}/../plugins/git4idea/lib" failonerror="false"/>
+    <delete dir="${basedir}/../plugins/github" failonerror="false"/>
     <delete dir="${basedir}/../plugins/svn4idea/lib" failonerror="false"/>
     <delete dir="${basedir}/../plugins/terminal" failonerror="false"/>
   </target>
