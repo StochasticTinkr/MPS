@@ -1,12 +1,20 @@
 /system
 /config
+
+# MacOS user UI setting related file
 .DS_Store
+
+# Intellij Idea user workspace setting files
 **/.idea/workspace.xml
-**/.idea/shelf
 **/.mps/workspace.xml
-**/.mps/shelf
 /build/solution/.idea/workspace.xml
 /MPSPlugin/.idea/workspace.xml
+
+# Local user commits
+**/.idea/shelf
+**/.mps/shelf
+
+# Build artifacts
 /MPSPlugin/apiclasses
 /build/tmp/
 /contrib/build/tmp/
@@ -18,10 +26,13 @@
 classes
 classes_gen
 testclasses
-*.iws
 teamcity-info.xml
 *.hprof
 *.class
+
+# Plugins related excludes:
+# * Platform bundled plagins
+# * Downloadable plugin libraries
 /plugins/debugger-api/lib
 /plugins/debugger-java/lib
 /plugins/vcs/lib/
@@ -39,10 +50,18 @@ teamcity-info.xml
 /plugins/mps-testing/lib
 /plugins/terminal
 /plugins/migration/migration-platform/lib
+
+# Main libraries folder: dependencies are downloaded before complilation with task 'install' from build/getDependencies.xml
 /lib/
+
+# Intellij Idea platform artifact, which is extracted to bin, build, lib & plugins folders
 /mps-platform.zip
+
+# Binary files, required for application startup (including Mac executable)
 /bin/linux
 /bin/mac
 /bin/win
-/build/dependencies
 /build/resources/mps
+
+# Versions of library dependecies required for platform (like Kotlin, JDK etc)
+/build/dependencies
