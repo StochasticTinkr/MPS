@@ -1442,6 +1442,7 @@
       <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.crossmodel.sandbox.jar" />
       <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.entity-generator.jar" />
       <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.entity.jar" />
+      <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.property-1-generator.jar" />
       <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.property-generator.jar" />
       <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.property.jar" />
     </path>
