@@ -41,21 +41,21 @@ import jetbrains.mps.smodel.Generator;
 import com.intellij.ui.ColoredListCellRenderer;
 import javax.swing.JList;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.util.Reference;
-import java.util.Objects;
 import jetbrains.mps.persistence.ModelCannotBeCreatedException;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.smodel.ModelImports;
-import jetbrains.mps.smodel.CopyUtil;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.util.Reference;
+import java.util.Objects;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.smodel.ModelImports;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -236,12 +236,29 @@ public class NewModelDialog extends DialogWrapper {
 
     super.doOKAction();
 
-    myResult = createModelAndShowProperties((ModelFactoryType) myModelStorageFormat.getSelectedItem(), getFqName(), (ModelRoot) myModelRoots.getSelectedItem(), myModule, myProject, myPreserveIds, myClone);
+    try {
+      myResult = createModel((ModelFactoryType) myModelStorageFormat.getSelectedItem(), (ModelRoot) myModelRoots.getSelectedItem());
+    } catch (ModelCannotBeCreatedException ex) {
+      Messages.showErrorDialog(myProject.getProject(), "Could not create a new model because '" + ex.getMessage() + "'", "Error");
+    }
+    if (myResult != null) {
+      MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myProject);
+      final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(myProject), configurable, "#MPSPropertiesConfigurable");
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          configurableEditor.show();
+        }
+      }, ModalityState.current());
+    }
+
+
+
   }
 
-  private static EditableSModel createModelAndShowProperties(final ModelFactoryType storageFormat, final String fqName, ModelRoot selectedModelRoot, final SModule myModule, MPSProject myProject, final boolean myPreserveIds, final SModel myClone) {
+  private EditableSModel createModel(final ModelFactoryType storageFormat, ModelRoot selectedModelRoot) throws ModelCannotBeCreatedException {
     final Reference<ModelRoot> selectedModelRootRef = new Reference<ModelRoot>(selectedModelRoot);
 
+    final String fqName = getFqName();
     if (!(selectedModelRootRef.get().canCreateModel(fqName)) && myModule instanceof Language && selectedModelRootRef.get() instanceof FileBasedModelRoot) {
       final FileBasedModelRoot selectedFileBasedModelRoot = (FileBasedModelRoot) selectedModelRootRef.get();
 
@@ -289,6 +306,10 @@ public class NewModelDialog extends DialogWrapper {
         } else {
           CopyUtil.copyModelContentAndUpdateCrossRootReferences(myClone, result);
         }
+        if (myClone instanceof GeneratableSModel && result instanceof GeneratableSModel) {
+          ((GeneratableSModel) result).setDoNotGenerate(((GeneratableSModel) myClone).isDoNotGenerate());
+          ((GeneratableSModel) result).setGenerateIntoModelFolder(((GeneratableSModel) myClone).isGenerateIntoModelFolder());
+        }
         result.setChanged(true);
         result.save();
 
@@ -297,18 +318,9 @@ public class NewModelDialog extends DialogWrapper {
     });
 
     if (!(refException.isNull())) {
-      Messages.showErrorDialog(myProject.getProject(), "Could not create a new model because '" + refException.get().getMessage() + "'", "Error");
+      throw refException.get();
     }
 
-    if (res != null) {
-      MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(res, myProject);
-      final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(myProject), configurable, "#MPSPropertiesConfigurable");
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          configurableEditor.show();
-        }
-      }, ModalityState.current());
-    }
     return res;
   }
 
