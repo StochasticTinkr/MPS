@@ -932,7 +932,7 @@
                   <ref role="3cqZAo" node="7Y7KhX6e_FA" resolve="originalName" />
                 </node>
                 <node concept="liA8E" id="7Y7KhX6eB0N" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModelName.getValue():java.lang.String" resolve="getValue" />
+                  <ref role="37wK5l" to="mhbf:~SModelName.getLongName():java.lang.String" resolve="getLongName" />
                 </node>
               </node>
             </node>

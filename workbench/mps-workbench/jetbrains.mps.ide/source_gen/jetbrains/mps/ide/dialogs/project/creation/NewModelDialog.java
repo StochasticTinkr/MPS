@@ -121,7 +121,7 @@ public class NewModelDialog extends DialogWrapper {
     this(project, module, null, cloneModel.getName().getStereotype(), false, cloneModel, true);
     SModelName originalName = cloneModel.getName();
     setTitle(String.format("Move Model %s", originalName.getValue()));
-    myModelName.setText(originalName.getValue());
+    myModelName.setText(originalName.getLongName());
     check();
   }
 
