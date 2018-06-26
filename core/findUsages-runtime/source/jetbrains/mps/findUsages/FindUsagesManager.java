@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -28,12 +27,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class FindUsagesManager extends FindUsagesFacade implements CoreComponent {
 
+  /**
+   * @deprecated it's {@link CoreComponent}, use {@link jetbrains.mps.components.ComponentHost#findComponent(Class)} to retrieve an instance
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static FindUsagesManager getInstance() {
     return (FindUsagesManager) INSTANCE;
   }

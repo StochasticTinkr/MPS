@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,22 @@
  */
 package jetbrains.mps.ide.findusages;
 
+import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 
 /**
  * evgeny, 10/14/11
  */
-public final class MPSFindUsages extends ComponentPlugin {
+public final class MPSFindUsages extends ComponentPlugin implements ComponentHost {
   private final LanguageRegistry myLanguageRegistry;
+  private FindUsagesManager myFindUsageManager;
+  private FindersManager myFinderManager;
 
   public MPSFindUsages(@NotNull LanguageRegistry languageRegistry) {
     myLanguageRegistry = languageRegistry;
@@ -33,7 +39,21 @@ public final class MPSFindUsages extends ComponentPlugin {
   @Override
   public void init() {
     super.init();
-    init(new FindUsagesManager());
-    init(new FindersManager(myLanguageRegistry));
+    myFindUsageManager = new FindUsagesManager();
+    myFinderManager = new FindersManager(myLanguageRegistry);
+    init(myFindUsageManager);
+    init(myFinderManager);
+  }
+
+  @Nullable
+  @Override
+  public <T extends CoreComponent> T findComponent(@NotNull Class<T> componentClass) {
+    if (FindUsagesFacade.class.isAssignableFrom(componentClass) || FindUsagesManager.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myFindUsageManager);
+    }
+    if (FindersManager.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myFinderManager);
+    }
+    return null;
   }
 }
