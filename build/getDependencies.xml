@@ -181,9 +181,6 @@
       </patternset>
     </unzip>
 
-    <!-- TODO: quick fix. Need to update platform build script to use annotations for java 8+ -->
-    <move file="${basedir}/../lib/annotations-java5.jar" tofile="${basedir}/../lib/annotations.jar"/>
-
     <!-- Set executable flag to binaries -->
     <chmod file="${basedir}/../bin/mac/fsnotifier" perm="755"/>
     <chmod file="${basedir}/../bin/mac/restarter" perm="755"/>
