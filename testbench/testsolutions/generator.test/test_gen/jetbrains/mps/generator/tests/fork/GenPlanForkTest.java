@@ -33,7 +33,7 @@ public class GenPlanForkTest extends BaseGeneratorTest {
     t.setPlanProvider(planProviderFromModel(myArg_ForkPlan));
     t.transform();
     Collection<SModel> outputModels = t.getOutputModels();
-    Assert.assertEquals("Number of output models", outputModels.size(), 2);
+    Assert.assertEquals("Number of output models", 2, outputModels.size());
     assertMatch(outputModels, myArg_RM1, myArg_RM2);
   }
 }

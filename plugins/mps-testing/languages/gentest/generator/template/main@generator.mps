@@ -696,14 +696,6 @@
             <node concept="Xl_RD" id="5wiIlPAwnwK" role="37wK5m">
               <property role="Xl_RC" value="Number of output models" />
             </node>
-            <node concept="2OqwBi" id="5wiIlPAwrIT" role="37wK5m">
-              <node concept="37vLTw" id="5wiIlPAwrjn" role="2Oq$k0">
-                <ref role="3cqZAo" node="5wiIlPAwpKw" resolve="outputModels" />
-              </node>
-              <node concept="liA8E" id="5wiIlPAws9L" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Collection.size():int" resolve="size" />
-              </node>
-            </node>
             <node concept="3cmrfG" id="5wiIlPAwsCZ" role="37wK5m">
               <property role="3cmrfH" value="3" />
               <node concept="17Uvod" id="5wiIlPAwteF" role="lGtFl">
@@ -724,6 +716,14 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="5wiIlPAwrIT" role="37wK5m">
+              <node concept="37vLTw" id="5wiIlPAwrjn" role="2Oq$k0">
+                <ref role="3cqZAo" node="5wiIlPAwpKw" resolve="outputModels" />
+              </node>
+              <node concept="liA8E" id="5wiIlPAws9L" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~Collection.size():int" resolve="size" />
               </node>
             </node>
           </node>
