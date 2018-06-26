@@ -641,7 +641,6 @@
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
-      <concept id="1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" flags="nn" index="WFELt" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
@@ -756,7 +755,12 @@
       <concept id="1240325842691" name="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" flags="nn" index="39bAoz" />
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
       <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
+      <concept id="1225621920911" name="jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation" flags="nn" index="1sK_Qi">
+        <child id="1225621943565" name="element" index="1sKFgg" />
+        <child id="1225621960341" name="index" index="1sKJu8" />
+      </concept>
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
+      <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
@@ -3733,13 +3737,39 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbF" id="6OtXG9Kd1Xx" role="3cqZAp">
-                  <node concept="37vLTI" id="6OtXG9Kd8PF" role="3clFbG">
-                    <node concept="37vLTw" id="6OtXG9Kd9b2" role="37vLTx">
+                <node concept="3cpWs8" id="7uEMFG4WVo5" role="3cqZAp">
+                  <node concept="3cpWsn" id="7uEMFG4WVo6" role="3cpWs9">
+                    <property role="TrG5h" value="generatorRef" />
+                    <node concept="3Tqbb2" id="7uEMFG4WVo4" role="1tU5fm">
+                      <ref role="ehGHo" to="kdzh:6OtXG9K2II1" resolve="BuildMps_GeneratorRef" />
+                    </node>
+                    <node concept="2OqwBi" id="7uEMFG4WVo7" role="33vP2m">
+                      <node concept="1Q6Npb" id="7uEMFG4WVo8" role="2Oq$k0" />
+                      <node concept="I8ghe" id="7uEMFG4WVo9" role="2OqNvi">
+                        <ref role="I8UWU" to="kdzh:6OtXG9K2II1" resolve="BuildMps_GeneratorRef" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="7uEMFG4WPnG" role="3cqZAp">
+                  <node concept="37vLTI" id="7uEMFG4WV9D" role="3clFbG">
+                    <node concept="37vLTw" id="7uEMFG4WVcc" role="37vLTx">
                       <ref role="3cqZAo" node="7YI57w6Sq_i" resolve="generator" />
                     </node>
-                    <node concept="2OqwBi" id="6OtXG9Kd7OC" role="37vLTJ">
-                      <node concept="2OqwBi" id="6OtXG9Kd3QJ" role="2Oq$k0">
+                    <node concept="2OqwBi" id="7uEMFG4WUwW" role="37vLTJ">
+                      <node concept="37vLTw" id="7uEMFG4WVoa" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7uEMFG4WVo6" resolve="generatorRef" />
+                      </node>
+                      <node concept="3TrEf2" id="7uEMFG4WUCe" role="2OqNvi">
+                        <ref role="3Tt5mk" to="kdzh:6OtXG9K2II2" resolve="generator" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="7uEMFG4WVC2" role="3cqZAp">
+                  <node concept="3clFbS" id="7uEMFG4WVC4" role="3clFbx">
+                    <node concept="3clFbF" id="6OtXG9Kd1Xx" role="3cqZAp">
+                      <node concept="2OqwBi" id="6OtXG9Kd3QJ" role="3clFbG">
                         <node concept="2OqwBi" id="6OtXG9Kd28s" role="2Oq$k0">
                           <node concept="37vLTw" id="6OtXG9Kd1Xv" role="2Oq$k0">
                             <ref role="3cqZAo" node="6OtXG9Kd1Me" resolve="lang" />
@@ -3748,10 +3778,51 @@
                             <ref role="3TtcxE" to="kdzh:6OtXG9K2II8" resolve="managedGenerators" />
                           </node>
                         </node>
-                        <node concept="WFELt" id="6OtXG9Kd7p6" role="2OqNvi" />
+                        <node concept="TSZUe" id="7uEMFG4X3mm" role="2OqNvi">
+                          <node concept="37vLTw" id="7uEMFG4X3N9" role="25WWJ7">
+                            <ref role="3cqZAo" node="7uEMFG4WVo6" resolve="generatorRef" />
+                          </node>
+                        </node>
                       </node>
-                      <node concept="3TrEf2" id="6OtXG9Kd8dT" role="2OqNvi">
-                        <ref role="3Tt5mk" to="kdzh:6OtXG9K2II2" resolve="generator" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="7uEMFG4WYdv" role="3clFbw">
+                    <node concept="2OqwBi" id="7uEMFG4WVQF" role="2Oq$k0">
+                      <node concept="37vLTw" id="7uEMFG4WVDa" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6OtXG9Kd1Me" resolve="lang" />
+                      </node>
+                      <node concept="3Tsc0h" id="7uEMFG4WWmN" role="2OqNvi">
+                        <ref role="3TtcxE" to="kdzh:6OtXG9K2II8" resolve="managedGenerators" />
+                      </node>
+                    </node>
+                    <node concept="1v1jN8" id="7uEMFG4X0_P" role="2OqNvi" />
+                  </node>
+                  <node concept="9aQIb" id="7uEMFG4X4rZ" role="9aQIa">
+                    <node concept="3clFbS" id="7uEMFG4X4s0" role="9aQI4">
+                      <node concept="3SKdUt" id="7uEMFG4X4Ch" role="3cqZAp">
+                        <node concept="3SKdUq" id="7uEMFG4X4Cj" role="3SKWNk">
+                          <property role="3SKdUp" value="make sure 'owned' generator comes first in the list and receives default langname-generator.jar, not langname-x-generator.jar" />
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="7uEMFG4WLC9" role="3cqZAp">
+                        <node concept="2OqwBi" id="7uEMFG4WNU9" role="3clFbG">
+                          <node concept="2OqwBi" id="7uEMFG4WLNe" role="2Oq$k0">
+                            <node concept="37vLTw" id="7uEMFG4WLC7" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6OtXG9Kd1Me" resolve="lang" />
+                            </node>
+                            <node concept="3Tsc0h" id="7uEMFG4WMjN" role="2OqNvi">
+                              <ref role="3TtcxE" to="kdzh:6OtXG9K2II8" resolve="managedGenerators" />
+                            </node>
+                          </node>
+                          <node concept="1sK_Qi" id="7uEMFG4WP7V" role="2OqNvi">
+                            <node concept="3cmrfG" id="7uEMFG4WP92" role="1sKJu8">
+                              <property role="3cmrfH" value="0" />
+                            </node>
+                            <node concept="37vLTw" id="7uEMFG4X4$f" role="1sKFgg">
+                              <ref role="3cqZAo" node="7uEMFG4WVo6" resolve="generatorRef" />
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>

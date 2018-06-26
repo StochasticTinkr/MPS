@@ -136,6 +136,9 @@
       <concept id="6592112598314499027" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency" flags="ng" index="m$_yC">
         <reference id="6592112598314499066" name="target" index="m$_y1" />
       </concept>
+      <concept id="7862711839422606209" name="jetbrains.mps.build.mps.structure.BuildMps_GeneratorRef" flags="ng" index="t5LP3">
+        <reference id="7862711839422606210" name="generator" index="t5LP0" />
+      </concept>
       <concept id="1500819558095907805" name="jetbrains.mps.build.mps.structure.BuildMps_Group" flags="ng" index="2G$12M">
         <child id="1500819558095907806" name="modules" index="2G$12L" />
       </concept>
@@ -181,6 +184,7 @@
         <property id="269707337715731330" name="sourcesKind" index="aoJFB" />
       </concept>
       <concept id="3189788309731840248" name="jetbrains.mps.build.mps.structure.BuildMps_Language" flags="ng" index="1E1JtD">
+        <child id="7862711839422606216" name="managedGenerators" index="t5LPa" />
         <child id="3189788309731917348" name="runtime" index="1E1XAP" />
         <child id="9200313594498201639" name="generator" index="1TViLv" />
       </concept>
@@ -2503,6 +2507,9 @@
         <property role="TrG5h" value="jetbrains.mps.generator.test.crossmodel.property" />
         <property role="3LESm3" value="dc1cc948-6f43-4687-90cb-17dd5cb27219" />
         <property role="2GAjPV" value="false" />
+        <node concept="t5LP3" id="7uEMFG4UURK" role="t5LPa">
+          <ref role="t5LP0" node="tvZ$I9W3a2" resolve="jetbrains.mps.generator.test.crossmodel.property#g2" />
+        </node>
         <node concept="55IIr" id="tvZ$I9VJq7" role="3LF7KH">
           <node concept="2Ry0Ak" id="tvZ$I9VJq8" role="iGT6I">
             <property role="2Ry0Am" value="languages" />
