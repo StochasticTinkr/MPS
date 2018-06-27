@@ -2240,7 +2240,7 @@
       </node>
     </node>
     <node concept="312cEg" id="7033gDdddPR" role="jymVt">
-      <property role="TrG5h" value="myConceptIndex" />
+      <property role="TrG5h" value="myIndexSwitch" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="7033gDdddPS" role="1B3o_S" />
       <node concept="3uibUv" id="7033gDddh_g" role="1tU5fm">
@@ -2472,7 +2472,7 @@
               </node>
             </node>
             <node concept="37vLTw" id="7033gDddiAQ" role="37vLTJ">
-              <ref role="3cqZAo" node="7033gDdddPR" resolve="myConceptIndex" />
+              <ref role="3cqZAo" node="7033gDdddPR" resolve="myIndexSwitch" />
             </node>
           </node>
         </node>
@@ -2569,7 +2569,7 @@
           </node>
           <node concept="2OqwBi" id="7033gDde4rX" role="3KbGdf">
             <node concept="37vLTw" id="7033gDde1KS" role="2Oq$k0">
-              <ref role="3cqZAo" node="7033gDdddPR" resolve="myConceptIndex" />
+              <ref role="3cqZAo" node="7033gDdddPR" resolve="myIndexSwitch" />
             </node>
             <node concept="liA8E" id="7033gDde92u" role="2OqNvi">
               <ref role="37wK5l" node="7033gDdea_E" resolve="index" />
@@ -2603,7 +2603,7 @@
         <node concept="3cpWs6" id="7033gDddrvw" role="3cqZAp">
           <node concept="2OqwBi" id="7033gDddKsP" role="3cqZAk">
             <node concept="37vLTw" id="7033gDddGT7" role="2Oq$k0">
-              <ref role="3cqZAo" node="7033gDdddPR" resolve="myConceptIndex" />
+              <ref role="3cqZAo" node="7033gDdddPR" resolve="myIndexSwitch" />
             </node>
             <node concept="liA8E" id="7033gDddNPq" role="2OqNvi">
               <ref role="37wK5l" node="1OW7rNmnuDr" resolve="index" />
