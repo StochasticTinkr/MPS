@@ -323,7 +323,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
       }
     }
     protected String getNoTargetText() {
-      return "<default visible text>";
+      return "<same as matching text>";
     }
   }
   private EditorCell createCollection_3() {

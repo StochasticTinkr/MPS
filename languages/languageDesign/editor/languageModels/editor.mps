@@ -26074,7 +26074,7 @@
           <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
         </node>
         <node concept="3F1sOY" id="6cap0kYbLLL" role="3EZMnx">
-          <property role="1$x2rV" value="&lt;default visible text&gt;" />
+          <property role="1$x2rV" value="&lt;same as matching text&gt;" />
           <ref role="1NtTu8" to="tpc2:6cap0kYbLKY" resolve="visibleTextFunction" />
         </node>
       </node>
