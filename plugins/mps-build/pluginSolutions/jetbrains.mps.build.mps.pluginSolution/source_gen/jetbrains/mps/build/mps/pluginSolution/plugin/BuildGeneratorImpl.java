@@ -35,9 +35,9 @@ import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.model.SModelName;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -208,15 +208,26 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
 
-  public boolean isValidModelName(String text) {
+  public boolean isValidModelName(final String text) {
+    // text can be null and SModelName require @NotNull parameter in constructor, to spare read action - also check for empty string 
+    if ((text == null || text.length() == 0)) {
+      return false;
+    }
+
     // FIXME once there's no single model repository, there would be no reason to limit model name to unique in the repo 
-    return new ModuleRepositoryFacade(myProject).getModelByName(text) == null;
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return new ModuleRepositoryFacade(myProject).getModelsByName(new SModelName(text)).isEmpty();
+      }
+    });
   }
 
   public boolean isValidSolutionName(final String text) {
-    if (text.equals("")) {
+    // text can be null and method getModulesByName require @NotNull parameter, to spare read action - also check for empty string 
+    if ((text == null || text.length() == 0)) {
       return false;
     }
+
     return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         return new ModuleRepositoryFacade(myProject).getModulesByName(text).isEmpty();
