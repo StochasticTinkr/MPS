@@ -1386,10 +1386,8 @@
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="library" name="JetPad" level="project" />
-    <orderEntry type="module" module-name="execution-configurations-unitTests" />
     <orderEntry type="module" module-name="testbench" />
     <orderEntry type="module" module-name="mps-testing" />
-    <orderEntry type="module" module-name="migrationAssistant" />
     <orderEntry type="module" module-name="textgen" />
     <orderEntry type="module" module-name="typesystemIntegration" />
     <orderEntry type="module" module-name="ant-mps" />
@@ -1406,11 +1404,8 @@
     <orderEntry type="module" module-name="execution-api" />
     <orderEntry type="module" module-name="refactoring" />
     <orderEntry type="module" module-name="mps-java-platform-base" />
-    <orderEntry type="module" module-name="execution-configurations-ant" />
-    <orderEntry type="module" module-name="execution-languages-library" />
     <orderEntry type="module" module-name="httpsupport" />
     <orderEntry type="module" module-name="migration-platform" />
     <orderEntry type="module" module-name="model" />
   </component>
 </module>
-
