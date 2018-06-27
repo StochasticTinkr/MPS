@@ -501,6 +501,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("inplace", 0x3ba296405b7040e4L, "4297162197621031140");
     b.prop("hideWarnings", 0x36a924c4406d57f3L, "3938719774425307123");
     b.prop("createStaticRefs", 0x5ab0fd79b0feb375L, "6535001758416941941");
+    b.prop("skipUnmodifiedModels", 0x37b3e610a73b826L, "250862790757300262");
     b.alias("generator options");
     return b.create();
   }
