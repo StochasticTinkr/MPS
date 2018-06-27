@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -349,6 +349,11 @@ public interface MetaModelInfoProvider {
 
     @Override
     public SConceptId getStubConcept(SConceptId origin) {
+      ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(origin);
+      if (cd.getVersion() >= 2) {
+        return cd.getStubConceptId();
+      }
+      // fall through for legacy implementation. Remove once 2018.2 is out
       String originFQName = getConceptName(origin);
       if (originFQName == null) {
         return null;

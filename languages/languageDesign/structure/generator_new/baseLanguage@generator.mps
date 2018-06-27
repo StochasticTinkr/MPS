@@ -3255,6 +3255,159 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="6Cok$V4w2JS" role="3cqZAp">
+          <node concept="2OqwBi" id="6Cok$V4w5b1" role="3clFbG">
+            <node concept="37vLTw" id="6Cok$V4w2JQ" role="2Oq$k0">
+              <ref role="3cqZAo" node="3GRPfFIcIyJ" resolve="b" />
+            </node>
+            <node concept="liA8E" id="6Cok$V4w8u1" role="2OqNvi">
+              <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.version(int):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="version" />
+              <node concept="3cmrfG" id="6Cok$V4wfhS" role="37wK5m">
+                <property role="3cmrfH" value="2" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6Cok$V4vMMg" role="3cqZAp">
+          <node concept="2OqwBi" id="6Cok$V4vPdb" role="3clFbG">
+            <node concept="37vLTw" id="6Cok$V4vMMe" role="2Oq$k0">
+              <ref role="3cqZAo" node="3GRPfFIcIyJ" resolve="b" />
+            </node>
+            <node concept="liA8E" id="6Cok$V4vSMu" role="2OqNvi">
+              <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.stub(long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="stub" />
+              <node concept="1adDum" id="6Cok$V4wIKR" role="37wK5m">
+                <property role="1adDun" value="0L" />
+                <node concept="17Uvod" id="6Cok$V4wVpM" role="lGtFl">
+                  <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/4269842503726207156/4269842503726207157" />
+                  <property role="2qtEX9" value="value" />
+                  <node concept="3zFVjK" id="6Cok$V4wVpN" role="3zH0cK">
+                    <node concept="3clFbS" id="6Cok$V4wVpO" role="2VODD2">
+                      <node concept="3clFbF" id="6Cok$V4wZP2" role="3cqZAp">
+                        <node concept="3cpWs3" id="6Cok$V4yi_n" role="3clFbG">
+                          <node concept="3cpWs3" id="6Cok$V4x0IU" role="3uHU7B">
+                            <node concept="Xl_RD" id="6Cok$V4wZP1" role="3uHU7B">
+                              <property role="Xl_RC" value="0x" />
+                            </node>
+                            <node concept="2YIFZM" id="6Cok$V4z9eo" role="3uHU7w">
+                              <ref role="37wK5l" to="wyt6:~Long.toHexString(long):java.lang.String" resolve="toHexString" />
+                              <ref role="1Pybhc" to="wyt6:~Long" resolve="Long" />
+                              <node concept="2OqwBi" id="6Cok$V4z9ep" role="37wK5m">
+                                <node concept="2YIFZM" id="6Cok$V4z9eq" role="2Oq$k0">
+                                  <ref role="37wK5l" to="e8bb:~MetaIdByDeclaration.getConceptId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                                  <ref role="1Pybhc" to="e8bb:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
+                                  <node concept="2OqwBi" id="6Cok$V4z9er" role="37wK5m">
+                                    <node concept="1iwH7S" id="6Cok$V4z9es" role="2Oq$k0" />
+                                    <node concept="1bhEwm" id="6Cok$V4z9et" role="2OqNvi">
+                                      <ref role="1bhEwl" node="6Cok$V4wsz0" resolve="stubConcept" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="liA8E" id="6Cok$V4z9eu" role="2OqNvi">
+                                  <ref role="37wK5l" to="e8bb:~SConceptId.getIdValue():long" resolve="getIdValue" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="1Xhbcc" id="6Cok$V4yZFR" role="3uHU7w">
+                            <property role="1XhdNS" value="L" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2jeGV$" id="6Cok$V4wsz0" role="lGtFl">
+            <property role="TrG5h" value="stubConcept" />
+            <node concept="2jfdEK" id="6Cok$V4wsz1" role="2jfP_Y">
+              <node concept="3clFbS" id="6Cok$V4wsz2" role="2VODD2">
+                <node concept="3cpWs8" id="6Cok$V4zt3l" role="3cqZAp">
+                  <node concept="3cpWsn" id="6Cok$V4zt3o" role="3cpWs9">
+                    <property role="TrG5h" value="stubConceptName" />
+                    <property role="3TUv4t" value="true" />
+                    <node concept="17QB3L" id="6Cok$V4zt3j" role="1tU5fm" />
+                    <node concept="3cpWs3" id="6Cok$V4z_51" role="33vP2m">
+                      <node concept="2OqwBi" id="6Cok$V4z_vQ" role="3uHU7w">
+                        <node concept="30H73N" id="6Cok$V4z_dq" role="2Oq$k0" />
+                        <node concept="3TrcHB" id="6Cok$V4zDaS" role="2OqNvi">
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="6Cok$V4zzRq" role="3uHU7B">
+                        <property role="Xl_RC" value="Stub" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="6Cok$V4$3uU" role="3cqZAp">
+                  <node concept="3SKdUq" id="6Cok$V4$3uW" role="3SKWNk">
+                    <property role="3SKdUp" value="XXX would be great to utilize the fact concepts sequence is sorted, otherwise n^2 searches might get slow." />
+                  </node>
+                </node>
+                <node concept="3clFbF" id="6Cok$V4zkDn" role="3cqZAp">
+                  <node concept="2OqwBi" id="6Cok$V4zlgb" role="3clFbG">
+                    <node concept="2OqwBi" id="6Cok$V4zkPr" role="2Oq$k0">
+                      <node concept="1iwH7S" id="6Cok$V4zkDm" role="2Oq$k0" />
+                      <node concept="1bhEwm" id="6Cok$V4zl1t" role="2OqNvi">
+                        <ref role="1bhEwl" node="414gMbD5YoU" resolve="concepts" />
+                      </node>
+                    </node>
+                    <node concept="1z4cxt" id="6Cok$V4zsz6" role="2OqNvi">
+                      <node concept="1bVj0M" id="6Cok$V4zsz8" role="23t8la">
+                        <node concept="3clFbS" id="6Cok$V4zsz9" role="1bW5cS">
+                          <node concept="3clFbF" id="6Cok$V4zDLx" role="3cqZAp">
+                            <node concept="2OqwBi" id="6Cok$V4zH20" role="3clFbG">
+                              <node concept="37vLTw" id="6Cok$V4zDLw" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6Cok$V4zt3o" resolve="stubConceptName" />
+                              </node>
+                              <node concept="liA8E" id="6Cok$V4zHNV" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                                <node concept="2OqwBi" id="6Cok$V4zOLh" role="37wK5m">
+                                  <node concept="37vLTw" id="6Cok$V4zOtO" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="6Cok$V4zsza" resolve="it" />
+                                  </node>
+                                  <node concept="3TrcHB" id="6Cok$V4zP8U" role="2OqNvi">
+                                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="Rh6nW" id="6Cok$V4zsza" role="1bW2Oz">
+                          <property role="TrG5h" value="it" />
+                          <node concept="2jxLKc" id="6Cok$V4zszb" role="1tU5fm" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3Tqbb2" id="6Cok$V4wz3a" role="2jfP_h">
+              <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+            </node>
+          </node>
+          <node concept="1W57fq" id="6Cok$V4wlR5" role="lGtFl">
+            <node concept="3IZrLx" id="6Cok$V4wlR8" role="3IZSJc">
+              <node concept="3clFbS" id="6Cok$V4wlR9" role="2VODD2">
+                <node concept="3clFbF" id="6Cok$V4w$Xh" role="3cqZAp">
+                  <node concept="2OqwBi" id="6Cok$V4wAQz" role="3clFbG">
+                    <node concept="2OqwBi" id="6Cok$V4w_tU" role="2Oq$k0">
+                      <node concept="1iwH7S" id="6Cok$V4w$Xc" role="2Oq$k0" />
+                      <node concept="1bhEwm" id="6Cok$V4w_Pv" role="2OqNvi">
+                        <ref role="1bhEwl" node="6Cok$V4wsz0" resolve="stubConcept" />
+                      </node>
+                    </node>
+                    <node concept="3x8VRR" id="6Cok$V4wBn9" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="4hxQpVmyTyt" role="3cqZAp">
           <node concept="2OqwBi" id="4hxQpVmyWfk" role="3clFbG">
             <node concept="37vLTw" id="4hxQpVmyTyr" role="2Oq$k0">

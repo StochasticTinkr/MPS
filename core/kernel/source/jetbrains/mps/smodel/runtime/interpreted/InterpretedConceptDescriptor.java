@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -348,6 +348,13 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
+  public SConceptId getStubConceptId() {
+    // intentionally null, don't want to do anything with InterpretedConceptDescriptor which shall fade away anyway.
+    // version we report is 0, means nobody expects us to return meaningful value
+    return null;
+  }
+
+  @Override
   public List<SConceptId> getParentsIds() {
     init();
     return parentsIds;
@@ -393,5 +400,11 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   public LinkDescriptor getLinkDescriptor(SContainmentLinkId id) {
     init();
     return myLinks.get(id);
+  }
+
+  @Override
+  public int getVersion() {
+    // see #getStubConceptId() above
+    return 0;
   }
 }

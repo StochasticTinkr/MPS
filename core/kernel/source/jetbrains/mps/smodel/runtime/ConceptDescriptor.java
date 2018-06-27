@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -103,4 +102,15 @@ public interface ConceptDescriptor {
   //------------
 
   StaticScope getStaticScope(); // since 3.0
+
+  SConceptId getStubConceptId(); // since 2018.2
+
+  /**
+   * This method is for internal use only.
+   * It allows to identify whether some properties, which were added in later versions of MPS, were specified
+   * on construction (by generated code) or they have default values.
+   * This is needed not to make wasSet/wasNotSet field for each method.
+   * version == 2 denotes addition of #getStubConceptId()
+   */
+  int getVersion();
 }

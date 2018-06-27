@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,7 @@ public class ConceptDescriptorBuilder2 {
   private ConceptKind myConceptKind = ConceptKind.NORMAL;
   private StaticScope myScope = StaticScope.GLOBAL;
   private String myAlias;
+  private SConceptId myStubConceptId;
   /*package*/ SNodeReference myOrigin;
   private ArrayList<SConceptId> myParents = new ArrayList<>(4);
   private ArrayList<PropertyDescriptor> myProperties;
@@ -85,6 +86,16 @@ public class ConceptDescriptorBuilder2 {
    */
   public ConceptDescriptorBuilder2 parent(long langIdHigh, long langIdLow, long conceptId) {
     myParents.add(MetaIdFactory.conceptId(languageId(langIdHigh, langIdLow), conceptId));
+    return this;
+  }
+
+  /*
+   * Tells id of a replacement (aka stub) concept from the same language
+   * invoked [0..1] times
+   * @since 2018.2 && CD.version==2
+   */
+  public ConceptDescriptorBuilder2 stub(long conceptId) {
+    myStubConceptId = MetaIdFactory.conceptId(myConceptId.getLanguageId(), conceptId);
     return this;
   }
 
@@ -164,6 +175,7 @@ public class ConceptDescriptorBuilder2 {
   }
 
   // optional, version == 1 by default as this builder was introduced late in 3.4 cycle
+  // code generated with 2018.2 shall set version to 2 once stubId is generated. Once 2018.2 is out, shall change default value in this class to 2
   public ConceptDescriptorBuilder2 version(int version) {
     myVersion = version;
     return this;
@@ -188,7 +200,7 @@ public class ConceptDescriptorBuilder2 {
     ReferenceDescriptor[] assoc = myAssociations == null ? new ReferenceDescriptor[0] : myAssociations.toArray(new ReferenceDescriptor[myAssociations.size()]);
     LinkDescriptor[] aggr = myAggregations == null ? new LinkDescriptor[0] : myAggregations.toArray(new LinkDescriptor[myAggregations.size()]);
     SConceptId[] parents = myParents.toArray(new SConceptId[myParents.size()]);
-    return new CompiledConceptDescriptor(myVersion, myConceptId, conceptFQName, mySuperConceptId, myIsInterface, parents, pd, assoc, aggr, myIsAbstract, myIsFinal, myIsRoot, myAlias, myScope, /* FIXME myConceptKind, */myOrigin);
+    return new CompiledConceptDescriptor(myVersion, myConceptId, conceptFQName, mySuperConceptId, myIsInterface, parents, pd, assoc, aggr, myIsAbstract, myIsFinal, myIsRoot, myAlias, myScope, myStubConceptId, /* FIXME myConceptKind, */myOrigin);
   }
 
   /*package*/ void addProperty(PropertyDescriptor d) {

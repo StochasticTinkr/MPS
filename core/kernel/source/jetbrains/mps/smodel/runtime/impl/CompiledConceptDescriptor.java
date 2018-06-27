@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,8 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final boolean myIsRootable;
   private final String myConceptAlias;
   private final StaticScope myStaticScope;
+  @Nullable
+  private final SConceptId myStubConceptId;
   private final SNodeReference mySourceNodeRef;
   private final Object myLock = "";
   // to be initialized
@@ -82,6 +84,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       boolean isRootable,
       String conceptAlias,
       StaticScope staticScope,
+      SConceptId stubConcept,
       SNodeReference sourceNodeRef) {
     myVersion = version;
     myId = id;
@@ -124,6 +127,8 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     myIsRootable = isRootable;
     myConceptAlias = conceptAlias == null ? "" : conceptAlias;
     myStaticScope = staticScope;
+
+    myStubConceptId = stubConcept;
 
     // todo: common with StructureAspectInterpreted to new class!
     mySourceNodeRef = sourceNodeRef;
@@ -218,12 +223,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     links = Collections.unmodifiableMap(linksMap);
   }
 
-  /**
-   * This method is for internal use only.
-   * It allows to identify whether some properties, which were added in later versions of MPS, were specified
-   * on construction (by generated code) or they have default values.
-   * This is needed not to make wasSet/wasNotSet field for each method.
-   */
+  @Override
   public int getVersion() {
     return myVersion;
   }
@@ -280,6 +280,12 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public SConceptId getSuperConceptId() {
     return mySuperConceptId;
+  }
+
+  @Nullable
+  @Override
+  public SConceptId getStubConceptId() {
+    return myStubConceptId;
   }
 
   @Override
