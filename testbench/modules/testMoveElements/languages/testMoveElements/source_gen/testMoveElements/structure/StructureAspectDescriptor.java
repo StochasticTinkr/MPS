@@ -15,10 +15,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDummyBlock = createDescriptorForDummyBlock();
   /*package*/ final ConceptDescriptor myConceptManyStatements = createDescriptorForManyStatements();
   /*package*/ final ConceptDescriptor myConceptManyStatementsContainer = createDescriptorForManyStatementsContainer();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -29,7 +29,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.DummyBlock:
         return myConceptDummyBlock;
       case LanguageConceptSwitch.ManyStatements:
@@ -42,7 +42,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForDummyBlock() {
@@ -50,6 +50,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
     b.origin("r:1ce0b94d-16c2-4f0d-92d5-b5b1e611f24d(testMoveElements.structure)/7465696304914830357");
+    b.version(2);
     b.aggregate("statement", 0x679b7b3bff6515dbL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L).optional(true).ordered(true).multiple(true).origin("7465696304914830811").done();
     b.alias("dummy");
     return b.create();
@@ -58,6 +59,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testMoveElements", "ManyStatements", 0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x4cb3e593ffd97846L);
     b.class_(false, false, false);
     b.origin("r:1ce0b94d-16c2-4f0d-92d5-b5b1e611f24d(testMoveElements.structure)/5527013591529125958");
+    b.version(2);
     b.aggregate("list", 0x62f47dac992b7389L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L).optional(false).ordered(true).multiple(false).origin("7130462290291946377").done();
     b.aggregate("list1", 0x4cb3e593ffd97849L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L).optional(false).ordered(true).multiple(false).origin("5527013591529125961").done();
     b.aggregate("list2", 0x4cb3e593ffd9784bL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L).optional(false).ordered(true).multiple(false).origin("5527013591529125963").done();
@@ -68,6 +70,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testMoveElements", "ManyStatementsContainer", 0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x2f0103435011b1f2L);
     b.class_(false, false, false);
     b.origin("r:1ce0b94d-16c2-4f0d-92d5-b5b1e611f24d(testMoveElements.structure)/3386991982400352754");
+    b.version(2);
     b.aggregate("first", 0x2f0103435011b1f3L).target(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x4cb3e593ffd97846L).optional(false).ordered(true).multiple(false).origin("3386991982400352755").done();
     b.aggregate("second", 0x2f0103435011b1f9L).target(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x4cb3e593ffd97846L).optional(false).ordered(true).multiple(false).origin("3386991982400352761").done();
     return b.create();

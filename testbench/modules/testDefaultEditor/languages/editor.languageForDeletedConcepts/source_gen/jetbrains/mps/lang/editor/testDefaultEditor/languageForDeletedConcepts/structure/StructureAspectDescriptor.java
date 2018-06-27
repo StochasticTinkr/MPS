@@ -16,10 +16,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDeletedChild = createDescriptorForDeletedChild();
   /*package*/ final ConceptDescriptor myConceptDeletedParent = createDescriptorForDeletedParent();
   /*package*/ final ConceptDescriptor myConceptDeletedParentContainer = createDescriptorForDeletedParentContainer();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -30,7 +30,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.DeletedAbstractChild:
         return myConceptDeletedAbstractChild;
       case LanguageConceptSwitch.DeletedChild:
@@ -45,25 +45,28 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForDeletedAbstractChild() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts", "DeletedAbstractChild", 0xd8e56c33e3084c18L, 0xbe6a751cd5d3c5ceL, 0x19896b9a4f67ba8fL);
     b.class_(false, true, false);
     b.origin("r:f7ab8cfc-135f-4339-bd76-ff57cf78dd74(jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts.structure)/1840120233258891919");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDeletedChild() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts", "DeletedChild", 0xd8e56c33e3084c18L, 0xbe6a751cd5d3c5ceL, 0x3620abce1452aa4fL);
     b.class_(false, false, false);
     b.origin("r:f7ab8cfc-135f-4339-bd76-ff57cf78dd74(jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts.structure)/3900306178895424079");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDeletedParent() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts", "DeletedParent", 0xd8e56c33e3084c18L, 0xbe6a751cd5d3c5ceL, 0x3620abce1451d7feL);
     b.class_(false, false, false);
     b.origin("r:f7ab8cfc-135f-4339-bd76-ff57cf78dd74(jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts.structure)/3900306178895370238");
+    b.version(2);
     b.prop("name", 0x3620abce1452aa52L, "3900306178895424082");
     b.associate("deletedParentReference", 0x3620abce1452aa54L).target(0xd8e56c33e3084c18L, 0xbe6a751cd5d3c5ceL, 0x3620abce1451d7feL).optional(true).origin("3900306178895424084").done();
     b.aggregate("deletedChild", 0x3620abce1452aa50L).target(0xd8e56c33e3084c18L, 0xbe6a751cd5d3c5ceL, 0x3620abce1452aa4fL).optional(false).ordered(true).multiple(false).origin("3900306178895424080").done();
@@ -74,6 +77,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts", "DeletedParentContainer", 0xd8e56c33e3084c18L, 0xbe6a751cd5d3c5ceL, 0x3620abce1452aa4cL);
     b.class_(false, false, false);
     b.origin("r:f7ab8cfc-135f-4339-bd76-ff57cf78dd74(jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts.structure)/3900306178895424076");
+    b.version(2);
     b.aggregate("deletedParent", 0x3620abce1452aa4dL).target(0xd8e56c33e3084c18L, 0xbe6a751cd5d3c5ceL, 0x3620abce1451d7feL).optional(true).ordered(true).multiple(false).origin("3900306178895424077").done();
     return b.create();
   }

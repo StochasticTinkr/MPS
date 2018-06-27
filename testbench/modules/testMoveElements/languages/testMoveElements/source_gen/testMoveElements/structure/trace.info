@@ -15,7 +15,7 @@
       <unit at="10,0,32,0" name="testMoveElements.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,76,0" name="testMoveElements.structure.StructureAspectDescriptor" />
+      <unit at="14,0,79,0" name="testMoveElements.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:1ce0b94d-16c2-4f0d-92d5-b5b1e611f24d(testMoveElements.structure)/3386991982400352754">
@@ -38,18 +38,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="3386991982400352754" at="17,0,18,0" concept="1" trace="myConceptManyStatementsContainer" />
       <node id="3386991982400352754" at="37,57,38,48" concept="4" />
-      <node id="3386991982400352754" at="67,81,68,174" concept="3" />
-      <node id="3386991982400352754" at="68,174,69,34" concept="0" />
-      <node id="3386991982400352754" at="69,34,70,103" concept="0" />
-      <node id="3386991982400352755" at="70,103,71,199" concept="0" />
-      <node id="3386991982400352761" at="71,199,72,200" concept="0" />
-      <node id="3386991982400352754" at="72,200,73,22" concept="4" />
-      <node id="3386991982400352754" at="67,0,75,0" concept="6" trace="createDescriptorForManyStatementsContainer#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="3386991982400352754" at="69,81,70,174" concept="3" />
+      <node id="3386991982400352754" at="70,174,71,34" concept="0" />
+      <node id="3386991982400352754" at="71,34,72,103" concept="0" />
+      <node id="3386991982400352754" at="72,103,73,17" concept="0" />
+      <node id="3386991982400352755" at="73,17,74,199" concept="0" />
+      <node id="3386991982400352761" at="74,199,75,200" concept="0" />
+      <node id="3386991982400352754" at="75,200,76,22" concept="4" />
+      <node id="3386991982400352754" at="69,0,78,0" concept="6" trace="createDescriptorForManyStatementsContainer#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="3386991982400352754" at="37,57,38,48" />
-      <scope id="3386991982400352754" at="67,81,73,22">
+      <scope id="3386991982400352754" at="69,81,76,22">
         <var name="b" id="3386991982400352754" />
       </scope>
-      <scope id="3386991982400352754" at="67,0,75,0" />
+      <scope id="3386991982400352754" at="69,0,78,0" />
     </file>
   </root>
   <root nodeRef="r:1ce0b94d-16c2-4f0d-92d5-b5b1e611f24d(testMoveElements.structure)/5527013591529125958">
@@ -72,20 +73,21 @@
     <file name="StructureAspectDescriptor.java">
       <node id="5527013591529125958" at="16,0,17,0" concept="1" trace="myConceptManyStatements" />
       <node id="5527013591529125958" at="35,48,36,39" concept="4" />
-      <node id="5527013591529125958" at="57,72,58,165" concept="3" />
-      <node id="5527013591529125958" at="58,165,59,34" concept="0" />
-      <node id="5527013591529125958" at="59,34,60,103" concept="0" />
-      <node id="7130462290291946377" at="60,103,61,192" concept="0" />
-      <node id="5527013591529125961" at="61,192,62,193" concept="0" />
-      <node id="5527013591529125963" at="62,193,63,193" concept="0" />
-      <node id="5527013591529125966" at="63,193,64,195" concept="0" />
-      <node id="5527013591529125958" at="64,195,65,22" concept="4" />
-      <node id="5527013591529125958" at="57,0,67,0" concept="6" trace="createDescriptorForManyStatements#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="5527013591529125958" at="58,72,59,165" concept="3" />
+      <node id="5527013591529125958" at="59,165,60,34" concept="0" />
+      <node id="5527013591529125958" at="60,34,61,103" concept="0" />
+      <node id="5527013591529125958" at="61,103,62,17" concept="0" />
+      <node id="7130462290291946377" at="62,17,63,192" concept="0" />
+      <node id="5527013591529125961" at="63,192,64,193" concept="0" />
+      <node id="5527013591529125963" at="64,193,65,193" concept="0" />
+      <node id="5527013591529125966" at="65,193,66,195" concept="0" />
+      <node id="5527013591529125958" at="66,195,67,22" concept="4" />
+      <node id="5527013591529125958" at="58,0,69,0" concept="6" trace="createDescriptorForManyStatements#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="5527013591529125958" at="35,48,36,39" />
-      <scope id="5527013591529125958" at="57,72,65,22">
+      <scope id="5527013591529125958" at="58,72,67,22">
         <var name="b" id="5527013591529125958" />
       </scope>
-      <scope id="5527013591529125958" at="57,0,67,0" />
+      <scope id="5527013591529125958" at="58,0,69,0" />
     </file>
   </root>
   <root nodeRef="r:1ce0b94d-16c2-4f0d-92d5-b5b1e611f24d(testMoveElements.structure)/7465696304914830357">
@@ -112,15 +114,16 @@
       <node id="7465696304914830357" at="49,161,50,34" concept="0" />
       <node id="7465696304914830357" at="50,34,51,120" concept="0" />
       <node id="7465696304914830357" at="51,120,52,103" concept="0" />
-      <node id="7465696304914830811" at="52,103,53,195" concept="0" />
-      <node id="7465696304914830357" at="53,195,54,21" concept="0" />
-      <node id="7465696304914830357" at="54,21,55,22" concept="4" />
-      <node id="7465696304914830357" at="48,0,57,0" concept="6" trace="createDescriptorForDummyBlock#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="7465696304914830357" at="52,103,53,17" concept="0" />
+      <node id="7465696304914830811" at="53,17,54,195" concept="0" />
+      <node id="7465696304914830357" at="54,195,55,21" concept="0" />
+      <node id="7465696304914830357" at="55,21,56,22" concept="4" />
+      <node id="7465696304914830357" at="48,0,58,0" concept="6" trace="createDescriptorForDummyBlock#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="7465696304914830357" at="33,44,34,35" />
-      <scope id="7465696304914830357" at="48,68,55,22">
+      <scope id="7465696304914830357" at="48,68,56,22">
         <var name="b" id="7465696304914830357" />
       </scope>
-      <scope id="7465696304914830357" at="48,0,57,0" />
+      <scope id="7465696304914830357" at="48,0,58,0" />
     </file>
   </root>
 </debug-info>

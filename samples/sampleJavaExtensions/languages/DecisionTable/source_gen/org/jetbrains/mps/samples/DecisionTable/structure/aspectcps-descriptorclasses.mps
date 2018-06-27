@@ -503,7 +503,7 @@
       </node>
     </node>
     <node concept="312cEg" id="1V" role="jymVt">
-      <property role="TrG5h" value="myConceptIndex" />
+      <property role="TrG5h" value="myIndexSwitch" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="29" role="1B3o_S" />
       <node concept="3uibUv" id="2a" role="1tU5fm">
@@ -524,7 +524,7 @@
               </node>
             </node>
             <node concept="37vLTw" id="2h" role="37vLTJ">
-              <ref role="3cqZAo" node="1V" resolve="myConceptIndex" />
+              <ref role="3cqZAo" node="1V" resolve="myIndexSwitch" />
             </node>
           </node>
         </node>
@@ -588,7 +588,7 @@
           </node>
           <node concept="2OqwBi" id="2$" role="3KbGdf">
             <node concept="37vLTw" id="2E" role="2Oq$k0">
-              <ref role="3cqZAo" node="1V" resolve="myConceptIndex" />
+              <ref role="3cqZAo" node="1V" resolve="myIndexSwitch" />
             </node>
             <node concept="liA8E" id="2F" role="2OqNvi">
               <ref role="37wK5l" node="16" resolve="index" />
@@ -622,7 +622,7 @@
         <node concept="3cpWs6" id="2M" role="3cqZAp">
           <node concept="2OqwBi" id="2N" role="3cqZAk">
             <node concept="37vLTw" id="2O" role="2Oq$k0">
-              <ref role="3cqZAo" node="1V" resolve="myConceptIndex" />
+              <ref role="3cqZAo" node="1V" resolve="myIndexSwitch" />
             </node>
             <node concept="liA8E" id="2P" role="2OqNvi">
               <ref role="37wK5l" node="18" resolve="index" />
@@ -648,27 +648,27 @@
       <property role="TrG5h" value="createDescriptorForDecisionTable" />
       <node concept="3clFbS" id="2S" role="3clF47">
         <node concept="3cpWs8" id="2V" role="3cqZAp">
-          <node concept="3cpWsn" id="37" role="3cpWs9">
+          <node concept="3cpWsn" id="38" role="3cpWs9">
             <property role="TrG5h" value="b" />
-            <node concept="3uibUv" id="38" role="1tU5fm">
+            <node concept="3uibUv" id="39" role="1tU5fm">
               <ref role="3uigEE" to="bzg8:~ConceptDescriptorBuilder2" resolve="ConceptDescriptorBuilder2" />
             </node>
-            <node concept="2ShNRf" id="39" role="33vP2m">
-              <node concept="1pGfFk" id="3a" role="2ShVmc">
+            <node concept="2ShNRf" id="3a" role="33vP2m">
+              <node concept="1pGfFk" id="3b" role="2ShVmc">
                 <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.&lt;init&gt;(java.lang.String,java.lang.String,long,long,long)" resolve="ConceptDescriptorBuilder2" />
-                <node concept="Xl_RD" id="3b" role="37wK5m">
+                <node concept="Xl_RD" id="3c" role="37wK5m">
                   <property role="Xl_RC" value="org.jetbrains.mps.samples.DecisionTable" />
                 </node>
-                <node concept="Xl_RD" id="3c" role="37wK5m">
+                <node concept="Xl_RD" id="3d" role="37wK5m">
                   <property role="Xl_RC" value="DecisionTable" />
                 </node>
-                <node concept="1adDum" id="3d" role="37wK5m">
+                <node concept="1adDum" id="3e" role="37wK5m">
                   <property role="1adDun" value="0x65c13e6709b64695L" />
                 </node>
-                <node concept="1adDum" id="3e" role="37wK5m">
+                <node concept="1adDum" id="3f" role="37wK5m">
                   <property role="1adDun" value="0xaf8852024b7d2027L" />
                 </node>
-                <node concept="1adDum" id="3f" role="37wK5m">
+                <node concept="1adDum" id="3g" role="37wK5m">
                   <property role="1adDun" value="0x1b942309931b1581L" />
                 </node>
               </node>
@@ -676,431 +676,444 @@
           </node>
         </node>
         <node concept="3clFbF" id="2W" role="3cqZAp">
-          <node concept="2OqwBi" id="3g" role="3clFbG">
-            <node concept="37vLTw" id="3h" role="2Oq$k0">
-              <ref role="3cqZAo" node="37" resolve="b" />
+          <node concept="2OqwBi" id="3h" role="3clFbG">
+            <node concept="37vLTw" id="3i" role="2Oq$k0">
+              <ref role="3cqZAo" node="38" resolve="b" />
             </node>
-            <node concept="liA8E" id="3i" role="2OqNvi">
+            <node concept="liA8E" id="3j" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="class_" />
-              <node concept="3clFbT" id="3j" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
               <node concept="3clFbT" id="3k" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>
               <node concept="3clFbT" id="3l" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>
+              <node concept="3clFbT" id="3m" role="37wK5m">
+                <property role="3clFbU" value="false" />
+              </node>
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="2X" role="3cqZAp">
-          <node concept="2OqwBi" id="3m" role="3clFbG">
-            <node concept="37vLTw" id="3n" role="2Oq$k0">
-              <ref role="3cqZAo" node="37" resolve="b" />
+          <node concept="2OqwBi" id="3n" role="3clFbG">
+            <node concept="37vLTw" id="3o" role="2Oq$k0">
+              <ref role="3cqZAo" node="38" resolve="b" />
             </node>
-            <node concept="liA8E" id="3o" role="2OqNvi">
+            <node concept="liA8E" id="3p" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.super_(java.lang.String,long,long,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="super_" />
-              <node concept="Xl_RD" id="3p" role="37wK5m">
+              <node concept="Xl_RD" id="3q" role="37wK5m">
                 <property role="Xl_RC" value="jetbrains.mps.baseLanguage.structure.Expression" />
               </node>
-              <node concept="1adDum" id="3q" role="37wK5m">
+              <node concept="1adDum" id="3r" role="37wK5m">
                 <property role="1adDun" value="0xf3061a5392264cc5L" />
               </node>
-              <node concept="1adDum" id="3r" role="37wK5m">
+              <node concept="1adDum" id="3s" role="37wK5m">
                 <property role="1adDun" value="0xa443f952ceaf5816L" />
               </node>
-              <node concept="1adDum" id="3s" role="37wK5m">
+              <node concept="1adDum" id="3t" role="37wK5m">
                 <property role="1adDun" value="0xf8c37f506fL" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="2Y" role="3cqZAp">
-          <node concept="2OqwBi" id="3t" role="3clFbG">
-            <node concept="37vLTw" id="3u" role="2Oq$k0">
-              <ref role="3cqZAo" node="37" resolve="b" />
+          <node concept="2OqwBi" id="3u" role="3clFbG">
+            <node concept="37vLTw" id="3v" role="2Oq$k0">
+              <ref role="3cqZAo" node="38" resolve="b" />
             </node>
-            <node concept="liA8E" id="3v" role="2OqNvi">
+            <node concept="liA8E" id="3w" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.origin(java.lang.String):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="origin" />
-              <node concept="Xl_RD" id="3w" role="37wK5m">
+              <node concept="Xl_RD" id="3x" role="37wK5m">
                 <property role="Xl_RC" value="r:885978b0-baca-4eda-8c29-d1384945a64e(org.jetbrains.mps.samples.DecisionTable.structure)/1987251859606934913" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="2Z" role="3cqZAp">
-          <node concept="2OqwBi" id="3x" role="3clFbG">
-            <node concept="2OqwBi" id="3y" role="2Oq$k0">
-              <node concept="2OqwBi" id="3$" role="2Oq$k0">
-                <node concept="2OqwBi" id="3A" role="2Oq$k0">
-                  <node concept="2OqwBi" id="3C" role="2Oq$k0">
-                    <node concept="2OqwBi" id="3E" role="2Oq$k0">
-                      <node concept="2OqwBi" id="3G" role="2Oq$k0">
-                        <node concept="37vLTw" id="3I" role="2Oq$k0">
-                          <ref role="3cqZAo" node="37" resolve="b" />
-                        </node>
-                        <node concept="liA8E" id="3J" role="2OqNvi">
-                          <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.aggregate(java.lang.String,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="aggregate" />
-                          <node concept="Xl_RD" id="3K" role="37wK5m">
-                            <property role="Xl_RC" value="expectedType" />
-                          </node>
-                          <node concept="1adDum" id="3L" role="37wK5m">
-                            <property role="1adDun" value="0x1b942309931b1582L" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="3H" role="2OqNvi">
-                        <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.target(long,long,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="target" />
-                        <node concept="1adDum" id="3M" role="37wK5m">
-                          <property role="1adDun" value="0xf3061a5392264cc5L" />
-                        </node>
-                        <node concept="1adDum" id="3N" role="37wK5m">
-                          <property role="1adDun" value="0xa443f952ceaf5816L" />
-                        </node>
-                        <node concept="1adDum" id="3O" role="37wK5m">
-                          <property role="1adDun" value="0xf8c37f506dL" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="3F" role="2OqNvi">
-                      <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.optional(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="optional" />
-                      <node concept="3clFbT" id="3P" role="37wK5m">
-                        <property role="3clFbU" value="false" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="3D" role="2OqNvi">
-                    <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.ordered(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="ordered" />
-                    <node concept="3clFbT" id="3Q" role="37wK5m">
-                      <property role="3clFbU" value="true" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="3B" role="2OqNvi">
-                  <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.multiple(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="multiple" />
-                  <node concept="3clFbT" id="3R" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
-                </node>
-              </node>
-              <node concept="liA8E" id="3_" role="2OqNvi">
-                <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.origin(java.lang.String):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="origin" />
-                <node concept="Xl_RD" id="3S" role="37wK5m">
-                  <property role="Xl_RC" value="1987251859606934914" />
-                </node>
-              </node>
+          <node concept="2OqwBi" id="3y" role="3clFbG">
+            <node concept="37vLTw" id="3z" role="2Oq$k0">
+              <ref role="3cqZAo" node="38" resolve="b" />
             </node>
-            <node concept="liA8E" id="3z" role="2OqNvi">
-              <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.done():jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="done" />
+            <node concept="liA8E" id="3$" role="2OqNvi">
+              <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.version(int):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="version" />
+              <node concept="3cmrfG" id="3_" role="37wK5m">
+                <property role="3cmrfH" value="2" />
+              </node>
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="30" role="3cqZAp">
-          <node concept="2OqwBi" id="3T" role="3clFbG">
-            <node concept="2OqwBi" id="3U" role="2Oq$k0">
-              <node concept="2OqwBi" id="3W" role="2Oq$k0">
-                <node concept="2OqwBi" id="3Y" role="2Oq$k0">
-                  <node concept="2OqwBi" id="40" role="2Oq$k0">
-                    <node concept="2OqwBi" id="42" role="2Oq$k0">
-                      <node concept="2OqwBi" id="44" role="2Oq$k0">
-                        <node concept="37vLTw" id="46" role="2Oq$k0">
-                          <ref role="3cqZAo" node="37" resolve="b" />
+          <node concept="2OqwBi" id="3A" role="3clFbG">
+            <node concept="2OqwBi" id="3B" role="2Oq$k0">
+              <node concept="2OqwBi" id="3D" role="2Oq$k0">
+                <node concept="2OqwBi" id="3F" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3H" role="2Oq$k0">
+                    <node concept="2OqwBi" id="3J" role="2Oq$k0">
+                      <node concept="2OqwBi" id="3L" role="2Oq$k0">
+                        <node concept="37vLTw" id="3N" role="2Oq$k0">
+                          <ref role="3cqZAo" node="38" resolve="b" />
                         </node>
-                        <node concept="liA8E" id="47" role="2OqNvi">
+                        <node concept="liA8E" id="3O" role="2OqNvi">
                           <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.aggregate(java.lang.String,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="aggregate" />
-                          <node concept="Xl_RD" id="48" role="37wK5m">
-                            <property role="Xl_RC" value="defaultValue" />
+                          <node concept="Xl_RD" id="3P" role="37wK5m">
+                            <property role="Xl_RC" value="expectedType" />
                           </node>
-                          <node concept="1adDum" id="49" role="37wK5m">
-                            <property role="1adDun" value="0x1b942309931b1583L" />
+                          <node concept="1adDum" id="3Q" role="37wK5m">
+                            <property role="1adDun" value="0x1b942309931b1582L" />
                           </node>
                         </node>
                       </node>
-                      <node concept="liA8E" id="45" role="2OqNvi">
+                      <node concept="liA8E" id="3M" role="2OqNvi">
                         <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.target(long,long,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="target" />
-                        <node concept="1adDum" id="4a" role="37wK5m">
+                        <node concept="1adDum" id="3R" role="37wK5m">
                           <property role="1adDun" value="0xf3061a5392264cc5L" />
                         </node>
-                        <node concept="1adDum" id="4b" role="37wK5m">
+                        <node concept="1adDum" id="3S" role="37wK5m">
                           <property role="1adDun" value="0xa443f952ceaf5816L" />
                         </node>
-                        <node concept="1adDum" id="4c" role="37wK5m">
-                          <property role="1adDun" value="0xf8c37f506fL" />
+                        <node concept="1adDum" id="3T" role="37wK5m">
+                          <property role="1adDun" value="0xf8c37f506dL" />
                         </node>
                       </node>
                     </node>
-                    <node concept="liA8E" id="43" role="2OqNvi">
+                    <node concept="liA8E" id="3K" role="2OqNvi">
                       <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.optional(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="optional" />
-                      <node concept="3clFbT" id="4d" role="37wK5m">
+                      <node concept="3clFbT" id="3U" role="37wK5m">
                         <property role="3clFbU" value="false" />
                       </node>
                     </node>
                   </node>
-                  <node concept="liA8E" id="41" role="2OqNvi">
+                  <node concept="liA8E" id="3I" role="2OqNvi">
                     <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.ordered(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="ordered" />
-                    <node concept="3clFbT" id="4e" role="37wK5m">
+                    <node concept="3clFbT" id="3V" role="37wK5m">
                       <property role="3clFbU" value="true" />
                     </node>
                   </node>
                 </node>
-                <node concept="liA8E" id="3Z" role="2OqNvi">
+                <node concept="liA8E" id="3G" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.multiple(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="multiple" />
-                  <node concept="3clFbT" id="4f" role="37wK5m">
+                  <node concept="3clFbT" id="3W" role="37wK5m">
                     <property role="3clFbU" value="false" />
                   </node>
                 </node>
               </node>
-              <node concept="liA8E" id="3X" role="2OqNvi">
+              <node concept="liA8E" id="3E" role="2OqNvi">
                 <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.origin(java.lang.String):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="origin" />
-                <node concept="Xl_RD" id="4g" role="37wK5m">
-                  <property role="Xl_RC" value="1987251859606934915" />
+                <node concept="Xl_RD" id="3X" role="37wK5m">
+                  <property role="Xl_RC" value="1987251859606934914" />
                 </node>
               </node>
             </node>
-            <node concept="liA8E" id="3V" role="2OqNvi">
+            <node concept="liA8E" id="3C" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.done():jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="done" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="31" role="3cqZAp">
-          <node concept="2OqwBi" id="4h" role="3clFbG">
-            <node concept="2OqwBi" id="4i" role="2Oq$k0">
-              <node concept="2OqwBi" id="4k" role="2Oq$k0">
-                <node concept="2OqwBi" id="4m" role="2Oq$k0">
-                  <node concept="2OqwBi" id="4o" role="2Oq$k0">
-                    <node concept="2OqwBi" id="4q" role="2Oq$k0">
-                      <node concept="2OqwBi" id="4s" role="2Oq$k0">
-                        <node concept="37vLTw" id="4u" role="2Oq$k0">
-                          <ref role="3cqZAo" node="37" resolve="b" />
+          <node concept="2OqwBi" id="3Y" role="3clFbG">
+            <node concept="2OqwBi" id="3Z" role="2Oq$k0">
+              <node concept="2OqwBi" id="41" role="2Oq$k0">
+                <node concept="2OqwBi" id="43" role="2Oq$k0">
+                  <node concept="2OqwBi" id="45" role="2Oq$k0">
+                    <node concept="2OqwBi" id="47" role="2Oq$k0">
+                      <node concept="2OqwBi" id="49" role="2Oq$k0">
+                        <node concept="37vLTw" id="4b" role="2Oq$k0">
+                          <ref role="3cqZAo" node="38" resolve="b" />
                         </node>
-                        <node concept="liA8E" id="4v" role="2OqNvi">
+                        <node concept="liA8E" id="4c" role="2OqNvi">
                           <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.aggregate(java.lang.String,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="aggregate" />
-                          <node concept="Xl_RD" id="4w" role="37wK5m">
-                            <property role="Xl_RC" value="colHeaders" />
+                          <node concept="Xl_RD" id="4d" role="37wK5m">
+                            <property role="Xl_RC" value="defaultValue" />
                           </node>
-                          <node concept="1adDum" id="4x" role="37wK5m">
-                            <property role="1adDun" value="0x1b942309931b1584L" />
+                          <node concept="1adDum" id="4e" role="37wK5m">
+                            <property role="1adDun" value="0x1b942309931b1583L" />
                           </node>
                         </node>
                       </node>
-                      <node concept="liA8E" id="4t" role="2OqNvi">
+                      <node concept="liA8E" id="4a" role="2OqNvi">
                         <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.target(long,long,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="target" />
-                        <node concept="1adDum" id="4y" role="37wK5m">
+                        <node concept="1adDum" id="4f" role="37wK5m">
                           <property role="1adDun" value="0xf3061a5392264cc5L" />
                         </node>
-                        <node concept="1adDum" id="4z" role="37wK5m">
+                        <node concept="1adDum" id="4g" role="37wK5m">
                           <property role="1adDun" value="0xa443f952ceaf5816L" />
                         </node>
-                        <node concept="1adDum" id="4$" role="37wK5m">
+                        <node concept="1adDum" id="4h" role="37wK5m">
                           <property role="1adDun" value="0xf8c37f506fL" />
                         </node>
                       </node>
                     </node>
-                    <node concept="liA8E" id="4r" role="2OqNvi">
+                    <node concept="liA8E" id="48" role="2OqNvi">
                       <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.optional(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="optional" />
-                      <node concept="3clFbT" id="4_" role="37wK5m">
+                      <node concept="3clFbT" id="4i" role="37wK5m">
                         <property role="3clFbU" value="false" />
                       </node>
                     </node>
                   </node>
-                  <node concept="liA8E" id="4p" role="2OqNvi">
+                  <node concept="liA8E" id="46" role="2OqNvi">
                     <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.ordered(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="ordered" />
-                    <node concept="3clFbT" id="4A" role="37wK5m">
+                    <node concept="3clFbT" id="4j" role="37wK5m">
                       <property role="3clFbU" value="true" />
                     </node>
                   </node>
                 </node>
-                <node concept="liA8E" id="4n" role="2OqNvi">
+                <node concept="liA8E" id="44" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.multiple(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="multiple" />
-                  <node concept="3clFbT" id="4B" role="37wK5m">
-                    <property role="3clFbU" value="true" />
+                  <node concept="3clFbT" id="4k" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                 </node>
               </node>
-              <node concept="liA8E" id="4l" role="2OqNvi">
+              <node concept="liA8E" id="42" role="2OqNvi">
                 <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.origin(java.lang.String):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="origin" />
-                <node concept="Xl_RD" id="4C" role="37wK5m">
-                  <property role="Xl_RC" value="1987251859606934916" />
+                <node concept="Xl_RD" id="4l" role="37wK5m">
+                  <property role="Xl_RC" value="1987251859606934915" />
                 </node>
               </node>
             </node>
-            <node concept="liA8E" id="4j" role="2OqNvi">
+            <node concept="liA8E" id="40" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.done():jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="done" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="32" role="3cqZAp">
-          <node concept="2OqwBi" id="4D" role="3clFbG">
-            <node concept="2OqwBi" id="4E" role="2Oq$k0">
-              <node concept="2OqwBi" id="4G" role="2Oq$k0">
-                <node concept="2OqwBi" id="4I" role="2Oq$k0">
-                  <node concept="2OqwBi" id="4K" role="2Oq$k0">
-                    <node concept="2OqwBi" id="4M" role="2Oq$k0">
-                      <node concept="2OqwBi" id="4O" role="2Oq$k0">
-                        <node concept="37vLTw" id="4Q" role="2Oq$k0">
-                          <ref role="3cqZAo" node="37" resolve="b" />
+          <node concept="2OqwBi" id="4m" role="3clFbG">
+            <node concept="2OqwBi" id="4n" role="2Oq$k0">
+              <node concept="2OqwBi" id="4p" role="2Oq$k0">
+                <node concept="2OqwBi" id="4r" role="2Oq$k0">
+                  <node concept="2OqwBi" id="4t" role="2Oq$k0">
+                    <node concept="2OqwBi" id="4v" role="2Oq$k0">
+                      <node concept="2OqwBi" id="4x" role="2Oq$k0">
+                        <node concept="37vLTw" id="4z" role="2Oq$k0">
+                          <ref role="3cqZAo" node="38" resolve="b" />
                         </node>
-                        <node concept="liA8E" id="4R" role="2OqNvi">
+                        <node concept="liA8E" id="4$" role="2OqNvi">
                           <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.aggregate(java.lang.String,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="aggregate" />
-                          <node concept="Xl_RD" id="4S" role="37wK5m">
-                            <property role="Xl_RC" value="rowHeaders" />
+                          <node concept="Xl_RD" id="4_" role="37wK5m">
+                            <property role="Xl_RC" value="colHeaders" />
                           </node>
-                          <node concept="1adDum" id="4T" role="37wK5m">
-                            <property role="1adDun" value="0x1b942309931b1585L" />
+                          <node concept="1adDum" id="4A" role="37wK5m">
+                            <property role="1adDun" value="0x1b942309931b1584L" />
                           </node>
                         </node>
                       </node>
-                      <node concept="liA8E" id="4P" role="2OqNvi">
+                      <node concept="liA8E" id="4y" role="2OqNvi">
                         <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.target(long,long,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="target" />
-                        <node concept="1adDum" id="4U" role="37wK5m">
+                        <node concept="1adDum" id="4B" role="37wK5m">
                           <property role="1adDun" value="0xf3061a5392264cc5L" />
                         </node>
-                        <node concept="1adDum" id="4V" role="37wK5m">
+                        <node concept="1adDum" id="4C" role="37wK5m">
                           <property role="1adDun" value="0xa443f952ceaf5816L" />
                         </node>
-                        <node concept="1adDum" id="4W" role="37wK5m">
+                        <node concept="1adDum" id="4D" role="37wK5m">
                           <property role="1adDun" value="0xf8c37f506fL" />
                         </node>
                       </node>
                     </node>
-                    <node concept="liA8E" id="4N" role="2OqNvi">
+                    <node concept="liA8E" id="4w" role="2OqNvi">
                       <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.optional(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="optional" />
-                      <node concept="3clFbT" id="4X" role="37wK5m">
+                      <node concept="3clFbT" id="4E" role="37wK5m">
                         <property role="3clFbU" value="false" />
                       </node>
                     </node>
                   </node>
-                  <node concept="liA8E" id="4L" role="2OqNvi">
+                  <node concept="liA8E" id="4u" role="2OqNvi">
                     <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.ordered(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="ordered" />
-                    <node concept="3clFbT" id="4Y" role="37wK5m">
+                    <node concept="3clFbT" id="4F" role="37wK5m">
                       <property role="3clFbU" value="true" />
                     </node>
                   </node>
                 </node>
-                <node concept="liA8E" id="4J" role="2OqNvi">
+                <node concept="liA8E" id="4s" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.multiple(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="multiple" />
-                  <node concept="3clFbT" id="4Z" role="37wK5m">
+                  <node concept="3clFbT" id="4G" role="37wK5m">
                     <property role="3clFbU" value="true" />
                   </node>
                 </node>
               </node>
-              <node concept="liA8E" id="4H" role="2OqNvi">
+              <node concept="liA8E" id="4q" role="2OqNvi">
                 <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.origin(java.lang.String):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="origin" />
-                <node concept="Xl_RD" id="50" role="37wK5m">
-                  <property role="Xl_RC" value="1987251859606934917" />
+                <node concept="Xl_RD" id="4H" role="37wK5m">
+                  <property role="Xl_RC" value="1987251859606934916" />
                 </node>
               </node>
             </node>
-            <node concept="liA8E" id="4F" role="2OqNvi">
+            <node concept="liA8E" id="4o" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.done():jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="done" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="33" role="3cqZAp">
-          <node concept="2OqwBi" id="51" role="3clFbG">
-            <node concept="2OqwBi" id="52" role="2Oq$k0">
-              <node concept="2OqwBi" id="54" role="2Oq$k0">
-                <node concept="2OqwBi" id="56" role="2Oq$k0">
-                  <node concept="2OqwBi" id="58" role="2Oq$k0">
-                    <node concept="2OqwBi" id="5a" role="2Oq$k0">
-                      <node concept="2OqwBi" id="5c" role="2Oq$k0">
-                        <node concept="37vLTw" id="5e" role="2Oq$k0">
-                          <ref role="3cqZAo" node="37" resolve="b" />
+          <node concept="2OqwBi" id="4I" role="3clFbG">
+            <node concept="2OqwBi" id="4J" role="2Oq$k0">
+              <node concept="2OqwBi" id="4L" role="2Oq$k0">
+                <node concept="2OqwBi" id="4N" role="2Oq$k0">
+                  <node concept="2OqwBi" id="4P" role="2Oq$k0">
+                    <node concept="2OqwBi" id="4R" role="2Oq$k0">
+                      <node concept="2OqwBi" id="4T" role="2Oq$k0">
+                        <node concept="37vLTw" id="4V" role="2Oq$k0">
+                          <ref role="3cqZAo" node="38" resolve="b" />
                         </node>
-                        <node concept="liA8E" id="5f" role="2OqNvi">
+                        <node concept="liA8E" id="4W" role="2OqNvi">
                           <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.aggregate(java.lang.String,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="aggregate" />
-                          <node concept="Xl_RD" id="5g" role="37wK5m">
-                            <property role="Xl_RC" value="resultValues" />
+                          <node concept="Xl_RD" id="4X" role="37wK5m">
+                            <property role="Xl_RC" value="rowHeaders" />
                           </node>
-                          <node concept="1adDum" id="5h" role="37wK5m">
-                            <property role="1adDun" value="0x1b942309931b1586L" />
+                          <node concept="1adDum" id="4Y" role="37wK5m">
+                            <property role="1adDun" value="0x1b942309931b1585L" />
                           </node>
                         </node>
                       </node>
-                      <node concept="liA8E" id="5d" role="2OqNvi">
+                      <node concept="liA8E" id="4U" role="2OqNvi">
                         <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.target(long,long,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="target" />
-                        <node concept="1adDum" id="5i" role="37wK5m">
+                        <node concept="1adDum" id="4Z" role="37wK5m">
                           <property role="1adDun" value="0xf3061a5392264cc5L" />
                         </node>
-                        <node concept="1adDum" id="5j" role="37wK5m">
+                        <node concept="1adDum" id="50" role="37wK5m">
                           <property role="1adDun" value="0xa443f952ceaf5816L" />
                         </node>
-                        <node concept="1adDum" id="5k" role="37wK5m">
+                        <node concept="1adDum" id="51" role="37wK5m">
                           <property role="1adDun" value="0xf8c37f506fL" />
                         </node>
                       </node>
                     </node>
-                    <node concept="liA8E" id="5b" role="2OqNvi">
+                    <node concept="liA8E" id="4S" role="2OqNvi">
                       <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.optional(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="optional" />
-                      <node concept="3clFbT" id="5l" role="37wK5m">
+                      <node concept="3clFbT" id="52" role="37wK5m">
                         <property role="3clFbU" value="false" />
                       </node>
                     </node>
                   </node>
-                  <node concept="liA8E" id="59" role="2OqNvi">
+                  <node concept="liA8E" id="4Q" role="2OqNvi">
                     <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.ordered(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="ordered" />
-                    <node concept="3clFbT" id="5m" role="37wK5m">
+                    <node concept="3clFbT" id="53" role="37wK5m">
                       <property role="3clFbU" value="true" />
                     </node>
                   </node>
                 </node>
-                <node concept="liA8E" id="57" role="2OqNvi">
+                <node concept="liA8E" id="4O" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.multiple(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="multiple" />
-                  <node concept="3clFbT" id="5n" role="37wK5m">
+                  <node concept="3clFbT" id="54" role="37wK5m">
                     <property role="3clFbU" value="true" />
                   </node>
                 </node>
               </node>
-              <node concept="liA8E" id="55" role="2OqNvi">
+              <node concept="liA8E" id="4M" role="2OqNvi">
                 <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.origin(java.lang.String):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="origin" />
-                <node concept="Xl_RD" id="5o" role="37wK5m">
-                  <property role="Xl_RC" value="1987251859606934918" />
+                <node concept="Xl_RD" id="55" role="37wK5m">
+                  <property role="Xl_RC" value="1987251859606934917" />
                 </node>
               </node>
             </node>
-            <node concept="liA8E" id="53" role="2OqNvi">
+            <node concept="liA8E" id="4K" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.done():jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="done" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="34" role="3cqZAp">
-          <node concept="2OqwBi" id="5p" role="3clFbG">
-            <node concept="37vLTw" id="5q" role="2Oq$k0">
-              <ref role="3cqZAo" node="37" resolve="b" />
+          <node concept="2OqwBi" id="56" role="3clFbG">
+            <node concept="2OqwBi" id="57" role="2Oq$k0">
+              <node concept="2OqwBi" id="59" role="2Oq$k0">
+                <node concept="2OqwBi" id="5b" role="2Oq$k0">
+                  <node concept="2OqwBi" id="5d" role="2Oq$k0">
+                    <node concept="2OqwBi" id="5f" role="2Oq$k0">
+                      <node concept="2OqwBi" id="5h" role="2Oq$k0">
+                        <node concept="37vLTw" id="5j" role="2Oq$k0">
+                          <ref role="3cqZAo" node="38" resolve="b" />
+                        </node>
+                        <node concept="liA8E" id="5k" role="2OqNvi">
+                          <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.aggregate(java.lang.String,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="aggregate" />
+                          <node concept="Xl_RD" id="5l" role="37wK5m">
+                            <property role="Xl_RC" value="resultValues" />
+                          </node>
+                          <node concept="1adDum" id="5m" role="37wK5m">
+                            <property role="1adDun" value="0x1b942309931b1586L" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="5i" role="2OqNvi">
+                        <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.target(long,long,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="target" />
+                        <node concept="1adDum" id="5n" role="37wK5m">
+                          <property role="1adDun" value="0xf3061a5392264cc5L" />
+                        </node>
+                        <node concept="1adDum" id="5o" role="37wK5m">
+                          <property role="1adDun" value="0xa443f952ceaf5816L" />
+                        </node>
+                        <node concept="1adDum" id="5p" role="37wK5m">
+                          <property role="1adDun" value="0xf8c37f506fL" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="5g" role="2OqNvi">
+                      <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.optional(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="optional" />
+                      <node concept="3clFbT" id="5q" role="37wK5m">
+                        <property role="3clFbU" value="false" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="5e" role="2OqNvi">
+                    <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.ordered(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="ordered" />
+                    <node concept="3clFbT" id="5r" role="37wK5m">
+                      <property role="3clFbU" value="true" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="5c" role="2OqNvi">
+                  <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.multiple(boolean):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="multiple" />
+                  <node concept="3clFbT" id="5s" role="37wK5m">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="5a" role="2OqNvi">
+                <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.origin(java.lang.String):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="origin" />
+                <node concept="Xl_RD" id="5t" role="37wK5m">
+                  <property role="Xl_RC" value="1987251859606934918" />
+                </node>
+              </node>
             </node>
-            <node concept="liA8E" id="5r" role="2OqNvi">
-              <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.kind(jetbrains.mps.smodel.runtime.ConceptKind,jetbrains.mps.smodel.runtime.StaticScope):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="kind" />
-              <node concept="Rm8GO" id="5s" role="37wK5m">
-                <ref role="1Px2BO" to="ze1i:~ConceptKind" resolve="ConceptKind" />
-                <ref role="Rm8GQ" to="ze1i:~ConceptKind.NORMAL" resolve="NORMAL" />
-              </node>
-              <node concept="Rm8GO" id="5t" role="37wK5m">
-                <ref role="1Px2BO" to="ze1i:~StaticScope" resolve="StaticScope" />
-                <ref role="Rm8GQ" to="ze1i:~StaticScope.NONE" resolve="NONE" />
-              </node>
+            <node concept="liA8E" id="58" role="2OqNvi">
+              <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.done():jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="done" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="35" role="3cqZAp">
           <node concept="2OqwBi" id="5u" role="3clFbG">
             <node concept="37vLTw" id="5v" role="2Oq$k0">
-              <ref role="3cqZAo" node="37" resolve="b" />
+              <ref role="3cqZAo" node="38" resolve="b" />
             </node>
             <node concept="liA8E" id="5w" role="2OqNvi">
+              <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.kind(jetbrains.mps.smodel.runtime.ConceptKind,jetbrains.mps.smodel.runtime.StaticScope):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="kind" />
+              <node concept="Rm8GO" id="5x" role="37wK5m">
+                <ref role="1Px2BO" to="ze1i:~ConceptKind" resolve="ConceptKind" />
+                <ref role="Rm8GQ" to="ze1i:~ConceptKind.NORMAL" resolve="NORMAL" />
+              </node>
+              <node concept="Rm8GO" id="5y" role="37wK5m">
+                <ref role="1Px2BO" to="ze1i:~StaticScope" resolve="StaticScope" />
+                <ref role="Rm8GQ" to="ze1i:~StaticScope.NONE" resolve="NONE" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="36" role="3cqZAp">
+          <node concept="2OqwBi" id="5z" role="3clFbG">
+            <node concept="37vLTw" id="5$" role="2Oq$k0">
+              <ref role="3cqZAo" node="38" resolve="b" />
+            </node>
+            <node concept="liA8E" id="5_" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.alias(java.lang.String):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="alias" />
-              <node concept="Xl_RD" id="5x" role="37wK5m">
+              <node concept="Xl_RD" id="5A" role="37wK5m">
                 <property role="Xl_RC" value="dectab" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="36" role="3cqZAp">
-          <node concept="2OqwBi" id="5y" role="3cqZAk">
-            <node concept="37vLTw" id="5z" role="2Oq$k0">
-              <ref role="3cqZAo" node="37" resolve="b" />
+        <node concept="3cpWs6" id="37" role="3cqZAp">
+          <node concept="2OqwBi" id="5B" role="3cqZAk">
+            <node concept="37vLTw" id="5C" role="2Oq$k0">
+              <ref role="3cqZAo" node="38" resolve="b" />
             </node>
-            <node concept="liA8E" id="5$" role="2OqNvi">
+            <node concept="liA8E" id="5D" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.create():jetbrains.mps.smodel.runtime.ConceptDescriptor" resolve="create" />
             </node>
           </node>

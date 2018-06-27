@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptButton = createDescriptorForButton();
   /*package*/ final ConceptDescriptor myConceptLabel = createDescriptorForLabel();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -28,7 +28,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.Button:
         return myConceptButton;
       case LanguageConceptSwitch.Label:
@@ -39,7 +39,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForButton() {
@@ -47,6 +47,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.sampleXML.structure.ElementPart", 0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8beL);
     b.origin("r:5a5bef13-c898-42e0-9736-2063b8209071(jetbrains.mps.samples.generator_demo.demoLang6.structure)/3978102045101855363");
+    b.version(2);
     b.prop("text", 0x37350ebbae8d12f3L, "3978102045101855475");
     b.alias("button");
     return b.create();
@@ -56,6 +57,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.sampleXML.structure.ElementPart", 0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8beL);
     b.origin("r:5a5bef13-c898-42e0-9736-2063b8209071(jetbrains.mps.samples.generator_demo.demoLang6.structure)/3978102045101856876");
+    b.version(2);
     b.prop("text", 0x37350ebbae8d1876L, "3978102045101856886");
     b.alias("label");
     return b.create();

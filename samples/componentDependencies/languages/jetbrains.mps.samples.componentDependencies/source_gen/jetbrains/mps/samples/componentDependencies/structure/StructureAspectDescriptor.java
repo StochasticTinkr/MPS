@@ -17,10 +17,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDependency = createDescriptorForDependency();
   /*package*/ final ConceptDescriptor myConceptInPort = createDescriptorForInPort();
   /*package*/ final ConceptDescriptor myConceptOutPort = createDescriptorForOutPort();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -31,7 +31,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.Component:
         return myConceptComponent;
       case LanguageConceptSwitch.ComponentSet:
@@ -48,7 +48,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForComponent() {
@@ -56,6 +56,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:afaf73eb-94a1-4aae-902b-ed4d28124667(jetbrains.mps.samples.componentDependencies.structure)/6223439730610336068");
+    b.version(2);
     b.prop("x", 0x565e1976381bdb4dL, "6223439730610789197");
     b.prop("y", 0x565e1976381bdb4fL, "6223439730610789199");
     b.prop("width", 0x7128192564721b88L, "8153794773743967112");
@@ -71,6 +72,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:afaf73eb-94a1-4aae-902b-ed4d28124667(jetbrains.mps.samples.componentDependencies.structure)/6223439730610283563");
+    b.version(2);
     b.prop("query", 0x67281f6f60dc969eL, "7433225748201903774");
     b.aggregate("component", 0x565e197638146fa8L).target(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e19763814f144L).optional(false).ordered(true).multiple(true).origin("6223439730610302888").done();
     return b.create();
@@ -79,6 +81,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.componentDependencies", "Dependency", 0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e1976381b71a0L);
     b.class_(false, false, false);
     b.origin("r:afaf73eb-94a1-4aae-902b-ed4d28124667(jetbrains.mps.samples.componentDependencies.structure)/6223439730610762144");
+    b.version(2);
     b.associate("to", 0x565e1976381b7654L).target(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e19763814f144L).optional(false).origin("6223439730610763348").done();
     b.alias("depends on");
     return b.create();
@@ -88,6 +91,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:afaf73eb-94a1-4aae-902b-ed4d28124667(jetbrains.mps.samples.componentDependencies.structure)/6223439730610790758");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForOutPort() {
@@ -95,6 +99,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:afaf73eb-94a1-4aae-902b-ed4d28124667(jetbrains.mps.samples.componentDependencies.structure)/6223439730610790725");
+    b.version(2);
     return b.create();
   }
 }

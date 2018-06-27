@@ -19,10 +19,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTestAssertion = createDescriptorForTestAssertion();
   /*package*/ final ConceptDescriptor myConceptTransformationMatchAssertion = createDescriptorForTransformationMatchAssertion();
   /*package*/ final ConceptDescriptor myConceptTransformationMatchManyAssertion = createDescriptorForTransformationMatchManyAssertion();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -33,7 +33,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.ArgumentReference:
         return myConceptArgumentReference;
       case LanguageConceptSwitch.GeneratorTest:
@@ -54,13 +54,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForArgumentReference() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.test.generator", "ArgumentReference", 0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL);
     b.class_(false, false, false);
     b.origin("r:fc8379f0-84d2-4927-817e-ae0057474174(jetbrains.mps.lang.test.generator.structure)/554465258093203547");
+    b.version(2);
     b.associate("arg", 0x7b1db36ecf0d05cL).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf09c6aL).optional(false).origin("554465258093203548").done();
     return b.create();
   }
@@ -69,6 +70,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:fc8379f0-84d2-4927-817e-ae0057474174(jetbrains.mps.lang.test.generator.structure)/554465258093187774");
+    b.version(2);
     b.prop("description", 0x7b1db36ecf09c64L, "554465258093190244");
     b.aggregate("arguments", 0x7b1db36ecf09c67L).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf09c6aL).optional(true).ordered(true).multiple(true).origin("554465258093190247").done();
     b.aggregate("tests", 0x7b1db36ecf0d067L).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d058L).optional(true).ordered(true).multiple(true).origin("554465258093203559").done();
@@ -79,6 +81,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf09c6aL);
     b.origin("r:fc8379f0-84d2-4927-817e-ae0057474174(jetbrains.mps.lang.test.generator.structure)/554465258093190254");
+    b.version(2);
     b.aggregate("param", 0x7b1db36ecf09c72L).target(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b6d3L).optional(false).ordered(true).multiple(false).origin("554465258093190258").done();
     b.alias("model");
     return b.create();
@@ -88,12 +91,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:fc8379f0-84d2-4927-817e-ae0057474174(jetbrains.mps.lang.test.generator.structure)/554465258093190250");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTestAssertion() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.test.generator", "TestAssertion", 0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d058L);
     b.interface_();
     b.origin("r:fc8379f0-84d2-4927-817e-ae0057474174(jetbrains.mps.lang.test.generator.structure)/554465258093203544");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTransformationMatchAssertion() {
@@ -101,6 +106,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d058L);
     b.origin("r:fc8379f0-84d2-4927-817e-ae0057474174(jetbrains.mps.lang.test.generator.structure)/554465258093203543");
+    b.version(2);
     b.aggregate("inputModel", 0x7b1db36ecf0d05eL).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL).optional(false).ordered(true).multiple(false).origin("554465258093203550").done();
     b.aggregate("referenceModel", 0x7b1db36ecf0d060L).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL).optional(false).ordered(true).multiple(false).origin("554465258093203552").done();
     b.aggregate("transformationPlan", 0x7b1db36ecf0d063L).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL).optional(true).ordered(true).multiple(false).origin("554465258093203555").done();
@@ -111,6 +117,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d058L);
     b.origin("r:fc8379f0-84d2-4927-817e-ae0057474174(jetbrains.mps.lang.test.generator.structure)/6346338635721157081");
+    b.version(2);
     b.aggregate("inputModel", 0x7b1db36ecf0d05eL).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL).optional(false).ordered(true).multiple(false).origin("6346338635721157083").done();
     b.aggregate("referenceModels", 0x7b1db36ecf0d060L).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL).optional(false).ordered(true).multiple(true).origin("6346338635721157084").done();
     b.aggregate("transformationPlan", 0x7b1db36ecf0d063L).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL).optional(true).ordered(true).multiple(false).origin("6346338635721157085").done();

@@ -15,7 +15,7 @@
       <unit at="10,0,28,0" name="jetbrains.mps.samples.customAspect.sampleLanguage.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,50,0" name="jetbrains.mps.samples.customAspect.sampleLanguage.structure.StructureAspectDescriptor" />
+      <unit at="14,0,51,0" name="jetbrains.mps.samples.customAspect.sampleLanguage.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:e3887d04-c32d-4905-bb3f-fee50cac51c9(jetbrains.mps.samples.customAspect.sampleLanguage.structure)/2897519568668509945">
@@ -42,13 +42,14 @@
       <node id="2897519568668509945" at="43,201,44,33" concept="0" />
       <node id="2897519568668509945" at="44,33,45,71" concept="0" />
       <node id="2897519568668509945" at="45,71,46,136" concept="0" />
-      <node id="2897519568668509945" at="46,136,47,22" concept="4" />
-      <node id="2897519568668509945" at="42,0,49,0" concept="6" trace="createDescriptorForDocumentedConcept#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="2897519568668509945" at="46,136,47,17" concept="0" />
+      <node id="2897519568668509945" at="47,17,48,22" concept="4" />
+      <node id="2897519568668509945" at="42,0,50,0" concept="6" trace="createDescriptorForDocumentedConcept#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="2897519568668509945" at="31,51,32,42" />
-      <scope id="2897519568668509945" at="42,75,47,22">
+      <scope id="2897519568668509945" at="42,75,48,22">
         <var name="b" id="2897519568668509945" />
       </scope>
-      <scope id="2897519568668509945" at="42,0,49,0" />
+      <scope id="2897519568668509945" at="42,0,50,0" />
     </file>
   </root>
 </debug-info>

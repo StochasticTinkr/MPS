@@ -18,10 +18,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptPrivateInstanceMethodCallOperation = createDescriptorForPrivateInstanceMethodCallOperation();
   /*package*/ final ConceptDescriptor myConceptPrivateStaticFieldReference = createDescriptorForPrivateStaticFieldReference();
   /*package*/ final ConceptDescriptor myConceptPrivateStaticMethodCall = createDescriptorForPrivateStaticMethodCall();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -32,7 +32,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.PrivateFieldReferenceOperation:
         return myConceptPrivateFieldReferenceOperation;
       case LanguageConceptSwitch.PrivateInstanceMethodCallOperation:
@@ -47,7 +47,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForPrivateFieldReferenceOperation() {
@@ -55,6 +55,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL);
     b.origin("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)/6825241477451043705");
+    b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
@@ -63,6 +64,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L);
     b.origin("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)/6825241477451051014");
+    b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
@@ -71,6 +73,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.StaticFieldReference", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L);
     b.origin("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)/4107550939057698505");
+    b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
@@ -79,6 +82,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.StaticMethodCall", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L);
     b.origin("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)/3374946611454212811");
+    b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }

@@ -23,10 +23,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptImaginaryUnit = createDescriptorForImaginaryUnit();
   /*package*/ final ConceptDescriptor myConceptReExpression = createDescriptorForReExpression();
   /*package*/ final ConceptDescriptor myConceptSingleComplexExpression = createDescriptorForSingleComplexExpression();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -37,7 +37,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.AbsExpression:
         return myConceptAbsExpression;
       case LanguageConceptSwitch.ArgExpression:
@@ -62,7 +62,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForAbsExpression() {
@@ -70,6 +70,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression", 0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b3b49dL);
     b.origin("r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)/1196264034207");
+    b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("abs");
     return b.create();
@@ -79,6 +80,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression", 0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b3b49dL);
     b.origin("r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)/1196263843100");
+    b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("arg");
     return b.create();
@@ -88,6 +90,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.PrimitiveType", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L);
     b.origin("r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)/1196259557930");
+    b.version(2);
     b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
     b.alias("complex");
     return b.create();
@@ -97,6 +100,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression", 0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b3b49dL);
     b.origin("r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)/1196418881524");
+    b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("conj");
     return b.create();
@@ -106,6 +110,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression", 0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b3b49dL);
     b.origin("r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)/1196421957108");
+    b.version(2);
     b.aggregate("degree", 0x116904f9752L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L).optional(false).ordered(true).multiple(false).origin("1196422043474").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("deg");
@@ -116,6 +121,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression", 0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b3b49dL);
     b.origin("r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)/1196261859224");
+    b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("im");
     return b.create();
@@ -125,6 +131,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)/1196434001121");
+    b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("i");
     return b.create();
@@ -134,6 +141,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression", 0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b3b49dL);
     b.origin("r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)/1196260743057");
+    b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("re");
     return b.create();
@@ -143,6 +151,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, true, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)/1196260832413");
+    b.version(2);
     b.aggregate("complexExpression", 0x11686b4a081L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("1196260892801").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();

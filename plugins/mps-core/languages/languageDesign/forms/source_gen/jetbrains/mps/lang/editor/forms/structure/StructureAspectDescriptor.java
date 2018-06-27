@@ -19,10 +19,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCheckboxUI_Platform = createDescriptorForCheckboxUI_Platform();
   /*package*/ final ConceptDescriptor myConceptCheckboxUI_Text = createDescriptorForCheckboxUI_Text();
   /*package*/ final ConceptDescriptor myConceptStubCellModel_Checkbox = createDescriptorForStubCellModel_Checkbox();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -33,7 +33,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.AbstractCheckboxUI:
         return myConceptAbstractCheckboxUI;
       case LanguageConceptSwitch.CellModel_Checkbox:
@@ -50,13 +50,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForAbstractCheckboxUI() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.forms", "AbstractCheckboxUI", 0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1900c370e334d3daL);
     b.class_(false, true, false);
     b.origin("r:8598bcb3-b739-42c2-b1fc-32c367683d7c(jetbrains.mps.lang.editor.forms.structure)/1801654740563842010");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCellModel_Checkbox() {
@@ -64,6 +65,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.EditorCellModel", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L);
     b.origin("r:8598bcb3-b739-42c2-b1fc-32c367683d7c(jetbrains.mps.lang.editor.forms.structure)/312429380032619384");
+    b.version(2);
+    b.stub(0x455f8dda63eef06L);
     b.associate("propertyDeclaration", 0x334adf8cb15f3fdfL).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL).optional(false).origin("3696012239575138271").done();
     b.aggregate("ui", 0x1298d6f05780ea9aL).target(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1900c370e334d3daL).optional(false).ordered(true).multiple(false).origin("1340057216891284122").done();
     b.aggregate("label", 0x7203b81cfd6af4e6L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L).optional(true).ordered(true).multiple(false).origin("8215612579904156902").done();
@@ -75,6 +78,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.forms.structure.AbstractCheckboxUI", 0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1900c370e334d3daL);
     b.origin("r:8598bcb3-b739-42c2-b1fc-32c367683d7c(jetbrains.mps.lang.editor.forms.structure)/7024409093146622323");
+    b.version(2);
     b.alias("platform");
     return b.create();
   }
@@ -84,6 +88,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.editor.forms.structure.AbstractCheckboxUI", 0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1900c370e334d3daL);
     b.parent(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x132a500f473d6174L);
     b.origin("r:8598bcb3-b739-42c2-b1fc-32c367683d7c(jetbrains.mps.lang.editor.forms.structure)/1340057216891283515");
+    b.version(2);
     b.prop("trueText", 0x1298d6f05780e83eL, "1340057216891283518");
     b.prop("falseText", 0x1298d6f05780e840L, "1340057216891283520");
     b.alias("text");
@@ -94,6 +99,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.StubEditorCellModel", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L);
     b.origin("r:8598bcb3-b739-42c2-b1fc-32c367683d7c(jetbrains.mps.lang.editor.forms.structure)/312429380032720646");
+    b.version(2);
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     return b.create();
   }

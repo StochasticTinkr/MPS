@@ -16,10 +16,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptB = createDescriptorForB();
   /*package*/ final ConceptDescriptor myConceptC = createDescriptorForC();
   /*package*/ final ConceptDescriptor myConceptI = createDescriptorForI();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -30,7 +30,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.A:
         return myConceptA;
       case LanguageConceptSwitch.B:
@@ -45,13 +45,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForA() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.behavior.test", "A", 0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e5b2aL);
     b.class_(false, false, false);
     b.origin("r:2031ed21-5d78-4758-831e-aa590362bfba(jetbrains.mps.lang.behavior.test.structure)/4731970554577181482");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForB() {
@@ -59,6 +60,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, true, false);
     b.super_("jetbrains.mps.lang.behavior.test.structure.A", 0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e5b2aL);
     b.origin("r:2031ed21-5d78-4758-831e-aa590362bfba(jetbrains.mps.lang.behavior.test.structure)/4731970554577181534");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForC() {
@@ -67,12 +69,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.behavior.test.structure.B", 0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e5b5eL);
     b.parent(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e6814L);
     b.origin("r:2031ed21-5d78-4758-831e-aa590362bfba(jetbrains.mps.lang.behavior.test.structure)/4731970554577184883");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForI() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.behavior.test", "I", 0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e6814L);
     b.interface_();
     b.origin("r:2031ed21-5d78-4758-831e-aa590362bfba(jetbrains.mps.lang.behavior.test.structure)/4731970554577184788");
+    b.version(2);
     return b.create();
   }
 }

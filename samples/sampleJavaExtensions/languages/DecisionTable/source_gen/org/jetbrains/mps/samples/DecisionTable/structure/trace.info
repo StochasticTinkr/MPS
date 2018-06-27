@@ -15,7 +15,7 @@
       <unit at="10,0,28,0" name="org.jetbrains.mps.samples.DecisionTable.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="16,0,59,0" name="org.jetbrains.mps.samples.DecisionTable.structure.StructureAspectDescriptor" />
+      <unit at="16,0,60,0" name="org.jetbrains.mps.samples.DecisionTable.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:885978b0-baca-4eda-8c29-d1384945a64e(org.jetbrains.mps.samples.DecisionTable.structure)/1987251859606934913">
@@ -42,20 +42,21 @@
       <node id="1987251859606934913" at="45,187,46,34" concept="0" />
       <node id="1987251859606934913" at="46,34,47,121" concept="0" />
       <node id="1987251859606934913" at="47,121,48,126" concept="0" />
-      <node id="1987251859606934914" at="48,126,49,200" concept="0" />
-      <node id="1987251859606934915" at="49,200,50,200" concept="0" />
-      <node id="1987251859606934916" at="50,200,51,197" concept="0" />
-      <node id="1987251859606934917" at="51,197,52,197" concept="0" />
-      <node id="1987251859606934918" at="52,197,53,199" concept="0" />
-      <node id="1987251859606934913" at="53,199,54,49" concept="0" />
-      <node id="1987251859606934913" at="54,49,55,22" concept="0" />
-      <node id="1987251859606934913" at="55,22,56,22" concept="4" />
-      <node id="1987251859606934913" at="44,0,58,0" concept="6" trace="createDescriptorForDecisionTable#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="1987251859606934913" at="48,126,49,17" concept="0" />
+      <node id="1987251859606934914" at="49,17,50,200" concept="0" />
+      <node id="1987251859606934915" at="50,200,51,200" concept="0" />
+      <node id="1987251859606934916" at="51,200,52,197" concept="0" />
+      <node id="1987251859606934917" at="52,197,53,197" concept="0" />
+      <node id="1987251859606934918" at="53,197,54,199" concept="0" />
+      <node id="1987251859606934913" at="54,199,55,49" concept="0" />
+      <node id="1987251859606934913" at="55,49,56,22" concept="0" />
+      <node id="1987251859606934913" at="56,22,57,22" concept="4" />
+      <node id="1987251859606934913" at="44,0,59,0" concept="6" trace="createDescriptorForDecisionTable#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="1987251859606934913" at="33,47,34,38" />
-      <scope id="1987251859606934913" at="44,71,56,22">
+      <scope id="1987251859606934913" at="44,71,57,22">
         <var name="b" id="1987251859606934913" />
       </scope>
-      <scope id="1987251859606934913" at="44,0,58,0" />
+      <scope id="1987251859606934913" at="44,0,59,0" />
     </file>
   </root>
 </debug-info>

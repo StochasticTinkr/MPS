@@ -23,10 +23,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptOutputPort = createDescriptorForOutputPort();
   /*package*/ final ConceptDescriptor myConceptOutputToInputPortConnector = createDescriptorForOutputToInputPortConnector();
   /*package*/ final ConceptDescriptor myConceptRectangleNode = createDescriptorForRectangleNode();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -37,7 +37,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.Diagram1:
         return myConceptDiagram1;
       case LanguageConceptSwitch.Diagram2:
@@ -66,13 +66,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForDiagram1() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram.testLanguage", "Diagram1", 0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x71771b7f74c017aL);
     b.class_(false, false, false);
     b.origin("r:02ea189f-ea3a-4774-be86-1c8ef281dd30(jetbrains.mps.lang.editor.diagram.testLanguage.structure)/511002117671747962");
+    b.version(2);
     b.aggregate("rectangles", 0x71771b7f74c01b6L).target(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x71771b7f74c01b3L).optional(true).ordered(true).multiple(true).origin("511002117671748022").done();
     return b.create();
   }
@@ -80,6 +81,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram.testLanguage", "Diagram2", 0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1dce2L);
     b.class_(false, false, false);
     b.origin("r:02ea189f-ea3a-4774-be86-1c8ef281dd30(jetbrains.mps.lang.editor.diagram.testLanguage.structure)/8794120090374233314");
+    b.version(2);
     b.prop("initiallyCollapsed", 0x1702f223d36d60c8L, "1658153848510701768");
     b.aggregate("mainNodes", 0x7a0afda102e20209L).target(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1de05L).optional(true).ordered(true).multiple(true).origin("8794120090374242825").done();
     b.aggregate("nodeConnectors", 0x4ce40ecaf414670eL).target(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf4106a9bL).optional(true).ordered(true).multiple(true).origin("5540569706413713166").done();
@@ -90,12 +92,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:02ea189f-ea3a-4774-be86-1c8ef281dd30(jetbrains.mps.lang.editor.diagram.testLanguage.structure)/5540569706414436850");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNode() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram.testLanguage", "Node", 0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1de05L);
     b.class_(false, false, false);
     b.origin("r:02ea189f-ea3a-4774-be86-1c8ef281dd30(jetbrains.mps.lang.editor.diagram.testLanguage.structure)/8794120090374233605");
+    b.version(2);
     b.prop("x", 0x7a0afda102e2029cL, "8794120090374242972");
     b.prop("y", 0x7a0afda102e2029eL, "8794120090374242974");
     return b.create();
@@ -106,6 +110,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize", 0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e202aaL);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:02ea189f-ea3a-4774-be86-1c8ef281dd30(jetbrains.mps.lang.editor.diagram.testLanguage.structure)/822550549814787038");
+    b.version(2);
     b.prop("lineWidth", 0xb6a495df383e078L, "822550549814829176");
     return b.create();
   }
@@ -114,6 +119,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts", 0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71d1L);
     b.origin("r:02ea189f-ea3a-4774-be86-1c8ef281dd30(jetbrains.mps.lang.editor.diagram.testLanguage.structure)/2278461409091562761");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNodeWithPorts() {
@@ -121,6 +127,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize", 0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e202aaL);
     b.origin("r:02ea189f-ea3a-4774-be86-1c8ef281dd30(jetbrains.mps.lang.editor.diagram.testLanguage.structure)/5540569706414436817");
+    b.version(2);
     b.prop("lineWidth", 0x4ce40ecaf41ff260L, "5540569706414469728");
     b.aggregate("inputs", 0x4ce40ecaf41f723dL).target(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71f2L).optional(true).ordered(true).multiple(true).origin("5540569706414436925").done();
     b.aggregate("outputs", 0x4ce40ecaf41f7252L).target(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f722aL).optional(true).ordered(true).multiple(true).origin("5540569706414436946").done();
@@ -131,6 +138,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node", 0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1de05L);
     b.origin("r:02ea189f-ea3a-4774-be86-1c8ef281dd30(jetbrains.mps.lang.editor.diagram.testLanguage.structure)/8794120090374242986");
+    b.version(2);
     b.prop("width", 0x7a0afda10316dc02L, "8794120090377706498");
     b.prop("height", 0x7a0afda10316dc04L, "8794120090377706500");
     return b.create();
@@ -140,12 +148,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:02ea189f-ea3a-4774-be86-1c8ef281dd30(jetbrains.mps.lang.editor.diagram.testLanguage.structure)/5540569706414436906");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForOutputToInputPortConnector() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram.testLanguage", "OutputToInputPortConnector", 0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf4106a9bL);
     b.class_(false, false, false);
     b.origin("r:02ea189f-ea3a-4774-be86-1c8ef281dd30(jetbrains.mps.lang.editor.diagram.testLanguage.structure)/5540569706413451931");
+    b.version(2);
     b.associate("src", 0x4ce40ecaf4106e5cL).target(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f722aL).optional(false).origin("5540569706413452892").done();
     b.associate("dst", 0x4ce40ecaf4106e6bL).target(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71f2L).optional(false).origin("5540569706413452907").done();
     return b.create();
@@ -154,6 +164,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram.testLanguage", "RectangleNode", 0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x71771b7f74c01b3L);
     b.class_(false, false, false);
     b.origin("r:02ea189f-ea3a-4774-be86-1c8ef281dd30(jetbrains.mps.lang.editor.diagram.testLanguage.structure)/511002117671748019");
+    b.version(2);
     return b.create();
   }
 }

@@ -16,10 +16,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptB = createDescriptorForB();
   /*package*/ final ConceptDescriptor myConceptC = createDescriptorForC();
   /*package*/ final ConceptDescriptor myConceptI = createDescriptorForI();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -30,7 +30,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.A:
         return myConceptA;
       case LanguageConceptSwitch.B:
@@ -45,13 +45,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForA() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SourceLanguage", "A", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9fdL);
     b.class_(false, false, true);
     b.origin("r:3a85a332-d9ac-4332-b817-0bc70c21b404(SourceLanguage.structure)/3334961109014792701");
+    b.version(2);
     b.prop("propAstring", 0x2e4829759291ca60L, "3334961109014792800");
     b.aggregate("childA1", 0x2e4829759291ca44L).target(0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9fdL).optional(true).ordered(true).multiple(false).origin("3334961109014792772").done();
     return b.create();
@@ -62,6 +63,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("SourceLanguage.structure.A", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9fdL);
     b.parent(0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291ca00L);
     b.origin("r:3a85a332-d9ac-4332-b817-0bc70c21b404(SourceLanguage.structure)/3334961109014792702");
+    b.version(2);
     b.prop("propB", 0x2e4829759291ca40L, "3334961109014792768");
     return b.create();
   }
@@ -71,12 +73,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("SourceLanguage.structure.B", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9feL);
     b.parent(0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291ca00L);
     b.origin("r:3a85a332-d9ac-4332-b817-0bc70c21b404(SourceLanguage.structure)/3334961109014792703");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForI() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SourceLanguage", "I", 0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291ca00L);
     b.interface_();
     b.origin("r:3a85a332-d9ac-4332-b817-0bc70c21b404(SourceLanguage.structure)/3334961109014792704");
+    b.version(2);
     return b.create();
   }
 }

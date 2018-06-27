@@ -17,10 +17,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAspectModelRefExpression = createDescriptorForAspectModelRefExpression();
   /*package*/ final ConceptDescriptor myConceptModel_IsAspectOperation = createDescriptorForModel_IsAspectOperation();
   /*package*/ final ConceptDescriptor myConceptOfAspectOperation = createDescriptorForOfAspectOperation();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -31,7 +31,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.AspectModelRefExpression:
         return myConceptAspectModelRefExpression;
       case LanguageConceptSwitch.Model_IsAspectOperation:
@@ -44,7 +44,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForAspectModelRefExpression() {
@@ -52,6 +52,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:00d5aa52-8575-44dd-8a7e-68abaac24f2c(jetbrains.mps.lang.slanguage.structure)/6171083915388330090");
+    b.version(2);
     b.associate("aspect", 0x55a418200fdd3607L).target(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L).optional(false).origin("6171083915388597767").done();
     b.aggregate("lang", 0x55a418200fd9206bL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("6171083915388330091").done();
     b.alias("aspectModel");
@@ -62,6 +63,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.smodel.structure.SNodeOperation", 0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL);
     b.origin("r:00d5aa52-8575-44dd-8a7e-68abaac24f2c(jetbrains.mps.lang.slanguage.structure)/2030416617761226491");
+    b.version(2);
     b.associate("aspect", 0x1c2d7d27ffb53fb8L).target(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L).optional(false).origin("2030416617761226680").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("isAspectModel");
@@ -73,6 +75,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.collections.structure.SequenceOperation", 0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c26c9a2d9L);
     b.parent(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5252d9021b8b6c03L);
     b.origin("r:00d5aa52-8575-44dd-8a7e-68abaac24f2c(jetbrains.mps.lang.slanguage.structure)/5932042262275638696");
+    b.version(2);
     b.associate("requestedAspect", 0x7cd422dbfa7b06f8L).target(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L).optional(false).origin("8994852683961272056").done();
     b.alias("ofAspect");
     return b.create();

@@ -15,7 +15,7 @@
       <unit at="10,0,42,0" name="testAnnotatedType.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="16,0,135,0" name="testAnnotatedType.structure.StructureAspectDescriptor" />
+      <unit at="16,0,143,0" name="testAnnotatedType.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:c0db73ed-f604-44cb-9fd9-3e3424a144b7(testAnnotatedType.structure)/1470921783545323247">
@@ -38,19 +38,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="1470921783545323247" at="22,0,23,0" concept="1" trace="myConceptPrimNumConstant" />
       <node id="1470921783545323247" at="50,49,51,40" concept="4" />
-      <node id="1470921783545323247" at="108,73,109,167" concept="3" />
-      <node id="1470921783545323247" at="109,167,110,34" concept="0" />
-      <node id="1470921783545323247" at="110,34,111,121" concept="0" />
-      <node id="1470921783545323247" at="111,121,112,104" concept="0" />
-      <node id="1470921783545419434" at="112,104,113,64" concept="0" />
-      <node id="1470921783545323248" at="113,64,114,66" concept="0" />
-      <node id="1470921783545323247" at="114,66,115,22" concept="4" />
-      <node id="1470921783545323247" at="108,0,117,0" concept="6" trace="createDescriptorForPrimNumConstant#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="1470921783545323247" at="113,73,114,167" concept="3" />
+      <node id="1470921783545323247" at="114,167,115,34" concept="0" />
+      <node id="1470921783545323247" at="115,34,116,121" concept="0" />
+      <node id="1470921783545323247" at="116,121,117,104" concept="0" />
+      <node id="1470921783545323247" at="117,104,118,17" concept="0" />
+      <node id="1470921783545419434" at="118,17,119,64" concept="0" />
+      <node id="1470921783545323248" at="119,64,120,66" concept="0" />
+      <node id="1470921783545323247" at="120,66,121,22" concept="4" />
+      <node id="1470921783545323247" at="113,0,123,0" concept="6" trace="createDescriptorForPrimNumConstant#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="1470921783545323247" at="50,49,51,40" />
-      <scope id="1470921783545323247" at="108,73,115,22">
+      <scope id="1470921783545323247" at="113,73,121,22">
         <var name="b" id="1470921783545323247" />
       </scope>
-      <scope id="1470921783545323247" at="108,0,117,0" />
+      <scope id="1470921783545323247" at="113,0,123,0" />
     </file>
   </root>
   <root nodeRef="r:c0db73ed-f604-44cb-9fd9-3e3424a144b7(testAnnotatedType.structure)/1470921783545455334">
@@ -73,19 +74,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="1470921783545455334" at="18,0,19,0" concept="1" trace="myConceptPrimDoubleType" />
       <node id="1470921783545455334" at="42,48,43,39" concept="4" />
-      <node id="1470921783545455334" at="72,72,73,166" concept="3" />
-      <node id="1470921783545455334" at="73,166,74,34" concept="0" />
-      <node id="1470921783545455334" at="74,34,75,116" concept="0" />
-      <node id="1470921783545455334" at="75,116,76,104" concept="0" />
-      <node id="1470921783545455334" at="76,104,77,54" concept="0" />
-      <node id="1470921783545455334" at="77,54,78,23" concept="0" />
-      <node id="1470921783545455334" at="78,23,79,22" concept="4" />
-      <node id="1470921783545455334" at="72,0,81,0" concept="6" trace="createDescriptorForPrimDoubleType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="1470921783545455334" at="73,72,74,166" concept="3" />
+      <node id="1470921783545455334" at="74,166,75,34" concept="0" />
+      <node id="1470921783545455334" at="75,34,76,116" concept="0" />
+      <node id="1470921783545455334" at="76,116,77,104" concept="0" />
+      <node id="1470921783545455334" at="77,104,78,17" concept="0" />
+      <node id="1470921783545455334" at="78,17,79,54" concept="0" />
+      <node id="1470921783545455334" at="79,54,80,23" concept="0" />
+      <node id="1470921783545455334" at="80,23,81,22" concept="4" />
+      <node id="1470921783545455334" at="73,0,83,0" concept="6" trace="createDescriptorForPrimDoubleType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="1470921783545455334" at="42,48,43,39" />
-      <scope id="1470921783545455334" at="72,72,79,22">
+      <scope id="1470921783545455334" at="73,72,81,22">
         <var name="b" id="1470921783545455334" />
       </scope>
-      <scope id="1470921783545455334" at="72,0,81,0" />
+      <scope id="1470921783545455334" at="73,0,83,0" />
     </file>
   </root>
   <root nodeRef="r:c0db73ed-f604-44cb-9fd9-3e3424a144b7(testAnnotatedType.structure)/6405009306797629598">
@@ -108,19 +110,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="6405009306797629598" at="20,0,21,0" concept="1" trace="myConceptPrimIntType" />
       <node id="6405009306797629598" at="46,45,47,36" concept="4" />
-      <node id="6405009306797629598" at="90,69,91,163" concept="3" />
-      <node id="6405009306797629598" at="91,163,92,34" concept="0" />
-      <node id="6405009306797629598" at="92,34,93,116" concept="0" />
-      <node id="6405009306797629598" at="93,116,94,104" concept="0" />
-      <node id="6405009306797629598" at="94,104,95,54" concept="0" />
-      <node id="6405009306797629598" at="95,54,96,20" concept="0" />
-      <node id="6405009306797629598" at="96,20,97,22" concept="4" />
-      <node id="6405009306797629598" at="90,0,99,0" concept="6" trace="createDescriptorForPrimIntType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6405009306797629598" at="93,69,94,163" concept="3" />
+      <node id="6405009306797629598" at="94,163,95,34" concept="0" />
+      <node id="6405009306797629598" at="95,34,96,116" concept="0" />
+      <node id="6405009306797629598" at="96,116,97,104" concept="0" />
+      <node id="6405009306797629598" at="97,104,98,17" concept="0" />
+      <node id="6405009306797629598" at="98,17,99,54" concept="0" />
+      <node id="6405009306797629598" at="99,54,100,20" concept="0" />
+      <node id="6405009306797629598" at="100,20,101,22" concept="4" />
+      <node id="6405009306797629598" at="93,0,103,0" concept="6" trace="createDescriptorForPrimIntType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6405009306797629598" at="46,45,47,36" />
-      <scope id="6405009306797629598" at="90,69,97,22">
+      <scope id="6405009306797629598" at="93,69,101,22">
         <var name="b" id="6405009306797629598" />
       </scope>
-      <scope id="6405009306797629598" at="90,0,99,0" />
+      <scope id="6405009306797629598" at="93,0,103,0" />
     </file>
   </root>
   <root nodeRef="r:c0db73ed-f604-44cb-9fd9-3e3424a144b7(testAnnotatedType.structure)/6405009306797629932">
@@ -143,19 +146,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="6405009306797629932" at="24,0,25,0" concept="1" trace="myConceptSubstituteAnnotation" />
       <node id="6405009306797629932" at="54,54,55,45" concept="4" />
-      <node id="6405009306797629932" at="125,78,126,172" concept="3" />
-      <node id="6405009306797629932" at="126,172,127,34" concept="0" />
-      <node id="6405009306797629932" at="127,34,128,127" concept="0" />
-      <node id="6405009306797629932" at="128,127,129,104" concept="0" />
-      <node id="6405009306797650362" at="129,104,130,204" concept="0" />
-      <node id="6405009306797650372" at="130,204,131,203" concept="0" />
-      <node id="6405009306797629932" at="131,203,132,22" concept="4" />
-      <node id="6405009306797629932" at="125,0,134,0" concept="6" trace="createDescriptorForSubstituteAnnotation#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6405009306797629932" at="132,78,133,172" concept="3" />
+      <node id="6405009306797629932" at="133,172,134,34" concept="0" />
+      <node id="6405009306797629932" at="134,34,135,127" concept="0" />
+      <node id="6405009306797629932" at="135,127,136,104" concept="0" />
+      <node id="6405009306797629932" at="136,104,137,17" concept="0" />
+      <node id="6405009306797650362" at="137,17,138,204" concept="0" />
+      <node id="6405009306797650372" at="138,204,139,203" concept="0" />
+      <node id="6405009306797629932" at="139,203,140,22" concept="4" />
+      <node id="6405009306797629932" at="132,0,142,0" concept="6" trace="createDescriptorForSubstituteAnnotation#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6405009306797629932" at="54,54,55,45" />
-      <scope id="6405009306797629932" at="125,78,132,22">
+      <scope id="6405009306797629932" at="132,78,140,22">
         <var name="b" id="6405009306797629932" />
       </scope>
-      <scope id="6405009306797629932" at="125,0,134,0" />
+      <scope id="6405009306797629932" at="132,0,142,0" />
     </file>
   </root>
   <root nodeRef="r:c0db73ed-f604-44cb-9fd9-3e3424a144b7(testAnnotatedType.structure)/6405009306797650364">
@@ -177,18 +181,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="6405009306797650364" at="23,0,24,0" concept="1" trace="myConceptPrimType" />
       <node id="6405009306797650364" at="52,42,53,33" concept="4" />
-      <node id="6405009306797650364" at="117,66,118,160" concept="3" />
-      <node id="6405009306797650364" at="118,160,119,33" concept="0" />
-      <node id="6405009306797650364" at="119,33,120,115" concept="0" />
-      <node id="6405009306797650364" at="120,115,121,104" concept="0" />
-      <node id="6405009306797650364" at="121,104,122,54" concept="0" />
-      <node id="6405009306797650364" at="122,54,123,22" concept="4" />
-      <node id="6405009306797650364" at="117,0,125,0" concept="6" trace="createDescriptorForPrimType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6405009306797650364" at="123,66,124,160" concept="3" />
+      <node id="6405009306797650364" at="124,160,125,33" concept="0" />
+      <node id="6405009306797650364" at="125,33,126,115" concept="0" />
+      <node id="6405009306797650364" at="126,115,127,104" concept="0" />
+      <node id="6405009306797650364" at="127,104,128,17" concept="0" />
+      <node id="6405009306797650364" at="128,17,129,54" concept="0" />
+      <node id="6405009306797650364" at="129,54,130,22" concept="4" />
+      <node id="6405009306797650364" at="123,0,132,0" concept="6" trace="createDescriptorForPrimType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6405009306797650364" at="52,42,53,33" />
-      <scope id="6405009306797650364" at="117,66,123,22">
+      <scope id="6405009306797650364" at="123,66,130,22">
         <var name="b" id="6405009306797650364" />
       </scope>
-      <scope id="6405009306797650364" at="117,0,125,0" />
+      <scope id="6405009306797650364" at="123,0,132,0" />
     </file>
   </root>
   <root nodeRef="r:c0db73ed-f604-44cb-9fd9-3e3424a144b7(testAnnotatedType.structure)/6405009306797650365">
@@ -211,19 +216,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="6405009306797650365" at="19,0,20,0" concept="1" trace="myConceptPrimFloatType" />
       <node id="6405009306797650365" at="44,47,45,38" concept="4" />
-      <node id="6405009306797650365" at="81,71,82,165" concept="3" />
-      <node id="6405009306797650365" at="82,165,83,34" concept="0" />
-      <node id="6405009306797650365" at="83,34,84,116" concept="0" />
-      <node id="6405009306797650365" at="84,116,85,104" concept="0" />
-      <node id="6405009306797650365" at="85,104,86,54" concept="0" />
-      <node id="6405009306797650365" at="86,54,87,22" concept="0" />
-      <node id="6405009306797650365" at="87,22,88,22" concept="4" />
-      <node id="6405009306797650365" at="81,0,90,0" concept="6" trace="createDescriptorForPrimFloatType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6405009306797650365" at="83,71,84,165" concept="3" />
+      <node id="6405009306797650365" at="84,165,85,34" concept="0" />
+      <node id="6405009306797650365" at="85,34,86,116" concept="0" />
+      <node id="6405009306797650365" at="86,116,87,104" concept="0" />
+      <node id="6405009306797650365" at="87,104,88,17" concept="0" />
+      <node id="6405009306797650365" at="88,17,89,54" concept="0" />
+      <node id="6405009306797650365" at="89,54,90,22" concept="0" />
+      <node id="6405009306797650365" at="90,22,91,22" concept="4" />
+      <node id="6405009306797650365" at="83,0,93,0" concept="6" trace="createDescriptorForPrimFloatType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6405009306797650365" at="44,47,45,38" />
-      <scope id="6405009306797650365" at="81,71,88,22">
+      <scope id="6405009306797650365" at="83,71,91,22">
         <var name="b" id="6405009306797650365" />
       </scope>
-      <scope id="6405009306797650365" at="81,0,90,0" />
+      <scope id="6405009306797650365" at="83,0,93,0" />
     </file>
   </root>
   <root nodeRef="r:c0db73ed-f604-44cb-9fd9-3e3424a144b7(testAnnotatedType.structure)/6405009306797650375">
@@ -250,13 +256,14 @@
       <node id="6405009306797650375" at="66,169,67,34" concept="0" />
       <node id="6405009306797650375" at="67,34,68,71" concept="0" />
       <node id="6405009306797650375" at="68,71,69,104" concept="0" />
-      <node id="6405009306797650375" at="69,104,70,22" concept="4" />
-      <node id="6405009306797650375" at="65,0,72,0" concept="6" trace="createDescriptorForPresenceCondition#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6405009306797650375" at="69,104,70,17" concept="0" />
+      <node id="6405009306797650375" at="70,17,71,22" concept="4" />
+      <node id="6405009306797650375" at="65,0,73,0" concept="6" trace="createDescriptorForPresenceCondition#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6405009306797650375" at="40,51,41,42" />
-      <scope id="6405009306797650375" at="65,75,70,22">
+      <scope id="6405009306797650375" at="65,75,71,22">
         <var name="b" id="6405009306797650375" />
       </scope>
-      <scope id="6405009306797650375" at="65,0,72,0" />
+      <scope id="6405009306797650375" at="65,0,73,0" />
     </file>
   </root>
   <root nodeRef="r:c0db73ed-f604-44cb-9fd9-3e3424a144b7(testAnnotatedType.structure)/8675420879155410165">
@@ -279,19 +286,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="8675420879155410165" at="21,0,22,0" concept="1" trace="myConceptPrimLongType" />
       <node id="8675420879155410165" at="48,46,49,37" concept="4" />
-      <node id="8675420879155410165" at="99,70,100,164" concept="3" />
-      <node id="8675420879155410165" at="100,164,101,34" concept="0" />
-      <node id="8675420879155410165" at="101,34,102,116" concept="0" />
-      <node id="8675420879155410165" at="102,116,103,104" concept="0" />
-      <node id="8675420879155410165" at="103,104,104,54" concept="0" />
-      <node id="8675420879155410165" at="104,54,105,21" concept="0" />
-      <node id="8675420879155410165" at="105,21,106,22" concept="4" />
-      <node id="8675420879155410165" at="99,0,108,0" concept="6" trace="createDescriptorForPrimLongType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="8675420879155410165" at="103,70,104,164" concept="3" />
+      <node id="8675420879155410165" at="104,164,105,34" concept="0" />
+      <node id="8675420879155410165" at="105,34,106,116" concept="0" />
+      <node id="8675420879155410165" at="106,116,107,104" concept="0" />
+      <node id="8675420879155410165" at="107,104,108,17" concept="0" />
+      <node id="8675420879155410165" at="108,17,109,54" concept="0" />
+      <node id="8675420879155410165" at="109,54,110,21" concept="0" />
+      <node id="8675420879155410165" at="110,21,111,22" concept="4" />
+      <node id="8675420879155410165" at="103,0,113,0" concept="6" trace="createDescriptorForPrimLongType#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="8675420879155410165" at="48,46,49,37" />
-      <scope id="8675420879155410165" at="99,70,106,22">
+      <scope id="8675420879155410165" at="103,70,111,22">
         <var name="b" id="8675420879155410165" />
       </scope>
-      <scope id="8675420879155410165" at="99,0,108,0" />
+      <scope id="8675420879155410165" at="103,0,113,0" />
     </file>
   </root>
 </debug-info>

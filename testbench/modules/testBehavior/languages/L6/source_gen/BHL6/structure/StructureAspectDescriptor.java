@@ -24,10 +24,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptI1 = createDescriptorForI1();
   /*package*/ final ConceptDescriptor myConceptI2 = createDescriptorForI2();
   /*package*/ final ConceptDescriptor myConceptJ = createDescriptorForJ();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -38,7 +38,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.A:
         return myConceptA;
       case LanguageConceptSwitch.B:
@@ -69,25 +69,28 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForA() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("BHL6", "A", 0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec04606a7L);
     b.class_(false, false, false);
     b.origin("r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)/6167444251392476839");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForB() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("BHL6", "B", 0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0460fdaL);
     b.class_(false, false, false);
     b.origin("r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)/6167444251392479194");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForC() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("BHL6", "C", 0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L);
     b.class_(false, false, false);
     b.origin("r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)/6167444251392482355");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForD() {
@@ -95,6 +98,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("BHL6.structure.B", 0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0460fdaL);
     b.origin("r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)/6167444251392484328");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForE() {
@@ -102,12 +106,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("BHL6.structure.C", 0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L);
     b.origin("r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)/6167444251392485271");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForF() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("BHL6", "F", 0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0465379L);
     b.class_(false, false, false);
     b.origin("r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)/6167444251392496505");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForG() {
@@ -115,6 +121,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("BHL6.structure.F", 0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0465379L);
     b.origin("r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)/6167444251392496706");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForH() {
@@ -122,12 +129,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("BHL6.structure.D", 0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec04623e8L);
     b.origin("r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)/1298998034136441159");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForI() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("BHL6", "I", 0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x13b01619ddde1774L);
     b.interface_();
     b.origin("r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)/1418658182974019444");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForI1() {
@@ -135,6 +144,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.parent(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x13b01619ddde1774L);
     b.origin("r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)/1418658182974019422");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForI2() {
@@ -142,6 +152,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.parent(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x13b01619ddde1774L);
     b.origin("r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)/1418658182974019433");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForJ() {
@@ -150,6 +161,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x13b01619ddde175eL);
     b.parent(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x13b01619ddde1769L);
     b.origin("r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)/1418658182974019325");
+    b.version(2);
     return b.create();
   }
 }

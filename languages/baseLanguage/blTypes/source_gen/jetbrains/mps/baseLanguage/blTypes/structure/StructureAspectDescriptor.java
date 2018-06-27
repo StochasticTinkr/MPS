@@ -16,10 +16,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptPrimitiveTypeDescriptor = createDescriptorForPrimitiveTypeDescriptor();
   /*package*/ final ConceptDescriptor myConceptPrimitiveTypeRef = createDescriptorForPrimitiveTypeRef();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -30,7 +30,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.PrimitiveTypeDescriptor:
         return myConceptPrimitiveTypeDescriptor;
       case LanguageConceptSwitch.PrimitiveTypeRef:
@@ -41,7 +41,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForPrimitiveTypeDescriptor() {
@@ -49,6 +49,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)/1159268590033");
+    b.version(2);
     b.aggregate("extends", 0x10de9cae1d0L).target(0xed6d7656532c4bc2L, 0x81d1af945aeb8280L, 0x10de9cbf8e8L).optional(true).ordered(true).multiple(true).origin("1159268590032").done();
     return b.create();
   }
@@ -57,6 +58,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L);
     b.origin("r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)/1159268661480");
+    b.version(2);
     b.associate("descriptor", 0x10de9cbf8e7L).target(0xed6d7656532c4bc2L, 0x81d1af945aeb8280L, 0x10de9cae1d1L).optional(false).origin("1159268661479").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     return b.create();

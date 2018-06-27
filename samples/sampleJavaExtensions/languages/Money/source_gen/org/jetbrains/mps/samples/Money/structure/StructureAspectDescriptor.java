@@ -24,10 +24,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptMoneyType = createDescriptorForMoneyType();
   /*package*/ final ConceptDescriptor myConceptMovingAverage = createDescriptorForMovingAverage();
   /*package*/ final ConceptDescriptor myConceptStockSymbol = createDescriptorForStockSymbol();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -38,7 +38,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.ConvertTo:
         return myConceptConvertTo;
       case LanguageConceptSwitch.CurrencyDefTable:
@@ -65,7 +65,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForConvertTo() {
@@ -73,6 +73,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L);
     b.origin("r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/1790427706118381722");
+    b.version(2);
     b.prop("targetCurrency", 0x18d8e0833b34345fL, "1790427706118386783");
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("convert to");
@@ -82,6 +83,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("org.jetbrains.mps.samples.Money", "CurrencyDefTable", 0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3210b276d1443596L);
     b.class_(false, false, true);
     b.origin("r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/3607579524910560662");
+    b.version(2);
     b.aggregate("units", 0x3210b276d144359cL).target(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3210b276d1443597L).optional(true).ordered(true).multiple(true).origin("3607579524910560668").done();
     return b.create();
   }
@@ -90,6 +92,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/3607579524910560663");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCurrentStockPrice() {
@@ -97,6 +100,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/4001135958233291203");
+    b.version(2);
     b.aggregate("symbol", 0x3786e3f480b0926aL).target(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480a9b18aL).optional(false).ordered(true).multiple(false).origin("4001135958235845226").done();
     b.alias("current stock price");
     return b.create();
@@ -106,6 +110,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L);
     b.origin("r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/5447719361346519865");
+    b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("amount");
     return b.create();
@@ -115,6 +120,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L);
     b.origin("r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/1790427706118304177");
+    b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("currency");
     return b.create();
@@ -124,6 +130,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/5447719361346490674");
+    b.version(2);
     b.prop("amount", 0x4b9a2fe559135183L, "5447719361346490755");
     b.associate("unit", 0x3210b276d14435a8L).target(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3210b276d1443597L).optional(false).origin("3607579524910560680").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
@@ -135,6 +142,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Type", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL);
     b.origin("r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/5447719361346490730");
+    b.version(2);
     b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
     b.alias("Money");
     return b.create();
@@ -144,6 +152,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/4001135958235922842");
+    b.version(2);
     b.prop("period", 0x3786e3f480b1c19bL, "4001135958235922843");
     b.aggregate("symbol", 0x3786e3f480b1c6d0L).target(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480a9b18aL).optional(false).ordered(true).multiple(false).origin("4001135958235924176").done();
     b.alias("moving average");
@@ -153,6 +162,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("org.jetbrains.mps.samples.Money", "StockSymbol", 0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480a9b18aL);
     b.class_(false, false, false);
     b.origin("r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/4001135958235394442");
+    b.version(2);
     b.prop("symbol", 0x3786e3f480afac5bL, "4001135958235786331");
     b.alias("symbol");
     return b.create();

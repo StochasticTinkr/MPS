@@ -20,10 +20,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptOverridingPrimIntType = createDescriptorForOverridingPrimIntType();
   /*package*/ final ConceptDescriptor myConceptOverridingPrimNumConstant = createDescriptorForOverridingPrimNumConstant();
   /*package*/ final ConceptDescriptor myConceptUnconditionalOverrideAnnotation = createDescriptorForUnconditionalOverrideAnnotation();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -34,7 +34,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.ErrorType:
         return myConceptErrorType;
       case LanguageConceptSwitch.OverrideAnnotation:
@@ -53,7 +53,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForErrorType() {
@@ -61,6 +61,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("testAnnotatedType.structure.PrimType", 0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL);
     b.origin("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/1870027727456337728");
+    b.version(2);
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     b.alias("error");
     return b.create();
@@ -70,6 +71,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
     b.origin("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/4113274076525496020");
+    b.version(2);
     b.aggregate("substitute", 0x58e32a0782beb1baL).target(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL).optional(false).ordered(true).multiple(false).origin("6405009306797650362").done();
     b.aggregate("condition", 0x58e32a0782beb1c4L).target(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1c7L).optional(false).ordered(true).multiple(false).origin("6405009306797650372").done();
     return b.create();
@@ -79,6 +81,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("testAnnotatedType.structure.PrimFloatType", 0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bdL);
     b.origin("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/6572489169071322628");
+    b.version(2);
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     b.alias("_float_overridden");
     return b.create();
@@ -88,6 +91,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("testAnnotatedType.structure.PrimIntType", 0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be609eL);
     b.origin("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/6572489169071322609");
+    b.version(2);
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     b.alias("_int_overridden");
     return b.create();
@@ -97,6 +101,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("testAnnotatedType.structure.PrimNumConstant", 0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x1469c391a09a5eefL);
     b.origin("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/6572489169071277973");
+    b.version(2);
     b.prop("isOverriding", 0x5b362c13a498895bL, "6572489169071278427");
     return b.create();
   }
@@ -105,6 +110,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("testOverridingType.structure.OverrideAnnotation", 0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L);
     b.origin("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/1870027727456306442");
+    b.version(2);
     return b.create();
   }
 }

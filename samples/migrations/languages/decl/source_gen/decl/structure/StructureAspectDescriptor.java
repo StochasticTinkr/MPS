@@ -18,10 +18,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptNewComponentMember = createDescriptorForNewComponentMember();
   /*package*/ final ConceptDescriptor myConceptOldComponent = createDescriptorForOldComponent();
   /*package*/ final ConceptDescriptor myConceptOldComponentMember = createDescriptorForOldComponentMember();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -32,7 +32,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.DeclMigrationData_Component:
         return myConceptDeclMigrationData_Component;
       case LanguageConceptSwitch.DeclMigrationData_WholeModule:
@@ -51,13 +51,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForDeclMigrationData_Component() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("decl", "DeclMigrationData_Component", 0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L);
     b.class_(false, false, false);
     b.origin("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)/1986963296983656544");
+    b.version(2);
     b.prop("oldId", 0x1b931c975a732f6dL, "1986963296983658349");
     b.prop("newId", 0x1b931c975a732f7bL, "1986963296983658363");
     return b.create();
@@ -66,6 +67,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("decl", "DeclMigrationData_WholeModule", 0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732f8bL);
     b.class_(false, false, false);
     b.origin("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)/1986963296983658379");
+    b.version(2);
     b.aggregate("entry", 0x1b931c975a732f9aL).target(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L).optional(true).ordered(true).multiple(true).origin("1986963296983658394").done();
     return b.create();
   }
@@ -74,6 +76,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)/7709929535540731249");
+    b.version(2);
     b.aggregate("member", 0x6aff2c1049329d74L).target(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c104932a602L).optional(true).ordered(true).multiple(true).origin("7709929535540731252").done();
     b.alias("new component");
     return b.create();
@@ -82,6 +85,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("decl", "NewComponentMember", 0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c104932a602L);
     b.interface_();
     b.origin("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)/7709929535540733442");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForOldComponent() {
@@ -89,6 +93,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)/7709929535540653274");
+    b.version(2);
     b.aggregate("member", 0x6aff2c104931bb27L).target(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c104931bb26L).optional(true).ordered(true).multiple(true).origin("7709929535540673319").done();
     b.alias("old component");
     return b.create();
@@ -97,6 +102,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("decl", "OldComponentMember", 0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c104931bb26L);
     b.interface_();
     b.origin("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)/7709929535540673318");
+    b.version(2);
     return b.create();
   }
 }

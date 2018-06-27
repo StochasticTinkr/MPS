@@ -25,10 +25,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDerived1_Inherited = createDescriptorForDerived1_Inherited();
   /*package*/ final ConceptDescriptor myConceptDerived2_Constrained = createDescriptorForDerived2_Constrained();
   /*package*/ final ConceptDescriptor myConceptDerived2_Inherited = createDescriptorForDerived2_Inherited();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -39,7 +39,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.Base:
         return myConceptBase;
       case LanguageConceptSwitch.CanBeAncestorFail:
@@ -72,19 +72,21 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForBase() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "Base", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL);
     b.interface_();
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080488191");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCanBeAncestorFail() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "CanBeAncestorFail", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223ebL);
     b.class_(false, false, false);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/8374682609824965611");
+    b.version(2);
     b.aggregate("child", 0x7438d976714223edL).target(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0xa2290b8b60493a1L).optional(true).ordered(true).multiple(false).origin("8374682609824965613").done();
     return b.create();
   }
@@ -92,12 +94,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "CanBeChildFail", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223eaL);
     b.class_(false, false, false);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/8374682609824965610");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCanBeParentFail() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "CanBeParentFail", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223ecL);
     b.class_(false, false, false);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/8374682609824965612");
+    b.version(2);
     b.aggregate("child", 0x7438d976714223f8L).target(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0xa2290b8b60493a1L).optional(true).ordered(true).multiple(false).origin("8374682609824965624").done();
     return b.create();
   }
@@ -105,6 +109,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "Child", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0xa2290b8b60493a1L);
     b.class_(false, false, false);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/730305212589577121");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForConcept_CC() {
@@ -113,6 +118,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73116L);
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73112L);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080518495");
+    b.version(2);
     b.alias("CF - composition of D1 & D2 CFs");
     return b.create();
   }
@@ -122,6 +128,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73116L);
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73124L);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080518517");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForConcept_II() {
@@ -130,6 +137,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed7311cL);
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73124L);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080518533");
+    b.version(2);
     b.alias("CF - composition of D1 & D2 CFs. D2 & D1 inherites Base CF. Hence, CF - Base CF ");
     return b.create();
   }
@@ -137,6 +145,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "Container", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730f4L);
     b.class_(false, false, false);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080488180");
+    b.version(2);
     b.prop("triggerBase", 0x50b9acb92ed73128L, "5816870305080488232");
     b.prop("triggerD1", 0x50b9acb92ed7312aL, "5816870305080488234");
     b.prop("triggerD2", 0x50b9acb92ed7312dL, "5816870305080488237");
@@ -148,6 +157,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080488214");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDerived1_Inherited() {
@@ -155,6 +165,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080488220");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDerived2_Constrained() {
@@ -162,6 +173,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080488210");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDerived2_Inherited() {
@@ -169,6 +181,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080488228");
+    b.version(2);
     return b.create();
   }
 }

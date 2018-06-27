@@ -19,10 +19,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptStateMachine = createDescriptorForStateMachine();
   /*package*/ final ConceptDescriptor myConceptStateReference = createDescriptorForStateReference();
   /*package*/ final ConceptDescriptor myConceptTransition = createDescriptorForTransition();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -33,7 +33,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.AbstractStateMachineElement:
         return myConceptAbstractStateMachineElement;
       case LanguageConceptSwitch.Event:
@@ -54,13 +54,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForAbstractStateMachineElement() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.multipleProjections.stateMachine", "AbstractStateMachineElement", 0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0x6e3eaf7a54e76eeaL);
     b.class_(false, true, false);
     b.origin("r:b986234b-0ae5-423e-aca0-76655e94d151(jetbrains.mps.samples.multipleProjections.stateMachine.structure)/7943979732673457898");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForEvent() {
@@ -69,12 +70,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.multipleProjections.stateMachine.structure.AbstractStateMachineElement", 0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0x6e3eaf7a54e76eeaL);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:b986234b-0ae5-423e-aca0-76655e94d151(jetbrains.mps.samples.multipleProjections.stateMachine.structure)/763922957008729147");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForEventReference() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.multipleProjections.stateMachine", "EventReference", 0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457446L);
     b.class_(false, false, false);
     b.origin("r:b986234b-0ae5-423e-aca0-76655e94d151(jetbrains.mps.samples.multipleProjections.stateMachine.structure)/763922957008729158");
+    b.version(2);
     b.associate("event", 0xa99ffe1c8457447L).target(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743bL).optional(false).origin("763922957008729159").done();
     return b.create();
   }
@@ -84,12 +87,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.multipleProjections.stateMachine.structure.AbstractStateMachineElement", 0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0x6e3eaf7a54e76eeaL);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:b986234b-0ae5-423e-aca0-76655e94d151(jetbrains.mps.samples.multipleProjections.stateMachine.structure)/763922957008729154");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForStateMachine() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.multipleProjections.stateMachine", "StateMachine", 0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8456ba1L);
     b.class_(false, false, false);
     b.origin("r:b986234b-0ae5-423e-aca0-76655e94d151(jetbrains.mps.samples.multipleProjections.stateMachine.structure)/763922957008726945");
+    b.version(2);
     b.aggregate("events", 0xa99ffe1c8456ba3L).target(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743bL).optional(true).ordered(true).multiple(true).origin("763922957008726947").done();
     b.aggregate("transitions", 0xa99ffe1c8456ba4L).target(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743dL).optional(true).ordered(true).multiple(true).origin("763922957008726948").done();
     b.aggregate("states", 0xa99ffe1c8456ba5L).target(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457442L).optional(true).ordered(true).multiple(true).origin("763922957008726949").done();
@@ -99,6 +104,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.multipleProjections.stateMachine", "StateReference", 0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457444L);
     b.class_(false, false, false);
     b.origin("r:b986234b-0ae5-423e-aca0-76655e94d151(jetbrains.mps.samples.multipleProjections.stateMachine.structure)/763922957008729156");
+    b.version(2);
     b.associate("state", 0xa99ffe1c8457445L).target(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457442L).optional(false).origin("763922957008729157").done();
     return b.create();
   }
@@ -107,6 +113,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.multipleProjections.stateMachine.structure.AbstractStateMachineElement", 0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0x6e3eaf7a54e76eeaL);
     b.origin("r:b986234b-0ae5-423e-aca0-76655e94d151(jetbrains.mps.samples.multipleProjections.stateMachine.structure)/763922957008729149");
+    b.version(2);
     b.prop("condition", 0xa99ffe1c8457441L, "763922957008729153");
     b.aggregate("fromState", 0xa99ffe1c845743eL).target(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457444L).optional(false).ordered(true).multiple(false).origin("763922957008729150").done();
     b.aggregate("toState", 0xa99ffe1c8457440L).target(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457444L).optional(false).ordered(true).multiple(false).origin("763922957008729152").done();

@@ -18,7 +18,7 @@
       <unit at="10,0,30,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,63,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.StructureAspectDescriptor" />
+      <unit at="14,0,65,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:fa417a98-a00c-4f7c-9ba5-6ec71a5b205a(jetbrains.mps.samples.multipleProjections.requestTracking.structure)/3675491646420733795">
@@ -41,18 +41,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="3675491646420733795" at="16,0,17,0" concept="2" trace="myConceptWorkflowContainer" />
       <node id="3675491646420733795" at="34,51,35,42" concept="6" />
-      <node id="3675491646420733795" at="54,75,55,209" concept="5" />
-      <node id="3675491646420733795" at="55,209,56,33" concept="1" />
-      <node id="3675491646420733795" at="56,33,57,71" concept="1" />
-      <node id="3675491646420733795" at="57,71,58,144" concept="1" />
-      <node id="3675491646420738766" at="58,144,59,201" concept="1" />
-      <node id="3675491646420733795" at="59,201,60,22" concept="6" />
-      <node id="3675491646420733795" at="54,0,62,0" concept="8" trace="createDescriptorForWorkflowContainer#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="3675491646420733795" at="55,75,56,209" concept="5" />
+      <node id="3675491646420733795" at="56,209,57,33" concept="1" />
+      <node id="3675491646420733795" at="57,33,58,71" concept="1" />
+      <node id="3675491646420733795" at="58,71,59,144" concept="1" />
+      <node id="3675491646420733795" at="59,144,60,17" concept="1" />
+      <node id="3675491646420738766" at="60,17,61,201" concept="1" />
+      <node id="3675491646420733795" at="61,201,62,22" concept="6" />
+      <node id="3675491646420733795" at="55,0,64,0" concept="8" trace="createDescriptorForWorkflowContainer#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="3675491646420733795" at="34,51,35,42" />
-      <scope id="3675491646420733795" at="54,75,60,22">
+      <scope id="3675491646420733795" at="55,75,62,22">
         <var name="b" id="3675491646420733795" />
       </scope>
-      <scope id="3675491646420733795" at="54,0,62,0" />
+      <scope id="3675491646420733795" at="55,0,64,0" />
     </file>
   </root>
   <root nodeRef="r:fa417a98-a00c-4f7c-9ba5-6ec71a5b205a(jetbrains.mps.samples.multipleProjections.requestTracking.structure)/3675491646420739318">
@@ -79,15 +80,16 @@
       <node id="3675491646420739318" at="46,200,47,34" concept="1" />
       <node id="3675491646420739318" at="47,34,48,71" concept="1" />
       <node id="3675491646420739318" at="48,71,49,144" concept="1" />
-      <node id="3675491646420872268" at="49,144,50,71" concept="1" />
-      <node id="3675491646420739343" at="50,71,51,205" concept="1" />
-      <node id="3675491646420739318" at="51,205,52,22" concept="6" />
-      <node id="3675491646420739318" at="45,0,54,0" concept="8" trace="createDescriptorForWorkflow#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="3675491646420739318" at="49,144,50,17" concept="1" />
+      <node id="3675491646420872268" at="50,17,51,71" concept="1" />
+      <node id="3675491646420739343" at="51,71,52,205" concept="1" />
+      <node id="3675491646420739318" at="52,205,53,22" concept="6" />
+      <node id="3675491646420739318" at="45,0,55,0" concept="8" trace="createDescriptorForWorkflow#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="3675491646420739318" at="32,42,33,33" />
-      <scope id="3675491646420739318" at="45,66,52,22">
+      <scope id="3675491646420739318" at="45,66,53,22">
         <var name="b" id="3675491646420739318" />
       </scope>
-      <scope id="3675491646420739318" at="45,0,54,0" />
+      <scope id="3675491646420739318" at="45,0,55,0" />
     </file>
   </root>
   <root nodeRef="r:fa417a98-a00c-4f7c-9ba5-6ec71a5b205a(jetbrains.mps.samples.multipleProjections.requestTracking.structure)/3675491646420867317">

@@ -15,7 +15,7 @@
       <unit at="10,0,28,0" name="testPrimitiveType.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="16,0,57,0" name="testPrimitiveType.structure.StructureAspectDescriptor" />
+      <unit at="16,0,58,0" name="testPrimitiveType.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:f452be5e-b693-4373-bee9-3f7a3df5e603(testPrimitiveType.structure)/706089536801033580">
@@ -42,18 +42,19 @@
       <node id="706089536801033580" at="45,169,46,34" concept="0" />
       <node id="706089536801033580" at="46,34,47,115" concept="0" />
       <node id="706089536801033580" at="47,115,48,103" concept="0" />
-      <node id="706089536801035938" at="48,103,49,60" concept="0" />
-      <node id="706089536801035944" at="49,60,50,60" concept="0" />
-      <node id="706089536801035947" at="50,60,51,61" concept="0" />
-      <node id="706089536801033580" at="51,61,52,54" concept="0" />
-      <node id="706089536801033580" at="52,54,53,36" concept="0" />
-      <node id="706089536801033580" at="53,36,54,22" concept="4" />
-      <node id="706089536801033580" at="44,0,56,0" concept="6" trace="createDescriptorForTypeWithProperties#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="706089536801033580" at="48,103,49,17" concept="0" />
+      <node id="706089536801035938" at="49,17,50,60" concept="0" />
+      <node id="706089536801035944" at="50,60,51,60" concept="0" />
+      <node id="706089536801035947" at="51,60,52,61" concept="0" />
+      <node id="706089536801033580" at="52,61,53,54" concept="0" />
+      <node id="706089536801033580" at="53,54,54,36" concept="0" />
+      <node id="706089536801033580" at="54,36,55,22" concept="4" />
+      <node id="706089536801033580" at="44,0,57,0" concept="6" trace="createDescriptorForTypeWithProperties#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="706089536801033580" at="33,52,34,43" />
-      <scope id="706089536801033580" at="44,76,54,22">
+      <scope id="706089536801033580" at="44,76,55,22">
         <var name="b" id="706089536801033580" />
       </scope>
-      <scope id="706089536801033580" at="44,0,56,0" />
+      <scope id="706089536801033580" at="44,0,57,0" />
     </file>
   </root>
 </debug-info>

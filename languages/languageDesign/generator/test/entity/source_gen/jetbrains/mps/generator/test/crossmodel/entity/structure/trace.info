@@ -18,7 +18,7 @@
       <unit at="10,0,30,0" name="jetbrains.mps.generator.test.crossmodel.entity.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,66,0" name="jetbrains.mps.generator.test.crossmodel.entity.structure.StructureAspectDescriptor" />
+      <unit at="14,0,68,0" name="jetbrains.mps.generator.test.crossmodel.entity.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:9b56ed90-436a-4093-aab2-2dfe5d09ce42(jetbrains.mps.generator.test.crossmodel.entity.structure)/4355167635271935075">
@@ -41,18 +41,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="4355167635271935075" at="16,0,17,0" concept="2" trace="myConceptNodeA" />
       <node id="4355167635271935075" at="34,39,35,30" concept="6" />
-      <node id="4355167635271935075" at="57,63,58,186" concept="5" />
-      <node id="4355167635271935075" at="58,186,59,33" concept="1" />
-      <node id="4355167635271935075" at="59,33,60,71" concept="1" />
-      <node id="4355167635271935075" at="60,71,61,133" concept="1" />
-      <node id="4355167635271953276" at="61,133,62,199" concept="1" />
-      <node id="4355167635271935075" at="62,199,63,22" concept="6" />
-      <node id="4355167635271935075" at="57,0,65,0" concept="8" trace="createDescriptorForNodeA#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="4355167635271935075" at="58,63,59,186" concept="5" />
+      <node id="4355167635271935075" at="59,186,60,33" concept="1" />
+      <node id="4355167635271935075" at="60,33,61,71" concept="1" />
+      <node id="4355167635271935075" at="61,71,62,133" concept="1" />
+      <node id="4355167635271935075" at="62,133,63,17" concept="1" />
+      <node id="4355167635271953276" at="63,17,64,199" concept="1" />
+      <node id="4355167635271935075" at="64,199,65,22" concept="6" />
+      <node id="4355167635271935075" at="58,0,67,0" concept="8" trace="createDescriptorForNodeA#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="4355167635271935075" at="34,39,35,30" />
-      <scope id="4355167635271935075" at="57,63,63,22">
+      <scope id="4355167635271935075" at="58,63,65,22">
         <var name="b" id="4355167635271935075" />
       </scope>
-      <scope id="4355167635271935075" at="57,0,65,0" />
+      <scope id="4355167635271935075" at="58,0,67,0" />
     </file>
   </root>
   <root nodeRef="r:9b56ed90-436a-4093-aab2-2dfe5d09ce42(jetbrains.mps.generator.test.crossmodel.entity.structure)/4355167635271935478">
@@ -79,18 +80,19 @@
       <node id="4355167635271935478" at="46,186,47,34" concept="1" />
       <node id="4355167635271935478" at="47,34,48,71" concept="1" />
       <node id="4355167635271935478" at="48,71,49,133" concept="1" />
-      <node id="4355167635271953278" at="49,133,50,63" concept="1" />
-      <node id="3003826652066045294" at="50,63,51,169" concept="1" />
-      <node id="4355167635271952392" at="51,169,52,167" concept="1" />
-      <node id="4355167635271952394" at="52,167,53,167" concept="1" />
-      <node id="4355167635271952397" at="53,167,54,167" concept="1" />
-      <node id="4355167635271935478" at="54,167,55,22" concept="6" />
-      <node id="4355167635271935478" at="45,0,57,0" concept="8" trace="createDescriptorForEntry#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="4355167635271935478" at="49,133,50,17" concept="1" />
+      <node id="4355167635271953278" at="50,17,51,63" concept="1" />
+      <node id="3003826652066045294" at="51,63,52,169" concept="1" />
+      <node id="4355167635271952392" at="52,169,53,167" concept="1" />
+      <node id="4355167635271952394" at="53,167,54,167" concept="1" />
+      <node id="4355167635271952397" at="54,167,55,167" concept="1" />
+      <node id="4355167635271935478" at="55,167,56,22" concept="6" />
+      <node id="4355167635271935478" at="45,0,58,0" concept="8" trace="createDescriptorForEntry#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="4355167635271935478" at="32,39,33,30" />
-      <scope id="4355167635271935478" at="45,63,55,22">
+      <scope id="4355167635271935478" at="45,63,56,22">
         <var name="b" id="4355167635271935478" />
       </scope>
-      <scope id="4355167635271935478" at="45,0,57,0" />
+      <scope id="4355167635271935478" at="45,0,58,0" />
     </file>
   </root>
   <root nodeRef="r:9b56ed90-436a-4093-aab2-2dfe5d09ce42(jetbrains.mps.generator.test.crossmodel.entity.structure)/4355167635271953286">

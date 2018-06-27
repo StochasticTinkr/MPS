@@ -16,10 +16,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTransformationMenuPart_Intention = createDescriptorForTransformationMenuPart_Intention();
   /*package*/ final ConceptDescriptor myConceptTransformationMenuPart_PluginAction = createDescriptorForTransformationMenuPart_PluginAction();
   /*package*/ final ConceptDescriptor myConceptTransformationMenuPart_Refactoring = createDescriptorForTransformationMenuPart_Refactoring();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -30,7 +30,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.QueryFunctionParameter_IntentionExecutable:
         return myConceptQueryFunctionParameter_IntentionExecutable;
       case LanguageConceptSwitch.TransformationMenuPart_Intention:
@@ -45,7 +45,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForQueryFunctionParameter_IntentionExecutable() {
@@ -53,6 +53,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL);
     b.origin("r:8333260e-1c41-48f8-b34d-821761a2600f(jetbrains.mps.lang.editor.menus.extras.structure)/2468431357014363369");
+    b.version(2);
     b.alias("intentionExecutable");
     return b.create();
   }
@@ -62,6 +63,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.editor.structure.TransformationMenuPart", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL);
     b.parent(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L);
     b.origin("r:8333260e-1c41-48f8-b34d-821761a2600f(jetbrains.mps.lang.editor.menus.extras.structure)/2926686622729992785");
+    b.version(2);
     b.associate("intention", 0x289dadfa24b57a52L).target(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L).optional(false).origin("2926686622729992786").done();
     b.alias("intention");
     return b.create();
@@ -72,6 +74,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.editor.structure.TransformationMenuPart", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL);
     b.parent(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L);
     b.origin("r:8333260e-1c41-48f8-b34d-821761a2600f(jetbrains.mps.lang.editor.menus.extras.structure)/2319156231054332300");
+    b.version(2);
     b.associate("action", 0x202f4c4e02a09194L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L).optional(false).origin("2319156231054332308").done();
     b.alias("plugin action");
     return b.create();
@@ -82,6 +85,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.editor.structure.TransformationMenuPart", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL);
     b.parent(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L);
     b.origin("r:8333260e-1c41-48f8-b34d-821761a2600f(jetbrains.mps.lang.editor.menus.extras.structure)/4736696158595695479");
+    b.version(2);
     b.associate("refactoring", 0x41bc200f660dc37aL).target(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L).optional(false).origin("4736696158595695482").done();
     b.alias("refactoring");
     return b.create();
