@@ -94,6 +94,7 @@ public class TestSubstituteParentPropertyAndReference_ReferenceMenuPart extends 
         boolean val = _context.getEditorContext() != null && _context.getNode() != null && _context.getModel() != null && targetNode != null;
         return SPropertyOperations.getString(targetNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       }
+
       @Nullable
       @Override
       public String getVisibleText(String pattern) {
@@ -110,7 +111,7 @@ public class TestSubstituteParentPropertyAndReference_ReferenceMenuPart extends 
       public IconResource getIcon(String pattern) {
         boolean val = _context.getEditorContext() != null && _context.getNode() != null && _context.getModel() != null && targetNode != null;
 
-        return IconContainer.RESOURCE_a2a8d7;
+        return IconContainer.RESOURCE_a2a9d7;
       }
       @Override
       public String getShortDescriptionText(@NotNull String pattern) {

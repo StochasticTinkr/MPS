@@ -146,8 +146,8 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);
-      elementCell.setAction(CellActionType.SELECT_NEXT, new CellAction_CreateChildRangeSelection(elementNode, new SelectionContainer_EditorBuilder_a.RangeSelectionFilter_o1wjm3_c2a(), "empty_children", getEditorContext(), true));
-      elementCell.setAction(CellActionType.SELECT_PREVIOUS, new CellAction_CreateChildRangeSelection(elementNode, new SelectionContainer_EditorBuilder_a.RangeSelectionFilter_o1wjm3_c2a(), "empty_children", getEditorContext(), false));
+      elementCell.setAction(CellActionType.SELECT_NEXT, new CellAction_CreateChildRangeSelection(elementNode, new SelectionContainer_EditorBuilder_a.RangeSelectionFilter_o1wjm3_c2a(getEditorContext()), "empty_children", getEditorContext(), true));
+      elementCell.setAction(CellActionType.SELECT_PREVIOUS, new CellAction_CreateChildRangeSelection(elementNode, new SelectionContainer_EditorBuilder_a.RangeSelectionFilter_o1wjm3_c2a(getEditorContext()), "empty_children", getEditorContext(), false));
       return elementCell;
     }
     public EditorCell createEmptyCell() {
@@ -181,6 +181,10 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
   }
   public static class RangeSelectionFilter_o1wjm3_c2a extends NodeRangeSelection.RangeSelectionFilter {
 
+
+    public RangeSelectionFilter_o1wjm3_c2a(EditorContext editorContext) {
+      super(editorContext);
+    }
     public boolean accept(SNode childNode) {
       return SPropertyOperations.getBoolean(childNode, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, 0x617705b269dc8252L, "flag"));
     }
@@ -252,8 +256,8 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);
-      elementCell.setAction(CellActionType.SELECT_NEXT, new CellAction_CreateChildRangeSelection(elementNode, new SelectionContainer_EditorBuilder_a.RangeSelectionFilter_o1wjm3_c3a(), "empty_children", getEditorContext(), true));
-      elementCell.setAction(CellActionType.SELECT_PREVIOUS, new CellAction_CreateChildRangeSelection(elementNode, new SelectionContainer_EditorBuilder_a.RangeSelectionFilter_o1wjm3_c3a(), "empty_children", getEditorContext(), false));
+      elementCell.setAction(CellActionType.SELECT_NEXT, new CellAction_CreateChildRangeSelection(elementNode, new SelectionContainer_EditorBuilder_a.RangeSelectionFilter_o1wjm3_c3a(getEditorContext()), "empty_children", getEditorContext(), true));
+      elementCell.setAction(CellActionType.SELECT_PREVIOUS, new CellAction_CreateChildRangeSelection(elementNode, new SelectionContainer_EditorBuilder_a.RangeSelectionFilter_o1wjm3_c3a(getEditorContext()), "empty_children", getEditorContext(), false));
       return elementCell;
     }
     public EditorCell createEmptyCell() {
@@ -287,6 +291,10 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
   }
   public static class RangeSelectionFilter_o1wjm3_c3a extends NodeRangeSelection.RangeSelectionFilter {
 
+
+    public RangeSelectionFilter_o1wjm3_c3a(EditorContext editorContext) {
+      super(editorContext);
+    }
     public boolean accept(SNode childNode) {
       return !(SPropertyOperations.getBoolean(childNode, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, 0x617705b269dc8252L, "flag")));
     }

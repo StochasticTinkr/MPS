@@ -122,8 +122,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     public EditorCell createNodeCell(SNode elementNode) {
       EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
       installElementCellActions(elementNode, elementCell, false);
-      elementCell.setAction(CellActionType.SELECT_NEXT, new CellAction_CreateChildRangeSelection(elementNode, new RefNodeList_EditorBuilder_a.RangeSelectionFilter_d0l3p8_a0(), "empty_differentTypeOfChildren", getEditorContext(), true));
-      elementCell.setAction(CellActionType.SELECT_PREVIOUS, new CellAction_CreateChildRangeSelection(elementNode, new RefNodeList_EditorBuilder_a.RangeSelectionFilter_d0l3p8_a0(), "empty_differentTypeOfChildren", getEditorContext(), false));
+      elementCell.setAction(CellActionType.SELECT_NEXT, new CellAction_CreateChildRangeSelection(elementNode, new RefNodeList_EditorBuilder_a.RangeSelectionFilter_d0l3p8_a0(getEditorContext()), "empty_differentTypeOfChildren", getEditorContext(), true));
+      elementCell.setAction(CellActionType.SELECT_PREVIOUS, new CellAction_CreateChildRangeSelection(elementNode, new RefNodeList_EditorBuilder_a.RangeSelectionFilter_d0l3p8_a0(getEditorContext()), "empty_differentTypeOfChildren", getEditorContext(), false));
       return elementCell;
     }
     public EditorCell createEmptyCell() {
@@ -169,6 +169,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
   }
   public static class RangeSelectionFilter_d0l3p8_a0 extends NodeRangeSelection.RangeSelectionFilter {
 
+
+    public RangeSelectionFilter_d0l3p8_a0(EditorContext editorContext) {
+      super(editorContext);
+    }
     public boolean accept(SNode childNode) {
       return SPropertyOperations.getString(childNode, MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0x34b9ac382393ec2L, 0x34b9ac3823b0254L, "property")) != null;
     }

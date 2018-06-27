@@ -1858,7 +1858,7 @@
       <node id="1106598080605870574" at="3370,0,3373,0" concept="9" trace="sourceNodesQuery_a0a0c0a0a0a2a0a21a0#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodesContext;)Ljava/lang/Iterable;" />
       <node id="1106598080605870772" at="3373,0,3376,0" concept="9" trace="sourceNodesQuery_a0g0n0a#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodesContext;)Ljava/lang/Iterable;" />
       <node id="9117847582903512275" at="3376,0,3379,0" concept="9" trace="sourceNodesQuery_a0t0a#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodesContext;)Ljava/lang/Iterable;" />
-      <node id="1106598080605870945" at="3379,0,3382,0" concept="9" trace="sourceNodesQuery_a0a0b1a#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodesContext;)Ljava/lang/Iterable;" />
+      <node id="1106598080605870945" at="3379,0,3382,0" concept="9" trace="sourceNodesQuery_a0a0d1a#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodesContext;)Ljava/lang/Iterable;" />
       <node id="1106598080605870084" at="862,0,866,0" concept="9" trace="propertyMacro_GetPropertyValue_11065980806058700810#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
       <node id="1106598080605870558" at="1452,0,1456,0" concept="9" trace="referenceMacro_GetReferent_11065980806058705560#(Ljetbrains/mps/generator/template/ReferenceMacroContext;)Ljava/lang/Object;" />
       <node id="4348485823408509925" at="1977,95,1982,18" concept="6" />

@@ -28392,8 +28392,11 @@
                         <ref role="3cqZAo" node="XrrhtvD5$B" resolve="elementNode" />
                       </node>
                       <node concept="2ShNRf" id="3LoVd4J5xf6" role="37wK5m">
-                        <node concept="HV5vD" id="3LoVd4J5xf7" role="2ShVmc">
-                          <ref role="HV5vE" node="XrrhtvD5Hm" resolve="_context_.RangeSelectionFilter" />
+                        <node concept="1pGfFk" id="dzpa5H9b3P" role="2ShVmc">
+                          <ref role="37wK5l" node="dzpa5H8U$C" resolve="_context_.RangeSelectionFilter" />
+                          <node concept="1rXfSq" id="dzpa5H9bZV" role="37wK5m">
+                            <ref role="37wK5l" to="nivk:~AbstractEditorBuilder.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
+                          </node>
                         </node>
                       </node>
                       <node concept="Xl_RD" id="3LoVd4J5xf8" role="37wK5m">
@@ -28555,9 +28558,12 @@
                       <node concept="37vLTw" id="3LoVd4J5xge" role="37wK5m">
                         <ref role="3cqZAo" node="XrrhtvD5$B" resolve="elementNode" />
                       </node>
-                      <node concept="2ShNRf" id="3LoVd4J5xgf" role="37wK5m">
-                        <node concept="HV5vD" id="3LoVd4J5xgg" role="2ShVmc">
-                          <ref role="HV5vE" node="XrrhtvD5Hm" resolve="_context_.RangeSelectionFilter" />
+                      <node concept="2ShNRf" id="dzpa5H9cM5" role="37wK5m">
+                        <node concept="1pGfFk" id="dzpa5H9cM6" role="2ShVmc">
+                          <ref role="37wK5l" node="dzpa5H8U$C" resolve="_context_.RangeSelectionFilter" />
+                          <node concept="1rXfSq" id="dzpa5H9cM7" role="37wK5m">
+                            <ref role="37wK5l" to="nivk:~AbstractEditorBuilder.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
+                          </node>
                         </node>
                       </node>
                       <node concept="Xl_RD" id="3LoVd4J5xgh" role="37wK5m">
@@ -30097,7 +30103,26 @@
         <property role="1sVAO0" value="false" />
         <property role="1EXbeo" value="false" />
         <property role="TrG5h" value="RangeSelectionFilter" />
+        <node concept="2tJIrI" id="dzpa5H8Rwk" role="jymVt" />
         <node concept="2tJIrI" id="XrrhtvD5Hn" role="jymVt" />
+        <node concept="3clFbW" id="dzpa5H8U$C" role="jymVt">
+          <node concept="3cqZAl" id="dzpa5H8U$D" role="3clF45" />
+          <node concept="3Tm1VV" id="dzpa5H8U$E" role="1B3o_S" />
+          <node concept="3clFbS" id="dzpa5H8U$G" role="3clF47">
+            <node concept="XkiVB" id="dzpa5H8U$I" role="3cqZAp">
+              <ref role="37wK5l" to="b8lf:~NodeRangeSelection$RangeSelectionFilter.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext)" resolve="NodeRangeSelection.RangeSelectionFilter" />
+              <node concept="37vLTw" id="dzpa5H8U$M" role="37wK5m">
+                <ref role="3cqZAo" node="dzpa5H8U$J" resolve="editorContext" />
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTG" id="dzpa5H8U$J" role="3clF46">
+            <property role="TrG5h" value="editorContext" />
+            <node concept="3uibUv" id="dzpa5H8U$L" role="1tU5fm">
+              <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFb_" id="XrrhtvD5Ho" role="jymVt">
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="accept" />

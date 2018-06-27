@@ -411,6 +411,20 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
   }
 
   public static abstract class RangeSelectionFilter {
+    private final EditorContext myEditorContext;
+
+    public RangeSelectionFilter(EditorContext editorContext) {
+      myEditorContext = editorContext;
+    }
+
+    @Deprecated
+    public RangeSelectionFilter() {
+      this(null);
+    }
+
+    protected EditorContext getEditorContext(){
+      return myEditorContext;
+    }
     public abstract boolean accept(SNode node);
 
     public void saveFilter(SelectionInfo info) {
