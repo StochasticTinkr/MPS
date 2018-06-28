@@ -6,12 +6,13 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.process.ProcessEvent;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor;
 import com.intellij.openapi.util.Key;
-import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestEventMessage;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestRawEvent;
 
 /**
- * Updates {@link jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState } with {@link jetbrains.mps.baseLanguage.unitTest.execution.TestEvent } and other events from a futher unspecified source (usually a listener of a test execution process)
+ * Updates {@link jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState } with {@link jetbrains.mps.baseLanguage.unitTest.execution.TestEventMessage } and other events from a futher unspecified source (usually a listener of a test execution process)
  */
-public class TestEventsDispatcher {
+public final class TestEventsDispatcher {
   private final TestRunState myState;
 
   public TestEventsDispatcher(TestRunState testState) {
@@ -19,26 +20,31 @@ public class TestEventsDispatcher {
   }
 
   public void onProcessTerminated(@NotNull ProcessEvent event) {
-    myState.terminate(event.getExitCode() == DefaultTestExecutor.EXIT_CODE_FOR_EXCEPTION);
+    myState.onTermination(event.getExitCode() == DefaultTestExecutor.EXIT_CODE_FOR_EXCEPTION);
   }
 
   public void onSimpleTextAvailable(String text, Key key) {
     myState.outputText(text, key);
   }
 
-  public void onTestEvent(TestEvent event) {
-    String token = event.getToken();
-    if (TestEvent.START_TEST_PREFIX.equals(token)) {
-      myState.onTestStarted(event);
-    } else if (TestEvent.FINISH_TEST_PREFIX.equals(token)) {
-      myState.onTestFinished(event);
-    } else if (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(token)) {
-      myState.onTestAssumptionFailure(event);
-    } else if (TestEvent.IGNORE_FAILURE_TEST_PREFIX.equals(token)) {
-      // fix: no difference between assumption failure and ignoring the test 
-      myState.onTestAssumptionFailure(event);
-    } else if (TestEvent.FAILURE_TEST_PREFIX.equals(token)) {
-      myState.onTestFailure(event);
+  public void onTestEvent(@NotNull TestEventMessage message) {
+    String token = message.getToken();
+    TestRawEvent event = message.getEvent();
+    switch (token) {
+      case TestEventMessage.START_TEST_PREFIX:
+        myState.onTestStarted(event);
+      case TestEventMessage.FINISH_TEST_PREFIX:
+        myState.onTestFinished(event);
+      case TestEventMessage.FAILURE_TEST_PREFIX:
+        myState.onTestFailure(event);
+      case TestEventMessage.START_TESTRUN_PREFIX:
+        myState.onRunTestStarted();
+      case TestEventMessage.FINISH_TESTRUN_PREFIX:
+        myState.onRunTestFinished();
+      case TestEventMessage.ASSUMPTION_FAILURE_TEST_PREFIX:
+        myState.onTestAssumptionFailure(event);
+      case TestEventMessage.IGNORE_FAILURE_TEST_PREFIX:
+        myState.onTestIgnored(event);
     }
   }
 }

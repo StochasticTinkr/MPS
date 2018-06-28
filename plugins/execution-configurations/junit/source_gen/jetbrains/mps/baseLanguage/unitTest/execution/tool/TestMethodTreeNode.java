@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
   protected final ITestNodeWrapper myTestMethod;
 
   public TestMethodTreeNode(@NotNull ITestNodeWrapper testMethod) {
+    assert !(testMethod.isTestCase());
     setUserObject(testMethod);
     myTestMethod = testMethod;
     setNodeIdentifier(myTestMethod.getNodePointer().toString());
@@ -35,7 +36,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
   }
 
   @Override
-  public ITestNodeWrapper getTestWrapper() {
+  public ITestNodeWrapper getTestNode() {
     return myTestMethod;
   }
 }

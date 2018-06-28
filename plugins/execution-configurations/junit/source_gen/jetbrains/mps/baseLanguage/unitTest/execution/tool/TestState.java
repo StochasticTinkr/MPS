@@ -10,9 +10,9 @@ import org.jetbrains.annotations.NotNull;
 public enum TestState {
   NOT_RAN(AllIcons.RunConfigurations.TestNotRan, false, false),
   IN_PROGRESS(null, false, false),
-  PAUSED(AllIcons.RunConfigurations.TestPaused, false, false),
-  IGNORED(AllIcons.RunConfigurations.TestIgnored, true, false),
   PASSED(AllIcons.RunConfigurations.TestPassed, true, false),
+  IGNORED(AllIcons.RunConfigurations.TestIgnored, true, false),
+  SKIPPED(AllIcons.RunConfigurations.TestSkipped, true, true),
   FAILED(AllIcons.RunConfigurations.TestFailed, true, true),
   ERROR(AllIcons.RunConfigurations.TestError, true, true),
   TERMINATED(AllIcons.RunConfigurations.TestTerminated, true, true);

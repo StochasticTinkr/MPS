@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
   private final ITestNodeWrapper myTestCase;
 
   public TestCaseTreeNode(@NotNull ITestNodeWrapper testCase) {
+    assert testCase.isTestCase();
     myTestCase = testCase;
     setUserObject(testCase);
     setToggleClickCount(-1);
@@ -22,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
   }
 
   @Override
-  public ITestNodeWrapper getTestWrapper() {
+  public ITestNodeWrapper getTestNode() {
     return myTestCase;
   }
 }

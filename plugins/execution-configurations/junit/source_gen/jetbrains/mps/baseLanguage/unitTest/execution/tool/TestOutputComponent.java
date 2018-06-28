@@ -11,6 +11,10 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData;
 import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
 import javax.swing.SwingUtilities;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestType;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestMethodNodeKey;
 import java.util.Objects;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.util.Disposer;
@@ -33,6 +37,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class TestOutputComponent implements TestRunStateUpdateListener {
   private static final Logger LOG = LogManager.getLogger(TestOutputComponent.class);
   private static final int MAX_SIZE = 10000;
+
   private final JComponent myComponent;
   private final ConsoleView myConsoleView;
   private final TestOutputComponent.CompositeMessage myRootMessage = new TestOutputComponent.RootMessage();
@@ -80,10 +85,24 @@ public class TestOutputComponent implements TestRunStateUpdateListener {
     return myComponent;
   }
 
-  public void filter(String filterClass, String filterMethod) {
-    if (!(Objects.equals(filterClass, myFilterClass)) || !(Objects.equals(filterMethod, myFilterMethod))) {
-      myFilterClass = filterClass;
-      myFilterMethod = filterMethod;
+  public void setFilter(@Nullable TestNodeKey key) {
+    // todo rewrite 
+    if (key == null) {
+      if (myFilterClass != null || myFilterMethod != null) {
+        myFilterClass = null;
+        myFilterMethod = null;
+        myConsoleView.clear();
+        myRootMessage.print();
+      }
+    }
+    String newFilterClass = key.getTestCaseFqName();
+    String newFilterMethod = null;
+    if (key.getType() == TestType.METHOD) {
+      newFilterMethod = ((TestMethodNodeKey) key).getTestMethodName();
+    }
+    if (!(Objects.equals(newFilterClass, myFilterClass)) || !(Objects.equals(newFilterMethod, myFilterMethod))) {
+      myFilterClass = newFilterClass;
+      myFilterMethod = newFilterMethod;
       myConsoleView.clear();
       myRootMessage.print();
     }

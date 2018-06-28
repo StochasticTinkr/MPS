@@ -6,6 +6,8 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.TreeSelectionModel;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKeyFactory;
 
 public class TestTreeSelectionListener implements TreeSelectionListener {
   private final TreeSelectionModel myFreeSelectionModel;
@@ -27,18 +29,13 @@ public class TestTreeSelectionListener implements TreeSelectionListener {
     if (path == null) {
       return;
     }
-    String className = null;
-    String methodName = null;
-    Object node = path.getLastPathComponent();
-    if (node instanceof TestCaseTreeNode) {
-      TestCaseTreeNode n = (TestCaseTreeNode) node;
-      className = n.getClassName();
-    } else if (node instanceof TestMethodTreeNode) {
-      TestMethodTreeNode n = (TestMethodTreeNode) node;
-      className = n.getClassName();
-      methodName = n.getMethodName();
+    TestNodeKey newKey = null;
+    Object obj = path.getLastPathComponent();
+    if (obj instanceof NonRootTestTreeNode) {
+      TestCaseTreeNode treeNode = (TestCaseTreeNode) obj;
+      newKey = TestNodeKeyFactory.wrap(treeNode.getTestNode());
     }
-    myOutputComponent.filter(className, methodName);
-    myStatisticsModel.setFilter(className, methodName);
+    myOutputComponent.setFilter(newKey);
+    myStatisticsModel.setFilter(newKey);
   }
 }

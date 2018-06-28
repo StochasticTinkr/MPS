@@ -13,12 +13,16 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
   protected final TestTree myTestTree;
   protected int mySelected = -1;
   protected int myCount;
+
   public BaseTestOccurenceNavigator(TestTree tree) {
     myTestTree = tree;
     myTestTree.addTreeSelectionListener(this);
   }
+
   public abstract boolean hasAvailableOccurence(boolean next);
+
   public abstract boolean accept(MPSTreeNode node);
+
   public void setNewSelectedIndex(boolean next) {
     boolean founded = false;
     DefaultMutableTreeNode node = myTestTree.getCurrentNode();
@@ -31,14 +35,17 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
       node = temp;
     } while (!(founded));
   }
+
   @Override
   public boolean hasNextOccurence() {
     return hasAvailableOccurence(true);
   }
+
   @Override
   public boolean hasPreviousOccurence() {
     return hasAvailableOccurence(false);
   }
+
   @Override
   public OccurenceNavigator.OccurenceInfo goNextOccurence() {
     setNewSelectedIndex(true);
@@ -46,6 +53,7 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
     navigator.navigate(true);
     return new OccurenceNavigator.OccurenceInfo(navigator, mySelected, myCount);
   }
+
   @Override
   public OccurenceNavigator.OccurenceInfo goPreviousOccurence() {
     setNewSelectedIndex(false);
@@ -53,14 +61,17 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
     navigator.navigate(true);
     return new OccurenceNavigator.OccurenceInfo(navigator, mySelected, myCount);
   }
+
   @Override
   public String getNextOccurenceActionName() {
     return "Next test";
   }
+
   @Override
   public String getPreviousOccurenceActionName() {
     return "Previous test";
   }
+
   @Override
   public void valueChanged(TreeSelectionEvent p0) {
     if (myTestTree == null) {
@@ -72,17 +83,21 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
     }
     myCount = myTestTree.getRowCount();
   }
+
   public class TestNavigator implements Navigatable {
     public TestNavigator() {
     }
+
     @Override
     public void navigate(boolean p0) {
       myTestTree.setSelectionRows(new int[]{mySelected});
     }
+
     @Override
     public boolean canNavigate() {
       return true;
     }
+
     @Override
     public boolean canNavigateToSource() {
       return true;

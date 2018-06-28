@@ -6,11 +6,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 
 public abstract class NonRootTestTreeNode extends TestTreeNode {
-  private TestState myState = TestState.NOT_RAN;
-
   protected NonRootTestTreeNode() {
   }
 
   @NotNull
-  public abstract ITestNodeWrapper getTestWrapper();
+  public abstract ITestNodeWrapper getTestNode();
 }

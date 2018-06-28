@@ -64,18 +64,14 @@ public final class TestTreeIconRepainter implements Disposable {
     }
   }
 
-  public void stopMovie() {
-    cancelAlarm();
-  }
-
   @Override
   public void dispose() {
     cancelAlarm();
+    myAlarm.dispose();
   }
 
 
   private void cancelAlarm() {
     myAlarm.cancelAllRequests();
-    myAlarm.dispose();
   }
 }

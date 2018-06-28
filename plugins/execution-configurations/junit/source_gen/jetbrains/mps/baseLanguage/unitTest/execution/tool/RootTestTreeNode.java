@@ -6,6 +6,5 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 /*package*/ final class RootTestTreeNode extends TestTreeNode {
   public RootTestTreeNode() {
     setToggleClickCount(-1);
-    setText("<root>");
   }
 }

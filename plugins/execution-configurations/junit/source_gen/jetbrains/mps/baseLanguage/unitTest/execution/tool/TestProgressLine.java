@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 
 import javax.swing.JPanel;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener;
-import com.intellij.openapi.progress.util.ColorProgressBar;
+import javax.swing.JProgressBar;
 import javax.swing.JLabel;
-import java.awt.GridLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
+import com.intellij.ui.components.panels.NonOpaquePanel;
+import java.awt.BorderLayout;
+import com.intellij.openapi.progress.util.ColorProgressBar;
+import javax.swing.BorderFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData;
 import com.intellij.execution.process.ProcessOutputTypes;
@@ -19,18 +19,26 @@ import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.openapi.application.ApplicationManager;
 
-public class ProgressLine extends JPanel implements TestRunStateUpdateListener {
-  private final ColorProgressBar myProgressBar = new ColorProgressBar();
+public class TestProgressLine extends JPanel implements TestRunStateUpdateListener {
+  private static final int TOTAL_UNITS = 100;
+  private final JProgressBar myProgressBar = new JProgressBar();
   private final JLabel myStateLabel = new JLabel("Starting...");
+  private final JPanel myProgressPanel = new NonOpaquePanel(new BorderLayout());
   private boolean myTestsBuilt = false;
 
-  public ProgressLine() {
-    super(new GridLayout(1, 2));
-    add(myStateLabel);
-    final JPanel progress = new JPanel(new GridBagLayout());
-    progress.add(myProgressBar, new GridBagConstraints(0, 0, 0, 0, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(2, 0, 0, 2), 0, 0));
-    myProgressBar.setColor(ColorProgressBar.GREEN);
-    add(progress);
+  public TestProgressLine() {
+    super(new BorderLayout());
+    add(myProgressPanel, BorderLayout.SOUTH);
+    myProgressBar.putClientProperty("ProgressBar.stripeWidth", 3);
+    myProgressBar.putClientProperty("ProgressBar.flatEnds", Boolean.TRUE);
+    myProgressBar.setMaximum(TOTAL_UNITS);
+    myProgressBar.setForeground(ColorProgressBar.GREEN);
+    JPanel labelWrapper = new NonOpaquePanel(new BorderLayout());
+    labelWrapper.add(myStateLabel, BorderLayout.NORTH);
+    myProgressBar.setBorder(BorderFactory.createEmptyBorder(0, 2, 0, 2));
+    myProgressBar.setIndeterminate(true);
+    add(labelWrapper, BorderLayout.CENTER);
+    myProgressPanel.add(myProgressBar, BorderLayout.NORTH);
     myTestsBuilt = true;
   }
 
@@ -51,17 +59,15 @@ public class ProgressLine extends JPanel implements TestRunStateUpdateListener {
     });
   }
 
-  public void init() {
-  }
-
   private void updateProgressBar(boolean isTerminated, int defected, int total, int completed) {
+    myProgressBar.setIndeterminate(false);
     if (defected > 0) {
-      myProgressBar.setColor(ColorProgressBar.RED);
+      myProgressBar.setForeground(ColorProgressBar.RED);
     } else if (isTerminated && total > completed) {
-      myProgressBar.setColor(ColorProgressBar.YELLOW);
+      myProgressBar.setForeground(ColorProgressBar.YELLOW);
     }
     if (total != 0) {
-      myProgressBar.setFraction(completed * 1. / total);
+      myProgressBar.setValue((completed * TOTAL_UNITS) / total);
     }
   }
 
@@ -91,9 +97,9 @@ public class ProgressLine extends JPanel implements TestRunStateUpdateListener {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           @Override
           public void run() {
-            if (!(myTestsBuilt) && myProgressBar.getFraction() == 0.0) {
-              myProgressBar.setColor(ColorProgressBar.RED);
-              myProgressBar.setFraction(1.0);
+            if (!(myTestsBuilt) && myProgressBar.getValue() == 0) {
+              myProgressBar.setForeground(ColorProgressBar.RED);
+              myProgressBar.setValue(TOTAL_UNITS);
               myStateLabel.setText("Failed to start");
             }
           }

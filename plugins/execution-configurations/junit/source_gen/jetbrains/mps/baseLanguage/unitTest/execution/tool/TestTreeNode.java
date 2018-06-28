@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
-import javax.swing.SwingUtilities;
 
 public abstract class TestTreeNode extends MPSTreeNode {
   private TestState myState = TestState.NOT_RAN;
@@ -23,11 +22,6 @@ public abstract class TestTreeNode extends MPSTreeNode {
 
   public void setState(@NotNull TestState state) {
     myState = state;
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        renewPresentation();
-      }
-    });
   }
 
   @NotNull

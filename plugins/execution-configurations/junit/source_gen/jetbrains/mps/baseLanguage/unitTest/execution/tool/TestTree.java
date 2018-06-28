@@ -5,76 +5,104 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener;
 import com.intellij.openapi.Disposable;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateListener;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
+import org.jetbrains.mps.annotations.Immutable;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.LinkedHashMap;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import com.intellij.openapi.util.Disposer;
-import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData;
-import org.apache.log4j.Level;
-import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeEvent;
+import jetbrains.mps.baseLanguage.unitTest.execution.TerminationTestEvent;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestMethodNodeKey;
 
-public class TestTree extends MPSTree implements TestRunStateUpdateListener, Disposable {
-  private static final Logger LOG_1836409113 = LogManager.getLogger(TestTree.class);
+/**
+ * we need to remove string association aka TestNameMap
+ */
+public class TestTree extends MPSTree implements TestRunStateUpdateListener, Disposable, TestStateListener {
+  private final RootTestTreeNode myRoot = new RootTestTreeNode();
+
   @NotNull
   private final Project myProject;
-  private volatile TestNameMap<TestCaseTreeNode, TestMethodTreeNode> myTreeNodeMap;
-  private boolean myShowPassedTests = true;
   private final TestTreeIconRepainter myAnimator;
-  private final Map<ITestNodeWrapper, List<ITestNodeWrapper>> myTestsMap;
+  @Immutable
+  private final Map<ITestNodeWrapper, List<ITestNodeWrapper>> myTestCase2MethodsMap = MapSequence.fromMap(new LinkedHashMap<ITestNodeWrapper, List<ITestNodeWrapper>>(16, (float) 0.75, false));
+  private final Map<ITestNodeWrapper, TestTreeNode> myNode2NodeUIMap;
+
   /**
-   * set to false once and then always false
+   * ordered!
    */
-  private boolean myNoTestIsRunning = true;
+  private final Map<ITestNodeWrapper, TestState> myTests2State = MapSequence.fromMap(new LinkedHashMap<ITestNodeWrapper, TestState>(16, (float) 0.75, false));
+  private final List<ITestNodeWrapper> myFailedTestMethods = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
+  private final List<ITestNodeWrapper> myPassedTestMethods = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
 
   public TestTree(@NotNull TestRunState state, @NotNull Project project, Disposable disposable) {
     Disposer.register(disposable, this);
-    myTestsMap = state.getTestsMap();
+    myNode2NodeUIMap = buildModelUIMapping();
     myProject = project;
-    myTreeNodeMap = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
-    myShowPassedTests = !(UnitTestOptions.isHidePassed());
     myAnimator = new TestTreeIconRepainter(this);
   }
 
-  private void updateState(@NotNull TestTreeNode treeNode, TestState testState) {
-    updateState1(treeNode, testState, true);
+  private Map<ITestNodeWrapper, TestTreeNode> buildModelUIMapping() {
+    Map<ITestNodeWrapper, TestTreeNode> result = MapSequence.fromMap(new LinkedHashMap<ITestNodeWrapper, TestTreeNode>(16, (float) 0.75, false));
+    for (ITestNodeWrapper testCase : MapSequence.fromMap(myTestCase2MethodsMap).keySet()) {
+      MapSequence.fromMap(myNode2NodeUIMap).put(testCase, new TestCaseTreeNode(testCase));
+      Iterable<ITestNodeWrapper> testMethods = testCase.getTestMethods();
+      for (ITestNodeWrapper testMethod : Sequence.fromIterable(testMethods)) {
+        MapSequence.fromMap(myNode2NodeUIMap).put(testMethod, new TestMethodTreeNode(testMethod));
+      }
+    }
+    return result;
   }
 
-  private void updateState1(@NotNull TestTreeNode treeNode, TestState testState, boolean propagateToAncestor) {
-    updateState0(treeNode, testState);
+  private void updateState(@NotNull ITestNodeWrapper node, TestState testState) {
+    updateState1(node, testState, true);
+  }
+
+  private void updateState1(@NotNull ITestNodeWrapper node, TestState testState, boolean propagateToParent) {
+    updateState0(node, testState);
     // propagate to children by default 
-    for (MPSTreeNode child : Sequence.fromIterable(treeNode)) {
-      updateState1((TestTreeNode) child, testState, false);
+    for (ITestNodeWrapper child : ListSequence.fromList(getChildren(node))) {
+      updateState1(child, testState, false);
     }
-    if (propagateToAncestor) {
-      TestTreeNode ancestor = treeNode;
-      while ((ancestor = (TestTreeNode) ancestor.getParent()) != null) {
+    if (propagateToParent) {
+      ITestNodeWrapper ancestor = node;
+      while ((ancestor = getParent(ancestor)) != null) {
         updateState0(ancestor, testState);
       }
     }
-    myAnimator.scheduleRepaint(treeNode);
   }
 
-  private void updateState0(TestTreeNode treeNode, TestState newState) {
-    TestState oldState = treeNode.getState();
+  private void updateState0(@NotNull ITestNodeWrapper node, TestState newState) {
+    TestState oldState = getTestNodeState(node);
     if (oldState.ordinal() < newState.ordinal()) {
-      treeNode.setState(newState);
-      myAnimator.scheduleRepaint(treeNode);
+      MapSequence.fromMap(myTests2State).put(node, newState);
     }
+
+    TestTreeNode treeNode = getUINodeByModelNode(node);
+    updateStateUI(treeNode, newState);
+  }
+
+  private void updateStateUI(@NotNull TestTreeNode treeNode, TestState newState) {
+    treeNode.setState(newState);
+    myAnimator.scheduleRepaint(treeNode);
   }
 
   @Override
@@ -93,80 +121,8 @@ public class TestTree extends MPSTree implements TestRunStateUpdateListener, Dis
     if (data.getAvailableText() != null) {
       return;
     }
-    myNoTestIsRunning = false;
-    String currentTest = data.getCurrentTestCase();
-    String currentMethod = data.getCurrentMethod();
-    TestCaseTreeNode currentTestCaseNode = getClassTreeNode(currentTest);
-    final TestMethodTreeNode currentTestMethodNode = getMethodTreeNode(currentTest, currentMethod);
-    TestTreeNode currentNonNullNode = (currentTestMethodNode == null ? currentTestCaseNode : currentTestMethodNode);
-    if (currentNonNullNode == null) {
-      if (LOG_1836409113.isEnabledFor(Level.WARN)) {
-        LOG_1836409113.warn("all current nodes are null", new Throwable());
-      }
-      return;
-    }
-    if (data.isTerminated()) {
-      TestState newState = (data.isTerminatedCorrectly() ? TestState.TERMINATED : TestState.ERROR);
-      updateState(currentNonNullNode, newState);
-      myAnimator.stopMovie();
-      if (!(data.isTerminatedCorrectly())) {
-        String lostTest = data.getNotExecutedTestCase();
-        String lostMethod = data.getNotExecutedMethod();
-        if (lostTest != null && lostMethod != null) {
-          TestMethodTreeNode lostMethodNode = getMethodTreeNode(lostTest, lostMethod);
-          TestCaseTreeNode lostTestCaseNode = getClassTreeNode(lostTest);
-          if (lostMethodNode != null && lostTestCaseNode != null) {
-            updateState(lostMethodNode, TestState.ERROR);
-          }
-        }
-      }
-    } else {
-      if (currentTestCaseNode != null) {
-        String token = data.getToken();
-        if (TestEvent.START_TEST_PREFIX.equals(token)) {
-          updateState(currentNonNullNode, TestState.IN_PROGRESS);
-          TestTree.invokeLater(new Runnable() {
-            public void run() {
-              myAnimator.scheduleRepaint(currentTestMethodNode);
-            }
-          });
-          if (UnitTestOptions.isTrackRunning()) {
-            if (currentTestMethodNode != null) {
-              TestTree.invokeLater(new Runnable() {
-                public void run() {
-                  setCurrentNode(currentTestMethodNode);
-                }
-              });
-            }
-          }
-        } else if (TestEvent.FINISH_TEST_PREFIX.equals(token)) {
-          if (TestState.IN_PROGRESS.equals(currentNonNullNode.getState())) {
-            updateStateSpecial(currentNonNullNode, TestState.PASSED);
-          }
-        } else if (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(token)) {
-          updateState(currentNonNullNode, TestState.ERROR);
-        } else if (TestEvent.IGNORE_FAILURE_TEST_PREFIX.equals(token)) {
-          updateStateSpecial(currentNonNullNode, TestState.IGNORED);
-        } else if (TestEvent.FAILURE_TEST_PREFIX.equals(token)) {
-          updateState(currentNonNullNode, TestState.FAILED);
-        }
-      }
-    }
-    if (isFailed(currentTestMethodNode) && UnitTestOptions.isSelectFirstFailed()) {
-      TestTree.invokeLater(new Runnable() {
-        public void run() {
-          selectFirstDefectNode();
-        }
-      });
-    }
-    if (UnitTestOptions.isHidePassed()) {
-      TestTree.invokeLater(new Runnable() {
-        public void run() {
-          hidePassed(true);
-        }
-      });
-    }
   }
+
 
   private static void invokeLater(Runnable r) {
     SwingUtilities.invokeLater(r);
@@ -175,16 +131,16 @@ public class TestTree extends MPSTree implements TestRunStateUpdateListener, Dis
   /**
    * updates test node for the passed & ignored states which have a different parent-children TestState relation
    */
-  private void updateStateSpecial(@NotNull TestTreeNode testNode, TestState terminalNonErrorState) {
+  private void updateStateSpecial(@NotNull ITestNodeWrapper testNode, TestState terminalNonErrorState) {
     assert terminalNonErrorState.isFinished() && !(terminalNonErrorState.isErrored());
     updateState0(testNode, terminalNonErrorState);
-    while ((testNode = (TestTreeNode) testNode.getParent()) != null) {
+    while ((testNode = getParent(testNode)) != null) {
       if (getTestNodeState(testNode).isFinished()) {
         return;
       }
       // not yet set 
       TestState newState = terminalNonErrorState;
-      for (MPSTreeNode child : Sequence.fromIterable(testNode)) {
+      for (ITestNodeWrapper child : ListSequence.fromList(getChildren(testNode))) {
         TestState childState = getTestNodeState(child);
         assert !(childState.isErrored());
         if (!(childState.isFinished())) {
@@ -199,9 +155,19 @@ public class TestTree extends MPSTree implements TestRunStateUpdateListener, Dis
     }
   }
 
+  private ITestNodeWrapper getParent(@NotNull ITestNodeWrapper testNode) {
+    return testNode.getTestCase();
+  }
+
   @NotNull
-  private TestState getTestNodeState(@NotNull MPSTreeNode node) {
-    return ((TestTreeNode) node).getState();
+  private List<ITestNodeWrapper> getChildren(@NotNull ITestNodeWrapper testNode) {
+    Iterable<ITestNodeWrapper> testMethods = testNode.getTestMethods();
+    return Sequence.fromIterable(testMethods).toListSequence();
+  }
+
+  @NotNull
+  private TestState getTestNodeState(@NotNull ITestNodeWrapper node) {
+    return MapSequence.fromMap(myTests2State).get(node);
   }
 
   @Override
@@ -224,125 +190,149 @@ public class TestTree extends MPSTree implements TestRunStateUpdateListener, Dis
 
   @Override
   public MPSTreeNode rebuild() {
-    TestTreeNode root = new RootTestTreeNode();
-    setRootVisible(true);
-    TestNameMap<TestCaseTreeNode, TestMethodTreeNode> newTree = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
-    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myTestsMap).keySet())) {
-      if (testCase == null) {
-        continue;
-      }
-      TestCaseTreeNode testCaseTreeNode = myTreeNodeMap.get(testCase.getFqName());
-      if (testCaseTreeNode == null) {
-        testCaseTreeNode = new TestCaseTreeNode(testCase);
-      }
+    boolean hidePassed = UnitTestOptions.isHidePassed();
+
+    boolean allTestCasesPassed = true;
+    myRoot.removeAllChildren();
+    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myTestCase2MethodsMap).keySet())) {
+      assert testCase != null;
+      boolean allTestMethodsPassed = true;
+      TestCaseTreeNode testCaseTreeNode = (TestCaseTreeNode) getUINodeByModelNode(testCase);
       testCaseTreeNode.removeAllChildren();
-      boolean hasTestNotPassed = false;
-      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myTestsMap).get(testCase))) {
-        TestMethodTreeNode oldMethodTreeNode = myTreeNodeMap.get(testCase.getFqName(), method.getName());
-        TestMethodTreeNode newMethodTreeNode = new TestMethodTreeNode(method);
-        TestMethodTreeNode methodTreeNode = (oldMethodTreeNode == null ? newMethodTreeNode : oldMethodTreeNode);
-        boolean isNotPassedMethod = !(isPassed(methodTreeNode));
-        hasTestNotPassed = hasTestNotPassed || isNotPassedMethod;
-        if (myShowPassedTests || isNotPassedMethod) {
+      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myTestCase2MethodsMap).get(testCase))) {
+        TestMethodTreeNode methodTreeNode = (TestMethodTreeNode) getUINodeByModelNode(method);
+        if (!(hidePassed) || !(isPassed(method))) {
           testCaseTreeNode.add(methodTreeNode);
-          newTree.put(testCase, method, methodTreeNode);
-        } else {
-          newTree.put(testCase, method, methodTreeNode);
         }
+        allTestMethodsPassed &= isPassed(method);
       }
-      if (myShowPassedTests || hasTestNotPassed) {
-        root.add(testCaseTreeNode);
-        newTree.put(testCase, testCaseTreeNode);
-      } else {
-        newTree.put(testCase, testCaseTreeNode);
+      if (!(hidePassed) || !(isPassed(testCase))) {
+        myRoot.add(testCaseTreeNode);
       }
+      allTestCasesPassed &= isPassed(testCase);
     }
-    if (myNoTestIsRunning) {
-      updateState0(root, TestState.IN_PROGRESS);
-      myAnimator.scheduleRepaint(root);
+    if (hidePassed && allTestCasesPassed) {
+      myRoot.setText("All Tests Passed");
+    } else {
+      myRoot.setText("<root>");
     }
-
-    myTreeNodeMap = newTree;
-    return root;
+    return myRoot;
   }
 
-  public boolean hasFailedTests() {
-    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myTestsMap).keySet())) {
-      if (testCase == null) {
-        continue;
-      }
-      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myTestsMap).get(testCase))) {
-        String className = testCase.getFqName();
-        String methodName = method.getName();
-        TestMethodTreeNode treeNode = myTreeNodeMap.get(className, methodName);
-        if (method == null) {
-          continue;
-        }
-        if (!(isPassed(treeNode))) {
-          return true;
-        }
-      }
-    }
-    return false;
+  public boolean hasNotPassedTests() {
+    int totalTests = Sequence.fromIterable(MapSequence.fromMap(myTestCase2MethodsMap).values()).count();
+    return ListSequence.fromList(myPassedTestMethods).count() < totalTests;
   }
 
-  public void hidePassed(boolean hide) {
-    myShowPassedTests = !(hide);
-    rebuildNow();
-    expandAll();
+  private boolean isFailed(@NotNull ITestNodeWrapper node) {
+    return ListSequence.fromList(myFailedTestMethods).contains(node);
   }
 
-  public void buildFailedTestTree() {
-    myShowPassedTests = false;
-    rebuildNow();
-  }
-
-  public TestCaseTreeNode getClassTreeNode(String className) {
-    return myTreeNodeMap.get(className);
-  }
-
-  public TestMethodTreeNode getMethodTreeNode(String className, String methodName) {
-    return myTreeNodeMap.get(className, methodName);
-  }
-
-  private void selectFirstDefectNode() {
-    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myTestsMap).keySet())) {
-      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myTestsMap).get(testCase))) {
-        String className = testCase.getFqName();
-        String methodName = method.getName();
-        // FIXME Is it true myMap.get(string, string) is the best way to find failed test??? 
-        TestMethodTreeNode testMethodTreeNode = myTreeNodeMap.get(className, methodName);
-        if (isFailed(testMethodTreeNode)) {
-          setCurrentNode(testMethodTreeNode);
-          return;
-        }
-      }
-    }
-  }
-
-  /*package*/ static boolean isFailed(MPSTreeNode node) {
-    if (node == null || !(node.isLeaf())) {
-      return false;
-    }
-    TestMethodTreeNode leaf = (TestMethodTreeNode) node;
-    TestState state = leaf.getState();
-    return state.equals(TestState.ERROR) || state.equals(TestState.FAILED);
-  }
-
-  /*package*/ static boolean isPassed(TestMethodTreeNode method) {
-    if (method == null) {
-      return true;
-    }
-    return method.getState() != null && method.getState().equals(TestState.PASSED);
+  /*package*/ boolean isPassed(@NotNull ITestNodeWrapper node) {
+    return ListSequence.fromList(myPassedTestMethods).contains(node);
   }
 
   @Override
   protected void doubleClick(@NotNull MPSTreeNode nodeToClick) {
     if (nodeToClick instanceof NonRootTestTreeNode) {
-      NonRootTestTreeNode tn = ((NonRootTestTreeNode) nodeToClick);
-      new EditorNavigator(myProject).shallFocus(true).shallSelect(tn.isLeaf()).open(tn.getTestWrapper().getNodePointer());
+      NonRootTestTreeNode treeNode = (NonRootTestTreeNode) nodeToClick;
+      new EditorNavigator(myProject).shallFocus(true).shallSelect(treeNode.isLeaf()).open(treeNode.getTestNode().getNodePointer());
     } else {
       super.doubleClick(nodeToClick);
     }
+  }
+
+  @Override
+  public void onTestRunStarted() {
+    updateStateUI(myRoot, TestState.IN_PROGRESS);
+  }
+
+  private void selectFirstFailedTestIfNeeded() {
+    if (UnitTestOptions.isSelectFirstFailed() && ListSequence.fromList(myFailedTestMethods).isNotEmpty()) {
+      TestTree.invokeLater(new Runnable() {
+        public void run() {
+          setCurrentNode(getUINodeByModelNode(ListSequence.fromList(myFailedTestMethods).first()));
+        }
+      });
+    }
+  }
+
+  @Override
+  public void onTestRunFinished() {
+    updateRootStateWithMaxInSubtree();
+    selectFirstFailedTestIfNeeded();
+  }
+
+  private void updateRootStateWithMaxInSubtree() {
+    TestState max = TestState.NOT_RAN;
+    for (IMapping<ITestNodeWrapper, TestState> entry : MapSequence.fromMap(myTests2State)) {
+      if (max.ordinal() < entry.value().ordinal()) {
+        max = entry.value();
+      }
+    }
+    updateStateUI(myRoot, max);
+  }
+
+  @Override
+  public void onTestStart(TestNodeEvent event) {
+    final ITestNodeWrapper currentNode = event.getTestKey().getNode();
+    updateState(currentNode, TestState.IN_PROGRESS);
+    if (UnitTestOptions.isTrackRunning()) {
+      TestTree.invokeLater(new Runnable() {
+        public void run() {
+          setCurrentNode(getUINodeByModelNode(currentNode));
+        }
+      });
+    }
+  }
+
+  @Override
+  public void onTestFinish(TestNodeEvent event) {
+    ITestNodeWrapper currentNode = event.getTestKey().getNode();
+    updateStateSpecial(currentNode, TestState.PASSED);
+  }
+
+  @Override
+  public void onTestFailure(TestNodeEvent event) {
+    ITestNodeWrapper currentNode = event.getTestKey().getNode();
+    updateState(currentNode, TestState.FAILED);
+    ListSequence.fromList(myFailedTestMethods).addElement(currentNode);
+  }
+
+  @Override
+  public void onTestAssumptionFailure(TestNodeEvent event) {
+    ITestNodeWrapper currentNode = event.getTestKey().getNode();
+    updateState(currentNode, TestState.ERROR);
+  }
+
+  @Override
+  public void onTestIgnored(TestNodeEvent event) {
+    ITestNodeWrapper currentNode = event.getTestKey().getNode();
+    updateStateSpecial(currentNode, TestState.IGNORED);
+  }
+
+  @Override
+  public void onTermination(@NotNull TerminationTestEvent event) {
+    updateCurrentNodeOnTermination(event);
+    updateNotRanTestsOnTermination(event.getNotRanTests(), event.isTerminatedCorrectly());
+    updateRootStateWithMaxInSubtree();
+  }
+
+  private void updateCurrentNodeOnTermination(TerminationTestEvent event) {
+    TestState newTerminatedState = (event.isTerminatedCorrectly() ? TestState.TERMINATED : TestState.ERROR);
+    TestNodeKey lastExecutingTest = event.getCurrentRunningTest();
+    updateState(lastExecutingTest.getNode(), newTerminatedState);
+  }
+
+  private void updateNotRanTestsOnTermination(List<TestMethodNodeKey> testMethods, boolean correctTermination) {
+    TestState newState = (correctTermination ? TestState.TERMINATED : TestState.SKIPPED);
+    for (TestMethodNodeKey testMethod : ListSequence.fromList(testMethods)) {
+      updateState(testMethod.getNode(), newState);
+    }
+  }
+
+  @NotNull
+  private TestTreeNode getUINodeByModelNode(@NotNull ITestNodeWrapper testNode) {
+    return MapSequence.fromMap(myNode2NodeUIMap).get(testNode);
   }
 }

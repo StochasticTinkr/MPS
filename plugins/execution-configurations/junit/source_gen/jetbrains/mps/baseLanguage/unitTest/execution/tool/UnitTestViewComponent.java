@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.ide.project.ProjectHelper;
+import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import java.awt.Dimension;
 import com.intellij.openapi.ui.Splitter;
@@ -23,6 +24,8 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
+import com.intellij.util.ui.UIUtil;
+import com.intellij.ui.SideBorder;
 import javax.swing.JTable;
 import com.intellij.ui.table.JBTable;
 import java.awt.GridLayout;
@@ -43,11 +46,12 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 
 public class UnitTestViewComponent extends JPanel implements Disposable {
   private static final String SPLITTER_SIZE_PROPERTY = UnitTestOptions.PREFIX + ".UnitTestViewComponent" + ".splitter";
+
   private final TestRunState myTestState;
   private final TestOutputComponent myOutputComponent;
   private final TestTree myTreeComponent;
-  private final ProgressLine myProgressLineComponent;
-  private final TestToolbarPanel myActionToolComponent;
+  private final TestProgressLine myProgressLineComponent;
+  private final TestToolbarPanel myToolbarComponent;
   private final MPSProject myProject;
   private final FailedTestOccurrenceNavigator myTestNavigator;
   private final StatisticsTableModel myStatisticsModel;
@@ -59,13 +63,13 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     myStatisticsModel = new StatisticsTableModel(myTestState);
 
     myTreeComponent = new TestTree(myTestState, myProject, this);
+    myTreeComponent.setBorder(BorderFactory.createEmptyBorder(0, 3, 0, 0));
     myTestNavigator = new FailedTestOccurrenceNavigator(myTreeComponent);
-    myActionToolComponent = new TestToolbarPanel(myTreeComponent, myTestNavigator);
+    myToolbarComponent = new TestToolbarPanel(myTreeComponent, myTestNavigator);
 
-    JComponent leftPanel = createTreeComponent(myActionToolComponent, myTreeComponent);
+    JComponent leftPanel = createTreeComponent(myToolbarComponent, myTreeComponent);
 
-    myProgressLineComponent = new ProgressLine();
-    myProgressLineComponent.init();
+    myProgressLineComponent = new TestProgressLine();
     myProgressLineComponent.setMinimumSize(new Dimension(0, myProgressLineComponent.getMinimumSize().height));
     myOutputComponent = new TestOutputComponent(console);
     myOutputComponent.init();
@@ -100,6 +104,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   private JComponent createTreeComponent(JComponent toolbar, JComponent tree) {
     UnitTestViewComponent.MyTreePanel treePanel = new UnitTestViewComponent.MyTreePanel(new BorderLayout());
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(tree);
+    scrollPane.putClientProperty(UIUtil.KEEP_BORDER_SIDES, SideBorder.TOP);
     treePanel.add(scrollPane, BorderLayout.CENTER);
     treePanel.add(toolbar, BorderLayout.NORTH);
     return treePanel;
