@@ -4726,7 +4726,7 @@
             <node concept="liA8E" id="56tRMpP_by6" role="2OqNvi">
               <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
               <node concept="10M0yZ" id="31Rnc32c5rJ" role="37wK5m">
-                <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEvent" />
+                <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEventMessage" />
                 <ref role="3cqZAo" to="tpnd:1zHDQsywvlu" resolve="FINISH_TEST_PREFIX" />
               </node>
               <node concept="37vLTw" id="2BHiRxgm_jj" role="37wK5m">
@@ -4787,7 +4787,7 @@
             <node concept="liA8E" id="56tRMpP_bym" role="2OqNvi">
               <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
               <node concept="10M0yZ" id="31Rnc32c5oz" role="37wK5m">
-                <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEvent" />
+                <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEventMessage" />
                 <ref role="3cqZAo" to="tpnd:1zHDQsywvly" resolve="FAILURE_TEST_PREFIX" />
               </node>
               <node concept="2OqwBi" id="56tRMpP_byo" role="37wK5m">
@@ -4855,7 +4855,7 @@
             <node concept="liA8E" id="56tRMpP_byS" role="2OqNvi">
               <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
               <node concept="10M0yZ" id="31Rnc32c5m2" role="37wK5m">
-                <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEvent" />
+                <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEventMessage" />
                 <ref role="3cqZAo" to="tpnd:1zHDQsywvlE" resolve="ASSUMPTION_FAILURE_TEST_PREFIX" />
               </node>
               <node concept="2OqwBi" id="56tRMpP_byU" role="37wK5m">
@@ -4886,25 +4886,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="5d37arGBqg4" role="3clF47">
-        <node concept="3clFbF" id="5d37arGBxwE" role="3cqZAp">
-          <node concept="2OqwBi" id="5d37arGByc6" role="3clFbG">
-            <node concept="10M0yZ" id="5d37arGBxOb" role="2Oq$k0">
-              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-              <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
-            </node>
-            <node concept="liA8E" id="5d37arGByy6" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-              <node concept="3cpWs3" id="5d37arGByF0" role="37wK5m">
-                <node concept="Xl_RD" id="5d37arGByFc" role="3uHU7w">
-                  <property role="Xl_RC" value=" ignored" />
-                </node>
-                <node concept="37vLTw" id="5d37arGByyG" role="3uHU7B">
-                  <ref role="3cqZAo" node="5d37arGBqg2" resolve="description" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="4AQ1mXP$Vk" role="3cqZAp">
           <node concept="2OqwBi" id="4AQ1mXP$Vl" role="3clFbG">
             <node concept="10M0yZ" id="4AQ1mXP$Vm" role="2Oq$k0">
@@ -4922,7 +4903,7 @@
             <node concept="liA8E" id="5d37arGBqg8" role="2OqNvi">
               <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
               <node concept="10M0yZ" id="31Rnc32c5jH" role="37wK5m">
-                <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEvent" />
+                <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEventMessage" />
                 <ref role="3cqZAo" to="tpnd:5d37arGBotJ" resolve="IGNORE_FAILURE_TEST_PREFIX" />
               </node>
               <node concept="37vLTw" id="5d37arGBqgb" role="37wK5m">
@@ -4952,7 +4933,7 @@
           <node concept="1rXfSq" id="4hiugqyzhK9" role="3clFbG">
             <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
             <node concept="10M0yZ" id="31Rnc32c5w2" role="37wK5m">
-              <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEvent" />
+              <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEventMessage" />
               <ref role="3cqZAo" to="tpnd:1zHDQsywvlq" resolve="START_TEST_PREFIX" />
             </node>
             <node concept="37vLTw" id="2BHiRxgm_5v" role="37wK5m">
@@ -5139,20 +5120,14 @@
         </node>
         <node concept="3clFbH" id="4BZqA32g2Ho" role="3cqZAp" />
         <node concept="1HWtB8" id="56tRMpP_bzK" role="3cqZAp">
-          <node concept="2OqwBi" id="56tRMpP_bzL" role="1HWFw0">
-            <node concept="2OwXpG" id="56tRMpP_bzM" role="2OqNvi">
-              <ref role="2Oxat5" node="56tRMpP_bx_" resolve="myOutput" />
-            </node>
-            <node concept="Xjq3P" id="56tRMpP_bzN" role="2Oq$k0" />
+          <node concept="37vLTw" id="62muZCvHIl5" role="1HWFw0">
+            <ref role="3cqZAo" node="56tRMpP_bx_" resolve="myOutput" />
           </node>
           <node concept="3clFbS" id="56tRMpP_bzO" role="1HWHxc">
             <node concept="3clFbF" id="56tRMpP_bzP" role="3cqZAp">
               <node concept="2OqwBi" id="56tRMpP_bzQ" role="3clFbG">
-                <node concept="2OqwBi" id="56tRMpP_bzR" role="2Oq$k0">
-                  <node concept="2OwXpG" id="56tRMpP_bzS" role="2OqNvi">
-                    <ref role="2Oxat5" node="56tRMpP_bx_" resolve="myOutput" />
-                  </node>
-                  <node concept="Xjq3P" id="56tRMpP_bzT" role="2Oq$k0" />
+                <node concept="37vLTw" id="62muZCvHI$e" role="2Oq$k0">
+                  <ref role="3cqZAo" node="56tRMpP_bx_" resolve="myOutput" />
                 </node>
                 <node concept="liA8E" id="56tRMpP_bzU" role="2OqNvi">
                   <ref role="37wK5l" node="56tRMpP_bEb" resolve="writeCommand" />

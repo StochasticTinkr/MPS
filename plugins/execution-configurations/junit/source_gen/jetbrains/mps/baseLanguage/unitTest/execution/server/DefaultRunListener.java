@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.Description;
-import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestEventMessage;
 import org.junit.runner.notification.Failure;
 
 /**
@@ -24,33 +24,32 @@ public class DefaultRunListener extends RunListener {
   @Override
   public void testFinished(Description description) {
     System.err.flush();
-    this.printSyncToken(TestEvent.FINISH_TEST_PREFIX, description);
+    this.printSyncToken(TestEventMessage.FINISH_TEST_PREFIX, description);
   }
 
   @Override
   public void testFailure(Failure failure) {
     failure.getException().printStackTrace(System.err);
     System.err.flush();
-    this.printSyncToken(TestEvent.FAILURE_TEST_PREFIX, failure.getDescription());
+    this.printSyncToken(TestEventMessage.FAILURE_TEST_PREFIX, failure.getDescription());
   }
 
   @Override
   public void testAssumptionFailure(Failure failure) {
     failure.getException().printStackTrace(System.err);
     System.err.flush();
-    this.printSyncToken(TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX, failure.getDescription());
+    this.printSyncToken(TestEventMessage.ASSUMPTION_FAILURE_TEST_PREFIX, failure.getDescription());
   }
 
   @Override
   public void testIgnored(Description description) {
-    System.err.println(description + " ignored");
     System.err.flush();
-    this.printSyncToken(TestEvent.IGNORE_FAILURE_TEST_PREFIX, description);
+    this.printSyncToken(TestEventMessage.IGNORE_FAILURE_TEST_PREFIX, description);
   }
 
   @Override
   public void testStarted(Description description) {
-    printSyncToken(TestEvent.START_TEST_PREFIX, description);
+    printSyncToken(TestEventMessage.START_TEST_PREFIX, description);
   }
 
   private void printSyncToken(String tokenPrefix, Description description) {
@@ -66,8 +65,8 @@ public class DefaultRunListener extends RunListener {
     builder.append(":memory=").append(runtime.totalMemory() - runtime.freeMemory());
     builder.append(":time=").append(System.currentTimeMillis());
 
-    synchronized (this.myOutput) {
-      this.myOutput.writeCommand(builder.toString());
+    synchronized (myOutput) {
+      myOutput.writeCommand(builder.toString());
       myOutput.flushSafe();
     }
   }
