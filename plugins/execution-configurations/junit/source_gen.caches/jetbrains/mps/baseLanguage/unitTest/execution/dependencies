@@ -44,6 +44,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestRawEvent" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.annotations.Immutable" />
     <classNode dependClassName="org.junit.runner.Description" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.TestKey" file="TestKey.java">

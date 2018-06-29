@@ -702,7 +702,7 @@
     <node concept="2YIFZL" id="1zHDQsywvgM" role="jymVt">
       <property role="TrG5h" value="getEventToken" />
       <node concept="17QB3L" id="1zHDQsywvgN" role="3clF45" />
-      <node concept="3Tm1VV" id="1zHDQsywvgO" role="1B3o_S" />
+      <node concept="3Tm6S6" id="2kxUt5EsW_c" role="1B3o_S" />
       <node concept="3clFbS" id="1zHDQsywvgP" role="3clF47">
         <node concept="3cpWs8" id="1zHDQsywvgQ" role="3cqZAp">
           <node concept="3cpWsn" id="1zHDQsywvgR" role="3cpWs9">
@@ -759,7 +759,7 @@
         <node concept="17QB3L" id="1zHDQsywvhc" role="1tU5fm" />
       </node>
       <node concept="2AHcQZ" id="2Zbjobgnloa" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
     <node concept="2tJIrI" id="5d37arGBo_g" role="jymVt" />
@@ -831,10 +831,15 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2Zbjobgnmig" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+      <node concept="P$JXv" id="62muZCvHSRL" role="lGtFl">
+        <node concept="x79VA" id="62muZCvHSRR" role="3nqlJM">
+          <property role="x79VB" value="null whenever the message is not recognized. then the output is a simple text" />
+        </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="5d37arGBo_h" role="jymVt" />
+    <node concept="2tJIrI" id="62muZCvHRZW" role="jymVt" />
     <node concept="2YIFZL" id="1zHDQsywvhD" role="jymVt">
       <property role="TrG5h" value="parse" />
       <node concept="3uibUv" id="1zHDQsywvhE" role="3clF45">
@@ -1008,7 +1013,7 @@
       </node>
       <node concept="3Tm6S6" id="1zHDQsywvj7" role="1B3o_S" />
       <node concept="2AHcQZ" id="2Zbjobgnmi7" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
     <node concept="2tJIrI" id="5d37arGBo_i" role="jymVt" />
@@ -1048,6 +1053,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="2AHcQZ" id="62muZCvHSzp" role="2AJF6D">
+      <ref role="2AI5Lk" to="lhc4:~Immutable" resolve="Immutable" />
     </node>
   </node>
   <node concept="312cEu" id="2Zbjobgn6TU">

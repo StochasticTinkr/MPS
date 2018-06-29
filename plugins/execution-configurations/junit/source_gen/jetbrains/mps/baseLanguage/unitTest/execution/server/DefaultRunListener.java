@@ -5,13 +5,15 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.Description;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEventMessage;
+import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * JUnit test listener that spits out control sequences into supplied stream. 
  * These control sequences are for external process to receive JUnit events.
  * 
- * for the explcit contract for the events
+ * for the explicit contract for the events
  * see https://junit.org/junit4/javadoc/4.12/org/junit/runner/notification/RunListener.html
  */
 public class DefaultRunListener extends RunListener {
@@ -22,29 +24,40 @@ public class DefaultRunListener extends RunListener {
   }
 
   @Override
+  public void testRunStarted(Description description) throws Exception {
+    printSyncToken(TestEventMessage.START_TESTRUN_PREFIX, description);
+  }
+
+  @Override
+  public void testRunFinished(Result result) throws Exception {
+    Description fakeDescription = Description.createTestDescription(Object.class, "FAKEDESCRIPTION");
+    printSyncToken(TestEventMessage.FINISH_TESTRUN_PREFIX, fakeDescription);
+  }
+
+  @Override
   public void testFinished(Description description) {
     System.err.flush();
-    this.printSyncToken(TestEventMessage.FINISH_TEST_PREFIX, description);
+    printSyncToken(TestEventMessage.FINISH_TEST_PREFIX, description);
   }
 
   @Override
   public void testFailure(Failure failure) {
     failure.getException().printStackTrace(System.err);
     System.err.flush();
-    this.printSyncToken(TestEventMessage.FAILURE_TEST_PREFIX, failure.getDescription());
+    printSyncToken(TestEventMessage.FAILURE_TEST_PREFIX, failure.getDescription());
   }
 
   @Override
   public void testAssumptionFailure(Failure failure) {
     failure.getException().printStackTrace(System.err);
     System.err.flush();
-    this.printSyncToken(TestEventMessage.ASSUMPTION_FAILURE_TEST_PREFIX, failure.getDescription());
+    printSyncToken(TestEventMessage.ASSUMPTION_FAILURE_TEST_PREFIX, failure.getDescription());
   }
 
   @Override
   public void testIgnored(Description description) {
     System.err.flush();
-    this.printSyncToken(TestEventMessage.IGNORE_FAILURE_TEST_PREFIX, description);
+    printSyncToken(TestEventMessage.IGNORE_FAILURE_TEST_PREFIX, description);
   }
 
   @Override
@@ -52,7 +65,7 @@ public class DefaultRunListener extends RunListener {
     printSyncToken(TestEventMessage.START_TEST_PREFIX, description);
   }
 
-  private void printSyncToken(String tokenPrefix, Description description) {
+  private void printSyncToken(@NotNull String tokenPrefix, @NotNull Description description) {
     StringBuilder builder = new StringBuilder();
     builder.append(tokenPrefix);
     // Beware, description.getTestClass may be null. 

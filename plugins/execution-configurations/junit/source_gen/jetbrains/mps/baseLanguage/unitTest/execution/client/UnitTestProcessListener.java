@@ -28,20 +28,23 @@ public final class UnitTestProcessListener extends ProcessAdapter {
   }
 
   @Override
-  public void onTextAvailable(ProcessEvent event, Key k) {
+  public void onTextAvailable(ProcessEvent event, Key outputKind) {
     String text = event.getText();
     if (text == null) {
       return;
     }
+
     TestEventMessage testEvent = TestEventMessage.parse(text.trim());
     if (testEvent != null) {
+      // event happenned 
       myLastEvent = testEvent;
       myDispatcher.onTestEvent(testEvent);
     } else {
+      // just text came 
       if (isErrorOutputInProgress()) {
-        k = ProcessOutputTypes.STDERR;
+        outputKind = ProcessOutputTypes.STDERR;
       }
-      myDispatcher.onSimpleTextAvailable(text, k);
+      myDispatcher.onSimpleTextAvailable(text, outputKind);
     }
   }
 

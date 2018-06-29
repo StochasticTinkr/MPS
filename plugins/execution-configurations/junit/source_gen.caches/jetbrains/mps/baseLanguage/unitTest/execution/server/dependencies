@@ -40,6 +40,8 @@
     <classNode extendsClassName="java.io.FilterOutputStream" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultRunListener" file="DefaultRunListener.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runtime" />
     <classNode dependClassName="java.lang.String" />
@@ -47,7 +49,9 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestEventMessage" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.CommandOutputStream" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.junit.runner.Description" />
+    <classNode dependClassName="org.junit.runner.Result" />
     <classNode dependClassName="org.junit.runner.notification.Failure" />
     <classNode extendsClassName="org.junit.runner.notification.RunListener" />
   </dependency>

@@ -8,9 +8,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
 import com.intellij.openapi.util.Key;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestType;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A pack of test data which needs to be transferred between the model and the clients of the model updates
@@ -44,13 +44,19 @@ public final class TestRunData {
     return myCompletedTests;
   }
 
-  @NotNull
+  @Nullable
   public String getCurrentTestCase() {
+    if (myCurrentTestNode == null) {
+      return null;
+    }
     return myCurrentTestNode.getTestCaseFqName();
   }
 
   @Nullable
   public String getCurrentMethod() {
+    if (myCurrentTestNode == null) {
+      return null;
+    }
     if (myCurrentTestNode.getType() == TestType.METHOD) {
       return ((TestMethodNodeKey) myCurrentTestNode).getTestMethodName();
     }

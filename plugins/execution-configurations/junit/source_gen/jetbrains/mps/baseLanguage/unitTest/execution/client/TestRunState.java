@@ -44,7 +44,6 @@ public final class TestRunState {
 
   private final String2NodeTestKeyConverter myConverter;
 
-
   /**
    * to remove
    */
