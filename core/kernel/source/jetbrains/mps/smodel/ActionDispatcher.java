@@ -20,6 +20,7 @@ import org.apache.log4j.Logger;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 
 /**
@@ -38,7 +39,7 @@ import java.util.function.Consumer;
   private final List<T> myListeners = new CopyOnWriteArrayList<>();
   private final Consumer<T> myOnActionStart;
   private final Consumer<T> myOnActionFinish;
-  private volatile int myActionLevel = 0;
+  private final AtomicInteger myActionLevel = new AtomicInteger(0);
 
   public ActionDispatcher(Consumer<T> onActionStart, Consumer<T> onActionFinish) {
     myOnActionStart = onActionStart;
@@ -50,7 +51,7 @@ import java.util.function.Consumer;
    * @param r action to execute
    */
   public void dispatch(Runnable r) {
-    if (myActionLevel++ == 0) {
+    if (myActionLevel.getAndIncrement() == 0) {
       onActionStarted();
     }
     final boolean traceEnabled = LOG.isTraceEnabled();
@@ -63,7 +64,7 @@ import java.util.function.Consumer;
       if (traceEnabled) {
         LOG.trace(String.format("Action finished (level:%d)", myActionLevel));
       }
-      if (--myActionLevel == 0) {
+      if (myActionLevel.decrementAndGet() == 0) {
         onActionFinished();
       }
     }
@@ -86,7 +87,7 @@ import java.util.function.Consumer;
   }
 
   public boolean isInsideAction() {
-    return myActionLevel > 0;
+    return myActionLevel.get() > 0;
   }
 
   /**

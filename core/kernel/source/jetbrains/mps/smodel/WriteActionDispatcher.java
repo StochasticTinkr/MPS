@@ -23,24 +23,27 @@ import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public final class WriteActionDispatcher {
   private static final Logger LOG = LogManager.getLogger(WriteActionDispatcher.class);
 
   private final List<WriteActionListener> myListeners = new CopyOnWriteArrayList<WriteActionListener>();
 
-  private volatile int myWriteActionLevel = 0;
+  private final AtomicInteger myWriteActionLevel = new AtomicInteger(0);
 
   public void run(Runnable r) {
-    if (myWriteActionLevel == 0) onActionStarted();
-    ++myWriteActionLevel;
+    if (myWriteActionLevel.getAndIncrement() == 0) {
+      onActionStarted();
+    }
     try {
       LOG.trace("Write action started");
       r.run();
     } finally {
       LOG.trace("Write action finished");
-      --myWriteActionLevel;
-      if (myWriteActionLevel == 0) onActionFinished();
+      if (myWriteActionLevel.decrementAndGet() == 0) {
+        onActionFinished();
+      }
     }
   }
 
@@ -63,7 +66,7 @@ public final class WriteActionDispatcher {
   }
 
   private boolean inWriteAction() {
-    return myWriteActionLevel > 0;
+    return myWriteActionLevel.get() > 0;
   }
 
   public void addWriteActionListener(WriteActionListener listener) {
