@@ -357,7 +357,6 @@ public class PluginLoaderRegistry implements ApplicationComponent {
       try {
         LOG.info("Running Update Task : loaders " + loadersDelta + "; contributors : " + contributorsDelta + "; " + Thread.currentThread());
         indicator.pushState();
-        indicator.setIndeterminate(true);
         monitor.start("Reloading MPS Plugins", 5);
         WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(() -> doUpdate(monitor), indicator.getModalityState());
       } finally {

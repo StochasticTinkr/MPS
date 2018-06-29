@@ -33,6 +33,10 @@ public class ProgressMonitorAdapter extends ProgressMonitorBase {
 
   public ProgressMonitorAdapter(@NotNull ProgressIndicator indicator) {
     myIndicator = indicator;
+    /* As ProgressMonitorAdapter#update uses ProgressIndicator#setFraction,
+    * we have to take into account AbstractProgressIndicatorBase#setFraction check for indicator indeterminate state
+    * */
+    myIndicator.setIndeterminate(false);
   }
 
   @Override
