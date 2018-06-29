@@ -24,7 +24,6 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.RuntimeInterruptedException;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
@@ -47,9 +46,11 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 
@@ -64,6 +65,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -72,16 +74,15 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class IntentionsSupport {
-  static final long INTENTION_SHOW_DELAY = 1000;
+  private static final long INTENTION_SHOW_DELAY = 1000;
 
-  private AbstractAction myShowIntentionsAction;
-  private Point myLightBulbLocation = new Point();
-  private LightBulbMenu myLightBulb;
+  private final Point myLightBulbLocation = new Point();
+  private final LightBulbMenu myLightBulb;
 
   private final AtomicReference<Thread> myShowIntentionsThread = new AtomicReference<>();
 
   @NotNull
-  private EditorComponent myEditor;
+  private final EditorComponent myEditor;
 
   public IntentionsSupport(@NotNull EditorComponent editor) {
     myEditor = editor;
@@ -95,13 +96,13 @@ public class IntentionsSupport {
 
     myEditor.getViewport().addChangeListener(e -> adjustLightBulbLocation());
 
-    myShowIntentionsAction = new AbstractAction() {
+    final AbstractAction showIntentionsAction = new AbstractAction() {
       @Override
       public void actionPerformed(ActionEvent e) {
         getModelAccess().runReadAction(() -> checkAndShowMenu());
       }
     };
-    myEditor.registerKeyboardAction(myShowIntentionsAction, KeyStroke.getKeyStroke("alt ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    myEditor.registerKeyboardAction(showIntentionsAction, KeyStroke.getKeyStroke("alt ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     final FocusAdapter focusListener = new FocusAdapter() {
       @Override
@@ -146,7 +147,8 @@ public class IntentionsSupport {
     if (isInconsistentEditor()) {
       return;
     }
-    if (ReadOnlyUtil.isSelectionReadOnlyInEditor(myEditor) || SModelOperations.isReadOnly(myEditor.getSelectedNode().getModel())) {
+    final SModel model = myEditor.getSelectedNode() == null ? null : myEditor.getSelectedNode().getModel();
+    if (ReadOnlyUtil.isSelectionReadOnlyInEditor(myEditor) || model == null || SModelOperations.isReadOnly(model)) {
       return;
     }
 
@@ -175,11 +177,9 @@ public class IntentionsSupport {
           }
 
           final boolean[] forceReturn = {false};
-          ApplicationManager.getApplication().invokeAndWait(() -> {
-            myEditor.getRepository().getModelAccess().runReadAction(()->{
-              forceReturn[0] = isInconsistentEditor() || ReadOnlyUtil.isSelectionReadOnlyInEditor(myEditor);
-            });
-          });
+          ApplicationManager.getApplication().invokeAndWait(
+              () -> myEditor.getRepository().getModelAccess().runReadAction(
+                  () -> forceReturn[0] = isInconsistentEditor() || ReadOnlyUtil.isSelectionReadOnlyInEditor(myEditor)));
 
           if (forceReturn[0]) {
             return;
@@ -212,9 +212,7 @@ public class IntentionsSupport {
           });
 
         } catch (InterruptedException e) {
-
-        } catch (RuntimeInterruptedException e) {
-
+          // Can be interrupted on editor focus lost or dispose
         } finally {
           myShowIntentionsThread.compareAndSet(this, null);
         }
@@ -289,9 +287,7 @@ public class IntentionsSupport {
 
     List<AnAction> intentionActions = new ArrayList<>();
     for (IntentionActionsProvider provider : Extensions.getExtensions(IntentionActionsProvider.EP_NAME)) {
-      for (AnAction action : provider.getIntentionActions(intention)) {
-        intentionActions.add(action);
-      }
+      intentionActions.addAll(Arrays.asList(provider.getIntentionActions(intention)));
     }
 
     if (intentionActions.isEmpty()) {
@@ -322,8 +318,7 @@ public class IntentionsSupport {
 
   private BaseGroup getIntentionsGroup(final DataContext dataContext) {
     // intentions
-    List<Pair<IntentionExecutable, SNode>> groupItems = new ArrayList<>();
-    groupItems.addAll(getEnabledIntentions());
+    List<Pair<IntentionExecutable, SNode>> groupItems = new ArrayList<>(getEnabledIntentions());
 
     // actions as intentions
     List<AnAction> actions = new ArrayList<>();
@@ -412,6 +407,12 @@ public class IntentionsSupport {
     return result;
   }
 
+
+  /**
+   * @deprecated is not used any more
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public boolean isLightBulbVisible() {
     return myLightBulb.isVisible();
   }
