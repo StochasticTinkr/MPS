@@ -15,7 +15,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.TestRawEvent;
 public final class TestEventsDispatcher {
   private final TestRunState myState;
 
-  public TestEventsDispatcher(TestRunState testState) {
+  public TestEventsDispatcher(@NotNull TestRunState testState) {
     myState = testState;
   }
 
@@ -33,16 +33,22 @@ public final class TestEventsDispatcher {
     switch (token) {
       case TestEventMessage.START_TEST_PREFIX:
         myState.onTestStarted(event);
+        break;
       case TestEventMessage.FINISH_TEST_PREFIX:
         myState.onTestFinished(event);
+        break;
       case TestEventMessage.FAILURE_TEST_PREFIX:
         myState.onTestFailure(event);
+        break;
       case TestEventMessage.START_TESTRUN_PREFIX:
-        myState.onRunTestStarted();
+        myState.onTestRunStarted();
+        break;
       case TestEventMessage.FINISH_TESTRUN_PREFIX:
-        myState.onRunTestFinished();
+        myState.onTestRunFinished();
+        break;
       case TestEventMessage.ASSUMPTION_FAILURE_TEST_PREFIX:
         myState.onTestAssumptionFailure(event);
+        break;
       case TestEventMessage.IGNORE_FAILURE_TEST_PREFIX:
         myState.onTestIgnored(event);
     }

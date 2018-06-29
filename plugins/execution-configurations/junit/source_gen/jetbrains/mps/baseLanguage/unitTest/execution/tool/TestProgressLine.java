@@ -14,17 +14,12 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData;
 import com.intellij.execution.process.ProcessOutputTypes;
 import javax.swing.SwingUtilities;
-import com.intellij.execution.process.ProcessListener;
-import com.intellij.execution.process.ProcessAdapter;
-import com.intellij.execution.process.ProcessEvent;
-import com.intellij.openapi.application.ApplicationManager;
 
 public class TestProgressLine extends JPanel implements TestRunStateUpdateListener {
   private static final int TOTAL_UNITS = 100;
   private final JProgressBar myProgressBar = new JProgressBar();
   private final JLabel myStateLabel = new JLabel("Starting...");
   private final JPanel myProgressPanel = new NonOpaquePanel(new BorderLayout());
-  private boolean myTestsBuilt = false;
 
   public TestProgressLine() {
     super(new BorderLayout());
@@ -39,7 +34,6 @@ public class TestProgressLine extends JPanel implements TestRunStateUpdateListen
     myProgressBar.setIndeterminate(true);
     add(labelWrapper, BorderLayout.CENTER);
     myProgressPanel.add(myProgressBar, BorderLayout.NORTH);
-    myTestsBuilt = true;
   }
 
   @Override
@@ -88,23 +82,5 @@ public class TestProgressLine extends JPanel implements TestRunStateUpdateListen
       sb.append(" Running: " + completed + " of " + total);
     }
     myStateLabel.setText(sb + "  " + testName);
-  }
-
-  public ProcessListener getProcessListener() {
-    return new ProcessAdapter() {
-      @Override
-      public void processTerminated(ProcessEvent p0) {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            if (!(myTestsBuilt) && myProgressBar.getValue() == 0) {
-              myProgressBar.setForeground(ColorProgressBar.RED);
-              myProgressBar.setValue(TOTAL_UNITS);
-              myStateLabel.setText("Failed to start");
-            }
-          }
-        });
-      }
-    };
   }
 }

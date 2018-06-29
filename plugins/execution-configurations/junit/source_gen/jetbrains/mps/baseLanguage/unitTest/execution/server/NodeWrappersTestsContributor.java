@@ -113,6 +113,7 @@ public class NodeWrappersTestsContributor implements TestsContributor {
           return project;
         }
       }
+      // todo show balloon and ignore the tests 
       throw new IllegalStateException(String.format("Test project '%s' is not open.", projectFile));
     }
 

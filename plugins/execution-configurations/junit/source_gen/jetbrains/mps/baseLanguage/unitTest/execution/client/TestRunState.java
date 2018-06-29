@@ -119,17 +119,18 @@ public final class TestRunState {
     startTest(nodeEvent);
   }
 
-  /*package*/ void onTestFinished(final TestRawEvent event) {
+  /*package*/ void onTestFinished(TestRawEvent event) {
+    final TestNodeEvent nodeEvent = convertRawEventToNodeEvent(event);
     ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
-        it.onTestFinish(convertRawEventToNodeEvent(event));
+        it.onTestFinish(nodeEvent);
       }
     });
     finishTest();
     removeFinishedTestEvent(event);
   }
 
-  /*package*/ void onRunTestStarted() {
+  /*package*/ void onTestRunStarted() {
     ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestRunStarted();
@@ -137,7 +138,7 @@ public final class TestRunState {
     });
   }
 
-  /*package*/ void onRunTestFinished() {
+  /*package*/ void onTestRunFinished() {
     ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestRunFinished();
@@ -145,32 +146,34 @@ public final class TestRunState {
     });
   }
 
-  /*package*/ void onTestAssumptionFailure(final TestRawEvent event) {
+  /*package*/ void onTestAssumptionFailure(TestRawEvent event) {
+    final TestNodeEvent nodeEvent = convertRawEventToNodeEvent(event);
     ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
-        it.onTestAssumptionFailure(convertRawEventToNodeEvent(event));
+        it.onTestAssumptionFailure(nodeEvent);
       }
     });
     notifyUpdateListeners();
   }
 
-  public void onTestIgnored(final TestRawEvent event) {
+  public void onTestIgnored(TestRawEvent event) {
+    final TestNodeEvent nodeEvent = convertRawEventToNodeEvent(event);
     ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
-        it.onTestIgnored(convertRawEventToNodeEvent(event));
+        it.onTestIgnored(nodeEvent);
       }
     });
     notifyUpdateListeners();
   }
 
-  public void onTestFailure(final TestRawEvent event) {
+  public void onTestFailure(TestRawEvent event) {
+    final TestNodeEvent nodeEvent = convertRawEventToNodeEvent(event);
     ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
-        it.onTestFailure(convertRawEventToNodeEvent(event));
+        it.onTestFailure(nodeEvent);
       }
     });
     myInnerData.myFailedTests++;
-    notifyUpdateListeners();
   }
 
   private void removeFinishedTestEvent(TestRawEvent event) {

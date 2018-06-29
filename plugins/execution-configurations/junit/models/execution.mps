@@ -563,6 +563,44 @@
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7uaFES0flzZ" role="jymVt" />
+    <node concept="3clFb_" id="7uaFES0fm2R" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isErrored" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="7uaFES0fm2U" role="3clF47">
+        <node concept="3cpWs6" id="7uaFES0fmdH" role="3cqZAp">
+          <node concept="22lmx$" id="7uaFES0fnyd" role="3cqZAk">
+            <node concept="2OqwBi" id="7uaFES0fmzL" role="3uHU7B">
+              <node concept="37vLTw" id="7uaFES0fmeg" role="2Oq$k0">
+                <ref role="3cqZAo" node="1zHDQsywvka" resolve="myToken" />
+              </node>
+              <node concept="liA8E" id="7uaFES0fmCf" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="37vLTw" id="7uaFES0fmEZ" role="37wK5m">
+                  <ref role="3cqZAo" node="1zHDQsywvly" resolve="FAILURE_TEST_PREFIX" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="7uaFES0fnO$" role="3uHU7w">
+              <node concept="37vLTw" id="7uaFES0fnO_" role="2Oq$k0">
+                <ref role="3cqZAo" node="1zHDQsywvka" resolve="myToken" />
+              </node>
+              <node concept="liA8E" id="7uaFES0fnOA" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="37vLTw" id="7uaFES0fnXE" role="37wK5m">
+                  <ref role="3cqZAo" node="1zHDQsywvlE" resolve="ASSUMPTION_FAILURE_TEST_PREFIX" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7uaFES0flSv" role="1B3o_S" />
+      <node concept="10P_77" id="7uaFES0fm2O" role="3clF45" />
+    </node>
     <node concept="2tJIrI" id="2Zbjobgn$tq" role="jymVt" />
     <node concept="3clFb_" id="2Zbjobgn$oj" role="jymVt">
       <property role="TrG5h" value="getEvent" />
@@ -1040,9 +1078,12 @@
                   <ref role="1PxDUh" node="1zHDQsywvgL" resolve="TestEventMessage" />
                   <ref role="3cqZAo" node="1zHDQsywvlE" resolve="ASSUMPTION_FAILURE_TEST_PREFIX" />
                 </node>
-                <node concept="10M0yZ" id="5d37arGBFSg" role="HW$Y0">
+                <node concept="10M0yZ" id="7uaFES0eSFV" role="HW$Y0">
+                  <ref role="3cqZAo" node="2Zbjobgnloc" resolve="START_TESTRUN_PREFIX" />
                   <ref role="1PxDUh" node="1zHDQsywvgL" resolve="TestEventMessage" />
-                  <ref role="3cqZAo" node="5d37arGBotJ" resolve="IGNORE_FAILURE_TEST_PREFIX" />
+                </node>
+                <node concept="37vLTw" id="7uaFES0eSH0" role="HW$Y0">
+                  <ref role="3cqZAo" node="2Zbjobgnlt2" resolve="FINISH_TESTRUN_PREFIX" />
                 </node>
               </node>
             </node>

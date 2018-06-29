@@ -36,11 +36,12 @@ public final class UnitTestProcessListener extends ProcessAdapter {
 
     TestEventMessage testEvent = TestEventMessage.parse(text.trim());
     if (testEvent != null) {
-      // event happenned 
+      // event happened 
       myLastEvent = testEvent;
       myDispatcher.onTestEvent(testEvent);
     } else {
       // just text came 
+
       if (isErrorOutputInProgress()) {
         outputKind = ProcessOutputTypes.STDERR;
       }
@@ -49,6 +50,6 @@ public final class UnitTestProcessListener extends ProcessAdapter {
   }
 
   private boolean isErrorOutputInProgress() {
-    return myLastEvent != null && (TestEventMessage.ASSUMPTION_FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()) || TestEventMessage.FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()));
+    return myLastEvent != null && myLastEvent.isErrored();
   }
 }

@@ -32,7 +32,7 @@ public class TestTreeSelectionListener implements TreeSelectionListener {
     TestNodeKey newKey = null;
     Object obj = path.getLastPathComponent();
     if (obj instanceof NonRootTestTreeNode) {
-      TestCaseTreeNode treeNode = (TestCaseTreeNode) obj;
+      NonRootTestTreeNode treeNode = (NonRootTestTreeNode) obj;
       newKey = TestNodeKeyFactory.wrap(treeNode.getTestNode());
     }
     myOutputComponent.setFilter(newKey);

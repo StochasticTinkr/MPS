@@ -94,6 +94,7 @@ public class TestOutputComponent implements TestRunStateUpdateListener {
         myConsoleView.clear();
         myRootMessage.print();
       }
+      return;
     }
     String newFilterClass = key.getTestCaseFqName();
     String newFilterMethod = null;

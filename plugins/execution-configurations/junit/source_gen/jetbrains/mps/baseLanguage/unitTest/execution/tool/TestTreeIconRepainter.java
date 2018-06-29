@@ -59,9 +59,10 @@ public final class TestTreeIconRepainter implements Disposable {
     }
     TestTreeIconRepainter.RenewPresentationTask newTask = new TestTreeIconRepainter.RenewPresentationTask(node);
     TestTreeIconRepainter.RenewPresentationTask oldTask = myNode2TaskMap.putIfAbsent(node, newTask);
-    if (oldTask == null) {
-      myAlarm.addRequest(newTask, TestState.FRAME_TIME);
+    if (oldTask != null) {
+      myAlarm.cancelRequest(oldTask);
     }
+    myAlarm.addRequest(newTask, TestState.FRAME_TIME);
   }
 
   @Override

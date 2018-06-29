@@ -41,6 +41,8 @@
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
+    <import index="lhc4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.annotations(MPS.OpenAPI/)" />
+    <import index="rjhg" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit(JUnit/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -490,12 +492,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="26WgMpXmKAE" role="3cqZAp">
-          <node concept="2YIFZM" id="6O5_laIkB_" role="3clFbG">
-            <ref role="37wK5l" to="q7tw:~BasicConfigurator.configure():void" resolve="configure" />
-            <ref role="1Pybhc" to="q7tw:~BasicConfigurator" resolve="BasicConfigurator" />
           </node>
         </node>
       </node>
@@ -3507,6 +3503,11 @@
               <node concept="liA8E" id="5R7ko6d0R$H" role="2OqNvi">
                 <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenedProjects():java.util.List" resolve="getOpenedProjects" />
               </node>
+            </node>
+          </node>
+          <node concept="3SKdUt" id="1Gn4i0K87oN" role="3cqZAp">
+            <node concept="3SKdUq" id="1Gn4i0K87oP" role="3SKWNk">
+              <property role="3SKdUp" value="todo show balloon and ignore the tests" />
             </node>
           </node>
           <node concept="YS8fn" id="5Jy6yRTQi2J" role="3cqZAp">

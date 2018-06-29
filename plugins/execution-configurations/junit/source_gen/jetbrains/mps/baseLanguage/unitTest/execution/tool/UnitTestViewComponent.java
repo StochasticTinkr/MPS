@@ -30,7 +30,6 @@ import javax.swing.JTable;
 import com.intellij.ui.table.JBTable;
 import java.awt.GridLayout;
 import com.intellij.ui.components.JBScrollPane;
-import com.intellij.execution.process.ProcessListener;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import com.intellij.ide.util.PropertiesComponent;
@@ -87,7 +86,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
     add(splitter, BorderLayout.CENTER);
 
-    myTestState.addUpdateListener(myTreeComponent);
+    myTestState.addListener(myTreeComponent);
     myTestState.addUpdateListener(myProgressLineComponent);
     myTestState.addUpdateListener(myOutputComponent);
     addCloseListener(closeListener);
@@ -118,13 +117,9 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     return tablePanel;
   }
 
-  public ProcessListener getProcessListener() {
-    return myProgressLineComponent.getProcessListener();
-  }
-
   @Override
   public void dispose() {
-    myTestState.removeUpdateListener(myTreeComponent);
+    myTestState.removeListener(myTreeComponent);
     myTestState.removeUpdateListener(myProgressLineComponent);
     myTestState.removeUpdateListener(myOutputComponent);
     myStatisticsModel.dispose();
