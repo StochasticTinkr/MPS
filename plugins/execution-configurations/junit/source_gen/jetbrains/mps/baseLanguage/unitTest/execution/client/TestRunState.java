@@ -37,8 +37,6 @@ import org.jetbrains.annotations.TestOnly;
 @Mutable
 public final class TestRunState {
   private static final Logger LOG = LogManager.getLogger(TestRunState.class);
-  private static final Object LOCK = new Object();
-
   private final Set<TestRunStateUpdateListener> myUpdateListenersList = SetSequence.fromSet(new HashSet<TestRunStateUpdateListener>());
   private final List<TestStateListener> myListeners = ListSequence.fromList(new ArrayList<TestStateListener>());
   @Immutable
@@ -113,27 +111,23 @@ public final class TestRunState {
   }
 
   /*package*/ void onTestStarted(TestRawEvent event) {
-    synchronized (LOCK) {
-      final TestNodeEvent nodeEvent = convertRawEventToNodeEvent(event);
-      ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
-        public void visit(TestStateListener it) {
-          it.onTestStart(nodeEvent);
-        }
-      });
-      startTest(nodeEvent);
-    }
+    final TestNodeEvent nodeEvent = convertRawEventToNodeEvent(event);
+    ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onTestStart(nodeEvent);
+      }
+    });
+    startTest(nodeEvent);
   }
 
   /*package*/ void onTestFinished(final TestRawEvent event) {
-    synchronized (LOCK) {
-      ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
-        public void visit(TestStateListener it) {
-          it.onTestFinish(convertRawEventToNodeEvent(event));
-        }
-      });
-      finishTest();
-      removeFinishedTestEvent(event);
-    }
+    ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onTestFinish(convertRawEventToNodeEvent(event));
+      }
+    });
+    finishTest();
+    removeFinishedTestEvent(event);
   }
 
   /*package*/ void onRunTestStarted() {
@@ -153,37 +147,31 @@ public final class TestRunState {
   }
 
   /*package*/ void onTestAssumptionFailure(final TestRawEvent event) {
-    synchronized (LOCK) {
-      ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
-        public void visit(TestStateListener it) {
-          it.onTestAssumptionFailure(convertRawEventToNodeEvent(event));
-        }
-      });
-      notifyUpdateListeners();
-    }
+    ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onTestAssumptionFailure(convertRawEventToNodeEvent(event));
+      }
+    });
+    notifyUpdateListeners();
   }
 
   public void onTestIgnored(final TestRawEvent event) {
-    synchronized (LOCK) {
-      ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
-        public void visit(TestStateListener it) {
-          it.onTestIgnored(convertRawEventToNodeEvent(event));
-        }
-      });
-      notifyUpdateListeners();
-    }
+    ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onTestIgnored(convertRawEventToNodeEvent(event));
+      }
+    });
+    notifyUpdateListeners();
   }
 
   public void onTestFailure(final TestRawEvent event) {
-    synchronized (LOCK) {
-      ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
-        public void visit(TestStateListener it) {
-          it.onTestFailure(convertRawEventToNodeEvent(event));
-        }
-      });
-      myInnerData.myFailedTests++;
-      notifyUpdateListeners();
-    }
+    ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onTestFailure(convertRawEventToNodeEvent(event));
+      }
+    });
+    myInnerData.myFailedTests++;
+    notifyUpdateListeners();
   }
 
   private void removeFinishedTestEvent(TestRawEvent event) {
@@ -219,19 +207,17 @@ public final class TestRunState {
   }
 
   public void onTermination(boolean terminatingOnException) {
-    synchronized (LOCK) {
-      checkConsistency();
-      myInnerData.myTerminated = true;
-      myInnerData.myTerminatedCorrectly = !(terminatingOnException);
-      // these are the tests which have not been executed yet 
-      List<TestMethodNodeKey> testsNotRunDueToError = myInnerData.myTestMethodsLeftToRun;
-      final TerminationTestEvent event = new TerminationTestEvent(myInnerData.myCurrentTestNode, testsNotRunDueToError, !(terminatingOnException));
-      ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
-        public void visit(TestStateListener it) {
-          it.onTermination(event);
-        }
-      });
-    }
+    checkConsistency();
+    myInnerData.myTerminated = true;
+    myInnerData.myTerminatedCorrectly = !(terminatingOnException);
+    // these are the tests which have not been executed yet 
+    List<TestMethodNodeKey> testsNotRunDueToError = myInnerData.myTestMethodsLeftToRun;
+    final TerminationTestEvent event = new TerminationTestEvent(myInnerData.myCurrentTestNode, testsNotRunDueToError, !(terminatingOnException));
+    ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onTermination(event);
+      }
+    });
   }
 
   private void checkConsistency() {
@@ -240,13 +226,11 @@ public final class TestRunState {
   }
 
   public void outputText(String text, @NotNull Key key) {
-    synchronized (LOCK) {
-      myInnerData.myAvailableText = text;
-      myInnerData.myKey = key;
-      notifyUpdateListeners();
-      myInnerData.myAvailableText = null;
-      myInnerData.myKey = null;
-    }
+    myInnerData.myAvailableText = text;
+    myInnerData.myKey = key;
+    notifyUpdateListeners();
+    myInnerData.myAvailableText = null;
+    myInnerData.myKey = null;
   }
 
   public void addListener(TestStateListener listener) {
