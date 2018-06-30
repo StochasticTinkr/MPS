@@ -50,7 +50,7 @@ public abstract class EnvironmentBase implements Environment {
   private ClassLoader myRootClassLoader = null;
 
   public static void initializeLog4j() {
-    new Log4jInitializer().init();
+    Log4jInitializer.init();
     LogManager.getLogger(EnvironmentBase.class).info("Initializing environment");
   }
 

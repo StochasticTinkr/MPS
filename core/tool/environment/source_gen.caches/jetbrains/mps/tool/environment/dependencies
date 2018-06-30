@@ -126,15 +126,12 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.tool.environment.Log4jInitializer" file="Log4jInitializer.java">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.StringReader" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="jetbrains.mps.core.tool.environment.util.PathManager" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.util.StringUtil" />
+    <classNode dependClassName="org.apache.log4j.ConsoleAppender" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.xml.DOMConfigurator" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.PatternLayout" />
   </dependency>
   <dependency className="jetbrains.mps.tool.environment.MpsEnvironment" file="MpsEnvironment.java">
     <classNode dependClassName="java.io.File" />
