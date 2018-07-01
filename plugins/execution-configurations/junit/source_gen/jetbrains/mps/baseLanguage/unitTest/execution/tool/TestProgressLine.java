@@ -13,8 +13,14 @@ import javax.swing.BorderFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData;
 import com.intellij.execution.process.ProcessOutputTypes;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
 import javax.swing.SwingUtilities;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * todo no reflection of ignore/assumptions/skipped tests whatsoever
+ * the prototype is the idea test tool
+ */
 public class TestProgressLine extends JPanel implements TestRunStateUpdateListener {
   private static final int TOTAL_UNITS = 100;
   private final JProgressBar myProgressBar = new JProgressBar();
@@ -38,17 +44,17 @@ public class TestProgressLine extends JPanel implements TestRunStateUpdateListen
 
   @Override
   public void update(@NotNull final TestRunData data) {
-    if (data.getAvailableText() != null || ProcessOutputTypes.SYSTEM.equals(data.getKey())) {
+    if (data.getAvailableText() != null || ProcessOutputTypes.SYSTEM.equals(data.getTextType())) {
       return;
     }
     final int defectedTests = data.getFailedTests();
     final int totalTests = data.getTotalTests();
     final int completedTests = data.getCompletedTests();
-    final String testName = data.getCurrentMethod();
+    final TestNodeKey currentTestNode = data.getCurrentTestNode();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         updateProgressBar(data.isTerminated(), defectedTests, totalTests, completedTests);
-        updateLabel(data.isTerminated(), defectedTests, totalTests, completedTests, testName);
+        updateLabel(data.isTerminated(), defectedTests, totalTests, completedTests, currentTestNode);
       }
     });
   }
@@ -65,15 +71,15 @@ public class TestProgressLine extends JPanel implements TestRunStateUpdateListen
     }
   }
 
-  private void updateLabel(boolean isTerminated, int defected, int total, int completed, String testName) {
+  private void updateLabel(boolean isTerminated, int defected, int total, int completed, @Nullable TestNodeKey currentTest) {
     StringBuilder sb = new StringBuilder();
     boolean done = total == completed;
     if (done) {
       sb.append(" Done: " + completed + " of " + total + " ");
-      testName = "";
+      currentTest = null;
     } else if (isTerminated) {
       sb.append(" Terminated: " + completed + " of " + total + " ");
-      testName = "";
+      currentTest = null;
     }
     if (defected > 0) {
       sb.append(" Failed: " + defected);
@@ -81,6 +87,7 @@ public class TestProgressLine extends JPanel implements TestRunStateUpdateListen
     if (!(isTerminated) && !(done)) {
       sb.append(" Running: " + completed + " of " + total);
     }
-    myStateLabel.setText(sb + "  " + testName);
+    String qualifiedName = (currentTest == null ? "" : currentTest.getQualifiedName());
+    myStateLabel.setText(sb + "  " + qualifiedName);
   }
 }

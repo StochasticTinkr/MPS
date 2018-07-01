@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
 import com.intellij.openapi.util.Key;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.unitTest.execution.TestType;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -30,7 +29,7 @@ public final class TestRunData {
   /*package*/ boolean myTerminated;
   /*package*/ boolean myTerminatedCorrectly;
   /*package*/ String myAvailableText = null;
-  /*package*/ Key myKey = null;
+  /*package*/ Key myTextType = null;
 
   public int getTotalTests() {
     return myTotalTests;
@@ -45,22 +44,8 @@ public final class TestRunData {
   }
 
   @Nullable
-  public String getCurrentTestCase() {
-    if (myCurrentTestNode == null) {
-      return null;
-    }
-    return myCurrentTestNode.getTestCaseFqName();
-  }
-
-  @Nullable
-  public String getCurrentMethod() {
-    if (myCurrentTestNode == null) {
-      return null;
-    }
-    if (myCurrentTestNode.getType() == TestType.METHOD) {
-      return ((TestMethodNodeKey) myCurrentTestNode).getTestMethodName();
-    }
-    return null;
+  public TestNodeKey getCurrentTestNode() {
+    return myCurrentTestNode;
   }
 
   public String getNotExecutedMethod() {
@@ -83,8 +68,8 @@ public final class TestRunData {
     return myAvailableText;
   }
 
-  public Key getKey() {
-    return myKey;
+  public Key getTextType() {
+    return myTextType;
   }
 
   @NotNull
@@ -100,7 +85,7 @@ public final class TestRunData {
     dataCopy.myTerminated = myTerminated;
     dataCopy.myTerminatedCorrectly = myTerminatedCorrectly;
     dataCopy.myAvailableText = myAvailableText;
-    dataCopy.myKey = myKey;
+    dataCopy.myTextType = myTextType;
     return dataCopy;
   }
 }

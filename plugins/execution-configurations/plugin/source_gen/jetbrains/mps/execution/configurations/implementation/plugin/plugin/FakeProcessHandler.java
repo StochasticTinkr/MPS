@@ -147,7 +147,7 @@ public abstract class FakeProcessHandler extends BaseOSProcessHandler {
     @NotNull
     @Override
     protected Future<?> executeOnPooledThread(@NotNull Runnable runnable) {
-      return FakeProcessHandler.this.executeOnPooledThread(runnable);
+      return FakeProcessHandler.this.executeTask(runnable);
     }
 
     @Override

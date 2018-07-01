@@ -17,7 +17,7 @@ import com.intellij.util.WaitFor;
 
 /**
  * The buffer size value is chosen arbitrarily without any reasonable argumentation
- * Just that default 1024 in the pipe stream classes seem to be too small
+ * Just that default 1024 in the pipe stream classes seems to be too small
  */
 public class FakeProcess extends Process {
   private static final Logger LOG = LogManager.getLogger(FakeProcess.class);

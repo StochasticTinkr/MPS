@@ -23,12 +23,17 @@ public final class UnitTestProcessListener extends ProcessAdapter {
   }
 
   @Override
+  public void startNotified(@NotNull ProcessEvent event) {
+    myDispatcher.onStartNotified(event);
+  }
+
+  @Override
   public void processTerminated(@NotNull ProcessEvent event) {
     myDispatcher.onProcessTerminated(event);
   }
 
   @Override
-  public void onTextAvailable(ProcessEvent event, Key outputKind) {
+  public void onTextAvailable(@NotNull ProcessEvent event, @NotNull Key outputKind) {
     String text = event.getText();
     if (text == null) {
       return;
@@ -41,7 +46,6 @@ public final class UnitTestProcessListener extends ProcessAdapter {
       myDispatcher.onTestEvent(testEvent);
     } else {
       // just text came 
-
       if (isErrorOutputInProgress()) {
         outputKind = ProcessOutputTypes.STDERR;
       }

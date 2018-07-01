@@ -23,6 +23,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.MPSCoreComponents;
 import java.io.File;
 import jetbrains.mps.project.ProjectManager;
+import org.junit.AssumptionViolatedException;
 import jetbrains.mps.ide.ThreadUtils;
 import java.io.IOException;
 
@@ -114,7 +115,7 @@ public class NodeWrappersTestsContributor implements TestsContributor {
         }
       }
       // todo show balloon and ignore the tests 
-      throw new IllegalStateException(String.format("Test project '%s' is not open.", projectFile));
+      throw new AssumptionViolatedException(String.format("Test project '%s' is not open.", projectFile));
     }
 
     @Override

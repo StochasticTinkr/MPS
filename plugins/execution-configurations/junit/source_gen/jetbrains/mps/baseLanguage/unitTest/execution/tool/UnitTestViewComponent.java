@@ -88,7 +88,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
     myTestState.addListener(myTreeComponent);
     myTestState.addUpdateListener(myProgressLineComponent);
-    myTestState.addUpdateListener(myOutputComponent);
+    myTestState.addListener(myOutputComponent);
     addCloseListener(closeListener);
   }
 
@@ -121,7 +121,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   public void dispose() {
     myTestState.removeListener(myTreeComponent);
     myTestState.removeUpdateListener(myProgressLineComponent);
-    myTestState.removeUpdateListener(myOutputComponent);
+    myTestState.removeListener(myOutputComponent);
     myStatisticsModel.dispose();
     myOutputComponent.dispose();
     myTreeComponent.dispose();

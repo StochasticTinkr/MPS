@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
  * might be test case,
  * might be test method.
  * The only requirement for the subclass is the correct #equals and #hashcode implementation
+ * Another wrapper since I hate ITestNodeWrapper for its complexity
  * 
  * @author apyshkin
  */

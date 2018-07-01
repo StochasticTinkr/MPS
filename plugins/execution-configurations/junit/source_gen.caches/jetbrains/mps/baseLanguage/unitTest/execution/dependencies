@@ -92,6 +92,7 @@
     <classNode dependClassName="org.jetbrains.mps.annotations.Immutable" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" file="TestNodeKey.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestCaseNodeKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestKey" />
@@ -123,5 +124,13 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestKey" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.TestType" file="TestType.java" />
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent" file="TextTestEvent.java">
+    <classNode dependClassName="com.intellij.openapi.util.Key" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.annotations.Immutable" />
+  </dependency>
 </dependenciesRoot>
 

@@ -54,20 +54,20 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    JUnitSettings_Configuration jUnitSettings = myRunConfiguration.getJUnitSettings();
+    JUnitSettings_Configuration settings = myRunConfiguration.getJUnitSettings();
     boolean debugExecutor = executor.getId().equals(DefaultDebugExecutor.EXECUTOR_ID);
-    jUnitSettings.setDebug(debugExecutor);
+    settings.setDebug(debugExecutor);
     MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
-    List<ITestNodeWrapper> testNodes = jUnitSettings.getTests(mpsProject);
+    List<ITestNodeWrapper> testNodes = settings.getTests(mpsProject);
     if (testNodes == null || ListSequence.fromList(testNodes).isEmpty()) {
       throw new ExecutionException("Could not find tests to run");
     }
     TestRunState runState = new TestRunState(testNodes);
     jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor processExecutor;
-    if (jUnitSettings.canExecuteInProcess(testNodes)) {
+    if (settings.canExecuteInProcess(testNodes)) {
       processExecutor = new JUnitInProcessExecutor(mpsProject, testNodes);
     } else {
-      processExecutor = new JUnitExecutor(project, executor, jUnitSettings, myDebuggerSettings, myRunConfiguration.getJavaRunParameters(), testNodes);
+      processExecutor = new JUnitExecutor(project, executor, settings, myDebuggerSettings, myRunConfiguration.getJavaRunParameters(), testNodes);
     }
     ProcessHandler process = processExecutor.execute();
     final UnitTestViewComponent testViewComponent = myRunConfiguration.createTestViewComponent(runState, process);

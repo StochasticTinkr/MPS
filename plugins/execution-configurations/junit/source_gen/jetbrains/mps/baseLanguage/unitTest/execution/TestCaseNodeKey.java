@@ -29,6 +29,11 @@ public final class TestCaseNodeKey implements TestNodeKey {
   }
 
   @NotNull
+  public TestCaseNodeKey getTestCaseNodeKey() {
+    return this;
+  }
+
+  @NotNull
   @Override
   public ITestNodeWrapper getNode() {
     return myNode;

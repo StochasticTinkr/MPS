@@ -20,10 +20,106 @@
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.BaseTestOccurenceNavigator" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.LeafTestMessage" file="LeafTestMessage.java">
+    <classNode dependClassName="com.intellij.openapi.util.Key" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestMethodNodeKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageFilter" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.Printer" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMessage" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageContainerBase" file="MessageContainerBase.java">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageFilter" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.Printer" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMessage" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.annotations.ImmutableReturn" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessagesContainer" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageFilter" file="MessageFilter.java">
+    <classNode dependClassName="java.util.Objects" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestType" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessagesContainer" file="MessagesContainer.java">
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMessage" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.annotations.ImmutableReturn" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.Printable" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.MethodMessageContainer" file="MethodMessageContainer.java">
+    <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
+    <classNode dependClassName="com.intellij.openapi.util.Key" />
+    <classNode dependClassName="com.intellij.util.io.IOUtil" />
+    <classNode dependClassName="java.io.BufferedInputStream" />
+    <classNode dependClassName="java.io.BufferedOutputStream" />
+    <classNode dependClassName="java.io.DataInputStream" />
+    <classNode dependClassName="java.io.DataOutputStream" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileInputStream" />
+    <classNode dependClassName="java.io.FileOutputStream" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Objects" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestMethodNodeKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.LeafTestMessage" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageFilter" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.Printer" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageContainerBase" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMessage" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.NonRootTestTreeNode" file="NonRootTestTreeNode.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTreeNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.Printable" file="Printable.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.Printer" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.Printer" file="Printer.java">
+    <classNode dependClassName="com.intellij.openapi.util.Key" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.RootMessageContainer" file="RootMessageContainer.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestCaseNodeKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageFilter" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseMessageContainer" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMessage" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageContainerBase" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.RootTestTreeNode" file="RootTestTreeNode.java">
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTreeNode" />
@@ -70,6 +166,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateAdapter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseRow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMethodRow" />
@@ -82,6 +179,20 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="javax.swing.table.TableModel" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseMessageContainer" file="TestCaseMessageContainer.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Objects" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestCaseNodeKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestMethodNodeKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageFilter" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MethodMessageContainer" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageContainerBase" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMessage" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseRow" file="TestCaseRow.java">
     <classNode dependClassName="java.lang.Override" />
@@ -107,6 +218,11 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestStatisticsRow" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMessage" file="TestMessage.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageFilter" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.Printable" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMethodRow" file="TestMethodRow.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -129,36 +245,22 @@
     <classNode dependClassName="com.intellij.execution.ui.ConsoleViewContentType" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />
-    <classNode dependClassName="com.intellij.util.io.IOUtil" />
-    <classNode dependClassName="java.io.DataInputStream" />
-    <classNode dependClassName="java.io.DataOutputStream" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.FileInputStream" />
-    <classNode dependClassName="java.io.FileOutputStream" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestMethodNodeKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestType" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageContainerBase" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageFilter" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.Printer" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.RootMessageContainer" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMessage" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestProgressLine" file="TestProgressLine.java">
     <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
@@ -174,8 +276,10 @@
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JProgressBar" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="javax.swing.JPanel" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener" />
   </dependency>
@@ -227,6 +331,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestMethodNodeKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeEvent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.NonRootTestTreeNode" />

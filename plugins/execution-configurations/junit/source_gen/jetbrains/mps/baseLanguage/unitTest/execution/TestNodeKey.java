@@ -8,4 +8,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 public interface TestNodeKey extends TestKey {
   @NotNull
   ITestNodeWrapper getNode();
+
+  @NotNull
+  TestCaseNodeKey getTestCaseNodeKey();
 }

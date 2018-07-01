@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateListener;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateAdapter;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeEvent;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.unitTest.execution.TerminationTestEvent;
@@ -38,8 +39,8 @@ public class StatisticsTableModel implements TableModel {
 
   public StatisticsTableModel(TestRunState state) {
     myState = state;
-    setTests(state.getTestsMap());
-    myTestStateListener = new TestStateListener() {
+    initFromTests(state.getTestsMap());
+    myTestStateListener = new TestStateAdapter() {
       @Override
       public void onTestStart(TestNodeEvent event) {
         TestMethodRow row = findRowForEvent(event);
@@ -108,18 +109,6 @@ public class StatisticsTableModel implements TableModel {
           fireTableChanged();
         }
       }
-
-      @Override
-      public void onTestRunStarted() {
-      }
-
-      @Override
-      public void onTestRunFinished() {
-      }
-
-      @Override
-      public void onTestIgnored(TestNodeEvent event) {
-      }
     };
 
     myState.addListener(myTestStateListener);
@@ -129,7 +118,7 @@ public class StatisticsTableModel implements TableModel {
     myState.removeListener(myTestStateListener);
   }
 
-  private void setTests(Map<ITestNodeWrapper, List<ITestNodeWrapper>> tests) {
+  private void initFromTests(Map<ITestNodeWrapper, List<ITestNodeWrapper>> tests) {
     myRows = ListSequence.fromList(new ArrayList<TestStatisticsRow>());
     TotalRow totalRow = new TotalRow();
     ListSequence.fromList(myRows).addElement(totalRow);

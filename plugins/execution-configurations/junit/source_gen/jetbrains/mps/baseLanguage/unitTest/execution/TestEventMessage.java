@@ -15,13 +15,14 @@ import java.util.ArrayList;
 
 @Immutable
 public final class TestEventMessage {
-  public static final String START_TESTRUN_PREFIX = "<START_RUN_TEST>";
-  public static final String FINISH_TESTRUN_PREFIX = "<FINISH_RUN_TEST>";
-  public static final String START_TEST_PREFIX = "<START_TEST>";
-  public static final String FINISH_TEST_PREFIX = "<FINISH_TEST>";
-  public static final String FAILURE_TEST_PREFIX = "<TEST_FAILURE_BEGIN>";
-  public static final String ASSUMPTION_FAILURE_TEST_PREFIX = "<TEST_ASSUMPTION_FAILURE_BEGIN>";
-  public static final String IGNORE_FAILURE_TEST_PREFIX = "<TEST_IGNORE_BEGIN>";
+  public static final String START_TESTRUN = "<START_RUN_TEST>";
+  public static final String FINISH_TESTRUN = "<FINISH_RUN_TEST>";
+  public static final String START_TEST = "<START_TEST>";
+  public static final String FINISH_TEST = "<FINISH_TEST>";
+  public static final String FAILURE_TEST_BEGIN = "<TEST_FAILURE_BEGIN>";
+  public static final String FAILURE_TEST_END = "<TEST_FAILURE_END>";
+  public static final String ASSUMPTION_FAILURE_TEST_PREFIX = "<TEST_ASSUMPTION_FAILURE>";
+  public static final String IGNORE_FAILURE_TEST_PREFIX = "<TEST_IGNORE>";
 
   private static List<String> ALL_TOKENS;
   private final String myToken;
@@ -51,7 +52,7 @@ public final class TestEventMessage {
   }
 
   public boolean isErrored() {
-    return myToken.equals(FAILURE_TEST_PREFIX) || myToken.equals(ASSUMPTION_FAILURE_TEST_PREFIX);
+    return myToken.equals(FAILURE_TEST_BEGIN) || myToken.equals(ASSUMPTION_FAILURE_TEST_PREFIX);
   }
 
   @NotNull
@@ -105,7 +106,7 @@ public final class TestEventMessage {
     if (messageString.startsWith(expectedToken)) {
       String params = messageString.substring(expectedToken.length());
       {
-        Pattern _pattern_0 = REGEXP_gypf5b_a0a0b0b0gb;
+        Pattern _pattern_0 = REGEXP_gypf5b_a0a0b0b0hb;
         Matcher _matcher_0 = _pattern_0.matcher(params);
         if (_matcher_0.matches()) {
           testEvent = new TestEventMessage(expectedToken, _matcher_0.group(1), _matcher_0.group(2), Long.parseLong(_matcher_0.group(3)), Long.parseLong(_matcher_0.group(4)));
@@ -116,7 +117,7 @@ public final class TestEventMessage {
   }
 
   static {
-    TestEventMessage.ALL_TOKENS = ListSequence.fromListAndArray(new ArrayList<String>(), TestEventMessage.START_TEST_PREFIX, TestEventMessage.FINISH_TEST_PREFIX, TestEventMessage.FAILURE_TEST_PREFIX, TestEventMessage.ASSUMPTION_FAILURE_TEST_PREFIX, TestEventMessage.START_TESTRUN_PREFIX, FINISH_TESTRUN_PREFIX);
+    TestEventMessage.ALL_TOKENS = ListSequence.fromListAndArray(new ArrayList<String>(), TestEventMessage.START_TEST, TestEventMessage.FINISH_TEST, TestEventMessage.FAILURE_TEST_BEGIN, TestEventMessage.ASSUMPTION_FAILURE_TEST_PREFIX, IGNORE_FAILURE_TEST_PREFIX, TestEventMessage.START_TESTRUN, FINISH_TESTRUN);
   }
-  private static Pattern REGEXP_gypf5b_a0a0b0b0gb = Pattern.compile("([^:]+)(?::([^:]+))?:memory=(\\d+):time=(\\d+)", 0);
+  private static Pattern REGEXP_gypf5b_a0a0b0b0hb = Pattern.compile("([^:]+)(?::([^:]+))?:memory=(\\d+):time=(\\d+)", 0);
 }

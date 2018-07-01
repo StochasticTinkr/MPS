@@ -5,12 +5,14 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeEvent;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.TerminationTestEvent;
+import jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent;
 
 /**
  * event is always not null
  * contract is the same as in the DefaultRunListener
  */
 public interface TestStateListener {
+  void onProcessNotified();
   void onTestRunStarted();
   void onTestRunFinished();
   void onTestStart(TestNodeEvent event);
@@ -19,4 +21,6 @@ public interface TestStateListener {
   void onTestAssumptionFailure(TestNodeEvent event);
   void onTestIgnored(TestNodeEvent event);
   void onTermination(@NotNull TerminationTestEvent event);
+
+  void onTextAvailable(@NotNull TextTestEvent event);
 }

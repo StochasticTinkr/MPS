@@ -25,26 +25,34 @@ public class DefaultRunListener extends RunListener {
 
   @Override
   public void testRunStarted(Description description) throws Exception {
-    printSyncToken(TestEventMessage.START_TESTRUN_PREFIX, description);
+    flush();
+    printSyncToken(TestEventMessage.START_TESTRUN, description);
   }
 
   @Override
   public void testRunFinished(Result result) throws Exception {
+    flush();
     Description fakeDescription = Description.createTestDescription(Object.class, "FAKEDESCRIPTION");
-    printSyncToken(TestEventMessage.FINISH_TESTRUN_PREFIX, fakeDescription);
+    printSyncToken(TestEventMessage.FINISH_TESTRUN, fakeDescription);
+    flush();
+  }
+
+  private void flush() {
+    System.out.flush();
+    System.err.flush();
   }
 
   @Override
   public void testFinished(Description description) {
+    System.out.flush();
     System.err.flush();
-    printSyncToken(TestEventMessage.FINISH_TEST_PREFIX, description);
+    printSyncToken(TestEventMessage.FINISH_TEST, description);
   }
 
   @Override
   public void testFailure(Failure failure) {
     failure.getException().printStackTrace(System.err);
-    System.err.flush();
-    printSyncToken(TestEventMessage.FAILURE_TEST_PREFIX, failure.getDescription());
+    printSyncToken(TestEventMessage.FAILURE_TEST_BEGIN, failure.getDescription());
   }
 
   @Override
@@ -62,7 +70,7 @@ public class DefaultRunListener extends RunListener {
 
   @Override
   public void testStarted(Description description) {
-    printSyncToken(TestEventMessage.START_TEST_PREFIX, description);
+    printSyncToken(TestEventMessage.START_TEST, description);
   }
 
   private void printSyncToken(@NotNull String tokenPrefix, @NotNull Description description) {

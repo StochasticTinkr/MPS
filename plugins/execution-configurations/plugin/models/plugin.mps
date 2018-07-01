@@ -2632,7 +2632,7 @@
       <node concept="3clFbS" id="5gyVhZ1884m" role="2VODD2">
         <node concept="3cpWs8" id="78pvOus40yh" role="3cqZAp">
           <node concept="3cpWsn" id="78pvOus40yi" role="3cpWs9">
-            <property role="TrG5h" value="jUnitSettings" />
+            <property role="TrG5h" value="settings" />
             <node concept="yHkIc" id="78pvOus40yf" role="1tU5fm">
               <ref role="yHkHG" to="tty3:5gyVhZ1bm9a" resolve="JUnitSettings" />
             </node>
@@ -2672,7 +2672,7 @@
             </node>
             <node concept="2OqwBi" id="a4sarQY1h5" role="37vLTJ">
               <node concept="37vLTw" id="a4sarQY0Gb" role="2Oq$k0">
-                <ref role="3cqZAo" node="78pvOus40yi" resolve="jUnitSettings" />
+                <ref role="3cqZAo" node="78pvOus40yi" resolve="settings" />
               </node>
               <node concept="yHkDZ" id="a4sarQY2J9" role="2OqNvi">
                 <ref role="yHkDY" to="tty3:a4sarQXDI6" resolve="myDebug" />
@@ -2698,7 +2698,7 @@
             <property role="TrG5h" value="testNodes" />
             <node concept="2OqwBi" id="5gyVhZ1884s" role="33vP2m">
               <node concept="37vLTw" id="78pvOus40ym" role="2Oq$k0">
-                <ref role="3cqZAo" node="78pvOus40yi" resolve="jUnitSettings" />
+                <ref role="3cqZAo" node="78pvOus40yi" resolve="settings" />
               </node>
               <node concept="2XshWL" id="5gyVhZ1884u" role="2OqNvi">
                 <ref role="2WH_rO" to="tty3:5gyVhZ1bm9b" resolve="getTests" />
@@ -2789,7 +2789,7 @@
           </node>
           <node concept="2OqwBi" id="6Aw2OSzltYR" role="3clFbw">
             <node concept="37vLTw" id="6Aw2OSzltnl" role="2Oq$k0">
-              <ref role="3cqZAo" node="78pvOus40yi" resolve="jUnitSettings" />
+              <ref role="3cqZAo" node="78pvOus40yi" resolve="settings" />
             </node>
             <node concept="2XshWL" id="6Aw2OSzluXn" role="2OqNvi">
               <ref role="2WH_rO" to="tty3:1b7CZFPJVXT" resolve="canExecuteInProcess" />
@@ -2808,7 +2808,7 @@
                       <node concept="21ER0p" id="6segfscFgO4" role="37wK5m" />
                       <node concept="3OoTgS" id="7EXMnFkVV6_" role="37wK5m" />
                       <node concept="37vLTw" id="78pvOus8DVE" role="37wK5m">
-                        <ref role="3cqZAo" node="78pvOus40yi" resolve="jUnitSettings" />
+                        <ref role="3cqZAo" node="78pvOus40yi" resolve="settings" />
                       </node>
                       <node concept="3E78_a" id="s$tPLlF6FZ" role="37wK5m" />
                       <node concept="2OqwBi" id="1b7CZFPTcwC" role="37wK5m">
@@ -11750,7 +11750,7 @@
       </node>
       <node concept="TZ5HA" id="3L_EFdm_YYK" role="TZ5H$">
         <node concept="1dT_AC" id="3L_EFdm_YYL" role="1dT_Ay">
-          <property role="1dT_AB" value="Just that default 1024 in the pipe stream classes seem to be too small" />
+          <property role="1dT_AB" value="Just that default 1024 in the pipe stream classes seems to be too small" />
         </node>
       </node>
     </node>
@@ -13644,7 +13644,7 @@
                 <ref role="1HBi2w" node="53lh2wVpD6g" resolve="FakeProcessHandler" />
               </node>
               <node concept="liA8E" id="3L_EFdmASt2" role="2OqNvi">
-                <ref role="37wK5l" to="uu3z:~BaseOSProcessHandler.executeOnPooledThread(java.lang.Runnable):java.util.concurrent.Future" resolve="executeOnPooledThread" />
+                <ref role="37wK5l" to="uu3z:~BaseOSProcessHandler.executeTask(java.lang.Runnable):java.util.concurrent.Future" resolve="executeTask" />
                 <node concept="37vLTw" id="3L_EFdmATar" role="37wK5m">
                   <ref role="3cqZAo" node="3L_EFdmAPGH" resolve="runnable" />
                 </node>

@@ -19,31 +19,35 @@ public final class TestEventsDispatcher {
     myState = testState;
   }
 
-  public void onProcessTerminated(@NotNull ProcessEvent event) {
+  public synchronized void onStartNotified(@NotNull ProcessEvent event) {
+    myState.onStartNotified();
+  }
+
+  public synchronized void onProcessTerminated(@NotNull ProcessEvent event) {
     myState.onTermination(event.getExitCode() == DefaultTestExecutor.EXIT_CODE_FOR_EXCEPTION);
   }
 
-  public void onSimpleTextAvailable(String text, Key key) {
-    myState.outputText(text, key);
+  public synchronized void onSimpleTextAvailable(@NotNull String text, Key textType) {
+    myState.onTextAvailable(text, textType);
   }
 
-  public void onTestEvent(@NotNull TestEventMessage message) {
+  public synchronized void onTestEvent(@NotNull TestEventMessage message) {
     String token = message.getToken();
     TestRawEvent event = message.getEvent();
     switch (token) {
-      case TestEventMessage.START_TEST_PREFIX:
+      case TestEventMessage.START_TEST:
         myState.onTestStarted(event);
         break;
-      case TestEventMessage.FINISH_TEST_PREFIX:
+      case TestEventMessage.FINISH_TEST:
         myState.onTestFinished(event);
         break;
-      case TestEventMessage.FAILURE_TEST_PREFIX:
+      case TestEventMessage.FAILURE_TEST_BEGIN:
         myState.onTestFailure(event);
         break;
-      case TestEventMessage.START_TESTRUN_PREFIX:
+      case TestEventMessage.START_TESTRUN:
         myState.onTestRunStarted();
         break;
-      case TestEventMessage.FINISH_TESTRUN_PREFIX:
+      case TestEventMessage.FINISH_TESTRUN:
         myState.onTestRunFinished();
         break;
       case TestEventMessage.ASSUMPTION_FAILURE_TEST_PREFIX:

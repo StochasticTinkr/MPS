@@ -18,133 +18,134 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)/1796275887793108017">
     <file name="TestEventMessage.java">
-      <node id="3443931564291741196" at="18,0,19,0" concept="13" trace="START_TESTRUN_PREFIX" />
-      <node id="3443931564291741506" at="19,0,20,0" concept="13" trace="FINISH_TESTRUN_PREFIX" />
-      <node id="1796275887793108314" at="20,0,21,0" concept="13" trace="START_TEST_PREFIX" />
-      <node id="1796275887793108318" at="21,0,22,0" concept="13" trace="FINISH_TEST_PREFIX" />
-      <node id="1796275887793108322" at="22,0,23,0" concept="13" trace="FAILURE_TEST_PREFIX" />
-      <node id="1796275887793108330" at="23,0,24,0" concept="13" trace="ASSUMPTION_FAILURE_TEST_PREFIX" />
-      <node id="5999670631847528303" at="24,0,25,0" concept="13" trace="IGNORE_FAILURE_TEST_PREFIX" />
-      <node id="1796275887793108338" at="26,0,27,0" concept="13" trace="ALL_TOKENS" />
-      <node id="1796275887793108234" at="27,0,28,0" concept="5" trace="myToken" />
-      <node id="3443931564291726035" at="28,0,29,0" concept="5" trace="myEvent" />
-      <node id="1796275887793108176" at="30,76,31,20" concept="4" />
-      <node id="3443931564291726473" at="31,20,32,44" concept="4" />
-      <node id="1796275887793108505" at="35,124,36,20" concept="4" />
-      <node id="3443931564291728884" at="36,20,37,80" concept="4" />
-      <node id="1796275887793108254" at="41,28,42,48" concept="9" />
-      <node id="1796275887793108259" at="42,48,43,28" concept="4" />
-      <node id="1796275887793108266" at="43,28,44,28" concept="4" />
-      <node id="1796275887793108310" at="44,28,45,30" concept="10" />
-      <node id="1796275887793108346" at="49,28,50,19" concept="10" />
-      <node id="8613889299651060589" at="53,30,54,97" concept="10" />
-      <node id="3443931564291802647" at="58,34,59,19" concept="10" />
-      <node id="1796275887793108398" at="64,68,65,19" concept="10" />
-      <node id="1796275887793108400" at="66,5,67,58" concept="9" />
-      <node id="1796275887793108406" at="67,58,68,96" concept="10" />
-      <node id="8987588914245170695" at="72,25,73,42" concept="10" />
-      <node id="1796275887793108022" at="77,61,78,24" concept="9" />
-      <node id="1796275887793108032" at="80,52,81,30" concept="4" />
-      <node id="1796275887793108036" at="81,30,82,14" concept="2" />
-      <node id="1796275887793108041" at="84,5,85,17" concept="10" />
-      <node id="1796275887793108049" at="93,71,94,38" concept="9" />
-      <node id="1796275887793108053" at="94,38,95,56" concept="9" />
-      <node id="1796275887793108060" at="96,32,97,54" concept="4" />
-      <node id="1796275887793108069" at="98,5,99,21" concept="10" />
-      <node id="1796275887793108076" at="103,85,104,38" concept="9" />
-      <node id="1796275887793108082" at="105,50,106,70" concept="9" />
-      <node id="1796275887793108091" at="107,7,108,54" concept="9" />
-      <node id="1796275887793108091" at="108,54,109,56" concept="9" />
-      <node id="1796275887793108093" at="110,35,111,174" concept="4" />
-      <node id="1796275887793108161" at="114,5,115,21" concept="10" />
-      <node id="1796275887793108463" at="118,10,119,311" concept="4" />
-      <node id="1796275887793108131" at="121,0,122,0" concept="13" trace="REGEXP_gypf5b_a0a0b0b0gb" />
-      <node id="8613889299651059895" at="53,0,56,0" concept="8" trace="isErrored#()Z" />
-      <node id="1796275887793108388" at="63,41,66,5" concept="7" />
-      <node id="1796275887793108058" at="95,56,98,5" concept="7" />
-      <node id="1796275887793108091" at="109,56,112,9" concept="7" />
-      <node id="1796275887793108168" at="30,0,34,0" concept="3" trace="TestEventMessage#(Ljava/lang/String;Lorg/junit/runner/Description;)V" />
-      <node id="1796275887793108230" at="35,0,39,0" concept="3" trace="TestEventMessage#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJ)V" />
-      <node id="1796275887793108342" at="48,0,52,0" concept="8" trace="getToken#()Ljava/lang/String;" />
-      <node id="3443931564291802643" at="57,0,61,0" concept="8" trace="getEvent#()Ljetbrains/mps/baseLanguage/unitTest/execution/TestRawEvent;" />
-      <node id="1796275887793108434" at="71,0,75,0" concept="8" trace="hashCode#()I" />
-      <node id="1796275887793108030" at="79,62,83,7" concept="7" />
-      <node id="1796275887793108026" at="78,24,84,5" concept="6" />
-      <node id="1796275887793108250" at="40,0,47,0" concept="8" trace="toString#()Ljava/lang/String;" />
-      <node id="1796275887793108091" at="106,70,113,7" concept="1" />
-      <node id="1796275887793108382" at="62,0,70,0" concept="8" trace="equals#(Ljava/lang/Object;)Z" />
-      <node id="1796275887793108045" at="92,0,101,0" concept="14" trace="parse#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/TestEventMessage;" />
-      <node id="1796275887793108080" at="104,38,114,5" concept="7" />
-      <node id="1796275887793108018" at="76,0,87,0" concept="14" trace="getEventToken#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1796275887793108073" at="102,0,117,0" concept="14" trace="parse#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/TestEventMessage;" />
-      <scope id="1796275887793108345" at="49,28,50,19" />
-      <scope id="8613889299651059898" at="53,30,54,97" />
-      <scope id="3443931564291802646" at="58,34,59,19" />
-      <scope id="1796275887793108397" at="64,68,65,19" />
-      <scope id="1796275887793108437" at="72,25,73,42" />
-      <scope id="1796275887793108059" at="96,32,97,54" />
-      <scope id="1796275887793108092" at="110,35,111,174" />
-      <scope id="1796275887793108462" at="118,10,119,311" />
-      <scope id="1796275887793108175" at="30,76,32,44" />
-      <scope id="1796275887793108233" at="35,124,37,80" />
-      <scope id="1796275887793108031" at="80,52,82,14" />
-      <scope id="8613889299651059895" at="53,0,56,0" />
-      <scope id="1796275887793108168" at="30,0,34,0">
+      <node id="3443931564291741196" at="18,0,19,0" concept="13" trace="START_TESTRUN" />
+      <node id="3443931564291741506" at="19,0,20,0" concept="13" trace="FINISH_TESTRUN" />
+      <node id="1796275887793108314" at="20,0,21,0" concept="13" trace="START_TEST" />
+      <node id="1796275887793108318" at="21,0,22,0" concept="13" trace="FINISH_TEST" />
+      <node id="1796275887793108322" at="22,0,23,0" concept="13" trace="FAILURE_TEST_BEGIN" />
+      <node id="4866165190353785771" at="23,0,24,0" concept="13" trace="FAILURE_TEST_END" />
+      <node id="1796275887793108330" at="24,0,25,0" concept="13" trace="ASSUMPTION_FAILURE_TEST_PREFIX" />
+      <node id="5999670631847528303" at="25,0,26,0" concept="13" trace="IGNORE_FAILURE_TEST_PREFIX" />
+      <node id="1796275887793108338" at="27,0,28,0" concept="13" trace="ALL_TOKENS" />
+      <node id="1796275887793108234" at="28,0,29,0" concept="5" trace="myToken" />
+      <node id="3443931564291726035" at="29,0,30,0" concept="5" trace="myEvent" />
+      <node id="1796275887793108176" at="31,76,32,20" concept="4" />
+      <node id="3443931564291726473" at="32,20,33,44" concept="4" />
+      <node id="1796275887793108505" at="36,124,37,20" concept="4" />
+      <node id="3443931564291728884" at="37,20,38,80" concept="4" />
+      <node id="1796275887793108254" at="42,28,43,48" concept="9" />
+      <node id="1796275887793108259" at="43,48,44,28" concept="4" />
+      <node id="1796275887793108266" at="44,28,45,28" concept="4" />
+      <node id="1796275887793108310" at="45,28,46,30" concept="10" />
+      <node id="1796275887793108346" at="50,28,51,19" concept="10" />
+      <node id="8613889299651060589" at="54,30,55,96" concept="10" />
+      <node id="3443931564291802647" at="59,34,60,19" concept="10" />
+      <node id="1796275887793108398" at="65,68,66,19" concept="10" />
+      <node id="1796275887793108400" at="67,5,68,58" concept="9" />
+      <node id="1796275887793108406" at="68,58,69,96" concept="10" />
+      <node id="8987588914245170695" at="73,25,74,42" concept="10" />
+      <node id="1796275887793108022" at="78,61,79,24" concept="9" />
+      <node id="1796275887793108032" at="81,52,82,30" concept="4" />
+      <node id="1796275887793108036" at="82,30,83,14" concept="2" />
+      <node id="1796275887793108041" at="85,5,86,17" concept="10" />
+      <node id="1796275887793108049" at="94,71,95,38" concept="9" />
+      <node id="1796275887793108053" at="95,38,96,56" concept="9" />
+      <node id="1796275887793108060" at="97,32,98,54" concept="4" />
+      <node id="1796275887793108069" at="99,5,100,21" concept="10" />
+      <node id="1796275887793108076" at="104,85,105,38" concept="9" />
+      <node id="1796275887793108082" at="106,50,107,70" concept="9" />
+      <node id="1796275887793108091" at="108,7,109,54" concept="9" />
+      <node id="1796275887793108091" at="109,54,110,56" concept="9" />
+      <node id="1796275887793108093" at="111,35,112,174" concept="4" />
+      <node id="1796275887793108161" at="115,5,116,21" concept="10" />
+      <node id="1796275887793108463" at="119,10,120,310" concept="4" />
+      <node id="1796275887793108131" at="122,0,123,0" concept="13" trace="REGEXP_gypf5b_a0a0b0b0hb" />
+      <node id="8613889299651059895" at="54,0,57,0" concept="8" trace="isErrored#()Z" />
+      <node id="1796275887793108388" at="64,41,67,5" concept="7" />
+      <node id="1796275887793108058" at="96,56,99,5" concept="7" />
+      <node id="1796275887793108091" at="110,56,113,9" concept="7" />
+      <node id="1796275887793108168" at="31,0,35,0" concept="3" trace="TestEventMessage#(Ljava/lang/String;Lorg/junit/runner/Description;)V" />
+      <node id="1796275887793108230" at="36,0,40,0" concept="3" trace="TestEventMessage#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJ)V" />
+      <node id="1796275887793108342" at="49,0,53,0" concept="8" trace="getToken#()Ljava/lang/String;" />
+      <node id="3443931564291802643" at="58,0,62,0" concept="8" trace="getEvent#()Ljetbrains/mps/baseLanguage/unitTest/execution/TestRawEvent;" />
+      <node id="1796275887793108434" at="72,0,76,0" concept="8" trace="hashCode#()I" />
+      <node id="1796275887793108030" at="80,62,84,7" concept="7" />
+      <node id="1796275887793108026" at="79,24,85,5" concept="6" />
+      <node id="1796275887793108250" at="41,0,48,0" concept="8" trace="toString#()Ljava/lang/String;" />
+      <node id="1796275887793108091" at="107,70,114,7" concept="1" />
+      <node id="1796275887793108382" at="63,0,71,0" concept="8" trace="equals#(Ljava/lang/Object;)Z" />
+      <node id="1796275887793108045" at="93,0,102,0" concept="14" trace="parse#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/TestEventMessage;" />
+      <node id="1796275887793108080" at="105,38,115,5" concept="7" />
+      <node id="1796275887793108018" at="77,0,88,0" concept="14" trace="getEventToken#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1796275887793108073" at="103,0,118,0" concept="14" trace="parse#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/TestEventMessage;" />
+      <scope id="1796275887793108345" at="50,28,51,19" />
+      <scope id="8613889299651059898" at="54,30,55,96" />
+      <scope id="3443931564291802646" at="59,34,60,19" />
+      <scope id="1796275887793108397" at="65,68,66,19" />
+      <scope id="1796275887793108437" at="73,25,74,42" />
+      <scope id="1796275887793108059" at="97,32,98,54" />
+      <scope id="1796275887793108092" at="111,35,112,174" />
+      <scope id="1796275887793108462" at="119,10,120,310" />
+      <scope id="1796275887793108175" at="31,76,33,44" />
+      <scope id="1796275887793108233" at="36,124,38,80" />
+      <scope id="1796275887793108031" at="81,52,83,14" />
+      <scope id="8613889299651059895" at="54,0,57,0" />
+      <scope id="1796275887793108168" at="31,0,35,0">
         <var name="description" id="1796275887793108475" />
         <var name="token" id="1796275887793108169" />
       </scope>
-      <scope id="1796275887793108230" at="35,0,39,0">
+      <scope id="1796275887793108230" at="36,0,40,0">
         <var name="memoryUsage" id="1796275887793108499" />
         <var name="testCaseName" id="1796275887793108493" />
         <var name="testMethodName" id="1796275887793108496" />
         <var name="time" id="1796275887793108502" />
         <var name="token" id="1796275887793108490" />
       </scope>
-      <scope id="1796275887793108253" at="41,28,45,30">
+      <scope id="1796275887793108253" at="42,28,46,30">
         <var name="builder" id="1796275887793108255" />
       </scope>
-      <scope id="1796275887793108342" at="48,0,52,0" />
-      <scope id="3443931564291802643" at="57,0,61,0" />
-      <scope id="1796275887793108434" at="71,0,75,0" />
-      <scope id="1796275887793108029" at="79,62,83,7" />
-      <scope id="1796275887793108387" at="63,41,68,96">
+      <scope id="1796275887793108342" at="49,0,53,0" />
+      <scope id="3443931564291802643" at="58,0,62,0" />
+      <scope id="1796275887793108434" at="72,0,76,0" />
+      <scope id="1796275887793108029" at="80,62,84,7" />
+      <scope id="1796275887793108387" at="64,41,69,96">
         <var name="message" id="1796275887793108401" />
       </scope>
-      <scope id="1796275887793108091" at="107,7,112,9">
+      <scope id="1796275887793108091" at="108,7,113,9">
         <var name="_matcher_0" id="1796275887793108091" />
         <var name="_pattern_0" id="1796275887793108091" />
       </scope>
-      <scope id="1796275887793108026" at="78,24,84,5">
+      <scope id="1796275887793108026" at="79,24,85,5">
         <var name="expectedToken" id="1796275887793108027" />
       </scope>
-      <scope id="1796275887793108048" at="93,71,99,21">
+      <scope id="1796275887793108048" at="94,71,100,21">
         <var name="expectedToken" id="1796275887793108054" />
         <var name="testEvent" id="1796275887793108050" />
       </scope>
-      <scope id="1796275887793108250" at="40,0,47,0" />
-      <scope id="1796275887793108382" at="62,0,70,0">
+      <scope id="1796275887793108250" at="41,0,48,0" />
+      <scope id="1796275887793108382" at="63,0,71,0">
         <var name="another" id="1796275887793108385" />
       </scope>
-      <scope id="1796275887793108021" at="77,61,85,17">
+      <scope id="1796275887793108021" at="78,61,86,17">
         <var name="token" id="1796275887793108023" />
       </scope>
-      <scope id="1796275887793108081" at="105,50,113,7">
+      <scope id="1796275887793108081" at="106,50,114,7">
         <var name="params" id="1796275887793108083" />
       </scope>
-      <scope id="1796275887793108045" at="92,0,101,0">
+      <scope id="1796275887793108045" at="93,0,102,0">
         <var name="messageString" id="1796275887793108071" />
       </scope>
-      <scope id="1796275887793108018" at="76,0,87,0">
+      <scope id="1796275887793108018" at="77,0,88,0">
         <var name="messageString" id="1796275887793108043" />
       </scope>
-      <scope id="1796275887793108075" at="103,85,115,21">
+      <scope id="1796275887793108075" at="104,85,116,21">
         <var name="testEvent" id="1796275887793108077" />
       </scope>
-      <scope id="1796275887793108073" at="102,0,117,0">
+      <scope id="1796275887793108073" at="103,0,118,0">
         <var name="expectedToken" id="1796275887793108163" />
         <var name="messageString" id="1796275887793108165" />
       </scope>
-      <unit id="1796275887793108017" at="16,0,123,0" name="jetbrains.mps.baseLanguage.unitTest.execution.TestEventMessage" />
+      <unit id="1796275887793108017" at="16,0,124,0" name="jetbrains.mps.baseLanguage.unitTest.execution.TestEventMessage" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)/2254978909344676818">
@@ -372,13 +373,13 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)/3443931564292403452">
     <file name="TestKey.java">
-      <node id="3443931564292460275" at="18,0,20,0" concept="8" trace="getQualifiedName#()Ljava/lang/String;" />
-      <node id="3443931564292828215" at="21,0,23,0" concept="8" trace="getTestCaseFqName#()Ljava/lang/String;" />
-      <node id="3443931564297714375" at="24,0,26,0" concept="8" trace="getType#()Ljetbrains/mps/baseLanguage/unitTest/execution/TestType;" />
-      <scope id="3443931564292460275" at="18,0,20,0" />
-      <scope id="3443931564292828215" at="21,0,23,0" />
-      <scope id="3443931564297714375" at="24,0,26,0" />
-      <unit id="3443931564292403452" at="16,0,27,0" name="jetbrains.mps.baseLanguage.unitTest.execution.TestKey" />
+      <node id="3443931564292460275" at="19,0,21,0" concept="8" trace="getQualifiedName#()Ljava/lang/String;" />
+      <node id="3443931564292828215" at="22,0,24,0" concept="8" trace="getTestCaseFqName#()Ljava/lang/String;" />
+      <node id="3443931564297714375" at="25,0,27,0" concept="8" trace="getType#()Ljetbrains/mps/baseLanguage/unitTest/execution/TestType;" />
+      <scope id="3443931564292460275" at="19,0,21,0" />
+      <scope id="3443931564292828215" at="22,0,24,0" />
+      <scope id="3443931564297714375" at="25,0,27,0" />
+      <unit id="3443931564292403452" at="17,0,28,0" name="jetbrains.mps.baseLanguage.unitTest.execution.TestKey" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)/3443931564293454594">
@@ -390,46 +391,50 @@
       <node id="3443931564293485984" at="21,0,22,18" concept="4" />
       <node id="3443931564293454602" at="22,18,23,40" concept="4" />
       <node id="3443931564293454613" at="27,37,28,28" concept="10" />
-      <node id="3443931564293486924" at="33,37,34,18" concept="10" />
-      <node id="3443931564293454621" at="38,36,39,28" concept="10" />
-      <node id="3443931564293454635" at="44,44,45,65" concept="10" />
-      <node id="3443931564293454648" at="46,5,47,17" concept="10" />
-      <node id="3443931564293454656" at="51,25,52,29" concept="10" />
-      <node id="3443931564293454666" at="56,28,57,51" concept="10" />
-      <node id="3443931564299996193" at="62,29,63,29" concept="10" />
+      <node id="4866165190356476908" at="32,47,33,16" concept="10" />
+      <node id="3443931564293486924" at="38,37,39,18" concept="10" />
+      <node id="3443931564293454621" at="43,36,44,28" concept="10" />
+      <node id="3443931564293454635" at="49,44,50,65" concept="10" />
+      <node id="3443931564293454648" at="51,5,52,17" concept="10" />
+      <node id="3443931564293454656" at="56,25,57,29" concept="10" />
+      <node id="3443931564293454666" at="61,28,62,51" concept="10" />
+      <node id="3443931564299996193" at="67,29,68,29" concept="10" />
       <node id="3443931564293483593" at="17,58,20,5" concept="7" />
-      <node id="3443931564293454633" at="43,40,46,5" concept="7" />
+      <node id="3443931564293454633" at="48,40,51,5" concept="7" />
       <node id="3443931564293454611" at="26,0,30,0" concept="8" trace="getTestCaseFqName#()Ljava/lang/String;" />
-      <node id="3443931564293454619" at="37,0,41,0" concept="8" trace="getQualifiedName#()Ljava/lang/String;" />
-      <node id="3443931564293454652" at="50,0,54,0" concept="8" trace="hashCode#()I" />
-      <node id="3443931564293454662" at="55,0,59,0" concept="8" trace="toString#()Ljava/lang/String;" />
-      <node id="3443931564293486787" at="31,0,36,0" concept="8" trace="getNode#()Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
-      <node id="3443931564299996188" at="60,0,65,0" concept="8" trace="getType#()Ljetbrains/mps/baseLanguage/unitTest/execution/TestType;" />
-      <node id="3443931564293454627" at="42,0,49,0" concept="8" trace="equals#(Ljava/lang/Object;)Z" />
+      <node id="4866165190356476906" at="31,0,35,0" concept="8" trace="getTestCaseNodeKey#()Ljetbrains/mps/baseLanguage/unitTest/execution/TestCaseNodeKey;" />
+      <node id="3443931564293454619" at="42,0,46,0" concept="8" trace="getQualifiedName#()Ljava/lang/String;" />
+      <node id="3443931564293454652" at="55,0,59,0" concept="8" trace="hashCode#()I" />
+      <node id="3443931564293454662" at="60,0,64,0" concept="8" trace="toString#()Ljava/lang/String;" />
+      <node id="3443931564293486787" at="36,0,41,0" concept="8" trace="getNode#()Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+      <node id="3443931564299996188" at="65,0,70,0" concept="8" trace="getType#()Ljetbrains/mps/baseLanguage/unitTest/execution/TestType;" />
+      <node id="3443931564293454627" at="47,0,54,0" concept="8" trace="equals#(Ljava/lang/Object;)Z" />
       <node id="3443931564293454599" at="17,0,25,0" concept="3" trace="TestCaseNodeKey#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)V" />
       <scope id="3443931564293483594" at="18,31,19,118" />
       <scope id="3443931564293454612" at="27,37,28,28" />
-      <scope id="3443931564293486792" at="33,37,34,18" />
-      <scope id="3443931564293454620" at="38,36,39,28" />
-      <scope id="3443931564293454634" at="44,44,45,65" />
-      <scope id="3443931564293454655" at="51,25,52,29" />
-      <scope id="3443931564293454665" at="56,28,57,51" />
-      <scope id="3443931564299996192" at="62,29,63,29" />
+      <scope id="4866165190356476907" at="32,47,33,16" />
+      <scope id="3443931564293486792" at="38,37,39,18" />
+      <scope id="3443931564293454620" at="43,36,44,28" />
+      <scope id="3443931564293454634" at="49,44,50,65" />
+      <scope id="3443931564293454655" at="56,25,57,29" />
+      <scope id="3443931564293454665" at="61,28,62,51" />
+      <scope id="3443931564299996192" at="67,29,68,29" />
       <scope id="3443931564293454611" at="26,0,30,0" />
-      <scope id="3443931564293454619" at="37,0,41,0" />
-      <scope id="3443931564293454632" at="43,40,47,17" />
-      <scope id="3443931564293454652" at="50,0,54,0" />
-      <scope id="3443931564293454662" at="55,0,59,0" />
-      <scope id="3443931564293486787" at="31,0,36,0" />
-      <scope id="3443931564299996188" at="60,0,65,0" />
+      <scope id="4866165190356476906" at="31,0,35,0" />
+      <scope id="3443931564293454619" at="42,0,46,0" />
+      <scope id="3443931564293454632" at="48,40,52,17" />
+      <scope id="3443931564293454652" at="55,0,59,0" />
+      <scope id="3443931564293454662" at="60,0,64,0" />
+      <scope id="3443931564293486787" at="36,0,41,0" />
+      <scope id="3443931564299996188" at="65,0,70,0" />
       <scope id="3443931564293454601" at="17,58,23,40" />
-      <scope id="3443931564293454627" at="42,0,49,0">
+      <scope id="3443931564293454627" at="47,0,54,0">
         <var name="object" id="3443931564293454630" />
       </scope>
       <scope id="3443931564293454599" at="17,0,25,0">
         <var name="node" id="3443931564293454606" />
       </scope>
-      <unit id="3443931564293454594" at="12,0,66,0" name="jetbrains.mps.baseLanguage.unitTest.execution.TestCaseNodeKey" />
+      <unit id="3443931564293454594" at="12,0,71,0" name="jetbrains.mps.baseLanguage.unitTest.execution.TestCaseNodeKey" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)/3443931564293454679">
@@ -496,8 +501,10 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)/3443931564293454799">
     <file name="TestNodeKey.java">
       <node id="3443931564293454831" at="9,0,11,0" concept="8" trace="getNode#()Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+      <node id="4866165190356481753" at="12,0,14,0" concept="8" trace="getTestCaseNodeKey#()Ljetbrains/mps/baseLanguage/unitTest/execution/TestCaseNodeKey;" />
       <scope id="3443931564293454831" at="9,0,11,0" />
-      <unit id="3443931564293454799" at="8,0,12,0" name="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
+      <scope id="4866165190356481753" at="12,0,14,0" />
+      <unit id="3443931564293454799" at="8,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)/3443931564293454895">
@@ -595,6 +602,36 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)/3443931564297698174">
     <file name="TestType.java">
       <unit id="3443931564297698174" at="6,0,10,0" name="jetbrains.mps.baseLanguage.unitTest.execution.TestType" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)/4866165190354000022">
+    <file name="TextTestEvent.java">
+      <node id="4866165190354000023" at="12,0,13,0" concept="5" trace="myText" />
+      <node id="4866165190354000027" at="13,0,14,0" concept="5" trace="myKind" />
+      <node id="4866165190354215338" at="14,0,15,0" concept="5" trace="myCurrentNode" />
+      <node id="4866165190354000042" at="16,104,17,18" concept="4" />
+      <node id="4866165190354000038" at="17,18,18,18" concept="4" />
+      <node id="4866165190354215484" at="18,18,19,36" concept="4" />
+      <node id="4866165190354000071" at="23,27,24,18" concept="10" />
+      <node id="4866165190354000063" at="28,23,29,18" concept="10" />
+      <node id="4866165190354217604" at="33,43,34,25" concept="10" />
+      <node id="4866165190354000061" at="22,0,26,0" concept="8" trace="getText#()Ljava/lang/String;" />
+      <node id="4866165190354000069" at="27,0,31,0" concept="8" trace="getKey#()Lcom/intellij/openapi/util/Key;" />
+      <node id="4866165190354214847" at="32,0,36,0" concept="8" trace="getCurrentTestNode#()Ljetbrains/mps/baseLanguage/unitTest/execution/TestNodeKey;" />
+      <node id="4866165190354000034" at="16,0,21,0" concept="3" trace="TextTestEvent#(Ljava/lang/String;Lcom/intellij/openapi/util/Key;Ljetbrains/mps/baseLanguage/unitTest/execution/TestNodeKey;)V" />
+      <scope id="4866165190354000062" at="23,27,24,18" />
+      <scope id="4866165190354000070" at="28,23,29,18" />
+      <scope id="4866165190354214850" at="33,43,34,25" />
+      <scope id="4866165190354000037" at="16,104,19,36" />
+      <scope id="4866165190354000061" at="22,0,26,0" />
+      <scope id="4866165190354000069" at="27,0,31,0" />
+      <scope id="4866165190354214847" at="32,0,36,0" />
+      <scope id="4866165190354000034" at="16,0,21,0">
+        <var name="currentTestNode" id="4866165190354214947" />
+        <var name="kind" id="4866165190354000058" />
+        <var name="text" id="4866165190354000051" />
+      </scope>
+      <unit id="4866165190354000022" at="10,0,37,0" name="jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent" />
     </file>
   </root>
 </debug-info>

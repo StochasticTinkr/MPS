@@ -22,10 +22,11 @@ import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeEvent;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestRawEvent;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.unitTest.execution.TestCaseNodeKey;
 import org.apache.log4j.Level;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestCaseNodeKey;
 import jetbrains.mps.baseLanguage.unitTest.execution.TerminationTestEvent;
 import com.intellij.openapi.util.Key;
+import jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent;
 import org.jetbrains.mps.annotations.ImmutableReturn;
 import java.util.Collections;
 import org.jetbrains.annotations.TestOnly;
@@ -110,6 +111,7 @@ public final class TestRunState {
   }
 
   /*package*/ void onTestStarted(TestRawEvent event) {
+    log("test started : " + event);
     final TestNodeEvent nodeEvent = convertRawEventToNodeEvent(event);
     ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
@@ -121,16 +123,26 @@ public final class TestRunState {
 
   /*package*/ void onTestFinished(TestRawEvent event) {
     final TestNodeEvent nodeEvent = convertRawEventToNodeEvent(event);
+    log("test finished : " + event);
     ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestFinish(nodeEvent);
       }
     });
-    finishTest();
+    myInnerData.myCompletedTests++;
+    notifyUpdateListeners();
+    myInnerData.myCurrentTestNode = null;
     removeFinishedTestEvent(event);
   }
 
+  private void log(String msg) {
+    if (LOG.isEnabledFor(Level.WARN)) {
+      LOG.warn(msg);
+    }
+  }
+
   /*package*/ void onTestRunStarted() {
+    log("test run started : ");
     ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestRunStarted();
@@ -139,6 +151,7 @@ public final class TestRunState {
   }
 
   /*package*/ void onTestRunFinished() {
+    log("test run finished : ");
     ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestRunFinished();
@@ -147,6 +160,7 @@ public final class TestRunState {
   }
 
   /*package*/ void onTestAssumptionFailure(TestRawEvent event) {
+    log("test assumption failed : ");
     final TestNodeEvent nodeEvent = convertRawEventToNodeEvent(event);
     ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
@@ -157,6 +171,7 @@ public final class TestRunState {
   }
 
   public void onTestIgnored(TestRawEvent event) {
+    log("test ignored : ");
     final TestNodeEvent nodeEvent = convertRawEventToNodeEvent(event);
     ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
@@ -167,6 +182,7 @@ public final class TestRunState {
   }
 
   public void onTestFailure(TestRawEvent event) {
+    log("test failed : " + event);
     final TestNodeEvent nodeEvent = convertRawEventToNodeEvent(event);
     ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
@@ -192,7 +208,7 @@ public final class TestRunState {
   }
 
   private void startTest(@NotNull TestNodeEvent event) {
-    if (myInnerData.getCurrentMethod() != null) {
+    if (myInnerData.getCurrentTestNode() != null) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Seems that the previous test is not finished yet");
       }
@@ -202,15 +218,10 @@ public final class TestRunState {
     notifyUpdateListeners();
   }
 
-  private void finishTest() {
-    myInnerData.myCompletedTests++;
-    notifyUpdateListeners();
-    myInnerData.myCurrentTestNode = null;
-  }
-
   public void onTermination(boolean terminatingOnException) {
     checkConsistency();
     myInnerData.myTerminated = true;
+    log("tests terminated : " + terminatingOnException);
     myInnerData.myTerminatedCorrectly = !(terminatingOnException);
     // these are the tests which have not been executed yet 
     List<TestMethodNodeKey> testsNotRunDueToError = myInnerData.myTestMethodsLeftToRun;
@@ -222,17 +233,33 @@ public final class TestRunState {
     });
   }
 
+  public void onStartNotified() {
+    checkConsistency();
+    log("tests notified : ");
+    ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onProcessNotified();
+      }
+    });
+  }
+
   private void checkConsistency() {
     assert myInnerData.myCompletedTests <= myInnerData.myTotalTests;
     assert myInnerData.myFailedTests <= myInnerData.myCompletedTests;
   }
 
-  public void outputText(String text, @NotNull Key key) {
+  public void onTextAvailable(@NotNull String text, @NotNull Key key) {
     myInnerData.myAvailableText = text;
-    myInnerData.myKey = key;
+    myInnerData.myTextType = key;
+    final TextTestEvent event = new TextTestEvent(text, key, myInnerData.myCurrentTestNode);
+    ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onTextAvailable(event);
+      }
+    });
     notifyUpdateListeners();
     myInnerData.myAvailableText = null;
-    myInnerData.myKey = null;
+    myInnerData.myTextType = null;
   }
 
   public void addListener(TestStateListener listener) {

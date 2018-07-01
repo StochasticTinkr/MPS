@@ -29,6 +29,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeEvent;
 import jetbrains.mps.baseLanguage.unitTest.execution.TerminationTestEvent;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestMethodNodeKey;
+import jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent;
 
 /**
  * we need to remove string association aka TestNameMap
@@ -231,7 +232,6 @@ public class TestTree extends MPSTree implements Disposable, TestStateListener {
 
   @Override
   public void onTestRunStarted() {
-    updateStateUI(myRoot, TestState.IN_PROGRESS);
   }
 
   private void selectFirstFailedTestIfNeeded() {
@@ -332,5 +332,14 @@ public class TestTree extends MPSTree implements Disposable, TestStateListener {
   @NotNull
   private TestTreeNode getUINodeByModelNode(@NotNull ITestNodeWrapper testNode) {
     return MapSequence.fromMap(myNode2UINodeMap).get(testNode);
+  }
+
+  @Override
+  public void onProcessNotified() {
+    updateStateUI(myRoot, TestState.IN_PROGRESS);
+  }
+
+  @Override
+  public void onTextAvailable(@NotNull TextTestEvent event) {
   }
 }
