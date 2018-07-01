@@ -83,16 +83,16 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
         int exitCode = ProcessHandlerBuilder.startAndWait(process, 30 * 1000);
         int failedMustBe = ListSequence.fromList(failure).count();
         if (exitCode != failedMustBe) {
-          Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", but " + exitCode);
+          Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", not to " + exitCode);
         } else if (exitCode < 0) {
           Assert.fail("Process is running for too long");
         }
         if (runState.getFailedTests() != failedMustBe) {
-          Assert.fail("The number of failed tests be equal to " + failedMustBe + ", but " + runState.getFailedTests());
+          Assert.fail("The number of failed tests be equal to " + failedMustBe + ", not to " + runState.getFailedTests());
         }
         int completedMustBe = ListSequence.fromList(failure).count() + ListSequence.fromList(success).count();
         if (runState.getCompletedTests() != completedMustBe) {
-          Assert.fail("The number of completed tests be equal to " + ListSequence.fromList(failure).count() + ", but " + runState.getFailedTests());
+          Assert.fail("The number of completed tests be equal to " + ListSequence.fromList(failure).count() + ", not to " + runState.getFailedTests());
         }
         if (!(checkListener.value.getMessages().equals(""))) {
           Assert.fail(checkListener.value.getMessages());

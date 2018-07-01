@@ -503,7 +503,7 @@
                           </node>
                         </node>
                         <node concept="Xl_RD" id="2SyXq5Nk0cL" role="3uHU7w">
-                          <property role="Xl_RC" value=", but " />
+                          <property role="Xl_RC" value=", not to " />
                         </node>
                       </node>
                     </node>
@@ -561,7 +561,7 @@
                           </node>
                         </node>
                         <node concept="Xl_RD" id="5vTxdEzyTZO" role="3uHU7w">
-                          <property role="Xl_RC" value=", but " />
+                          <property role="Xl_RC" value=", not to " />
                         </node>
                       </node>
                     </node>
@@ -628,7 +628,7 @@
                           </node>
                         </node>
                         <node concept="Xl_RD" id="2SyXq5NjpGA" role="3uHU7w">
-                          <property role="Xl_RC" value=", but " />
+                          <property role="Xl_RC" value=", not to " />
                         </node>
                       </node>
                     </node>
@@ -1189,7 +1189,7 @@
                           </node>
                         </node>
                         <node concept="Xl_RD" id="5vTxdEzz11t" role="3uHU7w">
-                          <property role="Xl_RC" value=", but " />
+                          <property role="Xl_RC" value=", not to " />
                         </node>
                       </node>
                     </node>
@@ -1653,7 +1653,7 @@
                           </node>
                         </node>
                         <node concept="Xl_RD" id="5XEoQWrnMy" role="3uHU7w">
-                          <property role="Xl_RC" value=", but " />
+                          <property role="Xl_RC" value=", not to " />
                         </node>
                       </node>
                     </node>
