@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.workbench.action.ActionUtils;
 import javax.swing.SwingUtilities;
+import java.util.LinkedList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -149,7 +150,10 @@ public class TestTree extends MPSTree implements Disposable, TestStateListener {
 
   @NotNull
   private List<ITestNodeWrapper> getChildren(@NotNull ITestNodeWrapper testNode) {
-    Iterable<ITestNodeWrapper> testMethods = testNode.getTestMethods();
+    if (!(testNode.isTestCase())) {
+      return ListSequence.fromList(new LinkedList<ITestNodeWrapper>());
+    }
+    Iterable<ITestNodeWrapper> testMethods = MapSequence.fromMap(myTestCase2MethodsMap).get(testNode);
     return Sequence.fromIterable(testMethods).toListSequence();
   }
 

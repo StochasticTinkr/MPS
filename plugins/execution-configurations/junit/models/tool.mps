@@ -444,6 +444,7 @@
         <child id="1237721435808" name="initValue" index="HW$Y0" />
         <child id="1237721435807" name="elementType" index="HW$YZ" />
       </concept>
+      <concept id="1227008614712" name="jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator" flags="nn" index="2Jqq0_" />
       <concept id="1227022210526" name="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation" flags="nn" index="2Kehj3" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
@@ -1689,6 +1690,29 @@
         </node>
       </node>
       <node concept="3clFbS" id="2ZbjobgOVER" role="3clF47">
+        <node concept="3clFbJ" id="6UwxA1prIx6" role="3cqZAp">
+          <node concept="3clFbS" id="6UwxA1prIx8" role="3clFbx">
+            <node concept="3cpWs6" id="6UwxA1prPjC" role="3cqZAp">
+              <node concept="2ShNRf" id="6UwxA1prSdL" role="3cqZAk">
+                <node concept="2Jqq0_" id="6UwxA1prQKN" role="2ShVmc">
+                  <node concept="3uibUv" id="6UwxA1prQKO" role="HW$YZ">
+                    <ref role="3uigEE" to="sfqd:56tRMpP_ej7" resolve="ITestNodeWrapper" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="6UwxA1prNfw" role="3clFbw">
+            <node concept="2OqwBi" id="6UwxA1prNfy" role="3fr31v">
+              <node concept="37vLTw" id="6UwxA1prNfz" role="2Oq$k0">
+                <ref role="3cqZAo" node="2ZbjobgOVIF" resolve="testNode" />
+              </node>
+              <node concept="liA8E" id="6UwxA1prNf$" role="2OqNvi">
+                <ref role="37wK5l" to="sfqd:56tRMpP_ejg" resolve="isTestCase" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="2ZbjobgPoHw" role="3cqZAp">
           <node concept="3cpWsn" id="2ZbjobgPoHx" role="3cpWs9">
             <property role="TrG5h" value="testMethods" />
@@ -1697,12 +1721,12 @@
                 <ref role="3uigEE" to="sfqd:56tRMpP_ej7" resolve="ITestNodeWrapper" />
               </node>
             </node>
-            <node concept="2OqwBi" id="2ZbjobgPoHy" role="33vP2m">
-              <node concept="37vLTw" id="2ZbjobgPoHz" role="2Oq$k0">
+            <node concept="3EllGN" id="6UwxA1prEZK" role="33vP2m">
+              <node concept="37vLTw" id="6UwxA1prGsQ" role="3ElVtu">
                 <ref role="3cqZAo" node="2ZbjobgOVIF" resolve="testNode" />
               </node>
-              <node concept="liA8E" id="2ZbjobgPoH$" role="2OqNvi">
-                <ref role="37wK5l" to="sfqd:56tRMpP_ejp" resolve="getTestMethods" />
+              <node concept="37vLTw" id="6UwxA1prB5p" role="3ElQJh">
+                <ref role="3cqZAo" node="56tRMpP_fhE" resolve="myTestCase2MethodsMap" />
               </node>
             </node>
           </node>
