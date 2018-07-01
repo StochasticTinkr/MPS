@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <root nodeRef="r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)/6339244025082034140">
+    <file name="FailedTestCase_Test_Test.java">
+      <node id="6339244025082034140" at="19,37,20,25" concept="4" />
+      <node id="6339244025082055679" at="24,45,25,137" concept="1" />
+      <node id="6339244025082055707" at="30,47,31,31" concept="1" />
+      <node id="6339244025082034140" at="15,0,17,0" concept="3" trace="ourParamCache" />
+      <node id="6339244025082034140" at="19,0,22,0" concept="0" trace="FailedTestCase_Test_Test#()V" />
+      <node id="6339244025082055679" at="30,0,33,0" concept="2" trace="test_test1#()V" />
+      <node id="6339244025082055679" at="23,0,27,0" concept="2" trace="test_test1#()V" />
+      <scope id="6339244025082034140" at="19,37,20,25" />
+      <scope id="6339244025082055679" at="24,45,25,137" />
+      <scope id="6339244025082055679" at="30,47,31,31" />
+      <scope id="6339244025082034140" at="19,0,22,0" />
+      <scope id="6339244025082055679" at="30,0,33,0" />
+      <scope id="6339244025082055679" at="23,0,27,0" />
+      <unit id="6339244025082034140" at="28,0,36,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.FailedTestCase_Test_Test$TestBody" />
+      <unit id="6339244025082034140" at="13,0,37,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.FailedTestCase_Test_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)/6339244025082972090">
+    <file name="WaitingTestCase_Test_Test.java">
+      <node id="6339244025082972090" at="19,38,20,25" concept="4" />
+      <node id="6339244025082972091" at="24,45,25,139" concept="1" />
+      <node id="6339244025083038086" at="31,11,32,27" concept="1" />
+      <node id="6339244025082972148" at="34,7,35,32" concept="1" />
+      <node id="6339244025082972090" at="15,0,17,0" concept="3" trace="ourParamCache" />
+      <node id="6339244025082972090" at="19,0,22,0" concept="0" trace="WaitingTestCase_Test_Test#()V" />
+      <node id="6339244025082972091" at="23,0,27,0" concept="2" trace="test_test1#()V" />
+      <node id="6339244025083038561" at="30,47,34,7" concept="5" />
+      <node id="6339244025082972091" at="30,0,37,0" concept="2" trace="test_test1#()V" />
+      <scope id="6339244025083038557" at="33,0,33,40">
+        <var name="e" id="6339244025083038559" />
+      </scope>
+      <scope id="6339244025083038558" at="33,40,33,40" />
+      <scope id="6339244025082972090" at="19,38,20,25" />
+      <scope id="6339244025082972091" at="24,45,25,139" />
+      <scope id="6339244025083038562" at="31,11,32,27" />
+      <scope id="6339244025082972090" at="19,0,22,0" />
+      <scope id="6339244025082972091" at="23,0,27,0" />
+      <scope id="6339244025082972091" at="30,47,35,32" />
+      <scope id="6339244025082972091" at="30,0,37,0" />
+      <unit id="6339244025082972090" at="28,0,40,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.WaitingTestCase_Test_Test$TestBody" />
+      <unit id="6339244025082972090" at="13,0,41,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.WaitingTestCase_Test_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)/6937584626643047380">
+    <file name="SimpleTestCase_Test_Test.java">
+      <node id="6937584626643047380" at="19,37,20,25" concept="4" />
+      <node id="6937584626643053783" at="24,45,25,137" concept="1" />
+      <node id="6937584626643053816" at="30,47,31,32" concept="1" />
+      <node id="6937584626643047380" at="15,0,17,0" concept="3" trace="ourParamCache" />
+      <node id="6937584626643047380" at="19,0,22,0" concept="0" trace="SimpleTestCase_Test_Test#()V" />
+      <node id="6937584626643053783" at="30,0,33,0" concept="2" trace="test_test1#()V" />
+      <node id="6937584626643053783" at="23,0,27,0" concept="2" trace="test_test1#()V" />
+      <scope id="6937584626643047380" at="19,37,20,25" />
+      <scope id="6937584626643053783" at="24,45,25,137" />
+      <scope id="6937584626643053783" at="30,47,31,32" />
+      <scope id="6937584626643047380" at="19,0,22,0" />
+      <scope id="6937584626643053783" at="30,0,33,0" />
+      <scope id="6937584626643053783" at="23,0,27,0" />
+      <unit id="6937584626643047380" at="28,0,36,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.SimpleTestCase_Test_Test$TestBody" />
+      <unit id="6937584626643047380" at="13,0,37,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.SimpleTestCase_Test_Test" />
+    </file>
+  </root>
+</debug-info>
+
