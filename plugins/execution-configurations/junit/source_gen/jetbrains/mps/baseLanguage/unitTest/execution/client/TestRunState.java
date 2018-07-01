@@ -231,6 +231,7 @@ public final class TestRunState {
         it.onTermination(event);
       }
     });
+    notifyUpdateListeners();
   }
 
   public void onStartNotified() {

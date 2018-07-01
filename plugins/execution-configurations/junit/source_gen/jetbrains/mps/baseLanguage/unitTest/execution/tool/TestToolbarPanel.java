@@ -27,7 +27,6 @@ public class TestToolbarPanel extends JPanel {
     super(new BorderLayout());
     myTree = tree;
     myNavigator = navigator;
-    setLayout(new BorderLayout());
     init();
   }
 

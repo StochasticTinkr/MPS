@@ -3376,6 +3376,11 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="4oHspw2WQF9" role="3cqZAp">
+          <node concept="1rXfSq" id="4oHspw2WQF7" role="3clFbG">
+            <ref role="37wK5l" node="56tRMpP_f8p" resolve="notifyUpdateListeners" />
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="1XbiPVzyPWz" role="3clF46">
         <property role="TrG5h" value="terminatingOnException" />

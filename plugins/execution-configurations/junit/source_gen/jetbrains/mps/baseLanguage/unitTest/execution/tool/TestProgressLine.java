@@ -79,12 +79,9 @@ public class TestProgressLine extends JPanel implements TestRunStateUpdateListen
     int completed = data.getCompletedCount();
     int passed = data.getPassedCount();
     TestNodeKey testNode = data.getCurrentTestNode();
-    if (data.isTerminated()) {
-
-    }
     StringBuilder sb = new StringBuilder();
     boolean done = (total == completed);
-    if (data.isTerminated()) {
+    if (!(done) && data.isTerminated()) {
       if (data.isTerminatedCorrectly()) {
         sb.append("Stopped. ");
       } else {
