@@ -33,7 +33,7 @@ public class WaitingTestCase_Test_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_test1() throws Exception {
       try {
-        Thread.sleep(15000);
+        Thread.sleep(5000);
       } catch (InterruptedException e) {
       }
       Assert.assertFalse(false);

@@ -112,7 +112,7 @@
                 <ref role="37wK5l" to="wyt6:~Thread.sleep(long):void" resolve="sleep" />
                 <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
                 <node concept="3cmrfG" id="5vTxdEz_SA$" role="37wK5m">
-                  <property role="3cmrfH" value="15000" />
+                  <property role="3cmrfH" value="5000" />
                 </node>
               </node>
             </node>
