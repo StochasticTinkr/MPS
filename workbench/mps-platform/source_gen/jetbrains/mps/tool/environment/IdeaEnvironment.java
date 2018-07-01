@@ -50,7 +50,6 @@ public final class IdeaEnvironment extends EnvironmentBase {
     super(config);
   }
 
-
   /**
    * creates a new IdeaEnvironment or returns the cached one
    * 
