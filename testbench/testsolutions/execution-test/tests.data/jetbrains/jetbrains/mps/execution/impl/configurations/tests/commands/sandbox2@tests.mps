@@ -134,17 +134,6 @@
         </node>
       </node>
     </node>
-    <node concept="1LZb2c" id="5vTxdEz_PF7" role="1SL9yI">
-      <property role="TrG5h" value="test2" />
-      <node concept="3cqZAl" id="5vTxdEz_PF8" role="3clF45" />
-      <node concept="3clFbS" id="5vTxdEz_PF9" role="3clF47">
-        <node concept="3vFxKo" id="5vTxdEz_PFa" role="3cqZAp">
-          <node concept="3clFbT" id="5vTxdEz_PFb" role="3vFALc">
-            <property role="3clFbU" value="false" />
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node concept="2XOHcx" id="6fAlldOEavU">
     <property role="2XOHcw" value="${mps_home}" />

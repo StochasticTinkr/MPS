@@ -24,10 +24,6 @@ public class WaitingTestCase_Test_Test extends BaseTransformationTest {
   public void test_test1() throws Throwable {
     runTest("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.WaitingTestCase_Test_Test$TestBody", "test_test1", false);
   }
-  @Test
-  public void test_test2() throws Throwable {
-    runTest("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.WaitingTestCase_Test_Test$TestBody", "test_test2", false);
-  }
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
@@ -36,9 +32,6 @@ public class WaitingTestCase_Test_Test extends BaseTransformationTest {
         Thread.sleep(5000);
       } catch (InterruptedException e) {
       }
-      Assert.assertFalse(false);
-    }
-    public void test_test2() throws Exception {
       Assert.assertFalse(false);
     }
 
