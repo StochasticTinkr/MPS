@@ -298,7 +298,7 @@ public class TestTree extends MPSTree implements Disposable, TestStateListener {
   @Override
   public void onTestAssumptionFailure(TestNodeEvent event) {
     ITestNodeWrapper currentNode = event.getTestKey().getNode();
-    updateState(currentNode, TestState.ERROR);
+    updateState(currentNode, TestState.ASSUMPTION_FAILED);
   }
 
   @Override

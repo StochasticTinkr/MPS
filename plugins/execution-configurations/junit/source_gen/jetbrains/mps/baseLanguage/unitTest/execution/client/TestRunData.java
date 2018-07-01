@@ -20,40 +20,45 @@ public final class TestRunData {
    */
   /*package*/ final List<TestMethodNodeKey> myTestMethodsLeftToRun = ListSequence.fromList(new ArrayList<TestMethodNodeKey>());
   /*package*/ TestNodeKey myCurrentTestNode;
-  /*package*/ String myCurrentNotExecutedDueToTerminationClass;
-  /*package*/ String myCurrentNotExecutedDueToTerminationMethod;
 
   /*package*/ int myTotalTests;
   /*package*/ int myCompletedTests = 0;
   /*package*/ int myFailedTests = 0;
+  /*package*/ int mySkippedTests = 0;
+  /*package*/ int myIgnoredTests = 0;
   /*package*/ boolean myTerminated;
   /*package*/ boolean myTerminatedCorrectly;
   /*package*/ String myAvailableText = null;
   /*package*/ Key myTextType = null;
 
-  public int getTotalTests() {
+  public int getTotalCount() {
     return myTotalTests;
   }
 
-  public int getFailedTests() {
+  public int getFailedCount() {
     return myFailedTests;
   }
 
-  public int getCompletedTests() {
+  public int getCompletedCount() {
     return myCompletedTests;
   }
+
+  public int getPassedCount() {
+    return myCompletedTests - myFailedTests - myIgnoredTests - mySkippedTests;
+  }
+
+  public int getSkippedCount() {
+    return mySkippedTests;
+  }
+
+  public int getIgnoredCount() {
+    return myIgnoredTests;
+  }
+
 
   @Nullable
   public TestNodeKey getCurrentTestNode() {
     return myCurrentTestNode;
-  }
-
-  public String getNotExecutedMethod() {
-    return myCurrentNotExecutedDueToTerminationMethod;
-  }
-
-  public String getNotExecutedTestCase() {
-    return myCurrentNotExecutedDueToTerminationClass;
   }
 
   public boolean isTerminated() {
@@ -77,8 +82,6 @@ public final class TestRunData {
     TestRunData dataCopy = new TestRunData();
     ListSequence.fromList(dataCopy.myTestMethodsLeftToRun).addSequence(ListSequence.fromList(myTestMethodsLeftToRun));
     dataCopy.myCurrentTestNode = myCurrentTestNode;
-    dataCopy.myCurrentNotExecutedDueToTerminationClass = myCurrentNotExecutedDueToTerminationClass;
-    dataCopy.myCurrentNotExecutedDueToTerminationMethod = myCurrentNotExecutedDueToTerminationMethod;
     dataCopy.myTotalTests = myTotalTests;
     dataCopy.myCompletedTests = myCompletedTests;
     dataCopy.myFailedTests = myFailedTests;

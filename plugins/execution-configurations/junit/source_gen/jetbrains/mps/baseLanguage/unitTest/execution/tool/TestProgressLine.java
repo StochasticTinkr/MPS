@@ -12,10 +12,8 @@ import com.intellij.openapi.progress.util.ColorProgressBar;
 import javax.swing.BorderFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData;
-import com.intellij.execution.process.ProcessOutputTypes;
-import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
 import javax.swing.SwingUtilities;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
 
 /**
  * todo no reflection of ignore/assumptions/skipped tests whatsoever
@@ -44,26 +42,28 @@ public class TestProgressLine extends JPanel implements TestRunStateUpdateListen
 
   @Override
   public void update(@NotNull final TestRunData data) {
-    if (data.getAvailableText() != null || ProcessOutputTypes.SYSTEM.equals(data.getTextType())) {
+    if (data.getAvailableText() != null) {
       return;
     }
-    final int defectedTests = data.getFailedTests();
-    final int totalTests = data.getTotalTests();
-    final int completedTests = data.getCompletedTests();
-    final TestNodeKey currentTestNode = data.getCurrentTestNode();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        updateProgressBar(data.isTerminated(), defectedTests, totalTests, completedTests);
-        updateLabel(data.isTerminated(), defectedTests, totalTests, completedTests, currentTestNode);
+        updateProgressBar(data);
+        updateLabel(data);
       }
     });
   }
 
-  private void updateProgressBar(boolean isTerminated, int defected, int total, int completed) {
+  private void updateProgressBar(@NotNull TestRunData data) {
+    int failed = data.getFailedCount();
+    int ignored = data.getIgnoredCount();
+    int skipped = data.getSkippedCount();
+    int total = data.getTotalCount();
+    int completed = data.getCompletedCount();
+
     myProgressBar.setIndeterminate(false);
-    if (defected > 0) {
+    if (failed + ignored + skipped > 0) {
       myProgressBar.setForeground(ColorProgressBar.RED);
-    } else if (isTerminated && total > completed) {
+    } else if (data.isTerminated() && total > completed) {
       myProgressBar.setForeground(ColorProgressBar.YELLOW);
     }
     if (total != 0) {
@@ -71,23 +71,60 @@ public class TestProgressLine extends JPanel implements TestRunStateUpdateListen
     }
   }
 
-  private void updateLabel(boolean isTerminated, int defected, int total, int completed, @Nullable TestNodeKey currentTest) {
+  private void updateLabel(@NotNull TestRunData data) {
+    int failed = data.getFailedCount();
+    int ignored = data.getIgnoredCount();
+    int skipped = data.getSkippedCount();
+    int total = data.getTotalCount();
+    int completed = data.getCompletedCount();
+    int passed = data.getPassedCount();
+    TestNodeKey testNode = data.getCurrentTestNode();
+    if (data.isTerminated()) {
+
+    }
     StringBuilder sb = new StringBuilder();
-    boolean done = total == completed;
-    if (done) {
-      sb.append(" Done: " + completed + " of " + total + " ");
-      currentTest = null;
-    } else if (isTerminated) {
-      sb.append(" Terminated: " + completed + " of " + total + " ");
-      currentTest = null;
+    boolean done = (total == completed);
+    if (data.isTerminated()) {
+      if (data.isTerminatedCorrectly()) {
+        sb.append("Stopped. ");
+      } else {
+        sb.append("Terminated. ");
+      }
     }
-    if (defected > 0) {
-      sb.append(" Failed: " + defected);
+    boolean smthWrittenAlready = false;
+    if (failed > 0) {
+      sb.append("Tests failed: " + failed);
+      smthWrittenAlready = true;
+    } else {
+      sb.append("Tests ");
     }
-    if (!(isTerminated) && !(done)) {
-      sb.append(" Running: " + completed + " of " + total);
+    if (passed > 0 || ignored + failed + skipped == 0) {
+      if (smthWrittenAlready) {
+        sb.append(", ");
+      }
+      smthWrittenAlready = true;
+      sb.append("passed: " + passed);
     }
-    String qualifiedName = (currentTest == null ? "" : currentTest.getQualifiedName());
-    myStateLabel.setText(sb + "  " + qualifiedName);
+    if (ignored > 0) {
+      if (smthWrittenAlready) {
+        sb.append(", ");
+      }
+      smthWrittenAlready = true;
+      sb.append("ignored: " + ignored);
+    }
+    if (skipped > 0) {
+      if (smthWrittenAlready) {
+        sb.append(", ");
+      }
+      sb.append("skipped: " + skipped);
+    }
+    if (total > 0) {
+      sb.append(" of " + total + " test" + ((total > 1 ? "s" : "")));
+    }
+    String qualifiedName = (testNode == null ? "" : testNode.getQualifiedName());
+    if (!(data.isTerminated()) && !(done) && testNode != null) {
+      sb.append(". Running now: " + qualifiedName);
+    }
+    myStateLabel.setText(sb.toString());
   }
 }
