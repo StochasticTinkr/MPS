@@ -50,7 +50,11 @@ import org.jetbrains.annotations.Nullable;
 
   @NotNull
   /*package*/ TestNodeKey convert(@NotNull TestRawKey rawKey) {
-    return MapSequence.fromMap(myKeyMapping).get(rawKey);
+    TestNodeKey key = MapSequence.fromMap(myKeyMapping).get(rawKey);
+    if (key == null) {
+      assert false : "Could not convert the key " + rawKey;
+    }
+    return key;
   }
 
   @Nullable

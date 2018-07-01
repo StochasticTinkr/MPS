@@ -67,16 +67,24 @@ import org.junit.runner.Description;
           }
 
           for (int i = 0; i < tr.myTestQualifiedName.size(); i++) {
-            String className = tr.myTestQualifiedName.get(i);
+            String qualifiedName = tr.myTestQualifiedName.get(i);
+            String isTestCase = tr.isTestCase.get(i);
+            String classFqName;
+            if (Boolean.valueOf(isTestCase) == Boolean.TRUE) {
+              classFqName = qualifiedName;
+            } else {
+              int indexOfLastDot = qualifiedName.lastIndexOf(".");
+              classFqName = qualifiedName.substring(0, indexOfLastDot);
+            }
             if (classProvider == null) {
               assert failure != null;
-              rv.add(Request.runner(new AssumptionFailedRunner(failure, Description.createSuiteDescription(className))));
+              rv.add(Request.runner(new AssumptionFailedRunner(failure, Description.createSuiteDescription(classFqName))));
             } else {
               try {
-                Class<?> testClass = classProvider.getOwnClass(className);
+                Class<?> testClass = classProvider.getOwnClass(classFqName);
                 rv.add(Request.runner(myRunnerBuilder.safeRunnerForClass(testClass)));
               } catch (Exception ex) {
-                rv.add(Request.runner(new AssumptionFailedRunner(failure, Description.createSuiteDescription(className))));
+                rv.add(Request.runner(new AssumptionFailedRunner(failure, Description.createSuiteDescription(classFqName))));
               }
             }
           }

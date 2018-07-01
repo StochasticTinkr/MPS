@@ -41,7 +41,7 @@ public final class ExecutorScript {
       myTests.add(testModuleRecord);
     }
 
-    testModuleRecord.add(testWrap.getFqName(), pf.asString(testWrap.getNodePointer()));
+    testModuleRecord.add(testWrap.getFqName(), pf.asString(testWrap.getNodePointer()), String.valueOf(testWrap.isTestCase()));
   }
 
   public Collection<ExecutorScript.TestRecord> getTests() {
@@ -66,6 +66,7 @@ public final class ExecutorScript {
         Element elem = new Element("test");
         elem.setAttribute("fqn", r.myTestQualifiedName.get(i));
         elem.setAttribute("node", r.myTestNode.get(i));
+        elem.setAttribute("isTestCase", r.isTestCase.get(i));
         module.addContent(elem);
       }
       root.addContent(module);
@@ -80,7 +81,7 @@ public final class ExecutorScript {
       ExecutorScript.TestRecord tr = new ExecutorScript.TestRecord(me.getAttributeValue("ptr"));
       myTests.add(tr);
       for (Element te : ListSequence.fromList(me.getChildren("test"))) {
-        tr.add(te.getAttributeValue("fqn"), te.getAttributeValue("node"));
+        tr.add(te.getAttributeValue("fqn"), te.getAttributeValue("node"), te.getAttributeValue("isTestCase"));
       }
     }
     myEnvironmentStartupData = new ScriptData();
@@ -91,14 +92,16 @@ public final class ExecutorScript {
     /*package*/ final String myTestModule;
     /*package*/ final List<String> myTestNode = new ArrayList<String>();
     /*package*/ final List<String> myTestQualifiedName = new ArrayList<String>();
+    /*package*/ final List<String> isTestCase = new ArrayList<String>();
 
     /*package*/ TestRecord(String testModule) {
       myTestModule = testModule;
     }
 
-    /*package*/ void add(String fqName, String testNodePointer) {
+    /*package*/ void add(String fqName, String testNodePointer, String isTestCase0) {
       myTestQualifiedName.add(fqName);
       myTestNode.add(testNodePointer);
+      isTestCase.add(isTestCase0 + "");
     }
   }
 }

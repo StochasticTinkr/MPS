@@ -154,6 +154,7 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.ScriptTestContributor" file="ScriptTestContributor.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />

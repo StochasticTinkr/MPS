@@ -12264,14 +12264,46 @@
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
       <node concept="3clFbS" id="2Zbjobgva3v" role="3clF47">
+        <node concept="3cpWs8" id="4FBFA_GGjC4" role="3cqZAp">
+          <node concept="3cpWsn" id="4FBFA_GGjC5" role="3cpWs9">
+            <property role="TrG5h" value="key" />
+            <node concept="3uibUv" id="4FBFA_GGjBU" role="1tU5fm">
+              <ref role="3uigEE" to="tpnd:2ZbjobgtRJf" resolve="TestNodeKey" />
+            </node>
+            <node concept="3EllGN" id="4FBFA_GGjC6" role="33vP2m">
+              <node concept="37vLTw" id="4FBFA_GGjC7" role="3ElVtu">
+                <ref role="3cqZAo" node="2Zbjobgva5T" resolve="rawKey" />
+              </node>
+              <node concept="37vLTw" id="4FBFA_GGjC8" role="3ElQJh">
+                <ref role="3cqZAo" node="2ZbjobguwLX" resolve="myKeyMapping" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4FBFA_GGjVm" role="3cqZAp">
+          <node concept="3clFbS" id="4FBFA_GGjVo" role="3clFbx">
+            <node concept="1gVbGN" id="4FBFA_GGku3" role="3cqZAp">
+              <node concept="3clFbT" id="4FBFA_GGkvr" role="1gVkn0" />
+              <node concept="3cpWs3" id="4FBFA_GGldh" role="1gVpfI">
+                <node concept="37vLTw" id="4FBFA_GGleG" role="3uHU7w">
+                  <ref role="3cqZAo" node="2Zbjobgva5T" resolve="rawKey" />
+                </node>
+                <node concept="Xl_RD" id="4FBFA_GGkRx" role="3uHU7B">
+                  <property role="Xl_RC" value="Could not convert the key " />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="4FBFA_GGkrd" role="3clFbw">
+            <node concept="10Nm6u" id="4FBFA_GGksC" role="3uHU7w" />
+            <node concept="37vLTw" id="4FBFA_GGjX3" role="3uHU7B">
+              <ref role="3cqZAo" node="4FBFA_GGjC5" resolve="key" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs6" id="2Zbjobgva7e" role="3cqZAp">
-          <node concept="3EllGN" id="2ZbjobgvbpZ" role="3cqZAk">
-            <node concept="37vLTw" id="2Zbjobgvbrg" role="3ElVtu">
-              <ref role="3cqZAo" node="2Zbjobgva5T" resolve="rawKey" />
-            </node>
-            <node concept="37vLTw" id="2Zbjobgvae6" role="3ElQJh">
-              <ref role="3cqZAo" node="2ZbjobguwLX" resolve="myKeyMapping" />
-            </node>
+          <node concept="37vLTw" id="4FBFA_GGjC9" role="3cqZAk">
+            <ref role="3cqZAo" node="4FBFA_GGjC5" resolve="key" />
           </node>
         </node>
       </node>
