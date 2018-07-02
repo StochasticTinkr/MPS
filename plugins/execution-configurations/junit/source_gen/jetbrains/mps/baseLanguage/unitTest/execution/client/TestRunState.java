@@ -149,6 +149,7 @@ public final class TestRunState {
 
   /*package*/ void onTestRunFinished() {
     log("test run finished : ");
+    myInnerData.myFinished = true;
     ListSequence.fromList(myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestRunFinished();

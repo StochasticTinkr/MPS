@@ -27,9 +27,14 @@ public final class TestRunData {
   /*package*/ int mySkippedTests = 0;
   /*package*/ int myIgnoredTests = 0;
   /*package*/ boolean myTerminated;
+  /*package*/ boolean myFinished;
   /*package*/ boolean myTerminatedCorrectly;
   /*package*/ String myAvailableText = null;
   /*package*/ Key myTextType = null;
+
+  public boolean isFinished() {
+    return myFinished;
+  }
 
   public int getTotalCount() {
     return myTotalTests;
@@ -85,6 +90,9 @@ public final class TestRunData {
     dataCopy.myTotalTests = myTotalTests;
     dataCopy.myCompletedTests = myCompletedTests;
     dataCopy.myFailedTests = myFailedTests;
+    dataCopy.myIgnoredTests = myIgnoredTests;
+    dataCopy.mySkippedTests = mySkippedTests;
+    dataCopy.myFinished = myFinished;
     dataCopy.myTerminated = myTerminated;
     dataCopy.myTerminatedCorrectly = myTerminatedCorrectly;
     dataCopy.myAvailableText = myAvailableText;

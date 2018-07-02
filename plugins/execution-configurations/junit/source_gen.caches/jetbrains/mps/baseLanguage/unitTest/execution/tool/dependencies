@@ -267,6 +267,7 @@
     <classNode dependClassName="com.intellij.openapi.progress.util.ColorProgressBar" />
     <classNode dependClassName="com.intellij.ui.components.panels.NonOpaquePanel" />
     <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

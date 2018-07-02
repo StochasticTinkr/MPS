@@ -8,11 +8,12 @@ import javax.swing.JProgressBar;
 import javax.swing.JLabel;
 import com.intellij.ui.components.panels.NonOpaquePanel;
 import java.awt.BorderLayout;
-import com.intellij.openapi.progress.util.ColorProgressBar;
 import javax.swing.BorderFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData;
 import javax.swing.SwingUtilities;
+import java.awt.Color;
+import com.intellij.openapi.progress.util.ColorProgressBar;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
 
 /**
@@ -31,7 +32,6 @@ public class TestProgressLine extends JPanel implements TestRunStateUpdateListen
     myProgressBar.putClientProperty("ProgressBar.stripeWidth", 3);
     myProgressBar.putClientProperty("ProgressBar.flatEnds", Boolean.TRUE);
     myProgressBar.setMaximum(TOTAL_UNITS);
-    myProgressBar.setForeground(ColorProgressBar.GREEN);
     JPanel labelWrapper = new NonOpaquePanel(new BorderLayout());
     labelWrapper.add(myStateLabel, BorderLayout.NORTH);
     myProgressBar.setBorder(BorderFactory.createEmptyBorder(0, 2, 0, 2));
@@ -61,11 +61,15 @@ public class TestProgressLine extends JPanel implements TestRunStateUpdateListen
     int completed = data.getCompletedCount();
 
     myProgressBar.setIndeterminate(false);
+    Color color;
     if (failed + ignored + skipped > 0) {
-      myProgressBar.setForeground(ColorProgressBar.RED);
+      color = ColorProgressBar.RED;
     } else if (data.isTerminated() && total > completed) {
-      myProgressBar.setForeground(ColorProgressBar.YELLOW);
+      color = ColorProgressBar.YELLOW;
+    } else {
+      color = ColorProgressBar.GREEN;
     }
+    myProgressBar.setForeground(color);
     if (total != 0) {
       myProgressBar.setValue((completed * TOTAL_UNITS) / total);
     }
@@ -82,10 +86,14 @@ public class TestProgressLine extends JPanel implements TestRunStateUpdateListen
     StringBuilder sb = new StringBuilder();
     boolean done = (total == completed);
     if (!(done) && data.isTerminated()) {
-      if (data.isTerminatedCorrectly()) {
-        sb.append("Stopped. ");
+      if (data.isFinished()) {
+        sb.append("Finished. ");
       } else {
-        sb.append("Terminated. ");
+        if (data.isTerminatedCorrectly()) {
+          sb.append("Stopped. ");
+        } else {
+          sb.append("Terminated. ");
+        }
       }
     }
     boolean smthWrittenAlready = false;

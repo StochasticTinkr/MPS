@@ -22,6 +22,7 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
+import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.unitTest.execution.tool.UnitTestViewComponent;
 import com.intellij.execution.process.ProcessListener;
@@ -60,12 +61,13 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
     MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
     List<ITestNodeWrapper> testNodes = settings.getTests(mpsProject);
     if (testNodes == null || ListSequence.fromList(testNodes).isEmpty()) {
-      throw new ExecutionException("Could not find tests to run");
+      throw new ExecutionException("Could not find tests to run. Please check the run configuration for errors.");
     }
     TestRunState runState = new TestRunState(testNodes);
     jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor processExecutor;
     if (settings.canExecuteInProcess(testNodes)) {
-      processExecutor = new JUnitInProcessExecutor(mpsProject, testNodes);
+      JUnitTests_Configuration configuration = myRunConfiguration;
+      processExecutor = new JUnitInProcessExecutor(mpsProject, ((BaseMpsRunConfiguration) configuration).getName(), testNodes);
     } else {
       processExecutor = new JUnitExecutor(project, executor, settings, myDebuggerSettings, myRunConfiguration.getJavaRunParameters(), testNodes);
     }

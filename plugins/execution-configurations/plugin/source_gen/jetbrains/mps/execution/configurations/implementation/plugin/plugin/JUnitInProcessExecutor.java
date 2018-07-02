@@ -6,8 +6,10 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.NodeWrappersTestsContributor;
 import jetbrains.mps.lang.test.util.TestInProcessRunState;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.test.util.RunStateEnum;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
@@ -30,8 +32,8 @@ public class JUnitInProcessExecutor implements Executor {
   private final FakeProcess myFakeProcess = new FakeProcess();
   private final TestInProcessRunState myTestRunState;
 
-  public JUnitInProcessExecutor(Project mpsProject, Iterable<ITestNodeWrapper> testNodeWrappers) {
-    myTestsContributor = new NodeWrappersTestsContributor(mpsProject, testNodeWrappers);
+  public JUnitInProcessExecutor(@NotNull Project mpsProject, @NotNull String runConfigurationName, Iterable<ITestNodeWrapper> testNodeWrappers) {
+    myTestsContributor = new NodeWrappersTestsContributor((MPSProject) mpsProject, runConfigurationName, testNodeWrappers);
     myTestRunState = TestInProcessRunState.getInstance();
   }
 

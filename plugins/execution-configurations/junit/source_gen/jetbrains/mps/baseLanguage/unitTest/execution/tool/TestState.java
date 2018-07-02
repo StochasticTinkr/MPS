@@ -13,7 +13,7 @@ public enum TestState {
   PASSED(AllIcons.RunConfigurations.TestPassed, true, false),
   IGNORED(AllIcons.RunConfigurations.TestIgnored, true, false),
   SKIPPED(AllIcons.RunConfigurations.TestSkipped, true, true),
-  ASSUMPTION_FAILED(AllIcons.RunConfigurations.TestIgnored, true, true),
+  ASSUMPTION_FAILED(AllIcons.RunConfigurations.TestSkipped, true, true),
   FAILED(AllIcons.RunConfigurations.TestFailed, true, true),
   ERROR(AllIcons.RunConfigurations.TestError, true, true),
   TERMINATED(AllIcons.RunConfigurations.TestTerminated, true, true);

@@ -118,7 +118,9 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.NodeWrappersTestsContributor" file="NodeWrappersTestsContributor.java">
+    <classNode dependClassName="com.intellij.execution.runners.ExecutionUtil" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.intellij.openapi.wm.ToolWindowId" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Class" />
@@ -130,6 +132,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.event.HyperlinkEvent" />
+    <classNode dependClassName="javax.swing.event.HyperlinkListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.AssumptionFailedRunner" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.InProcessExecutionFilter" />
@@ -138,6 +142,8 @@
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.module.ModuleClassLoaderIsNullException" />
     <classNode dependClassName="jetbrains.mps.module.ReloadableModule" />
+    <classNode dependClassName="jetbrains.mps.openapi.navigation.EditorNavigator" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.ProjectManager" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
@@ -147,6 +153,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.junit.AssumptionViolatedException" />
     <classNode dependClassName="org.junit.runner.Description" />

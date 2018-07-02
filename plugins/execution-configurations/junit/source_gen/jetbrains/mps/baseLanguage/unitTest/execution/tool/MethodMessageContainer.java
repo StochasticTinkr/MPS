@@ -58,7 +58,8 @@ public class MethodMessageContainer extends MessageContainerBase<LeafTestMessage
   @Override
   public boolean accepts(@NotNull TextTestEvent event) {
     TestNodeKey testNodeKey = event.getCurrentTestNode();
-    return Objects.equals(myMethodNode, testNodeKey);
+
+    return myMethodNode == null || Objects.equals(myMethodNode, testNodeKey);
   }
 
   @Override
