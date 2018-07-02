@@ -112,6 +112,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   @Override
   public void addNotify() {
     super.addNotify();
+    // progress line goes until the text output bar with actions 
     myProgressLineComponent.setBorder(BorderFactory.createEmptyBorder(3, 0, 0, myOutputToolbarComponent.getPreferredSize().width));
   }
 

@@ -6333,7 +6333,7 @@
         <node concept="3Tm1VV" id="3oT7WQ8ZWGl" role="1B3o_S" />
         <node concept="3clFbS" id="3oT7WQ8ZWGm" role="3clF47">
           <node concept="XkiVB" id="3oT7WQ8ZWGn" role="3cqZAp">
-            <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+            <ref role="37wK5l" node="3oT7WQ8ZVnO" resolve="EnvironmentSetupException" />
             <node concept="37vLTw" id="3oT7WQ8ZWGo" role="37wK5m">
               <ref role="3cqZAo" node="3oT7WQ8ZWGp" resolve="message" />
             </node>

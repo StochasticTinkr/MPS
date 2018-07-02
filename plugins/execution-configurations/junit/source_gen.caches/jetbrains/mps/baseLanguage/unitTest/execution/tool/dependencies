@@ -407,6 +407,7 @@
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TotalRow" file="TotalRow.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestContainerRow" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.UnitTestOptions" file="UnitTestOptions.java">

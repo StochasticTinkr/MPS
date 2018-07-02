@@ -23,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
   }
 
   @Override
+  @NotNull
   public ITestNodeWrapper getTestNode() {
     return myTestCase;
   }

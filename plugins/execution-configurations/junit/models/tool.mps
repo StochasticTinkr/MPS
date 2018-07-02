@@ -705,6 +705,9 @@
       <node concept="2AHcQZ" id="Hl1mFRwg_g" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
+      <node concept="2AHcQZ" id="2jIWpE2MFhX" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="36vIONTtPlt">
@@ -6766,7 +6769,7 @@
       <node concept="3Tm1VV" id="36vIONTtQw6" role="1B3o_S" />
       <node concept="3clFbS" id="36vIONTtQw7" role="3clF47">
         <node concept="XkiVB" id="36vIONTtQw8" role="3cqZAp">
-          <ref role="37wK5l" to="dxuu:~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolve="JPanel" />
+          <ref role="37wK5l" to="tsn:~NonOpaquePanel.&lt;init&gt;(java.awt.LayoutManager)" resolve="NonOpaquePanel" />
           <node concept="2ShNRf" id="36vIONTtQw9" role="37wK5m">
             <node concept="1pGfFk" id="24YkOx70lju" role="2ShVmc">
               <ref role="37wK5l" to="z60i:~BorderLayout.&lt;init&gt;()" resolve="BorderLayout" />
@@ -8137,7 +8140,7 @@
                   <ref role="3cqZAo" node="36vIONTtQxo" resolve="myLabel" />
                 </node>
                 <node concept="liA8E" id="5kPsWkSf8Sx" role="2OqNvi">
-                  <ref role="37wK5l" to="lzb2:~SimpleColoredComponent.append(java.lang.String):com.intellij.ui.SimpleColoredComponent" resolve="append" />
+                  <ref role="37wK5l" to="lzb2:~SimpleColoredComponent.append(java.lang.String,com.intellij.ui.SimpleTextAttributes):void" resolve="append" />
                   <node concept="Xl_RD" id="5kPsWkSfbdV" role="37wK5m">
                     <property role="Xl_RC" value=". " />
                   </node>
@@ -8645,6 +8648,9 @@
       </node>
       <node concept="2AHcQZ" id="Hl1mFRwdXj" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="2AHcQZ" id="2jIWpE2MEZf" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
   </node>
@@ -10681,6 +10687,9 @@
         <property role="TrG5h" value="key" />
         <node concept="3uibUv" id="2ZbjobgHyDY" role="1tU5fm">
           <ref role="3uigEE" to="tpnd:2ZbjobgtRJf" resolve="TestNodeKey" />
+        </node>
+        <node concept="2AHcQZ" id="2jIWpE2MMMJ" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
         </node>
       </node>
       <node concept="3clFbS" id="36vIONTtQMe" role="3clF47">
@@ -14659,6 +14668,11 @@
             <ref role="37wK5l" to="dxuu:~JComponent.addNotify():void" resolve="addNotify" />
           </node>
         </node>
+        <node concept="3SKdUt" id="2jIWpE2J9cU" role="3cqZAp">
+          <node concept="3SKdUq" id="2jIWpE2J9cW" role="3SKWNk">
+            <property role="3SKdUp" value="progress line goes until the text output bar with actions" />
+          </node>
+        </node>
         <node concept="3clFbF" id="7wORwlIPyU8" role="3cqZAp">
           <node concept="2OqwBi" id="7wORwlIP_jg" role="3clFbG">
             <node concept="37vLTw" id="7wORwlIPyU6" role="2Oq$k0">
@@ -15779,7 +15793,7 @@
         <node concept="3Tm1VV" id="4e85Rl_Ckdt" role="1B3o_S" />
         <node concept="3clFbS" id="4e85Rl_Ckdu" role="3clF47">
           <node concept="XkiVB" id="4e85Rl_CkC7" role="3cqZAp">
-            <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;()" resolve="IllegalArgumentException" />
+            <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
             <node concept="3cpWs3" id="4e85Rl_Cm8_" role="37wK5m">
               <node concept="Xl_RD" id="4e85Rl_Cmja" role="3uHU7w">
                 <property role="Xl_RC" value=" is not accepted" />

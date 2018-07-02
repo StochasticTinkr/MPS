@@ -36,6 +36,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
   }
 
   @Override
+  @NotNull
   public ITestNodeWrapper getTestNode() {
     return myTestMethod;
   }

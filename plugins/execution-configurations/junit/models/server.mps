@@ -7950,7 +7950,7 @@
                                         <ref role="3cqZAo" node="4g6NqHEfi0z" resolve="qualifiedName" />
                                       </node>
                                       <node concept="liA8E" id="4FBFA_GJmS2" role="2OqNvi">
-                                        <ref role="37wK5l" to="wyt6:~String.substring(int):java.lang.String" resolve="substring" />
+                                        <ref role="37wK5l" to="wyt6:~String.substring(int,int):java.lang.String" resolve="substring" />
                                         <node concept="3cmrfG" id="4FBFA_GJXJz" role="37wK5m">
                                           <property role="3cmrfH" value="0" />
                                         </node>
