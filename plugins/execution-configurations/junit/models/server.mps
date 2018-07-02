@@ -7,7 +7,6 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="817e4e70-961e-4a95-98a1-15e9f32231f1" name="jetbrains.mps.ide.httpsupport" version="0" />
   </languages>
   <imports>
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -4294,7 +4293,7 @@
     <node concept="3UR2Jj" id="5UFD5GhDD7M" role="lGtFl">
       <node concept="TZ5HA" id="5UFD5GhDD7N" role="TZ5H$">
         <node concept="1dT_AC" id="5UFD5GhDD7O" role="1dT_Ay">
-          <property role="1dT_AB" value="Knows hot to launch TransformationTest with TestRunner suited for in-process test execution" />
+          <property role="1dT_AB" value="Knows how to launch TransformationTest with TestRunner suited for in-process test execution" />
         </node>
       </node>
       <node concept="TZ5HA" id="5vXSwNTfAQ8" role="TZ5H$">
@@ -5413,26 +5412,9 @@
         </node>
       </node>
       <node concept="3clFbS" id="56tRMpP_by2" role="3clF47">
-        <node concept="3clFbF" id="4e85Rl_pXPZ" role="3cqZAp">
-          <node concept="2OqwBi" id="4e85Rl_pYmF" role="3clFbG">
-            <node concept="10M0yZ" id="4e85Rl_pXQp" role="2Oq$k0">
-              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-            </node>
-            <node concept="liA8E" id="4e85Rl_pYId" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~PrintStream.flush():void" resolve="flush" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4AQ1mXP_b9" role="3cqZAp">
-          <node concept="2OqwBi" id="4AQ1mXP_ba" role="3clFbG">
-            <node concept="10M0yZ" id="4AQ1mXP_bb" role="2Oq$k0">
-              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-              <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
-            </node>
-            <node concept="liA8E" id="4AQ1mXP_bc" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~PrintStream.flush():void" resolve="flush" />
-            </node>
+        <node concept="3clFbF" id="7wORwlIHyO1" role="3cqZAp">
+          <node concept="1rXfSq" id="7wORwlIHyNZ" role="3clFbG">
+            <ref role="37wK5l" node="4e85Rl_q8Gl" resolve="flush" />
           </node>
         </node>
         <node concept="3clFbF" id="56tRMpP_by3" role="3cqZAp">
@@ -5464,25 +5446,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="56tRMpP_byj" role="3clF47">
-        <node concept="3clFbF" id="56tRMpP_bys" role="3cqZAp">
-          <node concept="2OqwBi" id="56tRMpP_byt" role="3clFbG">
-            <node concept="2OqwBi" id="56tRMpP_byu" role="2Oq$k0">
-              <node concept="37vLTw" id="2BHiRxgm7sj" role="2Oq$k0">
-                <ref role="3cqZAo" node="56tRMpP_byg" resolve="failure" />
-              </node>
-              <node concept="liA8E" id="56tRMpP_byw" role="2OqNvi">
-                <ref role="37wK5l" to="k76n:~Failure.getException():java.lang.Throwable" resolve="getException" />
-              </node>
-            </node>
-            <node concept="liA8E" id="56tRMpP_byx" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace(java.io.PrintStream):void" resolve="printStackTrace" />
-              <node concept="10M0yZ" id="56tRMpP_byy" role="37wK5m">
-                <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="56tRMpP_byk" role="3cqZAp">
           <node concept="1rXfSq" id="7uaFES0cBgj" role="3clFbG">
             <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
@@ -5498,6 +5461,30 @@
                 <ref role="37wK5l" to="k76n:~Failure.getDescription():org.junit.runner.Description" resolve="getDescription" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="56tRMpP_bys" role="3cqZAp">
+          <node concept="2OqwBi" id="56tRMpP_byt" role="3clFbG">
+            <node concept="2OqwBi" id="56tRMpP_byu" role="2Oq$k0">
+              <node concept="37vLTw" id="2BHiRxgm7sj" role="2Oq$k0">
+                <ref role="3cqZAo" node="56tRMpP_byg" resolve="failure" />
+              </node>
+              <node concept="liA8E" id="56tRMpP_byw" role="2OqNvi">
+                <ref role="37wK5l" to="k76n:~Failure.getException():java.lang.Throwable" resolve="getException" />
+              </node>
+            </node>
+            <node concept="liA8E" id="56tRMpP_byx" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace(java.io.PrintStream):void" resolve="printStackTrace" />
+              <node concept="10M0yZ" id="7wORwlIHyS9" role="37wK5m">
+                <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7wORwlIHyUm" role="3cqZAp">
+          <node concept="1rXfSq" id="7wORwlIHyUk" role="3clFbG">
+            <ref role="37wK5l" node="4e85Rl_q8Gl" resolve="flush" />
           </node>
         </node>
       </node>
@@ -5517,36 +5504,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="56tRMpP_byO" role="3clF47">
-        <node concept="3clFbF" id="56tRMpP_byX" role="3cqZAp">
-          <node concept="2OqwBi" id="56tRMpP_byY" role="3clFbG">
-            <node concept="2OqwBi" id="56tRMpP_byZ" role="2Oq$k0">
-              <node concept="37vLTw" id="2BHiRxgm71M" role="2Oq$k0">
-                <ref role="3cqZAo" node="56tRMpP_byM" resolve="failure" />
-              </node>
-              <node concept="liA8E" id="56tRMpP_bz1" role="2OqNvi">
-                <ref role="37wK5l" to="k76n:~Failure.getException():java.lang.Throwable" resolve="getException" />
-              </node>
-            </node>
-            <node concept="liA8E" id="56tRMpP_bz2" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace(java.io.PrintStream):void" resolve="printStackTrace" />
-              <node concept="10M0yZ" id="56tRMpP_bz3" role="37wK5m">
-                <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4AQ1mXP$s4" role="3cqZAp">
-          <node concept="2OqwBi" id="4AQ1mXP$s5" role="3clFbG">
-            <node concept="10M0yZ" id="4AQ1mXP$s6" role="2Oq$k0">
-              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-              <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
-            </node>
-            <node concept="liA8E" id="4AQ1mXP$s7" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~PrintStream.flush():void" resolve="flush" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="56tRMpP_byP" role="3cqZAp">
           <node concept="1rXfSq" id="7uaFES0cBkg" role="3clFbG">
             <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
@@ -5562,6 +5519,30 @@
                 <ref role="37wK5l" to="k76n:~Failure.getDescription():org.junit.runner.Description" resolve="getDescription" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="56tRMpP_byX" role="3cqZAp">
+          <node concept="2OqwBi" id="56tRMpP_byY" role="3clFbG">
+            <node concept="2OqwBi" id="56tRMpP_byZ" role="2Oq$k0">
+              <node concept="37vLTw" id="2BHiRxgm71M" role="2Oq$k0">
+                <ref role="3cqZAo" node="56tRMpP_byM" resolve="failure" />
+              </node>
+              <node concept="liA8E" id="56tRMpP_bz1" role="2OqNvi">
+                <ref role="37wK5l" to="k76n:~Failure.getException():java.lang.Throwable" resolve="getException" />
+              </node>
+            </node>
+            <node concept="liA8E" id="56tRMpP_bz2" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace(java.io.PrintStream):void" resolve="printStackTrace" />
+              <node concept="10M0yZ" id="7wORwlIHr_o" role="37wK5m">
+                <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7wORwlIHyMF" role="3cqZAp">
+          <node concept="1rXfSq" id="7wORwlIHyMA" role="3clFbG">
+            <ref role="37wK5l" node="4e85Rl_q8Gl" resolve="flush" />
           </node>
         </node>
       </node>
@@ -5581,17 +5562,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="5d37arGBqg4" role="3clF47">
-        <node concept="3clFbF" id="4AQ1mXP$Vk" role="3cqZAp">
-          <node concept="2OqwBi" id="4AQ1mXP$Vl" role="3clFbG">
-            <node concept="10M0yZ" id="4AQ1mXP$Vm" role="2Oq$k0">
-              <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
-              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-            </node>
-            <node concept="liA8E" id="4AQ1mXP$Vn" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~PrintStream.flush():void" resolve="flush" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="5d37arGBqg5" role="3cqZAp">
           <node concept="1rXfSq" id="7uaFES0cBo4" role="3clFbG">
             <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
@@ -5621,6 +5591,11 @@
         </node>
       </node>
       <node concept="3clFbS" id="56tRMpP_bzm" role="3clF47">
+        <node concept="3clFbF" id="7wORwlIHyNA" role="3cqZAp">
+          <node concept="1rXfSq" id="7wORwlIHyN$" role="3clFbG">
+            <ref role="37wK5l" node="4e85Rl_q8Gl" resolve="flush" />
+          </node>
+        </node>
         <node concept="3clFbF" id="56tRMpP_bzn" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyzhK9" role="3clFbG">
             <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />

@@ -22,9 +22,10 @@ import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeEvent;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestRawEvent;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.apache.log4j.Level;
+import org.jetbrains.mps.annotations.Internal;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestType;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestCaseNodeKey;
+import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.unitTest.execution.TerminationTestEvent;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent;
@@ -138,10 +139,8 @@ public final class TestRunState {
     removeFinishedTestEvent(event);
   }
 
+  @Internal
   private void log(String msg) {
-    if (LOG.isEnabledFor(Level.WARN)) {
-      LOG.warn(msg);
-    }
   }
 
   /*package*/ void onTestRunStarted() {

@@ -35,7 +35,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import java.io.IOException;
 
 /**
- * Knows hot to launch TransformationTest with TestRunner suited for in-process test execution
+ * Knows how to launch TransformationTest with TestRunner suited for in-process test execution
  * XXX similar to ScriptTestContributor (for tests executed from command line), although unlike STE supports individual test methods.
  */
 public class NodeWrappersTestsContributor implements TestsContributor {

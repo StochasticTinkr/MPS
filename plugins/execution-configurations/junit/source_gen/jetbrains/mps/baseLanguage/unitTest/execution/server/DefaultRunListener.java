@@ -44,32 +44,32 @@ public class DefaultRunListener extends RunListener {
 
   @Override
   public void testFinished(Description description) {
-    System.out.flush();
-    System.err.flush();
+    flush();
     printSyncToken(TestEventMessage.FINISH_TEST, description);
   }
 
   @Override
   public void testFailure(Failure failure) {
-    failure.getException().printStackTrace(System.err);
     printSyncToken(TestEventMessage.FAILURE_TEST_BEGIN, failure.getDescription());
+    failure.getException().printStackTrace(System.out);
+    flush();
   }
 
   @Override
   public void testAssumptionFailure(Failure failure) {
-    failure.getException().printStackTrace(System.err);
-    System.err.flush();
     printSyncToken(TestEventMessage.ASSUMPTION_FAILURE_TEST_PREFIX, failure.getDescription());
+    failure.getException().printStackTrace(System.out);
+    flush();
   }
 
   @Override
   public void testIgnored(Description description) {
-    System.err.flush();
     printSyncToken(TestEventMessage.IGNORE_FAILURE_TEST_PREFIX, description);
   }
 
   @Override
   public void testStarted(Description description) {
+    flush();
     printSyncToken(TestEventMessage.START_TEST, description);
   }
 

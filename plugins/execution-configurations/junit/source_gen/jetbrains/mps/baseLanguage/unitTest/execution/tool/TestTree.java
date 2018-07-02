@@ -174,7 +174,6 @@ public class TestTree extends MPSTree implements Disposable, TestStateListener {
     myAnimator.dispose();
   }
 
-
   public void init() {
     rebuildNow();
     expandAll();
@@ -261,7 +260,6 @@ public class TestTree extends MPSTree implements Disposable, TestStateListener {
   @Override
   public void onTestRunFinished() {
     updateRootStateWithMaxInSubtree();
-    selectFirstFailedTestIfNeeded();
   }
 
   private void updateRootStateWithMaxInSubtree() {
@@ -319,6 +317,7 @@ public class TestTree extends MPSTree implements Disposable, TestStateListener {
     updateCurrentNodeOnTermination(event);
     updateNotRanTestsOnTermination(event.getNotRanTests(), event.isTerminatedCorrectly());
     updateRootStateWithMaxInSubtree();
+    selectFirstFailedTestIfNeeded();
   }
 
   private void updateCurrentNodeOnTermination(TerminationTestEvent event) {

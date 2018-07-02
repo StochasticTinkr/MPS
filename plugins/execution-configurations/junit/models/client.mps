@@ -2661,12 +2661,19 @@
         <node concept="17QB3L" id="4e85Rl_lUy9" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="4e85Rl_lPuK" role="3clF47">
-        <node concept="RRSsy" id="4e85Rl_mzSq" role="3cqZAp">
-          <property role="RRSoG" value="warn" />
-          <node concept="37vLTw" id="4e85Rl_mzU7" role="RRSoy">
-            <ref role="3cqZAo" node="4e85Rl_lPuS" resolve="msg" />
+        <node concept="1X3_iC" id="7wORwlIKKlA" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="RRSsy" id="4e85Rl_mzSq" role="8Wnug">
+            <property role="RRSoG" value="warn" />
+            <node concept="37vLTw" id="4e85Rl_mzU7" role="RRSoy">
+              <ref role="3cqZAo" node="4e85Rl_lPuS" resolve="msg" />
+            </node>
           </node>
         </node>
+      </node>
+      <node concept="2AHcQZ" id="7wORwlIKKlH" role="2AJF6D">
+        <ref role="2AI5Lk" to="lhc4:~Internal" resolve="Internal" />
       </node>
     </node>
     <node concept="2tJIrI" id="2ZbjobgrJP0" role="jymVt" />
@@ -4427,6 +4434,16 @@
           <property role="1dT_AB" value="contract is the same as in the DefaultRunListener" />
         </node>
       </node>
+      <node concept="TZ5HA" id="7wORwlIJFYE" role="TZ5H$">
+        <node concept="1dT_AC" id="7wORwlIJFYF" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7wORwlIJFYM" role="TZ5H$">
+        <node concept="1dT_AC" id="7wORwlIJFYN" role="1dT_Ay">
+          <property role="1dT_AB" value="for example notice that #onTestRunStarted/Finished might be called several times if there are several test cases for instance" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="56tRMpPBy7G">
@@ -4557,31 +4574,6 @@
               </node>
               <node concept="37vLTw" id="2BHiRxghhb7" role="37wK5m">
                 <ref role="3cqZAo" node="56tRMpPBy9o" resolve="textType" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1X3_iC" id="4e85Rl_o6_f" role="lGtFl">
-          <property role="3V$3am" value="statement" />
-          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-          <node concept="RRSsy" id="4e85Rl_nkt8" role="8Wnug">
-            <property role="RRSoG" value="warn" />
-            <node concept="3cpWs3" id="4e85Rl_jP4t" role="RRSoy">
-              <node concept="37vLTw" id="4e85Rl_jP5l" role="3uHU7w">
-                <ref role="3cqZAo" node="56tRMpPBy9o" resolve="textType" />
-              </node>
-              <node concept="3cpWs3" id="4e85Rl_jOwF" role="3uHU7B">
-                <node concept="3cpWs3" id="4e85Rl_jPr5" role="3uHU7B">
-                  <node concept="Xl_RD" id="4e85Rl_jPrN" role="3uHU7B">
-                    <property role="Xl_RC" value="text " />
-                  </node>
-                  <node concept="37vLTw" id="4e85Rl_jNK0" role="3uHU7w">
-                    <ref role="3cqZAo" node="56tRMpPBy9m" resolve="text" />
-                  </node>
-                </node>
-                <node concept="Xl_RD" id="4e85Rl_jOxh" role="3uHU7w">
-                  <property role="Xl_RC" value=" key " />
-                </node>
               </node>
             </node>
           </node>

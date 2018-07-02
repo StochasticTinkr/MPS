@@ -10,6 +10,8 @@ import jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent;
 /**
  * event is always not null
  * contract is the same as in the DefaultRunListener
+ * 
+ * for example notice that #onTestRunStarted/Finished might be called several times if there are several test cases for instance
  */
 public interface TestStateListener {
   void onProcessNotified();
