@@ -141,8 +141,13 @@ public class StatisticsTableModel implements TableModel {
   }
 
 
+  @Nullable
   public TestMethodRow getRow(@NotNull TestNodeKey testNodeKey) {
-    return (TestMethodRow) MapSequence.fromMap(myNodeKey2RowMap).get(testNodeKey);
+    TestStatisticsRow row = MapSequence.fromMap(myNodeKey2RowMap).get(testNodeKey);
+    if (row instanceof TestMethodRow) {
+      return (TestMethodRow) row;
+    }
+    return null;
   }
 
   private void fireTableChanged() {
