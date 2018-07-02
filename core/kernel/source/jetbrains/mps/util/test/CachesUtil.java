@@ -46,8 +46,8 @@ public final class CachesUtil {
       if (result.isSuccessful()) break;
     }
     if (result.isSuccessful()) {
-      System.out.println("Saving ''config'' caches in the " + result.getConfigPath() + " directory");
-      System.out.println("Saving ''system'' caches in the " + result.getSystemPath() + " directory");
+      System.out.println("Saving 'config' caches in the " + result.getConfigPath() + " directory");
+      System.out.println("Saving 'system' caches in the " + result.getSystemPath() + " directory");
       System.setProperty(PROPERTY_CONFIG_PATH, result.getConfigPath());
       System.setProperty(PROPERTY_SYSTEM_PATH, result.getSystemPath());
     } else {
