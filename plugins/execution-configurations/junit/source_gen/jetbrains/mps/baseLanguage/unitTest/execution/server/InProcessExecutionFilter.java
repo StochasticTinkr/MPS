@@ -9,28 +9,62 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.test.behavior.TestInfo__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.junit.AssumptionViolatedException;
 
 /**
  * Check ITestNodeWrapper if it's suitable for in-process execution, replace original request with a failing one if not.
  */
 /*package*/ class InProcessExecutionFilter {
-
-  public void check(@NotNull ITestNodeWrapper testNodeWrapper, @Nullable SModel testNodeModel) throws InProcessExecutionFilter.MPSException {
+  public void check(@NotNull ITestNodeWrapper testNodeWrapper, @Nullable SModel testNodeModel) throws InProcessExecutionFilter.InProcessCheckException {
     if (!(testNodeWrapper.canRunInProcess())) {
-      throw new InProcessExecutionFilter.MPSException("The test is set not to be executed in-process. Test " + testNodeWrapper.getName() + " is ignored.");
+      throw new InProcessExecutionFilter.TestSetNotToBeExecutedInProcessException(testNodeWrapper);
     }
     if ((boolean) TestInfo__BehaviorDescriptor.reOpenProject_idThWTaQhG7P.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo")), testNodeModel)) {
-      throw new InProcessExecutionFilter.MPSException("The project properties given in the TestInfo file is impossible to set in-process. Test " + testNodeWrapper.getName() + " is ignored.");
+      throw new InProcessExecutionFilter.ProjectSetToReopenInTestInfoException(testNodeWrapper);
     }
   }
 
-  /*package*/ static final class MPSException extends Exception {
-    public MPSException(String msg) {
-      super(msg);
+  public static abstract class InProcessCheckException extends AssumptionViolatedException {
+    private final ITestNodeWrapper myWrapper;
+
+    protected InProcessCheckException(ITestNodeWrapper wrapper) {
+      super("");
+      myWrapper = wrapper;
     }
 
-    public Throwable fillInStackTrace() {
-      return this;
+    @NotNull
+    public ITestNodeWrapper getNode() {
+      return myWrapper;
+    }
+
+    /**
+     * this message is supposed to be passed into String#format(result, #getNode())
+     */
+    @NotNull
+    public abstract String getFormattedMsg();
+  }
+
+  public static final class TestSetNotToBeExecutedInProcessException extends InProcessExecutionFilter.InProcessCheckException {
+    public TestSetNotToBeExecutedInProcessException(ITestNodeWrapper wrapper) {
+      super(wrapper);
+    }
+
+    @Override
+    @NotNull
+    public String getFormattedMsg() {
+      return "The test %s is set not to be executed in-process.\nChange the property value via inspector.\nIgnoring the test.";
+    }
+  }
+
+  public static final class ProjectSetToReopenInTestInfoException extends InProcessExecutionFilter.InProcessCheckException {
+    public ProjectSetToReopenInTestInfoException(ITestNodeWrapper wrapper) {
+      super(wrapper);
+    }
+
+    @Override
+    @NotNull
+    public String getFormattedMsg() {
+      return "The project is set to be reopened in the TestInfo file,\nhowever it is impossible to simulate such behavior in-process.\nIgnoring the test %s.";
     }
   }
 }

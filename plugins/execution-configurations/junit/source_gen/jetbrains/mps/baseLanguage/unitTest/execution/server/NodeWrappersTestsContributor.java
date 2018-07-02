@@ -20,9 +20,9 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.annotations.NotNull;
 import org.junit.runner.Description;
 import jetbrains.mps.module.ModuleClassLoaderIsNullException;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.tool.environment.AbstractEnvironment;
 import com.intellij.openapi.application.ApplicationManager;
@@ -53,9 +53,9 @@ public class NodeWrappersTestsContributor implements TestsContributor {
     myRunnerBuilder = new PushEnvironmentRunnerBuilder(new NodeWrappersTestsContributor.InProcessEnvironment());
   }
 
-  private void notifyByBaloon(final ITestNodeWrapper<?> wrapper, Exception e) {
-    String msg = "The class of the test could not be found.<br> Please ensure that the test <a href=\"\">" + wrapper.getFqName() + "</a> is built and deployed.";
-    ExecutionUtil.handleExecutionError(myProject.getProject(), ToolWindowId.RUN, myConfigurationName, e, msg, new HyperlinkListener() {
+  private void notifyByBaloon(String msg, final ITestNodeWrapper<?> wrapper, Exception e) {
+    String msgWithLink = String.format(msg, "<a href=\"\">" + wrapper.getFqName() + "</a>");
+    ExecutionUtil.handleExecutionError(myProject.getProject(), ToolWindowId.RUN, myConfigurationName, e, msgWithLink, new HyperlinkListener() {
       public void hyperlinkUpdate(HyperlinkEvent event) {
         if (event.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
           SNodeReference nodeRef = wrapper.getNodePointer();
@@ -77,38 +77,66 @@ public class NodeWrappersTestsContributor implements TestsContributor {
           SNode testNodeSrc = testNode.getNodePointer().resolve(myProject.getRepository());
           SModel testModel = (testNodeSrc == null ? null : testNodeSrc.getModel());
           if (testNode.isTestCase()) {
-            Request requestForClass;
-            try {
-              filter.check(testNode, testModel);
-              requestForClass = requestForTestClass(fqName, testModule);
-            } catch (ClassNotFoundException e) {
-              notifyByBaloon(testNode, e);
-              requestForClass = Request.runner(new AssumptionFailedRunner(e, Description.createSuiteDescription(fqName)));
-            } catch (Exception e) {
-              requestForClass = Request.runner(new AssumptionFailedRunner(e, Description.createSuiteDescription(fqName)));
-            }
-            requestList.add(requestForClass);
+            requestList.add(processTestCase(filter, testNode, testModule, testModel, fqName));
           } else {
-            int index = fqName.lastIndexOf('.');
-            String testFqName = fqName.substring(0, index);
-            String methodName = fqName.substring(index + 1);
-            Request requestForMethod;
-            try {
-              filter.check(testNode, testModel);
-              final Request classRequest = requestForTestClass(testFqName, testModule);
-              requestForMethod = classRequest.filterWith(Description.createTestDescription(testFqName, methodName));
-            } catch (ClassNotFoundException e) {
-              notifyByBaloon(testNode, e);
-              requestForMethod = Request.runner(new AssumptionFailedRunner(e, Description.createTestDescription(testFqName, methodName)));
-            } catch (Exception e) {
-              requestForMethod = Request.runner(new AssumptionFailedRunner(e, Description.createTestDescription(testFqName, methodName)));
-            }
-            requestList.add(requestForMethod);
+            requestList.add(processTestMethod(filter, testNode, testModule, testModel, fqName));
           }
         }
         return requestList;
       }
     });
+  }
+
+  @NotNull
+  private Request processTestCase(InProcessExecutionFilter filter, ITestNodeWrapper testNode, SModule testModule, SModel testModel, String fqName) {
+    try {
+      filter.check(testNode, testModel);
+      return requestForTestClass(fqName, testModule);
+    } catch (InProcessExecutionFilter.InProcessCheckException e) {
+      notifyByBaloonCheckException(e, testNode);
+      return createRequestForClass(fqName, e);
+    } catch (ClassNotFoundException e) {
+      notifyByBaloonCLNF(e, testNode);
+      return createRequestForClass(fqName, e);
+    } catch (Exception e) {
+      return createRequestForClass(fqName, e);
+    }
+  }
+
+  @NotNull
+  private Request processTestMethod(InProcessExecutionFilter filter, ITestNodeWrapper testNode, SModule testModule, SModel testModel, String fqName) {
+    int index = fqName.lastIndexOf('.');
+    String testFqName = fqName.substring(0, index);
+    String methodName = fqName.substring(index + 1);
+    try {
+      filter.check(testNode, testModel);
+      final Request classRequest = requestForTestClass(testFqName, testModule);
+      return classRequest.filterWith(Description.createTestDescription(testFqName, methodName));
+    } catch (InProcessExecutionFilter.InProcessCheckException e) {
+      notifyByBaloonCheckException(e, testNode);
+      return createRequestForMethod(testFqName, methodName, e);
+    } catch (ClassNotFoundException e) {
+      notifyByBaloonCLNF(e, testNode);
+      return createRequestForMethod(testFqName, methodName, e);
+    } catch (Exception e) {
+      return createRequestForMethod(testFqName, methodName, e);
+    }
+  }
+
+  private void notifyByBaloonCLNF(ClassNotFoundException e, ITestNodeWrapper<?> testNode) {
+    notifyByBaloon("The class of the test could not be found.<br>Please ensure that the test %s is built and deployed.", testNode, e);
+  }
+
+  private void notifyByBaloonCheckException(InProcessExecutionFilter.InProcessCheckException e, ITestNodeWrapper<?> testNode) {
+    notifyByBaloon(e.getFormattedMsg(), testNode, e);
+  }
+
+  private Request createRequestForClass(String fqName, Exception e) {
+    return Request.runner(new AssumptionFailedRunner(e, Description.createSuiteDescription(fqName)));
+  }
+
+  private Request createRequestForMethod(String testFqName, String methodName, Exception e) {
+    return Request.runner(new AssumptionFailedRunner(e, Description.createTestDescription(testFqName, methodName)));
   }
 
   private Request requestForTestClass(String fqName, SModule module) throws ClassNotFoundException, ModuleClassLoaderIsNullException {
@@ -142,7 +170,7 @@ public class NodeWrappersTestsContributor implements TestsContributor {
         }
       }
       // todo show balloon and ignore the tests 
-      throw new AssumptionViolatedException(String.format("Test project '%s' is not open.", projectFile));
+      throw new AssumptionViolatedException(String.format("Test project '%s' is not opened. Aborted.", projectFile));
     }
 
     @Override
