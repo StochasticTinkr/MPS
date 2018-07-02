@@ -1169,52 +1169,59 @@
   </root>
   <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432722935">
     <file name="TestCaseMessageContainer.java">
-      <node id="4866165190356999544" at="17,93,18,18" concept="16" />
-      <node id="3575782568432722944" at="18,18,19,30" concept="5" />
-      <node id="4866165190358464245" at="23,57,24,46" concept="10" />
-      <node id="4866165190358476085" at="25,87,26,18" concept="11" />
-      <node id="4866165190358513549" at="27,5,28,17" concept="11" />
-      <node id="3575782568432722981" at="33,86,34,131" concept="10" />
-      <node id="3575782568432722987" at="34,131,35,36" concept="5" />
-      <node id="3575782568432722995" at="35,36,36,21" concept="11" />
-      <node id="4866165190355733312" at="40,56,41,36" concept="10" />
-      <node id="4866165190357231418" at="41,36,42,61" concept="10" />
-      <node id="4866165190355741979" at="43,34,44,54" concept="5" />
-      <node id="4866165190357607536" at="45,5,46,52" concept="11" />
-      <node id="3575782568432722936" at="14,0,16,0" concept="6" trace="myTestCaseNode" />
-      <node id="4866165190358465522" at="24,46,27,5" concept="8" />
-      <node id="4866165190355735200" at="42,61,45,5" concept="8" />
-      <node id="3575782568432722940" at="17,0,21,0" concept="3" trace="TestCaseMessageContainer#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestCaseNodeKey;Ljetbrains/mps/baseLanguage/unitTest/execution/tool/MessageFilter;)V" />
-      <node id="4866165190356977208" at="31,0,38,0" concept="9" trace="createChildMessage#(Ljetbrains/mps/baseLanguage/unitTest/execution/TextTestEvent;)Ljetbrains/mps/baseLanguage/unitTest/execution/tool/MethodMessageContainer;" />
-      <node id="3575782568432722952" at="22,0,30,0" concept="9" trace="matches#(Ljetbrains/mps/baseLanguage/unitTest/execution/tool/MessageFilter;)Z" />
-      <node id="4866165190356977223" at="39,0,48,0" concept="9" trace="accepts#(Ljetbrains/mps/baseLanguage/unitTest/execution/TextTestEvent;)Z" />
-      <scope id="4866165190358465524" at="25,87,26,18" />
-      <scope id="4866165190355735202" at="43,34,44,54" />
-      <scope id="3575782568432722943" at="17,93,19,30" />
-      <scope id="4866165190356977221" at="33,86,36,21">
-        <var name="methodMsg" id="3575782568432722982" />
-      </scope>
-      <scope id="3575782568432722940" at="17,0,21,0">
+      <node id="4866165190356999544" at="18,93,19,18" concept="16" />
+      <node id="3575782568432722944" at="19,18,20,30" concept="5" />
+      <node id="4866165190358464245" at="24,57,25,46" concept="10" />
+      <node id="4866165190358476085" at="26,87,27,18" concept="11" />
+      <node id="4866165190358513549" at="28,5,29,17" concept="11" />
+      <node id="6139940957875155003" at="34,86,35,43" concept="10" />
+      <node id="6139940957875192886" at="35,43,36,65" concept="10" />
+      <node id="6139940957875163166" at="37,82,38,58" concept="5" />
+      <node id="3575782568432722981" at="39,5,40,94" concept="10" />
+      <node id="3575782568432722987" at="40,94,41,36" concept="5" />
+      <node id="3575782568432722995" at="41,36,42,21" concept="11" />
+      <node id="4866165190355733312" at="46,56,47,36" concept="10" />
+      <node id="4866165190357231418" at="47,36,48,61" concept="10" />
+      <node id="4866165190355741979" at="49,34,50,54" concept="5" />
+      <node id="4866165190357607536" at="51,5,52,52" concept="11" />
+      <node id="3575782568432722936" at="15,0,17,0" concept="6" trace="myTestCaseNode" />
+      <node id="4866165190358465522" at="25,46,28,5" concept="8" />
+      <node id="6139940957875156279" at="36,65,39,5" concept="8" />
+      <node id="4866165190355735200" at="48,61,51,5" concept="8" />
+      <node id="3575782568432722940" at="18,0,22,0" concept="3" trace="TestCaseMessageContainer#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestCaseNodeKey;Ljetbrains/mps/baseLanguage/unitTest/execution/tool/MessageFilter;)V" />
+      <node id="3575782568432722952" at="23,0,31,0" concept="9" trace="matches#(Ljetbrains/mps/baseLanguage/unitTest/execution/tool/MessageFilter;)Z" />
+      <node id="4866165190356977223" at="45,0,54,0" concept="9" trace="accepts#(Ljetbrains/mps/baseLanguage/unitTest/execution/TextTestEvent;)Z" />
+      <node id="4866165190356977208" at="32,0,44,0" concept="9" trace="createChildMessage#(Ljetbrains/mps/baseLanguage/unitTest/execution/TextTestEvent;)Ljetbrains/mps/baseLanguage/unitTest/execution/tool/MethodMessageContainer;" />
+      <scope id="4866165190358465524" at="26,87,27,18" />
+      <scope id="6139940957875156281" at="37,82,38,58" />
+      <scope id="4866165190355735202" at="49,34,50,54" />
+      <scope id="3575782568432722943" at="18,93,20,30" />
+      <scope id="3575782568432722940" at="18,0,22,0">
         <var name="filter" id="4866165190356996613" />
         <var name="testCase" id="3575782568432722948" />
       </scope>
-      <scope id="3575782568432722959" at="23,57,28,17">
+      <scope id="3575782568432722959" at="24,57,29,17">
         <var name="filterNode" id="4866165190358464246" />
       </scope>
-      <scope id="4866165190356977239" at="40,56,46,52">
+      <scope id="4866165190356977239" at="46,56,52,52">
         <var name="currentTestNode" id="4866165190357231419" />
         <var name="testCase" id="4866165190355733315" />
       </scope>
-      <scope id="4866165190356977208" at="31,0,38,0">
-        <var name="textEvent" id="4866165190356977212" />
-      </scope>
-      <scope id="3575782568432722952" at="22,0,30,0">
+      <scope id="3575782568432722952" at="23,0,31,0">
         <var name="filter" id="3575782568432722957" />
       </scope>
-      <scope id="4866165190356977223" at="39,0,48,0">
+      <scope id="4866165190356977221" at="34,86,42,21">
+        <var name="currentTestNode" id="6139940957875192887" />
+        <var name="methodMsg" id="3575782568432722982" />
+        <var name="methodNodeKey" id="6139940957875155004" />
+      </scope>
+      <scope id="4866165190356977223" at="45,0,54,0">
         <var name="event" id="4866165190356977224" />
       </scope>
-      <unit id="3575782568432722935" at="13,0,49,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseMessageContainer" />
+      <scope id="4866165190356977208" at="32,0,44,0">
+        <var name="textEvent" id="4866165190356977212" />
+      </scope>
+      <unit id="3575782568432722935" at="14,0,55,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseMessageContainer" />
     </file>
   </root>
   <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432723010">

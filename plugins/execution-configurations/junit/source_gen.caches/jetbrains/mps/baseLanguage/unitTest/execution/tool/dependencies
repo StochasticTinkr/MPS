@@ -186,6 +186,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestCaseNodeKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestMethodNodeKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageFilter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MethodMessageContainer" />

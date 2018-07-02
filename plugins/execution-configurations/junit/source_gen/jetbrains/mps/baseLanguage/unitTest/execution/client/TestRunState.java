@@ -164,7 +164,7 @@ public final class TestRunState {
         it.onTestAssumptionFailure(nodeEvent);
       }
     });
-    notifyUpdateListeners();
+    myInnerData.mySkippedTests++;
   }
 
   public void onTestIgnored(TestRawEvent event) {
@@ -175,7 +175,7 @@ public final class TestRunState {
         it.onTestIgnored(nodeEvent);
       }
     });
-    notifyUpdateListeners();
+    myInnerData.myIgnoredTests++;
   }
 
   public void onTestFailure(TestRawEvent event) {
