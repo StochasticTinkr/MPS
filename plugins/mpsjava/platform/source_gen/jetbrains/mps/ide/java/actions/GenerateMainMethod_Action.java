@@ -29,7 +29,7 @@ public class GenerateMainMethod_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public GenerateMainMethod_Action() {
-    super("main(Strins[] args)", "", ICON);
+    super("main(Strings[] args)", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

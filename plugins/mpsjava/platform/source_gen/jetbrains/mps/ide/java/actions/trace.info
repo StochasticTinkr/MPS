@@ -5452,8 +5452,8 @@
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/7111916581652592343">
     <file name="GenerateMainMethod_Action.java">
       <node id="7111916581652592343" at="29,0,30,0" concept="15" trace="ICON" />
-      <node id="7111916581652592343" at="31,38,32,43" concept="17" />
-      <node id="7111916581652592343" at="32,43,33,35" concept="5" />
+      <node id="7111916581652592343" at="31,38,32,44" concept="17" />
+      <node id="7111916581652592343" at="32,44,33,35" concept="5" />
       <node id="7111916581652592343" at="33,35,34,41" concept="5" />
       <node id="7111916581652592343" at="37,32,38,16" concept="12" />
       <node id="7111916581652592390" at="41,87,42,81" concept="11" />
