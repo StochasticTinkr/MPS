@@ -39,7 +39,7 @@ public class TestToolbarPanel extends JPanel {
     actionGroup.addSeparator();
     actionGroup.addAction(createSelectFirstFailedAction());
     ActionToolbar toolbarActions = ActionManager.getInstance().createActionToolbar(ActionPlaces.TESTTREE_VIEW_TOOLBAR, actionGroup, true);
-    add(toolbarActions.getComponent(), BorderLayout.WEST);
+    add(toolbarActions.getComponent(), BorderLayout.CENTER);
   }
 
   private ToggleAction createHidePassedAction() {

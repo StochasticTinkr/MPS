@@ -16,7 +16,7 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.execution.ui.ConsoleViewContentType;
 
-public class TestOutputComponent extends TestStateAdapter {
+public class TestOutputContainer extends TestStateAdapter {
   /**
    * here I found a logic as follows.
    * if there are too many messages we start dumping them to disk, in the temp folder.
@@ -32,11 +32,11 @@ public class TestOutputComponent extends TestStateAdapter {
 
   private final Printer myDefaultPrinter = new Printer() {
     public void print(@NotNull String text, @NotNull Key key) {
-      TestOutputComponent.this.print(text, key);
+      TestOutputContainer.this.print(text, key);
     }
   };
 
-  public TestOutputComponent(@NotNull ConsoleView console) {
+  public TestOutputContainer(@NotNull ConsoleView console) {
     myRootMessageContainer = new RootMessageContainer(myFilter);
     myConsoleView = console;
   }

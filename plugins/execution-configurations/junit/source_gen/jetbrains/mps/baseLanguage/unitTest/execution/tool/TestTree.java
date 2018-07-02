@@ -347,5 +347,6 @@ public class TestTree extends MPSTree implements Disposable, TestStateListener {
 
   @Override
   public void onTextAvailable(@NotNull TextTestEvent event) {
+    // nop 
   }
 }

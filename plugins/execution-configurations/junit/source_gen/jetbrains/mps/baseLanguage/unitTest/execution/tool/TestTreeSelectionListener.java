@@ -12,9 +12,9 @@ import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKeyFactory;
 public class TestTreeSelectionListener implements TreeSelectionListener {
   private final TreeSelectionModel myFreeSelectionModel;
   private final StatisticsTableModel myStatisticsModel;
-  private final TestOutputComponent myOutputComponent;
+  private final TestOutputContainer myOutputComponent;
 
-  public TestTreeSelectionListener(TestTree tree, StatisticsTableModel statistics, TestOutputComponent outputComponent) {
+  public TestTreeSelectionListener(TestTree tree, StatisticsTableModel statistics, TestOutputContainer outputComponent) {
     myFreeSelectionModel = tree.getSelectionModel();
     myStatisticsModel = statistics;
     myOutputComponent = outputComponent;

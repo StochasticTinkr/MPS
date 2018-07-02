@@ -36,7 +36,7 @@ public class RootMessageContainer extends MessageContainerBase<TestCaseMessageCo
   @NotNull
   public TestMessage addMessage(@NotNull TextTestEvent event) {
     TestMessage message = super.addMessage(event);
-    if (size() > TestOutputComponent.MAX_MESSAGES_BEFORE_DUMP) {
+    if (size() > TestOutputContainer.MAX_MESSAGES_BEFORE_DUMP) {
       flush();
     }
     return message;

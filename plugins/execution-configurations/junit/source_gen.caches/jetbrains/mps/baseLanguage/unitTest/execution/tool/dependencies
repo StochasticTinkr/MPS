@@ -116,7 +116,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageFilter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseMessageContainer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMessage" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputContainer" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.MessageContainerBase" />
@@ -240,7 +240,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.NonRootTestTreeNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent" file="TestOutputComponent.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputContainer" file="TestOutputContainer.java">
     <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
     <classNode dependClassName="com.intellij.execution.ui.ConsoleView" />
     <classNode dependClassName="com.intellij.execution.ui.ConsoleViewContentType" />
@@ -268,21 +268,20 @@
     <classNode dependClassName="com.intellij.openapi.progress.util.ColorProgressBar" />
     <classNode dependClassName="com.intellij.ui.SimpleColoredComponent" />
     <classNode dependClassName="com.intellij.ui.SimpleTextAttributes" />
-    <classNode dependClassName="com.intellij.ui.components.panels.NonOpaquePanel" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.BorderFactory" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JProgressBar" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="javax.swing.JPanel" />
+    <classNode extendsClassName="com.intellij.ui.components.panels.NonOpaquePanel" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestState" file="TestState.java">
@@ -387,7 +386,7 @@
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.StatisticsTableModel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputContainer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTree" />
     <classNode extendsClassName="java.awt.event.MouseAdapter" />
   </dependency>
@@ -401,7 +400,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKeyFactory" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.NonRootTestTreeNode" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.StatisticsTableModel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputContainer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTree" />
     <classNode extendsClassName="javax.swing.event.TreeSelectionListener" />
   </dependency>
@@ -415,24 +414,25 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.UnitTestViewComponent" file="UnitTestViewComponent.java">
+    <classNode dependClassName="com.intellij.execution.testframework.ui.SameHeightPanel" />
     <classNode dependClassName="com.intellij.execution.ui.ConsoleView" />
     <classNode dependClassName="com.intellij.ide.util.PropertiesComponent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.editor.colors.EditorColorsManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Splitter" />
+    <classNode dependClassName="com.intellij.ui.IdeBorderFactory" />
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="com.intellij.ui.SideBorder" />
     <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
+    <classNode dependClassName="com.intellij.ui.components.panels.NonOpaquePanel" />
     <classNode dependClassName="com.intellij.ui.table.JBTable" />
     <classNode dependClassName="com.intellij.util.ui.UIUtil" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.awt.Dimension" />
-    <classNode dependClassName="java.awt.GridBagConstraints" />
-    <classNode dependClassName="java.awt.GridBagLayout" />
+    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.GridLayout" />
     <classNode dependClassName="java.awt.LayoutManager" />
     <classNode dependClassName="java.beans.PropertyChangeEvent" />
@@ -448,13 +448,14 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JScrollPane" />
     <classNode dependClassName="javax.swing.JTable" />
+    <classNode dependClassName="javax.swing.border.CompoundBorder" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.FailedTestOccurrenceNavigator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.StatisticsRowRenderer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.StatisticsTableModel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputContainer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestProgressLine" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestStatisticsRow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestToolbarPanel" />

@@ -7,10 +7,10 @@ import java.awt.event.MouseEvent;
 
 public class TestTreeRootMouseListener extends MouseAdapter {
   private final StatisticsTableModel myStatisticsModel;
-  private final TestOutputComponent myOutputComponent;
+  private final TestOutputContainer myOutputComponent;
   private final TestTree myTreeComponent;
 
-  public TestTreeRootMouseListener(TestTree tree, StatisticsTableModel statistics, TestOutputComponent outputComponent) {
+  public TestTreeRootMouseListener(TestTree tree, StatisticsTableModel statistics, TestOutputContainer outputComponent) {
     myStatisticsModel = statistics;
     myOutputComponent = outputComponent;
     myTreeComponent = tree;
