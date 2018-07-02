@@ -22,7 +22,7 @@
       <node id="107428392343534666" at="60,11,61,129" concept="4" />
       <node id="107428392343534676" at="61,129,62,66" concept="4" />
       <node id="107428392343534688" at="62,66,63,0" concept="7" />
-      <node id="107428392343534689" at="63,0,64,84" concept="4" />
+      <node id="107428392343534689" at="63,0,64,96" concept="4" />
       <node id="3818729150937329550" at="65,34,66,52" concept="1" />
       <node id="107428392343534701" at="67,9,68,59" concept="4" />
       <node id="107428392343534707" at="68,59,69,108" concept="4" />
@@ -37,7 +37,7 @@
       <node id="107428392343534654" at="35,0,37,0" concept="8" trace="ourParamCache" />
       <node id="107428392343534654" at="39,0,42,0" concept="0" trace="JUnitInProcessUndo_Test#()V" />
       <node id="107428392343534655" at="56,0,59,0" concept="3" trace="getMyModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="3818729150937329550" at="64,84,67,9" concept="2" />
+      <node id="3818729150937329550" at="64,96,67,9" concept="2" />
       <node id="107428392343534768" at="82,9,85,9" concept="2" />
       <node id="107428392343534798" at="43,0,47,0" concept="3" trace="test_startTrickyTestCase#()V" />
       <node id="107428392343534798" at="50,0,54,0" concept="3" trace="test_startTrickyTestCase#()V" />
@@ -97,7 +97,7 @@
       <node id="6339244025082257308" at="63,11,64,129" concept="4" />
       <node id="6339244025082257318" at="64,129,65,66" concept="4" />
       <node id="6339244025082257330" at="65,66,66,0" concept="7" />
-      <node id="6339244025082257331" at="66,0,67,84" concept="4" />
+      <node id="6339244025082257331" at="66,0,67,96" concept="4" />
       <node id="3818729150937329538" at="68,34,69,52" concept="1" />
       <node id="6339244025082257343" at="70,9,71,59" concept="4" />
       <node id="6339244025082257349" at="71,59,72,108" concept="4" />
@@ -118,7 +118,7 @@
       <node id="6339244025082257428" at="100,38,101,36" concept="1" />
       <node id="6339244025082257302" at="33,0,35,0" concept="8" trace="ourParamCache" />
       <node id="6339244025082257302" at="37,0,40,0" concept="0" trace="JUnitInProcess_Test#()V" />
-      <node id="3818729150937329538" at="67,84,70,9" concept="2" />
+      <node id="3818729150937329538" at="67,96,70,9" concept="2" />
       <node id="6339244025082257384" at="89,9,92,9" concept="2" />
       <node id="3324489548725852952" at="93,110,96,9" concept="2" />
       <node id="6339244025082257410" at="96,9,99,9" concept="2" />
@@ -185,8 +185,8 @@
       <node id="2983330400684894286" at="54,51,55,247" concept="1" />
       <node id="6339244025082286095" at="60,11,61,66" concept="4" />
       <node id="6339244025082286107" at="61,66,62,0" concept="7" />
-      <node id="6339244025082286108" at="62,0,63,84" concept="4" />
-      <node id="6339244025084403368" at="63,84,64,85" concept="4" />
+      <node id="6339244025082286108" at="62,0,63,96" concept="4" />
+      <node id="6339244025084403368" at="63,96,64,85" concept="4" />
       <node id="3818729150937329544" at="65,34,66,52" concept="1" />
       <node id="6339244025082286120" at="67,9,68,59" concept="4" />
       <node id="6339244025082286126" at="68,59,69,108" concept="4" />
