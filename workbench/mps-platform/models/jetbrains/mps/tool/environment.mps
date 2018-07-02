@@ -1170,18 +1170,13 @@
             <node concept="YS8fn" id="4_TMdeLkOo7" role="3cqZAp">
               <node concept="2ShNRf" id="4_TMdeLlH9M" role="YScLw">
                 <node concept="1pGfFk" id="4_TMdeLlH9N" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                  <node concept="3cpWs3" id="4_TMdeLkOo3" role="37wK5m">
-                    <node concept="2OqwBi" id="4_TMdeLlH9Q" role="3uHU7w">
-                      <node concept="37vLTw" id="4_TMdeLlH9P" role="2Oq$k0">
-                        <ref role="3cqZAo" node="2pL3QjrzSG8" resolve="projectFile" />
-                      </node>
-                      <node concept="liA8E" id="4_TMdeLlH9R" role="2OqNvi">
-                        <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
-                      </node>
+                  <ref role="37wK5l" node="6_mFlZWT$u2" resolve="IdeaEnvironment.ProjectDirectoryDoesNotExistException" />
+                  <node concept="2OqwBi" id="6_mFlZWTJjf" role="37wK5m">
+                    <node concept="37vLTw" id="6_mFlZWTJjg" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2pL3QjrzSG8" resolve="projectFile" />
                     </node>
-                    <node concept="Xl_RD" id="4_TMdeLkOo4" role="3uHU7B">
-                      <property role="Xl_RC" value="Can't find project file " />
+                    <node concept="liA8E" id="6_mFlZWTJjh" role="2OqNvi">
+                      <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
                     </node>
                   </node>
                 </node>
@@ -2138,7 +2133,7 @@
       <property role="2bfB8j" value="false" />
       <property role="1sVAO0" value="false" />
       <property role="1EXbeo" value="true" />
-      <node concept="3Tm6S6" id="78Cs0exswcB" role="1B3o_S" />
+      <node concept="3Tm1VV" id="6_mFlZWT_Kh" role="1B3o_S" />
       <node concept="3uibUv" id="78Cs0exswcC" role="1zkMxy">
         <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
       </node>
@@ -2180,7 +2175,7 @@
       <property role="2bfB8j" value="false" />
       <property role="1sVAO0" value="false" />
       <property role="1EXbeo" value="true" />
-      <node concept="3Tm6S6" id="78Cs0exswcP" role="1B3o_S" />
+      <node concept="3Tm1VV" id="6_mFlZWT_Ke" role="1B3o_S" />
       <node concept="3uibUv" id="78Cs0exswcQ" role="1zkMxy">
         <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
       </node>
@@ -2214,6 +2209,48 @@
           </node>
         </node>
         <node concept="3Tm1VV" id="78Cs0exswd1" role="1B3o_S" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6_mFlZWT$Eh" role="jymVt" />
+    <node concept="312cEu" id="6_mFlZWT$tZ" role="jymVt">
+      <property role="TrG5h" value="ProjectDirectoryDoesNotExistException" />
+      <property role="2bfB8j" value="false" />
+      <property role="1sVAO0" value="false" />
+      <property role="1EXbeo" value="true" />
+      <node concept="3Tm1VV" id="6_mFlZWT_Kb" role="1B3o_S" />
+      <node concept="3uibUv" id="6_mFlZWT$u1" role="1zkMxy">
+        <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
+      </node>
+      <node concept="3clFbW" id="6_mFlZWT$u2" role="jymVt">
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3cqZAl" id="6_mFlZWT$u3" role="3clF45" />
+        <node concept="37vLTG" id="6_mFlZWT$u4" role="3clF46">
+          <property role="TrG5h" value="projectPath" />
+          <property role="3TUv4t" value="false" />
+          <node concept="3uibUv" id="6_mFlZWT$u5" role="1tU5fm">
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="6_mFlZWT$u8" role="3clF47">
+          <node concept="XkiVB" id="6_mFlZWT$u9" role="3cqZAp">
+            <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+            <node concept="3cpWs3" id="6_mFlZWT_Js" role="37wK5m">
+              <node concept="Xl_RD" id="6_mFlZWT_JZ" role="3uHU7w">
+                <property role="Xl_RC" value="'" />
+              </node>
+              <node concept="3cpWs3" id="6_mFlZWT__E" role="3uHU7B">
+                <node concept="Xl_RD" id="6_mFlZWT$QU" role="3uHU7B">
+                  <property role="Xl_RC" value="Cannot find the project at '" />
+                </node>
+                <node concept="37vLTw" id="6_mFlZWT_Ah" role="3uHU7w">
+                  <ref role="3cqZAo" node="6_mFlZWT$u4" resolve="projectPath" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="6_mFlZWT$uc" role="1B3o_S" />
       </node>
     </node>
   </node>

@@ -180,7 +180,7 @@ public final class IdeaEnvironment extends EnvironmentBase {
   @NotNull
   private jetbrains.mps.project.Project openProjectInIdeaEnvironment(File projectFile) {
     if (!(projectFile.exists())) {
-      throw new RuntimeException("Can't find project file " + projectFile.getAbsolutePath());
+      throw new IdeaEnvironment.ProjectDirectoryDoesNotExistException(projectFile.getAbsolutePath());
     }
     final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
     final String filePath = projectFile.getAbsolutePath();
@@ -311,15 +311,21 @@ public final class IdeaEnvironment extends EnvironmentBase {
     }
   }
 
-  private static final class CouldNotLoadProjectException extends RuntimeException {
+  public static final class CouldNotLoadProjectException extends RuntimeException {
     public CouldNotLoadProjectException(String message, Exception cause) {
       super(message, cause);
     }
   }
 
-  private static final class ProjectCouldNotBeOpenedException extends RuntimeException {
+  public static final class ProjectCouldNotBeOpenedException extends RuntimeException {
     public ProjectCouldNotBeOpenedException(String message, Exception cause) {
       super(message, cause);
+    }
+  }
+
+  public static final class ProjectDirectoryDoesNotExistException extends RuntimeException {
+    public ProjectDirectoryDoesNotExistException(String projectPath) {
+      super("Cannot find the project at '" + projectPath + "'");
     }
   }
 }

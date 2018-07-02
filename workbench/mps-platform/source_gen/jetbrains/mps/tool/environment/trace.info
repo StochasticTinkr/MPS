@@ -70,7 +70,7 @@
       <node id="9085186120774337096" at="174,73,175,19" concept="3" />
       <node id="2654128911719716349" at="175,19,176,32" concept="3" />
       <node id="2099495074362988007" at="176,32,177,24" concept="9" />
-      <node id="5294483648489408007" at="182,34,183,93" concept="15" />
+      <node id="5294483648489408007" at="182,34,183,101" concept="15" />
       <node id="5294483648489408009" at="184,5,185,77" concept="8" />
       <node id="5294483648489408014" at="185,77,186,58" concept="8" />
       <node id="2847138267595992866" at="186,58,187,0" concept="11" />
@@ -117,6 +117,7 @@
       <node id="6792203128511885355" at="305,64,306,40" concept="3" />
       <node id="8225947880288039965" at="315,74,316,28" concept="14" />
       <node id="8225947880288031647" at="321,78,322,28" concept="14" />
+      <node id="7590444849755998089" at="327,70,328,64" concept="14" />
       <node id="7413225496543196363" at="49,0,52,0" concept="2" trace="IdeaEnvironment#(Ljetbrains/mps/tool/environment/EnvironmentConfig;)V" />
       <node id="3727517784852374187" at="63,29,66,7" concept="6" />
       <node id="3818729150937329412" at="78,22,81,5" concept="6" />
@@ -140,6 +141,7 @@
       <node id="6792203128511864537" at="304,29,307,13" concept="6" />
       <node id="8225947880288027433" at="315,0,318,0" concept="2" trace="CouldNotLoadProjectException#(Ljava/lang/String;Ljava/lang/Exception;)V" />
       <node id="8225947880288027447" at="321,0,324,0" concept="2" trace="ProjectCouldNotBeOpenedException#(Ljava/lang/String;Ljava/lang/Exception;)V" />
+      <node id="7590444849755998082" at="327,0,330,0" concept="2" trace="ProjectDirectoryDoesNotExistException#(Ljava/lang/String;)V" />
       <node id="1831521769657286749" at="227,44,231,5" concept="6" />
       <node id="159136682922614628" at="258,0,262,0" concept="7" trace="getPlatform#()Ljetbrains/mps/core/platform/Platform;" />
       <node id="6450649963069039598" at="155,18,160,15" concept="3" />
@@ -191,7 +193,7 @@
       <scope id="3818729150937329424" at="134,30,135,44" />
       <scope id="6450649963069039608" at="157,33,158,34" />
       <scope id="3202102901590959931" at="164,29,165,40" />
-      <scope id="5294483648489408001" at="182,34,183,93" />
+      <scope id="5294483648489408001" at="182,34,183,101" />
       <scope id="3818729150937329430" at="193,36,194,79" />
       <scope id="6147466353444201162" at="198,0,199,21">
         <var name="e" id="6147466353444201170" />
@@ -219,6 +221,7 @@
       <scope id="6792203128511864539" at="305,64,306,40" />
       <scope id="8225947880288027439" at="315,74,316,28" />
       <scope id="8225947880288027453" at="321,78,322,28" />
+      <scope id="7590444849755998088" at="327,70,328,64" />
       <scope id="1831521769657286751" at="228,27,230,74">
         <var name="fs" id="1831521769657300505" />
       </scope>
@@ -242,6 +245,9 @@
       <scope id="8225947880288027447" at="321,0,324,0">
         <var name="cause" id="8225947880288027451" />
         <var name="message" id="8225947880288027449" />
+      </scope>
+      <scope id="7590444849755998082" at="327,0,330,0">
+        <var name="projectPath" id="7590444849755998084" />
       </scope>
       <scope id="963934103127575054" at="100,52,104,11">
         <var name="basePath" id="5119875011621439386" />
@@ -336,13 +342,14 @@
       <unit id="8225947880288044838" at="275,58,279,7" name="jetbrains.mps.tool.environment.IdeaEnvironment$PostStartupActivitiesWaiter$1" />
       <unit id="8225947880288027430" at="314,0,319,0" name="jetbrains.mps.tool.environment.IdeaEnvironment$CouldNotLoadProjectException" />
       <unit id="8225947880288027444" at="320,0,325,0" name="jetbrains.mps.tool.environment.IdeaEnvironment$ProjectCouldNotBeOpenedException" />
+      <unit id="7590444849755998079" at="326,0,331,0" name="jetbrains.mps.tool.environment.IdeaEnvironment$ProjectDirectoryDoesNotExistException" />
       <unit id="6792203128511851541" at="303,60,309,9" name="jetbrains.mps.tool.environment.IdeaEnvironment$PostStartupActivitiesWaiter$2" />
       <unit id="963934103127575030" at="98,65,106,7" name="jetbrains.mps.tool.environment.IdeaEnvironment$1" />
       <unit id="3193873080290452804" at="246,58,254,5" name="jetbrains.mps.tool.environment.IdeaEnvironment$5" />
       <unit id="6147466353444201157" at="190,58,202,5" name="jetbrains.mps.tool.environment.IdeaEnvironment$3" />
       <unit id="6450649963069039593" at="144,58,169,5" name="jetbrains.mps.tool.environment.IdeaEnvironment$2" />
       <unit id="8225947880288044800" at="263,0,313,0" name="jetbrains.mps.tool.environment.IdeaEnvironment$PostStartupActivitiesWaiter" />
-      <unit id="7413225496542992859" at="40,0,326,0" name="jetbrains.mps.tool.environment.IdeaEnvironment" />
+      <unit id="7413225496542992859" at="40,0,332,0" name="jetbrains.mps.tool.environment.IdeaEnvironment" />
     </file>
   </root>
 </debug-info>
