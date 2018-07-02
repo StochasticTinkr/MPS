@@ -8,7 +8,6 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import javax.swing.SwingConstants;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -40,7 +39,6 @@ public class TestToolbarPanel extends JPanel {
     actionGroup.addSeparator();
     actionGroup.addAction(createSelectFirstFailedAction());
     ActionToolbar toolbarActions = ActionManager.getInstance().createActionToolbar(ActionPlaces.TESTTREE_VIEW_TOOLBAR, actionGroup, true);
-    toolbarActions.setOrientation(SwingConstants.HORIZONTAL);
     add(toolbarActions.getComponent(), BorderLayout.WEST);
   }
 

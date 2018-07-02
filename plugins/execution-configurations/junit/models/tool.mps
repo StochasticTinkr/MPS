@@ -2741,7 +2741,7 @@
           <node concept="3clFbS" id="4oHspw32avR" role="3clFbx">
             <node concept="3clFbF" id="4oHspw32B11" role="3cqZAp">
               <node concept="1rXfSq" id="4oHspw32B0Z" role="3clFbG">
-                <ref role="37wK5l" node="36vIONTtPtQ" resolve="rebuild" />
+                <ref role="37wK5l" to="7e8u:~MPSTree.rebuildLater():void" resolve="rebuildLater" />
               </node>
             </node>
           </node>
@@ -3418,20 +3418,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="36vIONTtPCS" role="3cqZAp">
-          <node concept="2OqwBi" id="36vIONTtPCT" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTyRM" role="2Oq$k0">
-              <ref role="3cqZAo" node="36vIONTtPCK" resolve="toolbarActions" />
-            </node>
-            <node concept="liA8E" id="36vIONTtPCV" role="2OqNvi">
-              <ref role="37wK5l" to="qkt:~ActionToolbar.setOrientation(int):void" resolve="setOrientation" />
-              <node concept="10M0yZ" id="36vIONTtPCW" role="37wK5m">
-                <ref role="1PxDUh" to="dxuu:~SwingConstants" resolve="SwingConstants" />
-                <ref role="3cqZAo" to="dxuu:~SwingConstants.HORIZONTAL" resolve="HORIZONTAL" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="36vIONTtPCX" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyzePx" role="3clFbG">
             <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
@@ -3443,9 +3429,9 @@
                 <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent():javax.swing.JComponent" resolve="getComponent" />
               </node>
             </node>
-            <node concept="10M0yZ" id="36vIONTtPD4" role="37wK5m">
-              <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
+            <node concept="10M0yZ" id="1v6kNwOtlfU" role="37wK5m">
               <ref role="3cqZAo" to="z60i:~BorderLayout.WEST" resolve="WEST" />
+              <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
             </node>
           </node>
         </node>
