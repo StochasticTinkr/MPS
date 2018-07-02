@@ -20,7 +20,7 @@ public class CompositeProjectStrategy implements ProjectStrategy {
     if (firstApplicable != null) {
       return firstApplicable.create(env);
     }
-    throw new IllegalStateException("Could not create project with given strategies, nothing is applicable");
+    throw new CompositeProjectStrategy.NoStrategyFoundException("Could not create project with given strategies, nothing is applicable");
   }
 
   @Override
@@ -36,5 +36,11 @@ public class CompositeProjectStrategy implements ProjectStrategy {
       }
     }
     return null;
+  }
+
+  private static final class NoStrategyFoundException extends EnvironmentSetupException {
+    public NoStrategyFoundException(String message) {
+      super(message);
+    }
   }
 }

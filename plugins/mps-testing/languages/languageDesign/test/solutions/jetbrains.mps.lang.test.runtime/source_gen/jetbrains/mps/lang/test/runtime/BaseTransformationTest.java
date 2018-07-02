@@ -16,6 +16,8 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.tool.environment.EnvironmentSetupException;
+import org.junit.AssumptionViolatedException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
@@ -64,52 +66,54 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
     // MPS's in-process, out-of-process and ant script executors supply Environment through EnvironmentAware and custom RunnerBuilder  
     // namely, PushEnvironmentRunnerBuilder. IDEA MPS plugin and IDEA test configurations use this RunnerBuilder, too. 
     if (myEnvironment == null) {
-      String m = String.format("Test %s needs an Environment instance to access %s project instance", getClass().getName(), projectPath);
-      throw new IllegalStateException(m);
+      throw new BaseTransformationTest.EnvironmentIsNullException(this.getClass().getName(), projectPath);
     }
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing the test");
     }
 
+    if ((projectPath == null || projectPath.length() == 0)) {
+      throw new BaseTransformationTest.ProjectPathIsNullException();
+    }
     // FIXME can access MacrosFactory through environment.getPlatform, if necessary. 
     String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPath);
     if ((expandedProjectPath == null || expandedProjectPath.length() == 0)) {
-      throw new IllegalStateException("You shall specify project path with TestInfo root.");
+      throw new BaseTransformationTest.ExpandedProjectPathIsNullException(projectPath);
     }
-    File projectToOpen = new File(expandedProjectPath);
-    Project p = myEnvironment.openProject(projectToOpen);
-    if (reOpenProject) {
-      myEnvironment.closeProject(p);
-      p = myEnvironment.openProject(projectToOpen);
-    }
-    setProject(p);
-    final SRepository repository = p.getRepository();
-    Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        // FIXME drop command, needed for transient/temp model initialization only 
-        repository.getModelAccess().executeCommand(new Runnable() {
-          @Override
-          public void run() {
-            SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(model);
-            SModel modelDescriptor = modelRef.resolve(repository);
-            if (modelDescriptor == null) {
-              throw new IllegalStateException(String.format("Can't find model %s in supplied repository %s.", model, repository));
-            }
-            BaseTransformationTest.this.setModelDescriptor(modelDescriptor);
-            // FIXME drop init(), move to TestParametersCache 
-            BaseTransformationTest.this.init();
-          }
-        });
+    try {
+      File projectToOpen = new File(expandedProjectPath);
+      Project p = myEnvironment.openProject(projectToOpen);
+      if (reOpenProject) {
+        myEnvironment.closeProject(p);
+        p = myEnvironment.openProject(projectToOpen);
       }
-    });
-    if (exception != null) {
-      throw new RuntimeException(exception);
+      setProject(p);
+      final SRepository repository = p.getRepository();
+      Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+          // FIXME drop command, needed for transient/temp model initialization only 
+          repository.getModelAccess().executeCommand(new Runnable() {
+            @Override
+            public void run() {
+              SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(model);
+              SModel modelDescriptor = modelRef.resolve(repository);
+              if (modelDescriptor == null) {
+                throw new BaseTransformationTest.CouldNotFindModelException(String.format("Can't find model %s in supplied repository %s.", model, repository));
+              }
+              BaseTransformationTest.this.setModelDescriptor(modelDescriptor);
+              // FIXME drop init(), move to TestParametersCache 
+              BaseTransformationTest.this.init();
+            }
+          });
+        }
+      });
+      if (exception != null) {
+        throw new BaseTransformationTest.MPSTestModelInitializationException("Exception during model initialization", exception);
+      }
+      clearSystemClipboard();
+    } catch (EnvironmentSetupException envException) {
+      throw new AssumptionViolatedException("Failed to open the project using the given environemnt", envException);
     }
-
-    clearSystemClipboard();
-
-    // XXX do I need that? 
-    myEnvironment.flushAllEvents();
   }
 
   public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
@@ -236,5 +240,35 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
   @Override
   public void setProject(Project project) {
     myProject = project;
+  }
+
+  private static class EnvironmentIsNullException extends AssumptionViolatedException {
+    public EnvironmentIsNullException(@NotNull String testName, @NotNull String projectPath) {
+      super(String.format("The test '%s' needs an Environment instance to access the project at '%s'", testName, projectPath));
+    }
+  }
+
+  private static class ProjectPathIsNullException extends AssumptionViolatedException {
+    public ProjectPathIsNullException() {
+      super("The project path was not specified in the TestInfo root.");
+    }
+  }
+
+  private static class ExpandedProjectPathIsNullException extends AssumptionViolatedException {
+    public ExpandedProjectPathIsNullException(@NotNull String projectPath) {
+      super(String.format("The macros in the project path '%s' is reduced to null", projectPath));
+    }
+  }
+
+  private static class CouldNotFindModelException extends AssumptionViolatedException {
+    public CouldNotFindModelException(@NotNull String msg) {
+      super(msg);
+    }
+  }
+
+  private static class MPSTestModelInitializationException extends AssumptionViolatedException {
+    public MPSTestModelInitializationException(@NotNull String msg, Throwable realCause) {
+      super(msg, realCause);
+    }
   }
 }

@@ -327,6 +327,13 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
+      </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
@@ -2872,19 +2879,23 @@
             <ref role="1Pybhc" node="5A5jZrz5bMd" resolve="Log4jInitializer" />
           </node>
         </node>
-        <node concept="3clFbF" id="1RTSjGszMde" role="3cqZAp">
-          <node concept="2OqwBi" id="1RTSjGszMjK" role="3clFbG">
-            <node concept="2YIFZM" id="1RTSjGszMe0" role="2Oq$k0">
-              <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
-              <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
-              <node concept="3VsKOn" id="1RTSjGszMhf" role="37wK5m">
-                <ref role="3VsUkX" node="3eUNqOk4feo" resolve="EnvironmentBase" />
+        <node concept="1X3_iC" id="3oT7WQ901g1" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3clFbF" id="1RTSjGszMde" role="8Wnug">
+            <node concept="2OqwBi" id="1RTSjGszMjK" role="3clFbG">
+              <node concept="2YIFZM" id="1RTSjGszMe0" role="2Oq$k0">
+                <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
+                <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
+                <node concept="3VsKOn" id="1RTSjGszMhf" role="37wK5m">
+                  <ref role="3VsUkX" node="3eUNqOk4feo" resolve="EnvironmentBase" />
+                </node>
               </node>
-            </node>
-            <node concept="liA8E" id="1RTSjGszMsM" role="2OqNvi">
-              <ref role="37wK5l" to="q7tw:~Category.info(java.lang.Object):void" resolve="info" />
-              <node concept="Xl_RD" id="1RTSjGszMvL" role="37wK5m">
-                <property role="Xl_RC" value="Initializing environment" />
+              <node concept="liA8E" id="1RTSjGszMsM" role="2OqNvi">
+                <ref role="37wK5l" to="q7tw:~Category.info(java.lang.Object):void" resolve="info" />
+                <node concept="Xl_RD" id="1RTSjGszMvL" role="37wK5m">
+                  <property role="Xl_RC" value="Initializing environment" />
+                </node>
               </node>
             </node>
           </node>
@@ -2957,14 +2968,8 @@
           <node concept="3clFbS" id="3pEStHM4f3R" role="3clFbx">
             <node concept="YS8fn" id="3pEStHM4fan" role="3cqZAp">
               <node concept="2ShNRf" id="3pEStHM4fb0" role="YScLw">
-                <node concept="1pGfFk" id="3pEStHM4kZl" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
-                  <node concept="3cpWs3" id="3pEStHM4l5_" role="37wK5m">
-                    <node concept="Xjq3P" id="3pEStHM4l6Y" role="3uHU7w" />
-                    <node concept="Xl_RD" id="3pEStHM4l04" role="3uHU7B">
-                      <property role="Xl_RC" value="Double initialization " />
-                    </node>
-                  </node>
+                <node concept="1pGfFk" id="3oT7WQ905aN" role="2ShVmc">
+                  <ref role="37wK5l" node="3oT7WQ903sx" resolve="EnvironmentBase.EnvironmentInitializedTwiceException" />
                 </node>
               </node>
             </node>
@@ -4548,27 +4553,50 @@
       <node concept="3Tmbuc" id="6LlhC3WLIoe" role="1B3o_S" />
       <node concept="3cqZAl" id="6LlhC3WLEQ1" role="3clF45" />
     </node>
-    <node concept="2tJIrI" id="6LlhC3WLFnL" role="jymVt" />
+    <node concept="2tJIrI" id="3oT7WQ9021p" role="jymVt" />
     <node concept="312cEu" id="6LlhC3WLGjY" role="jymVt">
       <property role="2bfB8j" value="false" />
       <property role="1sVAO0" value="false" />
       <property role="1EXbeo" value="false" />
       <property role="TrG5h" value="EnvironmentNotInitializedException" />
       <node concept="3Tm6S6" id="6LlhC3WLFZI" role="1B3o_S" />
-      <node concept="3uibUv" id="6LlhC3WLGIM" role="1zkMxy">
-        <ref role="3uigEE" to="wyt6:~IllegalStateException" resolve="IllegalStateException" />
+      <node concept="3uibUv" id="3oT7WQ903sr" role="1zkMxy">
+        <ref role="3uigEE" node="3oT7WQ8ZQQP" resolve="EnvironmentSetupException" />
       </node>
       <node concept="3clFbW" id="6LlhC3WLGNE" role="jymVt">
         <node concept="3cqZAl" id="6LlhC3WLGNF" role="3clF45" />
         <node concept="3clFbS" id="6LlhC3WLGNH" role="3clF47">
           <node concept="XkiVB" id="6LlhC3WLGST" role="3cqZAp">
-            <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+            <ref role="37wK5l" node="3oT7WQ8ZVnO" resolve="EnvironmentSetupException" />
             <node concept="Xl_RD" id="6LlhC3WLHy0" role="37wK5m">
               <property role="Xl_RC" value="#init() method must be called before using an environment" />
             </node>
           </node>
         </node>
         <node concept="3Tm1VV" id="6LlhC3WLGM3" role="1B3o_S" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3oT7WQ903Nz" role="jymVt" />
+    <node concept="312cEu" id="3oT7WQ903su" role="jymVt">
+      <property role="2bfB8j" value="false" />
+      <property role="1sVAO0" value="false" />
+      <property role="1EXbeo" value="false" />
+      <property role="TrG5h" value="EnvironmentInitializedTwiceException" />
+      <node concept="3Tm6S6" id="3oT7WQ903sv" role="1B3o_S" />
+      <node concept="3uibUv" id="3oT7WQ903sw" role="1zkMxy">
+        <ref role="3uigEE" node="3oT7WQ8ZQQP" resolve="EnvironmentSetupException" />
+      </node>
+      <node concept="3clFbW" id="3oT7WQ903sx" role="jymVt">
+        <node concept="3cqZAl" id="3oT7WQ903sy" role="3clF45" />
+        <node concept="3clFbS" id="3oT7WQ903sz" role="3clF47">
+          <node concept="XkiVB" id="3oT7WQ903s$" role="3cqZAp">
+            <ref role="37wK5l" node="3oT7WQ8ZVnO" resolve="EnvironmentSetupException" />
+            <node concept="Xl_RD" id="3oT7WQ903s_" role="37wK5m">
+              <property role="Xl_RC" value="Double initialization" />
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="3oT7WQ903sA" role="1B3o_S" />
       </node>
     </node>
     <node concept="3Tm1VV" id="3eUNqOk4fep" role="1B3o_S" />
@@ -5444,23 +5472,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="2lE4mF2Mhdz" role="3cqZAp">
-          <node concept="2OqwBi" id="5A5jZrz5BkC" role="3clFbG">
-            <node concept="2YIFZM" id="2BGPXkEvZdP" role="2Oq$k0">
-              <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
-              <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.String):org.apache.log4j.Logger" resolve="getLogger" />
-              <node concept="Xl_RD" id="2BGPXkEvZeG" role="37wK5m">
-                <property role="Xl_RC" value="" />
-              </node>
-            </node>
-            <node concept="liA8E" id="5A5jZrz5Byh" role="2OqNvi">
-              <ref role="37wK5l" to="q7tw:~Category.info(java.lang.Object):void" resolve="info" />
-              <node concept="Xl_RD" id="5A5jZrz5ByX" role="37wK5m">
-                <property role="Xl_RC" value="Log4j has been initialized successfully" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node concept="3cqZAl" id="5A5jZrz5c2u" role="3clF45" />
       <node concept="3Tm1VV" id="5A5jZrz5A3j" role="1B3o_S" />
@@ -6219,7 +6230,7 @@
         <node concept="YS8fn" id="43Ra3NMzWJZ" role="3cqZAp">
           <node concept="2ShNRf" id="43Ra3NMzWKm" role="YScLw">
             <node concept="1pGfFk" id="43Ra3NM$otL" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+              <ref role="37wK5l" node="3oT7WQ8ZWGj" resolve="CompositeProjectStrategy.NoStrategyFoundException" />
               <node concept="Xl_RD" id="43Ra3NM$otS" role="37wK5m">
                 <property role="Xl_RC" value="Could not create project with given strategies, nothing is applicable" />
               </node>
@@ -6309,6 +6320,33 @@
       </node>
       <node concept="2AHcQZ" id="2BGPXkEwdFf" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3oT7WQ8ZVcC" role="jymVt" />
+    <node concept="312cEu" id="3oT7WQ8ZVk5" role="jymVt">
+      <property role="2bfB8j" value="false" />
+      <property role="1sVAO0" value="false" />
+      <property role="1EXbeo" value="true" />
+      <property role="TrG5h" value="NoStrategyFoundException" />
+      <node concept="3clFbW" id="3oT7WQ8ZWGj" role="jymVt">
+        <node concept="3cqZAl" id="3oT7WQ8ZWGk" role="3clF45" />
+        <node concept="3Tm1VV" id="3oT7WQ8ZWGl" role="1B3o_S" />
+        <node concept="3clFbS" id="3oT7WQ8ZWGm" role="3clF47">
+          <node concept="XkiVB" id="3oT7WQ8ZWGn" role="3cqZAp">
+            <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+            <node concept="37vLTw" id="3oT7WQ8ZWGo" role="37wK5m">
+              <ref role="3cqZAo" node="3oT7WQ8ZWGp" resolve="message" />
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="3oT7WQ8ZWGp" role="3clF46">
+          <property role="TrG5h" value="message" />
+          <node concept="17QB3L" id="3oT7WQ8ZWGq" role="1tU5fm" />
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="3oT7WQ8ZVhs" role="1B3o_S" />
+      <node concept="3uibUv" id="3oT7WQ8ZVmN" role="1zkMxy">
+        <ref role="3uigEE" node="3oT7WQ8ZQQP" resolve="EnvironmentSetupException" />
       </node>
     </node>
   </node>
@@ -6998,6 +7036,56 @@
           <property role="1dT_AB" value=" implementations." />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="3oT7WQ8ZQQP">
+    <property role="TrG5h" value="EnvironmentSetupException" />
+    <property role="1sVAO0" value="true" />
+    <node concept="3clFbW" id="3oT7WQ8ZVnb" role="jymVt">
+      <node concept="3cqZAl" id="3oT7WQ8ZVne" role="3clF45" />
+      <node concept="3Tm1VV" id="3oT7WQ8ZVnf" role="1B3o_S" />
+      <node concept="3clFbS" id="3oT7WQ8ZVng" role="3clF47">
+        <node concept="XkiVB" id="3oT7WQ8ZWEU" role="3cqZAp">
+          <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="RuntimeException" />
+          <node concept="37vLTw" id="3oT7WQ8ZWFa" role="37wK5m">
+            <ref role="3cqZAo" node="3oT7WQ8ZVnu" resolve="message" />
+          </node>
+          <node concept="37vLTw" id="3oT7WQ8ZWGd" role="37wK5m">
+            <ref role="3cqZAo" node="3oT7WQ8ZVn$" resolve="cause" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="3oT7WQ8ZVnu" role="3clF46">
+        <property role="TrG5h" value="message" />
+        <node concept="17QB3L" id="3oT7WQ8ZVnt" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="3oT7WQ8ZVn$" role="3clF46">
+        <property role="TrG5h" value="cause" />
+        <node concept="3uibUv" id="3oT7WQ8ZVnK" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3oT7WQ8ZVos" role="jymVt" />
+    <node concept="3clFbW" id="3oT7WQ8ZVnO" role="jymVt">
+      <node concept="3cqZAl" id="3oT7WQ8ZVnP" role="3clF45" />
+      <node concept="3Tm1VV" id="3oT7WQ8ZVnQ" role="1B3o_S" />
+      <node concept="3clFbS" id="3oT7WQ8ZVnR" role="3clF47">
+        <node concept="XkiVB" id="3oT7WQ8ZWE9" role="3cqZAp">
+          <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+          <node concept="37vLTw" id="3oT7WQ8ZWEp" role="37wK5m">
+            <ref role="3cqZAo" node="3oT7WQ8ZVnS" resolve="message" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="3oT7WQ8ZVnS" role="3clF46">
+        <property role="TrG5h" value="message" />
+        <node concept="17QB3L" id="3oT7WQ8ZVnT" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="3oT7WQ8ZQQQ" role="1B3o_S" />
+    <node concept="3uibUv" id="3oT7WQ8ZVcu" role="1zkMxy">
+      <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
     </node>
   </node>
 </model>

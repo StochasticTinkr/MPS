@@ -763,6 +763,11 @@
       <node concept="3clFbS" id="6rx4kZDk5DN" role="3clF47">
         <node concept="3clFbJ" id="3AYmLIrPWCw" role="3cqZAp">
           <node concept="3clFbS" id="3AYmLIrPWCy" role="3clFbx">
+            <node concept="3SKdUt" id="3oT7WQ909Fn" role="3cqZAp">
+              <node concept="3SKdUq" id="3oT7WQ909Fp" role="3SKWNk">
+                <property role="3SKdUp" value="for ant tests we run with the flag, which disables those checks" />
+              </node>
+            </node>
             <node concept="3clFbF" id="3AYmLIrPXw2" role="3cqZAp">
               <node concept="2YIFZM" id="3AYmLIrPXHJ" role="3clFbG">
                 <ref role="1Pybhc" to="ab4o:~VfsRootAccess" resolve="VfsRootAccess" />
@@ -1708,10 +1713,18 @@
                       <node concept="3clFbS" id="69OmYVxkBnv" role="TDEfX">
                         <node concept="YS8fn" id="69OmYVxkBUF" role="3cqZAp">
                           <node concept="2ShNRf" id="69OmYVxkC06" role="YScLw">
-                            <node concept="1pGfFk" id="69OmYVxl67c" role="2ShVmc">
-                              <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.Throwable)" resolve="RuntimeException" />
-                              <node concept="37vLTw" id="69OmYVxl6mB" role="37wK5m">
-                                <ref role="3cqZAo" node="69OmYVxkBnr" resolve="e" />
+                            <node concept="YeOm9" id="3oT7WQ90wrp" role="2ShVmc">
+                              <node concept="1Y3b0j" id="3oT7WQ90wrs" role="YeSDq">
+                                <property role="2bfB8j" value="true" />
+                                <ref role="1Y3XeK" to="79ha:3oT7WQ8ZQQP" resolve="EnvironmentSetupException" />
+                                <ref role="37wK5l" to="79ha:3oT7WQ8ZVnb" resolve="EnvironmentSetupException" />
+                                <node concept="3Tm1VV" id="3oT7WQ90wrt" role="1B3o_S" />
+                                <node concept="Xl_RD" id="3oT7WQ90wtX" role="37wK5m">
+                                  <property role="Xl_RC" value="Interrupted" />
+                                </node>
+                                <node concept="37vLTw" id="3oT7WQ90wt5" role="37wK5m">
+                                  <ref role="3cqZAo" node="69OmYVxkBnr" resolve="e" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -1988,7 +2001,7 @@
                 <node concept="YS8fn" id="78Cs0exs$tb" role="3cqZAp">
                   <node concept="2ShNRf" id="78Cs0exs_Mw" role="YScLw">
                     <node concept="1pGfFk" id="78Cs0exs_Nn" role="2ShVmc">
-                      <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="RuntimeException" />
+                      <ref role="37wK5l" node="3oT7WQ90bB6" resolve="IdeaEnvironment.InterruptedWhileWaitingForPostStartupException" />
                       <node concept="Xl_RD" id="78Cs0exs_No" role="37wK5m">
                         <property role="Xl_RC" value="Caught exception while waiting for the post startup activities" />
                       </node>
@@ -2127,15 +2140,57 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3oT7WQ909GB" role="jymVt" />
+    <node concept="312cEu" id="3oT7WQ90bB3" role="jymVt">
+      <property role="TrG5h" value="InterruptedWhileWaitingForPostStartupException" />
+      <property role="2bfB8j" value="false" />
+      <property role="1sVAO0" value="false" />
+      <property role="1EXbeo" value="true" />
+      <node concept="3Tm6S6" id="3oT7WQ90d$Z" role="1B3o_S" />
+      <node concept="3uibUv" id="3oT7WQ90bB5" role="1zkMxy">
+        <ref role="3uigEE" to="79ha:3oT7WQ8ZQQP" resolve="EnvironmentSetupException" />
+      </node>
+      <node concept="3clFbW" id="3oT7WQ90bB6" role="jymVt">
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3cqZAl" id="3oT7WQ90bB7" role="3clF45" />
+        <node concept="37vLTG" id="3oT7WQ90bB8" role="3clF46">
+          <property role="TrG5h" value="message" />
+          <property role="3TUv4t" value="false" />
+          <node concept="3uibUv" id="3oT7WQ90bB9" role="1tU5fm">
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="3oT7WQ90bBa" role="3clF46">
+          <property role="TrG5h" value="cause" />
+          <property role="3TUv4t" value="false" />
+          <node concept="3uibUv" id="3oT7WQ90bBb" role="1tU5fm">
+            <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="3oT7WQ90bBc" role="3clF47">
+          <node concept="XkiVB" id="3oT7WQ90bBd" role="3cqZAp">
+            <ref role="37wK5l" to="79ha:3oT7WQ8ZVnb" resolve="EnvironmentSetupException" />
+            <node concept="37vLTw" id="3oT7WQ90bBe" role="37wK5m">
+              <ref role="3cqZAo" node="3oT7WQ90bB8" resolve="message" />
+            </node>
+            <node concept="37vLTw" id="3oT7WQ90bBf" role="37wK5m">
+              <ref role="3cqZAo" node="3oT7WQ90bBa" resolve="cause" />
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="3oT7WQ90bBg" role="1B3o_S" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="78Cs0exszsl" role="jymVt" />
     <node concept="312cEu" id="78Cs0exswcA" role="jymVt">
       <property role="TrG5h" value="CouldNotLoadProjectException" />
       <property role="2bfB8j" value="false" />
       <property role="1sVAO0" value="false" />
       <property role="1EXbeo" value="true" />
-      <node concept="3Tm1VV" id="6_mFlZWT_Kh" role="1B3o_S" />
-      <node concept="3uibUv" id="78Cs0exswcC" role="1zkMxy">
-        <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
+      <node concept="3Tm6S6" id="3oT7WQ90d_3" role="1B3o_S" />
+      <node concept="3uibUv" id="3oT7WQ909G$" role="1zkMxy">
+        <ref role="3uigEE" to="79ha:3oT7WQ8ZQQP" resolve="EnvironmentSetupException" />
       </node>
       <node concept="3clFbW" id="78Cs0exswcD" role="jymVt">
         <property role="DiZV1" value="false" />
@@ -2157,7 +2212,7 @@
         </node>
         <node concept="3clFbS" id="78Cs0exswcJ" role="3clF47">
           <node concept="XkiVB" id="78Cs0exszgt" role="3cqZAp">
-            <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="RuntimeException" />
+            <ref role="37wK5l" to="79ha:3oT7WQ8ZVnb" resolve="EnvironmentSetupException" />
             <node concept="37vLTw" id="78Cs0exszgu" role="37wK5m">
               <ref role="3cqZAo" node="78Cs0exswcF" resolve="message" />
             </node>
@@ -2175,9 +2230,9 @@
       <property role="2bfB8j" value="false" />
       <property role="1sVAO0" value="false" />
       <property role="1EXbeo" value="true" />
-      <node concept="3Tm1VV" id="6_mFlZWT_Ke" role="1B3o_S" />
-      <node concept="3uibUv" id="78Cs0exswcQ" role="1zkMxy">
-        <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
+      <node concept="3Tm6S6" id="3oT7WQ90d_7" role="1B3o_S" />
+      <node concept="3uibUv" id="3oT7WQ909Gf" role="1zkMxy">
+        <ref role="3uigEE" to="79ha:3oT7WQ8ZQQP" resolve="EnvironmentSetupException" />
       </node>
       <node concept="3clFbW" id="78Cs0exswcR" role="jymVt">
         <property role="DiZV1" value="false" />
@@ -2199,7 +2254,7 @@
         </node>
         <node concept="3clFbS" id="78Cs0exswcX" role="3clF47">
           <node concept="XkiVB" id="78Cs0exsxev" role="3cqZAp">
-            <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="RuntimeException" />
+            <ref role="37wK5l" to="79ha:3oT7WQ8ZVnb" resolve="EnvironmentSetupException" />
             <node concept="37vLTw" id="78Cs0exsxew" role="37wK5m">
               <ref role="3cqZAo" node="78Cs0exswcT" resolve="message" />
             </node>
@@ -2217,9 +2272,9 @@
       <property role="2bfB8j" value="false" />
       <property role="1sVAO0" value="false" />
       <property role="1EXbeo" value="true" />
-      <node concept="3Tm1VV" id="6_mFlZWT_Kb" role="1B3o_S" />
-      <node concept="3uibUv" id="6_mFlZWT$u1" role="1zkMxy">
-        <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
+      <node concept="3Tm6S6" id="3oT7WQ90d_b" role="1B3o_S" />
+      <node concept="3uibUv" id="3oT7WQ909FU" role="1zkMxy">
+        <ref role="3uigEE" to="79ha:3oT7WQ8ZQQP" resolve="EnvironmentSetupException" />
       </node>
       <node concept="3clFbW" id="6_mFlZWT$u2" role="jymVt">
         <property role="DiZV1" value="false" />
@@ -2234,7 +2289,7 @@
         </node>
         <node concept="3clFbS" id="6_mFlZWT$u8" role="3clF47">
           <node concept="XkiVB" id="6_mFlZWT$u9" role="3cqZAp">
-            <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+            <ref role="37wK5l" to="79ha:3oT7WQ8ZVnO" resolve="EnvironmentSetupException" />
             <node concept="3cpWs3" id="6_mFlZWT_Js" role="37wK5m">
               <node concept="Xl_RD" id="6_mFlZWT_JZ" role="3uHU7w">
                 <property role="Xl_RC" value="'" />

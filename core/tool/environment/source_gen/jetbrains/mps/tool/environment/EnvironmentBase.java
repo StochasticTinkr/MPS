@@ -51,7 +51,6 @@ public abstract class EnvironmentBase implements Environment {
 
   public static void initializeLog4j() {
     Log4jInitializer.init();
-    LogManager.getLogger(EnvironmentBase.class).info("Initializing environment");
   }
 
   public EnvironmentBase(@NotNull EnvironmentConfig config) {
@@ -64,7 +63,7 @@ public abstract class EnvironmentBase implements Environment {
 
   protected void init(Platform mpsPlatform) {
     if (myInitialized) {
-      throw new IllegalStateException("Double initialization " + this);
+      throw new EnvironmentBase.EnvironmentInitializedTwiceException();
     }
     myRootClassLoader = createRootClassLoader();
     initMacros(mpsPlatform.findComponent(PathMacros.class));
@@ -290,9 +289,15 @@ public abstract class EnvironmentBase implements Environment {
     }
   }
 
-  private static class EnvironmentNotInitializedException extends IllegalStateException {
+  private static class EnvironmentNotInitializedException extends EnvironmentSetupException {
     public EnvironmentNotInitializedException() {
       super("#init() method must be called before using an environment");
+    }
+  }
+
+  private static class EnvironmentInitializedTwiceException extends EnvironmentSetupException {
+    public EnvironmentInitializedTwiceException() {
+      super("Double initialization");
     }
   }
   private static boolean isNotEmptyString(String str) {

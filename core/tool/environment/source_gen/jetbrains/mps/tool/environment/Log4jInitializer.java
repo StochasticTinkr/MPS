@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.PatternLayout;
-import org.apache.log4j.LogManager;
 
 /**
  * need this class to read log.xml configuration file even when there is no idea platform
@@ -22,6 +21,5 @@ public final class Log4jInitializer {
       root.setLevel(Level.WARN);
       root.addAppender(new ConsoleAppender(new PatternLayout(PatternLayout.DEFAULT_CONVERSION_PATTERN)));
     }
-    LogManager.getLogger("").info("Log4j has been initialized successfully");
   }
 }

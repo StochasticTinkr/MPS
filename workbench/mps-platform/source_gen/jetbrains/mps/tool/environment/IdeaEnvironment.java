@@ -122,6 +122,7 @@ public final class IdeaEnvironment extends EnvironmentBase {
   @NotNull
   public jetbrains.mps.project.Project doOpenProject(@NotNull File projectFile) {
     if (RuntimeFlags.isTestMode()) {
+      // for ant tests we run with the flag, which disables those checks 
       VfsRootAccess.allowRootAccess(projectFile.getAbsolutePath());
     }
     return openProjectInIdeaEnvironment(projectFile);
@@ -248,7 +249,7 @@ public final class IdeaEnvironment extends EnvironmentBase {
         try {
           PlatformTestUtil.dispatchAllEventsInIdeEventQueue();
         } catch (InterruptedException e) {
-          throw new RuntimeException(e);
+          throw new EnvironmentSetupException("Interrupted", e) {};
         }
       }
     }, ModalityState.NON_MODAL);
@@ -291,7 +292,7 @@ public final class IdeaEnvironment extends EnvironmentBase {
       try {
         mySem.acquire();
       } catch (InterruptedException e) {
-        throw new RuntimeException("Caught exception while waiting for the post startup activities", e);
+        throw new IdeaEnvironment.InterruptedWhileWaitingForPostStartupException("Caught exception while waiting for the post startup activities", e);
       }
       waitForDumbModeToFinish();
       assert startupManager.postStartupActivityPassed();
@@ -311,19 +312,25 @@ public final class IdeaEnvironment extends EnvironmentBase {
     }
   }
 
-  public static final class CouldNotLoadProjectException extends RuntimeException {
+  private static final class InterruptedWhileWaitingForPostStartupException extends EnvironmentSetupException {
+    public InterruptedWhileWaitingForPostStartupException(String message, Exception cause) {
+      super(message, cause);
+    }
+  }
+
+  private static final class CouldNotLoadProjectException extends EnvironmentSetupException {
     public CouldNotLoadProjectException(String message, Exception cause) {
       super(message, cause);
     }
   }
 
-  public static final class ProjectCouldNotBeOpenedException extends RuntimeException {
+  private static final class ProjectCouldNotBeOpenedException extends EnvironmentSetupException {
     public ProjectCouldNotBeOpenedException(String message, Exception cause) {
       super(message, cause);
     }
   }
 
-  public static final class ProjectDirectoryDoesNotExistException extends RuntimeException {
+  private static final class ProjectDirectoryDoesNotExistException extends EnvironmentSetupException {
     public ProjectDirectoryDoesNotExistException(String projectPath) {
       super("Cannot find the project at '" + projectPath + "'");
     }
