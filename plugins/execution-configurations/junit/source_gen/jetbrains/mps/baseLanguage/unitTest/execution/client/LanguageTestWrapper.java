@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod__BehaviorDescriptor;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -54,7 +55,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   }
 
   @Override
-  public boolean isTestCase() {
+  public final boolean isTestCase() {
     return myTestCase == null;
   }
 
@@ -68,6 +69,26 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   @Override
   public Iterable<ITestNodeWrapper> getTestMethods() {
     return myMethods;
+  }
+
+  @Override
+  public int hashCode() {
+    // I need this for the EditorTestCase for which two LTW were equal 
+    return Objects.hash(myNodePointer, isTestCase());
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    LanguageTestWrapper that = (LanguageTestWrapper) o;
+    // I need this for the EditorTestCase for which two LTW were equal 
+    return myNodePointer.equals(that.myNodePointer) && isTestCase() == that.isTestCase();
   }
 
   /**

@@ -2737,6 +2737,33 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="4oHspw32avP" role="3cqZAp">
+          <node concept="3clFbS" id="4oHspw32avR" role="3clFbx">
+            <node concept="3clFbF" id="4oHspw32B11" role="3cqZAp">
+              <node concept="1rXfSq" id="4oHspw32B0Z" role="3clFbG">
+                <ref role="37wK5l" node="36vIONTtPtQ" resolve="rebuild" />
+              </node>
+            </node>
+          </node>
+          <node concept="1Wc70l" id="4oHspw32nTG" role="3clFbw">
+            <node concept="2YIFZM" id="4oHspw32wCJ" role="3uHU7w">
+              <ref role="37wK5l" node="3b_6O4IZPfX" resolve="isHidePassed" />
+              <ref role="1Pybhc" node="3b_6O4IZPfR" resolve="UnitTestOptions" />
+            </node>
+            <node concept="3clFbC" id="4oHspw32jLf" role="3uHU7B">
+              <node concept="1rXfSq" id="4oHspw32fDz" role="3uHU7B">
+                <ref role="37wK5l" node="VBQraX2zz8" resolve="getTestNodeState" />
+                <node concept="37vLTw" id="4oHspw32jrF" role="37wK5m">
+                  <ref role="3cqZAo" node="2ZbjobgKQzQ" resolve="currentNode" />
+                </node>
+              </node>
+              <node concept="Rm8GO" id="4oHspw32nxJ" role="3uHU7w">
+                <ref role="Rm8GQ" node="36vIONTtRkH" resolve="PASSED" />
+                <ref role="1Px2BO" node="36vIONTtRjI" resolve="TestState" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="2AHcQZ" id="2Zbjobgpxjt" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />

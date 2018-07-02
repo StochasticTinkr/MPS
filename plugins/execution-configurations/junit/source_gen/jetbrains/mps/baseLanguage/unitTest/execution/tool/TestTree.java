@@ -291,6 +291,9 @@ public class TestTree extends MPSTree implements Disposable, TestStateListener {
   public void onTestFinish(TestNodeEvent event) {
     ITestNodeWrapper currentNode = event.getTestKey().getNode();
     updateStateSpecial(currentNode, TestState.PASSED);
+    if (getTestNodeState(currentNode) == TestState.PASSED && UnitTestOptions.isHidePassed()) {
+      rebuild();
+    }
   }
 
   @Override

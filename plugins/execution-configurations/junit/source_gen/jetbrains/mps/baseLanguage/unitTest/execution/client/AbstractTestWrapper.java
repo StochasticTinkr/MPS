@@ -91,9 +91,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
 
   @Override
   public int hashCode() {
-    int result = 0;
-    result = 31 * result + ((myNodePointer != null ? myNodePointer.hashCode() : 0));
-    return result;
+    return myNodePointer.hashCode();
   }
 
   @Nullable
