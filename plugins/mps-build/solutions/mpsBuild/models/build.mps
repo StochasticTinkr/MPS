@@ -4000,7 +4000,7 @@
         </node>
         <node concept="1SiIV0" id="1xb0AuwNc7z" role="3bR37C">
           <node concept="3bR9La" id="1xb0AuwNc7$" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="1xb0AuwMYDt" resolve="Hamcrest" />
           </node>
         </node>
@@ -7282,12 +7282,6 @@
             <node concept="3bR9La" id="7YI57w6K090" role="1SiIV1">
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="3MI1gu0Qmnt" resolve="jetbrains.mps.baseLanguage.extensionMethods" />
-            </node>
-          </node>
-          <node concept="1SiIV0" id="7YI57w6K091" role="3bR37C">
-            <node concept="3bR9La" id="7YI57w6K092" role="1SiIV1">
-              <property role="3bR36h" value="false" />
-              <ref role="3bR37D" node="7Kfy9QB6KZ0" resolve="jetbrains.mps.baseLanguageInternal" />
             </node>
           </node>
           <node concept="1SiIV0" id="7YI57w6K093" role="3bR37C">
