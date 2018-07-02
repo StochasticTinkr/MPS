@@ -87,12 +87,12 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
         } else if (exitCode < 0) {
           Assert.fail("Process is running for too long");
         }
-        if (runState.???() != failedMustBe) {
-          Assert.fail("The number of failed tests be equal to " + failedMustBe + ", but " + runState.???());
+        if (runState.getFailedTests() != failedMustBe) {
+          Assert.fail("The number of failed tests be equal to " + failedMustBe + ", but " + runState.getFailedTests());
         }
         int completedMustBe = ListSequence.fromList(failure).count() + ListSequence.fromList(success).count();
-        if (runState.???() != completedMustBe) {
-          Assert.fail("The number of completed tests be equal to " + ListSequence.fromList(failure).count() + ", but " + runState.???());
+        if (runState.getCompletedTests() != completedMustBe) {
+          Assert.fail("The number of completed tests be equal to " + ListSequence.fromList(failure).count() + ", but " + runState.getFailedTests());
         }
         if (!(checkListener.value.getMessages().equals(""))) {
           Assert.fail(checkListener.value.getMessages());
