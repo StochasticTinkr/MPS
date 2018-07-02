@@ -264,7 +264,10 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestProgressLine" file="TestProgressLine.java">
+    <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.progress.util.ColorProgressBar" />
+    <classNode dependClassName="com.intellij.ui.SimpleColoredComponent" />
+    <classNode dependClassName="com.intellij.ui.SimpleTextAttributes" />
     <classNode dependClassName="com.intellij.ui.components.panels.NonOpaquePanel" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Color" />
@@ -272,9 +275,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="javax.swing.BorderFactory" />
-    <classNode dependClassName="javax.swing.JLabel" />
+    <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JProgressBar" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />

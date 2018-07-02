@@ -4,8 +4,10 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 
 import javax.swing.JPanel;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener;
+import com.intellij.ui.SimpleTextAttributes;
+import com.intellij.openapi.progress.util.ColorProgressBar;
 import javax.swing.JProgressBar;
-import javax.swing.JLabel;
+import com.intellij.ui.SimpleColoredComponent;
 import com.intellij.ui.components.panels.NonOpaquePanel;
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
@@ -13,17 +15,21 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData;
 import javax.swing.SwingUtilities;
 import java.awt.Color;
-import com.intellij.openapi.progress.util.ColorProgressBar;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
+import javax.swing.Icon;
+import com.intellij.icons.AllIcons;
 
 /**
  * todo no reflection of ignore/assumptions/skipped tests whatsoever
  * the prototype is the idea test tool
  */
 public class TestProgressLine extends JPanel implements TestRunStateUpdateListener {
+  private static final SimpleTextAttributes IGNORE_ATTRIBUTES = new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, ColorProgressBar.YELLOW);
+  private static final SimpleTextAttributes ERROR_ATTRIBUTES = new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, ColorProgressBar.RED_TEXT);
+
   private static final int TOTAL_UNITS = 100;
   private final JProgressBar myProgressBar = new JProgressBar();
-  private final JLabel myStateLabel = new JLabel("Starting...");
+  private final SimpleColoredComponent myLabel = new SimpleColoredComponent();
   private final JPanel myProgressPanel = new NonOpaquePanel(new BorderLayout());
 
   public TestProgressLine() {
@@ -33,7 +39,7 @@ public class TestProgressLine extends JPanel implements TestRunStateUpdateListen
     myProgressBar.putClientProperty("ProgressBar.flatEnds", Boolean.TRUE);
     myProgressBar.setMaximum(TOTAL_UNITS);
     JPanel labelWrapper = new NonOpaquePanel(new BorderLayout());
-    labelWrapper.add(myStateLabel, BorderLayout.NORTH);
+    labelWrapper.add(myLabel, BorderLayout.NORTH);
     myProgressBar.setBorder(BorderFactory.createEmptyBorder(0, 2, 0, 2));
     myProgressBar.setIndeterminate(true);
     add(labelWrapper, BorderLayout.CENTER);
@@ -83,53 +89,84 @@ public class TestProgressLine extends JPanel implements TestRunStateUpdateListen
     int completed = data.getCompletedCount();
     int passed = data.getPassedCount();
     TestNodeKey testNode = data.getCurrentTestNode();
-    StringBuilder sb = new StringBuilder();
+    constructLabelFromData(total, completed, data, failed, passed, ignored, skipped, testNode);
+    Icon iconForData = calcIconFromData(total, completed, data, failed, passed, ignored, skipped, testNode);
+    if (iconForData != null) {
+      myLabel.setIcon(iconForData);
+    }
+  }
+
+  private Icon calcIconFromData(int total, int completed, TestRunData data, int failed, int passed, int ignored, int skipped, TestNodeKey testNode) {
+    if (data.isTerminated()) {
+      if (!(data.isFinished())) {
+        return AllIcons.RunConfigurations.TestTerminated;
+      } else {
+        if (completed != total) {
+          return AllIcons.RunConfigurations.TestError;
+        }
+        if (failed > 0) {
+          return AllIcons.RunConfigurations.TestFailed;
+        }
+        if (skipped > 0) {
+          return AllIcons.RunConfigurations.TestSkipped;
+        }
+        if (ignored > 0) {
+          return AllIcons.RunConfigurations.TestIgnored;
+        }
+        return AllIcons.RunConfigurations.TestPassed;
+      }
+    }
+    return null;
+  }
+
+  private void constructLabelFromData(int total, int completed, TestRunData data, int failed, int passed, int ignored, int skipped, TestNodeKey testNode) {
+    myLabel.clear();
     boolean done = (total == completed);
     if (!(done) && data.isTerminated()) {
       if (data.isFinished()) {
-        sb.append("Finished. ");
+        myLabel.append("Finished. ");
       } else {
         if (data.isTerminatedCorrectly()) {
-          sb.append("Stopped. ");
+          myLabel.append("Stopped. ");
         } else {
-          sb.append("Terminated. ");
+          myLabel.append("Terminated. ");
         }
       }
     }
     boolean smthWrittenAlready = false;
     if (failed > 0) {
-      sb.append("Tests failed: " + failed);
+      myLabel.append("Tests failed: " + failed, ERROR_ATTRIBUTES);
       smthWrittenAlready = true;
     } else {
-      sb.append("Tests ");
+      myLabel.append("Tests ");
     }
     if (passed > 0 || ignored + failed + skipped == 0) {
       if (smthWrittenAlready) {
-        sb.append(", ");
+        myLabel.append(", ");
       }
       smthWrittenAlready = true;
-      sb.append("passed: " + passed);
+      myLabel.append("passed: " + passed);
     }
     if (ignored > 0) {
       if (smthWrittenAlready) {
-        sb.append(", ");
+        myLabel.append(", ");
       }
       smthWrittenAlready = true;
-      sb.append("ignored: " + ignored);
+      myLabel.append("ignored: " + ignored, IGNORE_ATTRIBUTES);
     }
     if (skipped > 0) {
       if (smthWrittenAlready) {
-        sb.append(", ");
+        myLabel.append(", ");
       }
-      sb.append("skipped: " + skipped);
+      myLabel.append("skipped: " + skipped, IGNORE_ATTRIBUTES);
     }
     if (total > 0) {
-      sb.append(" of " + total + " test" + ((total > 1 ? "s" : "")));
+      myLabel.append(" of " + total + " test" + ((total > 1 ? "s" : "")), SimpleTextAttributes.GRAYED_ATTRIBUTES);
     }
     String qualifiedName = (testNode == null ? "" : testNode.getQualifiedName());
     if (!(data.isTerminated()) && !(done) && testNode != null) {
-      sb.append(". Running now: " + qualifiedName);
+      myLabel.append(". ", SimpleTextAttributes.GRAYED_ATTRIBUTES);
+      myLabel.append("Running now: " + qualifiedName, SimpleTextAttributes.DARK_TEXT);
     }
-    myStateLabel.setText(sb.toString());
   }
 }

@@ -60,7 +60,6 @@ public final class TestRunData {
     return myIgnoredTests;
   }
 
-
   @Nullable
   public TestNodeKey getCurrentTestNode() {
     return myCurrentTestNode;

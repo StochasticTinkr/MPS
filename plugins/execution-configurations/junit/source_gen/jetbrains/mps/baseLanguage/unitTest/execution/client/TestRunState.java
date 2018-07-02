@@ -22,8 +22,9 @@ import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeEvent;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestRawEvent;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.unitTest.execution.TestCaseNodeKey;
 import org.apache.log4j.Level;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestType;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestCaseNodeKey;
 import jetbrains.mps.baseLanguage.unitTest.execution.TerminationTestEvent;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent;
@@ -34,6 +35,8 @@ import org.jetbrains.annotations.TestOnly;
 /**
  * State of test execution; updates associated {@link jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener } when there's a change.
  * fix mutability by implementing TestStateListener in all listeners
+ * 
+ * probable fix: store the state for each test here (not in TestTree for instance), since we use the state notion at least in TestTree, TestProgressLine (and TestStatisticsTable)
  */
 @Mutable
 public final class TestRunState {
@@ -129,13 +132,16 @@ public final class TestRunState {
         it.onTestFinish(nodeEvent);
       }
     });
-    myInnerData.myCompletedTests++;
+    myInnerData.myCompletedTests += getCurrentEventTestsCount(nodeEvent);
     notifyUpdateListeners();
     myInnerData.myCurrentTestNode = null;
     removeFinishedTestEvent(event);
   }
 
   private void log(String msg) {
+    if (LOG.isEnabledFor(Level.WARN)) {
+      LOG.warn(msg);
+    }
   }
 
   /*package*/ void onTestRunStarted() {
@@ -165,7 +171,20 @@ public final class TestRunState {
         it.onTestAssumptionFailure(nodeEvent);
       }
     });
-    myInnerData.mySkippedTests++;
+    myInnerData.mySkippedTests += getCurrentEventTestsCount(nodeEvent);
+  }
+
+  /**
+   * Almost always the event comes for each method. However sometimes it might come only for the whole test case.
+   * I guess the only place where we can have a whole testcase started and failed is
+   * when we fail with assumptionfailedrunner but still lets have the common code for all the counters
+   */
+  private int getCurrentEventTestsCount(@NotNull TestNodeEvent nodeEvent) {
+    int testCount = 1;
+    if (nodeEvent.getTestType() == TestType.TESTCASE) {
+      testCount = ListSequence.fromList(MapSequence.fromMap(myTestCase2MethodsMap).get(nodeEvent.getTestKey().getNode())).count();
+    }
+    return testCount;
   }
 
   public void onTestIgnored(TestRawEvent event) {
@@ -176,7 +195,7 @@ public final class TestRunState {
         it.onTestIgnored(nodeEvent);
       }
     });
-    myInnerData.myIgnoredTests++;
+    myInnerData.myIgnoredTests += getCurrentEventTestsCount(nodeEvent);
   }
 
   public void onTestFailure(TestRawEvent event) {
@@ -187,7 +206,7 @@ public final class TestRunState {
         it.onTestFailure(nodeEvent);
       }
     });
-    myInnerData.myFailedTests++;
+    myInnerData.myFailedTests += getCurrentEventTestsCount(nodeEvent);
   }
 
   private void removeFinishedTestEvent(TestRawEvent event) {
