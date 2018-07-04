@@ -5,6 +5,7 @@ package jetbrains.mps.persistence.xml;
 import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.environment.Environment;
+import org.apache.log4j.BasicConfigurator;
 import org.jetbrains.annotations.NotNull;
 import org.junit.Before;
 import org.junit.After;
@@ -34,6 +35,10 @@ import java.io.ByteArrayOutputStream;
 public class XmlConverterTest implements EnvironmentAware {
   private Project myProject;
   private Environment myEnvironment;
+
+  static {
+    BasicConfigurator.configure();
+  }
 
   /**
    * 

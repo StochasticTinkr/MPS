@@ -18,6 +18,7 @@
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="ew0j" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.tool.environment(Testbench/)" />
     <import index="rjhg" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit(JUnit/)" />
+    <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -144,6 +145,9 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="1221737317277" name="jetbrains.mps.baseLanguage.structure.StaticInitializer" flags="lg" index="1Pe0a1">
+        <child id="1221737317278" name="statementList" index="1Pe0a2" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
@@ -203,6 +207,17 @@
       </node>
     </node>
     <node concept="2tJIrI" id="7lI3zKZ52Q6" role="jymVt" />
+    <node concept="1Pe0a1" id="7pjPheuLwXE" role="jymVt">
+      <node concept="3clFbS" id="7pjPheuLwXG" role="1Pe0a2">
+        <node concept="3clFbF" id="7pjPheuPDuW" role="3cqZAp">
+          <node concept="2YIFZM" id="7pjPheuPDwc" role="3clFbG">
+            <ref role="37wK5l" to="q7tw:~BasicConfigurator.configure():void" resolve="configure" />
+            <ref role="1Pybhc" to="q7tw:~BasicConfigurator" resolve="BasicConfigurator" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7pjPheuLpeD" role="jymVt" />
     <node concept="3clFb_" id="7lI3zKZ53Is" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="setEnvironment" />
