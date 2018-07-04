@@ -2677,7 +2677,7 @@
       </node>
       <node concept="3clFbS" id="4e85Rl_lPuK" role="3clF47">
         <node concept="RRSsy" id="4e85Rl_mzSq" role="3cqZAp">
-          <property role="RRSoG" value="warn" />
+          <property role="RRSoG" value="trace" />
           <node concept="37vLTw" id="4e85Rl_mzU7" role="RRSoy">
             <ref role="3cqZAo" node="4e85Rl_lPuS" resolve="msg" />
           </node>
