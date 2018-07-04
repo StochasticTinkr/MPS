@@ -52,7 +52,7 @@ public final class TestEventMessage {
   }
 
   public boolean isErrored() {
-    return myToken.equals(FAILURE_TEST_BEGIN) || myToken.equals(ASSUMPTION_FAILURE_TEST_PREFIX);
+    return myToken.equals(FAILURE_TEST_BEGIN) || myToken.equals(ASSUMPTION_FAILURE_TEST_PREFIX) || myToken.equals(IGNORE_FAILURE_TEST_PREFIX);
   }
 
   @NotNull

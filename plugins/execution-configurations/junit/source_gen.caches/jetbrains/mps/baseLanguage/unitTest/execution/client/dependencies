@@ -327,7 +327,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeEvent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestRawEvent" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.String2NodeTestKeyConverter" />

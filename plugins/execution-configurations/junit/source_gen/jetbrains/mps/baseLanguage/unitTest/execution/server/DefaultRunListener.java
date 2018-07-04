@@ -23,6 +23,11 @@ public class DefaultRunListener extends RunListener {
     myOutput = out;
   }
 
+  private void flush() {
+    System.out.flush();
+    System.err.flush();
+  }
+
   @Override
   public void testRunStarted(Description description) throws Exception {
     flush();
@@ -35,11 +40,6 @@ public class DefaultRunListener extends RunListener {
     Description fakeDescription = Description.createTestDescription(Object.class, "FAKEDESCRIPTION");
     printSyncToken(TestEventMessage.FINISH_TESTRUN, fakeDescription);
     flush();
-  }
-
-  private void flush() {
-    System.out.flush();
-    System.err.flush();
   }
 
   @Override

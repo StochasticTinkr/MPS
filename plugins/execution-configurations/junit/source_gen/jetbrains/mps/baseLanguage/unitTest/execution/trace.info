@@ -38,7 +38,7 @@
       <node id="1796275887793108266" at="44,28,45,28" concept="4" />
       <node id="1796275887793108310" at="45,28,46,30" concept="10" />
       <node id="1796275887793108346" at="50,28,51,19" concept="10" />
-      <node id="8613889299651060589" at="54,30,55,96" concept="10" />
+      <node id="8613889299651060589" at="54,30,55,142" concept="10" />
       <node id="3443931564291802647" at="59,34,60,19" concept="10" />
       <node id="1796275887793108398" at="65,68,66,19" concept="10" />
       <node id="1796275887793108400" at="67,5,68,58" concept="9" />
@@ -79,7 +79,7 @@
       <node id="1796275887793108018" at="77,0,88,0" concept="14" trace="getEventToken#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1796275887793108073" at="103,0,118,0" concept="14" trace="parse#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/TestEventMessage;" />
       <scope id="1796275887793108345" at="50,28,51,19" />
-      <scope id="8613889299651059898" at="54,30,55,96" />
+      <scope id="8613889299651059898" at="54,30,55,142" />
       <scope id="3443931564291802646" at="59,34,60,19" />
       <scope id="1796275887793108397" at="65,68,66,19" />
       <scope id="1796275887793108437" at="73,25,74,42" />

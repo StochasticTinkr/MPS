@@ -24,7 +24,6 @@ import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.annotations.Internal;
 import org.apache.log4j.Level;
-import jetbrains.mps.baseLanguage.unitTest.execution.TestType;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestCaseNodeKey;
 import jetbrains.mps.baseLanguage.unitTest.execution.TerminationTestEvent;
 import com.intellij.openapi.util.Key;
@@ -49,6 +48,8 @@ public final class TestRunState {
 
   private final String2NodeTestKeyConverter myConverter;
 
+  private final List<ITestNodeWrapper> myTestsWithProblems = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
+
   /**
    * to remove
    */
@@ -71,17 +72,17 @@ public final class TestRunState {
       }
     })) {
       ITestNodeWrapper enclosingTestCase = testMethod.getTestCase();
-      List<ITestNodeWrapper> currentTestMethods = MapSequence.fromMap(myTestCase2MethodsMap).get(enclosingTestCase);
+      List<ITestNodeWrapper> currentTestMethods = getMethodsForTestCase(enclosingTestCase);
       if (currentTestMethods == null) {
         currentTestMethods = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
-        MapSequence.fromMap(myTestCase2MethodsMap).put(enclosingTestCase, currentTestMethods);
       }
       if (!(ListSequence.fromList(currentTestMethods).contains(testMethod))) {
         ListSequence.fromList(currentTestMethods).addElement(testMethod);
       }
+      MapSequence.fromMap(myTestCase2MethodsMap).put(enclosingTestCase, currentTestMethods);
     }
     for (ITestNodeWrapper testCase : MapSequence.fromMap(myTestCase2MethodsMap).keySet()) {
-      for (ITestNodeWrapper testMethod : MapSequence.fromMap(myTestCase2MethodsMap).get(testCase)) {
+      for (ITestNodeWrapper testMethod : getMethodsForTestCase(testCase)) {
         ListSequence.fromList(myInnerData.myTestMethodsLeftToRun).addElement(new TestMethodNodeKey(testMethod));
       }
     }
@@ -173,7 +174,7 @@ public final class TestRunState {
         it.onTestAssumptionFailure(nodeEvent);
       }
     });
-    myInnerData.mySkippedTests += getCurrentEventTestsCount(nodeEvent);
+    myInnerData.mySkippedTests += getCurrentNotProblemTestsCount(nodeEvent);
   }
 
   /**
@@ -182,11 +183,42 @@ public final class TestRunState {
    * when we fail with assumptionfailedrunner but still lets have the common code for all the counters
    */
   private int getCurrentEventTestsCount(@NotNull TestNodeEvent nodeEvent) {
-    int testCount = 1;
-    if (nodeEvent.getTestType() == TestType.TESTCASE) {
-      testCount = ListSequence.fromList(MapSequence.fromMap(myTestCase2MethodsMap).get(nodeEvent.getTestKey().getNode())).count();
+    if (nodeEvent.isTestCaseEvent()) {
+      return ListSequence.fromList(getMethodsForTestCase(nodeEvent.getTestKey().getNode())).count();
+    } else {
+      return 1;
     }
-    return testCount;
+  }
+
+  /**
+   * here we fix up the possible multiple #onTestFailed, #onTestIgnored events.
+   * in order to adjust the counters in the InnerData we record already seen errors in the #myTestsWithProblems
+   * 
+   * it is to be replaced with the honest state recording like we can see currently in the TestTree implementation
+   */
+  private int getCurrentNotProblemTestsCount(@NotNull TestNodeEvent nodeEvent) {
+    ITestNodeWrapper node = nodeEvent.getTestKey().getNode();
+    if (ListSequence.fromList(myTestsWithProblems).contains(node)) {
+      return 0;
+    }
+    ListSequence.fromList(myTestsWithProblems).addElement(node);
+    if (nodeEvent.isTestCaseEvent()) {
+      int result = 0;
+      for (ITestNodeWrapper method : ListSequence.fromList(getMethodsForTestCase(node))) {
+        if (!(ListSequence.fromList(myTestsWithProblems).contains(method))) {
+          ListSequence.fromList(myTestsWithProblems).addElement(node);
+          ++result;
+        }
+      }
+      return result;
+    } else {
+      // test case node cannot get in the list without all the containing methods 
+      return 1;
+    }
+  }
+
+  private List<ITestNodeWrapper> getMethodsForTestCase(ITestNodeWrapper node) {
+    return MapSequence.fromMap(myTestCase2MethodsMap).get(node);
   }
 
   public void onTestIgnored(TestRawEvent event) {
@@ -197,7 +229,7 @@ public final class TestRunState {
         it.onTestIgnored(nodeEvent);
       }
     });
-    myInnerData.myIgnoredTests += getCurrentEventTestsCount(nodeEvent);
+    myInnerData.myIgnoredTests += getCurrentNotProblemTestsCount(nodeEvent);
   }
 
   public void onTestFailure(TestRawEvent event) {
@@ -208,7 +240,7 @@ public final class TestRunState {
         it.onTestFailure(nodeEvent);
       }
     });
-    myInnerData.myFailedTests += getCurrentEventTestsCount(nodeEvent);
+    myInnerData.myFailedTests += getCurrentNotProblemTestsCount(nodeEvent);
   }
 
   private void removeFinishedTestEvent(TestRawEvent event) {
