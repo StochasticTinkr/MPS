@@ -36,17 +36,16 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.NotificationListener;
 import javax.swing.event.HyperlinkEvent;
@@ -55,6 +54,7 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.migration.wizard.MigrationWizard;
 import jetbrains.mps.ide.migration.wizard.MigrationError;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import java.util.ArrayList;
 import jetbrains.mps.migration.global.MigrationProblemHandler;
@@ -83,6 +83,7 @@ import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.migration.global.ProjectMigration;
 
 /**
  * At the first startup, migration is not required
@@ -107,7 +108,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   private final ReloadManager myReloadManager;
 
   private boolean myMigrationForbidden = false;
-  private boolean myMigrationPostponed = false;
+  private MigrationTrigger.PostponedState myPostponedState = null;
   private int myBlocked = 0;
   private Consumer<Iterable<SModuleReference>> myRebuildHandler = null;
 
@@ -279,7 +280,16 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   }
 
   private boolean isMigrationRequired(Iterable<SModule> modules2Check) {
-    return myMigrationRegistry.importVersionsUpdateRequired(modules2Check) || CollectionSequence.fromCollection(myMigrationRegistry.getModuleMigrations(modules2Check)).isNotEmpty() || CollectionSequence.fromCollection(myMigrationRegistry.getProjectMigrations()).isNotEmpty();
+    MigrationTrigger.PostponedState current = new MigrationTrigger.PostponedState();
+    current.versionUpdate = myMigrationRegistry.importVersionsUpdateRequired(modules2Check);
+    current.scripts = myMigrationRegistry.getModuleMigrations(modules2Check);
+    current.projectMigrations = myMigrationRegistry.getProjectMigrations();
+
+    if (myPostponedState != null) {
+      current = current.substract(myPostponedState);
+    }
+
+    return current.hasSomethingToApply();
   }
 
   private synchronized void checkMigrationNeededOnLanguageReload(Iterable<Language> languages) {
@@ -330,18 +340,18 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
                 syncRefresh();
               }
             });
-
-            final Wrappers._boolean resave = new Wrappers._boolean();
-            final Wrappers._boolean migrate = new Wrappers._boolean();
+            final MigrationTrigger.PostponedState newState = new MigrationTrigger.PostponedState();
             myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
               public void run() {
-                resave.value = myMigrationRegistry.importVersionsUpdateRequired(MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject));
-                migrate.value = myMigrationRegistry.isMigrationRequired();
+                Iterable<SModule> modules = MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject);
+                newState.versionUpdate = myMigrationRegistry.importVersionsUpdateRequired(modules);
+                newState.scripts = myMigrationRegistry.getModuleMigrations(modules);
+                newState.projectMigrations = myMigrationRegistry.getProjectMigrations();
               }
             });
 
             myMigrationForbidden = false;
-            if (myMigrationPostponed && !(forceAssistant)) {
+            if (myPostponedState != null && !(forceAssistant)) {
               if (myLastNotification != null && !(myLastNotification.isExpired())) {
                 return;
               }
@@ -353,7 +363,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
                   }
                   if ("migrate".equals(e.getDescription())) {
                     synchronized (MigrationTrigger.this) {
-                      myMigrationPostponed = false;
+                      myPostponedState = null;
                     }
                     postponeMigration(true);
                   }
@@ -361,9 +371,13 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
                 }
               });
               Notifications.Bus.notify(myLastNotification, myProject);
+              myPostponedState = newState;
             } else {
-              if (resave.value || migrate.value) {
-                myMigrationPostponed = runMigration(resave.value, migrate.value);
+              if (newState.hasSomethingToApply()) {
+                boolean migrate = CollectionSequence.fromCollection(newState.scripts).isNotEmpty() || CollectionSequence.fromCollection(newState.projectMigrations).isNotEmpty();
+                if (runMigration(newState.versionUpdate, migrate)) {
+                  myPostponedState = newState;
+                }
               }
             }
           }
@@ -710,5 +724,23 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
         return !(myClassLoaderManager.getModulesWatcher().getStatus(it.getSourceModuleReference()).isValid());
       }
     }).toListSequence();
+  }
+
+  public class PostponedState {
+    public boolean versionUpdate;
+    public Collection<ScriptApplied> scripts;
+    public Collection<ProjectMigration> projectMigrations;
+
+    public boolean hasSomethingToApply() {
+      return versionUpdate || CollectionSequence.fromCollection(scripts).isNotEmpty() || CollectionSequence.fromCollection(projectMigrations).isNotEmpty();
+    }
+
+    public MigrationTrigger.PostponedState substract(MigrationTrigger.PostponedState state) {
+      MigrationTrigger.PostponedState res = new MigrationTrigger.PostponedState();
+      res.versionUpdate = !(state.versionUpdate) && versionUpdate;
+      res.scripts = CollectionSequence.fromCollection(scripts).subtract(CollectionSequence.fromCollection(state.scripts)).toListSequence();
+      res.projectMigrations = CollectionSequence.fromCollection(projectMigrations).subtract(CollectionSequence.fromCollection(state.projectMigrations)).toListSequence();
+      return res;
+    }
   }
 }
