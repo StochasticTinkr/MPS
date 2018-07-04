@@ -19,7 +19,6 @@ import com.intellij.openapi.editor.Document;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
@@ -68,7 +67,7 @@ public interface TabsComponent {
   void updateTabColors();
 
   ///-------------tab navigation----------------
-  abstract void nextTab();
+  void nextTab();
 
-  abstract void prevTab();
+  void prevTab();
 }

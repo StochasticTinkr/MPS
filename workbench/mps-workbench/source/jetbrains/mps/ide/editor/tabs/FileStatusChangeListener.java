@@ -39,9 +39,9 @@ import java.util.Map;
  * Listener is shared between multiple editors (one for project) and available as {@link ProjectComponent}.
  */
 class FileStatusChangeListener implements FileStatusListener, ProjectComponent {
-  private Project myProject;
-  private com.intellij.openapi.project.Project myIdeaProject;
-  private Map<SNodeReference, Collection<TabsComponent>> myNodeRef2TabsComponents = new HashMap<>();
+  private final Project myProject;
+  private final com.intellij.openapi.project.Project myIdeaProject;
+  private final Map<SNodeReference, Collection<TabsComponent>> myNodeRef2TabsComponents = new HashMap<>();
 
   public FileStatusChangeListener(com.intellij.openapi.project.Project project) {
     myIdeaProject = project;

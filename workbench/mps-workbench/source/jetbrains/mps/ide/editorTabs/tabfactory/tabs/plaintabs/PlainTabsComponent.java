@@ -18,11 +18,14 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.ui.JBColor;
 import com.intellij.ui.tabs.JBTabsPosition;
 import com.intellij.ui.tabs.TabInfo;
 import com.intellij.ui.tabs.TabsListener;
-import com.intellij.ui.tabs.UiDecorator;
+import com.intellij.ui.tabs.UiDecorator.UiDecoration;
 import com.intellij.ui.tabs.impl.JBTabsImpl;
+import com.intellij.util.ui.JBUI;
+import com.intellij.util.ui.JBUI.Borders;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
@@ -31,24 +34,22 @@ import jetbrains.mps.ide.editorTabs.tabfactory.tabs.TabEditorLayout;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.TabEditorLayout.Entry;
 import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
-import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import java.awt.Insets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class PlainTabsComponent extends BaseTabsComponent {
-  private final List<PlainEditorTab> myRealTabs = new ArrayList<PlainEditorTab>();
+  private final List<PlainEditorTab> myRealTabs = new ArrayList<>();
   private final JBTabsImpl myTabs;
   private RelationDescriptor myLastEmptyTab = null;
   private volatile boolean myRebuilding = false;
@@ -68,30 +69,19 @@ public class PlainTabsComponent extends BaseTabsComponent {
         .setPaintBorder(0, 0, 0, 0)
         .setTabSidePaintBorder(1)
         .setGhostsAlwaysVisible(false)
-        .setUiDecorator(new UiDecorator() {
-          @NotNull
-          @Override
-          public UiDecoration getDecoration() {
-            return new UiDecoration(null, new Insets(0, 8, 0, 8));
-          }
-        });
-    myTabs.setBorder(new EmptyBorder(0, 0, 1, 0));
+        .setUiDecorator(() -> new UiDecoration(null, JBUI.insets(0, 8, 0, 8)));
+    myTabs.setBorder(Borders.emptyBottom(1));
 
     setContent(myTabs);
 
-    myTabs.addListener(new TabsListener.Adapter() {
+    myTabs.addListener(new TabsListener() {
       @Override
       public void selectionChanged(TabInfo oldSelection, TabInfo newSelection) {
         if (isDisposed() || myRebuilding) {
           return;
         }
 
-        getProject().getModelAccess().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            onTabIndexChange();
-          }
-        });
+        getProject().getModelAccess().runReadAction(() -> onTabIndexChange());
       }
     });
   }
@@ -109,7 +99,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     int index = myTabs.getIndexOf(myTabs.getSelectedInfo());
     PlainEditorTab tab = myRealTabs.get(index);
     SNodeReference np = tab.getNode();
-    if (np != null && EqualUtil.equals(np, getEditedNode())) {
+    if (np != null && np.equals(getEditedNode())) {
       return;
     }
 
@@ -153,7 +143,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
 
     //not to make infinite recursion when tab is clicked
-    if (EqualUtil.equals(node, getEditedNode())) {
+    if (Objects.equals(node, getEditedNode())) {
       return;
     }
 
@@ -238,7 +228,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
           myRealTabs.add(new PlainEditorTab(tab));
 
           TabInfo info = new TabInfo(new JLabel(""))
-              .setText(tab.getTitle()).setDefaultForeground(Color.GRAY)
+              .setText(tab.getTitle()).setDefaultForeground(JBColor.GRAY)
               .setPreferredFocusableComponent(myEditor);
           myTabs.addTab(info);
         }
@@ -252,7 +242,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     // selectedNode.resolve() != null even for removed roots because at the moment we get #updateTabs() from commandFinish
     if (selectedNode != null && selectedNode.resolve(getProject().getRepository()) != null) {
       for (PlainEditorTab tab : myRealTabs) {
-        if (EqualUtil.equals(tab.getNode(), selectedNode)) {
+        if (selectedNode.equals(tab.getNode())) {
           myTabs.select(myTabs.getTabAt(myRealTabs.indexOf(tab)), true);
           selectionRestored = true;
           break;

@@ -34,8 +34,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
 import java.awt.Component;
-import java.awt.event.HierarchyEvent;
-import java.awt.event.HierarchyListener;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -43,27 +41,20 @@ import java.util.List;
 import java.util.Set;
 
 public class ButtonTabsComponent extends BaseTabsComponent {
-  private List<ButtonEditorTab> myRealTabs = new ArrayList<>();
+  private final List<ButtonEditorTab> myRealTabs = new ArrayList<>();
   private ActionToolbar myToolbar = null;
 
   public ButtonTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed,
       Project project) {
     super(baseNode, possibleTabs, editor, callback, showGrayed, null, project);
 
-    getComponent().addHierarchyListener(new HierarchyListener() {
-      @Override
-      public void hierarchyChanged(HierarchyEvent e) {
-        getProject().getModelAccess().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            if (isDisposed() || !getComponent().isDisplayable()) {
-              return;
-            }
-            updateTabs();
+    getComponent().addHierarchyListener(
+        hierarchyEvent -> getProject().getModelAccess().runReadAction(() -> {
+          if (isDisposed() || !getComponent().isDisplayable()) {
+            return;
           }
-        });
-      }
-    });
+          updateTabs();
+        }));
   }
 
   public Component getComponentForTabIndex(int index) {
@@ -115,12 +106,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
 
     myRealTabs.clear();
 
-    final NodeChangeCallback callback = new NodeChangeCallback() {
-      @Override
-      public void changeNode(SNodeReference newNode) {
-        editNode(newNode);
-      }
-    };
+    final NodeChangeCallback callback = this::editNode;
     TabEditorLayout newContent = updateDocumentsAndNodes();
     for (RelationDescriptor tabDescriptor : myPossibleTabs) {
       if (newContent.covers(tabDescriptor)) {

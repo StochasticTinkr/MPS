@@ -267,6 +267,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
     Editor oldNodeEditor = myNodeEditor;
     myNodeEditor = new MPSEditorOpener(myProject).createEditorFor(myFile.getNode());
+    myNodeEditor.showNode(myFile.getNode(), false);
     if (oldNodeEditor != null) {
       oldNodeEditor.dispose();
     }
