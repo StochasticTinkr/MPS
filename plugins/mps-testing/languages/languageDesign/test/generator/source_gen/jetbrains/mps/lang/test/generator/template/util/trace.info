@@ -9,37 +9,37 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:3d2b27a7-4374-41aa-af31-19e1e430d9f5(jetbrains.mps.lang.test.generator.template.util)/882854394069504727">
     <file name="TestsUtil.java">
-      <node id="8630358206816345210" at="25,79,26,106" concept="5" />
-      <node id="8630358206816306670" at="26,106,27,33" concept="4" />
-      <node id="8630358206816303321" at="30,53,31,265" concept="3" />
-      <node id="8630358206816303330" at="32,30,33,25" concept="4" />
-      <node id="8630358206816303335" at="34,5,35,180" concept="1" />
-      <node id="8630358206816303349" at="35,180,36,14" concept="4" />
-      <node id="882854394069695316" at="39,61,40,324" concept="4" />
-      <node id="882854394069504729" at="17,0,19,0" concept="0" trace="TestsUtil#()V" />
-      <node id="8630358206816303328" at="31,265,34,5" concept="2" />
-      <node id="882854394069695309" at="39,0,42,0" concept="6" trace="getTestBodyClassName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="882854394069504737" at="24,0,29,0" concept="6" trace="getProjectPath#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Ljava/lang/String;" />
-      <node id="8630358206816302647" at="30,0,38,0" concept="6" trace="getProjectPath#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/String;" />
-      <scope id="882854394069504732" at="17,23,17,23" />
-      <scope id="8630358206816303329" at="32,30,33,25" />
-      <scope id="882854394069695312" at="39,61,40,324" />
-      <scope id="882854394069504729" at="17,0,19,0" />
-      <scope id="882854394069504740" at="25,79,27,33" />
-      <scope id="882854394069695309" at="39,0,42,0">
+      <node id="8630358206816345210" at="26,79,27,106" concept="5" />
+      <node id="8630358206816306670" at="27,106,28,33" concept="4" />
+      <node id="8630358206816303321" at="31,53,32,265" concept="3" />
+      <node id="8630358206816303330" at="33,30,34,48" concept="4" />
+      <node id="8630358206816303335" at="35,5,36,180" concept="1" />
+      <node id="8630358206816303349" at="36,180,37,14" concept="4" />
+      <node id="882854394069695316" at="40,61,41,324" concept="4" />
+      <node id="882854394069504729" at="18,0,20,0" concept="0" trace="TestsUtil#()V" />
+      <node id="8630358206816303328" at="32,265,35,5" concept="2" />
+      <node id="882854394069695309" at="40,0,43,0" concept="6" trace="getTestBodyClassName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="882854394069504737" at="25,0,30,0" concept="6" trace="getProjectPath#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Ljava/lang/String;" />
+      <node id="8630358206816302647" at="31,0,39,0" concept="6" trace="getProjectPath#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/String;" />
+      <scope id="882854394069504732" at="18,23,18,23" />
+      <scope id="8630358206816303329" at="33,30,34,48" />
+      <scope id="882854394069695312" at="40,61,41,324" />
+      <scope id="882854394069504729" at="18,0,20,0" />
+      <scope id="882854394069504740" at="26,79,28,33" />
+      <scope id="882854394069695309" at="40,0,43,0">
         <var name="testCase" id="882854394069695314" />
       </scope>
-      <scope id="882854394069504737" at="24,0,29,0">
+      <scope id="882854394069504737" at="25,0,30,0">
         <var name="model" id="882854394069504788" />
         <var name="unused" id="8630358206816304877" />
       </scope>
-      <scope id="8630358206816302088" at="30,53,36,14">
+      <scope id="8630358206816302088" at="31,53,37,14">
         <var name="projectPath" id="8630358206816303322" />
       </scope>
-      <scope id="8630358206816302647" at="30,0,38,0">
+      <scope id="8630358206816302647" at="31,0,39,0">
         <var name="model" id="8630358206816309192" />
       </scope>
-      <unit id="882854394069504727" at="16,0,43,0" name="jetbrains.mps.lang.test.generator.template.util.TestsUtil" />
+      <unit id="882854394069504727" at="17,0,44,0" name="jetbrains.mps.lang.test.generator.template.util.TestsUtil" />
     </file>
   </root>
 </debug-info>

@@ -251,8 +251,12 @@
         <node concept="3clFbJ" id="7v5ch11Erzw" role="3cqZAp">
           <node concept="3clFbS" id="7v5ch11Erzx" role="3clFbx">
             <node concept="3cpWs6" id="7v5ch11Erzy" role="3cqZAp">
-              <node concept="37vLTw" id="7v5ch11Erzz" role="3cqZAk">
-                <ref role="3cqZAo" node="7v5ch11Erzq" resolve="projectPath" />
+              <node concept="2YIFZM" id="2$lGPJtm42B" role="3cqZAk">
+                <ref role="37wK5l" to="18ew:~NameUtil.escapeString(java.lang.String):java.lang.String" resolve="escapeString" />
+                <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                <node concept="37vLTw" id="2$lGPJtm4ks" role="37wK5m">
+                  <ref role="3cqZAo" node="7v5ch11Erzq" resolve="projectPath" />
+                </node>
               </node>
             </node>
           </node>

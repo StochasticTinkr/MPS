@@ -329,38 +329,38 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Iterable<SNode> sourceNodesQuery_a0a0a0b0a0(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11a2f985130L, 0x11a2f98d40fL, "after"));
   }
-  public static Iterable<SNode> sourceNodesQuery_a0f(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_a0e(final SourceSubstituteMacroNodesContext _context) {
     return ITestCase__BehaviorDescriptor.getTestSet_idhGB2z8L.invoke(_context.getNode());
   }
-  public static Iterable<SNode> sourceNodesQuery_a0a0h(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_a0a0g(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x2045125020efb661L, "beforeTests")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
   }
-  public static Iterable<SNode> sourceNodesQuery_a0a0j(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_a0a0i(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x2045125020efb66cL, "afterTests")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
   }
-  public static Iterable<SNode> sourceNodesQuery_a0a11(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_a0a01(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x11b78c499b5L, "testMethods"));
   }
-  public static Iterable<SNode> sourceNodesQuery_a0c11(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_a0c01(final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"), false, new SAbstractConcept[]{});
   }
-  public static Iterable<SNode> sourceNodesQuery_a0a0e11(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_a0a0e01(final SourceSubstituteMacroNodesContext _context) {
     Set<SNode> set = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (SNode ref : ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1d33213L, "jetbrains.mps.lang.test.structure.TestNodeReference"), false, new SAbstractConcept[]{}))) {
       SetSequence.fromSet(set).addElement(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1d33213L, 0x119e1d356c6L, "declaration")));
     }
     return ListSequence.fromListWithValues(new ArrayList<SNode>(), set);
   }
-  public static Iterable<SNode> sourceNodesQuery_a0b0e11(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_a0b0e01(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
   }
-  public static Iterable<SNode> sourceNodesQuery_a0e11(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_a0e01(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x11b5a762e97L, "methods"));
   }
-  public static Iterable<SNode> sourceNodesQuery_a0a4l(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_a0a4k(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"));
   }
-  public static Iterable<SNode> sourceNodesQuery_a0a4l_0(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_a0a4k_0(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x10f383d6949L, "throwsItem"));
   }
   public static Iterable<SNode> sourceNodesQuery_a0a0a0(final SourceSubstituteMacroNodesContext _context) {
@@ -382,7 +382,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Iterable<SNode> sourceNodesQuery_a0a0f6(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x486f8079df2fd868L, "logEvents"));
   }
-  public static Iterable<SNode> sourceNodesQuery_a0e(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_a0e_0(final SourceSubstituteMacroNodesContext _context) {
     return ITestCase__BehaviorDescriptor.getTestSet_idhGB2z8L.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_a0a0a0a0g(final SourceSubstituteMacroNodesContext _context) {
@@ -567,25 +567,25 @@ public class QueriesGenerated extends QueryProviderBase {
         case 4:
           return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0b0a0(ctx));
         case 5:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0f(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0e(ctx));
         case 6:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0h(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0g(ctx));
         case 7:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0j(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0i(ctx));
         case 8:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a11(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a01(ctx));
         case 9:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0c11(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0c01(ctx));
         case 10:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0e11(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0e01(ctx));
         case 11:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0b0e11(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0b0e01(ctx));
         case 12:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0e11(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0e01(ctx));
         case 13:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a4l(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a4k(ctx));
         case 14:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a4l_0(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a4k_0(ctx));
         case 15:
           return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0(ctx));
         case 16:
@@ -597,7 +597,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 19:
           return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0f6(ctx));
         case 20:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0e(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0e_0(ctx));
         case 21:
           return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0a0g(ctx));
         case 22:
