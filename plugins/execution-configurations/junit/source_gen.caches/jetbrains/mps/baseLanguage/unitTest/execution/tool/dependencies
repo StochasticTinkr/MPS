@@ -434,6 +434,7 @@
     <classNode dependClassName="com.intellij.util.ui.UIUtil" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.GridLayout" />
     <classNode dependClassName="java.awt.LayoutManager" />
     <classNode dependClassName="java.beans.PropertyChangeEvent" />

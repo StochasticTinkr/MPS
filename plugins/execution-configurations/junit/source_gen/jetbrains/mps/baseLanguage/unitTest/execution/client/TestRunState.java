@@ -23,9 +23,9 @@ import jetbrains.mps.baseLanguage.unitTest.execution.TestRawEvent;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.annotations.Internal;
+import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestType;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestCaseNodeKey;
-import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.unitTest.execution.TerminationTestEvent;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent;
@@ -141,6 +141,9 @@ public final class TestRunState {
 
   @Internal
   private void log(String msg) {
+    if (LOG.isEnabledFor(Level.WARN)) {
+      LOG.warn(msg);
+    }
   }
 
   /*package*/ void onTestRunStarted() {
@@ -261,9 +264,22 @@ public final class TestRunState {
   }
 
   private void checkConsistency() {
-    assert myInnerData.myCompletedTests <= myInnerData.myTotalTests;
-    assert myInnerData.myFailedTests <= myInnerData.myCompletedTests;
+    if (!(myNotified)) {
+      myNotified = true;
+      if (myInnerData.getPassedCount() < 0) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("consistency is broken: passedCount < 0", new Throwable());
+        }
+      }
+      if (myInnerData.myCompletedTests > myInnerData.myTotalTests) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("consistency is broken: completed > total", new Throwable());
+        }
+      }
+    }
   }
+
+  private boolean myNotified = false;
 
   public void onTextAvailable(@NotNull String text, @NotNull Key key) {
     myInnerData.myAvailableText = text;

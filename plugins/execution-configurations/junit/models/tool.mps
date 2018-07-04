@@ -14111,34 +14111,11 @@
         <node concept="1X3_iC" id="7wORwlIREeX" role="lGtFl">
           <property role="3V$3am" value="statement" />
           <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-          <node concept="3clFbF" id="7dV9$tm6IU9" role="8Wnug">
-            <node concept="2OqwBi" id="7dV9$tm6IUa" role="3clFbG">
-              <node concept="37vLTw" id="2BHiRxeu_FB" role="2Oq$k0">
+          <node concept="3clFbF" id="4o4TRdZa6gN" role="8Wnug">
+            <node concept="1rXfSq" id="4o4TRdZa6gM" role="3clFbG">
+              <ref role="37wK5l" node="4o4TRdZa61L" resolve="setMinimumWidthOfTheProgressToZero" />
+              <node concept="37vLTw" id="4o4TRdZa6gL" role="37wK5m">
                 <ref role="3cqZAo" node="7dV9$tm6ISY" resolve="myProgressLineComponent" />
-              </node>
-              <node concept="liA8E" id="7dV9$tm6IUc" role="2OqNvi">
-                <ref role="37wK5l" to="dxuu:~JComponent.setMinimumSize(java.awt.Dimension):void" resolve="setMinimumSize" />
-                <node concept="2ShNRf" id="7dV9$tm6IUd" role="37wK5m">
-                  <node concept="1pGfFk" id="7dV9$tm6IUe" role="2ShVmc">
-                    <ref role="37wK5l" to="z60i:~Dimension.&lt;init&gt;(int,int)" resolve="Dimension" />
-                    <node concept="3cmrfG" id="7dV9$tm6IUf" role="37wK5m">
-                      <property role="3cmrfH" value="0" />
-                    </node>
-                    <node concept="2OqwBi" id="7dV9$tm6IUg" role="37wK5m">
-                      <node concept="2OqwBi" id="7dV9$tm6IUh" role="2Oq$k0">
-                        <node concept="37vLTw" id="2BHiRxeuvJG" role="2Oq$k0">
-                          <ref role="3cqZAo" node="7dV9$tm6ISY" resolve="myProgressLineComponent" />
-                        </node>
-                        <node concept="liA8E" id="7dV9$tm6IUj" role="2OqNvi">
-                          <ref role="37wK5l" to="dxuu:~JComponent.getMinimumSize():java.awt.Dimension" resolve="getMinimumSize" />
-                        </node>
-                      </node>
-                      <node concept="2OwXpG" id="7dV9$tm6IUk" role="2OqNvi">
-                        <ref role="2Oxat5" to="z60i:~Dimension.height" resolve="height" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
               </node>
             </node>
           </node>
@@ -14319,7 +14296,7 @@
         </node>
         <node concept="3cpWs8" id="7wORwlIUWbh" role="3cqZAp">
           <node concept="3cpWsn" id="7wORwlIUWbi" role="3cpWs9">
-            <property role="TrG5h" value="leftWithOutputPanel" />
+            <property role="TrG5h" value="middleOutputPanel" />
             <node concept="3uibUv" id="7wORwlIUWbj" role="1tU5fm">
               <ref role="3uigEE" to="dxuu:~JPanel" resolve="JPanel" />
             </node>
@@ -14335,11 +14312,18 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="7wORwlIUWbo" role="3cqZAp" />
+        <node concept="3clFbF" id="4o4TRdZa61Q" role="3cqZAp">
+          <node concept="1rXfSq" id="4o4TRdZa61P" role="3clFbG">
+            <ref role="37wK5l" node="4o4TRdZa61L" resolve="setMinimumWidthOfTheProgressToZero" />
+            <node concept="37vLTw" id="4o4TRdZa61O" role="37wK5m">
+              <ref role="3cqZAo" node="7dV9$tm6ISY" resolve="myProgressLineComponent" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="7wORwlIUWbC" role="3cqZAp">
           <node concept="2OqwBi" id="7wORwlIUWbD" role="3clFbG">
             <node concept="37vLTw" id="7wORwlIUWbE" role="2Oq$k0">
-              <ref role="3cqZAo" node="7wORwlIUWbi" resolve="leftWithOutputPanel" />
+              <ref role="3cqZAo" node="7wORwlIUWbi" resolve="middleOutputPanel" />
             </node>
             <node concept="liA8E" id="7wORwlIUWbF" role="2OqNvi">
               <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
@@ -14434,7 +14418,7 @@
         <node concept="3clFbF" id="7wORwlIUWch" role="3cqZAp">
           <node concept="2OqwBi" id="7wORwlIUWci" role="3clFbG">
             <node concept="37vLTw" id="7wORwlIUWcj" role="2Oq$k0">
-              <ref role="3cqZAo" node="7wORwlIUWbi" resolve="leftWithOutputPanel" />
+              <ref role="3cqZAo" node="7wORwlIUWbi" resolve="middleOutputPanel" />
             </node>
             <node concept="liA8E" id="7wORwlIUWck" role="2OqNvi">
               <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
@@ -14464,7 +14448,7 @@
         <node concept="3clFbF" id="7wORwlIUWcs" role="3cqZAp">
           <node concept="2OqwBi" id="7wORwlIUWct" role="3clFbG">
             <node concept="37vLTw" id="7wORwlIUWcu" role="2Oq$k0">
-              <ref role="3cqZAo" node="7wORwlIUWbi" resolve="leftWithOutputPanel" />
+              <ref role="3cqZAo" node="7wORwlIUWbi" resolve="middleOutputPanel" />
             </node>
             <node concept="liA8E" id="7wORwlIUWcv" role="2OqNvi">
               <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
@@ -14517,7 +14501,7 @@
             <node concept="liA8E" id="7wORwlIUWcS" role="2OqNvi">
               <ref role="37wK5l" to="jkm4:~Splitter.setFirstComponent(javax.swing.JComponent):void" resolve="setFirstComponent" />
               <node concept="37vLTw" id="7wORwlIUWcT" role="37wK5m">
-                <ref role="3cqZAo" node="7wORwlIUWbi" resolve="leftWithOutputPanel" />
+                <ref role="3cqZAo" node="7wORwlIUWbi" resolve="middleOutputPanel" />
               </node>
             </node>
           </node>
@@ -14654,6 +14638,52 @@
       </node>
     </node>
     <node concept="2tJIrI" id="7wORwlIPQ$y" role="jymVt" />
+    <node concept="3clFb_" id="4o4TRdZa61L" role="jymVt">
+      <property role="TrG5h" value="setMinimumWidthOfTheProgressToZero" />
+      <node concept="3Tm6S6" id="4o4TRdZa61M" role="1B3o_S" />
+      <node concept="3cqZAl" id="4o4TRdZa61N" role="3clF45" />
+      <node concept="37vLTG" id="4o4TRdZa5YU" role="3clF46">
+        <property role="TrG5h" value="myProgressLineComponent" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="4o4TRdZa5YV" role="1tU5fm">
+          <ref role="3uigEE" node="36vIONTtQre" resolve="TestProgressLine" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="4o4TRdZa5YH" role="3clF47">
+        <node concept="3clFbF" id="4o4TRdZa5YI" role="3cqZAp">
+          <node concept="2OqwBi" id="4o4TRdZa5YJ" role="3clFbG">
+            <node concept="37vLTw" id="4o4TRdZa61H" role="2Oq$k0">
+              <ref role="3cqZAo" node="4o4TRdZa5YU" resolve="myProgressLineComponent" />
+            </node>
+            <node concept="liA8E" id="4o4TRdZa5YL" role="2OqNvi">
+              <ref role="37wK5l" to="dxuu:~JComponent.setMinimumSize(java.awt.Dimension):void" resolve="setMinimumSize" />
+              <node concept="2ShNRf" id="4o4TRdZa5YM" role="37wK5m">
+                <node concept="1pGfFk" id="4o4TRdZa5YN" role="2ShVmc">
+                  <ref role="37wK5l" to="z60i:~Dimension.&lt;init&gt;(int,int)" resolve="Dimension" />
+                  <node concept="3cmrfG" id="4o4TRdZa5YO" role="37wK5m">
+                    <property role="3cmrfH" value="0" />
+                  </node>
+                  <node concept="2OqwBi" id="4o4TRdZa5YP" role="37wK5m">
+                    <node concept="2OqwBi" id="4o4TRdZa5YQ" role="2Oq$k0">
+                      <node concept="37vLTw" id="4o4TRdZa61I" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4o4TRdZa5YU" resolve="myProgressLineComponent" />
+                      </node>
+                      <node concept="liA8E" id="4o4TRdZa5YS" role="2OqNvi">
+                        <ref role="37wK5l" to="dxuu:~JComponent.getMinimumSize():java.awt.Dimension" resolve="getMinimumSize" />
+                      </node>
+                    </node>
+                    <node concept="2OwXpG" id="4o4TRdZa5YT" role="2OqNvi">
+                      <ref role="2Oxat5" to="z60i:~Dimension.height" resolve="height" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4o4TRdZa8B9" role="jymVt" />
     <node concept="3clFb_" id="7wORwlIPx1A" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="addNotify" />

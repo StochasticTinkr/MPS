@@ -24,6 +24,7 @@ import com.intellij.openapi.editor.colors.EditorColorsManager;
 import javax.swing.border.CompoundBorder;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.SideBorder;
+import java.awt.Dimension;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionToolbar;
@@ -85,19 +86,19 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
     JComponent testOutput = myTestOutputContainer.getComponent();
     JPanel rightPanel = new NonOpaquePanel(new BorderLayout());
-    JPanel leftWithOutputPanel = new NonOpaquePanel(new BorderLayout());
-
-    leftWithOutputPanel.add(SameHeightPanel.wrap(myProgressLineComponent, myToolbarPanel), BorderLayout.NORTH);
+    JPanel middleOutputPanel = new NonOpaquePanel(new BorderLayout());
+    setMinimumWidthOfTheProgressToZero(myProgressLineComponent);
+    middleOutputPanel.add(SameHeightPanel.wrap(myProgressLineComponent, myToolbarPanel), BorderLayout.NORTH);
     testOutput.setFocusable(true);
     final Color editorBackground = EditorColorsManager.getInstance().getGlobalScheme().getDefaultBackground();
     testOutput.setBorder(new CompoundBorder(IdeBorderFactory.createBorder(SideBorder.RIGHT), new SideBorder(editorBackground, SideBorder.LEFT)));
-    leftWithOutputPanel.add(testOutput, BorderLayout.CENTER);
+    middleOutputPanel.add(testOutput, BorderLayout.CENTER);
     myOutputToolbarComponent = createActionsToolbar(console);
-    leftWithOutputPanel.add(myOutputToolbarComponent, BorderLayout.EAST);
+    middleOutputPanel.add(myOutputToolbarComponent, BorderLayout.EAST);
 
     Splitter rightSplitter = new Splitter(false);
     initSplitterProportion(rightSplitter, 0.5f, "statistic");
-    rightSplitter.setFirstComponent(leftWithOutputPanel);
+    rightSplitter.setFirstComponent(middleOutputPanel);
     JComponent statistics = createStatisticsComponent(myStatisticsModel);
     rightSplitter.setSecondComponent(statistics);
     rightPanel.add(rightSplitter, BorderLayout.CENTER);
@@ -107,6 +108,10 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     myTestState.addUpdateListener(myProgressLineComponent);
     myTestState.addListener(myTestOutputContainer);
     addCloseListener(closeListener);
+  }
+
+  private void setMinimumWidthOfTheProgressToZero(final TestProgressLine myProgressLineComponent) {
+    myProgressLineComponent.setMinimumSize(new Dimension(0, myProgressLineComponent.getMinimumSize().height));
   }
 
   @Override
