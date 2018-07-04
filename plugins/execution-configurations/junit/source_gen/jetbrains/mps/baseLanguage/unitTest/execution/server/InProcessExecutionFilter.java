@@ -52,7 +52,7 @@ import org.junit.AssumptionViolatedException;
     @Override
     @NotNull
     public String getFormattedMsg() {
-      return "The test %s is set not to be executed in-process.\nChange the property value via inspector.\nIgnoring the test.";
+      return "The test %s is set not to be executed in-process.\nChange the property value via inspector or uncheck the 'in-process' flag from the configuration.\nIgnoring the test.";
     }
   }
 

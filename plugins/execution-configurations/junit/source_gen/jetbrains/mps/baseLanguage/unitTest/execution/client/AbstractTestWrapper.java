@@ -132,7 +132,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   }
 
   @Override
-  public boolean canRunInProcess() {
+  public final boolean canRunInProcess() {
     return myRunsInProcess;
   }
 

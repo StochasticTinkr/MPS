@@ -6086,7 +6086,7 @@
         <node concept="3clFbS" id="6ESy0uAxhvf" role="3clF47">
           <node concept="3clFbF" id="6ESy0uAxi1s" role="3cqZAp">
             <node concept="Xl_RD" id="7wE3E_r5L0$" role="3clFbG">
-              <property role="Xl_RC" value="The test %s is set not to be executed in-process.\nChange the property value via inspector.\nIgnoring the test." />
+              <property role="Xl_RC" value="The test %s is set not to be executed in-process.\nChange the property value via inspector or uncheck the 'in-process' flag from the configuration.\nIgnoring the test." />
             </node>
           </node>
         </node>
