@@ -35,7 +35,6 @@ public class SNodeReadAccess_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SNodeReadAccess_Test.class, "${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
 
-
   public SNodeReadAccess_Test() {
     super(ourParamCache);
   }

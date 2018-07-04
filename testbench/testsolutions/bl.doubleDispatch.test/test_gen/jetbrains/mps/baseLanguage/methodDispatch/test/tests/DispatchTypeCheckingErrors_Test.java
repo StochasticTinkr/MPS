@@ -18,7 +18,6 @@ public class DispatchTypeCheckingErrors_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(DispatchTypeCheckingErrors_Test.class, "${mps_home}", "r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)", false);
 
-
   public DispatchTypeCheckingErrors_Test() {
     super(ourParamCache);
   }

@@ -18,7 +18,6 @@ public class typeParameterDuplicationAndMisorder_Test extends BaseTransformation
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(typeParameterDuplicationAndMisorder_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
 
-
   public typeParameterDuplicationAndMisorder_Test() {
     super(ourParamCache);
   }

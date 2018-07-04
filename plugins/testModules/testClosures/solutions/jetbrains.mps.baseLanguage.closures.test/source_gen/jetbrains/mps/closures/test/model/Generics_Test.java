@@ -18,7 +18,6 @@ public class Generics_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(Generics_Test.class, "${mps_home}", "r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.model)", false);
 
-
   public Generics_Test() {
     super(ourParamCache);
   }

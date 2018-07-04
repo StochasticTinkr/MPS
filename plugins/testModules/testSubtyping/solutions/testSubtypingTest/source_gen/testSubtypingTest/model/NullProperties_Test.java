@@ -18,7 +18,6 @@ public class NullProperties_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(NullProperties_Test.class, "${mps_home}", "r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)", false);
 
-
   public NullProperties_Test() {
     super(ourParamCache);
   }

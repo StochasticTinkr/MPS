@@ -23,7 +23,6 @@ public class InlineManyReturns_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(InlineManyReturns_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
 
-
   public InlineManyReturns_Test() {
     super(ourParamCache);
   }

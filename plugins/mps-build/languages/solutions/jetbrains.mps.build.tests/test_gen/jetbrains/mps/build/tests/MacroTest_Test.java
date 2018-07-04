@@ -19,7 +19,6 @@ public class MacroTest_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(MacroTest_Test.class, "${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
 
-
   public MacroTest_Test() {
     super(ourParamCache);
   }

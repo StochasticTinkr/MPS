@@ -25,7 +25,6 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ClosureLiteraltargetIface_Test.class, "${mps_home}", "r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.model)", false);
 
-
   public ClosureLiteraltargetIface_Test() {
     super(ourParamCache);
   }
@@ -46,16 +45,16 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       addNodeById("7178287329507578878");
       TemplateQueryContext genContext = this.getContext();
       SNode literal = SNodeOperations.cast(getNodeById("7178287329507578897"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xfd3920347849419dL, 0x907112563d152375L, "jetbrains.mps.baseLanguage.closures"), 0x1174bed3125L, "ClosureLiteral")));
-      new ClosureLiteralTarget(genContext).setTarget(literal, _quotation_createNode_u745oo_b0a4a0i());
-      this.assertLiteralTarget(genContext, literal, _quotation_createNode_u745oo_c0a5a0i());
+      new ClosureLiteralTarget(genContext).setTarget(literal, _quotation_createNode_u745oo_b0a4a0h());
+      this.assertLiteralTarget(genContext, literal, _quotation_createNode_u745oo_c0a5a0h());
     }
     public void test_baz2() throws Exception {
       addNodeById("7178287329507546170");
       addNodeById("7178287329507578878");
       TemplateQueryContext genContext = this.getContext();
       SNode literal = SNodeOperations.cast(getNodeById("7178287329507578897"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xfd3920347849419dL, 0x907112563d152375L, "jetbrains.mps.baseLanguage.closures"), 0x1174bed3125L, "ClosureLiteral")));
-      new ClosureLiteralTarget(genContext).setTarget(literal, _quotation_createNode_u745oo_b0a4a1i());
-      this.assertLiteralTarget(genContext, literal, _quotation_createNode_u745oo_c0a5a1i());
+      new ClosureLiteralTarget(genContext).setTarget(literal, _quotation_createNode_u745oo_b0a4a1h());
+      this.assertLiteralTarget(genContext, literal, _quotation_createNode_u745oo_c0a5a1h());
     }
 
 
@@ -66,7 +65,7 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       SNode target = (SNode) Values.LITERAL_TARGET.get(gencontext, literal);
       Assert.assertTrue(MatchingUtil.matchNodes(expected, target));
     }
-    private static SNode _quotation_createNode_u745oo_b0a4a0i() {
+    private static SNode _quotation_createNode_u745oo_b0a4a0h() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
@@ -93,7 +92,7 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"), quotedNode_3);
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_u745oo_c0a5a0i() {
+    private static SNode _quotation_createNode_u745oo_c0a5a0h() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
@@ -120,7 +119,7 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"), quotedNode_3);
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_u745oo_b0a4a1i() {
+    private static SNode _quotation_createNode_u745oo_b0a4a1h() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
@@ -138,7 +137,7 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"), quotedNode_3);
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_u745oo_c0a5a1i() {
+    private static SNode _quotation_createNode_u745oo_c0a5a1h() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;

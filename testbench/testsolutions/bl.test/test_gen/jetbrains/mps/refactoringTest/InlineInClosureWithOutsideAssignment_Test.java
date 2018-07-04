@@ -24,7 +24,6 @@ public class InlineInClosureWithOutsideAssignment_Test extends BaseTransformatio
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(InlineInClosureWithOutsideAssignment_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
 
-
   public InlineInClosureWithOutsideAssignment_Test() {
     super(ourParamCache);
   }

@@ -18,7 +18,6 @@ public class SampleConstraints_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SampleConstraints_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
 
-
   public SampleConstraints_Test() {
     super(ourParamCache);
   }

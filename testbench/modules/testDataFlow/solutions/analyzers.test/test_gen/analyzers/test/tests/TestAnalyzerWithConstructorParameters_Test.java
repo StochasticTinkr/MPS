@@ -18,7 +18,6 @@ public class TestAnalyzerWithConstructorParameters_Test extends BaseTransformati
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestAnalyzerWithConstructorParameters_Test.class, "${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
 
-
   public TestAnalyzerWithConstructorParameters_Test() {
     super(ourParamCache);
   }

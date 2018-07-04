@@ -19,7 +19,6 @@ public class AnonymousClass_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(AnonymousClass_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
 
-
   public AnonymousClass_Test() {
     super(ourParamCache);
   }

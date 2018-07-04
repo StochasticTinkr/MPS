@@ -23,7 +23,6 @@ public class TransformationUtil_Complex_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TransformationUtil_Complex_Test.class, "${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
 
-
   public TransformationUtil_Complex_Test() {
     super(ourParamCache);
   }

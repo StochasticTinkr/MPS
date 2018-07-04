@@ -18,7 +18,6 @@ public class ConstraintsInheritence_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ConstraintsInheritence_Test.class, "${mps_home}", "r:63c35524-f256-4fdd-b128-2c53748bdd7c(TestConstraints.test@tests)", false);
 
-
   public ConstraintsInheritence_Test() {
     super(ourParamCache);
   }

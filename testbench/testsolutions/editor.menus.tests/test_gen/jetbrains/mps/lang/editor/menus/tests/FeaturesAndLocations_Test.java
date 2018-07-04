@@ -18,7 +18,6 @@ public class FeaturesAndLocations_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(FeaturesAndLocations_Test.class, "${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
 
-
   public FeaturesAndLocations_Test() {
     super(ourParamCache);
   }

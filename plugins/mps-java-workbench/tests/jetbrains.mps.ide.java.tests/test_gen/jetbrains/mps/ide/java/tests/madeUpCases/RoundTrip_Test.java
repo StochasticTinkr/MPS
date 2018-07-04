@@ -17,7 +17,6 @@ public class RoundTrip_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(RoundTrip_Test.class, "${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
 
-
   public RoundTrip_Test() {
     super(ourParamCache);
   }

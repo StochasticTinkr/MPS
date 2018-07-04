@@ -25,7 +25,6 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestBlPriorities_Test.class, "${mps_home}", "r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)", false);
 
-
   public TestBlPriorities_Test() {
     super(ourParamCache);
   }
@@ -42,10 +41,10 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_testBitwisePriorities() throws Exception {
-      this.check(_quotation_createNode_p8h609_a0a0a0i(), 1 & 2 | 3 << 4 ^ 5 | 6);
+      this.check(_quotation_createNode_p8h609_a0a0a0h(), 1 & 2 | 3 << 4 ^ 5 | 6);
     }
     public void test_testBooleanAndWithEqualsOperation() throws Exception {
-      this.check(_quotation_createNode_p8h609_a0a0a1i(), true || false == false);
+      this.check(_quotation_createNode_p8h609_a0a0a1h(), true || false == false);
     }
 
 
@@ -106,7 +105,7 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
 
       throw new UnsupportedOperationException(e.getPresentation());
     }
-    private static SNode _quotation_createNode_p8h609_a0a0a0i() {
+    private static SNode _quotation_createNode_p8h609_a0a0a0h() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
@@ -151,7 +150,7 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
       quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), quotedNode_2);
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_p8h609_a0a0a1i() {
+    private static SNode _quotation_createNode_p8h609_a0a0a1h() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;

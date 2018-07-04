@@ -18,7 +18,6 @@ public class SModelExpressionsDataFlow_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SModelExpressionsDataFlow_Test.class, "${mps_home}", "r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)", false);
 
-
   public SModelExpressionsDataFlow_Test() {
     super(ourParamCache);
   }

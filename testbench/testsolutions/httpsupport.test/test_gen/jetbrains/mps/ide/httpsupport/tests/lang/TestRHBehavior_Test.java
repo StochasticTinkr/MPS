@@ -25,7 +25,6 @@ public class TestRHBehavior_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestRHBehavior_Test.class, "${mps_home}", "r:9e9ac0ea-b755-4d57-b406-d0cd74445963(jetbrains.mps.ide.httpsupport.tests.lang@tests)", false);
 
-
   public TestRHBehavior_Test() {
     super(ourParamCache);
   }
@@ -97,12 +96,12 @@ public class TestRHBehavior_Test extends BaseTransformationTest {
     }
     public void test_testURlBuilder1() throws Exception {
       String test = "testString";
-      String url = buildRequest_17tcaj_a0a1a6p(test);
+      String url = buildRequest_17tcaj_a0a1a6o(test);
       this.testRequestResponse(url, 200, test);
     }
     public void test_testURlBuilder2() throws Exception {
       String test = "testString";
-      String url = buildRequest_17tcaj_a0a1a7p(test);
+      String url = buildRequest_17tcaj_a0a1a7o(test);
       this.testRequestResponse(url, 200, test + " serialized deserialized");
     }
     public void test_testRHConflicts() throws Exception {
@@ -118,7 +117,7 @@ public class TestRHBehavior_Test extends BaseTransformationTest {
     public void testRequestResponse(String requestUrl, int exectedRetCode, String expectedResponse) {
       try {
         URL obj = new URL(requestUrl);
-        HttpURLConnection con = as_17tcaj_a0a1a0a11p(obj.openConnection(), HttpURLConnection.class);
+        HttpURLConnection con = as_17tcaj_a0a1a0a11o(obj.openConnection(), HttpURLConnection.class);
         con.connect();
 
         Assert.assertEquals(exectedRetCode, con.getResponseCode());
@@ -141,21 +140,21 @@ public class TestRHBehavior_Test extends BaseTransformationTest {
     public String buildRequest(String path) {
       return "http://localhost:" + BuiltInServerManager.getInstance().getPort() + path;
     }
-    private static String buildRequest_17tcaj_a0a1a6p(String param) {
+    private static String buildRequest_17tcaj_a0a1a6o(String param) {
       QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + BuiltInServerManager.getInstance().getPort() + "/handlerTest/turnBack1");
 
       encoder.addParam("param", param);
 
       return encoder.toString();
     }
-    private static String buildRequest_17tcaj_a0a1a7p(String param) {
+    private static String buildRequest_17tcaj_a0a1a7o(String param) {
       QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + BuiltInServerManager.getInstance().getPort() + "/handlerTest/turnBack2");
 
       encoder.addParam("param", testConverter_Converter.serialize(param));
 
       return encoder.toString();
     }
-    private static <T> T as_17tcaj_a0a1a0a11p(Object o, Class<T> type) {
+    private static <T> T as_17tcaj_a0a1a0a11o(Object o, Class<T> type) {
       return (type.isInstance(o) ? (T) o : null);
     }
   }

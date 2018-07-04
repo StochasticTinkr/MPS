@@ -17,7 +17,6 @@ public class ImageExport_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ImageExport_Test.class, "${mps_home}", "r:57812925-2ef0-43c6-8314-0222b2c13acf(jetbrains.mps.lang.editor.imageGen.tests@tests)", false);
 
-
   public ImageExport_Test() {
     super(ourParamCache);
   }

@@ -18,7 +18,6 @@ public class UnaryNumberOperationUsesVariable_Test extends BaseTransformationTes
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(UnaryNumberOperationUsesVariable_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
 
-
   public UnaryNumberOperationUsesVariable_Test() {
     super(ourParamCache);
   }

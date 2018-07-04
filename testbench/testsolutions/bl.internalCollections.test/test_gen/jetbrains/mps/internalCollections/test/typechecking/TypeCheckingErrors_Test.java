@@ -19,7 +19,6 @@ public class TypeCheckingErrors_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TypeCheckingErrors_Test.class, "${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
 
-
   public TypeCheckingErrors_Test() {
     super(ourParamCache);
   }

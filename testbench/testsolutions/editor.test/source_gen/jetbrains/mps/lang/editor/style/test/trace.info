@@ -68,46 +68,46 @@
   </root>
   <root nodeRef="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)/1715298588355861160">
     <file name="FontFamilyStyleClassItemWarningTest_Test.java">
-      <node id="1715298588355861160" at="22,53,23,25" concept="7" />
-      <node id="1715298588355862323" at="27,75,28,152" concept="1" />
-      <node id="1715298588355862323" at="34,77,35,242" concept="3" />
-      <node id="1715298588355862323" at="35,242,36,123" concept="1" />
+      <node id="1715298588355861160" at="21,53,22,25" concept="7" />
+      <node id="1715298588355862323" at="26,75,27,152" concept="1" />
+      <node id="1715298588355862323" at="33,77,34,242" concept="3" />
+      <node id="1715298588355862323" at="34,242,35,123" concept="1" />
       <node id="1715298588355861160" at="18,0,20,0" concept="6" trace="ourParamCache" />
-      <node id="1715298588355861160" at="22,0,25,0" concept="0" trace="FontFamilyStyleClassItemWarningTest_Test#()V" />
-      <node id="1715298588355862323" at="26,0,30,0" concept="2" trace="test_NodeWarningCheck1715298588355862323#()V" />
-      <node id="1715298588355862323" at="34,0,38,0" concept="2" trace="test_NodeWarningCheck1715298588355862323#()V" />
-      <scope id="1715298588355861160" at="22,53,23,25" />
-      <scope id="1715298588355862323" at="27,75,28,152" />
-      <scope id="1715298588355862323" at="34,77,36,123">
+      <node id="1715298588355861160" at="21,0,24,0" concept="0" trace="FontFamilyStyleClassItemWarningTest_Test#()V" />
+      <node id="1715298588355862323" at="25,0,29,0" concept="2" trace="test_NodeWarningCheck1715298588355862323#()V" />
+      <node id="1715298588355862323" at="33,0,37,0" concept="2" trace="test_NodeWarningCheck1715298588355862323#()V" />
+      <scope id="1715298588355861160" at="21,53,22,25" />
+      <scope id="1715298588355862323" at="26,75,27,152" />
+      <scope id="1715298588355862323" at="33,77,35,123">
         <var name="operation" id="1715298588355862323" />
       </scope>
-      <scope id="1715298588355861160" at="22,0,25,0" />
-      <scope id="1715298588355862323" at="26,0,30,0" />
-      <scope id="1715298588355862323" at="34,0,38,0" />
-      <unit id="1715298588355861160" at="31,0,40,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyStyleClassItemWarningTest_Test$TestBody" />
-      <unit id="1715298588355861160" at="16,0,41,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyStyleClassItemWarningTest_Test" />
+      <scope id="1715298588355861160" at="21,0,24,0" />
+      <scope id="1715298588355862323" at="25,0,29,0" />
+      <scope id="1715298588355862323" at="33,0,37,0" />
+      <unit id="1715298588355861160" at="30,0,39,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyStyleClassItemWarningTest_Test$TestBody" />
+      <unit id="1715298588355861160" at="16,0,40,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyStyleClassItemWarningTest_Test" />
     </file>
   </root>
   <root nodeRef="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)/1715298588355941884">
     <file name="FontFamilyLiteralWarningTest_Test.java">
-      <node id="1715298588355941884" at="22,46,23,25" concept="7" />
-      <node id="1715298588355941914" at="27,75,28,145" concept="1" />
-      <node id="1715298588355941914" at="34,77,35,242" concept="3" />
-      <node id="1715298588355941914" at="35,242,36,123" concept="1" />
+      <node id="1715298588355941884" at="21,46,22,25" concept="7" />
+      <node id="1715298588355941914" at="26,75,27,145" concept="1" />
+      <node id="1715298588355941914" at="33,77,34,242" concept="3" />
+      <node id="1715298588355941914" at="34,242,35,123" concept="1" />
       <node id="1715298588355941884" at="18,0,20,0" concept="6" trace="ourParamCache" />
-      <node id="1715298588355941884" at="22,0,25,0" concept="0" trace="FontFamilyLiteralWarningTest_Test#()V" />
-      <node id="1715298588355941914" at="26,0,30,0" concept="2" trace="test_NodeWarningCheck1715298588355941914#()V" />
-      <node id="1715298588355941914" at="34,0,38,0" concept="2" trace="test_NodeWarningCheck1715298588355941914#()V" />
-      <scope id="1715298588355941884" at="22,46,23,25" />
-      <scope id="1715298588355941914" at="27,75,28,145" />
-      <scope id="1715298588355941914" at="34,77,36,123">
+      <node id="1715298588355941884" at="21,0,24,0" concept="0" trace="FontFamilyLiteralWarningTest_Test#()V" />
+      <node id="1715298588355941914" at="25,0,29,0" concept="2" trace="test_NodeWarningCheck1715298588355941914#()V" />
+      <node id="1715298588355941914" at="33,0,37,0" concept="2" trace="test_NodeWarningCheck1715298588355941914#()V" />
+      <scope id="1715298588355941884" at="21,46,22,25" />
+      <scope id="1715298588355941914" at="26,75,27,145" />
+      <scope id="1715298588355941914" at="33,77,35,123">
         <var name="operation" id="1715298588355941914" />
       </scope>
-      <scope id="1715298588355941884" at="22,0,25,0" />
-      <scope id="1715298588355941914" at="26,0,30,0" />
-      <scope id="1715298588355941914" at="34,0,38,0" />
-      <unit id="1715298588355941884" at="31,0,40,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralWarningTest_Test$TestBody" />
-      <unit id="1715298588355941884" at="16,0,41,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralWarningTest_Test" />
+      <scope id="1715298588355941884" at="21,0,24,0" />
+      <scope id="1715298588355941914" at="25,0,29,0" />
+      <scope id="1715298588355941914" at="33,0,37,0" />
+      <unit id="1715298588355941884" at="30,0,39,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralWarningTest_Test$TestBody" />
+      <unit id="1715298588355941884" at="16,0,40,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralWarningTest_Test" />
     </file>
   </root>
   <root nodeRef="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)/23293207022857579">

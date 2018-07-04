@@ -26,7 +26,6 @@ public class PriorityCheckTestPlusFirst_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(PriorityCheckTestPlusFirst_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
 
-
   public PriorityCheckTestPlusFirst_Test() {
     super(ourParamCache);
   }

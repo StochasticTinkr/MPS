@@ -22,7 +22,6 @@ public class TestDepViewer_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestDepViewer_Test.class, "${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
 
-
   public TestDepViewer_Test() {
     super(ourParamCache);
   }

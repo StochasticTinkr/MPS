@@ -18,7 +18,6 @@ public class FontFamilyLiteralWarningTest_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(FontFamilyLiteralWarningTest_Test.class, "${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)", false);
 
-
   public FontFamilyLiteralWarningTest_Test() {
     super(ourParamCache);
   }

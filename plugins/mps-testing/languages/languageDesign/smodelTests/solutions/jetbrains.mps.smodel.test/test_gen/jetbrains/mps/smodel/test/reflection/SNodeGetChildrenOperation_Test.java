@@ -25,7 +25,6 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SNodeGetChildrenOperation_Test.class, "${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
 
-
   public SNodeGetChildrenOperation_Test() {
     super(ourParamCache);
   }
@@ -115,7 +114,7 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       addNodeById("2166349271756548530");
       SNode nullNode = null;
       Assert.assertNull(SNodeOperations.getContainingLink(nullNode));
-      Assert.assertNull(check_vfao6t_a5a4o(SNodeOperations.getContainingLink(nullNode)));
+      Assert.assertNull(check_vfao6t_a5a4n(SNodeOperations.getContainingLink(nullNode)));
     }
     public void test_childrenByLinkDeclaration() throws Exception {
       addNodeById("8758390115029078425");
@@ -150,7 +149,7 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       input.addChild(link, unspecifiedChild);
       return link;
     }
-    private static String check_vfao6t_a5a4o(SContainmentLink checkedDotOperand) {
+    private static String check_vfao6t_a5a4n(SContainmentLink checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getName();
       }

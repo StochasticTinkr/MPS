@@ -18,7 +18,6 @@ public class AbstractNativeIllegal_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(AbstractNativeIllegal_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
 
-
   public AbstractNativeIllegal_Test() {
     super(ourParamCache);
   }

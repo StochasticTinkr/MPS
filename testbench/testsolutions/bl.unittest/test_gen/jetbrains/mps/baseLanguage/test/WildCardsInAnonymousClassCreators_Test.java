@@ -18,7 +18,6 @@ public class WildCardsInAnonymousClassCreators_Test extends BaseTransformationTe
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(WildCardsInAnonymousClassCreators_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
 
-
   public WildCardsInAnonymousClassCreators_Test() {
     super(ourParamCache);
   }

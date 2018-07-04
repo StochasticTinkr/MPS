@@ -27,7 +27,6 @@ public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ClosureLiteraltargetFunType_Test.class, "${mps_home}", "r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.model)", false);
 
-
   public ClosureLiteraltargetFunType_Test() {
     super(ourParamCache);
   }
@@ -50,7 +49,7 @@ public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest {
       SNode literal = SNodeOperations.cast(getNodeById("6374750171056867612"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xfd3920347849419dL, 0x907112563d152375L, "jetbrains.mps.baseLanguage.closures"), 0x1174bed3125L, "ClosureLiteral")));
       SNode funtype = SNodeOperations.cast(getNodeById("6374750171056867639"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xfd3920347849419dL, 0x907112563d152375L, "jetbrains.mps.baseLanguage.closures"), 0x1174a4d19ffL, "FunctionType")));
       new ClosureLiteralTarget(genContext).setTarget(literal, FunctionType__BehaviorDescriptor.getDeclarationRuntimeType_idhTOKQzf.invoke(funtype));
-      this.assertLiteralTarget(genContext, literal, _quotation_createNode_7325qm_c0a6a0i());
+      this.assertLiteralTarget(genContext, literal, _quotation_createNode_7325qm_c0a6a0h());
     }
 
     public void test_NodeErrorCheck3981396688773519576() throws Exception {
@@ -66,7 +65,7 @@ public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest {
 
       Assert.assertTrue(MatchingUtil.matchNodes(expected, target));
     }
-    private static SNode _quotation_createNode_7325qm_c0a6a0i() {
+    private static SNode _quotation_createNode_7325qm_c0a6a0h() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;

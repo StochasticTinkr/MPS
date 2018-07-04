@@ -18,7 +18,6 @@ public class InlineWithNoSourcesAttached_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(InlineWithNoSourcesAttached_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
 
-
   public InlineWithNoSourcesAttached_Test() {
     super(ourParamCache);
   }

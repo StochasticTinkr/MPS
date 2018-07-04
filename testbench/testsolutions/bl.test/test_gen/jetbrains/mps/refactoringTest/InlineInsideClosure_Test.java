@@ -24,7 +24,6 @@ public class InlineInsideClosure_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(InlineInsideClosure_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
 
-
   public InlineInsideClosure_Test() {
     super(ourParamCache);
   }

@@ -18,7 +18,6 @@ public class RepetitionTest_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(RepetitionTest_Test.class, "${mps_home}", "r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)", false);
 
-
   public RepetitionTest_Test() {
     super(ourParamCache);
   }

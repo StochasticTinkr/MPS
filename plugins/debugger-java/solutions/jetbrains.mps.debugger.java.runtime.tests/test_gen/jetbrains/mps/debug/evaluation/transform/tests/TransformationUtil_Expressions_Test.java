@@ -28,7 +28,6 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TransformationUtil_Expressions_Test.class, "${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
 
-
   public TransformationUtil_Expressions_Test() {
     super(ourParamCache);
   }
@@ -991,7 +990,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.init();
       SNode instanceMethodDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(getNodeById("5543996881668550288"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x116b46a08c4L, "DotExpression"))), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
       List<SNode> arguments = SLinkOperations.getChildren(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(getNodeById("5543996881668550288"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x116b46a08c4L, "DotExpression"))), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
-      SNode localInstanceMethodCall = _quotation_createNode_n7zrdh_a0fc0m63(arguments);
+      SNode localInstanceMethodCall = _quotation_createNode_n7zrdh_a0fc0m53(arguments);
       SLinkOperations.setTarget(localInstanceMethodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), instanceMethodDeclaration);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(getNodeById("5543996881668550288"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x116b46a08c4L, "DotExpression"))), localInstanceMethodCall);
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(getNodeById("5543996881668550286"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b200L, "StatementList"))), false).transformEvaluator();
@@ -1188,7 +1187,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.init();
       SNode staticMethodDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(getNodeById("607759879653675061"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbbebabf09L, "StaticMethodCall"))), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
       List<SNode> arguments = SLinkOperations.getChildren(SNodeOperations.cast(getNodeById("607759879653675061"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbbebabf09L, "StaticMethodCall"))), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
-      SNode localStaticMethodCall = _quotation_createNode_n7zrdh_a0fc0p63(arguments);
+      SNode localStaticMethodCall = _quotation_createNode_n7zrdh_a0fc0p53(arguments);
       SLinkOperations.setTarget(localStaticMethodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), staticMethodDeclaration);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(getNodeById("607759879653675061"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbbebabf09L, "StaticMethodCall"))), localStaticMethodCall);
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(getNodeById("607759879653675044"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b200L, "StatementList"))), false).transformEvaluator();
@@ -2105,7 +2104,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
     public void dispose() {
       DebuggerInitializer.dispose();
     }
-    private static SNode _quotation_createNode_n7zrdh_a0fc0m63(Object parameter_1) {
+    private static SNode _quotation_createNode_n7zrdh_a0fc0m53(Object parameter_1) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
@@ -2118,7 +2117,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       }
       return quotedNode_2;
     }
-    private static SNode _quotation_createNode_n7zrdh_a0fc0p63(Object parameter_1) {
+    private static SNode _quotation_createNode_n7zrdh_a0fc0p53(Object parameter_1) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;

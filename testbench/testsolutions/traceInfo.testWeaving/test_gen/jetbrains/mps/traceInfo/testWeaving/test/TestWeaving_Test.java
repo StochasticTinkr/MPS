@@ -17,7 +17,6 @@ public class TestWeaving_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestWeaving_Test.class, "${mps_home}", "r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)", false);
 
-
   public TestWeaving_Test() {
     super(ourParamCache);
   }

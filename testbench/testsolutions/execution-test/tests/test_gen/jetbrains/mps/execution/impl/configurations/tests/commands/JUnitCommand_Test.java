@@ -27,7 +27,6 @@ public class JUnitCommand_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(JUnitCommand_Test.class, "${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
 
-
   public JUnitCommand_Test() {
     super(ourParamCache);
   }

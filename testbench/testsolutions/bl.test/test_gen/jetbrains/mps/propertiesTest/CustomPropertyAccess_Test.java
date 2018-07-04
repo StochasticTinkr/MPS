@@ -18,7 +18,6 @@ public class CustomPropertyAccess_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(CustomPropertyAccess_Test.class, "${mps_home}", "r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)", false);
 
-
   public CustomPropertyAccess_Test() {
     super(ourParamCache);
   }

@@ -18,7 +18,6 @@ public class TestDefaultParameterConverter_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestDefaultParameterConverter_Test.class, "${mps_home}", "r:9e9ac0ea-b755-4d57-b406-d0cd74445963(jetbrains.mps.ide.httpsupport.tests.lang@tests)", false);
 
-
   public TestDefaultParameterConverter_Test() {
     super(ourParamCache);
   }

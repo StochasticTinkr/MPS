@@ -35,7 +35,6 @@ public class NodePointers_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(NodePointers_Test.class, "${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
 
-
   public NodePointers_Test() {
     super(ourParamCache);
   }
@@ -157,7 +156,7 @@ public class NodePointers_Test extends BaseTransformationTest {
 
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), data);
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_hosvw_a0a0b0d0a33());
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_hosvw_a0a0b0d0a23());
         Assert.assertTrue("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher(nodesBefore, nodesAfter).diff().isEmpty());
       }
     }
@@ -186,7 +185,7 @@ public class NodePointers_Test extends BaseTransformationTest {
       SLinkOperations.setPointer(clType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), new SNodePointer("r:6598b34f-7cc0-4465-ba61-6e5504d2a2be(jetbrains.mps.smodel.test.data)", "535833678908607806"));
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), clType);
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_hosvw_a0a0b0e0d33());
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_hosvw_a0a0b0e0d23());
         Assert.assertTrue("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher(nodesBefore, nodesAfter).diff().isEmpty());
       }
 
@@ -194,7 +193,7 @@ public class NodePointers_Test extends BaseTransformationTest {
       SLinkOperations.setPointer(clType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), classifier);
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), clType);
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_hosvw_a0a0b0i0d33());
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_hosvw_a0a0b0i0d23());
         Assert.assertTrue("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher(nodesBefore, nodesAfter).diff().isEmpty());
       }
     }
@@ -322,7 +321,7 @@ public class NodePointers_Test extends BaseTransformationTest {
     public SModel resolveDataModel() {
       return SPointerOperations.resolveModel(PersistenceFacade.getInstance().createModelReference("r:6598b34f-7cc0-4465-ba61-6e5504d2a2be(jetbrains.mps.smodel.test.data)"), myProject.getRepository());
     }
-    private static SNode _quotation_createNode_hosvw_a0a0b0d0a33() {
+    private static SNode _quotation_createNode_hosvw_a0a0b0d0a23() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
@@ -352,14 +351,14 @@ public class NodePointers_Test extends BaseTransformationTest {
       quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), quotedNode_3);
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_hosvw_a0a0b0e0d33() {
+    private static SNode _quotation_createNode_hosvw_a0a0b0e0d23() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
       quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("r:6598b34f-7cc0-4465-ba61-6e5504d2a2be(jetbrains.mps.smodel.test.data)"), facade.createNodeId("535833678908607806")));
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_hosvw_a0a0b0i0d33() {
+    private static SNode _quotation_createNode_hosvw_a0a0b0i0d23() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);

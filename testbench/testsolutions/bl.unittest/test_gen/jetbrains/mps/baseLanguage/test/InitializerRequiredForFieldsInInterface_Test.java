@@ -18,7 +18,6 @@ public class InitializerRequiredForFieldsInInterface_Test extends BaseTransforma
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(InitializerRequiredForFieldsInInterface_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
 
-
   public InitializerRequiredForFieldsInInterface_Test() {
     super(ourParamCache);
   }

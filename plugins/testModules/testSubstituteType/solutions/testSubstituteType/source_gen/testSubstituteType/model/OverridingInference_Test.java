@@ -18,7 +18,6 @@ public class OverridingInference_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(OverridingInference_Test.class, "${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
 
-
   public OverridingInference_Test() {
     super(ourParamCache);
   }

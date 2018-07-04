@@ -23,7 +23,6 @@ public class ConvertAnonymousWithParameterReference_Test extends BaseTransformat
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ConvertAnonymousWithParameterReference_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
 
-
   public ConvertAnonymousWithParameterReference_Test() {
     super(ourParamCache);
   }

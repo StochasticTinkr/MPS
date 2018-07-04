@@ -18,7 +18,6 @@ public class NonexistentDefaultMenu_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(NonexistentDefaultMenu_Test.class, "${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
 
-
   public NonexistentDefaultMenu_Test() {
     super(ourParamCache);
   }

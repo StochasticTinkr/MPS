@@ -15,7 +15,6 @@ public class WaitingTestCase_Test_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(WaitingTestCase_Test_Test.class, "${mps_home}", "r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", false);
 
-
   public WaitingTestCase_Test_Test() {
     super(ourParamCache);
   }

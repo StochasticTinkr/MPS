@@ -23,7 +23,6 @@ public class ConvertAnonymousWithLocalVariables_Test extends BaseTransformationT
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ConvertAnonymousWithLocalVariables_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
 
-
   public ConvertAnonymousWithLocalVariables_Test() {
     super(ourParamCache);
   }

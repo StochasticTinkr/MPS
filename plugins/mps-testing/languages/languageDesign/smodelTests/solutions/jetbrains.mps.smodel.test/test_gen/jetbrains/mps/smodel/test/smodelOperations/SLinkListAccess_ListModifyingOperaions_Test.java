@@ -26,7 +26,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SLinkListAccess_ListModifyingOperaions_Test.class, "${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
 
-
   public SLinkListAccess_ListModifyingOperaions_Test() {
     super(ourParamCache);
   }

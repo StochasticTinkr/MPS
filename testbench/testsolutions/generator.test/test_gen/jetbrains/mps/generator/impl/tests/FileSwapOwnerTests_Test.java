@@ -34,7 +34,6 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(FileSwapOwnerTests_Test.class, "${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
 
-
   public FileSwapOwnerTests_Test() {
     super(ourParamCache);
   }

@@ -49,7 +49,6 @@ public class TestPersistence_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestPersistence_Test.class, "${mps_home}", "r:8ef4c1fc-fb61-4d5c-806c-7a971cfb9392(tests.testPersistence.test@tests)", false);
 
-
   public TestPersistence_Test() {
     super(ourParamCache);
   }

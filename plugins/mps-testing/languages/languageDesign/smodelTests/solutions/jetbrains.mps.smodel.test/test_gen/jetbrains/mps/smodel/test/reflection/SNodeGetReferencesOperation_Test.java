@@ -28,7 +28,6 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SNodeGetReferencesOperation_Test.class, "${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
 
-
   public SNodeGetReferencesOperation_Test() {
     super(ourParamCache);
   }
@@ -153,7 +152,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       });
       Assert.assertEquals(1, Sequence.fromIterable(unspecifiedReferences).count());
       SReference theReference = Sequence.fromIterable(unspecifiedReferences).first();
-      Assert.assertEquals(unspecifiedReferenceName, check_s3ecl5_a31a5o(SLinkOperations.getRefLink(theReference)));
+      Assert.assertEquals(unspecifiedReferenceName, check_s3ecl5_a31a5n(SLinkOperations.getRefLink(theReference)));
       Assert.assertEquals(SNodeOperations.cast(getNodeById("2906110183022219849"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests"), 0x3dd540b968e9fc4L, "GrandChild"))), SLinkOperations.getTargetNode(theReference));
     }
     public void test_unresolvedReference() throws Exception {
@@ -211,7 +210,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       SNodeAccessUtil.setReferenceTarget(input, referenceName, referenceTarget);
       return referenceName;
     }
-    private static String check_s3ecl5_a31a5o(SReferenceLink checkedDotOperand) {
+    private static String check_s3ecl5_a31a5n(SReferenceLink checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getName();
       }

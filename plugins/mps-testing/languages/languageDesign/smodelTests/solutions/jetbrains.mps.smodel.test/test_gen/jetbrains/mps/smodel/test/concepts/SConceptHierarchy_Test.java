@@ -22,7 +22,6 @@ public class SConceptHierarchy_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SConceptHierarchy_Test.class, "${mps_home}", "r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)", false);
 
-
   public SConceptHierarchy_Test() {
     super(ourParamCache);
   }

@@ -17,7 +17,6 @@ public class ClosureDataFlow_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ClosureDataFlow_Test.class, "${mps_home}", "r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)", false);
 
-
   public ClosureDataFlow_Test() {
     super(ourParamCache);
   }

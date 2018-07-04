@@ -18,7 +18,6 @@ public class UnusedFields_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(UnusedFields_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
 
-
   public UnusedFields_Test() {
     super(ourParamCache);
   }

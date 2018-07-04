@@ -18,7 +18,6 @@ public class GenericCollections_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(GenericCollections_Test.class, "${mps_home}/languages/baseLanguage/collections/solutions/internalCollections.test/internalCollections.test.mpr", "r:3b93a80b-8267-4154-a2f6-29cf728da0a5(jetbrains.mps.internalCollections.test.types)", false);
 
-
   public GenericCollections_Test() {
     super(ourParamCache);
   }

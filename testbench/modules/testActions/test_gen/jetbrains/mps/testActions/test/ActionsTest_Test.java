@@ -17,7 +17,6 @@ public class ActionsTest_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ActionsTest_Test.class, "${mps_home}", "r:43a3062d-cf3d-40ad-9c9d-c7da54cc927b(jetbrains.mps.testActions.test@tests)", false);
 
-
   public ActionsTest_Test() {
     super(ourParamCache);
   }

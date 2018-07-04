@@ -25,7 +25,6 @@ public class ExtractDefaultClassifierMethodDeclaration_Test extends BaseTransfor
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ExtractDefaultClassifierMethodDeclaration_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
 
-
   public ExtractDefaultClassifierMethodDeclaration_Test() {
     super(ourParamCache);
   }

@@ -24,7 +24,6 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SLinkImplicitSelect_Test.class, "${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
 
-
   public SLinkImplicitSelect_Test() {
     super(ourParamCache);
   }

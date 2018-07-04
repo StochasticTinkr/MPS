@@ -25,7 +25,6 @@ public class InlineFromConceptFunction_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(InlineFromConceptFunction_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
 
-
   public InlineFromConceptFunction_Test() {
     super(ourParamCache);
   }

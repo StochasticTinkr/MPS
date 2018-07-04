@@ -19,7 +19,6 @@ public class UnexpectedReturnInAnonymousClass_Test extends BaseTransformationTes
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(UnexpectedReturnInAnonymousClass_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
 
-
   public UnexpectedReturnInAnonymousClass_Test() {
     super(ourParamCache);
   }
