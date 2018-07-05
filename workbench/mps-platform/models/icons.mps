@@ -272,6 +272,9 @@
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
+      <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
+        <property id="1200397540847" name="charConstant" index="1XhdNS" />
+      </concept>
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -3308,9 +3311,67 @@
           </node>
         </node>
         <node concept="3clFbH" id="192HKKPP2rE" role="3cqZAp" />
-        <node concept="3SKdUt" id="33R_ryvPnqN" role="3cqZAp">
-          <node concept="3SKdUq" id="33R_ryvPnqP" role="3SKWNk">
-            <property role="3SKdUp" value="Quick fix for usable platform update: non strict icon search to avoid RuntimeException and unusable MPS" />
+        <node concept="3cpWs8" id="45ywQqUFUlX" role="3cqZAp">
+          <node concept="3cpWsn" id="45ywQqUFUlY" role="3cpWs9">
+            <property role="TrG5h" value="packName" />
+            <node concept="3uibUv" id="45ywQqUFUlT" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2OqwBi" id="45ywQqUFUlZ" role="33vP2m">
+              <node concept="2OqwBi" id="45ywQqUG34s" role="2Oq$k0">
+                <node concept="2OqwBi" id="45ywQqUFUm0" role="2Oq$k0">
+                  <node concept="37vLTw" id="45ywQqUFUm1" role="2Oq$k0">
+                    <ref role="3cqZAo" node="192HKKPP2t4" resolve="ir" />
+                  </node>
+                  <node concept="liA8E" id="45ywQqUFUm2" role="2OqNvi">
+                    <ref role="37wK5l" to="ze1i:~IconResource.getProvider():java.lang.Class" resolve="getProvider" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="45ywQqUG3n4" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~Class.getPackage():java.lang.Package" resolve="getPackage" />
+                </node>
+              </node>
+              <node concept="liA8E" id="45ywQqUFUm3" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~Package.getName():java.lang.String" resolve="getName" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="45ywQqUFXVr" role="3cqZAp">
+          <node concept="3cpWsn" id="45ywQqUFXVs" role="3cpWs9">
+            <property role="TrG5h" value="resourcePath" />
+            <node concept="3uibUv" id="45ywQqUFXVt" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="3cpWs3" id="45ywQqUG7p1" role="33vP2m">
+              <node concept="2OqwBi" id="45ywQqUG7XF" role="3uHU7w">
+                <node concept="37vLTw" id="45ywQqUG7FK" role="2Oq$k0">
+                  <ref role="3cqZAo" node="192HKKPP2t4" resolve="ir" />
+                </node>
+                <node concept="liA8E" id="45ywQqUG8hF" role="2OqNvi">
+                  <ref role="37wK5l" to="ze1i:~IconResource.getResourceId():java.lang.String" resolve="getResourceId" />
+                </node>
+              </node>
+              <node concept="3cpWs3" id="45ywQqUG6tQ" role="3uHU7B">
+                <node concept="2OqwBi" id="45ywQqUG4cl" role="3uHU7B">
+                  <node concept="37vLTw" id="45ywQqUG3UA" role="2Oq$k0">
+                    <ref role="3cqZAo" node="45ywQqUFUlY" resolve="packName" />
+                  </node>
+                  <node concept="liA8E" id="45ywQqUG4II" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.replace(char,char):java.lang.String" resolve="replace" />
+                    <node concept="1Xhbcc" id="5vEBkJqWjOa" role="37wK5m">
+                      <property role="1XhdNS" value="." />
+                    </node>
+                    <node concept="1Xhbcc" id="5vEBkJqWo6F" role="37wK5m">
+                      <property role="1XhdNS" value="/" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="45ywQqUG6y2" role="3uHU7w">
+                  <property role="Xl_RC" value="//" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node concept="3cpWs8" id="192HKKPP2rV" role="3cqZAp">
@@ -3321,14 +3382,9 @@
             </node>
             <node concept="2YIFZM" id="4RE4hojHsyK" role="33vP2m">
               <ref role="1Pybhc" to="zn9m:~IconLoader" resolve="IconLoader" />
-              <ref role="37wK5l" to="zn9m:~IconLoader.findIcon(java.lang.String,java.lang.Class,boolean,boolean):javax.swing.Icon" resolve="findIcon" />
-              <node concept="2OqwBi" id="4RE4hojHsyL" role="37wK5m">
-                <node concept="37vLTw" id="4RE4hojHsyM" role="2Oq$k0">
-                  <ref role="3cqZAo" node="192HKKPP2t4" resolve="ir" />
-                </node>
-                <node concept="liA8E" id="4RE4hojHsyN" role="2OqNvi">
-                  <ref role="37wK5l" to="ze1i:~IconResource.getResourceId():java.lang.String" resolve="getResourceId" />
-                </node>
+              <ref role="37wK5l" to="zn9m:~IconLoader.findIcon(java.lang.String,java.lang.Class):javax.swing.Icon" resolve="findIcon" />
+              <node concept="37vLTw" id="45ywQqUGaOh" role="37wK5m">
+                <ref role="3cqZAo" node="45ywQqUFXVs" resolve="resourcePath" />
               </node>
               <node concept="2OqwBi" id="4RE4hojHsyO" role="37wK5m">
                 <node concept="37vLTw" id="4RE4hojHsyP" role="2Oq$k0">
@@ -3337,12 +3393,6 @@
                 <node concept="liA8E" id="4RE4hojHsyQ" role="2OqNvi">
                   <ref role="37wK5l" to="ze1i:~IconResource.getProvider():java.lang.Class" resolve="getProvider" />
                 </node>
-              </node>
-              <node concept="3clFbT" id="33R_ryvPiQG" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="3clFbT" id="33R_ryvPl9P" role="37wK5m">
-                <property role="3clFbU" value="false" />
               </node>
             </node>
           </node>
