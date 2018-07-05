@@ -498,7 +498,8 @@
                         serviceImplementation="com.intellij.application.options.codeStyle.CodeStyleSchemesUIConfiguration"/>
     -->
     <!-- MPS Patch-->
-    <projectConfigurable groupId="build" groupWeight="110" displayName="Java Compiler" instance="jetbrains.mps.ide.compiler.CompilerSettingsConfigurable" nonDefaultProject="true"/>
+    <projectConfigurable groupId="build" groupWeight="110" instance="jetbrains.mps.ide.compiler.CompilerSettingsConfigurable" order="after project"
+                         displayName="Java Compiler" nonDefaultProject="true"/>
     <!-- File Types -->
     <applicationConfigurable groupId="editor" groupWeight="120" instance="com.intellij.openapi.fileTypes.impl.FileTypeConfigurable" id="preferences.fileTypes"
                              key="filetype.settings.title" bundle="messages.FileTypesBundle"/>

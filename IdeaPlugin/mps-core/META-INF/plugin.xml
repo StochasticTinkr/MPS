@@ -196,10 +196,8 @@
             classpath="jps/mps-core-jps-plugin.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-openapi.jar;mps-logging.jar;mps-messaging.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar;mps-editor-api.jar;mps-platform.jar;mps-behavior-api.jar;mps-behavior-runtime.jar;mps-boot-util.jar;mps-annotations.jar"/>
     <buildProcess.parametersProvider implementation="jetbrains.mps.idea.build.MPSBuildProcessParametersProvider"/>
     <library.type implementation="jetbrains.mps.idea.core.library.ModuleLibraryType"/>
-    <projectConfigurable instance="jetbrains.mps.idea.core.codeStyle.MpsCodeStyleSettingsConfigurable"
-                         order="after colors"/>
-    <projectConfigurable instance="jetbrains.mps.idea.core.compiler.MpsCompilerSettingsConfigurable"
-                         order="after colors"/>
+    <projectConfigurable parentId="preferences.sourceCode" displayName="MPS Code Style" instance="jetbrains.mps.ide.codeStyle.CodeStyleSettingsConfigurable" />
+    <projectConfigurable parentId="project.propCompiler" displayName="MPS Java Compiler" instance="jetbrains.mps.ide.compiler.CompilerSettingsConfigurable" nonDefaultProject="true"/>
     <lang.fileViewProviderFactory language="MPS"
                                   implementationClass="jetbrains.mps.idea.core.psi.impl.file.MPSFileViewProviderFactory"/>
     <analyzeStacktraceFilter implementation="jetbrains.mps.ide.platform.actions.MPSStackTraceFilter" order="first"/>
