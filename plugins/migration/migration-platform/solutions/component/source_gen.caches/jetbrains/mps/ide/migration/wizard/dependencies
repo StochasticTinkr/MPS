@@ -12,8 +12,8 @@
     <classNode extendsClassName="com.intellij.ide.wizard.AbstractWizardStepEx" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.IconContainer" file="IconContainer.java">
-    <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IconLoadingUtil" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.Icons" file="Icons.java">
     <classNode dependClassName="javax.swing.Icon" />
