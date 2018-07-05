@@ -42,7 +42,6 @@ import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.util.IconLoader;
 import org.apache.log4j.Level;
 
 public class BaseIconManager {
@@ -209,9 +208,7 @@ public class BaseIconManager {
       return MapSequence.fromMap(myResToIcon).get(ir);
     }
 
-    String packName = ir.getProvider().getPackage().getName();
-    String resourcePath = packName.replace('.', '/') + "//" + ir.getResourceId();
-    Icon icon = IconLoader.findIcon(resourcePath, ir.getProvider());
+    Icon icon = IconLoadingUtil.loadIcon(ir.getResourceId(), ir.getProvider());
     if (icon == null) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Icon was not found for " + ir);

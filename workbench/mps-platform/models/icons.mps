@@ -3311,86 +3311,28 @@
           </node>
         </node>
         <node concept="3clFbH" id="192HKKPP2rE" role="3cqZAp" />
-        <node concept="3cpWs8" id="45ywQqUFUlX" role="3cqZAp">
-          <node concept="3cpWsn" id="45ywQqUFUlY" role="3cpWs9">
-            <property role="TrG5h" value="packName" />
-            <node concept="3uibUv" id="45ywQqUFUlT" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-            </node>
-            <node concept="2OqwBi" id="45ywQqUFUlZ" role="33vP2m">
-              <node concept="2OqwBi" id="45ywQqUG34s" role="2Oq$k0">
-                <node concept="2OqwBi" id="45ywQqUFUm0" role="2Oq$k0">
-                  <node concept="37vLTw" id="45ywQqUFUm1" role="2Oq$k0">
-                    <ref role="3cqZAo" node="192HKKPP2t4" resolve="ir" />
-                  </node>
-                  <node concept="liA8E" id="45ywQqUFUm2" role="2OqNvi">
-                    <ref role="37wK5l" to="ze1i:~IconResource.getProvider():java.lang.Class" resolve="getProvider" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="45ywQqUG3n4" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Class.getPackage():java.lang.Package" resolve="getPackage" />
-                </node>
-              </node>
-              <node concept="liA8E" id="45ywQqUFUm3" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Package.getName():java.lang.String" resolve="getName" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="45ywQqUFXVr" role="3cqZAp">
-          <node concept="3cpWsn" id="45ywQqUFXVs" role="3cpWs9">
-            <property role="TrG5h" value="resourcePath" />
-            <node concept="3uibUv" id="45ywQqUFXVt" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-            </node>
-            <node concept="3cpWs3" id="45ywQqUG7p1" role="33vP2m">
-              <node concept="2OqwBi" id="45ywQqUG7XF" role="3uHU7w">
-                <node concept="37vLTw" id="45ywQqUG7FK" role="2Oq$k0">
-                  <ref role="3cqZAo" node="192HKKPP2t4" resolve="ir" />
-                </node>
-                <node concept="liA8E" id="45ywQqUG8hF" role="2OqNvi">
-                  <ref role="37wK5l" to="ze1i:~IconResource.getResourceId():java.lang.String" resolve="getResourceId" />
-                </node>
-              </node>
-              <node concept="3cpWs3" id="45ywQqUG6tQ" role="3uHU7B">
-                <node concept="2OqwBi" id="45ywQqUG4cl" role="3uHU7B">
-                  <node concept="37vLTw" id="45ywQqUG3UA" role="2Oq$k0">
-                    <ref role="3cqZAo" node="45ywQqUFUlY" resolve="packName" />
-                  </node>
-                  <node concept="liA8E" id="45ywQqUG4II" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.replace(char,char):java.lang.String" resolve="replace" />
-                    <node concept="1Xhbcc" id="5vEBkJqWjOa" role="37wK5m">
-                      <property role="1XhdNS" value="." />
-                    </node>
-                    <node concept="1Xhbcc" id="5vEBkJqWo6F" role="37wK5m">
-                      <property role="1XhdNS" value="/" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="Xl_RD" id="45ywQqUG6y2" role="3uHU7w">
-                  <property role="Xl_RC" value="//" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="192HKKPP2rV" role="3cqZAp">
           <node concept="3cpWsn" id="192HKKPP2rW" role="3cpWs9">
             <property role="TrG5h" value="icon" />
             <node concept="3uibUv" id="4RE4hojHxvU" role="1tU5fm">
               <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
             </node>
-            <node concept="2YIFZM" id="4RE4hojHsyK" role="33vP2m">
-              <ref role="1Pybhc" to="zn9m:~IconLoader" resolve="IconLoader" />
-              <ref role="37wK5l" to="zn9m:~IconLoader.findIcon(java.lang.String,java.lang.Class):javax.swing.Icon" resolve="findIcon" />
-              <node concept="37vLTw" id="45ywQqUGaOh" role="37wK5m">
-                <ref role="3cqZAo" node="45ywQqUFXVs" resolve="resourcePath" />
-              </node>
-              <node concept="2OqwBi" id="4RE4hojHsyO" role="37wK5m">
-                <node concept="37vLTw" id="4RE4hojHsyP" role="2Oq$k0">
+            <node concept="2YIFZM" id="3RymrDRZy1u" role="33vP2m">
+              <ref role="37wK5l" node="3RymrDRZxn9" resolve="loadIcon" />
+              <ref role="1Pybhc" node="3RymrDRZj9k" resolve="IconLoadingUtil" />
+              <node concept="2OqwBi" id="3RymrDRZ$H3" role="37wK5m">
+                <node concept="37vLTw" id="3RymrDRZzm2" role="2Oq$k0">
                   <ref role="3cqZAo" node="192HKKPP2t4" resolve="ir" />
                 </node>
-                <node concept="liA8E" id="4RE4hojHsyQ" role="2OqNvi">
+                <node concept="liA8E" id="3RymrDRZA2_" role="2OqNvi">
+                  <ref role="37wK5l" to="ze1i:~IconResource.getResourceId():java.lang.String" resolve="getResourceId" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="3RymrDRZCXm" role="37wK5m">
+                <node concept="37vLTw" id="3RymrDRZByY" role="2Oq$k0">
+                  <ref role="3cqZAo" node="192HKKPP2t4" resolve="ir" />
+                </node>
+                <node concept="liA8E" id="3RymrDRZEj8" role="2OqNvi">
                   <ref role="37wK5l" to="ze1i:~IconResource.getProvider():java.lang.Class" resolve="getProvider" />
                 </node>
               </node>
@@ -3457,6 +3399,127 @@
       <node concept="3Tm1VV" id="192HKKPP2rd" role="1B3o_S" />
     </node>
     <node concept="3Tm1VV" id="192HKKPO1b5" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="3RymrDRZj9k">
+    <property role="3GE5qa" value="newmanager" />
+    <property role="TrG5h" value="IconLoadingUtil" />
+    <node concept="2YIFZL" id="3RymrDRZxn9" role="jymVt">
+      <property role="TrG5h" value="loadIcon" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="3RymrDRZjZB" role="3clF47">
+        <node concept="3cpWs8" id="3RymrDRZk6h" role="3cqZAp">
+          <node concept="3cpWsn" id="3RymrDRZk6i" role="3cpWs9">
+            <property role="TrG5h" value="packName" />
+            <node concept="3uibUv" id="3RymrDRZk6j" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2OqwBi" id="3RymrDRZk6k" role="33vP2m">
+              <node concept="2OqwBi" id="3RymrDRZk6l" role="2Oq$k0">
+                <node concept="37vLTw" id="3RymrDRZleU" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3RymrDRZk3s" resolve="loader" />
+                </node>
+                <node concept="liA8E" id="3RymrDRZk6p" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~Class.getPackage():java.lang.Package" resolve="getPackage" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3RymrDRZk6q" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~Package.getName():java.lang.String" resolve="getName" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="3RymrDRZk6r" role="3cqZAp">
+          <node concept="3cpWsn" id="3RymrDRZk6s" role="3cpWs9">
+            <property role="TrG5h" value="resourcePath" />
+            <node concept="3uibUv" id="3RymrDRZk6t" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="3K4zz7" id="3RymrDRZnm6" role="33vP2m">
+              <node concept="2OqwBi" id="3RymrDRZlQt" role="3K4Cdx">
+                <node concept="37vLTw" id="3RymrDRZl$0" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3RymrDRZk6i" resolve="packName" />
+                </node>
+                <node concept="liA8E" id="3RymrDRZmpH" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.isEmpty():boolean" resolve="isEmpty" />
+                </node>
+              </node>
+              <node concept="3cpWs3" id="3RymrDRZk6u" role="3K4GZi">
+                <node concept="37vLTw" id="3RymrDRZog1" role="3uHU7w">
+                  <ref role="3cqZAo" node="3RymrDRZk2X" resolve="name" />
+                </node>
+                <node concept="3cpWs3" id="3RymrDRZk6y" role="3uHU7B">
+                  <node concept="3cpWs3" id="6y9F1Kilx8V" role="3uHU7B">
+                    <node concept="Xl_RD" id="6y9F1Kilxmo" role="3uHU7B">
+                      <property role="Xl_RC" value="/" />
+                    </node>
+                    <node concept="2OqwBi" id="3RymrDRZk6z" role="3uHU7w">
+                      <node concept="37vLTw" id="3RymrDRZk6$" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3RymrDRZk6i" resolve="packName" />
+                      </node>
+                      <node concept="liA8E" id="3RymrDRZk6_" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~String.replace(char,char):java.lang.String" resolve="replace" />
+                        <node concept="1Xhbcc" id="3RymrDRZk6A" role="37wK5m">
+                          <property role="1XhdNS" value="." />
+                        </node>
+                        <node concept="1Xhbcc" id="3RymrDRZk6B" role="37wK5m">
+                          <property role="1XhdNS" value="/" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Xl_RD" id="3RymrDRZk6C" role="3uHU7w">
+                    <property role="Xl_RC" value="/" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs3" id="6y9F1KilwOM" role="3K4E3e">
+                <node concept="Xl_RD" id="6y9F1Kilx01" role="3uHU7B">
+                  <property role="Xl_RC" value="/" />
+                </node>
+                <node concept="37vLTw" id="3RymrDRZo16" role="3uHU7w">
+                  <ref role="3cqZAo" node="3RymrDRZk2X" resolve="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="3RymrDRZqHu" role="3cqZAp">
+          <node concept="2YIFZM" id="3RymrDRZq1$" role="3cqZAk">
+            <ref role="37wK5l" to="zn9m:~IconLoader.findIcon(java.lang.String,java.lang.ClassLoader):javax.swing.Icon" resolve="findIcon" />
+            <ref role="1Pybhc" to="zn9m:~IconLoader" resolve="IconLoader" />
+            <node concept="37vLTw" id="3RymrDRZq1_" role="37wK5m">
+              <ref role="3cqZAo" node="3RymrDRZk6s" resolve="resourcePath" />
+            </node>
+            <node concept="2OqwBi" id="3RymrDRZq1A" role="37wK5m">
+              <node concept="37vLTw" id="3RymrDRZq1B" role="2Oq$k0">
+                <ref role="3cqZAo" node="3RymrDRZk3s" resolve="loader" />
+              </node>
+              <node concept="liA8E" id="3RymrDRZq1C" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~Class.getClassLoader():java.lang.ClassLoader" resolve="getClassLoader" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="3RymrDRZk2X" role="3clF46">
+        <property role="TrG5h" value="name" />
+        <node concept="3uibUv" id="3RymrDRZk2W" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="3RymrDRZk3s" role="3clF46">
+        <property role="TrG5h" value="loader" />
+        <node concept="3uibUv" id="3RymrDRZk5H" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="3RymrDRZrsV" role="3clF45">
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+      </node>
+      <node concept="3Tm1VV" id="3RymrDRZjZA" role="1B3o_S" />
+    </node>
+    <node concept="3Tm1VV" id="3RymrDRZj9l" role="1B3o_S" />
   </node>
 </model>
 

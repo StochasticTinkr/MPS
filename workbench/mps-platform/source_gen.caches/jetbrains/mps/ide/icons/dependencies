@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.icons.BaseIconManager" file="BaseIconManager.java">
-    <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
     <classNode dependClassName="com.intellij.ui.LayeredIcon" />
     <classNode dependClassName="com.intellij.ui.RowIcon" />
     <classNode dependClassName="com.intellij.util.PlatformIcons" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IconLoadingUtil" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -99,6 +98,12 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.icons.IconLoadingUtil" file="IconLoadingUtil.java">
+    <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.Icon" />
   </dependency>
   <dependency className="jetbrains.mps.ide.icons.IconManager" file="IconManager.java">
     <classNode dependClassName="java.awt.Component" />
