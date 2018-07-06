@@ -1126,6 +1126,7 @@
   </node>
   <node concept="312cEu" id="hLFfHcX">
     <property role="TrG5h" value="BaseTestBody" />
+    <property role="1EXbeo" value="false" />
     <node concept="312cEg" id="hLFg6DL" role="jymVt">
       <property role="TrG5h" value="myModel" />
       <node concept="3Tm1VV" id="hLFg6DN" role="1B3o_S" />
@@ -1148,13 +1149,6 @@
       </node>
       <node concept="3Tmbuc" id="1FgNkkIaovQ" role="1B3o_S" />
     </node>
-    <node concept="312cEg" id="hLFgf6O" role="jymVt">
-      <property role="TrG5h" value="myCopies" />
-      <node concept="_YKpA" id="i05PVg_" role="1tU5fm">
-        <node concept="3Tqbb2" id="1FgNkkIakRG" role="_ZDj9" />
-      </node>
-      <node concept="3Tm6S6" id="1FgNkkIao3U" role="1B3o_S" />
-    </node>
     <node concept="2tJIrI" id="ORe5oE9cBe" role="jymVt" />
     <node concept="3clFbW" id="hLFfHcZ" role="jymVt">
       <node concept="3clFbS" id="hLFfHd2" role="3clF47">
@@ -1171,20 +1165,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="hLFA3S_" role="3cqZAp">
-          <node concept="37vLTI" id="hLFA3SA" role="3clFbG">
-            <node concept="37vLTw" id="ORe5oE9fmI" role="37vLTJ">
-              <ref role="3cqZAo" node="hLFgf6O" resolve="myCopies" />
-            </node>
-            <node concept="2ShNRf" id="hLFA3SB" role="37vLTx">
-              <node concept="Tc6Ow" id="i0fLdqx" role="2ShVmc">
-                <node concept="3uibUv" id="hLFA3SD" role="HW$YZ">
-                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node concept="3Tm1VV" id="hLFfHd1" role="1B3o_S" />
       <node concept="3cqZAl" id="hLFfHd0" role="3clF45" />
@@ -1192,6 +1172,7 @@
     <node concept="2tJIrI" id="ORe5oE9cTn" role="jymVt" />
     <node concept="3clFb_" id="hLFg0c8" role="jymVt">
       <property role="TrG5h" value="addNodeById" />
+      <property role="DiZV1" value="true" />
       <node concept="3Tm1VV" id="hLFg0c9" role="1B3o_S" />
       <node concept="3clFbS" id="hLFg0ca" role="3clF47">
         <node concept="3clFbF" id="5wEedBrYRXD" role="3cqZAp">
@@ -1203,19 +1184,10 @@
                   <node concept="3cpWs8" id="hRNaM8C" role="3cqZAp">
                     <node concept="3cpWsn" id="hRNaM8D" role="3cpWs9">
                       <property role="TrG5h" value="node" />
-                      <node concept="2OqwBi" id="2n9zn0CqMzh" role="33vP2m">
-                        <node concept="37vLTw" id="ORe5oE9fal" role="2Oq$k0">
-                          <ref role="3cqZAo" node="hLFg6DL" resolve="myModel" />
-                        </node>
-                        <node concept="liA8E" id="2n9zn0CqMzi" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~SModel.getNode(org.jetbrains.mps.openapi.model.SNodeId):org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
-                          <node concept="2YIFZM" id="2n9zn0CqMzj" role="37wK5m">
-                            <ref role="37wK5l" to="w1kc:~SNodeId.fromString(java.lang.String):jetbrains.mps.smodel.SNodeId" resolve="fromString" />
-                            <ref role="1Pybhc" to="w1kc:~SNodeId" resolve="SNodeId" />
-                            <node concept="37vLTw" id="2BHiRxgmNFm" role="37wK5m">
-                              <ref role="3cqZAo" node="hLFg0dc" resolve="id" />
-                            </node>
-                          </node>
+                      <node concept="1rXfSq" id="3QbfubvnKHw" role="33vP2m">
+                        <ref role="37wK5l" node="hLFg$wA" resolve="getRealNodeById" />
+                        <node concept="37vLTw" id="3QbfubvnL6Z" role="37wK5m">
+                          <ref role="3cqZAo" node="hLFg0dc" resolve="id" />
                         </node>
                       </node>
                       <node concept="3Tqbb2" id="hRNaM8E" role="1tU5fm" />
@@ -1280,18 +1252,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbF" id="hRNaM9h" role="3cqZAp">
-                    <node concept="2OqwBi" id="hRNaM9i" role="3clFbG">
-                      <node concept="37vLTw" id="ORe5oE9eHp" role="2Oq$k0">
-                        <ref role="3cqZAo" node="hLFgf6O" resolve="myCopies" />
-                      </node>
-                      <node concept="TSZUe" id="i05PXdA" role="2OqNvi">
-                        <node concept="37vLTw" id="3GM_nagTu0P" role="25WWJ7">
-                          <ref role="3cqZAo" node="hRNaM8O" resolve="copy" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                 </node>
               </node>
             </node>
@@ -1311,32 +1271,21 @@
         <node concept="17QB3L" id="1FgNkkIalyN" role="1tU5fm" />
       </node>
       <node concept="3cqZAl" id="hLFg0de" role="3clF45" />
-      <node concept="3uibUv" id="hLFg0df" role="Sfmx6">
-        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
-      </node>
     </node>
     <node concept="2tJIrI" id="ORe5oE9clp" role="jymVt" />
     <node concept="3clFb_" id="hLFgrfm" role="jymVt">
       <property role="TrG5h" value="getNodeById" />
+      <property role="DiZV1" value="true" />
       <node concept="3clFbS" id="hLFgrfo" role="3clF47">
         <node concept="3cpWs6" id="hLFgrfJ" role="3cqZAp">
           <node concept="3EllGN" id="i1xB$H4" role="3cqZAk">
             <node concept="37vLTw" id="ORe5oE9dt_" role="3ElQJh">
               <ref role="3cqZAo" node="hLFgf6J" resolve="myMap" />
             </node>
-            <node concept="2OqwBi" id="2n9zn0CqM$U" role="3ElVtu">
-              <node concept="37vLTw" id="ORe5oE9dFx" role="2Oq$k0">
-                <ref role="3cqZAo" node="hLFg6DL" resolve="myModel" />
-              </node>
-              <node concept="liA8E" id="2n9zn0CqM$V" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModel.getNode(org.jetbrains.mps.openapi.model.SNodeId):org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
-                <node concept="2YIFZM" id="2n9zn0CqM$W" role="37wK5m">
-                  <ref role="37wK5l" to="w1kc:~SNodeId.fromString(java.lang.String):jetbrains.mps.smodel.SNodeId" resolve="fromString" />
-                  <ref role="1Pybhc" to="w1kc:~SNodeId" resolve="SNodeId" />
-                  <node concept="37vLTw" id="2BHiRxgmgl2" role="37wK5m">
-                    <ref role="3cqZAo" node="hLFgrfL" resolve="id" />
-                  </node>
-                </node>
+            <node concept="1rXfSq" id="3QbfubvnIO3" role="3ElVtu">
+              <ref role="37wK5l" node="hLFg$wA" resolve="getRealNodeById" />
+              <node concept="37vLTw" id="3QbfubvnJ6g" role="37wK5m">
+                <ref role="3cqZAo" node="hLFgrfL" resolve="id" />
               </node>
             </node>
           </node>
@@ -1348,10 +1297,18 @@
         <node concept="17QB3L" id="1FgNkkIalyQ" role="1tU5fm" />
       </node>
       <node concept="3Tqbb2" id="hLFgrfN" role="3clF45" />
+      <node concept="P$JXv" id="3QbfubvnLfY" role="lGtFl">
+        <node concept="TZ5HA" id="3QbfubvnLfZ" role="TZ5H$">
+          <node concept="1dT_AC" id="3QbfubvnLg0" role="1dT_Ay">
+            <property role="1dT_AB" value="access copy of a node given identity from original model; copy is clean " />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="ORe5oE9dbo" role="jymVt" />
     <node concept="3clFb_" id="hLFg$wA" role="jymVt">
       <property role="TrG5h" value="getRealNodeById" />
+      <property role="DiZV1" value="true" />
       <node concept="3Tqbb2" id="hLFg$wY" role="3clF45" />
       <node concept="37vLTG" id="hLFg$wW" role="3clF46">
         <property role="TrG5h" value="id" />
@@ -1377,6 +1334,18 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="hLFg$wB" role="1B3o_S" />
+      <node concept="P$JXv" id="3QbfubvnLuy" role="lGtFl">
+        <node concept="TZ5HA" id="3QbfubvnLuz" role="TZ5H$">
+          <node concept="1dT_AC" id="3QbfubvnLu$" role="1dT_Ay">
+            <property role="1dT_AB" value="Access complete test node by its id from original model. " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3QbfubvnLIw" role="TZ5H$">
+          <node concept="1dT_AC" id="3QbfubvnLIx" role="1dT_Ay">
+            <property role="1dT_AB" value="Note, test node comes from a transient model which is a clone of original test model" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3Tm1VV" id="hLFfHcY" role="1B3o_S" />
   </node>
