@@ -12970,6 +12970,12 @@
               <ref role="3bR37D" node="7Kfy9QB6LaO" resolve="jetbrains.mps.lang.structure" />
             </node>
           </node>
+          <node concept="1SiIV0" id="72loOFqYXK1" role="3bR37C">
+            <node concept="3bR9La" id="72loOFqYXK2" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="1TaHNgiIbJt" resolve="jetbrains.mps.ide.platform" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="2a9bszgruRd" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgruRc" role="1SiIV1">

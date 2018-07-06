@@ -266,6 +266,8 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.make.reduced.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.tool.gentest.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/text/jetbrains.mps.lang.text.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-api.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-runtime.jar" />
@@ -273,8 +275,12 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/lib/mps-stubs.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/lib/mps-test.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
       <chunk bootstrap="true">
         <module file="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" bootstrap="true" />
