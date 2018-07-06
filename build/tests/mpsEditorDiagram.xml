@@ -271,7 +271,6 @@
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
-      <library file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
       <chunk>
         <module file="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/jetbrains.mps.lang.editor.diagram.testLanguage.mpl" />
         <module file="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/jetbrains.mps.lang.editor.figures.sandbox.msd" />
@@ -377,7 +376,6 @@
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.testLanguage" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
-        <fileset file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/hamcrest-core-1.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/junit-4.12.jar" />
@@ -568,7 +566,6 @@
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
-      <pathelement location="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">

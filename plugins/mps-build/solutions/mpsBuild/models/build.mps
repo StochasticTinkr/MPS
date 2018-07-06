@@ -31023,18 +31023,6 @@
             <ref role="3bR37D" node="7Kfy9QB6LfK" resolve="jetbrains.mps.dataFlow.runtime" />
           </node>
         </node>
-        <node concept="1SiIV0" id="3fCcEmT33lt" role="3bR37C">
-          <node concept="3bR9La" id="3fCcEmT33lu" role="1SiIV1">
-            <property role="3bR36h" value="true" />
-            <ref role="3bR37D" node="3fCcEmT2ZdI" resolve="jetbrains.mps.lang.test.util" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="6LlhC3WPEvM" role="3bR37C">
-          <node concept="3bR9La" id="6LlhC3WPEvN" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="1TaHNgiIbJt" resolve="jetbrains.mps.ide.platform" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="1nB28sc9cT" role="3bR37C">
           <node concept="3bR9La" id="1nB28sc9cU" role="1SiIV1">
             <property role="3bR36h" value="true" />
@@ -31082,7 +31070,7 @@
         </node>
         <node concept="1SiIV0" id="1xb0AuwNnjC" role="3bR37C">
           <node concept="3bR9La" id="1xb0AuwNnjD" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="1xb0AuwN7WS" resolve="JUnit" />
           </node>
         </node>

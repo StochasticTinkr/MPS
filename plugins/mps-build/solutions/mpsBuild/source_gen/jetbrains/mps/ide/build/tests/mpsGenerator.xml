@@ -692,7 +692,6 @@
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
-      <library file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
       <chunk>
         <module file="${basedir}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.msd" />
         <module file="${basedir}/languages/languageDesign/generator/test/crossmodel/jetbrains.mps.generator.crossmodel.sandbox.msd" />
@@ -788,7 +787,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property#5533782486491461721" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.generator.test.crossmodel.property#g2" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
-        <fileset file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/hamcrest-core-1.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/junit-4.12.jar" />
@@ -1089,7 +1087,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeavingGenerated.data" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeavingInterpreted.data" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
-        <fileset file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/hamcrest-core-1.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/junit-4.12.jar" />
@@ -1442,7 +1439,6 @@
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
-      <pathelement location="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
       <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.crossmodel.sandbox.jar" />
       <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.entity-generator.jar" />
       <pathelement location="${build.layout}/crossmodel/jetbrains.mps.generator.test.crossmodel.entity.jar" />
