@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -23,6 +26,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class InlineInClosureWithOutsideAssignment_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(InlineInClosureWithOutsideAssignment_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public InlineInClosureWithOutsideAssignment_Test() {
     super(ourParamCache);
@@ -30,11 +35,15 @@ public class InlineInClosureWithOutsideAssignment_Test extends BaseTransformatio
 
   @Test
   public void test_InlineInClosureWithOutsideAssingmentTest() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.InlineInClosureWithOutsideAssignment_Test$TestBody", "test_InlineInClosureWithOutsideAssingmentTest", true);
+    new InlineInClosureWithOutsideAssignment_Test.TestBody(this).test_InlineInClosureWithOutsideAssingmentTest();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_InlineInClosureWithOutsideAssingmentTest() throws Exception {
       addNodeById("7093131866560585772");
       addNodeById("7093131866560585816");

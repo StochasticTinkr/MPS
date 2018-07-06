@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.migration.ReplaceOldCommentWithGenericComment_CommentedStatementsBlock;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -22,6 +25,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class TestMigrateCommentBlock_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestMigrateCommentBlock_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public TestMigrateCommentBlock_Test() {
     super(ourParamCache);
@@ -29,11 +34,15 @@ public class TestMigrateCommentBlock_Test extends BaseTransformationTest {
 
   @Test
   public void test_MigrateBlock() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TestMigrateCommentBlock_Test$TestBody", "test_MigrateBlock", true);
+    new TestMigrateCommentBlock_Test.TestBody(this).test_MigrateBlock();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_MigrateBlock() throws Exception {
       addNodeById("494962652073944659");
       addNodeById("494962652073944777");

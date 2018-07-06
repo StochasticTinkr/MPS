@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -34,6 +37,8 @@ import junit.framework.Assert;
 public class JavaCommand_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(JavaCommand_Test.class, "${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public JavaCommand_Test() {
     super(ourParamCache);
@@ -41,11 +46,15 @@ public class JavaCommand_Test extends BaseTransformationTest {
 
   @Test
   public void test_startJavaByNode() throws Throwable {
-    runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$TestBody", "test_startJavaByNode", true);
+    new JavaCommand_Test.TestBody(this).test_startJavaByNode();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_startJavaByNode() throws Exception {
       final Wrappers._T<SNodeReference> pointer = new Wrappers._T<SNodeReference>();
       myProject.getModelAccess().runReadAction(new Runnable() {

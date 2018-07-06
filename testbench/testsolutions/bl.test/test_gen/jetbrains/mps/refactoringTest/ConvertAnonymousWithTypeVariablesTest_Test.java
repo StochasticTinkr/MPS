@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -22,6 +25,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class ConvertAnonymousWithTypeVariablesTest_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ConvertAnonymousWithTypeVariablesTest_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public ConvertAnonymousWithTypeVariablesTest_Test() {
     super(ourParamCache);
@@ -29,11 +34,15 @@ public class ConvertAnonymousWithTypeVariablesTest_Test extends BaseTransformati
 
   @Test
   public void test_TypeVariablesTest() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.ConvertAnonymousWithTypeVariablesTest_Test$TestBody", "test_TypeVariablesTest", true);
+    new ConvertAnonymousWithTypeVariablesTest_Test.TestBody(this).test_TypeVariablesTest();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_TypeVariablesTest() throws Exception {
       addNodeById("2230400082817266598");
       addNodeById("2230400082817266608");

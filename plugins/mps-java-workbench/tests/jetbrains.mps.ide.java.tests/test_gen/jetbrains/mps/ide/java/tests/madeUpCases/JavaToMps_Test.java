@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.ide.java.tests.utility.Utils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -20,6 +23,8 @@ import jetbrains.mps.project.AbstractModule;
 public class JavaToMps_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(JavaToMps_Test.class, "${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public JavaToMps_Test() {
     super(ourParamCache);
@@ -27,47 +32,51 @@ public class JavaToMps_Test extends BaseTransformationTest {
 
   @Test
   public void test_SelfRef() throws Throwable {
-    runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_SelfRef", true);
+    new JavaToMps_Test.TestBody(this).test_SelfRef();
   }
   @Test
   public void test_ClassWInnerInterace() throws Throwable {
-    runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_ClassWInnerInterace", true);
+    new JavaToMps_Test.TestBody(this).test_ClassWInnerInterace();
   }
   @Test
   public void test_Imports1() throws Throwable {
-    runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_Imports1", true);
+    new JavaToMps_Test.TestBody(this).test_Imports1();
   }
   @Test
   public void test_Imports2() throws Throwable {
-    runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_Imports2", true);
+    new JavaToMps_Test.TestBody(this).test_Imports2();
   }
   @Test
   public void test_Imports3() throws Throwable {
-    runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_Imports3", true);
+    new JavaToMps_Test.TestBody(this).test_Imports3();
   }
   @Test
   public void test_Annotations() throws Throwable {
-    runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_Annotations", true);
+    new JavaToMps_Test.TestBody(this).test_Annotations();
   }
   @Test
   public void test_ClassNesting() throws Throwable {
-    runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_ClassNesting", true);
+    new JavaToMps_Test.TestBody(this).test_ClassNesting();
   }
   @Test
   public void test_FullSource() throws Throwable {
-    runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_FullSource", true);
+    new JavaToMps_Test.TestBody(this).test_FullSource();
   }
   @Test
   public void test_LittleSource() throws Throwable {
-    runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_LittleSource", true);
+    new JavaToMps_Test.TestBody(this).test_LittleSource();
   }
   @Test
   public void test_ByteCodeVsSourceStubs() throws Throwable {
-    runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_ByteCodeVsSourceStubs", true);
+    new JavaToMps_Test.TestBody(this).test_ByteCodeVsSourceStubs();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_SelfRef() throws Exception {
       addNodeById("4795297196607520929");
       addNodeById("1218582063869484737");

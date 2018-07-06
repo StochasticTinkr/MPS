@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,6 +28,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class SimpleFindForExtractWithReturn_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SimpleFindForExtractWithReturn_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public SimpleFindForExtractWithReturn_Test() {
     super(ourParamCache);
@@ -32,11 +37,15 @@ public class SimpleFindForExtractWithReturn_Test extends BaseTransformationTest 
 
   @Test
   public void test_SimpleFindForExtractWithReturnTest() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.SimpleFindForExtractWithReturn_Test$TestBody", "test_SimpleFindForExtractWithReturnTest", true);
+    new SimpleFindForExtractWithReturn_Test.TestBody(this).test_SimpleFindForExtractWithReturnTest();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_SimpleFindForExtractWithReturnTest() throws Exception {
       addNodeById("1998477585418805538");
       addNodeById("1998477585418805601");

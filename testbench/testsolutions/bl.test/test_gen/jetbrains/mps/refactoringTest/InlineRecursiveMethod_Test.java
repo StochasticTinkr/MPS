@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,6 +20,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class InlineRecursiveMethod_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(InlineRecursiveMethod_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public InlineRecursiveMethod_Test() {
     super(ourParamCache);
@@ -24,11 +29,15 @@ public class InlineRecursiveMethod_Test extends BaseTransformationTest {
 
   @Test
   public void test_InlineRecursiveMethod() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.InlineRecursiveMethod_Test$TestBody", "test_InlineRecursiveMethod", true);
+    new InlineRecursiveMethod_Test.TestBody(this).test_InlineRecursiveMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_InlineRecursiveMethod() throws Exception {
       addNodeById("1230052989283");
       Assert.assertTrue(new InlineMethodModel(SNodeOperations.cast(getNodeById("1230052989285"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b21dL, "InstanceMethodDeclaration")))).getErrors() != null);

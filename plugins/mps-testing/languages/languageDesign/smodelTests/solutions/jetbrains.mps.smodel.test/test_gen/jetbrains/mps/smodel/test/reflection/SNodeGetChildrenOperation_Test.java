@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -24,6 +27,8 @@ import java.util.List;
 public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SNodeGetChildrenOperation_Test.class, "${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public SNodeGetChildrenOperation_Test() {
     super(ourParamCache);
@@ -31,39 +36,43 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
 
   @Test
   public void test_childContainingLinks() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContainingLinks", true);
+    new SNodeGetChildrenOperation_Test.TestBody(this).test_childContainingLinks();
   }
   @Test
   public void test_childContaininLinksForSpecializedChildren() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContaininLinksForSpecializedChildren", true);
+    new SNodeGetChildrenOperation_Test.TestBody(this).test_childContaininLinksForSpecializedChildren();
   }
   @Test
   public void test_childContainingRoles() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContainingRoles", true);
+    new SNodeGetChildrenOperation_Test.TestBody(this).test_childContainingRoles();
   }
   @Test
   public void test_unspecifiedChildren() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_unspecifiedChildren", true);
+    new SNodeGetChildrenOperation_Test.TestBody(this).test_unspecifiedChildren();
   }
   @Test
   public void test_childOperationsOnNull() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childOperationsOnNull", true);
+    new SNodeGetChildrenOperation_Test.TestBody(this).test_childOperationsOnNull();
   }
   @Test
   public void test_childrenByLinkDeclaration() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclaration", true);
+    new SNodeGetChildrenOperation_Test.TestBody(this).test_childrenByLinkDeclaration();
   }
   @Test
   public void test_childrenByLinkDeclarationSpecialized() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclarationSpecialized", true);
+    new SNodeGetChildrenOperation_Test.TestBody(this).test_childrenByLinkDeclarationSpecialized();
   }
   @Test
   public void test_childrenByLinkDeclarationOnNull() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclarationOnNull", true);
+    new SNodeGetChildrenOperation_Test.TestBody(this).test_childrenByLinkDeclarationOnNull();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_childContainingLinks() throws Exception {
       addNodeById("8758390115029078425");
       addNodeById("5815925154349132136");
@@ -114,7 +123,7 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       addNodeById("2166349271756548530");
       SNode nullNode = null;
       Assert.assertNull(SNodeOperations.getContainingLink(nullNode));
-      Assert.assertNull(check_vfao6t_a5a4n(SNodeOperations.getContainingLink(nullNode)));
+      Assert.assertNull(check_vfao6t_a5a7o(SNodeOperations.getContainingLink(nullNode)));
     }
     public void test_childrenByLinkDeclaration() throws Exception {
       addNodeById("8758390115029078425");
@@ -149,7 +158,7 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       input.addChild(link, unspecifiedChild);
       return link;
     }
-    private static String check_vfao6t_a5a4n(SContainmentLink checkedDotOperand) {
+    private static String check_vfao6t_a5a7o(SContainmentLink checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getName();
       }

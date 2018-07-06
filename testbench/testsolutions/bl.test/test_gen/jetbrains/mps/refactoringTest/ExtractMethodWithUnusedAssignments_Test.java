@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,6 +27,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class ExtractMethodWithUnusedAssignments_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ExtractMethodWithUnusedAssignments_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public ExtractMethodWithUnusedAssignments_Test() {
     super(ourParamCache);
@@ -31,11 +36,15 @@ public class ExtractMethodWithUnusedAssignments_Test extends BaseTransformationT
 
   @Test
   public void test_ExtractMethodWithUnusedAssignmentsTest() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.ExtractMethodWithUnusedAssignments_Test$TestBody", "test_ExtractMethodWithUnusedAssignmentsTest", true);
+    new ExtractMethodWithUnusedAssignments_Test.TestBody(this).test_ExtractMethodWithUnusedAssignmentsTest();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_ExtractMethodWithUnusedAssignmentsTest() throws Exception {
       addNodeById("2004738378939038442");
       addNodeById("2004738378939038435");

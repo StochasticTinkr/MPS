@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class StaticMethodTypeArgumentsMatch_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(StaticMethodTypeArgumentsMatch_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public StaticMethodTypeArgumentsMatch_Test() {
     super(ourParamCache);
@@ -24,323 +29,327 @@ public class StaticMethodTypeArgumentsMatch_Test extends BaseTransformationTest 
 
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929474538() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929474538", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeVariableInitializerIsRedundantWarningCheck6923385624929474538();
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512923052() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512923052", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeUnusedLocalVariableCheck215889526512923052();
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929093688() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929093688", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeVariableInitializerIsRedundantWarningCheck6923385624929093688();
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512937850() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512937850", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeUnusedLocalVariableCheck215889526512937850();
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929759489() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929759489", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeVariableInitializerIsRedundantWarningCheck6923385624929759489();
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512967362() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512967362", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeUnusedLocalVariableCheck215889526512967362();
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624928064214() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624928064214", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeVariableInitializerIsRedundantWarningCheck6923385624928064214();
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512982160() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512982160", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeUnusedLocalVariableCheck215889526512982160();
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624928338237() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624928338237", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeVariableInitializerIsRedundantWarningCheck6923385624928338237();
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512996959() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512996959", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeUnusedLocalVariableCheck215889526512996959();
   }
   @Test
   public void test_NodeIncorrectNumberOfTypeCheck6923385624927076212() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIncorrectNumberOfTypeCheck6923385624927076212", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIncorrectNumberOfTypeCheck6923385624927076212();
   }
   @Test
   public void test_NodeIncorrectNumberOfTypeCheck6923385624929568518() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIncorrectNumberOfTypeCheck6923385624929568518", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIncorrectNumberOfTypeCheck6923385624929568518();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929085682() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929085682", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929085682();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928071609() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928071609", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928071609();
   }
   @Test
   public void test_NodeIncorrectNumberOfTypeCheck6923385624928055987() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIncorrectNumberOfTypeCheck6923385624928055987", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIncorrectNumberOfTypeCheck6923385624928055987();
   }
   @Test
   public void test_NodeIncorrectNumberOfTypeCheck6923385624927893669() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIncorrectNumberOfTypeCheck6923385624927893669", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIncorrectNumberOfTypeCheck6923385624927893669();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929638636() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929638636", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929638636();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929730930() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929730930", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929730930();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929887428() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929887428", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929887428();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927598052() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927598052", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927598052();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928310878() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928310878", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928310878();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929108750() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929108750", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929108750();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928705021() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928705021", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928705021();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929718802() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929718802", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929718802();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928278524() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928278524", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928278524();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929553520() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929553520", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929553520();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927168694() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927168694", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927168694();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929458730() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929458730", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929458730();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927571014() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927571014", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927571014();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927967241() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927967241", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927967241();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928022542() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928022542", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928022542();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929545255() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929545255", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929545255();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927353265() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927353265", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927353265();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928511526() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928511526", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928511526();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927691379() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927691379", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927691379();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929451186() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929451186", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929451186();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927094868() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927094868", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927094868();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928345644() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928345644", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928345644();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928520364() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928520364", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928520364();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927654739() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927654739", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927654739();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929837753() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929837753", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929837753();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624926987486() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624926987486", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624926987486();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927974629() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927974629", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927974629();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927227663() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927227663", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927227663();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929696443() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929696443", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929696443();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928504098() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928504098", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928504098();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927017247() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927017247", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927017247();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928985887() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928985887", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928985887();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927265973() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927265973", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927265973();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929787619() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929787619", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929787619();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927360609() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927360609", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927360609();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927176656() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927176656", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927176656();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929116365() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929116365", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929116365();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927698774() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927698774", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927698774();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929482011() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929482011", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929482011();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929403419() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929403419", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929403419();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929131303() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929131303", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929131303();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928993331() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928993331", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928993331();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927551638() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927551638", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927551638();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929561019() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929561019", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929561019();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929537722() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929537722", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929537722();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929584760() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929584760", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929584760();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929101144() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929101144", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929101144();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928475774() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928475774", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928475774();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927395599() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927395599", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927395599();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927254316() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927254316", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927254316();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927904368() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927904368", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927904368();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929466208() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929466208", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929466208();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927637065() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927637065", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927637065();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927622344() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927622344", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927622344();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927273298() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927273298", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927273298();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929123839() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929123839", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929123839();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927149353() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927149353", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927149353();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928919630() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928919630", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928919630();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927757855() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927757855", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927757855();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927387513() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927387513", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927387513();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929225321() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929225321", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929225321();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928353046() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928353046", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928353046();
   }
   @Test
   public void test_ErrorMessagesCheck7430872850884083577() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_ErrorMessagesCheck7430872850884083577", true);
+    new StaticMethodTypeArgumentsMatch_Test.TestBody(this).test_ErrorMessagesCheck7430872850884083577();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929474538() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929474538"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -22,6 +25,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class ConvertAnonymousAbstractClassWithConstructorTest_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ConvertAnonymousAbstractClassWithConstructorTest_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public ConvertAnonymousAbstractClassWithConstructorTest_Test() {
     super(ourParamCache);
@@ -29,11 +34,15 @@ public class ConvertAnonymousAbstractClassWithConstructorTest_Test extends BaseT
 
   @Test
   public void test_AbstractClassWithConstructorTest() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.ConvertAnonymousAbstractClassWithConstructorTest_Test$TestBody", "test_AbstractClassWithConstructorTest", true);
+    new ConvertAnonymousAbstractClassWithConstructorTest_Test.TestBody(this).test_AbstractClassWithConstructorTest();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_AbstractClassWithConstructorTest() throws Exception {
       addNodeById("3145818413497245832");
       addNodeById("3145818413497245858");

@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -26,6 +29,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class staticContainerClassTest_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(staticContainerClassTest_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public staticContainerClassTest_Test() {
     super(ourParamCache);
@@ -33,11 +38,15 @@ public class staticContainerClassTest_Test extends BaseTransformationTest {
 
   @Test
   public void test_staticContainerClassTest() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.staticContainerClassTest_Test$TestBody", "test_staticContainerClassTest", true);
+    new staticContainerClassTest_Test.TestBody(this).test_staticContainerClassTest();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_staticContainerClassTest() throws Exception {
       addNodeById("1230052684687");
       addNodeById("1230052684697");

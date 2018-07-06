@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -16,6 +19,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class ClosureDataFlow_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ClosureDataFlow_Test.class, "${mps_home}", "r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public ClosureDataFlow_Test() {
     super(ourParamCache);
@@ -23,11 +28,15 @@ public class ClosureDataFlow_Test extends BaseTransformationTest {
 
   @Test
   public void test_ClosureDataFlow() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test$TestBody", "test_ClosureDataFlow", true);
+    new ClosureDataFlow_Test.TestBody(this).test_ClosureDataFlow();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_ClosureDataFlow() throws Exception {
       addNodeById("1227886714746");
       NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1227886714749"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b204L, "ConstructorDeclaration"))), false, false, false);

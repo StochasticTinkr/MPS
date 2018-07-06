@@ -103,77 +103,84 @@
   </root>
   <root nodeRef="r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)/6186432342008539165">
     <file name="TestWeaving_Test.java">
-      <node id="6186432342008539165" at="20,29,21,25" concept="10" />
-      <node id="6186432342008539169" at="25,45,26,102" concept="2" />
-      <node id="6186432342008544908" at="29,49,30,106" concept="2" />
-      <node id="6186432342008544948" at="33,49,34,106" concept="2" />
-      <node id="6186432342008544988" at="37,53,38,110" concept="2" />
-      <node id="2819311507031226200" at="41,56,42,113" concept="2" />
-      <node id="2819311507031226190" at="45,60,46,117" concept="2" />
-      <node id="2819311507031226180" at="49,60,50,117" concept="2" />
-      <node id="2819311507031226170" at="53,64,54,121" concept="2" />
-      <node id="4664028035455039092" at="59,47,60,469" concept="2" />
-      <node id="4664028035455043788" at="62,51,63,473" concept="2" />
-      <node id="4664028035455084094" at="65,51,66,477" concept="2" />
-      <node id="4664028035455091648" at="68,55,69,481" concept="2" />
-      <node id="4664028035455047764" at="71,58,72,469" concept="2" />
-      <node id="4664028035455053217" at="74,62,75,473" concept="2" />
-      <node id="4664028035455057970" at="77,62,78,477" concept="2" />
-      <node id="4664028035455073704" at="80,66,81,481" concept="2" />
-      <node id="6186432342008539165" at="17,0,19,0" concept="9" trace="ourParamCache" />
-      <node id="6186432342008539165" at="20,0,23,0" concept="1" trace="TestWeaving_Test#()V" />
-      <node id="6186432342008539169" at="59,0,62,0" concept="6" trace="test_weave#()V" />
-      <node id="6186432342008544908" at="62,0,65,0" concept="6" trace="test_weaveEach#()V" />
-      <node id="6186432342008544948" at="65,0,68,0" concept="6" trace="test_weaveMany#()V" />
-      <node id="6186432342008544988" at="68,0,71,0" concept="6" trace="test_weaveEachMany#()V" />
-      <node id="2819311507031226200" at="71,0,74,0" concept="6" trace="test_weaveInterpreted#()V" />
-      <node id="2819311507031226190" at="74,0,77,0" concept="6" trace="test_weaveEachInterpreted#()V" />
-      <node id="2819311507031226180" at="77,0,80,0" concept="6" trace="test_weaveManyInterpreted#()V" />
-      <node id="2819311507031226170" at="80,0,83,0" concept="6" trace="test_weaveEachManyInterpreted#()V" />
-      <node id="6186432342008539169" at="24,0,28,0" concept="6" trace="test_weave#()V" />
-      <node id="6186432342008544908" at="28,0,32,0" concept="6" trace="test_weaveEach#()V" />
-      <node id="6186432342008544948" at="32,0,36,0" concept="6" trace="test_weaveMany#()V" />
-      <node id="6186432342008544988" at="36,0,40,0" concept="6" trace="test_weaveEachMany#()V" />
-      <node id="2819311507031226200" at="40,0,44,0" concept="6" trace="test_weaveInterpreted#()V" />
-      <node id="2819311507031226190" at="44,0,48,0" concept="6" trace="test_weaveEachInterpreted#()V" />
-      <node id="2819311507031226180" at="48,0,52,0" concept="6" trace="test_weaveManyInterpreted#()V" />
-      <node id="2819311507031226170" at="52,0,56,0" concept="6" trace="test_weaveEachManyInterpreted#()V" />
-      <scope id="6186432342008539165" at="20,29,21,25" />
-      <scope id="6186432342008539169" at="25,45,26,102" />
-      <scope id="6186432342008544908" at="29,49,30,106" />
-      <scope id="6186432342008544948" at="33,49,34,106" />
-      <scope id="6186432342008544988" at="37,53,38,110" />
-      <scope id="2819311507031226200" at="41,56,42,113" />
-      <scope id="2819311507031226190" at="45,60,46,117" />
-      <scope id="2819311507031226180" at="49,60,50,117" />
-      <scope id="2819311507031226170" at="53,64,54,121" />
-      <scope id="6186432342008539169" at="59,47,60,469" />
-      <scope id="6186432342008544908" at="62,51,63,473" />
-      <scope id="6186432342008544948" at="65,51,66,477" />
-      <scope id="6186432342008544988" at="68,55,69,481" />
-      <scope id="2819311507031226200" at="71,58,72,469" />
-      <scope id="2819311507031226190" at="74,62,75,473" />
-      <scope id="2819311507031226180" at="77,62,78,477" />
-      <scope id="2819311507031226170" at="80,66,81,481" />
-      <scope id="6186432342008539165" at="20,0,23,0" />
-      <scope id="6186432342008539169" at="59,0,62,0" />
-      <scope id="6186432342008544908" at="62,0,65,0" />
-      <scope id="6186432342008544948" at="65,0,68,0" />
-      <scope id="6186432342008544988" at="68,0,71,0" />
-      <scope id="2819311507031226200" at="71,0,74,0" />
-      <scope id="2819311507031226190" at="74,0,77,0" />
-      <scope id="2819311507031226180" at="77,0,80,0" />
-      <scope id="2819311507031226170" at="80,0,83,0" />
-      <scope id="6186432342008539169" at="24,0,28,0" />
-      <scope id="6186432342008544908" at="28,0,32,0" />
-      <scope id="6186432342008544948" at="32,0,36,0" />
-      <scope id="6186432342008544988" at="36,0,40,0" />
-      <scope id="2819311507031226200" at="40,0,44,0" />
-      <scope id="2819311507031226190" at="44,0,48,0" />
-      <scope id="2819311507031226180" at="48,0,52,0" />
-      <scope id="2819311507031226170" at="52,0,56,0" />
-      <unit id="6186432342008539165" at="57,0,86,0" name="jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody" />
-      <unit id="6186432342008539165" at="15,0,87,0" name="jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test" />
+      <node id="6186432342008539165" at="25,29,26,25" concept="10" />
+      <node id="6186432342008539169" at="30,45,31,53" concept="2" />
+      <node id="6186432342008544908" at="34,49,35,57" concept="2" />
+      <node id="6186432342008544948" at="38,49,39,57" concept="2" />
+      <node id="6186432342008544988" at="42,53,43,61" concept="2" />
+      <node id="2819311507031226200" at="46,56,47,64" concept="2" />
+      <node id="2819311507031226190" at="50,60,51,68" concept="2" />
+      <node id="2819311507031226180" at="54,60,55,68" concept="2" />
+      <node id="2819311507031226170" at="58,64,59,72" concept="2" />
+      <node id="6186432342008539165" at="64,52,65,19" concept="10" />
+      <node id="4664028035455039092" at="68,47,69,469" concept="2" />
+      <node id="4664028035455043788" at="71,51,72,473" concept="2" />
+      <node id="4664028035455084094" at="74,51,75,477" concept="2" />
+      <node id="4664028035455091648" at="77,55,78,481" concept="2" />
+      <node id="4664028035455047764" at="80,58,81,469" concept="2" />
+      <node id="4664028035455053217" at="83,62,84,473" concept="2" />
+      <node id="4664028035455057970" at="86,62,87,477" concept="2" />
+      <node id="4664028035455073704" at="89,66,90,481" concept="2" />
+      <node id="6186432342008539165" at="20,0,22,0" concept="9" trace="ourParamCache" />
+      <node id="6186432342008539165" at="22,0,24,0" concept="3" trace="myWithCommandRule" />
+      <node id="6186432342008539165" at="25,0,28,0" concept="1" trace="TestWeaving_Test#()V" />
+      <node id="6186432342008539165" at="64,0,67,0" concept="1" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="6186432342008539169" at="68,0,71,0" concept="6" trace="test_weave#()V" />
+      <node id="6186432342008544908" at="71,0,74,0" concept="6" trace="test_weaveEach#()V" />
+      <node id="6186432342008544948" at="74,0,77,0" concept="6" trace="test_weaveMany#()V" />
+      <node id="6186432342008544988" at="77,0,80,0" concept="6" trace="test_weaveEachMany#()V" />
+      <node id="2819311507031226200" at="80,0,83,0" concept="6" trace="test_weaveInterpreted#()V" />
+      <node id="2819311507031226190" at="83,0,86,0" concept="6" trace="test_weaveEachInterpreted#()V" />
+      <node id="2819311507031226180" at="86,0,89,0" concept="6" trace="test_weaveManyInterpreted#()V" />
+      <node id="2819311507031226170" at="89,0,92,0" concept="6" trace="test_weaveEachManyInterpreted#()V" />
+      <node id="6186432342008539169" at="29,0,33,0" concept="6" trace="test_weave#()V" />
+      <node id="6186432342008544908" at="33,0,37,0" concept="6" trace="test_weaveEach#()V" />
+      <node id="6186432342008544948" at="37,0,41,0" concept="6" trace="test_weaveMany#()V" />
+      <node id="6186432342008544988" at="41,0,45,0" concept="6" trace="test_weaveEachMany#()V" />
+      <node id="2819311507031226200" at="45,0,49,0" concept="6" trace="test_weaveInterpreted#()V" />
+      <node id="2819311507031226190" at="49,0,53,0" concept="6" trace="test_weaveEachInterpreted#()V" />
+      <node id="2819311507031226180" at="53,0,57,0" concept="6" trace="test_weaveManyInterpreted#()V" />
+      <node id="2819311507031226170" at="57,0,61,0" concept="6" trace="test_weaveEachManyInterpreted#()V" />
+      <scope id="6186432342008539165" at="25,29,26,25" />
+      <scope id="6186432342008539169" at="30,45,31,53" />
+      <scope id="6186432342008544908" at="34,49,35,57" />
+      <scope id="6186432342008544948" at="38,49,39,57" />
+      <scope id="6186432342008544988" at="42,53,43,61" />
+      <scope id="2819311507031226200" at="46,56,47,64" />
+      <scope id="2819311507031226190" at="50,60,51,68" />
+      <scope id="2819311507031226180" at="54,60,55,68" />
+      <scope id="2819311507031226170" at="58,64,59,72" />
+      <scope id="6186432342008539165" at="64,52,65,19" />
+      <scope id="6186432342008539169" at="68,47,69,469" />
+      <scope id="6186432342008544908" at="71,51,72,473" />
+      <scope id="6186432342008544948" at="74,51,75,477" />
+      <scope id="6186432342008544988" at="77,55,78,481" />
+      <scope id="2819311507031226200" at="80,58,81,469" />
+      <scope id="2819311507031226190" at="83,62,84,473" />
+      <scope id="2819311507031226180" at="86,62,87,477" />
+      <scope id="2819311507031226170" at="89,66,90,481" />
+      <scope id="6186432342008539165" at="25,0,28,0" />
+      <scope id="6186432342008539165" at="64,0,67,0">
+        <var name="owner" id="6186432342008539165" />
+      </scope>
+      <scope id="6186432342008539169" at="68,0,71,0" />
+      <scope id="6186432342008544908" at="71,0,74,0" />
+      <scope id="6186432342008544948" at="74,0,77,0" />
+      <scope id="6186432342008544988" at="77,0,80,0" />
+      <scope id="2819311507031226200" at="80,0,83,0" />
+      <scope id="2819311507031226190" at="83,0,86,0" />
+      <scope id="2819311507031226180" at="86,0,89,0" />
+      <scope id="2819311507031226170" at="89,0,92,0" />
+      <scope id="6186432342008539169" at="29,0,33,0" />
+      <scope id="6186432342008544908" at="33,0,37,0" />
+      <scope id="6186432342008544948" at="37,0,41,0" />
+      <scope id="6186432342008544988" at="41,0,45,0" />
+      <scope id="2819311507031226200" at="45,0,49,0" />
+      <scope id="2819311507031226190" at="49,0,53,0" />
+      <scope id="2819311507031226180" at="53,0,57,0" />
+      <scope id="2819311507031226170" at="57,0,61,0" />
+      <unit id="6186432342008539165" at="62,0,95,0" name="jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody" />
+      <unit id="6186432342008539165" at="18,0,96,0" name="jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test" />
     </file>
   </root>
 </debug-info>

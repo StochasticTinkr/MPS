@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -25,6 +28,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SLinkListAccess_ListModifyingOperaions_Test.class, "${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public SLinkListAccess_ListModifyingOperaions_Test() {
     super(ourParamCache);
@@ -32,67 +37,71 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
 
   @Test
   public void test_add() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_add", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_add();
   }
   @Test
   public void test_addAll() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_addAll", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_addAll();
   }
   @Test
   public void test_addAllWithIndex() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_addAllWithIndex", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_addAllWithIndex();
   }
   @Test
   public void test_addFirst() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_addFirst", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_addFirst();
   }
   @Test
   public void test_addLast() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_addLast", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_addLast();
   }
   @Test
   public void test_removeFromOriginalContainerOnAdd() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_removeFromOriginalContainerOnAdd", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_removeFromOriginalContainerOnAdd();
   }
   @Test
   public void test_remove() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_remove", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_remove();
   }
   @Test
   public void test_removeAll() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_removeAll", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_removeAll();
   }
   @Test
   public void test_removeFirst() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_removeFirst", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_removeFirst();
   }
   @Test
   public void test_removeLast() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_removeLast", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_removeLast();
   }
   @Test
   public void test_removeAt() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_removeAt", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_removeAt();
   }
   @Test
   public void test_removeWhere() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_removeWhere", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_removeWhere();
   }
   @Test
   public void test_insert() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_insert", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_insert();
   }
   @Test
   public void test_set() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_set", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_set();
   }
   @Test
   public void test_clear() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_clear", true);
+    new SLinkListAccess_ListModifyingOperaions_Test.TestBody(this).test_clear();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_add() throws Exception {
       addNodeById("2282909602806268543");
       addNodeById("2282909602806423211");

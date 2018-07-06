@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -18,6 +21,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class TypeCheckingErrors_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TypeCheckingErrors_Test.class, "${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public TypeCheckingErrors_Test() {
     super(ourParamCache);
@@ -25,27 +30,31 @@ public class TypeCheckingErrors_Test extends BaseTransformationTest {
 
   @Test
   public void test_mps18720() throws Throwable {
-    runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_mps18720", true);
+    new TypeCheckingErrors_Test.TestBody(this).test_mps18720();
   }
   @Test
   public void test_varar_raw() throws Throwable {
-    runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_varar_raw", true);
+    new TypeCheckingErrors_Test.TestBody(this).test_varar_raw();
   }
   @Test
   public void test_lbt_subtypeof_param() throws Throwable {
-    runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_lbt_subtypeof_param", true);
+    new TypeCheckingErrors_Test.TestBody(this).test_lbt_subtypeof_param();
   }
   @Test
   public void test_meet_with_variable_excluded_from_lcs() throws Throwable {
-    runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_meet_with_variable_excluded_from_lcs", true);
+    new TypeCheckingErrors_Test.TestBody(this).test_meet_with_variable_excluded_from_lcs();
   }
   @Test
   public void test_NodeErrorCheck1089557578630058014() throws Throwable {
-    runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_NodeErrorCheck1089557578630058014", true);
+    new TypeCheckingErrors_Test.TestBody(this).test_NodeErrorCheck1089557578630058014();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_mps18720() throws Exception {
       addNodeById("1301553664999174765");
       addNodeById("3441689827373214227");

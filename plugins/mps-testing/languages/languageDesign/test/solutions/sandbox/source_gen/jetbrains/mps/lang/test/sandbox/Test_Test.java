@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -18,6 +21,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class Test_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(Test_Test.class, "${mps_home}", "r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public Test_Test() {
     super(ourParamCache);
@@ -25,39 +30,43 @@ public class Test_Test extends BaseTransformationTest {
 
   @Test
   public void test_testError() throws Throwable {
-    runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_testError", true);
+    new Test_Test.TestBody(this).test_testError();
   }
   @Test
   public void test_hasType() throws Throwable {
-    runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_hasType", true);
+    new Test_Test.TestBody(this).test_hasType();
   }
   @Test
   public void test_hasError() throws Throwable {
-    runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_hasError", true);
+    new Test_Test.TestBody(this).test_hasError();
   }
   @Test
   public void test_hasTypeInSet() throws Throwable {
-    runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_hasTypeInSet", true);
+    new Test_Test.TestBody(this).test_hasTypeInSet();
   }
   @Test
   public void test_NodeTestinfoRootPointingTheCheck2276757138027830973() throws Throwable {
-    runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_NodeTestinfoRootPointingTheCheck2276757138027830973", true);
+    new Test_Test.TestBody(this).test_NodeTestinfoRootPointingTheCheck2276757138027830973();
   }
   @Test
   public void test_NodeTypeCheck6594325605663849546() throws Throwable {
-    runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_NodeTypeCheck6594325605663849546", true);
+    new Test_Test.TestBody(this).test_NodeTypeCheck6594325605663849546();
   }
   @Test
   public void test_NodeErrorCheck6594325605663849637() throws Throwable {
-    runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_NodeErrorCheck6594325605663849637", true);
+    new Test_Test.TestBody(this).test_NodeErrorCheck6594325605663849637();
   }
   @Test
   public void test_NodeTypeSetCheck6594325605663852576() throws Throwable {
-    runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_NodeTypeSetCheck6594325605663852576", true);
+    new Test_Test.TestBody(this).test_NodeTypeSetCheck6594325605663852576();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_testError() throws Exception {
       addNodeById("6594325605663717987");
       NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("6594325605663831239"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc67c7efL, "LocalVariableDeclaration"))), false, false, false);

@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class OverridingInference_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(OverridingInference_Test.class, "${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public OverridingInference_Test() {
     super(ourParamCache);
@@ -24,43 +29,47 @@ public class OverridingInference_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeErrorCheck6572489169071449300() throws Throwable {
-    runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck6572489169071449300", true);
+    new OverridingInference_Test.TestBody(this).test_NodeErrorCheck6572489169071449300();
   }
   @Test
   public void test_NodeErrorCheck6572489169071450944() throws Throwable {
-    runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck6572489169071450944", true);
+    new OverridingInference_Test.TestBody(this).test_NodeErrorCheck6572489169071450944();
   }
   @Test
   public void test_NodeErrorCheck6560794580689901218() throws Throwable {
-    runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck6560794580689901218", true);
+    new OverridingInference_Test.TestBody(this).test_NodeErrorCheck6560794580689901218();
   }
   @Test
   public void test_NodeErrorCheck6560794580689901568() throws Throwable {
-    runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck6560794580689901568", true);
+    new OverridingInference_Test.TestBody(this).test_NodeErrorCheck6560794580689901568();
   }
   @Test
   public void test_NodeErrorCheck1870027727456331649() throws Throwable {
-    runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck1870027727456331649", true);
+    new OverridingInference_Test.TestBody(this).test_NodeErrorCheck1870027727456331649();
   }
   @Test
   public void test_NodeErrorCheck1870027727456349628() throws Throwable {
-    runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck1870027727456349628", true);
+    new OverridingInference_Test.TestBody(this).test_NodeErrorCheck1870027727456349628();
   }
   @Test
   public void test_NodeErrorCheck1870027727456331667() throws Throwable {
-    runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck1870027727456331667", true);
+    new OverridingInference_Test.TestBody(this).test_NodeErrorCheck1870027727456331667();
   }
   @Test
   public void test_NodeErrorCheck1042936571392548556() throws Throwable {
-    runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck1042936571392548556", true);
+    new OverridingInference_Test.TestBody(this).test_NodeErrorCheck1042936571392548556();
   }
   @Test
   public void test_ErrorMessagesCheck4113274076525493263() throws Throwable {
-    runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_ErrorMessagesCheck4113274076525493263", true);
+    new OverridingInference_Test.TestBody(this).test_ErrorMessagesCheck4113274076525493263();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeErrorCheck6572489169071449300() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6572489169071449300"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

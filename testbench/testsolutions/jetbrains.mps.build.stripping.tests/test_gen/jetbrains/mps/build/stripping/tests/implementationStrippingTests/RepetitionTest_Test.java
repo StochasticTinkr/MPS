@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class RepetitionTest_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(RepetitionTest_Test.class, "${mps_home}", "r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public RepetitionTest_Test() {
     super(ourParamCache);
@@ -24,19 +29,23 @@ public class RepetitionTest_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeErrorCheck5264300948581808886() throws Throwable {
-    runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.RepetitionTest_Test$TestBody", "test_NodeErrorCheck5264300948581808886", true);
+    new RepetitionTest_Test.TestBody(this).test_NodeErrorCheck5264300948581808886();
   }
   @Test
   public void test_NodeErrorCheck5264300948581808891() throws Throwable {
-    runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.RepetitionTest_Test$TestBody", "test_NodeErrorCheck5264300948581808891", true);
+    new RepetitionTest_Test.TestBody(this).test_NodeErrorCheck5264300948581808891();
   }
   @Test
   public void test_ErrorMessagesCheck5264300948581808827() throws Throwable {
-    runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.RepetitionTest_Test$TestBody", "test_ErrorMessagesCheck5264300948581808827", true);
+    new RepetitionTest_Test.TestBody(this).test_ErrorMessagesCheck5264300948581808827();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeErrorCheck5264300948581808886() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("5264300948581808886"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

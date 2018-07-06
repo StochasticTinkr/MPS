@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class BaseAssignmentToFinalVariable_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(BaseAssignmentToFinalVariable_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public BaseAssignmentToFinalVariable_Test() {
     super(ourParamCache);
@@ -24,35 +29,39 @@ public class BaseAssignmentToFinalVariable_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeCannotAssignValueToFinalCheck5706606249111788699() throws Throwable {
-    runTest("jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck5706606249111788699", true);
+    new BaseAssignmentToFinalVariable_Test.TestBody(this).test_NodeCannotAssignValueToFinalCheck5706606249111788699();
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck5706606249111798505() throws Throwable {
-    runTest("jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck5706606249111798505", true);
+    new BaseAssignmentToFinalVariable_Test.TestBody(this).test_NodeCannotAssignValueToFinalCheck5706606249111798505();
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck6982528192101427028() throws Throwable {
-    runTest("jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6982528192101427028", true);
+    new BaseAssignmentToFinalVariable_Test.TestBody(this).test_NodeCannotAssignValueToFinalCheck6982528192101427028();
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck6982528192101427038() throws Throwable {
-    runTest("jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6982528192101427038", true);
+    new BaseAssignmentToFinalVariable_Test.TestBody(this).test_NodeCannotAssignValueToFinalCheck6982528192101427038();
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck6549739314330314428() throws Throwable {
-    runTest("jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6549739314330314428", true);
+    new BaseAssignmentToFinalVariable_Test.TestBody(this).test_NodeCannotAssignValueToFinalCheck6549739314330314428();
   }
   @Test
   public void test_NodeVariableHasNotBeenInitializedErrorCheck6549739314330060411() throws Throwable {
-    runTest("jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody", "test_NodeVariableHasNotBeenInitializedErrorCheck6549739314330060411", true);
+    new BaseAssignmentToFinalVariable_Test.TestBody(this).test_NodeVariableHasNotBeenInitializedErrorCheck6549739314330060411();
   }
   @Test
   public void test_ErrorMessagesCheck5706606249111739463() throws Throwable {
-    runTest("jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody", "test_ErrorMessagesCheck5706606249111739463", true);
+    new BaseAssignmentToFinalVariable_Test.TestBody(this).test_ErrorMessagesCheck5706606249111739463();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeCannotAssignValueToFinalCheck5706606249111788699() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("5706606249111788699"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

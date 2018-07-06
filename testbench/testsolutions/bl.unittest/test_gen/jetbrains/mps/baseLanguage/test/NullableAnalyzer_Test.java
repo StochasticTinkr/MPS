@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class NullableAnalyzer_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(NullableAnalyzer_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public NullableAnalyzer_Test() {
     super(ourParamCache);
@@ -24,499 +29,503 @@ public class NullableAnalyzer_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624927436728() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624927436728", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624927436728();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624929290285() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624929290285", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624929290285();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624927280957() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624927280957", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624927280957();
   }
   @Test
   public void test_testDot6011730950863071516() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testDot6011730950863071516", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testDot6011730950863071516();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck2857825852305621536() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2857825852305621536", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck2857825852305621536();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624929530194() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624929530194", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624929530194();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624927477751() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624927477751", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624927477751();
   }
   @Test
   public void test_testIf1228615757308491250() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testIf1228615757308491250", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testIf1228615757308491250();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624927841333() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624927841333", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624927841333();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624927680682() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624927680682", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624927680682();
   }
   @Test
   public void test_testWhile6011730950863071627() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testWhile6011730950863071627", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testWhile6011730950863071627();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624927885573() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624927885573", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624927885573();
   }
   @Test
   public void test_testWrite6011730950863071665() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testWrite6011730950863071665", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testWrite6011730950863071665();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624927684007() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624927684007", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624927684007();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624927677337() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624927677337", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624927677337();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624927643021() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624927643021", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624927643021();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck3906759656525711757() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck3906759656525711757", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck3906759656525711757();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck3906759656525723919() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck3906759656525723919", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck3906759656525723919();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624927201040() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624927201040", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624927201040();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck3906759656533635223() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck3906759656533635223", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck3906759656533635223();
   }
   @Test
   public void test_ErrorMessagesCheck3906759656536181767() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck3906759656536181767", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck3906759656536181767();
   }
   @Test
   public void test_testForLoop6689253151531890256() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testForLoop6689253151531890256", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testForLoop6689253151531890256();
   }
   @Test
   public void test_NodeNullIsReturnedFromMethodCheck6923385624929642188() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeNullIsReturnedFromMethodCheck6923385624929642188", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeNullIsReturnedFromMethodCheck6923385624929642188();
   }
   @Test
   public void test_NodeExpressionCheck6923385624928447275() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeExpressionCheck6923385624928447275", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeExpressionCheck6923385624928447275();
   }
   @Test
   public void test_NodeExpressionCheck6923385624929406744() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeExpressionCheck6923385624929406744", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeExpressionCheck6923385624929406744();
   }
   @Test
   public void test_testReturnNotNull5899025696847062708() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testReturnNotNull5899025696847062708", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testReturnNotNull5899025696847062708();
   }
   @Test
   public void test_NodeArgumentMightBeNullCheck6923385624929136789() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeArgumentMightBeNullCheck6923385624929136789", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeArgumentMightBeNullCheck6923385624929136789();
   }
   @Test
   public void test_NodeArgumentMightBeNullCheck6923385624927896994() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeArgumentMightBeNullCheck6923385624927896994", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeArgumentMightBeNullCheck6923385624927896994();
   }
   @Test
   public void test_NodeArgumentMightBeNullCheck6923385624927614991() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeArgumentMightBeNullCheck6923385624927614991", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeArgumentMightBeNullCheck6923385624927614991();
   }
   @Test
   public void test_testCallNotNull741163781873507801() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testCallNotNull741163781873507801", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testCallNotNull741163781873507801();
   }
   @Test
   public void test_NodeArgumentMightBeNullCheck3906759656524279986() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeArgumentMightBeNullCheck3906759656524279986", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeArgumentMightBeNullCheck3906759656524279986();
   }
   @Test
   public void test_NodeArgumentMightBeNullCheck3906759656524489339() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeArgumentMightBeNullCheck3906759656524489339", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeArgumentMightBeNullCheck3906759656524489339();
   }
   @Test
   public void test_NodeArgumentMightBeNullCheck3906759656525494487() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeArgumentMightBeNullCheck3906759656525494487", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeArgumentMightBeNullCheck3906759656525494487();
   }
   @Test
   public void test_NodeArgumentMightBeNullCheck3906759656525494537() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeArgumentMightBeNullCheck3906759656525494537", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeArgumentMightBeNullCheck3906759656525494537();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624927087401() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624927087401", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624927087401();
   }
   @Test
   public void test_NodeWarningCheck3759707308809084829() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3759707308809084829", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeWarningCheck3759707308809084829();
   }
   @Test
   public void test_NodeWarningCheck3759707308809084275() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck3759707308809084275", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeWarningCheck3759707308809084275();
   }
   @Test
   public void test_testAnnotationParam6011730950863071781() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testAnnotationParam6011730950863071781", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testAnnotationParam6011730950863071781();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624929410127() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624929410127", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624929410127();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624929704316() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624929704316", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624929704316();
   }
   @Test
   public void test_testTernaryOperation3383816410303507497() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testTernaryOperation3383816410303507497", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testTernaryOperation3383816410303507497();
   }
   @Test
   public void test_testContinue8673157736019176311() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testContinue8673157736019176311", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testContinue8673157736019176311();
   }
   @Test
   public void test_testIfNullNew8673157736019186600() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testIfNullNew8673157736019186600", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testIfNullNew8673157736019186600();
   }
   @Test
   public void test_testIfNull7209837885461331385() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testIfNull7209837885461331385", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testIfNull7209837885461331385();
   }
   @Test
   public void test_testIfNullReturnNotEmpty8673157736019186652() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testIfNullReturnNotEmpty8673157736019186652", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testIfNullReturnNotEmpty8673157736019186652();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624927607320() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck6923385624927607320", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck6923385624927607320();
   }
   @Test
   public void test_testMPS109353613402085300515297() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testMPS109353613402085300515297", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testMPS109353613402085300515297();
   }
   @Test
   public void test_testMPS126403177492234623156275() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testMPS126403177492234623156275", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testMPS126403177492234623156275();
   }
   @Test
   public void test_testMPS173886215810068353174462() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testMPS173886215810068353174462", true);
+    new NullableAnalyzer_Test.TestBody(this).test_testMPS173886215810068353174462();
   }
   @Test
   public void test_ErrorMessagesCheck3906759656521455536() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck3906759656521455536", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck3906759656521455536();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600187694436() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600187694436", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600187694436();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600187637070() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600187637070", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600187637070();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600189556048() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600189556048", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600189556048();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck3906759656521455531() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck3906759656521455531", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck3906759656521455531();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600187716594() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600187716594", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600187716594();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600187727051() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600187727051", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600187727051();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck3217533289695254944() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck3217533289695254944", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck3217533289695254944();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600187769814() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600187769814", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600187769814();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600187781001() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600187781001", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600187781001();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600187628441() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600187628441", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600187628441();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600187769633() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600187769633", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600187769633();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600187770007() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600187770007", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600187770007();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600187808508() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600187808508", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600187808508();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600187809331() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600187809331", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600187809331();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600187875006() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600187875006", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600187875006();
   }
   @Test
   public void test_ErrorMessagesCheck3906759656523205036() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck3906759656523205036", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck3906759656523205036();
   }
   @Test
   public void test_ErrorMessagesCheck3906759656521409347() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck3906759656521409347", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck3906759656521409347();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188057882() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188057882", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188057882();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600187969423() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600187969423", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600187969423();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck3217533289695378321() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck3217533289695378321", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck3217533289695378321();
   }
   @Test
   public void test_ErrorMessagesCheck4235809288656751763() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck4235809288656751763", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck4235809288656751763();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck3217533289695378206() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck3217533289695378206", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck3217533289695378206();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600190617190() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600190617190", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600190617190();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188002511() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188002511", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188002511();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600188071188() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600188071188", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600188071188();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188012959() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188012959", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188012959();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck3217533289695398448() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck3217533289695398448", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck3217533289695398448();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600188081718() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600188081718", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600188081718();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600188119931() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600188119931", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600188119931();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188098338() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188098338", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188098338();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600188098352() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600188098352", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600188098352();
   }
   @Test
   public void test_ErrorMessagesCheck3906759656523215923() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck3906759656523215923", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck3906759656523215923();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck3217533289695418196() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck3217533289695418196", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck3217533289695418196();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188130284() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188130284", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188130284();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600188146607() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600188146607", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600188146607();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600188168258() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600188168258", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600188168258();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188146628() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188146628", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188146628();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck3906759656523217172() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck3906759656523217172", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck3906759656523217172();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600189293148() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600189293148", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600189293148();
   }
   @Test
   public void test_ErrorMessagesCheck4235809288656752243() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck4235809288656752243", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck4235809288656752243();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600190632902() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600190632902", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600190632902();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600190643225() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600190643225", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600190643225();
   }
   @Test
   public void test_ErrorMessagesCheck4235809288656752432() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck4235809288656752432", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck4235809288656752432();
   }
   @Test
   public void test_ErrorMessagesCheck3906759656523227048() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck3906759656523227048", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck3906759656523227048();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck3217533289695419569() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck3217533289695419569", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck3217533289695419569();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600190654136() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600190654136", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600190654136();
   }
   @Test
   public void test_ErrorMessagesCheck3906759656523741779() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck3906759656523741779", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck3906759656523741779();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck3906759656523189908() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck3906759656523189908", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck3906759656523189908();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600188256964() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600188256964", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600188256964();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600188257024() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600188257024", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600188257024();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188268775() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188268775", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188268775();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188269064() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188269064", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188269064();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600188269359() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600188269359", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600188269359();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600188269659() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600188269659", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600188269659();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188272152() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188272152", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188272152();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188272484() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188272484", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188272484();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188272819() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188272819", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188272819();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188273148() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188273148", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188273148();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188273501() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188273501", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188273501();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600189314116() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600189314116", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600189314116();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188274171() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188274171", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188274171();
   }
   @Test
   public void test_ErrorMessagesCheck1383888600188274532() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1383888600188274532", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1383888600188274532();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188274541() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188274541", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188274541();
   }
   @Test
   public void test_ErrorMessagesCheck3906759656524918032() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck3906759656524918032", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck3906759656524918032();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck3906759656524998358() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck3906759656524998358", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck3906759656524998358();
   }
   @Test
   public void test_ErrorMessagesCheck1415485672491929159() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1415485672491929159", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1415485672491929159();
   }
   @Test
   public void test_ErrorMessagesCheck3906759656539420312() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck3906759656539420312", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck3906759656539420312();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1383888600188285752() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1383888600188285752", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1383888600188285752();
   }
   @Test
   public void test_NodeVariableHasNotBeenInitializedErrorCheck1415485672489641128() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeVariableHasNotBeenInitializedErrorCheck1415485672489641128", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeVariableHasNotBeenInitializedErrorCheck1415485672489641128();
   }
   @Test
   public void test_ErrorMessagesCheck1415485672489685436() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck1415485672489685436", true);
+    new NullableAnalyzer_Test.TestBody(this).test_ErrorMessagesCheck1415485672489685436();
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck1415485672489695289() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeOperationCanProduceNPECheck1415485672489695289", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeOperationCanProduceNPECheck1415485672489695289();
   }
   @Test
   public void test_NodeWarningCheck1415485672491981590() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck1415485672491981590", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeWarningCheck1415485672491981590();
   }
   @Test
   public void test_NodeWarningCheck1415485672491963180() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeWarningCheck1415485672491963180", true);
+    new NullableAnalyzer_Test.TestBody(this).test_NodeWarningCheck1415485672491963180();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeOperationCanProduceNPECheck6923385624927436728() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624927436728"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

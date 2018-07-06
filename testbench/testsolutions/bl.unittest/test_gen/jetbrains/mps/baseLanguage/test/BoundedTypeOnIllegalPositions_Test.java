@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class BoundedTypeOnIllegalPositions_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(BoundedTypeOnIllegalPositions_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public BoundedTypeOnIllegalPositions_Test() {
     super(ourParamCache);
@@ -24,39 +29,43 @@ public class BoundedTypeOnIllegalPositions_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck6923385624929132045() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck6923385624929132045", true);
+    new BoundedTypeOnIllegalPositions_Test.TestBody(this).test_NodeThisTypeCantBeUsedInVariableCheck6923385624929132045();
   }
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck6923385624928848231() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck6923385624928848231", true);
+    new BoundedTypeOnIllegalPositions_Test.TestBody(this).test_NodeThisTypeCantBeUsedInVariableCheck6923385624928848231();
   }
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck5450156852674012813() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck5450156852674012813", true);
+    new BoundedTypeOnIllegalPositions_Test.TestBody(this).test_NodeThisTypeCantBeUsedInVariableCheck5450156852674012813();
   }
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck6923385624928692345() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck6923385624928692345", true);
+    new BoundedTypeOnIllegalPositions_Test.TestBody(this).test_NodeThisTypeCantBeUsedInVariableCheck6923385624928692345();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624928162737() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeTypeSystemCheck6923385624928162737", true);
+    new BoundedTypeOnIllegalPositions_Test.TestBody(this).test_NodeTypeSystemCheck6923385624928162737();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624927429026() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeTypeSystemCheck6923385624927429026", true);
+    new BoundedTypeOnIllegalPositions_Test.TestBody(this).test_NodeTypeSystemCheck6923385624927429026();
   }
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck6923385624928299118() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck6923385624928299118", true);
+    new BoundedTypeOnIllegalPositions_Test.TestBody(this).test_NodeThisTypeCantBeUsedInVariableCheck6923385624928299118();
   }
   @Test
   public void test_ErrorMessagesCheck6510041824235646887() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_ErrorMessagesCheck6510041824235646887", true);
+    new BoundedTypeOnIllegalPositions_Test.TestBody(this).test_ErrorMessagesCheck6510041824235646887();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeThisTypeCantBeUsedInVariableCheck6923385624929132045() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929132045"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

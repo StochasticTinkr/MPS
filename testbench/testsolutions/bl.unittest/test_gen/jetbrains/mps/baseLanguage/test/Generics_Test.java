@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class Generics_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(Generics_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public Generics_Test() {
     super(ourParamCache);
@@ -24,191 +29,195 @@ public class Generics_Test extends BaseTransformationTest {
 
   @Test
   public void test_ErrorMessagesCheck4246614868164066795() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck4246614868164066795", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck4246614868164066795();
   }
   @Test
   public void test_ErrorMessagesCheck4246614868164066847() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck4246614868164066847", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck4246614868164066847();
   }
   @Test
   public void test_ErrorMessagesCheck4246614868164066877() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck4246614868164066877", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck4246614868164066877();
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929210654() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929210654", true);
+    new Generics_Test.TestBody(this).test_NodeVariableInitializerIsRedundantWarningCheck6923385624929210654();
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512802146() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512802146", true);
+    new Generics_Test.TestBody(this).test_NodeUnusedLocalVariableCheck215889526512802146();
   }
   @Test
   public void test_ErrorMessagesCheck4246614868164066940() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck4246614868164066940", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck4246614868164066940();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624928769094() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeTypeSystemCheck6923385624928769094", true);
+    new Generics_Test.TestBody(this).test_NodeTypeSystemCheck6923385624928769094();
   }
   @Test
   public void test_ErrorMessagesCheck4246614868164066979() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck4246614868164066979", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck4246614868164066979();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624928697593() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeTypeSystemCheck6923385624928697593", true);
+    new Generics_Test.TestBody(this).test_NodeTypeSystemCheck6923385624928697593();
   }
   @Test
   public void test_ErrorMessagesCheck75433039838559829() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck75433039838559829", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck75433039838559829();
   }
   @Test
   public void test_NodeErrorCheck2432481583488315187() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488315187", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488315187();
   }
   @Test
   public void test_NodeErrorCheck2432481583488449834() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488449834", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488449834();
   }
   @Test
   public void test_NodeErrorCheck2432481583488320706() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488320706", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488320706();
   }
   @Test
   public void test_NodeErrorCheck2432481583492117057() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583492117057", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583492117057();
   }
   @Test
   public void test_NodeErrorCheck2432481583489448272() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583489448272", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583489448272();
   }
   @Test
   public void test_NodeErrorCheck2432481583489437018() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583489437018", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583489437018();
   }
   @Test
   public void test_ErrorMessagesCheck2989670514234060636() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck2989670514234060636", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck2989670514234060636();
   }
   @Test
   public void test_NodeErrorCheck2432481583488337419() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488337419", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488337419();
   }
   @Test
   public void test_NodeErrorCheck2432481583488343374() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488343374", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488343374();
   }
   @Test
   public void test_NodeErrorCheck2432481583488470122() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488470122", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488470122();
   }
   @Test
   public void test_NodeErrorCheck2432481583488407475() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488407475", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488407475();
   }
   @Test
   public void test_NodeErrorCheck2432481583488467292() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488467292", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488467292();
   }
   @Test
   public void test_NodeErrorCheck2432481583493095176() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583493095176", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583493095176();
   }
   @Test
   public void test_ErrorMessagesCheck2989670514234102966() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck2989670514234102966", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck2989670514234102966();
   }
   @Test
   public void test_NodeErrorCheck2432481583488519701() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488519701", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488519701();
   }
   @Test
   public void test_NodeErrorCheck2432481583489284037() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583489284037", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583489284037();
   }
   @Test
   public void test_ErrorMessagesCheck2989670514234103616() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck2989670514234103616", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck2989670514234103616();
   }
   @Test
   public void test_NodeWildcardTypeArgumentExplicitlyCheck2432481583493875687() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeWildcardTypeArgumentExplicitlyCheck2432481583493875687", true);
+    new Generics_Test.TestBody(this).test_NodeWildcardTypeArgumentExplicitlyCheck2432481583493875687();
   }
   @Test
   public void test_NodeErrorCheck2432481583488437090() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488437090", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488437090();
   }
   @Test
   public void test_NodeErrorCheck2432481583488437096() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488437096", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488437096();
   }
   @Test
   public void test_NodeErrorCheck2432481583488572526() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488572526", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488572526();
   }
   @Test
   public void test_NodeErrorCheck5450156852667865188() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck5450156852667865188", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck5450156852667865188();
   }
   @Test
   public void test_NodeErrorCheck5450156852667875900() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck5450156852667875900", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck5450156852667875900();
   }
   @Test
   public void test_NodeErrorCheck2432481583489259581() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583489259581", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583489259581();
   }
   @Test
   public void test_ErrorMessagesCheck2989670514234103631() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck2989670514234103631", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck2989670514234103631();
   }
   @Test
   public void test_NodeErrorCheck2432481583488625033() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488625033", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488625033();
   }
   @Test
   public void test_NodeErrorCheck2432481583489271447() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583489271447", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583489271447();
   }
   @Test
   public void test_ErrorMessagesCheck2989670514234104686() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck2989670514234104686", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck2989670514234104686();
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck2432481583489075236() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck2432481583489075236", true);
+    new Generics_Test.TestBody(this).test_NodeVariableInitializerIsRedundantWarningCheck2432481583489075236();
   }
   @Test
   public void test_NodeErrorCheck2432481583488758535() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488758535", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488758535();
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck2432481583489092952() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck2432481583489092952", true);
+    new Generics_Test.TestBody(this).test_NodeVariableInitializerIsRedundantWarningCheck2432481583489092952();
   }
   @Test
   public void test_NodeErrorCheck2432481583488776292() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488776292", true);
+    new Generics_Test.TestBody(this).test_NodeErrorCheck2432481583488776292();
   }
   @Test
   public void test_ErrorMessagesCheck2989670514234105331() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck2989670514234105331", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck2989670514234105331();
   }
   @Test
   public void test_ErrorMessagesCheck7817233971112259125() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck7817233971112259125", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck7817233971112259125();
   }
   @Test
   public void test_ErrorMessagesCheck9160103748839840155() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck9160103748839840155", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck9160103748839840155();
   }
   @Test
   public void test_ErrorMessagesCheck6579380390974739222() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck6579380390974739222", true);
+    new Generics_Test.TestBody(this).test_ErrorMessagesCheck6579380390974739222();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_ErrorMessagesCheck4246614868164066795() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("4246614868164066795"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

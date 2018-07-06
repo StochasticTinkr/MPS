@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class IncludeDefaultMenu_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(IncludeDefaultMenu_Test.class, "${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public IncludeDefaultMenu_Test() {
     super(ourParamCache);
@@ -24,27 +29,31 @@ public class IncludeDefaultMenu_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeConceptShouldBeSpecifiedCheck8095208975669727090() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.tests.IncludeDefaultMenu_Test$TestBody", "test_NodeConceptShouldBeSpecifiedCheck8095208975669727090", true);
+    new IncludeDefaultMenu_Test.TestBody(this).test_NodeConceptShouldBeSpecifiedCheck8095208975669727090();
   }
   @Test
   public void test_NodeConceptShouldBeSpecifiedCheck8095208975669728885() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.tests.IncludeDefaultMenu_Test$TestBody", "test_NodeConceptShouldBeSpecifiedCheck8095208975669728885", true);
+    new IncludeDefaultMenu_Test.TestBody(this).test_NodeConceptShouldBeSpecifiedCheck8095208975669728885();
   }
   @Test
   public void test_NodeConceptShouldBeSpecifiedCheck8095208975669729693() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.tests.IncludeDefaultMenu_Test$TestBody", "test_NodeConceptShouldBeSpecifiedCheck8095208975669729693", true);
+    new IncludeDefaultMenu_Test.TestBody(this).test_NodeConceptShouldBeSpecifiedCheck8095208975669729693();
   }
   @Test
   public void test_NodeConceptShouldBeSpecifiedCheck8095208975669729758() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.tests.IncludeDefaultMenu_Test$TestBody", "test_NodeConceptShouldBeSpecifiedCheck8095208975669729758", true);
+    new IncludeDefaultMenu_Test.TestBody(this).test_NodeConceptShouldBeSpecifiedCheck8095208975669729758();
   }
   @Test
   public void test_NodeConceptShouldBeSpecifiedCheck8095208975669730924() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.tests.IncludeDefaultMenu_Test$TestBody", "test_NodeConceptShouldBeSpecifiedCheck8095208975669730924", true);
+    new IncludeDefaultMenu_Test.TestBody(this).test_NodeConceptShouldBeSpecifiedCheck8095208975669730924();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeConceptShouldBeSpecifiedCheck8095208975669727090() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("8095208975669727090"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

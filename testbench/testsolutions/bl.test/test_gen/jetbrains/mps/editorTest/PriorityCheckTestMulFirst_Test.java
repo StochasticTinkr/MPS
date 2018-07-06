@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -25,6 +28,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class PriorityCheckTestMulFirst_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(PriorityCheckTestMulFirst_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public PriorityCheckTestMulFirst_Test() {
     super(ourParamCache);
@@ -32,11 +37,15 @@ public class PriorityCheckTestMulFirst_Test extends BaseTransformationTest {
 
   @Test
   public void test_testRotation() throws Throwable {
-    runTest("jetbrains.mps.editorTest.PriorityCheckTestMulFirst_Test$TestBody", "test_testRotation", true);
+    new PriorityCheckTestMulFirst_Test.TestBody(this).test_testRotation();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_testRotation() throws Exception {
       addNodeById("818296778579227382");
       addNodeById("818296778579227391");

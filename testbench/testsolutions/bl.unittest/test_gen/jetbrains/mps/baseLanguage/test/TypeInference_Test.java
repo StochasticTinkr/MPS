@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class TypeInference_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TypeInference_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public TypeInference_Test() {
     super(ourParamCache);
@@ -24,91 +29,95 @@ public class TypeInference_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeTypeSystemCheck6923385624927474402() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624927474402", true);
+    new TypeInference_Test.TestBody(this).test_NodeTypeSystemCheck6923385624927474402();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624927959862() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624927959862", true);
+    new TypeInference_Test.TestBody(this).test_NodeTypeSystemCheck6923385624927959862();
   }
   @Test
   public void test_NodeErrorCheck8345119003641462720() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeErrorCheck8345119003641462720", true);
+    new TypeInference_Test.TestBody(this).test_NodeErrorCheck8345119003641462720();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624928271119() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624928271119", true);
+    new TypeInference_Test.TestBody(this).test_NodeTypeSystemCheck6923385624928271119();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624929494038() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624929494038", true);
+    new TypeInference_Test.TestBody(this).test_NodeTypeSystemCheck6923385624929494038();
   }
   @Test
   public void test_NodeErrorCheck8345119003641471587() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeErrorCheck8345119003641471587", true);
+    new TypeInference_Test.TestBody(this).test_NodeErrorCheck8345119003641471587();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624927940163() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624927940163", true);
+    new TypeInference_Test.TestBody(this).test_NodeTypeSystemCheck6923385624927940163();
   }
   @Test
   public void test_NodeErrorCheck8345119003641471608() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeErrorCheck8345119003641471608", true);
+    new TypeInference_Test.TestBody(this).test_NodeErrorCheck8345119003641471608();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624928215092() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624928215092", true);
+    new TypeInference_Test.TestBody(this).test_NodeTypeSystemCheck6923385624928215092();
   }
   @Test
   public void test_NodeErrorCheck8345119003641471627() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeErrorCheck8345119003641471627", true);
+    new TypeInference_Test.TestBody(this).test_NodeErrorCheck8345119003641471627();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624927005600() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624927005600", true);
+    new TypeInference_Test.TestBody(this).test_NodeTypeSystemCheck6923385624927005600();
   }
   @Test
   public void test_NodeErrorCheck8345119003641471646() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeErrorCheck8345119003641471646", true);
+    new TypeInference_Test.TestBody(this).test_NodeErrorCheck8345119003641471646();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624928978334() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624928978334", true);
+    new TypeInference_Test.TestBody(this).test_NodeTypeSystemCheck6923385624928978334();
   }
   @Test
   public void test_NodeErrorCheck8345119003641471667() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeErrorCheck8345119003641471667", true);
+    new TypeInference_Test.TestBody(this).test_NodeErrorCheck8345119003641471667();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624929302543() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624929302543", true);
+    new TypeInference_Test.TestBody(this).test_NodeTypeSystemCheck6923385624929302543();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624929336374() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624929336374", true);
+    new TypeInference_Test.TestBody(this).test_NodeTypeSystemCheck6923385624929336374();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624927563665() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624927563665", true);
+    new TypeInference_Test.TestBody(this).test_NodeTypeSystemCheck6923385624927563665();
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624927161380() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624927161380", true);
+    new TypeInference_Test.TestBody(this).test_NodeTypeSystemCheck6923385624927161380();
   }
   @Test
   public void test_NodeErrorCheck8345119003641471688() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeErrorCheck8345119003641471688", true);
+    new TypeInference_Test.TestBody(this).test_NodeErrorCheck8345119003641471688();
   }
   @Test
   public void test_ErrorMessagesCheck488298296050687637() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_ErrorMessagesCheck488298296050687637", true);
+    new TypeInference_Test.TestBody(this).test_ErrorMessagesCheck488298296050687637();
   }
   @Test
   public void test_ErrorMessagesCheck7261441936922433825() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_ErrorMessagesCheck7261441936922433825", true);
+    new TypeInference_Test.TestBody(this).test_ErrorMessagesCheck7261441936922433825();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeTypeSystemCheck6923385624927474402() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624927474402"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

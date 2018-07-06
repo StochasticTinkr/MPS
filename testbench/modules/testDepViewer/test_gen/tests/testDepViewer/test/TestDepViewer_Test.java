@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SModel;
 import junit.framework.Assert;
 import jetbrains.mps.ide.platform.dependencyViewer.ReferencesFinder;
@@ -21,6 +24,8 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class TestDepViewer_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestDepViewer_Test.class, "${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public TestDepViewer_Test() {
     super(ourParamCache);
@@ -28,27 +33,31 @@ public class TestDepViewer_Test extends BaseTransformationTest {
 
   @Test
   public void test_testPrecondition() throws Throwable {
-    runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testPrecondition", true);
+    new TestDepViewer_Test.TestBody(this).test_testPrecondition();
   }
   @Test
   public void test_testModel1DependsOnSomething() throws Throwable {
-    runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel1DependsOnSomething", true);
+    new TestDepViewer_Test.TestBody(this).test_testModel1DependsOnSomething();
   }
   @Test
   public void test_testModel3DoesntDependOnAnything() throws Throwable {
-    runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel3DoesntDependOnAnything", true);
+    new TestDepViewer_Test.TestBody(this).test_testModel3DoesntDependOnAnything();
   }
   @Test
   public void test_testModel1DependsOnModel2() throws Throwable {
-    runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel1DependsOnModel2", true);
+    new TestDepViewer_Test.TestBody(this).test_testModel1DependsOnModel2();
   }
   @Test
   public void test_testModel1DoesntDependOnModel3() throws Throwable {
-    runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel1DoesntDependOnModel3", true);
+    new TestDepViewer_Test.TestBody(this).test_testModel1DoesntDependOnModel3();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_testPrecondition() throws Exception {
       SModel testModel1 = this.model1();
       SModel testModel2 = this.model2();

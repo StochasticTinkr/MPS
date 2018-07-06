@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class GenericNewExpressionTypeParameters_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(GenericNewExpressionTypeParameters_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public GenericNewExpressionTypeParameters_Test() {
     super(ourParamCache);
@@ -24,223 +29,227 @@ public class GenericNewExpressionTypeParameters_Test extends BaseTransformationT
 
   @Test
   public void test_NodeWrongNumberOfTypeParametersCheck6923385624927777191() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeWrongNumberOfTypeParametersCheck6923385624927777191", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeWrongNumberOfTypeParametersCheck6923385624927777191();
   }
   @Test
   public void test_NodeWrongNumberOfTypeParametersCheck6923385624927838008() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeWrongNumberOfTypeParametersCheck6923385624927838008", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeWrongNumberOfTypeParametersCheck6923385624927838008();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624926980178() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624926980178", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624926980178();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929057845() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929057845", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929057845();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929879386() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929879386", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929879386();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927068829() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927068829", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927068829();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929808290() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929808290", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929808290();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928495811() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928495811", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928495811();
   }
   @Test
   public void test_ErrorMessagesCheck6871159928250315905() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_ErrorMessagesCheck6871159928250315905", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_ErrorMessagesCheck6871159928250315905();
   }
   @Test
   public void test_NodeWrongNumberOfTypeParametersCheck6923385624929830247() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeWrongNumberOfTypeParametersCheck6923385624929830247", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeWrongNumberOfTypeParametersCheck6923385624929830247();
   }
   @Test
   public void test_NodeWrongNumberOfTypeParametersCheck6923385624928725186() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeWrongNumberOfTypeParametersCheck6923385624928725186", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeWrongNumberOfTypeParametersCheck6923385624928725186();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927414761() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927414761", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927414761();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928298412() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928298412", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928298412();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928766468() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928766468", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928766468();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927220129() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927220129", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927220129();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929780113() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929780113", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929780113();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928160475() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928160475", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928160475();
   }
   @Test
   public void test_ErrorMessagesCheck6871159928250416431() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_ErrorMessagesCheck6871159928250416431", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_ErrorMessagesCheck6871159928250416431();
   }
   @Test
   public void test_NodeWrongNumberOfTypeParametersCheck6923385624927674012() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeWrongNumberOfTypeParametersCheck6923385624927674012", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeWrongNumberOfTypeParametersCheck6923385624927674012();
   }
   @Test
   public void test_NodeWrongNumberOfTypeParametersCheck6923385624927818606() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeWrongNumberOfTypeParametersCheck6923385624927818606", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeWrongNumberOfTypeParametersCheck6923385624927818606();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929688944() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929688944", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929688944();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927246785() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927246785", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927246785();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927744591() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927744591", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927744591();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928259092() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928259092", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928259092();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928182446() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928182446", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928182446();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929858529() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929858529", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929858529();
   }
   @Test
   public void test_ErrorMessagesCheck6871159928250456720() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_ErrorMessagesCheck6871159928250456720", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_ErrorMessagesCheck6871159928250456720();
   }
   @Test
   public void test_NodeWrongNumberOfTypeParametersCheck6923385624927881541() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeWrongNumberOfTypeParametersCheck6923385624927881541", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeWrongNumberOfTypeParametersCheck6923385624927881541();
   }
   @Test
   public void test_NodeWrongNumberOfTypeParametersCheck6923385624928891155() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeWrongNumberOfTypeParametersCheck6923385624928891155", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeWrongNumberOfTypeParametersCheck6923385624928891155();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928235880() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928235880", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928235880();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929431629() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929431629", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929431629();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928798159() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928798159", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928798159();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928202213() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928202213", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928202213();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928047836() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928047836", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928047836();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929208028() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929208028", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929208028();
   }
   @Test
   public void test_ErrorMessagesCheck6871159928250496419() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_ErrorMessagesCheck6871159928250496419", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_ErrorMessagesCheck6871159928250496419();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929078226() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929078226", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929078226();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929286960() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929286960", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929286960();
   }
   @Test
   public void test_ErrorMessagesCheck6871159928250570119() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_ErrorMessagesCheck6871159928250570119", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_ErrorMessagesCheck6871159928250570119();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929037513() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929037513", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929037513();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928015142() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928015142", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928015142();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928443950() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928443950", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928443950();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927860713() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927860713", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927860713();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928540412() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928540412", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928540412();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928091182() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928091182", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928091182();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927497000() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927497000", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927497000();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928330830() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928330830", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928330830();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927928136() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927928136", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927928136();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928649513() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928649513", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928649513();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928818393() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928818393", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928818393();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928140797() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928140797", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928140797();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929356887() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929356887", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929356887();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928403065() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928403065", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928403065();
   }
   @Test
   public void test_ErrorMessagesCheck6871159928250743705() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody", "test_ErrorMessagesCheck6871159928250743705", true);
+    new GenericNewExpressionTypeParameters_Test.TestBody(this).test_ErrorMessagesCheck6871159928250743705();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeWrongNumberOfTypeParametersCheck6923385624927777191() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624927777191"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

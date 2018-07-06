@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class NestedNewExpression_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(NestedNewExpression_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public NestedNewExpression_Test() {
     super(ourParamCache);
@@ -24,23 +29,27 @@ public class NestedNewExpression_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeErrorCheck2908733373809544465() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NestedNewExpression_Test$TestBody", "test_NodeErrorCheck2908733373809544465", true);
+    new NestedNewExpression_Test.TestBody(this).test_NodeErrorCheck2908733373809544465();
   }
   @Test
   public void test_NodeErrorCheck1628645464085513077() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NestedNewExpression_Test$TestBody", "test_NodeErrorCheck1628645464085513077", true);
+    new NestedNewExpression_Test.TestBody(this).test_NodeErrorCheck1628645464085513077();
   }
   @Test
   public void test_NodeErrorCheck1628645464087305021() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NestedNewExpression_Test$TestBody", "test_NodeErrorCheck1628645464087305021", true);
+    new NestedNewExpression_Test.TestBody(this).test_NodeErrorCheck1628645464087305021();
   }
   @Test
   public void test_ErrorMessagesCheck2908733373806471082() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.NestedNewExpression_Test$TestBody", "test_ErrorMessagesCheck2908733373806471082", true);
+    new NestedNewExpression_Test.TestBody(this).test_ErrorMessagesCheck2908733373806471082();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeErrorCheck2908733373809544465() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("2908733373809544465"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

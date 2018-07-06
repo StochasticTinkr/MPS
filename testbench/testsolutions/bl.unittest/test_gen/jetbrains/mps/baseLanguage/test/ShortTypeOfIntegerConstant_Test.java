@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class ShortTypeOfIntegerConstant_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ShortTypeOfIntegerConstant_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public ShortTypeOfIntegerConstant_Test() {
     super(ourParamCache);
@@ -24,99 +29,103 @@ public class ShortTypeOfIntegerConstant_Test extends BaseTransformationTest {
 
   @Test
   public void test_ErrorMessagesCheck7584461597510495229() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_ErrorMessagesCheck7584461597510495229", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_ErrorMessagesCheck7584461597510495229();
   }
   @Test
   public void test_NodeErrorCheck7584461597510745219() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510745219", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510745219();
   }
   @Test
   public void test_NodeErrorCheck7584461597510771667() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510771667", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510771667();
   }
   @Test
   public void test_NodeErrorCheck7584461597510791632() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510791632", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510791632();
   }
   @Test
   public void test_NodeErrorCheck7584461597510811609() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510811609", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510811609();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495270() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495270", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495270();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495276() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495276", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495276();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495282() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495282", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495282();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495288() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495288", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495288();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495296() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495296", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495296();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495302() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495302", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495302();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495308() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495308", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495308();
   }
   @Test
   public void test_NodeErrorCheck7584461597510839740() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510839740", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510839740();
   }
   @Test
   public void test_NodeErrorCheck7584461597510839746() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510839746", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510839746();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495342() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495342", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495342();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495347() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495347", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495347();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495356() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495356", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495356();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495364() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495364", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495364();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495370() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495370", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495370();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495376() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495376", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495376();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495386() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495386", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495386();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495441() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495441", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495441();
   }
   @Test
   public void test_NodeErrorCheck7584461597510495450() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ShortTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510495450", true);
+    new ShortTypeOfIntegerConstant_Test.TestBody(this).test_NodeErrorCheck7584461597510495450();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_ErrorMessagesCheck7584461597510495229() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("7584461597510495229"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

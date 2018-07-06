@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -22,6 +25,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class TransformationUtil_Complex_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TransformationUtil_Complex_Test.class, "${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public TransformationUtil_Complex_Test() {
     super(ourParamCache);
@@ -29,147 +34,151 @@ public class TransformationUtil_Complex_Test extends BaseTransformationTest {
 
   @Test
   public void test_localIntVariableDeclaration() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localIntVariableDeclaration", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_localIntVariableDeclaration();
   }
   @Test
   public void test_localBoxedIntVariableDeclaration() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localBoxedIntVariableDeclaration", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_localBoxedIntVariableDeclaration();
   }
   @Test
   public void test_localBoxedIntVariableSecondDeclaration() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localBoxedIntVariableSecondDeclaration", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_localBoxedIntVariableSecondDeclaration();
   }
   @Test
   public void test_localIntVariableAssignment() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localIntVariableAssignment", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_localIntVariableAssignment();
   }
   @Test
   public void test_localBoxedIntVariableAssignment() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localBoxedIntVariableAssignment", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_localBoxedIntVariableAssignment();
   }
   @Test
   public void test_localObjectVariableDeclaration() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localObjectVariableDeclaration", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_localObjectVariableDeclaration();
   }
   @Test
   public void test_localObjectVariableAssignment() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localObjectVariableAssignment", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_localObjectVariableAssignment();
   }
   @Test
   public void test_localUnBoxedIntVarAssignment() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localUnBoxedIntVarAssignment", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_localUnBoxedIntVarAssignment();
   }
   @Test
   public void test_localUnBoxedIntVarDeclaration() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localUnBoxedIntVarDeclaration", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_localUnBoxedIntVarDeclaration();
   }
   @Test
   public void test_andAssignmentExpression() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_andAssignmentExpression", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_andAssignmentExpression();
   }
   @Test
   public void test_divAssignmentExpression() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_divAssignmentExpression", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_divAssignmentExpression();
   }
   @Test
   public void test_leftShiftAssignmentExpression() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_leftShiftAssignmentExpression", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_leftShiftAssignmentExpression();
   }
   @Test
   public void test_minusAssignmentExpression() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_minusAssignmentExpression", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_minusAssignmentExpression();
   }
   @Test
   public void test_mulAssignmentExpression() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_mulAssignmentExpression", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_mulAssignmentExpression();
   }
   @Test
   public void test_orAssignmentExpression() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_orAssignmentExpression", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_orAssignmentExpression();
   }
   @Test
   public void test_plusAssignmentExpression() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_plusAssignmentExpression", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_plusAssignmentExpression();
   }
   @Test
   public void test_remAssignmentExpression() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_remAssignmentExpression", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_remAssignmentExpression();
   }
   @Test
   public void test_rightShiftAssignmentExpression() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_rightShiftAssignmentExpression", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_rightShiftAssignmentExpression();
   }
   @Test
   public void test_xorAssignmentExpression() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_xorAssignmentExpression", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_xorAssignmentExpression();
   }
   @Test
   public void test_lowLevelVariableInForeach() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_lowLevelVariableInForeach", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_lowLevelVariableInForeach();
   }
   @Test
   public void test_lowLevelIntVariableInForeach() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_lowLevelIntVariableInForeach", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_lowLevelIntVariableInForeach();
   }
   @Test
   public void test_notNullString() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_notNullString", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_notNullString();
   }
   @Test
   public void test_nodeReferenceCountViewer() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_nodeReferenceCountViewer", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_nodeReferenceCountViewer();
   }
   @Test
   public void test_arrayInForeach() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_arrayInForeach", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_arrayInForeach();
   }
   @Test
   public void test_newArrayOfString() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_newArrayOfString", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_newArrayOfString();
   }
   @Test
   public void test_newEmptyArrayOfString() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_newEmptyArrayOfString", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_newEmptyArrayOfString();
   }
   @Test
   public void test_newEmptyArrayOfInt() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_newEmptyArrayOfInt", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_newEmptyArrayOfInt();
   }
   @Test
   public void test_optimizeToStringForString() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_optimizeToStringForString", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_optimizeToStringForString();
   }
   @Test
   public void test_ternaryOperatorForString() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_ternaryOperatorForString", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_ternaryOperatorForString();
   }
   @Test
   public void test_ternaryOperatorForStringIfTrue() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_ternaryOperatorForStringIfTrue", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_ternaryOperatorForStringIfTrue();
   }
   @Test
   public void test_ternaryOperatorForStringCondition() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_ternaryOperatorForStringCondition", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_ternaryOperatorForStringCondition();
   }
   @Test
   public void test_urlClassloaderCast() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_urlClassloaderCast", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_urlClassloaderCast();
   }
   @Test
   public void test_primitiveCast() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_primitiveCast", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_primitiveCast();
   }
   @Test
   public void test_objectCast() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_objectCast", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_objectCast();
   }
   @Test
   public void test_arrayCast() throws Throwable {
-    runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_arrayCast", true);
+    new TransformationUtil_Complex_Test.TestBody(this).test_arrayCast();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_localIntVariableDeclaration() throws Exception {
       addNodeById("7696059916860905166");
       addNodeById("7696059916860905175");

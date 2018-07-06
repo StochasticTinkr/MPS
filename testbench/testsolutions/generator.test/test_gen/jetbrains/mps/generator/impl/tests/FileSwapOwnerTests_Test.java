@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.impl.cache.FileSwapOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -33,6 +36,8 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 public class FileSwapOwnerTests_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(FileSwapOwnerTests_Test.class, "${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public FileSwapOwnerTests_Test() {
     super(ourParamCache);
@@ -40,47 +45,51 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
 
   @Test
   public void test_justWrite() throws Throwable {
-    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_justWrite", true);
+    new FileSwapOwnerTests_Test.TestBody(this).test_justWrite();
   }
   @Test
   public void test_stringUserObjects() throws Throwable {
-    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_stringUserObjects", true);
+    new FileSwapOwnerTests_Test.TestBody(this).test_stringUserObjects();
   }
   @Test
   public void test_intUserObjects() throws Throwable {
-    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_intUserObjects", true);
+    new FileSwapOwnerTests_Test.TestBody(this).test_intUserObjects();
   }
   @Test
   public void test_charUserObjects() throws Throwable {
-    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_charUserObjects", true);
+    new FileSwapOwnerTests_Test.TestBody(this).test_charUserObjects();
   }
   @Test
   public void test_numberUserObjects() throws Throwable {
-    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_numberUserObjects", true);
+    new FileSwapOwnerTests_Test.TestBody(this).test_numberUserObjects();
   }
   @Test
   public void test_booleanUserObjects() throws Throwable {
-    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_booleanUserObjects", true);
+    new FileSwapOwnerTests_Test.TestBody(this).test_booleanUserObjects();
   }
   @Test
   public void test_mpsUserObjects() throws Throwable {
-    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_mpsUserObjects", true);
+    new FileSwapOwnerTests_Test.TestBody(this).test_mpsUserObjects();
   }
   @Test
   public void test_baseLanguageStructure() throws Throwable {
-    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_baseLanguageStructure", true);
+    new FileSwapOwnerTests_Test.TestBody(this).test_baseLanguageStructure();
   }
   @Test
   public void test_testOverloadedOperatorsSandbox() throws Throwable {
-    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_testOverloadedOperatorsSandbox", true);
+    new FileSwapOwnerTests_Test.TestBody(this).test_testOverloadedOperatorsSandbox();
   }
   @Test
   public void test_testSkipNodesWhileSaving() throws Throwable {
-    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_testSkipNodesWhileSaving", true);
+    new FileSwapOwnerTests_Test.TestBody(this).test_testSkipNodesWhileSaving();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_justWrite() throws Exception {
       addNodeById("1732396662099564446");
       try {

@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class VariableUninitialized_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(VariableUninitialized_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public VariableUninitialized_Test() {
     super(ourParamCache);
@@ -24,27 +29,31 @@ public class VariableUninitialized_Test extends BaseTransformationTest {
 
   @Test
   public void test_VariableUninitialized() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody", "test_VariableUninitialized", true);
+    new VariableUninitialized_Test.TestBody(this).test_VariableUninitialized();
   }
   @Test
   public void test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928777982() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody", "test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928777982", true);
+    new VariableUninitialized_Test.TestBody(this).test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928777982();
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927691402() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927691402", true);
+    new VariableUninitialized_Test.TestBody(this).test_NodeVariableInitializerIsRedundantWarningCheck6923385624927691402();
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526513019283() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526513019283", true);
+    new VariableUninitialized_Test.TestBody(this).test_NodeUnusedLocalVariableCheck215889526513019283();
   }
   @Test
   public void test_ErrorMessagesCheck1216893950801() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody", "test_ErrorMessagesCheck1216893950801", true);
+    new VariableUninitialized_Test.TestBody(this).test_ErrorMessagesCheck1216893950801();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_VariableUninitialized() throws Exception {
       addNodeById("1217271587658");
     }

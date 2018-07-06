@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class AnnotatedType_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(AnnotatedType_Test.class, "${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public AnnotatedType_Test() {
     super(ourParamCache);
@@ -24,51 +29,55 @@ public class AnnotatedType_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeTypeCheck1470921783545289079() throws Throwable {
-    runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeTypeCheck1470921783545289079", true);
+    new AnnotatedType_Test.TestBody(this).test_NodeTypeCheck1470921783545289079();
   }
   @Test
   public void test_NodeTypeCheck1470921783545475598() throws Throwable {
-    runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeTypeCheck1470921783545475598", true);
+    new AnnotatedType_Test.TestBody(this).test_NodeTypeCheck1470921783545475598();
   }
   @Test
   public void test_NodeTypeCheck1470921783545475612() throws Throwable {
-    runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeTypeCheck1470921783545475612", true);
+    new AnnotatedType_Test.TestBody(this).test_NodeTypeCheck1470921783545475612();
   }
   @Test
   public void test_NodeErrorCheck8675420879155382069() throws Throwable {
-    runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeErrorCheck8675420879155382069", true);
+    new AnnotatedType_Test.TestBody(this).test_NodeErrorCheck8675420879155382069();
   }
   @Test
   public void test_NodeErrorCheck8675420879155452234() throws Throwable {
-    runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeErrorCheck8675420879155452234", true);
+    new AnnotatedType_Test.TestBody(this).test_NodeErrorCheck8675420879155452234();
   }
   @Test
   public void test_NodeErrorCheck8675420879155453375() throws Throwable {
-    runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeErrorCheck8675420879155453375", true);
+    new AnnotatedType_Test.TestBody(this).test_NodeErrorCheck8675420879155453375();
   }
   @Test
   public void test_NodeErrorCheck8675420879155482970() throws Throwable {
-    runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeErrorCheck8675420879155482970", true);
+    new AnnotatedType_Test.TestBody(this).test_NodeErrorCheck8675420879155482970();
   }
   @Test
   public void test_NodeErrorCheck8675420879155484751() throws Throwable {
-    runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeErrorCheck8675420879155484751", true);
+    new AnnotatedType_Test.TestBody(this).test_NodeErrorCheck8675420879155484751();
   }
   @Test
   public void test_NodeErrorCheck8675420879155485361() throws Throwable {
-    runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeErrorCheck8675420879155485361", true);
+    new AnnotatedType_Test.TestBody(this).test_NodeErrorCheck8675420879155485361();
   }
   @Test
   public void test_NodeErrorCheck1470921783545427862() throws Throwable {
-    runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeErrorCheck1470921783545427862", true);
+    new AnnotatedType_Test.TestBody(this).test_NodeErrorCheck1470921783545427862();
   }
   @Test
   public void test_ErrorMessagesCheck8675420879155382183() throws Throwable {
-    runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_ErrorMessagesCheck8675420879155382183", true);
+    new AnnotatedType_Test.TestBody(this).test_ErrorMessagesCheck8675420879155382183();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeTypeCheck1470921783545289079() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("1470921783545289079"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -18,6 +21,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class UnexpectedReturnInAnonymousClass_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(UnexpectedReturnInAnonymousClass_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public UnexpectedReturnInAnonymousClass_Test() {
     super(ourParamCache);
@@ -25,15 +30,19 @@ public class UnexpectedReturnInAnonymousClass_Test extends BaseTransformationTes
 
   @Test
   public void test_UnexpectedReturnInAnonymousClass() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test$TestBody", "test_UnexpectedReturnInAnonymousClass", true);
+    new UnexpectedReturnInAnonymousClass_Test.TestBody(this).test_UnexpectedReturnInAnonymousClass();
   }
   @Test
   public void test_NodeReturnExpectedErrorCheck6923385624929494145() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test$TestBody", "test_NodeReturnExpectedErrorCheck6923385624929494145", true);
+    new UnexpectedReturnInAnonymousClass_Test.TestBody(this).test_NodeReturnExpectedErrorCheck6923385624929494145();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_UnexpectedReturnInAnonymousClass() throws Exception {
       addNodeById("1217271586587");
       NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1215444400359"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))), false, false, false);

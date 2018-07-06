@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class FinalFieldTests_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(FinalFieldTests_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public FinalFieldTests_Test() {
     super(ourParamCache);
@@ -24,31 +29,35 @@ public class FinalFieldTests_Test extends BaseTransformationTest {
 
   @Test
   public void test_ErrorMessagesCheck843236768048178247() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FinalFieldTests_Test$TestBody", "test_ErrorMessagesCheck843236768048178247", true);
+    new FinalFieldTests_Test.TestBody(this).test_ErrorMessagesCheck843236768048178247();
   }
   @Test
   public void test_NodeVariableHasNotBeenInitializedCheck6923385624928056097() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FinalFieldTests_Test$TestBody", "test_NodeVariableHasNotBeenInitializedCheck6923385624928056097", true);
+    new FinalFieldTests_Test.TestBody(this).test_NodeVariableHasNotBeenInitializedCheck6923385624928056097();
   }
   @Test
   public void test_NodeVariableHasNotBeenInitializedCheck6923385624928725296() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FinalFieldTests_Test$TestBody", "test_NodeVariableHasNotBeenInitializedCheck6923385624928725296", true);
+    new FinalFieldTests_Test.TestBody(this).test_NodeVariableHasNotBeenInitializedCheck6923385624928725296();
   }
   @Test
   public void test_ErrorMessagesCheck2466039659637288472() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FinalFieldTests_Test$TestBody", "test_ErrorMessagesCheck2466039659637288472", true);
+    new FinalFieldTests_Test.TestBody(this).test_ErrorMessagesCheck2466039659637288472();
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck2466039659637220345() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FinalFieldTests_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck2466039659637220345", true);
+    new FinalFieldTests_Test.TestBody(this).test_NodeCannotAssignValueToFinalCheck2466039659637220345();
   }
   @Test
   public void test_ErrorMessagesCheck2466039659637478694() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FinalFieldTests_Test$TestBody", "test_ErrorMessagesCheck2466039659637478694", true);
+    new FinalFieldTests_Test.TestBody(this).test_ErrorMessagesCheck2466039659637478694();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_ErrorMessagesCheck843236768048178247() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("843236768048178247"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

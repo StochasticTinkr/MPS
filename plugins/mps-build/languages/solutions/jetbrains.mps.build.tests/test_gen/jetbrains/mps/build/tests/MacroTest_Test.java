@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
@@ -18,6 +21,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class MacroTest_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(MacroTest_Test.class, "${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public MacroTest_Test() {
     super(ourParamCache);
@@ -25,35 +30,39 @@ public class MacroTest_Test extends BaseTransformationTest {
 
   @Test
   public void test_normalScope() throws Throwable {
-    runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_normalScope", true);
+    new MacroTest_Test.TestBody(this).test_normalScope();
   }
   @Test
   public void test_onlySeePreviouslyDeclaredMacro() throws Throwable {
-    runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_onlySeePreviouslyDeclaredMacro", true);
+    new MacroTest_Test.TestBody(this).test_onlySeePreviouslyDeclaredMacro();
   }
   @Test
   public void test_doNotSeeItsefl() throws Throwable {
-    runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_doNotSeeItsefl", true);
+    new MacroTest_Test.TestBody(this).test_doNotSeeItsefl();
   }
   @Test
   public void test_doNotSeeImported() throws Throwable {
-    runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_doNotSeeImported", true);
+    new MacroTest_Test.TestBody(this).test_doNotSeeImported();
   }
   @Test
   public void test_seeImportedVariableInScope() throws Throwable {
-    runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_seeImportedVariableInScope", true);
+    new MacroTest_Test.TestBody(this).test_seeImportedVariableInScope();
   }
   @Test
   public void test_doNotSeeForwardVariabletInScope() throws Throwable {
-    runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_doNotSeeForwardVariabletInScope", true);
+    new MacroTest_Test.TestBody(this).test_doNotSeeForwardVariabletInScope();
   }
   @Test
   public void test_seeBackwardVariableInScope() throws Throwable {
-    runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_seeBackwardVariableInScope", true);
+    new MacroTest_Test.TestBody(this).test_seeBackwardVariableInScope();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_normalScope() throws Exception {
       addNodeById("193602448594327347");
       addNodeById("763409143595572699");

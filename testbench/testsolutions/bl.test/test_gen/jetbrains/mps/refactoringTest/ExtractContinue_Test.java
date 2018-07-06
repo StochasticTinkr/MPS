@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,6 +28,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class ExtractContinue_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ExtractContinue_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public ExtractContinue_Test() {
     super(ourParamCache);
@@ -32,11 +37,15 @@ public class ExtractContinue_Test extends BaseTransformationTest {
 
   @Test
   public void test_ExtractContinue() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.ExtractContinue_Test$TestBody", "test_ExtractContinue", true);
+    new ExtractContinue_Test.TestBody(this).test_ExtractContinue();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_ExtractContinue() throws Exception {
       addNodeById("1230052480439");
       addNodeById("1230052480459");

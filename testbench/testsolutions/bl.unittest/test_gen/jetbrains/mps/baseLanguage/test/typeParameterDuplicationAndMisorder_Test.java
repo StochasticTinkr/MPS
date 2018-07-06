@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class typeParameterDuplicationAndMisorder_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(typeParameterDuplicationAndMisorder_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public typeParameterDuplicationAndMisorder_Test() {
     super(ourParamCache);
@@ -24,43 +29,47 @@ public class typeParameterDuplicationAndMisorder_Test extends BaseTransformation
 
   @Test
   public void test_NodeTypeVariableIsNotNeededCheck6923385624929116385() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_NodeTypeVariableIsNotNeededCheck6923385624929116385", true);
+    new typeParameterDuplicationAndMisorder_Test.TestBody(this).test_NodeTypeVariableIsNotNeededCheck6923385624929116385();
   }
   @Test
   public void test_NodeUnnamedErrorCheck6923385624929116387() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_NodeUnnamedErrorCheck6923385624929116387", true);
+    new typeParameterDuplicationAndMisorder_Test.TestBody(this).test_NodeUnnamedErrorCheck6923385624929116387();
   }
   @Test
   public void test_NodeUnnamedErrorCheck6923385624929017230() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_NodeUnnamedErrorCheck6923385624929017230", true);
+    new typeParameterDuplicationAndMisorder_Test.TestBody(this).test_NodeUnnamedErrorCheck6923385624929017230();
   }
   @Test
   public void test_NodeUnnamedErrorCheck6923385624928447295() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_NodeUnnamedErrorCheck6923385624928447295", true);
+    new typeParameterDuplicationAndMisorder_Test.TestBody(this).test_NodeUnnamedErrorCheck6923385624928447295();
   }
   @Test
   public void test_NodeUnnamedErrorCheck6923385624927677357() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_NodeUnnamedErrorCheck6923385624927677357", true);
+    new typeParameterDuplicationAndMisorder_Test.TestBody(this).test_NodeUnnamedErrorCheck6923385624927677357();
   }
   @Test
   public void test_ErrorMessagesCheck2970924421778358827() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_ErrorMessagesCheck2970924421778358827", true);
+    new typeParameterDuplicationAndMisorder_Test.TestBody(this).test_ErrorMessagesCheck2970924421778358827();
   }
   @Test
   public void test_NodeUnnamedErrorCheck6923385624928047856() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_NodeUnnamedErrorCheck6923385624928047856", true);
+    new typeParameterDuplicationAndMisorder_Test.TestBody(this).test_NodeUnnamedErrorCheck6923385624928047856();
   }
   @Test
   public void test_NodeUnnamedErrorCheck6923385624927049758() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_NodeUnnamedErrorCheck6923385624927049758", true);
+    new typeParameterDuplicationAndMisorder_Test.TestBody(this).test_NodeUnnamedErrorCheck6923385624927049758();
   }
   @Test
   public void test_ErrorMessagesCheck2970924421778359047() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_ErrorMessagesCheck2970924421778359047", true);
+    new typeParameterDuplicationAndMisorder_Test.TestBody(this).test_ErrorMessagesCheck2970924421778359047();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeTypeVariableIsNotNeededCheck6923385624929116385() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929116385"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

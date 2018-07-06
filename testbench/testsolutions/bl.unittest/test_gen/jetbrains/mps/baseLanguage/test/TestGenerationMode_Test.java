@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.TypeSystemCheckUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -16,6 +19,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class TestGenerationMode_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestGenerationMode_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public TestGenerationMode_Test() {
     super(ourParamCache);
@@ -23,11 +28,15 @@ public class TestGenerationMode_Test extends BaseTransformationTest {
 
   @Test
   public void test_GenerationMode() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.TestGenerationMode_Test$TestBody", "test_GenerationMode", true);
+    new TestGenerationMode_Test.TestBody(this).test_GenerationMode();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_GenerationMode() throws Exception {
       addNodeById("7187651930235347759");
       TypeSystemCheckUtil.checkGenerationMode(SNodeOperations.cast(getNodeById("7187651930235347762"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b204L, "ConstructorDeclaration"))));

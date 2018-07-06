@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,6 +23,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class ReturnStatement_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ReturnStatement_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public ReturnStatement_Test() {
     super(ourParamCache);
@@ -27,19 +32,23 @@ public class ReturnStatement_Test extends BaseTransformationTest {
 
   @Test
   public void test_alwaysReturn() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.ReturnStatement_Test$TestBody", "test_alwaysReturn", true);
+    new ReturnStatement_Test.TestBody(this).test_alwaysReturn();
   }
   @Test
   public void test_retunInAnonymousClass() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.ReturnStatement_Test$TestBody", "test_retunInAnonymousClass", true);
+    new ReturnStatement_Test.TestBody(this).test_retunInAnonymousClass();
   }
   @Test
   public void test_notAlwaysReturn() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.ReturnStatement_Test$TestBody", "test_notAlwaysReturn", true);
+    new ReturnStatement_Test.TestBody(this).test_notAlwaysReturn();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_alwaysReturn() throws Exception {
       addNodeById("1230052642345");
       Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("1230052642367"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))))));

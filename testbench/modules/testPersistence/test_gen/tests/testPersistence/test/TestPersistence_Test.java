@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import java.io.ByteArrayInputStream;
@@ -48,6 +51,8 @@ import java.util.Collections;
 public class TestPersistence_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestPersistence_Test.class, "${mps_home}", "r:8ef4c1fc-fb61-4d5c-806c-7a971cfb9392(tests.testPersistence.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public TestPersistence_Test() {
     super(ourParamCache);
@@ -55,19 +60,23 @@ public class TestPersistence_Test extends BaseTransformationTest {
 
   @Test
   public void test_testLastVersionIndexing() throws Throwable {
-    runTest("tests.testPersistence.test.TestPersistence_Test$TestBody", "test_testLastVersionIndexing", true);
+    new TestPersistence_Test.TestBody(this).test_testLastVersionIndexing();
   }
   @Test
   public void test_testPersistenceReadWrite() throws Throwable {
-    runTest("tests.testPersistence.test.TestPersistence_Test$TestBody", "test_testPersistenceReadWrite", true);
+    new TestPersistence_Test.TestBody(this).test_testPersistenceReadWrite();
   }
   @Test
   public void test_testPersistenceUpgrade() throws Throwable {
-    runTest("tests.testPersistence.test.TestPersistence_Test$TestBody", "test_testPersistenceUpgrade", true);
+    new TestPersistence_Test.TestBody(this).test_testPersistenceUpgrade();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_testLastVersionIndexing() throws Exception {
       TestPersistenceHelper helper = new TestPersistenceHelper(myProject.getRepository());
       CollectCallback c = new CollectCallback();

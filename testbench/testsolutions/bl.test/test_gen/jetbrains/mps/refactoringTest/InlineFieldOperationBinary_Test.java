@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldReferenceOperationRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -22,6 +25,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class InlineFieldOperationBinary_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(InlineFieldOperationBinary_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public InlineFieldOperationBinary_Test() {
     super(ourParamCache);
@@ -29,11 +34,15 @@ public class InlineFieldOperationBinary_Test extends BaseTransformationTest {
 
   @Test
   public void test_simpleInlineVariable() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.InlineFieldOperationBinary_Test$TestBody", "test_simpleInlineVariable", true);
+    new InlineFieldOperationBinary_Test.TestBody(this).test_simpleInlineVariable();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_simpleInlineVariable() throws Exception {
       addNodeById("6923327169066964272");
       addNodeById("2359164386490345017");

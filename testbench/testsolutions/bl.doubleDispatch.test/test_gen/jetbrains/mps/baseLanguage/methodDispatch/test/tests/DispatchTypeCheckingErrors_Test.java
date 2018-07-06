@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class DispatchTypeCheckingErrors_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(DispatchTypeCheckingErrors_Test.class, "${mps_home}", "r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public DispatchTypeCheckingErrors_Test() {
     super(ourParamCache);
@@ -24,31 +29,35 @@ public class DispatchTypeCheckingErrors_Test extends BaseTransformationTest {
 
   @Test
   public void test_ErrorMessagesCheck3813896760029621933() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.methodDispatch.test.tests.DispatchTypeCheckingErrors_Test$TestBody", "test_ErrorMessagesCheck3813896760029621933", true);
+    new DispatchTypeCheckingErrors_Test.TestBody(this).test_ErrorMessagesCheck3813896760029621933();
   }
   @Test
   public void test_NodeErrorCheck3813896760029624351() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.methodDispatch.test.tests.DispatchTypeCheckingErrors_Test$TestBody", "test_NodeErrorCheck3813896760029624351", true);
+    new DispatchTypeCheckingErrors_Test.TestBody(this).test_NodeErrorCheck3813896760029624351();
   }
   @Test
   public void test_NodeErrorCheck3813896760029586546() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.methodDispatch.test.tests.DispatchTypeCheckingErrors_Test$TestBody", "test_NodeErrorCheck3813896760029586546", true);
+    new DispatchTypeCheckingErrors_Test.TestBody(this).test_NodeErrorCheck3813896760029586546();
   }
   @Test
   public void test_ErrorMessagesCheck3813896760029627239() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.methodDispatch.test.tests.DispatchTypeCheckingErrors_Test$TestBody", "test_ErrorMessagesCheck3813896760029627239", true);
+    new DispatchTypeCheckingErrors_Test.TestBody(this).test_ErrorMessagesCheck3813896760029627239();
   }
   @Test
   public void test_NodeErrorCheck3813896760029637821() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.methodDispatch.test.tests.DispatchTypeCheckingErrors_Test$TestBody", "test_NodeErrorCheck3813896760029637821", true);
+    new DispatchTypeCheckingErrors_Test.TestBody(this).test_NodeErrorCheck3813896760029637821();
   }
   @Test
   public void test_ErrorMessagesCheck3813896760029629781() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.methodDispatch.test.tests.DispatchTypeCheckingErrors_Test$TestBody", "test_ErrorMessagesCheck3813896760029629781", true);
+    new DispatchTypeCheckingErrors_Test.TestBody(this).test_ErrorMessagesCheck3813896760029629781();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_ErrorMessagesCheck3813896760029621933() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("3813896760029621933"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

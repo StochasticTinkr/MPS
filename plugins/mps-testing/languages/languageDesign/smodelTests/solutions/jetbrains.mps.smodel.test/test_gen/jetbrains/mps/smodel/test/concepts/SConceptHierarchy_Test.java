@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -21,6 +24,8 @@ import jetbrains.mps.util.IterableUtil;
 public class SConceptHierarchy_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SConceptHierarchy_Test.class, "${mps_home}", "r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public SConceptHierarchy_Test() {
     super(ourParamCache);
@@ -28,19 +33,23 @@ public class SConceptHierarchy_Test extends BaseTransformationTest {
 
   @Test
   public void test_conceptHierarchy() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody", "test_conceptHierarchy", true);
+    new SConceptHierarchy_Test.TestBody(this).test_conceptHierarchy();
   }
   @Test
   public void test_conceptSuperConcept() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody", "test_conceptSuperConcept", true);
+    new SConceptHierarchy_Test.TestBody(this).test_conceptSuperConcept();
   }
   @Test
   public void test_defaultIfaceConcept() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody", "test_defaultIfaceConcept", true);
+    new SConceptHierarchy_Test.TestBody(this).test_defaultIfaceConcept();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_conceptHierarchy() throws Exception {
       Assert.assertTrue(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
       Assert.assertTrue(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept").isSubConceptOf(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));

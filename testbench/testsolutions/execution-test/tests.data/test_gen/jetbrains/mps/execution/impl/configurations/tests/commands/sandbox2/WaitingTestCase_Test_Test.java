@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 
 @MPSLaunch
@@ -21,11 +22,15 @@ public class WaitingTestCase_Test_Test extends BaseTransformationTest {
 
   @Test
   public void test_test1() throws Throwable {
-    runTest("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.WaitingTestCase_Test_Test$TestBody", "test_test1", false);
+    new WaitingTestCase_Test_Test.TestBody(this).test_test1();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_test1() throws Exception {
       try {
         Thread.sleep(5000);

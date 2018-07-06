@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class FontFamilyStyleClassItemWarningTest_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(FontFamilyStyleClassItemWarningTest_Test.class, "${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public FontFamilyStyleClassItemWarningTest_Test() {
     super(ourParamCache);
@@ -24,11 +29,15 @@ public class FontFamilyStyleClassItemWarningTest_Test extends BaseTransformation
 
   @Test
   public void test_NodeWarningCheck1715298588355862323() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.style.test.FontFamilyStyleClassItemWarningTest_Test$TestBody", "test_NodeWarningCheck1715298588355862323", true);
+    new FontFamilyStyleClassItemWarningTest_Test.TestBody(this).test_NodeWarningCheck1715298588355862323();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeWarningCheck1715298588355862323() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("1715298588355862323"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

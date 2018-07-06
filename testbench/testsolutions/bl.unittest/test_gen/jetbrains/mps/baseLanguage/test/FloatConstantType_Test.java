@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -18,6 +21,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class FloatConstantType_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(FloatConstantType_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public FloatConstantType_Test() {
     super(ourParamCache);
@@ -25,15 +30,19 @@ public class FloatConstantType_Test extends BaseTransformationTest {
 
   @Test
   public void test_testTypes() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FloatConstantType_Test$TestBody", "test_testTypes", true);
+    new FloatConstantType_Test.TestBody(this).test_testTypes();
   }
   @Test
   public void test_ErrorMessagesCheck5868639094267614275() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FloatConstantType_Test$TestBody", "test_ErrorMessagesCheck5868639094267614275", true);
+    new FloatConstantType_Test.TestBody(this).test_ErrorMessagesCheck5868639094267614275();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_testTypes() throws Exception {
       addNodeById("5868639094257179247");
       assert SNodeOperations.isInstanceOf(SNodeOperations.cast(getNodeById("5868639094257266015"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x102cb19a434L, "FloatingPointConstant"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102cb19a434L, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant"));

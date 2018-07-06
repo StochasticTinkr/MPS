@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class UnusedVariableDeclaration_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(UnusedVariableDeclaration_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public UnusedVariableDeclaration_Test() {
     super(ourParamCache);
@@ -24,27 +29,31 @@ public class UnusedVariableDeclaration_Test extends BaseTransformationTest {
 
   @Test
   public void test_UnusedVariableDeclaration() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test$TestBody", "test_UnusedVariableDeclaration", true);
+    new UnusedVariableDeclaration_Test.TestBody(this).test_UnusedVariableDeclaration();
   }
   @Test
   public void test_ErrorMessagesCheck5684597377559856228() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test$TestBody", "test_ErrorMessagesCheck5684597377559856228", true);
+    new UnusedVariableDeclaration_Test.TestBody(this).test_ErrorMessagesCheck5684597377559856228();
   }
   @Test
   public void test_NodeUnusedVariableWarningCheck6923385624927220340() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test$TestBody", "test_NodeUnusedVariableWarningCheck6923385624927220340", true);
+    new UnusedVariableDeclaration_Test.TestBody(this).test_NodeUnusedVariableWarningCheck6923385624927220340();
   }
   @Test
   public void test_NodeUnusedVariableWarningCheck6923385624927360820() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test$TestBody", "test_NodeUnusedVariableWarningCheck6923385624927360820", true);
+    new UnusedVariableDeclaration_Test.TestBody(this).test_NodeUnusedVariableWarningCheck6923385624927360820();
   }
   @Test
   public void test_NodeUnusedVariableWarningCheck6923385624929638863() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test$TestBody", "test_NodeUnusedVariableWarningCheck6923385624929638863", true);
+    new UnusedVariableDeclaration_Test.TestBody(this).test_NodeUnusedVariableWarningCheck6923385624929638863();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_UnusedVariableDeclaration() throws Exception {
       addNodeById("1217271587025");
     }

@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,6 +27,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class ExtractFromStatementWithReturnValue_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ExtractFromStatementWithReturnValue_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public ExtractFromStatementWithReturnValue_Test() {
     super(ourParamCache);
@@ -31,11 +36,15 @@ public class ExtractFromStatementWithReturnValue_Test extends BaseTransformation
 
   @Test
   public void test_extractFromStatementWithReturnValue() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.ExtractFromStatementWithReturnValue_Test$TestBody", "test_extractFromStatementWithReturnValue", true);
+    new ExtractFromStatementWithReturnValue_Test.TestBody(this).test_extractFromStatementWithReturnValue();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_extractFromStatementWithReturnValue() throws Exception {
       addNodeById("1230052641914");
       addNodeById("1230052641949");

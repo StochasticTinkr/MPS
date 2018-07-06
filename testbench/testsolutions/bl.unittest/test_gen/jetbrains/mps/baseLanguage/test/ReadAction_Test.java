@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class ReadAction_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ReadAction_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public ReadAction_Test() {
     super(ourParamCache);
@@ -24,15 +29,19 @@ public class ReadAction_Test extends BaseTransformationTest {
 
   @Test
   public void test_ReadAction() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ReadAction_Test$TestBody", "test_ReadAction", true);
+    new ReadAction_Test.TestBody(this).test_ReadAction();
   }
   @Test
   public void test_ErrorMessagesCheck1216549241562() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.ReadAction_Test$TestBody", "test_ErrorMessagesCheck1216549241562", true);
+    new ReadAction_Test.TestBody(this).test_ErrorMessagesCheck1216549241562();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_ReadAction() throws Exception {
       addNodeById("1217271586326");
     }

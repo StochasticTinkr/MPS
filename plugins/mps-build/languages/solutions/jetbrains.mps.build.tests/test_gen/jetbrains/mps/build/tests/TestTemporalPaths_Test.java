@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.build.behavior.BuildLayout_NamedContainer__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -19,6 +22,8 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class TestTemporalPaths_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestTemporalPaths_Test.class, "${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public TestTemporalPaths_Test() {
     super(ourParamCache);
@@ -26,31 +31,35 @@ public class TestTemporalPaths_Test extends BaseTransformationTest {
 
   @Test
   public void test_topLevelJar() throws Throwable {
-    runTest("jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody", "test_topLevelJar", true);
+    new TestTemporalPaths_Test.TestBody(this).test_topLevelJar();
   }
   @Test
   public void test_topLevelFolder() throws Throwable {
-    runTest("jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody", "test_topLevelFolder", true);
+    new TestTemporalPaths_Test.TestBody(this).test_topLevelFolder();
   }
   @Test
   public void test_topInternalFolder() throws Throwable {
-    runTest("jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody", "test_topInternalFolder", true);
+    new TestTemporalPaths_Test.TestBody(this).test_topInternalFolder();
   }
   @Test
   public void test_jarInFolder() throws Throwable {
-    runTest("jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody", "test_jarInFolder", true);
+    new TestTemporalPaths_Test.TestBody(this).test_jarInFolder();
   }
   @Test
   public void test_folderInJar() throws Throwable {
-    runTest("jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody", "test_folderInJar", true);
+    new TestTemporalPaths_Test.TestBody(this).test_folderInJar();
   }
   @Test
   public void test_duplicatedNames() throws Throwable {
-    runTest("jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody", "test_duplicatedNames", true);
+    new TestTemporalPaths_Test.TestBody(this).test_duplicatedNames();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_topLevelJar() throws Exception {
       addNodeById("4045247515868358884");
       Assert.assertEquals(TestContext.DEPLOY + "/test.jar", BuildLayout_NamedContainer__BehaviorDescriptor.getOutputPath_WithMacro_idfzIHCHip1Q.invoke(SNodeOperations.cast(getNodeById("280273048052535266"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0x668c6cfbafac7f9aL, "BuildLayout_Jar"))), new TestContext(this.getBuildTestsModel())));

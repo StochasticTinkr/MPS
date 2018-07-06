@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class EditorCellMenuScopes_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(EditorCellMenuScopes_Test.class, "${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public EditorCellMenuScopes_Test() {
     super(ourParamCache);
@@ -24,31 +29,35 @@ public class EditorCellMenuScopes_Test extends BaseTransformationTest {
 
   @Test
   public void test_ScopeOf_TransformationMenuReference_Default_concept_1068638940632614994() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.tests.EditorCellMenuScopes_Test$TestBody", "test_ScopeOf_TransformationMenuReference_Default_concept_1068638940632614994", true);
+    new EditorCellMenuScopes_Test.TestBody(this).test_ScopeOf_TransformationMenuReference_Default_concept_1068638940632614994();
   }
   @Test
   public void test_ScopeOf_TransformationMenuReference_Named_menu_1068638940632808481() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.tests.EditorCellMenuScopes_Test$TestBody", "test_ScopeOf_TransformationMenuReference_Named_menu_1068638940632808481", true);
+    new EditorCellMenuScopes_Test.TestBody(this).test_ScopeOf_TransformationMenuReference_Named_menu_1068638940632808481();
   }
   @Test
   public void test_ScopeOf_TransformationMenuReference_Default_concept_4091667478583379447() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.tests.EditorCellMenuScopes_Test$TestBody", "test_ScopeOf_TransformationMenuReference_Default_concept_4091667478583379447", true);
+    new EditorCellMenuScopes_Test.TestBody(this).test_ScopeOf_TransformationMenuReference_Default_concept_4091667478583379447();
   }
   @Test
   public void test_ScopeOf_TransformationMenuReference_Named_menu_4091667478583467351() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.tests.EditorCellMenuScopes_Test$TestBody", "test_ScopeOf_TransformationMenuReference_Named_menu_4091667478583467351", true);
+    new EditorCellMenuScopes_Test.TestBody(this).test_ScopeOf_TransformationMenuReference_Named_menu_4091667478583467351();
   }
   @Test
   public void test_ScopeOf_TransformationMenuReference_Default_concept_4091667478583467622() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.tests.EditorCellMenuScopes_Test$TestBody", "test_ScopeOf_TransformationMenuReference_Default_concept_4091667478583467622", true);
+    new EditorCellMenuScopes_Test.TestBody(this).test_ScopeOf_TransformationMenuReference_Default_concept_4091667478583467622();
   }
   @Test
   public void test_ScopeOf_TransformationMenuReference_Named_menu_4091667478583468879() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.tests.EditorCellMenuScopes_Test$TestBody", "test_ScopeOf_TransformationMenuReference_Named_menu_4091667478583468879", true);
+    new EditorCellMenuScopes_Test.TestBody(this).test_ScopeOf_TransformationMenuReference_Named_menu_4091667478583468879();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_ScopeOf_TransformationMenuReference_Default_concept_1068638940632614994() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("1068638940632614996"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

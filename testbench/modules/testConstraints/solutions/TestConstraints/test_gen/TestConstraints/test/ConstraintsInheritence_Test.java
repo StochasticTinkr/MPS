@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,6 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class ConstraintsInheritence_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ConstraintsInheritence_Test.class, "${mps_home}", "r:63c35524-f256-4fdd-b128-2c53748bdd7c(TestConstraints.test@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public ConstraintsInheritence_Test() {
     super(ourParamCache);
@@ -24,31 +29,35 @@ public class ConstraintsInheritence_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeUnknownRuleCheck5816870305080793796() throws Throwable {
-    runTest("TestConstraints.test.ConstraintsInheritence_Test$TestBody", "test_NodeUnknownRuleCheck5816870305080793796", true);
+    new ConstraintsInheritence_Test.TestBody(this).test_NodeUnknownRuleCheck5816870305080793796();
   }
   @Test
   public void test_NodeUnknownRuleCheck5816870305080793812() throws Throwable {
-    runTest("TestConstraints.test.ConstraintsInheritence_Test$TestBody", "test_NodeUnknownRuleCheck5816870305080793812", true);
+    new ConstraintsInheritence_Test.TestBody(this).test_NodeUnknownRuleCheck5816870305080793812();
   }
   @Test
   public void test_ErrorMessagesCheck5816870305080792275() throws Throwable {
-    runTest("TestConstraints.test.ConstraintsInheritence_Test$TestBody", "test_ErrorMessagesCheck5816870305080792275", true);
+    new ConstraintsInheritence_Test.TestBody(this).test_ErrorMessagesCheck5816870305080792275();
   }
   @Test
   public void test_NodeUnknownRuleCheck5816870305080793804() throws Throwable {
-    runTest("TestConstraints.test.ConstraintsInheritence_Test$TestBody", "test_NodeUnknownRuleCheck5816870305080793804", true);
+    new ConstraintsInheritence_Test.TestBody(this).test_NodeUnknownRuleCheck5816870305080793804();
   }
   @Test
   public void test_NodeUnknownRuleCheck5816870305080793825() throws Throwable {
-    runTest("TestConstraints.test.ConstraintsInheritence_Test$TestBody", "test_NodeUnknownRuleCheck5816870305080793825", true);
+    new ConstraintsInheritence_Test.TestBody(this).test_NodeUnknownRuleCheck5816870305080793825();
   }
   @Test
   public void test_NodeUnknownRuleCheck5816870305080793833() throws Throwable {
-    runTest("TestConstraints.test.ConstraintsInheritence_Test$TestBody", "test_NodeUnknownRuleCheck5816870305080793833", true);
+    new ConstraintsInheritence_Test.TestBody(this).test_NodeUnknownRuleCheck5816870305080793833();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeUnknownRuleCheck5816870305080793796() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("5816870305080793796"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

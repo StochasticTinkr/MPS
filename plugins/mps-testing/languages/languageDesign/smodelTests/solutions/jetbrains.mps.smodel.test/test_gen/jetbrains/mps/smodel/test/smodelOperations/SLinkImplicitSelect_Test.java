@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -23,6 +26,8 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class SLinkImplicitSelect_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SLinkImplicitSelect_Test.class, "${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public SLinkImplicitSelect_Test() {
     super(ourParamCache);
@@ -30,31 +35,35 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
 
   @Test
   public void test_empty() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_empty", true);
+    new SLinkImplicitSelect_Test.TestBody(this).test_empty();
   }
   @Test
   public void test_singleChild() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_singleChild", true);
+    new SLinkImplicitSelect_Test.TestBody(this).test_singleChild();
   }
   @Test
   public void test_multipleChildren() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_multipleChildren", true);
+    new SLinkImplicitSelect_Test.TestBody(this).test_multipleChildren();
   }
   @Test
   public void test_operationsOnList() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_operationsOnList", true);
+    new SLinkImplicitSelect_Test.TestBody(this).test_operationsOnList();
   }
   @Test
   public void test_specializedLinks() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_specializedLinks", true);
+    new SLinkImplicitSelect_Test.TestBody(this).test_specializedLinks();
   }
   @Test
   public void test_inheritedLinks() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_inheritedLinks", true);
+    new SLinkImplicitSelect_Test.TestBody(this).test_inheritedLinks();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_empty() throws Exception {
       addNodeById("278471160714368807");
       addNodeById("7551657168186489228");

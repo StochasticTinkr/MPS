@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import java.awt.image.BufferedImage;
 import junit.framework.Assert;
 import java.io.IOException;
@@ -16,6 +19,8 @@ import java.io.IOException;
 public class ImageExport_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ImageExport_Test.class, "${mps_home}", "r:57812925-2ef0-43c6-8314-0222b2c13acf(jetbrains.mps.lang.editor.imageGen.tests@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public ImageExport_Test() {
     super(ourParamCache);
@@ -23,15 +28,19 @@ public class ImageExport_Test extends BaseTransformationTest {
 
   @Test
   public void test_manuallyExportedImage() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.imageGen.tests.ImageExport_Test$TestBody", "test_manuallyExportedImage", true);
+    new ImageExport_Test.TestBody(this).test_manuallyExportedImage();
   }
   @Test
   public void test_imageExportedByGenerator() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.imageGen.tests.ImageExport_Test$TestBody", "test_imageExportedByGenerator", true);
+    new ImageExport_Test.TestBody(this).test_imageExportedByGenerator();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_manuallyExportedImage() throws Exception {
       ImageLoader imageloader = new ImageLoader("ManuallyExportedImage.gif");
       try {

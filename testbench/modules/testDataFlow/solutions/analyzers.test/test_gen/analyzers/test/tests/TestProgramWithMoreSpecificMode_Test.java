@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 import jetbrains.mps.lang.dataFlow.framework.instructions.InstructionBuilder;
 import jetbrains.mps.lang.dataFlow.framework.ProgramBuilderContextImpl;
@@ -26,6 +29,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class TestProgramWithMoreSpecificMode_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestProgramWithMoreSpecificMode_Test.class, "${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public TestProgramWithMoreSpecificMode_Test() {
     super(ourParamCache);
@@ -33,15 +38,19 @@ public class TestProgramWithMoreSpecificMode_Test extends BaseTransformationTest
 
   @Test
   public void test_testLessSpecificMode() throws Throwable {
-    runTest("analyzers.test.tests.TestProgramWithMoreSpecificMode_Test$TestBody", "test_testLessSpecificMode", true);
+    new TestProgramWithMoreSpecificMode_Test.TestBody(this).test_testLessSpecificMode();
   }
   @Test
   public void test_testMoreSpecificMode() throws Throwable {
-    runTest("analyzers.test.tests.TestProgramWithMoreSpecificMode_Test$TestBody", "test_testMoreSpecificMode", true);
+    new TestProgramWithMoreSpecificMode_Test.TestBody(this).test_testMoreSpecificMode();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_testLessSpecificMode() throws Exception {
       addNodeById("7078910619969225966");
       MPSProgramBuilder builder = new MPSProgramBuilder(null, new InstructionBuilder(), new ProgramBuilderContextImpl(Collections.singletonList(new ConceptDataFlowModeId("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode"))));
