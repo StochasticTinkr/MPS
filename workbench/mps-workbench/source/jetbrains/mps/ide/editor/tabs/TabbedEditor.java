@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.editor.tabs;
 
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -27,6 +28,7 @@ import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
 import com.intellij.openapi.ui.ShadowAction;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.IdeFocusManager;
@@ -100,6 +102,7 @@ public class TabbedEditor extends BaseNodeEditor {
 
   private final MPSNodeVirtualFile myVirtualFile;
   private boolean myDisposed;
+  private final Disposable myDisposable = Disposer.newDisposable(TabbedEditor.class.getName());
 
   public TabbedEditor(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, @NotNull Project mpsProject) {
     super(mpsProject);
@@ -118,9 +121,9 @@ public class TabbedEditor extends BaseNodeEditor {
     installTabsComponent();
 
     myNextTabAction = new ShadowAction(new BaseNavigationAction(() -> myTabsComponent.nextTab()),
-        ActionManager.getInstance().getAction(IdeActions.ACTION_NEXT_EDITOR_TAB), getComponent(), this::dispose);
+        ActionManager.getInstance().getAction(IdeActions.ACTION_NEXT_EDITOR_TAB), getComponent(), myDisposable);
     myPrevTabAction = new ShadowAction(new BaseNavigationAction(() -> myTabsComponent.prevTab()),
-        ActionManager.getInstance().getAction(IdeActions.ACTION_PREVIOUS_EDITOR_TAB), getComponent(), this::dispose);
+        ActionManager.getInstance().getAction(IdeActions.ACTION_PREVIOUS_EDITOR_TAB), getComponent(), myDisposable);
 
     final AnAction addAction = new AddAspectAction(mpsProject, myBaseNode, myPossibleTabs, new SetTabsComponentNode()) {
       @Override
@@ -167,6 +170,7 @@ public class TabbedEditor extends BaseNodeEditor {
     myDisposed = true;
     EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
 
+    Disposer.dispose(myDisposable);
     myProject.getModelAccess().runReadAction(myNameListener::detach);
     if (myRepoChangeListener != null) {
       myRepoChangeListener.removeTabComponent(myTabsComponent);
