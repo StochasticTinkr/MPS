@@ -18,8 +18,11 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.tool.environment.EnvironmentSetupException;
 import org.junit.AssumptionViolatedException;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.junit.runners.model.Statement;
 import java.lang.reflect.InvocationTargetException;
+import jetbrains.mps.util.Reference;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.generator.impl.CloneUtil;
@@ -116,12 +119,17 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
     }
   }
 
+  /**
+   * 
+   * @deprecated replace this method with direct instantiation of test body class and invocation of a test method, there's no reason to use reflection
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
     if (LOG.isInfoEnabled()) {
       LOG.info("Running the test " + methodName);
     }
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
-    final Throwable[] error = new Throwable[1];
 
     clazz.value = getClass().getClassLoader().loadClass(className);
 
@@ -129,41 +137,53 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
     clazz.value.getField("myModel").set(obj, getTransientModelDescriptor());
     clazz.value.getField("myProject").set(obj, getProject());
     if (runInCommand) {
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-          getProject().getModelAccess().executeCommand(new Runnable() {
-            public void run() {
-              error[0] = BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
-            }
-          });
+      runInCommand(new Statement() {
+        public void evaluate() throws Throwable {
+          BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
         }
       });
     } else {
-      error[0] = this.tryToRunTest(clazz.value, methodName, obj);
-    }
-    if (error[0] != null) {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Test failed");
-      }
-      throw error[0];
+      this.tryToRunTest(clazz.value, methodName, obj);
     }
     if (LOG.isInfoEnabled()) {
       LOG.info("Test passed");
     }
   }
 
-  /*package*/ Throwable tryToRunTest(Class clazz, String methodName, Object obj) {
-    Throwable exception = null;
+  /*package*/ void tryToRunTest(Class clazz, String methodName, Object obj) throws Throwable {
     try {
       clazz.getMethod(methodName).invoke(obj);
     } catch (NoSuchMethodException e) {
       e.printStackTrace();
     } catch (IllegalAccessException e) {
       e.printStackTrace();
-    } catch (InvocationTargetException e) {
-      exception = e.getTargetException();
+    } catch (InvocationTargetException ex) {
+      throw ex.getTargetException();
     }
-    return exception;
+  }
+
+  /*package*/ final void runInCommand(final Statement c) throws Throwable {
+    // Indeed, it's not very nice to use Statement from junit here, but I don't want to introduce own Runnable capable of throwing Throwable, 
+    // and Statement is the one readily available and the one I need from RuntWithCommand rule anyway. 
+    final Reference<Throwable> ex = new Reference<Throwable>(null);
+    final Runnable r = new Runnable() {
+      public void run() {
+        try {
+          c.evaluate();
+        } catch (Throwable th) {
+          ex.set(th);
+        }
+      }
+    };
+    // FIXME shall replace project's model access with MA to BaseTestBody.myModel (initialized with #getTransientModelDescriptor() value) as it's the model we deal with 
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        getProject().getModelAccess().executeCommand(r);
+      }
+    });
+    if (ex.get() != null) {
+      throw ex.get();
+    }
   }
 
   /**

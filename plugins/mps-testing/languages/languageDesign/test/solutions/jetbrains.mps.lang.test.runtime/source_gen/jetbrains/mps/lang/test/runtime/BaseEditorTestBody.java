@@ -72,9 +72,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   }
 
   protected BaseEditorTestBody(TransformationTest owner) {
-    // this is what BaseTransformationTest.runTest() used to do 
-    myModel = owner.getTransientModelDescriptor();
-    myProject = owner.getProject();
+    super(owner);
   }
 
   public abstract void testMethodImpl() throws Exception;

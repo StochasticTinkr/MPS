@@ -101,6 +101,10 @@
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
       </concept>
+      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
+        <property id="8606350594693632173" name="isTransient" index="eg7rD" />
+        <property id="1240249534625" name="isVolatile" index="34CwA1" />
+      </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
@@ -185,6 +189,12 @@
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -1867,6 +1877,59 @@
       </node>
       <node concept="3Tm1VV" id="5iphLhCeqpw" role="1B3o_S" />
     </node>
+    <node concept="312cEg" id="BYb1OGqS3J" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myWithCommandRule" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="BYb1OGqJ$F" role="1B3o_S" />
+      <node concept="3uibUv" id="BYb1OGqPcH" role="1tU5fm">
+        <ref role="3uigEE" to="tp6m:BYb1OGotvJ" resolve="RunWithCommand" />
+      </node>
+      <node concept="2ShNRf" id="BYb1OGr35j" role="33vP2m">
+        <node concept="1pGfFk" id="BYb1OGr6xV" role="2ShVmc">
+          <ref role="37wK5l" to="tp6m:BYb1OGotCN" resolve="RunWithCommand" />
+          <node concept="Xjq3P" id="BYb1OGr6B3" role="37wK5m" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="BYb1OGqXg3" role="2AJF6D">
+        <ref role="2AI5Lk" to="rjhg:~Rule" resolve="Rule" />
+      </node>
+      <node concept="1W57fq" id="BYb1OGrenZ" role="lGtFl">
+        <node concept="3IZrLx" id="BYb1OGreo2" role="3IZSJc">
+          <node concept="3clFbS" id="BYb1OGreo3" role="2VODD2">
+            <node concept="3SKdUt" id="BYb1OG7RH_" role="3cqZAp">
+              <node concept="3SKdUq" id="BYb1OG7RHB" role="3SKWNk">
+                <property role="3SKdUp" value="XXX at the moment, tests without write action make little sense, if they are truly tests for nodes. SimpleNodeTest adds copies" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="BYb1OG8bDD" role="3cqZAp">
+              <node concept="3SKdUq" id="BYb1OG8bDF" role="3SKWNk">
+                <property role="3SKdUp" value="of referenced nodes, therefore BaseTestBody.addNodeById() resorts model command. Then, model checks would need model read, but we can't grab" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="BYb1OG8GEn" role="3cqZAp">
+              <node concept="3SKdUq" id="BYb1OG8GEp" role="3SKWNk">
+                <property role="3SKdUp" value="read here at the top just not to block addNodeById (can't write from read), therefore test methods have to come up with some ugly way to obtain " />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="BYb1OG8YiJ" role="3cqZAp">
+              <node concept="3SKdUq" id="BYb1OG8YiK" role="3SKWNk">
+                <property role="3SKdUp" value="model read or to always use 'runInWrite'." />
+              </node>
+            </node>
+            <node concept="3clFbF" id="BYb1OG6y2v" role="3cqZAp">
+              <node concept="2OqwBi" id="5vTxdEzxI5R" role="3clFbG">
+                <node concept="30H73N" id="5vTxdEzxx40" role="2Oq$k0" />
+                <node concept="2qgKlT" id="5vTxdEzxIZp" role="2OqNvi">
+                  <ref role="37wK5l" to="tp5o:5vTxdEzuQjU" resolve="needsWriteAction" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="5iphLhCe9TH" role="jymVt" />
     <node concept="3clFbW" id="5iphLhCe51H" role="jymVt">
       <node concept="3cqZAl" id="5iphLhCe51J" role="3clF45" />
@@ -1945,43 +2008,29 @@
         </node>
       </node>
       <node concept="3clFbS" id="hHDKHLk" role="3clF47">
-        <node concept="3clFbF" id="hLFnOQD" role="3cqZAp">
-          <node concept="1rXfSq" id="7Uk8E1kIjY4" role="3clFbG">
-            <ref role="37wK5l" to="tp6m:e$hNri8RCI" resolve="runTest" />
-            <node concept="Xl_RD" id="hLFoiSp" role="37wK5m">
-              <property role="Xl_RC" value="TestCaseName$TestBody" />
-              <node concept="17Uvod" id="hOw3VBo" role="lGtFl">
-                <property role="2qtEX9" value="value" />
-                <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                <node concept="3zFVjK" id="hOw3VBp" role="3zH0cK">
-                  <node concept="3clFbS" id="hOw3VBq" role="2VODD2">
-                    <node concept="3clFbF" id="L0xQjiUFPw" role="3cqZAp">
-                      <node concept="2YIFZM" id="L0xQjiUFPy" role="3clFbG">
-                        <ref role="37wK5l" to="3fh5:L0xQjiUFHd" resolve="getTestBodyClassName" />
-                        <ref role="1Pybhc" to="3fh5:L0xQjiTXbn" resolve="TestsUtil" />
-                        <node concept="2OqwBi" id="4DN08aZ$6S0" role="37wK5m">
-                          <node concept="30H73N" id="L0xQjiUFPz" role="2Oq$k0" />
-                          <node concept="2qgKlT" id="4DN08aZ$6S9" role="2OqNvi">
-                            <ref role="37wK5l" to="tpe5:hGBgWVd" resolve="getTestCase" />
-                          </node>
-                        </node>
+        <node concept="3clFbF" id="BYb1OG3A2U" role="3cqZAp">
+          <node concept="2OqwBi" id="BYb1OG3AnZ" role="3clFbG">
+            <node concept="liA8E" id="BYb1OG3DSK" role="2OqNvi">
+              <ref role="37wK5l" node="hPLPvfz" resolve="testMethod" />
+              <node concept="1ZhdrF" id="BYb1OG3GDz" role="lGtFl">
+                <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
+                <property role="2qtEX8" value="baseMethodDeclaration" />
+                <node concept="3$xsQk" id="BYb1OG3GD$" role="3$ytzL">
+                  <node concept="3clFbS" id="BYb1OG3GD_" role="2VODD2">
+                    <node concept="3SKdUt" id="BYb1OG4anu" role="3cqZAp">
+                      <node concept="3SKdUq" id="BYb1OG4anw" role="3SKWNk">
+                        <property role="3SKdUp" value=" FIXME need a ML ITestMethod-&gt;InstanceMethodDeclaration, but first (a) need a switch for ITestMethod implementations" />
                       </node>
                     </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="Xl_RD" id="hLFnRn6" role="37wK5m">
-              <property role="Xl_RC" value="testMethod" />
-              <node concept="17Uvod" id="hLFrl1z" role="lGtFl">
-                <property role="2qtEX9" value="value" />
-                <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                <node concept="3zFVjK" id="hLFrl1$" role="3zH0cK">
-                  <node concept="3clFbS" id="hLFrl1_" role="2VODD2">
-                    <node concept="3clFbF" id="hLFroUE" role="3cqZAp">
-                      <node concept="2OqwBi" id="hLFrpk5" role="3clFbG">
-                        <node concept="30H73N" id="hLFroUF" role="2Oq$k0" />
-                        <node concept="2qgKlT" id="hLFrqFy" role="2OqNvi">
+                    <node concept="3SKdUt" id="BYb1OG4xku" role="3cqZAp">
+                      <node concept="3SKdUq" id="BYb1OG4xkw" role="3SKWNk">
+                        <property role="3SKdUp" value="       (b) have to decide if intermediate BaseTestBody class makes any sense at all" />
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="BYb1OG3YC2" role="3cqZAp">
+                      <node concept="2OqwBi" id="BYb1OG3YC4" role="3clFbG">
+                        <node concept="30H73N" id="BYb1OG3YC5" role="2Oq$k0" />
+                        <node concept="2qgKlT" id="BYb1OG3YC6" role="2OqNvi">
                           <ref role="37wK5l" to="tpe5:hGBohAB" resolve="getTestName" />
                         </node>
                       </node>
@@ -1990,33 +2039,10 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbT" id="hRN3N$6" role="37wK5m">
-              <property role="3clFbU" value="true" />
-              <node concept="17Uvod" id="5vTxdEzxwbp" role="lGtFl">
-                <property role="2qtEX9" value="value" />
-                <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137/1068580123138" />
-                <node concept="3zFVjK" id="5vTxdEzxweJ" role="3zH0cK">
-                  <node concept="3clFbS" id="5vTxdEzxweK" role="2VODD2">
-                    <node concept="3clFbF" id="5vTxdEzxx41" role="3cqZAp">
-                      <node concept="2OqwBi" id="5vTxdEzxI5R" role="3clFbG">
-                        <node concept="1PxgMI" id="5vTxdEzxHym" role="2Oq$k0">
-                          <node concept="2OqwBi" id="5vTxdEzxx91" role="1m5AlR">
-                            <node concept="30H73N" id="5vTxdEzxx40" role="2Oq$k0" />
-                            <node concept="2qgKlT" id="5vTxdEzxGeX" role="2OqNvi">
-                              <ref role="37wK5l" to="tpe5:hGBgWVd" resolve="getTestCase" />
-                            </node>
-                          </node>
-                          <node concept="chp4Y" id="714IaVdGZ4B" role="3oSUPX">
-                            <ref role="cht4Q" to="tp5g:hHlH9T6" resolve="NodesTestCase" />
-                          </node>
-                        </node>
-                        <node concept="2qgKlT" id="5vTxdEzxIZp" role="2OqNvi">
-                          <ref role="37wK5l" to="tp5o:5vTxdEzuQjU" resolve="needsWriteAction" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
+            <node concept="2ShNRf" id="BYb1OG1y_G" role="2Oq$k0">
+              <node concept="1pGfFk" id="BYb1OG1Bvc" role="2ShVmc">
+                <ref role="37wK5l" node="BYb1OG11qm" resolve="NodesTestCase.TestBody" />
+                <node concept="Xjq3P" id="BYb1OG1BzQ" role="37wK5m" />
               </node>
             </node>
           </node>
@@ -2195,7 +2221,25 @@
     </node>
     <node concept="312cEu" id="hLF7lUD" role="jymVt">
       <property role="TrG5h" value="TestBody" />
-      <node concept="3Tm1VV" id="hLF7lUE" role="1B3o_S" />
+      <node concept="2tJIrI" id="BYb1OG0S$C" role="jymVt" />
+      <node concept="3clFbW" id="BYb1OG11qm" role="jymVt">
+        <node concept="37vLTG" id="BYb1OG1rw6" role="3clF46">
+          <property role="TrG5h" value="owner" />
+          <node concept="3uibUv" id="BYb1OG1r$2" role="1tU5fm">
+            <ref role="3uigEE" to="tp6m:e$hNri9cbt" resolve="TransformationTest" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="BYb1OG11qo" role="3clF45" />
+        <node concept="3clFbS" id="BYb1OG11qq" role="3clF47">
+          <node concept="XkiVB" id="BYb1OG1uo$" role="3cqZAp">
+            <ref role="37wK5l" to="tp6m:BYb1OG0zfm" resolve="BaseTestBody" />
+            <node concept="37vLTw" id="BYb1OG1uv9" role="37wK5m">
+              <ref role="3cqZAo" node="BYb1OG1rw6" resolve="owner" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2tJIrI" id="BYb1OG0SBz" role="jymVt" />
       <node concept="3uibUv" id="hLFfMVw" role="1zkMxy">
         <ref role="3uigEE" to="tp6m:hLFfHcX" resolve="BaseTestBody" />
       </node>
@@ -2216,9 +2260,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node concept="2AHcQZ" id="6xD3woJoRYa" role="2AJF6D">
-        <ref role="2AI5Lk" to="fyhk:~MPSLaunch" resolve="MPSLaunch" />
       </node>
       <node concept="3clFb_" id="hPLPvfz" role="jymVt">
         <property role="TrG5h" value="testMethod" />

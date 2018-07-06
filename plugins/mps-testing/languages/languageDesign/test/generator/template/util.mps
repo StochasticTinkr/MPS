@@ -355,6 +355,18 @@
           <ref role="ehGHo" to="tpe3:hGB2rPm" resolve="ITestCase" />
         </node>
       </node>
+      <node concept="P$JXv" id="BYb1OG7zEQ" role="lGtFl">
+        <node concept="TZ5HI" id="BYb1OG7zER" role="3nqlJM">
+          <node concept="TZ5HA" id="BYb1OG7zES" role="3HnX3l">
+            <node concept="1dT_AC" id="BYb1OG7zTJ" role="1dT_Ay">
+              <property role="1dT_AB" value="drop once no reflective calls of test methods left (there are 2 uses in mbeddr)" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="BYb1OG7zET" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
     </node>
   </node>
 </model>

@@ -37,6 +37,11 @@ public final class TestsUtil {
     return "";
   }
 
+  /**
+   * 
+   * @deprecated drop once no reflective calls of test methods left (there are 2 uses in mbeddr)
+   */
+  @Deprecated
   public static String getTestBodyClassName(SNode testCase) {
     return ITestCase__BehaviorDescriptor.getClassName_idhGBnqtL.invoke(testCase) + "$" + NodesTestCase__BehaviorDescriptor.getTestBodyName_idhOw0ICJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase")));
   }

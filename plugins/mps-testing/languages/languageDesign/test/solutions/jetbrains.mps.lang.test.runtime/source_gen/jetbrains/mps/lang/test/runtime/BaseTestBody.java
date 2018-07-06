@@ -18,10 +18,23 @@ import jetbrains.mps.smodel.SNodeId;
 public class BaseTestBody {
   public SModel myModel;
   public Project myProject;
-  protected Map<SNode, SNode> myMap;
+  protected final Map<SNode, SNode> myMap;
 
+  /**
+   * 
+   * @deprecated Reflective instantiation of BaseTestBody subclass (from BaseTransformationTest.runTest()) will be removed after 2018.2
+   */
+  @Deprecated
   public BaseTestBody() {
     myMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+  }
+
+  protected BaseTestBody(TransformationTest owner) {
+    myMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+
+    // this is what BaseTransformationTest.runTest() used to do 
+    myModel = owner.getTransientModelDescriptor();
+    myProject = owner.getProject();
   }
 
   public final void addNodeById(final String id) {
