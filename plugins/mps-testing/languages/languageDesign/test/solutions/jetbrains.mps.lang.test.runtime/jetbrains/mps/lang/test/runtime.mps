@@ -5455,6 +5455,20 @@
         <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
       </node>
     </node>
+    <node concept="2tJIrI" id="71jmdPUuFp2" role="jymVt" />
+    <node concept="312cEg" id="71jmdPUuKX4" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myBeforeAsRule" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="71jmdPUuIP1" role="1B3o_S" />
+      <node concept="3uibUv" id="71jmdPUuKMk" role="1tU5fm">
+        <ref role="3uigEE" to="a19p:~TestRule" resolve="TestRule" />
+      </node>
+      <node concept="2AHcQZ" id="71jmdPUw5Zn" role="2AJF6D">
+        <ref role="2AI5Lk" to="rjhg:~Rule" resolve="Rule" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="23$lmxdWBSO" role="jymVt" />
     <node concept="3clFbW" id="3yZ0KeTxuOv" role="jymVt">
       <node concept="3cqZAl" id="3yZ0KeTxuOw" role="3clF45" />
@@ -5464,6 +5478,18 @@
             <node concept="10Nm6u" id="5LbRjS1pP_0" role="37vLTx" />
             <node concept="37vLTw" id="5LbRjS1pOTW" role="37vLTJ">
               <ref role="3cqZAo" node="5LbRjS1pN8w" resolve="myParamCache" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="71jmdPUuNQg" role="3cqZAp">
+          <node concept="37vLTI" id="71jmdPUuOgJ" role="3clFbG">
+            <node concept="2ShNRf" id="71jmdPUuOst" role="37vLTx">
+              <node concept="1pGfFk" id="71jmdPUuQmi" role="2ShVmc">
+                <ref role="37wK5l" node="71jmdPUtBGw" resolve="BaseTransformationTest.AlternativeBefore" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="71jmdPUuNQe" role="37vLTJ">
+              <ref role="3cqZAo" node="71jmdPUuKX4" resolve="myBeforeAsRule" />
             </node>
           </node>
         </node>
@@ -5482,6 +5508,19 @@
             </node>
             <node concept="37vLTw" id="5LbRjS1pN8E" role="37vLTx">
               <ref role="3cqZAo" node="5LbRjS1pM$e" resolve="paramCache" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="71jmdPUuQUK" role="3cqZAp">
+          <node concept="37vLTI" id="71jmdPUuRmI" role="3clFbG">
+            <node concept="2ShNRf" id="71jmdPUuRG8" role="37vLTx">
+              <node concept="1pGfFk" id="71jmdPUuTsx" role="2ShVmc">
+                <ref role="37wK5l" node="71jmdPUu_II" resolve="BaseTransformationTest.AlternativeBefore" />
+                <node concept="Xjq3P" id="71jmdPUuTBh" role="37wK5m" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="71jmdPUuQUI" role="37vLTJ">
+              <ref role="3cqZAo" node="71jmdPUuKX4" resolve="myBeforeAsRule" />
             </node>
           </node>
         </node>
@@ -5560,13 +5599,16 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="7hSRFL3OkBC" role="1B3o_S" />
       <node concept="3cqZAl" id="7hSRFL3Ol8p" role="3clF45" />
-      <node concept="2AHcQZ" id="7hSRFL3OnGF" role="2AJF6D">
-        <ref role="2AI5Lk" to="rjhg:~Before" resolve="Before" />
-      </node>
       <node concept="3uibUv" id="5LbRjS1pYZ7" role="Sfmx6">
         <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+      </node>
+      <node concept="P$JXv" id="71jmdPUv$KY" role="lGtFl">
+        <node concept="TZ5HA" id="71jmdPUv$KZ" role="TZ5H$">
+          <node concept="1dT_AC" id="71jmdPUv$L0" role="1dT_Ay">
+            <property role="1dT_AB" value="To respect @Rule in subclasses, has to be invoked as part of a TestRule, not with @Before" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="4_ksyPqPi8r" role="jymVt" />
@@ -7132,6 +7174,185 @@
           <property role="TrG5h" value="realCause" />
           <node concept="3uibUv" id="3oT7WQ93NvS" role="1tU5fm">
             <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="71jmdPUtw9s" role="jymVt" />
+    <node concept="312cEu" id="71jmdPUt$GN" role="jymVt">
+      <property role="2bfB8j" value="false" />
+      <property role="1sVAO0" value="false" />
+      <property role="1EXbeo" value="false" />
+      <property role="TrG5h" value="AlternativeBefore" />
+      <node concept="312cEg" id="71jmdPUtD9_" role="jymVt">
+        <property role="TrG5h" value="myTest" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3Tm6S6" id="71jmdPUtD9A" role="1B3o_S" />
+        <node concept="3uibUv" id="71jmdPUtD9C" role="1tU5fm">
+          <ref role="3uigEE" node="e$hNri8RAJ" resolve="BaseTransformationTest" />
+        </node>
+      </node>
+      <node concept="3clFbW" id="71jmdPUtBGw" role="jymVt">
+        <node concept="3cqZAl" id="71jmdPUtBGx" role="3clF45" />
+        <node concept="3clFbS" id="71jmdPUtBGy" role="3clF47">
+          <node concept="3SKdUt" id="71jmdPUuFmy" role="3cqZAp">
+            <node concept="3SKdUq" id="71jmdPUuFm$" role="3SKWNk">
+              <property role="3SKdUp" value="legacy, to remove once 2018.2 is out, to handle case when there's no TestParametersCache." />
+            </node>
+          </node>
+          <node concept="3clFbF" id="71jmdPUtD9D" role="3cqZAp">
+            <node concept="37vLTI" id="71jmdPUtD9F" role="3clFbG">
+              <node concept="37vLTw" id="71jmdPUtD9I" role="37vLTJ">
+                <ref role="3cqZAo" node="71jmdPUtD9_" resolve="myTest" />
+              </node>
+              <node concept="10Nm6u" id="71jmdPUuAAr" role="37vLTx" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbW" id="71jmdPUu_II" role="jymVt">
+        <node concept="3cqZAl" id="71jmdPUu_IJ" role="3clF45" />
+        <node concept="3clFbS" id="71jmdPUu_IK" role="3clF47">
+          <node concept="3clFbF" id="71jmdPUu_IL" role="3cqZAp">
+            <node concept="37vLTI" id="71jmdPUu_IM" role="3clFbG">
+              <node concept="37vLTw" id="71jmdPUu_IN" role="37vLTJ">
+                <ref role="3cqZAo" node="71jmdPUtD9_" resolve="myTest" />
+              </node>
+              <node concept="37vLTw" id="71jmdPUu_IO" role="37vLTx">
+                <ref role="3cqZAo" node="71jmdPUu_IP" resolve="test" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="71jmdPUu_IP" role="3clF46">
+          <property role="TrG5h" value="test" />
+          <node concept="3uibUv" id="71jmdPUu_IQ" role="1tU5fm">
+            <ref role="3uigEE" node="e$hNri8RAJ" resolve="BaseTransformationTest" />
+          </node>
+        </node>
+      </node>
+      <node concept="2tJIrI" id="71jmdPUtHvG" role="jymVt" />
+      <node concept="3clFb_" id="71jmdPUtHFK" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="apply" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tm1VV" id="71jmdPUtHFL" role="1B3o_S" />
+        <node concept="3uibUv" id="71jmdPUtHFN" role="3clF45">
+          <ref role="3uigEE" to="7cms:~Statement" resolve="Statement" />
+        </node>
+        <node concept="37vLTG" id="71jmdPUtHFO" role="3clF46">
+          <property role="TrG5h" value="base" />
+          <property role="3TUv4t" value="true" />
+          <node concept="3uibUv" id="71jmdPUtHFP" role="1tU5fm">
+            <ref role="3uigEE" to="7cms:~Statement" resolve="Statement" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="71jmdPUtHFQ" role="3clF46">
+          <property role="TrG5h" value="description" />
+          <node concept="3uibUv" id="71jmdPUtHFR" role="1tU5fm">
+            <ref role="3uigEE" to="cvlm:~Description" resolve="Description" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="71jmdPUtHFS" role="3clF47">
+          <node concept="3clFbJ" id="71jmdPUuBOJ" role="3cqZAp">
+            <node concept="3clFbS" id="71jmdPUuBOL" role="3clFbx">
+              <node concept="3cpWs6" id="71jmdPUuE3S" role="3cqZAp">
+                <node concept="37vLTw" id="71jmdPUuEBW" role="3cqZAk">
+                  <ref role="3cqZAo" node="71jmdPUtHFO" resolve="base" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbC" id="71jmdPUuD3s" role="3clFbw">
+              <node concept="10Nm6u" id="71jmdPUuDAg" role="3uHU7w" />
+              <node concept="37vLTw" id="71jmdPUuCox" role="3uHU7B">
+                <ref role="3cqZAo" node="71jmdPUtD9_" resolve="myTest" />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs6" id="71jmdPUtYCm" role="3cqZAp">
+            <node concept="2ShNRf" id="71jmdPUtZda" role="3cqZAk">
+              <node concept="YeOm9" id="71jmdPUu$BX" role="2ShVmc">
+                <node concept="1Y3b0j" id="71jmdPUu$C0" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="1Y3XeK" to="7cms:~Statement" resolve="Statement" />
+                  <ref role="37wK5l" to="7cms:~Statement.&lt;init&gt;()" resolve="Statement" />
+                  <node concept="3Tm1VV" id="71jmdPUu$C1" role="1B3o_S" />
+                  <node concept="3clFb_" id="71jmdPUu$C2" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="evaluate" />
+                    <property role="DiZV1" value="false" />
+                    <property role="od$2w" value="false" />
+                    <node concept="3Tm1VV" id="71jmdPUu$C3" role="1B3o_S" />
+                    <node concept="3cqZAl" id="71jmdPUu$C5" role="3clF45" />
+                    <node concept="3uibUv" id="71jmdPUu$C6" role="Sfmx6">
+                      <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+                    </node>
+                    <node concept="3clFbS" id="71jmdPUu$C7" role="3clF47">
+                      <node concept="3clFbF" id="71jmdPUtImb" role="3cqZAp">
+                        <node concept="2OqwBi" id="71jmdPUtIVw" role="3clFbG">
+                          <node concept="37vLTw" id="71jmdPUtIma" role="2Oq$k0">
+                            <ref role="3cqZAo" node="71jmdPUtD9_" resolve="myTest" />
+                          </node>
+                          <node concept="liA8E" id="71jmdPUtJkc" role="2OqNvi">
+                            <ref role="37wK5l" node="7hSRFL3OlKl" resolve="setup" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="71jmdPUtRoa" role="3cqZAp">
+                        <node concept="2OqwBi" id="71jmdPUtRKe" role="3clFbG">
+                          <node concept="37vLTw" id="71jmdPUtRo8" role="2Oq$k0">
+                            <ref role="3cqZAo" node="71jmdPUtHFO" resolve="base" />
+                          </node>
+                          <node concept="liA8E" id="71jmdPUtRTM" role="2OqNvi">
+                            <ref role="37wK5l" to="7cms:~Statement.evaluate():void" resolve="evaluate" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="71jmdPUtHFT" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="71jmdPUtzrs" role="1B3o_S" />
+      <node concept="3uibUv" id="71jmdPUtAW7" role="EKbjA">
+        <ref role="3uigEE" to="a19p:~TestRule" resolve="TestRule" />
+      </node>
+      <node concept="3UR2Jj" id="71jmdPUu_s7" role="lGtFl">
+        <node concept="TZ5HA" id="71jmdPUu_s8" role="TZ5H$">
+          <node concept="1dT_AC" id="71jmdPUu_s9" role="1dT_Ay">
+            <property role="1dT_AB" value="This is an alternative to a setup() method annotated with @Before, to deal with peculiarities of JUnit processing of @Rule and @Before." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="71jmdPUu_HI" role="TZ5H$">
+          <node concept="1dT_AC" id="71jmdPUu_HJ" role="1dT_Ay">
+            <property role="1dT_AB" value="Subclasses of BaseTransformationTest may use own @Rule, and their statement would wrap not only test method itself, but also @Before and @After methods as well (see BlockJUnit4ClassRunner#methodBlock)." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="71jmdPUu_HX" role="TZ5H$">
+          <node concept="1dT_AC" id="71jmdPUu_HO" role="1dT_Ay">
+            <property role="1dT_AB" value="Therefore, if we place initialization code in @Before method of this class, it's invoked from inside a statement created by TestRule of a subclass. If that TestRule uses any facilities of the base class" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="71jmdPUu_Ia" role="TZ5H$">
+          <node concept="1dT_AC" id="71jmdPUu_Ib" role="1dT_Ay">
+            <property role="1dT_AB" value="(e.g. project/transient model), it fails as these are not yet initialized. With AlternativeBefore rule, we get into regular @Rule sequence. Rules are processed from sibling to parent (see TestClass#scanAnnotatedMembers())" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="71jmdPUu_Ik" role="TZ5H$">
+          <node concept="1dT_AC" id="71jmdPUu_Il" role="1dT_Ay">
+            <property role="1dT_AB" value="therefore @Rule from superclass gives outer Statement and is executed first. Therefore, AlternativeBefore from BTT is executed sooner than any rule from test subclass and initialize the test properly." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="71jmdPUu_Iw" role="TZ5H$">
+          <node concept="1dT_AC" id="71jmdPUu_Ix" role="1dT_Ay">
+            <property role="1dT_AB" value="NOTE, we have to use field with @Rule, not method with @Rule annotation as BlockJUnit4ClassRunner#getTestRules() adds methods with @Rule first, therefore placing their Statements in the end of execution chain." />
           </node>
         </node>
       </node>

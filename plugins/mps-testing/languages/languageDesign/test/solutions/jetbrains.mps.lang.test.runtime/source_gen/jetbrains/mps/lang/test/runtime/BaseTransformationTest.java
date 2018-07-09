@@ -8,8 +8,9 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.tool.environment.Environment;
+import org.junit.Rule;
+import org.junit.rules.TestRule;
 import org.jetbrains.annotations.NotNull;
-import org.junit.Before;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -31,6 +32,7 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import org.junit.After;
+import org.junit.runner.Description;
 
 public abstract class BaseTransformationTest implements TransformationTest, EnvironmentAware {
   private static final Logger LOG = LogManager.getLogger(BaseTransformationTest.class);
@@ -40,12 +42,17 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
   private final TestParametersCache myParamCache;
   private Environment myEnvironment;
 
+  @Rule
+  public final TestRule myBeforeAsRule;
+
   public BaseTransformationTest() {
     myParamCache = null;
+    myBeforeAsRule = new BaseTransformationTest.AlternativeBefore();
   }
 
   protected BaseTransformationTest(TestParametersCache paramCache) {
     myParamCache = paramCache;
+    myBeforeAsRule = new BaseTransformationTest.AlternativeBefore(this);
   }
 
   @Override
@@ -53,8 +60,10 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
     myEnvironment = env;
   }
 
-  @Before
-  public void setup() throws Exception {
+  /**
+   * To respect @Rule in subclasses, has to be invoked as part of a TestRule, not with @Before
+   */
+  /*package*/ void setup() throws Exception {
     if (myParamCache != null) {
       //  invokes this.initTest() for the first test in the class, reuse initialized values for subsequent tests from the same class 
       myParamCache.populate(this);
@@ -289,6 +298,38 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
   private static class MPSTestModelInitializationException extends AssumptionViolatedException {
     public MPSTestModelInitializationException(@NotNull String msg, Throwable realCause) {
       super(msg, realCause);
+    }
+  }
+
+  /**
+   * This is an alternative to a setup() method annotated with @Before, to deal with peculiarities of JUnit processing of @Rule and @Before.
+   * Subclasses of BaseTransformationTest may use own @Rule, and their statement would wrap not only test method itself, but also @Before and @After methods as well (see BlockJUnit4ClassRunner#methodBlock).
+   * Therefore, if we place initialization code in @Before method of this class, it's invoked from inside a statement created by TestRule of a subclass. If that TestRule uses any facilities of the base class
+   * (e.g. project/transient model), it fails as these are not yet initialized. With AlternativeBefore rule, we get into regular @Rule sequence. Rules are processed from sibling to parent (see TestClass#scanAnnotatedMembers())
+   * therefore @Rule from superclass gives outer Statement and is executed first. Therefore, AlternativeBefore from BTT is executed sooner than any rule from test subclass and initialize the test properly.
+   * NOTE, we have to use field with @Rule, not method with @Rule annotation as BlockJUnit4ClassRunner#getTestRules() adds methods with @Rule first, therefore placing their Statements in the end of execution chain.
+   */
+  private static class AlternativeBefore implements TestRule {
+    private final BaseTransformationTest myTest;
+    /*package*/ AlternativeBefore() {
+      // legacy, to remove once 2018.2 is out, to handle case when there's no TestParametersCache. 
+      myTest = null;
+    }
+    /*package*/ AlternativeBefore(BaseTransformationTest test) {
+      myTest = test;
+    }
+
+    @Override
+    public Statement apply(final Statement base, Description description) {
+      if (myTest == null) {
+        return base;
+      }
+      return new Statement() {
+        public void evaluate() throws Throwable {
+          myTest.setup();
+          base.evaluate();
+        }
+      };
     }
   }
 }

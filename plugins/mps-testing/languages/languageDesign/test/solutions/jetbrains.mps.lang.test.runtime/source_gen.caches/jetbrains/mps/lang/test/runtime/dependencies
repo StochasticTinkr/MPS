@@ -148,7 +148,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.junit.After" />
     <classNode dependClassName="org.junit.AssumptionViolatedException" />
-    <classNode dependClassName="org.junit.Before" />
+    <classNode dependClassName="org.junit.Rule" />
+    <classNode dependClassName="org.junit.rules.TestRule" />
+    <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runners.model.Statement" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.EnvironmentAware" />
