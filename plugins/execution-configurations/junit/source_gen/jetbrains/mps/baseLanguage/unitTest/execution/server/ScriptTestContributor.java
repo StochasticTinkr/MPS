@@ -84,7 +84,7 @@ import org.junit.runner.Description;
                 Class<?> testClass = classProvider.getOwnClass(classFqName);
                 rv.add(Request.runner(myRunnerBuilder.safeRunnerForClass(testClass)));
               } catch (Exception ex) {
-                rv.add(Request.runner(new AssumptionFailedRunner(failure, Description.createSuiteDescription(classFqName))));
+                rv.add(Request.runner(new AssumptionFailedRunner(ex, Description.createSuiteDescription(classFqName))));
               }
             }
           }
