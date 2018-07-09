@@ -65,6 +65,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -371,7 +372,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     createRootNodeByRule(rule, inputNode, newExecutionEnvironment(getDefaultExecutionContext()), copyRootOnFailure);
   }
 
-  // PARALLEL: transformation rules that crate root nodes check their conditions from the main thread (we need to know in advance which
+  // PARALLEL: transformation rules that create root nodes check their conditions from the main thread (we need to know in advance which
   //           roots would left to get copied.
   protected final void createRootNodeByRule(TemplateRootMappingRule rule, SNode inputNode, TemplateExecutionEnvironmentImpl env, boolean copyRootOnFailure) throws GenerationCanceledException, GenerationFailureException {
     try {
@@ -403,6 +404,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         // in addition, this copies TracingUtil.ORIGINAL_INPUT_NODE, so that outputNodes
         // are marked as originating at inputNode's origin
         CopyUtil.copyUserObjects(inputNode, outputNode);
+        if (inputIsRoot) {
+          // AFAIK, virtualPackage property makes sense for roots only.
+          // Of course, for non-root inputs, we can look at top-most ancestor, just not sure if there's a reason to do this. For now, leave one of template node.
+          // Besides, might be nice to clean virtualPackage of roots created by CreateRootRule (or for any node created by template, perhaps. See
+          // https://youtrack.jetbrains.com/issue/MPS-26464 and https://youtrack.jetbrains.com/issue/MPS-18484).
+          final SProperty virtualPackageProp = jetbrains.mps.smodel.SNodeUtil.property_BaseConcept_virtualPackage;
+          outputNode.setProperty(virtualPackageProp, inputNode.getProperty(virtualPackageProp));
+        }
       }
 
     } catch (DismissTopMappingRuleException e) {
