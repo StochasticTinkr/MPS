@@ -57,6 +57,7 @@
     <import index="mmaq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.jdom(MPS.Core/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="gp7a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.dependency(MPS.Core/)" />
+    <import index="ew0j" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.tool.environment(Testbench/)" />
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" implicit="true" />
   </imports>
   <registry>
@@ -1389,6 +1390,11 @@
                 <property role="3SKdUp" value="check both java stub and regular node for EnvironmentAware as  j.m.tool.environment is part of MPS build (unlike j.m.testbench)" />
               </node>
             </node>
+            <node concept="3SKdUt" id="2F2_P1adZBC" role="3cqZAp">
+              <node concept="3SKdUq" id="2F2_P1adZBE" role="3SKWNk">
+                <property role="3SKdUp" value="IMPORTANT! there are TWO checks is(EnvironmentAware). Please make sure one points to java stub while another points to regular node!" />
+              </node>
+            </node>
             <node concept="3clFbJ" id="4Tkq3_eS2_w" role="3cqZAp">
               <node concept="3clFbS" id="4Tkq3_eS2_y" role="3clFbx">
                 <node concept="3cpWs6" id="4Tkq3_eSruU" role="3cqZAp">
@@ -1436,8 +1442,8 @@
                               </node>
                             </node>
                             <node concept="1QLmlb" id="4Tkq3_eSk3w" role="2OqNvi">
-                              <node concept="ZC_QK" id="4Tkq3_eSknn" role="1QLmnL">
-                                <ref role="2aWVGs" to="79ha:7KC1aYnI6jD" resolve="EnvironmentAware" />
+                              <node concept="ZC_QK" id="2F2_P1adPZR" role="1QLmnL">
+                                <ref role="2aWVGs" to="ew0j:~EnvironmentAware" resolve="EnvironmentAware" />
                               </node>
                             </node>
                           </node>
