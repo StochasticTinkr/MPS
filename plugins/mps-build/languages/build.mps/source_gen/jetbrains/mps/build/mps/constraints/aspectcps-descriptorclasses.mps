@@ -257,7 +257,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Aspect" />
     <property role="TrG5h" value="BuildMpsAspect_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -530,7 +530,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1G">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout" />
     <property role="TrG5h" value="BuildMpsLayout_ModuleJars_Constraints" />
     <node concept="3Tm1VV" id="1H" role="1B3o_S" />
     <node concept="3uibUv" id="1I" role="1zkMxy">
@@ -894,7 +894,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3Q">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout" />
     <property role="TrG5h" value="BuildMpsLayout_ModuleSources_Constraints" />
     <node concept="3Tm1VV" id="3R" role="1B3o_S" />
     <node concept="3uibUv" id="3S" role="1zkMxy">
@@ -1202,7 +1202,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5C">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout" />
     <property role="TrG5h" value="BuildMpsLayout_ModuleXml_Constraints" />
     <node concept="3Tm1VV" id="5D" role="1B3o_S" />
     <node concept="3uibUv" id="5E" role="1zkMxy">
@@ -1510,7 +1510,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7q">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout" />
     <property role="TrG5h" value="BuildMpsLayout_PluginDescriptor_Constraints" />
     <node concept="3Tm1VV" id="7r" role="1B3o_S" />
     <node concept="3uibUv" id="7s" role="1zkMxy">
@@ -1818,7 +1818,7 @@
     </node>
   </node>
   <node concept="312cEu" id="9c">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout" />
     <property role="TrG5h" value="BuildMpsLayout_Plugin_Constraints" />
     <node concept="3Tm1VV" id="9d" role="1B3o_S" />
     <node concept="3uibUv" id="9e" role="1zkMxy">
@@ -2293,7 +2293,7 @@
     </node>
   </node>
   <node concept="312cEu" id="bW">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Branding" />
     <property role="TrG5h" value="BuildMps_Branding_Constraints" />
     <node concept="3Tm1VV" id="bX" role="1B3o_S" />
     <node concept="3uibUv" id="bY" role="1zkMxy">
@@ -2523,7 +2523,7 @@
     </node>
   </node>
   <node concept="312cEu" id="dj">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.DevKit" />
     <property role="TrG5h" value="BuildMps_DevKitExportLanguage_Constraints" />
     <node concept="3Tm1VV" id="dk" role="1B3o_S" />
     <node concept="3uibUv" id="dl" role="1zkMxy">
@@ -2831,7 +2831,7 @@
     </node>
   </node>
   <node concept="312cEu" id="f5">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.DevKit" />
     <property role="TrG5h" value="BuildMps_DevKitExportSolution_Constraints" />
     <node concept="3Tm1VV" id="f6" role="1B3o_S" />
     <node concept="3uibUv" id="f7" role="1zkMxy">
@@ -3139,7 +3139,7 @@
     </node>
   </node>
   <node concept="312cEu" id="gR">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.DevKit" />
     <property role="TrG5h" value="BuildMps_DevKitRef_Constraints" />
     <node concept="3Tm1VV" id="gS" role="1B3o_S" />
     <node concept="3uibUv" id="gT" role="1zkMxy">
@@ -3447,7 +3447,7 @@
     </node>
   </node>
   <node concept="312cEu" id="iD">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project" />
     <property role="TrG5h" value="BuildMps_DevKit_Constraints" />
     <node concept="3Tm1VV" id="iE" role="1B3o_S" />
     <node concept="3uibUv" id="iF" role="1zkMxy">
@@ -3754,7 +3754,7 @@
     </node>
   </node>
   <node concept="312cEu" id="k_">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project" />
     <property role="TrG5h" value="BuildMps_Generator_Constraints" />
     <node concept="3Tm1VV" id="kA" role="1B3o_S" />
     <node concept="3uibUv" id="kB" role="1zkMxy">
@@ -4061,7 +4061,7 @@
     </node>
   </node>
   <node concept="312cEu" id="mx">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project" />
     <property role="TrG5h" value="BuildMps_Group_Constraints" />
     <node concept="3Tm1VV" id="my" role="1B3o_S" />
     <node concept="3uibUv" id="mz" role="1zkMxy">
@@ -4368,7 +4368,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ot">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Plugin" />
     <property role="TrG5h" value="BuildMps_IdeaPluginDependency_Constraints" />
     <node concept="3Tm1VV" id="ou" role="1B3o_S" />
     <node concept="3uibUv" id="ov" role="1zkMxy">
@@ -4676,7 +4676,7 @@
     </node>
   </node>
   <node concept="312cEu" id="qf">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Plugin" />
     <property role="TrG5h" value="BuildMps_IdeaPluginGroupCustomModule_Constraints" />
     <node concept="3Tm1VV" id="qg" role="1B3o_S" />
     <node concept="3uibUv" id="qh" role="1zkMxy">
@@ -5020,7 +5020,7 @@
     </node>
   </node>
   <node concept="312cEu" id="sf">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Plugin" />
     <property role="TrG5h" value="BuildMps_IdeaPluginGroup_Constraints" />
     <node concept="3Tm1VV" id="sg" role="1B3o_S" />
     <node concept="3uibUv" id="sh" role="1zkMxy">
@@ -5482,7 +5482,7 @@
     </node>
   </node>
   <node concept="312cEu" id="uZ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Plugin" />
     <property role="TrG5h" value="BuildMps_IdeaPluginModule_Constraints" />
     <node concept="3Tm1VV" id="v0" role="1B3o_S" />
     <node concept="3uibUv" id="v1" role="1zkMxy">
@@ -5944,7 +5944,7 @@
     </node>
   </node>
   <node concept="312cEu" id="xJ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Plugin" />
     <property role="TrG5h" value="BuildMps_IdeaPlugin_Constraints" />
     <node concept="3Tm1VV" id="xK" role="1B3o_S" />
     <node concept="3uibUv" id="xL" role="1zkMxy">
@@ -6145,7 +6145,7 @@
     </node>
   </node>
   <node concept="312cEu" id="yV">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project" />
     <property role="TrG5h" value="BuildMps_Language_Constraints" />
     <node concept="3Tm1VV" id="yW" role="1B3o_S" />
     <node concept="3uibUv" id="yX" role="1zkMxy">
@@ -6452,7 +6452,7 @@
     </node>
   </node>
   <node concept="312cEu" id="$R">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Deps" />
     <property role="TrG5h" value="BuildMps_ModuleDependencyExtendLanguage_Constraints" />
     <node concept="3Tm1VV" id="$S" role="1B3o_S" />
     <node concept="3uibUv" id="$T" role="1zkMxy">
@@ -6991,7 +6991,7 @@
     </node>
   </node>
   <node concept="312cEu" id="C4">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Deps" />
     <property role="TrG5h" value="BuildMps_ModuleDependencyOnDevKit_Constraints" />
     <node concept="3Tm1VV" id="C5" role="1B3o_S" />
     <node concept="3uibUv" id="C6" role="1zkMxy">
@@ -7299,7 +7299,7 @@
     </node>
   </node>
   <node concept="312cEu" id="DQ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Deps" />
     <property role="TrG5h" value="BuildMps_ModuleDependencyOnJavaModule_Constraints" />
     <node concept="3Tm1VV" id="DR" role="1B3o_S" />
     <node concept="3uibUv" id="DS" role="1zkMxy">
@@ -7607,7 +7607,7 @@
     </node>
   </node>
   <node concept="312cEu" id="FC">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Deps" />
     <property role="TrG5h" value="BuildMps_ModuleDependencyOnModule_Constraints" />
     <node concept="3Tm1VV" id="FD" role="1B3o_S" />
     <node concept="3uibUv" id="FE" role="1zkMxy">
@@ -7915,7 +7915,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Hq">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Deps" />
     <property role="TrG5h" value="BuildMps_ModuleDependencyUseLanguage_Constraints" />
     <node concept="3Tm1VV" id="Hr" role="1B3o_S" />
     <node concept="3uibUv" id="Hs" role="1zkMxy">
@@ -8223,7 +8223,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Jc">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Runtime" />
     <property role="TrG5h" value="BuildMps_ModuleSolutionRuntime_Constraints" />
     <node concept="3Tm1VV" id="Jd" role="1B3o_S" />
     <node concept="3uibUv" id="Je" role="1zkMxy">
@@ -8531,7 +8531,7 @@
     </node>
   </node>
   <node concept="312cEu" id="KY">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project" />
     <property role="TrG5h" value="BuildMps_Solution_Constraints" />
     <node concept="3Tm1VV" id="KZ" role="1B3o_S" />
     <node concept="3uibUv" id="L0" role="1zkMxy">

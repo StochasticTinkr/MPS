@@ -1562,7 +1562,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6I">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Rules" />
     <property role="TrG5h" value="check_ExtendedAnalyzersAreInExtendedLanguages_NonTypesystemRule" />
     <node concept="3clFbW" id="6J" role="jymVt">
       <node concept="3clFbS" id="6R" role="3clF47" />
@@ -2028,7 +2028,7 @@
     <node concept="3Tm1VV" id="6Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9K">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Analyzer.AnalyzerFunctions" />
     <property role="TrG5h" value="typeof_AnalyzerFunParameterInput_InferenceRule" />
     <node concept="3clFbW" id="9L" role="jymVt">
       <node concept="3clFbS" id="9T" role="3clF47" />
@@ -2258,7 +2258,7 @@
     <node concept="3Tm1VV" id="9S" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="bf">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Analyzer.AnalyzerFunctions" />
     <property role="TrG5h" value="typeof_AnalyzerFunParameterProgramState_InferenceRule" />
     <node concept="3clFbW" id="bg" role="jymVt">
       <node concept="3clFbS" id="bo" role="3clF47" />
@@ -2476,7 +2476,7 @@
     <node concept="3Tm1VV" id="bn" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="cD">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Analyzer.AnalyzerFunctions" />
     <property role="TrG5h" value="typeof_AnalyzerFunParameterStateValues_InferenceRule" />
     <node concept="3clFbW" id="cE" role="jymVt">
       <node concept="3clFbS" id="cM" role="3clF47" />
@@ -2735,7 +2735,7 @@
     <node concept="3Tm1VV" id="cL" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ej">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Analyzer.AnalyzerFunctions" />
     <property role="TrG5h" value="typeof_AnalyzerFunctionResultType_InferenceRule" />
     <node concept="3clFbW" id="ek" role="jymVt">
       <node concept="3clFbS" id="es" role="3clF47" />
@@ -2938,7 +2938,7 @@
     <node concept="3Tm1VV" id="er" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fD">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Analyzer.AnalyzerFunctions" />
     <property role="TrG5h" value="typeof_AnalyzerMergeParameterInput_InferenceRule" />
     <node concept="3clFbW" id="fE" role="jymVt">
       <node concept="3clFbS" id="fM" role="3clF47" />
@@ -3176,7 +3176,7 @@
     <node concept="3Tm1VV" id="fL" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="hc">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Analyzer.AnalyzerFunctions" />
     <property role="TrG5h" value="typeof_AnalyzerParameterProgram_InferenceRule" />
     <node concept="3clFbW" id="hd" role="jymVt">
       <node concept="3clFbS" id="hl" role="3clF47" />
@@ -3394,7 +3394,7 @@
     <node concept="3Tm1VV" id="hk" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="iA">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Analyzer" />
     <property role="TrG5h" value="typeof_AnalyzerRunnerCreator_InferenceRule" />
     <node concept="3clFbW" id="iB" role="jymVt">
       <node concept="3clFbS" id="iJ" role="3clF47" />
@@ -3913,7 +3913,7 @@
     <node concept="3Tm1VV" id="iI" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="lO">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Rules" />
     <property role="TrG5h" value="typeof_ApplicableNodeReference_InferenceRule" />
     <node concept="3clFbW" id="lP" role="jymVt">
       <node concept="3clFbS" id="lX" role="3clF47" />
@@ -4158,7 +4158,7 @@
     <node concept="3Tm1VV" id="lW" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="nn">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Rules" />
     <property role="TrG5h" value="typeof_ConceptCondition_InferenceRule" />
     <node concept="3clFbW" id="no" role="jymVt">
       <node concept="3clFbS" id="nw" role="3clF47" />
@@ -4398,7 +4398,6 @@
     <node concept="3Tm1VV" id="nv" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="oT">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InstructionReference_InferenceRule" />
     <node concept="3clFbW" id="oU" role="jymVt">
       <node concept="3clFbS" id="p2" role="3clF47" />
@@ -4619,7 +4618,7 @@
     <node concept="3Tm1VV" id="p1" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="qk">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Instructions" />
     <property role="TrG5h" value="typeof_InstructionType_InferenceRule" />
     <node concept="3clFbW" id="ql" role="jymVt">
       <node concept="3clFbS" id="qt" role="3clF47" />
@@ -4952,7 +4951,7 @@
     <node concept="3Tm1VV" id="qs" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="sp">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Rules" />
     <property role="TrG5h" value="typeof_ProgramParameter_InferenceRule" />
     <node concept="3clFbW" id="sq" role="jymVt">
       <node concept="3clFbS" id="sy" role="3clF47" />

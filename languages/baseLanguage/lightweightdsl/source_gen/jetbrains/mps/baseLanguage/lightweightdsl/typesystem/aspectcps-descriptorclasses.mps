@@ -2249,7 +2249,7 @@
     <node concept="3Tm1VV" id="b6" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="c2">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="DependentType_subtypeOfItsValue_SubtypingRule" />
     <node concept="3clFbW" id="c3" role="jymVt">
       <node concept="3clFbS" id="cc" role="3clF47" />
@@ -2379,7 +2379,7 @@
     <node concept="3Tm1VV" id="cb" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="cX">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
+    <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="DependentType_supertypeOfItsValue_InequationReplacementRule" />
     <node concept="3clFbW" id="cY" role="jymVt">
       <node concept="3clFbS" id="d9" role="3clF47" />
@@ -2793,7 +2793,7 @@
     </node>
   </node>
   <node concept="312cEu" id="fE">
-    <property role="3GE5qa" value="definition.quickfix" />
+    <property role="3GE5qa" value="instances.methodFixer" />
     <property role="TrG5h" value="FixMethodAutomatically_QuickFix" />
     <node concept="3clFbW" id="fF" role="jymVt">
       <node concept="3clFbS" id="fK" role="3clF47">
@@ -4015,7 +4015,7 @@
     </node>
   </node>
   <node concept="312cEu" id="m9">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="check_ClassLikeMember_unique_NonTypesystemRule" />
     <node concept="3clFbW" id="ma" role="jymVt">
       <node concept="3clFbS" id="mi" role="3clF47" />
@@ -4279,7 +4279,7 @@
     <node concept="3Tm1VV" id="mh" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="nT">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="instances.methodFixer" />
     <property role="TrG5h" value="check_ClassLikeMethod_NonTypesystemRule" />
     <node concept="3clFbW" id="nU" role="jymVt">
       <node concept="3clFbS" id="o2" role="3clF47" />
@@ -4688,7 +4688,7 @@
     <node concept="3Tm1VV" id="o1" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="qw">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="check_ClassLikeProperty_NonTypesystemRule" />
     <node concept="3clFbW" id="qx" role="jymVt">
       <node concept="3clFbS" id="qD" role="3clF47" />
@@ -4992,7 +4992,7 @@
     <node concept="3Tm1VV" id="qC" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="sv">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="check_ClassLike_allRequired_NonTypesystemRule" />
     <node concept="3clFbW" id="sw" role="jymVt">
       <node concept="3clFbS" id="sC" role="3clF47" />
@@ -5229,7 +5229,7 @@
     <node concept="3Tm1VV" id="sB" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="u4">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="member.customDescriptor" />
     <property role="TrG5h" value="check_CustomMemberDeclaration_NonTypesystemRule" />
     <node concept="3clFbW" id="u5" role="jymVt">
       <node concept="3clFbS" id="ud" role="3clF47" />
@@ -5373,7 +5373,7 @@
     <node concept="3Tm1VV" id="uc" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="v1">
-    <property role="3GE5qa" value="definition.quickfix" />
+    <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="fix_SignatureMismatch_QuickFix" />
     <node concept="3clFbW" id="v2" role="jymVt">
       <node concept="3clFbS" id="v8" role="3clF47">
@@ -5531,7 +5531,7 @@
     </node>
   </node>
   <node concept="312cEu" id="w7">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="typeof_ClassLikeDescriptor_InferenceRule" />
     <node concept="3clFbW" id="w8" role="jymVt">
       <node concept="3clFbS" id="wg" role="3clF47" />
@@ -6035,7 +6035,7 @@
     <node concept="3Tm1VV" id="wf" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="zj">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="member.methodDescriptor" />
     <property role="TrG5h" value="typeof_DepType_InferenceRule" />
     <node concept="3clFbW" id="zk" role="jymVt">
       <node concept="3clFbS" id="zs" role="3clF47" />
@@ -6283,7 +6283,7 @@
     <node concept="3Tm1VV" id="zr" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="$U">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="typeof_LocalMethodCall_InferenceRule" />
     <node concept="3clFbW" id="$V" role="jymVt">
       <node concept="3clFbS" id="_3" role="3clF47" />
@@ -6548,7 +6548,7 @@
     <node concept="3Tm1VV" id="_2" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="AB">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="member.methodDescriptor" />
     <property role="TrG5h" value="typeof_ParameterDescriptor_InferenceRule" />
     <node concept="3clFbW" id="AC" role="jymVt">
       <node concept="3clFbS" id="AK" role="3clF47" />

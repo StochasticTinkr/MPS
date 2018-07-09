@@ -176,6 +176,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -183,6 +186,7 @@
   </registry>
   <node concept="312cEu" id="0">
     <property role="TrG5h" value="AppendOperation_DataFlow" />
+    <property role="3GE5qa" value="operation.append.part" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -249,6 +253,7 @@
   </node>
   <node concept="312cEu" id="r">
     <property role="TrG5h" value="CollectionAppendPart_DataFlow" />
+    <property role="3GE5qa" value="operation.append.part" />
     <node concept="3Tm1VV" id="s" role="1B3o_S" />
     <node concept="3uibUv" id="t" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -414,6 +419,7 @@
   </node>
   <node concept="312cEu" id="1t">
     <property role="TrG5h" value="ConstantStringAppendPart_DataFlow" />
+    <property role="3GE5qa" value="operation.append.part" />
     <node concept="3Tm1VV" id="1u" role="1B3o_S" />
     <node concept="3uibUv" id="1v" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -844,6 +850,7 @@
   </node>
   <node concept="312cEu" id="43">
     <property role="TrG5h" value="DecreaseDepthOperation_DataFlow" />
+    <property role="3GE5qa" value="operation.indent" />
     <node concept="3Tm1VV" id="44" role="1B3o_S" />
     <node concept="3uibUv" id="45" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -883,6 +890,7 @@
   </node>
   <node concept="312cEu" id="4j">
     <property role="TrG5h" value="FoundErrorOperation_DataFlow" />
+    <property role="3GE5qa" value="operation.error" />
     <node concept="3Tm1VV" id="4k" role="1B3o_S" />
     <node concept="3uibUv" id="4l" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1286,6 +1294,7 @@
   </node>
   <node concept="312cEu" id="6e">
     <property role="TrG5h" value="IncreaseDepthOperation_DataFlow" />
+    <property role="3GE5qa" value="operation.indent" />
     <node concept="3Tm1VV" id="6f" role="1B3o_S" />
     <node concept="3uibUv" id="6g" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1325,6 +1334,7 @@
   </node>
   <node concept="312cEu" id="6u">
     <property role="TrG5h" value="IndentBufferOperation_DataFlow" />
+    <property role="3GE5qa" value="operation.indent" />
     <node concept="3Tm1VV" id="6v" role="1B3o_S" />
     <node concept="3uibUv" id="6w" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1364,6 +1374,7 @@
   </node>
   <node concept="312cEu" id="6I">
     <property role="TrG5h" value="LanguageTextGenDeclaration_DataFlow" />
+    <property role="3GE5qa" value="root" />
     <node concept="3Tm1VV" id="6J" role="1B3o_S" />
     <node concept="3uibUv" id="6K" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1534,6 +1545,7 @@
   </node>
   <node concept="312cEu" id="7L">
     <property role="TrG5h" value="NewLineAppendPart_DataFlow" />
+    <property role="3GE5qa" value="operation.append.part" />
     <node concept="3Tm1VV" id="7M" role="1B3o_S" />
     <node concept="3uibUv" id="7N" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1573,6 +1585,7 @@
   </node>
   <node concept="312cEu" id="81">
     <property role="TrG5h" value="NodeAppendPart_DataFlow" />
+    <property role="3GE5qa" value="operation.append.part" />
     <node concept="3Tm1VV" id="82" role="1B3o_S" />
     <node concept="3uibUv" id="83" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1626,6 +1639,7 @@
   </node>
   <node concept="312cEu" id="8n">
     <property role="TrG5h" value="OperationCall_DataFlow" />
+    <property role="3GE5qa" value="operation" />
     <node concept="3Tm1VV" id="8o" role="1B3o_S" />
     <node concept="3uibUv" id="8p" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1982,6 +1996,7 @@
   </node>
   <node concept="312cEu" id="a_">
     <property role="TrG5h" value="WithIndentOperation_DataFlow" />
+    <property role="3GE5qa" value="operation.indent" />
     <node concept="3Tm1VV" id="aA" role="1B3o_S" />
     <node concept="3uibUv" id="aB" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />

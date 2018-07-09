@@ -232,6 +232,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -260,6 +261,7 @@
   </registry>
   <node concept="Qs71p" id="0">
     <property role="TrG5h" value="BuildMps_GeneratorOptions_SkipUnmodifiedModels" />
+    <property role="3GE5qa" value="Project" />
     <node concept="QsSxf" id="1" role="Qtgdg">
       <property role="TrG5h" value="use_mps_generator_skipUnmodifiedModels_macro" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -527,6 +529,7 @@
   </node>
   <node concept="312cEu" id="1L">
     <property role="TrG5h" value="BuildMps_GeneratorOptions_SkipUnmodifiedModels_PropertySupport" />
+    <property role="3GE5qa" value="Project" />
     <node concept="3uibUv" id="1M" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -780,6 +783,7 @@
   </node>
   <node concept="Qs71p" id="3y">
     <property role="TrG5h" value="BuildMps_ModuleSourcesKind" />
+    <property role="3GE5qa" value="Project.Sources" />
     <node concept="QsSxf" id="3z" role="Qtgdg">
       <property role="TrG5h" value="sources" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -1096,6 +1100,7 @@
   </node>
   <node concept="312cEu" id="5_">
     <property role="TrG5h" value="BuildMps_ModuleSourcesKind_PropertySupport" />
+    <property role="3GE5qa" value="Project.Sources" />
     <node concept="3uibUv" id="5A" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -23686,6 +23691,7 @@
   </node>
   <node concept="312cEu" id="28G">
     <property role="TrG5h" value="qualifiedName_PropertySupport" />
+    <property role="3GE5qa" value="Project.Plugin" />
     <node concept="3uibUv" id="28H" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>

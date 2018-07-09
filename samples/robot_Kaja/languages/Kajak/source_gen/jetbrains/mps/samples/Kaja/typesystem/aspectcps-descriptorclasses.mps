@@ -276,7 +276,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -669,7 +668,6 @@
     </node>
   </node>
   <node concept="312cEu" id="1C">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="LibraryNameUniqueness_NonTypesystemRule" />
     <node concept="3clFbW" id="1D" role="jymVt">
       <node concept="3clFbS" id="1L" role="3clF47" />
@@ -996,7 +994,6 @@
     <node concept="3Tm1VV" id="1K" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3T">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="RemoveRepetition_QuickFix" />
     <node concept="3clFbW" id="3U" role="jymVt">
       <node concept="3clFbS" id="40" role="3clF47">
@@ -1144,7 +1141,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4T">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="RepetitionCheck_NonTypesystemRule" />
     <node concept="3clFbW" id="4U" role="jymVt">
       <node concept="3clFbS" id="52" role="3clF47" />
@@ -1483,7 +1479,6 @@
     <node concept="3Tm1VV" id="51" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7c">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="RoutineUniqueness_NonTypesystemRule" />
     <node concept="3clFbW" id="7d" role="jymVt">
       <node concept="3clFbS" id="7l" role="3clF47" />
@@ -1835,7 +1830,6 @@
     <node concept="3Tm1VV" id="7k" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9$">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="ScriptNameUniqueness_NonTypesystemRule" />
     <node concept="3clFbW" id="9_" role="jymVt">
       <node concept="3clFbS" id="9H" role="3clF47" />
@@ -2341,7 +2335,6 @@
     </node>
   </node>
   <node concept="312cEu" id="d3">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_KajaDataflow_NonTypesystemRule" />
     <node concept="3clFbW" id="d4" role="jymVt">
       <node concept="3clFbS" id="dc" role="3clF47" />

@@ -1671,7 +1671,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7e">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="check_QueryDuplicatedParameters_NonTypesystemRule" />
     <node concept="3clFbW" id="7f" role="jymVt">
       <node concept="3clFbS" id="7n" role="3clF47" />
@@ -2015,7 +2015,7 @@
     <node concept="3Tm1VV" id="7m" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9B">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <property role="TrG5h" value="typeof_CustomScope_InferenceRule" />
     <node concept="3clFbW" id="9C" role="jymVt">
       <node concept="3clFbS" id="9K" role="3clF47" />
@@ -2260,7 +2260,7 @@
     <node concept="3Tm1VV" id="9J" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="bc">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query.parameter.scope.old" />
     <property role="TrG5h" value="typeof_CustomScope_old_InferenceRule" />
     <node concept="3clFbW" id="bd" role="jymVt">
       <node concept="3clFbS" id="bl" role="3clF47" />
@@ -2505,7 +2505,7 @@
     <node concept="3Tm1VV" id="bk" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="cL">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="typeof_InstancesExpression_InferenceRule" />
     <node concept="3clFbW" id="cM" role="jymVt">
       <node concept="3clFbS" id="cU" role="3clF47" />
@@ -3423,7 +3423,7 @@
     <node concept="3Tm1VV" id="cT" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="io">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <property role="TrG5h" value="typeof_ModelScopeLiteral_InferenceRule" />
     <node concept="3clFbW" id="ip" role="jymVt">
       <node concept="3clFbS" id="ix" role="3clF47" />
@@ -3671,7 +3671,7 @@
     <node concept="3Tm1VV" id="iw" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="k0">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query.parameter.scope.old" />
     <property role="TrG5h" value="typeof_ModelScopeLiteral_old_InferenceRule" />
     <node concept="3clFbW" id="k1" role="jymVt">
       <node concept="3clFbS" id="k9" role="3clF47" />
@@ -3919,7 +3919,7 @@
     <node concept="3Tm1VV" id="k8" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="lC">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="typeof_ModelsExpression_InferenceRule" />
     <node concept="3clFbW" id="lD" role="jymVt">
       <node concept="3clFbS" id="lL" role="3clF47" />
@@ -4137,7 +4137,7 @@
     <node concept="3Tm1VV" id="lK" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="n3">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <property role="TrG5h" value="typeof_ModuleScopeLiteral_InferenceRule" />
     <node concept="3clFbW" id="n4" role="jymVt">
       <node concept="3clFbS" id="nc" role="3clF47" />
@@ -4389,7 +4389,7 @@
     <node concept="3Tm1VV" id="nb" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="oF">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query.parameter.scope.old" />
     <property role="TrG5h" value="typeof_ModuleScopeLiteral_old_InferenceRule" />
     <node concept="3clFbW" id="oG" role="jymVt">
       <node concept="3clFbS" id="oO" role="3clF47" />
@@ -4641,7 +4641,7 @@
     <node concept="3Tm1VV" id="oN" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="qj">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="typeof_ModulesExpression_InferenceRule" />
     <node concept="3clFbW" id="qk" role="jymVt">
       <node concept="3clFbS" id="qs" role="3clF47" />
@@ -4861,7 +4861,7 @@
     <node concept="3Tm1VV" id="qr" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="rI">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="typeof_NodesExpresiion_InferenceRule" />
     <node concept="3clFbW" id="rJ" role="jymVt">
       <node concept="3clFbS" id="rR" role="3clF47" />
@@ -5079,7 +5079,7 @@
     <node concept="3Tm1VV" id="rQ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="t9">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="typeof_ReferencesExpression_InferenceRule" />
     <node concept="3clFbW" id="ta" role="jymVt">
       <node concept="3clFbS" id="ti" role="3clF47" />
@@ -5297,7 +5297,7 @@
     <node concept="3Tm1VV" id="th" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="u$">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="typeof_ScopeProvider_InferenceRule" />
     <node concept="3clFbW" id="u_" role="jymVt">
       <node concept="3clFbS" id="uH" role="3clF47" />
@@ -5562,7 +5562,7 @@
     <node concept="3Tm1VV" id="uG" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="wj">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="typeof_UsagesExpression_InferenceRule" />
     <node concept="3clFbW" id="wk" role="jymVt">
       <node concept="3clFbS" id="ws" role="3clF47" />

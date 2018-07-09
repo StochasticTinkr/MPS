@@ -272,7 +272,6 @@
     </node>
   </node>
   <node concept="312cEu" id="I">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="Event_Constraints" />
     <node concept="3Tm1VV" id="J" role="1B3o_S" />
     <node concept="3uibUv" id="K" role="1zkMxy">
@@ -474,7 +473,6 @@
   </node>
   <node concept="39dXUE" id="1U" />
   <node concept="312cEu" id="1V">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="StateMachineTest_Constraints" />
     <node concept="3Tm1VV" id="1W" role="1B3o_S" />
     <node concept="3uibUv" id="1X" role="1zkMxy">
@@ -680,7 +678,6 @@
     </node>
   </node>
   <node concept="312cEu" id="39">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="StateMachine_Constraints" />
     <node concept="3Tm1VV" id="3a" role="1B3o_S" />
     <node concept="3uibUv" id="3b" role="1zkMxy">
@@ -886,7 +883,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4n">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="State_Constraints" />
     <node concept="3Tm1VV" id="4o" role="1B3o_S" />
     <node concept="3uibUv" id="4p" role="1zkMxy">

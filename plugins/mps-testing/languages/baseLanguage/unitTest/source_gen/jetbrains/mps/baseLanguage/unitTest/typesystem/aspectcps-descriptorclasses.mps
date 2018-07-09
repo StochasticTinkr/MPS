@@ -535,7 +535,6 @@
     </node>
   </node>
   <node concept="312cEu" id="1I">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_AssertStatementInsideTestMethod_NonTypesystemRule" />
     <node concept="3clFbW" id="1J" role="jymVt">
       <node concept="3clFbS" id="1R" role="3clF47" />
@@ -722,7 +721,6 @@
     <node concept="3Tm1VV" id="1Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2Y">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_TestIsCompiledAndLoadedByMPS_NonTypesystemRule" />
     <node concept="3clFbW" id="2Z" role="jymVt">
       <node concept="3clFbS" id="37" role="3clF47" />
@@ -920,7 +918,7 @@
     <node concept="3Tm1VV" id="36" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="4i">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="assert" />
     <property role="TrG5h" value="typeof_Message_InferenceRule" />
     <node concept="3clFbW" id="4j" role="jymVt">
       <node concept="3clFbS" id="4r" role="3clF47" />

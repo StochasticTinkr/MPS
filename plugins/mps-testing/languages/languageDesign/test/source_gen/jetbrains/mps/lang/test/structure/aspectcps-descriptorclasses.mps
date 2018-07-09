@@ -237,6 +237,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -8844,6 +8845,7 @@
   </node>
   <node concept="Qs71p" id="Nr">
     <property role="TrG5h" value="Level" />
+    <property role="3GE5qa" value="log" />
     <node concept="QsSxf" id="Ns" role="Qtgdg">
       <property role="TrG5h" value="OFF" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -9413,6 +9415,7 @@
   </node>
   <node concept="312cEu" id="QS">
     <property role="TrG5h" value="Level_PropertySupport" />
+    <property role="3GE5qa" value="log" />
     <node concept="3uibUv" id="QT" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>

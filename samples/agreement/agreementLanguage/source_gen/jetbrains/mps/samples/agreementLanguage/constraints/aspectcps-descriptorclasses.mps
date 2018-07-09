@@ -264,7 +264,6 @@
     </node>
   </node>
   <node concept="312cEu" id="y">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="EventVariableReference_Constraints" />
     <node concept="3Tm1VV" id="z" role="1B3o_S" />
     <node concept="3uibUv" id="$" role="1zkMxy">
@@ -566,7 +565,6 @@
   </node>
   <node concept="39dXUE" id="2j" />
   <node concept="312cEu" id="2k">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ValueReference_Constraints" />
     <node concept="3Tm1VV" id="2l" role="1B3o_S" />
     <node concept="3uibUv" id="2m" role="1zkMxy">

@@ -339,7 +339,7 @@
   </node>
   <node concept="39dXUE" id="C" />
   <node concept="312cEu" id="D">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="Require_Constraints" />
     <node concept="3Tm1VV" id="E" role="1B3o_S" />
     <node concept="3uibUv" id="F" role="1zkMxy">
@@ -960,7 +960,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4s">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="RoutineCall_Constraints" />
     <node concept="3Tm1VV" id="4t" role="1B3o_S" />
     <node concept="3uibUv" id="4u" role="1zkMxy">
@@ -1409,7 +1409,7 @@
     </node>
   </node>
   <node concept="312cEu" id="78">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="RoutineDefinition_Constraints" />
     <node concept="3Tm1VV" id="79" role="1B3o_S" />
     <node concept="3uibUv" id="7a" role="1zkMxy">

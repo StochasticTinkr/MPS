@@ -295,7 +295,6 @@
   </node>
   <node concept="39dXUE" id="y" />
   <node concept="312cEu" id="z">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="TestPropertyVariableReference_Constraints" />
     <node concept="3Tm1VV" id="$" role="1B3o_S" />
     <node concept="3uibUv" id="_" role="1zkMxy">
@@ -579,7 +578,6 @@
     </node>
   </node>
   <node concept="312cEu" id="2c">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="TestVariableReference_Constraints" />
     <node concept="3Tm1VV" id="2d" role="1B3o_S" />
     <node concept="3uibUv" id="2e" role="1zkMxy">

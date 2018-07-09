@@ -341,7 +341,7 @@
     </node>
   </node>
   <node concept="312cEu" id="O">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Context" />
     <property role="TrG5h" value="ContextMemberOperation_Constraints" />
     <node concept="3Tm1VV" id="P" role="1B3o_S" />
     <node concept="3uibUv" id="Q" role="1zkMxy">
@@ -605,7 +605,7 @@
   </node>
   <node concept="39dXUE" id="2s" />
   <node concept="312cEu" id="2t">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="RefDecl.Methods" />
     <property role="TrG5h" value="ModelsToGenerateByDefault_Constraints" />
     <node concept="3Tm1VV" id="2u" role="1B3o_S" />
     <node concept="3uibUv" id="2v" role="1zkMxy">
@@ -849,7 +849,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3Y">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="RefActions" />
     <property role="TrG5h" value="RefactoringAction_Constraints" />
     <node concept="3Tm1VV" id="3Z" role="1B3o_S" />
     <node concept="3uibUv" id="40" role="1zkMxy">
@@ -1093,7 +1093,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5v">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="RefDecl.Arg.Field" />
     <property role="TrG5h" value="RefactoringFieldReference_Constraints" />
     <node concept="3Tm1VV" id="5w" role="1B3o_S" />
     <node concept="3uibUv" id="5x" role="1zkMxy">
@@ -1373,7 +1373,7 @@
     </node>
   </node>
   <node concept="312cEu" id="76">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="RefDecl.Arg.Parameters" />
     <property role="TrG5h" value="RefactoringParameterReference_Constraints" />
     <node concept="3Tm1VV" id="77" role="1B3o_S" />
     <node concept="3uibUv" id="78" role="1zkMxy">

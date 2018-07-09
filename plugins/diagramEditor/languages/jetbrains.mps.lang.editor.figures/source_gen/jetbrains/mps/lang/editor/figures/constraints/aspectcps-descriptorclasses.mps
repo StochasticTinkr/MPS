@@ -510,7 +510,6 @@
     </node>
   </node>
   <node concept="312cEu" id="1O">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ExternalViewFigureParameter_Constraints" />
     <node concept="3Tm1VV" id="1P" role="1B3o_S" />
     <node concept="3uibUv" id="1Q" role="1zkMxy">
@@ -990,7 +989,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4A">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ExternalViewFigure_Constraints" />
     <node concept="3Tm1VV" id="4B" role="1B3o_S" />
     <node concept="3uibUv" id="4C" role="1zkMxy">

@@ -293,7 +293,6 @@
   </node>
   <node concept="39dXUE" id="y" />
   <node concept="312cEu" id="z">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="TransformationMenuPart_Intention_Constraints" />
     <node concept="3Tm1VV" id="$" role="1B3o_S" />
     <node concept="3uibUv" id="_" role="1zkMxy">
@@ -677,7 +676,6 @@
     </node>
   </node>
   <node concept="312cEu" id="2Q">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="TransformationMenuPart_Refactoring_Constraints" />
     <node concept="3Tm1VV" id="2R" role="1B3o_S" />
     <node concept="3uibUv" id="2S" role="1zkMxy">

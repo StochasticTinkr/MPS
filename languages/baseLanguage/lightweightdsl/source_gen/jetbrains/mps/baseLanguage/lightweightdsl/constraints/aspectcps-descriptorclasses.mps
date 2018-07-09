@@ -385,7 +385,7 @@
     </node>
   </node>
   <node concept="312cEu" id="U">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="member.customDescriptor" />
     <property role="TrG5h" value="CustomMemberDescriptor_Constraints" />
     <node concept="3Tm1VV" id="V" role="1B3o_S" />
     <node concept="3uibUv" id="W" role="1zkMxy">
@@ -918,7 +918,7 @@
     </node>
   </node>
   <node concept="312cEu" id="43">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="DSLDescriptor_Constraints" />
     <node concept="3Tm1VV" id="44" role="1B3o_S" />
     <node concept="3uibUv" id="45" role="1zkMxy">
@@ -1427,7 +1427,7 @@
   </node>
   <node concept="39dXUE" id="70" />
   <node concept="312cEu" id="71">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="member.modifier" />
     <property role="TrG5h" value="MemberModifier_Constraints" />
     <node concept="3Tm1VV" id="72" role="1B3o_S" />
     <node concept="3uibUv" id="73" role="1zkMxy">
@@ -1693,7 +1693,7 @@
     </node>
   </node>
   <node concept="312cEu" id="8G">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="MethodInstance_Constraints" />
     <node concept="3Tm1VV" id="8H" role="1B3o_S" />
     <node concept="3uibUv" id="8I" role="1zkMxy">
@@ -1948,7 +1948,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ag">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="member.modifier" />
     <property role="TrG5h" value="MultipleModifier_Constraints" />
     <node concept="3Tm1VV" id="ah" role="1B3o_S" />
     <node concept="3uibUv" id="ai" role="1zkMxy">
@@ -2192,7 +2192,7 @@
     </node>
   </node>
   <node concept="312cEu" id="bL">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="member.modifier" />
     <property role="TrG5h" value="RequiredModifier_Constraints" />
     <node concept="3Tm1VV" id="bM" role="1B3o_S" />
     <node concept="3uibUv" id="bN" role="1zkMxy">

@@ -195,7 +195,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="FindMatchStatement_InferenceRule" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="9" role="3clF47" />
@@ -422,7 +421,6 @@
     <node concept="3Tm1VV" id="8" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1u">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="ForEachMatchStatement_InferenceRule" />
     <node concept="3clFbW" id="1v" role="jymVt">
       <node concept="3clFbS" id="1B" role="3clF47" />
@@ -1551,7 +1549,6 @@
     </node>
   </node>
   <node concept="312cEu" id="6Z">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="MatchRegexpExpression_InferenceRule" />
     <node concept="3clFbW" id="70" role="jymVt">
       <node concept="3clFbS" id="78" role="3clF47" />
@@ -1767,7 +1764,6 @@
     <node concept="3Tm1VV" id="77" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="8p">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="MatchRegexpStatement_InferenceRule" />
     <node concept="3clFbW" id="8q" role="jymVt">
       <node concept="3clFbS" id="8y" role="3clF47" />
@@ -1994,7 +1990,6 @@
     <node concept="3Tm1VV" id="8x" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9R">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="MatchVariableReference_InferenceRule" />
     <node concept="3clFbW" id="9S" role="jymVt">
       <node concept="3clFbS" id="a0" role="3clF47" />
@@ -2210,7 +2205,6 @@
     <node concept="3Tm1VV" id="9Z" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="bh">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="ReplaceWithRegexpExpression_InferenceRule" />
     <node concept="3clFbW" id="bi" role="jymVt">
       <node concept="3clFbS" id="bq" role="3clF47" />
@@ -2437,7 +2431,6 @@
     <node concept="3Tm1VV" id="bp" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="cJ">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="SplitExpression_InferenceRule" />
     <node concept="3clFbW" id="cK" role="jymVt">
       <node concept="3clFbS" id="cS" role="3clF47" />
@@ -3250,7 +3243,6 @@
     </node>
   </node>
   <node concept="312cEu" id="i2">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_LiteralReplacement_NonTypesystemRule" />
     <node concept="3clFbW" id="i3" role="jymVt">
       <node concept="3clFbS" id="ib" role="3clF47" />
@@ -3428,7 +3420,6 @@
     <node concept="3Tm1VV" id="ia" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="je">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_StringLiteralRegexp_NonTypesystemRule" />
     <node concept="3clFbW" id="jf" role="jymVt">
       <node concept="3clFbS" id="jn" role="3clF47" />
@@ -3606,7 +3597,7 @@
     <node concept="3Tm1VV" id="jm" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="kq">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Expressions" />
     <property role="TrG5h" value="typeof_FindMatchExpression_InferenceRule" />
     <node concept="3clFbW" id="kr" role="jymVt">
       <node concept="3clFbS" id="kz" role="3clF47" />
@@ -3822,7 +3813,6 @@
     <node concept="3Tm1VV" id="ky" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="lO">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InlineRegexpExpression_InferenceRule" />
     <node concept="3clFbW" id="lP" role="jymVt">
       <node concept="3clFbS" id="lX" role="3clF47" />
@@ -4040,7 +4030,7 @@
     <node concept="3Tm1VV" id="lW" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ne">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Operations" />
     <property role="TrG5h" value="typeof_MatchRegexpOperation_InferenceRule" />
     <node concept="3clFbW" id="nf" role="jymVt">
       <node concept="3clFbS" id="nn" role="3clF47" />
@@ -4256,7 +4246,7 @@
     <node concept="3Tm1VV" id="nm" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="oC">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Operations" />
     <property role="TrG5h" value="typeof_ReplaceRegexpOperation_InferenceRule" />
     <node concept="3clFbW" id="oD" role="jymVt">
       <node concept="3clFbS" id="oL" role="3clF47" />
@@ -4472,7 +4462,7 @@
     <node concept="3Tm1VV" id="oK" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="q2">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Operations" />
     <property role="TrG5h" value="typeof_SplitOperation_InferenceRule" />
     <node concept="3clFbW" id="q3" role="jymVt">
       <node concept="3clFbS" id="qb" role="3clF47" />

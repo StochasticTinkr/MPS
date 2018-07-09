@@ -183,6 +183,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -190,6 +193,7 @@
   </registry>
   <node concept="312cEu" id="0">
     <property role="TrG5h" value="AssertEquals_DataFlow" />
+    <property role="3GE5qa" value="assert" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -315,6 +319,7 @@
   </node>
   <node concept="312cEu" id="H">
     <property role="TrG5h" value="AssertFalse_DataFlow" />
+    <property role="3GE5qa" value="assert" />
     <node concept="3Tm1VV" id="I" role="1B3o_S" />
     <node concept="3uibUv" id="J" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -388,6 +393,7 @@
   </node>
   <node concept="312cEu" id="18">
     <property role="TrG5h" value="AssertIsNotNull_DataFlow" />
+    <property role="3GE5qa" value="assert" />
     <node concept="3Tm1VV" id="19" role="1B3o_S" />
     <node concept="3uibUv" id="1a" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -461,6 +467,7 @@
   </node>
   <node concept="312cEu" id="1z">
     <property role="TrG5h" value="AssertIsNull_DataFlow" />
+    <property role="3GE5qa" value="assert" />
     <node concept="3Tm1VV" id="1$" role="1B3o_S" />
     <node concept="3uibUv" id="1_" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -534,6 +541,7 @@
   </node>
   <node concept="312cEu" id="1Y">
     <property role="TrG5h" value="AssertSame_DataFlow" />
+    <property role="3GE5qa" value="assert" />
     <node concept="3Tm1VV" id="1Z" role="1B3o_S" />
     <node concept="3uibUv" id="20" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -750,6 +758,7 @@
   </node>
   <node concept="312cEu" id="3d">
     <property role="TrG5h" value="AssertTrue_DataFlow" />
+    <property role="3GE5qa" value="assert" />
     <node concept="3Tm1VV" id="3e" role="1B3o_S" />
     <node concept="3uibUv" id="3f" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1296,6 +1305,7 @@
   </node>
   <node concept="312cEu" id="6f">
     <property role="TrG5h" value="Message_DataFlow" />
+    <property role="3GE5qa" value="assert" />
     <node concept="3Tm1VV" id="6g" role="1B3o_S" />
     <node concept="3uibUv" id="6h" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />

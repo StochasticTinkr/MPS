@@ -1538,7 +1538,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6l">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="SourceSet.Selectors" />
     <property role="TrG5h" value="check_BuildFileExcludeSelector_NonTypesystemRule" />
     <node concept="3clFbW" id="6m" role="jymVt">
       <node concept="3clFbS" id="6u" role="3clF47" />
@@ -1788,7 +1788,7 @@
     <node concept="3Tm1VV" id="6t" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7Y">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="SourceSet.Selectors" />
     <property role="TrG5h" value="check_BuildFileIncludeSelector_NonTypesystemRule" />
     <node concept="3clFbW" id="7Z" role="jymVt">
       <node concept="3clFbS" id="87" role="3clF47" />
@@ -2038,7 +2038,7 @@
     <node concept="3Tm1VV" id="86" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9C">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Layout.Java.Manifest" />
     <property role="TrG5h" value="check_BuildLayout_JarManifest_NonTypesystemRule" />
     <node concept="3clFbW" id="9D" role="jymVt">
       <node concept="3clFbS" id="9L" role="3clF47" />
@@ -2232,7 +2232,7 @@
     <node concept="3Tm1VV" id="9K" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="aV">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Layout.Java" />
     <property role="TrG5h" value="check_BuildLayout_Jar_NonTypesystemRule" />
     <node concept="3clFbW" id="aW" role="jymVt">
       <node concept="3clFbS" id="b4" role="3clF47" />
@@ -2535,7 +2535,7 @@
     <node concept="3Tm1VV" id="b3" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="cT">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Layout.File" />
     <property role="TrG5h" value="check_BuildLayout_Tar_NonTypesystemRule" />
     <node concept="3clFbW" id="cU" role="jymVt">
       <node concept="3clFbS" id="d2" role="3clF47" />
@@ -2890,7 +2890,7 @@
     <node concept="3Tm1VV" id="d1" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fd">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Layout.File" />
     <property role="TrG5h" value="check_BuildLayout_Zip_NonTypesystemRule" />
     <node concept="3clFbW" id="fe" role="jymVt">
       <node concept="3clFbS" id="fm" role="3clF47" />
@@ -3168,7 +3168,6 @@
     <node concept="3Tm1VV" id="fl" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="h1">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_BuildProject_NonTypesystemRule" />
     <node concept="3clFbW" id="h2" role="jymVt">
       <node concept="3clFbS" id="ha" role="3clF47" />
@@ -3382,7 +3381,7 @@
     <node concept="3Tm1VV" id="h9" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="is">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Project.Java" />
     <property role="TrG5h" value="check_BuildProject_unusedModules_NonTypesystemRule" />
     <node concept="3clFbW" id="it" role="jymVt">
       <node concept="3clFbS" id="i_" role="3clF47" />
@@ -3765,7 +3764,7 @@
     <node concept="3Tm1VV" id="i$" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="kU">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Project.Java.Classpath" />
     <property role="TrG5h" value="check_BuildSource_JavaLibraryJar_NonTypesystemRule" />
     <node concept="3clFbW" id="kV" role="jymVt">
       <node concept="3clFbS" id="l3" role="3clF47" />
@@ -3980,7 +3979,7 @@
     <node concept="3Tm1VV" id="l2" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ml">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Project.Java.Library" />
     <property role="TrG5h" value="check_BuildSource_JavaLibrary_NonTypesystemRule" />
     <node concept="3clFbW" id="mm" role="jymVt">
       <node concept="3clFbS" id="mu" role="3clF47" />
@@ -4210,7 +4209,7 @@
     <node concept="3Tm1VV" id="mt" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="nS">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Project.Java" />
     <property role="TrG5h" value="check_BuildSource_JavaOptions_NonTypesystemRule" />
     <node concept="3clFbW" id="nT" role="jymVt">
       <node concept="3clFbS" id="o1" role="3clF47" />
@@ -4494,7 +4493,7 @@
     <node concept="3Tm1VV" id="o0" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="pL">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Names" />
     <property role="TrG5h" value="check_BuildStringNotEmpty_NonTypesystemRule" />
     <node concept="3clFbW" id="pM" role="jymVt">
       <node concept="3clFbS" id="pU" role="3clF47" />
@@ -4674,7 +4673,7 @@
     <node concept="3Tm1VV" id="pT" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="qZ">
-    <property role="3GE5qa" value="definition.quickfix" />
+    <property role="3GE5qa" value="Layout.File" />
     <property role="TrG5h" value="fixContainerName_QuickFix" />
     <node concept="3clFbW" id="r0" role="jymVt">
       <node concept="3clFbS" id="r6" role="3clF47">

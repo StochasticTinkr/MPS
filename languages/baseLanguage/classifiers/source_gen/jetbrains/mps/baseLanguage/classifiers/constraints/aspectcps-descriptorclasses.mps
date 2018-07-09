@@ -423,7 +423,7 @@
     </node>
   </node>
   <node concept="312cEu" id="O">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Fields" />
     <property role="TrG5h" value="DefaultClassifierFieldDeclaration_Constraints" />
     <node concept="3Tm1VV" id="P" role="1B3o_S" />
     <node concept="3uibUv" id="Q" role="1zkMxy">
@@ -667,7 +667,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2l">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Types" />
     <property role="TrG5h" value="DefaultClassifierType_Constraints" />
     <node concept="3Tm1VV" id="2m" role="1B3o_S" />
     <node concept="3uibUv" id="2n" role="1zkMxy">
@@ -998,7 +998,6 @@
   </node>
   <node concept="39dXUE" id="4j" />
   <node concept="312cEu" id="4k">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="IMemberOperation_Constraints" />
     <node concept="3Tm1VV" id="4l" role="1B3o_S" />
     <node concept="3uibUv" id="4m" role="1zkMxy">
@@ -1404,7 +1403,6 @@
     </node>
   </node>
   <node concept="312cEu" id="6I">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="SuperClassifierExpresson_Constraints" />
     <node concept="3Tm1VV" id="6J" role="1B3o_S" />
     <node concept="3uibUv" id="6K" role="1zkMxy">
@@ -1739,7 +1737,6 @@
     </node>
   </node>
   <node concept="312cEu" id="8Q">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ThisClassifierExpression_Constraints" />
     <node concept="3Tm1VV" id="8R" role="1B3o_S" />
     <node concept="3uibUv" id="8S" role="1zkMxy">

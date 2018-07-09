@@ -464,7 +464,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1c">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="editor" />
     <property role="TrG5h" value="EditorExpression_Constraints" />
     <node concept="3Tm1VV" id="1d" role="1B3o_S" />
     <node concept="3uibUv" id="1e" role="1zkMxy">
@@ -1005,7 +1005,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4s">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="editor" />
     <property role="TrG5h" value="EditorOperationCall_Constraints" />
     <node concept="3Tm1VV" id="4t" role="1B3o_S" />
     <node concept="3uibUv" id="4u" role="1zkMxy">
@@ -1461,7 +1461,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7e">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="editor" />
     <property role="TrG5h" value="EditorOperationDeclaration_Constraints" />
     <node concept="3Tm1VV" id="7f" role="1B3o_S" />
     <node concept="3uibUv" id="7g" role="1zkMxy">
@@ -1495,7 +1495,7 @@
     <node concept="2tJIrI" id="7i" role="jymVt" />
   </node>
   <node concept="312cEu" id="7s">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="editor" />
     <property role="TrG5h" value="EditorPropertyReference_Constraints" />
     <node concept="3Tm1VV" id="7t" role="1B3o_S" />
     <node concept="3uibUv" id="7u" role="1zkMxy">
@@ -1985,7 +1985,6 @@
   </node>
   <node concept="39dXUE" id="al" />
   <node concept="312cEu" id="am">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="GetEditorOperation_Constraints" />
     <node concept="3Tm1VV" id="an" role="1B3o_S" />
     <node concept="3uibUv" id="ao" role="1zkMxy">
@@ -2257,7 +2256,7 @@
     </node>
   </node>
   <node concept="312cEu" id="c3">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="properties" />
     <property role="TrG5h" value="PersistentPropertyReferenceOperation_Constraints" />
     <node concept="3Tm1VV" id="c4" role="1B3o_S" />
     <node concept="3uibUv" id="c5" role="1zkMxy">
@@ -2638,7 +2637,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ek">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="properties" />
     <property role="TrG5h" value="ProjectAccessExpression_Constraints" />
     <node concept="3Tm1VV" id="el" role="1B3o_S" />
     <node concept="3uibUv" id="em" role="1zkMxy">
@@ -2881,7 +2880,7 @@
     </node>
   </node>
   <node concept="312cEu" id="fO">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="editor" />
     <property role="TrG5h" value="SettingsEditor_Constraints" />
     <node concept="3Tm1VV" id="fP" role="1B3o_S" />
     <node concept="3uibUv" id="fQ" role="1zkMxy">
@@ -3131,7 +3130,7 @@
     </node>
   </node>
   <node concept="312cEu" id="hl">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="template" />
     <property role="TrG5h" value="TemplateParameterReference_Constraints" />
     <node concept="3Tm1VV" id="hm" role="1B3o_S" />
     <node concept="3uibUv" id="hn" role="1zkMxy">

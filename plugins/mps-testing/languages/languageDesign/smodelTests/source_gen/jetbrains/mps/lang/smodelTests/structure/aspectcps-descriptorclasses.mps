@@ -214,6 +214,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -1109,6 +1112,7 @@
   </node>
   <node concept="Qs71p" id="5k">
     <property role="TrG5h" value="Enum_CustomIdentifier" />
+    <property role="3GE5qa" value="enum_datatypes" />
     <node concept="QsSxf" id="5l" role="Qtgdg">
       <property role="TrG5h" value="identifier_1" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -1378,6 +1382,7 @@
   </node>
   <node concept="312cEu" id="75">
     <property role="TrG5h" value="Enum_CustomIdentifier_PropertySupport" />
+    <property role="3GE5qa" value="enum_datatypes" />
     <node concept="3uibUv" id="76" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -1631,6 +1636,7 @@
   </node>
   <node concept="Qs71p" id="8Q">
     <property role="TrG5h" value="Enum_DeriveFromInternalValue" />
+    <property role="3GE5qa" value="enum_datatypes" />
     <node concept="QsSxf" id="8R" role="Qtgdg">
       <property role="TrG5h" value="value_1" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -1900,6 +1906,7 @@
   </node>
   <node concept="312cEu" id="aB">
     <property role="TrG5h" value="Enum_DeriveFromInternalValue_PropertySupport" />
+    <property role="3GE5qa" value="enum_datatypes" />
     <node concept="3uibUv" id="aC" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -2153,6 +2160,7 @@
   </node>
   <node concept="Qs71p" id="co">
     <property role="TrG5h" value="Enum_DeriveFromPresentation" />
+    <property role="3GE5qa" value="enum_datatypes" />
     <node concept="QsSxf" id="cp" role="Qtgdg">
       <property role="TrG5h" value="presentation_1" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -2422,6 +2430,7 @@
   </node>
   <node concept="312cEu" id="e9">
     <property role="TrG5h" value="Enum_DeriveFromPresentation_PropertySupport" />
+    <property role="3GE5qa" value="enum_datatypes" />
     <node concept="3uibUv" id="ea" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>

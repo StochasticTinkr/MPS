@@ -271,7 +271,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -830,7 +829,6 @@
     </node>
   </node>
   <node concept="312cEu" id="3r">
-    <property role="3GE5qa" value="Analyzer" />
     <property role="TrG5h" value="CounterAnalyzerWithConstructorAnalyzerRunner" />
     <node concept="3Tm1VV" id="3s" role="1B3o_S" />
     <node concept="3uibUv" id="3t" role="1zkMxy">
@@ -1198,7 +1196,6 @@
     </node>
   </node>
   <node concept="312cEu" id="5S">
-    <property role="3GE5qa" value="Analyzer" />
     <property role="TrG5h" value="CustomAnalyzerWithModeAnalyzerRunner" />
     <node concept="3Tm1VV" id="5T" role="1B3o_S" />
     <node concept="3uibUv" id="5U" role="1zkMxy">

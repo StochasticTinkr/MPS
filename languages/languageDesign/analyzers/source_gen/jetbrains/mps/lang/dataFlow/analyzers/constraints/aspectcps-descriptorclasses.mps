@@ -268,7 +268,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Analyzer" />
     <property role="TrG5h" value="AnalyzerConstructorParameterReference_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -550,7 +550,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1D">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Analyzer" />
     <property role="TrG5h" value="AnalyzerRunnerAnalyzeOperation_Constraints" />
     <node concept="3Tm1VV" id="1E" role="1B3o_S" />
     <node concept="3uibUv" id="1F" role="1zkMxy">
@@ -815,7 +815,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3i">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Analyzer" />
     <property role="TrG5h" value="AnalyzerRunnerCreator_Constraints" />
     <node concept="3Tm1VV" id="3j" role="1B3o_S" />
     <node concept="3uibUv" id="3k" role="1zkMxy">
@@ -1089,7 +1089,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4R">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Analyzer" />
     <property role="TrG5h" value="Analyzer_Constraints" />
     <node concept="3Tm1VV" id="4S" role="1B3o_S" />
     <node concept="3uibUv" id="4T" role="1zkMxy">
@@ -1288,7 +1288,7 @@
     </node>
   </node>
   <node concept="312cEu" id="67">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Rules" />
     <property role="TrG5h" value="ApplicableNodeReference_Constraints" />
     <node concept="3Tm1VV" id="68" role="1B3o_S" />
     <node concept="3uibUv" id="69" role="1zkMxy">
@@ -1639,7 +1639,7 @@
     </node>
   </node>
   <node concept="312cEu" id="8c">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Rules" />
     <property role="TrG5h" value="ConceptCondition_Constraints" />
     <node concept="3Tm1VV" id="8d" role="1B3o_S" />
     <node concept="3uibUv" id="8e" role="1zkMxy">
@@ -1887,7 +1887,7 @@
     </node>
   </node>
   <node concept="312cEu" id="9M">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Instructions" />
     <property role="TrG5h" value="CustomInstructionsContainerReference_Constraints" />
     <node concept="3Tm1VV" id="9N" role="1B3o_S" />
     <node concept="3uibUv" id="9O" role="1zkMxy">
@@ -2059,7 +2059,7 @@
   </node>
   <node concept="39dXUE" id="aL" />
   <node concept="312cEu" id="aM">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Instructions" />
     <property role="TrG5h" value="InstructionReference_Constraints" />
     <node concept="3Tm1VV" id="aN" role="1B3o_S" />
     <node concept="3uibUv" id="aO" role="1zkMxy">
@@ -2404,7 +2404,7 @@
     </node>
   </node>
   <node concept="312cEu" id="cN">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Instructions" />
     <property role="TrG5h" value="IsOperation_Constraints" />
     <node concept="3Tm1VV" id="cO" role="1B3o_S" />
     <node concept="3uibUv" id="cP" role="1zkMxy">
@@ -2926,7 +2926,7 @@
     </node>
   </node>
   <node concept="312cEu" id="fT">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Rules" />
     <property role="TrG5h" value="ProgramParameter_Constraints" />
     <node concept="3Tm1VV" id="fU" role="1B3o_S" />
     <node concept="3uibUv" id="fV" role="1zkMxy">
@@ -3191,7 +3191,7 @@
     </node>
   </node>
   <node concept="312cEu" id="hz">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Rules" />
     <property role="TrG5h" value="Rule_Constraints" />
     <node concept="3Tm1VV" id="h$" role="1B3o_S" />
     <node concept="3uibUv" id="h_" role="1zkMxy">

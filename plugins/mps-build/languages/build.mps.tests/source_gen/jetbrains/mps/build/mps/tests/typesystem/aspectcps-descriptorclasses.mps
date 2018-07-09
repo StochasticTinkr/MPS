@@ -309,7 +309,7 @@
     </node>
   </node>
   <node concept="312cEu" id="I">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Project.Testing" />
     <property role="TrG5h" value="check_BuildMpsLayout_TestModules_NonTypesystemRule" />
     <node concept="3clFbW" id="J" role="jymVt">
       <node concept="3clFbS" id="R" role="3clF47" />

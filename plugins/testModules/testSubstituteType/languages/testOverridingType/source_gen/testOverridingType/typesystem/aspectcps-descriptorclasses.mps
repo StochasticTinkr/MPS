@@ -209,7 +209,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
@@ -638,7 +637,6 @@
     </node>
   </node>
   <node concept="312cEu" id="28">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_OverrideAnnotation_InferenceRule" />
     <node concept="3clFbW" id="29" role="jymVt">
       <node concept="3clFbS" id="2i" role="3clF47" />
@@ -940,7 +938,6 @@
     <node concept="3Tm1VV" id="2h" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="46">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_OverridingPrimNumConstant_InferenceRule" />
     <node concept="3clFbW" id="47" role="jymVt">
       <node concept="3clFbS" id="4f" role="3clF47" />
@@ -1191,7 +1188,6 @@
     <node concept="3Tm1VV" id="4e" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="5H">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_UnconditionalOverrideAnnotation_InferenceRule" />
     <node concept="3clFbW" id="5I" role="jymVt">
       <node concept="3clFbS" id="5R" role="3clF47" />

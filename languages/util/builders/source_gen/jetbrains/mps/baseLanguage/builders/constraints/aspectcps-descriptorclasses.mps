@@ -310,7 +310,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="bean" />
     <property role="TrG5h" value="AsTypeBuilder_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -344,7 +344,7 @@
     <node concept="2tJIrI" id="4" role="jymVt" />
   </node>
   <node concept="312cEu" id="e">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="simple" />
     <property role="TrG5h" value="BaseSimpleBuilderDeclaration_Constraints" />
     <node concept="3Tm1VV" id="f" role="1B3o_S" />
     <node concept="3uibUv" id="g" role="1zkMxy">
@@ -378,7 +378,7 @@
     <node concept="2tJIrI" id="i" role="jymVt" />
   </node>
   <node concept="312cEu" id="s">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="bean" />
     <property role="TrG5h" value="BeanBuilder_Constraints" />
     <node concept="3Tm1VV" id="t" role="1B3o_S" />
     <node concept="3uibUv" id="u" role="1zkMxy">
@@ -645,7 +645,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1Y">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="bean" />
     <property role="TrG5h" value="BeanPropertyBuilder_Constraints" />
     <node concept="3Tm1VV" id="1Z" role="1B3o_S" />
     <node concept="3uibUv" id="20" role="1zkMxy">
@@ -1396,7 +1396,6 @@
   </node>
   <node concept="39dXUE" id="6z" />
   <node concept="312cEu" id="6$">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ResultExpression_Constraints" />
     <node concept="3Tm1VV" id="6_" role="1B3o_S" />
     <node concept="3uibUv" id="6A" role="1zkMxy">
@@ -1638,7 +1637,7 @@
     </node>
   </node>
   <node concept="312cEu" id="83">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="simple.childParams" />
     <property role="TrG5h" value="SimpleBuilderChildExpression_Constraints" />
     <node concept="3Tm1VV" id="84" role="1B3o_S" />
     <node concept="3uibUv" id="85" role="1zkMxy">
@@ -1672,7 +1671,7 @@
     <node concept="2tJIrI" id="87" role="jymVt" />
   </node>
   <node concept="312cEu" id="8h">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="simple" />
     <property role="TrG5h" value="SimpleBuilderDeclaration_Constraints" />
     <node concept="3Tm1VV" id="8i" role="1B3o_S" />
     <node concept="3uibUv" id="8j" role="1zkMxy">
@@ -2041,7 +2040,7 @@
     </node>
   </node>
   <node concept="312cEu" id="as">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="simple.childParams" />
     <property role="TrG5h" value="SimpleBuilderExpression_Constraints" />
     <node concept="3Tm1VV" id="at" role="1B3o_S" />
     <node concept="3uibUv" id="au" role="1zkMxy">
@@ -2285,7 +2284,7 @@
     </node>
   </node>
   <node concept="312cEu" id="bX">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="simple" />
     <property role="TrG5h" value="SimpleBuilderParameterReference_Constraints" />
     <node concept="3Tm1VV" id="bY" role="1B3o_S" />
     <node concept="3uibUv" id="bZ" role="1zkMxy">
@@ -2571,7 +2570,7 @@
     </node>
   </node>
   <node concept="312cEu" id="dB">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="simple" />
     <property role="TrG5h" value="SimpleBuilderPropertyBuilder_Constraints" />
     <node concept="3Tm1VV" id="dC" role="1B3o_S" />
     <node concept="3uibUv" id="dD" role="1zkMxy">
@@ -3049,7 +3048,7 @@
     </node>
   </node>
   <node concept="312cEu" id="gt">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="simple.propertyParams" />
     <property role="TrG5h" value="SimpleBuilderPropertyExpression_Constraints" />
     <node concept="3Tm1VV" id="gu" role="1B3o_S" />
     <node concept="3uibUv" id="gv" role="1zkMxy">
@@ -3293,7 +3292,7 @@
     </node>
   </node>
   <node concept="312cEu" id="hY">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="simple" />
     <property role="TrG5h" value="SimpleBuilder_Constraints" />
     <node concept="3Tm1VV" id="hZ" role="1B3o_S" />
     <node concept="3uibUv" id="i0" role="1zkMxy">

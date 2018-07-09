@@ -819,7 +819,6 @@
     </node>
   </node>
   <node concept="312cEu" id="2u">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule" />
     <node concept="3clFbW" id="2v" role="jymVt">
       <node concept="3clFbS" id="2B" role="3clF47" />
@@ -1038,7 +1037,6 @@
     <node concept="3Tm1VV" id="2A" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3V">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="ResourceClassifierType_replaceWith_ClassifierType_QuickFix" />
     <node concept="3clFbW" id="3W" role="jymVt">
       <node concept="3clFbS" id="42" role="3clF47">
@@ -1453,7 +1451,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6J">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="facet" />
     <property role="TrG5h" value="typeof_FacetJavaClassExpression_InferenceRule" />
     <node concept="3clFbW" id="6K" role="jymVt">
       <node concept="3clFbS" id="6S" role="3clF47" />
@@ -1674,7 +1672,6 @@
     <node concept="3Tm1VV" id="6R" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="8a">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_FacetReferenceExpression_InferenceRule" />
     <node concept="3clFbW" id="8b" role="jymVt">
       <node concept="3clFbS" id="8j" role="3clF47" />
@@ -1892,7 +1889,7 @@
     <node concept="3Tm1VV" id="8i" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9$">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="target" />
     <property role="TrG5h" value="typeof_ForeignParametersExpression_InferenceRule" />
     <node concept="3clFbW" id="9_" role="jymVt">
       <node concept="3clFbS" id="9H" role="3clF47" />
@@ -2147,7 +2144,7 @@
     <node concept="3Tm1VV" id="9G" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="bd">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="job" />
     <property role="TrG5h" value="typeof_InputResourcesParameter_InferenceRule" />
     <node concept="3clFbW" id="be" role="jymVt">
       <node concept="3clFbS" id="bm" role="3clF47" />
@@ -2720,7 +2717,7 @@
     <node concept="3Tm1VV" id="bl" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="eL">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="target" />
     <property role="TrG5h" value="typeof_LocalParametersExpression_InferenceRule" />
     <node concept="3clFbW" id="eM" role="jymVt">
       <node concept="3clFbS" id="eU" role="3clF47" />
@@ -2979,7 +2976,7 @@
     <node concept="3Tm1VV" id="eT" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="gs">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="target" />
     <property role="TrG5h" value="typeof_ResourceSpecificPropertiesExpression_InferenceRule" />
     <node concept="3clFbW" id="gt" role="jymVt">
       <node concept="3clFbS" id="g_" role="3clF47" />
@@ -3359,7 +3356,6 @@
     <node concept="3Tm1VV" id="g$" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="iN">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_TargetReferenceExpression_InferenceRule" />
     <node concept="3clFbW" id="iO" role="jymVt">
       <node concept="3clFbS" id="iW" role="3clF47" />

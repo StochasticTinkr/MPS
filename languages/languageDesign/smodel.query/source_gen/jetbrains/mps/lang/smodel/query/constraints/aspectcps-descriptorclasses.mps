@@ -320,7 +320,7 @@
   </node>
   <node concept="39dXUE" id="I" />
   <node concept="312cEu" id="J">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="InstancesExpression_Constraints" />
     <node concept="3Tm1VV" id="K" role="1B3o_S" />
     <node concept="3uibUv" id="L" role="1zkMxy">
@@ -354,7 +354,7 @@
     <node concept="2tJIrI" id="N" role="jymVt" />
   </node>
   <node concept="312cEu" id="X">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="QueryExpression_Constraints" />
     <node concept="3Tm1VV" id="Y" role="1B3o_S" />
     <node concept="3uibUv" id="Z" role="1zkMxy">
@@ -627,7 +627,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2G">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="QueryParameter_Constraints" />
     <node concept="3Tm1VV" id="2H" role="1B3o_S" />
     <node concept="3uibUv" id="2I" role="1zkMxy">
@@ -910,7 +910,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4u">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="UsagesExpression_Constraints" />
     <node concept="3Tm1VV" id="4v" role="1B3o_S" />
     <node concept="3uibUv" id="4w" role="1zkMxy">

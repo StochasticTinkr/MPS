@@ -315,7 +315,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="BuildAspect_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -553,7 +552,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1t">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout.External" />
     <property role="TrG5h" value="BuildExternalLayoutDependency_Constraints" />
     <node concept="3Tm1VV" id="1u" role="1B3o_S" />
     <node concept="3uibUv" id="1v" role="1zkMxy">
@@ -861,7 +860,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3f">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout.External" />
     <property role="TrG5h" value="BuildExternalLayout_Constraints" />
     <node concept="3Tm1VV" id="3g" role="1B3o_S" />
     <node concept="3uibUv" id="3h" role="1zkMxy">
@@ -1350,7 +1349,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6d">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout.Java" />
     <property role="TrG5h" value="BuildLayout_CompileOutputOf_Constraints" />
     <node concept="3Tm1VV" id="6e" role="1B3o_S" />
     <node concept="3uibUv" id="6f" role="1zkMxy">
@@ -1862,7 +1861,7 @@
     </node>
   </node>
   <node concept="312cEu" id="9e">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout" />
     <property role="TrG5h" value="BuildLayout_Constraints" />
     <node concept="3Tm1VV" id="9f" role="1B3o_S" />
     <node concept="3uibUv" id="9g" role="1zkMxy">
@@ -2110,7 +2109,7 @@
     </node>
   </node>
   <node concept="312cEu" id="aJ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout.External" />
     <property role="TrG5h" value="BuildLayout_FileStub_Constraints" />
     <node concept="3Tm1VV" id="aK" role="1B3o_S" />
     <node concept="3uibUv" id="aL" role="1zkMxy">
@@ -2354,7 +2353,7 @@
     </node>
   </node>
   <node concept="312cEu" id="cg">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout.File" />
     <property role="TrG5h" value="BuildLayout_File_Constraints" />
     <node concept="3Tm1VV" id="ch" role="1B3o_S" />
     <node concept="3uibUv" id="ci" role="1zkMxy">
@@ -2610,7 +2609,7 @@
     </node>
   </node>
   <node concept="312cEu" id="dO">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout.File" />
     <property role="TrG5h" value="BuildLayout_Filemode_Constraints" />
     <node concept="3Tm1VV" id="dP" role="1B3o_S" />
     <node concept="3uibUv" id="dQ" role="1zkMxy">
@@ -2885,7 +2884,7 @@
     </node>
   </node>
   <node concept="312cEu" id="fx">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout.File" />
     <property role="TrG5h" value="BuildLayout_FilesOf_Constraints" />
     <node concept="3Tm1VV" id="fy" role="1B3o_S" />
     <node concept="3uibUv" id="fz" role="1zkMxy">
@@ -3272,7 +3271,7 @@
     </node>
   </node>
   <node concept="312cEu" id="hN">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout" />
     <property role="TrG5h" value="BuildLayout_ImportContent_Constraints" />
     <node concept="3Tm1VV" id="hO" role="1B3o_S" />
     <node concept="3uibUv" id="hP" role="1zkMxy">
@@ -3849,7 +3848,7 @@
     </node>
   </node>
   <node concept="312cEu" id="lk">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout" />
     <property role="TrG5h" value="BuildLayout_Import_Constraints" />
     <node concept="3Tm1VV" id="ll" role="1B3o_S" />
     <node concept="3uibUv" id="lm" role="1zkMxy">
@@ -4383,7 +4382,7 @@
     </node>
   </node>
   <node concept="312cEu" id="oz">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout.Java.Manifest" />
     <property role="TrG5h" value="BuildLayout_JarManifest_Constraints" />
     <node concept="3Tm1VV" id="o$" role="1B3o_S" />
     <node concept="3uibUv" id="o_" role="1zkMxy">
@@ -4663,7 +4662,7 @@
     </node>
   </node>
   <node concept="312cEu" id="qk">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout.Java.Manifest" />
     <property role="TrG5h" value="BuildLayout_JarManifest_Section_Constraints" />
     <node concept="3Tm1VV" id="ql" role="1B3o_S" />
     <node concept="3uibUv" id="qm" role="1zkMxy">
@@ -4901,7 +4900,7 @@
     </node>
   </node>
   <node concept="312cEu" id="rL">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Layout" />
     <property role="TrG5h" value="BuildLayout_NamedContainer_Constraints" />
     <node concept="3Tm1VV" id="rM" role="1B3o_S" />
     <node concept="3uibUv" id="rN" role="1zkMxy">
@@ -5108,7 +5107,7 @@
     </node>
   </node>
   <node concept="312cEu" id="t0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Dependencies" />
     <property role="TrG5h" value="BuildProjectDependency_Constraints" />
     <node concept="3Tm1VV" id="t1" role="1B3o_S" />
     <node concept="3uibUv" id="t2" role="1zkMxy">
@@ -5416,7 +5415,7 @@
     </node>
   </node>
   <node concept="312cEu" id="uM">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="SourcePath" />
     <property role="TrG5h" value="BuildSourceMacroRelativePath_Constraints" />
     <node concept="3Tm1VV" id="uN" role="1B3o_S" />
     <node concept="3uibUv" id="uO" role="1zkMxy">
@@ -5813,7 +5812,7 @@
     </node>
   </node>
   <node concept="312cEu" id="x6">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="SourcePath" />
     <property role="TrG5h" value="BuildSourcePath_Constraints" />
     <node concept="3Tm1VV" id="x7" role="1B3o_S" />
     <node concept="3uibUv" id="x8" role="1zkMxy">
@@ -5877,7 +5876,7 @@
     </node>
   </node>
   <node concept="312cEu" id="xu">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Java.Classpath" />
     <property role="TrG5h" value="BuildSource_JavaClassFolder_Constraints" />
     <node concept="3Tm1VV" id="xv" role="1B3o_S" />
     <node concept="3uibUv" id="xw" role="1zkMxy">
@@ -6121,7 +6120,7 @@
     </node>
   </node>
   <node concept="312cEu" id="yZ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Java.Dependencies" />
     <property role="TrG5h" value="BuildSource_JavaDependencyLibrary_Constraints" />
     <node concept="3Tm1VV" id="z0" role="1B3o_S" />
     <node concept="3uibUv" id="z1" role="1zkMxy">
@@ -6429,7 +6428,7 @@
     </node>
   </node>
   <node concept="312cEu" id="$L">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Java.Classpath" />
     <property role="TrG5h" value="BuildSource_JavaExternalJarFolderRef_Constraints" />
     <node concept="3Tm1VV" id="$M" role="1B3o_S" />
     <node concept="3uibUv" id="$N" role="1zkMxy">
@@ -6984,7 +6983,7 @@
     </node>
   </node>
   <node concept="312cEu" id="C8">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Java.Classpath" />
     <property role="TrG5h" value="BuildSource_JavaExternalJarRef_Constraints" />
     <node concept="3Tm1VV" id="C9" role="1B3o_S" />
     <node concept="3uibUv" id="Ca" role="1zkMxy">
@@ -7539,7 +7538,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Fv">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Java.Library" />
     <property role="TrG5h" value="BuildSource_JavaLibrary_Constraints" />
     <node concept="3Tm1VV" id="Fw" role="1B3o_S" />
     <node concept="3uibUv" id="Fx" role="1zkMxy">
@@ -7986,7 +7985,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Ic">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Java" />
     <property role="TrG5h" value="BuildSource_JavaModuleOptions_Constraints" />
     <node concept="3Tm1VV" id="Id" role="1B3o_S" />
     <node concept="3uibUv" id="Ie" role="1zkMxy">
@@ -8375,7 +8374,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Ku">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Java" />
     <property role="TrG5h" value="BuildSource_JavaModule_Constraints" />
     <node concept="3Tm1VV" id="Kv" role="1B3o_S" />
     <node concept="3uibUv" id="Kw" role="1zkMxy">
@@ -8822,7 +8821,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Nb">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Java" />
     <property role="TrG5h" value="BuildSource_JavaOptions_Constraints" />
     <node concept="3Tm1VV" id="Nc" role="1B3o_S" />
     <node concept="3uibUv" id="Nd" role="1zkMxy">
@@ -9283,7 +9282,7 @@
     </node>
   </node>
   <node concept="312cEu" id="PY">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Java.Sources" />
     <property role="TrG5h" value="BuildSource_JavaSources_Constraints" />
     <node concept="3Tm1VV" id="PZ" role="1B3o_S" />
     <node concept="3uibUv" id="Q0" role="1zkMxy">
@@ -9317,7 +9316,7 @@
     <node concept="2tJIrI" id="Q2" role="jymVt" />
   </node>
   <node concept="312cEu" id="Qc">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Names" />
     <property role="TrG5h" value="BuildStringPart_Constraints" />
     <node concept="3Tm1VV" id="Qd" role="1B3o_S" />
     <node concept="3uibUv" id="Qe" role="1zkMxy">
@@ -9351,7 +9350,7 @@
     <node concept="2tJIrI" id="Qg" role="jymVt" />
   </node>
   <node concept="312cEu" id="Qq">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Names" />
     <property role="TrG5h" value="BuildTextStringPart_Constraints" />
     <node concept="3Tm1VV" id="Qr" role="1B3o_S" />
     <node concept="3uibUv" id="Qs" role="1zkMxy">
@@ -9739,7 +9738,7 @@
     </node>
   </node>
   <node concept="312cEu" id="SK">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Names" />
     <property role="TrG5h" value="BuildVarRefStringPart_Constraints" />
     <node concept="3Tm1VV" id="SL" role="1B3o_S" />
     <node concept="3uibUv" id="SM" role="1zkMxy">
@@ -10047,7 +10046,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Uy">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Macro" />
     <property role="TrG5h" value="BuildVariableMacroInitValue_Constraints" />
     <node concept="3Tm1VV" id="Uz" role="1B3o_S" />
     <node concept="3uibUv" id="U$" role="1zkMxy">
@@ -10285,7 +10284,7 @@
     </node>
   </node>
   <node concept="312cEu" id="VZ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Macro" />
     <property role="TrG5h" value="BuildVariableMacroInitWithDate_Constraints" />
     <node concept="3Tm1VV" id="W0" role="1B3o_S" />
     <node concept="3uibUv" id="W1" role="1zkMxy">
@@ -10518,7 +10517,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Xp">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Macro" />
     <property role="TrG5h" value="BuildVariableMacro_Constraints" />
     <node concept="3Tm1VV" id="Xq" role="1B3o_S" />
     <node concept="3uibUv" id="Xr" role="1zkMxy">

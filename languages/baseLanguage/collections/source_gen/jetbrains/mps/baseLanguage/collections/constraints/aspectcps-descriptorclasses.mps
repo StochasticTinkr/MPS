@@ -272,7 +272,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="AllConstant_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -664,7 +663,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2t">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="customContainers" />
     <property role="TrG5h" value="CustomContainerCreator_Constraints" />
     <node concept="3Tm1VV" id="2u" role="1B3o_S" />
     <node concept="3uibUv" id="2v" role="1zkMxy">
@@ -1051,7 +1050,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4M">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="customContainers" />
     <property role="TrG5h" value="CustomContainerDeclaration_Constraints" />
     <node concept="3Tm1VV" id="4N" role="1B3o_S" />
     <node concept="3uibUv" id="4O" role="1zkMxy">
@@ -1360,7 +1359,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6E">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="mapType" />
     <property role="TrG5h" value="CustomMapCreator_Constraints" />
     <node concept="3Tm1VV" id="6F" role="1B3o_S" />
     <node concept="3uibUv" id="6G" role="1zkMxy">
@@ -1713,7 +1712,7 @@
     </node>
   </node>
   <node concept="312cEu" id="8J">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="foreach" />
     <property role="TrG5h" value="ForEachVariableReference_Constraints" />
     <node concept="3Tm1VV" id="8K" role="1B3o_S" />
     <node concept="3uibUv" id="8L" role="1zkMxy">
@@ -2022,7 +2021,7 @@
   </node>
   <node concept="39dXUE" id="ax" />
   <node concept="312cEu" id="ay">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="foreach" />
     <property role="TrG5h" value="MultiForEachVariableReference_Constraints" />
     <node concept="3Tm1VV" id="az" role="1B3o_S" />
     <node concept="3uibUv" id="a$" role="1zkMxy">
@@ -2330,7 +2329,6 @@
     </node>
   </node>
   <node concept="312cEu" id="ck">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="SmartClosureParameterDeclaration_Constraints" />
     <node concept="3Tm1VV" id="cl" role="1B3o_S" />
     <node concept="3uibUv" id="cm" role="1zkMxy">

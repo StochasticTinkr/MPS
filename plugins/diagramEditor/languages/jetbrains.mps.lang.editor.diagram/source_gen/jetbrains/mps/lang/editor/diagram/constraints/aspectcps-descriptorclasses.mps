@@ -242,7 +242,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CellModel_DiagramConnector_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -276,7 +275,6 @@
     <node concept="2tJIrI" id="4" role="jymVt" />
   </node>
   <node concept="312cEu" id="e">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CellModel_Diagram_Constraints" />
     <node concept="3Tm1VV" id="f" role="1B3o_S" />
     <node concept="3uibUv" id="g" role="1zkMxy">
@@ -464,7 +462,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1s">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Palette" />
     <property role="TrG5h" value="CreationActionReference_Constraints" />
     <node concept="3Tm1VV" id="1t" role="1B3o_S" />
     <node concept="3uibUv" id="1u" role="1zkMxy">
@@ -867,7 +865,6 @@
     </node>
   </node>
   <node concept="312cEu" id="3U">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="FigureParameterMapping_Constraints" />
     <node concept="3Tm1VV" id="3V" role="1B3o_S" />
     <node concept="3uibUv" id="3W" role="1zkMxy">
@@ -1106,7 +1103,6 @@
   </node>
   <node concept="39dXUE" id="5n" />
   <node concept="312cEu" id="5o">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="LinkArgument_Constraints" />
     <node concept="3Tm1VV" id="5p" role="1B3o_S" />
     <node concept="3uibUv" id="5q" role="1zkMxy">
@@ -1414,7 +1410,6 @@
     </node>
   </node>
   <node concept="312cEu" id="7a">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="PropertyArgument_Constraints" />
     <node concept="3Tm1VV" id="7b" role="1B3o_S" />
     <node concept="3uibUv" id="7c" role="1zkMxy">
@@ -1722,7 +1717,6 @@
     </node>
   </node>
   <node concept="312cEu" id="8W">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ThisEditorNodeExpression_Constraints" />
     <node concept="3Tm1VV" id="8X" role="1B3o_S" />
     <node concept="3uibUv" id="8Y" role="1zkMxy">

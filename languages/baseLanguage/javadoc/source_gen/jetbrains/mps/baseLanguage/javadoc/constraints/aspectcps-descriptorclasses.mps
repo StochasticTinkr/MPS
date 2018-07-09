@@ -254,7 +254,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="ClassifierDocReference_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -769,7 +769,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3a">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="tag" />
     <property role="TrG5h" value="DeprecatedBlockDocTag_Constraints" />
     <node concept="3Tm1VV" id="3b" role="1B3o_S" />
     <node concept="3uibUv" id="3c" role="1zkMxy">
@@ -1047,7 +1047,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4S">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="DocMethodParameterReference_Constraints" />
     <node concept="3Tm1VV" id="4T" role="1B3o_S" />
     <node concept="3uibUv" id="4U" role="1zkMxy">
@@ -1327,7 +1327,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6v">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="DocTypeParameterReference_Constraints" />
     <node concept="3Tm1VV" id="6w" role="1B3o_S" />
     <node concept="3uibUv" id="6x" role="1zkMxy">
@@ -1607,7 +1607,7 @@
     </node>
   </node>
   <node concept="312cEu" id="86">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="FieldDocReference_Constraints" />
     <node concept="3Tm1VV" id="87" role="1B3o_S" />
     <node concept="3uibUv" id="88" role="1zkMxy">
@@ -1909,7 +1909,7 @@
   </node>
   <node concept="39dXUE" id="9S" />
   <node concept="312cEu" id="9T">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="MethodDocReference_Constraints" />
     <node concept="3Tm1VV" id="9U" role="1B3o_S" />
     <node concept="3uibUv" id="9V" role="1zkMxy">
@@ -2227,7 +2227,7 @@
     </node>
   </node>
   <node concept="312cEu" id="bM">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="tag" />
     <property role="TrG5h" value="ParameterBlockDocTag_Constraints" />
     <node concept="3Tm1VV" id="bN" role="1B3o_S" />
     <node concept="3uibUv" id="bO" role="1zkMxy">
@@ -2477,7 +2477,7 @@
     </node>
   </node>
   <node concept="312cEu" id="dk">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="tag" />
     <property role="TrG5h" value="ReturnBlockDocTag_Constraints" />
     <node concept="3Tm1VV" id="dl" role="1B3o_S" />
     <node concept="3uibUv" id="dm" role="1zkMxy">
@@ -2833,7 +2833,7 @@
     </node>
   </node>
   <node concept="312cEu" id="f$">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="StaticFieldDocReference_Constraints" />
     <node concept="3Tm1VV" id="f_" role="1B3o_S" />
     <node concept="3uibUv" id="fA" role="1zkMxy">
@@ -3134,7 +3134,7 @@
     </node>
   </node>
   <node concept="312cEu" id="hm">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="tag" />
     <property role="TrG5h" value="ThrowsBlockDocTag_Constraints" />
     <node concept="3Tm1VV" id="hn" role="1B3o_S" />
     <node concept="3uibUv" id="ho" role="1zkMxy">
@@ -3372,7 +3372,7 @@
     </node>
   </node>
   <node concept="312cEu" id="iN">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="tag" />
     <property role="TrG5h" value="ValueInlineDocTag_Constraints" />
     <node concept="3Tm1VV" id="iO" role="1B3o_S" />
     <node concept="3uibUv" id="iP" role="1zkMxy">

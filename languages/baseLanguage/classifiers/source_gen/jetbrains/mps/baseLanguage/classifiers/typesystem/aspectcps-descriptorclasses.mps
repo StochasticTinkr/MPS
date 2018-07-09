@@ -231,7 +231,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Types" />
     <property role="TrG5h" value="BaseClassifierType_subtypeOf_Object_SubtypingRule" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="a" role="3clF47" />
@@ -1111,7 +1111,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4Q">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Fields" />
     <property role="TrG5h" value="check_DefaultClassifierFieldDeclaration_NonTypesystemRule" />
     <node concept="3clFbW" id="4R" role="jymVt">
       <node concept="3clFbS" id="4Z" role="3clF47" />
@@ -1218,7 +1218,6 @@
     <node concept="3Tm1VV" id="4Y" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="5B">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_IMemberOperation_NonTypesystemRule" />
     <node concept="3clFbW" id="5C" role="jymVt">
       <node concept="3clFbS" id="5K" role="3clF47" />
@@ -1490,7 +1489,7 @@
     <node concept="3Tm1VV" id="5J" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7p">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Fields" />
     <property role="TrG5h" value="typeof_DefaultClassifierFieldAccessOperation_InferenceRule" />
     <node concept="3clFbW" id="7q" role="jymVt">
       <node concept="3clFbS" id="7y" role="3clF47" />
@@ -1716,7 +1715,7 @@
     <node concept="3Tm1VV" id="7x" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="8Q">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Methods" />
     <property role="TrG5h" value="typeof_DefaultMethodCallOperation_InferenceRule" />
     <node concept="3clFbW" id="8R" role="jymVt">
       <node concept="3clFbS" id="8Z" role="3clF47" />
@@ -2185,7 +2184,6 @@
     <node concept="3Tm1VV" id="8Y" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="bL">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_SuperClassifierExpresson_InferenceRule" />
     <node concept="3clFbW" id="bM" role="jymVt">
       <node concept="3clFbS" id="bU" role="3clF47" />
@@ -2492,7 +2490,6 @@
     <node concept="3Tm1VV" id="bT" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="dI">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ThisClassifierExpresson_InferenceRule" />
     <node concept="3clFbW" id="dJ" role="jymVt">
       <node concept="3clFbS" id="dR" role="3clF47" />

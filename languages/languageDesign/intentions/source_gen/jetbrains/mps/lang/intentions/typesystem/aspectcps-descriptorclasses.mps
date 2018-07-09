@@ -623,7 +623,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2e">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="old" />
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_childNode_InferenceRule" />
     <node concept="3clFbW" id="2f" role="jymVt">
       <node concept="3clFbS" id="2n" role="3clF47" />
@@ -839,7 +839,7 @@
     <node concept="3Tm1VV" id="2m" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3C">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="old" />
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_node_InferenceRule" />
     <node concept="3clFbW" id="3D" role="jymVt">
       <node concept="3clFbS" id="3L" role="3clF47" />
@@ -1088,7 +1088,6 @@
     <node concept="3Tm1VV" id="3K" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="5e">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_parameter_InferenceRule" />
     <node concept="3clFbW" id="5f" role="jymVt">
       <node concept="3clFbS" id="5n" role="3clF47" />
@@ -1334,7 +1333,7 @@
     <node concept="3Tm1VV" id="5m" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6N">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="new.parameter" />
     <property role="TrG5h" value="typeof_ForConceptParameterDeclaration_InferenceRule" />
     <node concept="3clFbW" id="6O" role="jymVt">
       <node concept="3clFbS" id="6W" role="3clF47" />

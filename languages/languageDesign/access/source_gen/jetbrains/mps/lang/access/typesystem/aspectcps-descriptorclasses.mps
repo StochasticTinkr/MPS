@@ -652,7 +652,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2e">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Command" />
     <property role="TrG5h" value="check_BaseExecuteCommandStatement_NonTypesystemRule" />
     <node concept="3clFbW" id="2f" role="jymVt">
       <node concept="3clFbS" id="2n" role="3clF47" />
@@ -831,7 +831,6 @@
     <node concept="3Tm1VV" id="2m" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3r">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_CommandClosureLiteral_NonTypesystemRule" />
     <node concept="3clFbW" id="3s" role="jymVt">
       <node concept="3clFbS" id="3$" role="3clF47" />
@@ -1037,7 +1036,7 @@
     <node concept="3Tm1VV" id="3z" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="4N">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Command" />
     <property role="TrG5h" value="typeof_BaseExecuteCommandStatement_InferenceRule" />
     <node concept="3clFbW" id="4O" role="jymVt">
       <node concept="3clFbS" id="4W" role="3clF47" />
@@ -1272,7 +1271,7 @@
     <node concept="3Tm1VV" id="4V" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6j">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Command" />
     <property role="TrG5h" value="typeof_ExecuteCommandInEDTStatement_InferenceRule" />
     <node concept="3clFbW" id="6k" role="jymVt">
       <node concept="3clFbS" id="6s" role="3clF47" />

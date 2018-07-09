@@ -264,7 +264,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="custom-presentation" />
     <property role="TrG5h" value="ComponentUsage_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -799,7 +799,7 @@
   </node>
   <node concept="39dXUE" id="3l" />
   <node concept="312cEu" id="3m">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="dotexpression" />
     <property role="TrG5h" value="OperationOnAddress_Constraints" />
     <node concept="3Tm1VV" id="3n" role="1B3o_S" />
     <node concept="3uibUv" id="3o" role="1zkMxy">
@@ -1064,7 +1064,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4Z">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="declaration-references.hierarchicalScope" />
     <property role="TrG5h" value="Participant_Constraints" />
     <node concept="3Tm1VV" id="50" role="1B3o_S" />
     <node concept="3uibUv" id="51" role="1zkMxy">
@@ -1521,7 +1521,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7L">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="declaration-references" />
     <property role="TrG5h" value="Performance_Constraints" />
     <node concept="3Tm1VV" id="7M" role="1B3o_S" />
     <node concept="3uibUv" id="7N" role="1zkMxy">
@@ -1827,7 +1827,7 @@
     </node>
   </node>
   <node concept="312cEu" id="9$">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="declaration-references" />
     <property role="TrG5h" value="Singer_Constraints" />
     <node concept="3Tm1VV" id="9_" role="1B3o_S" />
     <node concept="3uibUv" id="9A" role="1zkMxy">

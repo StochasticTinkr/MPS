@@ -198,6 +198,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -215,6 +218,7 @@
   </registry>
   <node concept="312cEu" id="0">
     <property role="TrG5h" value="AbstractPointerResolveOperation_DataFlow" />
+    <property role="3GE5qa" value="operation" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -413,6 +417,7 @@
   </node>
   <node concept="312cEu" id="18">
     <property role="TrG5h" value="AttributeAccess_DataFlow" />
+    <property role="3GE5qa" value="attributes" />
     <node concept="3Tm1VV" id="19" role="1B3o_S" />
     <node concept="3uibUv" id="1a" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -486,6 +491,7 @@
   </node>
   <node concept="312cEu" id="1z">
     <property role="TrG5h" value="ConceptSwitchStatement_DataFlow" />
+    <property role="3GE5qa" value="conceptSwitch" />
     <node concept="3Tm1VV" id="1$" role="1B3o_S" />
     <node concept="3uibUv" id="1_" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -886,6 +892,7 @@
   </node>
   <node concept="312cEu" id="3P">
     <property role="TrG5h" value="Concept_IsSubConceptOfOperation_DataFlow" />
+    <property role="3GE5qa" value="operation.concept" />
     <node concept="3Tm1VV" id="3Q" role="1B3o_S" />
     <node concept="3uibUv" id="3R" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -959,6 +966,7 @@
   </node>
   <node concept="312cEu" id="4g">
     <property role="TrG5h" value="Concept_IsSuperConceptOfOperation_DataFlow" />
+    <property role="3GE5qa" value="operation.concept" />
     <node concept="3Tm1VV" id="4h" role="1B3o_S" />
     <node concept="3uibUv" id="4i" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1779,6 +1787,7 @@
   </node>
   <node concept="312cEu" id="8P">
     <property role="TrG5h" value="ExactConceptCase_DataFlow" />
+    <property role="3GE5qa" value="conceptSwitch" />
     <node concept="3Tm1VV" id="8Q" role="1B3o_S" />
     <node concept="3uibUv" id="8R" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2206,6 +2215,7 @@
   </node>
   <node concept="312cEu" id="be">
     <property role="TrG5h" value="LinkAttributeQualifier_DataFlow" />
+    <property role="3GE5qa" value="attributes" />
     <node concept="3Tm1VV" id="bf" role="1B3o_S" />
     <node concept="3uibUv" id="bg" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2279,6 +2289,7 @@
   </node>
   <node concept="312cEu" id="bD">
     <property role="TrG5h" value="ModelReferenceExpression_DataFlow" />
+    <property role="3GE5qa" value="reference.model" />
     <node concept="3Tm1VV" id="bE" role="1B3o_S" />
     <node concept="3uibUv" id="bF" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2393,6 +2404,7 @@
   </node>
   <node concept="312cEu" id="cj">
     <property role="TrG5h" value="Node_IsInstanceOfOperation_DataFlow" />
+    <property role="3GE5qa" value="operation.node" />
     <node concept="3Tm1VV" id="ck" role="1B3o_S" />
     <node concept="3uibUv" id="cl" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2466,6 +2478,7 @@
   </node>
   <node concept="312cEu" id="cI">
     <property role="TrG5h" value="OfConceptOperation_DataFlow" />
+    <property role="3GE5qa" value="sequence" />
     <node concept="3Tm1VV" id="cJ" role="1B3o_S" />
     <node concept="3uibUv" id="cK" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2539,6 +2552,7 @@
   </node>
   <node concept="312cEu" id="d9">
     <property role="TrG5h" value="OperationParm_Concept_DataFlow" />
+    <property role="3GE5qa" value="operation.parameter" />
     <node concept="3Tm1VV" id="da" role="1B3o_S" />
     <node concept="3uibUv" id="db" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2612,6 +2626,7 @@
   </node>
   <node concept="312cEu" id="d$">
     <property role="TrG5h" value="PoundExpression_DataFlow" />
+    <property role="3GE5qa" value="operation.parameter" />
     <node concept="3Tm1VV" id="d_" role="1B3o_S" />
     <node concept="3uibUv" id="dA" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2685,6 +2700,7 @@
   </node>
   <node concept="312cEu" id="dZ">
     <property role="TrG5h" value="PropertyAttributeQualifier_DataFlow" />
+    <property role="3GE5qa" value="attributes" />
     <node concept="3Tm1VV" id="e0" role="1B3o_S" />
     <node concept="3uibUv" id="e1" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2758,6 +2774,7 @@
   </node>
   <node concept="312cEu" id="eq">
     <property role="TrG5h" value="SNodeOperation_DataFlow" />
+    <property role="3GE5qa" value="operation" />
     <node concept="3Tm1VV" id="er" role="1B3o_S" />
     <node concept="3uibUv" id="es" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2895,6 +2912,7 @@
   </node>
   <node concept="312cEu" id="fe">
     <property role="TrG5h" value="SubconceptCase_DataFlow" />
+    <property role="3GE5qa" value="conceptSwitch" />
     <node concept="3Tm1VV" id="ff" role="1B3o_S" />
     <node concept="3uibUv" id="fg" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />

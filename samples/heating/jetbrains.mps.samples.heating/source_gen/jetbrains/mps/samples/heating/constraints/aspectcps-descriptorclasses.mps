@@ -231,7 +231,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="Applicability_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -265,7 +264,6 @@
     <node concept="2tJIrI" id="4" role="jymVt" />
   </node>
   <node concept="312cEu" id="e">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ChangeEvent_Constraints" />
     <node concept="3Tm1VV" id="f" role="1B3o_S" />
     <node concept="3uibUv" id="g" role="1zkMxy">
@@ -614,7 +612,6 @@
     </node>
   </node>
   <node concept="312cEu" id="2o">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="DailyPlanReference_Constraints" />
     <node concept="3Tm1VV" id="2p" role="1B3o_S" />
     <node concept="3uibUv" id="2q" role="1zkMxy">
@@ -955,7 +952,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4q">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="DailyPlan_Constraints" />
     <node concept="3Tm1VV" id="4r" role="1B3o_S" />
     <node concept="3uibUv" id="4s" role="1zkMxy">
@@ -1162,7 +1158,6 @@
   </node>
   <node concept="39dXUE" id="5C" />
   <node concept="312cEu" id="5D">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="Slot_Constraints" />
     <node concept="3Tm1VV" id="5E" role="1B3o_S" />
     <node concept="3uibUv" id="5F" role="1zkMxy">

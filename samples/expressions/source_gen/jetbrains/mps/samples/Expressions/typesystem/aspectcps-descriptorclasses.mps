@@ -1505,7 +1505,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5F">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="type" />
     <property role="TrG5h" value="SimpleMathBoolean_subtypeOf_Element_SubtypingRule" />
     <node concept="3clFbW" id="5G" role="jymVt">
       <node concept="3clFbS" id="5O" role="3clF47" />
@@ -1622,7 +1622,7 @@
     <node concept="3Tm1VV" id="5N" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6w">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="type" />
     <property role="TrG5h" value="SimpleMathFloatType_subtypeOf_Number_SubtypingRule" />
     <node concept="3clFbW" id="6x" role="jymVt">
       <node concept="3clFbS" id="6E" role="3clF47" />
@@ -1749,7 +1749,7 @@
     <node concept="3Tm1VV" id="6D" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7q">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="type" />
     <property role="TrG5h" value="SimpleMathIntegerType_subtypeOf_Long_SubtypingRule" />
     <node concept="3clFbW" id="7r" role="jymVt">
       <node concept="3clFbS" id="7$" role="3clF47" />
@@ -1876,7 +1876,7 @@
     <node concept="3Tm1VV" id="7z" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="8k">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="type" />
     <property role="TrG5h" value="SimpleMathIntegerType_subtypeOf_Number_SubtypingRule" />
     <node concept="3clFbW" id="8l" role="jymVt">
       <node concept="3clFbS" id="8t" role="3clF47" />
@@ -1993,7 +1993,7 @@
     <node concept="3Tm1VV" id="8s" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="99">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="type" />
     <property role="TrG5h" value="SimpleMathLongType_subtypeOf_Float_SubtypingRule" />
     <node concept="3clFbW" id="9a" role="jymVt">
       <node concept="3clFbS" id="9j" role="3clF47" />
@@ -2120,7 +2120,7 @@
     <node concept="3Tm1VV" id="9i" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="a3">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="type" />
     <property role="TrG5h" value="SimpleMathNumberType_subtypeOf_Element_SubtypingRule" />
     <node concept="3clFbW" id="a4" role="jymVt">
       <node concept="3clFbS" id="ad" role="3clF47" />
@@ -4015,7 +4015,6 @@
     </node>
   </node>
   <node concept="312cEu" id="n0">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ArithmeticSimpleMathExpression_InferenceRule" />
     <node concept="3clFbW" id="n1" role="jymVt">
       <node concept="3clFbS" id="n9" role="3clF47" />
@@ -5028,7 +5027,6 @@
     <node concept="3Tm1VV" id="n8" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="t7">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_LogicalSimpleMathExpression_InferenceRule" />
     <node concept="3clFbW" id="t8" role="jymVt">
       <node concept="3clFbS" id="tg" role="3clF47" />
@@ -5480,7 +5478,6 @@
     <node concept="3Tm1VV" id="tf" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="vT">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_NotSimpleMathExpression_InferenceRule" />
     <node concept="3clFbW" id="vU" role="jymVt">
       <node concept="3clFbS" id="w2" role="3clF47" />
@@ -5813,7 +5810,6 @@
     <node concept="3Tm1VV" id="w1" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="xY">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_SimpleMathAssignment_InferenceRule" />
     <node concept="3clFbW" id="xZ" role="jymVt">
       <node concept="3clFbS" id="y7" role="3clF47" />
@@ -6324,7 +6320,7 @@
     <node concept="3Tm1VV" id="y6" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="_4">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="constant" />
     <property role="TrG5h" value="typeof_SimpleMathBooleanConstant_InferenceRule" />
     <node concept="3clFbW" id="_5" role="jymVt">
       <node concept="3clFbS" id="_d" role="3clF47" />
@@ -6542,7 +6538,7 @@
     <node concept="3Tm1VV" id="_c" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Au">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="constant" />
     <property role="TrG5h" value="typeof_SimpleMathFloatConstant_InferenceRule" />
     <node concept="3clFbW" id="Av" role="jymVt">
       <node concept="3clFbS" id="AB" role="3clF47" />
@@ -6760,7 +6756,7 @@
     <node concept="3Tm1VV" id="AA" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="BS">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="constant" />
     <property role="TrG5h" value="typeof_SimpleMathIntegerConstant_InferenceRule" />
     <node concept="3clFbW" id="BT" role="jymVt">
       <node concept="3clFbS" id="C1" role="3clF47" />
@@ -6978,7 +6974,7 @@
     <node concept="3Tm1VV" id="C0" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Di">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="constant" />
     <property role="TrG5h" value="typeof_SimpleMathLongConstant_InferenceRule" />
     <node concept="3clFbW" id="Dj" role="jymVt">
       <node concept="3clFbS" id="Dr" role="3clF47" />
@@ -7196,7 +7192,6 @@
     <node concept="3Tm1VV" id="Dq" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="EG">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_SimpleMathTypedVarDeclaration_InferenceRule" />
     <node concept="3clFbW" id="EH" role="jymVt">
       <node concept="3clFbS" id="EP" role="3clF47" />
@@ -7417,7 +7412,6 @@
     <node concept="3Tm1VV" id="EO" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="G7">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_SimpleMathVarDeclaration_InferenceRule" />
     <node concept="3clFbW" id="G8" role="jymVt">
       <node concept="3clFbS" id="Gg" role="3clF47" />
@@ -7668,7 +7662,6 @@
     <node concept="3Tm1VV" id="Gf" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="HG">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_SimpleMathVarReference_InferenceRule" />
     <node concept="3clFbW" id="HH" role="jymVt">
       <node concept="3clFbS" id="HP" role="3clF47" />
@@ -7913,7 +7906,6 @@
     <node concept="3Tm1VV" id="HO" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Jf">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_UnarySimpleMathExpression_InferenceRule" />
     <node concept="3clFbW" id="Jg" role="jymVt">
       <node concept="3clFbS" id="Jo" role="3clF47" />

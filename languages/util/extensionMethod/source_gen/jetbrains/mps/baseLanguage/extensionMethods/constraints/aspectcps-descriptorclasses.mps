@@ -446,7 +446,6 @@
     </node>
   </node>
   <node concept="312cEu" id="U">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ExtensionMethodCall_Constraints" />
     <node concept="3Tm1VV" id="V" role="1B3o_S" />
     <node concept="3uibUv" id="W" role="1zkMxy">
@@ -1010,7 +1009,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4m">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ExtensionMethodDeclaration_Constraints" />
     <node concept="3Tm1VV" id="4n" role="1B3o_S" />
     <node concept="3uibUv" id="4o" role="1zkMxy">
@@ -1287,7 +1285,6 @@
     </node>
   </node>
   <node concept="312cEu" id="63">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ExtensionStaticFieldReference_Constraints" />
     <node concept="3Tm1VV" id="64" role="1B3o_S" />
     <node concept="3uibUv" id="65" role="1zkMxy">
@@ -1579,7 +1576,6 @@
   </node>
   <node concept="39dXUE" id="7I" />
   <node concept="312cEu" id="7J">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="LocalExtendedMethodCall_Constraints" />
     <node concept="3Tm1VV" id="7K" role="1B3o_S" />
     <node concept="3uibUv" id="7L" role="1zkMxy">
@@ -2328,7 +2324,6 @@
     </node>
   </node>
   <node concept="312cEu" id="cm">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ThisExtensionExpression_Constraints" />
     <node concept="3Tm1VV" id="cn" role="1B3o_S" />
     <node concept="3uibUv" id="co" role="1zkMxy">
@@ -2572,7 +2567,7 @@
     </node>
   </node>
   <node concept="312cEu" id="dR">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="topLevel" />
     <property role="TrG5h" value="TypeExtension_Constraints" />
     <node concept="3Tm1VV" id="dS" role="1B3o_S" />
     <node concept="3uibUv" id="dT" role="1zkMxy">

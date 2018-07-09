@@ -717,7 +717,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2I">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="conceptFunctionParameters" />
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_nodeToCopyPreProcessOriginal_InferenceRule" />
     <node concept="3clFbW" id="2J" role="jymVt">
       <node concept="3clFbS" id="2R" role="3clF47" />
@@ -951,7 +951,7 @@
     <node concept="3Tm1VV" id="2Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="4e">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="conceptFunctionParameters" />
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_nodeToCopyPreProcess_InferenceRule" />
     <node concept="3clFbW" id="4f" role="jymVt">
       <node concept="3clFbS" id="4n" role="3clF47" />
@@ -1185,7 +1185,7 @@
     <node concept="3Tm1VV" id="4m" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="5I">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="conceptFunctionParameters" />
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_nodeToPastePostProcess_InferenceRule" />
     <node concept="3clFbW" id="5J" role="jymVt">
       <node concept="3clFbS" id="5R" role="3clF47" />
@@ -1419,7 +1419,7 @@
     <node concept="3Tm1VV" id="5Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7e">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="conceptFunctionParameters" />
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_nodeToPasteWrap_InferenceRule" />
     <node concept="3clFbW" id="7f" role="jymVt">
       <node concept="3clFbS" id="7n" role="3clF47" />
@@ -1653,7 +1653,6 @@
     <node concept="3Tm1VV" id="7m" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="8I">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_NodeSetupFunction_NewNode_InferenceRule" />
     <node concept="3clFbW" id="8J" role="jymVt">
       <node concept="3clFbS" id="8R" role="3clF47" />

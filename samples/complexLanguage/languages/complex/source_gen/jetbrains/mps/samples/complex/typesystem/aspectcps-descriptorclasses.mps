@@ -181,7 +181,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -195,7 +194,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="Complex_is_Numeric_SubtypingRule" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="9" role="3clF47" />
@@ -315,7 +313,6 @@
     <node concept="3Tm1VV" id="8" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Q">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="Complex_is_Object_weak_SubtypingRule" />
     <node concept="3clFbW" id="R" role="jymVt">
       <node concept="3clFbS" id="Z" role="3clF47" />
@@ -1519,7 +1516,6 @@
     </node>
   </node>
   <node concept="312cEu" id="7o">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="subtype_ComplexType_SubtypingRule" />
     <node concept="3clFbW" id="7p" role="jymVt">
       <node concept="3clFbS" id="7x" role="3clF47" />
@@ -1632,7 +1628,6 @@
     <node concept="3Tm1VV" id="7w" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="8c">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_AbsExpression_InferenceRule" />
     <node concept="3clFbW" id="8d" role="jymVt">
       <node concept="3clFbS" id="8l" role="3clF47" />
@@ -1848,7 +1843,6 @@
     <node concept="3Tm1VV" id="8k" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9A">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ArgExpression_InferenceRule" />
     <node concept="3clFbW" id="9B" role="jymVt">
       <node concept="3clFbS" id="9J" role="3clF47" />
@@ -2064,7 +2058,6 @@
     <node concept="3Tm1VV" id="9I" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="b0">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ComplexExpression_InferenceRule" />
     <node concept="3clFbW" id="b1" role="jymVt">
       <node concept="3clFbS" id="b9" role="3clF47" />
@@ -2291,7 +2284,6 @@
     <node concept="3Tm1VV" id="b8" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="cu">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ConjugateComplexExpression_InferenceRule" />
     <node concept="3clFbW" id="cv" role="jymVt">
       <node concept="3clFbS" id="cB" role="3clF47" />
@@ -2507,7 +2499,6 @@
     <node concept="3Tm1VV" id="cA" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="dS">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_DegreeComplexExpression_InferenceRule" />
     <node concept="3clFbW" id="dT" role="jymVt">
       <node concept="3clFbS" id="e1" role="3clF47" />
@@ -2836,7 +2827,6 @@
     <node concept="3Tm1VV" id="e0" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fX">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ImExpression_InferenceRule" />
     <node concept="3clFbW" id="fY" role="jymVt">
       <node concept="3clFbS" id="g6" role="3clF47" />
@@ -3052,7 +3042,6 @@
     <node concept="3Tm1VV" id="g5" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="hn">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ImaginaryUnit_InferenceRule" />
     <node concept="3clFbW" id="ho" role="jymVt">
       <node concept="3clFbS" id="hw" role="3clF47" />
@@ -3268,7 +3257,6 @@
     <node concept="3Tm1VV" id="hv" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="iL">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ReExpression_InferenceRule" />
     <node concept="3clFbW" id="iM" role="jymVt">
       <node concept="3clFbS" id="iU" role="3clF47" />

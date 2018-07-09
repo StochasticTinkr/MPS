@@ -212,7 +212,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -977,7 +976,6 @@
     <node concept="3Tm1VV" id="3h" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="4a">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_ExternalViewFigureParameter_NonTypesystemRule" />
     <node concept="3clFbW" id="4b" role="jymVt">
       <node concept="3clFbS" id="4j" role="3clF47" />
@@ -1162,7 +1160,6 @@
     <node concept="3Tm1VV" id="4i" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="5o">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_FigureParameterAttributeField_NonTypesystemRule" />
     <node concept="3clFbW" id="5p" role="jymVt">
       <node concept="3clFbS" id="5x" role="3clF47" />
@@ -1347,7 +1344,6 @@
     <node concept="3Tm1VV" id="5w" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6A">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_FigureParameterAttributeMethod_NonTypesystemRule" />
     <node concept="3clFbW" id="6B" role="jymVt">
       <node concept="3clFbS" id="6J" role="3clF47" />
@@ -1532,7 +1528,6 @@
     <node concept="3Tm1VV" id="6I" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7O">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_FigureParameterAttributeViewProperty_NonTypesystemRule" />
     <node concept="3clFbW" id="7P" role="jymVt">
       <node concept="3clFbS" id="7X" role="3clF47" />
@@ -1717,7 +1712,6 @@
     <node concept="3Tm1VV" id="7W" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="92">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_FigureParameterAttribute_NonTypesystemRule" />
     <node concept="3clFbW" id="93" role="jymVt">
       <node concept="3clFbS" id="9b" role="3clF47" />
@@ -1912,7 +1906,6 @@
     <node concept="3Tm1VV" id="9a" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="al">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_FigureParameter_InferenceRule" />
     <node concept="3clFbW" id="am" role="jymVt">
       <node concept="3clFbS" id="au" role="3clF47" />

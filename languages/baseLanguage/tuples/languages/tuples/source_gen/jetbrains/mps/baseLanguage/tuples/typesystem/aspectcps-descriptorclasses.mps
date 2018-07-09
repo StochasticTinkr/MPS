@@ -1561,7 +1561,7 @@
     </node>
   </node>
   <node concept="312cEu" id="58">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtype" />
     <property role="TrG5h" value="NamedTuple_subtypeOf_extended_SubtypingRule" />
     <node concept="3clFbW" id="59" role="jymVt">
       <node concept="3clFbS" id="5h" role="3clF47" />
@@ -1733,7 +1733,7 @@
     <node concept="3Tm1VV" id="5g" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6m">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtype" />
     <property role="TrG5h" value="NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule" />
     <node concept="3clFbW" id="6n" role="jymVt">
       <node concept="3clFbS" id="6v" role="3clF47" />
@@ -1929,7 +1929,7 @@
     <node concept="3Tm1VV" id="6u" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7G">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtype" />
     <property role="TrG5h" value="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule" />
     <node concept="3clFbW" id="7H" role="jymVt">
       <node concept="3clFbS" id="7P" role="3clF47" />
@@ -2788,7 +2788,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ds">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="checks" />
     <property role="TrG5h" value="check_NamedTupleDeclaration_extends_NonTypesystemRule" />
     <node concept="3clFbW" id="dt" role="jymVt">
       <node concept="3clFbS" id="d_" role="3clF47" />
@@ -3159,7 +3159,7 @@
     <node concept="3Tm1VV" id="d$" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fS">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="checks" />
     <property role="TrG5h" value="check_NamedTupleType_NonTypesystemRule" />
     <node concept="3clFbW" id="fT" role="jymVt">
       <node concept="3clFbS" id="g1" role="3clF47" />
@@ -3367,7 +3367,7 @@
     <node concept="3Tm1VV" id="g0" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="hi">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="checks" />
     <property role="TrG5h" value="check_TupleComponentIsInScope_NonTypesystemRule" />
     <node concept="3clFbW" id="hj" role="jymVt">
       <node concept="3clFbS" id="hr" role="3clF47" />
@@ -3626,7 +3626,6 @@
     <node concept="3Tm1VV" id="hq" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="j0">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
     <property role="TrG5h" value="comparable_IndexedTupleType_Object_ComparisonRule" />
     <node concept="3clFbW" id="j1" role="jymVt">
       <node concept="3cqZAl" id="jb" role="3clF45" />
@@ -3800,7 +3799,6 @@
     </node>
   </node>
   <node concept="312cEu" id="kh">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
     <property role="TrG5h" value="comparable_NamedTupleType_Object_ComparisonRule" />
     <node concept="3clFbW" id="ki" role="jymVt">
       <node concept="3cqZAl" id="ks" role="3clF45" />
@@ -3974,7 +3972,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ly">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtype" />
     <property role="TrG5h" value="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule" />
     <node concept="3clFbW" id="lz" role="jymVt">
       <node concept="3clFbS" id="lF" role="3clF47" />
@@ -4348,7 +4346,6 @@
     <node concept="3Tm1VV" id="lE" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ob">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
     <property role="TrG5h" value="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule" />
     <node concept="3clFbW" id="oc" role="jymVt">
       <node concept="3clFbS" id="on" role="3clF47" />
@@ -4959,7 +4956,6 @@
     </node>
   </node>
   <node concept="312cEu" id="s8">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="namedTupleDeclaration_ClassifierType_subtypeOf_namedTupleType_SubtypingRule" />
     <node concept="3clFbW" id="s9" role="jymVt">
       <node concept="3clFbS" id="sh" role="3clF47" />
@@ -5114,7 +5110,7 @@
     <node concept="3Tm1VV" id="sg" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="td">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtype" />
     <property role="TrG5h" value="namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule" />
     <node concept="3clFbW" id="te" role="jymVt">
       <node concept="3clFbS" id="tm" role="3clF47" />
@@ -5256,7 +5252,6 @@
     <node concept="3Tm1VV" id="tl" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="uc">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
     <property role="TrG5h" value="namedTuple_assignableTo_namedTuple_InequationReplacementRule" />
     <node concept="3clFbW" id="ud" role="jymVt">
       <node concept="3clFbS" id="uo" role="3clF47" />
@@ -6063,7 +6058,7 @@
     </node>
   </node>
   <node concept="312cEu" id="zn">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="inference" />
     <property role="TrG5h" value="typeof_IndexedTupleLiteral_InferenceRule" />
     <node concept="3clFbW" id="zo" role="jymVt">
       <node concept="3clFbS" id="zw" role="3clF47" />
@@ -6352,7 +6347,7 @@
     <node concept="3Tm1VV" id="zv" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="_f">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="inference" />
     <property role="TrG5h" value="typeof_IndexedTupleMemberAccessExpression_InferenceRule" />
     <node concept="3clFbW" id="_g" role="jymVt">
       <node concept="3clFbS" id="_o" role="3clF47" />
@@ -7235,7 +7230,7 @@
     <node concept="3Tm1VV" id="_n" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="EK">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="inference" />
     <property role="TrG5h" value="typeof_NamedTupleComponentAccessOperation_InferenceRule" />
     <node concept="3clFbW" id="EL" role="jymVt">
       <node concept="3clFbS" id="ET" role="3clF47" />
@@ -7866,7 +7861,7 @@
     <node concept="3Tm1VV" id="ES" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="IN">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="inference" />
     <property role="TrG5h" value="typeof_NamedTupleLiteral_InferenceRule" />
     <node concept="3clFbW" id="IO" role="jymVt">
       <node concept="3clFbS" id="IW" role="3clF47" />

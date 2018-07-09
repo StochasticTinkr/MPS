@@ -313,7 +313,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Actions.Action.Parameters" />
     <property role="TrG5h" value="ActionConstructionParameterDeclaration_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -751,7 +751,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2C">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Actions.Action" />
     <property role="TrG5h" value="ActionDataParameterDeclaration_Constraints" />
     <node concept="3Tm1VV" id="2D" role="1B3o_S" />
     <node concept="3uibUv" id="2E" role="1zkMxy">
@@ -1021,7 +1021,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4c">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ActionDeclaration_Constraints" />
     <node concept="3Tm1VV" id="4d" role="1B3o_S" />
     <node concept="3uibUv" id="4e" role="1zkMxy">
@@ -1264,7 +1263,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5G">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Actions.Groups" />
     <property role="TrG5h" value="ActionGroupDeclaration_Constraints" />
     <node concept="3Tm1VV" id="5H" role="1B3o_S" />
     <node concept="3uibUv" id="5I" role="1zkMxy">
@@ -1507,7 +1506,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7c">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Actions.Groups.GroupMembers" />
     <property role="TrG5h" value="ActionInstance_Constraints" />
     <node concept="3Tm1VV" id="7d" role="1B3o_S" />
     <node concept="3uibUv" id="7e" role="1zkMxy">
@@ -1781,7 +1780,7 @@
     </node>
   </node>
   <node concept="312cEu" id="8L">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Actions.Action" />
     <property role="TrG5h" value="ActionParameterDeclaration_Constraints" />
     <node concept="3Tm1VV" id="8M" role="1B3o_S" />
     <node concept="3uibUv" id="8N" role="1zkMxy">
@@ -2025,7 +2024,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ai">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Actions.Keymaps.ShortcutChange" />
     <property role="TrG5h" value="ActionParameterReference_Constraints" />
     <node concept="3Tm1VV" id="aj" role="1B3o_S" />
     <node concept="3uibUv" id="ak" role="1zkMxy">
@@ -2532,7 +2531,7 @@
     </node>
   </node>
   <node concept="312cEu" id="dj">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="DEPRECATED" />
     <property role="TrG5h" value="AddElementStatement_Constraints" />
     <node concept="3Tm1VV" id="dk" role="1B3o_S" />
     <node concept="3uibUv" id="dl" role="1zkMxy">
@@ -2779,7 +2778,7 @@
     </node>
   </node>
   <node concept="312cEu" id="eP">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Actions.Groups.GroupContents" />
     <property role="TrG5h" value="AddStatement_Constraints" />
     <node concept="3Tm1VV" id="eQ" role="1B3o_S" />
     <node concept="3uibUv" id="eR" role="1zkMxy">
@@ -3246,7 +3245,7 @@
     </node>
   </node>
   <node concept="312cEu" id="hH">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Shared" />
     <property role="TrG5h" value="BaseProjectOperation_Constraints" />
     <node concept="3Tm1VV" id="hI" role="1B3o_S" />
     <node concept="3uibUv" id="hJ" role="1zkMxy">
@@ -3530,7 +3529,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ju">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Actions.Action.Parameters.Condition" />
     <property role="TrG5h" value="ConceptCondition_Constraints" />
     <node concept="3Tm1VV" id="jv" role="1B3o_S" />
     <node concept="3uibUv" id="jw" role="1zkMxy">
@@ -4602,7 +4601,7 @@
     </node>
   </node>
   <node concept="312cEu" id="qx">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Actions.Action.Parameters.Condition" />
     <property role="TrG5h" value="EditableModel_Constraints" />
     <node concept="3Tm1VV" id="qy" role="1B3o_S" />
     <node concept="3uibUv" id="qz" role="1zkMxy">
@@ -4854,7 +4853,7 @@
   </node>
   <node concept="39dXUE" id="s5" />
   <node concept="312cEu" id="s6">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Actions.Groups.GroupMembers" />
     <property role="TrG5h" value="GroupAnchor_Constraints" />
     <node concept="3Tm1VV" id="s7" role="1B3o_S" />
     <node concept="3uibUv" id="s8" role="1zkMxy">
@@ -5115,7 +5114,6 @@
     </node>
   </node>
   <node concept="312cEu" id="tJ">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="IdeaInitializerDescriptor_Constraints" />
     <node concept="3Tm1VV" id="tK" role="1B3o_S" />
     <node concept="3uibUv" id="tL" role="1zkMxy">
@@ -5316,7 +5314,7 @@
     </node>
   </node>
   <node concept="312cEu" id="uV">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Actions.Groups.GroupModification.bootstrap" />
     <property role="TrG5h" value="InterfaceExtentionPoint_Constraints" />
     <node concept="3Tm1VV" id="uW" role="1B3o_S" />
     <node concept="3uibUv" id="uX" role="1zkMxy">
@@ -5559,7 +5557,6 @@
     </node>
   </node>
   <node concept="312cEu" id="wr">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ModificationStatement_Constraints" />
     <node concept="3Tm1VV" id="ws" role="1B3o_S" />
     <node concept="3uibUv" id="wt" role="1zkMxy">
@@ -6211,7 +6208,7 @@
     </node>
   </node>
   <node concept="312cEu" id="$l">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Actions.Groups.GroupMembers" />
     <property role="TrG5h" value="Separator_Constraints" />
     <node concept="3Tm1VV" id="$m" role="1B3o_S" />
     <node concept="3uibUv" id="$n" role="1zkMxy">
@@ -6454,7 +6451,7 @@
     </node>
   </node>
   <node concept="312cEu" id="_P">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Actions.Keymaps.ShortcutChange" />
     <property role="TrG5h" value="ShortcutChange_Constraints" />
     <node concept="3Tm1VV" id="_Q" role="1B3o_S" />
     <node concept="3uibUv" id="_R" role="1zkMxy">
@@ -6728,7 +6725,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Bq">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Tool.Operations" />
     <property role="TrG5h" value="SmartDisposeClosureParameterDeclaration_Constraints" />
     <node concept="3Tm1VV" id="Br" role="1B3o_S" />
     <node concept="3uibUv" id="Bs" role="1zkMxy">
@@ -6966,7 +6963,7 @@
     </node>
   </node>
   <node concept="312cEu" id="CR">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Tool.Operations" />
     <property role="TrG5h" value="TabbedToolOperation_Constraints" />
     <node concept="3Tm1VV" id="CS" role="1B3o_S" />
     <node concept="3uibUv" id="CT" role="1zkMxy">
@@ -7244,7 +7241,6 @@
     </node>
   </node>
   <node concept="312cEu" id="E_">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ToolInstanceExpression_Constraints" />
     <node concept="3Tm1VV" id="EA" role="1B3o_S" />
     <node concept="3uibUv" id="EB" role="1zkMxy">
@@ -7487,7 +7483,7 @@
     </node>
   </node>
   <node concept="312cEu" id="G5">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Actions.Action.Methods" />
     <property role="TrG5h" value="UpdateBlock_Constraints" />
     <node concept="3Tm1VV" id="G6" role="1B3o_S" />
     <node concept="3uibUv" id="G7" role="1zkMxy">

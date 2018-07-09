@@ -1598,7 +1598,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7l">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="expression.print" />
     <property role="TrG5h" value="typeof_AbstractPrintExpression_InferenceRule" />
     <node concept="3clFbW" id="7m" role="jymVt">
       <node concept="3clFbS" id="7u" role="3clF47" />
@@ -1814,7 +1814,7 @@
     <node concept="3Tm1VV" id="7t" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="8J">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="expression.print" />
     <property role="TrG5h" value="typeof_PrintExpression_InferenceRule" />
     <node concept="3clFbW" id="8K" role="jymVt">
       <node concept="3clFbS" id="8S" role="3clF47" />
@@ -2046,7 +2046,7 @@
     <node concept="3Tm1VV" id="8R" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="af">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="expression.print" />
     <property role="TrG5h" value="typeof_PrintNodeExpression_InferenceRule" />
     <node concept="3clFbW" id="ag" role="jymVt">
       <node concept="3clFbS" id="ao" role="3clF47" />
@@ -2289,7 +2289,7 @@
     <node concept="3Tm1VV" id="an" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="bO">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="expression.print" />
     <property role="TrG5h" value="typeof_PrintNodeReferenceExpression_InferenceRule" />
     <node concept="3clFbW" id="bP" role="jymVt">
       <node concept="3clFbS" id="bX" role="3clF47" />
@@ -2532,7 +2532,7 @@
     <node concept="3Tm1VV" id="bW" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="dp">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="expression.print" />
     <property role="TrG5h" value="typeof_PrintSequenceExpression_InferenceRule" />
     <node concept="3clFbW" id="dq" role="jymVt">
       <node concept="3clFbS" id="dy" role="3clF47" />
@@ -2774,7 +2774,7 @@
     <node concept="3Tm1VV" id="dx" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="eZ">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="expression.print" />
     <property role="TrG5h" value="typeof_PrintTextExpression_InferenceRule" />
     <node concept="3clFbW" id="f0" role="jymVt">
       <node concept="3clFbS" id="f8" role="3clF47" />
@@ -3003,7 +3003,7 @@
     <node concept="3Tm1VV" id="f7" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="gt">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="typeof_ProjectExpression_InferenceRule" />
     <node concept="3clFbW" id="gu" role="jymVt">
       <node concept="3clFbS" id="gA" role="3clF47" />

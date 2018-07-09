@@ -274,7 +274,6 @@
   </node>
   <node concept="39dXUE" id="y" />
   <node concept="312cEu" id="z">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ParallelLoopVariable_Constraints" />
     <node concept="3Tm1VV" id="$" role="1B3o_S" />
     <node concept="3uibUv" id="_" role="1zkMxy">
@@ -682,7 +681,6 @@
     </node>
   </node>
   <node concept="312cEu" id="30">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ThreadPool_Constraints" />
     <node concept="3Tm1VV" id="31" role="1B3o_S" />
     <node concept="3uibUv" id="32" role="1zkMxy">

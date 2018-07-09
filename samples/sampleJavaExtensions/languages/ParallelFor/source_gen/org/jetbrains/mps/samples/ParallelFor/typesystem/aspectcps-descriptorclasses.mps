@@ -279,7 +279,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -308,7 +307,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="CallsToNonThreadSafeMethod_NonTypesystemRule" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="9" role="3clF47" />
@@ -1386,7 +1384,6 @@
     </node>
   </node>
   <node concept="312cEu" id="78">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule" />
     <node concept="3clFbW" id="79" role="jymVt">
       <node concept="3clFbS" id="7h" role="3clF47" />
@@ -2772,7 +2769,6 @@
     </node>
   </node>
   <node concept="312cEu" id="f9">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="MakeDeclarationFinal_QuickFix" />
     <node concept="3clFbW" id="fa" role="jymVt">
       <node concept="3clFbS" id="fg" role="3clF47">
@@ -2858,7 +2854,6 @@
     </node>
   </node>
   <node concept="312cEu" id="fI">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule" />
     <node concept="3clFbW" id="fJ" role="jymVt">
       <node concept="3clFbS" id="fR" role="3clF47" />
@@ -3164,7 +3159,6 @@
     <node concept="3Tm1VV" id="fQ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="hI">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="NoBreakInsideParallelFor_NonTypesystemRule" />
     <node concept="3clFbW" id="hJ" role="jymVt">
       <node concept="3clFbS" id="hR" role="3clF47" />
@@ -3381,7 +3375,6 @@
     <node concept="3Tm1VV" id="hQ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="jc">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="NoReturnInsideParallelFor_NonTypesystemRule" />
     <node concept="3clFbW" id="jd" role="jymVt">
       <node concept="3clFbS" id="jl" role="3clF47" />
@@ -3638,7 +3631,6 @@
     <node concept="3Tm1VV" id="jk" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="kU">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="TurnReturnToContinue_QuickFix" />
     <node concept="3clFbW" id="kV" role="jymVt">
       <node concept="3clFbS" id="l1" role="3clF47">
@@ -3953,7 +3945,6 @@
     </node>
   </node>
   <node concept="312cEu" id="n2">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ParallelFor_InferenceRule" />
     <node concept="3clFbW" id="n3" role="jymVt">
       <node concept="3clFbS" id="nb" role="3clF47" />
@@ -4524,7 +4515,6 @@
     <node concept="3Tm1VV" id="na" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="qz">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ThreadPool_InferenceRule" />
     <node concept="3clFbW" id="q$" role="jymVt">
       <node concept="3clFbS" id="qG" role="3clF47" />

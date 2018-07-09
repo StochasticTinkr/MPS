@@ -222,6 +222,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -2823,6 +2826,7 @@
   </node>
   <node concept="Qs71p" id="f6">
     <property role="TrG5h" value="ResourcesPolicy" />
+    <property role="3GE5qa" value="target" />
     <node concept="QsSxf" id="f7" role="Qtgdg">
       <property role="TrG5h" value="transform" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -3192,6 +3196,7 @@
   </node>
   <node concept="312cEu" id="hr">
     <property role="TrG5h" value="ResourcesPolicy_PropertySupport" />
+    <property role="3GE5qa" value="target" />
     <node concept="3uibUv" id="hs" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -8049,6 +8054,7 @@
   </node>
   <node concept="Qs71p" id="Hp">
     <property role="TrG5h" value="TargetDependencyQualifier" />
+    <property role="3GE5qa" value="target" />
     <node concept="QsSxf" id="Hq" role="Qtgdg">
       <property role="TrG5h" value="before" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -8418,6 +8424,7 @@
   </node>
   <node concept="312cEu" id="JI">
     <property role="TrG5h" value="TargetDependencyQualifier_PropertySupport" />
+    <property role="3GE5qa" value="target" />
     <node concept="3uibUv" id="JJ" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>

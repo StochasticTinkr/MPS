@@ -207,7 +207,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="old" />
     <property role="TrG5h" value="DebuggedtypeIsHighLevelType_SubtypingRule" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="9" role="3clF47" />
@@ -982,7 +982,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4h">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="old" />
     <property role="TrG5h" value="typeof_DownCastToLowLevel_InferenceRule" />
     <node concept="3clFbW" id="4i" role="jymVt">
       <node concept="3clFbS" id="4q" role="3clF47" />
@@ -1366,7 +1366,7 @@
     <node concept="3Tm1VV" id="4p" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6F">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="old" />
     <property role="TrG5h" value="typeof_EvaluatorsThisExpression_InferenceRule" />
     <node concept="3clFbW" id="6G" role="jymVt">
       <node concept="3clFbS" id="6O" role="3clF47" />
@@ -1620,7 +1620,7 @@
     <node concept="3Tm1VV" id="6N" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="8i">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="old" />
     <property role="TrG5h" value="typeof_LowLevelVariableReference_InferenceRule" />
     <node concept="3clFbW" id="8j" role="jymVt">
       <node concept="3clFbS" id="8r" role="3clF47" />
@@ -1865,7 +1865,7 @@
     <node concept="3Tm1VV" id="8q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9P">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="old" />
     <property role="TrG5h" value="typeof_LowLevelVariable_InferenceRule" />
     <node concept="3clFbW" id="9Q" role="jymVt">
       <node concept="3clFbS" id="9Y" role="3clF47" />
@@ -2086,7 +2086,7 @@
     <node concept="3Tm1VV" id="9X" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="bg">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="old" />
     <property role="TrG5h" value="typeof_UnitNode_InferenceRule" />
     <node concept="3clFbW" id="bh" role="jymVt">
       <node concept="3clFbS" id="bp" role="3clF47" />

@@ -551,7 +551,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1I">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="simple.gen.trivial" />
     <property role="TrG5h" value="check_GenerationDescriptor_Class_NonTypesystemRule" />
     <node concept="3clFbW" id="1J" role="jymVt">
       <node concept="3clFbS" id="1R" role="3clF47" />
@@ -756,7 +756,7 @@
     <node concept="3Tm1VV" id="1Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="36">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="url" />
     <property role="TrG5h" value="check_URL_NonTypesystemRule" />
     <node concept="3clFbW" id="37" role="jymVt">
       <node concept="3clFbS" id="3f" role="3clF47" />
@@ -903,7 +903,7 @@
     <node concept="3Tm1VV" id="3e" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="47">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="simple.gen.byInterface" />
     <property role="TrG5h" value="typeof_AspectMethodDescriptor_InferenceRule" />
     <node concept="3clFbW" id="48" role="jymVt">
       <node concept="3clFbS" id="4g" role="3clF47" />

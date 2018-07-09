@@ -394,7 +394,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="AbstractFunctionType_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -3331,7 +3330,6 @@
     <node concept="3Tm1VV" id="1G" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="j6">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CompactInvokeFunctionExpression_Constraints" />
     <node concept="3Tm1VV" id="j7" role="1B3o_S" />
     <node concept="3uibUv" id="j8" role="1zkMxy">
@@ -3534,7 +3532,6 @@
     </node>
   </node>
   <node concept="312cEu" id="kq">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ControlAbstractionContainer_Constraints" />
     <node concept="3Tm1VV" id="kr" role="1B3o_S" />
     <node concept="3uibUv" id="ks" role="1zkMxy">
@@ -3732,7 +3729,6 @@
     </node>
   </node>
   <node concept="312cEu" id="ly">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ControlAbstractionDeclaration_Constraints" />
     <node concept="3Tm1VV" id="lz" role="1B3o_S" />
     <node concept="3uibUv" id="l$" role="1zkMxy">
@@ -3970,7 +3966,6 @@
     </node>
   </node>
   <node concept="312cEu" id="mZ">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="FunctionMethodDeclaration_Constraints" />
     <node concept="3Tm1VV" id="n0" role="1B3o_S" />
     <node concept="3uibUv" id="n1" role="1zkMxy">
@@ -4277,7 +4272,6 @@
     </node>
   </node>
   <node concept="312cEu" id="oN">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="FunctionType_Constraints" />
     <node concept="3Tm1VV" id="oO" role="1B3o_S" />
     <node concept="3uibUv" id="oP" role="1zkMxy">
@@ -4582,7 +4576,6 @@
   </node>
   <node concept="39dXUE" id="qA" />
   <node concept="312cEu" id="qB">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="InvokeFunctionOperation_Constraints" />
     <node concept="3Tm1VV" id="qC" role="1B3o_S" />
     <node concept="3uibUv" id="qD" role="1zkMxy">
@@ -4847,7 +4840,6 @@
     </node>
   </node>
   <node concept="312cEu" id="sg">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="UnboundClosureParameterDeclaration_Constraints" />
     <node concept="3Tm1VV" id="sh" role="1B3o_S" />
     <node concept="3uibUv" id="si" role="1zkMxy">

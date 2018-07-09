@@ -547,7 +547,6 @@
     </node>
   </node>
   <node concept="312cEu" id="1I">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_FactoryMigrationScriptPath_NonTypesystemRule" />
     <node concept="3clFbW" id="1J" role="jymVt">
       <node concept="3clFbS" id="1R" role="3clF47" />
@@ -780,7 +779,7 @@
     <node concept="3Tm1VV" id="1Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3f">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="api" />
     <property role="TrG5h" value="check_PullUpMethod_NonTypesystemRule" />
     <node concept="3clFbW" id="3g" role="jymVt">
       <node concept="3clFbS" id="3o" role="3clF47" />
@@ -972,7 +971,6 @@
     <node concept="3Tm1VV" id="3n" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="4y">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_MigrationScriptPart_node_InferenceRule" />
     <node concept="3clFbW" id="4z" role="jymVt">
       <node concept="3clFbS" id="4F" role="3clF47" />

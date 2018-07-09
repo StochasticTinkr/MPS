@@ -232,6 +232,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -260,6 +261,7 @@
   </registry>
   <node concept="312cEu" id="0">
     <property role="TrG5h" value="AntRegexFlags_PropertySupport" />
+    <property role="3GE5qa" value="Layout.File.Handlers" />
     <node concept="3uibUv" id="1" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -330,6 +332,7 @@
   </node>
   <node concept="Qs71p" id="x">
     <property role="TrG5h" value="BuildLayout_CopyFilterEolStyle" />
+    <property role="3GE5qa" value="Layout.File.Handlers" />
     <node concept="QsSxf" id="y" role="Qtgdg">
       <property role="TrG5h" value="local" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -749,6 +752,7 @@
   </node>
   <node concept="312cEu" id="38">
     <property role="TrG5h" value="BuildLayout_CopyFilterEolStyle_PropertySupport" />
+    <property role="3GE5qa" value="Layout.File.Handlers" />
     <node concept="3uibUv" id="39" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -1002,6 +1006,7 @@
   </node>
   <node concept="Qs71p" id="4T">
     <property role="TrG5h" value="BuildLayout_TarCompression" />
+    <property role="3GE5qa" value="Layout.File" />
     <node concept="QsSxf" id="4U" role="Qtgdg">
       <property role="TrG5h" value="none" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -1321,6 +1326,7 @@
   </node>
   <node concept="312cEu" id="6W">
     <property role="TrG5h" value="BuildLayout_TarCompression_PropertySupport" />
+    <property role="3GE5qa" value="Layout.File" />
     <node concept="3uibUv" id="6X" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -1574,6 +1580,7 @@
   </node>
   <node concept="312cEu" id="8H">
     <property role="TrG5h" value="BuildLayout_UnixFilemode_PropertySupport" />
+    <property role="3GE5qa" value="Layout.File" />
     <node concept="3uibUv" id="8I" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -1644,6 +1651,7 @@
   </node>
   <node concept="Qs71p" id="9e">
     <property role="TrG5h" value="BuildSource_JavaContentFolderKind" />
+    <property role="3GE5qa" value="Project.Java.Sources" />
     <node concept="QsSxf" id="9f" role="Qtgdg">
       <property role="TrG5h" value="source" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -1960,6 +1968,7 @@
   </node>
   <node concept="312cEu" id="bh">
     <property role="TrG5h" value="BuildSource_JavaContentFolderKind_PropertySupport" />
+    <property role="3GE5qa" value="Project.Java.Sources" />
     <node concept="3uibUv" id="bi" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -12272,6 +12281,7 @@
   </node>
   <node concept="312cEu" id="1ay">
     <property role="TrG5h" value="FileName_PropertySupport" />
+    <property role="3GE5qa" value="SourcePath" />
     <node concept="3uibUv" id="1az" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>

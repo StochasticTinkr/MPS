@@ -235,7 +235,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="operations" />
     <property role="TrG5h" value="ChartOperation_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -409,7 +409,7 @@
   </node>
   <node concept="39dXUE" id="16" />
   <node concept="312cEu" id="17">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="operations" />
     <property role="TrG5h" value="Raise_Constraints" />
     <node concept="3Tm1VV" id="18" role="1B3o_S" />
     <node concept="3uibUv" id="19" role="1zkMxy">
@@ -717,7 +717,6 @@
     </node>
   </node>
   <node concept="312cEu" id="2T">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="State_Constraints" />
     <node concept="3Tm1VV" id="2U" role="1B3o_S" />
     <node concept="3uibUv" id="2V" role="1zkMxy">
@@ -966,7 +965,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4s">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="Transition_Constraints" />
     <node concept="3Tm1VV" id="4t" role="1B3o_S" />
     <node concept="3uibUv" id="4u" role="1zkMxy">

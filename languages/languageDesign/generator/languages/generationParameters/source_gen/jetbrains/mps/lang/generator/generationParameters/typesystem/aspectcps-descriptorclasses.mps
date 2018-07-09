@@ -323,7 +323,7 @@
     </node>
   </node>
   <node concept="312cEu" id="I">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="parameter" />
     <property role="TrG5h" value="typeof_DefaultGeneratorParameter_InferenceRule" />
     <node concept="3clFbW" id="J" role="jymVt">
       <node concept="3clFbS" id="R" role="3clF47" />

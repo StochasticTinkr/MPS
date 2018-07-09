@@ -258,7 +258,6 @@
     </node>
   </node>
   <node concept="312cEu" id="y">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ElementMacro_Constraints" />
     <node concept="3Tm1VV" id="z" role="1B3o_S" />
     <node concept="3uibUv" id="$" role="1zkMxy">
@@ -503,7 +502,6 @@
   </node>
   <node concept="39dXUE" id="23" />
   <node concept="312cEu" id="24">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="TextMacro_Constraints" />
     <node concept="3Tm1VV" id="25" role="1B3o_S" />
     <node concept="3uibUv" id="26" role="1zkMxy">

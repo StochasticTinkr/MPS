@@ -892,7 +892,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3I">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="dotexpression" />
     <property role="TrG5h" value="typeof_AddressReference_InferenceRule" />
     <node concept="3clFbW" id="3J" role="jymVt">
       <node concept="3clFbS" id="3R" role="3clF47" />
@@ -1112,7 +1112,7 @@
     <node concept="3Tm1VV" id="3Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="59">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="dotexpression" />
     <property role="TrG5h" value="typeof_Address_InferenceRule" />
     <node concept="3clFbW" id="5a" role="jymVt">
       <node concept="3clFbS" id="5i" role="3clF47" />
@@ -1332,7 +1332,7 @@
     <node concept="3Tm1VV" id="5h" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6$">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="declaration-references.java" />
     <property role="TrG5h" value="typeof_ItemReference_InferenceRule" />
     <node concept="3clFbW" id="6_" role="jymVt">
       <node concept="3clFbS" id="6H" role="3clF47" />
@@ -1577,7 +1577,7 @@
     <node concept="3Tm1VV" id="6G" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="87">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="declaration-references.java" />
     <property role="TrG5h" value="typeof_Item_InferenceRule" />
     <node concept="3clFbW" id="88" role="jymVt">
       <node concept="3clFbS" id="8g" role="3clF47" />
@@ -1793,7 +1793,7 @@
     <node concept="3Tm1VV" id="8f" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9x">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="dotexpression" />
     <property role="TrG5h" value="typeof_SomeForm_InferenceRule" />
     <node concept="3clFbW" id="9y" role="jymVt">
       <node concept="3clFbS" id="9E" role="3clF47" />
@@ -2014,7 +2014,7 @@
     <node concept="3Tm1VV" id="9D" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="aX">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="dotexpression" />
     <property role="TrG5h" value="typeof_StreetOperation_InferenceRule" />
     <node concept="3clFbW" id="aY" role="jymVt">
       <node concept="3clFbS" id="b6" role="3clF47" />
@@ -2230,7 +2230,7 @@
     <node concept="3Tm1VV" id="b5" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="cn">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="dotexpression" />
     <property role="TrG5h" value="typeof_ZipOperation_InferenceRule" />
     <node concept="3clFbW" id="co" role="jymVt">
       <node concept="3clFbS" id="cw" role="3clF47" />

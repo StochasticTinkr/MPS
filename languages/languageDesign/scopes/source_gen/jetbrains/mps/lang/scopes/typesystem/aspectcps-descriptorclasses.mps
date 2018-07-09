@@ -212,7 +212,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -835,7 +834,6 @@
     </node>
   </node>
   <node concept="312cEu" id="3e">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_ComeFromExpression_NonTypesystemRule" />
     <node concept="3clFbW" id="3f" role="jymVt">
       <node concept="3clFbS" id="3n" role="3clF47" />
@@ -1035,7 +1033,6 @@
     <node concept="3Tm1VV" id="3m" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="4z">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_CompositeWithParentScopeExpression_NonTypesystemRule" />
     <node concept="3clFbW" id="4$" role="jymVt">
       <node concept="3clFbS" id="4G" role="3clF47" />
@@ -1385,7 +1382,6 @@
     <node concept="3Tm1VV" id="4F" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6N">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_ParentScope_NonTypesystemRule" />
     <node concept="3clFbW" id="6O" role="jymVt">
       <node concept="3clFbS" id="6W" role="3clF47" />
@@ -1585,7 +1581,6 @@
     <node concept="3Tm1VV" id="6V" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="88">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ComeFromExpression_InferenceRule" />
     <node concept="3clFbW" id="89" role="jymVt">
       <node concept="3clFbS" id="8h" role="3clF47" />
@@ -1801,7 +1796,6 @@
     <node concept="3Tm1VV" id="8g" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9y">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_CompositeWithParentScopeExpression_InferenceRule" />
     <node concept="3clFbW" id="9z" role="jymVt">
       <node concept="3clFbS" id="9F" role="3clF47" />
@@ -2019,7 +2013,6 @@
     <node concept="3Tm1VV" id="9E" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="aW">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ParentScope_InferenceRule" />
     <node concept="3clFbW" id="aX" role="jymVt">
       <node concept="3clFbS" id="b5" role="3clF47" />

@@ -302,7 +302,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="ExtensionPointType_supertypes_SubtypingRule" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="9" role="3clF47" />
@@ -1220,7 +1219,7 @@
     </node>
   </node>
   <node concept="312cEu" id="52">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="overlapping" />
     <property role="TrG5h" value="check_ExtensionPointDeclaration_NonTypesystemRule" />
     <node concept="3clFbW" id="53" role="jymVt">
       <node concept="3clFbS" id="5b" role="3clF47" />
@@ -1428,7 +1427,6 @@
     <node concept="3Tm1VV" id="5a" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6p">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_IHasUniqueId_NonTypesystemRule" />
     <node concept="3clFbW" id="6q" role="jymVt">
       <node concept="3clFbS" id="6y" role="3clF47" />
@@ -1652,7 +1650,6 @@
     <node concept="3Tm1VV" id="6x" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7S">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ExtensionFieldReference_InferenceRule" />
     <node concept="3clFbW" id="7T" role="jymVt">
       <node concept="3clFbS" id="81" role="3clF47" />
@@ -1878,7 +1875,6 @@
     <node concept="3Tm1VV" id="80" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9l">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ExtensionObjectGetter_InferenceRule" />
     <node concept="3clFbW" id="9m" role="jymVt">
       <node concept="3clFbS" id="9u" role="3clF47" />
@@ -2097,7 +2093,6 @@
     <node concept="3Tm1VV" id="9t" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="aL">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ExtensionPointExpression_InferenceRule" />
     <node concept="3clFbW" id="aM" role="jymVt">
       <node concept="3clFbS" id="aU" role="3clF47" />
@@ -2328,7 +2323,6 @@
     <node concept="3Tm1VV" id="aT" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="cg">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GetExtensionObjectsOperation_InferenceRule" />
     <node concept="3clFbW" id="ch" role="jymVt">
       <node concept="3clFbS" id="cp" role="3clF47" />

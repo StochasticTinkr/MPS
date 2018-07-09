@@ -184,6 +184,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -191,6 +194,7 @@
   </registry>
   <node concept="312cEu" id="0">
     <property role="TrG5h" value="BaseExecuteCommandStatementSync_DataFlow" />
+    <property role="3GE5qa" value="Command" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -281,6 +285,7 @@
   </node>
   <node concept="312cEu" id="_">
     <property role="TrG5h" value="BaseExecuteCommandStatement_DataFlow" />
+    <property role="3GE5qa" value="Command" />
     <node concept="3Tm1VV" id="A" role="1B3o_S" />
     <node concept="3uibUv" id="B" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -301,6 +306,7 @@
   </node>
   <node concept="312cEu" id="I">
     <property role="TrG5h" value="CommandClosureLiteral_DataFlow" />
+    <property role="3GE5qa" value="Command" />
     <node concept="3Tm1VV" id="J" role="1B3o_S" />
     <node concept="3uibUv" id="K" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />

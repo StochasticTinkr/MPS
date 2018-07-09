@@ -552,7 +552,6 @@
     </node>
   </node>
   <node concept="312cEu" id="1E">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CreateRootRule_Constraints" />
     <node concept="3Tm1VV" id="1F" role="1B3o_S" />
     <node concept="3uibUv" id="1G" role="1zkMxy">
@@ -823,7 +822,7 @@
   </node>
   <node concept="39dXUE" id="3e" />
   <node concept="312cEu" id="3f">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="parameter" />
     <property role="TrG5h" value="GeneratorParameterReference_Constraints" />
     <node concept="3Tm1VV" id="3g" role="1B3o_S" />
     <node concept="3uibUv" id="3h" role="1zkMxy">
@@ -1155,7 +1154,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5e">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="rule" />
     <property role="TrG5h" value="ReferenceReductionRule_Constraints" />
     <node concept="3Tm1VV" id="5f" role="1B3o_S" />
     <node concept="3uibUv" id="5g" role="1zkMxy">
@@ -1765,7 +1764,6 @@
     </node>
   </node>
   <node concept="312cEu" id="8Q">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="Root_MappingRule_Constraints" />
     <node concept="3Tm1VV" id="8R" role="1B3o_S" />
     <node concept="3uibUv" id="8S" role="1zkMxy">
@@ -2035,7 +2033,7 @@
     </node>
   </node>
   <node concept="312cEu" id="aq">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="rule.argument" />
     <property role="TrG5h" value="TemplateArgumentLinkPatternRefExpression_Constraints" />
     <node concept="3Tm1VV" id="ar" role="1B3o_S" />
     <node concept="3uibUv" id="as" role="1zkMxy">
@@ -2385,7 +2383,7 @@
     </node>
   </node>
   <node concept="312cEu" id="cv">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="rule.argument" />
     <property role="TrG5h" value="TemplateArgumentParameterExpression_Constraints" />
     <node concept="3Tm1VV" id="cw" role="1B3o_S" />
     <node concept="3uibUv" id="cx" role="1zkMxy">
@@ -2700,7 +2698,7 @@
     </node>
   </node>
   <node concept="312cEu" id="el">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="rule.argument" />
     <property role="TrG5h" value="TemplateArgumentPatternVarRefExpression_Constraints" />
     <node concept="3Tm1VV" id="em" role="1B3o_S" />
     <node concept="3uibUv" id="en" role="1zkMxy">
@@ -3254,7 +3252,7 @@
     </node>
   </node>
   <node concept="312cEu" id="hD">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="rule.argument" />
     <property role="TrG5h" value="TemplateArgumentPropertyPatternRefExpression_Constraints" />
     <node concept="3Tm1VV" id="hE" role="1B3o_S" />
     <node concept="3uibUv" id="hF" role="1zkMxy">
@@ -3604,7 +3602,7 @@
     </node>
   </node>
   <node concept="312cEu" id="jI">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="rule.argument" />
     <property role="TrG5h" value="TemplateArgumentQueryExpression_Constraints" />
     <node concept="3Tm1VV" id="jJ" role="1B3o_S" />
     <node concept="3uibUv" id="jK" role="1zkMxy">
@@ -3842,7 +3840,7 @@
     </node>
   </node>
   <node concept="312cEu" id="lb">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="rule.argument" />
     <property role="TrG5h" value="TemplateArgumentVariableRefExpression_Constraints" />
     <node concept="3Tm1VV" id="lc" role="1B3o_S" />
     <node concept="3uibUv" id="ld" role="1zkMxy">
@@ -4207,7 +4205,7 @@
     </node>
   </node>
   <node concept="312cEu" id="nj">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="macro" />
     <property role="TrG5h" value="TemplateCallMacro_Constraints" />
     <node concept="3Tm1VV" id="nk" role="1B3o_S" />
     <node concept="3uibUv" id="nl" role="1zkMxy">
@@ -4483,7 +4481,7 @@
     </node>
   </node>
   <node concept="312cEu" id="oT">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="rule.consequence" />
     <property role="TrG5h" value="TemplateDeclarationReference_Constraints" />
     <node concept="3Tm1VV" id="oU" role="1B3o_S" />
     <node concept="3uibUv" id="oV" role="1zkMxy">
@@ -4759,7 +4757,7 @@
     </node>
   </node>
   <node concept="312cEu" id="qv">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="macro" />
     <property role="TrG5h" value="TemplateSwitchMacro_Constraints" />
     <node concept="3Tm1VV" id="qw" role="1B3o_S" />
     <node concept="3uibUv" id="qx" role="1zkMxy">
@@ -5035,7 +5033,6 @@
     </node>
   </node>
   <node concept="312cEu" id="s5">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="TemplateSwitch_Constraints" />
     <node concept="3Tm1VV" id="s6" role="1B3o_S" />
     <node concept="3uibUv" id="s7" role="1zkMxy">

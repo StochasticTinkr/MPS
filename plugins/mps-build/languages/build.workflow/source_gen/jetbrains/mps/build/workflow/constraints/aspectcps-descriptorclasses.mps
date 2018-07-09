@@ -209,7 +209,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Structure" />
     <property role="TrG5h" value="BwfFileSet_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -459,7 +459,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1y">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Structure" />
     <property role="TrG5h" value="BwfJavaClassPath_Constraints" />
     <node concept="3Tm1VV" id="1z" role="1B3o_S" />
     <node concept="3uibUv" id="1$" role="1zkMxy">
@@ -721,7 +721,7 @@
     </node>
   </node>
   <node concept="312cEu" id="39">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Tasks" />
     <property role="TrG5h" value="BwfSubTaskDependency_Constraints" />
     <node concept="3Tm1VV" id="3a" role="1B3o_S" />
     <node concept="3uibUv" id="3b" role="1zkMxy">
@@ -1029,7 +1029,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4V">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Tasks" />
     <property role="TrG5h" value="BwfSubTask_Constraints" />
     <node concept="3Tm1VV" id="4W" role="1B3o_S" />
     <node concept="3uibUv" id="4X" role="1zkMxy">
@@ -1243,7 +1243,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6d">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Libraries" />
     <property role="TrG5h" value="BwfTaskLibrary_Constraints" />
     <node concept="3Tm1VV" id="6e" role="1B3o_S" />
     <node concept="3uibUv" id="6f" role="1zkMxy">
@@ -1517,7 +1517,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7T">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Tasks" />
     <property role="TrG5h" value="BwfTask_Constraints" />
     <node concept="3Tm1VV" id="7U" role="1B3o_S" />
     <node concept="3uibUv" id="7V" role="1zkMxy">

@@ -431,7 +431,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="AddExtendedLanguage_QuickFix" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="7" role="3clF47">
@@ -591,7 +590,6 @@
     </node>
   </node>
   <node concept="312cEu" id="11">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="CorrectDuplicateId_QuickFix" />
     <node concept="3clFbW" id="12" role="jymVt">
       <node concept="3clFbS" id="18" role="3clF47">
@@ -1044,7 +1042,6 @@
     </node>
   </node>
   <node concept="312cEu" id="3R">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="CreateMissingStub_QuickFix" />
     <node concept="3clFbW" id="3S" role="jymVt">
       <node concept="3clFbS" id="3Y" role="3clF47">
@@ -1549,7 +1546,6 @@
     </node>
   </node>
   <node concept="312cEu" id="7a">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="EnableDeriveFromInternalValues_QuickFix" />
     <node concept="3clFbW" id="7b" role="jymVt">
       <node concept="3clFbS" id="7h" role="3clF47">
@@ -1633,7 +1629,6 @@
     </node>
   </node>
   <node concept="312cEu" id="7I">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="FixAttributeInfo_QuickFix" />
     <node concept="3clFbW" id="7J" role="jymVt">
       <node concept="3clFbS" id="7P" role="3clF47">
@@ -1836,7 +1831,6 @@
     </node>
   </node>
   <node concept="312cEu" id="98">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="GenerateConceptIds_QuickFix" />
     <node concept="3clFbW" id="99" role="jymVt">
       <node concept="3clFbS" id="9f" role="3clF47">
@@ -3586,7 +3580,6 @@
     </node>
   </node>
   <node concept="312cEu" id="il">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_AbstractConceptDeclaration_Ids_NonTypesystemRule" />
     <node concept="3clFbW" id="im" role="jymVt">
       <node concept="3clFbS" id="iu" role="3clF47" />
@@ -5049,7 +5042,6 @@
     <node concept="3Tm1VV" id="it" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="rs">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_AttributeInfo_NonTypesystemRule" />
     <node concept="3clFbW" id="rt" role="jymVt">
       <node concept="3clFbS" id="r_" role="3clF47" />
@@ -5395,7 +5387,6 @@
     <node concept="3Tm1VV" id="r$" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="tE">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_ConceptDeclaration_NonTypesystemRule" />
     <node concept="3clFbW" id="tF" role="jymVt">
       <node concept="3clFbS" id="tN" role="3clF47" />
@@ -5956,7 +5947,6 @@
     <node concept="3Tm1VV" id="tM" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="xs">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_ConceptDeclaration_iconPath_NonTypesystemRule" />
     <node concept="3clFbW" id="xt" role="jymVt">
       <node concept="3clFbS" id="x_" role="3clF47" />
@@ -6190,7 +6180,6 @@
     <node concept="3Tm1VV" id="x$" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="yZ">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_DuplicateDataTypeDeclaration_NonTypesystemRule" />
     <node concept="3clFbW" id="z0" role="jymVt">
       <node concept="3clFbS" id="z8" role="3clF47" />
@@ -6461,7 +6450,6 @@
     <node concept="3Tm1VV" id="z7" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="$Q">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_DuplicatedConceptName_NonTypesystemRule" />
     <node concept="3clFbW" id="$R" role="jymVt">
       <node concept="3clFbS" id="$Z" role="3clF47" />
@@ -6730,7 +6718,6 @@
     <node concept="3Tm1VV" id="$Y" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="AE">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_EditorForNonAbstractConcept_NonTypesystemRule" />
     <node concept="3clFbW" id="AF" role="jymVt">
       <node concept="3clFbS" id="AN" role="3clF47" />
@@ -7073,7 +7060,6 @@
     <node concept="3Tm1VV" id="AM" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="CX">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_EnumerationDataTypeDeclaration_NonTypesystemRule" />
     <node concept="3clFbW" id="CY" role="jymVt">
       <node concept="3clFbS" id="D6" role="3clF47" />
@@ -7872,7 +7858,6 @@
     <node concept="3Tm1VV" id="D5" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Ic">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule" />
     <node concept="3clFbW" id="Id" role="jymVt">
       <node concept="3clFbS" id="Il" role="3clF47" />
@@ -8383,7 +8368,6 @@
     <node concept="3Tm1VV" id="Ik" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Lu">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_Finals_NonTypesystemRule" />
     <node concept="3clFbW" id="Lv" role="jymVt">
       <node concept="3clFbS" id="LB" role="3clF47" />
@@ -8595,7 +8579,6 @@
     <node concept="3Tm1VV" id="LA" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="MT">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_LinkDeclaration_NonTypesystemRule" />
     <node concept="3clFbW" id="MU" role="jymVt">
       <node concept="3clFbS" id="N2" role="3clF47" />
@@ -9167,7 +9150,6 @@
     <node concept="3Tm1VV" id="N1" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Qz">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_LinkDeclaration_Specialized_NonTypesystemRule" />
     <node concept="3clFbW" id="Q$" role="jymVt">
       <node concept="3clFbS" id="QG" role="3clF47" />
@@ -9759,7 +9741,6 @@
     <node concept="3Tm1VV" id="QF" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Um">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_LinkToAbstractConcept_NonTypesystemRule" />
     <node concept="3clFbW" id="Un" role="jymVt">
       <node concept="3clFbS" id="Uv" role="3clF47" />
@@ -10008,7 +9989,6 @@
     <node concept="3Tm1VV" id="Uu" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="W0">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_PropertyDeclaration_NonTypesystemRule" />
     <node concept="3clFbW" id="W1" role="jymVt">
       <node concept="3clFbS" id="W9" role="3clF47" />
@@ -10464,7 +10444,7 @@
     <node concept="3Tm1VV" id="W8" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="YX">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="smartReference" />
     <property role="TrG5h" value="check_RedundantSmartReferenceAttribute_NonTypesystemRule" />
     <node concept="3clFbW" id="YY" role="jymVt">
       <node concept="3clFbS" id="Z6" role="3clF47" />
@@ -10832,7 +10812,7 @@
     <node concept="3Tm1VV" id="Z5" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="11m">
-    <property role="3GE5qa" value="definition.quickfix" />
+    <property role="3GE5qa" value="smartReference" />
     <property role="TrG5h" value="fix_RedundantSmartReferenceAttribute_QuickFix" />
     <node concept="3clFbW" id="11n" role="jymVt">
       <node concept="3clFbS" id="11t" role="3clF47">

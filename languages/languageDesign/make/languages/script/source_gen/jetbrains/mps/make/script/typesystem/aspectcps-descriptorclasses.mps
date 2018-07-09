@@ -1141,7 +1141,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3S">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
+    <property role="3GE5qa" value="job" />
     <property role="TrG5h" value="IResource_subtypeOf_ResourceType_InequationReplacementRule" />
     <node concept="3clFbW" id="3T" role="jymVt">
       <node concept="3clFbS" id="45" role="3clF47" />
@@ -1642,7 +1642,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7b">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
+    <property role="3GE5qa" value="job" />
     <property role="TrG5h" value="ResourceType_comparableWith_IResource_ComparisonRule" />
     <node concept="312cEg" id="7c" role="jymVt">
       <property role="TrG5h" value="myMatchingPattern2" />
@@ -2304,7 +2304,7 @@
     </node>
   </node>
   <node concept="312cEu" id="bD">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
+    <property role="3GE5qa" value="job" />
     <property role="TrG5h" value="resource_subtypeOf_resource_InequationReplacementRule" />
     <node concept="3clFbW" id="bE" role="jymVt">
       <node concept="3clFbS" id="bQ" role="3clF47" />
@@ -2662,7 +2662,7 @@
     </node>
   </node>
   <node concept="312cEu" id="e5">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="job" />
     <property role="TrG5h" value="resource_supertypes_SubtypingRule" />
     <node concept="3clFbW" id="e6" role="jymVt">
       <node concept="3clFbS" id="ee" role="3clF47" />
@@ -2882,7 +2882,7 @@
     <node concept="3Tm1VV" id="ed" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fD">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="job" />
     <property role="TrG5h" value="supertypesOf_IResource_SubtypingRule" />
     <node concept="312cEg" id="fE" role="jymVt">
       <property role="TrG5h" value="myMatchingPattern" />
@@ -3065,7 +3065,7 @@
     <node concept="3Tm1VV" id="fN" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="gS">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="job.progress" />
     <property role="TrG5h" value="typeof_AllWorkLeftExpression_InferenceRule" />
     <node concept="3clFbW" id="gT" role="jymVt">
       <node concept="3clFbS" id="h1" role="3clF47" />
@@ -3281,7 +3281,7 @@
     <node concept="3Tm1VV" id="h0" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ii">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="job.progress" />
     <property role="TrG5h" value="typeof_BeginWorkStatement_InferenceRule" />
     <node concept="3clFbW" id="ij" role="jymVt">
       <node concept="3clFbS" id="ir" role="3clF47" />
@@ -3659,7 +3659,7 @@
     <node concept="3Tm1VV" id="iq" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="kF">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="job.progress" />
     <property role="TrG5h" value="typeof_DoneWorkStatement_InferenceRule" />
     <node concept="3clFbW" id="kG" role="jymVt">
       <node concept="3clFbS" id="kO" role="3clF47" />
@@ -4036,7 +4036,7 @@
     <node concept="3Tm1VV" id="kN" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="n4">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="job" />
     <property role="TrG5h" value="typeof_GetMakeSessionExpression_InferenceRule" />
     <node concept="3clFbW" id="n5" role="jymVt">
       <node concept="3clFbS" id="nd" role="3clF47" />
@@ -4254,7 +4254,7 @@
     <node concept="3Tm1VV" id="nc" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ou">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="typeof_OptionExpression_InferenceRule" />
     <node concept="3clFbW" id="ov" role="jymVt">
       <node concept="3clFbS" id="oB" role="3clF47" />
@@ -4491,7 +4491,7 @@
     <node concept="3Tm1VV" id="oA" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="q0">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="job" />
     <property role="TrG5h" value="typeof_OutputResources_InferenceRule" />
     <node concept="3clFbW" id="q1" role="jymVt">
       <node concept="3clFbS" id="q9" role="3clF47" />
@@ -4739,7 +4739,7 @@
     <node concept="3Tm1VV" id="q8" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="rC">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="job" />
     <property role="TrG5h" value="typeof_PropertiesAccessorParameter_InferenceRule" />
     <node concept="3clFbW" id="rD" role="jymVt">
       <node concept="3clFbS" id="rL" role="3clF47" />
@@ -4957,7 +4957,7 @@
     <node concept="3Tm1VV" id="rK" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="t2">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="typeof_RelayQueryExpression_InferenceRule" />
     <node concept="3clFbW" id="t3" role="jymVt">
       <node concept="3clFbS" id="tb" role="3clF47" />

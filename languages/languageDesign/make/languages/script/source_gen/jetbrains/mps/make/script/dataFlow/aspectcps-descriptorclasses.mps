@@ -160,6 +160,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -167,6 +170,7 @@
   </registry>
   <node concept="312cEu" id="0">
     <property role="TrG5h" value="AdvanceWorkStatement_DataFlow" />
+    <property role="3GE5qa" value="job.progress" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -252,6 +256,7 @@
   </node>
   <node concept="312cEu" id="z">
     <property role="TrG5h" value="BeginWorkStatement_DataFlow" />
+    <property role="3GE5qa" value="job.progress" />
     <node concept="3Tm1VV" id="$" role="1B3o_S" />
     <node concept="3uibUv" id="_" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -574,6 +579,7 @@
   </node>
   <node concept="312cEu" id="2p">
     <property role="TrG5h" value="OutputResources_DataFlow" />
+    <property role="3GE5qa" value="job" />
     <node concept="3Tm1VV" id="2q" role="1B3o_S" />
     <node concept="3uibUv" id="2r" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -627,6 +633,7 @@
   </node>
   <node concept="312cEu" id="2J">
     <property role="TrG5h" value="ResultStatement_DataFlow" />
+    <property role="3GE5qa" value="job" />
     <node concept="3Tm1VV" id="2K" role="1B3o_S" />
     <node concept="3uibUv" id="2L" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />

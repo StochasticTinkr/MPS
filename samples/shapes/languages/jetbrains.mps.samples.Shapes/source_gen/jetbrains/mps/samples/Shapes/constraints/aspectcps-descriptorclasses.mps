@@ -168,7 +168,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="Circle_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -477,7 +476,6 @@
   </node>
   <node concept="39dXUE" id="1U" />
   <node concept="312cEu" id="1V">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="Square_Constraints" />
     <node concept="3Tm1VV" id="1W" role="1B3o_S" />
     <node concept="3uibUv" id="1X" role="1zkMxy">

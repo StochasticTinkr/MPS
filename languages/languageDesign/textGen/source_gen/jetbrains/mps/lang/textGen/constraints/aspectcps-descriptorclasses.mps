@@ -301,7 +301,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="operation.append.part" />
     <property role="TrG5h" value="AttributedNodePart_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -580,7 +580,6 @@
     </node>
   </node>
   <node concept="312cEu" id="1I">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ConceptTextGenDeclaration_Constraints" />
     <node concept="3Tm1VV" id="1J" role="1B3o_S" />
     <node concept="3uibUv" id="1K" role="1zkMxy">
@@ -1140,7 +1139,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5c">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="operation" />
     <property role="TrG5h" value="EncodingLiteral_Constraints" />
     <node concept="3Tm1VV" id="5d" role="1B3o_S" />
     <node concept="3uibUv" id="5e" role="1zkMxy">
@@ -1423,7 +1422,6 @@
   </node>
   <node concept="39dXUE" id="6U" />
   <node concept="312cEu" id="6V">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="LanguageTextGenDeclaration_Constraints" />
     <node concept="3Tm1VV" id="6W" role="1B3o_S" />
     <node concept="3uibUv" id="6X" role="1zkMxy">
@@ -1622,7 +1620,6 @@
     </node>
   </node>
   <node concept="312cEu" id="8b">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="OperationDeclaration_Constraints" />
     <node concept="3Tm1VV" id="8c" role="1B3o_S" />
     <node concept="3uibUv" id="8d" role="1zkMxy">
@@ -2200,7 +2197,7 @@
     </node>
   </node>
   <node concept="312cEu" id="bC">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="TextUnitLayout_Constraints" />
     <node concept="3Tm1VV" id="bD" role="1B3o_S" />
     <node concept="3uibUv" id="bE" role="1zkMxy">
@@ -2470,7 +2467,7 @@
     </node>
   </node>
   <node concept="312cEu" id="da">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="context" />
     <property role="TrG5h" value="UnitContextDeclaration_Constraints" />
     <node concept="3Tm1VV" id="db" role="1B3o_S" />
     <node concept="3uibUv" id="dc" role="1zkMxy">
@@ -2696,7 +2693,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ew">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="context" />
     <property role="TrG5h" value="UnitContextReference_Constraints" />
     <node concept="3Tm1VV" id="ex" role="1B3o_S" />
     <node concept="3uibUv" id="ey" role="1zkMxy">
@@ -3185,7 +3182,6 @@
     </node>
   </node>
   <node concept="312cEu" id="hp">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="UtilityMethodDeclaration_Constraints" />
     <node concept="3Tm1VV" id="hq" role="1B3o_S" />
     <node concept="3uibUv" id="hr" role="1zkMxy">

@@ -216,7 +216,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -237,7 +236,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="CheckNoDuplicatedConceptHints_NonTypesystemRule" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="9" role="3clF47" />
@@ -543,7 +541,6 @@
     <node concept="3Tm1VV" id="8" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="25">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="CheckNoDuplicatedLinkHints_NonTypesystemRule" />
     <node concept="3clFbW" id="26" role="jymVt">
       <node concept="3clFbS" id="2e" role="3clF47" />
@@ -835,7 +832,6 @@
     <node concept="3Tm1VV" id="2d" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="43">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="CheckNoDuplicatedPropertyHints_NonTypesystemRule" />
     <node concept="3clFbW" id="44" role="jymVt">
       <node concept="3clFbS" id="4c" role="3clF47" />

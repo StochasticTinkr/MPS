@@ -433,7 +433,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="AbstractConceptDeclaration_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -1145,7 +1144,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4f">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ConceptDeclaration_Constraints" />
     <node concept="3Tm1VV" id="4g" role="1B3o_S" />
     <node concept="3uibUv" id="4h" role="1zkMxy">
@@ -2653,7 +2651,6 @@
     </node>
   </node>
   <node concept="312cEu" id="dS">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ConstrainedDataTypeDeclaration_Constraints" />
     <node concept="3Tm1VV" id="dT" role="1B3o_S" />
     <node concept="3uibUv" id="dU" role="1zkMxy">
@@ -3051,7 +3048,6 @@
     </node>
   </node>
   <node concept="312cEu" id="gq">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="DataTypeDeclaration_Constraints" />
     <node concept="3Tm1VV" id="gr" role="1B3o_S" />
     <node concept="3uibUv" id="gs" role="1zkMxy">
@@ -3249,7 +3245,6 @@
     </node>
   </node>
   <node concept="312cEu" id="hy">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="EnumerationDataTypeDeclaration_Constraints" />
     <node concept="3Tm1VV" id="hz" role="1B3o_S" />
     <node concept="3uibUv" id="h$" role="1zkMxy">
@@ -3899,7 +3894,6 @@
     </node>
   </node>
   <node concept="312cEu" id="lq">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="EnumerationMemberDeclaration_Constraints" />
     <node concept="3Tm1VV" id="lr" role="1B3o_S" />
     <node concept="3uibUv" id="ls" role="1zkMxy">
@@ -4119,7 +4113,6 @@
     </node>
   </node>
   <node concept="312cEu" id="mK">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="InterfaceConceptDeclaration_Constraints" />
     <node concept="3Tm1VV" id="mL" role="1B3o_S" />
     <node concept="3uibUv" id="mM" role="1zkMxy">
@@ -4482,7 +4475,6 @@
     </node>
   </node>
   <node concept="312cEu" id="oU">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="LinkDeclaration_Constraints" />
     <node concept="3Tm1VV" id="oV" role="1B3o_S" />
     <node concept="3uibUv" id="oW" role="1zkMxy">
@@ -5654,7 +5646,6 @@
     </node>
   </node>
   <node concept="312cEu" id="w1">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="PropertyDeclaration_Constraints" />
     <node concept="3Tm1VV" id="w2" role="1B3o_S" />
     <node concept="3uibUv" id="w3" role="1zkMxy">
@@ -6267,7 +6258,7 @@
     <node concept="3Tm1VV" id="yp" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="zI">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="smartReference" />
     <property role="TrG5h" value="SmartReferenceAttribute_Constraints" />
     <node concept="3Tm1VV" id="zJ" role="1B3o_S" />
     <node concept="3uibUv" id="zK" role="1zkMxy">

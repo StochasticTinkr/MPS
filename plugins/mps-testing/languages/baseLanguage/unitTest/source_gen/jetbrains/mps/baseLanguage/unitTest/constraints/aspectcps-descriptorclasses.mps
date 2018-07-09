@@ -161,7 +161,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="BTestCase_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -447,7 +446,6 @@
   </node>
   <node concept="39dXUE" id="1K" />
   <node concept="312cEu" id="1L">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="TestMethod_Constraints" />
     <node concept="3Tm1VV" id="1M" role="1B3o_S" />
     <node concept="3uibUv" id="1N" role="1zkMxy">

@@ -236,7 +236,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CellModel_Checkbox_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -571,7 +570,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1Y">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="ui" />
     <property role="TrG5h" value="CheckboxUI_Text_Constraints" />
     <node concept="3Tm1VV" id="1Z" role="1B3o_S" />
     <node concept="3uibUv" id="20" role="1zkMxy">

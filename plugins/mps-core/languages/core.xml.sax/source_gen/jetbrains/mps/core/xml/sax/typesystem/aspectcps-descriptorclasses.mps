@@ -1061,7 +1061,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4e">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="sax" />
     <property role="TrG5h" value="typeof_XMLSAXAttributeReference_InferenceRule" />
     <node concept="3clFbW" id="4f" role="jymVt">
       <node concept="3clFbS" id="4n" role="3clF47" />
@@ -1277,7 +1277,7 @@
     <node concept="3Tm1VV" id="4m" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="5C">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="sax" />
     <property role="TrG5h" value="typeof_XMLSAXBreakStatement_InferenceRule" />
     <node concept="3clFbW" id="5D" role="jymVt">
       <node concept="3clFbS" id="5L" role="3clF47" />
@@ -1539,7 +1539,7 @@
     <node concept="3Tm1VV" id="5K" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7l">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="sax" />
     <property role="TrG5h" value="typeof_XMLSAXChildHandler_childObject_InferenceRule" />
     <node concept="3clFbW" id="7m" role="jymVt">
       <node concept="3clFbS" id="7u" role="3clF47" />
@@ -1829,7 +1829,7 @@
     <node concept="3Tm1VV" id="7t" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9e">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="sax" />
     <property role="TrG5h" value="typeof_XMLSAXChildRule_InferenceRule" />
     <node concept="3clFbW" id="9f" role="jymVt">
       <node concept="3clFbS" id="9n" role="3clF47" />
@@ -2237,7 +2237,7 @@
     <node concept="3Tm1VV" id="9m" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="bR">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="sax" />
     <property role="TrG5h" value="typeof_XMLSAXFieldReference_InferenceRule" />
     <node concept="3clFbW" id="bS" role="jymVt">
       <node concept="3clFbS" id="c0" role="3clF47" />
@@ -2463,7 +2463,7 @@
     <node concept="3Tm1VV" id="bZ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="dk">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="sax" />
     <property role="TrG5h" value="typeof_XMLSAXHandler_resultObject_InferenceRule" />
     <node concept="3clFbW" id="dl" role="jymVt">
       <node concept="3clFbS" id="dt" role="3clF47" />
@@ -2876,7 +2876,7 @@
     <node concept="3Tm1VV" id="ds" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fW">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="sax" />
     <property role="TrG5h" value="typeof_XMLSAXLocatorExpression_InferenceRule" />
     <node concept="3clFbW" id="fX" role="jymVt">
       <node concept="3clFbS" id="g5" role="3clF47" />
@@ -3094,7 +3094,7 @@
     <node concept="3Tm1VV" id="g4" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="hm">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="sax" />
     <property role="TrG5h" value="typeof_XMLSAXNodeRuleParamRef_InferenceRule" />
     <node concept="3clFbW" id="hn" role="jymVt">
       <node concept="3clFbS" id="hv" role="3clF47" />

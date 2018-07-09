@@ -255,7 +255,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="expression.print" />
     <property role="TrG5h" value="AbstractPrintExpression_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -554,7 +554,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1U">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="CommandHolder_Constraints" />
     <node concept="3Tm1VV" id="1V" role="1B3o_S" />
     <node concept="3uibUv" id="1W" role="1zkMxy">
@@ -1085,7 +1085,7 @@
   </node>
   <node concept="39dXUE" id="5a" />
   <node concept="312cEu" id="5b">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="help" />
     <property role="TrG5h" value="HelpConceptReference_Constraints" />
     <node concept="3Tm1VV" id="5c" role="1B3o_S" />
     <node concept="3uibUv" id="5d" role="1zkMxy">

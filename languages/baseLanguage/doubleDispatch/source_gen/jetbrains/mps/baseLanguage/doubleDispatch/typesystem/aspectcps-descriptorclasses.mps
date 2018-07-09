@@ -305,7 +305,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -399,7 +398,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="DispatchArgsHierarchy_NonTypesystemRule" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="9" role="3clF47" />
@@ -3277,7 +3275,6 @@
     <node concept="3Tm1VV" id="gj" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="jC">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="DisptachParamIsClass_NonTypesystemRule" />
     <node concept="3clFbW" id="jD" role="jymVt">
       <node concept="3clFbS" id="jL" role="3clF47" />

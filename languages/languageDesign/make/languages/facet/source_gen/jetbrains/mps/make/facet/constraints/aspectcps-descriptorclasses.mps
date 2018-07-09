@@ -565,7 +565,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1o">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="facet" />
     <property role="TrG5h" value="ExtendsFacetReference_Constraints" />
     <node concept="3Tm1VV" id="1p" role="1B3o_S" />
     <node concept="3uibUv" id="1q" role="1zkMxy">
@@ -939,7 +939,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3C">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="facet" />
     <property role="TrG5h" value="FacetDeclaration_Constraints" />
     <node concept="3Tm1VV" id="3D" role="1B3o_S" />
     <node concept="3uibUv" id="3E" role="1zkMxy">
@@ -1135,7 +1135,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4K">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="facet" />
     <property role="TrG5h" value="FacetReference_Constraints" />
     <node concept="3Tm1VV" id="4L" role="1B3o_S" />
     <node concept="3uibUv" id="4M" role="1zkMxy">
@@ -1523,7 +1523,7 @@
     <node concept="3Tm1VV" id="58" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7m">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="target" />
     <property role="TrG5h" value="ForeignParametersExpression_Constraints" />
     <node concept="3Tm1VV" id="7n" role="1B3o_S" />
     <node concept="3uibUv" id="7o" role="1zkMxy">
@@ -1934,7 +1934,7 @@
   </node>
   <node concept="39dXUE" id="9P" />
   <node concept="312cEu" id="9Q">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="facet" />
     <property role="TrG5h" value="NamedFacetReference_Constraints" />
     <node concept="3Tm1VV" id="9R" role="1B3o_S" />
     <node concept="3uibUv" id="9S" role="1zkMxy">
@@ -2208,7 +2208,7 @@
     </node>
   </node>
   <node concept="312cEu" id="br">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="facet" />
     <property role="TrG5h" value="RelatedFacetReference_Constraints" />
     <node concept="3Tm1VV" id="bs" role="1B3o_S" />
     <node concept="3uibUv" id="bt" role="1zkMxy">
@@ -2567,7 +2567,7 @@
     </node>
   </node>
   <node concept="312cEu" id="d_">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="target" />
     <property role="TrG5h" value="ResourceClassifierType_Constraints" />
     <node concept="3Tm1VV" id="dA" role="1B3o_S" />
     <node concept="3uibUv" id="dB" role="1zkMxy">
@@ -3228,7 +3228,7 @@
     </node>
   </node>
   <node concept="312cEu" id="hz">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="target" />
     <property role="TrG5h" value="ResourceTypeDeclaration_Constraints" />
     <node concept="3Tm1VV" id="h$" role="1B3o_S" />
     <node concept="3uibUv" id="h_" role="1zkMxy">
@@ -3262,7 +3262,7 @@
     <node concept="2tJIrI" id="hB" role="jymVt" />
   </node>
   <node concept="312cEu" id="hL">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="target" />
     <property role="TrG5h" value="TargetDeclaration_Constraints" />
     <node concept="3Tm1VV" id="hM" role="1B3o_S" />
     <node concept="3uibUv" id="hN" role="1zkMxy">
@@ -3596,7 +3596,7 @@
     </node>
   </node>
   <node concept="312cEu" id="jJ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="target" />
     <property role="TrG5h" value="TargetDependency_Constraints" />
     <node concept="3Tm1VV" id="jK" role="1B3o_S" />
     <node concept="3uibUv" id="jL" role="1zkMxy">
@@ -3915,7 +3915,6 @@
     </node>
   </node>
   <node concept="312cEu" id="lB">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="TargetReferenceExpression_Constraints" />
     <node concept="3Tm1VV" id="lC" role="1B3o_S" />
     <node concept="3uibUv" id="lD" role="1zkMxy">

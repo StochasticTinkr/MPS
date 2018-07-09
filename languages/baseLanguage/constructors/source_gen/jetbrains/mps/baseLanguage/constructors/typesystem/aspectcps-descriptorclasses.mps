@@ -225,7 +225,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -853,7 +852,6 @@
     </node>
   </node>
   <node concept="312cEu" id="3e">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="checkNumberOfArgs_NonTypesystemRule" />
     <node concept="3clFbW" id="3f" role="jymVt">
       <node concept="3clFbS" id="3n" role="3clF47" />
@@ -1085,7 +1083,6 @@
     <node concept="3Tm1VV" id="3m" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="4L">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_CustomConstructorParameterReference_InferenceRule" />
     <node concept="3clFbW" id="4M" role="jymVt">
       <node concept="3clFbS" id="4U" role="3clF47" />
@@ -1330,7 +1327,6 @@
     <node concept="3Tm1VV" id="4T" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6k">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_CustomConstructorParameter_InferenceRule" />
     <node concept="3clFbW" id="6l" role="jymVt">
       <node concept="3clFbS" id="6t" role="3clF47" />
@@ -1551,7 +1547,6 @@
     <node concept="3Tm1VV" id="6s" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7J">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_CustomConstructorUsage_InferenceRule" />
     <node concept="3clFbW" id="7K" role="jymVt">
       <node concept="3clFbS" id="7S" role="3clF47" />
@@ -2048,7 +2043,6 @@
     <node concept="3Tm1VV" id="7R" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="aP">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_CustomConstructor_InferenceRule" />
     <node concept="3clFbW" id="aQ" role="jymVt">
       <node concept="3clFbS" id="aY" role="3clF47" />
@@ -2269,7 +2263,6 @@
     <node concept="3Tm1VV" id="aX" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="cg">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ListCustomParameter_InferenceRule" />
     <node concept="3clFbW" id="ch" role="jymVt">
       <node concept="3clFbS" id="cp" role="3clF47" />

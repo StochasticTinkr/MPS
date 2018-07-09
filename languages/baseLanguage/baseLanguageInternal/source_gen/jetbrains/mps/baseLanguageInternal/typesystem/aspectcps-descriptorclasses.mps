@@ -1749,7 +1749,6 @@
     </node>
   </node>
   <node concept="312cEu" id="6_">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="InternalClassifierType_subtypeOf_ClassifierType_SubtypingRule" />
     <node concept="3clFbW" id="6A" role="jymVt">
       <node concept="3clFbS" id="6I" role="3clF47" />
@@ -1876,7 +1875,6 @@
     <node concept="3Tm1VV" id="6H" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7t">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
     <property role="TrG5h" value="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule" />
     <node concept="3clFbW" id="7u" role="jymVt">
       <node concept="3clFbS" id="7E" role="3clF47" />
@@ -2928,7 +2926,6 @@
     </node>
   </node>
   <node concept="312cEu" id="ey">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_ExtractStaticMethodCall_NonTypesystemRule" />
     <node concept="3clFbW" id="ez" role="jymVt">
       <node concept="3clFbS" id="eF" role="3clF47" />
@@ -3132,7 +3129,6 @@
     <node concept="3Tm1VV" id="eE" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fS">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ExtractStatementList_InferenceRule" />
     <node concept="3clFbW" id="fT" role="jymVt">
       <node concept="3clFbS" id="g1" role="3clF47" />
@@ -3382,7 +3378,6 @@
     <node concept="3Tm1VV" id="g0" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ht">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ExtractStaticInnerClassExpression_InferenceRule" />
     <node concept="3clFbW" id="hu" role="jymVt">
       <node concept="3clFbS" id="hA" role="3clF47" />
@@ -3627,7 +3622,6 @@
     <node concept="3Tm1VV" id="h_" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="j0">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ExtractStaticMethodExpression_InferenceRule" />
     <node concept="3clFbW" id="j1" role="jymVt">
       <node concept="3clFbS" id="j9" role="3clF47" />
@@ -3872,7 +3866,6 @@
     <node concept="3Tm1VV" id="j8" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="kz">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ExtractToConstantExpression_InferenceRule" />
     <node concept="3clFbW" id="k$" role="jymVt">
       <node concept="3clFbS" id="kG" role="3clF47" />
@@ -4117,7 +4110,6 @@
     <node concept="3Tm1VV" id="kF" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="m6">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ExtractToConstantRefExpression_InferenceRule" />
     <node concept="3clFbW" id="m7" role="jymVt">
       <node concept="3clFbS" id="mf" role="3clF47" />
@@ -4367,7 +4359,6 @@
     <node concept="3Tm1VV" id="me" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="nF">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InternalAnonymousClassCreator_InferenceRule" />
     <node concept="3clFbW" id="nG" role="jymVt">
       <node concept="3clFbS" id="nO" role="3clF47" />
@@ -4612,7 +4603,6 @@
     <node concept="3Tm1VV" id="nN" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="pe">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InternalAnonymousClass_InferenceRule" />
     <node concept="3clFbW" id="pf" role="jymVt">
       <node concept="3clFbS" id="pn" role="3clF47" />
@@ -4836,7 +4826,6 @@
     <node concept="3Tm1VV" id="pm" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="qF">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InternalClassCreator_InferenceRule" />
     <node concept="3clFbW" id="qG" role="jymVt">
       <node concept="3clFbS" id="qO" role="3clF47" />
@@ -5137,7 +5126,6 @@
     <node concept="3Tm1VV" id="qN" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="sA">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InternalClassExpression_InferenceRule" />
     <node concept="3clFbW" id="sB" role="jymVt">
       <node concept="3clFbS" id="sJ" role="3clF47" />
@@ -5367,7 +5355,6 @@
     <node concept="3Tm1VV" id="sI" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="u5">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InternalNewExpression_InferenceRule" />
     <node concept="3clFbW" id="u6" role="jymVt">
       <node concept="3clFbS" id="ue" role="3clF47" />
@@ -5686,7 +5673,6 @@
     <node concept="3Tm1VV" id="ud" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="w7">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InternalPartialFieldReference_InferenceRule" />
     <node concept="3clFbW" id="w8" role="jymVt">
       <node concept="3clFbS" id="wg" role="3clF47" />
@@ -5907,7 +5893,6 @@
     <node concept="3Tm1VV" id="wf" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="xy">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InternalPartialInstanceMethodCall_InferenceRule" />
     <node concept="3clFbW" id="xz" role="jymVt">
       <node concept="3clFbS" id="xF" role="3clF47" />
@@ -6128,7 +6113,6 @@
     <node concept="3Tm1VV" id="xE" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="yX">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InternalStaticMethodCall_InferenceRule" />
     <node concept="3clFbW" id="yY" role="jymVt">
       <node concept="3clFbS" id="z6" role="3clF47" />
@@ -6349,7 +6333,6 @@
     <node concept="3Tm1VV" id="z5" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="$o">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InternalSuperMethodCallOperation_InferenceRule" />
     <node concept="3clFbW" id="$p" role="jymVt">
       <node concept="3clFbS" id="$x" role="3clF47" />
@@ -6570,7 +6553,6 @@
     <node concept="3Tm1VV" id="$w" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="_N">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InternalThisExpression_InferenceRule" />
     <node concept="3clFbW" id="_O" role="jymVt">
       <node concept="3clFbS" id="_W" role="3clF47" />
@@ -6912,7 +6894,6 @@
     <node concept="3Tm1VV" id="_V" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="BZ">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InternalTypedStaticFieldReference_InferenceRule" />
     <node concept="3clFbW" id="C0" role="jymVt">
       <node concept="3clFbS" id="C8" role="3clF47" />
@@ -7133,7 +7114,6 @@
     <node concept="3Tm1VV" id="C7" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Dq">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InternalVariableReference_InferenceRule" />
     <node concept="3clFbW" id="Dr" role="jymVt">
       <node concept="3clFbS" id="Dz" role="3clF47" />
@@ -7354,7 +7334,6 @@
     <node concept="3Tm1VV" id="Dy" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="EP">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_TypeHintExpression_InferenceRule" />
     <node concept="3clFbW" id="EQ" role="jymVt">
       <node concept="3clFbS" id="EY" role="3clF47" />
@@ -7575,7 +7554,7 @@
     <node concept="3Tm1VV" id="EX" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Gg">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="weak" />
     <property role="TrG5h" value="typeof_WeakClassReference_InferenceRule" />
     <node concept="3clFbW" id="Gh" role="jymVt">
       <node concept="3clFbS" id="Gp" role="3clF47" />
@@ -7791,7 +7770,7 @@
     <node concept="3Tm1VV" id="Go" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="HE">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="weak" />
     <property role="TrG5h" value="typeof_WeakConstantReference_InferenceRule" />
     <node concept="3clFbW" id="HF" role="jymVt">
       <node concept="3clFbS" id="HN" role="3clF47" />

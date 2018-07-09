@@ -266,7 +266,7 @@
     </node>
   </node>
   <node concept="312cEu" id="y">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="icons.descriptors" />
     <property role="TrG5h" value="FileIcon_Constraints" />
     <node concept="3Tm1VV" id="z" role="1B3o_S" />
     <node concept="3uibUv" id="$" role="1zkMxy">
@@ -597,7 +597,7 @@
   </node>
   <node concept="39dXUE" id="2_" />
   <node concept="312cEu" id="2A">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="icons.descriptors.text" />
     <property role="TrG5h" value="Text_Constraints" />
     <node concept="3Tm1VV" id="2B" role="1B3o_S" />
     <node concept="3uibUv" id="2C" role="1zkMxy">

@@ -224,9 +224,6 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -249,7 +246,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="editorComponents" />
     <property role="TrG5h" value="Car_Editor" />
     <node concept="3clFb_" id="1" role="jymVt">
       <property role="TrG5h" value="createEditorCell" />
@@ -2501,7 +2497,6 @@
     </node>
   </node>
   <node concept="312cEu" id="d5">
-    <property role="3GE5qa" value="editorComponents" />
     <property role="TrG5h" value="Person_Editor" />
     <node concept="3clFb_" id="d6" role="jymVt">
       <property role="TrG5h" value="createEditorCell" />

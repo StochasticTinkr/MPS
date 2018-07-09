@@ -726,7 +726,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2I">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="types" />
     <property role="TrG5h" value="WatchableListIsAListOrWatchables_SubtypingRule" />
     <node concept="3clFbW" id="2J" role="jymVt">
       <node concept="3clFbS" id="2R" role="3clF47" />
@@ -853,7 +853,7 @@
     <node concept="3Tm1VV" id="2Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3A">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="highLevel" />
     <property role="TrG5h" value="WatchableListIsAList_SubtypingRule" />
     <node concept="3clFbW" id="3B" role="jymVt">
       <node concept="3clFbS" id="3J" role="3clF47" />
@@ -969,7 +969,7 @@
     <node concept="3Tm1VV" id="3I" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="4r">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="highLevel" />
     <property role="TrG5h" value="typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule" />
     <node concept="3clFbW" id="4s" role="jymVt">
       <node concept="3clFbS" id="4$" role="3clF47" />
@@ -1199,7 +1199,7 @@
     <node concept="3Tm1VV" id="4z" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="5U">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="highLevel" />
     <property role="TrG5h" value="typeof_HighLevelWatchableCreator_InferenceRule" />
     <node concept="3clFbW" id="5V" role="jymVt">
       <node concept="3clFbS" id="63" role="3clF47" />
@@ -1417,7 +1417,7 @@
     <node concept="3Tm1VV" id="62" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7k">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="highLevel" />
     <property role="TrG5h" value="typeof_WatchablesListCreator_InferenceRule" />
     <node concept="3clFbW" id="7l" role="jymVt">
       <node concept="3clFbS" id="7t" role="3clF47" />

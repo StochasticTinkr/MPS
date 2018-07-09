@@ -300,7 +300,7 @@
     </node>
   </node>
   <node concept="312cEu" id="O">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="member" />
     <property role="TrG5h" value="DataDependencyReference_Constraints" />
     <node concept="3Tm1VV" id="P" role="1B3o_S" />
     <node concept="3uibUv" id="Q" role="1zkMxy">
@@ -609,7 +609,7 @@
   </node>
   <node concept="39dXUE" id="2A" />
   <node concept="312cEu" id="2B">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="transformExtension" />
     <property role="TrG5h" value="LinkPatternVariableReference_Constraints" />
     <node concept="3Tm1VV" id="2C" role="1B3o_S" />
     <node concept="3uibUv" id="2D" role="1zkMxy">
@@ -917,7 +917,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4p">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="transformExtension" />
     <property role="TrG5h" value="ListPatternVariableReference_Constraints" />
     <node concept="3Tm1VV" id="4q" role="1B3o_S" />
     <node concept="3uibUv" id="4r" role="1zkMxy">
@@ -1225,7 +1225,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6b">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="transformExtension" />
     <property role="TrG5h" value="NodePatternVariableReference_Constraints" />
     <node concept="3Tm1VV" id="6c" role="1B3o_S" />
     <node concept="3uibUv" id="6d" role="1zkMxy">
@@ -1533,7 +1533,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7X">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="transformExtension" />
     <property role="TrG5h" value="PropertyPatternVariableReference_Constraints" />
     <node concept="3Tm1VV" id="7Y" role="1B3o_S" />
     <node concept="3uibUv" id="7Z" role="1zkMxy">

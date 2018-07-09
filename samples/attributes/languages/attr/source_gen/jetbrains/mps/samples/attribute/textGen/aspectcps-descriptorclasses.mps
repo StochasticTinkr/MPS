@@ -207,6 +207,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -215,6 +218,7 @@
   <node concept="312cEu" id="0">
     <property role="1sVAO0" value="true" />
     <property role="TrG5h" value="Auxiliary" />
+    <property role="3GE5qa" value="pure-textgen" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="2YIFZL" id="2" role="jymVt">
       <property role="DiZV1" value="false" />
@@ -247,6 +251,7 @@
   <node concept="312cEu" id="c">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="CommentAttribute2_TextGen" />
+    <property role="3GE5qa" value="generator-processed" />
     <node concept="3Tm1VV" id="d" role="1B3o_S" />
     <node concept="3uibUv" id="e" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -355,6 +360,7 @@
   <node concept="312cEu" id="Q">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="CommentAttribute_TextGen" />
+    <property role="3GE5qa" value="pure-textgen" />
     <node concept="3Tm1VV" id="R" role="1B3o_S" />
     <node concept="3uibUv" id="S" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />

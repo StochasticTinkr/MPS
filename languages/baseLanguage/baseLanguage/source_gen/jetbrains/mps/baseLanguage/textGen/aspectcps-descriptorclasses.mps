@@ -477,6 +477,7 @@
   <node concept="312cEu" id="0">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="AdditionalForLoopVariable_TextGen" />
+    <property role="3GE5qa" value="control_flow.loops" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -598,6 +599,7 @@
   <node concept="312cEu" id="K">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="AndExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="L" role="1B3o_S" />
     <node concept="3uibUv" id="M" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -699,6 +701,7 @@
   <node concept="312cEu" id="1n">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="AnnotationInstanceExpression_TextGen" />
+    <property role="3GE5qa" value="to_remove" />
     <node concept="3Tm1VV" id="1o" role="1B3o_S" />
     <node concept="3uibUv" id="1p" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -764,6 +767,7 @@
   <node concept="312cEu" id="1K">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="AnnotationInstanceValue_TextGen" />
+    <property role="3GE5qa" value="classifiers" />
     <node concept="3Tm1VV" id="1L" role="1B3o_S" />
     <node concept="3uibUv" id="1M" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -870,6 +874,7 @@
   <node concept="312cEu" id="2p">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="AnnotationInstance_TextGen" />
+    <property role="3GE5qa" value="classifiers" />
     <node concept="3Tm1VV" id="2q" role="1B3o_S" />
     <node concept="3uibUv" id="2r" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -1199,6 +1204,7 @@
   <node concept="312cEu" id="4x">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="AnnotationMethodDeclaration_TextGen" />
+    <property role="3GE5qa" value="classifiers.members" />
     <node concept="3Tm1VV" id="4y" role="1B3o_S" />
     <node concept="3uibUv" id="4z" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -1490,6 +1496,7 @@
   <node concept="312cEu" id="6k">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="Annotation_TextGen" />
+    <property role="3GE5qa" value="classifiers.classifiers" />
     <node concept="3Tm1VV" id="6l" role="1B3o_S" />
     <node concept="3uibUv" id="6m" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -1768,6 +1775,7 @@
   <node concept="312cEu" id="80">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="AnonymousClassCreator_TextGen" />
+    <property role="3GE5qa" value="classifiers" />
     <node concept="3Tm1VV" id="81" role="1B3o_S" />
     <node concept="3uibUv" id="82" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -1833,6 +1841,7 @@
   <node concept="312cEu" id="8p">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="AnonymousClass_TextGen" />
+    <property role="3GE5qa" value="classifiers.classifiers" />
     <node concept="3Tm1VV" id="8q" role="1B3o_S" />
     <node concept="3uibUv" id="8r" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -2520,6 +2529,7 @@
   <node concept="312cEu" id="cQ">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ArrayAccessExpression_TextGen" />
+    <property role="3GE5qa" value="array" />
     <node concept="3Tm1VV" id="cR" role="1B3o_S" />
     <node concept="3uibUv" id="cS" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -2634,6 +2644,7 @@
   <node concept="312cEu" id="dy">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ArrayClassExpression_TextGen" />
+    <property role="3GE5qa" value="array" />
     <node concept="3Tm1VV" id="dz" role="1B3o_S" />
     <node concept="3uibUv" id="d$" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -2712,6 +2723,7 @@
   <node concept="312cEu" id="e0">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ArrayCloneOperation_TextGen" />
+    <property role="3GE5qa" value="array" />
     <node concept="3Tm1VV" id="e1" role="1B3o_S" />
     <node concept="3uibUv" id="e2" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -2767,6 +2779,7 @@
   <node concept="312cEu" id="el">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ArrayCreatorWithInitializer_TextGen" />
+    <property role="3GE5qa" value="array" />
     <node concept="3Tm1VV" id="em" role="1B3o_S" />
     <node concept="3uibUv" id="en" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -2945,6 +2958,7 @@
   <node concept="312cEu" id="ft">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ArrayCreator_TextGen" />
+    <property role="3GE5qa" value="array" />
     <node concept="3Tm1VV" id="fu" role="1B3o_S" />
     <node concept="3uibUv" id="fv" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -3044,6 +3058,7 @@
   <node concept="312cEu" id="g4">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ArrayLengthOperation_TextGen" />
+    <property role="3GE5qa" value="array" />
     <node concept="3Tm1VV" id="g5" role="1B3o_S" />
     <node concept="3uibUv" id="g6" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -3099,6 +3114,7 @@
   <node concept="312cEu" id="gp">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ArrayLiteral_TextGen" />
+    <property role="3GE5qa" value="array" />
     <node concept="3Tm1VV" id="gq" role="1B3o_S" />
     <node concept="3uibUv" id="gr" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -3254,6 +3270,7 @@
   <node concept="312cEu" id="ho">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ArrayType_TextGen" />
+    <property role="3GE5qa" value="array" />
     <node concept="3Tm1VV" id="hp" role="1B3o_S" />
     <node concept="3uibUv" id="hq" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -3332,6 +3349,7 @@
   <node concept="312cEu" id="hQ">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="AssertStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow" />
     <node concept="3Tm1VV" id="hR" role="1B3o_S" />
     <node concept="3uibUv" id="hS" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -3549,6 +3567,7 @@
   <node concept="312cEu" id="jc">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="BaseAssignmentExpression_TextGen" />
+    <property role="3GE5qa" value="" />
     <node concept="3Tm1VV" id="jd" role="1B3o_S" />
     <node concept="3uibUv" id="je" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -3687,6 +3706,7 @@
   <node concept="312cEu" id="k3">
     <property role="1sVAO0" value="true" />
     <property role="TrG5h" value="BaseClassConceptTextGen" />
+    <property role="3GE5qa" value="lang" />
     <node concept="3Tm1VV" id="k4" role="1B3o_S" />
     <node concept="2YIFZL" id="k5" role="jymVt">
       <property role="TrG5h" value="membersWithBrackets" />
@@ -4064,6 +4084,7 @@
   <node concept="312cEu" id="mp">
     <property role="1sVAO0" value="true" />
     <property role="TrG5h" value="BaseLanguageTextGen" />
+    <property role="3GE5qa" value="lang" />
     <node concept="3Tm1VV" id="mq" role="1B3o_S" />
     <node concept="2YIFZL" id="mr" role="jymVt">
       <property role="TrG5h" value="typeParameters" />
@@ -6915,6 +6936,7 @@
   <node concept="312cEu" id="Cg">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="BitwiseAndExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="Ch" role="1B3o_S" />
     <node concept="3uibUv" id="Ci" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -7016,6 +7038,7 @@
   <node concept="312cEu" id="CR">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="BitwiseNotExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="CS" role="1B3o_S" />
     <node concept="3uibUv" id="CT" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -7107,6 +7130,7 @@
   <node concept="312cEu" id="Dq">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="BitwiseOrExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="Dr" role="1B3o_S" />
     <node concept="3uibUv" id="Ds" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -7208,6 +7232,7 @@
   <node concept="312cEu" id="E1">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="BitwiseXorExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="E2" role="1B3o_S" />
     <node concept="3uibUv" id="E3" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -7309,6 +7334,7 @@
   <node concept="312cEu" id="EC">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="BlockStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow" />
     <node concept="3Tm1VV" id="ED" role="1B3o_S" />
     <node concept="3uibUv" id="EE" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -7639,6 +7665,7 @@
   <node concept="312cEu" id="GG">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="BooleanType_TextGen" />
+    <property role="3GE5qa" value="primitive" />
     <node concept="3Tm1VV" id="GH" role="1B3o_S" />
     <node concept="3uibUv" id="GI" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -7694,6 +7721,7 @@
   <node concept="312cEu" id="H1">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="BreakStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow" />
     <node concept="3Tm1VV" id="H2" role="1B3o_S" />
     <node concept="3uibUv" id="H3" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -7991,6 +8019,7 @@
   <node concept="312cEu" id="IS">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ByteType_TextGen" />
+    <property role="3GE5qa" value="primitive" />
     <node concept="3Tm1VV" id="IT" role="1B3o_S" />
     <node concept="3uibUv" id="IU" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -8219,6 +8248,7 @@
   <node concept="312cEu" id="Kh">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="CatchClause_TextGen" />
+    <property role="3GE5qa" value="control_flow.try_catch" />
     <node concept="3Tm1VV" id="Ki" role="1B3o_S" />
     <node concept="3uibUv" id="Kj" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -8508,6 +8538,7 @@
   <node concept="312cEu" id="M2">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="CharType_TextGen" />
+    <property role="3GE5qa" value="primitive" />
     <node concept="3Tm1VV" id="M3" role="1B3o_S" />
     <node concept="3uibUv" id="M4" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -8563,6 +8594,7 @@
   <node concept="312cEu" id="Mn">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ClassConcept_TextGen" />
+    <property role="3GE5qa" value="classifiers.classifiers" />
     <node concept="3Tm1VV" id="Mo" role="1B3o_S" />
     <node concept="3uibUv" id="Mp" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -9141,6 +9173,7 @@
   <node concept="312cEu" id="PX">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ClassCreator_TextGen" />
+    <property role="3GE5qa" value="classifiers" />
     <node concept="3Tm1VV" id="PY" role="1B3o_S" />
     <node concept="3uibUv" id="PZ" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -9397,6 +9430,7 @@
   <node concept="312cEu" id="Ru">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ClassifierClassExpression_TextGen" />
+    <property role="3GE5qa" value="classifiers" />
     <node concept="3Tm1VV" id="Rv" role="1B3o_S" />
     <node concept="3uibUv" id="Rw" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -9481,6 +9515,7 @@
   <node concept="312cEu" id="RY">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ClassifierType_TextGen" />
+    <property role="3GE5qa" value="type" />
     <node concept="3Tm1VV" id="RZ" role="1B3o_S" />
     <node concept="3uibUv" id="S0" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -10552,6 +10587,7 @@
   <node concept="312cEu" id="YF">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="CommentedStatement_TextGen" />
+    <property role="3GE5qa" value="to_remove" />
     <node concept="3Tm1VV" id="YG" role="1B3o_S" />
     <node concept="3uibUv" id="YH" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -10753,6 +10789,7 @@
   <node concept="312cEu" id="ZU">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="CommentedStatementsBlock_TextGen" />
+    <property role="3GE5qa" value="comments" />
     <node concept="3Tm1VV" id="ZV" role="1B3o_S" />
     <node concept="3uibUv" id="ZW" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -10985,6 +11022,7 @@
   <node concept="312cEu" id="11m">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ConceptFunctionParameter_TextGen" />
+    <property role="3GE5qa" value="ext.conceptFunction" />
     <node concept="3Tm1VV" id="11n" role="1B3o_S" />
     <node concept="3uibUv" id="11o" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -11051,6 +11089,7 @@
   <node concept="312cEu" id="11L">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ConstructorDeclaration_TextGen" />
+    <property role="3GE5qa" value="classifiers.members" />
     <node concept="3Tm1VV" id="11M" role="1B3o_S" />
     <node concept="3uibUv" id="11N" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -12697,6 +12736,7 @@
   <node concept="312cEu" id="1c_">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ContinueStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow" />
     <node concept="3Tm1VV" id="1cA" role="1B3o_S" />
     <node concept="3uibUv" id="1cB" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -12994,6 +13034,7 @@
   <node concept="312cEu" id="1es">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="DefaultClassCreator_TextGen" />
+    <property role="3GE5qa" value="classifier" />
     <node concept="3Tm1VV" id="1et" role="1B3o_S" />
     <node concept="3uibUv" id="1eu" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -13195,6 +13236,7 @@
   <node concept="312cEu" id="1fE">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="DimensionExpression_TextGen" />
+    <property role="3GE5qa" value="array" />
     <node concept="3Tm1VV" id="1fF" role="1B3o_S" />
     <node concept="3uibUv" id="1fG" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -13343,6 +13385,7 @@
   <node concept="312cEu" id="1gA">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="DivExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="1gB" role="1B3o_S" />
     <node concept="3uibUv" id="1gC" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -13444,6 +13487,7 @@
   <node concept="312cEu" id="1hd">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="DoWhileStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow.loops" />
     <node concept="3Tm1VV" id="1he" role="1B3o_S" />
     <node concept="3uibUv" id="1hf" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -13838,6 +13882,7 @@
   <node concept="312cEu" id="1jE">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="DotExpression_TextGen" />
+    <property role="3GE5qa" value="classifiers" />
     <node concept="3Tm1VV" id="1jF" role="1B3o_S" />
     <node concept="3uibUv" id="1jG" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -13939,6 +13984,7 @@
   <node concept="312cEu" id="1kh">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="DoubleType_TextGen" />
+    <property role="3GE5qa" value="primitive" />
     <node concept="3Tm1VV" id="1ki" role="1B3o_S" />
     <node concept="3uibUv" id="1kj" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -13994,6 +14040,7 @@
   <node concept="312cEu" id="1kA">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ElsifClause_TextGen" />
+    <property role="3GE5qa" value="control_flow.if_switch" />
     <node concept="3Tm1VV" id="1kB" role="1B3o_S" />
     <node concept="3uibUv" id="1kC" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -14181,6 +14228,7 @@
   <node concept="312cEu" id="1lJ">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="EnumClass_TextGen" />
+    <property role="3GE5qa" value="classifiers.classifiers" />
     <node concept="3Tm1VV" id="1lK" role="1B3o_S" />
     <node concept="3uibUv" id="1lL" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -14814,6 +14862,7 @@
   <node concept="312cEu" id="1pJ">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="EnumConstantDeclaration_TextGen" />
+    <property role="3GE5qa" value="classifiers.members" />
     <node concept="3Tm1VV" id="1pK" role="1B3o_S" />
     <node concept="3uibUv" id="1pL" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -15224,6 +15273,7 @@
   <node concept="312cEu" id="1sl">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="EnumConstantReference_TextGen" />
+    <property role="3GE5qa" value="classifiers" />
     <node concept="3Tm1VV" id="1sm" role="1B3o_S" />
     <node concept="3uibUv" id="1sn" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -15392,6 +15442,7 @@
   <node concept="312cEu" id="1tn">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="EnumValueOfExpression_TextGen" />
+    <property role="3GE5qa" value="classifiers" />
     <node concept="3Tm1VV" id="1to" role="1B3o_S" />
     <node concept="3uibUv" id="1tp" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -15525,6 +15576,7 @@
   <node concept="312cEu" id="1ua">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="EnumValuesExpression_TextGen" />
+    <property role="3GE5qa" value="classifiers" />
     <node concept="3Tm1VV" id="1ub" role="1B3o_S" />
     <node concept="3uibUv" id="1uc" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -15609,6 +15661,7 @@
   <node concept="312cEu" id="1uE">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="EqualsExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="1uF" role="1B3o_S" />
     <node concept="3uibUv" id="1uG" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -15858,6 +15911,7 @@
   <node concept="312cEu" id="1wb">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="FieldDeclaration_TextGen" />
+    <property role="3GE5qa" value="classifiers.members" />
     <node concept="3Tm1VV" id="1wc" role="1B3o_S" />
     <node concept="3uibUv" id="1wd" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -16223,6 +16277,7 @@
   <node concept="312cEu" id="1yq">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="FieldReferenceOperation_TextGen" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <node concept="3Tm1VV" id="1yr" role="1B3o_S" />
     <node concept="3uibUv" id="1ys" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -16294,6 +16349,7 @@
   <node concept="312cEu" id="1yP">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="FloatType_TextGen" />
+    <property role="3GE5qa" value="primitive" />
     <node concept="3Tm1VV" id="1yQ" role="1B3o_S" />
     <node concept="3uibUv" id="1yR" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -16553,6 +16609,7 @@
   <node concept="312cEu" id="1$s">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ForStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow.loops" />
     <node concept="3Tm1VV" id="1$t" role="1B3o_S" />
     <node concept="3uibUv" id="1$u" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -17243,6 +17300,7 @@
   <node concept="312cEu" id="1CN">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ForeachStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow.loops" />
     <node concept="3Tm1VV" id="1CO" role="1B3o_S" />
     <node concept="3uibUv" id="1CP" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -21034,6 +21092,7 @@
   <node concept="312cEu" id="1U$">
     <property role="1sVAO0" value="true" />
     <property role="TrG5h" value="GenericDeclarationTextGen2" />
+    <property role="3GE5qa" value="lang" />
     <node concept="3Tm1VV" id="1U_" role="1B3o_S" />
     <node concept="2eloPW" id="1UA" role="1zkMxy">
       <property role="2ely0U" value="jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen" />
@@ -21203,6 +21262,7 @@
   <node concept="312cEu" id="1VD">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="GenericNewExpression_TextGen" />
+    <property role="3GE5qa" value="" />
     <node concept="3Tm1VV" id="1VE" role="1B3o_S" />
     <node concept="3uibUv" id="1VF" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -21331,6 +21391,7 @@
   <node concept="312cEu" id="1Ws">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="GreaterThanExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="1Wt" role="1B3o_S" />
     <node concept="3uibUv" id="1Wu" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -21432,6 +21493,7 @@
   <node concept="312cEu" id="1X3">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="GreaterThanOrEqualsExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="1X4" role="1B3o_S" />
     <node concept="3uibUv" id="1X5" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -21603,6 +21665,7 @@
   <node concept="312cEu" id="1Y5">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="IfStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow.if_switch" />
     <node concept="3Tm1VV" id="1Y6" role="1B3o_S" />
     <node concept="3uibUv" id="1Y7" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -21950,6 +22013,7 @@
   <node concept="312cEu" id="20f">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ImplicitAnnotationInstanceValue_TextGen" />
+    <property role="3GE5qa" value="classifiers" />
     <node concept="3Tm1VV" id="20g" role="1B3o_S" />
     <node concept="3uibUv" id="20h" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -22893,6 +22957,7 @@
   <node concept="312cEu" id="26u">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="InstanceInitializer_TextGen" />
+    <property role="3GE5qa" value="classifiers.members" />
     <node concept="3Tm1VV" id="26v" role="1B3o_S" />
     <node concept="3uibUv" id="26w" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -23064,6 +23129,7 @@
   <node concept="312cEu" id="27x">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="InstanceMethodCallOperation_TextGen" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <node concept="3Tm1VV" id="27y" role="1B3o_S" />
     <node concept="3uibUv" id="27z" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -23126,6 +23192,7 @@
   <node concept="312cEu" id="27S">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="InstanceMethodDeclaration_TextGen" />
+    <property role="3GE5qa" value="classifiers.members" />
     <node concept="3Tm1VV" id="27T" role="1B3o_S" />
     <node concept="3uibUv" id="27U" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -24145,6 +24212,7 @@
   <node concept="312cEu" id="2ej">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="IntegerConstant_TextGen" />
+    <property role="3GE5qa" value="primitive" />
     <node concept="3Tm1VV" id="2ek" role="1B3o_S" />
     <node concept="3uibUv" id="2el" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -24215,6 +24283,7 @@
   <node concept="312cEu" id="2eI">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="IntegerType_TextGen" />
+    <property role="3GE5qa" value="primitive" />
     <node concept="3Tm1VV" id="2eJ" role="1B3o_S" />
     <node concept="3uibUv" id="2eK" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -24270,6 +24339,7 @@
   <node concept="312cEu" id="2f3">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="Interface_TextGen" />
+    <property role="3GE5qa" value="classifiers.classifiers" />
     <node concept="3Tm1VV" id="2f4" role="1B3o_S" />
     <node concept="3uibUv" id="2f5" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -24691,6 +24761,7 @@
   <node concept="312cEu" id="2hD">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="LessThanExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="2hE" role="1B3o_S" />
     <node concept="3uibUv" id="2hF" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -24792,6 +24863,7 @@
   <node concept="312cEu" id="2ig">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="LessThanOrEqualsExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="2ih" role="1B3o_S" />
     <node concept="3uibUv" id="2ii" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -24893,6 +24965,7 @@
   <node concept="312cEu" id="2iR">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="LocalMethodCall_TextGen" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <node concept="3Tm1VV" id="2iS" role="1B3o_S" />
     <node concept="3uibUv" id="2iT" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -24955,6 +25028,7 @@
   <node concept="312cEu" id="2je">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="LocalVariableDeclarationStatement_TextGen" />
+    <property role="3GE5qa" value="variables" />
     <node concept="3Tm1VV" id="2jf" role="1B3o_S" />
     <node concept="3uibUv" id="2jg" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -25103,6 +25177,7 @@
   <node concept="312cEu" id="2k8">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="LocalVariableDeclaration_TextGen" />
+    <property role="3GE5qa" value="variables" />
     <node concept="3Tm1VV" id="2k9" role="1B3o_S" />
     <node concept="3uibUv" id="2ka" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -25250,6 +25325,7 @@
   <node concept="312cEu" id="2kZ">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="LongType_TextGen" />
+    <property role="3GE5qa" value="primitive" />
     <node concept="3Tm1VV" id="2l0" role="1B3o_S" />
     <node concept="3uibUv" id="2l1" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -25305,6 +25381,7 @@
   <node concept="312cEu" id="2lk">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="LowerBoundType_TextGen" />
+    <property role="3GE5qa" value="generics" />
     <node concept="3Tm1VV" id="2ll" role="1B3o_S" />
     <node concept="3uibUv" id="2lm" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -25383,6 +25460,7 @@
   <node concept="312cEu" id="2lM">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="MinusExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="2lN" role="1B3o_S" />
     <node concept="3uibUv" id="2lO" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -25484,6 +25562,7 @@
   <node concept="312cEu" id="2mp">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="MulExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="2mq" role="1B3o_S" />
     <node concept="3uibUv" id="2mr" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -25713,6 +25792,7 @@
   <node concept="312cEu" id="2nN">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="NotEqualsExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="2nO" role="1B3o_S" />
     <node concept="3uibUv" id="2nP" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -25814,6 +25894,7 @@
   <node concept="312cEu" id="2oq">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="NotExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="2or" role="1B3o_S" />
     <node concept="3uibUv" id="2os" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -25960,6 +26041,7 @@
   <node concept="312cEu" id="2pi">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="OrExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="2pj" role="1B3o_S" />
     <node concept="3uibUv" id="2pk" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -26061,6 +26143,7 @@
   <node concept="312cEu" id="2pT">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ParameterDeclaration_TextGen" />
+    <property role="3GE5qa" value="variables" />
     <node concept="3Tm1VV" id="2pU" role="1B3o_S" />
     <node concept="3uibUv" id="2pV" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -26286,6 +26369,7 @@
   <node concept="312cEu" id="2re">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="PlusExpression_TextGen" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="2rf" role="1B3o_S" />
     <node concept="3uibUv" id="2rg" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -26387,6 +26471,7 @@
   <node concept="312cEu" id="2rP">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="PostfixDecrementExpression_TextGen" />
+    <property role="3GE5qa" value="expressions.prefix/postfix" />
     <node concept="3Tm1VV" id="2rQ" role="1B3o_S" />
     <node concept="3uibUv" id="2rR" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -26465,6 +26550,7 @@
   <node concept="312cEu" id="2sj">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="PostfixIncrementExpression_TextGen" />
+    <property role="3GE5qa" value="expressions.prefix/postfix" />
     <node concept="3Tm1VV" id="2sk" role="1B3o_S" />
     <node concept="3uibUv" id="2sl" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -26543,6 +26629,7 @@
   <node concept="312cEu" id="2sL">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="PrefixDecrementExpression_TextGen" />
+    <property role="3GE5qa" value="expressions.prefix/postfix" />
     <node concept="3Tm1VV" id="2sM" role="1B3o_S" />
     <node concept="3uibUv" id="2sN" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -26621,6 +26708,7 @@
   <node concept="312cEu" id="2tf">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="PrefixIncrementExpression_TextGen" />
+    <property role="3GE5qa" value="expressions.prefix/postfix" />
     <node concept="3Tm1VV" id="2tg" role="1B3o_S" />
     <node concept="3uibUv" id="2th" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -26699,6 +26787,7 @@
   <node concept="312cEu" id="2tH">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="PrimitiveClassExpression_TextGen" />
+    <property role="3GE5qa" value="primitive" />
     <node concept="3Tm1VV" id="2tI" role="1B3o_S" />
     <node concept="3uibUv" id="2tJ" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -26777,6 +26866,7 @@
   <node concept="312cEu" id="2ub">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="QualifiedSuperMethodCall_TextGen" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <node concept="3Tm1VV" id="2uc" role="1B3o_S" />
     <node concept="3uibUv" id="2ud" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -26982,6 +27072,7 @@
   <node concept="312cEu" id="2vp">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="RemarkStatement_TextGen" />
+    <property role="3GE5qa" value="to_remove" />
     <node concept="3Tm1VV" id="2vq" role="1B3o_S" />
     <node concept="3uibUv" id="2vr" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -27187,6 +27278,7 @@
   <node concept="312cEu" id="2wF">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ReturnStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow" />
     <node concept="3Tm1VV" id="2wG" role="1B3o_S" />
     <node concept="3uibUv" id="2wH" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -27684,6 +27776,7 @@
   <node concept="312cEu" id="2zH">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ShortType_TextGen" />
+    <property role="3GE5qa" value="primitive" />
     <node concept="3Tm1VV" id="2zI" role="1B3o_S" />
     <node concept="3uibUv" id="2zJ" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -28403,6 +28496,7 @@
   <node concept="312cEu" id="2C7">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="StaticFieldDeclaration_TextGen" />
+    <property role="3GE5qa" value="classifiers.members" />
     <node concept="3Tm1VV" id="2C8" role="1B3o_S" />
     <node concept="3uibUv" id="2C9" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -28820,6 +28914,7 @@
   <node concept="312cEu" id="2EH">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="StaticFieldReference_TextGen" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <node concept="3Tm1VV" id="2EI" role="1B3o_S" />
     <node concept="3uibUv" id="2EJ" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -28938,6 +29033,7 @@
   <node concept="312cEu" id="2Fq">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="StaticInitializer_TextGen" />
+    <property role="3GE5qa" value="classifiers.members" />
     <node concept="3Tm1VV" id="2Fr" role="1B3o_S" />
     <node concept="3uibUv" id="2Fs" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -29109,6 +29205,7 @@
   <node concept="312cEu" id="2Gt">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="StaticMethodCall_TextGen" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <node concept="3Tm1VV" id="2Gu" role="1B3o_S" />
     <node concept="3uibUv" id="2Gv" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -29213,6 +29310,7 @@
   <node concept="312cEu" id="2H4">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="StaticMethodDeclaration_TextGen" />
+    <property role="3GE5qa" value="classifiers.members" />
     <node concept="3Tm1VV" id="2H5" role="1B3o_S" />
     <node concept="3uibUv" id="2H6" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -30048,6 +30146,7 @@
   <node concept="312cEu" id="2Ml">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="StringLiteral_TextGen" />
+    <property role="3GE5qa" value="" />
     <node concept="3Tm1VV" id="2Mm" role="1B3o_S" />
     <node concept="3uibUv" id="2Mn" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -30162,6 +30261,7 @@
   <node concept="312cEu" id="2N1">
     <property role="1sVAO0" value="true" />
     <property role="TrG5h" value="StringTextGen" />
+    <property role="3GE5qa" value="lang" />
     <node concept="3Tm1VV" id="2N2" role="1B3o_S" />
     <node concept="2YIFZL" id="2N3" role="jymVt">
       <property role="TrG5h" value="compilableString" />
@@ -30665,6 +30765,7 @@
   <node concept="312cEu" id="2Q9">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="StringType_TextGen" />
+    <property role="3GE5qa" value="ext.string" />
     <node concept="3Tm1VV" id="2Qa" role="1B3o_S" />
     <node concept="3uibUv" id="2Qb" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -30720,6 +30821,7 @@
   <node concept="312cEu" id="2Qu">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="SuperConstructorInvocation_TextGen" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <node concept="3Tm1VV" id="2Qv" role="1B3o_S" />
     <node concept="3uibUv" id="2Qw" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -30945,6 +31047,7 @@
   <node concept="312cEu" id="2RT">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="SuperMethodCall_TextGen" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <node concept="3Tm1VV" id="2RU" role="1B3o_S" />
     <node concept="3uibUv" id="2RV" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -31020,6 +31123,7 @@
   <node concept="312cEu" id="2Sl">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="SwitchStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow.if_switch" />
     <node concept="3Tm1VV" id="2Sm" role="1B3o_S" />
     <node concept="3uibUv" id="2Sn" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -31719,6 +31823,7 @@
   <node concept="312cEu" id="2WG">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="SynchronizedStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow" />
     <node concept="3Tm1VV" id="2WH" role="1B3o_S" />
     <node concept="3uibUv" id="2WI" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -35665,6 +35770,7 @@
   <node concept="312cEu" id="3kS">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ThisConstructorInvocation_TextGen" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <node concept="3Tm1VV" id="3kT" role="1B3o_S" />
     <node concept="3uibUv" id="3kU" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -36010,6 +36116,7 @@
   <node concept="312cEu" id="3n3">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ThrowStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow.try_catch" />
     <node concept="3Tm1VV" id="3n4" role="1B3o_S" />
     <node concept="3uibUv" id="3n5" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -36171,6 +36278,7 @@
   <node concept="312cEu" id="3o2">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="TryCatchStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow.try_catch" />
     <node concept="3Tm1VV" id="3o3" role="1B3o_S" />
     <node concept="3uibUv" id="3o4" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -36438,6 +36546,7 @@
   <node concept="312cEu" id="3pF">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="TryStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow.try_catch" />
     <node concept="3Tm1VV" id="3pG" role="1B3o_S" />
     <node concept="3uibUv" id="3pH" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -36801,6 +36910,7 @@
   <node concept="312cEu" id="3rU">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="TypeVariableDeclaration_TextGen" />
+    <property role="3GE5qa" value="generics" />
     <node concept="3Tm1VV" id="3rV" role="1B3o_S" />
     <node concept="3uibUv" id="3rW" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -36971,6 +37081,7 @@
   <node concept="312cEu" id="3sX">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="TypeVariableReference_TextGen" />
+    <property role="3GE5qa" value="generics" />
     <node concept="3Tm1VV" id="3sY" role="1B3o_S" />
     <node concept="3uibUv" id="3sZ" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -37120,6 +37231,7 @@
   <node concept="312cEu" id="3tQ">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="UpperBoundType_TextGen" />
+    <property role="3GE5qa" value="generics" />
     <node concept="3Tm1VV" id="3tR" role="1B3o_S" />
     <node concept="3uibUv" id="3tS" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -37198,6 +37310,7 @@
   <node concept="312cEu" id="3uk">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="VarType_TextGen" />
+    <property role="3GE5qa" value="to_remove" />
     <node concept="3Tm1VV" id="3ul" role="1B3o_S" />
     <node concept="3uibUv" id="3um" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -37357,6 +37470,7 @@
   <node concept="312cEu" id="3vm">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="VariableArityType_TextGen" />
+    <property role="3GE5qa" value="type" />
     <node concept="3Tm1VV" id="3vn" role="1B3o_S" />
     <node concept="3uibUv" id="3vo" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -37497,6 +37611,7 @@
   <node concept="312cEu" id="3wb">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="VariableReference_TextGen" />
+    <property role="3GE5qa" value="variables" />
     <node concept="3Tm1VV" id="3wc" role="1B3o_S" />
     <node concept="3uibUv" id="3wd" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -37567,6 +37682,7 @@
   <node concept="312cEu" id="3wA">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="Visibility_TextGen" />
+    <property role="3GE5qa" value="classifiers.visibility" />
     <node concept="3Tm1VV" id="3wB" role="1B3o_S" />
     <node concept="3uibUv" id="3wC" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -37705,6 +37821,7 @@
   <node concept="312cEu" id="3xt">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="VoidType_TextGen" />
+    <property role="3GE5qa" value="primitive" />
     <node concept="3Tm1VV" id="3xu" role="1B3o_S" />
     <node concept="3uibUv" id="3xv" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -37760,6 +37877,7 @@
   <node concept="312cEu" id="3xM">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="WhileStatement_TextGen" />
+    <property role="3GE5qa" value="control_flow.loops" />
     <node concept="3Tm1VV" id="3xN" role="1B3o_S" />
     <node concept="3uibUv" id="3xO" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -38154,6 +38272,7 @@
   <node concept="312cEu" id="3$f">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="WildCardType_TextGen" />
+    <property role="3GE5qa" value="generics" />
     <node concept="3Tm1VV" id="3$g" role="1B3o_S" />
     <node concept="3uibUv" id="3$h" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />

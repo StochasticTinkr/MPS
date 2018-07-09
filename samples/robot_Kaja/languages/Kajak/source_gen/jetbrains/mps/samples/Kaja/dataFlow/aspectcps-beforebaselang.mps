@@ -189,6 +189,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -203,6 +206,7 @@
   </registry>
   <node concept="312cEu" id="0">
     <property role="TrG5h" value="AbstractCommand_DataFlow" />
+    <property role="3GE5qa" value="command" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -242,6 +246,7 @@
   </node>
   <node concept="312cEu" id="g">
     <property role="TrG5h" value="CommandList_DataFlow" />
+    <property role="3GE5qa" value="command" />
     <node concept="3Tm1VV" id="h" role="1B3o_S" />
     <node concept="3uibUv" id="i" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -855,6 +860,7 @@
   </node>
   <node concept="312cEu" id="3G">
     <property role="TrG5h" value="IfStatement_DataFlow" />
+    <property role="3GE5qa" value="command" />
     <node concept="3Tm1VV" id="3H" role="1B3o_S" />
     <node concept="3uibUv" id="3I" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1150,6 +1156,7 @@
   </node>
   <node concept="312cEu" id="5o">
     <property role="TrG5h" value="LogicalExpression_DataFlow" />
+    <property role="3GE5qa" value="Logical" />
     <node concept="3Tm1VV" id="5p" role="1B3o_S" />
     <node concept="3uibUv" id="5q" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1189,6 +1196,7 @@
   </node>
   <node concept="312cEu" id="5C">
     <property role="TrG5h" value="Not_DataFlow" />
+    <property role="3GE5qa" value="Logical" />
     <node concept="3Tm1VV" id="5D" role="1B3o_S" />
     <node concept="3uibUv" id="5E" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1280,6 +1288,7 @@
   </node>
   <node concept="312cEu" id="6a">
     <property role="TrG5h" value="Repeat_DataFlow" />
+    <property role="3GE5qa" value="command" />
     <node concept="3Tm1VV" id="6b" role="1B3o_S" />
     <node concept="3uibUv" id="6c" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1514,6 +1523,7 @@
   </node>
   <node concept="312cEu" id="7x">
     <property role="TrG5h" value="RoutineCall_DataFlow" />
+    <property role="3GE5qa" value="command" />
     <node concept="3Tm1VV" id="7y" role="1B3o_S" />
     <node concept="3uibUv" id="7z" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1553,6 +1563,7 @@
   </node>
   <node concept="312cEu" id="7L">
     <property role="TrG5h" value="RoutineDefinition_DataFlow" />
+    <property role="3GE5qa" value="command" />
     <node concept="3Tm1VV" id="7M" role="1B3o_S" />
     <node concept="3uibUv" id="7N" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1665,6 +1676,7 @@
   </node>
   <node concept="312cEu" id="8s">
     <property role="TrG5h" value="Step_DataFlow" />
+    <property role="3GE5qa" value="command" />
     <node concept="3Tm1VV" id="8t" role="1B3o_S" />
     <node concept="3uibUv" id="8u" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1704,6 +1716,7 @@
   </node>
   <node concept="312cEu" id="8G">
     <property role="TrG5h" value="While_DataFlow" />
+    <property role="3GE5qa" value="command" />
     <node concept="3Tm1VV" id="8H" role="1B3o_S" />
     <node concept="3uibUv" id="8I" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />

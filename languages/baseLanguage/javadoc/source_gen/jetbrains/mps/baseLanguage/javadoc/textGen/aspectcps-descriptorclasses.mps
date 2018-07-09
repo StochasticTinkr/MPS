@@ -258,6 +258,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -282,6 +285,7 @@
   <node concept="312cEu" id="0">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="AuthorBlockDocTag_TextGen" />
+    <property role="3GE5qa" value="tag" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -382,6 +386,7 @@
   <node concept="312cEu" id="A">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="BaseParameterReference_TextGen" />
+    <property role="3GE5qa" value="reference" />
     <node concept="3Tm1VV" id="B" role="1B3o_S" />
     <node concept="3uibUv" id="C" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -638,6 +643,7 @@
   <node concept="312cEu" id="2c">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ClassifierDocReference_TextGen" />
+    <property role="3GE5qa" value="reference" />
     <node concept="3Tm1VV" id="2d" role="1B3o_S" />
     <node concept="3uibUv" id="2e" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -708,6 +714,7 @@
   <node concept="312cEu" id="2B">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="CodeInlineDocTag_TextGen" />
+    <property role="3GE5qa" value="tag" />
     <node concept="3Tm1VV" id="2C" role="1B3o_S" />
     <node concept="3uibUv" id="2D" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -797,6 +804,7 @@
   <node concept="312cEu" id="3a">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="CodeSnippet_TextGen" />
+    <property role="3GE5qa" value="tag" />
     <node concept="3Tm1VV" id="3b" role="1B3o_S" />
     <node concept="3uibUv" id="3c" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -1146,6 +1154,7 @@
   <node concept="312cEu" id="5j">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="DeprecatedBlockDocTag_TextGen" />
+    <property role="3GE5qa" value="tag" />
     <node concept="3Tm1VV" id="5k" role="1B3o_S" />
     <node concept="3uibUv" id="5l" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -2062,6 +2071,7 @@
   <node concept="312cEu" id="bf">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="DocTypeParameterReference_TextGen" />
+    <property role="3GE5qa" value="reference" />
     <node concept="3Tm1VV" id="bg" role="1B3o_S" />
     <node concept="3uibUv" id="bh" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -2250,6 +2260,7 @@
   <node concept="312cEu" id="cm">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="FieldDocReference_TextGen" />
+    <property role="3GE5qa" value="reference" />
     <node concept="3Tm1VV" id="cn" role="1B3o_S" />
     <node concept="3uibUv" id="co" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -2954,6 +2965,7 @@
   <node concept="312cEu" id="fH">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="HTMLElement_TextGen" />
+    <property role="3GE5qa" value="tag" />
     <node concept="3Tm1VV" id="fI" role="1B3o_S" />
     <node concept="3uibUv" id="fJ" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -3201,6 +3213,7 @@
   <node concept="312cEu" id="hf">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="InheritDocInlineDocTag_TextGen" />
+    <property role="3GE5qa" value="tag" />
     <node concept="3Tm1VV" id="hg" role="1B3o_S" />
     <node concept="3uibUv" id="hh" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -3347,6 +3360,7 @@
   <node concept="312cEu" id="i7">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="LinkInlineDocTag_TextGen" />
+    <property role="3GE5qa" value="tag" />
     <node concept="3Tm1VV" id="i8" role="1B3o_S" />
     <node concept="3uibUv" id="i9" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -3908,6 +3922,7 @@
   <node concept="312cEu" id="lJ">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="MethodDocReference_TextGen" />
+    <property role="3GE5qa" value="reference" />
     <node concept="3Tm1VV" id="lK" role="1B3o_S" />
     <node concept="3uibUv" id="lL" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -4140,6 +4155,7 @@
   <node concept="312cEu" id="nb">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ParameterBlockDocTag_TextGen" />
+    <property role="3GE5qa" value="tag" />
     <node concept="3Tm1VV" id="nc" role="1B3o_S" />
     <node concept="3uibUv" id="nd" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -4276,6 +4292,7 @@
   <node concept="312cEu" id="nZ">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ReturnBlockDocTag_TextGen" />
+    <property role="3GE5qa" value="tag" />
     <node concept="3Tm1VV" id="o0" role="1B3o_S" />
     <node concept="3uibUv" id="o1" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -4376,6 +4393,7 @@
   <node concept="312cEu" id="o_">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="SeeBlockDocTag_TextGen" />
+    <property role="3GE5qa" value="tag" />
     <node concept="3Tm1VV" id="oA" role="1B3o_S" />
     <node concept="3uibUv" id="oB" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -4512,6 +4530,7 @@
   <node concept="312cEu" id="pp">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="SinceBlockDocTag_TextGen" />
+    <property role="3GE5qa" value="tag" />
     <node concept="3Tm1VV" id="pq" role="1B3o_S" />
     <node concept="3uibUv" id="pr" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -4612,6 +4631,7 @@
   <node concept="312cEu" id="pZ">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="StaticFieldDocReference_TextGen" />
+    <property role="3GE5qa" value="reference" />
     <node concept="3Tm1VV" id="q0" role="1B3o_S" />
     <node concept="3uibUv" id="q1" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -5260,6 +5280,7 @@
   <node concept="312cEu" id="u3">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ThrowsBlockDocTag_TextGen" />
+    <property role="3GE5qa" value="tag" />
     <node concept="3Tm1VV" id="u4" role="1B3o_S" />
     <node concept="3uibUv" id="u5" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -5396,6 +5417,7 @@
   <node concept="312cEu" id="uR">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ValueInlineDocTag_TextGen" />
+    <property role="3GE5qa" value="tag" />
     <node concept="3Tm1VV" id="uS" role="1B3o_S" />
     <node concept="3uibUv" id="uT" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
@@ -5507,6 +5529,7 @@
   <node concept="312cEu" id="vz">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="VersionBlockDocTag_TextGen" />
+    <property role="3GE5qa" value="tag" />
     <node concept="3Tm1VV" id="v$" role="1B3o_S" />
     <node concept="3uibUv" id="v_" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />

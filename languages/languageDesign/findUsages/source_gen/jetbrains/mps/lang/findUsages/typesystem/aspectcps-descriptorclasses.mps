@@ -944,7 +944,6 @@
     </node>
   </node>
   <node concept="312cEu" id="3I">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_node_InferenceRule" />
     <node concept="3clFbW" id="3J" role="jymVt">
       <node concept="3clFbS" id="3R" role="3clF47" />
@@ -1193,7 +1192,7 @@
     <node concept="3Tm1VV" id="3Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="5k">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Statements" />
     <property role="TrG5h" value="typeof_ExecuteFindersGetSearchResults_InferenceRule" />
     <node concept="3clFbW" id="5l" role="jymVt">
       <node concept="3clFbS" id="5t" role="3clF47" />
@@ -1820,7 +1819,7 @@
     <node concept="3Tm1VV" id="5s" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9a">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Statements" />
     <property role="TrG5h" value="typeof_FinderReferenceExpression_InferenceRule" />
     <node concept="3clFbW" id="9b" role="jymVt">
       <node concept="3clFbS" id="9j" role="3clF47" />
@@ -2049,7 +2048,7 @@
     <node concept="3Tm1VV" id="9i" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="aC">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Statements" />
     <property role="TrG5h" value="typeof_MakeFindersProvider_InferenceRule" />
     <node concept="3clFbW" id="aD" role="jymVt">
       <node concept="3clFbS" id="aL" role="3clF47" />
@@ -2267,7 +2266,6 @@
     <node concept="3Tm1VV" id="aK" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="c2">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_NewExecuteFinderExpression_InferenceRule" />
     <node concept="3clFbW" id="c3" role="jymVt">
       <node concept="3clFbS" id="cb" role="3clF47" />
@@ -2909,7 +2907,6 @@
     <node concept="3Tm1VV" id="ca" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fX">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_NodeStatement_InferenceRule" />
     <node concept="3clFbW" id="fY" role="jymVt">
       <node concept="3clFbS" id="g6" role="3clF47" />
@@ -3138,7 +3135,6 @@
     <node concept="3Tm1VV" id="g5" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="hr">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ResultStatement_InferenceRule" />
     <node concept="3clFbW" id="hs" role="jymVt">
       <node concept="3clFbS" id="h$" role="3clF47" />

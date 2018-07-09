@@ -301,7 +301,6 @@
     </node>
   </node>
   <node concept="312cEu" id="I">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ConvertTo_Constraints" />
     <node concept="3Tm1VV" id="J" role="1B3o_S" />
     <node concept="3uibUv" id="K" role="1zkMxy">
@@ -567,7 +566,6 @@
   </node>
   <node concept="39dXUE" id="2n" />
   <node concept="312cEu" id="2o">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="GetAmount_Constraints" />
     <node concept="3Tm1VV" id="2p" role="1B3o_S" />
     <node concept="3uibUv" id="2q" role="1zkMxy">
@@ -832,7 +830,6 @@
     </node>
   </node>
   <node concept="312cEu" id="41">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="GetCurrency_Constraints" />
     <node concept="3Tm1VV" id="42" role="1B3o_S" />
     <node concept="3uibUv" id="43" role="1zkMxy">
@@ -1097,7 +1094,6 @@
     </node>
   </node>
   <node concept="312cEu" id="5E">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="MoneyLiteral_Constraints" />
     <node concept="3Tm1VV" id="5F" role="1B3o_S" />
     <node concept="3uibUv" id="5G" role="1zkMxy">

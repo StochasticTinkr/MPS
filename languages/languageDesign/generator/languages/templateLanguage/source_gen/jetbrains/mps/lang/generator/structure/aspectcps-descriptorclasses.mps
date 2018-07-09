@@ -233,6 +233,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -8249,6 +8250,7 @@
   </node>
   <node concept="Qs71p" id="Km">
     <property role="TrG5h" value="GeneratorMessageType" />
+    <property role="3GE5qa" value="rule.consequence" />
     <node concept="QsSxf" id="Kn" role="Qtgdg">
       <property role="TrG5h" value="info" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -8568,6 +8570,7 @@
   </node>
   <node concept="312cEu" id="Mp">
     <property role="TrG5h" value="GeneratorMessageType_PropertySupport" />
+    <property role="3GE5qa" value="rule.consequence" />
     <node concept="3uibUv" id="Mq" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -11576,6 +11579,7 @@
   </node>
   <node concept="Qs71p" id="14c">
     <property role="TrG5h" value="MappingScriptKind" />
+    <property role="3GE5qa" value="script" />
     <node concept="QsSxf" id="14d" role="Qtgdg">
       <property role="TrG5h" value="pre_process_input_model" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -11845,6 +11849,7 @@
   </node>
   <node concept="312cEu" id="15X">
     <property role="TrG5h" value="MappingScriptKind_PropertySupport" />
+    <property role="3GE5qa" value="script" />
     <node concept="3uibUv" id="15Y" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>

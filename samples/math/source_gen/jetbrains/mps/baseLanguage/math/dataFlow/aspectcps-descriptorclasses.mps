@@ -175,6 +175,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -583,6 +586,7 @@
   </node>
   <node concept="312cEu" id="2m">
     <property role="TrG5h" value="Determinant_DataFlow" />
+    <property role="3GE5qa" value="matrix" />
     <node concept="3Tm1VV" id="2n" role="1B3o_S" />
     <node concept="3uibUv" id="2o" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -636,6 +640,7 @@
   </node>
   <node concept="312cEu" id="2G">
     <property role="TrG5h" value="DivExpressionFraction_DataFlow" />
+    <property role="3GE5qa" value="operations.arithmetic" />
     <node concept="3Tm1VV" id="2H" role="1B3o_S" />
     <node concept="3uibUv" id="2I" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1124,6 +1129,7 @@
   </node>
   <node concept="312cEu" id="5a">
     <property role="TrG5h" value="LinearSolveOperation_DataFlow" />
+    <property role="3GE5qa" value="matrix" />
     <node concept="3Tm1VV" id="5b" role="1B3o_S" />
     <node concept="3uibUv" id="5c" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1250,6 +1256,7 @@
   </node>
   <node concept="312cEu" id="5W">
     <property role="TrG5h" value="MathFuncExpression_DataFlow" />
+    <property role="3GE5qa" value="methods" />
     <node concept="3Tm1VV" id="5X" role="1B3o_S" />
     <node concept="3uibUv" id="5Y" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1303,6 +1310,7 @@
   </node>
   <node concept="312cEu" id="6i">
     <property role="TrG5h" value="MathSymbolFromToIndex_DataFlow" />
+    <property role="3GE5qa" value="operations.symbol" />
     <node concept="3Tm1VV" id="6j" role="1B3o_S" />
     <node concept="3uibUv" id="6k" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1423,6 +1431,7 @@
   </node>
   <node concept="312cEu" id="73">
     <property role="TrG5h" value="MathSymbolIndexReference_DataFlow" />
+    <property role="3GE5qa" value="operations.symbol" />
     <node concept="3Tm1VV" id="74" role="1B3o_S" />
     <node concept="3uibUv" id="75" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1476,6 +1485,7 @@
   </node>
   <node concept="312cEu" id="7o">
     <property role="TrG5h" value="MathSymbolIndex_DataFlow" />
+    <property role="3GE5qa" value="operations.symbol" />
     <node concept="3Tm1VV" id="7p" role="1B3o_S" />
     <node concept="3uibUv" id="7q" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1556,6 +1566,7 @@
   </node>
   <node concept="312cEu" id="7S">
     <property role="TrG5h" value="MathSymbol_DataFlow" />
+    <property role="3GE5qa" value="operations.symbol" />
     <node concept="3Tm1VV" id="7T" role="1B3o_S" />
     <node concept="3uibUv" id="7U" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1673,6 +1684,7 @@
   </node>
   <node concept="312cEu" id="8C">
     <property role="TrG5h" value="MatrixConstructor_DataFlow" />
+    <property role="3GE5qa" value="matrix" />
     <node concept="3Tm1VV" id="8D" role="1B3o_S" />
     <node concept="3uibUv" id="8E" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1736,6 +1748,7 @@
   </node>
   <node concept="312cEu" id="92">
     <property role="TrG5h" value="MatrixElementAccessExpression_DataFlow" />
+    <property role="3GE5qa" value="matrix" />
     <node concept="3Tm1VV" id="93" role="1B3o_S" />
     <node concept="3uibUv" id="94" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1853,6 +1866,7 @@
   </node>
   <node concept="312cEu" id="9M">
     <property role="TrG5h" value="MatrixInitializerIndexReference_DataFlow" />
+    <property role="3GE5qa" value="matrix" />
     <node concept="3Tm1VV" id="9N" role="1B3o_S" />
     <node concept="3uibUv" id="9O" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1906,6 +1920,7 @@
   </node>
   <node concept="312cEu" id="a7">
     <property role="TrG5h" value="MatrixInitializer_DataFlow" />
+    <property role="3GE5qa" value="matrix" />
     <node concept="3Tm1VV" id="a8" role="1B3o_S" />
     <node concept="3uibUv" id="a9" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2087,6 +2102,7 @@
   </node>
   <node concept="312cEu" id="bf">
     <property role="TrG5h" value="MatrixNorm_DataFlow" />
+    <property role="3GE5qa" value="matrix" />
     <node concept="3Tm1VV" id="bg" role="1B3o_S" />
     <node concept="3uibUv" id="bh" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2140,6 +2156,7 @@
   </node>
   <node concept="312cEu" id="b_">
     <property role="TrG5h" value="MatrixZero_DataFlow" />
+    <property role="3GE5qa" value="matrix" />
     <node concept="3Tm1VV" id="bA" role="1B3o_S" />
     <node concept="3uibUv" id="bB" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2225,6 +2242,7 @@
   </node>
   <node concept="312cEu" id="c8">
     <property role="TrG5h" value="VectorInitializer_DataFlow" />
+    <property role="3GE5qa" value="matrix" />
     <node concept="3Tm1VV" id="c9" role="1B3o_S" />
     <node concept="3uibUv" id="ca" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />

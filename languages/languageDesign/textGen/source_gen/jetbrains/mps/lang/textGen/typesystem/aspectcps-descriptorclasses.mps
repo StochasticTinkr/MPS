@@ -1577,7 +1577,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6I">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operation" />
     <property role="TrG5h" value="check_CallInnerFunctionOperation_NonTypesystemRule" />
     <node concept="3clFbW" id="6J" role="jymVt">
       <node concept="3clFbS" id="6R" role="3clF47" />
@@ -1922,7 +1922,6 @@
     <node concept="3Tm1VV" id="6Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="92">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_CallPrivateFunction_NonTypesystemRule" />
     <node concept="3clFbW" id="93" role="jymVt">
       <node concept="3clFbS" id="9b" role="3clF47" />
@@ -2267,7 +2266,6 @@
     <node concept="3Tm1VV" id="9a" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="bm">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_MissingTextGenBlock_NonTypesystemRule" />
     <node concept="3clFbW" id="bn" role="jymVt">
       <node concept="3clFbS" id="bv" role="3clF47" />
@@ -2464,7 +2462,7 @@
     <node concept="3Tm1VV" id="bu" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="cF">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operation.append.part" />
     <property role="TrG5h" value="typeof_AbstractAppendPart_InferenceRule" />
     <node concept="3clFbW" id="cG" role="jymVt">
       <node concept="3clFbS" id="cO" role="3clF47" />
@@ -2680,7 +2678,7 @@
     <node concept="3Tm1VV" id="cN" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="e5">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="parameter" />
     <property role="TrG5h" value="typeof_AbstractTextGenParameter_InferenceRule" />
     <node concept="3clFbW" id="e6" role="jymVt">
       <node concept="3clFbS" id="ee" role="3clF47" />
@@ -2872,7 +2870,7 @@
     <node concept="3Tm1VV" id="ed" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fo">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operation" />
     <property role="TrG5h" value="typeof_CallInnerFunctionOperation_InferenceRule" />
     <node concept="3clFbW" id="fp" role="jymVt">
       <node concept="3clFbS" id="fx" role="3clF47" />
@@ -3157,7 +3155,7 @@
     <node concept="3Tm1VV" id="fw" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="he">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="root" />
     <property role="TrG5h" value="typeof_ConceptTextGenDeclaration_InferenceRule" />
     <node concept="3clFbW" id="hf" role="jymVt">
       <node concept="3clFbS" id="hn" role="3clF47" />
@@ -3393,7 +3391,7 @@
     <node concept="3Tm1VV" id="hm" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="iL">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operation.error" />
     <property role="TrG5h" value="typeof_FoundErrorOperation_InferenceRule" />
     <node concept="3clFbW" id="iM" role="jymVt">
       <node concept="3clFbS" id="iU" role="3clF47" />
@@ -3614,7 +3612,6 @@
     <node concept="3Tm1VV" id="iT" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="kd">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_NodeParameter_InferenceRule" />
     <node concept="3clFbW" id="ke" role="jymVt">
       <node concept="3clFbS" id="km" role="3clF47" />
@@ -3864,7 +3861,7 @@
     <node concept="3Tm1VV" id="kl" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="lO">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operation.append.part" />
     <property role="TrG5h" value="typeof_NodePart_InferenceRule" />
     <node concept="3clFbW" id="lP" role="jymVt">
       <node concept="3clFbS" id="lX" role="3clF47" />
@@ -4094,7 +4091,6 @@
     <node concept="3Tm1VV" id="lW" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="nk">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_PrivateMethodCall_InferenceRule" />
     <node concept="3clFbW" id="nl" role="jymVt">
       <node concept="3clFbS" id="nt" role="3clF47" />
@@ -4320,7 +4316,7 @@
     <node concept="3Tm1VV" id="ns" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="oL">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operation" />
     <property role="TrG5h" value="typeof_SimplestTextGenOperation_InferenceRule" />
     <node concept="3clFbW" id="oM" role="jymVt">
       <node concept="3clFbS" id="oU" role="3clF47" />
@@ -4536,7 +4532,7 @@
     <node concept="3Tm1VV" id="oT" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="qb">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="context" />
     <property role="TrG5h" value="typeof_UnitContextReference_InferenceRule" />
     <node concept="3clFbW" id="qc" role="jymVt">
       <node concept="3clFbS" id="qk" role="3clF47" />

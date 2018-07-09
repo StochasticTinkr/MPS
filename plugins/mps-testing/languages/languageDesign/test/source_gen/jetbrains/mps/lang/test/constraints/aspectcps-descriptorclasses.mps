@@ -401,7 +401,6 @@
   </node>
   <node concept="39dXUE" id="O" />
   <node concept="312cEu" id="P">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="MigrationReference_Constraints" />
     <node concept="3Tm1VV" id="Q" role="1B3o_S" />
     <node concept="3uibUv" id="R" role="1zkMxy">
@@ -723,7 +722,6 @@
     </node>
   </node>
   <node concept="312cEu" id="2M">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="MigrationTestCase_Constraints" />
     <node concept="3Tm1VV" id="2N" role="1B3o_S" />
     <node concept="3uibUv" id="2O" role="1zkMxy">
@@ -932,7 +930,7 @@
     </node>
   </node>
   <node concept="312cEu" id="42">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="scopes" />
     <property role="TrG5h" value="ScopesExpectedNode_Constraints" />
     <node concept="3Tm1VV" id="43" role="1B3o_S" />
     <node concept="3uibUv" id="44" role="1zkMxy">
@@ -1313,7 +1311,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6j">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="scopes" />
     <property role="TrG5h" value="ScopesTest_Constraints" />
     <node concept="3Tm1VV" id="6k" role="1B3o_S" />
     <node concept="3uibUv" id="6l" role="1zkMxy">
@@ -1711,7 +1709,6 @@
     </node>
   </node>
   <node concept="312cEu" id="8N">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="TestNodeReference_Constraints" />
     <node concept="3Tm1VV" id="8O" role="1B3o_S" />
     <node concept="3uibUv" id="8P" role="1zkMxy">

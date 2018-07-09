@@ -240,7 +240,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="BinaryOperationReference_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -755,7 +754,6 @@
     </node>
   </node>
   <node concept="312cEu" id="39">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ContainerImport_Constraints" />
     <node concept="3Tm1VV" id="3a" role="1B3o_S" />
     <node concept="3uibUv" id="3b" role="1zkMxy">
@@ -1031,7 +1029,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4J">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CustomOperatorUsage_Constraints" />
     <node concept="3Tm1VV" id="4K" role="1B3o_S" />
     <node concept="3uibUv" id="4L" role="1zkMxy">
@@ -1308,7 +1305,6 @@
     </node>
   </node>
   <node concept="312cEu" id="6l">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CustomOperator_Constraints" />
     <node concept="3Tm1VV" id="6m" role="1B3o_S" />
     <node concept="3uibUv" id="6n" role="1zkMxy">

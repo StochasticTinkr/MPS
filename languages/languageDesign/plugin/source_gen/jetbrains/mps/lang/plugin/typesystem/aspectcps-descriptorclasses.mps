@@ -306,7 +306,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Action" />
     <property role="TrG5h" value="ActionParameterTypeIsNotClassifier_NonTypesystemRule" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="9" role="3clF47" />
@@ -2995,7 +2995,7 @@
     </node>
   </node>
   <node concept="312cEu" id="cs">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Action.Parameters" />
     <property role="TrG5h" value="HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule" />
     <node concept="3clFbW" id="ct" role="jymVt">
       <node concept="3clFbS" id="c_" role="3clF47" />
@@ -3282,7 +3282,7 @@
     <node concept="3Tm1VV" id="dO" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="em">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Action" />
     <property role="TrG5h" value="Typeof_Action_SubtypingRule" />
     <node concept="3clFbW" id="en" role="jymVt">
       <node concept="3clFbS" id="ev" role="3clF47" />
@@ -3397,7 +3397,7 @@
     <node concept="3Tm1VV" id="eu" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fa">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Groups" />
     <property role="TrG5h" value="Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule" />
     <node concept="3clFbW" id="fb" role="jymVt">
       <node concept="3clFbS" id="fj" role="3clF47" />
@@ -3512,7 +3512,7 @@
     <node concept="3Tm1VV" id="fi" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fY">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Tool" />
     <property role="TrG5h" value="Typeof_ToolType_Instanceof_BaseTool_SubtypingRule" />
     <node concept="3clFbW" id="fZ" role="jymVt">
       <node concept="3clFbS" id="g7" role="3clF47" />
@@ -4927,7 +4927,7 @@
     </node>
   </node>
   <node concept="312cEu" id="pr">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Action" />
     <property role="TrG5h" value="check_ActionDeclaration_NonTypesystemRule" />
     <node concept="3clFbW" id="ps" role="jymVt">
       <node concept="3clFbS" id="p$" role="3clF47" />
@@ -5160,7 +5160,7 @@
     <node concept="3Tm1VV" id="pz" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="qY">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Action.Parameters" />
     <property role="TrG5h" value="check_ActionParameterInUse_NonTypesystemRule" />
     <node concept="3clFbW" id="qZ" role="jymVt">
       <node concept="3clFbS" id="r7" role="3clF47" />
@@ -5390,7 +5390,7 @@
     <node concept="3Tm1VV" id="r6" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="sx">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Idea" />
     <property role="TrG5h" value="check_IdeaConfigurationXml_NonTypesystemRule" />
     <node concept="3clFbW" id="sy" role="jymVt">
       <node concept="3clFbS" id="sE" role="3clF47" />
@@ -5604,7 +5604,7 @@
     <node concept="3Tm1VV" id="sD" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="tW">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Action" />
     <property role="TrG5h" value="check_KeyMapKeystrokeRemRepl_NonTypesystemRule" />
     <node concept="3clFbW" id="tX" role="jymVt">
       <node concept="3clFbS" id="u5" role="3clF47" />
@@ -5845,7 +5845,7 @@
     <node concept="3Tm1VV" id="u4" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="v$">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="EditorTab" />
     <property role="TrG5h" value="check_OrderConstraints_NonTypesystemRule" />
     <node concept="3clFbW" id="v_" role="jymVt">
       <node concept="3clFbS" id="vH" role="3clF47" />
@@ -6048,7 +6048,7 @@
     <node concept="3Tm1VV" id="vG" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="wX">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Groups.GroupMembers" />
     <property role="TrG5h" value="check_ParametersCount_NonTypesystemRule" />
     <node concept="3clFbW" id="wY" role="jymVt">
       <node concept="3clFbS" id="x6" role="3clF47" />
@@ -6245,7 +6245,6 @@
     <node concept="3Tm1VV" id="x5" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="yi">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ActionAccessOperation_InferenceRule" />
     <node concept="3clFbW" id="yj" role="jymVt">
       <node concept="3clFbS" id="yr" role="3clF47" />
@@ -6463,7 +6462,7 @@
     <node concept="3Tm1VV" id="yq" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="zG">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Action" />
     <property role="TrG5h" value="typeof_ActionDataParameterDeclaration_InferenceRule" />
     <node concept="3clFbW" id="zH" role="jymVt">
       <node concept="3clFbS" id="zP" role="3clF47" />
@@ -6684,7 +6683,7 @@
     <node concept="3Tm1VV" id="zO" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="_7">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Action" />
     <property role="TrG5h" value="typeof_ActionDataParameterReferenceOperation_InferenceRule" />
     <node concept="3clFbW" id="_8" role="jymVt">
       <node concept="3clFbS" id="_g" role="3clF47" />
@@ -6929,7 +6928,7 @@
     <node concept="3Tm1VV" id="_f" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="AE">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Action" />
     <property role="TrG5h" value="typeof_ActionParameterReferenceOperation_InferenceRule" />
     <node concept="3clFbW" id="AF" role="jymVt">
       <node concept="3clFbS" id="AN" role="3clF47" />
@@ -7155,7 +7154,7 @@
     <node concept="3Tm1VV" id="AM" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="C7">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Keymaps.ShortcutChange" />
     <property role="TrG5h" value="typeof_ActionParameterReference_InferenceRule" />
     <node concept="3clFbW" id="C8" role="jymVt">
       <node concept="3clFbS" id="Cg" role="3clF47" />
@@ -7400,7 +7399,7 @@
     <node concept="3Tm1VV" id="Cf" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="DE">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="DEPRECATED" />
     <property role="TrG5h" value="typeof_AddActionStatement_InferenceRule" />
     <node concept="3clFbW" id="DF" role="jymVt">
       <node concept="3clFbS" id="DN" role="3clF47" />
@@ -7645,7 +7644,7 @@
     <node concept="3Tm1VV" id="DM" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Ff">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Tool.Operations" />
     <property role="TrG5h" value="typeof_AddTabOperation_InferenceRule" />
     <node concept="3clFbW" id="Fg" role="jymVt">
       <node concept="3clFbS" id="Fo" role="3clF47" />
@@ -7861,7 +7860,7 @@
     <node concept="3Tm1VV" id="Fn" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="GD">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Groups.GroupModification.bootstrap" />
     <property role="TrG5h" value="typeof_BootstrapActionGroup_InferenceRule" />
     <node concept="3clFbW" id="GE" role="jymVt">
       <node concept="3clFbS" id="GM" role="3clF47" />
@@ -8088,7 +8087,7 @@
     <node concept="3Tm1VV" id="GL" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="I7">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Groups.GroupModification.bootstrap" />
     <property role="TrG5h" value="typeof_BootstrapExtentionPoint_InferenceRule" />
     <node concept="3clFbW" id="I8" role="jymVt">
       <node concept="3clFbS" id="Ig" role="3clF47" />
@@ -8310,7 +8309,7 @@
     <node concept="3Tm1VV" id="If" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Jz">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Creation" />
     <property role="TrG5h" value="typeof_ButtonCreator_InferenceRule" />
     <node concept="3clFbW" id="J$" role="jymVt">
       <node concept="3clFbS" id="JG" role="3clF47" />
@@ -8665,7 +8664,7 @@
     <node concept="3Tm1VV" id="JF" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="LL">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Tool.Operations" />
     <property role="TrG5h" value="typeof_CloseTabOperation_InferenceRule" />
     <node concept="3clFbW" id="LM" role="jymVt">
       <node concept="3clFbS" id="LU" role="3clF47" />
@@ -9002,7 +9001,7 @@
     <node concept="3Tm1VV" id="LT" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="NS">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Preference.Page" />
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_PreferencePage_component_InferenceRule" />
     <node concept="3clFbW" id="NT" role="jymVt">
       <node concept="3clFbS" id="O1" role="3clF47" />
@@ -9256,7 +9255,7 @@
     <node concept="3Tm1VV" id="O0" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Pv">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Groups" />
     <property role="TrG5h" value="typeof_GetGroupOperation_InferenceRule" />
     <node concept="3clFbW" id="Pw" role="jymVt">
       <node concept="3clFbS" id="PC" role="3clF47" />
@@ -9474,7 +9473,7 @@
     <node concept="3Tm1VV" id="PB" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="QT">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Tool.Operations" />
     <property role="TrG5h" value="typeof_GetSelectedTabOperation_InferenceRule" />
     <node concept="3clFbW" id="QU" role="jymVt">
       <node concept="3clFbS" id="R2" role="3clF47" />
@@ -9692,7 +9691,6 @@
     <node concept="3Tm1VV" id="R1" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Sj">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GroupAccessOperation_InferenceRule" />
     <node concept="3clFbW" id="Sk" role="jymVt">
       <node concept="3clFbS" id="Ss" role="3clF47" />
@@ -9910,7 +9908,7 @@
     <node concept="3Tm1VV" id="Sr" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="TH">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Tool" />
     <property role="TrG5h" value="typeof_InstanceExpression_InferenceRule" />
     <node concept="3clFbW" id="TI" role="jymVt">
       <node concept="3clFbS" id="TQ" role="3clF47" />
@@ -10128,7 +10126,7 @@
     <node concept="3Tm1VV" id="TP" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="V7">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Action" />
     <property role="TrG5h" value="typeof_KeyMapKeystroke_InferenceRule" />
     <node concept="3clFbW" id="V8" role="jymVt">
       <node concept="3clFbS" id="Vg" role="3clF47" />
@@ -10346,7 +10344,7 @@
     <node concept="3Tm1VV" id="Vf" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Wx">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Action" />
     <property role="TrG5h" value="typeof_KeystrokeCreator_InferenceRule" />
     <node concept="3clFbW" id="Wy" role="jymVt">
       <node concept="3clFbS" id="WE" role="3clF47" />
@@ -10567,7 +10565,6 @@
     <node concept="3Tm1VV" id="WD" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="XX">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_PersistentPropertyDeclaration_InferenceRule" />
     <node concept="3clFbW" id="XY" role="jymVt">
       <node concept="3clFbS" id="Y6" role="3clF47" />
@@ -10802,7 +10799,7 @@
     <node concept="3Tm1VV" id="Y5" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Zv">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Preference" />
     <property role="TrG5h" value="typeof_PersistentPropertyReference_InferenceRule" />
     <node concept="3clFbW" id="Zw" role="jymVt">
       <node concept="3clFbS" id="ZC" role="3clF47" />
@@ -11047,7 +11044,7 @@
     <node concept="3Tm1VV" id="ZB" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="112">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Tool.Operations" />
     <property role="TrG5h" value="typeof_PinTabOperation_InferenceRule" />
     <node concept="3clFbW" id="113" role="jymVt">
       <node concept="3clFbS" id="11b" role="3clF47" />
@@ -11384,7 +11381,7 @@
     <node concept="3Tm1VV" id="11a" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="139">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Creation" />
     <property role="TrG5h" value="typeof_PopupCreator_InferenceRule" />
     <node concept="3clFbW" id="13a" role="jymVt">
       <node concept="3clFbS" id="13i" role="3clF47" />
@@ -11739,7 +11736,7 @@
     <node concept="3Tm1VV" id="13h" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="15n">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Preference.Page" />
     <property role="TrG5h" value="typeof_PreferencePage_InferenceRule" />
     <node concept="3clFbW" id="15o" role="jymVt">
       <node concept="3clFbS" id="15w" role="3clF47" />
@@ -11968,7 +11965,7 @@
     <node concept="3Tm1VV" id="15v" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="16P">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Tool.Operations" />
     <property role="TrG5h" value="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule" />
     <node concept="3clFbW" id="16Q" role="jymVt">
       <node concept="3clFbS" id="16Y" role="3clF47" />
@@ -12263,7 +12260,7 @@
     <node concept="3Tm1VV" id="16X" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="18I">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Action.Parameters" />
     <property role="TrG5h" value="typeof_ToStringParameter_InferenceRule" />
     <node concept="3clFbW" id="18J" role="jymVt">
       <node concept="3clFbS" id="18R" role="3clF47" />
@@ -12512,7 +12509,7 @@
     <node concept="3Tm1VV" id="18Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1aj">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Tool.Operations" />
     <property role="TrG5h" value="typeof_ToolTab_InferenceRule" />
     <node concept="3clFbW" id="1ak" role="jymVt">
       <node concept="3clFbS" id="1as" role="3clF47" />
@@ -13280,7 +13277,7 @@
     <node concept="3Tm1VV" id="1ar" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1f1">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Actions.Creation" />
     <property role="TrG5h" value="typeof_ToolbarCreator_InferenceRule" />
     <node concept="3clFbW" id="1f2" role="jymVt">
       <node concept="3clFbS" id="1fa" role="3clF47" />
@@ -13635,7 +13632,7 @@
     <node concept="3Tm1VV" id="1f9" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1hf">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Tool.Operations" />
     <property role="TrG5h" value="typeof_UnpinTabOperation_InferenceRule" />
     <node concept="3clFbW" id="1hg" role="jymVt">
       <node concept="3clFbS" id="1ho" role="3clF47" />

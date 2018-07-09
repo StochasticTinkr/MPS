@@ -437,7 +437,7 @@
   </node>
   <node concept="39dXUE" id="16" />
   <node concept="312cEu" id="17">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="handler" />
     <property role="TrG5h" value="HttpRequestOperation_Constraints" />
     <node concept="3Tm1VV" id="18" role="1B3o_S" />
     <node concept="3uibUv" id="19" role="1zkMxy">
@@ -688,7 +688,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2E">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="request" />
     <property role="TrG5h" value="ParameterInitializer_Constraints" />
     <node concept="3Tm1VV" id="2F" role="1B3o_S" />
     <node concept="3uibUv" id="2G" role="1zkMxy">
@@ -1315,7 +1315,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6t">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="request" />
     <property role="TrG5h" value="PortProvider_Constraints" />
     <node concept="3Tm1VV" id="6u" role="1B3o_S" />
     <node concept="3uibUv" id="6v" role="1zkMxy">
@@ -1349,7 +1349,7 @@
     <node concept="2tJIrI" id="6x" role="jymVt" />
   </node>
   <node concept="312cEu" id="6F">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="request" />
     <property role="TrG5h" value="Port_Constraints" />
     <node concept="3Tm1VV" id="6G" role="1B3o_S" />
     <node concept="3uibUv" id="6H" role="1zkMxy">
@@ -1574,7 +1574,7 @@
     </node>
   </node>
   <node concept="312cEu" id="81">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="handler" />
     <property role="TrG5h" value="QueryParameterReference_Constraints" />
     <node concept="3Tm1VV" id="82" role="1B3o_S" />
     <node concept="3uibUv" id="83" role="1zkMxy">
@@ -1882,7 +1882,7 @@
     </node>
   </node>
   <node concept="312cEu" id="9N">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="handler" />
     <property role="TrG5h" value="QueryParameter_Constraints" />
     <node concept="3Tm1VV" id="9O" role="1B3o_S" />
     <node concept="3uibUv" id="9P" role="1zkMxy">
@@ -1916,7 +1916,7 @@
     <node concept="2tJIrI" id="9R" role="jymVt" />
   </node>
   <node concept="312cEu" id="a1">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="handler" />
     <property role="TrG5h" value="RequestHandler_Constraints" />
     <node concept="3Tm1VV" id="a2" role="1B3o_S" />
     <node concept="3uibUv" id="a3" role="1zkMxy">
@@ -1950,7 +1950,7 @@
     <node concept="2tJIrI" id="a5" role="jymVt" />
   </node>
   <node concept="312cEu" id="af">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="converter" />
     <property role="TrG5h" value="SerializeFunction_Constraints" />
     <node concept="3Tm1VV" id="ag" role="1B3o_S" />
     <node concept="3uibUv" id="ah" role="1zkMxy">

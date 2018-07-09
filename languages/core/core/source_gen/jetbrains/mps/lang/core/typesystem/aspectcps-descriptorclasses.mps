@@ -995,7 +995,6 @@
     </node>
   </node>
   <node concept="312cEu" id="38">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="ImportUsedLanguage_QuickFix" />
     <node concept="3clFbW" id="39" role="jymVt">
       <node concept="3clFbS" id="3f" role="3clF47">
@@ -1127,7 +1126,7 @@
     </node>
   </node>
   <node concept="312cEu" id="42">
-    <property role="3GE5qa" value="definition.quickfix" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="RemoveUndeclaredLinkAttribute_QuickFix" />
     <node concept="3clFbW" id="43" role="jymVt">
       <node concept="3clFbS" id="49" role="3clF47">
@@ -1215,7 +1214,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4D">
-    <property role="3GE5qa" value="definition.quickfix" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="RemoveUndeclaredPropertyAttribute_QuickFix" />
     <node concept="3clFbW" id="4E" role="jymVt">
       <node concept="3clFbS" id="4K" role="3clF47">
@@ -1303,7 +1302,6 @@
     </node>
   </node>
   <node concept="312cEu" id="5g">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="RemoveUndeclaredProperty_QuickFix" />
     <node concept="3clFbW" id="5h" role="jymVt">
       <node concept="3clFbS" id="5n" role="3clF47">
@@ -1441,7 +1439,6 @@
     </node>
   </node>
   <node concept="312cEu" id="6a">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="RemoveUnknownChildren_QuickFix" />
     <node concept="3clFbW" id="6b" role="jymVt">
       <node concept="3clFbS" id="6h" role="3clF47">
@@ -1606,7 +1603,6 @@
     </node>
   </node>
   <node concept="312cEu" id="7g">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="RemoveUnknownReference_QuickFix" />
     <node concept="3clFbW" id="7h" role="jymVt">
       <node concept="3clFbS" id="7n" role="3clF47">
@@ -1985,7 +1981,7 @@
     </node>
   </node>
   <node concept="312cEu" id="9L">
-    <property role="3GE5qa" value="definition.quickfix" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="add_ChildAttribute_id_QuickFix" />
     <node concept="3clFbW" id="9M" role="jymVt">
       <node concept="3clFbS" id="9S" role="3clF47">
@@ -2081,7 +2077,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ap">
-    <property role="3GE5qa" value="definition.quickfix" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="add_LinkAttribute_id_QuickFix" />
     <node concept="3clFbW" id="aq" role="jymVt">
       <node concept="3clFbS" id="aw" role="3clF47">
@@ -2177,7 +2173,7 @@
     </node>
   </node>
   <node concept="312cEu" id="b1">
-    <property role="3GE5qa" value="definition.quickfix" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="add_PropertyAttribute_id_QuickFix" />
     <node concept="3clFbW" id="b2" role="jymVt">
       <node concept="3clFbS" id="b8" role="3clF47">
@@ -2273,7 +2269,7 @@
     </node>
   </node>
   <node concept="312cEu" id="bD">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="check_ChildAttribute_NonTypesystemRule" />
     <node concept="3clFbW" id="bE" role="jymVt">
       <node concept="3clFbS" id="bM" role="3clF47" />
@@ -2829,7 +2825,6 @@
     <node concept="3Tm1VV" id="bL" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fd">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_DeprecatedReference_NonTypesystemRule" />
     <node concept="3clFbW" id="fe" role="jymVt">
       <node concept="3clFbS" id="fm" role="3clF47" />
@@ -3086,7 +3081,6 @@
     <node concept="3Tm1VV" id="fl" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="gT">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_InstanceOfAbstract_NonTypesystemRule" />
     <node concept="3clFbW" id="gU" role="jymVt">
       <node concept="3clFbS" id="h2" role="3clF47" />
@@ -3278,7 +3272,6 @@
     <node concept="3Tm1VV" id="h1" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ic">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_InstanceOfDeprecated_NonTypesystemRule" />
     <node concept="3clFbW" id="id" role="jymVt">
       <node concept="3clFbS" id="il" role="3clF47" />
@@ -3496,7 +3489,7 @@
     <node concept="3Tm1VV" id="ik" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="jD">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="check_LinkAttribute_NonTypesystemRule" />
     <node concept="3clFbW" id="jE" role="jymVt">
       <node concept="3clFbS" id="jM" role="3clF47" />
@@ -4079,7 +4072,7 @@
     <node concept="3Tm1VV" id="jL" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="nq">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="check_PropertyAttribute_NonTypesystemRule" />
     <node concept="3clFbW" id="nr" role="jymVt">
       <node concept="3clFbS" id="nz" role="3clF47" />
@@ -4636,7 +4629,6 @@
     <node concept="3Tm1VV" id="ny" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="qZ">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_UnknownLinks_NonTypesystemRule" />
     <node concept="3clFbW" id="r0" role="jymVt">
       <node concept="3clFbS" id="r8" role="3clF47" />
@@ -5281,7 +5273,7 @@
     <node concept="3Tm1VV" id="r7" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="v9">
-    <property role="3GE5qa" value="definition.quickfix" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="fix_LinkAttribute_name_QuickFix" />
     <node concept="3clFbW" id="va" role="jymVt">
       <node concept="3clFbS" id="vg" role="3clF47">
@@ -5408,7 +5400,7 @@
     </node>
   </node>
   <node concept="312cEu" id="vY">
-    <property role="3GE5qa" value="definition.quickfix" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="fix_PropertyAttribute_name_QuickFix" />
     <node concept="3clFbW" id="vZ" role="jymVt">
       <node concept="3clFbS" id="w5" role="3clF47">

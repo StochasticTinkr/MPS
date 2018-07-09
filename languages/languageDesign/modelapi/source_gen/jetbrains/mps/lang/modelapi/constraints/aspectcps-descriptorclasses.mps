@@ -393,7 +393,7 @@
   </node>
   <node concept="39dXUE" id="O" />
   <node concept="312cEu" id="P">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="openapi" />
     <property role="TrG5h" value="ModelName_Constraints" />
     <node concept="3Tm1VV" id="Q" role="1B3o_S" />
     <node concept="3uibUv" id="R" role="1zkMxy">
@@ -626,7 +626,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2f">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="openapi" />
     <property role="TrG5h" value="ModelPointer_Constraints" />
     <node concept="3Tm1VV" id="2g" role="1B3o_S" />
     <node concept="3uibUv" id="2h" role="1zkMxy">
@@ -882,7 +882,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3N">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="openapi" />
     <property role="TrG5h" value="ModulePointer_Constraints" />
     <node concept="3Tm1VV" id="3O" role="1B3o_S" />
     <node concept="3uibUv" id="3P" role="1zkMxy">
@@ -1138,7 +1138,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5n">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="NamedNodeReference_Constraints" />
     <node concept="3Tm1VV" id="5o" role="1B3o_S" />
     <node concept="3uibUv" id="5p" role="1zkMxy">
@@ -1710,7 +1710,7 @@
     </node>
   </node>
   <node concept="312cEu" id="8Y">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="openapi" />
     <property role="TrG5h" value="NodePointer_Constraints" />
     <node concept="3Tm1VV" id="8Z" role="1B3o_S" />
     <node concept="3uibUv" id="90" role="1zkMxy">

@@ -518,7 +518,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1I">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="typeof_AspectModelRefExpression_InferenceRule" />
     <node concept="3clFbW" id="1J" role="jymVt">
       <node concept="3clFbS" id="1R" role="3clF47" />
@@ -871,7 +871,7 @@
     <node concept="3Tm1VV" id="1Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3W">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operation.model" />
     <property role="TrG5h" value="typeof_Model_IsAspectOperation_InferenceRule" />
     <node concept="3clFbW" id="3X" role="jymVt">
       <node concept="3clFbS" id="45" role="3clF47" />
@@ -1087,7 +1087,7 @@
     <node concept="3Tm1VV" id="44" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="5m">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operation.model" />
     <property role="TrG5h" value="typeof_OfAspectOperation_InferenceRule" />
     <node concept="3clFbW" id="5n" role="jymVt">
       <node concept="3clFbS" id="5v" role="3clF47" />

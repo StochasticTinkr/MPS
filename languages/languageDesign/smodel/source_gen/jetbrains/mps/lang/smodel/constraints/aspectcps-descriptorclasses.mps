@@ -342,7 +342,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="ChildAttributeQualifier_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -705,7 +705,7 @@
     </node>
   </node>
   <node concept="312cEu" id="26">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="ChildNodeRefExpression_Constraints" />
     <node concept="3Tm1VV" id="27" role="1B3o_S" />
     <node concept="3uibUv" id="28" role="1zkMxy">
@@ -1571,7 +1571,6 @@
     </node>
   </node>
   <node concept="312cEu" id="7q">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="EnumMemberReference_Constraints" />
     <node concept="3Tm1VV" id="7r" role="1B3o_S" />
     <node concept="3uibUv" id="7s" role="1zkMxy">
@@ -1950,7 +1949,7 @@
     </node>
   </node>
   <node concept="312cEu" id="9D">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="EnumMemberValueRefExpression_Constraints" />
     <node concept="3Tm1VV" id="9E" role="1B3o_S" />
     <node concept="3uibUv" id="9F" role="1zkMxy">
@@ -2290,7 +2289,7 @@
   </node>
   <node concept="39dXUE" id="bD" />
   <node concept="312cEu" id="bE">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="operation.reference" />
     <property role="TrG5h" value="IReferenceOperation_Constraints" />
     <node concept="3Tm1VV" id="bF" role="1B3o_S" />
     <node concept="3uibUv" id="bG" role="1zkMxy">
@@ -2544,7 +2543,6 @@
     </node>
   </node>
   <node concept="312cEu" id="de">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="IfInstanceOfVarReference_Constraints" />
     <node concept="3Tm1VV" id="df" role="1B3o_S" />
     <node concept="3uibUv" id="dg" role="1zkMxy">
@@ -2841,7 +2839,7 @@
     </node>
   </node>
   <node concept="312cEu" id="eX">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="LinkAttributeQualifier_Constraints" />
     <node concept="3Tm1VV" id="eY" role="1B3o_S" />
     <node concept="3uibUv" id="eZ" role="1zkMxy">
@@ -3204,7 +3202,7 @@
     </node>
   </node>
   <node concept="312cEu" id="h3">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="LinkIdRefExpression_Constraints" />
     <node concept="3Tm1VV" id="h4" role="1B3o_S" />
     <node concept="3uibUv" id="h5" role="1zkMxy">
@@ -3480,7 +3478,7 @@
     </node>
   </node>
   <node concept="312cEu" id="iC">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="LinkNameRefExpression_Constraints" />
     <node concept="3Tm1VV" id="iD" role="1B3o_S" />
     <node concept="3uibUv" id="iE" role="1zkMxy">
@@ -3756,7 +3754,7 @@
     </node>
   </node>
   <node concept="312cEu" id="kd">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="LinkQualifier_Constraints" />
     <node concept="3Tm1VV" id="ke" role="1B3o_S" />
     <node concept="3uibUv" id="kf" role="1zkMxy">
@@ -4068,7 +4066,6 @@
     </node>
   </node>
   <node concept="312cEu" id="m1">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="LinkRefExpression_Constraints" />
     <node concept="3Tm1VV" id="m2" role="1B3o_S" />
     <node concept="3uibUv" id="m3" role="1zkMxy">
@@ -4344,7 +4341,6 @@
     </node>
   </node>
   <node concept="312cEu" id="nA">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="LinkRefQualifier_Constraints" />
     <node concept="3Tm1VV" id="nB" role="1B3o_S" />
     <node concept="3uibUv" id="nC" role="1zkMxy">
@@ -4692,7 +4688,7 @@
     </node>
   </node>
   <node concept="312cEu" id="pD">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="operation" />
     <property role="TrG5h" value="ModelPointer_ResolveOperation_Constraints" />
     <node concept="3Tm1VV" id="pE" role="1B3o_S" />
     <node concept="3uibUv" id="pF" role="1zkMxy">
@@ -4975,7 +4971,7 @@
     </node>
   </node>
   <node concept="312cEu" id="rq">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference.model" />
     <property role="TrG5h" value="ModelReferenceExpression_Constraints" />
     <node concept="3Tm1VV" id="rr" role="1B3o_S" />
     <node concept="3uibUv" id="rs" role="1zkMxy">
@@ -5227,7 +5223,7 @@
     </node>
   </node>
   <node concept="312cEu" id="sX">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference.module" />
     <property role="TrG5h" value="ModuleReferenceExpression_Constraints" />
     <node concept="3Tm1VV" id="sY" role="1B3o_S" />
     <node concept="3uibUv" id="sZ" role="1zkMxy">
@@ -5457,7 +5453,7 @@
     </node>
   </node>
   <node concept="312cEu" id="um">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="NodeAttributeQualifier_Constraints" />
     <node concept="3Tm1VV" id="un" role="1B3o_S" />
     <node concept="3uibUv" id="uo" role="1zkMxy">
@@ -5820,7 +5816,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ws">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="NodePointerExpression_Old_Constraints" />
     <node concept="3Tm1VV" id="wt" role="1B3o_S" />
     <node concept="3uibUv" id="wu" role="1zkMxy">
@@ -6109,7 +6105,7 @@
     </node>
   </node>
   <node concept="312cEu" id="y7">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="operation.pointer" />
     <property role="TrG5h" value="NodePointer_GetModelOperation_Constraints" />
     <node concept="3Tm1VV" id="y8" role="1B3o_S" />
     <node concept="3uibUv" id="y9" role="1zkMxy">
@@ -6363,7 +6359,7 @@
     </node>
   </node>
   <node concept="312cEu" id="zF">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="operation" />
     <property role="TrG5h" value="NodePointer_ResolveOperation_Constraints" />
     <node concept="3Tm1VV" id="zG" role="1B3o_S" />
     <node concept="3uibUv" id="zH" role="1zkMxy">
@@ -6646,7 +6642,6 @@
     </node>
   </node>
   <node concept="312cEu" id="_s">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="NodeRefExpression_Constraints" />
     <node concept="3Tm1VV" id="_t" role="1B3o_S" />
     <node concept="3uibUv" id="_u" role="1zkMxy">
@@ -6927,7 +6922,6 @@
     </node>
   </node>
   <node concept="312cEu" id="B4">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="Node_ConceptMethodCall_Constraints" />
     <node concept="3Tm1VV" id="B5" role="1B3o_S" />
     <node concept="3uibUv" id="B6" role="1zkMxy">
@@ -7764,7 +7758,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Gp">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="operation.node" />
     <property role="TrG5h" value="Node_GetReferentSearchScopeOperation_Constraints" />
     <node concept="3Tm1VV" id="Gq" role="1B3o_S" />
     <node concept="3uibUv" id="Gr" role="1zkMxy">
@@ -8132,7 +8126,6 @@
     </node>
   </node>
   <node concept="312cEu" id="I$">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="Node_IsRoleOperation_Constraints" />
     <node concept="3Tm1VV" id="I_" role="1B3o_S" />
     <node concept="3uibUv" id="IA" role="1zkMxy">
@@ -8419,7 +8412,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Kd">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="PropertyAttributeQualifier_Constraints" />
     <node concept="3Tm1VV" id="Ke" role="1B3o_S" />
     <node concept="3uibUv" id="Kf" role="1zkMxy">
@@ -8782,7 +8775,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Mj">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="PropertyIdRefExpression_Constraints" />
     <node concept="3Tm1VV" id="Mk" role="1B3o_S" />
     <node concept="3uibUv" id="Ml" role="1zkMxy">
@@ -9058,7 +9051,7 @@
     </node>
   </node>
   <node concept="312cEu" id="NS">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="PropertyNameRefExpression_Constraints" />
     <node concept="3Tm1VV" id="NT" role="1B3o_S" />
     <node concept="3uibUv" id="NU" role="1zkMxy">
@@ -9334,7 +9327,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Pt">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="PropertyQualifier_Constraints" />
     <node concept="3Tm1VV" id="Pu" role="1B3o_S" />
     <node concept="3uibUv" id="Pv" role="1zkMxy">
@@ -9623,7 +9616,7 @@
     </node>
   </node>
   <node concept="312cEu" id="R8">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="enum.enumoperation" />
     <property role="TrG5h" value="SEnumMemberOperation_Constraints" />
     <node concept="3Tm1VV" id="R9" role="1B3o_S" />
     <node concept="3uibUv" id="Ra" role="1zkMxy">
@@ -9897,7 +9890,7 @@
     </node>
   </node>
   <node concept="312cEu" id="SP">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="enum" />
     <property role="TrG5h" value="SEnumOperationInvocation_Constraints" />
     <node concept="3Tm1VV" id="SQ" role="1B3o_S" />
     <node concept="3uibUv" id="SR" role="1zkMxy">
@@ -10178,7 +10171,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Ut">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="enum.enumoperation" />
     <property role="TrG5h" value="SEnumOperation_Constraints" />
     <node concept="3Tm1VV" id="Uu" role="1B3o_S" />
     <node concept="3uibUv" id="Uv" role="1zkMxy">
@@ -10416,7 +10409,7 @@
     </node>
   </node>
   <node concept="312cEu" id="VU">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="operation.enum" />
     <property role="TrG5h" value="SEnum_MemberOperation_Constraints" />
     <node concept="3Tm1VV" id="VV" role="1B3o_S" />
     <node concept="3uibUv" id="VW" role="1zkMxy">
@@ -10782,7 +10775,6 @@
     </node>
   </node>
   <node concept="312cEu" id="Y5">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="SLinkAccess_Constraints" />
     <node concept="3Tm1VV" id="Y6" role="1B3o_S" />
     <node concept="3uibUv" id="Y7" role="1zkMxy">
@@ -11148,7 +11140,7 @@
     </node>
   </node>
   <node concept="312cEu" id="10g">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="operation.featureAccess" />
     <property role="TrG5h" value="SLinkImplicitSelect_Constraints" />
     <node concept="3Tm1VV" id="10h" role="1B3o_S" />
     <node concept="3uibUv" id="10i" role="1zkMxy">
@@ -11728,7 +11720,6 @@
     </node>
   </node>
   <node concept="312cEu" id="13H">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="SLinkListAccess_Constraints" />
     <node concept="3Tm1VV" id="13I" role="1B3o_S" />
     <node concept="3uibUv" id="13J" role="1zkMxy">
@@ -12094,7 +12085,6 @@
     </node>
   </node>
   <node concept="312cEu" id="15S">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="SPropertyAccess_Constraints" />
     <node concept="3Tm1VV" id="15T" role="1B3o_S" />
     <node concept="3uibUv" id="15U" role="1zkMxy">
@@ -12553,7 +12543,7 @@
     </node>
   </node>
   <node concept="312cEu" id="18G">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="operation" />
     <property role="TrG5h" value="SearchScope_ContainsOperation_Constraints" />
     <node concept="3Tm1VV" id="18H" role="1B3o_S" />
     <node concept="3uibUv" id="18I" role="1zkMxy">

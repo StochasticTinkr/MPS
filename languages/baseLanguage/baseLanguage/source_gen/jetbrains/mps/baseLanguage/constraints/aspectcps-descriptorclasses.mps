@@ -413,7 +413,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="control_flow.loops" />
     <property role="TrG5h" value="AdditionalForLoopVariable_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -669,7 +669,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1_">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers" />
     <property role="TrG5h" value="AnnotationInstanceValue_Constraints" />
     <node concept="3Tm1VV" id="1A" role="1B3o_S" />
     <node concept="3uibUv" id="1B" role="1zkMxy">
@@ -977,7 +977,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3n">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers" />
     <property role="TrG5h" value="AnnotationInstance_Constraints" />
     <node concept="3Tm1VV" id="3o" role="1B3o_S" />
     <node concept="3uibUv" id="3p" role="1zkMxy">
@@ -1258,7 +1258,7 @@
     </node>
   </node>
   <node concept="312cEu" id="58">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.members" />
     <property role="TrG5h" value="AnnotationMethodDeclaration_Constraints" />
     <node concept="3Tm1VV" id="59" role="1B3o_S" />
     <node concept="3uibUv" id="5a" role="1zkMxy">
@@ -1508,7 +1508,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6E">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.classifiers" />
     <property role="TrG5h" value="Annotation_Constraints" />
     <node concept="3Tm1VV" id="6F" role="1B3o_S" />
     <node concept="3uibUv" id="6G" role="1zkMxy">
@@ -1703,7 +1703,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7L">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.classifiers" />
     <property role="TrG5h" value="AnonymousClass_Constraints" />
     <node concept="3Tm1VV" id="7M" role="1B3o_S" />
     <node concept="3uibUv" id="7N" role="1zkMxy">
@@ -2460,7 +2460,7 @@
     </node>
   </node>
   <node concept="312cEu" id="cn">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="array" />
     <property role="TrG5h" value="ArrayCloneOperation_Constraints" />
     <node concept="3Tm1VV" id="co" role="1B3o_S" />
     <node concept="3uibUv" id="cp" role="1zkMxy">
@@ -2746,7 +2746,7 @@
     </node>
   </node>
   <node concept="312cEu" id="e9">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="array" />
     <property role="TrG5h" value="ArrayLengthOperation_Constraints" />
     <node concept="3Tm1VV" id="ea" role="1B3o_S" />
     <node concept="3uibUv" id="eb" role="1zkMxy">
@@ -3032,7 +3032,7 @@
     </node>
   </node>
   <node concept="312cEu" id="fV">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="array" />
     <property role="TrG5h" value="ArrayLiteral_Constraints" />
     <node concept="3Tm1VV" id="fW" role="1B3o_S" />
     <node concept="3uibUv" id="fX" role="1zkMxy">
@@ -3390,7 +3390,7 @@
     </node>
   </node>
   <node concept="312cEu" id="i9">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="BaseMethodDeclaration_Constraints" />
     <node concept="3Tm1VV" id="ia" role="1B3o_S" />
     <node concept="3uibUv" id="ib" role="1zkMxy">
@@ -3424,7 +3424,7 @@
     <node concept="2tJIrI" id="id" role="jymVt" />
   </node>
   <node concept="312cEu" id="in">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="ext.string.expression" />
     <property role="TrG5h" value="BaseStringOperation_Constraints" />
     <node concept="3Tm1VV" id="io" role="1B3o_S" />
     <node concept="3uibUv" id="ip" role="1zkMxy">
@@ -3689,7 +3689,7 @@
     </node>
   </node>
   <node concept="312cEu" id="k0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="variables" />
     <property role="TrG5h" value="BaseVariableDeclaration_Constraints" />
     <node concept="3Tm1VV" id="k1" role="1B3o_S" />
     <node concept="3uibUv" id="k2" role="1zkMxy">
@@ -3723,7 +3723,7 @@
     <node concept="2tJIrI" id="k4" role="jymVt" />
   </node>
   <node concept="312cEu" id="ke">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.classifiers" />
     <property role="TrG5h" value="ClassConcept_Constraints" />
     <node concept="3Tm1VV" id="kf" role="1B3o_S" />
     <node concept="3uibUv" id="kg" role="1zkMxy">
@@ -4240,7 +4240,7 @@
     </node>
   </node>
   <node concept="312cEu" id="nh">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers" />
     <property role="TrG5h" value="ClassCreator_Constraints" />
     <node concept="3Tm1VV" id="ni" role="1B3o_S" />
     <node concept="3uibUv" id="nj" role="1zkMxy">
@@ -4777,7 +4777,7 @@
     </node>
   </node>
   <node concept="312cEu" id="qx">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers" />
     <property role="TrG5h" value="ClassifierClassExpression_Constraints" />
     <node concept="3Tm1VV" id="qy" role="1B3o_S" />
     <node concept="3uibUv" id="qz" role="1zkMxy">
@@ -5141,7 +5141,7 @@
     </node>
   </node>
   <node concept="312cEu" id="sC">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.base" />
     <property role="TrG5h" value="ClassifierMember_Constraints" />
     <node concept="3Tm1VV" id="sD" role="1B3o_S" />
     <node concept="3uibUv" id="sE" role="1zkMxy">
@@ -5404,7 +5404,7 @@
     </node>
   </node>
   <node concept="312cEu" id="uc">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="type" />
     <property role="TrG5h" value="ClassifierType_Constraints" />
     <node concept="3Tm1VV" id="ud" role="1B3o_S" />
     <node concept="3uibUv" id="ue" role="1zkMxy">
@@ -5880,7 +5880,7 @@
     </node>
   </node>
   <node concept="312cEu" id="wZ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.classifiers" />
     <property role="TrG5h" value="Classifier_Constraints" />
     <node concept="3Tm1VV" id="x0" role="1B3o_S" />
     <node concept="3uibUv" id="x1" role="1zkMxy">
@@ -6501,7 +6501,7 @@
     </node>
   </node>
   <node concept="312cEu" id="$B">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="to_remove" />
     <property role="TrG5h" value="ClosureParameterReference_Constraints" />
     <node concept="3Tm1VV" id="$C" role="1B3o_S" />
     <node concept="3uibUv" id="$D" role="1zkMxy">
@@ -7787,7 +7787,7 @@
     </node>
   </node>
   <node concept="312cEu" id="GG">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.members" />
     <property role="TrG5h" value="ConstructorDeclaration_Constraints" />
     <node concept="3Tm1VV" id="GH" role="1B3o_S" />
     <node concept="3uibUv" id="GI" role="1zkMxy">
@@ -8739,7 +8739,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Mt">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifier" />
     <property role="TrG5h" value="DefaultClassCreator_Constraints" />
     <node concept="3Tm1VV" id="Mu" role="1B3o_S" />
     <node concept="3uibUv" id="Mv" role="1zkMxy">
@@ -9191,7 +9191,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Pb">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.members" />
     <property role="TrG5h" value="EnumConstantDeclaration_Constraints" />
     <node concept="3Tm1VV" id="Pc" role="1B3o_S" />
     <node concept="3uibUv" id="Pd" role="1zkMxy">
@@ -9429,7 +9429,7 @@
     </node>
   </node>
   <node concept="312cEu" id="QC">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers" />
     <property role="TrG5h" value="EnumConstantReference_Constraints" />
     <node concept="3Tm1VV" id="QD" role="1B3o_S" />
     <node concept="3uibUv" id="QE" role="1zkMxy">
@@ -9765,7 +9765,7 @@
     </node>
   </node>
   <node concept="312cEu" id="SA">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers" />
     <property role="TrG5h" value="EnumValueOfExpression_Constraints" />
     <node concept="3Tm1VV" id="SB" role="1B3o_S" />
     <node concept="3uibUv" id="SC" role="1zkMxy">
@@ -9961,7 +9961,7 @@
     </node>
   </node>
   <node concept="312cEu" id="TK">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers" />
     <property role="TrG5h" value="EnumValuesExpression_Constraints" />
     <node concept="3Tm1VV" id="TL" role="1B3o_S" />
     <node concept="3uibUv" id="TM" role="1zkMxy">
@@ -10157,7 +10157,7 @@
     </node>
   </node>
   <node concept="312cEu" id="UU">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <property role="TrG5h" value="FieldReferenceOperation_Constraints" />
     <node concept="3Tm1VV" id="UV" role="1B3o_S" />
     <node concept="3uibUv" id="UW" role="1zkMxy">
@@ -10655,7 +10655,7 @@
     </node>
   </node>
   <node concept="312cEu" id="XJ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.base" />
     <property role="TrG5h" value="IOperation_Constraints" />
     <node concept="3Tm1VV" id="XK" role="1B3o_S" />
     <node concept="3uibUv" id="XL" role="1zkMxy">
@@ -10911,7 +10911,6 @@
     </node>
   </node>
   <node concept="312cEu" id="Zj">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="IValidIdentifier_Constraints" />
     <node concept="3Tm1VV" id="Zk" role="1B3o_S" />
     <node concept="3uibUv" id="Zl" role="1zkMxy">
@@ -11217,7 +11216,7 @@
     </node>
   </node>
   <node concept="312cEu" id="118">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers" />
     <property role="TrG5h" value="ImplicitAnnotationInstanceValue_Constraints" />
     <node concept="3Tm1VV" id="119" role="1B3o_S" />
     <node concept="3uibUv" id="11a" role="1zkMxy">
@@ -11802,7 +11801,7 @@
     </node>
   </node>
   <node concept="312cEu" id="14C">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <property role="TrG5h" value="InstanceMethodCallOperation_Constraints" />
     <node concept="3Tm1VV" id="14D" role="1B3o_S" />
     <node concept="3uibUv" id="14E" role="1zkMxy">
@@ -12233,7 +12232,7 @@
     </node>
   </node>
   <node concept="312cEu" id="17d">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.members" />
     <property role="TrG5h" value="InstanceMethodDeclaration_Constraints" />
     <node concept="3Tm1VV" id="17e" role="1B3o_S" />
     <node concept="3uibUv" id="17f" role="1zkMxy">
@@ -12302,7 +12301,7 @@
     <node concept="2tJIrI" id="17i" role="jymVt" />
   </node>
   <node concept="312cEu" id="17C">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.classifiers" />
     <property role="TrG5h" value="Interface_Constraints" />
     <node concept="3Tm1VV" id="17D" role="1B3o_S" />
     <node concept="3uibUv" id="17E" role="1zkMxy">
@@ -12736,7 +12735,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1ab">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <property role="TrG5h" value="LocalInstanceFieldReference_Constraints" />
     <node concept="3Tm1VV" id="1ac" role="1B3o_S" />
     <node concept="3uibUv" id="1ad" role="1zkMxy">
@@ -13023,7 +13022,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1bN">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <property role="TrG5h" value="LocalInstanceMethodCall_Constraints" />
     <node concept="3Tm1VV" id="1bO" role="1B3o_S" />
     <node concept="3uibUv" id="1bP" role="1zkMxy">
@@ -13310,7 +13309,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1dr">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <property role="TrG5h" value="LocalMethodCall_Constraints" />
     <node concept="3Tm1VV" id="1ds" role="1B3o_S" />
     <node concept="3uibUv" id="1dt" role="1zkMxy">
@@ -13618,7 +13617,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1fd">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="ext.property" />
     <property role="TrG5h" value="LocalPropertyReference_Constraints" />
     <node concept="3Tm1VV" id="1fe" role="1B3o_S" />
     <node concept="3uibUv" id="1ff" role="1zkMxy">
@@ -14305,7 +14304,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1jq">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <property role="TrG5h" value="LocalStaticFieldReference_Constraints" />
     <node concept="3Tm1VV" id="1jr" role="1B3o_S" />
     <node concept="3uibUv" id="1js" role="1zkMxy">
@@ -14592,7 +14591,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1l2">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <property role="TrG5h" value="LocalStaticMethodCall_Constraints" />
     <node concept="3Tm1VV" id="1l3" role="1B3o_S" />
     <node concept="3uibUv" id="1l4" role="1zkMxy">
@@ -14879,7 +14878,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1mE">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="variables" />
     <property role="TrG5h" value="LocalVariableDeclarationStatement_Constraints" />
     <node concept="3Tm1VV" id="1mF" role="1B3o_S" />
     <node concept="3uibUv" id="1mG" role="1zkMxy">
@@ -15120,7 +15119,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1o8">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="variables" />
     <property role="TrG5h" value="LocalVariableDeclaration_Constraints" />
     <node concept="3Tm1VV" id="1o9" role="1B3o_S" />
     <node concept="3uibUv" id="1oa" role="1zkMxy">
@@ -15316,7 +15315,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1pi">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="control_flow.loops" />
     <property role="TrG5h" value="LoopLabelReference_Constraints" />
     <node concept="3Tm1VV" id="1pj" role="1B3o_S" />
     <node concept="3uibUv" id="1pk" role="1zkMxy">
@@ -15624,7 +15623,6 @@
     </node>
   </node>
   <node concept="312cEu" id="1r4">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="NestedNewExpression_Constraints" />
     <node concept="3Tm1VV" id="1r5" role="1B3o_S" />
     <node concept="3uibUv" id="1r6" role="1zkMxy">
@@ -16105,7 +16103,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1tZ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="ext.property" />
     <property role="TrG5h" value="PropertyReference_Constraints" />
     <node concept="3Tm1VV" id="1u0" role="1B3o_S" />
     <node concept="3uibUv" id="1u1" role="1zkMxy">
@@ -16855,7 +16853,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1yC">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="ext.property.implementation.mixed" />
     <property role="TrG5h" value="PropertyValueReference_Constraints" />
     <node concept="3Tm1VV" id="1yD" role="1B3o_S" />
     <node concept="3uibUv" id="1yE" role="1zkMxy">
@@ -17496,7 +17494,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1Ax">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="ext.property" />
     <property role="TrG5h" value="Property_Constraints" />
     <node concept="3Tm1VV" id="1Ay" role="1B3o_S" />
     <node concept="3uibUv" id="1Az" role="1zkMxy">
@@ -17697,7 +17695,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1BH">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <property role="TrG5h" value="QualifiedSuperMethodCall_Constraints" />
     <node concept="3Tm1VV" id="1BI" role="1B3o_S" />
     <node concept="3uibUv" id="1BJ" role="1zkMxy">
@@ -18386,7 +18384,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1FO">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.members" />
     <property role="TrG5h" value="StaticFieldDeclaration_Constraints" />
     <node concept="3Tm1VV" id="1FP" role="1B3o_S" />
     <node concept="3uibUv" id="1FQ" role="1zkMxy">
@@ -18657,7 +18655,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1Hv">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <property role="TrG5h" value="StaticFieldReference_Constraints" />
     <node concept="3Tm1VV" id="1Hw" role="1B3o_S" />
     <node concept="3uibUv" id="1Hx" role="1zkMxy">
@@ -19222,7 +19220,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1KJ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <property role="TrG5h" value="StaticMethodCall_Constraints" />
     <node concept="3Tm1VV" id="1KK" role="1B3o_S" />
     <node concept="3uibUv" id="1KL" role="1zkMxy">
@@ -19918,7 +19916,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1OR">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <property role="TrG5h" value="SuperConstructorInvocation_Constraints" />
     <node concept="3Tm1VV" id="1OS" role="1B3o_S" />
     <node concept="3uibUv" id="1OT" role="1zkMxy">
@@ -20226,7 +20224,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1QD">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <property role="TrG5h" value="SuperMethodCall_Constraints" />
     <node concept="3Tm1VV" id="1QE" role="1B3o_S" />
     <node concept="3uibUv" id="1QF" role="1zkMxy">
@@ -20735,7 +20733,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1TC">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <property role="TrG5h" value="ThisConstructorInvocation_Constraints" />
     <node concept="3Tm1VV" id="1TD" role="1B3o_S" />
     <node concept="3uibUv" id="1TE" role="1zkMxy">
@@ -21043,7 +21041,6 @@
     </node>
   </node>
   <node concept="312cEu" id="1Vq">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ThisExpression_Constraints" />
     <node concept="3Tm1VV" id="1Vr" role="1B3o_S" />
     <node concept="3uibUv" id="1Vs" role="1zkMxy">
@@ -21652,7 +21649,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1Z3">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="generics" />
     <property role="TrG5h" value="TypeVariableReference_Constraints" />
     <node concept="3Tm1VV" id="1Z4" role="1B3o_S" />
     <node concept="3uibUv" id="1Z5" role="1zkMxy">
@@ -21960,7 +21957,7 @@
     </node>
   </node>
   <node concept="312cEu" id="20P">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="variables" />
     <property role="TrG5h" value="VariableReference_Constraints" />
     <node concept="3Tm1VV" id="20Q" role="1B3o_S" />
     <node concept="3uibUv" id="20R" role="1zkMxy">

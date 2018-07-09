@@ -273,7 +273,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="CommandBuilderExpression_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -479,7 +479,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1e">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="CommandDebuggerOperation_Constraints" />
     <node concept="3Tm1VV" id="1f" role="1B3o_S" />
     <node concept="3uibUv" id="1g" role="1zkMxy">
@@ -727,7 +727,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2J">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="CommandParameterAssignment_Constraints" />
     <node concept="3Tm1VV" id="2K" role="1B3o_S" />
     <node concept="3uibUv" id="2L" role="1zkMxy">
@@ -1240,7 +1240,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5L">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="CommandParameterReference_Constraints" />
     <node concept="3Tm1VV" id="5M" role="1B3o_S" />
     <node concept="3uibUv" id="5N" role="1zkMxy">
@@ -1729,7 +1729,7 @@
     </node>
   </node>
   <node concept="312cEu" id="8E">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="newProcessBuilder" />
     <property role="TrG5h" value="CommandPartLengthOperation_Constraints" />
     <node concept="3Tm1VV" id="8F" role="1B3o_S" />
     <node concept="3uibUv" id="8G" role="1zkMxy">
@@ -1994,7 +1994,7 @@
     </node>
   </node>
   <node concept="312cEu" id="aj">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="newProcessBuilder" />
     <property role="TrG5h" value="CommandPartToListOperation_Constraints" />
     <node concept="3Tm1VV" id="ak" role="1B3o_S" />
     <node concept="3uibUv" id="al" role="1zkMxy">
@@ -2443,7 +2443,7 @@
     </node>
   </node>
   <node concept="312cEu" id="d8">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="DebuggerSettingsCommandParameterDeclaration_Constraints" />
     <node concept="3Tm1VV" id="d9" role="1B3o_S" />
     <node concept="3uibUv" id="da" role="1zkMxy">
@@ -2645,7 +2645,7 @@
     </node>
   </node>
   <node concept="312cEu" id="em">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="ExecuteCommandPart_Constraints" />
     <node concept="3Tm1VV" id="en" role="1B3o_S" />
     <node concept="3uibUv" id="eo" role="1zkMxy">
@@ -3257,7 +3257,6 @@
   </node>
   <node concept="39dXUE" id="i1" />
   <node concept="312cEu" id="i2">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="StartAndWaitOperation_Constraints" />
     <node concept="3Tm1VV" id="i3" role="1B3o_S" />
     <node concept="3uibUv" id="i4" role="1zkMxy">

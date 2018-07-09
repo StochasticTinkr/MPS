@@ -163,6 +163,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -180,6 +183,7 @@
   </registry>
   <node concept="312cEu" id="0">
     <property role="TrG5h" value="CustomScope_DataFlow" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -596,6 +600,7 @@
   </node>
   <node concept="312cEu" id="2j">
     <property role="TrG5h" value="InstancesExpression_DataFlow" />
+    <property role="3GE5qa" value="query" />
     <node concept="3Tm1VV" id="2k" role="1B3o_S" />
     <node concept="3uibUv" id="2l" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -696,6 +701,7 @@
   </node>
   <node concept="312cEu" id="2W">
     <property role="TrG5h" value="ModelsScope_DataFlow" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <node concept="3Tm1VV" id="2X" role="1B3o_S" />
     <node concept="3uibUv" id="2Y" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -749,6 +755,7 @@
   </node>
   <node concept="312cEu" id="3i">
     <property role="TrG5h" value="ModulesScope_DataFlow" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <node concept="3Tm1VV" id="3j" role="1B3o_S" />
     <node concept="3uibUv" id="3k" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -802,6 +809,7 @@
   </node>
   <node concept="312cEu" id="3C">
     <property role="TrG5h" value="QueryExpression_DataFlow" />
+    <property role="3GE5qa" value="query" />
     <node concept="3Tm1VV" id="3D" role="1B3o_S" />
     <node concept="3uibUv" id="3E" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -870,6 +878,7 @@
   </node>
   <node concept="312cEu" id="44">
     <property role="TrG5h" value="QueryParameterScope_DataFlow" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <node concept="3Tm1VV" id="45" role="1B3o_S" />
     <node concept="3uibUv" id="46" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -923,6 +932,7 @@
   </node>
   <node concept="312cEu" id="4q">
     <property role="TrG5h" value="WithStatement_DataFlow" />
+    <property role="3GE5qa" value="" />
     <node concept="3Tm1VV" id="4r" role="1B3o_S" />
     <node concept="3uibUv" id="4s" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />

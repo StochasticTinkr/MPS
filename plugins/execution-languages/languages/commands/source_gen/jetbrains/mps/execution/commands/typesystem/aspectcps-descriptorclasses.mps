@@ -297,7 +297,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="CommandProcessCanSurviveWithoutCommand_SubtypingRule" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="a" role="3clF47" />
@@ -424,7 +423,6 @@
     <node concept="3Tm1VV" id="9" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="U">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="CommandProcessIsProcess_SubtypingRule" />
     <node concept="3clFbW" id="V" role="jymVt">
       <node concept="3clFbS" id="13" role="3clF47" />
@@ -2300,7 +2298,7 @@
     </node>
   </node>
   <node concept="312cEu" id="aW">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="error" />
     <property role="TrG5h" value="check_ReportErrorStatement_NonTypesystemRule" />
     <node concept="3clFbW" id="aX" role="jymVt">
       <node concept="3clFbS" id="b5" role="3clF47" />
@@ -2457,7 +2455,6 @@
     <node concept="3Tm1VV" id="b4" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="c1">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="processIsProcessHandler_SubtypingRule" />
     <node concept="3clFbW" id="c2" role="jymVt">
       <node concept="3clFbS" id="ca" role="3clF47" />
@@ -2572,7 +2569,7 @@
     <node concept="3Tm1VV" id="c9" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="cP">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="requiredArgsForCommandBuilderExpression_NonTypesystemRule" />
     <node concept="3clFbW" id="cQ" role="jymVt">
       <node concept="3clFbS" id="cY" role="3clF47" />
@@ -2835,7 +2832,7 @@
     <node concept="3Tm1VV" id="cX" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="e$">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="typeof_CommandBuilderExpression_InferenceRule" />
     <node concept="3clFbW" id="e_" role="jymVt">
       <node concept="3clFbS" id="eH" role="3clF47" />
@@ -3071,7 +3068,7 @@
     <node concept="3Tm1VV" id="eG" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="g5">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="typeof_CommandParameterAssignment_InferenceRule" />
     <node concept="3clFbW" id="g6" role="jymVt">
       <node concept="3clFbS" id="ge" role="3clF47" />
@@ -3308,7 +3305,7 @@
     <node concept="3Tm1VV" id="gd" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="hA">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="typeof_CommandParameterReference_InferenceRule" />
     <node concept="3clFbW" id="hB" role="jymVt">
       <node concept="3clFbS" id="hJ" role="3clF47" />
@@ -3534,7 +3531,7 @@
     <node concept="3Tm1VV" id="hI" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="j3">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="newProcessBuilder" />
     <property role="TrG5h" value="typeof_CommandPartLengthOperation_InferenceRule" />
     <node concept="3clFbW" id="j4" role="jymVt">
       <node concept="3clFbS" id="jc" role="3clF47" />
@@ -3750,7 +3747,7 @@
     <node concept="3Tm1VV" id="jb" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="kt">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="newProcessBuilder" />
     <property role="TrG5h" value="typeof_CommandPartToListOperation_InferenceRule" />
     <node concept="3clFbW" id="ku" role="jymVt">
       <node concept="3clFbS" id="kA" role="3clF47" />
@@ -3968,7 +3965,7 @@
     <node concept="3Tm1VV" id="k_" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="lS">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="typeof_CommandReferenceExpression_InferenceRule" />
     <node concept="3clFbW" id="lT" role="jymVt">
       <node concept="3clFbS" id="m1" role="3clF47" />
@@ -4199,7 +4196,7 @@
     <node concept="3Tm1VV" id="m0" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="nn">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="newProcessBuilder" />
     <property role="TrG5h" value="typeof_KeyValueCommandPart_InferenceRule" />
     <node concept="3clFbW" id="no" role="jymVt">
       <node concept="3clFbS" id="nw" role="3clF47" />
@@ -4677,7 +4674,7 @@
     <node concept="3Tm1VV" id="nv" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="qi">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="newProcessBuilder" />
     <property role="TrG5h" value="typeof_ListCommandPart_InferenceRule" />
     <node concept="3clFbW" id="qj" role="jymVt">
       <node concept="3clFbS" id="qr" role="3clF47" />
@@ -5025,7 +5022,7 @@
     <node concept="3Tm1VV" id="qq" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="su">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="newProcessBuilder" />
     <property role="TrG5h" value="typeof_NewProcessBuilderExperssion_InferenceRule" />
     <node concept="3clFbW" id="sv" role="jymVt">
       <node concept="3clFbS" id="sB" role="3clF47" />
@@ -5515,7 +5512,7 @@
     <node concept="3Tm1VV" id="sA" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="vt">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="newProcessBuilder" />
     <property role="TrG5h" value="typeof_ProcessBuilderCommandPart_InferenceRule" />
     <node concept="3clFbW" id="vu" role="jymVt">
       <node concept="3clFbS" id="vA" role="3clF47" />
@@ -5733,7 +5730,7 @@
     <node concept="3Tm1VV" id="v_" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="wR">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="newProcessBuilder" />
     <property role="TrG5h" value="typeof_PropertyCommandPart_InferenceRule" />
     <node concept="3clFbW" id="wS" role="jymVt">
       <node concept="3clFbS" id="x0" role="3clF47" />
@@ -6084,7 +6081,6 @@
     <node concept="3Tm1VV" id="wZ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="z4">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_RedirectOutputExpression_InferenceRule" />
     <node concept="3clFbW" id="z5" role="jymVt">
       <node concept="3clFbS" id="zd" role="3clF47" />
@@ -6544,7 +6540,6 @@
     <node concept="3Tm1VV" id="zc" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="_S">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_StartAndWaitOperation_InferenceRule" />
     <node concept="3clFbW" id="_T" role="jymVt">
       <node concept="3clFbS" id="A1" role="3clF47" />

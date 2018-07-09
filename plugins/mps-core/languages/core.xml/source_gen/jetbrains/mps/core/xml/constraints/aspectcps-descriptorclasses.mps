@@ -597,7 +597,6 @@
   </node>
   <node concept="39dXUE" id="1W" />
   <node concept="312cEu" id="1X">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlAttribute_Constraints" />
     <node concept="3Tm1VV" id="1Y" role="1B3o_S" />
     <node concept="3uibUv" id="1Z" role="1zkMxy">
@@ -805,7 +804,6 @@
     </node>
   </node>
   <node concept="312cEu" id="3c">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlCDATA_Constraints" />
     <node concept="3Tm1VV" id="3d" role="1B3o_S" />
     <node concept="3uibUv" id="3e" role="1zkMxy">
@@ -1013,7 +1011,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4r">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlCharRefValue_Constraints" />
     <node concept="3Tm1VV" id="4s" role="1B3o_S" />
     <node concept="3uibUv" id="4t" role="1zkMxy">
@@ -1221,7 +1218,6 @@
     </node>
   </node>
   <node concept="312cEu" id="5E">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlCharRef_Constraints" />
     <node concept="3Tm1VV" id="5F" role="1B3o_S" />
     <node concept="3uibUv" id="5G" role="1zkMxy">
@@ -1429,7 +1425,6 @@
     </node>
   </node>
   <node concept="312cEu" id="6T">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlCommentLine_Constraints" />
     <node concept="3Tm1VV" id="6U" role="1B3o_S" />
     <node concept="3uibUv" id="6V" role="1zkMxy">
@@ -1637,7 +1632,6 @@
     </node>
   </node>
   <node concept="312cEu" id="88">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlContent_Constraints" />
     <node concept="3Tm1VV" id="89" role="1B3o_S" />
     <node concept="3uibUv" id="8a" role="1zkMxy">
@@ -1671,7 +1665,6 @@
     <node concept="2tJIrI" id="8c" role="jymVt" />
   </node>
   <node concept="312cEu" id="8m">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlDeclaration_Constraints" />
     <node concept="3Tm1VV" id="8n" role="1B3o_S" />
     <node concept="3uibUv" id="8o" role="1zkMxy">
@@ -1910,7 +1903,6 @@
     </node>
   </node>
   <node concept="312cEu" id="9O">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlDoctypeDeclaration_Constraints" />
     <node concept="3Tm1VV" id="9P" role="1B3o_S" />
     <node concept="3uibUv" id="9Q" role="1zkMxy">
@@ -2345,7 +2337,6 @@
     </node>
   </node>
   <node concept="312cEu" id="cu">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlElement_Constraints" />
     <node concept="3Tm1VV" id="cv" role="1B3o_S" />
     <node concept="3uibUv" id="cw" role="1zkMxy">
@@ -2553,7 +2544,6 @@
     </node>
   </node>
   <node concept="312cEu" id="dH">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlEntityRefValue_Constraints" />
     <node concept="3Tm1VV" id="dI" role="1B3o_S" />
     <node concept="3uibUv" id="dJ" role="1zkMxy">
@@ -2761,7 +2751,6 @@
     </node>
   </node>
   <node concept="312cEu" id="eW">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlEntityRef_Constraints" />
     <node concept="3Tm1VV" id="eX" role="1B3o_S" />
     <node concept="3uibUv" id="eY" role="1zkMxy">
@@ -2969,7 +2958,6 @@
     </node>
   </node>
   <node concept="312cEu" id="gb">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlExternalId_Constraints" />
     <node concept="3Tm1VV" id="gc" role="1B3o_S" />
     <node concept="3uibUv" id="gd" role="1zkMxy">
@@ -5883,7 +5871,6 @@
     </node>
   </node>
   <node concept="312cEu" id="yT">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlProcessingInstruction_Constraints" />
     <node concept="3Tm1VV" id="yU" role="1B3o_S" />
     <node concept="3uibUv" id="yV" role="1zkMxy">
@@ -6091,7 +6078,6 @@
     </node>
   </node>
   <node concept="312cEu" id="$8">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlTextValue_Constraints" />
     <node concept="3Tm1VV" id="$9" role="1B3o_S" />
     <node concept="3uibUv" id="$a" role="1zkMxy">
@@ -6299,7 +6285,6 @@
     </node>
   </node>
   <node concept="312cEu" id="_n">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlText_Constraints" />
     <node concept="3Tm1VV" id="_o" role="1B3o_S" />
     <node concept="3uibUv" id="_p" role="1zkMxy">
@@ -6507,7 +6492,6 @@
     </node>
   </node>
   <node concept="312cEu" id="AA">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlValuePart_Constraints" />
     <node concept="3Tm1VV" id="AB" role="1B3o_S" />
     <node concept="3uibUv" id="AC" role="1zkMxy">
@@ -6541,7 +6525,6 @@
     <node concept="2tJIrI" id="AE" role="jymVt" />
   </node>
   <node concept="312cEu" id="AO">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="XmlWhitespace_Constraints" />
     <node concept="3Tm1VV" id="AP" role="1B3o_S" />
     <node concept="3uibUv" id="AQ" role="1zkMxy">

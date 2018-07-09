@@ -258,7 +258,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ConceptConstraints_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -1357,7 +1356,6 @@
   </node>
   <node concept="39dXUE" id="6E" />
   <node concept="312cEu" id="6F">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="NodePropertyConstraint_Constraints" />
     <node concept="3Tm1VV" id="6G" role="1B3o_S" />
     <node concept="3uibUv" id="6H" role="1zkMxy">
@@ -1735,7 +1733,6 @@
     </node>
   </node>
   <node concept="312cEu" id="8V">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="NodeReferentConstraint_Constraints" />
     <node concept="3Tm1VV" id="8W" role="1B3o_S" />
     <node concept="3uibUv" id="8X" role="1zkMxy">

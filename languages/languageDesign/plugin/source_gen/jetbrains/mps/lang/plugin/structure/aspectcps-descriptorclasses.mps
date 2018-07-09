@@ -235,6 +235,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -10348,6 +10349,7 @@
   </node>
   <node concept="Qs71p" id="WJ">
     <property role="TrG5h" value="KeyMapChange" />
+    <property role="3GE5qa" value="Actions.Action" />
     <node concept="QsSxf" id="WK" role="Qtgdg">
       <property role="TrG5h" value="replace_all" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -10614,6 +10616,7 @@
   </node>
   <node concept="312cEu" id="Yw">
     <property role="TrG5h" value="KeyMapChange_PropertySupport" />
+    <property role="3GE5qa" value="Actions.Action" />
     <node concept="3uibUv" id="Yx" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -10867,6 +10870,7 @@
   </node>
   <node concept="Qs71p" id="10h">
     <property role="TrG5h" value="Keymap" />
+    <property role="3GE5qa" value="Actions.Keymaps" />
     <node concept="QsSxf" id="10i" role="Qtgdg">
       <property role="TrG5h" value="Mac_OS_X" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -11336,6 +11340,7 @@
   </node>
   <node concept="312cEu" id="13a">
     <property role="TrG5h" value="Keymap_PropertySupport" />
+    <property role="3GE5qa" value="Actions.Keymaps" />
     <node concept="3uibUv" id="13b" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -41866,6 +41871,7 @@
   </node>
   <node concept="Qs71p" id="3KO">
     <property role="TrG5h" value="ToolPosition" />
+    <property role="3GE5qa" value="Tool" />
     <node concept="QsSxf" id="3KP" role="Qtgdg">
       <property role="TrG5h" value="bottom" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -42235,6 +42241,7 @@
   </node>
   <node concept="312cEu" id="3N9">
     <property role="TrG5h" value="ToolPosition_PropertySupport" />
+    <property role="3GE5qa" value="Tool" />
     <node concept="3uibUv" id="3Na" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -42488,6 +42495,7 @@
   </node>
   <node concept="312cEu" id="3OU">
     <property role="TrG5h" value="digit_PropertySupport" />
+    <property role="3GE5qa" value="Tool" />
     <node concept="3uibUv" id="3OV" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -42558,6 +42566,7 @@
   </node>
   <node concept="312cEu" id="3Pr">
     <property role="TrG5h" value="mnemonic_PropertySupport" />
+    <property role="3GE5qa" value="Actions.Groups" />
     <node concept="3uibUv" id="3Ps" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>

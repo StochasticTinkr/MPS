@@ -196,7 +196,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -728,7 +727,6 @@
     </node>
   </node>
   <node concept="312cEu" id="2I">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="blockInstance_NonTypesystemRule" />
     <node concept="3clFbW" id="2J" role="jymVt">
       <node concept="3clFbS" id="2R" role="3clF47" />
@@ -912,7 +910,6 @@
     <node concept="3Tm1VV" id="2Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3X">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_all_ports_NonTypesystemRule" />
     <node concept="3clFbW" id="3Y" role="jymVt">
       <node concept="3clFbS" id="46" role="3clF47" />
@@ -1264,7 +1261,6 @@
     <node concept="3Tm1VV" id="45" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6j">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_outputport_NonTypesystemRule" />
     <node concept="3clFbW" id="6k" role="jymVt">
       <node concept="3clFbS" id="6s" role="3clF47" />
@@ -1428,7 +1424,6 @@
     <node concept="3Tm1VV" id="6r" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7p">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_port_NonTypesystemRule" />
     <node concept="3clFbW" id="7q" role="jymVt">
       <node concept="3clFbS" id="7y" role="3clF47" />
@@ -1592,7 +1587,6 @@
     <node concept="3Tm1VV" id="7x" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="8v">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="connector_NonTypesystemRule" />
     <node concept="3clFbW" id="8w" role="jymVt">
       <node concept="3clFbS" id="8C" role="3clF47" />

@@ -245,7 +245,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -1761,7 +1760,6 @@
     </node>
   </node>
   <node concept="312cEu" id="7H">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_AbstractionVarRef_InferenceRule" />
     <node concept="3clFbW" id="7I" role="jymVt">
       <node concept="3clFbS" id="7Q" role="3clF47" />
@@ -2006,7 +2004,6 @@
     <node concept="3Tm1VV" id="7P" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9g">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_BinaryNumericOperation_InferenceRule" />
     <node concept="3clFbW" id="9h" role="jymVt">
       <node concept="3clFbS" id="9p" role="3clF47" />
@@ -2227,7 +2224,6 @@
     <node concept="3Tm1VV" id="9o" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="aG">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_BinaryOperation_InferenceRule" />
     <node concept="3clFbW" id="aH" role="jymVt">
       <node concept="3clFbS" id="aP" role="3clF47" />
@@ -2614,7 +2610,6 @@
     <node concept="3Tm1VV" id="aO" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="d3">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_BinaryStringOperation_InferenceRule" />
     <node concept="3clFbW" id="d4" role="jymVt">
       <node concept="3clFbS" id="dc" role="3clF47" />
@@ -2830,7 +2825,6 @@
     <node concept="3Tm1VV" id="db" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="et">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_LambdaAbstraction_InferenceRule" />
     <node concept="3clFbW" id="eu" role="jymVt">
       <node concept="3clFbS" id="eA" role="3clF47" />
@@ -3439,7 +3433,6 @@
     <node concept="3Tm1VV" id="e_" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ic">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_LambdaApplication_InferenceRule" />
     <node concept="3clFbW" id="id" role="jymVt">
       <node concept="3clFbS" id="il" role="3clF47" />
@@ -4048,7 +4041,6 @@
     <node concept="3Tm1VV" id="ik" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="lV">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_LambdaExpression_InferenceRule" />
     <node concept="3clFbW" id="lW" role="jymVt">
       <node concept="3clFbS" id="m4" role="3clF47" />
@@ -4188,7 +4180,6 @@
     <node concept="3Tm1VV" id="m3" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="mS">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_LetExpression_InferenceRule" />
     <node concept="3clFbW" id="mT" role="jymVt">
       <node concept="3clFbS" id="n1" role="3clF47" />
@@ -4575,7 +4566,6 @@
     <node concept="3Tm1VV" id="n0" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="pf">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_LetRef_InferenceRule" />
     <node concept="3clFbW" id="pg" role="jymVt">
       <node concept="3clFbS" id="po" role="3clF47" />
@@ -5100,7 +5090,6 @@
     <node concept="3Tm1VV" id="pn" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="s_">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_MultipleExpression_InferenceRule" />
     <node concept="3clFbW" id="sA" role="jymVt">
       <node concept="3clFbS" id="sI" role="3clF47" />
@@ -5348,7 +5337,6 @@
     <node concept="3Tm1VV" id="sH" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ua">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_NumericConstant_InferenceRule" />
     <node concept="3clFbW" id="ub" role="jymVt">
       <node concept="3clFbS" id="uj" role="3clF47" />
@@ -5564,7 +5552,6 @@
     <node concept="3Tm1VV" id="ui" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="v$">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ParenthesisExpression_InferenceRule" />
     <node concept="3clFbW" id="v_" role="jymVt">
       <node concept="3clFbS" id="vH" role="3clF47" />
@@ -5809,7 +5796,6 @@
     <node concept="3Tm1VV" id="vG" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="x7">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_StringConstant_InferenceRule" />
     <node concept="3clFbW" id="x8" role="jymVt">
       <node concept="3clFbS" id="xg" role="3clF47" />
@@ -6025,7 +6011,6 @@
     <node concept="3Tm1VV" id="xf" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="yx">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_Variable_InferenceRule" />
     <node concept="3clFbW" id="yy" role="jymVt">
       <node concept="3clFbS" id="yE" role="3clF47" />

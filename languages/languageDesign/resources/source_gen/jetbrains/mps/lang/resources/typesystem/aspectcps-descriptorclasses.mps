@@ -1485,7 +1485,7 @@
     <node concept="3Tm1VV" id="5g" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6y">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="url" />
     <property role="TrG5h" value="check_HelpURL_NonTypesystemRule" />
     <node concept="3clFbW" id="6z" role="jymVt">
       <node concept="3clFbS" id="6F" role="3clF47" />
@@ -1649,7 +1649,7 @@
     <node concept="3Tm1VV" id="6E" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7G">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="icons.descriptors" />
     <property role="TrG5h" value="check_TextIcon_NonTypesystemRule" />
     <node concept="3clFbW" id="7H" role="jymVt">
       <node concept="3clFbS" id="7P" role="3clF47" />
@@ -1899,7 +1899,7 @@
     <node concept="3Tm1VV" id="7O" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9p">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="url" />
     <property role="TrG5h" value="check_URLLiteral_NonTypesystemRule" />
     <node concept="3clFbW" id="9q" role="jymVt">
       <node concept="3clFbS" id="9y" role="3clF47" />
@@ -2046,7 +2046,7 @@
     <node concept="3Tm1VV" id="9x" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="aq">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="url" />
     <property role="TrG5h" value="typeof_BaseURLFunction_InferenceRule" />
     <node concept="3clFbW" id="ar" role="jymVt">
       <node concept="3clFbS" id="az" role="3clF47" />
@@ -2295,7 +2295,7 @@
     <node concept="3Tm1VV" id="ay" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="c0">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="icons.instantiation" />
     <property role="TrG5h" value="typeof_ConceptIconResourceExpression_InferenceRule" />
     <node concept="3clFbW" id="c1" role="jymVt">
       <node concept="3clFbS" id="c9" role="3clF47" />
@@ -2648,7 +2648,7 @@
     <node concept="3Tm1VV" id="c8" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ee">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="icons.instantiation" />
     <property role="TrG5h" value="typeof_IconExpression_InferenceRule" />
     <node concept="3clFbW" id="ef" role="jymVt">
       <node concept="3clFbS" id="en" role="3clF47" />
@@ -2866,7 +2866,7 @@
     <node concept="3Tm1VV" id="em" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fC">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="deprecated" />
     <property role="TrG5h" value="typeof_IconResourceDeclaration_InferenceRule" />
     <node concept="3clFbW" id="fD" role="jymVt">
       <node concept="3clFbS" id="fL" role="3clF47" />
@@ -3111,7 +3111,7 @@
     <node concept="3Tm1VV" id="fK" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="hd">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="icons.instantiation" />
     <property role="TrG5h" value="typeof_IconResourceExpression_InferenceRule" />
     <node concept="3clFbW" id="he" role="jymVt">
       <node concept="3clFbS" id="hm" role="3clF47" />
@@ -3329,7 +3329,7 @@
     <node concept="3Tm1VV" id="hl" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="iB">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="deprecated" />
     <property role="TrG5h" value="typeof_IconResourceReference_InferenceRule" />
     <node concept="3clFbW" id="iC" role="jymVt">
       <node concept="3clFbS" id="iK" role="3clF47" />
@@ -3547,7 +3547,7 @@
     <node concept="3Tm1VV" id="iJ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="k1">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="icons.instantiation" />
     <property role="TrG5h" value="typeof_NodeIconResourceExpression_InferenceRule" />
     <node concept="3clFbW" id="k2" role="jymVt">
       <node concept="3clFbS" id="ka" role="3clF47" />

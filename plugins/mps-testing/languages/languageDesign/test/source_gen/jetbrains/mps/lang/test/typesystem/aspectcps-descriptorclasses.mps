@@ -1773,7 +1773,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7I">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="editor" />
     <property role="TrG5h" value="checkBeforeContainsCellAnnotation_EditorTestCase_NonTypesystemRule" />
     <node concept="3clFbW" id="7J" role="jymVt">
       <node concept="3clFbS" id="7R" role="3clF47" />
@@ -1974,7 +1974,7 @@
     <node concept="3Tm1VV" id="7Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="95">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="editor" />
     <property role="TrG5h" value="checkBeforePresents_EditorTestCase_NonTypesystemRule" />
     <node concept="3clFbW" id="96" role="jymVt">
       <node concept="3clFbS" id="9e" role="3clF47" />
@@ -2153,7 +2153,6 @@
     <node concept="3Tm1VV" id="9d" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ai">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="checkITestCase_And_TestInfo_NonTypesystemRule" />
     <node concept="3clFbW" id="aj" role="jymVt">
       <node concept="3clFbS" id="ar" role="3clF47" />
@@ -2345,7 +2344,6 @@
     <node concept="3Tm1VV" id="aq" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="b_">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="checkTestMethodDataflow_NonTypesystemRule" />
     <node concept="3clFbW" id="bA" role="jymVt">
       <node concept="3clFbS" id="bI" role="3clF47" />
@@ -2473,7 +2471,7 @@
     <node concept="3Tm1VV" id="bH" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ct">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="editor" />
     <property role="TrG5h" value="check_AssertStatementInsideEditorTestCase_NonTypesystemRule" />
     <node concept="3clFbW" id="cu" role="jymVt">
       <node concept="3clFbS" id="cA" role="3clF47" />
@@ -2737,7 +2735,7 @@
     <node concept="3Tm1VV" id="c_" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ef">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="editor" />
     <property role="TrG5h" value="check_DragMouseStatement_NonTypesystemRule" />
     <node concept="3clFbW" id="eg" role="jymVt">
       <node concept="3clFbS" id="eo" role="3clF47" />
@@ -2916,7 +2914,6 @@
     <node concept="3Tm1VV" id="en" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fs">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_AssertMatch_InferenceRule" />
     <node concept="3clFbW" id="ft" role="jymVt">
       <node concept="3clFbS" id="f_" role="3clF47" />
@@ -3448,7 +3445,7 @@
     <node concept="3Tm1VV" id="f$" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="iH">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="expression" />
     <property role="TrG5h" value="typeof_EditorComponentExpression_InferenceRule" />
     <node concept="3clFbW" id="iI" role="jymVt">
       <node concept="3clFbS" id="iQ" role="3clF47" />
@@ -3666,7 +3663,7 @@
     <node concept="3Tm1VV" id="iP" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="k7">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="expression" />
     <property role="TrG5h" value="typeof_EditorExpression_InferenceRule" />
     <node concept="3clFbW" id="k8" role="jymVt">
       <node concept="3clFbS" id="kg" role="3clF47" />
@@ -3884,7 +3881,7 @@
     <node concept="3Tm1VV" id="kf" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="lx">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="editor" />
     <property role="TrG5h" value="typeof_InvokeIntentionStatement_InferenceRule" />
     <node concept="3clFbW" id="ly" role="jymVt">
       <node concept="3clFbS" id="lE" role="3clF47" />
@@ -4376,7 +4373,7 @@
     <node concept="3Tm1VV" id="lD" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="oI">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="expression" />
     <property role="TrG5h" value="typeof_IsActionApplicableExpression_InferenceRule" />
     <node concept="3clFbW" id="oJ" role="jymVt">
       <node concept="3clFbS" id="oR" role="3clF47" />
@@ -4596,7 +4593,7 @@
     <node concept="3Tm1VV" id="oQ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="q9">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="expression" />
     <property role="TrG5h" value="typeof_IsIntentionApplicableExpression_InferenceRule" />
     <node concept="3clFbW" id="qa" role="jymVt">
       <node concept="3clFbS" id="qi" role="3clF47" />
@@ -4816,7 +4813,7 @@
     <node concept="3Tm1VV" id="qh" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="r$">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="expression" />
     <property role="TrG5h" value="typeof_ModelExpression_InferenceRule" />
     <node concept="3clFbW" id="r_" role="jymVt">
       <node concept="3clFbS" id="rH" role="3clF47" />
@@ -5040,7 +5037,7 @@
     <node concept="3Tm1VV" id="rG" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="t0">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="expression" />
     <property role="TrG5h" value="typeof_ProjectExpression_InferenceRule" />
     <node concept="3clFbW" id="t1" role="jymVt">
       <node concept="3clFbS" id="t9" role="3clF47" />
@@ -5258,7 +5255,6 @@
     <node concept="3Tm1VV" id="t8" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="uq">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_TestNodeReference_InferenceRule" />
     <node concept="3clFbW" id="ur" role="jymVt">
       <node concept="3clFbS" id="uz" role="3clF47" />

@@ -460,7 +460,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
     <property role="TrG5h" value="ClosureLiteralType_subtypeOf_ClassifierType_InequationReplacementRule" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="d" role="3clF47" />
@@ -2415,7 +2414,6 @@
     </node>
   </node>
   <node concept="312cEu" id="c_">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
     <property role="TrG5h" value="FunctionType_subtypeOf_FunctionType_InequationReplacementRule" />
     <node concept="3clFbW" id="cA" role="jymVt">
       <node concept="3clFbS" id="cL" role="3clF47" />
@@ -4120,7 +4118,6 @@
     </node>
   </node>
   <node concept="312cEu" id="nr">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
     <property role="TrG5h" value="FunctionType_subtypeOf_Object_InequationReplacementRule" />
     <node concept="312cEg" id="ns" role="jymVt">
       <property role="TrG5h" value="myMatchingPattern2" />
@@ -4417,7 +4414,6 @@
     </node>
   </node>
   <node concept="312cEu" id="pq">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="FunctionType_supertypeOf_ClosureLiteralType_SubtypingRule" />
     <node concept="3clFbW" id="pr" role="jymVt">
       <node concept="3clFbS" id="p$" role="3clF47" />
@@ -6737,7 +6733,6 @@
     </node>
   </node>
   <node concept="312cEu" id="_u">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_ClosureLiteralDataFlow_NonTypesystemRule" />
     <node concept="3clFbW" id="_v" role="jymVt">
       <node concept="3clFbS" id="_B" role="3clF47" />
@@ -6879,7 +6874,6 @@
     <node concept="3Tm1VV" id="_A" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="As">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_FunctionType_NonTypesystemRule" />
     <node concept="3clFbW" id="At" role="jymVt">
       <node concept="3clFbS" id="A_" role="3clF47" />
@@ -7360,7 +7354,6 @@
     <node concept="3Tm1VV" id="A$" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Dy">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_ReturnStatement_NonTypesystemRule" />
     <node concept="3clFbW" id="Dz" role="jymVt">
       <node concept="3clFbS" id="DF" role="3clF47" />
@@ -7563,7 +7556,6 @@
     <node concept="3Tm1VV" id="DE" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ET">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="supertypesOf_ClassifierType_SubtypingRule" />
     <node concept="3clFbW" id="EU" role="jymVt">
       <node concept="3clFbS" id="F2" role="3clF47" />
@@ -8141,7 +8133,6 @@
     <node concept="3Tm1VV" id="F1" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="IS">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="supertypesOf_ClosureLiteralType_SubtypingRule" />
     <node concept="3clFbW" id="IT" role="jymVt">
       <node concept="3clFbS" id="J1" role="3clF47" />
@@ -8305,7 +8296,7 @@
     <node concept="3Tm1VV" id="J0" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="JZ">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="impl" />
     <property role="TrG5h" value="typeof_ClosureArgReference_InferenceRule" />
     <node concept="3clFbW" id="K0" role="jymVt">
       <node concept="3clFbS" id="K8" role="3clF47" />
@@ -8550,7 +8541,6 @@
     <node concept="3Tm1VV" id="K7" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Ly">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ClosureControlStatement_InferenceRule" />
     <node concept="3clFbW" id="Lz" role="jymVt">
       <node concept="3clFbS" id="LF" role="3clF47" />
@@ -9281,7 +9271,6 @@
     <node concept="3Tm1VV" id="LE" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Q7">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ClosureLiteral_InferenceRule" />
     <node concept="3clFbW" id="Q8" role="jymVt">
       <node concept="3clFbS" id="Qg" role="3clF47" />
@@ -13781,7 +13770,6 @@
     <node concept="3Tm1VV" id="Qf" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1ip">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_CompactInvokeFunctionExpression_InferenceRule" />
     <node concept="3clFbW" id="1iq" role="jymVt">
       <node concept="3clFbS" id="1iy" role="3clF47" />
@@ -14709,7 +14697,6 @@
     <node concept="3Tm1VV" id="1ix" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1o8">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InvokeExpression_InferenceRule" />
     <node concept="3clFbW" id="1o9" role="jymVt">
       <node concept="3clFbS" id="1oh" role="3clF47" />
@@ -15382,7 +15369,6 @@
     <node concept="3Tm1VV" id="1og" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1sj">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InvokeFunctionExpression_InferenceRule" />
     <node concept="3clFbW" id="1sk" role="jymVt">
       <node concept="3clFbS" id="1ss" role="3clF47" />
@@ -16379,7 +16365,6 @@
     <node concept="3Tm1VV" id="1sr" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1yk">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_InvokeFunctionOperation_InferenceRule" />
     <node concept="3clFbW" id="1yl" role="jymVt">
       <node concept="3clFbS" id="1yt" role="3clF47" />
@@ -16987,7 +16972,6 @@
     <node concept="3Tm1VV" id="1ys" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1A4">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_YieldAllStatement_InferenceRule" />
     <node concept="3clFbW" id="1A5" role="jymVt">
       <node concept="3clFbS" id="1Ad" role="3clF47" />
@@ -17273,7 +17257,6 @@
     <node concept="3Tm1VV" id="1Ac" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1BT">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
     <property role="TrG5h" value="wildcardtype_comparable_ComparisonRule" />
     <node concept="3clFbW" id="1BU" role="jymVt">
       <node concept="3cqZAl" id="1C4" role="3clF45" />

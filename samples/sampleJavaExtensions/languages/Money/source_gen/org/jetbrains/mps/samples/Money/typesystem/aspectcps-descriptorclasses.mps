@@ -714,7 +714,6 @@
     </node>
   </node>
   <node concept="312cEu" id="2i">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="Money_extends_java_lang_Object_SubtypingRule" />
     <node concept="3clFbW" id="2j" role="jymVt">
       <node concept="3clFbS" id="2r" role="3clF47" />
@@ -1623,7 +1622,6 @@
     </node>
   </node>
   <node concept="312cEu" id="8F">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ConvertTo_InferenceRule" />
     <node concept="3clFbW" id="8G" role="jymVt">
       <node concept="3clFbS" id="8O" role="3clF47" />
@@ -1839,7 +1837,6 @@
     <node concept="3Tm1VV" id="8N" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="a5">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GetAmount_InferenceRule" />
     <node concept="3clFbW" id="a6" role="jymVt">
       <node concept="3clFbS" id="ae" role="3clF47" />
@@ -2057,7 +2054,6 @@
     <node concept="3Tm1VV" id="ad" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="bv">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GetCurrency_InferenceRule" />
     <node concept="3clFbW" id="bw" role="jymVt">
       <node concept="3clFbS" id="bC" role="3clF47" />
@@ -2273,7 +2269,6 @@
     <node concept="3Tm1VV" id="bB" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="cT">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_MoneyLiteral_InferenceRule" />
     <node concept="3clFbW" id="cU" role="jymVt">
       <node concept="3clFbS" id="d2" role="3clF47" />
@@ -2495,7 +2490,7 @@
     <node concept="3Tm1VV" id="d1" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="el">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="stock" />
     <property role="TrG5h" value="typeof_MovingAverage_InferenceRule" />
     <node concept="3clFbW" id="em" role="jymVt">
       <node concept="3clFbS" id="eu" role="3clF47" />
@@ -2715,7 +2710,7 @@
     <node concept="3Tm1VV" id="et" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fK">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="stock" />
     <property role="TrG5h" value="typeof_StockPriceInquiry_InferenceRule" />
     <node concept="3clFbW" id="fL" role="jymVt">
       <node concept="3clFbS" id="fT" role="3clF47" />

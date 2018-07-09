@@ -1369,7 +1369,6 @@
     <node concept="3Tm1VV" id="28" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="5P">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="ReloadRequired_QuickFix" />
     <node concept="3clFbW" id="5Q" role="jymVt">
       <node concept="3clFbS" id="5W" role="3clF47">
@@ -1556,7 +1555,6 @@
     </node>
   </node>
   <node concept="312cEu" id="77">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="SetModuleJarClasspathEntry_QuickFix" />
     <node concept="3clFbW" id="78" role="jymVt">
       <node concept="3clFbS" id="7e" role="3clF47">
@@ -1868,7 +1866,7 @@
     </node>
   </node>
   <node concept="312cEu" id="9d">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Layout" />
     <property role="TrG5h" value="check_BuildMpsLayout_ModuleXml_CustomJarLocation_NonTypesystemRule" />
     <node concept="3clFbW" id="9e" role="jymVt">
       <node concept="3clFbS" id="9m" role="3clF47" />
@@ -2241,7 +2239,7 @@
     <node concept="3Tm1VV" id="9l" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="bE">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Project" />
     <property role="TrG5h" value="check_BuildMps_GeneratorOptions_NonTypesystemRule" />
     <node concept="3clFbW" id="bF" role="jymVt">
       <node concept="3clFbS" id="bN" role="3clF47" />
@@ -2490,7 +2488,7 @@
     <node concept="3Tm1VV" id="bM" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="dm">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Project.Deps" />
     <property role="TrG5h" value="check_BuildMps_ModuleDependencyJar_NonTypesystemRule" />
     <node concept="3clFbW" id="dn" role="jymVt">
       <node concept="3clFbS" id="dv" role="3clF47" />
@@ -2705,7 +2703,7 @@
     <node concept="3Tm1VV" id="du" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="eL">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Project.Plugin" />
     <property role="TrG5h" value="check_IdeaPlugin_Dependencies_NonTypesystemRule" />
     <node concept="3clFbW" id="eM" role="jymVt">
       <node concept="3clFbS" id="eU" role="3clF47" />
@@ -3267,7 +3265,7 @@
     <node concept="3Tm1VV" id="eT" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ir">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Layout" />
     <property role="TrG5h" value="check_ModuleXml_SpecifiesClasspath_NonTypesystemRule" />
     <node concept="3clFbW" id="is" role="jymVt">
       <node concept="3clFbS" id="i$" role="3clF47" />
@@ -3557,7 +3555,6 @@
     <node concept="3Tm1VV" id="iz" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="kn">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_ModulesImport_NonTypesystemRule" />
     <node concept="3clFbW" id="ko" role="jymVt">
       <node concept="3clFbS" id="kw" role="3clF47" />

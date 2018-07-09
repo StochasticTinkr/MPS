@@ -356,7 +356,6 @@
   </node>
   <node concept="39dXUE" id="I" />
   <node concept="312cEu" id="J">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="PrivateFieldReferenceOperation_Constraints" />
     <node concept="3Tm1VV" id="K" role="1B3o_S" />
     <node concept="3uibUv" id="L" role="1zkMxy">
@@ -840,7 +839,6 @@
     </node>
   </node>
   <node concept="312cEu" id="3H">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="PrivateInstanceMethodCallOperation_Constraints" />
     <node concept="3Tm1VV" id="3I" role="1B3o_S" />
     <node concept="3uibUv" id="3J" role="1zkMxy">
@@ -1319,7 +1317,6 @@
     </node>
   </node>
   <node concept="312cEu" id="6D">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="PrivateStaticFieldReference_Constraints" />
     <node concept="3Tm1VV" id="6E" role="1B3o_S" />
     <node concept="3uibUv" id="6F" role="1zkMxy">
@@ -1693,7 +1690,6 @@
     </node>
   </node>
   <node concept="312cEu" id="8S">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="PrivateStaticMethodCall_Constraints" />
     <node concept="3Tm1VV" id="8T" role="1B3o_S" />
     <node concept="3uibUv" id="8U" role="1zkMxy">

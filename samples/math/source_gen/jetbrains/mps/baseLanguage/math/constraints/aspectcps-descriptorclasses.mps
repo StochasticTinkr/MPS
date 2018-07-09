@@ -375,7 +375,6 @@
   </node>
   <node concept="39dXUE" id="I" />
   <node concept="312cEu" id="J">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="MathSymbolIndexReference_Constraints" />
     <node concept="3Tm1VV" id="K" role="1B3o_S" />
     <node concept="3uibUv" id="L" role="1zkMxy">
@@ -728,7 +727,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2N">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="MatrixElementAccessExpression_Constraints" />
     <node concept="3Tm1VV" id="2O" role="1B3o_S" />
     <node concept="3uibUv" id="2P" role="1zkMxy">
@@ -762,7 +761,7 @@
     <node concept="2tJIrI" id="2R" role="jymVt" />
   </node>
   <node concept="312cEu" id="31">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="MatrixIndexWildcard_Constraints" />
     <node concept="3Tm1VV" id="32" role="1B3o_S" />
     <node concept="3uibUv" id="33" role="1zkMxy">
@@ -1051,7 +1050,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4O">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="MatrixInitializerIndexReference_Constraints" />
     <node concept="3Tm1VV" id="4P" role="1B3o_S" />
     <node concept="3uibUv" id="4Q" role="1zkMxy">

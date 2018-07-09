@@ -214,6 +214,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -240,6 +243,7 @@
   </registry>
   <node concept="Qs71p" id="0">
     <property role="TrG5h" value="CastTargetDescriptor" />
+    <property role="3GE5qa" value="internals" />
     <node concept="QsSxf" id="1" role="Qtgdg">
       <property role="TrG5h" value="unknown" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -1262,6 +1266,7 @@
   </node>
   <node concept="312cEu" id="5Z">
     <property role="TrG5h" value="CastTargetDescriptor_PropertySupport" />
+    <property role="3GE5qa" value="internals" />
     <node concept="3uibUv" id="60" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -8915,6 +8920,7 @@
   </node>
   <node concept="Qs71p" id="N2">
     <property role="TrG5h" value="MatrixNormKind" />
+    <property role="3GE5qa" value="matrix" />
     <node concept="QsSxf" id="N3" role="Qtgdg">
       <property role="TrG5h" value="norm1" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -9287,6 +9293,7 @@
   </node>
   <node concept="312cEu" id="Pn">
     <property role="TrG5h" value="MatrixNormKind_PropertySupport" />
+    <property role="3GE5qa" value="matrix" />
     <node concept="3uibUv" id="Po" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -9540,6 +9547,7 @@
   </node>
   <node concept="Qs71p" id="R8">
     <property role="TrG5h" value="PrecisionSetting" />
+    <property role="3GE5qa" value="highPrecisionArithmetic" />
     <node concept="QsSxf" id="R9" role="Qtgdg">
       <property role="TrG5h" value="CUSTOM" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -9962,6 +9970,7 @@
   </node>
   <node concept="312cEu" id="TJ">
     <property role="TrG5h" value="PrecisionSetting_PropertySupport" />
+    <property role="3GE5qa" value="highPrecisionArithmetic" />
     <node concept="3uibUv" id="TK" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>
@@ -10215,6 +10224,7 @@
   </node>
   <node concept="Qs71p" id="Vw">
     <property role="TrG5h" value="RoundingMode" />
+    <property role="3GE5qa" value="highPrecisionArithmetic" />
     <node concept="QsSxf" id="Vx" role="Qtgdg">
       <property role="TrG5h" value="CEILING" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -10787,6 +10797,7 @@
   </node>
   <node concept="312cEu" id="YX">
     <property role="TrG5h" value="RoundingMode_PropertySupport" />
+    <property role="3GE5qa" value="highPrecisionArithmetic" />
     <node concept="3uibUv" id="YY" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
     </node>

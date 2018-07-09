@@ -1654,7 +1654,7 @@
     </node>
   </node>
   <node concept="312cEu" id="72">
-    <property role="3GE5qa" value="definition.quickfix" />
+    <property role="3GE5qa" value="builder" />
     <property role="TrG5h" value="addLinkValue_QuickFix" />
     <node concept="3clFbW" id="73" role="jymVt">
       <node concept="3clFbS" id="79" role="3clF47">
@@ -1828,7 +1828,6 @@
     </node>
   </node>
   <node concept="312cEu" id="8a">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_Antiquotation_NonTypesystemRule" />
     <node concept="3clFbW" id="8b" role="jymVt">
       <node concept="3clFbS" id="8j" role="3clF47" />
@@ -2112,7 +2111,7 @@
     <node concept="3Tm1VV" id="8i" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="a7">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="builder" />
     <property role="TrG5h" value="check_LightQuotationNode_NonTypesystemRule" />
     <node concept="3clFbW" id="a8" role="jymVt">
       <node concept="3clFbS" id="ag" role="3clF47" />
@@ -2467,7 +2466,6 @@
     <node concept="3Tm1VV" id="af" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="cs">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_ListAntiquotation_NonTypesystemRule" />
     <node concept="3clFbW" id="ct" role="jymVt">
       <node concept="3clFbS" id="c_" role="3clF47" />
@@ -2751,7 +2749,7 @@
     <node concept="3Tm1VV" id="c$" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ep">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="quotation" />
     <property role="TrG5h" value="typeof_Antiquotation_InferenceRule" />
     <node concept="3clFbW" id="eq" role="jymVt">
       <node concept="3clFbS" id="ey" role="3clF47" />
@@ -2978,7 +2976,7 @@
     <node concept="3Tm1VV" id="ex" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fR">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="builder" />
     <property role="TrG5h" value="typeof_LightAntiquotation_InferenceRule" />
     <node concept="3clFbW" id="fS" role="jymVt">
       <node concept="3clFbS" id="g0" role="3clF47" />
@@ -3223,7 +3221,7 @@
     <node concept="3Tm1VV" id="fZ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="hq">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="builder" />
     <property role="TrG5h" value="typeof_LightQuotationLinkList_InferenceRule" />
     <node concept="3clFbW" id="hr" role="jymVt">
       <node concept="3clFbS" id="hz" role="3clF47" />
@@ -3708,7 +3706,7 @@
     <node concept="3Tm1VV" id="hy" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="kr">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="builder" />
     <property role="TrG5h" value="typeof_LightQuotationLinkValue_InferenceRule" />
     <node concept="3clFbW" id="ks" role="jymVt">
       <node concept="3clFbS" id="k$" role="3clF47" />
@@ -4147,7 +4145,7 @@
     <node concept="3Tm1VV" id="kz" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="na">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="builder" />
     <property role="TrG5h" value="typeof_LightQuotationPropertyValue_InferenceRule" />
     <node concept="3clFbW" id="nb" role="jymVt">
       <node concept="3clFbS" id="nj" role="3clF47" />
@@ -4416,7 +4414,7 @@
     <node concept="3Tm1VV" id="ni" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="oS">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="container" />
     <property role="TrG5h" value="typeof_LightQuotation_InferenceRule" />
     <node concept="3clFbW" id="oT" role="jymVt">
       <node concept="3clFbS" id="p1" role="3clF47" />
@@ -4651,7 +4649,7 @@
     <node concept="3Tm1VV" id="p0" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="qo">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="quotation" />
     <property role="TrG5h" value="typeof_ListAntiquotation_InferenceRule" />
     <node concept="3clFbW" id="qp" role="jymVt">
       <node concept="3clFbS" id="qx" role="3clF47" />
@@ -4880,7 +4878,7 @@
     <node concept="3Tm1VV" id="qw" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="rR">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="quotation" />
     <property role="TrG5h" value="typeof_PropertyAntiquotation_InferenceRule" />
     <node concept="3clFbW" id="rS" role="jymVt">
       <node concept="3clFbS" id="s0" role="3clF47" />
@@ -5107,7 +5105,7 @@
     <node concept="3Tm1VV" id="rZ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="tl">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="container" />
     <property role="TrG5h" value="typeof_Quotation_InferenceRule" />
     <node concept="3clFbW" id="tm" role="jymVt">
       <node concept="3clFbS" id="tu" role="3clF47" />
@@ -5595,7 +5593,7 @@
     <node concept="3Tm1VV" id="tt" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="wl">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="quotation" />
     <property role="TrG5h" value="typeof_ReferenceAntiquotation_InferenceRule" />
     <node concept="3clFbW" id="wm" role="jymVt">
       <node concept="3clFbS" id="wu" role="3clF47" />

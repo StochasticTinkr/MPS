@@ -361,7 +361,7 @@
     </node>
   </node>
   <node concept="312cEu" id="O">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="selection" />
     <property role="TrG5h" value="Container_Constraints" />
     <node concept="3Tm1VV" id="P" role="1B3o_S" />
     <node concept="3uibUv" id="Q" role="1zkMxy">
@@ -425,7 +425,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1c">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="delete" />
     <property role="TrG5h" value="DelTestChildWithSmartReference_Constraints" />
     <node concept="3Tm1VV" id="1d" role="1B3o_S" />
     <node concept="3uibUv" id="1e" role="1zkMxy">
@@ -733,7 +733,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2Y">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="delete" />
     <property role="TrG5h" value="DelTestChildWithUsualReference_Constraints" />
     <node concept="3Tm1VV" id="2Z" role="1B3o_S" />
     <node concept="3uibUv" id="30" role="1zkMxy">
@@ -1042,7 +1042,6 @@
   </node>
   <node concept="39dXUE" id="4K" />
   <node concept="312cEu" id="4L">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="NotEditableVaraileReference_Constraints" />
     <node concept="3Tm1VV" id="4M" role="1B3o_S" />
     <node concept="3uibUv" id="4N" role="1zkMxy">
@@ -1390,7 +1389,6 @@
     </node>
   </node>
   <node concept="312cEu" id="6P">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="VariableDeclarationReference_Constraints" />
     <node concept="3Tm1VV" id="6Q" role="1B3o_S" />
     <node concept="3uibUv" id="6R" role="1zkMxy">

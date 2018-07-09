@@ -489,7 +489,7 @@
   </node>
   <node concept="39dXUE" id="1i" />
   <node concept="312cEu" id="1j">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Replaces" />
     <property role="TrG5h" value="LiteralReplacement_Constraints" />
     <node concept="3Tm1VV" id="1k" role="1B3o_S" />
     <node concept="3uibUv" id="1l" role="1zkMxy">
@@ -706,7 +706,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2A">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Operations" />
     <property role="TrG5h" value="MatchRegexpOperation_Constraints" />
     <node concept="3Tm1VV" id="2B" role="1B3o_S" />
     <node concept="3uibUv" id="2C" role="1zkMxy">
@@ -1001,7 +1001,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4s">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="MatchVariableReferenceRegexp_Constraints" />
     <node concept="3Tm1VV" id="4t" role="1B3o_S" />
     <node concept="3uibUv" id="4u" role="1zkMxy">
@@ -1413,7 +1412,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6Y">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Replaces" />
     <property role="TrG5h" value="MatchVariableReferenceReplacement_Constraints" />
     <node concept="3Tm1VV" id="6Z" role="1B3o_S" />
     <node concept="3uibUv" id="70" role="1zkMxy">
@@ -1743,7 +1742,6 @@
     </node>
   </node>
   <node concept="312cEu" id="8U">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="MatchVariableReference_Constraints" />
     <node concept="3Tm1VV" id="8V" role="1B3o_S" />
     <node concept="3uibUv" id="8W" role="1zkMxy">
@@ -2041,7 +2039,6 @@
     </node>
   </node>
   <node concept="312cEu" id="aC">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="PredefinedSymbolClassDeclaration_Constraints" />
     <node concept="3Tm1VV" id="aD" role="1B3o_S" />
     <node concept="3uibUv" id="aE" role="1zkMxy">
@@ -3030,7 +3027,6 @@
     </node>
   </node>
   <node concept="312cEu" id="hb">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="RegexpDeclaration_Constraints" />
     <node concept="3Tm1VV" id="hc" role="1B3o_S" />
     <node concept="3uibUv" id="hd" role="1zkMxy">
@@ -3247,7 +3243,7 @@
     </node>
   </node>
   <node concept="312cEu" id="iu">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Operations" />
     <property role="TrG5h" value="ReplaceRegexpOperation_Constraints" />
     <node concept="3Tm1VV" id="iv" role="1B3o_S" />
     <node concept="3uibUv" id="iw" role="1zkMxy">
@@ -3542,7 +3538,7 @@
     </node>
   </node>
   <node concept="312cEu" id="kk">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Operations" />
     <property role="TrG5h" value="ReplaceWithRegexpOperation_Constraints" />
     <node concept="3Tm1VV" id="kl" role="1B3o_S" />
     <node concept="3uibUv" id="km" role="1zkMxy">
@@ -3837,7 +3833,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ma">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Regexps" />
     <property role="TrG5h" value="StringLiteralRegexp_Constraints" />
     <node concept="3Tm1VV" id="mb" role="1B3o_S" />
     <node concept="3uibUv" id="mc" role="1zkMxy">

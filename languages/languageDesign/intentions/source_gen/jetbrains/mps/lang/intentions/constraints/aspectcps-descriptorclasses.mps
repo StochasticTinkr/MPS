@@ -255,7 +255,7 @@
   </node>
   <node concept="39dXUE" id="y" />
   <node concept="312cEu" id="z">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="old" />
     <property role="TrG5h" value="IntentionDeclaration_Constraints" />
     <node concept="3Tm1VV" id="$" role="1B3o_S" />
     <node concept="3uibUv" id="_" role="1zkMxy">
@@ -454,7 +454,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1N">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="new" />
     <property role="TrG5h" value="SurroundWithIntentionDeclaration_Constraints" />
     <node concept="3Tm1VV" id="1O" role="1B3o_S" />
     <node concept="3uibUv" id="1P" role="1zkMxy">

@@ -300,7 +300,6 @@
   </node>
   <node concept="39dXUE" id="I" />
   <node concept="312cEu" id="J">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="JUnit3TestCaseRef_Constraints" />
     <node concept="3Tm1VV" id="K" role="1B3o_S" />
     <node concept="3uibUv" id="L" role="1zkMxy">
@@ -584,7 +583,6 @@
     </node>
   </node>
   <node concept="312cEu" id="2o">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="JUnit4TestCaseRef_Constraints" />
     <node concept="3Tm1VV" id="2p" role="1B3o_S" />
     <node concept="3uibUv" id="2q" role="1zkMxy">
@@ -868,7 +866,6 @@
     </node>
   </node>
   <node concept="312cEu" id="41">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ModuleSuite_Constraints" />
     <node concept="3Tm1VV" id="42" role="1B3o_S" />
     <node concept="3uibUv" id="43" role="1zkMxy">
@@ -1074,7 +1071,6 @@
     </node>
   </node>
   <node concept="312cEu" id="5f">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="TestCaseRef_Constraints" />
     <node concept="3Tm1VV" id="5g" role="1B3o_S" />
     <node concept="3uibUv" id="5h" role="1zkMxy">

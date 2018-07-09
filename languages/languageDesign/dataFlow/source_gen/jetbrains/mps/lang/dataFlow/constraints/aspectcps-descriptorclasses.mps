@@ -272,7 +272,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="InstructionOperations" />
     <property role="TrG5h" value="BaseInstructionOperation_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -661,7 +661,6 @@
     </node>
   </node>
   <node concept="312cEu" id="2t">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="DataFlowBuilderDeclaration_Constraints" />
     <node concept="3Tm1VV" id="2u" role="1B3o_S" />
     <node concept="3uibUv" id="2v" role="1zkMxy">
@@ -1077,7 +1076,6 @@
     </node>
   </node>
   <node concept="312cEu" id="50">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="EmitStatement_Constraints" />
     <node concept="3Tm1VV" id="51" role="1B3o_S" />
     <node concept="3uibUv" id="52" role="1zkMxy">
@@ -1322,7 +1320,6 @@
   </node>
   <node concept="39dXUE" id="6x" />
   <node concept="312cEu" id="6y">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="GetCodeForExpression_Constraints" />
     <node concept="3Tm1VV" id="6z" role="1B3o_S" />
     <node concept="3uibUv" id="6$" role="1zkMxy">
@@ -1563,7 +1560,6 @@
     </node>
   </node>
   <node concept="312cEu" id="81">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="LabelPosition_Constraints" />
     <node concept="3Tm1VV" id="82" role="1B3o_S" />
     <node concept="3uibUv" id="83" role="1zkMxy">

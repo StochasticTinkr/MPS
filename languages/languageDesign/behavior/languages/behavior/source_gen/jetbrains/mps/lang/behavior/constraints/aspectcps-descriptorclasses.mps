@@ -301,7 +301,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="ConceptBehavior_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -722,7 +722,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2A">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="ConceptMethodDeclaration_Constraints" />
     <node concept="3Tm1VV" id="2B" role="1B3o_S" />
     <node concept="3uibUv" id="2C" role="1zkMxy">
@@ -1557,7 +1557,7 @@
   </node>
   <node concept="39dXUE" id="7Z" />
   <node concept="312cEu" id="80">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="LocalBehaviorMethodCall_Constraints" />
     <node concept="3Tm1VV" id="81" role="1B3o_S" />
     <node concept="3uibUv" id="82" role="1zkMxy">
@@ -2150,7 +2150,7 @@
     </node>
   </node>
   <node concept="312cEu" id="bA">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="SuperConceptExpression_Constraints" />
     <node concept="3Tm1VV" id="bB" role="1B3o_S" />
     <node concept="3uibUv" id="bC" role="1zkMxy">
@@ -2825,7 +2825,7 @@
     </node>
   </node>
   <node concept="312cEu" id="fC">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="SuperNodeExpression_Constraints" />
     <node concept="3Tm1VV" id="fD" role="1B3o_S" />
     <node concept="3uibUv" id="fE" role="1zkMxy">
@@ -3500,7 +3500,6 @@
     </node>
   </node>
   <node concept="312cEu" id="jE">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ThisConceptExpression_Constraints" />
     <node concept="3Tm1VV" id="jF" role="1B3o_S" />
     <node concept="3uibUv" id="jG" role="1zkMxy">
@@ -3738,7 +3737,7 @@
     </node>
   </node>
   <node concept="312cEu" id="l6">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="ThisNodeExpression_Constraints" />
     <node concept="3Tm1VV" id="l7" role="1B3o_S" />
     <node concept="3uibUv" id="l8" role="1zkMxy">

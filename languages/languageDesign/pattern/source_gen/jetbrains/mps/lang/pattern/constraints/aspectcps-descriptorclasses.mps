@@ -242,7 +242,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ActionAsPattern_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -523,7 +522,6 @@
     </node>
   </node>
   <node concept="312cEu" id="1I">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ActionStatement_Constraints" />
     <node concept="3Tm1VV" id="1J" role="1B3o_S" />
     <node concept="3uibUv" id="1K" role="1zkMxy">
@@ -712,7 +710,6 @@
   </node>
   <node concept="39dXUE" id="2W" />
   <node concept="312cEu" id="2X">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="LinkPatternVariableDeclaration_Constraints" />
     <node concept="3Tm1VV" id="2Y" role="1B3o_S" />
     <node concept="3uibUv" id="2Z" role="1zkMxy">
@@ -918,7 +915,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4b">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="OrPatternVariableReference_Constraints" />
     <node concept="3Tm1VV" id="4c" role="1B3o_S" />
     <node concept="3uibUv" id="4d" role="1zkMxy">
@@ -1209,7 +1205,6 @@
     </node>
   </node>
   <node concept="312cEu" id="5Q">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="PatternVariableDeclaration_Constraints" />
     <node concept="3Tm1VV" id="5R" role="1B3o_S" />
     <node concept="3uibUv" id="5S" role="1zkMxy">
@@ -1526,7 +1521,6 @@
     </node>
   </node>
   <node concept="312cEu" id="7I">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="PatternVariableReference_Constraints" />
     <node concept="3Tm1VV" id="7J" role="1B3o_S" />
     <node concept="3uibUv" id="7K" role="1zkMxy">
@@ -2074,7 +2068,6 @@
     </node>
   </node>
   <node concept="312cEu" id="b0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="PropertyPatternVariableDeclaration_Constraints" />
     <node concept="3Tm1VV" id="b1" role="1B3o_S" />
     <node concept="3uibUv" id="b2" role="1zkMxy">

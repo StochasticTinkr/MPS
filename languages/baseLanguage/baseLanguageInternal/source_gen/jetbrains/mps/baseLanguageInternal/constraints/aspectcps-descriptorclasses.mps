@@ -274,7 +274,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="weak" />
     <property role="TrG5h" value="ConstantValue_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -962,7 +962,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4b">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ExtractStatementListInnerExpression_Constraints" />
     <node concept="3Tm1VV" id="4c" role="1B3o_S" />
     <node concept="3uibUv" id="4d" role="1zkMxy">
@@ -1200,7 +1199,6 @@
     </node>
   </node>
   <node concept="312cEu" id="5C">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ExtractStaticInnerClassConcept_Constraints" />
     <node concept="3Tm1VV" id="5D" role="1B3o_S" />
     <node concept="3uibUv" id="5E" role="1zkMxy">
@@ -1401,7 +1399,6 @@
     </node>
   </node>
   <node concept="312cEu" id="6O">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ExtractStaticInnerClassCreator_Constraints" />
     <node concept="3Tm1VV" id="6P" role="1B3o_S" />
     <node concept="3uibUv" id="6Q" role="1zkMxy">
@@ -1750,7 +1747,6 @@
     </node>
   </node>
   <node concept="312cEu" id="8S">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ExtractStaticMethod_CallExpression_Constraints" />
     <node concept="3Tm1VV" id="8T" role="1B3o_S" />
     <node concept="3uibUv" id="8U" role="1zkMxy">
@@ -2024,7 +2020,6 @@
     </node>
   </node>
   <node concept="312cEu" id="as">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ExtractToConstantRefExpression_Constraints" />
     <node concept="3Tm1VV" id="at" role="1B3o_S" />
     <node concept="3uibUv" id="au" role="1zkMxy">
@@ -2360,7 +2355,6 @@
   </node>
   <node concept="39dXUE" id="cp" />
   <node concept="312cEu" id="cq">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="InternalAnonymousClass_Constraints" />
     <node concept="3Tm1VV" id="cr" role="1B3o_S" />
     <node concept="3uibUv" id="cs" role="1zkMxy">
@@ -2637,7 +2631,6 @@
     </node>
   </node>
   <node concept="312cEu" id="e5">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="InternalPartialInstanceMethodCall_Constraints" />
     <node concept="3Tm1VV" id="e6" role="1B3o_S" />
     <node concept="3uibUv" id="e7" role="1zkMxy">
@@ -2873,7 +2866,6 @@
     </node>
   </node>
   <node concept="312cEu" id="fx">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="InternalSuperMethodCallOperation_Constraints" />
     <node concept="3Tm1VV" id="fy" role="1B3o_S" />
     <node concept="3uibUv" id="fz" role="1zkMxy">
@@ -3109,7 +3101,7 @@
     </node>
   </node>
   <node concept="312cEu" id="gX">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="weak" />
     <property role="TrG5h" value="WeakClassReference_Constraints" />
     <node concept="3Tm1VV" id="gY" role="1B3o_S" />
     <node concept="3uibUv" id="gZ" role="1zkMxy">

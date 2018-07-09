@@ -1618,7 +1618,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7e">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="simple" />
     <property role="TrG5h" value="check_SimpleBuilderDeclaration_NonTypesystemRule" />
     <node concept="3clFbW" id="7f" role="jymVt">
       <node concept="3clFbS" id="7n" role="3clF47" />
@@ -1889,7 +1889,6 @@
     <node concept="3Tm1VV" id="7m" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="90">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_AsBuilderStatement_InferenceRule" />
     <node concept="3clFbW" id="91" role="jymVt">
       <node concept="3clFbS" id="99" role="3clF47" />
@@ -2147,7 +2146,7 @@
     <node concept="3Tm1VV" id="98" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="aF">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="bean" />
     <property role="TrG5h" value="typeof_BeanPropertyBuilder_InferenceRule" />
     <node concept="3clFbW" id="aG" role="jymVt">
       <node concept="3clFbS" id="aO" role="3clF47" />
@@ -2392,7 +2391,6 @@
     <node concept="3Tm1VV" id="aN" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="cg">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_BuilderCreator_InferenceRule" />
     <node concept="3clFbW" id="ch" role="jymVt">
       <node concept="3clFbS" id="cp" role="3clF47" />
@@ -2618,7 +2616,6 @@
     <node concept="3Tm1VV" id="co" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="dH">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ResultExpression_InferenceRule" />
     <node concept="3clFbW" id="dI" role="jymVt">
       <node concept="3clFbS" id="dQ" role="3clF47" />
@@ -2858,7 +2855,7 @@
     <node concept="3Tm1VV" id="dP" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ff">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="simple.childParams" />
     <property role="TrG5h" value="typeof_SimpleBuilderChildExpression_InferenceRule" />
     <node concept="3clFbW" id="fg" role="jymVt">
       <node concept="3clFbS" id="fo" role="3clF47" />
@@ -3105,7 +3102,7 @@
     <node concept="3Tm1VV" id="fn" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="gP">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="simple" />
     <property role="TrG5h" value="typeof_SimpleBuilderDeclaration_InferenceRule" />
     <node concept="3clFbW" id="gQ" role="jymVt">
       <node concept="3clFbS" id="gY" role="3clF47" />
@@ -3468,7 +3465,6 @@
     <node concept="3Tm1VV" id="gX" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="j8">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_SimpleBuilderParameterReference_InferenceRule" />
     <node concept="3clFbW" id="j9" role="jymVt">
       <node concept="3clFbS" id="jh" role="3clF47" />
@@ -3713,7 +3709,6 @@
     <node concept="3Tm1VV" id="jg" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="kF">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_SimpleBuilderParameter_InferenceRule" />
     <node concept="3clFbW" id="kG" role="jymVt">
       <node concept="3clFbS" id="kO" role="3clF47" />
@@ -3934,7 +3929,7 @@
     <node concept="3Tm1VV" id="kN" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="m6">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="simple.childParams" />
     <property role="TrG5h" value="typeof_SimpleBuilderParentExpression_InferenceRule" />
     <node concept="3clFbW" id="m7" role="jymVt">
       <node concept="3clFbS" id="mf" role="3clF47" />
@@ -4180,7 +4175,7 @@
     <node concept="3Tm1VV" id="me" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="nF">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="simple" />
     <property role="TrG5h" value="typeof_SimpleBuilderPropertyBuilder_InferenceRule" />
     <node concept="3clFbW" id="nG" role="jymVt">
       <node concept="3clFbS" id="nO" role="3clF47" />
@@ -4417,7 +4412,7 @@
     <node concept="3Tm1VV" id="nN" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="pc">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="simple.propertyParams" />
     <property role="TrG5h" value="typeof_SimpleBuilderPropertyParent_InferenceRule" />
     <node concept="3clFbW" id="pd" role="jymVt">
       <node concept="3clFbS" id="pl" role="3clF47" />
@@ -4663,7 +4658,7 @@
     <node concept="3Tm1VV" id="pk" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="qL">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="simple.propertyParams" />
     <property role="TrG5h" value="typeof_SimpleBuilderPropertyValue_InferenceRule" />
     <node concept="3clFbW" id="qM" role="jymVt">
       <node concept="3clFbS" id="qU" role="3clF47" />
@@ -4905,7 +4900,7 @@
     <node concept="3Tm1VV" id="qT" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="sl">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="simple" />
     <property role="TrG5h" value="typeof_SimpleBuilder_InferenceRule" />
     <node concept="3clFbW" id="sm" role="jymVt">
       <node concept="3clFbS" id="su" role="3clF47" />

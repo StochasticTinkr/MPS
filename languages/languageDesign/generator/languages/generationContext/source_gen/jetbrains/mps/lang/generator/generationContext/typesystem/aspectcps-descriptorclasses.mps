@@ -284,7 +284,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
@@ -3217,7 +3216,6 @@
     </node>
   </node>
   <node concept="312cEu" id="fe">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_GenerationContextOp_Base_NonTypesystemRule" />
     <node concept="3clFbW" id="ff" role="jymVt">
       <node concept="3clFbS" id="fn" role="3clF47" />
@@ -3429,7 +3427,6 @@
     <node concept="3Tm1VV" id="fm" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="gC">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_GenerationContextOp_GetOutputByLabel_NonTypesystemRule" />
     <node concept="3clFbW" id="gD" role="jymVt">
       <node concept="3clFbS" id="gL" role="3clF47" />
@@ -3672,7 +3669,6 @@
     <node concept="3Tm1VV" id="gK" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ie">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_op_inside_refMacro_NonTypesystemRule" />
     <node concept="3clFbW" id="if" role="jymVt">
       <node concept="3clFbS" id="in" role="3clF47" />
@@ -3853,7 +3849,6 @@
     <node concept="3Tm1VV" id="im" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="js">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="supertypesOf_GenerationContextType_SubtypingRule" />
     <node concept="3clFbW" id="jt" role="jymVt">
       <node concept="3clFbS" id="j_" role="3clF47" />
@@ -3968,7 +3963,6 @@
     <node concept="3Tm1VV" id="j$" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="kg">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_ContextVarRef_InferenceRule" />
     <node concept="3clFbW" id="kh" role="jymVt">
       <node concept="3clFbS" id="kp" role="3clF47" />
@@ -4350,7 +4344,6 @@
     <node concept="3Tm1VV" id="ko" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="mM">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_CopyWithTrace_InferenceRule" />
     <node concept="3clFbW" id="mN" role="jymVt">
       <node concept="3clFbS" id="mV" role="3clF47" />
@@ -4596,7 +4589,6 @@
     <node concept="3Tm1VV" id="mU" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="op">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_CreateIndexedName_InferenceRule" />
     <node concept="3clFbW" id="oq" role="jymVt">
       <node concept="3clFbS" id="oy" role="3clF47" />
@@ -4812,7 +4804,6 @@
     <node concept="3Tm1VV" id="ox" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="pN">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_CreateUniqueName_InferenceRule" />
     <node concept="3clFbW" id="pO" role="jymVt">
       <node concept="3clFbS" id="pW" role="3clF47" />
@@ -5028,7 +5019,6 @@
     <node concept="3Tm1VV" id="pV" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="rd">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_DirtyNode_InferenceRule" />
     <node concept="3clFbW" id="re" role="jymVt">
       <node concept="3clFbS" id="rm" role="3clF47" />
@@ -5379,7 +5369,6 @@
     <node concept="3Tm1VV" id="rl" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="tr">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_GenParameterRef_InferenceRule" />
     <node concept="3clFbW" id="ts" role="jymVt">
       <node concept="3clFbS" id="t$" role="3clF47" />
@@ -5659,7 +5648,6 @@
     <node concept="3Tm1VV" id="tz" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="vf">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_GetCopiedOutputByInput_InferenceRule" />
     <node concept="3clFbW" id="vg" role="jymVt">
       <node concept="3clFbS" id="vo" role="3clF47" />
@@ -5909,7 +5897,6 @@
     <node concept="3Tm1VV" id="vn" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="wO">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_GetInputModel_InferenceRule" />
     <node concept="3clFbW" id="wP" role="jymVt">
       <node concept="3clFbS" id="wX" role="3clF47" />
@@ -6125,7 +6112,6 @@
     <node concept="3Tm1VV" id="wW" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ye">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_GetOriginalCopiedInputByOutput_InferenceRule" />
     <node concept="3clFbW" id="yf" role="jymVt">
       <node concept="3clFbS" id="yn" role="3clF47" />
@@ -6341,7 +6327,6 @@
     <node concept="3Tm1VV" id="ym" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="zC">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_GetOriginalInputModel_InferenceRule" />
     <node concept="3clFbW" id="zD" role="jymVt">
       <node concept="3clFbS" id="zL" role="3clF47" />
@@ -6557,7 +6542,6 @@
     <node concept="3Tm1VV" id="zK" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="_2">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_InferenceRule" />
     <node concept="3clFbW" id="_3" role="jymVt">
       <node concept="3clFbS" id="_b" role="3clF47" />
@@ -6945,7 +6929,6 @@
     <node concept="3Tm1VV" id="_a" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Bs">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_GetOutputByLabelAndInput_InferenceRule" />
     <node concept="3clFbW" id="Bt" role="jymVt">
       <node concept="3clFbS" id="B_" role="3clF47" />
@@ -7333,7 +7316,6 @@
     <node concept="3Tm1VV" id="B$" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="DQ">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_GetOutputByLabel_InferenceRule" />
     <node concept="3clFbW" id="DR" role="jymVt">
       <node concept="3clFbS" id="DZ" role="3clF47" />
@@ -7568,7 +7550,6 @@
     <node concept="3Tm1VV" id="DY" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Fm">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_GetOutputListByLabelAndInput_InferenceRule" />
     <node concept="3clFbW" id="Fn" role="jymVt">
       <node concept="3clFbS" id="Fv" role="3clF47" />
@@ -7955,7 +7936,6 @@
     <node concept="3Tm1VV" id="Fu" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="HK">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_GetOutputModel_InferenceRule" />
     <node concept="3clFbW" id="HL" role="jymVt">
       <node concept="3clFbS" id="HT" role="3clF47" />
@@ -8171,7 +8151,6 @@
     <node concept="3Tm1VV" id="HS" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Ja">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_GetPrevInputByLabel_InferenceRule" />
     <node concept="3clFbW" id="Jb" role="jymVt">
       <node concept="3clFbS" id="Jj" role="3clF47" />
@@ -8406,7 +8385,6 @@
     <node concept="3Tm1VV" id="Ji" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="KE">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_GetTemplateNode_InferenceRule" />
     <node concept="3clFbW" id="KF" role="jymVt">
       <node concept="3clFbS" id="KN" role="3clF47" />
@@ -8622,7 +8600,6 @@
     <node concept="3Tm1VV" id="KM" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="M4">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_LinkPatternRef_InferenceRule" />
     <node concept="3clFbW" id="M5" role="jymVt">
       <node concept="3clFbS" id="Md" role="3clF47" />
@@ -8867,7 +8844,6 @@
     <node concept="3Tm1VV" id="Mc" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="NB">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_ParameterRef_InferenceRule" />
     <node concept="3clFbW" id="NC" role="jymVt">
       <node concept="3clFbS" id="NK" role="3clF47" />
@@ -9093,7 +9069,6 @@
     <node concept="3Tm1VV" id="NJ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="P4">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_PatternRef_InferenceRule" />
     <node concept="3clFbW" id="P5" role="jymVt">
       <node concept="3clFbS" id="Pd" role="3clF47" />
@@ -9338,7 +9313,6 @@
     <node concept="3Tm1VV" id="Pc" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="QB">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_PropertyPatternRef_InferenceRule" />
     <node concept="3clFbW" id="QC" role="jymVt">
       <node concept="3clFbS" id="QK" role="3clF47" />
@@ -9583,7 +9557,6 @@
     <node concept="3Tm1VV" id="QJ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Sa">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_RegisterLabel_InferenceRule" />
     <node concept="3clFbW" id="Sb" role="jymVt">
       <node concept="3clFbS" id="Sj" role="3clF47" />
@@ -10105,7 +10078,6 @@
     <node concept="3Tm1VV" id="Si" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Vo">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_ShowMessageBase_InferenceRule" />
     <node concept="3clFbW" id="Vp" role="jymVt">
       <node concept="3clFbS" id="Vx" role="3clF47" />
@@ -10596,7 +10568,6 @@
     <node concept="3Tm1VV" id="Vw" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Ys">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_UserObjectAccessBase_InferenceRule" />
     <node concept="3clFbW" id="Yt" role="jymVt">
       <node concept="3clFbS" id="Y_" role="3clF47" />
@@ -10814,7 +10785,6 @@
     <node concept="3Tm1VV" id="Y$" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="ZQ">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GenerationContextOp_VarRef_InferenceRule" />
     <node concept="3clFbW" id="ZR" role="jymVt">
       <node concept="3clFbS" id="ZZ" role="3clF47" />
@@ -11059,7 +11029,6 @@
     <node concept="3Tm1VV" id="ZY" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="11p">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_VarMacro_InferenceRule" />
     <node concept="3clFbW" id="11q" role="jymVt">
       <node concept="3clFbS" id="11y" role="3clF47" />

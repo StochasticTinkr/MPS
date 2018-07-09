@@ -369,7 +369,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="DeleteMathContext_QuickFix" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="7" role="3clF47">
@@ -7139,7 +7138,7 @@
     </node>
   </node>
   <node concept="312cEu" id="zb">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="interval" />
     <property role="TrG5h" value="IntervalSupertypes_SubtypingRule" />
     <node concept="3clFbW" id="zc" role="jymVt">
       <node concept="3clFbS" id="zk" role="3clF47" />
@@ -17529,7 +17528,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1DI">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtyping" />
     <property role="TrG5h" value="bigcomplex_extends_BigComplex_SubtypingRule" />
     <node concept="3clFbW" id="1DJ" role="jymVt">
       <node concept="3clFbS" id="1DR" role="3clF47" />
@@ -17644,7 +17643,7 @@
     <node concept="3Tm1VV" id="1DQ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1Ey">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtyping" />
     <property role="TrG5h" value="bigdecimal_extends_BigDecimal_SubtypingRule" />
     <node concept="3clFbW" id="1Ez" role="jymVt">
       <node concept="3clFbS" id="1EF" role="3clF47" />
@@ -17759,7 +17758,7 @@
     <node concept="3Tm1VV" id="1EE" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1Fm">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtyping" />
     <property role="TrG5h" value="bigdecimal_extends_bigcomplex_SubtypingRule" />
     <node concept="3clFbW" id="1Fn" role="jymVt">
       <node concept="3clFbS" id="1Fv" role="3clF47" />
@@ -17876,7 +17875,7 @@
     <node concept="3Tm1VV" id="1Fu" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1Gb">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtyping" />
     <property role="TrG5h" value="biginteger_extends_BigInteger_SubtypingRule" />
     <node concept="3clFbW" id="1Gc" role="jymVt">
       <node concept="3clFbS" id="1Gk" role="3clF47" />
@@ -17991,7 +17990,7 @@
     <node concept="3Tm1VV" id="1Gj" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1GZ">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtyping" />
     <property role="TrG5h" value="biginteger_extends_bigdecimal_SubtypingRule" />
     <node concept="3clFbW" id="1H0" role="jymVt">
       <node concept="3clFbS" id="1H8" role="3clF47" />
@@ -18108,7 +18107,7 @@
     <node concept="3Tm1VV" id="1H7" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1HO">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="check_dimensions_NonTypesystemRule" />
     <node concept="3clFbW" id="1HP" role="jymVt">
       <node concept="3clFbS" id="1HX" role="3clF47" />
@@ -18845,7 +18844,7 @@
     <node concept="3Tm1VV" id="1HW" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1M_">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtyping" />
     <property role="TrG5h" value="complex_extends_Complex_SubtypingRule" />
     <node concept="3clFbW" id="1MA" role="jymVt">
       <node concept="3clFbS" id="1MI" role="3clF47" />
@@ -18960,7 +18959,7 @@
     <node concept="3Tm1VV" id="1MH" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1Np">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtyping" />
     <property role="TrG5h" value="complex_extends_bigcomplex_SubtypingRule" />
     <node concept="3clFbW" id="1Nq" role="jymVt">
       <node concept="3clFbS" id="1Ny" role="3clF47" />
@@ -19077,7 +19076,7 @@
     <node concept="3Tm1VV" id="1Nx" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1Oe">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtyping" />
     <property role="TrG5h" value="double_extends_bigdecimal_SubtypingRule" />
     <node concept="3clFbW" id="1Of" role="jymVt">
       <node concept="3clFbS" id="1On" role="3clF47" />
@@ -19194,7 +19193,7 @@
     <node concept="3Tm1VV" id="1Om" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1P3">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtyping" />
     <property role="TrG5h" value="double_extends_complex_SubtypingRule" />
     <node concept="3clFbW" id="1P4" role="jymVt">
       <node concept="3clFbS" id="1Pc" role="3clF47" />
@@ -19311,7 +19310,6 @@
     <node concept="3Tm1VV" id="1Pb" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1PS">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="highlight_complex_to_real_casts_NonTypesystemRule" />
     <node concept="3clFbW" id="1PT" role="jymVt">
       <node concept="3clFbS" id="1Q1" role="3clF47" />
@@ -19651,7 +19649,7 @@
     <node concept="3Tm1VV" id="1Q0" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1RZ">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="subtyping" />
     <property role="TrG5h" value="long_extends_biginteger_SubtypingRule" />
     <node concept="3clFbW" id="1S0" role="jymVt">
       <node concept="3clFbS" id="1S8" role="3clF47" />
@@ -19768,7 +19766,7 @@
     <node concept="3Tm1VV" id="1S7" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1SO">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="matrix_element_must_be_number_NonTypesystemRule" />
     <node concept="3clFbW" id="1SP" role="jymVt">
       <node concept="3clFbS" id="1SX" role="3clF47" />
@@ -19967,7 +19965,6 @@
     <node concept="3Tm1VV" id="1SW" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1U8">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="matrix_index_lvalue_NonTypesystemRule" />
     <node concept="3clFbW" id="1U9" role="jymVt">
       <node concept="3clFbS" id="1Uh" role="3clF47" />
@@ -20175,7 +20172,7 @@
     <node concept="3Tm1VV" id="1Ug" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1Vy">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="matrix_replacement_rule_InequationReplacementRule" />
     <node concept="3clFbW" id="1Vz" role="jymVt">
       <node concept="3clFbS" id="1VI" role="3clF47" />
@@ -21013,7 +21010,7 @@
     </node>
   </node>
   <node concept="312cEu" id="20R">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="matrix_subtype_of_object_SubtypingRule" />
     <node concept="3clFbW" id="20S" role="jymVt">
       <node concept="3clFbS" id="210" role="3clF47" />
@@ -21128,7 +21125,7 @@
     <node concept="3Tm1VV" id="20Z" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="21F">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="matrix_vector_replacement_rule_InequationReplacementRule" />
     <node concept="3clFbW" id="21G" role="jymVt">
       <node concept="3clFbS" id="21R" role="3clF47" />
@@ -21926,7 +21923,7 @@
     </node>
   </node>
   <node concept="312cEu" id="26K">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operations.routines" />
     <property role="TrG5h" value="typeof_AbsExpression_InferenceRule" />
     <node concept="3clFbW" id="26L" role="jymVt">
       <node concept="3clFbS" id="26T" role="3clF47" />
@@ -22814,7 +22811,7 @@
     <node concept="3Tm1VV" id="26S" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2c6">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operations.arithmetic" />
     <property role="TrG5h" value="typeof_ArithmSymbol_InferenceRule" />
     <node concept="3clFbW" id="2c7" role="jymVt">
       <node concept="3clFbS" id="2cf" role="3clF47" />
@@ -23495,7 +23492,7 @@
     <node concept="3Tm1VV" id="2ce" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2gh">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="mathcontext" />
     <property role="TrG5h" value="typeof_BinaryOperationMathContext_InferenceRule" />
     <node concept="3clFbW" id="2gi" role="jymVt">
       <node concept="3clFbS" id="2gq" role="3clF47" />
@@ -24899,7 +24896,7 @@
     <node concept="3Tm1VV" id="2gp" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2p7">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="internals" />
     <property role="TrG5h" value="typeof_ComplexLiteral_InferenceRule" />
     <node concept="3clFbW" id="2p8" role="jymVt">
       <node concept="3clFbS" id="2pg" role="3clF47" />
@@ -26240,7 +26237,7 @@
     <node concept="3Tm1VV" id="2pf" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2x7">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="typeof_ConjugateOperation_InferenceRule" />
     <node concept="3clFbW" id="2x8" role="jymVt">
       <node concept="3clFbS" id="2xg" role="3clF47" />
@@ -27088,7 +27085,7 @@
     <node concept="3Tm1VV" id="2xf" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2Af">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="typeof_Determinant_InferenceRule" />
     <node concept="3clFbW" id="2Ag" role="jymVt">
       <node concept="3clFbS" id="2Ao" role="3clF47" />
@@ -27508,7 +27505,7 @@
     <node concept="3Tm1VV" id="2An" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2CP">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operations.arithmetic" />
     <property role="TrG5h" value="typeof_DivOperationFraction_InferenceRule" />
     <node concept="3clFbW" id="2CQ" role="jymVt">
       <node concept="3clFbS" id="2CY" role="3clF47" />
@@ -28360,7 +28357,7 @@
     <node concept="3Tm1VV" id="2CX" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2I1">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operations.minimax" />
     <property role="TrG5h" value="typeof_ExtrSymbol_InferenceRule" />
     <node concept="3clFbW" id="2I2" role="jymVt">
       <node concept="3clFbS" id="2Ia" role="3clF47" />
@@ -28742,7 +28739,7 @@
     <node concept="3Tm1VV" id="2I9" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2Ko">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operations.routines" />
     <property role="TrG5h" value="typeof_ILiteral_InferenceRule" />
     <node concept="3clFbW" id="2Kp" role="jymVt">
       <node concept="3clFbS" id="2Kx" role="3clF47" />
@@ -28962,7 +28959,7 @@
     <node concept="3Tm1VV" id="2Kw" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2LN">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="interval" />
     <property role="TrG5h" value="typeof_InIntervalExpression_InferenceRule" />
     <node concept="3clFbW" id="2LO" role="jymVt">
       <node concept="3clFbS" id="2LW" role="3clF47" />
@@ -29350,7 +29347,7 @@
     <node concept="3Tm1VV" id="2LV" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2Od">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="interval" />
     <property role="TrG5h" value="typeof_IntervalContainsExpression_InferenceRule" />
     <node concept="3clFbW" id="2Oe" role="jymVt">
       <node concept="3clFbS" id="2Om" role="3clF47" />
@@ -29738,7 +29735,7 @@
     <node concept="3Tm1VV" id="2Ol" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2QB">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="interval" />
     <property role="TrG5h" value="typeof_IntervalLiteral_InferenceRule" />
     <node concept="3clFbW" id="2QC" role="jymVt">
       <node concept="3clFbS" id="2QK" role="3clF47" />
@@ -30269,7 +30266,7 @@
     <node concept="3Tm1VV" id="2QJ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2TT">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="interval" />
     <property role="TrG5h" value="typeof_IntervalType_InferenceRule" />
     <node concept="3clFbW" id="2TU" role="jymVt">
       <node concept="3clFbS" id="2U2" role="3clF47" />
@@ -30471,7 +30468,7 @@
     <node concept="3Tm1VV" id="2U1" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2Ve">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="typeof_LinearSolveOperation_InferenceRule" />
     <node concept="3clFbW" id="2Vf" role="jymVt">
       <node concept="3clFbS" id="2Vn" role="3clF47" />
@@ -31426,7 +31423,7 @@
     <node concept="3Tm1VV" id="2Vm" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="30Y">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operations.symbol" />
     <property role="TrG5h" value="typeof_MathSymbolFromToIndex_InferenceRule" />
     <node concept="3clFbW" id="30Z" role="jymVt">
       <node concept="3clFbS" id="317" role="3clF47" />
@@ -31900,7 +31897,7 @@
     <node concept="3Tm1VV" id="316" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="33T">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operations" />
     <property role="TrG5h" value="typeof_MathSymbolIndex_InferenceRule" />
     <node concept="3clFbW" id="33U" role="jymVt">
       <node concept="3clFbS" id="342" role="3clF47" />
@@ -32284,7 +32281,7 @@
     <node concept="3Tm1VV" id="341" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="36h">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operations" />
     <property role="TrG5h" value="typeof_MathSymbolReference_InferenceRule" />
     <node concept="3clFbW" id="36i" role="jymVt">
       <node concept="3clFbS" id="36q" role="3clF47" />
@@ -32529,7 +32526,7 @@
     <node concept="3Tm1VV" id="36p" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="37O">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operations" />
     <property role="TrG5h" value="typeof_MathSymbol_InferenceRule" />
     <node concept="3clFbW" id="37P" role="jymVt">
       <node concept="3clFbS" id="37X" role="3clF47" />
@@ -32760,7 +32757,7 @@
     <node concept="3Tm1VV" id="37W" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="39j">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="internals" />
     <property role="TrG5h" value="typeof_MathTypeCast_InferenceRule" />
     <node concept="3clFbW" id="39k" role="jymVt">
       <node concept="3clFbS" id="39s" role="3clF47" />
@@ -34350,7 +34347,7 @@
     <node concept="3Tm1VV" id="39r" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3iQ">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="typeof_MatrixConstructor_InferenceRule" />
     <node concept="3clFbW" id="3iR" role="jymVt">
       <node concept="3clFbS" id="3iZ" role="3clF47" />
@@ -34499,7 +34496,7 @@
     <node concept="3Tm1VV" id="3iY" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3jR">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="typeof_MatrixElementAccessExpression_InferenceRule" />
     <node concept="3clFbW" id="3jS" role="jymVt">
       <node concept="3clFbS" id="3k0" role="3clF47" />
@@ -35421,7 +35418,7 @@
     <node concept="3Tm1VV" id="3jZ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3ps">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="typeof_MatrixInitializerIndexReference_InferenceRule" />
     <node concept="3clFbW" id="3pt" role="jymVt">
       <node concept="3clFbS" id="3p_" role="3clF47" />
@@ -35641,7 +35638,7 @@
     <node concept="3Tm1VV" id="3p$" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3qR">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="typeof_MatrixInitializer_InferenceRule" />
     <node concept="3clFbW" id="3qS" role="jymVt">
       <node concept="3clFbS" id="3r0" role="3clF47" />
@@ -36256,7 +36253,7 @@
     <node concept="3Tm1VV" id="3qZ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3uz">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="typeof_MatrixInverseOperation_InferenceRule" />
     <node concept="3clFbW" id="3u$" role="jymVt">
       <node concept="3clFbS" id="3uG" role="3clF47" />
@@ -36926,7 +36923,7 @@
     <node concept="3Tm1VV" id="3uF" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3yB">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="typeof_MatrixNorm_InferenceRule" />
     <node concept="3clFbW" id="3yC" role="jymVt">
       <node concept="3clFbS" id="3yK" role="3clF47" />
@@ -37928,7 +37925,7 @@
     <node concept="3Tm1VV" id="3yJ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3CL">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="typeof_MatrixUnit_InferenceRule" />
     <node concept="3clFbW" id="3CM" role="jymVt">
       <node concept="3clFbS" id="3CU" role="3clF47" />
@@ -38149,7 +38146,7 @@
     <node concept="3Tm1VV" id="3CT" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3Eb">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="typeof_MatrixZero_InferenceRule" />
     <node concept="3clFbW" id="3Ec" role="jymVt">
       <node concept="3clFbS" id="3Ek" role="3clF47" />
@@ -38370,7 +38367,7 @@
     <node concept="3Tm1VV" id="3Ej" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3F_">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operations.routines" />
     <property role="TrG5h" value="typeof_PowExpression_InferenceRule" />
     <node concept="3clFbW" id="3FA" role="jymVt">
       <node concept="3clFbS" id="3FI" role="3clF47" />
@@ -39359,7 +39356,7 @@
     <node concept="3Tm1VV" id="3FH" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3Lw">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="typeof_TransposeOperation_InferenceRule" />
     <node concept="3clFbW" id="3Lx" role="jymVt">
       <node concept="3clFbS" id="3LD" role="3clF47" />
@@ -40110,7 +40107,7 @@
     <node concept="3Tm1VV" id="3LC" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3Q4">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="operations.routines" />
     <property role="TrG5h" value="typeof_TrigonometricExpression_InferenceRule" />
     <node concept="3clFbW" id="3Q5" role="jymVt">
       <node concept="3clFbS" id="3Qd" role="3clF47" />
@@ -40780,7 +40777,7 @@
     <node concept="3Tm1VV" id="3Qc" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3U9">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="typeof_VectorInitializer_InferenceRule" />
     <node concept="3clFbW" id="3Ua" role="jymVt">
       <node concept="3clFbS" id="3Ui" role="3clF47" />
@@ -41295,7 +41292,7 @@
     <node concept="3Tm1VV" id="3Uh" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3Xj">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="vector_element_must_be_number_NonTypesystemRule" />
     <node concept="3clFbW" id="3Xk" role="jymVt">
       <node concept="3clFbS" id="3Xs" role="3clF47" />
@@ -41491,7 +41488,7 @@
     <node concept="3Tm1VV" id="3Xr" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3Y_">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="vector_subtype_of_matrix_SubtypingRule" />
     <node concept="3clFbW" id="3YA" role="jymVt">
       <node concept="3clFbS" id="3YI" role="3clF47" />
@@ -41635,7 +41632,7 @@
     <node concept="3Tm1VV" id="3YH" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3Z$">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
+    <property role="3GE5qa" value="matrix" />
     <property role="TrG5h" value="vector_vector_replacement_rule_InequationReplacementRule" />
     <node concept="3clFbW" id="3Z_" role="jymVt">
       <node concept="3clFbS" id="3ZK" role="3clF47" />

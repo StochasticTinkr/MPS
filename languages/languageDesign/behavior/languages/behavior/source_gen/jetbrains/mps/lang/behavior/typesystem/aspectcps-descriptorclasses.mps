@@ -301,7 +301,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="FixMethodSignature_QuickFix" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="7" role="3clF47">
@@ -1491,7 +1490,6 @@
     </node>
   </node>
   <node concept="312cEu" id="6W">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_ConceptBehaviorForNotImplementedMethods_NonTypesystemRule" />
     <node concept="3clFbW" id="6X" role="jymVt">
       <node concept="3clFbS" id="75" role="3clF47" />
@@ -1976,7 +1974,7 @@
     <node concept="3Tm1VV" id="74" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="a4">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="check_ConceptMethodDeclaration_NonTypesystemRule" />
     <node concept="3clFbW" id="a5" role="jymVt">
       <node concept="3clFbS" id="ad" role="3clF47" />
@@ -2206,7 +2204,7 @@
     <node concept="3Tm1VV" id="ac" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="b$">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="typeof_SuperConceptExpression_InferenceRule" />
     <node concept="3clFbW" id="b_" role="jymVt">
       <node concept="3clFbS" id="bH" role="3clF47" />
@@ -2447,7 +2445,7 @@
     <node concept="3Tm1VV" id="bG" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="d6">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="typeof_SuperNodeExpression_InferenceRule" />
     <node concept="3clFbW" id="d7" role="jymVt">
       <node concept="3clFbS" id="df" role="3clF47" />
@@ -2820,7 +2818,6 @@
     <node concept="3Tm1VV" id="de" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fq">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ThisConceptExpression_InferenceRule" />
     <node concept="3clFbW" id="fr" role="jymVt">
       <node concept="3clFbS" id="fz" role="3clF47" />
@@ -3071,7 +3068,7 @@
     <node concept="3Tm1VV" id="fy" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="h1">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="typeof_ThisNodeExpression_InferenceRule" />
     <node concept="3clFbW" id="h2" role="jymVt">
       <node concept="3clFbS" id="ha" role="3clF47" />

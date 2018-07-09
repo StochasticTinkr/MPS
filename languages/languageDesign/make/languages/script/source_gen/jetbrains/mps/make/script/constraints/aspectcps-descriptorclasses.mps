@@ -221,7 +221,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="job.progress" />
     <property role="TrG5h" value="AdvanceWorkStatement_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -567,7 +567,6 @@
     </node>
   </node>
   <node concept="312cEu" id="21">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ConfigDefinition_Constraints" />
     <node concept="3Tm1VV" id="22" role="1B3o_S" />
     <node concept="3uibUv" id="23" role="1zkMxy">
@@ -1028,7 +1027,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4U">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="job.progress" />
     <property role="TrG5h" value="FinishWorkStatement_Constraints" />
     <node concept="3Tm1VV" id="4V" role="1B3o_S" />
     <node concept="3uibUv" id="4W" role="1zkMxy">
@@ -1375,7 +1374,7 @@
   </node>
   <node concept="39dXUE" id="6V" />
   <node concept="312cEu" id="6W">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="job" />
     <property role="TrG5h" value="GetMakeSessionExpression_Constraints" />
     <node concept="3Tm1VV" id="6X" role="1B3o_S" />
     <node concept="3uibUv" id="6Y" role="1zkMxy">
@@ -1621,7 +1620,7 @@
     </node>
   </node>
   <node concept="312cEu" id="8t">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="job" />
     <property role="TrG5h" value="JobDefinition_Constraints" />
     <node concept="3Tm1VV" id="8u" role="1B3o_S" />
     <node concept="3uibUv" id="8v" role="1zkMxy">
@@ -1913,7 +1912,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ag">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="RelayQueryExpression_Constraints" />
     <node concept="3Tm1VV" id="ah" role="1B3o_S" />
     <node concept="3uibUv" id="ai" role="1zkMxy">
@@ -2159,7 +2158,7 @@
     </node>
   </node>
   <node concept="312cEu" id="bL">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="job" />
     <property role="TrG5h" value="ResourceType_Constraints" />
     <node concept="3Tm1VV" id="bM" role="1B3o_S" />
     <node concept="3uibUv" id="bN" role="1zkMxy">
@@ -2193,7 +2192,7 @@
     <node concept="2tJIrI" id="bP" role="jymVt" />
   </node>
   <node concept="312cEu" id="bZ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="job" />
     <property role="TrG5h" value="ResultStatement_Constraints" />
     <node concept="3Tm1VV" id="c0" role="1B3o_S" />
     <node concept="3uibUv" id="c1" role="1zkMxy">

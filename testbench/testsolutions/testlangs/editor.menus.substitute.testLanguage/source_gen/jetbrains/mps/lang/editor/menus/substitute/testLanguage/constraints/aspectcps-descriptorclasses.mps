@@ -374,7 +374,7 @@
   </node>
   <node concept="39dXUE" id="U" />
   <node concept="312cEu" id="V">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="constraints" />
     <property role="TrG5h" value="TestSubstituteChildWithConstraints1_Constraints" />
     <node concept="3Tm1VV" id="W" role="1B3o_S" />
     <node concept="3uibUv" id="X" role="1zkMxy">
@@ -611,7 +611,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2n">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="constraints" />
     <property role="TrG5h" value="TestSubstituteChildWithConstraintsWrapper1_Constraints" />
     <node concept="3Tm1VV" id="2o" role="1B3o_S" />
     <node concept="3uibUv" id="2p" role="1zkMxy">
@@ -848,7 +848,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3N">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="propertyAndReference" />
     <property role="TrG5h" value="TestSubstituteParentPropertyAndReference_Constraints" />
     <node concept="3Tm1VV" id="3O" role="1B3o_S" />
     <node concept="3uibUv" id="3P" role="1zkMxy">
@@ -1777,7 +1777,7 @@
     </node>
   </node>
   <node concept="312cEu" id="9l">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="constraints" />
     <property role="TrG5h" value="TestSubstituteParentWithConstraints_Constraints" />
     <node concept="3Tm1VV" id="9m" role="1B3o_S" />
     <node concept="3uibUv" id="9n" role="1zkMxy">
@@ -2290,7 +2290,6 @@
     </node>
   </node>
   <node concept="312cEu" id="cs">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="TestSubstituteSmartRef_WithoutExplicitMenu_Constraints" />
     <node concept="3Tm1VV" id="ct" role="1B3o_S" />
     <node concept="3uibUv" id="cu" role="1zkMxy">
@@ -2608,7 +2607,6 @@
     </node>
   </node>
   <node concept="312cEu" id="el">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="TestSubstituteSmartRef_WithoutExplicitMenu_Subconcept_Constraints" />
     <node concept="3Tm1VV" id="em" role="1B3o_S" />
     <node concept="3uibUv" id="en" role="1zkMxy">

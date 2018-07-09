@@ -257,7 +257,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.rule.subtyping" />
     <property role="TrG5h" value="DebuggerIsDebugger_ComparisonRule" />
     <node concept="312cEg" id="1" role="jymVt">
       <property role="TrG5h" value="myMatchingPattern2" />
@@ -477,7 +476,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1x">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="settings" />
     <property role="TrG5h" value="DebuggerTypeIsDebuggerType_SubtypingRule" />
     <node concept="3clFbW" id="1y" role="jymVt">
       <node concept="3clFbS" id="1F" role="3clF47" />
@@ -1216,7 +1215,6 @@
     </node>
   </node>
   <node concept="312cEu" id="5E">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule" />
     <node concept="3clFbW" id="5F" role="jymVt">
       <node concept="3clFbS" id="5N" role="3clF47" />
@@ -1390,7 +1388,7 @@
     <node concept="3Tm1VV" id="5M" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6Q">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="breakpoints" />
     <property role="TrG5h" value="typeof_CreateBreakpointOperation_InferenceRule" />
     <node concept="3clFbW" id="6R" role="jymVt">
       <node concept="3clFbS" id="6Z" role="3clF47" />
@@ -1668,7 +1666,7 @@
     <node concept="3Tm1VV" id="6Y" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="8E">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="settings" />
     <property role="TrG5h" value="typeof_DebuggerConfiguration_InferenceRule" />
     <node concept="3clFbW" id="8F" role="jymVt">
       <node concept="3clFbS" id="8N" role="3clF47" />
@@ -1897,7 +1895,7 @@
     <node concept="3Tm1VV" id="8M" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="a8">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="settings" />
     <property role="TrG5h" value="typeof_DebuggerReference_InferenceRule" />
     <node concept="3clFbW" id="a9" role="jymVt">
       <node concept="3clFbS" id="ah" role="3clF47" />

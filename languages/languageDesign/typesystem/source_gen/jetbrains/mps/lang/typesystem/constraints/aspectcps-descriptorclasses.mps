@@ -323,7 +323,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.expression" />
     <property role="TrG5h" value="ApplicableNodeReference_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -960,7 +960,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3Y">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.rule.subtyping" />
     <property role="TrG5h" value="ComparisonRule_Constraints" />
     <node concept="3Tm1VV" id="3Z" role="1B3o_S" />
     <node concept="3uibUv" id="40" role="1zkMxy">
@@ -1159,7 +1159,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5e">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.expression" />
     <property role="TrG5h" value="ConceptReference_Constraints" />
     <node concept="3Tm1VV" id="5f" role="1B3o_S" />
     <node concept="3uibUv" id="5g" role="1zkMxy">
@@ -1970,7 +1970,7 @@
   </node>
   <node concept="39dXUE" id="ad" />
   <node concept="312cEu" id="ae">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.statement.inequality" />
     <property role="TrG5h" value="InequationReference_Constraints" />
     <node concept="3Tm1VV" id="af" role="1B3o_S" />
     <node concept="3uibUv" id="ag" role="1zkMxy">
@@ -2262,7 +2262,7 @@
     </node>
   </node>
   <node concept="312cEu" id="c0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.rule.subtyping" />
     <property role="TrG5h" value="InequationReplacementRule_Constraints" />
     <node concept="3Tm1VV" id="c1" role="1B3o_S" />
     <node concept="3uibUv" id="c2" role="1zkMxy">
@@ -2461,7 +2461,7 @@
     </node>
   </node>
   <node concept="312cEu" id="dg">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="InferenceRule_Constraints" />
     <node concept="3Tm1VV" id="dh" role="1B3o_S" />
     <node concept="3uibUv" id="di" role="1zkMxy">
@@ -2660,7 +2660,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ew">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="pattern" />
     <property role="TrG5h" value="LinkPatternVariableReference_Constraints" />
     <node concept="3Tm1VV" id="ex" role="1B3o_S" />
     <node concept="3uibUv" id="ey" role="1zkMxy">
@@ -3236,7 +3236,7 @@
     </node>
   </node>
   <node concept="312cEu" id="i2">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.statement" />
     <property role="TrG5h" value="MessageStatement_Constraints" />
     <node concept="3Tm1VV" id="i3" role="1B3o_S" />
     <node concept="3uibUv" id="i4" role="1zkMxy">
@@ -3471,7 +3471,7 @@
     </node>
   </node>
   <node concept="312cEu" id="jt">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="NonTypesystemRule_Constraints" />
     <node concept="3Tm1VV" id="ju" role="1B3o_S" />
     <node concept="3uibUv" id="jv" role="1zkMxy">
@@ -3670,7 +3670,7 @@
     </node>
   </node>
   <node concept="312cEu" id="kH">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="pattern" />
     <property role="TrG5h" value="PatternVariableReference_Constraints" />
     <node concept="3Tm1VV" id="kI" role="1B3o_S" />
     <node concept="3uibUv" id="kJ" role="1zkMxy">
@@ -4406,7 +4406,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ph">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.statement.target" />
     <property role="TrG5h" value="PropertyMessageTarget_Constraints" />
     <node concept="3Tm1VV" id="pi" role="1B3o_S" />
     <node concept="3uibUv" id="pj" role="1zkMxy">
@@ -4769,7 +4769,7 @@
     </node>
   </node>
   <node concept="312cEu" id="rr">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="pattern" />
     <property role="TrG5h" value="PropertyPatternVariableReference_Constraints" />
     <node concept="3Tm1VV" id="rs" role="1B3o_S" />
     <node concept="3uibUv" id="rt" role="1zkMxy">
@@ -5345,7 +5345,7 @@
     </node>
   </node>
   <node concept="312cEu" id="uX">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="QuickFixArgumentReference_Constraints" />
     <node concept="3Tm1VV" id="uY" role="1B3o_S" />
     <node concept="3uibUv" id="uZ" role="1zkMxy">
@@ -5673,7 +5673,7 @@
     </node>
   </node>
   <node concept="312cEu" id="wS">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="QuickFixFieldReference_Constraints" />
     <node concept="3Tm1VV" id="wT" role="1B3o_S" />
     <node concept="3uibUv" id="wU" role="1zkMxy">
@@ -6001,7 +6001,7 @@
     </node>
   </node>
   <node concept="312cEu" id="yN">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.statement.target" />
     <property role="TrG5h" value="ReferenceMessageTarget_Constraints" />
     <node concept="3Tm1VV" id="yO" role="1B3o_S" />
     <node concept="3uibUv" id="yP" role="1zkMxy">
@@ -6364,7 +6364,7 @@
     </node>
   </node>
   <node concept="312cEu" id="$X">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="SubstituteTypeRule_Constraints" />
     <node concept="3Tm1VV" id="$Y" role="1B3o_S" />
     <node concept="3uibUv" id="$Z" role="1zkMxy">
@@ -6563,7 +6563,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Ad">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.rule.subtyping" />
     <property role="TrG5h" value="SubtypingRule_Constraints" />
     <node concept="3Tm1VV" id="Ae" role="1B3o_S" />
     <node concept="3uibUv" id="Af" role="1zkMxy">
@@ -6762,7 +6762,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Bt">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition" />
     <property role="TrG5h" value="TypeVarReference_Constraints" />
     <node concept="3Tm1VV" id="Bu" role="1B3o_S" />
     <node concept="3uibUv" id="Bv" role="1zkMxy">
@@ -7709,7 +7709,7 @@
     </node>
   </node>
   <node concept="312cEu" id="HD">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="TypesystemIntentionArgument_Constraints" />
     <node concept="3Tm1VV" id="HE" role="1B3o_S" />
     <node concept="3uibUv" id="HF" role="1zkMxy">
@@ -8043,7 +8043,7 @@
     </node>
   </node>
   <node concept="312cEu" id="JB">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.quickfix" />
     <property role="TrG5h" value="TypesystemQuickFix_Constraints" />
     <node concept="3Tm1VV" id="JC" role="1B3o_S" />
     <node concept="3uibUv" id="JD" role="1zkMxy">
@@ -8242,7 +8242,7 @@
     </node>
   </node>
   <node concept="312cEu" id="KR">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="definition.statement" />
     <property role="TrG5h" value="WhenConcreteVariableReference_Constraints" />
     <node concept="3Tm1VV" id="KS" role="1B3o_S" />
     <node concept="3uibUv" id="KT" role="1zkMxy">

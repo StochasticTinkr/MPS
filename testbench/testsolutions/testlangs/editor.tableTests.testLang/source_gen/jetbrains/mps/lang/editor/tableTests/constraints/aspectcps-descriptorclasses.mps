@@ -213,7 +213,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="genericStateMachine" />
     <property role="TrG5h" value="AbstractStateMachineElement_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -545,7 +545,7 @@
     </node>
   </node>
   <node concept="312cEu" id="25">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="genericStateMachine" />
     <property role="TrG5h" value="EventReference_Constraints" />
     <node concept="3Tm1VV" id="26" role="1B3o_S" />
     <node concept="3uibUv" id="27" role="1zkMxy">
@@ -1059,7 +1059,7 @@
   </node>
   <node concept="39dXUE" id="57" />
   <node concept="312cEu" id="58">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="genericStateMachine" />
     <property role="TrG5h" value="StateReference_Constraints" />
     <node concept="3Tm1VV" id="59" role="1B3o_S" />
     <node concept="3uibUv" id="5a" role="1zkMxy">

@@ -354,7 +354,6 @@
     </node>
   </node>
   <node concept="312cEu" id="O">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ExtensionDeclaration_Constraints" />
     <node concept="3Tm1VV" id="P" role="1B3o_S" />
     <node concept="3uibUv" id="Q" role="1zkMxy">
@@ -589,7 +588,6 @@
     </node>
   </node>
   <node concept="312cEu" id="2e">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ExtensionFieldDeclaration_Constraints" />
     <node concept="3Tm1VV" id="2f" role="1B3o_S" />
     <node concept="3uibUv" id="2g" role="1zkMxy">
@@ -811,7 +809,6 @@
     </node>
   </node>
   <node concept="312cEu" id="3y">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ExtensionPointDeclaration_Constraints" />
     <node concept="3Tm1VV" id="3z" role="1B3o_S" />
     <node concept="3uibUv" id="3$" role="1zkMxy">
@@ -1042,7 +1039,6 @@
   </node>
   <node concept="39dXUE" id="4V" />
   <node concept="312cEu" id="4W">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="GetExtensionObjectsOperation_Constraints" />
     <node concept="3Tm1VV" id="4X" role="1B3o_S" />
     <node concept="3uibUv" id="4Y" role="1zkMxy">
@@ -1321,7 +1317,6 @@
     </node>
   </node>
   <node concept="312cEu" id="6E">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="IRootWithUniqueName_Constraints" />
     <node concept="3Tm1VV" id="6F" role="1B3o_S" />
     <node concept="3uibUv" id="6G" role="1zkMxy">

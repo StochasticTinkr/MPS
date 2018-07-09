@@ -247,7 +247,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Testing" />
     <property role="TrG5h" value="BuildMpsLayout_TestModuleGroup_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -820,7 +820,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3r">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Testing" />
     <property role="TrG5h" value="BuildMpsLayout_TestModule_Constraints" />
     <node concept="3Tm1VV" id="3s" role="1B3o_S" />
     <node concept="3uibUv" id="3t" role="1zkMxy">
@@ -1367,7 +1367,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6E">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Project.Testing" />
     <property role="TrG5h" value="BuildMpsLayout_TestModules_Constraints" />
     <node concept="3Tm1VV" id="6F" role="1B3o_S" />
     <node concept="3uibUv" id="6G" role="1zkMxy">

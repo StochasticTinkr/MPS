@@ -2314,7 +2314,7 @@
     </node>
   </node>
   <node concept="312cEu" id="aI">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Context" />
     <property role="TrG5h" value="supertypeOf_ContextType_RefactoringContext_SubtypingRule" />
     <node concept="3clFbW" id="aJ" role="jymVt">
       <node concept="3clFbS" id="aR" role="3clF47" />
@@ -2429,7 +2429,7 @@
     <node concept="3Tm1VV" id="aQ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="by">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefActions" />
     <property role="TrG5h" value="typeof_AbstractMoveNodeExpression_InferenceRule" />
     <node concept="3clFbW" id="bz" role="jymVt">
       <node concept="3clFbS" id="bF" role="3clF47" />
@@ -2764,7 +2764,7 @@
     <node concept="3Tm1VV" id="bE" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="dD">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefActions" />
     <property role="TrG5h" value="typeof_AbstractMoveNodesExpression_InferenceRule" />
     <node concept="3clFbW" id="dE" role="jymVt">
       <node concept="3clFbS" id="dM" role="3clF47" />
@@ -3103,7 +3103,7 @@
     <node concept="3Tm1VV" id="dL" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fM">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefDecl.Target.Module" />
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_Module_InferenceRule" />
     <node concept="3clFbW" id="fN" role="jymVt">
       <node concept="3clFbS" id="fV" role="3clF47" />
@@ -3352,7 +3352,7 @@
     <node concept="3Tm1VV" id="fU" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="hn">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefDecl.Target.Node" />
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_SNode_InferenceRule" />
     <node concept="3clFbW" id="ho" role="jymVt">
       <node concept="3clFbS" id="hw" role="3clF47" />
@@ -3601,7 +3601,6 @@
     <node concept="3Tm1VV" id="hv" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="iW">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ContextMemberOperation_InferenceRule" />
     <node concept="3clFbW" id="iX" role="jymVt">
       <node concept="3clFbS" id="j5" role="3clF47" />
@@ -3822,7 +3821,7 @@
     <node concept="3Tm1VV" id="j4" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="kn">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Context" />
     <property role="TrG5h" value="typeof_CreateRefactoringContext_InferenceRule" />
     <node concept="3clFbW" id="ko" role="jymVt">
       <node concept="3clFbS" id="kw" role="3clF47" />
@@ -4757,7 +4756,7 @@
     <node concept="3Tm1VV" id="kv" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="pZ">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Context" />
     <property role="TrG5h" value="typeof_ExecuteRefactoringStatement_InferenceRule" />
     <node concept="3clFbW" id="q0" role="jymVt">
       <node concept="3clFbS" id="q8" role="3clF47" />
@@ -5707,7 +5706,7 @@
     <node concept="3Tm1VV" id="q7" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="vH">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefActions" />
     <property role="TrG5h" value="typeof_IsRefactoringApplicable_InferenceRule" />
     <node concept="3clFbW" id="vI" role="jymVt">
       <node concept="3clFbS" id="vQ" role="3clF47" />
@@ -6259,7 +6258,7 @@
     <node concept="3Tm1VV" id="vP" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="z4">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefDecl.Target.Model" />
     <property role="TrG5h" value="typeof_ModelTarget_InferenceRule" />
     <node concept="3clFbW" id="z5" role="jymVt">
       <node concept="3clFbS" id="zd" role="3clF47" />
@@ -6475,7 +6474,7 @@
     <node concept="3Tm1VV" id="zc" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="$u">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefDecl.Methods" />
     <property role="TrG5h" value="typeof_ModelsToGenerateByDefault_InferenceRule" />
     <node concept="3clFbW" id="$v" role="jymVt">
       <node concept="3clFbS" id="$B" role="3clF47" />
@@ -6693,7 +6692,7 @@
     <node concept="3Tm1VV" id="$A" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="_T">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Deprecated.Environment" />
     <property role="TrG5h" value="typeof_ModuleOperation_InferenceRule" />
     <node concept="3clFbW" id="_U" role="jymVt">
       <node concept="3clFbS" id="A2" role="3clF47" />
@@ -6911,7 +6910,7 @@
     <node concept="3Tm1VV" id="A1" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Bj">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefDecl.Target.Module" />
     <property role="TrG5h" value="typeof_ModuleTarget_InferenceRule" />
     <node concept="3clFbW" id="Bk" role="jymVt">
       <node concept="3clFbS" id="Bs" role="3clF47" />
@@ -7405,7 +7404,7 @@
     <node concept="3Tm1VV" id="Br" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="En">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefActions" />
     <property role="TrG5h" value="typeof_MoveNodeToModelExpression_InferenceRule" />
     <node concept="3clFbW" id="Eo" role="jymVt">
       <node concept="3clFbS" id="Ew" role="3clF47" />
@@ -7632,7 +7631,7 @@
     <node concept="3Tm1VV" id="Ev" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="FP">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefActions" />
     <property role="TrG5h" value="typeof_MoveNodeToNodeExpression_InferenceRule" />
     <node concept="3clFbW" id="FQ" role="jymVt">
       <node concept="3clFbS" id="FY" role="3clF47" />
@@ -7978,7 +7977,7 @@
     <node concept="3Tm1VV" id="FX" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="I0">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefActions" />
     <property role="TrG5h" value="typeof_MoveNodesToModelExpression_InferenceRule" />
     <node concept="3clFbW" id="I1" role="jymVt">
       <node concept="3clFbS" id="I9" role="3clF47" />
@@ -8205,7 +8204,7 @@
     <node concept="3Tm1VV" id="I8" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Ju">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefActions" />
     <property role="TrG5h" value="typeof_MoveNodesToNodeExpression_InferenceRule" />
     <node concept="3clFbW" id="Jv" role="jymVt">
       <node concept="3clFbS" id="JB" role="3clF47" />
@@ -8551,7 +8550,7 @@
     <node concept="3Tm1VV" id="JA" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="LD">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefDecl.Target.Node" />
     <property role="TrG5h" value="typeof_NodeTarget_InferenceRule" />
     <node concept="3clFbW" id="LE" role="jymVt">
       <node concept="3clFbS" id="LM" role="3clF47" />
@@ -8914,7 +8913,7 @@
     <node concept="3Tm1VV" id="LL" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="NV">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefDecl.Methods" />
     <property role="TrG5h" value="typeof_RefactoringContext_ConceptFunctionParameter_InferenceRule" />
     <node concept="3clFbW" id="NW" role="jymVt">
       <node concept="3clFbS" id="O4" role="3clF47" />
@@ -9130,7 +9129,7 @@
     <node concept="3Tm1VV" id="O3" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="Pl">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="RefDecl.Arg.Parameters" />
     <property role="TrG5h" value="typeof_RefactoringParameterReference_InferenceRule" />
     <node concept="3clFbW" id="Pm" role="jymVt">
       <node concept="3clFbS" id="Pu" role="3clF47" />
@@ -9375,7 +9374,6 @@
     <node concept="3Tm1VV" id="Pt" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="QS">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_UpdateModelProcedure_InferenceRule" />
     <node concept="3clFbW" id="QT" role="jymVt">
       <node concept="3clFbS" id="R1" role="3clF47" />

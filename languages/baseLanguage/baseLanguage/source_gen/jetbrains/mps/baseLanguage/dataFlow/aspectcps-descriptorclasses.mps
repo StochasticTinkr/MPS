@@ -450,6 +450,7 @@
   </registry>
   <node concept="312cEu" id="0">
     <property role="TrG5h" value="AbstractUnaryNumberOperation_DataFlow" />
+    <property role="3GE5qa" value="" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -521,6 +522,7 @@
   </node>
   <node concept="312cEu" id="t">
     <property role="TrG5h" value="AndExpression_DataFlow" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="u" role="1B3o_S" />
     <node concept="3uibUv" id="v" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -779,6 +781,7 @@
   </node>
   <node concept="312cEu" id="26">
     <property role="TrG5h" value="AnonymousClassCreator_DataFlow" />
+    <property role="3GE5qa" value="classifiers" />
     <node concept="3Tm1VV" id="27" role="1B3o_S" />
     <node concept="3uibUv" id="28" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1062,6 +1065,7 @@
   </node>
   <node concept="312cEu" id="3R">
     <property role="TrG5h" value="ArrayAccessExpression_DataFlow" />
+    <property role="3GE5qa" value="array" />
     <node concept="3Tm1VV" id="3S" role="1B3o_S" />
     <node concept="3uibUv" id="3T" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1147,6 +1151,7 @@
   </node>
   <node concept="312cEu" id="4q">
     <property role="TrG5h" value="ArrayCreatorWithInitializer_DataFlow" />
+    <property role="3GE5qa" value="array" />
     <node concept="3Tm1VV" id="4r" role="1B3o_S" />
     <node concept="3uibUv" id="4s" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1213,6 +1218,7 @@
   </node>
   <node concept="312cEu" id="4P">
     <property role="TrG5h" value="ArrayCreator_DataFlow" />
+    <property role="3GE5qa" value="array" />
     <node concept="3Tm1VV" id="4Q" role="1B3o_S" />
     <node concept="3uibUv" id="4R" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1276,6 +1282,7 @@
   </node>
   <node concept="312cEu" id="5f">
     <property role="TrG5h" value="ArrayLiteral_DataFlow" />
+    <property role="3GE5qa" value="array" />
     <node concept="3Tm1VV" id="5g" role="1B3o_S" />
     <node concept="3uibUv" id="5h" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1393,6 +1400,7 @@
   </node>
   <node concept="312cEu" id="60">
     <property role="TrG5h" value="AssertStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow" />
     <node concept="3Tm1VV" id="61" role="1B3o_S" />
     <node concept="3uibUv" id="62" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1518,6 +1526,7 @@
   </node>
   <node concept="312cEu" id="6M">
     <property role="TrG5h" value="AssignmentExpression_DataFlow" />
+    <property role="3GE5qa" value="" />
     <node concept="3Tm1VV" id="6N" role="1B3o_S" />
     <node concept="3uibUv" id="6O" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -1849,6 +1858,7 @@
   </node>
   <node concept="312cEu" id="8R">
     <property role="TrG5h" value="BaseAssignmentExpression_DataFlow" />
+    <property role="3GE5qa" value="" />
     <node concept="3Tm1VV" id="8S" role="1B3o_S" />
     <node concept="3uibUv" id="8T" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2097,6 +2107,7 @@
   </node>
   <node concept="312cEu" id="aq">
     <property role="TrG5h" value="BaseMethodCall_DataFlow" />
+    <property role="3GE5qa" value="" />
     <node concept="3Tm1VV" id="ar" role="1B3o_S" />
     <node concept="3uibUv" id="as" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2163,6 +2174,7 @@
   </node>
   <node concept="312cEu" id="aP">
     <property role="TrG5h" value="BaseMethodDeclaration_DataFlow" />
+    <property role="3GE5qa" value="" />
     <node concept="3Tm1VV" id="aQ" role="1B3o_S" />
     <node concept="3uibUv" id="aR" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2301,6 +2313,7 @@
   </node>
   <node concept="312cEu" id="bI">
     <property role="TrG5h" value="BitwiseNotExpression_DataFlow" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="bJ" role="1B3o_S" />
     <node concept="3uibUv" id="bK" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2354,6 +2367,7 @@
   </node>
   <node concept="312cEu" id="c4">
     <property role="TrG5h" value="BlockStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow" />
     <node concept="3Tm1VV" id="c5" role="1B3o_S" />
     <node concept="3uibUv" id="c6" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2407,6 +2421,7 @@
   </node>
   <node concept="312cEu" id="cq">
     <property role="TrG5h" value="BreakStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow" />
     <node concept="3Tm1VV" id="cr" role="1B3o_S" />
     <node concept="3uibUv" id="cs" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2642,6 +2657,7 @@
   </node>
   <node concept="312cEu" id="dT">
     <property role="TrG5h" value="CatchClause_DataFlow" />
+    <property role="3GE5qa" value="control_flow.try_catch" />
     <node concept="3Tm1VV" id="dU" role="1B3o_S" />
     <node concept="3uibUv" id="dV" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2727,6 +2743,7 @@
   </node>
   <node concept="312cEu" id="er">
     <property role="TrG5h" value="Closure_DataFlow" />
+    <property role="3GE5qa" value="to_remove" />
     <node concept="3Tm1VV" id="es" role="1B3o_S" />
     <node concept="3uibUv" id="et" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2790,6 +2807,7 @@
   </node>
   <node concept="312cEu" id="eO">
     <property role="TrG5h" value="CommentedStatementsBlock_DataFlow" />
+    <property role="3GE5qa" value="comments" />
     <node concept="3Tm1VV" id="eP" role="1B3o_S" />
     <node concept="3uibUv" id="eQ" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2860,6 +2878,7 @@
   </node>
   <node concept="312cEu" id="fi">
     <property role="TrG5h" value="ConceptFunction_DataFlow" />
+    <property role="3GE5qa" value="ext.conceptFunction" />
     <node concept="3Tm1VV" id="fj" role="1B3o_S" />
     <node concept="3uibUv" id="fk" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -2913,6 +2932,7 @@
   </node>
   <node concept="312cEu" id="fC">
     <property role="TrG5h" value="ContinueStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow" />
     <node concept="3Tm1VV" id="fD" role="1B3o_S" />
     <node concept="3uibUv" id="fE" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -4799,6 +4819,7 @@
   </node>
   <node concept="312cEu" id="r3">
     <property role="TrG5h" value="DimensionExpression_DataFlow" />
+    <property role="3GE5qa" value="array" />
     <node concept="3Tm1VV" id="r4" role="1B3o_S" />
     <node concept="3uibUv" id="r5" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -4873,6 +4894,7 @@
   </node>
   <node concept="312cEu" id="ry">
     <property role="TrG5h" value="DoWhileStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow.loops" />
     <node concept="3Tm1VV" id="rz" role="1B3o_S" />
     <node concept="3uibUv" id="r$" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -5060,6 +5082,7 @@
   </node>
   <node concept="312cEu" id="sK">
     <property role="TrG5h" value="DotExpression_DataFlow" />
+    <property role="3GE5qa" value="classifiers" />
     <node concept="3Tm1VV" id="sL" role="1B3o_S" />
     <node concept="3uibUv" id="sM" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -5145,6 +5168,7 @@
   </node>
   <node concept="312cEu" id="tj">
     <property role="TrG5h" value="ElsifClause_DataFlow" />
+    <property role="3GE5qa" value="control_flow.if_switch" />
     <node concept="3Tm1VV" id="tk" role="1B3o_S" />
     <node concept="3uibUv" id="tl" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -5438,6 +5462,7 @@
   </node>
   <node concept="312cEu" id="va">
     <property role="TrG5h" value="FieldReferenceOperation_DataFlow" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <node concept="3Tm1VV" id="vb" role="1B3o_S" />
     <node concept="3uibUv" id="vc" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -5491,6 +5516,7 @@
   </node>
   <node concept="312cEu" id="vv">
     <property role="TrG5h" value="ForStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow.loops" />
     <node concept="3Tm1VV" id="vw" role="1B3o_S" />
     <node concept="3uibUv" id="vx" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -5989,6 +6015,7 @@
   </node>
   <node concept="312cEu" id="yD">
     <property role="TrG5h" value="ForeachStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow.loops" />
     <node concept="3Tm1VV" id="yE" role="1B3o_S" />
     <node concept="3uibUv" id="yF" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -8258,6 +8285,7 @@
   </node>
   <node concept="312cEu" id="Hg">
     <property role="TrG5h" value="GenericNewExpression_DataFlow" />
+    <property role="3GE5qa" value="" />
     <node concept="3Tm1VV" id="Hh" role="1B3o_S" />
     <node concept="3uibUv" id="Hi" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -8311,6 +8339,7 @@
   </node>
   <node concept="312cEu" id="HA">
     <property role="TrG5h" value="IMethodCall_DataFlow" />
+    <property role="3GE5qa" value="classifiers.base" />
     <node concept="3Tm1VV" id="HB" role="1B3o_S" />
     <node concept="3uibUv" id="HC" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -8377,6 +8406,7 @@
   </node>
   <node concept="312cEu" id="I1">
     <property role="TrG5h" value="IfStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow.if_switch" />
     <node concept="3Tm1VV" id="I2" role="1B3o_S" />
     <node concept="3uibUv" id="I3" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -8805,6 +8835,7 @@
   </node>
   <node concept="312cEu" id="KJ">
     <property role="TrG5h" value="InstanceInitializer_DataFlow" />
+    <property role="3GE5qa" value="classifiers.members" />
     <node concept="3Tm1VV" id="KK" role="1B3o_S" />
     <node concept="3uibUv" id="KL" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -8858,6 +8889,7 @@
   </node>
   <node concept="312cEu" id="L5">
     <property role="TrG5h" value="InstanceMethodCallOperation_DataFlow" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <node concept="3Tm1VV" id="L6" role="1B3o_S" />
     <node concept="3uibUv" id="L7" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -8977,6 +9009,7 @@
   </node>
   <node concept="312cEu" id="LQ">
     <property role="TrG5h" value="LocalVariableDeclarationStatement_DataFlow" />
+    <property role="3GE5qa" value="variables" />
     <node concept="3Tm1VV" id="LR" role="1B3o_S" />
     <node concept="3uibUv" id="LS" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -9030,6 +9063,7 @@
   </node>
   <node concept="312cEu" id="Mc">
     <property role="TrG5h" value="LocalVariableDeclaration_DataFlow" />
+    <property role="3GE5qa" value="variables" />
     <node concept="3Tm1VV" id="Md" role="1B3o_S" />
     <node concept="3uibUv" id="Me" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -9216,6 +9250,7 @@
   </node>
   <node concept="312cEu" id="Nn">
     <property role="TrG5h" value="NotExpression_DataFlow" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="No" role="1B3o_S" />
     <node concept="3uibUv" id="Np" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -9268,7 +9303,7 @@
     </node>
   </node>
   <node concept="312cEu" id="NH">
-    <property role="3GE5qa" value="Analyzer" />
+    <property role="3GE5qa" value="nullable" />
     <property role="TrG5h" value="NullableAnalyzerRunner" />
     <node concept="3Tm1VV" id="NI" role="1B3o_S" />
     <node concept="3uibUv" id="NJ" role="1zkMxy">
@@ -11463,6 +11498,7 @@
   </node>
   <node concept="312cEu" id="12k">
     <property role="TrG5h" value="OrExpression_DataFlow" />
+    <property role="3GE5qa" value="expressions" />
     <node concept="3Tm1VV" id="12l" role="1B3o_S" />
     <node concept="3uibUv" id="12m" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -11721,6 +11757,7 @@
   </node>
   <node concept="312cEu" id="13X">
     <property role="TrG5h" value="ParameterDeclaration_DataFlow" />
+    <property role="3GE5qa" value="variables" />
     <node concept="3Tm1VV" id="13Y" role="1B3o_S" />
     <node concept="3uibUv" id="13Z" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -12346,6 +12383,7 @@
   </node>
   <node concept="312cEu" id="17L">
     <property role="TrG5h" value="PostfixDecrementExpression_DataFlow" />
+    <property role="3GE5qa" value="expressions.prefix/postfix" />
     <node concept="3Tm1VV" id="17M" role="1B3o_S" />
     <node concept="3uibUv" id="17N" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -12544,6 +12582,7 @@
   </node>
   <node concept="312cEu" id="190">
     <property role="TrG5h" value="PostfixIncrementExpression_DataFlow" />
+    <property role="3GE5qa" value="expressions.prefix/postfix" />
     <node concept="3Tm1VV" id="191" role="1B3o_S" />
     <node concept="3uibUv" id="192" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -12742,6 +12781,7 @@
   </node>
   <node concept="312cEu" id="1af">
     <property role="TrG5h" value="PrefixDecrementExpression_DataFlow" />
+    <property role="3GE5qa" value="expressions.prefix/postfix" />
     <node concept="3Tm1VV" id="1ag" role="1B3o_S" />
     <node concept="3uibUv" id="1ah" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -12940,6 +12980,7 @@
   </node>
   <node concept="312cEu" id="1bu">
     <property role="TrG5h" value="PrefixIncrementExpression_DataFlow" />
+    <property role="3GE5qa" value="expressions.prefix/postfix" />
     <node concept="3Tm1VV" id="1bv" role="1B3o_S" />
     <node concept="3uibUv" id="1bw" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -13138,6 +13179,7 @@
   </node>
   <node concept="312cEu" id="1cH">
     <property role="TrG5h" value="RemarkStatement_DataFlow" />
+    <property role="3GE5qa" value="to_remove" />
     <node concept="3Tm1VV" id="1cI" role="1B3o_S" />
     <node concept="3uibUv" id="1cJ" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -13158,6 +13200,7 @@
   </node>
   <node concept="312cEu" id="1cQ">
     <property role="TrG5h" value="ReturnStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow" />
     <node concept="3Tm1VV" id="1cR" role="1B3o_S" />
     <node concept="3uibUv" id="1cS" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -13299,6 +13342,7 @@
   </node>
   <node concept="312cEu" id="1dJ">
     <property role="TrG5h" value="RuleAfterDotExpression" />
+    <property role="3GE5qa" value="nullable" />
     <node concept="3uibUv" id="1dK" role="EKbjA">
       <ref role="3uigEE" to="1fjm:~DataFlowConstructor" resolve="DataFlowConstructor" />
     </node>
@@ -13736,6 +13780,7 @@
   </node>
   <node concept="312cEu" id="1g$">
     <property role="TrG5h" value="RuleAssertNotNull" />
+    <property role="3GE5qa" value="nullable" />
     <node concept="3uibUv" id="1g_" role="EKbjA">
       <ref role="3uigEE" to="1fjm:~DataFlowConstructor" resolve="DataFlowConstructor" />
     </node>
@@ -13861,6 +13906,7 @@
   </node>
   <node concept="312cEu" id="1hu">
     <property role="TrG5h" value="RuleCreator" />
+    <property role="3GE5qa" value="nullable" />
     <node concept="3uibUv" id="1hv" role="EKbjA">
       <ref role="3uigEE" to="1fjm:~DataFlowConstructor" resolve="DataFlowConstructor" />
     </node>
@@ -14102,6 +14148,7 @@
   </node>
   <node concept="312cEu" id="1j3">
     <property role="TrG5h" value="RuleEqualsExpression" />
+    <property role="3GE5qa" value="nullable" />
     <node concept="3uibUv" id="1j4" role="EKbjA">
       <ref role="3uigEE" to="1fjm:~DataFlowConstructor" resolve="DataFlowConstructor" />
     </node>
@@ -14977,6 +15024,7 @@
   </node>
   <node concept="312cEu" id="1oK">
     <property role="TrG5h" value="RuleFieldReference" />
+    <property role="3GE5qa" value="nullable" />
     <node concept="3uibUv" id="1oL" role="EKbjA">
       <ref role="3uigEE" to="1fjm:~DataFlowConstructor" resolve="DataFlowConstructor" />
     </node>
@@ -15329,6 +15377,7 @@
   </node>
   <node concept="312cEu" id="1r3">
     <property role="TrG5h" value="RuleInstanceofExpression" />
+    <property role="3GE5qa" value="nullable" />
     <node concept="3uibUv" id="1r4" role="EKbjA">
       <ref role="3uigEE" to="1fjm:~DataFlowConstructor" resolve="DataFlowConstructor" />
     </node>
@@ -15839,6 +15888,7 @@
   </node>
   <node concept="312cEu" id="1un">
     <property role="TrG5h" value="RuleMethodCall" />
+    <property role="3GE5qa" value="nullable" />
     <node concept="3uibUv" id="1uo" role="EKbjA">
       <ref role="3uigEE" to="1fjm:~DataFlowConstructor" resolve="DataFlowConstructor" />
     </node>
@@ -16377,6 +16427,7 @@
   </node>
   <node concept="312cEu" id="1xS">
     <property role="TrG5h" value="RuleNotEqualsExpression" />
+    <property role="3GE5qa" value="nullable" />
     <node concept="3uibUv" id="1xT" role="EKbjA">
       <ref role="3uigEE" to="1fjm:~DataFlowConstructor" resolve="DataFlowConstructor" />
     </node>
@@ -17250,6 +17301,7 @@
   </node>
   <node concept="312cEu" id="1Bz">
     <property role="TrG5h" value="RuleNullLiteral" />
+    <property role="3GE5qa" value="nullable" />
     <node concept="3uibUv" id="1B$" role="EKbjA">
       <ref role="3uigEE" to="1fjm:~DataFlowConstructor" resolve="DataFlowConstructor" />
     </node>
@@ -17491,6 +17543,7 @@
   </node>
   <node concept="312cEu" id="1D8">
     <property role="TrG5h" value="RuleTernaryOperation" />
+    <property role="3GE5qa" value="nullable" />
     <node concept="3uibUv" id="1D9" role="EKbjA">
       <ref role="3uigEE" to="1fjm:~DataFlowConstructor" resolve="DataFlowConstructor" />
     </node>
@@ -18447,6 +18500,7 @@
   </node>
   <node concept="312cEu" id="1Je">
     <property role="TrG5h" value="RuleVariableDeclaration" />
+    <property role="3GE5qa" value="nullable" />
     <node concept="3uibUv" id="1Jf" role="EKbjA">
       <ref role="3uigEE" to="1fjm:~DataFlowConstructor" resolve="DataFlowConstructor" />
     </node>
@@ -19208,6 +19262,7 @@
   </node>
   <node concept="312cEu" id="1O9">
     <property role="TrG5h" value="StaticInitializer_DataFlow" />
+    <property role="3GE5qa" value="classifiers.members" />
     <node concept="3Tm1VV" id="1Oa" role="1B3o_S" />
     <node concept="3uibUv" id="1Ob" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -19261,6 +19316,7 @@
   </node>
   <node concept="312cEu" id="1Ov">
     <property role="TrG5h" value="StaticMethodCall_DataFlow" />
+    <property role="3GE5qa" value="classifiers.refs" />
     <node concept="3Tm1VV" id="1Ow" role="1B3o_S" />
     <node concept="3uibUv" id="1Ox" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -19491,6 +19547,7 @@
   </node>
   <node concept="312cEu" id="1PY">
     <property role="TrG5h" value="SubstringExpression_DataFlow" />
+    <property role="3GE5qa" value="ext.string.expression" />
     <node concept="3Tm1VV" id="1PZ" role="1B3o_S" />
     <node concept="3uibUv" id="1Q0" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -19650,6 +19707,7 @@
   </node>
   <node concept="312cEu" id="1R0">
     <property role="TrG5h" value="SwitchCase_DataFlow" />
+    <property role="3GE5qa" value="control_flow.if_switch" />
     <node concept="3Tm1VV" id="1R1" role="1B3o_S" />
     <node concept="3uibUv" id="1R2" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -19703,6 +19761,7 @@
   </node>
   <node concept="312cEu" id="1Rm">
     <property role="TrG5h" value="SwitchStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow.if_switch" />
     <node concept="3Tm1VV" id="1Rn" role="1B3o_S" />
     <node concept="3uibUv" id="1Ro" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -19936,6 +19995,7 @@
   </node>
   <node concept="312cEu" id="1SM">
     <property role="TrG5h" value="SynchronizedStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow" />
     <node concept="3Tm1VV" id="1SN" role="1B3o_S" />
     <node concept="3uibUv" id="1SO" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -20323,6 +20383,7 @@
   </node>
   <node concept="312cEu" id="1Va">
     <property role="TrG5h" value="ThrowStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow.try_catch" />
     <node concept="3Tm1VV" id="1Vb" role="1B3o_S" />
     <node concept="3uibUv" id="1Vc" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -20581,6 +20642,7 @@
   </node>
   <node concept="312cEu" id="1WO">
     <property role="TrG5h" value="TryCatchStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow.try_catch" />
     <node concept="3Tm1VV" id="1WP" role="1B3o_S" />
     <node concept="3uibUv" id="1WQ" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -21069,6 +21131,7 @@
   </node>
   <node concept="312cEu" id="1ZO">
     <property role="TrG5h" value="TryStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow.try_catch" />
     <node concept="3Tm1VV" id="1ZP" role="1B3o_S" />
     <node concept="3uibUv" id="1ZQ" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -21757,6 +21820,7 @@
   </node>
   <node concept="312cEu" id="245">
     <property role="TrG5h" value="VariableReference_DataFlow" />
+    <property role="3GE5qa" value="variables" />
     <node concept="3Tm1VV" id="246" role="1B3o_S" />
     <node concept="3uibUv" id="247" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />
@@ -21810,6 +21874,7 @@
   </node>
   <node concept="312cEu" id="24q">
     <property role="TrG5h" value="WhileStatement_DataFlow" />
+    <property role="3GE5qa" value="control_flow.loops" />
     <node concept="3Tm1VV" id="24r" role="1B3o_S" />
     <node concept="3uibUv" id="24s" role="1zkMxy">
       <ref role="3uigEE" to="aplb:3HJD4JbIwf_" resolve="DataFlowBuilder" />

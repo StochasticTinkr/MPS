@@ -537,7 +537,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1x">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Custom" />
     <property role="TrG5h" value="Typeof_ApplicationPluginType_SubtypingRule" />
     <node concept="3clFbW" id="1y" role="jymVt">
       <node concept="3clFbS" id="1E" role="3clF47" />
@@ -652,7 +652,7 @@
     <node concept="3Tm1VV" id="1D" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2l">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Custom" />
     <property role="TrG5h" value="Typeof_ProjectPluginType_SubtypingRule" />
     <node concept="3clFbW" id="2m" role="jymVt">
       <node concept="3clFbS" id="2u" role="3clF47" />
@@ -945,7 +945,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4m">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Preference" />
     <property role="TrG5h" value="typeof_GetPreferencesComponentInProjectOperation_InferenceRule" />
     <node concept="3clFbW" id="4n" role="jymVt">
       <node concept="3clFbS" id="4v" role="3clF47" />
@@ -1171,7 +1171,7 @@
     <node concept="3Tm1VV" id="4u" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="5N">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Tool.Operations" />
     <property role="TrG5h" value="typeof_GetToolInProjectOperation_InferenceRule" />
     <node concept="3clFbW" id="5O" role="jymVt">
       <node concept="3clFbS" id="5W" role="3clF47" />
@@ -1397,7 +1397,7 @@
     <node concept="3Tm1VV" id="5V" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7g">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="Custom" />
     <property role="TrG5h" value="typeof_PlatformAccessExpression_InferenceRule" />
     <node concept="3clFbW" id="7h" role="jymVt">
       <node concept="3clFbS" id="7p" role="3clF47" />

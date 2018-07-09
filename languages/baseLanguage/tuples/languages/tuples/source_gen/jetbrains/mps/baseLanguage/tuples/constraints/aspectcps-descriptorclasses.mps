@@ -357,7 +357,6 @@
   </node>
   <node concept="39dXUE" id="I" />
   <node concept="312cEu" id="J">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="NamedTupleComponentAccessOperation_Constraints" />
     <node concept="3Tm1VV" id="K" role="1B3o_S" />
     <node concept="3uibUv" id="L" role="1zkMxy">
@@ -937,7 +936,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4e">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="NamedTupleComponentDeclaration_Constraints" />
     <node concept="3Tm1VV" id="4f" role="1B3o_S" />
     <node concept="3uibUv" id="4g" role="1zkMxy">
@@ -971,7 +969,6 @@
     <node concept="2tJIrI" id="4i" role="jymVt" />
   </node>
   <node concept="312cEu" id="4s">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="NamedTupleComponentReference_Constraints" />
     <node concept="3Tm1VV" id="4t" role="1B3o_S" />
     <node concept="3uibUv" id="4u" role="1zkMxy">
@@ -1306,7 +1303,6 @@
     </node>
   </node>
   <node concept="312cEu" id="6r">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="NamedTupleType_Constraints" />
     <node concept="3Tm1VV" id="6s" role="1B3o_S" />
     <node concept="3uibUv" id="6t" role="1zkMxy">

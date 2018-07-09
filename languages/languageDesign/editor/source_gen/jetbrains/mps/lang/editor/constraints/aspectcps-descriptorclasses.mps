@@ -393,7 +393,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="AbstractComponent_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -726,7 +725,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1W">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Stylesheet" />
     <property role="TrG5h" value="AttributeStyleClassItem_Constraints" />
     <node concept="3Tm1VV" id="1X" role="1B3o_S" />
     <node concept="3uibUv" id="1Y" role="1zkMxy">
@@ -1224,7 +1223,7 @@
     </node>
   </node>
   <node concept="312cEu" id="51">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="CellActionMap" />
     <property role="TrG5h" value="CellActionMapDeclaration_Constraints" />
     <node concept="3Tm1VV" id="52" role="1B3o_S" />
     <node concept="3uibUv" id="53" role="1zkMxy">
@@ -1423,7 +1422,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6h">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="SNode.select" />
     <property role="TrG5h" value="CellIdReferenceSelector_Constraints" />
     <node concept="3Tm1VV" id="6i" role="1B3o_S" />
     <node concept="3uibUv" id="6j" role="1zkMxy">
@@ -1731,7 +1730,7 @@
     </node>
   </node>
   <node concept="312cEu" id="83">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="CellKeyMap" />
     <property role="TrG5h" value="CellKeyMapDeclaration_Constraints" />
     <node concept="3Tm1VV" id="84" role="1B3o_S" />
     <node concept="3uibUv" id="85" role="1zkMxy">
@@ -1930,7 +1929,6 @@
     </node>
   </node>
   <node concept="312cEu" id="9j">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CellMenuComponentFeature_Link_Constraints" />
     <node concept="3Tm1VV" id="9k" role="1B3o_S" />
     <node concept="3uibUv" id="9l" role="1zkMxy">
@@ -2243,7 +2241,6 @@
     </node>
   </node>
   <node concept="312cEu" id="b7">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CellMenuComponentFeature_Property_Constraints" />
     <node concept="3Tm1VV" id="b8" role="1B3o_S" />
     <node concept="3uibUv" id="b9" role="1zkMxy">
@@ -2556,7 +2553,7 @@
     </node>
   </node>
   <node concept="312cEu" id="cV">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="CellMenu" />
     <property role="TrG5h" value="CellMenuComponent_Constraints" />
     <node concept="3Tm1VV" id="cW" role="1B3o_S" />
     <node concept="3uibUv" id="cX" role="1zkMxy">
@@ -2755,7 +2752,6 @@
     </node>
   </node>
   <node concept="312cEu" id="eb">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints" />
     <node concept="3Tm1VV" id="ec" role="1B3o_S" />
     <node concept="3uibUv" id="ed" role="1zkMxy">
@@ -2789,7 +2785,6 @@
     <node concept="2tJIrI" id="ef" role="jymVt" />
   </node>
   <node concept="312cEu" id="ep">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CellModel_Component_Constraints" />
     <node concept="3Tm1VV" id="eq" role="1B3o_S" />
     <node concept="3uibUv" id="er" role="1zkMxy">
@@ -3445,7 +3440,7 @@
     </node>
   </node>
   <node concept="312cEu" id="il">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="CellModel" />
     <property role="TrG5h" value="CellModel_NextEditor_Constraints" />
     <node concept="3Tm1VV" id="im" role="1B3o_S" />
     <node concept="3uibUv" id="in" role="1zkMxy">
@@ -3691,7 +3686,6 @@
     </node>
   </node>
   <node concept="312cEu" id="jQ">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CellModel_Property_Constraints" />
     <node concept="3Tm1VV" id="jR" role="1B3o_S" />
     <node concept="3uibUv" id="jS" role="1zkMxy">
@@ -3999,7 +3993,6 @@
     </node>
   </node>
   <node concept="312cEu" id="lC">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CellModel_RefCell_Constraints" />
     <node concept="3Tm1VV" id="lD" role="1B3o_S" />
     <node concept="3uibUv" id="lE" role="1zkMxy">
@@ -4348,7 +4341,6 @@
     </node>
   </node>
   <node concept="312cEu" id="nG">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CellModel_RefNodeList_Constraints" />
     <node concept="3Tm1VV" id="nH" role="1B3o_S" />
     <node concept="3uibUv" id="nI" role="1zkMxy">
@@ -4694,7 +4686,6 @@
     </node>
   </node>
   <node concept="312cEu" id="pJ">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CellModel_RefNode_Constraints" />
     <node concept="3Tm1VV" id="pK" role="1B3o_S" />
     <node concept="3uibUv" id="pL" role="1zkMxy">
@@ -5043,7 +5034,7 @@
     </node>
   </node>
   <node concept="312cEu" id="rN">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="CellModel" />
     <property role="TrG5h" value="CellModel_ReferencePresentation_Constraints" />
     <node concept="3Tm1VV" id="rO" role="1B3o_S" />
     <node concept="3uibUv" id="rP" role="1zkMxy">
@@ -5353,7 +5344,7 @@
     </node>
   </node>
   <node concept="312cEu" id="tJ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="CellModel" />
     <property role="TrG5h" value="CellModel_TransactionalProperty_Constraints" />
     <node concept="3Tm1VV" id="tK" role="1B3o_S" />
     <node concept="3uibUv" id="tL" role="1zkMxy">
@@ -5661,7 +5652,6 @@
     </node>
   </node>
   <node concept="312cEu" id="vx">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CellModel_WithRole_Constraints" />
     <node concept="3Tm1VV" id="vy" role="1B3o_S" />
     <node concept="3uibUv" id="vz" role="1zkMxy">
@@ -5970,7 +5960,6 @@
     </node>
   </node>
   <node concept="312cEu" id="xk">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="ConceptEditorDeclaration_Constraints" />
     <node concept="3Tm1VV" id="xl" role="1B3o_S" />
     <node concept="3uibUv" id="xm" role="1zkMxy">
@@ -6395,7 +6384,7 @@
     </node>
   </node>
   <node concept="312cEu" id="zU">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="EditorContextHints" />
     <property role="TrG5h" value="ConceptEditorHintDeclaration_Constraints" />
     <node concept="3Tm1VV" id="zV" role="1B3o_S" />
     <node concept="3uibUv" id="zW" role="1zkMxy">
@@ -7625,7 +7614,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Fy">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="QueryExpression" />
     <property role="TrG5h" value="ContextVariable_Constraints" />
     <node concept="3Tm1VV" id="Fz" role="1B3o_S" />
     <node concept="3uibUv" id="F$" role="1zkMxy">
@@ -7930,7 +7919,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Hu">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="CellModel" />
     <property role="TrG5h" value="EditorCellModel_Constraints" />
     <node concept="3Tm1VV" id="Hv" role="1B3o_S" />
     <node concept="3uibUv" id="Hw" role="1zkMxy">
@@ -8291,7 +8280,6 @@
     </node>
   </node>
   <node concept="312cEu" id="JH">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="EditorComponentDeclaration_Constraints" />
     <node concept="3Tm1VV" id="JI" role="1B3o_S" />
     <node concept="3uibUv" id="JJ" role="1zkMxy">
@@ -8491,7 +8479,7 @@
   </node>
   <node concept="39dXUE" id="KX" />
   <node concept="312cEu" id="KY">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu" />
     <property role="TrG5h" value="IMenuPartParameterized_Constraints" />
     <node concept="3Tm1VV" id="KZ" role="1B3o_S" />
     <node concept="3uibUv" id="L0" role="1zkMxy">
@@ -8779,7 +8767,7 @@
     </node>
   </node>
   <node concept="312cEu" id="MJ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu" />
     <property role="TrG5h" value="IMenuReference_Default_Constraints" />
     <node concept="3Tm1VV" id="MK" role="1B3o_S" />
     <node concept="3uibUv" id="ML" role="1zkMxy">
@@ -9087,7 +9075,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Ox">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu" />
     <property role="TrG5h" value="IMenu_Default_Constraints" />
     <node concept="3Tm1VV" id="Oy" role="1B3o_S" />
     <node concept="3uibUv" id="Oz" role="1zkMxy">
@@ -9425,7 +9413,7 @@
     </node>
   </node>
   <node concept="312cEu" id="Qw">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu" />
     <property role="TrG5h" value="IMenu_Named_Constraints" />
     <node concept="3Tm1VV" id="Qx" role="1B3o_S" />
     <node concept="3uibUv" id="Qy" role="1zkMxy">
@@ -9760,7 +9748,7 @@
     </node>
   </node>
   <node concept="312cEu" id="St">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Stylesheet" />
     <property role="TrG5h" value="IStyle_Constraints" />
     <node concept="3Tm1VV" id="Su" role="1B3o_S" />
     <node concept="3uibUv" id="Sv" role="1zkMxy">
@@ -10139,7 +10127,6 @@
     </node>
   </node>
   <node concept="312cEu" id="UQ">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="InlineStyleDeclaration_Constraints" />
     <node concept="3Tm1VV" id="UR" role="1B3o_S" />
     <node concept="3uibUv" id="US" role="1zkMxy">
@@ -10632,7 +10619,7 @@
     <node concept="3Tm1VV" id="WQ" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="XU">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Stylesheet" />
     <property role="TrG5h" value="NavigatableReferenceStyleClassItem_Constraints" />
     <node concept="3Tm1VV" id="XV" role="1B3o_S" />
     <node concept="3uibUv" id="XW" role="1zkMxy">
@@ -10940,7 +10927,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ZG">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="SNode.select" />
     <property role="TrG5h" value="PropertyDeclarationCellSelector_Constraints" />
     <node concept="3Tm1VV" id="ZH" role="1B3o_S" />
     <node concept="3uibUv" id="ZI" role="1zkMxy">
@@ -11248,7 +11235,7 @@
     </node>
   </node>
   <node concept="312cEu" id="11u">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Stylesheet" />
     <property role="TrG5h" value="RGBColor_Constraints" />
     <node concept="3Tm1VV" id="11v" role="1B3o_S" />
     <node concept="3uibUv" id="11w" role="1zkMxy">
@@ -11473,7 +11460,7 @@
     </node>
   </node>
   <node concept="312cEu" id="12P">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Stylesheet" />
     <property role="TrG5h" value="StyleSheet_Constraints" />
     <node concept="3Tm1VV" id="12Q" role="1B3o_S" />
     <node concept="3uibUv" id="12R" role="1zkMxy">
@@ -11672,7 +11659,7 @@
     </node>
   </node>
   <node concept="312cEu" id="145">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
     <property role="TrG5h" value="SubstituteMenuItem_AbstractOperation_Constraints" />
     <node concept="3Tm1VV" id="146" role="1B3o_S" />
     <node concept="3uibUv" id="147" role="1zkMxy">
@@ -11958,7 +11945,7 @@
     </node>
   </node>
   <node concept="312cEu" id="15R">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_ReferenceScope_Constraints" />
     <node concept="3Tm1VV" id="15S" role="1B3o_S" />
     <node concept="3uibUv" id="15T" role="1zkMxy">
@@ -12283,7 +12270,7 @@
     </node>
   </node>
   <node concept="312cEu" id="17K">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuReference_DefaultWithFunction_Constraints" />
     <node concept="3Tm1VV" id="17L" role="1B3o_S" />
     <node concept="3uibUv" id="17M" role="1zkMxy">
@@ -12521,7 +12508,7 @@
     </node>
   </node>
   <node concept="312cEu" id="19d">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuReference_Named_Constraints" />
     <node concept="3Tm1VV" id="19e" role="1B3o_S" />
     <node concept="3uibUv" id="19f" role="1zkMxy">
@@ -12871,7 +12858,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1bc">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuVariableReference_Constraints" />
     <node concept="3Tm1VV" id="1bd" role="1B3o_S" />
     <node concept="3uibUv" id="1be" role="1zkMxy">
@@ -13179,7 +13166,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1cY">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenu_Constraints" />
     <node concept="3Tm1VV" id="1cZ" role="1B3o_S" />
     <node concept="3uibUv" id="1d0" role="1zkMxy">
@@ -13384,7 +13371,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1eg">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenu_Contribution_Constraints" />
     <node concept="3Tm1VV" id="1eh" role="1B3o_S" />
     <node concept="3uibUv" id="1ei" role="1zkMxy">
@@ -13589,7 +13576,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1fy">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenu_Default_Constraints" />
     <node concept="3Tm1VV" id="1fz" role="1B3o_S" />
     <node concept="3uibUv" id="1f$" role="1zkMxy">
@@ -13800,7 +13787,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1gM">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenu_Named_Constraints" />
     <node concept="3Tm1VV" id="1gN" role="1B3o_S" />
     <node concept="3uibUv" id="1gO" role="1zkMxy">
@@ -14016,7 +14003,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1i0">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuContribution_Constraints" />
     <node concept="3Tm1VV" id="1i1" role="1B3o_S" />
     <node concept="3uibUv" id="1i2" role="1zkMxy">
@@ -14221,7 +14208,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1ji">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Transformation.IncludeSubstitute" />
     <property role="TrG5h" value="TransformationMenuPart_IncludeSubstituteMenu_Constraints" />
     <node concept="3Tm1VV" id="1jj" role="1B3o_S" />
     <node concept="3uibUv" id="1jk" role="1zkMxy">
@@ -14610,7 +14597,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1lB">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuPart_PropertyMenu_Constraints" />
     <node concept="3Tm1VV" id="1lC" role="1B3o_S" />
     <node concept="3uibUv" id="1lD" role="1zkMxy">
@@ -14970,7 +14957,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1nJ">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuPart_ReferenceMenu_Constraints" />
     <node concept="3Tm1VV" id="1nK" role="1B3o_S" />
     <node concept="3uibUv" id="1nL" role="1zkMxy">
@@ -15267,7 +15254,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1pt">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuReference_Named_Constraints" />
     <node concept="3Tm1VV" id="1pu" role="1B3o_S" />
     <node concept="3uibUv" id="1pv" role="1zkMxy">
@@ -15617,7 +15604,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1rs">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Transformation.Variables" />
     <property role="TrG5h" value="TransformationMenuVariableReference_Constraints" />
     <node concept="3Tm1VV" id="1rt" role="1B3o_S" />
     <node concept="3uibUv" id="1ru" role="1zkMxy">
@@ -15925,7 +15912,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1te">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenu_Constraints" />
     <node concept="3Tm1VV" id="1tf" role="1B3o_S" />
     <node concept="3uibUv" id="1tg" role="1zkMxy">
@@ -16124,7 +16111,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1uu">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenu_Default_Constraints" />
     <node concept="3Tm1VV" id="1uv" role="1B3o_S" />
     <node concept="3uibUv" id="1uw" role="1zkMxy">
@@ -16335,7 +16322,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1vI">
-    <property role="3GE5qa" value="Constraints" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenu_Named_Constraints" />
     <node concept="3Tm1VV" id="1vJ" role="1B3o_S" />
     <node concept="3uibUv" id="1vK" role="1zkMxy">

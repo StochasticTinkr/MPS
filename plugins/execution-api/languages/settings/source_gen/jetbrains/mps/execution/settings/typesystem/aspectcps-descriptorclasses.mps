@@ -278,7 +278,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="editor" />
     <property role="TrG5h" value="EditorIsSusbtypeOfEditor_SubtypingRule" />
     <node concept="3clFbW" id="1" role="jymVt">
       <node concept="3clFbS" id="a" role="3clF47" />
@@ -1478,7 +1478,6 @@
     </node>
   </node>
   <node concept="312cEu" id="5I">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="PersistentConfigurationIsObject_SubtypingRule" />
     <node concept="3clFbW" id="5J" role="jymVt">
       <node concept="3clFbS" id="5R" role="3clF47" />
@@ -1593,7 +1592,6 @@
     <node concept="3Tm1VV" id="5Q" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6y">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="PersistentConfigurationIsPersistentConfiguration_SubtypingRule" />
     <node concept="3clFbW" id="6z" role="jymVt">
       <node concept="3clFbS" id="6G" role="3clF47" />
@@ -1720,7 +1718,7 @@
     <node concept="3Tm1VV" id="6F" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7s">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="template" />
     <property role="TrG5h" value="TemplatePersistentConfigurationTypeClassifier_SubtypingRule" />
     <node concept="3clFbW" id="7t" role="jymVt">
       <node concept="3clFbS" id="7A" role="3clF47" />
@@ -1853,7 +1851,7 @@
     <node concept="3Tm1VV" id="7_" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="8o">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="template" />
     <property role="TrG5h" value="TemplatePersistentConfigurationTypeIsTemplatePersistentConfiguration_SubtypingRule" />
     <node concept="3clFbW" id="8p" role="jymVt">
       <node concept="3clFbS" id="8y" role="3clF47" />
@@ -1980,7 +1978,7 @@
     <node concept="3Tm1VV" id="8x" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="9i">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="template" />
     <property role="TrG5h" value="TemplatePersistentPropertyIsSubtypeOfPersistentConfiguration_SubtypingRule" />
     <node concept="3clFbW" id="9j" role="jymVt">
       <node concept="3clFbS" id="9r" role="3clF47" />
@@ -2649,7 +2647,6 @@
     </node>
   </node>
   <node concept="312cEu" id="dM">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_Configuration_Parameter_InferenceRule" />
     <node concept="3clFbW" id="dN" role="jymVt">
       <node concept="3clFbS" id="dV" role="3clF47" />
@@ -2873,7 +2870,7 @@
     <node concept="3Tm1VV" id="dU" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="fe">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="editor" />
     <property role="TrG5h" value="typeof_EditorExpression_InferenceRule" />
     <node concept="3clFbW" id="ff" role="jymVt">
       <node concept="3clFbS" id="fn" role="3clF47" />
@@ -3268,7 +3265,7 @@
     <node concept="3Tm1VV" id="fm" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="hE">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="editor" />
     <property role="TrG5h" value="typeof_EditorOperation_InferenceRule" />
     <node concept="3clFbW" id="hF" role="jymVt">
       <node concept="3clFbS" id="hN" role="3clF47" />
@@ -3897,7 +3894,6 @@
     <node concept="3Tm1VV" id="hM" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="l_">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_GetEditorOperation_InferenceRule" />
     <node concept="3clFbW" id="lA" role="jymVt">
       <node concept="3clFbS" id="lI" role="3clF47" />
@@ -4300,7 +4296,7 @@
     <node concept="3Tm1VV" id="lH" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="o5">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="editor.ui" />
     <property role="TrG5h" value="typeof_GridBagConstraints_InferenceRule" />
     <node concept="3clFbW" id="o6" role="jymVt">
       <node concept="3clFbS" id="oe" role="3clF47" />
@@ -4642,7 +4638,7 @@
     <node concept="3Tm1VV" id="od" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="qe">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="template" />
     <property role="TrG5h" value="typeof_PersistentConfigurationTemplateInitializer_InferenceRule" />
     <node concept="3clFbW" id="qf" role="jymVt">
       <node concept="3clFbS" id="qn" role="3clF47" />
@@ -5157,7 +5153,7 @@
     <node concept="3Tm1VV" id="qm" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="tr">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="properties" />
     <property role="TrG5h" value="typeof_PersistentPropertyDeclaration_InferenceRule" />
     <node concept="3clFbW" id="ts" role="jymVt">
       <node concept="3clFbS" id="t$" role="3clF47" />
@@ -5458,7 +5454,7 @@
     <node concept="3Tm1VV" id="tz" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="vk">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="properties" />
     <property role="TrG5h" value="typeof_PersistentPropertyReferenceOperation_InferenceRule" />
     <node concept="3clFbW" id="vl" role="jymVt">
       <node concept="3clFbS" id="vt" role="3clF47" />
@@ -5684,7 +5680,7 @@
     <node concept="3Tm1VV" id="vs" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="wL">
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="properties" />
     <property role="TrG5h" value="typeof_ProjectAccessExpression_InferenceRule" />
     <node concept="3clFbW" id="wM" role="jymVt">
       <node concept="3clFbS" id="wU" role="3clF47" />
@@ -5908,7 +5904,6 @@
     <node concept="3Tm1VV" id="wT" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="yd">
-    <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="typeof_ReportConfigurationErrorStatement_InferenceRule" />
     <node concept="3clFbW" id="ye" role="jymVt">
       <node concept="3clFbS" id="ym" role="3clF47" />

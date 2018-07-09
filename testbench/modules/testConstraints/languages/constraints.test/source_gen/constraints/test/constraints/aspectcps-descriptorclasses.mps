@@ -187,7 +187,6 @@
     </language>
   </registry>
   <node concept="312cEu" id="0">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="Base_Constraints" />
     <node concept="3Tm1VV" id="1" role="1B3o_S" />
     <node concept="3uibUv" id="2" role="1zkMxy">
@@ -432,7 +431,6 @@
     </node>
   </node>
   <node concept="312cEu" id="1w">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CanBeAncestorFail_Constraints" />
     <node concept="3Tm1VV" id="1x" role="1B3o_S" />
     <node concept="3uibUv" id="1y" role="1zkMxy">
@@ -687,7 +685,6 @@
     </node>
   </node>
   <node concept="312cEu" id="33">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CanBeChildFail_Constraints" />
     <node concept="3Tm1VV" id="34" role="1B3o_S" />
     <node concept="3uibUv" id="35" role="1zkMxy">
@@ -918,7 +915,6 @@
     </node>
   </node>
   <node concept="312cEu" id="4t">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="CanBeParentFail_Constraints" />
     <node concept="3Tm1VV" id="4u" role="1B3o_S" />
     <node concept="3uibUv" id="4v" role="1zkMxy">
@@ -1298,7 +1294,6 @@
     </node>
   </node>
   <node concept="312cEu" id="6P">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="Derived1_Constrained_Constraints" />
     <node concept="3Tm1VV" id="6Q" role="1B3o_S" />
     <node concept="3uibUv" id="6R" role="1zkMxy">
@@ -1543,7 +1538,6 @@
     </node>
   </node>
   <node concept="312cEu" id="8l">
-    <property role="3GE5qa" value="Constraints" />
     <property role="TrG5h" value="Derived2_Constrained_Constraints" />
     <node concept="3Tm1VV" id="8m" role="1B3o_S" />
     <node concept="3uibUv" id="8n" role="1zkMxy">
