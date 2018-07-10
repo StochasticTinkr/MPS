@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.keyboard;
 
-import jetbrains.mps.nodeEditor.keyboard.TextChangeEvent;
+import org.jetbrains.annotations.NotNull;
 
-import java.awt.event.KeyEvent;
+/**
+ * User: shatalin
+ * Date: 09.07.18
+ */
+public class TextChangeEvent {
+  private final String myText;
+  private final int myOffset;
 
-public interface KeyboardHandler {
-  boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent);
+  public TextChangeEvent(@NotNull String text, int offset) {
+    myText = text;
+    myOffset = offset;
+  }
 
-  boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent);
+  @NotNull
+  public String getText() {
+    return myText;
+  }
 
-  boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent);
-
-  boolean processTextChanged(EditorContext editorContext, TextChangeEvent textChangeEvent);
+  public int getOffset() {
+    return myOffset;
+  }
 }

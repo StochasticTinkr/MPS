@@ -33,6 +33,7 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfoFilterDecorator;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.collections.Entry;
+import jetbrains.mps.nodeEditor.keyboard.TextChangeEvent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
@@ -534,7 +535,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   @Override
-  public boolean processTextChanged(InputMethodEvent e) {
+  public boolean processTextChanged(TextChangeEvent textChangeEvent) {
     return false;
   }
 

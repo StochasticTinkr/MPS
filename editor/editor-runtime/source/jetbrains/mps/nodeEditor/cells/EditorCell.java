@@ -17,10 +17,10 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
+import jetbrains.mps.nodeEditor.keyboard.TextChangeEvent;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.event.InputMethodEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
@@ -48,7 +48,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   boolean processKeyTyped(KeyEvent e, boolean allowErrors);
 
-  boolean processTextChanged(InputMethodEvent e);
+  boolean processTextChanged(TextChangeEvent textChangeEvent);
 
   void synchronizeViewWithModel();
 

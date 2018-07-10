@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.KeyboardHandler;
 import jetbrains.mps.nodeEditor.SubstituteActionComparator;
+import jetbrains.mps.nodeEditor.keyboard.TextChangeEvent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -45,7 +46,6 @@ import java.awt.Point;
 import java.awt.Window;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
-import java.awt.event.InputMethodEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -469,8 +469,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   @Override
-  public boolean processTextChanged(EditorContext editorContext, InputMethodEvent inputEvent) {
-    if (getPatternEditor().processTextChanged(inputEvent)) {
+  public boolean processTextChanged(EditorContext editorContext, TextChangeEvent textChangeEvent) {
+    if (getPatternEditor().processTextChanged(textChangeEvent)) {
       processEventAfterPatternEditor();
       return true;
     }

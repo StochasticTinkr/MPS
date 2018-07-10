@@ -2976,7 +2976,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     if (myInputMethodRequests == null) {
       myInputMethodRequests = new InputMethodRequestsImpl(this);
-      addInputMethodListener(new InputMethodListenerImpl(this));
     }
     return myInputMethodRequests;
   }

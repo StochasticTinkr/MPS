@@ -18,12 +18,12 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.nodeEditor.keyboard.TextChangeEvent;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.util.Pair;
 
-import java.awt.event.InputMethodEvent;
 import java.awt.event.KeyEvent;
 import java.util.Collection;
 
@@ -147,8 +147,8 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
   }
 
   @Override
-  public boolean processTextChanged(EditorContext editorContext, InputMethodEvent inputEvent) {
+  public boolean processTextChanged(EditorContext editorContext, TextChangeEvent textChangeEvent) {
     EditorCell selectedCell = editorContext.getSelectedCell();
-    return selectedCell != null && ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).processTextChanged(inputEvent);
+    return selectedCell != null && ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).processTextChanged(textChangeEvent);
   }
 }
