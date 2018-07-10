@@ -1774,6 +1774,24 @@
           <node concept="3cpWs6" id="5DVpet2KwDl" role="3cqZAp" />
         </node>
       </node>
+      <node concept="3clFbJ" id="5Uhm8_IYzT1" role="3cqZAp">
+        <node concept="3clFbS" id="5Uhm8_IYzT3" role="3clFbx">
+          <node concept="3cpWs6" id="5Uhm8_IYA_E" role="3cqZAp" />
+        </node>
+        <node concept="3fqX7Q" id="5Uhm8_IYAdu" role="3clFbw">
+          <node concept="2OqwBi" id="5Uhm8_IYAdw" role="3fr31v">
+            <node concept="2OqwBi" id="5Uhm8_IYAdx" role="2Oq$k0">
+              <node concept="1YBJjd" id="5Uhm8_IYAdy" role="2Oq$k0">
+                <ref role="1YBMHb" node="5DVpet2KwDL" resolve="conceptDeclaration" />
+              </node>
+              <node concept="I4A8Y" id="5Uhm8_IYAdz" role="2OqNvi" />
+            </node>
+            <node concept="3zA4fs" id="5Uhm8_IYAd$" role="2OqNvi">
+              <ref role="3zA4av" to="tpcc:2LiUEk8oQ$g" resolve="structure" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3cpWs8" id="5DVpet2K$xy" role="3cqZAp">
         <node concept="3cpWsn" id="5DVpet2K$xz" role="3cpWs9">
           <property role="TrG5h" value="toCheck" />
