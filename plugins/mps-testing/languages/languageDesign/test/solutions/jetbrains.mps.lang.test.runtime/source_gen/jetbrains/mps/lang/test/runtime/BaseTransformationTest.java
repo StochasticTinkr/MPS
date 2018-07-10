@@ -11,6 +11,7 @@ import jetbrains.mps.tool.environment.Environment;
 import org.junit.Rule;
 import org.junit.rules.TestRule;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -19,7 +20,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.tool.environment.EnvironmentSetupException;
 import org.junit.AssumptionViolatedException;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.junit.runners.model.Statement;
 import java.lang.reflect.InvocationTargetException;
@@ -70,10 +70,22 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
     }
   }
 
+  /**
+   * 
+   * @deprecated Use {@link jetbrains.mps.lang.test.runtime.TestParametersCache } instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public void initTest(@NotNull String projectPath, final String model) throws Exception {
     initTest(projectPath, model, false);
   }
 
+  /**
+   * 
+   * @deprecated Use {@link jetbrains.mps.lang.test.runtime.TestParametersCache } instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public void initTest(@NotNull String projectPath, final String model, boolean reOpenProject) throws Exception {
     // MPS's in-process, out-of-process and ant script executors supply Environment through EnvironmentAware and custom RunnerBuilder  
     // namely, PushEnvironmentRunnerBuilder. IDEA MPS plugin and IDEA test configurations use this RunnerBuilder, too. 
