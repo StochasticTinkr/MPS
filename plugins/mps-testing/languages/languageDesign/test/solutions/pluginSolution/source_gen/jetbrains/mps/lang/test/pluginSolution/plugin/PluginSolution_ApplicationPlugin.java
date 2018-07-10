@@ -15,7 +15,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   }
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new RunTestInMPS_Action());
     // groups 
     addGroup(new EditorInternalAddition_ActionGroup());
   }
