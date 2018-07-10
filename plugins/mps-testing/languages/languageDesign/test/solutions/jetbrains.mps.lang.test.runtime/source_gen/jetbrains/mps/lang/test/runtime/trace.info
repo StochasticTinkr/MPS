@@ -2064,69 +2064,78 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/8951526261572145239">
     <file name="BaseMigrationTestBody.java">
-      <node id="2429858079514652032" at="26,73,27,52" concept="6" />
-      <node id="8951526261572998346" at="29,53,30,44" concept="6" />
-      <node id="8951526261573005290" at="31,5,32,66" concept="12" />
-      <node id="5476670926299098482" at="34,28,35,108" concept="11" />
-      <node id="5476670926299210331" at="35,108,36,53" concept="11" />
-      <node id="7169675881806453123" at="36,53,37,122" concept="11" />
-      <node id="8951526261572519219" at="37,122,38,99" concept="11" />
-      <node id="8951526261572493715" at="38,99,39,106" concept="6" />
-      <node id="2429858079515085696" at="39,106,40,83" concept="11" />
-      <node id="2429858079515195792" at="41,74,42,94" concept="6" />
-      <node id="5476670926299501452" at="45,86,46,125" concept="6" />
-      <node id="7169675881807047514" at="48,5,49,120" concept="13" />
-      <node id="3722742473369637649" at="49,120,50,47" concept="6" />
-      <node id="3722742473369663616" at="50,47,51,41" concept="6" />
-      <node id="8951526261574244787" at="51,41,52,49" concept="6" />
-      <node id="8951526261572243423" at="54,0,55,0" concept="10" trace="getInputNodes#()Ljava/util/Collection;" />
-      <node id="8951526261572243470" at="55,0,56,0" concept="10" trace="getOutputNodes#()Ljava/util/Collection;" />
-      <node id="8951526261572243541" at="56,0,57,0" concept="10" trace="getMigrationScript#()[Ljetbrains/mps/lang/migration/runtime/base/MigrationScript;" />
-      <node id="2429858079514644035" at="25,121,28,5" concept="8" />
-      <node id="6626913010125855520" at="28,5,31,5" concept="8" />
-      <node id="2429858079515113568" at="40,83,43,5" concept="8" />
-      <node id="5476670926299450447" at="44,44,47,7" concept="8" />
-      <node id="2429858079515322251" at="43,5,48,5" concept="8" />
-      <node id="8951526261572992652" at="25,0,34,0" concept="16" trace="runMigration#(Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SModel;null)Ljava/util/List;" />
-      <node id="8951526261572145273" at="34,0,54,0" concept="10" trace="testMethod#()V" />
-      <scope id="2429858079514644041" at="26,73,27,52" />
-      <scope id="6626913010125855526" at="29,53,30,44" />
-      <scope id="2429858079515113574" at="41,74,42,94" />
-      <scope id="5476670926299450453" at="45,86,46,125" />
-      <scope id="8951526261572243423" at="54,0,55,0" />
-      <scope id="8951526261572243470" at="55,0,56,0" />
-      <scope id="8951526261572243541" at="56,0,57,0" />
-      <scope id="2429858079514644035" at="25,121,28,5">
+      <node id="6521402369522785865" at="35,61,36,17" concept="17" />
+      <node id="2429858079514652032" at="40,73,41,52" concept="6" />
+      <node id="8951526261572998346" at="43,53,44,44" concept="6" />
+      <node id="8951526261573005290" at="45,5,46,66" concept="12" />
+      <node id="5476670926299098482" at="48,28,49,108" concept="11" />
+      <node id="5476670926299210331" at="49,108,50,53" concept="11" />
+      <node id="7169675881806453123" at="50,53,51,122" concept="11" />
+      <node id="8951526261572519219" at="51,122,52,99" concept="11" />
+      <node id="8951526261572493715" at="52,99,53,106" concept="6" />
+      <node id="2429858079515085696" at="53,106,54,83" concept="11" />
+      <node id="2429858079515195792" at="55,74,56,94" concept="6" />
+      <node id="5476670926299501452" at="59,86,60,125" concept="6" />
+      <node id="7169675881807047514" at="62,5,63,120" concept="13" />
+      <node id="3722742473369637649" at="63,120,64,47" concept="6" />
+      <node id="3722742473369663616" at="64,47,65,41" concept="6" />
+      <node id="8951526261574244787" at="65,41,66,49" concept="6" />
+      <node id="8951526261572243423" at="68,0,69,0" concept="10" trace="getInputNodes#()Ljava/util/Collection;" />
+      <node id="8951526261572243470" at="69,0,70,0" concept="10" trace="getOutputNodes#()Ljava/util/Collection;" />
+      <node id="8951526261572243541" at="70,0,71,0" concept="10" trace="getMigrationScript#()[Ljetbrains/mps/lang/migration/runtime/base/MigrationScript;" />
+      <node id="6521402369522785861" at="35,0,38,0" concept="3" trace="BaseMigrationTestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="2429858079514644035" at="39,121,42,5" concept="8" />
+      <node id="6626913010125855520" at="42,5,45,5" concept="8" />
+      <node id="2429858079515113568" at="54,83,57,5" concept="8" />
+      <node id="5476670926299450447" at="58,44,61,7" concept="8" />
+      <node id="6521402369522767661" at="30,0,34,0" concept="3" trace="BaseMigrationTestBody#()V" />
+      <node id="2429858079515322251" at="57,5,62,5" concept="8" />
+      <node id="8951526261572992652" at="39,0,48,0" concept="16" trace="runMigration#(Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SModel;null)Ljava/util/List;" />
+      <node id="8951526261572145273" at="48,0,68,0" concept="10" trace="testMethod#()V" />
+      <scope id="6521402369522767665" at="32,37,32,37" />
+      <scope id="6521402369522785864" at="35,61,36,17" />
+      <scope id="2429858079514644041" at="40,73,41,52" />
+      <scope id="6626913010125855526" at="43,53,44,44" />
+      <scope id="2429858079515113574" at="55,74,56,94" />
+      <scope id="5476670926299450453" at="59,86,60,125" />
+      <scope id="8951526261572243423" at="68,0,69,0" />
+      <scope id="8951526261572243470" at="69,0,70,0" />
+      <scope id="8951526261572243541" at="70,0,71,0" />
+      <scope id="6521402369522785861" at="35,0,38,0">
+        <var name="owner" id="6521402369522785867" />
+      </scope>
+      <scope id="2429858079514644035" at="39,121,42,5">
         <var name="root" id="2429858079514644037" />
       </scope>
-      <scope id="6626913010125855520" at="28,5,31,5">
+      <scope id="6626913010125855520" at="42,5,45,5">
         <var name="script" id="6626913010125855522" />
       </scope>
-      <scope id="2429858079515113568" at="40,83,43,5">
+      <scope id="2429858079515113568" at="54,83,57,5">
         <var name="difference" id="2429858079515113570" />
       </scope>
-      <scope id="2429858079515322257" at="44,44,47,7" />
-      <scope id="5476670926299450447" at="44,44,47,7">
+      <scope id="2429858079515322257" at="58,44,61,7" />
+      <scope id="5476670926299450447" at="58,44,61,7">
         <var name="problem" id="5476670926299450449" />
       </scope>
-      <scope id="2429858079515322251" at="43,5,48,5">
+      <scope id="6521402369522767661" at="30,0,34,0" />
+      <scope id="2429858079515322251" at="57,5,62,5">
         <var name="script" id="2429858079515322253" />
       </scope>
-      <scope id="8951526261572992656" at="25,121,32,66" />
-      <scope id="8951526261572992652" at="25,0,34,0">
+      <scope id="8951526261572992656" at="39,121,46,66" />
+      <scope id="8951526261572992652" at="39,0,48,0">
         <var name="inputNodes" id="8951526261572994871" />
         <var name="migrationScripts" id="8951526261572993568" />
         <var name="tempModel" id="7169675881805680147" />
       </scope>
-      <scope id="8951526261572145277" at="34,28,52,49">
+      <scope id="8951526261572145277" at="48,28,66,49">
         <var name="differences" id="2429858079515085697" />
         <var name="model" id="5476670926299098483" />
         <var name="outputNodes" id="8951526261572519220" />
         <var name="roots" id="7169675881806453124" />
         <var name="scripts" id="5476670926299210332" />
       </scope>
-      <scope id="8951526261572145273" at="34,0,54,0" />
-      <unit id="8951526261572145239" at="24,0,58,0" name="jetbrains.mps.lang.test.runtime.BaseMigrationTestBody" />
+      <scope id="8951526261572145273" at="48,0,68,0" />
+      <unit id="8951526261572145239" at="25,0,72,0" name="jetbrains.mps.lang.test.runtime.BaseMigrationTestBody" />
     </file>
   </root>
 </debug-info>
