@@ -73,7 +73,7 @@ import org.junit.runner.Description;
             if (Boolean.valueOf(isTestCase) == Boolean.TRUE) {
               classFqName = qualifiedName;
             } else {
-              int indexOfLastDot = qualifiedName.lastIndexOf(".");
+              int indexOfLastDot = qualifiedName.lastIndexOf('.');
               classFqName = qualifiedName.substring(0, indexOfLastDot);
             }
             if (classProvider == null) {

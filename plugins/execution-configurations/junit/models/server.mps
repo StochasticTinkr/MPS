@@ -7933,9 +7933,9 @@
                                         <ref role="3cqZAo" node="4g6NqHEfi0z" resolve="qualifiedName" />
                                       </node>
                                       <node concept="liA8E" id="4FBFA_GJfXj" role="2OqNvi">
-                                        <ref role="37wK5l" to="wyt6:~String.lastIndexOf(java.lang.String):int" resolve="lastIndexOf" />
-                                        <node concept="Xl_RD" id="4FBFA_GJhtL" role="37wK5m">
-                                          <property role="Xl_RC" value="." />
+                                        <ref role="37wK5l" to="wyt6:~String.lastIndexOf(int):int" resolve="lastIndexOf" />
+                                        <node concept="1Xhbcc" id="5E0FesSOREq" role="37wK5m">
+                                          <property role="1XhdNS" value="." />
                                         </node>
                                       </node>
                                     </node>
