@@ -5,8 +5,10 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.slanguage.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.slanguage.constraints.ConstraintsAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.slanguage.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.slanguage.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.slanguage.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.slanguage.structure.StructureAspectDescriptor" />
