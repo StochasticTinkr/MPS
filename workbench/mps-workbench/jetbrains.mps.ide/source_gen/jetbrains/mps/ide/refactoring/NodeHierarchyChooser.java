@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.ide.ThreadUtils;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
-import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
+import jetbrains.mps.ide.platform.refactoring.ConceptAncestorsProvider;
 import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;

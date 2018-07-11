@@ -29,77 +29,77 @@
     <file name="RefactoringAccess.java">
       <node id="1399798136780143922" at="15,0,16,0" concept="10" trace="ourInstance" />
       <node id="5814231631271514652" at="20,0,21,0" concept="5" trace="getRefactoringFacade#()Ljetbrains/mps/refactoring/runtime/access/RefactoringFacade;" />
-      <node id="4792031542972804902" at="27,49,28,36" concept="6" />
-      <node id="4792031542972804926" at="29,49,30,17" concept="7" />
-      <node id="4792031542972804928" at="32,5,33,16" concept="7" />
-      <node id="1161316260001747265" at="40,84,41,69" concept="6" />
-      <node id="1161316260001747499" at="42,20,43,19" concept="7" />
-      <node id="1161316260001748425" at="44,5,45,35" concept="7" />
-      <node id="2467745289742790736" at="48,81,49,70" concept="6" />
-      <node id="1106479162954058855" at="49,70,50,60" concept="6" />
-      <node id="7340098493333143003" at="50,60,51,20" concept="6" />
-      <node id="1161316260001622126" at="52,23,53,78" concept="8" />
-      <node id="7340098493333143015" at="53,78,54,33" concept="2" />
-      <node id="7340098493333143028" at="55,12,56,41" concept="2" />
-      <node id="6598645150040035711" at="57,5,58,0" concept="9" />
-      <node id="7340098493333143056" at="58,0,59,158" concept="6" />
-      <node id="5734694512880479900" at="59,158,60,23" concept="7" />
-      <node id="1161316260001447464" at="63,0,64,0" concept="5" trace="getAllRefactorings#()Ljava/util/Collection;" />
-      <node id="1399798136780143969" at="65,49,66,23" concept="7" />
-      <node id="1399798136780143994" at="69,65,70,27" concept="2" />
+      <node id="4792031542972804902" at="24,49,25,36" concept="6" />
+      <node id="4792031542972804926" at="26,49,27,17" concept="7" />
+      <node id="4792031542972804928" at="29,5,30,16" concept="7" />
+      <node id="1161316260001747265" at="36,84,37,69" concept="6" />
+      <node id="1161316260001747499" at="38,20,39,19" concept="7" />
+      <node id="1161316260001748425" at="40,5,41,35" concept="7" />
+      <node id="2467745289742790736" at="44,81,45,70" concept="6" />
+      <node id="1106479162954058855" at="45,70,46,60" concept="6" />
+      <node id="7340098493333143003" at="46,60,47,20" concept="6" />
+      <node id="1161316260001622126" at="48,23,49,78" concept="8" />
+      <node id="7340098493333143015" at="49,78,50,33" concept="2" />
+      <node id="7340098493333143028" at="51,12,52,41" concept="2" />
+      <node id="6598645150040035711" at="53,5,54,0" concept="9" />
+      <node id="7340098493333143056" at="54,0,55,158" concept="6" />
+      <node id="5734694512880479900" at="55,158,56,23" concept="7" />
+      <node id="1161316260001447464" at="64,0,65,0" concept="5" trace="getAllRefactorings#()Ljava/util/Collection;" />
+      <node id="1399798136780143969" at="66,49,67,23" concept="7" />
+      <node id="1399798136780143994" at="70,65,71,27" concept="2" />
       <node id="1399798136780143892" at="17,0,19,0" concept="1" trace="RefactoringAccess#()V" />
-      <node id="7340098493333143026" at="55,10,57,5" concept="0" />
-      <node id="4792031542972804918" at="28,36,31,7" concept="4" />
-      <node id="1161316260001746425" at="41,69,44,5" concept="4" />
-      <node id="1399798136780143965" at="65,0,68,0" concept="11" trace="getInstance#()Ljetbrains/mps/refactoring/runtime/access/RefactoringAccess;" />
-      <node id="1399798136780143986" at="69,0,72,0" concept="11" trace="setInstance#(Ljetbrains/mps/refactoring/runtime/access/RefactoringAccess;)V" />
-      <node id="4792031542972804897" at="26,67,32,5" concept="3" />
-      <node id="7340098493333143007" at="51,20,57,5" concept="4" />
-      <node id="1161316260001648697" at="40,0,47,0" concept="5" trace="isApplicable#(Ljava/lang/String;Ljava/lang/Object;)Z" />
-      <node id="1161316260001439941" at="25,0,35,0" concept="5" trace="getRefactoringByClassName#(Ljava/lang/String;)Ljetbrains/mps/refactoring/framework/IRefactoring;" />
-      <node id="1161316260001612807" at="48,0,62,0" concept="5" trace="isApplicable#(Ljetbrains/mps/refactoring/framework/IRefactoring;Ljava/lang/Object;)Z" />
+      <node id="7340098493333143026" at="51,10,53,5" concept="0" />
+      <node id="4792031542972804918" at="25,36,28,7" concept="4" />
+      <node id="1161316260001746425" at="37,69,40,5" concept="4" />
+      <node id="1399798136780143965" at="66,0,69,0" concept="11" trace="getInstance#()Ljetbrains/mps/refactoring/runtime/access/RefactoringAccess;" />
+      <node id="1399798136780143986" at="70,0,73,0" concept="11" trace="setInstance#(Ljetbrains/mps/refactoring/runtime/access/RefactoringAccess;)V" />
+      <node id="4792031542972804897" at="23,67,29,5" concept="3" />
+      <node id="7340098493333143007" at="47,20,53,5" concept="4" />
+      <node id="1161316260001648697" at="36,0,43,0" concept="5" trace="isApplicable#(Ljava/lang/String;Ljava/lang/Object;)Z" />
+      <node id="1161316260001439941" at="22,0,32,0" concept="5" trace="getRefactoringByClassName#(Ljava/lang/String;)Ljetbrains/mps/refactoring/framework/IRefactoring;" />
+      <node id="1161316260001612807" at="44,0,58,0" concept="5" trace="isApplicable#(Ljetbrains/mps/refactoring/framework/IRefactoring;Ljava/lang/Object;)Z" />
       <scope id="1399798136780143895" at="17,33,17,33" />
       <scope id="5814231631271514652" at="20,0,21,0" />
-      <scope id="4792031542972804925" at="29,49,30,17" />
-      <scope id="1161316260001746427" at="42,20,43,19" />
-      <scope id="7340098493333143027" at="55,12,56,41" />
-      <scope id="1161316260001447464" at="63,0,64,0" />
-      <scope id="1399798136780143968" at="65,49,66,23" />
-      <scope id="1399798136780143989" at="69,65,70,27" />
+      <scope id="4792031542972804925" at="26,49,27,17" />
+      <scope id="1161316260001746427" at="38,20,39,19" />
+      <scope id="7340098493333143027" at="51,12,52,41" />
+      <scope id="1161316260001447464" at="64,0,65,0" />
+      <scope id="1399798136780143968" at="66,49,67,23" />
+      <scope id="1399798136780143989" at="70,65,71,27" />
       <scope id="1399798136780143892" at="17,0,19,0" />
-      <scope id="7340098493333143008" at="52,23,54,33" />
-      <scope id="1399798136780143965" at="65,0,68,0" />
-      <scope id="1399798136780143986" at="69,0,72,0">
+      <scope id="7340098493333143008" at="48,23,50,33" />
+      <scope id="1399798136780143965" at="66,0,69,0" />
+      <scope id="1399798136780143986" at="70,0,73,0">
         <var name="instance" id="1399798136780143991" />
       </scope>
-      <scope id="4792031542972804901" at="27,49,31,7">
+      <scope id="4792031542972804901" at="24,49,28,7">
         <var name="refClass" id="4792031542972804903" />
       </scope>
-      <scope id="1161316260001648701" at="40,84,45,35">
+      <scope id="1161316260001648701" at="36,84,41,35">
         <var name="r" id="1161316260001747266" />
       </scope>
-      <scope id="4792031542972804897" at="26,67,32,5">
+      <scope id="4792031542972804897" at="23,67,29,5">
         <var name="r" id="4792031542972804899" />
       </scope>
-      <scope id="1161316260001439945" at="26,67,33,16" />
-      <scope id="1161316260001648697" at="40,0,47,0">
+      <scope id="1161316260001439945" at="23,67,30,16" />
+      <scope id="1161316260001648697" at="36,0,43,0">
         <var name="refactoringClassName" id="1161316260001654698" />
         <var name="target" id="1161316260001655593" />
       </scope>
-      <scope id="1161316260001439941" at="25,0,35,0">
+      <scope id="1161316260001439941" at="22,0,32,0">
         <var name="className" id="1161316260001441611" />
       </scope>
-      <scope id="1161316260001612811" at="48,81,60,23">
+      <scope id="1161316260001612811" at="44,81,56,23">
         <var name="disabled" id="7340098493333143057" />
         <var name="oneEntity" id="1106479162954058856" />
         <var name="refTarget" id="2467745289742790737" />
         <var name="targetList" id="7340098493333143004" />
       </scope>
-      <scope id="1161316260001612807" at="48,0,62,0">
+      <scope id="1161316260001612807" at="44,0,58,0">
         <var name="refactoring" id="1161316260001616186" />
         <var name="target" id="1161316260001617021" />
       </scope>
-      <unit id="3705010080987885620" at="14,0,73,0" name="jetbrains.mps.refactoring.runtime.access.RefactoringAccess" />
+      <unit id="3705010080987885620" at="14,0,74,0" name="jetbrains.mps.refactoring.runtime.access.RefactoringAccess" />
     </file>
   </root>
 </debug-info>

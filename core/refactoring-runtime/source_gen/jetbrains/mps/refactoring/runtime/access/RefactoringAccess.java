@@ -19,9 +19,6 @@ public abstract class RefactoringAccess {
 
   public abstract RefactoringFacade getRefactoringFacade();
 
-  /**
-   * XXX BEWARE, for the time being, needs model read access (walks aspect models to find out refactorings)
-   */
   @Nullable
   public IRefactoring getRefactoringByClassName(String className) {
     for (IRefactoring r : getAllRefactorings()) {
@@ -35,7 +32,6 @@ public abstract class RefactoringAccess {
 
   /**
    * NPE-safe shorthand for {@code isApplicable(getRefactoringByClassName(refactoringClassName), target)}
-   * XXX BEWARE, for the time being, needs model read access (walks aspect models to find out refactorings)
    */
   public boolean isApplicable(@NotNull String refactoringClassName, Object target) {
     IRefactoring r = getRefactoringByClassName(refactoringClassName);
@@ -60,7 +56,12 @@ public abstract class RefactoringAccess {
     return !(disabled);
   }
 
-  protected abstract Collection<IRefactoring> getAllRefactorings();
+  /**
+   * IMPORTANT: DON'T USE THIS METHOD, ITS VISIBILITY WILL CHANGE TO protected.
+   * IT'S PROVISIONALLY PUBLIC FOR MIGRATION PURPOSES ONLY. Once RefactoringUtil is history (past 2018.2), we expect no clients 
+   * to access collection of all available refactorings. If this is wrong, please file an issue.
+   */
+  public abstract Collection<IRefactoring> getAllRefactorings();
 
   public static RefactoringAccess getInstance() {
     return ourInstance;

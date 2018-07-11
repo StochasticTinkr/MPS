@@ -307,13 +307,6 @@
       <node concept="2AHcQZ" id="10tOJLdhufV" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
-      <node concept="P$JXv" id="6CS$e10DMHa" role="lGtFl">
-        <node concept="TZ5HA" id="6CS$e10DMHb" role="TZ5H$">
-          <node concept="1dT_AC" id="6CS$e10DMHc" role="1dT_Ay">
-            <property role="1dT_AB" value="XXX BEWARE, for the time being, needs model read access (walks aspect models to find out refactorings)" />
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="2tJIrI" id="10tOJLdi8yW" role="jymVt" />
     <node concept="3clFb_" id="10tOJLdi90T" role="jymVt">
@@ -393,11 +386,6 @@
           </node>
           <node concept="1dT_AC" id="10tOJLdiwQJ" role="1dT_Ay">
             <property role="1dT_AB" value="" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="6CS$e10DN1P" role="TZ5H$">
-          <node concept="1dT_AC" id="6CS$e10DN1Q" role="1dT_Ay">
-            <property role="1dT_AB" value="XXX BEWARE, for the time being, needs model read access (walks aspect models to find out refactorings)" />
           </node>
         </node>
       </node>
@@ -565,11 +553,28 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="10tOJLdhnSF" role="3clF47" />
-      <node concept="3Tmbuc" id="10tOJLdhn_a" role="1B3o_S" />
+      <node concept="3Tm1VV" id="5pnQe_fuByn" role="1B3o_S" />
       <node concept="3uibUv" id="10tOJLdhtj_" role="3clF45">
         <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
         <node concept="3uibUv" id="10tOJLdhtkE" role="11_B2D">
           <ref role="3uigEE" to="ge2m:4a0HOMfn9$I" resolve="IRefactoring" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="5pnQe_fuBKu" role="lGtFl">
+        <node concept="TZ5HA" id="5pnQe_fuBYZ" role="TZ5H$">
+          <node concept="1dT_AC" id="5pnQe_fuBZ0" role="1dT_Ay">
+            <property role="1dT_AB" value="IMPORTANT: DON'T USE THIS METHOD, ITS VISIBILITY WILL CHANGE TO protected." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5pnQe_fuBZc" role="TZ5H$">
+          <node concept="1dT_AC" id="5pnQe_fuBZd" role="1dT_Ay">
+            <property role="1dT_AB" value="IT'S PROVISIONALLY PUBLIC FOR MIGRATION PURPOSES ONLY. Once RefactoringUtil is history (past 2018.2), we expect no clients " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5pnQe_fuBZq" role="TZ5H$">
+          <node concept="1dT_AC" id="5pnQe_fuBZr" role="1dT_Ay">
+            <property role="1dT_AB" value="to access collection of all available refactorings. If this is wrong, please file an issue." />
+          </node>
         </node>
       </node>
     </node>
