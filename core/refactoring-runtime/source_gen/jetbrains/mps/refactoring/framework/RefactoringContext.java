@@ -23,7 +23,9 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
 
 public class RefactoringContext {
   private IRefactoring myRefactoring;
@@ -267,12 +269,11 @@ public class RefactoringContext {
     return result;
   }
   public static RefactoringContext createRefactoringContextByName(final String refName, List names, List parameters, Object target, Project project) {
-    final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
-    project.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        refactoring.value = RefactoringUtil.getRefactoringByClassName(refName);
+    IRefactoring refactoring = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<IRefactoring>() {
+      public IRefactoring compute() {
+        return RefactoringAccess.getInstance().getRefactoringByClassName(refName);
       }
     });
-    return createRefactoringContext(refactoring.value, names, parameters, target, project);
+    return createRefactoringContext(refactoring, names, parameters, target, project);
   }
 }

@@ -25,6 +25,7 @@
     <import index="vd7r" ref="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
     <import index="nddn" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.intentions(MPS.Editor/)" />
+    <import index="y38" ref="r:4c8c6241-8bf4-4d04-84a1-f7fd7fcbdc2c(jetbrains.mps.refactoring.runtime.access)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tp3m" ref="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -473,16 +474,21 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5UD30_PS820" role="3cqZAp">
-          <node concept="2YIFZM" id="5UD30_PS7$V" role="3clFbG">
-            <ref role="1Pybhc" to="ge2m:4a0HOMfn6V_" resolve="RefactoringUtil" />
-            <ref role="37wK5l" to="ge2m:4a0HOMfn6Wr" resolve="getRefactoringByClassName" />
-            <node concept="2OqwBi" id="5UD30_PS7$W" role="37wK5m">
-              <node concept="37vLTw" id="5UD30_PS7$X" role="2Oq$k0">
-                <ref role="3cqZAo" node="5UD30_PS7$B" resolve="refactoringNode" />
-              </node>
-              <node concept="2qgKlT" id="5UD30_PS7$Y" role="2OqNvi">
-                <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+        <node concept="3clFbF" id="10tOJLdlBWq" role="3cqZAp">
+          <node concept="2OqwBi" id="10tOJLdlAwD" role="3clFbG">
+            <node concept="2YIFZM" id="6CS$e10D$6c" role="2Oq$k0">
+              <ref role="37wK5l" to="y38:1dH5fOG2bPt" resolve="getInstance" />
+              <ref role="1Pybhc" to="y38:3dEPKBAxz0O" resolve="RefactoringAccess" />
+            </node>
+            <node concept="liA8E" id="10tOJLdlAGd" role="2OqNvi">
+              <ref role="37wK5l" to="y38:10tOJLdhm35" resolve="getRefactoringByClassName" />
+              <node concept="2OqwBi" id="5UD30_PS7$W" role="37wK5m">
+                <node concept="37vLTw" id="5UD30_PS7$X" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5UD30_PS7$B" resolve="refactoringNode" />
+                </node>
+                <node concept="2qgKlT" id="5UD30_PS7$Y" role="2OqNvi">
+                  <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+                </node>
               </node>
             </node>
           </node>

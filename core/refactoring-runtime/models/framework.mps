@@ -3865,37 +3865,40 @@
             <node concept="3uibUv" id="5lCz6ko76mY" role="1tU5fm">
               <ref role="3uigEE" node="4a0HOMfn9$I" resolve="IRefactoring" />
             </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1KUoCipvFkv" role="3cqZAp">
-          <node concept="2OqwBi" id="1KUoCipvFkw" role="3clFbG">
-            <node concept="liA8E" id="1KUoCipvFky" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
-              <node concept="1bVj0M" id="1KUoCipvFkz" role="37wK5m">
-                <node concept="3clFbS" id="1KUoCipvFk$" role="1bW5cS">
-                  <node concept="3clFbF" id="1KUoCipvFk_" role="3cqZAp">
-                    <node concept="37vLTI" id="1KUoCipvFkA" role="3clFbG">
-                      <node concept="2YIFZM" id="1KUoCipvFkB" role="37vLTx">
-                        <ref role="37wK5l" node="4a0HOMfn6Wr" resolve="getRefactoringByClassName" />
-                        <ref role="1Pybhc" node="4a0HOMfn6V_" resolve="RefactoringUtil" />
-                        <node concept="37vLTw" id="2BHiRxgmNIx" role="37wK5m">
-                          <ref role="3cqZAo" node="5lCz6ko41Hr" resolve="refName" />
-                        </node>
-                      </node>
-                      <node concept="37vLTw" id="3GM_nagTxWR" role="37vLTJ">
-                        <ref role="3cqZAo" node="5lCz6ko76mX" resolve="refactoring" />
-                      </node>
+            <node concept="2OqwBi" id="6CS$e10CUGz" role="33vP2m">
+              <node concept="2ShNRf" id="6CS$e10CSo0" role="2Oq$k0">
+                <node concept="1pGfFk" id="6CS$e10CUti" role="2ShVmc">
+                  <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess)" resolve="ModelAccessHelper" />
+                  <node concept="2OqwBi" id="7nMNws3dDL1" role="37wK5m">
+                    <node concept="37vLTw" id="7nMNws3dDO1" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5lCz6ko41HC" resolve="project" />
+                    </node>
+                    <node concept="liA8E" id="7nMNws3dDL3" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
                     </node>
                   </node>
                 </node>
               </node>
-            </node>
-            <node concept="2OqwBi" id="7nMNws3dDL1" role="2Oq$k0">
-              <node concept="37vLTw" id="7nMNws3dDO1" role="2Oq$k0">
-                <ref role="3cqZAo" node="5lCz6ko41HC" resolve="project" />
-              </node>
-              <node concept="liA8E" id="7nMNws3dDL3" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              <node concept="liA8E" id="6CS$e10CUPl" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+                <node concept="1bVj0M" id="6CS$e10CURH" role="37wK5m">
+                  <node concept="3clFbS" id="6CS$e10CURI" role="1bW5cS">
+                    <node concept="3clFbF" id="6CS$e10DcH5" role="3cqZAp">
+                      <node concept="2OqwBi" id="6CS$e10CRlP" role="3clFbG">
+                        <node concept="2YIFZM" id="6CS$e10CRgi" role="2Oq$k0">
+                          <ref role="1Pybhc" to="y38:3dEPKBAxz0O" resolve="RefactoringAccess" />
+                          <ref role="37wK5l" to="y38:1dH5fOG2bPt" resolve="getInstance" />
+                        </node>
+                        <node concept="liA8E" id="6CS$e10CRuz" role="2OqNvi">
+                          <ref role="37wK5l" to="y38:10tOJLdhm35" resolve="getRefactoringByClassName" />
+                          <node concept="37vLTw" id="6CS$e10CShr" role="37wK5m">
+                            <ref role="3cqZAo" node="5lCz6ko41Hr" resolve="refName" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

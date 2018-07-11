@@ -6,14 +6,14 @@ import jetbrains.mps.refactoring.framework.IRefactoring;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration__BehaviorDescriptor;
 
 /*package*/ class ActionLookupUtils {
   public static IRefactoring getRefactoring(SRepository repository, SNodeReference refactoringReference) {
     SNode refactoringNode = (SNode) refactoringReference.resolve(repository);
-    return RefactoringUtil.getRefactoringByClassName(INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(refactoringNode));
+    return RefactoringAccess.getInstance().getRefactoringByClassName(INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(refactoringNode));
   }
   public static String getIntentionId(SRepository repository, SNodeReference intentionReference) {
     SNode intentionNode = (SNode) intentionReference.resolve(repository);

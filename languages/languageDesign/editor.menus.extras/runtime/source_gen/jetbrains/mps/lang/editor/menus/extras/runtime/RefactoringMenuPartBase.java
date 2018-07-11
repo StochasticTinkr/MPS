@@ -7,7 +7,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.refactoring.framework.IRefactoring;
-import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class RefactoringMenuPartBase extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -20,7 +20,7 @@ public abstract class RefactoringMenuPartBase extends SingleItemMenuPart<Transfo
   @Nullable
   @Override
   protected TransformationMenuItem createItem(TransformationMenuContext context) {
-    IRefactoring refactoring = RefactoringUtil.getRefactoringByClassName(myRefactoringClassName);
+    IRefactoring refactoring = RefactoringAccess.getInstance().getRefactoringByClassName(myRefactoringClassName);
     if (refactoring == null) {
       return null;
     }

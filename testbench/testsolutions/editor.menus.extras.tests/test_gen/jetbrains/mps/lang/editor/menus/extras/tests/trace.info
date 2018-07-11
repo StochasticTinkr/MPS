@@ -100,12 +100,12 @@
   <root nodeRef="r:a1e8c439-e997-416b-a5dc-df7c3fd41b00(jetbrains.mps.lang.editor.menus.extras.tests@tests)/6820996345401210353">
     <file name="ActionLookupUtils.java">
       <node id="6820996345401211174" at="14,106,15,77" concept="3" />
-      <node id="6820996345401213056" at="15,77,16,132" concept="4" />
+      <node id="1161316260002561818" at="15,77,16,148" concept="4" />
       <node id="6820996345401634745" at="18,98,19,73" concept="3" />
       <node id="6820996345401641066" at="19,73,20,116" concept="4" />
       <node id="6820996345401210443" at="14,0,18,0" concept="7" trace="getRefactoring#(Lorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/model/SNodeReference;)Ljetbrains/mps/refactoring/framework/IRefactoring;" />
       <node id="6820996345401630806" at="18,0,22,0" concept="7" trace="getIntentionId#(Lorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/model/SNodeReference;)Ljava/lang/String;" />
-      <scope id="6820996345401210446" at="14,106,16,132">
+      <scope id="6820996345401210446" at="14,106,16,148">
         <var name="refactoringNode" id="6820996345401211175" />
       </scope>
       <scope id="6820996345401630809" at="18,98,20,116">

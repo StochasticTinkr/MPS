@@ -1184,7 +1184,7 @@
       <node id="8784230320738943353" at="43,30,44,35" concept="3" />
       <node id="8784230320738943353" at="44,35,45,40" concept="3" />
       <node id="8784230320738943353" at="48,32,49,16" concept="10" />
-      <node id="8784230320738943419" at="52,87,53,194" concept="10" />
+      <node id="8784230320738943419" at="52,87,53,157" concept="10" />
       <node id="8784230320738943353" at="56,89,57,85" concept="3" />
       <node id="8784230320738943353" at="61,53,62,19" concept="10" />
       <node id="8784230320738943354" at="64,5,65,57" concept="9" />
@@ -1257,7 +1257,7 @@
       <node id="8784230320738943353" at="59,0,90,0" concept="8" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="8784230320738943353" at="90,0,142,0" concept="8" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <scope id="8784230320738943353" at="48,32,49,16" />
-      <scope id="8784230320738943418" at="52,87,53,194" />
+      <scope id="8784230320738943418" at="52,87,53,157" />
       <scope id="8784230320738943353" at="56,89,57,85" />
       <scope id="8784230320738943353" at="61,53,62,19" />
       <scope id="8784230320738943354" at="66,215,67,20" />
