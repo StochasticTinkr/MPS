@@ -2494,7 +2494,7 @@
     <property role="TrG5h" value="MacrosSwitch_KeyMap" />
     <property role="2XBEHb" value="true" />
     <node concept="2PxR9H" id="gITvOZe" role="2QnnpI">
-      <property role="2PxWOX" value="create template fragmet" />
+      <property role="2PxWOX" value="create template fragment" />
       <property role="3ArL7W" value="true" />
       <node concept="2Py5lD" id="gITvOZf" role="2PyaAO">
         <property role="2PWKIS" value="VK_F" />
