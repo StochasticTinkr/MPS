@@ -41,7 +41,6 @@
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="cmfw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.event(MPS.OpenAPI/)" />
     <import index="j9co" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.event(MPS.Core/)" />
-    <import index="v23q" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi(MPS.IDEA/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="qqrq" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.components(MPS.IDEA/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
@@ -3422,6 +3421,52 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="10tOJLdiBZo" role="jymVt" />
+    <node concept="3clFb_" id="10tOJLdiC$A" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getAllRefactorings" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3Tmbuc" id="10tOJLdiC$C" role="1B3o_S" />
+      <node concept="3uibUv" id="10tOJLdiC$D" role="3clF45">
+        <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+        <node concept="3uibUv" id="10tOJLdiC$E" role="11_B2D">
+          <ref role="3uigEE" to="ge2m:4a0HOMfn9$I" resolve="IRefactoring" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="10tOJLdiC$H" role="3clF47">
+        <node concept="3SKdUt" id="10tOJLdiNaD" role="3cqZAp">
+          <node concept="3SKdUq" id="10tOJLdiNaF" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME idea is to collect all refactoring in the code that have access to MPS Platform and its LanguageRegistry." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="10tOJLdiOu3" role="3cqZAp">
+          <node concept="3SKdUq" id="10tOJLdiOu5" role="3SKWNk">
+            <property role="3SKdUp" value="      For the time being, left old code as we need to generate refactoring aspect first (to use LanguageRuntime, not aspect models as it's now)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="10tOJLdj4v5" role="3cqZAp">
+          <node concept="3SKdUq" id="10tOJLdj4v7" role="3SKWNk">
+            <property role="3SKdUp" value="      The only reason I have this method here, not in both RefactoringAccessImpl subclasses as it needs IDEA plugin to modify one of them, and I'm lazy to" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="10tOJLdj4WP" role="3cqZAp">
+          <node concept="3SKdUq" id="10tOJLdj4WR" role="3SKWNk">
+            <property role="3SKdUp" value="      deal with its installation right now" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="10tOJLdiL5b" role="3cqZAp">
+          <node concept="2YIFZM" id="10tOJLdiLRj" role="3cqZAk">
+            <ref role="1Pybhc" to="ge2m:4a0HOMfn6V_" resolve="RefactoringUtil" />
+            <ref role="37wK5l" to="ge2m:4a0HOMfn6Xq" resolve="getAllRefactorings" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="10tOJLdiC$I" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>

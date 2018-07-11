@@ -80,6 +80,7 @@
   <dependency className="jetbrains.mps.refactoring.framework.RefactoringUtil" file="RefactoringUtil.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalAccessException" />
     <classNode dependClassName="java.lang.InstantiationException" />
     <classNode dependClassName="java.lang.NoSuchMethodException" />
@@ -89,7 +90,6 @@
     <classNode dependClassName="java.lang.reflect.Constructor" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
@@ -99,10 +99,12 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
+    <classNode dependClassName="jetbrains.mps.refactoring.runtime.access.RefactoringAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />

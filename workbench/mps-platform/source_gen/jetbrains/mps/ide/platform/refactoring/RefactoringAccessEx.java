@@ -9,6 +9,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchTask;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import java.util.Collection;
+import jetbrains.mps.refactoring.framework.IRefactoring;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
 
 public abstract class RefactoringAccessEx extends RefactoringAccess {
   private RefactoringFacadeImpl myRefactoringFacade;
@@ -36,5 +39,14 @@ public abstract class RefactoringAccessEx extends RefactoringAccess {
 
   protected static void setInstance(RefactoringAccessEx instance) {
     RefactoringAccess.setInstance(instance);
+  }
+
+  @Override
+  protected Collection<IRefactoring> getAllRefactorings() {
+    // FIXME idea is to collect all refactoring in the code that have access to MPS Platform and its LanguageRegistry. 
+    //       For the time being, left old code as we need to generate refactoring aspect first (to use LanguageRuntime, not aspect models as it's now) 
+    //       The only reason I have this method here, not in both RefactoringAccessImpl subclasses as it needs IDEA plugin to modify one of them, and I'm lazy to 
+    //       deal with its installation right now 
+    return RefactoringUtil.getAllRefactorings();
   }
 }
