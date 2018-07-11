@@ -6095,21 +6095,54 @@
             </node>
             <node concept="2ShNRf" id="1TFxXPONzDc" role="33vP2m">
               <node concept="1pGfFk" id="1TFxXPONzDd" role="2ShVmc">
-                <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.io.File,java.lang.String)" resolve="File" />
-                <node concept="2ShNRf" id="1TFxXPONzDe" role="37wK5m">
-                  <node concept="1pGfFk" id="1TFxXPONzDf" role="2ShVmc">
-                    <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="File" />
-                    <node concept="2YIFZM" id="1TFxXPONzDg" role="37wK5m">
-                      <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
-                      <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+                <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                <node concept="3cpWs3" id="4CyoKIoxFtx" role="37wK5m">
+                  <node concept="Xl_RD" id="4CyoKIoxFtH" role="3uHU7w">
+                    <property role="Xl_RC" value="mps-idea-integration-plugin.jar" />
+                  </node>
+                  <node concept="3cpWs3" id="4CyoKIoxDWe" role="3uHU7B">
+                    <node concept="3cpWs3" id="4CyoKIoxCUd" role="3uHU7B">
+                      <node concept="3cpWs3" id="4CyoKIoxBqr" role="3uHU7B">
+                        <node concept="3cpWs3" id="4CyoKIoxACz" role="3uHU7B">
+                          <node concept="3cpWs3" id="4CyoKIox_fu" role="3uHU7B">
+                            <node concept="3cpWs3" id="4CyoKIox$1z" role="3uHU7B">
+                              <node concept="3cpWs3" id="4CyoKIoxwz2" role="3uHU7B">
+                                <node concept="2YIFZM" id="1TFxXPONzDg" role="3uHU7B">
+                                  <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
+                                  <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+                                </node>
+                                <node concept="10M0yZ" id="4CyoKIoxyWF" role="3uHU7w">
+                                  <ref role="3cqZAo" to="guwi:~File.separatorChar" resolve="separatorChar" />
+                                  <ref role="1PxDUh" to="guwi:~File" resolve="File" />
+                                </node>
+                              </node>
+                              <node concept="Xl_RD" id="4CyoKIox$1J" role="3uHU7w">
+                                <property role="Xl_RC" value="plugins" />
+                              </node>
+                            </node>
+                            <node concept="10M0yZ" id="4CyoKIox_ms" role="3uHU7w">
+                              <ref role="1PxDUh" to="guwi:~File" resolve="File" />
+                              <ref role="3cqZAo" to="guwi:~File.separatorChar" resolve="separatorChar" />
+                            </node>
+                          </node>
+                          <node concept="Xl_RD" id="4CyoKIoxAZX" role="3uHU7w">
+                            <property role="Xl_RC" value="ideaIntegration" />
+                          </node>
+                        </node>
+                        <node concept="10M0yZ" id="4CyoKIoxBTp" role="3uHU7w">
+                          <ref role="3cqZAo" to="guwi:~File.separatorChar" resolve="separatorChar" />
+                          <ref role="1PxDUh" to="guwi:~File" resolve="File" />
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="4CyoKIoxCUp" role="3uHU7w">
+                        <property role="Xl_RC" value="IDEAPlugin" />
+                      </node>
                     </node>
-                    <node concept="Xl_RD" id="1TFxXPONzDh" role="37wK5m">
-                      <property role="Xl_RC" value="plugin" />
+                    <node concept="10M0yZ" id="4CyoKIoxEsv" role="3uHU7w">
+                      <ref role="3cqZAo" to="guwi:~File.separatorChar" resolve="separatorChar" />
+                      <ref role="1PxDUh" to="guwi:~File" resolve="File" />
                     </node>
                   </node>
-                </node>
-                <node concept="Xl_RD" id="1TFxXPONzDi" role="37wK5m">
-                  <property role="Xl_RC" value="MPSPlugin.jar" />
                 </node>
               </node>
             </node>

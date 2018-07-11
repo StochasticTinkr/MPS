@@ -53,7 +53,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    File pluginFile = new File(new File(PathManager.getHomePath(), "plugin"), "MPSPlugin.jar");
+    File pluginFile = new File(PathManager.getHomePath() + File.separatorChar + "plugins" + File.separatorChar + "ideaIntegration" + File.separatorChar + "IDEAPlugin" + File.separatorChar + "mps-idea-integration-plugin.jar");
     File targetDir = InstallIDEAPlugin_Action.this.getTargetDir(event);
     if (targetDir == null) {
       return;
