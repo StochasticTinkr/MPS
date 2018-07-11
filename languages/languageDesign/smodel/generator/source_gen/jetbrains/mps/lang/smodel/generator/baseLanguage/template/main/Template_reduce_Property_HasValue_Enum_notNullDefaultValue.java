@@ -46,7 +46,7 @@ public class Template_reduce_Property_HasValue_Enum_notNullDefaultValue extends 
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_11461769815950(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_9qfqxb_b0a0c0d0c0f));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_23_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_9qfqxb_b0a0c0d0c0f));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_9qfqxb_b0a0c0d0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/1146176981595", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -55,7 +55,7 @@ public class Template_reduce_Property_HasValue_Enum_notNullDefaultValue extends 
       }
       {
         Collection<SNode> tlist4 = null;
-        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_65067506103196202130(new SourceSubstituteMacroNodeContext(context1, includeMacro_9qfqxb_b0a0a1a4a2a5));
+        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_23_1(new SourceSubstituteMacroNodeContext(context1, includeMacro_9qfqxb_b0a0a1a4a2a5));
         TemplateContext context2 = context1.subContext(null, callInputNode4);
         if (callInputNode4 != null) {
           tlist4 = new Template_reduce_PropertyDeclaration_SProperty().apply(context2);
@@ -67,7 +67,7 @@ public class Template_reduce_Property_HasValue_Enum_notNullDefaultValue extends 
       }
       {
         Collection<SNode> tlist6 = null;
-        final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_11461769815990(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_9qfqxb_b0a0c0f0c0f));
+        final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_23_2(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_9qfqxb_b0a0c0f0c0f));
         tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_9qfqxb_b0a0c0f0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/1146176981599", context1);
         for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
           tnode1.addChild(myAggregationLinks[0], child7);
@@ -77,7 +77,7 @@ public class Template_reduce_Property_HasValue_Enum_notNullDefaultValue extends 
       {
         final SNode tnode8 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode8, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_11461773728190(new PropertyMacroContext(context1, "_default_value_", propertyMacro_9qfqxb_c0a0c0a0b0g0c0f))));
+          SNodeAccessUtil.setProperty(tnode8, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_23_0(new PropertyMacroContext(context1, "_default_value_", propertyMacro_9qfqxb_c0a0c0a0b0g0c0f))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode8);

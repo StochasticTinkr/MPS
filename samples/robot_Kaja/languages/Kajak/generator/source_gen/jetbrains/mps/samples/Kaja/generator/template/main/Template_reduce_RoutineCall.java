@@ -42,7 +42,7 @@ public class Template_reduce_RoutineCall extends TemplateDeclarationBase {
           environment.resolve(new RefResolver(tnode2, myAssociationLinks[0], context1, new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039701315"), "bar") {
             @Override
             public Object resolve() {
-              return QueriesGenerated.referenceMacro_GetReferent_49231304120732502670(createQueryContext());
+              return QueriesGenerated.referenceMacro_GetReferent_16_0(createQueryContext());
             }
           });
         } finally {

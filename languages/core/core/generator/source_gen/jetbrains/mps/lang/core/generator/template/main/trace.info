@@ -12,18 +12,18 @@
   </root>
   <root nodeRef="r:0380cd05-d916-4fe4-be33-254df1e34e6e(jetbrains.mps.lang.core.generator.template.main@generator)/9100558062448742580">
     <file name="QueriesGenerated.java">
-      <node id="9100558062448744172" at="29,109,30,197" concept="1" />
-      <node id="7943366081655311325" at="32,100,33,248" concept="1" />
+      <node id="9100558062448744172" at="29,92,30,197" concept="1" />
+      <node id="7943366081655311325" at="32,77,33,248" concept="1" />
       <node id="9100558062448742580" at="37,14,38,73" concept="0" />
-      <node id="9100558062448742580" at="57,15,58,77" concept="1" />
+      <node id="9100558062448742580" at="57,15,58,54" concept="1" />
       <node id="9100558062448744130" at="66,14,67,73" concept="0" />
-      <node id="9100558062448744130" at="86,15,87,76" concept="1" />
-      <node id="9100558062448744130" at="29,0,32,0" concept="2" trace="sourceNodeQuery_91005580624487441130#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="7943366081655310793" at="32,0,35,0" concept="2" trace="mappingConfiguration_Condition_zu1o_a#(Ljetbrains/mps/generator/template/TemplateQueryContext;)Z" />
-      <scope id="9100558062448744131" at="29,109,30,197" />
-      <scope id="7943366081655310794" at="32,100,33,248" />
-      <scope id="9100558062448742580" at="57,15,58,77" />
-      <scope id="9100558062448744130" at="86,15,87,76" />
+      <node id="9100558062448744130" at="86,15,87,59" concept="1" />
+      <node id="9100558062448744130" at="29,0,32,0" concept="2" trace="sourceNodeQuery_0_0#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7943366081655310793" at="32,0,35,0" concept="2" trace="mc_Condition_0#(Ljetbrains/mps/generator/template/TemplateQueryContext;)Z" />
+      <scope id="9100558062448744131" at="29,92,30,197" />
+      <scope id="7943366081655310794" at="32,77,33,248" />
+      <scope id="9100558062448742580" at="57,15,58,54" />
+      <scope id="9100558062448744130" at="86,15,87,59" />
       <scope id="9100558062448744130" at="29,0,32,0">
         <var name="_context" id="9100558062448744130" />
       </scope>

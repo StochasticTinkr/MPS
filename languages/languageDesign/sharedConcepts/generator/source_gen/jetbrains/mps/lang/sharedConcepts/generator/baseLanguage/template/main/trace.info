@@ -11,12 +11,12 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bd(jetbrains.mps.lang.sharedConcepts.generator.baseLanguage.template.main@generator)/1161623876737">
     <file name="QueriesGenerated.java">
-      <node id="1199881507907" at="22,93,23,129" concept="1" />
+      <node id="1199881507907" at="22,83,23,129" concept="1" />
       <node id="1172253951374" at="27,14,28,67" concept="0" />
-      <node id="1172253951374" at="47,15,48,68" concept="1" />
-      <node id="1199881492477" at="22,0,25,0" concept="2" trace="baseMappingRule_Condition_a4#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
-      <scope id="1199881492478" at="22,93,23,129" />
-      <scope id="1172253951374" at="47,15,48,68" />
+      <node id="1172253951374" at="47,15,48,58" concept="1" />
+      <node id="1199881492477" at="22,0,25,0" concept="2" trace="rule_Condition_0_0#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
+      <scope id="1199881492478" at="22,83,23,129" />
+      <scope id="1172253951374" at="47,15,48,58" />
       <scope id="1199881492477" at="22,0,25,0">
         <var name="_context" id="1199881492477" />
       </scope>

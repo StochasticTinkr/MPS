@@ -45,7 +45,7 @@ public class Template_reduce_LocalBehaviorMethodCall extends TemplateDeclaration
   protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    final Object varValue1 = QueriesGenerated.insertMacro_varValue_74029172977655229190(new TemplateVarContext(context, varMacroRef_p4fqpg_b0a0a2a5));
+    final Object varValue1 = QueriesGenerated.varMacro_Value_4_0(new TemplateVarContext(context, varMacroRef_p4fqpg_b0a0a2a5));
     TemplateContext context1 = context.withVariable("var:methodDeclaration", varValue1);
     final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
     try {
@@ -57,13 +57,13 @@ public class Template_reduce_LocalBehaviorMethodCall extends TemplateDeclaration
           TemplateContext context3 = context2.subContext();
           {
             Collection<SNode> tlist4 = null;
-            if (QueriesGenerated.ifMacro_Condition_82286999609840128170(new IfMacroContext(context3, ifMacroRef_p4fqpg_b0a0b0c0b0b0f0f))) {
+            if (QueriesGenerated.ifMacro_Condition_4_0(new IfMacroContext(context3, ifMacroRef_p4fqpg_b0a0b0c0b0b0f0f))) {
               final SNode tnode5 = environment.createOutputNode(myConcepts[2]);
               try {
                 environment.resolve(new RefResolver(tnode5, myAssociationLinks[1], context3, new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "8228699960984014811"), "thisNode") {
                   @Override
                   public Object resolve() {
-                    return QueriesGenerated.referenceMacro_GetReferent_82286999609840128170(createQueryContext());
+                    return QueriesGenerated.referenceMacro_GetReferent_4_0(createQueryContext());
                   }
                 });
               } finally {
@@ -71,13 +71,13 @@ public class Template_reduce_LocalBehaviorMethodCall extends TemplateDeclaration
               tlist4 = TemplateUtil.singletonList(tnode5);
             } else {
               Collection<SNode> tlist6 = null;
-              if (QueriesGenerated.ifMacro_Condition_68627659795253572740(new IfMacroContext(context3, ifMacroRef_p4fqpg_b0a0b0a1a2a1a1a5a5))) {
+              if (QueriesGenerated.ifMacro_Condition_4_1(new IfMacroContext(context3, ifMacroRef_p4fqpg_b0a0b0a1a2a1a1a5a5))) {
                 final SNode tnode7 = environment.createOutputNode(myConcepts[2]);
                 try {
                   environment.resolve(new RefResolver(tnode7, myAssociationLinks[1], context3, new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "6862765979525357275"), "thisConcept") {
                     @Override
                     public Object resolve() {
-                      return QueriesGenerated.referenceMacro_GetReferent_68627659795253572740(createQueryContext());
+                      return QueriesGenerated.referenceMacro_GetReferent_4_1(createQueryContext());
                     }
                   });
                 } finally {
@@ -93,7 +93,7 @@ public class Template_reduce_LocalBehaviorMethodCall extends TemplateDeclaration
                       environment.resolve(new RefResolver(tnode9, myAssociationLinks[1], context4, new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "7043879193973092537"), "thisNode") {
                         @Override
                         public Object resolve() {
-                          return QueriesGenerated.referenceMacro_GetReferent_79772323846868246480(createQueryContext());
+                          return QueriesGenerated.referenceMacro_GetReferent_4_2(createQueryContext());
                         }
                       });
                     } finally {
@@ -123,7 +123,7 @@ public class Template_reduce_LocalBehaviorMethodCall extends TemplateDeclaration
           }
           {
             final List<SNode> tlist12 = new ArrayList<SNode>();
-            final Iterable<SNode> loopList12 = QueriesGenerated.sourceNodesQuery_a0b0a0a0a(new SourceSubstituteMacroNodesContext(context3, loopMacroRef_p4fqpg_b0a0a1a3a1a1a5a5));
+            final Iterable<SNode> loopList12 = QueriesGenerated.sourceNodesQuery_4_0(new SourceSubstituteMacroNodesContext(context3, loopMacroRef_p4fqpg_b0a0a1a3a1a1a5a5));
             int loopIndex_argCounter_12 = 0;
             for (SNode itnode12 : loopList12) {
               if (itnode12 == null) {
@@ -132,9 +132,9 @@ public class Template_reduce_LocalBehaviorMethodCall extends TemplateDeclaration
               TemplateContext context5 = context3.subContext(itnode12);
               context5 = context5.withVariable("cv:argCounter", loopIndex_argCounter_12++);
               Collection<SNode> tlist13 = null;
-              if (QueriesGenerated.ifMacro_Condition_3600459286034271250(new IfMacroContext(context5, ifMacroRef_p4fqpg_b0a0e0d0d0b0b0f0f))) {
+              if (QueriesGenerated.ifMacro_Condition_4_2(new IfMacroContext(context5, ifMacroRef_p4fqpg_b0a0e0d0d0b0b0f0f))) {
                 Collection<SNode> tlist14 = null;
-                final SNode copySrcInput14 = QueriesGenerated.sourceNodeQuery_3600459286034271250(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_p4fqpg_b0a0c0e0d0d0b0b0f0f));
+                final SNode copySrcInput14 = QueriesGenerated.sourceNodeQuery_4_2(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_p4fqpg_b0a0c0e0d0d0b0b0f0f));
                 tlist14 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput14), copySrcMacro_p4fqpg_b0a0c0e0d0d0b0b0f0f, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/360045928603427125", context5);
                 tlist13 = tlist14;
               } else {
@@ -147,7 +147,7 @@ public class Template_reduce_LocalBehaviorMethodCall extends TemplateDeclaration
                       TemplateContext context7 = context6.subContext();
                       {
                         Collection<SNode> tlist17 = null;
-                        final SNode copySrcInput17 = QueriesGenerated.sourceNodeQuery_3600459286034271990(new SourceSubstituteMacroNodeContext(context7, copySrcMacro_p4fqpg_b0a0c0b0b0b0b0a4a3a3a1a1a5a5));
+                        final SNode copySrcInput17 = QueriesGenerated.sourceNodeQuery_4_0(new SourceSubstituteMacroNodeContext(context7, copySrcMacro_p4fqpg_b0a0c0b0b0b0b0a4a3a3a1a1a5a5));
                         tlist17 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput17), copySrcMacro_p4fqpg_b0a0c0b0b0b0b0a4a3a3a1a1a5a5, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/360045928603427199", context7);
                         for (SNode child18 : TemplateUtil.asNotNull(tlist17)) {
                           tnode16.addChild(myAggregationLinks[3], child18);
@@ -156,7 +156,7 @@ public class Template_reduce_LocalBehaviorMethodCall extends TemplateDeclaration
                       }
                       {
                         Collection<SNode> tlist19 = null;
-                        final SNode copySrcInput19 = QueriesGenerated.sourceNodeQuery_3600459286034272050(new SourceSubstituteMacroNodeContext(context7, copySrcMacro_p4fqpg_b0a0c0c0b0b0b0a4a3a3a1a1a5a5));
+                        final SNode copySrcInput19 = QueriesGenerated.sourceNodeQuery_4_1(new SourceSubstituteMacroNodeContext(context7, copySrcMacro_p4fqpg_b0a0c0c0b0b0b0a4a3a3a1a1a5a5));
                         tlist19 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput19), copySrcMacro_p4fqpg_b0a0c0c0b0b0b0a4a3a3a1a1a5a5, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/360045928603427205", context7);
                         for (SNode child20 : TemplateUtil.asNotNull(tlist19)) {
                           tnode16.addChild(myAggregationLinks[4], child20);
@@ -189,8 +189,8 @@ public class Template_reduce_LocalBehaviorMethodCall extends TemplateDeclaration
       {
         final SNode tnode22 = environment.createOutputNode(myConcepts[5]);
         try {
-          SNodeAccessUtil.setProperty(tnode22, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_82286999609866441880(new PropertyMacroContext(context2, "A_BehaviorDescriptor", propertyMacro_p4fqpg_c0a0c0a0b0c0f0f))));
-          SNodeAccessUtil.setProperty(tnode22, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_82286999609866441881(new PropertyMacroContext(context2, "fooMethod", propertyMacro_p4fqpg_c0a0c0b0b0c0f0f))));
+          SNodeAccessUtil.setProperty(tnode22, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_4_0(new PropertyMacroContext(context2, "A_BehaviorDescriptor", propertyMacro_p4fqpg_c0a0c0a0b0c0f0f))));
+          SNodeAccessUtil.setProperty(tnode22, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_4_1(new PropertyMacroContext(context2, "fooMethod", propertyMacro_p4fqpg_c0a0c0b0b0c0f0f))));
           TemplateContext context8 = context2.subContext();
           {
             final SNode tnode23 = environment.createOutputNode(myConcepts[6]);
@@ -199,7 +199,7 @@ public class Template_reduce_LocalBehaviorMethodCall extends TemplateDeclaration
               TemplateContext context9 = context8.subContext();
               {
                 Collection<SNode> tlist24 = null;
-                final SNode copySrcInput24 = QueriesGenerated.sourceNodeQuery_82286999609866463530(new SourceSubstituteMacroNodeContext(context9, copySrcMacro_p4fqpg_b0a0c0c0b0d0b0c0f0f));
+                final SNode copySrcInput24 = QueriesGenerated.sourceNodeQuery_4_3(new SourceSubstituteMacroNodeContext(context9, copySrcMacro_p4fqpg_b0a0c0c0b0d0b0c0f0f));
                 tlist24 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput24), copySrcMacro_p4fqpg_b0a0c0c0b0d0b0c0f0f, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/8228699960986646353", context9);
                 for (SNode child25 : TemplateUtil.asNotNull(tlist24)) {
                   tnode23.addChild(myAggregationLinks[6], child25);

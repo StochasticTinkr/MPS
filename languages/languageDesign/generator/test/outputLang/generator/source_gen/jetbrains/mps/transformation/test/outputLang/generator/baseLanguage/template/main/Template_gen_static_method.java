@@ -254,7 +254,7 @@ public class Template_gen_static_method extends TemplateDeclarationBase {
                   environment.resolve(new RefResolver(tnode6, myAssociationLinks[1], context3, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5955416080080987362"), "fact") {
                     @Override
                     public Object resolve() {
-                      return QueriesGenerated.referenceMacro_GetReferent_49231304120714527620(createQueryContext());
+                      return QueriesGenerated.referenceMacro_GetReferent_6_0(createQueryContext());
                     }
                   });
                   TemplateContext context4 = context3.subContext();

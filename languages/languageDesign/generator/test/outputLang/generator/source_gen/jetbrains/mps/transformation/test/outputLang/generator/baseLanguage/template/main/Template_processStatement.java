@@ -75,7 +75,7 @@ public class Template_processStatement extends TemplateDeclarationBase {
               {
                 final SNode tnode4 = environment.createOutputNode(myConcepts[3]);
                 try {
-                  SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_26813058942886950680(new PropertyMacroContext(context3, "aa", propertyMacro_iblz6q_c0a0c0a0b0b0b0b0b0b0c0m))));
+                  SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_3_0(new PropertyMacroContext(context3, "aa", propertyMacro_iblz6q_c0a0c0a0b0b0b0b0b0b0c0m))));
                 } finally {
                 }
                 tnode3.addChild(myAggregationLinks[0], tnode4);
@@ -84,7 +84,7 @@ public class Template_processStatement extends TemplateDeclarationBase {
               {
                 final SNode tnode5 = environment.createOutputNode(myConcepts[3]);
                 try {
-                  SNodeAccessUtil.setProperty(tnode5, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_21638196959132807420(new PropertyMacroContext(context3, "ss", propertyMacro_iblz6q_c0a0c0a0b0c0b0b0b0b0c0m))));
+                  SNodeAccessUtil.setProperty(tnode5, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_3_1(new PropertyMacroContext(context3, "ss", propertyMacro_iblz6q_c0a0c0a0b0c0b0b0b0b0c0m))));
                 } finally {
                 }
                 tnode3.addChild(myAggregationLinks[0], tnode5);
@@ -102,7 +102,7 @@ public class Template_processStatement extends TemplateDeclarationBase {
               {
                 final SNode tnode7 = environment.createOutputNode(myConcepts[5]);
                 try {
-                  SNodeAccessUtil.setProperty(tnode7, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_26813058942886950330(new PropertyMacroContext(context4, "nvar", propertyMacro_iblz6q_c0a0c0a0b0b0b0c0b0b0c0m))));
+                  SNodeAccessUtil.setProperty(tnode7, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_3_2(new PropertyMacroContext(context4, "nvar", propertyMacro_iblz6q_c0a0c0a0b0b0b0c0b0b0c0m))));
                   TemplateContext context5 = context4.subContext();
                   {
                     final SNode tnode8 = environment.createOutputNode(myConcepts[6]);
@@ -114,7 +114,7 @@ public class Template_processStatement extends TemplateDeclarationBase {
                   }
                   {
                     Collection<SNode> tlist9 = null;
-                    final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_26813058942886950530(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_iblz6q_b0a0c0d0b0b0b0c0b0b0c0m));
+                    final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_3_0(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_iblz6q_b0a0c0d0b0b0b0c0b0b0c0m));
                     tlist9 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput9), copySrcMacro_iblz6q_b0a0c0d0b0b0b0c0b0b0c0m, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288695053", context5);
                     for (SNode child10 : TemplateUtil.asNotNull(tlist9)) {
                       tnode7.addChild(myAggregationLinks[3], child10);

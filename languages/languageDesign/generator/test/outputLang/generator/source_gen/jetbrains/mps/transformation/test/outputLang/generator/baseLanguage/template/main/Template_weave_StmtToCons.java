@@ -41,7 +41,7 @@ public class Template_weave_StmtToCons extends TemplateDeclarationBase {
       {
         final SNode tnode2 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode2, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_64589248700760778700(new PropertyMacroContext(context1, "to ctor ", propertyMacro_aa0u9n_c0a0c0a0b0b0c0f))));
+          SNodeAccessUtil.setProperty(tnode2, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_9_0(new PropertyMacroContext(context1, "to ctor ", propertyMacro_aa0u9n_c0a0c0a0b0b0c0f))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode2);

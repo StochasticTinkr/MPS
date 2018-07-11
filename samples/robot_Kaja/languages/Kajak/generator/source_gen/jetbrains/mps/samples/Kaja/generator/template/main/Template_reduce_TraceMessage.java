@@ -49,7 +49,7 @@ public class Template_reduce_TraceMessage extends TemplateDeclarationBase {
           {
             final SNode tnode3 = environment.createOutputNode(myConcepts[2]);
             try {
-              SNodeAccessUtil.setProperty(tnode3, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_32106973202737811810(new PropertyMacroContext(context2, "message", propertyMacro_zb4n4r_c0a0c0a0b0c0b0b0c0f))));
+              SNodeAccessUtil.setProperty(tnode3, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_25_0(new PropertyMacroContext(context2, "message", propertyMacro_zb4n4r_c0a0c0a0b0c0b0b0c0f))));
             } finally {
             }
             tnode2.addChild(myAggregationLinks[0], tnode3);

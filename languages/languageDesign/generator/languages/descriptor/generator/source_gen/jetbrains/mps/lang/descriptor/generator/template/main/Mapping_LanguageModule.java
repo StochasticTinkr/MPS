@@ -34,7 +34,7 @@ public class Mapping_LanguageModule extends MapConfigBase implements TemplateMap
   }
   @Override
   public boolean isApplicable(@NotNull ITemplateGenerator generator) {
-    return QueriesGenerated.mappingConfiguration_Condition_nsasqq_a(new TemplateQueryContext(getMappingNode(), generator));
+    return QueriesGenerated.mc_Condition_4(new TemplateQueryContext(getMappingNode(), generator));
   }
   @Override
   public Collection<TemplateCreateRootRule> getCreateRules() {

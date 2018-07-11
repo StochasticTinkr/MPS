@@ -11,27 +11,27 @@
   </root>
   <root nodeRef="r:3798d2f2-a073-4371-ba96-7ecb5095570e(jetbrains.mps.transformation.test.errorReporting.generator.template.main@generator)/7287346816896111111">
     <file name="QueriesGenerated.java">
-      <node id="7287346816896205625" at="28,93,29,194" concept="1" />
-      <node id="7287346816896226967" at="31,110,32,16" concept="1" />
-      <node id="6145560071556217187" at="34,110,35,61" concept="1" />
+      <node id="7287346816896205625" at="28,83,29,194" concept="1" />
+      <node id="7287346816896226967" at="31,94,32,16" concept="1" />
+      <node id="6145560071556217187" at="34,94,35,61" concept="1" />
       <node id="7287346816896128674" at="39,14,40,74" concept="0" />
       <node id="6145560071556216090" at="40,74,41,74" concept="0" />
-      <node id="7287346816896128674" at="78,15,79,68" concept="1" />
+      <node id="7287346816896128674" at="78,15,79,58" concept="1" />
       <node id="6145560071556216090" at="80,15,81,22" concept="1" />
-      <node id="7287346816896128674" at="89,15,90,84" concept="1" />
-      <node id="6145560071556216090" at="91,15,92,84" concept="1" />
+      <node id="7287346816896128674" at="89,15,90,68" concept="1" />
+      <node id="6145560071556216090" at="91,15,92,68" concept="1" />
       <node id="7287346816896128674" at="102,15,103,22" concept="1" />
       <node id="6145560071556216090" at="104,15,105,22" concept="1" />
-      <node id="7287346816896135373" at="28,0,31,0" concept="2" trace="baseMappingRule_Condition_a0#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
-      <node id="7287346816896128676" at="31,0,34,0" concept="2" trace="weaving_MappingRule_ContextNodeQuery_zu1o_a0#(Ljetbrains/mps/generator/template/WeavingMappingRuleContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6145560071556216092" at="34,0,37,0" concept="2" trace="weaving_MappingRule_ContextNodeQuery_zu1o_a1#(Ljetbrains/mps/generator/template/WeavingMappingRuleContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="7287346816896135374" at="28,93,29,194" />
-      <scope id="7287346816896128677" at="31,110,32,16" />
-      <scope id="6145560071556216093" at="34,110,35,61" />
-      <scope id="7287346816896128674" at="78,15,79,68" />
+      <node id="7287346816896135373" at="28,0,31,0" concept="2" trace="rule_Condition_0_0#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
+      <node id="7287346816896128676" at="31,0,34,0" concept="2" trace="weavingRule_ContextQuery_0_0#(Ljetbrains/mps/generator/template/WeavingMappingRuleContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6145560071556216092" at="34,0,37,0" concept="2" trace="weavingRule_ContextQuery_0_1#(Ljetbrains/mps/generator/template/WeavingMappingRuleContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="7287346816896135374" at="28,83,29,194" />
+      <scope id="7287346816896128677" at="31,94,32,16" />
+      <scope id="6145560071556216093" at="34,94,35,61" />
+      <scope id="7287346816896128674" at="78,15,79,58" />
       <scope id="6145560071556216090" at="80,15,81,22" />
-      <scope id="7287346816896128674" at="89,15,90,84" />
-      <scope id="6145560071556216090" at="91,15,92,84" />
+      <scope id="7287346816896128674" at="89,15,90,68" />
+      <scope id="6145560071556216090" at="91,15,92,68" />
       <scope id="7287346816896128674" at="102,15,103,22" />
       <scope id="6145560071556216090" at="104,15,105,22" />
       <scope id="7287346816896135373" at="28,0,31,0">

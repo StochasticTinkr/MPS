@@ -51,7 +51,7 @@ public class Switch_switch_IPropertyQualifier_toSProperty extends TemplateSwitch
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_17576994766914513250(new SourceSubstituteMacroNodeContext(context, copySrcMacro_2s2e5_b0a0d0b7));
+      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_78_0(new SourceSubstituteMacroNodeContext(context, copySrcMacro_2s2e5_b0a0d0b7));
       tlist1 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput1), copySrcMacro_2s2e5_b0a0d0b7, "tpl/r:00000000-0000-4000-0000-011c89590303/1757699476691451325", context);
       return tlist1;
     }
@@ -64,7 +64,7 @@ public class Switch_switch_IPropertyQualifier_toSProperty extends TemplateSwitch
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_13418609004907704760(new SourceSubstituteMacroNodeContext(context, includeMacro_2s2e5_b0a0a2a1i));
+      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_78_1(new SourceSubstituteMacroNodeContext(context, includeMacro_2s2e5_b0a0a2a1i));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
         tlist1 = new Template_reduce_PropertyDeclaration_SProperty().apply(context1);
