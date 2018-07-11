@@ -116,64 +116,86 @@ public class QueriesGenerated extends QueryProviderBase {
     return GeneratorUtilEx.shallGenerateFunctionToEvaluate(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_62202629732997917630(final PropertyMacroContext _context) {
-    return _context.createUniqueName("createRootRule_Condition_", SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("createRootRule_Condition_" + root.getUserObject("identityKey"), root, false);
   }
   public static Object propertyMacro_GetPropertyValue_62202629733000180730(final PropertyMacroContext _context) {
-    return _context.createUniqueName("dropRootRule_Condition_", null);
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("dropRootRule_Condition_" + root.getUserObject("identityKey"), root, false);
   }
   public static Object propertyMacro_GetPropertyValue_43257293459969888780(final PropertyMacroContext _context) {
-    return _context.createUniqueName("dropAttr_Condition_", SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("dropAttr_Condition_" + root.getUserObject("identityKey"), root, false);
   }
   public static Object propertyMacro_GetPropertyValue_62202629733001520000(final PropertyMacroContext _context) {
-    return _context.createUniqueName("baseMappingRule_Condition_", null);
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("rule_Condition_" + root.getUserObject("identityKey") + '_', root, false);
   }
   public static Object propertyMacro_GetPropertyValue_62202629733002858390(final PropertyMacroContext _context) {
-    return _context.createIndexedName("propertyMacro_GetPropertyValue_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("propertyMacro_GetValue_" + root.getUserObject("identityKey") + '_', root, false);
   }
   public static Object propertyMacro_GetPropertyValue_62202629733004214830(final PropertyMacroContext _context) {
-    return _context.createIndexedName("referenceMacro_GetReferent_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("referenceMacro_GetReferent_" + root.getUserObject("identityKey") + '_', root, false);
   }
   public static Object propertyMacro_GetPropertyValue_48104249278998875930(final PropertyMacroContext _context) {
-    return _context.createUniqueName("referenceReduction_GetReferent_", SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createUniqueName("referenceReduction_GetReferent_" + root.getUserObject("identityKey") + '_', root);
   }
   public static Object propertyMacro_GetPropertyValue_62202629733006806230(final PropertyMacroContext _context) {
-    return _context.createIndexedName("ifMacro_Condition_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("ifMacro_Condition_" + root.getUserObject("identityKey") + '_', root, false);
   }
   public static Object propertyMacro_GetPropertyValue_62202629733007804880(final PropertyMacroContext _context) {
-    return _context.createIndexedName("sourceNodeQuery_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("sourceNodeQuery_" + root.getUserObject("identityKey") + '_', root, false);
   }
   public static Object propertyMacro_GetPropertyValue_80804643610188628290(final PropertyMacroContext _context) {
-    return _context.createUniqueName("templateArgumentQuery_", null);
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("templateArgumentQuery_" + root.getUserObject("identityKey") + '_', root, false);
   }
   public static Object propertyMacro_GetPropertyValue_62202629733008803720(final PropertyMacroContext _context) {
-    return _context.createUniqueName("sourceNodesQuery_", null);
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("sourceNodesQuery_" + root.getUserObject("identityKey") + '_', root, false);
   }
   public static Object propertyMacro_GetPropertyValue_62202629733009802730(final PropertyMacroContext _context) {
-    return _context.createIndexedName("mapSrcMacro_mapper_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("mapSrcMacro_map_" + root.getUserObject("identityKey") + '_', root, false);
   }
   public static Object propertyMacro_GetPropertyValue_62202629733010801960(final PropertyMacroContext _context) {
-    return _context.createIndexedName("mapSrcMacro_post_mapper_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("mapSrcMacro_post_" + root.getUserObject("identityKey") + '_', root, false);
   }
   public static Object propertyMacro_GetPropertyValue_62202629733013130560(final PropertyMacroContext _context) {
-    return _context.createUniqueName("weaving_MappingRule_ContextNodeQuery_", SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("weavingRule_ContextQuery_" + root.getUserObject("identityKey") + '_', root, false);
   }
   public static Object propertyMacro_GetPropertyValue_10210624147173975930(final PropertyMacroContext _context) {
-    return _context.createIndexedName("weaving_AnchorQuery_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("weaving_AnchorQuery_" + root.getUserObject("identityKey") + '_', root, false);
   }
   public static Object propertyMacro_GetPropertyValue_62202629733014116860(final PropertyMacroContext _context) {
-    return _context.createUniqueName("mappingScript_CodeBlock_", null);
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    // there's only 1 code block per script, no need to add more than one identity key, hence sequence from 1 (name sequence left just in case assumption fails) 
+    return _context.createIndexedName("mappingScript_CodeBlock_" + root.getUserObject("identityKey"), null, true);
   }
   public static Object propertyMacro_GetPropertyValue_14340918196808243500(final PropertyMacroContext _context) {
-    return _context.createUniqueName("patternRule_Condition_", SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("patternRule_Condition_" + root.getUserObject("identityKey") + '_', root, false);
   }
   public static Object propertyMacro_GetPropertyValue_85178200260090387340(final PropertyMacroContext _context) {
-    return _context.createUniqueName("mappingConfiguration_Condition_", SNodeOperations.getParent(_context.getNode()));
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    // there's only 1 applicability condition per MC, which is root. No need for extra identity key, though name seq. of global context is still here to catch failed assumptions 
+    return _context.createIndexedName("mc_Condition_" + root.getUserObject("identityKey"), null, true);
   }
   public static Object propertyMacro_GetPropertyValue_7876414165898147930(final PropertyMacroContext _context) {
-    return _context.createIndexedName("insertMacro_Query_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("insertMacro_Query_" + root.getUserObject("identityKey") + '_', root, false);
   }
   public static Object propertyMacro_GetPropertyValue_50150722796369046750(final PropertyMacroContext _context) {
-    return _context.createIndexedName("insertMacro_varValue_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
+    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
+    return _context.createIndexedName("varMacro_Value_" + root.getUserObject("identityKey") + '_', root, false);
   }
   public static Object propertyMacro_GetPropertyValue_63048851531249906790(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, 0x1179c366b2fL, "labelDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -3726,6 +3748,18 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     }
   }
+  public static void mappingScript_CodeBlock_a_3(final MappingScriptContext _context) {
+    // Purpose of this script is to give an unique key to group macros within containing template/switch/mc and to generate query method names in a way 
+    // that a change in another template/switch/mc won't renumerate all methods for queries of the same kind. 
+
+    // XXX I know 'modifies model' says 'false', though I do modify model here by changing SNode's user object. 
+    //     However, for generator purposes change of user object doesn't constitute a 'model change' (which is rather structural/attribute change) 
+    //     and to save extra model copy I mark the script as 'read-only' 
+    int i = 0;
+    for (SNode r : ListSequence.fromList(SModelOperations.roots(_context.getModel(), null))) {
+      r.putUserObject("identityKey", Integer.toString(i++));
+    }
+  }
   public static boolean mappingConfiguration_Condition_8x2ww7_a(final TemplateQueryContext _context) {
     return GenUtil.isGeneratable(_context.getOriginalInputModel());
   }
@@ -4030,6 +4064,7 @@ public class QueriesGenerated extends QueryProviderBase {
     mscbMethods.put("1217270660170", new QueriesGenerated.SCB(i++));
     mscbMethods.put("6342833957791858285", new QueriesGenerated.SCB(i++));
     mscbMethods.put("6458924870074299561", new QueriesGenerated.SCB(i++));
+    mscbMethods.put("8624372607819538063", new QueriesGenerated.SCB(i++));
   }
   @Override
   @NotNull
@@ -4059,6 +4094,9 @@ public class QueriesGenerated extends QueryProviderBase {
           return;
         case 3:
           QueriesGenerated.mappingScript_CodeBlock_a_2(ctx);
+          return;
+        case 4:
+          QueriesGenerated.mappingScript_CodeBlock_a_3(ctx);
           return;
         default:
           throw new GenerationFailureException(String.format("There's no code block with method index %d ", methodKey));
