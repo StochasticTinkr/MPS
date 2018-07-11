@@ -51,7 +51,6 @@ import jetbrains.mps.util.Reference;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPointerOperations;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -318,7 +317,7 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
     return SPointerOperations.resolveNode(new SNodePointer("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "493339661776050901"), project.getRepository());
   }
   public SModel getTargetModel() {
-    SModule targetModule = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2f6eb168-4811-48ad-becb-56fd47d21d59(testmaterial.moveConcept.TargetLanguage)"));
+    SModule targetModule = PersistenceFacade.getInstance().createModuleReference("2f6eb168-4811-48ad-becb-56fd47d21d59(testmaterial.moveConcept.TargetLanguage)").resolve(project.getRepository());
     Assert.assertNotNull(targetModule);
     return SModuleOperations.getAspect(targetModule, "structure");
   }
@@ -356,9 +355,9 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
     final Wrappers._T<SModule> targetModule = new Wrappers._T<SModule>();
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        sourceModule.value = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("3e00419d-4801-4bad-bf2a-50479218fb53(testmaterial.moveConcept.SourceLanguage)"));
+        sourceModule.value = PersistenceFacade.getInstance().createModuleReference("3e00419d-4801-4bad-bf2a-50479218fb53(testmaterial.moveConcept.SourceLanguage)").resolve(project.getRepository());
         Assert.assertNotNull(sourceModule.value);
-        targetModule.value = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2f6eb168-4811-48ad-becb-56fd47d21d59(testmaterial.moveConcept.TargetLanguage)"));
+        targetModule.value = PersistenceFacade.getInstance().createModuleReference("2f6eb168-4811-48ad-becb-56fd47d21d59(testmaterial.moveConcept.TargetLanguage)").resolve(project.getRepository());
         Assert.assertNotNull(targetModule.value);
         SModel targetModel = SModuleOperations.getAspect(targetModule.value, "structure");
         Assert.assertNotNull(targetModel);
