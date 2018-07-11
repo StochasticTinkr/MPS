@@ -67,7 +67,7 @@ public abstract class BasePluginManager<T> implements PluginLoader {
   }
 
   @Override
-  public void loadPlugins(final List<PluginContributor> contributors) {
+  public final boolean loadPlugins(@NotNull List<PluginContributor> contributors) {
     int size = contributors.size();
     LOG.debug("Loading plugins from " + size + " contributors [" + toString() + "]");
     final Map<PluginContributor, T> plugins = createPlugins(contributors);
@@ -81,25 +81,39 @@ public abstract class BasePluginManager<T> implements PluginLoader {
       List<T> notNullPlugins = plugins.values().stream().filter(Objects::nonNull).collect(Collectors.toList());
       mySortedPlugins.addAll(notNullPlugins);
       afterPluginsCreated(new ArrayList<>(notNullPlugins));
+      return !notNullPlugins.isEmpty();
     }
   }
 
   @Override
-  public void unloadPlugins(final List<PluginContributor> contributors) {
+  public final boolean hasPluginsFor(@NotNull List<PluginContributor> contributors) {
+    for (PluginContributor contributor : contributors) {
+      if (myContributorToPlugin.containsKey(contributor)) {
+        if (myContributorToPlugin.get(contributor) != null) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  @Override
+  public final boolean unloadPlugins(@NotNull List<PluginContributor> contributors) {
     int size = contributors.size();
     LOG.debug("Unloading MPS plugins from " + size + " contributors [" + toString() + "]");
     final List<T> plugins;
     synchronized (myPluginsLock) {
-      plugins = calcPluginsToUnload(contributors);
+      plugins = unloadPlugins0(contributors);
       mySortedPlugins.removeAll(plugins);
     }
 
     beforePluginsDisposed(plugins);
     disposePlugins(plugins);
+    return !plugins.isEmpty();
   }
 
   @NotNull
-  private List<T> calcPluginsToUnload(List<PluginContributor> contributors) {
+  private List<T> unloadPlugins0(List<PluginContributor> contributors) {
     final List<T> plugins = new ArrayList<>();
 
     for (PluginContributor contributor : contributors) {

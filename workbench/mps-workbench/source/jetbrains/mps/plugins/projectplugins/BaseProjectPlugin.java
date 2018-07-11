@@ -94,13 +94,6 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     // no-op, subclasses shall override if they want to supply any plugin parts.
   }
 
-  @NotNull
-  private ModelAccess getModelAccess() {
-    ModelAccess modelAccess = ProjectHelper.getModelAccess(myProject);
-    assert modelAccess != null;
-    return modelAccess;
-  }
-
   public final void init(@NotNull final Project project) {
     myProject = project;
 

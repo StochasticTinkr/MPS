@@ -67,7 +67,6 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   private final Project myProject;
   private final jetbrains.mps.project.Project myMpsProject;
   private final FileEditorManager myManager;
-  private final List<PluginReloadingListener> myReloadingListeners = new CopyOnWriteArrayList<>();
 
   public ProjectPluginManager(@NotNull Project project, jetbrains.mps.project.Project mpsProject, PluginLoaderRegistry pluginLoaderRegistry,
                               @SuppressWarnings("unused") StartupModuleMaker moduleMaker, FileEditorManager manager) {
@@ -155,15 +154,6 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   }
 
   //----------------RELOAD STUFF---------------------
-
-  public void addReloadingListener(@NotNull PluginReloadingListener listener) {
-    myReloadingListeners.add(listener);
-  }
-
-  public void removeReloadingListener(PluginReloadingListener listener) {
-    myReloadingListeners.remove(listener);
-  }
-
   @Override
   protected BaseProjectPlugin createPlugin(PluginContributor contributor) {
     BaseProjectPlugin plugin = contributor.createProjectPlugin();
@@ -174,30 +164,6 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
     plugin.init(myProject);
 
     return plugin;
-  }
-
-  @Override
-  public final void loadPlugins(List<PluginContributor> contributors) {
-    super.loadPlugins(contributors);
-    fireAfterPluginsLoaded(contributors);
-  }
-
-  @Override
-  public final void unloadPlugins(List<PluginContributor> contributors) {
-    fireBeforePluginsUnloaded(contributors);
-    super.unloadPlugins(contributors);
-  }
-
-  private void fireAfterPluginsLoaded(List<PluginContributor> contributors) {
-    for (PluginReloadingListener listener : myReloadingListeners) {
-      listener.afterPluginsLoaded(contributors);
-    }
-  }
-
-  private void fireBeforePluginsUnloaded(List<PluginContributor> contributors) {
-    for (PluginReloadingListener listener : myReloadingListeners) {
-      listener.beforePluginsUnloaded(contributors);
-    }
   }
 
   @Override
