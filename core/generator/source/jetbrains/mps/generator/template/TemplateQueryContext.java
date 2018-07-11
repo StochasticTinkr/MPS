@@ -175,15 +175,12 @@ public class TemplateQueryContext {
   /**
    *
    * @param baseName prefix the name sequence would share
-   * @param contextNode optional context node (defaults to {@link #getInputNode()}) to keep last used index for {@code baseName}
+   * @param contextNode optional context node to keep last used index for {@code baseName}.{@code null} means global (i.e. session) context.
    * @param noIndexForFirst if {@code true}, the first value returned would be "baseName", second "baseName1", etc.
    *                        When {@code false}, all names would get index, starting from 0.
    * @return {@code baseName}[{@code counter}]
    */
   public String createIndexedName(String baseName, SNode contextNode, boolean noIndexForFirst) {
-    if (contextNode == null) {
-      contextNode = getInputNode();
-    }
     return myGenerator.getGeneratorSessionContext().createIndexedName(baseName, contextNode, noIndexForFirst);
   }
 
