@@ -2,7 +2,7 @@
 /config
 
 # idea integration plugin artifact
-/plugin/MPSPlugin.jar
+/plugins/ideaIntegration/IDEAPlugin/mps-idea-integration-plugin.jar
 
 # MacOS user UI setting related file
 .DS_Store
