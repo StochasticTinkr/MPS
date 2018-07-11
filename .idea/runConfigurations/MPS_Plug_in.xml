@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="MPS Plug-in" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-    <module name="MPSPlugin" />
+    <module name="IDEAPlugin" />
     <option name="VM_PARAMETERS" value="-Xms128m -Xmx750m -XX:MaxPermSize=350m -XX:ReservedCodeCacheSize=225m -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -Djsse.enableSNIExtension=false -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -XX:+HeapDumpOnOutOfMemoryError -Dawt.useSystemAAFontSettings=lcd" />
     <option name="PROGRAM_PARAMETERS" value="" />
-    <log_file path="$IDEA_PLUGINS_SANDBOX_FOLDER$/system/log/idea.log" checked="false" skipped="true" show_all="false" alias="IDEA LOG" />
+    <log_file checked="false" alias="IDEA LOG" path="$IDEA_PLUGINS_SANDBOX_FOLDER$/system/log/idea.log" />
     <RunnerSettings RunnerId="Debug">
       <option name="DEBUG_PORT" value="" />
       <option name="TRANSPORT" value="0" />
@@ -17,7 +17,7 @@
     <ConfigurationWrapper RunnerId="Run" />
     <method>
       <option name="BuildArtifacts" enabled="true">
-        <artifact name="MPSPlugin" />
+        <artifact name="mps-idea-integration-plugin" />
       </option>
     </method>
   </configuration>
