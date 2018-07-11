@@ -68,23 +68,30 @@ import org.junit.runner.Description;
 
           for (int i = 0; i < tr.myTestQualifiedName.size(); i++) {
             String qualifiedName = tr.myTestQualifiedName.get(i);
-            String isTestCase = tr.isTestCase.get(i);
-            String classFqName;
-            if (Boolean.valueOf(isTestCase) == Boolean.TRUE) {
-              classFqName = qualifiedName;
+            String isTestCaseProp = tr.isTestCase.get(i);
+            String testFqName = null;
+            String methodName = null;
+            boolean isTestCase = Boolean.valueOf(isTestCaseProp) == Boolean.TRUE;
+            if (isTestCase) {
+              testFqName = qualifiedName;
             } else {
               int indexOfLastDot = qualifiedName.lastIndexOf('.');
-              classFqName = qualifiedName.substring(0, indexOfLastDot);
+              testFqName = qualifiedName.substring(0, indexOfLastDot);
+              methodName = qualifiedName.substring(indexOfLastDot + 1);
             }
             if (classProvider == null) {
               assert failure != null;
-              rv.add(Request.runner(new AssumptionFailedRunner(failure, Description.createSuiteDescription(classFqName))));
+              rv.add(Request.runner(new AssumptionFailedRunner(failure, Description.createSuiteDescription(testFqName))));
             } else {
               try {
-                Class<?> testClass = classProvider.getOwnClass(classFqName);
-                rv.add(Request.runner(myRunnerBuilder.safeRunnerForClass(testClass)));
+                Class<?> testClass = classProvider.getOwnClass(testFqName);
+                Request classRequest = Request.runner(myRunnerBuilder.safeRunnerForClass(testClass));
+                if (!(isTestCase)) {
+                  classRequest.filterWith(Description.createTestDescription(testFqName, methodName));
+                }
+                rv.add(classRequest);
               } catch (Exception ex) {
-                rv.add(Request.runner(new AssumptionFailedRunner(ex, Description.createSuiteDescription(classFqName))));
+                rv.add(Request.runner(new AssumptionFailedRunner(ex, Description.createSuiteDescription(testFqName))));
               }
             }
           }
