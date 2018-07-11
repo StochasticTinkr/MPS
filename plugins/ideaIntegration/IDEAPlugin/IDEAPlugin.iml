@@ -10,6 +10,6 @@
     </content>
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="mps-idea-make-plugin-api" />
+    <orderEntry type="module" module-name="ideaIntegrationCommon" />
   </component>
 </module>
