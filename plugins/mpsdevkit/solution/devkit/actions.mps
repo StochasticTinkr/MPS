@@ -6810,7 +6810,7 @@
                 <node concept="2OqwBi" id="2fCH17eCJix" role="3clFbG">
                   <node concept="2ShNRf" id="2fCH17eCwfJ" role="2Oq$k0">
                     <node concept="1pGfFk" id="2fCH17eCIpo" role="2ShVmc">
-                      <ref role="37wK5l" to="o6ex:~GeneratedQueriesOpener.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolve="GeneratedQueriesOpener" />
+                      <ref role="37wK5l" to="o6ex:~GeneratedCodeOpener.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolve="GeneratedCodeOpener" />
                       <node concept="2OqwBi" id="2fCH17eCIq7" role="37wK5m">
                         <node concept="2WthIp" id="2fCH17eCIqa" role="2Oq$k0" />
                         <node concept="1DTwFV" id="2fCH17eCIqc" role="2OqNvi">
@@ -6820,7 +6820,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="2fCH17eCJra" role="2OqNvi">
-                    <ref role="37wK5l" to="o6ex:~GeneratedQueriesOpener.open(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="open" />
+                    <ref role="37wK5l" to="o6ex:~GeneratedCodeOpener.open(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="open" />
                     <node concept="2OqwBi" id="4BRIpd2O8q_" role="37wK5m">
                       <node concept="2WthIp" id="4BRIpd2O8qC" role="2Oq$k0" />
                       <node concept="2XshWL" id="4BRIpd2O8qE" role="2OqNvi">
@@ -6894,7 +6894,7 @@
                     <node concept="2OqwBi" id="4BRIpd2NWsR" role="3clFbG">
                       <node concept="2ShNRf" id="4BRIpd2NWeu" role="2Oq$k0">
                         <node concept="1pGfFk" id="4BRIpd2NWev" role="2ShVmc">
-                          <ref role="37wK5l" to="o6ex:~GeneratedQueriesOpener.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolve="GeneratedQueriesOpener" />
+                          <ref role="37wK5l" to="o6ex:~GeneratedCodeOpener.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolve="GeneratedCodeOpener" />
                           <node concept="2OqwBi" id="4BRIpd2NWew" role="37wK5m">
                             <node concept="2WthIp" id="4BRIpd2NWex" role="2Oq$k0" />
                             <node concept="1DTwFV" id="4BRIpd2NWey" role="2OqNvi">
@@ -6904,7 +6904,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="4BRIpd2NXou" role="2OqNvi">
-                        <ref role="37wK5l" to="o6ex:~GeneratedQueriesOpener.canOpen(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canOpen" />
+                        <ref role="37wK5l" to="o6ex:~GeneratedCodeOpener.canOpen(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canOpen" />
                         <node concept="37vLTw" id="4BRIpd2O6io" role="37wK5m">
                           <ref role="3cqZAo" node="4BRIpd2O5Sr" resolve="it" />
                         </node>
