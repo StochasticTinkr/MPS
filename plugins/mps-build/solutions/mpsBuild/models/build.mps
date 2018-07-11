@@ -16265,12 +16265,6 @@
             <ref role="3bR37D" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
         </node>
-        <node concept="1SiIV0" id="301qoOzTNy4" role="3bR37C">
-          <node concept="3bR9La" id="301qoOzTNy5" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Kfy9QB6Lg8" resolve="jetbrains.mps.runtime" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="6Bf1bykAQT0" role="3bR37C">
           <node concept="3bR9La" id="6Bf1bykAQT1" role="1SiIV1">
             <property role="3bR36h" value="false" />
