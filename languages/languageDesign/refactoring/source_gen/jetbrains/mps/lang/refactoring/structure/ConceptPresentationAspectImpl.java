@@ -43,7 +43,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_NodeOperation;
   private ConceptPresentation props_NodeTarget;
   private ConceptPresentation props_NodesOperation;
-  private ConceptPresentation props_OperationContextOperation;
   private ConceptPresentation props_ProjectOperation;
   private ConceptPresentation props_Refactoring;
   private ConceptPresentation props_RefactoringAction;
@@ -303,14 +302,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_NodesOperation = cpb.create();
         }
         return props_NodesOperation;
-      case LanguageConceptSwitch.OperationContextOperation:
-        if (props_OperationContextOperation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.rawPresentation("operationContext");
-          props_OperationContextOperation = cpb.create();
-        }
-        return props_OperationContextOperation;
       case LanguageConceptSwitch.ProjectOperation:
         if (props_ProjectOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -322,7 +313,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Refactoring == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a63b0yb);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a53b0xb);
           props_Refactoring = cpb.create();
         }
         return props_Refactoring;

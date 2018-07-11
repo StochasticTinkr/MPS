@@ -2110,12 +2110,6 @@
         <ref role="v9R2y" node="6Tyhu1ForZh" resolve="reduce_ScopeOperation" />
       </node>
     </node>
-    <node concept="3aamgX" id="6Tyhu1ForY7" role="3acgRq">
-      <ref role="30HIoZ" to="tp1h:6Tyhu1FomhR" resolve="OperationContextOperation" />
-      <node concept="j$656" id="6Tyhu1ForY8" role="1lVwrX">
-        <ref role="v9R2y" node="6Tyhu1ForYT" resolve="reduce_OperationContextOperation" />
-      </node>
-    </node>
     <node concept="3aamgX" id="72p_rFnslx4" role="3acgRq">
       <ref role="30HIoZ" to="tp1h:72p_rFnslum" resolve="MainProjectOperation" />
       <node concept="j$656" id="72p_rFnslx6" role="1lVwrX">
@@ -2305,35 +2299,6 @@
       <node concept="37vLTG" id="6Tyhu1ForYR" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiK6" role="1tU5fm">
-          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="13MO4I" id="6Tyhu1ForYT">
-    <property role="TrG5h" value="reduce_OperationContextOperation" />
-    <property role="3GE5qa" value="Context" />
-    <ref role="3gUMe" to="tp1h:6Tyhu1FomhR" resolve="OperationContextOperation" />
-    <node concept="3clFb_" id="6Tyhu1ForYU" role="13RCb5">
-      <property role="TrG5h" value="doRefactor" />
-      <node concept="3cqZAl" id="6Tyhu1ForYV" role="3clF45" />
-      <node concept="3Tm1VV" id="6Tyhu1ForYW" role="1B3o_S" />
-      <node concept="3clFbS" id="6Tyhu1ForYX" role="3clF47">
-        <node concept="3clFbF" id="6Tyhu1ForYY" role="3cqZAp">
-          <node concept="2OqwBi" id="6Tyhu1ForYZ" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxgmD$n" role="2Oq$k0">
-              <ref role="3cqZAo" node="6Tyhu1ForZ3" resolve="refactoringContext" />
-            </node>
-            <node concept="liA8E" id="6Tyhu1ForZ1" role="2OqNvi">
-              <ref role="37wK5l" to="ge2m:4a0HOMfn9yf" resolve="getCurrentOperationContext" />
-              <node concept="raruj" id="6Tyhu1FosA3" role="lGtFl" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="6Tyhu1ForZ3" role="3clF46">
-        <property role="TrG5h" value="refactoringContext" />
-        <node concept="3uibUv" id="6QdonRgYiK8" role="1tU5fm">
           <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>

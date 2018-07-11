@@ -5,5 +5,5 @@ package jetbrains.mps.lang.refactoring.structure;
 import jetbrains.mps.smodel.runtime.IconResource;
 
 public class IconContainer {
-  protected static IconResource RESOURCE_a0a2a0a63b0yb = new IconResource("refactoring.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a53b0xb = new IconResource("refactoring.png", IconContainer.class);
 }

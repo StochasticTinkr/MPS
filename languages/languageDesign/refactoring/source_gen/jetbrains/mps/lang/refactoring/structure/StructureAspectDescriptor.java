@@ -48,7 +48,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptNodeOperation = createDescriptorForNodeOperation();
   /*package*/ final ConceptDescriptor myConceptNodeTarget = createDescriptorForNodeTarget();
   /*package*/ final ConceptDescriptor myConceptNodesOperation = createDescriptorForNodesOperation();
-  /*package*/ final ConceptDescriptor myConceptOperationContextOperation = createDescriptorForOperationContextOperation();
   /*package*/ final ConceptDescriptor myConceptProjectOperation = createDescriptorForProjectOperation();
   /*package*/ final ConceptDescriptor myConceptRefactoring = createDescriptorForRefactoring();
   /*package*/ final ConceptDescriptor myConceptRefactoringAction = createDescriptorForRefactoringAction();
@@ -71,7 +70,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractMoveExpression, myConceptAbstractMoveNodeExpression, myConceptAbstractMoveNodesExpression, myConceptAffectedNodesClause, myConceptConceptFunctionParameter_Model, myConceptConceptFunctionParameter_Module, myConceptConceptFunctionParameter_SModel, myConceptConceptFunctionParameter_SNode, myConceptContextMemberOperation, myConceptContextType, myConceptCreateRefactoringContext, myConceptDoRefactorClause, myConceptDoWhenDoneClause, myConceptExecuteRefactoringStatement, myConceptGetModelsToUpdateClause, myConceptInitClause, myConceptIsApplicableToModelClause, myConceptIsApplicableToModuleClause, myConceptIsApplicableToNodeClause, myConceptIsRefactoringApplicable, myConceptMainProjectOperation, myConceptModelDescriptorOperation, myConceptModelTarget, myConceptModelsToGenerateByDefault, myConceptModelsToGenerateClause, myConceptModuleOperation, myConceptModuleTarget, myConceptMoveNodeToModelExpression, myConceptMoveNodeToNodeExpression, myConceptMoveNodesToModelExpression, myConceptMoveNodesToNodeExpression, myConceptNodeOperation, myConceptNodeTarget, myConceptNodesOperation, myConceptOperationContextOperation, myConceptProjectOperation, myConceptRefactoring, myConceptRefactoringAction, myConceptRefactoringArgument, myConceptRefactoringArgumentReference, myConceptRefactoringContext_ConceptFunctionParameter, myConceptRefactoringField, myConceptRefactoringFieldReference, myConceptRefactoringParameter, myConceptRefactoringParameterReference, myConceptRefactoringTarget, myConceptRepositoryOperation, myConceptScopeOperation, myConceptUpdateModelProcedure);
+    return Arrays.asList(myConceptAbstractMoveExpression, myConceptAbstractMoveNodeExpression, myConceptAbstractMoveNodesExpression, myConceptAffectedNodesClause, myConceptConceptFunctionParameter_Model, myConceptConceptFunctionParameter_Module, myConceptConceptFunctionParameter_SModel, myConceptConceptFunctionParameter_SNode, myConceptContextMemberOperation, myConceptContextType, myConceptCreateRefactoringContext, myConceptDoRefactorClause, myConceptDoWhenDoneClause, myConceptExecuteRefactoringStatement, myConceptGetModelsToUpdateClause, myConceptInitClause, myConceptIsApplicableToModelClause, myConceptIsApplicableToModuleClause, myConceptIsApplicableToNodeClause, myConceptIsRefactoringApplicable, myConceptMainProjectOperation, myConceptModelDescriptorOperation, myConceptModelTarget, myConceptModelsToGenerateByDefault, myConceptModelsToGenerateClause, myConceptModuleOperation, myConceptModuleTarget, myConceptMoveNodeToModelExpression, myConceptMoveNodeToNodeExpression, myConceptMoveNodesToModelExpression, myConceptMoveNodesToNodeExpression, myConceptNodeOperation, myConceptNodeTarget, myConceptNodesOperation, myConceptProjectOperation, myConceptRefactoring, myConceptRefactoringAction, myConceptRefactoringArgument, myConceptRefactoringArgumentReference, myConceptRefactoringContext_ConceptFunctionParameter, myConceptRefactoringField, myConceptRefactoringFieldReference, myConceptRefactoringParameter, myConceptRefactoringParameterReference, myConceptRefactoringTarget, myConceptRepositoryOperation, myConceptScopeOperation, myConceptUpdateModelProcedure);
   }
 
   @Override
@@ -146,8 +145,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptNodeTarget;
       case LanguageConceptSwitch.NodesOperation:
         return myConceptNodesOperation;
-      case LanguageConceptSwitch.OperationContextOperation:
-        return myConceptOperationContextOperation;
       case LanguageConceptSwitch.ProjectOperation:
         return myConceptProjectOperation;
       case LanguageConceptSwitch.Refactoring:
@@ -533,16 +530,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("nodes");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForOperationContextOperation() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.refactoring", "OperationContextOperation", 0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616477L);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", 0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61646dL);
-    b.origin("r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)/7953996722066252919");
-    b.version(2);
-    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("operationContext");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForProjectOperation() {

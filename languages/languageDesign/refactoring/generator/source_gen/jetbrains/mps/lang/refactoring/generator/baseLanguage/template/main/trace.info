@@ -577,7 +577,7 @@
       <node id="2298239814950984737" at="125,0,128,0" concept="5" trace="referenceMacro_GetReferent_22982398149509847270#(Ljetbrains/mps/generator/template/ReferenceMacroContext;)Ljava/lang/Object;" />
       <node id="2298239814950984747" at="203,0,206,0" concept="5" trace="sourceNodeQuery_22982398149509847300#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2298239814950984757" at="206,0,209,0" concept="5" trace="sourceNodeQuery_22982398149509847310#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2298239814950984767" at="224,0,227,0" concept="5" trace="sourceNodesQuery_a0a0a0a0m#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodesContext;)Ljava/lang/Iterable;" />
+      <node id="2298239814950984767" at="224,0,227,0" concept="5" trace="sourceNodesQuery_a0a0a0a0l#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodesContext;)Ljava/lang/Iterable;" />
       <scope id="2298239814950984738" at="125,110,126,193" />
       <scope id="2298239814950984748" at="203,109,204,190" />
       <scope id="2298239814950984758" at="206,109,207,191" />
