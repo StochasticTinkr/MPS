@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/IDEAPlugin/IDEAPlugin.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/IDEAPlugin/IDEAPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/editor/actions-runtime/actions-runtime.iml" filepath="$PROJECT_DIR$/editor/actions-runtime/actions-runtime.iml" group="editor" />
       <module fileurl="file://$PROJECT_DIR$/core/analyzers/analyzers.iml" filepath="$PROJECT_DIR$/core/analyzers/analyzers.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/tool/ant/ant-mps.iml" filepath="$PROJECT_DIR$/core/tool/ant/ant-mps.iml" group="ant" />
@@ -33,7 +33,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/generator/generator-engine.iml" filepath="$PROJECT_DIR$/core/generator/generator-engine.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/tools/gensources/gensources.iml" filepath="$PROJECT_DIR$/tools/gensources/gensources.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/httpsupport/httpsupport.iml" filepath="$PROJECT_DIR$/plugins/httpsupport/httpsupport.iml" />
-      <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/ideaIntegration.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/ideaIntegration.iml" group="plugins" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/MPSPlugin/ideaIntegration.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/MPSPlugin/ideaIntegration.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/editor/instrumentation/instrumentation.iml" filepath="$PROJECT_DIR$/editor/instrumentation/instrumentation.iml" />
       <module fileurl="file://$PROJECT_DIR$/editor/intentions-runtime/intentions-runtime.iml" filepath="$PROJECT_DIR$/editor/intentions-runtime/intentions-runtime.iml" group="editor" />
       <module fileurl="file://$PROJECT_DIR$/core/java-stub/java-stub.iml" filepath="$PROJECT_DIR$/core/java-stub/java-stub.iml" group="core" />
@@ -57,7 +57,7 @@
       <module fileurl="file://$PROJECT_DIR$/plugins/mpsdevkit/mps-devkit.iml" filepath="$PROJECT_DIR$/plugins/mpsdevkit/mps-devkit.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-editor/mps-editor.iml" filepath="$PROJECT_DIR$/workbench/mps-editor/mps-editor.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-icons/mps-icons.iml" filepath="$PROJECT_DIR$/workbench/mps-icons/mps-icons.iml" group="workbench" />
-      <module fileurl="file://$PROJECT_DIR$/MPSPlugin/mps-idea-make-plugin-api.iml" filepath="$PROJECT_DIR$/MPSPlugin/mps-idea-make-plugin-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/common/ideaIntegrationCommon.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/common/ideaIntegrationCommon.iml" />
       <module fileurl="file://$PROJECT_DIR$/IdeaPlugin/mps-idea-plugin.iml" filepath="$PROJECT_DIR$/IdeaPlugin/mps-idea-plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/mpsjava/mps-java-platform.iml" filepath="$PROJECT_DIR$/plugins/mpsjava/mps-java-platform.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/plugins/mpsjava/basePlatform/mps-java-platform-base.iml" filepath="$PROJECT_DIR$/plugins/mpsjava/basePlatform/mps-java-platform-base.iml" group="plugins" />
