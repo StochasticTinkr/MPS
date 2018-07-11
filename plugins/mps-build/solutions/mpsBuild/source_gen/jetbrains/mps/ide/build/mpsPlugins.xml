@@ -52,7 +52,7 @@
     <mkdir dir="${build.layout}" />
     <jar destfile="${build.layout}/ideaIntegration.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/ideaIntegration" />
-      <zipfileset file="${mps_home}/plugins/ideaIntegration/META-INF/plugin.xml" prefix="META-INF" />
+      <zipfileset file="${mps_home}/plugins/ideaIntegration/MPSPlugin/META-INF/plugin.xml" prefix="META-INF" />
     </jar>
     <mkdir dir="${build.layout}/modelchecker" />
     <mkdir dir="${build.layout}/modelchecker/META-INF" />
@@ -243,7 +243,7 @@
     <mkdir dir="${build.tmp}/java/out/ideaIntegration" />
     <javac2 destdir="${build.tmp}/java/out/ideaIntegration" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${mps_home}/plugins/ideaIntegration/source_gen" />
+      <src path="${mps_home}/plugins/ideaIntegration/MPSPlugin/source_gen" />
       <classpath>
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
@@ -273,7 +273,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/ideaIntegration">
-      <fileset dir="${mps_home}/plugins/ideaIntegration/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/ideaIntegration/MPSPlugin/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
