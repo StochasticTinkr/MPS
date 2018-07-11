@@ -217,7 +217,7 @@ public class SModuleOperations {
   }
 
   /**
-   * Reads module from file and eventually reloads it (when CLManager triggers refresh)
+   * Reads module from file and eventually redeploys it (when CLManager triggers refresh)
    */
   public static void reloadFromDisk(@NotNull AbstractModule module) {
     if (module.getRepository() == null) {
@@ -229,11 +229,11 @@ public class SModuleOperations {
     try {
       if (module instanceof Generator) {
         // loadDescriptor == null for Generator
-        // FIXME shall support reload for generator modules (not necessarily with modile.loadDescriptor() thought)
+        // FIXME shall support reload for generator modules (not necessarily with module.loadDescriptor() thought)
         return;
       }
       ModuleDescriptor descriptor = module.loadDescriptor();
-      module.setModuleDescriptor(descriptor);
+      module.setModuleDescriptor(descriptor, false);
     } catch (ModuleReadException e) {
       AbstractModule.handleReadProblem(module, e, false);
     }

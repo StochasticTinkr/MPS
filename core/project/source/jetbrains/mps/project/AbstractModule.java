@@ -264,10 +264,20 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   //todo should be replaced with events
-  public final void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+  public final void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
+    setModuleDescriptor(moduleDescriptor, true);
+  }
+
+  /**
+   * sometimes we do not need to mark the reloaded module as changed (e.g. in the cases when we reload from the disk)
+   */
+  /*package*/ final void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor, boolean setAsChanged) {
     assertCanChange();
     doSetModuleDescriptor(moduleDescriptor);
-    setChanged();
+    if (setAsChanged) {
+      setChanged();
+    }
+
     reloadAfterDescriptorChange();
     fireChanged();
     dependenciesChanged();
