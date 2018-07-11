@@ -7489,7 +7489,7 @@
       <node id="1149868357716" at="31,49,32,67" concept="3" />
       <node id="1149868455482" at="32,67,33,49" concept="3" />
       <node id="1149868396494" at="36,42,37,37" concept="3" />
-      <node id="1149868396494" at="39,40,40,39" concept="9" />
+      <node id="1149868396494" at="39,40,40,40" concept="9" />
       <node id="1149868396494" at="42,40,43,19" concept="9" />
       <node id="1149868396494" at="45,66,46,62" concept="8" />
       <node id="1149868396494" at="47,34,48,21" concept="9" />
@@ -7614,7 +7614,7 @@
       <node id="1149868357716" at="23,0,35,0" concept="2" trace="MacrosSwitch_KeyMap#()V" />
       <node id="1149868396494" at="60,0,79,0" concept="7" trace="canExecute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Z" />
       <scope id="1149868396494" at="36,42,37,37" />
-      <scope id="1149868396494" at="39,40,40,39" />
+      <scope id="1149868396494" at="39,40,40,40" />
       <scope id="1149868396494" at="42,40,43,19" />
       <scope id="1149868396494" at="47,34,48,21" />
       <scope id="1149868396494" at="51,32,52,21" />

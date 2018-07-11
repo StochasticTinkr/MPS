@@ -37,7 +37,7 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
       this.setShownInPopupMenu(true);
     }
     public String getDescriptionText() {
-      return "create template fragmet";
+      return "create template fragment";
     }
     public boolean isMenuAlwaysShown() {
       return false;
