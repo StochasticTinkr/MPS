@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/IDEAPlugin/IDEAPlugin.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/IDEAPlugin/IDEAPlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/IDEAPlugin/IDEAPlugin.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/IDEAPlugin/IDEAPlugin.iml" group="plugins/ideaIntegration" />
       <module fileurl="file://$PROJECT_DIR$/editor/actions-runtime/actions-runtime.iml" filepath="$PROJECT_DIR$/editor/actions-runtime/actions-runtime.iml" group="editor" />
       <module fileurl="file://$PROJECT_DIR$/core/analyzers/analyzers.iml" filepath="$PROJECT_DIR$/core/analyzers/analyzers.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/tool/ant/ant-mps.iml" filepath="$PROJECT_DIR$/core/tool/ant/ant-mps.iml" group="ant" />
@@ -33,8 +33,8 @@
       <module fileurl="file://$PROJECT_DIR$/core/generator/generator-engine.iml" filepath="$PROJECT_DIR$/core/generator/generator-engine.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/tools/gensources/gensources.iml" filepath="$PROJECT_DIR$/tools/gensources/gensources.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/httpsupport/httpsupport.iml" filepath="$PROJECT_DIR$/plugins/httpsupport/httpsupport.iml" />
-      <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/MPSPlugin/ideaIntegration.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/MPSPlugin/ideaIntegration.iml" group="plugins" />
-      <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/common/ideaIntegrationCommon.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/common/ideaIntegrationCommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/MPSPlugin/ideaIntegration.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/MPSPlugin/ideaIntegration.iml" group="plugins/ideaIntegration" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/common/ideaIntegrationCommon.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/common/ideaIntegrationCommon.iml" group="plugins/ideaIntegration" />
       <module fileurl="file://$PROJECT_DIR$/editor/instrumentation/instrumentation.iml" filepath="$PROJECT_DIR$/editor/instrumentation/instrumentation.iml" />
       <module fileurl="file://$PROJECT_DIR$/editor/intentions-runtime/intentions-runtime.iml" filepath="$PROJECT_DIR$/editor/intentions-runtime/intentions-runtime.iml" group="editor" />
       <module fileurl="file://$PROJECT_DIR$/core/java-stub/java-stub.iml" filepath="$PROJECT_DIR$/core/java-stub/java-stub.iml" group="core" />
