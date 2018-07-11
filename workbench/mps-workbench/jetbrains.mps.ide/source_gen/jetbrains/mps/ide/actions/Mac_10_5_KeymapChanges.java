@@ -12,7 +12,6 @@ import java.util.ArrayList;
 public class Mac_10_5_KeymapChanges extends BaseKeymapChanges {
   public Mac_10_5_KeymapChanges() {
     // simple 
-    addSimpleShortcut("jetbrains.mps.ide.actions.GoByCurrentReferenceToIDEA_Action", getShortcut("ctrl B"));
     addSimpleShortcut("jetbrains.mps.ide.actions.NewElement_Action", getShortcut("meta N"), getShortcut("ctrl ENTER"));
     // simple with remove/replace 
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToModel_Action", new BaseKeymapChanges.ShortcutWrapper(getShortcut("meta shift O"), false, true));
