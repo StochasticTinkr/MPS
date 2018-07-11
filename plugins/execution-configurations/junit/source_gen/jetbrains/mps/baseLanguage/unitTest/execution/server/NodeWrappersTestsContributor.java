@@ -94,12 +94,12 @@ public class NodeWrappersTestsContributor implements TestsContributor {
       return requestForTestClass(fqName, testModule);
     } catch (InProcessExecutionFilter.InProcessCheckException e) {
       notifyByBaloonCheckException(e, testNode);
-      return createRequestForClass(fqName, e);
+      return createFailedRequestForClass(fqName, e);
     } catch (ClassNotFoundException e) {
       notifyByBaloonCLNF(e, testNode);
-      return createRequestForClass(fqName, e);
+      return createFailedRequestForClass(fqName, e);
     } catch (Exception e) {
-      return createRequestForClass(fqName, e);
+      return createFailedRequestForClass(fqName, e);
     }
   }
 
@@ -114,12 +114,12 @@ public class NodeWrappersTestsContributor implements TestsContributor {
       return classRequest.filterWith(Description.createTestDescription(testFqName, methodName));
     } catch (InProcessExecutionFilter.InProcessCheckException e) {
       notifyByBaloonCheckException(e, testNode);
-      return createRequestForMethod(testFqName, methodName, e);
+      return createFailedRequestForMethod(testFqName, methodName, e);
     } catch (ClassNotFoundException e) {
       notifyByBaloonCLNF(e, testNode);
-      return createRequestForMethod(testFqName, methodName, e);
+      return createFailedRequestForMethod(testFqName, methodName, e);
     } catch (Exception e) {
-      return createRequestForMethod(testFqName, methodName, e);
+      return createFailedRequestForMethod(testFqName, methodName, e);
     }
   }
 
@@ -131,11 +131,11 @@ public class NodeWrappersTestsContributor implements TestsContributor {
     notifyByBaloon(e.getFormattedMsg(), testNode, e);
   }
 
-  private Request createRequestForClass(String fqName, Exception e) {
+  private Request createFailedRequestForClass(String fqName, Exception e) {
     return Request.runner(new AssumptionFailedRunner(e, Description.createSuiteDescription(fqName)));
   }
 
-  private Request createRequestForMethod(String testFqName, String methodName, Exception e) {
+  private Request createFailedRequestForMethod(String testFqName, String methodName, Exception e) {
     return Request.runner(new AssumptionFailedRunner(e, Description.createTestDescription(testFqName, methodName)));
   }
 
