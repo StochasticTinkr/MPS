@@ -47,7 +47,6 @@
     <import index="k4i4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/)" />
     <import index="1nfz" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.rmi.server(JDK/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="ba15" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.plugin(MPS.Workbench/)" />
     <import index="9w4s" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util(MPS.IDEA/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="jkny" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.wm(MPS.IDEA/)" />
@@ -63,6 +62,7 @@
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <import index="btn2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.impl(MPS.IDEA/)" />
+    <import index="ba15" ref="7c96448b-2b97-4f89-b563-f04172a4b83a/java:jetbrains.mps.plugin(jetbrains.mps.ideaIntegration/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3762,7 +3762,7 @@
                             <node concept="3cpWsn" id="BZnyF9iTn4" role="3cpWs9">
                               <property role="3TUv4t" value="false" />
                               <property role="TrG5h" value="handler" />
-                              <node concept="3uibUv" id="BZnyF9iTn6" role="1tU5fm">
+                              <node concept="3uibUv" id="6v9ACjkg3RV" role="1tU5fm">
                                 <ref role="3uigEE" to="ba15:~IProjectHandler" resolve="IProjectHandler" />
                               </node>
                               <node concept="2OqwBi" id="BZnyF9iTn7" role="33vP2m">
@@ -6065,7 +6065,7 @@
                   </node>
                   <node concept="37vLTG" id="4Mdt1Rl4vOm" role="1bW2Oz">
                     <property role="TrG5h" value="h" />
-                    <node concept="3uibUv" id="4Mdt1Rl4vOl" role="1tU5fm">
+                    <node concept="3uibUv" id="3BM1k6XrIo2" role="1tU5fm">
                       <ref role="3uigEE" to="ba15:~IProjectHandler" resolve="IProjectHandler" />
                     </node>
                   </node>
@@ -6201,7 +6201,7 @@
                         </node>
                         <node concept="37vLTG" id="4Mdt1Rl4CiM" role="1bW2Oz">
                           <property role="TrG5h" value="h" />
-                          <node concept="3uibUv" id="4Mdt1Rl4CiN" role="1tU5fm">
+                          <node concept="3uibUv" id="6v9ACjkfYq0" role="1tU5fm">
                             <ref role="3uigEE" to="ba15:~IProjectHandler" resolve="IProjectHandler" />
                           </node>
                         </node>
@@ -6266,7 +6266,7 @@
                           </node>
                           <node concept="37vLTG" id="4Mdt1Rl4IiM" role="1bW2Oz">
                             <property role="TrG5h" value="h" />
-                            <node concept="3uibUv" id="4Mdt1Rl4IiN" role="1tU5fm">
+                            <node concept="3uibUv" id="6v9ACjkg0B6" role="1tU5fm">
                               <ref role="3uigEE" to="ba15:~IProjectHandler" resolve="IProjectHandler" />
                             </node>
                           </node>
@@ -6311,7 +6311,7 @@
                           </node>
                           <node concept="37vLTG" id="4Mdt1Rl4KGT" role="1bW2Oz">
                             <property role="TrG5h" value="h" />
-                            <node concept="3uibUv" id="4Mdt1Rl4KGU" role="1tU5fm">
+                            <node concept="3uibUv" id="6v9ACjkg07t" role="1tU5fm">
                               <ref role="3uigEE" to="ba15:~IProjectHandler" resolve="IProjectHandler" />
                             </node>
                           </node>
@@ -6338,7 +6338,7 @@
         <property role="TrG5h" value="todo" />
         <node concept="1ajhzC" id="4Mdt1Rl4m2i" role="1tU5fm">
           <node concept="3cqZAl" id="4Mdt1Rl4m8P" role="1ajl9A" />
-          <node concept="3uibUv" id="4Mdt1Rl4mla" role="1ajw0F">
+          <node concept="3uibUv" id="6v9ACjkg1wO" role="1ajw0F">
             <ref role="3uigEE" to="ba15:~IProjectHandler" resolve="IProjectHandler" />
           </node>
           <node concept="3uibUv" id="4Mdt1Rl4pJ_" role="3pBpOG">

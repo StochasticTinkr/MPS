@@ -4,6 +4,9 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
+    <modelRoot contentPath="${mps_home}/plugins/ideaIntegration/classes" type="java_classes">
+      <sourceRoot location="." />
+    </modelRoot>
   </models>
   <facets>
     <facet pluginId="com.intellij" type="ideaPlugin" />

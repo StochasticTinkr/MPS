@@ -60,7 +60,6 @@ workbench/resources/classes
 workbench/resources_en/classes
 workbench/typesystemUi/classes
 workbench/mps-workbench/jetbrains.mps.ide/classes
-plugins/ideaIntegration/classes
 :test
 core/tool/environment/classes
 testbench/classes
