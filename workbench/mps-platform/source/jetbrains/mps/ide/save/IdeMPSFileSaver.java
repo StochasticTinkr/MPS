@@ -38,11 +38,11 @@ import org.jetbrains.mps.openapi.module.SRepository;
  * <p>
  * SO this class is a delegate: it saves everything whenever the platform saves everything.
  */
-public class MPSFilesSaver implements ApplicationComponent {
+public class IdeMPSFileSaver implements ApplicationComponent {
   private MessageBusConnection myMessageBusConnection;
   private final SRepository myRepository;
 
-  public MPSFilesSaver(MPSCoreComponents coreComponents) {
+  public IdeMPSFileSaver(MPSCoreComponents coreComponents) {
     myRepository = coreComponents.getModuleRepository();
   }
 
@@ -55,6 +55,10 @@ public class MPSFilesSaver implements ApplicationComponent {
   @Override
   public void initComponent() {
     myMessageBusConnection = ApplicationManager.getApplication().getMessageBus().connect();
+    subscribeToDocumentSync();
+  }
+
+  protected void subscribeToDocumentSync() {
     myMessageBusConnection.subscribe(AppTopics.FILE_DOCUMENT_SYNC, new FileDocumentManagerAdapter() {
       @Override
       public void beforeAllDocumentsSaving() {

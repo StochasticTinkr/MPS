@@ -29,7 +29,8 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.save.MPSFilesSaver</implementation-class>
+      <implementation-class>jetbrains.mps.ide.save.IdeMPSFileSaver</implementation-class>
+      <headless-implementation-class>jetbrains.mps.ide.save.DummyIdeMPSFileSaver</headless-implementation-class>
     </component>
 
     <component>
