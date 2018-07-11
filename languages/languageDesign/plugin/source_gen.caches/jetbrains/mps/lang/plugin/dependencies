@@ -15,6 +15,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.intentions.IntentionsDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.migration.MigrationDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.plugin.FacetAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.refactorings.RefactoringAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.scripts.ScriptsDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.StructureAspectDescriptor" />
@@ -24,6 +25,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.refactoring.runtime.RefactoringAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />

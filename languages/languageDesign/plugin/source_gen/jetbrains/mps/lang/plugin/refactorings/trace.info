@@ -6,7 +6,15 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root>
+    <file name="RefactoringAspectDescriptor.java">
+      <unit at="11,0,25,0" name="jetbrains.mps.lang.plugin.refactorings.RefactoringAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:1f77f547-8d39-49b3-a638-0476f0430bcb(jetbrains.mps.lang.plugin.refactorings)/6237653430913268254">
+    <file name="RefactoringAspectDescriptor.java">
+      <node id="6237653430913268254" at="16,41,17,48" concept="1" />
+    </file>
     <file name="SortKeymapMembers.java">
       <node id="6237653430913268254" at="21,52,22,42" concept="5" />
       <node id="6237653430913268254" at="24,39,25,26" concept="5" />

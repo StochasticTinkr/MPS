@@ -13,6 +13,8 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.editor.menus.extras.testLanguage.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.openapi.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.lang.editor.menus.extras.testLanguage.intentions.IntentionsDescriptor;
+import jetbrains.mps.refactoring.runtime.RefactoringAspect;
+import jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings.RefactoringAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.lang.editor.menus.extras.testLanguage.structure.ConceptPresentationAspectImpl;
@@ -57,6 +59,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == IntentionAspectDescriptor.class) {
       return aspectClass.cast(new IntentionsDescriptor());
+    }
+    if (aspectClass == RefactoringAspect.class) {
+      return aspectClass.cast(new RefactoringAspectDescriptor());
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return aspectClass.cast(new jetbrains.mps.lang.editor.menus.extras.testLanguage.structure.StructureAspectDescriptor());

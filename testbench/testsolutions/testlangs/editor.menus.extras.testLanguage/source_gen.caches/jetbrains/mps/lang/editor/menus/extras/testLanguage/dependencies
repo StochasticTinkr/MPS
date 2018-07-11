@@ -9,12 +9,14 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.testLanguage.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.testLanguage.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.testLanguage.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings.RefactoringAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.testLanguage.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.testLanguage.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.testLanguage.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.refactoring.runtime.RefactoringAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
