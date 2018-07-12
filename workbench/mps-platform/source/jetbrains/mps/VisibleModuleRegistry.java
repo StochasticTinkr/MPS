@@ -38,18 +38,19 @@ public class VisibleModuleRegistry implements ApplicationComponent {
     if (module == null) return false;
     //project modules
     //contributed by plugin
-    Set<MPSModuleOwner> moduleOwners = new ModelAccessHelper(module.getRepository()).runReadAction(new Computable<Set<MPSModuleOwner>>() {
-      @Override
-      public Set<MPSModuleOwner> compute() {
-        return new ModuleRepositoryFacade(module.getRepository()).getModuleOwners(module);
+    if (module.getRepository() != null) {
+      Set<MPSModuleOwner> moduleOwners = new ModelAccessHelper(module.getRepository()).runReadAction(
+          () -> new ModuleRepositoryFacade(module.getRepository()).getModuleOwners(module));
+      for (MPSModuleOwner owner : moduleOwners) {
+        if (owner instanceof Language) {
+          return isVisible((Language) owner);
+        }
+        if (!owner.isHidden()) {
+          return true;
+        }
       }
-    });
-    for (MPSModuleOwner owner : moduleOwners) {
-      if (owner instanceof Language) {
-        return isVisible((Language) owner);
-      }
-      if (!owner.isHidden()) return true;
     }
+
     String moduleFqName = module.getModuleName();
     Boolean result = myCache.get(moduleFqName);
     if (result != null) return result;
