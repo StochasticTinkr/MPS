@@ -162,9 +162,6 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-refactoring-runtime-models">
       <fileset dir="${mps_home}/core/refactoring-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/core-kernel-patternRuntime-models">
-      <fileset dir="${mps_home}/core/kernel/patternRuntime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-dataFlowRuntime-jetbrains">
       <fileset dir="${mps_home}/core/dataFlowRuntime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
@@ -228,9 +225,6 @@
       <zipfileset file="${mps_home}/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" prefix="modules/jetbrains.mps.refactoring.runtime" />
       <zipfileset dir="${mps_home}/core/refactoring-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.refactoring.runtime" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-refactoring-runtime-models" prefix="modules/jetbrains.mps.refactoring.runtime/models" />
-      <zipfileset file="${mps_home}/core/kernel/patternRuntime/jetbrains.mps.lang.pattern.runtime.msd" prefix="modules/jetbrains.mps.lang.pattern.runtime" />
-      <zipfileset dir="${mps_home}/core/kernel/patternRuntime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.lang.pattern.runtime" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-kernel-patternRuntime-models" prefix="modules/jetbrains.mps.lang.pattern.runtime/models" />
       <zipfileset file="${mps_home}/core/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" prefix="modules/jetbrains.mps.dataFlow.runtime" />
       <zipfileset dir="${mps_home}/core/dataFlowRuntime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.dataFlow.runtime" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-dataFlowRuntime-jetbrains" prefix="modules/jetbrains.mps.dataFlow.runtime/jetbrains" />
@@ -6087,7 +6081,6 @@
         <module file="${mps_home}/core/migration-runtime/jetbrains.mps.lang.migration.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/modelapi/jetbrains.mps.lang.modelapi.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/pattern/jetbrains.mps.lang.pattern.mpl" bootstrap="true" />
-        <module file="${mps_home}/core/kernel/patternRuntime/jetbrains.mps.lang.pattern.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/plugin/jetbrains.mps.lang.plugin.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/project/jetbrains.mps.lang.project.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/quotation/jetbrains.mps.lang.quotation.mpl" bootstrap="true" />

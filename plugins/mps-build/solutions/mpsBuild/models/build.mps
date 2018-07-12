@@ -2521,9 +2521,6 @@
             <node concept="1bldCd" id="1OSlDLmrG9S" role="39821P">
               <ref role="3$exzV" node="7Kfy9QB6Lh2" resolve="jetbrains.mps.refactoring.runtime" />
             </node>
-            <node concept="1bldCd" id="1OSlDLmrG9R" role="39821P">
-              <ref role="3$exzV" node="7Kfy9QB6LfW" resolve="jetbrains.mps.lang.pattern.runtime" />
-            </node>
             <node concept="1bldCd" id="1OSlDLmrG9O" role="39821P">
               <ref role="3$exzV" node="7Kfy9QB6LfK" resolve="jetbrains.mps.dataFlow.runtime" />
             </node>
@@ -5096,58 +5093,6 @@
           <node concept="3bR9La" id="2a9bszgruOH" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="1TaHNgiHrmy" resolve="jetbrains.mps.java.stub" />
-          </node>
-        </node>
-      </node>
-      <node concept="1E1JtA" id="7Kfy9QB6LfW" role="2G$12L">
-        <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.pattern.runtime" />
-        <property role="3LESm3" value="c4f367dc-30c0-4376-9d05-1d1797bb8599" />
-        <property role="2GAjPV" value="true" />
-        <node concept="3rtmxn" id="EpEP7iii3I" role="3bR31x">
-          <node concept="3LXTmp" id="EpEP7iii3J" role="3rtmxm">
-            <node concept="3qWCbU" id="EpEP7iii3K" role="3LXTna">
-              <property role="3qWCbO" value="icons/**, resources/**" />
-            </node>
-            <node concept="398BVA" id="EpEP7iii3L" role="3LXTmr">
-              <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-              <node concept="2Ry0Ak" id="EpEP7iii3M" role="iGT6I">
-                <property role="2Ry0Am" value="core" />
-                <node concept="2Ry0Ak" id="EpEP7iii3N" role="2Ry0An">
-                  <property role="2Ry0Am" value="kernel" />
-                  <node concept="2Ry0Ak" id="EpEP7iii3O" role="2Ry0An">
-                    <property role="2Ry0Am" value="patternRuntime" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="2a9bszgruxK" role="3bR37C">
-          <node concept="3bR9La" id="2a9bszgruxJ" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="1TaHNgiIbIQ" resolve="MPS.Core" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="2a9bszgruxM" role="3bR37C">
-          <node concept="3bR9La" id="2a9bszgruxL" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
-          </node>
-        </node>
-        <node concept="398BVA" id="6wK_PpNA8AU" role="3LF7KH">
-          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-          <node concept="2Ry0Ak" id="6wK_PpNA8AV" role="iGT6I">
-            <property role="2Ry0Am" value="core" />
-            <node concept="2Ry0Ak" id="6wK_PpNA8AW" role="2Ry0An">
-              <property role="2Ry0Am" value="kernel" />
-              <node concept="2Ry0Ak" id="6wK_PpNA8AX" role="2Ry0An">
-                <property role="2Ry0Am" value="patternRuntime" />
-                <node concept="2Ry0Ak" id="6wK_PpNA8AY" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.pattern.runtime.msd" />
-                </node>
-              </node>
-            </node>
           </node>
         </node>
       </node>
@@ -12320,12 +12265,6 @@
             <node concept="3bR9La" id="7YI57w6K0mW" role="1SiIV1">
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
-            </node>
-          </node>
-          <node concept="1SiIV0" id="7YI57w6K0mX" role="3bR37C">
-            <node concept="3bR9La" id="7YI57w6K0mY" role="1SiIV1">
-              <property role="3bR36h" value="false" />
-              <ref role="3bR37D" node="7Kfy9QB6LfW" resolve="jetbrains.mps.lang.pattern.runtime" />
             </node>
           </node>
           <node concept="1SiIV0" id="7YI57w6K0mZ" role="3bR37C">
