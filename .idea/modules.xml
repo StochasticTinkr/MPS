@@ -43,7 +43,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/logging/logging.iml" filepath="$PROJECT_DIR$/core/logging/logging.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/make-runtime/solutions/jetbrains.mps.make.facets/make-facets.iml" filepath="$PROJECT_DIR$/core/make-runtime/solutions/jetbrains.mps.make.facets/make-facets.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/make-runtime/make-runtime.iml" filepath="$PROJECT_DIR$/core/make-runtime/make-runtime.iml" group="core" />
-      <module fileurl="file://$PROJECT_DIR$/core/migration/migration.iml" filepath="$PROJECT_DIR$/core/migration/migration.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/plugins/migration/migration-platform/migration-platform.iml" filepath="$PROJECT_DIR$/plugins/migration/migration-platform/migration-platform.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/plugins/migration/migration-workbench/migration-workbench.iml" filepath="$PROJECT_DIR$/plugins/migration/migration-workbench/migration-workbench.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/core/migration-runtime/migrations-runtime.iml" filepath="$PROJECT_DIR$/core/migration-runtime/migrations-runtime.iml" group="core" />

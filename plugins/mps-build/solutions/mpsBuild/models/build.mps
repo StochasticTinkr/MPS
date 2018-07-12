@@ -1596,21 +1596,6 @@
           <property role="nFU4j" value="source" />
         </node>
       </node>
-      <node concept="398b2D" id="7AOtmmvLdhx" role="398b2p">
-        <node concept="398BVA" id="7AOtmmvLdhy" role="398b2C">
-          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-          <node concept="2Ry0Ak" id="7AOtmmvLdhz" role="iGT6I">
-            <property role="2Ry0Am" value="core" />
-            <node concept="2Ry0Ak" id="7AOtmmvLdh$" role="2Ry0An">
-              <property role="2Ry0Am" value="migration" />
-            </node>
-          </node>
-        </node>
-        <node concept="nFU4i" id="7AOtmmvLdhA" role="nFU4p">
-          <property role="nFU4j" value="source" />
-          <property role="3LZaj6" value="source" />
-        </node>
-      </node>
     </node>
     <node concept="398b33" id="3cAdGiIRUkj" role="3989C9">
       <property role="TrG5h" value="mps-editor-api" />

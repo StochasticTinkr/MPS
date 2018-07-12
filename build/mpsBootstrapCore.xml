@@ -6892,7 +6892,6 @@
       <src>
         <pathelement path="${mps_home}/core/migration-runtime/source_gen" />
         <pathelement path="${mps_home}/core/migration-runtime/source" />
-        <pathelement path="${mps_home}/core/migration/source" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-annotations" />
@@ -6924,7 +6923,6 @@
     <copy todir="${build.tmp}/java/out/mps-migration">
       <fileset dir="${mps_home}/core/migration-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
       <fileset dir="${mps_home}/core/migration-runtime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
-      <fileset dir="${mps_home}/core/migration/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
     </copy>
   </target>
   
