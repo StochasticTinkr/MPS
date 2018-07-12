@@ -20,10 +20,10 @@
       <modulePath path="$PROJECT_DIR$/core/findUsages-runtime/jetbrains.mps.findUsages.runtime.msd" folder="core.aspects.findUsages" />
       <modulePath path="$PROJECT_DIR$/core/generator/solutions/generator/jetbrains.mps.generator.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/core/java-stub/jetbrains.mps.java.stub.msd" folder="core.kernel" />
-      <modulePath path="$PROJECT_DIR$/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" folder="core.aspects.dataflow" />
+      <modulePath path="$PROJECT_DIR$/core/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" folder="core.aspects.dataflow" />
       <modulePath path="$PROJECT_DIR$/core/kernel/kernelSolution/jetbrains.mps.kernel.msd" folder="core.kernel" />
       <modulePath path="$PROJECT_DIR$/core/kernel/patternRuntime/jetbrains.mps.lang.pattern.runtime.msd" folder="core.languages.pattern" />
-      <modulePath path="$PROJECT_DIR$/core/kernel/resources/jetbrains.mps.smodel.resources.msd" folder="core.make" />
+      <modulePath path="$PROJECT_DIR$/core/resources/jetbrains.mps.smodel.resources.msd" folder="core.make" />
       <modulePath path="$PROJECT_DIR$/core/kernel/smodelRuntime/jetbrains.mps.runtime.msd" folder="core.kernel" />
       <modulePath path="$PROJECT_DIR$/core/make-runtime/solutions/jetbrains.mps.make.facets/jetbrains.mps.make.facets.msd" folder="core.make" />
       <modulePath path="$PROJECT_DIR$/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" folder="core.make" />
