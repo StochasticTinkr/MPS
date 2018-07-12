@@ -3822,34 +3822,39 @@
             </node>
           </node>
           <node concept="22lmx$" id="3etVqSRK$6I" role="3clFbw">
-            <node concept="22lmx$" id="3etVqSRK$6J" role="3uHU7B">
-              <node concept="3clFbC" id="3etVqSRK$6K" role="3uHU7B">
-                <node concept="10Nm6u" id="3etVqSRK$6L" role="3uHU7w" />
-                <node concept="37vLTw" id="2BHiRxglt7f" role="3uHU7B">
-                  <ref role="3cqZAo" node="3etVqSRK$ab" resolve="model" />
-                </node>
-              </node>
-              <node concept="3clFbC" id="3etVqSRK$6N" role="3uHU7w">
-                <node concept="2JrnkZ" id="3etVqSRK$6O" role="3uHU7B">
-                  <node concept="37vLTw" id="2BHiRxgl6te" role="2JrQYb">
-                    <ref role="3cqZAo" node="3etVqSRK$ab" resolve="model" />
-                  </node>
-                </node>
-                <node concept="10Nm6u" id="3etVqSRK$6Q" role="3uHU7w" />
+            <node concept="3clFbC" id="3etVqSRK$6K" role="3uHU7B">
+              <node concept="10Nm6u" id="3etVqSRK$6L" role="3uHU7w" />
+              <node concept="37vLTw" id="2BHiRxglt7f" role="3uHU7B">
+                <ref role="3cqZAo" node="3etVqSRK$ab" resolve="model" />
               </node>
             </node>
             <node concept="3clFbC" id="3etVqSRK$6R" role="3uHU7w">
-              <node concept="2OqwBi" id="3etVqSRK$6S" role="3uHU7B">
-                <node concept="2JrnkZ" id="3etVqSRK$6T" role="2Oq$k0">
-                  <node concept="37vLTw" id="2BHiRxgmaUr" role="2JrQYb">
+              <node concept="10Nm6u" id="3etVqSRK$6W" role="3uHU7w" />
+              <node concept="2OqwBi" id="6uzFVCcfDbB" role="3uHU7B">
+                <node concept="2JrnkZ" id="6uzFVCcfDSt" role="2Oq$k0">
+                  <node concept="37vLTw" id="6uzFVCcfCJA" role="2JrQYb">
                     <ref role="3cqZAo" node="3etVqSRK$ab" resolve="model" />
                   </node>
                 </node>
-                <node concept="liA8E" id="3etVqSRK$6V" role="2OqNvi">
+                <node concept="liA8E" id="6uzFVCcfEbe" role="2OqNvi">
                   <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
                 </node>
               </node>
-              <node concept="10Nm6u" id="3etVqSRK$6W" role="3uHU7w" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6uzFVCcftBM" role="3cqZAp">
+          <node concept="3cpWsn" id="6uzFVCcftBN" role="3cpWs9">
+            <property role="TrG5h" value="visibilityHelper" />
+            <node concept="3uibUv" id="6uzFVCcftBL" role="1tU5fm">
+              <ref role="3uigEE" to="gp7a:~VisibilityUtil" resolve="VisibilityUtil" />
+            </node>
+            <node concept="2YIFZM" id="6uzFVCcfETL" role="33vP2m">
+              <ref role="37wK5l" to="gp7a:~VisibilityUtil.forModel(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.project.dependency.VisibilityUtil" resolve="forModel" />
+              <ref role="1Pybhc" to="gp7a:~VisibilityUtil" resolve="VisibilityUtil" />
+              <node concept="37vLTw" id="6uzFVCcfFbM" role="37wK5m">
+                <ref role="3cqZAo" node="3etVqSRK$ab" resolve="model" />
+              </node>
             </node>
           </node>
         </node>
@@ -4032,14 +4037,15 @@
                   <node concept="3clFbS" id="12UuKQucFdD" role="3clFbx">
                     <node concept="3N13vt" id="12UuKQucGgd" role="3cqZAp" />
                   </node>
-                  <node concept="2YIFZM" id="12UuKQucqAq" role="3clFbw">
-                    <ref role="37wK5l" to="gp7a:~VisibilityUtil.isVisible(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isVisible" />
-                    <ref role="1Pybhc" to="gp7a:~VisibilityUtil" resolve="VisibilityUtil" />
-                    <node concept="37vLTw" id="12UuKQucqD_" role="37wK5m">
-                      <ref role="3cqZAo" node="3etVqSRK$ab" resolve="model" />
+                  <node concept="2OqwBi" id="6uzFVCcfHO7" role="3clFbw">
+                    <node concept="37vLTw" id="6uzFVCcfHxg" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6uzFVCcftBN" resolve="visibilityHelper" />
                     </node>
-                    <node concept="37vLTw" id="12UuKQucqOa" role="37wK5m">
-                      <ref role="3cqZAo" node="12UuKQubZ5k" resolve="m" />
+                    <node concept="liA8E" id="6uzFVCcfHZU" role="2OqNvi">
+                      <ref role="37wK5l" to="gp7a:~VisibilityUtil.isVisible(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isVisible" />
+                      <node concept="37vLTw" id="6uzFVCcfIig" role="37wK5m">
+                        <ref role="3cqZAo" node="12UuKQubZ5k" resolve="m" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -4112,6 +4118,11 @@
                                   <node concept="37vLTw" id="12UuKQucKM8" role="3uHU7B">
                                     <ref role="3cqZAo" node="12UuKQucKM3" resolve="m2" />
                                   </node>
+                                </node>
+                              </node>
+                              <node concept="3SKdUt" id="6uzFVCcfJNP" role="3cqZAp">
+                                <node concept="3SKdUq" id="6uzFVCcfJNR" role="3SKWNk">
+                                  <property role="3SKdUp" value="intentionally left VisibilityUtil.isVisible(), not visibilityHelper, as I need actual state, not cached the moment the model has been checked" />
                                 </node>
                               </node>
                               <node concept="3clFbJ" id="12UuKQudnIG" role="3cqZAp">
