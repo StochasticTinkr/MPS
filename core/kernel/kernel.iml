@@ -6,7 +6,6 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/patternRuntime">
       <sourceFolder url="file://$MODULE_DIR$/patternRuntime/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/patternRuntime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/patternRuntime/test" isTestSource="true" />
     </content>
     <content url="file://$MODULE_DIR$/smodelRuntime">
