@@ -20,6 +20,7 @@ import com.intellij.openapi.editor.Document;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -53,6 +54,10 @@ public class NodeEditor extends BaseNodeEditor {
 
   @Override
   public void showNode(SNode node, boolean select) {
-    getCurrentEditorComponent().selectNode(node);
+    if (select) {
+      getCurrentEditorComponent().selectNode(node);
+    } else {
+      getCurrentEditorComponent().getSelectionManager().setSelection(node, SelectionManager.FOCUS_POLICY_CELL, 0);
+    }
   }
 }
