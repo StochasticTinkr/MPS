@@ -23,6 +23,7 @@ public class VisibilityUtil {
   //here all hacks made for accessories models are stored until accessories models are reviewed
 
   public static boolean isVisible(SModule from, SModule what) {
+    // FIXME module.getScope() might get expensive, refactor this class to reuse scope instance once obtained
     return ((AbstractModule) from).getScope().resolve(what.getModuleReference()) != null;
   }
 

@@ -22,6 +22,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -33,7 +34,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-// todo: review usages and remove
+/**
+ * @deprecated There are no subclasses in MPS, and the logic here is way to questionable to keep it any more.
+ *             The class would be removed with no replacement.
+ *             Desire to drop it dates back to d5ae3c83.
+ */
+@Deprecated
+@ToRemove(version = 2018.2)
 public abstract class DefaultScope extends BaseScope {
   private final Object LOCK = new Object();
 
