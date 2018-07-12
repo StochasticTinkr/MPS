@@ -260,9 +260,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        for (Project p : ProjectManager.getInstance().getOpenedProjects()) {
-          p.getScope().invalidateCaches();
-        }
         for (SModule m : getModules()) {
           SearchScope moduleScope = ((AbstractModule) m).getScope();
           ((AbstractModule.ModuleScope) moduleScope).invalidateCaches();
