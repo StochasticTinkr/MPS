@@ -15,13 +15,13 @@
       <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/collections/runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/collections/runtime/collections-runtime.iml" group="languages" />
       <module fileurl="file://$PROJECT_DIR$/core/components/components.iml" filepath="$PROJECT_DIR$/core/components/components.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/plugins/console/console.iml" filepath="$PROJECT_DIR$/plugins/console/console.iml" />
-      <module fileurl="file://$PROJECT_DIR$/core/kernel/dataFlowRuntime/dataflow-rt.iml" filepath="$PROJECT_DIR$/core/kernel/dataFlowRuntime/dataflow-rt.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/dataFlowRuntime/dataflow-rt.iml" filepath="$PROJECT_DIR$/core/dataFlowRuntime/dataflow-rt.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/plugins/debugger-api/api/debugger-api-api.iml" filepath="$PROJECT_DIR$/plugins/debugger-api/api/debugger-api-api.iml" group="plugins/debugger/debugger-api" />
       <module fileurl="file://$PROJECT_DIR$/plugins/debugger-api/runtime/debugger-api-runtime.iml" filepath="$PROJECT_DIR$/plugins/debugger-api/runtime/debugger-api-runtime.iml" group="plugins/debugger/debugger-api" />
       <module fileurl="file://$PROJECT_DIR$/plugins/debugger-java/api/debugger-java-api.iml" filepath="$PROJECT_DIR$/plugins/debugger-java/api/debugger-java-api.iml" group="plugins/debugger/debugger-java" />
       <module fileurl="file://$PROJECT_DIR$/plugins/debugger-java/customViewers/debugger-java-customViewers.iml" filepath="$PROJECT_DIR$/plugins/debugger-java/customViewers/debugger-java-customViewers.iml" group="plugins/debugger" />
       <module fileurl="file://$PROJECT_DIR$/plugins/debugger-java/runtime/debugger-java-runtime.iml" filepath="$PROJECT_DIR$/plugins/debugger-java/runtime/debugger-java-runtime.iml" group="plugins/debugger/debugger-java" />
-      <module fileurl="file://$PROJECT_DIR$/core/kernel/jetbrains.mps.debug.api.info/debuginfo-api.iml" filepath="$PROJECT_DIR$/core/kernel/jetbrains.mps.debug.api.info/debuginfo-api.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/jetbrains.mps.debug.api.info/debuginfo-api.iml" filepath="$PROJECT_DIR$/core/jetbrains.mps.debug.api.info/debuginfo-api.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/editor/editing-runtime/editing-runtime.iml" filepath="$PROJECT_DIR$/editor/editing-runtime/editing-runtime.iml" group="editor" />
       <module fileurl="file://$PROJECT_DIR$/editor/editor-api/editor-api.iml" filepath="$PROJECT_DIR$/editor/editor-api/editor-api.iml" group="editor" />
       <module fileurl="file://$PROJECT_DIR$/editor/editor-runtime/editor-runtime.iml" filepath="$PROJECT_DIR$/editor/editor-runtime/editor-runtime.iml" group="editor" />
@@ -39,7 +39,7 @@
       <module fileurl="file://$PROJECT_DIR$/editor/intentions-runtime/intentions-runtime.iml" filepath="$PROJECT_DIR$/editor/intentions-runtime/intentions-runtime.iml" group="editor" />
       <module fileurl="file://$PROJECT_DIR$/core/java-stub/java-stub.iml" filepath="$PROJECT_DIR$/core/java-stub/java-stub.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/kernel.iml" filepath="$PROJECT_DIR$/core/kernel/kernel.iml" group="core" />
-      <module fileurl="file://$PROJECT_DIR$/core/kernel/resources/kernel-resources.iml" filepath="$PROJECT_DIR$/core/kernel/resources/kernel-resources.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/resources/kernel-resources.iml" filepath="$PROJECT_DIR$/core/resources/kernel-resources.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/logging/logging.iml" filepath="$PROJECT_DIR$/core/logging/logging.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/make-runtime/solutions/jetbrains.mps.make.facets/make-facets.iml" filepath="$PROJECT_DIR$/core/make-runtime/solutions/jetbrains.mps.make.facets/make-facets.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/make-runtime/make-runtime.iml" filepath="$PROJECT_DIR$/core/make-runtime/make-runtime.iml" group="core" />
