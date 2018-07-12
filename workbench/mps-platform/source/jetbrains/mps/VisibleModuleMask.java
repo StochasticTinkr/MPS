@@ -22,6 +22,11 @@ import com.intellij.util.xmlb.annotations.Attribute;
 public class VisibleModuleMask extends AbstractExtensionPointBean {
   public static final ExtensionPointName<VisibleModuleMask> EP_VISIBLE_MODULES = ExtensionPointName.create("com.intellij.mps.VisibleModuleMask");
 
+  /**
+   * It is used as parameter for java.util.regex.Pattern#compile(java.lang.String) to check module name for visibility
+   *
+   * Must not be empty or null
+   */
   @Attribute("mask")
   public String mask;
 }
