@@ -165,8 +165,8 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-kernel-patternRuntime-models">
       <fileset dir="${mps_home}/core/kernel/patternRuntime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/core-kernel-dataFlowRuntime-jetbrains">
-      <fileset dir="${mps_home}/core/kernel/dataFlowRuntime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/core-dataFlowRuntime-jetbrains">
+      <fileset dir="${mps_home}/core/dataFlowRuntime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-java-stub-models">
       <fileset dir="${mps_home}/core/java-stub/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
@@ -183,8 +183,8 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-make-runtime-solutions-jetbrains.mps.make-jetbrains">
       <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/core-kernel-resources-jetbrains">
-      <fileset dir="${mps_home}/core/kernel/resources/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/core-resources-jetbrains">
+      <fileset dir="${mps_home}/core/resources/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-make-runtime-solutions-jetbrains.mps.make.facets-models">
       <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
@@ -231,9 +231,9 @@
       <zipfileset file="${mps_home}/core/kernel/patternRuntime/jetbrains.mps.lang.pattern.runtime.msd" prefix="modules/jetbrains.mps.lang.pattern.runtime" />
       <zipfileset dir="${mps_home}/core/kernel/patternRuntime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.lang.pattern.runtime" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-kernel-patternRuntime-models" prefix="modules/jetbrains.mps.lang.pattern.runtime/models" />
-      <zipfileset file="${mps_home}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" prefix="modules/jetbrains.mps.dataFlow.runtime" />
-      <zipfileset dir="${mps_home}/core/kernel/dataFlowRuntime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.dataFlow.runtime" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-kernel-dataFlowRuntime-jetbrains" prefix="modules/jetbrains.mps.dataFlow.runtime/jetbrains" />
+      <zipfileset file="${mps_home}/core/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" prefix="modules/jetbrains.mps.dataFlow.runtime" />
+      <zipfileset dir="${mps_home}/core/dataFlowRuntime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.dataFlow.runtime" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-dataFlowRuntime-jetbrains" prefix="modules/jetbrains.mps.dataFlow.runtime/jetbrains" />
       <zipfileset file="${mps_home}/core/java-stub/jetbrains.mps.java.stub.msd" prefix="modules/jetbrains.mps.java.stub" />
       <zipfileset dir="${mps_home}/core/java-stub" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.java.stub" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-java-stub-models" prefix="modules/jetbrains.mps.java.stub/models" />
@@ -249,9 +249,9 @@
       <zipfileset file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" prefix="modules/jetbrains.mps.make" />
       <zipfileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.make" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-make-runtime-solutions-jetbrains.mps.make-jetbrains" prefix="modules/jetbrains.mps.make/jetbrains" />
-      <zipfileset file="${mps_home}/core/kernel/resources/jetbrains.mps.smodel.resources.msd" prefix="modules/jetbrains.mps.smodel.resources" />
-      <zipfileset dir="${mps_home}/core/kernel/resources" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.smodel.resources" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-kernel-resources-jetbrains" prefix="modules/jetbrains.mps.smodel.resources/jetbrains" />
+      <zipfileset file="${mps_home}/core/resources/jetbrains.mps.smodel.resources.msd" prefix="modules/jetbrains.mps.smodel.resources" />
+      <zipfileset dir="${mps_home}/core/resources" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.smodel.resources" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-resources-jetbrains" prefix="modules/jetbrains.mps.smodel.resources/jetbrains" />
       <zipfileset file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/jetbrains.mps.make.facets.msd" prefix="modules/jetbrains.mps.make.facets" />
       <zipfileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.make.facets" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-make-runtime-solutions-jetbrains.mps.make.facets-models" prefix="modules/jetbrains.mps.make.facets/models" />
@@ -6050,7 +6050,7 @@
         <module file="${mps_home}/languages/baseLanguage/baseLanguageInternal/jetbrains.mps.baseLanguageInternal.mpl" bootstrap="true" />
         <module file="${mps_home}/core/tool/environment/jetbrains.mps.core.tool.environment.msd" bootstrap="true" />
         <module file="${mps_home}/plugins/mps-core/languages/core.xml.sax/jetbrains.mps.core.xml.sax.mpl" bootstrap="true" />
-        <module file="${mps_home}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/core/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.constraints.devkit" />
         <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.dataflow.devkit" />
         <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.structure.devkit" />
@@ -6118,7 +6118,7 @@
         <module file="${mps_home}/languages/languageDesign/refactoring/participant/jetbrains.mps.refactoring.participant.mpl" bootstrap="true" />
         <module file="${mps_home}/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/core/kernel/smodelRuntime/jetbrains.mps.runtime.msd" bootstrap="true" />
-        <module file="${mps_home}/core/kernel/resources/jetbrains.mps.smodel.resources.msd" bootstrap="true" />
+        <module file="${mps_home}/core/resources/jetbrains.mps.smodel.resources.msd" bootstrap="true" />
         <module file="${mps_home}/core/tool/builder/jetbrains.mps.tool.builder.msd" bootstrap="true" />
         <module file="${mps_home}/core/tool/common/jetbrains.mps.tool.common.msd" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/make/languages/gentest/jetbrains.mps.tool.gentest.mpl" bootstrap="true" />
@@ -6375,11 +6375,11 @@
         <path location="${mps_home}/core/aspects/behavior/behavior-api/source" />
         <pathelement path="${mps_home}/core/kernel/source" />
         <pathelement path="${mps_home}/core/kernel/source_gen" />
-        <pathelement path="${mps_home}/core/kernel/dataFlowRuntime/source" />
-        <pathelement path="${mps_home}/core/kernel/dataFlowRuntime/source_gen" />
         <pathelement path="${mps_home}/core/kernel/patternRuntime/source" />
         <pathelement path="${mps_home}/core/kernel/patternRuntime/source_gen" />
         <pathelement path="${mps_home}/core/kernel/smodelRuntime/source_gen" />
+        <pathelement path="${mps_home}/core/dataFlowRuntime/source" />
+        <pathelement path="${mps_home}/core/dataFlowRuntime/source_gen" />
         <pathelement path="${mps_home}/core/typesystemEngine/source" />
         <pathelement path="${mps_home}/core/typesystemEngine/source_gen" />
         <pathelement path="${mps_home}/core/findUsages-runtime/source" />
@@ -6395,7 +6395,7 @@
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/source_gen" />
-        <pathelement path="${mps_home}/core/kernel/resources/source_gen" />
+        <pathelement path="${mps_home}/core/resources/source_gen" />
         <pathelement path="${mps_home}/core/generator/source" />
         <pathelement path="${mps_home}/core/generator/source_gen" />
         <pathelement path="${mps_home}/core/project/source" />
@@ -6507,11 +6507,11 @@
       <src>
         <pathelement path="${mps_home}/core/kernel/source" />
         <pathelement path="${mps_home}/core/kernel/source_gen" />
-        <pathelement path="${mps_home}/core/kernel/dataFlowRuntime/source" />
-        <pathelement path="${mps_home}/core/kernel/dataFlowRuntime/source_gen" />
         <pathelement path="${mps_home}/core/kernel/patternRuntime/source" />
         <pathelement path="${mps_home}/core/kernel/patternRuntime/source_gen" />
         <pathelement path="${mps_home}/core/kernel/smodelRuntime/source_gen" />
+        <pathelement path="${mps_home}/core/dataFlowRuntime/source" />
+        <pathelement path="${mps_home}/core/dataFlowRuntime/source_gen" />
         <pathelement path="${mps_home}/core/typesystemEngine/source" />
         <pathelement path="${mps_home}/core/typesystemEngine/source_gen" />
         <pathelement path="${mps_home}/core/findUsages-runtime/source" />
@@ -6549,11 +6549,11 @@
     <copy todir="${build.tmp}/java/out/mps-kernel">
       <fileset dir="${mps_home}/core/kernel/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
       <fileset dir="${mps_home}/core/kernel/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
-      <fileset dir="${mps_home}/core/kernel/dataFlowRuntime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
-      <fileset dir="${mps_home}/core/kernel/dataFlowRuntime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
       <fileset dir="${mps_home}/core/kernel/patternRuntime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
       <fileset dir="${mps_home}/core/kernel/patternRuntime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
       <fileset dir="${mps_home}/core/kernel/smodelRuntime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
+      <fileset dir="${mps_home}/core/dataFlowRuntime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
+      <fileset dir="${mps_home}/core/dataFlowRuntime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
       <fileset dir="${mps_home}/core/typesystemEngine/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
       <fileset dir="${mps_home}/core/typesystemEngine/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
       <fileset dir="${mps_home}/core/findUsages-runtime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
@@ -6650,7 +6650,7 @@
     <mkdir dir="${build.tmp}/java/out/kernel-resources" />
     <javac2 destdir="${build.tmp}/java/out/kernel-resources" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${mps_home}/core/kernel/resources/source_gen" />
+      <src path="${mps_home}/core/resources/source_gen" />
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-annotations" />
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
@@ -6674,7 +6674,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/kernel-resources">
-      <fileset dir="${mps_home}/core/kernel/resources/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
+      <fileset dir="${mps_home}/core/resources/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
     </copy>
   </target>
   
@@ -6682,7 +6682,7 @@
     <mkdir dir="${build.tmp}/java/out/mps-debuginfo-api" />
     <javac2 destdir="${build.tmp}/java/out/mps-debuginfo-api" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source" />
+      <src path="${mps_home}/core/jetbrains.mps.debug.api.info/source" />
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-annotations" />
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
@@ -6697,7 +6697,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-debuginfo-api">
-      <fileset dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
+      <fileset dir="${mps_home}/core/jetbrains.mps.debug.api.info/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
     </copy>
   </target>
   
