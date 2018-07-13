@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,5 +97,12 @@ public class ModuleClassLoaderSupport {
       myCompileDependencies = myDependenciesSupplier.get();
     }
     return myCompileDependencies;
+  }
+
+  /**
+   * @return parent classloader for a module classloader, see {@link RootClassloaderLookup}
+   */
+  /*package*/ ClassLoader getRootClassLoader() {
+    return new RootClassloaderLookup(myModule).get();
   }
 }

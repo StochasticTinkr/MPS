@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import com.intellij.ide.plugins.PluginManager;
-import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.classloading.RootClassloaderLookup;
 import com.intellij.ide.plugins.cl.PluginClassLoader;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImpl;
@@ -63,10 +63,7 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
     }
   }
   /*package*/ String getPluginIdForModule(SModule module, final AnActionEvent event) {
-    if (!(module instanceof ReloadableModule)) {
-      return null;
-    }
-    ClassLoader rootClassLoader = ((ReloadableModule) module).getRootClassLoader();
+    ClassLoader rootClassLoader = new RootClassloaderLookup(module).get();
     if (!(rootClassLoader instanceof PluginClassLoader)) {
       System.out.println("not PluginClassLoader for " + module.getModuleName());
       return null;

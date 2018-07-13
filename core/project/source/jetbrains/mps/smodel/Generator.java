@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -266,10 +266,5 @@ public class Generator extends ReloadableModuleBase {
     public Collection<SModuleReference> getDevKits(Generator contextModule, SModel forModel) {
       return Collections.singleton(BootstrapLanguages.getGeneratorTemplatesDevKit());
     }
-  }
-
-  @Override
-  public ClassLoader getRootClassLoader() {
-    return mySourceLanguage.getRootClassLoader();
   }
 }

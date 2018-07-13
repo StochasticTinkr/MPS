@@ -133,7 +133,6 @@
     <import index="xnls" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.icons(MPS.Platform/)" />
     <import index="mmaq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.jdom(MPS.Core/)" />
     <import index="ends" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.persistence(MPS.Core/)" />
-    <import index="kx0u" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.navigation(MPS.Workbench/)" />
     <import index="kpve" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.message(MPS.Editor/)" />
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
@@ -190,6 +189,7 @@
     <import index="paf" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.projectPane.logicalview(MPS.Workbench/)" />
     <import index="mte6" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Platform/)" />
     <import index="l7vu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.platform.renameProject(MPS.IDEA/)" />
+    <import index="3qmy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.classloading(MPS.Core/)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
@@ -36695,43 +36695,24 @@
       </node>
       <node concept="17QB3L" id="2aZcM6jmJCS" role="3clF45" />
       <node concept="3clFbS" id="2aZcM6jmAsL" role="3clF47">
-        <node concept="3clFbJ" id="3sQjGS1pw4P" role="3cqZAp">
-          <node concept="3clFbS" id="3sQjGS1pw4R" role="3clFbx">
-            <node concept="3cpWs6" id="3sQjGS1pwPQ" role="3cqZAp">
-              <node concept="10Nm6u" id="3sQjGS1pwU8" role="3cqZAk" />
-            </node>
-          </node>
-          <node concept="3fqX7Q" id="3sQjGS1pwsi" role="3clFbw">
-            <node concept="2ZW3vV" id="3sQjGS1pwsk" role="3fr31v">
-              <node concept="3uibUv" id="3sQjGS1pwsl" role="2ZW6by">
-                <ref role="3uigEE" to="j8aq:~ReloadableModule" resolve="ReloadableModule" />
-              </node>
-              <node concept="37vLTw" id="3sQjGS1pwsm" role="2ZW6bz">
-                <ref role="3cqZAo" node="2aZcM6jmNiw" resolve="module" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="3sQjGS1pRl4" role="3cqZAp">
           <node concept="3cpWsn" id="3sQjGS1pRl5" role="3cpWs9">
             <property role="TrG5h" value="rootClassLoader" />
-            <node concept="2OqwBi" id="3sQjGS1pRxa" role="33vP2m">
-              <node concept="1eOMI4" id="3sQjGS1pRxb" role="2Oq$k0">
-                <node concept="10QFUN" id="3sQjGS1pRxc" role="1eOMHV">
-                  <node concept="3uibUv" id="3sQjGS1pRxd" role="10QFUM">
-                    <ref role="3uigEE" to="j8aq:~ReloadableModule" resolve="ReloadableModule" />
-                  </node>
-                  <node concept="37vLTw" id="3sQjGS1pRxe" role="10QFUP">
+            <node concept="3uibUv" id="3sQjGS1pRkZ" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~ClassLoader" resolve="ClassLoader" />
+            </node>
+            <node concept="2OqwBi" id="3Hq3KFR1oof" role="33vP2m">
+              <node concept="2ShNRf" id="3Hq3KFR0KVj" role="2Oq$k0">
+                <node concept="1pGfFk" id="3Hq3KFR1o0N" role="2ShVmc">
+                  <ref role="37wK5l" to="3qmy:~RootClassloaderLookup.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule)" resolve="RootClassloaderLookup" />
+                  <node concept="37vLTw" id="3Hq3KFR1oN7" role="37wK5m">
                     <ref role="3cqZAo" node="2aZcM6jmNiw" resolve="module" />
                   </node>
                 </node>
               </node>
-              <node concept="liA8E" id="3sQjGS1pRxf" role="2OqNvi">
-                <ref role="37wK5l" to="j8aq:~ReloadableModule.getRootClassLoader():java.lang.ClassLoader" resolve="getRootClassLoader" />
+              <node concept="liA8E" id="3Hq3KFR1pqc" role="2OqNvi">
+                <ref role="37wK5l" to="3qmy:~RootClassloaderLookup.get():java.lang.ClassLoader" resolve="get" />
               </node>
-            </node>
-            <node concept="3uibUv" id="3sQjGS1pRkZ" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~ClassLoader" resolve="ClassLoader" />
             </node>
           </node>
         </node>
