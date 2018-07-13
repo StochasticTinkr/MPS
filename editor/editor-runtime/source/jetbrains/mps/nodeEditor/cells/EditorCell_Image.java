@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,13 +19,13 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.ide.icons.IconLoadHelper;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -47,8 +47,15 @@ public class EditorCell_Image extends EditorCell_Basic {
     getStyle().set(StyleAttributes.PUNCTUATION_RIGHT, true);
   }
 
+  /**
+   * @param imageFileName path to an image with respect to macros of {@code node's} module.
+   */
   public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, String imageFileName) {
-    return createImageCell(editorContext, node, getModule(node), imageFileName);
+    SModule module = getModule(node);
+    if (module == null) {
+      return createImageCell(editorContext, node, (Image) null);
+    }
+    return createImageCell(editorContext, node, new ModuleImageDescriptor(module, imageFileName));
   }
 
   @Nullable
@@ -60,15 +67,22 @@ public class EditorCell_Image extends EditorCell_Basic {
     return model.getModule();
   }
 
+  /**
+   * @param imagePath path is expanded with respect to macros of {@code imageModule} context.
+   */
   public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, @NotNull SModule imageModule, String imagePath) {
-    EditorCell_Image result = new EditorCell_Image(editorContext, node);
-    result.setIcon(loadIcon(editorContext, imageModule, imagePath));
-    return result;
+    return createImageCell(editorContext, node, new ModuleImageDescriptor(imageModule, imagePath));
   }
 
   public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, Image image) {
     EditorCell_Image result = new EditorCell_Image(editorContext, node);
     result.setImage(image);
+    return result;
+  }
+
+  public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, @NotNull ImageDescriptor image) {
+    EditorCell_Image result = new EditorCell_Image(editorContext, node);
+    result.setIcon(image.loadIcon(editorContext, node));
     return result;
   }
 
@@ -158,19 +172,6 @@ public class EditorCell_Image extends EditorCell_Basic {
     myAlignment = alignment;
   }
 
-  private static Icon loadIcon(EditorContext context, SModule module, String iconPath) {
-    String fullPath = MacrosFactory.forModule((AbstractModule) module).expandPath(iconPath);
-    if (fullPath == null) {
-      return null;
-    }
-    jetbrains.mps.nodeEditor.EditorContext ec = (jetbrains.mps.nodeEditor.EditorContext) context;
-    Map<String, Icon> iconCache = ec.getIconCache();
-    if (!iconCache.containsKey(fullPath)){
-      iconCache.put(fullPath, IconLoadHelper.loadIcon(fullPath));
-    }
-    return iconCache.get(fullPath);
-  }
-
   protected void setImage(Image image) {
     setIcon(image == null ? null : new ImageIcon(image));
   }
@@ -185,5 +186,55 @@ public class EditorCell_Image extends EditorCell_Basic {
 
   public enum ImageAlignment {
     justify, center, title;
+  }
+
+  /**
+   * Abstracts mechanism to describe image source and control its loading
+   */
+  public interface ImageDescriptor {
+    @Nullable
+    Icon loadIcon(EditorContext context, SNode node);
+  }
+
+  /**
+   * Loads an image from a path expanded with respect to module macros.
+   */
+  public static final class ModuleImageDescriptor implements ImageDescriptor {
+
+    private final SModule myModule;
+    private final SModuleReference myModuleRef;
+    private final String myPath;
+
+    public ModuleImageDescriptor(@NotNull SModule module, @Nullable String path) {
+      myModule = module;
+      myModuleRef = null;
+      myPath = path;
+    }
+
+    public ModuleImageDescriptor(@NotNull SModuleReference module, @Nullable String path) {
+      myModuleRef = module;
+      myModule = null;
+      myPath = path;
+    }
+
+    @Nullable
+    @Override
+    public Icon loadIcon(EditorContext context, SNode node) {
+      assert myModule != null || myModuleRef != null;
+      SModule m = myModule != null ? myModule : myModuleRef.resolve(context.getRepository());
+      if (m == null) {
+        return null;
+      }
+      String fullPath = MacrosFactory.forModule(m).expandPath(myPath);
+      if (fullPath == null) {
+        return null;
+      }
+      jetbrains.mps.nodeEditor.EditorContext ec = (jetbrains.mps.nodeEditor.EditorContext) context;
+      Map<String, Icon> iconCache = ec.getIconCache();
+      if (!iconCache.containsKey(fullPath)){
+        iconCache.put(fullPath, IconLoadHelper.loadIcon(fullPath));
+      }
+      return iconCache.get(fullPath);
+    }
   }
 }

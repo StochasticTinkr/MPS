@@ -26346,5 +26346,29 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="3zvXnQYGbuX">
+    <ref role="1XX52x" to="tpc2:CFBzaakS6G" resolve="ModuleImageProvider" />
+    <node concept="3EZMnI" id="3zvXnQYGbuZ" role="2wV5jI">
+      <node concept="3EZMnI" id="3zvXnQYGbvg" role="3EZMnx">
+        <node concept="3F0ifn" id="3zvXnQYGbvq" role="3EZMnx">
+          <property role="3F0ifm" value="module:" />
+        </node>
+        <node concept="2iRfu4" id="3zvXnQYGbvh" role="2iSdaV" />
+        <node concept="3F1sOY" id="3zvXnQYGbv6" role="3EZMnx">
+          <ref role="1NtTu8" to="tpc2:3zvXnQYGbuj" resolve="moduleRef" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="3zvXnQYGbvu" role="3EZMnx">
+        <node concept="2iRfu4" id="3zvXnQYGbvv" role="2iSdaV" />
+        <node concept="3F0ifn" id="3zvXnQYGbvF" role="3EZMnx">
+          <property role="3F0ifm" value="file:" />
+        </node>
+        <node concept="3F0A7n" id="3zvXnQYGbvc" role="3EZMnx">
+          <ref role="1NtTu8" to="tpc2:3zvXnQYGbuh" resolve="imagePath" />
+        </node>
+      </node>
+      <node concept="2iRkQZ" id="3zvXnQYGbv2" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 
