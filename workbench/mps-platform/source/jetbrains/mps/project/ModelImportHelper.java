@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.ShortcutSet;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.TransactionGuard;
 import jetbrains.mps.FilteredGlobalScope;
+import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.scope.ConditionalScope;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -42,6 +43,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
+import org.jetbrains.mps.util.Condition;
 
 import java.awt.Frame;
 
@@ -99,7 +101,8 @@ public class ModelImportHelper {
    */
   public void addImport(@NotNull SModel model) {
     SearchScope localScope = myProject.getScope();
-    SearchScope globalScope = new FilteredGlobalScope();
+    Condition<SModel> notTransient = m -> !(m instanceof TransientSModel);
+    SearchScope globalScope = new ConditionalScope(new FilteredGlobalScope(), null, notTransient);
     SRepository repo = myProject.getRepository();
     ChooseByNameData<SModelReference> gotoData = new ChooseByNameData<>(new ModelsPresentation(repo));
     gotoData.derivePrompts("model").setPrompts("Import model:", gotoData.getNotFoundMessage(), gotoData.getNotInMessage());
@@ -126,7 +129,7 @@ public class ModelImportHelper {
     gotoData.derivePrompts("node").setPrompts("Import model that contains root:", gotoData.getNotFoundMessage(), gotoData.getNotInMessage());
     gotoData.setCheckBoxName("Include stub and non-project models");
     ConditionalScope localScope = new ConditionalScope(myProject.getScope(), null, NotCondition.negate(SModelStereotype::isStubModel));
-    SearchScope globalScope = GlobalScope.getInstance();
+    SearchScope globalScope = new AllUserModelsScope();
     final SRepository repo = myProject.getRepository();
     gotoData.setScope(new NavigationTargetScopeIterable(localScope, repo), new NavigationTargetScopeIterable(globalScope, repo));
 
