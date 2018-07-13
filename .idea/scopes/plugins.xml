@@ -1,3 +1,0 @@
-<component name="DependencyValidationManager">
-  <scope name="plugins" pattern="file[group:plugins]:*//*&amp;&amp;!file[mps-workbench]:*&amp;&amp;!file[mps-workbench]:*/" />
-</component>
