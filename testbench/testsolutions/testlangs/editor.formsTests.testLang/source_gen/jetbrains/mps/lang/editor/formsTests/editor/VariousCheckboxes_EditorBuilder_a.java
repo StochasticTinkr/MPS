@@ -24,11 +24,7 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /*package*/ class VariousCheckboxes_EditorBuilder_a extends AbstractEditorBuilder {
@@ -247,12 +243,8 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
     return editorCell;
   }
   private EditorCell_Image fromImageCellProvider0() {
-    Tuples._2<SModule, String> modulePathPair = (new _FunctionTypes._return_P0_E0<Tuples._2<SModule, String>>() {
-      public Tuples._2<SModule, String> invoke() {
-        return MultiTuple.<SModule,String>from(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("90966cb5-4f67-429a-b7ba-d0fded4ede71(jetbrains.mps.lang.editor.forms.runtime)")), "${module}/icons/checkBoxSelected.png");
-      }
-    }).invoke();
-    return EditorCell_Image.createImageCell(getEditorContext(), myNode, modulePathPair._0(), modulePathPair._1());
+    SModuleReference mr = PersistenceFacade.getInstance().createModuleReference("90966cb5-4f67-429a-b7ba-d0fded4ede71(jetbrains.mps.lang.editor.forms.runtime)");
+    return EditorCell_Image.createImageCell(getEditorContext(), myNode, new EditorCell_Image.ModuleImageDescriptor(mr, "${module}/icons/checkBoxSelected.png"));
   }
   private EditorCell createImage_1() {
     EditorCell_Image editorCell = fromImageCellProvider1();
@@ -261,12 +253,8 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
     return editorCell;
   }
   private EditorCell_Image fromImageCellProvider1() {
-    Tuples._2<SModule, String> modulePathPair = (new _FunctionTypes._return_P0_E0<Tuples._2<SModule, String>>() {
-      public Tuples._2<SModule, String> invoke() {
-        return MultiTuple.<SModule,String>from(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("90966cb5-4f67-429a-b7ba-d0fded4ede71(jetbrains.mps.lang.editor.forms.runtime)")), "${module}/icons/checkBox.png");
-      }
-    }).invoke();
-    return EditorCell_Image.createImageCell(getEditorContext(), myNode, modulePathPair._0(), modulePathPair._1());
+    SModuleReference mr = PersistenceFacade.getInstance().createModuleReference("90966cb5-4f67-429a-b7ba-d0fded4ede71(jetbrains.mps.lang.editor.forms.runtime)");
+    return EditorCell_Image.createImageCell(getEditorContext(), myNode, new EditorCell_Image.ModuleImageDescriptor(mr, "${module}/icons/checkBox.png"));
   }
   private EditorCell createConstant_11() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "platform checkbox");

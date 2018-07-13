@@ -1899,6 +1899,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ModuleImageProvider:
         if (props_ModuleImageProvider == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("file name relative to module");
           cpb.rawPresentation("image from module");
           props_ModuleImageProvider = cpb.create();
         }

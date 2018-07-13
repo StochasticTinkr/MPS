@@ -48,6 +48,7 @@
     <import index="nlpl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.commands(MPS.Editor/)" />
     <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <import index="g51k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cells(MPS.Editor/)" />
+    <import index="25zl" ref="r:7bd127a5-e641-4c13-b150-b9c9b96f76ae(jetbrains.mps.lang.modelapi.editor)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" implicit="true" />
   </imports>
@@ -26356,6 +26357,9 @@
         <node concept="2iRfu4" id="3zvXnQYGbvh" role="2iSdaV" />
         <node concept="3F1sOY" id="3zvXnQYGbv6" role="3EZMnx">
           <ref role="1NtTu8" to="tpc2:3zvXnQYGbuj" resolve="moduleRef" />
+          <node concept="A1WHu" id="7k$14oQsUQ1" role="3vIgyS">
+            <ref role="A1WHt" to="25zl:7k$14oQs2hn" resolve="ContextRepositoryModules_TM" />
+          </node>
         </node>
       </node>
       <node concept="3EZMnI" id="3zvXnQYGbvu" role="3EZMnx">

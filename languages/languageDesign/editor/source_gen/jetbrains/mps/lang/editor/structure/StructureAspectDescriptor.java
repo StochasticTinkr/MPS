@@ -3490,7 +3490,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/732853304284119468");
     b.version(2);
     b.prop("imagePath", 0x38dff57dbeb0b791L, "4098264106349410193");
-    b.aggregate("moduleRef", 0x38dff57dbeb0b793L).target(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afc2bc9L).optional(false).ordered(true).multiple(false).origin("4098264106349410195").done();
+    b.aggregate("moduleRef", 0x38dff57dbeb0b793L).target(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e361L).optional(false).ordered(true).multiple(false).origin("4098264106349410195").done();
     b.alias("image from module");
     return b.create();
   }

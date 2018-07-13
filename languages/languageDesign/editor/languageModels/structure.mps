@@ -6767,13 +6767,14 @@
     <property role="EcuMT" value="732853304284119468" />
     <property role="TrG5h" value="ModuleImageProvider" />
     <property role="34LRSv" value="image from module" />
+    <property role="R4oN_" value="file name relative to module" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3zvXnQYGbuj" role="1TKVEi">
       <property role="IQ2ns" value="4098264106349410195" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="moduleRef" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="dvox:_GDk1qZ2J9" resolve="ModuleIdentity" />
+      <ref role="20lvS9" to="dvox:k2ZBl8Cedx" resolve="ModulePointer" />
     </node>
     <node concept="PrWs8" id="CFBzaakS6H" role="PzmwI">
       <ref role="PrY4T" node="54iik1dcchE" resolve="ImagePathProvider" />
