@@ -321,6 +321,7 @@
       </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
+      <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
     </language>
   </registry>
   <node concept="24kQdi" id="1Bs_61$nu$t">
@@ -852,6 +853,110 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="Q6S24" id="7k$14oQryjI">
+    <property role="3GE5qa" value="openapi" />
+    <property role="TrG5h" value="ContextRepositoryModules_SM" />
+    <ref role="aqKnT" to="dvox:k2ZBl8Cedx" resolve="ModulePointer" />
+    <node concept="2F$Pav" id="7k$14oQry_$" role="3ft7WO">
+      <node concept="3eGOop" id="7k$14oQryMN" role="2$S_pN">
+        <node concept="ucgPf" id="7k$14oQryMP" role="3aKz83">
+          <node concept="3clFbS" id="7k$14oQryMR" role="2VODD2">
+            <node concept="3clFbF" id="7k$14oQr$Cz" role="3cqZAp">
+              <node concept="2OqwBi" id="7k$14oQr_4S" role="3clFbG">
+                <node concept="35c_gC" id="7k$14oQr$Cy" role="2Oq$k0">
+                  <ref role="35c_gD" to="dvox:k2ZBl8Cedx" resolve="ModulePointer" />
+                </node>
+                <node concept="2qgKlT" id="7k$14oQr_st" role="2OqNvi">
+                  <ref role="37wK5l" to="xlb7:1Bs_61$mIAC" resolve="create" />
+                  <node concept="1rpKSd" id="7k$14oQr__h" role="37wK5m" />
+                  <node concept="2ZBlsa" id="7k$14oQrA5v" role="37wK5m" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="16NfWO" id="7k$14oQrzjJ" role="upBLP">
+          <node concept="uGdhv" id="7k$14oQrzEQ" role="16NeZM">
+            <node concept="3clFbS" id="7k$14oQrzES" role="2VODD2">
+              <node concept="3clFbF" id="7k$14oQrzNu" role="3cqZAp">
+                <node concept="2OqwBi" id="7k$14oQrzYC" role="3clFbG">
+                  <node concept="2ZBlsa" id="7k$14oQrzNt" role="2Oq$k0" />
+                  <node concept="liA8E" id="7k$14oQr$fu" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~SModuleReference.getModuleName():java.lang.String" resolve="getModuleName" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="7k$14oQrCVU" role="2ZBHrp">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="2$S_p_" id="7k$14oQry_I" role="2$S_pT">
+        <node concept="3clFbS" id="7k$14oQry_J" role="2VODD2">
+          <node concept="3clFbF" id="7k$14oQryE_" role="3cqZAp">
+            <node concept="2OqwBi" id="7k$14oQrZi9" role="3clFbG">
+              <node concept="1eOMI4" id="7k$14oQrYyF" role="2Oq$k0">
+                <node concept="10QFUN" id="7k$14oQrYFD" role="1eOMHV">
+                  <node concept="A3Dl8" id="7k$14oQrYQA" role="10QFUM">
+                    <node concept="3uibUv" id="7k$14oQrYYD" role="A3Ik2">
+                      <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="7k$14oQryEB" role="10QFUP">
+                    <node concept="2OqwBi" id="7k$14oQryEC" role="2Oq$k0">
+                      <node concept="1Q80Hx" id="7k$14oQryED" role="2Oq$k0" />
+                      <node concept="liA8E" id="7k$14oQryEE" role="2OqNvi">
+                        <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="7k$14oQryEF" role="2OqNvi">
+                      <ref role="37wK5l" to="lui2:~SRepository.getModules():java.lang.Iterable" resolve="getModules" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3$u5V9" id="7k$14oQrZQX" role="2OqNvi">
+                <node concept="1bVj0M" id="7k$14oQrZQZ" role="23t8la">
+                  <node concept="3clFbS" id="7k$14oQrZR0" role="1bW5cS">
+                    <node concept="3clFbF" id="7k$14oQs00V" role="3cqZAp">
+                      <node concept="2OqwBi" id="7k$14oQs0dm" role="3clFbG">
+                        <node concept="37vLTw" id="7k$14oQs00U" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7k$14oQrZR1" resolve="it" />
+                        </node>
+                        <node concept="liA8E" id="7k$14oQs0BX" role="2OqNvi">
+                          <ref role="37wK5l" to="lui2:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="7k$14oQrZR1" role="1bW2Oz">
+                    <property role="TrG5h" value="it" />
+                    <node concept="2jxLKc" id="7k$14oQrZR2" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3VyMlK" id="7k$14oQrzfv" role="3ft7WO" />
+  </node>
+  <node concept="3ICXOK" id="7k$14oQs2hn">
+    <property role="3GE5qa" value="openapi" />
+    <property role="TrG5h" value="ContextRepositoryModules_TM" />
+    <ref role="aqKnT" to="dvox:k2ZBl8Cedx" resolve="ModulePointer" />
+    <node concept="1Qtc8_" id="7k$14oQs3cC" role="IW6Ez">
+      <node concept="3eGOoe" id="7k$14oQs3cG" role="1Qtc8$" />
+      <node concept="ulPW2" id="7k$14oQs3cJ" role="1Qtc8A">
+        <node concept="2kknPI" id="7k$14oQs3cL" role="2ks2uz">
+          <ref role="2kkw0f" node="7k$14oQryjI" resolve="ContextRepositoryModules_SM" />
         </node>
       </node>
     </node>

@@ -815,12 +815,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ModuleIdentity:
         if (props_ModuleIdentity == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           props_ModuleIdentity = cpb.create();
         }
         return props_ModuleIdentity;
       case LanguageConceptSwitch.ModulePointer:
         if (props_ModulePointer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           cpb.rawPresentation("ModulePointer");
           props_ModulePointer = cpb.create();
         }
