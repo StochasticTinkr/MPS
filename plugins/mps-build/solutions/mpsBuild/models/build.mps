@@ -903,10 +903,6 @@
           <property role="nFU4j" value="patternRuntime/source" />
           <property role="3LZaj6" value="source" />
         </node>
-        <node concept="nFU4i" id="1FaKCGJSzF0" role="nFU4p">
-          <property role="nFU4j" value="patternRuntime/source_gen" />
-          <property role="3LZaj6" value="source" />
-        </node>
         <node concept="nFU4i" id="1FaKCGJSzF2" role="nFU4p">
           <property role="nFU4j" value="smodelRuntime/source_gen" />
           <property role="3LZaj6" value="source" />

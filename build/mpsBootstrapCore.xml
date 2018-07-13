@@ -6369,7 +6369,6 @@
         <pathelement path="${mps_home}/core/kernel/source" />
         <pathelement path="${mps_home}/core/kernel/source_gen" />
         <pathelement path="${mps_home}/core/kernel/patternRuntime/source" />
-        <pathelement path="${mps_home}/core/kernel/patternRuntime/source_gen" />
         <pathelement path="${mps_home}/core/kernel/smodelRuntime/source_gen" />
         <pathelement path="${mps_home}/core/dataFlowRuntime/source" />
         <pathelement path="${mps_home}/core/dataFlowRuntime/source_gen" />
@@ -6501,7 +6500,6 @@
         <pathelement path="${mps_home}/core/kernel/source" />
         <pathelement path="${mps_home}/core/kernel/source_gen" />
         <pathelement path="${mps_home}/core/kernel/patternRuntime/source" />
-        <pathelement path="${mps_home}/core/kernel/patternRuntime/source_gen" />
         <pathelement path="${mps_home}/core/kernel/smodelRuntime/source_gen" />
         <pathelement path="${mps_home}/core/dataFlowRuntime/source" />
         <pathelement path="${mps_home}/core/dataFlowRuntime/source_gen" />
@@ -6543,7 +6541,6 @@
       <fileset dir="${mps_home}/core/kernel/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
       <fileset dir="${mps_home}/core/kernel/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
       <fileset dir="${mps_home}/core/kernel/patternRuntime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
-      <fileset dir="${mps_home}/core/kernel/patternRuntime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
       <fileset dir="${mps_home}/core/kernel/smodelRuntime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
       <fileset dir="${mps_home}/core/dataFlowRuntime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
       <fileset dir="${mps_home}/core/dataFlowRuntime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
