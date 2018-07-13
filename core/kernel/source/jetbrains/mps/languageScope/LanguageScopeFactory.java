@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.util.SimpleLRUCache;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -41,7 +40,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class LanguageScopeFactory implements CoreComponent, DeployListener {
 
-  private static final Logger LOG = Logger.getLogger(LanguageScopeFactory.class);
   public static final int CACHE_SIZE = 1000;
 
   private static LanguageScopeFactory INSTANCE;
@@ -166,7 +164,7 @@ public class LanguageScopeFactory implements CoreComponent, DeployListener {
   }
 
   private LanguagesHolder getHolder(Collection<SLanguage> langs) {
-    return myCachedLanguages.cacheObject(new LanguagesHolder(new ArrayList<SLanguage>(langs)));
+    return myCachedLanguages.cacheObject(new LanguagesHolder(new ArrayList<>(langs)));
   }
 
   private static class LanguagesHolder {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,19 +15,23 @@
  */
 package jetbrains.mps.languageScope;
 
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.Collection;
-import java.util.Collections;
 
 public class LanguageScopeExecutor {
 
-  public static <T> T execWithModelScope(SModel sModel, Computable<T> computable) {
+  /**
+   * Treats model's used languages (including those coming through devkits) as 'scope' for the supplied operation.
+   * If {@code sModel} is {@code null}, global scope (with all languages?) is assumed.
+   * Beware, {@code sModel}, if provided, expected to be attached to a repository to get its usages (namely, devkits)
+   * properly resolved.
+   */
+  public static <T> T execWithModelScope(@Nullable SModel sModel, Computable<T> computable) {
     LanguageScope languageScope = sModel == null ? LanguageScope.getGlobal() :
       LanguageScopeFactory.getInstance().getLanguageScope(SModelOperations.getAllLanguageImports(sModel));
     try{
@@ -39,28 +43,11 @@ public class LanguageScopeExecutor {
     }
   }
 
-  public static <T> T execWithLanguageScope(Language lang, Computable<T> computable) {
-    LanguageScope languageScope = lang == null ? LanguageScope.getGlobal() :
-      LanguageScopeFactory.getInstance().getLanguageScope(
-          Collections.singleton(MetaAdapterByDeclaration.getLanguage(lang)));
+  public static <T> T execWithGlobalScope(Computable<T> computable) {
+    LanguageScope languageScope = LanguageScope.getGlobal();
     try{
        LanguageScope.pushCurrent(languageScope, computable);
        return computable.compute();
-    }
-    finally {
-      LanguageScope.popCurrent(languageScope, computable);
-    }
-  }
-
-  public static <T> T execWithTwoLanguageScope(Language lang1, Language lang2, Computable<T> computable) {
-    if (lang1 == null || lang2 == null) return execWithLanguageScope(lang1 != null ? lang1 : lang2, computable);
-
-    LanguageScope languageScope = LanguageScopeFactory.getInstance().getLanguageScope(
-      Collections.singleton(MetaAdapterByDeclaration.getLanguage(lang1)),
-      Collections.singleton(MetaAdapterByDeclaration.getLanguage(lang2)));
-    try{
-      LanguageScope.pushCurrent(languageScope, computable);
-      return computable.compute();
     }
     finally {
       LanguageScope.popCurrent(languageScope, computable);

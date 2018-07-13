@@ -212,7 +212,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       usedLanguages.addAll(modelInternal.importedLanguageIds());
       devkits.addAll(modelInternal.importedDevkits());
     }
-    // XXX why don't we respect extended devkits here?
+    // XXX why don't we respect extended devkits here? DevKit.get*All*ExportedLanguageIds does this for us, but as long as we've got repository here
+    //     why let devkit module bother to get it again?
+    // XXX pretty similar to SModelOperations.getAllLanguageImports(sModel) and to ModelDependenciesManager#getAllImportedLanguagesIds()
     final SRepository repository = getRepository();
     if (repository != null) {
       for (SModuleReference devkitRef : devkits) {

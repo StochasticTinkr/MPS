@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.newTypesystem.context;
 
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class TargetTypecheckingContext_Tracer extends TargetTypecheckingContext {
 
@@ -37,7 +37,7 @@ public class TargetTypecheckingContext_Tracer extends TargetTypecheckingContext 
 
   @Override
   public SNode getTypeOf_generationMode(final SNode node) {
-    return TypeChecker.getInstance().computeWithTrace(new Computable<SNode>(){
+    return myTypeChecker.computeWithTrace(new Computable<SNode>(){
       @Override
       public SNode compute() {
         return TargetTypecheckingContext_Tracer.super.getTypeOf_generationMode(node);
