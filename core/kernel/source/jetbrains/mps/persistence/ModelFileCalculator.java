@@ -17,7 +17,6 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.path.Path;

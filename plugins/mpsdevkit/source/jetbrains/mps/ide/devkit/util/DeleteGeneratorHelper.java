@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.devkit.util;
 
 import jetbrains.mps.module.ModuleDeleteHelper;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -26,7 +25,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;

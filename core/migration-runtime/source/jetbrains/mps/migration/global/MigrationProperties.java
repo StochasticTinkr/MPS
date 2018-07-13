@@ -18,9 +18,6 @@ package jetbrains.mps.migration.global;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Map;
-import java.util.TreeMap;
-
 public interface MigrationProperties {
   void setProperty(@NotNull String key, String value);
 

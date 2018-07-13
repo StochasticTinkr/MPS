@@ -24,9 +24,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.scope.ConditionalScope;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SLanguageHierarchy;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -46,7 +44,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
 
 /**

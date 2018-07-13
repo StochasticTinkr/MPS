@@ -24,7 +24,6 @@ import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.ide.vfs.IdeaFile;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.persistence.ModelDigestHelper.DigestProvider;
 import jetbrains.mps.vfs.IFile;

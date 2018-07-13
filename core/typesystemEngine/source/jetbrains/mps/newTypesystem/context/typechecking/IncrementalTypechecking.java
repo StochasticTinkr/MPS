@@ -30,7 +30,6 @@ import jetbrains.mps.newTypesystem.context.component.NonTypeSystemComponent;
 import jetbrains.mps.newTypesystem.context.component.TypeSystemComponent;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.event.SModelChildEvent;

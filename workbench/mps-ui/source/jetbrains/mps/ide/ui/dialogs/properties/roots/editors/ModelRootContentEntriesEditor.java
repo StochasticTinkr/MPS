@@ -63,7 +63,6 @@ import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.JComponent;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;

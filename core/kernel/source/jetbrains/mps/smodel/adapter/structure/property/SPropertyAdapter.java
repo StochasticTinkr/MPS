@@ -16,15 +16,12 @@
 package jetbrains.mps.smodel.adapter.structure.property;
 
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SDataTypeAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SPrimitiveDataTypeAdapter;
 import jetbrains.mps.smodel.behaviour.BHReflection;
-import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -32,9 +29,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public abstract class SPropertyAdapter implements SProperty {
   public static final String ID_DELIM = ":";

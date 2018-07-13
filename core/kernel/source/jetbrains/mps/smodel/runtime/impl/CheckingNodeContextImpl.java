@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.runtime.impl;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.Nullable;
 
 public class CheckingNodeContextImpl implements jetbrains.mps.smodel.runtime.CheckingNodeContext {
   private SNodeReference myNode;

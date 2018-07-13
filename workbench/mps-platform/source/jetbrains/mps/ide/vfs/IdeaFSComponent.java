@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.vfs.CachingFileSystem;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemExtPoint;

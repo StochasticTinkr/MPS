@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
 class RemoveReferenceAtUndoableAction extends SNodeUndoableAction {

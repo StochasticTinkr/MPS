@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.extapi.model.SNodeBatchChangeListener;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.event.AbstractModelChangeEvent;
 

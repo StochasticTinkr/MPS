@@ -16,29 +16,18 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
-import jetbrains.mps.lang.editor.menus.transformation.ImplicitTransformationMenu;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import jetbrains.mps.lang.editor.menus.transformation.TransformationMenuPointer;
-import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.Collections;
-import java.util.HashMap;
 
 /**
  * @author simon

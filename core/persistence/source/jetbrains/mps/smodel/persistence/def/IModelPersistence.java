@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.List;
 

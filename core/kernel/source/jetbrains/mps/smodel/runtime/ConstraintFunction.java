@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.runtime;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
  * Presents a constraint function.

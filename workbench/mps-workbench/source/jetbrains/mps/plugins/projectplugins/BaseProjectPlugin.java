@@ -33,7 +33,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.ArrayList;
 import java.util.Collections;

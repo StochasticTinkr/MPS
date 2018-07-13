@@ -17,7 +17,6 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;

@@ -16,12 +16,10 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.module.ReloadableModuleBase;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Subscribe via {@link ClassLoaderManager#addListener} if you want

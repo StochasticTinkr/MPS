@@ -17,7 +17,6 @@ package jetbrains.mps.openapi.editor.cells;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import org.jetbrains.mps.openapi.language.SConceptFeature;
 
 import java.util.ArrayList;
 import java.util.List;

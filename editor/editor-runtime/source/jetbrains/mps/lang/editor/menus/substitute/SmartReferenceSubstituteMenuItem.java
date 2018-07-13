@@ -16,7 +16,6 @@
 package jetbrains.mps.lang.editor.menus.substitute;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.menus.EditorMenuTrace;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.smodel.action.NodeFactoryManager;

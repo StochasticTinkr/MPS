@@ -99,7 +99,6 @@ import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.nodeEditor.selection.SelectionInternal;
 import jetbrains.mps.nodeEditor.selection.SelectionManagerImpl;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
-import jetbrains.mps.nodeEditor.ui.InputMethodListenerImpl;
 import jetbrains.mps.nodeEditor.ui.InputMethodRequestsImpl;
 import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;

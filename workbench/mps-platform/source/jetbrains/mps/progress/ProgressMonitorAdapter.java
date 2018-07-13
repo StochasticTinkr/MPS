@@ -16,12 +16,6 @@
 package jetbrains.mps.progress;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.MessageType;
-import com.intellij.openapi.wm.IdeFrame;
-import com.intellij.openapi.wm.WindowManager;
-import com.intellij.openapi.wm.ex.StatusBarEx;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 

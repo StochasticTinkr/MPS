@@ -73,7 +73,6 @@ import org.jetbrains.mps.util.Condition;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.event.InputMethodEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;

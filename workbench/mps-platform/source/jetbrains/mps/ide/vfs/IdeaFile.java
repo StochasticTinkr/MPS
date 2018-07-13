@@ -35,7 +35,6 @@ import jetbrains.mps.vfs.path.UniPath;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
@@ -51,7 +50,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * NOTE the IdeaFiles' equality now totally depends on the starting string.

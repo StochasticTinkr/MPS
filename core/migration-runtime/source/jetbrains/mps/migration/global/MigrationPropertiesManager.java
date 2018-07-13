@@ -15,12 +15,8 @@
  */
 package jetbrains.mps.migration.global;
 
-import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.annotation.ToRemove;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * A storage for properties, which define the persistent state of project migrations

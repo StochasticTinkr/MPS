@@ -17,7 +17,6 @@ package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 

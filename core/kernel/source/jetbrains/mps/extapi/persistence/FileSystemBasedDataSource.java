@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;

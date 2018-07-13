@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.devkit.editorMenuTrace;
 
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
-import jetbrains.mps.project.Project;
 
 import java.util.List;
 

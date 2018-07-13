@@ -16,9 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.language.GeneratorRuntime;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 import java.util.Set;

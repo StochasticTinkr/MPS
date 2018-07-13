@@ -18,7 +18,6 @@ package jetbrains.mps.errors;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.HashMap;
 import java.util.Map;

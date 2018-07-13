@@ -19,7 +19,6 @@ import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;

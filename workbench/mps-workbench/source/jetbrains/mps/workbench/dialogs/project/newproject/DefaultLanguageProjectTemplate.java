@@ -32,7 +32,6 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import java.io.IOException;
-import java.util.Iterator;
 
 public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
 

@@ -19,8 +19,6 @@ import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
-
 public class ModelFactoryNotFoundException extends ModelCannotBeCreatedException {
   public ModelFactoryNotFoundException(@NotNull DataSourceType dataSourceType) {
     super("Model factory is not registered for the '" + dataSourceType + "'");

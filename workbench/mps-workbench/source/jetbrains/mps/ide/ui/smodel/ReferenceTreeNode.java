@@ -17,10 +17,8 @@ package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.ide.PowerSaveMode;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.icons.MPSIcons;
-import jetbrains.mps.ide.icons.BaseIconManager;
 import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;

@@ -19,7 +19,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MementoWithFS;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.ModulePathConverter;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -30,7 +29,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.annotations.Internal;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
@@ -46,8 +44,6 @@ import static java.util.Collections.emptyList;
 import static java.util.Collections.unmodifiableList;
 import static jetbrains.mps.util.FileUtil.getAbsolutePath;
 import static jetbrains.mps.util.FileUtil.getUnixPath;
-import static jetbrains.mps.util.PathConverters.ID_CONVERTER;
-import static jetbrains.mps.util.PathConverters.forModules;
 
 /**
  * <code>FileBasedModelRoot</code> contains several {@link SourceRoot} which contain models.

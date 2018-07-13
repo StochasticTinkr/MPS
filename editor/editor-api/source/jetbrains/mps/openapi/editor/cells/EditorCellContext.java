@@ -17,7 +17,6 @@ package jetbrains.mps.openapi.editor.cells;
 
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
-import jetbrains.mps.util.annotation.ToRemove;
 
 import java.util.Collection;
 

@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.context;
 
-import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.context.typechecking.TracingTypechecking;
-import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.state.TargetState;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.mps.openapi.model.SNode;

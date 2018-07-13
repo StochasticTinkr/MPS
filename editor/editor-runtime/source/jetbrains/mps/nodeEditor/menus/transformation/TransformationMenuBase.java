@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.menus.transformation;
 
 import jetbrains.mps.lang.editor.menus.CompositeMenuPart;
-import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;

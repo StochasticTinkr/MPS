@@ -16,8 +16,6 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.structure.GeneratorDescriptorModelProvider;
-import jetbrains.mps.project.structure.LanguageDescriptorModelProvider.LanguageModelDescriptor;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;

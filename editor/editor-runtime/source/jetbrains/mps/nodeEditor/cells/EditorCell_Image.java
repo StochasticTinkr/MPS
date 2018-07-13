@@ -33,7 +33,6 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.util.HashMap;
 import java.util.Map;
 
 public class EditorCell_Image extends EditorCell_Basic {

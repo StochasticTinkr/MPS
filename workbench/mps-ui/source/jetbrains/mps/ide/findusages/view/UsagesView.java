@@ -47,7 +47,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.IMakeService;
-import jetbrains.mps.make.IMakeService.INSTANCE;
 import jetbrains.mps.make.MakeServiceComponent;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.resources.IResource;

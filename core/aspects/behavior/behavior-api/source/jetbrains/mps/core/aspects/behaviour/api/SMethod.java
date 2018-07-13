@@ -19,8 +19,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.annotation.Generated;
-
 /**
  * Represents a behavior method for a given {@link org.jetbrains.mps.openapi.language.SAbstractConcept}
  * It has a {@link SMethodId} which uniquely identifies the instance of {@link SMethod}.

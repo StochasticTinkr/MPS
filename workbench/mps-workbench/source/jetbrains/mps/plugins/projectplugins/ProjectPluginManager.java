@@ -33,7 +33,6 @@ import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.plugins.BasePluginManager;
 import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.PluginLoaderRegistry;
-import jetbrains.mps.plugins.PluginReloadingListener;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
@@ -49,7 +48,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Is a {@link BasePluginManager} which is responsible for loading project plugins {@link BaseProjectPlugin};

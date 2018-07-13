@@ -28,7 +28,6 @@ import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.MacroHelper.MacroNoHelper;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;

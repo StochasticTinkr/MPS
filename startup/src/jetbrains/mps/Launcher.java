@@ -19,16 +19,11 @@ import com.intellij.ide.Bootstrap;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.util.ClassPathReader;
-import jetbrains.mps.util.ClassType;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 public class Launcher {
   public static void main(String[] args) throws Exception {

@@ -23,8 +23,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
-import jetbrains.mps.openapi.editor.style.StyleChangeEvent;
-import jetbrains.mps.openapi.editor.style.StyleListener;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.annotations.NotNull;
 

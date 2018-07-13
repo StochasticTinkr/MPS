@@ -18,7 +18,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -29,8 +28,6 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-
-import java.util.List;
 
 public class SModelUtil_new {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelUtil_new.class));

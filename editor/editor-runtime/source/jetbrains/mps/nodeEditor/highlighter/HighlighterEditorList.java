@@ -20,7 +20,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.util.AbstractComputeRunnable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
