@@ -92,7 +92,7 @@ public abstract class BaseNodeData implements IExternalizeable {
 
   public String getText(TextOptions options) {
     String add = "";
-    if (options.myAdditionalInfo && !myAdditionalInfo.equals("")) {
+    if (options.myAdditionalInfo && !myAdditionalInfo.isEmpty()) {
       add = "(" + myAdditionalInfo + ")";
     }
     return myCaption + add;

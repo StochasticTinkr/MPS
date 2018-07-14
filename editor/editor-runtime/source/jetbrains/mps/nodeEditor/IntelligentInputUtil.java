@@ -90,7 +90,7 @@ public class IntelligentInputUtil {
     }
 
     public boolean processCell() {
-      if (myPattern == null || myPattern.equals("")) {
+      if (myPattern == null || myPattern.isEmpty()) {
         return false;
       }
 
@@ -205,7 +205,7 @@ public class IntelligentInputUtil {
     private boolean processCellAtEnd(String smallPattern, final String tail) {
       EditorCell cellForNewNode;
       final SNode newNode;
-      if (myCell.isValidText(smallPattern) && !"".equals(smallPattern)
+      if (myCell.isValidText(smallPattern) && smallPattern != null && !smallPattern.isEmpty()
           && mySubstituteInfo.hasExactlyNActions(smallPattern + tail, false, 0)) {
         newNode = myCell.getSNode();
         cellForNewNode = myCell;
@@ -363,7 +363,7 @@ public class IntelligentInputUtil {
       EditorCell cellForNewNode;
       SNode newNode;
 
-      if (myCell.isValidText(smallPattern) && (!"".equals(smallPattern) || myCell instanceof EditorCell_Constant)
+      if (myCell.isValidText(smallPattern) && (smallPattern != null && !smallPattern.isEmpty() || myCell instanceof EditorCell_Constant)
           && mySubstituteInfo.hasExactlyNActions(head + smallPattern, false, 0)) {
         newNode = myCell.getSNode();
         cellForNewNode = myCell;
@@ -428,7 +428,7 @@ public class IntelligentInputUtil {
     }
 
     private boolean canCompleteSmallPatternImmediately(SubstituteInfo info, String smallPattern, String tail) {
-      if ("".equals(tail)) {
+      if (tail != null && tail.isEmpty()) {
         return info.hasExactlyNActions(smallPattern, true, 1) && info.hasExactlyNActions(smallPattern, false, 1);
       }
 

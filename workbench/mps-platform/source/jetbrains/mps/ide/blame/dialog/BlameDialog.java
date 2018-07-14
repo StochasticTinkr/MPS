@@ -421,7 +421,7 @@ public class BlameDialog extends DialogWrapper {
     if (!myResult.isSuccess()) {
       String message = myResult.getMessage();
       String response = myResult.getResponseString();
-      if (response != null && !response.equals("")) {
+      if (response != null && !response.isEmpty()) {
         Element responseXml = myResult.getResponseXml();
         if (responseXml != null && "error".equalsIgnoreCase(responseXml.getName())) {
           message += ". " + responseXml.getText();

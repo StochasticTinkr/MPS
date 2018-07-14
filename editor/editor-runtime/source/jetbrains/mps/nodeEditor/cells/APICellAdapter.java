@@ -73,7 +73,7 @@ public class APICellAdapter {
     }
     final String pattern = cell.renderText().getText();
 
-    if (pattern.equals("")) {
+    if (pattern.isEmpty()) {
       return false;
     }
 

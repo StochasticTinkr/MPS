@@ -109,7 +109,7 @@ public class EditorCell_STHint extends EditorCell_Constant {
   @Override
   public void changeText(String text) {
     super.changeText(text);
-    if ("".equals(getText())) {
+    if (getText() != null && getText().isEmpty()) {
       SideTransformInfoUtil.removeTransformInfo(getSNode());
     }
   }

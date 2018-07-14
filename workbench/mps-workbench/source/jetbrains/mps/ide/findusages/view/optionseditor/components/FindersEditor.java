@@ -86,7 +86,7 @@ public class FindersEditor extends BaseEditor<FindersOptions> {
         }
       });
 
-      if (!finder.getLongDescription().equals("")) {
+      if (!finder.getLongDescription().isEmpty()) {
         StringBuilder htmlTooltipText = new StringBuilder();
         htmlTooltipText.append("<html>").append(finder.getLongDescription().replaceAll("\n", "<br>")).append(")</html>");
         finderCheckBox.setToolTipText(htmlTooltipText.toString());

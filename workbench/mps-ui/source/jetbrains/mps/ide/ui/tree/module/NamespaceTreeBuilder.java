@@ -42,7 +42,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     String namespace = getNamespace(node);
     List<String> pathElements = new ArrayList<>(Arrays.asList(namespace.split("\\.")));
 
-    if (pathElements.size() == 1 && pathElements.get(0).equals("")) {
+    if (pathElements.size() == 1 && pathElements.get(0).isEmpty()) {
       pathElements.remove(0);
     }
 

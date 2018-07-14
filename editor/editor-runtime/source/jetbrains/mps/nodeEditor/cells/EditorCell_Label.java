@@ -540,7 +540,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   private void deleteIfPossible(CellActionType actionType) {
     assert CellActionType.DELETE == actionType || CellActionType.BACKSPACE == actionType;
-    if ("".equals(getText()) && getStyle().get(StyleAttributes.AUTO_DELETABLE)) {
+    if (getText() != null && getText().isEmpty() && getStyle().get(StyleAttributes.AUTO_DELETABLE)) {
       // TODO: just use delete action (do not call getSNode().delete()) in the end if acton was not found or is not applicable
       getEditorComponent().getActionHandler().executeAction(this, actionType);
     }
@@ -712,7 +712,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   public SubstituteInfo getSubstituteInfo() {
     SubstituteInfo substituteInfo = super.getSubstituteInfo();
     if (substituteInfo != null) {
-      substituteInfo.setOriginalText(getText() == null || getText().equals("") ? getNullText() : getText());
+      substituteInfo.setOriginalText(getText() == null || getText().isEmpty() ? getNullText() : getText());
     }
     return substituteInfo;
   }

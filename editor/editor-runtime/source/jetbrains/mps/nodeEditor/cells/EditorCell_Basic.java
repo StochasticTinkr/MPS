@@ -179,7 +179,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
       pattern = ((EditorCell_Label) this).getText();
     }
 
-    if (pattern.equals("")) {
+    if (pattern.isEmpty()) {
       return false;
     }
 

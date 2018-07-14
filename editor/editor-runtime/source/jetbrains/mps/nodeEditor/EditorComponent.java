@@ -903,9 +903,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         StatusBarEx statusBar = (StatusBarEx) ideFrame.getStatusBar();
 
         //current info is significant or the editor removes its own message
-        if (!info.equals("") || myLastWrittenStatus.equals(statusBar.getInfo())) {
+        if (!info.isEmpty() || myLastWrittenStatus.equals(statusBar.getInfo())) {
           statusBar.setInfo(info);
-          if (!info.equals("")) {
+          if (!info.isEmpty()) {
             myLastWrittenStatus = info;
           }
         }

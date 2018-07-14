@@ -362,7 +362,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     //for serialization/deserialization
     @SuppressWarnings("UnusedDeclaration")
     public void setNodeRef(String nodeRef) {
-      if (nodeRef.equals("")) return;
+      if (nodeRef.isEmpty()) return;
       myNodeRef = jetbrains.mps.smodel.SNodePointer.deserialize(nodeRef);
     }
   }

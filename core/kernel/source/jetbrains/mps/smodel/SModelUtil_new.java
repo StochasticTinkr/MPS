@@ -78,7 +78,7 @@ public class SModelUtil_new {
   }
 
   public static boolean isEmptyPropertyValue(String s) {
-    return s == null || s.equals("");
+    return s == null || s.isEmpty();
   }
 
   public static int getMetaLevel(SNode node) {
