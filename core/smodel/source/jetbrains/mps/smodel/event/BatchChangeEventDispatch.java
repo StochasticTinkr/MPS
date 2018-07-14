@@ -28,7 +28,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @author Artem Tikhomirov
  */
 public class BatchChangeEventDispatch {
-  private final List<SNodeBatchChangeListener> myListeners = new CopyOnWriteArrayList<SNodeBatchChangeListener>();
+  private final List<SNodeBatchChangeListener> myListeners = new CopyOnWriteArrayList<>();
 
   public void add(@Nullable SNodeBatchChangeListener l) {
     if (l != null) {

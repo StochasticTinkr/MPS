@@ -32,7 +32,7 @@ import java.util.List;
  */
 public class GenerationPartitioningUtil {
   public static List<Pair<String, TemplateMappingConfiguration>> toStrings(Collection<TemplateMappingConfiguration> mappings) {
-    List<Pair<String, TemplateMappingConfiguration>> strings = new ArrayList<Pair<String, TemplateMappingConfiguration>>();
+    List<Pair<String, TemplateMappingConfiguration>> strings = new ArrayList<>();
 
     for (ByModel g : new MapCfgGroups(mappings).groupByModel()) {
       if (g.includesAll()) {

@@ -40,7 +40,7 @@ public class JavaModuleOperations {
    * In case of incremental compilation in ModuleMaker use includeSelfModulesClassesGen == true
    */
   public static Set<String> collectCompileClasspath(Set<? extends SModule> modules, boolean includeSelfModulesClassesGen) {
-    Set<String> result = new HashSet<String>();
+    Set<String> result = new HashSet<>();
     for (SModule module : getJavaModules(new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE))) {
       if (modules.contains(module) && !includeSelfModulesClassesGen) {
         result.addAll(getJavaFacet(module).getLibraryClassPath());
@@ -57,7 +57,7 @@ public class JavaModuleOperations {
   }
 
   public static Set<String> collectExecuteClasspath(Set<? extends SModule> modules) {
-    Set<String> result = new HashSet<String>();
+    Set<String> result = new HashSet<>();
     for (SModule module : getJavaModules(new GlobalModuleDependenciesManager(modules).getModules(Deptype.EXECUTE))) {
       result.addAll(getJavaFacet(module).getClassPath());
     }

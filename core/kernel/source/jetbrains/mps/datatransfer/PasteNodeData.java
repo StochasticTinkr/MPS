@@ -70,10 +70,10 @@ public class PasteNodeData {
   }
 
   public static PasteNodeData emptyPasteNodeData(SModelReference sourceModel) {
-    return new PasteNodeData(new ArrayList<SNode>(),
-      new HashSet<SReference>(),
+    return new PasteNodeData(new ArrayList<>(),
+                             new HashSet<>(),
       sourceModel,
-      new HashSet<SLanguage>(),
-      new HashSet<SModelReference>());
+                             new HashSet<>(),
+                             new HashSet<>());
   }
 }

@@ -56,8 +56,8 @@ final class Group {
   }
 
   public Group(Iterable<Group> other) {
-    HashSet<TemplateMappingConfiguration> mappings = new HashSet<TemplateMappingConfiguration>();
-    HashMap<Boolean, Group> topPri = new HashMap<Boolean, Group>();
+    HashSet<TemplateMappingConfiguration> mappings = new HashSet<>();
+    HashMap<Boolean, Group> topPri = new HashMap<>();
     for (Group g : other) {
       mappings.addAll(g.myMappings);
       topPri.put(g.isTopPriority(), g);
@@ -71,7 +71,7 @@ final class Group {
   }
 
   public Group subtract(Group other) {
-    final HashSet<TemplateMappingConfiguration> mc = new HashSet<TemplateMappingConfiguration>(myMappings);
+    final HashSet<TemplateMappingConfiguration> mc = new HashSet<>(myMappings);
     mc.removeAll(other.myMappings);
     return new Group(mc, myIsTopPriority);
   }

@@ -98,7 +98,7 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     myButtonGroup.add(myModelScopeButton);
 
     Iterable<SModule> moduleList = repository.getModules();
-    List<String> moduleNameList = new ArrayList<String>();
+    List<String> moduleNameList = new ArrayList<>();
 
     for (SModule iModule : moduleList) {
       String namespace = iModule.getModuleName();
@@ -113,7 +113,7 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     myModuleField.setText(ScopeOptions.DEFAULT_VALUE);
 
     Collection<SModel> modelList = new ModuleRepositoryFacade(repository).getAllModels();
-    myModelNameList = new ArrayList<String>(modelList.size());
+    myModelNameList = new ArrayList<>(modelList.size());
 
     for (SModel md : modelList) {
       if (!SModelStereotype.isStubModel(md)) {

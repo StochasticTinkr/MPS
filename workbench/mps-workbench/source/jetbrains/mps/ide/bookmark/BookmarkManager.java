@@ -55,11 +55,11 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
 
   private static Icon myUnnumberedBookmarkIcon = AllIcons.Actions.Checked;
 
-  private List<BookmarkListener> myBookmarkListeners = new ArrayList<BookmarkListener>();
+  private List<BookmarkListener> myBookmarkListeners = new ArrayList<>();
 
   private SNodeReference[] myBookmarks = new SNodeReference[10];
 
-  private List<SNodeReference> myUnnumberedBookmarks = new ArrayList<SNodeReference>();
+  private List<SNodeReference> myUnnumberedBookmarks = new ArrayList<>();
 
   private final MPSProject myProject;
   private Highlighter myHighlighter;
@@ -102,13 +102,13 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
    */
   public List<Pair<SNode, Integer>> getBookmarks(SNode root) {
     if (root == null) return Collections.emptyList();
-    List<Pair<SNode, Integer>> result = new ArrayList<Pair<SNode, Integer>>();
+    List<Pair<SNode, Integer>> result = new ArrayList<>();
     for (int i = 0; i <= 9; i++) {
       SNodeReference nodePointer = myBookmarks[i];
       if (nodePointer != null) {
         SNode node = nodePointer.resolve(myProject.getRepository());
         if (node != null && node.getContainingRoot() == root) {
-          result.add(new Pair<SNode, Integer>(node, i));
+          result.add(new Pair<>(node, i));
         }
       }
     }
@@ -116,7 +116,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       if (nodePointer != null) {
         SNode node = nodePointer.resolve(myProject.getRepository());
         if (node != null && node.getContainingRoot() == root) {
-          result.add(new Pair<SNode, Integer>(node, -1));
+          result.add(new Pair<>(node, -1));
         }
       }
     }
@@ -198,7 +198,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
           fireBookmarkRemoved(i, pointer.resolve(myProject.getRepository()));
         }
       }
-      ArrayList<SNodeReference> nodePointers = new ArrayList<SNodeReference>(myUnnumberedBookmarks);
+      ArrayList<SNodeReference> nodePointers = new ArrayList<>(myUnnumberedBookmarks);
       myUnnumberedBookmarks.clear();
       for (SNodeReference pointer : nodePointers) {
         if (pointer != null) {

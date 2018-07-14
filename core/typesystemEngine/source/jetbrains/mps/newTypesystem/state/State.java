@@ -92,7 +92,7 @@ public class State {
 
   @StateObject
   private final Map<ConditionKind, ManyToManyMap<SNode, Block>> myBlocksAndInputs =
-      new THashMap<ConditionKind, ManyToManyMap<SNode, Block>>();
+      new THashMap<>();
 
   @StateObject
   private final BlockSet myBlocks = new BlockSet();
@@ -104,10 +104,10 @@ public class State {
     myNodeMaps = new NodeMaps(this);
     myVariableIdentifier = new VariableIdentifier();
     {
-      myBlocksAndInputs.put(ConditionKind.SHALLOW, new ManyToManyMap<SNode, Block>());
-      myBlocksAndInputs.put(ConditionKind.CONCRETE, new ManyToManyMap<SNode, Block>());
+      myBlocksAndInputs.put(ConditionKind.SHALLOW, new ManyToManyMap<>());
+      myBlocksAndInputs.put(ConditionKind.CONCRETE, new ManyToManyMap<>());
     }
-    myOperationStack = new Stack<AbstractOperation>();
+    myOperationStack = new Stack<>();
     myOperation = operation;
     myOperationStack.push(myOperation);
   }
@@ -168,14 +168,14 @@ public class State {
   }
 
   public void substitute(SNode oldVar, SNode type) {
-    for (ConditionKind conditionKind : new THashSet<ConditionKind>(myBlocksAndInputs.keySet())) {
+    for (ConditionKind conditionKind : new THashSet<>(myBlocksAndInputs.keySet())) {
       ManyToManyMap<SNode, Block> map = myBlocksAndInputs.get(conditionKind);
       Set<Block> blocks = map.getByFirst(oldVar);
       if (blocks == null) {
         return;
       }
       List<SNode> unresolvedInputs = conditionKind.getUnresolvedInputs(type, this);
-      for (Block block : new THashSet<Block>(blocks)) {
+      for (Block block : new THashSet<>(blocks)) {
         for (SNode variable : unresolvedInputs) {
           addInputAndTrack(block, variable, conditionKind);
         }
@@ -329,7 +329,7 @@ public class State {
   }
 
   public List<AbstractOperation> getOperationsAsList() {
-    List<AbstractOperation> result = new ArrayList<AbstractOperation>();
+    List<AbstractOperation> result = new ArrayList<>();
     visit(myOperation, result);
     return result;
   }
@@ -498,7 +498,7 @@ public class State {
     SNode newType = origType;
 
     // exhaustively apply substitutions until the operation has no effect
-    StructuralNodeSet<SNode> seen = new StructuralNodeSet<SNode>();
+    StructuralNodeSet<SNode> seen = new StructuralNodeSet<>();
 
     TypeSubstitution typeSubs = myTypeCheckingContext.getSubstitution(origType);
     while (typeSubs != null && typeSubs.isValid()) {
@@ -521,15 +521,15 @@ public class State {
   /** Nulls are not allowed. Not serializable. Not cloneable. */
   private static class BlockSet extends AbstractSet<Block> {
 
-    private EnumMap<BlockKind, Set<Block>> myBlockKindsToBlocks = new EnumMap<BlockKind, Set<Block>>(BlockKind.class);
+    private EnumMap<BlockKind, Set<Block>> myBlockKindsToBlocks = new EnumMap<>(BlockKind.class);
     private Iterable<Block>[] myBlockSetArray;
 
     @SuppressWarnings("unchecked")
     BlockSet () {
       for(BlockKind bk: BlockKind.values()) {
-        myBlockKindsToBlocks.put(bk, new THashSet<Block>());
+        myBlockKindsToBlocks.put(bk, new THashSet<>());
       }
-      ArrayList<Iterable<Block>> sets = new ArrayList<Iterable<Block>>();
+      ArrayList<Iterable<Block>> sets = new ArrayList<>();
       for(BlockKind bk: BlockKind.values()) {
         sets.add(myBlockKindsToBlocks.get(bk));
       }

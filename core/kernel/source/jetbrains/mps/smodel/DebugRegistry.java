@@ -52,14 +52,14 @@ public class DebugRegistry implements CoreComponent {
 
 
   private Map<org.jetbrains.mps.openapi.model.SModelReference, String> myModels =
-      new HashMap<org.jetbrains.mps.openapi.model.SModelReference, String>();
-  private Map<SModuleReference, String> myModules = new HashMap<SModuleReference, String>();
+      new HashMap<>();
+  private Map<SModuleReference, String> myModules = new HashMap<>();
 
-  private Map<SPropertyId, Pair<SConceptId, String>> myProperties = new HashMap<SPropertyId, Pair<SConceptId, String>>();
-  private Map<SReferenceLinkId, Pair<SConceptId, String>> myLinks = new HashMap<SReferenceLinkId, Pair<SConceptId, String>>();
-  private Map<SContainmentLinkId, Pair<SConceptId, String>> myChildRoles = new HashMap<SContainmentLinkId, Pair<SConceptId, String>>();
-  private Map<SConceptId, String> myConcepts = new HashMap<SConceptId, String>();
-  private Map<SLanguageId, String> myLanguages = new HashMap<SLanguageId, String>();
+  private Map<SPropertyId, Pair<SConceptId, String>> myProperties = new HashMap<>();
+  private Map<SReferenceLinkId, Pair<SConceptId, String>> myLinks = new HashMap<>();
+  private Map<SContainmentLinkId, Pair<SConceptId, String>> myChildRoles = new HashMap<>();
+  private Map<SConceptId, String> myConcepts = new HashMap<>();
+  private Map<SLanguageId, String> myLanguages = new HashMap<>();
 
   public synchronized String getModelName(org.jetbrains.mps.openapi.model.SModelReference modelId) {
     return myModels.get(modelId);
@@ -102,15 +102,15 @@ public class DebugRegistry implements CoreComponent {
   }
 
   public synchronized void addPropertyName(SPropertyId propertyId, String name) {
-    myProperties.put(propertyId, new Pair<SConceptId, String>(propertyId.getConceptId(), name));
+    myProperties.put(propertyId, new Pair<>(propertyId.getConceptId(), name));
   }
 
   public synchronized void addRefName(SReferenceLinkId linkId, String name) {
-    myLinks.put(linkId, new Pair<SConceptId, String>(linkId.getConceptId(), name));
+    myLinks.put(linkId, new Pair<>(linkId.getConceptId(), name));
   }
 
   public synchronized void addLinkName(SContainmentLinkId linkId, String name) {
-    myChildRoles.put(linkId, new Pair<SConceptId, String>(linkId.getConceptId(), name));
+    myChildRoles.put(linkId, new Pair<>(linkId.getConceptId(), name));
   }
 
   //fqName

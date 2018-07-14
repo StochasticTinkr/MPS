@@ -64,8 +64,8 @@ public class InequalityBlock extends RelationBlock {
 
   @Override
   public List<Pair<SNode, SNode>> getInputsAndOutputs() {
-    List<Pair<SNode, SNode>> result = new LinkedList<Pair<SNode, SNode>>();
-    result.add(new Pair<SNode, SNode>(getInput(), getOutput()));
+    List<Pair<SNode, SNode>> result = new LinkedList<>();
+    result.add(new Pair<>(getInput(), getOutput()));
     return result;
   }
 
@@ -136,7 +136,7 @@ public class InequalityBlock extends RelationBlock {
   }
 
   private boolean calcIsSubtype(SubTypingManagerNew subTyping, SNode subType, SNode superType) {
-    THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
+    THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<>();
     SubtypingResolver subtypingResolver = new SubtypingResolver(myRelationKind.isWeak(), getState().getTypeCheckingContext(), matchingPairs);
     boolean result = subtypingResolver.calcIsSubType(subType, superType);
     if (result) {
@@ -151,8 +151,8 @@ public class InequalityBlock extends RelationBlock {
   @Override
   public Set<Pair<SNode, ConditionKind>> getInitialInputs() {
     if (isCheckOnly()) {
-      return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, ConditionKind.CONCRETE),
-        new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.CONCRETE));
+      return CollectionUtil.set(new Pair<>(myLeftNode, ConditionKind.CONCRETE),
+                                new Pair<>(myRightNode, ConditionKind.CONCRETE));
     } else {
       //hack
       ConditionKind left = ConditionKind.SHALLOW;
@@ -163,8 +163,8 @@ public class InequalityBlock extends RelationBlock {
       if (LatticeUtil.isPolymorphic(myRightNode)) {
         right = ConditionKind.CONCRETE;
       }
-      return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, left),
-        new Pair<SNode, ConditionKind>(myRightNode, right));
+      return CollectionUtil.set(new Pair<>(myLeftNode, left),
+                                new Pair<>(myRightNode, right));
     }
   }
 

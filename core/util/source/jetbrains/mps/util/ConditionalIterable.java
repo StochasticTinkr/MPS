@@ -35,7 +35,7 @@ public class ConditionalIterable<T> implements Iterable<T> {
 
   @Override
   public Iterator<T> iterator() {
-    return myCondition == null ? new WildcIteratorDelegate<T>(myIter.iterator()) : new FilterIterator<T>(myIter.iterator(), myCondition);
+    return myCondition == null ? new WildcIteratorDelegate<>(myIter.iterator()) : new FilterIterator<>(myIter.iterator(), myCondition);
   }
 
   private static class WildcIteratorDelegate<U> implements Iterator<U> {

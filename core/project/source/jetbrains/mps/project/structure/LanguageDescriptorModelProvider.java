@@ -65,12 +65,12 @@ import java.util.concurrent.ConcurrentHashMap;
 public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
   private final static SModelId ourDescriptorModelId = new IntegerSModelId(0x0f010101);
 
-  private final Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, LanguageModelDescriptor>();
+  private final Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<>();
   private final LanguageRegistry myLanguageRegistry;
   private final RootChangeListener myListener = new RootChangeListener();
 
   private class RootChangeListener extends SNodeChangeListenerAdapter {
-    private final Set<SModelReference> myListenedModels = new HashSet<SModelReference>();
+    private final Set<SModelReference> myListenedModels = new HashSet<>();
 
     public void attach(SModule module) {
       for (SModel model : module.getModels()) {
@@ -192,7 +192,7 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
   }
 
   private void removeAll() {
-    List<LanguageModelDescriptor> models = new ArrayList<LanguageModelDescriptor>(myModels.values());
+    List<LanguageModelDescriptor> models = new ArrayList<>(myModels.values());
     for (LanguageModelDescriptor model : models) {
       removeModel(model);
     }

@@ -129,7 +129,7 @@ public class GraphUtil {
 
   public static int[][] components(int[][] graph) {
     int count = graph.length;
-    List<int[]> result = new ArrayList<int[]>();
+    List<int[]> result = new ArrayList<>();
 
     if (count < 2) {
       if (count == 1) {
@@ -141,7 +141,7 @@ public class GraphUtil {
     int[] component = new int[count];
 
     int[] state = new int[count];
-    Stack<Integer> stack = new Stack<Integer>();
+    Stack<Integer> stack = new Stack<>();
     int nextVertex = 0;
 
     while (nextVertex < count) {
@@ -171,7 +171,7 @@ public class GraphUtil {
   }
 
   private static class Tarjan {
-    List<int[]> result = new ArrayList<int[]>();
+    List<int[]> result = new ArrayList<>();
     int[] stack;
     int[] index;
     int[] lowlink;

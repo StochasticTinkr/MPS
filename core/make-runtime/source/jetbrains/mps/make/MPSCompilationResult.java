@@ -48,7 +48,7 @@ public final class MPSCompilationResult implements Serializable, CompilationResu
     myErrorsCount = errorsCount;
     myWarningsCount = warningsCount;
     myAborted = aborted;
-    myChangedModules = new HashSet<SModule>(changedModules);
+    myChangedModules = new HashSet<>(changedModules);
   }
 
   @NotNull

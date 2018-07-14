@@ -69,7 +69,7 @@ public class UsagesTree extends MPSTree {
   private static final String COMMAND_EXCLUDE = "exclude";
 
   private DataTree myContents;
-  private HashSet<PathItemRole> myResultPathProvider = new HashSet<PathItemRole>();
+  private HashSet<PathItemRole> myResultPathProvider = new HashSet<>();
 
   private boolean myAdditionalInfoNeeded;
   private boolean myShowSearchedNodes;
@@ -264,7 +264,7 @@ public class UsagesTree extends MPSTree {
 
   @Override
   protected UsagesTreeNode rebuild() {
-    ComputeRunnable<UsagesTreeNode> cr = new ComputeRunnable<UsagesTreeNode>(new Computable<UsagesTreeNode>() {
+    ComputeRunnable<UsagesTreeNode> cr = new ComputeRunnable<>(new Computable<UsagesTreeNode>() {
       @Override
       public UsagesTreeNode compute() {
         UsagesTreeNode root = new UsagesTreeNode();
@@ -274,7 +274,7 @@ public class UsagesTree extends MPSTree {
           return root;
         }
         if (myShowSearchedNodes) {
-          HashSet<PathItemRole> searchedNodesPathProvider = new HashSet<PathItemRole>();
+          HashSet<PathItemRole> searchedNodesPathProvider = new HashSet<>();
           searchedNodesPathProvider.add(PathItemRole.ROLE_MAIN_SEARCHED_NODES);
 
           DataNode searchedNodesRoot = myContents.getTreeRoot().getChildren().get(0);
@@ -344,7 +344,7 @@ public class UsagesTree extends MPSTree {
   }
 
   private List<UsagesTreeNode> buildSubtreeStructure(DataNode root, HashSet<PathItemRole> nodeCategories) {
-    List<UsagesTreeNode> children = new ArrayList<UsagesTreeNode>();
+    List<UsagesTreeNode> children = new ArrayList<>();
     for (DataNode child : root.getChildren()) {
       children.addAll(buildSubtreeStructure(child, nodeCategories));
     }
@@ -378,9 +378,9 @@ public class UsagesTree extends MPSTree {
   }
 
   private void mergeChildren(List<UsagesTreeNode> children) {
-    List<UsagesTreeNode> mergedChildren = new ArrayList<UsagesTreeNode>();
+    List<UsagesTreeNode> mergedChildren = new ArrayList<>();
 
-    Map<Object, UsagesTreeNode> childMap = new LinkedHashMap<Object, UsagesTreeNode>();
+    Map<Object, UsagesTreeNode> childMap = new LinkedHashMap<>();
     for (UsagesTreeNode child : children) {
       Object additionID = child.getUserObject().getData().getIdObject();
       if (additionID == null) {
@@ -391,7 +391,7 @@ public class UsagesTree extends MPSTree {
         if (addToNode == null) {
           childMap.put(additionID, child);
         } else {
-          List<UsagesTreeNode> addition = new ArrayList<UsagesTreeNode>(child.internalGetChildren());
+          List<UsagesTreeNode> addition = new ArrayList<>(child.internalGetChildren());
           for (UsagesTreeNode additionChild : addition) {
             addToNode.add(additionChild);
           }
@@ -469,7 +469,7 @@ public class UsagesTree extends MPSTree {
   }
 
   private void setCurrentNodesOnlyExclusion() {
-    myContents.setExcluded(new HashSet<DataNode>(Arrays.asList(myContents.getTreeRoot())), true);
+    myContents.setExcluded(new HashSet<>(Arrays.asList(myContents.getTreeRoot())), true);
     setCurrentNodesExclusion(false);
   }
 
@@ -558,7 +558,7 @@ public class UsagesTree extends MPSTree {
   private UsagesTreeNode findLastResultInSubtree(UsagesTreeNode root, boolean includeRoot) {
     assert root != null;
 
-    List<MPSTreeNode> children = new ArrayList<MPSTreeNode>();
+    List<MPSTreeNode> children = new ArrayList<>();
     for (MPSTreeNode node : root) {
       children.add(node);
     }

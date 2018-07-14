@@ -59,7 +59,7 @@ final class GenPlanActiveStep {
     myLanguageRegistry = languageRegistry;
     myModelMap = new HashMap<>();
     // I'd like to keep predictable order of template models, just in case. Don't want LinkedHasMap since I need the order once
-    ArrayList<TemplateModel> allTemplateModels = new ArrayList<TemplateModel>();
+    ArrayList<TemplateModel> allTemplateModels = new ArrayList<>();
     // In fact, to resolve templates (#getTemplateModel(SModelReference) it's not necessary to know ALL template models, it's sufficient to know
     // models of the current step. However, it's a bit tricky to build complete set of these (MCs of one step
     // could invoke templates from another generator (in case there's depends/extends relation between generators) from another step

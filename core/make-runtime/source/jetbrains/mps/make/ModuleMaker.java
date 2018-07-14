@@ -215,7 +215,7 @@ public final class ModuleMaker {
     tracer.start(BUILDING_DIRTY_CLOSURE, 3);
     Set<SModule> candidates = modulesContainer.getModules();
     tracer.push(CHECKING_DIRTY_MODULES_MSG);
-    List<SModule> dirtyModules = new ArrayList<SModule>(candidates.size());
+    List<SModule> dirtyModules = new ArrayList<>(candidates.size());
     for (SModule m : candidates) {
       if (modulesContainer.isDirty(m)) {
         dirtyModules.add(m);
@@ -243,7 +243,7 @@ public final class ModuleMaker {
     }
     Set<SModule> toCompile = new LinkedHashSet<>();
     // BFS from dirtyModules along backDependencies
-    LinkedList<SModule> queue = new LinkedList<SModule>(dirtyModules);
+    LinkedList<SModule> queue = new LinkedList<>(dirtyModules);
     while (!queue.isEmpty()) {
       SModule m = queue.removeFirst();
       if (candidates.contains(m)) {

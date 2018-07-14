@@ -26,7 +26,7 @@ import java.util.Map;
  * @author Artem Tikhomirov
  */
 final class Intern {
-  private final Map<String, String> myStrings = new HashMap<String, String>(256);
+  private final Map<String, String> myStrings = new HashMap<>(256);
 
   @Nullable
   public String value(@Nullable String origin) {

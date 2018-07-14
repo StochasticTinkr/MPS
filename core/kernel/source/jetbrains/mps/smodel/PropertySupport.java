@@ -264,7 +264,7 @@ public abstract class PropertySupport {
    */
   @Deprecated
   public static class PropertySupportCache implements CoreComponent, ModuleReloadListener {
-    private final Map<SNode, PropertySupport> myMap = new ConcurrentHashMap<SNode, PropertySupport>();
+    private final Map<SNode, PropertySupport> myMap = new ConcurrentHashMap<>();
     private final ClassLoaderManager myCLM;
 
     public PropertySupportCache(ClassLoaderManager clm) {

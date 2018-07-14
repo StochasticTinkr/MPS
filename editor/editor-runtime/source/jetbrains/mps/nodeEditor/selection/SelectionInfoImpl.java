@@ -52,7 +52,7 @@ public class SelectionInfoImpl implements SelectionInfo {
 
   private String mySelectionClassName;
   private String myModuleID;
-  private Map<String, String> myProperties = new HashMap<String, String>();
+  private Map<String, String> myProperties = new HashMap<>();
   private DefaultCellInfo myCellInfo = null;
 
   public SelectionInfoImpl(Element element) {

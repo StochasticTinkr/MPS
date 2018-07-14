@@ -269,8 +269,8 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
       final Collection<MPSNodeVirtualFile> filesInModel = rvf.getKnownVirtualFilesIn(md.getReference());
       updateModificationStamp(filesInModel);
 
-      Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
-      Collection<MPSNodeVirtualFile> changedFiles = new ArrayList<MPSNodeVirtualFile>();
+      Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<>();
+      Collection<MPSNodeVirtualFile> changedFiles = new ArrayList<>();
       for (MPSNodeVirtualFile vf : filesInModel) {
         // XXX reconsider vf.getNode() (with SRepository in file construction time), vf.getNode(myRepository) and explicit resolve here
         if (vf.getNode() == null) {
@@ -298,8 +298,8 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
       if (rvf == null || events.isEmpty()) {
         return;
       }
-      Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
-      Collection<MPSNodeVirtualFile> changedFiles = new ArrayList<MPSNodeVirtualFile>();
+      Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<>();
+      Collection<MPSNodeVirtualFile> changedFiles = new ArrayList<>();
       for (AbstractModelChangeEvent evt : events) {
         if (evt instanceof SPropertyChangeEvent) {
           // candidate for rename

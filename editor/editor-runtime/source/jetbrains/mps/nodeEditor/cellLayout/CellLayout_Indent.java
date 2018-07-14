@@ -151,7 +151,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
   @Override
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
-    Set<EditorCell> editorCellsSet = new HashSet<EditorCell>();
+    Set<EditorCell> editorCellsSet = new HashSet<>();
     for (EditorCell editorCell : editorCells) {
       editorCellsSet.add(editorCell);
     }
@@ -193,7 +193,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
   @Override
   public List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells) {
-    List<Rectangle> result = new ArrayList<Rectangle>();
+    List<Rectangle> result = new ArrayList<>();
     List<EditorCell> indentLeafs = getIndentLeafs(editorCells);
     for (EditorCell leaf : indentLeafs) {
       result.add(GeometryUtil.getBounds(leaf));
@@ -207,7 +207,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   private static List<EditorCell> getIndentLeafs(EditorCell_Collection current) {
-    List<EditorCell> result = new ArrayList<EditorCell>();
+    List<EditorCell> result = new ArrayList<>();
     collectCells(current, result, null);
     return result;
   }
@@ -254,12 +254,12 @@ public class CellLayout_Indent extends AbstractCellLayout {
     private int myBottomInset;
     private boolean myOverflow;
     private int myLineIndent = 0;
-    private List<EditorCell> myLineContent = new ArrayList<EditorCell>();
-    private List<Integer> myLineWrapIndent = new ArrayList<Integer>();
+    private List<EditorCell> myLineContent = new ArrayList<>();
+    private List<Integer> myLineWrapIndent = new ArrayList<>();
     private int myIndentSize;
 
-    private Stack<Integer> myIndentStack = new Stack<Integer>();
-    private Stack<Integer> myWrapStack = new Stack<Integer>();
+    private Stack<Integer> myIndentStack = new Stack<>();
+    private Stack<Integer> myWrapStack = new Stack<>();
     private int myCurrentIndent;
     private int myCurrentIndentAfterWrap;
 
@@ -557,8 +557,8 @@ public class CellLayout_Indent extends AbstractCellLayout {
         throw new IllegalStateException();
       }
 
-      final List<EditorCell> oldLine = new ArrayList<EditorCell>(myLineContent.subList(0, index));
-      final List<EditorCell> newLine = new ArrayList<EditorCell>(myLineContent.subList(index, myLineContent.size()));
+      final List<EditorCell> oldLine = new ArrayList<>(myLineContent.subList(0, index));
+      final List<EditorCell> newLine = new ArrayList<>(myLineContent.subList(index, myLineContent.size()));
 
       withIndent(myLineIndent, myLineWrapIndent.get(index), new Runnable() {
         @Override

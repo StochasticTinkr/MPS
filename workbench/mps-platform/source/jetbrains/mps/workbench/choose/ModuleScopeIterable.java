@@ -48,7 +48,7 @@ public final class ModuleScopeIterable implements Iterable<SModuleReference> {
       @Override
       public List<SModuleReference> compute() {
         // if we got few modules, it's unlikely we care to use choose by name functionality
-        ArrayList<SModuleReference> rv = new ArrayList<SModuleReference>(100);
+        ArrayList<SModuleReference> rv = new ArrayList<>(100);
         for (SModule m : myScope.getModules()) {
           rv.add(m.getModuleReference());
         }

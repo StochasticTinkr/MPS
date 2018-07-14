@@ -120,7 +120,7 @@ public class WorkbenchPathMacros implements ApplicationComponent, PathMacrosProv
   }
 
   private boolean sameMaps(Map<String, String> m1, Map<String, String> m2) {
-    Set<String> keys = new HashSet<String>();
+    Set<String> keys = new HashSet<>();
     keys.addAll(m1.keySet());
     keys.addAll(m2.keySet());
 

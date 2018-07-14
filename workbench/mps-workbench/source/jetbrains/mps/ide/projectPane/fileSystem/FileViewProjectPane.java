@@ -271,7 +271,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   @Override
   public Object getData(String dataId) {
     if (PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName().equals(dataId)) {
-      List<VirtualFile> files = new LinkedList<VirtualFile>();
+      List<VirtualFile> files = new LinkedList<>();
       TreePath[] treePaths = getSelectionPaths();
       if (treePaths != null) {
         for (TreePath tp : treePaths) {

@@ -47,7 +47,7 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
     return new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<Set<VirtualFile>>() {
       @Override
       public Set<VirtualFile> compute() {
-        final Set<VirtualFile> roots = new HashSet<VirtualFile>();
+        final Set<VirtualFile> roots = new HashSet<>();
         for (SModule module : mpsProject.getProjectModulesWithGenerators()) {
           JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
           if (facet == null) {

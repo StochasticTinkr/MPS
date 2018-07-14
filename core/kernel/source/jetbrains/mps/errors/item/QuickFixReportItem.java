@@ -48,12 +48,13 @@ public interface QuickFixReportItem extends ReportItem {
   Collection<? extends QuickFixBase> getQuickFix();
 
   QuickFixFlavour<QuickFixBase, QuickFixReportItem> FLAVOUR_QUICKFIX =
-      new QuickFixFlavour<QuickFixBase, QuickFixReportItem>(QuickFixReportItem.class, quickFixReportItem -> new ArrayList<QuickFixBase>(quickFixReportItem.getQuickFix()));
+      new QuickFixFlavour<>(QuickFixReportItem.class, quickFixReportItem -> new ArrayList<>(quickFixReportItem.getQuickFix()));
 
   Logger LOG = Logger.getLogger(QuickFixReportItem.class);
 
   QuickFixFlavour<EditorQuickFix, EditorQuickfixReportItem> FLAVOUR_EDITOR_QUICKFIX =
-      new QuickFixFlavour<EditorQuickFix, EditorQuickfixReportItem>(EditorQuickfixReportItem.class, quickFixReportItem -> new ArrayList<EditorQuickFix>(quickFixReportItem.getQuickFix())) {
+      new QuickFixFlavour<EditorQuickFix, EditorQuickfixReportItem>(EditorQuickfixReportItem.class, quickFixReportItem -> new ArrayList<>(
+          quickFixReportItem.getQuickFix())) {
         @NotNull
         @Override
         public Collection<EditorQuickFix> getCollection(FlavouredItem reportItem) {

@@ -31,9 +31,9 @@ import java.util.*;
 public class SubtypingUtil {
 
   public static Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
-    Set<SNode> residualNodes = new THashSet<SNode>(nodes);
+    Set<SNode> residualNodes = new THashSet<>(nodes);
     while (residualNodes.size() > 1) {
-      List<SNode> nodesToIterate = new ArrayList<SNode>(residualNodes);
+      List<SNode> nodesToIterate = new ArrayList<>(residualNodes);
       Collections.sort(nodesToIterate, new Comparator<SNode>() {
         @Override
         public int compare(SNode o1, SNode o2) {
@@ -95,7 +95,7 @@ public class SubtypingUtil {
       });
       types = SubtypingUtil.eliminateSubTypes(types);
     }
-    return LatticeUtil.meetNodes(new THashSet<SNode>(SubtypingUtil.leastCommonSuperTypes(types, context)));
+    return LatticeUtil.meetNodes(new THashSet<>(SubtypingUtil.leastCommonSuperTypes(types, context)));
   }
 
   public static List<SNode> leastCommonSuperTypes(List<SNode> types, TypeCheckingContext context) {
@@ -127,10 +127,10 @@ public class SubtypingUtil {
     StructuralNodeSet<?> frontier = new StructuralNodeSet();
     StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
-    Set<SNode> result = new THashSet<SNode>();
+    Set<SNode> result = new THashSet<>();
     frontier.add(left);
     while (!frontier.isEmpty()) {
-      Set<SNode> yetPassedRaw = new THashSet<SNode>();
+      Set<SNode> yetPassedRaw = new THashSet<>();
       //collecting a set of frontier's ancestors
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
@@ -170,8 +170,8 @@ public class SubtypingUtil {
     abstract boolean inRelation(SNode left, SNode right);
 
     public List<SNode> doEliminate (Collection<SNode> types) {
-      List<SNode> result = new LinkedList<SNode>();
-      Set<SNode> toRemove = new THashSet<SNode>();
+      List<SNode> result = new LinkedList<>();
+      Set<SNode> toRemove = new THashSet<>();
       for (SNode current : types) {
         boolean toAdd = true;
         for (SNode resultType : result) {

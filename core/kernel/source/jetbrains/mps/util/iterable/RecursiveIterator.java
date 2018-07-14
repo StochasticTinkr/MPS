@@ -30,8 +30,8 @@ public abstract class RecursiveIterator<T> implements Iterable<T>, Iterator<T> {
 
   private final Iterable<T> myRoot;
   private final boolean myLeavesOnly;
-  private final Set<T> mySeen = new HashSet<T>();
-  private final Deque<Iterator<T>> myStack = new ArrayDeque<Iterator<T>>();
+  private final Set<T> mySeen = new HashSet<>();
+  private final Deque<Iterator<T>> myStack = new ArrayDeque<>();
   private T myNext;
 
   public RecursiveIterator(@NotNull Iterable<T> root, boolean leavesOnly) {

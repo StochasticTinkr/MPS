@@ -52,7 +52,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     final IOperationContext context = editorContext.getOperationContext();
     List<String> postfixes = getPostfixes(node, context, editorContext);
     if (postfixes == null) {
-      postfixes = new ArrayList<String>();
+      postfixes = new ArrayList<>();
     }
     for (int i = 0; i < postfixes.size(); ) {
       if (postfixes.get(i) == null) {
@@ -65,7 +65,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
 
     final PostfixGroup postfixGroup = new PostfixGroup(postfixes);
     final PropertySupport propertySupport = PropertySupport.getPropertySupport(property);
-    List<SubstituteAction> actions = new ArrayList<SubstituteAction>(postfixes.size());
+    List<SubstituteAction> actions = new ArrayList<>(postfixes.size());
     for (final String postfix : postfixes) {
       actions.add(new PostfixSubstituteAction(postfix, node, postfixGroup,
           propertySupport, property.getName()));
@@ -78,7 +78,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
   public static class PostfixGroup {
     private List<String> myPostfixes;
     private String myCurrentPattern = null;
-    private Map<String, String> myModel = new HashMap<String, String>();
+    private Map<String, String> myModel = new HashMap<>();
     private boolean myShowUnpostfixed;
     private boolean myUnpostfixedFirst;
 

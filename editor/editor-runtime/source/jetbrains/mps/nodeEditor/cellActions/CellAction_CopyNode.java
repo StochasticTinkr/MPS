@@ -87,9 +87,9 @@ public class CellAction_CopyNode extends AbstractCellAction {
       LOG.debug("Copy node : " + SNodeOperations.getDebugText(selectedCells.get(0).getSNode()));
     }
 
-    List<SNode> copyNodeList = new ArrayList<SNode>();
-    List<SNode> deleteNodeList = new ArrayList<SNode>();
-    Map<SNode, Set<SNode>> nodesAndAttributes = new HashMap<SNode, Set<SNode>>();
+    List<SNode> copyNodeList = new ArrayList<>();
+    List<SNode> deleteNodeList = new ArrayList<>();
+    Map<SNode, Set<SNode>> nodesAndAttributes = new HashMap<>();
     for (EditorCell selectedCell : selectedCells) {
       SNode node = selectedCell.getSNode();
       final SNode parent = node.getParent();
@@ -105,7 +105,7 @@ public class CellAction_CopyNode extends AbstractCellAction {
 
         //Store the attribute by default. Store the parent only of it is also part of the selection.
         SNode nodeToDelete = node;
-        Set<SNode> selectedAttributes = new HashSet<SNode>();
+        Set<SNode> selectedAttributes = new HashSet<>();
         selectedAttributes.add(node);
         if (selectedCell instanceof EditorCell_Collection) {
           for (EditorCell cell : CellTraversalUtil.iterateTree(selectedCell, selectedCell, true)) {
@@ -126,6 +126,6 @@ public class CellAction_CopyNode extends AbstractCellAction {
         deleteNodeList.add(node);
       }
     }
-    return new MultiTuple._4<List<SNode>, List<SNode>, Map<SNode, Set<SNode>>, String> (copyNodeList, deleteNodeList, nodesAndAttributes, textBuilder.getText());
+    return new MultiTuple._4<>(copyNodeList, deleteNodeList, nodesAndAttributes, textBuilder.getText());
   }
 }

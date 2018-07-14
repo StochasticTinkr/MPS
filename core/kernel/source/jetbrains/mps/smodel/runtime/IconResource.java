@@ -35,7 +35,7 @@ public class IconResource {
   public IconResource(@NotNull String iconResId, @NotNull  Class resourceProvider) {
     myIconResId = iconResId;
     myClassName = resourceProvider.getName();
-    myResourceProvider = new WeakReference<Class>(resourceProvider);
+    myResourceProvider = new WeakReference<>(resourceProvider);
   }
 
   /**

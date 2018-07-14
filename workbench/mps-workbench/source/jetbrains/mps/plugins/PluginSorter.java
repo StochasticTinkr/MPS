@@ -42,8 +42,8 @@ public class PluginSorter {
     private List<ReloadableModule> result;
 
     public List<ReloadableModule> sort() {
-      myVisited = new HashSet<ReloadableModule>(myModules.size());
-      result = new ArrayList<ReloadableModule>(myModules.size());
+      myVisited = new HashSet<>(myModules.size());
+      result = new ArrayList<>(myModules.size());
       dfs();
       return result;
     }

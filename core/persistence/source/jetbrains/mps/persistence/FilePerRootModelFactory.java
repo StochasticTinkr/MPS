@@ -240,7 +240,7 @@ public class FilePerRootModelFactory implements ModelFactory, IndexAwareModelFac
 
   public static Map<String, String> getModelHashes(@NotNull MultiStreamDataSource source) {
     BigInteger fileHash = BigInteger.ZERO;
-    Map<String, String> result = new HashMap<String, String>();
+    Map<String, String> result = new HashMap<>();
     for (String streamName : source.getAvailableStreams()) {
       Map<String, String> generationHashes = null;
       if (source instanceof FolderDataSource) {

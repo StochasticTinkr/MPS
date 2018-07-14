@@ -217,7 +217,7 @@ public final class TraceInfoCache {
       // we get debug info for them from cache 
       DebugInfo cachedDebugInfo = TraceInfoCache.this.getLastGeneratedDebugInfo(genStatus.getInputModel());
       if (cachedDebugInfo != null) {
-        List<String> unchangedFiles = new ArrayList<String>();
+        List<String> unchangedFiles = new ArrayList<>();
         for (GenerationRootDependencies dependency : genStatus.getDependencies().getUnchangedDependencies()) {
           unchangedFiles.addAll(dependency.getFiles());
         }
@@ -228,7 +228,7 @@ public final class TraceInfoCache {
   }
 
   static void completeDebugInfoFromCache(@NotNull DebugInfo cachedDebugInfo, @NotNull DebugInfo generatedDebugInfo, Collection<String> unchangedFiles) {
-    Set<String> files = new HashSet<String>(unchangedFiles);
+    Set<String> files = new HashSet<>(unchangedFiles);
     for (DebugInfoRoot cachedRoot : cachedDebugInfo.getRoots()) {
       DebugInfoRoot generatedRoot = generatedDebugInfo.getRootInfo(cachedRoot.getNodeRef());
       boolean newFromCache = false;

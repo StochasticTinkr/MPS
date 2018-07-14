@@ -30,7 +30,7 @@ import java.util.Set;
 public class ModelsAutoImportsManager {
   // todo: should be application component ?
   // todo: is auto imports workbench functionality?
-  private static Set<AutoImportsContributor> contributors = new HashSet<AutoImportsContributor>();
+  private static Set<AutoImportsContributor> contributors = new HashSet<>();
 
   public static void registerContributor(AutoImportsContributor contributor) {
     contributors.add(contributor);
@@ -41,7 +41,7 @@ public class ModelsAutoImportsManager {
   }
 
   public static Set<SModel> getAutoImportedModels(SModule contextModule, SModel model) {
-    Set<SModel> result = new HashSet<SModel>();
+    Set<SModel> result = new HashSet<>();
     for (AutoImportsContributor contributor : contributors) {
       if (contributor.getApplicableSModuleClass().isInstance(contextModule)) {
         result.addAll(contributor.getAutoImportedModels(contextModule, model));
@@ -51,7 +51,7 @@ public class ModelsAutoImportsManager {
   }
 
   public static Set<SLanguage> getLanguages(SModule contextModule, SModel model) {
-    Set<SLanguage> result = new HashSet<SLanguage>();
+    Set<SLanguage> result = new HashSet<>();
     for (AutoImportsContributor contributor : contributors) {
       if (contributor.getApplicableSModuleClass().isInstance(contextModule)) {
         result.addAll(contributor.getLanguages(contextModule, model));

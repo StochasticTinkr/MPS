@@ -44,8 +44,8 @@ public class TransientModelWithMetainfo {
   public TransientModelWithMetainfo(SModelReference reference, List<SNode> roots) {
     myReference = reference;
     myRoots = roots;
-    myRootToOriginal = new HashMap<SNodeId, SNodeId>();
-    myMappingsMemento = new HashMap<SNodeId, MappingsMemento>();
+    myRootToOriginal = new HashMap<>();
+    myMappingsMemento = new HashMap<>();
   }
 
   public List<SNode> getRoots() {

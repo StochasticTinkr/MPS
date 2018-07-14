@@ -33,7 +33,7 @@ public class CounterMap<K> {
     void counterNonZero(@NotNull K key);
   }
 
-  private Map<K, Integer> myMap = new HashMap<K, Integer>();
+  private Map<K, Integer> myMap = new HashMap<>();
   private CounterMapHandler<K> myHandler;
 
   public CounterMap(@NotNull CounterMapHandler<K> handler) {

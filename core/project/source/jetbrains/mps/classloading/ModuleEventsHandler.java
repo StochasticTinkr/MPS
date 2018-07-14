@@ -89,7 +89,7 @@ class ModuleEventsHandler implements SRepositoryBatchListener {
   }
 
   private void updateModules(List<? extends ReloadableModuleBase> modules) {
-    List<SModule> modulesToReload = new ArrayList<SModule>();
+    List<SModule> modulesToReload = new ArrayList<>();
     for (ReloadableModuleBase module : modules) modulesToReload.add(module);
     Collections.sort(modulesToReload, MODULE_COMPARATOR);
     myManager.doReloadModules(modulesToReload, new EmptyProgressMonitor());
@@ -126,9 +126,9 @@ class ModuleEventsHandler implements SRepositoryBatchListener {
   }
 
   private class MyModuleEventVisitor implements SModuleEventVisitor {
-    private final Set<ReloadableModuleBase> myModulesToUpdate = new LinkedHashSet<ReloadableModuleBase>();
-    private final Set<ReloadableModuleBase> myModulesToLoad = new LinkedHashSet<ReloadableModuleBase>();
-    private final Set<SModuleReference> myModulesToUnload = new LinkedHashSet<SModuleReference>();
+    private final Set<ReloadableModuleBase> myModulesToUpdate = new LinkedHashSet<>();
+    private final Set<ReloadableModuleBase> myModulesToLoad = new LinkedHashSet<>();
+    private final Set<SModuleReference> myModulesToUnload = new LinkedHashSet<>();
 
     @Override
     public void visit(SModuleAddedEvent event) {
@@ -174,15 +174,15 @@ class ModuleEventsHandler implements SRepositoryBatchListener {
     }
 
     public List<SModuleReference> getModulesToUnload() {
-      return new ArrayList<SModuleReference>(myModulesToUnload);
+      return new ArrayList<>(myModulesToUnload);
     }
 
     public List<ReloadableModuleBase> getModulesToLoad() {
-      return new ArrayList<ReloadableModuleBase>(myModulesToLoad);
+      return new ArrayList<>(myModulesToLoad);
     }
 
     public List<ReloadableModuleBase> getModulesToUpdate() {
-      return new ArrayList<ReloadableModuleBase>(myModulesToUpdate);
+      return new ArrayList<>(myModulesToUpdate);
     }
   }
 }

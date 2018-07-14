@@ -30,7 +30,7 @@ import java.util.List;
 
 public class CompilerSettingsPreferencePage {
 
-  private final List<JavaVersionPresentationItem> myTargetVersionItems = new ArrayList<JavaVersionPresentationItem>();
+  private final List<JavaVersionPresentationItem> myTargetVersionItems = new ArrayList<>();
   private static final JavaVersionPresentationItem DEFAULT_VERSION_ITEM = new JavaVersionPresentationItem(null, "JDK Default");
   private JPanel myMainPanel;
   private JComboBox myTargetJavaVersionComboBox;

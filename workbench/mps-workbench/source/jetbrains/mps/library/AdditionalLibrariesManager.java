@@ -35,7 +35,7 @@ import java.util.Set;
   storages = @Storage("AdditionalLibrariesManager.xml")
 )
 public class AdditionalLibrariesManager extends BaseLibraryManager implements ApplicationComponent {
-  private Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
+  private Map<String, Library> myCustomBuiltInLibraries = new HashMap<>();
 
   public AdditionalLibrariesManager(MPSCoreComponents coreComponents) {
     super(coreComponents);
@@ -49,7 +49,7 @@ public class AdditionalLibrariesManager extends BaseLibraryManager implements Ap
 
   @Override
   public Set<Library> getUILibraries() {
-    Set<Library> result = new HashSet<Library>(super.getUILibraries());
+    Set<Library> result = new HashSet<>(super.getUILibraries());
     result.addAll(myCustomBuiltInLibraries.values());
     return result;
   }

@@ -28,7 +28,7 @@ import java.util.Set;
  * Tracks the checked/unchecked state of editors and inspector. NOT thread-safe.
  */
 public class HighlighterEditorTracker {
-  private final Set<EditorComponent> myCheckedOnceEditors = new WeakSet<EditorComponent>();
+  private final Set<EditorComponent> myCheckedOnceEditors = new WeakSet<>();
   private volatile boolean myInspectorMessagesCreated = false;
 
   public boolean isInspector(EditorComponent editorComponent) {
@@ -80,7 +80,7 @@ public class HighlighterEditorTracker {
   }
 
   public void markEditorsOfModelUnchecked(SModelReference reference) {
-    for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
+    for (EditorComponent editorComponent : new ArrayList<>(myCheckedOnceEditors)) {
       if (editorComponent.getEditorContext().getModel() != null &&
           editorComponent.getEditorContext().getModel().getReference().equals(reference)) {
         myCheckedOnceEditors.remove(editorComponent);

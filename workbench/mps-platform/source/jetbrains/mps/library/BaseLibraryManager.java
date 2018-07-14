@@ -69,7 +69,7 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
 
   @Override
   public final Set<LibDescriptor> getPaths() {
-    Set<LibDescriptor> result = new HashSet<LibDescriptor>();
+    Set<LibDescriptor> result = new HashSet<>();
     for (Library lib : getUILibraries()) {
       result.add(new LibDescriptor(FileSystem.getInstance().getFile(lib.getPath())));
     }
@@ -88,7 +88,7 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   }
 
   public Set<Library> getUILibraries() {
-    Set<Library> result = new HashSet<Library>();
+    Set<Library> result = new HashSet<>();
     result.addAll(myLibraries.getLibraries().values());
     return result;
   }
@@ -154,7 +154,7 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   }
 
   static class LibraryState {
-    private Map<String, Library> myLibraries = new HashMap<String, Library>();
+    private Map<String, Library> myLibraries = new HashMap<>();
 
     public Map<String, Library> getLibraries() {
       return myLibraries;

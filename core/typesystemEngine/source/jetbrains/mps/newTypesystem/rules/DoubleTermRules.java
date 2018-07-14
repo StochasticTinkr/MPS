@@ -37,7 +37,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public abstract class DoubleTermRules<K> {
 
-  private ConcurrentHashMap<Object, Set<K>> myCachedRules = new ConcurrentHashMap<Object, Set<K>>();
+  private ConcurrentHashMap<Object, Set<K>> myCachedRules = new ConcurrentHashMap<>();
 
   public Set<K> lookupRules(SNode leftTerm, SNode rightTerm) {
 
@@ -67,12 +67,12 @@ public abstract class DoubleTermRules<K> {
   }
 
   private Set<K> computeRules(SAbstractConcept leftConcept, SAbstractConcept rightConcept, LanguageScope langScope) {
-    THashSet<K> result = new THashSet<K>();
+    THashSet<K> result = new THashSet<>();
 
-    LinkedList<Pair<SAbstractConcept, SAbstractConcept>> queue = new LinkedList<Pair<SAbstractConcept, SAbstractConcept>>();
-    queue.add(new Pair<SAbstractConcept, SAbstractConcept>(leftConcept, rightConcept));
+    LinkedList<Pair<SAbstractConcept, SAbstractConcept>> queue = new LinkedList<>();
+    queue.add(new Pair<>(leftConcept, rightConcept));
     for (SConcept leftSuperConcept : allSuperConcepts(leftConcept)) {
-      queue.add(new Pair<SAbstractConcept, SAbstractConcept>(leftSuperConcept, rightConcept));
+      queue.add(new Pair<>(leftSuperConcept, rightConcept));
     }
 
     while (!queue.isEmpty()) {
@@ -82,7 +82,7 @@ public abstract class DoubleTermRules<K> {
       }
 
       for (SConcept rightSuperConcept : allSuperConcepts(nextConceptPair.o2)) {
-        queue.add(new Pair<SAbstractConcept, SAbstractConcept>(nextConceptPair.o1, rightSuperConcept));
+        queue.add(new Pair<>(nextConceptPair.o1, rightSuperConcept));
       }
     }
 
@@ -99,7 +99,7 @@ public abstract class DoubleTermRules<K> {
     }
     // not sure there's much sense in BaseConcept among return values, left as it used to be.
     SConcept c = ((SConcept) concept).getSuperConcept();
-    ArrayList<SConcept> rv = new ArrayList<SConcept>();
+    ArrayList<SConcept> rv = new ArrayList<>();
     while (c != null) {
       rv.add(c);
       c = c.getSuperConcept();

@@ -30,7 +30,7 @@ public class MayBeInitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSe
   private Set<Instruction> myExclusions;
 
   public MayBeInitializedVariablesAnalyzer(Instruction... exclusions) {
-    myExclusions = new HashSet<Instruction>(exclusions.length);
+    myExclusions = new HashSet<>(exclusions.length);
     for (Instruction exclusion : exclusions) {
       myExclusions.add(exclusion);
     }

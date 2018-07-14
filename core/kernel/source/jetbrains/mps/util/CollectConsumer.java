@@ -31,7 +31,7 @@ public class CollectConsumer<T> implements Consumer<T> {
   }
 
   public CollectConsumer() {
-    this(new ArrayList<T>());
+    this(new ArrayList<>());
   }
 
   @Override

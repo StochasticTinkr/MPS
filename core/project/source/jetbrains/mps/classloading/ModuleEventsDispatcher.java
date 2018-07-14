@@ -42,7 +42,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class ModuleEventsDispatcher implements WriteActionListener {
   private final BatchEventsProcessor myBatchEventsProcessor;
 
-  private final List<SRepositoryBatchListener> myListeners = new CopyOnWriteArrayList<SRepositoryBatchListener>();
+  private final List<SRepositoryBatchListener> myListeners = new CopyOnWriteArrayList<>();
 
   private final SRepository myRepository;
 

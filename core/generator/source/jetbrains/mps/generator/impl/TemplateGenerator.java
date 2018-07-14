@@ -99,7 +99,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private boolean myChanged = false;
   private final GenPlanActiveStep myPlanStep;
   private final DelayedChanges myDelayedChanges;
-  private final Map<SNode, SNode> myNewToOldRoot = new HashMap<SNode, SNode>();
+  private final Map<SNode, SNode> myNewToOldRoot = new HashMap<>();
   /**
    * Input nodes coming from a model other than input model (or no model at all), e.g. if
    * input node query follows a reference from an input model to some outer model.
@@ -108,7 +108,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
    * that reference to the copied counterpart). Generally, this approach might not be everyone's
    * desire, but it's the way it was so far.
    */
-  private final Set<SNode> myAdditionalInputNodes = new HashSet<SNode>();
+  private final Set<SNode> myAdditionalInputNodes = new HashSet<>();
   protected final List<SNode> myOutputRoots;
 
   private final QueryExecutionContext myExecutionContext;
@@ -293,7 +293,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     // root mapping rules
     ttrace.push("root mappings");
-    ArrayList<SNode> rootsConsumed = new ArrayList<SNode>();
+    ArrayList<SNode> rootsConsumed = new ArrayList<>();
     for (TemplateRootMappingRule rule : getRuleManager().getRoot_MappingRules()) {
       checkMonitorCanceled();
       applyRootRule(rule, rootsConsumed);
@@ -630,7 +630,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (!it.hasNext()) {
       return Collections.emptyList();
     }
-    ArrayList<SNode> outputNodes = new ArrayList<SNode>();
+    ArrayList<SNode> outputNodes = new ArrayList<>();
     while(it.hasNext()) {
       SNode newInputNode = it.next();
       trackIfForeign(newInputNode);
@@ -647,7 +647,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           }
           outputNodes.addAll(_outputNodes);
         } else {
-          FullCopyFacility copyFacility = new FullCopyFacility(env, new HashSet<SNode>(getForeignNodes()));
+          FullCopyFacility copyFacility = new FullCopyFacility(env, new HashSet<>(getForeignNodes()));
           SNode copiedNode = copyFacility.copyInputNode(newInputNode);
           addOutputNodeByInputAndTemplateNode(newInputNode, templateId, copiedNode);
           if (mappingName != null) {
@@ -667,7 +667,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private Set<SNode> getForeignNodes() {
     synchronized (myAdditionalInputNodes) {
-      return new HashSet<SNode>(myAdditionalInputNodes);
+      return new HashSet<>(myAdditionalInputNodes);
     }
   }
 

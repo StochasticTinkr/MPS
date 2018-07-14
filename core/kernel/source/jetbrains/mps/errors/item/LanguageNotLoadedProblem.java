@@ -35,7 +35,7 @@ public class LanguageNotLoadedProblem extends LanguageMissingProblem {
 
     AbstractModule langModule = (AbstractModule) lang.getSourceModule();
 
-    HashSet<String> invalidDep = new HashSet<String>();
+    HashSet<String> invalidDep = new HashSet<>();
     for (SDependency dep : Sequence.fromIterable(langModule.getDeclaredDependencies())) {
       if (!(ClassLoaderManager.getInstance().isValidForClassloading(dep.getTargetModule()))) {
         invalidDep.add(dep.getTargetModule().getModuleName());

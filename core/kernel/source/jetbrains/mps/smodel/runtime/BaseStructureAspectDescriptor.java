@@ -47,7 +47,7 @@ public abstract class BaseStructureAspectDescriptor implements StructureAspectDe
       }
 
       Collection<ConceptDescriptor> ds = getDescriptors();
-      Map<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>(ds.size());
+      Map<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<>(ds.size());
       for (ConceptDescriptor d : ds) {
         descriptors.put(d.getId(), d);
       }

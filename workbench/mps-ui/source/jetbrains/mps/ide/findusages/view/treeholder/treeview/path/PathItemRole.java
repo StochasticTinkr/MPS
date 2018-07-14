@@ -41,17 +41,17 @@ public final class PathItemRole {
   public static final PathItemRole ROLE_MAIN_RESULTS = new PathItemRole("results");
   public static final PathItemRole ROLE_MAIN_ROOT = new PathItemRole("main root");
 
-  public static final Set<PathItemRole> VALUES = new HashSet<PathItemRole>(Arrays.asList(
-    ROLE_TARGET_NODE,
-    ROLE_ROOT_TO_TARGET_NODE,
-    ROLE_ROOT,
-    ROLE_MODEL,
-    ROLE_MODULE,
-    ROLE_LANGUAGE,
-    ROLE_CATEGORY,
-    ROLE_MAIN_SEARCHED_NODES,
-    ROLE_MAIN_RESULTS,
-    ROLE_MAIN_ROOT
+  public static final Set<PathItemRole> VALUES = new HashSet<>(Arrays.asList(
+      ROLE_TARGET_NODE,
+      ROLE_ROOT_TO_TARGET_NODE,
+      ROLE_ROOT,
+      ROLE_MODEL,
+      ROLE_MODULE,
+      ROLE_LANGUAGE,
+      ROLE_CATEGORY,
+      ROLE_MAIN_SEARCHED_NODES,
+      ROLE_MAIN_RESULTS,
+      ROLE_MAIN_ROOT
   ));
 
   //------------------READ/WRITE stuff-------------------

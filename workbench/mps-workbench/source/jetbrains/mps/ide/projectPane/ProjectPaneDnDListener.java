@@ -209,7 +209,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
 
   private List<Pair<SNode, String>> getNodesToMove(@NotNull SModel targetModel, String virtualPackage, List<Pair<SNodeReference, String>> sourceNodes) {
     final SRepository repo = targetModel.getRepository();
-    List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>();
+    List<Pair<SNode, String>> result = new ArrayList<>();
     for (final Pair<SNodeReference, String> node : sourceNodes) {
       SNode snode = node.o1.resolve(repo);
 
@@ -217,7 +217,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
       if (EqualUtil.equals(virtualPackage + node.o2, getVirtualPackage(snode))) continue;
       SModel sourceModel = snode.getModel();
       if (EqualUtil.equals(sourceModel, targetModel)) {
-        result.add(new Pair<SNode, String>(snode, node.o2));
+        result.add(new Pair<>(snode, node.o2));
       }
     }
     return result;

@@ -122,7 +122,7 @@ public class DefaultSReferenceSubstituteAction extends AbstractSubstituteAction 
 
   @Override
   public SNode getActionType(String pattern, EditorCell contextCell) {
-    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    HashMap<SNode, SNode> mapping = new HashMap<>();
     SNode sourceNode = getSourceNode();
     CopyUtil.copy(Arrays.asList(sourceNode.getContainingRoot()), mapping);
     SNode sourceNodeCopy = mapping.get(sourceNode);

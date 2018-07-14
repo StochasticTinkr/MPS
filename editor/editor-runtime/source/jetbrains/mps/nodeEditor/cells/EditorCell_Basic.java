@@ -105,7 +105,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   private SNodeId myNodeId;
   private SubstituteInfo mySubstituteInfo;
   private TransformationMenuLookup myTransformationMenuLookup;
-  private TIntObjectHashMap<CellAction> myActionMap = new TIntObjectHashMap<CellAction>();
+  private TIntObjectHashMap<CellAction> myActionMap = new TIntObjectHashMap<>();
 
   private Style myStyle = new StyleImpl();
 
@@ -204,7 +204,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   @Override
   public Collection<CellActionType> getAvailableActions() {
-    final Collection<CellActionType> result = new ArrayList<CellActionType>(myActionMap.size());
+    final Collection<CellActionType> result = new ArrayList<>(myActionMap.size());
     myActionMap.forEachKey(new TIntProcedure() {
       @Override
       public boolean execute(int value) {

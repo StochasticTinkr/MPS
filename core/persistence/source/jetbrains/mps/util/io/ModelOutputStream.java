@@ -78,14 +78,14 @@ public class ModelOutputStream extends DataOutputStream {
   static final byte AGGREGATION_INDEX = 0x39;
 
 
-  private TObjectIntHashMap<String> stringToIndex = new TObjectIntHashMap<String>();
-  private TObjectIntHashMap<SModelReference> modelrefToIndex = new TObjectIntHashMap<SModelReference>();
-  private TObjectIntHashMap<SModuleReference> moduleRefToIndex = new TObjectIntHashMap<SModuleReference>();
-  private TObjectIntHashMap<SLanguageId> myLanguage2Index = new TObjectIntHashMap<SLanguageId>();
-  private TObjectIntHashMap<SConceptId> myConcept2Index = new TObjectIntHashMap<SConceptId>();
-  private TObjectIntHashMap<SPropertyId> myProperty2Index = new TObjectIntHashMap<SPropertyId>();
-  private TObjectIntHashMap<SReferenceLinkId> myAssociation2Index = new TObjectIntHashMap<SReferenceLinkId>();
-  private TObjectIntHashMap<SContainmentLinkId> myAggregation2Index = new TObjectIntHashMap<SContainmentLinkId>();
+  private TObjectIntHashMap<String> stringToIndex = new TObjectIntHashMap<>();
+  private TObjectIntHashMap<SModelReference> modelrefToIndex = new TObjectIntHashMap<>();
+  private TObjectIntHashMap<SModuleReference> moduleRefToIndex = new TObjectIntHashMap<>();
+  private TObjectIntHashMap<SLanguageId> myLanguage2Index = new TObjectIntHashMap<>();
+  private TObjectIntHashMap<SConceptId> myConcept2Index = new TObjectIntHashMap<>();
+  private TObjectIntHashMap<SPropertyId> myProperty2Index = new TObjectIntHashMap<>();
+  private TObjectIntHashMap<SReferenceLinkId> myAssociation2Index = new TObjectIntHashMap<>();
+  private TObjectIntHashMap<SContainmentLinkId> myAggregation2Index = new TObjectIntHashMap<>();
   private int myStringIndex, myRefIndex, myModuleRefIndex = 0;
   private int myLanguageIndex, myConceptIndex, myPropertyIndex, myAssociationIndex, myAggregationIndex;
 

@@ -282,7 +282,7 @@ public abstract class SimpleTypecheckingContext<
         //non-typesystem checks
         applyNonTypesystemRules();
         final Set<Pair<SNode, List<IErrorReporter>>> nodesWithErrors = getTypechecking().getNodesWithErrors(true);
-        final THashSet<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(nodesWithErrors);
+        final THashSet<Pair<SNode, List<IErrorReporter>>> result = new THashSet<>(nodesWithErrors);
         result.addAll(getTypechecking().getNodesWithErrors(false));
         return result;
 

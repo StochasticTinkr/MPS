@@ -648,8 +648,8 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     myOwner.fireNodeRead(this, true);
 
-    if (myProperties == null) return new EmptyIterable<SProperty>();
-    List<SProperty> result = new ArrayList<SProperty>(myProperties.length / 2);
+    if (myProperties == null) return new EmptyIterable<>();
+    List<SProperty> result = new ArrayList<>(myProperties.length / 2);
     for (int i = 0; i < myProperties.length; i += 2) {
       result.add((SProperty) myProperties[i]);
     }
@@ -850,7 +850,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @Deprecated
   @Override
   public Collection<String> getPropertyNames() {
-    List<String> res = new ArrayList<String>(myProperties == null ? 0 : myProperties.length / 2);
+    List<String> res = new ArrayList<>(myProperties == null ? 0 : myProperties.length / 2);
     for (SProperty p : getProperties()) {
       res.add(p.getName());
     }

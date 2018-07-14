@@ -76,7 +76,7 @@ public class GenPlanPickPanel extends JPanel {
         ArrayList<SModelReference> models = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<ArrayList<SModelReference>>() {
           @Override
           public ArrayList<SModelReference> compute() {
-            ArrayList<SModelReference> rv = new ArrayList<SModelReference>();
+            ArrayList<SModelReference> rv = new ArrayList<>();
             for (SModel m : myScope.getModels()) {
               rv.add(m.getReference());
             }

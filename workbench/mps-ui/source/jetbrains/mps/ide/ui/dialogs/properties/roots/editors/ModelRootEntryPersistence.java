@@ -33,7 +33,7 @@ import java.util.Set;
  * To populate from extension point, instantiate and invoke {@link #initFromEP()}.
  */
 final class ModelRootEntryPersistence {
-  private final Map<String, ModelRootEntryFactory> myModelRootEntries = new HashMap<String, ModelRootEntryFactory>();
+  private final Map<String, ModelRootEntryFactory> myModelRootEntries = new HashMap<>();
 
   public ModelRootEntryPersistence() {
   }

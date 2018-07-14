@@ -39,12 +39,12 @@ public abstract class RealClassPathItem extends AbstractClassPathItem {
   // relies on the fact that {@link #getResource(String)} returns unique resource for each name
   @Override
   public Enumeration<URL> getResources(String name) {
-    List<URL> result = new ArrayList<URL>();
+    List<URL> result = new ArrayList<>();
     URL resource = getResource(name);
     if (resource != null) {
       result.add(resource);
     }
-    return new IterableEnumeration<URL>(result);
+    return new IterableEnumeration<>(result);
   }
 
   @NotNull

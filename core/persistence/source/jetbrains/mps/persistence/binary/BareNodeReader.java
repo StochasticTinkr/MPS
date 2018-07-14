@@ -65,7 +65,7 @@ public class BareNodeReader {
    */
   public List<SNode> readChildren(@Nullable SNode parent) throws IOException {
     int size = myIn.readInt();
-    ArrayList<SNode> rv = new ArrayList<SNode>(size);
+    ArrayList<SNode> rv = new ArrayList<>(size);
     while (size-- > 0) {
       rv.add(readNode(parent));
     }

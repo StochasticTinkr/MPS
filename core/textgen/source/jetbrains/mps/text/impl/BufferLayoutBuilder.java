@@ -34,8 +34,8 @@ import java.util.Set;
  * @author Artem Tikhomirov
  */
 public class BufferLayoutBuilder {
-  private final Set<TextAreaToken> myRootTokens = new LinkedHashSet<TextAreaToken>();
-  private final Map<TextAreaToken,TextAreaToken> myChildToParentTokens = new LinkedHashMap<TextAreaToken, TextAreaToken>();
+  private final Set<TextAreaToken> myRootTokens = new LinkedHashSet<>();
+  private final Map<TextAreaToken,TextAreaToken> myChildToParentTokens = new LinkedHashMap<>();
   private TextAreaToken myInitial;
 
   public BufferLayoutBuilder add(@NotNull Object tokenIdentity) {

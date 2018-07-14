@@ -32,7 +32,7 @@ public class BenchmarkUtil {
   }
 
   public static void main(String[] args) {
-    final List<String> items = new ArrayList<String>();
+    final List<String> items = new ArrayList<>();
     for (int i = 0; i < 10; i++) {
       items.add("abc" + Math.random());
     }

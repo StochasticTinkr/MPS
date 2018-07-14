@@ -38,7 +38,7 @@ public class MPSValidationComponent implements ProjectComponent {
 
   private final MPSProject myProject;
   private final Highlighter myHighlighter;
-  private Stack<EditorChecker> myCheckers = new Stack<EditorChecker>();
+  private Stack<EditorChecker> myCheckers = new Stack<>();
 
   public MPSValidationComponent(MPSProject mpsProject, Highlighter highlighter) {
     myProject = mpsProject;

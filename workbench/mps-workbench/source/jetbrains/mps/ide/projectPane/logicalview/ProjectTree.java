@@ -49,7 +49,7 @@ public class ProjectTree extends MPSTree implements TreeNodeParamProvider {
   private Project myProject;
   private ProjectTreeNode myProjectTreeNode;
   private ProjectModulesPoolTreeNode myModulesPoolTreeNode;
-  private AtomicReference<IMakeNotificationListener> myMakeNotificationListener = new AtomicReference<IMakeNotificationListener>();
+  private AtomicReference<IMakeNotificationListener> myMakeNotificationListener = new AtomicReference<>();
   private Computable<Boolean> myShowStructureCondition;
 
   public ProjectTree(Project project) {
@@ -78,7 +78,7 @@ public class ProjectTree extends MPSTree implements TreeNodeParamProvider {
     ProjectTreeNode projectRoot = new ProjectTreeNode(myProject);
 
     setRootVisible(false);
-    List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
+    List<MPSTreeNode> moduleNodes = new ArrayList<>();
 
     for (Class<? extends SModule> cl : new Class[]{Solution.class, Language.class, DevKit.class}) {
       for (SModule module : myProject.getProjectModules(cl)) {

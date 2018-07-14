@@ -28,7 +28,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class ModelsHolder implements IHolder<List<SModelReference>> {
-  private List<SModelReference> myModelReferences = new ArrayList<SModelReference>();
+  private List<SModelReference> myModelReferences = new ArrayList<>();
 
   public ModelsHolder(List<SModelReference> modelReferences) {
     myModelReferences = modelReferences;

@@ -45,7 +45,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   private Project myProject;
   private MPSProject myMPSProject;
 
-  private List<BaseTool> myTools = new ArrayList<BaseTool>();
+  private List<BaseTool> myTools = new ArrayList<>();
   private EDTAccessor<List<BaseTool>> myInitializedTools = new EDTAccessor<>(new ArrayList<>());
   private List<BaseCustomProjectPlugin> myCustomPlugins = new ArrayList<>();
   private List<BaseProjectPrefsComponent> myPrefsComponents = new ArrayList<>();

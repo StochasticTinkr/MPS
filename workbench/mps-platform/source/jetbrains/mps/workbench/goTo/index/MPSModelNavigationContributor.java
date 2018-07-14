@@ -47,7 +47,7 @@ import java.util.Set;
  * @see RootNodeNameIndex
  */
 public class MPSModelNavigationContributor implements ApplicationComponent, NavigationParticipant {
-  private final Set<String> supportedExtensions = new HashSet<String>(Arrays.asList(MPSExtentions.MODEL, MPSExtentions.MODEL_BINARY));
+  private final Set<String> supportedExtensions = new HashSet<>(Arrays.asList(MPSExtentions.MODEL, MPSExtentions.MODEL_BINARY));
   private final PersistenceFacade myPersistenceFacade;
 
   public MPSModelNavigationContributor(MPSCoreComponents coreComponents) {

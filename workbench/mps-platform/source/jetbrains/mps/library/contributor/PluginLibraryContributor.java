@@ -56,7 +56,7 @@ public final class PluginLibraryContributor implements LibraryContributor {
   @Override
   public Set<LibDescriptor> getPaths() {
     final LanguageLibrary[] libraries = LanguageLibrary.EP_LANGUAGE_LIBS.getExtensions();
-    Set<LibDescriptor> result = new HashSet<LibDescriptor>();
+    Set<LibDescriptor> result = new HashSet<>();
     for (final LanguageLibrary library : libraries) {
       try {
         LibDescriptor libDescriptor = createLibDescriptor(library);

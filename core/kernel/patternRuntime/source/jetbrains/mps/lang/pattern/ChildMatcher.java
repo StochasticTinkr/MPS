@@ -44,7 +44,7 @@ public final class ChildMatcher {
   public NodeMatcher at(int zeroBasedIndex) {
     assert zeroBasedIndex >= 0;
     if (myIndexToExtractor == null) {
-      myIndexToExtractor = new HashMap<Integer, NodeMatcher>(8);
+      myIndexToExtractor = new HashMap<>(8);
     }
     NodeMatcher rv = myIndexToExtractor.get(zeroBasedIndex);
     if (rv == null) {
@@ -84,7 +84,7 @@ public final class ChildMatcher {
     } else {
       noPatternChildrenExtractorsOnly = false;
     }
-    final Set<Integer> index = new HashSet<Integer>(myIndexToExtractor == null ? Collections.<Integer>emptySet() : myIndexToExtractor.keySet());
+    final Set<Integer> index = new HashSet<>(myIndexToExtractor == null ? Collections.<Integer>emptySet() : myIndexToExtractor.keySet());
     final NodeMatcher defaultHandler = new NodeMatcher(this);
     for (int i = 0, x = actual.size(); i < x; i++) {
       NodeMatcher childExtractor = defaultHandler;

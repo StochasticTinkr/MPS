@@ -69,7 +69,7 @@ public class AnalysisResult<E> {
   }
 
   private String setToString(Set set) {
-    List<String> strings = new ArrayList<String>();
+    List<String> strings = new ArrayList<>();
     for (Object o : set) {
       strings.add("" + o);
     }

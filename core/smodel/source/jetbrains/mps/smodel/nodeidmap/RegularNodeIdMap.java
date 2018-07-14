@@ -26,7 +26,7 @@ import java.util.Arrays;
 
 public class RegularNodeIdMap implements INodeIdToNodeMap {
   private static Logger LOG = LogManager.getLogger(RegularNodeIdMap.class);
-  private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<SNode>();
+  private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<>();
 
   @Override
   public int size() {

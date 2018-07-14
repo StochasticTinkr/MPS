@@ -52,7 +52,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   private static final Logger LOG = LogManager.getLogger(SModelDescriptorStub.class);
 
-  private final List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
+  private final List<SModelListener> myModelListeners = new CopyOnWriteArrayList<>();
 
   /**
    * Migration to 3.0. Loads and returns model data.
@@ -236,7 +236,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   @Override
   public Collection<SModelReference> getModelImports() {
     assertCanRead();
-    ArrayList<SModelReference> rv = new ArrayList<SModelReference>();
+    ArrayList<SModelReference> rv = new ArrayList<>();
     for (ImportElement ie : getSModel().importedModels()) {
       rv.add(ie.getModelReference());
     }

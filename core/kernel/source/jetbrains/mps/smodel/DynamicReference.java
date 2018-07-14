@@ -51,7 +51,7 @@ public class DynamicReference extends SReferenceBase {
   private static final ThreadLocal<Set<DynamicReference>> currentlyResolved = new ThreadLocal<Set<DynamicReference>>() {
     @Override
     protected Set<DynamicReference> initialValue() {
-      return new HashSet<DynamicReference>();
+      return new HashSet<>();
     }
   };
   // we also keep track of references for which we call reportErrorWithOrigin
@@ -60,7 +60,7 @@ public class DynamicReference extends SReferenceBase {
   private static final ThreadLocal<Set<DynamicReference>> currentlySourceNodeLogged = new ThreadLocal<Set<DynamicReference>>() {
     @Override
     protected Set<DynamicReference> initialValue() {
-      return new HashSet<DynamicReference>();
+      return new HashSet<>();
     }
   };
 
@@ -185,7 +185,7 @@ public class DynamicReference extends SReferenceBase {
     try {
       refs.add(this);
       if (myOrigin != null) {
-        List<ProblemDescription> result = new ArrayList<ProblemDescription>(2);
+        List<ProblemDescription> result = new ArrayList<>(2);
         if (myOrigin.getInputNode() != null) {
           result.add(new ProblemDescription(myOrigin.getInputNode(), " -- was input: " + myOrigin.getInputNode().toString()));
         }

@@ -71,7 +71,7 @@ public class ModulesScope extends FindUsagesScope {
       } else {
         allVisible = myModules;
       }
-      myResolveScope = new HashMap<SModuleReference, SModule>(allVisible.size() * 4 / 3);
+      myResolveScope = new HashMap<>(allVisible.size() * 4 / 3);
       for (SModule m : allVisible) {
         myResolveScope.put(m.getModuleReference(), m);
       }
@@ -89,7 +89,7 @@ public class ModulesScope extends FindUsagesScope {
   }
 
   private static Iterable<SModule> resolveModules(Element element, SRepository repo) throws CantLoadSomethingException {
-    List<SModule> result = new ArrayList<SModule>();
+    List<SModule> result = new ArrayList<>();
     final Logger log = LogManager.getLogger(ModulesScope.class);
     for (Element moduleXml : element.getChildren(MODULE_TAG)) {
       try {

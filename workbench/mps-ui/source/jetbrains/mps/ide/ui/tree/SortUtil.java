@@ -37,7 +37,7 @@ import java.util.List;
 @ToRemove(version = 0)
 public class SortUtil {
   public static List<SModel> sortModels(List<SModel> modelDescriptors) {
-    List<SModel> sortedModels = new ArrayList<SModel>(modelDescriptors);
+    List<SModel> sortedModels = new ArrayList<>(modelDescriptors);
     Collections.sort(sortedModels, new SModelComparator());
     return sortedModels;
   }
@@ -69,21 +69,21 @@ public class SortUtil {
   }
 
   public static List<SModule> sortModules(Collection<SModule> modules) {
-    List<SModule> sortedModules = new ArrayList<SModule>(modules);
+    List<SModule> sortedModules = new ArrayList<>(modules);
     Collections.sort(sortedModules, new SModuleNameComparator());
 
     return sortedModules;
   }
 
   public static List<SNode> sortNodes(List<SNode> nodes) {
-    List<SNode> sortedNodes = new ArrayList<SNode>(nodes);
+    List<SNode> sortedNodes = new ArrayList<>(nodes);
     Collections.sort(sortedNodes, new ToStringComparator());
     return sortedNodes;
   }
 
   // in use by mbeddr, TargetChooser_SModelTreeNode
   public static List<SNode> sortNodesByPresentation(List<SNode> nodes) {
-    ArrayList<SNode> rv = new ArrayList<SNode>(nodes);
+    ArrayList<SNode> rv = new ArrayList<>(nodes);
     Collections.sort(rv, new SNodePresentationComparator());
     return rv;
   }

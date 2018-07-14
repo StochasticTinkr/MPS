@@ -51,7 +51,7 @@ public class MainNodeTreeElement implements StructureViewTreeElement {
 
   @Override
   public TreeElement[] getChildren() {
-    final List<TreeElement> result = new ArrayList<TreeElement>();
+    final List<TreeElement> result = new ArrayList<>();
     myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {

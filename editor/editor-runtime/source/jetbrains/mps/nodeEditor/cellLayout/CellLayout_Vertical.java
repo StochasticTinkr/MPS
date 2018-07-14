@@ -167,7 +167,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
   private void setX(EditorCell cell, int newX) {
     int deltaX = newX - cell.getX();
-    Deque<EditorCell> cellsToMove = new LinkedList<EditorCell>();
+    Deque<EditorCell> cellsToMove = new LinkedList<>();
     cellsToMove.add(cell);
     while (!cellsToMove.isEmpty()) {
       EditorCell nextCell = cellsToMove.removeFirst();

@@ -78,9 +78,9 @@ public final class TextGeneratorEngine {
    * @return future result, use {@link Future#get()} to retrieve
    */
   public Future<TextGenResult> generateText(@NotNull final SModel model) {
-    final ArrayBlockingQueue<TextGenResult> queue = new ArrayBlockingQueue<TextGenResult>(1);
+    final ArrayBlockingQueue<TextGenResult> queue = new ArrayBlockingQueue<>(1);
     schedule(model, queue);
-    return new FutureTask<TextGenResult>(new Callable<TextGenResult>() {
+    return new FutureTask<>(new Callable<TextGenResult>() {
       @Override
       public TextGenResult call() throws Exception {
         return queue.take();

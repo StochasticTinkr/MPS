@@ -29,7 +29,7 @@ public class OverloadedOperationsManager {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(OverloadedOperationsManager.class));
 
   private RuleSet<IOverloadedOpsTypesProvider> myOperationsToTypeProviders =
-    new RuleSet<IOverloadedOpsTypesProvider>();
+      new RuleSet<>();
 
   private TypeChecker myTypeChecker;
 
@@ -56,7 +56,7 @@ public class OverloadedOperationsManager {
       return null;
     }
     SubtypingManager subtypingManager = myTypeChecker.getSubtypingManager();
-    List<IOverloadedOpsTypesProvider> filteredProviders = new ArrayList<IOverloadedOpsTypesProvider>();
+    List<IOverloadedOpsTypesProvider> filteredProviders = new ArrayList<>();
     for (IOverloadedOpsTypesProvider provider : operationsTypesProviderSet) {
       //first applicable method is from base class, second is custom
       if (provider.isApplicable(subtypingManager, leftOperandType, rightOperandType) &&
@@ -92,6 +92,6 @@ public class OverloadedOperationsManager {
   }
 
   public void clear() {
-    myOperationsToTypeProviders = new RuleSet<IOverloadedOpsTypesProvider>();
+    myOperationsToTypeProviders = new RuleSet<>();
   }
 }

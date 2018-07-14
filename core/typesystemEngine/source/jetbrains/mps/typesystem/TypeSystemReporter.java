@@ -27,9 +27,9 @@ import java.util.Map.Entry;
 public class TypeSystemReporter {
   private static TypeSystemReporter instance = null;
   private boolean isEnabled = false;
-  private Map<String, Pair<Long, Long>> myGetTypeOfTime = new HashMap<String, Pair<Long, Long>>();
-  private Map<String, Pair<Long, Long>> myIsSubTypeTime = new HashMap<String, Pair<Long, Long>>();
-  private Map<String, Pair<Long, Long>> myCoerceTime = new HashMap<String, Pair<Long, Long>>();
+  private Map<String, Pair<Long, Long>> myGetTypeOfTime = new HashMap<>();
+  private Map<String, Pair<Long, Long>> myIsSubTypeTime = new HashMap<>();
+  private Map<String, Pair<Long, Long>> myCoerceTime = new HashMap<>();
 
   private TypeSystemReporter() {
 
@@ -59,7 +59,7 @@ public class TypeSystemReporter {
     if (!isEnabled) return;
     Pair<Long, Long> value = map.get(conceptFqName);
     if (value == null) {
-      value = new Pair<Long, Long>(0L, 0L);
+      value = new Pair<>(0L, 0L);
       map.put(conceptFqName, value);
     }
     value.o1 += time;
@@ -92,7 +92,7 @@ public class TypeSystemReporter {
 
   public void printMapReport(Map<String, Pair<Long, Long>> map, int numTop, IPerformanceTracer tracer) {
     if (!isEnabled) return;
-    ArrayList<Entry<String, Pair<Long, Long>>> list = new ArrayList<Entry<String, Pair<Long, Long>>>();
+    ArrayList<Entry<String, Pair<Long, Long>>> list = new ArrayList<>();
     list.addAll(map.entrySet());
 
     Collections.sort(list, new Comparator<Entry<String, Pair<Long, Long>>>() {

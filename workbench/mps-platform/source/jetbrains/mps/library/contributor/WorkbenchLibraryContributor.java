@@ -34,7 +34,7 @@ public final class WorkbenchLibraryContributor implements LibraryContributor {
 
   @Override
   public Set<LibDescriptor> getPaths() {
-    Set<LibDescriptor> res = new HashSet<LibDescriptor>();
+    Set<LibDescriptor> res = new HashSet<>();
     res.add(new LibDescriptor(myFs.getFile(PathManager.getWorkbenchPath()), null));
     return res;
   }

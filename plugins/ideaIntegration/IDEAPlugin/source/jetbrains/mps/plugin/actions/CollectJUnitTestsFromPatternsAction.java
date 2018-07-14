@@ -113,10 +113,10 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
       return;
     }
 
-    Map<File, Set<String>> includePathsMap = new HashMap<File, Set<String>>();
-    Map<File, Set<String>> excludePathsMap = new HashMap<File, Set<String>>();
+    Map<File, Set<String>> includePathsMap = new HashMap<>();
+    Map<File, Set<String>> excludePathsMap = new HashMap<>();
 
-    final List<String> errors = new ArrayList<String>();
+    final List<String> errors = new ArrayList<>();
 
     for (String ptn : ptns.split("\\n")) {
 
@@ -139,7 +139,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
       }
     }
 
-    final Set<String> suiteClasses = new TreeSet<String>();
+    final Set<String> suiteClasses = new TreeSet<>();
 
     for (Map.Entry<File, Set<String>> en : includePathsMap.entrySet()) {
       Set<String> include = en.getValue();
@@ -292,10 +292,10 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
 
     public Iterable<Pair<File, String>> getRelativePaths() {
       Pattern ptn = Pattern.compile(FileUtil.convertAntToRegexp(pattern));
-      List<Pair<File, String>> res = new ArrayList<Pair<File, String>>();
+      List<Pair<File, String>> res = new ArrayList<>();
 
       for (File spd : sourcePath) {
-        List<File> files = new ArrayList<File>();
+        List<File> files = new ArrayList<>();
         FileUtil.collectMatchedFiles(spd, ptn, files);
         for (File match : files) {
           res.add(new Pair<>(spd, FileUtil.getRelativePath(spd, match)));
@@ -314,7 +314,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
     }
 
     public List<File> getSourcePath() {
-      List<File> res = new ArrayList<File>();
+      List<File> res = new ArrayList<>();
       for (Module module : modules) {
         for (VirtualFile svf : ModuleRootManager.getInstance(module).getSourceRoots()) {
           if (svf.isInLocalFileSystem()) {
@@ -327,7 +327,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
     }
 
     private static Iterable<Module> getModules(String namePattern, Project prj) {
-      List<Module> mdls = new ArrayList<Module>();
+      List<Module> mdls = new ArrayList<>();
       if (namePattern == null || namePattern.length() == 0) {
         namePattern = ".*";
       } else {

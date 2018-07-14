@@ -392,7 +392,7 @@ public class ClassLoaderManager implements CoreComponent {
     try {
       return new ModelAccessHelper(myRepository).runReadAction((Computable<Collection<ReloadableModule>>) () -> {
         synchronized (myLoadingModulesLock) { // provides synchronization only in this block
-          Set<ReloadableModule> modulesToLoad = new LinkedHashSet<ReloadableModule>(filterModules(modules, myWatchableCondition, myValidCondition));
+          Set<ReloadableModule> modulesToLoad = new LinkedHashSet<>(filterModules(modules, myWatchableCondition, myValidCondition));
           if (modulesToLoad.isEmpty()) return Collections.emptySet();
 
           // transitive closure
@@ -426,7 +426,7 @@ public class ClassLoaderManager implements CoreComponent {
     checkWriteAccess();
     monitor.start("Unloading", 6);
     try {
-      Condition<SModuleReference> loadedCondition = new NotCondition<SModuleReference>(myUnloadedRefCondition);
+      Condition<SModuleReference> loadedCondition = new NotCondition<>(myUnloadedRefCondition);
       Set<SModuleReference> modulesToUnload = filterModules(modules, loadedCondition);
       if (modulesToUnload.isEmpty()) return Collections.emptySet();
 
@@ -446,8 +446,8 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   static <M> Set<M> filterModules(Iterable<? extends M> modules, Condition<M>... conditions) {
-    CompositeCondition<M> compositeCondition = new CompositeCondition<M>(conditions);
-    Set<M> filteredModules = new LinkedHashSet<M>();
+    CompositeCondition<M> compositeCondition = new CompositeCondition<>(conditions);
+    Set<M> filteredModules = new LinkedHashSet<>();
     for (M module : modules) {
       if (compositeCondition.met(module)) filteredModules.add(module);
     }
@@ -539,7 +539,7 @@ public class ClassLoaderManager implements CoreComponent {
         LOG.info(String.format("Reloaded %d module(s) in %.3f s", loadedModules.size(), (System.nanoTime() - beginTime) / 1e9));
       }
 
-      return new LinkedHashSet<ReloadableModule>(loadedModules);
+      return new LinkedHashSet<>(loadedModules);
     } finally {
       myClassLoadersHolder.scheduleClassLoaderDisposeInEDT();
       monitor.done();
@@ -663,5 +663,5 @@ public class ClassLoaderManager implements CoreComponent {
     }
   };
 
-  private final Condition<ReloadableModule> myNotLoadedCondition = new NotCondition<ReloadableModule>(myLoadedCondition);
+  private final Condition<ReloadableModule> myNotLoadedCondition = new NotCondition<>(myLoadedCondition);
 }

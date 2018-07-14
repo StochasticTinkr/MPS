@@ -38,7 +38,7 @@ final class AncestorCache {
   }
 
   private List<SAbstractConcept> calcConstructorAncestors() {
-    List<SAbstractConcept> constructorAncestors = new ArrayList<SAbstractConcept>(myLinearization);
+    List<SAbstractConcept> constructorAncestors = new ArrayList<>(myLinearization);
     Collections.reverse(constructorAncestors);
     return Collections.unmodifiableList(constructorAncestors);
   }

@@ -70,7 +70,7 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
    */
   public TraceBuilderUI(@Nullable SRepository templateSources) {
     myTemplateSources = templateSources;
-    myResult = new ArrayList<TraceNodeUI>();
+    myResult = new ArrayList<>();
   }
 
   public TraceBuilderUI excludeEmptySteps(boolean excludeEmptySteps) {
@@ -103,7 +103,7 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
 
   /*package*/ Collection<TraceNodeUI> getResult() {
     closeStepNode();
-    ArrayList<TraceNodeUI> rv = new ArrayList<TraceNodeUI>(myResult.size());
+    ArrayList<TraceNodeUI> rv = new ArrayList<>(myResult.size());
     if (myExcludeEmptySteps) {
       for (TraceNodeUI n : myResult) {
         if (n.hasChildren()) {
@@ -207,7 +207,7 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
   }
 
   private Collection<TraceNodeUI> compactTemplates(Collection<SNodeReference> templateNodes) {
-    ArrayList<TraceNodeUI> rv = new ArrayList<TraceNodeUI>();
+    ArrayList<TraceNodeUI> rv = new ArrayList<>();
     if (!myCompactTemplates || myTemplateSources == null) {
       for (SNodeReference r : templateNodes) {
         rv.add(new TraceNodeUI(Kind.TEMPLATE, r));
@@ -215,14 +215,14 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
       return rv;
     }
     // compactByNavigateTarget();
-    LinkedHashSet<SNode> mostSpecificTemplates = new LinkedHashSet<SNode>();
+    LinkedHashSet<SNode> mostSpecificTemplates = new LinkedHashSet<>();
 L1:   for (SNodeReference t : templateNodes) {
       SNode templateNode = t == null ? null : t.resolve(myTemplateSources);
       if (templateNode == null) {
         rv.add(new TraceNodeUI(Kind.TEMPLATE, t));
         continue;
       }
-      for (SNode tn : new ArrayList<SNode>(mostSpecificTemplates)) {
+      for (SNode tn : new ArrayList<>(mostSpecificTemplates)) {
         if (tn.getContainingRoot() == templateNode.getContainingRoot()) {
           // within same hierarchy
           if (SNodeOperations.isAncestor(tn, templateNode)) {
@@ -310,7 +310,7 @@ L1:   for (SNodeReference t : templateNodes) {
 
     public Collection<SNodeReference> outputForInput(SNodeReference in) {
       assert myInputs.contains(in);
-      LinkedHashSet<SNodeReference> rv = new LinkedHashSet<SNodeReference>();
+      LinkedHashSet<SNodeReference> rv = new LinkedHashSet<>();
       for (Pair<SNodeReference, SNodeReference> change : filter(in, null)) {
         rv.add(change.o2);
       }
@@ -320,7 +320,7 @@ L1:   for (SNodeReference t : templateNodes) {
 
     public Collection<SNodeReference> inputsForOutput(SNodeReference out) {
       assert myOutputs.contains(out);
-      LinkedHashSet<SNodeReference> rv = new LinkedHashSet<SNodeReference>();
+      LinkedHashSet<SNodeReference> rv = new LinkedHashSet<>();
       for (Pair<SNodeReference, SNodeReference> change : filter(null, out)) {
         rv.add(change.o1);
       }
@@ -338,7 +338,7 @@ L1:   for (SNodeReference t : templateNodes) {
       return templates(filter(null, out));
     }
     private Collection<SNodeReference> templates(Collection<Pair<SNodeReference, SNodeReference>> filter) {
-      LinkedHashSet<SNodeReference> rv = new LinkedHashSet<SNodeReference>();
+      LinkedHashSet<SNodeReference> rv = new LinkedHashSet<>();
       for (Pair<SNodeReference, SNodeReference> change : filter) {
         rv.addAll(myGroupedChanges.get(change));
       }
@@ -348,7 +348,7 @@ L1:   for (SNodeReference t : templateNodes) {
 
     // if both in and out set, treated as OR
     private Collection<Pair<SNodeReference, SNodeReference>> filter(SNodeReference in, SNodeReference out) {
-      ArrayList<Pair<SNodeReference, SNodeReference>> rv = new ArrayList<Pair<SNodeReference, SNodeReference>>();
+      ArrayList<Pair<SNodeReference, SNodeReference>> rv = new ArrayList<>();
       for (Pair<SNodeReference, SNodeReference> change : myGroupedChanges.keySet()) {
         boolean match1 = in != null && change.o1.equals(in);
         boolean match2 = out != null && change.o2.equals(out);

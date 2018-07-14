@@ -38,7 +38,7 @@ public class RuleSet<T extends IApplicableToConcept> {
   private Logger LOG = Logger.getLogger(RuleSet.class);
 
   private static final String TYPESYSTEM_SUFFIX = ".typesystem";
-  private ConcurrentMap<SAbstractConcept, Set<T>> myRules = new ConcurrentHashMap<SAbstractConcept, /* synchronized */ Set<T>>();
+  private ConcurrentMap<SAbstractConcept, Set<T>> myRules = new ConcurrentHashMap<>();
 
   private SingleTermRules<T> mySingleTermRules = new SingleTermRules<T>() {
 
@@ -81,7 +81,7 @@ public class RuleSet<T extends IApplicableToConcept> {
     SAbstractConcept concept = rule.getApplicableConcept();
     Set<T> existingRules = myRules.get(concept);
     while (existingRules == null) {
-      myRules.putIfAbsent(concept, Collections.synchronizedSet(new THashSet<T>(2)));
+      myRules.putIfAbsent(concept, Collections.synchronizedSet(new THashSet<>(2)));
       existingRules = myRules.get(concept);
     }
     existingRules.add(rule);
@@ -99,7 +99,7 @@ public class RuleSet<T extends IApplicableToConcept> {
   private Iterable<T> getAllApplicableTo(SAbstractConcept concept, LanguageScope scope) {
     if (!myRules.containsKey(concept)) return Collections.emptyList();
 
-    List<T> result = new ArrayList<T>(4);
+    List<T> result = new ArrayList<>(4);
     Set<T> rules = myRules.get(concept);
     synchronized (rules) {
       for (T rule : rules) {

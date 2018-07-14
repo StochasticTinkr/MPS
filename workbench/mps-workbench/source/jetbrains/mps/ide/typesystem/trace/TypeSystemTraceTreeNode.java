@@ -77,7 +77,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
   }
 
   private static Map<String, Color> initColors() {
-    Map<String, Color> result = new HashMap<String, Color>();
+    Map<String, Color> result = new HashMap<>();
     result.put(PresentationKind.EQUATION_ADDED, StyleRegistry.getInstance().getSimpleColor(new Color(6751077)));
     result.put(PresentationKind.RELATION_ADDED, StyleRegistry.getInstance().getSimpleColor(new Color(119)));
     result.put(PresentationKind.RELATION_REMOVED, StyleRegistry.getInstance().getSimpleColor(new Color(1144763)));

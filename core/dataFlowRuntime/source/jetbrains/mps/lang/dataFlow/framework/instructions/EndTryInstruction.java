@@ -24,7 +24,7 @@ import java.util.ArrayList;
 public class EndTryInstruction extends Instruction {
 
   protected TryFinallyInfo myInfo;
-  protected final List<RetInstruction> myReturns = new ArrayList<RetInstruction>();
+  protected final List<RetInstruction> myReturns = new ArrayList<>();
 
   public EndTryInstruction() {
   }
@@ -68,7 +68,7 @@ public class EndTryInstruction extends Instruction {
     if (!s.isReturnMode()) {
       return super.succ(s);
     } else {
-      List<ProgramState> result = new ArrayList<ProgramState>();
+      List<ProgramState> result = new ArrayList<>();
       TryFinallyInfo info = getEnclosingBlock();
       if (info != null) {
         if (isBefore(info.getFinally())) {

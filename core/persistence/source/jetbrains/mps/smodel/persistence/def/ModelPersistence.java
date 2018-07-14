@@ -281,7 +281,7 @@ public class ModelPersistence {
       result = hashProvider.getRootHashes(content);
       result.put(GeneratableSModel.FILE, hashProvider.getHash(content));
     } else {
-      result = new HashMap<String, String>();
+      result = new HashMap<>();
       result.put(GeneratableSModel.FILE, ModelDigestUtil.hashText(content));
     }
     return result;

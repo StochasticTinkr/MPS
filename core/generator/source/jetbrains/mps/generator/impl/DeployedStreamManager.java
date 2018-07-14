@@ -75,7 +75,7 @@ public class DeployedStreamManager implements ModelStreamManager {
         return Collections.emptyList();
       }
       String[] knownStreams = new String[] {"exports"};
-      ArrayList<String> rv = new ArrayList<String>(knownStreams.length);
+      ArrayList<String> rv = new ArrayList<>(knownStreams.length);
       for (String name : knownStreams) {
         if (exists(name)) {
           rv.add(name);

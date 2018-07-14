@@ -33,7 +33,7 @@ import java.util.concurrent.ConcurrentMap;
  */
 public abstract class AbstractCache extends SModelAdapter {
   private final Object myKey;
-  private final ConcurrentMap<String, DataSet> myDataSets = new ConcurrentHashMap<String, DataSet>();
+  private final ConcurrentMap<String, DataSet> myDataSets = new ConcurrentHashMap<>();
 
   protected AbstractCache(Object key) {
     super(SModelListenerPriority.PLATFORM);
@@ -80,7 +80,7 @@ public abstract class AbstractCache extends SModelAdapter {
   }
 
   public List<DataSet> getDataSets() {
-    return new ArrayList<DataSet>(myDataSets.values());
+    return new ArrayList<>(myDataSets.values());
   }
 
   // model listener

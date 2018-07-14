@@ -171,7 +171,7 @@ public class StyleImpl implements Style {
   @Override
   public void addListener(StyleListener l) {
     if (myStyleListeners == null) {
-      myStyleListeners = new ArrayList<StyleListener>(1);
+      myStyleListeners = new ArrayList<>(1);
     }
     myStyleListeners.add(l);
   }
@@ -203,7 +203,7 @@ public class StyleImpl implements Style {
   @Override
   public void add(Style child) {
     if (myChildren == null) {
-      myChildren = new LinkedList<Style>();
+      myChildren = new LinkedList<>();
     }
     myChildren.add(child);
     child.setParent(this, getNonDefaultValuedAttributes());
@@ -252,8 +252,8 @@ public class StyleImpl implements Style {
       Collection<IntPair<Object>> currentValues = TopLevelStyleMap.isEmpty(attributePointer) ? null : myAttributes.getAll(attribute, attributePointer);
       Collection<IntPair<Object>> oldValues = TopLevelStyleMap.isEmpty(cachedAttributePointer) ? null : myCachedAttributes.getAll(attribute, cachedAttributePointer);
 
-      Iterator<IntPair<Object>> parentIterator = parentValues == null ? new EmptyIterator<IntPair<Object>>() : parentValues.iterator();
-      Iterator<IntPair<Object>> currentIterator = currentValues == null ? new EmptyIterator<IntPair<Object>>() : currentValues.iterator();
+      Iterator<IntPair<Object>> parentIterator = parentValues == null ? new EmptyIterator<>() : parentValues.iterator();
+      Iterator<IntPair<Object>> currentIterator = currentValues == null ? new EmptyIterator<>() : currentValues.iterator();
 
       IntPair<Object> parentValue;
       IntPair<Object> currentValue;
@@ -261,7 +261,7 @@ public class StyleImpl implements Style {
       parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
       currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
 
-      StyleAttributeMap<Object> newValues = new StyleAttributeMap<Object>();
+      StyleAttributeMap<Object> newValues = new StyleAttributeMap<>();
       while (parentValue != null || currentValue != null ) {
 
         if (currentValue != null && (parentValue == null || currentValue.index < parentValue.index)) {
@@ -281,7 +281,7 @@ public class StyleImpl implements Style {
         }
       }
 
-      Iterator<IntPair<Object>> oldIterator = oldValues == null ? new EmptyIterator<IntPair<Object>>() : oldValues.iterator();
+      Iterator<IntPair<Object>> oldIterator = oldValues == null ? new EmptyIterator<>() : oldValues.iterator();
 
       Iterator<IntPair<Object>> newIterator = newValues.getAll().iterator();
       while (oldIterator.hasNext() || newIterator.hasNext()) {

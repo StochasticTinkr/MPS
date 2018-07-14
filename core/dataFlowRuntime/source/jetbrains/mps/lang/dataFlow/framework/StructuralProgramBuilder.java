@@ -31,8 +31,8 @@ public abstract class StructuralProgramBuilder<N> {
   private final ProgramBuilderContext myBuilderContext;
 
   public StructuralProgramBuilder(InstructionBuilder instructionBuilder, ProgramBuilderContext context) {
-    this.myLabels = new HashMap<N, Map<String, Integer>>();
-    this.myInvokeLater = new ArrayList<Runnable>();
+    this.myLabels = new HashMap<>();
+    this.myInvokeLater = new ArrayList<>();
     this.instructionBuilder = instructionBuilder;
     myBuilderContext = context;
   }
@@ -115,7 +115,7 @@ public abstract class StructuralProgramBuilder<N> {
 
   public void emitLabel(String label) {
     if (!myLabels.containsKey(getProgram().getCurrent())) {
-      myLabels.put((N) getProgram().getCurrent(), new HashMap<String, Integer>());
+      myLabels.put((N) getProgram().getCurrent(), new HashMap<>());
     }
     myLabels.get(getProgram().getCurrent()).put(label, getProgram().size());
   }

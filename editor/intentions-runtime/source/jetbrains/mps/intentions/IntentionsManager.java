@@ -386,7 +386,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   public static class MyState {
-    private Set<String> myDisabledIntentions = new HashSet<String>();
+    private Set<String> myDisabledIntentions = new HashSet<>();
 
     public Set<String> getDisabledIntentions() {
       return myDisabledIntentions;

@@ -140,7 +140,7 @@ public final class CommonPaths {
   //------classpaths : JDK--------
 
   private static List<String> getJDKJars() {
-    List<String> result = new ArrayList<String>();
+    List<String> result = new ArrayList<>();
 
     if (SystemInfo.isMac && !SystemInfo.isJavaVersionAtLeast("1.7")) {
       // in apple jdk's (< jdk7) rt.jar classes contains in classes.jar
@@ -301,7 +301,7 @@ public final class CommonPaths {
   //--------utils-----------
 
   private static List<String> itemToPath(IClassPathItem cp) {
-    List<String> result = new ArrayList<String>();
+    List<String> result = new ArrayList<>();
     for (IClassPathItem item : cp.flatten()) {
       if (item instanceof FileClassPathItem) {
         result.add(((FileClassPathItem) item).getPath());

@@ -30,18 +30,18 @@ public class AnalyzerRunner<E> {
 
   public AnalysisResult<E> analyze() {
     Map<ProgramState, E> stateValues = doAnalyze();
-    Map<Instruction, E> result = new HashMap<Instruction, E>();
+    Map<Instruction, E> result = new HashMap<>();
     for (Instruction i : myProgram.getInstructions()) {
-      List<E> input = new ArrayList<E>();
+      List<E> input = new ArrayList<>();
       input.add(stateValues.get(new ProgramState(i, true)));
       input.add(stateValues.get(new ProgramState(i, false)));
       result.put(i, myAnalyzer.merge(myProgram, input));
     }
-    return new AnalysisResult<E>(myProgram, myAnalyzer, stateValues, result);
+    return new AnalysisResult<>(myProgram, myAnalyzer, stateValues, result);
   }
 
   private Map<ProgramState, E> doAnalyze() {
-    Map<ProgramState, E> stateValues = new ProgramStateMap<E>(myProgram);
+    Map<ProgramState, E> stateValues = new ProgramStateMap<>(myProgram);
 
     for (ProgramState ps : myProgram.getStates()) {
       stateValues.put(ps, myAnalyzer.initial(myProgram));
@@ -49,14 +49,14 @@ public class AnalyzerRunner<E> {
 
     AnalysisDirection direction = myAnalyzer.getDirection();
 
-    Map<ProgramState, List<ProgramState>> dependencies = new ProgramStateMap<List<ProgramState>>(myProgram);
-    Map<ProgramState, List<ProgramState>> dependents = new ProgramStateMap<List<ProgramState>>(myProgram);
+    Map<ProgramState, List<ProgramState>> dependencies = new ProgramStateMap<>(myProgram);
+    Map<ProgramState, List<ProgramState>> dependents = new ProgramStateMap<>(myProgram);
     for (ProgramState ps : myProgram.getStates()) {
       dependencies.put(ps, direction.dependencies(ps));
       dependents.put(ps, direction.dependents(ps));
     }
 
-    Queue<ProgramState> workList = new LinkedList<ProgramState>();
+    Queue<ProgramState> workList = new LinkedList<>();
     for (Instruction i : myProgram.getInstructions()) {
       workList.add(new ProgramState(i, false));
       workList.add(new ProgramState(i, true));
@@ -65,7 +65,7 @@ public class AnalyzerRunner<E> {
     while (!workList.isEmpty()) {
       ProgramState current = workList.remove();
 
-      List<E> input = new ArrayList<E>();
+      List<E> input = new ArrayList<>();
       for (ProgramState s : dependencies.get(current)) {
         input.add(stateValues.get(s));
       }

@@ -36,14 +36,20 @@ public class ProjectViewSelectInProvider implements ApplicationComponent {
 
   public SelectInContext getContext(jetbrains.mps.project.Project p, final SNodeReference nodeRef) {
     final SRepository repo = p.getRepository();
-    ComputeRunnable<VirtualFile> cr = new ComputeRunnable<VirtualFile>(new Computable<VirtualFile>() {
+    ComputeRunnable<VirtualFile> cr = new ComputeRunnable<>(new Computable<VirtualFile>() {
       @Override
       public VirtualFile compute() {
-        if (nodeRef == null) return null;
+        if (nodeRef == null) {
+          return null;
+        }
         SNode node = nodeRef.resolve(repo);
-        if (node == null) return null;
+        if (node == null) {
+          return null;
+        }
         SModel model = node.getModel();
-        if (model == null) return null;
+        if (model == null) {
+          return null;
+        }
         return new FileSystemModelHelper(model).getVirtualFile();
       }
     });

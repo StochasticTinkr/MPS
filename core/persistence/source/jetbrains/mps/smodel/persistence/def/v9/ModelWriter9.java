@@ -198,7 +198,7 @@ public class ModelWriter9 implements IModelWriter {
 //    Would be nice to re-use existing code, but don't have openapi.SModel here, unfortunately
 //    ModelDependencyScanner depScan = new ModelDependencyScanner().crossModelReferences(true).usedLanguages(false);
 //    depScan.walk(sourceModel);
-    Set<SModelReference> crossModelRefs = new LinkedHashSet<SModelReference>();
+    Set<SModelReference> crossModelRefs = new LinkedHashSet<>();
     for (SNode r : model.getRootNodes()) {
       for (SNode n : SNodeUtil.getDescendants(r)) {
         for (SReference ref : n.getReferences()) {
@@ -306,7 +306,7 @@ public class ModelWriter9 implements IModelWriter {
 
     final ImportsHelper wholeModelImports = myImportsHelper;
 
-    Map<String, Document> result = new HashMap<String, Document>();
+    Map<String, Document> result = new HashMap<>();
     result.put(FilePerRootDataSource.HEADER_FILE, new Document(headerRoot));
     // roots
     Map<SNodeId, String> rootToFile = FilePerRootFormatUtil.getStreamNames(sourceModel.getRootNodes());
@@ -317,7 +317,7 @@ public class ModelWriter9 implements IModelWriter {
       rootElement.addContent(createPersistenceElement());
 
       // collect imports of this particular root
-      final LinkedHashSet<SModelReference> usedImports = new LinkedHashSet<SModelReference>();
+      final LinkedHashSet<SModelReference> usedImports = new LinkedHashSet<>();
       myImportsHelper = new ImportsHelper(sourceModel.getReference()) {
         @Override
         public String getIndex(@NotNull SModelReference modelReference) {

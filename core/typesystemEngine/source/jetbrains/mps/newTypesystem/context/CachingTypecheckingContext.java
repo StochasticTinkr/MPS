@@ -29,7 +29,7 @@ import java.util.Map;
  * Date: 12/7/12
  */
 public class CachingTypecheckingContext extends TargetTypecheckingContext {
-  private Map<SNode, SNode> myComputedTypes = new THashMap<SNode, SNode>(1);
+  private Map<SNode, SNode> myComputedTypes = new THashMap<>(1);
 
   public CachingTypecheckingContext(SNode node, TypeChecker typeChecker) {
     super(node, typeChecker);
@@ -53,9 +53,9 @@ public class CachingTypecheckingContext extends TargetTypecheckingContext {
 
   public Pair<SNode, Boolean> getTypeComputed(SNode node) {
     if (myComputedTypes != null && myComputedTypes.containsKey(node)) {
-      return new Pair<SNode, Boolean>(myComputedTypes.get(node), true);
+      return new Pair<>(myComputedTypes.get(node), true);
     } else {
-      return new Pair<SNode, Boolean>(null, false);
+      return new Pair<>(null, false);
     }
   }
 

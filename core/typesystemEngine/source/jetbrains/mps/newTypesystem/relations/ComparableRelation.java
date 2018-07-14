@@ -36,7 +36,7 @@ public class ComparableRelation extends AbstractRelation {
   @Override
   public boolean solve(SNode node, Set<SNode> leftTypes, Set<SNode> rightTypes, State state, Map<SNode, RelationBlock> typesToBlocks) {
     EquationInfo info;
-    List<SNode> nodes = new LinkedList<SNode>();
+    List<SNode> nodes = new LinkedList<>();
     nodes.addAll(leftTypes);
     nodes.addAll(rightTypes);
     if (nodes.isEmpty()) {
@@ -45,7 +45,7 @@ public class ComparableRelation extends AbstractRelation {
     // TODO: why not use global TypeChecker? there can be the only one, after all
     SubTypingManagerNew subTypingManager = (SubTypingManagerNew) TypeChecker.getInstance().getSubtypingManager();
     nodes = SubtypingUtil.eliminateSuperTypes(nodes);
-    List<SNode> types = new LinkedList<SNode>();
+    List<SNode> types = new LinkedList<>();
     SNode result = null;
     for (SNode type : nodes) {
       for (SNode toCompare : types) {
@@ -70,7 +70,7 @@ public class ComparableRelation extends AbstractRelation {
     if (nodes.size() > 1) {
       nodes = SubtypingUtil.eliminateSuperTypes(nodes);
     }
-    return LatticeUtil.meetNodes(new LinkedHashSet<SNode>(nodes));
+    return LatticeUtil.meetNodes(new LinkedHashSet<>(nodes));
   }
 
 }

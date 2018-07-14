@@ -306,7 +306,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         @Override
         public void actionPerformed(AnActionEvent e) {
           final SearchScope scope = new ModelsScope(myModelDescriptor);
-          final List<SModelReference> modelReferences = new ArrayList<SModelReference>();
+          final List<SModelReference> modelReferences = new ArrayList<>();
           for (int i : myTable.getSelectedRows()) {
             modelReferences.add(myImportedModels.getValueAt(i));
           }
@@ -413,9 +413,9 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          Iterable<SModule> modules = new ConditionalIterable<SModule>(getProjectModules(), new ModuleInstanceCondition(Language.class, DevKit.class));
-          modules = new ConditionalIterable<SModule>(modules, new VisibleModuleCondition());
-          ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<List<SModuleReference>>(new ModuleCollector(modules));
+          Iterable<SModule> modules = new ConditionalIterable<>(getProjectModules(), new ModuleInstanceCondition(Language.class, DevKit.class));
+          modules = new ConditionalIterable<>(modules, new VisibleModuleCondition());
+          ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<>(new ModuleCollector(modules));
           myProject.getModelAccess().runReadAction(c);
           List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, "Choose Language or DevKit", c.getResult());
           for (SModuleReference reference : list) {
@@ -551,7 +551,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       languagesTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
       myEngagedLanguagesModel = new UsedLangsTableModel(myProject.getRepository(), PropertiesBundle.message("model.info.engaged.title"));
-      ArrayList<SLanguage> engagedLanguages = new ArrayList<SLanguage>();
+      ArrayList<SLanguage> engagedLanguages = new ArrayList<>();
       engagedLanguages.addAll(myModelProperties.getLanguagesEngagedOnGeneration());
       myEngagedLanguagesModel.init(engagedLanguages, Collections.<SModuleReference>emptyList());
       languagesTable.setModel(myEngagedLanguagesModel);
@@ -601,8 +601,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myIsDefSModelDescr) {
         myModelProperties.setGenerateIntoModelFolder(myGenerateIntoModelFolderCheckBox.isSelected());
       }
-      ArrayList<SLanguage> engagedLanguages = new ArrayList<SLanguage>();
-      myEngagedLanguagesModel.fillResult(engagedLanguages, new ArrayList<SModuleReference>()/*ignored, shall be empty*/);
+      ArrayList<SLanguage> engagedLanguages = new ArrayList<>();
+      myEngagedLanguagesModel.fillResult(engagedLanguages, new ArrayList<>()/*ignored, shall be empty*/);
       myModelProperties.getLanguagesEngagedOnGeneration().clear();
       myModelProperties.getLanguagesEngagedOnGeneration().addAll(engagedLanguages);
     }
@@ -638,7 +638,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         if (!(module instanceof DevKit)) {
           return false;
         }
-        HashSet<SLanguage> burstDeps = new HashSet<SLanguage>();
+        HashSet<SLanguage> burstDeps = new HashSet<>();
         final DevKit devKit = (DevKit) module;
         burstDeps.addAll(IterableUtil.asCollection(devKit.getAllExportedLanguageIds()));
         // if module is already there (e.g. explicitly imported), do not consider devkit with it as used/necessary

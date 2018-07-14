@@ -73,7 +73,7 @@ public class NodeFileIconProvider implements FileIconProvider, ApplicationCompon
         return null;
       }
       final MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
-      return new ModelComputeRunnable<Icon>(new Computable<Icon>() {
+      return new ModelComputeRunnable<>(new Computable<Icon>() {
         @Override
         public Icon compute() {
           if (IconDeferrer.getInstance() instanceof DefaultIconDeferrer) {
@@ -95,17 +95,17 @@ public class NodeFileIconProvider implements FileIconProvider, ApplicationCompon
       if (mpsProject == null) {
         return null;
       }
-      return new ModelComputeRunnable<Icon>(new Computable<Icon>(){
+      return new ModelComputeRunnable<>(new Computable<Icon>() {
         @Override
         public Icon compute() {
           SModel descr = SModelFileTracker.getInstance(mpsProject.getRepository()).findModel(VirtualFileUtils.toIFile(file.getParent()));
-          if(descr == null) {
+          if (descr == null) {
             return null;
           }
 
           String nameWithoutExtension = file.getNameWithoutExtension();
           for (SNode node : descr.getRootNodes()) {
-            if(nameWithoutExtension.equals(node.getName())) {
+            if (nameWithoutExtension.equals(node.getName())) {
               return myIconManager.getIconFor(node);
             }
           }

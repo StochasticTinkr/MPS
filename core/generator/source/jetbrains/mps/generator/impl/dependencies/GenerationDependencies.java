@@ -87,7 +87,7 @@ public class GenerationDependencies {
     this.myRootDependencies = data;
     this.mySkippedCount = skippedCount;
     this.myFromCacheCount = fromCacheCount;
-    this.myRootDependenciesMap = new HashMap<String, GenerationRootDependencies>(data.size());
+    this.myRootDependenciesMap = new HashMap<>(data.size());
     this.myModelHash = modelHash;
     this.myParametersHash = parametersHash;
     this.myUnchanged = unchanged;
@@ -201,7 +201,7 @@ public class GenerationDependencies {
     }
     // XXX Might be worth sharing intern with other reads/files, but this would take another refactoring round
     Intern intern = new Intern();
-    Map<String, String> externalHashes = new HashMap<String, String>();
+    Map<String, String> externalHashes = new HashMap<>();
     for (Element e : root.getChildren(NODE_MODEL)) {
       String modelReference = GenerationRootDependencies.getValue(e, ATTR_MODEL_ID);
       String rootHash = GenerationRootDependencies.getValue(e, ATTR_HASH);
@@ -209,7 +209,7 @@ public class GenerationDependencies {
         externalHashes.put(intern.value(modelReference), rootHash);
       }
     }
-    List<GenerationRootDependencies> data = new ArrayList<GenerationRootDependencies>();
+    List<GenerationRootDependencies> data = new ArrayList<>();
     for (Element e : root.getChildren(NODE_COMMON)) {
       data.add(GenerationRootDependencies.fromXml(e, true, intern));
     }

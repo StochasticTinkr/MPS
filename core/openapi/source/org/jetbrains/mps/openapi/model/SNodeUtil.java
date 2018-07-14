@@ -156,7 +156,7 @@ public class SNodeUtil {
         it.next();
       }
       if (myCondition != null) {
-        it = new FilterIterator<SNode>(it, myCondition);
+        it = new FilterIterator<>(it, myCondition);
       }
       return it;
     }

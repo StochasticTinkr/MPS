@@ -32,7 +32,7 @@ import java.util.List;
 public final class ModelOutline implements TextGenModelOutline {
 
   private final SModel myModel;
-  private final List<TextUnit> myTextUnits = new ArrayList<TextUnit>();
+  private final List<TextUnit> myTextUnits = new ArrayList<>();
 
   public ModelOutline(@NotNull SModel model) {
     myModel = model;

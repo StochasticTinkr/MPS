@@ -34,7 +34,7 @@ import java.util.concurrent.Semaphore;
  * to include/exclude given node from update.
  */
 public final class ModuleNodeListeners {
-  private final List<ProjectModuleTreeNode> myNodes = new ArrayList<ProjectModuleTreeNode>();
+  private final List<ProjectModuleTreeNode> myNodes = new ArrayList<>();
   private final Semaphore myListAccess;
   private final MyReloadAdapter myHandler = new MyReloadAdapter();
   private final ProjectPaneTreeHighlighter myTreeHighlighter;

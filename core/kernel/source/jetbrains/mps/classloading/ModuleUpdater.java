@@ -42,11 +42,11 @@ public class ModuleUpdater {
   private static final Object LOCK = new Object();
 
   private volatile boolean myChangedFlag = false;
-  private final Set<ReloadableModule> myModulesToAdd = new LinkedHashSet<ReloadableModule>();
-  private final Set<ReloadableModule> myModulesToReload = new LinkedHashSet<ReloadableModule>();
-  private final Set<SModuleReference> myModulesToRemove = new LinkedHashSet<SModuleReference>();
+  private final Set<ReloadableModule> myModulesToAdd = new LinkedHashSet<>();
+  private final Set<ReloadableModule> myModulesToReload = new LinkedHashSet<>();
+  private final Set<SModuleReference> myModulesToRemove = new LinkedHashSet<>();
   private final Condition<ReloadableModule> myWatchableCondition;
-  private final GraphHolder<SModuleReference> myDepGraph = new GraphHolder<SModuleReference>();
+  private final GraphHolder<SModuleReference> myDepGraph = new GraphHolder<>();
   private final ReferenceStorage<ReloadableModule> myRefStorage;
   private final SRepository myRepository;
   private final Map<ReloadableModule, List<SearchError>> myModulesWithAbsentDeps = new HashMap<>();
@@ -287,7 +287,7 @@ public class ModuleUpdater {
 
   public Collection<SModuleReference> getDeps(Iterable<? extends SModuleReference> mRefs) {
     synchronized (LOCK) {
-      final Collection<SModuleReference> result = new ArrayList<SModuleReference>();
+      final Collection<SModuleReference> result = new ArrayList<>();
       Graph<SModuleReference> depGraph = myDepGraph.getGraph();
       depGraph.dfs(mRefs, result::add);
       return Collections.unmodifiableCollection(result);
@@ -296,7 +296,7 @@ public class ModuleUpdater {
 
   public Collection<SModuleReference> getBackDeps(Iterable<? extends SModuleReference> mRefs) {
     synchronized (LOCK) {
-      final Collection<SModuleReference> result = new LinkedHashSet<SModuleReference>();
+      final Collection<SModuleReference> result = new LinkedHashSet<>();
       Graph<SModuleReference> backDepGraph = myDepGraph.getConjugateGraph();
       backDepGraph.dfs(mRefs, result::add);
       return Collections.unmodifiableCollection(result);

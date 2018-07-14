@@ -124,7 +124,7 @@ public class TreeFileChooser {
     if (owner == null) owner = JOptionPane.getRootFrame();
     setAdditionalModeFilter(myMode);
 
-    List<IFile> res = new ArrayList<IFile>();
+    List<IFile> res = new ArrayList<>();
 
     FileChooserDescriptor descriptor = new FileChooserDescriptor(myMode != MODE_DIRECTORIES, myMode != MODE_FILES, true, true, false, multipleSelection) {
       @Override

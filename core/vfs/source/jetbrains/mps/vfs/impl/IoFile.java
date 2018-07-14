@@ -170,7 +170,7 @@ public class IoFile implements IFileEx {
       return Collections.emptyList();
     }
 
-    List<IFile> result = new ArrayList<IFile>(files.length);
+    List<IFile> result = new ArrayList<>(files.length);
     for (File f : files) {
       result.add(new IoFile(f, ourFS));
     }

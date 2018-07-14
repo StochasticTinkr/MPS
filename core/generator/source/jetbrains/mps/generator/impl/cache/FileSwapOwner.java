@@ -127,7 +127,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
         return false;
       }
 
-      ArrayList<SNode> roots = new ArrayList<SNode>();
+      ArrayList<SNode> roots = new ArrayList<>();
       for (SNode next : model.getRootNodes()) {
         roots.add(next);
       }

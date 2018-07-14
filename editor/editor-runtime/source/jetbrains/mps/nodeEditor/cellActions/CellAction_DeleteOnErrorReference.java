@@ -44,7 +44,7 @@ public class CellAction_DeleteOnErrorReference extends AbstractCellAction {
     if (mySource.getReference(myRole) != null && mySource.getReferenceTarget(myRole) == null) {
       mySource.setReference(myRole, null);
     } else {
-      List<SNode> nodes = new ArrayList<SNode>();
+      List<SNode> nodes = new ArrayList<>();
       nodes.add(mySource);
       for (SNode node : nodes) {
         node.delete();

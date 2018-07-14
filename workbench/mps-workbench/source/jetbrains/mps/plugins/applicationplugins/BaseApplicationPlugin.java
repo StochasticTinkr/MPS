@@ -47,11 +47,11 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
   private ActionManagerEx myActionManager = ActionManagerEx.getInstanceEx();
 
   private List<BaseCustomApplicationPlugin> myCustomPlugins;
-  private List<BaseGroup> myGroups = new ArrayList<BaseGroup>();
-  private List<BaseKeymapChanges> myKeymapChanges = new ArrayList<BaseKeymapChanges>();
-  private Set<Pair<DefaultActionGroup, DefaultActionGroup>> myXmlGroups = new HashSet<Pair<DefaultActionGroup, DefaultActionGroup>>();
+  private List<BaseGroup> myGroups = new ArrayList<>();
+  private List<BaseKeymapChanges> myKeymapChanges = new ArrayList<>();
+  private Set<Pair<DefaultActionGroup, DefaultActionGroup>> myXmlGroups = new HashSet<>();
 
-  private Map<DefaultActionGroup, DefaultActionGroup> myAdjustedGroups = new HashMap<DefaultActionGroup, DefaultActionGroup>();
+  private Map<DefaultActionGroup, DefaultActionGroup> myAdjustedGroups = new HashMap<>();
   private Platform myPlatform;
 
   //----------plugin id------------
@@ -89,7 +89,7 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
       return;
     }
     if (!(gTo instanceof BaseGroup) && !(gWhat instanceof BaseGroup)) {
-      myXmlGroups.add(new Pair<DefaultActionGroup, DefaultActionGroup>(gTo, gWhat));
+      myXmlGroups.add(new Pair<>(gTo, gWhat));
     }
 
     myAdjustedGroups.put(gTo, gWhat);
@@ -171,7 +171,7 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
   }
 
   protected List<BaseKeymapChanges> initKeymaps() {
-    return new ArrayList<BaseKeymapChanges>();
+    return new ArrayList<>();
   }
 
   //-------------common-------------

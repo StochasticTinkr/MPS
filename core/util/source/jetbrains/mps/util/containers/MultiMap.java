@@ -224,12 +224,12 @@ public class MultiMap<K, V> implements Serializable {
 
   @NotNull
   public static <K, V> MultiMap<K, V> create() {
-    return new MultiMap<K, V>();
+    return new MultiMap<>();
   }
 
   @NotNull
   public static <K, V> MultiMap<K, V> create(int i, float v) {
-    return new MultiMap<K, V>(i, v);
+    return new MultiMap<>(i, v);
   }
 
   @Override

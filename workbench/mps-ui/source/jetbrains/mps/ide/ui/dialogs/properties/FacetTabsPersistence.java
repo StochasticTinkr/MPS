@@ -30,7 +30,7 @@ import java.util.Map;
  * Keeps track of tabs instantiated, hence its lifecycle shall not span single UI action
  */
 final class FacetTabsPersistence {
-  private final Map<String, TabFactory> myFacetTabs = new HashMap<String, TabFactory>();
+  private final Map<String, TabFactory> myFacetTabs = new HashMap<>();
   private final MPSProject myProject;
 
   public FacetTabsPersistence(@NotNull MPSProject project) {

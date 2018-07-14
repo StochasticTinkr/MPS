@@ -59,7 +59,7 @@ public class ProgramStateMap<V> extends AbstractMap<ProgramState, V> {
 
   @Override
   public Set<Entry<ProgramState, V>> entrySet() {
-    Set<Entry<ProgramState, V>> result = new HashSet<Entry<ProgramState, V>>();
+    Set<Entry<ProgramState, V>> result = new HashSet<>();
     for (int i = 0; i < myValues.length; i++) {
       result.add(new MyEntry(i));
     }

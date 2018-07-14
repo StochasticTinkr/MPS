@@ -91,7 +91,7 @@ class UpdaterRepositoryContentAdapter extends SRepositoryContentAdapter {
     for (SModel old : myUsedModels) {
       old.removeModelListener(this);
     }
-    myUsedModels = new ArrayList<SModel>(models);
+    myUsedModels = new ArrayList<>(models);
     for (SModel m : models) {
       m.addModelListener(this);
     }

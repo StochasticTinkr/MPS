@@ -52,10 +52,10 @@ class IdInfoReadHelper {
   private final MetaModelInfoProvider myMetaInfoProvider;
   private LangInfo myActualLang;
   private ConceptInfo myActualConcept;
-  private final Map<String, SConcept> myConcepts = new HashMap<String, SConcept>();
-  private final Map<String, SProperty> myProperties = new HashMap<String, SProperty>();
-  private final Map<String, SReferenceLink> myAssociations = new HashMap<String, SReferenceLink>();
-  private final Map<String, SContainmentLink> myAggregations = new HashMap<String, SContainmentLink>();
+  private final Map<String, SConcept> myConcepts = new HashMap<>();
+  private final Map<String, SProperty> myProperties = new HashMap<>();
+  private final Map<String, SReferenceLink> myAssociations = new HashMap<>();
+  private final Map<String, SContainmentLink> myAggregations = new HashMap<>();
   private final boolean myInterfaceOnly;
   private final boolean myStripImplementation;
 

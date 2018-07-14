@@ -30,7 +30,7 @@ public class LanguageScope {
   private static ThreadLocal<LinkedList<CurrentLanguageScope>> CURRENT_STACK = new ThreadLocal<LinkedList<CurrentLanguageScope>>() {
     @Override
     protected LinkedList<CurrentLanguageScope> initialValue() {
-      return new LinkedList<CurrentLanguageScope>(Collections.singleton(GLOBAL));
+      return new LinkedList<>(Collections.singleton(GLOBAL));
     }
   };
 

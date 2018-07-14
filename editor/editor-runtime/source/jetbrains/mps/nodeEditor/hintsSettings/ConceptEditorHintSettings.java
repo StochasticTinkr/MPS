@@ -33,7 +33,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * 05 15, 2013
  */
 public class ConceptEditorHintSettings {
-  private final Map<String, Map<ConceptEditorHint, Boolean>> mySettings = new ConcurrentHashMap<String, Map<ConceptEditorHint, Boolean>>();
+  private final Map<String, Map<ConceptEditorHint, Boolean>> mySettings = new ConcurrentHashMap<>();
 
   public ConceptEditorHintSettings() {
   }
@@ -54,7 +54,7 @@ public class ConceptEditorHintSettings {
 
   @NotNull
   public Set<String> getEnabledHints() {
-    Set<String> enabledHints = new HashSet<String>();
+    Set<String> enabledHints = new HashSet<>();
     for (String lang : getLanguagesNames()) {
       for (ConceptEditorHint hint : getHints(lang)) {
         if (get(lang, hint)) {
@@ -88,14 +88,14 @@ public class ConceptEditorHintSettings {
 
   public synchronized Boolean put(String lang, ConceptEditorHint hint, boolean value) {
     if (!mySettings.containsKey(lang)) {
-      mySettings.put(lang, Collections.synchronizedMap(new LinkedHashMap<ConceptEditorHint, Boolean>()));
+      mySettings.put(lang, Collections.synchronizedMap(new LinkedHashMap<>()));
     }
     return mySettings.get(lang).put(hint, value);
   }
 
   public synchronized void putAll(ConceptEditorHintSettings settings) {
     for (String langName : settings.getLanguagesNames()) {
-      mySettings.put(langName, Collections.synchronizedMap(new LinkedHashMap<ConceptEditorHint, Boolean>()));
+      mySettings.put(langName, Collections.synchronizedMap(new LinkedHashMap<>()));
       mySettings.get(langName).putAll(settings.mySettings.get(langName));
     }
   }

@@ -84,6 +84,6 @@ public class TargetBlock extends Block {
 
   @Override
   public Set<Pair<SNode, ConditionKind>> getInitialInputs() {
-    return CollectionUtil.set(new Pair<SNode, ConditionKind>(myNode, ConditionKind.CONCRETE));
+    return CollectionUtil.set(new Pair<>(myNode, ConditionKind.CONCRETE));
   }
 }

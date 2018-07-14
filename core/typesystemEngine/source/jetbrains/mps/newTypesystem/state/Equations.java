@@ -43,9 +43,9 @@ import java.util.Set;
 
 public class Equations {
   @StateObject
-  private final Map<SNode, SNode> myRepresentatives = new THashMap<SNode, SNode>();
+  private final Map<SNode, SNode> myRepresentatives = new THashMap<>();
 
-  private final Map<String, SNode> myNamesToNodes = new HashMap<String, SNode>();
+  private final Map<String, SNode> myNamesToNodes = new HashMap<>();
   private final State myState;
 
   public Equations(State state) {
@@ -94,7 +94,7 @@ public class Equations {
     SNode current = nameRepresentative;
     if (myRepresentatives.containsKey(currentKey)) {
       SNode parent = myRepresentatives.get(currentKey);
-      List<SNode> path = new LinkedList<SNode>();
+      List<SNode> path = new LinkedList<>();
       while (myRepresentatives.containsKey(currentKey)) {
         parent = myRepresentatives.get(currentKey);
         if (current != nameRepresentative) {
@@ -147,7 +147,7 @@ public class Equations {
     if (left == right) {
       return true;
     }
-    THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
+    THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<>();
     boolean match = TypesUtil.matchExpandingJoinAndMeet(left, right, matchingPairs);
     if (match) {
       addEquations(matchingPairs, info);
@@ -169,7 +169,7 @@ public class Equations {
   }
 
   public SNode expandNode(final SNode node, boolean finalExpansion) {
-    return expandNode(node, new THashSet<SNode>(), finalExpansion, true);
+    return expandNode(node, new THashSet<>(), finalExpansion, true);
   }
 
   private SNode expandNode(final SNode node, Set<SNode> variablesMet, boolean finalExpansion, boolean copy) {
@@ -195,7 +195,7 @@ public class Equations {
   }
 
   private void replaceChildren(SNode node, Set<SNode> variablesMet, boolean finalExpansion, boolean copy) {
-    Map<SNode, SNode> childrenReplacement = new THashMap<SNode, SNode>();
+    Map<SNode, SNode> childrenReplacement = new THashMap<>();
     for (SNode child : node.getChildren()) {
       SNode newChild = expandNode(child, variablesMet, finalExpansion, copy);
       if (finalExpansion && TypesUtil.isVariable(newChild)) {
@@ -255,16 +255,16 @@ public class Equations {
   }
 
   public Set<Entry<SNode, Set<SNode>>> getEquationGroups() {
-    Set<SNode> all = new THashSet<SNode>();
-    List<String> result = new LinkedList<String>();
-    Map<SNode, Set<SNode>> map = new THashMap<SNode, Set<SNode>>();
+    Set<SNode> all = new THashSet<>();
+    List<String> result = new LinkedList<>();
+    Map<SNode, Set<SNode>> map = new THashMap<>();
     all.addAll(myRepresentatives.keySet());
     for (SNode node : all) {
       SNode representative = getRepresentativeNoShortenPaths(node);
       if (representative == null) continue;
       Set<SNode> value = map.get(representative);
       if (value == null) {
-        value = new THashSet<SNode>();
+        value = new THashSet<>();
         map.put(representative, value);
       }
       if (node != representative) {

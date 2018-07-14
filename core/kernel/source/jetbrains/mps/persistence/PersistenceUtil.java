@@ -350,7 +350,7 @@ public final class PersistenceUtil {
   }
 
   public static class InMemoryMultiStreamDataSource extends MultiStreamDataSourceBase {
-    private Map<String, ByteArrayOutputStream> myStreams = new LinkedHashMap<String, ByteArrayOutputStream>();
+    private Map<String, ByteArrayOutputStream> myStreams = new LinkedHashMap<>();
 
     @NotNull
     @Override

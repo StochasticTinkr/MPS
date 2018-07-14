@@ -46,7 +46,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
   private static final Logger LOG = LogManager.getLogger(ProjectModuleLoader.class);
 
   @NotNull private final ProjectBase myProject;
-  private final List<ProjectModuleLoadingListener> myListeners = new CopyOnWriteArrayList<ProjectModuleLoadingListener>();
+  private final List<ProjectModuleLoadingListener> myListeners = new CopyOnWriteArrayList<>();
   private final StringBuilder myErrors = new StringBuilder();
 
   ProjectModuleLoader(@NotNull ProjectBase project) {

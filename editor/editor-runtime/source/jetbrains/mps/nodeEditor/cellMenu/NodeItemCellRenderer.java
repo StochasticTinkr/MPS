@@ -54,8 +54,8 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer<Substitute
   private final Color HIGHLIGHT_COLOR = UIUtil.isUnderDarcula() ? new Color(217, 149, 219) : new Color(189, 55, 186);
   private final Color SELECTION_HIGHLIGHT_COLOR = UIUtil.isUnderDarcula() ? HIGHLIGHT_COLOR : new Color(250, 239, 215);
   private int myStyle = Font.PLAIN;
-  private Map<SNode, Icon> myNodeIconMap = new HashMap<SNode, Icon>();
-  private Map<SNode, Icon> myConceptIconMap = new HashMap<SNode, Icon>();
+  private Map<SNode, Icon> myNodeIconMap = new HashMap<>();
+  private Map<SNode, Icon> myConceptIconMap = new HashMap<>();
   private final NodeSubstituteChooser mySubstituteChooser;
 
   NodeItemCellRenderer(@NotNull NodeSubstituteChooser substituteChooser) {

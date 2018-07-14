@@ -54,7 +54,7 @@ public class ListMap<K, V> extends AbstractMap<K, V> {
         return oldValue;
       }
     }
-    _entries().add(new MyEntry<K, V>(key, value));
+    _entries().add(new MyEntry<>(key, value));
     return null;
   }
 

@@ -63,7 +63,7 @@ public class ModelsScope extends FindUsagesScope {
   }
 
   private static List<SModel> resolveModels(Element element, SRepository repo) throws CantLoadSomethingException {
-    List<SModel> result = new ArrayList<SModel>();
+    List<SModel> result = new ArrayList<>();
     final Logger log = LogManager.getLogger(ModelsScope.class);
     for (Element modelXml : element.getChildren(MODEL_TAG)) {
       try {

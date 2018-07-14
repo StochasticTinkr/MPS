@@ -70,7 +70,7 @@ public class UpdateSessionImpl implements UpdateSession {
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myCleanDependentCells;
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myDirtyDependentCells;
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myExistenceDependentCells;
-  private Map<SNodeReference, Collection<String>> myHintsForNodeMap = new HashMap<SNodeReference, Collection<String>>();
+  private Map<SNodeReference, Collection<String>> myHintsForNodeMap = new HashMap<>();
 
   private UpdateInfoIndex myUpdateInfoIndex;
   private UpdateInfoNode myCurrentUpdateInfo;
@@ -96,7 +96,7 @@ public class UpdateSessionImpl implements UpdateSession {
 
   @Override
   public void registerDependencies(EditorCell cell, Iterable<SNode> nodes, Iterable<SNodeReference> refTargets) {
-    Set<SNode> registeredRelatedNodes = new HashSet<SNode>();
+    Set<SNode> registeredRelatedNodes = new HashSet<>();
     myRelatedNodes.put(cell, registeredRelatedNodes);
 
     for (SNode nextNode : nodes) {
@@ -104,7 +104,7 @@ public class UpdateSessionImpl implements UpdateSession {
       registeredRelatedNodes.add(nextNode);
     }
 
-    Set<SNodeReference> registeredRefTargets = new HashSet<SNodeReference>();
+    Set<SNodeReference> registeredRefTargets = new HashSet<>();
     myRelatedRefTargets.put(cell, registeredRefTargets);
 
     for (SNodeReference nextRefTarget : refTargets) {
@@ -116,7 +116,7 @@ public class UpdateSessionImpl implements UpdateSession {
   public void registerCleanDependency(EditorCell cell, Pair<SNodeReference, String> pair) {
     WeakSet<EditorCell> dependentCells = myCleanDependentCells.get(pair);
     if (dependentCells == null) {
-      dependentCells = new WeakSet<EditorCell>();
+      dependentCells = new WeakSet<>();
       myCleanDependentCells.put(pair, dependentCells);
     }
     dependentCells.add(cell);
@@ -126,7 +126,7 @@ public class UpdateSessionImpl implements UpdateSession {
   public void registerDirtyDependency(EditorCell cell, Pair<SNodeReference, String> pair) {
     WeakSet<EditorCell> dependentCells = myDirtyDependentCells.get(pair);
     if (dependentCells == null) {
-      dependentCells = new WeakSet<EditorCell>();
+      dependentCells = new WeakSet<>();
       myDirtyDependentCells.put(pair, dependentCells);
     }
     dependentCells.add(cell);
@@ -136,7 +136,7 @@ public class UpdateSessionImpl implements UpdateSession {
   public void registerExistenceDependency(EditorCell cell, Pair<SNodeReference, String> pair) {
     WeakSet<EditorCell> dependentCells = myExistenceDependentCells.get(pair);
     if (dependentCells == null) {
-      dependentCells = new WeakSet<EditorCell>();
+      dependentCells = new WeakSet<>();
       myExistenceDependentCells.put(pair, dependentCells);
     }
     dependentCells.add(cell);
@@ -147,7 +147,7 @@ public class UpdateSessionImpl implements UpdateSession {
     EditorContext editorContext = getUpdater().getEditorContext();
     getCellFactory().pushCellContext();
 
-    Pair<EditorCell, UpdateInfoIndex> result = new Pair<EditorCell, UpdateInfoIndex>(null, null);
+    Pair<EditorCell, UpdateInfoIndex> result = new Pair<>(null, null);
     try {
       getCellFactory().addCellContextHints(getInitialEditorHints(editorContext));
       String[] explicitHintsForNode = getExplicitHintsForNode(getNode());
@@ -314,7 +314,7 @@ public class UpdateSessionImpl implements UpdateSession {
   }
 
   public void registerAsBigCell(EditorCell cell) {
-    myBigCellsMap.put(cell.getSNode(), new WeakReference<EditorCell>(cell));
+    myBigCellsMap.put(cell.getSNode(), new WeakReference<>(cell));
   }
 
   @Nullable

@@ -41,13 +41,13 @@ public class InequalitySystem {
     return myHoleType;
   }
 
-  private Set<SNode> myEquals = new THashSet<SNode>();
-  private Set<SNode> mySubTypes = new THashSet<SNode>();
-  private Set<SNode> myStrongSubTypes = new THashSet<SNode>();
-  private Set<SNode> mySuperTypes = new THashSet<SNode>();
-  private Set<SNode> myStrongSuperTypes = new THashSet<SNode>();
-  private Set<SNode> myComparableTypes = new THashSet<SNode>();
-  private Set<SNode> myStrongComparableTypes = new THashSet<SNode>();
+  private Set<SNode> myEquals = new THashSet<>();
+  private Set<SNode> mySubTypes = new THashSet<>();
+  private Set<SNode> myStrongSubTypes = new THashSet<>();
+  private Set<SNode> mySuperTypes = new THashSet<>();
+  private Set<SNode> myStrongSuperTypes = new THashSet<>();
+  private Set<SNode> myComparableTypes = new THashSet<>();
+  private Set<SNode> myStrongComparableTypes = new THashSet<>();
 
   public void addEquation(SNode equalWrapper) {
     myEquals.add(equalWrapper);
@@ -109,7 +109,7 @@ public class InequalitySystem {
 
   private Set<SNode> expandSet(Set<SNode> set, Equations equations) {
     if (set.isEmpty()) return set;
-    Set<SNode> result = new HashSet<SNode>();
+    Set<SNode> result = new HashSet<>();
     for (SNode node : set) {
       SNode expanded = equations.expandNode(node, true);
       //if (!TypesUtil.isVariable(expanded)) {
@@ -168,7 +168,7 @@ public class InequalitySystem {
   public SNode getExpectedType() {
     if (isEmpty()) return null;
     SubTypingManagerNew subtypingManager = (SubTypingManagerNew) TypeChecker.getInstance().getSubtypingManager();
-    List<SNode> superTypes = new LinkedList<SNode>();
+    List<SNode> superTypes = new LinkedList<>();
     expandAll(myState.getEquations());
     superTypes.addAll(mySuperTypes);
     superTypes.addAll(myStrongSuperTypes);
@@ -180,7 +180,7 @@ public class InequalitySystem {
   }
 
   public void replaceRefs(Map<SNode, SNode> mapping) {
-    Map<SNode, SNode> back = new HashMap<SNode, SNode>();
+    Map<SNode, SNode> back = new HashMap<>();
     for (SNode key : mapping.keySet()) {
       back.put(mapping.get(key), key);
     }

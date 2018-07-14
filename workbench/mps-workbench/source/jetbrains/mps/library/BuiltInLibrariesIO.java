@@ -44,7 +44,7 @@ public class BuiltInLibrariesIO {
   public static final String LIBRARY_PATH_TAG = "path";
 
   public static Map<String, Library> readBuiltInLibraries() {
-    Map<String, Library> result = new HashMap<String, Library>();
+    Map<String, Library> result = new HashMap<>();
 
     URL resource = BuiltInLibrariesIO.class.getResource(CONFIG_FILE_WHOLE_NAME);
     if (resource == null) return result;

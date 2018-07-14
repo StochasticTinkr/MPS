@@ -30,7 +30,7 @@ import java.util.Set;
 public class Graph<V extends IVertex> {
   private static final Logger LOG = LogManager.getLogger(Graph.class);
 
-  private final Set<V> myVertices = new LinkedHashSet<V>();
+  private final Set<V> myVertices = new LinkedHashSet<>();
 
   /**
    * adds the vertex and its neighbours to the graph

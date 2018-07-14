@@ -49,12 +49,12 @@ public class GenerationTaskPool implements IGenerationTaskPool {
 
   private volatile boolean isCancelled = false;
 
-  final BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>();
+  final BlockingQueue<Runnable> queue = new LinkedBlockingQueue<>();
   final ThreadPoolExecutor myExecutor;
 
   final AtomicLong tasksInQueue = new AtomicLong();
   final Object objectLock = new Object();
-  final List<Throwable> exceptions = new LinkedList<Throwable>();
+  final List<Throwable> exceptions = new LinkedList<>();
 
   @Override
   public void addTask(GenerationTask r) {

@@ -43,7 +43,7 @@ import java.util.Iterator;
  * @author Artem Tikhomirov
  */
 public class BreadthConceptHierarchyIterator implements Iterable<SAbstractConcept>, Iterator<SAbstractConcept>{
-  private final Deque<SAbstractConcept> myQueue = new ArrayDeque<SAbstractConcept>();
+  private final Deque<SAbstractConcept> myQueue = new ArrayDeque<>();
   private final SAbstractConcept myStart;
 
   public BreadthConceptHierarchyIterator(@NotNull SAbstractConcept start) {

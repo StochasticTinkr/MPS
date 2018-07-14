@@ -90,8 +90,8 @@ public class SLanguageHierarchy {
    * @return Inclusive set of languages that extend those from initial set
    */
   public Set<SLanguage> getExtending() {
-    ArrayDeque<SLanguage> queue = new ArrayDeque<SLanguage>(myLanguages);
-    HashSet<SLanguage> rv = new HashSet<SLanguage>();
+    ArrayDeque<SLanguage> queue = new ArrayDeque<>(myLanguages);
+    HashSet<SLanguage> rv = new HashSet<>();
     while (!queue.isEmpty()) {
       SLanguage l = queue.removeFirst();
       if (rv.add(l)) {
@@ -106,7 +106,7 @@ public class SLanguageHierarchy {
   }
 
   private static Collection<SLanguage> fromRuntime(Iterable<LanguageRuntime> runtimes) {
-    ArrayList<SLanguage> rv = new ArrayList<SLanguage>();
+    ArrayList<SLanguage> rv = new ArrayList<>();
     for (LanguageRuntime rt : runtimes) {
       // FIXME likely, no reason not to have LanguageRuntime.getSLanguage() method that does exactly same, and keeps only 1 reference
       rv.add(MetaAdapterFactory.getLanguage(rt.getId(), rt.getNamespace()));

@@ -156,7 +156,7 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
       report(kind, text, node);
       return;
     }
-    List<Message> messages = new ArrayList<Message>(descriptions.length + 1);
+    List<Message> messages = new ArrayList<>(descriptions.length + 1);
     messages.add(myFactory.prepare(kind, text, node));
     for (ProblemDescription d : descriptions) {
       if (d != null) {
@@ -196,7 +196,7 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     public RecordingFactory(@NotNull MessageFactory delegate) {
       myDelegate = delegate;
       for (MessageKind k : MessageKind.values()) {
-        a[k.ordinal()] = new ConcurrentHashSet<SModelReference>();
+        a[k.ordinal()] = new ConcurrentHashSet<>();
       }
     }
     public Collection<SModelReference> ofKind(MessageKind kind) {

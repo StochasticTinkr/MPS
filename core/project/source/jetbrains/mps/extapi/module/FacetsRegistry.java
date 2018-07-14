@@ -60,10 +60,10 @@ public class FacetsRegistry extends FacetsFacade implements CoreComponent {
     }
   };
 
-  private MultiMap<String, String> myLanguageToFacetTypes = new MultiMap<String, String>();
+  private MultiMap<String, String> myLanguageToFacetTypes = new MultiMap<>();
 
-  private Map<FacetFactory, String> myFactoryType = new HashMap<FacetFactory, String>();
-  private Map<String, FacetFactory> myFacetsByType = new HashMap<String, FacetFactory>();
+  private Map<FacetFactory, String> myFactoryType = new HashMap<>();
+  private Map<String, FacetFactory> myFacetsByType = new HashMap<>();
 
   @Override
   public Set<String> getFacetTypes() {
@@ -72,7 +72,7 @@ public class FacetsRegistry extends FacetsFacade implements CoreComponent {
 
   @Override
   public Set<String> getApplicableFacetTypes(Iterable<String> usedLanguages) {
-    Set<String> result = new LinkedHashSet<String>();
+    Set<String> result = new LinkedHashSet<>();
     for (String lang : usedLanguages) {
       result.addAll(myLanguageToFacetTypes.get(lang));
     }
@@ -81,7 +81,7 @@ public class FacetsRegistry extends FacetsFacade implements CoreComponent {
 
   @Override
   public Set<String> getApplicableFacetTypes(Collection<SLanguage> usedLanguages) {
-    LinkedHashSet<String> langNamespaces = new LinkedHashSet<String>();
+    LinkedHashSet<String> langNamespaces = new LinkedHashSet<>();
     for (SLanguage l : usedLanguages) {
       langNamespaces.add(l.getQualifiedName());
     }

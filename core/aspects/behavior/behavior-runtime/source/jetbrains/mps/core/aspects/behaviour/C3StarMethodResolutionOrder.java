@@ -35,23 +35,23 @@ import java.util.concurrent.ConcurrentMap;
  * If that is not possible we pick up the first concept from the first super linearization.
  */
 public final class C3StarMethodResolutionOrder implements CachingMethodResolutionOrder {
-  private ConcurrentMap<SAbstractConcept, List<SAbstractConcept>> myCache = new ConcurrentHashMap<SAbstractConcept, List<SAbstractConcept>>();
+  private ConcurrentMap<SAbstractConcept, List<SAbstractConcept>> myCache = new ConcurrentHashMap<>();
 
   @Override
   public List<SAbstractConcept> linearize(@NotNull SAbstractConcept concept) {
     if (myCache.containsKey(concept)) {
-      return new ArrayList<SAbstractConcept>(myCache.get(concept));
+      return new ArrayList<>(myCache.get(concept));
     }
-    List<List<SAbstractConcept>> superLinearizations = new ArrayList<List<SAbstractConcept>>();
+    List<List<SAbstractConcept>> superLinearizations = new ArrayList<>();
     List<SAbstractConcept> immediateParents = getImmediateParents(concept);
     for (SAbstractConcept parent : immediateParents) {
       superLinearizations.add(new C3StarMethodResolutionOrder().linearize(parent));
     }
-    List<SAbstractConcept> linearization = new ArrayList<SAbstractConcept>();
+    List<SAbstractConcept> linearization = new ArrayList<>();
     linearization.add(concept);
-    linearization.addAll(merge(new MergingHelper<SAbstractConcept>(immediateParents, superLinearizations)));
+    linearization.addAll(merge(new MergingHelper<>(immediateParents, superLinearizations)));
     myCache.putIfAbsent(concept, linearization);
-    return new ArrayList<SAbstractConcept>(linearization);
+    return new ArrayList<>(linearization);
   }
 
   @Override
@@ -60,7 +60,7 @@ public final class C3StarMethodResolutionOrder implements CachingMethodResolutio
   }
 
   private List<SAbstractConcept> merge(MergingHelper<SAbstractConcept> helper) {
-    List<SAbstractConcept> result = new ArrayList<SAbstractConcept>();
+    List<SAbstractConcept> result = new ArrayList<>();
     while (!helper.isEmpty()) {
       boolean success = helper.findNextElement(result, KeepingLocalOrder.KEEPING_LOCAL_ORDER);
       if (!success) { // trying not to preserve local order
@@ -105,7 +105,7 @@ public final class C3StarMethodResolutionOrder implements CachingMethodResolutio
     public void addToResult(List<T> result, T candidate) {
       result.add(candidate);
       myLocalOrder.remove(candidate);
-      List<List<T>> toRemove = new ArrayList<List<T>>();
+      List<List<T>> toRemove = new ArrayList<>();
       for (List<T> list : mySuperLinearizations) {
         list.remove(candidate);
         if (list.isEmpty()) {
@@ -121,7 +121,7 @@ public final class C3StarMethodResolutionOrder implements CachingMethodResolutio
 
     @Override
     public Iterator<List<T>> iterator() {
-      List<List<T>> allLists = new ArrayList<List<T>>();
+      List<List<T>> allLists = new ArrayList<>();
       allLists.addAll(mySuperLinearizations);
       allLists.add(myLocalOrder);
       return allLists.iterator();
@@ -170,7 +170,7 @@ public final class C3StarMethodResolutionOrder implements CachingMethodResolutio
 
   @NotNull
   private List<SAbstractConcept> getImmediateParents(SAbstractConcept concept) {
-    List<SAbstractConcept> immediateParents = new ArrayList<SAbstractConcept>();
+    List<SAbstractConcept> immediateParents = new ArrayList<>();
     if (concept instanceof SInterfaceConcept) {
       for (SAbstractConcept superInt : ((SInterfaceConcept) concept).getSuperInterfaces()) {
         immediateParents.add(superInt);

@@ -61,7 +61,7 @@ public class AffectingRulesFinder extends BaseFinder {
     context.checkRoot(true);
     try {
       IncrementalTypechecking component = context.getBaseNodeTypesComponent();
-      List<SearchResult<SNode>> rules = new ArrayList<SearchResult<SNode>>();
+      List<SearchResult<SNode>> rules = new ArrayList<>();
       if (component == null) {
         return createResult(term, rules);
       }
@@ -84,7 +84,7 @@ public class AffectingRulesFinder extends BaseFinder {
           continue;
         }
 
-        rules.add(new SearchResult<SNode>(rule, "rules which affect node's type"));
+        rules.add(new SearchResult<>(rule, "rules which affect node's type"));
       }
       return createResult(term, rules);
     } finally {

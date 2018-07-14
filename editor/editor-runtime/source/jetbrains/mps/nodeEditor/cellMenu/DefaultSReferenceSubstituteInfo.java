@@ -57,7 +57,7 @@ public class DefaultSReferenceSubstituteInfo extends AbstractNodeSubstituteInfo 
 
   @Override
   protected InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
-    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    HashMap<SNode, SNode> mapping = new HashMap<>();
     CopyUtil.copy(Arrays.asList(mySourceNode.getContainingRoot()), mapping).get(0);
     SNode nodeToEquatePeer = mySourceNode;
     TypeChecker typeChecker = TypeChecker.getInstance();

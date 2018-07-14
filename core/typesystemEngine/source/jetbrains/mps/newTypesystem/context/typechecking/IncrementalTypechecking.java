@@ -362,7 +362,7 @@ public class IncrementalTypechecking extends ReportingTypechecking<State, TypeSy
         }
       }
 
-      List<SReference> references = new ArrayList<SReference>();
+      List<SReference> references = new ArrayList<>();
       for (SNode descendant : childWithDescendants) {
         references.addAll(IterableUtil.asCollection(descendant.getReferences()));
       }

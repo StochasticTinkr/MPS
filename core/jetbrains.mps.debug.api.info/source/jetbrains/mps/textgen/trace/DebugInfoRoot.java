@@ -22,10 +22,10 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class DebugInfoRoot {
-  private final Set<TraceablePositionInfo> myPositions = new TreeSet<TraceablePositionInfo>();
-  private final Set<ScopePositionInfo> myScopePositions = new TreeSet<ScopePositionInfo>();
-  private final Set<UnitPositionInfo> myUnitPositions = new TreeSet<UnitPositionInfo>();
-  private final Set<String> myFileNames = new HashSet<String>();
+  private final Set<TraceablePositionInfo> myPositions = new TreeSet<>();
+  private final Set<ScopePositionInfo> myScopePositions = new TreeSet<>();
+  private final Set<UnitPositionInfo> myUnitPositions = new TreeSet<>();
+  private final Set<String> myFileNames = new HashSet<>();
   private SNodeReference myNodeRef;
 
   public DebugInfoRoot(SNodeReference ref) {

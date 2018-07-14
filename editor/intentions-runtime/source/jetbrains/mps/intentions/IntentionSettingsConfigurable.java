@@ -48,7 +48,7 @@ public class IntentionSettingsConfigurable implements Configurable, Composite {
   private IntentionsManager myIntentionsManager;
 
   private CheckboxTree myTree;
-  private Map<String, LanguageTreeNode> myLanguageTreeNodes = new HashMap<String, LanguageTreeNode>();
+  private Map<String, LanguageTreeNode> myLanguageTreeNodes = new HashMap<>();
 
   public IntentionSettingsConfigurable(IntentionsManager intentionsManager) {
     myIntentionsManager = intentionsManager;

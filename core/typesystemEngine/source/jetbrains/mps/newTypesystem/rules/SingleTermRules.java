@@ -35,7 +35,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public abstract class SingleTermRules<K> {
 
-  private ConcurrentHashMap<Object, Set<K>> myCachedRules = new ConcurrentHashMap<Object, Set<K>>();
+  private ConcurrentHashMap<Object, Set<K>> myCachedRules = new ConcurrentHashMap<>();
 
   public Set<K> lookupRules(SNode term) {
     final LanguageScope langScope = LanguageScope.getCurrent();
@@ -63,9 +63,9 @@ public abstract class SingleTermRules<K> {
   }
 
   private Set<K> computeRules(SAbstractConcept concept, LanguageScope langScope) {
-    LinkedHashSet<K> result = new LinkedHashSet<K>();
+    LinkedHashSet<K> result = new LinkedHashSet<>();
 
-    LinkedList<SAbstractConcept> queue = new LinkedList<SAbstractConcept>();
+    LinkedList<SAbstractConcept> queue = new LinkedList<>();
     queue.add(concept);
 
     while (!queue.isEmpty()) {

@@ -47,7 +47,7 @@ public final class ModelScopeIterable implements Iterable<SModelReference> {
     List<SModelReference> refs = new ModelAccessHelper(myRepo).runReadAction(new Computable<List<SModelReference>>() {
       @Override
       public List<SModelReference> compute() {
-        ArrayList<SModelReference> rv = new ArrayList<SModelReference>(100); // if we got few models, it's unlikely we care to use choose by name functionality
+        ArrayList<SModelReference> rv = new ArrayList<>(100); // if we got few models, it's unlikely we care to use choose by name functionality
         for (SModel m : myScope.getModels()) {
           rv.add(m.getReference());
         }

@@ -22,7 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 public class MigrationOptions {
-  private LinkedHashMap<Option, Object> myOptions = new LinkedHashMap<ProjectMigrationWithOptions.Option, Object>();
+  private LinkedHashMap<Option, Object> myOptions = new LinkedHashMap<>();
 
   public List<Option> optionsList() {
     // due to LinkedHashMap it preserves the order

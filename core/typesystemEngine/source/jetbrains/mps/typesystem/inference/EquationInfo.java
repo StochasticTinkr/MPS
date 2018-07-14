@@ -60,7 +60,7 @@ public class EquationInfo {
     myInequationPriority = pattern.myInequationPriority;
     if (pattern.myIntentionProviders != null) {
       if (myIntentionProviders == null) {
-        myIntentionProviders = new ArrayList<QuickFixProvider>(pattern.myIntentionProviders);
+        myIntentionProviders = new ArrayList<>(pattern.myIntentionProviders);
       }
       myIntentionProviders.addAll(pattern.myIntentionProviders);
     }

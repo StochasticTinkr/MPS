@@ -75,7 +75,7 @@ public class ModuleFileTracker implements CoreComponent {
     myRepo.removeRepositoryListener(myListener);
   }
 
-  private Map<String, SModule> myCanonicalFileToModuleMap = new ConcurrentHashMap<String, SModule>();
+  private Map<String, SModule> myCanonicalFileToModuleMap = new ConcurrentHashMap<>();
 
   public SModule getModuleByFile(IFile file) {
     return myCanonicalFileToModuleMap.get(IFileUtils.getCanonicalPath(file));

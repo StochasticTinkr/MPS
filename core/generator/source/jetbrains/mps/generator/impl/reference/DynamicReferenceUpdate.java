@@ -33,7 +33,7 @@ public final class DynamicReferenceUpdate {
 
   public DynamicReferenceUpdate(@NotNull TemplateGenerator generator) {
     myGenerator = generator;
-    myRefs = new ArrayList<SReference>();
+    myRefs = new ArrayList<>();
   }
 
   public synchronized void add(@NotNull SReference dr) {

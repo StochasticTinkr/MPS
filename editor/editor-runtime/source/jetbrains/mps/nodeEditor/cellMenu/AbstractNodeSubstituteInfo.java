@@ -123,7 +123,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
         return substituteActionList;
       }
 
-      List<SubstituteAction> result = new ArrayList<SubstituteAction>();
+      List<SubstituteAction> result = new ArrayList<>();
       for (SubstituteAction nodeSubstituteAction : substituteActionList) {
         try {
           SNode type = nodeSubstituteAction.getActionType(pattern);
@@ -156,7 +156,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   public List<SubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
     return new ModelAccessHelper(myEditorContext.getRepository()).runReadAction((Computable<List<SubstituteAction>>) () -> {
       List<SubstituteAction> actionsFromCache = getActions();
-      ArrayList<SubstituteAction> result = new ArrayList<SubstituteAction>(actionsFromCache.size());
+      ArrayList<SubstituteAction> result = new ArrayList<>(actionsFromCache.size());
       for (SubstituteAction item : actionsFromCache) {
         try {
           if (shouldAddItem(item, pattern, strictMatching)) {
@@ -185,7 +185,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
         myCachedActionList = createActions();
       } catch (Throwable th) {
         LOG.error("Exception while creating substitute actions in " + this.getClass(), th);
-        return new LinkedList<SubstituteAction>();
+        return new LinkedList<>();
       }
     }
     return myCachedActionList;

@@ -73,9 +73,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private boolean myAutoOpen = false;
   private boolean myLoadingDisabled;
 
-  private Set<MPSTreeNode> myExpandingNodes = new HashSet<MPSTreeNode>();
+  private Set<MPSTreeNode> myExpandingNodes = new HashSet<>();
 
-  private List<MPSTreeNodeListener> myTreeNodeListeners = new ArrayList<MPSTreeNodeListener>();
+  private List<MPSTreeNodeListener> myTreeNodeListeners = new ArrayList<>();
 
   // todo: make unique name
   private MergingUpdateQueue myQueue = new MergingUpdateQueue("MPS Tree Rebuild Later Watcher Queue", 500, true, null);
@@ -458,7 +458,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   public void selectFirstLeaf() {
-    List<MPSTreeNode> path = new ArrayList<MPSTreeNode>();
+    List<MPSTreeNode> path = new ArrayList<>();
     MPSTreeNode current = getRootNode();
 
     while (true) {
@@ -514,7 +514,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   public void selectNode(TreeNode node) {
-    List<TreeNode> nodes = new ArrayList<TreeNode>();
+    List<TreeNode> nodes = new ArrayList<>();
     while (node != null) {
       nodes.add(0, node);
       node = node.getParent();
@@ -695,7 +695,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   @Nullable
   private TreePath getTreePath(List<String> components, boolean escapePathSep) {
-    List<Object> path = new ArrayList<Object>();
+    List<Object> path = new ArrayList<>();
     MPSTreeNode current = getRootNode();
 
     current.init();
@@ -768,7 +768,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   protected void selectPathsRaw(List<List<String>> paths) {
-    List<TreePath> treePaths = new ArrayList<TreePath>();
+    List<TreePath> treePaths = new ArrayList<>();
     for (List<String> path : paths) {
       treePaths.add(listToPath(path));
     }
@@ -821,7 +821,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       return result;
     }
     for (TreePath selectedPath : getSelectionPaths()) {
-      List<String> path = new ArrayList<String>();
+      List<String> path = new ArrayList<>();
       for (int i = 1; i < selectedPath.getPathCount(); i++) {
         MPSTreeNode node = (MPSTreeNode) selectedPath.getPathComponent(i);
         path.add(node.getNodeIdentifier());
@@ -888,8 +888,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   public static class TreeState {
-    private List<String> myExpansion = new ArrayList<String>();
-    private List<String> mySelection = new ArrayList<String>();
+    private List<String> myExpansion = new ArrayList<>();
+    private List<String> mySelection = new ArrayList<>();
 
     public List<String> getExpansion() {
       return myExpansion;
@@ -933,7 +933,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       MPSTreeNode node = getNodeFromPath(eventPath);
 
       if (node != null && node.getChildCount() == 1) {
-        List<MPSTreeNode> path = new ArrayList<MPSTreeNode>();
+        List<MPSTreeNode> path = new ArrayList<>();
         for (Object item : eventPath.getPath()) {
           path.add((MPSTreeNode) item);
         }

@@ -49,14 +49,14 @@ public abstract class AbstractErrorReporter implements IErrorReporter {
   public void addIntentionProvider(QuickFixProvider intentionProvider) {
     if (intentionProvider == null) return;
     if (myIntentionProviders == null) {
-      myIntentionProviders = new ArrayList<QuickFixProvider>(1);
+      myIntentionProviders = new ArrayList<>(1);
     }
     myIntentionProviders.add(intentionProvider);
   }
 
   @Override
   public List<QuickFixProvider> getIntentionProviders() {
-    ArrayList<QuickFixProvider> result = new ArrayList<QuickFixProvider>(1);
+    ArrayList<QuickFixProvider> result = new ArrayList<>(1);
     if (myIntentionProviders != null) {
       result.addAll(myIntentionProviders);
     }

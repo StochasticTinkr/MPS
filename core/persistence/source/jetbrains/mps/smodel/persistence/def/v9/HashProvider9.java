@@ -36,7 +36,7 @@ public class HashProvider9 extends IHashProvider {
 
   @Override
   public Map<String, String> getRootHashes(String content) {
-    Map<String, String> result = new HashMap<String, String>();
+    Map<String, String> result = new HashMap<>();
     extractRootHashes(content, result);
     return result;
   }

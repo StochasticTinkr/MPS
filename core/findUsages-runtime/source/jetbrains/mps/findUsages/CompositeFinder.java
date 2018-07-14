@@ -54,7 +54,7 @@ public class CompositeFinder extends BaseFinder {
       monitor.start("", c.size());
       for (Object o : c) {
         final ProgressMonitor subTask = monitor.subTask(1, SubProgressKind.REPLACING);
-        final SearchResults res = myDelegate.find(new SearchQuery(new GenericHolder<Object>(o), query.getScope()), subTask);
+        final SearchResults res = myDelegate.find(new SearchQuery(new GenericHolder<>(o), query.getScope()), subTask);
         rv.addAll(res);
         subTask.done();
       }

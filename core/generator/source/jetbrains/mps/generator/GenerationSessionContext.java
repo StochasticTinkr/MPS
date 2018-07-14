@@ -78,7 +78,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   // these objects survive through all steps of generation
   private final ConcurrentMap<SNodeReference, Set<String>> myUsedNames;
   private final SNodeReference myFakeNameTopContextNode = new SNodePointer((SModelReference) null, null);
-  private final Map<SNode, String> topToSuffix = new ConcurrentHashMap<SNode, String>();
+  private final Map<SNode, String> topToSuffix = new ConcurrentHashMap<>();
 
   public GenerationSessionContext(GenControllerContext environment, TransientModelsModule transientModule,
                                   GenerationSessionLogger logger,
@@ -290,7 +290,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
    */
   private Set<String> getUsedNames(SNode contextNode) {
     SNodeReference key = contextNode == null ? myFakeNameTopContextNode : contextNode.getReference();
-    Set<String> rv = myUsedNames.putIfAbsent(key, new ConcurrentHashSet<String>());
+    Set<String> rv = myUsedNames.putIfAbsent(key, new ConcurrentHashSet<>());
     return rv == null ? myUsedNames.get(key) : rv;
   }
 
@@ -315,7 +315,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     @SuppressWarnings("unchecked")
     Set<SNode> set = (Set<SNode>) getStepObject(COPIED_ROOTS);
     if (set == null && create) {
-      putStepObject(COPIED_ROOTS, set = new HashSet<SNode>());
+      putStepObject(COPIED_ROOTS, set = new HashSet<>());
     }
     return set;
   }

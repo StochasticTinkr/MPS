@@ -56,10 +56,10 @@ import java.util.stream.Collectors;
  */
 public class FolderSetDataSource extends DataSourceBase implements DataSource, FileSystemListener, FileSystemBasedDataSource {
   private final ReadWriteLock myLock = new ReentrantReadWriteLock();
-  private final List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>(4);
-  private final Map<String, PathListener> myPaths = new LinkedHashMap<String, PathListener>(8);
+  private final List<DataSourceListener> myListeners = new ArrayList<>(4);
+  private final Map<String, PathListener> myPaths = new LinkedHashMap<>(8);
 
-  private final Set<FileSystemListener> myListenerDependencies = new HashSet<FileSystemListener>(8);
+  private final Set<FileSystemListener> myListenerDependencies = new HashSet<>(8);
 
   public FolderSetDataSource() {
   }
@@ -104,7 +104,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   private Collection<IFile> getFiles() {
     myLock.readLock().lock();
     try {
-      Collection<IFile> rv = new ArrayList<IFile>(myPaths.size());
+      Collection<IFile> rv = new ArrayList<>(myPaths.size());
       for (PathListener l : myPaths.values()) {
         rv.add(l.myFile);
       }
@@ -202,7 +202,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     List<DataSourceListener> listeners;
     myLock.readLock().lock();
     try {
-      listeners = new ArrayList<DataSourceListener>(myListeners);
+      listeners = new ArrayList<>(myListeners);
     } finally {
       myLock.readLock().unlock();
     }
@@ -218,7 +218,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   public Iterable<FileSystemListener> getListenerDependencies() {
     myLock.readLock().lock();
     try {
-      return new ArrayList<FileSystemListener>(myListenerDependencies);
+      return new ArrayList<>(myListenerDependencies);
     } finally {
       myLock.readLock().unlock();
     }

@@ -140,7 +140,7 @@ public abstract class Project implements MPSModuleOwner, IProject {
   // AP todo transfer from Project to ProjectBase; helping method -- no need to be here
   @NotNull
   public final <T extends SModule> List<T> getProjectModules(Class<T> moduleClass) {
-    List<T> result = new ArrayList<T>();
+    List<T> result = new ArrayList<>();
     for (SModule module : getProjectModules()) {
       if (moduleClass.isInstance(module)) {
         result.add(moduleClass.cast(module));
@@ -151,7 +151,7 @@ public abstract class Project implements MPSModuleOwner, IProject {
 
   // AP todo transfer from Project to ProjectBase
   public final Iterable<SModel> getProjectModels() {
-    List<SModel> result = new ArrayList<SModel>();
+    List<SModel> result = new ArrayList<>();
 
     for (SModule module : getProjectModules()) {
       for (SModel model : module.getModels()) {

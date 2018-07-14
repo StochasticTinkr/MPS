@@ -107,7 +107,7 @@ public final class ProjectTreeFindHelper {
 
   //todo rewrite using findTreeNode
   protected MPSTreeNodeEx findSNodeTreeNodeInParent(@NotNull final SNode node, @NotNull final SModelTreeNode parent) {
-    LinkedList<SNode> ancestors = new LinkedList<SNode>();
+    LinkedList<SNode> ancestors = new LinkedList<>();
     SNode current = node;
     while (current != null) {
       ancestors.addFirst(current);
@@ -145,7 +145,7 @@ public final class ProjectTreeFindHelper {
   @Nullable
   protected MPSTreeNode findTreeNode(MPSTreeNode start, Condition<MPSTreeNode> descendCondition, Condition<MPSTreeNode> resultCondition) {
     // breadth-first to find top-most module (e.g. not the one under 'runtime' dependencies)
-    ArrayDeque<MPSTreeNode> queue = new ArrayDeque<MPSTreeNode>(128);
+    ArrayDeque<MPSTreeNode> queue = new ArrayDeque<>(128);
     queue.add(start);
     while (!queue.isEmpty()) {
       MPSTreeNode tn = queue.removeFirst();

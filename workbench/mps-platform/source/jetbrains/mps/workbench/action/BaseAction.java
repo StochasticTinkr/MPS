@@ -203,13 +203,13 @@ public abstract class BaseAction extends AnAction {
   }
 
   public void addPlace(ActionPlace place) {
-    if (myPlaces == null) myPlaces = new HashSet<ActionPlace>();
+    if (myPlaces == null) myPlaces = new HashSet<>();
     myPlaces.add(place);
   }
 
   public Set<ActionPlace> getPlaces() {
     if (myPlaces != null) return myPlaces;
-    Set<ActionPlace> result = new HashSet<ActionPlace>();
+    Set<ActionPlace> result = new HashSet<>();
     result.add(null);
     return result;
   }
@@ -241,7 +241,7 @@ public abstract class BaseAction extends AnAction {
 
     @Override
     public Map<String, Object> compute() {
-      THashMap<String, Object> params = new THashMap<String, Object>();
+      THashMap<String, Object> params = new THashMap<>();
       if (collectActionData(myEvent, params)) {
         return params;
       }

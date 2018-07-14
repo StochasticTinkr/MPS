@@ -27,10 +27,10 @@ import java.util.Arrays;
 import java.util.Collection;
 
 public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
-  private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<SNode>();
-  private final THashMap<String, SNode> myForeignMap = new THashMap<String, SNode>();
+  private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<>();
+  private final THashMap<String, SNode> myForeignMap = new THashMap<>();
 
-  private final THashMap<SNodeId, SNode> myOtherMap = new THashMap<SNodeId, SNode>();
+  private final THashMap<SNodeId, SNode> myOtherMap = new THashMap<>();
 
   @Override
   public int size() {
@@ -83,7 +83,7 @@ public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
 
   @Override
   public Iterable<SNode> values() {
-    ArrayList<SNode> rv = new ArrayList<SNode>(myRegularMap.size() + myForeignMap.size() + myOtherMap.size());
+    ArrayList<SNode> rv = new ArrayList<>(myRegularMap.size() + myForeignMap.size() + myOtherMap.size());
     rv.addAll((Collection) Arrays.asList(myRegularMap.getValues()));
     rv.addAll(myForeignMap.values());
     rv.addAll(myOtherMap.values());

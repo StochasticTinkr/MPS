@@ -23,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Stack;
 
 public class NodeReadEventsCaster {
-  private static ThreadLocal<ListenersContainer> ourListenersContainer = new ThreadLocal<ListenersContainer>();
+  private static ThreadLocal<ListenersContainer> ourListenersContainer = new ThreadLocal<>();
 
   private static INodesReadListener NULL_LISTENER = new NullNodesReadListener();
 
@@ -98,7 +98,7 @@ public class NodeReadEventsCaster {
   }
 
   static class ListenersContainer {
-    private Stack<INodesReadListener> myListenersStack = new Stack<INodesReadListener>();
+    private Stack<INodesReadListener> myListenersStack = new Stack<>();
     private boolean myEventsBlocked;
 
     public void addListener(INodesReadListener listener) {

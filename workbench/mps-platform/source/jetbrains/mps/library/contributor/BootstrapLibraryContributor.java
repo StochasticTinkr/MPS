@@ -37,7 +37,7 @@ public final class BootstrapLibraryContributor implements LibraryContributor {
 
   @Override
   public Set<LibDescriptor> getPaths() {
-    Set<LibDescriptor> res = new HashSet<LibDescriptor>();
+    Set<LibDescriptor> res = new HashSet<>();
     for (String path : PathManager.getBootstrapPaths()) {
       res.add(createLibDescriptor(path));
     }

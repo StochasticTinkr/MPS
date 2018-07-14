@@ -167,7 +167,7 @@ public class GenerationOptions {
     private boolean mySaveTransientModels = false;
     private boolean myStrictMode = false;
 
-    private Map<SModel, ModelGenerationPlan> myCustomPlans = new HashMap<SModel, ModelGenerationPlan>();
+    private Map<SModel, ModelGenerationPlan> myCustomPlans = new HashMap<>();
     private boolean myGenerateInParallel = false;
     private int myNumberOfThreads = 4;
     private int myTracingMode = TRACE_OFF;

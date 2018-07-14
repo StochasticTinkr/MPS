@@ -32,7 +32,7 @@ public class HUtil {
   public static SNode copyIfNecessary(SNode node) {
     if (node != null && (node.getParent() != null || node.getModel() != null)) {
       // this copies all the attributes, because can be used in migration scripts
-      return CopyUtil.copy(node, new THashMap<SNode, SNode>(1), true);
+      return CopyUtil.copy(node, new THashMap<>(1), true);
     } else {
       return node;
     }

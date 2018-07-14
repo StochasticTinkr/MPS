@@ -54,7 +54,7 @@ public abstract class DefaultScope extends BaseScope {
   @NotNull
   @Override
   public Iterable<SModule> getModules() {
-    Set<SModule> result = new HashSet<SModule>();
+    Set<SModule> result = new HashSet<>();
     synchronized (LOCK) {
       initialize();
       result.addAll(myVisibleModules);
@@ -67,7 +67,7 @@ public abstract class DefaultScope extends BaseScope {
   @NotNull
   @Override
   public Iterable<SModel> getModels() {
-    List<SModel> result = new ArrayList<SModel>();
+    List<SModel> result = new ArrayList<>();
     synchronized (LOCK) {
       initialize();
       for (SModule module : myVisibleModules) {
@@ -121,18 +121,18 @@ public abstract class DefaultScope extends BaseScope {
   }
 
   private void fillInLanguages() {
-    myUsedLanguages = new HashSet<Language>();
+    myUsedLanguages = new HashSet<>();
     myUsedLanguages.addAll(getInitialUsedLanguages());
     for (DevKit dk : myUsedDevkits) {
       myUsedLanguages.addAll(dk.getAllExportedLanguages());
     }
-    for (Language l : new ArrayList<Language>(myUsedLanguages)) {
+    for (Language l : new ArrayList<>(myUsedLanguages)) {
       myUsedLanguages.addAll(l.getAllExtendedLanguages());
     }
   }
 
   private void fillInDevkits(Set<SModule> initialModules) {
-    myUsedDevkits = new HashSet<DevKit>();
+    myUsedDevkits = new HashSet<>();
     for (SModule m : initialModules) {
       if (m instanceof DevKit) {
         DevKit dk = (DevKit) m;

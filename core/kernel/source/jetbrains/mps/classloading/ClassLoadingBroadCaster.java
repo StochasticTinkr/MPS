@@ -37,12 +37,12 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class ClassLoadingBroadCaster {
   private static final Logger LOG = LogManager.getLogger(ClassLoadingBroadCaster.class);
-  private final LinkedHashSet<ReloadableModule> myLoadedModules = new LinkedHashSet<ReloadableModule>();
+  private final LinkedHashSet<ReloadableModule> myLoadedModules = new LinkedHashSet<>();
   private final ModelAccess myModelAccess;
 
   // reload handlers
-  private final List<MPSClassesListener> myClassesHandlers = new CopyOnWriteArrayList<MPSClassesListener>();
-  private final List<ModuleReloadListener> myReloadListeners = new CopyOnWriteArrayList<ModuleReloadListener>();
+  private final List<MPSClassesListener> myClassesHandlers = new CopyOnWriteArrayList<>();
+  private final List<ModuleReloadListener> myReloadListeners = new CopyOnWriteArrayList<>();
   private final List<DeployListener> myDeployListeners = new CopyOnWriteArrayList<>();
 
   public ClassLoadingBroadCaster(ModelAccess modelAccess) {
@@ -106,7 +106,7 @@ public class ClassLoadingBroadCaster {
       monitor.done();
     }
 
-    final Set<ReloadableModule> resultingUnload = new LinkedHashSet<ReloadableModule>();
+    final Set<ReloadableModule> resultingUnload = new LinkedHashSet<>();
     for (ReloadableModule module : modulesToUnload) resultingUnload.add(module);
     return resultingUnload;
   }
@@ -150,7 +150,7 @@ public class ClassLoadingBroadCaster {
     if (reloadedModules.isEmpty()) return;
 
     myModelAccess.checkWriteAccess();
-    final Set<ReloadableModule> modulesToReload = new LinkedHashSet<ReloadableModule>(reloadedModules.size());
+    final Set<ReloadableModule> modulesToReload = new LinkedHashSet<>(reloadedModules.size());
     for (ReloadableModule module : reloadedModules) modulesToReload.add(module);
 
     for (ModuleReloadListener listener : myReloadListeners) {

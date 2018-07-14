@@ -23,7 +23,7 @@ public class WatchingIdeaFileSystem extends IdeaFileSystem {
   private static final Logger LOG = LogManager.getLogger(WatchingIdeaFileSystem.class);
   private final WatchedRoots myWatchedRoots;
 
-  private final Map<FileSystemListener, String> myListenerToPathMap = new HashMap<FileSystemListener, String>();
+  private final Map<FileSystemListener, String> myListenerToPathMap = new HashMap<>();
 
   public WatchingIdeaFileSystem(@NotNull WatchedRoots watchedRoots) {
     myWatchedRoots = watchedRoots;

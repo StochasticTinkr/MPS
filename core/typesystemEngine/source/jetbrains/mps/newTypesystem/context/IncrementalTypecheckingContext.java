@@ -41,7 +41,7 @@ public class IncrementalTypecheckingContext extends ReportingTypecheckingContext
   private boolean myIsNonTypesystemComputation = false;
 //  private boolean myIsInferenceMode = false;
 
-  private Map<Object, Integer> myRequesting = new HashMap<Object, Integer>();
+  private Map<Object, Integer> myRequesting = new HashMap<>();
   private Integer myOldHash = 0;
 
   public IncrementalTypecheckingContext(SNode node, TypeChecker typeChecker, ClassLoaderManager clManager) {

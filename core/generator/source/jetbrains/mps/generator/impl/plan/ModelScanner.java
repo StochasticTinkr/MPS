@@ -49,8 +49,8 @@ import java.util.Set;
  * @author Artem Tikhomirov
  */
 public final class ModelScanner {
-  private final Set<SLanguage> myTargetLanguages = new HashSet<SLanguage>();
-  private final Set<SLanguage> myQueryLanguages = new HashSet<SLanguage>();
+  private final Set<SLanguage> myTargetLanguages = new HashSet<>();
+  private final Set<SLanguage> myQueryLanguages = new HashSet<>();
 
   public ModelScanner() {
   }
@@ -170,7 +170,7 @@ public final class ModelScanner {
    */
   private static final class NodeScanner {
     private final Condition<SNode> myCondition;
-    private final Set<SAbstractConcept> myConceptsInUse = new HashSet<SAbstractConcept>();
+    private final Set<SAbstractConcept> myConceptsInUse = new HashSet<>();
     private Set<SLanguage> myLanguagesInUse;
 
     public NodeScanner() {
@@ -228,12 +228,12 @@ public final class ModelScanner {
 
 
     private Iterator<SNode> getNodeIterator(SNode node) {
-      return myCondition == null ? new DescendantsTreeIterator(node) : new TreeFilterIterator<SNode>(new DescendantsTreeIterator(node), myCondition);
+      return myCondition == null ? new DescendantsTreeIterator(node) : new TreeFilterIterator<>(new DescendantsTreeIterator(node), myCondition);
     }
 
     public Set<SLanguage> getUsedLanguages() {
       if(myLanguagesInUse == null) {
-        final HashSet<SLanguage> usedLanguages = new HashSet<SLanguage>(myConceptsInUse.size());
+        final HashSet<SLanguage> usedLanguages = new HashSet<>(myConceptsInUse.size());
         for (SAbstractConcept conceptInUse : myConceptsInUse) {
           final SLanguage language = conceptInUse.getLanguage();
           usedLanguages.add(language);

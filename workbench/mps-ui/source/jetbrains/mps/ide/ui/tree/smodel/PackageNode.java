@@ -46,7 +46,7 @@ public class PackageNode extends SNodeGroupTreeNode {
     if (myModelNode.getModel() == null) {
       return Collections.emptySet();
     }
-    Set<SNode> result = new LinkedHashSet<SNode>();
+    Set<SNode> result = new LinkedHashSet<>();
 
     final SModule module = myModelNode.getModel().getModule();
     if (module instanceof Language) {
@@ -61,7 +61,7 @@ public class PackageNode extends SNodeGroupTreeNode {
   }
 
   public Set<SNode> getNodesUnderPackage(SModel sm) {
-    Set<SNode> nodes = new LinkedHashSet<SNode>();
+    Set<SNode> nodes = new LinkedHashSet<>();
     for (SNode root : sm.getRootNodes()) {
       String rootPack = SNodeAccessUtil.getProperty(root, SNodeUtil.property_BaseConcept_virtualPackage);
       if (rootPack != null && (rootPack.startsWith(getFullPackage() + ".") || rootPack.equals(getFullPackage()))) {

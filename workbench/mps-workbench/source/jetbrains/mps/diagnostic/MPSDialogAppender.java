@@ -32,7 +32,7 @@ import java.util.Queue;
  * [Idea platform has default {@link java.lang.Thread.UncaughtExceptionHandler} which logs most of errors]
  */
 public class MPSDialogAppender extends com.intellij.diagnostic.DialogAppender implements ApplicationComponent {
-  private static Queue<LoggingEvent> ourEvents = new LinkedList<LoggingEvent>();
+  private static Queue<LoggingEvent> ourEvents = new LinkedList<>();
 
   @Override
   protected synchronized void append(@NotNull final LoggingEvent event) {

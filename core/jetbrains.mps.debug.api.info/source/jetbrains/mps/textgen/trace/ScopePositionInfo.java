@@ -30,8 +30,8 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 public class ScopePositionInfo extends PositionInfo {
-  private final SortedMap<String, VarInfo> myNamesToVars = new TreeMap<String, VarInfo>();
-  private final Map<SNode, VarInfo> myTempNodeToVarMap = new HashMap<SNode, VarInfo>();
+  private final SortedMap<String, VarInfo> myNamesToVars = new TreeMap<>();
+  private final Map<SNode, VarInfo> myTempNodeToVarMap = new HashMap<>();
 
   public ScopePositionInfo() {
   }

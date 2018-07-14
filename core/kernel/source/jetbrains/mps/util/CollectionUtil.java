@@ -32,7 +32,7 @@ import java.util.Set;
  */
 public class CollectionUtil {
   public static <T, F extends T> List<F> filter(Class<F> cls, List<? extends T> l) {
-    List<F> result = new ArrayList<F>();
+    List<F> result = new ArrayList<>();
     for (T t : l) {
       if (cls.isInstance(t)) {
         result.add(cls.cast(t));
@@ -42,7 +42,7 @@ public class CollectionUtil {
   }
 
   public static <T, F extends T> Set<F> filter(Class<F> cls, Set<? extends T> s) {
-    Set<F> result = new LinkedHashSet<F>();
+    Set<F> result = new LinkedHashSet<>();
     for (T t : s) {
       if (cls.isInstance(t)) {
         result.add(cls.cast(t));
@@ -54,7 +54,7 @@ public class CollectionUtil {
   @Deprecated
   //use Iterable & ConditionalIterable instead
   public static <T> List<T> filter(List<? extends T> ts, Condition<T> f) {
-    List<T> result = new ArrayList<T>();
+    List<T> result = new ArrayList<>();
     for (T t : ts) {
       if (f.met(t)) {
         result.add(t);
@@ -66,7 +66,7 @@ public class CollectionUtil {
   @Deprecated
   //use Iterable & ConditionalIterable instead
   public static <T> Set<T> filter(Set<T> ts, Condition<T> f) {
-    Set<T> result = new HashSet<T>();
+    Set<T> result = new HashSet<>();
     for (T t : ts) {
       if (f.met(t)) {
         result.add(t);
@@ -76,7 +76,7 @@ public class CollectionUtil {
   }
 
   public static <T> Set<T> union(Set<T>... sets) {
-    Set<T> result = new LinkedHashSet<T>();
+    Set<T> result = new LinkedHashSet<>();
     for (Set<T> s : sets) {
       result.addAll(s);
     }
@@ -84,7 +84,7 @@ public class CollectionUtil {
   }
 
   public static <T> List<T> union(List<T>... sets) {
-    List<T> result = new ArrayList<T>();
+    List<T> result = new ArrayList<>();
     for (List<T> s : sets) {
       result.addAll(s);
     }
@@ -92,7 +92,7 @@ public class CollectionUtil {
   }
 
   public static <T> Set<T> set(T... ts) {
-    Set<T> result = new HashSet<T>();
+    Set<T> result = new HashSet<>();
     result.addAll(Arrays.asList(ts));
     return result;
   }
@@ -145,7 +145,7 @@ public class CollectionUtil {
   }
 
   public static <T> List<T> subtract(Collection<T> fromCollection, Collection<T> collection) {
-    ArrayList<T> result = new ArrayList<T>();
+    ArrayList<T> result = new ArrayList<>();
     for (T t : fromCollection) {
       if (!collection.contains(t)) {
         result.add(t);
@@ -158,7 +158,7 @@ public class CollectionUtil {
     if (collection2.isEmpty() || collection1.isEmpty()) {
       return Collections.emptyList();
     }
-    ArrayList<T> result = new ArrayList<T>(Math.min(collection1.size(), collection2.size()));
+    ArrayList<T> result = new ArrayList<>(Math.min(collection1.size(), collection2.size()));
     for (T t : collection1) {
       if (collection2.contains(t)) {
         result.add(t);
@@ -183,7 +183,7 @@ public class CollectionUtil {
     return new Iterable<T>() {
       @Override
       public Iterator<T> iterator() {
-        return new SkipNullIterator<T>(resultList.iterator());
+        return new SkipNullIterator<>(resultList.iterator());
       }
     };
   }

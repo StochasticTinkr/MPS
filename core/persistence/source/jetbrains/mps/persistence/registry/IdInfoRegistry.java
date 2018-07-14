@@ -48,15 +48,15 @@ public class IdInfoRegistry {
   private final HashMap<SConceptId, ConceptInfo> myRegistry;
 
   public IdInfoRegistry() {
-    myRegistry = new HashMap<SConceptId, ConceptInfo>();
-    myLanguagesInUse = new HashMap<SLanguageId, LangInfo>();
+    myRegistry = new HashMap<>();
+    myLanguagesInUse = new HashMap<>();
   }
 
   /**
    * @return ordered set of languages known to this registry
    */
   public List<LangInfo> getLanguagesInUse() {
-    ArrayList<LangInfo> rv = new ArrayList<LangInfo>(myLanguagesInUse.values());
+    ArrayList<LangInfo> rv = new ArrayList<>(myLanguagesInUse.values());
     Collections.sort(rv);
     return rv;
   }
@@ -133,10 +133,10 @@ public class IdInfoRegistry {
    * @param indexEncoder translates internal identity integer value into an index for textual persistence
    */
   public void initializeIndexValues(@NotNull IndexEncoder indexEncoder) {
-    HashSet<String> usedConceptIndexes = new HashSet<String>();
-    HashSet<String> usedPropertyIndexes = new HashSet<String>();
-    HashSet<String> usedAssociationIndexes = new HashSet<String>();
-    HashSet<String> usedAggregationIndexes = new HashSet<String>();
+    HashSet<String> usedConceptIndexes = new HashSet<>();
+    HashSet<String> usedPropertyIndexes = new HashSet<>();
+    HashSet<String> usedAssociationIndexes = new HashSet<>();
+    HashSet<String> usedAggregationIndexes = new HashSet<>();
     // iterate from language to ensure the same order (and same hash conflict resolution result) for subsequent runs
     for (LangInfo langInfo : getLanguagesInUse()) {
       for (ConceptInfo ci : langInfo.getConceptsInUse()) {

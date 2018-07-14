@@ -65,7 +65,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   private final NavigationManager myNavigationManager;
   private final ToolWindowManager myToolWindowManager;
   private final MyMessageList myDefaultList;
-  private final Map<Object, List<MessageList>> myMessageLists = new HashMap<Object, List<MessageList>>();
+  private final Map<Object, List<MessageList>> myMessageLists = new HashMap<>();
   private final MessageViewLoggingHandler myMessageViewLoggingHandler;
 
   public MessagesViewTool(Project project, NavigationManager navigationManager, ToolWindowManager toolWindowManager) {
@@ -212,7 +212,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   private synchronized void addList(String name, MessageList list) {
-    List<MessageList> lists = myMessageLists.containsKey(name) ? myMessageLists.get(name) : new ArrayList<MessageList>();
+    List<MessageList> lists = myMessageLists.containsKey(name) ? myMessageLists.get(name) : new ArrayList<>();
     if (!myMessageLists.containsKey(name)) {
       myMessageLists.put(name, lists);
     }

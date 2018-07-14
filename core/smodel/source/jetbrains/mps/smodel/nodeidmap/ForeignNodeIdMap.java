@@ -25,8 +25,8 @@ import java.util.List;
 
 //todo leave only Foreigns here
 public class ForeignNodeIdMap implements INodeIdToNodeMap {
-  private final THashMap<String,SNode> myForeignMap = new THashMap<String, SNode>();
-  private final THashMap<SNodeId, SNode> myOtherMap = new THashMap<SNodeId, SNode>();
+  private final THashMap<String,SNode> myForeignMap = new THashMap<>();
+  private final THashMap<SNodeId, SNode> myOtherMap = new THashMap<>();
 
   @Override
   public int size() {
@@ -69,7 +69,7 @@ public class ForeignNodeIdMap implements INodeIdToNodeMap {
 
   @Override
   public Iterable<SNode> values() {
-    List<SNode> res = new ArrayList<SNode>();
+    List<SNode> res = new ArrayList<>();
     res.addAll(myOtherMap.values());
     res.addAll(myForeignMap.values());
     return res;

@@ -223,7 +223,7 @@ public class ClassFileWriter {
   }
 
   private static class ChangedModulesTracker {
-    private final Set<SModule> myModules = new HashSet<SModule>();
+    private final Set<SModule> myModules = new HashSet<>();
 
     public void addChanged(@NotNull SModule module) {
       myModules.add(module);

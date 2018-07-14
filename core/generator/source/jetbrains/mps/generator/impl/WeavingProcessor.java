@@ -40,7 +40,7 @@ public class WeavingProcessor {
 
   public WeavingProcessor(TemplateGenerator generator) {
     myGenerator = generator;
-    myReadyRules = new ArrayList<ArmedWeavingRule>();
+    myReadyRules = new ArrayList<>();
   }
 
   public void prepareWeavingRules(SModel inputModel) throws GenerationCanceledException, GenerationFailureException {

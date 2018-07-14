@@ -160,7 +160,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   @Override
   protected List<SNode> getNodesForList() {
-    List<SNode> resultList = new ArrayList<SNode>();
+    List<SNode> resultList = new ArrayList<>();
     Iterable<SNode> nodesAndComments =
         AttributeOperations.getChildNodesAndAttributes(getNode(), getSLink());
     if (!myIsReverseOrder) {

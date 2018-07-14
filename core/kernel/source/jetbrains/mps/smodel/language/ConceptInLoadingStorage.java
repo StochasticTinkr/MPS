@@ -37,7 +37,7 @@ public final class ConceptInLoadingStorage<T> {
   private final ThreadLocal<Set<T>> mySet = new ThreadLocal<Set<T>>() {
     @Override
     protected Set<T> initialValue() {
-      return new HashSet<T>();
+      return new HashSet<>();
     }
   };
 

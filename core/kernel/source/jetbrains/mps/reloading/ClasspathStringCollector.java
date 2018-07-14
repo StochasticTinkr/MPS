@@ -23,7 +23,7 @@ import java.util.Set;
 
 public class ClasspathStringCollector extends EachClassPathItemVisitor {
   @NotNull
-  private final LinkedHashSet<String> myStrings = new LinkedHashSet<String>();
+  private final LinkedHashSet<String> myStrings = new LinkedHashSet<>();
   private final boolean myUseSystemSeparator;
 
   public ClasspathStringCollector() {

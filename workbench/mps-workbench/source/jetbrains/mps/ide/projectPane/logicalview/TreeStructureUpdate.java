@@ -38,7 +38,7 @@ class TreeStructureUpdate implements MPSTreeNodeListener {
 
   private final ProjectTree myProjectTree;
   private final SModelEventsDispatcher myEventsListener = new SModelEventsDispatcher();
-  private final Map<SModelTreeNode, ModelChangeListener> myListeners = new HashMap<SModelTreeNode, ModelChangeListener>();
+  private final Map<SModelTreeNode, ModelChangeListener> myListeners = new HashMap<>();
 
   public TreeStructureUpdate(ProjectTree projectTree) {
     myProjectTree = projectTree;

@@ -80,10 +80,10 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
           final SModel structureModel = LanguageAspect.STRUCTURE.get(myLanguage);
           if (structureModel == null) {
             LOG.warn("Structure aspect is null in the language " + myLanguage);
-            myDescriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
+            myDescriptors = new ConcurrentHashMap<>();
             return;
           }
-          ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
+          ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<>();
           for (SNode root : structureModel.getRootNodes()) {
             SConcept concept = root.getConcept();
             if (!isConceptDeclaration(concept)) {

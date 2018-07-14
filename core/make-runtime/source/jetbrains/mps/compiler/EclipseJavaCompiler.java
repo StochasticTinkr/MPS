@@ -48,7 +48,7 @@ public class EclipseJavaCompiler {
 
   @NotNull
   private static Map<String, String> addPresetCompilerOptions(@NotNull JavaCompilerOptions customCompilerOptions) {
-    Map<String, String> compilerOptions = new HashMap<String, String>();
+    Map<String, String> compilerOptions = new HashMap<>();
     String actualJavaTargetVersion = customCompilerOptions.getTargetJavaVersion().getCompilerVersion();
     compilerOptions.put(CompilerOptions.OPTION_Source, actualJavaTargetVersion);
     compilerOptions.put(CompilerOptions.OPTION_Compliance, actualJavaTargetVersion);
@@ -198,7 +198,7 @@ public class EclipseJavaCompiler {
     }
   }
 
-  private ArrayList<CompilationResultListener> myCompilationResultListeners = new ArrayList<CompilationResultListener>();
+  private ArrayList<CompilationResultListener> myCompilationResultListeners = new ArrayList<>();
 
   public void addCompilationResultListener(@NotNull CompilationResultListener l) {
     myCompilationResultListeners.add(l);

@@ -61,7 +61,7 @@ public class MementoImpl implements Memento {
       throw new IllegalArgumentException("Null key in memento doesn't make sense");
     }
     if (values == null) {
-      values = new LinkedHashMap<String, String>();
+      values = new LinkedHashMap<>();
     }
     values.put(key, value);
   }
@@ -86,7 +86,7 @@ public class MementoImpl implements Memento {
     if (children == null) return Collections.emptySet();
     List<Memento> mementos = children.get(type);
     if (mementos == null) return Collections.emptySet();
-    return Collections.unmodifiableList(new ArrayList<Memento>(mementos));
+    return Collections.unmodifiableList(new ArrayList<>(mementos));
   }
 
   @Override
@@ -100,7 +100,7 @@ public class MementoImpl implements Memento {
   @Override
   public Iterable<Memento> getChildren() {
     if (children == null) return Collections.emptyList();
-    List<Memento> mementos = new ArrayList<Memento>();
+    List<Memento> mementos = new ArrayList<>();
     for (List<Memento> mementoList : children.values()) {
       mementos.addAll(mementoList);
     }
@@ -110,10 +110,10 @@ public class MementoImpl implements Memento {
   @Override
   public Memento createChild(String type) {
     if (children == null) {
-      children = new LinkedHashMap<String, List<Memento>>();
+      children = new LinkedHashMap<>();
     }
     if (!children.containsKey(type)) {
-      children.put(type, new ArrayList<Memento>());
+      children.put(type, new ArrayList<>());
     }
     Memento m = new MementoImpl(type);
     children.get(type).add(m);
@@ -129,9 +129,9 @@ public class MementoImpl implements Memento {
       }
     }
     if (children != null) {
-      m.children = new LinkedHashMap<String, List<Memento>>();
+      m.children = new LinkedHashMap<>();
       for (Map.Entry<String, List<Memento>> entry : children.entrySet()) {
-        List<Memento> copy = new ArrayList<Memento>();
+        List<Memento> copy = new ArrayList<>();
         for (Memento memento : entry.getValue()) {
           copy.add(memento.copy());
         }

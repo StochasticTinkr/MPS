@@ -42,9 +42,9 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
   private static final String ATTRIBUTE_NAME = "name";
   private static final String MODULE_REFERENCE = "module_ref";
   private static final String SNODE_REFERENCE = "node_ref";
-  private final Map<String, List<Object>> myName2FavoritesRoots = new LinkedHashMap<String, List<Object>>();
+  private final Map<String, List<Object>> myName2FavoritesRoots = new LinkedHashMap<>();
   private final Project myProject;
-  private List<MPSFavoritesListener> myListeners = new ArrayList<MPSFavoritesListener>();
+  private List<MPSFavoritesListener> myListeners = new ArrayList<>();
 
   // Do not delete this attribute!!
   // It was added here to save at least some information into XML element inside writeExternal() method.
@@ -80,7 +80,7 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
   }
 
   private static List<Object> readRoots(final Element list, Project project) {
-    List<Object> result = new ArrayList<Object>();
+    List<Object> result = new ArrayList<>();
     for (Object favorite : list.getChildren(FAVORITES_ROOT)) {
       Element favoriteElement = (Element) favorite;
       final String moduleRef = favoriteElement.getAttributeValue(MODULE_REFERENCE);
@@ -111,21 +111,21 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
 
   private void onListAdded(String name) {
     //copy operation is necessary cause we can add/remove listeners in listeners
-    for (MPSFavoritesListener listener : new ArrayList<MPSFavoritesListener>(myListeners)) {
+    for (MPSFavoritesListener listener : new ArrayList<>(myListeners)) {
       listener.listAdded(name);
     }
   }
 
   private void onListChanged(String name) {
     //copy operation is necessary cause we can add/remove listeners in listeners
-    for (MPSFavoritesListener listener : new ArrayList<MPSFavoritesListener>(myListeners)) {
+    for (MPSFavoritesListener listener : new ArrayList<>(myListeners)) {
       listener.rootsChanged(name);
     }
   }
 
   private void onListRemoved(String name) {
     //copy operation is necessary cause we can add/remove listeners in listeners
-    for (MPSFavoritesListener listener : new ArrayList<MPSFavoritesListener>(myListeners)) {
+    for (MPSFavoritesListener listener : new ArrayList<>(myListeners)) {
       listener.listRemoved(name);
     }
   }
@@ -179,13 +179,13 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
   }
 
   public String[] getFavoriteNames() {
-    Set<String> favariteNames = new LinkedHashSet<String>();
+    Set<String> favariteNames = new LinkedHashSet<>();
     favariteNames.addAll(myName2FavoritesRoots.keySet());
     return ArrayUtil.toStringArray(favariteNames);
   }
 
   public void addNewFavoritesList(String name) {
-    myName2FavoritesRoots.put(name, new ArrayList<Object>());
+    myName2FavoritesRoots.put(name, new ArrayList<>());
     onListAdded(name);
   }
 

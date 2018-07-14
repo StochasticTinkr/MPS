@@ -52,17 +52,17 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
 
   private final SModel myModelDescriptor;
   private final TreeNodeTextSource<SModelTreeNode> myTextSource;
-  private List<SModelTreeNode> myChildModelTreeNodes = new ArrayList<SModelTreeNode>();
+  private List<SModelTreeNode> myChildModelTreeNodes = new ArrayList<>();
 
   private boolean myInitialized = false;
   private boolean myInitializing = false;
-  private List<SNodeGroupTreeNode> myRootGroups = new ArrayList<SNodeGroupTreeNode>();
+  private List<SNodeGroupTreeNode> myRootGroups = new ArrayList<>();
 
   private final Condition<SNode> myNodesCondition;
 
-  private final DependencyRecorder<SNodeTreeNode> myDependencyRecorder = new DependencyRecorder<SNodeTreeNode>();
+  private final DependencyRecorder<SNodeTreeNode> myDependencyRecorder = new DependencyRecorder<>();
 
-  private Map<String, PackageNode> myPackageNodes = new HashMap<String, PackageNode>();
+  private Map<String, PackageNode> myPackageNodes = new HashMap<>();
   private Icon myBaseIcon;
 
     public SModelTreeNode(@NotNull SModel model) {
@@ -305,7 +305,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
   }
 
   public List<SModelTreeNode> getAllSubfolderSModelTreeNodes() {
-    List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
+    List<SModelTreeNode> result = new ArrayList<>();
     if (myChildModelTreeNodes.isEmpty()) {
       result.add(this);
     } else {
@@ -343,8 +343,8 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
       }
       org.jetbrains.mps.openapi.model.SModel model = getModel();
 
-      List<SNode> filteredRoots = new ArrayList<SNode>();
-      for (SNode node : new ConditionalIterable<SNode>(model.getRootNodes(), myNodesCondition)) {
+      List<SNode> filteredRoots = new ArrayList<>();
+      for (SNode node : new ConditionalIterable<>(model.getRootNodes(), myNodesCondition)) {
         filteredRoots.add(node);
       }
       Comparator<Object> childrenComparator = getTree().getChildrenComparator();
@@ -381,18 +381,18 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
 
     DefaultTreeModel treeModel = getTree().getModel();
 
-    final ArrayList<SNode> allRoots = new ArrayList<SNode>();
+    final ArrayList<SNode> allRoots = new ArrayList<>();
     for (SNode root1 : getModel().getRootNodes()) {
       allRoots.add(root1);
     }
     Collections.sort(allRoots, new ToStringComparator(true));
 
-    List<SNode> added = new ArrayList<SNode>(addedRoots);
+    List<SNode> added = new ArrayList<>(addedRoots);
     Collections.sort(added, Comparator.comparingInt(allRoots::indexOf));
 
     //Assuming that "added" as well as targetNode.children for all targetNodes are sorted already,
     //so we merge the two by always remembering the last insertion point
-    final HashMap<MPSTreeNode, Integer> lastPositions = new HashMap<MPSTreeNode, Integer>();
+    final HashMap<MPSTreeNode, Integer> lastPositions = new HashMap<>();
     for (SNode root : added) {
       SNodeTreeNode nodeToInsert = new SNodeTreeNode(root);
       MPSTreeNode targetNode = getNodeGroupFor(root);

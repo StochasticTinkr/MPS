@@ -75,13 +75,13 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private volatile boolean myIsInitialized = false;
 
   // temp collections for delayed initialization
-  private Map<SPropertyId, PropertyDescriptor> directPropertiesByIds = new HashMap<SPropertyId, PropertyDescriptor>();
-  private Map<SReferenceLinkId, ReferenceDescriptor> directReferencesByIds = new HashMap<SReferenceLinkId, ReferenceDescriptor>();
-  private Map<SContainmentLinkId, LinkDescriptor> directLinksByIds = new HashMap<SContainmentLinkId, LinkDescriptor>();
+  private Map<SPropertyId, PropertyDescriptor> directPropertiesByIds = new HashMap<>();
+  private Map<SReferenceLinkId, ReferenceDescriptor> directReferencesByIds = new HashMap<>();
+  private Map<SContainmentLinkId, LinkDescriptor> directLinksByIds = new HashMap<>();
 
-  private Map<String, PropertyDescriptor> directPropertiesByName = new HashMap<String, PropertyDescriptor>();
-  private Map<String, ReferenceDescriptor> directReferencesByName = new HashMap<String, ReferenceDescriptor>();
-  private Map<String, LinkDescriptor> directLinksByName = new HashMap<String, LinkDescriptor>();
+  private Map<String, PropertyDescriptor> directPropertiesByName = new HashMap<>();
+  private Map<String, ReferenceDescriptor> directReferencesByName = new HashMap<>();
+  private Map<String, LinkDescriptor> directLinksByName = new HashMap<>();
   private SNodeReference mySourceNodeRef;
 
   InterpretedConceptDescriptor(final SNode declaration, @NotNull SConceptId id, @NotNull final String qualifiedName) {
@@ -117,8 +117,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         }
 
         // parents
-        Set<String> parentsSet = new LinkedHashSet<String>();
-        Set<SConceptId> parentsIdsSet = new LinkedHashSet<SConceptId>();
+        Set<String> parentsSet = new LinkedHashSet<>();
+        Set<SConceptId> parentsIdsSet = new LinkedHashSet<>();
 
         if (declaration.getConcept().equals(SNodeUtil.concept_ConceptDeclaration)) {
           // super-concept
@@ -162,8 +162,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
           parentsIdsSet.add(SNodeUtil.conceptId_BaseConcept);
         }
 
-        parents = new ArrayList<String>(parentsSet);
-        parentsIds = new ArrayList<SConceptId>(parentsIdsSet);
+        parents = new ArrayList<>(parentsSet);
+        parentsIds = new ArrayList<>(parentsIdsSet);
 
         // direct properties
         for (SNode property : declaration.getChildren(SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration)) {
@@ -227,7 +227,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       }
 
       // get parent descriptors
-      List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(parents.size());
+      List<ConceptDescriptor> parentDescriptors = new ArrayList<>(parents.size());
       for (SConceptId parent : parentsIds) {
         ConceptDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(parent);
         if (!(descriptor instanceof IllegalConceptDescriptor)) {
@@ -236,14 +236,14 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       }
 
       // ancestors
-      ancestorsIds = new HashSet<SConceptId>(parentsIds);
+      ancestorsIds = new HashSet<>(parentsIds);
       ancestorsIds.add(myId);
       for (ConceptDescriptor parentDescriptor : parentDescriptors) {
         ancestorsIds.addAll(parentDescriptor.getAncestorsIds());
       }
 
       // properties
-      Map<SPropertyId, PropertyDescriptor> propertiesByIds = new LinkedHashMap<SPropertyId, PropertyDescriptor>();
+      Map<SPropertyId, PropertyDescriptor> propertiesByIds = new LinkedHashMap<>();
 
       propertiesByIds.putAll(directPropertiesByIds);
 
@@ -256,7 +256,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       myProperties = Collections.unmodifiableMap(propertiesByIds);
 
       // references
-      Map<SReferenceLinkId, ReferenceDescriptor> referencesByIds = new LinkedHashMap<SReferenceLinkId, ReferenceDescriptor>();
+      Map<SReferenceLinkId, ReferenceDescriptor> referencesByIds = new LinkedHashMap<>();
 
       referencesByIds.putAll(directReferencesByIds);
 
@@ -269,7 +269,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       myReferences = Collections.unmodifiableMap(referencesByIds);
 
       // children
-      Map<SContainmentLinkId, LinkDescriptor> linksByIds = new LinkedHashMap<SContainmentLinkId, LinkDescriptor>();
+      Map<SContainmentLinkId, LinkDescriptor> linksByIds = new LinkedHashMap<>();
 
       linksByIds.putAll(directLinksByIds);
 

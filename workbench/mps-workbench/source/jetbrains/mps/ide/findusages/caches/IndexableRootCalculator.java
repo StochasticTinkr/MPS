@@ -88,7 +88,7 @@ final class IndexableRootCalculator {
 
   @NotNull
   private Set<VirtualFile> calcRoots() {
-    final Set<VirtualFile> files = new HashSet<VirtualFile>();
+    final Set<VirtualFile> files = new HashSet<>();
 
     myProject.getModelAccess().runReadAction(new Runnable() {
       @Override

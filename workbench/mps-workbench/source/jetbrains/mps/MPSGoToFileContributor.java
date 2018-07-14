@@ -66,7 +66,7 @@ public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAwar
       files = Collections.emptyList();
     }
 
-    List<NavigationItem> result = new ArrayList<NavigationItem>();
+    List<NavigationItem> result = new ArrayList<>();
     for (final VirtualFile file : files) {
       result.add(new FileNavigationItem(file, project));
     }

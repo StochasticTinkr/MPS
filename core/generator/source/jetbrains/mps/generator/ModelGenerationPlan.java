@@ -122,7 +122,7 @@ public interface ModelGenerationPlan {
 
     // Do I need this?
     public List<TemplateModel> getTemplateModels() {
-      ArrayList<TemplateModel> rv = new ArrayList<TemplateModel>(myMapCfg.length);
+      ArrayList<TemplateModel> rv = new ArrayList<>(myMapCfg.length);
       // generally, there are very few distinct template models per step, don't care about performance here
       for (TemplateMappingConfiguration mc : myMapCfg) {
         if (!rv.contains(mc.getModel())) {

@@ -53,7 +53,7 @@ public class RigidGenerationPlan implements ModelGenerationPlan {
 
   @Override
   public Collection<TemplateModule> getGenerators() {
-    ArrayList<TemplateModule> rv = new ArrayList<TemplateModule>(mySteps.length * 2);
+    ArrayList<TemplateModule> rv = new ArrayList<>(mySteps.length * 2);
     ArrayDeque<Step> queue = new ArrayDeque<>(Arrays.asList(mySteps));
     while (!queue.isEmpty()) {
       Step p = queue.removeFirst();

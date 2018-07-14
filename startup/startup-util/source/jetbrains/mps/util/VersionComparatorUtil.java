@@ -110,7 +110,7 @@ public class VersionComparatorUtil {
 
   static List<String> splitVersionString(final String ver) {
     StringTokenizer st = new StringTokenizer(ver.trim(), "()._-;:/, +~");
-    List<String> result = new ArrayList<String>();
+    List<String> result = new ArrayList<>();
 
     while (st.hasMoreTokens()) {
       final Matcher matcher = WORDS_SPLITTER.matcher(st.nextToken());

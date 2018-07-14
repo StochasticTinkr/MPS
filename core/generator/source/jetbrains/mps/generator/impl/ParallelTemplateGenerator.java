@@ -182,7 +182,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
 
   public static class CompositeGenerationTask implements GenerationTask {
 
-    private final Queue<GenerationTask> list = new LinkedList<GenerationTask>();
+    private final Queue<GenerationTask> list = new LinkedList<>();
     private boolean isInShutdownMode = false;
 
     public synchronized boolean addTask(GenerationTask task) {

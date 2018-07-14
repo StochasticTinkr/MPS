@@ -34,9 +34,9 @@ public class DevkitDescriptor extends ModuleDescriptor {
 
   public DevkitDescriptor() {
     super();
-    myExportedLanguages = new LinkedHashSet<SModuleReference>();
-    myExportedSolutions = new LinkedHashSet<SModuleReference>();
-    myExtendedDevkits = new LinkedHashSet<SModuleReference>();
+    myExportedLanguages = new LinkedHashSet<>();
+    myExportedSolutions = new LinkedHashSet<>();
+    myExtendedDevkits = new LinkedHashSet<>();
   }
 
   public Set<SModuleReference> getExportedLanguages() {

@@ -59,8 +59,8 @@ public final class NodesWriter extends BareNodeWriter {
 
   @Override
   protected void writeProperties(SNode node) throws IOException {
-    final ArrayList<PropertyInfo> propertyInfo = new ArrayList<PropertyInfo>();
-    final ArrayList<String> propertyValue = new ArrayList<String>();
+    final ArrayList<PropertyInfo> propertyInfo = new ArrayList<>();
+    final ArrayList<String> propertyValue = new ArrayList<>();
     for (SProperty id : node.getProperties()) {
       propertyInfo.add(myInfo.find(id));
       propertyValue.add(node.getProperty(id));

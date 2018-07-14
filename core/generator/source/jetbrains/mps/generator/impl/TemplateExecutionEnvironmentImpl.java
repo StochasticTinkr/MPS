@@ -271,7 +271,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
 
-  protected final Set<SNodeReference> myFailedRules = new ConcurrentHashSet<SNodeReference>();
+  protected final Set<SNodeReference> myFailedRules = new ConcurrentHashSet<>();
   /*
    * returns null if no reductions found
    */

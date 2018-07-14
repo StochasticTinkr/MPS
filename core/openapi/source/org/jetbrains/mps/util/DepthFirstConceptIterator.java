@@ -41,7 +41,7 @@ import java.util.Iterator;
 public class DepthFirstConceptIterator implements Iterable<SAbstractConcept>, Iterator<SAbstractConcept> {
   private final SAbstractConcept myStart;
   private SConcept myCurrent; // super-concepts hierarchy or null once all super-concepts are over
-  private final Deque<SInterfaceConcept> myInterfaces = new ArrayDeque<SInterfaceConcept>();
+  private final Deque<SInterfaceConcept> myInterfaces = new ArrayDeque<>();
 
   public DepthFirstConceptIterator(@NotNull SAbstractConcept start) {
     myStart = start;

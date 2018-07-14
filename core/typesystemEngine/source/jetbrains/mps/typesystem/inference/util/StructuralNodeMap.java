@@ -25,9 +25,9 @@ import java.util.Map;
 import java.util.Set;
 
 public class StructuralNodeMap<T> implements Map<SNode, T> {
-  private Map<SNode, SNode> myRepresentatorsMap = new THashMap<SNode, SNode>();
-  private Map<SNode, T> myMap = new THashMap<SNode, T>();
-  private Set<SNode> myAbsentNodes = new THashSet<SNode>();
+  private Map<SNode, SNode> myRepresentatorsMap = new THashMap<>();
+  private Map<SNode, T> myMap = new THashMap<>();
+  private Set<SNode> myAbsentNodes = new THashSet<>();
 
   public SNode getKeyRepresentator(SNode node) {
     return myRepresentatorsMap.get(node);

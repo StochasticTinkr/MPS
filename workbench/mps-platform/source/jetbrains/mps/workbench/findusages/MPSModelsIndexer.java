@@ -54,7 +54,7 @@ import java.util.Map;
 public class MPSModelsIndexer extends ScalarIndexExtension<UsageEntry> {
   private static final ID<UsageEntry, Void> NAME = ID.create("mps.NodeUsage");
 
-  private final Map<FileType, IndexAwareModelFactory> myIndexAwareFileTypes = new HashMap<FileType, IndexAwareModelFactory>();
+  private final Map<FileType, IndexAwareModelFactory> myIndexAwareFileTypes = new HashMap<>();
 
   public static Collection<VirtualFile> getContainingFiles(UsageEntry entry, GlobalSearchScope allFiles) {
     return FileBasedIndex.getInstance().getContainingFiles(NAME, entry, allFiles);
@@ -114,7 +114,7 @@ public class MPSModelsIndexer extends ScalarIndexExtension<UsageEntry> {
   }
 
   private static class IndexCallback implements Callback {
-    private final Map<UsageEntry, Void> myResult = new HashMap<UsageEntry, Void>(128);
+    private final Map<UsageEntry, Void> myResult = new HashMap<>(128);
 
     public Map<UsageEntry, Void> getResult() {
       return myResult;

@@ -60,10 +60,10 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   private final TransientModelsProvider myComponent;
 
-  private Set<SModel> myPublished = new ConcurrentHashSet<SModel>();
-  private final ModelVault<TransientSModelDescriptor> myModelVault = new ModelVault<TransientSModelDescriptor>();
+  private Set<SModel> myPublished = new ConcurrentHashSet<>();
+  private final ModelVault<TransientSModelDescriptor> myModelVault = new ModelVault<>();
 
-  private final Map<String, GenerationTrace> myTraces = new HashMap<String, GenerationTrace>();
+  private final Map<String, GenerationTrace> myTraces = new HashMap<>();
 
   // facility to generate IntegerSModelId, unique within a transient module
   private final AtomicInteger myCounter = new AtomicInteger(0);

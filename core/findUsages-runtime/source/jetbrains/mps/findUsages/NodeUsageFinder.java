@@ -36,7 +36,7 @@ public class NodeUsageFinder {
   private final Consumer<SReference> myOutcomeConsumer;
 
   public NodeUsageFinder(@NotNull Collection<SNode> nodesToFind, @NotNull Consumer<SReference> outcomeConsumer) {
-    myNodesToFind = new HashSet<SNodeReference>();
+    myNodesToFind = new HashSet<>();
     for (SNode n : nodesToFind) {
       myNodesToFind.add(n.getReference());
     }

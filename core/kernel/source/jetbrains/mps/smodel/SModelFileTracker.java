@@ -49,7 +49,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  *                    i.e. instead we'd have smth like SRepo.getService(SModelFileTracker.class)
  */
 public class SModelFileTracker {
-  private static final List<SModelFileTracker> ourModelTrackers = new CopyOnWriteArrayList<SModelFileTracker>();
+  private static final List<SModelFileTracker> ourModelTrackers = new CopyOnWriteArrayList<>();
 
   private final RepositoryModelTracker myListener = new RepositoryModelTracker();
   private final SRepository myRepository;
@@ -123,7 +123,7 @@ public class SModelFileTracker {
         if (myRepository.getModelAccess().canRead()) {
           return compute();
         } else {
-          return new ModelComputeRunnable<SModel>(this).runRead(myRepository.getModelAccess());
+          return new ModelComputeRunnable<>(this).runRead(myRepository.getModelAccess());
         }
       }
     }
@@ -146,7 +146,7 @@ public class SModelFileTracker {
   }
 
   private static class RepositoryModelTracker extends SRepositoryContentAdapter {
-    private final Map<IFile, SModelReference> myPathsToModels = new HashMap<IFile, SModelReference>(256);
+    private final Map<IFile, SModelReference> myPathsToModels = new HashMap<>(256);
 
     @Override
     protected void startListening(SModel model) {

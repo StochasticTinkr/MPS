@@ -85,14 +85,14 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
   }
 
   public static class HintsState {
-    private Set<String> myEnabledHints = new HashSet<String>();
+    private Set<String> myEnabledHints = new HashSet<>();
 
     public Set<String> getEnabledHints() {
       return myEnabledHints;
     }
 
     public void setEnabledHints(Set<String> enabledHints) {
-      myEnabledHints = new HashSet<String>(enabledHints);
+      myEnabledHints = new HashSet<>(enabledHints);
     }
   }
 }

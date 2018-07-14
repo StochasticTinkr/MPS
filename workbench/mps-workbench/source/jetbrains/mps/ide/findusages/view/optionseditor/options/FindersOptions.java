@@ -36,7 +36,7 @@ public final class FindersOptions extends BaseOptions {
   private static final String CLASS_NAME = "class_name";
 
   @NotNull
-  private List<String> myFindersClassNames = new ArrayList<String>();
+  private List<String> myFindersClassNames = new ArrayList<>();
 
   public FindersOptions(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);

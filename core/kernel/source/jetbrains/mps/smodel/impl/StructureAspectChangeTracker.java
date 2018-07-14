@@ -58,8 +58,8 @@ import java.util.Set;
  */
 public final class StructureAspectChangeTracker extends SRepositoryListenerBase implements SRepositoryAttachListener, SNodeChangeListener, SModelListener {
   // I assume model changes come in a single thread, as well as commandFinished notification, and do not care to synchronize
-  private final Set<SModelReference> myChangedModels = new HashSet<SModelReference>();
-  private final Set<SModuleReference> myChangedModules = new HashSet<SModuleReference>();
+  private final Set<SModelReference> myChangedModels = new HashSet<>();
+  private final Set<SModuleReference> myChangedModules = new HashSet<>();
   private final ModelListener myModelListener;
   private final ModuleListener myModuleListener;
 
@@ -216,12 +216,12 @@ public final class StructureAspectChangeTracker extends SRepositoryListenerBase 
 
   private void fireStructureAspectChanged() {
     if (!myChangedModels.isEmpty()) {
-      HashSet<SModelReference> copy = new HashSet<SModelReference>(myChangedModels);
+      HashSet<SModelReference> copy = new HashSet<>(myChangedModels);
       myChangedModels.clear();
       myModelListener.structureAspectChanged(copy);
     }
     if (!myChangedModules.isEmpty()) {
-      HashSet<SModuleReference> copy = new HashSet<SModuleReference>(myChangedModules);
+      HashSet<SModuleReference> copy = new HashSet<>(myChangedModules);
       myChangedModules.clear();
       myModuleListener.structureAspectChanged(copy);
     }

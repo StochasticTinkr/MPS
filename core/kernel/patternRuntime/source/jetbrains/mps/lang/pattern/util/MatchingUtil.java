@@ -47,7 +47,7 @@ public class MatchingUtil {
     if (!node1.getConcept().equals(node2.getConcept())) return false;
 
     //properties
-    final Set<SProperty> properties = new HashSet<SProperty>();
+    final Set<SProperty> properties = new HashSet<>();
     properties.addAll(IterableUtil.asSet(node1.getProperties()));
     properties.addAll(IterableUtil.asSet(node2.getProperties()));
 
@@ -75,7 +75,7 @@ public class MatchingUtil {
     }
 
     //-- matching references
-    Set<SReferenceLink> referenceRoles = new HashSet<SReferenceLink>();
+    Set<SReferenceLink> referenceRoles = new HashSet<>();
     for (SReference ref : node1.getReferences()) {
       referenceRoles.add(ref.getLink());
     }

@@ -43,7 +43,7 @@ public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   @Override
   protected List<SubstituteAction> createActions() {
-    List<List<? extends SubstituteAction>> actionLists = new LinkedList<List<? extends SubstituteAction>>();
+    List<List<? extends SubstituteAction>> actionLists = new LinkedList<>();
     for (SubstituteInfoPartExt menuPart : myExtParts) {
       try {
         actionLists.add(menuPart.createActions(myCellContext, getEditorContext()));
@@ -59,7 +59,7 @@ public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
     for (List<? extends SubstituteAction> actionList : actionLists) {
       size += actionList.size();
     }
-    List<SubstituteAction> result = new ArrayList<SubstituteAction>(size);
+    List<SubstituteAction> result = new ArrayList<>(size);
     for (List<? extends SubstituteAction> actionList : actionLists) {
       result.addAll(actionList);
     }

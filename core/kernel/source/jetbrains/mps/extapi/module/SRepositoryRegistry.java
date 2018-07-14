@@ -30,8 +30,8 @@ public class SRepositoryRegistry implements CoreComponent {
   private static SRepositoryRegistry INSTANCE;
 
   private final Object LOCK = new Object();
-  private Set<SRepository> myRepositories = new LinkedHashSet<SRepository>();
-  private Set<SRepositoryListener> myGlobalListeners = new LinkedHashSet<SRepositoryListener>();
+  private Set<SRepository> myRepositories = new LinkedHashSet<>();
+  private Set<SRepositoryListener> myGlobalListeners = new LinkedHashSet<>();
 
   /**
    * @deprecated Instead, access instance through respective kernel {@link jetbrains.mps.components.ComponentPlugin} (i.e. {@code MPSCore}).

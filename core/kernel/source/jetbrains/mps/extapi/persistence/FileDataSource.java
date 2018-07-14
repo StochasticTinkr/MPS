@@ -53,7 +53,7 @@ import java.util.List;
  */
 public class FileDataSource extends DataSourceBase implements StreamDataSource, FileSystemListener, FileSystemBasedDataSource {
   private final Object LOCK = new Object();
-  private List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>();
+  private List<DataSourceListener> myListeners = new ArrayList<>();
 
   @NotNull private IFile myFile;
   final ModelRoot myModelRoot; // fixme is needed only for the file system dependencies, to be removed

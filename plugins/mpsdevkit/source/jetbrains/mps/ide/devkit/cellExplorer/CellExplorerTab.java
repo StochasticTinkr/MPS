@@ -118,10 +118,10 @@ public class CellExplorerTab implements IComponentDisposer<JComponent> {
           public Pair<String, Icon> compute() {
             SNode editedNode = myEditorComponent.getEditedNode();
             if (editedNode == null) {
-              return new Pair<String, Icon>(null, null);
+              return new Pair<>(null, null);
             }
 
-            return new Pair<String, Icon>(editedNode.getPresentation(), GlobalIconManager.getInstance().getIconFor(editedNode));
+            return new Pair<>(editedNode.getPresentation(), GlobalIconManager.getInstance().getIconFor(editedNode));
           }
         });
 

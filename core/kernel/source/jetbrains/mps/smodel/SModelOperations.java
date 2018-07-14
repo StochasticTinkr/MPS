@@ -195,7 +195,7 @@ public class SModelOperations {
   //todo rewrite using iterators
   public static List<SModel> allImportedModels(SModel model) {
     // no uses in mbeddr
-    Set<SModel> result = new LinkedHashSet<SModel>();
+    Set<SModel> result = new LinkedHashSet<>();
     result.addAll(importedModels(model));
 
     for (Language language : getLanguages(model)) {
@@ -205,7 +205,7 @@ public class SModelOperations {
 
     result.remove(model);
 
-    return new ArrayList<SModel>(result);
+    return new ArrayList<>(result);
   }
 
   //todo rewrite using iterators
@@ -216,7 +216,7 @@ public class SModelOperations {
 
   @NotNull
   private static List<SModel> importedModels(final SModel model) {
-    List<SModel> modelsList = new ArrayList<SModel>();
+    List<SModel> modelsList = new ArrayList<>();
     for (SModelReference modelReference : new ModelImports(model).getImportedModels()) {
       SModel modelDescriptor = modelReference.resolve(MPSModuleRepository.getInstance());
 

@@ -183,18 +183,18 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
     public void run() {
       if (myProject.isDisposed()) return;
 
-      final Set<SNode> addedRoots = new LinkedHashSet<SNode>();
-      final Set<SNode> removedRoots = new LinkedHashSet<SNode>();
+      final Set<SNode> addedRoots = new LinkedHashSet<>();
+      final Set<SNode> removedRoots = new LinkedHashSet<>();
 
-      final Set<SNode> addedNodes = new LinkedHashSet<SNode>();
-      final Set<SNode> removedNodes = new LinkedHashSet<SNode>();
+      final Set<SNode> addedNodes = new LinkedHashSet<>();
+      final Set<SNode> removedNodes = new LinkedHashSet<>();
 
-      final Set<SNode> nodesWithChangedPresentations = new LinkedHashSet<SNode>();
-      final Set<SNode> nodesWithChangedPackages = new LinkedHashSet<SNode>();
+      final Set<SNode> nodesWithChangedPresentations = new LinkedHashSet<>();
+      final Set<SNode> nodesWithChangedPackages = new LinkedHashSet<>();
 
-      final Set<SNode> nodesWithChangedRefs = new LinkedHashSet<SNode>();
+      final Set<SNode> nodesWithChangedRefs = new LinkedHashSet<>();
 
-      final Set<SNode> changedNodes = new LinkedHashSet<SNode>();
+      final Set<SNode> changedNodes = new LinkedHashSet<>();
 
       for (SModelEvent event : myEvents) {
         event.accept(new SModelEventVisitorAdapter() {
@@ -247,7 +247,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
         });
       }
 
-      Set<SNodeTreeNode> treeNodesToUpdate = new LinkedHashSet<SNodeTreeNode>();
+      Set<SNodeTreeNode> treeNodesToUpdate = new LinkedHashSet<>();
       for (SNode changedNode : changedNodes) {
         if (myDependencyRecorder != null) {
           treeNodesToUpdate.addAll(myDependencyRecorder.getDependOn(changedNode));

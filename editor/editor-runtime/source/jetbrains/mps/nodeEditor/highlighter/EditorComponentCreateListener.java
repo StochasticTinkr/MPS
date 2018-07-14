@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 
 public interface EditorComponentCreateListener {
   Topic<EditorComponentCreateListener> EDITOR_COMPONENT_CREATION =
-    new Topic<EditorComponentCreateListener>("editor component creation and disposal", EditorComponentCreateListener.class);
+      new Topic<>("editor component creation and disposal", EditorComponentCreateListener.class);
 
   // This is invoked in the end of EditorComponent constructor
   void editorComponentCreated(@NotNull EditorComponent editorComponent);

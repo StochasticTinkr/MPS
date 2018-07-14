@@ -46,12 +46,12 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
   public Set<SNode> search(Set<SAbstractConcept> elements, SearchScope scope, @NotNull ProgressMonitor monitor) {
     assert !elements.contains(null);
 
-    CollectConsumer<SNode> consumer = new CollectConsumer<>(new HashSet<SNode>());
+    CollectConsumer<SNode> consumer = new CollectConsumer<>(new HashSet<>());
     Collection<FindUsagesParticipant> participants = PersistenceFacade.getInstance().getFindUsagesParticipants();
 
     monitor.start("Finding usages...", participants.size() + 5);
     try {
-      Set<SAbstractConcept> queryConcepts = new HashSet<SAbstractConcept>(elements);
+      Set<SAbstractConcept> queryConcepts = new HashSet<>(elements);
       if (!myExact) {
         for (SAbstractConcept concept : elements) {
           for (SAbstractConcept descConcept : ConceptDescendantsCache.getInstance().getDescendants(concept)) {
@@ -61,8 +61,8 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
       }
       monitor.advance(1);
 
-      Collection<SModel> current = new LinkedHashSet<SModel>();
-      Collection<SModel> simpleSearch = new LinkedHashSet<SModel>();
+      Collection<SModel> current = new LinkedHashSet<>();
+      Collection<SModel> simpleSearch = new LinkedHashSet<>();
       for (SModel m : IterableUtil.asCollection(scope.getModels())) {
         if (m instanceof EditableSModel && ((EditableSModel) m).isChanged()) {
           simpleSearch.add(m);
@@ -72,7 +72,7 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
       }
 
       for (FindUsagesParticipant participant : participants) {
-        final Set<SModel> next = new HashSet<SModel>(current);
+        final Set<SModel> next = new HashSet<>(current);
         participant.findInstances(current, queryConcepts, consumer, new Consumer<SModel>() {
           @Override
           public void consume(SModel sModel) {

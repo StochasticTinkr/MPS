@@ -71,7 +71,7 @@ public class NodeFactoryManager {
   }
 
   public static SNode createNode(@NotNull SAbstractConcept nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
-    return createNode(nodeConcept, sampleNode, enclosingNode, model, new HashSet<SAbstractConcept>());
+    return createNode(nodeConcept, sampleNode, enclosingNode, model, new HashSet<>());
   }
 
   private static SNode createNode(@NotNull SAbstractConcept nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model,

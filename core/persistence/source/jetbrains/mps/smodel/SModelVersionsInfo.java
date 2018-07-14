@@ -26,11 +26,11 @@ public class SModelVersionsInfo {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelVersionsInfo.class));
 
   private boolean myIsDisposed = false;
-  private final TObjectIntHashMap<SNode> myNodeConceptVersions = new TObjectIntHashMap<SNode>();
-  private final TObjectIntHashMap<SNode> myNodeRolesVersions = new TObjectIntHashMap<SNode>();
-  private final TObjectIntHashMap<NodeStringPair> myNodePropertiesVersions = new TObjectIntHashMap<NodeStringPair>();
-  private final TObjectIntHashMap<NodeStringPair> myNodeLinkRolesVersions = new TObjectIntHashMap<NodeStringPair>();
-  private final TObjectIntHashMap<NodeStringPair> myNodeLinkTargetsVersions = new TObjectIntHashMap<NodeStringPair>();
+  private final TObjectIntHashMap<SNode> myNodeConceptVersions = new TObjectIntHashMap<>();
+  private final TObjectIntHashMap<SNode> myNodeRolesVersions = new TObjectIntHashMap<>();
+  private final TObjectIntHashMap<NodeStringPair> myNodePropertiesVersions = new TObjectIntHashMap<>();
+  private final TObjectIntHashMap<NodeStringPair> myNodeLinkRolesVersions = new TObjectIntHashMap<>();
+  private final TObjectIntHashMap<NodeStringPair> myNodeLinkTargetsVersions = new TObjectIntHashMap<>();
 
   public void dispose() {
     LOG.assertLog(!myIsDisposed, "Already disposed.");

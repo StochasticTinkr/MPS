@@ -137,7 +137,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
   }
 
   private void initSelectedCells() throws CellNotFoundException {
-    List<EditorCell> selectedCells = new ArrayList<EditorCell>();
+    List<EditorCell> selectedCells = new ArrayList<>();
     boolean withinSelection = false;
     boolean breakLoop = false;
     for (SNode child : getChildIterable()) {
@@ -394,7 +394,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (myFilter == null) {
       return myParentNode.getChildren(myRole);
     }
-    List<SNode> result = new LinkedList<SNode>();
+    List<SNode> result = new LinkedList<>();
     for (SNode nextChild : myParentNode.getChildren(myRole)) {
       if (myFilter.accept(nextChild)) {
         result.add(nextChild);

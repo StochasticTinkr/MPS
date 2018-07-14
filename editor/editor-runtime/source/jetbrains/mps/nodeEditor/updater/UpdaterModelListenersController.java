@@ -48,7 +48,7 @@ class UpdaterModelListenersController {
 
     final SRepository repository = myUpdater.getEditorContext().getRepository();
 
-    Set<SModel> modelsToListen = new HashSet<SModel>();
+    Set<SModel> modelsToListen = new HashSet<>();
     if (relatedNodes != null) {
       for (SNode node : relatedNodes) {
         SModel model = node.getModel();

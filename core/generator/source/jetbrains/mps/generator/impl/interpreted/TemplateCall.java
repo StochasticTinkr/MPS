@@ -108,7 +108,7 @@ public class TemplateCall {
   }
 
   private static ArgumentExpression[] toExpressionRuntime(List<SNode> args) {
-    final ArrayList<ArgumentExpression> ae = new ArrayList<ArgumentExpression>(args.size());
+    final ArrayList<ArgumentExpression> ae = new ArrayList<>(args.size());
     int i = 1;
     for (SNode argExpr : args) {
       final SConcept argConcept = argExpr.getConcept();

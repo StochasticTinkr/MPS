@@ -74,7 +74,7 @@ class TemplateNode {
     myRoleInParent = templateNode.getContainmentLink();
     //
     // need to build linked list of macro nodes; use stack to start from the tail
-    final ArrayDeque<SNode> attachedMacros = new ArrayDeque<SNode>(5);
+    final ArrayDeque<SNode> attachedMacros = new ArrayDeque<>(5);
     for (SNode attrNode : templateNode.getChildren(SNodeUtil.link_BaseConcept_smodelAttribute)) {
       if (RuleUtil.isNodeMacro(attrNode)) {
         attachedMacros.push(attrNode);
@@ -173,10 +173,10 @@ class TemplateNode {
     public final RefInfo[] myOtherRefs;
 
     private Mold(SNode templateNode, GeneratorQueryProvider.Source gqps, IGeneratorLogger log) {
-      final ArrayList<SProperty> propsHandledWithMacro = new ArrayList<SProperty>();
+      final ArrayList<SProperty> propsHandledWithMacro = new ArrayList<>();
       final ArrayList<SReferenceLink> refsHandledWithMacro = new ArrayList<>();
-      final ArrayList<SNode> templateChildNodes = new ArrayList<SNode>();
-      final ArrayList<PropertyMacro> propertyMacros = new ArrayList<PropertyMacro>();
+      final ArrayList<SNode> templateChildNodes = new ArrayList<>();
+      final ArrayList<PropertyMacro> propertyMacros = new ArrayList<>();
       final ArrayList<ReferenceMacro> refMacros = new ArrayList<>();
 
       // property and reference macros could not yet use queries of a generator other than the one with template node,
@@ -215,8 +215,8 @@ class TemplateNode {
       myChildTemplates = templateChildNodes.isEmpty() ? Collections.<SNode>emptyList() : Arrays.asList(templateChildNodes.toArray(new SNode[templateChildNodes.size()]));
       myMacroRefs = refMacros.toArray(new ReferenceMacro[refMacros.size()]);
       myMacroProperties = propertyMacros.toArray(new PropertyMacro[propertyMacros.size()]);
-      final ArrayList<SProperty> templateProps = new ArrayList<SProperty>();
-      final ArrayList<String> templatePropValues = new ArrayList<String>();
+      final ArrayList<SProperty> templateProps = new ArrayList<>();
+      final ArrayList<String> templatePropValues = new ArrayList<>();
       for (SProperty p : templateNode.getProperties()) {
         if (propsHandledWithMacro.contains(p)) {
           continue; // property is handled with property macro
@@ -228,9 +228,9 @@ class TemplateNode {
       myTemplatePropertyValues = templatePropValues.toArray(new String[templatePropValues.size()]);
       //
       // prepare references
-      final ArrayList<RefInfo> externalStaticRefs = new ArrayList<RefInfo>();
-      final ArrayList<RefInfo> internalRefs = new ArrayList<RefInfo>();
-      final ArrayList<RefInfo> otherRefs = new ArrayList<RefInfo>();
+      final ArrayList<RefInfo> externalStaticRefs = new ArrayList<>();
+      final ArrayList<RefInfo> internalRefs = new ArrayList<>();
+      final ArrayList<RefInfo> otherRefs = new ArrayList<>();
       final SModel templateModel = templateNode.getModel();
       assert templateModel != null; // just to get rid of 'possible NPE' inspection. Templates always come from a model
       final SModelReference templateModelReference = templateModel.getReference();

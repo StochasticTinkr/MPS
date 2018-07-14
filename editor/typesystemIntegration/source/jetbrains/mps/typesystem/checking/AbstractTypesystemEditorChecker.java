@@ -99,13 +99,13 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
 
   protected Collection<EditorMessage> collectMessagesForNodesWithErrors(TypeCheckingContext context, final EditorContext editorContext,
                                                                         boolean typesystemErrors, boolean applyQuickFixes) {
-    Set<EditorMessage> messages = new HashSet<EditorMessage>();
+    Set<EditorMessage> messages = new HashSet<>();
     for (Pair<SNode, List<IErrorReporter>> errorNode : context.getNodesWithErrors(typesystemErrors)) {
       if (!ErrorReportUtil.shouldReportError(errorNode.o1)) {
         // although we might need to check IErrorReporter.getSNode(), I assume pair's first element always match that of IErrorReporter
         continue;
       }
-      List<IErrorReporter> errors = new ArrayList<IErrorReporter>(errorNode.o2);
+      List<IErrorReporter> errors = new ArrayList<>(errorNode.o2);
       Collections.sort(errors, new Comparator<IErrorReporter>() {
         @Override
         public int compare(IErrorReporter o1, IErrorReporter o2) {

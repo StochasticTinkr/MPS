@@ -32,7 +32,7 @@ import java.util.Set;
 public class ImmatureReferencesTracker {
   private SModel myModel = null;
   private SNodeChangeListenerAdapter myNodeListener = new MySNodeChangeListenerAdapter();
-  private Set<SReferenceBase> myImmatureRefs = new HashSet<SReferenceBase>();
+  private Set<SReferenceBase> myImmatureRefs = new HashSet<>();
   private SModelListenerBase myModelListener = new MySModelListenerBase();
 
   public void attach(SModel model, boolean doCheckImmediately) {

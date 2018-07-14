@@ -53,7 +53,7 @@ import java.util.Set;
 @ToRemove(version = 4.0)
 public class FolderDataSource extends DataSourceBase implements MultiStreamDataSource, FileSystemListener, FileSystemBasedDataSource {
   private final Object LOCK = new Object();
-  private List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>();
+  private List<DataSourceListener> myListeners = new ArrayList<>();
 
   @NotNull
   private final IFile myFolder;
@@ -118,7 +118,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   @NotNull
   @Override
   public Iterable<String> getAvailableStreams() {
-    Set<String> names = new HashSet<String>();
+    Set<String> names = new HashSet<>();
     for (IFile file : getStreams()) {
       if (isIncluded(file)) {
         names.add(getStreamName(file));
@@ -200,7 +200,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     if (isReadOnly()) {
       return;
     }
-    ArrayList<IFile> toDelete = new ArrayList<IFile>();
+    ArrayList<IFile> toDelete = new ArrayList<>();
     for (IFile file : getStreams()) {
       if (isIncluded(file)) {
         toDelete.add(file);
@@ -225,7 +225,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
 
   @Override
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-    Set<String> affectedStreams = new HashSet<String>();
+    Set<String> affectedStreams = new HashSet<>();
     for (IFile file : event.getChanged()) {
       if (isIncluded(file)) {
         affectedStreams.add(getStreamName(file));
@@ -252,7 +252,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   private void fireChanged(ProgressMonitor monitor, Iterable<String> streams) {
     List<DataSourceListener> listeners;
     synchronized (LOCK) {
-      listeners = new ArrayList<DataSourceListener>(myListeners);
+      listeners = new ArrayList<>(myListeners);
     }
     monitor.start("Reloading", listeners.size());
     try {

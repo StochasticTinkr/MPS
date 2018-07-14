@@ -51,8 +51,8 @@ public final class RefUpdateUtil {
   }
 
   public boolean updateModelRefs(@Mutable Collection<SModelReference> refs) {
-    Set<SModelReference> remove = new HashSet<SModelReference>();
-    Set<SModelReference> add = new LinkedHashSet<SModelReference>();
+    Set<SModelReference> remove = new HashSet<>();
+    Set<SModelReference> add = new LinkedHashSet<>();
 
     for (SModelReference ref : refs) {
       SModelReference newRef = updateModelRef(ref);
@@ -82,8 +82,8 @@ public final class RefUpdateUtil {
   }
 
   public boolean updateModuleRefs(Collection<SModuleReference> refs) {
-    Set<SModuleReference> remove = new HashSet<SModuleReference>();
-    Set<SModuleReference> add = new LinkedHashSet<SModuleReference>();
+    Set<SModuleReference> remove = new HashSet<>();
+    Set<SModuleReference> add = new LinkedHashSet<>();
 
     for (SModuleReference ref : refs) {
       SModuleReference newRef = update(ref);

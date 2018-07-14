@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class JavaCompilerOptionsComponent {
-  private Map<Project, JavaCompilerOptions> myProjectToOptions = new ConcurrentHashMap<Project, JavaCompilerOptions>();
+  private Map<Project, JavaCompilerOptions> myProjectToOptions = new ConcurrentHashMap<>();
   private static JavaCompilerOptionsComponent INSTANCE;
   public static JavaVersion DEFAULT_JAVA_VERSION = getDefaultJavaVersion();
   public static JavaCompilerOptions DEFAULT_JAVA_COMPILER_OPTIONS = new JavaCompilerOptions(DEFAULT_JAVA_VERSION);

@@ -61,7 +61,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
       return Collections.emptyList();
     }
 
-    List<SubstituteAction> actions = new ArrayList<SubstituteAction>(parameterObjects.size());
+    List<SubstituteAction> actions = new ArrayList<>(parameterObjects.size());
     for (final Object parameterObject : parameterObjects) {
       actions.add(new DefaultChildNodeSubstituteAction(parameterObject, parentNode, currentChild, setter) {
         @Override

@@ -56,7 +56,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
       return Collections.emptyList();
     }
 
-    List<SubstituteAction> actions = new ArrayList<SubstituteAction>(parameterObjects.size());
+    List<SubstituteAction> actions = new ArrayList<>(parameterObjects.size());
     for (final Object parameterObject : parameterObjects) {
       actions.add(new AbstractNodeSubstituteAction(null, parameterObject, node) {
 

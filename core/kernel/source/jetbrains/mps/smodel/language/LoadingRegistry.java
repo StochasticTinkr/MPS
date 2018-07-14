@@ -25,7 +25,7 @@ final class LoadingRegistry<T> {
   private final ThreadLocal<Set<T>> myConceptsInLoading = new ThreadLocal<Set<T>>() {
     @Override
     protected Set<T> initialValue() {
-      return new HashSet<T>();
+      return new HashSet<>();
     }
   };
 

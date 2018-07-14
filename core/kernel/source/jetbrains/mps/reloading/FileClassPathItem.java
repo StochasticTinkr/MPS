@@ -42,8 +42,8 @@ import java.util.Set;
  */
 class FileClassPathItem extends RealClassPathItem {
   private final String myClassPath;
-  private final Map<String, Set<String>> mySubpackagesCache = new THashMap<String, Set<String>>();
-  private final Map<String, Set<String>> myAvailableClassesCache = new THashMap<String, Set<String>>();
+  private final Map<String, Set<String>> mySubpackagesCache = new THashMap<>();
+  private final Map<String, Set<String>> myAvailableClassesCache = new THashMap<>();
 
   FileClassPathItem(String classPath) {
     myClassPath = classPath;
@@ -123,9 +123,9 @@ class FileClassPathItem extends RealClassPathItem {
     }
 
     Set<String> start = myAvailableClassesCache.get(namespace);
-    if (start == null) return new EmptyIterable<String>();
+    if (start == null) return new EmptyIterable<>();
     Condition<String> cond = className -> !isAnonymous(className);
-    return new ConditionalIterable<String>(start, cond);
+    return new ConditionalIterable<>(start, cond);
   }
 
   @Override
@@ -135,7 +135,7 @@ class FileClassPathItem extends RealClassPathItem {
     }
 
     Set<String> result = mySubpackagesCache.get(namespace);
-    if (result == null) return new EmptyIterable<String>();
+    if (result == null) return new EmptyIterable<>();
     return Collections.unmodifiableSet(result);
   }
 
@@ -150,7 +150,7 @@ class FileClassPathItem extends RealClassPathItem {
       for (String name : files) {
         if (name.endsWith(MPSExtentions.DOT_CLASSFILE)) { //isDirectory is quite expensive operation
           if (classes == null) {
-            classes = new THashSet<String>(files.length);
+            classes = new THashSet<>(files.length);
           }
           String classname = name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length());
           classes.add(InternUtil.intern(classname));
@@ -158,7 +158,7 @@ class FileClassPathItem extends RealClassPathItem {
           File file = new File(dir, name);
           if (file.isDirectory()) {
             if (subpacks == null) {
-              subpacks = new THashSet<String>();
+              subpacks = new THashSet<>();
             }
             String fqName = namespace.length() > 0 ? namespace + "." + name : name;
             subpacks.add(InternUtil.intern(fqName));
@@ -173,7 +173,7 @@ class FileClassPathItem extends RealClassPathItem {
 
   @Override
   public List<RealClassPathItem> flatten() {
-    List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
+    List<RealClassPathItem> result = new ArrayList<>();
     result.add(this);
     return result;
   }

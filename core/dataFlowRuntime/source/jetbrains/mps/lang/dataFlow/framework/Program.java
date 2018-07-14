@@ -26,12 +26,12 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class Program {
-  protected final List<Instruction> myInstructions = new ArrayList<Instruction>();
-  protected final List<TryFinallyInfo> myTryFinallyInfo = new ArrayList<TryFinallyInfo>();
-  protected final Map<Object, Integer> myStarts = new HashMap<Object, Integer>();
-  protected final Map<Object, Integer> myEnds = new HashMap<Object, Integer>();
-  protected final Stack<Object> myCreationStack = new Stack<Object>();
-  protected List<Object> myVariables = new ArrayList<Object>();
+  protected final List<Instruction> myInstructions = new ArrayList<>();
+  protected final List<TryFinallyInfo> myTryFinallyInfo = new ArrayList<>();
+  protected final Map<Object, Integer> myStarts = new HashMap<>();
+  protected final Map<Object, Integer> myEnds = new HashMap<>();
+  protected final Stack<Object> myCreationStack = new Stack<>();
+  protected List<Object> myVariables = new ArrayList<>();
   protected boolean hasOuterJumps = false;
 
   public List<Instruction> getInstructions() {
@@ -39,7 +39,7 @@ public class Program {
   }
 
   public List<ProgramState> getStates() {
-    List<ProgramState> result = new ArrayList<ProgramState>();
+    List<ProgramState> result = new ArrayList<>();
     for (Instruction i : myInstructions) {
       result.add(new ProgramState(i, true));
       result.add(new ProgramState(i, false));
@@ -68,11 +68,11 @@ public class Program {
   }
 
   public <E> AnalysisResult<E> analyze(DataFlowAnalyzer<E> analyzer) {
-    return new AnalyzerRunner<E>(this, analyzer).analyze();
+    return new AnalyzerRunner<>(this, analyzer).analyze();
   }
 
   public List<Object> getVariables() {
-    return new ArrayList<Object>(myVariables);
+    return new ArrayList<>(myVariables);
   }
 
   public int getVariablesCount() {
@@ -170,10 +170,10 @@ public class Program {
       int start = getStart(o);
       int end = getEnd(o);
       if (start <= end) {
-        return new ArrayList<Instruction>(myInstructions.subList(start, end));
+        return new ArrayList<>(myInstructions.subList(start, end));
       }
     }
-    return new ArrayList<Instruction>();
+    return new ArrayList<>();
   }
 
   protected void init() {
@@ -193,7 +193,7 @@ public class Program {
   }
 
   protected void collectVariables() {
-    Set<Object> result = new LinkedHashSet<Object>();
+    Set<Object> result = new LinkedHashSet<>();
     for (Instruction i : myInstructions) {
       if (i instanceof ReadInstruction) {
         result.add(((ReadInstruction) i).getVariable());
@@ -203,11 +203,11 @@ public class Program {
       }
     }
 
-    myVariables = new ArrayList<Object>(result);
+    myVariables = new ArrayList<>(result);
   }
 
   protected void buildBlockInfos() {
-    Stack<TryFinallyInfo> stack = new Stack<TryFinallyInfo>();
+    Stack<TryFinallyInfo> stack = new Stack<>();
     for (Instruction i : myInstructions) {
       if (i instanceof TryInstruction) {
         TryFinallyInfo info = new TryFinallyInfo();
@@ -248,7 +248,7 @@ public class Program {
 
   public Set<Instruction> getUnreachableInstructions() {
     AnalysisResult<Boolean> analysisResult = analyze(new ReachabilityAnalyzer());
-    Set<Instruction> result = new HashSet<Instruction>();
+    Set<Instruction> result = new HashSet<>();
     for (Instruction i : myInstructions) {
       if (!analysisResult.get(i)) {
         result.add(i);
@@ -258,7 +258,7 @@ public class Program {
   }
 
   public Set<Instruction> getExpectedReturns() {
-    Set<Instruction> result = new HashSet<Instruction>();
+    Set<Instruction> result = new HashSet<>();
     AnalysisResult<Boolean> analysisResult = analyze(new ReachabilityAnalyzer());
     ProgramState endWithoutReturn = new ProgramState(getEnd(), false);
     if (analysisResult.get(endWithoutReturn)) {
@@ -273,7 +273,7 @@ public class Program {
 
   public Set<ReadInstruction> getUninitializedReads() {
     AnalysisResult<VarSet> analysisResult = analyze(new InitializedVariablesAnalyzer());
-    Set<ReadInstruction> result = new HashSet<ReadInstruction>();
+    Set<ReadInstruction> result = new HashSet<>();
     for (Instruction i : myInstructions) {
       if (i instanceof ReadInstruction) {
         ReadInstruction read = (ReadInstruction) i;
@@ -294,8 +294,8 @@ public class Program {
 
   public Set<WriteInstruction> getUnusedAssignments() {
     AnalysisResult<VarSet> analysisResult = analyze(new LivenessAnalyzer());
-    Set<WriteInstruction> retModeTrue = new HashSet<WriteInstruction>();
-    Set<WriteInstruction> retModeFalse = new HashSet<WriteInstruction>();
+    Set<WriteInstruction> retModeTrue = new HashSet<>();
+    Set<WriteInstruction> retModeFalse = new HashSet<>();
     for (ProgramState s : analysisResult.getStates()) {
       if (s.getInstruction() instanceof WriteInstruction) {
         WriteInstruction write = (WriteInstruction) s.getInstruction();
@@ -369,7 +369,7 @@ public class Program {
     protected FinallyInstruction myFinally;
     protected EndTryInstruction myEndTry;
     protected TryFinallyInfo myParent;
-    protected List<TryFinallyInfo> myChildren = new ArrayList<TryFinallyInfo>();
+    protected List<TryFinallyInfo> myChildren = new ArrayList<>();
 
     public TryInstruction getTry() {
       return myTry;

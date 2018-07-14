@@ -122,7 +122,7 @@ public class PersistenceProblem implements SModel.Problem {
   @Deprecated
   @ToRemove(version = 2018.2)
   public static Iterable<Problem> fromIMessages(@Nullable SModelData model, Kind kind, Iterable<IMessage> seq) {
-    List<Problem> result = new ArrayList<Problem>();
+    List<Problem> result = new ArrayList<>();
     for (IMessage m : seq) {
       result.add(fromIMessage(model, kind, m));
     }

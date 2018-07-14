@@ -278,7 +278,7 @@ public abstract class MetaAdapterFactory {
       List<T> rv = map.get(bucketKey);
       if (rv == null) {
         // I don't expect too much collisions
-        map.put(bucketKey, rv = new ArrayList<T>(4));
+        map.put(bucketKey, rv = new ArrayList<>(4));
       }
       return rv;
     }

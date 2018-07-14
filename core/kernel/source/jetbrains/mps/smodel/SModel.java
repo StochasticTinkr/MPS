@@ -89,7 +89,7 @@ public class SModel implements SModelData, UpdateModeSupport {
   }
 
   private org.jetbrains.mps.openapi.model.SModel myModelDescriptor;
-  private Set<SNode> myRoots = new LinkedHashSet<SNode>();
+  private Set<SNode> myRoots = new LinkedHashSet<>();
   private SModelReference myReference;
   private boolean myDisposed;
   private List<SLanguage> myLanguagesEngagedOnGeneration = new ArrayList<>();

@@ -56,7 +56,7 @@ public abstract class ModelsEventsCollector {
 
   private List<SModelEvent> myEvents = new ArrayList<>();
   private SModelListener myModelListener = new SModelDelegateListener();
-  private Set<SModel> myModelsToListen = new LinkedHashSet<SModel>();
+  private Set<SModel> myModelsToListen = new LinkedHashSet<>();
   private CommandListener myCommandListener = new MyCommandAdapter();
   private volatile boolean myDisposed;
 

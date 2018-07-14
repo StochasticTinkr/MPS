@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class QuickFix_Runtime {
-  private final Map<String, Object[]> myMap = new HashMap<String, Object[]>();
+  private final Map<String, Object[]> myMap = new HashMap<>();
   private final SNodeReference myFixDeclaration;
 
   protected QuickFix_Runtime() {

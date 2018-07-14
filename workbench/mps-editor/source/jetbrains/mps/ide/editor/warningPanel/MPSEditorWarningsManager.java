@@ -106,7 +106,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
   };
 
-  private MultiMap<MPSFileNodeEditor, WarningPanel> myWarnings = new MultiMap<MPSFileNodeEditor, WarningPanel>();
+  private MultiMap<MPSFileNodeEditor, WarningPanel> myWarnings = new MultiMap<>();
 
   public MPSEditorWarningsManager(MPSProject project, FileEditorManager fileEditorManager, FileStatusManager fileStatusManager, MPSCoreComponents coreComponents) {
     myProject = project;
@@ -152,7 +152,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private void doUpdateWarnings(final MPSFileNodeEditor editor) {
-    List<WarningPanel> newWarnings = new ArrayList<WarningPanel>();
+    List<WarningPanel> newWarnings = new ArrayList<>();
 
     Editor nodeEditor = editor.getNodeEditor();
     if (nodeEditor == null) return;
@@ -222,9 +222,9 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
   private void replaceWarningPanels(MPSFileNodeEditor editor, List<WarningPanel> newPanels) {
     Collection<WarningPanel> oldPanels = myWarnings.get(editor);
-    List<WarningPanel> toRemove = new ArrayList<WarningPanel>(oldPanels);
+    List<WarningPanel> toRemove = new ArrayList<>(oldPanels);
     toRemove.removeAll(newPanels);
-    List<WarningPanel> toAdd = new ArrayList<WarningPanel>(newPanels);
+    List<WarningPanel> toAdd = new ArrayList<>(newPanels);
     toAdd.removeAll(oldPanels);
 
     for (WarningPanel panel : toRemove) {

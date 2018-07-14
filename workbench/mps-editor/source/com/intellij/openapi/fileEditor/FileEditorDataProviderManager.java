@@ -29,7 +29,7 @@ import java.util.List;
  */
 public class FileEditorDataProviderManager {
 
-  private List<FileEditorDataProvider> myDataProviders = new ArrayList<FileEditorDataProvider>();
+  private List<FileEditorDataProvider> myDataProviders = new ArrayList<>();
 
   public static FileEditorDataProviderManager getInstance(Project project) {
     return project.getComponent(FileEditorDataProviderManager.class);

@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class WriteActionDispatcher {
   private static final Logger LOG = LogManager.getLogger(WriteActionDispatcher.class);
 
-  private final List<WriteActionListener> myListeners = new CopyOnWriteArrayList<WriteActionListener>();
+  private final List<WriteActionListener> myListeners = new CopyOnWriteArrayList<>();
 
   private final AtomicInteger myWriteActionLevel = new AtomicInteger(0);
 
@@ -48,7 +48,7 @@ public final class WriteActionDispatcher {
   }
 
   public <T> T compute(Computable<T> c) {
-    ComputeRunnable<T> cr = new ComputeRunnable<T>(c);
+    ComputeRunnable<T> cr = new ComputeRunnable<>(c);
     run(cr);
     return cr.getResult();
   }

@@ -58,9 +58,9 @@ public class TemplateContainer extends RuleConsequenceProcessor {
       return;
     }
     List<SNode> fragments = checkAdjacentFragments();
-    List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>(fragments.size());
+    List<Pair<SNode, String>> result = new ArrayList<>(fragments.size());
     for (SNode fragment : fragments) {
-      result.add(new Pair<SNode, String>(SNodeOperations.getParent(fragment), GeneratorUtilEx.getMappingName_TemplateFragment(fragment, null)));
+      result.add(new Pair<>(SNodeOperations.getParent(fragment), GeneratorUtilEx.getMappingName_TemplateFragment(fragment, null)));
     }
     myNodeAndMappingNamePairs = result;
   }
@@ -70,7 +70,7 @@ public class TemplateContainer extends RuleConsequenceProcessor {
   public List<SNode> processRuleConsequence(@NotNull TemplateContext ctx)
       throws GenerationFailureException, DismissTopMappingRuleException, GenerationCanceledException {
     initialize();
-    ArrayList<SNode> outputNodes = new ArrayList<SNode>();
+    ArrayList<SNode> outputNodes = new ArrayList<>();
     final TemplateExecutionEnvironment environment = ctx.getEnvironment();
     final GenerationTrace tracer = environment.getTrace();
     ITemplateProcessor templateProcessor = environment.getTemplateProcessor();

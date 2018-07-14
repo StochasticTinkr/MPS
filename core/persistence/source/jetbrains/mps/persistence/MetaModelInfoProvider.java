@@ -409,15 +409,15 @@ public interface MetaModelInfoProvider {
    * Depending on actual delegate used, may answer <code>null</code>.
    */
   public static class StuffedMetaModelInfo extends BaseMetaModelInfo {
-    private final Map<SLanguageId, String> myLanguageNames = new HashMap<SLanguageId, String>();
-    private final Map<SConceptId, String> myConceptNames = new HashMap<SConceptId, String>();
-    private final Map<SPropertyId, String> myPropertyNames = new HashMap<SPropertyId, String>();
-    private final Map<SReferenceLinkId, String> myAssociationNames = new HashMap<SReferenceLinkId, String>();
-    private final Map<SContainmentLinkId, String> myAggregationNames = new HashMap<SContainmentLinkId, String>();
-    private final Map<SContainmentLinkId, Boolean> myUnordered = new HashMap<SContainmentLinkId, Boolean>();
-    private final Map<SConceptId, StaticScope> myScope = new HashMap<SConceptId, StaticScope>();
-    private final Map<SConceptId, ConceptKind> myKind = new HashMap<SConceptId, ConceptKind>();
-    private final Map<SConceptId, SConceptId> myStubs = new HashMap<SConceptId, SConceptId>();
+    private final Map<SLanguageId, String> myLanguageNames = new HashMap<>();
+    private final Map<SConceptId, String> myConceptNames = new HashMap<>();
+    private final Map<SPropertyId, String> myPropertyNames = new HashMap<>();
+    private final Map<SReferenceLinkId, String> myAssociationNames = new HashMap<>();
+    private final Map<SContainmentLinkId, String> myAggregationNames = new HashMap<>();
+    private final Map<SContainmentLinkId, Boolean> myUnordered = new HashMap<>();
+    private final Map<SConceptId, StaticScope> myScope = new HashMap<>();
+    private final Map<SConceptId, ConceptKind> myKind = new HashMap<>();
+    private final Map<SConceptId, SConceptId> myStubs = new HashMap<>();
     private final MetaModelInfoProvider myDelegate;
 
     public StuffedMetaModelInfo(@NotNull MetaModelInfoProvider delegate) {

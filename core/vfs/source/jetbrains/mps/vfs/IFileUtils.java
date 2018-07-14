@@ -142,7 +142,7 @@ public class IFileUtils {
     if (!directory.isDirectory()) {
       throw new IllegalArgumentException("Not a directory");
     }
-    List<IFile> result = new ArrayList<IFile>();
+    List<IFile> result = new ArrayList<>();
     collectFiles(directory, result);
     return result;
   }

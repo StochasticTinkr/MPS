@@ -30,7 +30,7 @@ public class DelayedChanges {
 
   private static final String MAP_SRC_TEMP_NODE = "mapSrcTempNode";
 
-  private final List<NodePostProcessor> myPostProcessors = new ArrayList<NodePostProcessor>();
+  private final List<NodePostProcessor> myPostProcessors = new ArrayList<>();
 
   public DelayedChanges() {
   }

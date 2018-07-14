@@ -92,13 +92,13 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   };
 
   private EditorComponent myEditorComponent;
-  private NavigableSet<AbstractFoldingAreaPainter> myFoldingAreaPainters = new TreeSet<AbstractFoldingAreaPainter>(FOLDING_AREA_PAINTERS_COMPARATOR);
+  private NavigableSet<AbstractFoldingAreaPainter> myFoldingAreaPainters = new TreeSet<>(FOLDING_AREA_PAINTERS_COMPARATOR);
   private BracketsPainter myBracketsPainter;
   private FoldingButtonsPainter myFoldingButtonsPainter;
 
-  private List<AbstractLeftColumn> myLeftColumns = new ArrayList<AbstractLeftColumn>();
+  private List<AbstractLeftColumn> myLeftColumns = new ArrayList<>();
 
-  private Set<EditorMessageIconRenderer> myIconRenderers = new HashSet<EditorMessageIconRenderer>();
+  private Set<EditorMessageIconRenderer> myIconRenderers = new HashSet<>();
   private THashMap<EditorMessageIconRenderer, IntLocation> myRendererToCoord;
   private EditorMessageIconRenderer myRendererUnderMouse;
   private int myMaxIconHeight = 0;

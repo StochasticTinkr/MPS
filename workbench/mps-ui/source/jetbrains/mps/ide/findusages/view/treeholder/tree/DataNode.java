@@ -48,7 +48,7 @@ public class DataNode implements IExternalizeable {
   private static final String DATA_CLASS = "data_class";
 
   private BaseNodeData myData;
-  private ArrayList<DataNode> myChildren = new ArrayList<DataNode>();
+  private ArrayList<DataNode> myChildren = new ArrayList<>();
 
   public DataNode(BaseNodeData data) {
     myData = data;

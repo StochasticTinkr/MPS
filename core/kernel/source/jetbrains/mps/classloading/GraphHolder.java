@@ -33,8 +33,8 @@ public class GraphHolder<V> {
   private final Graph<V> myConjugateGraph; // transposed graph
 
   public GraphHolder() {
-    myGraph = new Graph<V>();
-    myConjugateGraph = new Graph<V>();
+    myGraph = new Graph<>();
+    myConjugateGraph = new Graph<>();
   }
 
   public int getEdgesCount() {
@@ -116,7 +116,7 @@ public class GraphHolder<V> {
 
   // TODO : merge with jetbrains.mps.util.Graph (mps.util.Graph needs to be modified for a bit)
   static class Graph<V> {
-    private final Map<V, Set<V>> myOuts = new LinkedHashMap<V, Set<V>>();
+    private final Map<V, Set<V>> myOuts = new LinkedHashMap<>();
     private int myEdgesCount;
 
     public int getEdgesCount() {
@@ -133,7 +133,7 @@ public class GraphHolder<V> {
 
     public boolean addVertex(V v) {
       if (containsVertex(v)) return false;
-      myOuts.put(v, new LinkedHashSet<V>());
+      myOuts.put(v, new LinkedHashSet<>());
       return true;
     }
 
@@ -174,7 +174,7 @@ public class GraphHolder<V> {
     }
 
     public void dfs(Iterable<? extends V> starts, VertexVisitor<V> visitor) {
-      new DfsTraversal<V>(this, starts, visitor).dfs();
+      new DfsTraversal<>(this, starts, visitor).dfs();
     }
 
     public Collection<V> getVertices() {
@@ -183,7 +183,7 @@ public class GraphHolder<V> {
 
     private static class DfsTraversal<V> {
       private final Graph<V> myGraph;
-      private final Set<V> myVisited = new HashSet<V>();
+      private final Set<V> myVisited = new HashSet<>();
       private final Iterable<? extends V> myStartVs;
       private final VertexVisitor<V> myVisitor;
 

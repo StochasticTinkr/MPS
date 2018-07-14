@@ -29,13 +29,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public final class ProjectManager {
   private static final ProjectManager INSTANCE = new ProjectManager();
-  private final List<ProjectManagerListener> myListeners = new CopyOnWriteArrayList<ProjectManagerListener>();
+  private final List<ProjectManagerListener> myListeners = new CopyOnWriteArrayList<>();
 
   public static ProjectManager getInstance() {
     return INSTANCE;
   }
 
-  private final List<Project> myOpenedProjects = new ArrayList<Project>();
+  private final List<Project> myOpenedProjects = new ArrayList<>();
 
   public List<Project> getOpenedProjects() {
     synchronized (myOpenedProjects) {

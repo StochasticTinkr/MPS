@@ -51,10 +51,10 @@ public class ReferencedNodeContext {
   private ReferencedNodeContext(SNode node, ReferencedNodeContext prototype) {
     this(node);
     if (prototype.myContextRoles != null) {
-      myContextRoles = new ArrayList<String>(prototype.myContextRoles);
+      myContextRoles = new ArrayList<>(prototype.myContextRoles);
     }
     if (prototype.myContextRefererNodes != null) {
-      myContextRefererNodes = new ArrayList<SNode>(prototype.myContextRefererNodes);
+      myContextRefererNodes = new ArrayList<>(prototype.myContextRefererNodes);
     }
   }
 
@@ -95,14 +95,14 @@ public class ReferencedNodeContext {
 
   private void addContextRole(String contextRole) {
     if (myContextRoles == null) {
-      myContextRoles = new LinkedList<String>();
+      myContextRoles = new LinkedList<>();
     }
     myContextRoles.add(contextRole);
   }
 
   private void addContextRefererNode(SNode contextRefererNode) {
     if (myContextRefererNodes == null) {
-      myContextRefererNodes = new LinkedList<SNode>();
+      myContextRefererNodes = new LinkedList<>();
     }
     myContextRefererNodes.add(contextRefererNode);
   }

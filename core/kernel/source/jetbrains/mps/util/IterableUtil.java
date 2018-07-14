@@ -36,7 +36,7 @@ public class IterableUtil {
     if (t == null) {
       return Collections.emptyList();
     }
-    return new DistinctIterator<T>(t);
+    return new DistinctIterator<>(t);
   }
 
   @NotNull
@@ -49,10 +49,10 @@ public class IterableUtil {
       return toMerge.get(0);
 
     } else if (toMerge.size() == 2) {
-      return new MergeIterator<T>(toMerge.get(0), toMerge.get(1));
+      return new MergeIterator<>(toMerge.get(0), toMerge.get(1));
 
     }
-    return new FlattenIterable<T>(toMerge);
+    return new FlattenIterable<>(toMerge);
   }
 
   /**
@@ -82,7 +82,7 @@ public class IterableUtil {
     if (iter == null) {
       return Collections.emptySet();
     }
-    Set<T> result = new HashSet<T>();
+    Set<T> result = new HashSet<>();
     for (T o : iter) {
       result.add(o);
     }
@@ -118,7 +118,7 @@ public class IterableUtil {
     if (iter == null) {
       return Collections.emptyList();
     }
-    List<T> result = new ArrayList<T>();
+    List<T> result = new ArrayList<>();
     for (T o : iter) {
       result.add(o);
     }

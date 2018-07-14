@@ -52,7 +52,7 @@ public class TemplateUtil {
       return Collections.emptyList();
     }
 
-    List<SNode> result = new ArrayList<SNode>(nodes.length);
+    List<SNode> result = new ArrayList<>(nodes.length);
     for (SNode node : nodes) {
       if (node != null) {
         result.add(node);
@@ -83,7 +83,7 @@ public class TemplateUtil {
       }
     }
 
-    List<SNode> result = new ArrayList<SNode>(size);
+    List<SNode> result = new ArrayList<>(size);
     for (Object o : nodesOrCollectionOfNodes) {
       if (o instanceof SNode) {
         result.add((SNode) o);

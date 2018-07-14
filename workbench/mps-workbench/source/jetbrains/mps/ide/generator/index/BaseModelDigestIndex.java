@@ -88,7 +88,7 @@ public abstract class BaseModelDigestIndex extends SingleEntryFileBasedIndexExte
 
     @Override
     public Map<String, String> read(@NotNull DataInput input) throws IOException {
-      Map<String, String> result = new HashMap<String, String>();
+      Map<String, String> result = new HashMap<>();
       for (int i = input.readInt(); i > 0; i--) {
         result.put(myInnerExternalizer.read(input), myInnerExternalizer.read(input));
       }

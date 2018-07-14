@@ -67,7 +67,7 @@ public enum LanguageAspect {
   PLUGIN("plugin", null, LanguageAspect.CONFLUENCE_BASE + "Plugin"){
     @Override
     public Collection<SLanguage> getMainLanguages() {
-      ArrayList<SLanguage> result = new ArrayList<SLanguage>();
+      ArrayList<SLanguage> result = new ArrayList<>();
       result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.pluginLanguageRef()));
       result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.aspectLanguageRef()));
       return result;
@@ -172,7 +172,7 @@ public enum LanguageAspect {
   }
 
   public Collection<SLanguage> getMainLanguages() {
-    ArrayList<SLanguage> res = new ArrayList<SLanguage>();
+    ArrayList<SLanguage> res = new ArrayList<>();
     res.add(MetaAdapterFactory.getLanguage(getMainLanguage()));
     return res;
   }
@@ -182,7 +182,7 @@ public enum LanguageAspect {
   //not used in MPS
   //use jetbrains.mps.smodel.language.LanguageAspectSupport.getAspectModels()
   public static Collection<SModel> getAspectModels(Language l) {
-    Set<SModel> result = new HashSet<SModel>();
+    Set<SModel> result = new HashSet<>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
       SModel asp = aspect.get(l);
       if (asp != null) {

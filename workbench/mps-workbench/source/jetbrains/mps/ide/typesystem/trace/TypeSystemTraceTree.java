@@ -79,7 +79,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private Set<SNode> myNodes;
   private TypeSystemTracePanel myParent;
   private EditorComponent myEditorComponent;
-  private List<TypeSystemTraceTreeNode> myErrorNodes = new LinkedList<TypeSystemTraceTreeNode>();
+  private List<TypeSystemTraceTreeNode> myErrorNodes = new LinkedList<>();
   private TypeSystemTraceTree.DetailsTree myDetailsTree;
   private final NodeHighlightManager myHighlightManager;
   private EditorMessageOwner myMessageOwner;
@@ -110,7 +110,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private void initNodes(SNode node) {
-    myNodes = new HashSet<SNode>();
+    myNodes = new HashSet<>();
     myNodes.addAll(SNodeOperations.getNodeDescendants(node, null, false, new SConcept[]{}));
     myNodes.add(node);
   }
@@ -158,7 +158,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       return null;
     }
     final boolean showNode = showNodeRecursively(operation);
-    List<TypeSystemTraceTreeNode> children = new ArrayList<TypeSystemTraceTreeNode>();
+    List<TypeSystemTraceTreeNode> children = new ArrayList<>();
     if (withChildren) {
       for (AbstractOperation consequence : operation.getConsequences()) {
         TypeSystemTraceTreeNode node = create(consequence, false);
@@ -388,7 +388,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private void showDetails(Collection<? extends MPSTreeNode> treeNodes) {
-    List<AbstractOperation> operations = new ArrayList<AbstractOperation>();
+    List<AbstractOperation> operations = new ArrayList<>();
     for (MPSTreeNode treeNode : treeNodes) {
       operations.add(getAssociatedOperation(treeNode));
     }
@@ -415,7 +415,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
           TreePath fromPath = selectionPaths[0];
           TreePath toPath = selectionPaths[selectionPaths.length - 1];
           showState((MPSTreeNode) fromPath.getLastPathComponent(), (MPSTreeNode) toPath.getLastPathComponent());
-          List<MPSTreeNode> selectedNodes = new ArrayList<MPSTreeNode>();
+          List<MPSTreeNode> selectedNodes = new ArrayList<>();
           for (TreePath tp : selectionPaths) {
             selectedNodes.add((MPSTreeNode) tp.getLastPathComponent());
           }
@@ -507,7 +507,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     }
 
     public void setOperations(Collection<? extends AbstractOperation> operation) {
-      this.myOperations = new ArrayList<AbstractOperation>(operation);
+      this.myOperations = new ArrayList<>(operation);
       rebuildNow();
       expandAll();
     }
@@ -516,10 +516,10 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       if (operations == null || operations.size() == 0 || operations.iterator().next() == null) {
         return null;
       }
-      List<MPSTreeNode> result = new ArrayList<MPSTreeNode>();
+      List<MPSTreeNode> result = new ArrayList<>();
       for (AbstractOperation operation : operations) {
         final boolean showNode = showNode(operation);
-        List<MPSTreeNode> children = new ArrayList<MPSTreeNode>();
+        List<MPSTreeNode> children = new ArrayList<>();
         for (AbstractOperation consequence : operation.getConsequences()) {
           Collection<MPSTreeNode> nodes = create(Collections.singletonList(consequence), true);
           if (nodes != null) {

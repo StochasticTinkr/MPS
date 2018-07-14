@@ -55,7 +55,7 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
   private WeakReference<PsiElement> myContext;
 
   public MPSNodeItemProvider(PsiElement context) {
-    myContext = new WeakReference<PsiElement>(context);
+    myContext = new WeakReference<>(context);
   }
 
   @Override
@@ -74,7 +74,7 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
         namePattern.equals("@") && model instanceof GotoClassModel2;    // TODO[yole]: remove implicit dependency
     if (empty && !base.canShowListForEmptyPattern()) return true;
 
-    Set<String> names = new THashSet<String>(Arrays.asList(base.getNames(everywhere)));
+    Set<String> names = new THashSet<>(Arrays.asList(base.getNames(everywhere)));
 
     if (base.isSearchInAnyPlace() && !namePattern.trim().isEmpty()) {
       String middleMatchPattern = "*" + namePattern + (namePattern.endsWith(" ") ? "" : "*");
@@ -116,14 +116,14 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
       Set<String> allNames,
       NameUtil.MatchingCaseSensitivity sensitivity) {
     ChooseByNameModel model = base.getModel();
-    List<String> namesList = new ArrayList<String>();
-    getNamesByPattern(base, new ArrayList<String>(allNames), indicator, namesList, namePattern, sensitivity);
+    List<String> namesList = new ArrayList<>();
+    getNamesByPattern(base, new ArrayList<>(allNames), indicator, namesList, namePattern, sensitivity);
     allNames.removeAll(namesList);
     sortNamesList(namePattern, namesList);
 
     indicator.checkCanceled();
 
-    List<Object> sameNameElements = new SmartList<Object>();
+    List<Object> sameNameElements = new SmartList<>();
     List<Pair<String, MinusculeMatcher>> patternsAndMatchers = getPatternsAndMatchers(qualifierPattern, base);
     int elementsConsumed = 0;
 
@@ -199,7 +199,7 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
 
   @NotNull
   private static List<String> split(@NotNull String s, @NotNull ChooseByNameBase base) {
-    List<String> answer = new ArrayList<String>();
+    List<String> answer = new ArrayList<>();
     for (String token : StringUtil.tokenize(s, StringUtil.join(base.getModel().getSeparators(), ""))) {
       if (!token.isEmpty()) {
         answer.add(token);
@@ -258,7 +258,7 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
   @NotNull
   @Override
   public List<String> filterNames(@NotNull ChooseByNameBase base, @NotNull String[] names, @NotNull String pattern) {
-    List<String> res = new ArrayList<String>();
+    List<String> res = new ArrayList<>();
     getNamesByPattern(base, Arrays.asList(names), null, res, pattern, NameUtil.MatchingCaseSensitivity.NONE);
     return res;
   }

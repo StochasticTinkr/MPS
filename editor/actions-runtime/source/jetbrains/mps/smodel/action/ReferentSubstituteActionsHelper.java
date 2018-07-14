@@ -75,7 +75,7 @@ import java.util.List;
 
     final SAbstractConcept targetConcept = association.getTargetConcept();
     Iterable<SNode> nodes = descriptor.getScope().getAvailableElements(null);
-    List<SubstituteAction> actions = new ArrayList<SubstituteAction>();
+    List<SubstituteAction> actions = new ArrayList<>();
     for (SNode node : nodes) {
       if (node == null || !node.getConcept().isSubConceptOf(targetConcept)) {
         continue;

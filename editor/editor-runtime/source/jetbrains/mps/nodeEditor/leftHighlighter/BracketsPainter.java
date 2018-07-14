@@ -36,7 +36,7 @@ import java.util.Stack;
  */
 public class BracketsPainter extends AbstractFoldingAreaPainter {
   private int myAreaWidth = -1;
-  private HashMap<CellInfo, HighlighterBracket> myBrackets = new HashMap<CellInfo, HighlighterBracket>();
+  private HashMap<CellInfo, HighlighterBracket> myBrackets = new HashMap<>();
   private boolean myRightToLeft;
 
   public BracketsPainter(LeftEditorHighlighter leftEditorHighlighter, boolean rightToLeft) {
@@ -75,7 +75,7 @@ public class BracketsPainter extends AbstractFoldingAreaPainter {
       }
     }
 
-    List<BracketEdge> bracketEdges = new ArrayList<BracketEdge>();
+    List<BracketEdge> bracketEdges = new ArrayList<>();
     for (HighlighterBracket bracket : myBrackets.values()) {
       bracket.setLevel(1);
       bracketEdges.add(bracket.getBeginningEdge());
@@ -84,7 +84,7 @@ public class BracketsPainter extends AbstractFoldingAreaPainter {
     Collections.sort(bracketEdges);
 
     int maxLevel = 0;
-    Stack<HighlighterBracket> myBracketsLayoutStack = new Stack<HighlighterBracket>();
+    Stack<HighlighterBracket> myBracketsLayoutStack = new Stack<>();
     for (int i = 0; i < bracketEdges.size(); i++) {
       BracketEdge edge = bracketEdges.get(i);
       HighlighterBracket bracket = edge.getBracket();

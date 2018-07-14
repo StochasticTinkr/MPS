@@ -41,7 +41,7 @@ public class InOrderSorter<T extends OrderParticipant<String>> {
       return Math.max(r1, -r2);
     };
 
-    MultiMap<T, T> greater = new SetBasedMultiMap<T, T>();
+    MultiMap<T, T> greater = new SetBasedMultiMap<>();
     for (T item1: myItems) {
       for (T item2: myItems) {
         if (sourceIndependent.compare(item1, item2) > 0) {
@@ -54,7 +54,7 @@ public class InOrderSorter<T extends OrderParticipant<String>> {
       do {
         changed = false;
         for (T item1 : myItems) {
-          for (T item2 : new ArrayList<T>(greater.get(item1))) {
+          for (T item2 : new ArrayList<>(greater.get(item1))) {
             Collection<T> toAdd = greater.get(item2);
             changed |= !greater.get(item1).containsAll(toAdd);
             greater.putValues(item1, toAdd);

@@ -329,7 +329,7 @@ public class GeneratorPrioritiesTree {
 
   private static void checkChildren(CheckboxTree checkboxTree) {
     if(checkboxTree.getModel().getRoot() instanceof CheckedTreeNodeEx) {
-      Queue<CheckedTreeNodeEx> treeNodes = new LinkedList<CheckedTreeNodeEx>();
+      Queue<CheckedTreeNodeEx> treeNodes = new LinkedList<>();
       treeNodes.add((CheckedTreeNodeEx) checkboxTree.getModel().getRoot());
       while (!treeNodes.isEmpty()) {
         CheckedTreeNodeEx treeNode = treeNodes.poll();
@@ -375,7 +375,7 @@ public class GeneratorPrioritiesTree {
     }
 
     /*package*/ List<CheckedTreeNodeEx> getChildrenWithChecks() {
-      List<CheckedTreeNodeEx> result = new ArrayList<CheckedTreeNodeEx>();
+      List<CheckedTreeNodeEx> result = new ArrayList<>();
       Enumeration children = children();
       while (children.hasMoreElements()) {
         CheckedTreeNodeEx child = (CheckedTreeNodeEx) children.nextElement();

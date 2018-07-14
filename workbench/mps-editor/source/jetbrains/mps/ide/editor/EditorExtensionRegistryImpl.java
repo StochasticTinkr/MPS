@@ -31,7 +31,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 public class EditorExtensionRegistryImpl implements EditorExtensionRegistry, ProjectComponent {
-  private final Set<EditorExtension> myExtensions = new HashSet<EditorExtension>();
+  private final Set<EditorExtension> myExtensions = new HashSet<>();
   private final MultiMap<EditorComponent, EditorExtension> myEditorExtensions = MultiMap.create();
   private final EditorDisposeListener myUnextendOnEditorDisposeListener = new UnextendOnEditorDisposeListener();
 
@@ -105,7 +105,7 @@ public class EditorExtensionRegistryImpl implements EditorExtensionRegistry, Pro
   }
 
   private Collection<EditorExtension> getApplicableExtensions(EditorComponent editorComponent) {
-    Collection<EditorExtension> applicableExtensions = new ArrayList<EditorExtension>(myExtensions.size());
+    Collection<EditorExtension> applicableExtensions = new ArrayList<>(myExtensions.size());
     for (EditorExtension extension : myExtensions) {
       if (extension.isApplicable(editorComponent)) {
         applicableExtensions.add(extension);

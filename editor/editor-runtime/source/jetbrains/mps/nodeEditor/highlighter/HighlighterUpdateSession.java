@@ -85,11 +85,11 @@ public class HighlighterUpdateSession {
       return;
     }
 
-    List<Pair<EditorComponent, Boolean>> input = new ArrayList<Pair<EditorComponent, Boolean>>();
-    HashSet<SNodePointer> visited = new HashSet<SNodePointer>();
+    List<Pair<EditorComponent, Boolean>> input = new ArrayList<>();
+    HashSet<SNodePointer> visited = new HashSet<>();
     for (EditorComponent ecomp : myAllEditorComponents) {
       SNodePointer pointer = new SNodePointer(ecomp.getNodeForTypechecking());
-      input.add(new Pair<EditorComponent, Boolean>(ecomp, !visited.contains(pointer)));
+      input.add(new Pair<>(ecomp, !visited.contains(pointer)));
       visited.add(pointer);
     }
 

@@ -114,7 +114,7 @@ public class WeaveTemplateContainer {
       }
     }
     if (!sameParent) {
-      List<ProblemDescription> list = new ArrayList<ProblemDescription>();
+      List<ProblemDescription> list = new ArrayList<>();
       for (SNode templateFragment : templateFragments) {
         list.add(GeneratorUtil.describe(templateFragment, "template fragment"));
       }

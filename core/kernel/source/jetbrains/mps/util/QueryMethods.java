@@ -39,7 +39,7 @@ public class QueryMethods {
   public QueryMethods(@NotNull Class<?> queriesClass) {
     myQueriesClass = queriesClass;
     // to avoid extra synchronization, populate at construction time
-    HashMap<String, Method> methods = new HashMap<String, Method>();
+    HashMap<String, Method> methods = new HashMap<>();
     for (Method declaredMethod : myQueriesClass.getDeclaredMethods()) {
       if (!Modifier.isPublic(declaredMethod.getModifiers())) {
         continue;

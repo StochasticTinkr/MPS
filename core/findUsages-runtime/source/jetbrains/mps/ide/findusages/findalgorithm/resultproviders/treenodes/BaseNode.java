@@ -42,7 +42,7 @@ public abstract class BaseNode implements IResultProvider {
   private static final Logger LOG = LogManager.getLogger(BaseNode.class);
   private static final String CHILDREN = "children";
   protected BaseNode myParent;
-  protected List<BaseNode> myChildren = new ArrayList<BaseNode>();
+  protected List<BaseNode> myChildren = new ArrayList<>();
 
   public BaseNode() {
 
@@ -104,7 +104,7 @@ public abstract class BaseNode implements IResultProvider {
       }
     }
     if (error) {
-      List<SearchResult> newResults = new ArrayList<SearchResult>();
+      List<SearchResult> newResults = new ArrayList<>();
       for (SearchResult result : (List<SearchResult>) results.getSearchResults()) {
         if (result.getObject() != null) {
           newResults.add(result);

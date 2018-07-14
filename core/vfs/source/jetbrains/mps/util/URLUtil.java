@@ -95,7 +95,7 @@ public class URLUtil {
     while (i < len) {
       char c = s.charAt(i);
       if (c == '%') {
-        List<Integer> bytes = new ArrayList<Integer>();
+        List<Integer> bytes = new ArrayList<>();
         while (i + 2 < len && s.charAt(i) == '%') {
           final int d1 = decode(s.charAt(i + 1));
           final int d2 = decode(s.charAt(i + 2));
@@ -152,7 +152,7 @@ public class URLUtil {
       }
     }
 
-    return new Pair<String, String>(jarPath, resourcePath);
+    return new Pair<>(jarPath, resourcePath);
   }
 
   private static int decode(char c) {

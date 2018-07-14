@@ -110,7 +110,7 @@ final class ChooserDialog<T> extends DialogWrapper {
     if (myIsCancelled || mySelectedElements == null) {
       return Collections.emptyList();
     }
-    List<T> result = new ArrayList<T>();
+    List<T> result = new ArrayList<>();
     for (Object item : mySelectedElements) {
       if (item != null) {
         @SuppressWarnings("unchecked")

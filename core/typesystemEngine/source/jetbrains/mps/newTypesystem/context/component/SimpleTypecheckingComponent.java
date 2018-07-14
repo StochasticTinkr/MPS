@@ -52,12 +52,12 @@ import java.util.Set;
 /*package*/ public class SimpleTypecheckingComponent<STATE extends State> {
 
   private final STATE myState;
-  protected Queue<SNode> myQueue = new LinkedList<SNode>();
+  protected Queue<SNode> myQueue = new LinkedList<>();
   protected boolean myIsChecked = false;
   protected BaseTypechecking<?, ?> myTypechecking;
-  protected Set<SNode> myNodes = new THashSet<SNode>();
-  protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
-  protected Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
+  protected Set<SNode> myNodes = new THashSet<>();
+  protected Set<SNode> myFullyCheckedNodes = new THashSet<>(); //nodes which are checked with their children
+  protected Set<SNode> myPartlyCheckedNodes = new THashSet<>(); // nodes which are checked themselves but not children
 
 
   public SimpleTypecheckingComponent(STATE state, BaseTypechecking component) {
@@ -164,7 +164,7 @@ import java.util.Set;
    * @return
    */
   protected boolean applyRulesToNode(SNode node) {
-    final List<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>> nodesAndRules = new ArrayList<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>>();
+    final List<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>> nodesAndRules = new ArrayList<>();
 
     if (!collectNodesAndRules(node, nodesAndRules)) return false;
 
@@ -194,7 +194,7 @@ import java.util.Set;
     for (SNode nodeOrAttr : myTypechecking.nodesToApplyRulesTo(node)) {
       List<Pair<InferenceRule_Runtime, IsApplicableStatus>> rules = TypeChecker.getInstance().getRulesManager().getInferenceRules(nodeOrAttr);
       if (rules != null && !rules.isEmpty()) {
-        nodesAndRules.add(new Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>(nodeOrAttr, rules));
+        nodesAndRules.add(new Pair<>(nodeOrAttr, rules));
 
         // check if the last rule applicable to an attribute supercedes the rules that may follow (last one wins)
         // this has no effect if we're looking at the attributed node
@@ -227,7 +227,7 @@ import java.util.Set;
       if (myFullyCheckedNodes.contains(sNode) || !TypeSystemUtil.shouldApplyTypeSystemRules(sNode)) {
         continue;
       }
-      Set<SNode> candidatesForFrontier = new LinkedHashSet<SNode>();
+      Set<SNode> candidatesForFrontier = new LinkedHashSet<>();
       if (forceChildrenCheck) {
         candidatesForFrontier.addAll(IterableUtil.asCollection(sNode.getChildren()));
       }

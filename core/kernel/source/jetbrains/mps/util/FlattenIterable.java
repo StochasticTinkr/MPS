@@ -29,15 +29,15 @@ public class FlattenIterable<T> implements Iterable<T> {
   private Collection<Iterable<T>> myContent;
 
   public FlattenIterable() {
-    myContent = new ArrayList<Iterable<T>>();
+    myContent = new ArrayList<>();
   }
 
   public FlattenIterable(int initialCapacity) {
-    myContent = new ArrayList<Iterable<T>>(initialCapacity);
+    myContent = new ArrayList<>(initialCapacity);
   }
 
   public FlattenIterable(Collection<? extends Iterable<T>> content) {
-    myContent = new ArrayList<Iterable<T>>(content);
+    myContent = new ArrayList<>(content);
   }
 
   public void add(Iterable<T> e) {

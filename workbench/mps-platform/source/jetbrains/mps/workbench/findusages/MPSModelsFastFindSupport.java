@@ -98,7 +98,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
 
   private <T> MultiMap<SModel, T> findCandidates(Collection<SModel> models, Set<T> elems, Consumer<SModel> processedModels, Function<T, UsageEntry> id) {
     // get all files in scope
-    final ManyToManyMap<SModel, VirtualFile> scopeFiles = new ManyToManyMap<SModel, VirtualFile>();
+    final ManyToManyMap<SModel, VirtualFile> scopeFiles = new ManyToManyMap<>();
     for (final SModel sm : models) {
       if (sm instanceof EditableSModel && ((EditableSModel) sm).isChanged()) {
         continue;
@@ -138,7 +138,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
     // filter files with usages
     ConcreteFilesGlobalSearchScope allFiles = new ConcreteFilesGlobalSearchScope(scopeFiles.getSecond());
     // process indexes
-    MultiMap<SModel, T> result = new SetBasedMultiMap<SModel, T>();
+    MultiMap<SModel, T> result = new SetBasedMultiMap<>();
     for (T elem : elems) {
       UsageEntry entry = id.apply(elem);
 

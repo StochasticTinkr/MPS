@@ -29,7 +29,7 @@ import java.util.List;
  * Facilitate navigation to different kinds of {@link IMessage#getHintObject() hint objects} from {@link IMessage}.
  */
 public class NavigationManager extends AbstractProjectComponent {
-  private final List<NavigatableFactory> myHandlers = new ArrayList<NavigatableFactory>();
+  private final List<NavigatableFactory> myHandlers = new ArrayList<>();
 
   public NavigationManager(Project ideaProject, MPSProject mpsProject) {
     super(ideaProject);
@@ -64,7 +64,7 @@ public class NavigationManager extends AbstractProjectComponent {
   }
 
   private List<NavigatableFactory> getHandlers(Object o) {
-    ArrayList<NavigatableFactory> result = new ArrayList<NavigatableFactory>(4);
+    ArrayList<NavigatableFactory> result = new ArrayList<>(4);
     for (NavigatableFactory f : myHandlers) {
       if (f.canCreate(o)) {
         result.add(f);

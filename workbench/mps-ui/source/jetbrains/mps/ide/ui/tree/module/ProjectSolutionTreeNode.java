@@ -77,9 +77,9 @@ public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
-    List<SModel> regularModels = new ArrayList<SModel>();
-    List<SModel> tests = new ArrayList<SModel>();
-    List<SModel> stubs = new ArrayList<SModel>();
+    List<SModel> regularModels = new ArrayList<>();
+    List<SModel> tests = new ArrayList<>();
+    List<SModel> stubs = new ArrayList<>();
 
     for (SModel modelDescriptor : getModule().getModels()) {
       if (TemporaryModels.isTemporary(modelDescriptor)) continue;

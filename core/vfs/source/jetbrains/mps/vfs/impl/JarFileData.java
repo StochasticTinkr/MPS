@@ -95,12 +95,12 @@ class JarFileData extends AbstractJarFileData {
   }
 
   private Set<String> getDirectoriesFor(String dir) {
-    mySubDirectories.putIfAbsent(dir, new HashSet<String>());
+    mySubDirectories.putIfAbsent(dir, new HashSet<>());
     return mySubDirectories.get(dir);
   }
 
   private Set<String> getFilesFor(String dir) {
-    myFiles.putIfAbsent(dir, new HashSet<String>());
+    myFiles.putIfAbsent(dir, new HashSet<>());
     return myFiles.get(dir);
   }
 

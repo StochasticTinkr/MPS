@@ -55,7 +55,7 @@ public abstract class BaseTypechecking<STATE extends State, COMP extends SimpleT
 
   @SuppressWarnings("unchecked")
   protected COMP createTypecheckingComponent() {
-    return (COMP) new SimpleTypecheckingComponent<STATE>(getState(), this);
+    return (COMP) new SimpleTypecheckingComponent<>(getState(), this);
   }
 
   public SNode getNode() {
@@ -87,7 +87,7 @@ public abstract class BaseTypechecking<STATE extends State, COMP extends SimpleT
   public List<IErrorReporter> getErrors(SNode node) {
     Map<SNode, List<IErrorReporter>> nodesToErrorsMap = getTypecheckingComponent().getNodesToErrorsMap();
 
-    List<IErrorReporter> result = new ArrayList<IErrorReporter>(4);
+    List<IErrorReporter> result = new ArrayList<>(4);
     List<IErrorReporter> iErrorReporters = nodesToErrorsMap.get(node);
     if (iErrorReporters != null) {
       result.addAll(iErrorReporters);
@@ -113,14 +113,14 @@ public abstract class BaseTypechecking<STATE extends State, COMP extends SimpleT
 
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors(boolean typesystemErrors) {
     Map<SNode, List<IErrorReporter>> nodesToErrorsMap = getTypecheckingComponent().getNodesToErrorsMap();
-    Set<SNode> keySet = new THashSet<SNode>(nodesToErrorsMap.keySet());
+    Set<SNode> keySet = new THashSet<>(nodesToErrorsMap.keySet());
 
-    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(1);
+    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<>(1);
     for (SNode key : keySet) {
       List<IErrorReporter> reporters = nodesToErrorsMap.get(key);
       if (!reporters.isEmpty()) {
         key.getContainingRoot();
-        result.add(new Pair<SNode, List<IErrorReporter>>(key, reporters));
+        result.add(new Pair<>(key, reporters));
       }
     }
     return result;
@@ -149,7 +149,7 @@ public abstract class BaseTypechecking<STATE extends State, COMP extends SimpleT
   public List<SNode> nodesToApplyRulesTo(SNode attributedNode) {
     if (attributedNode == null) return Collections.emptyList();
 
-    ArrayList<SNode> nodesToTest = new ArrayList<SNode>(AttributeOperations.getAllAttributes(attributedNode));
+    ArrayList<SNode> nodesToTest = new ArrayList<>(AttributeOperations.getAllAttributes(attributedNode));
     nodesToTest.add(attributedNode);
 
     return nodesToTest;

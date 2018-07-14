@@ -45,7 +45,7 @@ public class BatchEventsProcessor {
 
   private static final Object LOCK = new Object();
 
-  private final List<SRepositoryEvent> myEvents = new ArrayList<SRepositoryEvent>();
+  private final List<SRepositoryEvent> myEvents = new ArrayList<>();
 
   private final SRepositoryListener myRepositoryListener = new MySRepositoryListener();
 

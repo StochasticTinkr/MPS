@@ -27,11 +27,11 @@ public class ConcurrentHashSet<K> implements Set<K> {
   private final ConcurrentMap<K, Boolean> map;
 
   public ConcurrentHashSet(int initialCapacity) {
-    map = new ConcurrentHashMap<K, Boolean>(initialCapacity);
+    map = new ConcurrentHashMap<>(initialCapacity);
   }
 
   public ConcurrentHashSet() {
-    map = new ConcurrentHashMap<K, Boolean>();
+    map = new ConcurrentHashMap<>();
   }
 
   @Override

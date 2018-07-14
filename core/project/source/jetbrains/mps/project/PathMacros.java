@@ -28,8 +28,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class PathMacros implements CoreComponent {
   private static PathMacros INSTANCE;
 
-  private List<PathMacrosProvider> myMacrosProviders = new CopyOnWriteArrayList<PathMacrosProvider>();
-  private Set<String> reported = new HashSet<String>();
+  private List<PathMacrosProvider> myMacrosProviders = new CopyOnWriteArrayList<>();
+  private Set<String> reported = new HashSet<>();
 
   /**
    * @deprecated it is a CoreComponent, one can get it from MPSPlatform
@@ -68,7 +68,7 @@ public class PathMacros implements CoreComponent {
         continue;
       }
       if (!modifiable) {
-        result = new HashSet<String>(result);
+        result = new HashSet<>(result);
         modifiable = true;
       }
       result.addAll(pnames);
@@ -87,7 +87,7 @@ public class PathMacros implements CoreComponent {
         continue;
       }
       if (!modifiable) {
-        result = new HashSet<String>(result);
+        result = new HashSet<>(result);
         modifiable = true;
       }
       result.addAll(pnames);

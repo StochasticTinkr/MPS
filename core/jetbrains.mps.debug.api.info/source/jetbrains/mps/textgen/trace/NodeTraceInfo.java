@@ -87,7 +87,7 @@ public final class NodeTraceInfo {
     if (positionInfo == null) {
       return null;
     }
-    ArrayList<UnitPositionInfo> rv = new ArrayList<UnitPositionInfo>();
+    ArrayList<UnitPositionInfo> rv = new ArrayList<>();
     for (UnitPositionInfo pi : myRootInfo.getUnitPositions()) {
       if (pi.contains(positionInfo)) {
         rv.add(pi);

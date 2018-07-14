@@ -113,7 +113,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
       @NotNull BehaviorRegistry registry,
       List<SParameter> parameters)
   {
-    return new SMethodImpl<T>(methodName, modifiers, returnType, concept, id, registry, parameters);
+    return new SMethodImpl<>(methodName, modifiers, returnType, concept, id, registry, parameters);
   }
 
   @Override

@@ -306,7 +306,7 @@ public class SearchPanel extends AbstractSearchPanel {
   }
 
   private List<SearchPanelEditorMessage> getMessages() {
-    final List<SearchPanelEditorMessage> searchMessages = new ArrayList<SearchPanelEditorMessage>();
+    final List<SearchPanelEditorMessage> searchMessages = new ArrayList<>();
     if (myEditor == null) {
       return searchMessages;
     }

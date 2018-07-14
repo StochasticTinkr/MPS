@@ -285,7 +285,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
 
   protected class HistoryCompletionTextField extends CompletionTextField {
     private final int myPossibleValuesLimit = 30;
-    private List<String> myPossibleValues = new ArrayList<String>();
+    private List<String> myPossibleValues = new ArrayList<>();
 
     public HistoryCompletionTextField() {
       super();
@@ -332,7 +332,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
       getTemplatePresentation().setDescription("Search history");
       getTemplatePresentation().setText("Search History");
 
-      ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
+      ArrayList<Shortcut> shortcuts = new ArrayList<>();
       shortcuts.addAll(getActionShortcuts(MPSActions.EDITOR_FIND));
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_H, KeyEvent.CTRL_DOWN_MASK), null));
 
@@ -358,7 +358,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
       getTemplatePresentation().setDescription("Previous Occurrence");
       getTemplatePresentation().setText("Previous Occurrence");
 
-      ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
+      ArrayList<Shortcut> shortcuts = new ArrayList<>();
       shortcuts.addAll(getActionShortcuts(MPSActions.EDITOR_FIND_PREVIOUS));
       shortcuts.addAll(getActionShortcuts(IdeActions.ACTION_EDITOR_MOVE_CARET_UP));
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, KeyEvent.SHIFT_DOWN_MASK), null));
@@ -385,7 +385,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
       getTemplatePresentation().setDescription("Next Occurrence");
       getTemplatePresentation().setText("Next Occurrence");
 
-      ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
+      ArrayList<Shortcut> shortcuts = new ArrayList<>();
       shortcuts.addAll(getActionShortcuts(MPSActions.EDITOR_FIND_NEXT));
       shortcuts.addAll(getActionShortcuts(IdeActions.ACTION_EDITOR_MOVE_CARET_DOWN));
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), null));

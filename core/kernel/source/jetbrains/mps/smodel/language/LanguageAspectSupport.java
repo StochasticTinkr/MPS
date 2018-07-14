@@ -57,7 +57,7 @@ public class LanguageAspectSupport {
   public static Collection<SModel> getAspectModels(@NotNull SModule language) {
     assert language instanceof Language;
     //as soon as this class is API-like, it's not good to have Language parameter here as in API we work with SModule
-    LinkedHashSet<SModel> result = new LinkedHashSet<SModel>();
+    LinkedHashSet<SModel> result = new LinkedHashSet<>();
     for (LanguageAspectDescriptor d : collectAspects()) {
       result.addAll(d.getAspectModels(language));
     }

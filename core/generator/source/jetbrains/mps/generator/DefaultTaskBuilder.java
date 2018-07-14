@@ -38,7 +38,7 @@ import java.util.Map;
  * @since 3.4
  */
 public class DefaultTaskBuilder<T extends GeneratorTask> {
-  private final Map<SModule, List<SModel>> myModuleSequence = new LinkedHashMap<SModule, List<SModel>>();
+  private final Map<SModule, List<SModel>> myModuleSequence = new LinkedHashMap<>();
   private final Factory<T> myFactory;
 
   public DefaultTaskBuilder(@NotNull Factory<T> factory) {
@@ -46,7 +46,7 @@ public class DefaultTaskBuilder<T extends GeneratorTask> {
   }
 
   public List<T> getResult() {
-    ArrayList<T> rv = new ArrayList<T>();
+    ArrayList<T> rv = new ArrayList<>();
     for (List<SModel> step : myModuleSequence.values()) {
       for (SModel m : topoOrder(step)) {
         rv.add(myFactory.create(m));
@@ -60,7 +60,7 @@ public class DefaultTaskBuilder<T extends GeneratorTask> {
       SModule module = inputModel.getModule();
       List<SModel> models = myModuleSequence.get(module);
       if (models == null) {
-        myModuleSequence.put(module, models = new ArrayList<SModel>(5));
+        myModuleSequence.put(module, models = new ArrayList<>(5));
       }
       models.add(inputModel);
     }
@@ -68,8 +68,8 @@ public class DefaultTaskBuilder<T extends GeneratorTask> {
 
   private static List<SModel> topoOrder(List<SModel> inputModels) {
     int[][] graph = new int[inputModels.size()][];
-    HashMap<SModelReference, Integer> vertex2Index = new HashMap<SModelReference, Integer>(graph.length * 2);
-    HashMap<SModelReference, SModel> vertex2InputModel = new HashMap<SModelReference, SModel>(graph.length * 2);
+    HashMap<SModelReference, Integer> vertex2Index = new HashMap<>(graph.length * 2);
+    HashMap<SModelReference, SModel> vertex2InputModel = new HashMap<>(graph.length * 2);
     for (int i = 0; i < graph.length; i++) {
       final SModel inputModel = inputModels.get(i);
       final SModelReference ref = inputModel.getReference();
@@ -94,7 +94,7 @@ public class DefaultTaskBuilder<T extends GeneratorTask> {
 
     final int[][] strongComponents = GraphUtil.tarjan(graph);
 
-    List<SModelReference[]> components = new ArrayList<SModelReference[]>(strongComponents.length);
+    List<SModelReference[]> components = new ArrayList<>(strongComponents.length);
     for (int i = 0; i < strongComponents.length; i++) {
       SModelReference[] x = new SModelReference[strongComponents[i].length];
       for (int j = 0; j < x.length; j++) {
@@ -104,7 +104,7 @@ public class DefaultTaskBuilder<T extends GeneratorTask> {
       components.add(x);
     }
     // flatten components into plain list
-    ArrayList<SModel> rv = new ArrayList<SModel>(inputModels.size());
+    ArrayList<SModel> rv = new ArrayList<>(inputModels.size());
     for (SModelReference[] mrs : components) {
       for (SModelReference mr : mrs) {
         assert vertex2InputModel.containsKey(mr);

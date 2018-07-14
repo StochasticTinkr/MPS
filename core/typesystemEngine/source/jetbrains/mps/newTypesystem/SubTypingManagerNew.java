@@ -93,9 +93,9 @@ public class SubTypingManagerNew extends SubtypingManager {
               InequationReplacementRule_Runtime rule = pair.o1;
               IsApplicable2Status status = pair.o2;
               boolean affirmative = rule.checkInequation(subType, superType, status, isWeak);
-              return new Pair<Boolean, Boolean>(affirmative, true);
+              return new Pair<>(affirmative, true);
             }
-            return new Pair<Boolean, Boolean>(false, false);
+            return new Pair<>(false, false);
           }
         });
   }
@@ -194,7 +194,7 @@ public class SubTypingManagerNew extends SubtypingManager {
       return types;
     }
     List<SNode> typesList = SubtypingUtil.eliminateSubTypes(types);
-    return new HashSet<SNode>(SubtypingUtil.leastCommonSuperTypes(typesList, null));
+    return new HashSet<>(SubtypingUtil.leastCommonSuperTypes(typesList, null));
   }
 
   public static Collection<SLanguage> collectLanguagesRecursively(SNode... type) {

@@ -35,7 +35,7 @@ import java.util.Set;
 
 public abstract class SReference implements org.jetbrains.mps.openapi.model.SReference {
   public static final SReference[] EMPTY_ARRAY = new SReference[0];
-  private static final Set<SReference> ourErrorReportedRefs = new WeakSet<SReference>();
+  private static final Set<SReference> ourErrorReportedRefs = new WeakSet<>();
   private final static ThreadLocal<Boolean> ourLoggingOff = new ThreadLocal<Boolean>() {
     @Override
     protected Boolean initialValue() {

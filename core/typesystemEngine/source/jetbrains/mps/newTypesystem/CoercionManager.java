@@ -57,7 +57,7 @@ public class CoercionManager {
       return null;
     }
     if (CoerceUtil.concept_MeetType.equals(subtype.getConcept())) {
-      List<SNode> children = new ArrayList<SNode>(IterableUtil.asCollection(subtype.getChildren(CoerceUtil.link_MeetType_argument)));
+      List<SNode> children = new ArrayList<>(IterableUtil.asCollection(subtype.getChildren(CoerceUtil.link_MeetType_argument)));
       for (SNode child : children) {
         SNode result = coerceSubTypingNew(child, pattern, isWeak, context);
         if (result != null) {
@@ -67,7 +67,7 @@ public class CoercionManager {
       return null;
     }
     if (CoerceUtil.concept_JoinType.equals(subtype.getConcept())) {
-      List<SNode> children = new ArrayList<SNode>(IterableUtil.asCollection(subtype.getChildren(CoerceUtil.link_JoinType_argument)));
+      List<SNode> children = new ArrayList<>(IterableUtil.asCollection(subtype.getChildren(CoerceUtil.link_JoinType_argument)));
 
       SNode lcs = SubtypingUtil.createLeastCommonSupertype(children, context);
       return coerceSubTypingNew(lcs, pattern, isWeak, context);
@@ -111,7 +111,7 @@ public class CoercionManager {
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
     frontier.add(subType);
     while (!frontier.isEmpty()) {
-      Set<SNode> yetPassedRaw = new THashSet<SNode>();
+      Set<SNode> yetPassedRaw = new THashSet<>();
       //collecting a set of frontier's ancestors
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
@@ -119,14 +119,14 @@ public class CoercionManager {
         yetPassedRaw.add(node);
       }
       ArrayList<SNode> ancestorsSorted;
-      ancestorsSorted = new ArrayList<SNode>(ancestors);
+      ancestorsSorted = new ArrayList<>(ancestors);
       Collections.sort(ancestorsSorted, new Comparator<SNode>() {
         @Override
         public int compare(SNode o1, SNode o2) {
           return TypesUtil.depth(o2) - TypesUtil.depth(o1);
         }
       });
-      List<SNode> results = new ArrayList<SNode>();
+      List<SNode> results = new ArrayList<>();
       for (SNode ancestor : ancestorsSorted) {
         if (superType.matchesWith(ancestor)) {
           results.add(ancestor);

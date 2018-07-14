@@ -55,7 +55,7 @@ public abstract class BaseDirectoryIndexExcludePolicy implements DirectoryIndexE
   @Override
   public VirtualFilePointer[] getExcludeRootsForModule(@NotNull ModuleRootModel rootModel) {
     Set<VirtualFile> roots = getAllExcludeRoots();
-    ArrayList<VirtualFilePointer> filePointers = new ArrayList<VirtualFilePointer>();
+    ArrayList<VirtualFilePointer> filePointers = new ArrayList<>();
     for (VirtualFile root : roots) {
       filePointers.add(VirtualFilePointerManager.getInstance().create(root, myProject, null));
     }

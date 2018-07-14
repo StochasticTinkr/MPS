@@ -224,7 +224,7 @@ public class ValidationUtil {
         final SModelReference plan = ((DevKit) devkitModule).getModuleDescriptor().getAssociatedGenPlan();
         if (plan != null) {
           if (devkitAssociatedPlan == null) {
-            devkitAssociatedPlan = new Pair<DevKit, SModelReference>((DevKit) devkitModule, plan);
+            devkitAssociatedPlan = new Pair<>((DevKit) devkitModule, plan);
           } else {
             String m = String.format("Both devkit %s and %s supply generation plan, ", devkitModule.getModuleName(), devkitAssociatedPlan.o1.getModuleName());
             processor.process(new ModelValidationProblem(model, MessageStatus.ERROR, m));
@@ -313,7 +313,7 @@ public class ValidationUtil {
       return;
     }
 
-    Set<SLanguage> usedLanguages = new HashSet<SLanguage>();
+    Set<SLanguage> usedLanguages = new HashSet<>();
     ModelDependencyScanner depScan = new ModelDependencyScanner();
     depScan.crossModelReferences(true).usedLanguages(false);
     // dependencies check is meaningless if we didn't collect cross-generator references.
@@ -376,7 +376,7 @@ public class ValidationUtil {
 
   //returns true to continue analysing, false to stop
   private static boolean warnStrictGeneratorDependencies(Generator generator, ModelDependencyScanner dependencies, Processor<? super ModuleValidationProblem> processor) {
-    HashSet<SModule> seen = new HashSet<SModule>();
+    HashSet<SModule> seen = new HashSet<>();
     for (SDependency dep : generator.getDeclaredDependencies()) {
       SModule depTarget = dep.getTarget();
       if (depTarget == null ||
@@ -389,7 +389,7 @@ public class ValidationUtil {
         continue;
       }
 
-      HashSet<SModelReference> otherGeneratorModels = new HashSet<SModelReference>();
+      HashSet<SModelReference> otherGeneratorModels = new HashSet<>();
       for (SModel m : depTarget.getModels()) {
         otherGeneratorModels.add(m.getReference());
       }
@@ -420,7 +420,7 @@ public class ValidationUtil {
       return true;
     }
 
-    final HashSet<SModuleReference> compileTimeDeps = new HashSet<SModuleReference>();
+    final HashSet<SModuleReference> compileTimeDeps = new HashSet<>();
     /*
      * Shall not use GMDM(module).getModules(COMPILE), as it gives a set of classpath dependencies required to build given module, NOT cp dependencies to build
      * modules using this language! E.g. see https://youtrack.jetbrains.com/issue/MPS-22857

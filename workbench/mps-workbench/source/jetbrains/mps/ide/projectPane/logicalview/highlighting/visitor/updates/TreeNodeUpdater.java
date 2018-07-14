@@ -31,7 +31,7 @@ public final class TreeNodeUpdater {
   private final Timer myTimer;
   private final Project myProject;
   private final Semaphore myGuard = new Semaphore(1);
-  private Queue<Pair<MPSTreeNode, NodeUpdate>> myUpdates = new ConcurrentLinkedQueue<Pair<MPSTreeNode, NodeUpdate>>();
+  private Queue<Pair<MPSTreeNode, NodeUpdate>> myUpdates = new ConcurrentLinkedQueue<>();
 
   public TreeNodeUpdater(Project mpsProject) {
     myProject = mpsProject;
@@ -51,7 +51,7 @@ public final class TreeNodeUpdater {
     try {
       do {
         int batchProcessMax = 20; // do not process more than X at once, not to block any write actions nor UI thread for too long
-        final ArrayList<Pair<MPSTreeNode, NodeUpdate>> updates = new ArrayList<Pair<MPSTreeNode, NodeUpdate>>(batchProcessMax);
+        final ArrayList<Pair<MPSTreeNode, NodeUpdate>> updates = new ArrayList<>(batchProcessMax);
         Pair<MPSTreeNode, NodeUpdate> u;
         while ((u = myUpdates.poll()) != null && batchProcessMax > 0) {
           if (u.o1.getTree() == null) {
@@ -67,7 +67,7 @@ public final class TreeNodeUpdater {
         myProject.getModelAccess().runReadInEDT(new Runnable() {
           @Override
           public void run() {
-            final HashSet<MPSTreeNode> toRefresh = new HashSet<MPSTreeNode>();
+            final HashSet<MPSTreeNode> toRefresh = new HashSet<>();
             for (Pair<MPSTreeNode, NodeUpdate> next : updates) {
               MPSTreeNode node = next.o1;
               if (node.getTree() == null) {
@@ -91,7 +91,7 @@ public final class TreeNodeUpdater {
 
   public void addUpdate(MPSTreeNode node, NodeUpdate r) {
     if (!r.needed(node)) return;
-    myUpdates.add(new Pair<MPSTreeNode, NodeUpdate>(node, r));
+    myUpdates.add(new Pair<>(node, r));
     myTimer.start(); // sic(!), resume() or restart() force timer into 'running' state, effectively skipping initial delay
   }
 }

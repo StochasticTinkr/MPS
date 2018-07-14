@@ -59,7 +59,7 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
    * @see #getRepositoryStateCache(String)
    */
   @Deprecated
-  protected final ConcurrentHashMap<String, ConcurrentMap<Object, Object>> myRepositoryStateCaches = new ConcurrentHashMap<String, ConcurrentMap<Object, Object>>();
+  protected final ConcurrentHashMap<String, ConcurrentMap<Object, Object>> myRepositoryStateCaches = new ConcurrentHashMap<>();
 
   protected ModelAccess() {
   }
@@ -182,7 +182,7 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
     if (cache != null) {
       return cache;
     }
-    cache = new ConcurrentHashMap<K, V>();
+    cache = new ConcurrentHashMap<>();
     ConcurrentHashMap<K, V> existingCache = (ConcurrentHashMap<K, V>) myRepositoryStateCaches.putIfAbsent(repositoryKey, (ConcurrentMap<Object, Object>) cache);
     return existingCache != null ? existingCache : cache;
   }

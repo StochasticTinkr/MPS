@@ -45,7 +45,7 @@ public class EditorsHelper {
   }
 
   public static List<MPSFileNodeEditor> filterMPSEditors(FileEditor[] selectedEditors) {
-    List<MPSFileNodeEditor> editors = new ArrayList<MPSFileNodeEditor>();
+    List<MPSFileNodeEditor> editors = new ArrayList<>();
     for (FileEditor fileEditor : selectedEditors) {
       if (fileEditor instanceof MPSFileNodeEditor) {
         MPSFileNodeEditor mpsFileNodeEditor = (MPSFileNodeEditor) fileEditor;
@@ -59,8 +59,8 @@ public class EditorsHelper {
   }
 
   public static List<Editor> toMPSEditors(List<MPSFileNodeEditor> nodeEditors) {
-    List<MPSFileNodeEditor> emptyEditors = new ArrayList<MPSFileNodeEditor>(0);
-    List<Editor> result = new ArrayList<Editor>();
+    List<MPSFileNodeEditor> emptyEditors = new ArrayList<>(0);
+    List<Editor> result = new ArrayList<>();
     for (MPSFileNodeEditor e : nodeEditors) {
       Editor editor = e.getNodeEditor();
       if (editor != null) {

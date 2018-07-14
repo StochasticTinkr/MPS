@@ -28,7 +28,7 @@ import java.util.Set;
  */
 public class DistinctIterator<T> implements Iterable<T>, Iterator<T> {
   private final Iterable<T> mySource;
-  private final Set<T> mySeen = new HashSet<T>();
+  private final Set<T> mySeen = new HashSet<>();
   private T myNext;
   private Iterator<T> myCurrent;
 

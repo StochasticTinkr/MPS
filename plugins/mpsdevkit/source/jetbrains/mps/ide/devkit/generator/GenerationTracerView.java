@@ -125,7 +125,7 @@ final class GenerationTracerView {
       return null;
     }
     if (selected.hasPrevStep() || selected.hasNextStep()) {
-      return new ModelComputeRunnable<ActionGroup>(new NodeActionGroup(selected, myProject.getRepository())).runRead(myProject.getModelAccess());
+      return new ModelComputeRunnable<>(new NodeActionGroup(selected, myProject.getRepository())).runRead(myProject.getModelAccess());
     }
     return null;
   }

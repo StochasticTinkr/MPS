@@ -33,7 +33,7 @@ import java.util.Set;
 public class ModelContentUtil {
 
   public static Collection<SLanguage> getUsedLanguages(@NotNull SModel model) {
-    Set<SLanguage> namespaces = new HashSet<SLanguage>();
+    Set<SLanguage> namespaces = new HashSet<>();
     namespaces.addAll(new ModelImports(model).getLanguagesEngagedOnGeneration());
     if (SModelStereotype.isGeneratorModel(model)) {
       ModelScanner templateModelScanner = new ModelScanner();

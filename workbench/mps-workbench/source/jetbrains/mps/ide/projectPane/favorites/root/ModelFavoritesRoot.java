@@ -39,7 +39,7 @@ class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
 
   @Override
   public List<SNode> getAvailableNodes() {
-    final List<SNode> result = new ArrayList<SNode>();
+    final List<SNode> result = new ArrayList<>();
     myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {

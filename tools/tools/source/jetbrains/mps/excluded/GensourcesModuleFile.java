@@ -53,11 +53,11 @@ class GensourcesModuleFile {
   // read
   private Set<String> myRegularModuleSources;
   // built
-  private final Set<String> myGeneratedModuleSources = new HashSet<String>();
+  private final Set<String> myGeneratedModuleSources = new HashSet<>();
   // read
   private Set<String> myRegularModuleContentRoots;
   // built
-  private final Set<String> myGeneratedModuleContentRoots = new HashSet<String>();
+  private final Set<String> myGeneratedModuleContentRoots = new HashSet<>();
 
   public GensourcesModuleFile(Platform mpsPlatform, File genSourcesIml) throws JDOMException, IOException  {
     myPlatform = mpsPlatform;
@@ -71,8 +71,8 @@ class GensourcesModuleFile {
   }
 
   private void collectSourcesOfRegularModules() throws JDOMException, IOException {
-    Set<String> modelRoots = new HashSet<String>();
-    Set<String> sourcesIncluded = new HashSet<String>();
+    Set<String> modelRoots = new HashSet<>();
+    Set<String> sourcesIncluded = new HashSet<>();
     for (File imlFile : Utils.withExtension(".iml", Utils.files(new File(".")))) {
       if (imlFile.getCanonicalPath().equals(myGensourcesIml.getCanonicalPath())) continue;
       Document doc = JDOMUtil.loadDocument(imlFile);
@@ -118,7 +118,7 @@ class GensourcesModuleFile {
   }
 
   public void serializeResult() throws IOException {
-    ArrayList<Element> contentElements = new ArrayList<Element>(myRootManagerElement.getChildren(CONTENT));
+    ArrayList<Element> contentElements = new ArrayList<>(myRootManagerElement.getChildren(CONTENT));
     myRootManagerElement.removeContent();
     // it looks IDEA sorts content roots according to their URL value, do the same to avoid content roots jumping back and forth
     Collections.sort(contentElements, new Comparator<Element>() {
@@ -171,7 +171,7 @@ class GensourcesModuleFile {
   // afaiu, the difference between this method and updateGenSourcesIml, above, is that this one follows some hideous logic to group
   // discovered locations under deduced content roots.
   public void updateGenSourcesImlNoIntersections(File... sourceDirs) throws JDOMException, IOException {
-    Set<String> modelRoots = new HashSet<String>(myRegularModuleContentRoots);
+    Set<String> modelRoots = new HashSet<>(myRegularModuleContentRoots);
     modelRoots.addAll(myGeneratedModuleContentRoots);
     List<String> sourceGen = new ArrayList<>();
     List<String> classesGen = new ArrayList<>();
@@ -179,7 +179,7 @@ class GensourcesModuleFile {
     sourceGen.removeAll(myRegularModuleSources);
     sourceGen.removeAll(myGeneratedModuleSources);
 
-    Set<String> newRoots = new HashSet<String>();
+    Set<String> newRoots = new HashSet<>();
     for (String sGen : sourceGen) {
       String root = null;
 
@@ -236,7 +236,7 @@ class GensourcesModuleFile {
   }
 
   public static MultiMap<String, String> getSourceFolders(File root) throws JDOMException, IOException {
-    MultiMap<String, String> sourcesIncluded = new MultiMap<String, String>();
+    MultiMap<String, String> sourcesIncluded = new MultiMap<>();
     for (File imlFile : Utils.withExtension(".iml", Utils.files(root))) {
       Document doc = JDOMUtil.loadDocument(imlFile);
       Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);

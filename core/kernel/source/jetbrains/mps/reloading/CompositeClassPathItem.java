@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Set;
 
 public class CompositeClassPathItem extends AbstractClassPathItem {
-  private List<IClassPathItem> myChildren = new ArrayList<IClassPathItem>();
+  private List<IClassPathItem> myChildren = new ArrayList<>();
 
   public void add(IClassPathItem item) {
     assert item != null;
@@ -79,19 +79,19 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
   @Override
   public Enumeration<URL> getResources(String name) {
-    List<URL> result = new ArrayList<URL>();
+    List<URL> result = new ArrayList<>();
     for (IClassPathItem item : myChildren) {
       Enumeration<URL> resources = item.getResources(name);
       while (resources.hasMoreElements()) {
         result.add(resources.nextElement());
       }
     }
-    return new IterableEnumeration<URL>(result);
+    return new IterableEnumeration<>(result);
   }
 
   @Override
   public Iterable<String> getAvailableClasses(String namespace) {
-    FlattenIterable<String> result = new FlattenIterable<String>();
+    FlattenIterable<String> result = new FlattenIterable<>();
     for (IClassPathItem item : myChildren) {
       //todo rewrite using mapping iterable
       result.add(item.getAvailableClasses(namespace));
@@ -101,7 +101,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
   @Override
   public Iterable<String> getSubpackages(String namespace) {
-    FlattenIterable<String> result = new FlattenIterable<String>();
+    FlattenIterable<String> result = new FlattenIterable<>();
     for (IClassPathItem item : myChildren) {
       //todo rewrite using mapping iterable
       result.add(item.getSubpackages(namespace));
@@ -110,12 +110,12 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public List<IClassPathItem> getChildren() {
-    return new ArrayList<IClassPathItem>(myChildren);
+    return new ArrayList<>(myChildren);
   }
 
   @Override
   public List<RealClassPathItem> flatten() {
-    List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
+    List<RealClassPathItem> result = new ArrayList<>();
 
     for (IClassPathItem child : myChildren) {
       result.addAll(child.flatten());
@@ -129,7 +129,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     List<RealClassPathItem> flattenedItems = flatten();
     Iterator<RealClassPathItem> it = flattenedItems.iterator();
 
-    Set<String> alreadyVisited = new HashSet<String>();
+    Set<String> alreadyVisited = new HashSet<>();
 
     while (it.hasNext()) {
       IClassPathItem item = it.next();

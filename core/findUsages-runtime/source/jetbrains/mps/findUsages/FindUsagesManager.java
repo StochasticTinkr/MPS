@@ -61,7 +61,7 @@ public class FindUsagesManager extends FindUsagesFacade implements CoreComponent
   private  <T, R> Set<T> findUsages(Set<? extends R> elements, SearchType<T, R> type, SearchScope scope, @Nullable ProgressMonitor monitor) {
     if (monitor == null) monitor = new EmptyProgressMonitor();
 
-    return type.search(new LinkedHashSet<R>(elements), scope, monitor);
+    return type.search(new LinkedHashSet<>(elements), scope, monitor);
   }
 
   @Override

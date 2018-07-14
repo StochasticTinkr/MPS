@@ -49,7 +49,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class TextGenRegistry implements CoreComponent, LanguageRegistryListener {
   private static TextGenRegistry INSTANCE;
 
-  private final Map<String, TextGenDescriptor> textGenDescriptors = new ConcurrentHashMap<String, TextGenDescriptor>();
+  private final Map<String, TextGenDescriptor> textGenDescriptors = new ConcurrentHashMap<>();
   private final LanguageRegistry myLanguageRegistry;
 
   /*package*/ TextGenRegistry(@NotNull LanguageRegistry languageRegistry) {
@@ -146,7 +146,7 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
     // FIXME likely, shall collect all extended languages as well, as there might be instances of a language without textgen in the model,
     // while textgen elements are derived from extended language. HOWEVER, need to process breakdownToTextUnits carefully, so that default
     // file-per-root breakdown doesn't create duplicates!
-    ArrayList<TextGenAspectDescriptor> rv = new ArrayList<TextGenAspectDescriptor>(5);
+    ArrayList<TextGenAspectDescriptor> rv = new ArrayList<>(5);
     final ModelDependencyScanner modelScanner = new ModelDependencyScanner();
     modelScanner.crossModelReferences(false).usedLanguages(true).walk(model);
     for (SLanguage l : modelScanner.getUsedLanguages()) {

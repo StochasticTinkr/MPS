@@ -374,7 +374,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       }
       final GenerationTrace trace = templateContext.getEnvironment().getTrace();
       String counterVarName = RuleUtil.getLoopMacroCounterVarName(macro);
-      ArrayList<SNode> outputNodes = new ArrayList<SNode>();
+      ArrayList<SNode> outputNodes = new ArrayList<>();
       int i = 0;
       for (SNode newInputNode : newInputNodes) {
         TemplateContext ctx = templateContext;
@@ -620,7 +620,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       MapPostProcessor postProcessor = ppf == null ? null : queryProvider.getMapPostProcessor(new QueryKeyImpl(getMacroNodeRef(), ppf.getNodeId()));
       // it's perfectly legal to have neither mapNodeQuery nor postProcessor
       final TemplateExecutionEnvironment env = templateContext.getEnvironment();
-      ArrayList<SNode> outputNodes = new ArrayList<SNode>(newInputNodes.size());
+      ArrayList<SNode> outputNodes = new ArrayList<>(newInputNodes.size());
       final DelayedChanges delayedChanges = myTemplateProcessor.getGenerator().getDelayedChanges();
       for (SNode newInputNode : newInputNodes) {
         TemplateContext newcontext = templateContext.subContext(newInputNode);
@@ -855,7 +855,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       if (newInputNodes.isEmpty()) {
         return Collections.emptyList();
       }
-      ArrayList<SNode> outputNodes = new ArrayList<SNode>();
+      ArrayList<SNode> outputNodes = new ArrayList<>();
       for (SNode newInputNode : newInputNodes) {
         List<SNode> _outputNodes = nextMacro(templateContext.subContext(newInputNode));
         outputNodes.addAll(_outputNodes);

@@ -420,7 +420,7 @@ public class UsagesView implements IExternalizeable {
   }
 
   public static class RebuildAction extends AnAction {
-    private final AtomicReference<MakeSession> myMakeSession = new AtomicReference<MakeSession>();
+    private final AtomicReference<MakeSession> myMakeSession = new AtomicReference<>();
     private final UsagesView myView;
 
     public RebuildAction(UsagesView view) {
@@ -443,7 +443,7 @@ public class UsagesView implements IExternalizeable {
       Iterable<IResource> makeRes = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<Iterable<IResource>>() {
         @Override
         public Iterable<IResource> compute() {
-          List<SModel> models = new ArrayList<SModel>();
+          List<SModel> models = new ArrayList<>();
           for (SModel modelDescriptor : myView.getIncludedModels()) {
             if (GenerationFacade.canGenerate(modelDescriptor)) {
               models.add(modelDescriptor);

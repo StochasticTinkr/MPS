@@ -55,9 +55,9 @@ public final class StubReferenceFactory implements ReferenceFactory {
   // if we decide to re-use this cache throughout all models loaded within a module. We didn't use this cache,
   // and created a new one for each SReferenceCreator, and it didn't cause any performance issue, thus moved into single class and not reused.
   // 2. We wrap SModel into VisibleModel to keep set of known model roots along with the model, to avoid attempt to load model again and again from model.getNode()
-  private final Map<SModelName, List<VisibleModel>> myName2Models = new HashMap<SModelName, List<VisibleModel>>();
+  private final Map<SModelName, List<VisibleModel>> myName2Models = new HashMap<>();
 
-  private final Set<SModelReference> myModelImports = new HashSet<SModelReference>();
+  private final Set<SModelReference> myModelImports = new HashSet<>();
 
   /**
    * @param module module we try to resolve references in, provides dependencies
@@ -141,7 +141,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
 
 
   private void ensureInitialized() {
-    LinkedHashSet<SModel> visibleModels = new LinkedHashSet<SModel>();
+    LinkedHashSet<SModel> visibleModels = new LinkedHashSet<>();
     // local models get precedence over those from imports
     visibleModels.addAll(IterableUtil.asCollection(myModule.getModels()));
     for (SModule visibleModule : new GlobalModuleDependenciesManager(myModule).getModules(Deptype.VISIBLE)) {
@@ -152,7 +152,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
       final SModelName modelName = model.getName();
       List<VisibleModel> modelsFromCache = myName2Models.get(modelName);
       if (modelsFromCache == null) {
-        myName2Models.put(modelName, modelsFromCache = new ArrayList<VisibleModel>(3));
+        myName2Models.put(modelName, modelsFromCache = new ArrayList<>(3));
       }
       modelsFromCache.add(new VisibleModel(model));
     }
@@ -173,7 +173,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
 
     public VisibleModel(SModel model) {
       myModel = model;
-      myKnownRoots = new HashSet<SNodeId>();
+      myKnownRoots = new HashSet<>();
       for (SNode n : model.getRootNodes()) {
         myKnownRoots.add(n.getNodeId());
       }

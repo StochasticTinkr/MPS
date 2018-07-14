@@ -137,7 +137,7 @@ public class BareNodeWriter {
 
 
   protected void writeUserObjects(SNode node) throws IOException {
-    final ArrayList<Object> knownUserObject = new ArrayList<Object>();
+    final ArrayList<Object> knownUserObject = new ArrayList<>();
     for (Object key : node.getUserObjectKeys()) {
       Object value = node.getUserObject(key);
       if (isKnownUserObject(key) && isKnownUserObject(value)) {

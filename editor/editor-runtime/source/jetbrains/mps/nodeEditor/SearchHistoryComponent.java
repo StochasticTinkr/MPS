@@ -89,7 +89,7 @@ public class SearchHistoryComponent implements ProjectComponent, PersistentState
   }
 
   public static class MyState {
-    private List<String> mySearches = new ArrayList<String>();
+    private List<String> mySearches = new ArrayList<>();
 
     public List<String> getSearches() {
       return mySearches;

@@ -90,14 +90,14 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   public void updateState(State state) {
     HashSet<String> existing = null;
     if (myState == state) {
-      existing = new HashSet<String>();
+      existing = new HashSet<>();
       collectExisting(getRootNode(), existing);
     }
     myState = state;
     rebuildNow();
     expandAll();
     if (existing != null) {
-      List<TreePath> newNodes = new ArrayList<TreePath>();
+      List<TreePath> newNodes = new ArrayList<>();
       collectNew(new TreePath(getRootNode()), existing, newNodes);
       setSelectionPaths(newNodes.toArray(new TreePath[newNodes.size()]));
     }
@@ -181,7 +181,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
 
   private TypeSystemStateTreeNode createInequalitiesNode() {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Inequalities by groups");
-    Set<String> nodePresentations = new HashSet<String>();
+    Set<String> nodePresentations = new HashSet<>();
     for (Map.Entry<Set<SNode>, Set<InequalityBlock>> entry : myState.getInequalities().getInequalityGroups(
         myState.getBlocks(BlockKind.INEQUALITY)).entrySet()) {
       Set<SNode> key = entry.getKey();
@@ -225,7 +225,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
       @Override
       public void run() {
         NodeMaps maps = myState.getNodeMaps();
-        List<EditorMessage> messages = new ArrayList<EditorMessage>();
+        List<EditorMessage> messages = new ArrayList<>();
         for (MPSTreeNode treeNode : treeNodes) {
           TypeSystemStateTreeNode stateNode = (TypeSystemStateTreeNode) treeNode;
           List<SNode> vars = stateNode.getVariables();
@@ -288,7 +288,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
       if (ruleModel == null || ruleId == null) {
         return null;
       }
-      return new Pair<String, String>(ruleModel, ruleId);
+      return new Pair<>(ruleModel, ruleId);
     }
     return null;
   }
@@ -358,7 +358,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
 
     @Override
     public void valueChanged(TreeSelectionEvent event) {
-      List<MPSTreeNode> selection = new ArrayList<MPSTreeNode>();
+      List<MPSTreeNode> selection = new ArrayList<>();
       TreePath[] selectionPaths = getSelectionPaths();
       if (selectionPaths == null) {
         clearHighlighting();

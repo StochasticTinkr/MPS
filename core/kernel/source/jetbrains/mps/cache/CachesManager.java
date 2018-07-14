@@ -50,9 +50,9 @@ public class CachesManager implements CoreComponent {
   private final ClassLoaderManager myClassLoaderManager;
   private final SRepository myRepository;
 
-  private ConcurrentMap<Object, AbstractCache> myCaches = new ConcurrentHashMap<Object, AbstractCache>();
-  private ConcurrentMap<AbstractCache, ModelEventRouter> myModelEventRouters = new ConcurrentHashMap<AbstractCache, ModelEventRouter>();
-  private ConcurrentMap<Object, List<SModel>> myDependsOnModels = new ConcurrentHashMap<Object, List<SModel>>();
+  private ConcurrentMap<Object, AbstractCache> myCaches = new ConcurrentHashMap<>();
+  private ConcurrentMap<AbstractCache, ModelEventRouter> myModelEventRouters = new ConcurrentHashMap<>();
+  private ConcurrentMap<Object, List<SModel>> myDependsOnModels = new ConcurrentHashMap<>();
   private SRepositoryContentAdapter myModelRepoListener = new SRepositoryContentAdapter() {
 
     @Override
@@ -149,7 +149,7 @@ public class CachesManager implements CoreComponent {
       LOG.error("Dependent models for cache contains null", new Throwable());
       descriptorSet.remove(null);
     }
-    return putCache(key, result, new ArrayList<SModel>(descriptorSet));
+    return putCache(key, result, new ArrayList<>(descriptorSet));
   }
 
   public void removeCache(Object key) {
@@ -167,7 +167,7 @@ public class CachesManager implements CoreComponent {
 
   private void removeAllCaches() {
     while (!myCaches.isEmpty()) {
-      List<Object> keys = new ArrayList<Object>(myCaches.keySet());
+      List<Object> keys = new ArrayList<>(myCaches.keySet());
       for (Object key : keys) {
         removeCache(key);
       }
@@ -179,7 +179,7 @@ public class CachesManager implements CoreComponent {
   }
 
   private void onModelRemoved(SModel modelDescriptor) {
-    List<Object> keysToRemove = new ArrayList<Object>();
+    List<Object> keysToRemove = new ArrayList<>();
     SModelReference reference = modelDescriptor.getReference();
     for (Object key : myDependsOnModels.keySet()) {
       List<SModel> dependsOnModels = myDependsOnModels.get(key);

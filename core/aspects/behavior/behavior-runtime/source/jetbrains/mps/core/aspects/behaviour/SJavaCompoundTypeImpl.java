@@ -84,7 +84,7 @@ public class SJavaCompoundTypeImpl implements SJavaCompoundType {
   }
 
   public static List<SJavaCompoundType> fromClasses(Class<?>... types) {
-    List<SJavaCompoundType> result = new ArrayList<SJavaCompoundType>();
+    List<SJavaCompoundType> result = new ArrayList<>();
     for (Class<?> type : types) {
       result.add(new SJavaCompoundTypeImpl(type));
     }

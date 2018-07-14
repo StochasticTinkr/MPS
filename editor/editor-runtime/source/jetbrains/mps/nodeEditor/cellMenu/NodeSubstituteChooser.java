@@ -187,7 +187,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private void initList() {
-    myList = new JBList<>(new CollectionListModel<SubstituteAction>());
+    myList = new JBList<>(new CollectionListModel<>());
     myList.addMouseListener(new MouseAdapter() {
       @Override
       public void mousePressed(MouseEvent e) {

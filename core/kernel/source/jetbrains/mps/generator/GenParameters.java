@@ -23,7 +23,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class GenParameters {
-  private List<SModel> myModels = new ArrayList<SModel>();
+  private List<SModel> myModels = new ArrayList<>();
   private SModule myModule;
 
   public GenParameters(List<? extends SModel> models, SModule module) {
@@ -44,7 +44,7 @@ public class GenParameters {
   }
 
   public List<SModel> getSModels() {
-    List<SModel> result = new ArrayList<SModel>();
+    List<SModel> result = new ArrayList<>();
     for (SModel sm : myModels) {
       result.add(sm);
     }

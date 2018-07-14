@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.*;
 
 public class StructuralNodeSet<T> implements Set<SNode> {
-  private Set<SNodeWrapper> myWrappers = new LinkedHashSet<SNodeWrapper>();
+  private Set<SNodeWrapper> myWrappers = new LinkedHashSet<>();
 
   public StructuralNodeSet() {
   }
@@ -96,7 +96,7 @@ public class StructuralNodeSet<T> implements Set<SNode> {
   }
 
   private List<SNode> getNodes() {
-    List<SNode> nodes = new ArrayList<SNode>();
+    List<SNode> nodes = new ArrayList<>();
     for (SNodeWrapper w : myWrappers) {
       nodes.add(w.myNode);
     }

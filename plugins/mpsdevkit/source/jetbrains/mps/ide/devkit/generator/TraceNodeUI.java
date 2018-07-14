@@ -103,7 +103,7 @@ final class TraceNodeUI {
   }
   public void addChild(@NotNull TraceNodeUI child) {
     if (myChildren == null) {
-      myChildren = new ArrayList<TraceNodeUI>(5);
+      myChildren = new ArrayList<>(5);
     }
     myChildren.add(child);
   }

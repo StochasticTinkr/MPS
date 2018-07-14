@@ -35,7 +35,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class ReloadableModuleBase extends AbstractModule implements ReloadableModule {
   private final static Logger LOG = LogManager.getLogger(ReloadableModuleBase.class);
   private final ClassLoaderManager myManager = ClassLoaderManager.getInstance();
-  private final List<SModuleDependenciesListener> myListeners = new CopyOnWriteArrayList<SModuleDependenciesListener>();
+  private final List<SModuleDependenciesListener> myListeners = new CopyOnWriteArrayList<>();
 
   protected ReloadableModuleBase() {
     super();

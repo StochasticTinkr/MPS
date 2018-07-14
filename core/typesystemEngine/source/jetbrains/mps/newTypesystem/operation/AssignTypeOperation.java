@@ -56,7 +56,7 @@ public class AssignTypeOperation extends AbstractOperation {
 
   @Override
   public List<SNode> getVariables() {
-    LinkedList<SNode> nodes = new LinkedList<SNode>();
+    LinkedList<SNode> nodes = new LinkedList<>();
     if (TypesUtil.isVariable(myType)) {
       nodes.add(myType);
     }

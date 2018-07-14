@@ -84,7 +84,7 @@ public class TypesUtil {
 
 
   public static List<SNode> getVariables(SNode node, State state) {
-    List<SNode> result = new LinkedList<SNode>();
+    List<SNode> result = new LinkedList<>();
     getVariablesInside(node, result, state);
     return result;
   }
@@ -115,7 +115,7 @@ public class TypesUtil {
 
   @NotNull
   public static List<SNode> getNodeReferents(@NotNull SNode node) {
-    final List<SNode> result = new ArrayList<SNode>();
+    final List<SNode> result = new ArrayList<>();
     for (SReference ref : node.getReferences()) {
       result.add(ref.getTargetNode());
     }
@@ -132,7 +132,7 @@ public class TypesUtil {
 
     if (TypesUtil.isVariable(left) || TypesUtil.isVariable(right)) {
       if (matchingPairs != null) {
-        matchingPairs.add(new Pair<SNode, SNode>(left, right));
+        matchingPairs.add(new Pair<>(left, right));
       }
       return true;
     }
@@ -177,7 +177,7 @@ public class TypesUtil {
 
   @Deprecated
   public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info) {
-    THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
+    THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<>();
     boolean match = match(left, right, matchingPairs);
     if (match && equations != null) {
       equations.addEquations(matchingPairs, info);
@@ -187,7 +187,7 @@ public class TypesUtil {
 
   public static SNode cleanupMeet(SNode type) {
     // Dirty hack to avoid meet type to appear inside fully reified type
-    Set<SNode> newArgs = new THashSet<SNode>();
+    Set<SNode> newArgs = new THashSet<>();
     final List<SNode> arguments = LatticeUtil.getMeetArguments(type);
     boolean addTheRest = false;
     for (SNode arg : arguments) {
@@ -204,7 +204,7 @@ public class TypesUtil {
   }
 
   private static class MatchingNodesCollector implements IMatchModifier {
-    private final Set<Pair<SNode, SNode>> myMatchingPairs = new THashSet<Pair<SNode, SNode>>();
+    private final Set<Pair<SNode, SNode>> myMatchingPairs = new THashSet<>();
 
     @Override
     public boolean accept(SNode node1, SNode node2) {
@@ -218,7 +218,7 @@ public class TypesUtil {
 
     @Override
     public void performAction(SNode node1, SNode node2) {
-      myMatchingPairs.add(new Pair<SNode, SNode>(node1, node2));
+      myMatchingPairs.add(new Pair<>(node1, node2));
     }
 
     @Override

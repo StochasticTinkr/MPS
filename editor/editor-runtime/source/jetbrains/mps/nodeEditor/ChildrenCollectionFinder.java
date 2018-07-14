@@ -104,7 +104,7 @@ public class ChildrenCollectionFinder {
     if (left == right || right == null || left == null) {
       return left == null ? right : left;
     }
-    Set<SNode> parents = new HashSet<SNode>();
+    Set<SNode> parents = new HashSet<>();
     while (left != null) {
       parents.add(left);
       left = left.getParent();

@@ -31,7 +31,7 @@ public class SModelEventsDispatcher {
   private static SModelEventsDispatcher myInstance;
 
   private ModelsEventsCollector myModelsEventsCollector;
-  private final Map<SModel, Set<SModelEventsListener>> myDescriptorsToListenersMap = new HashMap<SModel, Set<SModelEventsListener>>();
+  private final Map<SModel, Set<SModelEventsListener>> myDescriptorsToListenersMap = new HashMap<>();
 
   public static SModelEventsDispatcher getInstance() {
     if (myInstance == null) {
@@ -97,7 +97,7 @@ public class SModelEventsDispatcher {
 
     @Override
     protected void eventsHappened(List<SModelEvent> events) {
-      Map<SModel, List<SModelEvent>> descriptorsToEventsMap = new HashMap<SModel, List<SModelEvent>>();
+      Map<SModel, List<SModelEvent>> descriptorsToEventsMap = new HashMap<>();
       for (SModelEvent event : events) {
         SModel descriptor = event.getModelDescriptor();
         List<SModelEvent> collectedEvents = descriptorsToEventsMap.get(descriptor);

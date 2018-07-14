@@ -51,16 +51,16 @@ public final class GeneratorMappings {
   private final IGeneratorLogger myLog;
 
   /* mapping,input -> output */
-  private final ConcurrentMap<String, Map<SNode, Object>> myMappingNameAndInputNodeToOutputNodeMap = new ConcurrentHashMap<String, Map<SNode, Object>>();
+  private final ConcurrentMap<String, Map<SNode, Object>> myMappingNameAndInputNodeToOutputNodeMap = new ConcurrentHashMap<>();
 
   /* input -> output */
-  private final ConcurrentMap<SNode, Object> myCopiedOutputNodeForInputNode = new ConcurrentHashMap<SNode, Object>();
+  private final ConcurrentMap<SNode, Object> myCopiedOutputNodeForInputNode = new ConcurrentHashMap<>();
 
   /* new style map: Object means multiple nodes for the template */
-  private final ConcurrentMap<String, Object> myTemplateNodeIdToOutputNodeMap = new ConcurrentHashMap<String, Object>();
+  private final ConcurrentMap<String, Object> myTemplateNodeIdToOutputNodeMap = new ConcurrentHashMap<>();
 
   /* new style map: template,input -> output */
-  private final ConcurrentMap<Pair<String, SNode>, SNode> myTemplateNodeIdAndInputNodeToOutputNodeMap = new ConcurrentHashMap<Pair<String, SNode>, SNode>();
+  private final ConcurrentMap<Pair<String, SNode>, SNode> myTemplateNodeIdAndInputNodeToOutputNodeMap = new ConcurrentHashMap<>();
 
   /*
    * there might be few conditional roots, and we can't prevent them from using same ML (not too much sense, however)
@@ -100,7 +100,7 @@ public final class GeneratorMappings {
       } else if (o instanceof List) {
         ((List<SNode>) o).add(outputNode);
       } else if (o != outputNode) {
-        List<SNode> list = new ArrayList<SNode>(4);
+        List<SNode> list = new ArrayList<>(4);
         list.add((SNode) o);
         list.add(outputNode);
         currentMapping.put(inputNode, list);

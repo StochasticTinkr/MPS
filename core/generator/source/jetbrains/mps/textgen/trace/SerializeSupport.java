@@ -63,7 +63,7 @@ final class SerializeSupport {
     top.setAttribute(ATTR_VER, CURRENT_VERSION);
 
     DebugInfoRoot[] roots = sortedRoots(debugInfo);
-    TreeSet<SAbstractConcept> allConcepts = new TreeSet<SAbstractConcept>(new Comparator<SAbstractConcept>() {
+    TreeSet<SAbstractConcept> allConcepts = new TreeSet<>(new Comparator<SAbstractConcept>() {
       @Override
       public int compare(SAbstractConcept o1, SAbstractConcept o2) {
         return o1.getQualifiedName().compareTo(o2.getQualifiedName());
@@ -71,7 +71,7 @@ final class SerializeSupport {
     });
     collectAllConcepts(roots, allConcepts);
     int i = 0;
-    HashMap<SAbstractConcept, Integer> conceptsOrder = new HashMap<SAbstractConcept, Integer>();
+    HashMap<SAbstractConcept, Integer> conceptsOrder = new HashMap<>();
     for (SAbstractConcept concept : allConcepts) {
       conceptsOrder.put(concept, i++);
       top.addContent(new Element(CONCEPT).setAttribute(ATTR_FQN, ((SAbstractConceptAdapter) concept).serialize()));
@@ -99,7 +99,7 @@ final class SerializeSupport {
     }
     DebugInfo rv = new DebugInfo();
     int i = 0;
-    HashMap<Integer, SAbstractConcept> conceptsOrder = new HashMap<Integer, SAbstractConcept>();
+    HashMap<Integer, SAbstractConcept> conceptsOrder = new HashMap<>();
     for (Element c : top.getChildren(CONCEPT)) {
       conceptsOrder.put(i++, SAbstractConceptAdapter.deserialize(c.getAttributeValue(ATTR_FQN)));
     }
@@ -147,9 +147,9 @@ final class SerializeSupport {
   }
 
   private static List<Element> serialize(DebugInfoRoot debugRoot, HashMap<SAbstractConcept, Integer> conceptsOrder) {
-    MultiMap<String, TraceablePositionInfo> p1 = new MultiMap<String, TraceablePositionInfo>();
-    MultiMap<String, ScopePositionInfo> p2 = new MultiMap<String, ScopePositionInfo>();
-    MultiMap<String, UnitPositionInfo> p3 = new MultiMap<String, UnitPositionInfo>();
+    MultiMap<String, TraceablePositionInfo> p1 = new MultiMap<>();
+    MultiMap<String, ScopePositionInfo> p2 = new MultiMap<>();
+    MultiMap<String, UnitPositionInfo> p3 = new MultiMap<>();
     for (TraceablePositionInfo pi : debugRoot.getPositions()) {
       p1.putValue(pi.getFileName(), pi);
     }
@@ -159,13 +159,13 @@ final class SerializeSupport {
     for (UnitPositionInfo pi : debugRoot.getUnitPositions()) {
       p3.putValue(pi.getFileName(), pi);
     }
-    HashSet<String> allFiles = new HashSet<String>();
+    HashSet<String> allFiles = new HashSet<>();
     allFiles.addAll(p1.keySet());
     allFiles.addAll(p2.keySet());
     allFiles.addAll(p3.keySet());
     final String[] allFilesSorted = allFiles.toArray(new String[allFiles.size()]);
     Arrays.sort(allFilesSorted);
-    ArrayList<Element> rv = new ArrayList<Element>(allFilesSorted.length);
+    ArrayList<Element> rv = new ArrayList<>(allFilesSorted.length);
     for (String filename : allFilesSorted) {
       Element fileElement = new Element(ELEMENT_FILE);
       fileElement.setAttribute(ATTR_NAME, filename);
@@ -244,7 +244,7 @@ final class SerializeSupport {
   }
 
   private static DebugInfoRoot[] toArray(Iterable<DebugInfoRoot> roots) {
-    ArrayList<DebugInfoRoot> rv = new ArrayList<DebugInfoRoot>();
+    ArrayList<DebugInfoRoot> rv = new ArrayList<>();
     for (DebugInfoRoot root : roots) {
       rv.add(root);
     }
