@@ -95,6 +95,6 @@ public class DeletionApproverUtil {
     if (requestedCellId.startsWith("*") && thisCellId != null && thisCellId.contains(requestedCellId.substring(1))) {
       return true;
     }
-    return thisCellId != null && thisCellId.equals(requestedCellId);
+    return requestedCellId.equals(thisCellId);
   }
 }

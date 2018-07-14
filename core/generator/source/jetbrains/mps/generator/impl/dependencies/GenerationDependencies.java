@@ -195,7 +195,7 @@ public class GenerationDependencies {
 
   public static GenerationDependencies fromXml(Element root) {
     String version = GenerationRootDependencies.getValue(root, ATTR_VERSION);
-    if (version == null || !version.equals(Integer.toString(DEPENDENCIES_VERSION))) {
+    if (!Integer.toString(DEPENDENCIES_VERSION).equals(version)) {
       /* regenerate all */
       return null;
     }

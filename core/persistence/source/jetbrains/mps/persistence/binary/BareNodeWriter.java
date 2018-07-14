@@ -116,7 +116,7 @@ public class BareNodeWriter {
     } else {
       throw new IOException("cannot store reference: " + reference.toString());
     }
-    if (targetModelReference != null && targetModelReference.equals(myModelReference)) {
+    if (myModelReference.equals(targetModelReference)) {
       myOut.writeByte(REF_THIS_MODEL);
     } else {
       myOut.writeByte(REF_OTHER_MODEL);

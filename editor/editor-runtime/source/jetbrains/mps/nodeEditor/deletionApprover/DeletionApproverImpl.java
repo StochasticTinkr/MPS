@@ -83,7 +83,7 @@ public class DeletionApproverImpl implements DeletionApprover, EditorMessageOwne
    * @return true if the cells of a node are all approved for deletion; false otherwise
    */
   public boolean isApprovedForDeletion(@NotNull EditorCell cell) {
-    return myCellToBeDeleted != null && myCellToBeDeleted.equals(cell);
+    return cell.equals(myCellToBeDeleted);
   }
 
   @Override

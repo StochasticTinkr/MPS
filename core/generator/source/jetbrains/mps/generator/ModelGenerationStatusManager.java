@@ -176,7 +176,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     }
 
     String generatedHash = getLastKnownHash(sm);
-    return generatedHash == null || !generatedHash.equals(currentHash);
+    return !currentHash.equals(generatedHash);
 
   }
 
