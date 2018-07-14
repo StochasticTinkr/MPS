@@ -119,13 +119,7 @@ public class DataNode implements IExternalizeable {
       } else {
         throwLoadException(e);
       }
-    } catch (ClassNotFoundException e) {
-      throwLoadException(e);
-    } catch (NoSuchMethodException e) {
-      throwLoadException(e);
-    } catch (IllegalAccessException e) {
-      throwLoadException(e);
-    } catch (InstantiationException e) {
+    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException e) {
       throwLoadException(e);
     }
 

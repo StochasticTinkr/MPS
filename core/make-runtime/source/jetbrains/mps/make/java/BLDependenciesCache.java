@@ -115,9 +115,7 @@ public class BLDependenciesCache extends BaseModelCache<ModelDependencies> {
           return dependencies;
         }
         throw new IOException("empty result");
-      } catch (SAXException ex) {
-        throw new IOException(ex);
-      } catch (ParserConfigurationException ex) {
+      } catch (SAXException | ParserConfigurationException ex) {
         throw new IOException(ex);
       }
     }

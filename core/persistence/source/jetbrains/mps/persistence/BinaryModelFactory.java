@@ -219,9 +219,7 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
       Map<String, String> result = BinaryPersistence.getDigestMap(loadedModel.getModel(), binaryModelHeader.getMetaInfoProvider());
       result.put(GeneratableSModel.FILE, ModelDigestUtil.hashBytes(source.openInputStream()));
       return result;
-    } catch (ModelReadException ignored) {
-      /* ignore */
-    } catch (IOException ignored) {
+    } catch (ModelReadException | IOException ignored) {
       /* ignore */
     }
     return null;

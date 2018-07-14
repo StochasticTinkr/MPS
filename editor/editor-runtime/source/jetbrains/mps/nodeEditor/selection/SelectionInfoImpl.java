@@ -133,7 +133,7 @@ public class SelectionInfoImpl implements SelectionInfo {
       }
       Constructor<Selection> constructor = ((Class<Selection>) selectionClass).getConstructor(EditorComponent.class, Map.class, CellInfo.class);
       return constructor.newInstance(editorComponent, myProperties, myCellInfo);
-    } catch (ClassNotFoundException | NoSuchMethodException e) {
+    } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InstantiationException e) {
       LOG.error(null, e);
       return null;
     } catch (InvocationTargetException e) {
@@ -146,12 +146,6 @@ public class SelectionInfoImpl implements SelectionInfo {
          */
         return null;
       }
-      LOG.error(null, e);
-      return null;
-    } catch (InstantiationException e) {
-      LOG.error(null, e);
-      return null;
-    } catch (IllegalAccessException e) {
       LOG.error(null, e);
       return null;
     }

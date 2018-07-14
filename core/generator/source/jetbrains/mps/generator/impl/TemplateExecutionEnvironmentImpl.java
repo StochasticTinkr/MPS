@@ -318,9 +318,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       if (myFailedRules.add(ruleNode)) {
         getLogger().error(ruleNode, String.format("Reduction rule failed: %s", ex.getMessage()), ex.asProblemDescription());
       }
-    } catch (GenerationFailureException ex) {
-      throw ex;
-    } catch (GenerationCanceledException ex) {
+    } catch (GenerationFailureException | GenerationCanceledException ex) {
       throw ex;
     } catch (GenerationException ex) {
       // ignore

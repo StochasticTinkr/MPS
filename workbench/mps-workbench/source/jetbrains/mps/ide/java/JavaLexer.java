@@ -461,8 +461,6 @@ public class JavaLexer extends LexerBase {
       while (lexer.getTokenType() != null) {
         lexer.advance();
       }
-    } catch (FileNotFoundException e) {
-      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
     } catch (IOException e) {
       e.printStackTrace();  //To change body of catch statement use Options | File Templates.
     }

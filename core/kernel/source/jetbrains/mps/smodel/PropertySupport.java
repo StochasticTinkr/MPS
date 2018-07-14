@@ -198,13 +198,7 @@ public abstract class PropertySupport {
       } else {
         LOG.error("Can't find a class " + propertySupportClassName + " using classloader of " + l.getModuleName() + " module");
       }
-    } catch (NoSuchMethodException e) {
-      LOG.error(null, e);
-    } catch (InstantiationException e) {
-      LOG.error(null, e);
-    } catch (IllegalAccessException e) {
-      LOG.error(null, e);
-    } catch (InvocationTargetException e) {
+    } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException | InstantiationException e) {
       LOG.error(null, e);
     }
     return propertySupport;

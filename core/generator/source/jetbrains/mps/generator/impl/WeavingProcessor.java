@@ -108,9 +108,7 @@ public class WeavingProcessor {
         } catch (TemplateProcessingFailureException e) {
           myEnv.getLogger().error(myRule.getRuleNode(), "weaving rule: error processing template fragment", GeneratorUtil.describeInput(context));
         }
-      } catch (GenerationCanceledException ex) {
-        throw ex;
-      } catch (GenerationFailureException ex) {
+      } catch (GenerationCanceledException | GenerationFailureException ex) {
         throw ex;
       } catch (GenerationException e) {
         myEnv.getLogger().error(myRule.getRuleNode(), "internal error: " + e.toString());

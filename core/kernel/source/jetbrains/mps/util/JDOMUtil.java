@@ -90,10 +90,7 @@ public class JDOMUtil {
     FileInputStream in = new FileInputStream(file);
     try {
       return saxBuilder.build(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
-    } catch (JDOMException e) {
-      LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
-      throw e;
-    } catch (IOException e) {
+    } catch (JDOMException | IOException e) {
       LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
       throw e;
     } finally {
