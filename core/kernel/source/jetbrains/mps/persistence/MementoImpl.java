@@ -146,7 +146,7 @@ public class MementoImpl implements Memento {
 
   @Override
   public boolean equals(Object obj) {
-    if(obj == null || !(obj instanceof MementoImpl))
+    if(!(obj instanceof MementoImpl))
       return false;
 
     MementoImpl memento = (MementoImpl) obj;

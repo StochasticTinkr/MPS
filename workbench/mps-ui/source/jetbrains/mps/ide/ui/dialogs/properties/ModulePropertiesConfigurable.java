@@ -1168,7 +1168,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
         @Override
         public boolean isCellEditable(EventObject e) {
-          return e != null && e instanceof MouseEvent && ((MouseEvent) e).getClickCount() >= 2;
+          return e instanceof MouseEvent && ((MouseEvent) e).getClickCount() >= 2;
         }
 
         @Override

@@ -133,7 +133,7 @@ public final class GeneratorMappings {
     // try to register same output, and we shall not treat this as ambiguity. Generally it's
     // odd to use COPY-SRC for rule's primary transformation, we've had only 1 use like this
     // (build language, mapBuildProject did $WEAVE$ $COPY-SRC$).
-    if (prev != null && prev instanceof SNode && prev != outputNode) {
+    if (prev instanceof SNode && prev != outputNode) {
       // ambiguity! store prev element (wrapped into Collection)
       myCopiedOutputNodeForInputNode.put(inputNode, Collections.singletonList(prev));
     }

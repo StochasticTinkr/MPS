@@ -91,7 +91,7 @@ public class SNodePointer implements SNodeReference {
 
   public boolean equals(Object o) {
     if (this == o) return true;
-    if (o == null || !(o instanceof SNodePointer)) return false;
+    if (!(o instanceof SNodePointer)) return false;
 
     SNodePointer np = (SNodePointer) o;
     return EqualUtil.equals(myModelReference, np.myModelReference) && EqualUtil.equals(myNodeId, np.myNodeId);

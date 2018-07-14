@@ -415,7 +415,7 @@ public class SearchPanel extends AbstractSearchPanel {
 
     @Override
     public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
-      if (cell == null || !(cell instanceof EditorCell_Label)) {
+      if (!(cell instanceof EditorCell_Label)) {
         return;
       }
       EditorCell_Label editorCell = (EditorCell_Label) cell;

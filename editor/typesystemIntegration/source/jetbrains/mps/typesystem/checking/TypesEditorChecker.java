@@ -42,7 +42,7 @@ public class TypesEditorChecker extends AbstractTypesystemEditorChecker {
   @Override
   protected UpdateResult doCreateMessages(final TypeCheckingContext context, final boolean wasCheckedOnce,
       final EditorContext editorContext, final SNode rootNode, Cancellable cancellable, final boolean applyQuickFixes) {
-    if (context == null || !(context instanceof IncrementalTypecheckingContext)) {
+    if (!(context instanceof IncrementalTypecheckingContext)) {
       return UpdateResult.CANCELLED;
     }
 

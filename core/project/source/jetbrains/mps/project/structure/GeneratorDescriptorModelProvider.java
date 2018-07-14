@@ -100,7 +100,7 @@ public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
     myModels.clear();
     for (GeneratorDescriptorModel m : models) {
       SModule module = m.getModule();
-      if (module != null && module instanceof Generator) {
+      if (module instanceof Generator) {
         ((Generator) module).unregisterModel(m);
       }
     }
