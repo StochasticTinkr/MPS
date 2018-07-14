@@ -66,7 +66,6 @@ public class SModelUtil_new {
       }
 
       SAbstractConcept target = linkDeclaration.getTargetConcept();
-      LOG.assertLog(target != null, "link target is null");
       if (!newNode.getChildren(linkDeclaration).iterator().hasNext()) {
         SNode childNode = instantiateConceptDeclaration(target, model, null, true);
         newNode.addChild(linkDeclaration, childNode);

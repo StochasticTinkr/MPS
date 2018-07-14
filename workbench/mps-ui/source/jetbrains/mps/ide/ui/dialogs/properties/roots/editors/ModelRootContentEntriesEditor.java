@@ -338,7 +338,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
         VirtualFile[] files = FileChooser.chooseFiles(fileChooserDescriptor, null, null, contentRootVFile);
         if (files.length == 0) {
           return false;
-        } else if (files.length > 0) {
+        } else {
           assert files.length == 1; // internal contract of the <code>FileChooser</code>
           chosen = files[0];
           for (VirtualFile candidate : candidatesForIntersection) {

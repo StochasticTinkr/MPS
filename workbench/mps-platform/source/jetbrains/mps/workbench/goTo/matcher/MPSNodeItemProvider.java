@@ -328,8 +328,8 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
       boolean aStarts = a.startsWith(myOriginalPattern);
       boolean bStarts = b.startsWith(myOriginalPattern);
       if (aStarts && bStarts) return a.compareToIgnoreCase(b);
-      if (aStarts && !bStarts) return -1;
-      if (bStarts && !aStarts) return 1;
+      if (aStarts) return -1;
+      if (bStarts) return 1;
       return a.compareToIgnoreCase(b);
     }
   }

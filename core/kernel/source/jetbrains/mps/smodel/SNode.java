@@ -205,11 +205,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public String getPresentation() {
     if (!getConcept().isValid()) {
       String persistentName = findProperty(SNodeUtil.property_INamedConcept_name);
-      if (persistentName == null) {
-        String conceptName = myConcept.getName();
-        persistentName = (conceptName == null ? myConcept.toString() : conceptName);
-      }
-      return "?" + persistentName + "?";
+      return "?" + (persistentName != null ? persistentName : myConcept.getName()) + "?";
     }
 
     return String.valueOf(SNodeUtil.getPresentation(this));

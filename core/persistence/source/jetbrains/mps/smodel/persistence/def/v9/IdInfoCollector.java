@@ -114,7 +114,6 @@ public class IdInfoCollector {
   private void fillAggregation(SNode n) {
     final SContainmentLink l = n.getContainmentLink();
     SContainmentLinkId linkId = MetaIdHelper.getAggregation(l);
-    assert linkId != null : String.format("Can't get identity of aggregation %s of node %s", l, n.getReference());
     SConceptId conceptId = linkId.getConceptId();
     final ConceptInfo conceptInfo = registerConcept(conceptId);
     if (!conceptInfo.knows(linkId)) {

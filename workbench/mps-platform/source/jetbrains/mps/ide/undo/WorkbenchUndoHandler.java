@@ -45,12 +45,11 @@ public class WorkbenchUndoHandler implements UndoHandler, ApplicationComponent {
       return t.compute();
     }
 
-    boolean wasUndoBlocked = ourUndoBlocked;
     try {
       ourUndoBlocked = true;
       return t.compute();
     } finally {
-      ourUndoBlocked = wasUndoBlocked;
+      ourUndoBlocked = false;
     }
   }
 

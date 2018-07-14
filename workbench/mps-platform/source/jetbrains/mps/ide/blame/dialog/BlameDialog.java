@@ -279,7 +279,6 @@ public class BlameDialog extends DialogWrapper {
   private void updateCredentialsPane() {
     Credentials credentials = ErrorReportConfigurable.getCredentials();
     if (CredentialAttributesKt.isFulfilled(credentials)) {
-      assert credentials != null;
       myCredentialsLabel.setHtmlText(DiagnosticBundle.message("diagnostic.error.report.submit.report.as", credentials.getUserName()));
     } else {
       myCredentialsLabel.setHtmlText(DiagnosticBundle.message("diagnostic.error.report.submit.error.anonymously"));

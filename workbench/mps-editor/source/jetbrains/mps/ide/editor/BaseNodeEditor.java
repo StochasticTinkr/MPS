@@ -207,7 +207,6 @@ public abstract class BaseNodeEditor implements Editor {
 
     if (myEditorComponent != null) {
       // Add new editor component
-      myEditorComponent = editorComponent;
       JComponent externalComponent = myEditorComponent.getExternalComponent();
       //HACK to avoid strange gray border in ScrollPane after empty aspect tab
       if (externalComponent.getComponent(0) instanceof JBScrollPane) {

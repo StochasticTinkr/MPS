@@ -61,7 +61,7 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
     myModel = model;
     myVirtualPackage = virtualPackage;
     String name = nodeConcept.getConceptAlias();
-    if (name == null || name.isEmpty()) {
+    if (name.isEmpty()) {
       name = nodeConcept.getName();
     }
     getTemplatePresentation().setText(name);

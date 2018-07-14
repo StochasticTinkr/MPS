@@ -349,7 +349,6 @@ public class MPSTestEditorManagerImpl extends FileEditorManagerEx {
         LOG.assertTrue(provider.accept(getProject(), file));
         final FileEditor editor = provider.createEditor(getProject(), file);
         editors[i] = editor;
-        LOG.assertTrue(editor != null);
         LOG.assertTrue(editor.isValid());
       }
       catch (Exception e) {

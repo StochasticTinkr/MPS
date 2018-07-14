@@ -59,7 +59,7 @@ public class CommonChoosers {
     dialog.setTitle(title == null ? "Choose model" : title);
     dialog.show();
     final List<SModelReference> result = dialog.getResult();
-    return result == null || result.isEmpty() ? null : result.get(0);
+    return result.isEmpty() ? null : result.get(0);
   }
 
   @Nullable

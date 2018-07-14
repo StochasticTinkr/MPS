@@ -18,14 +18,17 @@ package jetbrains.mps.smodel.adapter.structure;
 import jetbrains.mps.smodel.adapter.ids.SConceptFeatureId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptFeatureHelper {
+  @NotNull
   public static SAbstractConcept getOwner(SConceptFeatureId featureId) {
     ConceptDescriptor conceptDescriptor = getOwnerDescriptor(featureId);
     return MetaAdapterFactory.getAbstractConcept(conceptDescriptor);
   }
 
+  @NotNull
   public static ConceptDescriptor getOwnerDescriptor(SConceptFeatureId featureId) {
     return ConceptRegistry.getInstance().getConceptDescriptor(featureId.getConceptId());
   }

@@ -51,7 +51,6 @@ class FoldingButton {
   FoldingButton(@NotNull EditorCell_Collection cell, @NotNull Color background) {
     //TODO: Can we hold cell directly instad of CellInfo here?
     myCellInfo = cell.getCellInfo();
-    assert myCellInfo != null : "CellInfo unavailable for: " + cell;
     myEditor = cell.getEditorComponent();
     myBackgroundColor = background;
   }
@@ -68,9 +67,9 @@ class FoldingButton {
       if (!myIsHidden) {
         myIsFolded = collectionCell.isCollapsed();
         EditorCell firstLeafCell = CellTraversalUtil.getFirstLeaf(collectionCell);
-        myY1 = firstLeafCell != null ? firstLeafCell.getBaseline() - HEIGHT : collectionCell.getBaseline() - HEIGHT;
+        myY1 = firstLeafCell.getBaseline() - HEIGHT;
         EditorCell lastLeafCell = CellTraversalUtil.getLastLeaf(collectionCell);
-        myY2 = lastLeafCell != null ? CellTraversalUtil.getLastLeaf(collectionCell).getBaseline() : collectionCell.getBaseline();
+        myY2 = CellTraversalUtil.getLastLeaf(collectionCell).getBaseline();
         if (!myIsFolded && myY2 - myY1 < 2 * HEIGHT) {
           // to avoid overlapping folding buttons
           myIsHidden = true;

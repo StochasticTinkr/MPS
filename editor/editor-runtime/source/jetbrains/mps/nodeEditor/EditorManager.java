@@ -224,30 +224,28 @@ public class EditorManager {
         boolean nodeChanged = isNodeChanged(modifications, updater, oldCell, getCellFactory().getCellContext());
 
         if (!nodeChanged) {
-          if (oldCell != null) {
-            final Set<SNode> nodesOldCellDependsOn = updater.getRelatedNodes(oldCell);
-            final Set<SNodeReference> refTargetsOldCellDependsOn = updater.getRelatedRefTargets(oldCell);
-            if (nodesOldCellDependsOn != null || refTargetsOldCellDependsOn != null) {
-              // Node was not changed, we have oldCell so it will not be re-created.
-              //
-              // Now all the dependencies of this (old) Cell should be added to currently active
-              // NodeReadAccessInEditorListener, so will be reported as parent Cell dependencies.
-              //
-              // Same logic is implemented in NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener(), so
-              // we should duplicate it here to emulate proper update process for parent cell.
-              NodeReadAccessInEditorListener parentReadAccessListener = NodeReadAccessCasterInEditor.getReadAccessListener();
-              if (parentReadAccessListener != null) {
-                if (nodesOldCellDependsOn != null) {
-                  parentReadAccessListener.addNodesToDependOn(nodesOldCellDependsOn);
-                }
-                if (refTargetsOldCellDependsOn != null) {
-                  parentReadAccessListener.addRefTargetsToDependOn(refTargetsOldCellDependsOn);
-                }
+          final Set<SNode> nodesOldCellDependsOn = updater.getRelatedNodes(oldCell);
+          final Set<SNodeReference> refTargetsOldCellDependsOn = updater.getRelatedRefTargets(oldCell);
+          if (nodesOldCellDependsOn != null || refTargetsOldCellDependsOn != null) {
+            // Node was not changed, we have oldCell so it will not be re-created.
+            //
+            // Now all the dependencies of this (old) Cell should be added to currently active
+            // NodeReadAccessInEditorListener, so will be reported as parent Cell dependencies.
+            //
+            // Same logic is implemented in NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener(), so
+            // we should duplicate it here to emulate proper update process for parent cell.
+            NodeReadAccessInEditorListener parentReadAccessListener = NodeReadAccessCasterInEditor.getReadAccessListener();
+            if (parentReadAccessListener != null) {
+              if (nodesOldCellDependsOn != null) {
+                parentReadAccessListener.addNodesToDependOn(nodesOldCellDependsOn);
+              }
+              if (refTargetsOldCellDependsOn != null) {
+                parentReadAccessListener.addRefTargetsToDependOn(refTargetsOldCellDependsOn);
               }
             }
-            updater.getCurrentUpdateSession().reuseChildInfo(refContext);
-            return oldCell;
           }
+          updater.getCurrentUpdateSession().reuseChildInfo(refContext);
+          return oldCell;
         }
         fillContextToCellMapForChildren(oldCell, childContextToCellMap = new HashMap<ReferencedNodeContext, EditorCell>());
         updater.clearDependencies(oldCell);

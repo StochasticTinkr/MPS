@@ -107,7 +107,7 @@ public class DefaultSChildSubstituteAction extends AbstractSubstituteAction {
   @Override
   public String getMatchingText(String pattern) {
     String conceptAlias = myConcept.getConceptAlias();
-    if (conceptAlias != null && !conceptAlias.isEmpty()) {
+    if (!conceptAlias.isEmpty()) {
       return conceptAlias;
     }
     return myConcept.getName();

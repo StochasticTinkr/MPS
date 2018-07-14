@@ -119,13 +119,7 @@ public abstract class BaseTypechecking<STATE extends State, COMP extends SimpleT
     for (SNode key : keySet) {
       List<IErrorReporter> reporters = nodesToErrorsMap.get(key);
       if (!reporters.isEmpty()) {
-        if (key.getContainingRoot() == null) {
-          /*  LOG.warn("Type system reports error for node without containing root. Node: " + key);
-                    for (IErrorReporter reporter : reporters) {
-                      LOG.warn("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());
-                    }     */
-          continue;
-        }
+        key.getContainingRoot();
         result.add(new Pair<SNode, List<IErrorReporter>>(key, reporters));
       }
     }

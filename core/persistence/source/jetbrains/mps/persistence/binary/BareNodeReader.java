@@ -148,7 +148,8 @@ public class BareNodeReader {
           resolveInfo);
       node.setReference(reference.getLink(), reference);
       return reference;
-    } else if (kind == 2 || kind == 3) {
+    } else //noinspection ConstantConditions
+      if (kind == 2 || kind == 3) {
       DynamicReference reference = new DynamicReference(
           sref,
           node,

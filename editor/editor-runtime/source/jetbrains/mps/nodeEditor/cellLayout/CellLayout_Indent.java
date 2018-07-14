@@ -365,10 +365,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
     private int getFirstChildLeftGap(EditorCell_Collection collection) {
       EditorCell firstLeaf = CellTraversalUtil.getFirstLeaf(collection);
-      if (firstLeaf != null) {
-        return PunctuationUtil.getLeftGap(firstLeaf);
-      }
-      return 0;
+      return PunctuationUtil.getLeftGap(firstLeaf);
     }
 
     private void updatePositions(EditorCell_Collection collection) {

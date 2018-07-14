@@ -393,8 +393,6 @@ public class Program {
   }
 
   public boolean contains(Object o) {
-    Instruction i = null;
-    myInstructions.indexOf(i);
     return myStarts.containsKey(o);
   }
 

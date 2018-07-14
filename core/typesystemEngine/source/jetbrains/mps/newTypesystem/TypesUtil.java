@@ -115,7 +115,6 @@ public class TypesUtil {
 
   @NotNull
   public static List<SNode> getNodeReferents(@NotNull SNode node) {
-    if (node == null) return Collections.emptyList();
     final List<SNode> result = new ArrayList<SNode>();
     for (SReference ref : node.getReferences()) {
       result.add(ref.getTargetNode());
@@ -219,9 +218,7 @@ public class TypesUtil {
 
     @Override
     public void performAction(SNode node1, SNode node2) {
-      if (myMatchingPairs != null) {
-        myMatchingPairs.add(new Pair<SNode, SNode>(node1, node2));
-      }
+      myMatchingPairs.add(new Pair<SNode, SNode>(node1, node2));
     }
 
     @Override

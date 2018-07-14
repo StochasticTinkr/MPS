@@ -104,9 +104,6 @@ public class DynamicReference extends SReferenceBase {
 
   private static boolean isTargetClassifier(@NotNull SReferenceLink role) {
     SAbstractConcept lnkTarget = role.getTargetConcept();
-    if (lnkTarget == null) {
-      return false;
-    }
     return lnkTarget.isSubConceptOf(SNodeUtil.concept_Classifier);
   }
 

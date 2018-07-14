@@ -38,9 +38,6 @@ public abstract class AbstractCellMenuPart_PropertyValues implements SubstituteI
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode node = cellContext.get(PropertyCellContext.EDITED_NODE);
     SProperty property = cellContext.get(PropertyCellContext.PROPERTY_DECLARATION);
-    if (property == null) {
-      return Collections.emptyList();
-    }
     IOperationContext context = editorContext.getOperationContext();
     List<String> values = getPropertyValues(node, context, editorContext);
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>(values.size());

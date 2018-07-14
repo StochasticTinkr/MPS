@@ -152,10 +152,10 @@ public class MementoImpl implements Memento {
     MementoImpl memento = (MementoImpl) obj;
 
     boolean equals = true;
-    equals = equals && (type == null ? memento.type == null : type.equals(memento.type));
-    equals = equals && (values == null ? memento.values == null : values.equals(memento.values));
-    equals = equals && (children == null ? memento.children == null : children.equals(memento.children));
-    equals = equals && (text == null ? memento.text == null : text.equals(memento.text));
+    equals &= type == null ? memento.type == null : type.equals(memento.type);
+    equals &= values == null ? memento.values == null : values.equals(memento.values);
+    equals &= children == null ? memento.children == null : children.equals(memento.children);
+    equals &= text == null ? memento.text == null : text.equals(memento.text);
 
     return equals;
   }

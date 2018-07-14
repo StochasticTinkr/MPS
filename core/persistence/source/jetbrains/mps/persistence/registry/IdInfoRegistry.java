@@ -111,23 +111,19 @@ public class IdInfoRegistry {
 
   public ConceptInfo find(@NotNull SConcept concept) {
     final SConceptId id = MetaIdHelper.getConcept(concept);
-    assert id != null; // original ModelWriter9.saveNode assumed this
     assert myRegistry.containsKey(id); // the way IdInfoCollector is built shall ensure concept of any node in a model is registered
     return myRegistry.get(id);
   }
   public PropertyInfo find(@NotNull SProperty property) {
     SPropertyId id = MetaIdHelper.getProperty(property);
-    assert id != null;
     return myRegistry.get(id.getConceptId()).find(id);
   }
   public AssociationLinkInfo find(@NotNull SReferenceLink link) {
     SReferenceLinkId id = MetaIdHelper.getAssociation(link);
-    assert id != null;
     return myRegistry.get(id.getConceptId()).find(id);
   }
   public AggregationLinkInfo find(@NotNull SContainmentLink link) {
     SContainmentLinkId id = MetaIdHelper.getAggregation(link);
-    assert id != null;
     return myRegistry.get(id.getConceptId()).find(id);
   }
 

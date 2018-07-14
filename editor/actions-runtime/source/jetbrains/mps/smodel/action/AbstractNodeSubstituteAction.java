@@ -168,16 +168,14 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
     // similar to: IntellijentInputUtil.applyRigthTransform() logic
     if (context != null && nodeToSelect != null) {
       jetbrains.mps.nodeEditor.EditorComponent editorComponent = ((jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent());
-      if (editorComponent != null) {
-        editorComponent.getUpdater().flushModelEvents();
-        EditorCell cell = editorComponent.findNodeCell(nodeToSelect);
-        if (cell != null) {
-          EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
-          if (errorCell != null) {
-            editorComponent.changeSelectionWRTFocusPolicy(errorCell);
-          } else {
-            editorComponent.changeSelectionWRTFocusPolicy(cell);
-          }
+      editorComponent.getUpdater().flushModelEvents();
+      EditorCell cell = editorComponent.findNodeCell(nodeToSelect);
+      if (cell != null) {
+        EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
+        if (errorCell != null) {
+          editorComponent.changeSelectionWRTFocusPolicy(errorCell);
+        } else {
+          editorComponent.changeSelectionWRTFocusPolicy(cell);
         }
       }
     }
