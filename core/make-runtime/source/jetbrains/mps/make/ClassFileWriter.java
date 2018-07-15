@@ -93,7 +93,7 @@ public class ClassFileWriter {
         e.printStackTrace();
       }
     }
-    return urls.toArray(new URL[urls.size()]);
+    return urls.toArray(new URL[0]);
   }
 
   private void updateClassFile2BytesMap(List<CompilationResult> results) {

@@ -105,12 +105,12 @@ public interface ModelGenerationPlan {
     private final boolean myKeepLabeledTransformations;
 
     public Transform(@NotNull Collection<TemplateMappingConfiguration> tmc) {
-      myMapCfg = tmc.toArray(new TemplateMappingConfiguration[tmc.size()]);
+      myMapCfg = tmc.toArray(new TemplateMappingConfiguration[0]);
       myKeepLabeledTransformations = false;
     }
 
     public Transform(@NotNull Collection<TemplateMappingConfiguration> tmc, boolean keepLabeledTransforms) {
-      myMapCfg = tmc.toArray(new TemplateMappingConfiguration[tmc.size()]);
+      myMapCfg = tmc.toArray(new TemplateMappingConfiguration[0]);
       myKeepLabeledTransformations = keepLabeledTransforms;
     }
 

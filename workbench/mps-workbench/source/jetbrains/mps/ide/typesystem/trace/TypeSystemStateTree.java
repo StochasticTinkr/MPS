@@ -99,7 +99,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     if (existing != null) {
       List<TreePath> newNodes = new ArrayList<>();
       collectNew(new TreePath(getRootNode()), existing, newNodes);
-      setSelectionPaths(newNodes.toArray(new TreePath[newNodes.size()]));
+      setSelectionPaths(newNodes.toArray(new TreePath[0]));
     }
   }
 

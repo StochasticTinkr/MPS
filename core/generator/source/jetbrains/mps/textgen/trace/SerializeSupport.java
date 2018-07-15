@@ -158,7 +158,7 @@ final class SerializeSupport {
     allFiles.addAll(p1.keySet());
     allFiles.addAll(p2.keySet());
     allFiles.addAll(p3.keySet());
-    final String[] allFilesSorted = allFiles.toArray(new String[allFiles.size()]);
+    final String[] allFilesSorted = allFiles.toArray(new String[0]);
     Arrays.sort(allFilesSorted);
     ArrayList<Element> rv = new ArrayList<>(allFilesSorted.length);
     for (String filename : allFilesSorted) {
@@ -240,7 +240,7 @@ final class SerializeSupport {
     for (DebugInfoRoot root : roots) {
       rv.add(root);
     }
-    return rv.toArray(new DebugInfoRoot[rv.size()]);
+    return rv.toArray(new DebugInfoRoot[0]);
   }
 
   private static void collectAllConcepts(DebugInfoRoot[] roots, Set<SAbstractConcept> concepts) {

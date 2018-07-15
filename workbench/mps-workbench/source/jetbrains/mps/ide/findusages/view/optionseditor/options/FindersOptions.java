@@ -78,7 +78,7 @@ public final class FindersOptions extends BaseOptions {
   }
 
   public IResultProvider getResult() {
-    return FindUtils.makeProvider(myFindersClassNames.toArray(new String[myFindersClassNames.size()]));
+    return FindUtils.makeProvider(myFindersClassNames.toArray(new String[0]));
   }
 
   @Override

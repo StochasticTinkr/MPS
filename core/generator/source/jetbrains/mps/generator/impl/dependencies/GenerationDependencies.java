@@ -138,7 +138,7 @@ public class GenerationDependencies {
   public String extractDependenciesTraces() {
     if (myDependenciesTraces == null) return null;
     StringBuilder sb = new StringBuilder();
-    String[] keys = myDependenciesTraces.keySet().toArray(new String[myDependenciesTraces.keySet().size()]);
+    String[] keys = myDependenciesTraces.keySet().toArray(new String[0]);
     Arrays.sort(keys);
     for (String key : keys) {
       sb.append("-------------------------\n");
@@ -174,7 +174,7 @@ public class GenerationDependencies {
     if (myParametersHash != null) {
       root.setAttribute(ATTR_PARAMS_HASH, myParametersHash);
     }
-    String[] models = myUsedModelsHashes.keySet().toArray(new String[myUsedModelsHashes.size()]);
+    String[] models = myUsedModelsHashes.keySet().toArray(new String[0]);
     Arrays.sort(models);
     for (String model : models) {
       Element e = new Element(NODE_MODEL);

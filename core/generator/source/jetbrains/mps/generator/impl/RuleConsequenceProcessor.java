@@ -106,7 +106,7 @@ public abstract class RuleConsequenceProcessor {
           l.add(new CaseRuntime(condition, rcp, switchCase.getReference()));
         }
         if (myCases == null) {
-          myCases = rv = l.toArray(new CaseRuntime[l.size()]);
+          myCases = rv = l.toArray(new CaseRuntime[0]);
         } else {
           rv = myCases;
         }

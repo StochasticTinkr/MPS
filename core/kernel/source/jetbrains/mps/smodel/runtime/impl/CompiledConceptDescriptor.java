@@ -112,7 +112,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       if (!parentsContainSuper) {
         pp.addFirst(superConceptId);
       }
-      myParents = Arrays.asList(pp.toArray(new SConceptId[pp.size()]));
+      myParents = Arrays.asList(pp.toArray(new SConceptId[0]));
     } else {
       assert superConceptId == null;
       myParents = parents == null || parents.length == 0 ? Collections.emptyList() : Arrays.asList(parents);

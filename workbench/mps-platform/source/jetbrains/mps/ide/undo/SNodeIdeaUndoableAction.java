@@ -32,8 +32,8 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   SNodeIdeaUndoableAction(List<UndoItem> items, SRepository repository, boolean isGlobal, Collection<DocumentReference> affectedDocuments) {
     myIsGlobal = isGlobal;
     myRepository = repository;
-    myItems = items.toArray(new UndoItem[items.size()]);
-    myAffectedDocuments = affectedDocuments.toArray(new DocumentReference[affectedDocuments.size()]);
+    myItems = items.toArray(new UndoItem[0]);
+    myAffectedDocuments = affectedDocuments.toArray(new DocumentReference[0]);
   }
 
   @Override

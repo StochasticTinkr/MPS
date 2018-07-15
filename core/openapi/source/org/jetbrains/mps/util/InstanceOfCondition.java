@@ -53,7 +53,7 @@ public final class InstanceOfCondition implements Condition<SNode> {
         a.add(n);
       }
     }
-    myConcepts = a.toArray(new SAbstractConcept[a.size()]);
+    myConcepts = a.toArray(new SAbstractConcept[0]);
   }
 
   @Override

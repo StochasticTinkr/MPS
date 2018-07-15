@@ -58,7 +58,7 @@ class GenerationPhase {
     LinkedHashMap<TemplateModule, Group> groupByModule = new LinkedHashMap<>();
     LinkedHashMap<Group, Set<TemplateModule>> groupsWithFewModules = new LinkedHashMap<>();
     ArrayList<Group> step = new ArrayList<>();
-    Group[] phaseElements = myPhaseElements.toArray(new Group[myPhaseElements.size()]);
+    Group[] phaseElements = myPhaseElements.toArray(new Group[0]);
     Arrays.sort(phaseElements, new GroupComparator());
     for (Group g : phaseElements) {
       final Set<TemplateModule> involvedGenerators = getInvolvedGenerators(g);
@@ -116,8 +116,8 @@ class GenerationPhase {
         assert g2Unique.isEmpty();
         return 0;
       }
-      TemplateMappingConfiguration[] e1 = g1Unique.toArray(new TemplateMappingConfiguration[g1Unique.size()]);
-      TemplateMappingConfiguration[] e2 = g2Unique.toArray(new TemplateMappingConfiguration[g2Unique.size()]);
+      TemplateMappingConfiguration[] e1 = g1Unique.toArray(new TemplateMappingConfiguration[0]);
+      TemplateMappingConfiguration[] e2 = g2Unique.toArray(new TemplateMappingConfiguration[0]);
       final MapCfgComparator comparator = new MapCfgComparator();
       Arrays.sort(e1, comparator);
       Arrays.sort(e2, comparator);

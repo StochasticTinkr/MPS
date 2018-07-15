@@ -67,7 +67,7 @@ public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAwar
       result.add(new FileNavigationItem(file, project));
     }
 
-    return result.toArray(new NavigationItem[result.size()]);
+    return result.toArray(new NavigationItem[0]);
   }
 
   public static class FileNavigationItem implements NavigationItem {

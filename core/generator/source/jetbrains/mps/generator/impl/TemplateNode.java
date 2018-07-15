@@ -212,9 +212,9 @@ class TemplateNode {
           templateChildNodes.add(templateChildNode);
         }
       }
-      myChildTemplates = templateChildNodes.isEmpty() ? Collections.emptyList() : Arrays.asList(templateChildNodes.toArray(new SNode[templateChildNodes.size()]));
-      myMacroRefs = refMacros.toArray(new ReferenceMacro[refMacros.size()]);
-      myMacroProperties = propertyMacros.toArray(new PropertyMacro[propertyMacros.size()]);
+      myChildTemplates = templateChildNodes.isEmpty() ? Collections.emptyList() : Arrays.asList(templateChildNodes.toArray(new SNode[0]));
+      myMacroRefs = refMacros.toArray(new ReferenceMacro[0]);
+      myMacroProperties = propertyMacros.toArray(new PropertyMacro[0]);
       final ArrayList<SProperty> templateProps = new ArrayList<>();
       final ArrayList<String> templatePropValues = new ArrayList<>();
       for (SProperty p : templateNode.getProperties()) {
@@ -224,8 +224,8 @@ class TemplateNode {
         templateProps.add(p);
         templatePropValues.add(templateNode.getProperty(p));
       }
-      myTemplateProperties = templateProps.toArray(new SProperty[templateProps.size()]);
-      myTemplatePropertyValues = templatePropValues.toArray(new String[templatePropValues.size()]);
+      myTemplateProperties = templateProps.toArray(new SProperty[0]);
+      myTemplatePropertyValues = templatePropValues.toArray(new String[0]);
       //
       // prepare references
       final ArrayList<RefInfo> externalStaticRefs = new ArrayList<>();
@@ -267,9 +267,9 @@ class TemplateNode {
           otherRefs.add(new RefInfo(reference.getLink(), null, templateReferentNode));
         }
       }
-      myStaticRefs = externalStaticRefs.toArray(new RefInfo[externalStaticRefs.size()]);
-      myInnerRefs = internalRefs.toArray(new RefInfo[internalRefs.size()]);
-      myOtherRefs = otherRefs.toArray(new RefInfo[otherRefs.size()]);
+      myStaticRefs = externalStaticRefs.toArray(new RefInfo[0]);
+      myInnerRefs = internalRefs.toArray(new RefInfo[0]);
+      myOtherRefs = otherRefs.toArray(new RefInfo[0]);
     }
 
     public void moldPropertyValues(SNode outputNode) {

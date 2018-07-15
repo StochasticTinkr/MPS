@@ -765,7 +765,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         return null;
       }
       final Collection<String> nodeContextHints = cellContext.getHints();
-      return nodeContextHints.toArray(new String[nodeContextHints.size()]);
+      return nodeContextHints.toArray(new String[0]);
     }
     return null;
   }

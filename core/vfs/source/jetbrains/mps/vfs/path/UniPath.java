@@ -128,7 +128,7 @@ public class UniPath extends AbstractPath {
     if (pathsInArchive == null) {
       return new UniPath(pathToFile, null);
     }
-    return UniPath.fromParts(pathToFile, pathsInArchive.toArray(new CommonPath[pathsInArchive.size()]));
+    return UniPath.fromParts(pathToFile, pathsInArchive.toArray(new CommonPath[0]));
   }
 
   public boolean isJar() {

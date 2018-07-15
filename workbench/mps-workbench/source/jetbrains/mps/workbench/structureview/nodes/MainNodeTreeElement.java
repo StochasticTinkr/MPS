@@ -67,7 +67,7 @@ public class MainNodeTreeElement implements StructureViewTreeElement {
       }
     });
 
-    return result.toArray(new TreeElement[result.size()]);
+    return result.toArray(new TreeElement[0]);
   }
 
   @Override

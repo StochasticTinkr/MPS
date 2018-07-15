@@ -193,7 +193,7 @@ public class DynamicReference extends SReferenceBase {
           result.add(new ProblemDescription(myOrigin.getTemplate(), " -- was template: " + myOrigin.getTemplate().toString()));
         }
         if (result.size() > 0) {
-          error(message, false, result.toArray(new ProblemDescription[result.size()]));
+          error(message, false, result.toArray(new ProblemDescription[0]));
           return;
         }
       }

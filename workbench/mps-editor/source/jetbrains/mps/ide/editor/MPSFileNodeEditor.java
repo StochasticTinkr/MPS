@@ -300,7 +300,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   public Document[] getDocuments() {
     if (!isDisposed() && myNodeEditor != null) {
       List<Document> result = ((BaseNodeEditor) myNodeEditor).getAllEditedDocuments();
-      return result.toArray(new Document[result.size()]);
+      return result.toArray(new Document[0]);
     }
     return new Document[0];
   }

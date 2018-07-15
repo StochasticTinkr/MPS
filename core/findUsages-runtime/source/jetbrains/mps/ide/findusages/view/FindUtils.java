@@ -49,7 +49,7 @@ public class FindUtils {
       }
     }
 
-    return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new IInterfacedFinder[finders.size()]));
+    return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new IInterfacedFinder[0]));
   }
 
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final SearchQuery query, final IFinder... finders) {

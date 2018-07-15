@@ -203,7 +203,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     }
     ModelGenerationStatusListener[] copy;
     synchronized (myListeners) {
-      copy = myListeners.toArray(new ModelGenerationStatusListener[myListeners.size()]);
+      copy = myListeners.toArray(new ModelGenerationStatusListener[0]);
     }
     toNotify = Collections.unmodifiableList(toNotify);
     for (ModelGenerationStatusListener l : copy) {

@@ -80,7 +80,7 @@ public class FontRegistry {
       }
       fontFamily.addFont(font.getName());
     }
-    for (String fontFamilyName : myAvailableFonts.keySet().toArray(new String[myAvailableFonts.size()])) {
+    for (String fontFamilyName : myAvailableFonts.keySet().toArray(new String[0])) {
       FontFamily fontFamily = myAvailableFonts.get(fontFamilyName);
       if (!fontFamily.isValid()) {
         myAvailableFonts.remove(fontFamilyName);

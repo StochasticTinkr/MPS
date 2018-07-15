@@ -407,7 +407,7 @@ class Memento implements EditorComponentState {
       for (Object o : children) {
         enabledHints.add(((Element) o).getAttributeValue(ENABLED_HINTS_ATTRIBUTE));
       }
-      memento.myEnabledHints = enabledHints.toArray(new String[enabledHints.size()]);
+      memento.myEnabledHints = enabledHints.toArray(new String[0]);
     }
 
     return memento;

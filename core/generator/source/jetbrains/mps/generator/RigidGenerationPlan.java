@@ -43,7 +43,7 @@ public class RigidGenerationPlan implements ModelGenerationPlan {
 
   public RigidGenerationPlan(@NotNull PlanIdentity planIdentity, @NotNull Collection<Step> steps) {
     myIdentity = planIdentity;
-    mySteps = steps.toArray(new Step[steps.size()]);
+    mySteps = steps.toArray(new Step[0]);
   }
 
   @Override

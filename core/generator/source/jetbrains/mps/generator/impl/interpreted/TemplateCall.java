@@ -127,7 +127,7 @@ public class TemplateCall {
       }
       i++;
     }
-    return ae.toArray(new ArgumentExpression[ae.size()]);
+    return ae.toArray(new ArgumentExpression[0]);
   }
 
   interface ArgumentExpression {

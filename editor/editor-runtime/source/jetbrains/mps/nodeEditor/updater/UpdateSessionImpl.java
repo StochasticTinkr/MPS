@@ -188,7 +188,7 @@ public class UpdateSessionImpl implements UpdateSession {
       return null;
     }
     Collection<String> hints = myHintsForNodeMap.get(node.getReference());
-    return hints.toArray(new String[hints.size()]);
+    return hints.toArray(new String[0]);
   }
 
   void setEditorHintsForNodeMap(Map<SNodeReference, Collection<String>> hintsForNodeMap) {

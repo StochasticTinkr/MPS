@@ -413,7 +413,7 @@ public class BlameDialog extends DialogWrapper {
     Query query = createQuery();
     query.setIssueTitle(myTitleField.getText());
     query.setDescription(description.toString());
-    query.setFiles(myFilesToAttach.toArray(new File[myFilesToAttach.size()]));
+    query.setFiles(myFilesToAttach.toArray(new File[0]));
     query.setHidden(myHiddenCheckBox.isSelected());
     query.setSubsystem(mySubsystem);
     myResult = poster.send(query);

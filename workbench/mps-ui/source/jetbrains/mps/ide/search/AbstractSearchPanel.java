@@ -322,7 +322,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_H, KeyEvent.CTRL_DOWN_MASK), null));
 
       registerCustomShortcutSet(
-        new CustomShortcutSet(shortcuts.toArray(new Shortcut[shortcuts.size()])),
+        new CustomShortcutSet(shortcuts.toArray(new Shortcut[0])),
         myText);
     }
 
@@ -349,7 +349,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, KeyEvent.SHIFT_DOWN_MASK), null));
 
       registerCustomShortcutSet(
-        new CustomShortcutSet(shortcuts.toArray(new Shortcut[shortcuts.size()])),
+        new CustomShortcutSet(shortcuts.toArray(new Shortcut[0])),
         myText);
     }
 
@@ -376,7 +376,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), null));
 
       registerCustomShortcutSet(
-        new CustomShortcutSet(shortcuts.toArray(new Shortcut[shortcuts.size()])),
+        new CustomShortcutSet(shortcuts.toArray(new Shortcut[0])),
         myText);
     }
 

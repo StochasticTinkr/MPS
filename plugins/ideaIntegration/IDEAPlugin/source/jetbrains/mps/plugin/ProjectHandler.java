@@ -123,7 +123,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
               }
 
               CompilerManager compilerManager = CompilerManager.getInstance(myProject);
-              compilerManager.make(myProject, modules.toArray(new Module[modules.size()]), new CompileStatusNotification() {
+              compilerManager.make(myProject, modules.toArray(new Module[0]), new CompileStatusNotification() {
                 public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
                   compilationFinished(aborted, errors, warnings);
                 }

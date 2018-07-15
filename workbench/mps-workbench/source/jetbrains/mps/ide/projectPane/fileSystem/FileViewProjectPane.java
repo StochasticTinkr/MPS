@@ -280,7 +280,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
           }
         }
       }
-      return files.toArray(new VirtualFile[files.size()]);
+      return files.toArray(new VirtualFile[0]);
     } else if (PlatformDataKeys.VIRTUAL_FILE.getName().equals(dataId)) {
       TreePath tp = getSelectedPath();
       if (tp == null) {

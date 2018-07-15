@@ -218,7 +218,7 @@ public class UpdaterImpl implements Updater {
   @Override
   public String[] getExplicitEditorHintsForNode(SNodeReference nodeReference) {
     Collection<String> hints = myEditorHintsForNodeMap.get(nodeReference);
-    return hints == null ? null : hints.toArray(new String[hints.size()]);
+    return hints == null ? null : hints.toArray(new String[0]);
   }
 
   @Override

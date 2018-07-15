@@ -219,7 +219,7 @@ public class GroupedNodesChooser extends DialogWrapper {
         selectionPaths.add(new TreePath(treeNode.getPath()));
       }
     }
-    myTree.setSelectionPaths(selectionPaths.toArray(new TreePath[selectionPaths.size()]));
+    myTree.setSelectionPaths(selectionPaths.toArray(new TreePath[0]));
   }
 
 
@@ -525,7 +525,7 @@ public class GroupedNodesChooser extends DialogWrapper {
     }
 
     if (!toSelect.isEmpty()) {
-      myTree.setSelectionPaths(toSelect.toArray(new TreePath[toSelect.size()]));
+      myTree.setSelectionPaths(toSelect.toArray(new TreePath[0]));
     }
 
     ElementNode leadNode = pair.first;

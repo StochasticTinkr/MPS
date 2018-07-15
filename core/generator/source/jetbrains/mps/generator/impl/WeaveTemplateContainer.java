@@ -118,7 +118,7 @@ public class WeaveTemplateContainer {
       for (SNode templateFragment : templateFragments) {
         list.add(GeneratorUtil.describe(templateFragment, "template fragment"));
       }
-      logger.error(myTemplateNode.getReference(), "all fragments with shall have the same parent", list.toArray(new ProblemDescription[list.size()]));
+      logger.error(myTemplateNode.getReference(), "all fragments with shall have the same parent", list.toArray(new ProblemDescription[0]));
     }
     return templateFragments;
   }

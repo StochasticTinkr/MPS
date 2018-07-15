@@ -169,7 +169,7 @@ public abstract class DeltaBuilder {
     assert getCurrentRoot().myRoot == node;
 
     final List<SubTree> fragments = getCurrentFragments();
-    getCurrentRoot().mySubTrees = fragments.toArray(new SubTree[fragments.size()]);
+    getCurrentRoot().mySubTrees = fragments.toArray(new SubTree[0]);
     setCurrentRoot(null);
     clearCurrentFragments();
   }

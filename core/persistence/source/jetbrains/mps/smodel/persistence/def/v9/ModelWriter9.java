@@ -186,7 +186,7 @@ public class ModelWriter9 implements IModelWriter {
       final String index = myImportsHelper.addModelImport(modelRef);
       rootElement.addContent(createImportElement(modelRef, index, false));
     }
-    SModelReference[] implicitImports = crossModelReferences.toArray(new SModelReference[crossModelReferences.size()]);
+    SModelReference[] implicitImports = crossModelReferences.toArray(new SModelReference[0]);
     Arrays.sort(implicitImports, new ToStringComparator());
     for (SModelReference implicitImport : crossModelReferences) {
       final String index = myImportsHelper.addModelImport(implicitImport);

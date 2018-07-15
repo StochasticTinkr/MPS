@@ -81,7 +81,7 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
         excludePolicies.add(ep);
       }
     }
-    myExcludePolicies = excludePolicies.toArray(new DirectoryIndexExcludePolicy[excludePolicies.size()]);
+    myExcludePolicies = excludePolicies.toArray(new DirectoryIndexExcludePolicy[0]);
   }
 
   @Override

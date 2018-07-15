@@ -175,7 +175,7 @@ public class UsagesView implements IExternalizeable {
   }
 
   public void setActions(Collection<? extends AnAction> actions) {
-    setActions(actions.toArray(new AnAction[actions.size()]));
+    setActions(actions.toArray(new AnAction[0]));
   }
 
   public void close() {

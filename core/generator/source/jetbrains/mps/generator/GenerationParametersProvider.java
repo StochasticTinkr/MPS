@@ -45,7 +45,7 @@ public interface GenerationParametersProvider {
     }
 
     StringBuilder sb = new StringBuilder();
-    String[] keys = parameters.keySet().toArray(new String[parameters.size()]);
+    String[] keys = parameters.keySet().toArray(new String[0]);
     Arrays.sort(keys);
     for (String k : keys) {
       sb.append(k);

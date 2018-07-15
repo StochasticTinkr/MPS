@@ -492,7 +492,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       return null;
     }
 
-    return selectedFilesList.toArray(new VirtualFile[selectedFilesList.size()]);
+    return selectedFilesList.toArray(new VirtualFile[0]);
   }
 
   /*package*/

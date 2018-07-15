@@ -750,7 +750,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     for (String path : paths) {
       treePaths.add(stringToPath(path));
     }
-    setSelectionPaths(treePaths.toArray(new TreePath[treePaths.size()]));
+    setSelectionPaths(treePaths.toArray(new TreePath[0]));
   }
 
   protected void selectPathsRaw(List<List<String>> paths) {
@@ -758,7 +758,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     for (List<String> path : paths) {
       treePaths.add(listToPath(path));
     }
-    setSelectionPaths(treePaths.toArray(new TreePath[treePaths.size()]));
+    setSelectionPaths(treePaths.toArray(new TreePath[0]));
   }
 
   // TODO: refactor TreeState to include these instead of the old format

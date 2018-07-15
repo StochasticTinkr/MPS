@@ -46,7 +46,7 @@ public class BenchmarkUtil {
     });
 
     printMeasure("to array iteration", ntimes, () -> {
-      for (String item : items.toArray(new String[items.size()])) {
+      for (String item : items.toArray(new String[0])) {
         item.toUpperCase();
       }
     });
@@ -63,7 +63,7 @@ public class BenchmarkUtil {
         }
       };
 
-      for (String item : items.toArray(new String[items.size()])) {
+      for (String item : items.toArray(new String[0])) {
         v.visit(item);
       }
     });

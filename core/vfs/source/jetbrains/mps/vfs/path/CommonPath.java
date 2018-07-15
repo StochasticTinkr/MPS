@@ -138,7 +138,7 @@ public final class CommonPath extends AbstractPath {
   }
 
   private CommonPath(char separator, @Nullable String root, @NotNull List<String> parts) {
-    this(separator, root, parts.toArray(new String[parts.size()]));
+    this(separator, root, parts.toArray(new String[0]));
   }
 
   public final boolean isWindows() {

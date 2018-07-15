@@ -110,7 +110,7 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
       newOptions.add(ContentLoadingExtentOptions.INTERFACE_ONLY);
     }
     try {
-      return load(dataSource, newOptions.toArray(new ModelLoadingOption[newOptions.size()]));
+      return load(dataSource, newOptions.toArray(new ModelLoadingOption[0]));
     } catch (ModelLoadException e) {
       throw new IOException(e);
     }
