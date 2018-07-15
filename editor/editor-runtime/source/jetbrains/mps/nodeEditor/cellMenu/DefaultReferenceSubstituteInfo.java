@@ -46,11 +46,8 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo i
     super(editorContext);
     mySourceNode = sourceNode;
 
-    NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
-      @Override
-      public void run() {
-        myActionFactory = new DefaultReferenceSubstituteInfoActionsFactory(sourceNode, linkDeclaration, DefaultReferenceSubstituteInfo.this);
-      }
+    NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
+      myActionFactory = new DefaultReferenceSubstituteInfoActionsFactory(sourceNode, linkDeclaration, DefaultReferenceSubstituteInfo.this);
     });
   }
 

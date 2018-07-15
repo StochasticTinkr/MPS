@@ -94,17 +94,14 @@ public class LibraryManagerPreferences {
       }
     });
     innerButtonsPanel.add(myEditButton);
-    myLibrariesList.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
-      @Override
-      public void valueChanged(ListSelectionEvent e) {
-        int index = myLibrariesList.getSelectedIndex();
-        if (index < 0) return;
-        Library l = myListModel.get(index);
-        //todo add predef lib to view
-        boolean predefined = false;
-        myEditButton.setEnabled(!predefined);
-        myRemoveButton.setEnabled(!predefined);
-      }
+    myLibrariesList.getSelectionModel().addListSelectionListener(e -> {
+      int index = myLibrariesList.getSelectedIndex();
+      if (index < 0) return;
+      Library l = myListModel.get(index);
+      //todo add predef lib to view
+      boolean predefined = false;
+      myEditButton.setEnabled(!predefined);
+      myRemoveButton.setEnabled(!predefined);
     });
 
     myMainPanel.add(buttonsPanel, BorderLayout.SOUTH);

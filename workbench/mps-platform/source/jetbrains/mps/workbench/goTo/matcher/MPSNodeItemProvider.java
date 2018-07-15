@@ -246,13 +246,7 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
 
   @NotNull
   private static List<Pair<String, MinusculeMatcher>> getPatternsAndMatchers(String qualifierPattern, final ChooseByNameBase base) {
-    return ContainerUtil.map2List(split(qualifierPattern, base), new Function<String, Pair<String, MinusculeMatcher>>() {
-      @NotNull
-      @Override
-      public Pair<String, MinusculeMatcher> fun(String s) {
-        return Pair.create(getNamePattern(base, s), buildPatternMatcher(getNamePattern(base, s), NameUtil.MatchingCaseSensitivity.NONE));
-      }
-    });
+    return ContainerUtil.map2List(split(qualifierPattern, base), s -> Pair.create(getNamePattern(base, s), buildPatternMatcher(getNamePattern(base, s), NameUtil.MatchingCaseSensitivity.NONE)));
   }
 
   @NotNull
@@ -280,16 +274,13 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
     final MinusculeMatcher matcher = buildPatternMatcher(pattern, caseSensitivity);
 
     final String finalPattern = pattern;
-    JobLauncher.getInstance().invokeConcurrentlyUnderProgress(names, indicator, false, new Processor<String>() {
-      @Override
-      public boolean process(String name) {
-        if (matches(base, finalPattern, matcher, name)) {
-          synchronized (list) {
-            list.add(name);
-          }
+    JobLauncher.getInstance().invokeConcurrentlyUnderProgress(names, indicator, false, name -> {
+      if (matches(base, finalPattern, matcher, name)) {
+        synchronized (list) {
+          list.add(name);
         }
-        return true;
       }
+      return true;
     });
   }
 

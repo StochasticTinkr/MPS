@@ -344,12 +344,7 @@ public class TypeContextManager implements CoreComponent {
     //now we are not in generation mode
     final ITypeContextOwner contextOwner = myTypecheckingContextOwner.get();
 
-    return new Executor<>(contextOwner, node, new Computation<SNode>() {
-      @Override
-      public SNode compute(TypeCheckingContext context) {
-        return context != null ? context.getTypeOf(node, myTypeChecker) : null;
-      }
-    }).execute();
+    return new Executor<>(contextOwner, node, context -> context != null ? context.getTypeOf(node, myTypeChecker) : null).execute();
   }
 
   private interface TypecheckingContextHolder {

@@ -78,12 +78,7 @@ public abstract class SmartAction_Runtime {
         dialog.dispose();
       }
     }));
-    mainPanel.setOnOk(new Runnable() {
-      @Override
-      public void run() {
-        onOk(mainPanel, selectedCell, dialog);
-      }
-    });
+    mainPanel.setOnOk(() -> onOk(mainPanel, selectedCell, dialog));
 
     dialog.add(mainPanel, BorderLayout.CENTER);
     dialog.add(buttonPanel, BorderLayout.SOUTH);

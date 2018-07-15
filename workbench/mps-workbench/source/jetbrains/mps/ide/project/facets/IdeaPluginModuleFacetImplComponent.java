@@ -28,12 +28,7 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
  * FIXME refactor FacetFactory and make an ApplicationComponent from <code>FacetFactory<IdeaPluginModuleFacet></code>
  */
 public final class IdeaPluginModuleFacetImplComponent implements IdeaPluginFacetComponent, ApplicationComponent {
-  private final static FacetFactory IDEA_PLUGIN_FACET_FACTORY = new FacetFactory() {
-    @Override
-    public SModuleFacet create() {
-      return new IdeaPluginModuleFacetImpl();
-    }
-  };
+  private final static FacetFactory IDEA_PLUGIN_FACET_FACTORY = () -> new IdeaPluginModuleFacetImpl();
 
   public IdeaPluginModuleFacetImplComponent(MPSCoreComponents coreComponents) {
   }

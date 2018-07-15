@@ -73,44 +73,38 @@ public class NodeFileIconProvider implements FileIconProvider, ApplicationCompon
         return null;
       }
       final MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
-      return new ModelComputeRunnable<>(new Computable<Icon>() {
-        @Override
-        public Icon compute() {
-          if (IconDeferrer.getInstance() instanceof DefaultIconDeferrer) {
-            SNode node = MPSEditorUtil.getCurrentEditedNode(project, nodeFile);
-            if (node != null) {
-              return myIconManager.getIconFor(node);
-            }
-            // TODO: get current empty tab component in MPSEditorUtil by using ((TabbedEditor) nodeEditor).myTabsComponent.getCurrentTabAspect()[.getIcon]
-          }
-          SNode node = nodeFile.getNode();
+      return new ModelComputeRunnable<>(() -> {
+        if (IconDeferrer.getInstance() instanceof DefaultIconDeferrer) {
+          SNode node = MPSEditorUtil.getCurrentEditedNode(project, nodeFile);
           if (node != null) {
             return myIconManager.getIconFor(node);
           }
-          return null;
+          // TODO: get current empty tab component in MPSEditorUtil by using ((TabbedEditor) nodeEditor).myTabsComponent.getCurrentTabAspect()[.getIcon]
         }
+        SNode node = nodeFile.getNode();
+        if (node != null) {
+          return myIconManager.getIconFor(node);
+        }
+        return null;
       }).runRead(mpsProject.getModelAccess());
     } else if(file.getFileType().equals(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE)) {
       final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
       if (mpsProject == null) {
         return null;
       }
-      return new ModelComputeRunnable<>(new Computable<Icon>() {
-        @Override
-        public Icon compute() {
-          SModel descr = SModelFileTracker.getInstance(mpsProject.getRepository()).findModel(VirtualFileUtils.toIFile(file.getParent()));
-          if (descr == null) {
-            return null;
-          }
-
-          String nameWithoutExtension = file.getNameWithoutExtension();
-          for (SNode node : descr.getRootNodes()) {
-            if (nameWithoutExtension.equals(node.getName())) {
-              return myIconManager.getIconFor(node);
-            }
-          }
+      return new ModelComputeRunnable<>(() -> {
+        SModel descr = SModelFileTracker.getInstance(mpsProject.getRepository()).findModel(VirtualFileUtils.toIFile(file.getParent()));
+        if (descr == null) {
           return null;
         }
+
+        String nameWithoutExtension = file.getNameWithoutExtension();
+        for (SNode node : descr.getRootNodes()) {
+          if (nameWithoutExtension.equals(node.getName())) {
+            return myIconManager.getIconFor(node);
+          }
+        }
+        return null;
       }).runRead(mpsProject.getModelAccess());
     }
     return null;

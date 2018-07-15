@@ -53,12 +53,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
   @Override
   public SModule getModule() {
-    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<SModule>() {
-      @Override
-      public SModule compute() {
-        return myModuleReference.resolve(myProject.getRepository());
-      }
-    });
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(() -> myModuleReference.resolve(myProject.getRepository()));
   }
 
   @Override

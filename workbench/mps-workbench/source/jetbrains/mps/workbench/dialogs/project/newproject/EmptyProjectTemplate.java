@@ -49,10 +49,7 @@ public class EmptyProjectTemplate implements OtherProjectTemplate {
 
   @NotNull
   @Override
-  public TemplateFiller getTemplateFiller() { return new TemplateFiller() {
-    @Override
-    public void fillProjectWithModules(MPSProject project) {}
-  }; }
+  public TemplateFiller getTemplateFiller() { return project -> {}; }
 
   @Override
   public void setProjectPath(String projectPath) {

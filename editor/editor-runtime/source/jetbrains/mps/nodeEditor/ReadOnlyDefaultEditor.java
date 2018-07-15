@@ -87,12 +87,7 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
     if (referentNode.getModel() == null) {
       LOG.error("Reference to node which is not inside model. Node: " + referentNode, referentNode);
     }
-    EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
-      @Override
-      public EditorCell compute() {
-        return createReferentEditorCell(getEditorContext(), referenceLink, referentNode);
-      }
-    }, referentNode, referenceLink.getName());
+    EditorCell cell = getUpdateSession().updateReferencedNodeCell(() -> createReferentEditorCell(getEditorContext(), referenceLink, referentNode), referentNode, referenceLink.getName());
     setSemanticNodeToCells(cell, getNode());
     cell.setCellId("reference_" + referenceLink.getName());
     addCell(cell);

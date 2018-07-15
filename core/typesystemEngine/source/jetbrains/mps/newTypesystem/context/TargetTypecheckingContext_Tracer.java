@@ -27,22 +27,12 @@ public class TargetTypecheckingContext_Tracer extends TargetTypecheckingContext 
 
   @Override
   public SNode getTypeOf(final SNode node, final TypeChecker typeChecker) {
-    return typeChecker.computeWithTrace(new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        return TargetTypecheckingContext_Tracer.super.getTypeOf(node, typeChecker);
-      }
-    }, "type computing");
+    return typeChecker.computeWithTrace(() -> TargetTypecheckingContext_Tracer.super.getTypeOf(node, typeChecker), "type computing");
   }
 
   @Override
   public SNode getTypeOf_generationMode(final SNode node) {
-    return myTypeChecker.computeWithTrace(new Computable<SNode>(){
-      @Override
-      public SNode compute() {
-        return TargetTypecheckingContext_Tracer.super.getTypeOf_generationMode(node);
-      }
-    }, "type computing");
+    return myTypeChecker.computeWithTrace(() -> TargetTypecheckingContext_Tracer.super.getTypeOf_generationMode(node), "type computing");
   }
 
 }

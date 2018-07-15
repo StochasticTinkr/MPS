@@ -176,12 +176,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     myExpandingNodes.add(node);
     try {
-      doInit(node, new Runnable() {
-        @Override
-        public void run() {
-          node.doInit();
-        }
-      });
+      doInit(node, () -> node.doInit());
     } finally {
       myExpandingNodes.remove(node);
     }
@@ -558,12 +553,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       if (saveExpansion) {
         final List<String> expansion = getExpandedPaths();
         final List<String> selection = getSelectedPaths();
-        restoreExpansion = new Runnable() {
-          @Override
-          public void run() {
-            expandPaths(expansion);
-            selectPaths(selection);
-          }
+        restoreExpansion = () -> {
+          expandPaths(expansion);
+          selectPaths(selection);
         };
       }
       rebuildAction.run();
@@ -577,15 +569,12 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   // XXX Rename to scheduleRebuild()?
   public void rebuildLater() {
-    myQueue.queue(new SafeUpdate(myUpdateId, new Runnable() {
-      @Override
-      public void run() {
-        // myQueue is attached to EDT
-        if (MPSTree.this.isDisposed()) {
-          return;
-        }
-        rebuildNow();
+    myQueue.queue(new SafeUpdate(myUpdateId, () -> {
+      // myQueue is attached to EDT
+      if (MPSTree.this.isDisposed()) {
+        return;
       }
+      rebuildNow();
     }, LOG));
   }
 
@@ -595,15 +584,12 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     }
     assert !isDisposed() : "Trying to reconstruct disposed tree. Try finding \"later\" in stacktrace";
 
-    runRebuildAction(new Runnable() {
-      @Override
-      public void run() {
-        setAnchorSelectionPath(null);
-        setLeadSelectionPath(null);
+    runRebuildAction(() -> {
+      setAnchorSelectionPath(null);
+      setLeadSelectionPath(null);
 
-        MPSTreeNode root = rebuild();
-        setRootNode(root);
-      }
+      MPSTreeNode root = rebuild();
+      setRootNode(root);
     }, true);
   }
 

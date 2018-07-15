@@ -106,15 +106,12 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       } else {
         repository = repo;
       }
-      Computable<SModel> c = new Computable<SModel>() {
-        @Override
-        public SModel compute() {
-          SModule module = repository.getModule(myModuleReference.getModuleId());
-          if (module == null) {
-            return null;
-          }
-          return module.getModel(myModelId);
+      Computable<SModel> c = () -> {
+        SModule module = repository.getModule(myModuleReference.getModuleId());
+        if (module == null) {
+          return null;
         }
+        return module.getModel(myModelId);
       };
       if (!repository.getModelAccess().canRead()) {
         LOG.warn("Attempt to resolve a model not from read action. What are you going to do with return value? Hint: at least, read. Please ensure proper model access then.", new Throwable());

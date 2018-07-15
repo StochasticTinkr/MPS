@@ -94,12 +94,9 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
     public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
-      addPendingAction(new Runnable() {
-        @Override
-        public void run() {
-          myEditorTracker.markEverythingUnchecked();
-          myEditorList.clearAdditionalEditors();
-        }
+      addPendingAction(() -> {
+        myEditorTracker.markEverythingUnchecked();
+        myEditorList.clearAdditionalEditors();
       });
     }
   };
@@ -139,12 +136,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       @Override
       public void editorComponentDisposed(@NotNull final EditorComponent editorComponent) {
         if (myEditorTracker.isInspector(editorComponent)) {
-          addPendingAction(new Runnable() {
-            @Override
-            public void run() {
-              myEditorTracker.markInspectorUnchecked();
-            }
-          });
+          addPendingAction(() -> myEditorTracker.markInspectorUnchecked());
         }
       }
     });
@@ -194,12 +186,9 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     if (RuntimeFlags.isTestMode()) {
       return;
     }
-    addPendingAction(new Runnable() {
-      @Override
-      public void run() {
-        myCheckers.add(new EditorCheckerWrapper(checker));
-        myEditorTracker.markEverythingUnchecked();
-      }
+    addPendingAction(() -> {
+      myCheckers.add(new EditorCheckerWrapper(checker));
+      myEditorTracker.markEverythingUnchecked();
     });
   }
 
@@ -237,17 +226,14 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
     // 3. In the highlighter thread again (actually, any background thread would do), go through the list retrieved in the previous step and remove
     //    the checker's messages from each editor.
-    addPendingAction(new Runnable() {
-      @Override
-      public void run() {
-        long time = System.currentTimeMillis();
-        for (EditorComponent component : editors) {
-          component.getHighlightManager().clearForOwner(messageOwner, true);
-        }
-        if (LOG.isDebugEnabled()) {
-          long elapsed = System.currentTimeMillis() - time;
-          LOG.debug(String.format("Removing %s messages from %d editors took %d ms", messageOwner, editors.size(), elapsed));
-        }
+    addPendingAction(() -> {
+      long time = System.currentTimeMillis();
+      for (EditorComponent component : editors) {
+        component.getHighlightManager().clearForOwner(messageOwner, true);
+      }
+      if (LOG.isDebugEnabled()) {
+        long elapsed = System.currentTimeMillis() - time;
+        LOG.debug(String.format("Removing %s messages from %d editors took %d ms", messageOwner, editors.size(), elapsed));
       }
     });
   }
@@ -331,17 +317,14 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   }
 
   public void resetCheckedStateInBackground(final EditorComponent editorComponent) {
-    addPendingAction(new Runnable() {
-      @Override
-      public void run() {
-        myForceUpdateInPowerSaveModeFlag = true;
-        myEditorTracker.markUnchecked(editorComponent);
-        if (myEditorTracker.isInspector(editorComponent)) {
-          return;
-        }
-        for (EditorCheckerWrapper checker : myCheckers) {
-          checker.forceAutofix(editorComponent);
-        }
+    addPendingAction(() -> {
+      myForceUpdateInPowerSaveModeFlag = true;
+      myEditorTracker.markUnchecked(editorComponent);
+      if (myEditorTracker.isInspector(editorComponent)) {
+        return;
+      }
+      for (EditorCheckerWrapper checker : myCheckers) {
+        checker.forceAutofix(editorComponent);
       }
     });
   }

@@ -227,23 +227,20 @@ public class MessagesGutter extends ButtonlessScrollBarUI.Transparent implements
           marks.add(mark);
         }
 
-        marks.sort(new Comparator<GutterMark>() {
-          @Override
-          public int compare(GutterMark mark1, GutterMark mark2) {
-            if (mark1 == mark2) {
-              return 0;
-            }
-            SimpleEditorMessage message1 = mark1.getEditorMessage();
-            SimpleEditorMessage message2 = mark2.getEditorMessage();
-            if (message1 instanceof EditorMessage == message2 instanceof EditorMessage) {
-              if (message1 instanceof EditorMessage) {
-                return mark1.getStatus() != mark2.getStatus() ? mark1.getStatus().ordinal() - mark2.getStatus().ordinal() : mark1.getY() - mark2.getY();
-              } else {
-                return mark1.getY() - mark2.getY();
-              }
+        marks.sort((mark1, mark2) -> {
+          if (mark1 == mark2) {
+            return 0;
+          }
+          SimpleEditorMessage message1 = mark1.getEditorMessage();
+          SimpleEditorMessage message2 = mark2.getEditorMessage();
+          if (message1 instanceof EditorMessage == message2 instanceof EditorMessage) {
+            if (message1 instanceof EditorMessage) {
+              return mark1.getStatus() != mark2.getStatus() ? mark1.getStatus().ordinal() - mark2.getStatus().ordinal() : mark1.getY() - mark2.getY();
             } else {
-              return message1 instanceof EditorMessage ? 1 : -1;
+              return mark1.getY() - mark2.getY();
             }
+          } else {
+            return message1 instanceof EditorMessage ? 1 : -1;
           }
         });
 

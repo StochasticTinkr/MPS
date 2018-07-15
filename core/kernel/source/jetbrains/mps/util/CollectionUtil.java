@@ -180,12 +180,7 @@ public class CollectionUtil {
   }
 
   public static <T> Iterable<T> withoutNulls(final Iterable<T> resultList) {
-    return new Iterable<T>() {
-      @Override
-      public Iterator<T> iterator() {
-        return new SkipNullIterator<>(resultList.iterator());
-      }
-    };
+    return () -> new SkipNullIterator<>(resultList.iterator());
   }
 
   private static class SkipNullIterator<Item> implements Iterator<Item> {

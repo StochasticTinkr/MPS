@@ -52,20 +52,17 @@ public class MainNodeTreeElement implements StructureViewTreeElement {
   @Override
   public TreeElement[] getChildren() {
     final List<TreeElement> result = new ArrayList<>();
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SNode node = myNode.resolve(myProject.getRepository());
-        for (RelationDescriptor tab : ProjectPluginManager.getApplicableTabs(myProject.getProject(), node)) {
-          try {
-            for (SNode aspectNode : tab.getNodes(node)) {
-              SNode baseNode = tab.getBaseNode(aspectNode);
-              boolean bijection = (baseNode == node || baseNode == null);
-              result.add(new AspectTreeElement(MainNodeTreeElement.this, aspectNode, tab, bijection));
-            }
-          } catch (Throwable t) {
-            LOG.error("Exception in extension: ", t);
+    myProject.getModelAccess().runReadAction(() -> {
+      SNode node = myNode.resolve(myProject.getRepository());
+      for (RelationDescriptor tab : ProjectPluginManager.getApplicableTabs(myProject.getProject(), node)) {
+        try {
+          for (SNode aspectNode : tab.getNodes(node)) {
+            SNode baseNode = tab.getBaseNode(aspectNode);
+            boolean bijection = (baseNode == node || baseNode == null);
+            result.add(new AspectTreeElement(MainNodeTreeElement.this, aspectNode, tab, bijection));
           }
+        } catch (Throwable t) {
+          LOG.error("Exception in extension: ", t);
         }
       }
     });

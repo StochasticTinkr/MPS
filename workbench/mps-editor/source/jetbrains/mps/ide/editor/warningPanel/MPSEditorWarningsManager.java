@@ -203,15 +203,12 @@ public class MPSEditorWarningsManager implements ProjectComponent {
       return;
     }
     myScheduledUpdateAllWarnings.set(true);
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      @Override
-      public void run() {
-        myScheduledUpdateAllWarnings.set(false);
-        if (myProject.isDisposed()) {
-          return;
-        }
-        updateAllWarnings();
+    ThreadUtils.runInUIThreadNoWait(() -> {
+      myScheduledUpdateAllWarnings.set(false);
+      if (myProject.isDisposed()) {
+        return;
       }
+      updateAllWarnings();
     });
 
   }

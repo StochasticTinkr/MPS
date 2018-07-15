@@ -47,14 +47,11 @@ public abstract class SingleTermRules<K> {
     if (cachedRules != null) {
       return cachedRules;
     }
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<K>>() {
-      @Override
-      public Set<K> compute() {
-        Set<K> computedRules = computeRules(concept, langScope);
-        myCachedRules.put(compoundKey, computedRules);
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
+      Set<K> computedRules = computeRules(concept, langScope);
+      myCachedRules.put(compoundKey, computedRules);
 
-        return computedRules;
-      }
+      return computedRules;
     });
   }
 

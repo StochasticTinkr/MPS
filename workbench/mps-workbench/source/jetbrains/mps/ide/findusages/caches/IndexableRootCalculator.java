@@ -90,15 +90,12 @@ final class IndexableRootCalculator {
   private Set<VirtualFile> calcRoots() {
     final Set<VirtualFile> files = new HashSet<>();
 
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        for (final SModule m : myProject.getRepository().getModules()) {
-          for (String path : getIndexablePaths(m)) {
-            VirtualFile file = VirtualFileUtils.getVirtualFile(path);
-            if (file != null) {
-              files.add(file);
-            }
+    myProject.getModelAccess().runReadAction(() -> {
+      for (final SModule m : myProject.getRepository().getModules()) {
+        for (String path : getIndexablePaths(m)) {
+          VirtualFile file = VirtualFileUtils.getVirtualFile(path);
+          if (file != null) {
+            files.add(file);
           }
         }
       }

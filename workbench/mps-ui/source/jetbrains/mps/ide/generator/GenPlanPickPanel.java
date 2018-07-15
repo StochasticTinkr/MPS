@@ -70,21 +70,15 @@ public class GenPlanPickPanel extends JPanel {
     c.fill = GridBagConstraints.NONE;
     c.weightx = 0;
     add(b, c);
-    b.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        ArrayList<SModelReference> models = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<ArrayList<SModelReference>>() {
-          @Override
-          public ArrayList<SModelReference> compute() {
-            ArrayList<SModelReference> rv = new ArrayList<>();
-            for (SModel m : myScope.getModels()) {
-              rv.add(m.getReference());
-            }
-            return rv;
-          }
-        });
-        setPlanModel(CommonChoosers.showModelChooser(myProject, "Pick model with a generation plan", models));
-      }
+    b.addActionListener(e -> {
+      ArrayList<SModelReference> models = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(() -> {
+        ArrayList<SModelReference> rv = new ArrayList<>();
+        for (SModel m : myScope.getModels()) {
+          rv.add(m.getReference());
+        }
+        return rv;
+      });
+      setPlanModel(CommonChoosers.showModelChooser(myProject, "Pick model with a generation plan", models));
     });
   }
 

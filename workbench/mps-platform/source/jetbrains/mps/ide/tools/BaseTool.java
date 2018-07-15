@@ -250,21 +250,18 @@ public abstract class BaseTool {
         keymaps.add(keymap);
       }
       // keymaps topsort here is needed because we need to remove inherited shortcuts if they are overwritten
-      Collections.sort(keymaps, new Comparator<Keymap>() {
-        @Override
-        public int compare(Keymap o1, Keymap o2) {
-          for (Keymap parent = o1.getParent(); parent != null; parent = parent.getParent()) {
-            if (parent.equals(o2)) {
-              return 1;
-            }
+      Collections.sort(keymaps, (o1, o2) -> {
+        for (Keymap parent = o1.getParent(); parent != null; parent = parent.getParent()) {
+          if (parent.equals(o2)) {
+            return 1;
           }
-          for (Keymap parent = o2.getParent(); parent != null; parent = parent.getParent()) {
-            if (parent.equals(o1)) {
-              return -1;
-            }
-          }
-          return 0;
         }
+        for (Keymap parent = o2.getParent(); parent != null; parent = parent.getParent()) {
+          if (parent.equals(o1)) {
+            return -1;
+          }
+        }
+        return 0;
       });
 
       for (Keymap keymap : keymaps) {

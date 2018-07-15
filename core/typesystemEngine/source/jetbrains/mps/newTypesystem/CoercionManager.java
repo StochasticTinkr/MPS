@@ -74,22 +74,19 @@ public class CoercionManager {
     }
 
     //asking the cache
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        Pair<Boolean, SNode> answer = getCoerceCacheAnswer(subtype, pattern, isWeak);
-        if (answer != null && answer.o1) {
-          return answer.o2;
-        }
-        CoercionMatcher coercionMatcher = new CoercionMatcher(pattern);
-        SNode result = searchInSuperTypes(subtype, coercionMatcher, isWeak);
-        //writing to the cache
-        SubtypingCache subtypingCache = myTypeChecker.getSubtypingCache();
-        if (subtypingCache != null) {
-          subtypingCache.cacheCoerce(subtype, pattern, result, isWeak);
-        }
-        return result;
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
+      Pair<Boolean, SNode> answer = getCoerceCacheAnswer(subtype, pattern, isWeak);
+      if (answer != null && answer.o1) {
+        return answer.o2;
       }
+      CoercionMatcher coercionMatcher = new CoercionMatcher(pattern);
+      SNode result = searchInSuperTypes(subtype, coercionMatcher, isWeak);
+      //writing to the cache
+      SubtypingCache subtypingCache = myTypeChecker.getSubtypingCache();
+      if (subtypingCache != null) {
+        subtypingCache.cacheCoerce(subtype, pattern, result, isWeak);
+      }
+      return result;
     });
   }
 
@@ -120,12 +117,7 @@ public class CoercionManager {
       }
       ArrayList<SNode> ancestorsSorted;
       ancestorsSorted = new ArrayList<>(ancestors);
-      Collections.sort(ancestorsSorted, new Comparator<SNode>() {
-        @Override
-        public int compare(SNode o1, SNode o2) {
-          return TypesUtil.depth(o2) - TypesUtil.depth(o1);
-        }
-      });
+      Collections.sort(ancestorsSorted, (o1, o2) -> TypesUtil.depth(o2) - TypesUtil.depth(o1));
       List<SNode> results = new ArrayList<>();
       for (SNode ancestor : ancestorsSorted) {
         if (superType.matchesWith(ancestor)) {

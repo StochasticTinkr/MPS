@@ -218,12 +218,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myVirtualFileManagerListener = new RefreshListener());
     ChangeListManager.getInstance(myProject).addChangeListListener(myChangeListListener = new ChangeListUpdateListener());
     myMessageBusConnection = myBus.connect(this);
-    myMessageBusConnection.subscribe(ProjectLevelVcsManager.VCS_CONFIGURATION_CHANGED, new VcsListener() {
-      @Override
-      public void directoryMappingChanged() {
-        rebuildTreeLater();
-      }
-    });
+    myMessageBusConnection.subscribe(ProjectLevelVcsManager.VCS_CONFIGURATION_CHANGED, () -> rebuildTreeLater());
     myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, new FileEditorManagerAdapter() {
       @Override
       public void fileOpened(@NotNull FileEditorManager source, @NotNull VirtualFile file) {
@@ -331,12 +326,9 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   private void openEditor(FileTreeNode fileTreeNode) {
     // assertion was added for http://youtrack.jetbrains.net/issue/MPS-7762
     assert fileTreeNode.getFile().isValid() : "Underlying file is not valid";
-    com.intellij.openapi.command.CommandProcessor.getInstance().executeCommand(myProject, new Runnable() {
-      @Override
-      public void run() {
-        myIdeDocumentHistory.includeCurrentCommandAsNavigation();
-        myEditorManager.openFile(fileTreeNode.getFile(), true, true);
-      }
+    com.intellij.openapi.command.CommandProcessor.getInstance().executeCommand(myProject, () -> {
+      myIdeDocumentHistory.includeCurrentCommandAsNavigation();
+      myEditorManager.openFile(fileTreeNode.getFile(), true, true);
     }, "navigate", "");
   }
 

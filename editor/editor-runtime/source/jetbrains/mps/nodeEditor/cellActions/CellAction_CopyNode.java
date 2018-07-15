@@ -94,13 +94,10 @@ public class CellAction_CopyNode extends AbstractCellAction {
       SNode node = selectedCell.getSNode();
       final SNode parent = node.getParent();
       if (parent != null && AttributeOperations.isAttribute(node)) {
-        Condition<EditorCell> condition = new Condition<EditorCell>() {
-          @Override
-          public boolean met(EditorCell object) {
-            SNode selectedNode = object.getSNode();
-            return selectedNode != null &&
-                    selectedNode.getParent() == parent && AttributeOperations.isAttribute(selectedNode);
-          }
+        Condition<EditorCell> condition = object -> {
+          SNode selectedNode = object.getSNode();
+          return selectedNode != null &&
+                  selectedNode.getParent() == parent && AttributeOperations.isAttribute(selectedNode);
         };
 
         //Store the attribute by default. Store the parent only of it is also part of the selection.

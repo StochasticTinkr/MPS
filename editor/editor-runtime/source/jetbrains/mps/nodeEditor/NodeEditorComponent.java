@@ -61,28 +61,22 @@ public class NodeEditorComponent extends EditorComponent {
       @Override
       protected void selectionChangedTo(jetbrains.mps.openapi.editor.EditorComponent editorComponent, SingularSelection newSelection) {
         final SNode[] toSelect = new SNode[]{newSelection.getEditorCell().getSNode()};
-        getRepository().getModelAccess().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            if (isShowing() || RuntimeFlags.getTestMode().isInsideTestEnvironment()) {
-              inspect(toSelect[0]);
-            }
+        getRepository().getModelAccess().runReadAction(() -> {
+          if (isShowing() || RuntimeFlags.getTestMode().isInsideTestEnvironment()) {
+            inspect(toSelect[0]);
           }
         });
       }
     });
 
-    addHierarchyListener(new HierarchyListener() {
-      @Override
-      public void hierarchyChanged(HierarchyEvent hierarchyEvent) {
-        if (HierarchyEvent.SHOWING_CHANGED != (hierarchyEvent.getChangeFlags() & HierarchyEvent.SHOWING_CHANGED)) {
-          return;
-        }
-        if (!isShowing()) {
-          return;
-        }
-        adjustInspector();
+    addHierarchyListener(hierarchyEvent -> {
+      if (HierarchyEvent.SHOWING_CHANGED != (hierarchyEvent.getChangeFlags() & HierarchyEvent.SHOWING_CHANGED)) {
+        return;
       }
+      if (!isShowing()) {
+        return;
+      }
+      adjustInspector();
     });
   }
 
@@ -92,22 +86,19 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   private void adjustInspector() {
-    getRepository().getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SNode selectedNode = getSelectedNode();
+    getRepository().getModelAccess().runReadAction(() -> {
+      SNode selectedNode = getSelectedNode();
 
-        if (selectedNode == null) {
-          inspect(null);
-          return;
-        }
-
-        if (selectedNode.getModel() == null) {
-          return;
-        }
-
-        inspect(selectedNode);
+      if (selectedNode == null) {
+        inspect(null);
+        return;
       }
+
+      if (selectedNode.getModel() == null) {
+        return;
+      }
+
+      inspect(selectedNode);
     });
   }
 

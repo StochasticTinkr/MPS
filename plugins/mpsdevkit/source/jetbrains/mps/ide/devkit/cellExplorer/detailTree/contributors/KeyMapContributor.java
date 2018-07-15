@@ -46,12 +46,7 @@ public class KeyMapContributor implements CellTreeContributor {
   @NotNull
   private List<ActionKey> getSortedActionKeys(KeyMap keyMap) {
     List<ActionKey> actionKeys = new ArrayList<>(keyMap.getActionKeys());
-    Collections.sort(actionKeys, new Comparator<ActionKey>() {
-      @Override
-      public int compare(ActionKey firstKey, ActionKey secondKey) {
-        return firstKey.toString().compareTo(secondKey.toString());
-      }
-    });
+    Collections.sort(actionKeys, (firstKey, secondKey) -> firstKey.toString().compareTo(secondKey.toString()));
     return actionKeys;
   }
 }

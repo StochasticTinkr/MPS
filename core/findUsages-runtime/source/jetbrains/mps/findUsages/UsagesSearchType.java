@@ -59,12 +59,9 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
 
       for (FindUsagesParticipant participant : participants) {
         final Set<SModel> next = new HashSet<>(current);
-        participant.findUsages(current, nodes, consumer, new Consumer<SModel>() {
-          @Override
-          public void consume(SModel sModel) {
-            assert !(sModel instanceof EditableSModel && ((EditableSModel) sModel).isChanged());
-            next.remove(sModel);
-          }
+        participant.findUsages(current, nodes, consumer, sModel -> {
+          assert !(sModel instanceof EditableSModel && ((EditableSModel) sModel).isChanged());
+          next.remove(sModel);
         });
         current = next;
         monitor.advance(1);

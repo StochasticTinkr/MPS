@@ -69,21 +69,13 @@ public class CellExplorerTab implements IComponentDisposer<JComponent> {
 
     myCellDetailTree = new CellDetailTree();
 
-    ActionListener selectCurrentCellInEditor = new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        selectCurrentCellInEditor();
-      }
-    };
+    ActionListener selectCurrentCellInEditor = e -> selectCurrentCellInEditor();
     myCellDetailTree.setActionListener(selectCurrentCellInEditor);
 
     myCellsTree = new CellsTree();
-    myCellsTree.addTreeSelectionListener(new TreeSelectionListener() {
-      @Override
-      public void valueChanged(TreeSelectionEvent e) {
-        CellsTree source = (CellsTree) e.getSource();
-        myCellDetailTree.setCell(source.getCellByPath(e.getNewLeadSelectionPath()));
-      }
+    myCellsTree.addTreeSelectionListener(e -> {
+      CellsTree source = (CellsTree) e.getSource();
+      myCellDetailTree.setCell(source.getCellByPath(e.getNewLeadSelectionPath()));
     });
     myCellsTree.setActionListener(selectCurrentCellInEditor);
 
@@ -112,17 +104,13 @@ public class CellExplorerTab implements IComponentDisposer<JComponent> {
     assert !isDisposed() : "Re-adding disposed tab";
 
     Pair<String, Icon> nodeData = new ModelAccessHelper(myEditorComponent.getEditorContext().getRepository()).runReadAction(
-        new Computable<Pair<String, Icon>>() {
-          @NotNull
-          @Override
-          public Pair<String, Icon> compute() {
-            SNode editedNode = myEditorComponent.getEditedNode();
-            if (editedNode == null) {
-              return new Pair<>(null, null);
-            }
-
-            return new Pair<>(editedNode.getPresentation(), GlobalIconManager.getInstance().getIconFor(editedNode));
+        () -> {
+          SNode editedNode = myEditorComponent.getEditedNode();
+          if (editedNode == null) {
+            return new Pair<>(null, null);
           }
+
+          return new Pair<>(editedNode.getPresentation(), GlobalIconManager.getInstance().getIconFor(editedNode));
         });
 
     if (nodeData.o1 == null) {

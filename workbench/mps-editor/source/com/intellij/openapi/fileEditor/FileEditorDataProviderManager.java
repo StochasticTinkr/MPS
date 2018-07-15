@@ -38,12 +38,7 @@ public class FileEditorDataProviderManager {
   public void registerDataProvider(final FileEditorDataProvider dataProvider, Disposable parentDisposable) {
     myDataProviders.add(dataProvider);
     if (parentDisposable != null) {
-      Disposer.register(parentDisposable, new Disposable() {
-        @Override
-        public void dispose() {
-          myDataProviders.remove(dataProvider);
-        }
-      });
+      Disposer.register(parentDisposable, () -> myDataProviders.remove(dataProvider));
     }
   }
 

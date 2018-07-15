@@ -208,12 +208,7 @@ public class UpdateSessionImpl implements UpdateSession {
     myCurrentUpdateInfo = new UpdateInfoNode(getCurrentContext().sameContextButAnotherNode(node), myCurrentUpdateInfo);
     try {
       final EditorContext editorContext = getUpdater().getEditorContext();
-      return runWithExplicitEditorHints(editorContext, node, new Computable<EditorCell>() {
-        @Override
-        public EditorCell compute() {
-          return EditorManager.getInstanceFromContext(editorContext).createEditorCell(getModelModifications(), getCurrentContext());
-        }
-      });
+      return runWithExplicitEditorHints(editorContext, node, () -> EditorManager.getInstanceFromContext(editorContext).createEditorCell(getModelModifications(), getCurrentContext()));
     } finally {
       myCurrentUpdateInfo = myCurrentUpdateInfo.getParent();
       getCellFactory().popCellContext();

@@ -63,19 +63,16 @@ public abstract class AbstractCache extends SModelAdapter {
     if (result != null || creator == null) {
       return result;
     }
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<DataSet>() {
-      @Override
-      public DataSet compute() {
-        DataSet result = creator.create(AbstractCache.this);
-        assert result.getId().equals(dataSetId);
-        result.init();
-        DataSet existing = myDataSets.putIfAbsent(dataSetId, result);
-        if (existing != null) {
-          // ignored, drop dataSet
-          return existing;
-        }
-        return result;
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
+      DataSet result1 = creator.create(AbstractCache.this);
+      assert result1.getId().equals(dataSetId);
+      result1.init();
+      DataSet existing = myDataSets.putIfAbsent(dataSetId, result1);
+      if (existing != null) {
+        // ignored, drop dataSet
+        return existing;
       }
+      return result1;
     });
   }
 

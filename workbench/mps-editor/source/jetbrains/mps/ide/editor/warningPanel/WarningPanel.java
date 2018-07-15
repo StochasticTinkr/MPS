@@ -53,12 +53,7 @@ public class WarningPanel extends JPanel {
     if (linkText != null && handler != null) {
       HyperlinkLabel hyperlinkLabel = new HyperlinkLabel(linkText);
       hyperlinkLabel.setOpaque(false);
-      hyperlinkLabel.addHyperlinkListener(new HyperlinkListener() {
-        @Override
-        public void hyperlinkUpdate(HyperlinkEvent e) {
-          handler.run();
-        }
-      });
+      hyperlinkLabel.addHyperlinkListener(e -> handler.run());
       add(hyperlinkLabel, BorderLayout.EAST);
     }
   }

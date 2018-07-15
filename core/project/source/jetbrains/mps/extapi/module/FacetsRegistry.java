@@ -39,26 +39,11 @@ import java.util.Set;
  * evgeny, 2/27/13
  */
 public class FacetsRegistry extends FacetsFacade implements CoreComponent {
-  private final static FacetFactory TESTS_FACET_FACTORY = new FacetFactory() {
-    @Override
-    public SModuleFacet create() {
-      return new TestsFacetImpl();
-    }
-  };
+  private final static FacetFactory TESTS_FACET_FACTORY = () -> new TestsFacetImpl();
 
-  private final static FacetFactory JAVA_MODULE_FACET_FACTORY = new FacetFactory() {
-    @Override
-    public SModuleFacet create() {
-      return new JavaModuleFacetImpl();
-    }
-  };
+  private final static FacetFactory JAVA_MODULE_FACET_FACTORY = () -> new JavaModuleFacetImpl();
 
-  private final static FacetFactory DUMB_IDEA_PLUGIN_FACET_FACTORY = new FacetFactory() {
-    @Override
-    public SModuleFacet create() {
-      return new DumbIdeaPluginFacet();
-    }
-  };
+  private final static FacetFactory DUMB_IDEA_PLUGIN_FACET_FACTORY = () -> new DumbIdeaPluginFacet();
 
   private MultiMap<String, String> myLanguageToFacetTypes = new MultiMap<>();
 

@@ -169,12 +169,9 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     GridBagConstraints c = new GridBagConstraints();
     c.gridy = 0;
     parallelGen.add(myUseNewGenerator, c);
-    final ChangeListener listener = new ChangeListener() {
-      @Override
-      public void stateChanged(ChangeEvent e) {
-        myUseNewGenerator.setEnabled(myStrictMode.isSelected());
-        myNumberOfParallelThreads.setEditable(myUseNewGenerator.isSelected() && myStrictMode.isSelected());
-      }
+    final ChangeListener listener = e -> {
+      myUseNewGenerator.setEnabled(myStrictMode.isSelected());
+      myNumberOfParallelThreads.setEditable(myUseNewGenerator.isSelected() && myStrictMode.isSelected());
     };
     myStrictMode.addChangeListener(listener);
     myUseNewGenerator.addChangeListener(listener);
@@ -209,12 +206,9 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     panel.add(myShowBadChildWarnings, c);
     myButtonState.track(myShowInfo, myShowWarnings, myKeepModelsWithWarnings, myShowBadChildWarnings);
 
-    final ChangeListener listener = new ChangeListener() {
-      @Override
-      public void stateChanged(ChangeEvent e) {
-        myKeepModelsWithWarnings.setEnabled(myShowWarnings.isSelected());
-        myShowBadChildWarnings.setEnabled(myShowWarnings.isSelected());
-      }
+    final ChangeListener listener = e -> {
+      myKeepModelsWithWarnings.setEnabled(myShowWarnings.isSelected());
+      myShowBadChildWarnings.setEnabled(myShowWarnings.isSelected());
     };
     myShowWarnings.addChangeListener(listener);
 
@@ -230,12 +224,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     GridBagConstraints c = new GridBagConstraints();
     c.gridy = 0;
     group.add(myLimitNumberOfModels, c);
-    final ChangeListener listener = new ChangeListener() {
-      @Override
-      public void stateChanged(ChangeEvent e) {
-        myNumberOfModelsToKeep.setEditable(myLimitNumberOfModels.isSelected());
-      }
-    };
+    final ChangeListener listener = e -> myNumberOfModelsToKeep.setEditable(myLimitNumberOfModels.isSelected());
     myLimitNumberOfModels.addChangeListener(listener);
     group.add(myLimitNumberOfModels, c);
     myNumberOfModelsToKeep.setColumns(3);

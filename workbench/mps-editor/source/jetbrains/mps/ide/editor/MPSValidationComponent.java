@@ -66,31 +66,25 @@ public class MPSValidationComponent implements ProjectComponent {
   @Override
   public void projectOpened() {
     // TODO: create editor-specific "core" component in editor-runtime module and register all common checkers from there
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        addChecker(new TypesEditorChecker());
-        addChecker(new NonTypesystemEditorChecker());
-        addChecker(new AutoResolver(myProject));
-        final SRepository repositoryToTrack4Changes = myProject.getRepository();
-        addChecker(new LanguageEditorChecker(repositoryToTrack4Changes));
-        addChecker(new SuppressErrorsChecker());
-        addChecker(new ModelProblemsChecker(repositoryToTrack4Changes));
-      }
+    myProject.getModelAccess().runReadAction(() -> {
+      addChecker(new TypesEditorChecker());
+      addChecker(new NonTypesystemEditorChecker());
+      addChecker(new AutoResolver(myProject));
+      final SRepository repositoryToTrack4Changes = myProject.getRepository();
+      addChecker(new LanguageEditorChecker(repositoryToTrack4Changes));
+      addChecker(new SuppressErrorsChecker());
+      addChecker(new ModelProblemsChecker(repositoryToTrack4Changes));
     });
   }
 
   @Override
   public void projectClosed() {
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        while (!myCheckers.isEmpty()) {
-          EditorChecker checker = myCheckers.pop();
-          myHighlighter.removeChecker(checker);
-          if (checker instanceof DisposableEditorChecker) {
-            ((DisposableEditorChecker) checker).dispose();
-          }
+    myProject.getModelAccess().runReadAction(() -> {
+      while (!myCheckers.isEmpty()) {
+        EditorChecker checker = myCheckers.pop();
+        myHighlighter.removeChecker(checker);
+        if (checker instanceof DisposableEditorChecker) {
+          ((DisposableEditorChecker) checker).dispose();
         }
       }
     });

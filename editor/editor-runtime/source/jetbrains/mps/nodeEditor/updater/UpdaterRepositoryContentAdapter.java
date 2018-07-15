@@ -58,15 +58,12 @@ class UpdaterRepositoryContentAdapter extends SRepositoryContentAdapter {
   @Override
   public void modelReplaced(SModel model) {
     if (myUsedModels.contains(model)) {
-      myEditorComponent.getEditorContext().getRepository().getModelAccess().runReadInEDT(new Runnable() {
-        @Override
-        public void run() {
-          if (myEditorComponent.isDisposed()) {
-            return;
-          }
-          myEditorComponent.rebuildAfterReloadModel();
-          myEditorComponent.rebuildEditorContent();
+      myEditorComponent.getEditorContext().getRepository().getModelAccess().runReadInEDT(() -> {
+        if (myEditorComponent.isDisposed()) {
+          return;
         }
+        myEditorComponent.rebuildAfterReloadModel();
+        myEditorComponent.rebuildEditorContent();
       });
     }
   }

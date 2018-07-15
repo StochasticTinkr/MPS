@@ -63,12 +63,7 @@ final class SerializeSupport {
     top.setAttribute(ATTR_VER, CURRENT_VERSION);
 
     DebugInfoRoot[] roots = sortedRoots(debugInfo);
-    TreeSet<SAbstractConcept> allConcepts = new TreeSet<>(new Comparator<SAbstractConcept>() {
-      @Override
-      public int compare(SAbstractConcept o1, SAbstractConcept o2) {
-        return o1.getQualifiedName().compareTo(o2.getQualifiedName());
-      }
-    });
+    TreeSet<SAbstractConcept> allConcepts = new TreeSet<>((o1, o2) -> o1.getQualifiedName().compareTo(o2.getQualifiedName()));
     collectAllConcepts(roots, allConcepts);
     int i = 0;
     HashMap<SAbstractConcept, Integer> conceptsOrder = new HashMap<>();
@@ -227,18 +222,15 @@ final class SerializeSupport {
   // ensure roots get serialized in the same order
   private static DebugInfoRoot[] sortedRoots(DebugInfo debugInfo) {
     DebugInfoRoot[] rv = toArray(debugInfo.getRoots());
-    Arrays.sort(rv, new Comparator<DebugInfoRoot>() {
-      @Override
-      public int compare(DebugInfoRoot o1, DebugInfoRoot o2) {
-        if (o1.getNodeRef() == null || o2.getNodeRef() == null) {
-          if (o1.getNodeRef() == null) {
-            // in fact, both never null, as DebugInfo uses nodeRef as key. Just to keep it complete.
-            return o2.getNodeRef() == null ? 0 : -1;
-          }
-          return 1;
+    Arrays.sort(rv, (o1, o2) -> {
+      if (o1.getNodeRef() == null || o2.getNodeRef() == null) {
+        if (o1.getNodeRef() == null) {
+          // in fact, both never null, as DebugInfo uses nodeRef as key. Just to keep it complete.
+          return o2.getNodeRef() == null ? 0 : -1;
         }
-        return o1.getNodeRef().toString().compareTo(o2.getNodeRef().toString());
+        return 1;
       }
+      return o1.getNodeRef().toString().compareTo(o2.getNodeRef().toString());
     });
     return rv;
   }

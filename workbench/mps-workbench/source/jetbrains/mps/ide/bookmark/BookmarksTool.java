@@ -51,12 +51,9 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
     myTree = new BookmarksTree(ProjectHelper.toMPSProject(getProject()), myBookmarkManager);
     myComponent = ScrollPaneFactory.createScrollPane(myTree);
     if (myTreeState != null) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        @Override
-        public void run() {
-          myTree.rebuildNow();
-          myTree.loadState(myTreeState);
-        }
+      ApplicationManager.getApplication().invokeLater(() -> {
+        myTree.rebuildNow();
+        myTree.loadState(myTreeState);
       });
     }
   }

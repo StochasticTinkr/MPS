@@ -98,16 +98,13 @@ public class BaseGroup extends DefaultActionGroup implements DumbAware {
       e.getPresentation().setEnabled(false);
       e.getPresentation().setVisible(false);
     } else {
-      getModelAccess(e).runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          try {
-            e.getPresentation().setEnabled(true);
-            e.getPresentation().setVisible(true);
-            doUpdate(e);
-          } catch (Throwable ex) {
-            Logger.getLogger(BaseGroup.this.getClass()).error("Action group update failed", ex);
-          }
+      getModelAccess(e).runReadAction(() -> {
+        try {
+          e.getPresentation().setEnabled(true);
+          e.getPresentation().setVisible(true);
+          doUpdate(e);
+        } catch (Throwable ex) {
+          Logger.getLogger(BaseGroup.this.getClass()).error("Action group update failed", ex);
         }
       });
     }

@@ -54,12 +54,7 @@ public interface IGenerationTaskPool {
       final Throwable[] exception = new Throwable[1];
       // XXX I assume SimpleGenerationTaskPool is used from 'main' generation thread which already holds
       // read lock, so that read lock fairness (GenerationTaskAdapter#run()) won't cause any deadlock here
-      myModelAccess.runReadAction(new GenerationTaskAdapter(myQueue, new Callback<Throwable>() {
-        @Override
-        public void call(Throwable param) {
-          exception[0] = param;
-        }
-      }));
+      myModelAccess.runReadAction(new GenerationTaskAdapter(myQueue, param -> exception[0] = param));
       if (exception[0] != null) {
         GenerationTaskAdapter.rethrow(exception[0]);
       }

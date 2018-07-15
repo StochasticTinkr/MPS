@@ -88,35 +88,30 @@ public class WorkbenchPathMacros implements ApplicationComponent, PathMacrosProv
 
   @Override
   public void report(String message, String macro) {
-    Notifications.Bus.notify(new Notification(Notifications.SYSTEM_MESSAGES_GROUP_ID, "Undefined macro", macro + " <html><a href=''>fix...</a></html>", NotificationType.ERROR, new NotificationListener() {
-      @Override
-      public void hyperlinkUpdate(@NotNull Notification notification, @NotNull HyperlinkEvent event) {
-        if (event.getEventType() != EventType.ACTIVATED) {
-          return;
-        }
-        DataManager.getInstance().getDataContextFromFocus().doWhenDone(new Consumer<DataContext>() {
-          @Override
-          public void consume(DataContext dataContext) {
-            Project project = PlatformDataKeys.PROJECT.getData(dataContext);
+    Notifications.Bus.notify(new Notification(Notifications.SYSTEM_MESSAGES_GROUP_ID, "Undefined macro", macro + " <html><a href=''>fix...</a></html>", NotificationType.ERROR,
+                                              (notification, event) -> {
+                                                if (event.getEventType() != EventType.ACTIVATED) {
+                                                  return;
+                                                }
+                                                DataManager.getInstance().getDataContextFromFocus().doWhenDone((Consumer<DataContext>) dataContext -> {
+                                                  Project project = PlatformDataKeys.PROJECT.getData(dataContext);
 
-            Map<String, String> oldMacroses = collectMacroses();
-            ShowSettingsUtil.getInstance().showSettingsDialog(project, new PathMacroConfigurable().getDisplayName());
-            Map<String, String> newMacroses = collectMacroses();
-            if (sameMaps(oldMacroses, newMacroses)) return;
+                                                  Map<String, String> oldMacroses = collectMacroses();
+                                                  ShowSettingsUtil.getInstance().showSettingsDialog(project, new PathMacroConfigurable().getDisplayName());
+                                                  Map<String, String> newMacroses = collectMacroses();
+                                                  if (sameMaps(oldMacroses, newMacroses)) return;
 
-            int res = Messages.showYesNoDialog(
-              "All opened projects should be reloaded in order to apply changes.\n" +
-                "Reload all opened projects?", "Reload Projects", null);
-            if (res == Messages.NO) return;
+                                                  int res = Messages.showYesNoDialog(
+                                                      "All opened projects should be reloaded in order to apply changes.\n" +
+                                                      "Reload all opened projects?", "Reload Projects", null);
+                                                  if (res == Messages.NO) return;
 
-            ProjectManager pm = ProjectManager.getInstance();
-            for (Project p : pm.getOpenProjects()) {
-              pm.reloadProject(p);
-            }
-          }
-        });
-      }
-    }));
+                                                  ProjectManager pm = ProjectManager.getInstance();
+                                                  for (Project p : pm.getOpenProjects()) {
+                                                    pm.reloadProject(p);
+                                                  }
+                                                });
+                                              }));
   }
 
   private boolean sameMaps(Map<String, String> m1, Map<String, String> m2) {

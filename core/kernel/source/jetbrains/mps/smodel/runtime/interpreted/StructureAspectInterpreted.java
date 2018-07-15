@@ -66,38 +66,35 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
     if (myDescriptors != null) {
       return;
     }
-    jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
+    jetbrains.mps.smodel.ModelAccess.instance().runReadAction(() -> {
+      if (myDescriptors != null) {
+        return;
+      }
+      synchronized (StructureAspectInterpreted.this) {
         if (myDescriptors != null) {
           return;
         }
-        synchronized (StructureAspectInterpreted.this) {
-          if (myDescriptors != null) {
-            return;
-          }
 
-          final SModel structureModel = LanguageAspect.STRUCTURE.get(myLanguage);
-          if (structureModel == null) {
-            LOG.warn("Structure aspect is null in the language " + myLanguage);
-            myDescriptors = new ConcurrentHashMap<>();
-            return;
-          }
-          ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<>();
-          for (SNode root : structureModel.getRootNodes()) {
-            SConcept concept = root.getConcept();
-            if (!isConceptDeclaration(concept)) {
-              continue;
-            }
-
-            SConceptId conceptId = MetaIdByDeclaration.getConceptId(root);
-            String conceptName = conceptFQName(root);
-            ConceptDescriptor cd = new InterpretedConceptDescriptor(root, conceptId, conceptName);
-
-            descriptors.put(conceptId, cd);
-          }
-          myDescriptors = descriptors;
+        final SModel structureModel = LanguageAspect.STRUCTURE.get(myLanguage);
+        if (structureModel == null) {
+          LOG.warn("Structure aspect is null in the language " + myLanguage);
+          myDescriptors = new ConcurrentHashMap<>();
+          return;
         }
+        ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<>();
+        for (SNode root : structureModel.getRootNodes()) {
+          SConcept concept = root.getConcept();
+          if (!isConceptDeclaration(concept)) {
+            continue;
+          }
+
+          SConceptId conceptId = MetaIdByDeclaration.getConceptId(root);
+          String conceptName = conceptFQName(root);
+          ConceptDescriptor cd = new InterpretedConceptDescriptor(root, conceptId, conceptName);
+
+          descriptors.put(conceptId, cd);
+        }
+        myDescriptors = descriptors;
       }
     });
   }

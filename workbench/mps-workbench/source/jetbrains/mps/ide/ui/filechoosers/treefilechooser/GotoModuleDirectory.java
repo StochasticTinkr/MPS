@@ -33,12 +33,7 @@ public final class GotoModuleDirectory extends FileChooserAction {
   protected void actionPerformed(final FileSystemTree fileSystemTree, AnActionEvent e) {
     final VirtualFile path = getModulePath(e);
     LOG.assertTrue(path != null);
-    fileSystemTree.select(path, new Runnable() {
-      @Override
-      public void run() {
-        fileSystemTree.expand(path, null);
-      }
-    });
+    fileSystemTree.select(path, () -> fileSystemTree.expand(path, null));
   }
 
   @Override

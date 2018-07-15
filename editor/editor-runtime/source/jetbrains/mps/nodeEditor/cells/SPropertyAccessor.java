@@ -78,14 +78,11 @@ public class SPropertyAccessor implements ModelAccessor, IPropertyAccessor {
 
 
   protected String doGetValue() {
-    return NodeReadAccessCasterInEditor.runCleanPropertyAccessAction(new Computable<String>() {
-      @Override
-      public String compute() {
-        if (myNode == null) {
-          return null;
-        }
-        return SNodeAccessUtil.getProperty(myNode, myProperty);
+    return NodeReadAccessCasterInEditor.runCleanPropertyAccessAction(() -> {
+      if (myNode == null) {
+        return null;
       }
+      return SNodeAccessUtil.getProperty(myNode, myProperty);
     });
   }
 

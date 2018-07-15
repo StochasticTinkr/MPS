@@ -130,14 +130,7 @@ public class JDOMUtil {
 
   public static SAXBuilder createBuilder() {
     final SAXBuilder saxBuilder = new SAXBuilder();
-    saxBuilder.setEntityResolver(new EntityResolver() {
-      @Override
-      public InputSource resolveEntity(String publicId,
-                       String systemId)
-        throws SAXException, IOException {
-        return new InputSource(new CharArrayReader(new char[0]));
-      }
-    });
+    saxBuilder.setEntityResolver((publicId, systemId) -> new InputSource(new CharArrayReader(new char[0])));
     return saxBuilder;
   }
 

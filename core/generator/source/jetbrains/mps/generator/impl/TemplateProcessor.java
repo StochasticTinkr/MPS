@@ -328,13 +328,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         return myTemplateProcessor.getQueryProvider(getMacroNodeRef()).getSourceNodeQuery(new QueryKeyImpl(getMacroNodeRef(), query.getNodeId()));
       } else {
         // <default> : propagate  current input node
-        return new SourceNodeQuery() {
-          @Nullable
-          @Override
-          public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
-            return context.getInputNode();
-          }
-        };
+        return context -> context.getInputNode();
       }
     }
 
@@ -348,13 +342,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         return null;
       }
       // <default> : propagate  current input node
-      return new SourceNodesQuery() {
-        @NotNull
-        @Override
-        public Collection<SNode> evaluate(@NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
-          return wrapAsList(context.getInputNode());
-        }
-      };
+      return context -> wrapAsList(context.getInputNode());
     }
   }
 

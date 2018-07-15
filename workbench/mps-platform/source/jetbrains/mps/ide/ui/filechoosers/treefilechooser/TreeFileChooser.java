@@ -47,12 +47,7 @@ public class TreeFileChooser {
   public static final int MODE_DIRECTORIES = 2;
   public static final int MODE_FILES_AND_DIRECTORIES = 3;
 
-  public static final IFileFilter ALL_FILES_FILTER = new IFileFilter() {
-    @Override
-    public boolean accept(IFile file) {
-      return true;
-    }
-  };
+  public static final IFileFilter ALL_FILES_FILTER = file -> true;
 
   /////////////////////////////
 
@@ -71,15 +66,12 @@ public class TreeFileChooser {
   }
 
   public void setExtensionFileFilter(final String... extension) {
-    myFileFilter = new IFileFilter() {
-      @Override
-      public boolean accept(IFile file) {
-        if (file.isDirectory()) return true;
-        for (String e : extension) {
-          if (file.getName().toLowerCase().endsWith(e)) return true;
-        }
-        return false;
+    myFileFilter = file -> {
+      if (file.isDirectory()) return true;
+      for (String e : extension) {
+        if (file.getName().toLowerCase().endsWith(e)) return true;
       }
+      return false;
     };
   }
 

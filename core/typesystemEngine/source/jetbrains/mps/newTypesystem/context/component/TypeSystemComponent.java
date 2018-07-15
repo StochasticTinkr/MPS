@@ -217,12 +217,9 @@ import java.util.*;
 
     if (!collectNodesAndRules(node, nodesAndRules)) return false;
 
-    return getTypechecking().runApplyRulesTo(node, new Runnable() {
-      @Override
-      public void run() {
-        for (Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>> pair : nodesAndRules) {
-          applyRulesToNode(pair.o1, pair.o2);
-        }
+    return getTypechecking().runApplyRulesTo(node, () -> {
+      for (Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>> pair : nodesAndRules) {
+        applyRulesToNode(pair.o1, pair.o2);
       }
     });
   }

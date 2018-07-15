@@ -106,12 +106,7 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
         continue;
       }
       List<IErrorReporter> errors = new ArrayList<>(errorNode.o2);
-      Collections.sort(errors, new Comparator<IErrorReporter>() {
-        @Override
-        public int compare(IErrorReporter o1, IErrorReporter o2) {
-          return o2.getMessageStatus().compareTo(o1.getMessageStatus());
-        }
-      });
+      Collections.sort(errors, (o1, o2) -> o2.getMessageStatus().compareTo(o1.getMessageStatus()));
       boolean instantIntentionApplied = false;
       for (IErrorReporter errorReporter : errors) {
         TypesystemReportItemAdapter reportItem = new TypesystemReportItemAdapter(errorReporter);
@@ -142,31 +137,28 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
     if (!myOnceExecutedQuickFixes.contains(flavours)) {
       myOnceExecutedQuickFixes.add(flavours);
       // XXX why Application.invokeLater, not ThreadUtils or ModelAccess (likely, shall use SNodeReference for quickFixNode, not SNode, and resolve inside)
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        @Override
-        public void run() {
-          EditorCell selectedCell = editorContext.getSelectedCell();
-          if (selectedCell == null) {
-            return;
+      ApplicationManager.getApplication().invokeLater(() -> {
+        EditorCell selectedCell = editorContext.getSelectedCell();
+        if (selectedCell == null) {
+          return;
+        }
+        int caretX = selectedCell.getCaretX();
+        int caretY = selectedCell.getBaseline();
+
+        editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new EditorCommand(editorContext) {
+          @Override
+          public void doExecute() {
+            intention.execute(editorContext.getRepository());
           }
-          int caretX = selectedCell.getCaretX();
-          int caretY = selectedCell.getBaseline();
+        });
 
-          editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new EditorCommand(editorContext) {
-            @Override
-            public void doExecute() {
-              intention.execute(editorContext.getRepository());
-            }
-          });
-
-          editorContext.flushEvents();
-          if (editorContext.getSelectionManager().getSelection() == null) {
-            EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
-            EditorCell leaf = rootCell.findLeaf(caretX, caretY);
-            if (leaf != null) {
-              editorContext.getEditorComponent().changeSelection(leaf);
-              leaf.setCaretX(caretX);
-            }
+        editorContext.flushEvents();
+        if (editorContext.getSelectionManager().getSelection() == null) {
+          EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
+          EditorCell leaf = rootCell.findLeaf(caretX, caretY);
+          if (leaf != null) {
+            editorContext.getEditorComponent().changeSelection(leaf);
+            leaf.setCaretX(caretX);
           }
         }
       }, ModalityState.NON_MODAL);

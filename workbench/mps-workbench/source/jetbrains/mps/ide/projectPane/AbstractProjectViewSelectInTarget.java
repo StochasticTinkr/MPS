@@ -51,12 +51,9 @@ public abstract class AbstractProjectViewSelectInTarget implements SelectInTarge
     final ProjectView projectView = ProjectView.getInstance(myProject);
     ToolWindowManager windowManager = ToolWindowManager.getInstance(myProject);
     ToolWindow projectViewToolWindow = windowManager.getToolWindow(ToolWindowId.PROJECT_VIEW);
-    projectViewToolWindow.activate(new Runnable() {
-      @Override
-      public void run() {
-        projectView.changeView(getMinorViewId());
-        doSelectIn(context, requestFocus);
-      }
+    projectViewToolWindow.activate(() -> {
+      projectView.changeView(getMinorViewId());
+      doSelectIn(context, requestFocus);
     }, requestFocus);
   }
 

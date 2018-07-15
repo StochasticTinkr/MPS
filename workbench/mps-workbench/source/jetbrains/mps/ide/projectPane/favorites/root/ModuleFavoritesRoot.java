@@ -42,17 +42,14 @@ class ModuleFavoritesRoot extends FavoritesRoot<SModuleReference> {
   @Override
   public List<SNode> getAvailableNodes() {
     final List<SNode> result = new ArrayList<>();
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SModule module = getValue().resolve(myProject.getRepository());
-        if (module == null) {
-          return;
-        }
-        for (final SModel model : module.getModels()) {
-          for (SNode node : model.getRootNodes()) {
-            result.add(node);
-          }
+    myProject.getModelAccess().runReadAction(() -> {
+      SModule module = getValue().resolve(myProject.getRepository());
+      if (module == null) {
+        return;
+      }
+      for (final SModel model : module.getModels()) {
+        for (SNode node : model.getRootNodes()) {
+          result.add(node);
         }
       }
     });

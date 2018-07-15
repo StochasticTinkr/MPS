@@ -66,17 +66,14 @@ public class OverloadedOperationsManager {
     }
     final boolean[] severalRules = new boolean[]{false};
     final IOverloadedOpsTypesProvider[] matchedProviders = new IOverloadedOpsTypesProvider[2];
-    Collections.sort(filteredProviders, new Comparator<IOverloadedOpsTypesProvider>() {
-      @Override
-      public int compare(IOverloadedOpsTypesProvider o1, IOverloadedOpsTypesProvider o2) {
-        int i = o1.compareTo(o2);
-        if (i == 0) {
-          severalRules[0] = true;
-          matchedProviders[0] = o1;
-          matchedProviders[1] = o2;
-        }
-        return i;
+    Collections.sort(filteredProviders, (o1, o2) -> {
+      int i = o1.compareTo(o2);
+      if (i == 0) {
+        severalRules[0] = true;
+        matchedProviders[0] = o1;
+        matchedProviders[1] = o2;
       }
+      return i;
     });
     if (severalRules[0]) {
       matchedProviders[0].reportConflict(warningProducer);

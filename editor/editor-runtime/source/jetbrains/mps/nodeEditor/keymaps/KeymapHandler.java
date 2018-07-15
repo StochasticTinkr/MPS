@@ -61,34 +61,26 @@ public abstract class KeymapHandler<E> {
   public Collection<Pair<KeyMapAction, EditorCell>> getActions(final EditorCell selectedCell, E event, final EditorContext context) {
     final Collection<ActionKey> actionKeys = getActionKeys(event);
     assert !actionKeys.isEmpty();
-    return new ModelAccessHelper(context.getRepository()).runReadAction(new Computable<List<Pair<KeyMapAction, EditorCell>>>() {
-      @Override
-      public List<Pair<KeyMapAction, EditorCell>> compute() {
-        // collect all keymaps available
-        List<Pair<KeyMap, EditorCell>> keymapsAndCells = getRegisteredKeymaps(selectedCell, context);
-        if (keymapsAndCells.isEmpty()) {
-          return Collections.emptyList();
-        }
-
-        return selectActionsFromKeymaps(selectedCell, actionKeys, context, keymapsAndCells);
+    return new ModelAccessHelper(context.getRepository()).runReadAction(() -> {
+      // collect all keymaps available
+      List<Pair<KeyMap, EditorCell>> keymapsAndCells = getRegisteredKeymaps(selectedCell, context);
+      if (keymapsAndCells.isEmpty()) {
+        return Collections.emptyList();
       }
+
+      return selectActionsFromKeymaps(selectedCell, actionKeys, context, keymapsAndCells);
     });
   }
 
   public abstract Collection<ActionKey> getActionKeys(E event);
 
   public void executeAction(final KeyMapAction action, EditorCell contextCell, final EditorContext editorContext) {
-    editorContext.runWithContextCell(contextCell, new Runnable() {
+    editorContext.runWithContextCell(contextCell, () -> editorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(editorContext) {
       @Override
-      public void run() {
-        editorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(editorContext) {
-          @Override
-          public void doExecute() {
-            action.execute(editorContext);
-          }
-        });
+      public void doExecute() {
+        action.execute(editorContext);
       }
-    });
+    }));
   }
 
   public abstract void showActionsMenu(Collection<Pair<KeyMapAction, EditorCell>> actionsInfo, EditorContext editorContext, EditorCell selectedCell);
@@ -207,11 +199,6 @@ public abstract class KeymapHandler<E> {
   }
 
   private boolean canExecuteKeyMapAction(final KeyMapAction action, EditorCell contextCell, final EditorContext editorContext) {
-    return editorContext.runWithContextCell(contextCell, new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return action.canExecute(editorContext);
-      }
-    });
+    return editorContext.runWithContextCell(contextCell, () -> action.canExecute(editorContext));
   }
 }

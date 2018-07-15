@@ -323,12 +323,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   public Object getData(@NonNls final String id) {
     MPSTreeNode currentNode = this.getCurrentNode();
     if (currentNode instanceof TypeSystemTraceTreeNode) {
-      return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Object>() {
-        @Override
-        public Object compute() {
-          return _getData(id);
-        }
-      });
+      return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(() -> _getData(id));
     }
     return null;
   }
@@ -355,30 +350,24 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private void showState(final TypeSystemTraceTreeNode newNode) {
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        Object difference = newNode.getUserObject();
-        myParent.resetState(myContextTracker.resetCurrentState((AbstractOperation) difference));
+    myProject.getModelAccess().runReadAction(() -> {
+      Object difference = newNode.getUserObject();
+      myParent.resetState(myContextTracker.resetCurrentState((AbstractOperation) difference));
 
-        final State newState = myContextTracker.updateCurrentState((AbstractOperation) difference);
-        if (newState != null) {
-          myParent.updateState(newState);
-        }
+      final State newState = myContextTracker.updateCurrentState((AbstractOperation) difference);
+      if (newState != null) {
+        myParent.updateState(newState);
       }
     });
   }
 
   private void showState(final MPSTreeNode fromNode, final MPSTreeNode toNode) {
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        Object fromDiff = fromNode.getUserObject();
-        Object toDiff = toNode.getUserObject();
+    myProject.getModelAccess().runReadAction(() -> {
+      Object fromDiff = fromNode.getUserObject();
+      Object toDiff = toNode.getUserObject();
 
-        myParent.resetState(myContextTracker.resetCurrentState((AbstractOperation) fromDiff));
-        myParent.updateState(myContextTracker.updateCurrentState((AbstractOperation) fromDiff, (AbstractOperation) toDiff));
-      }
+      myParent.resetState(myContextTracker.resetCurrentState((AbstractOperation) fromDiff));
+      myParent.updateState(myContextTracker.updateCurrentState((AbstractOperation) fromDiff, (AbstractOperation) toDiff));
     });
   }
 
@@ -556,12 +545,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     public Object getData(@NonNls final String id) {
       MPSTreeNode currentNode = this.getCurrentNode();
       if (currentNode instanceof TypeSystemTraceTreeNode) {
-        return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Object>() {
-          @Override
-          public Object compute() {
-            return _getData(id);
-          }
-        });
+        return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(() -> _getData(id));
       }
       return null;
     }

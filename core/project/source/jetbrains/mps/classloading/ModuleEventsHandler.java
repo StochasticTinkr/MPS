@@ -51,12 +51,7 @@ class ModuleEventsHandler implements SRepositoryBatchListener {
   private final ModuleEventsDispatcher myDispatcher;
 
   // order for modules loading in order to reproduce any error
-  private static final Comparator<Object> MODULE_COMPARATOR = new Comparator<Object>() {
-    @Override
-    public int compare(Object m1, Object m2) {
-      return m1.toString().compareTo(m2.toString());
-    }
-  };
+  private static final Comparator<Object> MODULE_COMPARATOR = (m1, m2) -> m1.toString().compareTo(m2.toString());
 
   public ModuleEventsHandler(@NotNull SRepository repository, ModulesWatcher modulesWatcher) {
     myModulesWatcher = modulesWatcher;

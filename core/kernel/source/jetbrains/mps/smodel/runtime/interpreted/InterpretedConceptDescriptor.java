@@ -88,131 +88,128 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
     myId = id;
     myQualifiedName = qualifiedName;
 
-    NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
-      @Override
-      public void run() {
-        // isInterface
-        isInterface = declaration.getConcept().equals(SNodeUtil.concept_InterfaceConceptDeclaration);
+    NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
+      // isInterface
+      isInterface = declaration.getConcept().equals(SNodeUtil.concept_InterfaceConceptDeclaration);
 
-        // We use declaration.getProperty directly, instead of SPropertyOperations and SNodeAccessUtil+constraints
-        // (a) we know our core.structure language doesn't define any constraints for these properties
-        // (b) they would require compiled code which we don't support for interpreted languages (IL being primary users of this class, ICD).
-        // Otherwise, if we use SPropertyOperations+SNodeAccessUtil, ConstraintsDescriptors come into play,
-        // and might query concept descriptor we are trying to initialize right now, which is not what we would like to encounter.
-        isFinal = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_final));
-        isAbstract = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_abstract));
-        myIsRootable = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_Concept_Rootable));
+      // We use declaration.getProperty directly, instead of SPropertyOperations and SNodeAccessUtil+constraints
+      // (a) we know our core.structure language doesn't define any constraints for these properties
+      // (b) they would require compiled code which we don't support for interpreted languages (IL being primary users of this class, ICD).
+      // Otherwise, if we use SPropertyOperations+SNodeAccessUtil, ConstraintsDescriptors come into play,
+      // and might query concept descriptor we are trying to initialize right now, which is not what we would like to encounter.
+      isFinal = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_final));
+      isAbstract = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_abstract));
+      myIsRootable = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_Concept_Rootable));
 
-        conceptAlias = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_conceptAlias);
-        if (conceptAlias == null) {
-          conceptAlias = "";
-        }
-
-        // scope
-        if (isInterface) {
-          staticScope = StaticScope.GLOBAL;
-        } else {
-          String scopeVal = declaration.getProperty(SNodeUtil.property_ConceptDeclaration_staticScope);
-          staticScope = "none".equals(scopeVal) ? StaticScope.NONE : ("root".equals(scopeVal) ? StaticScope.ROOT : StaticScope.GLOBAL);
-        }
-
-        // parents
-        Set<String> parentsSet = new LinkedHashSet<>();
-        Set<SConceptId> parentsIdsSet = new LinkedHashSet<>();
-
-        if (declaration.getConcept().equals(SNodeUtil.concept_ConceptDeclaration)) {
-          // super-concept
-          SNode superConceptNode = declaration.getReferenceTarget(SNodeUtil.link_ConceptDeclaration_extends);
-
-          if (superConceptNode == null && !SNodeUtil.concept_BaseConcept.getName().equals(myQualifiedName)) {
-            superConcept = SNodeUtil.concept_BaseConcept.getName();
-            superConceptId = SNodeUtil.conceptId_BaseConcept;
-          } else {
-            superConcept = StructureAspectInterpreted.conceptFQName(superConceptNode);
-            superConceptId = superConceptNode == null ? null : MetaIdByDeclaration.getConceptId(superConceptNode);
-          }
-          parentsSet.add(superConcept);
-          parentsIdsSet.add(superConceptId);
-
-          for (SNode/*<InterfaceConceptReference>*/ implementsLink : declaration.getChildren(SNodeUtil.link_ConceptDeclaration_implements)) {
-            SNode interfaceConcept = implementsLink.getReferenceTarget(SNodeUtil.link_InterfaceConceptReference_intfc);
-            if (interfaceConcept == null) {
-              LOG.error("Interface concept (implements link) is null, declaration: " + declaration);
-              continue;
-            }
-            parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
-            parentsIdsSet.add(MetaIdByDeclaration.getConceptId(interfaceConcept));
-          }
-        } else if (isInterface) {
-          for (SNode/*<InterfaceConceptReference>*/ extendsLink : declaration.getChildren(SNodeUtil.link_InterfaceConceptDeclaration_extends)) {
-            SNode interfaceConcept = extendsLink.getReferenceTarget(SNodeUtil.link_InterfaceConceptReference_intfc);
-            if (interfaceConcept == null) {
-              LOG.error("Interface concept (extends link) is null, declaration: " + declaration);
-              continue;
-            }
-            parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
-            parentsIdsSet.add(MetaIdByDeclaration.getConceptId(interfaceConcept));
-          }
-        }
-
-        parentsSet.remove(null);
-        parentsIdsSet.remove(null);
-        if (superConcept == null && !SNodeUtil.concept_BaseConcept.getName().equals(myQualifiedName)) {
-          parentsSet.add(SNodeUtil.concept_BaseConcept.getName());
-          parentsIdsSet.add(SNodeUtil.conceptId_BaseConcept);
-        }
-
-        parents = new ArrayList<>(parentsSet);
-        parentsIds = new ArrayList<>(parentsIdsSet);
-
-        // direct properties
-        for (SNode property : declaration.getChildren(SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration)) {
-          String name = property.getProperty(SNodeUtil.property_INamedConcept_name);
-          if (name != null) {
-            SPropertyId propId = MetaIdByDeclaration.getPropId(property);
-            BasePropertyDescriptor pd = new BasePropertyDescriptor(propId, name);
-
-            directPropertiesByIds.put(propId, pd);
-            directPropertiesByName.put(name, pd);
-          }
-        }
-
-        // direct references and children
-        for (SNode link : declaration.getChildren(SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration)) {
-          // process link declarations, excluding those that specialize some other link.
-          // We don't generate anything for such links, thus exclude them here as well.
-          if (link.getReference(SNodeUtil.link_LinkDeclaration_specializedLink) != null) {
-            continue;
-          }
-          String role = link.getProperty(SNodeUtil.property_LinkDeclaration_role);
-          if (role == null) {
-            continue;
-          }
-          boolean unordered = SPropertyOperations.getBoolean(link.getProperty(SNodeUtil.property_LinkDeclaration_unordered));
-          SNode linkTargetConcept = link.getReferenceTarget(SNodeUtil.link_LinkDeclaration_target);
-          final SConceptId targetConceptId = linkTargetConcept == null ? SNodeUtil.conceptId_BaseConcept : MetaIdByDeclaration.getConceptId(linkTargetConcept);
-          final String linkCardinality = link.getProperty(SNodeUtil.property_LinkDeclaration_sourceCardinality);
-          final boolean isOptional = !SNodeUtil.isAtLeastOne(linkCardinality);
-          if (SNodeUtil.isAssociationLink(link.getProperty(SNodeUtil.property_LinkDeclaration_metaClass))) {
-
-            SReferenceLinkId refId = MetaIdByDeclaration.getRefRoleId(link);
-            BaseReferenceDescriptor pd = new BaseReferenceDescriptor(refId, role, targetConceptId, isOptional);
-
-            directReferencesByIds.put(refId, pd);
-            directReferencesByName.put(role, pd);
-          } else {
-            final boolean isMultiple = !SNodeUtil.isAtMostOne(linkCardinality);
-
-            SContainmentLinkId linkId = MetaIdByDeclaration.getLinkId(link);
-            BaseLinkDescriptor pd = new BaseLinkDescriptor(linkId, role, targetConceptId, isOptional, isMultiple, unordered);
-
-            directLinksByIds.put(linkId, pd);
-            directLinksByName.put(role, pd);
-          }
-        }
-
-        mySourceNodeRef = declaration.getReference();
+      conceptAlias = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_conceptAlias);
+      if (conceptAlias == null) {
+        conceptAlias = "";
       }
+
+      // scope
+      if (isInterface) {
+        staticScope = StaticScope.GLOBAL;
+      } else {
+        String scopeVal = declaration.getProperty(SNodeUtil.property_ConceptDeclaration_staticScope);
+        staticScope = "none".equals(scopeVal) ? StaticScope.NONE : ("root".equals(scopeVal) ? StaticScope.ROOT : StaticScope.GLOBAL);
+      }
+
+      // parents
+      Set<String> parentsSet = new LinkedHashSet<>();
+      Set<SConceptId> parentsIdsSet = new LinkedHashSet<>();
+
+      if (declaration.getConcept().equals(SNodeUtil.concept_ConceptDeclaration)) {
+        // super-concept
+        SNode superConceptNode = declaration.getReferenceTarget(SNodeUtil.link_ConceptDeclaration_extends);
+
+        if (superConceptNode == null && !SNodeUtil.concept_BaseConcept.getName().equals(myQualifiedName)) {
+          superConcept = SNodeUtil.concept_BaseConcept.getName();
+          superConceptId = SNodeUtil.conceptId_BaseConcept;
+        } else {
+          superConcept = StructureAspectInterpreted.conceptFQName(superConceptNode);
+          superConceptId = superConceptNode == null ? null : MetaIdByDeclaration.getConceptId(superConceptNode);
+        }
+        parentsSet.add(superConcept);
+        parentsIdsSet.add(superConceptId);
+
+        for (SNode/*<InterfaceConceptReference>*/ implementsLink : declaration.getChildren(SNodeUtil.link_ConceptDeclaration_implements)) {
+          SNode interfaceConcept = implementsLink.getReferenceTarget(SNodeUtil.link_InterfaceConceptReference_intfc);
+          if (interfaceConcept == null) {
+            LOG.error("Interface concept (implements link) is null, declaration: " + declaration);
+            continue;
+          }
+          parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
+          parentsIdsSet.add(MetaIdByDeclaration.getConceptId(interfaceConcept));
+        }
+      } else if (isInterface) {
+        for (SNode/*<InterfaceConceptReference>*/ extendsLink : declaration.getChildren(SNodeUtil.link_InterfaceConceptDeclaration_extends)) {
+          SNode interfaceConcept = extendsLink.getReferenceTarget(SNodeUtil.link_InterfaceConceptReference_intfc);
+          if (interfaceConcept == null) {
+            LOG.error("Interface concept (extends link) is null, declaration: " + declaration);
+            continue;
+          }
+          parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
+          parentsIdsSet.add(MetaIdByDeclaration.getConceptId(interfaceConcept));
+        }
+      }
+
+      parentsSet.remove(null);
+      parentsIdsSet.remove(null);
+      if (superConcept == null && !SNodeUtil.concept_BaseConcept.getName().equals(myQualifiedName)) {
+        parentsSet.add(SNodeUtil.concept_BaseConcept.getName());
+        parentsIdsSet.add(SNodeUtil.conceptId_BaseConcept);
+      }
+
+      parents = new ArrayList<>(parentsSet);
+      parentsIds = new ArrayList<>(parentsIdsSet);
+
+      // direct properties
+      for (SNode property : declaration.getChildren(SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration)) {
+        String name = property.getProperty(SNodeUtil.property_INamedConcept_name);
+        if (name != null) {
+          SPropertyId propId = MetaIdByDeclaration.getPropId(property);
+          BasePropertyDescriptor pd = new BasePropertyDescriptor(propId, name);
+
+          directPropertiesByIds.put(propId, pd);
+          directPropertiesByName.put(name, pd);
+        }
+      }
+
+      // direct references and children
+      for (SNode link : declaration.getChildren(SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration)) {
+        // process link declarations, excluding those that specialize some other link.
+        // We don't generate anything for such links, thus exclude them here as well.
+        if (link.getReference(SNodeUtil.link_LinkDeclaration_specializedLink) != null) {
+          continue;
+        }
+        String role = link.getProperty(SNodeUtil.property_LinkDeclaration_role);
+        if (role == null) {
+          continue;
+        }
+        boolean unordered = SPropertyOperations.getBoolean(link.getProperty(SNodeUtil.property_LinkDeclaration_unordered));
+        SNode linkTargetConcept = link.getReferenceTarget(SNodeUtil.link_LinkDeclaration_target);
+        final SConceptId targetConceptId = linkTargetConcept == null ? SNodeUtil.conceptId_BaseConcept : MetaIdByDeclaration.getConceptId(linkTargetConcept);
+        final String linkCardinality = link.getProperty(SNodeUtil.property_LinkDeclaration_sourceCardinality);
+        final boolean isOptional = !SNodeUtil.isAtLeastOne(linkCardinality);
+        if (SNodeUtil.isAssociationLink(link.getProperty(SNodeUtil.property_LinkDeclaration_metaClass))) {
+
+          SReferenceLinkId refId = MetaIdByDeclaration.getRefRoleId(link);
+          BaseReferenceDescriptor pd = new BaseReferenceDescriptor(refId, role, targetConceptId, isOptional);
+
+          directReferencesByIds.put(refId, pd);
+          directReferencesByName.put(role, pd);
+        } else {
+          final boolean isMultiple = !SNodeUtil.isAtMostOne(linkCardinality);
+
+          SContainmentLinkId linkId = MetaIdByDeclaration.getLinkId(link);
+          BaseLinkDescriptor pd = new BaseLinkDescriptor(linkId, role, targetConceptId, isOptional, isMultiple, unordered);
+
+          directLinksByIds.put(linkId, pd);
+          directLinksByName.put(role, pd);
+        }
+      }
+
+      mySourceNodeRef = declaration.getReference();
     });
   }
 

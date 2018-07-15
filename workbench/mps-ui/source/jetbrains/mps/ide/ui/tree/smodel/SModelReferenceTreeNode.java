@@ -43,12 +43,7 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
 
   @Override
   public void doubleClick() {
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        NavigationSupport.getInstance().selectInTree(myProject, myModelDescriptor, false);
-      }
-    });
+    myProject.getModelAccess().runReadAction(() -> NavigationSupport.getInstance().selectInTree(myProject, myModelDescriptor, false));
   }
 
   @Override

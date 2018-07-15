@@ -377,12 +377,7 @@ public class State {
 
   public void solveInequalities() {
     if (!myInequalities.getRelationsToSolve().isEmpty()) {
-      executeOperation(new SolveInequalitiesOperation(new Runnable() {
-        @Override
-        public void run() {
-          myInequalities.solveRelations();
-        }
-      }));
+      executeOperation(new SolveInequalitiesOperation(() -> myInequalities.solveRelations()));
     }
   }
 
@@ -423,12 +418,7 @@ public class State {
 
   public void expandAll(final Set<SNode> nodes, final boolean finalExpansion) {
     if (nodes != null && !nodes.isEmpty()) {
-      executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
-        @Override
-        public void run() {
-          myNodeMaps.expandAll(nodes, finalExpansion);
-        }
-      }));
+      executeOperation(new AddRemarkOperation("Types Expansion", () -> myNodeMaps.expandAll(nodes, finalExpansion)));
     }
   }
 

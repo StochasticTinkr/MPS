@@ -183,12 +183,9 @@ public class AddRequiredImportsDialog extends DialogWrapper {
         final SModelReference ref = (SModelReference) value;
 
         // FIXME likely, IconManager shall take project argument
-        myProject.getModelAccess().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            SModel model = ref.resolve(myProject.getRepository());
-            setIcon(GlobalIconManager.getInstance().getIconFor(model));
-          }
+        myProject.getModelAccess().runReadAction(() -> {
+          SModel model = ref.resolve(myProject.getRepository());
+          setIcon(GlobalIconManager.getInstance().getIconFor(model));
         });
         append(ref.getModelName(), SimpleTextAttributes.REGULAR_ATTRIBUTES);
         SModuleReference module = ref.getModuleReference();

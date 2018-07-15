@@ -103,22 +103,12 @@ class DefaultModelAccess extends ModelAccess {
 
   @Override
   public void runReadInEDT(final Runnable r) {
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        runReadAction(r);
-      }
-    });
+    SwingUtilities.invokeLater(() -> runReadAction(r));
   }
 
   @Override
   public void runWriteInEDT(final Runnable r) {
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        runWriteAction(r);
-      }
-    });
+    SwingUtilities.invokeLater(() -> runWriteAction(r));
   }
 
   @Override

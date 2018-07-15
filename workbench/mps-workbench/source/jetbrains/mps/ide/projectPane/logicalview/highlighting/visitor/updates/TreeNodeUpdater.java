@@ -64,22 +64,19 @@ public final class TreeNodeUpdater {
         if (updates.isEmpty()) {
           break;
         }
-        myProject.getModelAccess().runReadInEDT(new Runnable() {
-          @Override
-          public void run() {
-            final HashSet<MPSTreeNode> toRefresh = new HashSet<>();
-            for (Pair<MPSTreeNode, NodeUpdate> next : updates) {
-              MPSTreeNode node = next.o1;
-              if (node.getTree() == null) {
-                // once again, no reason to update element which is not in the tree
-                continue;
-              }
-              next.o2.update(node);
-              toRefresh.add(node);
+        myProject.getModelAccess().runReadInEDT(() -> {
+          final HashSet<MPSTreeNode> toRefresh = new HashSet<>();
+          for (Pair<MPSTreeNode, NodeUpdate> next : updates) {
+            MPSTreeNode node = next.o1;
+            if (node.getTree() == null) {
+              // once again, no reason to update element which is not in the tree
+              continue;
             }
-            for (MPSTreeNode node : toRefresh) {
-              node.updateNodePresentationInTree();
-            }
+            next.o2.update(node);
+            toRefresh.add(node);
+          }
+          for (MPSTreeNode node : toRefresh) {
+            node.updateNodePresentationInTree();
           }
         });
       } while (!myUpdates.isEmpty());

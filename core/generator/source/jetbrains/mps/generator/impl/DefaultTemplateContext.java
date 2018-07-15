@@ -132,49 +132,44 @@ public class DefaultTemplateContext implements TemplateContext {
 
   @Override
   public Iterable<SNode> getInputHistory() {
-    return new Iterable<SNode>() {
+    return () -> new Iterator<SNode>() {
+      SNode previous;
+      DefaultTemplateContext current;
+
+      {
+        current = DefaultTemplateContext.this;
+        while (current != null && current.myInputNode == null) {
+          current = current.myParent;
+        }
+        previous = current != null ? current.myInputNode : null;
+      }
+
       @Override
-      public Iterator<SNode> iterator() {
-        return new Iterator<SNode>() {
-          SNode previous;
-          DefaultTemplateContext current;
+      public boolean hasNext() {
+        skipOdd();
+        return current != null;
+      }
 
-          {
-            current = DefaultTemplateContext.this;
-            while (current != null && current.myInputNode == null) {
-              current = current.myParent;
-            }
-            previous = current != null ? current.myInputNode : null;
-          }
+      @Override
+      public SNode next() {
+        skipOdd();
+        if (current != null) {
+          previous = current.myInputNode;
+          current = current.myParent;
+          return previous;
+        }
+        return null;
+      }
 
-          @Override
-          public boolean hasNext() {
-            skipOdd();
-            return current != null;
-          }
+      private void skipOdd() {
+        while (current != null && (current.myInputNode == null || current.myInputNode == previous)) {
+          current = current.myParent;
+        }
+      }
 
-          @Override
-          public SNode next() {
-            skipOdd();
-            if (current != null) {
-              previous = current.myInputNode;
-              current = current.myParent;
-              return previous;
-            }
-            return null;
-          }
-
-          private void skipOdd() {
-            while (current != null && (current.myInputNode == null || current.myInputNode == previous)) {
-              current = current.myParent;
-            }
-          }
-
-          @Override
-          public void remove() {
-            throw new UnsupportedOperationException();
-          }
-        };
+      @Override
+      public void remove() {
+        throw new UnsupportedOperationException();
       }
     };
   }

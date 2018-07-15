@@ -41,12 +41,7 @@ public class CachingTypecheckingContext extends TargetTypecheckingContext {
     if (pair.o2) {
       return pair.o1;
     }
-    SNode resultType = LanguageScopeExecutor.execWithModelScope(node.getModel(), new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        return getTypechecking().computeTypesForNodeDuringResolving(node);
-      }
-    });
+    SNode resultType = LanguageScopeExecutor.execWithModelScope(node.getModel(), () -> getTypechecking().computeTypesForNodeDuringResolving(node));
     putTypeComputed(node, resultType);
     return resultType;
   }

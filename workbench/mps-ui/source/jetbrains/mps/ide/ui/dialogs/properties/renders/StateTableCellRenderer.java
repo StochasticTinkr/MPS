@@ -71,15 +71,12 @@ import java.util.List;
       return;
     }
     final C cellValue = (C) value;
-    myRepository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        final T ce = getCellElement(cellValue);
-        final DependencyCellState cellState = getDependencyCellState(ce);
-        setIcon(getIcon(cellValue, ce));
-        append(getText(cellValue, ce), cellState.getTextAttributes());
-        setToolTipText(cellState.getTooltip());
-      }
+    myRepository.getModelAccess().runReadAction(() -> {
+      final T ce = getCellElement(cellValue);
+      final DependencyCellState cellState = getDependencyCellState(ce);
+      setIcon(getIcon(cellValue, ce));
+      append(getText(cellValue, ce), cellState.getTextAttributes());
+      setToolTipText(cellState.getTooltip());
     });
   }
 

@@ -313,24 +313,21 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
         return;
       }
 
-      final Runnable initRunnable = new Runnable() {
-        @Override
-        public void run() {
-          initUI();
-          final MessageView service = getMessagesService();
-          Content content = service.getContentManager().getFactory().createContent(getComponent(), myTitle, true);
+      final Runnable initRunnable = () -> {
+        initUI();
+        final MessageView service = getMessagesService();
+        Content content = service.getContentManager().getFactory().createContent(getComponent(), myTitle, true);
 
-          content.setCloseable(canClose);
-          content.setPinnable(isMultiple);
-          if (canClose) {
-            content.setShouldDisposeContent(true);
-            content.setDisposer(MyMessageList.this);
-          }
-          content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
-          service.getContentManager().addContent(content);
-          activateUpdate();
-          myContentReady = true;
+        content.setCloseable(canClose);
+        content.setPinnable(isMultiple);
+        if (canClose) {
+          content.setShouldDisposeContent(true);
+          content.setDisposer(MyMessageList.this);
         }
+        content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
+        service.getContentManager().addContent(content);
+        activateUpdate();
+        myContentReady = true;
       };
       getMessagesService().runWhenInitialized(new RunInUIRunnable(initRunnable, false));
     }

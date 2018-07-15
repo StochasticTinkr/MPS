@@ -121,12 +121,7 @@ class GensourcesModuleFile {
     ArrayList<Element> contentElements = new ArrayList<>(myRootManagerElement.getChildren(CONTENT));
     myRootManagerElement.removeContent();
     // it looks IDEA sorts content roots according to their URL value, do the same to avoid content roots jumping back and forth
-    Collections.sort(contentElements, new Comparator<Element>() {
-      @Override
-      public int compare(Element o1, Element o2) {
-        return o1.getAttributeValue(URL).compareTo(o2.getAttributeValue(URL));
-      }
-    });
+    Collections.sort(contentElements, (o1, o2) -> o1.getAttributeValue(URL).compareTo(o2.getAttributeValue(URL)));
     final Element rootManager = Utils.getComponentWithName(myResult, MODULE_ROOT_MANAGER);
     // remove content roots, we re-create them from scratch
     int contentStart = rootManager.indexOf(rootManager.getChild(CONTENT));

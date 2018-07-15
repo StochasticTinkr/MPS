@@ -64,18 +64,15 @@ public class TransientModelsProvider {
   }
 
   protected void clearAll(final boolean dropCheckpoint) {
-    myRepository.getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        Collection<TransientModelsModule> toRemove = getModuleMapValues();
-        myModuleMap.clear();
-        for (TransientModelsModule m : toRemove) {
-          myRepository.unregisterModule(m, myOwner);
-        }
-        if (dropCheckpoint && myCheckpointsModule != null) {
-          myRepository.unregisterModule(myCheckpointsModule, myOwner);
-          myCheckpointsModule = null;
-        }
+    myRepository.getModelAccess().runWriteAction(() -> {
+      Collection<TransientModelsModule> toRemove = getModuleMapValues();
+      myModuleMap.clear();
+      for (TransientModelsModule m : toRemove) {
+        myRepository.unregisterModule(m, myOwner);
+      }
+      if (dropCheckpoint && myCheckpointsModule != null) {
+        myRepository.unregisterModule(myCheckpointsModule, myOwner);
+        myCheckpointsModule = null;
       }
     });
 

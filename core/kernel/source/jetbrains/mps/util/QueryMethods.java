@@ -64,17 +64,13 @@ public class QueryMethods {
   }
 
   public <T> QueryMethod<T> getMethod(final String methodName) {
-    return new QueryMethod<T>() {
-      @Override
-      @SuppressWarnings("unchecked")
-      public T invoke(Object contextObject) throws IllegalQueryMethodException, InvocationTargetException {
-        try {
-          final Method method = getMethodPrim(methodName);
-          return (T) method.invoke(null, contextObject);
-        } catch (IllegalArgumentException | IllegalAccessException | NoSuchMethodException e ) {
-          String s = String.format("method invocation error: '%s' in '%s'", methodName, myQueriesClass.getName());
-          throw new IllegalQueryMethodException(s, e);
-        }
+    return contextObject -> {
+      try {
+        final Method method = getMethodPrim(methodName);
+        return (T) method.invoke(null, contextObject);
+      } catch (IllegalArgumentException | IllegalAccessException | NoSuchMethodException e ) {
+        String s = String.format("method invocation error: '%s' in '%s'", methodName, myQueriesClass.getName());
+        throw new IllegalQueryMethodException(s, e);
       }
     };
   }

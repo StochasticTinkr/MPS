@@ -165,12 +165,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
   public synchronized Iterable<String> getAvailableClasses(String namespace) {
     ensureInitialized();
     Collection<String> start = myCache.getClassesSetFor(namespace);
-    Condition<String> cond = new Condition<String>() {
-      @Override
-      public boolean met(String className) {
-        return !isAnonymous(className);
-      }
-    };
+    Condition<String> cond = className -> !isAnonymous(className);
     return new ConditionalIterable<>(start, cond);
   }
 

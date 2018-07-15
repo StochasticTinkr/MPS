@@ -264,17 +264,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private final List<LeftMarginMouseListener> myLeftMarginPressListeners = new ArrayList<>(0);
 
-  private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
-    @Override
-    public void settingsChanged() {
-      getModelAccess().runReadInEDT(() -> {
-        if (isDisposed()) {
-          return;
-        }
-        rebuildEditorContent();
-      });
+  private EditorSettingsListener mySettingsListener = () -> getModelAccess().runReadInEDT(() -> {
+    if (isDisposed()) {
+      return;
     }
-  };
+    rebuildEditorContent();
+  });
   private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
     public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
@@ -639,27 +634,24 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       MPSToolTipManager.getInstance().registerComponent(this);
     }
 
-    getSelectionManager().addSelectionListener(new SelectionListener() {
-      @Override
-      public void selectionChanged(jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
-        if (oldSelection == newSelection) {
-          return;
-        }
-        deactivateSubstituteChooser();
-        updateStatusBarMessage();
-
-        if (oldSelection != null) {
-          for (jetbrains.mps.openapi.editor.cells.EditorCell editorCell : oldSelection.getSelectedCells()) {
-            repaint(editorCell);
-          }
-        }
-        if (newSelection != null) {
-          for (jetbrains.mps.openapi.editor.cells.EditorCell editorCell : newSelection.getSelectedCells()) {
-            repaint(editorCell);
-          }
-        }
-        myLeftHighlighter.repaint();
+    getSelectionManager().addSelectionListener((editorComponent, oldSelection, newSelection) -> {
+      if (oldSelection == newSelection) {
+        return;
       }
+      deactivateSubstituteChooser();
+      updateStatusBarMessage();
+
+      if (oldSelection != null) {
+        for (jetbrains.mps.openapi.editor.cells.EditorCell editorCell : oldSelection.getSelectedCells()) {
+          repaint(editorCell);
+        }
+      }
+      if (newSelection != null) {
+        for (jetbrains.mps.openapi.editor.cells.EditorCell editorCell : newSelection.getSelectedCells()) {
+          repaint(editorCell);
+        }
+      }
+      myLeftHighlighter.repaint();
     });
   }
 
@@ -840,40 +832,34 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public String getMPSTooltipText(final MouseEvent event) {
-    return ModelAccess.instance().tryRead(new Computable<String>() {
-      @Override
-      public String compute() {
-        if (isDisposed()) {
-          return null;
-        }
-
-        jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
-        if (cell == null) {
-          return null;
-        }
-        return getMessagesTextFor(cell);
+    return ModelAccess.instance().tryRead(() -> {
+      if (isDisposed()) {
+        return null;
       }
+
+      jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
+      if (cell == null) {
+        return null;
+      }
+      return getMessagesTextFor(cell);
     });
   }
 
   @Override
   public Point getToolTipLocation(final MouseEvent event) {
-    return ModelAccess.instance().tryRead(new Computable<Point>() {
-      @Override
-      public Point compute() {
-        if (isDisposed()) {
-          return null;
-        }
+    return ModelAccess.instance().tryRead(() -> {
+      if (isDisposed()) {
+        return null;
+      }
 
-        jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
-        if (cell == null) {
-          return null;
-        }
-        if (getMessagesTextFor(cell) != null) {
-          return new Point(event.getX(), event.getY());
-        } else {
-          return null;
-        }
+      jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
+      if (cell == null) {
+        return null;
+      }
+      if (getMessagesTextFor(cell) != null) {
+        return new Point(event.getX(), event.getY());
+      } else {
+        return null;
       }
     });
   }
@@ -882,32 +868,29 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (!isFocusOwner()) {
       return;
     }
-    getModelAccess().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        if (!isFocusOwner() || getCurrentProject() == null || isProjectDisposed()) {
-          return;
+    getModelAccess().runReadInEDT(() -> {
+      if (!isFocusOwner() || getCurrentProject() == null || isProjectDisposed()) {
+        return;
+      }
+
+      jetbrains.mps.openapi.editor.cells.EditorCell selection = getSelectedCell();
+      String info = "";
+      if (selection != null) {
+        HighlighterMessage message = getHighlighterMessageFor(selection);
+        if (message != null) {
+          info = message.getMessage();
         }
+      }
 
-        jetbrains.mps.openapi.editor.cells.EditorCell selection = getSelectedCell();
-        String info = "";
-        if (selection != null) {
-          HighlighterMessage message = getHighlighterMessageFor(selection);
-          if (message != null) {
-            info = message.getMessage();
-          }
-        }
+      jetbrains.mps.project.Project project = getCurrentProject();
+      IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(ProjectHelper.toIdeaProject(project));
+      StatusBarEx statusBar = (StatusBarEx) ideFrame.getStatusBar();
 
-        jetbrains.mps.project.Project project = getCurrentProject();
-        IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(ProjectHelper.toIdeaProject(project));
-        StatusBarEx statusBar = (StatusBarEx) ideFrame.getStatusBar();
-
-        //current info is significant or the editor removes its own message
-        if (!info.isEmpty() || myLastWrittenStatus.equals(statusBar.getInfo())) {
-          statusBar.setInfo(info);
-          if (!info.isEmpty()) {
-            myLastWrittenStatus = info;
-          }
+      //current info is significant or the editor removes its own message
+      if (!info.isEmpty() || myLastWrittenStatus.equals(statusBar.getInfo())) {
+        statusBar.setInfo(info);
+        if (!info.isEmpty()) {
+          myLastWrittenStatus = info;
         }
       }
     });
@@ -1003,47 +986,44 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     clearModelDisposedTrace();
 
-    getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        if (node != null) {
-          assert node.getModel() != null : "Can't edit a node that is not registered in a model";
-          assert SNodeUtil.isAccessible(node, myRepository) :
-              "editNode() accepts nodes from its own repository only (model = " + node.getModel() + ", repository = " + node.getModel().getRepository() + ")";
-        }
+    getModelAccess().runReadAction(() -> {
+      if (node != null) {
+        assert node.getModel() != null : "Can't edit a node that is not registered in a model";
+        assert SNodeUtil.isAccessible(node, myRepository) :
+            "editNode() accepts nodes from its own repository only (model = " + node.getModel() + ", repository = " + node.getModel().getRepository() + ")";
+      }
 
-        if (myNode != null && notifiesCreation()) {
-          notifyDisposal();
-        }
+      if (myNode != null && notifiesCreation()) {
+        notifyDisposal();
+      }
 
-        final boolean needNewTypecheckingContext = updateContainingRoot(node);
-        if (needNewTypecheckingContext) {
-          releaseTypeCheckingContext();
-        }
+      final boolean needNewTypecheckingContext = updateContainingRoot(node);
+      if (needNewTypecheckingContext) {
+        releaseTypeCheckingContext();
+      }
 
-        myNode = node;
-        if (myNode != null) {
-          myNodePointer = myNode.getReference();
-          SModel model = node.getModel();
-          assert model != null : "Can't edit a node that is not registered in a model";
-          setEditorContext(model, myRepository);
-          myReadOnly = model.isReadOnly();
-        } else {
-          myNodePointer = null;
-          setEditorContext(null, myRepository);
-          myReadOnly = true;
-        }
-        myCommandContext.updateContextNode();
+      myNode = node;
+      if (myNode != null) {
+        myNodePointer = myNode.getReference();
+        SModel model = node.getModel();
+        assert model != null : "Can't edit a node that is not registered in a model";
+        setEditorContext(model, myRepository);
+        myReadOnly = model.isReadOnly();
+      } else {
+        myNodePointer = null;
+        setEditorContext(null, myRepository);
+        myReadOnly = true;
+      }
+      myCommandContext.updateContextNode();
 
-        if (needNewTypecheckingContext) {
-          acquireTypeCheckingContext();
-        }
+      if (needNewTypecheckingContext) {
+        acquireTypeCheckingContext();
+      }
 
-        rebuildEditorContent();
+      rebuildEditorContent();
 
-        if (myNode != null && notifiesCreation()) {
-          notifyCreation();
-        }
+      if (myNode != null && notifiesCreation()) {
+        notifyCreation();
       }
     });
   }

@@ -47,12 +47,7 @@ public class MPSDialogAppender extends com.intellij.diagnostic.DialogAppender im
   @Override
   public void initComponent() {
     // this is the only way I know to flush all gathered log events after the application is loaded
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        flush();
-      }
-    });
+    ApplicationManager.getApplication().invokeLater(() -> flush());
   }
 
   public void flush() {

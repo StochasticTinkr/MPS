@@ -86,12 +86,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
     boolean oldSelected = isSelected();
     super.setSelected(selected);
     if (oldSelected && !selected && isTransactional()) {
-      final Runnable commitCommand = new Runnable() {
-        @Override
-        public void run() {
-          commit();
-        }
-      };
+      final Runnable commitCommand = () -> commit();
       if (myCommitInCommand) {
         getModelAccess().executeCommandInEDT(commitCommand);
       } else {
@@ -165,25 +160,17 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
 
   @Override
   public boolean isValidText(final String text) {
-    return new ModelAccessHelper(getModelAccess()).runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return myModelAccessor.isValidText(text);
-      }
-    });
+    return new ModelAccessHelper(getModelAccess()).runReadAction(() -> myModelAccessor.isValidText(text));
   }
 
   @Override
   public SubstituteInfo getSubstituteInfo() {
     final SubstituteInfo substituteInfo = super.getSubstituteInfo();
-    return new ModelAccessHelper(getModelAccess()).runReadAction(new Computable<SubstituteInfo>() {
-      @Override
-      public SubstituteInfo compute() {
-        if (substituteInfo != null) {
-          substituteInfo.setOriginalText(myModelAccessor.getText());
-        }
-        return substituteInfo;
+    return new ModelAccessHelper(getModelAccess()).runReadAction(() -> {
+      if (substituteInfo != null) {
+        substituteInfo.setOriginalText(myModelAccessor.getText());
       }
+      return substituteInfo;
     });
   }
 

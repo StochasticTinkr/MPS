@@ -599,22 +599,12 @@ public class ClassLoaderManager implements CoreComponent {
   /**
    * it is possible to associate a ClassLoader with such module
    */
-  private final Condition<SModule> myLoadableCondition = new Condition<SModule>() {
-    @Override
-    public boolean met(SModule module) {
-      return canLoad(module);
-    }
-  };
+  private final Condition<SModule> myLoadableCondition = module -> canLoad(module);
 
   /**
    * the modules which we want to watch (and trace the dependencies between them)
    */
-  private final Condition<ReloadableModule> myWatchableCondition = new Condition<ReloadableModule>() {
-    @Override
-    public boolean met(ReloadableModule module) {
-      return true;
-    }
-  };
+  private final Condition<ReloadableModule> myWatchableCondition = module -> true;
 
   public boolean isLoadedByMPS(@NotNull ReloadableModule module) {
     return myMPSLoadableCondition.met(module);
@@ -623,12 +613,7 @@ public class ClassLoaderManager implements CoreComponent {
   /**
    * it is possible to create ModuleClassLoader for such module
    */
-  private final Condition<ReloadableModule> myMPSLoadableCondition = new Condition<ReloadableModule>() {
-    @Override
-    public boolean met(ReloadableModule module) {
-      return canCreate(module);
-    }
-  };
+  private final Condition<ReloadableModule> myMPSLoadableCondition = module -> canCreate(module);
 
   /**
    * status of this module is valid in the dependencies graph

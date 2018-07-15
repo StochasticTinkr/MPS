@@ -149,12 +149,7 @@ final class GenerationTracerView {
   }
 
   void viewSettingsChanged() {
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        rebuildTree();
-      }
-    });
+    myProject.getModelAccess().runReadAction(() -> rebuildTree());
   }
 
   void rebuildTree() {
@@ -176,21 +171,18 @@ final class GenerationTracerView {
 
   JPopupMenu createViewSettingsMenu() {
     final GenTraceSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings().getTraceSettings();
-    ActionListener l = new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        if (false == e.getSource() instanceof JCheckBoxMenuItem) {
-          return;
-        }
-        boolean value = ((JCheckBoxMenuItem) e.getSource()).isSelected();
-        switch (Integer.parseInt(e.getActionCommand())) {
-          case 1 : settings.setGroupByStep(value); break;
-          case 2 : settings.setCompactTemplates(value); break;
-          case 3 : settings.setShowEmptySteps(value); break;
-          case 4 : settings.setGroupByChange(value);
-        }
-        viewSettingsChanged();
+    ActionListener l = e -> {
+      if (false == e.getSource() instanceof JCheckBoxMenuItem) {
+        return;
       }
+      boolean value = ((JCheckBoxMenuItem) e.getSource()).isSelected();
+      switch (Integer.parseInt(e.getActionCommand())) {
+        case 1 : settings.setGroupByStep(value); break;
+        case 2 : settings.setCompactTemplates(value); break;
+        case 3 : settings.setShowEmptySteps(value); break;
+        case 4 : settings.setGroupByChange(value);
+      }
+      viewSettingsChanged();
     };
     final JPopupMenu menu = new JPopupMenu();
     JCheckBoxMenuItem menuItem = new JCheckBoxMenuItem("Group changes by step");

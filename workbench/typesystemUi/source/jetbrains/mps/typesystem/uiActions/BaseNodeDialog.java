@@ -68,13 +68,10 @@ public abstract class BaseNodeDialog extends DialogWrapper {
 
   @Override
   public void show() {
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        myEditorComponent.editNode(getNode());
-        myEditorComponent.selectNode(getNode());
-        myEditorComponent.changeSelectionWRTFocusPolicy(myEditorComponent.getSelectedCell());
-      }
+    myProject.getModelAccess().runReadAction(() -> {
+      myEditorComponent.editNode(getNode());
+      myEditorComponent.selectNode(getNode());
+      myEditorComponent.changeSelectionWRTFocusPolicy(myEditorComponent.getSelectedCell());
     });
     super.show();
   }

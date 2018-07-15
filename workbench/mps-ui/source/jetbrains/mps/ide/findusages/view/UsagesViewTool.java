@@ -148,24 +148,19 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
   private void findUsages(IResultProvider provider, final SearchQuery query, final UsageToolOptions options) {
     final SearchTaskImpl searchTask = new SearchTaskImpl(ProjectHelper.fromIdeaProject(getProject()), provider, query);
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(() -> new Backgroundable(getProject(), "Searching", true, PerformInBackgroundOption.DEAF) {
+      private SearchResults searchResults;
+
       @Override
-      public void run() {
-        new Backgroundable(getProject(), "Searching", true, PerformInBackgroundOption.DEAF) {
-          private SearchResults searchResults;
-
-          @Override
-          public void run(@NotNull final ProgressIndicator indicator) {
-            searchResults = searchTask.execute(new ProgressMonitorAdapter(indicator));
-          }
-
-          @Override
-          public void onSuccess() {
-            showResults(searchTask, searchResults, options);
-          }
-        }.queue();
+      public void run(@NotNull final ProgressIndicator indicator) {
+        searchResults = searchTask.execute(new ProgressMonitorAdapter(indicator));
       }
-    });
+
+      @Override
+      public void onSuccess() {
+        showResults(searchTask, searchResults, options);
+      }
+    }.queue());
   }
 
   public void show(SearchResults results, String notFoundMsg) {

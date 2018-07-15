@@ -120,21 +120,13 @@ public final class ProjectTreeFindHelper {
       if (!currentTreeNode.isInitialized() && !currentTreeNode.hasInfiniteSubtree()) currentTreeNode.init();
 
       currentTreeNode = findTreeNode(finalCurrentTreeNode,
-          new Condition<MPSTreeNode>() {
-            @Override
-            public boolean met(MPSTreeNode object) {
-              if (object == finalCurrentTreeNode) return true;
-              if (!(object instanceof PackageNode)) return false;
-              String pack = ((PackageNode) object).getFullPackage();
-              String vp = node.getContainingRoot().getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
-              return vp != null && vp.startsWith(pack);
-            }
-          }, new Condition<MPSTreeNode>() {
-            @Override
-            public boolean met(MPSTreeNode tNode) {
-              return (tNode instanceof SNodeTreeNode) && (((SNodeTreeNode) tNode).getSNode() == anc);
-            }
-          }
+                                     object -> {
+                                       if (object == finalCurrentTreeNode) return true;
+                                       if (!(object instanceof PackageNode)) return false;
+                                       String pack = ((PackageNode) object).getFullPackage();
+                                       String vp = node.getContainingRoot().getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
+                                       return vp != null && vp.startsWith(pack);
+                                     }, tNode -> (tNode instanceof SNodeTreeNode) && (((SNodeTreeNode) tNode).getSNode() == anc)
       );
       if (currentTreeNode == null) return null;
     }

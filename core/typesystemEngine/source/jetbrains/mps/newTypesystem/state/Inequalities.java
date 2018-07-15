@@ -247,12 +247,7 @@ public class Inequalities {
     Set<SNode> usedNodes = new HashSet<>();
     LinkedList<SNode> tempNodes = new LinkedList<>(nodes);
     // sort once to avoid n^2
-    Collections.sort(tempNodes, new Comparator<SNode>() {
-      @Override
-      public int compare(SNode a, SNode b) {
-        return ((SNodeId)a.getNodeId()).compareTo((SNodeId)b.getNodeId());
-      }
-    });
+    Collections.sort(tempNodes, (a, b) -> ((SNodeId)a.getNodeId()).compareTo((SNodeId)b.getNodeId()));
 
     while (tempNodes.size() > 0) {
       SNode current = getNodeWithNoInput(tempNodes, usedNodes);

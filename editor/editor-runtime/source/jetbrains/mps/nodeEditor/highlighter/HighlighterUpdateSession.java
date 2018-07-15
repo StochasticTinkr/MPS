@@ -68,12 +68,9 @@ public class HighlighterUpdateSession {
         } catch (InterruptedException ignored) {
         }
       }
-      result = ModelAccess.instance().runReadAction(new Computable<T>() {
-        @Override
-        public T compute() {
-          if (IMakeService.INSTANCE.isSessionActive() || ModelAccess.instance().hasScheduledWrites()) return null;
-          return computable.compute();
-        }
+      result = ModelAccess.instance().runReadAction(() -> {
+        if (IMakeService.INSTANCE.isSessionActive() || ModelAccess.instance().hasScheduledWrites()) return null;
+        return computable.compute();
       });
     } while (result == null);
 
@@ -101,12 +98,9 @@ public class HighlighterUpdateSession {
       if (myHighlighter.isPausedOrStopping()) {
         return;
       }
-      TypeContextManager.getInstance().runTypecheckingAction(editorComponent.getTypecheckingContextOwner(), new Runnable() {
-        @Override
-        public void run() {
-          if (updateEditorComponent(editorComponent, false, applyQuickFixes)) {
-            isUpdated[0] = true;
-          }
+      TypeContextManager.getInstance().runTypecheckingAction(editorComponent.getTypecheckingContextOwner(), () -> {
+        if (updateEditorComponent(editorComponent, false, applyQuickFixes)) {
+          isUpdated[0] = true;
         }
       });
     }
@@ -116,11 +110,8 @@ public class HighlighterUpdateSession {
     }
 
     if (myInspector != null) {
-      TypeContextManager.getInstance().runTypecheckingAction(myInspector.getTypecheckingContextOwner(), new Runnable() {
-        @Override
-        public void run() {
-          updateEditorComponent(myInspector, isUpdated[0], false);
-        }
+      TypeContextManager.getInstance().runTypecheckingAction(myInspector.getTypecheckingContextOwner(), () -> {
+        updateEditorComponent(myInspector, isUpdated[0], false);
       });
     }
   }
@@ -128,12 +119,9 @@ public class HighlighterUpdateSession {
   private boolean updateEditorComponent(final EditorComponent component, final boolean mainEditorMessagesChanged, final boolean applyQuickFixes) {
     HighlighterEditorTracker editorTracker = myHighlighter.getEditorTracker();
     final SRepository repository = component.getEditorContext().getRepository();
-    boolean needsUpdate = new ModelAccessHelper(repository).runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        final SNode editedNode = component.getEditedNode();
-        return editedNode != null && SNodeUtil.isAccessible(editedNode, repository);
-      }
+    boolean needsUpdate = new ModelAccessHelper(repository).runReadAction(() -> {
+      final SNode editedNode = component.getEditedNode();
+      return editedNode != null && SNodeUtil.isAccessible(editedNode, repository);
     });
     if (!needsUpdate) return false;
 
@@ -142,15 +130,12 @@ public class HighlighterUpdateSession {
     if (!rootWasCheckedOnce) {
       checkersToRecheck.addAll(myCheckers);
     } else {
-      repository.getModelAccess().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          if (myHighlighter.isPausedOrStopping()) return;
+      repository.getModelAccess().runReadAction(() -> {
+        if (myHighlighter.isPausedOrStopping()) return;
 
-          for (EditorCheckerWrapper checker : myCheckers) {
-            if (checker.needsUpdate(component)) {
-              checkersToRecheck.add(checker);
-            }
+        for (EditorCheckerWrapper checker : myCheckers) {
+          if (checker.needsUpdate(component)) {
+            checkersToRecheck.add(checker);
           }
         }
       });
@@ -174,31 +159,28 @@ public class HighlighterUpdateSession {
     final NodeHighlightManager highlightManager = editor.getHighlightManager();
     boolean anyMessageChanged = false;
     for (final EditorCheckerWrapper checker : checkersToRecheck) {
-      UpdateResult checkResult = runLoPrioRead(new Computable<UpdateResult>() {
-        @Override
-        public UpdateResult compute() {
-          if (myHighlighter.isPausedOrStopping()) return UpdateResult.CANCELLED;
+      UpdateResult checkResult = runLoPrioRead(() -> {
+        if (myHighlighter.isPausedOrStopping()) return UpdateResult.CANCELLED;
 
-          SNode node = editor.getEditedNode(); // XXX perhaps, shall use getEditedNodePointer and resolve it, rather than check isAccessible?
-          if (node == null) {
-            return UpdateResult.CANCELLED;
-          }
-          if (!SNodeUtil.isAccessible(node, editor.getEditorContext().getRepository())) {
-            // asking runLoPrioRead() implementation to re-execute this task later:
-            // editor was not updated in accordance with last modelReload event yet.
-            return null;
-          }
-
-          return checker.withChecker(checker -> {
-            try {
-              return checker.update(editor, wasCheckedOnce, applyQuickFixes,
-                  new HighlighterUpdateSessionCancellable(myHighlighter, checker.toString(), editor));
-            } catch (IndexNotReadyException ex) {
-              highlightManager.clearForOwner(checker.getEditorMessageOwner(), true);
-              throw ex;
-            }
-          }, UpdateResult.CANCELLED);
+        SNode node = editor.getEditedNode(); // XXX perhaps, shall use getEditedNodePointer and resolve it, rather than check isAccessible?
+        if (node == null) {
+          return UpdateResult.CANCELLED;
         }
+        if (!SNodeUtil.isAccessible(node, editor.getEditorContext().getRepository())) {
+          // asking runLoPrioRead() implementation to re-execute this task later:
+          // editor was not updated in accordance with last modelReload event yet.
+          return null;
+        }
+
+        return checker.withChecker(checker1 -> {
+          try {
+            return checker1.update(editor, wasCheckedOnce, applyQuickFixes,
+                                   new HighlighterUpdateSessionCancellable(myHighlighter, checker1.toString(), editor));
+          } catch (IndexNotReadyException ex) {
+            highlightManager.clearForOwner(checker1.getEditorMessageOwner(), true);
+            throw ex;
+          }
+        }, UpdateResult.CANCELLED);
       });
       if (myHighlighter.isStopping()) return false;
 

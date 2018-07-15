@@ -119,23 +119,20 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
    */
   @Deprecated
   public void update(final boolean refreshFiles) {
-    myModelAccess.runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        final Set<SLibrary> currentLibs = new HashSet<>();
-        List<LibraryContributor> contributors = myContributors;
-        for (LibraryContributor contributor : contributors) {
-          boolean hidden = contributor.hiddenLanguages();
-          for (LibDescriptor pathDescriptor : contributor.getPaths()) {
-            SLibrary lib = new SLibrary(myRepository, pathDescriptor, hidden);
-            currentLibs.add(lib);
-          }
+    myModelAccess.runWriteAction(() -> {
+      final Set<SLibrary> currentLibs = new HashSet<>();
+      List<LibraryContributor> contributors = myContributors;
+      for (LibraryContributor contributor : contributors) {
+        boolean hidden = contributor.hiddenLanguages();
+        for (LibDescriptor pathDescriptor : contributor.getPaths()) {
+          SLibrary lib = new SLibrary(myRepository, pathDescriptor, hidden);
+          currentLibs.add(lib);
         }
-        final Delta<SLibrary> libraryDelta = Delta.construct(myLibraries, currentLibs);
-        if (libraryDelta.isEmpty()) return;
-        updateState(refreshFiles, libraryDelta);
-        libraryDelta.apply(myLibraries);
       }
+      final Delta<SLibrary> libraryDelta = Delta.construct(myLibraries, currentLibs);
+      if (libraryDelta.isEmpty()) return;
+      updateState(refreshFiles, libraryDelta);
+      libraryDelta.apply(myLibraries);
     });
   }
 

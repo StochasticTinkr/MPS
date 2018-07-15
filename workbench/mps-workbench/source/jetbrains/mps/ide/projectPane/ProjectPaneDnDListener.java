@@ -118,29 +118,26 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     int result = JOptionPane.showConfirmDialog(frame, text, "Move Nodes", JOptionPane.YES_NO_OPTION);
     if (result != JOptionPane.YES_OPTION) return;
 
-    project.getModelAccess().executeCommand(new Runnable() {
-      @Override
-      public void run() {
-        SModel targetModel = getTargetModel(target);
-        if (targetModel == null) return;
+    project.getModelAccess().executeCommand(() -> {
+      SModel targetModel = getTargetModel(target);
+      if (targetModel == null) return;
 
-        for (Pair<SNode, String> sourceNode : getNodesToMove(targetModel, targetPackage, sourceNodes)) {
-          String fullTargetPack = getFullTargetPack(targetPackage, sourceNode.o2);
-          SNodeAccessUtil.setProperty(sourceNode.o1, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
-          if (SNodeOperations.isInstanceOf(sourceNode.o1, SNodeUtil.concept_AbstractConceptDeclaration)) {
-            SNode baseNode = sourceNode.o1;
-            List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(project.getProject(), baseNode);
-            for (RelationDescriptor tab : tabs) {
-              try {
-                if (!tab.isApplicable(baseNode)) continue;
+      for (Pair<SNode, String> sourceNode : getNodesToMove(targetModel, targetPackage, sourceNodes)) {
+        String fullTargetPack = getFullTargetPack(targetPackage, sourceNode.o2);
+        SNodeAccessUtil.setProperty(sourceNode.o1, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
+        if (SNodeOperations.isInstanceOf(sourceNode.o1, SNodeUtil.concept_AbstractConceptDeclaration)) {
+          SNode baseNode = sourceNode.o1;
+          List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(project.getProject(), baseNode);
+          for (RelationDescriptor tab : tabs) {
+            try {
+              if (!tab.isApplicable(baseNode)) continue;
 
-                for (SNode aspect : tab.getNodes(baseNode)) {
-                  if (tab.getBaseNode(aspect) != baseNode) continue;
-                  SNodeAccessUtil.setProperty(aspect, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
-                }
-              } catch (Throwable t) {
-                LOG.error("Exception in extension code: ", t);
+              for (SNode aspect : tab.getNodes(baseNode)) {
+                if (tab.getBaseNode(aspect) != baseNode) continue;
+                SNodeAccessUtil.setProperty(aspect, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
               }
+            } catch (Throwable t) {
+              LOG.error("Exception in extension code: ", t);
             }
           }
         }

@@ -144,12 +144,9 @@ public class UsagesTree extends MPSTree {
       }
     });
 
-    addTreeSelectionListener(new TreeSelectionListener() {
-      @Override
-      public void valueChanged(TreeSelectionEvent e) {
-        if (myAutoscroll) {
-          openNewlySelectedNodeLink(e, false, false);
-        }
+    addTreeSelectionListener(e -> {
+      if (myAutoscroll) {
+        openNewlySelectedNodeLink(e, false, false);
       }
     });
   }
@@ -264,40 +261,37 @@ public class UsagesTree extends MPSTree {
 
   @Override
   protected UsagesTreeNode rebuild() {
-    ComputeRunnable<UsagesTreeNode> cr = new ComputeRunnable<>(new Computable<UsagesTreeNode>() {
-      @Override
-      public UsagesTreeNode compute() {
-        UsagesTreeNode root = new UsagesTreeNode();
-        if (myContents == null || myContents.getTreeRoot().getChildren().isEmpty()) {
-          // FIXME refactor UsagesTree construction so that it doesn't try to show tree before any content supplied.
-          // Now the tree is rebuilt on view options change (UsagesTreeComponent#setComponentsViewOptions())
-          return root;
-        }
-        if (myShowSearchedNodes) {
-          HashSet<PathItemRole> searchedNodesPathProvider = new HashSet<>();
-          searchedNodesPathProvider.add(PathItemRole.ROLE_MAIN_SEARCHED_NODES);
-
-          DataNode searchedNodesRoot = myContents.getTreeRoot().getChildren().get(0);
-          if (searchedNodesRoot.containsNodes(NodeNodeData.class)) {
-            if (myGroupSearchedNodes) {
-              searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT);
-              searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
-            }
-            searchedNodesPathProvider.add(PathItemRole.ROLE_TARGET_NODE);
-          } else if (searchedNodesRoot.containsNodes(ModelNodeData.class)) {
-            if (myGroupSearchedNodes) {
-              searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
-            }
-            searchedNodesPathProvider.add(PathItemRole.ROLE_MODEL);
-          } else {
-            searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
-          }
-          root.add(buildTree(searchedNodesRoot, searchedNodesPathProvider));
-        }
-        root.add(buildTree(myContents.getTreeRoot().getChildren().get(1), myResultPathProvider));
-
+    ComputeRunnable<UsagesTreeNode> cr = new ComputeRunnable<>(() -> {
+      UsagesTreeNode root = new UsagesTreeNode();
+      if (myContents == null || myContents.getTreeRoot().getChildren().isEmpty()) {
+        // FIXME refactor UsagesTree construction so that it doesn't try to show tree before any content supplied.
+        // Now the tree is rebuilt on view options change (UsagesTreeComponent#setComponentsViewOptions())
         return root;
       }
+      if (myShowSearchedNodes) {
+        HashSet<PathItemRole> searchedNodesPathProvider = new HashSet<>();
+        searchedNodesPathProvider.add(PathItemRole.ROLE_MAIN_SEARCHED_NODES);
+
+        DataNode searchedNodesRoot = myContents.getTreeRoot().getChildren().get(0);
+        if (searchedNodesRoot.containsNodes(NodeNodeData.class)) {
+          if (myGroupSearchedNodes) {
+            searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT);
+            searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
+          }
+          searchedNodesPathProvider.add(PathItemRole.ROLE_TARGET_NODE);
+        } else if (searchedNodesRoot.containsNodes(ModelNodeData.class)) {
+          if (myGroupSearchedNodes) {
+            searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
+          }
+          searchedNodesPathProvider.add(PathItemRole.ROLE_MODEL);
+        } else {
+          searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
+        }
+        root.add(buildTree(searchedNodesRoot, searchedNodesPathProvider));
+      }
+      root.add(buildTree(myContents.getTreeRoot().getChildren().get(1), myResultPathProvider));
+
+      return root;
     });
     myProject.getModelAccess().runReadAction(cr);
     return cr.getResult();

@@ -76,12 +76,9 @@ public class AWTKeymapHandler extends KeymapHandler<KeyEvent> {
     result.add(KeyMap.KEY_CODE_LETTER_OR_DIGIT);
     result.add(KeyMap.KEY_CODE_SPACE);
     result.add(KeyMap.KEY_CODE_CHAR);
-    ourJavaKeyCodesMap.forEachValue(new TObjectProcedure<String>() {
-      @Override
-      public boolean execute(String value) {
-        result.add(value);
-        return true;
-      }
+    ourJavaKeyCodesMap.forEachValue(value -> {
+      result.add(value);
+      return true;
     });
     Collections.sort(result);
     return result;
@@ -211,12 +208,7 @@ public class AWTKeymapHandler extends KeymapHandler<KeyEvent> {
       if (acc != 0) {
         menuItem.setAccelerator(KeyStroke.getKeyStroke(acc));
       }
-      ActionListener actionListener = new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-          executeAction(action, contextCell, editorContext);
-        }
-      };
+      ActionListener actionListener = e -> executeAction(action, contextCell, editorContext);
       menuItem.addActionListener(actionListener);
       menu.add(menuItem);
       index++;

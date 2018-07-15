@@ -56,12 +56,9 @@ public class SubtypingResolver {
   public boolean calcIsSubType(final SNode subType, final SNode superType) {
     long start = System.nanoTime();
 
-    Boolean aBoolean = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        boolean result = isSubType(subType, superType);
-        return result;
-      }
+    Boolean aBoolean = NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
+      boolean result = isSubType(subType, superType);
+      return result;
     });
     TypeSystemReporter.getInstance().reportIsSubType(subType, superType, (System.nanoTime() - start));
     return aBoolean;

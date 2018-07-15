@@ -153,33 +153,28 @@ public class SModel implements SModelData, UpdateModeSupport {
   @Override
   public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
     fireModelNodesReadAccess();
-    return new Iterable<org.jetbrains.mps.openapi.model.SNode>() {
+    return () -> new Iterator<org.jetbrains.mps.openapi.model.SNode>() {
+      private final Iterator<SNode> myIterator = myRoots.iterator();
+
       @Override
-      public Iterator<org.jetbrains.mps.openapi.model.SNode> iterator() {
-        return new Iterator<org.jetbrains.mps.openapi.model.SNode>() {
-          private final Iterator<SNode> myIterator = myRoots.iterator();
+      public boolean hasNext() {
+        return myIterator.hasNext();
+      }
 
-          @Override
-          public boolean hasNext() {
-            return myIterator.hasNext();
-          }
+      @Override
+      public org.jetbrains.mps.openapi.model.SNode next() {
+        SNode res = myIterator.next();
+        if (res != null) {
+          res.assertCanRead();
+          res.getNodeOwner().fireNodeRead(res, true);
+        }
 
-          @Override
-          public org.jetbrains.mps.openapi.model.SNode next() {
-            SNode res = myIterator.next();
-            if (res != null) {
-              res.assertCanRead();
-              res.getNodeOwner().fireNodeRead(res, true);
-            }
+        return res;
+      }
 
-            return res;
-          }
-
-          @Override
-          public void remove() {
-            throw new UnsupportedOperationException("can't change model roots through roots iterator");
-          }
-        };
+      @Override
+      public void remove() {
+        throw new UnsupportedOperationException("can't change model roots through roots iterator");
       }
     };
   }

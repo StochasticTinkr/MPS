@@ -48,12 +48,7 @@ class ModelUsagesSearchType extends SearchType<SModel, SModelReference> {
       Collection<SModel> current = IterableUtil.asCollection(scope.getModels());
       for (FindUsagesParticipant participant : participants) {
         final Set<SModel> next = new HashSet<>(current);
-        participant.findModelUsages(current, models, consumer, new Consumer<SModel>() {
-          @Override
-          public void consume(SModel sModel) {
-            next.remove(sModel);
-          }
-        });
+        participant.findModelUsages(current, models, consumer, sModel -> next.remove(sModel));
         current = next;
         monitor.advance(1);
       }

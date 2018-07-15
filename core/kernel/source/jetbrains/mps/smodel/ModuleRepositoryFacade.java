@@ -123,12 +123,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   }
 
   public SModule getModule(@NotNull final SModuleReference ref) {
-    Computable<SModule> c = new Computable<SModule>() {
-      @Override
-      public SModule compute() {
-        return REPO.getModule(ref.getModuleId());
-      }
-    };
+    Computable<SModule> c = () -> REPO.getModule(ref.getModuleId());
     if (REPO.getModelAccess().canRead()) {
       return c.compute();
     }

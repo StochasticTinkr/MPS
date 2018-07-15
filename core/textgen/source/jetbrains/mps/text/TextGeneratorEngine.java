@@ -80,12 +80,7 @@ public final class TextGeneratorEngine {
   public Future<TextGenResult> generateText(@NotNull final SModel model) {
     final ArrayBlockingQueue<TextGenResult> queue = new ArrayBlockingQueue<>(1);
     schedule(model, queue);
-    return new FutureTask<>(new Callable<TextGenResult>() {
-      @Override
-      public TextGenResult call() throws Exception {
-        return queue.take();
-      }
-    });
+    return new FutureTask<>(() -> queue.take());
   }
 
   /**
@@ -103,33 +98,30 @@ public final class TextGeneratorEngine {
     final ModelAccess modelAccess = model.getRepository() != null ? model.getRepository().getModelAccess() : null;
     final AtomicInteger unitsCount = new AtomicInteger(textUnits.size());
     for (final TextUnit tu : textUnits) {
-      final Runnable tuGenerate = new Runnable() {
-        @Override
-        public void run() {
+      final Runnable tuGenerate = () -> {
+        try {
+          // XXX shall pass settings, e.g. needDebug, IMessageHandler, etc.
           try {
-            // XXX shall pass settings, e.g. needDebug, IMessageHandler, etc.
-            try {
-              tu.generate();
-            } finally {
-              if (tu instanceof RegularTextUnit) {
-                // even if there's exception, report messages first, as they 'happen-before' the error.
-                for (IMessage msg : ((RegularTextUnit) tu).getMessages()) {
-                  myMessages.handle(msg);
-                }
-              }
-              // once the last unit of the model is completed (either failed or succeeded), notify consumer
-              if (unitsCount.decrementAndGet() == 0) {
-                try {
-                  resultQueue.put(new TextGenResult(model, textUnits));
-                } catch (InterruptedException ex) {
-                  // it's ok, it's likely caller to stop the queue, thus it knows how to deal with incomplete state
-                  myMessages.handle(new Message(MessageKind.WARNING, String.format("TextGen interrupted for model %s", model.getName())).setException(ex));
-                }
+            tu.generate();
+          } finally {
+            if (tu instanceof RegularTextUnit) {
+              // even if there's exception, report messages first, as they 'happen-before' the error.
+              for (IMessage msg : ((RegularTextUnit) tu).getMessages()) {
+                myMessages.handle(msg);
               }
             }
-          } catch (Throwable ex) {
-            myMessages.handle(new Message(MessageKind.ERROR, String.format("TextGen threw an exception for model %s", model.getName())).setException(ex));
+            // once the last unit of the model is completed (either failed or succeeded), notify consumer
+            if (unitsCount.decrementAndGet() == 0) {
+              try {
+                resultQueue.put(new TextGenResult(model, textUnits));
+              } catch (InterruptedException ex) {
+                // it's ok, it's likely caller to stop the queue, thus it knows how to deal with incomplete state
+                myMessages.handle(new Message(MessageKind.WARNING, String.format("TextGen interrupted for model %s", model.getName())).setException(ex));
+              }
+            }
           }
+        } catch (Throwable ex) {
+          myMessages.handle(new Message(MessageKind.ERROR, String.format("TextGen threw an exception for model %s", model.getName())).setException(ex));
         }
       };
       myExecutor.execute(modelAccess == null ? tuGenerate : new ModelReadRunnable(modelAccess, tuGenerate));

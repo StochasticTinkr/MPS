@@ -100,22 +100,19 @@ public class IntelligentInputUtil {
           return TypeContextManager.getInstance().runTypeCheckingComputation(
               ((EditorComponent) myEditorContext.getEditorComponent()).getTypecheckingContextOwner(),
               myEditorContext.getEditorComponent().getEditedNode(),
-              new Computation<Boolean>() {
-                @Override
-                public Boolean compute(TypeCheckingContext context) {
-                  if (myCell instanceof EditorCell_STHint) {
-                    return processSTHintCell();
-                  }
+              context -> {
+                if (myCell instanceof EditorCell_STHint) {
+                  return processSTHintCell();
+                }
 
-                  if (mySide == CellSide.LEFT) {
-                    String head = "" + myPattern.charAt(0);
-                    String smallPattern = myPattern.substring(1);
-                    return processCellAtStart(head, smallPattern);
-                  } else {
-                    String smallPattern = myPattern.substring(0, myPattern.length() - 1);
-                    String tail = myPattern.substring(myPattern.length() - 1, myPattern.length());
-                    return processCellAtEnd(smallPattern, tail);
-                  }
+                if (mySide == CellSide.LEFT) {
+                  String head = "" + myPattern.charAt(0);
+                  String smallPattern = myPattern.substring(1);
+                  return processCellAtStart(head, smallPattern);
+                } else {
+                  String smallPattern = myPattern.substring(0, myPattern.length() - 1);
+                  String tail = myPattern.substring(myPattern.length() - 1, myPattern.length());
+                  return processCellAtEnd(smallPattern, tail);
                 }
               });
         }

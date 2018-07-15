@@ -61,13 +61,10 @@ public class SubTypingManagerNew extends SubtypingManager {
 
     return LanguageScopeExecutor.execWithMultiLanguageScope(
         collectLanguagesRecursively(subType, superType),
-      new Computable<Boolean>() {
-        @Override
-        public Boolean compute() {
+        () -> {
           SubtypingResolver subtypingResolver = new SubtypingResolver(isWeak);
           return subtypingResolver.calcIsSubType(subType, superType);
-        }
-      });
+        });
   }
 
   @Override
@@ -86,17 +83,14 @@ public class SubTypingManagerNew extends SubtypingManager {
     return LanguageScopeExecutor.execWithMultiLanguageScope(
         collectLanguagesRecursively(subType, superType),
         // two booleans:  affirmative, authoritative
-        new Computable<Pair<Boolean, Boolean>>() {
-          @Override
-          public Pair<Boolean, Boolean> compute() {
-            for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> pair : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
-              InequationReplacementRule_Runtime rule = pair.o1;
-              IsApplicable2Status status = pair.o2;
-              boolean affirmative = rule.checkInequation(subType, superType, status, isWeak);
-              return new Pair<>(affirmative, true);
-            }
-            return new Pair<>(false, false);
+        () -> {
+          for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> pair : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
+            InequationReplacementRule_Runtime rule = pair.o1;
+            IsApplicable2Status status = pair.o2;
+            boolean affirmative = rule.checkInequation(subType, superType, status, isWeak);
+            return new Pair<>(affirmative, true);
           }
+          return new Pair<>(false, false);
         });
   }
 
@@ -129,20 +123,17 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
 
     // use global language scope as the context is unknown
-    LanguageScopeExecutor.execWithGlobalScope(new Computable<Object>() {
-      @Override
-      public Object compute() {
-        List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
-        if (subtypingRule_runtimes != null) {
-          for (final Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
-            List<SNode> superTypes = subtypingRule.o1.getSubOrSuperTypes(term, context, subtypingRule.o2);
-            if (superTypes != null) {
-              result.addAll(superTypes);
-            }
+    LanguageScopeExecutor.execWithGlobalScope((Computable<Object>) () -> {
+      List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
+      if (subtypingRule_runtimes != null) {
+        for (final Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
+          List<SNode> superTypes = subtypingRule.o1.getSubOrSuperTypes(term, context, subtypingRule.o2);
+          if (superTypes != null) {
+            result.addAll(superTypes);
           }
         }
-        return result;
       }
+      return result;
     });
   }
 
@@ -168,23 +159,20 @@ public class SubTypingManagerNew extends SubtypingManager {
 
     return LanguageScopeExecutor.execWithMultiLanguageScope(
         collectLanguagesRecursively(left, right),
-        new Computable<Boolean>() {
-          @Override
-          public Boolean compute() {
-            List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(left, right, isWeak);
-            if (comparisonRule_runtimes != null) {
-              for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
-                if (comparisonRule_runtime.o1.areComparable(left, right, comparisonRule_runtime.o2)) return true;
-              }
+        () -> {
+          List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(left, right, isWeak);
+          if (comparisonRule_runtimes != null) {
+            for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
+              if (comparisonRule_runtime.o1.areComparable(left, right, comparisonRule_runtime.o2)) return true;
             }
-            comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(right, left, isWeak);
-            if (comparisonRule_runtimes != null) {
-              for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
-                if (comparisonRule_runtime.o1.areComparable(right, left, comparisonRule_runtime.o2)) return true;
-              }
-            }
-            return false;
           }
+          comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(right, left, isWeak);
+          if (comparisonRule_runtimes != null) {
+            for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
+              if (comparisonRule_runtime.o1.areComparable(right, left, comparisonRule_runtime.o2)) return true;
+            }
+          }
+          return false;
         });
   }
 

@@ -51,12 +51,7 @@ import java.util.stream.Stream;
 public class EditorCellFactoryImpl implements EditorCellFactory {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorCellFactoryImpl.class));
 
-  private static final EditorCellContext DEFAULT_CELL_CONTEXT = new EditorCellContext() {
-    @Override
-    public Collection<String> getHints() {
-      return Collections.emptySet();
-    }
-  };
+  private static final EditorCellContext DEFAULT_CELL_CONTEXT = () -> Collections.emptySet();
   public static final String BASE_COMMENT_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment";
 
   private final EditorContext myEditorContext;

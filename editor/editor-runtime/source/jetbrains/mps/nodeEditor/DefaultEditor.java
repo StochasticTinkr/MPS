@@ -217,12 +217,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
         errorCell.setCellId("error_" + referenceLink.getName());
         addCell(errorCell);
       } else {
-        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
-          @Override
-          public EditorCell compute() {
-            return createReferentEditorCell(getEditorContext(), referenceLink, referentNode);
-          }
-        }, referentNode, referenceLink.getName());
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(() -> createReferentEditorCell(getEditorContext(), referenceLink, referentNode), referentNode, referenceLink.getName());
         //todo what is that?
         CellUtil.setupIDeprecatableStyles(referentNode, cell);
         setSemanticNodeToCells(cell, getNode());

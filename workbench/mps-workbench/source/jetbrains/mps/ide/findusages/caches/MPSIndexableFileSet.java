@@ -73,15 +73,12 @@ public class MPSIndexableFileSet extends AbstractProjectComponent implements Ind
 
     final StartupManagerEx startupManager = (StartupManagerEx) StartupManager.getInstance(myProject);
     if (startupManager != null) {
-      startupManager.registerPreStartupActivity(new Runnable() {
-        @Override
-        public void run() {
-          /**
-           * FIXME AP why to register like this if we could register just using MPSIndexableFileSetContributor???
-           */
-          myIndex.registerIndexableSet(MPSIndexableFileSet.this, myProject);
-          LOG.debug("Queueing cache update");
-        }
+      startupManager.registerPreStartupActivity(() -> {
+        /**
+         * FIXME AP why to register like this if we could register just using MPSIndexableFileSetContributor???
+         */
+        myIndex.registerIndexableSet(MPSIndexableFileSet.this, myProject);
+        LOG.debug("Queueing cache update");
       });
     }
   }

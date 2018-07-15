@@ -378,28 +378,23 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     final Object[] userObjects = myUserObjects;
     if (userObjects == null || userObjects.length == 0) return EmptyIterable.getInstance();
-    return new Iterable<Object>() {
+    return () -> new Iterator<Object>() {
+      private int myIndex = 0;
+
       @Override
-      public Iterator<Object> iterator() {
-        return new Iterator<Object>() {
-          private int myIndex = 0;
+      public boolean hasNext() {
+        return myIndex < userObjects.length;
+      }
 
-          @Override
-          public boolean hasNext() {
-            return myIndex < userObjects.length;
-          }
+      @Override
+      public Object next() {
+        myIndex += 2;
+        return userObjects[myIndex - 2];
+      }
 
-          @Override
-          public Object next() {
-            myIndex += 2;
-            return userObjects[myIndex - 2];
-          }
-
-          @Override
-          public void remove() {
-            throw new UnsupportedOperationException();
-          }
-        };
+      @Override
+      public void remove() {
+        throw new UnsupportedOperationException();
       }
     };
   }

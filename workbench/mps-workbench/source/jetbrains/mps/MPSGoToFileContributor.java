@@ -56,12 +56,8 @@ public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAwar
     try {
       MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
       assert mpsProject != null;
-      files = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<Collection<VirtualFile>>() {
-        @Override
-        public Collection<VirtualFile> compute() {
-           return FileBasedIndex.getInstance().getContainingFiles(FilenameIndex.NAME, name, scope);
-        }
-      });
+      files = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(
+          () -> FileBasedIndex.getInstance().getContainingFiles(FilenameIndex.NAME, name, scope));
     } catch (ProcessCanceledException ce){
       files = Collections.emptyList();
     }

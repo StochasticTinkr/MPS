@@ -45,20 +45,17 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
   @Override
   public void init() {
     if(!(myItem instanceof DevkitDescriptor)) {
-      myRepository.getModelAccess().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          for(Dependency dependency : myItem.getDependencies()) {
-            SModuleReference moduleReference = dependency.getModuleRef();
-            final SModule module = moduleReference.resolve(myRepository);
-            if(module instanceof Language) {
-              addLanguageItem(dependency);
-            } else if(module instanceof Generator) {
-              addGeneratorItem(dependency);
-            } else {
-              // XXX why not checked for Solution?
-              addUnspecifiedItem(dependency);
-            }
+      myRepository.getModelAccess().runReadAction(() -> {
+        for(Dependency dependency : myItem.getDependencies()) {
+          SModuleReference moduleReference = dependency.getModuleRef();
+          final SModule module = moduleReference.resolve(myRepository);
+          if(module instanceof Language) {
+            addLanguageItem(dependency);
+          } else if(module instanceof Generator) {
+            addGeneratorItem(dependency);
+          } else {
+            // XXX why not checked for Solution?
+            addUnspecifiedItem(dependency);
           }
         }
       });

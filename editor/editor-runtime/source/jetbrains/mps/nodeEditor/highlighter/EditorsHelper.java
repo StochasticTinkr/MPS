@@ -31,12 +31,7 @@ public class EditorsHelper {
   public static Logger LOG = LogManager.getLogger(EditorsHelper.class);
 
   public static List<MPSFileNodeEditor> getAllEditors(final FileEditorManager manager) {
-    FileEditor[] allEditors = ApplicationManager.getApplication().runReadAction(new Computable<FileEditor[]>() {
-      @Override
-      public FileEditor[] compute() {
-        return manager.getAllEditors();
-      }
-    });
+    FileEditor[] allEditors = ApplicationManager.getApplication().runReadAction((Computable<FileEditor[]>) () -> manager.getAllEditors());
     return filterMPSEditors(allEditors);
   }
 

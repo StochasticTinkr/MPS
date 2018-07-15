@@ -64,12 +64,7 @@ public class UsedLangsTableModel extends AbstractTableModel implements ItemRemov
   }
 
   public void addItem(final SModuleReference item) {
-    SModule m = new ModelAccessHelper(myRepository).runReadAction(new Computable<SModule>() {
-      @Override
-      public SModule compute() {
-        return item.resolve(myRepository);
-      }
-    });
+    SModule m = new ModelAccessHelper(myRepository).runReadAction(() -> item.resolve(myRepository));
     if (m instanceof Language) {
       final SLanguage lang = MetaAdapterFactory.getLanguage(item);
       addItem(lang);

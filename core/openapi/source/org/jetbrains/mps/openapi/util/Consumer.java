@@ -16,10 +16,7 @@
 package org.jetbrains.mps.openapi.util;
 
 public interface Consumer<T> {
-  Consumer EMPTY_CONSUMER = new Consumer() {
-    @Override
-    public void consume(final Object t) {
-    }
+  Consumer EMPTY_CONSUMER = t -> {
   };
 
   /**

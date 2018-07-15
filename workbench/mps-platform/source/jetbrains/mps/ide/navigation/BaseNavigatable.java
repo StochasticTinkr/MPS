@@ -32,12 +32,7 @@ public abstract class BaseNavigatable implements Navigatable {
 
   @Override
   public void navigate(final boolean requestFocus) {
-    final Runnable navigateRunnable = new Runnable() {
-      @Override
-      public void run() {
-        doNavigate(requestFocus);
-      }
-    };
+    final Runnable navigateRunnable = () -> doNavigate(requestFocus);
     myProject.getModelAccess().runWriteInEDT(navigateRunnable);
   }
 

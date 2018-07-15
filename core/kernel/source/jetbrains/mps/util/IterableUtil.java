@@ -133,12 +133,7 @@ public class IterableUtil {
     if (it == null) {
       return Collections.emptyList();
     }
-    return new Iterable<T>() {
-      @Override
-      public Iterator<T> iterator() {
-        return it;
-      }
-    };
+    return () -> it;
   }
 
   public static <T> T get(@Nullable Iterable<? extends T> data, int index) {

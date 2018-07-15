@@ -41,14 +41,11 @@ import java.util.Set;
 
 
 public class NodeHighlightManager implements EditorMessageOwner {
-  private static final Comparator<SimpleEditorMessage> EDITOR_MESSAGES_COMPARATOR = new Comparator<SimpleEditorMessage>() {
-    @Override
-    public int compare(SimpleEditorMessage m1, SimpleEditorMessage m2) {
-      if (m1.getPriority() != m2.getPriority()) {
-        return m1.getPriority() - m2.getPriority();
-      }
-      return m1.getStatus().ordinal() - m2.getStatus().ordinal();
+  private static final Comparator<SimpleEditorMessage> EDITOR_MESSAGES_COMPARATOR = (m1, m2) -> {
+    if (m1.getPriority() != m2.getPriority()) {
+      return m1.getPriority() - m2.getPriority();
     }
+    return m1.getStatus().ordinal() - m2.getStatus().ordinal();
   };
 
   // TODO: replace myMessagesLock usages with this ?
@@ -272,17 +269,14 @@ public class NodeHighlightManager implements EditorMessageOwner {
    * and repaint associated EditorComponent
    */
   public void repaintAndRebuildEditorMessages() {
-    getModelAccess().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        if (myDisposed) {
-          return;
-        }
-        refreshMessagesCache();
-        if (myEditor.hasUI()) {
-          refreshLeftHighlighterMessages();
-          myEditor.repaintExternalComponent();
-        }
+    getModelAccess().runReadInEDT(() -> {
+      if (myDisposed) {
+        return;
+      }
+      refreshMessagesCache();
+      if (myEditor.hasUI()) {
+        refreshLeftHighlighterMessages();
+        myEditor.repaintExternalComponent();
       }
     });
   }

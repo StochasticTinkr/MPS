@@ -78,24 +78,21 @@ public class CheckBoxNodeRenderer implements TreeCellRenderer {
 
       myCheckBox.setEnabled(enabled);
 
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          if (userObject instanceof NodeData) {
-            NodeData data = (NodeData) userObject;
-            myIconLabel.setIcon(data.getIcon(expanded));
-            Color color = data.getColor();
-            if (color != null) {
-              myCheckBox.setForeground(color);
-              myTextLabel.setForeground(color);
-            }
-            myTextLabel.setText(data.getText());
-            myCheckBox.setSelected(data.isSelected());
-          } else {
-            myIconLabel.setIcon(null);
-            myTextLabel.setText(text);
-            myCheckBox.setSelected(false);
+      ModelAccess.instance().runReadAction(() -> {
+        if (userObject instanceof NodeData) {
+          NodeData data = (NodeData) userObject;
+          myIconLabel.setIcon(data.getIcon(expanded));
+          Color color = data.getColor();
+          if (color != null) {
+            myCheckBox.setForeground(color);
+            myTextLabel.setForeground(color);
           }
+          myTextLabel.setText(data.getText());
+          myCheckBox.setSelected(data.isSelected());
+        } else {
+          myIconLabel.setIcon(null);
+          myTextLabel.setText(text);
+          myCheckBox.setSelected(false);
         }
       });
 
@@ -154,12 +151,9 @@ public class CheckBoxNodeRenderer implements TreeCellRenderer {
       DefaultMutableTreeNode node = (DefaultMutableTreeNode) value;
       myObject = (N) node.getUserObject();
 
-      ItemListener itemListener = new ItemListener() {
-        @Override
-        public void itemStateChanged(ItemEvent itemEvent) {
-          if (stopCellEditing()) {
-            fireEditingStopped();
-          }
+      ItemListener itemListener = itemEvent -> {
+        if (stopCellEditing()) {
+          fireEditingStopped();
         }
       };
       if (editor instanceof JPanelWithCheckBox) {

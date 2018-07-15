@@ -61,12 +61,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
 
   protected EditableSModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     super(modelReference, source);
-    myTimestampTracker = new ModelSourceChangeTracker(new ReloadCallback() {
-      @Override
-      public void reloadFromDiskSafe() {
-        doReloadFromDiskSafe();
-      }
-    });
+    myTimestampTracker = new ModelSourceChangeTracker(() -> doReloadFromDiskSafe());
   }
 
   @Override

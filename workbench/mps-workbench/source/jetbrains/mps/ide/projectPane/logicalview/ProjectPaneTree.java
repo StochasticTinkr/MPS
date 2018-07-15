@@ -200,12 +200,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
 
   @Override
   protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
-    return new ModelAccessHelper(getProject().getModelAccess()).runReadAction(new Computable<ActionGroup>() {
-      @Override
-      public ActionGroup compute() {
-        return ProjectPaneActionGroups.getActionGroup(node);
-      }
-    });
+    return new ModelAccessHelper(getProject().getModelAccess()).runReadAction(() -> ProjectPaneActionGroups.getActionGroup(node));
   }
 
   @Override
@@ -308,41 +303,38 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
 
       final List<Pair<SNodeReference, String>> result = new ArrayList<>();
 
-      getProject().getModelAccess().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          for (SNode node : myProjectPane.getSelectedSNodes()) {
-            result.add(new Pair<>(new jetbrains.mps.smodel.SNodePointer(node), ""));
-          }
-          SModel contextDescriptor = myProjectPane.getContextModel();
-          if (contextDescriptor != null) {
-            for (PackageNode treeNode : myProjectPane.getSelectedTreeNodes(PackageNode.class)) {
-              String searchedPack = treeNode.getFullPackage();
-              if (treeNode.getChildCount() == 0 || searchedPack == null) {
+      getProject().getModelAccess().runReadAction(() -> {
+        for (SNode node : myProjectPane.getSelectedSNodes()) {
+          result.add(new Pair<>(new jetbrains.mps.smodel.SNodePointer(node), ""));
+        }
+        SModel contextDescriptor = myProjectPane.getContextModel();
+        if (contextDescriptor != null) {
+          for (PackageNode treeNode : myProjectPane.getSelectedTreeNodes(PackageNode.class)) {
+            String searchedPack = treeNode.getFullPackage();
+            if (treeNode.getChildCount() == 0 || searchedPack == null) {
+              continue;
+            }
+            for (final SNode node : contextDescriptor.getRootNodes()) {
+              String nodePack = SNodeAccessUtil.getProperty(node, SNodeUtil.property_BaseConcept_virtualPackage);
+              if (nodePack == null) {
                 continue;
               }
-              for (final SNode node : contextDescriptor.getRootNodes()) {
-                String nodePack = SNodeAccessUtil.getProperty(node, SNodeUtil.property_BaseConcept_virtualPackage);
-                if (nodePack == null) {
-                  continue;
-                }
-                if (!nodePack.startsWith(searchedPack)) {
-                  continue;
-                }
-
-                StringBuilder basePack = new StringBuilder();
-                String firstPart = treeNode.getPackage();
-                String secondPart = "";
-                if (nodePack.startsWith(searchedPack + ".")) {
-                  secondPart = nodePack.replaceFirst(searchedPack + ".", "");
-                }
-                basePack.append(firstPart);
-                if (!firstPart.isEmpty() && !secondPart.isEmpty()) {
-                  basePack.append('.');
-                }
-                basePack.append(secondPart);
-                result.add(new Pair<>(new jetbrains.mps.smodel.SNodePointer(node), basePack.toString()));
+              if (!nodePack.startsWith(searchedPack)) {
+                continue;
               }
+
+              StringBuilder basePack = new StringBuilder();
+              String firstPart = treeNode.getPackage();
+              String secondPart = "";
+              if (nodePack.startsWith(searchedPack + ".")) {
+                secondPart = nodePack.replaceFirst(searchedPack + ".", "");
+              }
+              basePack.append(firstPart);
+              if (!firstPart.isEmpty() && !secondPart.isEmpty()) {
+                basePack.append('.');
+              }
+              basePack.append(secondPart);
+              result.add(new Pair<>(new jetbrains.mps.smodel.SNodePointer(node), basePack.toString()));
             }
           }
         }

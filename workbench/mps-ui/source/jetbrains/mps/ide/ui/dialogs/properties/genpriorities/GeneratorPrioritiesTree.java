@@ -69,16 +69,13 @@ public class GeneratorPrioritiesTree {
     myRootNode = new CheckedTreeNodeEx(null, "Generators", Nodes.Generator);
     final boolean isRight = !isLeft;
 
-    repo.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        initTree(generator);
-        if (isRight) {
-          for (SModuleReference ref : depGenerators) {
-            SModule gen = ref.resolve(repo);
-            if (gen instanceof Generator)
-              initTree((Generator) gen);
-          }
+    repo.getModelAccess().runReadAction(() -> {
+      initTree(generator);
+      if (isRight) {
+        for (SModuleReference ref : depGenerators) {
+          SModule gen = ref.resolve(repo);
+          if (gen instanceof Generator)
+            initTree((Generator) gen);
         }
       }
     });

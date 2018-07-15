@@ -37,34 +37,30 @@ public class Poster {
 
   @NotNull
   public Response send(final Query query) {
-    Performable send = new Performable() {
-      @Override
-      @NotNull
-      public Response perform() throws Exception {
-        Command c = new Command();
-        Response r = c.login(query);
-        if (r.isSuccess()) {
-          r = c.postIssue(query.getIssueTitle(), query.getDescription(), query.isHidden(), query.getFiles());
-          String subsystem = query.getSubsystem();
-          String id = r.getIssueId();
-          if (r.isSuccess() && id != null) {
-            if (subsystem != null) {
-              final Response subsystemResponse = c.setIssueSubsystem(id, subsystem);
-              if (!subsystemResponse.isSuccess()) {
-                final String subSystemMessage = String.format("Can't set %s subsystem to issue %s", subsystem, id);
-                LOG.info(subSystemMessage, subsystemResponse.getThrowable());
-              }
-            }
-            final String fullVersion = ApplicationInfo.getInstance().getFullVersion();
-            final Response affectedVersionResponse = c.setIssueAffectedVersion(id, fullVersion);
-            if (!affectedVersionResponse.isSuccess()) {
-              final String affectedVersionMessage = String.format("Can't set %s affected version to issue %s", fullVersion, id);
-              LOG.info(affectedVersionMessage, affectedVersionResponse.getThrowable());
+    Performable send = () -> {
+      Command c = new Command();
+      Response r = c.login(query);
+      if (r.isSuccess()) {
+        r = c.postIssue(query.getIssueTitle(), query.getDescription(), query.isHidden(), query.getFiles());
+        String subsystem = query.getSubsystem();
+        String id = r.getIssueId();
+        if (r.isSuccess() && id != null) {
+          if (subsystem != null) {
+            final Response subsystemResponse = c.setIssueSubsystem(id, subsystem);
+            if (!subsystemResponse.isSuccess()) {
+              final String subSystemMessage = String.format("Can't set %s subsystem to issue %s", subsystem, id);
+              LOG.info(subSystemMessage, subsystemResponse.getThrowable());
             }
           }
+          final String fullVersion = ApplicationInfo.getInstance().getFullVersion();
+          final Response affectedVersionResponse = c.setIssueAffectedVersion(id, fullVersion);
+          if (!affectedVersionResponse.isSuccess()) {
+            final String affectedVersionMessage = String.format("Can't set %s affected version to issue %s", fullVersion, id);
+            LOG.info(affectedVersionMessage, affectedVersionResponse.getThrowable());
+          }
         }
-        return r;
       }
+      return r;
     };
     return myExecutor.execute(send);
   }

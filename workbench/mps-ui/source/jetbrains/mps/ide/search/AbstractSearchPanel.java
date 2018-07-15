@@ -89,32 +89,17 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
     mainPanel.add(myIsCaseSensitive);
     myIsCaseSensitive.setMnemonic(KeyEvent.VK_M);
     myIsCaseSensitive.setFocusable(false);
-    myIsCaseSensitive.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent event) {
-        search();
-      }
-    });
+    myIsCaseSensitive.addActionListener(event -> search());
 
     mainPanel.add(myIsRegex);
     myIsRegex.setMnemonic(KeyEvent.VK_R);
     myIsRegex.setFocusable(false);
-    myIsRegex.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent event) {
-        myIsWordsOnly.setEnabled(!myIsWordsOnly.isEnabled());
-      }
-    });
+    myIsRegex.addActionListener(event -> myIsWordsOnly.setEnabled(!myIsWordsOnly.isEnabled()));
 
     mainPanel.add(myIsWordsOnly);
     myIsWordsOnly.setMnemonic(KeyEvent.VK_O);
     myIsWordsOnly.setFocusable(false);
-    myIsWordsOnly.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent event) {
-        search();
-      }
-    });
+    myIsWordsOnly.addActionListener(event -> search());
 
     this.add(mainPanel, BorderLayout.WEST);
 

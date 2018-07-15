@@ -205,12 +205,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   @Override
   public Collection<CellActionType> getAvailableActions() {
     final Collection<CellActionType> result = new ArrayList<>(myActionMap.size());
-    myActionMap.forEachKey(new TIntProcedure() {
-      @Override
-      public boolean execute(int value) {
-        return result.add(CellActionType.values()[value]);
-      }
-    });
+    myActionMap.forEachKey(value -> result.add(CellActionType.values()[value]));
     return result;
   }
 
@@ -490,12 +485,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
       return false;
     }
 
-    if (new ModelAccessHelper(getContext().getRepository()).runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return getSNode().getModel() != null && getSNode().getParent() == null;
-      }
-    })) {
+    if (new ModelAccessHelper(getContext().getRepository()).runReadAction(() -> getSNode().getModel() != null && getSNode().getParent() == null)) {
       return false;
     }
 

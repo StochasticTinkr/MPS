@@ -70,13 +70,8 @@ public class FileDeleteActionFixed extends DeleteAction {
               file.delete(this);
             } catch (IOException e) {
               // XXX WHY invokeLater, if we are in EDT already (showYesNoDialog() call, above)?
-              ApplicationManager.getApplication().invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                  Messages.showMessageDialog("Could not erase file or folder: " + file.getName(),
-                    "Error", Messages.getErrorIcon());
-                }
-              });
+              ApplicationManager.getApplication().invokeLater(() -> Messages.showMessageDialog("Could not erase file or folder: " + file.getName(),
+                                                                                           "Error", Messages.getErrorIcon()));
             }
           }
         }

@@ -46,12 +46,7 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
   private void createAndRegisterTool(final boolean early) {
     createTool(early);
     if (early) {
-      StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
-        @Override
-        public void run() {
-          registerLater();
-        }
-      });
+      StartupManager.getInstance(getProject()).registerPostStartupActivity(() -> registerLater());
     } else {
       registerLater();
     }

@@ -39,12 +39,9 @@ public class EditorTabTitleProviderImpl implements EditorTabTitleProvider {
     if (!ThreadUtils.isInEDT()) {
       return null;
     }
-    return new ModelAccessHelper(modelAccess).runReadAction(new Computable<String>() {
-      @Override
-      public String compute() {
-        SNode node = MPSEditorUtil.getCurrentEditedNode(project, (MPSNodeVirtualFile) file);
-        return node == null ? null : node.getPresentation();
-      }
+    return new ModelAccessHelper(modelAccess).runReadAction(() -> {
+      SNode node = MPSEditorUtil.getCurrentEditedNode(project, (MPSNodeVirtualFile) file);
+      return node == null ? null : node.getPresentation();
     });
   }
 }

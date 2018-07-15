@@ -89,18 +89,8 @@ public final class ModelScanner {
   public ModelScanner scan(SModel model) {
 //    assert SModelStereotype.isGeneratorModel(model);
     FastNodeFinder fnf = FastNodeFinderManager.get(model);
-    Translate<SNode, SNode> parentExtractor = new Translate<SNode, SNode>() {
-      @Override
-      public SNode translate(SNode t) {
-        return t.getParent();
-      }
-    };
-    Translate<SNode, SNode> inlineTemplateExtractor = new Translate<SNode, SNode>() {
-      @Override
-      public SNode translate(SNode rc) {
-        return RuleUtil.getInlineTemplate_templateNode(rc);
-      }
-    };
+    Translate<SNode, SNode> parentExtractor = t -> t.getParent();
+    Translate<SNode, SNode> inlineTemplateExtractor = rc -> RuleUtil.getInlineTemplate_templateNode(rc);
     processTemplateNode(fnf.getNodes(RuleUtil.concept_TemplateFragment, false), parentExtractor);
     processTemplateNode(fnf.getNodes(RuleUtil.concept_RootTemplateAnnotation, false), parentExtractor);
     processTemplateNode(fnf.getNodes(RuleUtil.concept_InlineTemplate_RuleConsequence, false), inlineTemplateExtractor);

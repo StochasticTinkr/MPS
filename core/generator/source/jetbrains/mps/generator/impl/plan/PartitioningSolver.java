@@ -170,11 +170,6 @@ public class PartitioningSolver {
   }
 
   static void sort(List<TemplateMappingConfiguration> mappingSet) {
-    Collections.sort(mappingSet, new Comparator<TemplateMappingConfiguration>() {
-      @Override
-      public int compare(TemplateMappingConfiguration o1, TemplateMappingConfiguration o2) {
-        return SNodePointer.serialize(o1.getMappingNode()).compareTo((SNodePointer.serialize(o2.getMappingNode())));
-      }
-    });
+    Collections.sort(mappingSet, (o1, o2) -> SNodePointer.serialize(o1.getMappingNode()).compareTo((SNodePointer.serialize(o2.getMappingNode()))));
   }
 }

@@ -105,12 +105,9 @@ public class ModelValidatorAdapter implements ModelValidator {
       JPanel panel = new JPanel(new BorderLayout());
 
       JCheckBox checkBox = new JCheckBox("Don't check models before generation");
-      checkBox.addItemListener(new ItemListener() {
-        @Override
-        public void itemStateChanged(ItemEvent ev) {
-          boolean selected = ev.getStateChange() == ItemEvent.SELECTED;
-          mySettings.setCheckModelsBeforeGeneration(!selected);
-        }
+      checkBox.addItemListener(ev -> {
+        boolean selected = ev.getStateChange() == ItemEvent.SELECTED;
+        mySettings.setCheckModelsBeforeGeneration(!selected);
       });
 
       panel.add(new JLabel(myDialogMessage), BorderLayout.CENTER);

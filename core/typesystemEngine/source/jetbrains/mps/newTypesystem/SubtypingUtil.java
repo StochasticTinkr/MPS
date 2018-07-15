@@ -34,12 +34,7 @@ public class SubtypingUtil {
     Set<SNode> residualNodes = new THashSet<>(nodes);
     while (residualNodes.size() > 1) {
       List<SNode> nodesToIterate = new ArrayList<>(residualNodes);
-      Collections.sort(nodesToIterate, new Comparator<SNode>() {
-        @Override
-        public int compare(SNode o1, SNode o2) {
-          return TypesUtil.depth(o2) - TypesUtil.depth(o1);
-        }
-      });
+      Collections.sort(nodesToIterate, (o1, o2) -> TypesUtil.depth(o2) - TypesUtil.depth(o1));
       boolean wasChange = false;
       int size = nodesToIterate.size();
       for (int i = 0; i < size; i++) {
@@ -87,12 +82,7 @@ public class SubtypingUtil {
     if (types.isEmpty()) return  null;
     if (types.size() == 1) return types.iterator().next();
     if (types.size() > 1) {
-      Collections.sort(types, new Comparator<SNode>() {
-        @Override
-        public int compare(SNode node1, SNode node2) {
-          return node1.getPresentation().compareTo(node2.getPresentation());
-        }
-      });
+      Collections.sort(types, (node1, node2) -> node1.getPresentation().compareTo(node2.getPresentation()));
       types = SubtypingUtil.eliminateSubTypes(types);
     }
     return LatticeUtil.meetNodes(new THashSet<>(SubtypingUtil.leastCommonSuperTypes(types, context)));

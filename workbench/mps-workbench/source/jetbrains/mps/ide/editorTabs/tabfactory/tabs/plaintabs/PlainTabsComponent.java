@@ -54,10 +54,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
   private RelationDescriptor myLastEmptyTab = null;
   private volatile boolean myRebuilding = false;
 
-  private final Disposable myJbTabsDisposable = new Disposable() {
-    @Override
-    public void dispose() {
-    }
+  private final Disposable myJbTabsDisposable = () -> {
   };
 
   public PlainTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed,

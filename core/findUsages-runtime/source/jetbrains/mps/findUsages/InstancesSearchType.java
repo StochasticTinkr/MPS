@@ -73,12 +73,7 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
 
       for (FindUsagesParticipant participant : participants) {
         final Set<SModel> next = new HashSet<>(current);
-        participant.findInstances(current, queryConcepts, consumer, new Consumer<SModel>() {
-          @Override
-          public void consume(SModel sModel) {
-            next.remove(sModel);
-          }
-        });
+        participant.findInstances(current, queryConcepts, consumer, sModel -> next.remove(sModel));
         current = next;
         monitor.advance(1);
       }

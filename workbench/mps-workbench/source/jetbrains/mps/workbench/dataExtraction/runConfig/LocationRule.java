@@ -44,27 +44,24 @@ public class LocationRule implements GetDataRule {
     if (mpsProject == null) {
       return null;
     }
-    return new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<MPSLocation>() {
-      @Override
-      public MPSLocation compute() {
-        List<SNode> nodes = MPSDataKeys.NODES.getData(dataProvider);
-        if (nodes != null && nodes.size() > 1) {
-          return new MPSLocation(mpsProject, new MPSPsiElement(nodes, mpsProject));
-        }
-        SNode node = MPSDataKeys.NODE.getData(dataProvider);
-        if (node != null) {
-          return new MPSLocation(mpsProject, new MPSPsiElement(node, mpsProject));
-        }
-        SModel model =  MPSDataKeys.MODEL.getData(dataProvider);
-        if (model != null) {
-          return new MPSLocation(mpsProject, new MPSPsiElement(model, mpsProject));
-        }
-        SModule module = MPSDataKeys.MODULE.getData(dataProvider);
-        if (module != null) {
-          return new MPSLocation(mpsProject, new MPSPsiElement(module, mpsProject));
-        }
-        return new MPSLocation(mpsProject, new MPSPsiElement(mpsProject));
+    return new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(() -> {
+      List<SNode> nodes = MPSDataKeys.NODES.getData(dataProvider);
+      if (nodes != null && nodes.size() > 1) {
+        return new MPSLocation(mpsProject, new MPSPsiElement(nodes, mpsProject));
       }
+      SNode node = MPSDataKeys.NODE.getData(dataProvider);
+      if (node != null) {
+        return new MPSLocation(mpsProject, new MPSPsiElement(node, mpsProject));
+      }
+      SModel model =  MPSDataKeys.MODEL.getData(dataProvider);
+      if (model != null) {
+        return new MPSLocation(mpsProject, new MPSPsiElement(model, mpsProject));
+      }
+      SModule module = MPSDataKeys.MODULE.getData(dataProvider);
+      if (module != null) {
+        return new MPSLocation(mpsProject, new MPSPsiElement(module, mpsProject));
+      }
+      return new MPSLocation(mpsProject, new MPSPsiElement(mpsProject));
     });
   }
 

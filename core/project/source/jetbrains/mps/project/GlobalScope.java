@@ -71,16 +71,11 @@ public class GlobalScope extends BaseScope implements CoreComponent {
   @NotNull
   @Override
   public Iterable<SModel> getModels() {
-    return new Iterable<SModel>() {
+    return () -> new CollectManyIterator<SModule, SModel>(getModules()) {
+      @Nullable
       @Override
-      public Iterator<SModel> iterator() {
-        return new CollectManyIterator<SModule, SModel>(getModules()) {
-          @Nullable
-          @Override
-          protected Iterator<SModel> translate(SModule module) {
-            return module.getModels().iterator();
-          }
-        };
+      protected Iterator<SModel> translate(SModule module) {
+        return module.getModels().iterator();
       }
     };
   }

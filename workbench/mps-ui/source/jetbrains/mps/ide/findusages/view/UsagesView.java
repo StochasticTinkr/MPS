@@ -440,17 +440,14 @@ public class UsagesView implements IExternalizeable {
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
       final Project mpsProject = myView.myProject;
-      Iterable<IResource> makeRes = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<Iterable<IResource>>() {
-        @Override
-        public Iterable<IResource> compute() {
-          List<SModel> models = new ArrayList<>();
-          for (SModel modelDescriptor : myView.getIncludedModels()) {
-            if (GenerationFacade.canGenerate(modelDescriptor)) {
-              models.add(modelDescriptor);
-            }
+      Iterable<IResource> makeRes = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(() -> {
+        List<SModel> models = new ArrayList<>();
+        for (SModel modelDescriptor : myView.getIncludedModels()) {
+          if (GenerationFacade.canGenerate(modelDescriptor)) {
+            models.add(modelDescriptor);
           }
-          return new ModelsToResources(models).resources();
         }
+        return new ModelsToResources(models).resources();
       });
 
       if (myMakeSession.compareAndSet(null, new MakeSession(mpsProject, new DefaultMakeMessageHandler(mpsProject), false))) {

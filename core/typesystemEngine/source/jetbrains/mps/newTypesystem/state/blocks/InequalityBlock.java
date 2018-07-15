@@ -87,23 +87,14 @@ public class InequalityBlock extends RelationBlock {
     List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> replacementRules =
       LanguageScopeExecutor.execWithMultiLanguageScope(
           SubTypingManagerNew.collectLanguagesRecursively(subType, superType),
-          new Computable<List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>>>() {
-            @Override
-            public List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> compute() {
-              return typeChecker.getRulesManager().getReplacementRules(subType, superType);
-            }
-          });
+          () -> typeChecker.getRulesManager().getReplacementRules(subType, superType));
 
     for (jetbrains.mps.util.Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequalityReplacementRule : replacementRules) {
       final InequationReplacementRule_Runtime rule = inequalityReplacementRule.o1;
 
       final IsApplicable2Status status = inequalityReplacementRule.o2;
-      getState().executeOperation(new ProcessReplacementRuleOperation(subType, superType, new Runnable() {
-        @Override
-        public void run() {
-          ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, myEquationInfo, getState().getTypeCheckingContext(), status, myRelationKind.isWeak(), lessThan);
-        }
-      }));
+      getState().executeOperation(new ProcessReplacementRuleOperation(subType, superType,
+                                                                      () -> ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, myEquationInfo, getState().getTypeCheckingContext(), status, myRelationKind.isWeak(), lessThan)));
       return true;
     }
     return false;
@@ -125,12 +116,9 @@ public class InequalityBlock extends RelationBlock {
       return;
     }
     final SubTypingManagerNew subTyping = (SubTypingManagerNew) TypeChecker.getInstance().getSubtypingManager();
-    getState().executeOperation(new CheckSubTypeOperation(subType, superType, new Runnable() {
-      @Override
-      public void run() {
-        if (!calcIsSubtype(subTyping, subType, superType)) {
-          getState().getNodeMaps().reportSubTypeError(subType, superType, myEquationInfo, myRelationKind.isWeak());
-        }
+    getState().executeOperation(new CheckSubTypeOperation(subType, superType, () -> {
+      if (!calcIsSubtype(subTyping, subType, superType)) {
+        getState().getNodeMaps().reportSubTypeError(subType, superType, myEquationInfo, myRelationKind.isWeak());
       }
     }));
   }

@@ -322,22 +322,15 @@ public class GroupedNodesChooser extends DialogWrapper {
       myTree.setSelectionRow(1);
     }
     TreeUtil.expandAll(myTree);
-    final TreeSpeedSearch treeSpeedSearch = new TreeSpeedSearch(myTree, new Convertor<TreePath, String>() {
-      @Override
-      @Nullable
-      public String convert(TreePath path) {
-        final ElementNode lastPathComponent = (ElementNode) path.getLastPathComponent();
-        if (lastPathComponent == null) return null;
-        return lastPathComponent.getText();
-      }
+    final TreeSpeedSearch treeSpeedSearch = new TreeSpeedSearch(myTree, path -> {
+      final ElementNode lastPathComponent = (ElementNode) path.getLastPathComponent();
+      if (lastPathComponent == null) return null;
+      return lastPathComponent.getText();
     });
     treeSpeedSearch.setComparator(new SpeedSearchComparator(false));
 
-    treeSpeedSearch.addChangeListener(new PropertyChangeListener() {
-      @Override
-      public void propertyChange(PropertyChangeEvent evt) {
-        myTree.repaint(); // to update match highlighting
-      }
+    treeSpeedSearch.addChangeListener(evt -> {
+      myTree.repaint(); // to update match highlighting
     });
 
     myTree.addMouseListener(

@@ -47,12 +47,7 @@ public class CellFinder {
     if (rawCell == null) {
       return null;
     }
-    EditorCell child = CellFinderUtil.findChildByCondition(rawCell, new Condition<EditorCell>() {
-      @Override
-      public boolean met(EditorCell cell) {
-        return cell.isReferenceCell() && role.equals(cell.getRole()) && node == cell.getSNode();
-      }
-    }, true, true);
+    EditorCell child = CellFinderUtil.findChildByCondition(rawCell, cell -> cell.isReferenceCell() && role.equals(cell.getRole()) && node == cell.getSNode(), true, true);
     if (child != null) {
       return child;
     } else {
@@ -97,13 +92,8 @@ public class CellFinder {
     if (rawCell == null) {
       return null;
     }
-    EditorCell child = CellFinderUtil.findChildByCondition(rawCell, new Condition<EditorCell>() {
-      @Override
-      public boolean met(EditorCell cell) {
-        return role.equals(cell.getRole()) &&
-               (node == cell.getSNode() || node == cell.getSNode().getParent() && cell.isBig());
-      }
-    }, true, true);
+    EditorCell child = CellFinderUtil.findChildByCondition(rawCell, cell -> role.equals(cell.getRole()) &&
+                                                                        (node == cell.getSNode() || node == cell.getSNode().getParent() && cell.isBig()), true, true);
     if (child != null) {
       return child;
     }
