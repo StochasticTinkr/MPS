@@ -21,6 +21,7 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.dataFlow.framework.*;
 
+import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
@@ -31,9 +32,7 @@ public class MayBeInitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSe
 
   public MayBeInitializedVariablesAnalyzer(Instruction... exclusions) {
     myExclusions = new HashSet<>(exclusions.length);
-    for (Instruction exclusion : exclusions) {
-      myExclusions.add(exclusion);
-    }
+    myExclusions.addAll(Arrays.asList(exclusions));
   }
 
   @Override

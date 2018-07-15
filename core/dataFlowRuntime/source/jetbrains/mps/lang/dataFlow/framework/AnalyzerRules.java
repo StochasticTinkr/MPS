@@ -78,9 +78,7 @@ public class AnalyzerRules {
       if (aspect == null) {
         continue;
       }
-      for (DataFlowConstructor rule : aspect.getConstructors(myAnalyzerId)) {
-        myRules.add(rule);
-      }
+      myRules.addAll(aspect.getConstructors(myAnalyzerId));
     }
     Set<SNode> descendants = new LinkedHashSet<>();
     for (SNode myNodeToApply : myNodesToApply) {

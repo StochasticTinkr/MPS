@@ -325,9 +325,7 @@ public class GenerationPartitioner {
       if (mappingRef instanceof MappingConfig_RefAllLocal) {
         List<TemplateMappingConfiguration> mappingConf = new ArrayList<>();
         for (TemplateModel templateModel : refGenerator.getModels()) {
-          for (TemplateMappingConfiguration n : templateModel.getConfigurations()) {
-            mappingConf.add(n);
-          }
+          mappingConf.addAll(templateModel.getConfigurations());
         }
         return mappingConf;
       }

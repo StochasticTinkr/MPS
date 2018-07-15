@@ -62,9 +62,7 @@ public class StructuralNodeSet<T> implements Set<SNode> {
   }
 
   public void putAllStructurally(StructuralNodeSet<T> ourNodes) {
-    for (SNodeWrapper w : ourNodes.myWrappers) {
-      myWrappers.add(w);
-    }
+    myWrappers.addAll(ourNodes.myWrappers);
   }
 
   @Override

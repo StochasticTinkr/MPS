@@ -50,17 +50,23 @@ public abstract class ReportingTypecheckingContext<
   }
   private static void reportEquationError(TypeCheckingContext context, @NotNull EquationInfo equationInfo, Function<SNode, EquationErrorReporterNew> defaultReporterForNode) {
      if (equationInfo.getNodeWithError() == null) {
-       String message = "Typing equation did not provide node to report.";
+       StringBuilder message = new StringBuilder("Typing equation did not provide node to report.");
        if (equationInfo.getRuleNode() != null) {
-         message += " Equation " + equationInfo.getRuleNode().getNodeId() + " from model " + equationInfo.getRuleNode().getModelReference();
+         message.append(" Equation ")
+                .append(equationInfo.getRuleNode().getNodeId())
+                .append(" from model ")
+                .append(equationInfo.getRuleNode().getModelReference());
        }
        for (SNodeReference rule : equationInfo.getAdditionalRulesIds()) {
-         message += " Additional equation " + equationInfo.getRuleNode().getNodeId() + " from model " + equationInfo.getRuleNode().getModelReference();
+         message.append(" Additional equation ")
+                .append(equationInfo.getRuleNode().getNodeId())
+                .append(" from model ")
+                .append(equationInfo.getRuleNode().getModelReference());
        }
        if (equationInfo.getErrorString() != null) {
-         message += " Error message: " + equationInfo.getErrorString();
+         message.append(" Error message: ").append(equationInfo.getErrorString());
        }
-       LOG.error(message);
+       LOG.error(message.toString());
        return;
     }
     final IErrorReporter errorReporter;

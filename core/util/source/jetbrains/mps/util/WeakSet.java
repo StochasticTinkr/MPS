@@ -40,9 +40,7 @@ public class WeakSet<T> extends AbstractSet<T> {
 
   public WeakSet(@NotNull Collection<? extends T> collection) {
     this(collection.size());
-    for (T t : collection) {
-      add(t);
-    }
+    this.addAll(collection);
   }
 
   @Override

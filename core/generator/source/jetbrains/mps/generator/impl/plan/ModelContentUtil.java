@@ -41,13 +41,9 @@ public class ModelContentUtil {
       namespaces.addAll(templateModelScanner.getQueryLanguages());
       return namespaces;
     }
-    for (SLanguage language : new ModelDependencyScanner().usedLanguages(true).crossModelReferences(false).walk(model).getUsedLanguages()) {
-      namespaces.add(language);
-    }
+    namespaces.addAll(new ModelDependencyScanner().usedLanguages(true).crossModelReferences(false).walk(model).getUsedLanguages());
     // e.g. empty behavior model should have its behavior aspect descriptor generated
-    for (SLanguage language : ModelsAutoImportsManager.getLanguages(model.getModule(), model)) {
-      namespaces.add(language);
-    }
+    namespaces.addAll(ModelsAutoImportsManager.getLanguages(model.getModule(), model));
     return namespaces;
   }
 }

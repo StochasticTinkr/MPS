@@ -104,13 +104,7 @@ public enum LanguageAspect {
    * Builds a class name of an aspect class according to hardcoded MPS convention.
    */
   public String getAspectQualifiedClassName(@NotNull SAbstractConcept concept) {
-    StringBuilder builder = new StringBuilder();
-    builder.append(concept.getLanguage().getQualifiedName());
-    builder.append('.');
-    builder.append(getName());
-    builder.append('.');
-    builder.append(concept.getName());
-    return builder.toString();
+    return concept.getLanguage().getQualifiedName() + '.' + getName() + '.' + concept.getName();
   }
 
   public boolean is(@NotNull SModel sm) {

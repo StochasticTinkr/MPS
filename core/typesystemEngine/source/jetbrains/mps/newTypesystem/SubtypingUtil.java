@@ -137,9 +137,7 @@ public class SubtypingUtil {
           }
         }
       }
-      for (SNode passedNodeRaw : yetPassedRaw) {
-        yetPassed.add(passedNodeRaw);
-      }
+      yetPassed.addAll(yetPassedRaw);
       for (SNode passedNode : yetPassed) {
         ancestors.removeStructurally(passedNode);
       }

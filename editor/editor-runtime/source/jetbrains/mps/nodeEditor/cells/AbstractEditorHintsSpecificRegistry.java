@@ -123,14 +123,14 @@ public abstract class AbstractEditorHintsSpecificRegistry<T extends EditorHintsS
   }
 
   private String getErrorMessage(T additional, T chosen) {
-    String context = "";
+    StringBuilder context = new StringBuilder();
     for (String contextHint : getCurrentContextHints()) {
-      if (!context.isEmpty()) {
-        context += ", ";
+      if (context.length() > 0) {
+        context.append(", ");
       }
-      context += contextHint;
+      context.append(contextHint);
     }
-    return getErrorMessage(additional, chosen, context);
+    return getErrorMessage(additional, chosen, context.toString());
   }
 
   @NotNull

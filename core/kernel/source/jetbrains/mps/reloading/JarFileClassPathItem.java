@@ -355,13 +355,13 @@ public class JarFileClassPathItem extends RealClassPathItem {
     public Entry createSubPackage(String packageNamePart) {
       if (mySubpackages == null) {
         mySubpackages = new ArrayList<>(4);
-        final Entry rv = new Entry(new String(packageNamePart));
+        final Entry rv = new Entry(packageNamePart);
         mySubpackages.add(rv);
         return rv;
       }
       final int ix = indexOf(packageNamePart);
       if (ix < 0) {
-        final Entry rv = new Entry(new String(packageNamePart));
+        final Entry rv = new Entry(packageNamePart);
         mySubpackages.add(-ix - 1, rv);
         return rv;
       } else {

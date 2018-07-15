@@ -107,7 +107,7 @@ public class ClassLoadingBroadCaster {
     }
 
     final Set<ReloadableModule> resultingUnload = new LinkedHashSet<>();
-    for (ReloadableModule module : modulesToUnload) resultingUnload.add(module);
+    resultingUnload.addAll(modulesToUnload);
     return resultingUnload;
   }
 
@@ -151,7 +151,7 @@ public class ClassLoadingBroadCaster {
 
     myModelAccess.checkWriteAccess();
     final Set<ReloadableModule> modulesToReload = new LinkedHashSet<>(reloadedModules.size());
-    for (ReloadableModule module : reloadedModules) modulesToReload.add(module);
+    modulesToReload.addAll(reloadedModules);
 
     for (ModuleReloadListener listener : myReloadListeners) {
       listener.modulesReloaded(modulesToReload);

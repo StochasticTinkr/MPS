@@ -271,11 +271,11 @@ public class UniPath extends AbstractPath {
 
   @Override
   public String toString() {
-    String res = myPath.toString();
+    StringBuilder res = new StringBuilder(myPath.toString());
     for (Path path : myArchivePaths) {
-      res += ARCHIVE_SEPARATOR + path.toString();
+      res.append(ARCHIVE_SEPARATOR).append(path.toString());
     }
-    return res;
+    return res.toString();
   }
 
   @NotNull

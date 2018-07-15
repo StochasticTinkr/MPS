@@ -217,12 +217,8 @@ public class CheckpointVault {
 
     private String getFilename() {
       if (myFile == null) {
-        StringBuilder fname = new StringBuilder();
-        fname.append(myCheckpoint.getPlan().getPersistenceValue());
-        fname.append('-');
-        fname.append(myCheckpoint.getPersistenceValue());
-        fname.append(".mps");
-        myFile = fname.toString();
+        String fname = myCheckpoint.getPlan().getPersistenceValue() + '-' + myCheckpoint.getPersistenceValue() + ".mps";
+        myFile = fname;
       }
       return myFile;
     }

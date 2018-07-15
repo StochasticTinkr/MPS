@@ -81,9 +81,7 @@ public class AnalyzerRunner<E> {
 
       if (!newValue.equals(oldValue)) {
         stateValues.put(current, newValue);
-        for (ProgramState s : dependents.get(current)) {
-          workList.add(s);
-        }
+        workList.addAll(dependents.get(current));
       }
     }
 

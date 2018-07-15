@@ -128,18 +128,18 @@ public class ReferencedNodeContext {
 
   @Override
   public String toString() {
-    String result = (myIsNodeAttribute ? "NodeAttribute: " : "Node: ") + myNode.toString();
+    StringBuilder result = new StringBuilder((myIsNodeAttribute ? "NodeAttribute: " : "Node: ") + myNode.toString());
     if (myContextRoles != null) {
       for (String contextRole : myContextRoles) {
-        result += ", context role: " + contextRole;
+        result.append(", context role: ").append(contextRole);
       }
     }
     if (myContextRefererNodes != null) {
       for (SNode contextReferer : myContextRefererNodes) {
-        result += ", context referer: " + contextReferer.toString();
+        result.append(", context referer: ").append(contextReferer.toString());
       }
     }
-    return result;
+    return result.toString();
   }
 
   public void calculateSize(MemoryAnalyzer analyzer) {

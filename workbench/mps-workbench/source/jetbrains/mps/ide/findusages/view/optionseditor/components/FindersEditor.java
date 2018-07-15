@@ -84,9 +84,7 @@ public class FindersEditor extends BaseEditor<FindersOptions> {
       });
 
       if (!finder.getLongDescription().isEmpty()) {
-        StringBuilder htmlTooltipText = new StringBuilder();
-        htmlTooltipText.append("<html>").append(finder.getLongDescription().replaceAll("\n", "<br>")).append(")</html>");
-        finderCheckBox.setToolTipText(htmlTooltipText.toString());
+        finderCheckBox.setToolTipText("<html>" + finder.getLongDescription().replaceAll("\n", "<br>") + ")</html>");
       }
 
       JToolBar finderHolder = new JToolBar(JToolBar.HORIZONTAL);

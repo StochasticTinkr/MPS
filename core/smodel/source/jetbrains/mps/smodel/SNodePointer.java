@@ -114,7 +114,7 @@ public class SNodePointer implements SNodeReference {
   }
 
   public static SNodeReference deserialize(@NotNull String from) {
-    int delimiterIndex = from.lastIndexOf("/");
+    int delimiterIndex = from.lastIndexOf('/');
     if (delimiterIndex < 0) {
       throw new IncorrectNodeIdFormatException("No delimiter discovered in the passed argument " + from);
     }

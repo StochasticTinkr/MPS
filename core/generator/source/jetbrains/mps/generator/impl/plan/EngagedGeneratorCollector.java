@@ -207,7 +207,7 @@ public final class EngagedGeneratorCollector {
    * I know it's better to provide some sort of structured info, but now seems not worth the effort.
    */
   public void dump(Consumer<String> traceConsumer) {
-    myEngagedTrace.forEach(l -> traceConsumer.accept(new StringBuilder().append(' ').append(l).toString()));
+    myEngagedTrace.forEach(l -> traceConsumer.accept(" " + l));
   }
 
   // cease existence once we get rid of strings completely

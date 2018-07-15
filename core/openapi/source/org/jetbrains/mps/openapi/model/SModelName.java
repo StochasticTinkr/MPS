@@ -66,7 +66,7 @@ public final class SModelName {
   public SModelName(@NotNull CharSequence qualifiedName, @Nullable CharSequence stereotype) {
     if (stereotype != null && stereotype.length() > 0) {
       assert stereotype.toString().indexOf('@') == -1;
-      myValue = checkIllegalChars(new StringBuilder(qualifiedName).append('@').append(stereotype).toString());
+      myValue = checkIllegalChars(String.valueOf(qualifiedName) + '@' + stereotype);
     } else {
       myValue = checkIllegalChars(qualifiedName.toString());
     }

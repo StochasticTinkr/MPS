@@ -39,7 +39,7 @@ public class PatternUtil {
       return false;
     }
     return matchingText.charAt(0) == pattern.charAt(0) &&
-        (matchingText.startsWith(pattern) || matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false, false).toString() + ".*"));
+        (matchingText.startsWith(pattern) || matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false, false) + ".*"));
   }
 
   public static StringBuilder getExactItemPatternBuilder(String text, boolean useDots, boolean useStarAndQuestionMark) {

@@ -54,9 +54,7 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
       Set<SAbstractConcept> queryConcepts = new HashSet<>(elements);
       if (!myExact) {
         for (SAbstractConcept concept : elements) {
-          for (SAbstractConcept descConcept : ConceptDescendantsCache.getInstance().getDescendants(concept)) {
-            queryConcepts.add(descConcept);
-          }
+          queryConcepts.addAll(ConceptDescendantsCache.getInstance().getDescendants(concept));
         }
       }
       monitor.advance(1);

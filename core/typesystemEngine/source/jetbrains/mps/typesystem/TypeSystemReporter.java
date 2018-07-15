@@ -112,7 +112,7 @@ public class TypeSystemReporter {
         sb.append(name.substring(beginIndex));
        
       }
-      tracer.addText(String.format(sb.toString() + " %.3f s,  %d times", entry.getValue().o1 * 1.0e-9, entry.getValue().o2));
+      tracer.addText(String.format(sb + " %.3f s,  %d times", entry.getValue().o1 * 1.0e-9, entry.getValue().o2));
     }
     tracer.addText("Total: " + sum * 1.0e-9);
   }

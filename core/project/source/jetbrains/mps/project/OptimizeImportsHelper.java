@@ -248,9 +248,7 @@ public class OptimizeImportsHelper {
     result.myUsedModels.addAll(modelScanner.getCrossModelReferences());
 
     // add auto imports as dependencies
-    for (SLanguage l : ModelsAutoImportsManager.getLanguages(model.getModule(), model)) {
-      result.myUsedLanguages.add(l);
-    }
+    result.myUsedLanguages.addAll(ModelsAutoImportsManager.getLanguages(model.getModule(), model));
     for (SModel m : ModelsAutoImportsManager.getAutoImportedModels(model.getModule(), model)) {
       result.addUsedModel(m.getReference());
     }

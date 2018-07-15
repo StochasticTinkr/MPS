@@ -132,9 +132,7 @@ public class CoercionManager {
           return results.get(0);
         }
       }
-      for (SNode passedNodeRaw : yetPassedRaw) {
-        yetPassed.add(passedNodeRaw);
-      }
+      yetPassed.addAll(yetPassedRaw);
       for (SNode passedNode : yetPassed) {
         ancestors.removeStructurally(passedNode);
       }

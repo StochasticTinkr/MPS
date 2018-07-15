@@ -85,7 +85,7 @@ class ModuleEventsHandler implements SRepositoryBatchListener {
 
   private void updateModules(List<? extends ReloadableModuleBase> modules) {
     List<SModule> modulesToReload = new ArrayList<>();
-    for (ReloadableModuleBase module : modules) modulesToReload.add(module);
+    modulesToReload.addAll(modules);
     Collections.sort(modulesToReload, MODULE_COMPARATOR);
     myManager.doReloadModules(modulesToReload, new EmptyProgressMonitor());
   }
