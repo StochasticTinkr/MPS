@@ -95,10 +95,10 @@ public class DefaultTaskBuilder<T extends GeneratorTask> {
     final int[][] strongComponents = GraphUtil.tarjan(graph);
 
     List<SModelReference[]> components = new ArrayList<>(strongComponents.length);
-    for (int i = 0; i < strongComponents.length; i++) {
-      SModelReference[] x = new SModelReference[strongComponents[i].length];
+    for (int[] strongComponent : strongComponents) {
+      SModelReference[] x = new SModelReference[strongComponent.length];
       for (int j = 0; j < x.length; j++) {
-        final int vertex = strongComponents[i][j];
+        final int vertex = strongComponent[j];
         x[j] = inputModels.get(vertex).getReference();
       }
       components.add(x);

@@ -84,10 +84,10 @@ public class ConnectedComponentPartitioner {
     int[][] partitions = GraphUtil.components(GraphUtil.removeOrientation(myDependencies));
 
     List<SNode[]> result = new ArrayList<>(partitions.length + 1);
-    for (int i = 0; i < partitions.length; i++) {
-      SNode[] proots = new SNode[partitions[i].length];
+    for (int[] partition : partitions) {
+      SNode[] proots = new SNode[partition.length];
       for (int e = 0; e < proots.length; e++) {
-        proots[e] = myRoots[partitions[i][e]];
+        proots[e] = myRoots[partition[e]];
       }
       result.add(proots);
     }

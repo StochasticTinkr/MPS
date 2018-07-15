@@ -74,8 +74,7 @@ public abstract class MetaAdapterFactory {
     List<SLanguageAdapterById> list = getBucketList(ourLanguages, uuidHigh * 17 + uuidLow);
     //noinspection SynchronizationOnLocalVariableOrMethodParameter
     synchronized (list) {
-      for (int i = 0, x = list.size(); i < x; i++) {
-        SLanguageAdapterById rv = list.get(i);
+      for (SLanguageAdapterById rv : list) {
         SLanguageId id = rv.getId();
         if (uuidHigh == id.getHighBits() && uuidLow == id.getLowBits()) {
           return rv;
@@ -103,8 +102,7 @@ public abstract class MetaAdapterFactory {
     List<ConceptBucket> bucketList = getBucketList(ourConcepts, bucketKey(uuidHigh, uuidLow, concept));
     //noinspection SynchronizationOnLocalVariableOrMethodParameter
     synchronized (bucketList) {
-      for (int i = 0, x = bucketList.size(); i < x; i++) {
-        ConceptBucket rv = bucketList.get(i);
+      for (ConceptBucket rv : bucketList) {
         if (rv.isBucketFor(uuidHigh, uuidLow, concept)) {
           return rv.get();
         }
@@ -131,8 +129,7 @@ public abstract class MetaAdapterFactory {
     List<InterfaceBucket> bucketList = getBucketList(ourInterfaces, bucketKey(uuidHigh, uuidLow, concept));
     //noinspection SynchronizationOnLocalVariableOrMethodParameter
     synchronized (bucketList) {
-      for (int i = 0, x = bucketList.size(); i < x; i++) {
-        InterfaceBucket rv = bucketList.get(i);
+      for (InterfaceBucket rv : bucketList) {
         if (rv.isBucketFor(uuidHigh, uuidLow, concept)) {
           return rv.get();
         }
@@ -160,8 +157,7 @@ public abstract class MetaAdapterFactory {
     List<PropertyBucket> bucketList = getBucketList(ourProperties, bucketKey(uuidHigh, uuidLow, concept, prop));
     //noinspection SynchronizationOnLocalVariableOrMethodParameter
     synchronized (bucketList) {
-      for (int i = 0, x = bucketList.size(); i < x; i++) {
-        PropertyBucket rv = bucketList.get(i);
+      for (PropertyBucket rv : bucketList) {
         if (rv.isBucketFor(uuidHigh, uuidLow, concept, prop)) {
           return rv.get();
         }
@@ -190,8 +186,7 @@ public abstract class MetaAdapterFactory {
     List<AssociationLinkBucket> bucketList = getBucketList(ourAssociations, bucketKey(uuidHigh, uuidLow, concept, link));
     //noinspection SynchronizationOnLocalVariableOrMethodParameter
     synchronized (bucketList) {
-      for (int i = 0, x = bucketList.size(); i < x; i++) {
-        AssociationLinkBucket rv = bucketList.get(i);
+      for (AssociationLinkBucket rv : bucketList) {
         if (rv.isBucketFor(uuidHigh, uuidLow, concept, link)) {
           return rv.get();
         }
@@ -220,8 +215,7 @@ public abstract class MetaAdapterFactory {
     List<AggregationLinkBucket> bucketList = getBucketList(ourAggregations, bucketKey(uuidHigh, uuidLow, concept, link));
     //noinspection SynchronizationOnLocalVariableOrMethodParameter
     synchronized (bucketList) {
-      for (int i = 0, x = bucketList.size(); i < x; i++) {
-        AggregationLinkBucket rv = bucketList.get(i);
+      for (AggregationLinkBucket rv : bucketList) {
         if (rv.isBucketFor(uuidHigh, uuidLow, concept, link)) {
           return rv.get();
         }

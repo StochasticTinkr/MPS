@@ -166,11 +166,11 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
           Class<?> javaType = ((SJavaCompoundType) lastPrm.getType()).getJavaType();
           if (javaType.isArray()) {
             Class<?> componentType = javaType.getComponentType();
-            for (int i = 0; i < parameters.length; ++i) {
-              if (parameters[i] == null) {
+            for (Object parameter : parameters) {
+              if (parameter == null) {
                 continue;
               }
-              if (!componentType.isAssignableFrom(parameters[i].getClass())) {
+              if (!componentType.isAssignableFrom(parameter.getClass())) {
                 return parameters;
               }
             }

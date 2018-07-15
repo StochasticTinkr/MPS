@@ -32,8 +32,8 @@ public class GraphUtil {
    */
   public static int[] setToList(int[] set) {
     int size = 0;
-    for (int i = 0; i < set.length; i++) {
-      if (set[i] == 1) {
+    for (int aSet : set) {
+      if (aSet == 1) {
         size++;
       }
     }
@@ -66,8 +66,8 @@ public class GraphUtil {
   public static int[][] transpose(int[][] graph) {
     int vertexCount = graph.length;
     int[] size = new int[vertexCount];
-    for (int v = 0; v < vertexCount; v++) {
-      for (int target : graph[v]) {
+    for (int[] aGraph : graph) {
+      for (int target : aGraph) {
         size[target]++;
       }
     }
