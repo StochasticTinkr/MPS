@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.ModelAccess;
 import java.io.File;
 
 /*package*/ class DefaultGoToDeclarationHandler extends GoToDeclarationHandlerRegistry.GoToDeclarationHandler {
@@ -45,14 +44,13 @@ import java.io.File;
     boolean isField = (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
     assert isClassifier || isConstructor || isMethod || isField;
 
-    final String projectPath = check_tz3sru_a0k0c(p.getProjectFile());
     if (isClassifier) {
       final String fqName = SModelOperations.getModelName(SNodeOperations.getModel(node)) + '.' + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       return open(new _FunctionTypes._void_P1_E1<IProjectHandler, RemoteException>() {
         public void invoke(IProjectHandler h) throws RemoteException {
           h.openClass(fqName);
         }
-      }, projectPath);
+      }, p);
     } else {
       SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
       assert classifier != null;
@@ -64,31 +62,31 @@ import java.io.File;
           public void invoke(IProjectHandler h) throws RemoteException {
             h.openMethod(classifierName, SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count());
           }
-        }, projectPath);
+        }, p);
       } else if (isConstructor) {
         final int paramCount = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count();
         return open(new _FunctionTypes._void_P1_E1<IProjectHandler, RemoteException>() {
           public void invoke(IProjectHandler h) throws RemoteException {
             h.openConstructor(classifierName, paramCount);
           }
-        }, projectPath);
+        }, p);
       } else {
         return open(new _FunctionTypes._void_P1_E1<IProjectHandler, RemoteException>() {
           public void invoke(IProjectHandler h) throws RemoteException {
             h.openField(classifierName, node.getName());
           }
-        }, projectPath);
+        }, p);
       }
     }
   }
 
-  private boolean open(final _FunctionTypes._void_P1_E1<? super IProjectHandler, ? extends RemoteException> todo, final String projectPath) {
+  private boolean open(final _FunctionTypes._void_P1_E1<? super IProjectHandler, ? extends RemoteException> todo, final MPSProject p) {
     final Wrappers._boolean result = new Wrappers._boolean(false);
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
-        final IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(projectPath);
-        ModelAccess.instance().runReadAction(new Runnable() {
+        p.getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
+            IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(check_tz3sru_a0a0a0a0a0a0b0e(p.getProjectFile()));
             if (handler != null) {
               // unsuppress 2 errors here  
               try {
@@ -104,7 +102,7 @@ import java.io.File;
     });
     return result.value;
   }
-  private static String check_tz3sru_a0k0c(File checkedDotOperand) {
+  private static String check_tz3sru_a0a0a0a0a0a0b0e(File checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getAbsolutePath();
     }
