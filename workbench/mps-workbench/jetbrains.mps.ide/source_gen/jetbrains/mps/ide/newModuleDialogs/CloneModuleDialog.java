@@ -7,12 +7,22 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.ModuleNameUtil;
 import jetbrains.mps.vfs.IFile;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.ui.MessageType;
+import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
+import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.ui.dialogs.modules.CloneModuleSettings;
 import org.jetbrains.annotations.NonNls;
+import javax.swing.JComponent;
+import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.ui.awt.RelativePoint;
+import com.intellij.openapi.ui.popup.Balloon;
 
 /**
  * 
@@ -20,12 +30,13 @@ import org.jetbrains.annotations.NonNls;
  */
 public final class CloneModuleDialog extends AbstractModuleCreationDialog {
   private static final Logger LOG = LogManager.getLogger(CloneModuleDialog.class);
+  private static final int POPUP_FADEOUT_TIME = 10000;
 
   private final AbstractModule myModuleOriginal;
 
   public CloneModuleDialog(MPSProject project, @Nullable String virtualFolder, AbstractModule moduleOriginal) {
     super(project, virtualFolder);
-    setTitle("Clone Module " + moduleOriginal.getModuleName());
+    setTitle("Clone " + ModuleNameUtil.getModuleType(moduleOriginal) + " " + moduleOriginal.getModuleName());
 
     myModuleOriginal = moduleOriginal;
     init();
@@ -35,7 +46,23 @@ public final class CloneModuleDialog extends AbstractModuleCreationDialog {
   protected void runCreation() {
     IFile moduleLocationFile = myModuleOriginal.getFileSystem().getFile(mySettings.getModuleLocation()).getDescendant(mySettings.getModuleName() + getExtension());
     CopyModuleHelper helper = new CopyModuleHelper(myProject, myModuleOriginal, mySettings.getModuleName(), moduleLocationFile, myVirtualFolder);
-    myResult = helper.copy();
+    try {
+      myResult = helper.copy();
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          showPopup(ModuleNameUtil.getModuleType(myModuleOriginal) + " <i>" + myModuleOriginal.getModuleName() + "</i> has successfully cloned", MessageType.INFO);
+        }
+      });
+    } catch (final CopyNotSupportedException e) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          String errorDescription = e.getMessage();
+          String header = "Cloning of <i>" + myModuleOriginal.getModuleName() + "</i> finished with error";
+          String separator = ((errorDescription == null || errorDescription.length() == 0) ? "\n" : ":\n");
+          showPopup(header + separator + StringUtil.emptyIfNull(errorDescription), MessageType.ERROR);
+        }
+      });
+    }
   }
 
   @Override
@@ -59,5 +86,10 @@ public final class CloneModuleDialog extends AbstractModuleCreationDialog {
   @Override
   protected String getDimensionServiceKey() {
     return CloneModuleDialog.class.getName();
+  }
+
+  private void showPopup(String text, MessageType messageType) {
+    JComponent component = WindowManager.getInstance().getIdeFrame(myProject.getProject()).getComponent();
+    JBPopupFactory.getInstance().createHtmlTextBalloonBuilder(text, messageType, null).setFadeoutTime(POPUP_FADEOUT_TIME).createBalloon().show(RelativePoint.getSouthWestOf(component), Balloon.Position.above);
   }
 }

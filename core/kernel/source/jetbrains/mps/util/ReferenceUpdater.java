@@ -113,13 +113,7 @@ public final class ReferenceUpdater {
       for (int j = 0; j < oldModels.size(); ++j) {
         SModel oldModel = oldModels.get(j);
         SModel newModel = newModels.get(j);
-        if (!oldModel.isReadOnly()) {
-          addModelToAdjustImpl(oldModel, newModel);
-        } else {
-          if (!newModel.isReadOnly()) {
-            throw new RefUpdateException("Readonly status differs in the clone " + newModel);
-          }
-        }
+        addModelToAdjustImpl(oldModel, newModel);
       }
     }
   }
@@ -233,11 +227,11 @@ public final class ReferenceUpdater {
         SModelReference targetSModelReference = reference.getTargetSModelReference();
         if (myModelReferenceMap.containsKey(targetSModelReference)) {
           StaticReference newReference = new StaticReference(
-                                                                reference.getLink(),
-                                                                node,
-                                                                myModelReferenceMap.get(targetSModelReference),
-                                                                reference.getTargetNodeId(),
-                                                                reference.getResolveInfo()
+              reference.getLink(),
+              node,
+              myModelReferenceMap.get(targetSModelReference),
+              reference.getTargetNodeId(),
+              reference.getResolveInfo()
           );
           node.setReference(newReference.getLink(), newReference);
         }
@@ -305,7 +299,7 @@ public final class ReferenceUpdater {
     }
   }
 
-  public static final class RefUpdateException extends Exception {
+  public static final class RefUpdateException extends RuntimeException {
     public RefUpdateException(@NotNull String message) {
       super(message);
     }

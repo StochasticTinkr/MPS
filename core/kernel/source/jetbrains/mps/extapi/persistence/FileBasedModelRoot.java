@@ -23,6 +23,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
@@ -35,6 +36,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -362,50 +364,6 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     }
   }
 
-  /**
-   * Sets the same content root to the target model root
-   * Adds the corresponding files to the target model root
-   * If the content root is out of the module directory location then
-   * the exception is thrown (since we have no idea which location for the copy we need to choose)
-   *
-   * @see #setContentRoot(String)
-   * @see #addFile
-   */
-  protected final void copyContentRootAndFiles(@NotNull FileBasedModelRoot targetModelRoot) throws CopyNotSupportedException {
-    AbstractModule source = (AbstractModule) getModule();
-    AbstractModule target = (AbstractModule) targetModelRoot.getModule();
-    if (source == null) {
-      throw new CopyNotSupportedException("The module of the source model root is null " + this);
-    }
-    if (target == null) {
-      throw new CopyNotSupportedException("The module of the target model root is null " + targetModelRoot);
-    }
-
-    if (getContentDirectory() != null) {
-      IFile targetContentDir;
-      if (isUnderModuleSourceDir(source, getContentDirectory())) {
-        String relFromModuleDirToContentDir = relativize(getContentDirectory().getPath(), source.getModuleSourceDir());
-        targetContentDir = target.getModuleSourceDir().getDescendant(relFromModuleDirToContentDir);
-      } else {
-        throw new CopyNotSupportedException("The model root is not located under the module source directory " + this);
-      }
-      targetModelRoot.setContentDirectory(targetContentDir);
-      for (SourceRootKind kind : getSupportedFileKinds1()) {
-        for (SourceRoot sourceRoot : getSourceRoots(kind)) {
-          String relativePath = relativize(sourceRoot.getAbsolutePath().getPath(), getContentDirectory());
-          IFile descendant = targetContentDir.getDescendant(relativePath);
-          String targetSourceRoot = descendant.getPath();
-          targetModelRoot.addSourceRoot(kind, new DefaultSourceRoot(targetSourceRoot, targetContentDir));
-        }
-      }
-    }
-  }
-
-  private static boolean isUnderModuleSourceDir(@NotNull AbstractModule module, @NotNull IFile path) {
-    IFile moduleSourceDir = module.getModuleSourceDir();
-    return moduleSourceDir != null && FileUtil.isAncestor(moduleSourceDir.getPath(), path.getPath());
-  }
-
   @Override
   public final boolean equals(Object o) {
     if (this == o) {
@@ -427,9 +385,15 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     return Objects.hash(myContentDir, mySourcePathStorage);
   }
 
+
   @NotNull
   public static String relativize(@NotNull String fullPath, @NotNull IFile contentHome) {
-    String contentHomePath = independentAndAbsolute(contentHome.getPath());
+    return relativize(fullPath, contentHome.getPath());
+  }
+
+  @NotNull
+  public static String relativize(@NotNull String fullPath, @NotNull String contentHomePath) {
+    contentHomePath = independentAndAbsolute(contentHomePath);
     fullPath = independentAndAbsolute(fullPath);
     if (fullPath.equals(contentHomePath)) {
       return MPSExtentions.DOT;

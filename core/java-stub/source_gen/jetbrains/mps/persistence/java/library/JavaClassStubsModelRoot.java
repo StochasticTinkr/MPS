@@ -29,6 +29,7 @@ import jetbrains.mps.java.stub.JavaPackageNameStub;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
+import jetbrains.mps.persistence.CopyFileBasedModelRootHelper;
 
 public class JavaClassStubsModelRoot extends FileBasedModelRoot implements CopyableModelRoot<JavaClassStubsModelRoot> {
   private PackageScopeControl myPackageScope;
@@ -210,7 +211,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot implements Copya
   }
 
   @Override
-  public void copyTo(@NotNull JavaClassStubsModelRoot root) throws CopyNotSupportedException {
-    super.copyContentRootAndFiles(root);
+  public void copyTo(@NotNull JavaClassStubsModelRoot targetModelRoot) throws CopyNotSupportedException {
+    new CopyFileBasedModelRootHelper(this, targetModelRoot).copy();
   }
 }

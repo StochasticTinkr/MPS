@@ -44,22 +44,14 @@ import static jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSou
 
 /**
  * Helps {@link DefaultModelRoot#copyTo(DefaultModelRoot)}
- *
+ * <p>
  * Created by apyshkin on 12/19/16.
  */
-final class CopyDefaultModelRootHelper {
+final class CopyDefaultModelRootHelper extends CopyFileBasedModelRootHelper<DefaultModelRoot> {
   private final static Logger LOG = LogManager.getLogger(CopyDefaultModelRootHelper.class);
 
-  private final DefaultModelRoot mySourceModelRoot;
-  private final DefaultModelRoot myTargetModelRoot;
-  private final AbstractModule mySourceModule;
-  private final AbstractModule myTargetModule;
-
-  CopyDefaultModelRootHelper(DefaultModelRoot sourceModelRoot, DefaultModelRoot targetModelRoot) {
-    mySourceModelRoot = sourceModelRoot;
-    myTargetModelRoot = targetModelRoot;
-    mySourceModule = ((AbstractModule) mySourceModelRoot.getModule());
-    myTargetModule = ((AbstractModule) myTargetModelRoot.getModule());
+  public CopyDefaultModelRootHelper(@NotNull DefaultModelRoot sourceModelRoot, @NotNull DefaultModelRoot targetModelRoot) {
+    super(sourceModelRoot, targetModelRoot);
   }
 
   private boolean isInsideModuleDir() {
@@ -80,52 +72,30 @@ final class CopyDefaultModelRootHelper {
    * We are doing the same thing we do when collecting models but instead of creating models
    * we recalculate the paths (and other options) and create corresponding model copies under
    * the new (target) model root
-   *
-   * @throws CopyNotSupportedException if the content directory of the model root is not under module source directory
-   *                                   since <code>DefaultModelRoot</code> allows to change models under it
-   *                                   we forbid copying such model roots with the content directories located outside of the module
-   *                                   source directory
    */
-  public void copy() throws CopyNotSupportedException {
-    if (mySourceModelRoot.getContentDirectory() == null) {
-      return;
-    }
-    if (!isInsideModuleDir()) {
-      throw new CopyNotSupportedException("The model root's content path must be inside module directory " + mySourceModelRoot + " : " + mySourceModelRoot.getModule());
-    }
-
-    List<SourceRoot> sourceFiles = mySourceModelRoot.getSourceRoots(SourceRootKinds.SOURCES);
-    List<SourceRoot> targetFiles = myTargetModelRoot.getSourceRoots(SourceRootKinds.SOURCES);
-    assert sourceFiles.size() == targetFiles.size(); // #copyContentRootAndFiles guarantees
-    for (int cnt = 0; cnt < sourceFiles.size(); ++cnt) {
-      SourceRoot sourceRoot = sourceFiles.get(cnt);
-      SourceRoot targetSourceRoot = targetFiles.get(cnt);
-      targetSourceRoot.getAbsolutePath().mkdirs();
-      ModelSourceRootWalker modelSourceRootWalker = new ModelSourceRootWalker(mySourceModelRoot, (factory, dataSource, options, file) -> {
-        try {
-          IFile targetModelFile = calculateTargetModelFile(mySourceModule, myTargetModule, sourceRoot, targetSourceRoot, file);
-          SModelBase modelData = (SModelBase) new ModelFactoryFacade(factory).load(dataSource, options);
-          createModelCopy(factory, targetModelFile, modelData);
-        } catch (URLNotSupportedException | URISyntaxException | IOException | ModelCannotBeCreatedException e) {
-          LOG.error("", new CopyNotSupportedException("Could not copy because of unexpected error" , e));
-        }
-      });
-      modelSourceRootWalker.traverse(sourceRoot);
-    }
+  @Override
+  protected void copySourceRootData(SourceRoot sourceModelSourceRoot, SourceRoot targetModelSourceRoot) {
+    targetModelSourceRoot.getAbsolutePath().mkdirs();
+    new ModelSourceRootWalker(mySourceModelRoot, (factory, dataSource, options, file) -> {
+      try {
+        IFile targetModelFile = calculateTargetModelFile(sourceModelSourceRoot, targetModelSourceRoot, file);
+        SModelBase modelData = (SModelBase) new ModelFactoryFacade(factory).load(dataSource, options);
+        createModelCopy(factory, targetModelFile, modelData);
+      } catch (URLNotSupportedException | IOException | ModelCannotBeCreatedException e) {
+        LOG.error("Could not create a model copy because of unexpected error", e);
+      }
+    }).traverse(sourceModelSourceRoot);
   }
 
   @NotNull
   private SModel createModelCopy(@NotNull ModelFactory factory,
                                  @NotNull IFile targetModelFile,
                                  @NotNull SModelBase modelDataToCopy) throws IOException,
-                                                                             URISyntaxException,
                                                                              URLNotSupportedException,
                                                                              ModelCannotBeCreatedException {
     DataSource targetDataSource = FILE_OR_FOLDER.create(targetModelFile.getUrl(), myTargetModelRoot);
     ParametersCalculator prmCalculator = new ParametersCalculator(myTargetModelRoot);
-    SModelName newModelName = new SModelName(convertNameConsideringModule(modelDataToCopy.getName().getValue(),
-                                                                          mySourceModule,
-                                                                          myTargetModule));
+    SModelName newModelName = new SModelName(convertNameConsideringModule(modelDataToCopy.getName().getValue()));
     ModelCreationOptions options = prmCalculator.calculate(newModelName);
     SModel targetModel = myTargetModelRoot.createModel0(factory, targetDataSource, options, false);
     // TODO Since model factory can provide any model implementation
@@ -142,13 +112,11 @@ final class CopyDefaultModelRootHelper {
   }
 
   @NotNull
-  private IFile calculateTargetModelFile(AbstractModule sourceModule,
-                                         AbstractModule targetModule,
-                                         SourceRoot sourceRoot,
+  private IFile calculateTargetModelFile(SourceRoot sourceRoot,
                                          SourceRoot targetSourceRoot,
                                          IFile sourceModelFile) {
     String relPath = FileBasedModelRoot.relativize(sourceModelFile.getPath(), sourceRoot.getAbsolutePath());
-    relPath = convertNameConsideringModule(relPath, sourceModule, targetModule);
+    relPath = convertNameConsideringModule(relPath);
     return targetSourceRoot.getAbsolutePath().getDescendant(relPath);
   }
 
@@ -157,9 +125,9 @@ final class CopyDefaultModelRootHelper {
    * fixme move to workbench
    */
   @NotNull
-  private String convertNameConsideringModule(String name, AbstractModule sourceModule, AbstractModule targetModule) {
-    if (name.startsWith(sourceModule.getModuleName())) {
-      name = targetModule.getModuleName() + name.substring(sourceModule.getModuleName().length());
+  private String convertNameConsideringModule(String name) {
+    if (name.startsWith(mySourceModule.getModuleName())) {
+      name = myTargetModule.getModuleName() + name.substring(mySourceModule.getModuleName().length());
     }
     return name;
   }

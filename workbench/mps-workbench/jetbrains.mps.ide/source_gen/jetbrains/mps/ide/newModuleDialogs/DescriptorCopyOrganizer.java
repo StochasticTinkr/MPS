@@ -79,9 +79,8 @@ import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
       if (copyDescriptor instanceof LanguageDescriptor) {
         hackLanguageDescriptor((LanguageDescriptor) copyDescriptor);
         ((LanguageDescriptor) copyDescriptor).getGenerators().forEach(new Consumer<GeneratorDescriptor>() {
-          @Override
           public void accept(GeneratorDescriptor genDescriptor) {
-            DescriptorCopyOrganizer.this.hackGeneratorDescriptor(genDescriptor);
+            hackGeneratorDescriptor(genDescriptor);
             hackModuleDescriptor(genDescriptor);
           }
         });
@@ -98,9 +97,12 @@ import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 
   private void resetModelRootsAndFacets(final ModuleDescriptor copyDescriptor) {
     // these are descriptors not the model roots themselves and thus we have a problem 
-    copyDescriptor.getModuleFacetDescriptors().clear();
-    // same problem with facets 
+    // model roots will be copied later via CopyableModelRoot functionality 
     copyDescriptor.getModelRootDescriptors().clear();
+
+    // facet cloning should be implemented similarly to how it is implemented for model roots 
+    // but currently we just copy facet descriptors, since all current facets has trivial logic of cloning 
+    // so no need to reset descriptors here 
   }
 
   private static void setNewIdAndTimestamp(final ModuleDescriptor descriptor) {
@@ -114,7 +116,6 @@ import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
    */
   private void hackJavaFacetProperties(@NotNull ModuleDescriptor copyDescriptor) {
     List<String> newStubPaths = copyDescriptor.getAdditionalJavaStubPaths().stream().map(new Function<String, String>() {
-      @Override
       public String apply(String path) {
         return myModulePathConverter.source2Target(path);
       }
@@ -122,7 +123,6 @@ import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
     copyDescriptor.getAdditionalJavaStubPaths().clear();
     copyDescriptor.getAdditionalJavaStubPaths().addAll(newStubPaths);
     List<String> newSourcePaths = copyDescriptor.getSourcePaths().stream().map(new Function<String, String>() {
-      @Override
       public String apply(String path) {
         return myModulePathConverter.source2Target(path);
       }
