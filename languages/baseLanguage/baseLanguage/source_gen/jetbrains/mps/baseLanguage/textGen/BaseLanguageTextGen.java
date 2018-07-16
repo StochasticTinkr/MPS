@@ -214,9 +214,9 @@ public abstract class BaseLanguageTextGen {
       tgs.reportError("null reference");
       return null;
     }
-    String shortName = "";
-    String packageName = "";
     if (reference instanceof DynamicReference) {
+      String shortName = "";
+      String packageName = "";
       shortName = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
       // hack, todo: remove! 
       if (shortName.startsWith("[")) {
@@ -247,7 +247,8 @@ public abstract class BaseLanguageTextGen {
         tgs.reportError("Target node is null for reference to classifier with role " + SLinkOperations.getRefLink(classifierRef).getName() + "; resolve info " + SLinkOperations.getResolveInfo(classifierRef) + "; " + jetbrains.mps.util.SNodeOperations.getDebugText(classifierRef.getSourceNode()));
         return null;
       }
-      return MultiTuple.<String,String>from(SModelOperations.getModelName(SNodeOperations.getModel(targetNode)), (SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) ? SPropertyOperations.getString(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName")) : jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode)));
+      String targetModelName = SModelOperations.getModelName(SNodeOperations.getModel(targetNode));
+      return MultiTuple.<String,String>from((targetModelName == null ? "" : targetModelName), (SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) ? SPropertyOperations.getString(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName")) : jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode)));
     }
   }
   protected static String getPackageName(SNode cls, final TextGenContext ctx) {
