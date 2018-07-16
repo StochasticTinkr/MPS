@@ -19829,8 +19829,8 @@
             <property role="2Ry0Am" value="mps-icons" />
             <node concept="2Ry0Ak" id="6Iq8148f_Zj" role="2Ry0An">
               <property role="2Ry0Am" value="source" />
-              <node concept="2Ry0Ak" id="6Iq8148f_Zo" role="2Ry0An">
-                <property role="2Ry0Am" value="mpsAbout.png" />
+              <node concept="2Ry0Ak" id="1PD8mL0UDKD" role="2Ry0An">
+                <property role="2Ry0Am" value="about.png" />
               </node>
             </node>
           </node>
@@ -20034,7 +20034,7 @@
                   <node concept="2Ry0Ak" id="5gyid2dEabO" role="2Ry0An">
                     <property role="2Ry0Am" value="source" />
                     <node concept="2Ry0Ak" id="5gyid2dEaca" role="2Ry0An">
-                      <property role="2Ry0Am" value="mpsAbout@2x.png" />
+                      <property role="2Ry0Am" value="about@2x.png" />
                     </node>
                   </node>
                 </node>

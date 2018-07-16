@@ -6,7 +6,7 @@
   <build number="MPS-182.SNAPSHOT" date="__BUILD_DATE__"/>
   <!--<install-over minbuild="" maxbuild="" version=""/>-->
   <logo url="/splash.png" textcolor="FFFFFF" progressColor="FFFFFF" progressX="117" progressY="280" progressHeight="3"/>
-  <about url="/mpsAbout.png" foreground="FFFFFF" copyrightForeground="FFFFFF"/><!--linkColor="9b5121" logoX="300" logoY="265" logoW="75" logoH="30"-->
+  <about url="/about.png" foreground="FFFFFF" copyrightForeground="FFFFFF"/><!--linkColor="9b5121" logoX="300" logoY="265" logoW="75" logoH="30"-->
   <icon size32="/MPS_32.png" size16="/MPS_16.png" size128="/MPS_128.png" ico="MPS.ico"/>
   <package code="__PACKAGE_CODE__"/>
   <names product="MPS" fullname="JetBrains MPS"/>

@@ -63,7 +63,7 @@
         <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE" copyrightStart="2009" />
         <build number="${build.number}" date="${date}" />
         <logo url="/splash.png" textcolor="FFFFFF" progressColor="FFFFFF" progressX="117" progressY="280" progressHeight="3" />
-        <about url="/mpsAbout.png" foreground="FFFFFF" copyrightForeground="FFFFFF" />
+        <about url="/about.png" foreground="FFFFFF" copyrightForeground="FFFFFF" />
         <icon size32="/MPS_32.png" size16="/MPS_16.png" size128="/MPS_128.png" ico="/MPS.ico" />
         <package code="code" />
         <names product="MPS" fullname="JetBrains MPS" />
@@ -92,9 +92,9 @@
       <fileset file="${basedir}/workbench/mps-icons/source/MPS.ico" />
       <fileset file="${basedir}/workbench/mps-icons/source/MPS_welcomeScreen.png" />
       <fileset file="${basedir}/workbench/mps-icons/source/splash.png" />
-      <fileset file="${basedir}/workbench/mps-icons/source/mpsAbout.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/about.png" />
       <fileset file="${basedir}/workbench/mps-icons/source/splash@2x.png" />
-      <fileset file="${basedir}/workbench/mps-icons/source/mpsAbout@2x.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/about@2x.png" />
       <fileset file="${basedir}/workbench/mps-icons/source/MPS_welcomeScreen@2x.png" />
       <fileset dir="${build.tmp}/default/branding.jar" />
     </jar>
