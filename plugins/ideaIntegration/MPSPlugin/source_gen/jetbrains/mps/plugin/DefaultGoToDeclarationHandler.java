@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.smodel.ModelAccess;
 import java.io.File;
 
 /*package*/ class DefaultGoToDeclarationHandler extends GoToDeclarationHandlerRegistry.GoToDeclarationHandler {
@@ -85,16 +86,20 @@ import java.io.File;
     final Wrappers._boolean result = new Wrappers._boolean(false);
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
-        try {
-          IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(projectPath);
-          // unsuppress 2 errors here  
-          if (handler != null) {
-            todo.invoke(handler);
-            result.value = true;
+        final IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(projectPath);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            if (handler != null) {
+              // unsuppress 2 errors here  
+              try {
+                todo.invoke(handler);
+                result.value = true;
+              } catch (RemoteException e) {
+                e.printStackTrace();
+              }
+            }
           }
-        } catch (RemoteException e) {
-          e.printStackTrace();
-        }
+        });
       }
     });
     return result.value;
