@@ -60,11 +60,6 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     return new ArrayList<>();
   }
 
-  //remove after 3.3
-  protected List<BaseGeneratedTool> initAllTools(Project project) {
-    return new ArrayList<>();
-  }
-
   protected List<BaseTool> initAllTools1(Project project) {
     return new ArrayList<>();
   }
@@ -113,7 +108,6 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
 
   protected void initTools1() {
     try {
-      myTools.addAll(initAllTools(myProject));
       myTools.addAll(initAllTools1(myProject));
     } catch (Throwable t) {
       LOG.error("Exception on tools init:", t);
