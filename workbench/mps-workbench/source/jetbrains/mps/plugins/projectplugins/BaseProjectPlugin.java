@@ -43,6 +43,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   private static final Logger LOG = LogManager.getLogger(BaseProjectPlugin.class);
 
   private Project myProject;
+  private MPSProject myMPSProject;
 
   private List<BaseTool> myTools = new ArrayList<BaseTool>();
   private EDTAccessor<List<BaseTool>> myInitializedTools = new EDTAccessor<>(new ArrayList<>());
@@ -73,10 +74,9 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   protected List<BaseCustomProjectPlugin> initCustomParts(Project project) {
     List<ProjectPluginPart> rv = new ArrayList<>();
     fillCustomParts(rv);
-    MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
     for (ProjectPluginPart part : rv) {
       try {
-        part.init(mpsProject);
+        part.init(myMPSProject);
       } catch (Throwable th) {
         LOG.error(String.format("Failed to initialize part %s of project plugin %s", part.getClass(), getClass()), th);
       }
@@ -90,6 +90,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
 
   public final void init(@NotNull final Project project) {
     myProject = project;
+    myMPSProject = ProjectHelper.fromIdeaProject(myProject);
 
     initTabbedEditors1(project);
     initCustomParts1(project);
@@ -172,11 +173,10 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   }
 
   private void disposeCustomPluginParts(final List<BaseCustomProjectPlugin> customPluginsToDispose) {
-    MPSProject mpsProject = ProjectHelper.fromIdeaProject(myProject);
     for (BaseCustomProjectPlugin part : customPluginsToDispose) {
       try {
         if (part instanceof ProjectPluginPart) {
-          ((ProjectPluginPart) part).dispose(mpsProject);
+          ((ProjectPluginPart) part).dispose(myMPSProject);
         } else {
           part.dispose();
         }
