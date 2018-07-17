@@ -15,22 +15,20 @@
  */
 package jetbrains.mps.languageScope;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.classloading.DeployListener;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.smodel.SLanguageHierarchy;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRegistryListener;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.SimpleLRUCache;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -38,25 +36,30 @@ import java.util.concurrent.atomic.AtomicInteger;
  * User: fyodor
  * Date: 8/27/12
  */
-public class LanguageScopeFactory implements CoreComponent, DeployListener {
+public class LanguageScopeFactory implements CoreComponent, LanguageRegistryListener {
 
-  public static final int CACHE_SIZE = 1000;
+  private static final int CACHE_SIZE = 1000;
 
   private static LanguageScopeFactory INSTANCE;
-  private ClassLoaderManager myLoaderManager;
+  private final LanguageRegistry myLanguageRegistry;
 
-  public static LanguageScopeFactory getInstance () {
+  /**
+   * @deprecated
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  public static LanguageScopeFactory getInstance() {
     return INSTANCE;
   }
 
-  private ConcurrentHashMap<String, Integer> myNamespaceIndices = new ConcurrentHashMap<String, Integer>();
+  private ConcurrentHashMap<String, Integer> myNamespaceIndices = new ConcurrentHashMap<>();
 
   private AtomicInteger myBits = new AtomicInteger(0);
 
   private SimpleLRUCache<LanguagesHolder> myCachedLanguages;
 
-  public LanguageScopeFactory(ClassLoaderManager loaderManager) {
-    myLoaderManager = loaderManager;
+  public LanguageScopeFactory(LanguageRegistry languageRegistry) {
+    myLanguageRegistry = languageRegistry;
     initCache();
   }
 
@@ -66,24 +69,24 @@ public class LanguageScopeFactory implements CoreComponent, DeployListener {
       throw new IllegalStateException("double initialization");
     }
     INSTANCE = this;
-    myLoaderManager.addListener(this);
+    myLanguageRegistry.addRegistryListener(this);
   }
 
   @Override
   public void dispose() {
     myCachedLanguages = null;
     myNamespaceIndices.clear();
-    myLoaderManager.removeListener(this);
+    myLanguageRegistry.removeRegistryListener(this);
     INSTANCE = null;
   }
 
   @Override
-  public void onUnloaded(Set<ReloadableModule> unloadedModules, @NotNull ProgressMonitor monitor) {
+  public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
     initCache();
   }
 
   @Override
-  public void onLoaded(Set<ReloadableModule> loadedModules, @NotNull ProgressMonitor monitor) {
+  public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
     // do nothing
   }
 
@@ -145,7 +148,7 @@ public class LanguageScopeFactory implements CoreComponent, DeployListener {
     }
 
     BitSet nsBitSet = new BitSet(myBits.intValue());
-    for (SLanguage lng: new SLanguageHierarchy(langs).getExtended()) {
+    for (SLanguage lng: new SLanguageHierarchy(myLanguageRegistry, langs).getExtended()) {
       updateNamespaceBit(nsBitSet, lng.getQualifiedName());
     }
     LanguageScope langScope = new LanguageScope(this, nsBitSet);
@@ -214,7 +217,7 @@ public class LanguageScopeFactory implements CoreComponent, DeployListener {
     public SortedIdentityList(Collection<T> original) {
       this.myList = new ArrayList<>(original.size());
       for (T o: original) {
-        myList.add(new IdentityWrapper<T>(o));
+        myList.add(new IdentityWrapper<>(o));
       }
       Collections.sort(myList);
     }

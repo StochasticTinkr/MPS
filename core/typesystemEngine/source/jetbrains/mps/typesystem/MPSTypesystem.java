@@ -16,16 +16,22 @@
 package jetbrains.mps.typesystem;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.languageScope.LanguageScopeFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public final class MPSTypesystem extends ComponentPlugin {
+public final class MPSTypesystem extends ComponentPlugin implements ComponentHost {
   private final LanguageRegistry myLanguageRegistry;
   private final ClassLoaderManager myClassLoaderManager;
+  private LanguageScopeFactory myLanguageScopeFactory;
+  private TypeChecker myTypeChecker;
+  private TypeContextManager myTypeContextManager;
 
   public MPSTypesystem(@NotNull LanguageRegistry languageRegistry, @NotNull ClassLoaderManager classLoaderManager) {
     myLanguageRegistry = languageRegistry;
@@ -35,9 +41,24 @@ public final class MPSTypesystem extends ComponentPlugin {
   @Override
   public void init() {
     super.init();
-    init(new LanguageScopeFactory(myClassLoaderManager));
-    TypeChecker typeChecker = init(new TypeChecker(myLanguageRegistry));
-    init(new TypeContextManager(typeChecker, myClassLoaderManager));
+    myLanguageScopeFactory = init(new LanguageScopeFactory(myLanguageRegistry));
+    myTypeChecker = init(new TypeChecker(myLanguageRegistry));
+    myTypeContextManager = init(new TypeContextManager(myTypeChecker, myClassLoaderManager));
+  }
+
+  @Nullable
+  @Override
+  public <T extends CoreComponent> T findComponent(@NotNull Class<T> componentClass) {
+    if (LanguageScopeFactory.class.equals(componentClass)) {
+      return componentClass.cast(myLanguageScopeFactory);
+    }
+    if (TypeChecker.class.equals(componentClass)) {
+      return componentClass.cast(myTypeChecker);
+    }
+    if (TypeContextManager.class.equals(componentClass)) {
+      return componentClass.cast(myTypeContextManager);
+    }
+    return null;
   }
 }
 
