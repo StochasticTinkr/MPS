@@ -26,6 +26,8 @@ import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import jetbrains.mps.FilteredGlobalScope;
+import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.findUsages.CompositeFinder;
@@ -43,7 +45,6 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleCollector;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyCellState;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.LanguageTableCellRenderer;
@@ -60,6 +61,7 @@ import jetbrains.mps.project.ModuleInstanceCondition;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.VisibleModuleCondition;
 import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.scope.ConditionalScope;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -73,6 +75,7 @@ import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NotCondition;
+import jetbrains.mps.workbench.choose.ModelScopeIterable;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -282,7 +285,12 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          List<SModelReference> list = new ModelChooser(myProject).compute();
+          // XXX much like ModelImportHelper#addImport (scope-wise), might be worth a refactoring
+          ArrayList<SModelReference> models = new ArrayList<>(200);
+          Condition<SModel> notTransient = m -> !(m instanceof TransientSModel);
+          SearchScope globalScope = new ConditionalScope(new FilteredGlobalScope(), null, notTransient);
+          new ModelScopeIterable(globalScope, myProject.getRepository()).forEach(models::add);
+          List<SModelReference> list = CommonChoosers.showDialogModelCollectionChooser(ProjectHelper.toIdeaProject(myProject), null, models);
           for (SModelReference reference : list) {
             if (!myModelDescriptor.getReference().equals(reference)) {
               myImportedModels.addItem(reference);

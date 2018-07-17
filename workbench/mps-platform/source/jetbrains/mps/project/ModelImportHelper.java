@@ -101,6 +101,7 @@ public class ModelImportHelper {
    */
   public void addImport(@NotNull SModel model) {
     SearchScope localScope = myProject.getScope();
+    // XXX identical scope is in ModelPropertiesConfigurable to add imports from model properties dialog
     Condition<SModel> notTransient = m -> !(m instanceof TransientSModel);
     SearchScope globalScope = new ConditionalScope(new FilteredGlobalScope(), null, notTransient);
     SRepository repo = myProject.getRepository();
