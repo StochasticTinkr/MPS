@@ -7217,14 +7217,14 @@
       <node id="237453569860912304" at="526,142,527,146" concept="2" />
       <node id="237453569860912304" at="529,122,530,146" concept="2" />
       <node id="237453569860912304" at="536,11,537,43" concept="2" />
-      <node id="237453569860912304" at="537,43,538,126" concept="2" />
-      <node id="237453569860912304" at="538,126,539,131" concept="2" />
-      <node id="237453569860912304" at="539,131,540,33" concept="2" />
+      <node id="237453569860912304" at="537,43,538,116" concept="2" />
+      <node id="237453569860912304" at="538,116,539,119" concept="2" />
+      <node id="237453569860912304" at="539,119,540,33" concept="2" />
       <node id="237453569860912304" at="540,33,541,31" concept="2" />
       <node id="237453569860912304" at="542,17,543,42" concept="2" />
-      <node id="237453569861035046" at="546,58,547,65" concept="6" />
+      <node id="237453569861035046" at="546,48,547,65" concept="6" />
       <node id="237453569861027446" at="547,65,548,33" concept="7" />
-      <node id="237453569861039932" at="550,60,551,65" concept="6" />
+      <node id="237453569861039932" at="550,48,551,65" concept="6" />
       <node id="237453569861039942" at="551,65,552,33" concept="7" />
       <node id="237453569860912304" at="59,0,61,0" concept="3" trace="myNode" />
       <node id="237453569860912304" at="101,0,103,0" concept="3" trace="myNode" />
@@ -7318,8 +7318,8 @@
       <node id="237453569860912304" at="486,0,490,0" concept="1" trace="differentTypeOfChildrenListHandler_d0l3p8_b0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="237453569860912304" at="491,0,495,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="237453569860912304" at="524,134,528,9" concept="4" />
-      <node id="237453569860912304" at="546,0,550,0" concept="5" trace="getEditorHints_d0l3p8_a1a#()Ljava/lang/Iterable;" />
-      <node id="237453569860912304" at="550,0,554,0" concept="5" trace="getEditorHints_d0l3p8_a1a_0#()Ljava/lang/Iterable;" />
+      <node id="237453569860912304" at="546,0,550,0" concept="5" trace="getEditorHints0#()Ljava/lang/Iterable;" />
+      <node id="237453569860912304" at="550,0,554,0" concept="5" trace="getEditorHints1#()Ljava/lang/Iterable;" />
       <node id="237453569860912304" at="67,0,72,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="237453569860912304" at="504,0,509,0" concept="5" trace="createNodeCell#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="237453569860942602" at="194,0,200,0" concept="5" trace="handleAction_impl#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -7476,10 +7476,10 @@
       <scope id="237453569860942905" at="465,0,467,0" />
       <scope id="237453569860912304" at="486,97,488,25" />
       <scope id="237453569860912304" at="525,34,527,146" />
-      <scope id="237453569860912304" at="546,58,548,33">
+      <scope id="237453569860912304" at="546,48,548,33">
         <var name="var" id="237453569861035047" />
       </scope>
-      <scope id="237453569860912304" at="550,60,552,33">
+      <scope id="237453569860912304" at="550,48,552,33">
         <var name="var" id="237453569861039933" />
       </scope>
       <scope id="237453569860912304" at="73,0,76,0" />

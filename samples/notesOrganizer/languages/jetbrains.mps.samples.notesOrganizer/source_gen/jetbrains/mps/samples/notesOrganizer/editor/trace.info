@@ -2101,8 +2101,8 @@
       <node id="3892287256989923364" at="337,229,338,211" concept="6" />
       <node id="3892287256989938322" at="340,41,341,357" concept="7" />
       <node id="8908453262579867233" at="347,11,348,43" concept="2" />
-      <node id="8908453262579867233" at="348,43,349,126" concept="2" />
-      <node id="8908453262579867233" at="349,126,350,50" concept="2" />
+      <node id="8908453262579867233" at="348,43,349,116" concept="2" />
+      <node id="8908453262579867233" at="349,116,350,50" concept="2" />
       <node id="8908453262579867233" at="350,50,351,33" concept="2" />
       <node id="8908453262579867233" at="351,33,352,31" concept="2" />
       <node id="8908453262579867233" at="353,17,354,42" concept="2" />
@@ -2129,7 +2129,7 @@
       <node id="8908453262579867233" at="301,0,304,0" concept="5" trace="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8908453262579867233" at="330,9,333,9" concept="4" />
       <node id="3892287256989937901" at="340,0,343,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3892287256988401409" at="357,58,360,7" concept="4" />
+      <node id="3892287256988401409" at="357,48,360,7" concept="4" />
       <node id="3892287256988433547" at="360,7,363,7" concept="4" />
       <node id="8908453262579867233" at="370,0,373,0" concept="1" trace="RangeSelectionFilter_uvqhkl_i0#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="3892287256989937901" at="377,0,380,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -2162,7 +2162,7 @@
       <node id="8908453262579867233" at="313,251,322,7" concept="11" />
       <node id="8908453262579867233" at="336,0,345,0" concept="5" trace="filter#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="8908453262579867233" at="346,39,355,7" concept="11" />
-      <node id="8908453262579867233" at="357,0,366,0" concept="5" trace="getEditorHints_uvqhkl_a8a#()Ljava/lang/Iterable;" />
+      <node id="8908453262579867233" at="357,0,366,0" concept="5" trace="getEditorHints0#()Ljava/lang/Iterable;" />
       <node id="8908453262579867233" at="373,0,382,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="8908453262579867263" at="134,0,144,0" concept="5" trace="createConstant_1#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="8908453262579867233" at="183,0,193,0" concept="5" trace="createCollection_1#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -2295,7 +2295,7 @@
         <var name="notes" id="3892287256989098104" />
         <var name="selectedCategory" id="3892287256989923365" />
       </scope>
-      <scope id="8908453262579867233" at="357,58,364,45" />
+      <scope id="8908453262579867233" at="357,48,364,45" />
       <scope id="8908453262579867233" at="373,44,380,10">
         <var name="notes" id="3892287256989098104" />
         <var name="selectedCategory" id="3892287256989923365" />

@@ -402,7 +402,7 @@ import java.util.Collections;
     public EditorCell createCell() {
       try {
         getCellFactory().pushCellContext();
-        getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_fxz4pq_a9c0()).toGenericArray(String.class));
+        getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints0()).toGenericArray(String.class));
         return setCellContext(super.createCell());
       } finally {
         getCellFactory().popCellContext();
@@ -425,7 +425,7 @@ import java.util.Collections;
     protected String getNoTargetText() {
       return "<no conditionallyProjectedChild>";
     }
-    private Iterable<String> getEditorHints_fxz4pq_a9c0() {
+    private Iterable<String> getEditorHints0() {
       if (SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x51568a5db0cc3a79L, 0x1b06bb955221551cL, "projectionType"), "rich", null)) {
         return Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich");
       } else if (SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x51568a5db0cc3a79L, 0x1b06bb955221551cL, "projectionType"), "compact", null)) {
@@ -559,8 +559,8 @@ import java.util.Collections;
     public EditorCell createCell() {
       try {
         getCellFactory().pushCellContext();
-        getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_fxz4pq_a3m2a()).toGenericArray(String.class));
-        getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints_fxz4pq_a3m2a_0()).toGenericArray(String.class));
+        getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints1()).toGenericArray(String.class));
+        getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints2()).toGenericArray(String.class));
         return setCellContext(super.createCell());
       } finally {
         getCellFactory().popCellContext();
@@ -583,10 +583,10 @@ import java.util.Collections;
     protected String getNoTargetText() {
       return "<no conditionallyRichOrCompactChild>";
     }
-    private Iterable<String> getEditorHints_fxz4pq_a3m2a() {
+    private Iterable<String> getEditorHints1() {
       return (SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x51568a5db0cc3a79L, 0x1b06bb955221551dL, "projectAsCompact")) ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact") : Collections.<String>emptyList());
     }
-    private Iterable<String> getEditorHints_fxz4pq_a3m2a_0() {
+    private Iterable<String> getEditorHints2() {
       return (SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x51568a5db0cc3a79L, 0x1b06bb955221551dL, "projectAsCompact")) ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich") : Collections.<String>emptyList());
     }
   }

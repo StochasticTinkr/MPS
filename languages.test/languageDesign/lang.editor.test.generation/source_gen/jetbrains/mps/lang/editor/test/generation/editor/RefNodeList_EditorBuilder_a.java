@@ -535,19 +535,19 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     protected void createInnerCells() {
       try {
         getCellFactory().pushCellContext();
-        getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_d0l3p8_a1a()).toGenericArray(String.class));
-        getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints_d0l3p8_a1a_0()).toGenericArray(String.class));
+        getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints0()).toGenericArray(String.class));
+        getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints1()).toGenericArray(String.class));
         super.createInnerCells();
         setInnerCellsContext();
       } finally {
         getCellFactory().popCellContext();
       }
     }
-    private Iterable<String> getEditorHints_d0l3p8_a1a() {
+    private Iterable<String> getEditorHints0() {
       boolean var = getEditorContext() != null && myNode != null;
       return (var ? null : null);
     }
-    private Iterable<String> getEditorHints_d0l3p8_a1a_0() {
+    private Iterable<String> getEditorHints1() {
       boolean var = getEditorContext() != null && myNode != null;
       return (var ? null : null);
     }

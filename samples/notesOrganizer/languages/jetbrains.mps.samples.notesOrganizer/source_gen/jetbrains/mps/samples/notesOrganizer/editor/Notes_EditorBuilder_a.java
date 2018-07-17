@@ -346,7 +346,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
     protected void createInnerCells() {
       try {
         getCellFactory().pushCellContext();
-        getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_uvqhkl_a8a()).toGenericArray(String.class));
+        getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints0()).toGenericArray(String.class));
         getCellFactory().removeCellContextHints();
         super.createInnerCells();
         setInnerCellsContext();
@@ -354,7 +354,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
         getCellFactory().popCellContext();
       }
     }
-    private Iterable<String> getEditorHints_uvqhkl_a8a() {
+    private Iterable<String> getEditorHints0() {
       if (SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x7ba12f0b1640efd3L, "presentation"), "compact", "default")) {
         return ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.samples.notesOrganizer.editor.NotesHints.compact");
       }

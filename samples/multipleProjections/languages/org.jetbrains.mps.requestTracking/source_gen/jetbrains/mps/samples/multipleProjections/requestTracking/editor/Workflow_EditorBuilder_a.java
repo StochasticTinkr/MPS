@@ -142,7 +142,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setCellId("Collection_yhw0dy_d0");
     try {
       getCellFactory().pushCellContext();
-      getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_yhw0dy_a3a()).toGenericArray(String.class));
+      getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints0()).toGenericArray(String.class));
       editorCell.addEditorCell(createRefNode_0());
       setInnerCellsContext(editorCell);
     } finally {
@@ -150,7 +150,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     }
     return editorCell;
   }
-  private Iterable<String> getEditorHints_yhw0dy_a3a() {
+  private Iterable<String> getEditorHints0() {
     return (SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x8d18a45bac7e4d84L, 0xa53975f1d720b09bL, 0x3301f82dc7d2e4f6L, 0x3301f82dc7d4ec4cL, "presentation"), "tabular", "structural") ? ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular") : Collections.<String>emptyList());
   }
   private EditorCell createRefNode_0() {
