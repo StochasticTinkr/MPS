@@ -7932,13 +7932,28 @@
           <property role="2qtEX9" value="name" />
           <node concept="3zFVjK" id="6XH1yoMtVMx" role="3zH0cK">
             <node concept="3clFbS" id="6XH1yoMtVMy" role="2VODD2">
-              <node concept="3clFbF" id="6XH1yoMtWmb" role="3cqZAp">
-                <node concept="2OqwBi" id="6XH1yoMtWmc" role="3clFbG">
-                  <node concept="1iwH7S" id="6XH1yoMtWmd" role="2Oq$k0" />
-                  <node concept="2piZGk" id="6XH1yoMtWme" role="2OqNvi">
-                    <node concept="30H73N" id="6XH1yoMtWmf" role="2pr8EU" />
-                    <node concept="Xl_RD" id="6XH1yoMtWmg" role="2piZGb">
+              <node concept="3clFbF" id="3B90mCswYgQ" role="3cqZAp">
+                <node concept="2OqwBi" id="3B90mCswZ5x" role="3clFbG">
+                  <node concept="1iwH7S" id="3B90mCswYgO" role="2Oq$k0" />
+                  <node concept="32eq0B" id="3B90mCswZox" role="2OqNvi">
+                    <property role="32f$Ya" value="false" />
+                    <node concept="Xl_RD" id="6XH1yoMtWmg" role="32eq0w">
                       <property role="Xl_RC" value="Inline_Builder" />
+                    </node>
+                    <node concept="2OqwBi" id="3B90mCsx207" role="32eq0x">
+                      <node concept="2OqwBi" id="3B90mCsx0IH" role="2Oq$k0">
+                        <node concept="30H73N" id="3B90mCsx0wv" role="2Oq$k0" />
+                        <node concept="2Xjw5R" id="3B90mCsx1qO" role="2OqNvi">
+                          <node concept="1xMEDy" id="3B90mCsx1qQ" role="1xVPHs">
+                            <node concept="chp4Y" id="3B90mCsx1$a" role="ri$Ld">
+                              <ref role="cht4Q" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2qgKlT" id="3B90mCsx2s5" role="2OqNvi">
+                        <ref role="37wK5l" to="tpcb:M76vXnqh08" resolve="getTopAncestorCellModel" />
+                      </node>
                     </node>
                   </node>
                 </node>

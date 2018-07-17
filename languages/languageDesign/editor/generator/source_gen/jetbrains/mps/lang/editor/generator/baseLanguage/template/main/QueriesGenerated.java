@@ -548,7 +548,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return _context.createUniqueName("_StyleParameter_QueryFunction_", _context.getNode());
   }
   public static Object propertyMacro_GetValue_29_0(final PropertyMacroContext _context) {
-    return _context.createUniqueName("Inline_Builder", _context.getNode());
+    return _context.createIndexedName("Inline_Builder", EditorCellModel__BehaviorDescriptor.getTopAncestorCellModel_idM76vXnqh08.invoke(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), false, false)), false);
   }
   public static Object propertyMacro_GetValue_30_0(final PropertyMacroContext _context) {
     String name = SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")) + "SingleRoleHandler_";
