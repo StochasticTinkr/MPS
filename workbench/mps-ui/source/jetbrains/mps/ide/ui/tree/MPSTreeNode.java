@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.ide.ui.tree;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
-import jetbrains.mps.ide.icons.IdeIcons;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -49,8 +49,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   private MPSTree myTree;
   private boolean myAdded;
 
-  private Icon myCollapsedIcon = IdeIcons.CLOSED_FOLDER;
-  private Icon myExpandedIcon = IdeIcons.OPENED_FOLDER;
+  private Icon myIcon = AllIcons.Nodes.Folder;
   private String myNodeIdentifier;
   private String myText;
   private String myAdditionalText = null;
@@ -400,24 +399,15 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   }
 
   public final Icon getIcon(boolean expanded) {
-    if (expanded) {
-      return myExpandedIcon;
-    } else {
-      return myCollapsedIcon;
-    }
+    return myIcon;
   }
 
   public final void setIcon(Icon newIcon, boolean expanded) {
-    if (expanded) {
-      myExpandedIcon = newIcon;
-    } else {
-      myCollapsedIcon = newIcon;
-    }
+    myIcon = newIcon;
   }
 
   public final void setIcon(Icon newIcon) {
     setIcon(newIcon, true);
-    setIcon(newIcon, false);
   }
 
   public final Color getColor() {

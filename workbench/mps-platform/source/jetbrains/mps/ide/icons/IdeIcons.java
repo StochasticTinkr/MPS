@@ -51,48 +51,14 @@ public class IdeIcons {
   public static final Icon DEVKIT_ICON = FileIcons.DEVKIT_ICON;
   public static final Icon GENERATOR_ICON = Nodes.Generator;
 
-  /**
-   * Use more specific icon.
-   * {@link AllIcons.Nodes#ModuleGroup} can be used as general replacement.
-   */
-  @Deprecated
-  @ToRemove(version = 2017.1)
-  public static final Icon PROJECT_MODELS_ICON = AllIcons.Nodes.ModuleGroup;
-  /**
-   * Use more specific icon.
-   * {@link AllIcons.Nodes#ModuleGroup} can be used as general replacement.
-   */
-  @Deprecated
-  @ToRemove(version = 2017.1)
-  public static final Icon PROJECT_MODELS_EXPANDED_ICON = AllIcons.Nodes.ModuleGroup;
-  /**
-   * @deprecated use {@link Nodes#TransientModule} instead
-  * */
-  @Deprecated
-  @ToRemove(version = 2017.1)
-  public static final Icon TRANSIENT_MODELS_ICON = MPSIcons.Nodes.TransientModule;
-
   public static final Icon PROPERTIES_ICON = General.Settings;
   public static final Icon INSPECTOR_ICON = Toolwindows.ToolWindowInspection;
 
   public static final Icon APPLY = Diff.Arrow;
   public static final Icon APPLY_RIGHT= Diff.ArrowRight;
   public static final Icon EXCLUDE = Diff.Remove;
-  public static final Icon OPENED_FOLDER = AllIcons.Nodes.TreeOpen;
-  public static final Icon CLOSED_FOLDER = AllIcons.Nodes.TreeClosed;
+  public static final Icon OPENED_FOLDER = AllIcons.Nodes.Folder;
+  public static final Icon CLOSED_FOLDER = AllIcons.Nodes.Folder;
 
   public static final Icon REFERENCE_ICON = Actions.Forward;
-
-  /**
-   * @deprecated use {@link AllIcons.Nodes#ModuleGroup} directly
-   */
-  @Deprecated
-  @ToRemove(version = 2017.1)
-  public static final Icon MODULE_GROUP_CLOSED = AllIcons.Nodes.ModuleGroup;
-  /**
-   * @deprecated use {@link AllIcons.Nodes#ModuleGroup} directly
-   */
-  @Deprecated
-  @ToRemove(version = 2017.1)
-  public static final Icon MODULE_GROUP_OPENED = AllIcons.Nodes.ModuleGroup;
 }

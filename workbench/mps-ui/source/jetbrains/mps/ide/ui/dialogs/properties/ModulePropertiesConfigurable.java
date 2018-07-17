@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties;
 
-import com.intellij.icons.AllIcons;
+import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.ide.util.BrowseFilesListener;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
@@ -1052,7 +1052,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private JBTable myTable;
 
     public GeneratorAdvancesTab(Generator generator, GeneratorDependencyProvider depGenerators) {
-      super(PropertiesBundle.message("module.generator.title"), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("module.generator.tip"));
+      super(PropertiesBundle.message("module.generator.title"), General.GeneratorPriorities, PropertiesBundle.message("module.generator.tip"));
       myGenerator = generator;
       myDepGenerators = depGenerators;
     }
@@ -1415,7 +1415,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   public class AddFacetsTab extends BaseTab {
 
     public AddFacetsTab() {
-      super(PropertiesBundle.message("module.facets.title"), AllIcons.General.Settings, PropertiesBundle.message("module.facets.tip"));
+      super(PropertiesBundle.message("module.facets.title"), Nodes.Plugin, PropertiesBundle.message("module.facets.tip"));
     }
 
     @Override

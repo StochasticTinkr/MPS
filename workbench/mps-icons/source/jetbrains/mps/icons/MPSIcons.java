@@ -16,6 +16,7 @@
 package jetbrains.mps.icons;
 
 import com.intellij.icons.AllIcons;
+import com.intellij.icons.AllIcons.Toolwindows;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.ui.LayeredIcon;
 
@@ -23,6 +24,7 @@ import javax.swing.Icon;
 
 public class MPSIcons {
   public static class Ant {
+    // Copy of icons.AntIcons#Build from ant plugin
     public static final Icon Build = IconLoader.getIcon("/ant/build.png");
   }
 
@@ -53,19 +55,18 @@ public class MPSIcons {
   }
 
   public static class Debug {
-    public static final Icon AddBreakPoint = IconLoader.getIcon("/debugger/addBreakpoint.png");
-    public static final Icon DeleteBreakpoint = IconLoader.getIcon("/debugger/deleteBreakpoint.png");
+    public static final Icon AddBreakPoint = IconLoader.getIcon("/debugger/addBreakpoint.svg");
+    public static final Icon DeleteBreakpoint = IconLoader.getIcon("/debugger/deleteBreakpoint.svg");
     public static final Icon GoToSource = IconLoader.getIcon("/debugger/goToSource.png");
   }
 
   public static class General {
-    @Deprecated /* Will be removed after MPS 2017.1 incl minor versions */ public static final Icon Block = IconLoader.getIcon("/general/block.png");
     public static final Icon Dependencies = IconLoader.getIcon("/general/dependencies.png");
-    @Deprecated /* Will be removed after MPS 2017.1 incl minor versions */ public static final Icon ErrorOk = IconLoader.getIcon("/general/errorsOK.png");
     public static final Icon ModelChecker = IconLoader.getIcon("/general/modelChecker.png");
     public static final Icon Runtime = IconLoader.getIcon("/general/runtime.png");
-    @Deprecated /* Will be removed after MPS 2017.1 incl minor versions */ public static final Icon WarningsFound = IconLoader.getIcon("/general/warningsFound.png");
-    @Deprecated /* Will be removed after MPS 2017.1 incl minor versions */ public static final Icon ErrorsFound = IconLoader.getIcon("/general/errorsFound.png");
+    public static final Icon Java = IconLoader.getIcon("/general/java.png");
+    public static final Icon GeneratorPriorities = IconLoader.getIcon("/general/generatorsPriorities.png");
+    public static final Icon UsedLanguages = IconLoader.getIcon("/general/usedLanguages.png");
   }
 
   public static class Generator {
@@ -92,17 +93,14 @@ public class MPSIcons {
     public static final Icon Behavior = IconLoader.getIcon("/nodes/behavior.png");
     public static final Icon Constraint = IconLoader.getIcon("/nodes/constraint.png");
     public static final Icon DataFlow = IconLoader.getIcon("/nodes/dataFlow.png");
+    public static final Icon Default = IconLoader.getIcon("/nodes/default.png");
     public static final Icon DevKit = IconLoader.getIcon("/nodes/devkit.png");
     public static final Icon Editor = IconLoader.getIcon("/nodes/editor.png");
     public static final Icon Generator = IconLoader.getIcon("/nodes/generator.png");
     public static final Icon Language = IconLoader.getIcon("/nodes/language.png");
     public static final Icon MappingConfig = IconLoader.getIcon("/nodes/mappingConf.png");
     public static final Icon Model = IconLoader.getIcon("/nodes/model.png");
-    @Deprecated /* To remove in 3.3 (no ToRemove annotation to avoid dependency)*/
-    public static final Icon ModelOverlay = IconLoader.getIcon("/nodes/model-overlay.png");
     public static final Icon Node = IconLoader.getIcon("/nodes/node.png");
-    @Deprecated /* To remove in 2017.1, use more specific icon or AllIcons.Nodes#ModuleGroup*/
-    public static final Icon ProjectModels = IconLoader.getIcon("/nodes/projectModels.png");
     public static final Icon Reduction = IconLoader.getIcon("/nodes/reduction.png");
     public static final Icon Refactoring = IconLoader.getIcon("/nodes/refactoring.png");
     public static final Icon RootNode = IconLoader.getIcon("/nodes/rootNode.png");
@@ -137,10 +135,12 @@ public class MPSIcons {
   }
 
   public static class ToolWindows {
-    public static final Icon ClassHierarchyView = IconLoader.getIcon("/toolWindows/classHierarchyView.png");
+    @Deprecated /* Will be removed after MPS 2018.2 incl minor versions. Use com.intellij.icons.AllIcons.Toolwindows.ToolWindowHierarchy instead*/
+    public static final Icon ClassHierarchyView = Toolwindows.ToolWindowHierarchy;
     public static final Icon Default = IconLoader.getIcon("/toolWindows/default.png");
     public static final Icon ModelChecker = IconLoader.getIcon("/toolWindows/modelChecker.png");
-    public static final Icon OpenTerminal_13x13 = IconLoader.getIcon("/toolWindows/OpenTerminal_13x13.png");
+    // Copy of icons.TerminalIcons#OpenTerminal_13x13 from terminal plugin
+    public static final Icon OpenTerminal_13x13 = IconLoader.getIcon("/toolWindows/OpenTerminal_13x13.svg");
     public static final Icon TypeTraceView = IconLoader.getIcon("/toolWindows/typeTraceView.png");
     public static final Icon CellExplorer = IconLoader.getIcon("/toolWindows/cellExplorer.png");
   }

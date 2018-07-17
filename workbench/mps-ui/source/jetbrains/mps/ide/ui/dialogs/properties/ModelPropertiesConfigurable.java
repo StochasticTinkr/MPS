@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
@@ -42,7 +43,6 @@ import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleRefHolder;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleCollector;
@@ -497,7 +497,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     private UsedLangsTableModel myEngagedLanguagesModel;
 
     public InfoTab() {
-      super(PropertiesBundle.message("model.info.title"), IdeIcons.DEFAULT_ICON,
+      super(PropertiesBundle.message("model.info.title"), AllIcons.General.ExternalToolsSmall,
           PropertiesBundle.message("model.info.tip"));
       myIsDefSModelDescr = myInPlugin && myModelDescriptor instanceof DefaultSModelDescriptor;
     }

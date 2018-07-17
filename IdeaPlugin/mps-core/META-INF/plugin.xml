@@ -203,7 +203,6 @@
     <analyzeStacktraceFilter implementation="jetbrains.mps.ide.platform.actions.MPSStackTraceFilter" order="first"/>
     <navbar implementation="jetbrains.mps.idea.core.navbar.MPSNavBarExtension" id="MPSNavbar"/>
     <lang.parserDefinition language="MPS" implementationClass="jetbrains.mps.idea.core.fileType.MPSParserDefinition"/>
-    <iconLayerProvider implementation="jetbrains.mps.idea.core.psi.impl.ModelFileIconLayerProvider"/>
     <getDataRule key="MPS_SModel" implementationClass="jetbrains.mps.idea.core.data.ModelDataRule"/>
     <getDataRule key="MPS_SModel_List" implementationClass="jetbrains.mps.idea.core.data.ModelsDataRule"/>
     <projectService serviceInterface="com.intellij.psi.search.ProjectScopeBuilder"

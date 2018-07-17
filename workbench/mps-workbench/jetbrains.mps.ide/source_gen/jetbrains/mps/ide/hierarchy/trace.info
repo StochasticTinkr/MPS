@@ -733,7 +733,7 @@
   </root>
   <root nodeRef="r:8a82b7a4-1180-4262-8f18-8c96a5d3ac16(jetbrains.mps.ide.hierarchy)/5797068448049411442">
     <file name="BaseLanguageHierarchyViewTool.java">
-      <node id="5797068448049411493" at="22,57,23,83" concept="15" />
+      <node id="5797068448049411493" at="22,57,23,84" concept="15" />
       <node id="3499818918522263623" at="26,82,27,179" concept="10" />
       <node id="2939130724184469107" at="27,179,28,32" concept="4" />
       <node id="3499818918522335321" at="28,32,29,68" concept="4" />
@@ -800,7 +800,7 @@
       <node id="5797068448049411525" at="39,51,64,7" concept="8" />
       <node id="5797068448049411461" at="37,0,67,0" concept="9" trace="getParents#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;)Ljava/util/Set;" />
       <node id="5797068448049411478" at="89,0,122,0" concept="9" trace="getDescendants#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;)Ljava/util/Set;" />
-      <scope id="5797068448049411492" at="22,57,23,83" />
+      <scope id="5797068448049411492" at="22,57,23,84" />
       <scope id="5797068448049411591" at="45,198,46,35" />
       <scope id="5797068448049411614" at="51,205,52,44" />
       <scope id="5797068448049411557" at="60,205,61,44" />
