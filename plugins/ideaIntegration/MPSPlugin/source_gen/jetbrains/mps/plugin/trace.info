@@ -38,6 +38,144 @@
       <unit id="1710949916357471507" at="10,0,27,0" name="jetbrains.mps.plugin.IdeaGoToDeclarationInitializer" />
     </file>
   </root>
+  <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/2191995028863072592">
+    <file name="InstallIDEAPlugin_Action.java">
+      <node id="2191995028863072592" at="30,0,31,0" concept="14" trace="ICON" />
+      <node id="2191995028863072592" at="32,37,33,52" concept="16" />
+      <node id="2191995028863072592" at="33,52,34,35" concept="5" />
+      <node id="2191995028863072592" at="34,35,35,40" concept="5" />
+      <node id="2191995028863072592" at="38,32,39,16" concept="11" />
+      <node id="2191995028863072592" at="43,53,44,19" concept="11" />
+      <node id="2191995028863072838" at="46,5,47,55" concept="10" />
+      <node id="8898893144448210330" at="48,22,49,21" concept="11" />
+      <node id="2191995028863072592" at="51,5,52,16" concept="11" />
+      <node id="2191995028863072841" at="55,96,56,225" concept="10" />
+      <node id="2191995028863072851" at="56,225,57,71" concept="10" />
+      <node id="2191995028863072859" at="58,28,59,13" concept="11" />
+      <node id="2191995028863072865" at="61,32,62,25" concept="5" />
+      <node id="2191995028863072875" at="64,9,65,54" concept="5" />
+      <node id="2191995028863072879" at="65,54,66,141" concept="5" />
+      <node id="2191995028863072889" at="67,29,68,160" concept="5" />
+      <node id="2191995028863072596" at="71,56,72,93" concept="10" />
+      <node id="2191995028863072604" at="73,39,74,18" concept="11" />
+      <node id="2191995028863072611" at="76,27,77,34" concept="11" />
+      <node id="2191995028863072614" at="78,5,79,81" concept="11" />
+      <node id="2191995028863072627" at="81,67,82,37" concept="10" />
+      <node id="2191995028863072631" at="82,37,83,54" concept="10" />
+      <node id="2191995028863072636" at="83,54,84,132" concept="10" />
+      <node id="2191995028863072651" at="84,132,85,91" concept="10" />
+      <node id="1206102099919032787" at="85,91,86,88" concept="10" />
+      <node id="2191995028863072663" at="86,88,87,96" concept="10" />
+      <node id="2191995028863072676" at="90,61,91,71" concept="5" />
+      <node id="2191995028863072696" at="95,63,96,172" concept="5" />
+      <node id="2191995028863072704" at="96,172,97,18" concept="11" />
+      <node id="2191995028863072718" at="98,73,99,89" concept="11" />
+      <node id="2191995028863072723" at="100,5,101,0" concept="13" />
+      <node id="2191995028863072747" at="105,46,106,23" concept="11" />
+      <node id="2191995028863072753" at="107,9,108,104" concept="11" />
+      <node id="2191995028863072768" at="110,6,111,69" concept="5" />
+      <node id="2191995028863072773" at="111,69,112,40" concept="5" />
+      <node id="2191995028863072778" at="112,40,113,0" concept="13" />
+      <node id="2191995028863072779" at="113,0,114,102" concept="10" />
+      <node id="2191995028863072786" at="114,102,115,99" concept="5" />
+      <node id="2191995028863072794" at="115,99,116,140" concept="10" />
+      <node id="2191995028863072804" at="116,140,117,62" concept="10" />
+      <node id="2191995028863072813" at="117,62,118,94" concept="5" />
+      <node id="2191995028863072819" at="118,94,119,29" concept="0" />
+      <node id="2191995028863072825" at="119,29,120,74" concept="11" />
+      <node id="5068214522080967978" at="122,0,123,0" concept="14" trace="REGEXP_gyxeh4_a0a4a7" />
+      <node id="2089442845145561393" at="123,0,124,0" concept="14" trace="REGEXP_gyxeh4_a0a4a7_0" />
+      <node id="2191995028863072592" at="42,95,45,5" concept="8" />
+      <node id="8898893144448210330" at="47,55,50,7" concept="8" />
+      <node id="2191995028863072857" at="57,71,60,5" concept="8" />
+      <node id="2191995028863072863" at="60,5,63,5" concept="8" />
+      <node id="2191995028863072602" at="72,93,75,5" concept="8" />
+      <node id="2191995028863072609" at="75,5,78,5" concept="8" />
+      <node id="1206102099919032770" at="89,32,92,9" concept="8" />
+      <node id="2191995028863072745" at="104,65,107,9" concept="8" />
+      <node id="2191995028863072592" at="37,0,41,0" concept="9" trace="isDumbAware#()Z" />
+      <node id="2191995028863072592" at="32,0,37,0" concept="3" trace="InstallIDEAPlugin_Action#()V" />
+      <node id="2191995028863072674" at="88,60,93,7" concept="8" />
+      <node id="2191995028863072838" at="45,5,51,5" concept="1" />
+      <node id="2191995028863072873" at="63,5,69,5" concept="18" />
+      <node id="2191995028863072694" at="94,5,100,5" concept="8" />
+      <node id="2191995028863072670" at="87,96,94,5" concept="7" />
+      <node id="2191995028863072737" at="103,0,110,0" concept="9" trace="isFileVisible#(Lcom/intellij/openapi/vfs/VirtualFile;Z)Z" />
+      <node id="2191995028863072724" at="101,0,110,6" concept="10" />
+      <node id="2191995028863072593" at="71,0,81,0" concept="9" trace="getTargetDir#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljava/io/File;" />
+      <node id="2191995028863072592" at="41,0,54,0" concept="9" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <node id="2191995028863072592" at="54,0,71,0" concept="9" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="2191995028863072624" at="81,0,122,0" concept="9" trace="getTargetIdeaInstallDir#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljava/io/File;" />
+      <scope id="2191995028863072592" at="38,32,39,16" />
+      <scope id="2191995028863072592" at="43,53,44,19" />
+      <scope id="8898893144448210330" at="48,22,49,21" />
+      <scope id="2191995028863072858" at="58,28,59,13" />
+      <scope id="2191995028863072864" at="61,32,62,25" />
+      <scope id="2191995028863072885" at="67,0,68,160">
+        <var name="e" id="2191995028863072886" />
+      </scope>
+      <scope id="2191995028863072888" at="67,29,68,160" />
+      <scope id="2191995028863072603" at="73,39,74,18" />
+      <scope id="2191995028863072610" at="76,27,77,34" />
+      <scope id="1206102099919032771" at="90,61,91,71" />
+      <scope id="2191995028863072717" at="98,73,99,89" />
+      <scope id="2191995028863072746" at="105,46,106,23" />
+      <scope id="2191995028863072874" at="64,9,66,141" />
+      <scope id="2191995028863072695" at="95,63,97,18" />
+      <scope id="2191995028863072592" at="32,37,35,40" />
+      <scope id="2191995028863072675" at="89,32,92,9" />
+      <scope id="2191995028863072592" at="37,0,41,0" />
+      <scope id="2191995028863072838" at="46,5,50,7">
+        <var name="p" id="2191995028863072838" />
+      </scope>
+      <scope id="2191995028863072744" at="104,65,108,104" />
+      <scope id="2191995028863072592" at="32,0,37,0" />
+      <scope id="2191995028863072673" at="88,60,93,7" />
+      <scope id="2191995028863072670" at="87,96,94,5">
+        <var name="child" id="2191995028863072671" />
+      </scope>
+      <scope id="2191995028863072737" at="103,0,110,0">
+        <var name="b" id="2191995028863072742" />
+        <var name="file" id="2191995028863072740" />
+      </scope>
+      <scope id="2191995028863072595" at="71,56,79,81">
+        <var name="targetIdeaInstallDir" id="2191995028863072597" />
+      </scope>
+      <scope id="2191995028863072592" at="42,95,52,16" />
+      <scope id="2191995028863072593" at="71,0,81,0">
+        <var name="event" id="2191995028863072593" />
+      </scope>
+      <scope id="2191995028863072592" at="41,0,54,0">
+        <var name="_params" id="2191995028863072592" />
+        <var name="event" id="2191995028863072592" />
+      </scope>
+      <scope id="2191995028863072592" at="55,96,69,5">
+        <var name="pluginFile" id="2191995028863072842" />
+        <var name="targetDir" id="2191995028863072852" />
+      </scope>
+      <scope id="2191995028863072592" at="54,0,71,0">
+        <var name="_params" id="2191995028863072592" />
+        <var name="event" id="2191995028863072592" />
+      </scope>
+      <scope id="2191995028863072626" at="81,67,120,74">
+        <var name="descriptor" id="2191995028863072725" />
+        <var name="dialog" id="2191995028863072795" />
+        <var name="existingIdeaConfigs" id="2191995028863072664" />
+        <var name="files" id="2191995028863072805" />
+        <var name="ideaConfigRoot" id="2191995028863072652" />
+        <var name="ideaConfigRootPath" id="2191995028863072637" />
+        <var name="isMac" id="2191995028863072628" />
+        <var name="namePattern" id="1206102099919032788" />
+        <var name="oldShowHiddenValue" id="2191995028863072780" />
+        <var name="userHome" id="2191995028863072632" />
+      </scope>
+      <scope id="2191995028863072624" at="81,0,122,0">
+        <var name="event" id="2191995028863072624" />
+      </scope>
+      <unit id="2191995028863072729" at="102,43,110,5" name="jetbrains.mps.plugin.InstallIDEAPlugin_Action$1" />
+      <unit id="2191995028863072592" at="29,0,125,0" name="jetbrains.mps.plugin.InstallIDEAPlugin_Action" />
+    </file>
+  </root>
   <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/5516192790075456626">
     <file name="DefaultGoToDeclarationHandler.java">
       <node id="5516192790076053175" at="25,56,26,50" concept="0" />

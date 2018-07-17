@@ -25,7 +25,10 @@
   </project-components>
 
   <actions>
-    <!-- no actions -->
+    <action id="install.idea.plugin" text="Install IntelliJ IDEA Plugin"
+            class="jetbrains.mps.plugin.InstallIDEAPlugin_Action">
+      <add-to-group group-id="ToolsMenu" relative-to-action="Internal" anchor="after"/>
+    </action>
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
