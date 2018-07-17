@@ -25758,15 +25758,30 @@
             <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
             <node concept="3zFVjK" id="4b_UkfrMB0e" role="3zH0cK">
               <node concept="3clFbS" id="4b_UkfrMB0f" role="2VODD2">
-                <node concept="3clFbF" id="4b_UkfrMBO0" role="3cqZAp">
-                  <node concept="2OqwBi" id="4b_UkfrMBYJ" role="3clFbG">
-                    <node concept="2piZGk" id="4b_UkfrMCJ3" role="2OqNvi">
-                      <node concept="30H73N" id="4b_UkfrMDh4" role="2pr8EU" />
-                      <node concept="Xl_RD" id="4b_UkfrMD03" role="2piZGb">
+                <node concept="3clFbF" id="4aMW2GohVBc" role="3cqZAp">
+                  <node concept="2OqwBi" id="4aMW2GohVWL" role="3clFbG">
+                    <node concept="1iwH7S" id="4aMW2GohVBa" role="2Oq$k0" />
+                    <node concept="32eq0B" id="4aMW2GohWfT" role="2OqNvi">
+                      <property role="32f$Ya" value="false" />
+                      <node concept="Xl_RD" id="4b_UkfrMD03" role="32eq0w">
                         <property role="Xl_RC" value="getEditorHints" />
                       </node>
+                      <node concept="2OqwBi" id="4aMW2GohYJy" role="32eq0x">
+                        <node concept="2OqwBi" id="4aMW2GohXdP" role="2Oq$k0">
+                          <node concept="30H73N" id="4aMW2GohWWl" role="2Oq$k0" />
+                          <node concept="2Xjw5R" id="4aMW2GohYb0" role="2OqNvi">
+                            <node concept="1xMEDy" id="4aMW2GohYb2" role="1xVPHs">
+                              <node concept="chp4Y" id="4aMW2GohYkB" role="ri$Ld">
+                                <ref role="cht4Q" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2qgKlT" id="4aMW2GohZau" role="2OqNvi">
+                          <ref role="37wK5l" to="tpcb:M76vXnqh08" resolve="getTopAncestorCellModel" />
+                        </node>
+                      </node>
                     </node>
-                    <node concept="1iwH7S" id="4b_UkfrMBNZ" role="2Oq$k0" />
                   </node>
                 </node>
               </node>

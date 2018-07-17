@@ -830,7 +830,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return (String) INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetValue_75_0(final PropertyMacroContext _context) {
-    return _context.createUniqueName("getEditorHints", _context.getNode());
+    return _context.createIndexedName("getEditorHints", EditorCellModel__BehaviorDescriptor.getTopAncestorCellModel_idM76vXnqh08.invoke(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), false, false)), false);
   }
   public static Object propertyMacro_GetValue_76_0(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SNodeOperations.cast(((SNode) _context.getVariable("conceptFeature")), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
