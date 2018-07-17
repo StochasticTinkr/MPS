@@ -5047,6 +5047,23 @@
         <ref role="3uigEE" to="18nx:~CheckinHandler$ReturnResult" resolve="CheckinHandler.ReturnResult" />
       </node>
       <node concept="3clFbS" id="3etVqSRK$h3" role="3clF47">
+        <node concept="3clFbJ" id="2$eUmpEr_DK" role="3cqZAp">
+          <node concept="3clFbS" id="2$eUmpEr_DM" role="3clFbx">
+            <node concept="3cpWs6" id="2$eUmpErELr" role="3cqZAp">
+              <node concept="Rm8GO" id="2$eUmpErHFr" role="3cqZAk">
+                <ref role="Rm8GQ" to="18nx:~CheckinHandler$ReturnResult.COMMIT" resolve="COMMIT" />
+                <ref role="1Px2BO" to="18nx:~CheckinHandler$ReturnResult" resolve="CheckinHandler.ReturnResult" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="2$eUmpErBRi" role="3clFbw">
+            <node concept="37vLTw" id="2$eUmpErB7T" role="2Oq$k0">
+              <ref role="3cqZAo" node="3etVqSRK$gZ" resolve="models" />
+            </node>
+            <node concept="1v1jN8" id="2$eUmpErECS" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="2$eUmpErJ1K" role="3cqZAp" />
         <node concept="3cpWs8" id="3pNk_u$c6iA" role="3cqZAp">
           <node concept="3cpWsn" id="3pNk_u$c6iB" role="3cpWs9">
             <property role="TrG5h" value="viewer" />
