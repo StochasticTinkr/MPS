@@ -1440,7 +1440,7 @@
       <node id="3333953058369882584" at="63,31,64,48" concept="1" />
       <node id="3333953058369882579" at="64,48,65,22" concept="6" />
       <node id="3333953058369882579" at="67,40,68,173" concept="5" />
-      <node id="3333953058369882579" at="72,39,73,139" concept="6" />
+      <node id="3333953058369882579" at="72,39,73,129" concept="6" />
       <node id="3333953058369882579" at="75,35,76,60" concept="1" />
       <node id="3333953058369882579" at="76,60,77,48" concept="1" />
       <node id="3333953058369882579" at="77,48,78,43" concept="1" />
@@ -1458,7 +1458,7 @@
       <node id="3333953058369882579" at="98,87,99,145" concept="6" />
       <node id="3333953058369882579" at="100,10,101,22" concept="6" />
       <node id="3333953058369882585" at="106,0,107,0" concept="2" trace="myReferencingNode" />
-      <node id="3333953058369882585" at="108,119,109,21" concept="9" />
+      <node id="3333953058369882585" at="108,109,109,21" concept="9" />
       <node id="3333953058369882585" at="109,21,110,42" concept="1" />
       <node id="3333953058369882585" at="110,42,111,20" concept="1" />
       <node id="3333953058369882585" at="114,41,115,32" concept="6" />
@@ -1495,7 +1495,7 @@
       <node id="3333953058369882579" at="70,72,75,35" concept="5" />
       <node id="3333953058369882579" at="91,301,96,7" concept="5" />
       <node id="3333953058369882579" at="96,7,101,22" concept="3" />
-      <node id="3333953058369882585" at="108,0,113,0" concept="0" trace="Inline_Builder_ge17fi_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3333953058369882585" at="108,0,113,0" concept="0" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3333953058369882585" at="118,0,123,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3333953058369882587" at="139,308,144,11" concept="5" />
       <node id="3333953058369882587" at="144,11,149,26" concept="3" />
@@ -1507,7 +1507,7 @@
       <node id="3333953058369882579" at="67,0,103,0" concept="4" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="3333953058369882579" at="51,26,52,18" />
       <scope id="3333953058369882579" at="55,39,56,32" />
-      <scope id="3333953058369882579" at="72,39,73,139" />
+      <scope id="3333953058369882579" at="72,39,73,129" />
       <scope id="3333953058369882579" at="93,39,94,113" />
       <scope id="3333953058369882585" at="114,41,115,32" />
       <scope id="3333953058369882585" at="120,28,121,20" />
@@ -1526,7 +1526,7 @@
       <scope id="3333953058369882579" at="93,0,96,0">
         <var name="it" id="3333953058369882579" />
       </scope>
-      <scope id="3333953058369882585" at="108,119,111,20" />
+      <scope id="3333953058369882585" at="108,109,111,20" />
       <scope id="3333953058369882585" at="114,0,117,0" />
       <scope id="3333953058369882587" at="141,0,144,0">
         <var name="it" id="3333953058369882587" />
@@ -1571,9 +1571,9 @@
       <scope id="3333953058369882579" at="67,0,103,0" />
       <unit id="3333953058369882579" at="71,74,75,9" name="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_EditorBuilder_a$1$1" />
       <unit id="3333953058369882579" at="92,102,96,5" name="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_EditorBuilder_a$2" />
-      <unit id="3333953058369882587" at="140,104,144,9" name="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_EditorBuilder_a$Inline_Builder_ge17fi_a0a$1" />
+      <unit id="3333953058369882587" at="140,104,144,9" name="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="3333953058369882579" at="69,42,81,5" name="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_EditorBuilder_a$1" />
-      <unit id="3333953058369882585" at="103,0,155,0" name="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_EditorBuilder_a$Inline_Builder_ge17fi_a0a" />
+      <unit id="3333953058369882585" at="103,0,155,0" name="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_EditorBuilder_a$Inline_Builder0" />
       <unit id="3333953058369882579" at="40,0,156,0" name="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_EditorBuilder_a" />
     </file>
   </root>

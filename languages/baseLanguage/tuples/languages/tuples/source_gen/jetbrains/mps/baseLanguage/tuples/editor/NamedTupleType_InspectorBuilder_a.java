@@ -106,7 +106,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
       protected EditorCell createReferenceCell(final SNode targetNode) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new NamedTupleType_InspectorBuilder_a.Inline_Builder_2ojjgh_a1a0_0(getEditorContext(), getNode(), targetNode).createCell();
+            return new NamedTupleType_InspectorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
         }, targetNode, "classifier");
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
@@ -144,12 +144,12 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_2ojjgh_a1a0_0 extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_2ojjgh_a1a0_0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
@@ -199,7 +199,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
       protected EditorCell createReferenceCell(final SNode targetNode) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new NamedTupleType_InspectorBuilder_a.Inline_Builder_2ojjgh_a2a0(getEditorContext(), getNode(), targetNode).createCell();
+            return new NamedTupleType_InspectorBuilder_a.Inline_Builder1(getEditorContext(), getNode(), targetNode).createCell();
           }
         }, targetNode, "classifier");
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
@@ -237,12 +237,12 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_2ojjgh_a2a0 extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder1 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_2ojjgh_a2a0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder1(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
@@ -299,7 +299,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
       protected EditorCell createReferenceCell(final SNode targetNode) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new NamedTupleType_InspectorBuilder_a.Inline_Builder_2ojjgh_a1b0(getEditorContext(), getNode(), targetNode).createCell();
+            return new NamedTupleType_InspectorBuilder_a.Inline_Builder2(getEditorContext(), getNode(), targetNode).createCell();
           }
         }, targetNode, "classifier");
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
@@ -337,12 +337,12 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_2ojjgh_a1b0 extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder2 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_2ojjgh_a1b0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder2(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;

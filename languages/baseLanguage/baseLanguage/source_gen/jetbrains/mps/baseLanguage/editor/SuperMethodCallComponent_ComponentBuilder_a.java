@@ -121,7 +121,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
       protected EditorCell createReferenceCell(final SNode targetNode) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new SuperMethodCallComponent_ComponentBuilder_a.Inline_Builder_pxtadd_a3a(getEditorContext(), getNode(), targetNode).createCell();
+            return new SuperMethodCallComponent_ComponentBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
         }, targetNode, "baseMethodDeclaration");
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
@@ -153,12 +153,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_pxtadd_a3a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_pxtadd_a3a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;

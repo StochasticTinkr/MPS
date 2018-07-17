@@ -82,7 +82,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
       protected EditorCell createReferenceCell(final SNode targetNode) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new InequationReference_EditorBuilder_a.Inline_Builder_boi5ax_a0a(getEditorContext(), getNode(), targetNode).createCell();
+            return new InequationReference_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
         }, targetNode, "inequation");
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
@@ -119,12 +119,12 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_boi5ax_a0a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_boi5ax_a0a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;

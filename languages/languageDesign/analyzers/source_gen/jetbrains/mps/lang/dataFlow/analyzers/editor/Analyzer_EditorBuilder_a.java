@@ -428,7 +428,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new Analyzer_EditorBuilder_a.Inline_Builder_590xoz_a11a(getEditorContext(), myNode, effectiveNode).createCell();
+        EditorCell cell = new Analyzer_EditorBuilder_a.Inline_Builder0(getEditorContext(), myNode, effectiveNode).createCell();
         installDeleteActions_notnull(cell);
         return cell;
       }
@@ -449,12 +449,12 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_590xoz_a11a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_590xoz_a11a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
@@ -548,7 +548,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new Analyzer_EditorBuilder_a.Inline_Builder_590xoz_a41a(getEditorContext(), myNode, effectiveNode).createCell();
+        EditorCell cell = new Analyzer_EditorBuilder_a.Inline_Builder1(getEditorContext(), myNode, effectiveNode).createCell();
         installDeleteActions_notnull(cell);
         return cell;
       }
@@ -569,12 +569,12 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_590xoz_a41a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder1 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_590xoz_a41a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder1(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
@@ -668,7 +668,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new Analyzer_EditorBuilder_a.Inline_Builder_590xoz_a71a(getEditorContext(), myNode, effectiveNode).createCell();
+        EditorCell cell = new Analyzer_EditorBuilder_a.Inline_Builder2(getEditorContext(), myNode, effectiveNode).createCell();
         installDeleteActions_notnull(cell);
         return cell;
       }
@@ -689,12 +689,12 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_590xoz_a71a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder2 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_590xoz_a71a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder2(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;

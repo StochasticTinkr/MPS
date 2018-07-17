@@ -56,7 +56,7 @@
       <node id="2897519568668513363" at="86,48,87,34" concept="1" />
       <node id="2897519568668513363" at="87,34,88,22" concept="6" />
       <node id="2897519568668511754" at="90,40,91,170" concept="5" />
-      <node id="2897519568668511754" at="95,39,96,143" concept="6" />
+      <node id="2897519568668511754" at="95,39,96,132" concept="6" />
       <node id="2897519568668511754" at="98,32,99,60" concept="1" />
       <node id="2897519568668511754" at="99,60,100,48" concept="1" />
       <node id="2897519568668511754" at="100,48,101,58" concept="1" />
@@ -78,7 +78,7 @@
       <node id="2897519568668511754" at="128,87,129,145" concept="6" />
       <node id="2897519568668511754" at="130,10,131,22" concept="6" />
       <node id="2897519568668513371" at="136,0,137,0" concept="2" trace="myReferencingNode" />
-      <node id="2897519568668513371" at="138,120,139,21" concept="8" />
+      <node id="2897519568668513371" at="138,109,139,21" concept="8" />
       <node id="2897519568668513371" at="139,21,140,42" concept="1" />
       <node id="2897519568668513371" at="140,42,141,20" concept="1" />
       <node id="2897519568668513371" at="144,41,145,32" concept="6" />
@@ -142,7 +142,7 @@
       <node id="2897519568668511754" at="93,72,98,32" concept="5" />
       <node id="2897519568668511754" at="121,301,126,7" concept="5" />
       <node id="2897519568668511754" at="126,7,131,22" concept="3" />
-      <node id="2897519568668513371" at="138,0,143,0" concept="0" trace="Inline_Builder_pd1pxp_a1a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2897519568668513371" at="138,0,143,0" concept="0" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2897519568668513371" at="148,0,153,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2897519568668513379" at="166,308,171,11" concept="5" />
       <node id="2897519568668513379" at="171,11,176,26" concept="3" />
@@ -163,7 +163,7 @@
       <node id="2897519568668511754" at="90,0,133,0" concept="4" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="2897519568668511754" at="57,26,58,18" />
       <scope id="2897519568668511754" at="61,39,62,32" />
-      <scope id="2897519568668511754" at="95,39,96,143" />
+      <scope id="2897519568668511754" at="95,39,96,132" />
       <scope id="2897519568668511754" at="123,39,124,113" />
       <scope id="2897519568668513371" at="144,41,145,32" />
       <scope id="2897519568668513371" at="150,28,151,20" />
@@ -190,7 +190,7 @@
       <scope id="2897519568668511754" at="123,0,126,0">
         <var name="it" id="2897519568668511754" />
       </scope>
-      <scope id="2897519568668513371" at="138,120,141,20" />
+      <scope id="2897519568668513371" at="138,109,141,20" />
       <scope id="2897519568668513371" at="144,0,147,0" />
       <scope id="2897519568668513379" at="168,0,171,0">
         <var name="it" id="2897519568668513379" />
@@ -269,10 +269,10 @@
       <scope id="2897519568668511754" at="90,0,133,0" />
       <unit id="2897519568668511754" at="94,74,98,9" name="jetbrains.mps.samples.customAspect.documentation.editor.ConceptDocumentation_EditorBuilder_a$1$1" />
       <unit id="2897519568668511754" at="122,102,126,5" name="jetbrains.mps.samples.customAspect.documentation.editor.ConceptDocumentation_EditorBuilder_a$2" />
-      <unit id="2897519568668513379" at="167,104,171,9" name="jetbrains.mps.samples.customAspect.documentation.editor.ConceptDocumentation_EditorBuilder_a$Inline_Builder_pd1pxp_a1a0$1" />
+      <unit id="2897519568668513379" at="167,104,171,9" name="jetbrains.mps.samples.customAspect.documentation.editor.ConceptDocumentation_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="2897519568668513435" at="213,102,217,7" name="jetbrains.mps.samples.customAspect.documentation.editor.ConceptDocumentation_EditorBuilder_a$3" />
       <unit id="2897519568668511754" at="92,42,111,5" name="jetbrains.mps.samples.customAspect.documentation.editor.ConceptDocumentation_EditorBuilder_a$1" />
-      <unit id="2897519568668513371" at="133,0,182,0" name="jetbrains.mps.samples.customAspect.documentation.editor.ConceptDocumentation_EditorBuilder_a$Inline_Builder_pd1pxp_a1a0" />
+      <unit id="2897519568668513371" at="133,0,182,0" name="jetbrains.mps.samples.customAspect.documentation.editor.ConceptDocumentation_EditorBuilder_a$Inline_Builder0" />
       <unit id="2897519568668511754" at="46,0,228,0" name="jetbrains.mps.samples.customAspect.documentation.editor.ConceptDocumentation_EditorBuilder_a" />
     </file>
   </root>

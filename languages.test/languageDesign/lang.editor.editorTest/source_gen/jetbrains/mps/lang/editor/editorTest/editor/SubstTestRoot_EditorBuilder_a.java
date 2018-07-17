@@ -547,7 +547,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new SubstTestRoot_EditorBuilder_a.Inline_Builder_3mh94b_a1a6a(getEditorContext(), myNode, effectiveNode).createCell();
+        EditorCell cell = new SubstTestRoot_EditorBuilder_a.Inline_Builder0(getEditorContext(), myNode, effectiveNode).createCell();
         installDeleteActions_nullable_aggregation(cell);
         return cell;
       }
@@ -568,12 +568,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_3mh94b_a1a6a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_3mh94b_a1a6a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
@@ -596,7 +596,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       return editorCell;
     }
     private EditorCell createRefNodeList_1() {
-      AbstractCellListHandler handler = new SubstTestRoot_EditorBuilder_a.Inline_Builder_3mh94b_a1a6a.childListHandler_3mh94b_a0a1a6a(myNode, getEditorContext());
+      AbstractCellListHandler handler = new SubstTestRoot_EditorBuilder_a.Inline_Builder0.childListHandler_3mh94b_a0a1a6a(myNode, getEditorContext());
       EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
       editorCell.setCellId("refNodeList_child");
       editorCell.setSRole(handler.getElementSRole());

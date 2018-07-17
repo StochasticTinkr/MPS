@@ -93,7 +93,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new LowLevelVariable_EditorBuilder_a.Inline_Builder_f5bzsg_a0a(getEditorContext(), myNode, effectiveNode).createCell();
+        EditorCell cell = new LowLevelVariable_EditorBuilder_a.Inline_Builder0(getEditorContext(), myNode, effectiveNode).createCell();
         installDeleteActions_notnull(cell);
         return cell;
       }
@@ -114,12 +114,12 @@ import jetbrains.mps.nodeEditor.MPSColors;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_f5bzsg_a0a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_f5bzsg_a0a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
@@ -142,7 +142,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       return editorCell;
     }
     private EditorCell createRefNode_0() {
-      SingleRoleCellProvider provider = new LowLevelVariable_EditorBuilder_a.Inline_Builder_f5bzsg_a0a.highTypeSingleRoleHandler_f5bzsg_a0a0a(myNode, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25edaL, "highType"), getEditorContext());
+      SingleRoleCellProvider provider = new LowLevelVariable_EditorBuilder_a.Inline_Builder0.highTypeSingleRoleHandler_f5bzsg_a0a0a(myNode, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25edaL, "highType"), getEditorContext());
       return provider.createCell();
     }
     private static class highTypeSingleRoleHandler_f5bzsg_a0a0a extends SingleRoleCellProvider {
@@ -247,7 +247,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new LowLevelVariable_EditorBuilder_a.Inline_Builder_f5bzsg_a1c0(getEditorContext(), myNode, effectiveNode).createCell();
+        EditorCell cell = new LowLevelVariable_EditorBuilder_a.Inline_Builder1(getEditorContext(), myNode, effectiveNode).createCell();
         installDeleteActions_notnull(cell);
         return cell;
       }
@@ -268,12 +268,12 @@ import jetbrains.mps.nodeEditor.MPSColors;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_f5bzsg_a1c0 extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder1 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_f5bzsg_a1c0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder1(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
@@ -296,7 +296,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       return editorCell;
     }
     private EditorCell createRefNode_1() {
-      SingleRoleCellProvider provider = new LowLevelVariable_EditorBuilder_a.Inline_Builder_f5bzsg_a1c0.lowTypeSingleRoleHandler_f5bzsg_a0a1c0(myNode, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25ed9L, "lowType"), getEditorContext());
+      SingleRoleCellProvider provider = new LowLevelVariable_EditorBuilder_a.Inline_Builder1.lowTypeSingleRoleHandler_f5bzsg_a0a1c0(myNode, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25ed9L, "lowType"), getEditorContext());
       return provider.createCell();
     }
     private static class lowTypeSingleRoleHandler_f5bzsg_a0a1c0 extends SingleRoleCellProvider {

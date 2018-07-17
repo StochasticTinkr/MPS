@@ -104,7 +104,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
       protected EditorCell createReferenceCell(final SNode targetNode) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new ClosureControlStatement_EditorBuilder_a.Inline_Builder_2saq3j_a0a(getEditorContext(), getNode(), targetNode).createCell();
+            return new ClosureControlStatement_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
         }, targetNode, "controlMethod");
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
@@ -144,12 +144,12 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_2saq3j_a0a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_2saq3j_a0a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
@@ -224,7 +224,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new ClosureControlStatement_EditorBuilder_a.Inline_Builder_2saq3j_a1b0(getEditorContext(), myNode, effectiveNode).createCell();
+        EditorCell cell = new ClosureControlStatement_EditorBuilder_a.Inline_Builder1(getEditorContext(), myNode, effectiveNode).createCell();
         installDeleteActions_notnull(cell);
         return cell;
       }
@@ -245,12 +245,12 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_2saq3j_a1b0 extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder1 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_2saq3j_a1b0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder1(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
@@ -273,7 +273,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
       return editorCell;
     }
     private EditorCell createRefNodeList_0() {
-      AbstractCellListHandler handler = new ClosureControlStatement_EditorBuilder_a.Inline_Builder_2saq3j_a1b0.parameterListHandler_2saq3j_a0a1b0(myNode, getEditorContext());
+      AbstractCellListHandler handler = new ClosureControlStatement_EditorBuilder_a.Inline_Builder1.parameterListHandler_2saq3j_a0a1b0(myNode, getEditorContext());
       EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
       editorCell.setCellId("refNodeList_parameter");
       editorCell.setSRole(handler.getElementSRole());

@@ -100,7 +100,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new GeneratorDebug_InputNode_InspectorBuilder_a.Inline_Builder_6u0t67_a1a_0(getEditorContext(), myNode, effectiveNode).createCell();
+        EditorCell cell = new GeneratorDebug_InputNode_InspectorBuilder_a.Inline_Builder0(getEditorContext(), myNode, effectiveNode).createCell();
         installDeleteActions_nullable_aggregation(cell);
         return cell;
       }
@@ -121,12 +121,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_6u0t67_a1a_0 extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_6u0t67_a1a_0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;

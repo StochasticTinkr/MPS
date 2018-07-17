@@ -1930,7 +1930,7 @@
       <node id="941086956890868765" at="65,31,66,48" concept="2" />
       <node id="941086956890868763" at="66,48,67,22" concept="7" />
       <node id="941086956890868763" at="69,40,70,170" concept="6" />
-      <node id="941086956890868763" at="74,39,75,138" concept="7" />
+      <node id="941086956890868763" at="74,39,75,128" concept="7" />
       <node id="941086956890868763" at="77,34,78,60" concept="2" />
       <node id="941086956890868763" at="78,60,79,48" concept="2" />
       <node id="941086956890868763" at="79,48,80,58" concept="2" />
@@ -1952,7 +1952,7 @@
       <node id="941086956890868763" at="107,87,108,145" concept="7" />
       <node id="941086956890868763" at="109,10,110,22" concept="7" />
       <node id="941086956890868767" at="115,0,116,0" concept="3" trace="myReferencingNode" />
-      <node id="941086956890868767" at="117,119,118,21" concept="9" />
+      <node id="941086956890868767" at="117,109,118,21" concept="9" />
       <node id="941086956890868767" at="118,21,119,42" concept="2" />
       <node id="941086956890868767" at="119,42,120,20" concept="2" />
       <node id="941086956890868767" at="123,41,124,32" concept="7" />
@@ -1989,7 +1989,7 @@
       <node id="941086956890868763" at="72,72,77,34" concept="6" />
       <node id="941086956890868763" at="100,301,105,7" concept="6" />
       <node id="941086956890868763" at="105,7,110,22" concept="4" />
-      <node id="941086956890868767" at="117,0,122,0" concept="1" trace="Inline_Builder_uugm4e_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="941086956890868767" at="117,0,122,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="941086956890868767" at="127,0,132,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="941086956890868774" at="148,308,153,11" concept="6" />
       <node id="941086956890868774" at="153,11,158,26" concept="4" />
@@ -2002,7 +2002,7 @@
       <node id="941086956890868763" at="69,0,112,0" concept="5" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="941086956890868763" at="53,26,54,18" />
       <scope id="941086956890868763" at="57,39,58,32" />
-      <scope id="941086956890868763" at="74,39,75,138" />
+      <scope id="941086956890868763" at="74,39,75,128" />
       <scope id="941086956890868763" at="102,39,103,113" />
       <scope id="941086956890868767" at="123,41,124,32" />
       <scope id="941086956890868767" at="129,28,130,20" />
@@ -2021,7 +2021,7 @@
       <scope id="941086956890868763" at="102,0,105,0">
         <var name="it" id="941086956890868763" />
       </scope>
-      <scope id="941086956890868767" at="117,119,120,20" />
+      <scope id="941086956890868767" at="117,109,120,20" />
       <scope id="941086956890868767" at="123,0,126,0" />
       <scope id="941086956890868774" at="150,0,153,0">
         <var name="it" id="941086956890868774" />
@@ -2072,9 +2072,9 @@
       <scope id="941086956890868763" at="69,0,112,0" />
       <unit id="941086956890868763" at="73,74,77,9" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_EditorBuilder_a$1$1" />
       <unit id="941086956890868763" at="101,102,105,5" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_EditorBuilder_a$2" />
-      <unit id="941086956890868774" at="149,104,153,9" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_EditorBuilder_a$Inline_Builder_uugm4e_a0a$1" />
+      <unit id="941086956890868774" at="149,104,153,9" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="941086956890868763" at="71,42,90,5" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_EditorBuilder_a$1" />
-      <unit id="941086956890868767" at="112,0,164,0" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_EditorBuilder_a$Inline_Builder_uugm4e_a0a" />
+      <unit id="941086956890868767" at="112,0,164,0" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_EditorBuilder_a$Inline_Builder0" />
       <unit id="941086956890868763" at="42,0,165,0" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_EditorBuilder_a" />
     </file>
   </root>

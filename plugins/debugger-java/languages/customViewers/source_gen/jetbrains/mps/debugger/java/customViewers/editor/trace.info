@@ -200,7 +200,7 @@
       <node id="2886182022232400333" at="76,42,77,119" concept="6" />
       <node id="2886182022232400333" at="77,119,78,22" concept="7" />
       <node id="43370322128311453" at="80,40,81,170" concept="6" />
-      <node id="43370322128311453" at="85,39,86,147" concept="7" />
+      <node id="43370322128311453" at="85,39,86,137" concept="7" />
       <node id="43370322128311453" at="88,36,89,60" concept="2" />
       <node id="43370322128311453" at="89,60,90,48" concept="2" />
       <node id="43370322128311453" at="90,48,91,43" concept="2" />
@@ -218,7 +218,7 @@
       <node id="43370322128311453" at="111,87,112,145" concept="7" />
       <node id="43370322128311453" at="113,10,114,22" concept="7" />
       <node id="43370322128311458" at="119,0,120,0" concept="3" trace="myReferencingNode" />
-      <node id="43370322128311458" at="121,119,122,21" concept="9" />
+      <node id="43370322128311458" at="121,109,122,21" concept="9" />
       <node id="43370322128311458" at="122,21,123,42" concept="2" />
       <node id="43370322128311458" at="123,42,124,20" concept="2" />
       <node id="43370322128311458" at="127,41,128,32" concept="7" />
@@ -288,7 +288,7 @@
       <node id="43370322128311453" at="83,72,88,36" concept="6" />
       <node id="43370322128311453" at="104,301,109,7" concept="6" />
       <node id="43370322128311453" at="109,7,114,22" concept="4" />
-      <node id="43370322128311458" at="121,0,126,0" concept="1" trace="Inline_Builder_h88a5f_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="43370322128311458" at="121,0,126,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="43370322128311458" at="131,0,136,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="43370322128311459" at="149,308,154,11" concept="6" />
       <node id="43370322128311459" at="154,11,159,26" concept="4" />
@@ -307,7 +307,7 @@
       <node id="43370322128311453" at="80,0,116,0" concept="5" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="43370322128311453" at="56,26,57,18" />
       <scope id="43370322128311453" at="60,39,61,32" />
-      <scope id="43370322128311453" at="85,39,86,147" />
+      <scope id="43370322128311453" at="85,39,86,137" />
       <scope id="43370322128311453" at="106,39,107,113" />
       <scope id="43370322128311458" at="127,41,128,32" />
       <scope id="43370322128311458" at="133,28,134,20" />
@@ -338,7 +338,7 @@
       <scope id="43370322128311453" at="106,0,109,0">
         <var name="it" id="43370322128311453" />
       </scope>
-      <scope id="43370322128311458" at="121,119,124,20" />
+      <scope id="43370322128311458" at="121,109,124,20" />
       <scope id="43370322128311458" at="127,0,130,0" />
       <scope id="43370322128311459" at="151,0,154,0">
         <var name="it" id="43370322128311459" />
@@ -416,9 +416,9 @@
       <scope id="43370322128311453" at="80,0,116,0" />
       <unit id="43370322128311453" at="84,74,88,9" name="jetbrains.mps.debugger.java.customViewers.editor.HighLevelWatchableCreator_EditorBuilder_a$1$1" />
       <unit id="43370322128311453" at="105,102,109,5" name="jetbrains.mps.debugger.java.customViewers.editor.HighLevelWatchableCreator_EditorBuilder_a$2" />
-      <unit id="43370322128311459" at="150,104,154,9" name="jetbrains.mps.debugger.java.customViewers.editor.HighLevelWatchableCreator_EditorBuilder_a$Inline_Builder_h88a5f_a1a$1" />
+      <unit id="43370322128311459" at="150,104,154,9" name="jetbrains.mps.debugger.java.customViewers.editor.HighLevelWatchableCreator_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="43370322128311453" at="82,42,94,5" name="jetbrains.mps.debugger.java.customViewers.editor.HighLevelWatchableCreator_EditorBuilder_a$1" />
-      <unit id="43370322128311458" at="116,0,165,0" name="jetbrains.mps.debugger.java.customViewers.editor.HighLevelWatchableCreator_EditorBuilder_a$Inline_Builder_h88a5f_a1a" />
+      <unit id="43370322128311458" at="116,0,165,0" name="jetbrains.mps.debugger.java.customViewers.editor.HighLevelWatchableCreator_EditorBuilder_a$Inline_Builder0" />
       <unit id="43370322128311453" at="175,0,226,0" name="jetbrains.mps.debugger.java.customViewers.editor.HighLevelWatchableCreator_EditorBuilder_a$valueSingleRoleHandler_h88a5f_d0" />
       <unit id="43370322128311453" at="45,0,233,0" name="jetbrains.mps.debugger.java.customViewers.editor.HighLevelWatchableCreator_EditorBuilder_a" />
     </file>

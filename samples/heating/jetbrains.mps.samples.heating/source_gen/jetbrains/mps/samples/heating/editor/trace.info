@@ -1747,7 +1747,7 @@
       <node id="2161719505004888341" at="69,31,70,48" concept="1" />
       <node id="935069066462619722" at="70,48,71,22" concept="6" />
       <node id="935069066462619722" at="73,40,74,169" concept="5" />
-      <node id="935069066462619722" at="78,39,79,140" concept="6" />
+      <node id="935069066462619722" at="78,39,79,130" concept="6" />
       <node id="935069066462619722" at="81,33,82,60" concept="1" />
       <node id="935069066462619722" at="82,60,83,48" concept="1" />
       <node id="935069066462619722" at="83,48,84,58" concept="1" />
@@ -1769,7 +1769,7 @@
       <node id="935069066462619722" at="111,87,112,145" concept="6" />
       <node id="935069066462619722" at="113,10,114,22" concept="6" />
       <node id="2161719505004888342" at="119,0,120,0" concept="2" trace="myReferencingNode" />
-      <node id="2161719505004888342" at="121,119,122,21" concept="10" />
+      <node id="2161719505004888342" at="121,109,122,21" concept="10" />
       <node id="2161719505004888342" at="122,21,123,42" concept="1" />
       <node id="2161719505004888342" at="123,42,124,20" concept="1" />
       <node id="2161719505004888342" at="127,41,128,32" concept="6" />
@@ -1809,7 +1809,7 @@
       <node id="935069066462619722" at="76,72,81,33" concept="5" />
       <node id="935069066462619722" at="104,301,109,7" concept="5" />
       <node id="935069066462619722" at="109,7,114,22" concept="3" />
-      <node id="2161719505004888342" at="121,0,126,0" concept="0" trace="Inline_Builder_e3jrht_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2161719505004888342" at="121,0,126,0" concept="0" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2161719505004888342" at="131,0,136,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2161719505004888347" at="152,308,157,11" concept="5" />
       <node id="2161719505004888347" at="157,11,162,26" concept="3" />
@@ -1825,7 +1825,7 @@
       <scope id="4747359941571315529" at="169,61,169,61" />
       <scope id="935069066462619722" at="57,26,58,18" />
       <scope id="935069066462619722" at="61,39,62,32" />
-      <scope id="935069066462619722" at="78,39,79,140" />
+      <scope id="935069066462619722" at="78,39,79,130" />
       <scope id="935069066462619722" at="106,39,107,113" />
       <scope id="2161719505004888342" at="127,41,128,32" />
       <scope id="2161719505004888342" at="133,28,134,20" />
@@ -1847,7 +1847,7 @@
       <scope id="935069066462619722" at="106,0,109,0">
         <var name="it" id="935069066462619722" />
       </scope>
-      <scope id="2161719505004888342" at="121,119,124,20" />
+      <scope id="2161719505004888342" at="121,109,124,20" />
       <scope id="2161719505004888342" at="127,0,130,0" />
       <scope id="2161719505004888347" at="154,0,157,0">
         <var name="it" id="2161719505004888347" />
@@ -1900,10 +1900,10 @@
       <scope id="935069066462619722" at="73,0,116,0" />
       <unit id="935069066462619722" at="77,74,81,9" name="jetbrains.mps.samples.heating.editor.DailyPlanReference_EditorBuilder_a$1$1" />
       <unit id="935069066462619722" at="105,102,109,5" name="jetbrains.mps.samples.heating.editor.DailyPlanReference_EditorBuilder_a$2" />
-      <unit id="2161719505004888347" at="153,104,157,9" name="jetbrains.mps.samples.heating.editor.DailyPlanReference_EditorBuilder_a$Inline_Builder_e3jrht_a0a$1" />
+      <unit id="2161719505004888347" at="153,104,157,9" name="jetbrains.mps.samples.heating.editor.DailyPlanReference_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="4747359941571315529" at="168,0,182,0" name="jetbrains.mps.samples.heating.editor.DailyPlanReference_EditorBuilder_a$DailyPlanReference_target_cellMenu_e3jrht_a0a0" />
       <unit id="935069066462619722" at="75,42,94,5" name="jetbrains.mps.samples.heating.editor.DailyPlanReference_EditorBuilder_a$1" />
-      <unit id="2161719505004888342" at="116,0,168,0" name="jetbrains.mps.samples.heating.editor.DailyPlanReference_EditorBuilder_a$Inline_Builder_e3jrht_a0a" />
+      <unit id="2161719505004888342" at="116,0,168,0" name="jetbrains.mps.samples.heating.editor.DailyPlanReference_EditorBuilder_a$Inline_Builder0" />
       <unit id="935069066462619722" at="46,0,183,0" name="jetbrains.mps.samples.heating.editor.DailyPlanReference_EditorBuilder_a" />
     </file>
     <file name="PresentationProviders.java">

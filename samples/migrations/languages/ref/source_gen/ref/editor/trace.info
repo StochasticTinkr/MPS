@@ -53,7 +53,7 @@
       <node id="7709929535541053037" at="70,47,71,34" concept="1" />
       <node id="7709929535541053037" at="71,34,72,22" concept="6" />
       <node id="7709929535540733623" at="74,40,75,171" concept="5" />
-      <node id="7709929535540733623" at="79,39,80,137" concept="6" />
+      <node id="7709929535540733623" at="79,39,80,127" concept="6" />
       <node id="7709929535540733623" at="82,33,83,60" concept="1" />
       <node id="7709929535540733623" at="83,60,84,48" concept="1" />
       <node id="7709929535540733623" at="84,48,85,58" concept="1" />
@@ -75,7 +75,7 @@
       <node id="7709929535540733623" at="112,87,113,145" concept="6" />
       <node id="7709929535540733623" at="114,10,115,22" concept="6" />
       <node id="7709929535540733627" at="120,0,121,0" concept="2" trace="myReferencingNode" />
-      <node id="7709929535540733627" at="122,119,123,21" concept="8" />
+      <node id="7709929535540733627" at="122,109,123,21" concept="8" />
       <node id="7709929535540733627" at="123,21,124,42" concept="1" />
       <node id="7709929535540733627" at="124,42,125,20" concept="1" />
       <node id="7709929535540733627" at="128,41,129,32" concept="6" />
@@ -109,7 +109,7 @@
       <node id="7709929535540733623" at="77,72,82,33" concept="5" />
       <node id="7709929535540733623" at="105,301,110,7" concept="5" />
       <node id="7709929535540733623" at="110,7,115,22" concept="3" />
-      <node id="7709929535540733627" at="122,0,127,0" concept="0" trace="Inline_Builder_iwbapz_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7709929535540733627" at="122,0,127,0" concept="0" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7709929535540733627" at="132,0,137,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7709929535540733638" at="150,308,155,11" concept="5" />
       <node id="7709929535540733638" at="155,11,160,26" concept="3" />
@@ -123,7 +123,7 @@
       <node id="7709929535540733623" at="74,0,117,0" concept="4" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="7709929535540733623" at="51,26,52,18" />
       <scope id="7709929535540733623" at="55,39,56,32" />
-      <scope id="7709929535540733623" at="79,39,80,137" />
+      <scope id="7709929535540733623" at="79,39,80,127" />
       <scope id="7709929535540733623" at="107,39,108,113" />
       <scope id="7709929535540733627" at="128,41,129,32" />
       <scope id="7709929535540733627" at="134,28,135,20" />
@@ -142,7 +142,7 @@
       <scope id="7709929535540733623" at="107,0,110,0">
         <var name="it" id="7709929535540733623" />
       </scope>
-      <scope id="7709929535540733627" at="122,119,125,20" />
+      <scope id="7709929535540733627" at="122,109,125,20" />
       <scope id="7709929535540733627" at="128,0,131,0" />
       <scope id="7709929535540733638" at="152,0,155,0">
         <var name="it" id="7709929535540733638" />
@@ -196,9 +196,9 @@
       <scope id="7709929535540733623" at="74,0,117,0" />
       <unit id="7709929535540733623" at="78,74,82,9" name="ref.editor.OldComponentRef_EditorBuilder_a$1$1" />
       <unit id="7709929535540733623" at="106,102,110,5" name="ref.editor.OldComponentRef_EditorBuilder_a$2" />
-      <unit id="7709929535540733638" at="151,104,155,9" name="ref.editor.OldComponentRef_EditorBuilder_a$Inline_Builder_iwbapz_a1a$1" />
+      <unit id="7709929535540733638" at="151,104,155,9" name="ref.editor.OldComponentRef_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="7709929535540733623" at="76,42,95,5" name="ref.editor.OldComponentRef_EditorBuilder_a$1" />
-      <unit id="7709929535540733627" at="117,0,166,0" name="ref.editor.OldComponentRef_EditorBuilder_a$Inline_Builder_iwbapz_a1a" />
+      <unit id="7709929535540733627" at="117,0,166,0" name="ref.editor.OldComponentRef_EditorBuilder_a$Inline_Builder0" />
       <unit id="7709929535540733623" at="40,0,167,0" name="ref.editor.OldComponentRef_EditorBuilder_a" />
     </file>
   </root>
@@ -230,7 +230,7 @@
       <node id="7709929535541053071" at="70,47,71,34" concept="1" />
       <node id="7709929535541053071" at="71,34,72,22" concept="6" />
       <node id="7709929535540733689" at="74,40,75,171" concept="5" />
-      <node id="7709929535540733689" at="79,39,80,137" concept="6" />
+      <node id="7709929535540733689" at="79,39,80,127" concept="6" />
       <node id="7709929535540733689" at="82,33,83,60" concept="1" />
       <node id="7709929535540733689" at="83,60,84,48" concept="1" />
       <node id="7709929535540733689" at="84,48,85,58" concept="1" />
@@ -252,7 +252,7 @@
       <node id="7709929535540733689" at="112,87,113,145" concept="6" />
       <node id="7709929535540733689" at="114,10,115,22" concept="6" />
       <node id="7709929535541053073" at="120,0,121,0" concept="2" trace="myReferencingNode" />
-      <node id="7709929535541053073" at="122,119,123,21" concept="8" />
+      <node id="7709929535541053073" at="122,109,123,21" concept="8" />
       <node id="7709929535541053073" at="123,21,124,42" concept="1" />
       <node id="7709929535541053073" at="124,42,125,20" concept="1" />
       <node id="7709929535541053073" at="128,41,129,32" concept="6" />
@@ -286,7 +286,7 @@
       <node id="7709929535540733689" at="77,72,82,33" concept="5" />
       <node id="7709929535540733689" at="105,301,110,7" concept="5" />
       <node id="7709929535540733689" at="110,7,115,22" concept="3" />
-      <node id="7709929535541053073" at="122,0,127,0" concept="0" trace="Inline_Builder_ubdrej_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7709929535541053073" at="122,0,127,0" concept="0" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7709929535541053073" at="132,0,137,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7709929535541053074" at="150,308,155,11" concept="5" />
       <node id="7709929535541053074" at="155,11,160,26" concept="3" />
@@ -300,7 +300,7 @@
       <node id="7709929535540733689" at="74,0,117,0" concept="4" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="7709929535540733689" at="51,26,52,18" />
       <scope id="7709929535540733689" at="55,39,56,32" />
-      <scope id="7709929535540733689" at="79,39,80,137" />
+      <scope id="7709929535540733689" at="79,39,80,127" />
       <scope id="7709929535540733689" at="107,39,108,113" />
       <scope id="7709929535541053073" at="128,41,129,32" />
       <scope id="7709929535541053073" at="134,28,135,20" />
@@ -319,7 +319,7 @@
       <scope id="7709929535540733689" at="107,0,110,0">
         <var name="it" id="7709929535540733689" />
       </scope>
-      <scope id="7709929535541053073" at="122,119,125,20" />
+      <scope id="7709929535541053073" at="122,109,125,20" />
       <scope id="7709929535541053073" at="128,0,131,0" />
       <scope id="7709929535541053074" at="152,0,155,0">
         <var name="it" id="7709929535541053074" />
@@ -373,9 +373,9 @@
       <scope id="7709929535540733689" at="74,0,117,0" />
       <unit id="7709929535540733689" at="78,74,82,9" name="ref.editor.NewComponentRef_EditorBuilder_a$1$1" />
       <unit id="7709929535540733689" at="106,102,110,5" name="ref.editor.NewComponentRef_EditorBuilder_a$2" />
-      <unit id="7709929535541053074" at="151,104,155,9" name="ref.editor.NewComponentRef_EditorBuilder_a$Inline_Builder_ubdrej_a1a$1" />
+      <unit id="7709929535541053074" at="151,104,155,9" name="ref.editor.NewComponentRef_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="7709929535540733689" at="76,42,95,5" name="ref.editor.NewComponentRef_EditorBuilder_a$1" />
-      <unit id="7709929535541053073" at="117,0,166,0" name="ref.editor.NewComponentRef_EditorBuilder_a$Inline_Builder_ubdrej_a1a" />
+      <unit id="7709929535541053073" at="117,0,166,0" name="ref.editor.NewComponentRef_EditorBuilder_a$Inline_Builder0" />
       <unit id="7709929535540733689" at="40,0,167,0" name="ref.editor.NewComponentRef_EditorBuilder_a" />
     </file>
   </root>
