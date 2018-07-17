@@ -31158,7 +31158,7 @@
       <property role="2DPR8u" value="OutFile &quot;${PRODUCT_VERSION}-windows.exe&quot;" />
     </node>
     <node concept="2DRAP_" id="1w81suM7tz7" role="2DRAPQ">
-      <property role="2DPR8u" value="InstallDir &quot;$PROGRAMFILES\${PRODUCT_PUBLISHER}\${PRODUCT_NAME} ${PRODUCT_MAJOR_VERSION}&quot;" />
+      <property role="2DPR8u" value="InstallDir &quot;$PROGRAMFILES64\${PRODUCT_PUBLISHER}\${PRODUCT_NAME} ${PRODUCT_MAJOR_VERSION}&quot;" />
     </node>
     <node concept="2DRAP_" id="1w81suM7vUc" role="2DRAPQ">
       <property role="2DPR8u" value="ShowInstDetails show" />

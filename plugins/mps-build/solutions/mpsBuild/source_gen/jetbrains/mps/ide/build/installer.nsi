@@ -27,7 +27,7 @@
 SetCompressor lzma
 Name "${APP_NAME}"
 OutFile "${PRODUCT_VERSION}-windows.exe"
-InstallDir "$PROGRAMFILES\${PRODUCT_PUBLISHER}\${PRODUCT_NAME} ${PRODUCT_MAJOR_VERSION}"
+InstallDir "$PROGRAMFILES64\${PRODUCT_PUBLISHER}\${PRODUCT_NAME} ${PRODUCT_MAJOR_VERSION}"
 ShowInstDetails show
 ShowUnInstDetails show
 !define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of ${APP_NAME} (build ${PRODUCT_VERSION}).\n\nClick Next to continue."
