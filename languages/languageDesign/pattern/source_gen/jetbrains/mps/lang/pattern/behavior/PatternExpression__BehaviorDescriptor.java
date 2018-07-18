@@ -73,7 +73,7 @@ public final class PatternExpression__BehaviorDescriptor extends BaseBHDescripto
   }
   /*package*/ static SAbstractConcept getQuotedNodeConcept_id4vXWNHn1_L$(@NotNull SNode __thisNode__) {
     // concept of the quoteed (pattern) node 
-    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x7d8b4408504314cdL, "pattern")) != null ? SNodeOperations.getConcept(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x7d8b4408504314cdL, "pattern")), MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465aL, "quotedNode"))) : SNodeOperations.getConcept(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x108a9cb4792L, "patternNode"))));
+    return SNodeOperations.getConcept(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x7d8b4408504314cdL, "pattern")), MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465aL, "quotedNode")));
   }
   /*package*/ static boolean hasVariable_id4dzCQkRGUNw(@NotNull SNode __thisNode__) {
     return false;

@@ -141,8 +141,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Pattern;
       case LanguageConceptSwitch.PatternExpression:
         if (props_PatternExpression == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L);
-          cpb.deprecateAggregation(0x108a9cb4792L, "patternNode");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.rawPresentation(">pattern<");
           props_PatternExpression = cpb.create();
         }
