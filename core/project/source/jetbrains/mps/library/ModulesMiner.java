@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.library;
 
+import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.io.DescriptorIO;
@@ -30,6 +31,7 @@ import jetbrains.mps.project.structure.modules.LibraryDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import jetbrains.mps.vfs.FileSystem;
@@ -75,13 +77,38 @@ public final class ModulesMiner {
   private final List<ModuleHandle> myOutcome = new ArrayList<ModuleHandle>();
   private final DescriptorIOFacade myDescriptorIOFacade;
 
+  /**
+   * @deprecated use {@link #ModulesMiner(Collection, DescriptorIOFacade)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public ModulesMiner() {
-    this(Collections.emptySet());
+    this(Collections.emptySet(), DescriptorIOFacade.getInstance());
   }
 
-  public ModulesMiner(@NotNull Collection<IFile> excludes) {
+  /**
+   * @param componentHost access to MPS configured components
+   * @since 2018.2
+   */
+  public ModulesMiner(@NotNull ComponentHost componentHost) {
+    this(Collections.emptySet(), componentHost.findComponent(DescriptorIOFacade.class));
+  }
+
+  /**
+   * @since 2018.2
+   */
+  public ModulesMiner(@NotNull Collection<IFile> excludes, DescriptorIOFacade descriptorsIO) {
     myExcludes.addAll(excludes);
-    myDescriptorIOFacade = DescriptorIOFacade.getInstance();
+    myDescriptorIOFacade = descriptorsIO;
+  }
+
+  /**
+   * @deprecated use {@link #ModulesMiner(Collection, DescriptorIOFacade)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  public ModulesMiner(@NotNull Collection<IFile> excludes) {
+    this(excludes, DescriptorIOFacade.getInstance());
   }
 
   /**
