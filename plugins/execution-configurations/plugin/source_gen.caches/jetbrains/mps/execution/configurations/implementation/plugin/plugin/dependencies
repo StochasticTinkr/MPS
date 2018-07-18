@@ -85,7 +85,7 @@
     <classNode dependClassName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleCreator" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployScript" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.IconContainer" />
+    <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
     <classNode dependClassName="jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -304,10 +304,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.execution.process.BaseOSProcessHandler" />
-  </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.IconContainer" file="IconContainer.java">
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconLoadingUtil" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitExecutor" file="JUnitExecutor.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />

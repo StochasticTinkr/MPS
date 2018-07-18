@@ -135,11 +135,7 @@
     </language>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
       <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
-        <property id="2756621024541341363" name="file" index="1iqoE4" />
         <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
-      </concept>
-      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconExpression" flags="nn" index="1QGGTA">
-        <child id="8974276187400029893" name="icon" index="1QGGTw" />
       </concept>
     </language>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -808,9 +804,9 @@
     <property role="9BnSP" value="http://www.jetbrains.com/mps/" />
     <property role="9BnSL" value="Execution configurations for MPS" />
     <property role="9BnSM" value="JetBrains" />
-    <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="Execution Configurations" />
     <property role="2PJ1tZ" value="true" />
+    <property role="1qHB85" value="/MPS_16.png" />
     <node concept="26PsSl" id="5WZfybTHuxE" role="2Tc6Ou">
       <ref role="26PsSk" to="4dtg:5WZfybTHucy" resolve="Execution Languages" />
     </node>
@@ -9283,10 +9279,9 @@
                           <node concept="Xl_RD" id="6hlEMz_kRtC" role="37wK5m">
                             <property role="Xl_RC" value="Deploy plugins" />
                           </node>
-                          <node concept="1QGGTA" id="Z6TQiSW4HD" role="37wK5m">
-                            <node concept="1QGGSu" id="Z6TQiSW4HF" role="1QGGTw">
-                              <property role="1iqoE4" value="${module}/icons/buildProject.png" />
-                            </node>
+                          <node concept="10M0yZ" id="7zMrP8vNXIK" role="37wK5m">
+                            <ref role="3cqZAo" to="l7us:~MPSIcons$Ant.Build" resolve="Build" />
+                            <ref role="1PxDUh" to="l7us:~MPSIcons$Ant" resolve="MPSIcons.Ant" />
                           </node>
                         </node>
                       </node>

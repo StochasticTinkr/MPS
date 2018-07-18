@@ -8102,7 +8102,7 @@
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.icon(jetbrains.mps.smodel.runtime.IconResource):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="icon" />
                         <node concept="2SwGe0" id="Lm" role="37wK5m">
                           <node concept="1QGGSu" id="Ln" role="2SwzYu">
-                            <property role="1iqoE4" value="${module}/icons/buildProject.png" />
+                            <property role="1iqoE4" value="${module}/icons/build.png" />
                           </node>
                         </node>
                       </node>

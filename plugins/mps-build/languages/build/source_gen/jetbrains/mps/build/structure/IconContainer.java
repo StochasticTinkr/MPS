@@ -13,7 +13,7 @@ public class IconContainer {
   protected static IconResource RESOURCE_a0a2a0a55b0ff = new IconResource("archive.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a2a0a46b0ff = new IconResource("archive.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a2a0a76b0ff = new IconResource("archive.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a2a0a17b0ff = new IconResource("buildProject.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a17b0ff = new IconResource("build.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a2a0a27b0ff = new IconResource("dependency.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a2a0a67b0ff = new IconResource("path.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a2a0a87b0ff = new IconResource("path.png", IconContainer.class);
