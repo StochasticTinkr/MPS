@@ -90,7 +90,7 @@ import jetbrains.jetpad.model.property.ReadableProperty;
       };
       addEditorCell(myPropertyCell_79747v_a0a);
       myPropertyCell_79747v_a0a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_79747v_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
-      myProperty_79747v_a1a = new ReadableModelProperty<String>() {
+      myProperty_79747v_a1a = new ReadableModelProperty<String>(editorContext) {
         protected String getModelPropertyValue() {
           return SPropertyOperations.getString(SLinkOperations.getTarget(getSNode(), MetaAdapterFactory.getReferenceLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec4404a9L, "metaBlock")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
         }

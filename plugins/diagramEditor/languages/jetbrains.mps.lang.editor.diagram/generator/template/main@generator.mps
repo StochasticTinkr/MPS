@@ -7407,8 +7407,8 @@
                     <node concept="YeOm9" id="6PdUmIzVrhp" role="2ShVmc">
                       <node concept="1Y3b0j" id="6PdUmIzVrhq" role="YeSDq">
                         <property role="2bfB8j" value="true" />
+                        <ref role="37wK5l" to="8jsd:4YVOMGLS64y" resolve="ReadableModelProperty" />
                         <ref role="1Y3XeK" to="8jsd:1xt3dANZPZG" resolve="ReadableModelProperty" />
-                        <ref role="37wK5l" to="8jsd:1xt3dAO0a$M" resolve="ReadableModelProperty" />
                         <node concept="3Tm1VV" id="6PdUmIzVrhr" role="1B3o_S" />
                         <node concept="3clFb_" id="6PdUmIzVrhs" role="jymVt">
                           <property role="1EzhhJ" value="false" />
@@ -7495,6 +7495,9 @@
                               </node>
                             </node>
                           </node>
+                        </node>
+                        <node concept="37vLTw" id="4YVOMGLT5pU" role="37wK5m">
+                          <ref role="3cqZAo" node="6PdUmIzVr8R" resolve="editorContext" />
                         </node>
                       </node>
                     </node>
