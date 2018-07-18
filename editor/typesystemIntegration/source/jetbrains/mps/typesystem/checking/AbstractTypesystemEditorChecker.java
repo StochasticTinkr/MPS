@@ -29,6 +29,7 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
@@ -71,7 +72,10 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
 
   @Override
   public boolean needsUpdate(EditorComponent editorComponent) {
-    return myHasEvents;
+    // TODO: instead of checking that the editor is instance of InspectorEditorComponent here, we should modify API & pass some context object
+    // TODO: instead of editorComponent here. We should understand that the checker was executed on top of the inspector from the context
+    // TODO: and access different information like: mainEditorMessagesChanged / wereInspectorMessagesCreated here
+    return myHasEvents || editorComponent instanceof InspectorEditorComponent;
   }
 
   @Override

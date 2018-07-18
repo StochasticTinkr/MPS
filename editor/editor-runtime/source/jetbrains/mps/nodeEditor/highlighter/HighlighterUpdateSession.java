@@ -139,6 +139,9 @@ public class HighlighterUpdateSession {
 
     final Set<EditorCheckerWrapper> checkersToRecheck = new LinkedHashSet<>();
     boolean rootWasCheckedOnce = editorTracker.wasCheckedOnce(component);
+    boolean recreateInspectorMessages =
+        myHighlighter.getEditorTracker().isInspector(component) && (mainEditorMessagesChanged || !editorTracker.wereInspectorMessagesCreated());
+    editorTracker.markCheckedOnce(component);
     if (!rootWasCheckedOnce) {
       checkersToRecheck.addAll(myCheckers);
     } else {
@@ -148,6 +151,8 @@ public class HighlighterUpdateSession {
           if (myHighlighter.isPausedOrStopping()) return;
 
           for (EditorCheckerWrapper checker : myCheckers) {
+            // TODO: pass some context to checker.needsUpdate() method containing recreateInspectorMessages flag.
+            // TODO: to allow checkers to show up in inspector editor properly
             if (checker.needsUpdate(component)) {
               checkersToRecheck.add(checker);
             }
@@ -160,9 +165,6 @@ public class HighlighterUpdateSession {
 
     List<EditorCheckerWrapper> checkersToRecheckList = new ArrayList<>(checkersToRecheck);
     checkersToRecheckList.sort(new PriorityComparator());
-
-    boolean recreateInspectorMessages = mainEditorMessagesChanged || !editorTracker.wereInspectorMessagesCreated();
-    editorTracker.markCheckedOnce(component);
 
     return updateEditor(component, rootWasCheckedOnce, checkersToRecheckList, recreateInspectorMessages, applyQuickFixes);
   }
@@ -204,7 +206,7 @@ public class HighlighterUpdateSession {
 
       if (checkResult instanceof Completed) {
         Completed completed = (Completed) checkResult;
-        if (completed.myMessagesChanged || myHighlighter.getEditorTracker().isInspector(editor) && recreateInspectorMessages) {
+        if (completed.myMessagesChanged || recreateInspectorMessages) {
           anyMessageChanged = true;
           highlightManager.clearForOwner(checker.getEditorMessageOwner(), false);
           for (EditorMessage message : completed.myMessages) {
