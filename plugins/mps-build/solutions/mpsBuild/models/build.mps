@@ -2109,6 +2109,25 @@
           </node>
         </node>
       </node>
+      <node concept="3_5H9E" id="6VpnTvSCYVV" role="398b2p">
+        <node concept="3LXTmp" id="6VpnTvSCYVX" role="3_5H9R">
+          <node concept="398BVA" id="6VpnTvSCZrV" role="3LXTmr">
+            <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+            <node concept="2Ry0Ak" id="6VpnTvSCZVM" role="iGT6I">
+              <property role="2Ry0Am" value="workbench" />
+              <node concept="2Ry0Ak" id="6VpnTvSCZVR" role="2Ry0An">
+                <property role="2Ry0Am" value="mps-icons" />
+                <node concept="2Ry0Ak" id="6VpnTvSCZVW" role="2Ry0An">
+                  <property role="2Ry0Am" value="source" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3LWZYx" id="6VpnTvSD3UY" role="3LXTna">
+            <property role="3LWZYw" value="**/*.svg" />
+          </node>
+        </node>
+      </node>
       <node concept="2GhqfE" id="5DAo_J9annZ" role="nCB5Z">
         <node concept="3yrxFa" id="5DAo_J9ano3" role="3yrxIG">
           <ref role="3yrxFb" node="5DAo_J9amSF" />

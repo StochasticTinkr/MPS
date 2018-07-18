@@ -7315,6 +7315,9 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-icons">
+      <fileset dir="${mps_home}/workbench/mps-icons/source">
+        <include name="**/*.svg" />
+      </fileset>
       <fileset dir="${mps_home}/workbench/mps-icons/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
     </copy>
   </target>
