@@ -350,7 +350,7 @@ public interface MetaModelInfoProvider {
     @Override
     public SConceptId getStubConcept(SConceptId origin) {
       ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(origin);
-      if (cd.getVersion() >= 2) {
+      if (cd != null && cd.getVersion() >= 2) {
         return cd.getStubConceptId();
       }
       // fall through for legacy implementation. Remove once 2018.2 is out
