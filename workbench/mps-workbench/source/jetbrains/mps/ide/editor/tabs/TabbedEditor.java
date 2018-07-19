@@ -66,6 +66,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class TabbedEditor extends BaseNodeEditor {
@@ -389,7 +390,7 @@ public class TabbedEditor extends BaseNodeEditor {
     }
 
     public boolean equals(Object obj) {
-      return obj instanceof TabbedEditorState && super.equals(obj) && obj.equals(myCurrentNode);
+      return obj instanceof TabbedEditorState && super.equals(obj) && Objects.equals(((TabbedEditorState) obj).myCurrentNode, myCurrentNode);
     }
   }
 
