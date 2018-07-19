@@ -40,7 +40,7 @@ abstract class AbstractPath implements Path {
   @Override
   public int hashCode() {
     int result = 0;
-    for (String name : getNames()) {
+    for (String name :getNames()) {
       result = 31 * result + name.hashCode();
     }
     return result;

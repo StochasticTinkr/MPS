@@ -51,7 +51,7 @@ public class MPSPsiElement extends FakePsiElement {
   }
 
   public MPSPsiElement(List<SNode> nodes, MPSProject project) {
-    this(project, nodes.stream().map(key -> key.getReference()).collect(Collectors.toList()), false);
+    this(project, nodes.stream().map(SNode::getReference).collect(Collectors.toList()), false);
   }
 
   public MPSPsiElement(SModel model, MPSProject project) {

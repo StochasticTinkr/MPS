@@ -64,6 +64,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Language extends ReloadableModuleBase implements MPSModuleOwner, ReloadableModule {
@@ -376,7 +377,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public boolean isAccessoryModel(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-    return myLanguageDescriptor.getAccessoryModels().stream().anyMatch(m -> Objects.equals(m, modelReference));
+    return myLanguageDescriptor.getAccessoryModels().stream().anyMatch(Predicate.isEqual(modelReference));
   }
 
   public void removeAccessoryModel(org.jetbrains.mps.openapi.model.SModel sm) {

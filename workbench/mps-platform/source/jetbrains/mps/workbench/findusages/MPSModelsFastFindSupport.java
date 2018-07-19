@@ -88,7 +88,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
 
   @Override
   public void findModelUsages(Collection<SModel> scope, Set<SModelReference> modelReferences, Consumer<SModel> consumer, Consumer<SModel> processedConsumer) {
-    MultiMap<SModel, SModelReference> candidates = findCandidates(scope, modelReferences, processedConsumer, key -> new ModelUse(key));
+    MultiMap<SModel, SModelReference> candidates = findCandidates(scope, modelReferences, processedConsumer, ModelUse::new);
     for (Entry<SModel, Collection<SModelReference>> candidate : candidates.entrySet()) {
       if (FindUsagesUtil.hasModelUsages(candidate.getKey(), candidate.getValue())) {
         consumer.consume(candidate.getKey());
