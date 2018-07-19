@@ -63,7 +63,7 @@ public class ModelValidationConfigurable implements SearchableConfigurable {
   }
 
   @Override
-  public void apply() throws ConfigurationException {
+  public void apply() {
     myModelValidationSettings.setDisableCheckOpenAPI(myCheckBoxOpenAPI.isSelected());
     myModelValidationSettings.setDisableTypeWasNotCalculated(myCheckBoxTypeWasNotCalculated.isSelected());
   }

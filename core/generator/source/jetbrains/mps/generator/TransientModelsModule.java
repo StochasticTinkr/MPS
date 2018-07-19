@@ -404,7 +404,7 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     }
 
     @Override
-    protected boolean saveModel() throws IOException, ModelSaveException {
+    protected boolean saveModel() {
       throw new UnsupportedOperationException();
     }
 

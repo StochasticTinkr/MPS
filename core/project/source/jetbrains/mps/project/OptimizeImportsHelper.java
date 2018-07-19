@@ -142,7 +142,7 @@ public class OptimizeImportsHelper {
   private Result optimizeSolutionImports_internal(Solution solution) {
     List<SModel> modelsToOptimize = solution.getModels();
     Result result = optimizeModelsImports_internal(modelsToOptimize, new EmptyProgressMonitor());
-    result.myReport = optimizeModuleImports(solution, result, Collections.<SModuleReference>emptySet()) + "\n\n" + result.myReport;
+    result.myReport = optimizeModuleImports(solution, result, Collections.emptySet()) + "\n\n" + result.myReport;
     return result;
   }
 
@@ -166,7 +166,7 @@ public class OptimizeImportsHelper {
       gms.walkPriorityRules(g);
       result.myReport = optimizeModuleImports(g, result, gms.getReferencedGenerators()) + "\n\n" + result.myReport;
     }
-    result.myReport = optimizeModuleImports(language, result, Collections.<SModuleReference>emptySet()) + "\n\n" + result.myReport;
+    result.myReport = optimizeModuleImports(language, result, Collections.emptySet()) + "\n\n" + result.myReport;
 
     return result;
   }

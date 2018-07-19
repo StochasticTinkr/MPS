@@ -91,7 +91,7 @@ public class GenerationDependencies {
     this.myModelHash = modelHash;
     this.myParametersHash = parametersHash;
     this.myUnchanged = unchanged;
-    this.myUsedModelsHashes = externalHashes.isEmpty() ? Collections.<String, String>emptyMap() : externalHashes;
+    this.myUsedModelsHashes = externalHashes.isEmpty() ? Collections.emptyMap() : externalHashes;
     for (GenerationRootDependencies rd : data) {
       String id = rd.getRootId();
       myRootDependenciesMap.put(id == null ? GeneratableSModel.HEADER : id, rd);
@@ -221,6 +221,6 @@ public class GenerationDependencies {
     if (externalHashes.isEmpty() && data.isEmpty()) {
       return new GenerationDependencies(modelHash, paramsHash);
     }
-    return new GenerationDependencies(data, modelHash, paramsHash, externalHashes, Collections.<GenerationRootDependencies>emptyList(), 0, 0, null);
+    return new GenerationDependencies(data, modelHash, paramsHash, externalHashes, Collections.emptyList(), 0, 0, null);
   }
 }

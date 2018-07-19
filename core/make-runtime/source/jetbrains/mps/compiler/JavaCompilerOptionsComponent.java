@@ -43,9 +43,7 @@ public class JavaCompilerOptionsComponent {
   }
 
   public void removeJavaCompilerOptions(@NotNull Project project) {
-    if (myProjectToOptions.containsKey(project)) {
-      myProjectToOptions.remove(project);
-    }
+    myProjectToOptions.remove(project);
   }
 
   @NotNull

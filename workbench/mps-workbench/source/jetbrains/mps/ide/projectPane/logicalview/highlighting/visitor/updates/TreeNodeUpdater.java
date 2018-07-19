@@ -37,7 +37,7 @@ public final class TreeNodeUpdater {
     myProject = mpsProject;
     myTimer = new Timer("ProjectPane Tree Update Thread", 500) {
       @Override
-      protected void onTimer() throws InterruptedException {
+      protected void onTimer() {
         process();
       }
     };

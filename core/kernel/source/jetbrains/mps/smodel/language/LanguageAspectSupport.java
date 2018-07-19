@@ -50,8 +50,7 @@ public class LanguageAspectSupport {
     SModule module = model.getModule();
     if (!(module instanceof Language)) return false;
     if (getOldAspect(model) != null) return true;
-    if (getNewAspect(model) != null) return true;
-    return false;
+    return getNewAspect(model) != null;
   }
 
   public static Collection<SModel> getAspectModels(@NotNull SModule language) {

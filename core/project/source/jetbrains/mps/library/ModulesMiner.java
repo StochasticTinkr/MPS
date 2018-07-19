@@ -186,7 +186,7 @@ public final class ModulesMiner {
       } else {
         files.add(f);
       }
-    };
+    }
 
     boolean sourceModuleFound = false;
     for (IFile f : files) {

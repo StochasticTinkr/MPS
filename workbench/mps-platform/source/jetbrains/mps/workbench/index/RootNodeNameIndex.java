@@ -103,7 +103,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
           return null;
         }
         inputData.putUserData(PARSED_MODEL, modelData);
-      } catch (URLNotSupportedException | URISyntaxException | IOException e) {
+      } catch (URLNotSupportedException | IOException e) {
         LOG.error(String.format("Failed to index %s", inputData.getFileName()), e);
         return null;
       }
@@ -122,7 +122,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
   }
 
   @Nullable
-  private static URL constructURLFromData(FileContent inputData) throws MalformedURLException, URISyntaxException {
+  private static URL constructURLFromData(FileContent inputData) {
     return VfsUtilCore.convertToURL(inputData.getFile().getUrl());
   }
 

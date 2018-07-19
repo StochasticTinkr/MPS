@@ -221,9 +221,8 @@ public interface ModelFactory {
   /**
    * Saves the model in the factory-specific format (including conversion when needed).
    *
-   * @throws UnsupportedDataSourceException if the data source is not supported
    */
-  void save(@NotNull SModel model, @NotNull DataSource dataSource) throws UnsupportedDataSourceException, ModelSaveException, IOException;
+  void save(@NotNull SModel model, @NotNull DataSource dataSource) throws ModelSaveException, IOException;
 
   /**
    * returns true if plain text is not enough to represent stored data.

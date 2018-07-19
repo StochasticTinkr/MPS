@@ -46,7 +46,7 @@ public abstract class BaseLibraryManagerConfigurable implements Configurable {
   }
 
   @Override
-  public void apply() throws ConfigurationException {
+  public void apply() {
     getPreferences().commit();
   }
 

@@ -25,5 +25,5 @@ public interface EditorWarningsProvider {
   ExtensionPointName<EditorWarningsProvider> EP_NAME = new ExtensionPointName<>("com.intellij.mps.editorWarningsProvider");
 
   @Nullable
-  public WarningPanel getWarningPanel(@NotNull SNode node, @NotNull Project project);
+  WarningPanel getWarningPanel(@NotNull SNode node, @NotNull Project project);
 }

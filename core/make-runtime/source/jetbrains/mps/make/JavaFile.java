@@ -64,9 +64,7 @@ public class JavaFile {
     JavaFile javaFile = (JavaFile) o;
 
     if (!myClassName.equals(javaFile.myClassName)) return false;
-    if (!myFile.equals(javaFile.myFile)) return false;
-
-    return true;
+    return myFile.equals(javaFile.myFile);
   }
 
   @Override

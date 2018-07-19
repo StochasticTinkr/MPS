@@ -73,7 +73,7 @@ public class PathMacros implements CoreComponent {
       }
       result.addAll(pnames);
     }
-    return result != null ? result : Collections.<String>emptySet();
+    return result != null ? result : Collections.emptySet();
   }
 
   public Set<String> getUserNames() {
@@ -92,7 +92,7 @@ public class PathMacros implements CoreComponent {
       }
       result.addAll(pnames);
     }
-    return result != null ? result : Collections.<String>emptySet();
+    return result != null ? result : Collections.emptySet();
   }
 
   public String getValue(String name) {

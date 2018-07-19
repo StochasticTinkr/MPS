@@ -149,7 +149,7 @@ public interface MetaModelInfoProvider {
    * Base implementation, clients shall extend this class rather than implement {@link jetbrains.mps.persistence.MetaModelInfoProvider} directly.
    * Always answers <code>null</code>, and a no-op for updates.
    */
-  public static class BaseMetaModelInfo implements MetaModelInfoProvider {
+  class BaseMetaModelInfo implements MetaModelInfoProvider {
 
     @Override
     public String getLanguageName(SLanguageId lang) {
@@ -250,7 +250,7 @@ public interface MetaModelInfoProvider {
    * Uses {@link jetbrains.mps.smodel.DebugRegistry} to retrieve names, if available.
    * Setter methods update {@link jetbrains.mps.smodel.DebugRegistry}.
    */
-  public static class RegularMetaModelInfo extends BaseMetaModelInfo {
+  class RegularMetaModelInfo extends BaseMetaModelInfo {
     private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultModelPersistence.class));
     private SModelReference myModelRef;
 
@@ -408,7 +408,7 @@ public interface MetaModelInfoProvider {
    * Queries, if could not be resolved with the information filled in, are directed to delegate.
    * Depending on actual delegate used, may answer <code>null</code>.
    */
-  public static class StuffedMetaModelInfo extends BaseMetaModelInfo {
+  class StuffedMetaModelInfo extends BaseMetaModelInfo {
     private final Map<SLanguageId, String> myLanguageNames = new HashMap<>();
     private final Map<SConceptId, String> myConceptNames = new HashMap<>();
     private final Map<SPropertyId, String> myPropertyNames = new HashMap<>();

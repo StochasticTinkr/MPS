@@ -160,7 +160,7 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
     return false;
   }
 
-  private static interface InheritanceCalculateParameters {
+  private interface InheritanceCalculateParameters {
     ReferenceConstraintsDescriptor getParentCalculatedDescriptor(BaseReferenceConstraintsDescriptor parentDescriptor);
 
     boolean hasOwn(ReferenceConstraintsDispatchable parentDescriptor);

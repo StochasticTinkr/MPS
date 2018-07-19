@@ -451,13 +451,10 @@ public class EditorManager {
     while (!cells.isEmpty()) {
       EditorCell nextCell = cells.remove();
       if (nextCell.getSNode() == node && !(nextCell instanceof EditorCell_STHint)) {
-        if (!nextCell.isBig()) {
-          // trying to avoid calling cell.getSNode().toString() for each node...
-          assert false :
-              "\"Not big\" cell found. Original cell: " + cell.getCellId() + ", node: " + cell.getSNode() + ", concept: " +
-                  cell.getSNode().getConcept().getQualifiedName() + ". Found cell: " + nextCell.getCellId() + ", node: " +
-                  node + ", concept: " + node.getConcept().getQualifiedName();
-        }
+        assert nextCell.isBig() :
+            "\"Not big\" cell found. Original cell: " + cell.getCellId() + ", node: " + cell.getSNode() + ", concept: " +
+                cell.getSNode().getConcept().getQualifiedName() + ". Found cell: " + nextCell.getCellId() + ", node: " +
+                node + ", concept: " + node.getConcept().getQualifiedName();
         return nextCell;
       }
       if (nextCell instanceof EditorCell_Collection) {

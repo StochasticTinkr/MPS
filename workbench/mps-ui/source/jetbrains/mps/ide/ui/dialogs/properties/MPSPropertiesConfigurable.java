@@ -234,7 +234,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
   }
 
   @Override
-  public void apply() throws ConfigurationException {
+  public void apply() {
     ThreadUtils.assertEDT();
     //see MPS-18743
     new SaveRepositoryCommand(myProject.getRepository()).execute();

@@ -40,7 +40,7 @@ public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInf
     final SNode node = cellContext.get(BasicCellContext.EDITED_NODE);
     final IOperationContext context = editorContext.getOperationContext();
 
-    return Collections.<SubstituteAction>singletonList(new AbstractNodeSubstituteAction(null, null, node) {
+    return Collections.singletonList(new AbstractNodeSubstituteAction(null, null, node) {
 
       @Override
       public String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {

@@ -327,7 +327,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       if (myDisabledIntentions != null && myDisabledIntentions.contains(intentionFactory.getPersistentStateKey())) {
         return false;
       }
-      return intentionFactory.isSurroundWith() ? mySurroundWith : !mySurroundWith;
+      return intentionFactory.isSurroundWith() == mySurroundWith;
     }
   }
 

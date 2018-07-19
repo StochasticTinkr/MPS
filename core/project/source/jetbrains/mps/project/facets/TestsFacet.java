@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
  */
 public interface TestsFacet extends SModuleFacet, GenerationTargetFacet {
 
-  public static final String FACET_TYPE = "tests";
+  String FACET_TYPE = "tests";
 
   /**
    * @return test output folder, if there is one. Otherwise returns null.

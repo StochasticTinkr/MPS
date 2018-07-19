@@ -1016,11 +1016,7 @@ public class SModel implements SModelData, UpdateModeSupport {
       if (myUsedVersion != that.myUsedVersion) {
         return false;
       }
-      if (myModelReference != null ? !myModelReference.equals(that.myModelReference) : that.myModelReference != null) {
-        return false;
-      }
-
-      return true;
+      return myModelReference != null ? myModelReference.equals(that.myModelReference) : that.myModelReference == null;
     }
 
     @Override

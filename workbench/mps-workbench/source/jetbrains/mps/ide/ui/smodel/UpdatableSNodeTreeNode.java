@@ -127,7 +127,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     @Override
     public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
       if (getTree() == null) return;
-      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+      DefaultTreeModel treeModel = getTree().getModel();
       for (SNode removedRoot : removedRoots) {
         if (removedRoot.equals(myTreeNode.getSNode())) {
           treeModel.removeNodeFromParent(myTreeNode);

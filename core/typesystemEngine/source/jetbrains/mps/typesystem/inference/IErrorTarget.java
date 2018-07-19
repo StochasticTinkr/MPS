@@ -19,11 +19,11 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.MessageTargetEnum;
 
 public interface IErrorTarget {
-  public MessageTargetEnum getTarget();
+  MessageTargetEnum getTarget();
 
-  public String getRole();
+  String getRole();
 
-  public boolean sameAs(IErrorTarget errorTarget);
+  boolean sameAs(IErrorTarget errorTarget);
 
-  public MessageTarget toEditorMessageTarget();
+  MessageTarget toEditorMessageTarget();
 }

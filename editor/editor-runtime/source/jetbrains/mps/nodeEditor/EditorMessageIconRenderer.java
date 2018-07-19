@@ -97,7 +97,7 @@ public interface EditorMessageIconRenderer {
 
   JPopupMenu getPopupMenu();
 
-  public class IconRendererType {
+  class IconRendererType {
 
     private final int myWeight;
 

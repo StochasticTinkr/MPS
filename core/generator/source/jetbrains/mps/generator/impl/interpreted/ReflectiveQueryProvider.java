@@ -401,7 +401,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       }
     }
 
-    private QueryMethod<Object> getMethod(PropertyMacroContext context) throws GenerationFailureException {
+    private QueryMethod<Object> getMethod(PropertyMacroContext context) {
       // We used to treat missing method for a property macro as GFE, while check or sourceNode queries
       // got default implementation, and now I've switched to null default value.
       if (!myQueryMethods.hasMethod(myMethodName)) {

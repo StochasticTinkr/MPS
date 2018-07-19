@@ -39,7 +39,7 @@ public enum ActionPlace {
 
   private String myId = "";
 
-  private ActionPlace(String id) {
+  ActionPlace(String id) {
     myId = id;
   }
 }

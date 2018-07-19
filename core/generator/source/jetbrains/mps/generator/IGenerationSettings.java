@@ -94,7 +94,7 @@ public interface IGenerationSettings {
    * <tt>compact templates</tt> - whether to show only template node closest to the output node.
    * <tt>group by change</tt> - individual changes grouped by either pair (input, output) or just input (forward trace) or output (for backward trace) node.
    */
-  public static class GenTraceSettings {
+  class GenTraceSettings {
     private boolean myGroupSteps = true;
     private boolean myCompactTemplates = false;
     private boolean myShowEmptySteps = false;

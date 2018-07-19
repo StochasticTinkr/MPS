@@ -97,7 +97,7 @@ public final class C3StarMethodResolutionOrder implements CachingMethodResolutio
         if (superLinearization.lastIndexOf(candidate) > 0) return false; // only head is possible
       }
       if (localOrder.preserveOrder()) {
-        if (myLocalOrder.lastIndexOf(candidate) > 0) return false;
+        return myLocalOrder.lastIndexOf(candidate) <= 0;
       }
       return true;
     }
@@ -161,7 +161,7 @@ public final class C3StarMethodResolutionOrder implements CachingMethodResolutio
         if (myLocalOrder.isEmpty()) return false;
         T candidate = myLocalOrder.get(0);
         boolean succeeded = checkCandidateAndAddToResult(result, candidate, localOrder);
-        if (succeeded) return true;
+        return succeeded;
       }
       return false;
     }

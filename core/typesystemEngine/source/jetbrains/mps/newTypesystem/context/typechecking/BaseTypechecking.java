@@ -72,15 +72,15 @@ public abstract class BaseTypechecking<STATE extends State, COMP extends SimpleT
   }
 
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
+    return computeTypesForNode_special(initialNode, Collections.emptyList());
   }
 
   public SNode computeTypesForNodeDuringResolving(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
+    return computeTypesForNode_special(initialNode, Collections.emptyList());
   }
 
   public SNode computeTypesForNodeInferenceMode(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
+    return computeTypesForNode_special(initialNode, Collections.emptyList());
   }
 
   @NotNull

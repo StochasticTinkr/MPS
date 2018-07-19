@@ -65,17 +65,17 @@ public class MPSLanguageVirtualFile extends VirtualFile {
   }
 
   @Override
-  public InputStream getInputStream() throws IOException {
+  public InputStream getInputStream() {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public OutputStream getOutputStream(Object requestor, long newModificationStamp, long newTimeStamp) throws IOException {
+  public OutputStream getOutputStream(Object requestor, long newModificationStamp, long newTimeStamp) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public byte[] contentsToByteArray() throws IOException {
+  public byte[] contentsToByteArray() {
     throw new UnsupportedOperationException();
   }
 

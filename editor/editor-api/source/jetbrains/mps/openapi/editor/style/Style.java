@@ -34,7 +34,7 @@ public interface Style {
   <T> void set(StyleAttribute<T> attribute, T value);
   <T> void set(StyleAttribute<T> attribute, int priority, T value);
 
-  public static class IntPair<T> {
+  class IntPair<T> {
     public int index;
     public T value;
 

@@ -87,7 +87,7 @@ public final class Triplet<E, F, G> {
   }
 
   private boolean eq(Object a, Object b) {
-    return (a == b) || ((a != null) ? a.equals(b) : false);
+    return (a == b) || ((a != null) && a.equals(b));
   }
 
 }

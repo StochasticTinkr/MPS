@@ -264,11 +264,7 @@ public final class ModuleClassLoader extends ClassLoader {
     for (ClassLoader dep : classLoadersToCheck) {
       if (dep instanceof ModuleClassLoader) {
         URL res;
-        try {
-          res = ((ModuleClassLoader) dep).mySupport.findResource(name);
-        } catch (ModuleIsNotLoadableException e) {
-          throw new RuntimeException(e);
-        }
+        res = ((ModuleClassLoader) dep).mySupport.findResource(name);
         if (res != null) return res;
       }
     }
@@ -277,7 +273,7 @@ public final class ModuleClassLoader extends ClassLoader {
   }
 
   @Override
-  protected Enumeration<URL> findResources(String name) throws IOException {
+  protected Enumeration<URL> findResources(String name) {
     checkNotDisposed();
     List<ClassLoader> classLoadersToCheck = new ArrayList<>();
     classLoadersToCheck.add(this);
@@ -286,11 +282,7 @@ public final class ModuleClassLoader extends ClassLoader {
     for (ClassLoader dep : classLoadersToCheck) {
       if (dep instanceof ModuleClassLoader) {
         Enumeration<URL> resources;
-        try {
-          resources = ((ModuleClassLoader) dep).mySupport.findResources(name);
-        } catch (ModuleIsNotLoadableException e) {
-          throw new RuntimeException(e);
-        }
+        resources = ((ModuleClassLoader) dep).mySupport.findResources(name);
         while (resources.hasMoreElements()) result.add(resources.nextElement());
       }
     }

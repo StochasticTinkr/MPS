@@ -186,11 +186,7 @@ public class SelectionInfoImpl implements SelectionInfo {
     if (myCellInfo != null ? !myCellInfo.equals(that.myCellInfo) : that.myCellInfo != null) {
       return false;
     }
-    if (!myProperties.equals(that.myProperties)) {
-      return false;
-    }
-
-    return true;
+    return myProperties.equals(that.myProperties);
   }
 
   @Override

@@ -21,17 +21,17 @@ import java.io.OutputStream;
 class NullOutputStream extends OutputStream {
 
   @Override
-  public void write(int b) throws IOException {
+  public void write(int b) {
     // > /dev/null
   }
 
   @Override
-  public void write(byte[] b) throws IOException {
+  public void write(byte[] b) {
     // > /dev/null
   }
 
   @Override
-  public void write(byte[] b, int off, int len) throws IOException {
+  public void write(byte[] b, int off, int len) {
     // > /dev/null
   }
 }

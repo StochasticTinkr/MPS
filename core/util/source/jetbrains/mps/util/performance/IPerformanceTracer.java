@@ -33,7 +33,7 @@ public interface IPerformanceTracer {
 
   default void push(String taskName) {
     push(taskName, false);
-  };
+  }
 
   /**
    * Include trace information from another instance as part of active task.

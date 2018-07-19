@@ -37,7 +37,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   }
 
   @Override
-  public final void undo() throws UnexpectedUndoException {
+  public final void undo() {
     myRepository.getModelAccess().executeUndoTransparentCommand(() -> {
       for (int i = myItems.length - 1; i >= 0; i--) {
         myItems[i].undo();
@@ -46,7 +46,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   }
 
   @Override
-  public final void redo() throws UnexpectedUndoException {
+  public final void redo() {
     myRepository.getModelAccess().executeUndoTransparentCommand(() -> {
       for (UndoItem myItem : myItems) {
         myItem.redo();

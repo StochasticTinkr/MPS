@@ -90,7 +90,7 @@ class GensourcesModuleFile {
     myRegularModuleContentRoots = modelRoots;
   }
 
-  public void updateGenSourcesIml(File... sourceDirs) throws JDOMException, IOException {
+  public void updateGenSourcesIml(File... sourceDirs) throws IOException {
     for (File dir : sourceDirs) {
       Element contentRoot = new Element(CONTENT);
       contentRoot.setAttribute(URL, PATH_START_MODULE + dir);
@@ -165,7 +165,7 @@ class GensourcesModuleFile {
 
   // afaiu, the difference between this method and updateGenSourcesIml, above, is that this one follows some hideous logic to group
   // discovered locations under deduced content roots.
-  public void updateGenSourcesImlNoIntersections(File... sourceDirs) throws JDOMException, IOException {
+  public void updateGenSourcesImlNoIntersections(File... sourceDirs) throws IOException {
     Set<String> modelRoots = new HashSet<>(myRegularModuleContentRoots);
     modelRoots.addAll(myGeneratedModuleContentRoots);
     List<String> sourceGen = new ArrayList<>();

@@ -212,7 +212,7 @@ class TemplateNode {
           templateChildNodes.add(templateChildNode);
         }
       }
-      myChildTemplates = templateChildNodes.isEmpty() ? Collections.<SNode>emptyList() : Arrays.asList(templateChildNodes.toArray(new SNode[templateChildNodes.size()]));
+      myChildTemplates = templateChildNodes.isEmpty() ? Collections.emptyList() : Arrays.asList(templateChildNodes.toArray(new SNode[templateChildNodes.size()]));
       myMacroRefs = refMacros.toArray(new ReferenceMacro[refMacros.size()]);
       myMacroProperties = propertyMacros.toArray(new PropertyMacro[propertyMacros.size()]);
       final ArrayList<SProperty> templateProps = new ArrayList<>();

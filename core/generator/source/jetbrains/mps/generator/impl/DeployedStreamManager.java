@@ -100,7 +100,7 @@ public class DeployedStreamManager implements ModelStreamManager {
 
     @NotNull
     @Override
-    public OutputStream openOutputStream(String name) throws IOException {
+    public OutputStream openOutputStream(String name) {
       throw new UnsupportedOperationException();
     }
 

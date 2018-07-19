@@ -123,11 +123,7 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
     if (modelName == null) {
       throw new IOException("modelName is not provided");
     }
-    try {
-      return create(dataSource, new SModelName(modelName));
-    } catch (ModelCreationException e) {
-      throw new IOException(e);
-    }
+    return create(dataSource, new SModelName(modelName));
   }
 
   @Override
@@ -144,8 +140,7 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
   @Override
   public SModel create(@NotNull DataSource dataSource,
                        @NotNull SModelName modelName,
-                       @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException,
-                                                                      ModelCreationException {
+                       @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException {
     if (!(supports(dataSource))) {
       throw new UnsupportedDataSourceException(dataSource);
     }

@@ -26,7 +26,7 @@ import java.util.Map;
  */
 public interface GenerationParametersProvider {
 
-  public static final String HASH = "__parametersHash";
+  String HASH = "__parametersHash";
 
   Map<String, Object> getParameters(SModel descriptor);
 

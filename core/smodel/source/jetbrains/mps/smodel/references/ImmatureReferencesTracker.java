@@ -113,7 +113,7 @@ public class ImmatureReferencesTracker {
             continue;
           }
 
-          myImmatureRefs.remove((SReferenceBase) r);
+          myImmatureRefs.remove(r);
         }
       }
     }

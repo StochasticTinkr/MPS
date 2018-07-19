@@ -40,7 +40,7 @@ public class GenParameters {
    */
   @Deprecated
   public List<SModel> getModelDescriptors() {
-    return (List) Collections.unmodifiableList(myModels);
+    return Collections.unmodifiableList(myModels);
   }
 
   public List<SModel> getSModels() {

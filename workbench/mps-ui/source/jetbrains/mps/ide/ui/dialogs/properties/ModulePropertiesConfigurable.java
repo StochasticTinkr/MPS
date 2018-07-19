@@ -473,11 +473,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           //just continue omitting this field
         }
       }
-      if (myGeneratorAlias != null && !myGeneratorAlias.getText().equals(((GeneratorDescriptor) myModuleDescriptor).getAlias())) {
-        return true;
-      }
+      return myGeneratorAlias != null && !myGeneratorAlias.getText().equals(((GeneratorDescriptor) myModuleDescriptor).getAlias());
 
-      return false;
     }
 
     @Override

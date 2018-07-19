@@ -141,9 +141,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
       if (getSelectionEnd() != that.getSelectionEnd()) {
         return false;
       }
-      if (getSelectionStart() != that.getSelectionStart()) {
-        return false;
-      }
+      return getSelectionStart() == that.getSelectionStart();
     }
     return true;
   }

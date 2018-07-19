@@ -435,7 +435,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
      */
     public abstract String getModuleReference();
 
-    public void loadFilter(Map<String, String> properties) throws SelectionRestoreException, SelectionStoreException {
+    public void loadFilter(Map<String, String> properties) {
     }
   }
 

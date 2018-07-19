@@ -469,11 +469,7 @@ public class SearchPanel extends AbstractSearchPanel {
       if (!myCell.equals(that.myCell)) {
         return false;
       }
-      if (!myPositions.equals(that.myPositions)) {
-        return false;
-      }
-
-      return true;
+      return myPositions.equals(that.myPositions);
     }
 
     @Override

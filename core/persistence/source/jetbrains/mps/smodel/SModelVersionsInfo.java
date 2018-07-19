@@ -142,9 +142,7 @@ public class SModelVersionsInfo {
       NodeStringPair property = (NodeStringPair) o;
 
       if (!myNode.equals(property.myNode)) return false;
-      if (!myString.equals(property.myString)) return false;
-
-      return true;
+      return myString.equals(property.myString);
     }
 
     @Override

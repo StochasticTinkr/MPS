@@ -72,7 +72,7 @@ public class TabEditorLayout {
     Entry(@NotNull RelationDescriptor tab, @NotNull SNodeReference editorNode, Collection<SNodeReference> selectionNodes) {
       myDescriptor = tab;
       myEditorNode = editorNode;
-      mySelection = selectionNodes == null ? Collections.<SNodeReference>emptyList() : selectionNodes;
+      mySelection = selectionNodes == null ? Collections.emptyList() : selectionNodes;
     }
 
     @NotNull

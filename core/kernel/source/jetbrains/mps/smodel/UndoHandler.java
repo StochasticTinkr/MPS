@@ -26,9 +26,9 @@ public interface UndoHandler {
    *
    * @param action never {@code null}
    */
-  public void addUndoableAction(SNodeUndoableAction action);
+  void addUndoableAction(SNodeUndoableAction action);
 
-  public <T> T runNonUndoableAction(Computable<T> t);
+  <T> T runNonUndoableAction(Computable<T> t);
 
   // tells the command is over and UndoHandler shall use whatever platform mechanism available to
   // register undoable action

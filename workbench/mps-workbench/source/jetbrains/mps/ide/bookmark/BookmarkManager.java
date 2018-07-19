@@ -327,9 +327,9 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
   }
 
   public interface BookmarkListener {
-    public void bookmarkAdded(int number, SNode node);
+    void bookmarkAdded(int number, SNode node);
 
-    public void bookmarkRemoved(int number, SNode node);
+    void bookmarkRemoved(int number, SNode node);
   }
 
   public static class MyState {

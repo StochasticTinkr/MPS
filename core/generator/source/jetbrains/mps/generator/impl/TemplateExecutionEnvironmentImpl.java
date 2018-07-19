@@ -138,7 +138,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   @Override
-  public SNode insertNode(SNode child, SNodeReference templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
+  public SNode insertNode(SNode child, SNodeReference templateNode, TemplateContext templateContext) {
     generator.checkIsExpectedLanguage(Collections.singletonList(child), templateNode, templateContext);
     return new ChildAdopter(generator).adopt(child, templateContext);
   }

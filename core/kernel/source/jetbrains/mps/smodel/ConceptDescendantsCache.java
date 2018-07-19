@@ -214,7 +214,7 @@ public class ConceptDescendantsCache implements CoreComponent {
   private Set<SAbstractConcept> getDirectDescendantsInternal(SAbstractConcept concept) {
     myModuleRepository.getModelAccess().checkReadAccess();
     Set<SAbstractConcept> result = myDescendantsCache.get(concept);
-    return result != null ? result : Collections.<SAbstractConcept>emptySet();
+    return result != null ? result : Collections.emptySet();
   }
 
   private Set<ConceptDescriptor> getConcepts(LanguageRuntime languageRuntime) {

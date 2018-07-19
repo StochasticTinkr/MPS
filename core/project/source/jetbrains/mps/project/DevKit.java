@@ -111,9 +111,7 @@ public class DevKit extends AbstractModule {
     for (DevKit dk : getAllExtendedDevkits()) {
       for (SModuleReference l : dk.myDescriptor.getExportedLanguages()) {
         SLanguage lang = MetaAdapterFactory.getLanguage(l);
-        if (!result.contains(lang)) {
-          result.add(lang);
-        }
+        result.add(lang);
       }
     }
     return result;

@@ -430,9 +430,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     SModule modelOwner = sm.getModule();
     if (modelOwner instanceof Language) {
       Language l = (Language) modelOwner;
-      if (l.isAccessoryModel(sm.getReference())) {
-        return true;
-      }
+      return l.isAccessoryModel(sm.getReference());
     }
     return false;
   }
@@ -483,7 +481,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   @NotNull
-  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException, ModuleIsNotLoadableException {
+  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException {
     // first check if class comes from stubs
     if (classFqName.startsWith(getModuleName() + ".stubs.")) {
       try {
@@ -504,7 +502,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     }
 
     @Override
-    protected Class<?> findClass(String name) throws ClassNotFoundException {
+    protected Class<?> findClass(String name) {
       JavaModuleFacet facet = Language.this.getFacet(JavaModuleFacet.class);
       assert facet != null;
       IClassPathItem classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());

@@ -20,11 +20,11 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Collection;
 
 public interface NodeMemberAccessModifier {
-  public void addModelsToModify(Collection<SModel> models);
+  void addModelsToModify(Collection<SModel> models);
 
-  public String getNewChildRole(SModel model, String conceptFQName, String role);
+  String getNewChildRole(SModel model, String conceptFQName, String role);
 
-  public String getNewReferentRole(SModel model, String conceptFQName, String role);
+  String getNewReferentRole(SModel model, String conceptFQName, String role);
 
-  public String getNewPropertyName(SModel model, String conceptFQName, String propertyName);
+  String getNewPropertyName(SModel model, String conceptFQName, String propertyName);
 }

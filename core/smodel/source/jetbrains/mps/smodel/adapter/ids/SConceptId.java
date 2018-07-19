@@ -51,9 +51,7 @@ public final class SConceptId {
     SConceptId that = (SConceptId) o;
 
     if (myConceptId != that.myConceptId) return false;
-    if (!myLanguageId.equals(that.myLanguageId)) return false;
-
-    return true;
+    return myLanguageId.equals(that.myLanguageId);
   }
 
   @Override

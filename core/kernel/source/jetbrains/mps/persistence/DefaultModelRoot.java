@@ -400,7 +400,7 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
       public IFile getAbsolutePath() {
         return myModelDir;
       }
-    };
+    }
     for (IFile md : modelDir) {
       result.addSourceRoot(SourceRootKinds.SOURCES, new SourceRootPrim(md));
     }

@@ -131,7 +131,7 @@ public class TemplateCall {
   }
 
   interface ArgumentExpression {
-    public Object evaluate(TemplateContext context) throws GenerationFailureException;
+    Object evaluate(TemplateContext context) throws GenerationFailureException;
   }
 
   // TemplateArgumentParameterExpression

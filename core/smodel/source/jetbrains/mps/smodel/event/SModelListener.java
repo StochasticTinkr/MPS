@@ -83,7 +83,7 @@ public interface SModelListener {
   @NotNull
   SModelListenerPriority getPriority();
 
-  public enum SModelListenerPriority {
+  enum SModelListenerPriority {
     PLATFORM,
     CLIENT
   }

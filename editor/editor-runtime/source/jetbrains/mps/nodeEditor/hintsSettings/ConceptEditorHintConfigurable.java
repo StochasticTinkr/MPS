@@ -110,7 +110,7 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable, Co
   }
 
   @Override
-  public void apply() throws ConfigurationException {
+  public void apply() {
     if (myLanguageRegistryChanged) {
       showRegistryChangedDialog();
       return;

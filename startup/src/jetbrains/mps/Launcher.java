@@ -79,20 +79,16 @@ public class Launcher {
 
   private static List<String> getAdditionalMPSClasspath() {
     List<String> result = new ArrayList<>();
-    try {
-      // we're probably running from the sources, let's add the class dirs to the classpath
-      Class<Bootstrap> clazz = Bootstrap.class;
-      String self = PathManager.getResourceRoot(clazz, "/" + clazz.getName().replace('.', '/') + ".class");
-      assert self != null;
-      File selfRoot = new File(self).getAbsoluteFile();
-      addMPSBootstrapClassFolders(result, selfRoot);
-    } catch (MalformedURLException ignored) {
-
-    }
+    // we're probably running from the sources, let's add the class dirs to the classpath
+    Class<Bootstrap> clazz = Bootstrap.class;
+    String self = PathManager.getResourceRoot(clazz, "/" + clazz.getName().replace('.', '/') + ".class");
+    assert self != null;
+    File selfRoot = new File(self).getAbsoluteFile();
+    addMPSBootstrapClassFolders(result, selfRoot);
     return result;
   }
 
-  private static void addMPSBootstrapClassFolders(List<String> classPath, File selfRoot) throws MalformedURLException {
+  private static void addMPSBootstrapClassFolders(List<String> classPath, File selfRoot) {
     String homePath = PathManager.getHomePath();
     ClassPathReader classPathReader = new ClassPathReader(PathManager.getHomePath());
     classPathReader.read().stream().forEach(path -> {

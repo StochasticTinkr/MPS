@@ -238,7 +238,7 @@ public class BaseFastNodeFinder implements FastNodeFinder {
 
     public List<SNode> get(SAbstractConcept conceptFQName) {
       List<SNode> n = myNodes.get(conceptFQName);
-      return n == null ? Collections.<SNode>emptyList() : n;
+      return n == null ? Collections.emptyList() : n;
     }
 
     public boolean isEmpty() {

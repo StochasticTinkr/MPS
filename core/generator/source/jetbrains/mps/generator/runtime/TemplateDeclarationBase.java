@@ -98,7 +98,7 @@ public abstract class TemplateDeclarationBase implements TemplateDeclaration {
         }
         return this;
       }
-    };
+    }
     return new FR2(myAggregationLinks[aggregationIndex], result);
   }
 
@@ -146,7 +146,7 @@ public abstract class TemplateDeclarationBase implements TemplateDeclaration {
         weaveFacility.weaveNode(myAggregation, myResult);
         return this;
       }
-    };
+    }
     return new FR1(myAggregationLinks[aggregationIndex], result);
   }
 

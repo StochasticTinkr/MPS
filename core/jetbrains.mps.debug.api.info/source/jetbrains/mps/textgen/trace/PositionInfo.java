@@ -166,9 +166,7 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
       }
     }
     if (myEndLine == position.getEndLine()) {
-      if (myEndPosition > position.getEndPosition()) {
-        return false;
-      }
+      return myEndPosition <= position.getEndPosition();
     }
     return true;
   }

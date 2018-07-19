@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface IMatchingPattern {
-  public boolean match(SNode nodeToMatch);
+  boolean match(SNode nodeToMatch);
   //public Object getFieldValue(String s);
 
   // perhaps, shall be SConcept, I don't know exact contract for pattern's concept

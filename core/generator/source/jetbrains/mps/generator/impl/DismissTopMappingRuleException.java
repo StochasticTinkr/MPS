@@ -51,6 +51,6 @@ public class DismissTopMappingRuleException extends GenerationException {
   public enum MessageType {
     info(),
     warning(),
-    error();
+    error()
   }
 }

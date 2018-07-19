@@ -54,7 +54,7 @@ public class CodeStyleSettingsConfigurable implements SearchableConfigurable, Co
   }
 
   @Override
-  public void apply() throws ConfigurationException {
+  public void apply() {
     getPage().commit();
   }
 

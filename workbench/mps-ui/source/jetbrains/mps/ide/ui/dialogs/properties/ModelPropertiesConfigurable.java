@@ -516,12 +516,12 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       myEngagedLanguagesModel = new UsedLangsTableModel(myProject.getRepository(), PropertiesBundle.message("model.info.engaged.title"));
       ArrayList<SLanguage> engagedLanguages = new ArrayList<>();
       engagedLanguages.addAll(myModelProperties.getLanguagesEngagedOnGeneration());
-      myEngagedLanguagesModel.init(engagedLanguages, Collections.<SModuleReference>emptyList());
+      myEngagedLanguagesModel.init(engagedLanguages, Collections.emptyList());
       languagesTable.setModel(myEngagedLanguagesModel);
 
       LanguageTableCellRenderer cellRenderer = new LanguageTableCellRenderer(myProject.getRepository());
       Set<SLanguage> languagesInUse = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new ComputeUsedLanguages(myModelDescriptor));
-      IsLanguageInUse inUseCondition = new IsLanguageInUse(languagesInUse, Collections.<SLanguage>emptySet());
+      IsLanguageInUse inUseCondition = new IsLanguageInUse(languagesInUse, Collections.emptySet());
       cellRenderer.addCellState(inUseCondition, DependencyCellState.SUPERFLUOUS_ENGAGED);
       cellRenderer.registerIn(languagesTable);
 
@@ -551,7 +551,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     public boolean isModified() {
       return myDoNotGenerateCheckBox.isSelected() != myModelProperties.isDoNotGenerate()
-          || (myIsDefSModelDescr ? (myGenerateIntoModelFolderCheckBox.isSelected() != myModelProperties.isGenerateIntoModelFolder()) : false)
+          || (myIsDefSModelDescr && (myGenerateIntoModelFolderCheckBox.isSelected() != myModelProperties.isGenerateIntoModelFolder()))
           || myEngagedLanguagesModel.isModified();
     }
 

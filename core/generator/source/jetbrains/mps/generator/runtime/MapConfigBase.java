@@ -47,7 +47,7 @@ public abstract class MapConfigBase implements TemplateMappingConfiguration {
    * Default implementation subclasses could rely on to return <code>true</code>
    */
   @Override
-  public boolean isApplicable(@NotNull ITemplateGenerator generator) throws GenerationFailureException {
+  public boolean isApplicable(@NotNull ITemplateGenerator generator) {
     return true;
   }
 

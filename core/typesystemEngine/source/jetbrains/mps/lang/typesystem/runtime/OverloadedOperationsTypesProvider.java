@@ -55,15 +55,10 @@ public abstract class OverloadedOperationsTypesProvider implements IOverloadedOp
       }
     }
     if (myRightTypeIsExact) {
-      if (!MatchingUtil.matchNodes(rightOperandType, myRightOperandType)) {
-        return false;
-      }
+      return MatchingUtil.matchNodes(rightOperandType, myRightOperandType);
     } else {
-      if (!subtypingManager.isSubtype(rightOperandType, myRightOperandType, !myRightIsStrong)) {
-        return false;
-      }
+      return subtypingManager.isSubtype(rightOperandType, myRightOperandType, !myRightIsStrong);
     }
-    return true;
   }
 
   @Override

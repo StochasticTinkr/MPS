@@ -375,7 +375,7 @@ class PriorityGraph {
   }
 
   private static Entry newTrivialEdge(Group g) {
-    return new Entry(new Group(), g, false, Collections.<MappingPriorityRule>emptyList());
+    return new Entry(new Group(), g, false, Collections.emptyList());
   }
 
   // Edge of dependency graph

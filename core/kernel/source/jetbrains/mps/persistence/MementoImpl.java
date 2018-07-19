@@ -68,7 +68,7 @@ public class MementoImpl implements Memento {
 
   @Override
   public Iterable<String> getKeys() {
-    return values == null ? Collections.<String>emptyList() : Collections.unmodifiableCollection(values.keySet());
+    return values == null ? Collections.emptyList() : Collections.unmodifiableCollection(values.keySet());
   }
 
   @Override

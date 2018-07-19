@@ -48,13 +48,13 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
 
   @Override
   public void initComponent() {
-    final List<LibraryContributor> contributorsToLoad = Collections.<LibraryContributor>singletonList(this);
+    final List<LibraryContributor> contributorsToLoad = Collections.singletonList(this);
     myLibraryInitializer.load(contributorsToLoad);
   }
 
   @Override
   public void disposeComponent() {
-    myLibraryInitializer.unload(Collections.<LibraryContributor>singletonList(this));
+    myLibraryInitializer.unload(Collections.singletonList(this));
   }
 
   /**

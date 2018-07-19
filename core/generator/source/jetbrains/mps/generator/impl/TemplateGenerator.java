@@ -753,7 +753,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   @Override
   public boolean areMappingsAvailable() {
-    return myIsStrict ? myAreMappingsReady : true;
+    return !myIsStrict || myAreMappingsReady;
   }
 
   @Override
@@ -926,7 +926,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       for (TemplateDropRootRule dropRootRule : rules) {
         if (myEnv.getQueryExecutor().isApplicable(dropRootRule, tc)) {
           drop(inputRootNode, dropRootRule);
-          myEnv.getTrace().trace(inputRootNode.getNodeId(), Collections.<SNodeId>emptyList(), dropRootRule.getRuleNode());
+          myEnv.getTrace().trace(inputRootNode.getNodeId(), Collections.emptyList(), dropRootRule.getRuleNode());
           return true;
         }
       }
@@ -1035,7 +1035,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           myIsChanged = true;
         } else {
           if (jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute.equals(childRole) && checkAttributeDropRules(inputChildNode)) {
-            myDeltaBuilder.registerSubTree(inputChildNode, childRole, Collections.<SNode>emptyList());
+            myDeltaBuilder.registerSubTree(inputChildNode, childRole, Collections.emptyList());
             myIsChanged = true;
           } else {
             visitInputNode(inputChildNode);
@@ -1052,7 +1052,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     private final Factory myNodeFactory;
 
     public FullCopyFacility(TemplateExecutionEnvironmentImpl env) {
-      this(env, Collections.<SNode>emptySet());
+      this(env, Collections.emptySet());
     }
     public FullCopyFacility(TemplateExecutionEnvironmentImpl env, Set<SNode> additionalInputs) {
       super(env);

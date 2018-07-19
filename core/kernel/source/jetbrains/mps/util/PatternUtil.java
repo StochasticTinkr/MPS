@@ -25,7 +25,7 @@ import java.util.List;
  */
 public class PatternUtil {
 
-  private static enum State {
+  private enum State {
     NO_QUOTING,
     QUOTING,
     SEQUENCE_LETTERS

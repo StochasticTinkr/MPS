@@ -29,7 +29,7 @@ import java.util.List;
 // FIXME Bloody mess this interface is. Documented nicely for others to waste their time not. List<Pair<String,String>>, ORLY?!
 // todo: move this interface into typesystem and remove other usages
 public interface IErrorReporter {
-  public String reportError();
+  String reportError();
 
   @Nullable
   SNodeReference getRuleNode();
@@ -38,17 +38,17 @@ public interface IErrorReporter {
    * @param rulePointer pointer to a rule that adds extra meaning to reported error
    * @since 2017.2
    */
-  public void additionalRule(@NotNull SNodeReference rulePointer);
+  void additionalRule(@NotNull SNodeReference rulePointer);
 
-  public List<SNodeReference> getAdditionalRulesIds();
+  List<SNodeReference> getAdditionalRulesIds();
 
-  public MessageStatus getMessageStatus();
+  MessageStatus getMessageStatus();
 
-  public List<QuickFixProvider> getIntentionProviders();
+  List<QuickFixProvider> getIntentionProviders();
 
-  public void addIntentionProvider(QuickFixProvider intentionProvider);
+  void addIntentionProvider(QuickFixProvider intentionProvider);
 
-  public MessageTarget getErrorTarget();
+  MessageTarget getErrorTarget();
 
   /**
    * There's no guarantee this method returns a valid node if used in a model read different from the one this reporter originates from.
@@ -56,5 +56,5 @@ public interface IErrorReporter {
    * use {@link SNodeReference} instead.
    */
   @NotNull
-  public SNode getSNode();
+  SNode getSNode();
 }

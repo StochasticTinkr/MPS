@@ -98,7 +98,7 @@ public final class StructureAspectChangeTracker extends SRepositoryListenerBase 
       return;
     }
     if (structureModel instanceof EditableSModel) {
-      ((EditableSModel) structureModel).addChangeListener(this);
+      structureModel.addChangeListener(this);
     }
     structureModel.addModelListener(this);
   }
@@ -112,7 +112,7 @@ public final class StructureAspectChangeTracker extends SRepositoryListenerBase 
       return;
     }
     if (structureModel instanceof EditableSModel) {
-      ((EditableSModel) structureModel).removeChangeListener(this);
+      structureModel.removeChangeListener(this);
     }
     structureModel.removeModelListener(this);
   }

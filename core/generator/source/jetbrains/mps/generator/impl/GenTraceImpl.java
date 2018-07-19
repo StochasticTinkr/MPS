@@ -243,7 +243,7 @@ public class GenTraceImpl implements GenerationTrace {
         rv.addAll(changes);
       }
       if (rv.isEmpty()) {
-        return Collections.<Element>emptyList();
+        return Collections.emptyList();
       }
       // tracer records output nodes, which means trace for outer rule/macro usually comes *after* trace for inner elements
       // with reverse here, we try to restore 'natural' order (as deemed by few our colleagues), starting from most distant
@@ -258,7 +258,7 @@ public class GenTraceImpl implements GenerationTrace {
         rv = index.get(node.getNodeId());
         node = node.getParent();
       } while (node != null && rv == null);
-      return rv == null ? Collections.<Element>emptyList() : rv;
+      return rv == null ? Collections.emptyList() : rv;
     }
 
     private void drainAdditionQueue() {

@@ -248,7 +248,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
     return null;
   }
 
-  private static enum MyBoolean {
+  private enum MyBoolean {
     NULL, FALSE, TRUE
   }
 }

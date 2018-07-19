@@ -95,11 +95,7 @@ public class FilePerRootModelFactory implements ModelFactory, IndexAwareModelFac
     if (modelName == null) {
       throw new IOException("Model name is not provided");
     }
-    try {
-      return create(dataSource, new SModelName(modelName));
-    } catch (ModelCreationException e) {
-      throw new IOException(e);
-    }
+    return create(dataSource, new SModelName(modelName));
   }
 
   /**
@@ -124,8 +120,7 @@ public class FilePerRootModelFactory implements ModelFactory, IndexAwareModelFac
   @NotNull
   @Override
   public SModel create(@NotNull DataSource dataSource, @NotNull SModelName modelName, @NotNull ModelLoadingOption... options) throws
-                                                                                                                              UnsupportedDataSourceException,
-                                                                                                                              ModelCreationException {
+                                                                                                                              UnsupportedDataSourceException {
     if (!supports(dataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -199,7 +194,7 @@ public class FilePerRootModelFactory implements ModelFactory, IndexAwareModelFac
   }
 
   @Override
-  public void save(@NotNull SModel model, @NotNull DataSource dataSource) throws ModelSaveException, IOException {
+  public void save(@NotNull SModel model, @NotNull DataSource dataSource) throws IOException {
     if (!supports(dataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }

@@ -107,7 +107,7 @@ import java.util.Set;
   }
 
   public void computeTypes(boolean refreshTypes) {
-    computeTypes(getTypechecking().getNode(), refreshTypes, true, Collections.<SNode>emptyList(), true, null);
+    computeTypes(getTypechecking().getNode(), refreshTypes, true, Collections.emptyList(), true, null);
   }
 
   protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {

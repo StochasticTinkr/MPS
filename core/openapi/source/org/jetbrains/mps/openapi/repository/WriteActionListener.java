@@ -30,6 +30,6 @@ package org.jetbrains.mps.openapi.repository;
  * @see org.jetbrains.mps.openapi.module.ModelAccess#removeWriteActionListener(WriteActionListener)
  */
 public interface WriteActionListener {
-  public void actionStarted();
-  public void actionFinished();
+  void actionStarted();
+  void actionFinished();
 }

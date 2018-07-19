@@ -136,7 +136,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
       ensureInitialized();
     }
     final List<VisibleModel> rv = myName2Models.get(modelName);
-    return rv == null ? Collections.<VisibleModel>emptyList() : Collections.unmodifiableList(rv);
+    return rv == null ? Collections.emptyList() : Collections.unmodifiableList(rv);
   }
 
 

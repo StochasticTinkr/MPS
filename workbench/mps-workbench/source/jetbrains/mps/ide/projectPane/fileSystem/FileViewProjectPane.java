@@ -357,7 +357,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
 
   @Nullable
   protected MPSTreeNode getNode(VirtualFile file) {
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+    DefaultTreeModel treeModel = getTree().getModel();
     MPSTreeNode rootTreeNode = (MPSTreeNode) treeModel.getRoot();
     return getNode(rootTreeNode, file);
   }
@@ -401,8 +401,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
         VirtualFile virtualFile = context.getVirtualFile();
         if (!(virtualFile instanceof MPSNodeVirtualFile)) {
           myFile = virtualFile;
-          if (isInitialized() && getNode(virtualFile) == null) return false;
-          return true;
+          return !isInitialized() || getNode(virtualFile) != null;
         }
 
         final MPSNodeVirtualFile nodeVirtualFile = (MPSNodeVirtualFile) virtualFile;
@@ -427,11 +426,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
         }
 
         myFile = realFile;
-        if ((realFile == null) || (isInitialized() && getNode(realFile) == null)) {
-          return false;
-        }
-
-        return true;
+        return (realFile != null) && (!isInitialized() || getNode(realFile) != null);
       }
 
       @Override

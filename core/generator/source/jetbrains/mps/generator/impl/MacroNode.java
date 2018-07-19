@@ -30,16 +30,16 @@ import java.util.List;
  */
 interface MacroNode {
   @NotNull
-  public abstract List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
-      GenerationCanceledException;
+  List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
+                                                                     GenerationCanceledException;
   @Nullable
-  public MacroNode getNextMacro();
+  MacroNode getNextMacro();
 
   @NotNull
-  public SNodeReference getMacroNodeRef();
+  SNodeReference getMacroNodeRef();
 
   @Nullable
-  public String getMappingLabel();
+  String getMappingLabel();
 
   interface Factory {
     MacroNode create(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next);

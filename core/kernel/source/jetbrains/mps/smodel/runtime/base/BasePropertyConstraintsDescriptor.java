@@ -93,11 +93,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     if (property.equals(SNodeUtil.property_INamedConcept_name) && concept.equals(SNodeUtil.concept_INamedConcept)) {
       return true;
     }
-    if (property.getOwner().equals(SNodeUtil.concept_RuntimeTypeVariable)) {
-      // helgins ku-ku!
-      return true;
-    }
-    return false;
+    return property.getOwner().equals(SNodeUtil.concept_RuntimeTypeVariable);
   }
 
   @Nullable

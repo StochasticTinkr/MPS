@@ -176,7 +176,7 @@ public final class NodeMatcher {
       return false;
     }
     // properties
-    Map<SProperty, String> prop2var = myPropertyToVariableName == null ? Collections.<SProperty,String>emptyMap() : myPropertyToVariableName;
+    Map<SProperty, String> prop2var = myPropertyToVariableName == null ? Collections.emptyMap() : myPropertyToVariableName;
     ArrayList<SProperty> propsToCheck = new ArrayList<>(prop2var.keySet());
     propsToCheck.addAll(IterableUtil.asCollection(pattern.getProperties()));
     for (SProperty p : propsToCheck) {
@@ -190,7 +190,7 @@ public final class NodeMatcher {
     }
     //
     // references
-    final Map<SReferenceLink, String> ref2var = myReferenceToVariableName == null ? Collections.<SReferenceLink, String>emptyMap() : myReferenceToVariableName;
+    final Map<SReferenceLink, String> ref2var = myReferenceToVariableName == null ? Collections.emptyMap() : myReferenceToVariableName;
     ArrayList<SReferenceLink> refsToCheck = new ArrayList<>(ref2var.keySet());
     for (SReference r : pattern.getReferences()) {
       refsToCheck.add(r.getLink());
@@ -219,7 +219,7 @@ public final class NodeMatcher {
         knownChildRoles.add(cl);
       }
     }
-    final Map<SContainmentLink, ChildMatcher> ce = myChildExtractors == null ? Collections.<SContainmentLink,ChildMatcher>emptyMap() : myChildExtractors;
+    final Map<SContainmentLink, ChildMatcher> ce = myChildExtractors == null ? Collections.emptyMap() : myChildExtractors;
     knownChildRoles.addAll(ce.keySet());
     final ChildMatcher defaultChildExtractor = new ChildMatcher(this);
     for (SContainmentLink l : knownChildRoles) {
@@ -229,7 +229,7 @@ public final class NodeMatcher {
       }
       if (!childExtractor.match(IterableUtil.asList(pattern.getChildren(l)), IterableUtil.asList(against.getChildren(l)))) {
         return false;
-      };
+      }
     }
     return true;
   }

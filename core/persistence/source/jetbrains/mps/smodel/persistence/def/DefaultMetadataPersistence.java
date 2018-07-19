@@ -38,7 +38,7 @@ public class DefaultMetadataPersistence {
     try {
       Map<String, String> result = new HashMap<>();
       Element root = JDOMUtil.loadDocument(file).getRootElement();
-      for (Element entry : (List<Element>) root.getChildren(ENTRY)) {
+      for (Element entry : root.getChildren(ENTRY)) {
         result.put(entry.getChild(KEY).getText(), entry.getChild(VALUE).getText());
       }
       return result;

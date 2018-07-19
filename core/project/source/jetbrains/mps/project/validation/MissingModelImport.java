@@ -58,7 +58,7 @@ public class MissingModelImport extends ModelReportItemBase implements QuickFixR
       }
       @Override
       public void execute(SRepository repository) {
-        new ModelImports(getModel().resolve(repository)).addModelImport(myMissingImport);;
+        new ModelImports(getModel().resolve(repository)).addModelImport(myMissingImport);
       }
     });
   }

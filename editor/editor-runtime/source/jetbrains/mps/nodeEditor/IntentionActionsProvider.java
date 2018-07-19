@@ -24,5 +24,5 @@ public interface IntentionActionsProvider {
   ExtensionPointName<IntentionActionsProvider> EP_NAME = new ExtensionPointName<>("com.intellij.mps.IntentionActionsProvider");
 
   @NotNull
-  public AnAction[] getIntentionActions(@NotNull IntentionExecutable intention);
+  AnAction[] getIntentionActions(@NotNull IntentionExecutable intention);
 }

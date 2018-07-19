@@ -20,15 +20,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 
 public interface IMatchModifier {
-  public boolean accept(SNode node1, SNode node2);
+  boolean accept(SNode node1, SNode node2);
 
-  public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2);
+  boolean acceptList(List<SNode> nodes1, List<SNode> nodes2);
 
-  public void performAction(SNode node1, SNode node2);
+  void performAction(SNode node1, SNode node2);
 
-  public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2);
+  void performGroupAction(List<SNode> nodes1, List<SNode> nodes2);
 
-  public static final IMatchModifier DEFAULT = new IMatchModifier() {
+  IMatchModifier DEFAULT = new IMatchModifier() {
     @Override
     public boolean accept(SNode node1, SNode node2) {
       return false;

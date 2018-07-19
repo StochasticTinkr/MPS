@@ -155,7 +155,7 @@ public final class LanguageImportHelper {
       myProject.getModelAccess().executeCommand(() -> {
         boolean reload = false;
         final boolean reloadableModule = model.getModule() instanceof ReloadableModule;
-        Set<SLanguage> existingUsedLanguages = reloadableModule ? model.getModule().getUsedLanguages() : Collections.<SLanguage>emptySet();
+        Set<SLanguage> existingUsedLanguages = reloadableModule ? model.getModule().getUsedLanguages() : Collections.emptySet();
         if (!existingUsedLanguages.contains(param)) {
           // If model gets the new import, then its module would get new dependency
           reload = true;

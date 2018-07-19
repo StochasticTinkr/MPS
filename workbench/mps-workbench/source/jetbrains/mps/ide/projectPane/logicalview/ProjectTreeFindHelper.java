@@ -196,13 +196,7 @@ public final class ProjectTreeFindHelper {
     @Override
     public boolean met(MPSTreeNode node) {
       if (node instanceof ProjectModuleTreeNode && !(node instanceof ProjectLanguageTreeNode)) return false;
-      if (node instanceof SModelTreeNode) return false;
-/*
-      todo: extract optimal module finding process. Used method only works when there is a single ability of selection
-      //need to go into devkits
-      if (node instanceof ProjectDevKitTreeNode) return true;
-*/
-      return true;
+      return !(node instanceof SModelTreeNode);
     }
   }
 

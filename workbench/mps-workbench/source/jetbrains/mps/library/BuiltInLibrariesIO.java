@@ -92,12 +92,12 @@ public class BuiltInLibrariesIO {
         configFile.createNewFile();
         write(configFile, name, path);
       }
-    } catch (JDOMException | IOException e) {
+    } catch (IOException e) {
       LOG.error(null, e);
     }
   }
 
-  private static void write(File configFile, String name, String path) throws JDOMException, IOException {
+  private static void write(File configFile, String name, String path) throws IOException {
     Document document;
     try {
       document = JDOMUtil.loadDocument(configFile);

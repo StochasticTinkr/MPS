@@ -126,7 +126,7 @@ public class DataNode implements IExternalizeable {
 
     myChildren.clear();
     Element childrenXML = element.getChild(CHILDREN);
-    for (Element nodeXML : (List<Element>) childrenXML.getChildren(CHILD)) {
+    for (Element nodeXML : childrenXML.getChildren(CHILD)) {
       myChildren.add(new DataNode(nodeXML, project));
     }
   }

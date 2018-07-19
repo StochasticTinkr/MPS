@@ -79,6 +79,6 @@ public class DependenciesTableItem {
     LANGUAGE,
     GENERATOR,
     SOLUTION,
-    DEVKIT;
+    DEVKIT
   }
 }

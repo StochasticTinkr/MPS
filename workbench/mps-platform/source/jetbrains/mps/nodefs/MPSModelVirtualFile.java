@@ -132,13 +132,13 @@ public final class MPSModelVirtualFile extends VirtualFile {
 
   @NotNull
   @Override
-  public OutputStream getOutputStream(Object requestor, long newModificationStamp, long newTimeStamp) throws IOException {
+  public OutputStream getOutputStream(Object requestor, long newModificationStamp, long newTimeStamp) {
     throw new UnsupportedOperationException();
   }
 
   @NotNull
   @Override
-  public byte[] contentsToByteArray() throws IOException {
+  public byte[] contentsToByteArray() {
     return ZERO_BYTES;
   }
 
@@ -157,7 +157,7 @@ public final class MPSModelVirtualFile extends VirtualFile {
   }
 
   @Override
-  public InputStream getInputStream() throws IOException {
+  public InputStream getInputStream() {
     throw new UnsupportedOperationException();
   }
 }

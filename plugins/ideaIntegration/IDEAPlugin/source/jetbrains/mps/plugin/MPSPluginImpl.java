@@ -34,7 +34,7 @@ public class MPSPluginImpl extends UnicastRemoteObject implements IMPSPlugin {
     }
   }
 
-  public IProjectHandler getProjectHandler() throws RemoteException {
+  public IProjectHandler getProjectHandler() {
     checkAccess();
 
     ProjectManager projectManager = ProjectManager.getInstance();
@@ -42,7 +42,7 @@ public class MPSPluginImpl extends UnicastRemoteObject implements IMPSPlugin {
     return projectManager.getOpenProjects()[0].getComponent(ProjectHandler.class);
   }
 
-  public IProjectHandler getProjectHandlerFor(String projectPath) throws RemoteException {
+  public IProjectHandler getProjectHandlerFor(String projectPath) {
     if (projectPath == null) {
       return null;
     }
@@ -68,7 +68,7 @@ public class MPSPluginImpl extends UnicastRemoteObject implements IMPSPlugin {
     return null;
   }
 
-  public IIDEAHandler getProjectCreator() throws RemoteException {
+  public IIDEAHandler getProjectCreator() {
     checkAccess();
 
     return RMIHandler.getProjectCreator();

@@ -192,7 +192,7 @@ public class ClassFileWriter {
 
   // FIXME
   @NotNull
-  private byte[] instrumentNotNull(@NotNull byte[] classContent) throws MalformedURLException {
+  private byte[] instrumentNotNull(@NotNull byte[] classContent) {
     FailSafeClassReader reader = new FailSafeClassReader(classContent, 0, classContent.length);
     ClassWriter writer = new InstrumenterClassWriter(reader, ClassWriter.COMPUTE_FRAMES, myFinder);
     // To understand why last parameter was added - see commits 250331a & 490d4e6 in IDEA Community

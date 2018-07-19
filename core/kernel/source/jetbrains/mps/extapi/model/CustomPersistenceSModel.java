@@ -104,7 +104,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
         long l = ((FileDataSource) getSource()).getFile().lastModified();
         if (l > 0 && brokenFile.lastModified() > l) {
           SModelBase brokenModel = (SModelBase) PersistenceFacade.getInstance().getDefaultModelFactory().load(
-              new FileDataSource(brokenFile, null), Collections.<String, String>emptyMap());
+              new FileDataSource(brokenFile, null), Collections.emptyMap());
           brokenModel.load();
           // force save
           setChanged(true);
@@ -191,7 +191,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     @NotNull
     @Override
     public Iterable<Problem> getProblems() {
-      return Collections.<Problem>singleton(
+      return Collections.singleton(
           new PersistenceProblem(Kind.Load, myCause == null ? "Couldn't read model." : "Cannot load. I/O problem: " + myCause.getMessage(), null,
               true));
     }

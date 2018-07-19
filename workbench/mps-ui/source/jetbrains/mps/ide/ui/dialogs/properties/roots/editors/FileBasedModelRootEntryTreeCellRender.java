@@ -50,7 +50,7 @@ public class FileBasedModelRootEntryTreeCellRender extends NodeRenderer {
         if (element instanceof FileElement) {
           final VirtualFile file = ((FileElement) element).getFile();
           if (file != null) {
-            final FileBasedModelRoot modelRoot = (FileBasedModelRoot) entry.getModelRoot();
+            final FileBasedModelRoot modelRoot = entry.getModelRoot();
             if (file.isDirectory()) {
               setIcon(updateIcon(modelRoot, file, getIcon()));
             } else if (!file.isDirectory()) {

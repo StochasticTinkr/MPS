@@ -257,10 +257,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     if (!(TraceSettings.isShowApplyRuleOperations()) && operation instanceof ApplyRuleOperation) {
       return false;
     }
-    if (!(TraceSettings.isShowBlockDependencies()) && (operation instanceof AddDependencyOperation || operation instanceof RemoveDependencyOperation)) {
-      return false;
-    }
-    return true;
+    return TraceSettings.isShowBlockDependencies() || (!(operation instanceof AddDependencyOperation) && !(operation instanceof RemoveDependencyOperation));
   }
 
   public void goToNextError() {

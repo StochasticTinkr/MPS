@@ -104,10 +104,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
       return canPasteViaNodePaster(selectedCell, pasteNodes);
 
-    } else if ((selection instanceof MultipleSelection || selection instanceof EditorCellSelection) && canPasteWithRemove) {
-      return true;
-    }
-    return false;
+    } else return (selection instanceof MultipleSelection || selection instanceof EditorCellSelection) && canPasteWithRemove;
   }
 
   private boolean isCompletelySelected(EditorCellLabelSelection labelSelection) {

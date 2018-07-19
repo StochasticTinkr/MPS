@@ -36,7 +36,7 @@ public class DefaultGenerationParametersProvider implements GenerationParameters
     if (descriptor == null) { throw new NullPointerException();}
 
     Map<String, Object> params =
-      paramMaps.containsKey(descriptor) ? paramMaps.get(descriptor) : Collections.<String, Object>emptyMap();
+      paramMaps.containsKey(descriptor) ? paramMaps.get(descriptor) : Collections.emptyMap();
     return new DelegatingMapWithDefaults<>(params, defaultParams);
   }
 
@@ -60,7 +60,7 @@ public class DefaultGenerationParametersProvider implements GenerationParameters
   public Collection<String> getAdditionalLanguages(SModel descriptor) {
     if (descriptor == null) { throw new NullPointerException();}
 
-    List<String> modelLanguages = additionalLanguages.containsKey(descriptor) ? additionalLanguages.get(descriptor) : Collections.<String>emptyList();
+    List<String> modelLanguages = additionalLanguages.containsKey(descriptor) ? additionalLanguages.get(descriptor) : Collections.emptyList();
     if(!defaultLanguages.isEmpty()) {
       List<String> result = new ArrayList<>();
       result.addAll(defaultLanguages);

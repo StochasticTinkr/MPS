@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
  */
 public interface IGenerationTaskPool {
 
-  public interface GenerationTask {
+  interface GenerationTask {
     void run() throws GenerationCanceledException, GenerationFailureException;
   }
 
@@ -36,7 +36,7 @@ public interface IGenerationTaskPool {
 
   void dispose();
 
-  public static class SimpleGenerationTaskPool implements IGenerationTaskPool {
+  class SimpleGenerationTaskPool implements IGenerationTaskPool {
     private final CompositeGenerationTask myQueue = new CompositeGenerationTask();
     private final ModelAccess myModelAccess;
 
@@ -65,7 +65,7 @@ public interface IGenerationTaskPool {
     }
   }
 
-  public interface ITaskPoolProvider {
+  interface ITaskPoolProvider {
     IGenerationTaskPool getTaskPool();
   }
 }

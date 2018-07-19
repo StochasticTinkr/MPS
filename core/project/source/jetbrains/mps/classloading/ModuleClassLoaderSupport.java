@@ -77,15 +77,15 @@ public class ModuleClassLoaderSupport {
     return myClassPathItem.hasClass(name);
   }
 
-  public ClassBytes findClassBytes(String name) throws ModuleIsNotLoadableException {
+  public ClassBytes findClassBytes(String name) {
     return myClassPathItem.getClassBytes(name);
   }
 
-  public URL findResource(String name) throws ModuleIsNotLoadableException {
+  public URL findResource(String name) {
     return myClassPathItem.getResource(name);
   }
 
-  public Enumeration<URL> findResources(String name) throws ModuleIsNotLoadableException {
+  public Enumeration<URL> findResources(String name) {
     return myClassPathItem.getResources(name);
   }
 

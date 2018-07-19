@@ -51,18 +51,18 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
 
   @NotNull
   @Override
-  public Class<?> getClass(String classFqName) throws ClassNotFoundException, ModuleIsNotLoadableException {
+  public Class<?> getClass(String classFqName) throws ClassNotFoundException {
     return getClass(classFqName, false);
   }
 
   @NotNull
   @Override
-  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException, ModuleIsNotLoadableException {
+  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException {
     return getClass(classFqName, true);
   }
 
   @NotNull
-  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException {
+  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException {
     ClassLoader classLoader = getClassLoader();
     if (classLoader == null) {
       throw new ModuleClassLoaderIsNullException(this);

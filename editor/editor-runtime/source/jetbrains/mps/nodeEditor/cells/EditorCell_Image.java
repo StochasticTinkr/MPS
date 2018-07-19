@@ -185,7 +185,7 @@ public class EditorCell_Image extends EditorCell_Basic {
   }
 
   public enum ImageAlignment {
-    justify, center, title;
+    justify, center, title
   }
 
   /**

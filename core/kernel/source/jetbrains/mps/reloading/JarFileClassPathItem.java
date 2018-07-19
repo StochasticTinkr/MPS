@@ -274,7 +274,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
     public Collection<String> getClassesSetFor(String pack) {
       Entry e = getEntry(pack);
-      return e == null ? Collections.<String>emptyList() : e.getClasses();
+      return e == null ? Collections.emptyList() : e.getClasses();
     }
 
     public boolean hasClass(String pack, String className) {
@@ -288,7 +288,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
     public Collection<String> getSubpackagesSetFor(String pack) {
       Entry e = getEntry(pack);
-      return e == null ? Collections.<String>emptyList() : e.getImmediateSubPackages(pack);
+      return e == null ? Collections.emptyList() : e.getImmediateSubPackages(pack);
     }
 
     public void addClass(String pack, String className) {
@@ -404,7 +404,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
 
     public Collection<String> getClasses() {
-      return myClassNames == null ? Collections.<String>emptyList() : myClassNames;
+      return myClassNames == null ? Collections.emptyList() : myClassNames;
     }
 
     @Override

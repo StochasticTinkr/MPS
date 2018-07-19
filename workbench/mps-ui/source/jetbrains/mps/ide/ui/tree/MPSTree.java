@@ -896,7 +896,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   private class MyTreeWillExpandListener implements TreeWillExpandListener {
     @Override
-    public void treeWillExpand(TreeExpansionEvent event) throws ExpandVetoException {
+    public void treeWillExpand(TreeExpansionEvent event) {
       MPSTreeNode treeNode = getNodeFromPath(event.getPath());
       if (treeNode != null) {
         treeNode.init();
@@ -904,7 +904,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     }
 
     @Override
-    public void treeWillCollapse(TreeExpansionEvent event) throws ExpandVetoException {
+    public void treeWillCollapse(TreeExpansionEvent event) {
     }
   }
 

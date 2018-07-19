@@ -31,7 +31,7 @@ public interface UndoRunnable extends Runnable {
 
   boolean shallConfirmUndo();
 
-  public static abstract class Base implements UndoRunnable {
+  abstract class Base implements UndoRunnable {
     private final String myName;
     private final String myGroupId;
     private final boolean myConfirmUndo;

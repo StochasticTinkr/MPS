@@ -46,7 +46,7 @@ public class ModuleSources {
    * @param module Module with JavaModuleFacet
    */
   ModuleSources(SModule module, Dependencies deps) {
-    this(module, Collections.<SModule, ModuleSources>emptyMap(), deps);
+    this(module, Collections.emptyMap(), deps);
   }
 
   /**

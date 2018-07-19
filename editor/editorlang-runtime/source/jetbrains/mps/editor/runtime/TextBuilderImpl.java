@@ -53,7 +53,7 @@ public class TextBuilderImpl implements TextBuilder {
 
   @Override
   public Iterable<CharSequence> getLines() {
-    return Collections.<CharSequence>unmodifiableCollection(myLines);
+    return Collections.unmodifiableCollection(myLines);
   }
 
   @Override

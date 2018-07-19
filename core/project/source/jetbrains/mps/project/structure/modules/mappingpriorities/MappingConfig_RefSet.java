@@ -79,10 +79,7 @@ public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
         affected = true;
       }
     }
-    if (affected && myRefs.size() == 0) {
-      return true;
-    }
-    return false;
+    return affected && myRefs.size() == 0;
   }
 
   @Override

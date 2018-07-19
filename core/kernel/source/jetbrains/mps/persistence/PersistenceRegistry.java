@@ -294,7 +294,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
 
   @Override
   public Set<FindUsagesParticipant> getFindUsagesParticipants() {
-    return isDisabled ? Collections.<FindUsagesParticipant>emptySet() : Collections.unmodifiableSet(myFindUsagesParticipants);
+    return isDisabled ? Collections.emptySet() : Collections.unmodifiableSet(myFindUsagesParticipants);
   }
 
   public boolean isFastSearch() {

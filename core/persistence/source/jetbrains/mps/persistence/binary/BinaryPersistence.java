@@ -229,7 +229,7 @@ public final class BinaryPersistence {
 
       NodesReader reader = new NodesReader(modelHeader.getModelReference(), mis, rh);
       reader.readNodesInto(model);
-      return new ModelLoadResult((SModel) model, reader.hasSkippedNodes() ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED);
+      return new ModelLoadResult(model, reader.hasSkippedNodes() ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED);
     } finally {
       FileUtil.closeFileSafe(mis);
     }

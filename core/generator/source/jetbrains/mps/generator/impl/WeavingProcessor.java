@@ -43,7 +43,7 @@ public class WeavingProcessor {
     myReadyRules = new ArrayList<>();
   }
 
-  public void prepareWeavingRules(SModel inputModel) throws GenerationCanceledException, GenerationFailureException {
+  public void prepareWeavingRules(SModel inputModel) throws GenerationFailureException {
     Iterable<TemplateWeavingRule> rules = myGenerator.getRuleManager().getWeaving_MappingRules();
     myReadyRules.clear();
     final BlockedReductionsData ruleBlocks = myGenerator.getBlockedReductionsData();

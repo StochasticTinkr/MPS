@@ -274,7 +274,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
 
     @Override
     @Nullable
-    public SNode anchorNode(WeavingAnchorContext ctx) throws GenerationFailureException {
+    public SNode anchorNode(WeavingAnchorContext ctx) {
       // null is legitimate value, indicates 'just append'
       return null;
     }
@@ -397,7 +397,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
       throw new GenerationFailureException(msg);
     }
 
-    private void reportError(TemplateQueryContext context, String message) throws GenerationFailureException {
+    private void reportError(TemplateQueryContext context, String message) {
       context.getGenerator().getLogger().error(myTemplate, message);
     }
   }

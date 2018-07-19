@@ -791,7 +791,7 @@ class _JavaLexer implements FlexLexer {
 
 
   _JavaLexer(java.io.Reader in) {
-    this.zzReader = in;
+    zzReader = in;
   }
 
   /**
@@ -849,9 +849,8 @@ class _JavaLexer implements FlexLexer {
    * Refills the input buffer.
    *
    * @return <code>false</code>, iff there was new input.
-   * @throws java.io.IOException if any I/O-Error occurs
    */
-  private boolean zzRefill() throws java.io.IOException {
+  private boolean zzRefill() {
     return true;
   }
 

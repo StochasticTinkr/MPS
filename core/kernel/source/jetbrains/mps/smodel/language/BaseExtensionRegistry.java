@@ -42,11 +42,11 @@ public class BaseExtensionRegistry {
   }
 
   public <T> Iterable<Extension<T>> getExtensions(ExtensionPoint<T> extensionPoint) {
-    return optExtensionsBucket(extensionPoint.getId(), this.<T>activeExtensions());
+    return optExtensionsBucket(extensionPoint.getId(), this.activeExtensions());
   }
 
   public <T> Iterable<T> getObjects(ExtensionPoint<T> extensionPoint) {
-    Collection<Extension<T>> extensions = optExtensionsBucket(extensionPoint.getId(), this.<T>activeExtensions());
+    Collection<Extension<T>> extensions = optExtensionsBucket(extensionPoint.getId(), this.activeExtensions());
     if (extensions.isEmpty()) return Collections.emptyList();
     List<T> res = new ArrayList<>(extensions.size());
     for (Extension<T> extension : extensions) {
@@ -168,7 +168,7 @@ public class BaseExtensionRegistry {
 
   private <E> Collection<E> optExtensionsBucket(String id, Map<String, Collection<E>> store) {
     Collection<E> extensions = store.get(id);
-    return extensions != null ? extensions : Collections.<E>emptyList();
+    return extensions != null ? extensions : Collections.emptyList();
   }
 
   private <E> void clearExtensionsBucket(String id, Map<String, Collection<E>> store) {

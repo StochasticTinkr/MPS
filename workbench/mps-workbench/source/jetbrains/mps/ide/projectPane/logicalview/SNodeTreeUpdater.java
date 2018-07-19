@@ -69,7 +69,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
 
   public void addAndRemoveVisibleChildren(Set<SNode> removedNodes, Set<SNode> addedNodes) {
     if (getTree() == null) return;
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+    DefaultTreeModel treeModel = getTree().getModel();
     for (SNode removed : removedNodes) {
       SNodeTreeNode node = (SNodeTreeNode) myTreeNode.findDescendantWith(removed.getNodeId().toString());
       if (node == null) continue;
@@ -104,7 +104,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
 
   public void updateChangedPresentations(Set<SNode> nodesWithChangedPresentations) {
     if (getTree() == null) return;
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+    DefaultTreeModel treeModel = getTree().getModel();
     for (SNode node : nodesWithChangedPresentations) {
       SNodeTreeNode treeNode = (SNodeTreeNode) myTreeNode.findDescendantWith(node.getNodeId().toString());
       if (treeNode == null) continue;

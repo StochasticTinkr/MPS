@@ -175,9 +175,7 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
   }
 
   public void addPathComponent(PathItemRole role) {
-    if (!myPathProvider.contains(role)) {
-      myPathProvider.add(role);
-    }
+    myPathProvider.add(role);
     myTree.setResultPathProvider(myPathProvider);
   }
 

@@ -92,11 +92,7 @@ public class Version implements Comparable<Version> {
     if (myMinor != null ? !myMinor.equals(that.myMinor) : that.myMinor != null) {
       return false;
     }
-    if (myHotfix != null ? !myHotfix.equals(that.myHotfix) : that.myHotfix != null) {
-      return false;
-    }
-
-    return true;
+    return myHotfix != null ? myHotfix.equals(that.myHotfix) : that.myHotfix == null;
   }
 
   @Override

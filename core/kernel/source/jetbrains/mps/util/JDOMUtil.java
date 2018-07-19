@@ -242,7 +242,7 @@ public class JDOMUtil {
           buffer = new StringBuilder(text.length() + 20);
           // Copy previous skipped characters and fall through
           // to pickup current character
-          buffer.append(text.substring(0, i));
+          buffer.append(text, 0, i);
           buffer.append(quotation);
         }
       } else {
@@ -337,7 +337,7 @@ public class JDOMUtil {
           buffer = new StringBuilder(text.length());
           // Copy previous skipped characters and fall through
           // to pickup current character
-          buffer.append(text.substring(0, start));
+          buffer.append(text, 0, start);
           buffer.append(quotation);
         }
       } else {

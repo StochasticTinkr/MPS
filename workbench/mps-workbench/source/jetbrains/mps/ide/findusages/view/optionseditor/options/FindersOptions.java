@@ -38,7 +38,7 @@ public final class FindersOptions extends BaseOptions {
   @NotNull
   private List<String> myFindersClassNames = new ArrayList<>();
 
-  public FindersOptions(Element element, Project project) throws CantLoadSomethingException {
+  public FindersOptions(Element element, Project project) {
     read(element, project);
   }
 
@@ -95,7 +95,7 @@ public final class FindersOptions extends BaseOptions {
   @Override
   public void read(Element element, Project project) {
     Element findersXML = element.getChild(FINDERS);
-    for (Element finderXML : (List<Element>) findersXML.getChildren(FINDER)) {
+    for (Element finderXML : findersXML.getChildren(FINDER)) {
       String finderName = finderXML.getAttribute(CLASS_NAME).getValue();
       myFindersClassNames.add(finderName);
     }

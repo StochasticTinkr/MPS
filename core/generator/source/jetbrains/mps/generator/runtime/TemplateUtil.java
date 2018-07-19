@@ -44,7 +44,7 @@ public class TemplateUtil {
   private static final Logger LOG = LogManager.getLogger(TemplateUtil.class);
 
   public static Collection<SNode> singletonList(SNode node) {
-    return node != null ? Collections.singletonList(node) : Collections.<SNode>emptyList();
+    return node != null ? Collections.singletonList(node) : Collections.emptyList();
   }
 
   public static Collection<SNode> asList(SNode... nodes) {
@@ -99,7 +99,7 @@ public class TemplateUtil {
   }
 
   public static <T> Iterable<T> asNotNull(final Iterable<T> objects) {
-    return objects == null ? Collections.<T>emptyList() : objects;
+    return objects == null ? Collections.emptyList() : objects;
   }
 
   public static <T> Collection<T> asCollection(final T... objects) {

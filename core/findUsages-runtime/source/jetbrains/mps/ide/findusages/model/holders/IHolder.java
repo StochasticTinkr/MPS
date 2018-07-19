@@ -19,8 +19,8 @@ import jetbrains.mps.ide.findusages.IExternalizeable;
 import org.jetbrains.annotations.NotNull;
 
 public interface IHolder<T> extends IExternalizeable {
-  public T getObject();
+  T getObject();
 
   @NotNull
-  public String getCaption();
+  String getCaption();
 }

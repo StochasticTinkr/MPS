@@ -143,7 +143,7 @@ public abstract class BaseNode implements IResultProvider {
   @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     Element childrenXML = element.getChild(CHILDREN);
-    for (Element childXML : (List<Element>) childrenXML.getChildren()) {
+    for (Element childXML : childrenXML.getChildren()) {
       try {
         BaseNode child = (BaseNode) Class.forName(childXML.getName()).newInstance();
         child.read(childXML, project);

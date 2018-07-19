@@ -309,7 +309,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     static <T> List<T> wrapAsList(T node) {
-      return node == null ? Collections.<T>emptyList() : Collections.singletonList(node);
+      return node == null ? Collections.emptyList() : Collections.singletonList(node);
     }
 
     private void checkInputNodesForNulls(TemplateContext context, Iterable<SNode> result) throws GenerationFailureException {
@@ -391,8 +391,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
-        GenerationCanceledException {
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationFailureException,
+                                                                              GenerationCanceledException {
       final Collection<SNode> newInputNodes;
       if (myIsSoleInput) {
         newInputNodes = wrapAsList(getNewInputNode(templateContext));
@@ -421,8 +421,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
-        GenerationCanceledException {
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationFailureException,
+                                                                              GenerationCanceledException {
       SNode child = getNodeToInsert(templateContext);
       if (child != null) {
         child = templateContext.getEnvironment().insertNode(child, getMacroNodeRef(), templateContext);

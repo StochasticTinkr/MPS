@@ -269,7 +269,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
   }
 
   @Override
-  public void apply() throws ConfigurationException {
+  public void apply() {
     myGenerationSettings.setSaveTransientModels(mySaveTransientModelsCheckBox.isSelected());
     myGenerationSettings.setCheckModelsBeforeGeneration(myCheckModelsBeforeGenerationCheckBox.isSelected());
     myGenerationSettings.setParallelGenerator(myUseNewGenerator.isSelected());
@@ -410,7 +410,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     }
 
     @Override
-    public String valueToString(@Nullable Object value) throws ParseException {
+    public String valueToString(@Nullable Object value) {
       if (value == null) return null;
       return Integer.toString((Integer) value);
     }

@@ -113,7 +113,7 @@ public class CheckBoxNodeRenderer implements TreeCellRenderer {
 
   }
 
-  public static interface NodeData {
+  public interface NodeData {
     Icon getIcon(boolean expanded);
 
     Color getColor();

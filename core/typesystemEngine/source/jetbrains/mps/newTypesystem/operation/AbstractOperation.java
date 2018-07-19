@@ -53,7 +53,7 @@ public abstract class AbstractOperation {
   }
 
   public List<AbstractOperation> getConsequences() {
-    return myConsequences == null ? Collections.<AbstractOperation>emptyList() : Collections.unmodifiableList(myConsequences);
+    return myConsequences == null ? Collections.emptyList() : Collections.unmodifiableList(myConsequences);
   }
 
   protected abstract void doUndo(State state);

@@ -274,8 +274,7 @@ public class Inequalities {
     // but this slows down inequations elimination substantially
     if (trySolvingRecursive(inequalities)) return true;
 
-    if (lastChance(inequalities)) return true;
-    return false;
+    return lastChance(inequalities);
   }
 
   private boolean isRecursive(RelationBlock inequality) {

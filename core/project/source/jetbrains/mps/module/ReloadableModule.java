@@ -49,7 +49,7 @@ public interface ReloadableModule extends SModule {
    * warning: this method is lazy implemented!
    */
   @NotNull
-  Class<?> getClass(String classFqName) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException;
+  Class<?> getClass(String classFqName) throws ClassNotFoundException;
 
   /**
    * @return a class which can be obtained by calling #getClass from
@@ -63,7 +63,7 @@ public interface ReloadableModule extends SModule {
    * warning: this method is lazy implemented!
    */
   @NotNull
-  Class<?> getOwnClass(String classFqName) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException;
+  Class<?> getOwnClass(String classFqName) throws ClassNotFoundException;
 
   /**
    * @return the class loader associated with the module.

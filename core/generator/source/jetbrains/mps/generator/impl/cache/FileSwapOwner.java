@@ -215,7 +215,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
 
   // method created for testing
   // FIXME can take openapi.SModel
-  public static SModel writeAndReadModel(SModel model) throws IOException, ModelReadException {
+  public static SModel writeAndReadModel(SModel model) throws IOException {
     // write
     final ByteArrayOutputStream os = new ByteArrayOutputStream(2048);
     final ModelOutputStream mos = new ModelOutputStream(os);

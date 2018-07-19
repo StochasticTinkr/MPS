@@ -50,7 +50,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
     final SNode currentChild = cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
 
     final IOperationContext context = editorContext.getOperationContext();
-    return Collections.<SubstituteAction>singletonList(
+    return Collections.singletonList(
         new DefaultChildNodeSubstituteAction(defaultConceptOfChild, parentNode, currentChild, setter) {
           @Override
           protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {

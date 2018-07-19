@@ -64,7 +64,7 @@ public class GlobalScope extends FindUsagesScope {
   }
 
   // XXX DO NOT REMOVE THIS CONS. IT'S VITAL FOR FIND USAGES VIEW PERSISTENCE. See FindUsagesScope.load()
-  public GlobalScope(Element element, Project project) throws CantLoadSomethingException {
+  public GlobalScope(Element element, Project project) {
     // nothing saved
     this(project);
   }

@@ -259,7 +259,7 @@ public interface SNode {
    * Produces read access on the node.
    */
   @NotNull
-  public Iterable<? extends SReference> getReferences();
+  Iterable<? extends SReference> getReferences();
 
   // props
 

@@ -58,10 +58,7 @@ public final class ParseFacility<T> {
     if (myFile != null) {
       return myFile.exists() && myFile.length() > 0;
     }
-    if (myUrl != null) {
-      return true;
-    }
-    return false;
+    return myUrl != null;
   }
 
   /**

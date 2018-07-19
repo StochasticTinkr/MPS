@@ -31,6 +31,6 @@ public interface SingularSelection extends Selection {
   SideSelectDirection getSideSelectDirection();
 
   enum SideSelectDirection {
-    LEFT, RIGHT, NONE;
+    LEFT, RIGHT, NONE
   }
 }

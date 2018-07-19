@@ -266,9 +266,7 @@ public class UpdateSessionImpl implements UpdateSession {
       return EditorManager.getInstanceFromContext(getUpdater().getEditorContext()).createEditorCell(getModelModifications(), refContext);
     } finally {
       assert myAttributeKind2Cell.get(attributeKind).removeFirst() == cellWithRole;
-      if (attributeKind != AttributeKind.NODE) {
-        assert myAttributeKind2Cell.get(AttributeKind.NODE).removeFirst() == cellWithRole;
-      }
+      assert attributeKind == AttributeKind.NODE || myAttributeKind2Cell.get(AttributeKind.NODE).removeFirst() == cellWithRole;
     }
   }
 

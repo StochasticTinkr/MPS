@@ -78,7 +78,7 @@ public class NodeIconUpdater extends AbstractProjectComponent {
     if (false == vf instanceof MPSNodeVirtualFile) {
       return;
     }
-    if (Arrays.<VirtualFile>asList(myFileEditorManagerEx.getOpenFiles()).contains(vf)) {
+    if (Arrays.asList(myFileEditorManagerEx.getOpenFiles()).contains(vf)) {
       myFileEditorManagerEx.updateFilePresentation(vf);
     }
   }

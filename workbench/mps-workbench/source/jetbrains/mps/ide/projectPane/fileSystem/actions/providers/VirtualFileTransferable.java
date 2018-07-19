@@ -39,7 +39,7 @@ class VirtualFileTransferable implements Transferable {
   }
 
   @Override
-  public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
+  public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException {
     if (VIRTUAL_FILE_DATA_FLAVOR.equals(flavor)) {
       return myData.getPresentation();
     }

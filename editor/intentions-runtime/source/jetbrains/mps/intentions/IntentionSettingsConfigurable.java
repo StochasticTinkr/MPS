@@ -115,7 +115,7 @@ public class IntentionSettingsConfigurable implements Configurable, Composite {
   }
 
   @Override
-  public void apply() throws ConfigurationException {
+  public void apply() {
     for (LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
       Enumeration<IntentionTreeNode> intentionTreeNode = languageTreeNode.children();
       while (intentionTreeNode.hasMoreElements()) {

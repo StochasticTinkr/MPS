@@ -269,7 +269,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
     }
 
     @Override
-    public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
+    public Object getTransferData(DataFlavor flavor) {
       return myObject;
     }
   }

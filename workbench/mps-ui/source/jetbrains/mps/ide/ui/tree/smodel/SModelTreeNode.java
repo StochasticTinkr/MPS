@@ -287,9 +287,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
         //       Sorting ensures we didn't create SModelTreeNode for a child before the one for the parent.
         //       Can't refactor right away as mbeddr subclasses our tree nodes and heavily relies on implementation.
         final Stream<SModel> modelsInMyModule = StreamSupport.stream(myModelDescriptor.getModule().getModels().spliterator(), false);
-        if (modelsInMyModule.anyMatch(m -> maxPackage.equals(m.getName().getLongName()))) {
-          return false;
-        }
+        return !modelsInMyModule.anyMatch(m -> maxPackage.equals(m.getName().getLongName()));
       }
       return true;
     }

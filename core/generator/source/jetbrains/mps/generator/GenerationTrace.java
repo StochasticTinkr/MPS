@@ -44,14 +44,14 @@ public interface GenerationTrace {
   void walkForward(SNode node, @NotNull Visitor v);
   void walkBackward(SNode node, @NotNull Visitor v);
 
-  public interface Visitor {
+  interface Visitor {
     void beginStep(@NotNull SModelReference input, @NotNull SModelReference output);
     // added, removed (although latter is hard to detect)?
     void change(@NotNull SNodeReference input, @NotNull SNodeReference output, @NotNull SNodeReference template);
     void endStep(@NotNull SModelReference input, @NotNull SModelReference output);
   }
 
-  public class NoOp implements GenerationTrace {
+  class NoOp implements GenerationTrace {
     @Override
     public void nextStep(@NotNull SModelReference input, @NotNull SModelReference output) {
     }

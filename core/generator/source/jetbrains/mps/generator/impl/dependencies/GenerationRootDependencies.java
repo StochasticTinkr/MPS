@@ -89,7 +89,7 @@ public class GenerationRootDependencies {
   }
 
   public List<String> getFiles() {
-    return myGeneratedFiles == null ? Collections.<String>emptyList() : Collections.unmodifiableList(myGeneratedFiles);
+    return myGeneratedFiles == null ? Collections.emptyList() : Collections.unmodifiableList(myGeneratedFiles);
   }
 
   public void addGeneratedFile(String name) {

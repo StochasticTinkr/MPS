@@ -48,7 +48,7 @@ final class Group {
   }
 
   public Group() {
-    this(Collections.<TemplateMappingConfiguration>emptySet(), false);
+    this(Collections.emptySet(), false);
   }
 
   public Group(@NotNull TemplateMappingConfiguration cfg) {
