@@ -101,14 +101,8 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
   }
 
   @Override
-  public int hashCode() {
-    // all inheritors should override and implement it
-    throw new UnsupportedOperationException();
-  }
+  public abstract int hashCode();
 
   @Override
-  public boolean equals(Object obj) {
-    // all inheritors should override and implement it
-    throw new UnsupportedOperationException();
-  }
+  public abstract boolean equals(Object obj);
 }
