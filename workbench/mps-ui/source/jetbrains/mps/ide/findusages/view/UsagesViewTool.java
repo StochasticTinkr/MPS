@@ -259,8 +259,8 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
       if (usageViewData.isTransientView()) {
         continue;
       }
-      Element tabXML = new Element(TAB);
       try {
+        Element tabXML = new Element(TAB);
         usageViewData.write(tabXML, project);
         tabsXML.addContent(tabXML);
       } catch (CantSaveSomethingException e) {

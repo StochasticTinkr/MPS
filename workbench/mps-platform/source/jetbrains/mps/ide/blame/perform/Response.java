@@ -73,9 +73,9 @@ public class Response {
 
   @Nullable
   public String getIssueId() {
-    final String ID = "id";
     Element responseXml = getResponseXml();
     if (responseXml != null) {
+      final String ID = "id";
       Attribute attribute = responseXml.getAttribute(ID);
       if (attribute != null) {
         return attribute.getValue();

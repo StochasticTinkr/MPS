@@ -57,7 +57,6 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
       return Collections.emptyList();
     }
 
-    List<SubstituteAction> result;
     SubstituteMenuLookup lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getReplacementConcept());
     SContainmentLink containmentLink = node.getContainmentLink();
     assert containmentLink != null;
@@ -66,7 +65,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
     editorMenuTrace.setDescriptor(createEditorMenuDescriptor(cellContext, editorContext));
     List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parent, node, containmentLink, null,  editorContext, lookup, editorMenuTrace).collect();
     try {
-      result = new SubstituteActionsCollector(parent, transformationItems, editorContext.getRepository()).collect().stream().map(action -> new NodeSubstituteActionWrapper(action) {
+      return new SubstituteActionsCollector(parent, transformationItems, editorContext.getRepository()).collect().stream().map(action -> new NodeSubstituteActionWrapper(action) {
         @Override
         public SNode substitute(@Nullable EditorContext context, String pattern) {
           String selectedCellId = getSelectedCellId(context);
@@ -79,7 +78,6 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
           return null;
         }
       }).collect(Collectors.toList());
-      return result;
     } finally {
       editorMenuTrace.popTraceInfo();
     }

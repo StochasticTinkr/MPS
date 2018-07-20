@@ -35,7 +35,6 @@ public class ComparableRelation extends AbstractRelation {
 
   @Override
   public boolean solve(SNode node, Set<SNode> leftTypes, Set<SNode> rightTypes, State state, Map<SNode, RelationBlock> typesToBlocks) {
-    EquationInfo info;
     List<SNode> nodes = new LinkedList<>();
     nodes.addAll(leftTypes);
     nodes.addAll(rightTypes);
@@ -60,7 +59,7 @@ public class ComparableRelation extends AbstractRelation {
     }
     if (result != null) {
       RelationBlock block = typesToBlocks.get(result);
-      info = (block != null) ? block.getEquationInfo() : typesToBlocks.get(nodes.iterator().next()).getEquationInfo();
+      EquationInfo info = (block != null) ? block.getEquationInfo() : typesToBlocks.get(nodes.iterator().next()).getEquationInfo();
       state.addEquation(node, result, info);
     }
     return result != null;

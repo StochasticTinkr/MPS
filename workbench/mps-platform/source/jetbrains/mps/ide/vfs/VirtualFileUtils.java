@@ -119,8 +119,8 @@ public final class VirtualFileUtils {
   }
 
   public static void refreshSynchronouslyRecursively(VirtualFile file, ProgressMonitor progressMonitor) {
-    final int totalWork = 3;
     try {
+      final int totalWork = 3;
       progressMonitor.start("Refreshing the virtual file system", totalWork);
       List<VirtualFile> dirtyFiles = VfsUtil.markDirty(true, true, file);
       progressMonitor.advance(1);

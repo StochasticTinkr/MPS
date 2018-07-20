@@ -122,9 +122,9 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
     }
     myCommitInProgress = true;
     try {
-      boolean result = false;
       if (isTransactional()) {
         TransactionalModelAccessor transactionalModelAccessor = (TransactionalModelAccessor) myModelAccessor;
+        boolean result = false;
         if (transactionalModelAccessor.hasValueToCommit()) {
           transactionalModelAccessor.commit();
           result = true;

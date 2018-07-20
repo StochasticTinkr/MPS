@@ -252,11 +252,11 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
 
     @Override
     public DataFlavor[] getTransferDataFlavors() {
-      Class aClass = MyTransferable.class;
       DataFlavor dataFlavor = null;
       try {
+        Class aClass = MyTransferable.class;
         dataFlavor = new DataFlavor(DataFlavor.javaJVMLocalObjectMimeType + ";class=" + aClass.getName(),
-            mySupportedFlavor, aClass.getClassLoader());
+                                    mySupportedFlavor, aClass.getClassLoader());
       } catch (ClassNotFoundException ignored) {
       }
       return new DataFlavor[]{dataFlavor};

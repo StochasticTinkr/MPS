@@ -301,10 +301,10 @@ public class EditorManager {
 
   private EditorCell syncEditorCell(SynchronizeableEditorCell editorCell, ReferencedNodeContext refContext) {
     pushTask(getMessage(refContext, "+"));
-    EditorCell result = null;
     try {
       final SNode node = refContext.getNode();
       NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
+      EditorCell result = null;
       try {
         if (!isAttributedCell(editorCell, refContext)) {
           editorCell = removeSideTransformHintCell(editorCell);

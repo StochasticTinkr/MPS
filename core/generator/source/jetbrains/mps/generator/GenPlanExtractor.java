@@ -115,7 +115,6 @@ public final class GenPlanExtractor implements ModelGenerationPlan.Provider {
     // plans associated directly with devkit property has higher precedence than plans coming from DevKit's facets plan providers
     ArrayList<ModelGenerationPlan.Provider> facetAssociatedPlan = new ArrayList<>();
     for (SModuleReference dkRef : ((SModelInternal) model).importedDevkits()) {
-      final SModelReference dkPlan;
       if (myDevkitToPlan.containsKey(dkRef)) {
         final PlanProviderInfo rv = myDevkitToPlan.get(dkRef);
         if (rv == null) {
@@ -135,6 +134,7 @@ public final class GenPlanExtractor implements ModelGenerationPlan.Provider {
         }
         DevKit devkit = (DevKit) dkModule;
         ModelGenerationPlan.Provider mgpProvider;
+        final SModelReference dkPlan;
         if (devkit.getModuleDescriptor() != null && (dkPlan = devkit.getModuleDescriptor().getAssociatedGenPlan()) != null) {
           mgpProvider = new InterpretedPlanProvider(LanguageRegistry.getInstance(myRepository), myMessageHandler, dkPlan, myRepository);
           myDevkitToPlan.put(dkRef, new PlanProviderInfo(mgpProvider, true));

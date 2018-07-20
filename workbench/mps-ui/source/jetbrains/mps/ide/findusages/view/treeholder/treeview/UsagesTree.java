@@ -178,8 +178,7 @@ public class UsagesTree extends MPSTree {
   @Override
   public void rebuildNow() {
     UsagesTree.super.rebuildNow();
-    int i;
-    for (i = 0; i < getRootNode().getChildCount(); i++) {
+    for (int i = 0; i < getRootNode().getChildCount(); i++) {
       Object[] path = {getRootNode(), getRootNode().getChildAt(i)};
       TreePath treePath = new TreePath(path);
       expandPath(treePath);
@@ -424,16 +423,14 @@ public class UsagesTree extends MPSTree {
       root.setText(invalid + caption);
     }
 
-    int i;
-    for (i = 0; i < root.getChildCount(); i++) {
+    for (int i = 0; i < root.getChildCount(); i++) {
       setUIProperties((UsagesTreeNode) root.getChildAt(i));
     }
   }
 
   private void makeNodesHTML(UsagesTreeNode root) {
     root.setText("<html>" + root.getText() + "</html>");
-    int i;
-    for (i = 0; i < root.getChildCount(); i++) {
+    for (int i = 0; i < root.getChildCount(); i++) {
       UsagesTreeNode child = (UsagesTreeNode) root.getChildAt(i);
       makeNodesHTML(child);
     }

@@ -365,14 +365,13 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
       protected JComponent createNorthPanel() {
         JComponent panel = super.createNorthPanel();
         JComponent textField = null;
-        JPanel messagePanel = null;
         try {
           textField = (JComponent) InputDialog.class.getMethod("getTextField").invoke(this);
         } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException ignore) {
         }
 
         if (textField != null) {
-          messagePanel = (JPanel) textField.getParent();
+          JPanel messagePanel = (JPanel) textField.getParent();
           messagePanel.remove(textField); // xe-xe
 
           textArea = new JTextArea(10, 50);

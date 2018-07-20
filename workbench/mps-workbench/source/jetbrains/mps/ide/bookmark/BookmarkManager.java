@@ -340,7 +340,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
   public static class BookmarkInfo {
     private SNodeReference myNodeRef;
     public int myNumber;
-    public boolean myIsNull = true;
+    public boolean myIsNull;
 
     public BookmarkInfo() {
       myIsNull = true;

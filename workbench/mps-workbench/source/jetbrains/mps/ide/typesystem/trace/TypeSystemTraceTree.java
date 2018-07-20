@@ -274,11 +274,9 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private MPSTreeNode getNextErrorNode(int row) {
-    TreePath errorPath;
-    int errorRow;
     for (TypeSystemTraceTreeNode errorNode : myErrorNodes) {
-      errorPath = new TreePath(errorNode.getPath());
-      errorRow = this.getRowForPath(errorPath);
+      TreePath errorPath = new TreePath(errorNode.getPath());
+      int errorRow = this.getRowForPath(errorPath);
       if (errorRow > row) {
         return errorNode;
       }
