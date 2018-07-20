@@ -31,7 +31,7 @@ public abstract class BaseProjectMigration implements ProjectMigration {
 
   @Override
   public final boolean shouldBeExecuted(Project p) {
-    return !EXECUTED_VALUE.equals(p.getComponent(MigrationProperties.class).getProperty(migrationId));
+    return !p.isDisposed() && !EXECUTED_VALUE.equals(p.getComponent(MigrationProperties.class).getProperty(migrationId));
   }
 
   @Override
