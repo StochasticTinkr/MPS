@@ -62,15 +62,13 @@ public class Response {
     if (responseString == null || responseString.isEmpty()) {
       return null;
     }
-    SAXBuilder saxBuilder = new SAXBuilder();
-    Document document;
+
     try {
-      document = saxBuilder.build(new StringReader(responseString));
+      return new SAXBuilder().build(new StringReader(responseString)).getRootElement();
     } catch (Exception e) {
       LOG.error("Can't open created issue", e);
       return null;
     }
-    return document.getRootElement();
   }
 
   @Nullable

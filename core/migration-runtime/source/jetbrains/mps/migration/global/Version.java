@@ -109,7 +109,7 @@ public class Version implements Comparable<Version> {
   }
 
   private int compareString(String a, String b) {
-    return a.equals(b) ? 0 : (a != null ? a.compareTo(b) : -b.compareTo(a));
+    return a.equals(b) ? 0 : a.compareTo(b);
   }
 }
 

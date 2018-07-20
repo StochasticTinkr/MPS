@@ -382,26 +382,22 @@ public class CreateProjectWizard extends DialogWrapper {
     }
 
     // Check that there is no other project at this project path
-    boolean isProjectPath = false;
     File file = new File(myProjectPath.getPath());
-    if (file.exists()) {
-      if (file.getParent() == null || !file.isDirectory()) {
-        isProjectPath = false;
-      } else if (file.isDirectory()) {
-        isProjectPath = file.listFiles(
+    if (file.exists() && file.getParent() != null && file.isDirectory()) {
+      boolean isProjectPath = file.listFiles(
             (dir, name) -> Project.DIRECTORY_STORE_FOLDER.equals(name) || name.toLowerCase().endsWith(MPSExtentions.DOT_MPS_PROJECT)).length == 1;
-      }
-    }
-    if (isProjectPath) {
-      //show error and disable apply
-      getOKAction().setEnabled(false);
-      setErrorText("Project under this path already exists");
 
-      return;
+      if (isProjectPath) {
+        //show error and disable apply
+        getOKAction().setEnabled(false);
+        setErrorText("Project under this path already exists");
+
+        return;
+      }
     }
 
     // Extension point for project template to check settings on template choose
-    if(myCurrentTemplateItem != null) {
+    if (myCurrentTemplateItem != null) {
       final String errorText = myCurrentTemplateItem.myTemplate.checkSettings();
       getOKAction().setEnabled(errorText == null);
       setErrorText(errorText);

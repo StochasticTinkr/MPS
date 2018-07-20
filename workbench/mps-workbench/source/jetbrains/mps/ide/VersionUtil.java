@@ -36,6 +36,6 @@ public class VersionUtil {
     } catch (Exception e) {
       LOG.error(null, e);
     }
-    return "" + props.get("build.number");
+    return "" + props.getProperty("build.number");
   }
 }
