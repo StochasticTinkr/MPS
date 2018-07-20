@@ -95,7 +95,7 @@ public class TypeSystemReporter {
     ArrayList<Entry<String, Pair<Long, Long>>> list = new ArrayList<>();
     list.addAll(map.entrySet());
 
-    Collections.sort(list, (o1, o2) -> o2.getValue().o1 > o1.getValue().o1 ? 1 : -1);
+    Collections.sort(list, Comparator.comparing(o -> o.getValue().o1));
     long sum = 0;
     int i = 0;
     for (Entry<String, Pair<Long, Long>> entry : list) {
