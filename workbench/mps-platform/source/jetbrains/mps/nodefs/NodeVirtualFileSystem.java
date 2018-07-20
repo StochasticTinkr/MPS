@@ -377,7 +377,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
       }
       if (root != null && root != changed) {
         MPSNodeVirtualFile vf2 = rvf.getVirtualFile(root);
-        if (vf2 != null && vf2 != vf1) {
+        if (vf2 != null && !vf2.equals(vf1)) {
           files.add(vf2);
         }
       }
