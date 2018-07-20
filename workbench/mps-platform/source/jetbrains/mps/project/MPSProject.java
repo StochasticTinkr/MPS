@@ -24,6 +24,7 @@ import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.ProjectRootListenerComponent;
+import jetbrains.mps.library.Library;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NonNls;
@@ -37,6 +38,8 @@ import java.util.List;
 /**
  * Represents a project based on the idea platform project
  * Used in the idea plugin
+ *
+ * fixme introduce a project<->library relation on this particular level (AP)
  */
 public class MPSProject extends ProjectBase implements FileBasedProject, ProjectComponent {
   private com.intellij.openapi.project.Project myProject;

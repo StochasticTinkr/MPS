@@ -22,6 +22,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.roots.ContentIterator;
+import com.intellij.openapi.roots.ProjectFileIndex;
 import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VfsUtil;
@@ -29,6 +30,13 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.IndexableFileSet;
 import jetbrains.mps.ide.make.StartupModuleMaker;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.vfs.IdeaFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.library.contributor.LibDescriptor;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectLibraryManager;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -60,11 +68,12 @@ public class MPSIndexableFileSet extends AbstractProjectComponent implements Ind
     }
   };
 
+  @SuppressWarnings("unused")
   public MPSIndexableFileSet(@NotNull final Project project,
-      final ProjectRootManagerEx rootManager,
-      ProjectManager projectManager,
-      FileBasedIndex index,
-      StartupModuleMaker maker) {
+                             final ProjectRootManagerEx rootManager,
+                             ProjectManager projectManager,
+                             FileBasedIndex index,
+                             StartupModuleMaker maker) {
     super(project);
     myRootManager = rootManager;
     myProjectManager = projectManager;
@@ -97,14 +106,41 @@ public class MPSIndexableFileSet extends AbstractProjectComponent implements Ind
 
   @Override
   public boolean isInSet(@NotNull VirtualFile file) {
-    if (!isIgnored(file, myRootManager)) {
+    if (shouldExamine(file)) {
       for (VirtualFile vf : getIndexableRoots()) {
-        if (VfsUtil.isAncestor(vf, file, true)) { // fixme why 'true' is passed??
+        if (VfsUtil.isAncestor(vf, file, false)) {
           return true;
         }
       }
     }
     return false;
+  }
+
+  private boolean shouldExamine(@NotNull VirtualFile file) {
+    if (!isInProject(file) && !isInProjectLibraries(file)) {
+      return false;
+    }
+    return !isIgnored(file, myRootManager);
+  }
+
+  private boolean isInProjectLibraries(VirtualFile file) {
+    ProjectLibraryManager projectLibraryManager = myProject.getComponent(ProjectLibraryManager.class);
+    if (projectLibraryManager == null) {
+      return false;
+    }
+    Set<LibDescriptor> paths = projectLibraryManager.getPaths();
+    for (LibDescriptor libPath : paths) {
+      VirtualFile libRootPath = VirtualFileUtils.getProjectVirtualFile(libPath.getPath());
+      if (libRootPath != null && VfsUtil.isAncestor(libRootPath, file, false)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private boolean isInProject(VirtualFile file) {
+    VirtualFile baseDir = myProject.getBaseDir();
+    return VfsUtil.isAncestor(baseDir, file, false);
   }
 
   @Override

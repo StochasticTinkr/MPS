@@ -61,13 +61,7 @@ public class BuiltInLibrariesIO {
         String path = child.getAttribute(LIBRARY_PATH_TAG).getValue();
         final String realPath = MacrosFactory.getGlobal().expandPath(path);
 
-        Library predefinedLibrary = new Library(name) {
-          @NotNull
-          @Override
-          public String getPath() {
-            return realPath;
-          }
-        };
+        Library predefinedLibrary = new Library(name, realPath);
         result.put(name, predefinedLibrary);
       }
     } catch (JDOMException | IOException e) {

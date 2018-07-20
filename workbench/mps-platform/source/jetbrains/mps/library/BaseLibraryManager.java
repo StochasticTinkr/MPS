@@ -76,9 +76,8 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
     return result;
   }
 
-  public Library addLibrary(String name) {
-    Library library = new Library();
-    library.setName(name);
+  public Library addLibrary(@NotNull String name) {
+    Library library = new Library(name);
     myLibraries.getLibraries().put(library.getName(), library);
     return library;
   }
@@ -88,9 +87,7 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   }
 
   public Set<Library> getUILibraries() {
-    Set<Library> result = new HashSet<>();
-    result.addAll(myLibraries.getLibraries().values());
-    return result;
+    return new HashSet<>(myLibraries.getLibraries().values());
   }
 
   //-------macro stuff
@@ -104,13 +101,13 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   }
 
   private Library addMacros(Library l) {
-    Library result = l.clone();
+    Library result = l.copy();
     result.setPath(addMacros(result.getPath()));
     return result;
   }
 
   private Library removeMacros(Library l) {
-    Library result = l.clone();
+    Library result = l.copy();
     result.setPath(removeMacros(result.getPath()));
     return result;
   }
