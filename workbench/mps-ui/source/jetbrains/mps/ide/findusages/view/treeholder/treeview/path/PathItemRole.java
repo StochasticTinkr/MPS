@@ -78,7 +78,7 @@ public final class PathItemRole {
   //------------------INSTANCE STUFF-------------------
 
   @NotNull
-  private String myName = "";
+  private String myName;
 
   @NotNull
   public String getName() {

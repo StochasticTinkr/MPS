@@ -93,10 +93,9 @@ public class Equations {
     SNode currentKey = nameRepresentative;
     SNode current = nameRepresentative;
     if (myRepresentatives.containsKey(currentKey)) {
-      SNode parent = myRepresentatives.get(currentKey);
       List<SNode> path = new LinkedList<>();
       while (myRepresentatives.containsKey(currentKey)) {
-        parent = myRepresentatives.get(currentKey);
+        SNode parent = myRepresentatives.get(currentKey);
         if (current != nameRepresentative) {
           path.add(current);
         }

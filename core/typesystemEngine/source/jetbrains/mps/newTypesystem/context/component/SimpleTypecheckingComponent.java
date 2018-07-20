@@ -250,7 +250,7 @@ import java.util.Set;
 
   private void applyRulesAndTrackAccess(AccessTracking accessTracking, SNode sNode) {
     accessTracking.installReadListeners();
-    boolean typeAffected = false;
+    boolean typeAffected;
     try {
       myNodes.add(sNode);
       typeAffected = applyRulesToNode(sNode);

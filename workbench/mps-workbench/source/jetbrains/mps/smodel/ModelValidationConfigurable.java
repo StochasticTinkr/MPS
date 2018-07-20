@@ -29,8 +29,8 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 
 public class ModelValidationConfigurable implements SearchableConfigurable {
-
-  private ModelValidationSettings myModelValidationSettings = null;
+  @NotNull
+  private ModelValidationSettings myModelValidationSettings;
 
   private JPanel myJPanel = new JPanel(new BorderLayout());
   private JCheckBox myCheckBoxOpenAPI = new JCheckBox("Disable nonpublic API usage check");

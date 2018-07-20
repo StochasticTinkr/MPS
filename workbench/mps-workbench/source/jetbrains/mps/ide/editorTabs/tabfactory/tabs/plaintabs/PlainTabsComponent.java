@@ -195,7 +195,6 @@ public class PlainTabsComponent extends BaseTabsComponent {
     int selected = myTabs.getTabCount() > 0 ? myTabs.getIndexOf(myTabs.getSelectedInfo()) : -1;
     if (selected != -1) {
       selectedNode = myRealTabs.get(selected).getNode();
-      RelationDescriptor selectedAspect = myRealTabs.get(selected).getTab();
     }
 
     boolean oldRebuilding = myRebuilding;

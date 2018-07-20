@@ -557,7 +557,7 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
     }
 
     class MyBasePathToggleAction extends MyBaseToggleAction {
-      private PathItemRole myPathItemRole = null;
+      private PathItemRole myPathItemRole;
 
       public MyBasePathToggleAction(PathItemRole itemRole, String name, Icon icon) {
         super(name, "", icon);

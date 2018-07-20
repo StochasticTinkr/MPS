@@ -412,7 +412,7 @@ public class FileUtil {
     try {
       r = new BufferedReader(reader);
 
-      String line = null;
+      String line;
       int currentLine = 0;
       while ((line = r.readLine()) != null) {
         if (currentLine == lineNo) {

@@ -28,10 +28,10 @@ import java.io.StringReader;
 public class Response {
   private static final Logger LOG = LogManager.getLogger(Response.class);
 
-  private boolean mySuccess = true;
-  private String myMessage = "";
-  private Throwable myThrowable = null;
-  private String myResponseString = null;
+  private boolean mySuccess;
+  private String myMessage;
+  private Throwable myThrowable;
+  private String myResponseString;
 
   public Response(String message, String response, boolean success, Throwable throwable) {
     myMessage = message;
