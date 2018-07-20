@@ -18,6 +18,7 @@ package jetbrains.mps.ide.java;
 import com.intellij.lexer.FlexLexer;
 import com.intellij.psi.tree.IElementType;
 
+@SuppressWarnings("ALL")
 class _JavaLexer implements FlexLexer {
   /**
    * initial size of the lookahead buffer
