@@ -28,10 +28,10 @@ import java.util.Collections;
 import java.util.List;
 
 public class ModelsHolder implements IHolder<List<SModelReference>> {
-  private List<SModelReference> myModelReferences = new ArrayList<>();
+  private List<SModelReference> myModelReferences;
 
-  public ModelsHolder(List<SModelReference> modelReferences) {
-    myModelReferences = modelReferences;
+  public ModelsHolder(@NotNull List<SModelReference> modelReferences) {
+    myModelReferences = new ArrayList<>(modelReferences);
   }
 
   @Override
