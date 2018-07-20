@@ -141,8 +141,9 @@ public abstract class ToggleFBModelRootKindAction extends ToggleAction implement
     return selected.stream().map(VirtualFileUtils::toIFile).filter(Objects::nonNull).collect(Collectors.toList());
   }
 
+  @NotNull
   @Override
-  public JComponent createCustomComponent(Presentation presentation) {
+  public JComponent createCustomComponent(@NotNull Presentation presentation) {
     return new ActionButtonWithText(this, presentation, ActionPlaces.UNKNOWN, ActionToolbar.DEFAULT_MINIMUM_BUTTON_SIZE);
   }
 }

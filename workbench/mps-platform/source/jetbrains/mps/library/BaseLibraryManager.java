@@ -144,7 +144,7 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   }
 
   @Override
-  public void loadState(LibraryState state) {
+  public void loadState(@NotNull LibraryState state) {
     myLibraries = removeMacros(state);
   }
 

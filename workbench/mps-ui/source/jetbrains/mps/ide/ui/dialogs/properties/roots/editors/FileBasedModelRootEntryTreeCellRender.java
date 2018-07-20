@@ -22,6 +22,7 @@ import com.intellij.openapi.fileChooser.FileElement;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKind;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 
 import javax.swing.Icon;
@@ -39,7 +40,7 @@ public class FileBasedModelRootEntryTreeCellRender extends NodeRenderer {
   }
 
   @Override
-  public void customizeCellRenderer(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
+  public void customizeCellRenderer(@NotNull JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
     super.customizeCellRenderer(tree, value, selected, expanded, leaf, row, hasFocus);
 
     ModelRootEntry<FileBasedModelRoot> entry = myModelRootEditor.getFileBasedModelRootEntry();

@@ -75,6 +75,7 @@ public abstract class CollectManyIterator<IN, T> implements Iterable<T>, Iterato
   @Nullable
   protected abstract Iterator<T> translate(IN node);
 
+  @NotNull
   @Override
   public Iterator<T> iterator() {
     reset();

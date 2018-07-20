@@ -133,12 +133,12 @@ public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAwar
 
   private static class AllScope extends GlobalSearchScope {
     @Override
-    public boolean contains(VirtualFile file) {
+    public boolean contains(@NotNull VirtualFile file) {
       return true;
     }
 
     @Override
-    public int compare(VirtualFile file1, VirtualFile file2) {
+    public int compare(@NotNull VirtualFile file1, @NotNull VirtualFile file2) {
       return 0;
     }
 

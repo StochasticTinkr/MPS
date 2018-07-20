@@ -39,7 +39,7 @@ public class AspectGrouper implements Grouper {
 
   @Override
   @NotNull
-  public Collection<Group> group(AbstractTreeNode parent, final Collection<TreeElement> children) {
+  public Collection<Group> group(@NotNull AbstractTreeNode parent, @NotNull final Collection<TreeElement> children) {
     final Object element = parent.getValue();
     if (!(element instanceof MainNodeTreeElement)) {
       return Collections.emptyList();

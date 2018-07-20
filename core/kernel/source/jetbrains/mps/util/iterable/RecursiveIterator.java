@@ -78,6 +78,7 @@ public abstract class RecursiveIterator<T> implements Iterable<T>, Iterator<T> {
     throw new UnsupportedOperationException();
   }
 
+  @NotNull
   @Override
   public Iterator<T> iterator() {
     mySeen.clear();

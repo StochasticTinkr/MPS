@@ -32,6 +32,7 @@ import jetbrains.mps.openapi.intentions.IntentionFactory;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.StringUtil;
 import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
@@ -139,6 +140,7 @@ public class IntentionSettingsConfigurable implements Configurable, Composite {
     myTree = null;
   }
 
+  @NotNull
   @Override
   public Configurable[] getConfigurables() {
     return new Configurable[0];

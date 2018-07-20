@@ -56,7 +56,7 @@ public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloa
   }
 
   @Override
-  public int compareTo(IOverloadedOpsTypesProvider o) {
+  public int compareTo(@NotNull IOverloadedOpsTypesProvider o) {
     if (o instanceof OverloadedOpsProvider_OneTypeSpecified) {
       OverloadedOpsProvider_OneTypeSpecified o2 = (OverloadedOpsProvider_OneTypeSpecified) o;
       int i1 = (this.myTypeIsExact ? 1 : 0);

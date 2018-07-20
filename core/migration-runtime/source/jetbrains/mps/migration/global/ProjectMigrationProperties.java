@@ -71,7 +71,7 @@ public class ProjectMigrationProperties implements MigrationProperties, ProjectC
     return res;
   }
   @Override
-  public void loadState(Element state) {
+  public void loadState(@NotNull Element state) {
     myProperties.clear();
     for (Element e : state.getChildren(SINGLE_PROP)) {
       myProperties.put(e.getAttributeValue(NAME), e.getAttributeValue(VALUE));

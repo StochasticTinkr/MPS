@@ -66,7 +66,7 @@ public class NodeFileIconProvider implements FileIconProvider, ApplicationCompon
 
   @Override
   @Nullable
-  public Icon getIcon(final VirtualFile file, int flags, final Project project) {
+  public Icon getIcon(@NotNull final VirtualFile file, int flags, final Project project) {
     if (file instanceof MPSNodeVirtualFile) {
       final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(project);
       if (mpsProject == null) {

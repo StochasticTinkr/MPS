@@ -157,7 +157,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   @Override
-  public void loadState(MessageViewToolState state) {
+  public void loadState(@NotNull MessageViewToolState state) {
     getDefaultList().loadState(state.defaultListState);
   }
 

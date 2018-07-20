@@ -33,6 +33,7 @@ public class MergeIterator<T> implements Iterable<T>, Iterator<T> {
     mySecond = it2;
   }
 
+  @NotNull
   @Override
   public Iterator<T> iterator() {
     myIt1 = myFirst.iterator();

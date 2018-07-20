@@ -215,7 +215,7 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   }
 
   @Override
-  public void loadState(PluginsState state) {
+  public void loadState(@NotNull PluginsState state) {
     myState = state;
   }
 

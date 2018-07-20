@@ -47,8 +47,9 @@ public class QueryProviderCache implements GeneratorQueryProvider.Source {
     myLog = log;
   }
 
+  @NotNull
   @Override
-  public synchronized GeneratorQueryProvider getQueryProvider(SNodeReference templateNode) {
+  public synchronized GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference templateNode) {
     final SModelReference mr = templateNode.getModelReference();
     GeneratorQueryProvider queryProvider = myQueries.get(mr);
 

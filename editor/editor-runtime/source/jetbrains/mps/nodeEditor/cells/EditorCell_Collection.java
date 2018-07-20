@@ -317,6 +317,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     myDescent = newDescent;
   }
 
+  @NotNull
   @Override
   public Iterator<EditorCell> iterator() {
     return new UnmodifiableIterator<>(getVisibleChildCells().iterator());

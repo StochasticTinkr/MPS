@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.*;
 
 /**
@@ -58,9 +60,11 @@ public class ListMap<K, V> extends AbstractMap<K, V> {
     return null;
   }
 
+  @NotNull
   @Override
   public Set<Entry<K, V>> entrySet() {
     return new AbstractSet<Entry<K, V>>() {
+      @NotNull
       @Override
       public Iterator<Entry<K, V>> iterator() {
         return (Iterator<Entry<K, V>>) (Iterator) _entries().iterator();

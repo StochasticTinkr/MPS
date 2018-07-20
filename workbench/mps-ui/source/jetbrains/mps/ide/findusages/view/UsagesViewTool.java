@@ -283,7 +283,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   }
 
   @Override
-  public void loadState(final Element state) {
+  public void loadState(@NotNull final Element state) {
     //startup manager is needed cause the contract is that you can't use read and write locks
     //on component load - it can cause a deadlock (MPS-2811) 
     StartupManager.getInstance(getProject()).runWhenProjectIsInitialized(() -> {

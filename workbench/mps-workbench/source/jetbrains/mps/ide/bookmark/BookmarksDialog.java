@@ -19,6 +19,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.project.ProjectHelper;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Action;
 import javax.swing.JComponent;
@@ -47,6 +48,7 @@ public class BookmarksDialog extends DialogWrapper {
     init();
   }
 
+  @NotNull
   @Override
   protected Action[] createActions() {
     return new Action[]{

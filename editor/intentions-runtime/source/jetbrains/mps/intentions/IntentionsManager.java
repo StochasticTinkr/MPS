@@ -381,7 +381,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   @Override
-  public void loadState(MyState state) {
+  public void loadState(@NotNull MyState state) {
     myState = state;
   }
 

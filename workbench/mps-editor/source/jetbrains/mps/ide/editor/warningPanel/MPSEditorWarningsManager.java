@@ -237,7 +237,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
   private class MyFileEditorManagerListener implements FileEditorManagerListener {
     @Override
-    public void fileOpened(FileEditorManager source, VirtualFile file) {
+    public void fileOpened(@NotNull FileEditorManager source, @NotNull VirtualFile file) {
       if (file instanceof MPSNodeVirtualFile) {
         for (FileEditor fe : myFileEditorManager.getEditors(file)) {
           if (fe instanceof MPSFileNodeEditor) {
@@ -248,12 +248,12 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     }
 
     @Override
-    public void fileClosed(FileEditorManager source, VirtualFile file) {
+    public void fileClosed(@NotNull FileEditorManager source, @NotNull VirtualFile file) {
       myWarnings.keySet().retainAll(Arrays.asList(source.getAllEditors()));
     }
 
     @Override
-    public void selectionChanged(FileEditorManagerEvent event) {
+    public void selectionChanged(@NotNull FileEditorManagerEvent event) {
       updateAllWarnings();
     }
   }

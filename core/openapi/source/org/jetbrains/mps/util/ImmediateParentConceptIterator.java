@@ -45,6 +45,7 @@ public final class ImmediateParentConceptIterator implements Iterable<SConcept>,
     reset();
   }
 
+  @NotNull
   @Override
   public Iterator<SConcept> iterator() {
     reset();

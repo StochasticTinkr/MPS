@@ -75,7 +75,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
   }
 
   @Override
-  public void loadState(MyState state) {
+  public void loadState(@NotNull MyState state) {
     myState.setSaveTransientModels(state.mySaveTransientModels);
     myState.setCheckModelsBeforeGeneration(state.myCheckModelsBeforeGeneration);
     myState.setParallelGenerator(state.myParallelGenerator);

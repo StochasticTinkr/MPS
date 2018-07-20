@@ -80,6 +80,7 @@ public class DepthFirstConceptIterator implements Iterable<SAbstractConcept>, It
     }
   }
 
+  @NotNull
   @Override
   public Iterator<SAbstractConcept> iterator() {
     reset();

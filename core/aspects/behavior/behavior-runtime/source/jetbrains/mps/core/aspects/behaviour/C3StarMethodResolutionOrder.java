@@ -119,6 +119,7 @@ public final class C3StarMethodResolutionOrder implements CachingMethodResolutio
       return mySuperLinearizations.isEmpty();
     }
 
+    @NotNull
     @Override
     public Iterator<List<T>> iterator() {
       List<List<T>> allLists = new ArrayList<>();

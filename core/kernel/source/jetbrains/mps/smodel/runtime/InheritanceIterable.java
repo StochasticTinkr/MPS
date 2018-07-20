@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
@@ -50,6 +51,7 @@ public class InheritanceIterable implements Iterable<SAbstractConcept> {
     }
   }
 
+  @NotNull
   @Override
   public Iterator<SAbstractConcept> iterator() {
     return myParents.iterator();

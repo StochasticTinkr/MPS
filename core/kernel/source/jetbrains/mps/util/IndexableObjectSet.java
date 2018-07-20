@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.AbstractSet;
 import java.util.BitSet;
 import java.util.Iterator;
@@ -39,6 +41,7 @@ public abstract class IndexableObjectSet<E> extends AbstractSet<E> {
 
   protected abstract E getObject(int index);
 
+  @NotNull
   @Override
   public Iterator<E> iterator() {
     return new Iterator<E>() {

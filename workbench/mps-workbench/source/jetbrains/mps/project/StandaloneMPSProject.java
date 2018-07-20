@@ -81,7 +81,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   @Override
-  public void loadState(Element state) {
+  public void loadState(@NotNull Element state) {
     LOG.info("Loading the project '" + getName() + "' from disk");
     if (!getProject().isDefault()) {
       if (state == null) {

@@ -308,7 +308,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
   }
 
   @Override
-  public void loadState(MyState state) {
+  public void loadState(@NotNull MyState state) {
     for (int i = 0; i < state.myBookmarkInfos.length; i++) {
       BookmarkInfo bookmarkInfo = state.myBookmarkInfos[i];
       if (!bookmarkInfo.myIsNull) {

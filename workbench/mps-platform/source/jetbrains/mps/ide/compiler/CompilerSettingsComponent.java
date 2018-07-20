@@ -52,7 +52,7 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
   }
 
   @Override
-  public void loadState(CompilerState state) {
+  public void loadState(@NotNull CompilerState state) {
     CompilerState newState = new CompilerState();
     newState.setTargetVersion(state.getTargetVersion());
     myState = newState;

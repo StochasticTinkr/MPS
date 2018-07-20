@@ -39,7 +39,7 @@ public class ContextAssistantSettings implements ApplicationComponent, Persisten
   }
 
   @Override
-  public void loadState(ContextAssistantSettings state) {
+  public void loadState(@NotNull ContextAssistantSettings state) {
     XmlSerializerUtil.copyBean(state, this);
   }
 

@@ -71,13 +71,15 @@ public abstract class ArrayWrapper<T> extends AbstractList<T> {
     return -1;
   }
 
+  @NotNull
   @Override
   public Object[] toArray() {
     return Arrays.copyOf(myArray, size());
   }
 
+  @NotNull
   @Override
-  public <T> T[] toArray(T[] a) {
+  public <T> T[] toArray(@NotNull T[] a) {
     if (a.length < size()) {
       // Make a new array of a's runtime type, but my contents:
       return (T[]) Arrays.copyOf(myArray, size(), a.getClass());

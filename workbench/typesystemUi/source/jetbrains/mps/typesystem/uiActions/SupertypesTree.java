@@ -110,6 +110,7 @@ public class SupertypesTree extends AbstractHierarchyTree {
       return super.getMainComponent();
     }
 
+    @NotNull
     @Override
     protected Action[] createActions() {
       return new Action[]{getOKAction()};

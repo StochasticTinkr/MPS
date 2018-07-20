@@ -307,7 +307,7 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
   }
 
   @Override
-  public void loadState(MyState state) {
+  public void loadState(@NotNull MyState state) {
     myState = state;
     updateCachedValue();
     updateGlobalScheme();

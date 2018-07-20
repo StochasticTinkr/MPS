@@ -93,7 +93,7 @@ public class ModelValidationSettings implements PersistentStateComponent<MyState
   }
 
   @Override
-  public void loadState(MyState state) {
+  public void loadState(@NotNull MyState state) {
     myDisableCheckOpenAPI = state.myDisableCheckOpenAPI;
     myDisableTypeWasNotCalculated = state.myDisableTypeWasNotCalculated;
   }

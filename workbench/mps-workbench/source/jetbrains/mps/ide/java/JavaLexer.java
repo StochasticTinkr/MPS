@@ -20,6 +20,7 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.util.text.CharArrayCharSequence;
 import com.intellij.util.text.CharArrayUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -160,7 +161,7 @@ public class JavaLexer extends LexerBase {
   private final static HashTable ourTableWithJDK15 = new HashTable(false, true);
 
   @Override
-  public final void start(CharSequence buffer, int startOffset, int endOffset, int initialState) {
+  public final void start(@NotNull CharSequence buffer, int startOffset, int endOffset, int initialState) {
     myBuffer = buffer;
     myBufferArray = CharArrayUtil.fromSequenceWithoutCopying(buffer);
     myBufferIndex = startOffset;
@@ -436,6 +437,7 @@ public class JavaLexer extends LexerBase {
     return myBufferArray != null ? myBufferArray : CharArrayUtil.fromSequence(myBuffer);
   }
 
+  @NotNull
   @Override
   public CharSequence getBufferSequence() {
     return myBuffer;

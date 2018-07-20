@@ -65,12 +65,12 @@ public interface GenerationTrace {
     }
 
     @Override
-    public void walkForward(SNode node, Visitor v) {
+    public void walkForward(SNode node, @NotNull Visitor v) {
       // no-op
     }
 
     @Override
-    public void walkBackward(SNode node, Visitor v) {
+    public void walkBackward(SNode node, @NotNull Visitor v) {
       // no-op
     }
   }

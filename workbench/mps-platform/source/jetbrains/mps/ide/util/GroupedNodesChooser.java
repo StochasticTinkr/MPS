@@ -223,6 +223,7 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
 
+  @NotNull
   @Override
   protected Action[] createActions() {
     if (myAllowEmptySelection) {
@@ -299,7 +300,7 @@ public class GroupedNodesChooser extends DialogWrapper {
 
     myTree.setCellRenderer(new ColoredTreeCellRenderer() {
       @Override
-      public void customizeCellRenderer(JTree tree, Object value, boolean selected, boolean expanded,
+      public void customizeCellRenderer(@NotNull JTree tree, Object value, boolean selected, boolean expanded,
                                         boolean leaf, int row, boolean hasFocus) {
         if (value instanceof ElementNode) {
           ((ElementNode) value).renderTreeNode(this, tree);
@@ -710,7 +711,7 @@ public class GroupedNodesChooser extends DialogWrapper {
     }
 
     @Override
-    public void update(AnActionEvent e) {
+    public void update(@NotNull AnActionEvent e) {
       super.update(e);
       Presentation presentation = e.getPresentation();
       presentation.setEnabled(myContainerNodes.size() > 1);

@@ -150,6 +150,7 @@ public class MultiMap<K, V> implements Serializable {
   public Collection<? extends V> values() {
     if (values == null) {
       values = new AbstractCollection<V>() {
+        @NotNull
         @Override
         public Iterator<V> iterator() {
           return new Iterator<V>() {

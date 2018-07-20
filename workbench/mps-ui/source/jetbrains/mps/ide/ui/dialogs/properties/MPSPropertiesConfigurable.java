@@ -599,6 +599,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       return myComponent.convertRowIndexToModel(viewIndex);
     }
 
+    @NotNull
     @Override
     public Object[] getAllElements() {
       final TableModel tableModel = myComponent.getModel();

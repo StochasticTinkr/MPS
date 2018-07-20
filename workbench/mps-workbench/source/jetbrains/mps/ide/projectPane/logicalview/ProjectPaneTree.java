@@ -268,6 +268,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
       return ArrayUtil.find(flavors, flavor) != -1;
     }
 
+    @NotNull
     @Override
     public Object getTransferData(DataFlavor flavor) {
       return myObject;

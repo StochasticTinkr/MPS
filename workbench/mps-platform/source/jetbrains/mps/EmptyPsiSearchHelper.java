@@ -108,12 +108,14 @@ public class EmptyPsiSearchHelper implements PsiSearchHelper {
     return false;
   }
 
+  @NotNull
   @Override
   public AsyncFuture<Boolean> processElementsWithWordAsync(@NotNull TextOccurenceProcessor processor, @NotNull SearchScope searchScope, @NotNull String text,
       short searchContext, boolean caseSensitive) {
     return null;
   }
 
+  @NotNull
   @Override
   public SearchCostResult isCheapEnoughToSearch(@NotNull String name, @NotNull GlobalSearchScope scope, @Nullable PsiFile fileToIgnoreOccurencesIn, @Nullable ProgressIndicator progress) {
     return null;  //To change body of implemented methods use File | Settings | File Templates.

@@ -21,10 +21,11 @@ import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowFactory;
+import org.jetbrains.annotations.NotNull;
 
 public class MPSProjectViewToolWindowFactory implements ToolWindowFactory, DumbAware {
   @Override
-  public void createToolWindowContent(final Project project, final ToolWindow toolWindow) {
+  public void createToolWindowContent(@NotNull final Project project, @NotNull final ToolWindow toolWindow) {
     ((ProjectViewImpl) ProjectView.getInstance(project)).setupImpl(toolWindow);
   }
 }

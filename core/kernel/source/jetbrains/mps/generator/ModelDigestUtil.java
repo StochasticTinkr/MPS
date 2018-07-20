@@ -123,12 +123,12 @@ public class ModelDigestUtil {
     }
 
     @Override
-    public void write(byte[] b) {
+    public void write(@NotNull byte[] b) {
       digest.update(b);
     }
 
     @Override
-    public void write(byte[] b, int off, int len) {
+    public void write(@NotNull byte[] b, int off, int len) {
       if (off < 0 || off > b.length || len < 0 || off + len > b.length) {
         throw new IndexOutOfBoundsException();
       }

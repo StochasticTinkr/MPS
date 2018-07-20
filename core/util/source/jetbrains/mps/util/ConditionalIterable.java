@@ -33,6 +33,7 @@ public class ConditionalIterable<T> implements Iterable<T> {
     myIter = iter;
   }
 
+  @NotNull
   @Override
   public Iterator<T> iterator() {
     return myCondition == null ? new WildcIteratorDelegate<>(myIter.iterator()) : new FilterIterator<>(myIter.iterator(), myCondition);

@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.runtime.interpreted;
 import jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConstraintsAspectInterpreted extends BaseConstraintsAspectDescriptor {
@@ -30,7 +31,7 @@ public class ConstraintsAspectInterpreted extends BaseConstraintsAspectDescripto
     return INSTANCE;
   }
 
-  public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
+  public ConstraintsDescriptor getConstraints(@NotNull SAbstractConcept concept) {
     return new BaseConstraintsDescriptor(concept);
   }
 }

@@ -49,11 +49,13 @@ public class AspectTreeElement implements StructureViewTreeElement, Comparable<A
     return myIsBijectional;
   }
 
+  @NotNull
   @Override
   public TreeElement[] getChildren() {
     return StructureViewTreeElement.EMPTY_ARRAY;
   }
 
+  @NotNull
   @Override
   public ItemPresentation getPresentation() {
     return myPresentation;

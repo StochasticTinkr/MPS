@@ -25,6 +25,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -49,6 +50,7 @@ public class MainNodeTreeElement implements StructureViewTreeElement {
     return new jetbrains.mps.smodel.SNodePointer(null);
   }
 
+  @NotNull
   @Override
   public TreeElement[] getChildren() {
     final List<TreeElement> result = new ArrayList<>();
@@ -70,6 +72,7 @@ public class MainNodeTreeElement implements StructureViewTreeElement {
     return result.toArray(new TreeElement[0]);
   }
 
+  @NotNull
   @Override
   public ItemPresentation getPresentation() {
     final SRepository repo = myProject.getRepository();

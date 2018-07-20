@@ -32,6 +32,7 @@ public abstract class AbstractSequentialList<T> extends java.util.AbstractSequen
     myFirst = first;
   }
 
+  @NotNull
   @Override
   public ListIterator<T> listIterator(int index) {
     if (index < 0) {

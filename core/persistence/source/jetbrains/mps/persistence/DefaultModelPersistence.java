@@ -390,7 +390,7 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
 
     @NotNull
     @Override
-    public ModelLoadResult readModel(@NotNull SModelHeader header, ModelLoadingState state) throws ModelReadException {
+    public ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull ModelLoadingState state) throws ModelReadException {
       return ModelPersistence.readModel(header, getSource(), state);
     }
 

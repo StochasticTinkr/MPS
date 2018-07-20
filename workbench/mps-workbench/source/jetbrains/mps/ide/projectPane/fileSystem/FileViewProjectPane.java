@@ -468,22 +468,22 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
 
   private class FileChangesListener extends VirtualFileAdapter {
     @Override
-    public void fileCreated(VirtualFileEvent event) {
+    public void fileCreated(@NotNull VirtualFileEvent event) {
       rebuildTreeLater();
     }
 
     @Override
-    public void fileDeleted(VirtualFileEvent event) {
+    public void fileDeleted(@NotNull VirtualFileEvent event) {
       rebuildTreeLater();
     }
 
     @Override
-    public void fileMoved(VirtualFileMoveEvent event) {
+    public void fileMoved(@NotNull VirtualFileMoveEvent event) {
       rebuildTreeLater();
     }
 
     @Override
-    public void fileCopied(VirtualFileCopyEvent event) {
+    public void fileCopied(@NotNull VirtualFileCopyEvent event) {
       rebuildTreeLater();
     }
   }

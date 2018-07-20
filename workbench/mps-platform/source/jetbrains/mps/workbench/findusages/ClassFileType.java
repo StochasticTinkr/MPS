@@ -70,7 +70,7 @@ public class ClassFileType implements FileType {
   @Override
   @Nullable
   @NonNls
-  public String getCharset(@NotNull VirtualFile file, final byte[] content) {
+  public String getCharset(@NotNull VirtualFile file, @NotNull final byte[] content) {
     return "utf8";//todo ?
   }
 }

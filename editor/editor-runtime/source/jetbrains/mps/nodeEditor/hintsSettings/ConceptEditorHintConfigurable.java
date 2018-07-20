@@ -147,6 +147,7 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable, Co
     }
   }
 
+  @NotNull
   @Override
   public Configurable[] getConfigurables() {
     return new Configurable[0];

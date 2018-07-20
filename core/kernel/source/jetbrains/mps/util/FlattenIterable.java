@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -44,6 +46,7 @@ public class FlattenIterable<T> implements Iterable<T> {
     myContent.add(e);
   }
 
+  @NotNull
   @Override
   public Iterator<T> iterator() {
     return new Iterator<T>() {

@@ -21,6 +21,7 @@ import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -83,6 +84,7 @@ public class CodeStyleSettingsConfigurable implements SearchableConfigurable, Co
     return "reference.settingsdialog.IDE.globalcodestyle";
   }
 
+  @NotNull
   @Override
   public String getId() {
     return "code.style";
@@ -93,6 +95,7 @@ public class CodeStyleSettingsConfigurable implements SearchableConfigurable, Co
     return null;
   }
 
+  @NotNull
   @Override
   public Configurable[] getConfigurables() {
     return new Configurable[0];

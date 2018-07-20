@@ -43,7 +43,7 @@ public class CodeStyleSettingsComponent implements PersistentStateComponent<Code
   }
 
   @Override
-  public void loadState(CodeStyleSettings state) {
+  public void loadState(@NotNull CodeStyleSettings state) {
     myState = state;
   }
 

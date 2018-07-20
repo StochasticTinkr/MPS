@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.ui.tree;
 
 import com.intellij.ui.SpeedSearchBase;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -41,6 +42,7 @@ public class TreeSpeedSearch extends SpeedSearchBase {
     return selectionRows == null || selectionRows.length == 0 ? -1 : selectionRows[0];
   }
 
+  @NotNull
   @Override
   protected Object[] getAllElements() {
     JTree tree = (JTree) myComponent;

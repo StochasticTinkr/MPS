@@ -37,6 +37,7 @@ public class UniqueIterator<T> implements Iterable<T>, Iterator<T> {
     myReportedElements = new HashSet<>();
   }
 
+  @NotNull
   @Override
   public Iterator<T> iterator() {
     myReportedElements.clear();

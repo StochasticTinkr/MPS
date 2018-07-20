@@ -95,7 +95,7 @@ public abstract class LanguageAspectDescriptor implements OrderParticipant<Strin
   }
 
   @Override
-  public int compareTo(OrderParticipant<String> d) {
+  public int compareTo(@NotNull OrderParticipant<String> d) {
     //todo remove body after 3.5, needed for compilation compatibility
     return 0;
   }

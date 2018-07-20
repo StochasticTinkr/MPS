@@ -50,6 +50,7 @@ public class BreadthConceptHierarchyIterator implements Iterable<SAbstractConcep
     myStart = start;
   }
 
+  @NotNull
   @Override
   public Iterator<SAbstractConcept> iterator() {
     myQueue.clear();

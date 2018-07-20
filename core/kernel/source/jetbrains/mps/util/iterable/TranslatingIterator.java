@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util.iterable;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Iterator;
 
 /**
@@ -58,6 +60,7 @@ public abstract class TranslatingIterator<E, T> implements Iterable<T>, Iterator
     throw new UnsupportedOperationException();
   }
 
+  @NotNull
   @Override
   public Iterator<T> iterator() {
     return this;

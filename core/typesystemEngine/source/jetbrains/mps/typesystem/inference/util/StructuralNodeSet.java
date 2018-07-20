@@ -17,6 +17,7 @@ package jetbrains.mps.typesystem.inference.util;
 
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.*;
@@ -86,6 +87,7 @@ public class StructuralNodeSet<T> implements Set<SNode> {
     return containsStructurally((SNode) o);
   }
 
+  @NotNull
   @Override
   public Iterator<SNode> iterator() {
     return getNodes().iterator();
@@ -105,7 +107,7 @@ public class StructuralNodeSet<T> implements Set<SNode> {
   }
 
   @Override
-  public boolean addAll(Collection<? extends SNode> c) {
+  public boolean addAll(@NotNull Collection<? extends SNode> c) {
     return addCollectionStructurally(c);
   }
 
@@ -117,28 +119,30 @@ public class StructuralNodeSet<T> implements Set<SNode> {
   }
 
 
+  @NotNull
   @Override
   public Object[] toArray() {
     return getNodes().toArray();
   }
 
+  @NotNull
   @Override
-  public <T> T[] toArray(T[] a) {
+  public <T> T[] toArray(@NotNull T[] a) {
     return getNodes().toArray(a);
   }
 
   @Override
-  public boolean containsAll(Collection<?> c) {
+  public boolean containsAll(@NotNull Collection<?> c) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public boolean retainAll(Collection<?> c) {
+  public boolean retainAll(@NotNull Collection<?> c) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public boolean removeAll(Collection<?> c) {
+  public boolean removeAll(@NotNull Collection<?> c) {
     throw new UnsupportedOperationException();
   }
 

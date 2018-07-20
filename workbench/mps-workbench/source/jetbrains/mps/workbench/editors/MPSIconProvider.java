@@ -46,7 +46,7 @@ public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
 
   @Override
   @Nullable
-  public Icon getIcon(final VirtualFile file, int flags, final Project project) {
+  public Icon getIcon(@NotNull final VirtualFile file, int flags, final Project project) {
     if (file instanceof MPSLanguageVirtualFile) {
       return IdeIcons.LANGUAGE_ICON;
     }

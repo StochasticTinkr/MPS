@@ -65,7 +65,7 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
   }
 
   @Override
-  public void loadState(HintsState state) {
+  public void loadState(@NotNull HintsState state) {
     myState = new HintsState();
     myState.setEnabledHints(state.getEnabledHints());
   }

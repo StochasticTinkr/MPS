@@ -36,7 +36,7 @@ public interface IMessageList extends IMessageHandler {
   void wake();
 
   @Override
-  default void handle(IMessage msg) {
+  default void handle(@NotNull IMessage msg) {
     add(msg);
   }
 }

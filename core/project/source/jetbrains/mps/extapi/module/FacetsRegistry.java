@@ -103,7 +103,7 @@ public class FacetsRegistry extends FacetsFacade implements CoreComponent {
   }
 
   @Override
-  public void addFactory(String facetType, FacetFactory factory) {
+  public void addFactory(@NotNull String facetType, FacetFactory factory) {
     if (myFactoryType.containsKey(factory)) {
       throw new IllegalStateException("factory is already registered");
     }

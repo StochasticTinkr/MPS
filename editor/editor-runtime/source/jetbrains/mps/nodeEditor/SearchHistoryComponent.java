@@ -65,7 +65,7 @@ public class SearchHistoryComponent implements ProjectComponent, PersistentState
   }
 
   @Override
-  public void loadState(MyState state) {
+  public void loadState(@NotNull MyState state) {
     myState = state;
   }
 
