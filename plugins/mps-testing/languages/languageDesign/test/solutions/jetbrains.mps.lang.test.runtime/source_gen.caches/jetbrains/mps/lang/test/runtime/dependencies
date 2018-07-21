@@ -71,7 +71,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.BaseMigrationTestBody" file="BaseMigrationTestBody.java">
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
@@ -88,7 +87,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.references.UnregisteredNodes" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

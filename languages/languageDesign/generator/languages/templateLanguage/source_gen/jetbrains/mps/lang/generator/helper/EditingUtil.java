@@ -18,7 +18,6 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 
@@ -178,19 +177,6 @@ public final class EditingUtil {
   }
   public static SProperty getEditedProperty(EditorCell cell) {
     return check_vooyx9_a0a31(check_vooyx9_a0a0n(check_vooyx9_a0a0a31(cell)));
-  }
-  /**
-   * Use getEditedLink() instead
-   * 
-   * @deprecated 
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static String getEditedLinkRole(EditorCell cell) {
-    if (!(cell.isReferenceCell())) {
-      return null;
-    }
-    return cell.getRole();
   }
   public static SReferenceLink getEditedLink(EditorCell cell) {
     if (!(cell.isReferenceCell())) {

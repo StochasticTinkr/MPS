@@ -206,13 +206,11 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty" file="ReadableModelProperty.java">
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.NodeReadAccessCasterInEditor" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode extendsClassName="jetbrains.jetpad.model.property.ValueProperty" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty" file="WritableModelProperty.java">

@@ -199,9 +199,6 @@ public class StyleAttributes {
   public static final StyleAttribute<String> POSITION = new SimpleStyleAttribute<>("position", null, true);
   public static final StyleAttribute<String> POSITION_CHILDREN = new SimpleStyleAttribute<>("position-children", null, true);
 
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static final StyleAttribute<String> NAVIGATABLE_REFERENCE = new SimpleStyleAttribute<>("navigatableReference", null, true);
   public static final StyleAttribute<SConceptFeature> NAVIGATABLE_SREFERENCE = new SimpleStyleAttribute<>("navigatableSReference", null, true);
 
   public static final StyleAttribute<CellAlign> HORIZONTAL_ALIGN = new SimpleStyleAttribute<>("horizontal-align", CellAlign.LEFT, true);

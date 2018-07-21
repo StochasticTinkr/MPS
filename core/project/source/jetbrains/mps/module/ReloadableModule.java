@@ -77,17 +77,6 @@ public interface ReloadableModule extends SModule {
   ClassLoader getClassLoader();
 
   /**
-   * @deprecated This method is an implementation aspect and therefore scheduled for removal from this API.
-   *
-   * @return so-called parent (or root) class loader. Simply returns the Idea plugin classloader in the case the module is
-   * bundled into an idea plugin. Will return an application classloader in the case there is no idea plugin.
-   * Contract: the class loader returned from #getClassLoader always depends on the root class loader.
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  ClassLoader getRootClassLoader();
-
-  /**
    * Call it to replace the old class loader of this module with a new one.
    * To reload more than one module all together
    * check out {@link ClassLoaderManager#reloadModules(Iterable)} method.

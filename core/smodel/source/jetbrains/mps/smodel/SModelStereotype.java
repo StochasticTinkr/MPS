@@ -36,25 +36,6 @@ public class SModelStereotype {
 
   public static final String[] values = new String[]{NONE, GENERATOR, TESTS};
 
-  /**
-   * @deprecated there's no direct replacement, in most cases negation of {@link #isStubModel(SModel)} is what original intention was
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static boolean isUserModel(@NotNull SModel model) {
-    // there's 1 use in mbeddr
-    return isUserModelStereotype(getStereotype(model));
-  }
-
-  /**
-   * @deprecated there's no direct replacement, in most cases negation of {@link #isStubModel(SModel)} is what original intention was
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static boolean isUserModel(@NotNull String modelFqName) {
-    return isUserModelStereotype(getStereotype(modelFqName));
-  }
-
   private static boolean isUserModelStereotype(String stereotype) {
     return NONE.equals(stereotype) || GENERATOR.equals(stereotype) || TESTS.equals(stereotype) || DESCRIPTOR.equals(stereotype);
   }

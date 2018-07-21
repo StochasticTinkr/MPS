@@ -59,31 +59,6 @@ class FileStatusChangeListener implements FileStatusListener, ProjectComponent {
     myNodeRef2TabsComponents.clear();
   }
 
-  /**
-   * @deprecated not used any more
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  /*package*/ void attach(@NotNull Project mpsProject) {
-  }
-
-  /**
-   * @deprecated not used any more
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  /*package*/ void detach() {
-  }
-
-  /**
-   * @deprecated use {@link FileStatusChangeListener#addTabsComponent(jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent, org.jetbrains.mps.openapi.model.SNodeReference)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  /*package*/ void setTabController(TabsComponent controller, @NotNull SNodeReference baseNode) {
-    addTabsComponent(controller, baseNode);
-  }
-
   /*package*/ void addTabsComponent(TabsComponent tabsComponent, @NotNull SNodeReference baseNode) {
     final Collection<TabsComponent> tabsComponents = myNodeRef2TabsComponents.putIfAbsent(baseNode, new ArrayList<>(Collections.singletonList(tabsComponent)));
     if (tabsComponents != null) {

@@ -29,14 +29,9 @@
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
-        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
-        <reference id="1188214555875" name="key" index="2B6OnR" />
-        <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
@@ -90,9 +85,6 @@
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
-      </concept>
-      <concept id="1111509017652" name="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" flags="nn" index="3b6qkQ">
-        <property id="1113006610751" name="value" index="$nhwW" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <property id="1181808852946" name="isFinal" index="DiZV1" />
@@ -1308,38 +1300,6 @@
         </node>
         <node concept="2AHcQZ" id="4oT3Lbm4M2U" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="4oT3Lbm4M2V" role="jymVt">
-      <property role="TrG5h" value="getReferenceRole" />
-      <node concept="17QB3L" id="4oT3Lbm4M2W" role="3clF45" />
-      <node concept="3Tm1VV" id="4oT3Lbm4M2X" role="1B3o_S" />
-      <node concept="3clFbS" id="4oT3Lbm4M2Y" role="3clF47">
-        <node concept="3clFbF" id="4oT3Lbm4M2Z" role="3cqZAp">
-          <node concept="2OqwBi" id="48c8IXZHcUD" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuFHj" role="2Oq$k0">
-              <ref role="3cqZAo" node="4oT3Lbm4M2A" resolve="myReference" />
-            </node>
-            <node concept="liA8E" id="48c8IXZHdsk" role="2OqNvi">
-              <ref role="37wK5l" to="c17a:~SReferenceLink.getRoleName():java.lang.String" resolve="getRoleName" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="4oT3Lbm4M31" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-      </node>
-      <node concept="2AHcQZ" id="48c8IXZHbhH" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="48c8IXZHbWM" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="48c8IXZHcC6" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="48c8IXZHcK4" role="2B70Vg">
-            <property role="$nhwW" value="2018.2" />
-          </node>
         </node>
       </node>
     </node>

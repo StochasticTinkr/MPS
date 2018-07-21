@@ -4,7 +4,6 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -12,18 +11,6 @@ import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 
 public abstract class ReadableModelProperty<T> extends ValueProperty<T> {
   protected final EditorContext myEditorContext;
-
-  /**
-   * 
-   * @deprecated use {@link jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty#ReadableModelProperty(EditorContext) } instead
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public ReadableModelProperty() {
-    super();
-    myEditorContext = null;
-    set(safeGetModelPropertyValue());
-  }
 
   public ReadableModelProperty(EditorContext editorContext) {
     myEditorContext = editorContext;

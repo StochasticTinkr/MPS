@@ -124,11 +124,6 @@ public interface EditorCell {
 
   String getCellId();
 
-  //use setSRole
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  void setRole(String role);
-
   //use getSRole
   @Deprecated
   @ToRemove(version = 2018.2)

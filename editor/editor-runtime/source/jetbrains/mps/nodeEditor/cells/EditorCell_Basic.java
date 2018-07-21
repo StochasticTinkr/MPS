@@ -359,59 +359,12 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   @ToRemove(version = 2018.2)
   @Override
   public String getRole() {
-    String role = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
-    if (role != null) {
-      return role;
-    }
     SConceptFeature sRole = getSRole();
     return sRole == null ? null : sRole.getName();
   }
 
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  @Override
-  public void setRole(String role) {
-    mySRole = extractRole(role);
-  }
-
-  private SConceptFeature extractRole(String role) {
-    SProperty prop = ((ConceptMetaInfoConverter) myNode.getConcept()).convertProperty(role);
-    SReferenceLink link = ((ConceptMetaInfoConverter) myNode.getConcept()).convertAssociation(role);
-    SContainmentLink child = ((ConceptMetaInfoConverter) myNode.getConcept()).convertAggregation(role);
-
-    boolean validProp = !(prop instanceof InvalidProperty);
-    boolean validLink = !(link instanceof InvalidReferenceLink);
-    boolean validChild = !(child instanceof InvalidContainmentLink);
-
-    if (!validChild && !validLink && !validProp) {
-      return null;
-    }
-
-    //if more than one valid
-    if (!(validProp ^ validChild ^ validLink)) {
-      LOG.error("Can't determine the feature for cell. Editor may work incorrectly. Node:" + myNode + "; role:" + role +
-                ". Please rebuild editor model in language " +
-                myNode.getConcept().getLanguage().getQualifiedName());
-    }
-
-    if (validProp) {
-      return prop;
-    } else if (validLink) {
-      return link;
-    } else {
-      return child;
-    }
-  }
-
   @Override
   public SConceptFeature getSRole() {
-    //todo remove following lines after 2018.2
-    String oldRole = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
-    if (oldRole != null) {
-      return extractRole(oldRole);
-    }
-    //todo end
-
     SConceptFeature role = getStyle().get(StyleAttributes.NAVIGATABLE_SREFERENCE);
     if (role != null) {
       return role;

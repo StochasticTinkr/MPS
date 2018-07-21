@@ -85,12 +85,6 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
   }
 
   @Override
-  @Deprecated
-  public ClassLoader getRootClassLoader() {
-    return new RootClassloaderLookup(this).get();
-  }
-
-  @Override
   public void reload() {
     if (!willLoad()) return;
     LOG.info("Reloading module " + this);

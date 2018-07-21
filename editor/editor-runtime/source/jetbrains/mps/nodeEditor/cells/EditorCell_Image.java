@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.ide.icons.IconLoadHelper;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.util.MacrosFactory;
@@ -232,7 +232,7 @@ public class EditorCell_Image extends EditorCell_Basic {
       jetbrains.mps.nodeEditor.EditorContext ec = (jetbrains.mps.nodeEditor.EditorContext) context;
       Map<String, Icon> iconCache = ec.getIconCache();
       if (!iconCache.containsKey(fullPath)){
-        iconCache.put(fullPath, IconLoadHelper.loadIcon(fullPath));
+        iconCache.put(fullPath, IconLoader.findIcon(fullPath));
       }
       return iconCache.get(fullPath);
     }

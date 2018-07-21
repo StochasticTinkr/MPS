@@ -202,15 +202,6 @@ public class FilePerRootFormatUtil {
     return false;
   }
 
-  /**
-   * @deprecated exposes internal SModelData implementation, while all it needs is a bunch of nodes
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static Map<SNodeId, String> getStreamNames(SModel model) {
-    return getStreamNames(model.getRootNodes());
-  }
-
   public static Map<SNodeId, String> getStreamNames(Iterable<SNode> roots) {
     Map<SNodeId, String> result = new HashMap<>();
     Set<String> usedNames = new HashSet<>();

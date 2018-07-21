@@ -287,21 +287,6 @@ public class SModel implements SModelData, UpdateModeSupport {
   }
 
   /**
-   * @deprecated assumes use of SModelBase implementation, prefer general {@link #setModelDescriptor(org.jetbrains.mps.openapi.model.SModel, ModelEventDispatch)}.
-   * @param modelDescriptor if {@link SModelBase}, node event notification dispatch (see {@link SModelBase#getNodeEventDispatch()} is initialized as well.
-   */
-  // FIXME (1) synchronized, really? (2) do we really care to have SModelBase here? (3) if yes, why it's not argument type?
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public synchronized void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
-    if (myModelDescriptor == modelDescriptor) {
-      // just to guard against accidental second assignment
-      return;
-    }
-    setModelDescriptor(modelDescriptor, modelDescriptor instanceof SModelBase ? ((SModelBase) modelDescriptor).getNodeEventDispatch() : null);
-  }
-
-  /**
    * Tells this model data implementation is bound to specific model descriptor and uses a supplied mechanism to dispatch events.
    * This method is intended for use by {@link org.jetbrains.mps.openapi.model.SModel model descriptor} implementations only.
    * @param modelDescriptor
