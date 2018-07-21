@@ -194,13 +194,15 @@ public class NodePaster {
   }
 
   private void pasteToTarget(final SNode pasteTarget, final SNode anchorNode, String role, final PastePlaceHint placeHint) {
+    //todo remove node here
     final SNode link = findSuitableLink(new SNodeLegacy(pasteTarget).getConceptDeclarationNode(), role);
 
     // unique child?
     if (!SModelUtil.isMultipleLinkDeclaration(link)) {
       assert myPasteNodes.size() == 1 : "cannot paste multiple children for role '" + SModelUtil.getLinkDeclarationRole(link) + "'";
       SNode node = normalizeForLink(myPasteNodes.get(0), MetaAdapterByDeclaration.getContainmentLink(link));
-      SNodeEditorUtil.setSingleChild(pasteTarget, SModelUtil.getLinkDeclarationRole(link), node);
+      //todo remove MetaAdapterByDeclaration here
+      SNodeEditorUtil.setSingleChild(pasteTarget, MetaAdapterByDeclaration.getContainmentLink(link), node);
       DataTransferManager.getInstance().postProcessNode(node);
       return;
     }
