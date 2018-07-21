@@ -436,22 +436,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     }
   }
 
-  @Nullable
-  public IntentionExecutable getIntentionById(SNode node, Editor editor, String id) {
-    return getIntentionById(node, editor.getEditorContext(), id);
-  }
-
-  /**
-   * @return the matching intention, if found <em>and applicable</em>, {@code null} otherwise
-   */
-  @Nullable
-  public IntentionExecutable getIntentionById(SNode node, EditorContext editorContext, String id) {
-    List<IntentionExecutable> result = getIntentionsById(node, editorContext, id);
-
-    assert result.size() <= 1;
-    return result.isEmpty() ? null : result.get(0);
-  }
-
   @NotNull
   public List<IntentionExecutable> getIntentionsById(SNode node, EditorContext editorContext, String id) {
     QueryDescriptor query = new QueryDescriptor();
