@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
@@ -201,7 +202,8 @@ public class NodePaster {
         if (myPasteNodes.size() != 1 && !cl.isMultiple()) {
           return false;
         }
-        return myPasteNodes.stream().allMatch(n -> n.isInstanceOfConcept(cl.getTargetConcept()) || DataTransferManager.getInstance().canWrapInto(n, cl.getTargetConcept()));
+        return myPasteNodes.stream()
+                           .allMatch(n -> n.isInstanceOfConcept(cl.getTargetConcept()) || DataTransferManager.getInstance().canWrapInto(n, cl.getTargetConcept()));
       }).findFirst().orElse(null);
       if (role == null) {
         return;
@@ -235,14 +237,43 @@ public class NodePaster {
   }
 
   private SNode normalizeForLink(SNode pasteNode, SContainmentLink link) {
+    //todo get rid of concept nodes here
+    SAbstractConcept specified = getSpecifiedConcept(pasteNode, link);
     SAbstractConcept targetConcept = link.getTargetConcept();
+
+    //we first try to wrap to get the specified concept
+    if (specified != null) {
+      if (!pasteNode.isInstanceOfConcept(specified) && DataTransferManager.getInstance().canWrapInto(pasteNode, specified)) {
+        return DataTransferManager.getInstance().wrapInto(pasteNode, targetConcept);
+      }
+    }
+
+    //now, we try wrapping at least to compatible concept
     if (pasteNode.isInstanceOfConcept(targetConcept)) {
       return pasteNode;
-    } else if (DataTransferManager.getInstance().canWrapInto(pasteNode, targetConcept)) {
+    }
+
+    if (DataTransferManager.getInstance().canWrapInto(pasteNode, targetConcept)) {
       return DataTransferManager.getInstance().wrapInto(pasteNode, targetConcept);
     } else {
       throw new RuntimeException("node " + pasteNode + "can't be normalized for link " + link);
     }
+  }
+
+  @Nullable
+  private SAbstractConcept getSpecifiedConcept(@NotNull SNode pasteNode, @NotNull SContainmentLink link) {
+    SNode conceptNode = pasteNode.getConcept().getDeclarationNode();
+    if (conceptNode == null) {
+      return null;
+    }
+
+    SNode linkNode =
+        ConceptAndSuperConceptsCache.getInstance(conceptNode).getMostSpecificLinkDeclarationByRole(link.getName());
+    if (linkNode == null) {
+      return null;
+    }
+
+    return MetaAdapterByDeclaration.getConcept(SModelUtil.getLinkDeclarationTarget(linkNode));
   }
 
   private boolean canPasteToParent(SNode anchorNode, SContainmentLink link, boolean exactly) {
