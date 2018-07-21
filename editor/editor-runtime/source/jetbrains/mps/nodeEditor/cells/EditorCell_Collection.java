@@ -47,9 +47,11 @@ import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.util.TreeIterator;
 import org.jetbrains.mps.util.Condition;
@@ -195,11 +197,20 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return myCellListHandler != null;
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public String getCellNodesRole() {
     if (myCellListHandler == null) {
       return null;
     }
     return myCellListHandler.getElementRole();
+  }
+
+  public SConceptFeature getCellNodesSRole() {
+    if (myCellListHandler == null) {
+      return null;
+    }
+    return myCellListHandler.getElementSRole();
   }
 
   public void setGridLayout(boolean gridLayout) {
