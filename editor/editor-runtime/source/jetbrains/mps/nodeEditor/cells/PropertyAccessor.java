@@ -35,19 +35,6 @@ public class PropertyAccessor implements ModelAccessor, IPropertyAccessor {
   private boolean myAllowEmptyText;
   private final SRepository myRepository;
 
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
-    myNode = node;
-    myReadOnly = readOnly || SModelOperations.isReadOnly(node.getModel()) || editorContext.getEditorComponent().isReadOnly();
-    myAllowEmptyText = allowEmptyText;
-    NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
-      SNode pd = new SNodeLegacy(myNode).getPropertyDeclaration(propertyName);
-      myProperty = pd == null ? null : MetaAdapterByDeclaration.getProperty(pd);
-    });
-    myRepository = editorContext.getRepository();
-  }
-
   public PropertyAccessor(SNode node, SProperty property, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
     myNode = node;
     myProperty = property;
@@ -62,13 +49,6 @@ public class PropertyAccessor implements ModelAccessor, IPropertyAccessor {
 
   protected SRepository getRepository() {
     return myRepository;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  // can't remove before 2018.2 as it was used in mbeddr and no alternative was provided
-  public String getPropertyName() {
-    return myProperty.getName();
   }
 
   public SProperty getProperty(){

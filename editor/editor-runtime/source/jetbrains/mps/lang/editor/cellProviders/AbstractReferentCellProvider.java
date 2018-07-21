@@ -57,14 +57,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   private String myErrorText = null;
 
-  @Deprecated
-  @ToRemove(version = 2018.2)
   //it is important for descendants to have a unique constructor and with the same parameters as this one
-  public AbstractReferentCellProvider(@NotNull SNode node, EditorContext context) {
-    super(node, context);
-  }
-  //it is important for descendants to have a unique constructor and with the same parameters as this one
-
   public AbstractReferentCellProvider(@NotNull SNode node, SAbstractLink link, SAbstractConcept targetConcept, String roleName, EditorContext context) {
     super(node, context);
     myLink = link;

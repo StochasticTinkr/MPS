@@ -72,12 +72,6 @@ public class PropertyCellProvider extends CellProviderWithRole {
     myProperty = property;
   }
 
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public PropertyCellProvider(@NotNull SNode node, EditorContext context) {
-    super(node, context);
-  }
-
   @Override
   public EditorCell createEditorCell(EditorContext context) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(getSNode(), myProperty, myReadOnly, myAllowsEmptyTarget, context);
@@ -124,13 +118,6 @@ public class PropertyCellProvider extends CellProviderWithRole {
   @Override
   public CellContext getCellContext() {
     return myProperty != null ? new PropertyCellContext(getSNode(), myProperty) : super.getCellContext();
-  }
-
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  // can't remove before 2018.2 as it was used in mbeddr
-  public String getPropertyName() {
-    return myProperty.getName();
   }
 
   public SProperty getProperty() {

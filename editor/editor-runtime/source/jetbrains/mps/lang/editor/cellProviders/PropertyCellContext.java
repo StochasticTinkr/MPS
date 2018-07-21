@@ -22,17 +22,8 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Igor Alshannikov
- * Date: Nov 29, 2006
- */
 public class PropertyCellContext extends BasicCellContext {
   public static final EditorContextKey<SProperty> PROPERTY_DECLARATION = new EditorContextKey<>();
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public PropertyCellContext(SNode node, @NotNull SNode propertyDeclaration) {
-    this(node, MetaAdapterByDeclaration.getProperty(propertyDeclaration));
-  }
 
   public PropertyCellContext(SNode node, @NotNull SProperty property) {
     super(node);

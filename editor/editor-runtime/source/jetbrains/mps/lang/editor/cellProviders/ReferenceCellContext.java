@@ -34,12 +34,6 @@ public class ReferenceCellContext extends BasicCellContext {
 
   @Deprecated
   @ToRemove(version = 2018.2)
-  public ReferenceCellContext(SNode referenceNode, SNode currentReferent, SNode linkDeclaration) {
-    this(referenceNode, currentReferent, MetaAdapterByDeclaration.getReferenceLink(linkDeclaration), MetaAdapterByDeclaration.getConcept(SNodeUtil.getLinkTarget(linkDeclaration)));
-  }
-
-  @Deprecated
-  @ToRemove(version = 2018.2)
   public ReferenceCellContext(SNode referenceNode, SNode currentReferent, SReferenceLink link) {
     this(referenceNode, currentReferent, link, link.getTargetConcept());
   }

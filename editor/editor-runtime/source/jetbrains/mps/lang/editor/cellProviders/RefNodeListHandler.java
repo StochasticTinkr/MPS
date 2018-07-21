@@ -42,46 +42,12 @@ import java.util.List;
 public abstract class RefNodeListHandler extends AbstractCellListHandler {
   private boolean myIsReverseOrder = false;
 
-  //the following two fields are generated as get...() methods in 2018.2
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  private SContainmentLink mySLink;
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  private SAbstractConcept myChildSConcept;
-
   public RefNodeListHandler(EditorContext editorContext) {
     super(editorContext);
   }
 
   public RefNodeListHandler(EditorContext editorContext, boolean isReverseOrder) {
     super(editorContext);
-    myIsReverseOrder = isReverseOrder;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public RefNodeListHandler(final SNode ownerNode, final String childRole, EditorContext editorContext) {
-    super(editorContext);
-    NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
-      SNode linkDecl = new SNodeLegacy(ownerNode).getLinkDeclaration(childRole);
-      assert
-          linkDecl != null :
-          "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConcept().getQualifiedName();
-      SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(linkDecl);
-      SNode childConcept = SModelUtil.getLinkDeclarationTarget(linkDecl);
-      if (SNodeUtil.getLinkDeclaration_IsReference(genuineLink)) {
-        throw new RuntimeException("Only Aggregation links can be used in list");
-      }
-      mySLink = MetaAdapterByDeclaration.getContainmentLink(SModelUtil.getGenuineLinkDeclaration(linkDecl));
-      myChildSConcept = MetaAdapterByDeclaration.getConcept(childConcept);
-    });
-  }
-
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public RefNodeListHandler(SNode ownerNode, String childRole, EditorContext editorContext, boolean isReverseOrder) {
-    this(ownerNode, childRole, editorContext);
     myIsReverseOrder = isReverseOrder;
   }
 
@@ -100,26 +66,11 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   /**
    * @return original link (not specialized)
    */
-  //todo: should be made abstract after 2018.2
-  public SContainmentLink getSLink() {
-    return mySLink;
-  }
+  public abstract SContainmentLink getSLink();
 
-  //todo: should be made abstract after 2018.2
-  public SAbstractConcept getChildSConcept() {
-    return myChildSConcept;
-  }
+  public abstract SAbstractConcept getChildSConcept();
 
-  /**
-   * Usage in mbeddr-generated code in 2018.1, so we leave it here until 18.2
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  protected EditorCell createEmptyCell(EditorContext ec) {
-    return createEmptyCell();
-  }
-
-    @Override
+  @Override
   protected EditorCell createEmptyCell() {
     EditorCell_Constant emptyCell = new EditorCell_Constant(getEditorContext(), getNode(), null);
     emptyCell.setDefaultText("<< ... >>");

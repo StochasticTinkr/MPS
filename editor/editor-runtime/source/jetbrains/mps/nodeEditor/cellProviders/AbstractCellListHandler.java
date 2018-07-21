@@ -39,19 +39,6 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
 
   protected EditorCell_Collection myListEditorCell_Collection;
 
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public AbstractCellListHandler(String elementRole, EditorContext editorContext) {
-    this(editorContext);
-  }
-
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  //used bu mps-extensions in 2018.1, can be removed when different branches are used for 18.1 and 18.2
-  public AbstractCellListHandler(SNode node, String elementRole, EditorContext editorContext) {
-    this(editorContext);
-  }
-
   public AbstractCellListHandler(EditorContext editorContext) {
     super(editorContext);
   }
@@ -61,16 +48,6 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
   //use getLink/getReference instead
   public String getElementRole(){
     return null;
-  }
-
-  /**
-   * Usage in mbeddr-generated code in 2018.1, so we leave it here until 18.2
-   * @deprecated since MPS 3.5 use {@link #getNode()} method
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public SNode getOwner() {
-    return getNode();
   }
 
   //todo remove body after 2018.2
@@ -102,24 +79,6 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
   }
 
   public abstract SNode createNodeToInsert(EditorContext editorContext);
-
-  /**
-   * Usage in mbeddr-generated code in 2018.1, so we leave it here until 18.2
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public EditorCell_Collection createCells_Vertical(EditorContext editorContext) {
-    return createCells(new CellLayout_Vertical());
-  }
-
-  /**
-   * Usage in mbeddr-generated code in 2018.1, so we leave it here until 18.2
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public EditorCell_Collection createCells_Horizontal(EditorContext editorContext) {
-    return createCells(new CellLayout_Horizontal());
-  }
 
   public EditorCell_Collection createCells(CellLayout cellLayout, boolean selectable) {
     EditorCell_Collection cellsCollection = createCells(cellLayout);

@@ -26,6 +26,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="uddc" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.menus.transformation(MPS.Editor/)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="nivk" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.descriptor(MPS.Editor/)" implicit="true" />
@@ -327,6 +328,9 @@
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
         <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1176109685393" name="jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation" flags="nn" index="3lApI0">
         <reference id="1176109685394" name="concept" index="3lApI3" />
       </concept>
@@ -553,8 +557,8 @@
                               <node concept="YeOm9" id="5UC0dNSP16M" role="2ShVmc">
                                 <node concept="1Y3b0j" id="5UC0dNSP16N" role="YeSDq">
                                   <property role="2bfB8j" value="true" />
+                                  <ref role="37wK5l" to="p9jd:~RefNodeListHandler.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext)" resolve="RefNodeListHandler" />
                                   <ref role="1Y3XeK" to="p9jd:~RefNodeListHandler" resolve="RefNodeListHandler" />
-                                  <ref role="37wK5l" to="p9jd:~RefNodeListHandler.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.openapi.editor.EditorContext)" resolve="RefNodeListHandler" />
                                   <node concept="3clFb_" id="11v13CsnCbE" role="jymVt">
                                     <property role="1EzhhJ" value="false" />
                                     <property role="TrG5h" value="getNode" />
@@ -576,11 +580,48 @@
                                       <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
                                     </node>
                                   </node>
-                                  <node concept="3Tm1VV" id="5UC0dNSP16O" role="1B3o_S" />
-                                  <node concept="pncrf" id="5UC0dNSP3I3" role="37wK5m" />
-                                  <node concept="Xl_RD" id="5UC0dNSP3If" role="37wK5m">
-                                    <property role="Xl_RC" value="element" />
+                                  <node concept="3clFb_" id="1bPexyAriS5" role="jymVt">
+                                    <property role="1EzhhJ" value="false" />
+                                    <property role="TrG5h" value="getChildSConcept" />
+                                    <property role="DiZV1" value="false" />
+                                    <property role="od$2w" value="false" />
+                                    <node concept="3Tm1VV" id="1bPexyAriS6" role="1B3o_S" />
+                                    <node concept="3uibUv" id="1bPexyAriS8" role="3clF45">
+                                      <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
+                                    </node>
+                                    <node concept="3clFbS" id="1bPexyAriSa" role="3clF47">
+                                      <node concept="3clFbF" id="1bPexyAriSd" role="3cqZAp">
+                                        <node concept="35c_gC" id="1bPexyArnAv" role="3clFbG">
+                                          <ref role="35c_gD" to="tpee:fz3vP1J" resolve="Expression" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="2AHcQZ" id="1bPexyAriSb" role="2AJF6D">
+                                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                                    </node>
                                   </node>
+                                  <node concept="3clFb_" id="IyBa4x004C" role="jymVt">
+                                    <property role="1EzhhJ" value="false" />
+                                    <property role="TrG5h" value="getSLink" />
+                                    <property role="DiZV1" value="false" />
+                                    <property role="od$2w" value="false" />
+                                    <node concept="3Tm1VV" id="IyBa4x004D" role="1B3o_S" />
+                                    <node concept="3uibUv" id="IyBa4x004F" role="3clF45">
+                                      <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+                                    </node>
+                                    <node concept="3clFbS" id="IyBa4x004H" role="3clF47">
+                                      <node concept="3clFbF" id="IyBa4x021H" role="3cqZAp">
+                                        <node concept="359W_D" id="IyBa4x021G" role="3clFbG">
+                                          <ref role="359W_E" to="fbxt:5UC0dNSMxMA" resolve="CustomConstructorUsage" />
+                                          <ref role="359W_F" to="fbxt:5UC0dNSN770" resolve="element" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="2AHcQZ" id="IyBa4x004I" role="2AJF6D">
+                                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                                    </node>
+                                  </node>
+                                  <node concept="3Tm1VV" id="5UC0dNSP16O" role="1B3o_S" />
                                   <node concept="37vLTw" id="2BHiRxgm90s" role="37wK5m">
                                     <ref role="3cqZAo" node="5UC0dNSOYVJ" resolve="editorContext" />
                                   </node>

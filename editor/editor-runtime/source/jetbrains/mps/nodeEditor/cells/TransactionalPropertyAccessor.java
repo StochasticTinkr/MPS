@@ -30,12 +30,6 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
 
   private EditorCell myEditorCell;
 
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public TransactionalPropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
-    super(node, propertyName, readOnly, allowEmptyText, editorContext);
-  }
-
   public TransactionalPropertyAccessor(SNode node, SProperty property, boolean readOnly, boolean allowEmptyText,
                                        EditorContext editorContext) {
     super(node, property, readOnly, allowEmptyText, editorContext);

@@ -22,6 +22,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -88,11 +90,19 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
         return new AbstractCellProvider(myNode) {
           @Override
           public EditorCell createEditorCell(EditorContext editorContext) {
-            RefNodeListHandler handler = new RefNodeListHandler(myNode, "element", editorContext) {
+            RefNodeListHandler handler = new RefNodeListHandler(editorContext) {
               @Override
               @NotNull
               public SNode getNode() {
                 return myNode;
+              }
+              @Override
+              public SAbstractConcept getChildSConcept() {
+                return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression");
+              }
+              @Override
+              public SContainmentLink getSLink() {
+                return MetaAdapterFactory.getContainmentLink(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x5ea800dcf8ca1ca6L, 0x5ea800dcf8cc71c0L, "element");
               }
               @Override
               public SNode createNodeToInsert(EditorContext p0) {
