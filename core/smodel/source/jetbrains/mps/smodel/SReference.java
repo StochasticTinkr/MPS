@@ -69,16 +69,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return new StaticReference(id, sourceNode, targetNode);
   }
 
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SReference create(String role, SNode sourceNode, SNode targetNode) {
-    if (sourceNode.getModel() != null && targetNode.getModel() != null) {
-      // 'mature' reference
-      return new StaticReference(role, sourceNode, targetNode.getModel().getReference(), targetNode.getNodeId(), targetNode.getName());
-    }
-    return new StaticReference(role, sourceNode, targetNode);
-  }
-
   public static SReference create(SReferenceLink role, SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
     return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, null);
   }
@@ -126,12 +116,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   @ToRemove(version = 3.2)
   public String getRole() {
     return myRoleId.getRoleName();
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void setRole(String newRole) {
-    myRoleId = ((ConceptMetaInfoConverter) mySourceNode.getConcept()).convertAssociation(newRole);
   }
 
   @Override
