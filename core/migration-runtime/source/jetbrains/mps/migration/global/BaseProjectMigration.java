@@ -31,7 +31,7 @@ public abstract class BaseProjectMigration implements ProjectMigration {
 
   @Override
   public final boolean shouldBeExecuted(Project p) {
-    return !EXECUTED_VALUE.equals(MigrationPropertiesManager.getInstance().getProperties(p).getProperty(migrationId));
+    return !EXECUTED_VALUE.equals(p.getComponent(MigrationProperties.class).getProperty(migrationId));
   }
 
   @Override
@@ -53,7 +53,7 @@ public abstract class BaseProjectMigration implements ProjectMigration {
   }
 
   public final void setExecuted(@NotNull Project p, boolean executed) {
-    MigrationPropertiesManager.getInstance().getProperties(p).setProperty(migrationId, executed ? EXECUTED_VALUE : null);
+    p.getComponent(MigrationProperties.class).setProperty(migrationId, executed ? EXECUTED_VALUE : null);
   }
 
   @Override
