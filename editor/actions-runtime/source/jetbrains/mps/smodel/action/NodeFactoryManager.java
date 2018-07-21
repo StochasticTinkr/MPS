@@ -61,15 +61,6 @@ public class NodeFactoryManager {
     return createNode(linkTarget, null, enclosingNode, model);
   }
 
-  /**
-   * @deprecated use {@link #createNode(org.jetbrains.mps.openapi.language.SAbstractConcept, org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.model.SModel)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SNode createNode(@NotNull SNode nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
-    return createNode(asSConcept(nodeConcept), sampleNode, enclosingNode, model);
-  }
-
   public static SNode createNode(@NotNull SAbstractConcept nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
     return createNode(nodeConcept, sampleNode, enclosingNode, model, new HashSet<>());
   }
@@ -111,15 +102,6 @@ public class NodeFactoryManager {
         }
       }
     }
-  }
-
-  /**
-   * @deprecated use {@link #setupNode(org.jetbrains.mps.openapi.language.SAbstractConcept, org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.model.SModel)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static void setupNode(SNode nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model) {
-    setupNode(asSConcept(nodeConcept), node, sampleNode, enclosingNode, model);
   }
 
   public static void setupNode(SAbstractConcept nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model) {
