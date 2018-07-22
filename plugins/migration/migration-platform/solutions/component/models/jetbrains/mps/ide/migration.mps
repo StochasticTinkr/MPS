@@ -2105,31 +2105,10 @@
               </node>
             </node>
           </node>
-          <node concept="22lmx$" id="6mZ0jO9ZPmg" role="3clFbw">
-            <node concept="2OqwBi" id="2V3ml1v03Qc" role="3uHU7w">
-              <node concept="2OqwBi" id="2V3ml1v05Sj" role="2Oq$k0">
-                <node concept="37vLTw" id="2V3ml1v05gh" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5SsFeroaaki" resolve="myMigrationRegistry" />
-                </node>
-                <node concept="liA8E" id="2V3ml1v06aT" role="2OqNvi">
-                  <ref role="37wK5l" node="4biA4YBo0AI" resolve="getModuleMigrations" />
-                  <node concept="37vLTw" id="2V3ml1v06BO" role="37wK5m">
-                    <ref role="3cqZAo" node="1AzqgyAgQ$g" resolve="modules2Check" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3GX2aA" id="2V3ml1v03Qf" role="2OqNvi" />
-            </node>
-            <node concept="2OqwBi" id="6mZ0jO9ZIX7" role="3uHU7B">
-              <node concept="37vLTw" id="6mZ0jO9ZHP4" role="2Oq$k0">
-                <ref role="3cqZAo" node="5SsFeroaaki" resolve="myMigrationRegistry" />
-              </node>
-              <node concept="liA8E" id="6mZ0jO9ZJR8" role="2OqNvi">
-                <ref role="37wK5l" node="2V3ml1v0OWM" resolve="importVersionsUpdateRequired" />
-                <node concept="37vLTw" id="6mZ0jO9ZKky" role="37wK5m">
-                  <ref role="3cqZAo" node="1AzqgyAgQ$g" resolve="modules2Check" />
-                </node>
-              </node>
+          <node concept="1rXfSq" id="6wo9SYP8BeV" role="3clFbw">
+            <ref role="37wK5l" node="3SyvI1q_x8J" resolve="isMigrationRequired" />
+            <node concept="37vLTw" id="6wo9SYP8C5_" role="37wK5m">
+              <ref role="3cqZAo" node="1AzqgyAgQ$g" resolve="modules2Check" />
             </node>
           </node>
         </node>

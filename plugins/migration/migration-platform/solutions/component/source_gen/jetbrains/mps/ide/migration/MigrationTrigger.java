@@ -42,7 +42,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -51,6 +50,7 @@ import com.intellij.notification.NotificationType;
 import com.intellij.notification.NotificationListener;
 import javax.swing.event.HyperlinkEvent;
 import com.intellij.notification.Notifications;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.migration.wizard.MigrationWizard;
 import jetbrains.mps.ide.migration.wizard.MigrationError;
@@ -309,7 +309,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
         }
       }
     });
-    if (myMigrationRegistry.importVersionsUpdateRequired(modules2Check) || CollectionSequence.fromCollection(myMigrationRegistry.getModuleMigrations(modules2Check)).isNotEmpty()) {
+    if (isMigrationRequired(modules2Check)) {
       postponeMigration(false);
     }
   }
