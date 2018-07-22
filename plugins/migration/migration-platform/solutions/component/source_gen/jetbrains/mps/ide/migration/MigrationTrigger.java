@@ -46,11 +46,11 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.NotificationListener;
 import javax.swing.event.HyperlinkEvent;
 import com.intellij.notification.Notifications;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.migration.wizard.MigrationWizard;
 import jetbrains.mps.ide.migration.wizard.MigrationError;
@@ -344,7 +344,15 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
             });
 
             myMigrationForbidden = false;
-            if (myPostponedState != null && !(forceAssistant)) {
+
+            if (myPostponedState == null || forceAssistant) {
+              if (newState.value.hasSomethingToApply()) {
+                boolean migrate = CollectionSequence.fromCollection(newState.value.scripts).isNotEmpty() || CollectionSequence.fromCollection(newState.value.projectMigrations).isNotEmpty();
+                if (runMigration(newState.value.versionUpdate, migrate)) {
+                  myPostponedState = (myPostponedState == null ? newState.value : myPostponedState.add(newState.value));
+                }
+              }
+            } else {
               if (myLastNotification != null && !(myLastNotification.isExpired())) {
                 return;
               }
@@ -364,14 +372,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
                 }
               });
               Notifications.Bus.notify(myLastNotification, myProject);
-              myPostponedState = newState.value;
-            } else {
-              if (newState.value.hasSomethingToApply()) {
-                boolean migrate = CollectionSequence.fromCollection(newState.value.scripts).isNotEmpty() || CollectionSequence.fromCollection(newState.value.projectMigrations).isNotEmpty();
-                if (runMigration(newState.value.versionUpdate, migrate)) {
-                  myPostponedState = newState.value;
-                }
-              }
+              myPostponedState = myPostponedState.add(newState.value);
             }
           }
         }, ModalityState.NON_MODAL);
