@@ -42,6 +42,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -108,6 +109,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   private final ReloadManager myReloadManager;
 
   private boolean myMigrationForbidden = false;
+  private String myMigrationForbiddenMessage = null;
   private MigrationTrigger.PostponedState myPostponedState = null;
   private int myBlocked = 0;
   private Consumer<Iterable<SModuleReference>> myRebuildHandler = null;
@@ -138,9 +140,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     myRebuildHandler = rebuildHandler;
   }
 
-  public synchronized void blockMigrationsCheck() {
+  public synchronized void blockMigrationsCheck(String message) {
     myBlocked++;
     myMigrationForbidden = true;
+    myMigrationForbiddenMessage = message;
   }
 
   public void unblockMigrationsCheck() {
@@ -150,6 +153,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       myBlocked--;
       if (myBlocked == 0) {
         myMigrationForbidden = false;
+        myMigrationForbiddenMessage = null;
         check = true;
       }
     }
@@ -316,11 +320,16 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
 
   public synchronized void postponeMigration(final boolean forceAssistant) {
     if (myMigrationForbidden) {
+      if (forceAssistant) {
+        String cause = (myMigrationForbiddenMessage == null ? "" : " as " + myMigrationForbiddenMessage);
+        Messages.showMessageDialog(myProject, "The migration can not be run" + cause + ".\n" + "Migration assistant will not be started.", "Migration can't start", null);
+      }
       return;
     }
 
     final Project ideaProject = myProject;
     myMigrationForbidden = true;
+    myMigrationForbiddenMessage = null;
 
     // wait until project is fully loaded (if not yet) 
     StartupManager.getInstance(ideaProject).runWhenProjectIsInitialized(new Runnable() {
@@ -343,14 +352,15 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
               }
             });
 
-            myMigrationForbidden = false;
-
             if (myPostponedState == null || forceAssistant) {
-              if (newState.value.hasSomethingToApply()) {
+              boolean hasSomethingToApply = newState.value.hasSomethingToApply();
+              if (hasSomethingToApply) {
                 boolean migrate = CollectionSequence.fromCollection(newState.value.scripts).isNotEmpty() || CollectionSequence.fromCollection(newState.value.projectMigrations).isNotEmpty();
                 if (runMigration(newState.value.versionUpdate, migrate)) {
                   myPostponedState = (myPostponedState == null ? newState.value : myPostponedState.add(newState.value));
                 }
+              } else if (forceAssistant) {
+                Messages.showMessageDialog(myProject, "Project doesn't need to be migrated.\n" + "Migration assistant will not be started.", "Migration Not Required", null);
               }
             } else {
               if (myLastNotification != null && !(myLastNotification.isExpired())) {
@@ -374,6 +384,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
               Notifications.Bus.notify(myLastNotification, myProject);
               myPostponedState = myPostponedState.add(newState.value);
             }
+            myMigrationForbidden = false;
+            myMigrationForbiddenMessage = null;
           }
         }, ModalityState.NON_MODAL);
       }
@@ -640,7 +652,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       // migrations already blocked, warning is showing 
 
       if (myLastDeployWarning == null) {
-        blockMigrationsCheck();
+        blockMigrationsCheck("some languages are not deployed");
       } else {
         // expire old, show new to get the balloon again 
         if (!((myLastDeployWarning.isExpired()))) {

@@ -237,6 +237,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ex.ProjectManagerEx" />
     <classNode dependClassName="com.intellij.openapi.startup.StartupManager" />
+    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.util.WaitForProgressToShow" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
