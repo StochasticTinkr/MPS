@@ -26,6 +26,8 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.module.SModule;
+import java.util.Collections;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import javax.swing.SwingUtilities;
@@ -37,7 +39,6 @@ import jetbrains.mps.make.MakeServiceComponent;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.resources.MResource;
 import org.jetbrains.annotations.NotNull;
 
@@ -103,7 +104,8 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
           public void run() {
             final List<SModel> modelsToClean = Sequence.fromIterable(modules).translate(new ITranslator2<SModuleReference, SModel>() {
               public Iterable<SModel> translate(SModuleReference it) {
-                return it.resolve(repo).getModels();
+                SModule module = it.resolve(repo);
+                return (module == null ? Collections.<SModel>emptyList() : module.getModels());
               }
             }).where(new IWhereFilter<SModel>() {
               public boolean accept(SModel it) {
