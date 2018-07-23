@@ -290,7 +290,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           Condition<SModel> notTransient = m -> !(m instanceof TransientSModel);
           SearchScope globalScope = new ConditionalScope(new FilteredGlobalScope(), null, notTransient);
           new ModelScopeIterable(globalScope, myProject.getRepository()).forEach(models::add);
-          List<SModelReference> list = CommonChoosers.showDialogModelCollectionChooser(ProjectHelper.toIdeaProject(myProject), null, models);
+          List<SModelReference> list = CommonChoosers.showDialogModelCollectionChooser(ProjectHelper.toIdeaProject(myProject), models, null);
           for (SModelReference reference : list) {
             if (!myModelDescriptor.getReference().equals(reference)) {
               myImportedModels.addItem(reference);
