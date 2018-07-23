@@ -637,8 +637,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   }
 
   private void checkNotDeployedLanguages() {
-    Iterable<SLanguage> problems = getNotDeployedUsedLanguages(myMpsProject);
-    if (Sequence.fromIterable(problems).isEmpty()) {
+    Set<SLanguage> problems = getNotDeployedUsedLanguages(myMpsProject);
+    if (SetSequence.fromSet(problems).isEmpty()) {
       if (myLastDeployWarning != null) {
         myLastNotification = null;
         myLastDeployWarning = null;
@@ -664,9 +664,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       Notifications.Bus.notify(myLastDeployWarning, myProject);
     }
   }
-  private Notification createDeployWarn(final Iterable<SLanguage> problems) {
+  private Notification createDeployWarn(final Set<SLanguage> problems) {
     final int treshold = 20;
-    Iterable<SLanguage> sortedProblems = Sequence.fromIterable(problems).sort(new ISelector<SLanguage, String>() {
+    Iterable<SLanguage> sortedProblems = SetSequence.fromSet(problems).sort(new ISelector<SLanguage, String>() {
       public String select(SLanguage it) {
         return NameUtil.compactNamespace(it.getQualifiedName());
       }
@@ -703,7 +703,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
           return;
         }
         if ("rebuild".equals(e.getDescription())) {
-          myRebuildHandler.accept(Sequence.fromIterable(problems).select(new ISelector<SLanguage, SModuleReference>() {
+          myRebuildHandler.accept(SetSequence.fromSet(problems).select(new ISelector<SLanguage, SModuleReference>() {
             public SModuleReference select(SLanguage it) {
               return it.getSourceModuleReference();
             }
@@ -718,18 +718,18 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     });
   }
 
-  private Collection<SLanguage> getNotDeployedUsedLanguages(jetbrains.mps.project.Project p) {
+  private Set<SLanguage> getNotDeployedUsedLanguages(jetbrains.mps.project.Project p) {
     Iterable<SModule> projectModules = MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject);
-    Iterable<SLanguage> languages = Sequence.fromIterable(projectModules).translate(new ITranslator2<SModule, SLanguage>() {
+    Iterable<SLanguage> validLangs = Sequence.fromIterable((Sequence.fromIterable(projectModules).translate(new ITranslator2<SModule, SLanguage>() {
       public Iterable<SLanguage> translate(SModule it) {
         return it.getUsedLanguages();
       }
-    });
-    return Sequence.fromIterable(languages).where(new IWhereFilter<SLanguage>() {
+    }))).where(new IWhereFilter<SLanguage>() {
       public boolean accept(SLanguage it) {
         return !(myClassLoaderManager.getModulesWatcher().getStatus(it.getSourceModuleReference()).isValid());
       }
-    }).toListSequence();
+    });
+    return SetSequence.fromSetWithValues(new HashSet<SLanguage>(), validLangs);
   }
 
   public static class PostponedState {
