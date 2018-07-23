@@ -3969,6 +3969,7 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Scopes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.CodeStyleSettings" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry" />
