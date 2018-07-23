@@ -18,9 +18,19 @@ package jetbrains.mps.ide.generator;
 import jetbrains.mps.generator.CustomGenerationModuleFacet;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.scope.VisibleDepsSearchScope;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 
 import javax.swing.JPanel;
@@ -50,7 +60,9 @@ class CustomGenerationTab extends BaseTab implements FacetTab {
   public void init() {
     JPanel p = new JPanel();
     // XXX For now, restrict to plan models from the visible modules, generally, shall allow from anywhere
-    myPlanPanel = new GenPlanPickPanel(myProject, ((AbstractModule) myModuleFacet.getModule()).getScope(), "Custom generation plan");
+    //     Don't initialize scope here (hence 'lazy') as there's no model read when tab is initialized
+    LazyVisibleDepsScope scope = new LazyVisibleDepsScope(myProject.getRepository(), myModuleFacet.getModule());
+    myPlanPanel = new GenPlanPickPanel(myProject, scope, "Custom generation plan");
     myPlanPanel.setPlanModel(myModuleFacet.getPlanModelReference());
     p.setLayout(new BorderLayout());
     p.add(myPlanPanel, BorderLayout.NORTH);
@@ -69,5 +81,58 @@ class CustomGenerationTab extends BaseTab implements FacetTab {
   @Override
   public void apply() {
     myModuleFacet.setPlanModelReference(myPlanPanel.getPlanModel());
+  }
+
+  /*package*/ final static class LazyVisibleDepsScope implements SearchScope {
+    private final SRepository myRepository;
+    private final SModule myModule;
+    private VisibleDepsSearchScope myDelegate;
+
+    public LazyVisibleDepsScope(SRepository repository, SModule module) {
+      myRepository = repository;
+      myModule = module;
+    }
+
+    private void init() {
+      // don't deal with multi-threading, the scope is local for single thread
+      if (myDelegate == null) {
+        myDelegate = new VisibleDepsSearchScope(myRepository, myModule);
+      }
+    }
+
+    @NotNull
+    @Override
+    public Iterable<SModule> getModules() {
+      init();
+      return myDelegate.getModules();
+    }
+
+    @NotNull
+    @Override
+    public Iterable<SModel> getModels() {
+      init();
+      return myDelegate.getModels();
+    }
+
+    @Nullable
+    @Override
+    public SModel resolve(@NotNull SModelReference reference) {
+      init();
+      return myDelegate.resolve(reference);
+    }
+
+    @Nullable
+    @Override
+    public SModule resolve(@NotNull SModuleReference reference) {
+      init();
+      return myDelegate.resolve(reference);
+    }
+
+    @Nullable
+    @Override
+    public SNode resolve(@NotNull SNodeReference reference) {
+      init();
+      return myDelegate.resolve(reference);
+    }
   }
 }
