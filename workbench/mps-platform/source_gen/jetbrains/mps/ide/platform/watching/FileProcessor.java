@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.util.SubProgressKind;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.IdeaFile;
@@ -128,12 +127,12 @@ public class FileProcessor extends ReloadParticipant {
     }
   }
 
-  protected boolean accepts(VirtualFile file) {
-    return !(MPSFileTypesManager.isFileIgnored(file.getPath()));
+  /*package*/ boolean accepts(String path) {
+    return !(MPSFileTypesManager.isFileIgnored(path));
   }
 
-  protected void processDelete(VirtualFile vFile) {
-    final IFile file = new IdeaFile(FS, vFile);
+  /*package*/ void processDelete(String path) {
+    final IFile file = new IdeaFile(FS, path);
     ListSequence.fromList(getData(file.getPath(), FileProcessor.EventKind.REMOVED)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
         it.removed.add(file);
@@ -141,8 +140,7 @@ public class FileProcessor extends ReloadParticipant {
     });
   }
 
-  protected void processCreate(VirtualFile vFile) {
-    String path = vFile.getPath();
+  /*package*/ void processCreate(String path) {
     final IFile file = FS.getFile(path);
     ListSequence.fromList(getData(path, FileProcessor.EventKind.CREATED)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
@@ -151,8 +149,7 @@ public class FileProcessor extends ReloadParticipant {
     });
   }
 
-  protected void processContentChanged(VirtualFile vFile) {
-    String path = vFile.getPath();
+  /*package*/ void processContentChanged(String path) {
     final IFile file = FS.getFile(path);
     ListSequence.fromList(getData(path, FileProcessor.EventKind.CONTENT_CHANGED)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
