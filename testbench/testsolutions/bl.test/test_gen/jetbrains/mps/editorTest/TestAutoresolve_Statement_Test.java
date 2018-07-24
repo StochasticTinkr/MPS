@@ -11,17 +11,17 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
 
 @MPSLaunch
-public class TestAutoresolve_Test extends BaseTransformationTest {
+public class TestAutoresolve_Statement_Test extends BaseTransformationTest {
   @ClassRule
-  public static final TestParametersCache ourParamCache = new TestParametersCache(TestAutoresolve_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestAutoresolve_Statement_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
 
-  public TestAutoresolve_Test() {
+  public TestAutoresolve_Statement_Test() {
     super(ourParamCache);
   }
 
   @Test
-  public void test_TestAutoresolve() throws Throwable {
-    new TestAutoresolve_Test.TestBody(this).testMethod();
+  public void test_TestAutoresolve_Statement() throws Throwable {
+    new TestAutoresolve_Statement_Test.TestBody(this).testMethod();
   }
 
   /*package*/ static class TestBody extends BaseEditorTestBody {
