@@ -33,7 +33,7 @@ enum ReflectiveHint {
   REFLECTIVE("jetbrains.mps.lang.core.editor.reflective") {
     @Override
     boolean shouldRemoveFromCellFactory(EditorCellFactory factory) {
-      return getReflectiveHintsFromCellContext(factory.getCellContext()).contains(DENY_FOR_CHILDREN);
+      return factory.getCellContext() != null && getReflectiveHintsFromCellContext(factory.getCellContext()).contains(DENY_FOR_CHILDREN);
     }
   },
   DENY_FOR_NODE("jetbrains.mps.lang.core.editor.denyForNode"),
@@ -53,13 +53,13 @@ enum ReflectiveHint {
                     .collect(Collectors.toSet());
   }
 
-  static Set<ReflectiveHint> getExplicitReflectiveHintsForNode(Updater updater, SNode node) {
+  static Set<ReflectiveHint> getExplicitReflectiveHintsForNode(@NotNull Updater updater, @NotNull SNode node) {
     String[] explicitEditorHintsForNode = updater.getExplicitEditorHintsForNode(node.getReference());
     Stream<String> hintsStream = explicitEditorHintsForNode == null ? Stream.of() : Arrays.stream(explicitEditorHintsForNode);
     return getReflectiveHints(hintsStream);
   }
 
-  static Set<ReflectiveHint> getReflectiveHintsFromCellContext(EditorCellContext cellContext) {
+  static Set<ReflectiveHint> getReflectiveHintsFromCellContext(@NotNull EditorCellContext cellContext) {
     return getReflectiveHints(cellContext.getHints().stream());
   }
 

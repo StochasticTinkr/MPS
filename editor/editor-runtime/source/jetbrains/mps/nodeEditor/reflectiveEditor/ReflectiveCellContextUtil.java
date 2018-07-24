@@ -24,12 +24,12 @@ import java.util.stream.Collectors;
 
 class ReflectiveCellContextUtil {
 
-  static boolean shouldShowReflectiveEditor(EditorCellContext cellContext) {
+  static boolean shouldShowReflectiveEditor(@NotNull EditorCellContext cellContext) {
     return getCellContextState(cellContext).isReflective();
   }
 
   @NotNull
-  private static CellContextState getCellContextState(EditorCellContext cellContext) {
+  private static CellContextState getCellContextState(@NotNull EditorCellContext cellContext) {
     CellContextState validState = null;
     for (CellContextState cellContextState : CellContextState.values()) {
       if (cellContextState.isExactStateOfCellContext(cellContext)) {
@@ -67,7 +67,7 @@ class ReflectiveCellContextUtil {
       return myIsReflective;
     }
 
-    private boolean isExactStateOfCellContext(EditorCellContext cellContext) {
+    private boolean isExactStateOfCellContext(@NotNull EditorCellContext cellContext) {
       Set<ReflectiveHint> cellContextReflectiveHints = ReflectiveHint.getReflectiveHintsFromCellContext(cellContext);
       Set<ReflectiveHint> myStringHints = Arrays.stream(myHints).collect(Collectors.toSet());
       return cellContextReflectiveHints.equals(myStringHints);
