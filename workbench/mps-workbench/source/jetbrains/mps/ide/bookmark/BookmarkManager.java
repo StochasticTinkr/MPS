@@ -22,7 +22,14 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
-import com.intellij.ui.LightColors;
+import com.intellij.openapi.editor.colors.EditorColors;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
+import com.intellij.ui.ColorUtil;
+import com.intellij.ui.JBColor;
+import com.intellij.ui.RetrievableIcon;
+import com.intellij.util.IconUtil;
+import com.intellij.util.PlatformIcons;
+import com.intellij.util.ui.JBUI;
 import jetbrains.mps.ide.bookmark.BookmarkManager.MyState;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
@@ -32,6 +39,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -40,12 +48,22 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.font.FontRenderContext;
+import java.awt.font.GlyphVector;
+import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import static com.intellij.util.ui.JBUI.ScaleType.OBJ_SCALE;
+import static java.lang.Math.ceil;
 
+/* TODO: think of reusing com.intellij.ide.bookmarks.Bookmark:
+ * 1. A lot of copy paste from that class due to restricted visibility
+ * 2. UI is the same only underlying editor is different
+ * */
 @State(
   name = "MPSBookmarkManager",
   storages = @Storage(StoragePathMacros.WORKSPACE_FILE)
@@ -53,7 +71,7 @@ import java.util.List;
 public class BookmarkManager implements ProjectComponent, PersistentStateComponent<MyState> {
   private static final Logger LOG = LogManager.getLogger(BookmarkManager.class);
 
-  private static Icon myUnnumberedBookmarkIcon = AllIcons.Actions.Checked;
+  private static final Icon DEFAULT_ICON = new MyCheckedIcon();
 
   private List<BookmarkListener> myBookmarkListeners = new ArrayList<>();
 
@@ -242,9 +260,9 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
 
   public static Icon getIcon(int bookmarkNumber) {
     if (bookmarkNumber == -1) {
-      return myUnnumberedBookmarkIcon;
+      return BookmarkManager.DEFAULT_ICON;
     }
-    return new MnemonicIcon(Character.forDigit(bookmarkNumber, 10));
+    return MnemonicIcon.getIcon(bookmarkNumber);
   }
 
   public SNodeReference getBookmark(int number) {
@@ -367,8 +385,29 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     }
   }
 
-  private static class MnemonicIcon implements Icon {
+  // TODO: remove copy/paste see todo on class
+  /** Partly copy/paste of {@link Bookmark.MnemonicIcon} */
+  private final static class MnemonicIcon extends JBUI.CachingScalableJBIcon<MnemonicIcon> {
+    private static final MnemonicIcon[] CACHE = new MnemonicIcon[]{
+        new MnemonicIcon('0'), new MnemonicIcon('1'),
+        new MnemonicIcon('2'), new MnemonicIcon('3'),
+        new MnemonicIcon('4'), new MnemonicIcon('5'),
+        new MnemonicIcon('6'), new MnemonicIcon('7'),
+        new MnemonicIcon('8'), new MnemonicIcon('9')
+    };
+
     private final char myMnemonic;
+
+    @NotNull
+    @Override
+    public MnemonicIcon copy() {
+      return new MnemonicIcon(myMnemonic);
+    }
+
+    @NotNull
+    static MnemonicIcon getIcon(int digit) {
+      return CACHE[digit];
+    }
 
     private MnemonicIcon(char mnemonic) {
       myMnemonic = mnemonic;
@@ -376,28 +415,40 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
 
     @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
-      g.setColor(LightColors.YELLOW);
-      g.fillRect(x, y, getIconWidth(), getIconHeight());
+      int width = getIconWidth();
+      int height = getIconHeight();
 
-      g.setColor(Color.gray);
-      g.drawRect(x, y, getIconWidth(), getIconHeight());
+      g.setColor(new JBColor(() -> {
+        //noinspection UseJBColor
+        return !darkBackground() ? new Color(0xffffcc) : new Color(0x675133);
+      }));
+      g.fillRect(x, y, width, height);
 
-      g.setColor(Color.black);
-      final Font oldFont = g.getFont();
-      g.setFont(Bookmark.getBookmarkFont());
+      g.setColor(JBColor.GRAY);
+      g.drawRect(x, y, width, height);
 
-      g.drawString(Character.toString(myMnemonic), x + 2, y + getIconHeight() - 2);
-      g.setFont(oldFont);
+      g.setColor(EditorColorsManager.getInstance().getGlobalScheme().getDefaultForeground());
+
+      float startingFontSize = 40f;  // large font for smaller rounding error
+      Font font = Bookmark.getBookmarkFont().deriveFont(startingFontSize);
+      FontRenderContext fontRenderContext = ((Graphics2D)g).getFontRenderContext();
+      double height40 = font.createGlyphVector(fontRenderContext, new char[]{'A'}).getVisualBounds().getHeight();
+      font = font.deriveFont((float)(startingFontSize * height / height40 * 0.7));
+
+      GlyphVector gv = font.createGlyphVector(fontRenderContext, new char[]{myMnemonic});
+      Rectangle2D bounds = gv.getVisualBounds();
+      ((Graphics2D)g).drawGlyphVector(gv, (float)(x + (width - bounds.getWidth())/2 - bounds.getX()),
+                                      (float)(y + (height - bounds.getHeight())/2 - bounds.getY()));
     }
 
     @Override
     public int getIconWidth() {
-      return 10;
+      return (int)ceil(scaleVal(BookmarkManager.DEFAULT_ICON.getIconWidth(), OBJ_SCALE));
     }
 
     @Override
     public int getIconHeight() {
-      return 12;
+      return (int)ceil(scaleVal(BookmarkManager.DEFAULT_ICON.getIconHeight(), OBJ_SCALE));
     }
 
     @Override
@@ -405,9 +456,57 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       if (this == o) return true;
       if (o == null || getClass() != o.getClass()) return false;
 
-      MnemonicIcon that = (MnemonicIcon) o;
+      MnemonicIcon that = (MnemonicIcon)o;
 
       return myMnemonic == that.myMnemonic;
     }
+
+    @Override
+    public int hashCode() {
+      return (int)myMnemonic;
+    }
+  }
+
+  // TODO: remove copy/paste see todo on class
+  /** Copy/paste of {@link Bookmark.MyCheckedIcon} */
+  private static class MyCheckedIcon extends JBUI.CachingScalableJBIcon<MyCheckedIcon> implements RetrievableIcon {
+    @Nullable
+    @Override
+    public Icon retrieveIcon() {
+      return IconUtil.scale(PlatformIcons.CHECK_ICON, null, getScale());
+    }
+
+    @Override
+    public void paintIcon(Component c, Graphics g, int x, int y) {
+      IconUtil.scale(darkBackground() ? AllIcons.Actions.CheckedGrey : AllIcons.Actions.CheckedBlack, c, getScale()).paintIcon(c, g, x, y);
+    }
+
+    @Override
+    public int getIconWidth() {
+      return scale(PlatformIcons.CHECK_ICON.getIconWidth());
+    }
+
+    private int scale(int width) {
+      return (int)Math.ceil(scaleVal(width, JBUI.ScaleType.OBJ_SCALE));
+    }
+
+    @Override
+    public int getIconHeight() {
+      return scale(PlatformIcons.CHECK_ICON.getIconHeight());
+    }
+
+    @NotNull
+    @Override
+    public MyCheckedIcon copy() {
+      return new MyCheckedIcon();
+    }
+  }
+
+  private static boolean darkBackground() {
+    Color gutterBackground = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.GUTTER_BACKGROUND);
+    if (gutterBackground == null) {
+      gutterBackground = EditorColors.GUTTER_BACKGROUND.getDefaultColor();
+    }
+    return ColorUtil.isDark(gutterBackground);
   }
 }
