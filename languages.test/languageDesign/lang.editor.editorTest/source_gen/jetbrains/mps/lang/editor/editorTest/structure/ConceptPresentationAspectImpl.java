@@ -14,6 +14,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_AttributeChild;
   private ConceptPresentation props_AttributeWithChildren;
   private ConceptPresentation props_AttributedConcept;
+  private ConceptPresentation props_AutoResolveChildWithErrorCell;
+  private ConceptPresentation props_AutoResolveNodeToReference;
+  private ConceptPresentation props_AutoResolveRoot;
   private ConceptPresentation props_BinaryExpression;
   private ConceptPresentation props_BracesBlock;
   private ConceptPresentation props_BracesStubBlock;
@@ -160,6 +163,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_AttributedConcept = cpb.create();
         }
         return props_AttributedConcept;
+      case LanguageConceptSwitch.AutoResolveChildWithErrorCell:
+        if (props_AutoResolveChildWithErrorCell == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_AutoResolveChildWithErrorCell = cpb.create();
+        }
+        return props_AutoResolveChildWithErrorCell;
+      case LanguageConceptSwitch.AutoResolveNodeToReference:
+        if (props_AutoResolveNodeToReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_AutoResolveNodeToReference = cpb.create();
+        }
+        return props_AutoResolveNodeToReference;
+      case LanguageConceptSwitch.AutoResolveRoot:
+        if (props_AutoResolveRoot == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("AutoResolveRoot");
+          props_AutoResolveRoot = cpb.create();
+        }
+        return props_AutoResolveRoot;
       case LanguageConceptSwitch.BinaryExpression:
         if (props_BinaryExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -44,7 +44,7 @@ public class FinderReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_1x2yrt_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_1x2yrt_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_1x2yrt_a() {
       super(MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL, "jetbrains.mps.lang.findUsages.structure.FinderReference"), MetaAdapterFactory.getReferenceLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL, 0x643a39f7c0869a50L, "finder"));

@@ -50,7 +50,7 @@ public class ActionAccessOperation_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_39i5ol_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_39i5ol_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_39i5ol_a() {
       super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7cd89ac8d0060cL, "jetbrains.mps.lang.plugin.structure.ActionAccessOperation"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7cd89ac8d0060cL, 0x2c7cd89ac8d14570L, "action"));
@@ -72,7 +72,7 @@ public class ActionAccessOperation_SubstituteMenu extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new ActionAccessOperation_SubstituteMenu.SMP_ReferenceScope_39i5ol_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

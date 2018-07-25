@@ -43,7 +43,7 @@ public class TemplateArgumentVariableRefExpression_SmartReference extends Substi
   }
 
 
-  public static class SMP_ReferenceScope_5gt0as_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_5gt0as_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_5gt0as_a() {
       super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x3d6f2506d88aa028L, "jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression"), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x3d6f2506d88aa028L, 0x25c655ce6e80fddaL, "varmacro"));
@@ -65,7 +65,7 @@ public class TemplateArgumentVariableRefExpression_SmartReference extends Substi
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new TemplateArgumentVariableRefExpression_SmartReference.SMP_ReferenceScope_5gt0as_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

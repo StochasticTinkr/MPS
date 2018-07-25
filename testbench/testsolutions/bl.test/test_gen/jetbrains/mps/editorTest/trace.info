@@ -18735,6 +18735,35 @@
       <unit id="7130462290292145235" at="13,0,40,0" name="jetbrains.mps.editorTest.MoveBlockToBlock_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7160572510721692814">
+    <file name="TestAutoresolve_Variable_Test.java">
+      <node id="7160572510721692814" at="18,42,19,25" concept="11" />
+      <node id="7160572510721692814" at="23,64,24,66" concept="2" />
+      <node id="7160572510721692814" at="29,52,30,19" concept="11" />
+      <node id="7160572510721692814" at="34,51,35,72" concept="2" />
+      <node id="7160572510721692851" at="35,72,36,28" concept="2" />
+      <node id="7160572510721692853" at="36,28,37,69" concept="2" />
+      <node id="7160572510721692859" at="37,69,38,29" concept="2" />
+      <node id="7160572510721692855" at="38,29,39,71" concept="2" />
+      <node id="7160572510721692814" at="15,0,17,0" concept="9" trace="ourParamCache" />
+      <node id="7160572510721692814" at="18,0,21,0" concept="1" trace="TestAutoresolve_Variable_Test#()V" />
+      <node id="7160572510721692814" at="29,0,32,0" concept="1" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="7160572510721692814" at="22,0,26,0" concept="5" trace="test_TestAutoresolve_Variable#()V" />
+      <node id="7160572510721692814" at="33,0,41,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7160572510721692814" at="18,42,19,25" />
+      <scope id="7160572510721692814" at="23,64,24,66" />
+      <scope id="7160572510721692814" at="29,52,30,19" />
+      <scope id="7160572510721692814" at="18,0,21,0" />
+      <scope id="7160572510721692814" at="29,0,32,0">
+        <var name="owner" id="7160572510721692814" />
+      </scope>
+      <scope id="7160572510721692814" at="22,0,26,0" />
+      <scope id="7160572510721692814" at="34,51,39,71" />
+      <scope id="7160572510721692814" at="33,0,41,0" />
+      <unit id="7160572510721692814" at="27,0,42,0" name="jetbrains.mps.editorTest.TestAutoresolve_Variable_Test$TestBody" />
+      <unit id="7160572510721692814" at="13,0,43,0" name="jetbrains.mps.editorTest.TestAutoresolve_Variable_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247887419163198990">
     <file name="MoveNodeRange_Test.java">
       <node id="7247887419163198990" at="18,31,19,25" concept="11" />
@@ -20341,9 +20370,9 @@
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7704251192656077259">
-    <file name="TestAutoresolve_Test.java">
-      <node id="7704251192656077259" at="18,33,19,25" concept="11" />
-      <node id="7704251192656077259" at="23,55,24,57" concept="2" />
+    <file name="TestAutoresolve_Statement_Test.java">
+      <node id="7704251192656077259" at="18,43,19,25" concept="11" />
+      <node id="7704251192656077259" at="23,65,24,67" concept="2" />
       <node id="7704251192656077259" at="29,52,30,19" concept="11" />
       <node id="7704251192656077259" at="34,51,35,72" concept="2" />
       <node id="3837470425931687115" at="35,72,36,28" concept="2" />
@@ -20352,12 +20381,12 @@
       <node id="403806536168445207" at="38,71,39,71" concept="2" />
       <node id="3837470425931687118" at="39,71,40,29" concept="2" />
       <node id="7704251192656077259" at="15,0,17,0" concept="9" trace="ourParamCache" />
-      <node id="7704251192656077259" at="18,0,21,0" concept="1" trace="TestAutoresolve_Test#()V" />
+      <node id="7704251192656077259" at="18,0,21,0" concept="1" trace="TestAutoresolve_Statement_Test#()V" />
       <node id="7704251192656077259" at="29,0,32,0" concept="1" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
-      <node id="7704251192656077259" at="22,0,26,0" concept="5" trace="test_TestAutoresolve#()V" />
+      <node id="7704251192656077259" at="22,0,26,0" concept="5" trace="test_TestAutoresolve_Statement#()V" />
       <node id="7704251192656077259" at="33,0,42,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="7704251192656077259" at="18,33,19,25" />
-      <scope id="7704251192656077259" at="23,55,24,57" />
+      <scope id="7704251192656077259" at="18,43,19,25" />
+      <scope id="7704251192656077259" at="23,65,24,67" />
       <scope id="7704251192656077259" at="29,52,30,19" />
       <scope id="7704251192656077259" at="18,0,21,0" />
       <scope id="7704251192656077259" at="29,0,32,0">
@@ -20366,8 +20395,8 @@
       <scope id="7704251192656077259" at="22,0,26,0" />
       <scope id="7704251192656077259" at="34,51,40,29" />
       <scope id="7704251192656077259" at="33,0,42,0" />
-      <unit id="7704251192656077259" at="27,0,43,0" name="jetbrains.mps.editorTest.TestAutoresolve_Test$TestBody" />
-      <unit id="7704251192656077259" at="13,0,44,0" name="jetbrains.mps.editorTest.TestAutoresolve_Test" />
+      <unit id="7704251192656077259" at="27,0,43,0" name="jetbrains.mps.editorTest.TestAutoresolve_Statement_Test$TestBody" />
+      <unit id="7704251192656077259" at="13,0,44,0" name="jetbrains.mps.editorTest.TestAutoresolve_Statement_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7737741562085645980">

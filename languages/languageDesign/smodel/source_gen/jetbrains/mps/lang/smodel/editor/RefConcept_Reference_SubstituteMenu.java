@@ -44,7 +44,7 @@ public class RefConcept_Reference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_lx70kr_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_lx70kr_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_lx70kr_a() {
       super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1120c45902cL, "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1120c45902cL, 0x1120c45d024L, "conceptDeclaration"));

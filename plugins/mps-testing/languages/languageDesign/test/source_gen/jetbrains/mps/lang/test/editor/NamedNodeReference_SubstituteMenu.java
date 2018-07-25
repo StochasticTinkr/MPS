@@ -44,7 +44,7 @@ public class NamedNodeReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_t1mmv8_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_t1mmv8_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_t1mmv8_a() {
       super(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf9c211L, "jetbrains.mps.lang.test.structure.NamedNodeReference"), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf9c211L, 0x1de1fbd5fbf9c212L, "node"));

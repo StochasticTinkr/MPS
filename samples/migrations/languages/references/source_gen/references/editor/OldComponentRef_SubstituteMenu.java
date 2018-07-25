@@ -44,7 +44,7 @@ public class OldComponentRef_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_buu76l_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_buu76l_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_buu76l_a() {
       super(MetaAdapterFactory.getConcept(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104931574dL, "references.structure.OldComponentRef"), MetaAdapterFactory.getReferenceLink(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104931574dL, 0x6aff2c104932a69aL, "target"));

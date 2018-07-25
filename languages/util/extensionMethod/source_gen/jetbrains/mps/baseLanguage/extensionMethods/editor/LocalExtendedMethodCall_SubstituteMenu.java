@@ -44,7 +44,7 @@ public class LocalExtendedMethodCall_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_mncb6y_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_mncb6y_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_mncb6y_a() {
       super(MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6aa7ca55518b9170L, "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));

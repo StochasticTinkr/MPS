@@ -44,7 +44,7 @@ public class ReportErrorStatementReference_SubstituteMenu extends SubstituteMenu
   }
 
 
-  public static class SMP_ReferenceScope_v50uv8_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_v50uv8_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_v50uv8_a() {
       super(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ee2cbee8b19b06dL, "jetbrains.mps.lang.test.structure.ReportErrorStatementReference"), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration"));

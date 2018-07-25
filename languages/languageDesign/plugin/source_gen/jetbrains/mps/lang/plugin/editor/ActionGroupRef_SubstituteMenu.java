@@ -44,7 +44,7 @@ public class ActionGroupRef_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_cqiz2f_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_cqiz2f_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_cqiz2f_a() {
       super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x498be7ea73fa71fL, "jetbrains.mps.lang.plugin.structure.ActionGroupRef"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x498be7ea73fa71fL, 0x498be7ea73fa720L, "group"));

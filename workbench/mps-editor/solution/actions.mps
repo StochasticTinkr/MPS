@@ -14855,12 +14855,20 @@
                     </node>
                   </node>
                   <node concept="3clFbJ" id="1xeqwudgw4s" role="3cqZAp">
-                    <node concept="2OqwBi" id="1xeqwudg$rV" role="3clFbw">
-                      <node concept="37vLTw" id="1xeqwudg$rU" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1xeqwudgw4m" resolve="nodeCell" />
+                    <node concept="1Wc70l" id="74cdv3Qr$RM" role="3clFbw">
+                      <node concept="3y3z36" id="74cdv3Qr_kC" role="3uHU7B">
+                        <node concept="10Nm6u" id="74cdv3Qr_p0" role="3uHU7w" />
+                        <node concept="37vLTw" id="74cdv3Qr_aq" role="3uHU7B">
+                          <ref role="3cqZAo" node="1xeqwudgw4m" resolve="nodeCell" />
+                        </node>
                       </node>
-                      <node concept="liA8E" id="1xeqwudg$rW" role="2OqNvi">
-                        <ref role="37wK5l" to="f4zo:~EditorCell.isSelectable():boolean" resolve="isSelectable" />
+                      <node concept="2OqwBi" id="1xeqwudg$rV" role="3uHU7w">
+                        <node concept="37vLTw" id="1xeqwudg$rU" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1xeqwudgw4m" resolve="nodeCell" />
+                        </node>
+                        <node concept="liA8E" id="1xeqwudg$rW" role="2OqNvi">
+                          <ref role="37wK5l" to="f4zo:~EditorCell.isSelectable():boolean" resolve="isSelectable" />
+                        </node>
                       </node>
                     </node>
                     <node concept="3clFbS" id="1xeqwudgw4v" role="3clFbx">

@@ -44,7 +44,7 @@ public class PropertyDeclaration_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_mohvzt_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_mohvzt_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_mohvzt_a() {
       super(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType"));

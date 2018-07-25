@@ -17,7 +17,11 @@ package jetbrains.mps.nodeEditor.reflectiveEditor;
 
 import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsAction.ActionForSubtree;
 import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.update.Updater;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Arrays;
@@ -27,6 +31,8 @@ import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHint.DENY_FOR_
 import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHint.REFLECTIVE;
 
 class MakeSubtreeRegularAction extends ActionForSubtree {
+  private static final Logger LOG = LogManager.getLogger(MakeSubtreeRegularAction.class);
+
 
   MakeSubtreeRegularAction(SNode root, EditorComponent editorComponent) {
     super(root, editorComponent, false);
@@ -39,9 +45,18 @@ class MakeSubtreeRegularAction extends ActionForSubtree {
     ReflectiveUpdaterHintsState updaterHintsState = ReflectiveUpdaterHintsState.load(getUpdater(), node);
     if (updaterHintsState.getHints().contains(REFLECTIVE)) {
       ReflectiveUpdaterHintsState.removeAllReflectiveHints(updater, node);
-    } else if (ReflectiveHint.getReflectiveHintsFromCellContext(getEditorComponent().findNodeCell(getAffectedNode()).getCellContext())
-                             .contains(REFLECTIVE)) {
-      new ReflectiveUpdaterHintsState(node, Arrays.asList(DENY_FOR_CHILDREN, DENY_FOR_NODE)).save(updater);
+    } else {
+      EditorCell cell = getEditorComponent().findNodeCell(getAffectedNode());
+      if (cell != null){
+        EditorCellContext cellContext = cell.getCellContext();
+        if (cellContext != null) {
+          if (ReflectiveHint.getReflectiveHintsFromCellContext(cellContext).contains(REFLECTIVE)) {
+            new ReflectiveUpdaterHintsState(node, Arrays.asList(DENY_FOR_CHILDREN, DENY_FOR_NODE)).save(updater);
+          }
+        } else {
+          LOG.warn("Cell context of the big cell is null. Node : " + cell.getSNode() + ", Concept: " + node.getConcept());
+        }
+      }
     }
   }
 }

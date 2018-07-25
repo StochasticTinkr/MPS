@@ -44,7 +44,7 @@ public class GenerationContextOp_GenParameterRef_SubstituteMenu extends Substitu
   }
 
 
-  public static class SMP_ReferenceScope_p50d8y_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_p50d8y_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_p50d8y_a() {
       super(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x22cdba820a9a0583L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef"), MetaAdapterFactory.getReferenceLink(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x22cdba820a9a0583L, 0x22cdba820a9a0584L, "importClause"));

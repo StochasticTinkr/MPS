@@ -44,7 +44,7 @@ public class GeneratorInternal_BuildSource_JarFolder_SubstituteMenu extends Subs
   }
 
 
-  public static class SMP_ReferenceScope_o5vowq_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_o5vowq_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_o5vowq_a() {
       super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x508044c9892402f6L, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JarFolder"), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x508044c9892402f6L, 0x508044c9892402f7L, "targetFolder"));

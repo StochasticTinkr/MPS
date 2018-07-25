@@ -50,7 +50,7 @@ public class ToolType_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_hl7rib_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_hl7rib_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_hl7rib_a() {
       super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11961ebbf24L, "jetbrains.mps.lang.plugin.structure.ToolType"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11961ebbf24L, 0x11961f94babL, "tool"));
@@ -72,7 +72,7 @@ public class ToolType_SubstituteMenu extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new ToolType_SubstituteMenu.SMP_ReferenceScope_hl7rib_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

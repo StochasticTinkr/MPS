@@ -44,7 +44,7 @@ public class StringPropertyInstance_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_g46t5a_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_g46t5a_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_g46t5a_a() {
       super(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100d04L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.StringPropertyInstance"), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L, 0x772497abf2e77969L, "decl"));

@@ -44,7 +44,7 @@ public class MultiForEachVariableReference_SubstituteMenu extends SubstituteMenu
   }
 
 
-  public static class SMP_ReferenceScope_gbjrjx_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_gbjrjx_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_gbjrjx_a() {
       super(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x731a0dad81895f16L, "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference"), MetaAdapterFactory.getReferenceLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x731a0dad81895f16L, 0x731a0dad818984f5L, "variable"));

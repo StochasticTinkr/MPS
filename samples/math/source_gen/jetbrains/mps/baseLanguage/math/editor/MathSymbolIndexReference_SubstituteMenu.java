@@ -44,7 +44,7 @@ public class MathSymbolIndexReference_SubstituteMenu extends SubstituteMenuBase 
   }
 
 
-  public static class SMP_ReferenceScope_kbkb4f_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_kbkb4f_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_kbkb4f_a() {
       super(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0d91491L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference"), MetaAdapterFactory.getReferenceLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0d91491L, 0x11fe0d95bdfL, "indexRef"));

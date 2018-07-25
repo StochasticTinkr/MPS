@@ -44,7 +44,7 @@ public class ClassCreator_SmartReference extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_bew3wm_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_bew3wm_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_bew3wm_a() {
       super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
@@ -66,7 +66,7 @@ public class ClassCreator_SmartReference extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new ClassCreator_SmartReference.SMP_ReferenceScope_bew3wm_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

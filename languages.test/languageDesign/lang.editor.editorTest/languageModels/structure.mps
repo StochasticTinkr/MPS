@@ -1612,5 +1612,43 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
+  <node concept="1TIwiD" id="6BUu6R_5Lkf">
+    <property role="EcuMT" value="7636548531550360847" />
+    <property role="3GE5qa" value="autoResolve" />
+    <property role="TrG5h" value="AutoResolveNodeToReference" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="6BUu6R_5LkQ" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6BUu6R_5MeQ">
+    <property role="EcuMT" value="7636548531550364598" />
+    <property role="3GE5qa" value="autoResolve" />
+    <property role="TrG5h" value="AutoResolveChildWithErrorCell" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="6BUu6R_5MGl" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6BUu6R_5Lke">
+    <property role="EcuMT" value="7636548531550360846" />
+    <property role="TrG5h" value="AutoResolveRoot" />
+    <property role="3GE5qa" value="autoResolve" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6BUu6R_5Lko" role="1TKVEi">
+      <property role="IQ2ns" value="7636548531550360856" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="reference" />
+      <ref role="20lvS9" node="6BUu6R_5Lkf" resolve="AutoResolveNodeToReference" />
+    </node>
+    <node concept="1TJgyj" id="6BUu6R_5MfW" role="1TKVEi">
+      <property role="IQ2ns" value="7636548531550364668" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childWithErrorCell" />
+      <ref role="20lvS9" node="6BUu6R_5MeQ" resolve="AutoResolveChildWithErrorCell" />
+    </node>
+  </node>
 </model>
 

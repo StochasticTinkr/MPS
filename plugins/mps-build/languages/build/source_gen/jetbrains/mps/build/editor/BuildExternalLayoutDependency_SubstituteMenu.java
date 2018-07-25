@@ -44,7 +44,7 @@ public class BuildExternalLayoutDependency_SubstituteMenu extends SubstituteMenu
   }
 
 
-  public static class SMP_ReferenceScope_ye7991_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_ye7991_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_ye7991_a() {
       super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, "jetbrains.mps.build.structure.BuildExternalLayoutDependency"), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, 0x63a87b9320d3d0a7L, "layout"));

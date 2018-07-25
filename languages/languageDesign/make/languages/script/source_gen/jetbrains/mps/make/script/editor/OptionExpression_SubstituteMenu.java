@@ -44,7 +44,7 @@ public class OptionExpression_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_w5p9hx_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_w5p9hx_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_w5p9hx_a() {
       super(MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7b2L, "jetbrains.mps.make.script.structure.OptionExpression"), MetaAdapterFactory.getReferenceLink(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7b2L, 0x70276038dc4d7b3L, "option"));

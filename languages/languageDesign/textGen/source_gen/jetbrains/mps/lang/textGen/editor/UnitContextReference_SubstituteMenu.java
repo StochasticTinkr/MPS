@@ -44,7 +44,7 @@ public class UnitContextReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_7pz34s_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_7pz34s_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_7pz34s_a() {
       super(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961ab5a81L, "jetbrains.mps.lang.textGen.structure.UnitContextReference"), MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961ab5a81L, 0x377692d961ab5a82L, "context"));

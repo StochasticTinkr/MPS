@@ -44,7 +44,7 @@ public class RefactoringOrderDependency_SubstituteMenu extends SubstituteMenuBas
   }
 
 
-  public static class SMP_ReferenceScope_gjfk1b_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_gjfk1b_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_gjfk1b_a() {
       super(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d9dL, "jetbrains.mps.lang.migration.structure.RefactoringOrderDependency"), MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d9dL, 0x1bf9eb43276b6d9eL, "refactoring"));

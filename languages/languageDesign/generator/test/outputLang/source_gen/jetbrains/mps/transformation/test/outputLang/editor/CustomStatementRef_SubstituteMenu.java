@@ -44,7 +44,7 @@ public class CustomStatementRef_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_vjpwj5_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_vjpwj5_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_vjpwj5_a() {
       super(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1e076e8c8ce9211aL, "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef"), MetaAdapterFactory.getReferenceLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1e076e8c8ce9211aL, 0x1e076e8c8ce92801L, "myStatement"));

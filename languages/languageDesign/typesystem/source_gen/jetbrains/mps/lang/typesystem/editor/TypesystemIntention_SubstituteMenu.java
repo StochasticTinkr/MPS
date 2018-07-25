@@ -44,7 +44,7 @@ public class TypesystemIntention_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_8drpfu_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_8drpfu_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_8drpfu_a() {
       super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL, "jetbrains.mps.lang.typesystem.structure.TypesystemIntention"), MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL, 0x11b3667ec7bL, "quickFix"));

@@ -44,7 +44,7 @@ public class DirectMethodSpecification_SubstituteMenu extends SubstituteMenuBase
   }
 
 
-  public static class SMP_ReferenceScope_be9igf_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_be9igf_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_be9igf_a() {
       super(MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, "jetbrains.mps.lang.script.structure.DirectMethodSpecification"), MetaAdapterFactory.getReferenceLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, 0x1fcdfeb518c43c59L, "methodDeclaration"));

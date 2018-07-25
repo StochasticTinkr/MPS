@@ -50,7 +50,7 @@ public class BuildSourceMacroRelativePath_SubstituteMenu extends SubstituteMenuB
   }
 
 
-  public static class SMP_ReferenceScope_whou42_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_whou42_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_whou42_a() {
       super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath"), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, 0x668c6cfbafae122aL, "macro"));
@@ -72,7 +72,7 @@ public class BuildSourceMacroRelativePath_SubstituteMenu extends SubstituteMenuB
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new BuildSourceMacroRelativePath_SubstituteMenu.SMP_ReferenceScope_whou42_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

@@ -44,7 +44,7 @@ public class SimpleAspectOrderRef_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_rard3o_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_rard3o_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_rard3o_a() {
       super(MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x26c6e1a7a20d8efL, "jetbrains.mps.lang.aspect.structure.SimpleAspectOrderRef"), MetaAdapterFactory.getReferenceLink(0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x22035699bdd7814bL, 0x22035699bdd7814cL, "target"));

@@ -50,7 +50,7 @@ public class EnumMemberReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_pzcnlg_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_pzcnlg_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_pzcnlg_a() {
       super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091e6212fdL, "jetbrains.mps.lang.smodel.structure.EnumMemberReference"), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091e6212fdL, 0x1091e625b13L, "enumMember"));
@@ -72,7 +72,7 @@ public class EnumMemberReference_SubstituteMenu extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new EnumMemberReference_SubstituteMenu.SMP_ReferenceScope_pzcnlg_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

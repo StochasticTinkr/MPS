@@ -45,7 +45,7 @@ public class InequationReference_SmartReference extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_g0kter_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_g0kter_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_g0kter_a() {
       super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x42501924d0bd1913L, "jetbrains.mps.lang.typesystem.structure.InequationReference"), MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x42501924d0bd1913L, 0x42501924d0bd1914L, "inequation"));
@@ -67,7 +67,7 @@ public class InequationReference_SmartReference extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new InequationReference_SmartReference.SMP_ReferenceScope_g0kter_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;
@@ -95,9 +95,9 @@ public class InequationReference_SmartReference extends SubstituteMenuBase {
       public EditorMenuTraceInfo getTraceInfo() {
         return myTraceInfo;
       }
-      private static boolean isNotEmptyString(String str) {
-        return str != null && str.length() > 0;
-      }
     }
+  }
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

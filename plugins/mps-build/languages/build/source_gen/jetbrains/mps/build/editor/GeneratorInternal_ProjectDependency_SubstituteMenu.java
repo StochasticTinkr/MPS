@@ -44,7 +44,7 @@ public class GeneratorInternal_ProjectDependency_SubstituteMenu extends Substitu
   }
 
 
-  public static class SMP_ReferenceScope_jp6td_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_jp6td_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_jp6td_a() {
       super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL, "jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency"), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL, 0x5830b38e16d823d3L, "project"));

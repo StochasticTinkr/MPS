@@ -44,7 +44,7 @@ public class XMLSAXFieldReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_cooydm_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_cooydm_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_cooydm_a() {
       super(MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2e0L, "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldReference"), MetaAdapterFactory.getReferenceLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2e0L, 0x1f6c736337b5e2e1L, "declaration"));

@@ -44,7 +44,7 @@ public class NodeBuilderInitLink_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_ej8zii_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_ej8zii_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_ej8zii_a() {
       super(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20c8e1aL, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), MetaAdapterFactory.getReferenceLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20c8e1aL, 0x4bb51009d20c8e1cL, "link"));

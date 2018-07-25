@@ -44,7 +44,7 @@ public class LowLevelVariableReference_SubstituteMenu extends SubstituteMenuBase
   }
 
 
-  public static class SMP_ReferenceScope_2icqa4_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_2icqa4_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_2icqa4_a() {
       super(MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7d9a547f857a394bL, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L, 0x4c4b92003e49a705L, "baseVariableDeclaration"));

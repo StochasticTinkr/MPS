@@ -44,7 +44,7 @@ public class DSLAnnotation_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_axcpsm_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_axcpsm_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_axcpsm_a() {
       super(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation"), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, 0x3190d3f9f1cac277L, "descriptor"));

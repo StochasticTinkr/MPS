@@ -50,7 +50,7 @@ public class BuildMps_ModuleSolutionRuntime_SubstituteMenu extends SubstituteMen
   }
 
 
-  public static class SMP_ReferenceScope_ge1ifl_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_ge1ifl_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_ge1ifl_a() {
       super(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914644b6e3L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914644b6e3L, 0x2c4467914644b6e4L, "solution"));
@@ -72,7 +72,7 @@ public class BuildMps_ModuleSolutionRuntime_SubstituteMenu extends SubstituteMen
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new BuildMps_ModuleSolutionRuntime_SubstituteMenu.SMP_ReferenceScope_ge1ifl_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

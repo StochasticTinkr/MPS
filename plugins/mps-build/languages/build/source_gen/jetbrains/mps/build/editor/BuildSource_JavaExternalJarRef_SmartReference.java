@@ -49,7 +49,7 @@ public class BuildSource_JavaExternalJarRef_SmartReference extends SubstituteMen
   }
 
 
-  public static class SMP_ReferenceScope_fdjpgz_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_fdjpgz_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_fdjpgz_a() {
       super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef"), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, 0x4ddcec86afb2f64dL, "jar"));
@@ -71,7 +71,7 @@ public class BuildSource_JavaExternalJarRef_SmartReference extends SubstituteMen
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new BuildSource_JavaExternalJarRef_SmartReference.SMP_ReferenceScope_fdjpgz_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

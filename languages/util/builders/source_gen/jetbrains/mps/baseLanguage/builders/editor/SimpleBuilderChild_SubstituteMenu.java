@@ -44,7 +44,7 @@ public class SimpleBuilderChild_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_nsaua_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_nsaua_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_nsaua_a() {
       super(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353aL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild"), MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353aL, 0x6524536b2e1d353bL, "child"));

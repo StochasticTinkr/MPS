@@ -44,7 +44,7 @@ public class NamedTupleComponentReference_SubstituteMenu extends SubstituteMenuB
   }
 
 
-  public static class SMP_ReferenceScope_1dtstp_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_1dtstp_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_1dtstp_a() {
       super(MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b917141L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference"), MetaAdapterFactory.getReferenceLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b917141L, 0x1209b91a766L, "componentDeclaration"));

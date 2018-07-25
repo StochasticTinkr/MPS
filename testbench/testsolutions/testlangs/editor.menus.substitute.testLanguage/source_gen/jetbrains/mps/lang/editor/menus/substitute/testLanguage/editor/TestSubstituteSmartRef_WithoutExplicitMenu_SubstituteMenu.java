@@ -44,7 +44,7 @@ public class TestSubstituteSmartRef_WithoutExplicitMenu_SubstituteMenu extends S
   }
 
 
-  public static class SMP_ReferenceScope_wtk71f_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_wtk71f_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_wtk71f_a() {
       super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x6723ebbaa490bde6L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSmartRef_WithoutExplicitMenu"), MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x6723ebbaa490bde6L, 0x6723ebbaa490bde7L, "childToReference"));

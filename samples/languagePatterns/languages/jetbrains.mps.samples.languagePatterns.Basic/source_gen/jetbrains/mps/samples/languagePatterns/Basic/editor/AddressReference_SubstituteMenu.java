@@ -44,7 +44,7 @@ public class AddressReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_8hzqz4_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_8hzqz4_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_8hzqz4_a() {
       super(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b53535L, "jetbrains.mps.samples.languagePatterns.Basic.structure.AddressReference"), MetaAdapterFactory.getReferenceLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b53535L, 0x48a6ab8c26b53536L, "target"));

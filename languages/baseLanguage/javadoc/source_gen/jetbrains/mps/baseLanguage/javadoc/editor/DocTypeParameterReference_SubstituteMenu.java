@@ -44,7 +44,7 @@ public class DocTypeParameterReference_SubstituteMenu extends SubstituteMenuBase
   }
 
 
-  public static class SMP_ReferenceScope_jz6j6a_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_jz6j6a_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_jz6j6a_a() {
       super(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dbe86dbL, "jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference"), MetaAdapterFactory.getReferenceLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dbe86d7L, 0x5ed0d79d7dbe86dcL, "param"));

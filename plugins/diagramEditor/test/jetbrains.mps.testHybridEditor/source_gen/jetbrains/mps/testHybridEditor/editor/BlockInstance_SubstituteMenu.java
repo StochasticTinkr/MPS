@@ -44,7 +44,7 @@ public class BlockInstance_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_mm0rjv_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_mm0rjv_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_mm0rjv_a() {
       super(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), MetaAdapterFactory.getReferenceLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec4404a9L, "metaBlock"));

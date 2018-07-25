@@ -44,7 +44,7 @@ public class NPTypesystem_RefToIntA_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_mqf312_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_mqf312_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_mqf312_a() {
       super(MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x76fa9e459e19e64L, "jetbrains.mps.lang.smodelTests.structure.NPTypesystem_RefToIntA"), MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x76fa9e459e19e64L, 0x76fa9e459e19e65L, "ref"));

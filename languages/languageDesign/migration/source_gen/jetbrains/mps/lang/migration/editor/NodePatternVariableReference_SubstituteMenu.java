@@ -44,7 +44,7 @@ public class NodePatternVariableReference_SubstituteMenu extends SubstituteMenuB
   }
 
 
-  public static class SMP_ReferenceScope_52nnf_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_52nnf_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_52nnf_a() {
       super(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x6877ea6323b8f1a3L, "jetbrains.mps.lang.migration.structure.NodePatternVariableReference"), MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x6877ea6323b8f1a3L, 0x6877ea6323b8f1a4L, "declaration"));

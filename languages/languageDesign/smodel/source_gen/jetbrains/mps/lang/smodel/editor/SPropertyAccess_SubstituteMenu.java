@@ -44,7 +44,7 @@ public class SPropertyAccess_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_zbkghy_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_zbkghy_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_zbkghy_a() {
       super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96cca6fL, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96cca6fL, 0x108f9727bcdL, "property"));

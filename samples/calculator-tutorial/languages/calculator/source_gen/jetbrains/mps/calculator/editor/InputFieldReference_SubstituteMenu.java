@@ -44,7 +44,7 @@ public class InputFieldReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_i4w2se_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_i4w2se_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_i4w2se_a() {
       super(MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12107017046L, "jetbrains.mps.calculator.structure.InputFieldReference"), MetaAdapterFactory.getReferenceLink(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12107017046L, 0x1210701c618L, "field"));

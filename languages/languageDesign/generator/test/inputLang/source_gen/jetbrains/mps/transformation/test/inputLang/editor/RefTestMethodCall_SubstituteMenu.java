@@ -44,7 +44,7 @@ public class RefTestMethodCall_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_5bwta2_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_5bwta2_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_5bwta2_a() {
       super(MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e09L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethodCall"), MetaAdapterFactory.getReferenceLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e09L, 0x2e0420fbd0995e0aL, "method"));

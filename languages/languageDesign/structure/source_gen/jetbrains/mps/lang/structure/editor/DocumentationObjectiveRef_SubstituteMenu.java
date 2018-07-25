@@ -44,7 +44,7 @@ public class DocumentationObjectiveRef_SubstituteMenu extends SubstituteMenuBase
   }
 
 
-  public static class SMP_ReferenceScope_wmax4y_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_wmax4y_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_wmax4y_a() {
       super(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x6d1df6c2700b0eb5L, "jetbrains.mps.lang.structure.structure.DocumentationObjectiveRef"), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x6d1df6c2700b0eb5L, 0x6d1df6c2700b0eb6L, "target"));

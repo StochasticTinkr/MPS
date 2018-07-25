@@ -44,7 +44,7 @@ public class Node_ConceptMethodCall_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_4xwxqv_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_4xwxqv_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_4xwxqv_a() {
       super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1129a43046bL, "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));

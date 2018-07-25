@@ -44,7 +44,7 @@ public class UnknownRuleReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_duyow9_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_duyow9_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_duyow9_a() {
       super(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4af0d67L, "jetbrains.mps.lang.test.structure.UnknownRuleReference"), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration"));

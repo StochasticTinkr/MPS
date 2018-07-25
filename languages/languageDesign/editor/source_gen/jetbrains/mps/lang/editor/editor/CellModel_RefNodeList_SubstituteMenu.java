@@ -50,7 +50,7 @@ public class CellModel_RefNodeList_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_t0nhu6_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_t0nhu6_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_t0nhu6_a() {
       super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"));
@@ -72,7 +72,7 @@ public class CellModel_RefNodeList_SubstituteMenu extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new CellModel_RefNodeList_SubstituteMenu.SMP_ReferenceScope_t0nhu6_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

@@ -44,7 +44,7 @@ public class CustomOperator_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_blqzzl_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_blqzzl_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_blqzzl_a() {
       super(MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x2764eda929d60237L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator"), MetaAdapterFactory.getReferenceLink(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x2764eda929d60237L, 0x2764eda929d60239L, "declaration"));

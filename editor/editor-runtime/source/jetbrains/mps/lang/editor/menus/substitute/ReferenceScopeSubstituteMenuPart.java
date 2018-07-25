@@ -50,10 +50,9 @@ public class ReferenceScopeSubstituteMenuPart implements SubstituteMenuPart {
   public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
     SNode parentNode = context.getParentNode();
     SNode currentTarget = context.getCurrentTargetNode();
-    SContainmentLink link = null;
+    SContainmentLink link = context.getLink();
     int position = 0;
     if (currentTarget != null) {
-      link = currentTarget.getContainmentLink();
       position = IterableUtil.indexOf(parentNode.getChildren(link), currentTarget);
     }
     Scope scope = ModelConstraints.getReferenceDescriptor(parentNode, link, position, myReferenceLink, myConcept).getScope();

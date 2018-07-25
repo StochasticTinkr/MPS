@@ -228,6 +228,12 @@
     </language>
     <language id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest">
       <concept id="6997653033587013240" name="jetbrains.mps.lang.editor.editorTest.structure.CustomPlaceholder" flags="ng" index="21vXSz" />
+      <concept id="7636548531550364598" name="jetbrains.mps.lang.editor.editorTest.structure.AutoResolveChildWithErrorCell" flags="ng" index="2cVlJr" />
+      <concept id="7636548531550360847" name="jetbrains.mps.lang.editor.editorTest.structure.AutoResolveNodeToReference" flags="ng" index="2cVmPy" />
+      <concept id="7636548531550360846" name="jetbrains.mps.lang.editor.editorTest.structure.AutoResolveRoot" flags="ng" index="2cVmPz">
+        <reference id="7636548531550360856" name="reference" index="2cVmPP" />
+        <child id="7636548531550364668" name="childWithErrorCell" index="2cVlIh" />
+      </concept>
       <concept id="5824791737913814352" name="jetbrains.mps.lang.editor.editorTest.structure.AttributeChild" flags="ng" index="GbBLD" />
       <concept id="3766420342434505217" name="jetbrains.mps.lang.editor.editorTest.structure.PlaceholderChildAttribute" flags="ng" index="2HQ25p" />
       <concept id="9133079350911740822" name="jetbrains.mps.lang.editor.editorTest.structure.SubstMiddlewareChild" flags="ng" index="2IcTNh">
@@ -254,7 +260,7 @@
         <child id="618557683845411852" name="singleChildWithNonEmptyCellAndCustomInsert" index="2y93Fz" />
         <child id="618557683845300376" name="singleChildWithCustomInsert" index="2y9oTR" />
         <child id="618557683845900176" name="multiChildWithCustomEmptyCellAndInsert" index="2yba_Z" />
-        <child id="618557683845868950" name="multiChildWithCustomEmptyCellAndInsert" index="2ybidT" />
+        <child id="618557683845868950" name="multiChildWithCustomInsert" index="2ybidT" />
         <child id="9133079350911739126" name="separatorChild" index="2IcTeL" />
         <child id="9133079350911740921" name="middlewareChild" index="2IcTMY" />
         <child id="583472190600143148" name="childWithNextEditorAndMenu" index="2T4CBL" />
@@ -8880,6 +8886,83 @@
         </node>
       </node>
     </node>
+  </node>
+  <node concept="LiM7Y" id="1aZe_qOvux0">
+    <property role="3GE5qa" value="autoResolve" />
+    <property role="TrG5h" value="AutoResolve_DontAutoResolveErrorCellWithNoRealText" />
+    <property role="3YCmrE" value="See the MPS-28077: action was executed on the error cell with empty real text. Nothing should be done in this case" />
+    <node concept="3clFbS" id="1aZe_qOvux1" role="LjaKd">
+      <node concept="2HxZob" id="1aZe_qOxuFm" role="3cqZAp">
+        <node concept="1iFQzN" id="1aZe_qOxuFy" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
+        </node>
+      </node>
+    </node>
+    <node concept="2cVmPz" id="1aZe_qOCmjZ" role="LiRBU">
+      <node concept="2cVlJr" id="1aZe_qOCmk9" role="2cVlIh">
+        <node concept="LIFWc" id="1aZe_qOCmkr" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Error_nzjn3n_a0" />
+        </node>
+      </node>
+    </node>
+    <node concept="2cVmPz" id="1aZe_qOCmkt" role="LiZbd">
+      <node concept="2cVlJr" id="1aZe_qOCmku" role="2cVlIh" />
+      <node concept="LIFWc" id="1aZe_qOCmkN" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_gtdceu_d0" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1aZe_qOy1Z9">
+    <property role="3GE5qa" value="autoResolve" />
+    <property role="TrG5h" value="AutoResolve_AutoResolveReference" />
+    <node concept="3clFbS" id="1aZe_qOy1Za" role="LjaKd">
+      <node concept="2HxZob" id="1aZe_qODWVP" role="3cqZAp">
+        <node concept="1iFQzN" id="1aZe_qODWVQ" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg86S0x" resolve="Backspace" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="1aZe_qOy1Zb" role="3cqZAp">
+        <node concept="1iFQzN" id="1aZe_qOy1Zc" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
+        </node>
+      </node>
+    </node>
+    <node concept="2cVmPz" id="1aZe_qODgHo" role="LiRBU">
+      <ref role="2cVmPP" node="1aZe_qODWEj" resolve="autoResolveNodeToReference1" />
+      <node concept="LIFWc" id="1aZe_qOEknX" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="27" />
+        <property role="p6zMs" value="27" />
+        <property role="LIFWd" value="property_name" />
+      </node>
+    </node>
+    <node concept="2cVmPz" id="1aZe_qODgHE" role="LiZbd">
+      <ref role="2cVmPP" node="1aZe_qODgHO" resolve="autoResolveNodeToReference" />
+      <node concept="LIFWc" id="1aZe_qODWEW" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="1" />
+        <property role="p6zMs" value="1" />
+        <property role="LIFWd" value="Constant_gtdceu_f0" />
+      </node>
+    </node>
+  </node>
+  <node concept="2cVmPy" id="1aZe_qODgHO">
+    <property role="3GE5qa" value="autoResolve" />
+    <property role="TrG5h" value="autoResolveNodeToReference" />
+  </node>
+  <node concept="2cVmPy" id="1aZe_qODWEj">
+    <property role="3GE5qa" value="autoResolve" />
+    <property role="TrG5h" value="autoResolveNodeToReference1" />
   </node>
 </model>
 

@@ -50,7 +50,7 @@ public class GroupType_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_zea67z_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_zea67z_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_zea67z_a() {
       super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119240f9168L, "jetbrains.mps.lang.plugin.structure.GroupType"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119240f9168L, 0x119240f916aL, "actionGroup"));
@@ -72,7 +72,7 @@ public class GroupType_SubstituteMenu extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new GroupType_SubstituteMenu.SMP_ReferenceScope_zea67z_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

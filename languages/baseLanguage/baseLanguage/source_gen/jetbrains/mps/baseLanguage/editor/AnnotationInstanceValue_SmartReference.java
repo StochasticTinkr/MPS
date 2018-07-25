@@ -37,7 +37,7 @@ public class AnnotationInstanceValue_SmartReference extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_lyrsmi_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_lyrsmi_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_lyrsmi_a() {
       super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L, 0x114a71b44e3L, "key"));

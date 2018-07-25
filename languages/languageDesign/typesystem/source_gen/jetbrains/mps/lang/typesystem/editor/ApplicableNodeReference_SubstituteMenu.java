@@ -44,7 +44,7 @@ public class ApplicableNodeReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_1r0rvb_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_1r0rvb_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_1r0rvb_a() {
       super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e9ef5dcL, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference"), MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e9ef5dcL, 0x1117e9f2a5aL, "applicableNode"));

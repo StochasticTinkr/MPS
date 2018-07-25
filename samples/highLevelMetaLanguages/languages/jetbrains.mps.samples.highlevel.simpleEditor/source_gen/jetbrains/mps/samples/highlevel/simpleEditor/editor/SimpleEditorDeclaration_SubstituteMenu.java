@@ -44,7 +44,7 @@ public class SimpleEditorDeclaration_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_roousu_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_roousu_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_roousu_a() {
       super(MetaAdapterFactory.getConcept(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccf6ffL, "jetbrains.mps.samples.highlevel.simpleEditor.structure.SimpleEditorDeclaration"), MetaAdapterFactory.getReferenceLink(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccf6ffL, 0x346ead2c08ccf9f3L, "cncpt"));

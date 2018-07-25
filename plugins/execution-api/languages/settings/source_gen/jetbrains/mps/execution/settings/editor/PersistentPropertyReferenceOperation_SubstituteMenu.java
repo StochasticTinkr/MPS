@@ -44,7 +44,7 @@ public class PersistentPropertyReferenceOperation_SubstituteMenu extends Substit
   }
 
 
-  public static class SMP_ReferenceScope_wh42hk_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_wh42hk_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_wh42hk_a() {
       super(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91010eL, "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation"), MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91010eL, 0xd244b712f91010fL, "variableDeclaration"));

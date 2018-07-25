@@ -44,7 +44,7 @@ public class TemplateArgumentPatternVarRefExpression_SubstituteMenu extends Subs
   }
 
 
-  public static class SMP_ReferenceScope_xyrbhp_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_xyrbhp_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_xyrbhp_a() {
       super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x40be82ad503b3c88L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression"), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x40be82ad503b3c88L, 0x40be82ad503b3ec4L, "patternVarDecl"));

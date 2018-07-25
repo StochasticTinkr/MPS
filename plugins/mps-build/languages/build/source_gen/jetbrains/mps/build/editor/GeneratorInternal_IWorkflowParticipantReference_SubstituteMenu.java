@@ -44,7 +44,7 @@ public class GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu exte
   }
 
 
-  public static class SMP_ReferenceScope_4td9tv_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_4td9tv_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_4td9tv_a() {
       super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c860be1bc5cc1c8L, "jetbrains.mps.build.structure.GeneratorInternal_IWorkflowParticipantReference"), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c860be1bc5cc1c8L, 0x5c860be1bc5cc1c9L, "participant"));

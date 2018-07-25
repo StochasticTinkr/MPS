@@ -87,7 +87,7 @@ import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
         selectionManager.pushSelection(rangeSelection);
       } else {
         EditorCell nodeCell = myEditorComponent.findNodeCell(selection.get(0));
-        if (nodeCell.isSelectable()) {
+        if (nodeCell != null && nodeCell.isSelectable()) {
           selectionManager.pushSelection(selectionManager.createSelection(nodeCell));
         }
       }

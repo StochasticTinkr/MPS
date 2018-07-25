@@ -44,7 +44,7 @@ public class WhenConcreteVariableReference_SubstituteMenu extends SubstituteMenu
   }
 
 
-  public static class SMP_ReferenceScope_a7xbxw_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_a7xbxw_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_a7xbxw_a() {
       super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x118bd0e07f1L, "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"), MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x118bd0e07f1L, 0x118bd0e7418L, "whenConcreteVar"));

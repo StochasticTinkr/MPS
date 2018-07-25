@@ -44,7 +44,7 @@ public class CustomConstructorUsage_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_tf9v1s_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_tf9v1s_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_tf9v1s_a() {
       super(MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x5ea800dcf8ca1ca6L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage"), MetaAdapterFactory.getReferenceLink(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x5ea800dcf8ca1ca6L, 0x5ea800dcf8cc71b3L, "customConstructor"));

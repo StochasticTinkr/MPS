@@ -44,7 +44,7 @@ public class MatchVariableReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_tdhr47_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_tdhr47_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_tdhr47_a() {
       super(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117987ff5eL, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference"), MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117987ff5eL, 0x11179881f99L, "match"));
