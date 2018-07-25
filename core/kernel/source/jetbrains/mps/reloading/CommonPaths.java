@@ -38,7 +38,9 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public final class CommonPaths {
   private static final Logger LOG = LogManager.getLogger(CommonPaths.class);
@@ -83,7 +85,20 @@ public final class CommonPaths {
   }
 
   public static List<String> getJDKPath() {
-    List<String> result = itemToPath(getJDKClassPath());
+    ArrayList<String> result = new ArrayList<>();
+    Map<String, File> bootstrapJars = mapBootstrapJarByName();
+    for (String s : getJDKJars()) {
+      File rtJar = bootstrapJars.get(s);
+      try {
+        if (rtJar != null) {
+          result.add(rtJar.getCanonicalPath());
+        } else {
+          LOG.error(String.format("Can't find %s of JDK jars", s));
+        }
+      } catch (IOException e) {
+        LOG.error(String.format("Bad bootstrap jar '%s'", rtJar), e);
+      }
+    }
     if (SystemInfo.isJavaVersionAtLeast("1.7")) {
       result.addAll(getJDK_JavaFXPath());
     }
@@ -155,44 +170,20 @@ public final class CommonPaths {
     return result;
   }
 
-  /**
-   * @deprecated Since MPS 3.3 used only inside this class, so should become private.
-   */
-  @Deprecated
-  public static IClassPathItem getJDKClassPath() {
-    CompositeClassPathItem composite = new CompositeClassPathItem();
-    for (String s : getJDKJars()) {
-      addJarForName(composite, s);
-    }
-    return composite;
-  }
-
-  private static void addJarForName(CompositeClassPathItem composite, String name) {
-    RealClassPathItem rtJar = findBootstrapJarByName(name);
-    if (rtJar != null) {
-      composite.add(rtJar);
-    } else {
-      LOG.error("Can't find " + name + ". Make sure you are using JDK 5.0");
-    }
-  }
-
-  private static RealClassPathItem findBootstrapJarByName(String name) {
+  private static Map<String, File> mapBootstrapJarByName() {
+    HashMap<String, File> rv = new HashMap<>();
     for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
       try {
         File file = new File(url.toURI());
         if (!file.exists()) {
           continue;
         }
-
-        if (file.getName().equals(name)) {
-          String canonicalPath = file.getCanonicalPath();
-          return ourClassPathCachingFacility.createFromPath(canonicalPath, REQUESTER_STRING);
-        }
-      } catch (URISyntaxException | IOException e) {
+        rv.put(file.getName(), file);
+      } catch (URISyntaxException e) {
         LOG.error(String.format("Bad bootstrap jar '%s'", url), e);
       }
     }
-    return null;
+    return rv;
   }
 
   //------classpaths : MPS--------

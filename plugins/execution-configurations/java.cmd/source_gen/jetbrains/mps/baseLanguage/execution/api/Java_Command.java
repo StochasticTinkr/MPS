@@ -38,11 +38,11 @@ import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import java.util.Objects;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.util.SystemProperties;
@@ -239,7 +239,12 @@ public class Java_Command {
   }
   public static List<String> getClasspath(Iterable<SModule> modules) {
     Set<String> classpath = JavaModuleOperations.collectExecuteClasspath(Sequence.fromIterable(modules).toListSequence().toGenericArray(SModule.class));
-    classpath.removeAll(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"))).getModuleDescriptor().getAdditionalJavaStubPaths());
+    // Here used to be module/JDK/.getAdditionalJavaStubPaths, introduced in 6f53b9c0 with no explanation, 
+    // which replaced CommonPaths.getJDKPath() introduced with no explanation either in b4a00256. 
+    // As long as getAdditionalJavaStubPaths() are populated from CommonPaths.getJDKPath (see Solution) 
+    // I see no reason to go though global module to retrieve these. To be honest, I don't quite get the need 
+    // to remove java paths at all. 
+    classpath.removeAll(CommonPaths.getJDKPath());
     return new ArrayList<String>(classpath);
   }
   private static List<String> getClassRunnerClassPath() {

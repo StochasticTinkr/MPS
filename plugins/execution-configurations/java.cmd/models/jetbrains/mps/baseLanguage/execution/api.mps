@@ -44,7 +44,7 @@
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="fyhk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps(MPS.Core/)" />
-    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" implicit="true" />
+    <import index="zkib" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.reloading(MPS.Core/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" implicit="true" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" implicit="true" />
   </imports>
@@ -185,10 +185,6 @@
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
-      </concept>
-      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
-        <child id="1070534934091" name="type" index="10QFUM" />
-        <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
@@ -1993,29 +1989,38 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="6Eq1AVRNy0Z" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVRNy11" role="3SKWNk">
+            <property role="3SKdUp" value="Here used to be module/JDK/.getAdditionalJavaStubPaths, introduced in 6f53b9c0 with no explanation," />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6Eq1AVRNGgL" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVRNGgM" role="3SKWNk">
+            <property role="3SKdUp" value="which replaced CommonPaths.getJDKPath() introduced with no explanation either in b4a00256." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6Eq1AVRNFG3" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVRNFG4" role="3SKWNk">
+            <property role="3SKdUp" value="As long as getAdditionalJavaStubPaths() are populated from CommonPaths.getJDKPath (see Solution)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6Eq1AVRNHjk" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVRNHjm" role="3SKWNk">
+            <property role="3SKdUp" value="I see no reason to go though global module to retrieve these. To be honest, I don't quite get the need" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6Eq1AVRNIlV" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVRNIlX" role="3SKWNk">
+            <property role="3SKdUp" value="to remove java paths at all." />
+          </node>
+        </node>
         <node concept="3clFbF" id="1KUoCipvxhh" role="3cqZAp">
           <node concept="2OqwBi" id="1KUoCipvxhi" role="3clFbG">
             <node concept="liA8E" id="1KUoCipvxhj" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~Set.removeAll(java.util.Collection):boolean" resolve="removeAll" />
-              <node concept="2OqwBi" id="1KUoCipvxhk" role="37wK5m">
-                <node concept="liA8E" id="1KUoCipvxhl" role="2OqNvi">
-                  <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getAdditionalJavaStubPaths():java.util.Collection" resolve="getAdditionalJavaStubPaths" />
-                </node>
-                <node concept="2OqwBi" id="1KUoCipvxhm" role="2Oq$k0">
-                  <node concept="liA8E" id="a9P96JfIfA" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleDescriptor():jetbrains.mps.project.structure.modules.ModuleDescriptor" resolve="getModuleDescriptor" />
-                  </node>
-                  <node concept="1eOMI4" id="a9P96JfHjC" role="2Oq$k0">
-                    <node concept="10QFUN" id="a9P96JfHj_" role="1eOMHV">
-                      <node concept="3uibUv" id="a9P96JfHH$" role="10QFUM">
-                        <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                      </node>
-                      <node concept="3rM5sP" id="1KUoCipvxhp" role="10QFUP">
-                        <property role="3rM5sR" value="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
+              <node concept="2YIFZM" id="6Eq1AVRNPlh" role="37wK5m">
+                <ref role="37wK5l" to="zkib:~CommonPaths.getJDKPath():java.util.List" resolve="getJDKPath" />
+                <ref role="1Pybhc" to="zkib:~CommonPaths" resolve="CommonPaths" />
               </node>
             </node>
             <node concept="37vLTw" id="1KUoCipvxhq" role="2Oq$k0">
