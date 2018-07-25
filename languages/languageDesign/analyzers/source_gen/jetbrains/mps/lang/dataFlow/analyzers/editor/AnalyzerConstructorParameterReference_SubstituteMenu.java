@@ -44,7 +44,7 @@ public class AnalyzerConstructorParameterReference_SubstituteMenu extends Substi
   }
 
 
-  public static class SMP_ReferenceScope_swgugx_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_swgugx_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_swgugx_a() {
       super(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c421f8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameterReference"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L, 0x4c4b92003e49a705L, "baseVariableDeclaration"));

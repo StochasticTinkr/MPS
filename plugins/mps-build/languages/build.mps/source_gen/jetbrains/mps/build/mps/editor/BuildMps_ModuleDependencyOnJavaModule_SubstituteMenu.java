@@ -44,7 +44,7 @@ public class BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu extends Substi
   }
 
 
-  public static class SMP_ReferenceScope_3t8pl7_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_3t8pl7_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_3t8pl7_a() {
       super(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643e8fbL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643e8fbL, 0x2c4467914643e8fdL, "module"));

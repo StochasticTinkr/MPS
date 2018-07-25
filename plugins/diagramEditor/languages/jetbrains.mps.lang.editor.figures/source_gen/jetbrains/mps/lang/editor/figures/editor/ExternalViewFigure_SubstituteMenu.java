@@ -44,7 +44,7 @@ public class ExternalViewFigure_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_ckewk2_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_ckewk2_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_ckewk2_a() {
       super(MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f7493c2L, "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure"), MetaAdapterFactory.getReferenceLink(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f7493c2L, 0x1e3b9cbb9f7493f7L, "classifier"));

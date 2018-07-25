@@ -44,7 +44,7 @@ public class ExternalViewFigureParameter_SubstituteMenu extends SubstituteMenuBa
   }
 
 
-  public static class SMP_ReferenceScope_b4e0kx_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_b4e0kx_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_b4e0kx_a() {
       super(MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f749406L, "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter"), MetaAdapterFactory.getReferenceLink(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f749406L, 0x1e3b9cbb9f749431L, "fieldDeclaration"));

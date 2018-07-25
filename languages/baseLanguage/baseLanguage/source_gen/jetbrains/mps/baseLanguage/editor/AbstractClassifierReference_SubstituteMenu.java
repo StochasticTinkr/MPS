@@ -44,7 +44,7 @@ public class AbstractClassifierReference_SubstituteMenu extends SubstituteMenuBa
   }
 
 
-  public static class SMP_ReferenceScope_47lpm0_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_47lpm0_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_47lpm0_a() {
       super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, 0x6c6c91efa5ecbbb2L, "classifier"));

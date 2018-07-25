@@ -44,7 +44,7 @@ public class BuildMpsLayout_TestModuleGroup_SubstituteMenu extends SubstituteMen
   }
 
 
-  public static class SMP_ReferenceScope_26xsgl_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_26xsgl_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_26xsgl_a() {
       super(MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36bL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup"), MetaAdapterFactory.getReferenceLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36bL, 0x3f496e80bd8ef36cL, "group"));

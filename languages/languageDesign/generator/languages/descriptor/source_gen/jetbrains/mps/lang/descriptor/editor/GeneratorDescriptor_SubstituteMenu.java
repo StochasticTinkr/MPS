@@ -44,7 +44,7 @@ public class GeneratorDescriptor_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_21eki3_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_21eki3_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_21eki3_a() {
       super(MetaAdapterFactory.getConcept(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x3663ebbd1bf10683L, "jetbrains.mps.lang.descriptor.structure.GeneratorDescriptor"), MetaAdapterFactory.getReferenceLink(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x3663ebbd1bf10683L, 0x3663ebbd1bf10684L, "generator"));

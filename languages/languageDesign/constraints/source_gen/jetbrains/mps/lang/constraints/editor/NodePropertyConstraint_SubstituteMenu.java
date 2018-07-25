@@ -50,7 +50,7 @@ public class NodePropertyConstraint_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_szjyyq_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_szjyyq_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_szjyyq_a() {
       super(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint"), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, 0x10b2a61697bL, "applicableProperty"));
@@ -72,7 +72,7 @@ public class NodePropertyConstraint_SubstituteMenu extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new NodePropertyConstraint_SubstituteMenu.SMP_ReferenceScope_szjyyq_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

@@ -43,7 +43,7 @@ public class NodeAttributeQualifier_SmartReference extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_i3c8co_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_i3c8co_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_i3c8co_a() {
       super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b5L, "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier"), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b5L, 0x58ea5217b045b9b6L, "attributeConcept"));
@@ -65,7 +65,7 @@ public class NodeAttributeQualifier_SmartReference extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new NodeAttributeQualifier_SmartReference.SMP_ReferenceScope_i3c8co_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

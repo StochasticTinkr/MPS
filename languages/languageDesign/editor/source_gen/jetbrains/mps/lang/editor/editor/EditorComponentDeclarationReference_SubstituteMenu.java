@@ -44,7 +44,7 @@ public class EditorComponentDeclarationReference_SubstituteMenu extends Substitu
   }
 
 
-  public static class SMP_ReferenceScope_1i5xcr_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_1i5xcr_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_1i5xcr_a() {
       super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x619d95571435dfe8L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference"), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x619d95571435dfe8L, 0x619d95571435e249L, "editorComponent"));

@@ -44,7 +44,7 @@ public class LinkRefQualifier_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_drj977_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_drj977_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_drj977_a() {
       super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11886c4bac0L, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier"), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11886c4bac0L, 0x11886c4bac1L, "link"));

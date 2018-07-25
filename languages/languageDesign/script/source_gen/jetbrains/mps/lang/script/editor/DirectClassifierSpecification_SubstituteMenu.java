@@ -44,7 +44,7 @@ public class DirectClassifierSpecification_SubstituteMenu extends SubstituteMenu
   }
 
 
-  public static class SMP_ReferenceScope_clc4cv_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_clc4cv_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_clc4cv_a() {
       super(MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638d23L, "jetbrains.mps.lang.script.structure.DirectClassifierSpecification"), MetaAdapterFactory.getReferenceLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638d23L, 0x4b6b6d7b2a638e5dL, "classifier"));

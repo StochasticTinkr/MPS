@@ -44,7 +44,7 @@ public class QuickFixArgumentReference_SubstituteMenu extends SubstituteMenuBase
   }
 
 
-  public static class SMP_ReferenceScope_2byk7t_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_2byk7t_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_2byk7t_a() {
       super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b3683c009L, "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference"), MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b3683c009L, 0x11b3683c00aL, "quickFixArgument"));

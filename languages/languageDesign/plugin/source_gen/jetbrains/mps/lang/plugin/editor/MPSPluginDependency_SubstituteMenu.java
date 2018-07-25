@@ -44,7 +44,7 @@ public class MPSPluginDependency_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_3m2jlx_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_3m2jlx_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_3m2jlx_a() {
       super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2d2ad2584076330L, "jetbrains.mps.lang.plugin.structure.MPSPluginDependency"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2d2ad2584076330L, 0x2d2ad2584076331L, "plugin"));

@@ -44,7 +44,7 @@ public class CustomInstructionsContainerReference_SubstituteMenu extends Substit
   }
 
 
-  public static class SMP_ReferenceScope_ygskgc_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_ygskgc_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_ygskgc_a() {
       super(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c1738798L, "jetbrains.mps.lang.dataFlow.analyzers.structure.CustomInstructionsContainerReference"), MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c1738798L, 0x73e1fea9c1738799L, "containter"));

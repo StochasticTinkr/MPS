@@ -44,7 +44,7 @@ public class StyleClassReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_3j1ixm_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_3j1ixm_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_3j1ixm_a() {
       super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a130c0dL, "jetbrains.mps.lang.editor.structure.StyleClassReference"), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a130c0dL, 0x2ef3b3796a130c0eL, "styleClass"));

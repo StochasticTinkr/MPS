@@ -44,7 +44,7 @@ public class AttributedFigureReference_SubstituteMenu extends SubstituteMenuBase
   }
 
 
-  public static class SMP_ReferenceScope_luac2k_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_luac2k_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_luac2k_a() {
       super(MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4b412569a095b4ceL, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference"), MetaAdapterFactory.getReferenceLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4b412569a095b4ceL, 0x4b412569a0e43041L, "figureAttribute"));

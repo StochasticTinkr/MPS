@@ -44,7 +44,7 @@ public class ScopeEntry_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_o6ro1p_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_o6ro1p_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_o6ro1p_a() {
       super(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf67ae2L, "jetbrains.mps.lang.test.structure.ScopeEntry"), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf67ae2L, 0x1de1fbd5fbf99684L, "kind"));

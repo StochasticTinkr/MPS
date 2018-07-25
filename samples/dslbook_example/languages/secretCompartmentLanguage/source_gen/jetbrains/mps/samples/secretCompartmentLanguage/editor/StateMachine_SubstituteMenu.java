@@ -44,7 +44,7 @@ public class StateMachine_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_kdnim9_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_kdnim9_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_kdnim9_a() {
       super(MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bbacae3cL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine"), MetaAdapterFactory.getReferenceLink(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bbacae3cL, 0x116c1078061L, "startState"));

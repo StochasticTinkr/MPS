@@ -44,7 +44,7 @@ public class VariableDeclarationReference_SubstituteMenu extends SubstituteMenuB
   }
 
 
-  public static class SMP_ReferenceScope_uxpf5x_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_uxpf5x_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_uxpf5x_a() {
       super(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137fa9b5cL, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference"), MetaAdapterFactory.getReferenceLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137fa9b5cL, 0x2444dad137fa9b5dL, "var"));

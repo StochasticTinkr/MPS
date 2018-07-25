@@ -44,7 +44,7 @@ public class LetRef_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_xib3ds_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_xib3ds_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_xib3ds_a() {
       super(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x448ba254edc7216cL, "jetbrains.mps.samples.lambdaCalculus.structure.LetRef"), MetaAdapterFactory.getReferenceLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, 0x48db75d5dc497af4L, "variable"));

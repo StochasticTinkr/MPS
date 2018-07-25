@@ -44,7 +44,7 @@ public class OrderReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_fi7th9_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_fi7th9_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_fi7th9_a() {
       super(MetaAdapterFactory.getConcept(0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x22035699bdd79211L, "jetbrains.mps.lang.util.order.structure.OrderReference"), MetaAdapterFactory.getReferenceLink(0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x22035699bdd79211L, 0x22035699bdd79212L, "order"));

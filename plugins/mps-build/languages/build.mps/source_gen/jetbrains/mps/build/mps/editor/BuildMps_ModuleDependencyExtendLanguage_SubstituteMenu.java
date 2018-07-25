@@ -50,7 +50,7 @@ public class BuildMps_ModuleDependencyExtendLanguage_SubstituteMenu extends Subs
   }
 
 
-  public static class SMP_ReferenceScope_pjk97t_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_pjk97t_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_pjk97t_a() {
       super(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c19032eL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage"), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c19032eL, 0x3b60c4a45c190330L, "language"));
@@ -72,7 +72,7 @@ public class BuildMps_ModuleDependencyExtendLanguage_SubstituteMenu extends Subs
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new BuildMps_ModuleDependencyExtendLanguage_SubstituteMenu.SMP_ReferenceScope_pjk97t_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

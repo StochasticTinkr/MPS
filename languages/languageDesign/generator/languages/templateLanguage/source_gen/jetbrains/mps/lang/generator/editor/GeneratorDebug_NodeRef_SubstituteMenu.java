@@ -44,7 +44,7 @@ public class GeneratorDebug_NodeRef_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_qqztgz_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_qqztgz_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_qqztgz_a() {
       super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806d2L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_NodeRef"), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806d2L, 0x35a02f6bfc9806d3L, "node"));

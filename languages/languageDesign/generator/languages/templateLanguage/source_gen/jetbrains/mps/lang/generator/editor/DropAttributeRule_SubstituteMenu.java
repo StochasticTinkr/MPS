@@ -44,7 +44,7 @@ public class DropAttributeRule_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_pc9jmv_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_pc9jmv_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_pc9jmv_a() {
       super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x67b585b44f4d943bL, "jetbrains.mps.lang.generator.structure.DropAttributeRule"), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x67b585b44f4d943bL, 0x67b585b44f4d943eL, "applicableConcept"));

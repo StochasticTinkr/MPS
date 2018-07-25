@@ -43,7 +43,7 @@ public class TestSubstituteExceptionReferenceDescriptionTextChild_SubstituteMenu
   }
 
 
-  public static class SMP_ReferenceScope_utuqn2_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_utuqn2_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_utuqn2_a() {
       super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x63457d5cb582c0d2L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteExceptionReferenceDescriptionTextChild"), MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x63457d5cb582c0d2L, 0x63457d5cb582c0d3L, "reference"));
@@ -65,7 +65,7 @@ public class TestSubstituteExceptionReferenceDescriptionTextChild_SubstituteMenu
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new TestSubstituteExceptionReferenceDescriptionTextChild_SubstituteMenu.SMP_ReferenceScope_utuqn2_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

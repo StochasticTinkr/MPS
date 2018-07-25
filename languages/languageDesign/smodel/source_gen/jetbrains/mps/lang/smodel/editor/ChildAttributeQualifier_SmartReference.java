@@ -43,7 +43,7 @@ public class ChildAttributeQualifier_SmartReference extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_82wwvv_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_82wwvv_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_82wwvv_a() {
       super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x9d98713f24a0e5bL, "jetbrains.mps.lang.smodel.structure.ChildAttributeQualifier"), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x9d98713f24a0e5bL, 0x9d98713f24a0e5dL, "attributeConcept"));
@@ -65,7 +65,7 @@ public class ChildAttributeQualifier_SmartReference extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new ChildAttributeQualifier_SmartReference.SMP_ReferenceScope_82wwvv_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

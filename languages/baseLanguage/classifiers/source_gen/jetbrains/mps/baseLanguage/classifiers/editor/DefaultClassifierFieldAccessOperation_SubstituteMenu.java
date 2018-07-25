@@ -44,7 +44,7 @@ public class DefaultClassifierFieldAccessOperation_SubstituteMenu extends Substi
   }
 
 
-  public static class SMP_ReferenceScope_6scv6e_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_6scv6e_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_6scv6e_a() {
       super(MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11aa7fc7570L, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"), MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, 0x118bcb657ecL, "member"));

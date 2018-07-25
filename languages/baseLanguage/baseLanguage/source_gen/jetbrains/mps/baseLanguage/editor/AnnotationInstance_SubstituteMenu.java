@@ -44,7 +44,7 @@ public class AnnotationInstance_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_5rvysq_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_5rvysq_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_5rvysq_a() {
       super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"));

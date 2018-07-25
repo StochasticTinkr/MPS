@@ -44,7 +44,7 @@ public class LocalPropertyReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_sy3fk6_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_sy3fk6_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_sy3fk6_a() {
       super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x515d7a8d927e9fb3L, "jetbrains.mps.baseLanguage.structure.LocalPropertyReference"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x515d7a8d927e9fb3L, 0x515d7a8d927e9fb4L, "property"));

@@ -44,7 +44,7 @@ public class PredefinedSymbolClassSymbolClassPart_SubstituteMenu extends Substit
   }
 
 
-  public static class SMP_ReferenceScope_kon73z_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_kon73z_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_kon73z_a() {
       super(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117928d9f2L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart"), MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117928d9f2L, 0x111792942ceL, "declaration"));

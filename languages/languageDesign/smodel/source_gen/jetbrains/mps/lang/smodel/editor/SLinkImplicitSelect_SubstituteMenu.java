@@ -44,7 +44,7 @@ public class SLinkImplicitSelect_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_ohf9xh_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_ohf9xh_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_ohf9xh_a() {
       super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x316f884c72a4157dL, "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect"), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x316f884c72a4157dL, 0x316f884c72a41783L, "link"));

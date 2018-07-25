@@ -44,7 +44,7 @@ public class PropertyMessageTarget_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_sfxliy_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_sfxliy_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_sfxliy_a() {
       super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a6a000L, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget"), MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a6a000L, 0x11db4a6fbeeL, "propertyDeclaration"));

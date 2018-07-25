@@ -44,7 +44,7 @@ public class PropertyPatternVariableReference_SubstituteMenu extends SubstituteM
   }
 
 
-  public static class SMP_ReferenceScope_wbk7fm_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_wbk7fm_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_wbk7fm_a() {
       super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d97ff9L, "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference"), MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d97ff9L, 0x11192d9d83cL, "patternVarDecl"));

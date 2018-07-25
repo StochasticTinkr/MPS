@@ -44,7 +44,7 @@ public class DeclaredCheckpointSpec_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_dbxorx_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_dbxorx_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_dbxorx_a() {
       super(MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7cb2fdL, "jetbrains.mps.lang.generator.plan.structure.DeclaredCheckpointSpec"), MetaAdapterFactory.getReferenceLink(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7cb2fdL, 0x340cd07aed7cb300L, "cpDecl"));

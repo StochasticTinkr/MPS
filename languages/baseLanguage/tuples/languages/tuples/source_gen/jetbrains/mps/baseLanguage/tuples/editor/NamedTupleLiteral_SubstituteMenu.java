@@ -50,7 +50,7 @@ public class NamedTupleLiteral_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_k8v7cc_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_k8v7cc_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_k8v7cc_a() {
       super(MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b88731cL, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"), MetaAdapterFactory.getReferenceLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b88731cL, 0x1209b88b156L, "tupleDeclaration"));
@@ -72,7 +72,7 @@ public class NamedTupleLiteral_SubstituteMenu extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new NamedTupleLiteral_SubstituteMenu.SMP_ReferenceScope_k8v7cc_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

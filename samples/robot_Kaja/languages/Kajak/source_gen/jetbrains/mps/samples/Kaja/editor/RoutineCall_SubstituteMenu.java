@@ -44,7 +44,7 @@ public class RoutineCall_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_4wzuuz_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_4wzuuz_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_4wzuuz_a() {
       super(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed6f92L, "jetbrains.mps.samples.Kaja.structure.RoutineCall"), MetaAdapterFactory.getReferenceLink(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed6f92L, 0x2de971c785ede3ccL, "definition"));

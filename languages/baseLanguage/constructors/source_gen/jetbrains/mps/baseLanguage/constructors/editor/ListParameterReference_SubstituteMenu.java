@@ -44,7 +44,7 @@ public class ListParameterReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_j4n9yk_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_j4n9yk_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_j4n9yk_a() {
       super(MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x41c47a50737ea2a7L, "jetbrains.mps.baseLanguage.constructors.structure.ListParameterReference"), MetaAdapterFactory.getReferenceLink(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b745ce64L, 0x4aa85872b745ce65L, "parameter"));

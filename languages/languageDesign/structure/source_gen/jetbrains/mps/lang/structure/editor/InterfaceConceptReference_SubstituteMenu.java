@@ -44,7 +44,7 @@ public class InterfaceConceptReference_SubstituteMenu extends SubstituteMenuBase
   }
 
 
-  public static class SMP_ReferenceScope_s90tbi_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_s90tbi_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_s90tbi_a() {
       super(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, "jetbrains.mps.lang.structure.structure.InterfaceConceptReference"), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc"));

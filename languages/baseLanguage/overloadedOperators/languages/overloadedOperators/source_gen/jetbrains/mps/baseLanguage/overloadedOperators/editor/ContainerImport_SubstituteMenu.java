@@ -44,7 +44,7 @@ public class ContainerImport_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_fhc3h5_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_fhc3h5_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_fhc3h5_a() {
       super(MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x66302c3c8df72c49L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.ContainerImport"), MetaAdapterFactory.getReferenceLink(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x66302c3c8df72c49L, 0x66302c3c8df72d45L, "container"));

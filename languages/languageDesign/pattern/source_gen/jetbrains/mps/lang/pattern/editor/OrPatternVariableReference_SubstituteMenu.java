@@ -44,7 +44,7 @@ public class OrPatternVariableReference_SubstituteMenu extends SubstituteMenuBas
   }
 
 
-  public static class SMP_ReferenceScope_tmop8b_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_tmop8b_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_tmop8b_a() {
       super(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3b2f5e7b070d317cL, "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference"), MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3b2f5e7b070d317cL, 0x3b2f5e7b070d317dL, "declaration"));

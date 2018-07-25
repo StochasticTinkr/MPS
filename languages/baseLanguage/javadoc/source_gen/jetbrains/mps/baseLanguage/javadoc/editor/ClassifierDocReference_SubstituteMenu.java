@@ -44,7 +44,7 @@ public class ClassifierDocReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_qz15z6_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_qz15z6_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_qz15z6_a() {
       super(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2e4L, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference"), MetaAdapterFactory.getReferenceLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2e4L, 0x1ec532ec2531d2e5L, "classifier"));

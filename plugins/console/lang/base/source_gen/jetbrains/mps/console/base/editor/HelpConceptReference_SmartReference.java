@@ -45,7 +45,7 @@ public class HelpConceptReference_SmartReference extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_gtqjni_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_gtqjni_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_gtqjni_a() {
       super(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L, "jetbrains.mps.console.base.structure.HelpConceptReference"), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L, 0x60279080c2f3f8d6L, "command"));
@@ -67,7 +67,7 @@ public class HelpConceptReference_SmartReference extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new HelpConceptReference_SmartReference.SMP_ReferenceScope_gtqjni_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

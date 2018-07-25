@@ -44,7 +44,7 @@ public class RunConfigurationCreator_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_c15muj_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_c15muj_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_c15muj_a() {
       super(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x328e81d9f20cd1deL, "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator"), MetaAdapterFactory.getReferenceLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x328e81d9f20cd1deL, 0x328e81d9f20cd1dfL, "configuration"));

@@ -44,7 +44,7 @@ public class LinkPatternVariableReference_SubstituteMenu extends SubstituteMenuB
   }
 
 
-  public static class SMP_ReferenceScope_kemif3_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_kemif3_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_kemif3_a() {
       super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d92ad3L, "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference"), MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d92ad3L, 0x11192da25efL, "patternVarDecl"));

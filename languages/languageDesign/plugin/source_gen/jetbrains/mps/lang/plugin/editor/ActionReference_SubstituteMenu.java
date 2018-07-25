@@ -44,7 +44,7 @@ public class ActionReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_txsxap_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_txsxap_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_txsxap_a() {
       super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x14fc9beabb2214dfL, "jetbrains.mps.lang.plugin.structure.ActionReference"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x14fc9beabb2214dfL, 0x14fc9beabb2214e0L, "actionDeclaration"));

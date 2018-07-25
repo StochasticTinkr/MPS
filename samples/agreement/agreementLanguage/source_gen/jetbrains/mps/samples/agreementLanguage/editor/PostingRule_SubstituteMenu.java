@@ -44,7 +44,7 @@ public class PostingRule_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_79mqlp_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_79mqlp_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_79mqlp_a() {
       super(MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc23b0daL, "jetbrains.mps.samples.agreementLanguage.structure.PostingRule"), MetaAdapterFactory.getReferenceLink(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc23b0daL, 0x102dc289db8L, "account"));

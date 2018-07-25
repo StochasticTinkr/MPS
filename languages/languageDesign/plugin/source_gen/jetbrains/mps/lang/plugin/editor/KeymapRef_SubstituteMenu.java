@@ -44,7 +44,7 @@ public class KeymapRef_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_evuyo1_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_evuyo1_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_evuyo1_a() {
       super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x498be7ea73fa87eL, "jetbrains.mps.lang.plugin.structure.KeymapRef"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x498be7ea73fa87eL, 0x498be7ea73fa87fL, "keymap"));

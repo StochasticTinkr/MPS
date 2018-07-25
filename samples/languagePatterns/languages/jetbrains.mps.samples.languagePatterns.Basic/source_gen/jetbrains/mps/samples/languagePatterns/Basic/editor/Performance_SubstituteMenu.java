@@ -44,7 +44,7 @@ public class Performance_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_lxph9g_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_lxph9g_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_lxph9g_a() {
       super(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895ce1L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance"), MetaAdapterFactory.getReferenceLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895ce1L, 0x34c8853ae7895ce2L, "singer"));

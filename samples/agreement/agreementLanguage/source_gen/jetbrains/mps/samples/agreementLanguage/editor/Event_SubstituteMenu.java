@@ -44,7 +44,7 @@ public class Event_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_lx4afj_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_lx4afj_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_lx4afj_a() {
       super(MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8f094L, "jetbrains.mps.samples.agreementLanguage.structure.Event"), MetaAdapterFactory.getReferenceLink(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8f094L, 0x102dc111024L, "type"));

@@ -44,7 +44,7 @@ public class BeforeTaskCall_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_tv94kr_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_tv94kr_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_tv94kr_a() {
       super(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781f1fd8L, "jetbrains.mps.execution.configurations.structure.BeforeTaskCall"), MetaAdapterFactory.getReferenceLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781f1fd8L, 0x5ae6ebde781f1fd9L, "beforeTask"));

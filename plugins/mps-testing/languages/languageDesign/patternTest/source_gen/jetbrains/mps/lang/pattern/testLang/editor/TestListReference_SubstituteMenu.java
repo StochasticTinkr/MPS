@@ -44,7 +44,7 @@ public class TestListReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_5gn4im_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_5gn4im_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_5gn4im_a() {
       super(MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d0614bL, "jetbrains.mps.lang.pattern.testLang.structure.TestListReference"), MetaAdapterFactory.getReferenceLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d0614bL, 0x15b423b3f8d06220L, "listPattern"));

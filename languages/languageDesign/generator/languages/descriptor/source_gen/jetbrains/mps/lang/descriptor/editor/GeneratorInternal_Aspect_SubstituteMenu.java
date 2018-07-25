@@ -44,7 +44,7 @@ public class GeneratorInternal_Aspect_SubstituteMenu extends SubstituteMenuBase 
   }
 
 
-  public static class SMP_ReferenceScope_xwhwag_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_xwhwag_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_xwhwag_a() {
       super(MetaAdapterFactory.getConcept(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x46c8be857954ff41L, "jetbrains.mps.lang.descriptor.structure.GeneratorInternal_Aspect"), MetaAdapterFactory.getReferenceLink(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x46c8be857954ff41L, 0x46c8be857954ff66L, "interfaceClass"));

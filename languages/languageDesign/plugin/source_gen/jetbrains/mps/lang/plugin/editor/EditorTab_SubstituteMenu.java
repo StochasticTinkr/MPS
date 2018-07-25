@@ -44,7 +44,7 @@ public class EditorTab_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_6k3xe0_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_6k3xe0_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_6k3xe0_a() {
       super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, "jetbrains.mps.lang.plugin.structure.EditorTab"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d30L, "baseNodeConcept"));

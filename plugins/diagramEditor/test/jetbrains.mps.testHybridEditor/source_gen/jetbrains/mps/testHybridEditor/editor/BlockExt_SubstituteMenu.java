@@ -44,7 +44,7 @@ public class BlockExt_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_u1n2gi_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_u1n2gi_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_u1n2gi_a() {
       super(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x471a0145ea2e78cL, "jetbrains.mps.testHybridEditor.structure.BlockExt"), MetaAdapterFactory.getReferenceLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x471a0145ea2e78cL, 0x471a0145ea2f5ffL, "mb"));

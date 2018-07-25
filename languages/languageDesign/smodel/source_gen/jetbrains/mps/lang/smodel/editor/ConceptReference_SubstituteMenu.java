@@ -44,7 +44,7 @@ public class ConceptReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_f9hdvu_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_f9hdvu_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_f9hdvu_a() {
       super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10cd05c601dL, "jetbrains.mps.lang.smodel.structure.ConceptReference"), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10cd05c601dL, 0x10cd05d18efL, "concept"));

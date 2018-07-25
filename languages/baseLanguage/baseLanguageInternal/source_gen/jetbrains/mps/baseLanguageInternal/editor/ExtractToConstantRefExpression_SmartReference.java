@@ -43,7 +43,7 @@ public class ExtractToConstantRefExpression_SmartReference extends SubstituteMen
   }
 
 
-  public static class SMP_ReferenceScope_ultiz_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_ultiz_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_ultiz_a() {
       super(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x162724dabcdc671L, "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression"), MetaAdapterFactory.getReferenceLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x162724dabcdc671L, 0x162724dabcdc672L, "original"));
@@ -65,7 +65,7 @@ public class ExtractToConstantRefExpression_SmartReference extends SubstituteMen
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new ExtractToConstantRefExpression_SmartReference.SMP_ReferenceScope_ultiz_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

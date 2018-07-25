@@ -44,7 +44,7 @@ public class BuildMps_IdeaPluginDependency_SubstituteMenu extends SubstituteMenu
   }
 
 
-  public static class SMP_ReferenceScope_45m643_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_45m643_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_45m643_a() {
       super(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbd3L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency"), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbd3L, 0x5b7be37b4de9bbfaL, "target"));

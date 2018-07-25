@@ -44,7 +44,7 @@ public class ActionParameterReferenceOperation_SubstituteMenu extends Substitute
   }
 
 
-  public static class SMP_ReferenceScope_oubwf8_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_oubwf8_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_oubwf8_a() {
       super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118d0b7fab3L, "jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation"), MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, 0x118bcb657ecL, "member"));

@@ -44,7 +44,7 @@ public class RuleReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_px8ruc_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_px8ruc_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_px8ruc_a() {
       super(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0xa72ff3b2ca7c5b0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.RuleReference"), MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0xa72ff3b2ca7c5b0L, 0xa72ff3b2ca7c5b1L, "rule"));

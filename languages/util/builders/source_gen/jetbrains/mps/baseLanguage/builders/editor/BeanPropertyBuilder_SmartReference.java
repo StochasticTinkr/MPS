@@ -45,7 +45,7 @@ public class BeanPropertyBuilder_SmartReference extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_i1rqlx_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_i1rqlx_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_i1rqlx_a() {
       super(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x252efd34f8a58ec7L, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x252efd34f8a58ec7L, 0x252efd34f8a58ec8L, "setter"));
@@ -67,7 +67,7 @@ public class BeanPropertyBuilder_SmartReference extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new BeanPropertyBuilder_SmartReference.SMP_ReferenceScope_i1rqlx_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;
