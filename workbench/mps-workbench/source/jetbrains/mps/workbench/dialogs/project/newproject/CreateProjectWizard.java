@@ -471,7 +471,7 @@ public class CreateProjectWizard extends DialogWrapper {
   @Nullable
   @Override
   protected String getHelpId() {
-    return "MPS_New_Project_Page_1";
+    return "create_new_project_dialog";
   }
 
   @Nullable
