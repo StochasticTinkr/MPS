@@ -55,7 +55,7 @@
       <root url="jar://$PROJECT_DIR$/lib/jackson-databind-2.9.5.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jayatana-1.2.4.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jbcrypt-1.0.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/jediterm-pty-2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jediterm-pty-2.10.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jing.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jsch-0.1.54.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jshell-frontend.jar!/" />
