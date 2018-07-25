@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration__BehaviorDescriptor" file="BaseIntentionDeclaration__BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -299,15 +297,10 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.intentions.behavior.ParameterizedIntentionDeclaration__BehaviorDescriptor" file="ParameterizedIntentionDeclaration__BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
