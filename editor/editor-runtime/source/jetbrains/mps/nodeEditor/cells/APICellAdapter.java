@@ -87,7 +87,7 @@ public class APICellAdapter {
   }
 
   static boolean substituteIfPossible(EditorCell cell, boolean canActivatePopup, final String pattern, List<SubstituteAction> matchingActions) {
-    if (matchingActions.size() == 0 && canActivatePopup) {
+    if (matchingActions.size() == 0) {
       return false;
     }
     if (matchingActions.size() != 1) {
