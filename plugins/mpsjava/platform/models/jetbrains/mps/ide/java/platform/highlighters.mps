@@ -9,6 +9,7 @@
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="g51k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cells(MPS.Editor/)" />
@@ -282,6 +283,18 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
+    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
@@ -325,6 +338,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -685,11 +701,11 @@
         </node>
       </node>
       <node concept="37vLTG" id="222ObIpyy8S" role="3clF46">
-        <property role="TrG5h" value="b" />
+        <property role="TrG5h" value="incremental" />
         <node concept="10P_77" id="222ObIpyy8T" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="222ObIpyy8U" role="3clF46">
-        <property role="TrG5h" value="b1" />
+        <property role="TrG5h" value="applyQuickFixes" />
         <node concept="10P_77" id="222ObIpyy8V" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="222ObIpyy8W" role="3clF46">
@@ -871,7 +887,7 @@
               <node concept="3clFbS" id="222ObIpy_3o" role="SfCbr">
                 <node concept="3clFbF" id="222ObIpy_3p" role="3cqZAp">
                   <node concept="1rXfSq" id="222ObIpy_3q" role="3clFbG">
-                    <ref role="37wK5l" node="7k6J8c3timr" resolve="collectOverridenMethods" />
+                    <ref role="37wK5l" node="7k6J8c3timr" resolve="collectOverriddenMethods" />
                     <node concept="2GrUjf" id="222ObIpy_3r" role="37wK5m">
                       <ref role="2Gs0qQ" node="222ObIpy_3I" resolve="containedClassifier" />
                     </node>
@@ -1299,8 +1315,9 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="712O30tjXI3" role="jymVt" />
     <node concept="3clFb_" id="7k6J8c3timr" role="jymVt">
-      <property role="TrG5h" value="collectOverridenMethods" />
+      <property role="TrG5h" value="collectOverriddenMethods" />
       <node concept="37vLTG" id="7k6J8c3tims" role="3clF46">
         <property role="TrG5h" value="container" />
         <node concept="3Tqbb2" id="7k6J8c3timt" role="1tU5fm">
@@ -1912,7 +1929,7 @@
                 <node concept="TSZUe" id="2rUHgdX1RHR" role="2OqNvi">
                   <node concept="2ShNRf" id="2rUHgdX1RHS" role="25WWJ7">
                     <node concept="1pGfFk" id="2rUHgdX1RHT" role="2ShVmc">
-                      <ref role="37wK5l" node="7k6J8c3tiyg" resolve="OverridenMethodEditorMessage" />
+                      <ref role="37wK5l" node="7k6J8c3tiyg" resolve="OverriddenMethodEditorMessage" />
                       <node concept="2GrUjf" id="2rUHgdX1RHU" role="37wK5m">
                         <ref role="2Gs0qQ" node="7k6J8c3tioY" resolve="overridenMethod" />
                       </node>
@@ -1956,6 +1973,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="712O30tjXI4" role="jymVt" />
     <node concept="3clFb_" id="7k6J8c3tiqC" role="jymVt">
       <property role="TrG5h" value="createOverridenToOverridingMethodsMap" />
       <node concept="3rvAFt" id="7k6J8c3tiqL" role="3clF45">
@@ -2917,6 +2935,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="712O30tjXI5" role="jymVt" />
     <node concept="3clFb_" id="7k6J8c3tiwC" role="jymVt">
       <property role="TrG5h" value="getPresentation" />
       <node concept="17QB3L" id="7k6J8c3tiwD" role="3clF45" />
@@ -2994,6 +3013,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="712O30tjXI6" role="jymVt" />
     <node concept="3clFb_" id="7k6J8c3tix6" role="jymVt">
       <property role="TrG5h" value="getClassifierPresentation" />
       <node concept="17QB3L" id="7k6J8c3tix7" role="3clF45" />
@@ -3017,6 +3037,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="712O30tjXI7" role="jymVt" />
     <node concept="3clFb_" id="7k6J8c3tixg" role="jymVt">
       <property role="TrG5h" value="getEnumConstantPresentation" />
       <node concept="3clFbS" id="7k6J8c3tixj" role="3clF47">
@@ -3040,6 +3061,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="712O30tjXI8" role="jymVt" />
     <node concept="2YIFZL" id="7k6J8c3tixq" role="jymVt">
       <property role="TrG5h" value="isParameterType" />
       <property role="DiZV1" value="false" />
@@ -3111,9 +3133,16 @@
       <node concept="3Tm6S6" id="7k6J8c3tixS" role="1B3o_S" />
     </node>
     <node concept="3Tm1VV" id="7k6J8c3tiix" role="1B3o_S" />
+    <node concept="3UR2Jj" id="1dN09JzTLMa" role="lGtFl">
+      <node concept="TZ5HA" id="1dN09JzTLMb" role="TZ5H$">
+        <node concept="1dT_AC" id="1dN09JzTLMc" role="1dT_Ay">
+          <property role="1dT_AB" value="Checks for overridden and implemented methods in order to highlight them" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="7k6J8c3tixT">
-    <property role="TrG5h" value="OverridenMethodEditorMessage" />
+    <property role="TrG5h" value="OverriddenMethodEditorMessage" />
     <node concept="Wx3nA" id="7k6J8c3tixU" role="jymVt">
       <property role="TrG5h" value="TYPE" />
       <property role="3TUv4t" value="true" />
@@ -3130,11 +3159,14 @@
         <ref role="3uigEE" to="exr9:~EditorMessageIconRenderer$IconRendererType" resolve="EditorMessageIconRenderer.IconRendererType" />
       </node>
     </node>
+    <node concept="2tJIrI" id="712O30tk36d" role="jymVt" />
     <node concept="312cEg" id="7k6J8c3tiyc" role="jymVt">
       <property role="TrG5h" value="isOverriden" />
+      <property role="3TUv4t" value="true" />
       <node concept="10P_77" id="7k6J8c3tiye" role="1tU5fm" />
       <node concept="3Tm6S6" id="7k6J8c3tiyd" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="712O30tk35d" role="jymVt" />
     <node concept="3clFbW" id="7k6J8c3tiyg" role="jymVt">
       <node concept="3Tm1VV" id="7k6J8c3tiyq" role="1B3o_S" />
       <node concept="3clFbS" id="7k6J8c3tiyr" role="3clF47">
@@ -3330,6 +3362,7 @@
         <node concept="10P_77" id="7k6J8c3tizy" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="2Dglt4$hAxa" role="jymVt" />
     <node concept="3clFb_" id="7k6J8c3tizL" role="jymVt">
       <property role="TrG5h" value="getIcon" />
       <node concept="2AHcQZ" id="3tYsUK_SeXM" role="2AJF6D">
@@ -3358,6 +3391,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="2Dglt4$hAxb" role="jymVt" />
     <node concept="3clFb_" id="7k6J8c3tizY" role="jymVt">
       <property role="TrG5h" value="getType" />
       <node concept="2AHcQZ" id="3tYsUK_SeXL" role="2AJF6D">
@@ -3375,6 +3409,7 @@
       </node>
       <node concept="3Tm1VV" id="7k6J8c3tizZ" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="2Dglt4$hAxc" role="jymVt" />
     <node concept="3clFb_" id="7k6J8c3ti$4" role="jymVt">
       <property role="TrG5h" value="getClickAction" />
       <node concept="2AHcQZ" id="3tYsUK_SeXK" role="2AJF6D">

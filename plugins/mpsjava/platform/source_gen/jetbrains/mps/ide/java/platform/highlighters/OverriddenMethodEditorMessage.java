@@ -10,10 +10,12 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 
-public class OverridenMethodEditorMessage extends AbstractOverrideEditorMessage {
+public class OverriddenMethodEditorMessage extends AbstractOverrideEditorMessage {
   private static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(2);
-  private boolean isOverriden;
-  public OverridenMethodEditorMessage(SNode node, EditorMessageOwner owner, String tooltip, boolean overriden) {
+
+  private final boolean isOverriden;
+
+  public OverriddenMethodEditorMessage(SNode node, EditorMessageOwner owner, String tooltip, boolean overriden) {
     super(node, owner, tooltip);
     this.isOverriden = overriden;
   }

@@ -126,7 +126,7 @@ public class GoToOverridenClassMethod_Action extends BaseAction {
       }
     }).toListSequence();
     RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent);
-    String title = "Choose super method of" + methodName[0] + "()";
+    String title = "Choose super method of " + methodName[0] + "()";
     GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, methods, new DefaultMethodRenderer(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()), relativePoint);
   }
   private SNode getInstanceMethodDeclaration(final Map<String, Object> _params) {

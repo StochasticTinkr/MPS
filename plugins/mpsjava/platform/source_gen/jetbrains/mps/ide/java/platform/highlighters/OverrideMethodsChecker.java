@@ -45,6 +45,9 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
+/**
+ * Checks for overridden and implemented methods in order to highlight them
+ */
 public class OverrideMethodsChecker extends BaseEventProcessingEditorChecker {
   private static final int MAX_MESSAGE_NUMBER = 5;
   private static final String LF = "\n";
@@ -58,7 +61,7 @@ public class OverrideMethodsChecker extends BaseEventProcessingEditorChecker {
 
   @NotNull
   @Override
-  public UpdateResult update(EditorComponent component, boolean b, boolean b1, Cancellable cancellable) {
+  public UpdateResult update(EditorComponent component, boolean incremental, boolean applyQuickFixes, Cancellable cancellable) {
     SNode rootNode = component.getEditedNode();
 
     this.myIndexWasNotReady = !(ClassifierSuccessors.getInstance().isIndexReady(myProject));
@@ -80,7 +83,7 @@ public class OverrideMethodsChecker extends BaseEventProcessingEditorChecker {
     for (SNode containedClassifier : Sequence.fromIterable(classifiers)) {
       // each classifier here is instance of ClassConcept or Interface 
       try {
-        collectOverridenMethods(containedClassifier, result);
+        collectOverriddenMethods(containedClassifier, result);
       } catch (IndexNotReadyException indexNotReady) {
         // Catching IndexNotReadyException for now. In general suggestion of IDEA developers was to start using 
         // DaemonCodeAnalyzer for background highlighting processes execution 
@@ -119,7 +122,8 @@ public class OverrideMethodsChecker extends BaseEventProcessingEditorChecker {
       SetSequence.fromSet(messages).addElement(new OverridingMethodEditorMessage(overridingMethod, this, tooltip.toString(), overrides));
     }
   }
-  private void collectOverridenMethods(SNode container, Set<EditorMessage> messages) {
+
+  private void collectOverriddenMethods(SNode container, Set<EditorMessage> messages) {
     List<SNode> derivedClassifiers = ClassifierSuccessors.getInstance().getDerivedClassifiers(container, GlobalScope.getInstance());
     if (ListSequence.fromList(derivedClassifiers).isEmpty()) {
       return;
@@ -174,9 +178,10 @@ public class OverrideMethodsChecker extends BaseEventProcessingEditorChecker {
           break;
         }
       }
-      SetSequence.fromSet(messages).addElement(new OverridenMethodEditorMessage(overridenMethod, this, tooltip.toString(), overriden));
+      SetSequence.fromSet(messages).addElement(new OverriddenMethodEditorMessage(overridenMethod, this, tooltip.toString(), overriden));
     }
   }
+
   private Map<SNode, Set<SNode>> createOverridenToOverridingMethodsMap(Map<String, Set<SNode>> nameToMethodsMap, Iterable<SNode> derivedClassifiers) {
     Map<SNode, Set<SNode>> result = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
     for (SNode derivedClassifier : Sequence.fromIterable(derivedClassifiers)) {
@@ -276,6 +281,7 @@ public class OverrideMethodsChecker extends BaseEventProcessingEditorChecker {
       }
     });
   }
+
   private String getPresentation(SNode node) {
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
       return getClassifierPresentation(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
@@ -285,12 +291,15 @@ public class OverrideMethodsChecker extends BaseEventProcessingEditorChecker {
     }
     return ((String) BHReflection.invoke0(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
   }
+
   private String getClassifierPresentation(SNode classifier) {
     return ((String) (String) BHReflection.invoke0(classifier, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"), SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
   }
+
   private String getEnumConstantPresentation(SNode enumConstantDeclaration) {
     return ((String) (String) BHReflection.invoke0(enumConstantDeclaration, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"), SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
   }
+
   private static boolean isParameterType(SNode type) {
     SNode parent = SNodeOperations.getParent(type);
     if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {

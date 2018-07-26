@@ -69,9 +69,11 @@ public class OverridingMethodsFinder {
   public Set<SNode> getOverridingMethods() {
     return MapSequence.fromMap(this.myOverridingToOverridenMethodsMap).keySet();
   }
-  public Set<Tuples._2<SNode, SNode>> getOverridenMethods(SNode overridingMethod) {
+
+  public Set<Tuples._2<SNode, SNode>> getOverriddenMethods(SNode overridingMethod) {
     return MapSequence.fromMap(this.myOverridingToOverridenMethodsMap).get(overridingMethod);
   }
+
   private void collectOverridingMethodsInClassifierHierarchy(final SNode classifier, final Map<String, Set<SNode>> nameToMethodsMap, final Set<SNode> visitedClassifiers) {
     if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
       SNode clazz = SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
@@ -111,6 +113,7 @@ public class OverridingMethodsFinder {
       });
     }
   }
+
   private void collectOverridingMethods(final SNode classifier, final SNode superClassifier, Map<String, Set<SNode>> nameToMethodsMap, Set<SNode> visitedClassifiers) {
     Map<String, Set<SNode>> methodNameToMethodMapCopy = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
     for (String methodName : MapSequence.fromMap(nameToMethodsMap).keySet()) {
@@ -157,18 +160,22 @@ public class OverridingMethodsFinder {
     }
     return result;
   }
+
   public static boolean canOverride(SNode method) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) && isNotEmptyString(SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
+
   public static boolean canBeOverriden(SNode method) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) && isNotEmptyString(SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
+
   public static <K, V> Set<V> safeGet(Map<K, Set<V>> map, K key) {
     if (!(MapSequence.fromMap(map).containsKey(key))) {
       MapSequence.fromMap(map).put(key, SetSequence.fromSet(new LinkedHashSet<V>()));
     }
     return MapSequence.fromMap(map).get(key);
   }
+
   private static boolean addIfNotContains(Set<SNode> classifierSet, SNode classifier) {
     if (!(SetSequence.fromSet(classifierSet).contains(classifier))) {
       SetSequence.fromSet(classifierSet).addElement(classifier);

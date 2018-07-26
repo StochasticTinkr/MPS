@@ -15797,7 +15797,7 @@
                   </node>
                 </node>
                 <node concept="Xl_RD" id="1pHoCUazxes" role="3uHU7B">
-                  <property role="Xl_RC" value="Choose super method of" />
+                  <property role="Xl_RC" value="Choose super method of " />
                 </node>
               </node>
             </node>
