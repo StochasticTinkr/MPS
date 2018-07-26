@@ -26,7 +26,7 @@ public class check_ClassifierOverridingFinalMethods_NonTypesystemRule extends Ab
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     OverridingMethodsFinder finder = new OverridingMethodsFinder(classifier);
     for (SNode overridingMethod : SetSequence.fromSet(finder.getOverridingMethods())) {
-      Set<Tuples._2<SNode, SNode>> overridenMethods = finder.getOverridenMethods(overridingMethod);
+      Set<Tuples._2<SNode, SNode>> overridenMethods = finder.getOverriddenMethods(overridingMethod);
       for (Iterator<Tuples._2<SNode, SNode>> it = SetSequence.fromSet(overridenMethods).iterator(); it.hasNext();) {
         Tuples._2<SNode, SNode> next = it.next();
         SNode overridenMethod = next._0();

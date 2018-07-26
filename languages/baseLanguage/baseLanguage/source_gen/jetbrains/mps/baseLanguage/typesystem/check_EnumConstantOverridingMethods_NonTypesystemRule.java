@@ -32,7 +32,7 @@ public class check_EnumConstantOverridingMethods_NonTypesystemRule extends Abstr
     }
     OverridingMethodsFinder finder = new OverridingMethodsFinder(SNodeOperations.cast(SNodeOperations.getParent(enumConstant), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), enumConstant);
     for (SNode overridingMethod : SetSequence.fromSet(finder.getOverridingMethods())) {
-      Set<Tuples._2<SNode, SNode>> overridenMethods = finder.getOverridenMethods(overridingMethod);
+      Set<Tuples._2<SNode, SNode>> overridenMethods = finder.getOverriddenMethods(overridingMethod);
       for (Iterator<Tuples._2<SNode, SNode>> it = SetSequence.fromSet(overridenMethods).iterator(); it.hasNext();) {
         SNode overridenMethod = it.next()._0();
         SNode returnType = SLinkOperations.getTarget(overridenMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"));

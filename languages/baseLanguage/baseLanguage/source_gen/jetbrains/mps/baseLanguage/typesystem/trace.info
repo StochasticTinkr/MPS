@@ -12240,7 +12240,7 @@
     </file>
     <file name="check_ClassifierOverridingFinalMethods_NonTypesystemRule.java">
       <node id="1596333951698899857" at="26,123,27,77" concept="12" />
-      <node id="1596333951698899869" at="28,87,29,99" concept="12" />
+      <node id="1596333951698899869" at="28,87,29,100" concept="12" />
       <node id="543866787100753890" at="30,116,31,49" concept="12" />
       <node id="1596333951698899881" at="31,49,32,42" concept="12" />
       <node id="1596333951698899891" at="34,11,35,64" concept="12" />
@@ -12261,7 +12261,7 @@
       <node id="543866787100759840" at="41,539,45,11" concept="1" />
       <node id="1596333951698899889" at="32,42,39,9" concept="10" />
       <node id="543866787100759838" at="40,46,47,9" concept="10" />
-      <node id="1596333951698899879" at="29,99,48,7" concept="8" />
+      <node id="1596333951698899879" at="29,100,48,7" concept="8" />
       <node id="1596333951698899863" at="27,77,49,5" concept="9" />
       <node id="1596333951698899849" at="26,0,51,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1596333951698899849" at="24,69,24,69" />
@@ -12289,7 +12289,7 @@
         <var name="overridenClassifier" id="543866787100759009" />
         <var name="overridenMethod" id="1596333951698899882" />
       </scope>
-      <scope id="1596333951698899879" at="29,99,48,7">
+      <scope id="1596333951698899879" at="29,100,48,7">
         <var name="it" id="1596333951698899903" />
       </scope>
       <scope id="1596333951698899868" at="28,87,48,7">
@@ -14822,7 +14822,7 @@
     </file>
     <file name="check_ClassifierOverridingMethods_NonTypesystemRule.java">
       <node id="2792291462223192831" at="29,123,30,77" concept="12" />
-      <node id="2792291462223192852" at="31,87,32,99" concept="12" />
+      <node id="2792291462223192852" at="31,87,32,100" concept="12" />
       <node id="2792291462223206072" at="33,116,34,47" concept="12" />
       <node id="3305065273710881318" at="34,47,35,195" concept="12" />
       <node id="3305065273710881335" at="35,195,36,230" concept="12" />
@@ -14853,7 +14853,7 @@
       <node id="6207253590661758440" at="46,14,52,9" concept="1" />
       <node id="2792291462223192919" at="53,0,60,9" concept="10" />
       <node id="6207253590661747499" at="38,33,52,9" concept="10" />
-      <node id="2792291462223192885" at="32,99,62,7" concept="8" />
+      <node id="2792291462223192885" at="32,100,62,7" concept="8" />
       <node id="2792291462223192837" at="30,77,63,5" concept="9" />
       <node id="2792291462223192819" at="29,0,65,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="2792291462223192819" at="27,64,27,64" />
@@ -14888,7 +14888,7 @@
         <var name="resolvedReturnType" id="3305065273710882391" />
         <var name="returnType" id="3305065273710881319" />
       </scope>
-      <scope id="2792291462223192885" at="32,99,62,7">
+      <scope id="2792291462223192885" at="32,100,62,7">
         <var name="it" id="2792291462223192941" />
       </scope>
       <scope id="2792291462223192842" at="31,87,62,7">
@@ -27260,7 +27260,7 @@
     <file name="check_EnumConstantOverridingMethods_NonTypesystemRule.java">
       <node id="8960718351573044998" at="30,274,31,13" concept="13" />
       <node id="8960718351573011945" at="32,5,33,280" concept="12" />
-      <node id="8960718351573011957" at="34,87,35,99" concept="12" />
+      <node id="8960718351573011957" at="34,87,35,100" concept="12" />
       <node id="8960718351573011969" at="36,116,37,47" concept="12" />
       <node id="8960718351573011977" at="37,47,38,195" concept="12" />
       <node id="8960718351573011983" at="38,195,39,230" concept="12" />
@@ -27291,7 +27291,7 @@
       <node id="8960718351573012053" at="47,14,53,9" concept="1" />
       <node id="8960718351573012060" at="54,0,61,9" concept="10" />
       <node id="8960718351573011999" at="41,33,53,9" concept="10" />
-      <node id="8960718351573011967" at="35,99,63,7" concept="8" />
+      <node id="8960718351573011967" at="35,100,63,7" concept="8" />
       <node id="8960718351573011951" at="33,280,64,5" concept="9" />
       <node id="8960718351573010613" at="29,0,66,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="8960718351573010613" at="27,66,27,66" />
@@ -27326,7 +27326,7 @@
         <var name="resolvedReturnType" id="8960718351573011997" />
         <var name="returnType" id="8960718351573011978" />
       </scope>
-      <scope id="8960718351573011967" at="35,99,63,7">
+      <scope id="8960718351573011967" at="35,100,63,7">
         <var name="it" id="8960718351573012075" />
       </scope>
       <scope id="8960718351573011956" at="34,87,63,7">
