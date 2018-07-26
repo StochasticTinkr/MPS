@@ -46,7 +46,7 @@ public class GoToHelper {
             }
             // XXX I know cast to IFinder is stupid here, but it's the way to deal with checkTypeSystem test failures. 
             // We desperately need a mechanism to match stub classes with their MPS origins. 
-            for (Object sr : FindUtils.getSearchResults(new ProgressMonitorAdapter(p), new SearchQuery(node, GlobalScope.getInstance()), (IFinder) finder).getResultObjects()) {
+            for (Object sr : FindUtils.getSearchResults(new ProgressMonitorAdapter(p), new SearchQuery(node, new GlobalScope(mpsProject.getRepository())), (IFinder) finder).getResultObjects()) {
               if (sr instanceof SNode) {
                 ListSequence.fromList(nodes).addElement(SNodeOperations.getPointer(((SNode) sr)));
               }

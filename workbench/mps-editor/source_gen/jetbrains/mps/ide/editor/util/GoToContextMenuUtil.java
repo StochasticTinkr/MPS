@@ -24,7 +24,6 @@ import com.intellij.ui.components.JBList;
 import com.intellij.openapi.ui.popup.PopupChooserBuilder;
 
 public class GoToContextMenuUtil {
-
   public static void showMenu(Project project, String title, List<SNodeReference> nodes, final BaseRenderer renderer, RelativePoint point) {
     if (ListSequence.fromList(nodes).isEmpty()) {
       return;

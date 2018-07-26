@@ -1416,9 +1416,18 @@
                                         <node concept="37vLTw" id="3$9coUqjWGR" role="37wK5m">
                                           <ref role="3cqZAo" node="2rUHgdX3ha5" resolve="node" />
                                         </node>
-                                        <node concept="2YIFZM" id="3$9coUqjWGS" role="37wK5m">
-                                          <ref role="1Pybhc" to="z1c3:~GlobalScope" resolve="GlobalScope" />
-                                          <ref role="37wK5l" to="z1c3:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
+                                        <node concept="2ShNRf" id="1fzBqolVvL" role="37wK5m">
+                                          <node concept="1pGfFk" id="1fzBqom4Qq" role="2ShVmc">
+                                            <ref role="37wK5l" to="z1c3:~GlobalScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="GlobalScope" />
+                                            <node concept="2OqwBi" id="1fzBqom6G_" role="37wK5m">
+                                              <node concept="37vLTw" id="1fzBqom5Fk" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="2rUHgdX3hbE" resolve="mpsProject" />
+                                              </node>
+                                              <node concept="liA8E" id="1fzBqom86J" role="2OqNvi">
+                                                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                              </node>
+                                            </node>
+                                          </node>
                                         </node>
                                       </node>
                                     </node>
@@ -1560,7 +1569,6 @@
   </node>
   <node concept="312cEu" id="1pHoCUaw2wq">
     <property role="TrG5h" value="GoToContextMenuUtil" />
-    <node concept="2tJIrI" id="1pHoCUaxE5n" role="jymVt" />
     <node concept="3Tm1VV" id="1pHoCUaw2wr" role="1B3o_S" />
     <node concept="2YIFZL" id="1pHoCUawyXh" role="jymVt">
       <property role="TrG5h" value="showMenu" />
