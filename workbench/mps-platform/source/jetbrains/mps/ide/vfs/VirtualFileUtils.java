@@ -150,7 +150,7 @@ public final class VirtualFileUtils {
 
   /**
    * Allows to distinguish file events from MPS code and from IDEA platform code
-   * We don't process events on file updates from MPS
+   * We don't process events on file updates from MPS, eg writing files after make
    *
    * @return true - event is from IdeaFile processing, false - event from refresh or any other VirtualFile changes
    */
