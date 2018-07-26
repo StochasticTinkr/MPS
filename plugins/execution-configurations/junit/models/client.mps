@@ -469,9 +469,6 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
-      <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
-        <child id="3542851458883491298" name="languageId" index="2V$M_3" />
-      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
@@ -484,10 +481,6 @@
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
-      </concept>
-      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
-        <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
-        <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="6995935425733782641" name="jetbrains.mps.lang.smodel.structure.Model_GetModule" flags="nn" index="13u695" />
@@ -810,24 +803,6 @@
       <node concept="37vLTG" id="4Tkq3_eTeuz" role="3clF46">
         <property role="TrG5h" value="needsMPS" />
         <node concept="10P_77" id="4Tkq3_eTeU2" role="1tU5fm" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="1I6I6y465VK" role="jymVt" />
-    <node concept="3clFb_" id="2_AUN5GqY0H" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getRepo" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="2_AUN5GqY0K" role="3clF47">
-        <node concept="3cpWs6" id="2_AUN5GqYYm" role="3cqZAp">
-          <node concept="37vLTw" id="2_AUN5Gr0nu" role="3cqZAk">
-            <ref role="3cqZAo" node="2_AUN5Gnnxt" resolve="myRepo" />
-          </node>
-        </node>
-      </node>
-      <node concept="3uibUv" id="2_AUN5GqXcf" role="3clF45">
-        <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
       </node>
     </node>
     <node concept="2tJIrI" id="2_AUN5GqWhu" role="jymVt" />
@@ -6790,137 +6765,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="2_AUN5GnaV5" role="jymVt" />
-    <node concept="3clFb_" id="2RMg39tmiGt" role="jymVt">
-      <property role="TrG5h" value="getIdeaClasspath" />
-      <node concept="3Tm6S6" id="2RMg39tmiG$" role="1B3o_S" />
-      <node concept="3clFbS" id="2RMg39tmiGw" role="3clF47">
-        <node concept="3cpWs8" id="hHOa4O5" role="3cqZAp">
-          <node concept="3cpWsn" id="hHOa4O6" role="3cpWs9">
-            <property role="TrG5h" value="result" />
-            <property role="3TUv4t" value="true" />
-            <node concept="_YKpA" id="i05PRfv" role="1tU5fm">
-              <node concept="17QB3L" id="4druX3W0A1D" role="_ZDj9" />
-            </node>
-            <node concept="2ShNRf" id="hHOa4O9" role="33vP2m">
-              <node concept="Tc6Ow" id="i0fL2NJ" role="2ShVmc">
-                <node concept="17QB3L" id="4druX3W0A1Q" role="HW$YZ" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="46qNNGWYJDQ" role="3cqZAp">
-          <node concept="3cpWsn" id="46qNNGWYJDR" role="3cpWs9">
-            <property role="TrG5h" value="languageRuntimes" />
-            <node concept="3uibUv" id="46qNNGWYJDL" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-              <node concept="3uibUv" id="46qNNGWYJDO" role="11_B2D">
-                <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="46qNNGWYJDS" role="33vP2m">
-              <node concept="pHN19" id="46qNNGWYJDT" role="2Oq$k0">
-                <node concept="2V$Bhx" id="46qNNGWYJDU" role="2V$M_3">
-                  <property role="2V$B1T" value="8585453e-6bfb-4d80-98de-b16074f1d86c" />
-                  <property role="2V$B1Q" value="jetbrains.mps.lang.test" />
-                </node>
-              </node>
-              <node concept="liA8E" id="46qNNGWYJDV" role="2OqNvi">
-                <ref role="37wK5l" to="c17a:~SLanguage.getLanguageRuntimes():java.lang.Iterable" resolve="getLanguageRuntimes" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2Gpval" id="6kMF8iRKRKJ" role="3cqZAp">
-          <node concept="2GrKxI" id="6kMF8iRKRKK" role="2Gsz3X">
-            <property role="TrG5h" value="dep" />
-          </node>
-          <node concept="3clFbS" id="6kMF8iRKRKM" role="2LFqv$">
-            <node concept="3cpWs8" id="3NKhsqpQeez" role="3cqZAp">
-              <node concept="3cpWsn" id="3NKhsqpQee$" role="3cpWs9">
-                <property role="TrG5h" value="module" />
-                <node concept="3uibUv" id="3NKhsqpQee_" role="1tU5fm">
-                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-                </node>
-                <node concept="2OqwBi" id="3NKhsqpQOPY" role="33vP2m">
-                  <node concept="liA8E" id="3NKhsqpQRwl" role="2OqNvi">
-                    <ref role="37wK5l" to="lui2:~SModuleReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.module.SModule" resolve="resolve" />
-                    <node concept="1rXfSq" id="2_AUN5Gr2n_" role="37wK5m">
-                      <ref role="37wK5l" node="2_AUN5GqY0H" resolve="getRepo" />
-                    </node>
-                  </node>
-                  <node concept="2GrUjf" id="3NKhsqpQMq9" role="2Oq$k0">
-                    <ref role="2Gs0qQ" node="6kMF8iRKRKK" resolve="dep" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="3NKhsqpRuep" role="3cqZAp">
-              <node concept="3cpWsn" id="3NKhsqpRueq" role="3cpWs9">
-                <property role="TrG5h" value="facet" />
-                <node concept="2OqwBi" id="3NKhsqpRxtO" role="33vP2m">
-                  <node concept="liA8E" id="3NKhsqpRzGN" role="2OqNvi">
-                    <ref role="37wK5l" to="lui2:~SModule.getFacet(java.lang.Class):org.jetbrains.mps.openapi.module.SModuleFacet" resolve="getFacet" />
-                    <node concept="3VsKOn" id="3NKhsqpRC03" role="37wK5m">
-                      <ref role="3VsUkX" to="b0pz:~JavaModuleFacet" resolve="JavaModuleFacet" />
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="3NKhsqpRxok" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3NKhsqpQee$" resolve="module" />
-                  </node>
-                </node>
-                <node concept="3uibUv" id="3NKhsqpRuer" role="1tU5fm">
-                  <ref role="3uigEE" to="b0pz:~JavaModuleFacet" resolve="JavaModuleFacet" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="3NKhsqpRFsp" role="3cqZAp">
-              <node concept="3y3z36" id="3NKhsqpRIQW" role="3clFbw">
-                <node concept="10Nm6u" id="3NKhsqpRIRc" role="3uHU7w" />
-                <node concept="37vLTw" id="3NKhsqpRH2N" role="3uHU7B">
-                  <ref role="3cqZAo" node="3NKhsqpRueq" resolve="facet" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="3NKhsqpRFsr" role="3clFbx">
-                <node concept="3clFbF" id="3NKhsqpRKst" role="3cqZAp">
-                  <node concept="2OqwBi" id="3NKhsqpRLoh" role="3clFbG">
-                    <node concept="X8dFx" id="3NKhsqpSaWM" role="2OqNvi">
-                      <node concept="2OqwBi" id="3NKhsqpSaWO" role="25WWJ7">
-                        <node concept="liA8E" id="3NKhsqpSaWP" role="2OqNvi">
-                          <ref role="37wK5l" to="b0pz:~JavaModuleFacet.getClassPath():java.util.Set" resolve="getClassPath" />
-                        </node>
-                        <node concept="37vLTw" id="3NKhsqpSaWQ" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3NKhsqpRueq" resolve="facet" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="37vLTw" id="3NKhsqpRKss" role="2Oq$k0">
-                      <ref role="3cqZAo" node="hHOa4O6" resolve="result" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="37vLTw" id="46qNNGWYJDW" role="2GsD0m">
-            <ref role="3cqZAo" node="46qNNGWYJDR" resolve="languageRuntimes" />
-          </node>
-        </node>
-      </node>
-      <node concept="3cqZAl" id="40J2CKBuaoa" role="3clF45" />
-      <node concept="P$JXv" id="40J2CKBuc0o" role="lGtFl">
-        <node concept="TZ5HA" id="40J2CKBuc0p" role="TZ5H$">
-          <node concept="1dT_AC" id="40J2CKBuc0q" role="1dT_Ay">
-            <property role="1dT_AB" value="FIXME Dead code. Left as a reminder to check if there's need to do anything about classpath of runtime modules of lang.test; I don't see a reason to import them explicitly as" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="40J2CKBudoz" role="TZ5H$">
-          <node concept="1dT_AC" id="40J2CKBudo$" role="1dT_Ay">
-            <property role="1dT_AB" value="they have to get there as a dependency of a test module anyway (after all, it's written using test languages)" />
           </node>
         </node>
       </node>

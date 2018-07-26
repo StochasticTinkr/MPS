@@ -42,10 +42,6 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
     myTestModule = SNodeOperations.getModel(node).getModule().getModuleReference();
   }
 
-  /*package*/ SRepository getRepo() {
-    return myRepo;
-  }
-
   @NotNull
   @Override
   public final SModuleReference getTestNodeModule() {
