@@ -38,6 +38,7 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.LinkedList;
 import java.net.URL;
 import jetbrains.mps.core.tool.environment.classloading.ClassloaderUtil;
@@ -205,9 +206,20 @@ public class JUnit_Command {
       }
     }
     Set<SModuleReference> uniqueModules = SetSequence.fromSet(new HashSet<SModuleReference>());
-    for (ITestNodeWrapper tt : tests) {
+    for (ITestNodeWrapper tt : testsToRun) {
       SetSequence.fromSet(uniqueModules).addElement(tt.getTestNodeModule());
     }
+    // next module used to be in defaults of TestParameters, don't see a reason why can't do it here, though 
+    // not 100% sure I understand the reason to add this module to tests classpath. I suspect it is to  
+    // ensure *TestExecutor classes get loaded (unitTest.execution.server package). The best approach in that case 
+    // would be for TestParameters to tell set of required modules (instead of/in addition to classpath list) 
+    // as it's TestParameters class that knows specific contributor class location, however, such a change would 
+    // require changes in TestParameters#comprises() logic, which needs a thorough refactoring to get rid of  
+    // Class<> in getExecutorClass() anyway. 
+    // The reason I put it here is that I lean towards no executorClass in TestParameters at all, so that 
+    // this command would pick executor class based on information whether need to start MPS or not, and therfore 
+    // would add relevant module into classpath here anyway. 
+    SetSequence.fromSet(uniqueModules).addElement(PersistenceFacade.getInstance().createModuleReference("f618e99a-2641-465c-bb54-31fe76f9e285(jetbrains.mps.baseLanguage.unitTest.execution)"));
     return new TestsWithParameters(testsToRun, runParams, uniqueModules);
   }
   private static TestParameters getMaxParams(List<ITestNodeWrapper> tests) {
