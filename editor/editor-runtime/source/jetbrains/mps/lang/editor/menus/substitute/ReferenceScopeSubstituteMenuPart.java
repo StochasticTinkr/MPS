@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,12 +54,15 @@ public class ReferenceScopeSubstituteMenuPart implements SubstituteMenuPart {
     SContainmentLink link = context.getLink();
     int position = 0;
     if (currentTarget != null) {
+      if (link == null) {
+        link = currentTarget.getContainmentLink();
+      }
       position = IterableUtil.indexOf(parentNode.getChildren(link), currentTarget);
     }
     Scope scope = ModelConstraints.getReferenceDescriptor(parentNode, link, position, myReferenceLink, myConcept).getScope();
     Iterable<SNode> referents = scope.getAvailableElements(null);
     List<SubstituteMenuItem> result = new ArrayList<>();
-    for (SNode referent: referents) {
+    for (SNode referent : referents) {
       context.getEditorMenuTrace().pushTraceInfo();
       context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("reference scope action with target node: " + referent.getPresentation(), null));
       try {
