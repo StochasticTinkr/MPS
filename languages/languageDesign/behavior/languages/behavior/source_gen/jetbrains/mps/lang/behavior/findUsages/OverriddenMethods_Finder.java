@@ -58,7 +58,7 @@ public class OverriddenMethods_Finder extends GeneratedFinder {
     try {
       // top-most ancestor by the lang.behavior 
       final SNode topMostOverriddenMethod = ConceptMethodDeclaration__BehaviorDescriptor.getOverridenMethod_idhP3pnNO.invoke(node);
-      monitor.start("Overriding methods", 10);
+      monitor.start("Overridden methods", 10);
       ConceptMRO methodResolutionOrder = new ConceptMRO();
       AbstractConceptWrap wrapper = AbstractConceptWrap.wrap(ConceptMethodDeclaration__BehaviorDescriptor.getContainingConcept_idi3POAMX.invoke(node));
       List<AbstractConceptWrap> linearization = methodResolutionOrder.calcLinearization(wrapper);

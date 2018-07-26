@@ -325,7 +325,7 @@
             <node concept="liA8E" id="7kBaCir6$XQ" role="2OqNvi">
               <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
               <node concept="Xl_RD" id="7kBaCir6AqR" role="37wK5m">
-                <property role="Xl_RC" value="Overriding methods" />
+                <property role="Xl_RC" value="Implementing methods" />
               </node>
               <node concept="3cmrfG" id="7kBaCir6$YJ" role="37wK5m">
                 <property role="3cmrfH" value="10" />
@@ -627,7 +627,7 @@
             <node concept="liA8E" id="6ndnYgP5nzA" role="2OqNvi">
               <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
               <node concept="Xl_RD" id="6ndnYgP5nzB" role="37wK5m">
-                <property role="Xl_RC" value="Overriding methods" />
+                <property role="Xl_RC" value="Overridden methods" />
               </node>
               <node concept="3cmrfG" id="6ndnYgP5nzC" role="37wK5m">
                 <property role="3cmrfH" value="10" />
