@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.execution.api.JarManifestBuilder" file="JarManifestBuilder.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileOutputStream" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.net.URI" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.jar.Attributes" />
+    <classNode dependClassName="java.util.jar.JarOutputStream" />
+    <classNode dependClassName="java.util.jar.Manifest" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.execution.api.JavaConfigurationEditorComponent" file="JavaConfigurationEditorComponent.java">
     <classNode dependClassName="com.intellij.ui.components.JBCheckBox" />
     <classNode dependClassName="com.intellij.ui.components.JBLabel" />
@@ -61,6 +78,7 @@
     <classNode dependClassName="com.intellij.util.SystemProperties" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileNotFoundException" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.PrintWriter" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -72,6 +90,7 @@
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JarManifestBuilder" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters" />
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
