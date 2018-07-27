@@ -25649,12 +25649,6 @@
             <ref role="3bR37D" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
         </node>
-        <node concept="1SiIV0" id="2a9bszgrvva" role="3bR37C">
-          <node concept="3bR9La" id="2a9bszgrvv9" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="5xa9wY2vhaZ" resolve="jetbrains.mps.baseLanguage.execution.startup" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="2a9bszgrvvc" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgrvvb" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -25683,32 +25677,6 @@
           <node concept="3bR9La" id="3Gv2uL5Fg0x" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6L8Y" resolve="jetbrains.mps.lang.project" />
-          </node>
-        </node>
-      </node>
-      <node concept="1E1JtA" id="5xa9wY2vhaZ" role="2G$12L">
-        <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.baseLanguage.execution.startup" />
-        <property role="3LESm3" value="5b247b59-8fd0-4475-a767-9e9ff6a9d01c" />
-        <property role="2GAjPV" value="false" />
-        <node concept="1SiIV0" id="2a9bszgrvqE" role="3bR37C">
-          <node concept="3bR9La" id="2a9bszgrvqD" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
-          </node>
-        </node>
-        <node concept="55IIr" id="5xa9wY2vhb0" role="3LF7KH">
-          <node concept="2Ry0Ak" id="5xa9wY2vhb1" role="iGT6I">
-            <property role="2Ry0Am" value="plugins" />
-            <node concept="2Ry0Ak" id="5xa9wY2vhb2" role="2Ry0An">
-              <property role="2Ry0Am" value="execution-configurations" />
-              <node concept="2Ry0Ak" id="5xa9wY2vhb5" role="2Ry0An">
-                <property role="2Ry0Am" value="java.startup" />
-                <node concept="2Ry0Ak" id="5xa9wY2vhb6" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.baseLanguage.execution.startup.msd" />
-                </node>
-              </node>
-            </node>
           </node>
         </node>
       </node>

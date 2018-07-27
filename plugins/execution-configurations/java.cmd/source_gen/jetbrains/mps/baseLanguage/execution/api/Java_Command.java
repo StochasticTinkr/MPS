@@ -39,10 +39,6 @@ import java.util.Objects;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.util.SystemProperties;
@@ -54,6 +50,7 @@ import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
@@ -246,13 +243,6 @@ public class Java_Command {
     // to remove java paths at all. 
     classpath.removeAll(CommonPaths.getJDKPath());
     return new ArrayList<String>(classpath);
-  }
-  private static List<String> getClassRunnerClassPath() {
-    return ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-      public List<String> compute() {
-        return Java_Command.getClasspath(Sequence.<SModule>singleton(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("5b247b59-8fd0-4475-a767-9e9ff6a9d01c(jetbrains.mps.baseLanguage.execution.startup)"))));
-      }
-    });
   }
   public static File getJavaCommand(@Nullable String javaHome) throws ExecutionException {
     if ((javaHome == null || javaHome.length() == 0) || !(new File(javaHome).exists())) {
