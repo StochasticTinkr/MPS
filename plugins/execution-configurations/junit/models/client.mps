@@ -564,6 +564,10 @@
         <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
       <concept id="1235566554328" name="jetbrains.mps.baseLanguage.collections.structure.AnyOperation" flags="nn" index="2HwmR7" />
+      <concept id="1235573135402" name="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator" flags="nn" index="2HTt$P">
+        <child id="1235573175711" name="elementType" index="2HTBi0" />
+        <child id="1235573187520" name="singletonValue" index="2HTEbv" />
+      </concept>
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435807" name="elementType" index="HW$YZ" />
         <child id="1237731803878" name="copyFrom" index="I$8f6" />
@@ -9533,71 +9537,6 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="6Eq1AVROVde" role="3cqZAp">
-          <node concept="3SKdUq" id="6Eq1AVROVdg" role="3SKWNk">
-            <property role="3SKdUp" value="next module used to be in defaults of TestParameters, don't see a reason why can't do it here, though" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="6Eq1AVROVY4" role="3cqZAp">
-          <node concept="3SKdUq" id="6Eq1AVROVY6" role="3SKWNk">
-            <property role="3SKdUp" value="not 100% sure I understand the reason to add this module to tests classpath. I suspect it is to " />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="6Eq1AVROXiq" role="3cqZAp">
-          <node concept="3SKdUq" id="6Eq1AVROXis" role="3SKWNk">
-            <property role="3SKdUp" value="ensure *TestExecutor classes get loaded (unitTest.execution.server package). The best approach in that case" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="6Eq1AVROYNR" role="3cqZAp">
-          <node concept="3SKdUq" id="6Eq1AVROYNT" role="3SKWNk">
-            <property role="3SKdUp" value="would be for TestParameters to tell set of required modules (instead of/in addition to classpath list)" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="6Eq1AVROZ$F" role="3cqZAp">
-          <node concept="3SKdUq" id="6Eq1AVROZ$H" role="3SKWNk">
-            <property role="3SKdUp" value="as it's TestParameters class that knows specific contributor class location, however, such a change would" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="6Eq1AVRP0zv" role="3cqZAp">
-          <node concept="3SKdUq" id="6Eq1AVRP0zx" role="3SKWNk">
-            <property role="3SKdUp" value="require changes in TestParameters#comprises() logic, which needs a thorough refactoring to get rid of " />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="6Eq1AVRP2Bq" role="3cqZAp">
-          <node concept="3SKdUq" id="6Eq1AVRP2Bs" role="3SKWNk">
-            <property role="3SKdUp" value="Class&lt;&gt; in getExecutorClass() anyway." />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="6Eq1AVRPNjV" role="3cqZAp">
-          <node concept="3SKdUq" id="6Eq1AVRPNjX" role="3SKWNk">
-            <property role="3SKdUp" value="The reason I put it here is that I lean towards no executorClass in TestParameters at all, so that" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="6Eq1AVRPNRh" role="3cqZAp">
-          <node concept="3SKdUq" id="6Eq1AVRPNRj" role="3SKWNk">
-            <property role="3SKdUp" value="this command would pick executor class based on information whether need to start MPS or not, and therfore" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="6Eq1AVRPP7Y" role="3cqZAp">
-          <node concept="3SKdUq" id="6Eq1AVRPP7Z" role="3SKWNk">
-            <property role="3SKdUp" value="would add relevant module into classpath here anyway." />
-          </node>
-        </node>
-        <node concept="3clFbF" id="6Eq1AVROM2e" role="3cqZAp">
-          <node concept="2OqwBi" id="6Eq1AVRONbK" role="3clFbG">
-            <node concept="37vLTw" id="6Eq1AVROM2c" role="2Oq$k0">
-              <ref role="3cqZAo" node="723FpCMRxJH" resolve="uniqueModules" />
-            </node>
-            <node concept="TSZUe" id="6Eq1AVROS76" role="2OqNvi">
-              <node concept="37shsh" id="I2XxkKHsgf" role="25WWJ7">
-                <node concept="20RdaH" id="5_nOVozouw8" role="37shsm">
-                  <property role="20Rdg5" value="f618e99a-2641-465c-bb54-31fe76f9e285" />
-                  <property role="20Rdg7" value="jetbrains.mps.baseLanguage.unitTest.execution" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs6" id="5gyVhZ1bgP7" role="3cqZAp">
           <node concept="2ShNRf" id="46IpDBc0WF9" role="3cqZAk">
             <node concept="1pGfFk" id="46IpDBc0WFa" role="2ShVmc">
@@ -9732,6 +9671,72 @@
         <node concept="17QB3L" id="5gyVhZ1bgPs" role="_ZDj9" />
       </node>
       <node concept="3clFbS" id="5gyVhZ1bgPt" role="3clF47">
+        <node concept="3SKdUt" id="6Eq1AVROVde" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVROVdg" role="3SKWNk">
+            <property role="3SKdUp" value="next module used to be in defaults of TestParameters, don't see a reason why can't do it here, though." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6Eq1AVROVY4" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVROVY6" role="3SKWNk">
+            <property role="3SKdUp" value="With classpath, we have to " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6Eq1AVROXiq" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVROXis" role="3SKWNk">
+            <property role="3SKdUp" value="ensure *TestExecutor classes get loaded (unitTest.execution.server package). The best approach in that case" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6Eq1AVROYNR" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVROYNT" role="3SKWNk">
+            <property role="3SKdUp" value="would be for TestParameters to tell set of required modules (instead of/in addition to classpath list)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6Eq1AVROZ$F" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVROZ$H" role="3SKWNk">
+            <property role="3SKdUp" value="as it's TestParameters class that knows specific contributor class location, however, such a change would" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6Eq1AVRP0zv" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVRP0zx" role="3SKWNk">
+            <property role="3SKdUp" value="require changes in TestParameters#comprises() logic, which needs a thorough refactoring to get rid of " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6Eq1AVRP2Bq" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVRP2Bs" role="3SKWNk">
+            <property role="3SKdUp" value="Class&lt;&gt; in getExecutorClass() anyway." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6Eq1AVRPNjV" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVRPNjX" role="3SKWNk">
+            <property role="3SKdUp" value="The reason I put it here is that I lean towards no executorClass in TestParameters at all, so that" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6Eq1AVRPNRh" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVRPNRj" role="3SKWNk">
+            <property role="3SKdUp" value="this command would pick executor class based on information whether need to start MPS or not, and therfore" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6Eq1AVRPP7Y" role="3cqZAp">
+          <node concept="3SKdUq" id="6Eq1AVRPP7Z" role="3SKWNk">
+            <property role="3SKdUp" value="would add relevant module into classpath here anyway." />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6i8uuP8QuCD" role="3cqZAp">
+          <node concept="3cpWsn" id="6i8uuP8QuCE" role="3cpWs9">
+            <property role="TrG5h" value="moduleWithExecutors" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="6i8uuP8QuCC" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+            </node>
+            <node concept="37shsh" id="6i8uuP8QuCF" role="33vP2m">
+              <node concept="20RdaH" id="6i8uuP8QuCG" role="37shsm">
+                <property role="20Rdg5" value="f618e99a-2641-465c-bb54-31fe76f9e285" />
+                <property role="20Rdg7" value="jetbrains.mps.baseLanguage.unitTest.execution" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6i8uuP8Q$nf" role="3cqZAp" />
         <node concept="3cpWs8" id="40J2CKBv5ab" role="3cqZAp">
           <node concept="3cpWsn" id="40J2CKBv5ae" role="3cpWs9">
             <property role="TrG5h" value="classpath" />
@@ -9747,6 +9752,11 @@
         </node>
         <node concept="3clFbJ" id="40J2CKBuOo_" role="3cqZAp">
           <node concept="3clFbS" id="40J2CKBuOoB" role="3clFbx">
+            <node concept="3SKdUt" id="6i8uuP8Q_08" role="3cqZAp">
+              <node concept="3SKdUq" id="6i8uuP8Q_0a" role="3SKWNk">
+                <property role="3SKdUp" value="WithPlatformTestExecutor starts IDEA, therefore needs it in CP" />
+              </node>
+            </node>
             <node concept="3clFbF" id="6tKhx9Vky2k" role="3cqZAp">
               <node concept="2OqwBi" id="6tKhx9Vlq25" role="3clFbG">
                 <node concept="37vLTw" id="6tKhx9Vky2i" role="2Oq$k0">
@@ -9786,6 +9796,129 @@
             <node concept="3SKdUt" id="723FpCMVw8G" role="3cqZAp">
               <node concept="3SKdUq" id="723FpCMVw8I" role="3SKWNk">
                 <property role="3SKdUp" value="Module classpath would get managed by IdeaEnvironment based on set of modules to load" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="6i8uuP8RnmT" role="3cqZAp" />
+            <node concept="3SKdUt" id="6i8uuP8RnQ1" role="3cqZAp">
+              <node concept="3SKdUq" id="6i8uuP8RnQ3" role="3SKWNk">
+                <property role="3SKdUp" value="next is to ensure TestExecutor is loaded. Though it's part of execution plugin, it's a regular mps module" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="6i8uuP8RnY$" role="3cqZAp">
+              <node concept="3SKdUq" id="6i8uuP8RnYA" role="3SKWNk">
+                <property role="3SKdUp" value="and is managed by MPS classloader once MPS starts, while we need it first, to start MPS." />
+              </node>
+            </node>
+            <node concept="3clFbF" id="6i8uuP8Ro_$" role="3cqZAp">
+              <node concept="2OqwBi" id="6i8uuP8RphX" role="3clFbG">
+                <node concept="2OqwBi" id="6i8uuP8RoM4" role="2Oq$k0">
+                  <node concept="37vLTw" id="6i8uuP8Ro_y" role="2Oq$k0">
+                    <ref role="3cqZAo" node="723FpCMVuuD" resolve="repo" />
+                  </node>
+                  <node concept="liA8E" id="6i8uuP8Rp9N" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="6i8uuP8RpDj" role="2OqNvi">
+                  <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                  <node concept="1bVj0M" id="6i8uuP8RpG2" role="37wK5m">
+                    <node concept="3clFbS" id="6i8uuP8RpG3" role="1bW5cS">
+                      <node concept="3cpWs8" id="6i8uuP8Rqp5" role="3cqZAp">
+                        <node concept="3cpWsn" id="6i8uuP8Rqp6" role="3cpWs9">
+                          <property role="TrG5h" value="m" />
+                          <node concept="3uibUv" id="6i8uuP8Rqp1" role="1tU5fm">
+                            <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                          </node>
+                          <node concept="2OqwBi" id="6i8uuP8Rqp7" role="33vP2m">
+                            <node concept="37vLTw" id="6i8uuP8Rqp8" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6i8uuP8QuCE" resolve="moduleWithExecutors" />
+                            </node>
+                            <node concept="liA8E" id="6i8uuP8Rqp9" role="2OqNvi">
+                              <ref role="37wK5l" to="lui2:~SModuleReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.module.SModule" resolve="resolve" />
+                              <node concept="37vLTw" id="6i8uuP8Rqpa" role="37wK5m">
+                                <ref role="3cqZAo" node="723FpCMVuuD" resolve="repo" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbJ" id="6i8uuP8RqxC" role="3cqZAp">
+                        <node concept="3clFbS" id="6i8uuP8RqxE" role="3clFbx">
+                          <node concept="3clFbF" id="6i8uuP8RqX7" role="3cqZAp">
+                            <node concept="2OqwBi" id="6i8uuP8RrZk" role="3clFbG">
+                              <node concept="37vLTw" id="6i8uuP8RqX5" role="2Oq$k0">
+                                <ref role="3cqZAo" node="40J2CKBv5ae" resolve="classpath" />
+                              </node>
+                              <node concept="X8dFx" id="6i8uuP8Ru5k" role="2OqNvi">
+                                <node concept="2OqwBi" id="6i8uuP8Rw2n" role="25WWJ7">
+                                  <node concept="2LYoGc" id="6i8uuP8RvvU" role="2Oq$k0">
+                                    <ref role="2LYoGe" to="go48:14R2qyOBxa1" resolve="java" />
+                                  </node>
+                                  <node concept="2XshWL" id="6i8uuP8Rws5" role="2OqNvi">
+                                    <ref role="2WH_rO" to="go48:2reLP4orRPN" resolve="getClasspath" />
+                                    <node concept="2ShNRf" id="6i8uuP8Rx1K" role="2XxRq1">
+                                      <node concept="2HTt$P" id="6i8uuP8RxOY" role="2ShVmc">
+                                        <node concept="3uibUv" id="6i8uuP8Ryi_" role="2HTBi0">
+                                          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                                        </node>
+                                        <node concept="37vLTw" id="6i8uuP8Ryyc" role="2HTEbv">
+                                          <ref role="3cqZAo" node="6i8uuP8Rqp6" resolve="m" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3y3z36" id="6i8uuP8RqSY" role="3clFbw">
+                          <node concept="10Nm6u" id="6i8uuP8RqUU" role="3uHU7w" />
+                          <node concept="37vLTw" id="6i8uuP8RqJ3" role="3uHU7B">
+                            <ref role="3cqZAo" node="6i8uuP8Rqp6" resolve="m" />
+                          </node>
+                        </node>
+                        <node concept="9aQIb" id="6i8uuP8RyCO" role="9aQIa">
+                          <node concept="3clFbS" id="6i8uuP8RyCP" role="9aQI4">
+                            <node concept="3cpWs8" id="6i8uuP8RzDD" role="3cqZAp">
+                              <node concept="3cpWsn" id="6i8uuP8RzDG" role="3cpWs9">
+                                <property role="TrG5h" value="msg" />
+                                <node concept="17QB3L" id="6i8uuP8RzDH" role="1tU5fm" />
+                                <node concept="2YIFZM" id="6i8uuP8RzDI" role="33vP2m">
+                                  <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                                  <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                                  <node concept="Xl_RD" id="6i8uuP8RzDJ" role="37wK5m">
+                                    <property role="Xl_RC" value="No test module %s is available, execution classpath may be invalid." />
+                                  </node>
+                                  <node concept="2OqwBi" id="6i8uuP8RzDK" role="37wK5m">
+                                    <node concept="37vLTw" id="6i8uuP8R$6x" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="6i8uuP8QuCE" resolve="moduleWithExecutors" />
+                                    </node>
+                                    <node concept="liA8E" id="6i8uuP8RzDM" role="2OqNvi">
+                                      <ref role="37wK5l" to="lui2:~SModuleReference.getModuleName():java.lang.String" resolve="getModuleName" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3SKdUt" id="6i8uuP8RBrO" role="3cqZAp">
+                              <node concept="3SKdUq" id="6i8uuP8RBrQ" role="3SKWNk">
+                                <property role="3SKdUp" value="we likely to fail anyway, error is better than warn" />
+                              </node>
+                            </node>
+                            <node concept="RRSsy" id="6i8uuP8RyQg" role="3cqZAp">
+                              <property role="RRSoG" value="error" />
+                              <node concept="37vLTw" id="6i8uuP8RA$G" role="RRSoy">
+                                <ref role="3cqZAo" node="6i8uuP8RzDG" resolve="msg" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbH" id="6i8uuP8RpJ1" role="3cqZAp" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -9836,6 +9969,46 @@
                                 <node concept="3uibUv" id="2reLP4ouNDB" role="HW$YZ">
                                   <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
                                 </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3cpWs8" id="6i8uuP8QBKZ" role="3cqZAp">
+                          <node concept="3cpWsn" id="6i8uuP8QBL0" role="3cpWs9">
+                            <property role="TrG5h" value="requiredModules" />
+                            <node concept="3uibUv" id="6i8uuP8QBKP" role="1tU5fm">
+                              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                              <node concept="3uibUv" id="6i8uuP8QBKS" role="11_B2D">
+                                <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+                              </node>
+                            </node>
+                            <node concept="2ShNRf" id="6i8uuP8QDa7" role="33vP2m">
+                              <node concept="1pGfFk" id="6i8uuP8QMpE" role="2ShVmc">
+                                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(java.util.Collection)" resolve="ArrayList" />
+                                <node concept="2OqwBi" id="6i8uuP8QBL1" role="37wK5m">
+                                  <node concept="37vLTw" id="6i8uuP8QBL2" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="5gyVhZ1bgQl" resolve="tests" />
+                                  </node>
+                                  <node concept="liA8E" id="6i8uuP8QBL3" role="2OqNvi">
+                                    <ref role="37wK5l" node="723FpCMRpGj" resolve="getRequiredModules" />
+                                  </node>
+                                </node>
+                                <node concept="3uibUv" id="6i8uuP8QOiE" role="1pMfVU">
+                                  <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbF" id="6i8uuP8Rdnh" role="3cqZAp">
+                          <node concept="2OqwBi" id="6i8uuP8Rf3G" role="3clFbG">
+                            <node concept="37vLTw" id="6i8uuP8Rdnf" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6i8uuP8QBL0" resolve="requiredModules" />
+                            </node>
+                            <node concept="liA8E" id="6i8uuP8Riel" role="2OqNvi">
+                              <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
+                              <node concept="37vLTw" id="6i8uuP8Rjyc" role="37wK5m">
+                                <ref role="3cqZAo" node="6i8uuP8QuCE" resolve="moduleWithExecutors" />
                               </node>
                             </node>
                           </node>
@@ -9915,13 +10088,8 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="2OqwBi" id="40J2CKBuA4n" role="1DdaDG">
-                            <node concept="37vLTw" id="2BHiRxglI6H" role="2Oq$k0">
-                              <ref role="3cqZAo" node="5gyVhZ1bgQl" resolve="tests" />
-                            </node>
-                            <node concept="liA8E" id="40J2CKBuB1j" role="2OqNvi">
-                              <ref role="37wK5l" node="723FpCMRpGj" resolve="getRequiredModules" />
-                            </node>
+                          <node concept="37vLTw" id="6i8uuP8QBL4" role="1DdaDG">
+                            <ref role="3cqZAo" node="6i8uuP8QBL0" resolve="requiredModules" />
                           </node>
                           <node concept="3cpWsn" id="1KUoCipvCf6" role="1Duv9x">
                             <property role="TrG5h" value="testModule" />

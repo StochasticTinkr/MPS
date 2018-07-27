@@ -40,6 +40,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.net.URL;
 import jetbrains.mps.core.tool.environment.classloading.ClassloaderUtil;
 import java.net.URISyntaxException;
@@ -209,17 +210,6 @@ public class JUnit_Command {
     for (ITestNodeWrapper tt : testsToRun) {
       SetSequence.fromSet(uniqueModules).addElement(tt.getTestNodeModule());
     }
-    // next module used to be in defaults of TestParameters, don't see a reason why can't do it here, though 
-    // not 100% sure I understand the reason to add this module to tests classpath. I suspect it is to  
-    // ensure *TestExecutor classes get loaded (unitTest.execution.server package). The best approach in that case 
-    // would be for TestParameters to tell set of required modules (instead of/in addition to classpath list) 
-    // as it's TestParameters class that knows specific contributor class location, however, such a change would 
-    // require changes in TestParameters#comprises() logic, which needs a thorough refactoring to get rid of  
-    // Class<> in getExecutorClass() anyway. 
-    // The reason I put it here is that I lean towards no executorClass in TestParameters at all, so that 
-    // this command would pick executor class based on information whether need to start MPS or not, and therfore 
-    // would add relevant module into classpath here anyway. 
-    SetSequence.fromSet(uniqueModules).addElement(PersistenceFacade.getInstance().createModuleReference("f618e99a-2641-465c-bb54-31fe76f9e285(jetbrains.mps.baseLanguage.unitTest.execution)"));
     return new TestsWithParameters(testsToRun, runParams, uniqueModules);
   }
   private static TestParameters getMaxParams(List<ITestNodeWrapper> tests) {
@@ -233,17 +223,50 @@ public class JUnit_Command {
     return maxParams;
   }
   private static List<String> getClasspath(final TestsWithParameters tests, final SRepository repo) {
+    // next module used to be in defaults of TestParameters, don't see a reason why can't do it here, though. 
+    // With classpath, we have to  
+    // ensure *TestExecutor classes get loaded (unitTest.execution.server package). The best approach in that case 
+    // would be for TestParameters to tell set of required modules (instead of/in addition to classpath list) 
+    // as it's TestParameters class that knows specific contributor class location, however, such a change would 
+    // require changes in TestParameters#comprises() logic, which needs a thorough refactoring to get rid of  
+    // Class<> in getExecutorClass() anyway. 
+    // The reason I put it here is that I lean towards no executorClass in TestParameters at all, so that 
+    // this command would pick executor class based on information whether need to start MPS or not, and therfore 
+    // would add relevant module into classpath here anyway. 
+    final SModuleReference moduleWithExecutors = PersistenceFacade.getInstance().createModuleReference("f618e99a-2641-465c-bb54-31fe76f9e285(jetbrains.mps.baseLanguage.unitTest.execution)");
+
     final List<String> classpath = ListSequence.fromList(new LinkedList<String>());
     if (tests.getParameters().needsMPS()) {
+      // WithPlatformTestExecutor starts IDEA, therefore needs it in CP 
       ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromLibFolder()).distinct());
       ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromPreInstalledPluginsFolder()).distinct());
       // Module classpath would get managed by IdeaEnvironment based on set of modules to load 
+      // 
+      // next is to ensure TestExecutor is loaded. Though it's part of execution plugin, it's a regular mps module 
+      // and is managed by MPS classloader once MPS starts, while we need it first, to start MPS. 
+      repo.getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          SModule m = moduleWithExecutors.resolve(repo);
+          if (m != null) {
+            ListSequence.fromList(classpath).addSequence(ListSequence.fromList(Java_Command.getClasspath(Sequence.<SModule>singleton(m))));
+          } else {
+            String msg = String.format("No test module %s is available, execution classpath may be invalid.", moduleWithExecutors.getModuleName());
+            // we likely to fail anyway, error is better than warn 
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error(msg);
+            }
+          }
+
+        }
+      });
     } else {
       // when no MPS is started, we just build a regular Java classpath with everything test classes may need. 
       repo.getModelAccess().runReadAction(new Runnable() {
         public void run() {
           Set<SModule> uniqueModules = SetSequence.fromSet(new HashSet<SModule>());
-          for (SModuleReference testModule : tests.getRequiredModules()) {
+          List<SModuleReference> requiredModules = new ArrayList<SModuleReference>(tests.getRequiredModules());
+          requiredModules.add(moduleWithExecutors);
+          for (SModuleReference testModule : requiredModules) {
             SModule module = testModule.resolve(repo);
             if (module != null) {
               SetSequence.fromSet(uniqueModules).addElement(module);
