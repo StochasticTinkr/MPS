@@ -3890,9 +3890,6 @@
               <node concept="Xl_RD" id="7jEXsfiNRpN" role="1r8FgC">
                 <property role="Xl_RC" value="-Xmx1500m" />
               </node>
-              <node concept="Xl_RD" id="7jEXsfiNRpO" role="1r8FgC">
-                <property role="Xl_RC" value="-XX:MaxPermSize=150m" />
-              </node>
               <node concept="Xl_RD" id="7jEXsfiNRpP" role="1r8FgC">
                 <property role="Xl_RC" value="-XX:+HeapDumpOnOutOfMemoryError" />
               </node>
