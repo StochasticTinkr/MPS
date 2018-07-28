@@ -256,7 +256,7 @@ public class NodePaster {
     if (DataTransferManager.getInstance().canWrapInto(pasteNode, targetConcept)) {
       return DataTransferManager.getInstance().wrapInto(pasteNode, targetConcept);
     } else {
-      throw new RuntimeException("node " + pasteNode + "can't be normalized for link " + link);
+      throw new RuntimeException("node " + pasteNode + " can't be normalized for link " + link);
     }
   }
 
