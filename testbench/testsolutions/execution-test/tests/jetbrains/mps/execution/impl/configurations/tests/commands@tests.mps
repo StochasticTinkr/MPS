@@ -402,9 +402,13 @@
                 </node>
                 <node concept="2LYoGx" id="6bfDvj8bDo_" role="33vP2m">
                   <ref role="3rFKlk" to="sfqd:5gyVhZ1bgKX" resolve="jUnit" />
-                  <node concept="2LYoGL" id="6bfDvj8bDoA" role="2LYoGw">
+                  <node concept="2LYoGL" id="4qqte4NAyxl" role="2LYoGw">
+                    <ref role="2LYoGK" to="sfqd:4qqte4NAlfE" resolve="project" />
+                    <node concept="1jxXqW" id="4qqte4NA$Xi" role="2LYoGN" />
+                  </node>
+                  <node concept="2LYoGL" id="4qqte4NA_y6" role="2LYoGw">
                     <ref role="2LYoGK" to="sfqd:5gyVhZ1bgKY" resolve="tests" />
-                    <node concept="37vLTw" id="3GM_nagTwYR" role="2LYoGN">
+                    <node concept="37vLTw" id="4qqte4NAAAw" role="2LYoGN">
                       <ref role="3cqZAo" node="6bfDvj8bDpX" resolve="allTests" />
                     </node>
                   </node>

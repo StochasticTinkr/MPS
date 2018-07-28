@@ -2828,7 +2828,9 @@
                   <node concept="2ShNRf" id="1b7CZFPT9Ty" role="37vLTx">
                     <node concept="1pGfFk" id="1b7CZFPTbAV" role="2ShVmc">
                       <ref role="37wK5l" node="1b7CZFPP0fy" resolve="JUnitExecutor" />
-                      <node concept="21ER0p" id="6segfscFgO4" role="37wK5m" />
+                      <node concept="37vLTw" id="4qqte4NBEQB" role="37wK5m">
+                        <ref role="3cqZAo" node="1I6I6y47u0U" resolve="mpsProject" />
+                      </node>
                       <node concept="3OoTgS" id="7EXMnFkVV6_" role="37wK5m" />
                       <node concept="37vLTw" id="78pvOus8DVE" role="37wK5m">
                         <ref role="3cqZAo" node="78pvOus40yi" resolve="settings" />
@@ -12322,8 +12324,8 @@
       <property role="TrG5h" value="myProject" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="6segfscFml4" role="1B3o_S" />
-      <node concept="3uibUv" id="6segfscFoht" role="1tU5fm">
-        <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+      <node concept="3uibUv" id="4qqte4NBzeg" role="1tU5fm">
+        <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
       </node>
     </node>
     <node concept="312cEg" id="7EXMnFkVXqa" role="jymVt">
@@ -12444,8 +12446,8 @@
       <node concept="3Tm1VV" id="1b7CZFPP01X" role="1B3o_S" />
       <node concept="37vLTG" id="6segfscFijg" role="3clF46">
         <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="6segfscFiZJ" role="1tU5fm">
-          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+        <node concept="3uibUv" id="4qqte4NByo0" role="1tU5fm">
+          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
       <node concept="37vLTG" id="7EXMnFkVWor" role="3clF46">
@@ -12525,6 +12527,12 @@
             </node>
             <node concept="2LYoGx" id="1b7CZFPOXr0" role="33vP2m">
               <ref role="3rFKlk" to="sfqd:5gyVhZ1bgKn" resolve="jUnit" />
+              <node concept="2LYoGL" id="4qqte4NBqem" role="2LYoGw">
+                <ref role="2LYoGK" to="sfqd:4qqte4NAT9Z" resolve="project" />
+                <node concept="37vLTw" id="4qqte4NBrwI" role="2LYoGN">
+                  <ref role="3cqZAo" node="6segfscFooj" resolve="myProject" />
+                </node>
+              </node>
               <node concept="2LYoGL" id="1b7CZFPOXr1" role="2LYoGw">
                 <ref role="2LYoGK" to="sfqd:5gyVhZ1bgKo" resolve="tests" />
                 <node concept="37vLTw" id="1b7CZFPPmNy" role="2LYoGN">
@@ -12914,8 +12922,13 @@
           <node concept="2YIFZM" id="5kPsWkS4oCE" role="3clFbG">
             <ref role="37wK5l" node="5kPsWkS4lY5" resolve="notifyByBalloon" />
             <ref role="1Pybhc" node="5kPsWkS4fiK" resolve="TestsUIUtil" />
-            <node concept="37vLTw" id="5kPsWkS4p0V" role="37wK5m">
-              <ref role="3cqZAo" node="6segfscFooj" resolve="myProject" />
+            <node concept="2OqwBi" id="4qqte4NB$8P" role="37wK5m">
+              <node concept="37vLTw" id="5kPsWkS4p0V" role="2Oq$k0">
+                <ref role="3cqZAo" node="6segfscFooj" resolve="myProject" />
+              </node>
+              <node concept="liA8E" id="4qqte4NBAmt" role="2OqNvi">
+                <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+              </node>
             </node>
             <node concept="2OqwBi" id="52x4_ZzOzW_" role="37wK5m">
               <node concept="37vLTw" id="52x4_ZzOzWA" role="2Oq$k0">

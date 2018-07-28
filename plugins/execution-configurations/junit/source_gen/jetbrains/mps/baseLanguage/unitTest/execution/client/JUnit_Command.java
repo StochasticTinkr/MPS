@@ -4,11 +4,13 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.project.Project;
 import java.io.File;
 import com.intellij.execution.process.ProcessHandler;
 import java.util.List;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
 import com.intellij.execution.ExecutionException;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -29,7 +31,6 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.PathMacros;
-import org.apache.log4j.Level;
 import org.jdom.Element;
 import jetbrains.mps.tool.common.JDOMUtil;
 import org.jdom.Document;
@@ -53,11 +54,18 @@ import jetbrains.mps.debug.api.Debuggers;
 
 public class JUnit_Command {
   private static final Logger LOG = LogManager.getLogger(JUnit_Command.class);
+  private Project myProject_Project;
   private String myDebuggerSettings_String;
   private String myVirtualMachineParameter_String;
   private String myJrePath_String;
   private File myWorkingDirectory_File = new File(".");
   public JUnit_Command() {
+  }
+  public JUnit_Command setProject_Project(Project project) {
+    if (project != null) {
+      myProject_Project = project;
+    }
+    return this;
   }
   public JUnit_Command setDebuggerSettings_String(String debuggerSettings) {
     if (debuggerSettings != null) {
@@ -85,9 +93,22 @@ public class JUnit_Command {
   }
 
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests, JavaRunParameters javaRunParameters) throws ExecutionException {
-    return new JUnit_Command().setVirtualMachineParameter_String(check_txeh3_a1a0a0a(javaRunParameters)).setJrePath_String((check_txeh3_a0c0a0a0(javaRunParameters) ? javaRunParameters.jrePath() : null)).setWorkingDirectory_File((isEmptyString(check_txeh3_a0a3a0a0a(javaRunParameters)) ? null : new File(javaRunParameters.workingDirectory()))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(tests);
+    if (myProject_Project == null) {
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("This is deprecated (since MPS 2018.3) way to execute JUnit tests, please refactor", new Throwable());
+      }
+    }
+    return new JUnit_Command().setProject_Project(myProject_Project).setVirtualMachineParameter_String(check_txeh3_a2a1a0a(javaRunParameters)).setJrePath_String((check_txeh3_a0d0b0a0(javaRunParameters) ? javaRunParameters.jrePath() : null)).setWorkingDirectory_File((isEmptyString(check_txeh3_a0a4a1a0a(javaRunParameters)) ? null : new File(javaRunParameters.workingDirectory()))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(tests);
   }
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests) throws ExecutionException {
+    if (myProject_Project == null) {
+      // XXX we tolerate null project for transition period, clients have to supply one always 
+      //     we shall fail with exception once legacy usages gone 
+      // FIXME and mark project parameter as 'required' 
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("This is deprecated (since MPS 2018.3) way to execute JUnit tests, please refactor", new Throwable());
+      }
+    }
     if (tests == null) {
       throw new ExecutionException("Tests to run are null.");
     }
@@ -99,8 +120,9 @@ public class JUnit_Command {
     if (ListSequence.fromList(tests).isEmpty()) {
       throw new ExecutionException("Could not find tests to run.");
     }
-    // FIXME use of global repository here is just provisional, we need an MPS project here (it's fine to demand an MPS project when we launch MPS tests from within an IDE, right?) 
-    SRepository repo = MPSModuleRepository.getInstance();
+    // XXX use of global repository here is provisional, until legacy calls are here. 
+    // It's fine to demand an MPS project when we launch MPS tests from ITestNodeWrapper 
+    SRepository repo = (myProject_Project == null ? MPSModuleRepository.getInstance() : myProject_Project.getRepository());
     return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun.getParameters().getJvmArgs()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ? " " + myVirtualMachineParameter_String : ""))).setClassPath_ListString(ListSequence.fromList(JUnit_Command.getClasspath(testsToRun, repo)).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(JUnit_Command.getProgramParameters(testsToRun, repo)).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun.getParameters().getExecutorClass().getName());
   }
 
@@ -346,19 +368,19 @@ public class JUnit_Command {
       }
     };
   }
-  private static String check_txeh3_a1a0a0a(JavaRunParameters checkedDotOperand) {
+  private static String check_txeh3_a2a1a0a(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.vmOptions();
     }
     return null;
   }
-  private static boolean check_txeh3_a0c0a0a0(JavaRunParameters checkedDotOperand) {
+  private static boolean check_txeh3_a0d0b0a0(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return (boolean) checkedDotOperand.useAlternativeJre();
     }
     return false;
   }
-  private static String check_txeh3_a0a3a0a0a(JavaRunParameters checkedDotOperand) {
+  private static String check_txeh3_a0a4a1a0a(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.workingDirectory();
     }

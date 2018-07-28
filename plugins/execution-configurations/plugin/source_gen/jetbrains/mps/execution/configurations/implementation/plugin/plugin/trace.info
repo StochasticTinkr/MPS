@@ -38,7 +38,7 @@
       <node id="514667495885180441" at="25,0,26,0" concept="6" trace="myDebuggerSettings" />
       <node id="1353230511309622143" at="26,0,27,0" concept="6" trace="myJavaRunParameters" />
       <node id="1353230511309668927" at="27,0,28,0" concept="6" trace="myTestNodes" />
-      <node id="7425944265394330352" at="29,247,30,24" concept="5" />
+      <node id="7425944265394330352" at="29,250,30,24" concept="5" />
       <node id="8844446772621203086" at="30,24,31,26" concept="5" />
       <node id="8221742540279283302" at="31,26,32,36" concept="5" />
       <node id="514667495885184566" at="32,36,33,42" concept="5" />
@@ -46,7 +46,7 @@
       <node id="1353230511309671067" at="34,44,35,28" concept="5" />
       <node id="7302194222461987448" at="39,61,40,69" concept="10" />
       <node id="8221742540280355130" at="40,69,41,72" concept="10" />
-      <node id="1353230511309575869" at="41,72,42,207" concept="10" />
+      <node id="1353230511309575869" at="41,72,42,237" concept="10" />
       <node id="8221742540280419281" at="46,22,47,54" concept="5" />
       <node id="1353230511309683463" at="50,7,51,26" concept="11" />
       <node id="1353230511309618049" at="54,89,55,72" concept="10" />
@@ -64,7 +64,7 @@
       <node id="4875410293293203433" at="75,38,76,25" concept="5" />
       <node id="1353230511309618079" at="78,5,79,60" concept="5" />
       <node id="1353230511309618088" at="79,60,80,22" concept="11" />
-      <node id="6139940957875961744" at="83,30,84,195" concept="5" />
+      <node id="6139940957875961744" at="83,30,84,208" concept="5" />
       <node id="8221742540280397286" at="45,54,48,9" concept="8" />
       <node id="1353230511309618070" at="57,76,60,5" concept="8" />
       <node id="4875410293293203429" at="74,12,77,7" concept="1" />
@@ -74,8 +74,8 @@
       <node id="4875410293293203414" at="71,12,77,7" concept="8" />
       <node id="4875410293293182708" at="63,23,70,7" concept="8" />
       <node id="4875410293293202734" at="71,10,78,5" concept="1" />
-      <node id="1353230511309587426" at="29,0,37,0" concept="3" trace="JUnitExecutor#(Lcom/intellij/openapi/project/Project;Lcom/intellij/execution/Executor;Ljetbrains/mps/execution/api/settings/IPersistentConfiguration;Ljetbrains/mps/debug/api/IDebuggerSettings;Ljetbrains/mps/execution/api/settings/IPersistentConfiguration;Ljava/util/List;)V" />
-      <node id="1353230511309575880" at="42,207,50,7" concept="5" />
+      <node id="1353230511309587426" at="29,0,37,0" concept="3" trace="JUnitExecutor#(Ljetbrains/mps/project/MPSProject;Lcom/intellij/execution/Executor;Ljetbrains/mps/execution/api/settings/IPersistentConfiguration;Ljetbrains/mps/debug/api/IDebuggerSettings;Ljetbrains/mps/execution/api/settings/IPersistentConfiguration;Ljava/util/List;)V" />
+      <node id="1353230511309575880" at="42,237,50,7" concept="5" />
       <node id="1353230511309567973" at="38,0,53,0" concept="9" trace="execute#()Lcom/intellij/execution/process/ProcessHandler;" />
       <node id="4875410293293176873" at="62,60,78,5" concept="8" />
       <node id="1353230511309618031" at="54,0,82,0" concept="9" trace="prepareJavaParamsForTests#(ZLjava/lang/String;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
@@ -83,12 +83,12 @@
       <scope id="1353230511309618071" at="58,29,59,22" />
       <scope id="4875410293293182709" at="64,20,65,84" />
       <scope id="4875410293293203415" at="72,20,73,83" />
-      <scope id="5809945197338050331" at="83,30,84,195" />
+      <scope id="5809945197338050331" at="83,30,84,208" />
       <scope id="4875410293293203430" at="74,14,76,25" />
       <scope id="1353230511309575893" at="45,54,48,9" />
       <scope id="4875410293293187552" at="66,14,69,22" />
       <scope id="5809945197338050350" at="83,0,86,0" />
-      <scope id="1353230511309587429" at="29,247,35,28" />
+      <scope id="1353230511309587429" at="29,250,35,28" />
       <scope id="1353230511309575888" at="44,0,50,0">
         <var name="p0" id="1353230511309575891" />
       </scope>
@@ -2371,7 +2371,7 @@
       <node id="1353230511310623314" at="66,56,67,97" concept="10" />
       <node id="6139940957877020954" at="68,50,69,66" concept="10" />
       <node id="1353230511310657603" at="69,66,70,127" concept="5" />
-      <node id="1353230511310672730" at="71,12,72,145" concept="5" />
+      <node id="1353230511310672730" at="71,12,72,148" concept="5" />
       <node id="607988455145407992" at="73,5,74,55" concept="10" />
       <node id="607988455145171048" at="74,55,75,114" concept="10" />
       <node id="607988455145225337" at="75,114,76,69" concept="10" />
@@ -2406,7 +2406,7 @@
       <scope id="6062668769034010900" at="49,68,50,16" />
       <scope id="6062668769034010900" at="52,45,53,16" />
       <scope id="4617221241150984648" at="63,74,64,114" />
-      <scope id="607988455142914126" at="71,12,72,145" />
+      <scope id="607988455142914126" at="71,12,72,148" />
       <scope id="607988455143440747" at="78,28,79,36" />
       <scope id="4983984616962595155" at="92,57,93,49" />
       <scope id="4983984616962595155" at="95,38,96,65" />

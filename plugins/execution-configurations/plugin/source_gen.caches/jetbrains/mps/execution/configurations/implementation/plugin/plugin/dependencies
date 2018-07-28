@@ -311,7 +311,6 @@
     <classNode dependClassName="com.intellij.execution.process.ProcessAdapter" />
     <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.MessageType" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -324,6 +323,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.TestsUIUtil" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.util.test.CachesUtil" />
     <classNode extendsClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor" />
   </dependency>
