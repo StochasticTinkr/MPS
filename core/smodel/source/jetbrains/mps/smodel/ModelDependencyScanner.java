@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import java.util.Set;
  * Walks a model and gathers information about nodes according to configuration.
  * By default, collects languages in use and references to external models.
  *
+ * JFI, there's {@code ModelDependencyUpdate} in [project] that deals with import changes
  * @author Artem Tikhomirov
  */
 public final class ModelDependencyScanner {
