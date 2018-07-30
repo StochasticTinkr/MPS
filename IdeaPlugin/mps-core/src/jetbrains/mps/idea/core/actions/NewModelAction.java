@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -114,7 +114,7 @@ public class NewModelAction extends NewModelActionBase {
               }
             });
 
-            ModelsAutoImportsManager.doAutoImport(myModelRoot.getModule(), model);
+            myProject.getComponent(ModelsAutoImportsManager.class).performImports(myModelRoot.getModule(), model);
             new MissingDependenciesFixer(model).fixModuleDependencies();
 
             return model;

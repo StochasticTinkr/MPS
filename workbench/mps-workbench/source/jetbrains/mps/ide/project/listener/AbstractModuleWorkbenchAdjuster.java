@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.project.listener;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,6 +24,13 @@ import org.jetbrains.annotations.NotNull;
  * Evgeny Gryaznov, Aug 26, 2010
  */
 public class AbstractModuleWorkbenchAdjuster implements ApplicationComponent {
+  private final MPSCoreComponents myCoreComponents;
+  private TestsModelAutoImports myContributor;
+
+  public AbstractModuleWorkbenchAdjuster(MPSCoreComponents coreComponents) {
+    myCoreComponents = coreComponents;
+  }
+
   @Override
   @NotNull
   public String getComponentName() {
@@ -32,10 +40,13 @@ public class AbstractModuleWorkbenchAdjuster implements ApplicationComponent {
 
   @Override
   public void initComponent() {
-    ModelsAutoImportsManager.registerContributor(new TestsModelAutoImports());
+    myContributor = new TestsModelAutoImports();
+    myCoreComponents.getPlatform().findComponent(ModelsAutoImportsManager.class).register(myContributor);
   }
 
   @Override
   public void disposeComponent() {
+    myCoreComponents.getPlatform().findComponent(ModelsAutoImportsManager.class).unregister(myContributor);
+    myContributor = null;
   }
 }

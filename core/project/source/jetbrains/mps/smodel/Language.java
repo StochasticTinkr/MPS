@@ -21,7 +21,6 @@ import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
-import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.io.DescriptorIO;
 import jetbrains.mps.project.io.DescriptorIOFacade;
@@ -73,10 +72,6 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   @Deprecated
   @ToRemove(version = 3.3)
   public static final String LEGACY_LANGUAGE_MODELS = "languageModels";
-
-  static {
-    ModelsAutoImportsManager.registerContributor(new LanguageModelsAutoImports());
-  }
 
   @NotNull private LanguageDescriptor myLanguageDescriptor;
 
@@ -471,21 +466,20 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
 
-  private static class LanguageModelsAutoImports extends jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor<Language> {
-    @NotNull
+  public static class LanguageModelsAutoImports extends jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor {
     @Override
-    public Class<Language> getApplicableSModuleClass() {
-      return Language.class;
+    public boolean isApplicable(SModule module) {
+      return module instanceof Language;
     }
 
     @NotNull
     @Override
-    public Collection<SLanguage> getLanguages(Language contextModule, SModel model) {
+    public Collection<SLanguage> getLanguages(SModule contextModule, SModel model) {
       return LanguageAspectSupport.getMainLanguages(model);
     }
 
     @Override
-    public Collection<SModuleReference> getDevKits(Language contextModule, SModel forModel) {
+    public Collection<SModuleReference> getDevKits(SModule contextModule, SModel forModel) {
       Collection<SModuleReference> initialDevKits = new ArrayList<>(LanguageAspectSupport.getInitialDevKits(forModel));
       SModuleReference defaultDevkit = LanguageAspectSupport.getDefaultDevkit(forModel);
       if(defaultDevkit != null) {
