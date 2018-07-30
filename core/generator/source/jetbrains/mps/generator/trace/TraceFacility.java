@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,16 @@
  */
 package jetbrains.mps.generator.trace;
 
+import java.util.List;
+
 /**
- * Identifies subscribed {@linkplain TraceClient client}.
- * The idea is that {@code TraceClient} could get reloaded, while ClientToken does not (unless MPSGenerator is alive).
+ * Non-reusable session object to pass to {@link jetbrains.mps.generator.GenerationFacade} to get notified
+ * about transformation events.
  * @author Artem Tikhomirov
- * @since 2017.3
  */
-public class ClientToken {
+public final class TraceFacility {
+  // Keep 'final' to have full control over communication process
+  /*package*/ TraceFacility(List<ClientToken> activeClients) {
+
+  }
 }

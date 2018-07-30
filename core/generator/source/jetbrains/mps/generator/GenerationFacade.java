@@ -21,15 +21,14 @@ import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.generator.impl.ModelStreamManager;
 import jetbrains.mps.generator.impl.ModelStreamProviderImpl;
+import jetbrains.mps.generator.trace.TraceFacility;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -38,6 +37,7 @@ import java.util.List;
  * {@link #messages(IMessageHandler)}  to receive generator messages (optional);
  * {@link #transients(TransientModelsProvider)} where to keep transient models (mandatory);
  * {@link #taskHandler(GeneratorTaskListener)} get notified about progress (optional);
+ * {@link #trace(TraceFacility)} to get trace events (optional);
  * then fire off with {@link #process(ProgressMonitor, List)}
  *
  * IMPLEMENTATION NOTE:
@@ -52,16 +52,6 @@ import java.util.List;
  */
 public final class GenerationFacade {
 
-  /**
-   *
-   * @deprecated use {@link ModelGenerationStatusManager#getModifiedModels(Collection)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  public static Collection<SModel> getModifiedModels(Collection<? extends SModel> models) {
-    return ModelGenerationStatusManager.getInstance().getModifiedModels(models);
-  }
-
   public static boolean canGenerate(SModel sm) {
     return sm instanceof GeneratableSModel && ((GeneratableSModel) sm).isGeneratable();
   }
@@ -73,6 +63,7 @@ public final class GenerationFacade {
   private TransientModelsProvider myTransientModelsProvider;
   private IMessageHandler myMessageHandler = IMessageHandler.NULL_HANDLER;
   private ModelStreamManager.Provider myStreamProvider;
+  private TraceFacility myTraceSession;
 
   public GenerationFacade(@NotNull SRepository repository, @NotNull GenerationOptions generationOptions) {
     myRepository = repository;
@@ -107,6 +98,19 @@ public final class GenerationFacade {
    */
   public GenerationFacade messages(@Nullable IMessageHandler messages) {
     myMessageHandler = messages == null ? IMessageHandler.NULL_HANDLER : messages;
+    return this;
+  }
+
+  /**
+   * PROVISIONAL API, PLEASE DON'T USE OUTSIDE OF MPS
+   */
+  public GenerationFacade trace(@Nullable TraceFacility traceSession) {
+    // on one hand, I'd like to have control whether a transformation is traced (e.g. the one from Make should, some
+    // home-grown, e.g. evaluation, likely no). OTOH, would like to keep control over notification dispatch mechanism
+    // not to be abused. If I use ComponentHost to get TR in #process, it means every transformation get traced.
+    // Perhaps, could keep #trace(), but parameterize with ComponentHost, so that (a) it indicates intention to be traced
+    // and therefore, only transformations of interest would get traced, and (b) hides facility/session mediator
+    myTraceSession = traceSession;
     return this;
   }
 
@@ -162,7 +166,7 @@ public final class GenerationFacade {
 
     final GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(myMessageHandler, myGenerationOptions.isShowInfo(), myGenerationOptions.isShowWarnings());
 
-    GenControllerContext ctx = new GenControllerContext(myRepository, myGenerationOptions, myTransientModelsProvider, myStreamProvider);
+    GenControllerContext ctx = new GenControllerContext(myRepository, myGenerationOptions, myTransientModelsProvider, myStreamProvider, myTraceSession);
     GeneratorTaskListener<GeneratorTask> taskListener;
     if (myTaskListener != null) {
       taskListener = myTaskListener;

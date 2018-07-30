@@ -30,6 +30,8 @@ import java.util.List;
  * @since 2017.3
  */
 public class TraceRegistry implements CoreComponent {
+  // we hold instances of objects we have full control of
+  // as TraceClient instance could come and go (e.g. reloaded).
   private final List<ClientToken> myActiveClients;
   private final List<ClientToken> myInactiveClients;
 
@@ -40,6 +42,7 @@ public class TraceRegistry implements CoreComponent {
 
   public ClientToken subscribe(@NotNull TraceClient client) {
     ClientToken rv = new ClientToken();
+    // perform handshake with the client to ensure its capabilities
     myActiveClients.add(rv);
     return rv;
   }
@@ -48,6 +51,10 @@ public class TraceRegistry implements CoreComponent {
     if (myActiveClients.remove(token)) {
       myInactiveClients.add(token);
     }
+  }
+
+  public TraceFacility createSession() {
+    return new TraceFacility(new ArrayList<>(myActiveClients));
   }
 
   @Override
