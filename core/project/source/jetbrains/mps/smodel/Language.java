@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.classloading.ModuleClassLoaderSupport;
-import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.module.ReloadableModule;
@@ -24,20 +22,14 @@ import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
 import jetbrains.mps.project.ModelsAutoImportsManager;
-import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.io.DescriptorIO;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -87,8 +79,6 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   @NotNull private LanguageDescriptor myLanguageDescriptor;
-
-  private ClassLoader myStubsLoader = new StubsClassLoader();
 
   protected Language(@NotNull LanguageDescriptor descriptor, @Nullable IFile file) {
     super(file);
@@ -480,45 +470,6 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     return false;
   }
 
-  @NotNull
-  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException {
-    // first check if class comes from stubs
-    if (classFqName.startsWith(getModuleName() + ".stubs.")) {
-      try {
-        return myStubsLoader.loadClass(classFqName);
-      } catch (ClassNotFoundException e) {
-        LOG.error("Exception during stubs' class loading", e);
-        throw e;
-      }
-    }
-
-    // if not then call standard #getClass
-    return super.getClass(classFqName, ownClassOnly);
-  }
-
-  private class StubsClassLoader extends ClassLoader {
-    public StubsClassLoader() {
-      super(Language.class.getClassLoader());
-    }
-
-    @Override
-    protected Class<?> findClass(String name) {
-      JavaModuleFacet facet = Language.this.getFacet(JavaModuleFacet.class);
-      assert facet != null;
-      IClassPathItem classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
-      ClassBytes classBytes = classPathItem.getClassBytes(name);
-      if (classBytes == null) return null;
-      byte[] bytes = classBytes.getBytes();
-      definePackageIfNecessary(name);
-      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain(classBytes.getPath()));
-    }
-
-    private void definePackageIfNecessary(String name) {
-      String pack = NameUtil.namespaceFromLongName(name);
-      if (getPackage(pack) != null) return;
-      definePackage(pack, null, null, null, null, null, null, null);
-    }
-  }
 
   private static class LanguageModelsAutoImports extends jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor<Language> {
     @NotNull
