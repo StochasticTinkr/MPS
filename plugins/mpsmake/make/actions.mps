@@ -2,19 +2,19 @@
 <model ref="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
+    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
   </languages>
   <imports>
     <import index="rgfa" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.tree(JDK/)" />
@@ -801,9 +801,6 @@
         </node>
         <node concept="3clFbF" id="1K00pPgqzip" role="3cqZAp">
           <node concept="2OqwBi" id="1K00pPgqziq" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTxdw" role="2Oq$k0">
-              <ref role="3cqZAo" node="1K00pPgqzij" resolve="modulesToBuild" />
-            </node>
             <node concept="X8dFx" id="HQjE4XgE3S" role="2OqNvi">
               <node concept="2OqwBi" id="HQjE4XgE3M" role="25WWJ7">
                 <node concept="2OqwBi" id="HQjE4XgE3N" role="2Oq$k0">
@@ -819,6 +816,9 @@
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="37vLTw" id="3GM_nagTxdw" role="2Oq$k0">
+              <ref role="3cqZAo" node="1K00pPgqzij" resolve="modulesToBuild" />
             </node>
           </node>
         </node>
@@ -971,9 +971,6 @@
         </node>
         <node concept="3clFbF" id="1K00pPgqzjz" role="3cqZAp">
           <node concept="2OqwBi" id="1K00pPgqzj$" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTuv6" role="2Oq$k0">
-              <ref role="3cqZAo" node="1K00pPgqzjt" resolve="modules" />
-            </node>
             <node concept="X8dFx" id="HQjE4XgE3L" role="2OqNvi">
               <node concept="2OqwBi" id="HQjE4XgE3F" role="25WWJ7">
                 <node concept="2OqwBi" id="HQjE4XgE3G" role="2Oq$k0">
@@ -989,6 +986,9 @@
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="37vLTw" id="3GM_nagTuv6" role="2Oq$k0">
+              <ref role="3cqZAo" node="1K00pPgqzjt" resolve="modules" />
             </node>
           </node>
         </node>
@@ -1065,9 +1065,6 @@
         </node>
         <node concept="3clFbF" id="1K00pPgqzkm" role="3cqZAp">
           <node concept="2OqwBi" id="1K00pPgqzkn" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagT$$W" role="2Oq$k0">
-              <ref role="3cqZAo" node="1K00pPgqzkg" resolve="modules" />
-            </node>
             <node concept="X8dFx" id="HQjE4XgE3Z" role="2OqNvi">
               <node concept="2OqwBi" id="HQjE4XgE3T" role="25WWJ7">
                 <node concept="2OqwBi" id="HQjE4XgE3U" role="2Oq$k0">
@@ -1083,6 +1080,9 @@
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="37vLTw" id="3GM_nagT$$W" role="2Oq$k0">
+              <ref role="3cqZAo" node="1K00pPgqzkg" resolve="modules" />
             </node>
           </node>
         </node>
@@ -7502,11 +7502,11 @@
         </node>
         <node concept="3clFbF" id="3LTvNgPOI2P" role="3cqZAp">
           <node concept="37vLTI" id="3LTvNgPOIgM" role="3clFbG">
-            <node concept="37vLTw" id="3LTvNgPOI2N" role="37vLTJ">
-              <ref role="3cqZAo" node="3LTvNgPOGvW" resolve="myGenerationSettings" />
-            </node>
             <node concept="37vLTw" id="3l7XKooFo0A" role="37vLTx">
               <ref role="3cqZAo" node="3l7XKooFmoR" resolve="settings" />
+            </node>
+            <node concept="37vLTw" id="3LTvNgPOI2N" role="37vLTJ">
+              <ref role="3cqZAo" node="3LTvNgPOGvW" resolve="myGenerationSettings" />
             </node>
           </node>
         </node>
@@ -8548,18 +8548,18 @@
         </node>
         <node concept="3clFbF" id="4_qBpm$bmGr" role="3cqZAp">
           <node concept="2OqwBi" id="4_qBpm$bmGs" role="3clFbG">
-            <node concept="liA8E" id="4_qBpm$bmGu" role="2OqNvi">
-              <ref role="37wK5l" to="ap4t:~IModifiableGenerationSettings.setSaveTransientModels(boolean):void" resolve="setSaveTransientModels" />
-              <node concept="37vLTw" id="2BHiRxghfq_" role="37wK5m">
-                <ref role="3cqZAo" node="4_qBpm$bmGo" resolve="state" />
-              </node>
-            </node>
             <node concept="2OqwBi" id="3l7XKooG9RG" role="2Oq$k0">
               <node concept="37vLTw" id="3l7XKooG9xh" role="2Oq$k0">
                 <ref role="3cqZAo" node="3l7XKooG9bH" resolve="sp" />
               </node>
               <node concept="liA8E" id="3l7XKooGacr" role="2OqNvi">
                 <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getGenerationSettings():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getGenerationSettings" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4_qBpm$bmGu" role="2OqNvi">
+              <ref role="37wK5l" to="ap4t:~IModifiableGenerationSettings.setSaveTransientModels(boolean):void" resolve="setSaveTransientModels" />
+              <node concept="37vLTw" id="2BHiRxghfq_" role="37wK5m">
+                <ref role="3cqZAo" node="4_qBpm$bmGo" resolve="state" />
               </node>
             </node>
           </node>
@@ -8604,10 +8604,10 @@
     <node concept="312cEg" id="1Kgs_4ZGAYH" role="jymVt">
       <property role="TrG5h" value="myStatusBar" />
       <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="1Kgs_4ZGAYI" role="1B3o_S" />
       <node concept="3uibUv" id="3l7XKooFiHi" role="1tU5fm">
         <ref role="3uigEE" to="jkny:~StatusBar" resolve="StatusBar" />
       </node>
+      <node concept="3Tm6S6" id="1Kgs_4ZGAYI" role="1B3o_S" />
     </node>
     <node concept="312cEg" id="5do60t9v47S" role="jymVt">
       <property role="TrG5h" value="myWidget" />
@@ -8910,9 +8910,6 @@
           <node concept="3cpWsn" id="C3dcc38TeP" role="3cpWs9">
             <property role="TrG5h" value="component" />
             <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="C3dcc38TeQ" role="1tU5fm">
-              <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
-            </node>
             <node concept="2OqwBi" id="3l7XKooEh5W" role="33vP2m">
               <node concept="37vLTw" id="2BHiRxeujUH" role="2Oq$k0">
                 <ref role="3cqZAo" node="5do60t9v47S" resolve="myWidget" />
@@ -8920,6 +8917,9 @@
               <node concept="liA8E" id="3l7XKooEi$z" role="2OqNvi">
                 <ref role="37wK5l" node="1$ZRmkX9bOD" resolve="getComponent" />
               </node>
+            </node>
+            <node concept="3uibUv" id="C3dcc38TeQ" role="1tU5fm">
+              <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
             </node>
           </node>
         </node>
@@ -9800,7 +9800,7 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="3l7XKooDoev" role="1B3o_S" />
       <node concept="3uibUv" id="3LTvNgPOPyR" role="1tU5fm">
-        <ref role="3uigEE" node="C3dcc38Te3" resolve="TransientModelBallonDisplayer" />
+        <ref role="3uigEE" node="C3dcc38Te3" />
       </node>
     </node>
     <node concept="312cEg" id="3l7XKooC7wD" role="jymVt">
@@ -11548,6 +11548,18 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="tC5Ba" id="6A_mxR_MEY3">
+    <property role="3GE5qa" value="Make.groups" />
+    <property role="TrG5h" value="TouchBarDefault" />
+    <node concept="tT9cl" id="6A_mxR_Nm8G" role="2f5YQi">
+      <ref role="tU$_T" to="tprs:6A_mxR_NmaE" resolve="IDEATouchBarDefault" />
+    </node>
+    <node concept="ftmFs" id="6A_mxR_Nm8I" role="ftER_">
+      <node concept="tCFHf" id="6A_mxR_Nm8L" role="ftvYc">
+        <ref role="tCJdB" node="7tZeFupJF5V" resolve="MakeProject" />
       </node>
     </node>
   </node>

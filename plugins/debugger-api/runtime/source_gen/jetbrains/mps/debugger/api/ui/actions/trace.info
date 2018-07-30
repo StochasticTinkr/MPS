@@ -53,6 +53,40 @@
       <unit id="2392684134639444998" at="12,0,36,0" name="jetbrains.mps.debugger.api.ui.actions.MuteBreakpoints" />
     </file>
   </root>
+  <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/3201523885428155573">
+    <file name="Runtime_ApplicationPlugin.java">
+      <node id="3201523885428155573" at="39,46,40,52" concept="2" />
+      <node id="3201523885428155575" at="46,37,47,131" concept="2" />
+    </file>
+    <file name="TouchBarDefault_cmd_ActionGroup.java">
+      <node id="3201523885428155573" at="8,0,9,0" concept="11" trace="ID" />
+      <node id="3201523885428155573" at="9,44,10,37" concept="13" />
+      <node id="3201523885428155573" at="10,37,11,30" concept="2" />
+      <node id="3201523885428155573" at="11,30,12,25" concept="2" />
+      <node id="3201523885428155584" at="12,25,13,116" concept="2" />
+      <node id="3201523885428155573" at="9,0,15,0" concept="1" trace="TouchBarDefault_cmd_ActionGroup#()V" />
+      <scope id="3201523885428155573" at="9,44,13,116" />
+      <scope id="3201523885428155573" at="9,0,15,0" />
+      <unit id="3201523885428155573" at="7,0,16,0" name="jetbrains.mps.debugger.api.ui.actions.TouchBarDefault_cmd_ActionGroup" />
+    </file>
+  </root>
+  <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/3201523885428191713">
+    <file name="Runtime_ApplicationPlugin.java">
+      <node id="3201523885428191713" at="38,42,39,46" concept="2" />
+      <node id="3201523885428191718" at="47,131,48,119" concept="2" />
+    </file>
+    <file name="TouchBarDebug_ActionGroup.java">
+      <node id="3201523885428191713" at="8,0,9,0" concept="11" trace="ID" />
+      <node id="3201523885428191713" at="9,38,10,31" concept="13" />
+      <node id="3201523885428191713" at="10,31,11,30" concept="2" />
+      <node id="3201523885428191713" at="11,30,12,25" concept="2" />
+      <node id="3201523885428195195" at="12,25,13,62" concept="2" />
+      <node id="3201523885428191713" at="9,0,15,0" concept="1" trace="TouchBarDebug_ActionGroup#()V" />
+      <scope id="3201523885428191713" at="9,38,13,62" />
+      <scope id="3201523885428191713" at="9,0,15,0" />
+      <unit id="3201523885428191713" at="7,0,16,0" name="jetbrains.mps.debugger.api.ui.actions.TouchBarDebug_ActionGroup" />
+    </file>
+  </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/4073774232572770202">
     <file name="Debugger_KeymapChanges.java">
       <node id="4073774232572770202" at="11,35,12,14" concept="9" />
@@ -81,7 +115,7 @@
       <unit id="4073774232572770202" at="10,0,30,0" name="jetbrains.mps.debugger.api.ui.actions.Debugger_KeymapChanges" />
     </file>
     <file name="Runtime_ApplicationPlugin.java">
-      <node id="4073774232572770202" at="49,92,50,72" concept="2" />
+      <node id="4073774232572770202" at="54,92,55,72" concept="2" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/418270182880363898">
@@ -183,7 +217,7 @@
       <unit id="5738289212619994244" at="10,0,25,0" name="jetbrains.mps.debugger.api.ui.actions.DefaultForGNOME_KeymapChanges" />
     </file>
     <file name="Runtime_ApplicationPlugin.java">
-      <node id="5738289212619994244" at="50,72,51,79" concept="2" />
+      <node id="5738289212619994244" at="55,72,56,79" concept="2" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/6515087165749899624">
@@ -891,7 +925,8 @@
     </file>
     <file name="Runtime_ApplicationPlugin.java">
       <node id="7064627997011532858" at="35,61,36,45" concept="2" />
-      <node id="7064627997011532871" at="44,37,45,73" concept="2" />
+      <node id="7064627997011532871" at="48,119,49,73" concept="2" />
+      <node id="3201523885428189777" at="49,73,50,180" concept="2" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7064627997011532872">
@@ -939,12 +974,12 @@
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7064627997011656237">
     <file name="Runtime_ApplicationPlugin.java">
-      <node id="7064627997011656240" at="40,39,41,124" concept="2" />
+      <node id="7064627997011656240" at="42,39,43,124" concept="2" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7064627997011656241">
     <file name="Runtime_ApplicationPlugin.java">
-      <node id="7064627997011656244" at="41,124,42,124" concept="2" />
+      <node id="7064627997011656244" at="43,124,44,124" concept="2" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7162597690968011921">
@@ -953,29 +988,29 @@
       <node id="7162597690968011921" at="16,27,17,16" concept="8" />
       <node id="7162597690968011921" at="19,30,20,30" concept="9" />
       <node id="7162597690968011921" at="33,44,34,14" concept="9" />
-      <node id="7162597690968011921" at="48,48,49,92" concept="7" />
-      <node id="7162597690968011921" at="51,79,52,15" concept="8" />
+      <node id="7162597690968011921" at="53,48,54,92" concept="7" />
+      <node id="7162597690968011921" at="56,79,57,15" concept="8" />
       <node id="7162597690968011921" at="14,0,16,0" concept="1" trace="Runtime_ApplicationPlugin#()V" />
       <node id="7162597690968011921" at="16,0,19,0" concept="6" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-      <node id="7162597690968011921" at="40,0,44,0" concept="6" trace="adjustInterfaceGroups#()V" />
-      <node id="7162597690968011921" at="44,0,48,0" concept="6" trace="adjustRegularGroups#()V" />
-      <node id="7162597690968011921" at="48,0,54,0" concept="6" trace="initKeymaps#()Ljava/util/List;" />
-      <node id="7162597690968011921" at="19,0,40,0" concept="6" trace="createGroups#()V" />
+      <node id="7162597690968011921" at="42,0,46,0" concept="6" trace="adjustInterfaceGroups#()V" />
+      <node id="7162597690968011921" at="53,0,59,0" concept="6" trace="initKeymaps#()Ljava/util/List;" />
+      <node id="7162597690968011921" at="46,0,53,0" concept="6" trace="adjustRegularGroups#()V" />
+      <node id="7162597690968011921" at="19,0,42,0" concept="6" trace="createGroups#()V" />
       <scope id="7162597690968011921" at="14,38,14,38" />
       <scope id="7162597690968011921" at="16,27,17,16" />
       <scope id="7162597690968011921" at="14,0,16,0" />
-      <scope id="7162597690968011921" at="40,39,42,124" />
-      <scope id="7162597690968011921" at="44,37,46,128" />
+      <scope id="7162597690968011921" at="42,39,44,124" />
       <scope id="7162597690968011921" at="16,0,19,0" />
-      <scope id="7162597690968011921" at="40,0,44,0" />
-      <scope id="7162597690968011921" at="44,0,48,0" />
-      <scope id="7162597690968011921" at="48,48,52,15">
+      <scope id="7162597690968011921" at="42,0,46,0" />
+      <scope id="7162597690968011921" at="53,48,57,15">
         <var name="res" id="7162597690968011921" />
       </scope>
-      <scope id="7162597690968011921" at="48,0,54,0" />
-      <scope id="7162597690968011921" at="19,30,38,42" />
-      <scope id="7162597690968011921" at="19,0,40,0" />
-      <unit id="7162597690968011921" at="12,0,55,0" name="jetbrains.mps.debugger.api.ui.actions.Runtime_ApplicationPlugin" />
+      <scope id="7162597690968011921" at="46,37,51,128" />
+      <scope id="7162597690968011921" at="53,0,59,0" />
+      <scope id="7162597690968011921" at="46,0,53,0" />
+      <scope id="7162597690968011921" at="19,30,40,52" />
+      <scope id="7162597690968011921" at="19,0,42,0" />
+      <unit id="7162597690968011921" at="12,0,60,0" name="jetbrains.mps.debugger.api.ui.actions.Runtime_ApplicationPlugin" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/8643693251546855502">
@@ -1072,7 +1107,7 @@
     </file>
     <file name="Runtime_ApplicationPlugin.java">
       <node id="9154600507441896288" at="36,45,37,47" concept="2" />
-      <node id="9154600507441896296" at="45,73,46,128" concept="2" />
+      <node id="9154600507441896296" at="50,180,51,128" concept="2" />
     </file>
   </root>
 </debug-info>

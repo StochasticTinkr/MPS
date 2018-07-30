@@ -486,6 +486,7 @@
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TextPreviewModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.ToolbarMake_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.make.actions.TouchBarDefault_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
@@ -719,6 +720,10 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.ToolbarMake_ActionGroup" file="ToolbarMake_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.make.actions.TouchBarDefault_ActionGroup" file="TouchBarDefault_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>

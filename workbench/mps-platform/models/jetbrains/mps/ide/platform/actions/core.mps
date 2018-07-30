@@ -12,7 +12,7 @@
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
@@ -43,6 +43,7 @@
     <import index="5nvm" ref="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)" />
     <import index="4ugc" ref="r:bd779a69-a10b-4882-b646-c1303f2dd4f7(jetbrains.mps.refactoring.participant.plugin)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" implicit="true" />
+    <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -86,6 +87,7 @@
         <reference id="1203088061055" name="action" index="tCJdB" />
       </concept>
       <concept id="1203092361741" name="jetbrains.mps.lang.plugin.structure.ModificationStatement" flags="lg" index="tT9cl">
+        <reference id="1204992316090" name="point" index="2f8Tey" />
         <reference id="1203092736097" name="modifiedGroup" index="tU$_T" />
       </concept>
       <concept id="1205679047295" name="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" flags="ig" index="2S4$dB" />
@@ -441,6 +443,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -6977,7 +6980,7 @@
       <node concept="3clFbS" id="3ly2gVlmzOn" role="3clF47">
         <node concept="3clFbF" id="1knX_y6nTs$" role="3cqZAp">
           <node concept="37vLTw" id="1knX_y6nTsx" role="3clFbG">
-            <ref role="3cqZAo" node="1knX_y6nMbd" resolve="myName" />
+            <ref role="3cqZAo" node="1knX_y6nMbd" />
           </node>
         </node>
       </node>
@@ -7021,7 +7024,7 @@
           <node concept="2ShNRf" id="76O06llZ0QD" role="3clFbG">
             <node concept="Tc6Ow" id="2vOGnLEufCo" role="2ShVmc">
               <node concept="37vLTw" id="1knX_y6nVEJ" role="HW$Y0">
-                <ref role="3cqZAo" node="1knX_y6nlhA" resolve="myNode" />
+                <ref role="3cqZAo" node="1knX_y6nlhA" />
               </node>
               <node concept="3Tqbb2" id="2vOGnLEuhtV" role="HW$YZ" />
             </node>
@@ -7060,11 +7063,11 @@
               <node concept="3clFbF" id="3ly2gVlnFL4" role="3cqZAp">
                 <node concept="37vLTI" id="3ly2gVlnFL5" role="3clFbG">
                   <node concept="37vLTw" id="1knX_y6omBP" role="37vLTx">
-                    <ref role="3cqZAo" node="1knX_y6od02" resolve="myNewNodeName" />
+                    <ref role="3cqZAo" node="1knX_y6od02" />
                   </node>
                   <node concept="2OqwBi" id="3ly2gVlnFL7" role="37vLTJ">
                     <node concept="37vLTw" id="1knX_y6o8NF" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1knX_y6nlhA" resolve="myNode" />
+                      <ref role="3cqZAo" node="1knX_y6nlhA" />
                     </node>
                     <node concept="3TrcHB" id="5v6iE98DoQH" role="2OqNvi">
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -7079,7 +7082,7 @@
               <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
             </node>
             <node concept="37vLTw" id="1knX_y6o7vT" role="2Oq$k0">
-              <ref role="3cqZAo" node="1knX_y6o1kq" resolve="myProject" />
+              <ref role="3cqZAo" node="1knX_y6o1kq" />
             </node>
           </node>
         </node>
@@ -7099,16 +7102,16 @@
         <node concept="3clFbJ" id="3ly2gVlnGsh" role="3cqZAp">
           <node concept="3clFbC" id="3ly2gVlnHVz" role="3clFbw">
             <node concept="37vLTw" id="1knX_y6onnj" role="3uHU7w">
-              <ref role="3cqZAo" node="1knX_y6nlhA" resolve="myNode" />
+              <ref role="3cqZAo" node="1knX_y6nlhA" />
             </node>
             <node concept="37vLTw" id="3ly2gVlnHeS" role="3uHU7B">
-              <ref role="3cqZAo" node="3ly2gVlnE8V" resolve="initialState" />
+              <ref role="3cqZAo" node="3ly2gVlnE8V" />
             </node>
           </node>
           <node concept="3clFbS" id="3ly2gVlnGsj" role="3clFbx">
             <node concept="3cpWs6" id="3ly2gVlnKhF" role="3cqZAp">
               <node concept="37vLTw" id="1knX_y6oo8o" role="3cqZAk">
-                <ref role="3cqZAo" node="1knX_y6od02" resolve="myNewNodeName" />
+                <ref role="3cqZAo" node="1knX_y6od02" />
               </node>
             </node>
           </node>
@@ -7122,7 +7125,7 @@
                       <node concept="2OqwBi" id="3ly2gVlo14j" role="3uHU7w">
                         <node concept="2JrnkZ" id="3ly2gVlo0Lr" role="2Oq$k0">
                           <node concept="37vLTw" id="1knX_y6op$q" role="2JrQYb">
-                            <ref role="3cqZAo" node="1knX_y6nlhA" resolve="myNode" />
+                            <ref role="3cqZAo" node="1knX_y6nlhA" />
                           </node>
                         </node>
                         <node concept="liA8E" id="3ly2gVlo1la" role="2OqNvi">
@@ -7137,7 +7140,7 @@
                           <node concept="2OqwBi" id="3ly2gVlnV7h" role="3uHU7w">
                             <node concept="2JrnkZ" id="3ly2gVlnUL2" role="2Oq$k0">
                               <node concept="37vLTw" id="3ly2gVlnSP3" role="2JrQYb">
-                                <ref role="3cqZAo" node="3ly2gVlnE8V" resolve="initialState" />
+                                <ref role="3cqZAo" node="3ly2gVlnE8V" />
                               </node>
                             </node>
                             <node concept="liA8E" id="3ly2gVlnVKh" role="2OqNvi">
@@ -7181,6 +7184,35 @@
       <ref role="3uigEE" node="2EZTs$tsIo8" resolve="RefactoringProcessor.RefactoringBody" />
       <node concept="3Tqbb2" id="1knX_y6nhI3" role="11_B2D" />
       <node concept="17QB3L" id="1knX_y6nhMo" role="11_B2D" />
+    </node>
+  </node>
+  <node concept="tC5Ba" id="2LI6gbES2zF">
+    <property role="3GE5qa" value="TouchBar" />
+    <property role="TrG5h" value="TouchBarDefault_shift_move" />
+    <node concept="ftmFs" id="2LI6gbES2zH" role="ftER_">
+      <node concept="tCFHf" id="2LI6gbES2zM" role="ftvYc">
+        <ref role="tCJdB" node="I5wdVHTn$t" resolve="MoveNodes" />
+      </node>
+      <node concept="tCFHf" id="2LI6gbES2zR" role="ftvYc">
+        <ref role="tCJdB" to="tprs:6YK8y67o2Yu" resolve="MoveModel" />
+      </node>
+    </node>
+    <node concept="tT9cl" id="2LI6gbES2zK" role="2f5YQi">
+      <ref role="tU$_T" to="tprs:2LI6gbERWMf" resolve="TouchBarDefault_shift" />
+      <ref role="2f8Tey" to="tprs:2LI6gbES2z7" resolve="move" />
+    </node>
+  </node>
+  <node concept="tC5Ba" id="2LI6gbERWA2">
+    <property role="TrG5h" value="TouchBarDefault_shift_rename" />
+    <property role="3GE5qa" value="TouchBar" />
+    <node concept="ftmFs" id="2LI6gbERWA4" role="ftER_">
+      <node concept="tCFHf" id="2LI6gbERWA7" role="ftvYc">
+        <ref role="tCJdB" node="7BBQIYkR45T" resolve="Rename" />
+      </node>
+    </node>
+    <node concept="tT9cl" id="2LI6gbERWN2" role="2f5YQi">
+      <ref role="tU$_T" to="tprs:2LI6gbERWMf" resolve="TouchBarDefault_shift" />
+      <ref role="2f8Tey" to="tprs:2LI6gbES1Dy" resolve="rename" />
     </node>
   </node>
 </model>

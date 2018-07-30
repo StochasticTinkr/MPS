@@ -21,7 +21,7 @@
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/2017614408232613001">
     <file name="Make_ApplicationPlugin.java">
       <node id="2017614408232613001" at="54,46,55,54" concept="3" />
-      <node id="2017614408232613006" at="63,127,64,145" concept="3" />
+      <node id="2017614408232613006" at="64,127,65,145" concept="3" />
     </file>
     <file name="ProjectCompileActions_ActionGroup.java">
       <node id="2017614408232613001" at="8,0,9,0" concept="12" trace="ID" />
@@ -382,7 +382,7 @@
     </file>
     <file name="Make_ApplicationPlugin.java">
       <node id="2355088855588242374" at="50,50,51,45" concept="3" />
-      <node id="2355088855588242384" at="61,37,62,92" concept="3" />
+      <node id="2355088855588242384" at="62,37,63,92" concept="3" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/2355088855588242385">
@@ -649,7 +649,7 @@
     </file>
     <file name="Make_ApplicationPlugin.java">
       <node id="4753172061859438776" at="49,43,50,50" concept="3" />
-      <node id="4753172061859438781" at="64,145,65,151" concept="3" />
+      <node id="4753172061859438781" at="65,145,66,151" concept="3" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/4753172061859438783">
@@ -1050,13 +1050,13 @@
     </file>
     <file name="Make_ApplicationPlugin.java">
       <node id="5332171957773708985" at="47,14,48,48" concept="3" />
-      <node id="5332171957773708989" at="65,151,66,117" concept="3" />
+      <node id="5332171957773708989" at="66,151,67,117" concept="3" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/5332171957773708990">
     <file name="Make_ApplicationPlugin.java">
       <node id="5332171957773708990" at="56,44,57,52" concept="3" />
-      <node id="5332171957773708991" at="66,117,67,153" concept="3" />
+      <node id="5332171957773708991" at="67,117,68,153" concept="3" />
     </file>
     <file name="SaveTransientModels_ActionGroup.java">
       <node id="5332171957773708990" at="8,0,9,0" concept="12" trace="ID" />
@@ -1317,26 +1317,26 @@
       <node id="7162597690968054079" at="23,27,24,16" concept="9" />
       <node id="7162597690968054079" at="26,30,27,30" concept="10" />
       <node id="7162597690968054079" at="46,45,47,14" concept="10" />
-      <node id="7162597690968054079" at="78,48,79,92" concept="8" />
-      <node id="7162597690968054079" at="80,71,81,15" concept="9" />
+      <node id="7162597690968054079" at="80,48,81,92" concept="8" />
+      <node id="7162597690968054079" at="82,71,83,15" concept="9" />
       <node id="7162597690968054079" at="21,0,23,0" concept="1" trace="Make_ApplicationPlugin#()V" />
       <node id="7162597690968054079" at="23,0,26,0" concept="7" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-      <node id="7162597690968054079" at="78,0,83,0" concept="7" trace="initKeymaps#()Ljava/util/List;" />
-      <node id="7162597690968054079" at="61,0,78,0" concept="7" trace="adjustRegularGroups#()V" />
-      <node id="7162597690968054079" at="26,0,61,0" concept="7" trace="createGroups#()V" />
+      <node id="7162597690968054079" at="80,0,85,0" concept="7" trace="initKeymaps#()Ljava/util/List;" />
+      <node id="7162597690968054079" at="62,0,80,0" concept="7" trace="adjustRegularGroups#()V" />
+      <node id="7162597690968054079" at="26,0,62,0" concept="7" trace="createGroups#()V" />
       <scope id="7162597690968054079" at="21,35,21,35" />
       <scope id="7162597690968054079" at="23,27,24,16" />
       <scope id="7162597690968054079" at="21,0,23,0" />
       <scope id="7162597690968054079" at="23,0,26,0" />
-      <scope id="7162597690968054079" at="78,48,81,15">
+      <scope id="7162597690968054079" at="80,48,83,15">
         <var name="res" id="7162597690968054079" />
       </scope>
-      <scope id="7162597690968054079" at="78,0,83,0" />
-      <scope id="7162597690968054079" at="61,37,76,83" />
-      <scope id="7162597690968054079" at="61,0,78,0" />
-      <scope id="7162597690968054079" at="26,30,59,44" />
-      <scope id="7162597690968054079" at="26,0,61,0" />
-      <unit id="7162597690968054079" at="19,0,84,0" name="jetbrains.mps.ide.make.actions.Make_ApplicationPlugin" />
+      <scope id="7162597690968054079" at="80,0,85,0" />
+      <scope id="7162597690968054079" at="62,37,78,83" />
+      <scope id="7162597690968054079" at="62,0,80,0" />
+      <scope id="7162597690968054079" at="26,30,60,48" />
+      <scope id="7162597690968054079" at="26,0,62,0" />
+      <unit id="7162597690968054079" at="19,0,86,0" name="jetbrains.mps.ide.make.actions.Make_ApplicationPlugin" />
     </file>
     <file name="Make_ProjectPlugin.java">
       <node id="7162597690968054079" at="10,0,12,0" concept="1" trace="Make_ProjectPlugin#()V" />
@@ -1458,6 +1458,23 @@
       </scope>
       <scope id="721478377485341577" at="52,0,84,0" />
       <unit id="721478377485341571" at="28,0,104,0" name="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer" />
+    </file>
+  </root>
+  <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/7612589829595508611">
+    <file name="Make_ApplicationPlugin.java">
+      <node id="7612589829595508611" at="59,44,60,48" concept="3" />
+      <node id="7612589829595685420" at="68,153,69,84" concept="3" />
+    </file>
+    <file name="TouchBarDefault_ActionGroup.java">
+      <node id="7612589829595508611" at="8,0,9,0" concept="12" trace="ID" />
+      <node id="7612589829595508611" at="9,40,10,33" concept="14" />
+      <node id="7612589829595508611" at="10,33,11,30" concept="3" />
+      <node id="7612589829595508611" at="11,30,12,25" concept="3" />
+      <node id="7612589829595685425" at="12,25,13,100" concept="3" />
+      <node id="7612589829595508611" at="9,0,15,0" concept="1" trace="TouchBarDefault_ActionGroup#()V" />
+      <scope id="7612589829595508611" at="9,40,13,100" />
+      <scope id="7612589829595508611" at="9,0,15,0" />
+      <unit id="7612589829595508611" at="7,0,16,0" name="jetbrains.mps.ide.make.actions.TouchBarDefault_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/821918482060440369">
@@ -1808,8 +1825,8 @@
     </file>
     <file name="Make_ApplicationPlugin.java">
       <node id="8610665572788515183" at="52,44,53,37" concept="3" />
-      <node id="401659284115178798" at="67,153,68,131" concept="3" />
-      <node id="8610665572788515190" at="68,131,69,117" concept="3" />
+      <node id="401659284115178798" at="69,84,70,131" concept="3" />
+      <node id="8610665572788515190" at="70,131,71,117" concept="3" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515195">
@@ -1876,7 +1893,7 @@
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515222">
     <file name="Make_ApplicationPlugin.java">
       <node id="8610665572788515222" at="55,54,56,44" concept="3" />
-      <node id="8610665572788515223" at="69,117,70,128" concept="3" />
+      <node id="8610665572788515223" at="71,117,72,128" concept="3" />
     </file>
     <file name="ProjectMake_ActionGroup.java">
       <node id="8610665572788515222" at="8,0,9,0" concept="12" trace="ID" />
@@ -1914,7 +1931,7 @@
     </file>
     <file name="Make_ApplicationPlugin.java">
       <node id="8610665572788515227" at="48,48,49,43" concept="3" />
-      <node id="8610665572788515228" at="70,128,71,109" concept="3" />
+      <node id="8610665572788515228" at="72,128,73,109" concept="3" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515237">
@@ -2002,9 +2019,9 @@
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515362">
     <file name="Make_ApplicationPlugin.java">
       <node id="8610665572788515362" at="57,52,58,49" concept="3" />
-      <node id="2457869113652000690" at="71,109,72,140" concept="3" />
-      <node id="4898509455467606717" at="72,140,73,100" concept="3" />
-      <node id="8610665572788515365" at="73,100,74,116" concept="3" />
+      <node id="2457869113652000690" at="73,109,74,140" concept="3" />
+      <node id="4898509455467606717" at="74,140,75,100" concept="3" />
+      <node id="8610665572788515365" at="75,100,76,116" concept="3" />
     </file>
     <file name="TextPreviewGroup_ActionGroup.java">
       <node id="8610665572788515362" at="11,0,12,0" concept="12" trace="ID" />
@@ -2031,7 +2048,7 @@
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515366">
     <file name="Make_ApplicationPlugin.java">
       <node id="8610665572788515366" at="53,37,54,46" concept="3" />
-      <node id="8610665572788515372" at="74,116,75,142" concept="3" />
+      <node id="8610665572788515372" at="76,116,77,142" concept="3" />
     </file>
     <file name="NamespaceMake_ActionGroup.java">
       <node id="8610665572788515366" at="9,0,10,0" concept="12" trace="ID" />
@@ -2829,7 +2846,7 @@
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515994">
     <file name="Make_ApplicationPlugin.java">
       <node id="8610665572788515994" at="58,49,59,44" concept="3" />
-      <node id="8610665572788515995" at="75,142,76,83" concept="3" />
+      <node id="8610665572788515995" at="77,142,78,83" concept="3" />
     </file>
     <file name="ToolbarMake_ActionGroup.java">
       <node id="8610665572788515994" at="8,0,9,0" concept="12" trace="ID" />
@@ -2928,7 +2945,7 @@
       <unit id="8610665572788521540" at="10,0,26,0" name="jetbrains.mps.ide.make.actions.Default_KeymapChanges" />
     </file>
     <file name="Make_ApplicationPlugin.java">
-      <node id="8610665572788521540" at="79,92,80,71" concept="3" />
+      <node id="8610665572788521540" at="81,92,82,71" concept="3" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8654290870484351937">
@@ -2978,7 +2995,7 @@
     </file>
     <file name="Make_ApplicationPlugin.java">
       <node id="8654290870484351937" at="51,45,52,44" concept="3" />
-      <node id="8654290870484797394" at="62,92,63,127" concept="3" />
+      <node id="8654290870484797394" at="63,92,64,127" concept="3" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8654290870484358908">

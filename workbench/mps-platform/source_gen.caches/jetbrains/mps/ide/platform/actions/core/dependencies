@@ -256,5 +256,13 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.platform.actions.core.TouchBarDefault_shift_move_ActionGroup" file="TouchBarDefault_shift_move_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.platform.actions.core.TouchBarDefault_shift_rename_ActionGroup" file="TouchBarDefault_shift_rename_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
 </dependenciesRoot>
 

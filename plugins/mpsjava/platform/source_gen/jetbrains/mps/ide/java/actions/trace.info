@@ -2172,6 +2172,20 @@
       <unit id="2872212824181502686" at="24,0,93,0" name="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action" />
     </file>
   </root>
+  <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/3201523885428168342">
+    <file name="TouchBarDefault_shift_ActionGroup.java">
+      <node id="3201523885428168342" at="8,0,9,0" concept="15" trace="ID" />
+      <node id="3201523885428168342" at="9,46,10,39" concept="17" />
+      <node id="3201523885428168342" at="10,39,11,30" concept="5" />
+      <node id="3201523885428168342" at="11,30,12,25" concept="5" />
+      <node id="3201523885428178361" at="12,25,13,107" concept="5" />
+      <node id="3201523885428178366" at="13,107,14,109" concept="5" />
+      <node id="3201523885428168342" at="9,0,16,0" concept="4" trace="TouchBarDefault_shift_ActionGroup#()V" />
+      <scope id="3201523885428168342" at="9,46,14,109" />
+      <scope id="3201523885428168342" at="9,0,16,0" />
+      <unit id="3201523885428168342" at="7,0,17,0" name="jetbrains.mps.ide.java.actions.TouchBarDefault_shift_ActionGroup" />
+    </file>
+  </root>
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/4326588611400152009">
     <file name="ResolveStubReferencesToMPSGlobal_Action.java">
       <node id="4326588611400152009" at="17,0,18,0" concept="15" trace="ICON" />

@@ -1793,6 +1793,11 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.SubmitToTracker_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Tools_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.TouchBarDebug_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.TouchBarDefault_alt_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.TouchBarDefault_cmd_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.TouchBarDefault_cmd_alt_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.TouchBarDefault_shift_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.TraceActions_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.actions.TransientModulesActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.View_ActionGroup" />
@@ -3497,6 +3502,32 @@
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.Tools_ActionGroup" file="Tools_ActionGroup.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.actions.TouchBarDebug_ActionGroup" file="TouchBarDebug_ActionGroup.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.actions.TouchBarDefault_alt_ActionGroup" file="TouchBarDefault_alt_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.actions.TouchBarDefault_cmd_ActionGroup" file="TouchBarDefault_cmd_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.actions.TouchBarDefault_cmd_alt_ActionGroup" file="TouchBarDefault_cmd_alt_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.actions.TouchBarDefault_shift_ActionGroup" file="TouchBarDefault_shift_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />

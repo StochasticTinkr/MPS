@@ -23888,7 +23888,6 @@
           <node concept="3cpWsn" id="3dReA4l3cbN" role="3cpWs9">
             <property role="TrG5h" value="newName" />
             <property role="3TUv4t" value="true" />
-            <node concept="17QB3L" id="3dReA4l3cbO" role="1tU5fm" />
             <node concept="2YIFZM" id="6_k0AGsNAGx" role="33vP2m">
               <ref role="1Pybhc" to="u42p:1t_LRy89$1R" resolve="StringChooserDialog" />
               <ref role="37wK5l" to="u42p:6_k0AGsJ6HR" resolve="getString" />
@@ -23918,6 +23917,7 @@
                 <property role="3clFbU" value="true" />
               </node>
             </node>
+            <node concept="17QB3L" id="3dReA4l3cbO" role="1tU5fm" />
           </node>
         </node>
         <node concept="3clFbH" id="3dReA4l3cbJ" role="3cqZAp" />
@@ -25840,6 +25840,22 @@
     <node concept="3uibUv" id="4SN3DOcFu4J" role="EKbjA">
       <ref role="3uigEE" to="33ny:~Comparator" resolve="Comparator" />
       <node concept="2sp9CU" id="4SN3DOcFuT$" role="11_B2D" />
+    </node>
+  </node>
+  <node concept="tC5Ba" id="2LI6gbERXqm">
+    <property role="3GE5qa" value="Groups.TouchBar" />
+    <property role="TrG5h" value="TouchBarDefault_shift" />
+    <node concept="ftmFs" id="2LI6gbERXqq" role="ftER_">
+      <node concept="tCFHf" id="2LI6gbERZQT" role="ftvYc">
+        <ref role="tCJdB" node="cvGLnZnRlJ" resolve="RenameMethod" />
+      </node>
+      <node concept="tCFHf" id="2LI6gbERZQY" role="ftvYc">
+        <ref role="tCJdB" node="8qS5$SbS$" resolve="RenameVariable" />
+      </node>
+    </node>
+    <node concept="tT9cl" id="2LI6gbERXqo" role="2f5YQi">
+      <ref role="tU$_T" to="tprs:2LI6gbERWMf" resolve="TouchBarDefault_shift" />
+      <ref role="2f8Tey" to="tprs:2LI6gbES1Dy" resolve="rename" />
     </node>
   </node>
 </model>
