@@ -3432,16 +3432,8 @@
               <node concept="2YIFZM" id="5u9jboqxFgX" role="3cqZAk">
                 <ref role="1Pybhc" to="zn9m:~IconLoader" resolve="IconLoader" />
                 <ref role="37wK5l" to="zn9m:~IconLoader.findIcon(java.lang.String,java.lang.ClassLoader):javax.swing.Icon" resolve="findIcon" />
-                <node concept="2OqwBi" id="4zG7rycKoXP" role="37wK5m">
-                  <node concept="37vLTw" id="5u9jboqxFmN" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3RymrDRZk2X" resolve="resource" />
-                  </node>
-                  <node concept="liA8E" id="4zG7rycKpBA" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.substring(int):java.lang.String" resolve="substring" />
-                    <node concept="3cmrfG" id="4zG7rycKpNO" role="37wK5m">
-                      <property role="3cmrfH" value="1" />
-                    </node>
-                  </node>
+                <node concept="37vLTw" id="5u9jboqxFmN" role="37wK5m">
+                  <ref role="3cqZAo" node="3RymrDRZk2X" resolve="resource" />
                 </node>
                 <node concept="2OqwBi" id="5u9jboqxFgZ" role="37wK5m">
                   <node concept="37vLTw" id="5u9jboqxFh0" role="2Oq$k0">
@@ -3500,17 +3492,22 @@
                   <ref role="3cqZAo" node="3RymrDRZk2X" resolve="resource" />
                 </node>
                 <node concept="3cpWs3" id="3RymrDRZk6y" role="3uHU7B">
-                  <node concept="2OqwBi" id="3RymrDRZk6z" role="3uHU7B">
-                    <node concept="37vLTw" id="3RymrDRZk6$" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3RymrDRZk6i" resolve="packName" />
+                  <node concept="3cpWs3" id="7r5YfqgCUqJ" role="3uHU7B">
+                    <node concept="Xl_RD" id="7r5YfqgCUD9" role="3uHU7B">
+                      <property role="Xl_RC" value="/" />
                     </node>
-                    <node concept="liA8E" id="3RymrDRZk6_" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~String.replace(char,char):java.lang.String" resolve="replace" />
-                      <node concept="1Xhbcc" id="3RymrDRZk6A" role="37wK5m">
-                        <property role="1XhdNS" value="." />
+                    <node concept="2OqwBi" id="3RymrDRZk6z" role="3uHU7w">
+                      <node concept="37vLTw" id="3RymrDRZk6$" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3RymrDRZk6i" resolve="packName" />
                       </node>
-                      <node concept="1Xhbcc" id="3RymrDRZk6B" role="37wK5m">
-                        <property role="1XhdNS" value="/" />
+                      <node concept="liA8E" id="3RymrDRZk6_" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~String.replace(char,char):java.lang.String" resolve="replace" />
+                        <node concept="1Xhbcc" id="3RymrDRZk6A" role="37wK5m">
+                          <property role="1XhdNS" value="." />
+                        </node>
+                        <node concept="1Xhbcc" id="3RymrDRZk6B" role="37wK5m">
+                          <property role="1XhdNS" value="/" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -3519,8 +3516,13 @@
                   </node>
                 </node>
               </node>
-              <node concept="37vLTw" id="3RymrDRZo16" role="3K4E3e">
-                <ref role="3cqZAo" node="3RymrDRZk2X" resolve="resource" />
+              <node concept="3cpWs3" id="7r5YfqgCTM$" role="3K4E3e">
+                <node concept="Xl_RD" id="7r5YfqgCU25" role="3uHU7B">
+                  <property role="Xl_RC" value="/" />
+                </node>
+                <node concept="37vLTw" id="3RymrDRZo16" role="3uHU7w">
+                  <ref role="3cqZAo" node="3RymrDRZk2X" resolve="resource" />
+                </node>
               </node>
             </node>
           </node>

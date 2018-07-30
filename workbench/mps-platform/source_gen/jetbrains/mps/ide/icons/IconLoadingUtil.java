@@ -12,11 +12,11 @@ public class IconLoadingUtil {
   public static Icon loadIcon(String resource, Class loader) {
     boolean isAbsolutePath = resource.startsWith("/");
     if (isAbsolutePath) {
-      return IconLoader.findIcon(resource.substring(1), loader.getClassLoader());
+      return IconLoader.findIcon(resource, loader.getClassLoader());
     }
 
     String packName = loader.getPackage().getName();
-    String resourcePath = (packName.isEmpty() ? resource : packName.replace('.', '/') + "/" + resource);
+    String resourcePath = (packName.isEmpty() ? "/" + resource : "/" + packName.replace('.', '/') + "/" + resource);
     return IconLoader.findIcon(resourcePath, loader.getClassLoader());
   }
 }

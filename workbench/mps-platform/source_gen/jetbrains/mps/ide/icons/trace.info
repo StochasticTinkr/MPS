@@ -469,14 +469,14 @@
   <root nodeRef="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)/4459225238462083668">
     <file name="IconLoadingUtil.java">
       <node id="6307657098121888133" at="12,62,13,54" concept="8" />
-      <node id="6307657098121884732" at="14,25,15,81" concept="9" />
+      <node id="6307657098121884732" at="14,25,15,68" concept="9" />
       <node id="6307657098121889017" at="16,5,17,0" concept="11" />
       <node id="4459225238462087569" at="17,0,18,52" concept="8" />
-      <node id="4459225238462087579" at="18,52,19,104" concept="8" />
-      <node id="4459225238462114654" at="19,104,20,70" concept="9" />
+      <node id="4459225238462087579" at="18,52,19,116" concept="8" />
+      <node id="4459225238462114654" at="19,116,20,70" concept="9" />
       <node id="6307657098121878635" at="13,54,16,5" concept="6" />
       <node id="4459225238462141897" at="12,0,22,0" concept="13" trace="loadIcon#(Ljava/lang/String;Ljava/lang/Class;)Ljavax/swing/Icon;" />
-      <scope id="6307657098121878637" at="14,25,15,81" />
+      <scope id="6307657098121878637" at="14,25,15,68" />
       <scope id="4459225238462087143" at="12,62,20,70">
         <var name="isAbsolutePath" id="6307657098121888134" />
         <var name="packName" id="4459225238462087570" />
