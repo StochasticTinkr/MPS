@@ -6,9 +6,17 @@ import javax.swing.Icon;
 import com.intellij.openapi.util.IconLoader;
 
 public class IconLoadingUtil {
-  public static Icon loadIcon(String name, Class loader) {
+  /**
+   * resource parameter has the same contract as the Class.getResource(String)'s parameter \n
+   */
+  public static Icon loadIcon(String resource, Class loader) {
+    boolean isAbsolutePath = resource.startsWith("/");
+    if (isAbsolutePath) {
+      return IconLoader.findIcon(resource.substring(1), loader.getClassLoader());
+    }
+
     String packName = loader.getPackage().getName();
-    String resourcePath = (packName.isEmpty() ? "/" + name : "/" + packName.replace('.', '/') + "/" + name);
+    String resourcePath = (packName.isEmpty() ? resource : packName.replace('.', '/') + "/" + resource);
     return IconLoader.findIcon(resourcePath, loader.getClassLoader());
   }
 }

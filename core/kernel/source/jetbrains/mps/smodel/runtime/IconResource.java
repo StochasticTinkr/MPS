@@ -32,7 +32,10 @@ public class IconResource {
   private String myClassName; //used to make IconResources unique and avoid things like MPS-24005
   private WeakReference<Class> myResourceProvider;
 
-  public IconResource(@NotNull String iconResId, @NotNull  Class resourceProvider) {
+  /**
+   * iconResId has the same contract as the Class.getResource(String)'s parameter
+   */
+  public IconResource(@NotNull String iconResId, @NotNull Class resourceProvider) {
     myIconResId = iconResId;
     myClassName = resourceProvider.getName();
     myResourceProvider = new WeakReference<Class>(resourceProvider);

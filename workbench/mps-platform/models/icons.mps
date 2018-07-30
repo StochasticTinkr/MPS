@@ -291,6 +291,7 @@
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -3408,6 +3409,56 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="3RymrDRZjZB" role="3clF47">
+        <node concept="3cpWs8" id="5u9jboqxG65" role="3cqZAp">
+          <node concept="3cpWsn" id="5u9jboqxG66" role="3cpWs9">
+            <property role="TrG5h" value="isAbsolutePath" />
+            <node concept="10P_77" id="5u9jboqxG60" role="1tU5fm" />
+            <node concept="2OqwBi" id="5u9jboqxG67" role="33vP2m">
+              <node concept="37vLTw" id="5u9jboqxG68" role="2Oq$k0">
+                <ref role="3cqZAo" node="3RymrDRZk2X" resolve="resource" />
+              </node>
+              <node concept="liA8E" id="5u9jboqxG69" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
+                <node concept="Xl_RD" id="5u9jboqxG6a" role="37wK5m">
+                  <property role="Xl_RC" value="/" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="5u9jboqxDLF" role="3cqZAp">
+          <node concept="3clFbS" id="5u9jboqxDLH" role="3clFbx">
+            <node concept="3cpWs6" id="5u9jboqxFgW" role="3cqZAp">
+              <node concept="2YIFZM" id="5u9jboqxFgX" role="3cqZAk">
+                <ref role="1Pybhc" to="zn9m:~IconLoader" resolve="IconLoader" />
+                <ref role="37wK5l" to="zn9m:~IconLoader.findIcon(java.lang.String,java.lang.ClassLoader):javax.swing.Icon" resolve="findIcon" />
+                <node concept="2OqwBi" id="4zG7rycKoXP" role="37wK5m">
+                  <node concept="37vLTw" id="5u9jboqxFmN" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3RymrDRZk2X" resolve="resource" />
+                  </node>
+                  <node concept="liA8E" id="4zG7rycKpBA" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.substring(int):java.lang.String" resolve="substring" />
+                    <node concept="3cmrfG" id="4zG7rycKpNO" role="37wK5m">
+                      <property role="3cmrfH" value="1" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="5u9jboqxFgZ" role="37wK5m">
+                  <node concept="37vLTw" id="5u9jboqxFh0" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3RymrDRZk3s" resolve="loader" />
+                  </node>
+                  <node concept="liA8E" id="5u9jboqxFh1" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~Class.getClassLoader():java.lang.ClassLoader" resolve="getClassLoader" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTw" id="5u9jboqxG6b" role="3clFbw">
+            <ref role="3cqZAo" node="5u9jboqxG66" resolve="isAbsolutePath" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="5u9jboqxGjT" role="3cqZAp" />
         <node concept="3cpWs8" id="3RymrDRZk6h" role="3cqZAp">
           <node concept="3cpWsn" id="3RymrDRZk6i" role="3cpWs9">
             <property role="TrG5h" value="packName" />
@@ -3446,25 +3497,20 @@
               </node>
               <node concept="3cpWs3" id="3RymrDRZk6u" role="3K4GZi">
                 <node concept="37vLTw" id="3RymrDRZog1" role="3uHU7w">
-                  <ref role="3cqZAo" node="3RymrDRZk2X" resolve="name" />
+                  <ref role="3cqZAo" node="3RymrDRZk2X" resolve="resource" />
                 </node>
                 <node concept="3cpWs3" id="3RymrDRZk6y" role="3uHU7B">
-                  <node concept="3cpWs3" id="6y9F1Kilx8V" role="3uHU7B">
-                    <node concept="Xl_RD" id="6y9F1Kilxmo" role="3uHU7B">
-                      <property role="Xl_RC" value="/" />
+                  <node concept="2OqwBi" id="3RymrDRZk6z" role="3uHU7B">
+                    <node concept="37vLTw" id="3RymrDRZk6$" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3RymrDRZk6i" resolve="packName" />
                     </node>
-                    <node concept="2OqwBi" id="3RymrDRZk6z" role="3uHU7w">
-                      <node concept="37vLTw" id="3RymrDRZk6$" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3RymrDRZk6i" resolve="packName" />
+                    <node concept="liA8E" id="3RymrDRZk6_" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~String.replace(char,char):java.lang.String" resolve="replace" />
+                      <node concept="1Xhbcc" id="3RymrDRZk6A" role="37wK5m">
+                        <property role="1XhdNS" value="." />
                       </node>
-                      <node concept="liA8E" id="3RymrDRZk6_" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~String.replace(char,char):java.lang.String" resolve="replace" />
-                        <node concept="1Xhbcc" id="3RymrDRZk6A" role="37wK5m">
-                          <property role="1XhdNS" value="." />
-                        </node>
-                        <node concept="1Xhbcc" id="3RymrDRZk6B" role="37wK5m">
-                          <property role="1XhdNS" value="/" />
-                        </node>
+                      <node concept="1Xhbcc" id="3RymrDRZk6B" role="37wK5m">
+                        <property role="1XhdNS" value="/" />
                       </node>
                     </node>
                   </node>
@@ -3473,13 +3519,8 @@
                   </node>
                 </node>
               </node>
-              <node concept="3cpWs3" id="6y9F1KilwOM" role="3K4E3e">
-                <node concept="Xl_RD" id="6y9F1Kilx01" role="3uHU7B">
-                  <property role="Xl_RC" value="/" />
-                </node>
-                <node concept="37vLTw" id="3RymrDRZo16" role="3uHU7w">
-                  <ref role="3cqZAo" node="3RymrDRZk2X" resolve="name" />
-                </node>
+              <node concept="37vLTw" id="3RymrDRZo16" role="3K4E3e">
+                <ref role="3cqZAo" node="3RymrDRZk2X" resolve="resource" />
               </node>
             </node>
           </node>
@@ -3503,7 +3544,7 @@
         </node>
       </node>
       <node concept="37vLTG" id="3RymrDRZk2X" role="3clF46">
-        <property role="TrG5h" value="name" />
+        <property role="TrG5h" value="resource" />
         <node concept="3uibUv" id="3RymrDRZk2W" role="1tU5fm">
           <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
@@ -3518,6 +3559,13 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3RymrDRZjZA" role="1B3o_S" />
+      <node concept="P$JXv" id="4zG7rycKrnh" role="lGtFl">
+        <node concept="TZ5HA" id="4zG7rycKrni" role="TZ5H$">
+          <node concept="1dT_AC" id="4zG7rycKrnj" role="1dT_Ay">
+            <property role="1dT_AB" value="resource parameter has the same contract as the Class.getResource(String)'s parameter \n" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3Tm1VV" id="3RymrDRZj9l" role="1B3o_S" />
   </node>
