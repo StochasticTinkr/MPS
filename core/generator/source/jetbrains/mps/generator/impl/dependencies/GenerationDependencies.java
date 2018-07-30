@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
@@ -158,7 +159,10 @@ public class GenerationDependencies {
     if (root == null) {
       rd = getDependenciesFor(GeneratableSModel.HEADER);
     } else {
-      rd = getDependenciesFor(root.getNodeId().toString());
+      SNodeId nodeId = root.getNodeId();
+      // FIXME this is a quick fix for NPE of MPS-28393, though instead we should find out how come
+      //       original node (see TracingUtil.getOrigin) got bad SNodeReference.
+      rd = nodeId == null ? null : getDependenciesFor(nodeId.toString());
     }
     if (rd != null) {
       rd.addGeneratedFile(fileName);
