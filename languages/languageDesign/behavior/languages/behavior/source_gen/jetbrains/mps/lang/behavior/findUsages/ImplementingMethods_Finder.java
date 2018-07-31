@@ -57,7 +57,7 @@ public class ImplementingMethods_Finder extends GeneratedFinder {
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
-      monitor.start("Implementing methods", 10);
+      monitor.start("Looking for method implementations", 10);
       List<SNode> nodes = FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor.subTask(2));
 
       ProgressMonitor subMonitor = monitor.subTask(8);
@@ -71,6 +71,9 @@ public class ImplementingMethods_Finder extends GeneratedFinder {
       for (SNode nodeUsage : Sequence.fromIterable(candidates)) {
         ListSequence.fromList(_results).addElement(nodeUsage);
         for (SNode overriding : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder", nodeUsage, scope, subMonitor.subTask(1)))) {
+          if (monitor.isCanceled()) {
+            return;
+          }
           ListSequence.fromList(_results).addElement(overriding);
         }
       }
