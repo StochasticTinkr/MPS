@@ -15,8 +15,6 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.FindModuleUsage_Action", getShortcut("alt F7"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.GoToConceptDeclaration_Action", getShortcut("ctrl shift S"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.GoToEditorDeclaration_Action", getShortcut("alt shift E"));
-    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.GoToImplementingBehaviorMethod_Action", getShortcut("ctrl alt B"));
-    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.GoToOverriddenBehaviorMethod_Action", getShortcut("ctrl alt U"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.GoToRules_Action", getShortcut("ctrl alt shift R"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.HighlightCellDependencies_Action", getShortcut("ctrl alt shift H"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.ImplementBehaviorMethod_Action", getShortcut("ctrl I"));

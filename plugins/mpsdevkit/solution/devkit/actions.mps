@@ -685,14 +685,6 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
-    <language id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages">
-      <concept id="2005690715325995359" name="jetbrains.mps.lang.findUsages.structure.FinderReference" flags="ng" index="zAVLb">
-        <reference id="7222148688691763792" name="finder" index="2$JaeB" />
-      </concept>
-      <concept id="6818267381900876460" name="jetbrains.mps.lang.findUsages.structure.FinderReferenceExpression" flags="ng" index="1ZiG2z">
-        <child id="6818267381900876461" name="finder" index="1ZiG2y" />
-      </concept>
-    </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
@@ -825,20 +817,6 @@
       <node concept="pLAjd" id="4AAkbHGaooE" role="Zd501">
         <property role="pLAjf" value="VK_F10" />
         <property role="pLAjc" value="ctrl" />
-      </node>
-    </node>
-    <node concept="Zd509" id="2rUHgdX3hFH" role="Zd508">
-      <ref role="1bYAoF" node="1oCHNhnjllY" resolve="GoToImplementingBehaviorMethod" />
-      <node concept="pLAjd" id="5GUQLVLhjlE" role="Zd501">
-        <property role="pLAjf" value="VK_B" />
-        <property role="pLAjc" value="ctrl+alt" />
-      </node>
-    </node>
-    <node concept="Zd509" id="1dN09JzO2c3" role="Zd508">
-      <ref role="1bYAoF" node="6ndnYgP5$a$" resolve="GoToOverriddenBehaviorMethod" />
-      <node concept="pLAjd" id="1dN09JzO2c4" role="Zd501">
-        <property role="pLAjf" value="VK_U" />
-        <property role="pLAjc" value="ctrl+alt" />
       </node>
     </node>
     <node concept="Zd509" id="4KDfkUwM7uZ" role="Zd508">
@@ -10350,159 +10328,15 @@
     <property role="TrG5h" value="BehaviourPopup" />
     <property role="3GE5qa" value="Editor" />
     <node concept="ftmFs" id="1oCHNhnjllV" role="ftER_">
-      <node concept="tCFHf" id="1oCHNhnjllW" role="ftvYc">
-        <ref role="tCJdB" node="1oCHNhnjllY" resolve="GoToImplementingBehaviorMethod" />
+      <node concept="tCFHf" id="1dN09JzUWJW" role="ftvYc">
+        <ref role="tCJdB" to="tprs:1oCHNhnjllY" resolve="GoToImplementingBehaviorMethod" />
       </node>
-      <node concept="tCFHf" id="1dN09JzO2aZ" role="ftvYc">
-        <ref role="tCJdB" node="6ndnYgP5$a$" resolve="GoToOverriddenBehaviorMethod" />
+      <node concept="tCFHf" id="1dN09JzUWJQ" role="ftvYc">
+        <ref role="tCJdB" to="tprs:6ndnYgP5$a$" resolve="GoToOverriddenBehaviorMethod" />
       </node>
     </node>
     <node concept="tT9cl" id="1oCHNhnjllX" role="2f5YQi">
       <ref role="tU$_T" to="ekwn:1xsN4xJX8VI" resolve="EditorPopup" />
-    </node>
-  </node>
-  <node concept="sE7Ow" id="1oCHNhnjllY">
-    <property role="TrG5h" value="GoToImplementingBehaviorMethod" />
-    <property role="72QZ$" value="true" />
-    <property role="3GE5qa" value="Editor" />
-    <property role="2uzpH1" value="Go to Implementing Methods" />
-    <node concept="2S4$dB" id="1oCHNhnjlm5" role="1NuT2Z">
-      <property role="TrG5h" value="methodNode" />
-      <node concept="1oajcY" id="1oCHNhnjlm6" role="1oa70y" />
-      <node concept="3Tm6S6" id="1oCHNhnjlm7" role="1B3o_S" />
-      <node concept="3Tqbb2" id="1oCHNhnjlm8" role="1tU5fm">
-        <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
-      </node>
-    </node>
-    <node concept="1DS2jV" id="1oCHNhnjlm9" role="1NuT2Z">
-      <property role="TrG5h" value="selectedCell" />
-      <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
-      <node concept="1oajcY" id="1oCHNhnjlma" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="3m6U0jmPVG0" role="1NuT2Z">
-      <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
-      <node concept="1oajcY" id="3m6U0jmPVG1" role="1oa70y" />
-    </node>
-    <node concept="tnohg" id="1oCHNhnjlmd" role="tncku">
-      <node concept="3clFbS" id="1oCHNhnjlme" role="2VODD2">
-        <node concept="3clFbF" id="3tjtvLxEeIw" role="3cqZAp">
-          <node concept="2OqwBi" id="3tjtvLxEeIx" role="3clFbG">
-            <node concept="2YIFZM" id="3tjtvLxEeIy" role="2Oq$k0">
-              <ref role="37wK5l" to="thjj:~FeatureUsageTracker.getInstance():com.intellij.featureStatistics.FeatureUsageTracker" resolve="getInstance" />
-              <ref role="1Pybhc" to="thjj:~FeatureUsageTracker" resolve="FeatureUsageTracker" />
-            </node>
-            <node concept="liA8E" id="3tjtvLxEeIz" role="2OqNvi">
-              <ref role="37wK5l" to="thjj:~FeatureUsageTracker.triggerFeatureUsed(java.lang.String):void" resolve="triggerFeatureUsed" />
-              <node concept="Xl_RD" id="3tjtvLxEeI$" role="37wK5m">
-                <property role="Xl_RC" value="navigation.gotoImplementation" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="1pHoCUay$DT" role="3cqZAp">
-          <node concept="3cpWsn" id="1pHoCUay$DR" role="3cpWs9">
-            <property role="TrG5h" value="selectedCell" />
-            <node concept="3uibUv" id="1pHoCUay$DS" role="1tU5fm">
-              <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
-            </node>
-            <node concept="2OqwBi" id="ppzpESY33K" role="33vP2m">
-              <node concept="2WthIp" id="ppzpESY33N" role="2Oq$k0" />
-              <node concept="1DTwFV" id="ppzpESY33P" role="2OqNvi">
-                <ref role="2WH_rO" node="1oCHNhnjlm9" resolve="selectedCell" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="1pHoCUay$DX" role="3cqZAp">
-          <node concept="3cpWsn" id="1pHoCUay$DV" role="3cpWs9">
-            <property role="TrG5h" value="inputEvent" />
-            <node concept="3uibUv" id="1pHoCUay$DW" role="1tU5fm">
-              <ref role="3uigEE" to="hyam:~InputEvent" resolve="InputEvent" />
-            </node>
-            <node concept="2OqwBi" id="ppzpESY3U1" role="33vP2m">
-              <node concept="liA8E" id="ppzpESY4_$" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~AnActionEvent.getInputEvent():java.awt.event.InputEvent" resolve="getInputEvent" />
-              </node>
-              <node concept="tl45R" id="ppzpESY3BI" role="2Oq$k0" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1pHoCUay$E4" role="3cqZAp">
-          <node concept="2YIFZM" id="1pHoCUay$E5" role="3clFbG">
-            <ref role="37wK5l" to="7lvn:2rUHgdX3h9M" resolve="executeFinders" />
-            <ref role="1Pybhc" to="7lvn:2rUHgdX2_hC" resolve="GoToHelper" />
-            <node concept="2OqwBi" id="1pHoCUay$E6" role="37wK5m">
-              <node concept="2WthIp" id="1pHoCUay$E7" role="2Oq$k0" />
-              <node concept="3gHZIF" id="1pHoCUay$E8" role="2OqNvi">
-                <ref role="2WH_rO" node="1oCHNhnjlm5" resolve="methodNode" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="1pHoCUay$E9" role="37wK5m">
-              <node concept="2WthIp" id="1pHoCUay$Ea" role="2Oq$k0" />
-              <node concept="1DTwFV" id="1pHoCUay$Eb" role="2OqNvi">
-                <ref role="2WH_rO" node="3m6U0jmPVG0" resolve="project" />
-              </node>
-            </node>
-            <node concept="1ZiG2z" id="3$9coUqj3iz" role="37wK5m">
-              <node concept="zAVLb" id="3$9coUqj3i$" role="1ZiG2y">
-                <ref role="2$JaeB" to="tya3:hReyrfg" resolve="ImplementingMethods" />
-              </node>
-            </node>
-            <node concept="2YIFZM" id="1pHoCUay$Ef" role="37wK5m">
-              <ref role="37wK5l" to="7lvn:1pHoCUayv$Z" resolve="getRelativePoint" />
-              <ref role="1Pybhc" to="7lvn:1pHoCUaw2wq" resolve="GoToContextMenuUtil" />
-              <node concept="37vLTw" id="1pHoCUay$Eg" role="37wK5m">
-                <ref role="3cqZAo" node="1pHoCUay$DR" resolve="selectedCell" />
-              </node>
-              <node concept="37vLTw" id="1pHoCUay$Eh" role="37wK5m">
-                <ref role="3cqZAo" node="1pHoCUay$DV" resolve="inputEvent" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2ScWuX" id="1oCHNhnjlmt" role="tmbBb">
-      <node concept="3clFbS" id="1oCHNhnjlmu" role="2VODD2">
-        <node concept="3cpWs8" id="5UvmwWxQcEO" role="3cqZAp">
-          <node concept="3cpWsn" id="5UvmwWxQcEP" role="3cpWs9">
-            <property role="TrG5h" value="finder" />
-            <node concept="3uibUv" id="5UvmwWxQcEN" role="1tU5fm">
-              <ref role="3uigEE" to="b2d5:7aWSXuXO6mc" resolve="IInterfacedFinder" />
-            </node>
-            <node concept="1ZiG2z" id="5UvmwWxQcEQ" role="33vP2m">
-              <node concept="zAVLb" id="5UvmwWxQcER" role="1ZiG2y">
-                <ref role="2$JaeB" to="tya3:hReyrfg" resolve="ImplementingMethods" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="5UvmwWxQdaH" role="3cqZAp">
-          <node concept="1Wc70l" id="5UvmwWxQekK" role="3cqZAk">
-            <node concept="2OqwBi" id="5UvmwWxQeQh" role="3uHU7w">
-              <node concept="37vLTw" id="5UvmwWxQeyA" role="2Oq$k0">
-                <ref role="3cqZAo" node="5UvmwWxQcEP" resolve="finder" />
-              </node>
-              <node concept="liA8E" id="5UvmwWxQfsv" role="2OqNvi">
-                <ref role="37wK5l" to="b2d5:7aWSXuXO6mj" resolve="isApplicable" />
-                <node concept="2OqwBi" id="5UvmwWxQfEF" role="37wK5m">
-                  <node concept="2WthIp" id="5UvmwWxQfEI" role="2Oq$k0" />
-                  <node concept="3gHZIF" id="5UvmwWxQfEK" role="2OqNvi">
-                    <ref role="2WH_rO" node="1oCHNhnjlm5" resolve="methodNode" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3y3z36" id="5UvmwWxQdTw" role="3uHU7B">
-              <node concept="37vLTw" id="5UvmwWxQdaJ" role="3uHU7B">
-                <ref role="3cqZAo" node="5UvmwWxQcEP" resolve="finder" />
-              </node>
-              <node concept="10Nm6u" id="5UvmwWxQe72" role="3uHU7w" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node concept="tC5Ba" id="1oCHNhnjKXK">
@@ -14235,150 +14069,6 @@
       </node>
     </node>
     <node concept="mfpdH" id="1oxUvMUh9Jf" role="med8o" />
-  </node>
-  <node concept="sE7Ow" id="6ndnYgP5$a$">
-    <property role="TrG5h" value="GoToOverriddenBehaviorMethod" />
-    <property role="72QZ$" value="true" />
-    <property role="3GE5qa" value="Editor" />
-    <property role="2uzpH1" value="Go to Overridden Methods" />
-    <node concept="2S4$dB" id="6ndnYgP5$a_" role="1NuT2Z">
-      <property role="TrG5h" value="methodNode" />
-      <node concept="1oajcY" id="6ndnYgP5$aA" role="1oa70y" />
-      <node concept="3Tm6S6" id="6ndnYgP5$aB" role="1B3o_S" />
-      <node concept="3Tqbb2" id="6ndnYgP5$aC" role="1tU5fm">
-        <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
-      </node>
-    </node>
-    <node concept="1DS2jV" id="6ndnYgP5$aD" role="1NuT2Z">
-      <property role="TrG5h" value="selectedCell" />
-      <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
-      <node concept="1oajcY" id="6ndnYgP5$aE" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="6ndnYgP5$aF" role="1NuT2Z">
-      <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
-      <node concept="1oajcY" id="6ndnYgP5$aG" role="1oa70y" />
-    </node>
-    <node concept="tnohg" id="6ndnYgP5$aH" role="tncku">
-      <node concept="3clFbS" id="6ndnYgP5$aI" role="2VODD2">
-        <node concept="3clFbF" id="6ndnYgP5$aJ" role="3cqZAp">
-          <node concept="2OqwBi" id="6ndnYgP5$aK" role="3clFbG">
-            <node concept="2YIFZM" id="6ndnYgP5$aL" role="2Oq$k0">
-              <ref role="37wK5l" to="thjj:~FeatureUsageTracker.getInstance():com.intellij.featureStatistics.FeatureUsageTracker" resolve="getInstance" />
-              <ref role="1Pybhc" to="thjj:~FeatureUsageTracker" resolve="FeatureUsageTracker" />
-            </node>
-            <node concept="liA8E" id="6ndnYgP5$aM" role="2OqNvi">
-              <ref role="37wK5l" to="thjj:~FeatureUsageTracker.triggerFeatureUsed(java.lang.String):void" resolve="triggerFeatureUsed" />
-              <node concept="Xl_RD" id="6ndnYgP5$aN" role="37wK5m">
-                <property role="Xl_RC" value="navigation.gotoOverriddenMethod" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="6ndnYgP5$aO" role="3cqZAp">
-          <node concept="3cpWsn" id="6ndnYgP5$aP" role="3cpWs9">
-            <property role="TrG5h" value="selectedCell" />
-            <node concept="3uibUv" id="6ndnYgP5$aQ" role="1tU5fm">
-              <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
-            </node>
-            <node concept="2OqwBi" id="6ndnYgP5$aR" role="33vP2m">
-              <node concept="2WthIp" id="6ndnYgP5$aS" role="2Oq$k0" />
-              <node concept="1DTwFV" id="6ndnYgP5$aT" role="2OqNvi">
-                <ref role="2WH_rO" node="6ndnYgP5$aD" resolve="selectedCell" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="6ndnYgP5$aU" role="3cqZAp">
-          <node concept="3cpWsn" id="6ndnYgP5$aV" role="3cpWs9">
-            <property role="TrG5h" value="inputEvent" />
-            <node concept="3uibUv" id="6ndnYgP5$aW" role="1tU5fm">
-              <ref role="3uigEE" to="hyam:~InputEvent" resolve="InputEvent" />
-            </node>
-            <node concept="2OqwBi" id="6ndnYgP5$aX" role="33vP2m">
-              <node concept="liA8E" id="6ndnYgP5$aY" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~AnActionEvent.getInputEvent():java.awt.event.InputEvent" resolve="getInputEvent" />
-              </node>
-              <node concept="tl45R" id="6ndnYgP5$aZ" role="2Oq$k0" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6ndnYgP5$b0" role="3cqZAp">
-          <node concept="2YIFZM" id="6ndnYgP5$b1" role="3clFbG">
-            <ref role="37wK5l" to="7lvn:2rUHgdX3h9M" resolve="executeFinders" />
-            <ref role="1Pybhc" to="7lvn:2rUHgdX2_hC" resolve="GoToHelper" />
-            <node concept="2OqwBi" id="6ndnYgP5$b2" role="37wK5m">
-              <node concept="2WthIp" id="6ndnYgP5$b3" role="2Oq$k0" />
-              <node concept="3gHZIF" id="6ndnYgP5$b4" role="2OqNvi">
-                <ref role="2WH_rO" node="6ndnYgP5$a_" resolve="methodNode" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="6ndnYgP5$b5" role="37wK5m">
-              <node concept="2WthIp" id="6ndnYgP5$b6" role="2Oq$k0" />
-              <node concept="1DTwFV" id="6ndnYgP5$b7" role="2OqNvi">
-                <ref role="2WH_rO" node="6ndnYgP5$aF" resolve="project" />
-              </node>
-            </node>
-            <node concept="1ZiG2z" id="6ndnYgP5$b8" role="37wK5m">
-              <node concept="zAVLb" id="6ndnYgP5G2J" role="1ZiG2y">
-                <ref role="2$JaeB" to="tya3:6ndnYgP5nzx" resolve="OverriddenMethods" />
-              </node>
-            </node>
-            <node concept="2YIFZM" id="6ndnYgP5$ba" role="37wK5m">
-              <ref role="37wK5l" to="7lvn:1pHoCUayv$Z" resolve="getRelativePoint" />
-              <ref role="1Pybhc" to="7lvn:1pHoCUaw2wq" resolve="GoToContextMenuUtil" />
-              <node concept="37vLTw" id="6ndnYgP5$bb" role="37wK5m">
-                <ref role="3cqZAo" node="6ndnYgP5$aP" resolve="selectedCell" />
-              </node>
-              <node concept="37vLTw" id="6ndnYgP5$bc" role="37wK5m">
-                <ref role="3cqZAo" node="6ndnYgP5$aV" resolve="inputEvent" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2ScWuX" id="6ndnYgP5$bd" role="tmbBb">
-      <node concept="3clFbS" id="6ndnYgP5$be" role="2VODD2">
-        <node concept="3cpWs8" id="6ndnYgP5$bf" role="3cqZAp">
-          <node concept="3cpWsn" id="6ndnYgP5$bg" role="3cpWs9">
-            <property role="TrG5h" value="finder" />
-            <node concept="3uibUv" id="6ndnYgP5$bh" role="1tU5fm">
-              <ref role="3uigEE" to="b2d5:7aWSXuXO6mc" resolve="IInterfacedFinder" />
-            </node>
-            <node concept="1ZiG2z" id="6ndnYgP5$bi" role="33vP2m">
-              <node concept="zAVLb" id="6ndnYgP5Oc_" role="1ZiG2y">
-                <ref role="2$JaeB" to="tya3:6ndnYgP5nzx" resolve="OverriddenMethods" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="6ndnYgP5$bk" role="3cqZAp">
-          <node concept="1Wc70l" id="6ndnYgP5$bl" role="3cqZAk">
-            <node concept="2OqwBi" id="6ndnYgP5$bm" role="3uHU7w">
-              <node concept="37vLTw" id="6ndnYgP5$bn" role="2Oq$k0">
-                <ref role="3cqZAo" node="6ndnYgP5$bg" resolve="finder" />
-              </node>
-              <node concept="liA8E" id="6ndnYgP5$bo" role="2OqNvi">
-                <ref role="37wK5l" to="b2d5:7aWSXuXO6mj" resolve="isApplicable" />
-                <node concept="2OqwBi" id="6ndnYgP5$bp" role="37wK5m">
-                  <node concept="2WthIp" id="6ndnYgP5$bq" role="2Oq$k0" />
-                  <node concept="3gHZIF" id="6ndnYgP5$br" role="2OqNvi">
-                    <ref role="2WH_rO" node="6ndnYgP5$a_" resolve="methodNode" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3y3z36" id="6ndnYgP5$bs" role="3uHU7B">
-              <node concept="37vLTw" id="6ndnYgP5$bt" role="3uHU7B">
-                <ref role="3cqZAo" node="6ndnYgP5$bg" resolve="finder" />
-              </node>
-              <node concept="10Nm6u" id="6ndnYgP5$bu" role="3uHU7w" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
 </model>
 
