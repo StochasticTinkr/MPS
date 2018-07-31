@@ -93,8 +93,8 @@
       </node>
     </node>
     <node concept="asaX9" id="3_Ojf_lL$zN" role="lGtFl">
-      <property role="YLPcu" value="2018.1" />
-      <property role="YLQ7P" value="use aspect instead" />
+      <property role="YLPcu" value="2018.2" />
+      <property role="YLQ7P" value="use VCS aspect instead" />
     </node>
   </node>
   <node concept="AxPO7" id="7n1vgxszwQh">
