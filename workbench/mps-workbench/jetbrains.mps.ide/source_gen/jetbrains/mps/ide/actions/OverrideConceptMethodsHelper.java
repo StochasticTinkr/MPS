@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class OverrideConceptMethodsHelper {
+/*package*/ final class OverrideConceptMethodsHelper {
   private final SNode myClassConcept;
   private final SNode myContextMethod;
   private final boolean myRemoveAttributes;

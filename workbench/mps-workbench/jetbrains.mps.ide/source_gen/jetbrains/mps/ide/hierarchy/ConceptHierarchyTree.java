@@ -35,7 +35,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
  * This works on concept nodes
  */
 public class ConceptHierarchyTree extends AbstractHierarchyTree {
-  private Map<SNode, Set<SNode>> myDescendantsCache = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
+  private Map<SNode, Set<SNode>> myChildrenCache = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
 
   public ConceptHierarchyTree(SRepository repo, boolean isParentHierarchy) {
     super(repo);
@@ -66,7 +66,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     if (visited.contains(conceptNode)) {
       throw new CircularHierarchyException(conceptNode, "circular concept hierarchy");
     }
-    Set<SNode> result = MapSequence.fromMap(myDescendantsCache).get(conceptNode);
+    Set<SNode> result = MapSequence.fromMap(myChildrenCache).get(conceptNode);
     return (result == null ? Collections.<SNode>emptySet() : result);
   }
   @Override
@@ -81,7 +81,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
   }
 
   private void buildCaches() {
-    MapSequence.fromMap(myDescendantsCache).clear();
+    MapSequence.fromMap(myChildrenCache).clear();
     Iterable<Language> languages = new ModuleRepositoryFacade(myRepostitory).getAllModules(Language.class);
     Iterable<SModel> structures = Sequence.fromIterable(languages).select(new ISelector<Language, SModel>() {
       public SModel select(Language it) {
@@ -98,10 +98,10 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
         List<SNode> immediate = ((List<SNode>) BHReflection.invoke0(child, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), SMethodTrimmedId.create("getImmediateSuperconcepts", null, "hMuxyK2")));
         ListSequence.fromList(immediate).visitAll(new IVisitor<SNode>() {
           public void visit(SNode parent) {
-            Set<SNode> desc = MapSequence.fromMap(myDescendantsCache).get(parent);
+            Set<SNode> desc = MapSequence.fromMap(myChildrenCache).get(parent);
             if (desc == null) {
               desc = SetSequence.fromSet(new HashSet<SNode>());
-              MapSequence.fromMap(myDescendantsCache).put(parent, desc);
+              MapSequence.fromMap(myChildrenCache).put(parent, desc);
             }
             SetSequence.fromSet(desc).addElement(child);
           }

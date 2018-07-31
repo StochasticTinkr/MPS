@@ -25,7 +25,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
+/*package*/ class OverrideConceptMethodsDialog extends GroupedNodesChooser {
   private JCheckBox myRemoveAttributes;
   private JCheckBox myAddReturn;
   private BehaviorDialogsPersistentOptions_PreferencesComponent myOptions;
