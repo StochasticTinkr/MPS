@@ -41,6 +41,7 @@ import java.util.Set;
 /**
  * NOTE: THIS CLASS MAKES DUBIOUS ASSUMPTIONS, USES SOME DEPRECATED API, ITS USE IS DISCOURAGED.
  * Chances are we replace it with another facility or drop altogether (there's little value in model dependency caching)
+ * Please use {@link jetbrains.mps.smodel.ModelDependencyResolver} instead
  * <p>
  * Build (and optionally maintain) set of all languages, imported directly and indirectly.
  * The manager represents snapshot of all imported languages and doesn't update in unless {@link #invalidate() invalidated}.

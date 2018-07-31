@@ -161,9 +161,12 @@ public class SModelOperations {
    * IMPORTANT: For a {@code model} that is not attached to a repository, set of used languages may be incomplete (MPS needs to resolve
    * used DevKit modules to tell languages they expose).
    * </p>
+   * @deprecated use {@link ModelDependencyResolver} instead
    * @return set of languages imported by the model, either directly or through devkit
    * @since 3.3
    */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   @NotNull
   public static Set<SLanguage> getAllLanguageImports(@NotNull SModel model) {
     if (model instanceof SModelDescriptorStub) {
@@ -177,34 +180,25 @@ public class SModelOperations {
   //todo rewrite using iterators
   // FIXME needs LanguageRegistry or ComponentHost
   // TODO document contract what constitutes imported models (i.e. accessory models of extended languages)
-  // TODO Do it in an OOP way, ModelDependencyResolver(LanguageRegistry, Repository) or collector, next to
-  //      ModelDependencyScanner and ModelDependencyUpdate
+  /**
+   * @deprecated use {@link ModelDependencyResolver} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public static List<SModel> allImportedModels(SModel model) {
     // no uses in mbeddr
     SRepository repo = model.getRepository();
     if (repo == null) {
-      // unfortunately, there's code that assumes return value could be modified
-      // e.g. ModelsPlusImportedScope
-      return new ArrayList<>(2);
+      // Compatibility mechanism as long as there's code that uses allImportedModels() for detached models
+      // like transients during M2M. Once Generator gets its own repository for transients, we don't need to care
+      // about detached models any longer
+      repo = MPSModuleRepository.getInstance();
     }
-    Set<SModel> result = new LinkedHashSet<>();
-    result.addAll(importedModels(model, repo));
-
     LanguageRegistry languageRegistry = LanguageRegistry.getInstance(repo);
-
-    // XXX deep down getAllLanguageImports need a repository to resolve devkits, would be great to pass one explicitly.
-    for (SLanguage lang : new SLanguageHierarchy(languageRegistry, SModelOperations.getAllLanguageImports(model)).getExtended()) {
-      final SModuleReference sourceModuleRef = lang.getSourceModuleReference();
-      if (sourceModuleRef == null) {
-        continue;
-      }
-      final SModule sourceModule = sourceModuleRef.resolve(repo);
-      if (sourceModule instanceof Language) {
-        result.addAll(((Language) sourceModule).getAccessoryModels());
-      }
-    }
-    result.remove(model);
-
+    ModelDependencyResolver mdr = new ModelDependencyResolver(languageRegistry, repo);
+    Set<SModel> result = new LinkedHashSet<>();
+    result.addAll(mdr.directImports(model));
+    result.addAll(mdr.implicitImports(model));
     return new ArrayList<>(result);
   }
 
@@ -212,19 +206,6 @@ public class SModelOperations {
   @NotNull
   public static List<SModelReference> getImportedModelUIDs(SModel sModel) {
     return new ArrayList<>(new ModelImports(sModel).getImportedModels());
-  }
-
-  @NotNull
-  private static List<SModel> importedModels(final SModel model, SRepository repo) {
-    List<SModel> modelsList = new ArrayList<>();
-    for (SModelReference modelReference : new ModelImports(model).getImportedModels()) {
-      SModel modelDescriptor = modelReference.resolve(repo);
-
-      if (modelDescriptor != null) {
-        modelsList.add(modelDescriptor);
-      }
-    }
-    return modelsList;
   }
 
   //-----------------------------------------------------

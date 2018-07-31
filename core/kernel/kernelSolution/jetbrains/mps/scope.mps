@@ -136,9 +136,6 @@
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
-      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
-        <property id="1068580320021" name="value" index="3cmrfH" />
-      </concept>
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
@@ -2425,41 +2422,59 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="7ipADkTfyKd" role="3cqZAp">
-          <node concept="3cpWsn" id="7ipADkTfyKe" role="3cpWs9">
+        <node concept="3cpWs8" id="5QYrCGnU5yE" role="3cqZAp">
+          <node concept="3cpWsn" id="5QYrCGnU5yK" role="3cpWs9">
             <property role="TrG5h" value="models" />
-            <node concept="3uibUv" id="7ipADkTfyKf" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="H_c77" id="VXQuBj83u" role="11_B2D" />
+            <node concept="3uibUv" id="5QYrCGnU5yM" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~ArrayList" resolve="ArrayList" />
+              <node concept="H_c77" id="5QYrCGnU5Ky" role="11_B2D" />
             </node>
-            <node concept="2YIFZM" id="7ipADkTfyKN" role="33vP2m">
-              <ref role="1Pybhc" to="w1kc:~SModelOperations" resolve="SModelOperations" />
-              <ref role="37wK5l" to="w1kc:~SModelOperations.allImportedModels(org.jetbrains.mps.openapi.model.SModel):java.util.List" resolve="allImportedModels" />
-              <node concept="37vLTw" id="VXQuBiXbK" role="37wK5m">
+            <node concept="2ShNRf" id="5QYrCGnU6gb" role="33vP2m">
+              <node concept="1pGfFk" id="5QYrCGnU9xt" role="2ShVmc">
+                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
+                <node concept="H_c77" id="5QYrCGnU9Sm" role="1pMfVU" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5QYrCGnUahS" role="3cqZAp">
+          <node concept="2OqwBi" id="5QYrCGnUbfr" role="3clFbG">
+            <node concept="37vLTw" id="5QYrCGnUahQ" role="2Oq$k0">
+              <ref role="3cqZAo" node="5QYrCGnU5yK" resolve="models" />
+            </node>
+            <node concept="liA8E" id="5QYrCGnUdTh" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="37vLTw" id="5QYrCGnUej4" role="37wK5m">
                 <ref role="3cqZAo" node="VXQuBiWea" resolve="model" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7ipADkTfyKS" role="3cqZAp">
-          <node concept="2OqwBi" id="7ipADkTfyKU" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTzk$" role="2Oq$k0">
-              <ref role="3cqZAo" node="7ipADkTfyKe" resolve="models" />
+        <node concept="3SKdUt" id="5QYrCGnUj$p" role="3cqZAp">
+          <node concept="3SKdUq" id="5QYrCGnUj$r" role="3SKWNk">
+            <property role="3SKdUp" value="left deprecated call as there's some compatibility code (use of global repository)" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="5QYrCGnUeRm" role="3cqZAp">
+          <node concept="2OqwBi" id="5QYrCGnUfQk" role="3clFbG">
+            <node concept="37vLTw" id="5QYrCGnUeRk" role="2Oq$k0">
+              <ref role="3cqZAo" node="5QYrCGnU5yK" resolve="models" />
             </node>
-            <node concept="liA8E" id="7ipADkTfyKY" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~List.add(int,java.lang.Object):void" resolve="add" />
-              <node concept="3cmrfG" id="7ipADkTfyKZ" role="37wK5m">
-                <property role="3cmrfH" value="0" />
-              </node>
-              <node concept="37vLTw" id="VXQuBiXfw" role="37wK5m">
-                <ref role="3cqZAo" node="VXQuBiWea" resolve="model" />
+            <node concept="liA8E" id="5QYrCGnUhii" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~ArrayList.addAll(java.util.Collection):boolean" resolve="addAll" />
+              <node concept="2YIFZM" id="5QYrCGnUhDW" role="37wK5m">
+                <ref role="37wK5l" to="w1kc:~SModelOperations.allImportedModels(org.jetbrains.mps.openapi.model.SModel):java.util.List" resolve="allImportedModels" />
+                <ref role="1Pybhc" to="w1kc:~SModelOperations" resolve="SModelOperations" />
+                <node concept="37vLTw" id="5QYrCGnUhDX" role="37wK5m">
+                  <ref role="3cqZAo" node="VXQuBiWea" resolve="model" />
+                </node>
               </node>
             </node>
           </node>
         </node>
         <node concept="3cpWs6" id="VXQuBiZk5" role="3cqZAp">
-          <node concept="37vLTw" id="VXQuBiZyZ" role="3cqZAk">
-            <ref role="3cqZAo" node="7ipADkTfyKe" resolve="models" />
+          <node concept="37vLTw" id="5QYrCGnUiAC" role="3cqZAk">
+            <ref role="3cqZAo" node="5QYrCGnU5yK" resolve="models" />
           </node>
         </node>
       </node>
