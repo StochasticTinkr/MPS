@@ -27,7 +27,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer;
 
-public class GoToHelper {
+public final class GoToHelper {
   private GoToHelper() {
   }
 
