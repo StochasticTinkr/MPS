@@ -161,7 +161,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       updateModel(vf);
     }
   }
-
   private class MyRepositoryListener extends SRepositoryContentAdapter {
     public MyRepositoryListener() {
     }
