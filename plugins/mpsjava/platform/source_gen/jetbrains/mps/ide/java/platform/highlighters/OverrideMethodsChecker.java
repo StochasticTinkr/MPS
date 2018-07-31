@@ -99,7 +99,7 @@ public class OverrideMethodsChecker extends BaseEventProcessingEditorChecker {
     for (SNode overridingMethod : SetSequence.fromSet(finder.getOverridingMethods())) {
       StringBuffer tooltip = new StringBuffer();
       int messageCounter = 0;
-      Set<Tuples._2<SNode, SNode>> overridenMethods = finder.getOverridenMethods(overridingMethod);
+      Set<Tuples._2<SNode, SNode>> overridenMethods = finder.getOverriddenMethods(overridingMethod);
       boolean overrides = SPropertyOperations.getBoolean(overridingMethod, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract")) || SetSequence.fromSet(overridenMethods).where(new IWhereFilter<Tuples._2<SNode, SNode>>() {
         public boolean accept(Tuples._2<SNode, SNode> it) {
           return !(SPropertyOperations.getBoolean(it._0(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract")));

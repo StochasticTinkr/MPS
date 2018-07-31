@@ -15352,7 +15352,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="6vtnBwf_kJ5" role="2OqNvi">
-                    <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverridenMethods" />
+                    <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverriddenMethods" />
                     <node concept="37vLTw" id="6vtnBwf_kJ6" role="37wK5m">
                       <ref role="3cqZAo" node="2rUHgdX2EFe" resolve="method" />
                     </node>
@@ -15394,7 +15394,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="2rUHgdX2EFB" role="2OqNvi">
-                      <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverridenMethods" />
+                      <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverriddenMethods" />
                       <node concept="37vLTw" id="3GM_nagTtQq" role="37wK5m">
                         <ref role="3cqZAo" node="2rUHgdX2EFe" resolve="method" />
                       </node>

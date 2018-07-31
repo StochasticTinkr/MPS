@@ -12,7 +12,9 @@ import com.intellij.openapi.actionSystem.ActionManager;
 
 public class OverridingMethodEditorMessage extends AbstractOverrideEditorMessage {
   private static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(1);
+
   private boolean isOverriding;
+
   public OverridingMethodEditorMessage(SNode node, EditorMessageOwner owner, String tooltip, boolean overriding) {
     super(node, owner, tooltip);
     this.isOverriding = overriding;
