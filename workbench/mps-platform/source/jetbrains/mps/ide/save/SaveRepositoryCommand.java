@@ -15,6 +15,16 @@
  */
 package jetbrains.mps.ide.save;
 
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.ex.ApplicationEx;
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
+import com.intellij.openapi.application.impl.ApplicationImpl;
+import com.intellij.openapi.progress.PerformInBackgroundOption;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
 import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -39,23 +49,13 @@ public class SaveRepositoryCommand implements Runnable {
   // FIXME need to decide about the contract, whether it respects make session and whether it waits for save to complete (perhaps, optionally?)
   public void execute() {
     if (ThreadUtils.isInEDT()) {
-//      runSavingTask();
       myRepository.getModelAccess().runWriteAction(this);
     } else {
-      myRepository.getModelAccess().runWriteInEDT(this);
-//      ApplicationManager.getApplication().invokeLater(this::runSavingTask, ModalityState.defaultModalityState());
+      ApplicationManager.getApplication().invokeLater(this, ModalityState.NON_MODAL);
     }
   }
 
   public void runSavingTask() {
-//    ProgressManager.getInstance().run(new Task.Modal(null, "Saving Project", false) {
-//      @Override
-//      public void run(@NotNull ProgressIndicator indicator) {
-//        indicator.setIndeterminate(true);
-//        WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(() -> {
     execute();
-//              indicator.getModalityState()        });
-//      }
-//    });
   }
 }
