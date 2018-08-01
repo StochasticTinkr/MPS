@@ -161,7 +161,7 @@ public class ChangesTracking {
       public void run() {
         update(force);
       }
-    });
+    }, myModelDescriptor.getReference());
   }
 
   private void update(final boolean force) {

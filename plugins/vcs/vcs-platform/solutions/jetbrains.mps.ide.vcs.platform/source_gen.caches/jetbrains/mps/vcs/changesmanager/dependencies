@@ -215,8 +215,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceBroadcaster" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelFileTracker" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelFileTracker" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
