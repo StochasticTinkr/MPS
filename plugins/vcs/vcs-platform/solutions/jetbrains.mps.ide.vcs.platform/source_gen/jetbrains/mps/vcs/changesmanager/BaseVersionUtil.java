@@ -90,16 +90,18 @@ public class BaseVersionUtil {
         return null;
       }
       VirtualFile vFile = VirtualFileUtils.getProjectVirtualFile(file);
-      if (vFile == null || ProjectLevelVcsManager.getInstance(project).getVcsFor(vFile) == null) {
+      ProjectLevelVcsManager vcsManager = ProjectLevelVcsManager.getInstance(project);
+      if (vFile == null || vcsManager == null || vcsManager.getVcsFor(vFile) == null) {
         return null;
       }
 
       Object content = BaseVersionUtil.getBaseVersionContent(vFile, project);
       if (content == null) {
-        FileStatus status = FileStatusManager.getInstance(project).getStatus(vFile);
+        FileStatusManager fileStatusManager = FileStatusManager.getInstance(project);
+        FileStatus status = fileStatusManager.getStatus(vFile);
         if (status != FileStatus.NOT_CHANGED) {
           if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("Base version content is null while file status is " + status);
+            LOG.error("Base version content of file " + vFile.getPath() + " is null while status is " + status);
           }
         }
         return null;
@@ -110,6 +112,7 @@ public class BaseVersionUtil {
       return VCSPersistenceUtil.loadModel(modelData, ext);
 
     } else if (ds instanceof FilePerRootDataSource) {
+
       FilePerRootDataSource rds = (FilePerRootDataSource) ds;
       Map<String, Object> content = MapSequence.fromMap(new HashMap<String, Object>());
       for (String stream : rds.getAvailableStreams()) {
