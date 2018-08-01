@@ -19,6 +19,7 @@ import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.trace.TraceFacility;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectRepository;
 import jetbrains.mps.project.StandaloneMPSContext;
@@ -28,6 +29,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -345,5 +347,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   public CrossModelEnvironment getCrossModelEnvironment() {
     // same considerations applies as for #getRoleValidationFacility() above, need a distinct implementation context for TG (could use StepArguments, perhaps).
     return myEnvironment.getCrossModelEnvironment();
+  }
+
+  @Nullable
+  public TraceFacility getTraceSession() {
+    return myEnvironment.getTraceSession();
   }
 }

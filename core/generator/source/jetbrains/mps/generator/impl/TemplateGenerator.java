@@ -53,6 +53,7 @@ import jetbrains.mps.generator.runtime.TemplateRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.generator.trace.TraceFacility;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.FastNodeFinderManager;
@@ -700,6 +701,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myPerformanceTrace;
   }
 
+  @Nullable
+  /*package*/ final TraceFacility getTraceSession() {
+    return getGeneratorSessionContext().getTraceSession();
+  }
 
   /*package*/ void reportDismissRuleException(@NotNull DismissTopMappingRuleException ex, @NotNull TemplateRule rule) {
     if (!ex.isLoggingNeeded()) {

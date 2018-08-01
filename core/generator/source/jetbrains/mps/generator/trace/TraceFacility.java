@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.generator.trace;
 
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -27,4 +31,19 @@ public final class TraceFacility {
   /*package*/ TraceFacility(List<ClientToken> activeClients) {
 
   }
+
+  // not null param, nullable return value so that caller doesn't bother to build an information
+  // necessary to describe a rule nobody was interested in
+  public RuleTrace reductionRuleReached(TemplateReductionRule reductionRule) {
+    // either ClientToken tells TF which rules it's interested in, or TF asks CT if it handles certain reduction rule
+    // Note, CT abstracts trace points with a TracePoint, while TraceFacility is as low-level as possible to avoid
+    // construction of intermediate objects during m2m
+    Collection<ClientToken> interestedInTheRule = null;
+    if (interestedInTheRule == null || interestedInTheRule.isEmpty()) {
+      return null;
+    }
+    return new RuleTrace(interestedInTheRule, reductionRule);
+  }
+
+
 }

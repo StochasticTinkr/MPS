@@ -37,6 +37,8 @@ import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.generator.trace.RuleTrace;
+import jetbrains.mps.generator.trace.TraceFacility;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.textgen.trace.TracingUtil;
@@ -284,6 +286,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     if (conceptRules == null) {
       return null;
     }
+    TraceFacility traceSession = generator.getTraceSession();
     try {
       for (TemplateReductionRule rule : conceptRules) {
         reductionRule = rule;
@@ -295,6 +298,12 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
             // fall-through
           }
           try {
+            RuleTrace ruleTrace = traceSession != null ? traceSession.reductionRuleReached(rule) : null;
+            if (ruleTrace != null) {
+              // FIXME fill ruleTrace with relevant context information
+              // e.g. other rules for the concept, those detected as !isApplicable, etc.
+              ruleTrace.push();
+            }
             myReductionTrack.enter(inputNode, rule);
             Collection<SNode> outputNodes = getQueryExecutor().applyRule(rule, context);
             if (outputNodes != null) {

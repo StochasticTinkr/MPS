@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,7 @@ public class TraceRegistry implements CoreComponent {
 
   public void unsubscribe(@NotNull ClientToken token) {
     if (myActiveClients.remove(token)) {
+      token.deactivate();
       myInactiveClients.add(token);
     }
   }
