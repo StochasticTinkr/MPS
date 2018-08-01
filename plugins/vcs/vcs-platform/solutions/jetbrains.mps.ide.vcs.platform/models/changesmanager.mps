@@ -844,6 +844,34 @@
         </node>
       </node>
     </node>
+    <node concept="3clFb_" id="5PCG$7kDnHo" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isEmpty" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="5PCG$7kDnHr" role="3clF47">
+        <node concept="1HWtB8" id="5PCG$7kDoAx" role="3cqZAp">
+          <node concept="37vLTw" id="5PCG$7kDoBM" role="1HWFw0">
+            <ref role="3cqZAo" node="3eE6dTgTzLk" resolve="myQueue" />
+          </node>
+          <node concept="3clFbS" id="5PCG$7kDoAz" role="1HWHxc">
+            <node concept="3cpWs6" id="5PCG$7kDvAu" role="3cqZAp">
+              <node concept="2OqwBi" id="5PCG$7kDvAw" role="3cqZAk">
+                <node concept="37vLTw" id="5PCG$7kDvAx" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3eE6dTgTzLk" resolve="myQueue" />
+                </node>
+                <node concept="liA8E" id="5PCG$7kDvAy" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~AbstractCollection.isEmpty():boolean" resolve="isEmpty" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5PCG$7kDmQZ" role="1B3o_S" />
+      <node concept="10P_77" id="5PCG$7kDnHj" role="3clF45" />
+    </node>
     <node concept="312cEu" id="3eE6dTgTGvJ" role="jymVt">
       <property role="TrG5h" value="MyExecutorThread" />
       <property role="2bfB8j" value="true" />
@@ -6240,7 +6268,7 @@
         </node>
         <node concept="3clFbJ" id="2JwSLRbzmyr" role="3cqZAp">
           <node concept="37vLTw" id="pU0Iv8Gf7F" role="3clFbw">
-            <ref role="3cqZAo" node="pU0Iv8GbOu" />
+            <ref role="3cqZAo" node="pU0Iv8GbOu" resolve="useEmptyBaseModel" />
           </node>
           <node concept="3clFbS" id="2JwSLRbzmys" role="3clFbx">
             <node concept="3clFbF" id="5zpsdFy4AMo" role="3cqZAp">
@@ -6250,7 +6278,7 @@
                     <ref role="37wK5l" to="bmv6:1m2uLwrS0vs" resolve="MergeTemporaryModel" />
                     <node concept="2OqwBi" id="2yL_twwGDiM" role="37wK5m">
                       <node concept="37vLTw" id="2yL_twwGxRF" role="2Oq$k0">
-                        <ref role="3cqZAo" node="2JwSLRbzll2" />
+                        <ref role="3cqZAo" node="2JwSLRbzll2" resolve="myModelDescriptor" />
                       </node>
                       <node concept="liA8E" id="2yL_twwGLxa" role="2OqNvi">
                         <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
@@ -6262,7 +6290,7 @@
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagTB2n" role="37vLTJ">
-                  <ref role="3cqZAo" node="5zpsdFy4A8p" />
+                  <ref role="3cqZAo" node="5zpsdFy4A8p" resolve="baseVersionModel" />
                 </node>
               </node>
             </node>
@@ -6272,17 +6300,17 @@
               <node concept="3clFbF" id="2LgKyNJlYPY" role="3cqZAp">
                 <node concept="37vLTI" id="2LgKyNJm2$7" role="3clFbG">
                   <node concept="2YIFZM" id="2LgKyNJm2F0" role="37vLTx">
-                    <ref role="37wK5l" node="2LgKyNJ3f_U" />
-                    <ref role="1Pybhc" node="1X5qtjfumIz" />
+                    <ref role="37wK5l" node="2LgKyNJ3f_U" resolve="getBaseVersionModel" />
+                    <ref role="1Pybhc" node="1X5qtjfumIz" resolve="BaseVersionUtil" />
                     <node concept="37vLTw" id="2LgKyNJm2Hq" role="37wK5m">
-                      <ref role="3cqZAo" node="2JwSLRbzll2" />
+                      <ref role="3cqZAo" node="2JwSLRbzll2" resolve="myModelDescriptor" />
                     </node>
                     <node concept="37vLTw" id="2LgKyNJm2Vc" role="37wK5m">
-                      <ref role="3cqZAo" node="2JwSLRbzlnZ" />
+                      <ref role="3cqZAo" node="2JwSLRbzlnZ" resolve="myProject" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="2LgKyNJlYPX" role="37vLTJ">
-                    <ref role="3cqZAo" node="5zpsdFy4A8p" />
+                    <ref role="3cqZAo" node="5zpsdFy4A8p" resolve="baseVersionModel" />
                   </node>
                 </node>
               </node>

@@ -60,6 +60,11 @@ public class SimpleCommandQueue {
   public boolean hadExceptions() {
     return myHadExceptions;
   }
+  public boolean isEmpty() {
+    synchronized (myQueue) {
+      return myQueue.isEmpty();
+    }
+  }
   private class MyExecutorThread extends Thread {
     public MyExecutorThread(@NotNull String name) {
       super(name);
