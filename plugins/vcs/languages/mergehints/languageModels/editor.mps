@@ -121,6 +121,7 @@
           <property role="3F0ifm" value="concept" />
         </node>
         <node concept="1iCGBv" id="3_Ojf_lL$AT" role="3EZMnx">
+          <property role="1$x2rV" value="&lt;no concept&gt;" />
           <ref role="1NtTu8" to="6p:3_Ojf_lL$AP" resolve="cncpt" />
           <node concept="1sVBvm" id="3_Ojf_lL$AV" role="1sWHZn">
             <node concept="3F0A7n" id="3_Ojf_lL$B2" role="2wV5jI">
