@@ -23,6 +23,7 @@
   <depends optional="true">Subversion</depends>
   <depends optional="true">Git4Idea</depends>
   <depends optional="true">jetbrains.mps.ide.make</depends>
+  <depends optional="true" config-file="langDesignOptional.xml">jetbrains.mps.ide.devkit</depends>
 
   <xi:include href="MPSVcs.xml" xpointer="xpointer(/components/*)"/>
 
