@@ -43824,5 +43824,20 @@
       </node>
     </node>
   </node>
+  <node concept="tC5Ba" id="1oCHNhnjllU">
+    <property role="TrG5h" value="BehaviourPopup" />
+    <property role="3GE5qa" value="Behavior.Actions" />
+    <node concept="ftmFs" id="1oCHNhnjllV" role="ftER_">
+      <node concept="tCFHf" id="1dN09JzUWJW" role="ftvYc">
+        <ref role="tCJdB" node="1oCHNhnjllY" resolve="GoToImplementingBehaviorMethod" />
+      </node>
+      <node concept="tCFHf" id="1dN09JzUWJQ" role="ftvYc">
+        <ref role="tCJdB" node="6ndnYgP5$a$" resolve="GoToOverriddenBehaviorMethod" />
+      </node>
+    </node>
+    <node concept="tT9cl" id="1oCHNhnjllX" role="2f5YQi">
+      <ref role="tU$_T" to="ekwn:1xsN4xJX8VI" resolve="EditorPopup" />
+    </node>
+  </node>
 </model>
 

@@ -63,7 +63,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     // groups 
     addGroup(new AccessoriesGroupActions_ActionGroup());
     addGroup(new BehaviorCodeOverrideImplementMenuGroup_ActionGroup());
-    addGroup(new BehaviourPopup_ActionGroup());
     addGroup(new ContributeModuleUsage_ActionGroup());
     addGroup(new DevKitTools_ActionGroup());
     addGroup(new EditorInternalEx_ActionGroup());
@@ -90,7 +89,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_generator);
     insertGroupIntoAnother(LanguageNewGenerator_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newSubModule);
     insertGroupIntoAnother(LanguageNewActionsEx_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newModel);
-    insertGroupIntoAnother(BehaviourPopup_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
     insertGroupIntoAnother(BehaviorCodeOverrideImplementMenuGroup_ActionGroup.ID, "Code_ActionGroupoverrideImplement", null);
     insertGroupIntoAnother(GeneratorActions_Delete_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_delete);
     insertGroupIntoAnother(GotoConceptAspect_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoConceptAspects);

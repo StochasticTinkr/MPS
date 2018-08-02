@@ -108,10 +108,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.devkit.actions.BehaviourPopup_ActionGroup" file="BehaviourPopup_ActionGroup.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.CellProperties_Action" file="CellProperties_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.awt.Frame" />
@@ -805,7 +801,6 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.AccessoriesGroupActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.AddAccessoryModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.BehaviorCodeOverrideImplementMenuGroup_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.BehaviourPopup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.CellProperties_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ContributeModuleUsage_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.CreateDefaultEditor_Action" />

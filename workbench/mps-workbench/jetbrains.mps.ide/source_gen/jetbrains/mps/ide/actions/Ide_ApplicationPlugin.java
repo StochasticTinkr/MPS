@@ -111,6 +111,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new AddToFavoritesGroup_ActionGroup());
     addGroup(new AnalyzeModule_ActionGroup());
     addGroup(new Analyze_ActionGroup());
+    addGroup(new BehaviourPopup_ActionGroup());
     addGroup(new Bookmarks_ActionGroup());
     addGroup(new Build_ActionGroup());
     addGroup(new CommonModuleActions_ActionGroup());
@@ -240,6 +241,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(JUnitTestMethodActions_ActionGroup.ID, FlyingActions_ActionGroup.ID, null);
     insertGroupIntoAnother(FindUsages_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_find);
     insertGroupIntoAnother(FindUsages_ActionGroup.ID, "EditorPopup_ActionGroupfind", null);
+    insertGroupIntoAnother(BehaviourPopup_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, ModelNewActions_ActionGroup.ID, ModelNewActions_ActionGroup.LABEL_ID_newRoot);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, PackageNewActions_ActionGroup.ID, null);
     insertGroupIntoAnother(EditorPopup_Show_ActionGroup.ID, "EditorPopup_ActionGroupshowIn", null);
