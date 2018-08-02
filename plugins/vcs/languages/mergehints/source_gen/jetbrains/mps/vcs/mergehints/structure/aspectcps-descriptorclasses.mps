@@ -651,8 +651,8 @@
                           </node>
                         </node>
                         <node concept="asaX9" id="2y" role="lGtFl">
-                          <property role="YLPcu" value="2018.1" />
-                          <property role="YLQ7P" value="use aspect instead" />
+                          <property role="YLPcu" value="2018.2" />
+                          <property role="YLQ7P" value="use VCS aspect instead" />
                         </node>
                       </node>
                     </node>

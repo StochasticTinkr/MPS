@@ -306,6 +306,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/vcs/languages/jetbrains.mps.devkit.aspect.vcs/jetbrains.mps.devkit.aspect.vcs.devkit" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/solutions/jetbrains.mps.ide.vcs/jetbrains.mps.ide.vcs.msd" folder="platform.vcs" />
+      <modulePath path="$PROJECT_DIR$/plugins/vcs/solutions/jetbrains.mps.vcs.mergehints.plugin/jetbrains.mps.vcs.mergehints.plugin.msd" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/vcs-core/modules/jetbrains.mps.ide.vcs.core/jetbrains.mps.ide.vcs.core.msd" folder="platform.vcs.core" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/vcs-core/modules/mergehints.runtime/jetbrains.mps.vcs.mergehints.runtime.msd" folder="platform.vcs.core" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/vcs-platform/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" folder="platform.vcs" />

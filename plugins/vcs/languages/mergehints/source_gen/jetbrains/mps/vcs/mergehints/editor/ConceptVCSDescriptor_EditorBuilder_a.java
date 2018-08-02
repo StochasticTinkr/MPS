@@ -136,7 +136,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
       }
     };
 
-    provider.setNoTargetText("<no cncpt>");
+    provider.setNoTargetText("<no concept>");
     EditorCell editorCell = provider.createCell();
 
     if (editorCell.getSRole() == null) {
