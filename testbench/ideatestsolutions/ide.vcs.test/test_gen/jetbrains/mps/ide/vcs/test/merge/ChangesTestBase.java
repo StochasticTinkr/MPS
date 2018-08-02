@@ -101,6 +101,12 @@ public abstract class ChangesTestBase implements EnvironmentAware {
       ourProject = ((MPSProject) myEnv.openProject(mpsProject));
       // For whatever reason, tests with this superclass work only if there's 1 project dispose per class (open/close of the project in Before/After doesn't work) 
       // Given there's odd magic with ourEnabled and the fact it's VCS, I don't want to dive into this sh!t now. 
+      ourProject.getModelAccess().runWriteAction(new Runnable() {
+        public void run() {
+        }
+      });
+      // By some reason batch event processor flushing is paused during project initializing, we flush it this way 
+      //  see ClassLoaderManager#runNonReloadableTransaction() 
     }
 
     myIdeaProject = ourProject.getProject();
@@ -151,7 +157,6 @@ public abstract class ChangesTestBase implements EnvironmentAware {
   }
 
   protected void checkAndEnable() {
-    Assert.assertNull(myDiff.getChangeSet());
 
     myDiff.setEnabled(true);
     myWaitHelper.waitForChangesManager();

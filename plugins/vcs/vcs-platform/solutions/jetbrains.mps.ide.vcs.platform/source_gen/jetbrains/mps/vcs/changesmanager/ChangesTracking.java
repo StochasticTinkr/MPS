@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
@@ -75,7 +76,6 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.IterableUtil;
@@ -161,13 +161,15 @@ public class ChangesTracking {
       public void run() {
         update(force);
       }
-    });
+    }, myModelDescriptor.getReference());
   }
 
   private void update(final boolean force) {
     myQueue.assertSoftlyIsCommandThread();
 
     SRepository repo = ProjectHelper.fromIdeaProject(myProject).getRepository();
+    final Wrappers._boolean doNotContinue = new Wrappers._boolean(true);
+    final Wrappers._boolean useEmptyBaseModel = new Wrappers._boolean(false);
     repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         synchronized (LOCK) {
@@ -195,44 +197,48 @@ public class ChangesTracking {
           if (FileStatus.NOT_CHANGED == status && !(force)) {
             return;
           }
-
-          SModel baseVersionModel = null;
-          if (isAdded(myModelDescriptor) || isConflict) {
-            baseVersionModel = new MergeTemporaryModel(myModelDescriptor.getReference(), true);
-          } else {
-            baseVersionModel = BaseVersionUtil.getBaseVersionModel(myModelDescriptor, myProject);
-            if (baseVersionModel == null) {
-              return;
-            }
-
-            if (Sequence.fromIterable(((Iterable<SModel.Problem>) baseVersionModel.getProblems())).any(new IWhereFilter<SModel.Problem>() {
-              public boolean accept(SModel.Problem it) {
-                return it.isError();
-              }
-            })) {
-              StringBuilder sb = new StringBuilder();
-              for (SModel.Problem p : Sequence.fromIterable((Iterable<SModel.Problem>) baseVersionModel.getProblems())) {
-                sb.append((p.isError() ? "error: " : "warn: ")).append(p.getText()).append("\n");
-              }
-              if (LOG.isEnabledFor(Level.WARN)) {
-                LOG.warn(sb.toString());
-              }
-              return;
-            }
-          }
-
-          if (!(myDisposed)) {
-            DiffModelUtil.renameModel(baseVersionModel, "repository");
-            ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel, myModelDescriptor, true);
-            myDifference.setChangeSet((ChangeSetImpl) changeSet);
-            buildCaches();
-          }
+          useEmptyBaseModel.value = isAdded(myModelDescriptor) || isConflict;
+          doNotContinue.value = false;
         }
       }
     });
+    if (doNotContinue.value) {
+      return;
+    }
+
+    final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);
+    if (useEmptyBaseModel.value) {
+      baseVersionModel.value = new MergeTemporaryModel(myModelDescriptor.getReference(), true);
+    } else {
+      baseVersionModel.value = BaseVersionUtil.getBaseVersionModel(myModelDescriptor, myProject);
+    }
+    if (baseVersionModel.value == null) {
+      return;
+    }
+    if (Sequence.fromIterable(((Iterable<SModel.Problem>) baseVersionModel.value.getProblems())).any(new IWhereFilter<SModel.Problem>() {
+      public boolean accept(SModel.Problem it) {
+        return it.isError();
+      }
+    })) {
+      StringBuilder sb = new StringBuilder();
+      for (SModel.Problem p : Sequence.fromIterable((Iterable<SModel.Problem>) baseVersionModel.value.getProblems())) {
+        sb.append((p.isError() ? "error: " : "warn: ")).append(p.getText()).append("\n");
+      }
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn(sb.toString());
+      }
+      return;
+    }
+
     repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         synchronized (LOCK) {
+          if (!(myDisposed)) {
+            DiffModelUtil.renameModel(baseVersionModel.value, "repository");
+            ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, myModelDescriptor, true);
+            myDifference.setChangeSet((ChangeSetImpl) changeSet);
+            buildCaches();
+          }
         }
       }
     });
