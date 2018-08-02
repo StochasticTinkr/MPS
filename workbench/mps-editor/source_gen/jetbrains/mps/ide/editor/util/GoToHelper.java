@@ -6,47 +6,43 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BHReflection;
-import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer;
+import com.intellij.openapi.progress.PerformInBackgroundOption;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
 public final class GoToHelper {
   private GoToHelper() {
   }
 
-  public static void executeFinders(final SNode node, final MPSProject mpsProject, final IInterfacedFinder finder, RelativePoint relativePoint) {
-    final Wrappers._T<String> caption = new Wrappers._T<String>();
+  public static void executeFinders(final SNode node, final MPSProject mpsProject, final IInterfacedFinder finder, final RelativePoint relativePoint) {
+    final String caption = GoToHelper.calcCaption(mpsProject, node);
     final List<SNodeReference> nodes = ListSequence.fromList(new ArrayList<SNodeReference>());
-    ProgressManager.getInstance().run(new Task.Modal(mpsProject.getProject(), "Searching...", true) {
-      @Override
-      public void run(@NotNull final ProgressIndicator p) {
+
+    Runnable process = new Runnable() {
+      public void run() {
         mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
-              caption.value = SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-            } else {
-              caption.value = ((String) BHReflection.invoke0(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
-            }
+            ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();
             // XXX I know cast to IFinder is stupid here, but it's the way to deal with checkTypeSystem test failures. 
             // We desperately need a mechanism to match stub classes with their MPS origins. 
-            for (Object sr : FindUtils.getSearchResults(new ProgressMonitorAdapter(p), new SearchQuery(node, new GlobalScope(mpsProject.getRepository())), (IFinder) finder).getResultObjects()) {
+            for (Object sr : FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), new SearchQuery(node, new GlobalScope(mpsProject.getRepository())), (IFinder) finder).getResultObjects()) {
               if (sr instanceof SNode) {
                 ListSequence.fromList(nodes).addElement(SNodeOperations.getPointer(((SNode) sr)));
               }
@@ -54,9 +50,25 @@ public final class GoToHelper {
           }
         });
       }
-    });
+    };
+    Runnable success = new Runnable() {
+      public void run() {
+        String title = "Choose overriding method of " + caption + "() to navigate to";
+        GoToContextMenuUtil.showMenu(mpsProject, title, ListSequence.fromList(nodes).toListSequence(), new DefaultMethodRenderer(mpsProject.getRepository()), relativePoint);
+      }
+    };
+    ProgressManager.getInstance().runProcessWithProgressAsynchronously(mpsProject.getProject(), "Searching", process, success, null, PerformInBackgroundOption.ALWAYS_BACKGROUND);
+  }
 
-    String title = "Choose overriding method of " + caption.value + "() to navigate to";
-    GoToContextMenuUtil.showMenu(mpsProject, title, ListSequence.fromList(nodes).toListSequence(), new DefaultMethodRenderer(mpsProject.getRepository()), relativePoint);
+  private static String calcCaption(final MPSProject mpsProject, final SNode node) {
+    return new ModelAccessHelper(mpsProject.getRepository()).runReadAction(new Computable<String>() {
+      public String compute() {
+        if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+          return SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+        } else {
+          return ((String) BHReflection.invoke0(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
+        }
+      }
+    });
   }
 }

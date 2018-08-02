@@ -111,45 +111,64 @@
   </root>
   <root nodeRef="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)/2808756344206283880">
     <file name="GoToHelper.java">
-      <node id="2808756344206270545" at="34,145,35,66" concept="8" />
-      <node id="2808756344206270593" at="35,66,36,94" concept="8" />
-      <node id="2034046503361624962" at="42,202,43,351" concept="4" />
-      <node id="1613979331507251758" at="44,20,45,267" concept="4" />
-      <node id="3221626724942248975" at="46,13,47,119" concept="10" />
-      <node id="3221626724942316334" at="47,119,48,93" concept="10" />
-      <node id="2034046503361622280" at="50,40,51,98" concept="4" />
-      <node id="2808756344206270692" at="57,7,58,0" concept="11" />
-      <node id="1616056205645235484" at="58,0,59,88" concept="8" />
-      <node id="1616056205645235492" at="59,88,60,169" concept="4" />
+      <node id="2808756344206270545" at="34,151,35,68" concept="8" />
+      <node id="2808756344206270593" at="35,68,36,94" concept="8" />
+      <node id="7356414323733027131" at="36,94,37,0" concept="11" />
+      <node id="4954474195356678714" at="41,29,42,95" concept="8" />
+      <node id="4954474195356618528" at="42,95,43,119" concept="10" />
+      <node id="4954474195356618530" at="43,119,44,93" concept="10" />
+      <node id="4954474195356618539" at="46,40,47,98" concept="4" />
+      <node id="1616056205645235484" at="55,25,56,86" concept="8" />
+      <node id="1616056205645235492" at="56,86,57,173" concept="4" />
+      <node id="7356414323733057306" at="59,6,60,178" concept="4" />
+      <node id="4954474195356869199" at="66,198,67,338" concept="9" />
+      <node id="4954474195356885878" at="68,16,69,254" concept="9" />
       <node id="2808756344206284066" at="31,0,33,0" concept="3" trace="GoToHelper#()V" />
-      <node id="1613979331507250898" at="44,18,46,13" concept="1" />
-      <node id="4109870623496337088" at="49,194,52,15" concept="6" />
-      <node id="1613979331507240835" at="41,29,46,13" concept="6" />
-      <node id="4109870623496325927" at="48,93,53,13" concept="5" />
-      <node id="1616056205645501054" at="41,0,55,0" concept="7" trace="run#()V" />
-      <node id="1616056205645501052" at="39,59,55,11" concept="4" />
-      <node id="2808756344206270608" at="38,0,57,0" concept="7" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-      <node id="2808756344206270600" at="36,94,57,7" concept="4" />
+      <node id="4954474195356832621" at="68,14,70,9" concept="1" />
+      <node id="4954474195356618534" at="45,202,48,15" concept="6" />
+      <node id="4954474195356641982" at="55,0,59,0" concept="7" trace="run#()V" />
+      <node id="4954474195356618532" at="44,93,49,13" concept="5" />
+      <node id="4954474195356832607" at="65,31,70,9" concept="6" />
+      <node id="4954474195356630857" at="53,6,59,6" concept="8" />
+      <node id="4954474195356832603" at="65,0,72,0" concept="7" trace="compute#()Ljava/lang/String;" />
+      <node id="4954474195356832632" at="63,84,72,7" concept="9" />
+      <node id="4954474195356618504" at="41,0,51,0" concept="7" trace="run#()V" />
+      <node id="4954474195356832646" at="63,0,74,0" concept="12" trace="calcCaption#(Ljetbrains/mps/project/MPSProject;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="4954474195356618503" at="39,25,51,11" concept="4" />
+      <node id="4954474195356618499" at="39,0,53,0" concept="7" trace="run#()V" />
+      <node id="4954474195356618493" at="37,0,53,6" concept="8" />
       <node id="2808756344206463602" at="34,0,62,0" concept="12" trace="executeFinders#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/ide/findusages/findalgorithm/finders/IInterfacedFinder;Lcom/intellij/ui/awt/RelativePoint;)V" />
       <scope id="2808756344206284069" at="31,24,31,24" />
-      <scope id="1613979331507240837" at="42,202,43,351" />
-      <scope id="1613979331507250899" at="44,20,45,267" />
-      <scope id="4109870623496337090" at="50,40,51,98" />
+      <scope id="4954474195356618538" at="46,40,47,98" />
+      <scope id="4954474195356832608" at="66,198,67,338" />
+      <scope id="4954474195356832622" at="68,16,69,254" />
       <scope id="2808756344206284066" at="31,0,33,0" />
-      <scope id="4109870623496325930" at="49,194,52,15" />
-      <scope id="4109870623496325927" at="48,93,53,13">
-        <var name="sr" id="4109870623496325931" />
+      <scope id="4954474195356641986" at="55,25,57,173">
+        <var name="title" id="1616056205645235485" />
       </scope>
-      <scope id="1616056205645501056" at="41,29,53,13" />
-      <scope id="1616056205645501054" at="41,0,55,0" />
-      <scope id="2808756344206270614" at="39,59,55,11" />
-      <scope id="2808756344206270608" at="38,0,57,0">
-        <var name="p" id="2808756344206270611" />
+      <scope id="4954474195356618533" at="45,202,48,15" />
+      <scope id="4954474195356641982" at="55,0,59,0" />
+      <scope id="4954474195356618532" at="44,93,49,13">
+        <var name="sr" id="4954474195356618550" />
       </scope>
-      <scope id="2808756344206463605" at="34,145,60,169">
+      <scope id="4954474195356832606" at="65,31,70,9" />
+      <scope id="4954474195356832603" at="65,0,72,0" />
+      <scope id="4954474195356618505" at="41,29,49,13">
+        <var name="indicator" id="4954474195356678715" />
+      </scope>
+      <scope id="4954474195356832586" at="63,84,72,7" />
+      <scope id="4954474195356618504" at="41,0,51,0" />
+      <scope id="4954474195356832646" at="63,0,74,0">
+        <var name="mpsProject" id="4954474195356832634" />
+        <var name="node" id="4954474195356832636" />
+      </scope>
+      <scope id="4954474195356618502" at="39,25,51,11" />
+      <scope id="4954474195356618499" at="39,0,53,0" />
+      <scope id="2808756344206463605" at="34,151,60,178">
         <var name="caption" id="2808756344206270546" />
         <var name="nodes" id="2808756344206270594" />
-        <var name="title" id="1616056205645235485" />
+        <var name="process" id="4954474195356618494" />
+        <var name="success" id="4954474195356630858" />
       </scope>
       <scope id="2808756344206463602" at="34,0,62,0">
         <var name="finder" id="2808756344206463625" />
@@ -157,9 +176,11 @@
         <var name="node" id="2808756344206463621" />
         <var name="relativePoint" id="2808756344206465166" />
       </scope>
-      <unit id="1616056205645501054" at="40,70,55,9" name="jetbrains.mps.ide.editor.util.GoToHelper$1$1" />
-      <unit id="2808756344206270606" at="37,42,57,5" name="jetbrains.mps.ide.editor.util.GoToHelper$1" />
-      <unit id="2808756344206283880" at="30,0,63,0" name="jetbrains.mps.ide.editor.util.GoToHelper" />
+      <unit id="4954474195356641980" at="54,27,59,5" name="jetbrains.mps.ide.editor.util.GoToHelper$2" />
+      <unit id="4954474195356832601" at="64,79,72,5" name="jetbrains.mps.ide.editor.util.GoToHelper$3" />
+      <unit id="4954474195356618504" at="40,70,51,9" name="jetbrains.mps.ide.editor.util.GoToHelper$1$1" />
+      <unit id="4954474195356618497" at="38,27,53,5" name="jetbrains.mps.ide.editor.util.GoToHelper$1" />
+      <unit id="2808756344206283880" at="30,0,75,0" name="jetbrains.mps.ide.editor.util.GoToHelper" />
     </file>
   </root>
   <root nodeRef="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)/4491627601716787026">
