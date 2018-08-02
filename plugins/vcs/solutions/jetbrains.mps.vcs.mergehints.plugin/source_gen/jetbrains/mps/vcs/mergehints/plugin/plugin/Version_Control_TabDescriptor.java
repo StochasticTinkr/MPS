@@ -82,7 +82,6 @@ public class Version_Control_TabDescriptor extends RelationDescriptor {
     return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648f9L, "jetbrains.mps.vcs.mergehints.structure.VCSHints"));
   }
   public SNode createAspect(final SNode node, final SConcept concept) {
-    List<SNode> nodes = new ArrayList<SNode>();
     SModule module = SNodeOperations.getModel(node).getModule();
     assert module instanceof Language;
 
@@ -95,7 +94,7 @@ public class Version_Control_TabDescriptor extends RelationDescriptor {
     });
     if (aspectModel == null) {
       Language l = (Language) module;
-      SModel structureModel = (l).getStructureModelDescriptor();
+      SModel structureModel = l.getStructureModelDescriptor();
       ModelRoot modelRoot;
       if (structureModel == null) {
         modelRoot = l.getModelRoots().iterator().next();

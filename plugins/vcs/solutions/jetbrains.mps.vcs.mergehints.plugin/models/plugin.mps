@@ -491,17 +491,6 @@
       </node>
       <node concept="1YUSOF" id="6u50yCptNQ6" role="1YUSOD">
         <node concept="3clFbS" id="6u50yCptNQ7" role="2VODD2">
-          <node concept="3cpWs8" id="4qACXZlNJR0" role="3cqZAp">
-            <node concept="3cpWsn" id="4qACXZlNJR1" role="3cpWs9">
-              <property role="TrG5h" value="nodes" />
-              <node concept="2I9FWS" id="4qACXZlNJR2" role="1tU5fm" />
-              <node concept="2ShNRf" id="4qACXZlNJR3" role="33vP2m">
-                <node concept="2T8Vx0" id="4qACXZlNJR4" role="2ShVmc">
-                  <node concept="2I9FWS" id="4qACXZlNJR5" role="2T96Bj" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3cpWs8" id="4qACXZlNJR6" role="3cqZAp">
             <node concept="3cpWsn" id="4qACXZlNJR7" role="3cpWs9">
               <property role="TrG5h" value="module" />
@@ -629,10 +618,8 @@
                   <property role="TrG5h" value="structureModel" />
                   <node concept="H_c77" id="4qACXZlOAKg" role="1tU5fm" />
                   <node concept="2OqwBi" id="4qACXZlOsAX" role="33vP2m">
-                    <node concept="1eOMI4" id="4qACXZlOwvd" role="2Oq$k0">
-                      <node concept="37vLTw" id="4qACXZlOF1p" role="1eOMHV">
-                        <ref role="3cqZAo" node="4qACXZlOF1l" resolve="l" />
-                      </node>
+                    <node concept="37vLTw" id="7jlp7llvur5" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4qACXZlOF1l" resolve="l" />
                     </node>
                     <node concept="liA8E" id="4qACXZlOsAY" role="2OqNvi">
                       <ref role="37wK5l" to="w1kc:~Language.getStructureModelDescriptor():org.jetbrains.mps.openapi.model.SModel" resolve="getStructureModelDescriptor" />
@@ -877,12 +864,12 @@
   </node>
   <node concept="2DaZZR" id="4qACXZlXpjD" />
   <node concept="9BnSX" id="4qACXZlXBAH">
-    <property role="9BnSZ" value="foo" />
-    <property role="TrG5h" value="foo" />
-    <property role="9BnSL" value="foo" />
-    <property role="9BnSM" value="foo" />
-    <property role="9BnSP" value="foo" />
-    <property role="1qHB85" value="foo" />
+    <property role="9BnSZ" value="ignored" />
+    <property role="TrG5h" value="ignored" />
+    <property role="9BnSL" value="ignored" />
+    <property role="9BnSM" value="ignored" />
+    <property role="9BnSP" value="ignored" />
+    <property role="1qHB85" value="ignored" />
   </node>
 </model>
 
