@@ -22588,6 +22588,23 @@
               </node>
             </node>
           </node>
+          <node concept="28jJK3" id="4oOzPqMbvKQ" role="39821P">
+            <node concept="398BVA" id="4oOzPqMbvKR" role="28jJRO">
+              <ref role="398BVh" node="1lMM4owFq61" resolve="mps_home" />
+              <node concept="2Ry0Ak" id="4oOzPqMbvKS" role="iGT6I">
+                <property role="2Ry0Am" value="plugins" />
+                <node concept="2Ry0Ak" id="4oOzPqMbvKT" role="2Ry0An">
+                  <property role="2Ry0Am" value="vcs" />
+                  <node concept="2Ry0Ak" id="4oOzPqMbvKU" role="2Ry0An">
+                    <property role="2Ry0Am" value="META-INF" />
+                    <node concept="2Ry0Ak" id="4oOzPqMbvMP" role="2Ry0An">
+                      <property role="2Ry0Am" value="langDesignOptional.xml" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="398223" id="79dnIA70i5s" role="39821P">
           <node concept="L2wRC" id="79dnIA7838v" role="39821P">
@@ -36562,6 +36579,10 @@
         <node concept="nFU4i" id="6ob18N89Hv4" role="nFU4p">
           <property role="nFU4j" value="solutions/jetbrains.mps.ide.vcs/source_gen" />
           <property role="3LZaj6" value="source" />
+        </node>
+        <node concept="nFU4i" id="7jlp7lloVpx" role="nFU4p">
+          <property role="3LZaj6" value="source" />
+          <property role="nFU4j" value="solutions/jetbrains.mps.vcs.mergehints.plugin/source_gen" />
         </node>
       </node>
       <node concept="nCB5N" id="6ob18N89Hv5" role="nCB5Z">

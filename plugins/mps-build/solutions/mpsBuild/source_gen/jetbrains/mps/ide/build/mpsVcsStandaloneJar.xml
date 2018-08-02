@@ -93,7 +93,10 @@
     <mkdir dir="${build.tmp}/java/out/vcs-ide" />
     <javac2 destdir="${build.tmp}/java/out/vcs-ide" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${mps_home}/plugins/vcs/solutions/jetbrains.mps.ide.vcs/source_gen" />
+      <src>
+        <pathelement path="${mps_home}/plugins/vcs/solutions/jetbrains.mps.ide.vcs/source_gen" />
+        <pathelement path="${mps_home}/plugins/vcs/solutions/jetbrains.mps.vcs.mergehints.plugin/source_gen" />
+      </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-annotations.jar" />
@@ -129,6 +132,7 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/vcs-ide">
       <fileset dir="${mps_home}/plugins/vcs/solutions/jetbrains.mps.ide.vcs/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/vcs/solutions/jetbrains.mps.vcs.mergehints.plugin/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
 </project>
