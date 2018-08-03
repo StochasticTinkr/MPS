@@ -19,6 +19,9 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.awt.event.InputEvent;
 import jetbrains.mps.ide.editor.util.GoToHelper;
 import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class GoToOverriddenBehaviorMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -74,6 +77,13 @@ public class GoToOverriddenBehaviorMethod_Action extends BaseAction {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoOverriddenMethod");
     EditorCell selectedCell = event.getData(MPSEditorDataKeys.EDITOR_CELL);
     InputEvent inputEvent = event.getInputEvent();
-    GoToHelper.executeFinders(event.getData(MPSCommonDataKeys.NODE), event.getData(MPSCommonDataKeys.MPS_PROJECT), FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverriddenMethods_Finder"), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
+    GoToHelper.executeFinders(event.getData(MPSCommonDataKeys.NODE), event.getData(MPSCommonDataKeys.MPS_PROJECT), GoToOverriddenBehaviorMethod_Action.this.calcTitle(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSCommonDataKeys.NODE), event), FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverriddenMethods_Finder"), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
+  }
+  private String calcTitle(final MPSProject mpsProject, final SNode node, final AnActionEvent event) {
+    return new ModelAccessHelper(mpsProject.getRepository()).runReadAction(new Computable<String>() {
+      public String compute() {
+        return "Choose overridden method of " + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "() to navigate to";
+      }
+    });
   }
 }

@@ -17,12 +17,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.PerformInBackgroundOption;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -33,6 +32,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
 import jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.impl.BackgroundableProcessIndicator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.OverridingMethodsFinder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -105,29 +106,34 @@ public class GoToOverridenClassMethod_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoOverriden");
-    final Wrappers._T<Set<Tuples._2<SNodeReference, SNode>>> overridenMethods = new Wrappers._T<Set<Tuples._2<SNodeReference, SNode>>>();
+    final Set<Tuples._2<SNodeReference, SNode>> overridenMethods;
     final String[] methodName = new String[1];
-    ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
+    Task.Backgroundable task = new Task.Backgroundable(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true, PerformInBackgroundOption.ALWAYS_BACKGROUND) {
       @Override
-      public void run(@NotNull ProgressIndicator p0) {
+      public void run(@NotNull ProgressIndicator indicator) {
         ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            overridenMethods.value = GoToOverridenClassMethod_Action.this.getOverridenMethod(_params);
+            overridenMethods = GoToOverridenClassMethod_Action.this.getOverridenMethod(_params);
             methodName[0] = SPropertyOperations.getString(GoToOverridenClassMethod_Action.this.getInstanceMethodDeclaration(_params), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
           }
         });
       }
-    });
-    EditorCell selectedCell = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell"));
-    InputEvent inputEvent = event.getInputEvent();
-    List<SNodeReference> methods = SetSequence.fromSet(overridenMethods.value).select(new ISelector<Tuples._2<SNodeReference, SNode>, SNodeReference>() {
-      public SNodeReference select(Tuples._2<SNodeReference, SNode> it) {
-        return it._0();
+
+      @Override
+      public void onSuccess() {
+        EditorCell selectedCell = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell"));
+        InputEvent inputEvent = event.getInputEvent();
+        List<SNodeReference> methods = SetSequence.fromSet(overridenMethods).select(new ISelector<Tuples._2<SNodeReference, SNode>, SNodeReference>() {
+          public SNodeReference select(Tuples._2<SNodeReference, SNode> it) {
+            return it._0();
+          }
+        }).toListSequence();
+        RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent);
+        String title = "Choose super method of " + methodName[0] + "()";
+        GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, methods, new DefaultMethodRenderer(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()), relativePoint);
       }
-    }).toListSequence();
-    RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent);
-    String title = "Choose super method of " + methodName[0] + "()";
-    GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, methods, new DefaultMethodRenderer(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()), relativePoint);
+    };
+    ProgressManager.getInstance().runProcessWithProgressAsynchronously(task, new BackgroundableProcessIndicator(task));
   }
   private SNode getInstanceMethodDeclaration(final Map<String, Object> _params) {
     return SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), true, false);

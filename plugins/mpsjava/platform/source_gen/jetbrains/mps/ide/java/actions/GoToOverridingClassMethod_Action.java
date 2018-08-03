@@ -21,6 +21,9 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.awt.event.InputEvent;
 import jetbrains.mps.ide.editor.util.GoToHelper;
 import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class GoToOverridingClassMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -79,6 +82,13 @@ public class GoToOverridingClassMethod_Action extends BaseAction {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
     EditorCell selectedCell = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell"));
     InputEvent inputEvent = event.getInputEvent();
-    GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((MPSProject) MapSequence.fromMap(_params).get("project")), FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder"), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
+    GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((MPSProject) MapSequence.fromMap(_params).get("project")), GoToOverridingClassMethod_Action.this.calcTitle(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("methodNode")), _params), FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder"), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
+  }
+  private String calcTitle(final MPSProject mpsProject, final SNode node, final Map<String, Object> _params) {
+    return new ModelAccessHelper(mpsProject.getRepository()).runReadAction(new Computable<String>() {
+      public String compute() {
+        return "Choose overridden method of " + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "() to navigate to";
+      }
+    });
   }
 }

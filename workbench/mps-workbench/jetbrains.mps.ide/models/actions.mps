@@ -43469,6 +43469,88 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Behavior.Actions" />
     <property role="2uzpH1" value="Go to Implementing Methods" />
+    <node concept="2XrIbr" id="2WqrB2Puq2s" role="32lrUH">
+      <property role="TrG5h" value="calcTitle" />
+      <node concept="37vLTG" id="2WqrB2Puq1F" role="3clF46">
+        <property role="TrG5h" value="mpsProject" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="2WqrB2Puq1G" role="1tU5fm">
+          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="2WqrB2Puq1H" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3Tqbb2" id="2WqrB2Puq1I" role="1tU5fm">
+          <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="2WqrB2Puq2q" role="1B3o_S" />
+      <node concept="17QB3L" id="2WqrB2Puq2r" role="3clF45" />
+      <node concept="3clFbS" id="2WqrB2Puq2t" role="3clF47">
+        <node concept="3cpWs6" id="2WqrB2Puq1J" role="3cqZAp">
+          <node concept="2OqwBi" id="2WqrB2Puq1K" role="3cqZAk">
+            <node concept="2ShNRf" id="2WqrB2Puq1L" role="2Oq$k0">
+              <node concept="1pGfFk" id="2WqrB2Puq1M" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModelAccessHelper" />
+                <node concept="2OqwBi" id="2WqrB2Puq1N" role="37wK5m">
+                  <node concept="37vLTw" id="2WqrB2Puq1O" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2WqrB2Puq1F" resolve="mpsProject" />
+                  </node>
+                  <node concept="liA8E" id="2WqrB2Puq1P" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="2WqrB2Puq1Q" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+              <node concept="2ShNRf" id="2WqrB2Puq1R" role="37wK5m">
+                <node concept="YeOm9" id="2WqrB2Puq1S" role="2ShVmc">
+                  <node concept="1Y3b0j" id="2WqrB2Puq1T" role="YeSDq">
+                    <property role="2bfB8j" value="true" />
+                    <ref role="1Y3XeK" to="18ew:~Computable" resolve="Computable" />
+                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                    <node concept="3Tm1VV" id="2WqrB2Puq1U" role="1B3o_S" />
+                    <node concept="3clFb_" id="2WqrB2Puq1V" role="jymVt">
+                      <property role="1EzhhJ" value="false" />
+                      <property role="TrG5h" value="compute" />
+                      <property role="DiZV1" value="false" />
+                      <property role="od$2w" value="false" />
+                      <node concept="3Tm1VV" id="2WqrB2Puq1W" role="1B3o_S" />
+                      <node concept="17QB3L" id="2WqrB2Puq1X" role="3clF45" />
+                      <node concept="3clFbS" id="2WqrB2Puq1Y" role="3clF47">
+                        <node concept="3cpWs6" id="2WqrB2Pv6wB" role="3cqZAp">
+                          <node concept="3cpWs3" id="2WqrB2PvfY5" role="3cqZAk">
+                            <node concept="3cpWs3" id="2WqrB2PvfY6" role="3uHU7B">
+                              <node concept="Xl_RD" id="2WqrB2PvfY7" role="3uHU7B">
+                                <property role="Xl_RC" value="Choose overriding method of " />
+                              </node>
+                              <node concept="2OqwBi" id="2WqrB2Pvkb_" role="3uHU7w">
+                                <node concept="37vLTw" id="2WqrB2PvjN0" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="2WqrB2Puq1H" resolve="node" />
+                                </node>
+                                <node concept="3TrcHB" id="2WqrB2PvkYy" role="2OqNvi">
+                                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="Xl_RD" id="2WqrB2PvfY9" role="3uHU7w">
+                              <property role="Xl_RC" value="() to navigate to" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="17QB3L" id="2WqrB2Puq2p" role="2Ghqu4" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2S4$dB" id="1oCHNhnjlm5" role="1NuT2Z">
       <property role="TrG5h" value="methodNode" />
       <node concept="1oajcY" id="1oCHNhnjlm6" role="1oa70y" />
@@ -43545,6 +43627,24 @@
               <node concept="2WthIp" id="1pHoCUay$Ea" role="2Oq$k0" />
               <node concept="1DTwFV" id="1pHoCUay$Eb" role="2OqNvi">
                 <ref role="2WH_rO" node="3m6U0jmPVG0" resolve="project" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="2WqrB2Pvgnl" role="37wK5m">
+              <node concept="2WthIp" id="2WqrB2Pvgno" role="2Oq$k0" />
+              <node concept="2XshWL" id="2WqrB2Pvgnq" role="2OqNvi">
+                <ref role="2WH_rO" node="2WqrB2Puq2s" resolve="calcTitle" />
+                <node concept="2OqwBi" id="2WqrB2PvgFH" role="2XxRq1">
+                  <node concept="2WthIp" id="2WqrB2Pvgs9" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="2WqrB2PvgZC" role="2OqNvi">
+                    <ref role="2WH_rO" node="3m6U0jmPVG0" resolve="project" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="2WqrB2Pvhmi" role="2XxRq1">
+                  <node concept="2WthIp" id="2WqrB2Pvh6z" role="2Oq$k0" />
+                  <node concept="3gHZIF" id="2WqrB2PvhFH" role="2OqNvi">
+                    <ref role="2WH_rO" node="1oCHNhnjlm5" resolve="methodNode" />
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="1ZiG2z" id="3$9coUqj3iz" role="37wK5m">
@@ -43685,6 +43785,88 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Behavior.Actions" />
     <property role="2uzpH1" value="Go to Overridden Methods" />
+    <node concept="2XrIbr" id="2WqrB2PvirB" role="32lrUH">
+      <property role="TrG5h" value="calcTitle" />
+      <node concept="37vLTG" id="2WqrB2PvirC" role="3clF46">
+        <property role="TrG5h" value="mpsProject" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="2WqrB2PvirD" role="1tU5fm">
+          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="2WqrB2PvirE" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3Tqbb2" id="2WqrB2PvirF" role="1tU5fm">
+          <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="2WqrB2PvirG" role="1B3o_S" />
+      <node concept="17QB3L" id="2WqrB2PvirH" role="3clF45" />
+      <node concept="3clFbS" id="2WqrB2PvirI" role="3clF47">
+        <node concept="3cpWs6" id="2WqrB2PvirJ" role="3cqZAp">
+          <node concept="2OqwBi" id="2WqrB2PvirK" role="3cqZAk">
+            <node concept="2ShNRf" id="2WqrB2PvirL" role="2Oq$k0">
+              <node concept="1pGfFk" id="2WqrB2PvirM" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModelAccessHelper" />
+                <node concept="2OqwBi" id="2WqrB2PvirN" role="37wK5m">
+                  <node concept="37vLTw" id="2WqrB2PvirO" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2WqrB2PvirC" resolve="mpsProject" />
+                  </node>
+                  <node concept="liA8E" id="2WqrB2PvirP" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="2WqrB2PvirQ" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+              <node concept="2ShNRf" id="2WqrB2PvirR" role="37wK5m">
+                <node concept="YeOm9" id="2WqrB2PvirS" role="2ShVmc">
+                  <node concept="1Y3b0j" id="2WqrB2PvirT" role="YeSDq">
+                    <property role="2bfB8j" value="true" />
+                    <ref role="1Y3XeK" to="18ew:~Computable" resolve="Computable" />
+                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                    <node concept="3Tm1VV" id="2WqrB2PvirU" role="1B3o_S" />
+                    <node concept="3clFb_" id="2WqrB2PvirV" role="jymVt">
+                      <property role="1EzhhJ" value="false" />
+                      <property role="TrG5h" value="compute" />
+                      <property role="DiZV1" value="false" />
+                      <property role="od$2w" value="false" />
+                      <node concept="3Tm1VV" id="2WqrB2PvirW" role="1B3o_S" />
+                      <node concept="17QB3L" id="2WqrB2PvirX" role="3clF45" />
+                      <node concept="3clFbS" id="2WqrB2PvirY" role="3clF47">
+                        <node concept="3cpWs6" id="2WqrB2PvirZ" role="3cqZAp">
+                          <node concept="3cpWs3" id="2WqrB2Pvis0" role="3cqZAk">
+                            <node concept="3cpWs3" id="2WqrB2Pvis1" role="3uHU7B">
+                              <node concept="Xl_RD" id="2WqrB2Pvis2" role="3uHU7B">
+                                <property role="Xl_RC" value="Choose overridden method of " />
+                              </node>
+                              <node concept="2OqwBi" id="2WqrB2Pvlxm" role="3uHU7w">
+                                <node concept="37vLTw" id="2WqrB2Pvlxn" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="2WqrB2PvirE" resolve="node" />
+                                </node>
+                                <node concept="3TrcHB" id="2WqrB2Pvlxo" role="2OqNvi">
+                                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="Xl_RD" id="2WqrB2Pvis4" role="3uHU7w">
+                              <property role="Xl_RC" value="() to navigate to" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="17QB3L" id="2WqrB2Pvis5" role="2Ghqu4" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2S4$dB" id="6ndnYgP5$a_" role="1NuT2Z">
       <property role="TrG5h" value="methodNode" />
       <node concept="1oajcY" id="6ndnYgP5$aA" role="1oa70y" />
@@ -43761,6 +43943,24 @@
               <node concept="2WthIp" id="6ndnYgP5$b6" role="2Oq$k0" />
               <node concept="1DTwFV" id="6ndnYgP5$b7" role="2OqNvi">
                 <ref role="2WH_rO" node="6ndnYgP5$aF" resolve="project" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="2WqrB2PvmKx" role="37wK5m">
+              <node concept="2WthIp" id="2WqrB2PvmK$" role="2Oq$k0" />
+              <node concept="2XshWL" id="2WqrB2PvmKA" role="2OqNvi">
+                <ref role="2WH_rO" node="2WqrB2PvirB" resolve="calcTitle" />
+                <node concept="2OqwBi" id="2WqrB2Pvn4L" role="2XxRq1">
+                  <node concept="2WthIp" id="2WqrB2PvmPd" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="2WqrB2Pvnq2" role="2OqNvi">
+                    <ref role="2WH_rO" node="6ndnYgP5$aF" resolve="project" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="2WqrB2PvnIt" role="2XxRq1">
+                  <node concept="2WthIp" id="2WqrB2PvnuI" role="2Oq$k0" />
+                  <node concept="3gHZIF" id="2WqrB2Pvo3S" role="2OqNvi">
+                    <ref role="2WH_rO" node="6ndnYgP5$a_" resolve="methodNode" />
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="1ZiG2z" id="6ndnYgP5$b8" role="37wK5m">

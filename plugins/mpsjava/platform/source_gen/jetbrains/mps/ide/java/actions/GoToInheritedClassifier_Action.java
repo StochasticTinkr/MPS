@@ -20,19 +20,23 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.PerformInBackgroundOption;
 import com.intellij.openapi.progress.ProgressIndicator;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.project.GlobalScope;
+import java.util.function.Consumer;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -41,6 +45,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
 import jetbrains.mps.ide.editor.util.renderer.DefaultNodeRenderer;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.impl.BackgroundableProcessIndicator;
 
 public class GoToInheritedClassifier_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -109,54 +115,78 @@ public class GoToInheritedClassifier_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+    final SNode classifier = ((SNode) MapSequence.fromMap(_params).get("classifierNode"));
     final ModelAccess modelAccess = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess();
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
-    final List<String> finderClasses = ListSequence.fromList(new ArrayList<String>());
+    final Wrappers._boolean isInterface = new Wrappers._boolean();
     modelAccess.runReadAction(new Runnable() {
       public void run() {
-        if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-          ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
+        if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+          isInterface.value = true;
         } else {
-          ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
-          ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder");
+          isInterface.value = false;
         }
       }
     });
 
     final Set<SNodeReference> nodes = SetSequence.fromSet(new HashSet<SNodeReference>());
 
-    ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
+    Task.Backgroundable task = new Task.Backgroundable(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true, PerformInBackgroundOption.ALWAYS_BACKGROUND) {
       @Override
-      public void run(@NotNull final ProgressIndicator p) {
+      public void run(@NotNull final ProgressIndicator indicator) {
         modelAccess.runReadAction(new Runnable() {
           public void run() {
-            for (String finderClass : finderClasses) {
-              List<SNode> list = FindUtils.executeFinder(finderClass, ((SNode) MapSequence.fromMap(_params).get("classifierNode")), GlobalScope.getInstance(), new ProgressMonitorAdapter(p));
-              SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodePointer>() {
-                public SNodePointer select(SNode it) {
-                  return new SNodePointer(it);
+            final List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+            if (isInterface.value) {
+              SearchResults results = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), classifier, new GlobalScope(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository()), "jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
+              results.getSearchResults().forEach(new Consumer<SearchResult<Object>>() {
+                public void accept(SearchResult<Object> searchResult) {
+                  ListSequence.fromList(result).addElement((SNode) searchResult.getObject());
                 }
-              }));
-              SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(list).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"));
+              });
+            } else {
+              SearchResults results1 = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), classifier, new GlobalScope(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository()), "jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
+              results1.getSearchResults().forEach(new Consumer<SearchResult<Object>>() {
+                public void accept(SearchResult<Object> searchResult) {
+                  ListSequence.fromList(result).addElement((SNode) searchResult.getObject());
                 }
-              }).translate(new ITranslator2<SNode, SNodePointer>() {
-                public Iterable<SNodePointer> translate(SNode it) {
-                  return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, 0xfc367503acL, "enumConstant"))).select(new ISelector<SNode, SNodePointer>() {
-                    public SNodePointer select(SNode e) {
-                      return new SNodePointer(e);
-                    }
-                  });
+              });
+              SearchResults results2 = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), classifier, new GlobalScope(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository()), "jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder");
+              results2.getSearchResults().forEach(new Consumer<SearchResult<Object>>() {
+                public void accept(SearchResult<Object> searchResult) {
+                  ListSequence.fromList(result).addElement((SNode) searchResult.getObject());
                 }
-              }));
+              });
             }
+            SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(result).select(new ISelector<SNode, SNodePointer>() {
+              public SNodePointer select(SNode it) {
+                return new SNodePointer(it);
+              }
+            }));
+            SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(result).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"));
+              }
+            }).translate(new ITranslator2<SNode, SNodePointer>() {
+              public Iterable<SNodePointer> translate(SNode it) {
+                return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, 0xfc367503acL, "enumConstant"))).select(new ISelector<SNode, SNodePointer>() {
+                  public SNodePointer select(SNode e) {
+                    return new SNodePointer(e);
+                  }
+                });
+              }
+            }));
           }
         });
       }
-    });
-    RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent());
-    String title = "Choose inherited class to navigate to";
-    GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, SetSequence.fromSet(nodes).toListSequence(), new DefaultNodeRenderer(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()), relativePoint);
+
+      @Override
+      public void onSuccess() {
+        RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent());
+        String title = "Choose inherited class to navigate to";
+        GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, SetSequence.fromSet(nodes).toListSequence(), new DefaultNodeRenderer(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()), relativePoint);
+      }
+    };
+    ProgressManager.getInstance().runProcessWithProgressAsynchronously(task, new BackgroundableProcessIndicator(task));
   }
 }
