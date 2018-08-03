@@ -59,7 +59,7 @@
     <mkdir dir="${build.tmp}/default/branding.jar/idea" />
     <echoxml file="${build.tmp}/default/branding.jar/idea/IdeaApplicationInfo.xml">
       <component>
-        <version codename="MPS" major="2018" minor="2" eap="false" update-channel="MPS182" />
+        <version codename="MPS" major="2018" minor="3" eap="true" update-channel="MPS183EAP" />
         <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE" copyrightStart="2009" />
         <build number="${build.number}" date="${date}" />
         <logo url="/splash.png" textcolor="FFFFFF" progressColor="FFFFFF" progressX="117" progressY="280" progressHeight="3" />
@@ -77,9 +77,9 @@
         <help root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/" />
         <documentation url="https://www.jetbrains.com/mps/documentation" />
         <support url="https://www.jetbrains.com/support/mps/index.html" />
-        <feedback release-url="https://www.jetbrains.com/feedback/feedback.jsp?product=mps" />
+        <feedback eap-url="https://www.jetbrains.com/feedback/feedback.jsp?product=mps" />
         <whatsnew url="https://www.jetbrains.com/mps/whatsnew/index.html" />
-        <keymap win="https://confluence.jetbrains.com/display/MPSD20181/Default+Keymap+Reference" mac="https://confluence.jetbrains.com/display/MPSD20181/Default+Keymap+Reference" />
+        <keymap win="https://confluence.jetbrains.com/display/MPSD20183/Default+Keymap+Reference" mac="https://confluence.jetbrains.com/display/MPSD20183/Default+Keymap+Reference" />
         <third-party url="http://www.jetbrains.org/" />
         <jetbrains-tv url="http://www.youtube.com/user/JetBrainsTV/search?query=MPS" />
         

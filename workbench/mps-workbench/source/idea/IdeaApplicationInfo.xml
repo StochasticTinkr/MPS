@@ -1,9 +1,9 @@
 <component xmlns="http://jetbrains.org/intellij/schema/application-info"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://jetbrains.org/intellij/schema/application-info http://jetbrains.org/intellij/schema/ApplicationInfo.xsd">
-  <version codename="MPS" major="2018" minor="2" eap="true" update-channel="MPS182"/>
+  <version codename="MPS" major="2018" minor="3" eap="true" update-channel="MPS183"/>
   <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE" copyrightStart="2009"/>
-  <build number="MPS-182.SNAPSHOT" date="__BUILD_DATE__"/>
+  <build number="MPS-183.SNAPSHOT" date="__BUILD_DATE__"/>
   <!--<install-over minbuild="" maxbuild="" version=""/>-->
   <logo url="/splash.png" textcolor="FFFFFF" progressColor="FFFFFF" progressX="117" progressY="280" progressHeight="3"/>
   <about url="/about.png" foreground="FFFFFF" copyrightForeground="FFFFFF"/><!--linkColor="9b5121" logoX="300" logoY="265" logoW="75" logoH="30"-->
