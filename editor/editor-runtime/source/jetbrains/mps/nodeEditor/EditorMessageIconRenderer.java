@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -39,19 +38,7 @@ public interface EditorMessageIconRenderer {
    * @return node, if any, this message icon is rendered for
    */
   @Nullable
-  default SNodeReference getNodeReference() {
-    SNode n = getNode();
-    return n == null ? null : n.getReference();
-  }
-
-  /**
-   * @deprecated implement {@link #getNodeReference()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 2017.3)
-  default SNode getNode() {
-    return null;
-  }
+  SNodeReference getNodeReference();
 
   IconRendererType getType();
 
@@ -77,18 +64,7 @@ public interface EditorMessageIconRenderer {
    */
   @Nullable
   default EditorCell getAnchorCell(EditorComponent editorComponent) {
-    // deprecated method is for compatibility, MPS code calls this one. Drop deprecated call once 2017.3 is out
-    EditorCell nodeCell = getNodeCell(editorComponent);
-    return nodeCell == null ? null : getAnchorCell(nodeCell);
-  }
-
-  /**
-   * @deprecated Override {@link #getAnchorCell(EditorComponent)} instead. The method will be removed after 2017.3 release
-   */
-  @Deprecated
-  @ToRemove(version = 2017.3)
-  default EditorCell getAnchorCell(EditorCell cell) {
-    return cell;
+    return getNodeCell(editorComponent);
   }
 
   Cursor getMouseOverCursor();

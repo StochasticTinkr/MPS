@@ -421,36 +421,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="2qFJdjDzfLh" role="jymVt" />
-    <node concept="3clFb_" id="7sMvr7H2RcE" role="jymVt">
-      <property role="IEkAT" value="false" />
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getAnchorCell" />
-      <property role="DiZV1" value="false" />
-      <node concept="3uibUv" id="6F8YhWB6gFP" role="3clF45">
-        <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
-      </node>
-      <node concept="3clFbS" id="7sMvr7H2RcJ" role="3clF47">
-        <node concept="3clFbF" id="7sMvr7H2RcK" role="3cqZAp">
-          <node concept="2YIFZM" id="7sMvr7H2RcL" role="3clFbG">
-            <ref role="37wK5l" node="7sMvr7H2RbF" resolve="getBreakpointIconAnchorCell" />
-            <ref role="1Pybhc" node="7sMvr7H2RbE" resolve="BreakpointIconRenderrerEx" />
-            <node concept="37vLTw" id="2BHiRxglB54" role="37wK5m">
-              <ref role="3cqZAo" node="7sMvr7H2RcH" resolve="cell" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="7sMvr7H2RcH" role="3clF46">
-        <property role="TrG5h" value="cell" />
-        <node concept="3uibUv" id="6F8YhWB6gjm" role="1tU5fm">
-          <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="7sMvr7H2RcF" role="1B3o_S" />
-      <node concept="2AHcQZ" id="3tYsUK_RZav" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
     <node concept="3clFb_" id="7sMvr7H2RcN" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
