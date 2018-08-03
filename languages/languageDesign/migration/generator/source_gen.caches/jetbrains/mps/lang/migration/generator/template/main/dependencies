@@ -10,6 +10,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.CallArgumentQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.CreateRootCondition" />
@@ -57,6 +58,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.PropertyDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
@@ -66,6 +68,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.QueryProviderBase" />
