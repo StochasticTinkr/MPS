@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeServiceComponent;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.nodeEditor.highlighter.EditorCheckerWrapper;
@@ -108,6 +108,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private final HighlighterEventCollector myEventCollector = new HighlighterEventCollector();
   // Keeps track of which editors may be checked incrementally. Must only be accessed from the highlighter background thread.
   private final HighlighterEditorTracker myEditorTracker = new HighlighterEditorTracker();
+  private final MakeServiceComponent myMakeComponent;
 
   /*
    * MPSProject was used as a parameter of this constructor because corresponding component should be initialised after
@@ -119,6 +120,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     myEditorList = new HighlighterEditorList(fileEditorManager);
     myClassLoaderManager = coreComponents.getClassLoaderManager();
     myInspectorTool = inspector;
+    myMakeComponent = coreComponents.getPlatform().findComponent(MakeServiceComponent.class);
   }
 
   @Override
@@ -172,6 +174,11 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   @Override
   public void disposeComponent() {
     stopUpdater();
+  }
+
+  @Override
+  public MPSProject getProject() {
+    return myMPSProject;
   }
 
   private Future<?> addPendingAction(Runnable action) {
@@ -456,7 +463,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     }
 
     private boolean isGoodTimeToUpdate() {
-      return !isPausedOrStopping() && !myDumbService.isDumb() && !IMakeService.INSTANCE.isSessionActive() && myCommandWatcher.isGracePeriodExpired();
+      return !isPausedOrStopping() && !myDumbService.isDumb() && !myMakeComponent.isSessionActive() && myCommandWatcher.isGracePeriodExpired();
     }
 
     private void update(List<EditorComponent> activeEditors) {

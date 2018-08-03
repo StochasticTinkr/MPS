@@ -139,8 +139,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.make.IMakeService" />
+    <classNode dependClassName="jetbrains.mps.make.MakeServiceComponent" />
     <classNode dependClassName="jetbrains.mps.persistence.FilePerRootDataSource" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.RepoListenerRegistrar" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFileTracker" />
     <classNode dependClassName="jetbrains.mps.util.AbstractComputeRunnable" />

@@ -6,12 +6,12 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.make.MakeServiceComponent;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.GenerationFacade;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -19,6 +19,7 @@ import java.util.List;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.make.MakeSession;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
@@ -60,7 +61,7 @@ public class TextPreviewModel_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (IMakeService.INSTANCE.get().isSessionActive()) {
+    if (event.getData(MPSCommonDataKeys.MPS_PROJECT).getComponent(MakeServiceComponent.class).isSessionActive()) {
       return false;
     }
     SModel md = TextPreviewModel_Action.this.modelToGenerate(event);
@@ -108,11 +109,12 @@ public class TextPreviewModel_Action extends BaseAction {
     final DefaultMakeMessageHandler msgHandler = new DefaultMakeMessageHandler(mpsProject);
     MakeSession session = new MakeSession(mpsProject, msgHandler, true);
     final SNodeReference contextNode = (event.getData(MPSCommonDataKeys.NODE) == null ? null : event.getData(MPSCommonDataKeys.NODE).getReference());
-    if (IMakeService.INSTANCE.get().openNewSession(session)) {
+    IMakeService makeService = event.getData(MPSCommonDataKeys.MPS_PROJECT).getComponent(MakeServiceComponent.class).get();
+    if (makeService.openNewSession(session)) {
       IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")).toScript();
       SModel model = TextPreviewModel_Action.this.modelToGenerate(event);
       final SModelReference model2generateRef = model.getReference();
-      final Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).resources(), scr);
+      final Future<IResult> future = makeService.make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).resources(), scr);
       ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
         public void run() {
           try {

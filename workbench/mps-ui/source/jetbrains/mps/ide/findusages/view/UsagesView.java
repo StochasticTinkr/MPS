@@ -55,7 +55,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.util.Computable;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -422,6 +421,7 @@ public class UsagesView implements IExternalizeable {
   public static class RebuildAction extends AnAction {
     private final AtomicReference<MakeSession> myMakeSession = new AtomicReference<>();
     private final UsagesView myView;
+    private final MakeServiceComponent myMakeComponent;
 
     public RebuildAction(UsagesView view) {
       this(view, "Rebuild models", "", Actions.Compile);
@@ -430,11 +430,13 @@ public class UsagesView implements IExternalizeable {
     public RebuildAction(UsagesView view, String text, String description, Icon icon) {
       super(text, description, icon);
       myView = view;
+      final Project mpsProject = view.myProject;
+      myMakeComponent = mpsProject.getComponent(MakeServiceComponent.class);
     }
 
     @Override
     public void update(@NotNull AnActionEvent e) {
-      e.getPresentation().setEnabled(myMakeSession.get() == null && !IMakeService.INSTANCE.isSessionActive());
+      e.getPresentation().setEnabled(myMakeSession.get() == null && !myMakeComponent.isSessionActive());
     }
 
     @Override

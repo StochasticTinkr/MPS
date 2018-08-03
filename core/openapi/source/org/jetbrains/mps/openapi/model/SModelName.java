@@ -98,6 +98,8 @@ public final class SModelName {
     return atIndex != -1 ? myValue.substring(0, atIndex) : myValue;
   }
 
+  // XXX perhaps, worth to add getCompactLongName/getCompactValue() that acts like NameUtil.compactNamespace
+
   /**
    * @return name of the model without namespace nor stereotype, empty string iff model name is blank.
    */

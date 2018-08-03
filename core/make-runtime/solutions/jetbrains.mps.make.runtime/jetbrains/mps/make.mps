@@ -155,6 +155,9 @@
       <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
         <child id="1171903916107" name="bound" index="3qUE_r" />
       </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
+      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -188,6 +191,9 @@
         <child id="2546654756694997556" name="reference" index="92FcQ" />
         <child id="3106559687488913694" name="line" index="2XjZqd" />
       </concept>
+      <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
+        <property id="5858074156537516431" name="text" index="x79VB" />
+      </concept>
       <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
       <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
         <reference id="6832197706140518108" name="param" index="zr_51" />
@@ -210,6 +216,9 @@
       <concept id="6612597108003615641" name="jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement" flags="ng" index="2U$1Ah">
         <property id="6612597108003615642" name="name" index="2U$1Ai" />
         <child id="6612597108003615643" name="line" index="2U$1Aj" />
+      </concept>
+      <concept id="2217234381367049075" name="jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag" flags="ng" index="VVOAv">
+        <child id="3106559687488741665" name="line" index="2Xj1qM" />
       </concept>
       <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
         <reference id="2217234381367530213" name="classifier" index="VXe09" />
@@ -500,6 +509,27 @@
               <ref role="3cqZAo" node="5aPnf4q_xb4" resolve="Component" />
             </node>
           </node>
+        </node>
+        <node concept="2AHcQZ" id="IIVxgkLZmB" role="2AJF6D">
+          <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+          <node concept="2B6LJw" id="IIVxgkLZpj" role="2B76xF">
+            <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+            <node concept="3b6qkQ" id="IIVxgkLZBf" role="2B70Vg">
+              <property role="$nhwW" value="2018.1" />
+            </node>
+          </node>
+        </node>
+        <node concept="P$JXv" id="IIVxgkLZB$" role="lGtFl">
+          <node concept="TZ5HI" id="IIVxgkLZC2" role="3nqlJM">
+            <node concept="TZ5HA" id="IIVxgkLZC3" role="3HnX3l">
+              <node concept="1dT_AC" id="IIVxgkLZCX" role="1dT_Ay">
+                <property role="1dT_AB" value="the method will be removed after 2018.3 is out" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="IIVxgkLZC4" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         </node>
       </node>
       <node concept="2YIFZL" id="7q76xKYjgBM" role="jymVt">
@@ -1434,6 +1464,58 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="IIVxgkMG2F" role="jymVt" />
+    <node concept="3clFb_" id="IIVxgkMGh8" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isSessionActive" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="IIVxgkMGhb" role="3clF47">
+        <node concept="3cpWs6" id="IIVxgkMGuP" role="3cqZAp">
+          <node concept="1Wc70l" id="IIVxgkMGN7" role="3cqZAk">
+            <node concept="2OqwBi" id="IIVxgkMH1D" role="3uHU7w">
+              <node concept="37vLTw" id="IIVxgkMGSv" role="2Oq$k0">
+                <ref role="3cqZAo" node="4QUA3SqtBpB" resolve="myActiveMakeService" />
+              </node>
+              <node concept="liA8E" id="IIVxgkMHdH" role="2OqNvi">
+                <ref role="37wK5l" node="7yGn3z4N64o" resolve="isSessionActive" />
+              </node>
+            </node>
+            <node concept="3y3z36" id="IIVxgkMGCo" role="3uHU7B">
+              <node concept="37vLTw" id="IIVxgkMGvz" role="3uHU7B">
+                <ref role="3cqZAo" node="4QUA3SqtBpB" resolve="myActiveMakeService" />
+              </node>
+              <node concept="10Nm6u" id="IIVxgkMGHf" role="3uHU7w" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="IIVxgkMG9D" role="1B3o_S" />
+      <node concept="10P_77" id="IIVxgkMGfg" role="3clF45" />
+      <node concept="P$JXv" id="IIVxgkMGn4" role="lGtFl">
+        <node concept="TZ5HA" id="IIVxgkMGn5" role="TZ5H$">
+          <node concept="1dT_AC" id="IIVxgkMGn6" role="1dT_Ay">
+            <property role="1dT_AB" value="null-safe shorthand for " />
+          </node>
+          <node concept="1dT_AA" id="IIVxgkMGry" role="1dT_Ay">
+            <node concept="VVOAv" id="IIVxgkMGrK" role="qph3F">
+              <node concept="TZ5HA" id="IIVxgkMGrM" role="2Xj1qM">
+                <node concept="1dT_AC" id="IIVxgkMGs6" role="1dT_Ay">
+                  <property role="1dT_AB" value="get().isSessionActive()" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="IIVxgkMGrx" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="x79VA" id="IIVxgkMGn7" role="3nqlJM">
+          <property role="x79VB" value="true iff there's registered IMakeService and it got an active session" />
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="4QUA3SqtLAp" role="jymVt" />
     <node concept="3clFb_" id="4QUA3SqtLoe" role="jymVt">
       <property role="TrG5h" value="get" />
@@ -1536,6 +1618,21 @@
         </node>
         <node concept="1dT_AC" id="4QUA3SqtLCZ" role="1dT_Ay">
           <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="IIVxgkM3Tc" role="TZ5H$">
+        <node concept="1dT_AC" id="IIVxgkM3Td" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="IIVxgkM3TB" role="TZ5H$">
+        <node concept="1dT_AC" id="IIVxgkM3TC" role="1dT_Ay">
+          <property role="1dT_AB" value="XXX might be fruitful to have add/remove listeners code here, which would re-register" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="IIVxgkM3U4" role="TZ5H$">
+        <node concept="1dT_AC" id="IIVxgkM3U5" role="1dT_Ay">
+          <property role="1dT_AB" value="    listeners the moment active make service changes. No, there's no such scenario at the moment." />
         </node>
       </node>
       <node concept="TZ5HA" id="4QUA3SqtLlo" role="TZ5H$">

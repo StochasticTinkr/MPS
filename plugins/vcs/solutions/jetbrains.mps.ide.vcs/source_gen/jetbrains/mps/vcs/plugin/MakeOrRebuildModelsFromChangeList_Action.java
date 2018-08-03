@@ -9,12 +9,12 @@ import java.util.Map;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.make.MakeServiceComponent;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -27,6 +27,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
+import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -50,10 +51,10 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     List<SModel> models = MakeOrRebuildModelsFromChangeList_Action.this.getModels2Build(event.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY), event);
-    if (IMakeService.INSTANCE.get().isSessionActive() || ListSequence.fromList(models).isEmpty()) {
+    if (ListSequence.fromList(models).isEmpty() || event.getData(MPSCommonDataKeys.MPS_PROJECT).getComponent(MakeServiceComponent.class).isSessionActive()) {
       return false;
     }
-    String what = (ListSequence.fromList(models).count() == 1 ? "model " + NameUtil.compactNamespace(ListSequence.fromList(models).first().getModelName()) : "selected models");
+    String what = (ListSequence.fromList(models).count() == 1 ? "model " + NameUtil.compactModelName(ListSequence.fromList(models).first().getReference()) : "selected models");
     String fmt = (MakeOrRebuildModelsFromChangeList_Action.this.rebuild ? "Rebuild %s" : "Make %s");
     event.getPresentation().setText(String.format(fmt, what));
     return true;
@@ -83,6 +84,7 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+
     final MPSProject project = event.getData(MPSCommonDataKeys.MPS_PROJECT);
     List<? extends IResource> resources = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<IListSequence<IResource>>() {
       public IListSequence<IResource> compute() {
@@ -105,8 +107,9 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
       return;
     }
     MakeSession session = new MakeSession(project, new DefaultMakeMessageHandler(project), MakeOrRebuildModelsFromChangeList_Action.this.rebuild);
-    if (IMakeService.INSTANCE.get().openNewSession(session)) {
-      IMakeService.INSTANCE.get().make(session, resources);
+    IMakeService makeService = project.getComponent(MakeServiceComponent.class).get();
+    if (makeService.openNewSession(session)) {
+      makeService.make(session, resources);
     }
   }
   @NotNull

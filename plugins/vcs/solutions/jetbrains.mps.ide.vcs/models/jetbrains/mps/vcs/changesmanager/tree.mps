@@ -4057,11 +4057,27 @@
                   </node>
                 </node>
                 <node concept="3clFbH" id="3KFSf9tVBPI" role="3cqZAp" />
-                <node concept="3clFbJ" id="3KFSf9tVBPJ" role="3cqZAp">
-                  <node concept="2YIFZM" id="3KFSf9tVBPK" role="3clFbw">
-                    <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
-                    <ref role="37wK5l" to="hfuk:2eO7$PQ1ZfE" resolve="isSessionActive" />
+                <node concept="3cpWs8" id="3kDceCyaWdu" role="3cqZAp">
+                  <node concept="3cpWsn" id="3kDceCyaWdv" role="3cpWs9">
+                    <property role="TrG5h" value="mpsProject" />
+                    <node concept="3uibUv" id="3kDceCyaWds" role="1tU5fm">
+                      <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
+                    </node>
+                    <node concept="2YIFZM" id="3kDceCyaWdw" role="33vP2m">
+                      <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
+                      <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                      <node concept="2OqwBi" id="3kDceCyaWdx" role="37wK5m">
+                        <node concept="37vLTw" id="3kDceCyaWdy" role="2Oq$k0">
+                          <ref role="3cqZAo" node="42ljTcHm$er" resolve="myRegistry" />
+                        </node>
+                        <node concept="liA8E" id="3kDceCyaWdz" role="2OqNvi">
+                          <ref role="37wK5l" to="lcr:10zdeIyjETe" resolve="getProject" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
+                </node>
+                <node concept="3clFbJ" id="3KFSf9tVBPJ" role="3cqZAp">
                   <node concept="3clFbS" id="3KFSf9tVBPL" role="3clFbx">
                     <node concept="3SKdUt" id="5c44EO9ceoW" role="3cqZAp">
                       <node concept="3SKdUq" id="5c44EO9cgCr" role="3SKWNk">
@@ -4081,6 +4097,22 @@
                           <ref role="37wK5l" node="1_HLebvi3xA" resolve="rehighlightAllFeaturesNow" />
                         </node>
                       </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="6CZlidWy5PM" role="3clFbw">
+                    <node concept="2OqwBi" id="6CZlidWxPjT" role="2Oq$k0">
+                      <node concept="liA8E" id="6CZlidWxQ4Q" role="2OqNvi">
+                        <ref role="37wK5l" to="z1c3:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                        <node concept="3VsKOn" id="6CZlidWxQmt" role="37wK5m">
+                          <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="3kDceCyaWB0" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3kDceCyaWdv" resolve="mpsProject" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="6CZlidWy6z5" role="2OqNvi">
+                      <ref role="37wK5l" to="hfuk:IIVxgkMGh8" resolve="isSessionActive" />
                     </node>
                   </node>
                 </node>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.highlighter;
 
 import com.intellij.openapi.project.IndexNotReadyException;
-import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeServiceComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
@@ -48,6 +48,7 @@ public class HighlighterUpdateSession {
   private final List<EditorComponent> myAllEditorComponents;
   @Nullable
   private final EditorComponent myInspector;
+  private final MakeServiceComponent myMakeComponent;
 
   public HighlighterUpdateSession(IHighlighter highlighter, Collection<EditorCheckerWrapper> checkers,
       List<EditorComponent> allEditorComponents, @Nullable EditorComponent inspector) {
@@ -55,21 +56,24 @@ public class HighlighterUpdateSession {
     myCheckers = checkers;
     myAllEditorComponents = allEditorComponents;
     myInspector = inspector;
+    myMakeComponent = highlighter.getProject().getComponent(MakeServiceComponent.class);
   }
 
   @NotNull
-  private static <T> T runLoPrioRead(final Computable<T> computable) {
-    assert !ModelAccess.instance().canRead() : "Lo-prio read with acquired read can be a reason of a deadlock";
+  private <T> T runLoPrioRead(final Computable<T> computable) {
+    assert !myHighlighter.getProject().getModelAccess().canRead() : "Lo-prio read with acquired read can be a reason of a deadlock";
     T result;
     do {
-      while (IMakeService.INSTANCE.isSessionActive()) {
+      while (myMakeComponent.isSessionActive()) {
         try {
           Thread.sleep(600);
         } catch (InterruptedException ignored) {
         }
       }
-      result = ModelAccess.instance().runReadAction(() -> {
-        if (IMakeService.INSTANCE.isSessionActive() || ModelAccess.instance().hasScheduledWrites()) return null;
+      result = new ModelAccessHelper(myHighlighter.getProject().getModelAccess()).runReadAction(() -> {
+        if (myMakeComponent.isSessionActive() || ModelAccess.instance().hasScheduledWrites()) {
+          return null;
+        }
         return computable.compute();
       });
     } while (result == null);

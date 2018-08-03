@@ -2002,12 +2002,22 @@
             </node>
           </node>
           <node concept="2OqwBi" id="7Ob_3slopA1" role="3clFbw">
-            <node concept="2YIFZM" id="7Ob_3slopA2" role="2Oq$k0">
-              <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
-              <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
-            </node>
             <node concept="liA8E" id="7Ob_3slopA3" role="2OqNvi">
-              <ref role="37wK5l" to="hfuk:7yGn3z4N64o" resolve="isSessionActive" />
+              <ref role="37wK5l" to="hfuk:IIVxgkMGh8" resolve="isSessionActive" />
+            </node>
+            <node concept="2OqwBi" id="IIVxgkMBpp" role="2Oq$k0">
+              <node concept="2OqwBi" id="IIVxgkMBpq" role="2Oq$k0">
+                <node concept="2WthIp" id="IIVxgkMBpr" role="2Oq$k0" />
+                <node concept="1DTwFV" id="IIVxgkMBps" role="2OqNvi">
+                  <ref role="2WH_rO" node="7iCFfvQAkd8" resolve="mpsProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="IIVxgkMBpt" role="2OqNvi">
+                <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="IIVxgkMBpu" role="37wK5m">
+                  <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -3440,13 +3450,23 @@
       <node concept="3clFbS" id="7Ob_3slocDY" role="2VODD2">
         <node concept="3clFbF" id="7Ob_3slocE7" role="3cqZAp">
           <node concept="3fqX7Q" id="7Ob_3slop_S" role="3clFbG">
-            <node concept="2OqwBi" id="7Ob_3slop_T" role="3fr31v">
-              <node concept="2YIFZM" id="7Ob_3slop_U" role="2Oq$k0">
-                <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
-                <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+            <node concept="2OqwBi" id="IIVxgkMR_Y" role="3fr31v">
+              <node concept="liA8E" id="IIVxgkMR_Z" role="2OqNvi">
+                <ref role="37wK5l" to="hfuk:IIVxgkMGh8" resolve="isSessionActive" />
               </node>
-              <node concept="liA8E" id="7Ob_3slop_V" role="2OqNvi">
-                <ref role="37wK5l" to="hfuk:7yGn3z4N64o" resolve="isSessionActive" />
+              <node concept="2OqwBi" id="IIVxgkMRA0" role="2Oq$k0">
+                <node concept="2OqwBi" id="IIVxgkMRA1" role="2Oq$k0">
+                  <node concept="2WthIp" id="IIVxgkMRA2" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="IIVxgkMRA3" role="2OqNvi">
+                    <ref role="2WH_rO" node="7tZeFupJF5X" resolve="mpsProject" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="IIVxgkMRA4" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                  <node concept="3VsKOn" id="IIVxgkMRA5" role="37wK5m">
+                    <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -4379,13 +4399,23 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="7Ob_3slopAf" role="3clFbw">
-            <node concept="2YIFZM" id="7Ob_3slopAg" role="2Oq$k0">
-              <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
-              <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+          <node concept="2OqwBi" id="IIVxgkMKGC" role="3clFbw">
+            <node concept="liA8E" id="IIVxgkMKGD" role="2OqNvi">
+              <ref role="37wK5l" to="hfuk:IIVxgkMGh8" resolve="isSessionActive" />
             </node>
-            <node concept="liA8E" id="7Ob_3slopAh" role="2OqNvi">
-              <ref role="37wK5l" to="hfuk:7yGn3z4N64o" resolve="isSessionActive" />
+            <node concept="2OqwBi" id="IIVxgkMKGE" role="2Oq$k0">
+              <node concept="2OqwBi" id="IIVxgkMKGF" role="2Oq$k0">
+                <node concept="2WthIp" id="IIVxgkMKGG" role="2Oq$k0" />
+                <node concept="1DTwFV" id="IIVxgkMKGH" role="2OqNvi">
+                  <ref role="2WH_rO" node="7iCFfvQBVbg" resolve="mpsProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="IIVxgkMKGI" role="2OqNvi">
+                <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="IIVxgkMKGJ" role="37wK5m">
+                  <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -4652,13 +4682,23 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="7Ob_3slocCW" role="3clFbw">
-            <node concept="2YIFZM" id="7Ob_3slocCV" role="2Oq$k0">
-              <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
-              <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+          <node concept="2OqwBi" id="IIVxgkMSSa" role="3clFbw">
+            <node concept="liA8E" id="IIVxgkMSSb" role="2OqNvi">
+              <ref role="37wK5l" to="hfuk:IIVxgkMGh8" resolve="isSessionActive" />
             </node>
-            <node concept="liA8E" id="7Ob_3slocD0" role="2OqNvi">
-              <ref role="37wK5l" to="hfuk:7yGn3z4N64o" resolve="isSessionActive" />
+            <node concept="2OqwBi" id="IIVxgkMSSc" role="2Oq$k0">
+              <node concept="2OqwBi" id="IIVxgkMSSd" role="2Oq$k0">
+                <node concept="2WthIp" id="IIVxgkMSSe" role="2Oq$k0" />
+                <node concept="1DTwFV" id="IIVxgkMSSf" role="2OqNvi">
+                  <ref role="2WH_rO" node="7iCFfvQA$Jh" resolve="mpsProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="IIVxgkMSSg" role="2OqNvi">
+                <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="IIVxgkMSSh" role="37wK5m">
+                  <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -5002,13 +5042,23 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="7Ob_3slopAJ" role="3clFbw">
-            <node concept="2YIFZM" id="7Ob_3slopAK" role="2Oq$k0">
-              <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
-              <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+          <node concept="2OqwBi" id="IIVxgkMMZ7" role="3clFbw">
+            <node concept="liA8E" id="IIVxgkMMZ8" role="2OqNvi">
+              <ref role="37wK5l" to="hfuk:IIVxgkMGh8" resolve="isSessionActive" />
             </node>
-            <node concept="liA8E" id="7Ob_3slopAL" role="2OqNvi">
-              <ref role="37wK5l" to="hfuk:7yGn3z4N64o" resolve="isSessionActive" />
+            <node concept="2OqwBi" id="IIVxgkMMZ9" role="2Oq$k0">
+              <node concept="2OqwBi" id="IIVxgkMMZa" role="2Oq$k0">
+                <node concept="2WthIp" id="IIVxgkMMZb" role="2Oq$k0" />
+                <node concept="1DTwFV" id="IIVxgkMMZc" role="2OqNvi">
+                  <ref role="2WH_rO" node="7iCFfvQB3qb" resolve="mpsProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="IIVxgkMMZd" role="2OqNvi">
+                <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="IIVxgkMMZe" role="37wK5m">
+                  <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -5189,13 +5239,23 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="7Ob_3slopA8" role="3clFbw">
-            <node concept="2YIFZM" id="7Ob_3slopA9" role="2Oq$k0">
-              <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
-              <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+          <node concept="2OqwBi" id="IIVxgkMJnw" role="3clFbw">
+            <node concept="liA8E" id="IIVxgkMJnx" role="2OqNvi">
+              <ref role="37wK5l" to="hfuk:IIVxgkMGh8" resolve="isSessionActive" />
             </node>
-            <node concept="liA8E" id="7Ob_3slopAa" role="2OqNvi">
-              <ref role="37wK5l" to="hfuk:7yGn3z4N64o" resolve="isSessionActive" />
+            <node concept="2OqwBi" id="IIVxgkMJny" role="2Oq$k0">
+              <node concept="2OqwBi" id="IIVxgkMJnz" role="2Oq$k0">
+                <node concept="2WthIp" id="IIVxgkMJn$" role="2Oq$k0" />
+                <node concept="1DTwFV" id="IIVxgkMJn_" role="2OqNvi">
+                  <ref role="2WH_rO" node="7iCFfvQ_xtC" resolve="mpsProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="IIVxgkMJnA" role="2OqNvi">
+                <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="IIVxgkMJnB" role="37wK5m">
+                  <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -5627,13 +5687,23 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="7Ob_3slopAC" role="3clFbw">
-            <node concept="2YIFZM" id="7Ob_3slopAD" role="2Oq$k0">
-              <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
-              <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+          <node concept="2OqwBi" id="IIVxgkMMfK" role="3clFbw">
+            <node concept="liA8E" id="IIVxgkMMfL" role="2OqNvi">
+              <ref role="37wK5l" to="hfuk:IIVxgkMGh8" resolve="isSessionActive" />
             </node>
-            <node concept="liA8E" id="7Ob_3slopAE" role="2OqNvi">
-              <ref role="37wK5l" to="hfuk:7yGn3z4N64o" resolve="isSessionActive" />
+            <node concept="2OqwBi" id="IIVxgkMMfM" role="2Oq$k0">
+              <node concept="2OqwBi" id="IIVxgkMMfN" role="2Oq$k0">
+                <node concept="2WthIp" id="IIVxgkMMfO" role="2Oq$k0" />
+                <node concept="1DTwFV" id="IIVxgkMMfP" role="2OqNvi">
+                  <ref role="2WH_rO" node="7iCFfvQARiu" resolve="mpsProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="IIVxgkMMfQ" role="2OqNvi">
+                <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="IIVxgkMMfR" role="37wK5m">
+                  <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -5964,6 +6034,33 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="IIVxgkMs1A" role="3cqZAp">
+          <node concept="3cpWsn" id="IIVxgkMs1B" role="3cpWs9">
+            <property role="TrG5h" value="makeService" />
+            <node concept="3uibUv" id="IIVxgkMs1_" role="1tU5fm">
+              <ref role="3uigEE" to="hfuk:1NAY6bPd4nM" resolve="IMakeService" />
+            </node>
+            <node concept="2OqwBi" id="IIVxgkMvH_" role="33vP2m">
+              <node concept="2OqwBi" id="IIVxgkMvHA" role="2Oq$k0">
+                <node concept="2OqwBi" id="IIVxgkMvHB" role="2Oq$k0">
+                  <node concept="2WthIp" id="IIVxgkMvHC" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="IIVxgkMvHD" role="2OqNvi">
+                    <ref role="2WH_rO" node="2BjwmTy5x3F" resolve="mpsProject" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="IIVxgkMvHE" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                  <node concept="3VsKOn" id="IIVxgkMvHF" role="37wK5m">
+                    <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="IIVxgkMvHG" role="2OqNvi">
+                <ref role="37wK5l" to="hfuk:4QUA3SqtLoe" resolve="get" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="55mQcz8boV" role="3cqZAp">
           <node concept="3clFbS" id="55mQcz8boW" role="3clFbx">
             <node concept="3cpWs8" id="9D0Ba05uSG" role="3cqZAp">
@@ -6082,9 +6179,8 @@
                       <ref role="3cqZAo" node="9D0Ba05uSH" resolve="scr" />
                     </node>
                   </node>
-                  <node concept="2YIFZM" id="9D0Ba05uTF" role="2Oq$k0">
-                    <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
-                    <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
+                  <node concept="37vLTw" id="IIVxgkMs1E" role="2Oq$k0">
+                    <ref role="3cqZAo" node="IIVxgkMs1B" resolve="makeService" />
                   </node>
                 </node>
                 <node concept="3uibUv" id="9D0Ba05uTG" role="1tU5fm">
@@ -6833,9 +6929,8 @@
             </node>
           </node>
           <node concept="2OqwBi" id="2OOLb0mE4bH" role="3clFbw">
-            <node concept="2YIFZM" id="2OOLb0mE4bG" role="2Oq$k0">
-              <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
-              <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
+            <node concept="37vLTw" id="IIVxgkMs1D" role="2Oq$k0">
+              <ref role="3cqZAo" node="IIVxgkMs1B" resolve="makeService" />
             </node>
             <node concept="liA8E" id="2OOLb0mE4bL" role="2OqNvi">
               <ref role="37wK5l" to="hfuk:7yGn3z4N63W" resolve="openNewSession" />
@@ -6877,13 +6972,23 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="7Ob_3sloqag" role="3clFbw">
-            <node concept="2YIFZM" id="7Ob_3sloqah" role="2Oq$k0">
-              <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
-              <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+          <node concept="2OqwBi" id="IIVxgkMPPp" role="3clFbw">
+            <node concept="liA8E" id="IIVxgkMPPq" role="2OqNvi">
+              <ref role="37wK5l" to="hfuk:IIVxgkMGh8" resolve="isSessionActive" />
             </node>
-            <node concept="liA8E" id="7Ob_3sloqai" role="2OqNvi">
-              <ref role="37wK5l" to="hfuk:7yGn3z4N64o" resolve="isSessionActive" />
+            <node concept="2OqwBi" id="IIVxgkMPPr" role="2Oq$k0">
+              <node concept="2OqwBi" id="IIVxgkMPPs" role="2Oq$k0">
+                <node concept="2WthIp" id="IIVxgkMPPt" role="2Oq$k0" />
+                <node concept="1DTwFV" id="IIVxgkMPPu" role="2OqNvi">
+                  <ref role="2WH_rO" node="2BjwmTy5x3F" resolve="mpsProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="IIVxgkMPPv" role="2OqNvi">
+                <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="IIVxgkMPPw" role="37wK5m">
+                  <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -6967,7 +7072,7 @@
                   </node>
                   <node concept="2OqwBi" id="4O9Oe_ftaAf" role="10QFUP">
                     <node concept="liA8E" id="4O9Oe_ftaAg" role="2OqNvi">
-                      <ref role="37wK5l" to="z1c3:~Project.getModules():java.lang.Iterable" resolve="getModules" />
+                      <ref role="37wK5l" to="z1c3:~ProjectBase.getProjectModules():java.util.List" resolve="getProjectModules" />
                     </node>
                     <node concept="2OqwBi" id="4O9Oe_ftaAh" role="2Oq$k0">
                       <node concept="2WthIp" id="4O9Oe_ftaAi" role="2Oq$k0" />
@@ -7026,13 +7131,23 @@
       <node concept="3clFbS" id="7Ob_3slopAj" role="2VODD2">
         <node concept="3clFbF" id="7Ob_3slopAs" role="3cqZAp">
           <node concept="3fqX7Q" id="7Ob_3slopAw" role="3clFbG">
-            <node concept="2OqwBi" id="7Ob_3slopAx" role="3fr31v">
-              <node concept="2YIFZM" id="7Ob_3slopAy" role="2Oq$k0">
-                <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
-                <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+            <node concept="2OqwBi" id="IIVxgkMLuS" role="3fr31v">
+              <node concept="liA8E" id="IIVxgkMLuT" role="2OqNvi">
+                <ref role="37wK5l" to="hfuk:IIVxgkMGh8" resolve="isSessionActive" />
               </node>
-              <node concept="liA8E" id="7Ob_3slopAz" role="2OqNvi">
-                <ref role="37wK5l" to="hfuk:7yGn3z4N64o" resolve="isSessionActive" />
+              <node concept="2OqwBi" id="IIVxgkMLuU" role="2Oq$k0">
+                <node concept="2OqwBi" id="IIVxgkMLuV" role="2Oq$k0">
+                  <node concept="2WthIp" id="IIVxgkMLuW" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="IIVxgkMLuX" role="2OqNvi">
+                    <ref role="2WH_rO" node="7tZeFupJFiw" resolve="mpsProject" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="IIVxgkMLuY" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                  <node concept="3VsKOn" id="IIVxgkMLuZ" role="37wK5m">
+                    <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

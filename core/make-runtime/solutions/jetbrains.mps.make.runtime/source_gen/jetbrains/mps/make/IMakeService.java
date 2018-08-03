@@ -9,6 +9,7 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public interface IMakeService {
   boolean openNewSession(MakeSession session);
@@ -31,6 +32,12 @@ public interface IMakeService {
     @Deprecated
     private INSTANCE() {
     }
+    /**
+     * 
+     * @deprecated the method will be removed after 2018.3 is out
+     */
+    @ToRemove(version = 2018.1)
+    @Deprecated
     public static IMakeService get() {
       if (Component == null) {
         throw new IllegalStateException("no make service component");

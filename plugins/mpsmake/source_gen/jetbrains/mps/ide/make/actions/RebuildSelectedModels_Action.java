@@ -6,11 +6,11 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.make.MakeServiceComponent;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class RebuildSelectedModels_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (IMakeService.INSTANCE.get().isSessionActive()) {
+    if (event.getData(MPSCommonDataKeys.MPS_PROJECT).getComponent(MakeServiceComponent.class).isSessionActive()) {
       return false;
     }
     List<SModel> list = RebuildSelectedModels_Action.this.getModels(event);
