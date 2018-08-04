@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,9 @@ package jetbrains.mps.generator;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DefaultModifiableGenerationSettings implements IModifiableGenerationSettings {
   private boolean mySaveTransientModels = false;
   private boolean myCheckModelsBeforeGeneration = true;
@@ -33,6 +36,7 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   private boolean myActiveInplaceTransform = true;
   private boolean myCreateStaticRefs = true;
   private GenTraceSettings myTraceSettings = new GenTraceSettings();
+  private final List<Listener> myListeners = new ArrayList<>(4);
 
   @Override
   public boolean isSaveTransientModels() {
@@ -41,7 +45,11 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public void setSaveTransientModels(boolean saveTransientModels) {
+    boolean changed = mySaveTransientModels != saveTransientModels;
     mySaveTransientModels = saveTransientModels;
+    if (changed) {
+      notifyChanged();
+    }
   }
 
   @Override
@@ -51,7 +59,11 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public void setCheckModelsBeforeGeneration(boolean checkModelsBeforeGeneration) {
+    boolean changed = myCheckModelsBeforeGeneration != checkModelsBeforeGeneration;
     myCheckModelsBeforeGeneration = checkModelsBeforeGeneration;
+    if (changed) {
+      notifyChanged();
+    }
   }
 
   @Override
@@ -61,7 +73,11 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public void setParallelGenerator(boolean useNewGenerator) {
+    boolean changed = myParallelGenerator != useNewGenerator;
     myParallelGenerator = useNewGenerator;
+    if (changed) {
+      notifyChanged();
+    }
   }
 
   @Override
@@ -71,7 +87,11 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public void setStrictMode(boolean strictMode) {
+    boolean changed = myStrictMode != strictMode;
     myStrictMode = strictMode;
+    if (changed) {
+      notifyChanged();
+    }
   }
 
   @Override
@@ -81,7 +101,11 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public void setNumberOfParallelThreads(int coreNumber) {
+    boolean changed = myNumberOfParallelThreads != coreNumber;
     myNumberOfParallelThreads = coreNumber;
+    if (changed) {
+      notifyChanged();
+    }
   }
 
   @Override
@@ -91,7 +115,11 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public void setPerformanceTracingLevel(int performanceTracingLevel) {
+    boolean changed = myPerformanceTracingLevel != performanceTracingLevel;
     myPerformanceTracingLevel = performanceTracingLevel;
+    if (changed) {
+      notifyChanged();
+    }
   }
 
   @Override
@@ -101,7 +129,11 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public void setNumberOfModelsToKeep(int numberOfModelsToKeep) {
+    boolean changed = myNumberOfModelsToKeep != numberOfModelsToKeep;
     myNumberOfModelsToKeep = numberOfModelsToKeep;
+    if (changed) {
+      notifyChanged();
+    }
   }
 
   @Override
@@ -111,7 +143,11 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public void setShowInfo(boolean showInfo) {
+    boolean changed = myShowInfo != showInfo;
     myShowInfo = showInfo;
+    if (changed) {
+      notifyChanged();
+    }
   }
 
   @Override
@@ -121,7 +157,11 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public void setShowWarnings(boolean showWarnings) {
+    boolean changed = myShowWarnings != showWarnings;
     myShowWarnings = showWarnings;
+    if (changed) {
+      notifyChanged();
+    }
   }
 
   @Override
@@ -131,43 +171,11 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public void setKeepModelsWithWarnings(boolean keepModelsWithWarnings) {
+    boolean changed = myKeepModelsWithWarnings != keepModelsWithWarnings;
     myKeepModelsWithWarnings = keepModelsWithWarnings;
-  }
-
-  @Deprecated
-  @Override
-  public boolean isIncremental() {
-    return false;
-  }
-
-  @Deprecated
-  @Override
-  public void setIncremental(boolean isIncremental) {
-    // no-op
-  }
-
-  @Deprecated
-  @Override
-  public boolean isIncrementalUseCache() {
-    return false;
-  }
-
-  @Deprecated
-  @Override
-  public void setIncrementalUseCache(boolean incrementalUseCache) {
-    // no-op
-  }
-
-  @Deprecated
-  @Override
-  public boolean isDebugIncrementalDependencies() {
-    return false;
-  }
-
-  @Deprecated
-  @Override
-  public void setDebugIncrementalDependencies(boolean value) {
-    // no-op
+    if (changed) {
+      notifyChanged();
+    }
   }
 
   @Override
@@ -177,7 +185,11 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public void setGenerateDebugInfo(boolean generateDebugInfo) {
+    boolean changed = myGenerateDebugInfo != generateDebugInfo;
     myGenerateDebugInfo = generateDebugInfo;
+    if (changed) {
+      notifyChanged();
+    }
   }
 
   @Override
@@ -187,12 +199,20 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public void setShowBadChildWarning(boolean showBadChildWarning) {
+    boolean changed = myShowBadChildWarning != showBadChildWarning;
     myShowBadChildWarning = showBadChildWarning;
+    if (changed) {
+      notifyChanged();
+    }
   }
 
   @Override
   public void enableInplaceTransformations(boolean enabled) {
+    boolean changed = myActiveInplaceTransform != enabled;
     myActiveInplaceTransform = enabled;
+    if (changed) {
+      notifyChanged();
+    }
   }
 
   @Override
@@ -202,7 +222,11 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public void setCreateStaticReferences(boolean createStaticRefs) {
+    boolean changed = myCreateStaticRefs != createStaticRefs;
     myCreateStaticRefs = createStaticRefs;
+    if (changed) {
+      notifyChanged();
+    }
   }
 
   @Override
@@ -218,5 +242,31 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   public void setTraceSettings(@NotNull GenTraceSettings settings) {
     myTraceSettings = settings;
+    notifyChanged();
+  }
+
+  @Override
+  public void addListener(Listener l) {
+    synchronized (myListeners) {
+      myListeners.add(l);
+    }
+  }
+
+  @Override
+  public void removeListener(Listener l) {
+    synchronized (myListeners) {
+      myListeners.remove(l);
+    }
+  }
+
+  private void notifyChanged() {
+    ArrayList<Listener> copy;
+    synchronized (myListeners) {
+      if (myListeners.isEmpty()) {
+        return;
+      }
+      copy = new ArrayList<>(myListeners);
+    }
+    copy.forEach(Listener::settingsChanged);
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -38,34 +37,10 @@ public interface IGenerationSettings {
 
   boolean isKeepModelsWithWarnings();
 
-  /**
-   * @deprecated no more support for incremental generation
-   * @deprecated always {@code false}
-   */
-  @ToRemove(version = 2017.3)
-  @Deprecated
-  boolean isIncremental();
-
-  /**
-   * @deprecated no more support for incremental generation
-   * @deprecated always {@code false}
-   */
-  @ToRemove(version = 2017.3)
-  @Deprecated
-  boolean isIncrementalUseCache();
-
   // FIXME this is TextGen option, has nothing to do with generation
   boolean isGenerateDebugInfo();
 
   boolean isShowBadChildWarning();
-
-  /**
-   * @deprecated no more support for incremental generation
-   * @deprecated always {@code false}
-   */
-  @ToRemove(version = 2017.3)
-  @Deprecated
-  boolean isDebugIncrementalDependencies();
 
   boolean isSaveTransientModels();
 
