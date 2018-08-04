@@ -70,6 +70,8 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
 
   @Override
   protected void afterPluginsCreated(List<BaseApplicationPlugin> plugins) {
+    // XXX it's odd ProjectPluginManager does the same with single BaseProjectPlugin.init() call
+    //     Why do we care about distinct steps of AppPlugin here?
     createKeyMaps(plugins);
     createGroups(plugins);
     adjustGroups(plugins);
@@ -109,13 +111,7 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
   }
 
   private void createCustomParts(List<BaseApplicationPlugin> plugins) {
-    for (BaseApplicationPlugin plugin : plugins) {
-      try {
-        plugin.createCustomParts();
-      } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during creating custom parts ", t1);
-      }
-    }
+    plugins.forEach(BaseApplicationPlugin::createCustomParts);
   }
 
   @Override

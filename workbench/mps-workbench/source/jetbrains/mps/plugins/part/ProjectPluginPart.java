@@ -15,20 +15,17 @@
  */
 package jetbrains.mps.plugins.part;
 
-import jetbrains.mps.plugins.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.project.MPSProject;
 
 /**
  * Fraction of a {@link jetbrains.mps.plugins.projectplugins.BaseProjectPlugin}.
  *
- * This class is a replacement for unfortunately named {@link jetbrains.mps.plugins.custom.BaseCustomProjectPlugin}
- *
- * FIXME drop extends BaseCustomProjectPlugin once 2018.1 is out and new code is generated using this class
+ * This class is a replacement for unfortunately named {@code jetbrains.mps.plugins.custom.BaseCustomProjectPlugin}
  *
  * @author Artem Tikhomirov
  * @since 2018.1
  */
-public class ProjectPluginPart extends BaseCustomProjectPlugin {
+public class ProjectPluginPart {
   public void init(MPSProject project) {
     // no-op, subclasses to override
   }
