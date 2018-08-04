@@ -73,6 +73,6 @@ public class NoPendingMigrationsTest extends BaseProjectsTest {
     for (String mm : moduleMigrations) {
       message.append(mm).append("\n");
     }
-    Assert.assertFalse(message.toString(), migrationRequired[0]);
+    Assert.assertFalse(message.toString(), migrationRequired[0] || migrationRequired[1]);
   }
 }
