@@ -647,11 +647,11 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.SaveTransientModelsAction" file="SaveTransientModelsAction.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
-    <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsNotification" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.SaveTransientModels_ActionGroup" file="SaveTransientModels_ActionGroup.java">
@@ -729,14 +729,11 @@
     <classNode dependClassName="com.intellij.notification.NotificationsConfiguration" />
     <classNode dependClassName="com.intellij.notification.impl.NotificationSettings" />
     <classNode dependClassName="com.intellij.notification.impl.NotificationsConfigurationImpl" />
-    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.Balloon" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.BalloonBuilder" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopupFactory" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
-    <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
     <classNode dependClassName="com.intellij.ui.LightColors" />
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
     <classNode dependClassName="com.intellij.util.ui.UIUtil" />
@@ -746,29 +743,27 @@
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.awt.Rectangle" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JRootPane" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsWidget" />
-    <classNode dependClassName="jetbrains.mps.make.IMakeNotificationListener" />
-    <classNode dependClassName="jetbrains.mps.make.IMakeService" />
-    <classNode dependClassName="jetbrains.mps.make.MakeNotification" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.TransientModelsNotification" file="TransientModelsNotification.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
+    <classNode dependClassName="jetbrains.mps.generator.IModifiableGenerationSettings" />
+    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsWidget" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.custom.BaseCustomProjectPlugin" />
+    <classNode dependClassName="jetbrains.mps.make.IMakeNotificationListener" />
+    <classNode dependClassName="jetbrains.mps.make.MakeNotification" />
+    <classNode dependClassName="jetbrains.mps.make.MakeServiceComponent" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.TransientModelsPanel" file="TransientModelsPanel.java">
     <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
@@ -788,6 +783,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.TransientModelsWidget" file="TransientModelsWidget.java">
     <classNode dependClassName="com.intellij.ide.ui.UISettings" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
     <classNode dependClassName="com.intellij.util.Consumer" />
@@ -800,10 +796,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.generator.IModifiableGenerationSettings" />
     <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
-    <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsNotification" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsPanel" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.WidgetSettingsPanel" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -834,7 +828,6 @@
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer" />
-    <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsNotification" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
 </dependenciesRoot>

@@ -12,8 +12,7 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import java.awt.KeyboardFocusManager;
-import jetbrains.mps.generator.GenerationSettingsProvider;
-import com.intellij.ide.ui.UISettings;
+import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.util.Consumer;
 import java.awt.event.MouseEvent;
@@ -21,6 +20,7 @@ import java.awt.Dimension;
 import java.awt.Point;
 import com.intellij.ui.awt.RelativePoint;
 import javax.swing.JComponent;
+import com.intellij.ide.ui.UISettings;
 import java.beans.PropertyChangeEvent;
 
 /*package*/ class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWidget, StatusBarWidget.TextPresentation, StatusBarWidget.WidgetPresentation, UISettingsListener, PropertyChangeListener {
@@ -29,19 +29,19 @@ import java.beans.PropertyChangeEvent;
   private final StatusBar myStatusBar;
   private final Icon myIcon = MPSIcons.Nodes.TransientModule;
   private final Icon myIconDisable = MPSIcons.Nodes.TransientModuleDisabled;
-  private final IModifiableGenerationSettings myGenerationSettins;
+  private final IModifiableGenerationSettings myGenerationSettings;
   private TransientModelsPanel myComponent;
   private KeyboardFocusManager myFocusManager;
 
-  public TransientModelsWidget(StatusBar bar) {
+  public TransientModelsWidget(StatusBar bar, IModifiableGenerationSettings settings) {
     myStatusBar = bar;
-    myGenerationSettins = GenerationSettingsProvider.getInstance().getGenerationSettings();
+    myGenerationSettings = settings;
 
   }
   @Override
   public void install(@NotNull StatusBar bar) {
     // Use approach from com.intellij.openapi.wm.impl.status.ToolWindowsWidget 
-    UISettings.getInstance().addUISettingsListener(this, this);
+    ApplicationManager.getApplication().getMessageBus().connect(this).subscribe(UISettingsListener.TOPIC, this);
     myFocusManager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
     myFocusManager.addPropertyChangeListener("focusOwner", this);
   }
@@ -60,9 +60,9 @@ import java.beans.PropertyChangeEvent;
       @Override
       public void consume(MouseEvent e) {
         if (!(e.isPopupTrigger()) && MouseEvent.BUTTON1 == e.getButton()) {
-          boolean saveTransientModels = myGenerationSettins.isSaveTransientModels();
-          myGenerationSettins.setSaveTransientModels(!(saveTransientModels));
-          TransientModelsNotification.updateWidgets();
+          boolean saveTransientModels = myGenerationSettings.isSaveTransientModels();
+          myGenerationSettings.setSaveTransientModels(!(saveTransientModels));
+          // settings shall dispatch change notification for appropriate UI element to get updated 
         } else if (e.isPopupTrigger() || MouseEvent.BUTTON2 == e.getButton()) {
           WidgetSettingsPanel panel = new WidgetSettingsPanel();
           Dimension dimension = panel.getPreferredSize();
@@ -109,7 +109,7 @@ import java.beans.PropertyChangeEvent;
     return WIDGET_ID;
   }
   public boolean isSaveTransientModels() {
-    return myGenerationSettins.isSaveTransientModels();
+    return myGenerationSettings.isSaveTransientModels();
   }
   @Override
   public JComponent getComponent() {
