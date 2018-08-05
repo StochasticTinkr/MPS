@@ -38,14 +38,14 @@ public class TemplateDeclarationInterpreted extends TemplateDeclarationBase {
   private final SNode myTemplateNode;
   private final TemplateCall myCallSite;
   private final SNodePointer myNodeRef;
-  private final boolean myIsTemplateDeclNode;
   private volatile TemplateContainer myTemplates;
 
   private TemplateDeclarationInterpreted(@NotNull SNode templateNode, @Nullable Object[] arguments) {
+    // there used to be some odd legacy code that allowed for !node<TD>, hence assert
+    assert templateNode.isInstanceOfConcept(RuleUtil.concept_TemplateDeclaration);
     myTemplateNode = templateNode;
     myCallSite = new TemplateCall(RuleUtil.getTemplateDeclarationParameterNames(templateNode), arguments);
     myNodeRef = new SNodePointer(templateNode);
-    myIsTemplateDeclNode = templateNode.isInstanceOfConcept(RuleUtil.concept_TemplateDeclaration);
   }
 
   @Override
@@ -78,12 +78,8 @@ public class TemplateDeclarationInterpreted extends TemplateDeclarationBase {
     // context may keep a mapping label (e.g. from outer $INCLUDE$ label template)
     TemplateContext applyContext = myCallSite.prepareCallContext(context);
 
-    if (myIsTemplateDeclNode) {
-      final TemplateContainer tc = getTemplates();
-      return tc.processRuleConsequence(applyContext);
-    } else {
-      return environment.getTemplateProcessor().apply(myTemplateNode, applyContext);
-    }
+    final TemplateContainer tc = getTemplates();
+    return tc.processRuleConsequence(applyContext);
   }
 
   // return non-null value
