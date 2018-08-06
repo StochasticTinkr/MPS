@@ -144,6 +144,10 @@ public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements Tem
       environment.getLogger().error(getRuleNode(), "couldn't evaluate weaving rule: no myTemplate");
       return;
     }
+    // FIXME WeaveTemplateContainer shall be implementation detail of TemplateDeclarationInterpreted.weave() method
+    //       while here we have to delegate to TEE to load appropriate template (which could be coming from
+    //       another, generated/compiled template module!!!). It's only template implementation that knows whether it's
+    //       interpreted or compiled. Here, unfortunately, we force interpretation of all weaved templates!
     WeaveTemplateContainer wtc = getWeavingTemplateContainer(environment.getLogger());
     wtc.apply(outputContextNode, context.subContext(myMappingName));
   }

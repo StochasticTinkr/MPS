@@ -38,10 +38,26 @@ import java.util.Collection;
  * and TF.contextNodeQuery has only 2 uses throughout whole MPS. It might be reasonable to do it other way round and to support TF.contextNodeQuery
  * for any templates (not only under weaving). Anyway, template handling shall be identical for weave and apply cases.
  *
- * Provisional nature of the interface is the reason I left WeaveContext parameter here (although strived to get WC hidden, and only NWF exposed).
+ * Provisional nature of the interface is the reason I left WeaveContext parameter here (although strove to get WC hidden, and only NWF exposed).
  * Since the method was exposed in few EAP builds, I'd need to introduce a new one, keep both for at least RC round, and then remove the one with
  * two arguments. As long as TF.contextNodeQuery is history, there would be no reason to have WC there (we use it to get original context node for
  * template fragment query context), and there's no need in this interface at all.
+ *
+ * DESIGN NOTE 2:
+ * FWIW, return value of weave() is not really in use. WeavingRule uses it to return true from apply() if there's anything in the collection
+ *   however, this value is ignored in WeavingProcessor. When designing a replacement API, consider functional approach when a TD class
+ *   merely creates a nodes but doesn't inject them (it's what TD.apply() does, and what weave() DOES NOT). Would be great to combine both
+ *   apply and weave() so that we don't need to distinguish between the two, see {@link FragmentResult}. OTOH, use of FragmentResult
+ *   (or anything more complicated, like a container for FragmentResult that in addition holds e.g. apply status) makes code too complicated,
+ *   especially in case of generated templates that may iterate collection right away and inject nodes as needed, instead of going
+ *   hard (yet nice) way of FragmentResult.addTo(parent).
+ *   Alternative is to have apply(ApplySink), where ApplySink knows whether it's weave or regular apply(), keeps parent and containment
+ *   However, for generated code there likely to be a lot of ApplyContext instantiations. Can I pass it further (e.g to CALL)? Shall it
+ *   keep TemplateContext or it is to be separate? What I like is that ApplySink hides child checking logic.
+ *   Besides, it's easy to migrate apply():Collection to apply(ApplySink):void. Need to figure out how to approach weave then
+ *   (for generated templates, there's no weave for interpreted). In generated, is it any trouble, provided existing generated would
+ *   mostly likely work as they don't 'weave' foreign templates (for local old code would work fine). What if they do invoke foreign,
+ *   is there's a chance to have graceful transition path?
  *
  * @author Artem Tikhomirov
  * @since 3.3

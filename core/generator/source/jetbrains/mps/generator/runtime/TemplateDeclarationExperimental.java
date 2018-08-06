@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,20 +15,14 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.Collection;
-
 /**
- * Evgeny Gryaznov, 10/22/10
+ * See {@link TemplateDeclarationWeavingAware2} for design considerations
+ *
+ * @author Artem Tikhomirov
+ * @since 2018.3
  */
-public interface TemplateDeclaration extends TemplateDeclarationWeavingAware2 {
-
-  SNodeReference getTemplateNode();
-
-  // XXX seems to be non-null return value, need to double-check
-  Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment,
-                          @NotNull TemplateContext context) throws GenerationException;
+public interface TemplateDeclarationExperimental extends TemplateDeclaration {
+  default void apply(ApplySink sink, TemplateContext templateContext) throws GenerationException {
+    apply(templateContext.getEnvironment(), templateContext).forEach(sink::add);
+  }
 }

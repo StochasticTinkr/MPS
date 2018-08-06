@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.interpreted;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateContainer;
+import jetbrains.mps.generator.runtime.ApplySink;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
@@ -26,9 +27,11 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -79,11 +82,40 @@ public class TemplateDeclarationInterpreted extends TemplateDeclarationBase {
     TemplateContext applyContext = myCallSite.prepareCallContext(context);
 
     final TemplateContainer tc = getTemplates();
-    return tc.processRuleConsequence(applyContext);
+    CollectorSink s = new CollectorSink(new ArrayList<>());
+    tc.apply(s, applyContext);
+    return s.getCollected();
   }
 
   // return non-null value
   public static TemplateDeclaration create(SNode templateNode, Object[] arguments) {
     return new TemplateDeclarationInterpreted(templateNode, arguments);
+  }
+
+  private static class CollectorSink implements ApplySink {
+    private final Collection<SNode> myNodes;
+
+    /*package*/ CollectorSink(Collection<SNode> destination) {
+      myNodes = destination;
+    }
+
+    @Override
+    public void add(SNode node) {
+      myNodes.add(node);
+    }
+
+    @Override
+    public void add(SContainmentLink aggregation, SNode node) {
+      myNodes.add(node);
+    }
+
+    @Override
+    public void add(SContainmentLink aggregation, Collection<SNode> nodes) {
+      myNodes.addAll(nodes);
+    }
+
+    /*package*/ Collection<SNode> getCollected() {
+      return myNodes;
+    }
   }
 }

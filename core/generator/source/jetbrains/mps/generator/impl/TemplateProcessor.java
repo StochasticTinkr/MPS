@@ -471,6 +471,9 @@ public final class TemplateProcessor implements ITemplateProcessor {
             GeneratorUtil.describeIfExists(templateContext.getInput(), "input"));
         return _outputNodes;
       }
+      // FIXME shall not interpret weaving templates always, they might be coming from a compiled code
+      // TemplateDeclaration td = env.loadTemplateDeclaration(template)
+      // td.apply(new WeaveSink(), templateContext);
       WeaveTemplateContainer wtc = new WeaveTemplateContainer(template, this);
       wtc.initialize(getLogger());
 
