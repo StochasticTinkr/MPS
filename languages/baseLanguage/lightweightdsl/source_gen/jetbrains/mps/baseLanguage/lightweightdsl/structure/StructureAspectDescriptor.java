@@ -20,6 +20,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDSLAnnotation = createDescriptorForDSLAnnotation();
   /*package*/ final ConceptDescriptor myConceptDSLClassMember = createDescriptorForDSLClassMember();
   /*package*/ final ConceptDescriptor myConceptDSLDescriptor = createDescriptorForDSLDescriptor();
+  /*package*/ final ConceptDescriptor myConceptDefaultModifier = createDescriptorForDefaultModifier();
   /*package*/ final ConceptDescriptor myConceptDependentTypeDescriptor = createDescriptorForDependentTypeDescriptor();
   /*package*/ final ConceptDescriptor myConceptDependentTypeInstance = createDescriptorForDependentTypeInstance();
   /*package*/ final ConceptDescriptor myConceptEmptyMemberDescriptor = createDescriptorForEmptyMemberDescriptor();
@@ -46,7 +47,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAutoInitDSLClass, myConceptBooleanPropertyInstance, myConceptCustomMemberDescriptor, myConceptDSLAnnotation, myConceptDSLClassMember, myConceptDSLDescriptor, myConceptDependentTypeDescriptor, myConceptDependentTypeInstance, myConceptEmptyMemberDescriptor, myConceptGenerateModifier, myConceptIntegerPropertyInstance, myConceptMemberInstance, myConceptMemberModifier, myConceptMemberPlaceholder, myConceptMethodDescriptor, myConceptMethodInstance, myConceptMethodParameterInstance, myConceptMultipleModifier, myConceptParameterDescriptor, myConceptPlaceholderModifier, myConceptPropertyDescriptor, myConceptPropertyInstance, myConceptRequiredModifier, myConceptStringPropertyInstance);
+    return Arrays.asList(myConceptAutoInitDSLClass, myConceptBooleanPropertyInstance, myConceptCustomMemberDescriptor, myConceptDSLAnnotation, myConceptDSLClassMember, myConceptDSLDescriptor, myConceptDefaultModifier, myConceptDependentTypeDescriptor, myConceptDependentTypeInstance, myConceptEmptyMemberDescriptor, myConceptGenerateModifier, myConceptIntegerPropertyInstance, myConceptMemberInstance, myConceptMemberModifier, myConceptMemberPlaceholder, myConceptMethodDescriptor, myConceptMethodInstance, myConceptMethodParameterInstance, myConceptMultipleModifier, myConceptParameterDescriptor, myConceptPlaceholderModifier, myConceptPropertyDescriptor, myConceptPropertyInstance, myConceptRequiredModifier, myConceptStringPropertyInstance);
   }
 
   @Override
@@ -65,6 +66,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptDSLClassMember;
       case LanguageConceptSwitch.DSLDescriptor:
         return myConceptDSLDescriptor;
+      case LanguageConceptSwitch.DefaultModifier:
+        return myConceptDefaultModifier;
       case LanguageConceptSwitch.DependentTypeDescriptor:
         return myConceptDependentTypeDescriptor;
       case LanguageConceptSwitch.DependentTypeInstance:
@@ -164,6 +167,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.associate("preferredConcept", 0x1955e1ca83e5ed92L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L).optional(true).origin("1825613483881131410").done();
     b.aggregate("initializer", 0x1955e1ca83eb220eL).target(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L).optional(true).ordered(true).multiple(false).origin("1825613483881472526").done();
     b.aggregate("classLikeMember", 0x72b255a0447fe4c8L).target(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L).optional(true).ordered(true).multiple(true).origin("8264762413010642120").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForDefaultModifier() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.lightweightdsl", "DefaultModifier", 0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x7a7325178c68eba9L);
+    b.class_(false, false, false);
+    b.parent(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x2f38f33681e6c5feL);
+    b.origin("c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)/8823436878019095465");
+    b.version(2);
+    b.aggregate("value", 0x7a7325178c68f138L).target(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L).optional(false).ordered(true).multiple(false).origin("8823436878019096888").done();
+    b.alias("default");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDependentTypeDescriptor() {

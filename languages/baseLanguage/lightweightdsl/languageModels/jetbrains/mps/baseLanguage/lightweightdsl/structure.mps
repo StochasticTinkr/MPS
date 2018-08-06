@@ -450,5 +450,22 @@
       <ref role="20lvS9" node="3geGFOI0X5$" resolve="ParameterDescriptor" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7DN9hucqeID">
+    <property role="3GE5qa" value="member.modifier" />
+    <property role="TrG5h" value="DefaultModifier" />
+    <property role="34LRSv" value="default" />
+    <property role="EcuMT" value="8823436878019095465" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7DN9hucqf4S" role="1TKVEi">
+      <property role="IQ2ns" value="8823436878019096888" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5BD$AU43p5h" resolve="PropertyInstance" />
+    </node>
+    <node concept="PrWs8" id="7DN9hucqeIE" role="PzmwI">
+      <ref role="PrY4T" node="2WSWNq1TGnY" resolve="MemberModifier" />
+    </node>
+  </node>
 </model>
 

@@ -8,6 +8,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.actions.ClassLike" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.actions.DependentType_factory" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.actions.ModifiersFactories" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.NodeFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
@@ -33,6 +34,15 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.actions.ModifiersFactories" file="ModifiersFactories.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.NodeFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.actions.SubstituteUtil" file="SubstituteUtil.java">
     <classNode dependClassName="java.lang.Iterable" />

@@ -213,7 +213,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
             public SNode compute() {
               return new _FunctionTypes._return_P1_E0<SNode, SNode>() {
                 public SNode invoke(SNode node) {
-                  return MigrationScriptBase.detachNodePatternVariable(pattern.getMatchedNode("arg"));
+                  return pattern.getMatchedNode("arg");
                 }
               }.invoke(nodeToMigrate);
             }
@@ -419,7 +419,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
                   if (!((SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget((SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"))), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"))), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, "jetbrains.mps.lang.smodel.structure.SConceptType"))))) {
                     return node;
                   }
-                  return _quotation_createNode_qvpvui_a1a0k0g(MigrationScriptBase.detachNodePatternVariable(pattern.getMatchedNode("expr")), pattern.getMatchedNode("c"));
+                  return _quotation_createNode_qvpvui_a1a0k0g(pattern.getMatchedNode("expr"), pattern.getMatchedNode("c"));
                 }
               }.invoke(nodeToMigrate);
             }
@@ -470,7 +470,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
                   if (SNodeOperations.isInstanceOf(oper, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1129a43046bL, "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall")) && !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(SNodeOperations.cast(oper, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1129a43046bL, "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic")))) {
                     return node;
                   }
-                  SNodeOperations.replaceWithAnother(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand")), MigrationScriptBase.detachNodePatternVariable(pattern.getMatchedNode("c")));
+                  SNodeOperations.replaceWithAnother(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand")), pattern.getMatchedNode("c"));
                   return node;
                 }
               }.invoke(nodeToMigrate);
