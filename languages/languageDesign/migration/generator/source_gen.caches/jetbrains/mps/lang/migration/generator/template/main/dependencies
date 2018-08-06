@@ -47,6 +47,7 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.AbstractNodeReference__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.IMigrationUnit__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.MigrationScript__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.behavior.QuotationConsequence__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.MigrationsCheckUtil" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.behavior.PatternExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

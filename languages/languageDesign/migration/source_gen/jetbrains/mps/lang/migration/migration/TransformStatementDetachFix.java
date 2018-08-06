@@ -24,6 +24,9 @@ import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.migration.behavior.QuotationConsequence__BehaviorDescriptor;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class TransformStatementDetachFix extends MigrationScriptBase {
   public String getCaption() {
@@ -99,12 +102,12 @@ public class TransformStatementDetachFix extends MigrationScriptBase {
       };
       ListSequence.fromList(affectedUsages).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x6877ea6323b8f1a3L, "jetbrains.mps.lang.migration.structure.NodePatternVariableReference"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return !(((SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, "jetbrains.mps.lang.migration.structure.TransformStatement"), false, false) != null) && SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, 0x1168c104657L, "expression")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104658L, "jetbrains.mps.lang.quotation.structure.Antiquotation"))));
+          return SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532d41L, "jetbrains.mps.lang.migration.structure.QuotationConsequence"), false, false) == null || !((boolean) QuotationConsequence__BehaviorDescriptor.isMyAntiquotationExpression_id4SwrQttKYC0.invoke(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532d41L, "jetbrains.mps.lang.migration.structure.QuotationConsequence"), false, false), node));
         }
       }));
       ListSequence.fromList(affectedUsages).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x550f7de0eda8c07aL, "jetbrains.mps.lang.migration.structure.ListPatternVariableReference"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
-          return !(((SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, "jetbrains.mps.lang.migration.structure.TransformStatement"), false, false) != null) && SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, 0x1168c104657L, "expression")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465eL, "jetbrains.mps.lang.quotation.structure.ListAntiquotation"))));
+          return SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532d41L, "jetbrains.mps.lang.migration.structure.QuotationConsequence"), false, false) == null || !((boolean) QuotationConsequence__BehaviorDescriptor.isMyAntiquotationExpression_id4SwrQttKYC0.invoke(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532d41L, "jetbrains.mps.lang.migration.structure.QuotationConsequence"), false, false), node));
         }
       }));
     }
@@ -120,22 +123,13 @@ public class TransformStatementDetachFix extends MigrationScriptBase {
           return scope;
         }
       };
-      ListSequence.fromList(affectedUsages).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), false)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x6877ea6323b8f1a3L, "jetbrains.mps.lang.migration.structure.NodePatternVariableReference")));
-        }
-      }).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode node) {
-          return (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, "jetbrains.mps.lang.migration.structure.TransformStatement"), false, false) != null) && SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, 0x1168c104657L, "expression")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104658L, "jetbrains.mps.lang.quotation.structure.Antiquotation"));
-        }
-      }));
-      ListSequence.fromList(affectedUsages).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), false)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x550f7de0eda8c07aL, "jetbrains.mps.lang.migration.structure.ListPatternVariableReference")));
-        }
-      }).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode node) {
-          return (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, "jetbrains.mps.lang.migration.structure.TransformStatement"), false, false) != null) && SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, 0x1168c104657L, "expression")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465eL, "jetbrains.mps.lang.quotation.structure.ListAntiquotation"));
+      ListSequence.fromList(affectedUsages).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532d41L, "jetbrains.mps.lang.migration.structure.QuotationConsequence"), false)).translate(new ITranslator2<SNode, SNode>() {
+        public Iterable<SNode> translate(final SNode qc) {
+          return ListSequence.fromList(SNodeOperations.getNodeDescendants(qc, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return (boolean) QuotationConsequence__BehaviorDescriptor.isMyAntiquotationExpression_id4SwrQttKYC0.invoke(qc, it) && !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x6877ea6323b8f1a3L, "jetbrains.mps.lang.migration.structure.NodePatternVariableReference"))) && !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x550f7de0eda8c07aL, "jetbrains.mps.lang.migration.structure.ListPatternVariableReference")));
+            }
+          });
         }
       }));
     }
