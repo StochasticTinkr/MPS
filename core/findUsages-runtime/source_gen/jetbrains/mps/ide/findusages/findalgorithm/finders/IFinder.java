@@ -34,11 +34,22 @@ public interface IFinder {
    */
   @NotNull
 //  @Deprecated
-  SearchResults find(@NotNull SearchQuery query, ProgressMonitor monitor);
+  default SearchResults find(@NotNull SearchQuery query, @NotNull ProgressMonitor monitor) {
+    SearchResults results = new SearchResults();
+    find(query, new CollectingCallback(results), monitor);
+    return results;
+  }
 
+  /**
+   * The default behavior is provided in order to work both ways
+   */
   @SuppressWarnings("unused")
   default void find(@NotNull SearchQuery query, @NotNull FindCallback callback, @NotNull ProgressMonitor monitor) {
-    throw new UnsupportedOperationException("Try rebuilding the instances of the Finder concept");
+    SearchResults<?> searchResults = find(query, monitor);
+    callback.onSearchedObjectsCalculated(searchResults.getSearchedObjects());
+    for (SearchResult<?> result : searchResults.getSearchResults()) {
+      callback.onUsageFound(result);
+    }
   }
 
   interface FindCallback {

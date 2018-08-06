@@ -6,6 +6,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Mutable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -59,7 +60,23 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
   public boolean canNavigate() {
     return true;
   }
-  protected abstract void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor);
+
+  @Deprecated
+  protected abstract void doFind(SNode node,
+                                 SearchScope scope,
+                                 @Mutable List<SNode> _results,
+                                 ProgressMonitor monitor);
+
+  protected /*abstract*/ void doFind0(@NotNull SNode node,
+                                      @NotNull SearchScope scope,
+                                      @NotNull FindCallback callback,
+                                      @NotNull ProgressMonitor monitor) {
+    List<SNode> result = new ArrayList<>();
+    doFind(node, scope, result, monitor);
+    for (SNode res : result) {
+      callback.onUsageFound(createSingleResult(res));
+    }
+  }
 
   /**
    * I suggest #getXXX method to return smth instead of this
@@ -85,9 +102,12 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
   }
 
   @NotNull
+  protected SearchResult<SNode> createSingleResult(@NotNull SNode usage) {
+    return new SearchResult<>(usage, getNodeCategory(usage));
+  }
+
   @Override
-  public SearchResults<SNode> find(@NotNull SearchQuery query, ProgressMonitor monitor) {
-    SearchResults<SNode> results = new SearchResults<SNode>();
+  public void find(@NotNull SearchQuery query, @NotNull FindCallback callback, @NotNull ProgressMonitor monitor) {
     Object value = query.getObjectHolder().getObject();
     SNode node = null;
     if (value instanceof SNodeReference) {
@@ -96,19 +116,14 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
       node = (SNode) value;
     }
     if (node == null) {
-      return results;
+      return;
     }
-    SAbstractConcept c = getSConcept();
-    if (node.getConcept().isSubConceptOf(c) && isApplicable(node)) {
-      List<SNode> res = new ArrayList<SNode>();
-      doFind(node, query.getScope(), res, monitor);
-      for (SNode resNode : res) {
-        results.getSearchResults().add(new SearchResult<SNode>(resNode, getNodeCategory(resNode)));
-      }
+    SAbstractConcept concept = getSConcept();
+    if (node.getConcept().isSubConceptOf(concept) && isApplicable(node)) {
+      callback.onSearchedObjectsCalculated(new SearchedObjects<>(getElementsToLookFor(node, query.getScope())));
+      doFind0(node, query.getScope(), callback, monitor);
     } else {
       LOG.debug("Trying to use finder that is not applicable to the concept. Returning empty results.[finder: \"" + getDescription() + "\"; " + "concept: " + node.getConcept().getQualifiedName());
     }
-    return results;
   }
-
 }
