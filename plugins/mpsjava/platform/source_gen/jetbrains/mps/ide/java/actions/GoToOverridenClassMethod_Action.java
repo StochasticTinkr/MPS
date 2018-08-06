@@ -20,6 +20,8 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -27,7 +29,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.awt.event.InputEvent;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
@@ -106,14 +107,14 @@ public class GoToOverridenClassMethod_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoOverriden");
-    final Set<Tuples._2<SNodeReference, SNode>> overridenMethods;
+    final Set<Tuples._2<SNodeReference, SNode>> overridenMethods = SetSequence.fromSet(new LinkedHashSet<Tuples._2<SNodeReference, SNode>>());
     final String[] methodName = new String[1];
     Task.Backgroundable task = new Task.Backgroundable(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true, PerformInBackgroundOption.ALWAYS_BACKGROUND) {
       @Override
       public void run(@NotNull ProgressIndicator indicator) {
         ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            overridenMethods = GoToOverridenClassMethod_Action.this.getOverridenMethod(_params);
+            SetSequence.fromSet(overridenMethods).addSequence(SetSequence.fromSet(GoToOverridenClassMethod_Action.this.getOverridenMethod(_params)));
             methodName[0] = SPropertyOperations.getString(GoToOverridenClassMethod_Action.this.getInstanceMethodDeclaration(_params), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
           }
         });
