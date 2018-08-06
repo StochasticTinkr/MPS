@@ -85,15 +85,21 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.CoerceExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.CoerceStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.ComparisonRule_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.GetOperationType_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.ImmediateSupertypesExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.InequationReplacementRule_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.InfoStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.IsSubtypeExpression_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.LinkPatternVariableReference_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.MatchStatementItem_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.MatchStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.NormalTypeClause_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.PatternCondition_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.PatternVariableReference_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.PropertyNameTarget_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.PropertyPatternVariableReference_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.QuickFixArgumentReference_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.QuickFixFieldReference_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.ReferenceRoleTarget_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.ReportErrorStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.SubstituteTypeRule_DataFlow" />
@@ -104,10 +110,18 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.TypesystemIntention_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.WarningStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.WhenConcreteStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.WhenConcreteVariableReference_DataFlow" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptorBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.dataFlow.GetOperationType_DataFlow" file="GetOperationType_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.dataFlow.ImmediateSupertypesExpression_DataFlow" file="ImmediateSupertypesExpression_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
@@ -135,6 +149,12 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.dataFlow.LinkPatternVariableReference_DataFlow" file="LinkPatternVariableReference_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.dataFlow.MatchStatementItem_DataFlow" file="MatchStatementItem_DataFlow.java">
@@ -167,11 +187,35 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.dataFlow.PatternVariableReference_DataFlow" file="PatternVariableReference_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.dataFlow.PropertyNameTarget_DataFlow" file="PropertyNameTarget_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.dataFlow.PropertyPatternVariableReference_DataFlow" file="PropertyPatternVariableReference_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.dataFlow.QuickFixArgumentReference_DataFlow" file="QuickFixArgumentReference_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.dataFlow.QuickFixFieldReference_DataFlow" file="QuickFixFieldReference_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.dataFlow.ReferenceRoleTarget_DataFlow" file="ReferenceRoleTarget_DataFlow.java">
@@ -238,6 +282,12 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.dataFlow.WhenConcreteVariableReference_DataFlow" file="WhenConcreteVariableReference_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
 </dependenciesRoot>
