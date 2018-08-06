@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTracerUtil;
-import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
@@ -49,12 +48,11 @@ public class WeaveTemplateContainer {
     myAnchorQuery = weaveAnchorQuery;
   }
 
-  public void initialize(IGeneratorLogger log) {
-    myFragments = extractTemplateFragmentsForWeaving(log);
-  }
-
   public void apply(SNode outputContextNode, @NotNull TemplateContext context)
       throws GenerationFailureException, GenerationCanceledException {
+    if (myFragments == null) {
+      myFragments = extractTemplateFragmentsForWeaving();
+    }
     // for each template fragment create output nodes
     TemplateExecutionEnvironment env = context.getEnvironment();
     if (outputContextNode == null) {
@@ -76,6 +74,7 @@ public class WeaveTemplateContainer {
         for (SNode outputNodeToWeave : outputNodesToWeave) {
           weaveSupport.weaveNode(childRole, outputNodeToWeave);
         }
+        // XXX why does not TemplateContainer does the same (i.e. recordTransformInputTrace)?
         env.getGenerator().recordTransformInputTrace(context.getInput(), outputNodesToWeave);
         env.getTrace().trace(context.getInput().getNodeId(), GenerationTracerUtil.translateOutput(outputNodesToWeave), templateFragment.getReference());
       } catch (DismissTopMappingRuleException e) {
@@ -94,11 +93,11 @@ public class WeaveTemplateContainer {
     }
   }
 
-  private List<SNode> extractTemplateFragmentsForWeaving(IGeneratorLogger logger) {
+  private List<SNode> extractTemplateFragmentsForWeaving() throws TemplateProcessingFailureException {
     List<SNode> templateFragments = GeneratorUtilEx.getTemplateFragments(myTemplateNode);
     if (templateFragments.isEmpty()) {
-      logger.error(myTemplateNode.getReference(), "nothing to weave: no template fragments found in template");
-      return templateFragments;
+      // TemplateContainer has "couldn't process template: no template fragments found" message
+      throw new TemplateProcessingFailureException(myTemplateNode, "nothing to weave: no template fragments found in template");
     }
 
     // all fragments with <default context> should have the same parent
@@ -118,7 +117,7 @@ public class WeaveTemplateContainer {
       for (SNode templateFragment : templateFragments) {
         list.add(GeneratorUtil.describe(templateFragment, "template fragment"));
       }
-      logger.error(myTemplateNode.getReference(), "all fragments with shall have the same parent", list.toArray(new ProblemDescription[0]));
+      throw new TemplateProcessingFailureException(myTemplateNode, "all fragments with shall have the same parent", list.toArray(new ProblemDescription[0]));
     }
     return templateFragments;
   }

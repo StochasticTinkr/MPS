@@ -475,7 +475,6 @@ public final class TemplateProcessor implements ITemplateProcessor {
       // TemplateDeclaration td = env.loadTemplateDeclaration(template)
       // td.apply(new WeaveSink(), templateContext);
       WeaveTemplateContainer wtc = new WeaveTemplateContainer(template, this);
-      wtc.initialize(getLogger());
 
       SNode contextNode = _outputNodes.get(0);
       for (SNode node : getNewInputNodes(templateContext)) {

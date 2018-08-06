@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
@@ -148,16 +147,15 @@ public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements Tem
     //       while here we have to delegate to TEE to load appropriate template (which could be coming from
     //       another, generated/compiled template module!!!). It's only template implementation that knows whether it's
     //       interpreted or compiled. Here, unfortunately, we force interpretation of all weaved templates!
-    WeaveTemplateContainer wtc = getWeavingTemplateContainer(environment.getLogger());
+    WeaveTemplateContainer wtc = getWeavingTemplateContainer();
     wtc.apply(outputContextNode, context.subContext(myMappingName));
   }
 
   @NotNull
-  private WeaveTemplateContainer getWeavingTemplateContainer(IGeneratorLogger log) {
+  private WeaveTemplateContainer getWeavingTemplateContainer() {
     if (myWeaveTemplates == null) {
       assert myTemplate != null;
       myWeaveTemplates = new WeaveTemplateContainer(myTemplate, this);
-      myWeaveTemplates.initialize(log);
     }
     return myWeaveTemplates;
   }
