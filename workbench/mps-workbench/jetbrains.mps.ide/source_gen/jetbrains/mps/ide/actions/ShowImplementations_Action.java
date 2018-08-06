@@ -109,8 +109,8 @@ public class ShowImplementations_Action extends BaseAction {
     } else {
       return;
     }
-    for (SearchResult<SNode> searchResult : results.getSearchResults()) {
-      SNode foundNode = searchResult.getObject();
+    for (SearchResult<?> searchResult : results.getSearchResults()) {
+      SNode foundNode = (SNode) searchResult.getObject();
       if ((foundNode != null)) {
         ListSequence.fromList(nodes).addElement(foundNode);
       }

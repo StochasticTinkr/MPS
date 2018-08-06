@@ -190,13 +190,15 @@ public class DataTree implements IExternalizeable, IChangeListener {
       DataNode root = createTreeRoot();
 
       DataNode nodesRoot = new DataNode(new SearchedNodesNodeData(PathItemRole.ROLE_MAIN_SEARCHED_NODES));
-      for (Object node : results.getAliveNodes()) {
-        addSearchedNode(nodesRoot, node);
+      for (Object node : results.getSearchedObjects().getElements()) {
+        if (node != null) {
+          addSearchedNode(nodesRoot, node);
+        }
       }
       root.add(nodesRoot);
 
       DataNode resultsRoot = new DataNode(new ResultsNodeData(PathItemRole.ROLE_MAIN_RESULTS, nodeRepresentator));
-      for (SearchResult<?> result : results.getAliveResults()) {
+      for (SearchResult<?> result : results.getNotNullResults()) {
         addResultWithPresentation(resultsRoot, result, nodeRepresentator);
       }
       root.add(resultsRoot);

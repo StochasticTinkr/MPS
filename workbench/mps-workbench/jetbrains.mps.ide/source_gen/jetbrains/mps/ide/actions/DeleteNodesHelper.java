@@ -130,7 +130,7 @@ public class DeleteNodesHelper {
     ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Finding Usages", true) {
       @Override
       public void run(@NotNull final ProgressIndicator pi) {
-        final Set<SearchResult<SNode>> results = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
+        final Set<SearchResult<?>> results = SetSequence.fromSet(new HashSet<>());
         myRepository.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             // XXX in fact, do we care to update uses in non-project modules? Perhaps, ProjectScope is sufficient? 
@@ -159,13 +159,13 @@ public class DeleteNodesHelper {
               return;
             }
 
-            Set<SNode> nodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(results).select(new ISelector<SearchResult<SNode>, SNode>() {
-              public SNode select(SearchResult<SNode> it) {
-                return it.getObject();
+            Set<SNode> nodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(results).select(new ISelector<SearchResult<?>, SNode>() {
+              public SNode select(SearchResult<?> it) {
+                return (SNode) it.getObject();
               }
             }));
-            for (SearchResult<SNode> searchResult : ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), results)) {
-              SNode resultNode = searchResult.getObject();
+            for (SearchResult searchResult : ListSequence.fromListWithValues(new ArrayList<SearchResult>(), results)) {
+              SNode resultNode = (SNode) searchResult.getObject();
 
               for (SNode anc : ListSequence.fromList(SNodeOperations.getNodeAncestors(resultNode, null, false))) {
                 if (SetSequence.fromSet(nodes).contains(anc)) {
@@ -180,7 +180,7 @@ public class DeleteNodesHelper {
         if (pi.isCanceled()) {
           return;
         }
-        final SearchResults sr = new SearchResults<SNode>(SetSequence.fromSetWithValues(new HashSet<SNode>(), myNodesToDelete), SetSequence.fromSet(results).toListSequence());
+        final SearchResults sr = new SearchResults(SetSequence.fromSetWithValues(new HashSet<SNode>(), myNodesToDelete), SetSequence.fromSet(results).toListSequence());
 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {

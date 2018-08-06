@@ -39,7 +39,7 @@ public class MigrationScriptsController {
         aliveIncludedNodes.add(n);
       }
     }
-    List<SearchResult<SNode>> aliveResults = myFinder.getLastSearchResults().getAliveResults();
+    List<SearchResult<?>> aliveResults = myFinder.getLastSearchResults().getNotNullResults();
     for (SearchResult aliveResult : aliveResults) {
       if (aliveIncludedNodes.contains(aliveResult.getObject())) {
         aliveIncludedResults.add(aliveResult);

@@ -22,15 +22,16 @@ import org.jetbrains.annotations.NotNull;
 
 public class UnionNode extends BaseNode {
   @Override
-  public SearchResults doGetResults(SearchQuery query, @NotNull ProgressMonitor monitor) {
-    SearchResults results = new SearchResults();
+  public SearchResults<?> doGetResults(SearchQuery query, @NotNull ProgressMonitor monitor) {
+    SearchResults<?> results = SearchResults.empty();
     monitor.start("", myChildren.size());
     try {
       for (BaseNode child : myChildren) {
-        if (monitor.isCanceled()) break;
-        SearchResults childResults = child.getResults(query, monitor.subTask(1));
-        results.getSearchResults().addAll(childResults.getSearchResults());
-        results.getSearchedNodes().addAll(childResults.getSearchedNodes());
+        if (monitor.isCanceled()) {
+          break;
+        }
+        SearchResults<?> childResults = child.getResults(query, monitor.subTask(1));
+        results = SearchResults.union(results, childResults);
       }
     } finally {
       monitor.done();

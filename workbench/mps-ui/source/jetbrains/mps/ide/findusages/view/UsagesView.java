@@ -333,8 +333,7 @@ public class UsagesView implements IExternalizeable {
         @Override
         public void onSuccess() {
           if (mySearchResults != null) {
-            mySearchResults.removeDuplicates();
-            myView.setContents(mySearchResults);
+            myView.setContents(mySearchResults.removeDuplicates());
           }
         }
       });

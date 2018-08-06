@@ -60,7 +60,7 @@ import java.util.List;
       sortedList.add(new SearchResult<>((SearchResult<SNode>) oldResult));
     }
     sortedList.sort((result1, result2) -> compareNodes(result1.getObject(), result2.getObject()));
-    return new SearchResults<>(Collections.unmodifiableSet(myResults.getSearchedNodes()), sortedList);
+    return new SearchResults(Collections.unmodifiableSet(myResults.getSearchedNodes()), sortedList);
   }
 
   private static int compareNodes(SNode n1, SNode n2) {

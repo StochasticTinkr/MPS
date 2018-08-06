@@ -87,9 +87,9 @@ public class HeadlessRefactoringUI implements RefactoringUI {
         Assert.assertTrue("SearchResult " + idString(result) + " was shown but is not expected.", SetSequence.fromSet(myExpectedResults).contains(result));
       }
       for (SNode node : SetSequence.fromSet(mySearchedNodes)) {
-        Assert.assertTrue("SearchNode " + idString(node) + " is expected but was not shown.", searchResults.getSearchedNodes().contains(node));
+        Assert.assertTrue("SearchNode " + idString(node) + " is expected but was not shown.", searchResults.getSearchedObjects().contains(node));
       }
-      for (Object node : searchResults.getSearchedNodes()) {
+      for (Object node : searchResults.getSearchedObjects().getElements()) {
         Assert.assertTrue("SearchNode " + idString((SNode) node) + " was shown but is not expected.", SetSequence.fromSet(mySearchedNodes).contains((SNode) node));
       }
       // do nothing, this in fact stops the process 

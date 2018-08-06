@@ -67,8 +67,11 @@ public class FindUtils {
     if (finder == null) {
       return result;
     }
-    for (SearchResult<SNode> searchResult : finder.find(new SearchQuery(node, scope), monitor).getSearchResults()) {
-      result.add(searchResult.getObject());
+    SearchResults<?> searchResults = finder.find(new SearchQuery(node, scope), monitor);
+    for (SearchResult<?> searchResult : searchResults.getSearchResults()) {
+      if (searchResult instanceof SNode) {
+        result.add((SNode) searchResult.getObject());
+      }
     }
     return result;
   }
