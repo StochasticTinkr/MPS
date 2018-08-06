@@ -37,6 +37,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Author: Sergey Dmitriev.
@@ -185,29 +186,36 @@ public class NodePaster {
   }
 
   private boolean canPasteToTarget(SNode pasteTarget, SContainmentLink link, boolean allowOneCardinality) {
-    if (link != null) {
-      if (!allowOneCardinality) {
-        return link.isMultiple();
-      } else {
-        return true;
+    if (link == null) {
+      return false;
+    }
+
+    if (!pasteTarget.getConcept().getContainmentLinks().contains(link)) {
+      return false;
+    }
+
+    boolean multiple = link.isMultiple();
+    if (!multiple) {
+      if (!allowOneCardinality || myPasteNodes.size() != 1) {
+        return false;
       }
     }
-    return false;
+
+    SAbstractConcept linkTargetConcept = link.getTargetConcept();
+    return myPasteNodes.stream()
+                       .allMatch(n -> n.isInstanceOfConcept(linkTargetConcept) || DataTransferManager.getInstance().canWrapInto(n, linkTargetConcept));
   }
 
   //role==null means "any role"
   private void pasteToTarget(final SNode pasteTarget, final SNode anchorNode, @Nullable SContainmentLink role, final PastePlaceHint placeHint) {
     if (role == null) {
-      role = pasteTarget.getConcept().getContainmentLinks().stream().filter(cl -> {
-        if (myPasteNodes.size() != 1 && !cl.isMultiple()) {
-          return false;
-        }
-        return myPasteNodes.stream()
-                           .allMatch(n -> n.isInstanceOfConcept(cl.getTargetConcept()) || DataTransferManager.getInstance().canWrapInto(n, cl.getTargetConcept()));
-      }).findFirst().orElse(null);
-      if (role == null) {
+      Optional<SContainmentLink> matchLink = pasteTarget.getConcept().getContainmentLinks().stream()
+                                                        .filter(cl -> canPasteToTarget(pasteTarget, cl, false))
+                                                        .findFirst();
+      if (!matchLink.isPresent()) {
         return;
       }
+      role = matchLink.get();
     }
 
     // unique child?
