@@ -114,6 +114,7 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
       getContentManager().getContent(tab).setPinned(true);
     }
     check_xg3v07_a2a32(getContentManager().getContent(0), this);
+    check_xg3v07_a3a32(getContentManager().getContent(0), this);
     getContentManager().setSelectedContent(getContentManager().getContent(0));
   }
 
@@ -219,6 +220,12 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
     return false;
   }
   private static void check_xg3v07_a2a32(Content checkedDotOperand, ConsoleTool checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.setPinnable(false);
+    }
+
+  }
+  private static void check_xg3v07_a3a32(Content checkedDotOperand, ConsoleTool checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setCloseable(false);
     }

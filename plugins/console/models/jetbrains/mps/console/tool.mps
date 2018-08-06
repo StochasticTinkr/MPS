@@ -2139,6 +2139,27 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="4SwrQttQi$6" role="3cqZAp">
+          <node concept="2EnYce" id="4SwrQttQFFF" role="3clFbG">
+            <node concept="2OqwBi" id="4SwrQttQi$8" role="2Oq$k0">
+              <node concept="1rXfSq" id="4SwrQttQi$9" role="2Oq$k0">
+                <ref role="37wK5l" to="71xd:~BaseTool.getContentManager():com.intellij.ui.content.ContentManager" resolve="getContentManager" />
+              </node>
+              <node concept="liA8E" id="4SwrQttQi$a" role="2OqNvi">
+                <ref role="37wK5l" to="v7ux:~ContentManager.getContent(int):com.intellij.ui.content.Content" resolve="getContent" />
+                <node concept="3cmrfG" id="4SwrQttQFrw" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="4SwrQttQi$c" role="2OqNvi">
+              <ref role="37wK5l" to="v7ux:~Content.setPinnable(boolean):void" resolve="setPinnable" />
+              <node concept="3clFbT" id="4SwrQttQ$g9" role="37wK5m">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="5VzHAnc0tha" role="3cqZAp">
           <node concept="2EnYce" id="5VzHAnc1y7E" role="3clFbG">
             <node concept="2OqwBi" id="5VzHAnc0zbq" role="2Oq$k0">
