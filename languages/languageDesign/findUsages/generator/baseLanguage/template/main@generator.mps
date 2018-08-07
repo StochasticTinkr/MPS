@@ -36,6 +36,7 @@
     <import index="fwk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textgen.trace(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -83,6 +84,7 @@
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -1078,7 +1080,7 @@
     </node>
     <node concept="2tJIrI" id="4WgT1ADYhAF" role="jymVt" />
     <node concept="3clFb_" id="hzF0Efv" role="jymVt">
-      <property role="TrG5h" value="doFind" />
+      <property role="TrG5h" value="doFind0" />
       <node concept="2AHcQZ" id="7kBaCiqTW4B" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
@@ -1086,6 +1088,9 @@
       <node concept="37vLTG" id="hzF0Efx" role="3clF46">
         <property role="TrG5h" value="node" />
         <node concept="3Tqbb2" id="i2nPOnA" role="1tU5fm" />
+        <node concept="2AHcQZ" id="61W0QHrDPVd" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
       </node>
       <node concept="37vLTG" id="hzF0Efz" role="3clF46">
         <property role="TrG5h" value="scope" />
@@ -1094,8 +1099,10 @@
         </node>
       </node>
       <node concept="37vLTG" id="hzF0Ef_" role="3clF46">
-        <property role="TrG5h" value="_results" />
-        <node concept="2I9FWS" id="hzF0EfA" role="1tU5fm" />
+        <property role="TrG5h" value="callback" />
+        <node concept="3uibUv" id="61W0QHrDQE2" role="1tU5fm">
+          <ref role="3uigEE" to="k4i4:~IFinder$FindCallback" resolve="IFinder.FindCallback" />
+        </node>
       </node>
       <node concept="37vLTG" id="h$fic7U" role="3clF46">
         <property role="TrG5h" value="monitor" />
@@ -1222,6 +1229,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="61W0QHrDLQ5" role="jymVt" />
     <node concept="3clFb_" id="hzAL_vn" role="jymVt">
       <property role="TrG5h" value="getSearchedNodes" />
       <node concept="2AHcQZ" id="7kBaCiqUfE6" role="2AJF6D">
@@ -1457,27 +1465,32 @@
     <ref role="3gUMe" to="tp3b:htO1afO" resolve="ResultStatement" />
     <node concept="312cEu" id="htP$e5Y" role="13RCb5">
       <property role="TrG5h" value="GeneratedClass" />
+      <property role="1sVAO0" value="true" />
       <node concept="3Tm1VV" id="htP$e6p" role="1B3o_S" />
       <node concept="3clFb_" id="hzF1l6N" role="jymVt">
         <property role="TrG5h" value="doFind" />
         <node concept="3Tmbuc" id="hzF1l6O" role="1B3o_S" />
         <node concept="3cqZAl" id="hzF1l6V" role="3clF45" />
         <node concept="3clFbS" id="hzF1mGh" role="3clF47">
-          <node concept="3clFbF" id="hzF1mKF" role="3cqZAp">
-            <node concept="2OqwBi" id="hzF1mKG" role="3clFbG">
-              <node concept="37vLTw" id="2BHiRxgmvMt" role="2Oq$k0">
-                <ref role="3cqZAo" node="h$fiy9l" resolve="_results" />
+          <node concept="3clFbF" id="61W0QHrDTHo" role="3cqZAp">
+            <node concept="2OqwBi" id="61W0QHrDTOs" role="3clFbG">
+              <node concept="37vLTw" id="61W0QHrDTHm" role="2Oq$k0">
+                <ref role="3cqZAo" node="h$fiy9l" resolve="callback" />
               </node>
-              <node concept="TSZUe" id="hzF1mKI" role="2OqNvi">
-                <node concept="10Nm6u" id="hzF1mKJ" role="25WWJ7">
-                  <node concept="29HgVG" id="hzF1mKK" role="lGtFl">
-                    <node concept="3NFfHV" id="hzF1mKL" role="3NFExx">
-                      <node concept="3clFbS" id="hzF1mKM" role="2VODD2">
-                        <node concept="3clFbF" id="hzF1mKN" role="3cqZAp">
-                          <node concept="2OqwBi" id="hzF1mKO" role="3clFbG">
-                            <node concept="30H73N" id="hzF1mKP" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="hzF1mKQ" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tp3b:htO1k2z" resolve="foundNode" />
+              <node concept="liA8E" id="61W0QHrDTY$" role="2OqNvi">
+                <ref role="37wK5l" to="k4i4:~IFinder$FindCallback.onUsageFound(jetbrains.mps.ide.findusages.model.SearchResult):void" resolve="onUsageFound" />
+                <node concept="1rXfSq" id="61W0QHrEdVE" role="37wK5m">
+                  <ref role="37wK5l" to="k4i4:~GeneratedFinder.createSingleResult(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.ide.findusages.model.SearchResult" resolve="createSingleResult" />
+                  <node concept="10Nm6u" id="hzF1mKJ" role="37wK5m">
+                    <node concept="29HgVG" id="hzF1mKK" role="lGtFl">
+                      <node concept="3NFfHV" id="hzF1mKL" role="3NFExx">
+                        <node concept="3clFbS" id="hzF1mKM" role="2VODD2">
+                          <node concept="3clFbF" id="hzF1mKN" role="3cqZAp">
+                            <node concept="2OqwBi" id="hzF1mKO" role="3clFbG">
+                              <node concept="30H73N" id="hzF1mKP" role="2Oq$k0" />
+                              <node concept="3TrEf2" id="hzF1mKQ" role="2OqNvi">
+                                <ref role="3Tt5mk" to="tp3b:htO1k2z" resolve="foundNode" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -1487,7 +1500,7 @@
                 </node>
               </node>
             </node>
-            <node concept="raruj" id="hzF1mKR" role="lGtFl" />
+            <node concept="raruj" id="61W0QHrDUg1" role="lGtFl" />
           </node>
         </node>
         <node concept="37vLTG" id="h$fiy9h" role="3clF46">
@@ -1495,8 +1508,10 @@
           <node concept="3Tqbb2" id="i2nPOEo" role="1tU5fm" />
         </node>
         <node concept="37vLTG" id="h$fiy9l" role="3clF46">
-          <property role="TrG5h" value="_results" />
-          <node concept="2I9FWS" id="h$fiy9m" role="1tU5fm" />
+          <property role="TrG5h" value="callback" />
+          <node concept="3uibUv" id="61W0QHrDT8E" role="1tU5fm">
+            <ref role="3uigEE" to="k4i4:~IFinder$FindCallback" resolve="IFinder.FindCallback" />
+          </node>
         </node>
         <node concept="37vLTG" id="h$fiy9n" role="3clF46">
           <property role="TrG5h" value="monitor" />
@@ -1504,6 +1519,9 @@
             <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
           </node>
         </node>
+      </node>
+      <node concept="3uibUv" id="61W0QHrEqKq" role="1zkMxy">
+        <ref role="3uigEE" to="k4i4:~GeneratedFinder" resolve="GeneratedFinder" />
       </node>
     </node>
   </node>

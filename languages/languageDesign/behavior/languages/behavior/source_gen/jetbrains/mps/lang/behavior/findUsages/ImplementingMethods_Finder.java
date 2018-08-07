@@ -11,8 +11,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.List;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import java.util.List;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -55,7 +57,7 @@ public class ImplementingMethods_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
     try {
       monitor.start("Looking for method implementations", 10);
       List<SNode> nodes = FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor.subTask(2));
@@ -69,12 +71,12 @@ public class ImplementingMethods_Finder extends GeneratedFinder {
       });
       subMonitor.start("", Sequence.fromIterable(candidates).count());
       for (SNode nodeUsage : Sequence.fromIterable(candidates)) {
-        ListSequence.fromList(_results).addElement(nodeUsage);
+        callback.onUsageFound(createSingleResult(nodeUsage));
         for (SNode overriding : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder", nodeUsage, scope, subMonitor.subTask(1)))) {
           if (monitor.isCanceled()) {
             return;
           }
-          ListSequence.fromList(_results).addElement(overriding);
+          callback.onUsageFound(createSingleResult(overriding));
         }
       }
       subMonitor.done();
@@ -82,6 +84,7 @@ public class ImplementingMethods_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
+
 
   @Nullable
   @Override

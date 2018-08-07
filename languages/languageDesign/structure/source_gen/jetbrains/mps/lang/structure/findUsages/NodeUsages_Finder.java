@@ -7,14 +7,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import java.util.List;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.Collections;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -39,16 +39,15 @@ public class NodeUsages_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
     try {
-      Set<SReference> resRefs = FindUsagesFacade.getInstance().findUsages(scope, Collections.<SNode>singleton(node), monitor);
-      for (SReference reference : resRefs) {
-        ListSequence.fromList(_results).addElement(((SNode) reference.getSourceNode()));
-      }
+      FindUsagesFacade.getInstance().findUsages(scope, Collections.<SNode>singleton(node),
+                                                                          (SReference ref) -> callback.onUsageFound(createSingleResult(ref.getSourceNode())), monitor);
     } finally {
       monitor.done();
     }
   }
+
   @Override
   public String getNodeCategory(SNode node) {
     return "Node Usages";

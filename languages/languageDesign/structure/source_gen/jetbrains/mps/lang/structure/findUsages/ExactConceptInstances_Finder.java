@@ -5,15 +5,15 @@ package jetbrains.mps.lang.structure.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import java.util.List;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.Collections;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -34,17 +34,18 @@ public class ExactConceptInstances_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
     try {
       SAbstractConcept concept = MetaAdapterByDeclaration.getConcept(node);
       Set<SNode> nodes = FindUsagesFacade.getInstance().findInstances(scope, Collections.singleton(concept), true, monitor);
       for (SNode resNode : nodes) {
-        ListSequence.fromList(_results).addElement(((SNode) resNode));
+        callback.onUsageFound(createSingleResult(((SNode) resNode)));
       }
     } finally {
       monitor.done();
     }
   }
+
   @Override
   public String getNodeCategory(SNode node) {
     return "Concept Instances";

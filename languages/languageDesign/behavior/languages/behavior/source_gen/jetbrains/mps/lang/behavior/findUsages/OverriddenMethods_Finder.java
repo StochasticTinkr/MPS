@@ -11,9 +11,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.List;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration__BehaviorDescriptor;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
@@ -54,7 +56,7 @@ public class OverriddenMethods_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
     try {
       // top-most ancestor by the lang.behavior 
       monitor.start("Overridden methods", 10);
@@ -94,7 +96,7 @@ public class OverriddenMethods_Finder extends GeneratedFinder {
           }).toListSequence();
           // supposedly there are no more than one method 
           for (SNode candidateMethod : ListSequence.fromList(candidateMethodsInAncestor)) {
-            ListSequence.fromList(_results).addElement(candidateMethod);
+            callback.onUsageFound(createSingleResult(candidateMethod));
           }
         }
       } finally {
@@ -104,6 +106,7 @@ public class OverriddenMethods_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
+
 
   @Nullable
   @Override
