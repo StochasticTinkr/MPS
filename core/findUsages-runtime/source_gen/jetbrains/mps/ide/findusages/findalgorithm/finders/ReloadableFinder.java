@@ -41,11 +41,10 @@ public final class ReloadableFinder extends BaseFinder {
   }
 
   @Override
-  public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
+  public void find(@NotNull SearchQuery query, @NotNull FindCallback callback, @NotNull ProgressMonitor monitor) {
     IInterfacedFinder finder = getFinder();
-    if (finder == null) {
-      return new SearchResults();
+    if (finder != null) {
+      finder.find(query, callback, monitor);
     }
-    return finder.find(query, monitor);
   }
 }

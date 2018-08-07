@@ -35,9 +35,9 @@ public interface IFinder {
   @NotNull
 //  @Deprecated
   default SearchResults find(@NotNull SearchQuery query, @NotNull ProgressMonitor monitor) {
-    SearchResults results = new SearchResults();
-    find(query, new CollectingCallback(results), monitor);
-    return results;
+    CollectingCallback collectingCallback = new CollectingCallback();
+    find(query, collectingCallback, monitor);
+    return collectingCallback.getResults();
   }
 
   /**

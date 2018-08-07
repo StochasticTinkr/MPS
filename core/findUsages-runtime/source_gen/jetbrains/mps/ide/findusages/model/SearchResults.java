@@ -59,6 +59,10 @@ public class SearchResults<T> implements UsagesList {
     return mySearchedObjects;
   }
 
+  /**
+   * @deprecated need to remove this since it exposes the internals too much.
+   *             in my view the provided constructors of the class must be enough
+   */
   @Deprecated
   public Set<Object> getSearchedNodes() {
     // mySearchNodes lists elements we looked for; elements our results 'derived' from. They are not necessarily of the same 

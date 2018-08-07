@@ -23,6 +23,8 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
+
 import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public abstract class GeneratedFinder implements IInterfacedFinder {
@@ -62,10 +64,15 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
   }
 
   @Deprecated
-  protected abstract void doFind(SNode node,
+  protected /*abstract*/ void doFind(SNode node,
                                  SearchScope scope,
                                  @Mutable List<SNode> _results,
-                                 ProgressMonitor monitor);
+                                 ProgressMonitor monitor) {
+    CollectingCallback callback = new CollectingCallback();
+    doFind0(node, scope, callback, monitor);
+    SearchResults<?> results = callback.getResults();
+    _results.addAll(results.getNotNullResults().stream().map(it -> (SNode) it.getObject()).collect(Collectors.toList()));
+  }
 
   protected /*abstract*/ void doFind0(@NotNull SNode node,
                                       @NotNull SearchScope scope,
@@ -75,6 +82,11 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     doFind(node, scope, result, monitor);
     for (SNode res : result) {
       callback.onUsageFound(createSingleResult(res));
+      try {
+        Thread.sleep(10);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
     }
   }
 

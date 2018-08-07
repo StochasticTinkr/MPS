@@ -19,6 +19,7 @@ import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder.FindCallback;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode;
@@ -52,12 +53,23 @@ public class FindUtils {
     return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new IInterfacedFinder[0]));
   }
 
+  public static void searchForResults(@Nullable final ProgressMonitor monitor,
+                                      @NotNull FindCallback callback,
+                                      @NotNull final SearchQuery query,
+                                      final IFinder... finders) {
+    searchForResults(monitor, callback, query, makeProvider(finders));
+  }
+
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final SearchQuery query, final IFinder... finders) {
     return getSearchResults(monitor, query, makeProvider(finders));
   }
 
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final SearchQuery query, final IResultProvider provider) {
     return provider.getResults(query, monitor);
+  }
+
+  public static void searchForResults(@Nullable final ProgressMonitor monitor, FindCallback callback, final SearchQuery query, final IResultProvider provider) {
+    provider.findResults(query, callback, monitor);
   }
 
   @Deprecated
@@ -69,7 +81,7 @@ public class FindUtils {
     }
     SearchResults<?> searchResults = finder.find(new SearchQuery(node, scope), monitor);
     for (SearchResult<?> searchResult : searchResults.getSearchResults()) {
-      if (searchResult instanceof SNode) {
+      if (searchResult.getObject() instanceof SNode) {
         result.add((SNode) searchResult.getObject());
       }
     }

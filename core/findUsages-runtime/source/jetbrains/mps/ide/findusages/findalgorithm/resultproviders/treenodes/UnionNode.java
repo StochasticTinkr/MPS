@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder.FindCallback;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -22,20 +23,17 @@ import org.jetbrains.annotations.NotNull;
 
 public class UnionNode extends BaseNode {
   @Override
-  public SearchResults<?> doGetResults(SearchQuery query, @NotNull ProgressMonitor monitor) {
-    SearchResults<?> results = SearchResults.empty();
+  public void doFindResults(@NotNull SearchQuery query, @NotNull FindCallback callback, @NotNull ProgressMonitor monitor) {
     monitor.start("", myChildren.size());
     try {
       for (BaseNode child : myChildren) {
         if (monitor.isCanceled()) {
           break;
         }
-        SearchResults<?> childResults = child.getResults(query, monitor.subTask(1));
-        results = SearchResults.union(results, childResults);
+        child.findResults(query, callback, monitor.subTask(1));
       }
     } finally {
       monitor.done();
     }
-    return results;
   }
 }

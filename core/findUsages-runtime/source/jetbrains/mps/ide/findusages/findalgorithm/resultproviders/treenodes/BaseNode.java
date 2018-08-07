@@ -17,6 +17,9 @@ package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.CollectingCallback;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder.FindCallback;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.SearchedObjects;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -84,39 +87,42 @@ public abstract class BaseNode implements IResultProvider {
   //----SEARCH STUFF----
 
   @Override
-  public SearchResults getResults(SearchQuery query, @Nullable ProgressMonitor monitor) {
-//    assert !ThreadUtils.isEventDispatchThread();
-
-    if (monitor == null) monitor = new EmptyProgressMonitor();
-
-    SearchResults results = doGetResults(query, monitor);
-
-    //no null pointer exception will occur!!
-    if (results.getSearchedNodes().contains(null)) {
-      LOG.error("GetResults returned nodes containing null, which means that some of your filters and finders is incorrect");
-      results.getSearchedNodes().remove(null);
+  public void findResults(@NotNull SearchQuery query, @NotNull FindCallback callback, @Nullable ProgressMonitor monitor) {
+    if (monitor == null) {
+      monitor = new EmptyProgressMonitor();
     }
-    boolean error = false;
-    for (SearchResult result : (List<SearchResult>) results.getSearchResults()) {
-      if (result.getObject() == null) {
-        LOG.error("GetResults returned results containing null, which means that some of your filters and finders is incorrect");
-        error = true;
-      }
-    }
-    if (error) {
-      List<SearchResult> newResults = new ArrayList<>();
-      for (SearchResult result : (List<SearchResult>) results.getSearchResults()) {
-        if (result.getObject() != null) {
-          newResults.add(result);
+    doFindResults(query, new FindCallback() {
+      @Override
+      public void onUsageFound(@NotNull SearchResult<?> result) {
+        if (result.getObject() == null) {
+          LOG.error("#getSearchResults returned results containing null, which means that some of your filters and finders is incorrect");
+        } else {
+          callback.onUsageFound(result);
         }
       }
-      results = new SearchResults(results.getSearchedNodes(), newResults);
-    }
 
-    return results;
+      @Override
+      public void onSearchedObjectsCalculated(@NotNull SearchedObjects<?> searchedObjects) {
+        if (searchedObjects.contains(null)) {
+          LOG.error("#getSearchedObjects returned nodes containing null, which means that some of your filters and finders is incorrect");
+        } else {
+          callback.onSearchedObjectsCalculated(searchedObjects);
+        }
+      }
+    }, monitor);
   }
 
-  public abstract SearchResults doGetResults(SearchQuery query, @NotNull ProgressMonitor monitor);
+  @NotNull
+  @Override
+  public SearchResults getResults(@NotNull SearchQuery query, @Nullable ProgressMonitor monitor) {
+//    assert !ThreadUtils.isEventDispatchThread();
+
+    CollectingCallback callback = new CollectingCallback();
+    findResults(query, callback, monitor);
+    return callback.getResults();
+  }
+
+  protected abstract void doFindResults(@NotNull SearchQuery query, @NotNull FindCallback callback, @NotNull ProgressMonitor monitor);
 
   @Override
   public long getEstimatedTime(SearchScope scope) {

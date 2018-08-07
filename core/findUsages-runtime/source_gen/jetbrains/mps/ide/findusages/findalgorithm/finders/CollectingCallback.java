@@ -20,20 +20,29 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.annotations.NotNull;
 
-public class CollectingCallback implements FindCallback {
-  private final SearchResults myResults;
+import java.util.ArrayList;
+import java.util.List;
 
-  public CollectingCallback(SearchResults results) {
-    myResults = results;
+public class CollectingCallback implements FindCallback {
+  private final List<SearchResult<?>> myResultList = new ArrayList<SearchResult<?>>();
+  private final List<SearchedObjects<?>> mySearchedObjectsList = new ArrayList<>();
+
+  public CollectingCallback() {
   }
 
   @Override
   public void onUsageFound(@NotNull SearchResult<?> result) {
-    myResults.add(result);
+    myResultList.add(result);
   }
 
   @Override
   public void onSearchedObjectsCalculated(@NotNull SearchedObjects<?> searchedObjects) {
-    myResults.getSearchedNodes().addAll(searchedObjects.getElements());
+    mySearchedObjectsList.add(searchedObjects);
+  }
+
+  @NotNull
+  public SearchResults<?> getResults() {
+    SearchedObjects<?> union = SearchedObjects.union(mySearchedObjectsList.toArray(new SearchedObjects[0]));
+    return new SearchResults(union, myResultList);
   }
 }

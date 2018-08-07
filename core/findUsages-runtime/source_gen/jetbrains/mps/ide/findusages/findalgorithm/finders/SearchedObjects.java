@@ -45,4 +45,13 @@ public final class SearchedObjects<K> {
   public boolean contains(K k) {
     return getElements().contains(k);
   }
+
+  @NotNull
+  public static <K> SearchedObjects<K> union(SearchedObjects<K>... array) {
+    Set<K> searchedNodes = new LinkedHashSet<>();
+    for (SearchedObjects<K> element : array) {
+      searchedNodes.addAll(element.mySearchedNodes);
+    }
+    return new SearchedObjects<>(searchedNodes);
+  }
 }
