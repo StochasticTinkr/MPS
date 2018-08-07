@@ -77,17 +77,10 @@ public final class GoToHelper {
                       return;
                     }
                   }
-                  try {
-                    SwingUtilities.invokeAndWait(this::refresh);
-                  } catch (InterruptedException e) {
-                    e.printStackTrace();
-                  } catch (InvocationTargetException e) {
-                    e.printStackTrace();
-                  }
-//                  myAlarm.addRequest(() -> {
-//                    myAlarm.cancelAllRequests();
-//                    refresh();
-//                  }, 10, ModalityState.stateForComponent(popup.getContent()));
+                  myAlarm.addRequest(() -> {
+                    myAlarm.cancelAllRequests();
+                    refresh();
+                  }, 100, ModalityState.stateForComponent(popup.getContent()));
                 }
               }
 
@@ -103,7 +96,6 @@ public final class GoToHelper {
                     listModel.addElement(newElement);
                   }
                 }
-                popup.setCaption("HAHAHAHAA " + newData.size() );
                 popup.pack(true, true);
               }
             };
