@@ -25,6 +25,7 @@ import com.intellij.openapi.progress.PerformInBackgroundOption;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.util.Condition;
 import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -51,11 +52,15 @@ public class SaveRepositoryCommand implements Runnable {
     if (ThreadUtils.isInEDT()) {
       myRepository.getModelAccess().runWriteAction(this);
     } else {
-      ApplicationManager.getApplication().invokeLater(this, ModalityState.NON_MODAL);
+      Application application = ApplicationManager.getApplication();
+      myRepository.getModelAccess().runWriteInEDT(() -> {
+                                                    if (!application.isDisposed()) {
+                                                      run();
+                                                    }
+                                                  }
+      );
+//      I am not sure whether I can change to this with non-modal ModalityState:
+//      application.invokeLater(() -> myRepository.getModelAccess().runWriteAction(this), ModalityState.NON_MODAL, o -> application.isDisposed());
     }
-  }
-
-  public void runSavingTask() {
-    execute();
   }
 }
