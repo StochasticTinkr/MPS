@@ -19698,12 +19698,12 @@
       <node concept="3$GE4K" id="57dcfYPx6EW" role="3$GE96">
         <node concept="3_J27D" id="57dcfYPx6EX" role="3$GE4B">
           <node concept="3Mxwew" id="57dcfYPx6F4" role="3MwsjC">
-            <property role="3MwjfP" value="https://confluence.jetbrains.com/display/MPSD20181/Default+Keymap+Reference" />
+            <property role="3MwjfP" value="https://confluence.jetbrains.com/display/MPSD20182/Default+Keymap+Reference" />
           </node>
         </node>
         <node concept="3_J27D" id="57dcfYPx6EY" role="3$GE4G">
           <node concept="3Mxwew" id="57dcfYPx6F2" role="3MwsjC">
-            <property role="3MwjfP" value="https://confluence.jetbrains.com/display/MPSD20181/Default+Keymap+Reference" />
+            <property role="3MwjfP" value="https://confluence.jetbrains.com/display/MPSD20182/Default+Keymap+Reference" />
           </node>
         </node>
       </node>
