@@ -55,9 +55,20 @@ public final class GoToHelper {
       private final Alarm myAlarm = new Alarm(Alarm.ThreadToUse.SWING_THREAD);
       private final Object LOCK = new Object();
       private final List<NodeNavigatable> myCurrentResults = new ArrayList<>();
+      private volatile boolean myCancelled = false;
+
+      @Override
+      public void onCancel() {
+        myCancelled = true;
+      }
+
+      @Override
+      public void onFinished() {
+        list.setPaintBusy(false);
+      }
 
       public void run(@NotNull final ProgressIndicator indicator) {
-
+        list.setPaintBusy(true);
         mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
             // XXX I know cast to IFinder is stupid here, but it's the way to deal with checkTypeSystem test failures.
@@ -80,12 +91,12 @@ public final class GoToHelper {
                   myAlarm.addRequest(() -> {
                     myAlarm.cancelAllRequests();
                     refresh();
-                  }, 100, ModalityState.stateForComponent(popup.getContent()));
+                  }, 50, ModalityState.stateForComponent(popup.getContent()));
                 }
               }
 
               private void refresh() {
-//                if (myCanceled) return;
+                if (myCancelled) return;
                 if (popup.isDisposed()) return;
                 List<NodeNavigatable> newData;
                 synchronized (LOCK) {
@@ -100,9 +111,9 @@ public final class GoToHelper {
               }
             };
             FindUtils.searchForResults(new ProgressMonitorAdapter(indicator),
-                                                        callback,
-                                                        searchQuery,
-                                                        (IFinder) finder);
+                                       callback,
+                                       searchQuery,
+                                       (IFinder) finder);
           }
         });
       }
