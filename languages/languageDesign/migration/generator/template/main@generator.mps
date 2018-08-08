@@ -2789,8 +2789,8 @@
                 <node concept="2tJFMh" id="4SwrQttMIKD" role="3uHU7w">
                   <node concept="ZC_QK" id="4SwrQttMIKE" role="2tJFKM">
                     <ref role="2aWVGs" to="6f4m:6d7r2Fq7hpH" resolve="MigrationScriptBase" />
-                    <node concept="ZC_QK" id="4SwrQttMIKF" role="2aWVGa">
-                      <ref role="2aWVGs" to="6f4m:6oJSkzEcB7u" resolve="detachNodePatternVariable" />
+                    <node concept="ZC_QK" id="4qfAl1dE0u2" role="2aWVGa">
+                      <ref role="2aWVGs" to="6f4m:6oJSkzEcCI3" resolve="detachListPatternVariable" />
                     </node>
                   </node>
                 </node>
