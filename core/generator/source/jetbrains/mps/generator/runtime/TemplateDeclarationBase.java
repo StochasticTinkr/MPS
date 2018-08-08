@@ -46,7 +46,7 @@ public abstract class TemplateDeclarationBase implements TemplateDeclaration {
 
   @Override
   public Collection<SNode> weave(@NotNull WeaveContext context, @NotNull NodeWeaveFacility weaveFacility) throws GenerationException {
-    // how come there's an exception, not emptyList? see TemplateDeclarationWeavingAware2
+    // this code is for root templates which do not support weaving
     throw new GenerationFailureException("This template doesn't support weaving");
   }
 

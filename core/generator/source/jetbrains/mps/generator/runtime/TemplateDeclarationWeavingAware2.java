@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,5 +65,7 @@ import java.util.Collection;
 @ToRemove(version = 3.3)
 public interface TemplateDeclarationWeavingAware2 {
   // @return in generated code seems to be capable of null return value
+  // In generated code, WEAVE macro doesn't use return value at all, while WeavingRule uses its non-empty status only (eventually ignored)
+  // In interpreted code, WEAVE macro doesn't care about return value, and TemplateWeavingRuleInterpreted always returns 'true'
   Collection<SNode> weave(@NotNull WeaveContext context, @NotNull NodeWeaveFacility weaveFacility) throws GenerationException;
 }

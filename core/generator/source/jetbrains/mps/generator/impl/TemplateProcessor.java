@@ -36,6 +36,8 @@ import jetbrains.mps.generator.impl.query.VariableValueQuery;
 import jetbrains.mps.generator.impl.query.WeaveAnchorQuery;
 import jetbrains.mps.generator.impl.template.QueryExecutor;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
@@ -453,32 +455,53 @@ public final class TemplateProcessor implements ITemplateProcessor {
         return Collections.emptyList();
       }
       if (_outputNodes.size() > 1) {
-        getLogger().error(macro.getReference(), "cannot apply $WEAVE$ to a list of nodes",
+        // XXX why not?
+        getLogger().error(getMacroNodeRef(), "cannot apply $WEAVE$ to a list of nodes",
             GeneratorUtil.describe(templateContext.getInput(), "input"));
         return _outputNodes;
       }
       SNode consequence = RuleUtil.getWeaveMacro_Consequence(macro);
       if (consequence == null) {
-        getLogger().error(macro.getReference(), "couldn't evaluate weave macro: no consequence",
+        getLogger().error(getMacroNodeRef(), "couldn't evaluate weave macro: no consequence",
             GeneratorUtil.describeIfExists(templateContext.getInput(), "input"));
         return _outputNodes;
       }
 
+      // FIXME TemplateDeclarationReference may pass arguments!
       SNode template = RuleUtil.getTemplateDeclarationReference_Template(consequence);
       ////
       if (template == null) {
-        getLogger().error(macro.getReference(), "couldn't evaluate weave macro: no template",
+        getLogger().error(getMacroNodeRef(), "couldn't evaluate weave macro: no template",
             GeneratorUtil.describeIfExists(templateContext.getInput(), "input"));
         return _outputNodes;
       }
-      // FIXME shall not interpret weaving templates always, they might be coming from a compiled code
+
+      // XXX would be great to have something like next code, instead
       // TemplateDeclaration td = env.loadTemplateDeclaration(template)
       // td.apply(new WeaveSink(), templateContext);
-      WeaveTemplateContainer wtc = new WeaveTemplateContainer(template, this);
+      final SNode contextNode = _outputNodes.get(0);
 
-      SNode contextNode = _outputNodes.get(0);
       for (SNode node : getNewInputNodes(templateContext)) {
-        wtc.apply(contextNode, templateContext.subContext(node));
+        WeaveContext wc = new WeaveContextImpl(contextNode, templateContext.subContext(node), this);
+        NodeWeaveFacility nwf = templateContext.getEnvironment().prepareWeave(wc, getMacroNodeRef());
+        try {
+          // FIXME respect arguments!
+          nwf.weaveTemplate(template.getReference());
+          // XXX exception handling shall match that of WeavingProcessor.ArmedWeavingRule
+        } catch (GenerationFailureException | GenerationCanceledException ex) {
+          throw ex;
+        } catch (DismissTopMappingRuleException | AbandonRuleInputException ex) {
+          String msg = ex instanceof DismissTopMappingRuleException ? "bad template: dismiss in a weaving rule is not supported"
+                                                                    : "bad template: abandon statement in a weaving rule is not supported";
+          getLogger().error(getMacroNodeRef(), msg,
+                                GeneratorUtil.describe(macro, "template node"),
+                                GeneratorUtil.describe(templateContext.getInput(), "input node"),
+                                GeneratorUtil.describe(contextNode, "output context node"));
+
+        } catch (GenerationException ex) {
+          // unexpected, we've handled reasonable cases above
+          getLogger().handleException(ex);
+        }
       }
       return _outputNodes;
     }

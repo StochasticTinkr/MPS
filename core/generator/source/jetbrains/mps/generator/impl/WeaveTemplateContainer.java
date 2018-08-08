@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
-import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.generator.runtime.WeavingWithAnchor;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -40,56 +38,34 @@ import java.util.List;
 public class WeaveTemplateContainer {
 
   private final SNode myTemplateNode;
-  private final WeavingWithAnchor myAnchorQuery;
   private List<SNode> myFragments;
 
-  public WeaveTemplateContainer(@NotNull SNode templateContainer, @NotNull WeavingWithAnchor weaveAnchorQuery) {
+  public WeaveTemplateContainer(@NotNull SNode templateContainer) {
     myTemplateNode = templateContainer;
-    myAnchorQuery = weaveAnchorQuery;
   }
 
-  public void apply(SNode outputContextNode, @NotNull TemplateContext context)
-      throws GenerationFailureException, GenerationCanceledException {
+  public void apply(NodeWeaveFacility weaveSupport) throws GenerationException {
     if (myFragments == null) {
       myFragments = extractTemplateFragmentsForWeaving();
     }
+    TemplateContext context = weaveSupport.getTemplateContext();
     // for each template fragment create output nodes
     TemplateExecutionEnvironment env = context.getEnvironment();
-    if (outputContextNode == null) {
-      env.getLogger().error(myTemplateNode.getReference(), "No output context node for weaving", GeneratorUtil.describeInput(context));
-      return;
-    }
     ITemplateProcessor templateProcessor = env.getTemplateProcessor();
     for (SNode templateFragment : myFragments) {
       SNode templateFragmentParentNode = templateFragment.getParent();
-      try {
-        String tfMapLabel = GeneratorUtilEx.getMappingName_TemplateFragment(templateFragment, null);
-        List<SNode> outputNodesToWeave = templateProcessor.apply(templateFragmentParentNode, context.subContext(tfMapLabel));
-        final SContainmentLink childRole = templateFragmentParentNode.getContainmentLink();
-        assert childRole != null;
+      assert templateFragmentParentNode != null; // TF is a node attribute
+      String tfMapLabel = GeneratorUtilEx.getMappingName_TemplateFragment(templateFragment, null);
+      List<SNode> outputNodesToWeave = templateProcessor.apply(templateFragmentParentNode, context.subContext(tfMapLabel));
+      final SContainmentLink childRole = templateFragmentParentNode.getContainmentLink();
+      assert childRole != null;
 
-        WeaveContext weaveContext = new WeaveContextImpl(outputContextNode, context, myAnchorQuery);
-        final NodeWeaveFacility weaveSupport = env.prepareWeave(weaveContext, templateFragment.getReference());
-
-        for (SNode outputNodeToWeave : outputNodesToWeave) {
-          weaveSupport.weaveNode(childRole, outputNodeToWeave);
-        }
-        // XXX why does not TemplateContainer does the same (i.e. recordTransformInputTrace)?
-        env.getGenerator().recordTransformInputTrace(context.getInput(), outputNodesToWeave);
-        env.getTrace().trace(context.getInput().getNodeId(), GenerationTracerUtil.translateOutput(outputNodesToWeave), templateFragment.getReference());
-      } catch (DismissTopMappingRuleException e) {
-        env.getLogger().error(templateFragment.getReference(), "bad template: dismiss in weave is not supported",
-            GeneratorUtil.describe(myTemplateNode, "template node"),
-            GeneratorUtil.describe(context.getInput(), "input node"),
-            GeneratorUtil.describe(outputContextNode, "output context node"));
-      } catch (TemplateProcessingFailureException ex) {
-        ProblemDescription[] pd = new ProblemDescription[]{
-            GeneratorUtil.describe(myTemplateNode, "template node"),
-            GeneratorUtil.describe(context.getInput(), "input node"),
-            GeneratorUtil.describe(outputContextNode, "output context node")
-        };
-        env.getLogger().error(templateFragment.getReference(), "error processing template fragment", GeneratorUtil.concat(pd, ex.asProblemDescription()));
+      for (SNode outputNodeToWeave : outputNodesToWeave) {
+        weaveSupport.weaveNode(childRole, outputNodeToWeave);
       }
+      // XXX why does not TemplateContainer does the same (i.e. recordTransformInputTrace)?
+      env.getGenerator().recordTransformInputTrace(context.getInput(), outputNodesToWeave);
+      env.getTrace().trace(context.getInput().getNodeId(), GenerationTracerUtil.translateOutput(outputNodesToWeave), templateFragment.getReference());
     }
   }
 

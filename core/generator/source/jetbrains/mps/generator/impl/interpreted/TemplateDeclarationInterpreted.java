@@ -18,8 +18,11 @@ package jetbrains.mps.generator.impl.interpreted;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateContainer;
+import jetbrains.mps.generator.impl.WeaveTemplateContainer;
 import jetbrains.mps.generator.runtime.ApplySink;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
@@ -33,6 +36,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 /**
  * Evgeny Gryaznov, 12/13/10
@@ -85,6 +89,16 @@ public class TemplateDeclarationInterpreted extends TemplateDeclarationBase {
     CollectorSink s = new CollectorSink(new ArrayList<>());
     tc.apply(s, applyContext);
     return s.getCollected();
+  }
+
+  @Override
+  public Collection<SNode> weave(@NotNull WeaveContext context, @NotNull NodeWeaveFacility weaveFacility) throws GenerationException {
+    // FIXME weaveFacility has TemplateContext, but what about template arguments?
+    //       We need to use myCallSite.prepareCallContext here, but how would I pass new TC down to the template container then?
+    //       Note, use of myCallSite makes sense only unless we move responsibility to configure arguments to a calling code
+
+    new WeaveTemplateContainer(myTemplateNode).apply(weaveFacility);
+    return Collections.emptyList();
   }
 
   // return non-null value

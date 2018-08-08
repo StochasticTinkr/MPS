@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.FastNodeFinderManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,10 +105,15 @@ public class WeavingProcessor {
         try {
           queryExecutor.applyRule(myRule, context, outputContextNode);
         } catch (DismissTopMappingRuleException e) {
-          myEnv.getLogger().error(myRule.getRuleNode(), "wrong template: dismiss in weaving rule is not supported", GeneratorUtil.describeInput(context));
+          myEnv.getLogger().error(myRule.getRuleNode(), "bad template: dismiss in a weaving rule is not supported", GeneratorUtil.describeInput(context));
+        } catch (AbandonRuleInputException ex) {
+          // XXX There was no explicit handling for AbandonRuleInputException, is there a reason it wasn't handled the same as DismissTopMappingRuleException?
+          myEnv.getLogger().error(myRule.getRuleNode(), "bad template: abandon statement in a weaving rule is not supported", GeneratorUtil.describeInput(context));
         } catch (TemplateProcessingFailureException e) {
-          myEnv.getLogger().error(myRule.getRuleNode(), "weaving rule: error processing template fragment", GeneratorUtil.describeInput(context));
+          SNodeReference tml = e.getTemplateModelLocation();
+          myEnv.getLogger().error(tml == null ? myRule.getRuleNode() : tml, e.getMessage(), e.asProblemDescription());
         }
+        // XXX exception handling shall match to that of $WEAVE$ macro
       } catch (GenerationCanceledException | GenerationFailureException ex) {
         throw ex;
       } catch (GenerationException e) {

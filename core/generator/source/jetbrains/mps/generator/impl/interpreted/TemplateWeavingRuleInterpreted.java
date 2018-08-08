@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
-import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
-import jetbrains.mps.generator.impl.WeaveTemplateContainer;
+import jetbrains.mps.generator.impl.TemplateProcessingFailureException;
+import jetbrains.mps.generator.impl.WeaveContextImpl;
 import jetbrains.mps.generator.impl.query.QueryKey;
 import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import jetbrains.mps.generator.impl.query.QueryProviderBase;
@@ -29,6 +29,7 @@ import jetbrains.mps.generator.impl.query.WeaveAnchorQuery;
 import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
@@ -54,7 +55,6 @@ public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements Tem
   private final SNode myConsequenceNode;
   private final SNode myTemplate;
   private final String myMappingName;
-  private WeaveTemplateContainer myWeaveTemplates;
   private WeaveRuleCondition myCondition;
   private WeaveRuleQuery myContentNodeQuery;
   private WeaveAnchorQuery myAnchorQuery;
@@ -135,29 +135,14 @@ public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements Tem
     return myConsequence.apply(environment, context, outputContextNode);
   }
 
-  void weaveTemplateDeclaration(SNode outputContextNode, @NotNull TemplateContext context)
-      throws GenerationFailureException, GenerationCanceledException {
+  void weaveTemplateDeclaration(SNode outputContextNode, @NotNull TemplateContext context) throws GenerationException {
 
-    TemplateExecutionEnvironment environment = context.getEnvironment();
     if (myTemplate == null) {
-      environment.getLogger().error(getRuleNode(), "couldn't evaluate weaving rule: no myTemplate");
-      return;
+      throw new TemplateProcessingFailureException(myRuleNode, "couldn't evaluate weaving rule: no template");
     }
-    // FIXME WeaveTemplateContainer shall be implementation detail of TemplateDeclarationInterpreted.weave() method
-    //       while here we have to delegate to TEE to load appropriate template (which could be coming from
-    //       another, generated/compiled template module!!!). It's only template implementation that knows whether it's
-    //       interpreted or compiled. Here, unfortunately, we force interpretation of all weaved templates!
-    WeaveTemplateContainer wtc = getWeavingTemplateContainer();
-    wtc.apply(outputContextNode, context.subContext(myMappingName));
-  }
-
-  @NotNull
-  private WeaveTemplateContainer getWeavingTemplateContainer() {
-    if (myWeaveTemplates == null) {
-      assert myTemplate != null;
-      myWeaveTemplates = new WeaveTemplateContainer(myTemplate, this);
-    }
-    return myWeaveTemplates;
+    TemplateExecutionEnvironment environment = context.getEnvironment();
+    WeaveContext wc = new WeaveContextImpl(outputContextNode, context.subContext(myMappingName), this);
+    environment.prepareWeave(wc, getRuleNode()).weaveTemplate(myTemplate.getReference());
   }
 
   /**
@@ -195,7 +180,7 @@ public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements Tem
    * Here, former approach of ReferenceInfo_TemplateNode would fail to find AAA cons as it's not in ancestry of field declaration. The mapping
    * from the method below won't help either. I feel the case above is handled via indirect mapping and input history, but not sure.
    *
-   * @param environment       enironment for the rule
+   * @param environment       environment for the rule
    * @param outputContextNode node from context query of WeavingMappingRule, element of output model we inject into
    * @param inputNode         source model element this weaving is applicable to (instance of WeavingMappingRule.myApplicableConcept)
    */

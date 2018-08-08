@@ -145,6 +145,8 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   void postProcess(@NotNull NodePostProcessor postProcessor);
 
   /**
+   * @param context knows where to put weaved nodes (parent/context and anchor function)
+   * @param templateNode call site for the weave (for target template to apply, see {@link NodeWeaveFacility#weaveTemplate(SNodeReference, Object...)}
    * @return utility capable of node weaving with respect to the given context
    * @since 3.3
    */
