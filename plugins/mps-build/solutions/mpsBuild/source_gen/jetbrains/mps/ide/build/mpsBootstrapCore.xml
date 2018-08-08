@@ -2772,6 +2772,7 @@
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e(jetbrains.mps.lang.migration.runtime)" />
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="31f56055-9d30-42b3-a2b1-fb3f554d7075(jetbrains.mps.lang.smodel.query.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
@@ -6044,6 +6045,7 @@
         <module file="${mps_home}/core/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.constraints.devkit" />
         <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.dataflow.devkit" />
+        <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.migration.devkit/jetbrains.mps.devkit.aspect.migration.devkit" />
         <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.structure.devkit" />
         <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.textgen.devkit" />
         <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.typesystem.devkit" />
@@ -6122,7 +6124,6 @@
         <module file="${mps_home}/languages/baseLanguage/varVariable/jetbrains.mps.baseLanguage.varVariable.mpl" bootstrap="true" />
         <module file="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runner.runtime/jetbrains.mps.build.mps.runner.runtime.msd" />
         <module file="${mps_home}/plugins/mps-core/languages/core.xml/jetbrains.mps.core.xml.mpl" />
-        <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.migration.devkit/jetbrains.mps.devkit.aspect.migration.devkit" />
         <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.templates.devkit" />
         <module file="${mps_home}/editor/editing-runtime/jetbrains.mps.editing.runtime.msd" />
         <module file="${mps_home}/languages/util/execution/util/jetbrains.mps.execution.util.mpl" />
