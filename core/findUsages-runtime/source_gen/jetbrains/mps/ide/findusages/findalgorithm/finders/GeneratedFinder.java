@@ -82,11 +82,6 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     doFind(node, scope, result, monitor);
     for (SNode res : result) {
       callback.onUsageFound(createSingleResult(res));
-      try {
-        Thread.sleep(10);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     }
   }
 
