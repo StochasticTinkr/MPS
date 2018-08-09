@@ -19,6 +19,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.impl.interpreted.TemplateCall;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
@@ -31,6 +32,7 @@ import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.TemplateApplyFacility;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
+import jetbrains.mps.generator.runtime.TemplateDeclaration2;
 import jetbrains.mps.generator.runtime.TemplateDeclarationKey;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateModel;
@@ -182,9 +184,29 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public Collection<SNode> applyTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException {
+    // (1) applyTemplate() invoked from interpreter (can change this by not using the method from interpreter)
+    //     (a) invoked template declaration is new and expects arguments in TC (e.g. interpreted TD)
+    //     (b) invoked template declaration is old and expects args at construction time, changes TC itself
+    //         can assume TC comes with proper values and flag TC to ignore subsequent subContext(Map).
+    //         caller can supply arguments[] of a proper length with null values.
+    // (2) applyTemplate() invoked from generated code or code that doesn't pass values through TC
+    //     (a) invoked template declaration is new and expects arguments in TC (e.g. interpreted TD
+    //         CAN I DO ANYTHING, provided I have no idea about parameter names? Can add a method to tell names for migration purposes
+    //           i.e. need to tell old TD from a new one. An interface with getParameterNames():String[] as indicator?
+    //           mangle TC with names and values
+    //     (b) invoked template declaration is old (means cross-compiled-generator template call) and expects args at construction time, changes TC itself
     TemplateDeclaration templateDeclarationInstance = loadTemplateDeclaration(templateDeclaration, templateNode, context, arguments);
     if (templateDeclarationInstance == null) {
       return Collections.emptyList();
+    }
+    if (templateDeclarationInstance instanceof TemplateDeclaration2) {
+      TemplateCall callSite = new TemplateCall(((TemplateDeclaration2) templateDeclarationInstance).getParameterNames(), arguments);
+      if (callSite.argumentsMismatch()) {
+        getLogger().error(templateDeclaration, "number of arguments doesn't match template", GeneratorUtil.describeInput(context));
+        // fall-though, as it's the way it was in TemplateDeclarationInterpreted
+      }
+      // context may keep a mapping label (e.g. from outer $INCLUDE$ label template)
+      context = callSite.prepareCallContext(context);
     }
     return templateDeclarationInstance.apply(this, context);
   }

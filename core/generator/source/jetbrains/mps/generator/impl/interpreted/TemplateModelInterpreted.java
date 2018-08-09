@@ -110,7 +110,7 @@ public class TemplateModelInterpreted extends TemplateModelBase {
       return null;
     }
 
-    return TemplateDeclarationInterpreted.create(templateNode, arguments);
+    return new TemplateDeclarationInterpreted(templateNode);
   }
 
   @Override
