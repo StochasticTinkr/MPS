@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.CollectorSink;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateContainer;
 import jetbrains.mps.generator.impl.WeaveTemplateContainer;
-import jetbrains.mps.generator.runtime.ApplySink;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
@@ -30,7 +30,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -106,30 +105,4 @@ public class TemplateDeclarationInterpreted extends TemplateDeclarationBase {
     return new TemplateDeclarationInterpreted(templateNode, arguments);
   }
 
-  private static class CollectorSink implements ApplySink {
-    private final Collection<SNode> myNodes;
-
-    /*package*/ CollectorSink(Collection<SNode> destination) {
-      myNodes = destination;
-    }
-
-    @Override
-    public void add(SNode node) {
-      myNodes.add(node);
-    }
-
-    @Override
-    public void add(SContainmentLink aggregation, SNode node) {
-      myNodes.add(node);
-    }
-
-    @Override
-    public void add(SContainmentLink aggregation, Collection<SNode> nodes) {
-      myNodes.addAll(nodes);
-    }
-
-    /*package*/ Collection<SNode> getCollected() {
-      return myNodes;
-    }
-  }
 }

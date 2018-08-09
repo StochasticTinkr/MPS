@@ -28,8 +28,10 @@ import jetbrains.mps.generator.runtime.NodePostProcessor;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
+import jetbrains.mps.generator.runtime.TemplateApplyFacility;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
+import jetbrains.mps.generator.runtime.TemplateDeclarationKey;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
@@ -240,6 +242,21 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public NodeWeaveFacility prepareWeave(@NotNull WeaveContext context, @NotNull SNodeReference templateNode) {
     return new NodeWeaveSupport(context, templateNode, this);
+  }
+
+  @Override
+  public TemplateApplyFacility prepare(SNodeReference templateDeclaration, SNodeReference callSite) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public TemplateApplyFacility prepare(TemplateDeclaration templateDeclaration, SNodeReference callSite) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public TemplateApplyFacility prepare(TemplateDeclarationKey templateDeclaration, SNodeReference callSite) {
+    throw new UnsupportedOperationException();
   }
 
   // Internal API, perhaps, shall be part of ExecutionEnvironmentInternal iface

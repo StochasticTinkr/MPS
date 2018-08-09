@@ -152,4 +152,14 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
    */
   @NotNull
   NodeWeaveFacility prepareWeave(@NotNull WeaveContext context, @NotNull SNodeReference templateNode);
+
+
+  // not null return value and arguments
+  TemplateApplyFacility prepare(SNodeReference templateDeclaration, SNodeReference callSite);
+
+  // not null return value and arguments
+  TemplateApplyFacility prepare(TemplateDeclaration templateDeclaration, SNodeReference callSite);
+
+  // not null return value and arguments
+  TemplateApplyFacility prepare(TemplateDeclarationKey templateDeclaration, SNodeReference callSite);
 }
