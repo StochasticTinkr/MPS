@@ -34,7 +34,6 @@ public interface TemplateModel2 extends TemplateModel {
    * TemplateModel implementation is advised though not required to cache supplied TemplateDeclaration instances.
    * @param tdKey identity of template declaration to load
    * @return null if no template with the supplied identity found
-   * @throws IllegalArgumentException if requested template declaration is not from this model (model reference part doesn't match). XXX is it worth it?
    */
   @Nullable
   TemplateDeclaration loadTemplate(TemplateDeclarationKey tdKey);

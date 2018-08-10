@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.runtime.TemplateDeclarationKey;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -29,9 +30,11 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 @Immutable
 public final class TemplateIdentity implements TemplateDeclarationKey {
   private final SNodeReference myNodeReference;
+  private final String myTemplateName;
 
-  private TemplateIdentity(SNodeReference nodeReference) {
+  private TemplateIdentity(SNodeReference nodeReference, String templateName) {
     myNodeReference = nodeReference;
+    myTemplateName = templateName;
   }
 
   @Override
@@ -44,8 +47,18 @@ public final class TemplateIdentity implements TemplateDeclarationKey {
     return myNodeReference;
   }
 
+  @Override
+  public String describe() {
+    return String.format("Template declaration %s from %s", myTemplateName == null ? myNodeReference.getNodeId()  : myTemplateName, getSourceModel().getName());
+  }
+
   // both arg and rv are not null
   public static TemplateDeclarationKey fromSourceNode(SNode/*node<TemplateDeclaration*/ templateDeclarationNode) {
-    return new TemplateIdentity(templateDeclarationNode.getReference());
+    // XXX intention is to have extra info, e.g. template name to help describe template in a human-friendly way
+    return new TemplateIdentity(templateDeclarationNode.getReference(), templateDeclarationNode.getName());
+  }
+
+  public static TemplateDeclarationKey fromPointer(SNodeReference template, @Nullable String templateName) {
+    return new TemplateIdentity(template, templateName);
   }
 }

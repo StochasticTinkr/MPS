@@ -37,4 +37,6 @@ public interface TemplateDeclarationKey {
    * @return mandatory pointer to source node (i.e. {@code node<TemplateDeclaration>}).
    */
   SNodeReference getSourceNode();
+
+  String describe();
 }

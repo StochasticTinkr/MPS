@@ -28,5 +28,7 @@ import org.jetbrains.annotations.Nullable;
 @ToRemove(version = 2018.3)
 public interface TemplateDeclaration2 extends TemplateDeclaration {
   @Nullable
-  String[] getParameterNames();
+  default String[] getParameterNames() {
+    return null;
+  }
 }

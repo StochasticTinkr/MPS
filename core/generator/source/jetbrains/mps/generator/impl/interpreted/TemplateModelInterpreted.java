@@ -18,7 +18,9 @@ package jetbrains.mps.generator.impl.interpreted;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
+import jetbrains.mps.generator.runtime.TemplateDeclarationKey;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModel2;
 import jetbrains.mps.generator.runtime.TemplateModelBase;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
@@ -29,7 +31,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -39,7 +40,7 @@ import java.util.Collections;
  *
  * Evgeny Gryaznov, Nov 29, 2010
  */
-public class TemplateModelInterpreted extends TemplateModelBase {
+public class TemplateModelInterpreted extends TemplateModelBase implements TemplateModel2 {
 
   private final SModel myModel;
   private final Class<? extends GeneratorQueryProvider> myQueryProviderClass;
@@ -102,10 +103,13 @@ public class TemplateModelInterpreted extends TemplateModelBase {
     return myMappings;
   }
 
+  @Nullable
   @Override
-  public TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments) {
-    assert template.getModelReference().equals(getSModelReference());
-    SNode templateNode = template.resolve(myModel.getRepository());
+  public TemplateDeclaration loadTemplate(TemplateDeclarationKey tdKey) {
+    if (!tdKey.getSourceModel().equals(getSModelReference())) {
+      return null;
+    }
+    SNode templateNode = tdKey.getSourceNode().resolve(myModel.getRepository());
     if (templateNode == null || !RuleUtil.concept_TemplateDeclaration.equals(templateNode.getConcept())) {
       return null;
     }

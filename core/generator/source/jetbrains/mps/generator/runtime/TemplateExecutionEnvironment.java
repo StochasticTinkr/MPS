@@ -20,11 +20,13 @@ import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.TemplateGenerator;
+import jetbrains.mps.generator.impl.TemplateIdentity;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -33,6 +35,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.Collection;
 import java.util.List;
@@ -127,9 +130,18 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
    * @param templateDeclaration identifies template to load
    * @param callSite identifies location where invocation happens
    * @return never {@code null}, non necessarily exact generated class, might be a decorator that traces uses or reports errors.
+   * @since 2018.3
    */
   @NotNull
   TemplateDeclaration findTemplate(@NotNull TemplateDeclarationKey templateDeclaration, @NotNull SNodeReference callSite);
+
+  /**
+   * Intended for use from generated templates to obtain key for {@link #findTemplate(TemplateDeclarationKey, SNodeReference)}
+   * FIXME PROVISIONAL CODE, PLEASE CONSIDER ANOTHER APPROACH
+   *  see method impl for details
+   * @since 2018.3
+   */
+  TemplateDeclarationKey createTemplateKey(String modelRef, String nodeId, String templateName);
 
   void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
 

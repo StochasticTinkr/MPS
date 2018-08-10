@@ -150,7 +150,6 @@ public abstract class TemplateDeclarationBase implements TemplateDeclaration {
     return new FR1(myAggregationLinks[aggregationIndex], result);
   }
 
-
   protected SConcept[] initConcepts() {
     return null;
   }

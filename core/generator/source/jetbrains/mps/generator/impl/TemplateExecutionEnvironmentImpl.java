@@ -45,6 +45,7 @@ import jetbrains.mps.generator.trace.RuleTrace;
 import jetbrains.mps.generator.trace.TraceFacility;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
@@ -55,6 +56,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -282,8 +284,8 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       legacyTD = true;
     }
     if (templateInstance == null) {
-      String m = "Template declaration %s not found. Cannot apply template declaration, try to check & regenerate affected generators";
-      return new BadTemplateDeclaration(String.format(m, templateDeclaration));
+      String m = "Could not find '%s'. Cannot apply template declaration, try to check & regenerate affected generators";
+      return new BadTemplateDeclaration(String.format(m, templateDeclaration.describe()));
     }
 
     if (!legacyTD) {
@@ -335,6 +337,18 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return templateDeclarationInstance;
   }
 
+  @Override
+  public TemplateDeclarationKey createTemplateKey(String modelRef, String nodeId, String templateName) {
+    /*
+     * Need to create a key for external template both in TemplateDeclarationBase and ReductionRuleBase subclasses, hence
+     * have to placed this method into a shared location. Besides, would be great to have proper access to PersistenceFacade, which is possible here
+     * Perhaps, shall introduce few copies of findTemplate() method, one to take these strings, and another to take TD instance and wrap it with a trace facility?
+     * Why I didn't do it right away: (a) the idea behind TDK was to keep 1 single key, (b) few related methods urge me to group them into ApplyFacility I've
+     * just deleted. Need to make up my mind
+     */
+    PersistenceFacade pf = PersistenceFacade.getInstance();
+    return TemplateIdentity.fromPointer(new SNodePointer(pf.createModelReference(modelRef), pf.createNodeId(nodeId)), templateName);
+  }
 
   @Override
   public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {
