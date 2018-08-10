@@ -122,7 +122,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> result = new Template_OutputRoot_by_MappingRule().apply(context);
+      Collection<SNode> result = new Template_OutputRoot_by_MappingRule().apply(environment, context);
       return result;
     }
   }
@@ -136,7 +136,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationException {
       DefaultTemplateContext context = new DefaultTemplateContext(environment, null, null);
-      Collection<SNode> result = new Template_OutputRoot_By_RootRule().apply(context);
+      Collection<SNode> result = new Template_OutputRoot_By_RootRule().apply(environment, context);
       return result;
     }
   }

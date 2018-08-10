@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.generator.baseLanguage.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateModelBase;
-import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModel2;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
@@ -12,14 +12,15 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
+import jetbrains.mps.generator.runtime.TemplateDeclarationKey;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 
 @Generated
-public class TemplateModelImpl extends TemplateModelBase implements TemplateModel {
+public class TemplateModelImpl extends TemplateModelBase implements TemplateModel2 {
   private final Collection<TemplateMappingConfiguration> mappings;
   private final Collection<TemplateSwitchMapping> switches;
   private final SModelReference model;
@@ -41,408 +42,314 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
   public Collection<TemplateSwitchMapping> getSwitches() {
     return switches;
   }
-  public TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments) {
-    if (!(model.equals(template.getModelReference()))) {
+
+  @Nullable
+  @Override
+  public TemplateDeclaration loadTemplate(TemplateDeclarationKey key) {
+    if (!(model.equals(key.getSourceModel()))) {
       return null;
     }
+    final SNodeReference template = key.getSourceNode();
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139275804866"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_SPropertyAccess_simple();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139337080836"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_EnumMemberReference_notNull_internalValue();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139337716713"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_EnumMemberReference_null_internalValue();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139860712752"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_InsertNewNextSiblingOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139868534269"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ReplaceWithNewOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1140132803080"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ReplaceWithAnotherOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1143221281255"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_InsertNewPrevSiblingOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1143225332667"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_InsertNextSiblingOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1143225530636"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_InsertPrevSiblingOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1143235980693"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Model_CreateNewNode();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1143240338758"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetModelOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1143512740044"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetNextSiblingOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1143512764019"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetPrevSiblingOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1144151252418"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_CopyOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1144196353853"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_IsRoleOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1145572255293"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetNextSiblingsOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1145573188503"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetPrevSiblingsOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1145573721933"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetAllSiblingsOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1146176981592"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Property_HasValue_Enum_notNullDefaultValue();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1146178533035"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Property_HasValue_Enum_nullDefaultValue();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1146249898887"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_SPropertyAccess_enum();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1146256190196"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Property_HasValue_Simple();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1166648267350"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Model_CreateNewRootNode();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1171307696664"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetDescendants_noConceptsList();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1171312080424"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetContainingRootOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1171322948481"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Model_RootsOperation_hasConcept();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1171323120109"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Model_RootsOperation_noConcept();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1171324405763"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Model_NodesOperation_old();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1171324442827"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Model_NodesOperation_new();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1171415812313"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetAncestor_noConceptList();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1171415959992"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetAncestor_whereConceptInList();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1171501128990"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetChildrenOperation_noLinkQualifier();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1171999358177"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_IsNullOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1172008524513"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_IsNotNullOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1172323346325"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetConceptOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1173119356571"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetDescendants_whereConceptInList();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1173123173263"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetAncestors_noConceptsList();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1173123284724"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetAncestors_whereConceptInList();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1176109882192"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Model_RootsIncludingImportedOperation_hasConcept();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1176109959275"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Model_RootsIncludingImportedOperation_noConcept();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1179168430704"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetIndexInParentOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1181945881357"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 1, arguments.length);
-      return new Template_reduce_GenericNewExpression_with_SNodeCreator((SNode) arguments[0]);
+      return new Template_reduce_GenericNewExpression_with_SNodeCreator();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1181950938878"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Concept_NewInstance();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1182511526037"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Model_NodesIncludingImportedOperation_hasConcept();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1182511568451"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Model_NodesIncludingImportedOperation_noConcept();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6119287946611399777"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetChildrenOperation_whereLinkQualifier();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1627366655853340206"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetAncestor_noConceptList_SameML();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1627366655853340240"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetAncestor_whereConceptInList_SameML();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1883223317721107150"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_IfInstanceOfStatement();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "4040588429969066518"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ModuleReferenceExpression();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "4040588429969069954"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_LanguageReferenceExpression();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2837022116960087580"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_OperationParamConcept();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6506750610319117922"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_PropertyDeclaration_SProperty();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6506750610319222074"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_LinkDeclaration_SLink();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6506750610319308637"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptDeclaration2SAbstractConcept();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2196823097110102159"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Property2Id();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2196823097110122526"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Link2Id();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "7453996997717790875"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetSConceptOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2565258849285491368"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_PropertyDeclaration_Bootstrap_SProperty();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2565258849285680264"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_LinkDeclaration_Bootstrap_SLink();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2565258849285760397"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptDeclaration_Bootstrap_SAbstractConcept();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "4497478346159792589"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_LanguageRefExpression();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8560627202335249984"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptMethodCallReflectiveCommon();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2391302010127536581"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptMethodCallReflective();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8560627202335295549"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptMethodCall();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8560627202335197469"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptMethodCallReflectiveWithThis();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1225195370966"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_NodeOrConcept();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6417869169768444729"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptMethodCallWithSuper();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6862765979525687754"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptMethodCallCommon();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "4279359955658653877"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 1, arguments.length);
-      return new Template_reduce_Parameters((SNode) arguments[0]);
+      return new Template_reduce_Parameters();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2944629966652296869"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_LanguageId_SLanguage();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1678062499343218959"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ModuleRefExpression();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1678062499342610417"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ModulePointer_SModuleReference();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "4862225818734494682"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_GetChildrenAndChildAttributesOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6911370362349544063"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptId_SConcept();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6911370362349557186"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_PropertyId_SProperty();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2836521009935069133"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptId_SInterfaceConcept();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "7723526804945759316"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_weave_ConceptSwitchMap();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "7723526804945925517"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptSwitch();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "5091528797226454967"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptDeclaration2SConcept();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8415841354032418697"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ReferenceLinkId_SReferenceLink();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8415841354032486185"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ContainmentLinkId_SContainmentLink();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8098116031887344028"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptCaseBody_Hack1();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "75056552358298205"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptSwitch_SubconceptCases();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "5802093636975087540"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ModuleReferenceFromString();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3866789353798969378"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_reflectiveInvokeThis();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3866789353799066898"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_invoke();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3866789353799081477"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_reflectiveInvoke();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3099391750892152088"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_invokeWithThis();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3099391750892188134"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptMethodCallWithThis();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3099391750892189206"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_invokeWithSuper();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3099391750892222576"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ConceptMethodCallReflectiveWithSuper();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3099391750892228764"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_NodeOrConceptCommon();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3099391750892235826"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_reflectiveInvokeSuper();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2733396919553004342"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_EnumDeclaration_indentityValueSequence();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "5769081855527316896"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ModuleIdentity_SLanguage();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3506770386464377169"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Model_PointerOperation();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1863527487546157042"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_ModelPointerExpression();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3320646261222031787"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_NodeIdentity_SNodeReference();
     }
     return null;
   }
+
   @Override
   public GeneratorQueryProvider getQueryProvider() {
     return reflectiveProvider(QueriesGenerated.class);

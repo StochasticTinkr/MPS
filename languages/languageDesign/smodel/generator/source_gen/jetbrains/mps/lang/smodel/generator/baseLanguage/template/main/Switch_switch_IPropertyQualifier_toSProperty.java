@@ -67,7 +67,7 @@ public class Switch_switch_IPropertyQualifier_toSProperty extends TemplateSwitch
       SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_78_1(new SourceSubstituteMacroNodeContext(context, includeMacro_2s2e5_b0a0a2a1i));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new Template_reduce_PropertyDeclaration_SProperty().apply(context1);
+        tlist1 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context1);
       }
       return tlist1;
     }

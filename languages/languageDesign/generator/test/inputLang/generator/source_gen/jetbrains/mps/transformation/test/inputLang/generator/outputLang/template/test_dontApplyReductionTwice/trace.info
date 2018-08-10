@@ -18,7 +18,7 @@
       <unit at="10,0,16,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="20,0,58,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateModelImpl" />
+      <unit at="22,0,64,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)/1209604518979">
@@ -30,8 +30,8 @@
       <node id="1209604563573" at="34,31,35,373" concept="11" />
       <node id="1209604563573" at="38,94,39,97" concept="7" />
       <node id="1209604563573" at="42,103,43,80" concept="6" />
-      <node id="1209604563573" at="43,80,44,74" concept="6" />
-      <node id="1209604563573" at="44,74,45,20" concept="7" />
+      <node id="1209604563573" at="43,80,44,87" concept="6" />
+      <node id="1209604563573" at="44,87,45,20" concept="7" />
       <node id="1209604563573" at="34,0,37,0" concept="1" trace="RootMappingRule0#()V" />
       <node id="1209604518979" at="25,0,29,0" concept="1" trace="Mapping_main#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
       <node id="1209604518979" at="29,0,33,0" concept="5" trace="getRootRules#()Ljava/util/Collection;" />
@@ -70,10 +70,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)/1209605205934">
     <file name="TemplateModelImpl.java">
-      <node id="1209605205934" at="47,217,48,80" concept="2" />
-      <node id="1209605205934" at="48,80,49,39" concept="7" />
-      <node id="1209605205934" at="46,5,50,5" concept="4" />
-      <scope id="1209605205934" at="47,217,49,39" />
+      <node id="1209605205934" at="53,217,54,39" concept="7" />
+      <node id="1209605205934" at="52,56,55,5" concept="4" />
+      <scope id="1209605205934" at="53,217,54,39" />
     </file>
     <file name="Template_outputRoot.java">
       <node id="1209605205934" at="29,43,30,32" concept="7" />

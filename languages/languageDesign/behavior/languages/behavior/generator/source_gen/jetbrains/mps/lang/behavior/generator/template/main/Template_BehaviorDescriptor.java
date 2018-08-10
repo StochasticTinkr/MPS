@@ -1473,7 +1473,7 @@ public class Template_BehaviorDescriptor extends TemplateDeclarationBase impleme
                                                 TemplateContext context78 = context77.subContext();
                                                 {
                                                   Collection<SNode> tlist173 = null;
-                                                  tlist173 = new Template_reduce_MethodInvocation().apply(context78);
+                                                  tlist173 = new Template_reduce_MethodInvocation().apply(environment, context78);
                                                   for (SNode child174 : TemplateUtil.asNotNull(tlist173)) {
                                                     tnode172.addChild(myAggregationLinks[27], child174);
                                                   }
@@ -1521,7 +1521,7 @@ public class Template_BehaviorDescriptor extends TemplateDeclarationBase impleme
                                     TemplateContext context79 = context74.subContext();
                                     {
                                       Collection<SNode> tlist179 = null;
-                                      tlist179 = new Template_reduce_MethodInvocation().apply(context79);
+                                      tlist179 = new Template_reduce_MethodInvocation().apply(environment, context79);
                                       for (SNode child180 : TemplateUtil.asNotNull(tlist179)) {
                                         tnode178.addChild(myAggregationLinks[18], child180);
                                       }
@@ -2024,7 +2024,7 @@ public class Template_BehaviorDescriptor extends TemplateDeclarationBase impleme
                                                 TemplateContext context109 = context108.subContext();
                                                 {
                                                   Collection<SNode> tlist240 = null;
-                                                  tlist240 = new Template_reduce_MethodInvocation().apply(context109);
+                                                  tlist240 = new Template_reduce_MethodInvocation().apply(environment, context109);
                                                   for (SNode child241 : TemplateUtil.asNotNull(tlist240)) {
                                                     tnode239.addChild(myAggregationLinks[27], child241);
                                                   }
@@ -2072,7 +2072,7 @@ public class Template_BehaviorDescriptor extends TemplateDeclarationBase impleme
                                     TemplateContext context110 = context105.subContext();
                                     {
                                       Collection<SNode> tlist246 = null;
-                                      tlist246 = new Template_reduce_MethodInvocation().apply(context110);
+                                      tlist246 = new Template_reduce_MethodInvocation().apply(environment, context110);
                                       for (SNode child247 : TemplateUtil.asNotNull(tlist246)) {
                                         tnode245.addChild(myAggregationLinks[18], child247);
                                       }

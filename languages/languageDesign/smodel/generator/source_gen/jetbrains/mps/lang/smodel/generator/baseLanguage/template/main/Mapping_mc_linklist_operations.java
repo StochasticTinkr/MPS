@@ -61,7 +61,7 @@ public class Mapping_mc_linklist_operations extends MapConfigBase implements Tem
           SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_28_1(new SourceSubstituteMacroNodeContext(context1, includeMacro_mvfyrh_b0a0a1a4a2a1d));
           TemplateContext context2 = context1.subContext(null, callInputNode4);
           if (callInputNode4 != null) {
-            tlist4 = new Template_reduce_LinkDeclaration_SLink().apply(context2);
+            tlist4 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context2);
           }
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -129,7 +129,7 @@ public class Mapping_mc_linklist_operations extends MapConfigBase implements Tem
           SNode callInputNode7 = QueriesGenerated.sourceNodeQuery_28_4(new SourceSubstituteMacroNodeContext(context1, includeMacro_mvfyrh_b0a0a1a5a2a2e));
           TemplateContext context2 = context1.subContext(null, callInputNode7);
           if (callInputNode7 != null) {
-            tlist7 = new Template_reduce_ConceptDeclaration2SConcept().apply(context2);
+            tlist7 = new Template_reduce_ConceptDeclaration2SConcept().apply(environment, context2);
           }
           for (SNode child8 : TemplateUtil.asNotNull(tlist7)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child8);

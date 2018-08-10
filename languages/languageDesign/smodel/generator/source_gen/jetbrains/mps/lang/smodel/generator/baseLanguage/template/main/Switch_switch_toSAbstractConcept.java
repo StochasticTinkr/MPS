@@ -82,7 +82,7 @@ public class Switch_switch_toSAbstractConcept extends TemplateSwitchBase impleme
       SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_76_1(new SourceSubstituteMacroNodeContext(context, includeMacro_594pev_b0a0a2a1i));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context1);
+        tlist1 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context1);
       }
       return tlist1;
     }

@@ -86,7 +86,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
               SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_63_0(new SourceSubstituteMacroNodeContext(context2, includeMacro_szb33j_b0a0a1a2a1a1a2a1f));
               TemplateContext context3 = context2.subContext(null, callInputNode3);
               if (callInputNode3 != null) {
-                tlist3 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context3);
+                tlist3 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context3);
               }
               for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
                 tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);
@@ -123,7 +123,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
               SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_63_1(new SourceSubstituteMacroNodeContext(context2, includeMacro_szb33j_b0a0a1a2a1a1a2a1g));
               TemplateContext context3 = context2.subContext(null, callInputNode3);
               if (callInputNode3 != null) {
-                tlist3 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context3);
+                tlist3 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context3);
               }
               for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
                 tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);
@@ -186,7 +186,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
               SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_63_3(new SourceSubstituteMacroNodeContext(context2, includeMacro_szb33j_b0a0a1a2a1a1a2a1h));
               TemplateContext context3 = context2.subContext(null, callInputNode3);
               if (callInputNode3 != null) {
-                tlist3 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context3);
+                tlist3 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context3);
               }
               for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
                 tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);
@@ -249,7 +249,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
               SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_63_5(new SourceSubstituteMacroNodeContext(context2, includeMacro_szb33j_b0a0a1a2a1a1a2a1i));
               TemplateContext context3 = context2.subContext(null, callInputNode3);
               if (callInputNode3 != null) {
-                tlist3 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context3);
+                tlist3 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context3);
               }
               for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
                 tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);
@@ -493,7 +493,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
           SNode callInputNode6 = QueriesGenerated.sourceNodeQuery_63_19(new SourceSubstituteMacroNodeContext(context1, includeMacro_szb33j_b0a0a1a5a2a2m));
           TemplateContext context2 = context1.subContext(null, callInputNode6);
           if (callInputNode6 != null) {
-            tlist6 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
+            tlist6 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context2);
           }
           for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child7);
@@ -544,7 +544,7 @@ public class Mapping_mc_attribute_access extends MapConfigBase implements Templa
           SNode callInputNode6 = QueriesGenerated.sourceNodeQuery_63_22(new SourceSubstituteMacroNodeContext(context1, includeMacro_szb33j_b0a0a1a5a2a2n));
           TemplateContext context2 = context1.subContext(null, callInputNode6);
           if (callInputNode6 != null) {
-            tlist6 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
+            tlist6 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context2);
           }
           for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child7);

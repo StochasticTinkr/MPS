@@ -44,10 +44,10 @@ public class Mapping_mc_property_operations extends MapConfigBase implements Tem
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
       if (QueriesGenerated.rule_Condition_1_0(new BaseMappingRuleContext(context, rule_1xpg9b_b0a0c0b3))) {
-        Collection<SNode> tlist2 = new Template_reduce_SPropertyAccess_enum().apply(context);
+        Collection<SNode> tlist2 = new Template_reduce_SPropertyAccess_enum().apply(environment, context);
         tlist1 = tlist2;
       } else {
-        Collection<SNode> tlist3 = new Template_reduce_SPropertyAccess_simple().apply(context);
+        Collection<SNode> tlist3 = new Template_reduce_SPropertyAccess_simple().apply(environment, context);
         tlist1 = tlist3;
       }
       return tlist1;
@@ -64,7 +64,7 @@ public class Mapping_mc_property_operations extends MapConfigBase implements Tem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_EnumMemberReference_notNull_internalValue().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_EnumMemberReference_notNull_internalValue().apply(environment, context);
       return tlist1;
     }
   }
@@ -79,7 +79,7 @@ public class Mapping_mc_property_operations extends MapConfigBase implements Tem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_EnumMemberReference_null_internalValue().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_EnumMemberReference_null_internalValue().apply(environment, context);
       return tlist1;
     }
   }
@@ -113,7 +113,7 @@ public class Mapping_mc_property_operations extends MapConfigBase implements Tem
           SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_1_1(new SourceSubstituteMacroNodeContext(context1, includeMacro_1xpg9b_b0a0a1a4a2a2g));
           TemplateContext context2 = context1.subContext(null, callInputNode4);
           if (callInputNode4 != null) {
-            tlist4 = new Template_reduce_PropertyDeclaration_SProperty().apply(context2);
+            tlist4 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context2);
           }
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -164,7 +164,7 @@ public class Mapping_mc_property_operations extends MapConfigBase implements Tem
           SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_1_4(new SourceSubstituteMacroNodeContext(context1, includeMacro_1xpg9b_b0a0a1a4a2a2h));
           TemplateContext context2 = context1.subContext(null, callInputNode4);
           if (callInputNode4 != null) {
-            tlist4 = new Template_reduce_PropertyDeclaration_SProperty().apply(context2);
+            tlist4 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context2);
           }
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -237,7 +237,7 @@ public class Mapping_mc_property_operations extends MapConfigBase implements Tem
           SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_1_7(new SourceSubstituteMacroNodeContext(context1, includeMacro_1xpg9b_b0a0a1a4a2a1i));
           TemplateContext context2 = context1.subContext(null, callInputNode4);
           if (callInputNode4 != null) {
-            tlist4 = new Template_reduce_PropertyDeclaration_SProperty().apply(context2);
+            tlist4 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context2);
           }
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -264,7 +264,7 @@ public class Mapping_mc_property_operations extends MapConfigBase implements Tem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Property_HasValue_Simple().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Property_HasValue_Simple().apply(environment, context);
       return tlist1;
     }
   }
@@ -279,7 +279,7 @@ public class Mapping_mc_property_operations extends MapConfigBase implements Tem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Property_HasValue_Enum_notNullDefaultValue().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Property_HasValue_Enum_notNullDefaultValue().apply(environment, context);
       return tlist1;
     }
   }
@@ -294,7 +294,7 @@ public class Mapping_mc_property_operations extends MapConfigBase implements Tem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Property_HasValue_Enum_nullDefaultValue().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Property_HasValue_Enum_nullDefaultValue().apply(environment, context);
       return tlist1;
     }
   }

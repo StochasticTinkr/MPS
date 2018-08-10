@@ -58,7 +58,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> result = new Template_map_RootConcept().apply(context);
+      Collection<SNode> result = new Template_map_RootConcept().apply(environment, context);
       environment.registerLabel(context.getInput(), result, "map_RootConcept");
       return result;
     }

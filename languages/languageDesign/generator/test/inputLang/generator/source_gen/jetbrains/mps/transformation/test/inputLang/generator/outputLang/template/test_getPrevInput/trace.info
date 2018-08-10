@@ -20,7 +20,7 @@
       <unit at="19,0,103,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="20,0,62,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateModelImpl" />
+      <unit at="22,0,67,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)/1202255161944">
@@ -32,14 +32,14 @@
       <node id="1202255161953" at="34,31,35,362" concept="13" />
       <node id="1202255161953" at="38,94,39,97" concept="9" />
       <node id="1202255161953" at="42,103,43,80" concept="8" />
-      <node id="1202255161953" at="43,80,44,76" concept="8" />
-      <node id="1202255161953" at="44,76,45,74" concept="3" />
+      <node id="1202255161953" at="43,80,44,89" concept="8" />
+      <node id="1202255161953" at="44,89,45,74" concept="3" />
       <node id="1202255161953" at="45,74,46,20" concept="9" />
       <node id="1202338801828" at="50,31,51,362" concept="13" />
       <node id="1202338801828" at="54,94,55,97" concept="9" />
       <node id="1202338801828" at="58,103,59,80" concept="8" />
-      <node id="1202338801828" at="59,80,60,76" concept="8" />
-      <node id="1202338801828" at="60,76,61,74" concept="3" />
+      <node id="1202338801828" at="59,80,60,89" concept="8" />
+      <node id="1202338801828" at="60,89,61,74" concept="3" />
       <node id="1202338801828" at="61,74,62,20" concept="9" />
       <node id="1202255161953" at="34,0,37,0" concept="1" trace="RootMappingRule0#()V" />
       <node id="1202338801828" at="50,0,53,0" concept="1" trace="RootMappingRule1#()V" />
@@ -175,10 +175,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1202255620269" at="47,206,48,80" concept="3" />
-      <node id="1202255620269" at="48,80,49,41" concept="9" />
-      <node id="1202255620269" at="46,5,50,5" concept="6" />
-      <scope id="1202255620269" at="47,206,49,41" />
+      <node id="1202255620269" at="53,206,54,41" concept="9" />
+      <node id="1202255620269" at="52,56,55,5" concept="6" />
+      <scope id="1202255620269" at="53,206,54,41" />
     </file>
     <file name="Template_OutputRoot_1.java">
       <node id="1202255620269" at="37,43,38,32" concept="9" />
@@ -491,10 +490,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1202338159177" at="51,206,52,80" concept="3" />
-      <node id="1202338159177" at="52,80,53,41" concept="9" />
-      <node id="1202338159177" at="50,5,54,5" concept="6" />
-      <scope id="1202338159177" at="51,206,53,41" />
+      <node id="1202338159177" at="56,206,57,41" concept="9" />
+      <node id="1202338159177" at="55,5,58,5" concept="6" />
+      <scope id="1202338159177" at="56,206,57,41" />
     </file>
     <file name="Template_OutputRoot_2.java">
       <node id="1202338159177" at="37,43,38,32" concept="9" />

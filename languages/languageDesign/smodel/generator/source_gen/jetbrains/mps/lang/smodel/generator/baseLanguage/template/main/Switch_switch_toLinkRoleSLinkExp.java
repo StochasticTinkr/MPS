@@ -54,7 +54,7 @@ public class Switch_switch_toLinkRoleSLinkExp extends TemplateSwitchBase impleme
       SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_52_0(new SourceSubstituteMacroNodeContext(context, includeMacro_gqxre5_b0a0a2a1h));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new Template_reduce_LinkDeclaration_SLink().apply(context1);
+        tlist1 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context1);
       }
       return tlist1;
     }
@@ -70,7 +70,7 @@ public class Switch_switch_toLinkRoleSLinkExp extends TemplateSwitchBase impleme
       SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_52_1(new SourceSubstituteMacroNodeContext(context, includeMacro_gqxre5_b0a0a2a1i));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new Template_reduce_LinkDeclaration_SLink().apply(context1);
+        tlist1 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context1);
       }
       return tlist1;
     }
@@ -86,7 +86,7 @@ public class Switch_switch_toLinkRoleSLinkExp extends TemplateSwitchBase impleme
       SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_52_2(new SourceSubstituteMacroNodeContext(context, includeMacro_gqxre5_b0a0a2a1j));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new Template_reduce_LinkDeclaration_SLink().apply(context1);
+        tlist1 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context1);
       }
       return tlist1;
     }

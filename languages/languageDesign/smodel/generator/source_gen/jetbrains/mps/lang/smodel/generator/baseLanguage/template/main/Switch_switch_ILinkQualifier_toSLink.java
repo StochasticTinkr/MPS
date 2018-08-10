@@ -67,7 +67,7 @@ public class Switch_switch_ILinkQualifier_toSLink extends TemplateSwitchBase imp
       SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_79_1(new SourceSubstituteMacroNodeContext(context, includeMacro_3v20rx_b0a0a2a1i));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new Template_reduce_LinkDeclaration_SLink().apply(context1);
+        tlist1 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context1);
       }
       return tlist1;
     }

@@ -70,7 +70,7 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
             SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_53_1(new SourceSubstituteMacroNodeContext(context1, includeMacro_b1hjv9_b0a0a1a4a1a2a2d));
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
-              tlist5 = new Template_reduce_PropertyDeclaration_SProperty().apply(context2);
+              tlist5 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context2);
             }
             for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
               tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child6);
@@ -109,7 +109,7 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
             SNode callInputNode12 = QueriesGenerated.sourceNodeQuery_53_4(new SourceSubstituteMacroNodeContext(context3, includeMacro_b1hjv9_b0a0a1a4a1a0c0c3));
             TemplateContext context4 = context3.subContext(null, callInputNode12);
             if (callInputNode12 != null) {
-              tlist12 = new Template_reduce_PropertyDeclaration_SProperty().apply(context4);
+              tlist12 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context4);
             }
             for (SNode child13 : TemplateUtil.asNotNull(tlist12)) {
               tnode9.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child13);
@@ -191,7 +191,7 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
             SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_53_7(new SourceSubstituteMacroNodeContext(context1, includeMacro_b1hjv9_b0a0a1a4a1a2a2e));
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
-              tlist5 = new Template_reduce_PropertyDeclaration_SProperty().apply(context2);
+              tlist5 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context2);
             }
             for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
               tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child6);
@@ -222,7 +222,7 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
                     SNode callInputNode11 = QueriesGenerated.sourceNodeQuery_53_9(new SourceSubstituteMacroNodeContext(context4, includeMacro_b1hjv9_b0a0a1a4a1a1a1a5a1a2a2e));
                     TemplateContext context5 = context4.subContext(null, callInputNode11);
                     if (callInputNode11 != null) {
-                      tlist11 = new Template_reduce_PropertyDeclaration_SProperty().apply(context5);
+                      tlist11 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context5);
                     }
                     for (SNode child12 : TemplateUtil.asNotNull(tlist11)) {
                       tnode8.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child12);
@@ -280,7 +280,7 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
             SNode callInputNode19 = QueriesGenerated.sourceNodeQuery_53_12(new SourceSubstituteMacroNodeContext(context6, includeMacro_b1hjv9_b0a0a1a4a1a0c0c4));
             TemplateContext context7 = context6.subContext(null, callInputNode19);
             if (callInputNode19 != null) {
-              tlist19 = new Template_reduce_PropertyDeclaration_SProperty().apply(context7);
+              tlist19 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context7);
             }
             for (SNode child20 : TemplateUtil.asNotNull(tlist19)) {
               tnode16.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child20);
@@ -328,7 +328,7 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
                             SNode callInputNode28 = QueriesGenerated.sourceNodeQuery_53_14(new SourceSubstituteMacroNodeContext(context11, includeMacro_b1hjv9_b0a0a1a4a1a1a1a1a1a2a1a5a1a0c0c4));
                             TemplateContext context12 = context11.subContext(null, callInputNode28);
                             if (callInputNode28 != null) {
-                              tlist28 = new Template_reduce_PropertyDeclaration_SProperty().apply(context12);
+                              tlist28 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context12);
                             }
                             for (SNode child29 : TemplateUtil.asNotNull(tlist28)) {
                               tnode25.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child29);
@@ -408,7 +408,7 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
             SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_53_17(new SourceSubstituteMacroNodeContext(context1, includeMacro_b1hjv9_b0a0a1a4a1a2a2f));
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
-              tlist5 = new Template_reduce_PropertyDeclaration_SProperty().apply(context2);
+              tlist5 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context2);
             }
             for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
               tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child6);
@@ -456,7 +456,7 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
                             SNode callInputNode14 = QueriesGenerated.sourceNodeQuery_53_19(new SourceSubstituteMacroNodeContext(context6, includeMacro_b1hjv9_b0a0a1a4a1a1a1a1a1a2a1a5a1a2a2f));
                             TemplateContext context7 = context6.subContext(null, callInputNode14);
                             if (callInputNode14 != null) {
-                              tlist14 = new Template_reduce_PropertyDeclaration_SProperty().apply(context7);
+                              tlist14 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context7);
                             }
                             for (SNode child15 : TemplateUtil.asNotNull(tlist14)) {
                               tnode11.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child15);

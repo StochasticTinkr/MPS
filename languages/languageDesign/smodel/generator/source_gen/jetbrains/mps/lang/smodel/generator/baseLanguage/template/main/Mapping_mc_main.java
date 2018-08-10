@@ -255,7 +255,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
             SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_0_2(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a2n));
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
-              tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
+              tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context2);
             }
             tlist4 = tlist5;
           } else {
@@ -323,7 +323,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
             SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_0_5(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a2o));
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
-              tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
+              tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context2);
             }
             tlist4 = tlist5;
           } else {
@@ -391,7 +391,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
             SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_0_8(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a2p));
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
-              tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
+              tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context2);
             }
             tlist4 = tlist5;
           } else {
@@ -459,7 +459,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
             SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_0_11(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a2q));
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
-              tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
+              tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context2);
             }
             tlist4 = tlist5;
           } else {
@@ -523,7 +523,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
             SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_0_14(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a1a4a2a1r));
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
-              tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
+              tlist5 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context2);
             }
             tlist4 = tlist5;
           } else {
@@ -656,7 +656,8 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GenericNewExpression_with_SNodeCreator().apply(context, ((SNode) QueriesGenerated.templateArgumentQuery_0_0(new TemplateArgumentContext(context, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "5091528797226430546")))));
+      TemplateContext context1 = context.withVariable("concept", ((SNode) QueriesGenerated.templateArgumentQuery_0_0(new TemplateArgumentContext(context, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "5091528797226430546")))));
+      Collection<SNode> tlist1 = new Template_reduce_GenericNewExpression_with_SNodeCreator().apply(environment, context1);
       return tlist1;
     }
   }
@@ -673,9 +674,10 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         {
           Collection<SNode> tlist2 = null;
           SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_0_18(new SourceSubstituteMacroNodeContext(context1, callMacro_rbibyw_b0a0a1a1a2a1w));
-          TemplateContext context2 = context1.subContext(null, callInputNode2);
+          TemplateContext context2;
+          context2 = context1.subContext(null, callInputNode2);
           if (callInputNode2 != null) {
-            tlist2 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
+            tlist2 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context2);
           }
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), child3);
@@ -722,17 +724,19 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
       if (QueriesGenerated.ifMacro_Condition_0_5(new IfMacroContext(context, ifMacroRef_rbibyw_b0a0c0b42))) {
         Collection<SNode> tlist2 = null;
         SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_0_20(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a2a1y));
-        TemplateContext context1 = context.subContext(null, callInputNode2);
+        TemplateContext context1;
+        context1 = context.subContext(null, callInputNode2);
         if (callInputNode2 != null) {
-          tlist2 = new Template_reduce_ConceptDeclaration_Bootstrap_SAbstractConcept().apply(context1);
+          tlist2 = new Template_reduce_ConceptDeclaration_Bootstrap_SAbstractConcept().apply(environment, context1);
         }
         tlist1 = tlist2;
       } else {
         Collection<SNode> tlist3 = null;
         SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_0_19(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a0c0b42));
-        TemplateContext context2 = context.subContext(null, callInputNode3);
+        TemplateContext context2;
+        context2 = context.subContext(null, callInputNode3);
         if (callInputNode3 != null) {
-          tlist3 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context2);
+          tlist3 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context2);
         }
         tlist1 = tlist3;
       }
@@ -826,9 +830,10 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
       SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_0_21(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a2a1bb));
-      TemplateContext context1 = context.subContext(null, callInputNode1);
+      TemplateContext context1;
+      context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new Template_reduce_NodeIdentity_SNodeReference().apply(context1);
+        tlist1 = new Template_reduce_NodeIdentity_SNodeReference().apply(environment, context1);
       }
       return tlist1;
     }
@@ -850,7 +855,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
           SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_0_22(new SourceSubstituteMacroNodeContext(context1, includeMacro_rbibyw_b0a0a1a3a2a1cb));
           TemplateContext context2 = context1.subContext(null, callInputNode2);
           if (callInputNode2 != null) {
-            tlist2 = new Template_reduce_LinkDeclaration_SLink().apply(context2);
+            tlist2 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context2);
           }
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -888,17 +893,19 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
       if (QueriesGenerated.ifMacro_Condition_0_6(new IfMacroContext(context, ifMacroRef_rbibyw_b0a0c0b03))) {
         Collection<SNode> tlist2 = null;
         SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_0_24(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a2a1eb));
-        TemplateContext context1 = context.subContext(null, callInputNode2);
+        TemplateContext context1;
+        context1 = context.subContext(null, callInputNode2);
         if (callInputNode2 != null) {
-          tlist2 = new Template_reduce_LinkDeclaration_Bootstrap_SLink().apply(context1);
+          tlist2 = new Template_reduce_LinkDeclaration_Bootstrap_SLink().apply(environment, context1);
         }
         tlist1 = tlist2;
       } else {
         Collection<SNode> tlist3 = null;
         SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_0_23(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a0c0b03));
-        TemplateContext context2 = context.subContext(null, callInputNode3);
+        TemplateContext context2;
+        context2 = context.subContext(null, callInputNode3);
         if (callInputNode3 != null) {
-          tlist3 = new Template_reduce_LinkDeclaration_SLink().apply(context2);
+          tlist3 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context2);
         }
         tlist1 = tlist3;
       }
@@ -931,17 +938,19 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
       if (QueriesGenerated.ifMacro_Condition_0_7(new IfMacroContext(context, ifMacroRef_rbibyw_b0a0c0b23))) {
         Collection<SNode> tlist2 = null;
         SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_0_26(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a2a1gb));
-        TemplateContext context1 = context.subContext(null, callInputNode2);
+        TemplateContext context1;
+        context1 = context.subContext(null, callInputNode2);
         if (callInputNode2 != null) {
-          tlist2 = new Template_reduce_PropertyDeclaration_Bootstrap_SProperty().apply(context1);
+          tlist2 = new Template_reduce_PropertyDeclaration_Bootstrap_SProperty().apply(environment, context1);
         }
         tlist1 = tlist2;
       } else {
         Collection<SNode> tlist3 = null;
         SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_0_25(new SourceSubstituteMacroNodeContext(context, callMacro_rbibyw_b0a0a1a0c0b23));
-        TemplateContext context2 = context.subContext(null, callInputNode3);
+        TemplateContext context2;
+        context2 = context.subContext(null, callInputNode3);
         if (callInputNode3 != null) {
-          tlist3 = new Template_reduce_PropertyDeclaration_SProperty().apply(context2);
+          tlist3 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context2);
         }
         tlist1 = tlist3;
       }
@@ -1084,7 +1093,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_IfInstanceOfStatement().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_IfInstanceOfStatement().apply(environment, context);
       return tlist1;
     }
   }
@@ -1120,7 +1129,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ModuleReferenceExpression().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_ModuleReferenceExpression().apply(environment, context);
       return tlist1;
     }
   }
@@ -1131,7 +1140,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_LanguageReferenceExpression().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_LanguageReferenceExpression().apply(environment, context);
       return tlist1;
     }
   }
@@ -1304,7 +1313,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_LanguageRefExpression().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_LanguageRefExpression().apply(environment, context);
       return tlist1;
     }
   }
@@ -1315,7 +1324,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ModuleRefExpression().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_ModuleRefExpression().apply(environment, context);
       return tlist1;
     }
   }
@@ -1326,7 +1335,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ModelPointerExpression().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_ModelPointerExpression().apply(environment, context);
       return tlist1;
     }
   }

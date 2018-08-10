@@ -79,7 +79,7 @@ public class Switch_switch_SNodeOperation_model extends TemplateSwitchBase imple
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Model_CreateNewNode().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Model_CreateNewNode().apply(environment, context);
       return tlist1;
     }
   }
@@ -90,7 +90,7 @@ public class Switch_switch_SNodeOperation_model extends TemplateSwitchBase imple
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Model_CreateNewRootNode().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Model_CreateNewRootNode().apply(environment, context);
       return tlist1;
     }
   }
@@ -140,7 +140,7 @@ public class Switch_switch_SNodeOperation_model extends TemplateSwitchBase imple
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Model_RootsOperation_hasConcept().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Model_RootsOperation_hasConcept().apply(environment, context);
       return tlist1;
     }
   }
@@ -155,7 +155,7 @@ public class Switch_switch_SNodeOperation_model extends TemplateSwitchBase imple
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Model_RootsOperation_noConcept().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Model_RootsOperation_noConcept().apply(environment, context);
       return tlist1;
     }
   }
@@ -196,7 +196,7 @@ public class Switch_switch_SNodeOperation_model extends TemplateSwitchBase imple
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Model_RootsIncludingImportedOperation_hasConcept().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Model_RootsIncludingImportedOperation_hasConcept().apply(environment, context);
       return tlist1;
     }
   }
@@ -211,7 +211,7 @@ public class Switch_switch_SNodeOperation_model extends TemplateSwitchBase imple
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Model_RootsIncludingImportedOperation_noConcept().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Model_RootsIncludingImportedOperation_noConcept().apply(environment, context);
       return tlist1;
     }
   }
@@ -226,7 +226,7 @@ public class Switch_switch_SNodeOperation_model extends TemplateSwitchBase imple
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Model_NodesIncludingImportedOperation_hasConcept().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Model_NodesIncludingImportedOperation_hasConcept().apply(environment, context);
       return tlist1;
     }
   }
@@ -241,7 +241,7 @@ public class Switch_switch_SNodeOperation_model extends TemplateSwitchBase imple
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Model_NodesIncludingImportedOperation_noConcept().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Model_NodesIncludingImportedOperation_noConcept().apply(environment, context);
       return tlist1;
     }
   }
@@ -256,7 +256,7 @@ public class Switch_switch_SNodeOperation_model extends TemplateSwitchBase imple
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Model_NodesOperation_old().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Model_NodesOperation_old().apply(environment, context);
       return tlist1;
     }
   }
@@ -271,7 +271,7 @@ public class Switch_switch_SNodeOperation_model extends TemplateSwitchBase imple
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Model_NodesOperation_new().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Model_NodesOperation_new().apply(environment, context);
       return tlist1;
     }
   }
@@ -282,7 +282,7 @@ public class Switch_switch_SNodeOperation_model extends TemplateSwitchBase imple
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Model_PointerOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Model_PointerOperation().apply(environment, context);
       return tlist1;
     }
   }
