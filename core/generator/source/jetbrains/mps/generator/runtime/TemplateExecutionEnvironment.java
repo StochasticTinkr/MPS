@@ -114,11 +114,22 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
    *             However, it's fine as frontend for generated code and perhaps, shall stay as one, while interpreted code might
    *             get alternative facility to access cacheable TD instances. Nevertheless, existing API is bad, templateNode and context
    *             are just to report errors, which could be done by caller, if necessary.
-   *             Besides, mix of Collection and List in API is inconvenient
+   *             Besides, mix of Collection and List in API is inconvenient.
+   *             Has been replaced with {@link #findTemplate(TemplateDeclarationKey, SNodeReference)}.
    */
   @Deprecated
   @ToRemove(version = 2018.2)
   Collection<SNode> applyTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException;
+
+  /**
+   * Retrieve reusable runtime instance that represents TemplateDeclaration. Clients may keep an instance for subsequent reuse during the
+   * same transformation session.
+   * @param templateDeclaration identifies template to load
+   * @param callSite identifies location where invocation happens
+   * @return never {@code null}, non necessarily exact generated class, might be a decorator that traces uses or reports errors.
+   */
+  @NotNull
+  TemplateDeclaration findTemplate(@NotNull TemplateDeclarationKey templateDeclaration, @NotNull SNodeReference callSite);
 
   void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
 
@@ -152,14 +163,4 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
    */
   @NotNull
   NodeWeaveFacility prepareWeave(@NotNull WeaveContext context, @NotNull SNodeReference templateNode);
-
-
-  // not null return value and arguments
-  TemplateApplyFacility prepare(SNodeReference templateDeclaration, SNodeReference callSite);
-
-  // not null return value and arguments
-  TemplateApplyFacility prepare(TemplateDeclaration templateDeclaration, SNodeReference callSite);
-
-  // not null return value and arguments
-  TemplateApplyFacility prepare(TemplateDeclarationKey templateDeclaration, SNodeReference callSite);
 }

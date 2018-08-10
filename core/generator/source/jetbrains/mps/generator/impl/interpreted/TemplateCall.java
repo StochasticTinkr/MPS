@@ -83,16 +83,6 @@ public class TemplateCall {
     return myArguments.length != myParameters.length;
   }
 
-
-  @NotNull
-  public Object[] evaluateArguments(@NotNull TemplateContext outerContext) throws GenerationFailureException {
-    Object[] rv = new Object[myArguments.length];
-    for (int i = 0; i < myArguments.length; i++) {
-      rv[i] = myArguments[i].evaluate(outerContext);
-    }
-    return rv;
-  }
-
   @NotNull
   public TemplateContext prepareCallContext(@NotNull TemplateContext outerContext) throws GenerationFailureException {
     if (myNoArgs) {

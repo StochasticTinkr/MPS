@@ -39,6 +39,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.runtime.WeavingWithAnchor;
@@ -724,15 +725,15 @@ public final class TemplateProcessor implements ITemplateProcessor {
   private static abstract class InvokeTemplateMacro extends MacroWithInput {
     private final String myName;
     protected SNode myInvokedTemplate;
-    private volatile TemplateContainer myTemplates;
+    private volatile TemplateDeclaration myTemplateRT;
 
     protected InvokeTemplateMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor, String macroName) {
       super(macro, templateNode, next, templateProcessor);
       myName = macroName;
     }
 
-    // shall not return null. templateContext != null.
-    protected abstract Object[] arguments(TemplateContext templateContext) throws GenerationFailureException;
+    // shall return argument if does nothing. templateContext != null.
+    protected abstract TemplateContext prepareArguments(TemplateContext templateContext) throws GenerationFailureException;
 
     /*
     FIXME introduce a mechanism to access template declaration instance without need to evaluate actual arguments first
@@ -752,22 +753,28 @@ public final class TemplateProcessor implements ITemplateProcessor {
       if (newInputNode == null) {
         return Collections.emptyList(); // skip template
       }
-
-      SNode invokedTemplate = myInvokedTemplate;
-      if (invokedTemplate == null) {
-        throw new TemplateProcessingFailureException(macro, String.format("error processing %s : no template to invoke", myName));
-      }
       final TemplateExecutionEnvironment env = templateContext.getEnvironment();
-      TemplateContext tcInput = templateContext.subContext(newInputNode);
+
+      if (myTemplateRT == null) {
+        // I don't mind double initialization of the field from parallel threads, hence no guard. Perhaps, would need to chnage this
+        // once TemplateDeclaration runtime classes are decorated (e.g. with a trace) and have a state to care about.
+        SNode invokedTemplate = myInvokedTemplate;
+        if (invokedTemplate == null) {
+          throw new TemplateProcessingFailureException(macro, String.format("error processing %s : no template to invoke", myName));
+        }
+        // myInvokedTemplate may come from a template model that has generated source code, have to access proper TemplateModel
+        // implementation and proper TemplateDeclaration instance. Use of TemplateContainer here would imply we interpret any CALL/INCLUDE template.
+        myTemplateRT = env.findTemplate(TemplateIdentity.fromSourceNode(myInvokedTemplate), getMacroNodeRef());
+        // Though we may be calling generated template, we still have node<TemplateDeclaration> as it's the only way for interpreted call site to point to
+        // a template declaration. Technically, we don't need node<TemplateDeclaration> here, just its identity.
+      }
+      // XXX here, arguments are evaluated with 'outer' context, with no respect to input node coming from 'mapped node' query method
+      //     while in reduction rule, context for arguments would include input node. I don't know if we have to deal with this small discrepancy,
+      //     just a note we are aware of it.
+      TemplateContext tcInput = prepareArguments(templateContext).subContext(newInputNode);
 
       try {
-        // myInvokedTemplate may come from a template model that has generated source code, have to access proper TemplateModel
-        // implementation and proper TemplateDeclaration instance. In fact, likely need more complex reference to template than
-        // mere SNodeReference (in case we would like to avoid deploy of models with generated templates), e.g. an additional
-        // node to hold template identity key (OTOH, why not SNodeReference itself as identity key, if we could access
-        // reference target w/o need to get it resolved to a node?).
-        // Note, use of TemplateContainer here would imply we interpret any CALL/INCLUDE template.
-        Collection<SNode> rv = env.applyTemplate(myInvokedTemplate.getReference(), getMacroNodeRef(), tcInput, arguments(templateContext));
+        Collection<SNode> rv = myTemplateRT.apply(env, tcInput);
         env.getTrace().trace(newInputNode.getNodeId(), GenerationTracerUtil.translateOutput(rv), getMacroNodeRef());
         // FIXME stick to same API, e.g. List<SNode>, do not mix the two.
         return new ArrayList<>(rv);
@@ -788,7 +795,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     @Override
-    protected Object[] arguments(TemplateContext templateContext) {
+    protected TemplateContext prepareArguments(TemplateContext templateContext) {
       final String[] parameterNames = RuleUtil.getTemplateDeclarationParameterNames(myInvokedTemplate);
       if (parameterNames == null) {
         getLogger().error(getMacroNodeRef(), "error processing $INCLUDE$: target template is broken", GeneratorUtil.describeInput(templateContext));
@@ -802,7 +809,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         }
       }
       // $INCLUDE$ doesn't pass arguments per se (the macro has no mechanism to specify them), merely uses values of outer context
-      return new Object[0];
+      return templateContext;
     }
   }
 
@@ -816,7 +823,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     @Override
-    protected Object[] arguments(TemplateContext templateContext) throws GenerationFailureException {
+    protected TemplateContext prepareArguments(TemplateContext templateContext) throws GenerationFailureException {
       TemplateCall tc = myCallProcessor;
       if (tc == null) {
         tc = new TemplateCall(macro);
@@ -826,7 +833,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         }
         myCallProcessor = tc;
       }
-      return tc.evaluateArguments(templateContext);
+      return tc.prepareCallContext(templateContext);
     }
   }
 
