@@ -191,8 +191,7 @@ class TemplateNode {
             final SProperty propertyName = AttributeOperations.getProperty(templateChildNode);
             propsHandledWithMacro.add(propertyName);
             SNode function = RuleUtil.getPropertyMacro_ValueFunction(templateChildNode);
-            // PropertyValueQuery from ReflectiveQueryProvider is the only client fo QKI.getAPITransitionNode()
-            QueryKey qk = new QueryKeyImpl(templateChildNode.getReference(), function.getNodeId(), templateChildNode);
+            QueryKey qk = new QueryKeyImpl(templateChildNode.getReference(), function.getNodeId());
             final PropertyValueQuery q = queryProvider.getPropertyValueQuery(qk);
             propertyMacros.add(new PropertyMacro(q, templateChildNode.getReference()));
           } else if (templateChildNodeConcept.equals(RuleUtil.concept_ReferenceMacro)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -204,8 +204,8 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
 
   /**
    * Reasonable default values for all conditions and queries.
-   * Note, these default values represent the case when no condition/query was specified. There's
-   * another set of defaults for cases when condition failed to evaluate ({@link jetbrains.mps.generator.impl.interpreted.ReflectiveQueryProvider.Impl}.
+   * Note, these default values represent the case when no condition/query was specified.
+   * There might be another set of defaults for cases when condition failed to evaluate.
    */
   public static class Defaults implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
       DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, SourceNodeQuery, SourceNodesQuery,
