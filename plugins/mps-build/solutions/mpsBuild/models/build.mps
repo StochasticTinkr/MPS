@@ -361,6 +361,7 @@
       <concept id="7753544965996377997" name="jetbrains.mps.build.mps.structure.BuildMps_Branding" flags="ng" index="1zClus">
         <property id="3497141547781541445" name="minor" index="2OjLBK" />
         <property id="3497141547781541444" name="major" index="2OjLBL" />
+        <property id="4237758264760168561" name="bugfixNr" index="1lNJF1" />
         <child id="6845119683729424406" name="customXmlElement" index="27hc03" />
         <child id="6845119683729337285" name="progressY" index="27hAJg" />
         <child id="6845119683729294884" name="progressColor" index="27hGoL" />
@@ -2288,7 +2289,7 @@
       <node concept="aVJcg" id="5HVSRHdVf2e" role="aVJcv">
         <node concept="NbPM2" id="5HVSRHdVf2f" role="aVJcq">
           <node concept="3Mxwew" id="5HVSRHdVf2g" role="3MwsjC">
-            <property role="3MwjfP" value="2018.2" />
+            <property role="3MwjfP" value="2018.2.1" />
           </node>
         </node>
       </node>
@@ -19648,6 +19649,7 @@
       <property role="2OjLBK" value="2" />
       <property role="TrG5h" value="MPS" />
       <property role="2OjLBL" value="2018" />
+      <property role="1lNJF1" value="1" />
       <node concept="NbPM2" id="2FTyjkjSqva" role="2gocG4">
         <node concept="3Mxwew" id="2FTyjkjSqv9" role="3MwsjC">
           <property role="3MwjfP" value="117" />
