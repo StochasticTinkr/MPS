@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root nodeRef="r:b7700ddb-0ad2-4309-a33f-b642f5922d06(jetbrains.mps.internalCollections.test.dataFlow@tests)/1301553664999174713">
+    <file name="Collections_DataFlow_Test_Test.java">
+      <node id="1301553664999174713" at="26,43,27,25" concept="6" />
+      <node id="1140733686815042652" at="31,77,32,99" concept="1" />
+      <node id="1140733686815050004" at="35,77,36,99" concept="1" />
+      <node id="1140733686815044380" at="39,77,40,99" concept="1" />
+      <node id="1140733686815060469" at="43,77,44,99" concept="1" />
+      <node id="1140733686815070800" at="47,77,48,99" concept="1" />
+      <node id="1301553664999174713" at="53,52,54,19" concept="6" />
+      <node id="1140733686815042652" at="58,79,59,242" concept="4" />
+      <node id="1140733686815042652" at="59,242,60,123" concept="1" />
+      <node id="1140733686815050004" at="62,79,63,242" concept="4" />
+      <node id="1140733686815050004" at="63,242,64,123" concept="1" />
+      <node id="1140733686815044380" at="66,79,67,242" concept="4" />
+      <node id="1140733686815044380" at="67,242,68,123" concept="1" />
+      <node id="1140733686815060469" at="70,79,71,242" concept="4" />
+      <node id="1140733686815060469" at="71,242,72,123" concept="1" />
+      <node id="1140733686815070800" at="74,79,75,242" concept="4" />
+      <node id="1140733686815070800" at="75,242,76,123" concept="1" />
+      <node id="1301553664999174713" at="21,0,23,0" concept="5" trace="ourParamCache" />
+      <node id="1301553664999174713" at="23,0,25,0" concept="2" trace="myWithCommandRule" />
+      <node id="1301553664999174713" at="26,0,29,0" concept="0" trace="Collections_DataFlow_Test_Test#()V" />
+      <node id="1301553664999174713" at="53,0,56,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="1140733686815042652" at="30,0,34,0" concept="3" trace="test_ErrorMessagesCheck1140733686815042652#()V" />
+      <node id="1140733686815050004" at="34,0,38,0" concept="3" trace="test_ErrorMessagesCheck1140733686815050004#()V" />
+      <node id="1140733686815044380" at="38,0,42,0" concept="3" trace="test_ErrorMessagesCheck1140733686815044380#()V" />
+      <node id="1140733686815060469" at="42,0,46,0" concept="3" trace="test_ErrorMessagesCheck1140733686815060469#()V" />
+      <node id="1140733686815070800" at="46,0,50,0" concept="3" trace="test_ErrorMessagesCheck1140733686815070800#()V" />
+      <node id="1140733686815042652" at="58,0,62,0" concept="3" trace="test_ErrorMessagesCheck1140733686815042652#()V" />
+      <node id="1140733686815050004" at="62,0,66,0" concept="3" trace="test_ErrorMessagesCheck1140733686815050004#()V" />
+      <node id="1140733686815044380" at="66,0,70,0" concept="3" trace="test_ErrorMessagesCheck1140733686815044380#()V" />
+      <node id="1140733686815060469" at="70,0,74,0" concept="3" trace="test_ErrorMessagesCheck1140733686815060469#()V" />
+      <node id="1140733686815070800" at="74,0,78,0" concept="3" trace="test_ErrorMessagesCheck1140733686815070800#()V" />
+      <scope id="1301553664999174713" at="26,43,27,25" />
+      <scope id="1140733686815042652" at="31,77,32,99" />
+      <scope id="1140733686815050004" at="35,77,36,99" />
+      <scope id="1140733686815044380" at="39,77,40,99" />
+      <scope id="1140733686815060469" at="43,77,44,99" />
+      <scope id="1140733686815070800" at="47,77,48,99" />
+      <scope id="1301553664999174713" at="53,52,54,19" />
+      <scope id="1140733686815042652" at="58,79,60,123">
+        <var name="operation" id="1140733686815042652" />
+      </scope>
+      <scope id="1140733686815050004" at="62,79,64,123">
+        <var name="operation" id="1140733686815050004" />
+      </scope>
+      <scope id="1140733686815044380" at="66,79,68,123">
+        <var name="operation" id="1140733686815044380" />
+      </scope>
+      <scope id="1140733686815060469" at="70,79,72,123">
+        <var name="operation" id="1140733686815060469" />
+      </scope>
+      <scope id="1140733686815070800" at="74,79,76,123">
+        <var name="operation" id="1140733686815070800" />
+      </scope>
+      <scope id="1301553664999174713" at="26,0,29,0" />
+      <scope id="1301553664999174713" at="53,0,56,0">
+        <var name="owner" id="1301553664999174713" />
+      </scope>
+      <scope id="1140733686815042652" at="30,0,34,0" />
+      <scope id="1140733686815050004" at="34,0,38,0" />
+      <scope id="1140733686815044380" at="38,0,42,0" />
+      <scope id="1140733686815060469" at="42,0,46,0" />
+      <scope id="1140733686815070800" at="46,0,50,0" />
+      <scope id="1140733686815042652" at="58,0,62,0" />
+      <scope id="1140733686815050004" at="62,0,66,0" />
+      <scope id="1140733686815044380" at="66,0,70,0" />
+      <scope id="1140733686815060469" at="70,0,74,0" />
+      <scope id="1140733686815070800" at="74,0,78,0" />
+      <unit id="1301553664999174713" at="51,0,80,0" name="jetbrains.mps.internalCollections.test.dataFlow.Collections_DataFlow_Test_Test$TestBody" />
+      <unit id="1301553664999174713" at="19,0,81,0" name="jetbrains.mps.internalCollections.test.dataFlow.Collections_DataFlow_Test_Test" />
+    </file>
+  </root>
+</debug-info>
+

@@ -417,23 +417,25 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)/2425044829821610718">
     <file name="FoldLeftOperation_DataFlow.java">
       <node id="2425044829822173312" at="12,60,13,218" concept="0" />
-      <node id="2425044829821610718" at="12,0,15,0" concept="3" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-      <scope id="2425044829821610720" at="12,60,13,218" />
-      <scope id="2425044829821610718" at="12,0,15,0">
+      <node id="1140733686815538301" at="13,218,14,211" concept="0" />
+      <node id="2425044829821610718" at="12,0,16,0" concept="3" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="2425044829821610720" at="12,60,14,211" />
+      <scope id="2425044829821610718" at="12,0,16,0">
         <var name="_context" id="2425044829821610718" />
       </scope>
-      <unit id="2425044829821610718" at="11,0,16,0" name="jetbrains.mps.baseLanguage.collections.dataFlow.FoldLeftOperation_DataFlow" />
+      <unit id="2425044829821610718" at="11,0,17,0" name="jetbrains.mps.baseLanguage.collections.dataFlow.FoldLeftOperation_DataFlow" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)/2425044829822206638">
     <file name="FoldRightOperation_DataFlow.java">
       <node id="2425044829822206678" at="12,60,13,218" concept="0" />
-      <node id="2425044829822206638" at="12,0,15,0" concept="3" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-      <scope id="2425044829822206640" at="12,60,13,218" />
-      <scope id="2425044829822206638" at="12,0,15,0">
+      <node id="1140733686815541009" at="13,218,14,211" concept="0" />
+      <node id="2425044829822206638" at="12,0,16,0" concept="3" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="2425044829822206640" at="12,60,14,211" />
+      <scope id="2425044829822206638" at="12,0,16,0">
         <var name="_context" id="2425044829822206638" />
       </scope>
-      <unit id="2425044829822206638" at="11,0,16,0" name="jetbrains.mps.baseLanguage.collections.dataFlow.FoldRightOperation_DataFlow" />
+      <unit id="2425044829822206638" at="11,0,17,0" name="jetbrains.mps.baseLanguage.collections.dataFlow.FoldRightOperation_DataFlow" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)/2516462576967508990">
@@ -707,24 +709,26 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)/8844961370231117100">
     <file name="ComparatorSortOperation_DataFlow.java">
-      <node id="8844961370231117112" at="12,60,13,213" concept="0" />
-      <node id="8844961370231117100" at="12,0,15,0" concept="3" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-      <scope id="8844961370231117102" at="12,60,13,213" />
-      <scope id="8844961370231117100" at="12,0,15,0">
+      <node id="1140733686815543341" at="12,60,13,211" concept="0" />
+      <node id="8844961370231117112" at="13,211,14,213" concept="0" />
+      <node id="8844961370231117100" at="12,0,16,0" concept="3" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="8844961370231117102" at="12,60,14,213" />
+      <scope id="8844961370231117100" at="12,0,16,0">
         <var name="_context" id="8844961370231117100" />
       </scope>
-      <unit id="8844961370231117100" at="11,0,16,0" name="jetbrains.mps.baseLanguage.collections.dataFlow.ComparatorSortOperation_DataFlow" />
+      <unit id="8844961370231117100" at="11,0,17,0" name="jetbrains.mps.baseLanguage.collections.dataFlow.ComparatorSortOperation_DataFlow" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)/8844961370231117120">
     <file name="SortOperation_DataFlow.java">
-      <node id="8844961370231117123" at="12,60,13,213" concept="0" />
-      <node id="8844961370231117120" at="12,0,15,0" concept="3" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-      <scope id="8844961370231117122" at="12,60,13,213" />
-      <scope id="8844961370231117120" at="12,0,15,0">
+      <node id="1140733686815546263" at="12,60,13,211" concept="0" />
+      <node id="8844961370231117123" at="13,211,14,213" concept="0" />
+      <node id="8844961370231117120" at="12,0,16,0" concept="3" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="8844961370231117122" at="12,60,14,213" />
+      <scope id="8844961370231117120" at="12,0,16,0">
         <var name="_context" id="8844961370231117120" />
       </scope>
-      <unit id="8844961370231117120" at="11,0,16,0" name="jetbrains.mps.baseLanguage.collections.dataFlow.SortOperation_DataFlow" />
+      <unit id="8844961370231117120" at="11,0,17,0" name="jetbrains.mps.baseLanguage.collections.dataFlow.SortOperation_DataFlow" />
     </file>
   </root>
 </debug-info>
