@@ -23493,14 +23493,14 @@
     </node>
   </node>
   <node concept="9BnSX" id="340HLwkpmrn">
-    <property role="9BnSZ" value="jebrains.mps.ide" />
+    <property role="9BnSZ" value="jetbrains.mps.ide" />
     <property role="3FCvg6" value="true" />
     <property role="9BnSL" value="IDE core plugin" />
     <property role="9BnSP" value="http://www.jetbrains.com/mps/" />
     <property role="9BnSM" value="JetBrains" />
     <property role="TrG5h" value="IDE" />
     <property role="1qHB85" value="/MPS_16.png" />
-    <property role="9BnSO" value="182.1" />
+    <property role="9BnSO" value="183.1" />
     <property role="9BnSK" value="2018.3" />
   </node>
   <node concept="sE7Ow" id="1JAxb5h3N20">

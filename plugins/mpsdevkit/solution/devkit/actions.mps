@@ -842,14 +842,14 @@
     </node>
   </node>
   <node concept="9BnSX" id="7sF2r9CiRc9">
-    <property role="9BnSZ" value="jebrains.mps.ide.mpsdevkit" />
+    <property role="9BnSZ" value="jetbrains.mps.ide.mpsdevkit" />
     <property role="3FCvg6" value="true" />
     <property role="9BnSP" value="http://www.jetbrains.com/mps/" />
     <property role="9BnSL" value="Allows to develop new MPS languages" />
     <property role="9BnSM" value="JetBrains" />
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="MPS Languages DevKit" />
-    <property role="9BnSO" value="182.1" />
+    <property role="9BnSO" value="183.1" />
     <property role="9BnSK" value="2018.3" />
   </node>
   <node concept="tC5Ba" id="56$IWKxe1aW">
