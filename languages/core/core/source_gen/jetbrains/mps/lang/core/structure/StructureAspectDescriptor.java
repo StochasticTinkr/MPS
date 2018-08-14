@@ -40,10 +40,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptInterfacePart = createDescriptorForInterfacePart();
   /*package*/ final ConceptDescriptor myConceptLinkAttribute = createDescriptorForLinkAttribute();
   /*package*/ final ConceptDescriptor myConceptMigrationAnnotation = createDescriptorForMigrationAnnotation();
+  /*package*/ final ConceptDescriptor myConceptMigrationAnnotation_old = createDescriptorForMigrationAnnotation_old();
   /*package*/ final ConceptDescriptor myConceptMigrationDataAnnotation = createDescriptorForMigrationDataAnnotation();
   /*package*/ final ConceptDescriptor myConceptNodeAttribute = createDescriptorForNodeAttribute();
   /*package*/ final ConceptDescriptor myConceptPropertyAttribute = createDescriptorForPropertyAttribute();
   /*package*/ final ConceptDescriptor myConceptReviewMigration = createDescriptorForReviewMigration();
+  /*package*/ final ConceptDescriptor myConceptReviewMigration_old = createDescriptorForReviewMigration_old();
   /*package*/ final ConceptDescriptor myConceptScopeFacade = createDescriptorForScopeFacade();
   /*package*/ final ConceptDescriptor myConceptScopeProvider = createDescriptorForScopeProvider();
   /*package*/ final ConceptDescriptor myConceptSideTransformInfo = createDescriptorForSideTransformInfo();
@@ -56,7 +58,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAttribute, myConceptBaseCommentAttribute, myConceptBaseConcept, myConceptBasePlaceholder, myConceptChildAttribute, myConceptIAntisuppressErrors, myConceptICanSuppressErrors, myConceptIContainer, myConceptIDeprecatable, myConceptIDontApplyTypesystemRules, myConceptIDontSubstituteByDefault, myConceptIMetaLevelChanger, myConceptINamedConcept, myConceptIOldCommentContainer, myConceptIPlaceholderContent, myConceptIResolveInfo, myConceptISkipConstraintsChecking, myConceptISmartReferent, myConceptIStubForAnotherConcept, myConceptISuppressErrors, myConceptIType, myConceptIWrapper, myConceptImplementationContainer, myConceptImplementationPart, myConceptImplementationWithStubPart, myConceptInterfacePart, myConceptLinkAttribute, myConceptMigrationAnnotation, myConceptMigrationDataAnnotation, myConceptNodeAttribute, myConceptPropertyAttribute, myConceptReviewMigration, myConceptScopeFacade, myConceptScopeProvider, myConceptSideTransformInfo, myConceptSuppressErrorsAnnotation);
+    return Arrays.asList(myConceptAttribute, myConceptBaseCommentAttribute, myConceptBaseConcept, myConceptBasePlaceholder, myConceptChildAttribute, myConceptIAntisuppressErrors, myConceptICanSuppressErrors, myConceptIContainer, myConceptIDeprecatable, myConceptIDontApplyTypesystemRules, myConceptIDontSubstituteByDefault, myConceptIMetaLevelChanger, myConceptINamedConcept, myConceptIOldCommentContainer, myConceptIPlaceholderContent, myConceptIResolveInfo, myConceptISkipConstraintsChecking, myConceptISmartReferent, myConceptIStubForAnotherConcept, myConceptISuppressErrors, myConceptIType, myConceptIWrapper, myConceptImplementationContainer, myConceptImplementationPart, myConceptImplementationWithStubPart, myConceptInterfacePart, myConceptLinkAttribute, myConceptMigrationAnnotation, myConceptMigrationAnnotation_old, myConceptMigrationDataAnnotation, myConceptNodeAttribute, myConceptPropertyAttribute, myConceptReviewMigration, myConceptReviewMigration_old, myConceptScopeFacade, myConceptScopeProvider, myConceptSideTransformInfo, myConceptSuppressErrorsAnnotation);
   }
 
   @Override
@@ -119,6 +121,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptLinkAttribute;
       case LanguageConceptSwitch.MigrationAnnotation:
         return myConceptMigrationAnnotation;
+      case LanguageConceptSwitch.MigrationAnnotation_old:
+        return myConceptMigrationAnnotation_old;
       case LanguageConceptSwitch.MigrationDataAnnotation:
         return myConceptMigrationDataAnnotation;
       case LanguageConceptSwitch.NodeAttribute:
@@ -127,6 +131,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptPropertyAttribute;
       case LanguageConceptSwitch.ReviewMigration:
         return myConceptReviewMigration;
+      case LanguageConceptSwitch.ReviewMigration_old:
+        return myConceptReviewMigration_old;
       case LanguageConceptSwitch.ScopeFacade:
         return myConceptScopeFacade;
       case LanguageConceptSwitch.ScopeProvider:
@@ -358,7 +364,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMigrationAnnotation() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "MigrationAnnotation", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "MigrationAnnotation", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e13L);
+    b.interface_();
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L);
+    b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/8703179436979359251");
+    b.version(2);
+    b.prop("createdByScript", 0x78c7e79625a38e14L, "8703179436979359252");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMigrationAnnotation_old() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "MigrationAnnotation_old", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L);
     b.interface_();
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/2482611074347614920");
     b.version(2);
@@ -368,7 +383,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "MigrationDataAnnotation", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625990591L);
     b.class_(false, true, false);
     b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e13L);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/8703179436978668945");
     b.version(2);
     return b.create();
@@ -392,7 +407,19 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForReviewMigration() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "ReviewMigration", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "ReviewMigration", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e13L);
+    b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/8703179436979359238");
+    b.version(2);
+    b.prop("reasonShort", 0x78c7e79625a38e07L, "8703179436979359239");
+    b.prop("todo", 0x78c7e79625a38e08L, "8703179436979359240");
+    b.prop("readableId", 0x78c7e79625a38e09L, "8703179436979359241");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForReviewMigration_old() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "ReviewMigration_old", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L);

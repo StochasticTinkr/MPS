@@ -237,10 +237,10 @@ public class MergeTest extends ChangesTestBase {
     testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(new MergeTest.ModelChanger() {
       public void changeModel(SModel expectedModel) {
 
-        SNode reviewMigration = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, "jetbrains.mps.lang.core.structure.ReviewMigration"));
+        SNode reviewMigration = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, "jetbrains.mps.lang.core.structure.ReviewMigration"));
         SNode commentedMethod = ChangesTestUtil.createCommentedMethod();
 
-        AttributeOperations.setAttribute(getMineClassRoot(), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, "jetbrains.mps.lang.core.structure.ReviewMigration")), reviewMigration);
+        AttributeOperations.setAttribute(getMineClassRoot(), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, "jetbrains.mps.lang.core.structure.ReviewMigration")), reviewMigration);
         insertCommentPreservingId(getTheirsClassRoot(), commentedMethod, 0);
 
         AttributeOperations.setAttribute(getClassRoot(expectedModel), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports")), (SNode) CopyUtil.copyAndPreserveId(reviewMigration));

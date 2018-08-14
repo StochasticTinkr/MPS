@@ -17,6 +17,9 @@
         <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+      </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -416,7 +419,7 @@
     <property role="TrG5h" value="ISmartReferent" />
   </node>
   <node concept="1TIwiD" id="29O0pTxSzj9">
-    <property role="TrG5h" value="ReviewMigration" />
+    <property role="TrG5h" value="ReviewMigration_old" />
     <property role="3GE5qa" value="attributes.migration" />
     <property role="EcuMT" value="2482611074346661065" />
     <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
@@ -436,7 +439,7 @@
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
     </node>
     <node concept="M6xJ_" id="29O0pTxSzje" role="lGtFl">
-      <property role="Hh88m" value="review" />
+      <property role="Hh88m" value="review_old" />
       <node concept="trNpa" id="29O0pTxSzjf" role="EQaZv">
         <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
       </node>
@@ -445,13 +448,14 @@
       </node>
     </node>
     <node concept="PrWs8" id="29O0pTxWcb9" role="PzmwI">
-      <ref role="PrY4T" node="29O0pTxWcb8" resolve="MigrationAnnotation" />
+      <ref role="PrY4T" node="29O0pTxWcb8" resolve="MigrationAnnotation_old" />
     </node>
+    <node concept="asaX9" id="7z7TTo_CSSe" role="lGtFl" />
   </node>
   <node concept="PlHQZ" id="29O0pTxWcb8">
     <property role="EcuMT" value="2482611074347614920" />
     <property role="3GE5qa" value="attributes.migration" />
-    <property role="TrG5h" value="MigrationAnnotation" />
+    <property role="TrG5h" value="MigrationAnnotation_old" />
   </node>
   <node concept="1TIwiD" id="3emwrjqjJ6B">
     <property role="EcuMT" value="3717301156197626279" />
@@ -501,8 +505,57 @@
         <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
       </node>
     </node>
-    <node concept="PrWs8" id="7z7TTo_AhCH" role="PzmwI">
-      <ref role="PrY4T" node="29O0pTxWcb8" resolve="MigrationAnnotation" />
+    <node concept="PrWs8" id="7z7TTo_CTz2" role="PzmwI">
+      <ref role="PrY4T" node="7z7TTo_CSSj" resolve="MigrationAnnotation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7z7TTo_CSS6">
+    <property role="TrG5h" value="ReviewMigration" />
+    <property role="3GE5qa" value="attributes.migration" />
+    <property role="EcuMT" value="8703179436979359238" />
+    <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyi" id="7z7TTo_CSS7" role="1TKVEl">
+      <property role="IQ2nx" value="8703179436979359239" />
+      <property role="TrG5h" value="reasonShort" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7z7TTo_CSS8" role="1TKVEl">
+      <property role="IQ2nx" value="8703179436979359240" />
+      <property role="TrG5h" value="todo" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7z7TTo_CSS9" role="1TKVEl">
+      <property role="IQ2nx" value="8703179436979359241" />
+      <property role="TrG5h" value="readableId" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+    </node>
+    <node concept="M6xJ_" id="7z7TTo_CSSa" role="lGtFl">
+      <property role="Hh88m" value="review" />
+      <node concept="trNpa" id="7z7TTo_CSSb" role="EQaZv">
+        <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
+      </node>
+      <node concept="tn0Fv" id="7z7TTo_CSSc" role="HhnKV">
+        <property role="tnX3d" value="false" />
+      </node>
+    </node>
+    <node concept="PrWs8" id="7z7TTo_CTCf" role="PzmwI">
+      <ref role="PrY4T" node="7z7TTo_CSSj" resolve="MigrationAnnotation" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="7z7TTo_CSSj">
+    <property role="EcuMT" value="8703179436979359251" />
+    <property role="3GE5qa" value="attributes.migration" />
+    <property role="TrG5h" value="MigrationAnnotation" />
+    <node concept="1TJgyi" id="7z7TTo_CSSk" role="1TKVEl">
+      <property role="IQ2nx" value="8703179436979359252" />
+      <property role="TrG5h" value="createdByScript" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+      <node concept="t5JxF" id="7z7TTo_CSSl" role="lGtFl">
+        <property role="t5JxN" value="output of MigrationScriptReference.serialize()" />
+      </node>
+    </node>
+    <node concept="PrWs8" id="7z7TTo_CTom" role="PrDN$">
+      <ref role="PrY4T" node="29O0pTxWcb8" resolve="MigrationAnnotation_old" />
     </node>
   </node>
 </model>

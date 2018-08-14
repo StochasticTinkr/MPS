@@ -20,8 +20,8 @@ import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MigrationAnnotation__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L, "jetbrains.mps.lang.core.structure.MigrationAnnotation");
+public final class MigrationAnnotation_old__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L, "jetbrains.mps.lang.core.structure.MigrationAnnotation_old");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Boolean> showInResults_id29O0pTxWdmG = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("showInResults").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("29O0pTxWdmG").registry(REGISTRY).build();
@@ -33,7 +33,7 @@ public final class MigrationAnnotation__BehaviorDescriptor extends BaseBHDescrip
   }
 
 
-  /*package*/ MigrationAnnotation__BehaviorDescriptor() {
+  /*package*/ MigrationAnnotation_old__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -22,6 +22,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.QuotationConsequence__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.NotMigratedNode" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />

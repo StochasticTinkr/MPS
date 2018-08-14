@@ -17,6 +17,7 @@ import jetbrains.mps.lang.migration.runtime.base.NotMigratedNode;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -56,7 +57,7 @@ public class TransformStatementDetachFix extends MigrationScriptBase {
   public Iterable<Problem> check(SModule m) {
     return ListSequence.fromList(findAffectedVariables(m)).concat(ListSequence.fromList(findAffectedAntiquotations(m))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, "jetbrains.mps.lang.core.structure.ReviewMigration"))) == null);
+        return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, "jetbrains.mps.lang.core.structure.ReviewMigration"))) == null);
       }
     }).select(new ISelector<SNode, Problem>() {
       public Problem select(SNode it) {
@@ -75,19 +76,21 @@ public class TransformStatementDetachFix extends MigrationScriptBase {
 
 
   private void addAnnotationVariableReference(SNode expression) {
-    SNode ann = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, "jetbrains.mps.lang.core.structure.ReviewMigration"));
-    SPropertyOperations.assign(ann, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, 0x2274019e61e234d6L, "reasonShort"), "language semantic changed");
-    SPropertyOperations.assign(ann, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, 0x2274019e61e234d1L, "todo"), "Pattern variable references now are not detached from their model on first variable read. If detach is needed for the code to work properly, perform detach manually.");
-    SPropertyOperations.assign(ann, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, 0x2274019e61e9f6eaL, "readableId"), "Transform Detach Changed");
-    AttributeOperations.setAttribute(expression, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, "jetbrains.mps.lang.core.structure.ReviewMigration")), ann);
+    SNode ann = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, "jetbrains.mps.lang.core.structure.ReviewMigration"));
+    SPropertyOperations.set(ann, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e13L, 0x78c7e79625a38e14L, "createdByScript"), ((MigrationScript) this).getReference().serialize());
+    SPropertyOperations.assign(ann, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, 0x78c7e79625a38e07L, "reasonShort"), "language semantic changed");
+    SPropertyOperations.assign(ann, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, 0x78c7e79625a38e08L, "todo"), "Pattern variable references now are not detached from their model on first variable read. If detach is needed for the code to work properly, perform detach manually.");
+    SPropertyOperations.assign(ann, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, 0x78c7e79625a38e09L, "readableId"), "Transform Detach Changed");
+    AttributeOperations.setAttribute(expression, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, "jetbrains.mps.lang.core.structure.ReviewMigration")), ann);
   }
 
   private void addAnnotationAntiquotation(SNode expression) {
-    SNode ann = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, "jetbrains.mps.lang.core.structure.ReviewMigration"));
-    SPropertyOperations.assign(ann, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, 0x2274019e61e234d6L, "reasonShort"), "language semantic changed");
-    SPropertyOperations.assign(ann, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, 0x2274019e61e234d1L, "todo"), "When embedded into transform statement, quotations behave quite differently: instead of copying node while inserting in into the antiquotation, the node is detached from its parent. If copying is needed for the code to work properly, perform copy manually.");
-    SPropertyOperations.assign(ann, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, 0x2274019e61e9f6eaL, "readableId"), "Transform Detach Changed");
-    AttributeOperations.setAttribute(expression, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, "jetbrains.mps.lang.core.structure.ReviewMigration")), ann);
+    SNode ann = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, "jetbrains.mps.lang.core.structure.ReviewMigration"));
+    SPropertyOperations.set(ann, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e13L, 0x78c7e79625a38e14L, "createdByScript"), ((MigrationScript) this).getReference().serialize());
+    SPropertyOperations.assign(ann, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, 0x78c7e79625a38e07L, "reasonShort"), "language semantic changed");
+    SPropertyOperations.assign(ann, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, 0x78c7e79625a38e08L, "todo"), "When embedded into transform statement, quotations behave quite differently: instead of copying node while inserting in into the antiquotation, the node is detached from its parent. If copying is needed for the code to work properly, perform copy manually.");
+    SPropertyOperations.assign(ann, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, 0x78c7e79625a38e09L, "readableId"), "Transform Detach Changed");
+    AttributeOperations.setAttribute(expression, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, "jetbrains.mps.lang.core.structure.ReviewMigration")), ann);
   }
 
 

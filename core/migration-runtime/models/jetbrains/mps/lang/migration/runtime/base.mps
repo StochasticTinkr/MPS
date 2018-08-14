@@ -352,6 +352,9 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
+        <child id="1138662048170" name="value" index="tz02z" />
+      </concept>
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
@@ -1608,8 +1611,8 @@
                               <ref role="3cqZAo" node="29O0pTxZdKS" resolve="it" />
                             </node>
                             <node concept="1mIQ4w" id="29O0pTxZboW" role="2OqNvi">
-                              <node concept="chp4Y" id="29O0pTxZboX" role="cj9EA">
-                                <ref role="cht4Q" to="tpck:29O0pTxSzj9" resolve="ReviewMigration" />
+                              <node concept="chp4Y" id="7z7TTo_G23A" role="cj9EA">
+                                <ref role="cht4Q" to="tpck:29O0pTxWcb8" resolve="MigrationAnnotation_old" />
                               </node>
                             </node>
                           </node>
@@ -1643,12 +1646,37 @@
           <node concept="3cpWsn" id="29O0pTxUkx4" role="3cpWs9">
             <property role="TrG5h" value="ann" />
             <node concept="3Tqbb2" id="29O0pTxUkx2" role="1tU5fm">
-              <ref role="ehGHo" to="tpck:29O0pTxSzj9" resolve="ReviewMigration" />
+              <ref role="ehGHo" to="tpck:7z7TTo_CSS6" resolve="ReviewMigration" />
             </node>
             <node concept="2ShNRf" id="29O0pTxUkx5" role="33vP2m">
               <node concept="3zrR0B" id="29O0pTxUkx6" role="2ShVmc">
                 <node concept="3Tqbb2" id="29O0pTxUkx7" role="3zrR0E">
-                  <ref role="ehGHo" to="tpck:29O0pTxSzj9" resolve="ReviewMigration" />
+                  <ref role="ehGHo" to="tpck:7z7TTo_CSS6" resolve="ReviewMigration" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7z7TTo_DSOA" role="3cqZAp">
+          <node concept="2OqwBi" id="7z7TTo_DU1a" role="3clFbG">
+            <node concept="2OqwBi" id="7z7TTo_DT6K" role="2Oq$k0">
+              <node concept="37vLTw" id="7z7TTo_DSO$" role="2Oq$k0">
+                <ref role="3cqZAo" node="29O0pTxUkx4" resolve="ann" />
+              </node>
+              <node concept="3TrcHB" id="7z7TTo_DTve" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:7z7TTo_CSSk" resolve="createdByScript" />
+              </node>
+            </node>
+            <node concept="tyxLq" id="7z7TTo_DUtX" role="2OqNvi">
+              <node concept="2OqwBi" id="7z7TTo_DVcl" role="tz02z">
+                <node concept="2OqwBi" id="7z7TTo_DUJu" role="2Oq$k0">
+                  <node concept="Xjq3P" id="7z7TTo_DUya" role="2Oq$k0" />
+                  <node concept="liA8E" id="7z7TTo_DV0l" role="2OqNvi">
+                    <ref role="37wK5l" node="5Eu2lzgvGc2" resolve="getReference" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="7z7TTo_DVCK" role="2OqNvi">
+                  <ref role="37wK5l" node="2RG318eWq1q" resolve="serialize" />
                 </node>
               </node>
             </node>
@@ -1664,7 +1692,7 @@
                 <ref role="3cqZAo" node="29O0pTxUkx4" resolve="ann" />
               </node>
               <node concept="3TrcHB" id="29O0pTxUl4u" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:29O0pTxSzjm" resolve="reasonShort" />
+                <ref role="3TsBF5" to="tpck:7z7TTo_CSS7" resolve="reasonShort" />
               </node>
             </node>
           </node>
@@ -1695,7 +1723,7 @@
                 <ref role="3cqZAo" node="29O0pTxUkx4" resolve="ann" />
               </node>
               <node concept="3TrcHB" id="29O0pTxUmcQ" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:29O0pTxSzjh" resolve="todo" />
+                <ref role="3TsBF5" to="tpck:7z7TTo_CSS8" resolve="todo" />
               </node>
             </node>
           </node>
@@ -1710,7 +1738,7 @@
                 <ref role="3cqZAo" node="29O0pTxUkx4" resolve="ann" />
               </node>
               <node concept="3TrcHB" id="29O0pTxUOkb" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:29O0pTxUvrE" resolve="readableId" />
+                <ref role="3TsBF5" to="tpck:7z7TTo_CSS9" resolve="readableId" />
               </node>
             </node>
           </node>
@@ -1725,8 +1753,8 @@
                 <ref role="3cqZAo" node="29O0pTxRJE0" resolve="n" />
               </node>
               <node concept="3CFZ6_" id="29O0pTxUjzA" role="2OqNvi">
-                <node concept="3CFYIy" id="29O0pTxUjB5" role="3CFYIz">
-                  <ref role="3CFYIx" to="tpck:29O0pTxSzj9" resolve="ReviewMigration" />
+                <node concept="3CFYIy" id="7z7TTo_E2S3" role="3CFYIz">
+                  <ref role="3CFYIx" to="tpck:7z7TTo_CSS6" resolve="ReviewMigration" />
                 </node>
               </node>
             </node>
@@ -5274,7 +5302,7 @@
       <property role="TrG5h" value="myAnnotation" />
       <node concept="3Tm6S6" id="29O0pTxXPeR" role="1B3o_S" />
       <node concept="3Tqbb2" id="29O0pTxXPeT" role="1tU5fm">
-        <ref role="ehGHo" to="tpck:29O0pTxWcb8" resolve="MigrationAnnotation" />
+        <ref role="ehGHo" to="tpck:29O0pTxWcb8" resolve="MigrationAnnotation_old" />
       </node>
     </node>
     <node concept="312cEg" id="1Ul31pgG2jb" role="jymVt">
@@ -5327,7 +5355,7 @@
       <node concept="37vLTG" id="29O0pTxXOog" role="3clF46">
         <property role="TrG5h" value="annotation" />
         <node concept="3Tqbb2" id="29O0pTxXONK" role="1tU5fm">
-          <ref role="ehGHo" to="tpck:29O0pTxWcb8" resolve="MigrationAnnotation" />
+          <ref role="ehGHo" to="tpck:29O0pTxWcb8" resolve="MigrationAnnotation_old" />
         </node>
       </node>
     </node>
