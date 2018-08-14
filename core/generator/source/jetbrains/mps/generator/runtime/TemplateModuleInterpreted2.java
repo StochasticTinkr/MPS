@@ -40,9 +40,6 @@ import java.util.stream.Collectors;
  * Besides, {@link #getModuleReference()} and {@link #getAlias()} may get overridden, to make this RT class as close as possible to future RT classes (
  * similar to that of fully-generated modules)
  *
- * XXX {@link #loadClass(String)} is intentionally not overridden here. Default implementation uses CL of this class, which we expect to be proper module CL.
- *     However, it might be possible to use myGenerator.loadOwnClass(), as the module have to come from proper repository, too (the one with modules being loaded).
- *     The reason to use myGenerator.loadOwnClass is the 'own' restriction for classes, in case it helps.
  * @author Artem Tikhomirov
  * @since 2018.1
  */
@@ -117,8 +114,17 @@ public abstract class TemplateModuleInterpreted2 extends TemplateModuleBase {
 
     /**
      * by model id (sic!, not model reference) and a QueriesGenerated class
+     * Both arguments are not null!
      */
     public void templates(String templateModelId, Class<? extends GeneratorQueryProvider> queryProviderClass) {
+      if (templateModelId == null) {
+        throw new IllegalArgumentException();
+      }
+      if (queryProviderClass == null) {
+        // we generate calling code, don't expect wrong arguments, therefore no verbose error messages, though distinct throws
+        // just in case we need to tell one null arg from another.
+        throw new IllegalArgumentException();
+      }
       myModels.put(PersistenceFacade.getInstance().createModelId(templateModelId), queryProviderClass);
     }
   }

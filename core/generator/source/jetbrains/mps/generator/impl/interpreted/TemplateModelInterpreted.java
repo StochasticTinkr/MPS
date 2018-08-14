@@ -48,12 +48,7 @@ public class TemplateModelInterpreted extends TemplateModelBase implements Templ
   private final Collection<TemplateMappingConfiguration> myMappings;
   private final long myModelTimestamp;
 
-  // XXX this cons is likely of no future use and shall get deprecated or even removed straight away.
-  public TemplateModelInterpreted(@NotNull TemplateModule module, @Nullable SModel model) {
-    this(module, model, null);
-  }
-
-  public TemplateModelInterpreted(@NotNull TemplateModule module, @Nullable SModel model, @Nullable Class<? extends GeneratorQueryProvider> queryProviderClass) {
+  public TemplateModelInterpreted(@NotNull TemplateModule module, @Nullable SModel model, @NotNull Class<? extends GeneratorQueryProvider> queryProviderClass) {
     super(module);
     myModel = model;
     if (myModel != null) {
@@ -129,31 +124,10 @@ public class TemplateModelInterpreted extends TemplateModelBase implements Templ
 
   @Override
   public GeneratorQueryProvider getQueryProvider() {
-    if (myQueryProviderClass != null) {
-      try {
-        return myQueryProviderClass.newInstance();
-      } catch (InstantiationException | IllegalAccessException ex) {
-        String msg = String.format("Failed to instantiate class with generated queries: %s", myQueryProviderClass.getName());
-        Logger.getLogger(TemplateModelInterpreted.class).error(msg, ex);
-        return null;
-      }
-    }
-    String packageName = getSModelReference().getName().getLongName();
-    String queriesClassName = packageName + ".QueriesGenerated";
     try {
-      Class<?> qg = getModule().loadClass(queriesClassName);
-      if (GeneratorQueryProvider.class.isAssignableFrom(qg)) {
-        @SuppressWarnings("unchecked")
-        Class<GeneratorQueryProvider> providerClass = (Class<GeneratorQueryProvider>) qg;
-        return providerClass.newInstance();
-      }
-      return reflectiveProvider(qg);
-    } catch (ClassNotFoundException ex) {
-      String msg = String.format("Failed to load class with generated queries: %s", queriesClassName);
-      Logger.getLogger(TemplateModelInterpreted.class).error(msg, ex);
-      return null;
-    } catch (IllegalAccessException | InstantiationException ex) {
-      String msg = String.format("Failed to instantiate class with generated queries: %s", queriesClassName);
+      return myQueryProviderClass.newInstance();
+    } catch (InstantiationException | IllegalAccessException ex) {
+      String msg = String.format("Failed to instantiate class with generated queries: %s", myQueryProviderClass.getName());
       Logger.getLogger(TemplateModelInterpreted.class).error(msg, ex);
       return null;
     }
