@@ -485,5 +485,25 @@
     <property role="3GE5qa" value="attributes.editing.comment" />
     <property role="TrG5h" value="IPlaceholderContent" />
   </node>
+  <node concept="1TIwiD" id="7z7TTo_Agmh">
+    <property role="EcuMT" value="8703179436978668945" />
+    <property role="3GE5qa" value="attributes.migration" />
+    <property role="TrG5h" value="MigrationDataAnnotation" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="7z7TTo_AgKw" role="lGtFl">
+      <property role="Hh88m" value="migrationData" />
+      <node concept="tn0Fv" id="7z7TTo_AgVO" role="HhnKV">
+        <property role="tnX3d" value="true" />
+      </node>
+      <node concept="trNpa" id="7z7TTo_AgVM" role="EQaZv">
+        <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
+      </node>
+    </node>
+    <node concept="PrWs8" id="7z7TTo_AhCH" role="PzmwI">
+      <ref role="PrY4T" node="29O0pTxWcb8" resolve="MigrationAnnotation" />
+    </node>
+  </node>
 </model>
 

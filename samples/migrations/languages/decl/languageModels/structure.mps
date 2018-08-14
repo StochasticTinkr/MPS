@@ -11,6 +11,12 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
+        <reference id="6054523464627965081" name="concept" index="trN6q" />
+      </concept>
+      <concept id="2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" flags="ng" index="M6xJ_">
+        <child id="7588428831947959310" name="attributed" index="EQaZv" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
@@ -94,33 +100,25 @@
     <property role="TrG5h" value="NewComponentMember" />
     <property role="EcuMT" value="7709929535540733442" />
   </node>
-  <node concept="1TIwiD" id="1Ij79tqsMxw">
-    <property role="TrG5h" value="DeclMigrationData_Component" />
+  <node concept="1TIwiD" id="29O0pTxSzj9">
+    <property role="TrG5h" value="DeclMigrationData" />
     <property role="3GE5qa" value="migrationData" />
-    <property role="EcuMT" value="1986963296983656544" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="1Ij79tqsMXH" role="1TKVEl">
+    <property role="EcuMT" value="2482611074346661065" />
+    <ref role="1TJDcQ" to="tpck:7z7TTo_Agmh" resolve="MigrationDataAnnotation" />
+    <node concept="1TJgyi" id="3EYs7E9xnJu" role="1TKVEl">
       <property role="TrG5h" value="oldId" />
-      <property role="IQ2nx" value="1986963296983658349" />
+      <property role="IQ2nx" value="4232944371370392542" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="1TJgyi" id="1Ij79tqsMXV" role="1TKVEl">
+    <node concept="1TJgyi" id="3EYs7E9xnJv" role="1TKVEl">
       <property role="TrG5h" value="newId" />
-      <property role="IQ2nx" value="1986963296983658363" />
+      <property role="IQ2nx" value="4232944371370392543" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="1Ij79tqsMYb">
-    <property role="TrG5h" value="DeclMigrationData_WholeModule" />
-    <property role="3GE5qa" value="migrationData" />
-    <property role="EcuMT" value="1986963296983658379" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="1Ij79tqsMYq" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="entry" />
-      <property role="20lbJX" value="0..n" />
-      <property role="IQ2ns" value="1986963296983658394" />
-      <ref role="20lvS9" node="1Ij79tqsMxw" resolve="DeclMigrationData_Component" />
+    <node concept="M6xJ_" id="7z7TTo_AhdB" role="lGtFl">
+      <node concept="trNpa" id="7z7TTo_AhiV" role="EQaZv">
+        <ref role="trN6q" node="6FZb119cDPL" resolve="NewComponent" />
+      </node>
     </node>
   </node>
 </model>

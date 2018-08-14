@@ -37,6 +37,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_InterfacePart;
   private ConceptPresentation props_LinkAttribute;
   private ConceptPresentation props_MigrationAnnotation;
+  private ConceptPresentation props_MigrationDataAnnotation;
   private ConceptPresentation props_NodeAttribute;
   private ConceptPresentation props_PropertyAttribute;
   private ConceptPresentation props_ReviewMigration;
@@ -53,7 +54,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Attribute:
         if (props_Attribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a0b0kb);
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a0b0lb);
           props_Attribute = cpb.create();
         }
         return props_Attribute;
@@ -228,6 +229,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_MigrationAnnotation = cpb.create();
         }
         return props_MigrationAnnotation;
+      case LanguageConceptSwitch.MigrationDataAnnotation:
+        if (props_MigrationDataAnnotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MigrationDataAnnotation = cpb.create();
+        }
+        return props_MigrationDataAnnotation;
       case LanguageConceptSwitch.NodeAttribute:
         if (props_NodeAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

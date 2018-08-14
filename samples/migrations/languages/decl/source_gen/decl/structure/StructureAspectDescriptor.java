@@ -12,8 +12,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptDeclMigrationData_Component = createDescriptorForDeclMigrationData_Component();
-  /*package*/ final ConceptDescriptor myConceptDeclMigrationData_WholeModule = createDescriptorForDeclMigrationData_WholeModule();
+  /*package*/ final ConceptDescriptor myConceptDeclMigrationData = createDescriptorForDeclMigrationData();
   /*package*/ final ConceptDescriptor myConceptNewComponent = createDescriptorForNewComponent();
   /*package*/ final ConceptDescriptor myConceptNewComponentMember = createDescriptorForNewComponentMember();
   /*package*/ final ConceptDescriptor myConceptOldComponent = createDescriptorForOldComponent();
@@ -26,17 +25,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptDeclMigrationData_Component, myConceptDeclMigrationData_WholeModule, myConceptNewComponent, myConceptNewComponentMember, myConceptOldComponent, myConceptOldComponentMember);
+    return Arrays.asList(myConceptDeclMigrationData, myConceptNewComponent, myConceptNewComponentMember, myConceptOldComponent, myConceptOldComponentMember);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
-      case LanguageConceptSwitch.DeclMigrationData_Component:
-        return myConceptDeclMigrationData_Component;
-      case LanguageConceptSwitch.DeclMigrationData_WholeModule:
-        return myConceptDeclMigrationData_WholeModule;
+      case LanguageConceptSwitch.DeclMigrationData:
+        return myConceptDeclMigrationData;
       case LanguageConceptSwitch.NewComponent:
         return myConceptNewComponent;
       case LanguageConceptSwitch.NewComponentMember:
@@ -54,21 +51,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForDeclMigrationData_Component() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("decl", "DeclMigrationData_Component", 0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L);
+  private static ConceptDescriptor createDescriptorForDeclMigrationData() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("decl", "DeclMigrationData", 0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x2274019e61e234c9L);
     b.class_(false, false, false);
-    b.origin("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)/1986963296983656544");
+    b.super_("jetbrains.mps.lang.core.structure.MigrationDataAnnotation", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625990591L);
+    b.origin("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)/2482611074346661065");
     b.version(2);
-    b.prop("oldId", 0x1b931c975a732f6dL, "1986963296983658349");
-    b.prop("newId", 0x1b931c975a732f7bL, "1986963296983658363");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForDeclMigrationData_WholeModule() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("decl", "DeclMigrationData_WholeModule", 0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732f8bL);
-    b.class_(false, false, false);
-    b.origin("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)/1986963296983658379");
-    b.version(2);
-    b.aggregate("entry", 0x1b931c975a732f9aL).target(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L).optional(true).ordered(true).multiple(true).origin("1986963296983658394").done();
+    b.prop("oldId", 0x3abe707a89857bdeL, "4232944371370392542");
+    b.prop("newId", 0x3abe707a89857bdfL, "4232944371370392543");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNewComponent() {

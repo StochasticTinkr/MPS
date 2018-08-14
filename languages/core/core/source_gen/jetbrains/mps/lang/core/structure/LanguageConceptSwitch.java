@@ -37,13 +37,14 @@ public final class LanguageConceptSwitch {
   public static final int InterfacePart = 25;
   public static final int LinkAttribute = 26;
   public static final int MigrationAnnotation = 27;
-  public static final int NodeAttribute = 28;
-  public static final int PropertyAttribute = 29;
-  public static final int ReviewMigration = 30;
-  public static final int ScopeFacade = 31;
-  public static final int ScopeProvider = 32;
-  public static final int SideTransformInfo = 33;
-  public static final int SuppressErrorsAnnotation = 34;
+  public static final int MigrationDataAnnotation = 28;
+  public static final int NodeAttribute = 29;
+  public static final int PropertyAttribute = 30;
+  public static final int ReviewMigration = 31;
+  public static final int ScopeFacade = 32;
+  public static final int ScopeProvider = 33;
+  public static final int SideTransformInfo = 34;
+  public static final int SuppressErrorsAnnotation = 35;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL);
@@ -75,6 +76,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x12509ddfaa98f128L, InterfacePart);
     builder.put(0x2eb1ad060897da51L, LinkAttribute);
     builder.put(0x2274019e61f0c2c8L, MigrationAnnotation);
+    builder.put(0x78c7e79625990591L, MigrationDataAnnotation);
     builder.put(0x2eb1ad060897da54L, NodeAttribute);
     builder.put(0x2eb1ad060897da56L, PropertyAttribute);
     builder.put(0x2274019e61e234c9L, ReviewMigration);

@@ -1487,5 +1487,10 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="7z7TTo_Ah2Y">
+    <property role="3GE5qa" value="attributes.migration" />
+    <ref role="1XX52x" to="tpck:7z7TTo_Agmh" resolve="MigrationDataAnnotation" />
+    <node concept="2SsqMj" id="7z7TTo_Ah30" role="2wV5jI" />
+  </node>
 </model>
 
