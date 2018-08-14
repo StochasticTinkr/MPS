@@ -178,7 +178,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.GeneratorQueryProvider" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclarationKey" />
@@ -188,7 +187,6 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Mapping_main" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Mapping_preprocess" />
-    <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_child" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Template_NodeBuilder_to_methodCall" />

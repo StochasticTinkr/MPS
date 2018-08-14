@@ -18,7 +18,7 @@
       <unit at="10,0,73,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="22,0,73,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.TemplateModelImpl" />
+      <unit at="21,0,67,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273563027">
@@ -130,9 +130,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3210697320273563034" at="53,188,54,45" concept="7" />
-      <node id="3210697320273563034" at="52,56,55,5" concept="4" />
-      <scope id="3210697320273563034" at="53,188,54,45" />
+      <node id="3210697320273563034" at="52,188,53,45" concept="7" />
+      <node id="3210697320273563034" at="51,56,54,5" concept="4" />
+      <scope id="3210697320273563034" at="52,188,53,45" />
     </file>
     <file name="Template_reduce_BuildWall.java">
       <node id="3210697320273563034" at="36,43,37,172" concept="7" />
@@ -516,9 +516,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3210697320273607275" at="56,188,57,47" concept="7" />
-      <node id="3210697320273607275" at="55,5,58,5" concept="4" />
-      <scope id="3210697320273607275" at="56,188,57,47" />
+      <node id="3210697320273607275" at="55,188,56,47" concept="7" />
+      <node id="3210697320273607275" at="54,5,57,5" concept="4" />
+      <scope id="3210697320273607275" at="55,188,56,47" />
     </file>
     <file name="Template_reduce_DestroyWall.java">
       <node id="3210697320273607275" at="36,43,37,172" concept="7" />
@@ -903,9 +903,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3210697320273612346" at="59,188,60,44" concept="7" />
-      <node id="3210697320273612346" at="58,5,61,5" concept="4" />
-      <scope id="3210697320273612346" at="59,188,60,44" />
+      <node id="3210697320273612346" at="58,188,59,44" concept="7" />
+      <node id="3210697320273612346" at="57,5,60,5" concept="4" />
+      <scope id="3210697320273612346" at="58,188,59,44" />
     </file>
     <file name="Template_reduce_DropMark.java">
       <node id="3210697320273612346" at="36,43,37,172" concept="7" />
@@ -1444,9 +1444,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3210697320273614443" at="62,188,63,44" concept="7" />
-      <node id="3210697320273614443" at="61,5,64,5" concept="4" />
-      <scope id="3210697320273614443" at="62,188,63,44" />
+      <node id="3210697320273614443" at="61,188,62,44" concept="7" />
+      <node id="3210697320273614443" at="60,5,63,5" concept="4" />
+      <scope id="3210697320273614443" at="61,188,62,44" />
     </file>
     <file name="Template_reduce_PickMark.java">
       <node id="3210697320273614443" at="36,43,37,172" concept="7" />

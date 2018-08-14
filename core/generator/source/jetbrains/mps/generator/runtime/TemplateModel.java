@@ -61,6 +61,10 @@ public interface TemplateModel {
    * in generated templates, OTOH, it's unlikely (error?) to use QueryProvider of a generated template
    * as the code there invokes queries without the need for GQP (unless I decide to use QueryKey there and hold query instances).
    *
+   *    There might be another reason to give access to GQP from generated templates! If we enable a 'forced interpretation' mode
+   *    when we interpret templates otherwise available as compiled. Not sure there's need for such functionality though, no
+   *    requests have been made so far, nevertheless, I can't preclude a need like that one e.g. for bootstrap reasons.
+   *
    * @return {@code null} if there's no generated provider, or it had failed to load
    * @since 3.5
    */

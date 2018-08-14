@@ -140,7 +140,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.GeneratorQueryProvider" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclarationKey" />
@@ -149,7 +148,6 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main" />
-    <classNode dependClassName="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.generator.template.main.Switch_ReduceDirectionEnum" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.generator.template.main.Template_map_Script" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_CommandList" />

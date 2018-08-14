@@ -20,7 +20,7 @@
       <unit at="19,0,103,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="22,0,67,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateModelImpl" />
+      <unit at="21,0,61,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)/1202255161944">
@@ -175,9 +175,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1202255620269" at="53,206,54,41" concept="9" />
-      <node id="1202255620269" at="52,56,55,5" concept="6" />
-      <scope id="1202255620269" at="53,206,54,41" />
+      <node id="1202255620269" at="52,206,53,41" concept="9" />
+      <node id="1202255620269" at="51,56,54,5" concept="6" />
+      <scope id="1202255620269" at="52,206,53,41" />
     </file>
     <file name="Template_OutputRoot_1.java">
       <node id="1202255620269" at="37,43,38,32" concept="9" />
@@ -490,9 +490,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1202338159177" at="56,206,57,41" concept="9" />
-      <node id="1202338159177" at="55,5,58,5" concept="6" />
-      <scope id="1202338159177" at="56,206,57,41" />
+      <node id="1202338159177" at="55,206,56,41" concept="9" />
+      <node id="1202338159177" at="54,5,57,5" concept="6" />
+      <scope id="1202338159177" at="55,206,56,41" />
     </file>
     <file name="Template_OutputRoot_2.java">
       <node id="1202338159177" at="37,43,38,32" concept="9" />

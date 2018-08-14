@@ -24,7 +24,7 @@
       <unit at="52,0,656,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="22,0,73,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateModelImpl" />
+      <unit at="21,0,67,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)/1006429225401295242">
@@ -87,9 +87,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1006429225401295242" at="59,186,60,54" concept="10" />
-      <node id="1006429225401295242" at="58,5,61,5" concept="7" />
-      <scope id="1006429225401295242" at="59,186,60,54" />
+      <node id="1006429225401295242" at="58,186,59,54" concept="10" />
+      <node id="1006429225401295242" at="57,5,60,5" concept="7" />
+      <scope id="1006429225401295242" at="58,186,59,54" />
     </file>
     <file name="Template_NodeBuilder_to_methodCall.java">
       <node id="1006429225401295242" at="41,43,42,170" concept="10" />
@@ -709,9 +709,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1025590056396628814" at="56,186,57,58" concept="10" />
-      <node id="1025590056396628814" at="55,5,58,5" concept="7" />
-      <scope id="1025590056396628814" at="56,186,57,58" />
+      <node id="1025590056396628814" at="55,186,56,58" concept="10" />
+      <node id="1025590056396628814" at="54,5,57,5" concept="7" />
+      <scope id="1025590056396628814" at="55,186,56,58" />
     </file>
     <file name="Template_Quotation_to_staticMethodCall.java">
       <node id="1025590056396628814" at="41,43,42,170" concept="10" />
@@ -1736,9 +1736,9 @@
       <unit id="1969205605792567719" at="495,323,499,5" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.QueriesGenerated$5" />
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1196351886726" at="53,180,54,56" concept="10" />
-      <node id="1196351886726" at="52,56,55,5" concept="7" />
-      <scope id="1196351886726" at="53,180,54,56" />
+      <node id="1196351886726" at="52,180,53,56" concept="10" />
+      <node id="1196351886726" at="51,56,54,5" concept="7" />
+      <scope id="1196351886726" at="52,180,53,56" />
     </file>
     <file name="Template_QuotedNode_to_statementList.java">
       <node id="1196351886726" at="44,43,45,164" concept="10" />
@@ -3747,9 +3747,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="429601079676709776" at="62,185,63,51" concept="10" />
-      <node id="429601079676709776" at="61,5,64,5" concept="7" />
-      <scope id="429601079676709776" at="62,185,63,51" />
+      <node id="429601079676709776" at="61,185,62,51" concept="10" />
+      <node id="429601079676709776" at="60,5,63,5" concept="7" />
+      <scope id="429601079676709776" at="61,185,62,51" />
     </file>
     <file name="Template_reduce_NodeBuilderNode.java">
       <node id="429601079676709776" at="45,43,46,169" concept="10" />

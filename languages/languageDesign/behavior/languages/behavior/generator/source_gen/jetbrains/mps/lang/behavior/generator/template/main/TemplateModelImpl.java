@@ -17,7 +17,6 @@ import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateDeclarationKey;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 
 @Generated
 public class TemplateModelImpl extends TemplateModelBase implements TemplateModel2 {
@@ -78,10 +77,5 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
       return new Template_BehaviorDescriptor();
     }
     return null;
-  }
-
-  @Override
-  public GeneratorQueryProvider getQueryProvider() {
-    return reflectiveProvider(QueriesGenerated.class);
   }
 }

@@ -19,7 +19,7 @@
       <unit at="19,0,70,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="22,0,67,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateModelImpl" />
+      <unit at="21,0,61,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)/1195164863269">
@@ -212,9 +212,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)/1195166061402">
     <file name="TemplateModelImpl.java">
-      <node id="1195166061402" at="53,211,54,51" concept="8" />
-      <node id="1195166061402" at="52,56,55,5" concept="5" />
-      <scope id="1195166061402" at="53,211,54,51" />
+      <node id="1195166061402" at="52,211,53,51" concept="8" />
+      <node id="1195166061402" at="51,56,54,5" concept="5" />
+      <scope id="1195166061402" at="52,211,53,51" />
     </file>
     <file name="Template_OutputRoot_By_RootRule.java">
       <node id="1195166061402" at="28,43,29,32" concept="8" />
@@ -283,9 +283,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1195168984336" at="56,211,57,54" concept="8" />
-      <node id="1195168984336" at="55,5,58,5" concept="5" />
-      <scope id="1195168984336" at="56,211,57,54" />
+      <node id="1195168984336" at="55,211,56,54" concept="8" />
+      <node id="1195168984336" at="54,5,57,5" concept="5" />
+      <scope id="1195168984336" at="55,211,56,54" />
     </file>
     <file name="Template_OutputRoot_by_MappingRule.java">
       <node id="1195168984336" at="31,43,32,32" concept="8" />

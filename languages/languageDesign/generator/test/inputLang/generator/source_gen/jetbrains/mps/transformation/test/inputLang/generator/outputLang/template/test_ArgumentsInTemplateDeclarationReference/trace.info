@@ -20,7 +20,7 @@
       <unit at="20,0,66,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="22,0,67,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference.TemplateModelImpl" />
+      <unit at="21,0,61,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)/7496726876599686456">
@@ -312,9 +312,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="7496726876599872860" at="53,239,54,43" concept="8" />
-      <node id="7496726876599872860" at="52,56,55,5" concept="5" />
-      <scope id="7496726876599872860" at="53,239,54,43" />
+      <node id="7496726876599872860" at="52,239,53,43" concept="8" />
+      <node id="7496726876599872860" at="51,56,54,5" concept="5" />
+      <scope id="7496726876599872860" at="52,239,53,43" />
     </file>
     <file name="Template_reduceWithArgs.java">
       <node id="7496726876599872860" at="33,43,34,223" concept="8" />
@@ -405,9 +405,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="7496726876599898724" at="56,239,57,42" concept="8" />
-      <node id="7496726876599898724" at="55,5,58,5" concept="5" />
-      <scope id="7496726876599898724" at="56,239,57,42" />
+      <node id="7496726876599898724" at="55,239,56,42" concept="8" />
+      <node id="7496726876599898724" at="54,5,57,5" concept="5" />
+      <scope id="7496726876599898724" at="55,239,56,42" />
     </file>
     <file name="Template_MyOutputRoot1.java">
       <node id="7496726876599898724" at="30,43,31,32" concept="8" />

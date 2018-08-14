@@ -16,7 +16,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateDeclarationKey;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 
 @Generated
 public class TemplateModelImpl extends TemplateModelBase implements TemplateModel2 {
@@ -50,10 +49,5 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
     }
     final SNodeReference template = key.getSourceNode();
     return null;
-  }
-
-  @Override
-  public GeneratorQueryProvider getQueryProvider() {
-    return reflectiveProvider(QueriesGenerated.class);
   }
 }

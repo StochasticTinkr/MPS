@@ -21,14 +21,14 @@
       <unit at="15,0,33,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="22,0,73,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl" />
+      <unit at="21,0,67,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/1892993302480251689">
     <file name="TemplateModelImpl.java">
-      <node id="1892993302480251689" at="56,215,57,56" concept="9" />
-      <node id="1892993302480251689" at="55,5,58,5" concept="6" />
-      <scope id="1892993302480251689" at="56,215,57,56" />
+      <node id="1892993302480251689" at="55,215,56,56" concept="9" />
+      <node id="1892993302480251689" at="54,5,57,5" concept="6" />
+      <scope id="1892993302480251689" at="55,215,56,56" />
     </file>
     <file name="Template_reduce_InputNode_A_included.java">
       <node id="1892993302480251689" at="31,43,32,199" concept="9" />
@@ -179,9 +179,9 @@
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/1892993302480311955">
     <file name="TemplateModelImpl.java">
-      <node id="1892993302480311955" at="59,215,60,54" concept="9" />
-      <node id="1892993302480311955" at="58,5,61,5" concept="6" />
-      <scope id="1892993302480311955" at="59,215,60,54" />
+      <node id="1892993302480311955" at="58,215,59,54" concept="9" />
+      <node id="1892993302480311955" at="57,5,60,5" concept="6" />
+      <scope id="1892993302480311955" at="58,215,59,54" />
     </file>
     <file name="Template_reduce_InputNode_A_switch.java">
       <node id="1892993302480311955" at="31,43,32,199" concept="9" />
@@ -367,9 +367,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3893401255414086886" at="62,215,63,39" concept="9" />
-      <node id="3893401255414086886" at="61,5,64,5" concept="6" />
-      <scope id="3893401255414086886" at="62,215,63,39" />
+      <node id="3893401255414086886" at="61,215,62,39" concept="9" />
+      <node id="3893401255414086886" at="60,5,63,5" concept="6" />
+      <scope id="3893401255414086886" at="61,215,62,39" />
     </file>
     <file name="Template_OutputRoot.java">
       <node id="3893401255414086886" at="30,43,31,32" concept="9" />
@@ -459,9 +459,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3893401255414100167" at="53,215,54,47" concept="9" />
-      <node id="3893401255414100167" at="52,56,55,5" concept="6" />
-      <scope id="3893401255414100167" at="53,215,54,47" />
+      <node id="3893401255414100167" at="52,215,53,47" concept="9" />
+      <node id="3893401255414100167" at="51,56,54,5" concept="6" />
+      <scope id="3893401255414100167" at="52,215,53,47" />
     </file>
     <file name="Template_reduce_InputNode_A.java">
       <node id="3893401255414100167" at="34,43,35,199" concept="9" />

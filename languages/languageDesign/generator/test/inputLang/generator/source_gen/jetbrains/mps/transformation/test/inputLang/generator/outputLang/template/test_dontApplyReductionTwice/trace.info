@@ -18,7 +18,7 @@
       <unit at="10,0,16,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="22,0,64,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateModelImpl" />
+      <unit at="21,0,58,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)/1209604518979">
@@ -70,9 +70,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)/1209605205934">
     <file name="TemplateModelImpl.java">
-      <node id="1209605205934" at="53,217,54,39" concept="7" />
-      <node id="1209605205934" at="52,56,55,5" concept="4" />
-      <scope id="1209605205934" at="53,217,54,39" />
+      <node id="1209605205934" at="52,217,53,39" concept="7" />
+      <node id="1209605205934" at="51,56,54,5" concept="4" />
+      <scope id="1209605205934" at="52,217,53,39" />
     </file>
     <file name="Template_outputRoot.java">
       <node id="1209605205934" at="29,43,30,32" concept="7" />

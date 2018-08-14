@@ -21,7 +21,7 @@
       <unit at="30,0,292,0" name="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="22,0,85,0" name="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateModelImpl" />
+      <unit at="21,0,79,0" name="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)/1209603916390">
@@ -1377,9 +1377,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="2681305894288695007" at="56,202,57,45" concept="9" />
-      <node id="2681305894288695007" at="55,5,58,5" concept="6" />
-      <scope id="2681305894288695007" at="56,202,57,45" />
+      <node id="2681305894288695007" at="55,202,56,45" concept="9" />
+      <node id="2681305894288695007" at="54,5,57,5" concept="6" />
+      <scope id="2681305894288695007" at="55,202,56,45" />
     </file>
     <file name="Template_processStatement.java">
       <node id="2681305894288695007" at="35,43,36,186" concept="9" />
@@ -1743,9 +1743,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3392060900980718989" at="65,202,66,46" concept="9" />
-      <node id="3392060900980718989" at="64,5,67,5" concept="6" />
-      <scope id="3392060900980718989" at="65,202,66,46" />
+      <node id="3392060900980718989" at="64,202,65,46" concept="9" />
+      <node id="3392060900980718989" at="63,5,66,5" concept="6" />
+      <scope id="3392060900980718989" at="64,202,65,46" />
     </file>
     <file name="Template_gen_static_method.java">
       <node id="3392060900980718989" at="33,43,34,186" concept="9" />
@@ -2212,9 +2212,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3571912445009934880" at="68,202,69,44" concept="9" />
-      <node id="3571912445009934880" at="67,5,70,5" concept="6" />
-      <scope id="3571912445009934880" at="68,202,69,44" />
+      <node id="3571912445009934880" at="67,202,68,44" concept="9" />
+      <node id="3571912445009934880" at="66,5,69,5" concept="6" />
+      <scope id="3571912445009934880" at="67,202,68,44" />
     </file>
     <file name="Template_weave_Statement.java">
       <node id="3571912445009934880" at="33,43,34,186" concept="9" />
@@ -2385,9 +2385,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="4146564171992412775" at="74,202,75,39" concept="9" />
-      <node id="4146564171992412775" at="73,5,76,5" concept="6" />
-      <scope id="4146564171992412775" at="74,202,75,39" />
+      <node id="4146564171992412775" at="73,202,74,39" concept="9" />
+      <node id="4146564171992412775" at="72,5,75,5" concept="6" />
+      <scope id="4146564171992412775" at="73,202,74,39" />
     </file>
     <file name="Template_RootCustom.java">
       <node id="4146564171992412775" at="33,43,34,32" concept="9" />
@@ -2752,9 +2752,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="4146564171992617065" at="53,202,54,40" concept="9" />
-      <node id="4146564171992617065" at="52,56,55,5" concept="6" />
-      <scope id="4146564171992617065" at="53,202,54,40" />
+      <node id="4146564171992617065" at="52,202,53,40" concept="9" />
+      <node id="4146564171992617065" at="51,56,54,5" concept="6" />
+      <scope id="4146564171992617065" at="52,202,53,40" />
     </file>
     <file name="Template_convertMult.java">
       <node id="4146564171992617065" at="31,43,32,186" concept="9" />
@@ -2887,9 +2887,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="5857536350883030947" at="59,202,60,38" concept="9" />
-      <node id="5857536350883030947" at="58,5,61,5" concept="6" />
-      <scope id="5857536350883030947" at="59,202,60,38" />
+      <node id="5857536350883030947" at="58,202,59,38" concept="9" />
+      <node id="5857536350883030947" at="57,5,60,5" concept="6" />
+      <scope id="5857536350883030947" at="58,202,59,38" />
     </file>
     <file name="Template_process42.java">
       <node id="5857536350883030947" at="36,43,37,186" concept="9" />
@@ -3060,9 +3060,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="6458924870076077829" at="71,202,72,45" concept="9" />
-      <node id="6458924870076077829" at="70,5,73,5" concept="6" />
-      <scope id="6458924870076077829" at="71,202,72,45" />
+      <node id="6458924870076077829" at="70,202,71,45" concept="9" />
+      <node id="6458924870076077829" at="69,5,72,5" concept="6" />
+      <scope id="6458924870076077829" at="70,202,71,45" />
     </file>
     <file name="Template_weave_StmtToCons.java">
       <node id="6458924870076077829" at="33,43,34,186" concept="9" />
@@ -3259,9 +3259,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)/933643154466320524">
     <file name="TemplateModelImpl.java">
-      <node id="933643154466320524" at="62,201,63,34" concept="9" />
-      <node id="933643154466320524" at="61,5,64,5" concept="6" />
-      <scope id="933643154466320524" at="62,201,63,34" />
+      <node id="933643154466320524" at="61,201,62,34" concept="9" />
+      <node id="933643154466320524" at="60,5,63,5" concept="6" />
+      <scope id="933643154466320524" at="61,201,62,34" />
     </file>
     <file name="Template_aaaaa.java">
       <node id="933643154466320524" at="29,43,30,185" concept="9" />

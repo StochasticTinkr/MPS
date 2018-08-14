@@ -77,7 +77,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.GeneratorQueryProvider" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclarationKey" />
@@ -87,7 +86,6 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.Mapping_main" />
-    <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.Switch_switch_InputNode" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.Template_MyOutputRoot2" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.Template_produce_OutputNode" />

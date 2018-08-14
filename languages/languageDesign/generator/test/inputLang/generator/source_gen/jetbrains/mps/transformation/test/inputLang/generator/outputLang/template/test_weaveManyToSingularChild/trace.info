@@ -18,7 +18,7 @@
       <unit at="14,0,29,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="22,0,67,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.TemplateModelImpl" />
+      <unit at="21,0,61,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)/1218738629621">
@@ -119,9 +119,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)/1218738789586">
     <file name="TemplateModelImpl.java">
-      <node id="1218738789586" at="56,218,57,43" concept="7" />
-      <node id="1218738789586" at="55,5,58,5" concept="4" />
-      <scope id="1218738789586" at="56,218,57,43" />
+      <node id="1218738789586" at="55,218,56,43" concept="7" />
+      <node id="1218738789586" at="54,5,57,5" concept="4" />
+      <scope id="1218738789586" at="55,218,56,43" />
     </file>
     <file name="Template_map_outputNode.java">
       <node id="1218738789586" at="29,43,30,32" concept="7" />
@@ -214,9 +214,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1218738992784" at="53,218,54,46" concept="7" />
-      <node id="1218738992784" at="52,56,55,5" concept="4" />
-      <scope id="1218738992784" at="53,218,54,46" />
+      <node id="1218738992784" at="52,218,53,46" concept="7" />
+      <node id="1218738992784" at="51,56,54,5" concept="4" />
+      <scope id="1218738992784" at="52,218,53,46" />
     </file>
     <file name="Template_weave_InputNode_A.java">
       <node id="1218738992784" at="33,43,34,202" concept="7" />

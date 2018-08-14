@@ -45,7 +45,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.GeneratorQueryProvider" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclarationKey" />
@@ -54,7 +53,6 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mapping_main" />
-    <classNode dependClassName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.QueriesGenerated" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />

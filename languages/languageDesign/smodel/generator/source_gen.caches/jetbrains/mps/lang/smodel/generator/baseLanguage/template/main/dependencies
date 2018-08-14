@@ -1124,7 +1124,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.GeneratorQueryProvider" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclarationKey" />
@@ -1149,7 +1148,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Mapping_mc_property_operations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Mapping_mc_reflection" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Mapping_mc_sequence_operations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_AbstractLanguageIdentity_SLanguage" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_AbstractPointerResolveOperation" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_AggregationIdentity_SContainmentLink" />

@@ -22,7 +22,7 @@
       <unit at="79,0,2412,0" name="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="22,0,358,0" name="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.TemplateModelImpl" />
+      <unit at="21,0,352,0" name="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1139186732963">
@@ -3042,9 +3042,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1139275804866" at="53,177,54,58" concept="9" />
-      <node id="1139275804866" at="52,56,55,5" concept="6" />
-      <scope id="1139275804866" at="53,177,54,58" />
+      <node id="1139275804866" at="52,177,53,58" concept="9" />
+      <node id="1139275804866" at="51,56,54,5" concept="6" />
+      <scope id="1139275804866" at="52,177,53,58" />
     </file>
     <file name="Template_reduce_SPropertyAccess_simple.java">
       <node id="1139275804866" at="35,43,36,161" concept="9" />
@@ -3177,9 +3177,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1139337080836" at="56,177,57,77" concept="9" />
-      <node id="1139337080836" at="55,5,58,5" concept="6" />
-      <scope id="1139337080836" at="56,177,57,77" />
+      <node id="1139337080836" at="55,177,56,77" concept="9" />
+      <node id="1139337080836" at="54,5,57,5" concept="6" />
+      <scope id="1139337080836" at="55,177,56,77" />
     </file>
     <file name="Template_reduce_EnumMemberReference_notNull_internalValue.java">
       <node id="1139337080836" at="33,43,34,161" concept="9" />
@@ -3258,9 +3258,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1139337716713">
     <file name="TemplateModelImpl.java">
-      <node id="1139337716713" at="59,177,60,74" concept="9" />
-      <node id="1139337716713" at="58,5,61,5" concept="6" />
-      <scope id="1139337716713" at="59,177,60,74" />
+      <node id="1139337716713" at="58,177,59,74" concept="9" />
+      <node id="1139337716713" at="57,5,60,5" concept="6" />
+      <scope id="1139337716713" at="58,177,59,74" />
     </file>
     <file name="Template_reduce_EnumMemberReference_null_internalValue.java">
       <node id="1139337716713" at="29,43,30,161" concept="9" />
@@ -4110,9 +4110,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1139860712752" at="62,177,63,65" concept="9" />
-      <node id="1139860712752" at="61,5,64,5" concept="6" />
-      <scope id="1139860712752" at="62,177,63,65" />
+      <node id="1139860712752" at="61,177,62,65" concept="9" />
+      <node id="1139860712752" at="60,5,63,5" concept="6" />
+      <scope id="1139860712752" at="61,177,62,65" />
     </file>
     <file name="Template_reduce_InsertNewNextSiblingOperation.java">
       <node id="1139860712752" at="34,43,35,161" concept="9" />
@@ -4246,9 +4246,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1139868534269" at="65,177,66,59" concept="9" />
-      <node id="1139868534269" at="64,5,67,5" concept="6" />
-      <scope id="1139868534269" at="65,177,66,59" />
+      <node id="1139868534269" at="64,177,65,59" concept="9" />
+      <node id="1139868534269" at="63,5,66,5" concept="6" />
+      <scope id="1139868534269" at="64,177,65,59" />
     </file>
     <file name="Template_reduce_ReplaceWithNewOperation.java">
       <node id="1139868534269" at="35,43,36,161" concept="9" />
@@ -4380,9 +4380,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1140132803080" at="68,177,69,63" concept="9" />
-      <node id="1140132803080" at="67,5,70,5" concept="6" />
-      <scope id="1140132803080" at="68,177,69,63" />
+      <node id="1140132803080" at="67,177,68,63" concept="9" />
+      <node id="1140132803080" at="66,5,69,5" concept="6" />
+      <scope id="1140132803080" at="67,177,68,63" />
     </file>
     <file name="Template_reduce_ReplaceWithAnotherOperation.java">
       <node id="1140132803080" at="34,43,35,161" concept="9" />
@@ -4512,9 +4512,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1143221281255" at="71,177,72,65" concept="9" />
-      <node id="1143221281255" at="70,5,73,5" concept="6" />
-      <scope id="1143221281255" at="71,177,72,65" />
+      <node id="1143221281255" at="70,177,71,65" concept="9" />
+      <node id="1143221281255" at="69,5,72,5" concept="6" />
+      <scope id="1143221281255" at="70,177,71,65" />
     </file>
     <file name="Template_reduce_InsertNewPrevSiblingOperation.java">
       <node id="1143221281255" at="34,43,35,161" concept="9" />
@@ -4648,9 +4648,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1143225332667" at="74,177,75,62" concept="9" />
-      <node id="1143225332667" at="73,5,76,5" concept="6" />
-      <scope id="1143225332667" at="74,177,75,62" />
+      <node id="1143225332667" at="73,177,74,62" concept="9" />
+      <node id="1143225332667" at="72,5,75,5" concept="6" />
+      <scope id="1143225332667" at="73,177,74,62" />
     </file>
     <file name="Template_reduce_InsertNextSiblingOperation.java">
       <node id="1143225332667" at="34,43,35,161" concept="9" />
@@ -4780,9 +4780,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1143225530636" at="77,177,78,62" concept="9" />
-      <node id="1143225530636" at="76,5,79,5" concept="6" />
-      <scope id="1143225530636" at="77,177,78,62" />
+      <node id="1143225530636" at="76,177,77,62" concept="9" />
+      <node id="1143225530636" at="75,5,78,5" concept="6" />
+      <scope id="1143225530636" at="76,177,77,62" />
     </file>
     <file name="Template_reduce_InsertPrevSiblingOperation.java">
       <node id="1143225530636" at="34,43,35,161" concept="9" />
@@ -4951,9 +4951,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1143235980693" at="80,177,81,55" concept="9" />
-      <node id="1143235980693" at="79,5,82,5" concept="6" />
-      <scope id="1143235980693" at="80,177,81,55" />
+      <node id="1143235980693" at="79,177,80,55" concept="9" />
+      <node id="1143235980693" at="78,5,81,5" concept="6" />
+      <scope id="1143235980693" at="79,177,80,55" />
     </file>
     <file name="Template_reduce_Model_CreateNewNode.java">
       <node id="1143235980693" at="35,43,36,161" concept="9" />
@@ -5114,9 +5114,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1143240338758" at="83,177,84,53" concept="9" />
-      <node id="1143240338758" at="82,5,85,5" concept="6" />
-      <scope id="1143240338758" at="83,177,84,53" />
+      <node id="1143240338758" at="82,177,83,53" concept="9" />
+      <node id="1143240338758" at="81,5,84,5" concept="6" />
+      <scope id="1143240338758" at="82,177,83,53" />
     </file>
     <file name="Template_reduce_GetModelOperation.java">
       <node id="1143240338758" at="34,43,35,161" concept="9" />
@@ -5224,9 +5224,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1143512740044" at="86,177,87,59" concept="9" />
-      <node id="1143512740044" at="85,5,88,5" concept="6" />
-      <scope id="1143512740044" at="86,177,87,59" />
+      <node id="1143512740044" at="85,177,86,59" concept="9" />
+      <node id="1143512740044" at="84,5,87,5" concept="6" />
+      <scope id="1143512740044" at="85,177,86,59" />
     </file>
     <file name="Template_reduce_GetNextSiblingOperation.java">
       <node id="1143512740044" at="34,43,35,161" concept="9" />
@@ -5334,9 +5334,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1143512764019" at="89,177,90,59" concept="9" />
-      <node id="1143512764019" at="88,5,91,5" concept="6" />
-      <scope id="1143512764019" at="89,177,90,59" />
+      <node id="1143512764019" at="88,177,89,59" concept="9" />
+      <node id="1143512764019" at="87,5,90,5" concept="6" />
+      <scope id="1143512764019" at="88,177,89,59" />
     </file>
     <file name="Template_reduce_GetPrevSiblingOperation.java">
       <node id="1143512764019" at="34,43,35,161" concept="9" />
@@ -5444,9 +5444,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1144151252418" at="92,177,93,49" concept="9" />
-      <node id="1144151252418" at="91,5,94,5" concept="6" />
-      <scope id="1144151252418" at="92,177,93,49" />
+      <node id="1144151252418" at="91,177,92,49" concept="9" />
+      <node id="1144151252418" at="90,5,93,5" concept="6" />
+      <scope id="1144151252418" at="91,177,92,49" />
     </file>
     <file name="Template_reduce_CopyOperation.java">
       <node id="1144151252418" at="34,43,35,161" concept="9" />
@@ -5560,9 +5560,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1144196353853" at="95,177,96,51" concept="9" />
-      <node id="1144196353853" at="94,5,97,5" concept="6" />
-      <scope id="1144196353853" at="95,177,96,51" />
+      <node id="1144196353853" at="94,177,95,51" concept="9" />
+      <node id="1144196353853" at="93,5,96,5" concept="6" />
+      <scope id="1144196353853" at="94,177,95,51" />
     </file>
     <file name="Template_reduce_IsRoleOperation.java">
       <node id="1144196353853" at="34,43,35,161" concept="9" />
@@ -5696,9 +5696,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1145572255293" at="98,177,99,60" concept="9" />
-      <node id="1145572255293" at="97,5,100,5" concept="6" />
-      <scope id="1145572255293" at="98,177,99,60" />
+      <node id="1145572255293" at="97,177,98,60" concept="9" />
+      <node id="1145572255293" at="96,5,99,5" concept="6" />
+      <scope id="1145572255293" at="97,177,98,60" />
     </file>
     <file name="Template_reduce_GetNextSiblingsOperation.java">
       <node id="1145572255293" at="37,43,38,161" concept="9" />
@@ -5833,9 +5833,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1145573188503" at="101,177,102,60" concept="9" />
-      <node id="1145573188503" at="100,5,103,5" concept="6" />
-      <scope id="1145573188503" at="101,177,102,60" />
+      <node id="1145573188503" at="100,177,101,60" concept="9" />
+      <node id="1145573188503" at="99,5,102,5" concept="6" />
+      <scope id="1145573188503" at="100,177,101,60" />
     </file>
     <file name="Template_reduce_GetPrevSiblingsOperation.java">
       <node id="1145573188503" at="37,43,38,161" concept="9" />
@@ -5970,9 +5970,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1145573721933" at="104,177,105,59" concept="9" />
-      <node id="1145573721933" at="103,5,106,5" concept="6" />
-      <scope id="1145573721933" at="104,177,105,59" />
+      <node id="1145573721933" at="103,177,104,59" concept="9" />
+      <node id="1145573721933" at="102,5,105,5" concept="6" />
+      <scope id="1145573721933" at="103,177,104,59" />
     </file>
     <file name="Template_reduce_GetAllSiblingsOperation.java">
       <node id="1145573721933" at="37,43,38,161" concept="9" />
@@ -6133,9 +6133,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1146176981592" at="107,177,108,78" concept="9" />
-      <node id="1146176981592" at="106,5,109,5" concept="6" />
-      <scope id="1146176981592" at="107,177,108,78" />
+      <node id="1146176981592" at="106,177,107,78" concept="9" />
+      <node id="1146176981592" at="105,5,108,5" concept="6" />
+      <scope id="1146176981592" at="106,177,107,78" />
     </file>
     <file name="Template_reduce_Property_HasValue_Enum_notNullDefaultValue.java">
       <node id="1146176981592" at="37,43,38,161" concept="9" />
@@ -6319,9 +6319,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1146178533035" at="110,177,111,75" concept="9" />
-      <node id="1146178533035" at="109,5,112,5" concept="6" />
-      <scope id="1146178533035" at="110,177,111,75" />
+      <node id="1146178533035" at="109,177,110,75" concept="9" />
+      <node id="1146178533035" at="108,5,111,5" concept="6" />
+      <scope id="1146178533035" at="109,177,110,75" />
     </file>
     <file name="Template_reduce_Property_HasValue_Enum_nullDefaultValue.java">
       <node id="1146178533035" at="34,43,35,161" concept="9" />
@@ -6517,9 +6517,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1146249898887" at="113,177,114,56" concept="9" />
-      <node id="1146249898887" at="112,5,115,5" concept="6" />
-      <scope id="1146249898887" at="113,177,114,56" />
+      <node id="1146249898887" at="112,177,113,56" concept="9" />
+      <node id="1146249898887" at="111,5,114,5" concept="6" />
+      <scope id="1146249898887" at="112,177,113,56" />
     </file>
     <file name="Template_reduce_SPropertyAccess_enum.java">
       <node id="1146249898887" at="39,43,40,161" concept="9" />
@@ -6714,9 +6714,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1146256190196" at="116,177,117,60" concept="9" />
-      <node id="1146256190196" at="115,5,118,5" concept="6" />
-      <scope id="1146256190196" at="116,177,117,60" />
+      <node id="1146256190196" at="115,177,116,60" concept="9" />
+      <node id="1146256190196" at="114,5,117,5" concept="6" />
+      <scope id="1146256190196" at="115,177,116,60" />
     </file>
     <file name="Template_reduce_Property_HasValue_Simple.java">
       <node id="1146256190196" at="34,43,35,161" concept="9" />
@@ -6866,9 +6866,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1166648267350" at="119,177,120,59" concept="9" />
-      <node id="1166648267350" at="118,5,121,5" concept="6" />
-      <scope id="1166648267350" at="119,177,120,59" />
+      <node id="1166648267350" at="118,177,119,59" concept="9" />
+      <node id="1166648267350" at="117,5,120,5" concept="6" />
+      <scope id="1166648267350" at="118,177,119,59" />
     </file>
     <file name="Template_reduce_Model_CreateNewRootNode.java">
       <node id="1166648267350" at="34,43,35,161" concept="9" />
@@ -7245,9 +7245,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1171307696664" at="122,177,123,65" concept="9" />
-      <node id="1171307696664" at="121,5,124,5" concept="6" />
-      <scope id="1171307696664" at="122,177,123,65" />
+      <node id="1171307696664" at="121,177,122,65" concept="9" />
+      <node id="1171307696664" at="120,5,123,5" concept="6" />
+      <scope id="1171307696664" at="121,177,122,65" />
     </file>
     <file name="Template_reduce_GetDescendants_noConceptsList.java">
       <node id="1171307696664" at="39,43,40,161" concept="9" />
@@ -7472,9 +7472,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1171312080424" at="125,177,126,62" concept="9" />
-      <node id="1171312080424" at="124,5,127,5" concept="6" />
-      <scope id="1171312080424" at="125,177,126,62" />
+      <node id="1171312080424" at="124,177,125,62" concept="9" />
+      <node id="1171312080424" at="123,5,126,5" concept="6" />
+      <scope id="1171312080424" at="124,177,125,62" />
     </file>
     <file name="Template_reduce_GetContainingRootOperation.java">
       <node id="1171312080424" at="34,43,35,161" concept="9" />
@@ -7588,9 +7588,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1171322948481" at="128,177,129,67" concept="9" />
-      <node id="1171322948481" at="127,5,130,5" concept="6" />
-      <scope id="1171322948481" at="128,177,129,67" />
+      <node id="1171322948481" at="127,177,128,67" concept="9" />
+      <node id="1171322948481" at="126,5,129,5" concept="6" />
+      <scope id="1171322948481" at="127,177,128,67" />
     </file>
     <file name="Template_reduce_Model_RootsOperation_hasConcept.java">
       <node id="1171322948481" at="34,43,35,161" concept="9" />
@@ -7718,9 +7718,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1171323120109" at="131,177,132,66" concept="9" />
-      <node id="1171323120109" at="130,5,133,5" concept="6" />
-      <scope id="1171323120109" at="131,177,132,66" />
+      <node id="1171323120109" at="130,177,131,66" concept="9" />
+      <node id="1171323120109" at="129,5,132,5" concept="6" />
+      <scope id="1171323120109" at="130,177,131,66" />
     </file>
     <file name="Template_reduce_Model_RootsOperation_noConcept.java">
       <node id="1171323120109" at="34,43,35,161" concept="9" />
@@ -7845,9 +7845,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1171324405763" at="134,177,135,60" concept="9" />
-      <node id="1171324405763" at="133,5,136,5" concept="6" />
-      <scope id="1171324405763" at="134,177,135,60" />
+      <node id="1171324405763" at="133,177,134,60" concept="9" />
+      <node id="1171324405763" at="132,5,135,5" concept="6" />
+      <scope id="1171324405763" at="133,177,134,60" />
     </file>
     <file name="Template_reduce_Model_NodesOperation_old.java">
       <node id="1171324405763" at="34,43,35,161" concept="9" />
@@ -7987,9 +7987,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1171324442827" at="137,177,138,60" concept="9" />
-      <node id="1171324442827" at="136,5,139,5" concept="6" />
-      <scope id="1171324442827" at="137,177,138,60" />
+      <node id="1171324442827" at="136,177,137,60" concept="9" />
+      <node id="1171324442827" at="135,5,138,5" concept="6" />
+      <scope id="1171324442827" at="136,177,137,60" />
     </file>
     <file name="Template_reduce_Model_NodesOperation_new.java">
       <node id="1171324442827" at="36,43,37,161" concept="9" />
@@ -8166,9 +8166,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1171415812313" at="140,177,141,61" concept="9" />
-      <node id="1171415812313" at="139,5,142,5" concept="6" />
-      <scope id="1171415812313" at="140,177,141,61" />
+      <node id="1171415812313" at="139,177,140,61" concept="9" />
+      <node id="1171415812313" at="138,5,141,5" concept="6" />
+      <scope id="1171415812313" at="139,177,140,61" />
     </file>
     <file name="Template_reduce_GetAncestor_noConceptList.java">
       <node id="1171415812313" at="37,43,38,161" concept="9" />
@@ -8346,9 +8346,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1171415959992" at="143,177,144,66" concept="9" />
-      <node id="1171415959992" at="142,5,145,5" concept="6" />
-      <scope id="1171415959992" at="143,177,144,66" />
+      <node id="1171415959992" at="142,177,143,66" concept="9" />
+      <node id="1171415959992" at="141,5,144,5" concept="6" />
+      <scope id="1171415959992" at="142,177,143,66" />
     </file>
     <file name="Template_reduce_GetAncestor_whereConceptInList.java">
       <node id="1171415959992" at="39,43,40,161" concept="9" />
@@ -8572,9 +8572,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1171501128990" at="146,177,147,72" concept="9" />
-      <node id="1171501128990" at="145,5,148,5" concept="6" />
-      <scope id="1171501128990" at="146,177,147,72" />
+      <node id="1171501128990" at="145,177,146,72" concept="9" />
+      <node id="1171501128990" at="144,5,147,5" concept="6" />
+      <scope id="1171501128990" at="145,177,146,72" />
     </file>
     <file name="Template_reduce_GetChildrenOperation_noLinkQualifier.java">
       <node id="1171501128990" at="34,43,35,161" concept="9" />
@@ -8682,9 +8682,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1171999358177" at="149,177,150,51" concept="9" />
-      <node id="1171999358177" at="148,5,151,5" concept="6" />
-      <scope id="1171999358177" at="149,177,150,51" />
+      <node id="1171999358177" at="148,177,149,51" concept="9" />
+      <node id="1171999358177" at="147,5,150,5" concept="6" />
+      <scope id="1171999358177" at="148,177,149,51" />
     </file>
     <file name="Template_reduce_IsNullOperation.java">
       <node id="1171999358177" at="31,43,32,161" concept="9" />
@@ -8808,9 +8808,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1172008524513" at="152,177,153,54" concept="9" />
-      <node id="1172008524513" at="151,5,154,5" concept="6" />
-      <scope id="1172008524513" at="152,177,153,54" />
+      <node id="1172008524513" at="151,177,152,54" concept="9" />
+      <node id="1172008524513" at="150,5,153,5" concept="6" />
+      <scope id="1172008524513" at="151,177,152,54" />
     </file>
     <file name="Template_reduce_IsNotNullOperation.java">
       <node id="1172008524513" at="31,43,32,161" concept="9" />
@@ -8934,9 +8934,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1172323346325" at="155,177,156,55" concept="9" />
-      <node id="1172323346325" at="154,5,157,5" concept="6" />
-      <scope id="1172323346325" at="155,177,156,55" />
+      <node id="1172323346325" at="154,177,155,55" concept="9" />
+      <node id="1172323346325" at="153,5,156,5" concept="6" />
+      <scope id="1172323346325" at="154,177,155,55" />
     </file>
     <file name="Template_reduce_GetConceptOperation.java">
       <node id="1172323346325" at="34,43,35,161" concept="9" />
@@ -9785,9 +9785,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1173119356571" at="158,177,159,69" concept="9" />
-      <node id="1173119356571" at="157,5,160,5" concept="6" />
-      <scope id="1173119356571" at="158,177,159,69" />
+      <node id="1173119356571" at="157,177,158,69" concept="9" />
+      <node id="1173119356571" at="156,5,159,5" concept="6" />
+      <scope id="1173119356571" at="157,177,158,69" />
     </file>
     <file name="Template_reduce_GetDescendants_whereConceptInList.java">
       <node id="1173119356571" at="39,43,40,161" concept="9" />
@@ -10081,9 +10081,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1173123173263" at="161,177,162,63" concept="9" />
-      <node id="1173123173263" at="160,5,163,5" concept="6" />
-      <scope id="1173123173263" at="161,177,162,63" />
+      <node id="1173123173263" at="160,177,161,63" concept="9" />
+      <node id="1173123173263" at="159,5,162,5" concept="6" />
+      <scope id="1173123173263" at="160,177,161,63" />
     </file>
     <file name="Template_reduce_GetAncestors_noConceptsList.java">
       <node id="1173123173263" at="37,43,38,161" concept="9" />
@@ -10243,9 +10243,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1173123284724" at="164,177,165,67" concept="9" />
-      <node id="1173123284724" at="163,5,166,5" concept="6" />
-      <scope id="1173123284724" at="164,177,165,67" />
+      <node id="1173123284724" at="163,177,164,67" concept="9" />
+      <node id="1173123284724" at="162,5,165,5" concept="6" />
+      <scope id="1173123284724" at="163,177,164,67" />
     </file>
     <file name="Template_reduce_GetAncestors_whereConceptInList.java">
       <node id="1173123284724" at="39,43,40,161" concept="9" />
@@ -10463,9 +10463,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1176109882192" at="167,177,168,84" concept="9" />
-      <node id="1176109882192" at="166,5,169,5" concept="6" />
-      <scope id="1176109882192" at="167,177,168,84" />
+      <node id="1176109882192" at="166,177,167,84" concept="9" />
+      <node id="1176109882192" at="165,5,168,5" concept="6" />
+      <scope id="1176109882192" at="166,177,167,84" />
     </file>
     <file name="Template_reduce_Model_RootsIncludingImportedOperation_hasConcept.java">
       <node id="1176109882192" at="34,43,35,161" concept="9" />
@@ -10593,9 +10593,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1176109959275" at="170,177,171,83" concept="9" />
-      <node id="1176109959275" at="169,5,172,5" concept="6" />
-      <scope id="1176109959275" at="170,177,171,83" />
+      <node id="1176109959275" at="169,177,170,83" concept="9" />
+      <node id="1176109959275" at="168,5,171,5" concept="6" />
+      <scope id="1176109959275" at="169,177,170,83" />
     </file>
     <file name="Template_reduce_Model_RootsIncludingImportedOperation_noConcept.java">
       <node id="1176109959275" at="34,43,35,161" concept="9" />
@@ -10714,9 +10714,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1179168430704" at="173,177,174,61" concept="9" />
-      <node id="1179168430704" at="172,5,175,5" concept="6" />
-      <scope id="1179168430704" at="173,177,174,61" />
+      <node id="1179168430704" at="172,177,173,61" concept="9" />
+      <node id="1179168430704" at="171,5,174,5" concept="6" />
+      <scope id="1179168430704" at="172,177,173,61" />
     </file>
     <file name="Template_reduce_GetIndexInParentOperation.java">
       <node id="1179168430704" at="34,43,35,161" concept="9" />
@@ -10824,9 +10824,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1181945881357" at="176,177,177,74" concept="9" />
-      <node id="1181945881357" at="175,5,178,5" concept="6" />
-      <scope id="1181945881357" at="176,177,177,74" />
+      <node id="1181945881357" at="175,177,176,74" concept="9" />
+      <node id="1181945881357" at="174,5,177,5" concept="6" />
+      <scope id="1181945881357" at="175,177,176,74" />
     </file>
     <file name="Template_reduce_GenericNewExpression_with_SNodeCreator.java">
       <node id="1181945881357" at="34,43,35,161" concept="9" />
@@ -10942,9 +10942,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1181950938878" at="179,177,180,55" concept="9" />
-      <node id="1181950938878" at="178,5,181,5" concept="6" />
-      <scope id="1181950938878" at="179,177,180,55" />
+      <node id="1181950938878" at="178,177,179,55" concept="9" />
+      <node id="1181950938878" at="177,5,180,5" concept="6" />
+      <scope id="1181950938878" at="178,177,179,55" />
     </file>
     <file name="Template_reduce_Concept_NewInstance.java">
       <node id="1181950938878" at="34,43,35,161" concept="9" />
@@ -11073,9 +11073,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1182511526037" at="182,177,183,84" concept="9" />
-      <node id="1182511526037" at="181,5,184,5" concept="6" />
-      <scope id="1182511526037" at="182,177,183,84" />
+      <node id="1182511526037" at="181,177,182,84" concept="9" />
+      <node id="1182511526037" at="180,5,183,5" concept="6" />
+      <scope id="1182511526037" at="181,177,182,84" />
     </file>
     <file name="Template_reduce_Model_NodesIncludingImportedOperation_hasConcept.java">
       <node id="1182511526037" at="34,43,35,161" concept="9" />
@@ -11203,9 +11203,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1182511568451" at="185,177,186,83" concept="9" />
-      <node id="1182511568451" at="184,5,187,5" concept="6" />
-      <scope id="1182511568451" at="185,177,186,83" />
+      <node id="1182511568451" at="184,177,185,83" concept="9" />
+      <node id="1182511568451" at="183,5,186,5" concept="6" />
+      <scope id="1182511568451" at="184,177,185,83" />
     </file>
     <file name="Template_reduce_Model_NodesIncludingImportedOperation_noConcept.java">
       <node id="1182511568451" at="34,43,35,161" concept="9" />
@@ -12690,9 +12690,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1225195370966" at="251,177,252,42" concept="9" />
-      <node id="1225195370966" at="250,5,253,5" concept="6" />
-      <scope id="1225195370966" at="251,177,252,42" />
+      <node id="1225195370966" at="250,177,251,42" concept="9" />
+      <node id="1225195370966" at="249,5,252,5" concept="6" />
+      <scope id="1225195370966" at="250,177,251,42" />
     </file>
     <file name="Template_NodeOrConcept.java">
       <node id="1225195370966" at="33,43,34,161" concept="9" />
@@ -13037,9 +13037,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1627366655853340206" at="191,183,192,68" concept="9" />
-      <node id="1627366655853340206" at="190,5,193,5" concept="6" />
-      <scope id="1627366655853340206" at="191,183,192,68" />
+      <node id="1627366655853340206" at="190,183,191,68" concept="9" />
+      <node id="1627366655853340206" at="189,5,192,5" concept="6" />
+      <scope id="1627366655853340206" at="190,183,191,68" />
     </file>
     <file name="Template_reduce_GetAncestor_noConceptList_SameML.java">
       <node id="1627366655853340206" at="37,43,38,167" concept="9" />
@@ -13228,9 +13228,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1627366655853340240" at="194,183,195,73" concept="9" />
-      <node id="1627366655853340240" at="193,5,196,5" concept="6" />
-      <scope id="1627366655853340240" at="194,183,195,73" />
+      <node id="1627366655853340240" at="193,183,194,73" concept="9" />
+      <node id="1627366655853340240" at="192,5,195,5" concept="6" />
+      <scope id="1627366655853340240" at="193,183,194,73" />
     </file>
     <file name="Template_reduce_GetAncestor_whereConceptInList_SameML.java">
       <node id="1627366655853340240" at="39,43,40,167" concept="9" />
@@ -13528,9 +13528,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1678062499342610417" at="269,183,270,66" concept="9" />
-      <node id="1678062499342610417" at="268,5,271,5" concept="6" />
-      <scope id="1678062499342610417" at="269,183,270,66" />
+      <node id="1678062499342610417" at="268,183,269,66" concept="9" />
+      <node id="1678062499342610417" at="267,5,270,5" concept="6" />
+      <scope id="1678062499342610417" at="268,183,269,66" />
     </file>
     <file name="Template_reduce_ModulePointer_SModuleReference.java">
       <node id="1678062499342610417" at="36,43,37,167" concept="9" />
@@ -13671,9 +13671,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1678062499343218959" at="266,183,267,55" concept="9" />
-      <node id="1678062499343218959" at="265,5,268,5" concept="6" />
-      <scope id="1678062499343218959" at="266,183,267,55" />
+      <node id="1678062499343218959" at="265,183,266,55" concept="9" />
+      <node id="1678062499343218959" at="264,5,267,5" concept="6" />
+      <scope id="1678062499343218959" at="265,183,266,55" />
     </file>
     <file name="Template_reduce_ModuleRefExpression.java">
       <node id="1678062499343218959" at="33,43,34,167" concept="9" />
@@ -13879,9 +13879,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1863527487546157042" at="344,183,345,58" concept="9" />
-      <node id="1863527487546157042" at="343,5,346,5" concept="6" />
-      <scope id="1863527487546157042" at="344,183,345,58" />
+      <node id="1863527487546157042" at="343,183,344,58" concept="9" />
+      <node id="1863527487546157042" at="342,5,345,5" concept="6" />
+      <scope id="1863527487546157042" at="343,183,344,58" />
     </file>
     <file name="Template_reduce_ModelPointerExpression.java">
       <node id="1863527487546157042" at="36,43,37,167" concept="9" />
@@ -14040,9 +14040,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="1883223317721107150" at="197,183,198,57" concept="9" />
-      <node id="1883223317721107150" at="196,5,199,5" concept="6" />
-      <scope id="1883223317721107150" at="197,183,198,57" />
+      <node id="1883223317721107150" at="196,183,197,57" concept="9" />
+      <node id="1883223317721107150" at="195,5,198,5" concept="6" />
+      <scope id="1883223317721107150" at="196,183,197,57" />
     </file>
     <file name="Template_reduce_IfInstanceOfStatement.java">
       <node id="1883223317721107150" at="37,43,38,167" concept="9" />
@@ -14333,9 +14333,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="2196823097110102159" at="218,183,219,47" concept="9" />
-      <node id="2196823097110102159" at="217,5,220,5" concept="6" />
-      <scope id="2196823097110102159" at="218,183,219,47" />
+      <node id="2196823097110102159" at="217,183,218,47" concept="9" />
+      <node id="2196823097110102159" at="216,5,219,5" concept="6" />
+      <scope id="2196823097110102159" at="217,183,218,47" />
     </file>
     <file name="Template_reduce_Property2Id.java">
       <node id="2196823097110102159" at="36,43,37,167" concept="9" />
@@ -14556,9 +14556,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="2196823097110122526" at="221,183,222,43" concept="9" />
-      <node id="2196823097110122526" at="220,5,223,5" concept="6" />
-      <scope id="2196823097110122526" at="221,183,222,43" />
+      <node id="2196823097110122526" at="220,183,221,43" concept="9" />
+      <node id="2196823097110122526" at="219,5,222,5" concept="6" />
+      <scope id="2196823097110122526" at="220,183,221,43" />
     </file>
     <file name="Template_reduce_Link2Id.java">
       <node id="2196823097110122526" at="37,43,38,167" concept="9" />
@@ -14776,9 +14776,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="2391302010127536581" at="242,183,243,63" concept="9" />
-      <node id="2391302010127536581" at="241,5,244,5" concept="6" />
-      <scope id="2391302010127536581" at="242,183,243,63" />
+      <node id="2391302010127536581" at="241,183,242,63" concept="9" />
+      <node id="2391302010127536581" at="240,5,243,5" concept="6" />
+      <scope id="2391302010127536581" at="241,183,242,63" />
     </file>
     <file name="Template_reduce_ConceptMethodCallReflective.java">
       <node id="2391302010127536581" at="32,43,33,167" concept="9" />
@@ -14916,9 +14916,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="2565258849285491368" at="227,183,228,75" concept="9" />
-      <node id="2565258849285491368" at="226,5,229,5" concept="6" />
-      <scope id="2565258849285491368" at="227,183,228,75" />
+      <node id="2565258849285491368" at="226,183,227,75" concept="9" />
+      <node id="2565258849285491368" at="225,5,228,5" concept="6" />
+      <scope id="2565258849285491368" at="226,183,227,75" />
     </file>
     <file name="Template_reduce_PropertyDeclaration_Bootstrap_SProperty.java">
       <node id="2565258849285491368" at="36,43,37,167" concept="9" />
@@ -15165,9 +15165,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="2565258849285680264" at="230,183,231,67" concept="9" />
-      <node id="2565258849285680264" at="229,5,232,5" concept="6" />
-      <scope id="2565258849285680264" at="230,183,231,67" />
+      <node id="2565258849285680264" at="229,183,230,67" concept="9" />
+      <node id="2565258849285680264" at="228,5,231,5" concept="6" />
+      <scope id="2565258849285680264" at="229,183,230,67" />
     </file>
     <file name="Template_reduce_LinkDeclaration_Bootstrap_SLink.java">
       <node id="2565258849285680264" at="37,43,38,167" concept="9" />
@@ -15477,9 +15477,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="2565258849285760397" at="233,183,234,81" concept="9" />
-      <node id="2565258849285760397" at="232,5,235,5" concept="6" />
-      <scope id="2565258849285760397" at="233,183,234,81" />
+      <node id="2565258849285760397" at="232,183,233,81" concept="9" />
+      <node id="2565258849285760397" at="231,5,234,5" concept="6" />
+      <scope id="2565258849285760397" at="232,183,233,81" />
     </file>
     <file name="Template_reduce_ConceptDeclaration_Bootstrap_SAbstractConcept.java">
       <node id="2565258849285760397" at="37,43,38,167" concept="9" />
@@ -16467,9 +16467,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="2733396919553004342" at="335,183,336,74" concept="9" />
-      <node id="2733396919553004342" at="334,5,337,5" concept="6" />
-      <scope id="2733396919553004342" at="335,183,336,74" />
+      <node id="2733396919553004342" at="334,183,335,74" concept="9" />
+      <node id="2733396919553004342" at="333,5,336,5" concept="6" />
+      <scope id="2733396919553004342" at="334,183,335,74" />
     </file>
     <file name="Template_reduce_EnumDeclaration_indentityValueSequence.java">
       <node id="2733396919553004342" at="33,43,34,167" concept="9" />
@@ -16650,9 +16650,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="2836521009935069133" at="281,183,282,63" concept="9" />
-      <node id="2836521009935069133" at="280,5,283,5" concept="6" />
-      <scope id="2836521009935069133" at="281,183,282,63" />
+      <node id="2836521009935069133" at="280,183,281,63" concept="9" />
+      <node id="2836521009935069133" at="279,5,282,5" concept="6" />
+      <scope id="2836521009935069133" at="280,183,281,63" />
     </file>
     <file name="Template_reduce_ConceptId_SInterfaceConcept.java">
       <node id="2836521009935069133" at="39,43,40,167" concept="9" />
@@ -16840,9 +16840,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="2837022116960087580" at="206,183,207,57" concept="9" />
-      <node id="2837022116960087580" at="205,5,208,5" concept="6" />
-      <scope id="2837022116960087580" at="206,183,207,57" />
+      <node id="2837022116960087580" at="205,183,206,57" concept="9" />
+      <node id="2837022116960087580" at="204,5,207,5" concept="6" />
+      <scope id="2837022116960087580" at="205,183,206,57" />
     </file>
     <file name="Template_reduce_OperationParamConcept.java">
       <node id="2837022116960087580" at="34,43,35,167" concept="9" />
@@ -17088,9 +17088,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="2944629966652296869" at="263,183,264,56" concept="9" />
-      <node id="2944629966652296869" at="262,5,265,5" concept="6" />
-      <scope id="2944629966652296869" at="263,183,264,56" />
+      <node id="2944629966652296869" at="262,183,263,56" concept="9" />
+      <node id="2944629966652296869" at="261,5,264,5" concept="6" />
+      <scope id="2944629966652296869" at="262,183,263,56" />
     </file>
     <file name="Template_reduce_LanguageId_SLanguage.java">
       <node id="2944629966652296869" at="37,43,38,167" concept="9" />
@@ -17365,9 +17365,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3099391750892152088" at="317,183,318,50" concept="9" />
-      <node id="3099391750892152088" at="316,5,319,5" concept="6" />
-      <scope id="3099391750892152088" at="317,183,318,50" />
+      <node id="3099391750892152088" at="316,183,317,50" concept="9" />
+      <node id="3099391750892152088" at="315,5,318,5" concept="6" />
+      <scope id="3099391750892152088" at="316,183,317,50" />
     </file>
     <file name="Template_reduce_invokeWithThis.java">
       <node id="3099391750892152088" at="38,43,39,167" concept="9" />
@@ -17583,9 +17583,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3099391750892188134" at="320,183,321,61" concept="9" />
-      <node id="3099391750892188134" at="319,5,322,5" concept="6" />
-      <scope id="3099391750892188134" at="320,183,321,61" />
+      <node id="3099391750892188134" at="319,183,320,61" concept="9" />
+      <node id="3099391750892188134" at="318,5,321,5" concept="6" />
+      <scope id="3099391750892188134" at="319,183,320,61" />
     </file>
     <file name="Template_reduce_ConceptMethodCallWithThis.java">
       <node id="3099391750892188134" at="32,43,33,167" concept="9" />
@@ -17781,9 +17781,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3099391750892189206" at="323,183,324,51" concept="9" />
-      <node id="3099391750892189206" at="322,5,325,5" concept="6" />
-      <scope id="3099391750892189206" at="323,183,324,51" />
+      <node id="3099391750892189206" at="322,183,323,51" concept="9" />
+      <node id="3099391750892189206" at="321,5,324,5" concept="6" />
+      <scope id="3099391750892189206" at="322,183,323,51" />
     </file>
     <file name="Template_reduce_invokeWithSuper.java">
       <node id="3099391750892189206" at="41,43,42,167" concept="9" />
@@ -18044,9 +18044,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3099391750892222576" at="326,183,327,72" concept="9" />
-      <node id="3099391750892222576" at="325,5,328,5" concept="6" />
-      <scope id="3099391750892222576" at="326,183,327,72" />
+      <node id="3099391750892222576" at="325,183,326,72" concept="9" />
+      <node id="3099391750892222576" at="324,5,327,5" concept="6" />
+      <scope id="3099391750892222576" at="325,183,326,72" />
     </file>
     <file name="Template_reduce_ConceptMethodCallReflectiveWithSuper.java">
       <node id="3099391750892222576" at="32,43,33,167" concept="9" />
@@ -18197,9 +18197,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3099391750892228764" at="329,183,330,48" concept="9" />
-      <node id="3099391750892228764" at="328,5,331,5" concept="6" />
-      <scope id="3099391750892228764" at="329,183,330,48" />
+      <node id="3099391750892228764" at="328,183,329,48" concept="9" />
+      <node id="3099391750892228764" at="327,5,330,5" concept="6" />
+      <scope id="3099391750892228764" at="328,183,329,48" />
     </file>
     <file name="Template_NodeOrConceptCommon.java">
       <node id="3099391750892228764" at="35,43,36,167" concept="9" />
@@ -18381,9 +18381,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3099391750892235826" at="332,183,333,57" concept="9" />
-      <node id="3099391750892235826" at="331,5,334,5" concept="6" />
-      <scope id="3099391750892235826" at="332,183,333,57" />
+      <node id="3099391750892235826" at="331,183,332,57" concept="9" />
+      <node id="3099391750892235826" at="330,5,333,5" concept="6" />
+      <scope id="3099391750892235826" at="331,183,332,57" />
     </file>
     <file name="Template_reduce_reflectiveInvokeSuper.java">
       <node id="3099391750892235826" at="41,43,42,167" concept="9" />
@@ -18762,9 +18762,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3320646261222031787" at="347,183,348,63" concept="9" />
-      <node id="3320646261222031787" at="346,5,349,5" concept="6" />
-      <scope id="3320646261222031787" at="347,183,348,63" />
+      <node id="3320646261222031787" at="346,183,347,63" concept="9" />
+      <node id="3320646261222031787" at="345,5,348,5" concept="6" />
+      <scope id="3320646261222031787" at="346,183,347,63" />
     </file>
     <file name="Template_reduce_NodeIdentity_SNodeReference.java">
       <node id="3320646261222031787" at="37,43,38,167" concept="9" />
@@ -18910,9 +18910,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3506770386464377169" at="341,183,342,58" concept="9" />
-      <node id="3506770386464377169" at="340,5,343,5" concept="6" />
-      <scope id="3506770386464377169" at="341,183,342,58" />
+      <node id="3506770386464377169" at="340,183,341,58" concept="9" />
+      <node id="3506770386464377169" at="339,5,342,5" concept="6" />
+      <scope id="3506770386464377169" at="340,183,341,58" />
     </file>
     <file name="Template_reduce_Model_PointerOperation.java">
       <node id="3506770386464377169" at="34,43,35,167" concept="9" />
@@ -19220,9 +19220,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3866789353798969378" at="308,183,309,56" concept="9" />
-      <node id="3866789353798969378" at="307,5,310,5" concept="6" />
-      <scope id="3866789353798969378" at="308,183,309,56" />
+      <node id="3866789353798969378" at="307,183,308,56" concept="9" />
+      <node id="3866789353798969378" at="306,5,309,5" concept="6" />
+      <scope id="3866789353798969378" at="307,183,308,56" />
     </file>
     <file name="Template_reduce_reflectiveInvokeThis.java">
       <node id="3866789353798969378" at="40,43,41,167" concept="9" />
@@ -19476,9 +19476,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3866789353799066898" at="311,183,312,42" concept="9" />
-      <node id="3866789353799066898" at="310,5,313,5" concept="6" />
-      <scope id="3866789353799066898" at="311,183,312,42" />
+      <node id="3866789353799066898" at="310,183,311,42" concept="9" />
+      <node id="3866789353799066898" at="309,5,312,5" concept="6" />
+      <scope id="3866789353799066898" at="310,183,311,42" />
     </file>
     <file name="Template_reduce_invoke.java">
       <node id="3866789353799066898" at="38,43,39,167" concept="9" />
@@ -19716,9 +19716,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="3866789353799081477" at="314,183,315,52" concept="9" />
-      <node id="3866789353799081477" at="313,5,316,5" concept="6" />
-      <scope id="3866789353799081477" at="314,183,315,52" />
+      <node id="3866789353799081477" at="313,183,314,52" concept="9" />
+      <node id="3866789353799081477" at="312,5,315,5" concept="6" />
+      <scope id="3866789353799081477" at="313,183,314,52" />
     </file>
     <file name="Template_reduce_reflectiveInvoke.java">
       <node id="3866789353799081477" at="39,43,40,167" concept="9" />
@@ -20157,9 +20157,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/4040588429969066518">
     <file name="TemplateModelImpl.java">
-      <node id="4040588429969066518" at="200,183,201,61" concept="9" />
-      <node id="4040588429969066518" at="199,5,202,5" concept="6" />
-      <scope id="4040588429969066518" at="200,183,201,61" />
+      <node id="4040588429969066518" at="199,183,200,61" concept="9" />
+      <node id="4040588429969066518" at="198,5,201,5" concept="6" />
+      <scope id="4040588429969066518" at="199,183,200,61" />
     </file>
     <file name="Template_reduce_ModuleReferenceExpression.java">
       <node id="4040588429969066518" at="33,43,34,167" concept="9" />
@@ -20284,9 +20284,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/4040588429969069954">
     <file name="TemplateModelImpl.java">
-      <node id="4040588429969069954" at="203,183,204,63" concept="9" />
-      <node id="4040588429969069954" at="202,5,205,5" concept="6" />
-      <scope id="4040588429969069954" at="203,183,204,63" />
+      <node id="4040588429969069954" at="202,183,203,63" concept="9" />
+      <node id="4040588429969069954" at="201,5,204,5" concept="6" />
+      <scope id="4040588429969069954" at="202,183,203,63" />
     </file>
     <file name="Template_reduce_LanguageReferenceExpression.java">
       <node id="4040588429969069954" at="33,43,34,167" concept="9" />
@@ -20666,9 +20666,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="4279359955658653877" at="260,183,261,46" concept="9" />
-      <node id="4279359955658653877" at="259,5,262,5" concept="6" />
-      <scope id="4279359955658653877" at="260,183,261,46" />
+      <node id="4279359955658653877" at="259,183,260,46" concept="9" />
+      <node id="4279359955658653877" at="258,5,261,5" concept="6" />
+      <scope id="4279359955658653877" at="259,183,260,46" />
     </file>
     <file name="Template_reduce_Parameters.java">
       <node id="4279359955658653877" at="34,43,35,167" concept="9" />
@@ -20840,9 +20840,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="4497478346159792589" at="236,183,237,57" concept="9" />
-      <node id="4497478346159792589" at="235,5,238,5" concept="6" />
-      <scope id="4497478346159792589" at="236,183,237,57" />
+      <node id="4497478346159792589" at="235,183,236,57" concept="9" />
+      <node id="4497478346159792589" at="234,5,237,5" concept="6" />
+      <scope id="4497478346159792589" at="235,183,236,57" />
     </file>
     <file name="Template_reduce_LanguageRefExpression.java">
       <node id="4497478346159792589" at="33,43,34,167" concept="9" />
@@ -21093,9 +21093,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="4862225818734494682" at="272,183,273,74" concept="9" />
-      <node id="4862225818734494682" at="271,5,274,5" concept="6" />
-      <scope id="4862225818734494682" at="272,183,273,74" />
+      <node id="4862225818734494682" at="271,183,272,74" concept="9" />
+      <node id="4862225818734494682" at="270,5,273,5" concept="6" />
+      <scope id="4862225818734494682" at="271,183,272,74" />
     </file>
     <file name="Template_reduce_GetChildrenAndChildAttributesOperation.java">
       <node id="4862225818734494682" at="35,43,36,167" concept="9" />
@@ -21310,9 +21310,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="5091528797226454967" at="290,183,291,63" concept="9" />
-      <node id="5091528797226454967" at="289,5,292,5" concept="6" />
-      <scope id="5091528797226454967" at="290,183,291,63" />
+      <node id="5091528797226454967" at="289,183,290,63" concept="9" />
+      <node id="5091528797226454967" at="288,5,291,5" concept="6" />
+      <scope id="5091528797226454967" at="289,183,290,63" />
     </file>
     <file name="Template_reduce_ConceptDeclaration2SConcept.java">
       <node id="5091528797226454967" at="37,43,38,167" concept="9" />
@@ -21870,9 +21870,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="5769081855527316896" at="338,183,339,60" concept="9" />
-      <node id="5769081855527316896" at="337,5,340,5" concept="6" />
-      <scope id="5769081855527316896" at="338,183,339,60" />
+      <node id="5769081855527316896" at="337,183,338,60" concept="9" />
+      <node id="5769081855527316896" at="336,5,339,5" concept="6" />
+      <scope id="5769081855527316896" at="337,183,338,60" />
     </file>
     <file name="Template_reduce_ModuleIdentity_SLanguage.java">
       <node id="5769081855527316896" at="37,43,38,167" concept="9" />
@@ -22029,9 +22029,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="5802093636975087540" at="305,183,306,61" concept="9" />
-      <node id="5802093636975087540" at="304,5,307,5" concept="6" />
-      <scope id="5802093636975087540" at="305,183,306,61" />
+      <node id="5802093636975087540" at="304,183,305,61" concept="9" />
+      <node id="5802093636975087540" at="303,5,306,5" concept="6" />
+      <scope id="5802093636975087540" at="304,183,305,61" />
     </file>
     <file name="Template_reduce_ModuleReferenceFromString.java">
       <node id="5802093636975087540" at="36,43,37,167" concept="9" />
@@ -22178,9 +22178,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="6119287946611399777" at="188,183,189,75" concept="9" />
-      <node id="6119287946611399777" at="187,5,190,5" concept="6" />
-      <scope id="6119287946611399777" at="188,183,189,75" />
+      <node id="6119287946611399777" at="187,183,188,75" concept="9" />
+      <node id="6119287946611399777" at="186,5,189,5" concept="6" />
+      <scope id="6119287946611399777" at="187,183,188,75" />
     </file>
     <file name="Template_reduce_GetChildrenOperation_whereLinkQualifier.java">
       <node id="6119287946611399777" at="35,43,36,167" concept="9" />
@@ -23462,9 +23462,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="6417869169768444729" at="254,183,255,62" concept="9" />
-      <node id="6417869169768444729" at="253,5,256,5" concept="6" />
-      <scope id="6417869169768444729" at="254,183,255,62" />
+      <node id="6417869169768444729" at="253,183,254,62" concept="9" />
+      <node id="6417869169768444729" at="252,5,255,5" concept="6" />
+      <scope id="6417869169768444729" at="253,183,254,62" />
     </file>
     <file name="Template_reduce_ConceptMethodCallWithSuper.java">
       <node id="6417869169768444729" at="32,43,33,167" concept="9" />
@@ -23639,9 +23639,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="6506750610319117922" at="209,183,210,65" concept="9" />
-      <node id="6506750610319117922" at="208,5,211,5" concept="6" />
-      <scope id="6506750610319117922" at="209,183,210,65" />
+      <node id="6506750610319117922" at="208,183,209,65" concept="9" />
+      <node id="6506750610319117922" at="207,5,210,5" concept="6" />
+      <scope id="6506750610319117922" at="208,183,209,65" />
     </file>
     <file name="Template_reduce_PropertyDeclaration_SProperty.java">
       <node id="6506750610319117922" at="36,43,37,167" concept="9" />
@@ -23888,9 +23888,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="6506750610319222074" at="212,183,213,57" concept="9" />
-      <node id="6506750610319222074" at="211,5,214,5" concept="6" />
-      <scope id="6506750610319222074" at="212,183,213,57" />
+      <node id="6506750610319222074" at="211,183,212,57" concept="9" />
+      <node id="6506750610319222074" at="210,5,213,5" concept="6" />
+      <scope id="6506750610319222074" at="211,183,212,57" />
     </file>
     <file name="Template_reduce_LinkDeclaration_SLink.java">
       <node id="6506750610319222074" at="37,43,38,167" concept="9" />
@@ -24200,9 +24200,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="6506750610319308637" at="215,183,216,71" concept="9" />
-      <node id="6506750610319308637" at="214,5,217,5" concept="6" />
-      <scope id="6506750610319308637" at="215,183,216,71" />
+      <node id="6506750610319308637" at="214,183,215,71" concept="9" />
+      <node id="6506750610319308637" at="213,5,216,5" concept="6" />
+      <scope id="6506750610319308637" at="214,183,215,71" />
     </file>
     <file name="Template_reduce_ConceptDeclaration2SAbstractConcept.java">
       <node id="6506750610319308637" at="37,43,38,167" concept="9" />
@@ -26323,9 +26323,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="6862765979525687754" at="257,183,258,59" concept="9" />
-      <node id="6862765979525687754" at="256,5,259,5" concept="6" />
-      <scope id="6862765979525687754" at="257,183,258,59" />
+      <node id="6862765979525687754" at="256,183,257,59" concept="9" />
+      <node id="6862765979525687754" at="255,5,258,5" concept="6" />
+      <scope id="6862765979525687754" at="256,183,257,59" />
     </file>
     <file name="Template_reduce_ConceptMethodCallCommon.java">
       <node id="6862765979525687754" at="32,43,33,167" concept="9" />
@@ -26915,9 +26915,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="6911370362349544063" at="275,183,276,54" concept="9" />
-      <node id="6911370362349544063" at="274,5,277,5" concept="6" />
-      <scope id="6911370362349544063" at="275,183,276,54" />
+      <node id="6911370362349544063" at="274,183,275,54" concept="9" />
+      <node id="6911370362349544063" at="273,5,276,5" concept="6" />
+      <scope id="6911370362349544063" at="274,183,275,54" />
     </file>
     <file name="Template_reduce_ConceptId_SConcept.java">
       <node id="6911370362349544063" at="39,43,40,167" concept="9" />
@@ -27191,9 +27191,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="6911370362349557186" at="278,183,279,56" concept="9" />
-      <node id="6911370362349557186" at="277,5,280,5" concept="6" />
-      <scope id="6911370362349557186" at="278,183,279,56" />
+      <node id="6911370362349557186" at="277,183,278,56" concept="9" />
+      <node id="6911370362349557186" at="276,5,279,5" concept="6" />
+      <scope id="6911370362349557186" at="277,183,278,56" />
     </file>
     <file name="Template_reduce_PropertyId_SProperty.java">
       <node id="6911370362349557186" at="37,43,38,167" concept="9" />
@@ -27364,9 +27364,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="7453996997717790875" at="224,183,225,56" concept="9" />
-      <node id="7453996997717790875" at="223,5,226,5" concept="6" />
-      <scope id="7453996997717790875" at="224,183,225,56" />
+      <node id="7453996997717790875" at="223,183,224,56" concept="9" />
+      <node id="7453996997717790875" at="222,5,225,5" concept="6" />
+      <scope id="7453996997717790875" at="223,183,224,56" />
     </file>
     <file name="Template_reduce_GetSConceptOperation.java">
       <node id="7453996997717790875" at="34,43,35,167" concept="9" />
@@ -27539,9 +27539,9 @@
       <unit id="75056552358317740" at="2295,397,2299,5" name="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.QueriesGenerated$1" />
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="75056552358298205" at="302,181,303,65" concept="9" />
-      <node id="75056552358298205" at="301,5,304,5" concept="6" />
-      <scope id="75056552358298205" at="302,181,303,65" />
+      <node id="75056552358298205" at="301,181,302,65" concept="9" />
+      <node id="75056552358298205" at="300,5,303,5" concept="6" />
+      <scope id="75056552358298205" at="301,181,302,65" />
     </file>
     <file name="Template_reduce_ConceptSwitch_SubconceptCases.java">
       <node id="75056552358298205" at="41,43,42,165" concept="9" />
@@ -28492,9 +28492,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="7723526804945759316" at="284,183,285,51" concept="9" />
-      <node id="7723526804945759316" at="283,5,286,5" concept="6" />
-      <scope id="7723526804945759316" at="284,183,285,51" />
+      <node id="7723526804945759316" at="283,183,284,51" concept="9" />
+      <node id="7723526804945759316" at="282,5,285,5" concept="6" />
+      <scope id="7723526804945759316" at="283,183,284,51" />
     </file>
     <file name="Template_weave_ConceptSwitchMap.java">
       <node id="7723526804945759316" at="39,43,40,167" concept="9" />
@@ -28840,9 +28840,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="7723526804945925517" at="287,183,288,49" concept="9" />
-      <node id="7723526804945925517" at="286,5,289,5" concept="6" />
-      <scope id="7723526804945925517" at="287,183,288,49" />
+      <node id="7723526804945925517" at="286,183,287,49" concept="9" />
+      <node id="7723526804945925517" at="285,5,288,5" concept="6" />
+      <scope id="7723526804945925517" at="286,183,287,49" />
     </file>
     <file name="Template_reduce_ConceptSwitch.java">
       <node id="7723526804945925517" at="41,43,42,167" concept="9" />
@@ -29339,9 +29339,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="8098116031887344028" at="299,183,300,57" concept="9" />
-      <node id="8098116031887344028" at="298,5,301,5" concept="6" />
-      <scope id="8098116031887344028" at="299,183,300,57" />
+      <node id="8098116031887344028" at="298,183,299,57" concept="9" />
+      <node id="8098116031887344028" at="297,5,300,5" concept="6" />
+      <scope id="8098116031887344028" at="298,183,299,57" />
     </file>
     <file name="Template_reduce_ConceptCaseBody_Hack1.java">
       <node id="8098116031887344028" at="33,43,34,167" concept="9" />
@@ -29590,9 +29590,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="8415841354032418697" at="293,183,294,66" concept="9" />
-      <node id="8415841354032418697" at="292,5,295,5" concept="6" />
-      <scope id="8415841354032418697" at="293,183,294,66" />
+      <node id="8415841354032418697" at="292,183,293,66" concept="9" />
+      <node id="8415841354032418697" at="291,5,294,5" concept="6" />
+      <scope id="8415841354032418697" at="292,183,293,66" />
     </file>
     <file name="Template_reduce_ReferenceLinkId_SReferenceLink.java">
       <node id="8415841354032418697" at="37,43,38,167" concept="9" />
@@ -29801,9 +29801,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="8415841354032486185" at="296,183,297,70" concept="9" />
-      <node id="8415841354032486185" at="295,5,298,5" concept="6" />
-      <scope id="8415841354032486185" at="296,183,297,70" />
+      <node id="8415841354032486185" at="295,183,296,70" concept="9" />
+      <node id="8415841354032486185" at="294,5,297,5" concept="6" />
+      <scope id="8415841354032486185" at="295,183,296,70" />
     </file>
     <file name="Template_reduce_ContainmentLinkId_SContainmentLink.java">
       <node id="8415841354032486185" at="37,43,38,167" concept="9" />
@@ -30048,9 +30048,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="8560627202335197469" at="248,183,249,71" concept="9" />
-      <node id="8560627202335197469" at="247,5,250,5" concept="6" />
-      <scope id="8560627202335197469" at="248,183,249,71" />
+      <node id="8560627202335197469" at="247,183,248,71" concept="9" />
+      <node id="8560627202335197469" at="246,5,249,5" concept="6" />
+      <scope id="8560627202335197469" at="247,183,248,71" />
     </file>
     <file name="Template_reduce_ConceptMethodCallReflectiveWithThis.java">
       <node id="8560627202335197469" at="32,43,33,167" concept="9" />
@@ -30201,9 +30201,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="8560627202335249984" at="239,183,240,69" concept="9" />
-      <node id="8560627202335249984" at="238,5,241,5" concept="6" />
-      <scope id="8560627202335249984" at="239,183,240,69" />
+      <node id="8560627202335249984" at="238,183,239,69" concept="9" />
+      <node id="8560627202335249984" at="237,5,240,5" concept="6" />
+      <scope id="8560627202335249984" at="238,183,239,69" />
     </file>
     <file name="Template_reduce_ConceptMethodCallReflectiveCommon.java">
       <node id="8560627202335249984" at="32,43,33,167" concept="9" />
@@ -30328,9 +30328,9 @@
       </scope>
     </file>
     <file name="TemplateModelImpl.java">
-      <node id="8560627202335295549" at="245,183,246,53" concept="9" />
-      <node id="8560627202335295549" at="244,5,247,5" concept="6" />
-      <scope id="8560627202335295549" at="245,183,246,53" />
+      <node id="8560627202335295549" at="244,183,245,53" concept="9" />
+      <node id="8560627202335295549" at="243,5,246,5" concept="6" />
+      <scope id="8560627202335295549" at="244,183,245,53" />
     </file>
     <file name="Template_reduce_ConceptMethodCall.java">
       <node id="8560627202335295549" at="32,43,33,167" concept="9" />
