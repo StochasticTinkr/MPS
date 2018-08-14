@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -64,12 +65,18 @@ public interface NodeWeaveFacility {
    * weave template from another generator
    * Method intended for use from generated generators
    * @return FIXME contract shall be identical to {@link TemplateDeclarationWeavingAware2#weave(WeaveContext, NodeWeaveFacility)}
+   * @deprecated use {@link TemplateExecutionEnvironment#findTemplate(TemplateDeclarationKey, SNodeReference)} and subsequent
+   * {@link TemplateDeclarationWeavingAware2#weave(WeaveContext, NodeWeaveFacility)} instead
    */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, Object... args) throws GenerationException;
 
   /**
    * weave template from the same generated generator
    * Method intended for use from generated generators
+   * FIXME introduce TEE.prepareWeave(TD):TD along with TEE.prepareApply(TD):TD to support wrapping of TD instances with trace facility from within
+   *       generated code, then deprecate and drop this one
    * @return FIXME contract shall be identical to {@link TemplateDeclarationWeavingAware2#weave(WeaveContext, NodeWeaveFacility)}
    */
   Collection<SNode> weaveTemplate(@NotNull TemplateDeclaration templateDeclaration) throws GenerationException;

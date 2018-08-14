@@ -441,10 +441,11 @@ public final class TemplateProcessor implements ITemplateProcessor {
   // $WEAVE$
   private static class WeaveMacro extends MacroWithInput implements WeavingWithAnchor {
     private WeaveAnchorQuery myAnchorQuery;
+    private volatile TemplateCall myCallProcessor;
+    private volatile TemplateDeclaration myTemplateRT;
 
     protected WeaveMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
       super(macro, templateNode, next, templateProcessor);
-
     }
 
     @NotNull
@@ -457,37 +458,47 @@ public final class TemplateProcessor implements ITemplateProcessor {
       }
       if (_outputNodes.size() > 1) {
         // XXX why not?
-        getLogger().error(getMacroNodeRef(), "cannot apply $WEAVE$ to a list of nodes",
-            GeneratorUtil.describe(templateContext.getInput(), "input"));
-        return _outputNodes;
-      }
-      SNode consequence = RuleUtil.getWeaveMacro_Consequence(macro);
-      if (consequence == null) {
-        getLogger().error(getMacroNodeRef(), "couldn't evaluate weave macro: no consequence",
-            GeneratorUtil.describeIfExists(templateContext.getInput(), "input"));
+        getLogger().error(getMacroNodeRef(), "cannot apply $WEAVE$ to a list of nodes", GeneratorUtil.describeInput(templateContext));
         return _outputNodes;
       }
 
-      // FIXME TemplateDeclarationReference may pass arguments!
-      SNode template = RuleUtil.getTemplateDeclarationReference_Template(consequence);
+      final TemplateExecutionEnvironment env = templateContext.getEnvironment();
+
+      if (myTemplateRT == null) {
+        // FIXME why WEAVE macro has ruleConsequence:TemplateDeclarationReference, while CALL is ITemplateCall itself and got template:IParameterizedTemplate?
+        //       not sure whicj one is better, but definitely has to be the same!
+        SNode consequence = RuleUtil.getWeaveMacro_Consequence(macro);
+        if (consequence == null) {
+          throw new TemplateProcessingFailureException(macro, "couldn't evaluate weave macro: no consequence", GeneratorUtil.describeInput(templateContext));
+        }
+
+        SNode template = RuleUtil.getTemplateDeclarationReference_Template(consequence);
+        if (template == null) {
+          throw new TemplateProcessingFailureException(macro, "couldn't evaluate weave macro: no template", GeneratorUtil.describeInput(templateContext));
+        }
+
+        // I don't mind double initialization of the field from parallel threads, hence no guard, see $CALL$ for more details
+        myTemplateRT = env.findTemplate(TemplateIdentity.fromSourceNode(template), getMacroNodeRef());
+        // consequence is node<TemplateDeclarationReference> and may pass arguments
+        myCallProcessor = new TemplateCall(consequence);
+        if (myCallProcessor.argumentsMismatch()) {
+          // XXX why not TemplateProcessingFailureException?
+          getLogger().error(getMacroNodeRef(), "number of arguments doesn't match template", GeneratorUtil.describeInput(templateContext));
+          // fall-through
+        }
+      }
       ////
-      if (template == null) {
-        getLogger().error(getMacroNodeRef(), "couldn't evaluate weave macro: no template",
-            GeneratorUtil.describeIfExists(templateContext.getInput(), "input"));
-        return _outputNodes;
-      }
 
-      // XXX would be great to have something like next code, instead
-      // TemplateDeclaration td = env.loadTemplateDeclaration(template)
-      // td.apply(new WeaveSink(), templateContext);
       final SNode contextNode = _outputNodes.get(0);
+      final TemplateContext tcWithArgs = myCallProcessor.prepareCallContext(templateContext);
 
       for (SNode node : getNewInputNodes(templateContext)) {
-        WeaveContext wc = new WeaveContextImpl(contextNode, templateContext.subContext(node), this);
+        WeaveContext wc = new WeaveContextImpl(contextNode, tcWithArgs.subContext(node), this);
         NodeWeaveFacility nwf = templateContext.getEnvironment().prepareWeave(wc, getMacroNodeRef());
         try {
-          // FIXME respect arguments!
-          nwf.weaveTemplate(template.getReference());
+          // XXX would be great to have something like next code, instead
+          // td.apply(new WeaveSink(), templateContext);
+          myTemplateRT.weave(wc, nwf);
           // XXX exception handling shall match that of WeavingProcessor.ArmedWeavingRule
         } catch (GenerationFailureException | GenerationCanceledException ex) {
           throw ex;
@@ -756,8 +767,9 @@ public final class TemplateProcessor implements ITemplateProcessor {
       final TemplateExecutionEnvironment env = templateContext.getEnvironment();
 
       if (myTemplateRT == null) {
-        // I don't mind double initialization of the field from parallel threads, hence no guard. Perhaps, would need to chnage this
+        // I don't mind double initialization of the field from parallel threads, hence no guard. Perhaps, would need to change this
         // once TemplateDeclaration runtime classes are decorated (e.g. with a trace) and have a state to care about.
+        // There's pretty much identical code in WEAVE, btw.
         SNode invokedTemplate = myInvokedTemplate;
         if (invokedTemplate == null) {
           throw new TemplateProcessingFailureException(macro, String.format("error processing %s : no template to invoke", myName));

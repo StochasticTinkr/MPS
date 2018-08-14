@@ -19,6 +19,7 @@ import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.TemplateIdentity;
 import jetbrains.mps.generator.impl.TemplateProcessingFailureException;
 import jetbrains.mps.generator.impl.WeaveContextImpl;
 import jetbrains.mps.generator.impl.query.QueryKey;
@@ -29,6 +30,7 @@ import jetbrains.mps.generator.impl.query.WeaveAnchorQuery;
 import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -142,7 +144,8 @@ public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements Tem
     }
     TemplateExecutionEnvironment environment = context.getEnvironment();
     WeaveContext wc = new WeaveContextImpl(outputContextNode, context.subContext(myMappingName), this);
-    environment.prepareWeave(wc, getRuleNode()).weaveTemplate(myTemplate.getReference());
+    NodeWeaveFacility nwf = environment.prepareWeave(wc, getRuleNode());
+    environment.findTemplate(TemplateIdentity.fromSourceNode(myTemplate), getRuleNode()).weave(wc, nwf);
   }
 
   /**
