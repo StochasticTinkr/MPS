@@ -8,17 +8,22 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Map;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.scope.ConditionalScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
+import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -40,58 +45,61 @@ public class SampleRefMigration extends MigrationScriptBase {
   }
   public void doExecute(final SModule m) {
     final Map<SModule, SNode> annotation_only = getDataCollector().collectData(m, new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1));
-    // get all models in the current module 
-    Iterable<SModel> models = Sequence.fromIterable(((Iterable<SModel>) m.getModels())).where(new IWhereFilter<SModel>() {
-      public boolean accept(SModel it) {
-        return !(SModuleOperations.isAspect(it, "migration"));
+    // migrate everything except migration aspects 
+    SearchScope searchScope = new ConditionalScope(new ModulesScope(m), null, new Condition<SModel>() {
+      public boolean met(SModel m) {
+        return !(SModuleOperations.isAspect(m, "migration"));
       }
     });
 
-    // get all old references in all models of this module 
-    Iterable<SNode> references = Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
-      public Iterable<SNode> translate(SModel it) {
-        return SModelOperations.nodes(it, MetaAdapterFactory.getConcept(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, 0x6aff2c104931574dL, "ref.structure.OldComponentRef"));
-      }
-    });
+    {
+      final SearchScope scope = CommandUtil.createScope(searchScope);
+      QueryExecutionContext context = new QueryExecutionContext() {
+        public SearchScope getDefaultSearchScope() {
+          return scope;
+        }
+      };
 
-    // cache for reading data annotations 
-    final Map<SModel, Map<String, String>> idMaps = MapSequence.fromMap(new HashMap<SModel, Map<String, String>>());
+      // get all old references in all models of this module 
+      List<SNode> references = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, 0x6aff2c104931574dL, "ref.structure.OldComponentRef"), false)).toListSequence();
 
-    // for each found old reference 
-    Sequence.fromIterable(references).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode oldNode) {
-        // create a new one, leave the reference target empty 
-        SNode newNode = _quotation_createNode_u457zm_a0b0a0a01a5();
+      // cache for reading data annotations 
+      final Map<SModel, Map<String, String>> idMaps = MapSequence.fromMap(new HashMap<SModel, Map<String, String>>());
 
-        // find the target of the old reference and its containing model 
-        SReference oldRef = oldNode.getReference(MetaAdapterFactory.getReferenceLink(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, 0x6aff2c104931574dL, 0x6aff2c104932a69aL, "target"));
-        SModel oldModel = oldRef.getTargetSModelReference().resolve(m.getRepository());
+      // for each found old reference 
+      ListSequence.fromList(references).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode oldNode) {
+          // create a new one, leave the reference target empty 
+          SNode newNode = _quotation_createNode_u457zm_a0b0a0a8a3a5();
 
-        // get the id of the component that the old component has been migrated into 
-        if (MapSequence.fromMap(idMaps).get(oldModel) == null) {
-          Map<String, String> idMap = MapSequence.fromMap(new HashMap<String, String>());
-          for (SNode dataAnnotation : ListSequence.fromList(SModelOperations.nodes(((SModel) oldModel), MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x2274019e61e234c9L, "decl.structure.DeclMigrationData")))) {
-            MapSequence.fromMap(idMap).put(SPropertyOperations.getString(dataAnnotation, MetaAdapterFactory.getProperty(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x2274019e61e234c9L, 0x3abe707a89857bdeL, "oldId")), SPropertyOperations.getString(dataAnnotation, MetaAdapterFactory.getProperty(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x2274019e61e234c9L, 0x3abe707a89857bdfL, "newId")));
+          // find the target of the old reference and its containing model 
+          SReference oldRef = oldNode.getReference(MetaAdapterFactory.getReferenceLink(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, 0x6aff2c104931574dL, 0x6aff2c104932a69aL, "target"));
+          SModel oldModel = oldRef.getTargetSModelReference().resolve(m.getRepository());
+
+          // get the id of the component that the old component has been migrated into 
+          if (MapSequence.fromMap(idMaps).get(oldModel) == null) {
+            Map<String, String> idMap = MapSequence.fromMap(new HashMap<String, String>());
+            for (SNode dataAnnotation : ListSequence.fromList(SModelOperations.nodes(((SModel) oldModel), MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x2274019e61e234c9L, "decl.structure.DeclMigrationData")))) {
+              MapSequence.fromMap(idMap).put(SPropertyOperations.getString(dataAnnotation, MetaAdapterFactory.getProperty(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x2274019e61e234c9L, 0x3abe707a89857bdeL, "oldId")), SPropertyOperations.getString(dataAnnotation, MetaAdapterFactory.getProperty(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x2274019e61e234c9L, 0x3abe707a89857bdfL, "newId")));
+            }
+            MapSequence.fromMap(idMaps).put(oldModel, idMap);
           }
-          MapSequence.fromMap(idMaps).put(oldModel, idMap);
+          String newId = MapSequence.fromMap(MapSequence.fromMap(idMaps).get(oldModel)).get(oldRef.getTargetNodeId().toString());
+          if (newId == null) {
+            return;
+          }
+
+          // get the new component instance 
+          SNode newTarget = oldModel.getNode(PersistenceFacade.getInstance().createNodeId(newId));
+
+          // set the reference to point to it 
+          SLinkOperations.setTarget(newNode, MetaAdapterFactory.getReferenceLink(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, 0x6aff2c104932a6c9L, 0x6aff2c104932a6caL, "target"), (SNode) newTarget);
+
+          // replace the old reference in the model with the newly created one 
+          SNodeOperations.replaceWithAnother(oldNode, newNode);
         }
-        String newId = MapSequence.fromMap(MapSequence.fromMap(idMaps).get(oldModel)).get(oldRef.getTargetNodeId().toString());
-        if (newId == null) {
-          return;
-        }
-
-        // get the new component instance 
-        SNode newTarget = oldModel.getNode(PersistenceFacade.getInstance().createNodeId(newId));
-
-        // set the reference to point to it 
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getReferenceLink(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, 0x6aff2c104932a6c9L, 0x6aff2c104932a6caL, "target"), (SNode) newTarget);
-
-        // replace the old reference in the model with the newly created one 
-        SNodeOperations.replaceWithAnother(oldNode, newNode);
-      }
-    });
-
-
+      });
+    }
   }
   public Iterable<MigrationScriptReference> requiresData() {
     return ListSequence.fromListAndArray(new ArrayList<MigrationScriptReference>(), new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1));
@@ -100,7 +108,7 @@ public class SampleRefMigration extends MigrationScriptBase {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, "ref"), 1);
   }
 
-  private static SNode _quotation_createNode_u457zm_a0b0a0a01a5() {
+  private static SNode _quotation_createNode_u457zm_a0b0a0a8a3a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, "ref"), 0x6aff2c104932a6c9L, "NewComponentRef"), null, null, false);

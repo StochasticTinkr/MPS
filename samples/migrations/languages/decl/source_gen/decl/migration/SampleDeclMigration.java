@@ -5,24 +5,29 @@ package decl.migration;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.scope.ConditionalScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
+import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import java.util.List;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class SampleDeclMigration extends MigrationScriptBase {
@@ -38,43 +43,50 @@ public class SampleDeclMigration extends MigrationScriptBase {
     return null;
   }
   public void doExecute(final SModule m) {
-    // get all old instances in all models of the module 
-    Iterable<SModel> models = Sequence.fromIterable(((Iterable<SModel>) m.getModels())).where(new IWhereFilter<SModel>() {
-      public boolean accept(SModel it) {
-        return !(SModuleOperations.isAspect(it, "migration"));
-      }
-    });
-    Iterable<SNode> components = SNodeOperations.ofConcept(Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
-      public Iterable<SNode> translate(SModel it) {
-        return SModelOperations.roots(it, null);
-      }
-    }), MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c1049316cdaL, "decl.structure.OldComponent"));
-
-    // for each old instance create a new one 
-    Sequence.fromIterable(components).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode oldNode) {
-        SNode newNode = _quotation_createNode_i4ro0d_a0a0a0a5a5(SLinkOperations.getChildren(oldNode, MetaAdapterFactory.getContainmentLink(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c1049316cdaL, 0x6aff2c104931bb27L, "member")), SPropertyOperations.getString(oldNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-        // add it to the model 
-        SModelOperations.addRootNode(SNodeOperations.getModel(oldNode), newNode);
-
-        // create the data annotation to hold mapping between old and new ids of the instances 
-        SLinkOperations.setTarget(AttributeOperations.createAndAddAttribute(newNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625990591L, "jetbrains.mps.lang.core.structure.MigrationDataAnnotation")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625990591L, "jetbrains.mps.lang.core.structure.MigrationDataAnnotation")), MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625990591L, 0x5e7aa366c292fcceL, "dataNode"), createDeclMigrationData_i4ro0d_a0f0a0a5a5(oldNode.getNodeId().toString(), newNode.getNodeId().toString()));
-
+    // migrate everything except migration aspects 
+    SearchScope searchScope = new ConditionalScope(new ModulesScope(m), null, new Condition<SModel>() {
+      public boolean met(SModel m) {
+        return !(SModuleOperations.isAspect(m, "migration"));
       }
     });
 
-    // remove the old instances from their models 
-    Sequence.fromIterable(components).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        SNodeOperations.deleteNode(it);
-      }
-    });
+    {
+      final SearchScope scope = CommandUtil.createScope(searchScope);
+      QueryExecutionContext context = new QueryExecutionContext() {
+        public SearchScope getDefaultSearchScope() {
+          return scope;
+        }
+      };
+
+      // get all old instances in all models of the module 
+      List<SNode> components = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c1049316cdaL, "decl.structure.OldComponent"), true)).toListSequence();
+
+      // for each old instance create a new one 
+      ListSequence.fromList(components).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode oldNode) {
+          SNode newNode = _quotation_createNode_i4ro0d_a0a0a0a5a3a5(SLinkOperations.getChildren(oldNode, MetaAdapterFactory.getContainmentLink(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c1049316cdaL, 0x6aff2c104931bb27L, "member")), SPropertyOperations.getString(oldNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+          // add it to the model 
+          SModelOperations.addRootNode(SNodeOperations.getModel(oldNode), newNode);
+
+          // create the data annotation to hold mapping between old and new ids of the instances 
+          SLinkOperations.setTarget(AttributeOperations.createAndAddAttribute(newNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625990591L, "jetbrains.mps.lang.core.structure.MigrationDataAnnotation")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625990591L, "jetbrains.mps.lang.core.structure.MigrationDataAnnotation")), MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625990591L, 0x5e7aa366c292fcceL, "dataNode"), createDeclMigrationData_i4ro0d_a0f0a0a5a3a5(oldNode.getNodeId().toString(), newNode.getNodeId().toString()));
+
+        }
+      });
+
+      // remove the old instances from their models 
+      ListSequence.fromList(components).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          SNodeOperations.deleteNode(it);
+        }
+      });
+    }
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1);
   }
 
-  private static SNode _quotation_createNode_i4ro0d_a0a0a0a5a5(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_i4ro0d_a0a0a0a5a3a5(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -88,7 +100,7 @@ public class SampleDeclMigration extends MigrationScriptBase {
     }
     return quotedNode_3;
   }
-  private static SNode createDeclMigrationData_i4ro0d_a0f0a0a5a5(Object p0, Object p1) {
+  private static SNode createDeclMigrationData_i4ro0d_a0f0a0a5a3a5(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x2274019e61e234c9L, "decl.structure.DeclMigrationData"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x2274019e61e234c9L, 0x3abe707a89857bdeL, "oldId"), p0 + "");
